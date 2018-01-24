@@ -1,0 +1,333 @@
+/*
+Theme Name: Radcliffe 2
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+th {
+	text-align: right;
+}
+
+.contact-info-area span.contact-info-label {
+	left: auto;
+	right: -999999em;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+}
+
+.main-navigation li {
+	float: right;
+}
+
+.main-navigation a .icon {
+	margin-left: 0;
+	margin-right: 6px;
+}
+
+.main-navigation ul ul ul {
+	left: auto;
+	right: -999em;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	right: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: auto;
+	right: 100%;
+}
+
+/* Small menu. */
+.menu-toggle .icon {
+	margin-left: 0;
+	margin-right: 6px;
+}
+
+/* Jetpack social menu */
+
+.jetpack-social-navigation {
+	margin-left: 0;
+	margin-right: -0.5em;
+}
+
+.jetpack-social-navigation li {
+	margin-left: 0.25em;
+	margin-right: 0;
+}
+
+/* Comment and Post menus */
+
+.nav-next .icon {
+	margin-left: 0;
+	margin-right: 6px;
+}
+
+.nav-previous .icon {
+	margin-left: 6px;
+	margin-right: 0;
+}
+
+.screen-reader-text:focus {
+	left: auto;
+	right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+/* Search toggle */
+.search-toggle {
+	left: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+.widget ul {
+	padding-right: 0;
+}
+
+#wp-calendar tfoot #prev {
+	text-align: right;
+}
+
+#wp-calendar tfoot #next {
+	text-align: left;
+}
+
+/*  widget */
+.search-form .search-field {
+	padding: 5% 5% 5% 20%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+
+.archive .entry-thumbnail + .entry-header,
+.blog .entry-thumbnail + .entry-header,
+.search .entry-thumbnail + .entry-header {
+	left: auto;
+	right: 0;
+}
+
+.byline:before,
+.comments-link:before {
+	content: "\\";
+	margin: 0 .3em 0 .5em;
+}
+
+.date-hidden .byline:before,
+.date-hidden.author-hidden .comments-link:before {
+	content: "";
+}
+
+.entry-author {
+	margin-left: 0;
+}
+
+.entry-author .author-bio,
+.entry-author .author-heading {
+	padding-left: 0;
+	padding-right: 80px;
+}
+
+.cat-links,
+.tags-links,
+.edit-link {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+.cat-links .icon,
+.tags-links .icon,
+.edit-link .icon {
+	left: auto;
+	right: 0;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comments .children {
+	margin-left: 0;
+	margin-right: 5%;
+}
+
+.comment-wrapper,
+.pingback,
+.trackback {
+	margin-right: 0;
+}
+
+ol.children ol.children {
+	padding-right: 0;
+}
+
+.comment-wrapper:after {
+	border-left-color: #fff;
+	border-right-color: transparent;
+	left: auto;
+	right: -24px;
+}
+
+.comment .avatar {
+	left: auto;
+	right: 0;
+}
+
+.comment-header span {
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+.comment-actions a {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.bypostauthor .by-post-author {
+	left: auto;
+	right: 12px;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+#infinite-handle span {
+	float: right;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+@media all and  (max-width: 768px) {
+
+	.menu-toggle {
+		margin: 0 4% 40px 0;
+	}
+
+	.dropdown-toggle {
+		left: 6px;
+		right: auto;
+	}
+
+	.main-navigation.toggled ul li {
+		float: none;
+	}
+
+	.main-navigation.toggled .sub-menu {
+		padding: 0 25px 0 0;
+	}
+}
+
+@media all and (min-width: 600px) {
+	.jetpack-social-navigation {
+		margin-right: 0;
+	}
+
+	.jetpack-social-navigation li {
+		margin-right: 0;
+	}
+
+	.entry-author {
+		margin-left: 40px;
+		margin-right: 0;
+	}
+
+	.comment-wrapper,
+	.pingback ,
+	.trackback {
+		margin-left: 0;
+		margin-right: 110px;
+	}
+
+	ol.children {
+		padding-left: 0;
+		padding-right: 40px;
+	}
+
+	.bypostauthor .by-post-author {
+		left: auto;
+		right: -2px;
+	}
+
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: right;
+		text-align: right;
+	}
+
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: left;
+		text-align: left;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.contact-info-area span.contact-info-label {
+		right: auto;
+	}
+
+	#header-menu {
+		margin-left: 0;
+		margin-right: -15px;
+	}
+
+	.main-navigation ul ul {
+		left: auto;
+		right: -999em;
+	}
+
+	.main-navigation ul ul a {
+		padding-left: 18px;
+		padding-right: 15px;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a > .icon,
+	.main-navigation ul ul .page_item_has_children > a > .icon {
+		left: 0.5em;
+		right: auto;
+		-ms-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+
+	.main-navigation ul ul ul {
+		padding-left: 0;
+		padding-right: 20px;
+	}
+
+	.main-navigation ul ul ul:after {
+		border-right-color: transparent;
+		border-left-color: #222;
+		left: auto;
+		right: 0;
+	}
+}
