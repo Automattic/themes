@@ -1,12 +1,12 @@
-<h2>Steps to replicate</h2>
+## Steps to replicate
 
 [Please include screenshots, browser information, and anything else that can help us recreate the problem.]
 
-<h2>Result</h2>
+## Result
 
 [What happened.]
 
-<h2>Expected</h2>
+## Expected
 
 [What you expected to happen.]
 
