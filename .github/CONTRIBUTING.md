@@ -7,7 +7,7 @@ These themes are maintained by the [Automattic Theme Team](https://themeshaper.c
 
 ## Submitting issues
 
-Before submitting your issue, make sure it has not been discussed earlier. You can search for existing tickets [here](https://github.com/Automattic/free-themes/search).
+Before submitting your issue, make sure it has not been discussed earlier. You can search for existing tickets [here](https://github.com/Automattic/themes/search).
 
 Here are some tips to consider and to help you write a great report:
 
