@@ -1,0 +1,530 @@
+/*
+Theme Name: Publication
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Primary Menu
+	## Social Menu
+# Accessibility
+# Widgets
+# Content
+	## Header
+	## Posts & Pages
+	## Comments
+# Jetpack
+	## Contact Form
+	## Infinite Scroll
+	## Sharedaddy
+	## Widgets
+# Eventbrite
+# Responsive
+	## x >= 540px
+	## x >= 768px
+	## x >= 1056px
+	## x >= 1272px
+	## x >= 1416px
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+blockquote blockquote {
+	margin-left: 0;
+	margin-right: 24px;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 24px;
+}
+table {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* Search */
+.search-form:before,
+.search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+.search-form .search-field {
+	padding-left: 42px;
+	padding-right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Primary Menu
+--------------------------------------------------------------*/
+/* Slide Menu */
+.slide-menu {
+	left: -100%;
+	right: auto;
+}
+.site {
+	left: auto;
+	right: 0;
+}
+.menu-open .site {
+	left: auto;
+	right: -100%;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+	left: 0;
+	right: auto;
+}
+.menu-toggle.toggled {
+	left: -100%;
+	right: auto;
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+	left: 0;
+	right: auto;
+}
+
+/* Main Navigation */
+.main-navigation ul ul.toggled {
+	border-left: 0;
+	border-right: 1px solid #333;
+	margin-left: 0;
+	margin-right: 24px;
+}
+.main-navigation ul ul.toggled:before {
+	left: auto;
+	right: -25px;
+}
+.main-navigation .page_item_has_children > a,
+.main-navigation .menu-item-has-children > a {
+	padding-left: 78px;
+	padding-right: 24px;
+}
+
+/*--------------------------------------------------------------
+## Social Menu
+--------------------------------------------------------------*/
+.social-navigation li {
+	float: right;
+	margin: 0 0 1px 1px;
+}
+.social-navigation li:last-child {
+	margin-left: 1px;
+	margin-right: -1px;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus {
+	left: auto;
+	right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* Custom Menu */
+.widget_nav_menu .page_item_has_children > a,
+.widget_nav_menu .menu-item-has-children > a {
+	padding-left: 45px;
+	padding-right: 0;
+}
+
+/* Lists */
+.widget_categories .children:before,
+.widget_nav_menu .sub-menu:before,
+.widget_pages .children:before {
+	left: auto;
+	right: -24px;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-branding {
+	margin-left: 54px;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Posts & Pages
+--------------------------------------------------------------*/
+/* Post Thumbnail */
+.post-thumbnail {
+	float: left;
+	margin: 0 12px 12px 0;
+}
+
+/* Page Links */
+.page-links > .page-links-title {
+	padding-left: 5px;
+	padding-right: 0;
+	text-align: right;
+}
+
+/* Entry Footer */
+.entry-footer .tags-links {
+	padding-left: 0;
+	padding-right: 24px;
+}
+.comments-link:before,
+.edit-link:before,
+.posted-on:before,
+.tags-links:before {
+	margin-left: 6px;
+	margin-right: 0;
+}
+.tags-links:before {
+	margin-right: -24px;
+}
+
+/* Entry Author */
+.author-avatar {
+	float: left;
+}
+.author-heading {
+	float: right;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-list .children:before {
+	left: auto;
+	right: -24px;
+}
+.comment-metadata .edit-link {
+	border-left: 0;
+	border-right: 1px solid #eee;
+	margin-left: 0;
+	margin-right: 6px;
+	padding-left: 0;
+	padding-right: 6px;
+}
+.comment-author .avatar {
+	float: right;
+	margin-left: 12px;
+	margin-right: 0;
+}
+.comment-reply-title small {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+# Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Contact Form
+--------------------------------------------------------------*/
+.site-content .contact-form input[type="checkbox"],
+.site-content .contact-form input[type="radio"] {
+	margin-left: 6px;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Infinite Scroll
+--------------------------------------------------------------*/
+/* Infinite Loader */
+.infinite-loader .spinner {
+	top: -37px !important;
+	left: 12px !important;
+}
+
+/*--------------------------------------------------------------
+## Sharedaddy
+--------------------------------------------------------------*/
+.hentry div.sd-rating h3.sd-title:before,
+.hentry div.sharedaddy h3.sd-title:before {
+	margin-left: 6px;
+	margin-right: 0;
+}
+.hentry div.sd-rating .pd-rating,
+.hentry div.sharedaddy .jetpack-likes-widget,
+.hentry div.sharedaddy .sd-content {
+	padding-left: 0;
+	padding-right: 24px;
+}
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+/* Gravatar Profile */
+.widget-grofile .grofile-thumbnail {
+	float: left;
+}
+
+/* RSS Links */
+.widget_rss_links p a + a {
+	margin-left: 0;
+	margin-right: 8px;
+}
+
+/*--------------------------------------------------------------
+# Eventbrite
+--------------------------------------------------------------*/
+.eventbrite-event .entry-header span {
+	padding-left: 12px;
+	padding-right: 0;
+}
+.eventbrite-event .entry-header span:last-of-type {
+	padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## x >= 540px
+--------------------------------------------------------------*/
+@media screen and (min-width: 540px) {
+	/* Hero */
+	.hentry-inner {
+		left: auto;
+		right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 768px
+--------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+	/* Primary Menu */
+	.menu-toggle {
+		left: 50%;
+		margin-left: -336px;
+		margin-right: 0;
+		right: auto;
+	}
+	.menu-toggle.toggled {
+		left: -50%;
+		right: auto;
+	}
+
+	/* Header */
+	.site-branding {
+		margin-left: 78px;
+		margin-right: 0;
+	}
+
+	/* Posts & Pages */
+	.entry-content,
+	.page-content {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+	.post-thumbnail {
+		margin-left: 0;
+		margin-right: 24px;
+	}
+
+	/* Hero */
+	.hero {
+		margin-left: 0;
+		margin-right: -144px;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1056px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1056px) {
+	/* Widgets */
+	.widget-column {
+		float: right;
+	}
+	.widget {
+		padding-left: 0;
+		padding-right: 48px;
+	}
+
+	/* Primary Menu */
+	.slide-menu {
+		left: -329px;
+		right: auto;
+	}
+	.menu-open .site {
+		left: auto;
+		right: -329px;
+	}
+	.menu-toggle {
+		left: 50%;
+		margin-left: -480px;
+		margin-right: 0;
+		right: auto;
+	}
+	.menu-toggle.toggled {
+		left: 50%;
+		right: auto;
+	}
+
+	/* Pagination */
+	body:not(.no-sidebar) .comment-navigation a,
+	body:not(.no-sidebar) .post-navigation a,
+	body:not(.no-sidebar) .posts-navigation a {
+		border-left: 0;
+		border-right: 1px solid #eee;
+	}
+
+	/* Content */
+	.site:before {
+		left: 0;
+		margin-left: -150px;
+		margin-right: 0;
+		right: auto;
+	}
+	.content-area {
+		float: right;
+	}
+	.widget-area {
+		float: left;
+	}
+	.no-sidebar .content-area {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/* Posts & Pages */
+	body:not(.no-sidebar) .entry-author,
+	body:not(.no-sidebar) .entry-content,
+	body:not(.no-sidebar) .entry-footer,
+	body:not(.no-sidebar) .hentry,
+	body:not(.no-sidebar).page .hentry:not(.has-post-thumbnail) .entry-header,
+	body:not(.no-sidebar) .page-content,
+	body:not(.no-sidebar).single .hentry:not(.has-post-thumbnail) .entry-header {
+		padding-right: 0;
+	}
+	body:not(.no-sidebar) .entry-author,
+	body:not(.no-sidebar) .entry-content,
+	body:not(.no-sidebar) .entry-footer,
+	body:not(.no-sidebar).page .hentry:not(.has-post-thumbnail) .entry-header,
+	body:not(.no-sidebar) .page-content,
+	body:not(.no-sidebar).single .hentry:not(.has-post-thumbnail) .entry-header {
+		padding-left: 48px;
+	}
+
+	/* Hero */
+	.hero {
+		margin-left: 0;
+		margin-right: -156px;
+	}
+	.no-sidebar .hero {
+		margin-left: 0;
+		margin-right: -306px;
+	}
+
+	/* Comments */
+	body:not(.no-sidebar) .comment-list,
+	body:not(.no-sidebar) .comment-respond,
+	body:not(.no-sidebar) .comments-title,
+	body:not(.no-sidebar) .no-comments {
+		padding-left: 48px;
+		padding-right: 0;
+	}
+
+	/* Sharedaddy */
+	div#jp-relatedposts {
+		padding-left: 48px;
+		padding-right: 0;
+	}
+	.no-sidebar div#jp-relatedposts {
+		padding-right: 48px;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1272px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1272px) {
+	/* Primary Menu */
+	.menu-toggle {
+		margin-left: -588px;
+		margin-right: 0;
+	}
+
+	/* Content */
+	.site:before {
+		margin-left: 0;
+	}
+	.widget {
+		padding-left: 48px;
+	}
+	.widget-column:after,
+	.widget-column + .widget-column:before {
+		left: 0;
+		right: auto;
+	}
+	.widget-column + .widget-column:before {
+		left: auto;
+		right: -1px;
+	}
+
+	/* Hero */
+	.hero {
+		margin-left: 0;
+		margin-right: -120px;
+	}
+	.no-sidebar .hero {
+		margin-left: 0;
+		margin-right: -378px;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1416px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1416px) {
+	/* Primary Menu */
+	.menu-toggle {
+		margin-left: -660px;
+		margin-right: 0;
+	}
+
+	/* Hero */
+	.hero {
+		margin-left: 0;
+		margin-right: -340px;
+	}
+	.no-sidebar .hero {
+		margin-left: 0;
+		margin-right: -670px;
+	}
+}
