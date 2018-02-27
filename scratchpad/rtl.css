@@ -1,0 +1,503 @@
+/*
+Theme Name: Scratchpad
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+2.0 Elements
+--------------------------------------------------------------*/
+
+blockquote {
+	padding-left: 0;
+	padding-right: 70px;
+}
+
+blockquote:before {
+	left: auto;
+	right: 0;
+}
+
+ul,
+ol {
+	margin-left: 0;
+	margin-right: 3em;
+}
+
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 2em;
+}
+
+table td,
+table th {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+3.0 Forms
+--------------------------------------------------------------*/
+
+textarea {
+	padding-left: 0;
+	padding-right: 3px;
+}
+
+/*--------------------------------------------------------------
+3.1 Search
+--------------------------------------------------------------*/
+
+.search-form label:before {
+	left: 0;
+	right: auto;
+}
+
+.search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+5.0 Structure
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: right;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+#primary {
+	float: right;
+}
+
+#secondary {
+	float: left;
+}
+
+.no-sidebar #primary {
+	float: none;
+}
+
+/*--------------------------------------------------------------
+9.1 Menus
+--------------------------------------------------------------*/
+
+.main-navigation ul {
+	padding-right: 0;
+}
+
+.main-navigation .wrap div > ul > li:last-of-type {
+	margin-left: 0;
+}
+
+.main-navigation ul ul {
+	float: right;
+	left: auto;
+	margin-left: 0;
+	margin-right: -100px;
+	right: -999em;
+}
+
+.main-navigation ul ul ul {
+	padding-left: 0;
+	padding-right: 8px;
+}
+
+.main-navigation ul ul ul:before {
+	border-width: 8px 0 8px 8px;
+	border-color: transparent transparent transparent #84a0a2;
+	left: auto;
+	margin-right: 0;
+	right: 0;
+}
+
+.main-navigation ul ul ul {
+	left: auto;
+	right: -999em;
+	margin-right: 0;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+	right: 50%;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: auto;
+	right: 100%;
+}
+
+.menu-item-has-children > a:after {
+	margin-left: 0;
+	margin-right: 5px;
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+/*--------------------------------------------------------------
+10.2 Index, Archive, Search
+--------------------------------------------------------------*/
+
+.format-standard .featured-image .paperclip,
+.format-chat .featured-image .paperclip,
+.type-page .featured-image .paperclip,
+.single .featured-image .paperclip {
+	left: 70px;
+	right: auto;
+}
+
+body:not(.single) .format-standard:before,
+body:not(.single) .format-chat:before,
+.search .type-page:before {
+	left: auto;
+	right: -40px;
+}
+
+body:not(.single) .format-standard:after,
+body:not(.single) .format-chat:after,
+.search .type-page:after {
+	left: -40px;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+10.7 Link
+--------------------------------------------------------------*/
+
+body:not(.single) .format-link .binderclip {
+	left: 10px;
+	right: auto;
+}
+
+body:not(.single) .format-link:before {
+	-webkit-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+/*--------------------------------------------------------------
+10.9 Status
+--------------------------------------------------------------*/
+
+body:not(.single) .format-status .pen {
+	left: -200px;
+	right: auto;
+	top: 150px;
+	-webkit-transform: rotate(85deg);
+	-ms-transform: rotate(85deg);
+	transform: rotate(85deg);
+}
+
+
+
+/*--------------------------------------------------------------
+10.10 Video Format
+--------------------------------------------------------------*/
+
+body:not(.single) .format-video .entry-video .movie-ticket:nth-of-type(1) {
+	left: auto;
+	right: -34px;
+	-webkit-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+}
+
+body:not(.single) .format-video .entry-video .movie-ticket:nth-of-type(2) {
+	left: auto;
+	right: -75px;
+	-webkit-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+}
+
+/*--------------------------------------------------------------
+10.12 Single Posts
+--------------------------------------------------------------*/
+
+.single #primary .author-avatar {
+	float: right;
+}
+
+.single #primary .author-description {
+	float: left;
+}
+
+/* Post Navigation */
+
+.post-navigation-container .nav-previous,
+.post-navigation-container .nav-next {
+	float: none;
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+10.14 Comments
+--------------------------------------------------------------*/
+
+#comments .comment .comment-body {
+	padding-left: 0;
+	padding-right: 100px;
+}
+
+#comments .avatar-container {
+	left: auto;
+	right: 0;
+}
+
+#comments ol.children {
+	padding-left: 0;
+	padding-right: 40px;
+}
+
+#comments ol.children .comment-body {
+	padding-left: 0;
+	padding-right: 85px;
+}
+
+.comments-form-contain .stamp {
+	left: 60px;
+	right: auto;
+}
+
+.comments-form-contain .post-mark {
+	left: 75px;
+	right: auto;
+}
+
+.comments-form-contain .comment-form-comment {
+	float: right;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	float: left;
+}
+
+.logged-in .comments-form-contain .comment-form-comment {
+	float: none;
+}
+
+.comments-form-contain .post-mark {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/*--------------------------------------------------------------
+11.1 Error Pages
+--------------------------------------------------------------*/
+
+.no-sidebar:not(.error404) .page-header,
+.error404 #primary {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+12.3 Audio Player
+--------------------------------------------------------------*/
+
+article .mejs-container .mejs-controls,
+article .mejs-container.mejs-audio .mejs-controls {
+	left: auto;
+	right: 4%;
+}
+
+/*--------------------------------------------------------------
+13.1 Recipe Shortcode
+--------------------------------------------------------------*/
+
+.entry-content .jetpack-recipe .jetpack-recipe-meta {
+	float: right;
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+.entry-content .jetpack-recipe-meta li.jetpack-recipe-print {
+	text-align: right;
+}
+
+.entry-content .jetpack-recipe .jetpack-recipe-content {
+	border-left: none;
+	border-right: 2px dotted rgba(14, 115, 226,0.2);
+	margin-left: 0;
+	margin-right: 160px;
+}
+
+.entry-content .jetpack-recipe .jetpack-recipe-content ul,
+.entry-content .jetpack-recipe .jetpack-recipe-content ol {
+	margin-left: 0;
+	margin-right: 2em;
+}
+
+/*--------------------------------------------------------------
+16.0 Footer
+--------------------------------------------------------------*/
+
+#footer-widgets .widget {
+	margin-left: 3.33%;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+17.0 Widgets
+--------------------------------------------------------------*/
+
+.widget_archive ul ul,
+.widget_categories ul ul,
+.widget_links ul ul,
+.widget_meta ul ul,
+.widget_nav_menu ul ul,
+.widget_pages ul ul,
+.widget_recent_entries ul ul,
+.widget_recent_comments ul ul,
+.widget_rss ul ul {
+	margin-left: 0;
+	margin-right: 15px;
+}
+
+/* Widget Calendar */
+.widget_calendar caption {
+	text-align: right;
+}
+
+.widget_calendar #next {
+	text-align: left;
+}
+
+.widget_calendar #prev {
+	text-align: right;
+}
+
+#secondary .widget:nth-of-type(4n+1),
+#secondary .widget:nth-of-type(4n+3) {
+	left: auto;
+	right: -20px;
+}
+
+/*--------------------------------------------------------------
+19.0 Media Queries
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1000px) {
+	/* Content */
+	#primary,
+	.single #primary,
+	.page #primary {
+		float: none;
+	}
+
+	#secondary,
+	.single #secondary,
+	.page #secondary {
+		float: none;
+	}
+
+	#secondary .widget:nth-of-type(4n+1),
+	#secondary .widget:nth-of-type(4n+3) {
+		right: auto;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	/* Mobile menu toggle */
+	.main-navigation {
+		float: none;
+	}
+
+	.menu-toggle:before {
+		margin-left: 8px;
+		margin-right: 0;
+	}
+
+	.main-navigation .wrap div > ul > li {
+		float: none;
+		text-align: right;
+	}
+
+	.main-navigation ul ul {
+		float: none;
+		margin-left: 0;
+		margin-right: 20px;
+	}
+
+	/* Comments */
+	.comments-form-contain .comment-form-comment,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		float: none;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.format-standard .featured-image .paperclip,
+	.format-chat .featured-image .paperclip,
+	.type-page .featured-image .paperclip,
+	.single .featured-image .paperclip {
+		left: 30px;
+		right: auto;
+	}
+
+	/* Post flair */
+	div#jp-relatedposts div.jp-relatedposts-items-visual div.jp-relatedposts-post-nothumbs {
+		float: none;
+		margin-left: 0;
+	}
+
+	.single #primary .author-avatar {
+		float: none;
+	}
+
+	.single #primary .author-description {
+		float: none;
+	}
+
+	/* Comments */
+
+	.comments-form-contain .stamp {
+		left: 30px;
+		right: auto;
+	}
+
+	#comments .comment .comment-body,
+	#comments ol.children .comment-body,
+	#comments ol.children ol.children {
+		padding-right: 0;
+	}
+
+	/* Recipe Shortcode */
+	.entry-content .jetpack-recipe .jetpack-recipe-meta {
+		float: none;
+		padding: 0 10px;
+	}
+
+	.entry-content .jetpack-recipe .jetpack-recipe-meta li {
+		padding: 0;
+	}
+	.entry-content .jetpack-recipe .jetpack-recipe-content {
+		margin-right: 0;
+		padding: 0 20px;
+	}
+}
+
