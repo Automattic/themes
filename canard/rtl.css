@@ -1,0 +1,679 @@
+/*
+Theme Name: Canard
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Primary Menu
+	## Social Menu
+	## Secondary Menu
+	## Paging Navigation
+# Accessibility
+# Widgets
+# Content
+	## Header
+	## Featured Content
+	## Posts & Pages
+	## Comments
+# Media
+# Jetpack
+	## Infinite Scroll
+	## Recipes
+	## Widgets
+# Eventbrite
+# Responsive
+	## x >= 600px
+	## x >= 768px
+	## x >= 960px
+	## x >= 1080px
+	## x >= 1380px
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+blockquote:before {
+	float: right;
+}
+blockquote blockquote {
+	margin-left: 0;
+	margin-right: 30px;
+}
+pre {
+	border-left: 0;
+	border-right: 2px solid #d11415;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 30px;
+}
+table {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* Search Form */
+.search-form:before {
+	left: 6px;
+	right: auto;
+}
+.search-form .search-field {
+	padding-left: 45px;
+	padding-right: 6.5px;
+}
+.search-form .search-submit {
+	left: 5px;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Primary Menu
+--------------------------------------------------------------*/
+/* Dropdown Toggle */
+.dropdown-toggle,
+.menu-toggle {
+	left: 0;
+	right: auto;
+}
+
+.main-navigation.toggled > div::before {
+	left: 16.5px;
+	right: auto;
+}
+
+/* Main Navigation */
+.main-navigation ul {
+	padding-right: 0;
+}
+.main-navigation ul.toggled {
+	padding-left: 0;
+	padding-right: 30px;
+}
+.main-navigation .page_item_has_children > a,
+.main-navigation .menu-item-has-children > a {
+	padding-left: 45px;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Social Menu
+--------------------------------------------------------------*/
+.social-navigation li {
+	float: right;
+}
+.social-navigation li:first-child {
+	margin-left: 5px;
+	margin-right: 0;
+}
+.social-navigation li:last-child {
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+## Secondary Menu
+--------------------------------------------------------------*/
+.secondary-navigation li {
+	float: right;
+}
+.secondary-navigation li:first-child {
+	padding-left: 10px;
+	padding-right: 0;
+}
+.secondary-navigation li:last-child {
+	padding-left: 0;
+	padding-right: 10px;
+}
+.secondary-navigation li + li {
+	border-left: 0;
+	border-right: 1px solid #444;
+}
+
+/*--------------------------------------------------------------
+## Paging Navigation
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous {
+	float: right;
+}
+.comment-navigation .nav-next,
+.posts-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus {
+	left: auto;
+	right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget-area:before {
+	left: auto;
+	right: 0;
+}
+
+/* Sidebar Toggle */
+.sidebar-toggle {
+	left: auto;
+	margin-left: 0;
+	margin-right: -22.5px;
+	right: 50;
+}
+
+/* Footer Widget */
+.footer-widget-inner .widget:nth-of-type(4n+1) {
+	clear: right;
+	margin-right: 0;
+}
+.footer-widget-inner .widget:nth-of-type(4n+4) {
+	clear: left;
+	margin-left: 0;
+}
+
+/* Lists */
+.widget_archive ul,
+.widget_categories ul,
+.widget_links ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_pages ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+	margin-right: 0;
+}
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+/* Tag Cloud */
+.widget_tag_cloud a:before {
+	margin-left: 0.125em;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+/* Site Header */
+.site-header {
+	border-bottom: 1px solid #ddd;
+	padding: 30px 0;
+	position: relative;
+	width: 100%;
+}
+
+/* Site Top */
+.site-top {
+	background: #222;
+	color: #aaa;
+	margin-bottom: 30px;
+	margin-top: -30px;
+	padding: 7.5px 0;
+}
+
+/* Search Navigation */
+.search-header .search-form:before {
+	left: 13.5px;
+	right: auto;
+}
+.search-header .search-form .search-submit {
+	left: 12.5px;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+## Featured Content
+--------------------------------------------------------------*/
+.featured-content .hentry {
+	float: right;
+}
+
+/*--------------------------------------------------------------
+## Posts & Pages
+--------------------------------------------------------------*/
+/* Sticky */
+.sticky-post {
+	left: 15px;
+	right: auto;
+}
+
+/* Entry Footer */
+.entry-footer {
+	float: right;
+}
+.tags-links a:before {
+	margin-left: 0.125em;
+	margin-right: 0;
+}
+
+/* Page Links */
+.page-links a,
+.page-links > span {
+	margin: 0 0 5px 5px;
+}
+.page-links > .page-links-title {
+	padding-left: 5px;
+	padding-right: 0;
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-list .comment-respond {
+	margin-left: 0;
+	margin-right: 30px;
+}
+.comment-author .avatar {
+	float: right;
+	margin-left: 15px;
+	margin-right: 0;
+}
+.comment-metadata .edit-link:before {
+	margin-left: 0.2em;
+	margin-right: 0;
+}
+.comment-list .comment-reply-title small {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.gallery-caption {
+	left: auto;
+	right: 0;
+}
+
+/*--------------------------------------------------------------
+# Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Infinite Scroll
+--------------------------------------------------------------*/
+.infinite-loader .spinner {
+	left: auto !important;
+	right: 50% !important;
+}
+
+/*--------------------------------------------------------------
+## Recipes
+--------------------------------------------------------------*/
+.site-content .jetpack-recipe blockquote {
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+/* Gravatar Profile */
+.widget-grofile .grofile-thumbnail {
+	float: left;
+}
+
+/* RSS Links */
+.widget_rss_links ul {
+	margin-right: 0;
+}
+.widget_rss_links p a + a {
+	margin-left: 0;
+	margin-right: 11px;
+}
+
+/*--------------------------------------------------------------
+# Eventbrite
+--------------------------------------------------------------*/
+.eventbrite-event .entry-header span {
+	padding-left: 12px;
+	padding-right: 0;
+}
+.eventbrite-event .entry-header span:last-of-type {
+	padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## x >= 600px
+--------------------------------------------------------------*/
+@media screen and (min-width: 600px) {
+	/* Paging Navigation */
+	.comment-navigation .nav-next a:after,
+	.comment-navigation .nav-previous a:before,
+	.posts-navigation .nav-next a:after,
+	.posts-navigation .nav-previous a:before {
+		content: '\f430';
+	}
+	.comment-navigation .nav-previous a:before,
+	.posts-navigation .nav-previous a:before {
+		content: '\f429';
+	}
+
+	/* Widgets */
+	.sidebar-toggle {
+		margin-left: 0;
+		margin-right: -30px;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 768px
+--------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+	/* Grid */
+	.footer-widget-inner .widget {
+		float: right;
+	}
+	.footer-widget-inner .widget:nth-of-type(even) {
+		clear: left;
+		margin-left: 0;
+		margin-right: 30px;
+	}
+	.footer-widget-inner .widget:nth-of-type(odd) {
+		clear: right;
+		margin-left: 30px;
+		margin-right: 0;
+	}
+
+	/* Featured Content */
+	.blog .featured-content .hentry:nth-of-type(2),
+	.blog .featured-content .hentry:nth-of-type(4) {
+		margin-left: 30px;
+		margin-right: 0;
+	}
+
+	/* Posts & Pages */
+	.content-area .format-standard a.post-thumbnail {
+		float: right;
+		margin-left: 30px;
+		margin-right: 0;
+	}
+	.content-area .format-standard.has-post-thumbnail .entry-header {
+		float: left;
+	}
+	.content-area .format-standard.has-post-thumbnail > .entry-meta,
+	.content-area .format-standard.has-post-thumbnail .entry-summary {
+		clear: left;
+	}
+	.author-info .author-avatar {
+		float: left;
+	}
+
+	/* Post Formats */
+	.post-link {
+		float: right;
+		margin-left: 30px;
+		margin-right: 0;
+	}
+	.archive .format-link .entry-header,
+	.blog .format-link .entry-header,
+	.search .format-link .entry-header {
+		float: left;
+	}
+	.archive .format-link > .entry-meta,
+	.blog .format-link > .entry-meta,
+	.search .format-link > .entry-meta,
+	.archive .format-link .entry-summary,
+	.blog .format-link .entry-summary,
+	.search .format-link .entry-summary {
+		clear: left;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 960px
+--------------------------------------------------------------*/
+@media screen and (min-width: 960px) {
+	/* Primary Menu */
+	.main-navigation {
+		float: right;
+	}
+	.main-navigation.toggled > div {
+		right: auto;
+	}
+	.main-navigation ul.toggled {
+		padding-right: 0;
+	}
+	.main-navigation li {
+		float: right;
+	}
+	.main-navigation .nav-menu > li + li {
+		border-left: 0;
+		border-right: 1px solid #eee;
+	}
+	.main-navigation .menu-item-has-children {
+		padding-left: 38.5px;
+		padding-right: 15px;
+	}
+	.main-navigation .page_item_has_children > a,
+	.main-navigation .menu-item-has-children > a {
+		padding-left: 0;
+	}
+	.main-navigation .menu-item-has-children > a:after {
+		left: 15px;
+		right: auto;
+	}
+	.main-navigation ul ul .menu-item-has-children > a:after {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	.main-navigation ul ul {
+		float: right;
+		left: auto;
+		right: -999em;
+	}
+	.main-navigation ul ul ul {
+		left: 0;
+		right: -999em;
+	}
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul .focus > ul {
+		right: auto;
+		margin-left: 0;
+		margin-right: -16px;
+	}
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul .focus > ul {
+		left: auto;
+		right: 100%;
+	}
+
+	/* Social Menu */
+	.social-navigation {
+		float: left;
+		padding-left: 0;
+		padding-right: 15px;
+	}
+
+	/* Secondary Menu */
+	.secondary-navigation {
+		float: right;
+	}
+
+	/* Footer Menu */
+	.footer-navigation li {
+		float: right;
+	}
+	.footer-navigation li:first-child {
+		padding-left: 10px;
+		padding-right: 0;
+	}
+	.footer-navigation li:last-child {
+		padding-left: 0;
+		padding-right: 10px;
+	}
+	.footer-navigation li + li {
+		border-left: 0;
+		border-right: 1px solid #eee;
+	}
+
+	/* Grid */
+	.comments-area {
+		margin-left: -60px;
+		margin-right: 0;
+		padding-left: 60px;
+		padding-right: 0;
+	}
+	.site-main {
+		border-left: 1px solid #ddd;
+		border-right: 0;
+		float: right;
+		padding-left: 60px;
+		padding-right: 0;
+	}
+	.widget-area {
+		border-left: 0;
+		border-right: 1px solid #ddd;
+		float: left;
+		margin-left: 0;
+		margin-right: -1px;
+		padding-left: 0;
+		padding-right: 60px;
+	}
+	.footer-widget-inner .widget:nth-of-type(4n+1) {
+		clear: right;
+		margin-left: 30px;
+		margin-right: 0;
+	}
+	.footer-widget-inner .widget:nth-of-type(4n+4) {
+		clear: left;
+		margin-left: 0;
+		margin-right: 30px;
+	}
+
+	/* Featured Content */
+	.blog .featured-content .hentry:first-of-type {
+		margin-left: 30px;
+		margin-right: 0;
+	}
+	.blog .featured-content .hentry:nth-of-type(2) {
+		margin-left: 0;
+	}
+	.blog .featured-content .hentry:nth-of-type(3) {
+		margin-left: 30px;
+		margin-right: 0;
+	}
+
+	/* Posts & Pages */
+	.author-info {
+		margin-left: 0;
+		margin-right: -60px;
+		padding-left: 0;
+		padding-right: 60px;
+	}
+
+	/* Comments */
+	.comment-list:before,
+	.comment-navigation + .comment-respond:before {
+		left: -60px;
+		right: auto;
+	}
+
+	/* Sharedaddy */
+	div#jp-relatedposts:before {
+		left: -60px;
+		right: auto;
+	}
+	.hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post:first-of-type {
+		margin-left: 15px;
+		margin-right: 0;
+	}
+	.hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post:last-of-type {
+		margin-left: 0;
+		margin-right: 15px;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1080px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1080px) {
+	/* Featured Content */
+	.blog .featured-content .hentry:first-of-type {
+		margin-left: 0;
+	}
+	.blog .featured-content .hentry:nth-of-type(2),
+	.blog .featured-content .hentry:nth-of-type(3) {
+		margin-left: 0;
+		margin-right: 30px;
+	}
+	.blog .featured-content .hentry:nth-of-type(4),
+	.blog .featured-content .hentry:nth-of-type(5) {
+		margin-left: 0;
+	}
+	.blog .featured-content .hentry:nth-of-type(5) {
+		margin-left: 0;
+		margin-right: 330px;
+	}
+
+	/* Posts & Pages */
+	.author-info .author-heading {
+		float: right;
+	}
+
+	/* Featured Content */
+	.blog .featured-content .hentry:nth-of-type(2),
+	.blog .featured-content .hentry:nth-of-type(3) {
+		margin-left: 0;
+		margin-right: 30px;
+	}
+	.blog .featured-content .hentry:nth-of-type(5) {
+		margin-left: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1380px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1380px) {
+	/* Grid */
+	div#jp-relatedposts,
+	.comments-area,
+	.single .entry-content {
+		float: left;
+	}
+}
