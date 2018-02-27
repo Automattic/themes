@@ -1,0 +1,884 @@
+/*
+Theme Name: TextBook
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Languagecomponentsupport
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.screen-reader-text:focus {
+  left: inherit;
+  right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+  margin-right: inherit;
+}
+
+.alignright {
+  display: inline;
+  float: left;
+  margin-left: inherit;
+  margin-right: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+blockquote {
+  margin: 0 1.5em 0 0;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+textarea {
+  padding-right: 3px;
+  padding-left: inherit;
+}
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Formatting
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+ul, ol {
+  margin: 0 27px 1.5em 0;
+}
+
+li > ul,
+li > ol {
+  margin-left: inherit;
+  margin-right: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Tables
+--------------------------------------------------------------*/
+table th,
+table td {
+  text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/* Small menu. */
+.menu-toggle {
+  float: left;
+  margin-left: 5px;
+  margin-right: inherit;
+}
+
+.main-navigation {
+  left: 10px;
+  right: inherit;
+}
+
+.main-navigation ul {
+  padding-left: inherit;
+  padding-right: 0;
+}
+
+.main-navigation > div > ul {
+  padding-left: inherit;
+  padding-right: 0;
+}
+
+.main-navigation > div > ul li:before {
+  left: inherit;
+  right: 0;
+}
+
+.main-navigation > div > ul li:hover > ul,
+.main-navigation > div > ul li.focus > ul {
+  left: inherit;
+  right: auto;
+}
+
+.main-navigation .sub-menu:before,
+.main-navigation .children:before {
+  left: inherit;
+  right: 0;
+}
+
+.main-navigation .sub-menu ul:before,
+.main-navigation .children ul:before {
+  left: inherit;
+  right: 0;
+}
+
+.main-navigation .sub-menu li:before,
+.main-navigation .children li:before {
+  left: inherit;
+  right: 0;
+}
+
+.main-navigation .sub-menu li.menu-item-has-children:hover ul a,
+.main-navigation .sub-menu li.page_item_has_children:hover ul a,
+.main-navigation .children li.menu-item-has-children:hover ul a,
+.main-navigation .children li.page_item_has_children:hover ul a {
+  padding-left: inherit;
+  padding-right: 40.5px;
+}
+
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a {
+  padding: 20.25px 20.25px 20.25px 55px;
+}
+
+.main-navigation .dropdown-toggle {
+  left: -1px;
+  right: inherit;
+}
+
+@media screen and (min-width: 50em) {
+  .main-navigation {
+    left: inherit;
+  }
+  .main-navigation .menu-item-has-children a,
+  .main-navigation .page_item_has_children a {
+    padding: 20px 20px 20px 35px;
+  }
+  .main-navigation .sub-menu,
+  .main-navigation .children {
+    float: right;
+    left: inherit;
+    right: -999em;
+  }
+  .main-navigation .sub-menu ul,
+  .main-navigation .children ul {
+    left: inherit;
+    right: -999em;
+  }
+  .main-navigation .sub-menu li:hover > ul,
+  .main-navigation .sub-menu li .focus > ul,
+  .main-navigation .children li:hover > ul,
+  .main-navigation .children li .focus > ul {
+	left: inherit;
+    right: 100%;
+  }
+  .main-navigation .sub-menu li.menu-item-has-children:hover ul a, .main-navigation .sub-menu li.page_item_has_children:hover ul a,
+  .main-navigation .children li.menu-item-has-children:hover ul a,
+  .main-navigation .children li.page_item_has_children:hover ul a {
+    padding-left: inherit;
+    padding-right: 20.25px;
+  }
+  .main-navigation.add-seperators > div > ul > li:before {
+    left: inherit;
+    right: 0;
+  }
+  .main-navigation .dropdown-toggle {
+    left: 19px;
+    right: inherit;
+  }
+}
+
+.footer-navigation > div > ul {
+  margin: 0 -13.5px 0 0 ;
+  padding-left: inherit;
+  padding-right: 0;
+}
+
+.posts-navigation .nav-previous:before,
+.post-navigation .nav-previous:before,
+.comment-navigation .nav-previous:before {
+  left: inherit;
+  right: 0;
+}
+
+.posts-navigation .nav-next:before,
+.post-navigation .nav-next:before,
+.comment-navigation .nav-next:before {
+  left: inherit;
+  right: 0;
+}
+
+.posts-navigation a .meta-nav:before,
+.post-navigation a .meta-nav:before,
+.comment-navigation a .meta-nav:before {
+  left: inherit;
+  right: 0;
+}
+
+@media screen and (min-width: 37.5em) {
+  .posts-navigation .nav-previous:before,
+  .post-navigation .nav-previous:before,
+  .comment-navigation .nav-previous:before {
+    border-left: 1px solid #b23f33;
+    border-right: none;
+    right: inherit;
+    left: 0;
+  }
+  .posts-navigation .nav-previous:before,
+  .post-navigation .nav-previous:before,
+  .comment-navigation .nav-previous:before {
+    left: -1px;
+    right: inherit;
+  }
+  .posts-navigation .nav-next:before,
+  .post-navigation .nav-next:before,
+  .comment-navigation .nav-next:before {
+    border-left: none;
+    border-right: 1px solid #b23f33;
+    left: inherit;
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Content
+--------------------------------------------------------------*/
+@media screen and (min-width: 50em) {
+  .content-area {
+    float: right;
+    margin: 0 0 0 -25%;
+  }
+  .site-main {
+    margin: 0 0 0 calc(25% + 27px);
+  }
+}
+
+/*--------------------------------------------------------------
+## Content Widget Area
+--------------------------------------------------------------*/
+.site-content #secondary .widget:before {
+  left: inherit;
+  right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .site-content #secondary {
+    float: left;
+    width: 25%;
+  }
+}
+
+/*--------------------------------------------------------------
+## Responsive Layout Styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-branding {
+  padding-left: 70px;
+  padding-right: inherit;
+}
+
+/*--------------------------------------------------------------
+# Header Search
+--------------------------------------------------------------*/
+.search-toggle {
+  text-align: left;
+}
+
+.search-box .search-submit {
+  float: right;
+}
+
+.search-box .search-field {
+  float: left;
+}
+
+@media screen and (min-width: 50em) {
+  .main-navigation > .search-box-wrapper.toggled-on,
+  .main-navigation .search-box-wrapper {
+    left: inherit;
+    right: 27px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Header Image
+--------------------------------------------------------------*/
+@media screen and (min-width: 50em) {
+  .header-image .site-header:before {
+    left: inherit;
+    right: 0;
+  }
+
+  .single.header-image .site-header:before,
+  .page.header-image .site-header:before,
+  .archive.header-image .site-header:before,
+  .search.header-image .site-header:before {
+    left: inherit;
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## Features
+--------------------------------------------------------------*/
+.featured-content-inner .hentry:nth-of-type(3n+1):before {
+  border-left: none;
+  border-right: 1px solid #b23f33;
+  left: inherit;
+  right: 0;
+}
+
+.featured-content-inner .hentry:nth-of-type(3n+2):before {
+  border-left: none;
+  border-right: 1px solid #259275;
+  left: inherit;
+  right: 0;
+}
+
+.featured-content-inner .hentry:nth-of-type(3n+3):before {
+  border-left: none;
+  border-right: 1px solid #7c6c9E;
+  left: inherit;
+  right: 0;
+}
+
+.featured-content-inner .hentry .entry-meta .posted-on .entry-date {
+  text-align: right;
+}
+
+.featured-content-inner .hentry .entry-meta .posted-on .day {
+  padding-left: 10px;
+  padding-right: inherit;
+}
+
+.featured-content-inner .hentry .entry-meta .posted-on .month-year {
+  text-align: right;
+}
+
+@media screen and (min-width: 50em) {
+  .featured-content-header {
+    float: right;
+  }
+  .featured-page-highlight {
+    float: left;
+    clear: both;
+    padding: 0 27px 0 54px;
+  }
+  .featured-page-highlight .hentry {
+    left: inherit;
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## Featured Content Page Highlight
+--------------------------------------------------------------*/
+.featured-page-highlight .hentry .entry-meta:before {
+  left: inherit;
+  right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  .featured-page-highlight {
+    float: left;
+    clear: both;
+    padding: 0 27px 0 54px;
+  }
+  .featured-page-highlight .hentry {
+    left: inherit;
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## Testimonials
+--------------------------------------------------------------*/
+.testimonials .hentry:nth-of-type(3n+1) .speech-triangle {
+  border-left-color: none;
+  border-right-color: #b23f33;
+}
+
+.testimonials .hentry:nth-of-type(3n+2) .speech-triangle {
+  border-left-color: none;
+  border-right-color: #259275;
+}
+
+.testimonials .hentry:nth-of-type(3n+3) .speech-triangle {
+  border-left-color: none;
+  border-right-color: #7c6c9E;
+}
+
+.testimonials .entry-meta .posted-on .entry-date {
+  text-align: right;
+}
+
+.testimonials .entry-meta .posted-on .day {
+  padding-left: 10px;
+  padding-right: inherit;
+}
+
+.testimonials .entry-meta .posted-on .month-year {
+  text-align: right;
+}
+
+.testimonials .entry-content:before, .testimonials .entry-content:after {
+  left: inherit;
+  right: calc(40%);
+}
+
+.testimonials .entry-content:after {
+  left: inherit;
+  right: calc(40% + 1px);
+}
+
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
+.hentry form > label,
+.hentry form > p > label {
+  float: right;
+}
+
+.single .hentry .entry-header:before {
+  left: inherit;
+  right: 0;
+}
+
+.single .hentry .entry-meta {
+  margin-left: -1px;
+  margin-right: inherit;
+}
+
+.single .hentry .entry-meta:before {
+  left: 0;
+  right: inherit;
+}
+
+.single .hentry .posted-on .day {
+  padding-left: 10px;
+  padding-right: inherit;
+}
+
+.single .hentry .posted-on .month-year {
+  text-align: right;
+}
+
+.single .hentry .posted-on:before {
+  left: -1px;
+  right: inherit;
+}
+
+.single .hentry .post-thumbnail:before {
+  left: inherit;
+  right: 0;
+}
+
+.single .hentry .cat-links li {
+  float: right;
+  margin: 0 0 5px 5px;
+}
+
+.single .hentry .byline .avatar {
+  margin-left: 5px;
+  margin-right: inherit;
+}
+
+@media screen and (min-width: 37.5em) {
+  .single .hentry .entry-title:before {
+    left: inherit;
+    right: 1px;
+  }
+  .single .hentry .entry-title:before:before {
+    border-left: none;
+    border-right: 1px solid #b23f33;
+    left: inherit;
+    right: 0;
+  }
+  .single .hentry .entry-meta {
+    margin-right: inherit;
+    margin-left: -1px;
+  }
+  .single .hentry .entry-meta:before {
+    border-left: 1px solid #b23f33;
+    border-right: inherit;
+    right: inherit;
+    left: 0;
+  }
+  .single .hentry .entry-meta:before {
+    left: -1px;
+    right: inherit;
+  }
+  .single .hentry .posted-on:before {
+    border-left: none;
+    border-right: inherit;
+  }
+  .single .hentry .entry-content {
+    float: left;
+    clear: right;
+    margin: 0 25% 0 0;
+  }
+  .single .hentry .entry-footer {
+    float: right;
+    margin: 0 0 0 -25%;
+    width: 25%;
+  }
+  .single .hentry .cat-links li {
+    float: none;
+    margin: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comments-area > ol .children {
+  margin-left: inherit;
+  padding-left: inherit;
+  margin-right: 10px;
+  padding-right: 0;
+}
+
+.comment-reply-title small {
+  float: left;
+  text-align: left;
+}
+
+.comment-body .avatar {
+  left: 27px;
+  right: inherit;
+}
+
+.comment-body .reply {
+  float: left;
+}
+
+.comment-body .comment-likes {
+  margin-right: inherit;
+}
+
+@media screen and (min-width: 50em) {
+  .comments-area > ol .children {
+    margin-left: inherit;
+    margin-right: 54px;
+  }
+  .comment-body .avatar {
+    left: inherit;
+    right: 54px;
+  }
+  .comment-body .comment-content {
+    margin-left: 81px;
+    margin-right: inherit;
+  }
+  .comment-body .comment-meta {
+    padding-left: inherit;
+    padding-right: 71.99982px;
+  }
+  #content .comment-body .edit-link {
+    float: left;
+  }
+}
+
+/*--------------------------------------------------------------
+## Cards
+--------------------------------------------------------------*/
+.card {
+  float: right;
+  margin: 0 0 1.65em 27px;
+}
+
+.card .entry-header .entry-meta:before {
+  left: inherit;
+  right: 0;
+}
+
+.card .entry-content {
+  left: inherit;
+  right: 0;
+}
+
+.card .entry-content .edit-link {
+  left: 0;
+  right: inherit;
+}
+
+.card .entry-content .entry-meta:before {
+  left: inherit;
+  right: 0;
+}
+
+.card.sticky:after {
+  left: 12px;
+  right: inherit;
+}
+
+@media screen and (min-width: 37.5em) {
+  .card:nth-of-type(2n) {
+    margin-left: 0;
+    margin-right: inherit;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .card:nth-of-type(2n) {
+    margin-left: 27px;
+    margin-right: inherit;
+  }
+  .card:nth-of-type(3n) {
+    margin-left: 0;
+    margin-right: inherit;
+  }
+}
+
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+.entry-breadcrumbs:before {
+  left: inherit;
+  right: 0;
+}
+
+@media screen and (min-width: 37.5em) {
+  .single .hentry:not(.post):before,
+  .page .page:before {
+    left: inherit;
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+## Footer Widget Area
+--------------------------------------------------------------*/
+.footer-widget-area .widget:nth-of-type(4n+2):before {
+  left: inherit;
+  right: 0;
+}
+
+.footer-widget-area .widget:nth-of-type(4n+3):before {
+  left: inherit;
+  right: 0;
+}
+
+.footer-widget-area .widget:nth-of-type(4n+4):before {
+  left: inherit;
+  right: 0;
+}
+
+@media screen and (min-width: 60em) {
+  .footer-widget-area .widget {
+    margin-left: 0;
+    margin-right: 27px;
+    padding: 0.825em 0 1.65em 27px;
+  }
+  .footer-widget-area .widget:nth-of-type(4n+2):before,
+  .footer-widget-area .widget:nth-of-type(4n+3):before,
+  .footer-widget-area .widget:nth-of-type(4n+4):before {
+    border-width: 0 1px 0 0;
+    left: inherit;
+    right: -27px;
+  }
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+@media screen and (min-width: 37.5em) {
+  .site-info,
+  .site-footer .footer-navigation {
+    clear: right;
+    float: right;
+  }
+  .site-footer .jetpack-social-navigation {
+    clear: left;
+    float: left;
+  }
+  .site-footer .jetpack-social-navigation ul {
+    text-align: left;
+  }
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget ul ul {
+  margin-left: inherit;
+  margin-right: 27px;
+  padding-left: inherit;
+  padding-right: 0;
+}
+
+.widget_calendar .calendar_wrap {
+  text-align: right;
+}
+
+.widget_calendar .calendar_wrap caption {
+  text-align: right;
+}
+
+.widget_calendar .next {
+  text-align: left;
+}
+
+.widget_image .wp-caption .wp-caption-text {
+  text-align: right;
+}
+
+.widget_rss > ul > li:before {
+  left: inherit;
+  right: 0;
+}
+
+.widget_rss > ul > li:before {
+  left: inherit;
+  right: -10px;
+}
+
+.widget_authors .avatar {
+  margin-left: 10px;
+  margin-right: inherit;
+}
+
+.widget_jetpack_display_posts_widget .jetpack-display-remote-posts p:before {
+  left: inherit;
+  right: 0;
+}
+
+.widget_jetpack_display_posts_widget .jetpack-display-remote-posts p:before {
+  left: inherit;
+  right: -10px;
+}
+
+.widget_goodreads > div > div > div:before {
+  left: inherit;
+  right: 0;
+}
+
+.widget_goodreads > div > div > div div[class^="gr_custom_book_container"] {
+  float: right;
+  margin-left: 27px;
+  margin-right: inherit;
+}
+
+.time_machine_widget .time-machine-newer {
+  float: left;
+}
+
+@media screen and (min-width: 50em) {
+  .widget_rss > ul > li:before {
+    left: inherit;
+    right: -15px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# JetPack Styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Infinite Scroll
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## JetPack Post Flair
+--------------------------------------------------------------*/
+.hentry > .sharedaddy:not(#jp-post-flair) .sd-title:before {
+  left: inherit;
+  right: 0;
+}
+
+#jp-post-flair h3.sd-title:before,
+#jp-post-flair div.sharedaddy h3.sd-title:before,
+#jp-post-flair .jp-relatedposts .jp-relatedposts-headline em:before {
+  left: inherit;
+  right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  #jp-post-flair > .sd-rating {
+    float: right;
+  }
+}
+
+/*--------------------------------------------------------------
+## Social Menu
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Highlander Comments
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Plugin Styles
+--------------------------------------------------------------*/
+/*
+ * jQuery FlexSlider v2.6.1
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ */
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+
+/* ====================================================================================================================
+ * DEFAULT THEME
+ * ====================================================================================================================*/
+.carousel li {
+  margin-right: inherit;
+  margin-left: 5px;
+}
+
+.flexslider {
+  direction: ltr;
+}
+
+/* ====================================================================================================================
+ * RESPONSIVE
+ * ====================================================================================================================*/
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {
+    left: inherit;
+    right: 10px;
+  }
+  .flex-direction-nav .flex-next {
+    left: 10px;
+    right: inherit;
+  }
+}
