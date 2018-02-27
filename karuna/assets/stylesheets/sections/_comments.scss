@@ -1,0 +1,166 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+
+.comments-area {
+	background-color: $color__background-pre;
+	padding: 1.6em;
+	margin: 0 0 1.6em;
+}
+
+.comments-title,
+.comment-reply-title {
+	line-height: 1.2;
+	margin: 0 0 .4em;
+	@include font-size(1.25);
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0 0 3.2em;
+	padding: 0;
+
+	.children {
+		list-style: none;
+	}
+
+	.edit-link {
+		display: inline;
+		text-align: left;
+		width: auto;
+	}
+}
+
+.comment-body {
+	@include clearfix;
+	margin-top: 1.6em;
+	padding-top: 1.6em;
+	width: 100%;
+}
+
+.comment-author {
+
+	.fn {
+		display: inline-block;
+		margin-bottom: .4em;
+		font-weight: bold;
+		text-transform: none;
+		letter-spacing: 0;
+
+		@include font-size(1);
+
+		a,
+		a:visited {
+		}
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 1.6em;
+	}
+}
+
+.comment-meta a {
+	text-decoration: none;
+}
+
+.comment-metadata {
+	color: $color__text-input;
+	@include font-size(.825);
+	margin-bottom: 1.6em;
+	text-transform: lowercase;
+
+	a,
+	a:visited {
+		color: $color__text-input;
+		display: inline-block;
+		font-weight: normal;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.edit-link {
+		float: none;
+	}
+
+	.edit-link:before {
+		content: "|";
+		margin-left: .4em;
+		margin-right: .8em;
+	}
+
+	a:first-of-type {
+		display: inline-block;
+		margin-bottom: .8em;
+	}
+}
+
+.pingback,
+.trackback {
+	.edit-link {
+		float: right;
+	}
+}
+
+.no-comments {
+	font-style: italic;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.says {
+	display: none;
+}
+
+.comment-content {
+	clear: both;
+}
+
+.comment-form label {
+	display: inline-block;
+	width: 109px;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+	margin: 0 0 1.6em;
+	position: relative;
+
+	label {
+		@include font-size(.875);
+		font-weight: bold;
+		padding: .65em .8em;
+		position: absolute;
+		left: 0;
+		top: 2px;
+		text-transform: uppercase;
+	}
+	input,
+	textarea {
+		clear: both;
+		padding-left: 6.4em;
+		width: 100%;
+	}
+
+	textarea {
+		padding: 2em .8em .375em;
+	}
+}

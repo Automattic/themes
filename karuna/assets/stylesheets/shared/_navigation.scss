@@ -1,0 +1,50 @@
+@import "../components/navigation-top";
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	
+	border-top: 3px solid $color__background-hr;
+	border-bottom: 1px solid $color__background-hr;
+	padding: .8em 0;
+	@include font-size(1.125);
+
+	.site-main & {
+		margin: 0 0 1.6em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		border-bottom: 1px solid $color__background-hr;
+		margin-bottom: .8em;
+		padding-bottom: .8em;
+		width: 100%;
+	}
+
+	.nav-next {
+		text-align: right;
+		width: 100%;
+	}
+
+	a,
+	a:visited {
+		color: $color__link;
+		text-decoration: none;
+
+		&:hover {
+			color: $color__link-hover;
+		}
+	}
+}
+
+.post-navigation {
+	.title {
+		display: block;
+		clear: both;
+		color: $color__text-input;
+		font-style: normal;
+		text-transform: uppercase;
+		font-weight: bold;
+		@include font-size(.825);
+	}
+}

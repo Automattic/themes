@@ -1,0 +1,682 @@
+/*
+Theme Name: Karuna
+Theme URI: http://wordpress.com/themes/karuna/
+Author: Automattic
+Author URI: http://wordpress.com/themes/
+Description: Karuna is a clean business theme designed with health and wellness-focused sites in mind. With bright, bold colors, prominent featured images, and support for customer testimonials, your business' brand will shine with Karuna.
+Version: 1.0.0-wpcom
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: karuna
+Tags: blog, business, education, clean, light, green, purple, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, full-width-template, rtl-language-support, translation-ready, school, traditional, contemporary, featured-image-header, featured-images, professional, infinite-scroll, flexible-header, responsive-layout, threaded-comments, site-logo, testimonials, classic-menu
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Karuna is based on Components http://components.underscores.me/, (C) 2015-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Accessibility
+# Alignments
+# Clearings
+# Typography
+# Forms
+# Buttons
+# Formatting
+# Lists
+# Tables
+# Navigation
+# Links
+# Layout
+	## Posts
+	## Pages
+# Comments
+# Widgets
+# Infinite scroll
+# Media
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables/variables-base";
+@import "mixins/mixins-base";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "shared/normalize";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "shared/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "shared/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "shared/clearings";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "shared/typography";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "shared/forms";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "shared/buttons";
+
+/*--------------------------------------------------------------
+# Formattings
+--------------------------------------------------------------*/
+@import "shared/formatting";
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+@import "shared/lists";
+
+/*--------------------------------------------------------------
+# Tables
+--------------------------------------------------------------*/
+@import "shared/tables";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "shared/navigation";
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+@import "shared/links";
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+@import "shared/links";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+@import "sections/comments";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "sections/widgets";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "shared/infinitescroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "shared/media";
+
+/*--------------------------------------------------------------
+## Media Queries
+--------------------------------------------------------------*/
+
+@media screen and ( min-width: 768px ) {
+
+	/* Increase font sizes on larger screens */
+
+	.site-title {
+		@include font-size(2.625);
+	}
+
+	.site-info {
+		@include font-size(1);
+	}
+
+	.page-template-front-page {
+		.site-main > .hentry:first-of-type {
+			.entry-content {
+				@include font-size(1.75);
+			}
+		}
+	}
+
+	.front-testimonials {
+		.hentry {
+			@include font-size(1.75);
+
+			.entry-title {
+				@include font-size(1.125);
+			}
+		}
+	}
+
+	.recent-posts {
+		.recent-posts-title {
+			@include font-size(1.75);
+		}
+
+		.entry-title {
+			@include font-size(1.25);
+		}
+	}
+
+	.entry-title {
+		@include font-size(2.625);
+		word-wrap: normal;
+	}
+
+	.entry-content,
+	.entry-summary {
+		@include font-size(1.125);
+	}
+
+	.widget-title {
+		@include font-size(1.25);
+	}
+
+	.header-widget-area {
+		@include font-size(1.125);
+	}
+
+	.site-content .full-width-widget-area {
+		padding-top: 3.2em;
+
+		.widget-title {
+			@include font-size(1.75);
+		}
+	}
+
+	.footer-widgets-wrapper {
+		.widget {
+			@include font-size(1.125);
+		}
+	}
+
+	.comments-title,
+	.comment-reply-title {
+		@include font-size(1.875);
+	}
+
+	h1 {
+		@include font-size(2.625);
+	}
+
+	h2 {
+		@include font-size(2);
+	}
+
+	h3 {
+		@include font-size(1.875);
+	}
+
+	h4 {
+		@include font-size(1.625);
+	}
+
+	h5 {
+		@include font-size(1.25);
+	}
+
+	h6 {
+		@include font-size(1);
+	}
+
+	.site-header {
+		text-align: left;
+	}
+
+	.top-bar-wrapper {
+		padding: 0 10%;
+	}
+
+	.top-bar {
+		padding: .8em 0;
+
+		@include clearfix;
+
+		.site-description {
+			float: left;
+			line-height: 26px;
+			margin: 0;
+			width: 50%;
+		}
+
+		.jetpack-social-navigation {
+			text-align: right;
+			float: right;
+			width: 50%;
+
+			ul {
+				margin-bottom: 0;
+			}
+
+			li {
+				padding-left: .8em;
+				padding-right: 0;
+			}
+		}
+	}
+
+	.site-branding-wrapper {
+		position: relative;
+		padding: 0 10%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.sticky-wrapper {
+		background: white;
+		max-width: 100%;
+		width: 100%;
+		z-index: 2;
+		transition: 0.2s;
+	}
+
+	.site-branding {
+		float: left;
+		display: inline-block;
+		margin-right: 1.6em;
+		min-width: 33%;
+		padding: 1.6em 0;
+
+		.site-title {
+			clear: none;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.custom-logo {
+		clear: none;
+		display: inline-block;
+		margin-right: .8em;
+		vertical-align: middle;
+	}
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.genericon {
+		font-size: 16px;
+		vertical-align: middle;
+		text-align: center;
+		display: inline-block;
+		font-family: "Genericons";
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		line-height: 1;
+		text-decoration: inherit;
+		text-transform: none;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		speak: none;
+	}
+
+	.genericon-expand {
+		content: "\f431";
+	}
+
+	.main-navigation {
+		clear: none;
+		display: block;
+		float: right;
+		text-align: right;
+		margin-left: 1.6em;
+		padding: 1.6em 0;
+		position: relative;
+		width: auto;
+
+		li {
+			border-top: 0;
+			display: inline-block;
+			float: none;
+
+			li a,
+			li li a,
+			li li li a,
+			li li li li a {
+				padding-left: 1.6em;
+			}
+		}
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+
+			ul {
+				background-color: $color__link;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+				float: left;
+				position: absolute;
+				top: 1.6em;
+				left: -999em;
+				z-index: 99999;
+				margin-left: .8em;
+				text-align: left;
+
+				ul {
+					left: -999em;
+					top: 0;
+					margin-left: 0;
+				}
+
+				li {
+					border-bottom: 1px solid rgba($color__text-input, 0.3);
+					&:hover > ul,
+					&.focus > ul {
+						left: 100%;
+					}
+				}
+
+				.page_item_has_children > a,
+				.menu-item-has-children > a {
+					&:after {
+						transform: rotate(-90deg);
+						top: -2px;
+						margin-left: 0;
+					}
+				}
+
+				a,
+				a:visited {
+					color: white;
+					padding: .6em 1.6em;
+					width: 200px;
+					transition: opacity 0.3s;
+
+					&:hover,
+					&:focus {
+						color: white;
+						opacity: 0.5;
+					}
+				}
+
+				li:nth-of-type(1) a {
+					padding-top: .6em;
+				}
+
+				li:last-of-type {
+					border-bottom: 0;
+				}
+
+				li:last-of-type a {
+					padding-bottom: .6em;
+				}
+
+				:hover > a,
+				.focus > a {
+				}
+
+				a:hover,
+				a.focus {
+				}
+			}
+
+			li:hover > ul,
+			li.focus > ul {
+				left: auto;
+			}
+		}
+
+		a {
+			padding: .2em 0 .2em 2.4em;
+			transition: opacity 0.3s;
+		}
+
+		.page_item_has_children > a,
+		.menu-item-has-children > a {
+			&:after {
+				@extend .genericon;
+				@extend .genericon-expand;
+				margin-left: 3px;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
+
+	.content-area {
+		float: left;
+		margin: 0 -40% 0 0;
+		width: 100%;
+	}
+
+	.site-content {
+		padding: 3.2em 10%;
+	}
+
+	.site-main {
+		margin: 0 40% 0 0;
+	}
+
+	.site-content .widget-area {
+		float: right;
+		overflow: hidden;
+		width: 30%;
+	}
+
+	.page-template-front-page .site-main > .hentry:first-of-type {
+		padding: 0 10%;
+	}
+
+	.front-testimonials {
+		padding: 3.2em 10%;
+
+		@include clearfix;
+
+		.hentry {
+			float: left;
+			margin-right: 4%;
+			padding: 1.6em 2.4em;
+			width: 48%;
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.recent-posts {
+		padding: 3.2em 10%;
+
+		.grid-row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.hentry {
+			float: left;
+			margin-right: 10%;
+			margin-bottom: 3.2em;
+			width: 45%;
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.site-info {
+		padding: 1.6em 10%;
+	}
+
+	.page-template-full-width-page {
+		.site-content {
+			padding: 3.2em 10%;
+		}
+	}
+
+	.comments-area {
+		padding: 2.4em;
+	}
+
+	.front-testimonials,
+	.footer-widgets-wrapper,
+	.recent-posts-wrapper,
+	.site-branding-wrapper,
+	.top-bar-wrapper,
+	.site-content,
+	.page-template-front-page .site-main > .hentry:first-of-type,
+	.page-template-full-width-page-php .site-content,
+	.site-content .full-width-widget-area,
+	.header-widget-area .header-widget-area-wrapper {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1040px;
+	}
+
+	.page-template-front-page .site-content {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
+
+		.nav-previous {
+			float: left;
+			width: 50%;
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+
+		.nav-next {
+			float: right;
+			text-align: right;
+			width: 50%;
+		}
+	}
+
+	.site-content .full-width-widget-area,
+	.header-widget-area-wrapper {
+		float: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 1.6em 0;
+		width: 100%;
+
+		.widget {
+			flex-basis: 30%;
+			margin: 0 0 1.6em;
+		}
+
+		.widget-gallery,
+		.widget_text,
+		.widget_wpcom_instagram_widget {
+			flex-basis: 100%;
+		}
+	}
+
+	.site-content .full-width-widget-area {
+		padding: 3.2em 10% 0 10%;
+	}
+
+	.footer-widgets-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 3.2em 10%;
+
+		.widget-area {
+			width: 48%;
+		}
+	}
+}
+
+@media screen and ( min-width: 1100px ) {
+
+	.sticking.sticky-wrapper {
+		box-shadow: 0 0 3px 3px $color__background-pre;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 7;
+	}
+
+	.admin-bar .sticking.sticky-wrapper {
+		top: 32px;
+	}
+
+	.sticking .site-title {
+		@include font-size(1.8);
+	}
+
+	.sticking .custom-logo {
+		max-height: 50px;
+	}
+
+	.front-testimonials,
+	.footer-widgets-wrapper,
+	.recent-posts-wrapper,
+	.site-branding-wrapper,
+	.top-bar-wrapper,
+	.site-content,
+	.page-template-front-page .site-main > .hentry:first-of-type,
+	.page-template-full-width-page-php .site-content,
+	.site-content .full-width-widget-area {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.footer-widgets .widget-area:nth-child(1):nth-last-child(2),
+	.footer-widgets .widget-area:nth-child(2):nth-last-child(1) {
+		width: 48%;
+		margin-right: 4%;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.footer-widgets .widget-area:nth-child(1):nth-last-child(3),
+	.footer-widgets .widget-area:nth-child(2):nth-last-child(2),
+	.footer-widgets .widget-area:nth-child(3):nth-last-child(1) {
+		width: 30%;
+		margin-right: 5%;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	.footer-widgets .widget-area:nth-child(1):nth-last-child(4),
+	.footer-widgets .widget-area:nth-child(2):nth-last-child(3),
+	.footer-widgets .widget-area:nth-child(3):nth-last-child(2),
+	.footer-widgets .widget-area:nth-child(4):nth-last-child(1) {
+		width: 20%;
+		margin-right: 6.6666%;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}

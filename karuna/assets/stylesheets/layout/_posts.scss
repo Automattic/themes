@@ -1,0 +1,125 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 3.2em;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 0 0 1.6em;
+}
+
+.post-thumbnail {
+	margin: 0 0 .8em;
+}
+
+.entry-title {
+	letter-spacing: 0;
+	line-height: 1;
+	margin: 0 0 .2em;
+	text-transform: none;
+	word-wrap: break-word;
+
+	@include font-size(2);
+
+	a {
+		color: $color__text-main;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+		}
+	}
+}
+
+.entry-meta,
+.entry-footer {
+	@include clearfix;
+	color: $color__text-input;
+	text-transform: lowercase;
+	margin: 0 0 1.6em;
+	width: 100%;
+
+	@include font-size(.875);
+
+	a {
+		color: $color__text-input;
+		font-weight: normal;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+.entry-footer span {
+	margin-right: 1.6em;
+}
+
+.entry-content,
+.entry-summary {
+	@include font-size(1);
+}
+
+.edit-link {
+	float: right;
+	display: inline-block;
+	clear: right;
+}
+
+.more-link {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.jetpack-recipe {
+	padding: .8em 1.6em !important;
+}
+
+/* Author Bio */
+
+.entry-author {
+	background-color: $color__background-pre;
+	padding: 1.6em;
+	position: relative;
+
+	.author-avatar {
+		position: absolute;
+		left: 1.6em;
+		top: 1.6em;
+	}
+	.author-title,
+	.author-name {
+		line-height: 1.2;
+		margin: 0;
+	}
+
+	.author-avatar + .author-heading {
+		margin-left: 84px;
+	}
+
+	.author-bio {
+		margin-top: 1.6em;
+		margin-bottom: 0;
+	}
+
+	.author-title {
+		color: $color__text-input;
+		@include font-size(1);
+	}
+}

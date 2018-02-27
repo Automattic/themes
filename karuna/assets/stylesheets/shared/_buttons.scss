@@ -1,0 +1,34 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+	border: 2px solid;
+	border-color: $color__border-button;
+	border-radius: 10px;
+	background: $color__background-button;
+	box-shadow: none;
+	color: $color__link;
+	font-weight: bold;
+	@include font-size(1);
+	letter-spacing: 1px;
+	line-height: 1;
+	padding: .8em 1.6em .8em;
+	text-shadow: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.3s;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+		box-shadow: none;
+		color: $color__link-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		box-shadow: none;
+		color: $color__link-hover;
+	}
+}

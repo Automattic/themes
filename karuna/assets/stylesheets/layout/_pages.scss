@@ -1,0 +1,164 @@
+.page-links {
+	clear: both;
+	margin: 0 0 1.6em;
+}
+
+.page-title {
+	color: $color__text-input;
+	line-height: 1.2;
+}
+
+/*--------------------------------------------------------------
+## Full-Width Page
+--------------------------------------------------------------*/
+
+.page-template-full-width-page {
+	.site-main {
+		margin: 0;
+	}
+	.site-content {
+		padding: 1.6em 5%;
+		max-width: 100%;
+	}
+	.content-area {
+		float: none;
+		margin: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## Static Front Page
+--------------------------------------------------------------*/
+
+.page-template-front-page {
+	.site-main {
+		margin: 0;
+	}
+	.site-content {
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.content-area {
+		float: none;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+
+	.site-main > .hentry:first-of-type {
+		padding: 0 5%;
+		margin-bottom: 0;
+
+		.entry-title {
+			text-align: center;
+		}
+
+		.entry-content {
+			@include font-size(1.25);
+			margin-bottom: 0;
+		}
+
+		.entry-footer {
+			margin: 0;
+		}
+	}
+}
+
+.post-type-archive-jetpack-testimonial {
+	.testimonials-hentry {
+		margin-bottom: 0;
+	}
+}
+
+.front-testimonials {
+	padding: 1.6em 5%;
+	width: 100%;
+
+	.hentry {
+		background: $color__background-pre;
+		margin-bottom: 3.2em;
+		padding: 1.6em;
+		position: relative;
+
+		@include font-size(1);
+
+		p {
+			margin-top: 0;
+		}
+
+		.entry-content {
+			margin: 0;
+		}
+
+		.edit-link {
+			float: right;
+		}
+
+		.entry-title {
+			letter-spacing: 0;
+			text-transform: none;
+
+			@include font-size(1);
+
+			&:before {
+				content: "\2014";
+				margin-right: 5px;
+			}
+		}
+
+		.post-thumbnail {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin: 0;
+			transform: translateX(-50%) translateY(50%);
+			
+			img {
+				border-radius: 50%;
+				width: 100px;
+				height: 100px;
+			}
+		}
+	}
+}
+
+.recent-posts {
+	background-color: $color__background-pre;
+	padding: 1.6em 5%;
+	width: 100%;
+
+	@include clearfix;
+
+	.recent-posts-title {
+		font-weight: normal;
+		text-transform: none;
+		letter-spacing: 0;
+		margin: 0 0 1.6em;
+		text-align: center;
+
+		@include font-size(1.5);
+	}
+
+	.grid-row {
+		@include clearfix;
+		width: 100%;
+	}
+
+	.hentry {
+		margin: 0 0 1.6em;
+	}
+
+	.more-recent-posts {
+		display: inline-block;
+		position: relative;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+
+	.entry-title {
+		@include font-size(1);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+}

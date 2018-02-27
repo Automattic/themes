@@ -1,0 +1,88 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	@include font-size(.875);
+	font-weight: bold;
+	padding: .8em 0 1.6em;
+	text-align: left;
+	text-transform: uppercase;
+	width: 100%;
+
+	@include clearfix;
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		border-top: 1px solid $color__background-hr;
+		position: relative;
+		list-style: none;
+
+		&:hover > a,
+		&.focus > a {
+		}
+
+		li a {
+			padding-left: 1.6em;
+		}
+
+		li li a {
+			padding-left: 3.2em;
+		}
+
+		li li li a {
+			padding-left: 4.8em;
+		}
+
+		li li li li a {
+			padding-left: 5.4em;
+		}
+	}
+	
+	a,
+	a:visited {
+		color: $color__text-main;
+		display: block;
+		padding: .8em .4em;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $color__text-main;
+			opacity: 0.5;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+		color: $color__text-main;
+		opacity: 0.5;
+	}
+}
+
+/* Small menu. */
+
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.menu-toggle {
+	display: inline-block;
+	margin: .8em auto;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	text-align: center;
+}
+
+.main-navigation .genericon-menu {
+	display: inline-block;
+	margin-right: 5px;
+}

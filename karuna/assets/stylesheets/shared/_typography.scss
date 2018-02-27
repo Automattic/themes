@@ -1,0 +1,98 @@
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: bold;
+	font-family: $font__main;
+	text-transform: uppercase;
+}
+
+h1 {
+	@include font-size(2);
+}
+
+h2 {
+	@include font-size(1.875);
+}
+
+h3 {
+	@include font-size(1.625);
+}
+
+h4 {
+	@include font-size(1.125);
+}
+
+h5 {
+	@include font-size(1);
+}
+
+h6 {
+	@include font-size(.875);
+}
+
+p {
+	margin: .8em 0;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	@include font-size(1.625);
+	font-weight: bold;
+	margin: 0 1.6em;
+}
+
+address {
+	margin: 0 0 1.6em;
+}
+
+pre {
+	background: $color__background-pre;
+	font-family: $font__pre;
+	@include font-size(0.9375);
+	line-height: $font__line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: $font__code;
+	@include font-size(0.9375);
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted $color__border-abbr;
+	cursor: help;
+}
+
+mark, ins {
+	background: $color__background-ins;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
