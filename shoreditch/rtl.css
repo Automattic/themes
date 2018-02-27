@@ -1,0 +1,637 @@
+/*
+Theme Name: Shoreditch
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Layout
+# Navigation
+	## Main Menu
+	## Pagination
+# Accessibility
+# Widgets
+# Content
+	## Posts & Pages
+	## Featured Content
+	## Comments
+# Media
+# Jetpack
+	## Infinite Scroll
+	## Recipes
+	## Social Menu
+	## Widgets
+# Responsive
+	## x >= 600px
+	## x >= 768px
+	## x >= 896px
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+blockquote {
+    border-left-width: 0;
+    border-right-width: 2px;
+    padding-left: 0;
+	padding-right: 1.5rem;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+ul,
+ol {
+	margin-left: 0;
+	margin-right: 1.25em;
+}
+
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* Search */
+.search-form .search-field {
+	padding-left: 2.625em;
+	padding-right: 0.375em;
+}
+
+.search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.site-branding {
+	margin-left: auto;
+	margin-right: 0;
+	padding-left: 1.5em;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Main Menu
+--------------------------------------------------------------*/
+.main-navigation .menu-item-has-children > a {
+	margin-left: 3.5em;
+	margin-right: 0;
+}
+
+.main-navigation .menu-item-has-children > a:after {
+	left: 0;
+	right: auto;
+}
+
+.main-navigation ul ul .menu-item-has-children > a:after {
+	left: 0.75em;
+	right: auto;
+}
+
+.main-navigation ul ul {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+	left: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+## Pagination
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous {
+	float: right;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+.comment-navigation .nav-previous a:before,
+.posts-navigation .nav-previous a:before,
+.comment-navigation .nav-next a:after,
+.posts-navigation .nav-next a:after {
+	content: "\f432";
+	margin-left: 0.25em;
+	margin-right: 0;
+}
+
+.comment-navigation .nav-next a:after,
+.posts-navigation .nav-next a:after {
+	content: "\f431";
+	margin-left: 0;
+	margin-right: 0.25em;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus {
+	left: auto;
+	right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* Lists */
+.widget_archive ul,
+.widget_categories ul,
+.widget_links ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_pages ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+	margin-right: 0;
+}
+
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+/* Tag Cloud */
+.widget_tag_cloud .tagcloud a {
+	margin-left: 0.25em;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts & Pages
+--------------------------------------------------------------*/
+/* Entry Hero & Has Post Tumbnail */
+.site-content-wrapper .has-post-thumbnail .entry-header {
+	margin-left: 0;
+	margin-right: -1.5em;
+}
+
+/* Entry Author */
+.author-avatar {
+	float: left;
+}
+
+.author-heading {
+	float: right;
+	max-width: calc(100% - 4.5em);
+}
+
+/* Page Links & More Link */
+.page-links a,
+.page-links > span {
+	float: right;
+	margin-left: 0.25rem;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Featured Content
+--------------------------------------------------------------*/
+.featured-content {
+	direction: ltr;
+}
+
+.featured-content .flex-control-paging,
+.featured-content .hentry {
+	direction: rtl;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+/* Comment List */
+.comment-author .avatar {
+	float: right;
+	margin-left: 0.375em;
+	margin-right: 0;
+}
+
+.comment-metadata .edit-link:before {
+	padding-left: 0.5em;
+	padding-right: 0.25em;
+}
+
+.comment-reply-link:after {
+	content: "\f431";
+	margin-left: 0;
+	margin-right: 0.25em;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.mejs-offscreen {
+	left: auto !important;
+	right: -999em;
+}
+
+/*--------------------------------------------------------------
+# Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Infinite Scroll
+--------------------------------------------------------------*/
+/* Infinite Handle */
+.site-main #infinite-handle span:before {
+	display: none;
+}
+
+/* Infinite Loader */
+.infinite-loader .spinner {
+	left: auto !important;
+	right: 50% !important;
+}
+
+/*--------------------------------------------------------------
+## Recipes
+--------------------------------------------------------------*/
+.site-content .jetpack-recipe blockquote {
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Social Menu
+--------------------------------------------------------------*/
+.site .jetpack-social-navigation li {
+	float: right;
+}
+
+.site .jetpack-social-navigation li:first-child {
+	margin-left: 0.25em;
+	margin-right: 0;
+}
+
+.site .jetpack-social-navigation li:last-child {
+	margin-left: 0;
+	margin-right: 0.25em;
+}
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+/* RSS Links */
+.widget_rss_links ul {
+	margin-right: 0;
+}
+
+.widget_rss_links p a + a {
+	margin-left: 0;
+	margin-right: 0.1865em;
+}
+
+/* Social Icons */
+.site .jetpack_widget_social_icons ul {
+	margin-left: 0;
+	margin-right: -0.25em;
+}
+
+.site .jetpack_widget_social_icons li {
+	float: right;
+}
+
+.site .jetpack_widget_social_icons li:last-child {
+	margin-left: 0;
+	margin-right: 0.25em;
+}
+
+/* Social Media Icons */
+.site .widget_wpcom_social_media_icons_widget ul {
+	margin-left: 0;
+	margin-right: -0.25em;
+}
+
+.site .widget_wpcom_social_media_icons_widget li {
+	float: right;
+}
+
+.site .widget_wpcom_social_media_icons_widget li:last-child {
+	margin-left: 0;
+	margin-right: 0.25em;
+}
+
+/* Top Posts & Pages */
+.widget_top-posts ul {
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## x >= 600px
+--------------------------------------------------------------*/
+@media screen and (min-width: 600px) {
+
+	/* Content */
+	.site-content-wrapper .has-post-thumbnail .entry-header {
+		margin-left: 0;
+		margin-right: -3em;
+	}
+
+	/* Jetpack */
+	.site .testimonial-entry-column-2.testimonial-entry-first-item-row {
+		margin-left: 0.75em;
+		margin-right: 0;
+	}
+
+	.site .testimonial-entry-column-2.testimonial-entry-last-item-row {
+		margin-left: 0;
+		margin-right: 0.75em;
+	}
+
+}
+
+/*--------------------------------------------------------------
+## x >= 768px
+--------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+	/* Typography */
+	blockquote {
+		padding-left: 0;
+		padding-right: 1.875rem;
+	}
+
+	.widget-small blockquote {
+		padding-left: 0;
+		padding-right: 1.40625rem;
+	}
+
+	/* Elements */
+	.widget-small li > ul,
+	.widget-small li > ol {
+		margin-left: 0;
+		margin-right: 1.40625em;
+	}
+
+	/* Forms */
+	.widget-small .search-form .search-field {
+		padding-left: 3.515625em;
+		padding-right: 0.703125em;
+	}
+
+	/* Layout */
+	.widget-footer-area.column-2 .widget {
+		float: right;
+	}
+
+	.widget-footer-area.column-2 .widget:nth-child(odd) {
+		clear: right;
+		padding-left: 1.5em;
+		padding-right: 0;
+	}
+
+	.widget-footer-area.column-2 .widget-small:nth-child(odd) {
+		padding-left: 1.875em;
+		padding-right: 0;
+	}
+
+	.widget-footer-area.column-2 .widget:nth-child(even) {
+		padding-left: 0;
+		padding-right: 1.5em;
+	}
+
+	.widget-footer-area.column-2 .widget-small:nth-child(even) {
+		padding-left: 0;
+		padding-right: 1.875em;
+	}
+
+	/* Navigation */
+	.main-navigation .menu-item-has-children > a {
+		margin-left: 3em;
+		margin-right: 0;
+	}
+
+	/* Content */
+	.page-links a,
+	.page-links > span {
+		margin-left: 0.3125em;
+		margin-right: 0;
+	}
+
+	/* Jetpack */
+	.hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post {
+		float: right;
+		padding-left: 1.25rem;
+	}
+
+	.hentry div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post:nth-of-type(2) {
+		padding-left: 0.625rem;
+		padding-right: 0.625rem;
+	}
+
+	.hentry div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post:last-of-type {
+		padding-left: 0;
+		padding-right: 1.25rem;
+	}
+
+	.site .testimonial-entry-first-item-row {
+		clear: right;
+	}
+
+	.site .testimonial-entry-column-3.testimonial-entry-first-item-row {
+		margin-left: 1em;
+		margin-right: 0;
+	}
+
+	.site .testimonial-entry-column-3.testimonial-entry-last-item-row {
+		margin-left: 0;
+		margin-right: 1em;
+	}
+
+}
+
+/*--------------------------------------------------------------
+## x >= 896px
+--------------------------------------------------------------*/
+@media screen and (min-width: 896px) {
+
+	/* Layout */
+	body:not(.no-sidebar) .content-area {
+		padding-left: 1em;
+		padding-right: 0;
+	}
+
+	.site-content-wrapper .widget-area {
+		padding-left: 0;
+		padding-right: 2em;
+	}
+
+	.site-info {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.widget-footer-area.column-3 .widget {
+		float: right;
+	}
+
+	.widget-footer-area.column-3 .widget:nth-child(3n+1) {
+		clear: right;
+		padding-left: 2em;
+		padding-right: 0;
+	}
+
+	.widget-footer-area.column-3 .widget-small:nth-child(3n+1) {
+		padding-left: 2.5em;
+		padding-right: 0;
+	}
+
+	.widget-footer-area.column-3 .widget:nth-child(3n+2) {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.widget-footer-area.column-3 .widget-small:nth-child(3n+2) {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+	}
+
+	.widget-footer-area.column-3 .widget:nth-child(3n+3) {
+		padding-left: 0;
+		padding-right: 2em;
+	}
+
+	.widget-footer-area.column-3 .widget-small:nth-child(3n+3) {
+		padding-left: 0;
+		padding-right: 2.5em;
+	}
+
+	/* Navigation */
+	.main-navigation li {
+		margin-left: 0.75em;
+		margin-right: 0.75em;
+	}
+
+	.main-navigation .primary-menu > li:first-child {
+		margin-left: 0.75em;
+		margin-right: 0;
+	}
+
+	.main-navigation .primary-menu > li:last-child {
+		margin-left: 0;
+		margin-right: 0.75em;
+	}
+
+	.main-navigation .menu-item-has-children > a {
+		margin-left: 0;
+		padding-left: 20px;
+		padding-right: 0;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a {
+		padding-left: 28px;
+		padding-left: calc(0.75em + 20px);
+		padding-right: 0.75em;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a:after {
+		content: "\f431";
+	}
+
+	.main-navigation ul ul {
+		float: right;
+		left: auto;
+		margin: 0;
+		right: -999em;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		left: 0;
+		right: auto;
+	}
+
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
+		left: 100%;
+		right: auto;
+	}
+
+	/* Content */
+	.site-content-wrapper .has-post-thumbnail .entry-header {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	/* Jetpack */
+	.infinite-loader .spinner {
+		left: auto !important;
+		right: 12px !important;
+	}
+
+	.site .testimonial-entry-column-4.testimonial-entry-first-item-row {
+		margin-left: 1.25em;
+		margin-right: 0;
+	}
+
+	.site .testimonial-entry-column-4:nth-of-type(4n+2) {
+		margin-left: 0.75em;
+		margin-right: 0.25em;
+	}
+
+	.site .testimonial-entry-column-4:nth-of-type(4n+3) {
+		margin-left: 0.25em;
+		margin-right: 0.75em;
+	}
+
+	.site .testimonial-entry-column-4.testimonial-entry-last-item-row {
+		margin-left: 0;
+		margin-right: 1.25em;
+	}
+
+	/* Extra Classes */
+	.column-1-3 {
+		float: right;
+	}
+
+	.column-1-3.column-first {
+		padding-left: 1em;
+		padding-right: 0;
+	}
+
+	.column-1-3.column-last {
+		padding-left: 0;
+		padding-right: 1em;
+	}
+
+}
