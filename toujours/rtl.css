@@ -1,0 +1,500 @@
+/*
+Theme Name: Toujours
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+blockquote {
+	border-left: 0;
+	border-right: 4px solid #f0f0f0;;
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+th,
+td {
+	text-align: right;
+}
+
+textarea {
+	padding-left: 0;
+	padding-right: 3px;
+}
+
+.search-form label:before {
+	left: 0;
+	right: auto;
+}
+
+.search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+.main-navigation ul {
+	padding-right: 0;
+}
+
+.main-navigation .menu-item-has-children > a:after,
+.main-navigation .page_item_has_children > a:after {
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+.main-navigation ul ul {
+	float: right;
+	left: auto;
+	right: -999em;
+	text-align: right;
+}
+
+.main-navigation ul ul:before {
+	left: auto;
+	right: 50%;
+	margin-left: 0;
+	margin-right: -8px;
+}
+
+.main-navigation ul ul .menu-item-has-children > a,
+.main-navigation ul ul .page_item_has_children > a {
+	padding-left: 30px;
+	padding-right: 15px;
+}
+
+.main-navigation ul ul .menu-item-has-children > a:after,
+.main-navigation ul ul .page_item_has_children > a:after {
+	left: 10px;
+	right: auto;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.main-navigation ul ul ul {
+	left: auto;
+	right: -999em;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+	margin-left: 0;
+	margin-right: -120px;
+	right: 50%;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: auto;
+	margin-right: 0;
+	right: 100%;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: right;
+	text-align: right;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+.widget_archive ul ul,
+.widget_categories ul ul,
+.widget_links ul ul,
+.widget_meta ul ul,
+.widget_nav_menu ul ul,
+.widget_pages ul ul,
+.widget_recent_entries ul ul,
+.widget_rss ul ul {
+	margin-left: 0;
+	margin-right: 15px;
+}
+
+
+/* Widget Calendar */
+
+.widget_calendar #next {
+	text-align: left;
+}
+
+.widget_calendar #prev {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Structure
+--------------------------------------------------------------*/
+
+#primary {
+	float: right;
+}
+
+.no-sidebar #primary {
+	float: none;
+}
+
+#secondary {
+	border-left: 0;
+	border-right: 1px solid #e1e1e1;
+	float: left;
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+/*--------------------------------------------------------------
+# Slideshow
+--------------------------------------------------------------*/
+
+.slideshow {
+	direction: ltr;
+}
+
+.slideshow .slide-info {
+	left: auto;
+	right: 0;
+	text-align: right;
+}
+
+.slideshow .slide-info:after {
+	border: 1px solid;
+	border-right: 0;
+	left: 3px;
+	right: 0;
+}
+
+/*--------------------------------------------------------------
+## Featured Post Trio
+--------------------------------------------------------------*/
+#featured-post-trio article {
+	float: right;
+	margin-left: 30px;
+	margin-right: 0;
+}
+
+#featured-post-trio article:last-child {
+	margin-left: 0;
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+
+.featured-post {
+	left: auto;
+	right: -3px;
+}
+
+.featured-image span {
+	float: right;
+}
+
+.featured-image a {
+	float: right;
+}
+
+.entry-meta .comments-link {
+	float: left;
+}
+
+.cat-links a:first-of-type,
+.tags-links a:first-of-type {
+	margin-left: 0;
+	margin-right: 0.25em;
+}
+
+
+.post-format-label:before {
+	margin-left: 2px;
+	margin-right: 0;
+}
+
+.nav-links .nav-previous .nav-subtitle:before {
+	left: auto;
+	right: -3px;
+}
+
+.nav-links .nav-next .nav-subtitle:after {
+	left: -3px;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+## Audio
+--------------------------------------------------------------*/
+
+.entry-audio .mejs-container .mejs-controls,
+.entry-content .mejs-container.mejs-audio .mejs-controls {
+	left: auto;
+	right: 4%;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+.comment-list .children {
+	padding-left: 0;
+	padding-right: 45px;
+}
+
+.comment .avatar-container {
+	left: auto;
+	right: 0;
+}
+
+.bypostauthor .avatar-container:before {
+	left: 0;
+	right: auto;
+}
+
+.bypostauthor .avatar-container:after {
+	left: 1px;
+	right: auto;
+}
+
+.children .bypostauthor .avatar-container:after {
+	left: 0;
+	right: auto;
+}
+
+.comment-author,
+.comment-metadata,
+.comment-content,
+.reply,
+.comment-awaiting-moderation {
+	margin-left: 0;
+	margin-right: 110px;
+}
+
+.children .comment-author,
+.children .comment-metadata,
+.children .comment-content,
+.children .reply,
+.children .comment-awaiting-moderation {
+	margin-left: 0;
+	margin-right: 90px;
+}
+
+.comment-respond #reply-title small {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+## 404 Page
+--------------------------------------------------------------*/
+
+.error404 #primary {
+	float: none;
+}
+
+/*--------------------------------------------------------------
+## Guestbook Page
+--------------------------------------------------------------*/
+
+.page-template-guestbook #comments .comment {
+	float: right;
+}
+
+.page-template-guestbook #primary {
+	float: none;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer-widgets .widget {
+	float: right;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+.infinite-loader .spinner {
+	left: auto !important;
+	right: 50% !important; /* !important to override inline styles */
+	margin-left: 0;
+	margin-right: -10px;
+}
+
+#infinite-handle span {
+	border: 0;
+}
+
+#infinite-handle span:before {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-9 .gallery-item {
+	padding-left: 2px;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Media Queries
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+	#primary,
+	#secondary {
+		float: none;
+	}
+
+	#secondary {
+		padding-right: 0;
+	}
+
+	/* Featured trio */
+	#featured-post-trio article {
+		float: none;
+	}
+
+	#featured-post-trio article.has-post-thumbnail .featured-image {
+		float: right;
+		margin-left: 30px;
+		margin-right: 0;
+	}
+
+	#featured-post-trio article.has-post-thumbnail .entry-text {
+		float: right;
+	}
+
+	/* Guestbook Template */
+	.page-template-guestbook #comments .comment {
+		float: none;
+	}
+}
+
+
+@media only screen and (max-width: 680px) {
+	/* Navigation */
+	.main-navigation {
+		text-align: right;
+	}
+
+	.main-navigation ul ul {
+		float: none;
+		padding-left: 0;
+		padding-right: 15px;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		right: auto;
+		margin-right: 0;
+	}
+
+	.menu-toggle:before {
+		margin-left: 5px;
+		margin-right: 0;
+	}
+
+	.slideshow .slide-info {
+		text-align: center;
+	}
+
+	#featured-post-trio article.has-post-thumbnail .featured-image,
+	#featured-post-trio article.has-post-thumbnail .entry-text {
+		float: none;
+	}
+
+	.entry-footer .edit-link {
+		float: none;
+	}
+
+	.nav-links .nav-previous,
+	.nav-links .nav-next {
+		float: none;
+		text-align: center;
+	}
+
+	.comment .avatar-container:after,
+	.comment .avatar-crop:after {
+		left: 1px;
+		right: auto;
+	}
+
+	.comment .comment-author,
+	.comment .comment-metadata,
+	.comment .comment-content,
+	.comment .reply,
+	.comment .comment-awaiting-moderation {
+		margin-left: 0;
+		margin-right: 90px;
+	}
+
+	.comment-list .children {
+		padding-left: 0;
+		padding-right: 20px;
+	}
+
+	.children .comment .avatar-container:after,
+	.children .comment .avatar-crop:after {
+		left: 0;
+		right: auto;
+	}
+
+	.children .comment .comment-author,
+	.children .comment .comment-metadata,
+	.children .comment .comment-content,
+	.children .comment .reply,
+	.children .comment .reply {
+		margin-left: 0;
+		margin-right: 70px;
+	}
+
+}
+
+@media only screen and (max-width: 540px) {
+
+	/* Posts and pages */
+	.entry-meta .comments-link {
+		float: none;
+	}
+
+	.comment-list .children {
+		padding-right: 0;
+	}
+}
