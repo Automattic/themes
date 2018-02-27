@@ -1,0 +1,679 @@
+/*
+Theme Name: Gazette
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Navigation
+	## Primary Menu
+	## Social Menu
+	## Paging Navigation
+# Accessibility
+# Widgets
+# Content
+	## Grid
+	## Header
+	## Footer
+	## Featured Content
+	## Posts & Pages
+	## Comments
+# Media
+# Jetpack
+	## Infinite Scroll
+	## Recipes
+	## Widgets
+# Eventbrite
+# Responsive
+	## x >= 600px
+	## x >= 768px
+	## x >= 840px
+	## x >= 960px
+	## x >= 1080px
+	## x >= 1380px
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+blockquote:before {
+	float: right;
+}
+blockquote blockquote {
+	margin-left: 0;
+	margin-right: 30px;
+}
+pre {
+	border-left: 0;
+	border-right: 2px solid #3863c1;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 30px;
+}
+table {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Primary Menu
+--------------------------------------------------------------*/
+/* Menu Toggle */
+.menu-toggle {
+	left: 0;
+	right: auto;
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+	left: 0;
+	right: auto;
+}
+
+/* Main Navigation */
+.main-navigation.toggled > div {
+	left: auto;
+	right: 0;
+}
+.main-navigation ul {
+	padding-right: 0;
+}
+.main-navigation ul.toggled {
+	padding-left: 0;
+	padding-right: 30px;
+}
+.main-navigation .page_item_has_children > a,
+.main-navigation .menu-item-has-children > a {
+	padding-left: 45px;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Social Menu
+--------------------------------------------------------------*/
+.social-navigation li {
+	float: right;
+}
+.social-navigation li:first-child {
+	margin-left: 5px;
+	margin-right: 0;
+}
+.social-navigation li:last-child {
+	margin-left: 0;
+	margin-right: 5px;
+}
+.social-navigation .page_item_has_children > a,
+.social-navigation .menu-item-has-children > a {
+	padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+## Paging Navigation
+--------------------------------------------------------------*/
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous {
+	float: right;
+}
+.comment-navigation .nav-next,
+.posts-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus {
+	left: auto;
+	right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* Sidebar Toggle */
+.sidebar-toggle {
+	left: auto;
+	margin-left: 0;
+	margin-right: -22.5px;
+	right: 50%;
+}
+
+/* Footer Widget */
+.footer-widget-inner .widget:nth-of-type(4n+1) {
+	clear: right;
+	margin-right: 0;
+}
+.footer-widget-inner .widget:nth-of-type(4n+4) {
+	clear: left;
+	margin-left: 0;
+}
+
+/* Lists */
+.widget_archive ul,
+.widget_categories ul,
+.widget_links ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_pages ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+	margin-right: 0;
+}
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+/* Tag Cloud */
+.widget_tag_cloud a:before {
+	margin-left: 0.125em;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Grid
+--------------------------------------------------------------*/
+/* Floats and Other Properties */
+.page .widget-area:before,
+.single .widget-area:before {
+	left: auto;
+	right: 0;
+}
+.site-branding {
+	padding-left: 75px;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+/* Search Form */
+.search-toggle {
+	left: 0;
+	right: auto;
+}
+.search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+.search-form:before {
+	left: 1px;
+	right: auto;
+}
+.search-header .search-form:before,
+.search-header .search-form .search-submit {
+	left: 59px;
+	right: auto;
+}
+
+/* Site Branding */
+.site-branding {
+	float: right;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.footer-text + .social-navigation + .site-info {
+	clear: left;
+}
+
+/*--------------------------------------------------------------
+## Featured Content
+--------------------------------------------------------------*/
+.featured-content .hentry {
+	float: right;
+}
+
+/*--------------------------------------------------------------
+## Posts & Pages
+--------------------------------------------------------------*/
+/* Sticky */
+.sticky-post {
+	left: 15px;
+	right: auto;
+}
+
+/* Entry Meta */
+.cat-links {
+	float: right;
+}
+.comments-link {
+	float: left;
+}
+.long-meta .comments-link {
+	float: right;
+}
+
+/* Entry Footer */
+.entry-footer {
+	float: right;
+}
+.tags-links a:before {
+	margin-left: 0.125em;
+	margin-right: 0;
+}
+
+/* Page Links */
+.page-links a,
+.page-links > span {
+	margin: 0 0 5px 5px;
+}
+.page-links > .page-links-title {
+	padding-left: 5px;
+	padding-right: 0;
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-list .comment-respond {
+	margin-left: 0;
+	margin-right: 30px;
+}
+.comment-author .avatar {
+	float: right;
+	margin-left: 30px;
+	margin-right: 0;
+}
+.comment-list .comment-reply-title small {
+	float: left;
+}
+.reply {
+	text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.gallery-caption {
+	left: auto;
+	right: 0;
+}
+
+/*--------------------------------------------------------------
+# Jetpack
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Infinite Scroll
+--------------------------------------------------------------*/
+.infinite-loader .spinner {
+	left: auto !important;
+	right: 50% !important;
+}
+
+/*--------------------------------------------------------------
+## Recipes
+--------------------------------------------------------------*/
+.site-content .jetpack-recipe blockquote {
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+/* Gravatar Profile */
+.widget-grofile .grofile-thumbnail {
+	float: left;
+}
+
+/* RSS Links */
+.widget_rss_links ul {
+	margin-right: 0;
+}
+.widget_rss_links p a + a {
+	margin-left: 0;
+	margin-right: 11px;
+}
+
+/*--------------------------------------------------------------
+# Eventbrite
+--------------------------------------------------------------*/
+.eventbrite-event .entry-header span {
+	padding-left: 12px;
+	padding-right: 0;
+}
+.eventbrite-event .entry-header span:last-of-type {
+	padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## x >= 600px
+--------------------------------------------------------------*/
+@media screen and (min-width: 600px) {
+	/* Primary Menu */
+	.menu-toggle {
+		left: 59px;
+		right: auto;
+	}
+
+	/* Paging Navigation */
+	.comment-navigation .nav-next a:after,
+	.comment-navigation .nav-previous a:before,
+	.posts-navigation .nav-next a:after,
+	.posts-navigation .nav-previous a:before {
+		content: '\f430';
+	}
+	.comment-navigation .nav-previous a:before,
+	.posts-navigation .nav-previous a:before {
+		content: '\f429';
+	}
+
+	/* Widgets */
+	.sidebar-toggle {
+		margin-left: 0;
+		margin-right: -30px;
+	}
+
+	/* Header */
+	.search-header .search-form {
+		left: auto;
+		right: 0;
+	}
+	.search-form .search-field {
+		border-left: 60px solid transparent;
+		border-right: 1px solid #ddd;
+	}
+	.search-header .search-field {
+		border-left-width: 119px;
+		border-right-width: 1px;
+	}
+	.site-branding {
+		padding-left: 135px;
+		padding-right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 768px
+--------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+	/* Grid */
+	.archive .hentry,
+	.author-info .author-heading,
+	.blog .hentry,
+	.footer-widget-inner .widget,
+	.search .hentry {
+		float: right;
+	}
+	.archive .hentry:nth-of-type(even),
+	.blog .hentry:nth-of-type(even),
+	.footer-widget-inner .widget:nth-of-type(even),
+	.search .hentry:nth-of-type(even) {
+		margin-left: 0;
+		margin-right: 30px;
+	}
+	.archive .hentry:nth-of-type(odd),
+	.blog .hentry:nth-of-type(odd),
+	.footer-widget-inner .widget:nth-of-type(odd),
+	.search .hentry:nth-of-type(odd) {
+		margin-left: 30px;
+		margin-right: 0;
+	}
+	.content-area .hentry:nth-of-type(even) {
+		clear: left;
+	}
+	.content-area .hentry:nth-of-type(odd) {
+		clear: right;
+	}
+
+	/* Author Info */
+	.author-info .author-avatar {
+		float: left;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 840px
+--------------------------------------------------------------*/
+@media screen and (min-width: 840px) {
+	/* Primary Menu */
+	.main-navigation {
+		float: right;
+		padding-left: 60px;
+		padding-right: 0;
+	}
+	body:not(.long-menu) .main-navigation {
+		border-left: 0;
+		border-right: 1px solid #ddd;
+		margin-left: 0;
+		margin-right: 15px;
+	}
+	body.long-menu .main-navigation {
+		margin-left: 0;
+		margin-right: -15px;
+	}
+	.main-navigation.toggled > div {
+		right: auto;
+	}
+	.main-navigation ul.toggled {
+		padding-right: 0;
+	}
+	.main-navigation li {
+		float: right;
+	}
+	.main-navigation .nav-menu > li + li {
+		border-left: 0;
+		border-right: 1px solid #eee;
+	}
+	.main-navigation .menu-item-has-children {
+		padding-left: 38.5px;
+		padding-right: 15px;
+	}
+	.main-navigation .page_item_has_children > a,
+	.main-navigation .menu-item-has-children > a {
+		padding-left: 0;
+	}
+	.main-navigation .menu-item-has-children > a:after {
+		left: 15px;
+		right: auto;
+	}
+	.main-navigation ul ul .menu-item-has-children > a:after {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	.main-navigation ul ul {
+		float: right;
+		left: auto;
+		right: -999em;
+	}
+	.main-navigation ul ul ul {
+		left: auto;
+		right: -999em;
+	}
+	.main-navigation ul li:hover > ul {
+		margin-left: 0;
+		margin-right: -16px;
+		right: auto;
+	}
+	.main-navigation ul ul li:hover > ul {
+		left: auto;
+		right: 100%;
+	}
+
+	/* Grid */
+	.site-branding {
+		padding-left: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 960px
+--------------------------------------------------------------*/
+@media screen and (min-width: 960px) {
+	/* Social Menu */
+	.social-navigation {
+		float: right;
+	}
+	.footer-text + .social-navigation {
+		float: left;
+	}
+	.footer-text + .social-navigation:before {
+		left: 0;
+		right: auto;
+	}
+
+	/* Grid */
+	.comments-area {
+		margin-left: -60px;
+		margin-right: 0;
+		padding-left: 60px;
+		padding-right: 0;
+	}
+	.archive .hentry:nth-of-type(even),
+	.blog .hentry:nth-of-type(even),
+	.footer-widget-inner .widget:nth-of-type(even),
+	.search .hentry:nth-of-type(even) {
+		margin-left: 30px;
+	}
+	.archive .hentry:nth-of-type(odd),
+	.blog .hentry:nth-of-type(odd),
+	.footer-widget-inner .widget:nth-of-type(odd),
+	.search .hentry:nth-of-type(odd) {
+		margin-right: 30px;
+	}
+	.content-area .hentry:nth-of-type(even),
+	.content-area .hentry:nth-of-type(odd) {
+		clear: none;
+	}
+	.archive .hentry:nth-of-type(3n+1),
+	.blog .hentry:nth-of-type(3n+1),
+	.footer-widget-inner .widget:nth-of-type(4n+1),
+	.search .hentry:nth-of-type(3n+1) {
+		margin-left: 30px;
+		margin-right: 0;
+	}
+	.archive .hentry:nth-of-type(3n+3),
+	.blog .hentry:nth-of-type(3n+3),
+	.footer-widget-inner .widget:nth-of-type(4n+4),
+	.search .hentry:nth-of-type(3n+3) {
+		margin-left: 0;
+		margin-right: 30px;
+	}
+	.content-area .hentry:nth-of-type(3n+1) {
+		clear: right;
+	}
+	.content-area .hentry:nth-of-type(3n+3) {
+		clear: left;
+	}
+	.page .site-main,
+	.single .site-main {
+		border-left: 1px solid #ddd;
+		border-right: 0;
+		float: right;
+		padding-left: 60px;
+		padding-right: 0;
+	}
+	.page .widget-area,
+	.single .widget-area {
+		border-left: 0;
+		border-right: 1px solid #ddd;
+		float: left;
+		margin-left: 0;
+		margin-right: -1px;
+		padding-left: 0;
+		padding-right: 60px;
+	}
+
+	/* Header */
+	body:not(.long-menu) .site-branding:before {
+		margin-right: 15px;
+		right: 100%;
+	}
+
+	/* Footer */
+	.site-info {
+		float: left;
+		text-align: left;
+	}
+	.footer-text {
+		float: right;
+	}
+
+	/* Posts & Pages */
+	.author-info {
+		margin-left: 0;
+		margin-right: -60px;
+		padding-left: 0;
+		padding-right: 60px;
+	}
+
+	/* Comments */
+	.comment-list:before,
+	.comment-navigation + .comment-respond:before {
+		left: -60px;
+		right: auto;
+	}
+
+	/* Sharedaddy */
+	div#jp-relatedposts:before {
+		left: -60px;
+		right: auto;
+	}
+	.hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post:first-of-type {
+		margin-left: 15px;
+		margin-right: 0;
+	}
+	.hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post:last-of-type {
+		margin-left: 0;
+		margin-right: 15px;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1080px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1080px) {
+	/* Posts & Pages */
+	.author-info .author-heading {
+		float: right;
+	}
+}
+
+/*--------------------------------------------------------------
+## x >= 1380px
+--------------------------------------------------------------*/
+@media screen and (min-width: 1380px) {
+	/* Grid */
+	div#jp-relatedposts,
+	.comments-area,
+	.single .entry-content {
+		float: left;
+	}
+}
