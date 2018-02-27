@@ -1,0 +1,291 @@
+/*
+Theme Name: Intergalactic 2
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+caption,
+th,
+td {
+	text-align: right;
+}
+ul,
+ol {
+	margin: 0 3em 1.5em 0;
+}
+li > ul,
+li > ol {
+	margin-right: 1.5em;
+	margin-left: auto;
+}
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+.search-form label:before {
+	right: 0;
+	left: auto;
+}
+.search-form input[type='search'] {
+	padding-right: 2em;
+	padding-left: 0;
+}
+.main-navigation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+.main-navigation li li li a:before {
+	margin-left: 5px;
+	margin-right: auto;
+}
+.menu-toggle {
+	left: 1.5em;
+	right: auto;
+}
+.lines:before,
+.lines:after {
+	right: 0;
+	left: auto;
+}
+.comment-navigation .nav-previous a,
+.posts-navigation .nav-previous a,
+.post-navigation .nav-previous a {
+	float: right;
+}
+.comment-navigation .nav-next a,
+.posts-navigation .nav-next a,
+.post-navigation .nav-next a {
+	float: left;
+}
+.meta-nav {
+	display: inline-block;
+	-ms-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.jetpack-social-navigation ul a {
+	margin-left: 10px;
+	margin-right: auto;
+}
+.jetpack-social-navigation ul:last-of-type {
+	margin-left: 0;
+	margin-right: auto;
+}
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
+.alignright.size-thumbnail {
+	float: right;
+	margin-left: 1.5em;
+	margin-right: auto;
+}
+.alignleft.size-thumbnail {
+	float: left;
+	margin-right: 1.5em;
+	margin-left: auto;
+}
+.header-background {
+	right: 0;
+	left: auto;
+}
+.entry-tags,
+.entry-categories {
+	margin-left: 3em;
+	margin-right: auto;
+}
+.blog .entry-background,
+.archive .entry-background,
+.search .entry-background {
+	right: 0;
+	left: auto;
+}
+a.more-link:after {
+	content: "\2190";
+	margin-right: 5px;
+	margin-left: auto;
+}
+.singular .edit-link {
+	float: left;
+	text-align: left;
+}
+.singular .site-title,
+.error404 .site-title,
+.search-no-results .site-title {
+	text-align: right;
+}
+.singular .site-description,
+.error404 .site-description,
+.search-no-results .site-description {
+	float: right;
+	text-align: right;
+}
+.singular .custom-logo,
+.error404 .custom-logo,
+.search-no-results .custom-logo {
+	float: right;
+	margin: 0;
+	margin-left: 1em;
+}
+.entry-format {
+	margin-left: 3em;
+	margin-right: auto;
+}
+.format-link .entry-title a:after {
+	margin-right: 5px;
+	margin-left: auto;
+}
+.comment-author img {
+	float: right;
+	margin-left: 1.5em;
+	margin-right: auto;
+}
+.comment .edit-link {
+	float: left;
+	text-align: left;
+}
+#infinite-handle span:after {
+	margin-right: 5px;
+	margin-left: auto;
+}
+.footer-widgets .widget-area {
+	float: right;
+}
+
+.widgets-list-layout .widgets-list-layout-blavatar {
+	margin-left: 0.5em;
+	margin-right: 0;
+}
+
+.widgets-list-layout .widgets-list-layout-links {
+	float: none;
+}
+
+@media screen and (min-width: 480px) {
+	.alignright {
+		float: right;
+		margin-left: 1.5em;
+		margin-right: auto;
+	}
+
+	.alignleft {
+		float: left;
+		margin-right: 1.5em;
+		margin-left: auto;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.page-content,
+	.entry-content,
+	.entry-summary,
+	.entry-title,
+	.entry-footer,
+	.comments-area,
+	.site-info,
+	.entry-author,
+	.entry-meta,
+	.page-title {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.slide-menu,
+	.singular .slide-menu {
+		left: -650px;
+		right: auto;
+	}
+
+	.slide-menu.expanded,
+	.singular .slide-menu.expanded {
+		left: 0;
+		right: auto;
+	}
+
+	.site {
+		right: 0;
+		-webkit-transition: .3s right ease-in-out;
+		-moz-transition: .3s right ease-in-out;
+		transition: .3s right ease-in-out;
+		left: auto;
+	}
+
+	.sidebar-open .site {
+		right: -650px;
+		-webkit-transition: .3s right ease-in-out;
+		-moz-transition: .3s right ease-in-out;
+		transition: .3s right ease-in-out;
+		left: auto;
+	}
+
+	.author-bio {
+		margin-right: 167px;
+		margin-left: auto;
+	}
+
+	.author-avatar img {
+		float: right;
+		margin: 0 0 0 1.5em;
+	}
+
+	.singular.single-thumbnail .entry-background:before {
+		right: 0;
+		left: auto;
+	}
+
+}
+
+@media screen and (min-width: 1060px) {
+	.entry-content .jetpack-video-wrapper,
+	.entry-content .gallery,
+	.entry-content .tiled-gallery-wrapper {
+		margin-right: -170px;
+		margin-left: auto;
+	}
+
+	img.size-big,
+	.caption-big {
+		margin-right: -170px;
+		margin-left: auto;
+	}
+
+	blockquote.aligncenter {
+		margin-right: -170px;
+		margin-left: auto;
+	}
+
+	.wp-caption.alignright,
+	img.alignright,
+	blockquote.alignright {
+		margin-right: -170px;
+		margin-left: auto;
+	}
+
+	.wp-caption.alignleft,
+	img.alignleft,
+	blockquote.alignleft {
+		margin-left: -170px;
+		margin-right: auto;
+	}
+
+	.site-title,
+	.site-description {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.comment-author img {
+		margin-right: -102px;
+		margin-left: auto;
+	}
+}
