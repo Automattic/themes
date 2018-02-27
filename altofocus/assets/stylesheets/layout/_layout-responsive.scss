@@ -1,0 +1,93 @@
+/*--------------------------------------------------------------
+## Responsive Layout Styles
+--------------------------------------------------------------*/
+
+@include breakpoint( mobileonly ) {
+
+	.site-content .hentry,
+	.site-content .post-navigation,
+	.site-content .comments-area,
+	.widget-area-wrap,
+	.site-footer-wrap {
+
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: $mobile-baseline 0;
+	}
+
+	.site-content .hentry {
+
+		padding-top: 0;
+	}
+
+	.single .flexslider {
+
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.site-header-wrap {
+
+		padding: $mobile-baseline 0 0;
+	}
+
+}
+
+@include breakpoint( phablet ) {
+
+	.site-header-wrap,
+	.site-content .hentry,
+	.site-content .post-navigation,
+	.site-content .comments-area,
+	.entry-media-wrap,
+	.widget-area-wrap,
+	.site-footer-wrap {
+
+		max-width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.site-header-wrap,
+	.site-content .hentry,
+	.site-content .comments-area,
+	.entry-media-wrap,
+	.widget-area-wrap,
+	.site-footer-wrap {
+
+		max-width: 90%;
+	}
+
+	.site-content .post-navigation {
+
+		max-width: 80%;
+	}
+}
+
+@include breakpoint( desktop ) {
+
+	.site-content .hentry,
+	.site-content .post-navigation,
+	.site-content .comments-area,
+	.widget-area-wrap,
+	.site-footer-wrap {
+
+		max-width: 75em;
+	}
+
+	.entry-media-wrap {
+
+		max-width: calc( 100% - 120px );
+	}
+
+	.site-content .post-navigation {
+
+		max-width: calc( 75em - 10% );
+	}
+}
+

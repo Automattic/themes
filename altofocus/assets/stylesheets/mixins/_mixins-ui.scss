@@ -1,0 +1,285 @@
+/*--------------------------------------------------------------*/
+/* !## UI Mixins */
+/*--------------------------------------------------------------*/
+
+// Center block
+@mixin center-block {
+
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin vertical-align( $position: relative ) {
+
+	position: $position;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin center-align( $position: relative ) {
+
+	position: $position;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate( -50%, -50% );
+	-ms-transform: translate( -50%, -50% );
+	transform: translate( -50%, -50% );
+}
+
+// Clearfix
+@mixin clearfix() {
+
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+
+	clear: both;
+}
+
+@mixin gutter-width( $width: $size_content, $gutter-width: $gutter ) {
+
+	padding-left: ($gutter-width * .5);
+	padding-right: ($gutter-width * .5);
+	width: calc(#{$width});
+}
+
+// Button
+@mixin button($color: $color__link, $round: 30px) {
+
+	@include list-item();
+	@include rounded($round);
+	background: $color__background-body;
+	border: 1px solid;
+	border-color: $color__border-transparent;
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+	color: $color__text-main;
+	line-height: 1;
+	outline: none;
+	padding: 1em $gutter;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: 	all 0.3s ease;
+	-o-transform: 		all 0.3s ease;
+	-ms-transform: 		all 0.3s ease;
+	transition: 		all 0.3s ease;
+
+	&:hover {
+
+		@include animation('bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)');
+		background: $color;
+		border-color: $color;
+		color: $color__background-body;
+	}
+
+	&:active,
+	&:focus {
+
+		border-color: $color__border-button-focus;
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
+		-webkit-transform: 	scale(.925);
+		-moz-transform: 	scale(.925);
+		-o-transform: 		scale(.925);
+		-ms-transform: 		scale(.925);
+		transform: 			scale(.925);
+	}
+}
+
+/**
+ * Non obstructive border
+ * - Src: http://stackoverflow.com/questions/11765642/sass-optimize-borders-into-one-line-of-code
+ * - Usage: @include non-border(2px solid shade($ccblue, 10%), bottom, right);
+ */
+
+@mixin non-border ($style, $sides...) {
+
+	@if ( $style != "" ) {
+
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: 2;
+
+			@if ($sides == "") {
+
+				border: $style;
+
+			} @else {
+
+				@each $side in $sides {
+
+					@if ($side == 'none') {
+						border: none;
+					}
+
+					@if ($side == 'top' or
+						$side == 'right' or
+						$side == 'bottom' or
+						$side == 'left') {
+						border-#{$side}: $style;
+					}
+
+					@if ($side == 'top') {
+						height: 0;
+						top: 0;
+						left: 0;
+						width: 100%;
+					}
+
+					@if ($side == 'right') {
+						height: 100%;
+						top: 0;
+						right: 0;
+						left: inherit;
+						width: 0;
+					}
+
+					@if ($side == 'bottom') {
+						bottom: 0;
+						height: 0;
+						left: 0;
+						width: 100%;
+					}
+
+					@if ($side == 'left') {
+						height: 100%;
+						left: 0;
+						top: 0;
+						right: inherit;
+						width: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Rounded Corners
+@mixin rounded($radius: 0.5em) {
+
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Rounded Bottom Corners
+@mixin rounded-bottom($radius: 0.5em) {
+
+	-webkit-border-bottom-left-radius: $radius;
+	-moz-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+// Rounded Bottom Corners
+@mixin rounded-top($radius: 0.5em) {
+	-webkit-border-top-left-radius: $radius;
+	-moz-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	-moz-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+// Rounded Paper
+@mixin paper($color: $color__border-button, $background: $color__background-body) {
+
+	background: $background;
+	border: 1px solid $color;
+	@include rounded();
+	overflow: hidden;
+}
+
+// Rounded Bottom Paper
+@mixin paperbottom($color: $color__border-button, $background: $color__background-body) {
+
+	background: $background;
+	border: 1px solid $color;
+	@include rounded-bottom();
+	overflow: hidden;
+}
+
+// Rounded Top Paper
+@mixin papertop($color: $color__border-button, $background: $color__background-body) {
+
+	background: $background;
+	border: 1px solid $color;
+	@include rounded-top();
+	overflow: hidden;
+}
+
+// Flat Paper
+@mixin paperflat($color: $color__border-button, $background: $color__background-body) {
+
+	background: $background;
+	border: 1px solid $color;
+	overflow: hidden;
+}
+
+@mixin show-screen-reader-text() {
+
+    clip: inherit;
+    position: inherit !important;
+    height: inherit;
+    left: inherit;
+    overflow: visible;
+    width: inherit;
+}
+
+@mixin hide-this() {
+
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+
+		background-color: $color__background-screen;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: $color__text-screen;
+		display: block;
+		@include font-size(0.875);
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+
+@mixin linear-gradient( $top_color: rgba( 255, 255, 255, 0 ), $bottom_color: rgba( 0, 0, 0, .125 ) ) {
+
+	/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-gradient( linear, 0% 0%, 0% 100%, from( #{ $bottom_color } ), to( #{ $top_color } ) );
+
+	/* Safari 5.1, Chrome 10+ */
+	background: -webkit-linear-gradient( top, $top_color, $bottom_color );
+
+	/* Firefox 3.6+ */
+	background: -moz-linear-gradient( top, $top_color, $bottom_color );
+
+	/* IE 10 */
+	background: -ms-linear-gradient( top, $top_color, $bottom_color );
+
+	/* Opera 11.10+ */
+	background: -o-linear-gradient( top, $top_color, $bottom_color );
+}

@@ -1,0 +1,195 @@
+/**
+ * WordPress.com specific styles
+ *
+ *
+ */
+
+/* Variables & Mixins
+--------------------------------------------------------------*/
+@import "variables/variables-base";
+@import "mixins/mixins-base";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+@import "plugins/highlander-comments";
+
+/**
+ * Stats
+ */
+
+#wpstats {
+	display: none;
+}
+
+/**
+ * Ads
+ */
+
+.wpa .u > div,
+.wpadvert > div > * {
+
+	background-color: #efefef;
+}
+
+/**
+ * Widgets
+ */
+
+#secondary {
+
+	.time_machine_widget {
+		position: relative;
+
+		.time-machine-post {
+			width: ( ( 100% / 8 ) * 5 );
+			margin-left: calc(25%);
+		}
+
+		.time-machine-post-title {
+			@include font-size(1.125);
+			font-family: $font__header;
+			font-weight: 300;
+			line-height: ($baseline);
+			word-break: break-word;
+			margin: ($baseline * .5) 0;
+		}
+
+		.time-machine-navigation {
+			position: relative;
+		}
+
+		.time-machine-navigation {
+			@include nav-title();
+		}
+	}
+
+	.widget_wpcom_social_media_icons_widget ul li a {
+
+		padding: 0 3px;
+
+		&:before {
+			font-size: $baseline;
+		}
+	}
+
+	.widget_authors > ul > li > a {
+
+		display: block;
+		margin-bottom: ($baseline * .5);
+
+		img,
+		strong {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.widget_recent_entries ul {
+
+		margin-bottom: 0;
+
+		li {
+
+			@include nav-title();
+			margin-bottom: $mobile-baseline;
+		}
+	}
+
+	.widget-grofile .grofile-meta h4 {
+
+		@include widget-title();
+		color: $color__link-hover;
+		margin: 0;
+	}
+
+	.widget_recent_comments {
+
+		.recentcommentstexttop,
+		.recentcommentstextend {
+
+			@include nav-title();
+		}
+	}
+
+	.aboutme_widget h2 {
+
+		clear: inherit;
+	}
+
+	#flickr_badge_wrapper {
+
+		border: $color__border-transparent;
+	}
+
+}
+
+@include breakpoint(tablet) {
+
+	#secondary {
+
+		.widget_author_grid > ul,
+		.widget_flickr > table,
+		.widget_recent_images .recent_images,
+		.jetpack_widget_social_icons .jetpack-social-widget-list {
+
+			@include gutter-width( ( 100% / 8 ) * 5 );
+		}
+
+		.time_machine_widget {
+
+			.time-machine-post {
+				width: ( ( 100% / 8 ) * 5 );
+				margin-left: calc(25%);
+			}
+
+			.time-machine-navigation {
+				position: absolute;
+				top: ($baseline * 1.5);
+				left: ($gutter * .5);
+			}
+
+			.time-machine-navigation {
+				@include nav-title();
+			}
+		}
+
+		.widget_jetpack_my_community > * {
+
+			margin-left: 25%;
+			@include gutter-width( ( 100% / 8 ) * 5 );
+		}
+
+		.widget-grofile {
+			padding-left: 25%;
+			position: relative;
+
+			.grofile-meta {
+				@include gutter-width( 60% );
+
+				h4 {
+					position: absolute;
+					left: 0;
+					@include gutter-width( 25% );
+				}
+			}
+			.grofile-thumbnail {
+				@include gutter-width( 40% );
+			}
+		}
+
+		.widget_recent_comments {
+
+			.recentcommentsavatar {
+
+				@include gutter-width( ( 100% / 8 ) * 5 );
+			}
+		}
+
+		.wp_widget_tag_cloud > *:not(.widget-title),
+		.wp_widget_tag_cloud > div {
+
+			@include gutter-width( ( 100% / 8 ) * 5 );
+		}
+	}
+}

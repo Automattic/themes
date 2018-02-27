@@ -1,0 +1,299 @@
+/*--------------------------------------------------------------*/
+/* !## Animations */
+/*--------------------------------------------------------------*/
+
+// Using the mixins looks like this:
+
+// @include keyframes(move-the-object) {
+//		0%   { left: 100px; }
+//		100% { left: 200px; }
+// }
+//
+// .object-to-animate {
+//		@include animation('move-the-object .5s 1', 'move-the-object-again .5s 1 .5s');
+// }
+
+// Order from longest to shortest
+// If anything changes edit here!!
+$default-prefixes: webkit moz ms o;
+
+// Prefixer mixin
+// $attr: property to be prefixed (transition, transform, box-shadow), can  be added via another mixin or directly
+// $value: value of the property
+// $prefixes: by default it uses those defined as default, but can be changed to those needed
+@mixin prefix( $attr, $value, $prefixes: $default-prefixes ) {
+
+  // Output each prefixed rule
+	@each $prefix in $prefixes {
+
+		-#{ $prefix }-#{ $attr }: #{ $value };
+	}
+
+  // Non prefixed rule
+	#{ $attr }: #{ $value };
+}
+
+// Multi-transition mixins
+//
+// Src: https://gist.github.com/tobiasahlin/7a421fb9306a4f518aab
+//
+// Usage:   @include multitransition(width, height 0.3s ease-in-out);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+//
+// Pass in any number of transitions
+@mixin multitransition($transitions...) {
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+  }
+
+  -webkit-transition: $unfoldedTransitions;
+  transition: $unfoldedTransitions;
+}
+
+// Unfold transition mixin
+@function unfoldTransition ($transition) {
+  // Default values
+  $property: all;
+  $duration: .2s;
+  $easing: null; // Browser default is ease, which is what we want
+  $delay: null; // Browser default is 0, which is what we want
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  // Grab transition properties if they exist
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i)
+    } @else {
+      $p: nth($defaultProperties, $i)
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+
+// Transition mixin
+@mixin transition( $attr, $delay, $fx ) {
+
+	$value: $attr $delay $fx;
+	@include prefix( 'transition', $value );
+}
+// example: @include transition(color, .8s, linear);
+
+// Transform mixin
+@mixin transform( $attr, $value ) {
+
+	$property: str_insert( $attr, '()', -1 );
+	$prop: str_insert( $property, #{ $value }, -2 );
+	@include prefix( 'transform', $prop );
+}
+// example: @include transform(transformX, -100%);
+
+// Prefixed animations
+@mixin animation( $animate... ) {
+
+	$max: length( $animate );
+	$animations: '';
+
+	@for $i from 1 through $max {
+
+		$animations: #{ $animations + nth( $animate, $i ) };
+
+		@if $i < $max {
+
+			$animations: #{ $animations + ", " };
+		}
+	}
+
+	-webkit-animation: $animations;
+	-moz-animation:    $animations;
+	-o-animation:      $animations;
+	animation:         $animations;
+}
+
+// Keyframes settings
+@mixin keyframes( $animationName ) {
+
+	@-webkit-keyframes #{ $animationName } {
+
+		@content;
+	}
+
+	@-moz-keyframes #{ $animationName } {
+
+		@content;
+	}
+
+	@-o-keyframes #{ $animationName } {
+
+		@content;
+	}
+
+	@keyframes #{ $animationName } {
+
+		@content;
+	}
+}
+
+@include keyframes( bounce-reveal-y ) {
+
+	0%,
+	100% {
+
+		@include transform( scaleY, 1 ); // -webkit-transform: scaleY(1);
+	}
+
+	50% {
+
+		@include transform( scaleY, 1.1 ); // -webkit-transform: scaleY(1.1);
+	}
+}
+
+@include keyframes( bounce-hide-y ) {
+
+	0%,
+	100% {
+
+		@include transform( scaleY, 1 ); // -webkit-transform: scaleY(1);
+	}
+
+	50% {
+
+		@include transform( scaleY, .9 ); // -webkit-transform: scaleY(1.1);
+	}
+}
+
+@include keyframes( bounce-reveal ) {
+
+	0%,
+	100% {
+
+		@include transform( scale, 1 );
+	}
+
+	33% {
+
+		@include transform( scale, 1.1 );
+	}
+
+	66% {
+
+		@include transform( scale, 0.9 );
+	}
+}
+
+@include keyframes( bounce-left ) {
+
+	0%,
+	100% {
+
+		@include transform( translateX, 0 );
+	}
+
+	33% {
+
+		@include transform( translateX, -10px );
+	}
+
+	66% {
+
+		@include transform( translateX, 3px );
+	}
+}
+
+@include keyframes( bounce-right ) {
+
+	0%,
+	100% {
+
+		@include transform( translateX, 1 );
+	}
+
+	33% {
+
+		@include transform( translateX, 10px );
+	}
+
+	66% {
+
+		@include transform( translateX, -3px );
+	}
+}
+
+@include keyframes( bounce-reveal-large ) {
+
+	0%,
+	100% {
+
+		@include transform( scale, 1 );
+	}
+
+	33% {
+
+		@include transform( scale, 1.25 );
+	}
+
+	66% {
+
+		@include transform( scale, 0.85 );
+	}
+}
+
+@include keyframes( bounce-zoom ) {
+
+	0% {
+
+		@include transform( scale, 1 );
+	}
+
+	25% {
+
+		@include transform( scale, 1.1 );
+	}
+
+	75% {
+
+		@include transform( scale, 0.9 );
+	}
+
+	100% {
+
+		@include transform( scale, 1.125 );
+	}
+}
+
+// @-webkit-keyframes 'bounce-reveal' {
+//		0% { -webkit-transform: scale(0.3); }
+//		33% { -webkit-transform: scale(1.1); }
+//		66% { -webkit-transform: scale(0.9); }
+//		100% { -webkit-transform: scale(1); }
+// }
+
+// -webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+// .tag-list-wrap {
+//
+// 		margin-left:-999em;
+// 		-webkit-transform-origin: top left;
+// 		cursor: pointer;
+// 		position: absolute;
+// 		top: 0;
+//
+// 		&:hover .tag-list-wrap {
+//
+// 			.tags();
+// 			background: rgb(23, 23, 23);
+// 			padding: @gutter;
+// 			z-index: 20;
+// 			display: table;
+// 			word-spacing: normal;
+// 			position: absolute;
+// 			top: 0;
+// 			margin-left: 0;
+// 			-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+// 		}
+// }

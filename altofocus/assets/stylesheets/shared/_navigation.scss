@@ -1,0 +1,164 @@
+@import "../components/navigation/navigation-top";
+@import "../components/navigation/social-menu";
+@import "../components/navigation/navigation-fixed";
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	align-items: flex-start;
+	border-top: 1px solid $color__border-transparent;
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+	padding: ($baseline * 1.5) 0 ($baseline * 1.5);
+	position: relative;
+	z-index: 3;
+
+	.screen-reader-text {
+
+		@include show-screen-reader-text();
+		@include widget-title();
+		color: $color__link-hover;
+		margin: 0 0 ($baseline * .5);
+		padding: 0 ($gutter / 2);
+		width: 100%;
+		flex: 1 1 100%;
+	}
+
+	.nav-links {
+
+		flex: 2 1 calc((100% / 8) * 6);
+
+		a {
+
+			display: block;
+			padding: 0 ($gutter / 2);
+		}
+	}
+
+	.nav-previous,
+	.nav-next {
+
+		@include nav-title();
+	}
+
+	.nav-previous {
+
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+
+		float: right;
+		width: 50%;
+	}
+
+	.meta-nav {
+
+		@include list-item();
+		color: #CCC;
+		display: block;
+		font-family: $font__main;
+		font-style: normal;
+	}
+}
+
+.comment-navigation {
+
+	border-top: 1px solid $color__border-transparent;
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+}
+
+@include breakpoint( mobileonly ) {
+
+	.post-navigation, {
+
+		.nav-previous,
+		.nav-next {
+
+			float: none;
+			width: 100%;
+		}
+
+		.nav-links .nav-previous + .nav-next {
+
+			margin-top: $mobile-baseline;
+		}
+	}
+
+	.comment-navigation {
+
+		border-bottom: 1px solid $color__border-transparent;
+		margin: 0 0 ( $baseline * 1.5 );
+
+		.screen-reader-text {
+
+			display: none;
+		}
+	}
+
+	.posts-navigation {
+
+		border-top: none;
+
+		.screen-reader-text {
+
+			display: none;
+		}
+	}
+}
+
+@include breakpoint( tabletonly ) {
+
+	.posts-navigation {
+
+		.screen-reader-text {
+
+			display: none;
+		}
+	}
+
+	.comment-navigation {
+
+		border-bottom: 1px solid $color__border-transparent;
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.comment-navigation,
+	.post-navigation {
+
+		padding: ($baseline * 1.5) 0 ($baseline * 1.5);
+
+		.screen-reader-text {
+
+			margin: 0;
+			padding: 0 ($gutter / 2);
+			flex: 1 1 calc((100% / 8) * 2);
+		}
+	}
+
+	.posts-navigation {
+
+		padding: ($baseline * 1.5) 0 ($baseline * 1.5);
+
+		.screen-reader-text {
+
+			margin: 0;
+			padding: 0 ($gutter / 2);
+			flex: 1 1 calc((100% / 8) * 2);
+		}
+	}
+
+	.comment-navigation {
+
+		padding: ($baseline * 1.5) 0 ($baseline * 1.5);
+	}
+}

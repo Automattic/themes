@@ -1,0 +1,223 @@
+/*--------------------------------------------------------------
+## Isotope Grid
+--------------------------------------------------------------*/
+
+/* center container with CSS */
+.home .content-area,
+.blog .content-area {
+
+	border-top: 1px solid $color__border-transparent;
+}
+
+/**
+ * Disabling Isotope CSS3 transitions
+ */
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/**
+ * Isotope
+ */
+
+.hfeed {
+
+	.site-main {
+
+		display: block;
+		margin: 0 auto ($baseline * 4);
+		opacity: 0;
+		overflow: visible;
+		padding: $gutter 0;
+		width: calc( 100% - #{($gutter)} );
+
+		@include transition( opacity, .33s, ease-in );
+
+		/* fluid 5 columns */
+		.grid-sizer,
+		.grid-item,
+		.grid-item-featured:not(.has-post-thumbnail),
+		.grid-item-featured.grid-item-small {
+
+			width: 100%; // calc(20% - #{$gutter});
+		}
+
+		/* 2 columns wide */
+		.grid-item--width2,
+		.grid-item-featured {
+
+			width: 100%; // calc(40% - #{$gutter * 2});
+		}
+
+		.gutter-sizer {
+
+			width: 0;
+		}
+	}
+}
+
+.no-js .hfeed .site-main,
+.hfeed.error404 .site-main,
+.hfeed.search-no-results .site-main,
+.hfeed .site-main.has-isotope {
+
+	opacity: 1;
+}
+
+@include breakpoint( mobileonly ) {
+
+	.hfeed {
+
+		.site-main {
+
+			width: calc( 100% );
+		}
+	}
+}
+
+@include breakpoint( phablet ) {
+
+	.hfeed {
+
+		.site-main {
+
+			margin: 0 auto calc(#{ $baseline * 4 } + #{ $gutter * 1.5 };
+
+			/* fluid 5 columns */
+			.grid-sizer,
+			.grid-item,
+			.grid-item-featured:not(.has-post-thumbnail),
+			.grid-item-featured.grid-item-small {
+
+				width: 50%;
+			}
+
+			/* 2 columns wide */
+			.grid-item--width2,
+			.grid-item-featured {
+
+				width: 50%;
+			}
+
+			.gutter-sizer {
+
+				width: 0;
+			}
+		}
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.hfeed {
+
+		.site-main {
+
+			/* fluid 5 columns */
+			.grid-sizer,
+			.grid-item,
+			.grid-item-featured:not(.has-post-thumbnail),
+			.grid-item-featured.grid-item-small {
+
+				width: 33%;
+			}
+
+			/* 2 columns wide */
+			.grid-item--width2,
+			.grid-item-featured {
+
+				width: 66%;
+			}
+
+			.gutter-sizer {
+
+				width: 0;
+			}
+		}
+	}
+
+	// Archives
+	.hfeed:not(.home):not(.blog) {
+
+		.site-main {
+
+			/* fluid 5 columns */
+			.grid-sizer,
+			.grid-item,
+			.grid-item-featured:not(.has-post-thumbnail),
+			.grid-item-featured.grid-item-small {
+
+				width: 50%;
+			}
+
+			/* 2 columns wide */
+			.grid-item--width2,
+			.grid-item-featured {
+
+				width: 50%;
+			}
+		}
+	}
+}
+
+@include breakpoint(laptop) {
+
+	.hfeed {
+
+		.site-main {
+
+			/* fluid 5 columns */
+			.grid-sizer,
+			.grid-item,
+			.grid-item-featured:not(.has-post-thumbnail),
+			.grid-item-featured.grid-item-small {
+
+				width: 25%; // calc(20% - #{$gutter});
+			}
+
+			/* 2 columns wide */
+			.grid-item--width2,
+			.grid-item-featured {
+
+				width: 50%; // calc(40% - #{$gutter * 2});
+			}
+
+			.gutter-sizer {
+
+				width: 0;
+			}
+
+		}
+
+		// Archives
+		&.blog:not(.home),
+		&:not(.home):not(.blog) {
+
+			.site-main {
+
+				/* fluid 5 columns */
+				.grid-sizer,
+				.grid-item,
+				.grid-item-featured:not(.has-post-thumbnail),
+				.grid-item-featured.grid-item-small {
+
+					width: 33.333%;
+				}
+
+				/* 2 columns wide */
+				.grid-item--width2,
+				.grid-item-featured {
+
+					width: 66.667%;
+				}
+			}
+		}
+	}
+}

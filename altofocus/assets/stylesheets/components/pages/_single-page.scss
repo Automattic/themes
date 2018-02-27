@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------*/
+/* !## Single Page */
+/*--------------------------------------------------------------*/
+
+.page-links {
+
+	clear: both;
+	margin: 0 0 $baseline;
+}
+
+.page .hentry.page {
+
+	padding: $baseline 0;
+	@include non-border(1px solid $color__border-transparent, top);
+
+	&:before {
+
+		margin-left: -50%;
+		width: 200%;
+	}
+
+	.entry-header {
+
+		display: table;
+		margin: 0 0 ($baseline);
+		position: relative;
+		width: 100%;
+	}
+
+	.entry-title {
+
+		@include article-title();
+		margin-bottom: 0;
+	}
+
+	.entry-meta {
+
+		@include gutter-width(100%);
+	}
+
+	.entry-header .entry-title,
+	.entry-content {
+
+		@include gutter-width(100%);
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.page .hentry.page {
+
+		padding: ($baseline * 2) 5%;
+
+		.entry-header {
+
+			margin-bottom: ($baseline * 2);
+		}
+
+		.entry-title {
+
+			float: left;
+		}
+
+		.entry-header .entry-title,
+		.entry-content {
+
+			@include gutter-width( #{((100% / 8) * 6)} );
+		}
+
+		.entry-meta {
+
+			@include gutter-width( #{((100% / 8) * 2)} );
+			float: right;
+		}
+	}
+}

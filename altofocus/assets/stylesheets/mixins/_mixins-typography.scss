@@ -1,0 +1,134 @@
+/*--------------------------------------------------------------*/
+/* !## Typographic Mixins */
+/*--------------------------------------------------------------*/
+
+// Rem output with px fallback
+@mixin font-size( $sizeValue: 1 ) {
+
+	font-size: ( ( $sizeValue * 15 ) * 1px );
+	font-size: $sizeValue * 1rem;
+}
+
+// Details Text
+@mixin body-copy() {
+
+	@include font-size( .925 );
+	font-family: $font__header;
+	font-weight: 300;
+	line-height: $baseline;
+
+	@include breakpoint( phablet ) {
+
+		@include font-size( 1.125 );
+	}
+}
+
+// Small Body Copy Text
+@mixin body-copy-small() {
+
+	@include font-size(0.875);
+	word-break: break-word;
+	font-weight: 300;
+	line-height: ($baseline * .875);
+}
+
+// Meta Text
+@mixin meta() {
+
+	@include font-size(0.75);
+	font-weight: 700;
+	letter-spacing: .075em;
+	line-height: $baseline;
+	text-transform: uppercase;
+}
+
+// Site Title
+@mixin site-title() {
+
+	font-family: $font__header;
+	@include font-size( 1.5 );
+	font-weight:700;
+	letter-spacing: inherit;
+	line-height: ($baseline * .8375);
+
+	@include breakpoint( tablet ) {
+
+		@include font-size( 2.1375 );
+	}
+}
+
+// Post Titles
+@mixin article-title( $font_size: 2.5 ) {
+
+	word-break: break-word;
+	@include font-size( $font_size * .875 );
+	font-family: $font__header;
+	font-weight: 300;
+	line-height: 1.25;
+
+	@include breakpoint( phablet ) {
+
+		@include font-size( $font_size );
+	}
+}
+
+// List Header Text
+@mixin list-header( $font_size: 1 ) {
+
+	@include font-size( $font_size * .925 );
+	font-weight: 300;
+	line-height: ($baseline);
+
+	@include breakpoint( phablet ) {
+
+		@include font-size( $font_size );
+	}
+}
+
+// List Item Text
+@mixin list-item( $font_size: 1 ) {
+
+	font-family: $font__main;
+	@include font-size( $font_size * .925 );
+	display: block;
+	font-weight: 300;
+	line-height: 1;
+	padding: .2875em 0;
+	text-transform: uppercase;
+	word-break: break-word;
+
+	@include breakpoint( phablet ) {
+
+		@include font-size( $font_size );
+	}
+}
+
+// Navigation Titles
+@mixin nav-title( $font_size: 1.125 ) {
+
+	@include font-size( $font_size * .875 );
+	font-family: $font__header;
+	font-weight: 300;
+	font-style: italic;
+	line-height: ($baseline * .8375);
+
+	@include breakpoint( phablet ) {
+
+		@include font-size( $font_size );
+	}
+}
+
+// Widget Titles
+@mixin widget-title( $font_size: 1.125 ) {
+
+	@include font-size( $font_size * .875 );
+	font-family: $font__header;
+	font-weight: 300;
+	line-height: ($baseline);
+	word-break: break-word;
+
+	@include breakpoint( phablet ) {
+
+		@include font-size( $font_size );
+	}
+}

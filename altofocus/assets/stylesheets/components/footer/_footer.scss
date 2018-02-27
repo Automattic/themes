@@ -1,0 +1,59 @@
+/*--------------------------------------------------------------*/
+/* !## Site Footer */
+/*--------------------------------------------------------------*/
+
+.site-footer {
+
+	border-top: 1px solid $color__border-transparent;
+}
+
+.site-footer-wrap {
+
+	padding: 1.5em 0;
+	position: relative;
+	overflow: visible;
+}
+
+.site-info {
+
+	clear: both;
+	float: none;
+	padding: 0 $mobile-gutter;
+	width: 100%;
+}
+
+#wpstats {
+
+	display: none;
+}
+
+@include breakpoint( tablet ) {
+
+	.site-footer-wrap {
+
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		padding: 3.5em 0;
+		position: relative;
+		align-items: center;
+		overflow: visible;
+	}
+
+	.site-info {
+
+		bottom: 0;
+		clear: left;
+		float: left;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		width: 60%;
+	}
+
+	.site-info-wrap {
+
+		bottom: ($baseline * 1.5);
+		position: fixed;
+	}
+}

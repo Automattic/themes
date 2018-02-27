@@ -1,0 +1,180 @@
+/*--------------------------------------------------------------*/
+/* !## Posts */
+/*--------------------------------------------------------------*/
+
+.sticky {
+
+	display: block;
+}
+
+.hentry {
+
+	margin: 0;
+}
+
+.byline,
+.updated:not(.published){
+
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+
+	display: block;
+}
+
+#page a.button {
+
+	@include button();
+	display: inline-block;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+
+	@include body-copy();
+	margin: 0;
+
+	p {
+
+		word-break: break-word;
+	}
+}
+
+.posted-on {
+
+	@include widget-title();
+	color: $color__link-hover;
+}
+
+.byline {
+
+	@include list-header();
+	color: $color__link-hover;
+
+	a {
+
+		@include list-item();
+		display: inline-block;
+	}
+}
+
+.comments-link {
+
+	display: flex;
+	height: 60px;
+	justify-content: center;
+	position: relative;
+	width: 60px;
+	z-index: 10;
+
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: 	all 0.3s ease;
+	-o-transition: 		all 0.3s ease;
+	-ms-transition: 	all 0.3s ease;
+	transition: 		all 0.3s ease;
+
+	a {
+
+		color: $color__text-main;
+		font-size: $gutter;
+		line-height: 20px;
+		min-width: 20px;
+		padding: 20px ($gutter * .2);
+		position: relative;
+		text-align: center;
+		width: 60px;
+		z-index: 3;
+
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: 	all 0.3s ease;
+		-o-transition: 		all 0.3s ease;
+		-ms-transition: 	all 0.3s ease;
+		transition: 		all 0.3s ease;
+	}
+
+	.comment-icon {
+
+		@include prefix( filter, drop-shadow( 1px 3px 2px rgba(0, 0, 0, 0.33) ) );
+		left: 0;
+		position: absolute;
+		overflow: visible;
+
+		.path {
+
+			fill: $color__background-body;
+			stroke: $color__border-transparent;
+			stroke-miterlimit: 10;
+			-webkit-transition: all 0.3s ease;
+			-moz-transition: 	all 0.3s ease;
+			-o-transition: 		all 0.3s ease;
+			-ms-transition: 	all 0.3s ease;
+			transition: 		all 0.3s ease;
+		}
+	}
+
+	&:hover {
+
+		@include animation('bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)');
+
+		a {
+
+			color: $color__background-body;
+			opacity: 1;
+		}
+
+		.comment-icon {
+
+			.path {
+
+				fill: $color__link;
+				stroke: $color__link;
+			}
+		}
+	}
+}
+
+.entry-footer {
+
+	align-content: flex-start;
+	display: flex;
+	flex-flow: row nowrap;
+	overflow: visible;
+	@include list-header();
+	color: $color__link-hover;
+
+	& > * {
+
+		flex: 2 1 0;
+		margin-right: ( $gutter * .5 );
+
+		&:last-child {
+
+			margin-right: 0;
+		}
+	}
+
+	.comments-link {
+
+		flex: 0 0 auto;
+		margin-right: calc((100% / 8) * 1);
+	}
+
+	div > * {
+
+		display: block;
+	}
+
+	ul {
+
+		list-style: none;
+		margin: 0;
+
+		li a {
+
+			@include list-item();
+		}
+	}
+}

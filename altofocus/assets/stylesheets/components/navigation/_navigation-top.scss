@@ -1,0 +1,577 @@
+/*--------------------------------------------------------------*/
+/* !## Top Navigation */
+/*--------------------------------------------------------------*/
+
+/*
+ * Top Navigation
+ */
+.top-navigation {
+
+	clear: both;
+	display: table;
+	float: none;
+	position: relative;
+	text-align: left;
+	width: 100%;
+	align-self: flex-end;
+	z-index: 10;
+
+	.col-width {
+
+		width: 100%;
+	}
+
+	& > div {
+
+		background: $color__background-body;
+		float: right;
+		height: auto;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		-webkit-transition: max-height 0.3s ease, opacity 0.3s ease;
+		-moz-transition: max-height all 0.3s ease, opacity 0.3s ease;
+		transition: max-height all 0.3s ease, opacity 0.3s ease;
+
+		& > ul {
+
+			margin-top: $baseline;
+			text-align: left;
+		}
+	}
+
+	ul {
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+
+		a {
+
+			display: block;
+			@include list-item();
+			padding: 1em ($gutter * .5);
+		}
+
+		&.current_page_ancestor > a,
+		&.current-page-parent > a,
+		&.current_page_item > a,
+		& > a:focus {
+
+			text-decoration: underline;
+		}
+	}
+
+	/*
+	 * Sub-menus
+	 */
+	.sub-menu,
+	.children {
+
+		height: auto;
+		max-height: 0;
+		visibility: hidden;
+		opacity: 0;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+
+		li > a {
+
+			margin-left: ($gutter + 3);
+			padding-left: 0;
+			position: relative;
+
+			&:after {
+
+				content: '\2022';
+				font-family: 'FontAwesome';
+				font-weight: normal;
+				left: -15px;
+				position: absolute;
+				top: 5px;
+			}
+		}
+
+		&.toggled-on {
+
+			max-height: 9999px;
+			opacity: 1;
+			visibility: visible;
+			width: 100%;
+		}
+	}
+}
+
+/*
+ * Dropdown toggle buttons
+ */
+.dropdown-toggle {
+
+	background: $color__background-body;
+	border: 1px solid $color__border-transparent;
+	box-shadow: 0 0 0 $color__border-transparent;
+	color: $color__text-main;
+	display: inline-block;
+	height: 32px;
+	line-height: 5px;
+	margin: 0;
+	padding: 3px;
+	speak: none;
+	z-index: 5;
+	width: 32px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	border-radius: 20px;
+
+	.meta-nav .dropdown-icon .line {
+
+		fill: none;
+		stroke-width: 1px;
+		stroke: $color__text-main;
+		stroke-miterlimit: 10;
+	}
+
+	.meta-nav .dropdown-icon-close {
+
+		display: none;
+	}
+
+	&:active,
+	&:focus {
+
+		border-color: $color__border-transparent;
+	}
+
+	&:hover {
+
+		background: $color__link;
+		border-color: $color__link;
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+
+		.meta-nav .dropdown-icon .line {
+
+			stroke: $color__background-body;
+		}
+	}
+
+	&.toggled-on {
+
+		background: $color__link;
+		border-color: $color__link;
+		box-shadow: 0 0 0 $color__border-transparent;
+
+		& > div {
+
+			max-height: 9999px;
+			opacity: 1;
+			z-index: 999;
+		}
+
+		.meta-nav .dropdown-icon-open {
+
+			display: none;
+		}
+
+		.meta-nav .dropdown-icon-close {
+
+			display: inline-block;
+		}
+
+		.meta-nav .dropdown-icon .line {
+
+			stroke: $color__background-body;
+		}
+	}
+}
+
+/*
+ * Menu Toggle
+ */
+.menu-toggle {
+
+	@include list-header();
+	background: $color__background-body;
+	cursor: pointer;
+	display: none;
+	font-weight: 500;
+	line-height: 20px;
+	text-align: left;
+
+	.meta-nav {
+
+		display: inline-block;
+		height: 18px;
+		width: 16px;
+		vertical-align: middle;
+
+		.menu-icon .line {
+
+			fill: none;
+			stroke: $color__text-main;
+			stroke-miterlimit:10;
+		}
+
+		.menu-icon-close {
+
+			display: none;
+		}
+	}
+
+	&:hover .meta-nav {
+
+		.menu-icon .line {
+
+			stroke: $color__background-body;
+		}
+	}
+
+	&:active .meta-nav,
+	&:focus .meta-nav {
+
+		.menu-icon .line {
+
+			stroke: $color__background-body;
+		}
+	}
+
+	&[aria-expanded="true"] .meta-nav {
+
+		.menu-icon-open {
+
+			display: none;
+		}
+
+		.menu-icon-close {
+
+			display: block;
+		}
+	}
+}
+
+/*--------------------------------------------------------------*/
+/* !## Mobile and Down Navigation */
+/*--------------------------------------------------------------*/
+
+@include breakpoint( mobileonly ) {
+
+	/*
+	 * Top Navigation
+	 */
+	.top-navigation {
+
+		display: block;
+		padding: 0;
+		text-align: right;
+
+		@include transition( max-height, 0.3s, ease );
+		@include transition( opacity, 0.3s, ease );
+
+		&.toggled-on > div {
+
+			background: transparent;
+			max-height: 9999px;
+			opacity: 1;
+			width: 100%;
+			z-index: 999;
+
+			& > ul {
+
+				margin-top: 0;
+			}
+		}
+
+		/*
+		 * Sub-menu top borders
+		 *
+		 * Using a psuedo class for top borders in
+		 * menu on mobile so that we don't need
+		 * media queries in our color annotations.
+		 */
+		.sub-menu,
+		.children {
+
+			border-top: none;
+			position: relative;
+			padding-left: ($gutter * .6);
+			-webkit-transition: all 0.375s ease;
+			-moz-transition:    all 0.375s ease;
+			transition:         all 0.375s ease;
+
+			&:before,
+			&:before {
+
+				content: "";
+				border-top: 1px solid $color__border-transparent;
+				height: 1px;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+
+			li > a:after {
+
+				top: 15px;
+			}
+		}
+
+		/*
+		 * Sub-menu bottom borders
+		 *
+		 * Using a psuedo class for bottom borders
+		 * in menu on mobile so that we don't need
+		 * media queries in our color annotations.
+		 **/
+		& > div > ul {
+
+			border-top: 1px solid $color__border-transparent;
+		}
+
+		li {
+
+			position: relative;
+
+			a {
+
+				position: relative;
+				z-index: 1;
+			}
+
+			&:after {
+
+				content: "";
+				bottom: 0;
+				border-bottom: 1px solid $color__border-transparent;
+				height: 1px;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+
+			&.sub-menu,
+			&.children {
+
+				li > a:after {
+
+					top: ($gutter * .5 + 3px);
+				}
+			}
+
+			&.menu-item-has-children > a {
+
+				padding-right: ($gutter * 1.75);
+			}
+		}
+
+		ul:last-of-type > li:last-of-type:after {
+
+			border-bottom: none;
+		}
+
+		&[style] {
+
+			min-height: inherit !important;
+		}
+	}
+
+	/*
+	 * Dropdown toggle buttons
+	 */
+	.dropdown-toggle {
+
+		position: absolute;
+		right: 5px;
+		top: 5px;
+
+		&:after {
+
+			line-height: 0.2;
+		}
+	}
+
+	/*
+	 * Menu Toggle
+	 */
+	.menu-toggle {
+
+		bottom: calc( 100% + #{$mobile-baseline} );
+		display: block;
+		padding: ($baseline * .5) ($gutter * .5);
+		position: absolute;
+		right: 10px;
+	}
+}
+
+/*--------------------------------------------------------------*/
+/* !## Phablet and Up Navigation */
+/*--------------------------------------------------------------*/
+
+@include breakpoint( phablet ) {
+
+	/*
+	 * Top Navigation
+	 */
+	.top-navigation {
+
+		display: inline-block;
+		font-size: 16px;
+		height: inherit;
+		margin: 0;
+		overflow: visible;
+		position: relative;
+		vertical-align: middle;
+		width: 30%;
+
+		& > div {
+
+			display: flex;
+			float: none;
+			flex-wrap: nowrap;
+			max-height: inherit;
+			position: relative;
+			opacity: 1;
+			overflow: visible;
+			width: 100%;
+		}
+
+		div > ul {
+
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			text-align: left;
+			z-index: 1;
+
+			// Top-level list items
+			& > li {
+
+				display: block;
+				position: relative;
+				z-index: 2;
+
+				a {
+
+					display: inline-block;
+					padding: 5px 8px;
+					text-align: left;
+				}
+
+				// Top-level menu items with sub-menus
+				&.menu-item-has-children {
+
+					margin-left: -20px;
+
+					& > a {
+
+						margin-left: 28px;
+						padding-left: 0;
+					}
+				}
+
+				&.toggled-on {
+
+					box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+				}
+			}
+
+			// All other ist items
+			li {
+
+				&.toggled-on {
+
+					@include animation('bounce-reveal-y .25s cubic-bezier(0.645, 0.045, 0.355, 1)');
+					background: $color__link;
+					z-index: 3;
+
+					a {
+						color: #FFF;
+					}
+
+				}
+			}
+
+			& > li > .sub-menu,
+			& > li > .children {
+
+				border-top: 1px solid $color__background-body;
+			}
+		}
+
+		.sub-menu,
+		.children {
+
+			background: $color__link;
+			box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+			position: absolute;
+			z-index: 10;
+
+			li {
+
+				position: relative;
+
+				a {
+
+					color: $color__background-body;
+				}
+			}
+
+			& > li.toggled-on {
+
+				border-top: 1px solid $color__background-body;
+				margin-top: -1px;
+			}
+
+			.sub-menu,
+			.children {
+
+				border-bottom: 1px solid $color__background-body;
+				box-shadow: 0 0 0 $color__border-transparent;
+				margin-bottom: -1px;
+				padding-left: ($gutter * .6);
+				position: relative;
+			}
+		}
+	}
+
+	/*
+	 * Dropdown toggle buttons
+	 */
+	.dropdown-toggle {
+
+		border: none;
+		box-shadow: none;
+		float: left;
+		height: 20px;
+		left: 5px;
+		padding: 1px;
+		position: absolute;
+		top: 3px;
+		width: 20px;
+
+		&:focus {
+
+			box-shadow: none;
+		}
+	}
+}
+
+/*--------------------------------------------------------------*/
+/* !## Tablet and Up Navigation */
+/*--------------------------------------------------------------*/
+
+@include breakpoint( tablet ) {
+
+	.top-navigation {
+
+		clear: right;
+		float: right;
+	}
+}

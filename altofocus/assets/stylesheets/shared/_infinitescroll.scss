@@ -1,0 +1,77 @@
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+
+	display: block;
+}
+
+#infinite-handle {
+
+	background: transparent;
+	bottom: 0;
+	clear: both;
+	display: block;
+	padding: $baseline 10%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+
+	span {
+
+		background: transparent;
+		display: block;
+		margin-top: -25px;
+		padding: 0;
+
+		button {
+
+			@include button();
+			display: inline-block;
+
+			&:hover {
+
+				@include list-item();
+				border: 1px solid;
+				border-color: $color__link;
+				display: inline-block;
+				padding: 1em $gutter;
+			}
+		}
+	}
+}
+
+.infinite-loader {
+
+	background: transparent;
+	bottom: 0;
+	clear: both;
+	display: block;
+	padding: $baseline 10%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+
+	.spinner[style] {
+
+		left: inherit !important;
+		margin: 0 auto;
+		top: inherit;
+	}
+}
+
+@include breakpoint( phablet ) {
+
+	#infinite-handle,
+	.infinite-loader {
+
+		padding: ($baseline * 2) 10%;
+	}
+}

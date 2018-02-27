@@ -1,0 +1,121 @@
+/*--------------------------------------------------------------*/
+/* !## Fixed Post Navigation */
+/*--------------------------------------------------------------*/
+
+.post-navigation-fixed {
+
+	display: none;
+}
+
+@include breakpoint( desktop ) {
+
+	.post-navigation-fixed {
+
+		clip: rect( 0, auto, auto, 0 );
+		display: block;
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		top: 0;
+
+		.nav-links {
+
+			position: fixed;
+			bottom: ( $baseline * 2 );
+			width: 100%;
+			z-index: 2;
+
+			.nav-previous,
+			.nav-next {
+
+				display: block;
+				float: left;
+				margin-left: $gutter;
+				overflow: visible;
+			}
+
+			.nav-next {
+
+				float: right;
+				margin-left: inherit;
+				margin-right: $gutter;
+			}
+
+			a {
+
+				@include font-size(1.5);
+				display: block;
+				height: 40px;
+				width: 40px;
+
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: 	all 0.3s ease;
+				-o-transition: 		all 0.3s ease;
+				-ms-transition: 	all 0.3s ease;
+				transition: 		all 0.3s ease;
+
+				.meta-nav {
+
+					display: block;
+					height: 40px;
+					width: 40px;
+
+					.arrow-icon {
+
+						@include prefix( filter, drop-shadow( 1px 3px 2px rgba(0, 0, 0, 0.33) ) );
+						overflow: visible;
+
+						.circle,
+						.arrow {
+
+							stroke-miterlimit: 10;
+							-webkit-transition: all 0.3s ease;
+							-moz-transition: 	all 0.3s ease;
+							-o-transition: 		all 0.3s ease;
+							-ms-transition: 	all 0.3s ease;
+							transition: 		all 0.3s ease;
+						}
+
+						.circle {
+
+							fill: $color__background-body;
+							stroke: $color__border-transparent;
+							stroke-width: 1px;
+						}
+
+						.arrow {
+
+							fill: none;
+							stroke: $color__text-main;
+							stroke-width: 2px;
+						}
+					}
+				}
+
+				&:active,
+				&:hover,
+				&:focus {
+
+					@include animation('bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)');
+					opacity: 1;
+
+					.meta-nav .arrow-icon .circle {
+
+							fill: $color__link;
+							stroke: $color__link
+					}
+
+					.meta-nav .arrow-icon .arrow {
+
+							stroke: $color__background-body;
+					}
+				}
+			}
+
+			.nav-next a .meta-nav {
+
+				margin-left: -3px;
+			}
+		}
+	}
+}

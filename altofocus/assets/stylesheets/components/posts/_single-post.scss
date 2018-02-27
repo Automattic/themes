@@ -1,0 +1,236 @@
+/*--------------------------------------------------------------*/
+/* !## Single Posts */
+/*--------------------------------------------------------------*/
+
+.single {
+
+	.entry-media {
+
+		background: #FFF;
+		margin: 0;
+		position: relative;
+		z-index: 3;
+
+		.slide {
+
+			position: relative;
+			width: 100%;
+
+			.image-caption {
+
+				border-bottom: 1px solid $color__border-transparent;
+				color: $color__link-hover;
+				display: block;
+				@include body-copy-small();
+				margin-bottom: 1px;
+				padding: #{ $gutter * .25 } #{ $gutter * .5 };
+			}
+		}
+	}
+
+	.entry-media-wrap {
+
+		line-height: 0;
+		text-align: center;
+
+		.jetpack-video-wrapper {
+
+			margin-bottom: 0;
+
+			.wp-video {
+
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.hentry {
+
+		float: none;
+		position: relative;
+		z-index: 3;
+
+		.entry-header {
+
+			display: table;
+			margin: 0 0 ($baseline);
+			position: relative;
+			width: 100%;
+		}
+
+		.entry-title {
+
+			@include article-title(1.5);
+			@include gutter-width(100%);
+			float: left;
+			margin: ($baseline * .5) 0;
+		}
+
+		.entry-meta {
+
+			padding-left: ($gutter * .5);
+			float: left;
+		}
+
+		.comments-link {
+
+			float: left;
+			margin-left: ($gutter * .5);
+			position: relative;
+		}
+
+		.entry-content {
+
+			@include gutter-width(100%);
+			margin: 0 0 ($baseline);
+		}
+
+		.entry-footer {
+
+			@include gutter-width(100%);
+
+			& > div {
+
+				width: 50%;
+				margin-bottom: $baseline;
+			}
+		}
+
+		&:not(.has-post-thumbnail) {
+
+			@include non-border(1px solid $color__border-transparent, top);
+			position: relative;
+
+			&:before {
+
+				margin-left: -50%;
+				width: 200%;
+			}
+		}
+	}
+}
+
+@include breakpoint( phablet ) {
+
+	.single {
+
+		.entry-media {
+
+			&:after {
+
+				@include linear-gradient();
+				content: " ";
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: -1;
+			}
+		}
+
+		.hentry .entry-title {
+
+			@include font-size( 2.5 );
+		}
+
+		.slide {
+
+			.image-caption {
+
+				@include multitransition( transform .15s ease-in-out, opacity .15s ease-in-out );
+				background: $color__background-body;
+				bottom: 0;
+				display: block;
+				left: 50%;
+				line-height: $baseline;
+				opacity: 0;
+				position: absolute;
+				transform: translate3d( -50%, 10px, 0 );
+				max-width: 50%;
+				z-index: 3;
+			}
+
+			&:hover .image-caption {
+
+				border-bottom: none;
+				opacity: 1;
+				transform: translate3d( -50%, #{-$baseline}, 0 );
+			}
+		}
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.single .hentry {
+
+		padding: ($baseline * 2) 5%;
+
+		.entry-header {
+
+			margin: 0 0 ($baseline * 2);
+		}
+
+		.entry-title {
+
+			float: left;
+			margin: 0;
+			width: calc( #{((100% / 8) * 6)} - #{ $gutter } );
+		}
+
+		.entry-meta {
+
+			@include gutter-width( calc( #{((100% / 8) * 2)} + #{ $gutter } ) );
+			float: right;
+
+			.edit-link {
+
+				position: absolute;
+			}
+		}
+
+		.comments-link {
+
+			margin-left: 0;
+			position: absolute;
+			right: calc( 100% + #{ $gutter * .5 } );
+			top: calc( 100% + #{$baseline * 1.5} );
+		}
+
+		.entry-content {
+
+			float: left;
+			margin-bottom: ($baseline * 2);
+			width: calc( #{((100% / 8) * 6)} - #{ $gutter } );
+		}
+
+		.entry-footer {
+
+			@include gutter-width( calc( 35% + #{ $gutter } ) );
+			float: right;
+			margin-right: -10%;
+
+			& > div {
+
+				width: 33%;
+			}
+
+			& > div:first-child {
+
+				width: 66%;
+			}
+		}
+	}
+}
+
+@include breakpoint( laptop ) {
+
+	.single .hentry {
+
+		.entry-content {
+
+			width: calc( #{((100% / 8) * 5)} - #{ $gutter } );
+		}
+	}
+}

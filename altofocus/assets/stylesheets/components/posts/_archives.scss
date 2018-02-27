@@ -1,0 +1,728 @@
+/*--------------------------------------------------------------*/
+/* !## Archives */
+/*--------------------------------------------------------------*/
+
+.hfeed {
+
+	.content-area {
+
+		border-top: 1px solid $color__border-transparent;
+	}
+
+	.site-main {
+
+		overflow: visible;
+		padding: 0;
+		position: relative;
+	}
+
+	// Page header
+	.page-header {
+
+		border-bottom: 1px solid $color__border-transparent;
+		padding: ( $baseline ) 0;
+		position: relative;
+
+		.page-title {
+
+			@include widget-title();
+			@include font-size(1);
+			color: $color__text-main;
+			margin: 0;
+			padding: 0 ( $gutter / 2 );
+		}
+
+		.taxonomy-description {
+
+			@include body-copy-small();
+			color: $color__link-hover;
+			padding: 0 ( $gutter / 2 );
+		}
+	}
+
+	.sticky-wrapper {
+
+		position: relative;
+		width: 100%;
+	}
+
+	// Posts
+	.hentry {
+
+		padding: #{ $gutter * .5 };
+		@include non-border( 1px solid $color__border-transparent, bottom );
+
+		&:before {
+
+			width: calc(100% + #{ $gutter });
+			left: #{ -$gutter * .5 };
+		}
+
+		.entry-header-wrap {
+
+			span {
+
+				display: block;
+				width: 100%;
+			}
+
+			.entry-title {
+
+				padding: 0 #{$gutter * .2};
+				@include nav-title(1);
+			}
+
+			.posted-on {
+
+				@include list-item();
+				@include body-copy-small();
+				padding: 0 #{$gutter * .2};
+			}
+		}
+
+		.entry-header {
+
+			.edit-link {
+
+			padding: 0 5px;
+		}
+		}
+
+		.post-thumbnail {
+
+			img {
+
+				margin: 1px auto;
+				max-width: calc(100% - 2px);
+				display: block;
+				position: relative;
+			}
+		}
+	}
+
+	// Infinite Scroll
+	.has-isotope #infinite-handle,
+	.has-isotope .infinite-loader {
+
+		margin-right: auto;
+		overflow: visible;
+	}
+
+	// Navigation
+	.posts-navigation,
+	#infinite-handle,
+	.infinite-loader {
+
+		top: 100%;
+	}
+
+	// Navigation
+	.posts-navigation {
+
+		top: calc( 100% + #{$baseline} );
+		margin: 0 #{(-$baseline * .75)};
+
+		.nav-links {
+			padding: 0 #{$baseline * .75};
+		}
+	}
+
+}
+
+@include breakpoint( mobileonly ) {
+
+	.hfeed {
+
+		// Posts
+		.hentry {
+
+			.entry-header-wrap .entry-title {
+
+				@include font-size( 1.25 );
+			}
+
+			.post-thumbnail {
+
+				margin-bottom: #{ $gutter * .5 };
+			}
+
+			&.grid-item-featured {
+
+				background: $color__link;
+
+				.entry-header-wrap {
+
+					color: $color__background-body;
+
+					.posted-on {
+
+						color: $color__background-body;
+					}
+				}
+			}
+		}
+
+		// Infinite Scroll
+		.has-isotope .infinite-loader {
+
+			padding-top: #{ $baseline * 2.75 };
+		}
+
+		#infinite-handle span {
+
+			margin-top: inherit;
+		}
+
+		// Navigation
+		.posts-navigation {
+
+			top: calc( 100% );
+		}
+	}
+}
+
+@include breakpoint( phablet ) {
+
+	.hfeed {
+
+		.content-area {
+
+			padding-top: $gutter;
+		}
+
+		.site-main {
+
+			width: calc( 100% - #{ $gutter * 1.5 } );
+
+			.grid-item-featured:not(.has-post-thumbnail) .entry-header .entry-title {
+
+				@include nav-title();
+			}
+
+			.hentry {
+
+				float: left;
+				margin: 0;
+			}
+		}
+
+		// Page header
+		.page-header {
+
+			border-bottom: none;
+			display: block;
+			margin: 0;
+			padding: 0 #{ $gutter * 1.5 };
+			position: relative;
+			top: 0;
+			width: 100%;
+
+			.page-title {
+
+				@include widget-title();
+				@include font-size( 1.125 );
+				margin-bottom: 0;
+			}
+		}
+
+		.sticky-wrapper {
+
+			position: absolute;
+			width: 20%;
+		}
+
+		// Posts
+		.hentry {
+
+			float: left;
+			margin: 0;
+			padding: 0;
+			position: relative;
+
+			.entry-header {
+
+				border: 1px solid $color__border-transparent;
+				margin: ( $gutter * .75 );
+				padding: ( $gutter * .75 ) ( $gutter * .5 );
+				text-align: center;
+
+				// Scale to normal on mouse out
+				@include transition( all, 0.25s, cubic-bezier(0.175, 0.885, 0.32, 1.275) );
+
+			}
+
+			.entry-header-wrap {
+
+				align-items: center;
+				align-content: center;
+				display: flex;
+				flex-wrap: nowrap;
+				flex-direction: column;
+				height: 100%;
+				justify-content: center;
+				color: $color__link;
+
+				&:focus,
+				&:hover,
+				&:active {
+
+					opacity: 1;
+				}
+
+				.posted-on {
+
+					color: $color__link;
+					opacity: .66;
+				}
+			}
+
+			.entry-title {
+
+				margin: 0 0 ($gutter * .125);
+				max-width: 90%;
+				min-height: 2em;
+				word-break: break-word;
+			}
+
+			.posted-on {
+
+				margin: ($gutter * .125) 0 0;
+				padding: 0;
+			}
+
+			&.has-post-thumbnail {
+
+				.entry-header {
+
+					border: 1px solid $color__border-transparent;
+					margin: 0;
+					opacity: 0;
+					padding: 0;
+					position: absolute;
+					left: ( $gutter * .75 );
+					top: ( $gutter * .75 );
+					height: calc(100% - #{($gutter * 1.5)});
+					width: calc(100% - #{($gutter * 1.5)});
+					text-align: center;
+
+					// Scale to normal on mouse out
+					@include transition( all, 0.25s, cubic-bezier(0.175, 0.885, 0.32, 1.275) );
+				}
+
+				.post-thumbnail {
+
+					// Scale to normal on mouse out
+					@include transition( all, 0.25s, cubic-bezier(0.175, 0.885, 0.32, 1.275) );
+
+					a {
+
+						display: block;
+						line-height: 0;
+						padding: ($gutter * .75);
+					}
+
+					&:after {
+
+						@include transition( opacity, 0.25s, ease-out );
+						content: "";
+						opacity: 0;
+						position: absolute;
+						left: ($gutter * .75);
+						top: ($gutter * .75);
+						height: calc( 100% - #{($gutter * 1.5)} );
+						width: calc( 100% - #{($gutter * 1.5)} );
+						background: $color__background-body;
+					}
+				}
+
+				.edit-link {
+
+					left: 50%;
+					position: absolute;
+					bottom: ($baseline * .5);
+					transform: translate(-50%, 0);
+
+					a {
+
+						color: $color__link;
+					}
+				}
+
+				&.grid-item-small {
+
+					.entry-header {
+
+						margin: ( $gutter * .75 );
+						padding: ( $gutter * .75 ) ( $gutter * .5 );
+						position: relative;
+						left: 0;
+						top: inherit;
+						height: inherit;
+					}
+
+					.post-thumbnail {
+
+						position: absolute;
+						width: 100%;
+						height: 100%;
+
+						img {
+
+							@include center-align( absolute );
+							max-width: calc( 100% - #{( $gutter * 1.5 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 1.5 )} - 2px );
+						}
+					}
+
+					&.grid-item-landscape {
+
+						.post-thumbnail img {
+
+							max-width: calc( 100% - #{( $gutter * 1.5 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 1.5 )} - 2px );
+						}
+					}
+
+					&.grid-item-portrait {
+
+						.post-thumbnail img {
+
+							max-width: calc( 100% - #{( $gutter * 1.5 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 1.5 )} - 2px );
+							width: auto;
+						}
+					}
+
+					.edit-link {
+
+						left: inherit;
+						position: relative;
+						bottom: inherit;
+						transform: inherit;
+					}
+				}
+			}
+
+			// Featured post
+			&.grid-item-featured {
+
+				.entry-title {
+
+					@include font-size( 1.5 );
+				}
+
+				.post-thumbnail:after {
+
+					background: $color__link;
+				}
+
+				.entry-header-wrap {
+
+					color: $color__background-body;
+
+					.posted-on {
+
+						color: $color__background-body;
+					}
+				}
+
+				&.grid-item-small .entry-title {
+
+					@include font-size( 1 );
+				}
+			}
+
+			// Posts without featured images
+			&:not(.has-post-thumbnail),
+			&.grid-item-featured:not(.has-post-thumbnail) {
+
+				.entry-header {
+
+					background: $color__background-body;
+					border-color: $color__border-transparent;
+					opacity: 1;
+				}
+
+				.entry-header-wrap {
+
+					color: $color__link;
+
+					.posted-on {
+
+						color: $color__link;
+					}
+				}
+
+				&:hover {
+
+					.entry-header {
+
+						box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+					}
+				}
+
+				&:after {
+
+					content: "";
+					display: none;
+				}
+			}
+
+			// Scale up on hover
+			&:hover {
+
+				.entry-header {
+
+					box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+					opacity: 1;
+					@include transform( scale, 1.125 );
+				}
+
+				.post-thumbnail {
+
+					@include transform( scale, 1.125 );
+
+					&:after {
+
+						opacity: .92;
+					}
+				}
+
+				&.has-post-thumbnail .edit-link a {
+
+					color: $color__link;
+				}
+			}
+
+			// Scale down on click
+			&:active {
+
+				.entry-header {
+
+					box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+				}
+			}
+
+			&:before {
+
+				display: none;
+			}
+		}
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.hfeed {
+
+		// Posts
+		.hentry {
+
+			.entry-header {
+
+				border: 1px solid $color__border-transparent;
+				margin: ( $gutter );
+				padding: ( $gutter ) ( $gutter * .5 );
+			}
+
+			&.has-post-thumbnail {
+
+				.entry-header {
+
+					left: ( $gutter );
+					top: ( $gutter );
+					height: calc( 100% - #{($gutter * 2)} );
+					width: calc( 100% - #{($gutter * 2)} );
+				}
+
+				.post-thumbnail {
+
+					a {
+
+						padding: ( $gutter );
+					}
+
+					&:after {
+
+						left: ( $gutter );
+						top: ( $gutter );
+						height: calc( 100% - #{($gutter * 2)} );
+						width: calc( 100% - #{($gutter * 2)} );
+					}
+				}
+
+				&.grid-item-small {
+
+					.entry-header {
+
+						margin: ( $gutter );
+						padding: ( $gutter ) ( $gutter * .5 );
+						position: relative;
+						left: 0;
+						top: 0;
+						height: inherit;
+					}
+
+					.post-thumbnail img {
+
+						max-width: calc( 100% - #{($gutter * 2)} );
+						max-height: calc( 100% - #{( $gutter * 2 )};
+					}
+
+					&.grid-item-landscape {
+
+						.post-thumbnail img {
+
+							max-width: calc( 100% - #{( $gutter * 2 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 2 )} - 2px );
+						}
+					}
+
+					&.grid-item-portrait {
+
+						.post-thumbnail img {
+
+							max-width: calc( 100% - #{( $gutter * 2 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 2 )} - 2px );
+							width: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include breakpoint( laptop ) {
+
+	.hfeed {
+
+		.content-area {
+
+			position: relative;
+
+			.page-header {
+
+				border-bottom: none;
+				max-width: calc( 20% - #{ $gutter * 2.5 } );
+				padding: ( $baseline * 2.5 ) 0 0;
+				position: absolute;
+				left: #{ $gutter * 2.5 };
+
+				.page-title {
+
+					@include font-size( 1.125 );
+					margin-bottom: ( $baseline * .5 );
+				}
+
+				&.sticky {
+
+					left: inherit;
+					padding-top: calc( #{$baseline * 2.5} );
+					position: fixed;
+					right: calc( 80% );
+				}
+			}
+		}
+
+		.hentry {
+
+			.entry-header {
+
+				margin: ( $gutter * 1.5 );
+				padding: ( $gutter * 1.5 ) ( $gutter * .5 );
+			}
+
+			&.has-post-thumbnail {
+
+				.entry-header {
+
+					left: ( $gutter * 1.5 );
+					top: ( $gutter * 1.5 );
+					height: calc( 100% - #{($gutter * 3)} );
+					width: calc( 100% - #{($gutter * 3)} );
+				}
+
+				.post-thumbnail {
+
+					a {
+
+						padding: ( $gutter * 1.5 );
+					}
+
+					&:after {
+
+						left: ($gutter * 1.5);
+						top: ($gutter * 1.5);
+						height: calc(100% - #{($gutter * 3)});
+						width: calc(100% - #{($gutter * 3)});
+					}
+				}
+
+				&.grid-item-small {
+
+					.entry-header {
+
+						margin: ( $gutter * 1.5 );
+						padding: ( $gutter * 1.5 ) ( $gutter * .5 );
+					}
+
+					.post-thumbnail img {
+
+						max-width: calc( 100% - #{($gutter * 3)} );
+						max-height: calc( 100% - #{( $gutter * 3 )};
+					}
+
+					&.grid-item-landscape {
+
+						.post-thumbnail img {
+
+							max-width: calc( 100% - #{( $gutter * 3 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 3 )} - 2px );
+						}
+					}
+
+					&.grid-item-portrait {
+
+						.post-thumbnail img {
+
+							max-width: calc( 100% - #{( $gutter * 3 )} - 2px );
+							max-height: calc( 100% - #{( $gutter * 3 )} - 2px );
+							width: auto;
+						}
+					}
+				}
+			}
+		}
+
+		.posts-navigation {
+
+			margin: 0 #{ $gutter * 1.5 };
+		}
+
+		&.blog:not(.home),
+		&:not(.home):not(.blog) {
+
+			.site-main {
+
+				margin-left: 25%;
+				margin-right: auto;
+				padding: 0;
+				width: calc( 75% - #{ $gutter } );
+
+				#infinite-handle,
+				.infinite-loader {
+
+					right: calc( 12.5% + #{ $gutter * 1.5 } );
+					width: 100%;
+				}
+			}
+
+			// Adjust sticky page header for admin bar
+			&.admin-bar .page-header.sticky {
+
+				padding-top: calc( #{ $baseline * 2.5 } + #{ $admin-bar-height } );
+			}
+		}
+	}
+}

@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------*/
+/* !## Footer Social Menu */
+/*--------------------------------------------------------------*/
+
+.site-footer .jetpack-social-navigation {
+
+	clear: both;
+	float: none;
+	padding: 0 $mobile-gutter;
+	width: 100%;
+
+	ul {
+
+		margin-bottom: ($baseline * .5);
+	}
+
+	li {
+
+		@include font-size(1.5);
+
+		a {
+
+			padding: 0 10px 0 0;
+		}
+	}
+}
+
+@include breakpoint( tablet ) {
+
+	.site-footer .jetpack-social-navigation {
+
+		bottom: 0;
+		clear: right;
+		float: right;
+		height: 100%;
+		padding: 0;
+		position: absolute;
+		right: 0;
+		width: 40%;
+
+		ul {
+
+			margin-bottom: 0;
+			text-align: right;
+		}
+
+		& > div {
+
+			bottom: ($baseline * 1.5);
+			max-width: calc(75em * .40 - #{$gutter / 2});
+			position: fixed;
+			width: calc(90% * .40 - #{$gutter / 2});
+		}
+	}
+}

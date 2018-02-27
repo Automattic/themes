@@ -1,0 +1,21 @@
+a {
+
+	color: $color__link;
+	opacity: 1;
+	text-decoration: none;
+	@include transition( opacity, .0875s, ease-in );
+
+	&:visited {
+
+		color: $color__link-visited;
+	}
+
+	&:focus,
+	&:hover,
+	&:active {
+
+		color: $color__link;
+		opacity: .667;
+		outline: 0;
+	}
+}

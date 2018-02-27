@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------*/
+/* !## Breakpoint Mixins */
+/*--------------------------------------------------------------*/
+
+/*
+	Breakpoints
+	Src: https://responsivedesign.is/develop/getting-started-with-sass
+	Usage:
+	.grid-1-4 {
+		width: 100%;
+		@include breakpoint(phablet) {
+			width: 50%;
+		}
+		@include breakpoint(laptop) {
+			width: 25%;
+		}
+	 }
+*/
+
+@mixin breakpoint($point) {
+
+	@if $point == desktop {
+
+		@media screen and (min-width: 75em) { @content ; }
+	}
+
+	@else if $point == laptop {
+
+		@media screen and (min-width: 60em) { @content ; }
+	}
+
+	@else if $point == tablet {
+
+		@media screen and (min-width: 50em) { @content ; }
+	}
+
+	@else if $point == tabletonly {
+
+		@media screen and (max-width: 50em)  { @content ; }
+	}
+
+	@else if $point == phablet {
+
+		@media screen and (min-width: 37.5em)  { @content ; }
+	}
+
+	@else if $point == mobileonly {
+
+		@media screen and (max-width: 37.5em)  { @content ; }
+	}
+}
+

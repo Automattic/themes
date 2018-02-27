@@ -1,0 +1,140 @@
+/*--------------------------------------------------------------*/
+/* !## Postflair / Sharedaddy */
+/*--------------------------------------------------------------*/
+
+.hentry .entry-content > #jp-post-flair,
+.hentry .entry-content > .sd-sharing-enabled {
+
+	& > div {
+		padding-top: 1em;
+		margin: 1em 0;
+	}
+
+	.sd-title {
+
+		color: $color__link-hover;
+		font-weight: normal;
+		line-height: 2em;
+		display: inline-block;
+		margin-right: $gutter;
+		margin-bottom: 0;
+		width: 15%;
+		vertical-align: middle;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	.sd-content {
+
+		display: inline-block;
+		vertical-align: text-top;
+
+		& > ul {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.pd-rating {
+
+		display: inline-block !important;
+		vertical-align: text-top;
+
+		.rating-icons,
+		div[id^="rating"],
+		.rating-msg {
+			display: inline-block !important;
+			vertical-align: middle;
+			float: none !important
+		}
+
+		.rating-msg {
+			@include font-size(0.875);
+		}
+	}
+
+	.jetpack-likes-widget-wrapper {
+
+		.sd-title {
+
+			display: inline-block;
+		}
+
+		.jetpack-likes-widget,
+		.likes-widget-placeholder {
+
+			display: inline-block;
+			position: relative;
+			top: inherit;
+			width: auto !important;
+			vertical-align: text-top;
+		}
+	}
+
+	.jp-relatedposts-headline {
+
+		color: $color__link-hover;
+		margin-right: $gutter;
+		margin-bottom: 0;
+		width: 15%;
+
+		em {
+
+			font-weight: normal;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.jp-relatedposts-items {
+		clear: none;
+
+		.jp-relatedposts-post {
+			width: 100%;
+			font-family: $font__main;
+		}
+	}
+
+	div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img,
+	div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post span {
+
+		border: 1px solid $color__background-hr;
+		margin-bottom: ($baseline * .5);
+	}
+
+	div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+
+		font-weight: 800;
+	}
+}
+
+@include breakpoint( mobileonly ) {
+
+	.hentry .entry-content > #jp-post-flair .sd-title,
+	.hentry .entry-content > .sd-sharing-enabled .sd-title {
+
+		margin-right: 0;
+		width: 100%;
+	}
+
+	.hentry .entry-content > #jp-post-flair > div,
+	.hentry .entry-content > .sd-sharing-enabled > div {
+
+		padding-top: 0;
+	}
+}
+
+@include breakpoint( phablet ) {
+
+	.hentry .entry-content > #jp-post-flair,
+	.hentry .entry-content > .sd-sharing-enabled {
+
+		.jp-relatedposts-items .jp-relatedposts-post {
+
+			width: 26%;
+		}
+	}
+}

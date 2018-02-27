@@ -1,0 +1,62 @@
+/*--------------------------------------------------------------
+## Content
+--------------------------------------------------------------*/
+
+html {
+
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+
+	box-sizing: inherit;
+}
+
+html,
+body {
+
+	background-color: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+.js body {
+
+	opacity: 0;
+}
+
+.content-area {
+
+	float: left;
+	margin: 0;
+	width: $size_site-main;
+
+	.hfeed & {
+
+		overflow: hidden;
+	}
+}
+
+.site-main {
+
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.site-content {
+
+	background: $color__background-body;
+	position: relative;
+}
+
+.site-content .widget-area {
+
+	overflow: hidden;
+	width: $size_site-main;
+}
+
+.site-footer {
+
+	width: $size_site-main;
+}
