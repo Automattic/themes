@@ -1,0 +1,157 @@
+/*
+Theme Name: Pique
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* Swap around menu elements */
+.main-navigation ul ul {
+	text-align: right;
+}
+
+/* Hide stuff to the right, rather than left */
+.main-navigation ul ul{
+	left: auto;
+	right: -999em;
+}
+
+.main-navigation li.focus > ul {
+	left: auto;
+	right: 0;
+}
+
+/* Adjust teeny menu */
+@media (max-width: 767px) {
+	.main-navigation a {
+		padding-right: 10px;
+		padding-left: 0;
+	}
+
+	.main-navigation ul ul ul {
+		padding-left: 0;
+		padding-right: 25px;
+	}
+}
+
+/* Swap around direction of menu fly-outs */
+@media (min-width: 768px) {
+
+	.main-navigation ul ul::before {
+		left: auto;
+		right: 15px;
+	}
+
+	.main-navigation ul ul::before {
+		left: auto;
+		right: 15px;
+	}
+
+	.main-navigation #primary-menu > li:nth-last-child(1):hover > ul,
+	.main-navigation #primary-menu > li:nth-last-child(2):hover > ul {
+		left: 0;
+		right: auto;
+	}
+
+	.main-navigation #primary-menu > li:nth-last-child(1):hover ul::before,
+	.main-navigation #primary-menu > li:nth-last-child(2):hover ul::before {
+		left: 15px;
+		right: auto;
+	}
+
+	.main-navigation #primary-menu > li:nth-last-child(1) li:hover ul, .main-navigation #primary-menu > li:nth-last-child(2) li:hover u {
+		left: 103%;
+		right: auto;
+	}
+
+}
+
+/* Right-align content within panels */
+.pique-grid-three p,
+.overlay,
+label,
+form,
+.pique-panel-content .entry-content,
+#pique-hero .pique-panel-content .entry-content p,
+blockquote p,
+.pique-template-testimonials .pique-testimonials article .entry-content p {
+	text-align: right;
+}
+
+h3,
+blockquote cite,
+.pique-template-testimonials .pique-testimonials article .entry-content cite,
+blockquote p, .pique-template-testimonials .pique-testimonials article .entry-content p,
+.widget-title {
+	text-align: right;
+}
+
+.pique-template-testimonials .pique-testimonials .attachment-pique-thumbnail-avatar {
+	float: right;
+	margin-right: 0;
+	margin-left: 20px;
+}
+
+.pique-template-testimonials .pique-testimonials h2 {
+	float: right;
+	text-align: right;
+}
+
+/* Adjust padding on post format icons */
+.sticky .entry-title::before {
+	margin-left: 0.5em;
+	margin-right: 0;
+}
+
+/* Swap direction of arrows in read more buttons */
+.archive .read-more a::after, .blog .read-more a::after, .search-results .read-more a::after {
+	content: '\f060';
+}
+
+.archive .read-more a:hover, .blog .read-more a:hover, .search-results .read-more a:hover {
+    padding-left: calc(3em - 40px);
+		padding-right: 3em;
+}
+
+.archive .read-more a:hover::after, .blog .read-more a:hover::after, .search-results .read-more a:hover::after {
+	padding-right: 20px;
+}
+
+/* Adjust padding on taxonomy icons */
+.cat-links::before, .tags-links::before {
+	margin-left: 5px;
+	margin-right: 0;
+}
+
+/* Float nav arrows */
+.comment-navigation .nav-previous span::before, .posts-navigation .nav-previous span::before, .post-navigation .nav-previous span::before {
+	float: left;
+}
+
+.comment-navigation .nav-next span::after, .posts-navigation .nav-next span::after, .post-navigation .nav-next span::after {
+	float: right;
+}
+
+/* Right-align entry meta */
+.entry-meta, .widget_rss .rss-date, .widget_rss cite {
+	text-align: right;
+}
+
+/* Rearrange comments */
+.comment-author .avatar {
+	float: right;
+	margin-right: 0;
+	margin-left: 0.5em;
+}
+.reply {
+	float: left;
+}

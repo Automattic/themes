@@ -1,0 +1,249 @@
+/* WordPress.com Widgets */
+
+/* Account for the demo bar */
+.demo-site.pique-frontpage #masthead {
+  top: 132px;
+
+  @media screen and (max-width:782px) {
+    top: 110px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .demo-site .main-navigation.sticky {
+    top: 111px;
+  }
+}
+
+/* Don't show a background for the masthead, even if colour annotations are in place */
+.pique-frontpage #masthead {
+    background: none !important;
+}
+
+/* Hide stats smiley */
+#wpstats {
+  display: none;
+}
+
+/* Remove extra styling from comment submit */
+#respond {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#respond h3 {
+  margin-top: 20px !important;
+}
+
+#respond form {
+  margin-top: 20px !important;
+}
+
+#respond .form-submit input,
+#respond .form-submit input#comment-submit,
+#respond .comment-form-fields input[type="submit"],
+#respond p.form-submit input[type="submit"],
+#respond input[type="submit"],
+#commentform #submit {
+  letter-spacing: 0;
+  outline: none;
+  text-transform: none;
+}
+
+#respond p.comment-subscription-form label {
+  letter-spacing: 0;
+}
+
+/* Improve appearance of ratings */
+.rating-msg,
+.rating-nero-value {
+  font-size: 18px !important;
+  font-size: 1rem !important;
+  vertical-align: top;
+}
+
+.rating-icons .rating-nero-icon {
+  margin-top: 2px !important;
+}
+
+/* Brute-force related posts h3 to use the right typeface */
+div#jp-relatedposts h3.jp-relatedposts-headline,
+div.sharedaddy h3.sd-title {
+  font-family: Karla, Arial, sans-serif;
+  font-size: 0.9rem !important;
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline em::before,
+div.sharedaddy h3.sd-title::before {
+  display: none !important;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Flickr */
+#flickr_badge_wrapper {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+#flickr_badge_uber_wrapper {
+  margin: 0 auto;
+}
+
+#flickr_badge_uber_wrapper td {
+  border: 0 !important;
+}
+
+#flickr_badge_uber_wrapper a:hover,
+#flickr_badge_uber_wrapper a:link,
+#flickr_badge_uber_wrapper a:active,
+#flickr_badge_uber_wrapper a:visited {
+  color: #777 !important;
+}
+
+/* Recent Comments */
+.widget_recent_comments td {
+  border: 0;
+  padding: 5px 5px 10px 5px;
+  vertical-align: top;
+}
+
+/* Authors */
+.widget_authors > ul > li {
+  border-top: none;
+}
+
+.widget_authors img,
+.widget_author_grid img {
+  border-radius: 50%;
+  float: none;
+  max-width: 75px;
+  vertical-align: middle;
+}
+
+.widget_authors ul,
+.widget_author_grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Blogroll */
+.widget_links li {
+  border-top: 1px solid rgba(233, 213, 192, 0.5);
+  padding: 7px 0;
+}
+
+.widget_links li a {
+  border: none;
+  display: inline-block;
+  padding: 0;
+}
+
+.widget_links li a:hover {
+  background: none;
+}
+
+/* Follow widget */
+.widget-title label {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* Facebook */
+.widget_facebook_likebox .fb_iframe_widget {
+	text-align: center;
+	margin: 20px auto 0;
+	width: 100%;
+}
+
+/* Goodreads */
+.widget_goodreads .gr_custom_widget div {
+  text-align: center;
+}
+
+/* Gravatar */
+.grofile-thumbnail,
+.widget_gravatar img {
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grofile-accounts li a {
+  display: inline;
+}
+
+/* MailChimp overlay */
+.pique-frontpage .mc-modal {
+    /* hack to override exceptionally high z-index for Pique's masthead */
+    z-index: 10001 !important;
+}
+
+@media only screen and (max-width: 980px) {
+  .pique-frontpage .mc-banner {
+    z-index: 10002;
+  }
+}
+
+/* Milestone */
+.milestone-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.milestone-header {
+  background-color: #1d1813;
+}
+.milestone-header .event {
+  font-size: 125%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.milestone-countdown,
+.milestone-message {
+  color: #1d1813;
+  border-color: #1d1813;
+  font-family: Lora, Georgia, serif;
+  font-style: italic;
+}
+
+.milestone-countdown .difference,
+.milestone-message .difference {
+  font-style: normal;
+}
+
+/* My Community, Posts I like */
+.widget_jetpack_my_community img,
+.widget_jetpack_posts_i_like img {
+  border-radius: 50%;
+}
+
+/* Follow button */
+.widget_follow_button_widget {
+  border: none;
+}
+
+/* Sharedaddy */
+h3.sd-title {
+  font-size: 16px;
+}
+
+.cdm-icon {
+  z-index: 100001;
+}
+
+
+
+/* Prevent polls from overflowing on small screens */
+@media only screen and (max-width: 650px) {
+  .pds-box {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
