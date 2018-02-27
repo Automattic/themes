@@ -1,0 +1,126 @@
+/*
+Theme Name: Libretto
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* Mobile menu */
+.menu-toggle span {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+/* Blockquotes */
+blockquote::before {
+	content: '\201D';
+	left: auto;
+	right: -35px;
+}
+
+blockquote cite {
+	float: left;
+}
+
+blockquote cite::before {
+	float: left;
+}
+
+/* Lists */
+@media only screen and (max-width: 640px) {
+	ul, ol {
+		margin-left: 0;
+		margin-right: 1em;
+	}
+}
+
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+/* Post footers */
+.entry-footer {
+	padding-left: 0;
+	padding-right: 60px;
+	text-align: right;
+}
+
+.entry-footer::before {
+	left: inherit;
+	right: 0;
+}
+
+.entry-footer .edit-link {
+	float: left;
+}
+
+/* Prev/next navigation */
+[class*="navigation"] .previous {
+	float: right;
+	text-align: right;
+}
+
+[class*="navigation"] .next {
+	border-left: 0;
+	border-right: 1px solid #D9D6D0;
+	float: left;
+	text-align: left;
+}
+
+.next .meta-nav a::after,
+.next a .meta-nav::after {
+	border-right: 4px solid #a09a92;
+	border-left: 0;
+}
+
+.previous .meta-nav a::before,
+.previous a .meta-nav::before {
+	border-left: 4px solid #a09a92;
+	border-right: 0;
+}
+
+/* More link */
+.more-link {
+	float: left;
+}
+
+.more-link::after {
+	border-left: 0;
+	left: inherit;
+	right: 100%;
+}
+
+.more-link:hover::after {
+	border-right-color: #787065;
+}
+
+/* Forms */
+label {
+	float: right;
+	text-align: right;
+}
+
+label span {
+	padding-left: 0;
+	padding-right: 2px;
+}
+
+/* Drop cap */
+.format-standard:not(.post-password-required) .entry-content > p:first-of-type:not(.no-emphasis)::first-letter,
+.page:not(.post-password-required) .entry-content > p:first-of-type:not(.no-emphasis)::first-letter,
+.emphasis::first-letter {
+  float: right;
+  margin-left: 15px;
+  margin-right: -10px;
+}
