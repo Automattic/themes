@@ -1,0 +1,45 @@
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 2px solid white;
+	outline: 4px solid $color__link;
+	background: $color__link;
+	color: white;
+	@include font-size(.825);
+	font-family: $font__headings;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	line-height: 1;
+	margin-right: .8em;
+	padding: .8em 1.2em;
+	position: relative;
+	left: 4px;
+	transition: 0.3s;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		outline-color: $color__text-screen;
+		background-color: $color__text-screen;
+		color: white;
+	}
+}
+
+.button {
+	display: inline-block;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: 4px solid $color__text-screen;
+	}
+}
+
+.mejs-controls .mejs-play button,
+.mejs-controls .mejs-mute button {
+	outline: none;
+}

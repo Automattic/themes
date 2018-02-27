@@ -1,0 +1,148 @@
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.page-title {
+	line-height: 1.2;
+	margin-top: 0;
+	margin-bottom: .8em;
+}
+
+.page-header {
+	margin-top: 0;
+	margin-bottom: 3.2em;
+	padding-bottom: .8em;
+	border-bottom: 1px solid $color__border-button;
+}
+
+.taxonomy-description {
+	font-style: italic;
+}
+
+.page .entry-content {
+	@include font-size(1.125);
+}
+
+.page .hentry {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+## Front Page
+--------------------------------------------------------------*/
+
+.custom-header.in-panel {
+	position: relative;
+}
+
+.custom-header-image {
+	background-size: 100% auto;
+	background-position: top left;
+	width: 100%;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.affinity-front-page {
+
+	.entry-title {
+		margin: .8em 0;
+		text-align: center;
+	}
+
+	.hentry {
+		border-bottom: 0;
+		margin-bottom: 0;
+		padding-bottom: 0;
+		position: relative;
+
+		.entry-content {
+			@include font-size(1.125);
+			margin-bottom: 1.6em;
+		}
+	}
+
+	.edit-link {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+	}
+
+	.hentry:first-of-type .edit-link {
+		width: 100%;
+	}
+}
+
+.panel-navigation {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	right: 1.6em;
+	top: 50%;
+	transform: translateY(-50%);
+
+	.sep {
+		font-family: Arial, Helvetica, sans-serif;
+		margin: 0;
+	}
+
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
+	a,
+	a:visited {
+		@include font-size(1.625);
+		line-height: 1;
+		margin-top: 0;
+		margin-bottom: 0;
+		position: relative;
+		color: darken($color__border-button,3);
+		display: inline-block;
+		text-decoration: none;
+		transition: 0.2s;
+
+		&.active,
+		&:hover {
+			color: rgba(darken($color__border-button,3),0.2);
+		}
+
+		& .hidden {
+			@include font-size(.875);
+			font-family: $font__headings;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 1px;
+			display: inline-block;
+			line-height: 1;
+			position: absolute;
+			padding: .8em 3.2em .8em .8em;
+			top: -.3em;
+			transform: translateX(6em);
+			visibility: hidden;
+			outline: none;
+			opacity: 0;
+			transition: 0.3s;
+			white-space: nowrap;
+		}
+
+		&:hover .hidden,
+		&:active .hidden,
+		&:focus .hidden {
+			color: darken($color__border-button,3);
+			font-weight: bold;
+			visibility: visible;
+			transform: translateX(2.4em);
+			opacity: 1;
+			outline: none;
+			right: 100%;
+		}
+	}
+}

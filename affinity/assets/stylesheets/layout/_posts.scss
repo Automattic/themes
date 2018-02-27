@@ -1,0 +1,180 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	@include clearfix;
+	border-bottom: 1px solid $color__border-button;
+	margin: 0 0 3.2em;
+	padding: 0 0 3.2em;
+	width: 100%;
+}
+
+.single .hentry {
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+
+.entry-summary {
+	color: $color__link;
+	@include font-size(1.125);
+	font-style: italic;
+	margin-bottom: .8em;
+	width: 100%;
+	clear: both;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.search-results .entry-summary {
+	color: inherit;
+	@include font-size(1);
+	font-style: normal;
+	margin-bottom: auto;
+	width: auto;
+	clear: none;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: block;
+}
+
+.byline {
+	.author {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 0 0 1.6em;
+
+	a {
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+}
+
+.entry-header {
+	margin-bottom: 1.6em;
+}
+
+.entry-title {
+	margin: 0;
+	color: $color__text-screen;
+
+	a,
+	a:visited {
+		color: $color__text-screen;
+		opacity: 1;
+		text-decoration: none;
+		transition: 0.3s;
+
+		&:hover {
+			opacity: 0.75;
+		}
+	}
+}
+
+.site-header .entry-title {
+	color: white;
+	display: none;
+	font-weight: normal;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%,-50%);
+}
+
+.entry-meta {
+	color: $color__link-hover;
+	font-family: $font__headings;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 1.6em;
+	clear: left;
+	@include font-size(.825);
+
+	span {
+		clear: both;
+		display: block;
+		margin-bottom: .4em;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.entry-footer {
+	clear: both;
+	color: $color__link-hover;
+	@include font-size(.825);
+
+	a {
+		text-decoration: none;
+	}
+
+	span {
+		display: block;
+		margin-bottom: .4em;
+	}
+}
+
+.featured-image {
+	display: inline-block;
+	margin-bottom: 1.6em;
+	position: relative;
+
+	img {
+		display: block;
+		opacity: 0.9;
+		transition: 0.25s opacity;
+	}
+
+	a:before {
+		border: .8em solid transparent;
+		box-shadow: inset 0 0 0 1px $color__border-button;
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	a:hover img {
+		opacity: 1;
+	}
+}
+
+.page-links {
+	border-top: 1px solid $color__border-button;
+	border-bottom: 1px solid $color__border-button;
+	color: $color__text-screen;
+	padding: .8em 0;
+	margin: .8em 0;
+	font-weight: bold;
+	word-spacing: 5px;
+	width: 100%;
+
+	a {
+		text-decoration: none;
+	}
+}

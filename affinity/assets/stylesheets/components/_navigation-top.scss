@@ -1,0 +1,109 @@
+.main-navigation {
+	display: block;
+	font-family: $font__headings;
+	@include font-size(.825);
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	width: 100%;
+
+	a,
+	a:visited {
+		color: $color__link;
+		display: block;
+		text-decoration: none;
+		transition: 0.3s;
+	}
+
+	ul {
+		display: none;
+		margin: 0 0 1.6em;
+		list-style: none;
+
+		li {
+			list-style: none;
+
+			a {
+				display: block;
+				margin-top: .8em;
+				padding-top: .8em;
+				border-top: 1px solid $color__border-button;
+			}
+
+			&:first-of-type a {
+				padding-top: 0;
+				border-top: 0;
+			}
+		}
+
+		ul {
+			margin-bottom: 0;
+
+			li:first-of-type a {
+				margin-top: .8em;
+				padding-top: .8em;
+				border-top: 1px solid $color__border-button;
+			}
+		}
+
+		ul a {
+			padding-left: 1.6em;
+		}
+
+		ul ul a {
+			padding-left: 3.2em;
+		}
+
+		ul ul ul a {
+			padding-left: 4.8em;
+		}
+
+		ul ul ul ul a {
+			padding-left: 6.4em;
+		}
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.main-navigation.toggled > div {
+	clear: both;
+	background-color: white;
+	margin-left: -5%;
+	margin-right: -5%;
+	padding-top: .4em;
+	padding-bottom: .4em;
+
+	& > ul > li {
+		padding-left: 1.6em;
+		padding-right: 1.6em;
+	}
+}
+
+.menu-toggle {
+	background-color: transparent;
+	margin-right: 0;
+	outline: 0;
+	position: absolute;
+		top: .8em;
+		left: 100%;
+	transform: translateX(-100%) translateX(-1.6em);
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparent;
+	}
+}
+
+.no-custom-header .menu-toggle {
+	position: relative;
+	top: auto;
+	left: auto;
+	margin-bottom: 1.6em;
+	float: right;
+	transform: none;
+}

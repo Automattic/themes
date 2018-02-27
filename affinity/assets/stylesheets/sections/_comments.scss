@@ -1,0 +1,225 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0 0 3.2em;
+	padding: 0;
+
+	.children {
+		list-style: none;
+	}
+}
+
+.comment-body {
+	@include clearfix;
+	border-top: 1px solid $color__border-button;
+	margin-top: 1.6em;
+	padding-top: 1.6em;
+	width: 100%;
+}
+
+.comments-title,
+.comment-reply-title {
+	@include font-size(1.625);
+
+	a,
+	a:visited {
+		float: right;
+	}
+}
+
+.comment-author {
+
+	.fn {
+		color: $color__text-screen;
+		display: inline-block;
+		margin-bottom: .4em;
+		@include font-size(1);
+		font-family: $font__main;
+		font-weight: bold;
+		font-style: italic;
+		text-transform: none;
+		letter-spacing: 0;
+
+		a,
+		a:visited {
+			color: $color__text-screen;
+		}
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 1.6em;
+	}
+}
+
+.comment-meta a {
+	text-decoration: none;
+}
+
+.comment-metadata {
+	color: $color__link;
+	@include font-size(.825);
+	font-family: $font__headings;
+	font-weight: bold;
+	margin-bottom: 2.4em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	a,
+	a:visited {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	.edit-link:before {
+		content: "\2666";
+		margin-left: .4em;
+		margin-right: .8em;
+	}
+
+	a:first-of-type {
+		display: inline-block;
+		margin-bottom: .8em;
+	}
+}
+
+.pingback,
+.trackback {
+	.edit-link {
+		float: right;
+	}
+}
+
+.no-comments {
+	color: $color__link-hover;
+	font-style: italic;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.says {
+	display: none;
+}
+
+.comment-content {
+	clear: both;
+}
+
+.comment-respond {
+	border-top: 1px solid $color__border-button;
+	margin: 0 0 3.2em;
+	padding-top: 1.6em;
+}
+
+.comment-form label {
+	display: inline-block;
+	width: 109px;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url,
+.comment-form-comment {
+	margin: 0 0 1.6em;
+	position: relative;
+
+	label {
+		@include font-size(.875);
+		font-family: $font__headings;
+		font-weight: bold;
+		letter-spacing: 1px;
+		padding: .65em .8em;
+		position: absolute;
+		left: 0;
+		top: 2px;
+		text-transform: uppercase;
+	}
+	input,
+	textarea {
+		clear: both;
+		padding-left: 6.4em;
+		width: 100%;
+	}
+
+	textarea {
+		padding: 2em .8em .375em;
+	}
+}
+
+
+/*--------------------------------------------------------------
+17.10 Guestbook Template
+--------------------------------------------------------------*/
+
+.page-template-guestbook {
+
+	.hentry {
+		margin-bottom: 1.6em;
+	}
+
+	.comments-area {
+		border: 0;
+		padding: 0;
+	}
+
+	.comment-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.children {
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.comments-title {
+		display: none;
+	}
+
+	.reply {
+		display: none;
+	}
+
+	.comments-area .comment {
+		float: left;
+		padding-bottom: 1.6em;
+		width: 100%;
+	}
+
+	.comments-area .comment:nth-of-type(2n) {
+		margin-right: 0;
+	}
+
+	.content-area {
+		float: none;
+		width: 100%;
+	}
+
+	.content-area .hentry,
+	.comment-respond {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.comment-author .avatar {
+		float: left;
+		margin-right: .8em;
+	}
+
+	.comment-edit-link:before {
+		color: $color__border-button;
+		content: "\2666";
+		margin-left: .4em;
+		margin-right: .8em;
+		display: inline-block;
+	}
+}

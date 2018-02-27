@@ -1,0 +1,143 @@
+.widget {
+	margin: 0 0 2.4em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	div > ul,
+	& > ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style: none;
+			border-top: 1px solid $color__border-button;
+			margin: .8em 0 0;
+			padding: .8em 0 0;
+		}
+
+		& > li:first-of-type {
+			border-top: 0;
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	div > ol,
+	& > ol {
+		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+
+		li {
+			border-top: 1px solid $color__border-button;
+			margin: .8em 0 0;
+			padding: .8em 0 0;
+		}
+
+		& > li:first-of-type {
+			border-top: 0;
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+}
+
+.widget-title {
+	@include font-size(1);
+	font-family: $font__headings;
+	font-style: normal;
+	margin-top: 0;
+	margin-bottom: .8em;
+	padding-bottom: .8em;
+	border-bottom: 1px solid $color__border-button;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#secondary .widget {
+	padding: 1.6em;
+	border: 3px solid lighten( $color__border-button, 4 );
+	@include font-size(.825);
+}
+
+.footer-widgets {
+	background-color: $color__text-main;
+	color: $color__border-button;
+	padding: 3.2em 0;
+	width: 100%;
+
+	.widget {
+		div ul li,
+		& > ul li {
+			border-color: rgba(white,0.1);
+		}
+	}
+
+	.widget_calendar {
+		td,
+		th {
+			border-color: rgba(255,255,255,0.1);
+		}
+	}
+
+	.widget-title {
+		color: $color__border-button;
+		border-color: rgba(white,0.1);
+	}
+
+	.widget-area {
+		float: left;
+		width: 100%;
+	}
+}
+
+/* Specific widgets */
+
+.widget_rss {
+	a {
+		font-weight: bold;
+	}
+	.rss-date {
+		clear: both;
+		display: block;
+		font-style: italic;
+		margin: 0 0 .4em;
+	}
+}
+
+.widget_calendar {
+	td, th {
+		text-align: center;
+	}
+
+	td#next {
+		text-align: right;
+	}
+
+	td#prev {
+		text-align: left;
+	}
+}
+
+.widget_search {
+	.search-field {
+		width: 100%;
+	}
+
+	.search-submit {
+		display: none;
+	}
+}
+
+.textwidget {
+	word-wrap: break-word;
+}
