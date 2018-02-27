@@ -1,0 +1,691 @@
+/*
+Editor Styles
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"] {
+	/* box-sizing: content-box; */
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	color: #6a6c6e;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.75;
+}
+
+.site {
+	background-color: #fff;
+	position: relative;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit; /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; */
+}
+
+/* Headers */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #1a1c1e;
+	font-family: "Noto Serif", Georgia, serif;
+	font-weight: 700;
+	line-height: 1.38;
+}
+
+h1 + h2,
+h1 + h3,
+h2 + h3,
+h2 + h4,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+	margin-top: -2%;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	line-height: 1.19;
+}
+
+h1 {
+	clear: both;
+	font-size: 5rem;
+	font-weight: 700;
+	line-height: 1.19;
+}
+
+h2 {
+	font-size: 2.6rem;
+}
+
+h3 {
+	font-size: 2.2rem;
+}
+
+h4 {
+	font-size: 2rem;
+}
+
+h5 {
+	font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.7rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+h6 {
+	font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.5rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+
+}
+
+p {
+	margin: 0;
+	padding: 0 0 1.5em;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+blockquote {
+	clear: both;
+	font-family: "Noto Serif", Georgia, serif;
+	font-size: 1.8rem;
+	font-style: italic;
+	position: relative;
+}
+
+blockquote p:first-child {
+  margin: 0;
+}
+
+blockquote cite {
+	display: block;
+	font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 1.6rem;
+}
+
+q:before {
+	content: "\201C";
+}
+
+q:after {
+	content: "\201D";
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+	font-family: "Lucida Console", Monaco, "Courier New", monospace;
+	font-size: 90%;
+	font-style: normal;
+	font-weight: 400;
+	text-decoration: none;
+	text-transform: none;
+}
+
+code {
+	display: inline-block;
+	margin: 0 0.4em;
+	position: relative;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	position: relative;
+}
+
+pre:before {
+	background-color: #e7ae01;
+	color: #ffffff;
+	content: "\f462";
+	font-size: 18px; /* for IE9 & IE10, which don't support rem for pseudo-elements */
+	font-size: 1.8rem;
+	height: 100%;
+	line-height: 1.62;
+	padding: 0 .19em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 5;
+}
+
+hr {
+	background-color: #eee;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+menu,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/**
+ * Lists
+ */
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol ol {
+    list-style: upper-alpha;
+}
+
+ol ol ol {
+	list-style: upper-roman;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin-left: 1.62em;
+}
+
+/**
+ * Tables
+ */
+
+table {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 1.38;
+	margin: 0 0 1.62em;
+	width: 100%;
+}
+
+td, th {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	padding: 10px 20px;
+}
+
+th {
+	font-size: 85%;
+	letter-spacing: 0.05em;
+	padding: ;
+	text-transform: uppercase;
+}
+
+th,
+tfoot td {
+	font-weight: 700;
+	text-align: left;
+}
+
+th:first-child,
+td:first-child {
+	border-left: 0;
+}
+
+tr {
+	background-color: rgba(255,255,255,0);
+	-moz-transition: background-color 0.2s;
+	-webkit-transition: background-color 0.2s;
+	transition: background-color 0.2s;
+}
+
+thead tr {
+	background: #eee;
+}
+
+tr:hover {
+	background-color: #eee;
+}
+
+figure {
+	margin: 0;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+big {
+	font-size: 125%;
+}
+
+small {
+	font-size: 0.81em;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+mark code,
+ins code {
+	background: transparent;
+	color: inherit;
+	display: inline;
+	padding: 0 .38em;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	font-size: 80%;
+	line-height: 1.38;
+	margin: 0.8075em 0;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.6em;
+}
+
+.gallery-item {
+	display: inline-block;
+	padding: 1.79104477%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-icon img {
+	margin: 0 auto;
+}
+
+.gallery-caption {
+	color: #707070;
+	display: block;
+	font-size: 0.81em;
+	font-style: italic;
+	line-height: 1.38;
+	padding: 0.5em 0;
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}

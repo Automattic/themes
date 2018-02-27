@@ -1,0 +1,781 @@
+/*
+Theme Name: Dyad
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# Elements
+# Heading
+# Navigation
+# Site Banner
+# Content
+	## Index, Archive, Search
+	## 404 Error Pages
+	## Single Posts, Single Pages
+	## Comments
+# Infinite scroll, posts navigation
+# Site Footer
+	## Widgets
+	## Social Media Nav
+# Media Queries
+# WP.com specific styles
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+blockquote {
+	border-left: 0;
+	border-right: 3px solid #ddd;
+	margin-left: 0;
+	margin-right: 1.5em;
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+blockquote blockquote {
+	margin-right: 0;
+}
+
+/**
+ * Lists
+ */
+
+ul,
+ol {
+	margin-left: 0;
+	margin-right: 3em;
+}
+
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+/**
+ * Tables
+ */
+
+th,
+tfoot td {
+	text-align: right;
+}
+
+pre:before {
+	left: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+# Heading
+--------------------------------------------------------------*/
+
+.site-header {
+	left: 0;
+	right: auto;
+}
+
+/**
+ # Site Branding - Logo
+ */
+.site-branding .site-logo-link {
+	padding-left: 0.5em;
+	padding-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+#site-navigation {
+	text-align: left;
+}
+
+#site-navigation ul li {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+#site-navigation ul ul {
+	left: auto;
+	right: -9999em;
+}
+
+#site-navigation ul ul:before {
+	left: auto;
+	margin-left: 0;
+	margin-right: -10px;
+	right: 50%;
+}
+
+#site-navigation ul ul ul:before {
+	border-width: 8px 8px 8px 0;
+	border-color: transparent #292c2f transparent transparent;
+	left: 0;
+	margin-left: 0;
+	margin-right: 0;
+	right: auto;
+}
+
+#site-navigation ul ul li {
+	margin-right: 0;
+	text-align: right;
+}
+
+#site-navigation ul li:hover > ul,
+#site-navigation ul li.focus > ul {
+	left: auto;
+	margin-left: 0;
+	margin-right: -110px;
+	right: 50%;
+}
+
+#site-navigation ul ul li:hover > ul,
+#site-navigation ul ul li.focus > ul {
+	left: 100%;
+	right: auto;
+	margin: 0;
+}
+
+#site-navigation ul ul ul {
+	padding-left: 8px;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Site Banner
+--------------------------------------------------------------*/
+
+#site-banner {
+	direction: ltr;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Index, Archive, Search
+--------------------------------------------------------------*/
+
+/* Grid of posts */
+
+.posts .hentry {
+	float: right;
+}
+
+/* Content */
+
+.posts .entry-inner:before,
+.posts .entry-inner:after {
+	left: auto;
+	margin-left: 0;
+	margin-right: -25px;
+	right: 0;
+}
+
+.posts .entry-inner-content {
+	left: 0;
+	right: auto;
+	text-align: right;
+}
+
+.too-short .link-more:before {
+	left: auto;
+	right: 0;
+}
+
+.posts .has-post-thumbnail .edit-link {
+	left: 0;
+	right: auto;
+}
+
+/* Posts without featured image */
+
+.posts .hentry:not(.has-post-thumbnail) .entry-inner:after,
+.posts .hentry:not(.has-post-thumbnail) .entry-inner:before {
+	left: 50%;
+	margin-left: -20px;
+	margin-right: 0;
+	right: auto;
+}
+
+/*--------------------------------------------------------------
+## 404 Error Pages
+--------------------------------------------------------------*/
+
+.error404 .search-form .search-field,
+.posts .no-results .search-form .search-field {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+## Single Posts, Single Pages
+--------------------------------------------------------------*/
+
+
+/* site inner */
+
+.is-singular:not(.home) .site-inner {
+	float: left;
+}
+
+.is-singular:not(.home):not(.has-post-thumbnail) .site-inner,
+.single-format-image .site-inner,
+.single-format-image.has-post-thumbnail .site-inner {
+	float: none;
+}
+
+/* entry inner - separator */
+
+.is-singular .entry-inner:after,
+.is-singular .entry-inner:before,
+.error404 .entry-inner:after,
+.error404 .entry-inner:before {
+	left: auto;
+	right: 50%;
+}
+
+.is-singular .entry-inner:after,
+.error404 .entry-inner:after {
+	margin: -18px -18px 0 0;
+}
+
+.is-singular .entry-inner:before,
+.error404 .entry-inner:before {
+	margin: -18px -18px 0 0;
+}
+
+/* entry header */
+
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index) .entry-header {
+	left: auto;
+	right: 0;
+	text-align: right;
+}
+
+.is-singular.single-format-image .entry-header,
+.is-singular.single-format-image.has-post-thumbnail .entry-header {
+	text-align: center;
+}
+
+.is-singular.has-post-thumbnail:not(.single-format-image) .entry-posted .posted-info {
+	float: right;
+}
+
+.is-singular.has-post-thumbnail:not(.single-format-image) .entry-posted .edit-link {
+	float: left;
+}
+
+.is-singular.single-format-image.has-post-thumbnail .entry-posted .posted-info,
+.is-singular.single-format-image.has-post-thumbnail .entry-posted .edit-link {
+	float: none;
+}
+
+/* entry content */
+
+.tags-links a {
+	margin: 0 0 0.5em 0.5em;
+}
+
+.tags-links a:last-of-type {
+	margin-left: 0;
+}
+
+/* entry media */
+
+.is-singular .entry-media {
+	left: auto;
+	right: 0;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+/* comments area */
+
+.comments-title .add-comment-link {
+	float: left;
+}
+
+.comment-author {
+	position: relative;
+}
+
+.comment-author .avatar-container {
+	left: auto;
+	right: -100px;
+}
+
+.bypostauthor .comment-author:before {
+	left: auto;
+	right: -100px;
+}
+
+ol.children .bypostauthor .comment-author:before {
+	left: auto;
+	right: -80px;
+}
+
+.comment-body {
+	margin-left: 0;
+	margin-right: 100px;
+}
+
+.comment .reply {
+	left: 0;
+	right: auto;
+}
+
+.comment .reply:before {
+	margin-left: 3px;
+	margin-right: 0;
+}
+
+/* */
+
+ol.comment-list ol.children {
+	padding-left: 0;
+	padding-right: 50px;
+}
+
+ol.comment-list ol.children .comment-author .avatar-container {
+	left: 0;
+	right: -80px;
+}
+
+ol.comment-list ol.children .comment-body {
+	margin-left: 0;
+	margin-right: 80px;
+}
+
+/**
+* Comments pagination
+*/
+
+.comment-navigation .nav-previous {
+	float: right;
+}
+.comment-navigation .nav-next {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+## Site Footer
+--------------------------------------------------------------*/
+
+.widget-area .widget {
+	float: right;
+}
+
+/*
+ * Infinite Footer
+ */
+
+#infinite-footer .container {
+	float: left;
+}
+
+.posts-navigation .nav-previous {
+	float: right;
+}
+
+.posts-navigation .nav-next {
+	float: left;
+}
+
+.footer-bottom-info.has-social-menu .site-info {
+	float: right;
+}
+
+.footer-bottom-info.has-social-menu .social-links {
+	float: left;
+}
+
+.is-singular.has-post-thumbnail .footer-bottom-info.has-social-menu .site-info,
+.is-singular.has-post-thumbnail .footer-bottom-info.has-social-menu .social-links {
+	float: none;
+}
+
+ /*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+
+ .widget {
+	text-align: right;
+}
+
+.widget-title {
+	text-align: right;
+}
+
+.widget ul li li {
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+/**
+* Tag cloud widget
+*/
+
+.widget .tagcloud a,
+.widget.widget_tag_cloud a {
+	float: right;
+	margin: 2px 0 0 2px;
+}
+
+/* Calendar */
+
+.widget_calendar caption {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+## Media Queries
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 1601px) {
+
+	/*
+	Index, Archive, Search - post grid
+	*/
+	.posts .entry-media {
+		float: right;
+	}
+
+	.posts .hentry:nth-of-type(6n+4).has-post-thumbnail .entry-media,
+	.posts .hentry:nth-of-type(6n+5).has-post-thumbnail .entry-media,
+	.posts .hentry:nth-of-type(6n+6).has-post-thumbnail .entry-media {
+		float: left;
+	}
+
+	.posts .entry-inner {
+		left: 0;
+		right: auto;
+	}
+
+	.posts .hentry:nth-of-type(6n+4).has-post-thumbnail .entry-inner,
+	.posts .hentry:nth-of-type(6n+5).has-post-thumbnail .entry-inner,
+	.posts .hentry:nth-of-type(6n+6).has-post-thumbnail .entry-inner,
+	.posts .hentry.has-post-thumbnail:nth-of-type(6n+4) .edit-link,
+	.posts .hentry.has-post-thumbnail:nth-of-type(6n+5) .edit-link,
+	.posts .hentry.has-post-thumbnail:nth-of-type(6n+6) .edit-link {
+		left: auto;
+		right: 0;
+	}
+
+	.posts .hentry:nth-of-type(6n+4).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-of-type(6n+5).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-of-type(6n+6).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-of-type(6n+4).has-post-thumbnail .entry-inner:before,
+	.posts .hentry:nth-of-type(6n+5).has-post-thumbnail .entry-inner:before,
+	.posts .hentry:nth-of-type(6n+6).has-post-thumbnail .entry-inner:before {
+		left: 0;
+		margin-left: -25px;
+		margin-right: 0;
+		right: auto;
+	}
+
+}
+
+@media only screen and (max-width: 1600px) {
+	/*
+	Index, Archive, Search - post grid
+	*/
+
+	.posts .entry-media {
+		float: right;
+	}
+
+	.posts .hentry:nth-of-type(4n+3) .entry-media,
+	.posts .hentry:nth-of-type(4n+4) .entry-media {
+		float: left;
+	}
+
+	.posts .entry-inner {
+		left: 0;
+		right: auto;
+	}
+
+	.posts .hentry:nth-of-type(4n+3) .entry-inner,
+	.posts .hentry:nth-of-type(4n+4) .entry-inner,
+	.posts .hentry:nth-of-type(4n+3) .edit-link,
+	.posts .hentry:nth-of-type(4n+4) .edit-link {
+		left: auto;
+		right: 0;
+	}
+
+	.posts .hentry:nth-of-type(4n+3).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-of-type(4n+4).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-of-type(4n+3).has-post-thumbnail .entry-inner:before,
+	.posts .hentry:nth-of-type(4n+4).has-post-thumbnail .entry-inner:before {
+		left: 0;
+		margin-left: -25px;
+		margin-right: 0;
+		right: auto;
+	}
+}
+
+
+@media only screen and (max-width: 1200px) {
+	/*
+	 * Index, Archive, Search
+	 */
+
+	.posts .hentry {
+		float: none;
+	}
+
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:before {
+		left: auto;
+		right: 0;
+	}
+
+	.posts .hentry:nth-child(odd) .entry-media {
+		float: right;
+	}
+
+	.posts .hentry:nth-child(even) .entry-media {
+		float: left;
+	}
+
+	.posts .hentry:nth-child(odd) .entry-inner,
+	.posts .hentry:nth-child(odd) .edit-link,
+	.posts .hentry:nth-child(even).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(even).has-post-thumbnail .entry-inner:before {
+		left: 0;
+		right: auto;
+	}
+
+	.posts .hentry:nth-child(even).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(even).has-post-thumbnail .entry-inner:before {
+		margin-left: -25px;
+		margin-right: 0;
+	}
+
+
+	.posts .hentry:nth-child(even) .entry-inner,
+	.posts .hentry:nth-child(even) .edit-link,
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:before {
+		left: auto;
+		right: 0;
+	}
+
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:before {
+		margin-left: 0;
+		margin-right: -25px;
+	}
+
+
+	/* entry header */
+
+	.is-singular .entry-header,
+	.has-post-thumbnail.is-singular:not(.home) .entry-header,
+	.page.has-post-thumbnail.is-singular:not(.home) .entry-header,
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image) .entry-header {
+		text-align: center;
+	}
+
+	.is-singular.has-post-thumbnail:not(.single-format-image) .entry-posted .posted-info,
+	.is-singular.has-post-thumbnail:not(.single-format-image) .entry-posted .edit-link {
+		float: none;
+	}
+
+	.footer-bottom-info.has-social-menu .site-info,
+	.footer-bottom-info.has-social-menu .social-links {
+		float: none;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+
+	.site-branding {
+		float: none;
+	}
+
+	/* Menu */
+	.menu-toggle {
+		left: 2rem;
+		right: auto;
+	}
+
+	#site-navigation {
+		text-align: right;
+	}
+
+	#site-navigation ul li {
+		margin-right: 0;
+	}
+
+	#site-navigation ul ul {
+		margin: 0 2rem 0 0 !important;
+	}
+
+	#site-navigation ul ul ul {
+		padding-right: 0;
+	}
+
+
+	/* entry media */
+
+
+	.is-singular .entry-media,
+	.is-singular:not(.home) .entry-media {
+		left: auto;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	/* elements */
+
+	.menu-toggle {
+		right: auto;
+	}
+
+	.posts .hentry:nth-child(even) .entry-media,
+	.posts .hentry:nth-child(odd) .entry-media {
+		float: none;
+	}
+
+	.posts .hentry:nth-child(even).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(even).has-post-thumbnail .entry-inner:before,
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:after,
+	.posts .hentry:nth-child(odd).has-post-thumbnail .entry-inner:before {
+		left: auto;
+		right: 50%;
+	}
+
+	.posts .hentry .entry-media,
+	.posts .hentry .entry-inner,
+	.entry-inner-content {
+		float: none;
+	}
+
+	.posts .entry-media .post-thumbnail {
+		left: auto;
+		right: 0;
+	}
+
+	/* Single Posts */
+	.is-singular .entry-inner:after,
+	.error404 .entry-inner:after {
+		margin: -15px -15px 0 0;
+	}
+
+	.is-singular .entry-inner:before,
+	.error404 .entry-inner:before {
+		margin: -15px -15px 0 0;
+	}
+
+	/* Comments */
+	ol.comment-list ol.children {
+		padding-left: 0;
+		padding-right: 40px;
+	}
+
+	ol.comment-list ol.children ol {
+		padding-right: 0;
+	}
+
+	/* Widgets */
+	.widget-area .widget,
+	.widget-area.widgets-two .widget,
+	.widget-area.widgets-three .widget,
+	.is-singular:not(.home) .widget-area .widget,
+	.has-post-thumbnail.is-singular:not(.home) .widget-area .widget,
+	.has-post-thumbnail.is-singular:not(.home) .widget-area.widgets-three .widget,
+	.has-post-thumbnail.is-singular.single-format-image .widget-area .widget,
+	.has-post-thumbnail.is-singular.single-format-image .widget-area .widget,
+	.is-singular.single-format-image .widget-area .widget,
+	.is-singular.single-format-image .widget-area .widget {
+		float: none;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	/* Menu Toggle */
+	.menu-toggle {
+		left: auto;
+	}
+
+	/* Posts */
+	.posts-navigation div:nth-of-type(2) {
+		margin-top: 10px;
+	}
+
+	.posts-navigation .nav-next,
+	.posts-navigation .nav-previous {
+		float: none;
+	}
+
+	.comment-body,
+	ol.comment-list ol.children .comment-body {
+		margin-right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+# WP.com specific styles
+--------------------------------------------------------------*/
+
+/**
+ * Widgets
+ */
+
+/* Author Widget */
+
+.widget-area .widget_author_grid ul li {
+	float: right !important;
+}
+
+.widget_authors img.avatar {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+.widget_authors ul ul {
+	clear: right;
+}
+
+.widget_authors ul li li {
+	padding-right: 0;
+}
+
+/* Calendar */
+
+.widget_calendar tr td#next {
+	text-align: left;
+}
+
+.widget_calendar tr td#prev {
+	text-align: right;
+}
+
+/* Flickr Widget */
+
+.widget_flickr table,
+.widget_flickr td {
+	text-align: right;
+}
+
