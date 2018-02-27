@@ -1,0 +1,254 @@
+/*
+Theme Name: Apostrophe
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* Move site logo to right-hand side on larger screens */
+@media (min-width: 768px) {
+	.site-logo {
+		float: right;
+		margin-left: 3.63636%;
+		margin-right: 0;
+	}
+}
+
+/* Hidden elements should be hidden to the right */
+@media (min-width: 768px) {
+	.main-navigation ul ul,
+	.main-navigation ul ul ul,
+	.apostrophe-2-social li a span {
+		left: auto;
+		right: -999em;
+	}
+
+	.main-navigation li:hover > ul {
+		right: auto;
+	}
+
+	.main-navigation ul ul li:hover > ul {
+		right: 100%;
+	}
+}
+
+/* Adjust menu icons for proper spacing and swap social with main navigation menu */
+.main-navigation .menu-toggle::before {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.main-navigation li {
+	float: right;
+}
+
+.main-navigation li a {
+	margin-left: 3rem;
+	margin-right: 0;
+}
+
+.apostrophe-2-navigation .menu-item-has-children > a::after {
+	padding-left: 0;
+	padding-right: 0.5rem;
+}
+
+/* Sub-menus */
+.main-navigation ul ul li.menu-item-has-children > a::after {
+	transform: rotate(90deg);
+	vertical-align: -0.4rem;
+}
+
+.apostrophe-2-navigation .dropdown-toggle {
+	left: 0;
+	right: auto;
+}
+
+@media (max-width: 767px) {
+	.main-navigation.toggled-on .apostrophe-2-navigation li.menu-item-has-children a {
+		padding-left: 60px;
+		padding-right: 25px;
+	}
+}
+
+.apostrophe-2-social {
+	float: left;
+}
+
+.apostrophe-2-social li a {
+	margin-left: 0;
+	margin-right: 20px;
+}
+
+/* Move sidebar to the left on two-column screens */
+@media (min-width: 1024px) {
+	#primary {
+		float: right;
+	}
+
+	#secondary {
+		float: left;
+	}
+}
+
+/* Move featured images to right on small screens */
+@media (max-width: 767px) {
+	.archive article:not(.apostrophe-2-featured) .entry-thumbnail,
+	.blog article:not(.apostrophe-2-featured) .entry-thumbnail,
+	.search article:not(.apostrophe-2-featured) .entry-thumbnail {
+		float: right;
+	}
+
+	.archive article:not(.apostrophe-2-featured) .entry-header,
+	.blog article:not(.apostrophe-2-featured) .entry-header,
+	.search article:not(.apostrophe-2-featured) .entry-header {
+		float: left;
+		padding-left: 0;
+		padding-right: 3.33333%;
+	}
+}
+
+/* Shift overlapped post date to right and float posts to the right on larger screens */
+@media (min-width: 768px) {
+	.archive article .entry-meta,
+	.blog article .entry-meta,
+	.search article .entry-meta {
+		margin-left: 0;
+		margin-right: -5px;
+	}
+
+	.archive article.apostrophe-2-featured,
+	.blog article.apostrophe-2-featured,
+	.search article.apostrophe-2-featured {
+		float: right;
+	}
+
+	.archive article,
+	.blog article,
+	.search article {
+		float: right;
+	}
+}
+
+/* Move post format icon to the right */
+.entry-format::before {
+	left: 0;
+	right: auto;
+}
+
+@media (min-width: 1024px) {
+	.entry-format::before {
+		left: auto;
+		right: -46px;
+	}
+}
+
+/* Adjust icon spacing for categories and tags */
+.entry-footer .post-categories,
+.entry-footer .post-tags {
+	float: right;
+}
+.entry-footer a[rel="category tag"]::before,
+.entry-footer a[rel="tag"]::before {
+	margin-left: 0.2rem;
+	margin-right: -0.2rem;
+}
+
+/* Previous and next buttons should swap around */
+.nav-previous {
+	float: right;
+}
+
+.nav-previous .meta-nav {
+	padding-left: 0;
+	padding-right: 25px;
+}
+
+.nav-previous .meta-nav::before {
+	left: auto;
+	right: -10px;
+	top: 2px;
+	transform: rotate(90deg);
+}
+
+.nav-next {
+	float: left;
+	text-align: left;
+}
+
+.nav-next .meta-nav {
+	padding-left: 25px;
+	padding-right: 0;
+}
+
+.nav-next .meta-nav::before {
+	left: -10px;
+	right: auto;
+	top: -2px;
+	transform: rotate(-90deg);
+}
+
+/* Move comment author avatar to right */
+.comment-meta .comment-author .avatar {
+	float: right;
+	margin-left: 0.5em;
+	margin-right: 0;
+}
+
+/* Swap search button around */
+@media (min-width: 768px) {
+	.search-form label {
+		float: right;
+	}
+
+	.search-form input[type="submit"] {
+		float: right;
+		margin-left: 0;
+		margin-right: 1%;
+	}
+}
+
+/* Adjust blockquote and pullquotes */
+dd {
+	margin-right: 0;
+	margin-left: 1.5em;
+}
+
+blockquote {
+	border-left: 0;
+	border-right: 4px solid #D9D9D9;
+	margin-left: 1.5em;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+.pullquote {
+	border-right: 0;
+}
+
+@media (min-width: 1024px) {
+	.apostrophe-2-no-sidebar .pullquote {
+		left: -50%;
+		right: auto;
+	}
+}
+
+/* Adjust li margins */
+li > ul {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+.widget li > ul {
+	margin-left: 0;
+	margin-right: 0.5em;
+}
+.widget_calendar #next {
+	text-align: left;
+}
