@@ -1,0 +1,443 @@
+/*
+Theme Name: Libre 2.0
+
+Adding support for language written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+http://codex.wordpress.org/Right_to_Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+blockquote {
+	margin: 0 2.25em 1.75em 1.75em;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+blockquote:before {
+	right: -.6em;
+	left: auto;
+}
+
+blockquote blockquote {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+blockquote.alignright,
+blockquote.aligncenter {
+	margin-right: 2em;
+	margin-left: auto;
+}
+
+blockquote.alignleft {
+	margin-right: 3.5em;
+	margin-left: auto;
+}
+
+ul,
+ol {
+	padding-right: 1.75em;
+	padding-left: 0;
+}
+
+li > ul,
+li > ol {
+	margin-right: .4375em;
+	margin-left: auto;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	margin-left: -5px;
+	margin-right: auto;
+}
+
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+
+/*-- Header */
+
+.site-title {
+	margin: 0 0 0 .4375em;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+.main-navigation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	padding-right: 1.75em;
+	padding-left: 0;
+}
+
+/* Small menu. */
+
+.menu-toggle {
+	left: 0;
+	right: auto;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignright {
+	float: right;
+	margin: .875em 0 .875em 1.75em;
+}
+
+.alignleft {
+	float: left;
+	margin: .875em 1.75em .875em 0;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+
+.widget ul ul {
+	padding-right: .875em;
+	padding-left: 0;
+}
+
+.widget ul ul li:before {
+	margin-right: -.875em;
+	margin-left: .4375em;
+}
+
+/* Calendar */
+
+td#prev {
+	text-align: right;
+}
+
+td#next {
+	text-align: left;
+}
+
+/* Recent Comments */
+
+/* Archives */
+.widget .post-count {
+	float: left;
+	padding-right: .4375em;
+	padding-left: 0;
+}
+
+.widget_archive a,
+.widget_categories a {
+	padding-left: .4375em;
+	padding-right: 0;
+}
+
+.widget_archive a:before,
+.widget_categories a:before {
+	right: 0;
+	left: auto;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	margin-right: 1px;
+	margin-left: auto;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+.comment .comment-metadata span {
+	margin: 0 0 0 1.75em;
+}
+
+.comment .avatar {
+	float: right;
+	margin-left: .875em;
+	margin-right: auto;
+}
+
+#cancel-comment-reply-link {
+	float: left;
+}
+
+.comment-form label {
+	margin-left: .875em;
+	margin-right: auto;
+}
+
+@media screen and ( min-width: 45em ) {
+	.main-navigation li {
+		margin: 0 0 0 1.75em;
+	}
+
+	.main-navigation ul ul {
+		float: right;
+		margin-right: -1.75em;
+		right: -999em;
+		text-align: right;
+		left: auto;
+		margin-left: auto;
+	}
+
+	.main-navigation ul ul li {
+		padding: 0.4375em 0 0.4375em 1.75em;
+	}
+
+	.main-navigation ul > li.menu-item-has-children,
+	.main-navigation ul > li.page_item_has_children {
+		margin-left: 2.625em;
+		margin-right: auto;
+	}
+
+	.main-navigation ul > li.menu-item-has-children > a:after,
+	.main-navigation ul > li.page_item_has_children > a:after {
+		left: -.75em;
+		right: auto;
+	}
+
+	.main-navigation ul ul > li.menu-item-has-children,
+	.main-navigation ul ul > li.page_item_has_children {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.main-navigation ul ul ul {
+		right: -999em;
+		left: auto;
+	}
+
+	.main-navigation ul li:hover > ul,
+		.main-navigation ul li.focus > ul {
+		right: auto;
+		left: auto;
+	}
+
+	.main-navigation ul ul li:hover > ul,
+		.main-navigation ul ul li.focus > ul {
+		right: 100%;
+		left: auto;
+	}
+
+	.error404 .widget-areas .widget-area {
+		float: right;
+		margin-left: 5%;
+		margin-right: auto;
+	}
+
+	.error404 .widget-areas .widget-area:last-of-type {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.footer-widgets > div:nth-child(1):nth-last-child(3) {
+		float: right;
+		margin-left: 5%;
+		margin-right: auto;
+	}
+
+	.footer-widgets > div:nth-child(2):nth-last-child(2),
+	.footer-widgets > div:nth-child(3):nth-last-child(1) {
+		float: right;
+		margin-left: 5%;
+		margin-right: auto;
+	}
+
+	.footer-widgets > div:nth-child(1):nth-last-child(3):last-of-type,
+	.footer-widgets > div:nth-child(2):nth-last-child(2):last-of-type,
+	.footer-widgets > div:nth-child(3):nth-last-child(1):last-of-type {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.footer-widgets > div:nth-child(1):nth-last-child(2),
+	.footer-widgets > div:nth-child(2):nth-last-child(1) {
+		float: right;
+		margin-left: 6%;
+		margin-right: auto;
+	}
+
+	.footer-widgets > div:nth-child(1):nth-last-child(2):last-of-type,
+	.footer-widgets > div:nth-child(2):nth-last-child(1):last-of-type {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.entry-footer span {
+		margin: 0 0 0 1.75em;
+	}
+
+	.site-info {
+		text-align: left;
+	}
+
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: right;
+	}
+
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: left;
+	}
+
+	blockquote {
+		margin-right: 3.5em;
+		margin-left: auto;
+	}
+
+	blockquote.alignright {
+		margin-right: 3em;
+		margin-left: auto;
+	}
+
+	blockquote:before {
+		right: -.6em;
+		left: auto;
+	}
+
+}
+
+@media screen and ( min-width: 55em ) {
+	.sticking .site-logo {
+		margin-left: 0.4375em;
+		margin-right: auto;
+	}
+
+	.singular .content-area {
+		float: right;
+		margin: 0 0 0 -25%;
+	}
+
+	.singular .site-main {
+		margin: 0 0 0 32%;
+	}
+
+	.singular .site-content .widget-area {
+		float: left;
+	}
+
+	#infinite-handle span,
+	.infinite-loader {
+		margin-right: 32%;
+		margin-left: auto;
+	}
+
+	.blog .entry-header,
+	.archive .entry-header,
+	.search .entry-header,
+	.page-template-left-column-page-php .entry-header,
+	.page-title,
+	.search-no-results .page-header,
+	.error404 .page-header {
+		float: right;
+	}
+
+	.blog .entry-content,
+	.archive .entry-content,
+	.search .entry-summary,
+	.search .entry-content,
+	.page-template-left-column-page-php .entry-content,
+	.taxonomy-description,
+	.search-no-results .page-content,
+	.error404 .page-content {
+		float: left;
+	}
+
+	blockquote.alignright,
+	blockquote.aligncenter {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+}
+
+@media screen and ( min-width: 70em ) {
+
+	.sticking .site-title {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.main-navigation {
+		text-align: left;
+	}
+
+	.main-navigation li {
+		margin-left: 0;
+		margin-right: 1.75em;
+	}
+
+	.main-navigation ul > li.menu-item-has-children,
+	.main-navigation ul > li.page_item_has_children {
+		margin-left: .875em;
+		margin-right: 1.75em;
+	}
+
+	.main-navigation ul > li.menu-item-has-children > a:after,
+	.main-navigation ul > li.page_item_has_children > a:after {
+		transform: rotate(270deg);
+	}
+
+	.comment .comment-content {
+		float: left;
+	}
+
+	.comment .comment-meta {
+		float: right;
+	}
+
+	.comment .avatar {
+		right: -4em;
+		left: auto;
+	}
+
+}
