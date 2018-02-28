@@ -406,7 +406,7 @@ add_color_rule( 'fg2', '#2590ec', array(
 
 	// Fill
 	array( '.grip-pencil0,
-		.grip-pencil2', 'fill', bg, 3 ),
+		.grip-pencil2', 'fill', 'bg', 3 ),
 ),
 __( 'Color 5' ) );
 
