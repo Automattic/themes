@@ -1,5 +1,4 @@
-# themes
-Automattic's free themes.
+# Automattic's Free Themes
 
 ## Maintainers
 
