@@ -1,2 +1,2 @@
-# free-themes
+# themes
 Automattic's free themes.
