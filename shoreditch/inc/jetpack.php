@@ -138,7 +138,7 @@ function shoreditch_testimonials_title( $before = '', $after = '' ) {
 function shoreditch_testimonials_content( $before = '', $after = '' ) {
 	$jetpack_options = get_theme_mod( 'jetpack_testimonials' );
 	if ( isset( $jetpack_options['page-content'] ) && '' != $jetpack_options['page-content'] ) {
-		$content = convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $jetpack_options['page-content'] ) ) ) ) ) );
+		$content = convert_chars( convert_smilies( wptexturize( wp_kses_post( $jetpack_options['page-content'] ) ) ) );
 		echo $before . $content . $after;
 	}
 }
