@@ -30,7 +30,7 @@ get_header(); ?>
 				</header>
 				<article class="hentry testimonials-hentry">
 					<div class="entry-content">
-						<?php echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $jetpack_options['page-content'] ) ) ) ) ) ); ?>
+						<?php echo convert_chars( convert_smilies( wptexturize( wp_kses_post( $jetpack_options['page-content'] ) ) ) ); ?>
 					</div>
 				</article>
 
