@@ -21,7 +21,7 @@ get_header(); ?>
 					<?php endif; ?>
 					<?php if ( '' !== $jetpack_options['page-content'] ) : // only display if content not empty ?>
 						<div class="taxonomy-description">
-							<?php echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $jetpack_options['page-content'] ) ) ) ) ) ); ?>
+							<?php echo convert_chars( convert_smilies( wptexturize( wp_kses_post( $jetpack_options['page-content'] ) ) ) ); ?>
 						</div>
 					<?php endif; ?>
 				</header>
