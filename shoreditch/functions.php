@@ -45,8 +45,8 @@ function shoreditch_setup() {
 
 	// Enable support for custom logo.
 	add_theme_support( 'custom-logo', array(
-		'height'      => 240,
-		'width'       => 240,
+		'height'      => 480,
+		'width'       => 480,
 		'flex-height' => true,
 	) );
 
