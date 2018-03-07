@@ -2014,6 +2014,42 @@ label[for="comment"] {
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Contact Forms */
+
+.site-content .contact-form input[type="radio"],
+.site-content .contact-form input[type="checkbox"] {
+  margin-bottom: 6px;
+  margin-right: .3em;
+  vertical-align: middle;
+}
+.site-content .contact-form label.checkbox,
+.site-content .contact-form label.checkbox-multiple,
+.site-content .contact-form label.radio {
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: .4375em;
+  float: none;
+}
+.site-content .contact-form label.checkbox,
+.site-content .contact-form > div {
+  margin-bottom: .875em;
+}
+.site-content .contact-form textarea,
+.site-content .contact-form input[type='text'],
+.site-content .contact-form input[type='email'],
+.site-content .contact-form input[type='url'],
+.site-content .contact-form select {
+  margin-bottom: .4375em;
+  max-width: 100%;
+}
+.site-content .contact-form .grunion-field-label {
+  margin-bottom: .21875em;
+  width: 100%;
+}
+.site-content .contact-form .grunion-field-label.textarea {
+  width: 100%;
+}
+
 /*--------------------------------------------------------------
 13.0 Media
 --------------------------------------------------------------*/
@@ -2838,7 +2874,10 @@ object {
     text-align: center;
   }
 
-  label {
+  label,
+  .site-content .contact-form .grunion-field-label.name,
+  .site-content .contact-form .grunion-field-label.url,
+  .site-content .contact-form .grunion-field-label.email {
     clear: both;
     float: left;
     margin: 0.25em 2% 1em 0;
