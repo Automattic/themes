@@ -65,7 +65,7 @@ add_color_rule( 'bg', '#ffffff', array(
 	array( '.comments-link .comment-icon .path,
 			.post-navigation-fixed .nav-links a .meta-nav .arrow-icon .circle', 'fill' ),
 
-), __( 'Background Color', 'altofocus' );
+), __( 'Background Color', 'altofocus' ) );
 
 
 
