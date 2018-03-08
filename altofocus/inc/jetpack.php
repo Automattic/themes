@@ -171,7 +171,7 @@ function altofocus_infinite_scroll_render() {
 		}
 	} ?>
 	<script>
-		// Put returned posts’ IDs in to an array
+		// Put returned posts' IDs in to an array
 		var loadedPosts = <?php echo json_encode( $loaded_post_IDs ); ?>;
 	</script>
 <?php
