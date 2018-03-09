@@ -30,12 +30,10 @@
 	preg_match( '/' . $pattern . '/s', $content, $matches );
 
 	// Account for Content Option settings
-	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) || ! empty ( get_option( 'jetpack_content_featured_images_post' ) ) ) {
 		$content_option_override = '1';
-	} elseif ( empty ( get_option( 'jetpack_content_featured_images_post' ) ) ) {
-		$content_option_override = '0';
 	} else {
-		$content_option_override = '1';
+		$content_option_override = '0';
 	}
 
 	// If content has a gallery with the slideshow type, display that instead of the featured image.
@@ -45,12 +43,12 @@
 
 			if ( is_array( $matches ) && $matches[2] == 'gallery' ) {
 
-				// Remove gallery markup from content (affects .entry-content below)
+				// Remove gallery markup from content (effects .entry-content below)
 				$content = altofocus_strip_override_shortcode( $content );
 
-				// Replace gallery with flexslider_gallery shortcode
+				// Filter default gallery with custom full-width flexslider gallery. See: extras.php
+				add_filter( 'post_gallery', 'altofocus_slideshow_gallery_filter', 10, 2);
 				$shortcode = $matches[0];
-				$shortcode = preg_replace( '/\[' . $matches[2] . ' /', '[flexslider_gallery size="altofocus-post-featured-image" ', $shortcode, 1 );
 				$output = do_shortcode( $shortcode );
 			}
 		}
