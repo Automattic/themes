@@ -5,7 +5,7 @@ Tags: white, light, business, trendy, featured-image-header, featured-images, fl
 
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.0.0
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -118,10 +118,10 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Credits ==
 
-* Based on Components http://components.underscores.me/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Based on Components http://components.underscores.me/, (C) 2015-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Isotope http://isotope.metafizzy.co/ (C) 2016 Metafizzy [GPLv3 or later] (https://www.gnu.org/licenses/gpl-3.0.html)
-* imagesLoaded https://github.com/desandro/imagesloaded (C) 2017 David DeSandro [MIT](http://opensource.org/licenses/MIT)
-* ScrollTo https://github.com/flesler/jquery.scrollTo (C) 2007-2016 Ariel Flesler [MIT](http://opensource.org/licenses/MIT)
+* imagesLoaded https://github.com/desandro/imagesloaded (C) 2018 David DeSandro [MIT](http://opensource.org/licenses/MIT)
+* ScrollTo https://github.com/flesler/jquery.scrollTo (C) 2007-2018 Ariel Flesler [MIT](http://opensource.org/licenses/MIT)
 * Genericons icon font http://www.genericons.com (C) 2016 Automattic [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Default header image http://negativespace.co/photos/woman-coding/, [C00] (https://creativecommons.org/publicdomain/zero/1.0/)
