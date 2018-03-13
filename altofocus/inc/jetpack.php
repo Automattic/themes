@@ -142,7 +142,12 @@ function altofocus_get_featured_post_ids() {
 	}
 
 	// Ensure correct format before return.
-	return array_map( 'absint', $featured_ids );
+	if ( ! is_array( $featured_ids ) ) {
+		return;
+	} else {
+		return array_map( 'absint', $featured_ids );
+	}
+
 }
 
 /**
