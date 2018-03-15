@@ -66,11 +66,3 @@ function publication_the_site_logo() {
 		jetpack_the_site_logo();
 	}
 }
-
-/**
- * Overwritte default gallery widget content width.
- */
-function publication_gallery_widget_content_width( $width ) {
-	return 672;
-}
-add_filter( 'gallery_widget_content_width', 'publication_gallery_widget_content_width');
