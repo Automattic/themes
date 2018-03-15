@@ -108,11 +108,18 @@ function dara_content_width() {
 add_action( 'after_setup_theme', 'dara_content_width', 0 );
 
 /**
- * Set the content width for the full-width page template.
+ * Set larger content width in some situations.
  */
 function dara_adjust_content_width() {
+
+	/* Set the content width for the front-page or testimonials templates */
 	if ( is_post_type_archive( 'jetpack-testimonial' ) || ( is_front_page() ) ) {
 		$GLOBALS['content_width'] = 1180;
+	}
+
+	/* Allow for full-width gallery display in the footer */
+	if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) {
+		$GLOBALS['content_width'] = 1086;
 	}
 }
 add_action( 'template_redirect', 'dara_adjust_content_width' );

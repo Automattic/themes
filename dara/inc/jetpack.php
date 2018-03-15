@@ -171,12 +171,3 @@ function dara_has_post_thumbnail( $post = null ) {
 		return has_post_thumbnail( $post );
 	}
 }
-
-/**
- * Filter content width for galleries in widgets
- * to accomodate full-width footer widget areas
- */
-function dara_custom_gallery_content_width() {
-    return 1086;
-}
-add_filter( 'gallery_widget_content_width', 'dara_custom_gallery_content_width' );
