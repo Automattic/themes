@@ -115,7 +115,7 @@ if ( ! function_exists( 'karuna_adjusted_content_width' ) ) :
 function karuna_adjusted_content_width() {
 	global $content_width;
 
-	if ( is_page_template( 'templates/full-width-page.php' ) || is_page_template( 'front-page.php' ) ) {
+	if ( is_page_template( 'templates/full-width-page.php' ) || is_page_template( 'front-page.php' ) || is_active_sidebar( 'sidebar-5' ) || is_active_sidebar( 'sidebar-4' ) ) {
 		$content_width = 1040; //pixels
 	}
 }

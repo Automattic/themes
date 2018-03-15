@@ -88,18 +88,6 @@ function karuna_social_menu() {
 	}
 }
 
-/*
- * Adjust content width for Tiled Galleries when using the Header or Full-Width widget areas
- */
-function karuna_jetpack_gallery_widget_width( $width ) {
-	if ( is_active_sidebar( 'sidebar-5' ) || is_active_sidebar( 'sidebar-4' ) ) {
-		$width = 1040;
-	}
-
-	return $width;
-}
-add_filter( 'gallery_widget_content_width', 'karuna_jetpack_gallery_widget_width' );
-
 /**
  * Return early if Author Bio is not available.
  */
