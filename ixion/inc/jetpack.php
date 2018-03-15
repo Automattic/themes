@@ -117,13 +117,3 @@ function ixion_has_multiple_featured_posts() {
 function ixion_get_featured_posts() {
 	return apply_filters( 'ixion_get_featured_posts', false );
 }
-
-/**
- * Filter content width for galleries in widgets
- * to accomodate full-width footer widget areas
- */
-function ixion_custom_gallery_content_width() {
-    return 1080;
-}
-add_filter( 'gallery_widget_content_width', 'ixion_custom_gallery_content_width' );
-

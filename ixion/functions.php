@@ -94,6 +94,19 @@ function ixion_content_width() {
 }
 add_action( 'after_setup_theme', 'ixion_content_width', 0 );
 
+
+/**
+ * Set larger content width in some situations.
+ */
+function ixion_adjust_content_width() {
+
+	/* Allow for full-width gallery display in the footer */
+	if ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) || is_active_sidebar( 'sidebar-5' ) ) {
+		$GLOBALS['content_width'] = 1080;
+	}
+}
+add_action( 'template_redirect', 'ixion_adjust_content_width' );
+
 /**
  * Return early if Custom Logos are not available.
  *
