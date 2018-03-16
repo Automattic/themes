@@ -3242,14 +3242,21 @@ form .form-row-wide {
   position: relative;
 }
 
-.woocommerce-account .woocommerce-MyAccount-navigation {
-  float: right;
-  width: 30%;
-}
-
-.woocommerce-account .woocommerce-MyAccount-content {
-  float: left;
-  width: 68%;
+@media screen and (min-width: 768px) {
+  .woocommerce-account .woocommerce-MyAccount-navigation {
+    display: block;
+  }
+  .woocommerce-account .woocommerce-MyAccount-navigation ul {
+	margin-bottom: 1em;
+    margin-right: 0;
+  }
+  .woocommerce-account .woocommerce-MyAccount-navigation ul li {
+    display: inline-block;
+    margin-left: 0.8em;
+  }
+  .woocommerce-account .woocommerce-MyAccount-navigation ul li:last-of-type {
+    margin-left: 0;
+  }
 }
 
 .woocommerce-account .woocommerce-MyAccount-content table .button {
