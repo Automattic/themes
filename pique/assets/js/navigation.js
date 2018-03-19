@@ -34,71 +34,35 @@
 	links    = menu.getElementsByTagName( 'a' );
 	subMenus = menu.getElementsByTagName( 'ul' );
 
-	$( document ).ready( function() {
+	/**
+	 * Toggles `focus` class to allow submenu access on tablets.
+	 */
+	( function( container ) {
+		var touchStartFn, i,
+			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-		// Open and close our sub-menus when needed
-		$( '#site-navigation .menu-item-has-children > a' ).on( 'click' , function( e ) {
-			if ( $( window ).width() <= '767' ) {
+		if ( 'ontouchstart' in window ) {
+			touchStartFn = function( e ) {
+				var menuItem = this.parentNode, i;
 
-				// If our sub-menu is already open, we need to figure out what to do if the user clicks the parent item again
-				if ($(this).parent('#site-navigation .menu-item-has-children').hasClass('focus') &&
-					$(this).parent().attr('id') === $(e.target).parent().attr('id')) {
-
-					// If our parent item links somewhere, let's go there!
-					if ($(this).attr('href').length && '#' !== $(this).attr('href')) {
-						return true;
-
-						// If our link doesn't go anywhere, we're just going to remove the focus class and close the menu
-					} else if ($(this).attr('href').length && '#' === $(this).attr('href')) {
-						$('#site-navigation .menu-item-has-children').removeClass('focus');
-						e.preventDefault();
-						return false;
+				if ( ! menuItem.classList.contains( 'focus' ) ) {
+					e.preventDefault();
+					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
+						if ( menuItem === menuItem.parentNode.children[i] ) {
+							continue;
+						}
+						menuItem.parentNode.children[i].classList.remove( 'focus' );
 					}
+					menuItem.classList.add( 'focus' );
+				} else {
+					menuItem.classList.remove( 'focus' );
 				}
+			};
 
-				// If this is a menu item with sub-menus, but it's already inside a sub-menu itself,
-				// let's go to the link (so long as there actually IS a link)
-				if ($(this).closest('ul').hasClass('sub-menu') &&
-					$(this).attr('href').length && '#' !== $(this).attr('href')) {
-					return true;
-				}
-
-				// Close any other menus that might be open
-				$('#site-navigation .menu-item-has-children').removeClass('focus');
-
-				// Open/close the menu we've clicked on
-				$(this).parent('#site-navigation .menu-item-has-children').toggleClass('focus');
-
-				// Open our child menus too!
-				$(this).children('.menu-item-has-children').toggleClass('focus');
-
-				// Block our default link behaviour
-				e.preventDefault();
+			for ( i = 0; i < parentLink.length; ++i ) {
+				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
 			}
-		});
-
-		// When clicking on the document, close any open menus.
-		$( document ).on('click touchstart', function (e) {
-			if ( ! $( e.target ).closest( '#site-navigation .menu-item' ).length) {
-				$( '#site-navigation .menu-item-has-children' ).removeClass( 'focus' );
-			}
-		});
-
-		// Get current window width
-		var $windowWidth = $(window).width();
-
-		// When the window is resized, close all menus
-		$( window ).on( 'resize', function() {
-
-			// Check window width has actually changed and it's not just iOS triggering a resize event on scroll
-        	if ( $windowWidth !== $(window).width() ) {
-				$( '#site-navigation-wrapper .menu-item-has-children' ).removeClass( 'focus' );
-
-				// Update the window width for next time
-            	$windowWidth = $( window ).width();
-			}
-		});
-
-	});
+		}
+	}( container ) );
 
 } )( jQuery );
