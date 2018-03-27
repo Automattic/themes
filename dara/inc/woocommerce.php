@@ -335,23 +335,6 @@ function dara_woocommerce_is_shop_page() {
 }
 
 /**
- * Jetpack infinite scroll duplicates posts where orderby is anything other than modified or date
- * This filter offsets the products returned by however many are displayed per page
- *
- * @link https://github.com/Automattic/jetpack/issues/1135
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function dara_woocommerce_jetpack_duplicate_products( $args ) {
-	if ( ( isset( $args['post_type'] ) && 'product' === $args['post_type'] ) || ( isset( $args['taxonomy'] ) && 'product_cat' === $args['taxonomy'] ) ) {
-		$args['offset'] = $args['posts_per_page'] * $args['paged'];
-	}
-
- 	return $args;
-}
-add_filter( 'infinite_scroll_query_args', 'dara_woocommerce_jetpack_duplicate_products', 100 );
-
-/**
  * Override number of products per page in Jetpack infinite scroll.
  *
  * @param  array $args infinite scroll args.
