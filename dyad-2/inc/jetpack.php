@@ -28,7 +28,6 @@ if ( ! function_exists( 'dyad_2_jetpack' ) ) {
 			'footer_widgets' => array( 'sidebar-1'),
 			'render' => 'dyad_2_infinite_scroll_render',
 			'wrapper' => false,
-			'posts_per_page' => 12,
 		) );
 
 		//Content options
