@@ -72,9 +72,9 @@ add_filter( 'body_class', 'radcliffe_2_woocommerce_active_body_class' );
 function radcliffe_2_woocommerce_products_per_page() {
 	return absint( apply_filters( 'radcliffe_2_woocommerce_products_per_page', 12 ) );
 }
-
-add_filter( 'loop_shop_per_page', 'radcliffe_2_woocommerce_products_per_page' );
-
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_per_page', 'radcliffe_2_woocommerce_products_per_page' );
+}
 /**
  * Product gallery thumnbail columns
  *
@@ -285,3 +285,41 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
  * let's add the breadcrumbs before that, at priority 5
  */
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_breadcrumb', 5 );
+
+/**
+ * Override number of products per page in Jetpack infinite scroll.
+ *
+ * @param  array $args infinite scroll args.
+ * @return array       infinite scroll args.
+ */
+function radcliffe_2_woocommerce_jetpack_products_per_page( $args ) {
+	if ( is_array( $args ) && ( radcliffe_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+		$args['posts_per_page'] = radcliffe_2_woocommerce_products_per_page();
+	}
+
+	return $args;
+}
+add_filter( 'infinite_scroll_settings', 'radcliffe_2_woocommerce_jetpack_products_per_page' );
+
+/**
+ * Workaround to prevent is_shop() from failing due to WordPress core issue
+ *
+ * @link https://core.trac.wordpress.org/ticket/21790
+ * @param  array $args infinite scroll args.
+ * @return array       infinite scroll args.
+ */
+function radcliffe_2_woocommerce_is_shop_page() {
+	global $wp_query;
+
+	$front_page_id        = get_option( 'page_on_front' );
+	$current_page_id      = $wp_query->get( 'page_id' );
+	$is_static_front_page = 'page' === get_option( 'show_on_front' );
+
+	if ( $is_static_front_page && $front_page_id === $current_page_id  ) {
+		$is_shop_page = ( $current_page_id === wc_get_page_id( 'shop' ) ) ? true : false;
+	} else {
+		$is_shop_page = is_shop();
+	}
+
+	return $is_shop_page;
+}
