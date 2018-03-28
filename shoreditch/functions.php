@@ -179,7 +179,7 @@ function shoreditch_scripts() {
 
 	wp_enqueue_style( 'shoreditch-fonts', shoreditch_fonts_url(), array(), null );
 
-	wp_enqueue_style( 'shoreditch-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'shoreditch-style', get_template_directory_uri() . '/style.css' );
 
 	wp_enqueue_script( 'shoreditch-back-top', get_template_directory_uri() . '/js/back-top.js', array(), '20120206', true );
 
