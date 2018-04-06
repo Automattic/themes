@@ -635,6 +635,9 @@ ul.products li.product .star-rating {
 
 ul.products li.product .button {
   margin-top: 1em;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 ul.products li.product .price {
@@ -2986,33 +2989,16 @@ ul.products li.product {
   margin-right: 0;
 }
 
+ul.products li.product a img {
+  width: auto;
+}
+
 ul.products li.first {
   clear: both;
 }
 
 ul.products li.last {
   margin-left: 0;
-}
-
-.woocommerce.columns-1 ul.products li.product {
-  width: 100%;
-  margin-left: 0;
-}
-
-.woocommerce.columns-2 ul.products li.product {
-  width: 48%;
-}
-
-.woocommerce.columns-3 ul.products li.product {
-  width: 30.75%;
-}
-
-.woocommerce.columns-5 ul.products li.product {
-  width: 16.95%;
-}
-
-.woocommerce.columns-6 ul.products li.product {
-  width: 13.5%;
 }
 
 .woocommerce-result-count {
@@ -3264,6 +3250,25 @@ form .form-row-wide {
   word-break: normal;
   display: inline-block;
   margin: .25em;
+}
+
+@media screen and (min-width: 768px) {
+  .woocommerce .columns-1 ul.products li.product {
+    width: 100%;
+    margin-left: 0;
+  }
+  .woocommerce .columns-2 ul.products li.product {
+    width: 48%;
+  }
+  .woocommerce .columns-3 ul.products li.product {
+    width: 30.75%;
+  }
+  .woocommerce .columns-5 ul.products li.product {
+    width: 16.95%;
+  }
+  .woocommerce .columns-6 ul.products li.product {
+    width: 13.5%;
+  }
 }
 
 @media screen and (min-width: 1000px) {
