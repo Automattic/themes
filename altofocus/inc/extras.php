@@ -139,6 +139,12 @@ add_action( 'wp_head', 'altofocus_pingback_header' );
 function altofocus_slideshow_gallery_filter( $output, $attr ) {
 
 	global $post;
+	
+	static $count = 0;
+	
+	if ( $count > 0 ) {
+		return $output; // Ensure the gallery output is replaced once.
+	}
 
 	static $instance = 0;
 	$instance++;
@@ -222,5 +228,8 @@ function altofocus_slideshow_gallery_filter( $output, $attr ) {
 	}
 
 	$output .= '</section>';
+	
+	$count++; // Update counter after successful replacement.
+	
 	return $output;
 }
