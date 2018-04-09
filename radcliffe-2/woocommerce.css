@@ -281,11 +281,7 @@ ul.products li.product .price ins {
 ul.products li.product .onsale {
 	font-size: 12px;
 	font-size: 1.2rem;
-	height: 50px;
-	left: 30px;
-	line-height: calc( 50px - .6em);
-	top: -20px;
-	width: 50px;
+	margin: 0;
 }
 
 ul.products li.product img {
@@ -304,7 +300,7 @@ ul.products li.product .button {
 
 @media screen and (min-width: 768px) {
 	ul.products li.product {
-		width: 30.7966666667%;
+		width: 22.15%;
 		float: left;
 		margin-right: 3.8%;
 	}
@@ -319,44 +315,43 @@ ul.products li.product .button {
 		width: 100%;
 	}
 	.columns-2 ul.products li.product {
-		width: 48.7333333333%;
+		width: 48.1%;
 	}
 	.columns-3 ul.products li.product {
-		width: 30.7966666667%;
+		width: 30.8%;
 	}
 	.columns-4 ul.products li.product {
-		width: 21.2%;
+		width: 22.15%;
 	}
 	.columns-5 ul.products li.product {
-		width: 14.9333333333%;
+		width: 16.96%;
 	}
 	.columns-6 ul.products li.product {
-		width: 10.3266666667%;
+		width: 13.5%;
 	}
 }
 
 .onsale {
-	background: #fff9c0;
-	border-radius: 100%;
-	display: block;
-	height: 80px;
+	border: 1px solid currentcolor;
+	border-radius: 3px;
+	color: #222222;
+	display: inline-block;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-weight: 700;
-	line-height: calc( 80px - .6em);
-	left: 33%;
-	padding: .3em;
-	position: absolute;
+	padding: .202em .6180469716em;
 	text-align: center;
 	text-transform: uppercase;
-	width: 80px;
-	z-index: 10;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
 }
 
 /**/
 /* !Single product */
 /**/
 
-.single-product div.product {}
+.single-product .product_title {
+	margin-top: 0.5em;
+}
 
 .single-product div.product .onsale {
 	left: 4%;
@@ -403,6 +398,7 @@ ul.products li.product .button {
 
 .single-product div.product .woocommerce-product-gallery img {
 	display: block;
+	margin: 0 auto;
 }
 
 .single-product div.product .woocommerce-product-gallery__wrapper {
@@ -431,7 +427,7 @@ ul.products li.product .button {
 .single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
 	content: "";
 	display: table;
-	margin: 0 auto 1em;
+	margin: 0 auto;
 	padding: 0;
 	table-layout: fixed;
 	text-align: center;
@@ -505,8 +501,18 @@ ul.products li.product .button {
 	clear: both;
 }
 
+.single.no-featured-image .site-header,
+.page.no-featured-image .site-header {
+	border-bottom: 1px solid #ddd;
+}
+
 .single-product div.product .woocommerce-product-details__short-description {
 	margin-bottom: 3em;
+}
+
+.single.no-featured-image.single-product .site-header,
+.page.no-featured-image.single-product .site-header {
+	border-bottom: 0;
 }
 
 .single-product div.product .cart {
