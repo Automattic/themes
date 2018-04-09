@@ -25,6 +25,32 @@
 		};
 
 	/**
+	 * Debounce script
+	 */
+	function altofocus_debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+
+			var context = this,
+				args = arguments;
+
+			var later = function() {
+				timeout = null;
+				if (!immediate) {
+					func.apply(context, args);
+				}
+			};
+
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) {
+				func.apply(context, args);
+			}
+		};
+	}
+
+	/**
 	 * Init Isotope
 	 *
 	 * - Add Isotope class
@@ -107,10 +133,7 @@
 						$this.imagesLoaded()
 
 							// After image load completes, append newly loaded posts to Isotope wrapper and lay them out
-							.done( function( ) {
-
-								// Add a half second delay to layout
-								setTimeout( function() {
+							.done( altofocus_debounce( function() {
 
 									$isotopeWrap
 
@@ -120,25 +143,18 @@
 										// Layout this post
 										.isotope( 'appended', $this );
 
-								}, 500);
-
-							} );
+								}, 200, 1 ) );
 
 					// Append and layout posts without images normally
 					} else {
 
-						// Add a half second delay to layout
-						setTimeout( function() {
+						$isotopeWrap
 
-							$isotopeWrap
+							// Append this post
+							.append( $this )
 
-								// Append this post
-								.append( $this )
-
-								// Layout this post
-								.isotope( 'appended', $this );
-
-						}, 500);
+							// Layout this post
+							.isotope( 'appended', $this );
 					}
 
 				});
