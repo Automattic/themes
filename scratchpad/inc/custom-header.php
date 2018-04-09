@@ -65,7 +65,8 @@ function scratchpad_header_style() {
 		// If the user has set a custom color for the text use that.
 		else :
 	?>
-		.site-title a {
+		#masthead .site-title a,
+		#masthead .site-description {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
