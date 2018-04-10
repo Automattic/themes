@@ -152,7 +152,7 @@ if ( ! function_exists( 'radcliffe_2_loop_columns' ) ) {
 	 * @return integer products per row
 	 */
 	function radcliffe_2_loop_columns() {
-		$columns = 3; // 4 products per row
+		$columns = 3; // 3 products per row
 		if ( function_exists( 'wc_get_default_products_per_row' ) ) {
 			$columns = wc_get_default_products_per_row();
 		}
