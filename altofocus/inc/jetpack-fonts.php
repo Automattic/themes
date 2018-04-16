@@ -1,6 +1,8 @@
 <?php
 
-add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
+add_filter( 'typekit_add_font_category_rules', 'altofocus_custom_font_rules' );
+
+function altofocus_custom_font_rules( $category_rules ) {
 
 	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
 		'html',
@@ -245,7 +247,7 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 		.hfeed .site-main .grid-item-featured:not(.has-post-thumbnail) .entry-header .entry-title,
 		.comment-navigation .nav-previous,
 		.comment-navigation .nav-next,
-		.posts-navigation .nav-previous, 
+		.posts-navigation .nav-previous,
 		.posts-navigation .nav-next,
 		.post-navigation .nav-previous,
 		.post-navigation .nav-next,
