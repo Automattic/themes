@@ -32,5 +32,9 @@ AltoFocus includes support for Jetpack's Infinite Scroll as well as other featur
 
 == Credits ==
 
-* Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on https://github.com/Automattic/_s/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* isotope.pkgd.js http://isotope.metafizzy.co, (C) 2016 Metafizzy, [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
+* imagesloaded.pkgd.js https://metafizzy.co/, (C) 2016 Metafizzy, [MIT](http://opensource.org/licenses/MIT)
+* jquery.flexslider.js http://flexslider.woothemes.com/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Images in theme screenshot are from https://unsplash.com/, [Unsplash](https://unsplash.com/license), [CC-0](https://creativecommons.org/publicdomain/zero/1.0/)
