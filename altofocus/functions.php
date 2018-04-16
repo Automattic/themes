@@ -257,13 +257,13 @@ function altofocus_scripts() {
 	}
 
 	// Screenreader text
-	wp_localize_script( 'altofocus-navigation', 'screenReaderText', array(
+	wp_localize_script( 'altofocus-navigation', 'altoFocusScreenReaderText', array(
 		'expand'   => esc_html__( 'expand child menu', 'altofocus' ),
 		'collapse' => esc_html__( 'collapse child menu', 'altofocus' ),
 	) );
 
 	// Flexslider text
-	wp_localize_script( 'altofocus-flexslider', 'flexSliderText', array(
+	wp_localize_script( 'altofocus-flexslider', 'altoFocusFlexSliderText', array(
 		'next'     => esc_html__( 'Next', 'altofocus' ),
 		'previous' => esc_html__( 'Previous', 'altofocus' ),
 	) );
