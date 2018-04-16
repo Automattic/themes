@@ -26,11 +26,12 @@
 	// Look for shortcodes in content
 	$content = get_the_content();
 	$pattern = get_shortcode_regex();
-	$content_option_override = ( empty ( get_option( 'jetpack_content_featured_images_post' ) ) ) ? '0' : '1';
+	$get_image_post = get_option( 'jetpack_content_featured_images_post' );
+	$content_option_override = ( empty ( $get_image_post ) ) ? '0' : '1';
 	preg_match( '/' . $pattern . '/s', $content, $matches );
 
 	// Account for Content Option settings
-	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) || ! empty ( get_option( 'jetpack_content_featured_images_post' ) ) ) {
+	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) || ! empty ( $get_image_post ) ) {
 		$content_option_override = '1';
 	} else {
 		$content_option_override = '0';
@@ -79,7 +80,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<div class="comments-link">
-				<?php comments_popup_link( esc_html__( '0', 'altofocus' ), esc_html__( '1', 'altofocus' ), esc_html__( '%', 'altofocus' ) ); ?>
+				<?php comments_popup_link( number_format_i18n( get_comments_number() ), number_format_i18n( get_comments_number() ), number_format_i18n( get_comments_number() ) ); ?>
 				<svg class="comment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
 					<path class="path" d="M49.5,25c0-13.5-11-24.5-24.5-24.5S0.5,11.5,0.5,25s11,24.5,24.5,24.5h24.5l-7.2-7.2 C46.8,37.9,49.5,31.8,49.5,25z"/>
 				</svg>
