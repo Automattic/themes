@@ -519,4 +519,4 @@ function altofocus_custom_font_rules( $category_rules ) {
 	);
 
 	return $category_rules;
-} );
+}
