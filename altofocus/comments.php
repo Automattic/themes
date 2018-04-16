@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'altofocus' ) ),
+					esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'altofocus' ) ),
 					number_format_i18n( get_comments_number() )
 				);
 			?>
