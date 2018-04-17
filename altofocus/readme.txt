@@ -37,4 +37,10 @@ AltoFocus includes support for Jetpack's Infinite Scroll as well as other featur
 * isotope.pkgd.js http://isotope.metafizzy.co, (C) 2016 Metafizzy, [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
 * imagesloaded.pkgd.js https://metafizzy.co/, (C) 2016 Metafizzy, [MIT](http://opensource.org/licenses/MIT)
 * jquery.flexslider.js http://flexslider.woothemes.com/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* Images in theme screenshot are from https://unsplash.com/, [Unsplash](https://unsplash.com/license), [CC-0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Bundled theme screenshot, Copyright Brodie Vissers License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/basketball-hoop
+* Bundled theme screenshot, Copyright Brodie Vissers License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/walking-in-love
+* Bundled theme screenshot, Copyright Matthew Henry License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/woman-drinking-red-wine
+* Bundled theme screenshot, Copyright Sarah Pflug License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/wonton-appetizer
+* Bundled theme screenshot, Copyright Scott Murdoch License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/busy-thai-intersection-above
+* Bundled theme screenshot, Copyright Scott Murdoch License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/blue-skies-and-rolling-hills
+* Bundled theme screenshot, Copyright Shopify Partners License: CC0 1.0 Universal (CC0 1.0), Source: https://burst.shopify.com/photos/reading
