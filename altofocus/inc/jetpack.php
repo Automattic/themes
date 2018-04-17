@@ -183,7 +183,7 @@ function altofocus_infinite_scroll_render() {
 }
 
 /**
- * JetPack Social Menu Fallback
+ * Jetpack Social Menu Fallback
  */
 function altofocus_social_menu() {
 
