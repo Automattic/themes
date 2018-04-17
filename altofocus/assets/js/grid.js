@@ -99,7 +99,7 @@
 		var newPostIds = [];
 
 		// If new posts have been loaded from Infinite Scroll, attach them to the isotope wrapper and lay them out
-		// note: loadedPosts variable is set globally in altofocus_infinite_scroll_render(). See Jetpack.php
+		// note: loadedPosts variable is set globally in altofocus_infinite_scroll_render(). See jetpack.php
 		if ( typeof loadedPosts !== 'undefined' ) {
 
 			// Create post IDs from IS results and push into post ID array
