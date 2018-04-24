@@ -146,7 +146,7 @@ function textbook_libre_franklin_url() {
 			$subsets .= ',vietnamese';
 		}
 
-		$libre_franklin_font_url = add_query_arg( 'family', 'Libre Franklin:300,500,600,300italic', '//fonts.googleapis.com/css' );
+		$libre_franklin_font_url = add_query_arg( 'family', 'Libre Franklin:300,500,600,300italic,600italic', '//fonts.googleapis.com/css' );
 		$libre_franklin_font_url = add_query_arg( 'subset', $subsets, $libre_franklin_font_url );
 
 	}
