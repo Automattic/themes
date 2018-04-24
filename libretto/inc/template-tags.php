@@ -53,7 +53,8 @@ if ( ! function_exists( 'libretto_content_nav' ) ) :
         <?php endif; ?>
         </div>
 
-        <div class="page-number"><?php echo intval( $paged ); ?> <span>of</span> <?php echo intval( $wp_query->max_num_pages ); ?></div>
+		<?php /* translators: used in pagination, as in page "x of y" */ ?>
+		<div class="page-number"><?php echo intval( $paged ); ?> <span><?php _e( 'of', 'libretto' ); ?></span> <?php echo intval( $wp_query->max_num_pages ); ?></div>
 
         <div class="next">
         <?php if ( get_previous_posts_link() ) : ?>
