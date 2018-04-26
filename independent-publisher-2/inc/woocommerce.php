@@ -16,10 +16,17 @@
  * @return void
  */
 function ip_woocommerce_setup() {
-	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width' => 704,
+	add_theme_support( 'woocommerce', apply_filters( 'radcliffe_2_woocommerce_args', array(
 		'single_image_width'    => 740,
-	) );
+		'thumbnail_image_width' => 370,
+		'product_grid'          => array(
+			'default_columns' => 3,
+			'default_rows'    => 4,
+			'min_columns'     => 1,
+			'max_columns'     => 6,
+			'min_rows'        => 1
+		)
+	) ) );
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -87,7 +94,11 @@ add_filter( 'body_class', 'ip_woocommerce_active_body_class' );
 function ip_woocommerce_products_per_page() {
 	return 12;
 }
-add_filter( 'loop_shop_per_page', 'ip_woocommerce_products_per_page' );
+
+// Legacy WooCommerce products per page filter.
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_per_page', 'ip_woocommerce_products_per_page' );
+}
 
 /**
  * Product gallery thumnbail columns.
@@ -107,7 +118,11 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'ip_woocommerce_thumbnail_
 function ip_woocommerce_loop_columns() {
 	return 3;
 }
-add_filter( 'loop_shop_columns', 'ip_woocommerce_loop_columns' );
+
+// Legacy WooCommerce columns filter.
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_columns', 'ip_woocommerce_loop_columns' );
+}
 
 /**
  * Related Products Args.
@@ -134,11 +149,26 @@ if ( ! function_exists( 'ip_woocommerce_product_columns_wrapper' ) ) {
 	 * @return  void
 	 */
 	function ip_woocommerce_product_columns_wrapper() {
-		$columns = ip_woocommerce_loop_columns();
+		$columns = ip_loop_columns();
 		echo '<div class="columns-' . absint( $columns ) . '">';
 	}
 }
 add_action( 'woocommerce_before_shop_loop', 'ip_woocommerce_product_columns_wrapper', 40 );
+
+if ( ! function_exists( 'ip_loop_columns' ) ) {
+	/**
+	 * Default loop columns on product archives
+	 *
+	 * @return integer products per row
+	 */
+	function ip_loop_columns() {
+		$columns = 3; // 3 products per row
+		if ( function_exists( 'wc_get_default_products_per_row' ) ) {
+			$columns = wc_get_default_products_per_row();
+		}
+		return apply_filters( 'ip_loop_columns', $columns );
+	}
+}
 
 if ( ! function_exists( 'ip_woocommerce_product_columns_wrapper_close' ) ) {
 	/**
