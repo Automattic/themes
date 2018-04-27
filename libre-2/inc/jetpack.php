@@ -35,7 +35,6 @@ function libre_2_jetpack_setup() {
 		),
 		'featured-images' => array(
 			'archive'          => true, // enable or not the featured image check for archive pages: true or false
-			'archive-default'  => false, // the default setting of the featured image on archive pages, if it's enabled or not: true or false
 			'post'             => true, // enable or not the featured image check for single posts: true or false
 			'page'             => true, // enable or not the featured image check for single pages: true or false
 			'fallback'         => true,
