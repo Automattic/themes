@@ -58,11 +58,9 @@
 			}
 		};
 
-		// if ( window.matchMedia( "( max-width: 767px )" ).matches ) {
-			for ( i = 0; i < parentLink.length; ++i ) {
-				parentLink[i].addEventListener( ( 'ontouchstart' in window ? 'touchstart' : 'click' ), toggleNav, false );
-			}
-		// }
+		for ( i = 0; i < parentLink.length; ++i ) {
+			parentLink[i].addEventListener( ( 'ontouchstart' in window ? 'touchstart' : 'click' ), toggleNav, false );
+		}
 	}( container ) );
 
 } )( jQuery );
