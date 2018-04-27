@@ -38,31 +38,31 @@
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
 	( function( container ) {
-		var touchStartFn, i,
+		var toggleNav, i,
 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-		if ( 'ontouchstart' in window ) {
-			touchStartFn = function( e ) {
-				var menuItem = this.parentNode, i;
+		toggleNav = function( e ) {
+			var menuItem = this.parentNode, i;
 
-				if ( ! menuItem.classList.contains( 'focus' ) ) {
-					e.preventDefault();
-					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-						if ( menuItem === menuItem.parentNode.children[i] ) {
-							continue;
-						}
-						menuItem.parentNode.children[i].classList.remove( 'focus' );
+			if ( ! menuItem.classList.contains( 'focus' ) ) {
+				e.preventDefault();
+				for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
+					if ( menuItem === menuItem.parentNode.children[i] ) {
+						continue;
 					}
-					menuItem.classList.add( 'focus' );
-				} else {
-					menuItem.classList.remove( 'focus' );
+					menuItem.parentNode.children[i].classList.remove( 'focus' );
 				}
-			};
-
-			for ( i = 0; i < parentLink.length; ++i ) {
-				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
+				menuItem.classList.add( 'focus' );
+			} else {
+				menuItem.classList.remove( 'focus' );
 			}
-		}
+		};
+
+		// if ( window.matchMedia( "( max-width: 767px )" ).matches ) {
+			for ( i = 0; i < parentLink.length; ++i ) {
+				parentLink[i].addEventListener( ( 'ontouchstart' in window ? 'touchstart' : 'click' ), toggleNav, false );
+			}
+		// }
 	}( container ) );
 
 } )( jQuery );
