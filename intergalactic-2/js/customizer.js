@@ -39,4 +39,19 @@
 			}
 		} );
 	} );
+
+	// Background Colour
+	wp.customize( 'background_color', function( value ) {
+		value.bind( function( to ) {
+			if ( '' === to ) {
+				$( '.entry-content-wrapper' ).css( {
+					'background-color' : '#ffffff',
+				} );
+			} else {
+				$( '.entry-content-wrapper' ).css( {
+					'background-color' : to,
+				} );
+			}
+		} );
+	} );
 } )( jQuery );

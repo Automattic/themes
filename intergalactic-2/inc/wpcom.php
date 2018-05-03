@@ -66,3 +66,17 @@ function intergalactic_2_wpcom_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'intergalactic_2_wpcom_body_classes' );
+
+/**
+* Make sure background colours work for users without Custom Colours.
+*
+*/
+function intergalactic_2_background_fix() {
+	$background_color = get_theme_mod( 'background_color','ffffff' );
+	$background_styles = '.entry-content-wrapper {';
+	$background_styles .= 'background-color: #' . $background_color . '; ';
+	$background_styles .= '}';
+
+	wp_add_inline_style( 'intergalactic-2-style', $background_styles );
+}
+add_action( 'wp_enqueue_scripts', 'intergalactic_2_background_fix' );
