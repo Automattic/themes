@@ -16,8 +16,6 @@
 		} );
 	}
 
-	$(document).on( 'ready', function() {
-		$(window).on( 'load', loadFlexslider );
-	} );
+	$(document).on( 'ready', loadFlexslider );
 
 } )(jQuery);
