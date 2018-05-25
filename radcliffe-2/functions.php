@@ -151,6 +151,8 @@ add_action( 'widgets_init', 'radcliffe_2_widgets_init' );
 function radcliffe_2_scripts() {
 	wp_enqueue_style( 'radcliffe-2-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'radcliffe-2-block-styles', get_template_directory_uri() . '/assets/css/blocks.css' );
+
 	wp_enqueue_script( 'radcliffe-2-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
 	wp_localize_script( 'radcliffe-2-navigation', 'screenReaderText', array(
