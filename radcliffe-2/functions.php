@@ -77,6 +77,20 @@ function radcliffe_2_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add support for Gutenberg.
+	add_theme_support( 'gutenberg', array(
+		// Theme supports wide images, galleries and videos.
+		'wide-images' => true,
+
+		// Make specific theme colors available in the editor.
+		'colors' => array(
+			'#ffffff',
+			'#222222',
+			'#666666',
+			'#ca2017',
+		),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'radcliffe_2_setup' );
