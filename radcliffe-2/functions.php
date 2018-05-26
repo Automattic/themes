@@ -78,19 +78,29 @@ function radcliffe_2_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Add support for Gutenberg.
-	add_theme_support( 'gutenberg', array(
-		// Theme supports wide images, galleries and videos.
-		'wide-images' => true,
 
-		// Make specific theme colors available in the editor.
-		'colors' => array(
-			'#ffffff',
-			'#222222',
-			'#666666',
-			'#ca2017',
+	// Gutenberg: Add Custom Palette
+	add_theme_support( 'editor-color-palette',
+		array(
+			'name' => esc_html__( 'white', 'radcliffe-2' ),
+			'color' => '#ffffff',
 		),
-	) );
+		array(
+			'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
+			'color' => '#222222',
+		),
+		array(
+			'name' => esc_html__( 'light gray', 'radcliffe-2' ),
+			'color' => '#666666',
+		),
+		array(
+			'name' => esc_html__( 'red', 'radcliffe-2' ),
+			'color' => '#ca2017',
+		)
+	);
+
+	// Gutenberg: Add support for wide alignment
+	add_theme_support( 'align-wide' );
 }
 endif;
 add_action( 'after_setup_theme', 'radcliffe_2_setup' );
@@ -171,6 +181,27 @@ function radcliffe_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'radcliffe_2_scripts' );
+
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function radcliffe_2_editor_styles() {
+	wp_enqueue_style( 'radcliffe-2-editor-style', get_template_directory_uri() . '/assets/css/editor-style.css' );
+
+	$stylepack = get_theme_mod( 'active_style_pack' );
+
+	if ( 'colorful' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-editor-style-colorful', get_template_directory_uri() . '/assets/css/editor-style-colorful.css' );
+	} else if ( 'modern' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-editor-style-modern', get_template_directory_uri() . '/assets/css/editor-style-modern.css' );
+	} else if ( 'vintage' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-editor-style-vintage', get_template_directory_uri() . '/assets/css/editor-style-vintage.css' );
+	}
+
+}
+add_action( 'enqueue_block_editor_assets', 'radcliffe_2_editor_styles' );
+
 
 /**
  * Enqueue stylesheet inside the Customizer.
