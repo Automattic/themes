@@ -14,6 +14,7 @@ Editor Styles for Ohana
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
 .edit-post-visual-editor,
 .edit-post-visual-editor p,
 .edit-post-visual-editor button,
@@ -54,7 +55,10 @@ h6.mce-content-body,
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	line-height: 1.1;
 	margin-top: 0;
-	margin-bottom: 18px;
+}
+
+.editor-block-list__layout .editor-block-list__block [aria-label="Block: Heading"] {
+	margin: 0;
 }
 
 /* Post/Page title */
@@ -97,10 +101,6 @@ h6.editor-rich-text__tinymce.mce-content-body {
 	text-transform: uppercase;
 }
 
-p.editor-rich-text__tinymce.mce-content-body {
-	margin: 0 0 1.8em;
-}
-
 .mce-content-body dfn,
 .mce-content-body cite,
 .mce-content-body em,
@@ -112,7 +112,9 @@ p.editor-rich-text__tinymce.mce-content-body {
 	margin: 0 0 1.8em;
 }
 
-.mce-content-body pre {
+.mce-content-body pre,
+.wp-block-code .editor-plain-text,
+.wp-block-preformatted pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 16px;
@@ -559,6 +561,12 @@ p.editor-rich-text__tinymce.mce-content-body {
 	display: inline-block; /* helps with smaller, unaligned images */
 }
 
+/* Override inline width on un-aligned images */
+.wp-block-image div {
+	max-height: 100% !important;
+	max-width: 100% !important;
+}
+
 /* Blockquotes*/
 
 .edit-post-visual-editor .wp-block-quote:not(.is-large) {
@@ -658,7 +666,7 @@ p.editor-rich-text__tinymce.mce-content-body {
 	border: none;
 	height: 1px;
 	max-width: none;
-	margin: 1.6em auto;
+	margin: 0 auto;
 }
 
 /* Buttons */
@@ -744,4 +752,38 @@ p.editor-rich-text__tinymce.mce-content-body {
 .editor-block-list__block[data-type="core/categories"] .wp-block-categories__list ul ul,
 .editor-block-list__block[data-type="core/categories"] .wp-block-categories ul ul {
 	padding-left: 2em;
+}
+
+/* Colours */
+
+.has-white-color {
+	color: #fff;
+}
+
+.has-dark-grey-color {
+	color: #222;
+}
+
+.has-light-grey-color {
+	color: #666;
+}
+
+.has-red-color {
+	color: #ca2017;
+}
+
+.has-white-background-color {
+	background-color: #fff
+}
+
+.has-dark-grey-background-color {
+	background-color: #222;
+}
+
+.has-light-grey-background-color {
+	background-color: #666;
+}
+
+.has-red-background-color {
+	background-color: #ca2017;
 }
