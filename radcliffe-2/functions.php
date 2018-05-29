@@ -163,6 +163,12 @@ function radcliffe_2_scripts() {
 
 	wp_enqueue_style( 'radcliffe-2-block-styles', get_template_directory_uri() . '/assets/css/blocks.css' );
 
+	$stylepack = get_theme_mod( 'active_style_pack' );
+
+	if ( 'vintage' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-block-vintage-styles', get_template_directory_uri() . '/assets/css/blocks-vintage.css' );
+	}
+
 	wp_enqueue_script( 'radcliffe-2-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
 	wp_localize_script( 'radcliffe-2-navigation', 'screenReaderText', array(
