@@ -30,11 +30,18 @@ ul.wp-block-gallery.alignfull,
 	.wp-block-latest-posts.alignfull,
 	.wp-block-categories.alignfull,
 	.wp-block-verse.alignfull,
-	p.alignfull {
+	p.alignfull,
+	.wp-block-cover-image:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+	.wp-block-cover-image.alignfull {
 		margin-left: calc(30% - 30vw);
 		margin-right: calc(30% - 30vw);
 		width: auto;
 		max-width: 1000%;
+	}
+
+	.wp-block-cover-image:not(.alignwide):not(.alignfull) {
+		left: auto;
+		margin-left: 0;
 	}
 
 	.alignwide,
@@ -46,7 +53,8 @@ ul.wp-block-gallery.alignfull,
 	.wp-block-pullquote.alignwide,
 	.wp-block-latest-posts.alignwide,
 	.wp-block-categories.alignwide,
-	p.alignwide {
+	p.alignwide,
+	.wp-block-cover-image.alignwide {
 		margin-left: calc(20% - 20vw);
 		margin-right: calc(20% - 20vw);
 		width: auto;
