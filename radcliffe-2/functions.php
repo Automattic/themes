@@ -108,19 +108,19 @@ function radcliffe_2_setup() {
 				'color' => '#eae8dc',
 			),
 			array(
-				'name' => esc_html__( 'vinatge light brown', 'radcliffe-2' ),
+				'name' => esc_html__( 'vintage light brown', 'radcliffe-2' ),
 				'color' => '#c7c4b4',
 			),
 			array(
-				'name' => esc_html__( 'vintage light gray', 'radcliffe-2' ),
+				'name' => esc_html__( 'vintage light grey', 'radcliffe-2' ),
 				'color' => '#666666',
 			),
 			array(
-				'name' => esc_html__( 'vinatge dark grey', 'radcliffe-2' ),
+				'name' => esc_html__( 'vintage dark grey', 'radcliffe-2' ),
 				'color' => '#222222',
 			),
 			array(
-				'name' => esc_html__( 'vinatge blue', 'radcliffe-2' ),
+				'name' => esc_html__( 'vintage blue', 'radcliffe-2' ),
 				'color' => '#2b6e9d',
 			)
 		);
