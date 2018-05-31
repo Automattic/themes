@@ -80,24 +80,97 @@ function radcliffe_2_setup() {
 
 
 	// Gutenberg: Add Custom Palette
-	add_theme_support( 'editor-color-palette',
-		array(
-			'name' => esc_html__( 'white', 'radcliffe-2' ),
-			'color' => '#ffffff',
-		),
-		array(
-			'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
-			'color' => '#222222',
-		),
-		array(
-			'name' => esc_html__( 'light gray', 'radcliffe-2' ),
-			'color' => '#666666',
-		),
-		array(
-			'name' => esc_html__( 'red', 'radcliffe-2' ),
-			'color' => '#ca2017',
-		)
-	);
+	$stylepack = get_theme_mod( 'active_style_pack' );
+
+	if ( 'default' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => esc_html__( 'white', 'radcliffe-2' ),
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
+				'color' => '#222222',
+			),
+			array(
+				'name' => esc_html__( 'light gray', 'radcliffe-2' ),
+				'color' => '#666666',
+			),
+			array(
+				'name' => esc_html__( 'red', 'radcliffe-2' ),
+				'color' => '#ca2017',
+			)
+		);
+	} else if ( 'vintage' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => esc_html__( 'off-white', 'radcliffe-2' ),
+				'color' => '#eae8dc',
+			),
+			array(
+				'name' => esc_html__( 'light brown', 'radcliffe-2' ),
+				'color' => '#c7c4b4',
+			),
+			array(
+				'name' => esc_html__( 'light gray', 'radcliffe-2' ),
+				'color' => '#666666',
+			),
+			array(
+				'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
+				'color' => '#222222',
+			),
+			array(
+				'name' => esc_html__( 'blue', 'radcliffe-2' ),
+				'color' => '#2b6e9d',
+			)
+		);
+	} else if ( 'colorful' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => esc_html__( 'white', 'radcliffe-2' ),
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => esc_html__( 'light grey', 'radcliffe-2' ),
+				'color' => '#e5e5e5',
+			),
+			array(
+				'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
+				'color' => '#222222',
+			),
+			array(
+				'name' => esc_html__( 'blue', 'radcliffe-2' ),
+				'color' => '#4ba3c3',
+			),
+			array(
+				'name' => esc_html__( 'green', 'radcliffe-2' ),
+				'color' => '#71db9d',
+			),
+			array(
+				'name' => esc_html__( 'orange', 'radcliffe-2' ),
+				'color' => '#d97059',
+			)
+		);
+	} else if ( 'modern' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => esc_html__( 'white', 'radcliffe-2' ),
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => esc_html__( 'light grey', 'radcliffe-2' ),
+				'color' => '#f1f1f1',
+			),
+			array(
+				'name' => esc_html__( 'medium grey', 'radcliffe-2' ),
+				'color' => '#aaaaaa',
+			),
+			array(
+				'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
+				'color' => '#222222',
+			)
+		);
+	}
 
 	// Gutenberg: Add support for wide alignment
 	add_theme_support( 'align-wide' );
