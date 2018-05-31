@@ -78,95 +78,94 @@ function radcliffe_2_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-
 	// Gutenberg: Add Custom Palette
 	$stylepack = get_theme_mod( 'active_style_pack' );
 
 	if ( 'default' === $stylepack ) {
 		add_theme_support( 'editor-color-palette',
 			array(
-				'name' => esc_html__( 'white', 'radcliffe-2' ),
+				'name' => 'white',
 				'color' => '#ffffff',
 			),
 			array(
-				'name' => esc_html__( 'dark grey', 'radcliffe-2' ),
+				'name' => 'dark grey',
 				'color' => '#222222',
 			),
 			array(
-				'name' => esc_html__( 'light gray', 'radcliffe-2' ),
+				'name' => 'light gray',
 				'color' => '#666666',
 			),
 			array(
-				'name' => esc_html__( 'red', 'radcliffe-2' ),
+				'name' => 'red',
 				'color' => '#ca2017',
 			)
 		);
 	} else if ( 'vintage' === $stylepack ) {
 		add_theme_support( 'editor-color-palette',
 			array(
-				'name' => esc_html__( 'vintage off-white', 'radcliffe-2' ),
+				'name' => 'vintage off-white',
 				'color' => '#eae8dc',
 			),
 			array(
-				'name' => esc_html__( 'vintage light brown', 'radcliffe-2' ),
+				'name' => 'vintage light brown',
 				'color' => '#c7c4b4',
 			),
 			array(
-				'name' => esc_html__( 'vintage light grey', 'radcliffe-2' ),
+				'name' => 'vintage light grey',
 				'color' => '#666666',
 			),
 			array(
-				'name' => esc_html__( 'vintage dark grey', 'radcliffe-2' ),
+				'name' => 'vintage dark grey',
 				'color' => '#222222',
 			),
 			array(
-				'name' => esc_html__( 'vintage blue', 'radcliffe-2' ),
+				'name' => 'vintage blue',
 				'color' => '#2b6e9d',
 			)
 		);
 	} else if ( 'colorful' === $stylepack ) {
 		add_theme_support( 'editor-color-palette',
 			array(
-				'name' => esc_html__( 'colorful white', 'radcliffe-2' ),
+				'name' => 'colorful white',
 				'color' => '#ffffff',
 			),
 			array(
-				'name' => esc_html__( 'colorful light grey', 'radcliffe-2' ),
+				'name' => 'colorful light grey',
 				'color' => '#e5e5e5',
 			),
 			array(
-				'name' => esc_html__( 'colorful dark grey', 'radcliffe-2' ),
+				'name' => 'colorful dark grey',
 				'color' => '#222222',
 			),
 			array(
-				'name' => esc_html__( 'colorful blue', 'radcliffe-2' ),
+				'name' => 'colorful blue',
 				'color' => '#4ba3c3',
 			),
 			array(
-				'name' => esc_html__( 'colorful green', 'radcliffe-2' ),
+				'name' => 'colorful green',
 				'color' => '#71db9d',
 			),
 			array(
-				'name' => esc_html__( 'colorful orange', 'radcliffe-2' ),
+				'name' => 'colorful orange',
 				'color' => '#d97059',
 			)
 		);
 	} else if ( 'modern' === $stylepack ) {
 		add_theme_support( 'editor-color-palette',
 			array(
-				'name' => esc_html__( 'modern white', 'radcliffe-2' ),
+				'name' => 'modern white',
 				'color' => '#ffffff',
 			),
 			array(
-				'name' => esc_html__( 'modern light grey', 'radcliffe-2' ),
+				'name' => 'modern light grey',
 				'color' => '#f1f1f1',
 			),
 			array(
-				'name' => esc_html__( 'modern medium grey', 'radcliffe-2' ),
+				'name' => 'modern medium grey',
 				'color' => '#aaaaaa',
 			),
 			array(
-				'name' => esc_html__( 'modern dark grey', 'radcliffe-2' ),
+				'name' => 'modern dark grey',
 				'color' => '#222222',
 			)
 		);
