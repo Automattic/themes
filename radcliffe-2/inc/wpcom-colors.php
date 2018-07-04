@@ -356,11 +356,11 @@ add_color_rule( 'extra', '#000000', array(
 			.blog:not(.style-pack-vintage) article:nth-of-type(even) .entry-header,
 			.search-results:not(.style-pack-vintage) article:nth-of-type(even) .entry-header', 'background-color', 0.4 ),
 
-	array( '.archive .entry-header:hover,
+	array( '.archive article .entry-header:hover,
 			.archive article:nth-of-type(even) .entry-header:hover,
-			.blog .entry-header:hover,
+			.blog article .entry-header:hover,
 			.blog  article:nth-of-type(even) .entry-header:hover,
-			.search-results .entry-header:hover,
+			.search-results article .entry-header:hover,
 			.search-results  article:nth-of-type(even) .entry-header:hover', 'background-color', 0.75 ),
 
 	array( '.comments-area,
