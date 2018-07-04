@@ -41,6 +41,7 @@ add_action( 'after_setup_theme', 'radcliffe_2_woocommerce_setup' );
  */
 function radcliffe_2_woocommerce_scripts() {
 	wp_enqueue_style( 'radcliffe-2-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_style_add_data( 'radcliffe-2-woocommerce-style', 'rtl', get_stylesheet_directory_uri() . '/woocommerce-rtl.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'radcliffe_2_woocommerce_scripts' );
