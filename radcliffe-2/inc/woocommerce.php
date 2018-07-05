@@ -319,6 +319,29 @@ remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 )
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_breadcrumb', 5 );
 
 /**
+ * Workaround to prevent is_shop() from failing due to WordPress core issue
+ *
+ * @link https://core.trac.wordpress.org/ticket/21790
+ * @param  array $args infinite scroll args.
+ * @return array       infinite scroll args.
+ */
+function radcliffe_2_woocommerce_is_shop_page() {
+	global $wp_query;
+
+	$front_page_id        = get_option( 'page_on_front' );
+	$current_page_id      = $wp_query->get( 'page_id' );
+	$is_static_front_page = 'page' === get_option( 'show_on_front' );
+
+	if ( $is_static_front_page && $front_page_id === $current_page_id  ) {
+		$is_shop_page = ( $current_page_id === wc_get_page_id( 'shop' ) ) ? true : false;
+	} else {
+		$is_shop_page = is_shop();
+	}
+
+	return $is_shop_page;
+}
+
+/**
  * Move the sale flash badge
  */
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
