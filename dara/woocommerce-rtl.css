@@ -614,6 +614,8 @@ ul.products li.product .woocommerce-loop-category__title {
 }
 
 ul.products li.product a {
+  display: block;
+  max-width: 300px;
   text-decoration: none;
 }
 
@@ -634,6 +636,7 @@ ul.products li.product .star-rating {
 }
 
 ul.products li.product .button {
+  display: inline-block;
   margin-top: 1em;
   max-width: 100%;
   white-space: normal;
@@ -1306,6 +1309,7 @@ table.woocommerce-MyAccount-downloads th .woocommerce-MyAccount-downloads-file::
 }
 
 td.product-name dl.variation, td.product-name .wc-item-meta {
+  font-size: .875em;
   list-style: none outside;
 }
 
@@ -1403,6 +1407,7 @@ ul.cart_list li dl dd,
 ul.product_list_widget li dl dt,
 ul.product_list_widget li dl dd {
   display: inline-block;
+  font-size: .875em;
   float: right;
   margin-bottom: 1em;
 }
@@ -1417,7 +1422,8 @@ ul.product_list_widget li dl dt {
 
 ul.cart_list li dl dd,
 ul.product_list_widget li dl dd {
-  padding: 0 0 0.25em;
+  padding: 0;
+  margin: 0;
 }
 
 ul.cart_list li dl dd p:last-child,
@@ -2776,8 +2782,8 @@ ul.order_details li:last-of-type {
     display: inline-block;
   }
   /**
-	 * Header cart
-	 */
+   * Header cart
+   */
   .site-header-cart li:first-child:before {
     color: rgba(0, 0, 0, 0.15);
     content: " \2022";
@@ -3174,7 +3180,6 @@ form .form-row-last {
 
 form .form-row-first {
   float: right;
-		float: right;
 }
 
 form .form-row-last {
@@ -3233,7 +3238,7 @@ form .form-row-wide {
     display: block;
   }
   .woocommerce-account .woocommerce-MyAccount-navigation ul {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
     margin-right: 0;
   }
   .woocommerce-account .woocommerce-MyAccount-navigation ul li {
@@ -3325,16 +3330,16 @@ form .form-row-wide {
     margin: 0.125em 0 0.125em 0.25em;
   }
   /**
-	 * General layout
-	 */
+   * General layout
+   */
   .col2-set .col-1,
   .col2-set .col-2 {
     float: none;
     width: 100%;
   }
   /**
-	 * Products
-	 */
+   * Products
+   */
   .woocommerce-page ul.products li.product, .woocommerce-page[class*='columns-'] ul.products li.product {
     width: 48%;
     float: right;
@@ -3346,8 +3351,8 @@ form .form-row-wide {
     clear: none !important;
   }
   /**
-	 * Product Details
-	 */
+   * Product Details
+   */
   div.product div.images,
   div.product div.summary,
   #content div.product div.images,
@@ -3356,8 +3361,8 @@ form .form-row-wide {
     width: 100%;
   }
   /**
-	 * Cart
-	 */
+   * Cart
+   */
   table.cart .product-thumbnail,
   #content table.cart .product-thumbnail {
     display: none;
@@ -3409,9 +3414,16 @@ form .form-row-wide {
     float: none;
     text-align: right;
   }
+
+  dl.variation dd,
+  dl.variation p {
+    margin: 0;
+    padding: 0;
+  }
+
   /**
-	 * Checkout
-	 */
+   * Checkout
+   */
   .woocommerce-checkout form.login .form-row {
     width: 100%;
     float: none;
@@ -3427,8 +3439,8 @@ form .form-row-wide {
     margin-bottom: 1em;
   }
   /**
-	 * Account
-	 */
+   * Account
+   */
   .lost_reset_password .form-row-first,
   .lost_reset_password .form-row-last {
     width: 100%;
