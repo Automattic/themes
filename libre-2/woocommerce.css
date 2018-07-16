@@ -1,14 +1,10 @@
 /*
-Theme Name: Libre 2
+ * Theme Name: Libre 2
+ *
+ * WooCommerce styles override
+ *
+ */
 
-WooCommerce styles override
-*/
-/**
- * WooCommerce color variables
- */
-/**
- * Imports
- */
 /**
  * Fonts
  */
@@ -119,6 +115,17 @@ table.shop_table .discount th {
 	vertical-align: top;
 }
 
+.woocommerce .shop_table tbody .wc-item-meta {
+	font-size: .875em;
+	list-style: none;
+	margin: .875em 0 0 0;
+	padding-left: 0;
+}
+
+.woocommerce .shop_table tbody .wc-item-meta p {
+	margin: 0;
+}
+
 /**
  * Cart table
  */
@@ -207,6 +214,21 @@ table.cart .coupon input[type="text"],
 .cart-collaterals h2 {
 	font-size: 18px;
 	font-size: 1rem;
+}
+
+dl.variation {
+	font-size: .875em;
+	margin: .875em 0 0 0;
+}
+
+dl.variation dd,
+dl.variation p {
+	margin: 0;
+}
+
+dl.variation dt,
+dl.variation dd {
+	display: inline-block;
 }
 
 /**
@@ -321,7 +343,7 @@ div[class^='columns-']
 	{
 		float: left;
 
-		width: 48%;
+		width: 40%;
 		margin-right: 4%;
 	}
 	ul.products li.product.first
@@ -481,9 +503,6 @@ ul.products li.product .added_to_cart
 
 /**
  * Single product
- */
-/**
- * Single Product
  */
 .single-product div.product
 {
@@ -1010,11 +1029,10 @@ ul.products li.product .added_to_cart
 }
 .woocommerce #payment ul.payment_methods li label img
 {
-	margin-left: .8em;
-	max-width: 200px;
-	height: auto;
-	position: relative;
-	top: 19px;
+	float: right;
+	border: 0;
+	padding: 0;
+	max-height: 1.618em;
 }
 .woocommerce #payment ul.payment_methods li.payment_method_paypal .about_paypal
 {
