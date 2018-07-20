@@ -323,21 +323,6 @@ function ip_woocommerce_is_shop_page() {
 	return $is_shop_page;
 }
 
-
-/**
- * Override number of products per page in Jetpack infinite scroll.
- *
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function ip_woocommerce_jetpack_products_per_page( $args ) {
-	if ( is_array( $args ) && ( ip_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		 $args['posts_per_page'] = ip_woocommerce_products_per_page();
-	}
-	return $args;
-}
-add_filter( 'infinite_scroll_settings', 'ip_woocommerce_jetpack_products_per_page' );
-
 /**
  * ip_woocommerce_image_dimensions Defines WC image sizes
  * @return void

@@ -436,6 +436,8 @@ ul.products {
   box-shadow: none;
   background: url("../../plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.png") 100% 0 no-repeat;
   background-size: 264px 88px; }
+  .single-product div.pswp div.pswp__scroll-wrap div.pswp__ui div.pswp__top-bar button.pswp__button:hover {
+    opacity: 1; }
   .single-product div.pswp div.pswp__scroll-wrap div.pswp__ui div.pswp__top-bar button.pswp__button.pswp__button--close {
     background-position: 100% -44px; }
   .single-product div.pswp div.pswp__scroll-wrap div.pswp__ui div.pswp__top-bar button.pswp__button.pswp__button--zoom {
@@ -826,6 +828,34 @@ ul#shipping_method {
     margin: 0;
     padding: 0; }
 
+  .site-header-cart dl.variation,
+  table.shop_table_responsive dl.variation {
+    font-size: .875em;
+    margin: .875em 0 0; }
+
+  .site-header-cart .widget_shopping_cart span.quantity,
+  table.shop_table_responsive .quantity {
+    display: block;
+    margin: .875em 0; }
+
+  .site-header-cart dl.variation dd,
+  table.shop_table_responsive dl.variation dd,
+  .site-header-cart dl.variation p,
+  table.shop_table_responsive dl.variation p {
+    margin: 0; }
+
+  .site-header-cart dl.variation p,
+  table.shop_table_responsive dl.variation p {
+    font-weight: normal; }
+
+  .wc-item-meta {
+    font-size: .875em;
+    list-style: none; }
+
+  .wc-item-meta,
+  .wc-item-meta p {
+    margin: 0; }
+
 /**
  * Breadcrumbs
  */
@@ -862,6 +892,11 @@ ul#shipping_method {
  */
 .infinite-scroll .woocommerce-pagination {
   display: none; }
+
+.woocommerce-page .infinite-wrap {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0; }
 
 /**
  * Onsale
@@ -1357,17 +1392,17 @@ a.added_to_cart {
   .widget.woocommerce ul.product_list_widget li .remove {
     display: block;
     font-size: 1.5em;
-    line-height: 1;
+    line-height: .75;
     color: #333;
     border-radius: 100%;
     text-decoration: none;
     font-weight: 700;
     box-shadow: none;
     opacity: .5;
-    text-align: center;
-    margin: .65rem 0 1rem .75rem;
-    height: 1em;
-    width: 1em;
+    text-align: right;
+    margin: 0 0 0 .5rem;
+    height: .75em;
+    width: .75em;
     float: right; }
 
 /**
@@ -1500,6 +1535,7 @@ a.added_to_cart {
     .widget_shopping_cart ul.woocommerce-mini-cart li.woocommerce-mini-cart-item a {
       color: #404040;
       width: auto;
+      margin-right: 1em;
       padding: 0; }
 
 .widget_shopping_cart .total {

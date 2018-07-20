@@ -16,7 +16,6 @@
  * @return void
  */
 function dara_woocommerce_setup() {
-	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce', apply_filters( 'dara_woocommerce_args', array(
 		'single_image_width'    => 624,
 		'thumbnail_image_width' => 300,
@@ -97,8 +96,6 @@ add_filter( 'body_class', 'dara_woocommerce_active_body_class' );
 function dara_woocommerce_products_per_page() {
 	return 12;
 }
-
-// Legacy WooCommerce products per page filter.
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
 	add_filter( 'loop_shop_per_page', 'dara_woocommerce_products_per_page' );
 }
@@ -109,7 +106,7 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
  * @return integer number of columns.
  */
 function dara_woocommerce_thumbnail_columns() {
-	return 4;
+	return absint( apply_filters( 'dara_woocommerce_product_thumbnail_columns', 4 ) );
 }
 add_filter( 'woocommerce_product_thumbnails_columns', 'dara_woocommerce_thumbnail_columns' );
 
@@ -119,7 +116,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'dara_woocommerce_thumbnai
  * @return integer products per row.
  */
 function dara_woocommerce_loop_columns() {
-	return 4;
+	return absint( apply_filters( 'dara_woocommerce_loop_columns', 4 ) );
 }
 
 // Legacy WooCommerce columns filter.
@@ -166,11 +163,9 @@ if ( ! function_exists( 'dara_loop_columns' ) ) {
 	 */
 	function dara_loop_columns() {
 		$columns = 4; // 4 products per row
-
 		if ( function_exists( 'wc_get_default_products_per_row' ) ) {
 			$columns = wc_get_default_products_per_row();
 		}
-
 		return apply_filters( 'dara_loop_columns', $columns );
 	}
 }
@@ -333,18 +328,3 @@ function dara_woocommerce_is_shop_page() {
 
 	return $is_shop_page;
 }
-
-/**
- * Override number of products per page in Jetpack infinite scroll.
- *
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function dara_woocommerce_jetpack_products_per_page( $args ) {
-	if ( is_array( $args ) && ( dara_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		 $args['posts_per_page'] = dara_woocommerce_products_per_page();
-	}
-
-	return $args;
-}
-add_filter( 'infinite_scroll_settings', 'dara_woocommerce_jetpack_products_per_page' );

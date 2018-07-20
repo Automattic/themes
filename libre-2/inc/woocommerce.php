@@ -27,6 +27,7 @@ function libre_2_woocommerce_setup() {
 			'min_rows'        => 1
 		)
 	) ) );
+
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -43,6 +44,7 @@ function libre_2_woocommerce_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons/genericons.css', array(), '3.4.1' );
 
 	wp_enqueue_style( 'libre-2-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_style_add_data( 'libre-2-woocommerce-style', 'rtl', get_stylesheet_directory_uri() . '/woocommerce-rtl.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -91,11 +93,7 @@ add_filter( 'body_class', 'libre_2_woocommerce_active_body_class' );
 function libre_2_woocommerce_products_per_page() {
 	return absint( apply_filters( 'libre_2_woocommerce_products_per_page', 12 ) );
 }
-if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
-	add_filter( 'loop_shop_per_page', 'libre_2_woocommerce_products_per_page' );
-}
 
-// Legacy WooCommerce products per page filter.
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
 	add_filter( 'loop_shop_per_page', 'libre_2_woocommerce_products_per_page' );
 }
@@ -119,7 +117,6 @@ function libre_2_woocommerce_loop_columns() {
 	return absint( apply_filters( 'libre_2_woocommerce_loop_columns', 3 ) );
 }
 
-// Legacy WooCommerce columns filter.
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
 	add_filter( 'loop_shop_columns', 'libre_2_woocommerce_loop_columns' );
 }
@@ -135,7 +132,6 @@ function libre_2_woocommerce_related_products_args( $args ) {
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	) );
-	
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'libre_2_woocommerce_related_products_args' );
@@ -333,17 +329,3 @@ function libre_2_woocommerce_is_shop_page() {
 	}
 	return $is_shop_page;
 }
-
-/**
- * Override number of products per page in Jetpack infinite scroll.
- *
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function libre_2_woocommerce_jetpack_products_per_page( $args ) {
-	if ( is_array( $args ) && ( libre_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		 $args['posts_per_page'] = libre_2_woocommerce_products_per_page();
-	}
-	return $args;
-}
-add_filter( 'infinite_scroll_settings', 'libre_2_woocommerce_jetpack_products_per_page' );

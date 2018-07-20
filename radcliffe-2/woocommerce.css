@@ -32,10 +32,11 @@
 
 .woocommerce .site-main {
 	text-align: center;
+	margin-bottom: 3em;
 }
 
 .woocommerce .site-main .products {
-	margin: 3em auto;
+	margin: 0 auto;
 	max-width: 92%;
 }
 
@@ -73,7 +74,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: 0 auto;
+	margin: 0 auto 3em;
 	max-width: 92%;
 	text-align: left;
 	width: 1300px;
@@ -153,8 +154,8 @@ table.shop_table_responsive tr td.product-remove a {
 }
 
 table.shop_table_responsive tr td.product-remove {
-	background: #fff;
-	border-top: 1.618em solid #fff;
+	background: transparent;
+	border-top: 1.618em solid transparent;
 	padding: 0;
 	position: relative;
 }
@@ -217,8 +218,8 @@ table.shop_table_responsive tbody .coupon .button {
 	}
 
 	table.shop_table_responsive tr td.product-remove {
-		background: transparent;
-		border: 0;
+		border-top: 0;
+		border-bottom: 1px solid #eee;
 		display: table-cell;
 		text-align: center;
 	}
@@ -361,7 +362,7 @@ ul.products li.product .button {
 }
 
 .infinite-scroll .woocommerce-pagination {
-    display: none;
+	display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -805,6 +806,16 @@ ul.products li.product .button {
 	font-weight: 400;
 }
 
+dl.variation {
+	font-size: .875em;
+	margin: .875em 0 0 0;
+}
+
+dl.variation dd,
+dl.variation p {
+	margin: 0;
+}
+
 @media screen and (min-width: 768px) {
 
 	.woocommerce-cart td.actions {
@@ -919,6 +930,21 @@ ul.products li.product .button {
 
 .woocommerce-checkout .col-2 .woocommerce-additional-fields h3 {
 	margin-bottom: 0;
+}
+
+.woocommerce .shop_table tbody ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.woocommerce .shop_table tbody .wc-item-meta {
+	font-size: .875em;
+	margin: .875em 0 0 0;
+}
+
+.woocommerce .shop_table tbody .wc-item-meta p {
+	margin: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -1066,14 +1092,6 @@ ul.products li.product .button {
 	width: 200px;
 }
 
-.woocommerce-MyAccount-navigation ul ul li {}
-
-.woocommerce-MyAccount-navigation ul ul:hover>a,
-.woocommerce-MyAccount-navigation ul ul .focus>a {}
-
-.woocommerce-MyAccount-navigation ul ul a:hover,
-.woocommerce-MyAccount-navigation ul ul a.focus {}
-
 .woocommerce-MyAccount-navigation ul li:hover>ul,
 .woocommerce-MyAccount-navigation ul li.focus>ul {
 	left: auto;
@@ -1083,11 +1101,6 @@ ul.products li.product .button {
 .woocommerce-MyAccount-navigation ul ul li.focus>ul {
 	left: 100%;
 }
-
-.woocommerce-MyAccount-navigation .current_page_item>a,
-.woocommerce-MyAccount-navigation .current-menu-item>a,
-.woocommerce-MyAccount-navigation .current_page_ancestor>a,
-.woocommerce-MyAccount-navigation .current-menu-ancestor>a {}
 
 /* !My Account Content */
 
