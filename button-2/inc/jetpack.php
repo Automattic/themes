@@ -75,7 +75,9 @@ function button_2_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 
-		if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+		if ( is_search() ) :
+			get_template_part( 'components/content', 'search' );
+		elseif ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
 			wc_get_template_part( 'content', 'product' );
 		else :
 			get_template_part( 'components/content', get_post_format() );
