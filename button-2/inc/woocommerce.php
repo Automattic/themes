@@ -16,10 +16,18 @@
  * @return void
  */
 function button_2_woocommerce_setup() {
-	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width' => 584,
-		'single_image_width'    => 584,
-	) );
+	add_theme_support( 'woocommerce', apply_filters( 'button_2_woocommerce_args', array(
+		'single_image_width'    => 366,
+		'thumbnail_image_width' => 390,
+		'product_grid'          => array(
+			'default_columns' => 3,
+			'default_rows'    => 4,
+			'min_columns'     => 1,
+			'max_columns'     => 6,
+			'min_rows'        => 2
+		)
+	) ) );
+
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -107,7 +115,11 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'button_2_woocommerce_thum
 function button_2_woocommerce_loop_columns() {
 	return absint( apply_filters( 'button_2_woocommerce_loop_columns', 3 ) );
 }
-add_filter( 'loop_shop_columns', 'button_2_woocommerce_loop_columns' );
+
+// Legacy WooCommerce columns filter.
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_columns', 'button_2_woocommerce_loop_columns' );
+}
 
 /**
  * Related Products Args.
@@ -116,7 +128,7 @@ add_filter( 'loop_shop_columns', 'button_2_woocommerce_loop_columns' );
  * @return array $args related products args.
  */
 function button_2_woocommerce_related_products_args( $args ) {
-	$args = apply_filters( 'radcliffe_2_woocommerce_related_products_args', array(
+	$args = apply_filters( 'button_2_woocommerce_related_products_args', array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	) );
@@ -132,11 +144,26 @@ if ( ! function_exists( 'button_2_woocommerce_product_columns_wrapper' ) ) {
 	 * @return  void
 	 */
 	function button_2_woocommerce_product_columns_wrapper() {
-		$columns = button_2_woocommerce_loop_columns();
+		$columns = button_2_loop_columns();
 		echo '<div class="columns columns-' . absint( $columns ) . '">';
 	}
 }
 add_action( 'woocommerce_before_shop_loop', 'button_2_woocommerce_product_columns_wrapper', 40 );
+
+if ( ! function_exists( 'button_2_loop_columns' ) ) {
+	/**
+	 * Default loop columns on product archives
+	 *
+	 * @return integer products per row
+	 */
+	function button_2_loop_columns() {
+		$columns = 3; // 3 products per row
+		if ( function_exists( 'wc_get_default_products_per_row' ) ) {
+			$columns = wc_get_default_products_per_row();
+		}
+		return apply_filters( 'button_2_loop_columns', $columns );
+	}
+}
 
 if ( ! function_exists( 'button_2_woocommerce_product_columns_wrapper_close' ) ) {
 	/**
@@ -280,18 +307,3 @@ function button_2_woocommerce_is_shop_page() {
 
 	return $is_shop_page;
 }
-
-/**
- * Override number of products per page in Jetpack infinite scroll.
- *
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function button_2_woocommerce_jetpack_products_per_page( $args ) {
-	if ( is_array( $args ) && ( button_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		 $args['posts_per_page'] = button_2_woocommerce_products_per_page();
-	}
-
-	return $args;
-}
-add_filter( 'infinite_scroll_settings', 'button_2_woocommerce_jetpack_products_per_page' );
