@@ -89,7 +89,7 @@ if ( function_exists( 'jetpack_is_mobile' ) && class_exists( 'Jetpack_User_Agent
  * Custom render function for Infinite Scroll.
  */
 function dara_infinite_scroll_render() {
-	if ( class_exists( 'WooCommerce' ) && ( dara_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		dara_woocommerce_product_columns_wrapper();
 		woocommerce_product_loop_start();
 	}
@@ -100,14 +100,14 @@ function dara_infinite_scroll_render() {
 			get_template_part( 'components/post/content', 'search' );
 		elseif ( is_post_type_archive( 'jetpack-testimonial' ) ) :
 			get_template_part( 'components/testimonials/content', 'testimonial' );
-		elseif ( class_exists( 'WooCommerce' ) && ( dara_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+		elseif ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
 			wc_get_template_part( 'content', 'product' );
 		else :
 			get_template_part( 'components/post/content', get_post_format() );
 		endif;
 	}
 
-	if ( class_exists( 'WooCommerce' ) && ( dara_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		woocommerce_product_loop_end();
 		dara_woocommerce_product_columns_wrapper_close();
 	}

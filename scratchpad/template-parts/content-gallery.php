@@ -14,7 +14,7 @@
 	<?php scratchpad_sticky(); ?>
 
 	<?php
-		if ( get_post_gallery() && ! post_password_required() ) { ?>
+		if ( get_post_gallery() ) { ?>
 			<div class="entry-gallery">
 				<?php echo get_post_gallery(); ?>
 				<div class="photo-corners">
@@ -53,9 +53,4 @@
 			);
 		?>
 	</footer><!-- .entry-footer -->
-
-	<?php
-	if ( post_password_required() ) {
-		the_content();
-	} ?>
 </article><!-- #post-## -->
