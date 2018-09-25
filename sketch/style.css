@@ -1827,6 +1827,30 @@ object {
   color: #f68060;
 }
 
+/* Custom Menu, Pages & Categories */
+
+.widget_nav_menu ul ul,
+.widget_categories ul ul,
+.widget_pages ul ul {
+  margin-top: 6px;
+  margin-left: 2.0em;
+}
+
+.widget_nav_menu ul ul li:first-child,
+.widget_categories ul ul li:first-child,
+.widget_pages ul ul li:first-child {
+  margin-top: 0;
+}
+
+.widget_nav_menu li.menu-item-has-children,
+.widget_pages li.page_item_has_children  {
+  padding-bottom: 0;
+}
+
+.widget_categories ul.children {
+  margin-bottom: -7px;
+}
+
 /* =Jetpack */
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation,
@@ -2152,6 +2176,10 @@ div.sharedaddy div.sd-block {
   -webkit-backface-visibility: hidden;
 }
 
+.flexslider .slides > li:only-child {
+  display: block;
+}
+
 .flexslider .slides img {
   width: 100%;
   display: block;
@@ -2366,7 +2394,7 @@ div.sharedaddy div.sd-block {
   }
 
   .project-navigation-wrapper .jetpack-portfolio,
-  .page-template-portfolio-page-php .jetpack-portfolio,
+  .page-template-portfolio-page-php .projects .jetpack-portfolio,
   body[class*="jetpack-portfolio"].archive .jetpack-portfolio {
     border: 0;
     float: left;
