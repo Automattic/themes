@@ -1041,9 +1041,15 @@ input::-moz-focus-inner {
 .main-navigation ul:first-child > li:first-child {
 	border-top: 0;
 }
-.main-navigation li.current-menu-item > a,
-.main-navigation li.current_page_item > a {
+
+.main-navigation > div > ul > li.current-menu-item > a,
+.main-navigation > div > ul > li.current_page_item > a {
 	color: #00aadc;
+}
+
+.main-navigation > div > ul > li.current-menu-item > ul > li a,
+.main-navigation > div > ul > li.current_page_item > ul > li a {
+	color: #fff;
 }
 
 /* Small menu. */
@@ -3094,8 +3100,12 @@ time.published + .updated {
 		left: auto;
 	}
 
-	.main-navigation ul ul li:hover a,
-	.main-navigation ul ul li.focus a {
+	.main-navigation ul ul li:hover > a,
+	.main-navigation ul ul li.focus > a,
+	.main-navigation > div > ul > li.current-menu-item > a,
+	.main-navigation > div > ul > li.current_page_item > a,
+	.main-navigation > div > ul ul li.current-menu-item > a,
+	.main-navigation > div > ul ul li.current_page_item > a {
 		opacity: 0.7;
 	}
 

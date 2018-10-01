@@ -66,8 +66,8 @@ add_color_rule( 'link', '#0087be', array(
             a,
             a:visited', 'color', 'bg' ),
 
-    array( '.main-navigation li.current-menu-item > a,
-            .main-navigation li.current_page_item > a,
+    array( '.main-navigation > div > ul > li.current-menu-item > a,
+			.main-navigation > div > ul > li.current_page_item > a,
             a:active,
             a:focus,
             a:hover,
@@ -105,7 +105,9 @@ add_color_rule( 'extra', '#383838', array(
 
 add_color_rule( 'extra', '#ffffff', array(
     array( '.posts-navigation .nav-links a,
-            .main-navigation ul ul a', 'color', 'link' ),
+            .main-navigation ul ul a,
+            .main-navigation > div > ul > li.current-menu-item > ul > li a,
+			.main-navigation > div > ul > li.current_page_item > ul > li a', 'color', 'link' ),
 
     array( 'button:not(.menu-toggle),
             input[type="button"],
