@@ -48,6 +48,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * 14.0 - Infinite scroll
  * 15.0 - Social Menu
  * 16.0 - Media Queries
+ *	 16.0.1 - < 518px
  *	 16.1 - >= 518px
  *	 16.2 - >= 783px
  *	 16.3 - >= 992px
@@ -2983,6 +2984,17 @@ time.published + .updated {
 /*--------------------------------------------------------------
 16.0 - Media Queries
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+16.0.1 - < 518px (Mobile screens)
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 32.375em) {
+	.main-navigation > div > ul > li.current-menu-item > ul > li a,
+	.main-navigation > div > ul > li.current_page_item > ul > li a {
+		color: #0087be;
+	}
+}
 
 /*--------------------------------------------------------------
 16.1 - >= 518px
