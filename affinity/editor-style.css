@@ -1,5 +1,9 @@
 /* Gutenberg Editor Styles */
 
+.editor-block-list__block .mce-content-body {
+	line-height: 1.6;
+}
+
 .editor-block-list__layout,
 .editor-block-list__layout p {
 	color: #1e1c1b;
@@ -37,12 +41,12 @@ h3.mce-content-body,
 h4.mce-content-body,
 h5.mce-content-body,
 h6.mce-content-body,
-.editor-block-list__block[data-type="core/heading"] h1,
-.editor-block-list__block[data-type="core/heading"] h2,
-.editor-block-list__block[data-type="core/heading"] h3,
-.editor-block-list__block[data-type="core/heading"] h4,
-.editor-block-list__block[data-type="core/heading"] h5,
-.editor-block-list__block[data-type="core/heading"] h6 {
+.wp-block-heading h1,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6 {
 	clear: both;
 	color: #1e1c1b;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
@@ -52,27 +56,27 @@ h6.mce-content-body,
 	margin-bottom: 0.2em;
 }
 
-.editor-block-list__block[data-type="core/heading"] h1 {
+.wp-block-heading h1 {
 	font-size: 34px;
 }
 
-.editor-block-list__block[data-type="core/heading"] h2 {
+.wp-block-heading h2 {
 	font-size: 29.2px;
 }
 
-.editor-block-list__block[data-type="core/heading"] h3 {
+.wp-block-heading h3 {
 	font-size: 26px;
 }
 
-.editor-block-list__block[data-type="core/heading"] h4 {
+.wp-block-heading h4 {
 	font-size: 18px;
 }
 
-.editor-block-list__block[data-type="core/heading"] h5 {
+.wp-block-heading h5 {
 	font-size: 16px;
 }
 
-.editor-block-list__block[data-type="core/heading"] h6 {
+.wp-block-heading h6 {
 	font-size: 14px;
 }
 
@@ -154,13 +158,16 @@ p.has-drop-cap:first-letter {
 	margin-bottom: 1.6em;
 }
 .wp-block-image figcaption {
+	font-size: 13.2px;
 	font-style: italic;
-	font-size: 14px;
-	margin: .8em auto;
+	margin-bottom: 1.6em;
+	max-width: 100%;
 }
 
 /* Galleries */
-.wp-block-gallery {}
+.wp-block-gallery {
+	margin-bottom: 1.6em;
+}
 .columns-1 {}
 .columns-2 {}
 .columns-3 {}
@@ -168,28 +175,33 @@ p.has-drop-cap:first-letter {
 .columns-5 {}
 
 /* Blockquotes*/
-.wp-block-quote > .blocks-editable p {
-	font-size: 24px;
+.wp-block-quote,
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	color: #99908a;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0;
+	border-top: 3px solid #e8e9ea;
+	border-bottom: 1px solid #e8e9ea;
+	margin-bottom: .8em;
+	border-left: 0;
+	padding: .8em 0 .8em;
 }
-.wp-block-quote:not(.is-large) {
-	border: 0;
-	padding-left: 0;
+
+.wp-block-quote.is-large {
+	padding: .8em 0;
 }
+
 .wp-block-quote p:last-of-type {
-	margin-bottom: .4em;
-}
-.wp-block-quote cite,
-.wp-block-quote > .blocks-editable footer {
-	display: block;
-	font-size: 16px;
-	font-style: normal;
-	color: #888;
 	margin-bottom: 1.6em;
-	text-align: right;
-	width: 100%;
 }
-.blocks-quote-style-1 {}
-.blocks-quote-style-2 {}
+
+.wp-block-quote cite {
+	display: block;
+	text-align: right;
+	font-style: normal;
+	font-size: 16px;
+}
 
 /* Cover Images */
 .wp-block-cover-image {
@@ -238,20 +250,11 @@ p.has-drop-cap:first-letter {
 /* Pullquotes */
 .wp-block-pullquote {
 	padding: 0;
-}
-.wp-block-pullquote > .blocks-editable p,
-.wp-block-pullquote blockquote > p {
-	font-size: 36px;
-	font-style: normal;
-	font-family: "Zilla Slab", "Merriweather", Georgia, "Times New Roman", serif;
-	margin: 0 0 .8em;
-	line-height: 1.1;
-	color: #4cb0c1;
+	border: 0;
 }
 .wp-block-pullquote blockquote {
 	color: #99908a;
 	font-size: 18px;
-	font-size: 1.125rem;
 	font-style: italic;
 	margin: 0;
 	border-top: 3px solid #e8e9ea;
@@ -261,23 +264,20 @@ p.has-drop-cap:first-letter {
 	padding-bottom: .8em;
 }
 .wp-block-pullquote blockquote > p {
+	margin: 0 0 1.6em;
 }
-.wp-block-pullquote > cite,
-.wp-block-pullquote > .blocks-editable footer {
-	font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+.wp-block-pullquote > cite {
+	display: block;
+	text-align: right;
 	font-style: normal;
-	line-height: 1.6;
-	font-size: 14px;
-	color: #444;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: bold;
+	font-size: 16px;
 }
 
-.wp-block-pullquote.alignleft > p,
-.wp-block-pullquote.alignright > p {
-	font-size: 24px;
-	line-height: 1.4;
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright {
+	max-width: 320px;
+	padding-bottom: 1.6em;
+	padding-top: .8em;
 }
 
 /* Tables */
@@ -363,15 +363,15 @@ p.has-drop-cap:first-letter {
 	max-width: 100%;
 }
 /* Buttons */
-.wp-block-button {
+.wp-block-button .wp-block-button__link {
 	border-radius: 0;
-	display: block;
+	display: inline-block;
 	font-size: 13.2px;
 	font-family: Raleway, "Helvetica Neue", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: bold;
-	line-height: 1;
+	line-height: 1 !important;
 	transition: 0.3s;
 	text-decoration: none;
 }
@@ -379,6 +379,28 @@ p.has-drop-cap:first-letter {
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus,
 .wp-block-button .wp-block-button__link:active {
+}
+
+.wp-block-button__link:not(.has-text-color),
+.wp-block-button__link:not(.has-text-color):active,
+.wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button__link:not(.has-text-color):hover {
+	color: white;
+}
+
+.wp-block-button__link:not(.has-background) {
+	background-color: #99908a;
+	outline: 4px solid #99908a;
+	border: 2px solid white;
+	position: relative;
+	left: 4px;
+}
+
+.wp-block-button__link:not(.has-background):active,
+.wp-block-button__link:not(.has-background):focus,
+.wp-block-button__link:not(.has-background):hover {
+	outline-color: #5e5853;
+	background-color: #5e5853;
 }
 
 /* Text Columns */
@@ -391,3 +413,38 @@ p.has-drop-cap:first-letter {
 	color: #888;
 }
 .is-grid {}
+
+/* Media Queries */
+
+@media screen and ( min-width: 68em ) {
+	.wp-block-quote,
+	.wp-block-pullquote {
+		font-size: 26px;
+	}
+}
+
+@media screen and ( min-width: 46em ) {
+	.wp-block-heading h1 {
+		font-size: 47.12px;
+	}
+
+	.wp-block-heading h2 {
+		font-size: 42px;
+	}
+
+	.wp-block-heading h3 {
+		font-size: 29.2px;
+	}
+
+	.wp-block-heading h4 {
+		font-size: 26px;
+	}
+
+	.wp-block-heading h5 {
+		font-size: 18px;
+	}
+
+	.wp-block-heading h6 {
+		font-size: 16px;
+	}
+}
