@@ -77,6 +77,102 @@ function radcliffe_2_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Gutenberg: Add Custom Palette
+	$stylepack = get_theme_mod( 'active_style_pack' );
+
+	if ( 'default' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => 'dark grey',
+				'color' => '#222222',
+			),
+			array(
+				'name' => 'light gray',
+				'color' => '#666666',
+			),
+			array(
+				'name' => 'red',
+				'color' => '#ca2017',
+			)
+		);
+	} else if ( 'vintage' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => 'vintage off-white',
+				'color' => '#eae8dc',
+			),
+			array(
+				'name' => 'vintage light brown',
+				'color' => '#c7c4b4',
+			),
+			array(
+				'name' => 'vintage light grey',
+				'color' => '#666666',
+			),
+			array(
+				'name' => 'vintage dark grey',
+				'color' => '#222222',
+			),
+			array(
+				'name' => 'vintage blue',
+				'color' => '#2b6e9d',
+			)
+		);
+	} else if ( 'colorful' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => 'colorful white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => 'colorful light grey',
+				'color' => '#e5e5e5',
+			),
+			array(
+				'name' => 'colorful dark grey',
+				'color' => '#222222',
+			),
+			array(
+				'name' => 'colorful blue',
+				'color' => '#4ba3c3',
+			),
+			array(
+				'name' => 'colorful green',
+				'color' => '#71db9d',
+			),
+			array(
+				'name' => 'colorful orange',
+				'color' => '#d97059',
+			)
+		);
+	} else if ( 'modern' === $stylepack ) {
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name' => 'modern white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name' => 'modern light grey',
+				'color' => '#f1f1f1',
+			),
+			array(
+				'name' => 'modern medium grey',
+				'color' => '#aaaaaa',
+			),
+			array(
+				'name' => 'modern dark grey',
+				'color' => '#222222',
+			)
+		);
+	}
+
+	// Gutenberg: Add support for wide alignment
+	add_theme_support( 'align-wide' );
 }
 endif;
 add_action( 'after_setup_theme', 'radcliffe_2_setup' );
@@ -137,6 +233,14 @@ add_action( 'widgets_init', 'radcliffe_2_widgets_init' );
 function radcliffe_2_scripts() {
 	wp_enqueue_style( 'radcliffe-2-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'radcliffe-2-block-styles', get_template_directory_uri() . '/assets/css/blocks.css' );
+
+	$stylepack = get_theme_mod( 'active_style_pack' );
+
+	if ( 'vintage' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-block-vintage-styles', get_template_directory_uri() . '/assets/css/blocks-vintage.css' );
+	}
+
 	wp_enqueue_script( 'radcliffe-2-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
 	wp_localize_script( 'radcliffe-2-navigation', 'screenReaderText', array(
@@ -155,6 +259,27 @@ function radcliffe_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'radcliffe_2_scripts' );
+
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function radcliffe_2_editor_styles() {
+	wp_enqueue_style( 'radcliffe-2-editor-style', get_template_directory_uri() . '/assets/css/editor-style.css' );
+
+	$stylepack = get_theme_mod( 'active_style_pack' );
+
+	if ( 'colorful' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-editor-style-colorful', get_template_directory_uri() . '/assets/css/editor-style-colorful.css' );
+	} else if ( 'modern' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-editor-style-modern', get_template_directory_uri() . '/assets/css/editor-style-modern.css' );
+	} else if ( 'vintage' === $stylepack ) {
+		wp_enqueue_style( 'radcliffe-2-editor-style-vintage', get_template_directory_uri() . '/assets/css/editor-style-vintage.css' );
+	}
+
+}
+add_action( 'enqueue_block_editor_assets', 'radcliffe_2_editor_styles' );
+
 
 /**
  * Enqueue stylesheet inside the Customizer.
