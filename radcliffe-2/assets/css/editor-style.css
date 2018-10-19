@@ -5,9 +5,11 @@ Editor Styles for Radcliffe 2
 /* Widths */
 
 @media screen and ( min-width: 788px ) {
-	.edit-post-visual-editor .editor-post-title,
-	.edit-post-visual-editor .editor-block-list__block {
-		max-width:	768px;
+	/* Main column width */
+	body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
+	body.gutenberg-editor-page .edit-post-visual-editor .editor-default-block-appender,
+	body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block {
+	    max-width: 770px; /* 740px + 30px for editor block margins */
 	}
 }
 
@@ -21,7 +23,8 @@ Editor Styles for Radcliffe 2
 .edit-post-visual-editor input,
 .edit-post-visual-editor select,
 .edit-post-visual-editor optgroup,
-.edit-post-visual-editor textarea {
+.edit-post-visual-editor textarea,
+.edit-post-visual-editor blockquote {
 	color: #222;
 	font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Times,"Times New Roman",serif;
 	font-size: 20px;
@@ -111,7 +114,6 @@ h6.editor-rich-text__tinymce.mce-content-body {
 .mce-content-body pre,
 .wp-block-code .editor-plain-text,
 .wp-block-preformatted pre {
-	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 16px;
 	line-height: 1.6;
@@ -121,6 +123,11 @@ h6.editor-rich-text__tinymce.mce-content-body {
 	padding: 1.6em;
 	word-wrap: nowrap;
 }
+
+.wp-block-code .editor-plain-text {
+	margin-bottom: 0;
+}
+
 
 .mce-content-body blockquote {
 	margin: 0 1.5em;
@@ -650,9 +657,17 @@ h6.editor-rich-text__tinymce.mce-content-body {
 	padding: 0;
 }
 
-.edit-post-visual-editor .wp-block-pullquote p,
-.edit-post-visual-editor .wp-block-pullquote cite {
+.edit-post-visual-editor .wp-block-pullquote p {
 	color: #666;
+	margin-bottom: 1.8em;
+}
+
+.edit-post-visual-editor .wp-block-pullquote__citation {
+	color: #666;
+	font-size: 1.1em;
+	font-style: italic;
+	opacity: 0.8;
+	text-transform: capitalize;
 }
 
 /* Cover Images */
@@ -678,8 +693,8 @@ h6.editor-rich-text__tinymce.mce-content-body {
 /* Verse */
 .wp-block-verse {
 	background-color: transparent;
-	font-family: "Alegreya", Georgia, "Times New Roman", serif;
-	font-size: 1.1em;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-size: 22px;
 	font-style: italic;
 	padding: 0;
 }

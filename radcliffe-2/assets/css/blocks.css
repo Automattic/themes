@@ -96,13 +96,22 @@ p.alignfull {
 .has-drop-cap {}
 
 /* Images */
-.wp-block-image {
-	display: inline-block; /* helps with smaller, unaligned images */
+.wp-block-image {}
+
+.wp-block-image figure {
+	margin-top: 0;
 }
 
 .wp-block-image img {
 	display: block;
-	width: 100%;
+}
+
+.wp-block-image .alignleft {
+	margin-right: 1.6em;
+}
+
+.wp-block-image .alignright {
+	margin-left: 1.6em;
 }
 
 .wp-block-image.alignwide {}
@@ -214,28 +223,38 @@ ul.wp-block-gallery li {
 /* Verse */
 .wp-block-verse {
 	background-color: transparent;
-	font-family: "Alegreya", Georgia, "Times New Roman", serif;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
 	font-size: 1.1em;
 	font-style: italic;
+	line-height: 1.8;
 	padding: 0;
 }
 
 /* Separator */
 .wp-block-separator {
 	border: none;
-	max-width: none;
+	max-width: 100px;
 	margin: 1.6em auto;
 }
 
+.wp-block-separator.is-style-wide {
+	max-width: 100%;
+}
+
 /* Buttons */
+.wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link {
 	background: #222;
 	border-radius: 3px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 1.4rem;
 	font-size: 14px;
+	line-height: 1.29;
+	padding: 9px 18px;
 }
 
+.wp-block-file a:hover,
+.wp-block-file a:focus,
 .wp-block-button a:hover,
 .wp-block-button a:focus {
 	opacity: 1.0;
@@ -252,6 +271,8 @@ ul.wp-block-gallery li {
 	text-decoration: none;
 }
 
+.wp-block-file__button:hover,
+.wp-block-file__button:focus,
 .wp-block-button__link:not(.has-background):hover,
 .wp-block-button__link:not(.has-background):focus {
 	background: #ca2017;
@@ -306,20 +327,22 @@ ul.wp-block-gallery li {
 	border: 0;
 }
 
-/* Categories */
+/* Widget blocks */
 .wp-block-categories {}
 
-.wp-block-categories-list ul,
-.wp-block-categories-list li {
+.wp-block-archives,
+.wp-block-latest-comments,
+.wp-block-categories-list {
 	list-style: none;
-	margin: 0;
 	padding: 0;
 }
 
+.wp-block-archives li,
 .wp-block-categories-list li {
 	padding: 0.25em 0;
 }
 
+.wp-block-archives li:not(:last-child),
 .wp-block-categories-list li:not(:last-child) {
 	border-bottom: 1px solid rgba(0,0,0,0.075);
 }
