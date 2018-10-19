@@ -1,13 +1,14 @@
 /* Gutenberg Editor Styles */
 
 .editor-block-list__block .mce-content-body {
-	line-height: 1.6;
+	line-height: 1.6 !important;
 }
 
 .editor-block-list__layout,
 .editor-block-list__layout p,
 .editor-block-list__layout ol,
-.editor-block-list__layout ul {
+.editor-block-list__layout ul,
+.editor-block-list__layout td {
 	color: #5e5853;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 }
@@ -255,11 +256,16 @@ p.has-drop-cap:first-letter {
 .wp-block-video video {
 	display: block;
 	max-width: 100%;
-	margin: 0 auto;
+	margin: auto;
 }
 
 /* Audio */
 .wp-block-audio {}
+.wp-block-audio audio {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+}
 
 /* Pullquotes */
 .wp-block-pullquote {
@@ -310,6 +316,7 @@ p.has-drop-cap:first-letter {
 .wp-block-table td,
 .wp-block-table th {
   padding: 0.4em 0.2em;
+  border: 0;
   border-bottom: 1px solid #e8e9ea;
 }
 
