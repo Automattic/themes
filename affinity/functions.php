@@ -233,6 +233,9 @@ function affinity_fonts_url() {
 function affinity_scripts() {
 	wp_enqueue_style( 'affinity-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'affinity-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'affinity-fonts', affinity_fonts_url(), array(), null );
 
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons/genericons.css', array(), '3.4.1' );
@@ -252,6 +255,15 @@ function affinity_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'affinity_scripts' );
+
+/** 
+ * Gutenberg Editor Styles 
+ */
+function affinity_editor_styles() {
+	wp_enqueue_style( 'affinity-editor-style', get_template_directory_uri() . '/editor-style.css');
+	wp_enqueue_style( 'affinity-fonts', affinity_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'affinity_editor_styles' );
 
 
 /* Allow user to adjust opacity of overlay to work with lighter/darker photos */
