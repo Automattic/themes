@@ -5,8 +5,10 @@
 }
 
 .editor-block-list__layout,
-.editor-block-list__layout p {
-	color: #1e1c1b;
+.editor-block-list__layout p,
+.editor-block-list__layout ol,
+.editor-block-list__layout ul {
+	color: #5e5853;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 }
 
@@ -23,6 +25,7 @@
 .editor-block-list__layout a:focus,
 .editor-block-list__layout a:active {
 	color: #383e44;
+	text-decoration: underline !important;
 }
 
 .editor-block-list__layout a:focus {
@@ -48,7 +51,7 @@ h6.mce-content-body,
 .wp-block-heading h5,
 .wp-block-heading h6 {
 	clear: both;
-	color: #1e1c1b;
+	color: #5e5853;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 	font-style: italic;
 	font-weight: normal;
@@ -192,20 +195,30 @@ p.has-drop-cap:first-letter {
 	padding: .8em 0;
 }
 
+.wp-block-quote p {
+	color: #99908a;
+}
+
 .wp-block-quote p:last-of-type {
 	margin-bottom: 1.6em;
 }
 
-.wp-block-quote cite {
+.wp-block-quote .wp-block-quote__citation {
+	color: #99908a;
 	display: block;
 	text-align: right;
 	font-style: normal;
 	font-size: 16px;
 }
 
+.wp-block-quote.aligncenter {
+	text-align: center;
+}
+
 /* Cover Images */
 .wp-block-cover-image {
-	margin: 0 0 1.6em;
+	display: flex;
+	margin-bottom: 1.6em;
 }
 .wp-block-cover-image h1,
 .wp-block-cover-image h2,
@@ -264,9 +277,11 @@ p.has-drop-cap:first-letter {
 	padding-bottom: .8em;
 }
 .wp-block-pullquote blockquote > p {
+	color: #99908a;
 	margin: 0 0 1.6em;
 }
-.wp-block-pullquote > cite {
+.wp-block-pullquote .wp-block-quote__citation {
+	color: #99908a;
 	display: block;
 	text-align: right;
 	font-style: normal;
@@ -278,6 +293,10 @@ p.has-drop-cap:first-letter {
 	max-width: 320px;
 	padding-bottom: 1.6em;
 	padding-top: .8em;
+}
+
+.wp-block-pullquote.aligncenter {
+	text-align: center;
 }
 
 /* Tables */
@@ -418,7 +437,8 @@ p.has-drop-cap:first-letter {
 
 @media screen and ( min-width: 68em ) {
 	.wp-block-quote,
-	.wp-block-pullquote {
+	.wp-block-pullquote,
+	.wp-block-quote:not(.is-large):not(.is-style-large) {
 		font-size: 26px;
 	}
 }
