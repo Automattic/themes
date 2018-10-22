@@ -84,7 +84,9 @@ p.has-drop-cap:first-letter {
 	padding-bottom: .8em;
 }
 
-.wp-block-quote.is-large {
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	font-size: 26px;
 	padding: .8em 0;
 }
 
@@ -145,12 +147,12 @@ p.has-drop-cap:first-letter {
 
 /* Pullquotes */
 .wp-block-pullquote {
+	color: #99908a;
 	padding: 0;
 }
 .wp-block-pullquote blockquote {
 	color: #99908a;
 	font-size: 18px;
-	font-size: 1.125rem;
 	font-style: italic;
 	margin: 0;
 	border-top: 3px solid #e8e9ea;
@@ -160,16 +162,22 @@ p.has-drop-cap:first-letter {
 	padding-bottom: .8em;
 }
 
+.edit-post-visual-editor .wp-block-pullquote blockquote p {
+	color: #99908a;
+	font-size: 18px;
+}
+
 .wp-block-pullquote blockquote > p:last-of-type {
 	margin-bottom: 1.6em;
 }
 
-.wp-block-pullquote blockquote cite {
+.wp-block-pullquote blockquote cite,
+.wp-block-pullquote .wp-block-pullquote__citation {
+	color: #99908a;
 	display: block;
-	text-align: right;
-	font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
 	font-size: 16px;
-	font-size: 1rem;
 }
 
 .wp-block-pullquote.alignleft,

@@ -1,40 +1,46 @@
 /* Gutenberg Editor Styles */
 
-.editor-block-list__block .mce-content-body {
+.edit-post-visual-editor .editor-post-title__block,
+.edit-post-visual-editor .editor-default-block-appender,
+.edit-post-visual-editor .editor-block-list__block {
+    max-width: 747px !important;
+}
+
+.edit-post-visual-editor .mce-content-body {
 	line-height: 1.6 !important;
 }
 
-.editor-block-list__layout,
-.editor-block-list__layout p,
-.editor-block-list__layout ol,
-.editor-block-list__layout ul,
-.editor-block-list__layout td {
+.edit-post-visual-editor,
+.edit-post-visual-editor p,
+.edit-post-visual-editor ol,
+.edit-post-visual-editor ul,
+.edit-post-visual-editor td {
 	color: #5e5853;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 }
 
-.editor-block-list__layout a {
+.edit-post-visual-editor a {
 	color: #99908a;
   	transition: 0.3s;
 }
 
-.editor-block-list__layout a:visited {
+.edit-post-visual-editor a:visited {
 	color: #99908a;
 }
 
-.editor-block-list__layout a:hover,
-.editor-block-list__layout a:focus,
-.editor-block-list__layout a:active {
+.edit-post-visual-editor a:hover,
+.edit-post-visual-editor a:focus,
+.edit-post-visual-editor a:active {
 	color: #383e44;
 	text-decoration: underline !important;
 }
 
-.editor-block-list__layout a:focus {
+.edit-post-visual-editor a:focus {
 	outline: thin dotted;
 }
 
-.editor-block-list__layout a:hover,
-.editor-block-list__layout a:active {
+.edit-post-visual-editor a:hover,
+.edit-post-visual-editor a:active {
 	outline: 0;
 	text-decoration: none;
 }
@@ -50,7 +56,8 @@ h6.mce-content-body,
 .wp-block-heading h3,
 .wp-block-heading h4,
 .wp-block-heading h5,
-.wp-block-heading h6 {
+.wp-block-heading h6,
+.editor-post-title__block .editor-post-title__input {
 	clear: both;
 	color: #5e5853;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
@@ -60,7 +67,8 @@ h6.mce-content-body,
 	margin-bottom: 0.2em;
 }
 
-.wp-block-heading h1 {
+.wp-block-heading h1,
+.editor-post-title__block .editor-post-title__input {
 	font-size: 34px;
 }
 
@@ -90,25 +98,6 @@ p {
 
 dfn, cite, em, i {
 	font-style: italic;
-}
-
-blockquote {
-	color: #99908a;
-	font-size: 18px;
-	font-style: italic;
-	margin: 0;
-	border-top: 3px solid #e8e9ea;
-	padding-top: .8em;
-	border-bottom: 1px solid #e8e9ea;
-	margin-bottom: .8em;
-	padding-bottom: .8em;
-}
-
-blockquote cite {
-	display: block;
-	text-align: right;
-	font-style: normal;
-	font-size: 16px;
 }
 
 address {
@@ -180,6 +169,26 @@ p.has-drop-cap:first-letter {
 .columns-5 {}
 
 /* Blockquotes*/
+
+blockquote {
+	color: #99908a;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0;
+	border-top: 3px solid #e8e9ea;
+	padding-top: .8em;
+	border-bottom: 1px solid #e8e9ea;
+	margin-bottom: .8em;
+	padding-bottom: .8em;
+}
+
+blockquote cite {
+	display: block;
+	text-align: right;
+	font-style: normal;
+	font-size: 16px;
+}
+
 .wp-block-quote,
 .wp-block-quote:not(.is-large):not(.is-style-large) {
 	color: #99908a;
@@ -193,7 +202,14 @@ p.has-drop-cap:first-letter {
 	padding: .8em 0 .8em;
 }
 
-.wp-block-quote.is-large {
+.wp-block-quote p,
+.wp-block-quote:not(.is-large):not(.is-style-large) p {
+	font-size: 18px;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	font-size: 26px;
 	padding: .8em 0;
 }
 
@@ -290,8 +306,8 @@ p.has-drop-cap:first-letter {
 .wp-block-pullquote .wp-block-quote__citation {
 	color: #99908a;
 	display: block;
-	text-align: right;
-	font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
 	font-size: 16px;
 }
 
@@ -337,7 +353,7 @@ p.has-drop-cap:first-letter {
 }
 
 /* Preformatted */
-.wp-block-preformatted {
+.wp-block-preformatted pre {
 	background: #e8e9ea;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 13.2px;
@@ -452,13 +468,17 @@ p.has-drop-cap:first-letter {
 @media screen and ( min-width: 68em ) {
 	.wp-block-quote,
 	.wp-block-pullquote,
-	.wp-block-quote:not(.is-large):not(.is-style-large) {
+	.wp-block-quote:not(.is-large):not(.is-style-large),
+	.wp-block-quote p,
+	.wp-block-pullquote p,
+	.wp-block-quote:not(.is-large):not(.is-style-large) p {
 		font-size: 26px;
 	}
 }
 
 @media screen and ( min-width: 46em ) {
-	.wp-block-heading h1 {
+	.wp-block-heading h1,
+	.editor-post-title__block .editor-post-title__input {
 		font-size: 47.12px;
 	}
 
