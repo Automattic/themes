@@ -174,15 +174,16 @@ p.has-drop-cap:first-letter {
 }
 
 /* Verse */
-.wp-block-verse {
-	background: #e8e9ea;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 13.2px;
-	line-height: 1.6;
+pre.wp-block-verse {
+	background: transparent;
+	font-family: inherit;
+	font-size: 18px;
+	line-height: inherit;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: 0;
+	padding-left: 1.6em;
 }
 .wp-block-verse.aligncenter {
 	text-align: center;
@@ -267,6 +268,12 @@ p.has-drop-cap:first-letter {
 	margin: 0 0 1.6em;
 }
 
+/* Latest Comments */
+
+ol.wp-block-latest-comments {
+	margin: 0;
+}
+
 /* Media queries */
 
 @media screen and ( min-width: 46em ) {
@@ -310,5 +317,13 @@ p.has-drop-cap:first-letter {
 	.wp-block-pullquote.alignright {
 		margin-left: 1.6em;
 		text-align: right;
+	}
+
+	.wp-block-quote.alignright {
+		margin-left: 1.6em;
+	}
+
+	.wp-block-quote.alignleft {
+		margin-right: 1.6em;
 	}
 }
