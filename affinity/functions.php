@@ -35,6 +35,11 @@ function affinity_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/*
+	 * Add editor styles
+	 */
+	add_editor_style();
+
 	/**
 	 * Add support for core custom logo
 	 * - also see fallback in inc/jetpack.php
