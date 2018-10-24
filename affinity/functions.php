@@ -265,7 +265,7 @@ add_action( 'wp_enqueue_scripts', 'affinity_scripts' );
  * Gutenberg Editor Styles 
  */
 function affinity_editor_styles() {
-	wp_enqueue_style( 'affinity-editor-style', get_template_directory_uri() . '/editor-style.css');
+	wp_enqueue_style( 'affinity-blocks-editor-style', get_template_directory_uri() . '/editor-blocks.css');
 	wp_enqueue_style( 'affinity-fonts', affinity_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'affinity_editor_styles' );
