@@ -69,7 +69,7 @@
 				sidebarPosBottom = 0;
 			}
 
-			// Add 'below-entry-meta' to elements below the entry meta.
+			// Add 'below-sidebar' to elements below the sidebar.
 			if ( elementPosTop > sidebarPosBottom ) {
 				element.addClass( 'below-sidebar' );
 			} else {
@@ -132,7 +132,7 @@
 		} );
 	}
 
-	//Apply classes to aligned left and right elements (blockquotes, captions, images)
+	//Apply classes to aligned left, right, wide, and full elements (blockquotes, captions, images)
 	function moveAlignedElements() {
 
 		var ltr = true;
@@ -144,6 +144,9 @@
 			.on( 'resize post-load', function() {
 				clearTimeout( resizeTimer );
 				resizeTimer = setTimeout( function() {
+
+					belowEntryMetaClass( 'figure.wp-block-image.alignwide' );
+					belowSidebarClass( 'figure.wp-block-image.alignfull, figure.wp-block-image.alignwide' );
 
 					if ( true == ltr ) {
 						belowEntryMetaClass( 'img.alignleft:not( figure > img.alignleft ), figure.alignleft' );
@@ -165,6 +168,9 @@
 					}
 				}, 300 );
 			} );
+
+		belowEntryMetaClass( 'figure.wp-block-image.alignwide' );
+		belowSidebarClass( 'figure.wp-block-image.alignfull, figure.wp-block-image.alignwide' );
 
 		if ( true == ltr ) {
 			belowEntryMetaClass( 'img.alignleft:not( figure > img.alignleft ), figure.alignleft' );
