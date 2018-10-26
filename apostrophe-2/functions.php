@@ -39,6 +39,47 @@ if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 		// Load editor styles and custom fonts.
 		add_editor_style( array( 'editor-style.css', apostrophe_2_fonts_url() ) );
 
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette', array(
+				array(
+					'name'  => esc_html__( 'Black', 'apostrophe-2' ),
+					'slug' => 'black',
+					'color' => '#404040',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'apostrophe-2' ),
+					'slug' => 'dark-gray',
+					'color' => '#686868',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'apostrophe-2' ),
+					'slug' => 'medium-gray',
+					'color' => '#999999',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'apostrophe-2' ),
+					'slug' => 'light-gray',
+					'color' => '#d9d9d9',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'apostrophe-2' ),
+					'slug' => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Blue', 'apostrophe-2' ),
+					'slug' => 'blue',
+					'color' => '#159ae7',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Blue', 'apostrophe-2' ),
+					'slug' => 'dark-blue',
+					'color' => '#362e77',
+				)
+			)
+		);
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
