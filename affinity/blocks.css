@@ -300,7 +300,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button .wp-block-button__link {
 	border-radius: 0;
-	color: white;
 	display: inline-block;
 	font-size: 13.2px;
 	font-family: Raleway, "Helvetica Neue", sans-serif;
@@ -312,16 +311,19 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-decoration: none;
 }
 
+.wp-block-button__link:not(.has-text-color),
+.wp-block-button__link:not(.has-text-color):hover,
+.wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button__link:not(.has-text-color):active {
+	color: white;
+}
+
 .wp-block-button__link:not(.has-background) {
 	background-color: #99908a;
 	outline: 4px solid #99908a;
 	border: 2px solid white;
 	position: relative;
 	left: 4px;
-}
-
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
 }
 
 .wp-block-button__link:not(.has-background):active,
