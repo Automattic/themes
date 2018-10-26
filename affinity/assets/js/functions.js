@@ -151,6 +151,9 @@
 					belowEntryMetaClass( '.wp-block-cover.alignwide, .wp-block-gallery.alignwide' );
 					belowSidebarClass( '.wp-block-cover.alignfull, .wp-block-cover.alignwide, .wp-block-gallery.alignfull, .wp-block-gallery.alignwide' );
 
+					belowEntryMetaClass( '.wp-block-embed.is-type-video.alignwide' );
+					belowSidebarClass( '.wp-block-embed.is-type-video.alignfull, .wp-block-embed.is-type-video.alignwide' );
+
 					if ( true == ltr ) {
 						belowEntryMetaClass( 'img.alignleft:not( figure > img.alignleft ), figure.alignleft' );
 						belowEntryMetaClass( 'blockquote.alignleft' );
@@ -177,6 +180,9 @@
 
 		belowEntryMetaClass( '.wp-block-cover.alignwide, .wp-block-gallery.alignwide' );
 		belowSidebarClass( '.wp-block-cover.alignfull, .wp-block-cover.alignwide, .wp-block-gallery.alignfull, .wp-block-gallery.alignwide' );
+
+		belowEntryMetaClass( '.wp-block-embed.is-type-video.alignwide' );
+		belowSidebarClass( '.wp-block-embed.is-type-video.alignfull, .wp-block-embed.is-type-video.alignwide' );
 
 		if ( true == ltr ) {
 			belowEntryMetaClass( 'img.alignleft:not( figure > img.alignleft ), figure.alignleft' );
