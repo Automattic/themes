@@ -192,6 +192,9 @@ function apostrophe_2_fonts_url() {
  */
 function apostrophe_2_scripts() {
 
+	// Gutenberg styles
+	wp_enqueue_style( 'apostrophe-2-blocks', get_template_directory_uri() . '/css/blocks.css' );
+
 	wp_enqueue_style( 'apostrophe-2-style', get_stylesheet_uri(), array(), '20140520' );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons.css', array(), '20131222' );
 	wp_enqueue_style( 'apostrophe-2-fonts', apostrophe_2_fonts_url(), array(), null );
@@ -210,6 +213,15 @@ function apostrophe_2_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'apostrophe_2_scripts' );
+
+/** 
+ * Gutenberg Editor Styles 
+ */
+function apostrophe_2_editor_styles() {
+	wp_enqueue_style( 'apostrophe-2-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css');
+	wp_enqueue_style( 'apostrophe-2-fonts', apostrophe_2_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'apostrophe_2_editor_styles' );
 
 /**
  * Use a specific size for the gallery shortcode.
