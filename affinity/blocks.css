@@ -47,10 +47,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Full Images */
 
 @media screen and ( min-width: 48em ) {
-	.no-sidebar.page figure.wp-block-image.alignfull {
+	.no-sidebar.page figure.alignfull,
+	.no-sidebar.page .wp-block-cover.alignfull {
 		width: 100vw;
 		max-width: 100vw;
-		margin: 0;
+		margin-left: 0;
+		margin-right: 0;
 		position: relative;
 		left: 50%;
 		transform: translateX( -50% );
@@ -61,7 +63,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Wide Images */
 
 @media screen and ( min-width: 48em ) {
-	figure.wp-block-image.alignwide.below-sidebar.below-entry-meta {
+	figure.alignwide.below-sidebar.below-entry-meta,
+	.wp-block-cover.alignwide.below-sidebar.below-entry-meta {
 		width: 120%;
 		max-width: 120%;
 		margin-left: -10%;
