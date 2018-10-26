@@ -148,8 +148,8 @@
 					belowEntryMetaClass( 'figure.wp-block-image.alignwide' );
 					belowSidebarClass( 'figure.wp-block-image.alignfull, figure.wp-block-image.alignwide' );
 
-					belowEntryMetaClass( '.wp-block-cover.alignwide' );
-					belowSidebarClass( '.wp-block-cover.alignfull, .wp-block-cover.alignwide' );
+					belowEntryMetaClass( '.wp-block-cover.alignwide, .wp-block-gallery.alignwide' );
+					belowSidebarClass( '.wp-block-cover.alignfull, .wp-block-cover.alignwide, .wp-block-gallery.alignfull, .wp-block-gallery.alignwide' );
 
 					if ( true == ltr ) {
 						belowEntryMetaClass( 'img.alignleft:not( figure > img.alignleft ), figure.alignleft' );
@@ -175,8 +175,8 @@
 		belowEntryMetaClass( 'figure.wp-block-image.alignwide' );
 		belowSidebarClass( 'figure.wp-block-image.alignfull, figure.wp-block-image.alignwide' );
 
-		belowEntryMetaClass( '.wp-block-cover.alignwide' );
-		belowSidebarClass( '.wp-block-cover.alignfull, .wp-block-cover.alignwide' );
+		belowEntryMetaClass( '.wp-block-cover.alignwide, .wp-block-gallery.alignwide' );
+		belowSidebarClass( '.wp-block-cover.alignfull, .wp-block-cover.alignwide, .wp-block-gallery.alignfull, .wp-block-gallery.alignwide' );
 
 		if ( true == ltr ) {
 			belowEntryMetaClass( 'img.alignleft:not( figure > img.alignleft ), figure.alignleft' );
