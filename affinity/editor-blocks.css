@@ -339,19 +339,13 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 }
 
 @media screen and ( min-width: 68em ) {
-	.wp-block-quote,
-	.wp-block-pullquote blockquote {
+	.wp-block-quote {
 		font-size: 26px;
 	}
 
 	.wp-block-quote.is-large p,
 	.wp-block-quote.is-style-large p {
 		font-size: 36px;
-	}
-
-	.wp-block-pullquote blockquote,
-	.wp-block-pullquote blockquote > .editor-rich-text p {
-		font-size: 26px;
 	}
 }
 
@@ -605,6 +599,11 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	font-size: 18px;
 }
 
+.wp-block-pullquote.alignleft blockquote > .editor-rich-text p,
+.wp-block-pullquote.alignright blockquote > .editor-rich-text p {
+	font-size: 18px;
+}
+
 .wp-block-pullquote .wp-block-pullquote__citation {
 	color: #99908a;
 	display: block;
@@ -613,6 +612,13 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 }
 
 .wp-block-pullquote .wp-block-pullquote__citation:before {
+}
+
+@media screen and ( min-width: 68em ) {
+	.wp-block-pullquote blockquote,
+	.wp-block-pullquote blockquote > .editor-rich-text p {
+		font-size: 26px;
+	}
 }
 
 /* Table */
