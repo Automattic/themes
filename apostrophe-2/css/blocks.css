@@ -152,11 +152,22 @@ p.has-drop-cap:not(:focus)::first-letter {
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
 }
 
-.wp-block-quote cite {
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-large footer,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.is-style-large footer {
 	color: gray;
 	display: block;
 	font-style: normal;
 	margin-top: 0.25em;
+	text-align: left;
+}
+
+.rtl .wp-block-quote.is-large cite, 
+.rtl .wp-block-quote.is-large footer,
+.rtl .wp-block-quote.is-style-large cite,
+.rtl .wp-block-quote.is-style-large footer {
+	text-align: right;
 }
 
 .wp-block-quote cite:before {
