@@ -35,9 +35,6 @@ if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
-		// Load editor styles and custom fonts.
-		add_editor_style( array( 'editor-style.css', apostrophe_2_fonts_url() ) );
         
         // Add wide styles support for Gutenberg
         add_theme_support( 'align-wide' );
