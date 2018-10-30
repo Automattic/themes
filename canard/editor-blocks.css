@@ -20,7 +20,7 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p,
+.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 	color: #222;
 	font-family: "PT Serif", serif;
@@ -30,7 +30,7 @@
 @media screen and ( min-width: 768px ) {
 
 	.edit-post-visual-editor .editor-block-list__block,
-	.edit-post-visual-editor .editor-block-list__block p,
+	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
 	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 		font-size: 20px;
 	}
@@ -628,10 +628,12 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 }
 
 .wp-block-pullquote.alignleft {
+	float: left;
 	margin-right: 30px;
 }
 
 .wp-block-pullquote.alignright {
+	float: right;
 	margin-left: 30px;
 }
 
