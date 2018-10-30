@@ -70,22 +70,22 @@ function canard_setup() {
 			array(
 				'name'  => esc_html__( 'Black', 'canard' ),
 				'slug' => 'black',
-				'color' => '#222',
+				'color' => '#222222',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Gray', 'canard' ),
 				'slug' => 'dark-gray',
-				'color' => '#686868',
+				'color' => '#555555',
 			),
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'canard' ),
 				'slug' => 'medium-gray',
-				'color' => '#999999',
+				'color' => '#777777',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'canard' ),
 				'slug' => 'light-gray',
-				'color' => '#d9d9d9',
+				'color' => '#dddddd',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'canard' ),
@@ -96,11 +96,6 @@ function canard_setup() {
 				'name'  => esc_html__( 'Red', 'canard' ),
 				'slug' => 'red',
 				'color' => '#d11415',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Red', 'canard' ),
-				'slug' => 'dark-red',
-				'color' => '#362e77',
 			)
 		)
 	);
