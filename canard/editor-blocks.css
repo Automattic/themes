@@ -198,21 +198,36 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 .block-library-list ul,
 .edit-post-visual-editor ol,
 .editor-block-list__block ol,
-.block-library-list ol {
+.block-library-list ol,
+.wp-block-freeform.block-library-rich-text__tinymce ol,
+.wp-block-freeform.block-library-rich-text__tinymce ul,
+.block-library-list .editor-rich-text__tinymce {
 	margin: 0 0 30px;
 	padding: 0;
 }
 
 .edit-post-visual-editor ul:not(.wp-block-gallery),
 .editor-block-list__block ul:not(.wp-block-gallery),
-.block-library-list ul {
+.block-library-list ul,
+.wp-block-freeform.block-library-rich-text__tinymce ul {
 	list-style: square inside;
 }
 
 .edit-post-visual-editor ol,
 .editor-block-list__block ol,
-.block-library-list ol {
+.block-library-list ol,
+.wp-block-freeform.block-library-rich-text__tinymce ol {
 	list-style: decimal inside;
+}
+
+.edit-post-visual-editor ul:not(.wp-block-gallery) li,
+.editor-block-list__block ul:not(.wp-block-gallery) li,
+.edit-post-visual-editor ol li,
+.editor-block-list__block ol li,
+.block-library-list li,
+.wp-block-freeform.block-library-rich-text__tinymce ul li,
+.wp-block-freeform.block-library-rich-text__tinymce ol li {
+	margin-bottom: 0;
 }
 
 .edit-post-visual-editor ul:not(.wp-block-gallery) li > ul,
@@ -220,7 +235,9 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 .block-library-list li > ul,
 .edit-post-visual-editor li > ol,
 .editor-block-list__block li > ol,
-.block-library-list li > ol {
+.block-library-list li > ol,
+.wp-block-freeform.block-library-rich-text__tinymce li > ul,
+.wp-block-freeform.block-library-rich-text__tinymce li > ol {
 	margin-bottom: 0;
 	margin-left: 30px;
 }
@@ -239,11 +256,32 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 .rtl .edit-post-visual-editor ol,
 .rtl .editor-block-list__block ol,
 .rtl .block-library-list ol {
-	margin-left: 30px;
+	margin-left: 0;
 	margin-right: 30px;
 }
 
-/* Quotes */
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	color: #777;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	line-height: 1.25;
+	margin-bottom: 25px;
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+.wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
+	font-size: 64px;
+}
+
+/* Quote */
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
 	border-left: 0;
@@ -268,38 +306,6 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	float: left;
 }
 
-.rtl .editor-block-list__block blockquote {
-	border-left: 0;
-	padding-left: 0;
-	text-align: right;
-}
-
-/* Captions */
-
-[class^="wp-block-"] figcaption {
-	color: #777;
-	font-family: Lato, sans-serif;
-	font-size: 16px;
-	line-height: 1.25;
-	margin-bottom: 25px;
-	max-width: 100%;
-}
-
-/*--------------------------------------------------------------
-3.0 Blocks - Common Blocks
---------------------------------------------------------------*/
-
-/* Paragraph */
-
-.wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-	font-size: 64px;
-}
-
-.rtl .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-}
-
-/* Quote */
-
 .wp-block-quote {
 	color: #555;
 	font-style: italic;
@@ -308,7 +314,10 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	position: relative;
 }
 
-.rtl .wp-block-quote {
+.rtl .editor-block-list__block blockquote {
+	border-left: 0;
+	padding-left: 0;
+	text-align: right;
 }
 
 .wp-block-quote:not(.is-large):not(.is-style-large),
@@ -417,7 +426,27 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 
 /* Classic */
 
+.wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font-family: Genericons;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	height: 30px;
+	line-height: 1.25;
+	speak: none;
+	text-decoration: inherit;
+	vertical-align: top;
+	width: 30px;
+	color: #ddd;
+	content: "\f106";
+	float: left;
+}
+
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
+	border-left: 0;
 	color: #555;
 	font-style: italic;
 	margin: 0 0 30px;
@@ -441,7 +470,6 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote cite:before {
-	content: "-";
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignleft {
@@ -473,57 +501,48 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h1 {
-	color: silver;
-	font-size: 42px;
-	font-weight: 300;
-	line-height: 1.25;
+	font-size: 49px;
+	line-height: 1.225;
+	margin-bottom: 30px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h2 {
-	color: #999;
-	font-size: 32px;
-	font-weight: 700;
-	line-height: 1.25;
+	font-size: 39px;
+	line-height: 1.54;
+	margin-bottom: 30px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h3 {
-	color: gray;
-	font-size: 28px;
-	font-weight: 300;
+	font-size: 31px;
+	line-height: 1.452;
+	margin-bottom: 30px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h4 {
-	color: gray;
-	font-size: 21px;
-	font-weight: 600;
-	text-transform: uppercase;
+	font-size: 25px;
+	line-height: 1.2;
+	margin-bottom: 30px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h5 {
-	color: #5a5a5a;
-	font-size: 19px;
-	font-weight: 400;
+	font-size: 20px;
+	line-height: 1.5;
+	margin-bottom: 30px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
-	color: #5a5a5a;
-	font-size: 17px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+	font-size: 16px;
+	line-height: 1.5;
+	margin-bottom: 30px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 0.85em;
-	line-height: 1.6;
-	margin-bottom: 30px;
+	border-left: 2px solid #d11415;
+	font-size: 1em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 30px;
-	white-space: pre-wrap;
-	word-wrap: break-word;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
@@ -583,9 +602,6 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	border: 0;
 }
 
-.wp-block-pullquote blockquote {
-}
-
 .wp-block-pullquote.alignleft {
 	margin-right: 30px;
 }
@@ -613,9 +629,6 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	text-transform: none;
 	font-size: inherit;
 	font-weight: bold;
-}
-
-.wp-block-pullquote .wp-block-pullquote__citation:before {
 }
 
 /* Table */
