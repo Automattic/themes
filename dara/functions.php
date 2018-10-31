@@ -54,6 +54,42 @@ function dara_setup() {
 	// Testimonial thumbnail
 	add_image_size( 'dara-testimonial-thumbnail', 180, 180, true );
 
+	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'dara' ),
+				'slug' => 'black',
+				'color' => '#222222',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'dara' ),
+				'slug' => 'dark-gray',
+				'color' => '#555555',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'dara' ),
+				'slug' => 'medium-gray',
+				'color' => '#777777',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'dara' ),
+				'slug' => 'light-gray',
+				'color' => '#dddddd',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'dara' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Red', 'dara' ),
+				'slug' => 'red',
+				'color' => '#d11415',
+			)
+		)
+	);
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Header', 'dara' ),
@@ -219,6 +255,9 @@ add_action( 'widgets_init', 'dara_widgets_init' );
 function dara_scripts() {
 	wp_enqueue_style( 'dara-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'dara-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	// Add Yrsa, Source Sans Pro and Merriweather fonts.
 	wp_enqueue_style( 'dara-fonts', dara_fonts_url(), array(), null );
 
@@ -243,6 +282,16 @@ function dara_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dara_scripts' );
+
+/** 
+ * Gutenberg Editor Styles 
+ */
+function dara_editor_styles() {
+	wp_enqueue_style( 'dara-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'dara-fonts', dara_fonts_url() );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+}
+add_action( 'enqueue_block_editor_assets', 'dara_editor_styles' );
 
 if ( ! function_exists( 'dara_continue_reading_link' ) ) :
 /**
