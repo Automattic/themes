@@ -160,6 +160,8 @@ function button_2_scripts() {
 
 	wp_enqueue_style( 'button-2-fonts', button_2_fonts_url(), array(), null );
 
+	wp_enqueue_style( 'button-2-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_script( 'button-2-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), '20170303', true );
 
 	wp_enqueue_script( 'button-2-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
@@ -212,6 +214,15 @@ function button_2_fonts_url() {
 	return $fonts_url;
 
 }
+
+/**
+ * Gutenberg Editor Styles
+ */
+function button_2_editor_styles() {
+	wp_enqueue_style( 'button-2-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+	wp_enqueue_style( 'button-2-fonts', button_2_fonts_url() );
+}
+add_action( 'enqueue_block_editor_assets', 'button_2_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
