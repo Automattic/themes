@@ -83,9 +83,6 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 			'caption',
 		) );
 
-		// Load regular editor styles into the new block-based editor.
-		add_theme_support( 'editor-styles' );
-
 		// Load default block styles.
 		add_theme_support( 'wp-block-styles' );
 
@@ -322,6 +319,8 @@ function dyad_2_block_editor_styles() {
 	wp_enqueue_style( 'dyad-2-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
 	// Add custom fonts.
 	wp_enqueue_style( 'dyad-2-fonts', dyad_2_fonts_url(), array(), null );
+	// Add Genericons.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
 }
 add_action( 'enqueue_block_editor_assets', 'dyad_2_block_editor_styles' );
 
