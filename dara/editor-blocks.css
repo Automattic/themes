@@ -20,7 +20,8 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
+.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text) {
 	color: #444340;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 16px;
@@ -28,9 +29,12 @@
 	line-height: 1.6;
 }
 
-.edit-post-visual-editor .editor-block-list__block {
-	color: #444340;
-	font-size: 16px;
+@media screen and (min-width: 850px) {
+	.edit-post-visual-editor .editor-block-list__block,
+	.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
+	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text) {
+		font-size: 18px;
+	}
 }
 
 .alignleft {
@@ -585,16 +589,10 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	background: transparent;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table td,
-.wp-block-freeform.block-library-rich-text__tinymce table th {
-	padding: 8px 8px;
+.wp-block-freeform.block-library-rich-text__tinymce table td {
 	border: 0;
-	border-bottom: solid 1px;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table td a,
-.wp-block-freeform.block-library-rich-text__tinymce table th a {
-	text-decoration: none;
+	border-top: 1px solid #eee;
+	padding: 0.4em;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table th {
@@ -667,8 +665,8 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	margin: 0;
 }
 
-.wp-block-pullquote.alignleft,
-.wp-block-pullquote.alignright {
+.wp-block-pullquote.alignleft blockquote > .editor-rich-text p,
+.wp-block-pullquote.alignright blockquote > .editor-rich-text p {
 	font-size: 23px;
 }
 
@@ -693,20 +691,21 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 
 .editor-block-list__block table.wp-block-table {
 	display: table;
-	font-size: 0.85em;
-	margin: 0 0 1.6em;
+	border-bottom: 1px solid #eee;
+	margin: 0 0 1.6em 0;
 	width: 100%;
 }
 
-.editor-block-list__block table.wp-block-table td,
-.editor-block-list__block table.wp-block-table th {
-	padding: 8px 8px;
+.editor-block-list__block table.wp-block-table td {
 	border: 0;
-	border-bottom: solid 1px;
+	border-top: 1px solid #eee;
+	padding: 0.4em;
 }
 
 .editor-block-list__block table.wp-block-table th {
-	border-bottom: solid 3px;
+	font-weight: bold;
+	padding: 0.4em;
+	text-transform: uppercase;
 }
 
 /*--------------------------------------------------------------
