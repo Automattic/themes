@@ -20,8 +20,8 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 	color: #444340;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 16px;
@@ -31,8 +31,8 @@
 
 @media screen and (min-width: 850px) {
 	.edit-post-visual-editor .editor-block-list__block,
-	.editor-default-block-appender input[type="text"].editor-default-block-appender__content,
-	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text) {
+	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 		font-size: 18px;
 	}
 }
@@ -158,10 +158,8 @@
 
 /* Main column width */
 
-body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
-body.gutenberg-editor-page .edit-post-visual-editor .editor-default-block-appender,
-body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:not([data-align=wide]):not([data-align=full]) {
-	max-width: 675px;
+.wp-block {
+	max-width: 705px; /* 675px + 30px to account for padding */
 }
 
 /* Link styles */
@@ -278,9 +276,6 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 
 .editor-block-list__block .wp-block-quote {
 	border: none;
-	font-family: "Yrsa", Georgia, serif;
-	font-size: 23px;
-	font-style: normal;
 	margin-left: 0;
 	margin-bottom: 1.6em;
 	padding-left: 2.4em;
@@ -288,8 +283,10 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	position: relative;
 }
 
-.editor-block-list__block .wp-block-quote p {
+.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+	font-family: "Yrsa", Georgia, serif;
 	font-size: 23px;
+	font-style: normal;
 }
 
 .editor-block-list__block .wp-block-quote:before {
@@ -356,10 +353,10 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	padding-left: 1.6em;
 }
 
-.editor-block-list__block .wp-block-quote.is-large,
-.editor-block-list__block .wp-block-quote.is-style-large,
-.editor-block-list__block .wp-block-quote.is-large p,
-.editor-block-list__block .wp-block-quote.is-style-large p {
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large,
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large,
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large p,
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large p {
 	font-style: normal;
 	font-size: 32px;
 }
@@ -637,11 +634,14 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 	border: 0;
 }
 
+.edit-post-visual-editor .wp-block-pullquote p:not(.wp-block-cover-text) {
+	font-family: "Yrsa", Georgia, serif;
+	font-size: 23px;
+	font-style: normal;
+}
+
 .wp-block-pullquote {
 	border: none;
-	font-family: "Yrsa", Georgia, serif;
-	font-size: 32px;
-	font-style: normal;
 	margin-left: 0;
 	margin-bottom: 1.6em;
 	padding: 0 0 0 1.6em;
