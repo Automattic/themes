@@ -145,6 +145,10 @@ figure.alignfull,
 
 /* Quote */
 
+blockquote cite {
+	font-style: normal;
+}
+
 .wp-block-quote,
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
@@ -181,14 +185,19 @@ figure.alignfull,
 
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
-	padding-left: 2.4em;
+	padding-left: 1.6em;
 }
 
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large,
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
-	font-size: 120%;
+	font-size: 32px;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	margin-bottom: .8em;
 }
 
 /* Audio */
@@ -269,10 +278,20 @@ figure.alignfull,
 }
 
 .wp-block-pullquote blockquote {
+	border: none;
+	font-family: "Yrsa", Georgia, serif;
+	font-size: 32px;
+	font-style: normal;
+	margin-left: 0;
+	margin-bottom: 1.6em;
+	padding-left: 1.6em;
+	padding-right: 0;
+	position: relative;
 }
 
 .wp-block-pullquote.alignleft p,
 .wp-block-pullquote.alignright p {
+	font-size: 23px;
 }
 
 .rtl .wp-block-pullquote blockquote {
@@ -284,11 +303,10 @@ figure.alignfull,
 }
 
 .wp-block-pullquote cite {
-	font-size: 0.8em;
+	font-size: 16px;
 }
 
 .wp-block-pullquote cite:before {
-	content: "-";
 }
 
 /* Table */
@@ -386,6 +404,18 @@ hr.wp-block-separator {
 /*--------------------------------------------------------------
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
+
+/* Categories */
+
+.wp-block-categories.aligncenter {
+	margin-left: 1.6em;
+	margin-right: 1.6em;
+	text-align: center;
+}
+
+.wp-block-categories-list.alignleft {
+	margin-left: 1.6em;
+}
 
 /* Latest Comments */
 
