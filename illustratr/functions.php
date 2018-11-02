@@ -203,6 +203,10 @@ function illustratr_source_code_pro_font_url() {
  * Enqueue scripts and styles.
  */
 function illustratr_scripts() {
+
+	// Gutenberg styles
+	wp_enqueue_style( 'illustratr-blocks', get_template_directory_uri() . '/css/blocks.css' );
+
 	wp_enqueue_style( 'illustratr-source-sans-pro', illustratr_source_sans_pro_font_url(), array(), null );
 
 	wp_enqueue_style( 'illustratr-pt-serif', illustratr_pt_serif_font_url(), array(), null );
@@ -232,6 +236,17 @@ function illustratr_scripts() {
 	wp_enqueue_script( 'illustratr-script', get_template_directory_uri() . '/js/illustratr.js', array( 'jquery', 'underscore' ), '20140317', true );
 }
 add_action( 'wp_enqueue_scripts', 'illustratr_scripts' );
+
+/** 
+ * Gutenberg Editor Styles 
+ */
+function apostrophe_2_editor_styles() {
+	wp_enqueue_style( 'illustratr-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css');
+	wp_enqueue_style( 'illustratr-source-sans-pro', illustratr_source_sans_pro_font_url(), array(), null );
+	wp_enqueue_style( 'illustratr-pt-serif', illustratr_pt_serif_font_url(), array(), null );
+	wp_enqueue_style( 'illustratr-source-code-pro', illustratr_source_code_pro_font_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'apostrophe_2_editor_styles' );
 
 /**
  * Enqueue Google fonts style to admin screen for custom header display.
