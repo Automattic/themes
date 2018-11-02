@@ -38,7 +38,7 @@ Description: Used to style Gutenberg Blocks.
 /* Paragraph */
 
 p.has-drop-cap:not(:focus)::first-letter {
-	font-size: 64px;
+	font-size: 124px;
 }
 
 /* Images */
@@ -147,8 +147,8 @@ figure.alignfull,
 
 /* Quote */
 
-blockquote cite {
-	font-style: normal;
+.wp-block-quote {
+	margin-bottom: 20px;
 }
 
 .wp-block-quote,
@@ -166,13 +166,6 @@ blockquote cite {
 }
 
 .wp-block-quote cite {
-	display: block;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: bold;
-	margin: .4em 0;
-	text-transform: uppercase;
 }
 
 .wp-block-quote cite:before {
@@ -182,7 +175,7 @@ blockquote cite {
 .wp-block-quote.is-large footer,
 .wp-block-quote.is-style-large cite,
 .wp-block-quote.is-style-large footer {
-	text-align: left;
+	font-size: 80%;
 }
 
 .wp-block-quote.is-large,
@@ -285,34 +278,32 @@ blockquote cite {
 }
 
 .wp-block-pullquote blockquote {
-	border: none;
-	font-family: "Yrsa", Georgia, serif;
-	font-size: 32px;
-	font-style: normal;
-	margin-left: 0;
-	margin-bottom: 40px;
-	padding-left: 40px;
-	padding-right: 0;
-	position: relative;
+	padding-left: 0;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin: 0 0 20px;
+	font-family: "PT Serif", serif;
+	font-size: 1.2em;
+	border-left: 0;
+	border-top: 2px solid #e06d5e;
+	border-bottom: 2px solid #e06d5e;
 }
 
 .wp-block-pullquote.alignleft {
-	margin-right: 40px;
+
 }
 
 .wp-block-pullquote.alignright p {
-	margin-left: 40px;
+
 }
 
 .wp-block-pullquote.alignleft p,
 .wp-block-pullquote.alignright p {
-	font-size: 23px;
+
 }
 
 .rtl .wp-block-pullquote blockquote {
 	border: 0;
-	padding-right: 40px;
-	padding-left: 0;
 }
 
 .wp-block-pullquote p {
@@ -320,7 +311,7 @@ blockquote cite {
 }
 
 .wp-block-pullquote cite {
-	font-size: 16px;
+	font-size: 80%;
 }
 
 .wp-block-pullquote cite:before {
@@ -359,14 +350,13 @@ blockquote cite {
 .wp-block-button .wp-block-button__link {
 	padding: 10px 20px;
 	border: 1px solid;
+	box-shadow: none;
 	border-radius: 0;
 	display: inline-block;
 	text-transform: uppercase;
 	font-weight: 900;
 	cursor: pointer;
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button;
-	/* Corrects inability to style clickable 'input' types in iOS */
 }
 
 @media screen and (max-width: 767px) {
