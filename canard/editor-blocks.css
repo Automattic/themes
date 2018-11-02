@@ -132,33 +132,25 @@
 
 /* Main column width */
 
-body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
-body.gutenberg-editor-page .edit-post-visual-editor .editor-default-block-appender,
-body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:not([data-align=wide]):not([data-align=full]) {
-	max-width: 720px;
+.wp-block {
+	max-width: 750px; /* 720px + 30px padding */
 }
 
 @media screen and (min-width: 960px) {
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-default-block-appender,
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:not([data-align=wide]):not([data-align=full]) {
-		max-width: 554px;
+	.wp-block {
+		max-width: 584px; /* 554px + 30px padding */
 	}
 }
 
 @media screen and (min-width: 1080px) {
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-default-block-appender,
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:not([data-align=wide]):not([data-align=full]) {
-		max-width: 644px;
+	.wp-block {
+		max-width: 674px; /* 644px + 30px padding */
 	}
 }
 
 @media screen and (min-width: 1380px) {
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-default-block-appender,
-	body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:not([data-align=wide]):not([data-align=full]) {
-		max-width: 869px;
+	.wp-block {
+		max-width: 899px; /* 869px + 30px padding */
 	}
 }
 
@@ -376,10 +368,8 @@ body.gutenberg-editor-page .edit-post-visual-editor .editor-block-list__block:no
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright  {
 }
 
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large,
-.wp-block-quote.is-large p,
-.wp-block-quote.is-style-large p {
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large p:not(.wp-block-cover-text) {
 	font-size: 120%;
 }
 
