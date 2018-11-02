@@ -168,6 +168,17 @@ Description: Used to style Gutenberg Blocks in the editor.
 	content: "\2014";
 }
 
+/* List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce ul,
+.wp-block-freeform.block-library-rich-text__tinymce ul ul {
+	list-style: disc;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce li {
+	margin-bottom: 0;
+}
+
 /* Table styles */
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
@@ -201,6 +212,23 @@ Description: Used to style Gutenberg Blocks in the editor.
 /*--------------------------------------------------------------
 3.0 Blocks - Common Blocks
 --------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+}
+
+/* List */
+
+.editor-styles-wrapper [data-type="core/list"] ul,
+.editor-styles-wrapper [data-type="core/list"] ul ul {
+	list-style: disc;
+}
+
+.editor-styles-wrapper [data-type="core/list"] li {
+	margin-bottom: 0;
+}
 
 /* Quote */
 
@@ -440,6 +468,19 @@ Description: Used to style Gutenberg Blocks in the editor.
 /*--------------------------------------------------------------
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
+
+.editor-styles-wrapper .wp-block-archives ul,
+.editor-styles-wrapper .wp-block-categories ul,
+.editor-styles-wrapper .wp-block-categories ul ul,
+.editor-styles-wrapper .wp-block-latest-posts ul {
+	list-style: disc;
+}
+
+.editor-styles-wrapper .wp-block-archives li,
+.editor-styles-wrapper .wp-block-categories li,
+.editor-styles-wrapper .wp-block-latest-posts li {
+	margin-bottom: 0;
+}
 
 /*--------------------------------------------------------------
 7.0 Blocks - Animations
