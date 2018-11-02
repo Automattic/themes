@@ -60,22 +60,22 @@ function dara_setup() {
 			array(
 				'name'  => esc_html__( 'Black', 'dara' ),
 				'slug' => 'black',
-				'color' => '#222222',
+				'color' => '#404040',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Gray', 'dara' ),
 				'slug' => 'dark-gray',
-				'color' => '#555555',
+				'color' => '#444340',
 			),
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'dara' ),
 				'slug' => 'medium-gray',
-				'color' => '#777777',
+				'color' => '#a8a6a1',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'dara' ),
 				'slug' => 'light-gray',
-				'color' => '#dddddd',
+				'color' => '#e6e6e6',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'dara' ),
@@ -83,9 +83,14 @@ function dara_setup() {
 				'color' => '#ffffff',
 			),
 			array(
-				'name'  => esc_html__( 'Red', 'dara' ),
-				'slug' => 'red',
-				'color' => '#d11415',
+				'name'  => esc_html__( 'Blue', 'dara' ),
+				'slug' => 'blue',
+				'color' => '#15b6b8',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Blue', 'dara' ),
+				'slug' => 'dark-blue',
+				'color' => '#0c8384',
 			)
 		)
 	);
