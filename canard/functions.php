@@ -64,6 +64,9 @@ function canard_setup() {
 	add_image_size( 'canard-featured-content-thumbnail', 915, 500, true );
 	add_image_size( 'canard-single-thumbnail', 1920, 768, true );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
 	// Add custom colors to Gutenberg
 	add_theme_support(
 		'editor-color-palette', array(
@@ -281,8 +284,8 @@ function canard_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'canard_scripts' );
 
-/** 
- * Gutenberg Editor Styles 
+/**
+ * Gutenberg Editor Styles
  */
 function canard_editor_styles() {
 	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
