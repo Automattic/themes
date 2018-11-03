@@ -85,9 +85,6 @@ function altofocus_setup() {
 		'wp-head-callback'   => 'altofocus_custom_background_cb'
 	) ) );
 
-	// Load default block styles.
-	//add_theme_support( 'wp-block-styles' );
-
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
