@@ -54,6 +54,9 @@ function dara_setup() {
 	// Testimonial thumbnail
 	add_image_size( 'dara-testimonial-thumbnail', 180, 180, true );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
 	// Add custom colors to Gutenberg
 	add_theme_support(
 		'editor-color-palette', array(
@@ -288,8 +291,8 @@ function dara_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'dara_scripts' );
 
-/** 
- * Gutenberg Editor Styles 
+/**
+ * Gutenberg Editor Styles
  */
 function dara_editor_styles() {
 	wp_enqueue_style( 'dara-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
