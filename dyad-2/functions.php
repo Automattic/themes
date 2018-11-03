@@ -95,37 +95,37 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Bright Blue', 'dyad-2' ),
+				'name'  => esc_html__( 'Bright Blue', 'dyad-2' ),
 				'slug'  => 'bright-blue',
 				'color' => '#678db8',
 			),
 			array(
-				'name'  => __( 'Yellow', 'dyad-2' ),
+				'name'  => esc_html__( 'Yellow', 'dyad-2' ),
 				'slug'  => 'yellow',
 				'color' => '#e7ae01',
 			),
 			array(
-				'name'  => __( 'Light Gray-Blue', 'dyad-2' ),
+				'name'  => esc_html__( 'Light Gray-Blue', 'dyad-2' ),
 				'slug'  => 'light-gray-blue',
 				'color' => '#abb7c3',
 			),
 			array(
-				'name'  => __( 'Medium Gray', 'dyad-2' ),
+				'name'  => esc_html__( 'Medium Gray', 'dyad-2' ),
 				'slug'  => 'medium-gray',
 				'color' => '#6a6c6e',
 			),
 			array(
-				'name'  => __( 'Dark Gray', 'dyad-2' ),
+				'name'  => esc_html__( 'Dark Gray', 'dyad-2' ),
 				'slug'  => 'dark-gray',
 				'color' => '#1a1c1e',
 			),
 			array(
-				'name'  => __( 'Dark Gray-Blue', 'dyad-2' ),
+				'name'  => esc_html__( 'Dark Gray-Blue', 'dyad-2' ),
 				'slug'  => 'dark-gray-blue',
 				'color' => '#292c2f',
 			),
 			array(
-				'name'  => __( 'White', 'dyad-2' ),
+				'name'  => esc_html__( 'White', 'dyad-2' ),
 				'slug'  => 'white',
 				'color' => '#fff',
 			),
