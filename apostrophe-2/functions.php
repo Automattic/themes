@@ -35,9 +35,12 @@ if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-        
-        // Add wide styles support for Gutenberg
-        add_theme_support( 'align-wide' );
+
+		// Add wide styles support for Gutenberg
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
 
 		// Add custom colors to Gutenberg
 		add_theme_support(
@@ -255,8 +258,8 @@ function apostrophe_2_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'apostrophe_2_scripts' );
 
-/** 
- * Gutenberg Editor Styles 
+/**
+ * Gutenberg Editor Styles
  */
 function apostrophe_2_editor_styles() {
 	wp_enqueue_style( 'apostrophe-2-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css');
