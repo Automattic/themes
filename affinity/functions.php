@@ -45,6 +45,11 @@ function affinity_setup() {
 	 */
 	add_theme_support( 'align-wide' );
 
+	/*
+	 * Add support for responsive embeds.
+	 */
+	add_theme_support( 'responsive-embeds' );
+
 	/**
 	 * Add support for core custom logo
 	 * - also see fallback in inc/jetpack.php
@@ -119,7 +124,7 @@ function affinity_content_width() {
 	// Largest width at mobile breakpoint 46em is 820px
 	// Actual width at largest possible screen size is 540px
 
-	$GLOBALS['content_width'] = apply_filters( 'affinity_content_width', 820 ); 
+	$GLOBALS['content_width'] = apply_filters( 'affinity_content_width', 820 );
 }
 add_action( 'after_setup_theme', 'affinity_content_width', 0 );
 
@@ -266,8 +271,8 @@ function affinity_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'affinity_scripts' );
 
-/** 
- * Gutenberg Editor Styles 
+/**
+ * Gutenberg Editor Styles
  */
 function affinity_editor_styles() {
 	wp_enqueue_style( 'affinity-blocks-editor-style', get_template_directory_uri() . '/editor-blocks.css');
