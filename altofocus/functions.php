@@ -94,27 +94,27 @@ function altofocus_setup() {
 	// Add support for custom color scheme.
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Orange', 'altofocus' ),
+			'name'  => esc_html__( 'Orange', 'altofocus' ),
 			'slug'  => 'orange',
 			'color' => '#e38900',
 		),
 		array(
-			'name'  => __( 'Dark Gray', 'altofocus' ),
+			'name'  => esc_html__( 'Dark Gray', 'altofocus' ),
 			'slug'  => 'dark-gray',
 			'color' => '#111',
 		),
 		array(
-			'name'  => __( 'Medium Gray', 'altofocus' ),
+			'name'  => esc_html__( 'Medium Gray', 'altofocus' ),
 			'slug'  => 'medium-gray',
 			'color' => '#888',
 		),
 		array(
-			'name'  => __( 'Light Gray', 'altofocus' ),
+			'name'  => esc_html__( 'Light Gray', 'altofocus' ),
 			'slug'  => 'light-gray',
 			'color' => '#ccc',
 		),
 		array(
-			'name'  => __( 'White', 'altofocus' ),
+			'name'  => esc_html__( 'White', 'altofocus' ),
 			'slug'  => 'white',
 			'color' => '#fff',
 		),
