@@ -87,30 +87,33 @@ function gazette_setup() {
 		'image', 'video', 'link', 'gallery',
 	) );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
 	// Add support for custom color scheme.
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Blue', 'gazette' ),
+			'name'  => esc_html__( 'Blue', 'gazette' ),
 			'slug'  => 'blue',
 			'color' => '#3863c1',
 		),
 		array(
-			'name'  => __( 'Dark Gray', 'gazette' ),
+			'name'  => esc_html__( 'Dark Gray', 'gazette' ),
 			'slug'  => 'dark-gray',
 			'color' => '#222',
 		),
 		array(
-			'name'  => __( 'Medium Gray', 'gazette' ),
+			'name'  => esc_html__( 'Medium Gray', 'gazette' ),
 			'slug'  => 'medium-gray',
 			'color' => '#777',
 		),
 		array(
-			'name'  => __( 'Light Gray', 'gazette' ),
+			'name'  => esc_html__( 'Light Gray', 'gazette' ),
 			'slug'  => 'light-gray',
 			'color' => '#ddd',
 		),
 		array(
-			'name'  => __( 'White', 'gazette' ),
+			'name'  => esc_html_( 'White', 'gazette' ),
 			'slug'  => 'white',
 			'color' => '#fff',
 		),
