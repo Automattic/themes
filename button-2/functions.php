@@ -82,6 +82,9 @@ function button_2_setup() {
 
 		'default-image' => esc_url( get_template_directory_uri() ) . '/img/buttonbg20170303.png',
 	) ) );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // button_2_setup
 add_action( 'after_setup_theme', 'button_2_setup' );
