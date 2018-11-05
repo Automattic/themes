@@ -41,11 +41,6 @@ function affinity_setup() {
 	add_editor_style();
 
 	/*
-	 * Add wide and full images support for Gutenberg
-	 */
-	add_theme_support( 'align-wide' );
-
-	/*
 	 * Add support for responsive embeds.
 	 */
 	add_theme_support( 'responsive-embeds' );
