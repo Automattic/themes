@@ -61,22 +61,17 @@ function intergalactic_2_setup() {
 			array(
 				'name'  => esc_html__( 'Black', 'intergalactic-2' ),
 				'slug' => 'black',
-				'color' => '#404040',
+				'color' => '#222222',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Gray', 'intergalactic-2' ),
 				'slug' => 'dark-gray',
-				'color' => '#444340',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'intergalactic-2' ),
-				'slug' => 'medium-gray',
-				'color' => '#a8a6a1',
+				'color' => '#333333',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'intergalactic-2' ),
 				'slug' => 'light-gray',
-				'color' => '#e6e6e6',
+				'color' => '#cccccc',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'intergalactic-2' ),
@@ -85,14 +80,19 @@ function intergalactic_2_setup() {
 			),
 			array(
 				'name'  => esc_html__( 'Purple', 'intergalactic-2' ),
-				'slug' => 'blue',
-				'color' => '#15b6b8',
+				'slug' => 'purple',
+				'color' => '#81699b',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Purple', 'intergalactic-2' ),
-				'slug' => 'dark-blue',
-				'color' => '#0c8384',
-			)
+				'slug' => 'dark-purple',
+				'color' => '#553a72',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Green', 'intergalactic-2' ),
+				'slug' => 'dark-green',
+				'color' => '#557d73',
+			),
 		)
 	);
 
