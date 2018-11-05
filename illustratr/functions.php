@@ -60,6 +60,11 @@ function illustratr_setup() {
 	 */
 	add_editor_style( 'editor-style.css' );
 
+	/**
+	 * Responsive embeds
+	 */
+	add_theme_support( 'responsive-embeds' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
