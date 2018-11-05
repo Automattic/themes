@@ -43,6 +43,7 @@ body:not(.has-post-thumbnail) .alignfull {
 }
 
 /* Make non image-based blocks a bit narrower, so they don't get cut off. */
+
 body:not(.has-post-thumbnail) .wp-block-columns.alignfull,
 body:not(.has-post-thumbnail) .wp-block-audio.alignfull,
 body:not(.has-post-thumbnail) .wp-block-table.alignfull,
@@ -53,6 +54,12 @@ body:not(.has-post-thumbnail) .wp-block-latest-posts.alignfull {
 	margin-right: calc(50% - 48vw);
 }
 
+/* Make sure video embeds actually fill the full available space. */
+
+.wp-block-embed.is-type-video.alignfull iframe {
+	height: 100% !important;
+	width: 100% !important;
+}
 
 /*--------------------------------------------------------------
 2.0 General Block Styles
