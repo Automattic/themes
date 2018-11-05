@@ -113,7 +113,7 @@ function gazette_setup() {
 			'color' => '#ddd',
 		),
 		array(
-			'name'  => esc_html_( 'White', 'gazette' ),
+			'name'  => esc_html__( 'White', 'gazette' ),
 			'slug'  => 'white',
 			'color' => '#fff',
 		),
