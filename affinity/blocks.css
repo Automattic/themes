@@ -20,7 +20,7 @@ Description: Used to style Gutenberg Blocks.
 
 /* Captions */
 
-[class^="wp-block-"] figcaption {
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
 	font-size: 13.2px;
 	font-style: italic;
 	margin-bottom: 1.6em;
@@ -225,6 +225,11 @@ hr.wp-block-separator {
 
 /* Latest Comments */
 
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 .wp-block-latest-comments__comment-meta a {
 	box-shadow: none;
 	font-weight: 700;
@@ -235,8 +240,8 @@ hr.wp-block-separator {
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
-	margin-bottom: 0;
-	padding: 1.6em 0;
+	margin-bottom: 1.6em;
+	padding: 0;
 }
 
 .wp-block-latest-comments__comment-excerpt p:last-child {
