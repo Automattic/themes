@@ -39,43 +39,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 64px;
 }
 
-/* Images */
+/* Image */
 
-.wp-block-cover,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-cover.aligncenter {
-	display: flex;
-}
-
-/* Wide Width */
-
-@media (min-width: 1024px) {
-	.apostrophe-2-no-sidebar figure.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-cover.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-gallery.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignwide {
-		width: 120%;
-		max-width: 120%;
-		margin-left: -10%;
-		margin-right: -10%;
-		position: relative;
-	}
-
-	.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignwide:before {
-		content: "";
-		display: block;
-	}
-
-	.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignwide iframe {
-		position:  absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-	}
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image .aligncenter {
+	display: block;
 }
 
 /* Gallery */
@@ -83,6 +52,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-gallery {
 	margin-bottom: 1.6em;
 	margin-left: auto;
+}
+
+.wp-block-gallery figcaption {
+	margin-bottom: 0;
 }
 
 /* Quote */
@@ -151,6 +124,15 @@ blockquote cite {
 .wp-block-audio audio {
 	display: block;
 	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover.aligncenter {
+	display: flex;
 }
 
 /* File */
@@ -353,6 +335,12 @@ hr.wp-block-separator {
 	max-width: 66%;
 }
 
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
 .wp-block-separator.is-style-wide {
 	max-width: 100%;
 }
@@ -375,13 +363,15 @@ hr.wp-block-separator {
 
 /* Latest Comments */
 
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 .editor-block-list__block .wp-block-latest-comments__comment-meta a {
 	box-shadow: none;
 	font-weight: 700;
 	text-decoration: none;
-}
-
-.wp-block-latest-comments__comment-date {
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
