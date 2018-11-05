@@ -422,6 +422,22 @@
 
 .wp-block-code {
 	font-family: Inconsolata, monospace;
+	background: #eee;
+	border: 0;
+	border-left: 2px solid #d11415;
+	border-radius: 0;
+	max-width: 100%;
+	overflow: auto;
+	padding: 30px;
+}
+
+.wp-block-code textarea {
+	background: transparent;
+}
+
+.rtl .wp-block-code {
+	border-left: 0;
+	border-right: 2px solid #d11415;
 }
 
 /* Classic */
@@ -650,26 +666,38 @@
 
 /* Table */
 
-.editor-block-list__block table.wp-block-table {
-	display: table;
-	border: 0;
+.wp-block-table {
 	border-top: 1px solid #ddd;
 	margin: 0 0 30px;
 	text-align: left;
 	width: 100%;
 }
 
-.editor-block-list__block table.wp-block-table td,
-.editor-block-list__block table.wp-block-table th {
-	border: 0;
-	border-bottom: 1px solid #ddd;
-	padding: 5px;
+.wp-block-table thead {
+	background: #eee;
 }
 
-.editor-block-list__block table.wp-block-table th {
-	font-family: Lato, sans-serif;
+.wp-block-table th {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	font-family: "Lato", sans-serif;
 	font-weight: bold;
+	padding: 0;
 	text-transform: uppercase;
+}
+
+.wp-block-table td {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	padding: 0;
+}
+
+.wp-block-table .wp-block-table__cell-content {
+	padding: 3px 5px;
+}
+
+.rtl .wp-block-table {
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
