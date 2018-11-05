@@ -87,9 +87,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* File */
 
-.wp-block-file .wp-block-file__button {
+.wp-block-file a.wp-block-file__button {
 	background: #d11415;
 	border: 2px solid #d11415;
+	border-radius: 0;
 	color: #fff;
 	font-family: Lato, sans-serif;
 	font-weight: bold;
@@ -97,20 +98,17 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-transform: uppercase;
 }
 
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus {
+.wp-block-file a.wp-block-file__button:hover,
+.wp-block-file a.wp-block-file__button:focus {
 	background: #fff;
 	color: #d11415;
 	outline: none;
 }
 
-.wp-block-file .wp-block-file__button:focus {
+.wp-block-file a.wp-block-file__button:focus {
 	background: #fff;
 	color: #d11415;
 	outline: none;
-}
-
-.rtl .wp-block-file * + .wp-block-file__button {
 }
 
 /*--------------------------------------------------------------
@@ -264,8 +262,18 @@ hr.wp-block-separator {
 	max-width: 66%;
 }
 
+.wp-block-separator:not(.is-style-wide) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
 .wp-block-separator.is-style-wide {
 	max-width: 100%;
+}
+
+.wp-block-separator.is-style-dots::before {
+	padding-left: 0;
 }
 
 /*--------------------------------------------------------------
