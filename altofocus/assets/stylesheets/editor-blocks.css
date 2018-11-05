@@ -1,0 +1,549 @@
+/*
+Theme Name: Altofocus
+Description: Used to style Gutenberg Blocks in the editor.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Typography
+2.0 General Block Styles
+3.0 Blocks - Common Blocks
+4.0 Blocks - Formatting
+5.0 Blocks - Layout Elements
+6.0 Blocks - Widgets
+7.0 Blocks - Animations
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Typography
+--------------------------------------------------------------*/
+
+.edit-post-visual-editor .editor-block-list__block,
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+	font-size: 13.875px;
+	font-family: "Libre Baskerville", "Georgia", Georgia, "Times New Roman", Times, serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #111;
+}
+
+.edit-post-visual-editor .editor-block-list__block p {
+	font-size: 13.875px;
+}
+
+.edit-post-visual-editor .editor-block-list__block p:not(:last-child) {
+	margin-bottom: 1.75em
+}
+
+.editor-post-title__block .editor-post-title__input {
+	font-size: 19.6875px;
+	font-family: "Libre Baskerville", "Georgia", Georgia, "Times New Roman", Times, serif;
+	font-weight: 300;
+	line-height: 1.25;
+}
+
+.wp-block-heading h1,
+.wp-block-freeform.block-library-rich-text__tinymce h1 {
+	font-size: 30px;
+}
+
+.wp-block-heading h2,
+.wp-block-freeform.block-library-rich-text__tinymce h2 {
+	font-size: 22px;
+}
+
+.wp-block-heading h3,
+.wp-block-freeform.block-library-rich-text__tinymce h3 {
+	font-size: 17px;
+}
+
+.wp-block-heading h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4 {
+	font-size: 15px;
+}
+
+.wp-block-heading h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5 {
+	font-size: 12px;
+}
+
+.wp-block-heading h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
+	font-size: 10px;
+}
+
+@media screen and (min-width: 37.5em) {
+	.edit-post-visual-editor .editor-block-list__block,
+	.edit-post-visual-editor .editor-block-list__block p,
+	.editor-default-block-appender input[type="text"].editor-default-block-appender__content  {
+		font-size: 16.875px;
+	}
+
+	.editor-post-title__block .editor-post-title__input {
+		font-size: 37.5px;
+	}
+
+	.wp-block-heading h1,
+	.wp-block-freeform.block-library-rich-text__tinymce h1 {
+		font-size: 36px;
+	}
+
+	.wp-block-heading h2,
+	.wp-block-freeform.block-library-rich-text__tinymce h2 {
+		font-size: 27px;
+	}
+
+	.wp-block-heading h3,
+	.wp-block-freeform.block-library-rich-text__tinymce h3 {
+		font-size: 21px;
+	}
+
+	.wp-block-heading h4,
+	.wp-block-freeform.block-library-rich-text__tinymce h4 {
+		font-size: 18px;
+	}
+
+	.wp-block-heading h5,
+	.wp-block-freeform.block-library-rich-text__tinymce h5 {
+		font-size: 15px;
+	}
+
+	.wp-block-heading h6,
+	.wp-block-freeform.block-library-rich-text__tinymce h6 {
+		font-size: 12px;
+	}
+}
+
+/*--------------------------------------------------------------
+2.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Main column width */
+
+.wp-block {
+	max-width: 777px; /* 747px + 30px for padding; should be 840px for pages */
+}
+
+/* Alignments */
+
+.alignleft {
+	margin-right: 1.5em;
+}
+
+.alignright {
+	margin-left: 1.5em;
+}
+
+/* Link styles */
+
+.edit-post-visual-editor a,
+.editor-block-list__block a,
+.wp-block-freeform.block-library-rich-text__tinymce a {
+	color: #e38900;
+	text-decoration: none;
+}
+
+/* Caption styles */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: inherit;
+}
+
+/* Blockquote styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote {
+	border: 0;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce cite {
+	color: #888;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce cite:before {
+	content: "\2014";
+}
+
+/* List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce ul,
+.wp-block-freeform.block-library-rich-text__tinymce ul ul {
+	list-style: disc;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce li {
+	margin-bottom: 0;
+}
+
+/* Table styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce table {
+	border-collapse: collapse;
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 0 0 1.75em;
+	width: 100%;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table th,
+.wp-block-freeform.block-library-rich-text__tinymce table td {
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 12.5px;
+}
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
+/* Pre */
+
+.wp-block-freeform.block-library-rich-text__tinymce pre {
+	background-color: #eee;
+	padding: 1.6em;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+}
+
+/* List */
+
+.editor-styles-wrapper [data-type="core/list"] ul,
+.editor-styles-wrapper [data-type="core/list"] ul ul {
+	list-style: disc;
+}
+
+.editor-styles-wrapper [data-type="core/list"] li {
+	margin-bottom: 0;
+}
+
+/* Quote */
+
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	border: 0;
+	margin: 0 25px;
+	padding: 0;
+}
+
+.wp-block-quote .wp-block-quote__citation {
+	color: #888;
+	font-size: inherit;
+	font-style: italic;
+}
+
+.wp-block-quote .wp-block-quote__citation:before{
+	content: "\2014";
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 24px;
+	font-style: normal;
+	line-height: 1.6;
+}
+
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block p.wp-block-cover-text {
+	font-size: 24px;
+}
+
+/* File */
+
+.wp-block-file .wp-block-file__textlink {
+	color: #e38900;
+}
+
+.wp-block-file .wp-block-file__button {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid;
+	border-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+	color: #111111;
+	display: inline-block;
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13.875px;
+	font-size: 0.925rem;
+	font-weight: 300;
+	line-height: 1;
+	outline: none;
+	padding: 1em 25px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transform: all 0.3s ease;
+	-ms-transform: all 0.3s ease;
+	transition: all 0.3s ease;
+	word-break: break-word;
+}
+
+.wp-block-file a.wp-block-file__button:hover {
+	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	background: #e38900;
+	border-color: #e38900;
+	color: #fff;
+}
+
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
+	-webkit-transform: scale(0.925);
+	-moz-transform: scale(0.925);
+	-o-transform: scale(0.925);
+	-ms-transform: scale(0.925);
+	transform: scale(0.925);
+}
+
+
+/*--------------------------------------------------------------
+4.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse pre {
+	font-style: italic;
+	padding: 0;
+}
+
+/* Code */
+
+.wp-block-code {
+	background: #eee;
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 1.75em;
+	padding: 1.6em;
+}
+
+.wp-block-code textarea {
+	background: transparent;
+}
+
+/* Preformatted */
+
+.wp-block-preformatted {
+	background: #eee;
+	margin-bottom: 1.75em;
+	padding: 1.6em;
+}
+
+.wp-block-preformatted pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14.0625px;
+	line-height: 1.875;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-pullquote.alignleft blockquote > .editor-rich-text p,
+.wp-block-pullquote.alignright blockquote > .editor-rich-text p {
+	font-size: 20px;
+}
+
+.wp-block-pullquote .wp-block-pullquote__citation {
+	color: #888;
+	font-size: inherit;
+	font-style: italic;
+	text-transform: none;
+}
+
+.wp-block-pullquote .wp-block-pullquote__citation:before{
+	content: "\2014";
+}
+
+/* Table */
+
+.wp-block-table {
+	border-collapse: collapse;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 0 0 1.75em;
+	width: 100%;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 12.5px;
+}
+
+.wp-block-table__cell-content {
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Button */
+
+.wp-block-button .wp-block-button__link {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid;
+	border-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+	color: #111111;
+	display: inline-block;
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13.875px;
+	font-size: 0.925rem;
+	font-weight: 300;
+	line-height: 1;
+	outline: none;
+	padding: 1em 25px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transform: all 0.3s ease;
+	-ms-transform: all 0.3s ease;
+	transition: all 0.3s ease;
+	word-break: break-word;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	background: #e38900;
+	border-color: #e38900;
+	color: #fff;
+}
+
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
+	-webkit-transform: scale(0.925);
+	-moz-transform: scale(0.925);
+	-o-transform: scale(0.925);
+	-ms-transform: scale(0.925);
+	transform: scale(0.925);
+}
+
+@media screen and (min-width: 37.5em) {
+	.wp-block-button .wp-block-button__link {
+		font-size: 15px;
+		font-size: 1rem;
+	}
+}
+
+/* Seperator */
+
+.wp-block-separator {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+.editor-styles-wrapper .wp-block-archives ul,
+.editor-styles-wrapper .wp-block-categories ul,
+.editor-styles-wrapper .wp-block-categories ul ul,
+.editor-styles-wrapper .wp-block-latest-posts ul {
+	list-style: disc;
+}
+
+.editor-styles-wrapper .wp-block-archives li,
+.editor-styles-wrapper .wp-block-categories li,
+.editor-styles-wrapper .wp-block-latest-posts li {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+7.0 Blocks - Animations
+--------------------------------------------------------------*/
+
+@-webkit-keyframes bounce-reveal {
+	0%,
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	33% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	66% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@-moz-keyframes bounce-reveal {
+	0%,
+	100% {
+		-moz-transform: scale(1);
+		transform: scale(1);
+	}
+	33% {
+		-moz-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	66% {
+		-moz-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@-o-keyframes bounce-reveal {
+	0%,
+	100% {
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+	33% {
+		-o-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	66% {
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@keyframes bounce-reveal {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.1);
+	}
+	66% {
+		transform: scale(0.9);
+	}
+}
+

@@ -1,0 +1,395 @@
+/*
+Theme Name: Altofocus
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Block Styles
+2.0 Blocks - Common Blocks
+3.0 Blocks - Formatting
+4.0 Blocks - Layout Elements
+5.0 Blocks - Widgets
+6.0 Blocks - Colors
+7.0 Blocks - Animations
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: inherit;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin: 0 0 1.75em;
+}
+
+.wp-block-gallery figcaption {
+	line-height: 1.5;
+}
+
+/* Quote */
+
+.wp-block-quote {
+	margin-bottom: 1.75em;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-style: normal;
+	margin-bottom: 1.0em;
+}
+
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-large footer,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.is-style-large footer {
+	text-align: inherit;
+}
+
+/* Audio */
+
+.wp-block-audio {
+	margin-bottom: 1.75em;
+}
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover.aligncenter,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright {
+	display: flex;
+}
+
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover-image h2 {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+
+/* File */
+
+a.wp-block-file__button,
+a.wp-block-file__button:not(.has-background),
+a.wp-block-file__button:visited {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background-color: #fff;
+	border: 1px solid;
+	border-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+	color: #111111;
+	display: inline-block;
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13.875px;
+	font-size: 0.925rem;
+	font-weight: 300;
+	line-height: 1;
+	outline: none;
+	padding: 1em 25px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transform: all 0.3s ease;
+	-ms-transform: all 0.3s ease;
+	transition: all 0.3s ease;
+	word-break: break-word;
+}
+
+a.wp-block-file__button:hover,
+a.wp-block-file__button:not(.has-background):hover {
+	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	background-color: #e38900;
+	border-color: #e38900;
+	color: #fff;
+}
+
+a.wp-block-file__button:focus,
+a.wp-block-file__button:not(.has-background):focus,
+a.wp-block-file__button:active,
+a.wp-block-file__button:not(.has-background):active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
+	-webkit-transform: scale(0.925);
+	-moz-transform: scale(0.925);
+	-o-transform: scale(0.925);
+	-ms-transform: scale(0.925);
+	transform: scale(0.925);
+}
+
+@media screen and (min-width: 37.5em) {
+	.wp-block-file .wp-block-file__button,
+	a.wp-block-file__button:not(.has-background) {
+		font-size: 15px;
+		font-size: 1rem;
+	}
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	background: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: italic;
+	padding: 0;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote cite {
+	color: #888;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button__link,
+.wp-block-button__link:not(.has-background) {
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: #fff;
+	border: 1px solid;
+	border-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
+	color: #111111;
+	display: inline-block;
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13.875px;
+	font-size: 0.925rem;
+	font-weight: 300;
+	line-height: 1;
+	outline: none;
+	padding: 1em 25px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transform: all 0.3s ease;
+	-ms-transform: all 0.3s ease;
+	transition: all 0.3s ease;
+	word-break: break-word;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:not(.has-background):hover {
+	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	background: #e38900;
+	border-color: #e38900;
+	color: #fff;
+}
+
+.wp-block-button__link:focus,
+.wp-block-button__link:not(.has-background):focus,
+.wp-block-button__link:active,
+.wp-block-button__link:not(.has-background):active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
+	-webkit-transform: scale(0.925);
+	-moz-transform: scale(0.925);
+	-o-transform: scale(0.925);
+	-ms-transform: scale(0.925);
+	transform: scale(0.925);
+}
+
+@media screen and (min-width: 37.5em) {
+	.wp-block-button .wp-block-button__link,
+	.wp-block-button .wp-block-button__link:not(.has-background) {
+		font-size: 15px;
+		font-size: 1rem;
+	}
+}
+
+/* Seperator */
+
+hr.wp-block-separator {
+	border: 0;
+}
+
+.wp-block-separator {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
+.wp-block-separator.is-style-wide {
+	max-width: 100%;
+}
+
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 1.75em;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Archives, Categories & Latest Posts */
+
+.wp-block-archives.aligncenter,
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter {
+	text-align: center;
+}
+
+/* Latest Posts */
+
+.wp-block-latest-posts.is-grid {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+.has-orange-color {
+	color: #e38900 !important;
+}
+
+.has-orange-background-color {
+	background-color: #e38900 !important;
+}
+
+.has-dark-gray-color {
+	color: #111 !important;
+}
+
+.has-dark-gray-background-color {
+	background-color: #111 !important;
+}
+
+.has-medium-888-color {
+	color: #111111 !important;
+}
+
+.has-medium-gray-background-color {
+	background-color: #888 !important;
+}
+
+.has-light-gray-color {
+	color: #ccc !important;
+}
+
+.has-light-gray-background-color {
+	background-color: #ccc !important;
+}
+
+.has-white-color {
+	color: #fff !important;
+}
+
+.has-white-background-color {
+	background-color: #fff !important;
+}
+
+/*--------------------------------------------------------------
+7.0 Blocks - Animations
+--------------------------------------------------------------*/
+
+@-webkit-keyframes bounce-reveal {
+	0%,
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	33% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	66% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@-moz-keyframes bounce-reveal {
+	0%,
+	100% {
+		-moz-transform: scale(1);
+		transform: scale(1);
+	}
+	33% {
+		-moz-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	66% {
+		-moz-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@-o-keyframes bounce-reveal {
+	0%,
+	100% {
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+	33% {
+		-o-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+	66% {
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@keyframes bounce-reveal {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	33% {
+		transform: scale(1.1);
+	}
+	66% {
+		transform: scale(0.9);
+	}
+}
