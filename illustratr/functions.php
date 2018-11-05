@@ -65,6 +65,11 @@ function illustratr_setup() {
 	 */
 	add_theme_support( 'responsive-embeds' );
 
+	/**
+	 * Gutenberg wide and full images support
+	 */
+	add_theme_support( 'align-wide' );
+
 	// Add custom colors to Gutenberg
 	add_theme_support(
 		'editor-color-palette', array(
