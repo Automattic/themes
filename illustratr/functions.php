@@ -97,6 +97,9 @@ function illustratr_setup() {
 		'comment-form',
 		'gallery',
 	) );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // illustratr_setup
 add_action( 'after_setup_theme', 'illustratr_setup' );
@@ -242,8 +245,8 @@ function illustratr_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'illustratr_scripts' );
 
-/** 
- * Gutenberg Editor Styles 
+/**
+ * Gutenberg Editor Styles
  */
 function apostrophe_2_editor_styles() {
 	wp_enqueue_style( 'illustratr-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
