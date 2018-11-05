@@ -85,6 +85,9 @@ function button_2_setup() {
 
 	// Add support for wide images in Gutenberg
 	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // button_2_setup
 add_action( 'after_setup_theme', 'button_2_setup' );
