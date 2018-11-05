@@ -41,16 +41,25 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Images */
 
 .wp-block-cover,
+.wp-block-cover-image,
 .wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft,
 .wp-block-cover.alignright,
-.wp-block-cover.aligncenter {
+.wp-block-cover-image.alignright,
+.wp-block-cover.aligncenter,
+.wp-block-cover-image.aligncenter {
 	display: flex;
 }
 
 /* Full Width */
 
+body {
+	overflow-x: hidden;
+}
+
 .apostrophe-2-no-sidebar figure.alignfull,
 .apostrophe-2-no-sidebar .wp-block-cover.alignfull,
+.apostrophe-2-no-sidebar .wp-block-cover-image.alignfull,
 .apostrophe-2-no-sidebar .wp-block-gallery.alignfull,
 .apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignfull {
 	width: 100vw;
@@ -64,6 +73,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .rtl.apostrophe-2-no-sidebar figure.alignfull,
 .rtl.apostrophe-2-no-sidebar .wp-block-cover.alignfull,
+.rtl.apostrophe-2-no-sidebar .wp-block-cover-image.alignfull,
 .rtl.apostrophe-2-no-sidebar .wp-block-gallery.alignfull,
 .rtl.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignfull {
 	left: auto;
@@ -91,6 +101,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 @media (min-width: 1024px) {
 	.apostrophe-2-no-sidebar figure.alignwide,
 	.apostrophe-2-no-sidebar .wp-block-cover.alignwide,
+	.apostrophe-2-no-sidebar .wp-block-cover-image.alignwide,
 	.apostrophe-2-no-sidebar .wp-block-gallery.alignwide,
 	.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignwide {
 		width: 120%;
@@ -175,7 +186,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* File */
 
-.wp-block-file .wp-block-file__button {
+.wp-block-file a.wp-block-file__button,
+.wp-block-file a.wp-block-file__button:visited {
 	background: rgba(255, 255, 255, 0.25);
 	border: 2px solid #117bb8;
 	border-radius: 0;
@@ -200,7 +212,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-file .wp-block-file__button:focus {
 	background-color: #ceeafa;
 	border-color: #0d5c89;
-	margin-top: 6px;
 	outline: none;
 }
 
@@ -362,10 +373,14 @@ hr.wp-block-separator {
 	max-width: 100%;
 }
 
-.wp-block-separator.is-style-wide {
-	max-width: 120%;
-	margin-left: -10%;
-	margin-right: -10%;
+.wp-block-separator:not(.is-style-wide) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
+.wp-block-separator.is-style-dots::before {
+	padding-left: 0;
 }
 
 /*--------------------------------------------------------------
@@ -495,4 +510,3 @@ hr.wp-block-separator {
 .has-black-background-color:active {
 	background-color: #404040;
 }
-
