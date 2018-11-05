@@ -50,6 +50,11 @@ function intergalactic_2_setup() {
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
+	/**
+	 * Gutenberg wide and full images support
+	 */
+	add_theme_support( 'align-wide' );
+
  	// Add custom colors to Gutenberg
 	add_theme_support(
 		'editor-color-palette', array(
@@ -79,12 +84,12 @@ function intergalactic_2_setup() {
 				'color' => '#ffffff',
 			),
 			array(
-				'name'  => esc_html__( 'Blue', 'intergalactic-2' ),
+				'name'  => esc_html__( 'Purple', 'intergalactic-2' ),
 				'slug' => 'blue',
 				'color' => '#15b6b8',
 			),
 			array(
-				'name'  => esc_html__( 'Dark Blue', 'intergalactic-2' ),
+				'name'  => esc_html__( 'Dark Purple', 'intergalactic-2' ),
 				'slug' => 'dark-blue',
 				'color' => '#0c8384',
 			)
