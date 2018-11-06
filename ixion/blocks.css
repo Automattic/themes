@@ -21,7 +21,6 @@ Description: Used to style Gutenberg Blocks.
 /* Captions */
 
 [class^="wp-block-"] figcaption {
-	margin: 0.8em 0;
 	text-align: center;
 }
 
@@ -47,10 +46,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 /* Full Width */
-.no-sidebar figure.alignfull,
-.no-sidebar .wp-block-cover.alignfull,
-.no-sidebar .wp-block-gallery.alignfull,
-.no-sidebar .wp-block-embed.is-type-video.alignfull {
+.no-sidebar .alignfull {
 	width: 100vw;
 	max-width: 100vw;
 	margin-left: 0;
@@ -60,15 +56,26 @@ p.has-drop-cap:not(:focus)::first-letter {
 	transform: translateX( -50% );
 }
 
+.no-sidebar .wp-block-columns.alignfull,
+.no-sidebar .wp-block-latest-comments.alignfull,
+.no-sidebar .wp-block-categories.alignfull,
+.no-sidebar .wp-block-archives.alignfull,
+.no-sidebar .wp-block-latest-posts.alignfull {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+
+.no-sidebar .wp-block-table.alignfull {
+	margin-left: .75em;
+	margin-right: .75em;
+}
+
 .no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
 	width: 100% !important;
 	height: 100% !important;
 }
 
-.rtl.no-sidebar figure.alignfull,
-.rtl.no-sidebar .wp-block-cover.alignfull,
-.rtl.no-sidebar .wp-block-gallery.alignfull,
-.rtl.no-sidebar .wp-block-embed.is-type-video.alignfull {
+.rtl.no-sidebar .alignfull {
 	left: auto;
 	right: 50%;
 	transform: translateX(50%);
@@ -77,10 +84,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Wide Width */
 
 @media (min-width: 1024px) {
-	.no-sidebar figure.alignwide,
-	.no-sidebar .wp-block-cover.alignwide,
-	.no-sidebar .wp-block-gallery.alignwide,
-	.no-sidebar .wp-block-embed.is-type-video.alignwide {
+	.no-sidebar .alignwide {
 		width: 120%;
 		max-width: 120%;
 		margin-left: -10%;
