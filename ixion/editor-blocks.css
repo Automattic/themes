@@ -22,11 +22,10 @@
 .edit-post-visual-editor .editor-block-list__block,
 .edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	font-family: Lato, Helvetica, sans-serif;
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.5;
-	color: #000;
+	color: #192930;
+	font-family: "Cooper Hewitt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.875;
 }
 
 .alignleft {
@@ -49,19 +48,13 @@
 /* Title */
 
 .editor-post-title__block .editor-post-title__input {
-	font-family: Lato, Helvetica, sans-serif;
+	font-family: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	clear: both;
-	font-size: 42px;
-	margin: .375em 0;
-	text-transform: uppercase;
-}
-
-@media screen and (min-width: 784px) {
-	.editor-post-title__block .editor-post-title__input {
-		font-size: 80px;
-		margin: .1875em 0;
-	}
+	margin: 0 0 .8em;
+	font-size: 24px;
+	line-height: 1.2;
+	border-width: 0;
 }
 
 /* Headings */
@@ -72,85 +65,65 @@
 .edit-post-visual-editor h4,
 .edit-post-visual-editor h5,
 .edit-post-visual-editor h6 {
+	font-family: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	clear: both;
-	margin: .75em 0;
-	text-transform: uppercase;
+	margin: .8em 0;
 }
 
 .edit-post-visual-editor h1 {
-	font-size: 42px;
-	margin: .375em 0;
+	font-size: 36px;
+	line-height: 1.2;
+	margin: .4em 0;
 }
 
 .edit-post-visual-editor h2 {
-	font-size: 30px;
-	line-height: 1.4;
-
-	margin: .375em 0;
+	font-size: 32px;
+	line-height: 1.2;
+	margin: .4em 0;
 }
 
 .edit-post-visual-editor h3 {
 	font-size: 24px;
-	line-height: 1.3;
-
-	text-transform: none;
+	margin: .4em 0;
 }
 
 .edit-post-visual-editor h4 {
+	color: #a5a29d;
 	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .edit-post-visual-editor h5 {
-	font-size: 18px;
+	color: #a5a29d;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .edit-post-visual-editor h6 {
+	color: #a5a29d;
 	font-size: 14px;
-}
-
-@media screen and (min-width: 784px) {
-	.edit-post-visual-editor h1 {
-		font-size: 80px;
-		margin: .1875em 0;
-	}
-
-	.edit-post-visual-editor h2 {
-		font-size: 42px;
-		margin: .1875em 0;
-	}
-
-	.edit-post-visual-editor h3 {
-		font-size: 30px;
-	}
-
-	.edit-post-visual-editor h4 {
-		font-size: 20px;
-	}
-
-	.edit-post-visual-editor h5 {
-		font-size: 18px;
-	}
-
-	.edit-post-visual-editor h6 {
-		font-size: 14px;
-	}
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
 /* Paragraphs */
 
 .edit-post-visual-editor p {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.8em;
 }
 
 .edit-post-visual-editor blockquote p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.8em;
 }
 
 /* Images */
 
 .wp-block-image figcaption {
-	font-size: 14px;
+	margin: 0.8em 0;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -160,7 +133,7 @@
 /* Main column width */
 
 .wp-block {
-	max-width: 690px; /* 660px + 30px to account for padding */
+	max-width: 742px; /* 712px + 30px to account for padding */
 }
 
 /* Link styles */
@@ -168,10 +141,7 @@
 .edit-post-visual-editor a,
 .editor-block-list__block a,
 .wp-block-freeform.block-library-rich-text__tinymce a {
-	color: #81699b;
-	-webkit-transition: .3s all ease-in-out;
-	   -moz-transition: .3s all ease-in-out;
-			transition: .3s all ease-in-out;
+	color: #d7b221;
 }
 
 .edit-post-visual-editor a:hover,
@@ -183,7 +153,8 @@
 .wp-block-freeform.block-library-rich-text__tinymce a:hover,
 .wp-block-freeform.block-library-rich-text__tinymce a:focus,
 .wp-block-freeform.block-library-rich-text__tinymce a:active {
-	color: #557d73;
+	color: #ab8d1a;
+	text-decoration: underline;
 }
 
 /* List styles */
@@ -194,8 +165,8 @@
 .edit-post-visual-editor ol,
 .editor-block-list__block ol,
 .block-library-list ol.editor-rich-text__tinymce {
-	margin: 0 0 1.5em 3em;
-	padding: 0;
+	margin: 0 0 1.6em 1.6em;
+	padding-left: 0;
 }
 
 .block-library-list .editor-rich-text__tinymce {
@@ -206,7 +177,7 @@
 .edit-post-visual-editor ul:not(.wp-block-gallery),
 .editor-block-list__block ul:not(.wp-block-gallery),
 .block-library-list ul {
-	list-style: disc;
+	list-style: square;
 }
 
 .edit-post-visual-editor ol,
@@ -465,69 +436,48 @@
 .wp-block-freeform.block-library-rich-text__tinymce h4,
 .wp-block-freeform.block-library-rich-text__tinymce h5,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
+	font-family: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	clear: both;
-	margin: .75em 0;
-	text-transform: uppercase;
+	margin: .8em 0;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h1 {
-	font-size: 42px;
-	margin: .375em 0;
+	font-size: 36px;
+	line-height: 1.2;
+	margin: .4em 0;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h2 {
-	font-size: 30px;
-	line-height: 1.4;
-
-	margin: .375em 0;
+	font-size: 32px;
+	line-height: 1.2;
+	margin: .4em 0;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h3 {
 	font-size: 24px;
-	line-height: 1.3;
-
-	text-transform: none;
+	margin: .4em 0;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h4 {
+	color: #a5a29d;
 	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h5 {
-	font-size: 18px;
+	color: #a5a29d;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
+	color: #a5a29d;
 	font-size: 14px;
-}
-
-@media screen and (min-width: 784px) {
-	.wp-block-freeform.block-library-rich-text__tinymce h1 {
-		font-size: 80px;
-		margin: .1875em 0;
-	}
-
-	.wp-block-freeform.block-library-rich-text__tinymce h2 {
-		font-size: 42px;
-		margin: .1875em 0;
-	}
-
-	.wp-block-freeform.block-library-rich-text__tinymce h3 {
-		font-size: 30px;
-	}
-
-	.wp-block-freeform.block-library-rich-text__tinymce h4 {
-		font-size: 20px;
-	}
-
-	.wp-block-freeform.block-library-rich-text__tinymce h5 {
-		font-size: 1em;
-	}
-
-	.wp-block-freeform.block-library-rich-text__tinymce h6 {
-		font-size: .778em;
-	}
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
