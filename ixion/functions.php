@@ -41,7 +41,7 @@ if ( ! function_exists( 'ixion_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Black', 'ixion' ),
 					'slug' => 'black',
-					'color' => '#222222',
+					'color' => '#192930',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Gray', 'ixion' ),
@@ -61,17 +61,12 @@ if ( ! function_exists( 'ixion_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Yellow', 'ixion' ),
 					'slug' => 'yellow',
-					'color' => '#81699b',
+					'color' => '#d7b221',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Yellow', 'ixion' ),
 					'slug' => 'dark-yellow',
-					'color' => '#553a72',
-				),
-				array(
-					'name'  => esc_html__( 'Dark Green', 'ixion' ),
-					'slug' => 'dark-green',
-					'color' => '#557d73',
+					'color' => '#c1a01e',
 				),
 			)
 		);
