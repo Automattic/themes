@@ -32,7 +32,7 @@
 
                     if ( img_width >= 1100
                         && img.parents( '.tiled-gallery-item-large' ).length === 0
-                        && img.parents().attr( ['class^="wp-block-"'] ).length === 0 ) {
+                        && img.parents( '[class^="wp-block-"]' ).length === 0 ) {
                             $( img ).addClass( 'size-big' );
                      }
 
