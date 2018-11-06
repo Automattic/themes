@@ -51,7 +51,7 @@ if ( ! function_exists( 'ixion_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Light Gray', 'ixion' ),
 					'slug' => 'light-gray',
-					'color' => '#cccccc',
+					'color' => '#eeece8',
 				),
 				array(
 					'name'  => esc_html__( 'White', 'ixion' ),
