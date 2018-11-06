@@ -64,7 +64,7 @@ function karuna_setup() {
 			array(
 				'name'  => esc_html__( 'Light Gray', 'karuna' ),
 				'slug' => 'light-gray',
-				'color' => '#eeece8',
+				'color' => '#dddddd',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'karuna' ),
