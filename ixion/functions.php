@@ -311,7 +311,6 @@ function ixion_editor_styles() {
 	wp_enqueue_style( 'ixion-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
 	wp_enqueue_style( 'ixion-fonts-archivo', ixion_fonts_url_archivo(), array(), null );
 	wp_enqueue_style( 'ixion-fonts-cooper', ixion_fonts_url_cooper(), array(), null );
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
 }
 add_action( 'enqueue_block_editor_assets', 'ixion_editor_styles' );
 
