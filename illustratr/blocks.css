@@ -31,32 +31,13 @@ Description: Used to style Gutenberg Blocks.
 	text-align: center;
 }
 
-/*--------------------------------------------------------------
-2.0 Blocks - Common Blocks
---------------------------------------------------------------*/
-
-/* Paragraph */
-
-p.has-drop-cap:not(:focus)::first-letter {
-	font-size: 124px;
-}
-
-/* Images */
-
-.wp-block-cover,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-cover.aligncenter {
-	display: flex;
-}
+/* Alignments */
 
 /* Full Width */
-figure.alignfull,
-.wp-block-cover.alignfull,
-.wp-block-gallery.alignfull,
-.wp-block-embed.is-type-video.alignfull {
-	width: calc(100vw - 40px); /* subtract 40px for body padding */
-	max-width: calc(100vw - 40px);
+
+.alignfull {
+	width: calc(100vw - 52px); /* subtract 52px for body padding */
+	max-width: calc(100vw - 52px);
 	margin-left: 0;
 	margin-right: 0;
 	position: relative;
@@ -64,15 +45,23 @@ figure.alignfull,
 	transform: translateX( -50% );
 }
 
+@media (min-width: 768px) {
+	.alignfull.wp-block-table,
+	.alignfull.wp-block-categories,
+	.alignfull.wp-block-archives,
+	.alignfull.wp-block-latest-posts,
+	.alignfull.wp-block-latest-comments {
+		width: calc(100vw - 100px); /* subtract 100px on text-based blocks for more spacing */
+		max-width: calc(100vw - 100px);
+	}
+}
+
 .wp-block-embed.is-type-video.alignfull iframe {
 	width: 100% !important;
 	height: 100% !important;
 }
 
-.rtl figure.alignfull,
-.rtl .wp-block-cover.alignfull,
-.rtl .wp-block-gallery.alignfull,
-.rtl .wp-block-embed.is-type-video.alignfull {
+.rtl .alignfull {
 	left: auto;
 	right: 50%;
 	transform: translateX(50%);
@@ -82,10 +71,7 @@ figure.alignfull,
 /* Wide Width */
 
 @media (min-width: 1024px) {
-	figure.alignwide,
-	.wp-block-cover.alignwide,
-	.wp-block-gallery.alignwide,
-	.wp-block-embed.is-type-video.alignwide {
+	.alignwide {
 		width: 120%;
 		max-width: 120%;
 		margin-left: -10%;
@@ -97,6 +83,16 @@ figure.alignfull,
 		width: 100% !important;
 		height: 100% !important;
 	}
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 124px;
 }
 
 /* Gallery */
@@ -116,20 +112,6 @@ figure.alignfull,
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
 	font-style: normal;
-}
-
-.wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.wp-block-quote:not(.is-large):not(.is-style-large).alignright {
-}
-
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
-}
-
-.wp-block-quote cite {
-}
-
-.wp-block-quote cite:before {
 }
 
 .wp-block-quote.is-large cite,
@@ -196,7 +178,13 @@ figure.alignfull,
 	color: #fff;
 }
 
-.rtl .wp-block-file * + .wp-block-file__button {
+/* Cover */
+
+.wp-block-cover,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover.aligncenter {
+	display: flex;
 }
 
 /*--------------------------------------------------------------
