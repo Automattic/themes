@@ -27,6 +27,55 @@ if ( ! function_exists( 'ixion_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		/**
+		 * Gutenberg wide and full images support
+		 */
+
+		add_theme_support( 'align-wide' );
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette', array(
+				array(
+					'name'  => esc_html__( 'Black', 'ixion' ),
+					'slug' => 'black',
+					'color' => '#222222',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'ixion' ),
+					'slug' => 'dark-gray',
+					'color' => '#333333',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'ixion' ),
+					'slug' => 'light-gray',
+					'color' => '#cccccc',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'ixion' ),
+					'slug' => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Yellow', 'ixion' ),
+					'slug' => 'yellow',
+					'color' => '#81699b',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Yellow', 'ixion' ),
+					'slug' => 'dark-yellow',
+					'color' => '#553a72',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Green', 'ixion' ),
+					'slug' => 'dark-green',
+					'color' => '#557d73',
+				),
+			)
+		);
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -233,6 +282,9 @@ function ixion_fonts_url_cooper() {
 function ixion_scripts() {
 	wp_enqueue_style( 'ixion-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'ixion-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'ixion-fonts-archivo', ixion_fonts_url_archivo(), array(), null );
 	wp_enqueue_style( 'ixion-fonts-cooper', ixion_fonts_url_cooper(), array(), null );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/fonts/genericons/genericons/genericons.css' );
@@ -251,6 +303,17 @@ function ixion_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'ixion_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function ixion_editor_styles() {
+	wp_enqueue_style( 'ixion-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'ixion-fonts-archivo', ixion_fonts_url_archivo(), array(), null );
+	wp_enqueue_style( 'ixion-fonts-cooper', ixion_fonts_url_cooper(), array(), null );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+}
+add_action( 'enqueue_block_editor_assets', 'ixion_editor_styles' );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.
