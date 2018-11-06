@@ -225,8 +225,9 @@ function button_2_fonts_url() {
  * Gutenberg Editor Styles
  */
 function button_2_editor_styles() {
-	wp_enqueue_style( 'button-2-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'button-2-fonts', button_2_fonts_url() );
+
+	wp_enqueue_style( 'button-2-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 }
 add_action( 'enqueue_block_editor_assets', 'button_2_editor_styles' );
 

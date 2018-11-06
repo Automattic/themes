@@ -31,13 +31,11 @@ Description: Used to style Gutenberg blocks
 
 p.has-drop-cap:not(:focus)::first-letter {
 	font-family: Lora, Garamond, serif;
+	font-size: 3.75em;
 }
 
 
 /* Images */
-
-.wp-block-image {}
-
 .wp-block-image .alignleft {
 	margin-right: 1.5em;
 }
@@ -132,36 +130,60 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-cover-image .wp-block-cover-image-text {
-	margin-bottom: 1em;
+	margin: 0;
 }
 
 /* Gallery */
 
-.wp-block-gallery {}
+.wp-block-gallery {
+	margin-left: 0;
+}
 
 /* Quote */
 
-.wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.wp-block-quote:not(.is-large):not(.is-style-large).alignright {}
+.wp-block-quote p:last-of-type {
+	margin-bottom: 1em;
+}
 
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {}
+.wp-block-quote cite {
+	color: #999;
+	font-size: 16px;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding: 0;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 1.5em;
+}
 
 .wp-block-quote.is-large cite,
 .wp-block-quote.is-large footer,
 .wp-block-quote.is-style-large cite,
-.wp-block-quote.is-style-large footer {}
-
-.rtl .wp-block-quote.is-large cite,
-.rtl .wp-block-quote.is-large footer,
-.rtl .wp-block-quote.is-style-large cite,
-.rtl .wp-block-quote.is-style-large footer {}
-
+.wp-block-quote.is-style-large footer {
+	font-size: 1em;
+}
 
 /* Audio */
 
 .wp-block-audio audio {
 	width: 100%;
+}
+
+/* File */
+.wp-block-file {
+	line-height: 52px;
+}
+
+/* Video */
+
+.wp-block-video {
+	display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -189,6 +211,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	border-radius: 0;
 	border: 1px dashed white;
 	box-shadow: none;
+	font-size: 14px;
 	font-weight: bold;
 	line-height: 1;
 	margin: 5px;
@@ -241,7 +264,9 @@ hr.wp-block-separator {
 5.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
-
+.wp-block-latest-comments {
+	margin-left: 0;
+}
 
 /*--------------------------------------------------------------
 6.0 Blocks - Colors
