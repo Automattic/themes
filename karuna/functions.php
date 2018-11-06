@@ -49,17 +49,12 @@ function karuna_setup() {
 			array(
 				'name'  => esc_html__( 'Black', 'karuna' ),
 				'slug' => 'black',
-				'color' => '#192930',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'karuna' ),
-				'slug' => 'dark-gray',
 				'color' => '#333333',
 			),
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'karuna' ),
 				'slug' => 'medium-gray',
-				'color' => '#a5a29d',
+				'color' => '#999999',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'karuna' ),
@@ -79,7 +74,7 @@ function karuna_setup() {
 			array(
 				'name'  => esc_html__( 'Dark Purple', 'karuna' ),
 				'slug' => 'dark-purple',
-				'color' => '#9c8012',
+				'color' => '#471e9e',
 			),
 			array(
 				'name'  => esc_html__( 'Green', 'karuna' ),
@@ -89,7 +84,7 @@ function karuna_setup() {
 			array(
 				'name'  => esc_html__( 'Dark Green', 'karuna' ),
 				'slug' => 'dark-green',
-				'color' => '#9c8012',
+				'color' => '#609d1b',
 			),
 		)
 	);
