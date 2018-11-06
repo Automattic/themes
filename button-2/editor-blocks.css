@@ -178,7 +178,9 @@ Description: Gutenberg Block Editor Styles
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
 	border-left: none;
+	border-right: none;
 	padding-left: 0;
+	padding-right: 0;
 }
 
 .wp-block-quote {
@@ -286,11 +288,13 @@ Description: Gutenberg Block Editor Styles
 .wp-block-freeform.block-library-rich-text__tinymce q,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	border-left: none;
+	border-right: none;
 	box-shadow: none;
 	font-family: Lora, Garamond, serif;
 	font-size: 20px;
 	font-style: italic;
 	padding-left: 0;
+	padding-right: 0;
 	color: #bbb;
 }
 
@@ -360,6 +364,13 @@ Description: Gutenberg Block Editor Styles
 	margin-left: 0.75em;
 	padding-left: 0;
 }
+
+.rtl .editor-styles-wrapper .wp-block-freeform li > ul,
+.rtl .editor-styles-wrapper .wp-block-freeform li > ol {
+	margin-right: 0.75em;
+	padding-right: 0;
+}
+
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
 	background-color: #f3f3f3;
@@ -462,6 +473,10 @@ pre.wp-block-verse {
 .wp-block-table th .wp-block-table__cell-content {
 	border-bottom: 3px solid #ddd;
 	text-align: left;
+}
+
+.rtl .wp-block-table th .wp-block-table__cell-content {
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
