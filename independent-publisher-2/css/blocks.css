@@ -28,16 +28,19 @@ Description: Used to style Gutenberg Blocks.
 	clear: both;
 }
 
-
-body:not(.has-sidebar) .alignwide {
-	margin-left: calc(25% - 25vw);
-	margin-right: calc(25% - 25vw);
-	width: auto;
+@media (min-width: 1140px) {
+	body:not(.has-sidebar) .alignwide {
+		margin-left: -25%;
+		margin-right: -25%;
+		max-width: 1000%;
+		width: auto;
+	}
 }
 
 body:not(.has-sidebar) .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
+	max-width: 1000%;
 	width: auto;
 }
 
@@ -52,22 +55,18 @@ body:not(.has-sidebar) .wp-block-latest-posts.alignfull {
 	margin-right: calc(50% - 48vw);
 }
 
+.wp-block-embed.is-type-video iframe {
+	max-height: 100%;
+}
+
+.wp-block-embed.is-type-video.alignfull iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
 /*--------------------------------------------------------------
 2.0 General Block Styles
 --------------------------------------------------------------*/
-
-/* Override theme's large image styles when in blocks */
-body:not(.has-sidebar) [class^="wp-block-"] img.size-big {
-	margin-left: 0 !important;
-	max-width: 100% !important;
-	width: auto !important;
-}
-
-body:not(.has-sidebar) .wp-block-image.alignfull img.size-big,
-body:not(.has-sidebar) .wp-block-image.alignwide img.size-big {
-	max-width: 1000% !important;
-}
-
 
 /*--------------------------------------------------------------
 3.0 Blocks - Common Blocks
@@ -99,7 +98,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-align: inherit;
 }
 
-
 /* Audio */
 
 .wp-block-audio {
@@ -113,34 +111,53 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Cover */
 
+.wp-block-cover.aligncenter,
+.wp-block-cover-image.aligncenter,
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover-image.alignright {
+	display: flex;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text, .wp-block-cover h2 {
+	font-size: 1.5em;
+	margin-bottom: inherit;
+}
+
 /* File */
 
-.wp-block-file__button {
+.wp-block-file .wp-block-file__button {
+	background: #0087be;
+	border: solid 1px transparent;
+	border-radius: 3px;
 	box-sizing: content-box;
-	padding: .4375em .875em;
+	color: #fff;
+	cursor: pointer;
 	-webkit-transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
-	transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
+			transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	font-style: normal;
+	padding: .4375em .875em;
 	text-decoration: none;
-	color: #fff;
-	border: solid 1px transparent;
-	border-radius: 3px;
-	background: #0087be;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp-block-file__button:focus,
-.wp-block-file__button:active {
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:active {
 	outline: 0;
 	background: #767676;
 	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25), 0 0 0 6px rgba(0, 0, 0, .08);
 }
 
-.wp-block-file__button:hover {
+.wp-block-file .wp-block-file__button:hover {
 	text-decoration: none;
 	color: #fff;
 	background: #767676;
@@ -152,6 +169,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Verse */
 
+.wp-block-verse {
+	background: none;
+	font-family: inherit;
+	font-style: italic;
+	padding: 0;
+}
+
 /* Code */
 
 /* Preformatted */
@@ -161,6 +185,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-pullquote {
 	border: #0087be solid;
 	border-width: 3px 0;
+	padding: 0.5em;
+}
+
+.wp-block-pullquote blockquote {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright {
+	margin-top: 0.5em;
+	margin-bottom: 1.0em;
 }
 
 .wp-block-pullquote blockquote {
@@ -176,38 +212,49 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Table */
 
+@media (min-width: 1140px) {
+	body:not(.has-sidebar) .wp-block-table.alignwide {
+		width: 1100px;
+	}
+}
+
+body:not(.has-sidebar) .wp-block-table.alignfull {
+	width: 96vw;
+}
+
 /*--------------------------------------------------------------
 5.0 Blocks - Layout Elements
 --------------------------------------------------------------*/
 
 /* Buttons */
 
-.wp-block-button__link {
+.wp-block-button .wp-block-button__link {
+	background: #0087be;
+	border: solid 1px transparent;
+	border-radius: 3px;
 	box-sizing: content-box;
-	padding: .4375em .875em;
+	color: #fff;
+	cursor: pointer;
 	-webkit-transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
-	transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
+			transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	font-style: normal;
+	padding: .4375em .875em;
 	text-decoration: none;
-	color: #fff;
-	border: solid 1px transparent;
-	border-radius: 3px;
-	background: #0087be;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
 	outline: 0;
 	background: #767676;
 	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25), 0 0 0 6px rgba(0, 0, 0, .08);
 }
 
-.wp-block-button__link:hover {
+.wp-block-button .wp-block-button__link:hover {
 	text-decoration: none;
 	color: #fff;
 	background: #767676;
@@ -221,7 +268,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	border: 0;
 }
 
-.wp-block-separator:not(.is-style-wide) {
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 100px;
@@ -237,9 +284,28 @@ p.has-drop-cap:not(:focus)::first-letter {
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
+/* Categories, Latest Posts & Archives */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+}
+
 /* Latest Comments */
 
 .wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Latest Posts */
+
+.wp-block-latest-posts.is-grid {
 	margin-left: 0;
 	margin-right: 0;
 }
