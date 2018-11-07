@@ -18,34 +18,14 @@ Description: Used to style Gutenberg Blocks.
 1.0 General Block Styles
 --------------------------------------------------------------*/
 
-/* Captions */
+/* Alignments */
 
-[class^="wp-block-"] figcaption {
-	text-align: center;
-}
-
-/*--------------------------------------------------------------
-2.0 Blocks - Common Blocks
---------------------------------------------------------------*/
-
-/* Paragraph */
-
-p.has-drop-cap:not(:focus)::first-letter {
-	font-size: 141px;
-    line-height: 1.1;
-    margin-bottom: -40px
-}
-
-/* Images */
-
-.wp-block-cover,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-cover.aligncenter {
-	display: flex;
+.no-sidebar #page {
+	overflow-x: hidden;
 }
 
 /* Full Width */
+
 .no-sidebar .alignfull {
 	width: 100vw;
 	max-width: 100vw;
@@ -62,13 +42,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 .no-sidebar .wp-block-archives.alignfull,
 .no-sidebar .wp-block-latest-posts.alignfull,
 .no-sidebar .wp-block-file.alignfull {
-	padding-left: 1.5em;
-	padding-right: 1.5em;
-}
-
-.no-sidebar .wp-block-table.alignfull {
-	margin-left: .75em;
-	margin-right: .75em;
+	padding-left: 2em;
+	padding-right: 2em;
 }
 
 .no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
@@ -97,6 +72,24 @@ p.has-drop-cap:not(:focus)::first-letter {
 		width: 100% !important;
 		height: 100% !important;
 	}
+}
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 110px;
+	line-height: 1.1;
+	margin-top: 0.1em;
 }
 
 /* Gallery */
@@ -131,15 +124,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-left: 1.5em;
 }
 
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
-}
-
 .wp-block-quote cite {
 	font-style: italic;
-}
-
-.wp-block-quote cite:before {
 }
 
 .wp-block-quote.is-large cite,
@@ -172,9 +158,22 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Audio */
 
+.wp-block-audio {
+	margin-bottom: 1.8em;
+}
+
 .wp-block-audio audio {
 	display: block;
 	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover.aligncenter {
+	display: flex;
 }
 
 /* File */
@@ -220,6 +219,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -285,6 +285,26 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-pullquote p {
 	margin: 0;
+}
+
+/* Table */
+
+.wp-block-table th {
+	text-align: left;
+}
+
+.no-sidebar .wp-block-table.alignfull {
+	width: 98vw;
+}
+
+@media (min-width: 1024px) {
+	.no-sidebar .wp-block-table.alignwide {
+		width: 855px;
+	}
+}
+
+.rtl .wp-block-table th {
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
