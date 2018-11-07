@@ -27,33 +27,12 @@
 	line-height: 1.6;
 }
 
-.alignleft {
-	display: inline;
-	float: left;
-	margin: .8em 1.6em .8em 0;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin: .8em 0 .8em 1.6em;
-}
-
-.aligncenter {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-block-columns.alignfull,
-.wp-block-latest-comments.alignfull,
-.editor-block-list__block[data-align="full"] .wp-block-file {
-	padding-left: 1.6em;
-	padding-right: 1.6em;
-}
-
-.editor-block-list__block[data-align="full"] table.wp-block-table {
-	margin-left: .8em;
-	margin-right: .8em;
+@media screen and (min-width: 768px) {
+	.edit-post-visual-editor .editor-block-list__block,
+	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+		font-size: 18px;
+	}
 }
 
 /* Title */
@@ -139,13 +118,6 @@
 	margin: .8em 0;
 }
 
-/* Images */
-
-.wp-block-image figcaption {
-	font-style: italic;
-	text-align: center;
-}
-
 /*--------------------------------------------------------------
 2.0 General Block Styles
 --------------------------------------------------------------*/
@@ -154,6 +126,32 @@
 
 .wp-block {
 	max-width: 715px; /* 685px + 30px to account for padding */
+}
+
+/* Alignments */
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin: .8em 1.6em .8em 0;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin: .8em 0 .8em 1.6em;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-columns.alignfull,
+.wp-block-latest-comments.alignfull,
+.editor-block-list__block[data-align="full"] .wp-block-file {
+	padding-left: 1.6em;
+	padding-right: 1.6em;
 }
 
 /* Link styles */
@@ -232,9 +230,21 @@
 /* Captions */
 
 [class^="wp-block-"] figcaption {
-	text-align: center;
+	font-size: inherit;
 	font-style: italic;
+	text-align: center;
 }
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	color: inherit;
+}
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
 
 /*--------------------------------------------------------------
 3.0 Blocks - Common Blocks
@@ -323,11 +333,12 @@
 	font-style: normal;
 }
 
-/* Audio */
-
-/* Cover Images */
-
 /* File */
+
+.wp-block-file__textlink {
+	color: #6636cc;
+	font-weight: bold;
+}
 
 .wp-block-file .wp-block-file__button {
 	border: 2px solid;
@@ -377,6 +388,8 @@
 
 .wp-block-code {
 	background: rgba(0, 0, 0, 0.02);
+	border: 0;
+	border-radius: 0;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -394,7 +407,7 @@
 /* Classic */
 
 .wp-block-freeform.block-library-rich-text__tinymce address {
-	margin-top: 0.8em; 
+	margin-top: 0.8em;
 	margin-bottom: 0.8em;
 }
 
@@ -697,18 +710,21 @@
 .wp-block-separator {
 	background-color: #ddd;
 	border: 0;
-	height: 1px;
+	height: 1.1px; /* To work around odd issue in Firefox */
 	margin-bottom: 1.6em;
-}
-
-
-.wp-block-separator.is-style-wide {
-	max-width: 100%;
 }
 
 /*--------------------------------------------------------------
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
+
+/* Categories, Latest Posts & Archives */
+
+[data-align="center"] .wp-block-categories ul,
+[data-align="center"] .wp-block-latest-posts ul,
+[data-align="center"] .wp-block-archives ul {
+	list-style-position: inside;
+}
 
 /* Categories */
 

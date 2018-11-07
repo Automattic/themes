@@ -18,33 +18,14 @@ Description: Used to style Gutenberg Blocks.
 1.0 General Block Styles
 --------------------------------------------------------------*/
 
-/* Captions */
+/* Alignments */
 
-[class^="wp-block-"] figcaption {
-	font-style: italic;
-	text-align: center;
-}
-
-/*--------------------------------------------------------------
-2.0 Blocks - Common Blocks
---------------------------------------------------------------*/
-
-/* Paragraph */
-
-p.has-drop-cap:not(:focus)::first-letter {
-	font-size: 130px;
-}
-
-/* Images */
-
-.wp-block-cover,
-.wp-block-cover.alignleft,
-.wp-block-cover.alignright,
-.wp-block-cover.aligncenter {
-	display: flex;
+#page {
+	overflow-x: hidden; /* prevents slight side-scroll with full aligned images. */
 }
 
 /* Full Width */
+
 .no-sidebar .alignfull {
 	width: 100vw;
 	max-width: 100vw;
@@ -63,11 +44,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 .no-sidebar .wp-block-file.alignfull {
 	padding-left: 1.6em;
 	padding-right: 1.6em;
-}
-
-.no-sidebar .wp-block-table.alignfull {
-	margin-left: .8em;
-	margin-right: .8em;
 }
 
 .no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
@@ -96,6 +72,37 @@ p.has-drop-cap:not(:focus)::first-letter {
 		width: 100% !important;
 		height: 100% !important;
 	}
+}
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	font-size: inherit;
+	font-style: italic;
+	text-align: center;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	color: inherit;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 130px;
+}
+
+/* Images */
+
+.wp-block-cover,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover.aligncenter {
+	display: flex;
 }
 
 /* Gallery */
@@ -215,6 +222,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-right: 0;
 }
 
+/* Video */
+
+.wp-block-video.alignfull video {
+	width: 100%;
+}
 
 /*--------------------------------------------------------------
 3.0 Blocks - Formatting Blocks
@@ -287,11 +299,15 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding-right: 1.6em;
 }
 
-.rtl .wp-block-pullquote {
-}
-
 .wp-block-pullquote p {
 	margin: 0 0 .8em;
+}
+
+/* Table */
+
+.no-sidebar .wp-block-table.alignfull {
+	margin-left: .8em;
+	margin-right: .8em;
 }
 
 /*--------------------------------------------------------------
@@ -355,6 +371,9 @@ hr.wp-block-separator {
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.6em;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 100px;
 }
 
@@ -362,16 +381,35 @@ hr.wp-block-separator {
 	max-width: 100%;
 }
 
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 1.6em;
+}
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
+
+/* Categories, Latest Posts & Archives */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
 
 /* Categories */
 
 .wp-block-categories.aligncenter {
 	margin-left: 1.6em;
 	margin-right: 1.6em;
-	text-align: center;
 }
 
 .wp-block-categories-list.alignleft {
@@ -391,9 +429,6 @@ hr.wp-block-separator {
 	text-decoration: none;
 }
 
-.wp-block-latest-comments__comment-date {
-}
-
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	border-top: 1px solid #dddddd;
 	margin-bottom: 0;
@@ -403,6 +438,8 @@ hr.wp-block-separator {
 .wp-block-latest-comments__comment-excerpt p:last-child {
 	margin-bottom: 0;
 }
+
+/* Latest Posts */
 
 .rtl .wp-block-latest-posts {
 	margin-left: 0;
