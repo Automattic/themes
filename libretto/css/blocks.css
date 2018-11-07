@@ -36,7 +36,15 @@ Description: Used to style Gutenberg Blocks.
 /* Paragraph */
 
 p.has-drop-cap:not(:focus)::first-letter {
-	font-size: 130px;
+	color: #b7b1a9;
+	display: inline-block;
+	float: left;
+	font-family: "Playfair Display";
+	font-size: 70px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+	margin: 6px 10px 0 -5px;
 }
 
 /* Images */
@@ -62,6 +70,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Quote */
 
 .wp-block-quote {
+	margin: 0 0 .75em;
 }
 
 .wp-block-quote,
@@ -81,6 +90,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-quote cite {
+	display: block;
+	width: 100%;
+	float: none;
+	text-align: right;
 }
 
 .wp-block-quote.is-large cite,
@@ -124,6 +137,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-file a.wp-block-file__button,
 .wp-block-file a.wp-block-file__button:visited {
+	border-radius: 0;
 	background: #a09a92;
 	border: 1px solid #eae9e6;
 	color: #eae9e6;

@@ -257,22 +257,46 @@
 /* Paragraph */
 
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-	font-size: 130px;
+	color: #b7b1a9;
+	display: inline-block;
+	float: left;
+	font-family: "Playfair Display";
+	font-size: 70px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+	margin: 6px 10px 0 -5px;
 }
 
 /* Quote */
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
-	margin: 0 1.5em;
+	margin: 0 0 .75em;
 	border: 0;
 	padding: 0;
 }
 
-.editor-block-list__block .wp-block-quote {
-	font-size: 26px;
+.editor-block-list__block .wp-block-quote:before {
+	color: #ebe7e1;
+	content: "\201C";
+	display: block;
+	font-size: 208px;
 	font-style: normal;
-	font-weight: bold;
-	margin: 0 1.5em 1.5em;
+	left: -35px;
+	line-height: 1;
+	position: absolute;
+	top: -40px;
+	z-index: -1;
+}
+
+.editor-block-list__block .wp-block-quote {
+	color: #a09a92;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 28px;
+	font-style: italic;
+	line-height: 1.4;
+	position: relative;
+	z-index: 10000;
 }
 
 .edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
@@ -280,9 +304,19 @@
 }
 
 .editor-block-list__block .wp-block-quote__citation {
-	font-style: italic;
-	font-size: inherit;
-	color: inherit;
+	color: #787065;
+	float: right;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	letter-spacing: 1px;
+	margin-top: 1em;
+	text-transform: uppercase;
+}
+
+.editor-block-list__block .wp-block-quote__citation::before {
+  content: "\2013";
+  display: inline;
 }
 
 .rtl .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
@@ -301,10 +335,25 @@
 }
 
 .editor-block-list__block .wp-block-quote.alignleft {
+	background: #fff;
+	border-bottom: 1px solid #ebe7e1;
+	border-top: 2px solid #a09a92;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.025);
+	font-size: 27px;
+	font-size: 2.7rem;
+	max-width: 75%;
+	padding: 0.5em;
 	margin: .75em 1.5em .75em 0;
 }
 
 .editor-block-list__block .wp-block-quote.alignright {
+	background: #fff;
+	border-bottom: 1px solid #ebe7e1;
+	border-top: 2px solid #a09a92;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.025);
+	font-size: 27px;
+	max-width: 75%;
+	padding: 0.5em;
 	margin: .75em 0 .75em 1.5em;
 }
 
