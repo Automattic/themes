@@ -50,6 +50,60 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 		add_image_size( 'libretto-oversized', 900, 600, false );
 		add_image_size( 'libretto-fullpage', 1600, 1000, false );
 
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+	 	/**
+		 * Gutenberg wide and full images support
+		 */
+		add_theme_support( 'align-wide' );
+
+	 	// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette', array(
+				array(
+					'name'  => esc_html__( 'Black', 'libretto' ),
+					'slug' => 'black',
+					'color' => '#333333',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'libretto' ),
+					'slug' => 'medium-gray',
+					'color' => '#999999',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'libretto' ),
+					'slug' => 'light-gray',
+					'color' => '#dddddd',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'libretto' ),
+					'slug' => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Purple', 'libretto' ),
+					'slug' => 'purple',
+					'color' => '#6636cc',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Purple', 'libretto' ),
+					'slug' => 'dark-purple',
+					'color' => '#471e9e',
+				),
+				array(
+					'name'  => esc_html__( 'Green', 'libretto' ),
+					'slug' => 'green',
+					'color' => '#85cc36',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Green', 'libretto' ),
+					'slug' => 'dark-green',
+					'color' => '#609d1b',
+				),
+			)
+		);
+
 		/**
 		 * This theme uses wp_nav_menu() in two locations:
 		 * one at the top of the page, and one for social media links in the footer
@@ -205,6 +259,9 @@ function libretto_scripts() {
 	wp_enqueue_style( 'libretto-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'libretto-script', get_template_directory_uri().'/js/libretto.js', array( 'jquery' ), '20140331' );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'libretto-blocks', get_template_directory_uri() . '/css/blocks.css' );
+
 	// Fonts
 	wp_enqueue_style( 'libretto-fonts', libretto_fonts_url(), array(), null );
 	wp_enqueue_style( 'libretto-custom-icons', get_template_directory_uri().'/icons/icons.css', array(), null );
@@ -220,6 +277,16 @@ function libretto_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'libretto_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function libretto_editor_styles() {
+	wp_enqueue_style( 'libretto-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+	wp_enqueue_style( 'libretto-fonts', libretto_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'libretto_editor_styles' );
+
 
 /**
  * Create a reusable array of available sidebars.
