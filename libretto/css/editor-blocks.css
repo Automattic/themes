@@ -156,6 +156,12 @@
 	max-width: 710px; /* 680px + 30px to account for padding */
 }
 
+/* Background color */
+
+.editor-block-list__layout {
+	background-color: #faf9f5;
+}
+
 /* Link styles */
 
 .edit-post-visual-editor a,
@@ -629,8 +635,12 @@
 	width: 100%;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table tr:nth-of-type(odd) {
-  background: rgba(255, 255, 255, 0.5);
+.wp-block-freeform.block-library-rich-text__tinymce .alternate {
+	background: transparent;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table tr:nth-of-type(odd) td {
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table td {
@@ -639,20 +649,19 @@
 	padding: 0.8em 1em;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table th {
-	font-style: italic;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table thead:nth-of-type(odd) tr {
+.wp-block-freeform.block-library-rich-text__tinymce table thead:nth-of-type(odd) tr td {
 	background: none;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table thead th {
-	border-width: 2px;
-	color: #a09a92;
-	font-style: normal;
-	font-weight: bold;
-	padding: 0.4em 1em;
+.wp-block-freeform.block-library-rich-text__tinymce table th {
+	font-style: italic;
+	border-bottom: 1px solid #d9d6d0;
+	padding: 0.8em 1em;
+	text-align: left;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce table th {
+	text-align: right;
 }
 
 /* Preformatted */
@@ -749,8 +758,8 @@
 	margin: 0.5em 0 1.5em;
 }
 
-.editor-block-list__block table.wp-block-table tr:nth-of-type(odd) {
-  background: rgba(255, 255, 255, 0.5);
+.editor-block-list__block table.wp-block-table tr:nth-of-type(odd) td {
+	background: rgba(255, 255, 255, 0.5);
 }
 
 .editor-block-list__block table.wp-block-table td {
@@ -759,20 +768,19 @@
 	padding: 0.8em 1em;
 }
 
-.editor-block-list__block table.wp-block-table th {
-	font-style: italic;
-}
-
-.editor-block-list__block table.wp-block-table thead:nth-of-type(odd) tr {
+.editor-block-list__block table.wp-block-table thead:nth-of-type(odd) tr td {
 	background: none;
 }
 
-.editor-block-list__block table.wp-block-table thead th {
-	border-width: 2px;
-	color: #a09a92;
-	font-style: normal;
-	font-weight: bold;
-	padding: 0.4em 1em;
+.editor-block-list__block table.wp-block-table th {
+	font-style: italic;
+	border-bottom: 1px solid #d9d6d0;
+	padding: 0.8em 1em;
+	text-align: left;
+}
+
+.rtl .editor-block-list__block table.wp-block-table th {
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
