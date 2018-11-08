@@ -283,11 +283,20 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	margin: 6px 10px 0 -5px;
 }
 
+.rtl .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
+	float: right;
+	margin: 6px -5px 0 10px;
+}
+
 @media only screen and (min-width: 641px) {
 	.wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
 		font-size: 121px;
 		line-height: 70px;
 		margin: 6px 10px 0 -5px;
+	}
+
+	.rtl .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
+		margin: 6px -5px 0 10px;
 	}
 }
 
@@ -353,6 +362,12 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	z-index: -1;
 }
 
+.rtl .editor-block-list__block .wp-block-quote:before {
+	content: "\201C";
+	left: auto;
+	right: -35px;
+}
+
 .editor-block-list__block .wp-block-quote {
 	color: #a09a92;
 	font-family: "Playfair Display", Georgia, serif;
@@ -384,8 +399,8 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .editor-block-list__block .wp-block-quote__citation::before {
-  content: "\2013";
-  display: inline;
+	content: "\2013";
+	display: inline;
 }
 
 .rtl .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
@@ -559,6 +574,12 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	position: absolute;
 	top: -40px;
 	z-index: -1;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
+	content: "\201D";
+	right: -35px;
+	left: auto;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {

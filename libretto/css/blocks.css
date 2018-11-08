@@ -92,10 +92,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-quote.alignright {
 }
 
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
-}
-
 .wp-block-quote cite {
 	display: block;
 	width: 100%;
@@ -129,7 +125,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	border: 0;
 }
 
-.rtl .wp-block-quote cite {
+.rtl  blockquote.wp-block-quote cite:before {
 	float: none;
 }
 
@@ -380,6 +376,11 @@ hr.wp-block-separator {
 	border-top: 1px solid #d9d6d0;
 	margin-bottom: 0;
 	padding: .75em 0;
+}
+
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	margin: 0;
 }
 
 .wp-block-latest-comments__comment-excerpt p:last-child {
