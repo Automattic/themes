@@ -923,7 +923,10 @@ a:hover, a:active {
 }
 
 .nav-links .arrow a,
-.nav-links .page-numbers {
+.nav-links .page-numbers,
+.blog .nav-links a,
+.archive .nav-links a,
+.search .nav-links a {
 	background-color: #f0f0f0;
 	border-radius: 2px;
 	display: inline-block;
@@ -935,12 +938,18 @@ a:hover, a:active {
 	width: 48px;
 }
 
-.nav-links .arrow a:hover {
+.nav-links .arrow a:hover,
+.blog .nav-links a:hover,
+.archive .nav-links a:hover,
+.search .nav-links a:hover {
 	background-color: #d63031;
 	color: #fff;
 }
 
-.nav-links a:hover .icon {
+.nav-links a:hover .icon,
+.blog .nav-links a:hover .icon,
+.archive .nav-links a:hover .icon,
+.search .nav-links a:hover .icon {
 	fill: #fff;
 }
 
@@ -2497,13 +2506,24 @@ object {
 		line-height: 1.7647;
 	}
 
+	.archive .nav-links,
+	.blog .nav-links,
+	.search .nav-links {
+		border-top: none;
+		max-width: 100%;
+		padding-top: 0;
+	}
+
 	.nav-links a {
 		font-size: 24px;
 		font-size: 2.4rem;
 	}
 
 	.nav-links .arrow a,
-	.nav-links .page-numbers {
+	.nav-links .page-numbers,
+	.blog .nav-links a,
+	.archive .nav-links a,
+	.search .nav-links a {
 		box-shadow: 0 0 0 1px #fff;
 		font-size: 20px;
 		font-size: 2rem;
@@ -2512,7 +2532,7 @@ object {
 		width: 60px;
 	}
 
-	.nav-links .arrow .icon {
+	.nav-links .icon {
 		height: 36px;
 		width: 36px;
 		margin: 12px;
