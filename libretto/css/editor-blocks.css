@@ -296,22 +296,27 @@
 	font-style: italic;
 	line-height: 1.4;
 	position: relative;
-	z-index: 10000;
+	z-index: 2;
 }
 
 .edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+	font-family: "Playfair Display", Georgia, serif;
+	color: #a09a92;
 	font-size: 26px;
+	font-style: italic;
 }
 
 .editor-block-list__block .wp-block-quote__citation {
 	color: #787065;
-	float: right;
+	display: block;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	letter-spacing: 1px;
 	margin-top: 1em;
 	text-transform: uppercase;
+	text-align: right;
+	width: 100%;
 }
 
 .editor-block-list__block .wp-block-quote__citation::before {
@@ -368,7 +373,6 @@
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	font-size: 32px;
-	font-style: normal;
 	margin: 0 .75em .75em;
 	padding: 0;
 }
@@ -475,12 +479,28 @@
 	margin-left: 1.5em;
 }
 
+.wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
+	color: #ebe7e1;
+	content: "\201C";
+	display: block;
+	font-size: 208px;
+	font-style: normal;
+	left: -35px;
+	line-height: 1;
+	position: absolute;
+	top: -40px;
+	z-index: -1;
+}
+
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	border: 0;
-	font-size: 26px;
-	font-style: normal;
-	font-weight: bold;
-	margin: 0 1.5em 1.5em;
+	color: #a09a92;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 28px;
+	font-style: italic;
+	line-height: 1.4;
+	position: relative;
+	z-index: 2;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote p {
@@ -494,8 +514,16 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote cite {
-	font-style: italic;
-	text-transform: none;
+	color: #787065;
+	display: block;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	letter-spacing: 1px;
+	margin-top: 1em;
+	text-transform: uppercase;
+	text-align: right;
+	width: 100%;
 }
 
 .rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote {
