@@ -783,12 +783,61 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	padding-right: 1.5em;
 }
 
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright {
+	background: #fff;
+	border-bottom: 1px solid #ebe7e1;
+	border-top: 2px solid #a09a92;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.025);
+	font-size: 27px;
+	max-width: 75%;
+	padding: 0.5em;
+}
+
+.wp-block-pullquote.alignleft cite,
+.wp-block-pullquote.alignright cite {
+	display: block;
+	width: 100%;
+	text-align: right;
+}
+
+.wp-block-pullquote.alignleft blockquote,
+.wp-block-pullquote.alignright blockquote {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
 .wp-block-pullquote.alignleft {
 	margin-right: 1.5em;
 }
 
 .wp-block-pullquote.alignright {
 	margin-left: 1.5em;
+}
+
+@media only screen and (min-width: 641px) {
+	.rtl .wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignleft {
+		margin-left: -1.5em;
+	}
+
+	.rtl .wp-block-pullquote.alignright,
+	.wp-block-pullquote.alignright {
+		margin-right: -1.5em;
+	}
+}
+
+@media only screen and (min-width: 860px) {
+	.rtl .wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignleft {
+		margin-left: -6em;
+	}
+
+	.rtl .wp-block-pullquote.alignright,
+	.wp-block-pullquote.alignright {
+		margin-right: -6em;
+	}
 }
 
 .wp-block-pullquote blockquote > .editor-rich-text p {
