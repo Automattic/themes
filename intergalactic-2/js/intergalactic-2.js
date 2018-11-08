@@ -49,12 +49,8 @@
 			new_img.src = img.attr('src');
 			var img_width = new_img.width;
 
-			// Skip images in Gutenberg blocks.
-			if ( $( this ).parents( '[class^="wp-block-"]') ) {
-				return;
-			}
+			if ( img_width >= 1000 && $( this ).parents( '[class^="wp-block-"]').length === 0 ) {
 
-			if ( img_width >= 1000 ) {
 				$( this ).addClass( 'size-big' );
 				$( this ).parents( 'p' ).addClass( 'size-big-wrapper' );
 
