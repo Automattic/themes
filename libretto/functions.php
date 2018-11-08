@@ -59,17 +59,22 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 				array(
 					'name'  => esc_html__( 'Black', 'libretto' ),
 					'slug' => 'black',
-					'color' => '#333333',
+					'color' => '#26231e',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'libretto' ),
+					'slug' => 'dark-gray',
+					'color' => '#787065',
 				),
 				array(
 					'name'  => esc_html__( 'Medium Gray', 'libretto' ),
 					'slug' => 'medium-gray',
-					'color' => '#999999',
+					'color' => '#a09a92',
 				),
 				array(
 					'name'  => esc_html__( 'Light Gray', 'libretto' ),
 					'slug' => 'light-gray',
-					'color' => '#dddddd',
+					'color' => '#d9d6d0',
 				),
 				array(
 					'name'  => esc_html__( 'White', 'libretto' ),
@@ -77,24 +82,14 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 					'color' => '#ffffff',
 				),
 				array(
-					'name'  => esc_html__( 'Purple', 'libretto' ),
-					'slug' => 'purple',
-					'color' => '#6636cc',
+					'name'  => esc_html__( 'Red', 'libretto' ),
+					'slug' => 'red',
+					'color' => '#932817',
 				),
 				array(
-					'name'  => esc_html__( 'Dark Purple', 'libretto' ),
-					'slug' => 'dark-purple',
-					'color' => '#471e9e',
-				),
-				array(
-					'name'  => esc_html__( 'Green', 'libretto' ),
-					'slug' => 'green',
-					'color' => '#85cc36',
-				),
-				array(
-					'name'  => esc_html__( 'Dark Green', 'libretto' ),
-					'slug' => 'dark-green',
-					'color' => '#609d1b',
+					'name'  => esc_html__( 'Dark Red', 'libretto' ),
+					'slug' => 'dark-red',
+					'color' => '#712012',
 				),
 			)
 		);
