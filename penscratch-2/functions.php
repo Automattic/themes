@@ -73,6 +73,9 @@ function penscratch_2_setup() {
 		'default-color' => 'eeeeee',
 		'default-image' => '',
 	) ) );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // penscratch_2_setup
 add_action( 'after_setup_theme', 'penscratch_2_setup' );
@@ -146,6 +149,9 @@ function penscratch_2_scripts() {
 	wp_enqueue_style( 'penscratch-2-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'penscratch-2-fonts', penscratch_2_fonts_url(), array(), null );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'penscratch-2-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'penscratch-2-style' ), '1.0' );
+
 	wp_enqueue_script( 'penscratch-2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'penscratch-2-scripts', get_template_directory_uri() . '/js/penscratch-2.js', array( 'jquery' ), '20170608', true );
@@ -157,6 +163,17 @@ function penscratch_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'penscratch_2_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function penscratch_2_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'penscratch-2-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
+	// Fonts.
+	wp_enqueue_style( 'penscratch-2-fonts-url', penscratch_2_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'penscratch_2_block_editor_styles' );
 
 /**
  * Register Google Fonts
