@@ -76,6 +76,38 @@ function penscratch_2_setup() {
 
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
+
+	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Dark Green', 'penscratch-2' ),
+				'slug' => 'dark-green',
+				'color' => '#1c7c7c',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'penscratch-2' ),
+				'slug' => 'dark-gray',
+				'color' => '#666',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'penscratch-2' ),
+				'slug' => 'medium-gray',
+				'color' => '#999',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'penscratch-2' ),
+				'slug' => 'light-gray',
+				'color' => '#eee',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'penscratch-2' ),
+				'slug' => 'white',
+				'color' => '#fff',
+			),
+		)
+	);
+
 }
 endif; // penscratch_2_setup
 add_action( 'after_setup_theme', 'penscratch_2_setup' );
