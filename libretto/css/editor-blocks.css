@@ -47,6 +47,24 @@
 	margin-right: auto;
 }
 
+/*
+Browser hack that targets Safari only, to prevent first line from disappearing.
+See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
+*/
+@media not all and (min-resolution:.001dpcm) { @media {
+    .format-standard:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type::after,
+	.page:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type::after,
+	.emphasis::after {
+		display: inline-block;
+	}
+}}
+
+.wp-block > p:not(.no-emphasis):first-of-type + p,
+.page:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type + p,
+.emphasis + p {
+	clear: left;
+}
+
 /* Title */
 
 .editor-post-title__block .editor-post-title__input {
@@ -128,16 +146,6 @@
 	text-transform: uppercase;
 }
 
-/* Paragraphs */
-
-.edit-post-visual-editor p {
-	margin: 0 0 1.5em;
-}
-
-.edit-post-visual-editor blockquote p {
-	margin: 0 0 1.5em;
-}
-
 /* Images */
 
 .wp-block-image figcaption {
@@ -145,7 +153,6 @@
 	font-size: 16px;
 	font-style: italic;
 	line-height: 1.2;
-	margin: 1em 0.5em 0.5em;
 	text-align: center;
 }
 
@@ -161,7 +168,7 @@
 
 /* Background color */
 
-.editor-block-list__layout {
+.edit-post-layout__content .edit-post-visual-editor {
 	background-color: #faf9f5;
 }
 
@@ -255,7 +262,6 @@
 	font-size: 16px;
 	font-style: italic;
 	line-height: 1.2;
-	margin: 1em 0.5em 0.5em;
 	text-align: center;
 }
 
@@ -275,6 +281,55 @@
 	font-weight: 700;
 	line-height: 40px;
 	margin: 6px 10px 0 -5px;
+}
+
+@media only screen and (min-width: 641px) {
+	.wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
+		font-size: 121px;
+		line-height: 70px;
+		margin: 6px 10px 0 -5px;
+	}
+}
+
+.edit-post-visual-editor p {
+	margin: 0 0 1.5em;
+}
+
+.edit-post-visual-editor blockquote p {
+	margin: 0 0 1.5em;
+}
+
+/* Theme has built-in dropcaps and emphasis on the first line of each paragraph */
+
+/* Drop cap and first line */
+.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):first-letter,
+.emphasis:first-letter {
+	color: #b7b1a9;
+	display: inline-block;
+	float: left;
+	font-family: "Playfair Display";
+	font-size: 70px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 40px;
+	margin: 6px 10px 0 -5px;
+}
+
+.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):first-line,
+.emphasis:first-line {
+	color: #787065;
+	font-family: "Playfair Display SC";
+	font-size: 1em;
+	font-style: normal !important; /* Cheat to preserve visual sanity */
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis)::after,
+.emphasis::after {
+	clear: both;
+	content: "";
+	display: block;
 }
 
 /* Quote */
@@ -474,6 +529,10 @@
 
 /* Classic */
 
+.wp-block-freeform.block-library-rich-text__tinymce {
+	overflow: visible;
+}
+
 .wp-block-freeform.block-library-rich-text__tinymce address {
 	margin-top: 0.75em; 
 	margin-bottom: 0.75em;
@@ -658,6 +717,7 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table th {
+	border: 0;
 	font-style: italic;
 	border-bottom: 1px solid #d9d6d0;
 	padding: 0.8em 1em;
@@ -777,6 +837,7 @@
 }
 
 .editor-block-list__block table.wp-block-table th {
+	border: 0;
 	font-style: italic;
 	border-bottom: 1px solid #d9d6d0;
 	padding: 0.8em 1em;
