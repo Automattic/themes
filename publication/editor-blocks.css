@@ -21,24 +21,24 @@
 .edit-post-visual-editor .editor-block-list__block,
 .edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	color: #363431;
-	font-family: "Libre Baskerville", Baskerville, "Book Antiqua", Georgia, Times, serif;
-	font-size: 17px;
-	line-height: 2;
+	color: #222;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 .alignleft,
 .editor-block-list__layout .editor-block-list__block[data-align=left] .editor-block-list__block-edit {
 	display: inline;
 	float: left;
-	margin: 0 1.5em 0.5em 0;
+	margin: 0 24px 12px 0;
 }
 
 .alignright,
 .editor-block-list__layout .editor-block-list__block[data-align=right] .editor-block-list__block-edit {
 	display: inline;
 	float: right;
-	margin: 0 0 0.5em 1.5em;
+	margin: 0 0 12px 24px;
 }
 
 .aligncenter,
@@ -47,39 +47,16 @@
 	margin-right: auto;
 }
 
-/*
-Browser hack that targets Safari only, to prevent first line from disappearing.
-See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
-*/
-@media not all and (min-resolution:.001dpcm) { @media {
-    .format-standard:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type::after,
-	.page:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type::after,
-	.emphasis::after {
-		display: inline-block;
-	}
-}}
-
-.wp-block > p:not(.no-emphasis):first-of-type + p,
-.page:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type + p,
-.emphasis + p {
-	clear: left;
-}
-
 /* Title */
 
 .editor-post-title__block .editor-post-title__input {
-	border: none;
-	color: #787065;
-	font-family: "Playfair Display";
-	font-size: 44px;
-	font-style: normal;
+	clear: both;
+	font-family: Neuton, serif;
 	font-weight: normal;
-	letter-spacing: 0;
-	line-height: 1.2;
-	margin: 0;
-	padding: 0;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-	text-transform: none;
+	margin-bottom: 24px;
+	margin-top: 0;
+	font-size: 32px;
+	line-height: 1.125;
 }
 
 /* Headings */
@@ -91,59 +68,40 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .edit-post-visual-editor h5,
 .edit-post-visual-editor h6 {
 	clear: both;
-	line-height: 1.6;
+	font-family: Neuton, serif;
 	font-weight: normal;
+	margin-bottom: 24px;
+	margin-top: 0;
 }
 
 .edit-post-visual-editor h1 {
-	color: #a09a92;
-	font-family: "Playfair Display", Georgia, serif;
-	font-size: 44px;
-	font-style: italic;
-	margin: 1em 0 0.5em;
+	font-size: 40px;
+	line-height: 1.2;
 }
 
 .edit-post-visual-editor h2 {
-	border-bottom: 1px solid #787065;
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 21px;
-	letter-spacing: 2px;
-	margin: 4em 0 2em;
-	padding-bottom: 0.5em;
-	text-transform: uppercase;
+	font-size: 32px;
+	line-height: 1.125;
 }
 
 .edit-post-visual-editor h3 {
-	color: #a09a92;
 	font-size: 25px;
-	font-style: italic;
-	margin: 2em 0 1em;
+	line-height: 1.2;
 }
 
 .edit-post-visual-editor h4 {
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	letter-spacing: 1px;
-	margin: 3em 0 1.5em;
-	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 1.2;
 }
 
 .edit-post-visual-editor h5 {
-	color: #a09a92;
-	font-size: 21px;
-	font-style: italic;
-	margin: 1.5em 0 0.75em;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 .edit-post-visual-editor h6 {
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	letter-spacing: 1px;
-	margin: 1.5em 0 0.75em;
-	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 1.3847;
 }
 
 /* Images */
@@ -163,13 +121,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 /* Main column width */
 
 .wp-block {
-	max-width: 710px; /* 680px + 30px to account for padding */
-}
-
-/* Background color */
-
-.edit-post-layout__content .edit-post-visual-editor {
-	background-color: #faf9f5;
+	max-width: 594px; /* 564px + 30px to account for padding */
 }
 
 /* Link styles */
@@ -177,7 +129,8 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .edit-post-visual-editor a,
 .editor-block-list__block a,
 .wp-block-freeform.block-library-rich-text__tinymce a {
-	color: #932817;
+	color: #ef7d0b;
+	font-weight: bold;
 	text-decoration: none;
 }
 
@@ -190,7 +143,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .wp-block-freeform.block-library-rich-text__tinymce a:hover,
 .wp-block-freeform.block-library-rich-text__tinymce a:focus,
 .wp-block-freeform.block-library-rich-text__tinymce a:active {
-	color: #712012;
+	color: inherit;
 }
 
 /* List styles */
@@ -201,7 +154,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .edit-post-visual-editor ol,
 .editor-block-list__block ol,
 .block-library-list ol.editor-rich-text__tinymce {
-	margin: 0 0 1.5em;
+	margin: 0 0 24px;
 	padding: 0;
 }
 
@@ -288,57 +241,12 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	margin: 6px -5px 0 10px;
 }
 
-@media only screen and (min-width: 641px) {
-	.wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-		font-size: 121px;
-		line-height: 70px;
-		margin: 6px 10px 0 -5px;
-	}
-
-	.rtl .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-		margin: 6px -5px 0 10px;
-	}
-}
-
 .edit-post-visual-editor p {
-	margin: 0 0 1.5em;
+	margin: 0 0 24px;
 }
 
 .edit-post-visual-editor blockquote p {
-	margin: 0 0 1.5em;
-}
-
-/* Theme has built-in dropcaps and emphasis on the first line of each paragraph */
-
-/* Drop cap and first line */
-.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):first-letter,
-.emphasis:first-letter {
-	color: #b7b1a9;
-	display: inline-block;
-	float: left;
-	font-family: "Playfair Display";
-	font-size: 70px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: 40px;
-	margin: 6px 10px 0 -5px;
-}
-
-.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):first-line,
-.emphasis:first-line {
-	color: #787065;
-	font-family: "Playfair Display SC";
-	font-size: 1em;
-	font-style: normal !important; /* Cheat to preserve visual sanity */
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-
-.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis)::after,
-.emphasis::after {
-	clear: both;
-	content: "";
-	display: block;
+	margin: 0 0 24px;
 }
 
 /* Quote */
@@ -421,7 +329,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	font-size: 2.7rem;
 	max-width: 75%;
 	padding: 0.5em;
-	margin: .75em 1.5em .75em 0;
+	margin: .75em 24px .75em 0;
 }
 
 .editor-block-list__block .wp-block-quote.alignright {
@@ -432,7 +340,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	font-size: 27px;
 	max-width: 75%;
 	padding: 0.5em;
-	margin: .75em 0 .75em 1.5em;
+	margin: .75em 0 .75em 24px;
 }
 
 .editor-block-list__block .wp-block-quote.aligncenter {
@@ -462,7 +370,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 /* File */
 
 .wp-block-file {
-	margin: 1.5em 0;
+	margin: 24px 0;
 }
 
 .wp-block-file .wp-block-file__button {
@@ -508,7 +416,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
-	margin-bottom: 1.5em;
+	margin-bottom: 24px;
 	max-width: 100%;
 	overflow: auto;
 	padding: 0;
@@ -550,7 +458,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce li > ol {
-	margin-left: 1.5em;
+	margin-left: 24px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
@@ -603,7 +511,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	margin-right: 0;
 	padding-left: 0;
-	padding-right: 1.5em;
+	padding-right: 24px;
 }
 
 .rtl .wp-block-freeform.block-library-rich-text__tinymce .alignleft {
@@ -615,11 +523,11 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignleft {
-	margin: .75em 1.5em .75em 0;
+	margin: .75em 24px .75em 0;
 }
 
 .rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignright {
-	margin: .75em 0 .75em 1.5em;
+	margin: .75em 0 .75em 24px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h1,
@@ -629,59 +537,40 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .wp-block-freeform.block-library-rich-text__tinymce h5,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
 	clear: both;
-	line-height: 1.6;
+	font-family: Neuton, serif;
 	font-weight: normal;
+	margin-bottom: 24px;
+	margin-top: 0;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h1 {
-	color: #a09a92;
-	font-family: "Playfair Display", Georgia, serif;
-	font-size: 44px;
-	font-style: italic;
-	margin: 1em 0 0.5em;
+	font-size: 40px;
+	line-height: 1.2;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h2 {
-	border-bottom: 1px solid #787065;
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 21px;
-	letter-spacing: 2px;
-	margin: 4em 0 2em;
-	padding-bottom: 0.5em;
-	text-transform: uppercase;
+	font-size: 32px;
+	line-height: 1.125;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h3 {
-	color: #a09a92;
 	font-size: 25px;
-	font-style: italic;
-	margin: 2em 0 1em;
+	line-height: 1.2;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h4 {
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	letter-spacing: 1px;
-	margin: 3em 0 1.5em;
-	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 1.2;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h5 {
-	color: #a09a92;
-	font-size: 21px;
-	font-style: italic;
-	margin: 1.5em 0 0.75em;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	letter-spacing: 1px;
-	margin: 1.5em 0 0.75em;
-	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 1.3847;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
@@ -699,7 +588,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .wp-block-freeform.block-library-rich-text__tinymce table {
 	font-size: 0.85em;
 	line-height: 1.4;
-	margin: 0.5em 0 1.5em;
+	margin: 0.5em 0 24px;
 	width: 100%;
 }
 
@@ -769,7 +658,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	border-bottom: 2px solid currentColor;
 	font-style: italic;
 	font-size: 27px;
-	margin: 0 0 1.5em;
+	margin: 0 0 24px;
 	padding: .75em 0;
 	text-align: center;
 }
@@ -779,8 +668,8 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .wp-block-pullquote.alignfull blockquote {
-	padding-left: 1.5em;
-	padding-right: 1.5em;
+	padding-left: 24px;
+	padding-right: 24px;
 }
 
 .wp-block-pullquote.alignleft,
@@ -809,22 +698,22 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .wp-block-pullquote.alignleft {
-	margin-right: 1.5em;
+	margin-right: 24px;
 }
 
 .wp-block-pullquote.alignright {
-	margin-left: 1.5em;
+	margin-left: 24px;
 }
 
 @media only screen and (min-width: 641px) {
 	.rtl .wp-block-pullquote.alignleft,
 	.wp-block-pullquote.alignleft {
-		margin-left: -1.5em;
+		margin-left: -24px;
 	}
 
 	.rtl .wp-block-pullquote.alignright,
 	.wp-block-pullquote.alignright {
-		margin-right: -1.5em;
+		margin-right: -24px;
 	}
 }
 
@@ -873,7 +762,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .editor-block-list__block table.wp-block-table {
 	font-size: 0.85em;
 	line-height: 1.4;
-	margin: 0.5em 0 1.5em;
+	margin: 0.5em 0 24px;
 }
 
 .editor-block-list__block table.wp-block-table tr:nth-of-type(odd) td {
@@ -959,7 +848,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	background-color: #d9d6d0;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: 24px;
 }
 
 
