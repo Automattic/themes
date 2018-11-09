@@ -54,7 +54,7 @@ function publication_setup() {
 				array(
 					'name'  => esc_html__( 'Black', 'publication' ),
 					'slug' => 'black',
-					'color' => '#192930',
+					'color' => '#222',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Gray', 'publication' ),
@@ -77,13 +77,13 @@ function publication_setup() {
 					'color' => '#ffffff',
 				),
 				array(
-					'name'  => esc_html__( 'Yellow', 'publication' ),
-					'slug' => 'yellow',
-					'color' => '#d7b221',
+					'name'  => esc_html__( 'Orange', 'publication' ),
+					'slug' => 'orange',
+					'color' => '#ef7d0b',
 				),
 				array(
-					'name'  => esc_html__( 'Dark Yellow', 'publication' ),
-					'slug' => 'dark-yellow',
+					'name'  => esc_html__( 'Dark Orange', 'publication' ),
+					'slug' => 'dark-orange',
 					'color' => '#9c8012',
 				),
 			)
