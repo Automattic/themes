@@ -35,6 +35,50 @@ function rebalance_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'rebalance' ),
+				'slug' => 'black',
+				'color' => '#192930',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'rebalance' ),
+				'slug' => 'dark-gray',
+				'color' => '#474f53',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'rebalance' ),
+				'slug' => 'medium-gray',
+				'color' => '#a5a29d',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'rebalance' ),
+				'slug' => 'light-gray',
+				'color' => '#eeece8',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'rebalance' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Yellow', 'rebalance' ),
+				'slug' => 'yellow',
+				'color' => '#d7b221',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Yellow', 'rebalance' ),
+				'slug' => 'dark-yellow',
+				'color' => '#9c8012',
+			),
+		)
+	);
+
 	/**
 	 * Add support for core custom logo (replaces JetPack functionality)
 	 * - also see fallback in inc/jetpack.php
@@ -186,6 +230,9 @@ function rebalance_scripts() {
 
 	wp_enqueue_style( 'rebalance-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'rebalance-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	/**
 	 * Scripts
 	 */
@@ -210,6 +257,15 @@ function rebalance_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'rebalance_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function rebalance_editor_styles() {
+	wp_enqueue_style( 'rebalance-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'rebalance-fonts', rebalance_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'rebalance_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
