@@ -54,7 +54,7 @@ function rebalance_setup() {
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'rebalance' ),
 				'slug' => 'medium-gray',
-				'color' => '#a5a29d',
+				'color' => '#cccccc',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'rebalance' ),
@@ -67,9 +67,9 @@ function rebalance_setup() {
 				'color' => '#ffffff',
 			),
 			array(
-				'name'  => esc_html__( 'Yellow', 'rebalance' ),
-				'slug' => 'yellow',
-				'color' => '#d7b221',
+				'name'  => esc_html__( 'Red', 'rebalance' ),
+				'slug' => 'red',
+				'color' => '#f35029',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Yellow', 'rebalance' ),
