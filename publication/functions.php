@@ -40,6 +40,55 @@ function publication_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		/**
+		 * Gutenberg wide and full images support
+		 */
+		add_theme_support( 'align-wide' );
+		
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette', array(
+				array(
+					'name'  => esc_html__( 'Black', 'publication' ),
+					'slug' => 'black',
+					'color' => '#222',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'publication' ),
+					'slug' => 'dark-gray',
+					'color' => '#474f53',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'publication' ),
+					'slug' => 'medium-gray',
+					'color' => '#a5a29d',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'publication' ),
+					'slug' => 'light-gray',
+					'color' => '#eeece8',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'publication' ),
+					'slug' => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Orange', 'publication' ),
+					'slug' => 'orange',
+					'color' => '#ef7d0b',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Orange', 'publication' ),
+					'slug' => 'dark-orange',
+					'color' => '#9c8012',
+				),
+			)
+		);
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -208,6 +257,9 @@ function publication_scripts() {
 
 	wp_enqueue_style( 'publication-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'publication-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_script( 'publication-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150715', true );
 
 	wp_enqueue_script( 'publication-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20150529', true );
@@ -224,6 +276,16 @@ function publication_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'publication_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function publication_editor_styles() {
+	wp_enqueue_style( 'publication-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'publication-lato-neuton', publication_lato_neuton_fonts_url() );
+	wp_enqueue_style( 'publication-oswald-inconsolata', publication_oswald_inconsolata_fonts_url() );
+}
+add_action( 'enqueue_block_editor_assets', 'publication_editor_styles' );
 
 /**
  * Custom template tags for this theme.
