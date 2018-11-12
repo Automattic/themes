@@ -104,10 +104,8 @@
 /* Images */
 
 .wp-block-image figcaption {
-	color: #a09a92;
-	font-size: 16px;
-	font-style: italic;
-	line-height: 1.2;
+	font-size: 14px;
+	line-height: 1.525em;
 	text-align: center;
 }
 
@@ -118,7 +116,7 @@
 /* Main column width */
 
 .wp-block {
-	max-width: 594px; /* 564px + 30px to account for padding */
+	max-width: 828px; /* 798px + 30px to account for padding */
 }
 
 /* Link styles */
@@ -126,9 +124,11 @@
 .edit-post-visual-editor a,
 .editor-block-list__block a,
 .wp-block-freeform.block-library-rich-text__tinymce a {
-	color: #ef7d0b;
-	font-weight: bold;
+	color: #000;
 	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .edit-post-visual-editor a:hover,
@@ -140,7 +140,8 @@
 .wp-block-freeform.block-library-rich-text__tinymce a:hover,
 .wp-block-freeform.block-library-rich-text__tinymce a:focus,
 .wp-block-freeform.block-library-rich-text__tinymce a:active {
-	color: inherit;
+	color: #f35029;
+	text-decoration: underline;
 }
 
 /* List styles */
@@ -151,7 +152,7 @@
 .edit-post-visual-editor ol,
 .editor-block-list__block ol,
 .block-library-list ol.editor-rich-text__tinymce {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5em 2em;
 	padding: 0;
 }
 
@@ -163,13 +164,13 @@
 .edit-post-visual-editor ul:not(.wp-block-gallery),
 .editor-block-list__block ul:not(.wp-block-gallery),
 .block-library-list ul {
-	list-style: square inside;
+	list-style: disc;
 }
 
 .edit-post-visual-editor ol,
 .editor-block-list__block ol,
 .block-library-list ol.editor-rich-text__tinymce {
-	list-style: decimal inside;
+	list-style: decimal;
 }
 
 .edit-post-visual-editor ul:not(.wp-block-gallery) li > ul,
@@ -196,8 +197,9 @@
 /* Captions */
 
 [class^="wp-block-"] figcaption {
-	font-size: 13px;
-	line-height: 1.3847;
+	font-size: 14px;
+	line-height: 1.525em;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -207,7 +209,6 @@
 /* Paragraph */
 
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-	font-family: Neuton, serif;
 	font-size: 80px;
 }
 
