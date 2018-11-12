@@ -18,6 +18,62 @@ Description: Used to style Gutenberg Blocks.
 1.0 General Block Styles
 --------------------------------------------------------------*/
 
+/* Alignments */
+
+.no-sidebar #page {
+	overflow-x: hidden;
+}
+
+/* Full Width */
+
+.no-sidebar .alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: 0;
+	margin-right: 0;
+	position: relative;
+	left: 50%;
+	transform: translateX( -50% );
+}
+
+.no-sidebar .wp-block-columns.alignfull,
+.no-sidebar .wp-block-latest-comments.alignfull,
+.no-sidebar .wp-block-categories.alignfull,
+.no-sidebar .wp-block-archives.alignfull,
+.no-sidebar .wp-block-latest-posts.alignfull,
+.no-sidebar .wp-block-file.alignfull {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.rtl.no-sidebar .alignfull {
+	left: auto;
+	right: 50%;
+	transform: translateX(50%);
+}
+
+/* Wide Width */
+
+@media (min-width: 1024px) {
+	.no-sidebar .alignwide {
+		width: 120%;
+		max-width: 120%;
+		margin-left: -10%;
+		margin-right: -10%;
+		position: relative;
+	}
+
+	.no-sidebar .wp-block-embed.is-type-video.alignwide iframe {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
 /* Captions */
 
 [class^="wp-block-"] figcaption {
