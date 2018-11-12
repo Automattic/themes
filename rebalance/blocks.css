@@ -127,6 +127,14 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding-left: 40px;
 }
 
+.rtl .entry-content .wp-block-quote {
+	border-left: 0;
+	border-right: 6px solid #f35029;
+	margin: 0 -40px 1.5em 0;
+	padding-left: 0;
+	padding-right: 40px;
+}
+
 .wp-block-quote cite {
 	font-family: "Libre Baskerville", Georgia, serif;
 	font-style: italic;
@@ -239,7 +247,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	border: 0;
 }
 
-.wp-block-pullquote blockquote {
+.entry-content .wp-block-pullquote blockquote {
 	border-left: 0;
 	border-bottom: 4px solid #f35029;
 	border-top: 4px solid #f35029;
@@ -247,6 +255,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 	line-height: 1.6;
 	margin: 0 0 1.5em;
 	padding: 1.5em;
+}
+
+.rtl .wp-block-pullquote blockquote {
+	border-right: 0;
 }
 
 .wp-block-pullquote cite {
@@ -286,6 +298,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin: 0 0 .75em;
 }
 
+
 /*--------------------------------------------------------------
 4.0 Blocks - Layout Elements
 --------------------------------------------------------------*/
@@ -305,6 +318,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
 	box-shadow: none;
+	text-decoration: none;
 }
 
 .wp-block-button__link:not(.has-background) {
@@ -402,8 +416,8 @@ hr.wp-block-separator {
 	margin-bottom: 0;
 }
 
-.wp-block-latest-posts,
-.rtl .wp-block-latest-posts {
+.wp-block-latest-posts.is-grid,
+.rtl .wp-block-latest-posts.is-grid {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -416,28 +430,28 @@ hr.wp-block-separator {
 .has-medium-gray-color:hover,
 .has-medium-gray-color:focus,
 .has-medium-gray-color:active {
-	color: #ccc;
+	color: #999;
 }
 
 .has-medium-gray-background-color,
 .has-medium-gray-background-color:hover,
 .has-medium-gray-background-color:focus,
 .has-medium-gray-background-color:active {
-	background-color: #ccc;
+	background-color: #999;
 }
 
 .has-light-gray-color,
 .has-light-gray-color:hover,
 .has-light-gray-color:focus,
 .has-light-gray-color:active {
-	color: #dddddd;
+	color: #ccc;
 }
 
 .has-light-gray-background-color,
 .has-light-gray-background-color:hover,
 .has-light-gray-background-color:focus,
 .has-light-gray-background-color:active {
-	background-color: #dddddd;
+	background-color: #ccc;
 }
 
 .has-white-color,
@@ -472,54 +486,40 @@ hr.wp-block-separator {
 .has-dark-red-color:hover,
 .has-dark-red-color:focus,
 .has-dark-red-color:active {
-	color: #712012;
+	color: #aa2e11;
 }
 
 .has-dark-red-background-color,
 .has-dark-red-background-color:hover,
 .has-dark-red-background-color:focus,
 .has-dark-red-background-color:active {
-	background-color: #712012;
-}
-
-.has-gray-color,
-.has-gray-color:hover,
-.has-gray-color:focus,
-.has-gray-color:active {
-	color: #85cc36;
-}
-
-.has-gray-background-color,
-.has-gray-background-color:hover,
-.has-gray-background-color:focus,
-.has-gray-background-color:active {
-	background-color: #85cc36;
+	background-color: #aa2e11;
 }
 
 .has-dark-gray-color,
 .has-dark-gray-color:hover,
 .has-dark-gray-color:focus,
 .has-dark-gray-color:active {
-	color: #787065;
+	color: #666;
 }
 
 .has-dark-gray-background-color,
 .has-dark-gray-background-color:hover,
 .has-dark-gray-background-color:focus,
 .has-dark-gray-background-color:active {
-	background-color: #787065;
+	background-color: #666;
 }
 
 .has-black-color,
 .has-black-color:hover,
 .has-black-color:focus,
 .has-black-color:active {
-	color: #222;
+	color: #000;
 }
 
 .has-black-background-color,
 .has-black-background-color:hover,
 .has-black-background-color:focus,
 .has-black-background-color:active {
-	background-color: #222;
+	background-color: #000;
 }

@@ -44,22 +44,22 @@ function rebalance_setup() {
 			array(
 				'name'  => esc_html__( 'Black', 'rebalance' ),
 				'slug' => 'black',
-				'color' => '#192930',
+				'color' => '#000000',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Gray', 'rebalance' ),
 				'slug' => 'dark-gray',
-				'color' => '#474f53',
+				'color' => '#666666',
 			),
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'rebalance' ),
 				'slug' => 'medium-gray',
-				'color' => '#cccccc',
+				'color' => '#999999',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'rebalance' ),
 				'slug' => 'light-gray',
-				'color' => '#eeece8',
+				'color' => '#cccccc',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'rebalance' ),
@@ -72,9 +72,9 @@ function rebalance_setup() {
 				'color' => '#f35029',
 			),
 			array(
-				'name'  => esc_html__( 'Dark Yellow', 'rebalance' ),
-				'slug' => 'dark-yellow',
-				'color' => '#9c8012',
+				'name'  => esc_html__( 'Dark Red', 'rebalance' ),
+				'slug' => 'dark-red',
+				'color' => '#aa2e11',
 			),
 		)
 	);

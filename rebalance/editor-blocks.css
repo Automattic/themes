@@ -72,6 +72,7 @@
 .edit-post-visual-editor h4,
 .edit-post-visual-editor h5,
 .edit-post-visual-editor h6 {
+	clear: both;
 	font-family: "Libre Baskerville", Georgia, serif;
 	font-weight: 700;
 	margin-bottom: .5em;
@@ -116,7 +117,7 @@
 /* Main column width */
 
 .wp-block {
-	max-width: 828px; /* 798px + 30px to account for padding */
+	max-width: 789px; /* 759px + 30px to account for padding */
 }
 
 /* Link styles */
@@ -232,6 +233,15 @@
 	padding-left: 40px;
 }
 
+.rtl .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
+.rtl .editor-block-list__block .wp-block-quote {
+	border-left: 0;
+	border-right: 6px solid #f35029;
+	margin: 0 -40px 1.5em 0;
+	padding-left: 0;
+	padding-right: 40px;
+}
+
 .edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
 	font-family: "Libre Baskerville", Georgia, serif;
 	font-style: italic;
@@ -276,6 +286,15 @@
 	margin: 0 0 1.5em -40px;
 	padding-left: 40px;
 	font-size: 24px;
+}
+
+.rtl .wp-block-quote.is-large,
+.rtl .wp-block-quote.is-style-large {
+	border-left: 0;
+	border-right: 6px solid #f35029;
+	margin: 0 -40px 1.5em 0;
+	padding-left: 0;
+	padding-right: 40px;
 }
 
 .edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large,
@@ -353,8 +372,9 @@
 	padding: 1.6em;
 }
 
-.wp-block-code textarea {
+.wp-block-code .editor-plain-text {
 	background: #ccc;
+	color: #fff;
 }
 
 /* Classic */
@@ -427,6 +447,7 @@
 .wp-block-freeform.block-library-rich-text__tinymce h4,
 .wp-block-freeform.block-library-rich-text__tinymce h5,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
+	clear: both;
 	font-family: "Libre Baskerville", Georgia, serif;
 	font-weight: 700;
 	margin-bottom: .5em;
@@ -457,14 +478,19 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
-	background: #eee;
-	font-family: Inconsolata, monospace;
+	background: #ccc;
+	color: #fff;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
-	padding: .75em;
+	padding: 1.6em;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
+	border-collapse: collapse;
 	margin: 0 0 1.5em;
 	text-align: left;
 	width: 100%;
@@ -478,21 +504,31 @@
 	background: transparent;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table td {
+.wp-block-freeform.block-library-rich-text__tinymce table td,
+.wp-block-freeform.block-library-rich-text__tinymce table th {
 	border: 1px solid #999;
 	word-break: break-word;
 	padding: 10px;
 	text-align: left;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table th {
-	border: 1px solid #999;
+.rtl .wp-block-freeform.block-library-rich-text__tinymce table td,
+.rtl .wp-block-freeform.block-library-rich-text__tinymce table th {
+	text-align: right;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table thead th {
 	word-break: break-word;
 	font-family: "Libre Baskerville", Georgia, serif;
 	font-weight: 400;
 	font-size: 14px;
 	padding: 10px;
-	text-align: left;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table tbody th {
+	word-break: break-word;
+	font-weight: 700;
+	padding: 10px;
 }
 
 
@@ -607,6 +643,8 @@
 	width: 100%;
 }
 
+
+
 .rtl .editor-block-list__block table.wp-block-table {
 	text-align: right;
 }
@@ -618,18 +656,29 @@
 }
 
 .editor-block-list__block table.wp-block-table th {
-	border: 1px solid #999;
-	word-break: break-word;
-	font-family: "Libre Baskerville", Georgia, serif;
-	font-weight: 400;
-	font-size: 14px;
-	padding: 10px;
 	text-align: left;
 }
 
 .rtl .editor-block-list__block table.wp-block-table th {
 	text-align: right;
 }
+
+.editor-block-list__block table.wp-block-table thead th {
+	border: 0;
+	word-break: break-word;
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-weight: 400;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.editor-block-list__block table.wp-block-table tbody th {
+	border: 1px solid #999;
+	word-break: break-word;
+	font-weight: 700;
+	padding: 10px;
+}
+
 
 /*--------------------------------------------------------------
 5.0 Blocks - Layout Elements
