@@ -38,6 +38,7 @@ Description: Used to style Gutenberg Blocks.
 
 .no-sidebar .wp-block-columns.alignfull,
 .no-sidebar .wp-block-latest-comments.alignfull,
+.no-sidebar .wp-block-archives.alignfull,
 .no-sidebar .wp-block-categories.alignfull,
 .no-sidebar .wp-block-archives.alignfull,
 .no-sidebar .wp-block-latest-posts.alignfull,
@@ -79,6 +80,12 @@ Description: Used to style Gutenberg Blocks.
 [class^="wp-block-"] figcaption {
 	font-size: 13px;
 	line-height: 1.3847;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	border-bottom: 1px solid #eee;
+	margin: 0;
+	padding: 0 0 0.5em;
 }
 
 /*--------------------------------------------------------------
@@ -168,6 +175,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 /* Audio */
+
+.wp-block-audio {
+	margin-bottom: 24px;
+}
 
 .wp-block-audio audio {
 	display: block;
@@ -263,10 +274,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-transform: uppercase;
 }
 
-.wp-block-pullquote.alignleft,
-.wp-block-pullquote.alignright {
-}
-
 .wp-block-pullquote.alignleft blockquote,
 .wp-block-pullquote.alignright blockquote {
 	padding: 12px 0;
@@ -294,6 +301,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-pullquote p {
 	margin: 0 0 12px;
 	line-height: 34px;
+}
+
+/* Table */
+
+.no-sidebar .wp-block-table.alignfull {
+	width: 96vw;
 }
 
 /*--------------------------------------------------------------
@@ -366,17 +379,33 @@ hr.wp-block-separator {
 	max-width: 100%;
 }
 
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 24px;
+}
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
 
-/* Categories */
+/* Categories, Latest Posts & Archives */
 
-.wp-block-categories.aligncenter {
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
 	margin-left: 24px;
 	margin-right: 24px;
 	text-align: center;
 }
+
+/* Categories */
 
 .wp-block-categories-list.alignleft {
 	margin-left: 24px;
