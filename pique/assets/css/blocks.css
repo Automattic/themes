@@ -177,14 +177,22 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Quote */
 
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
-
+.wp-block-quote cite {
+	text-align: right;
 }
 
-.rtl .wp-block-quote.is-large,
-.rtl .wp-block-quote.is-style-large {
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding: 0;
+}
 
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 28px;
+}
+
+.rtl .wp-block-quote cite {
+	text-align: left;
 }
 
 /* Audio */
@@ -254,11 +262,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: #83b6cc;
 }
 
-.rtl .wp-block-file * + .wp-block-file__button {
-	margin-left: .75em;
-	margin-right: 0;
-}
-
 /* Video */
 
 .wp-block-video video {
@@ -311,14 +314,14 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 @media (min-width: 950px) {
-	body:not(.has-sidebar):not(.lodestar-front-page) .wp-block-table.alignwide,
-	body.lodestar-front-page:not(.has-sidebar) .lodestar-panel:not(.two-column) .wp-block-table.alignwide {
+	body:not(.pique-sidebar).pique-singular .wp-block-table.alignwide,
+	body.home .wp-block-table.alignwide {
 		width: 1115px;
 	}
 }
 
-body:not(.has-sidebar):not(.lodestar-front-page) .wp-block-table.alignfull,
-body.lodestar-front-page:not(.has-sidebar) .lodestar-panel:not(.two-column) .wp-block-table.alignfull {
+body:not(.pique-sidebar).pique-singular .wp-block-table.alignfull,
+body.home .wp-block-table.alignwide .wp-block-table.alignfull {
 	width: 96vw;
 }
 
