@@ -29,7 +29,9 @@ Description: Used to style Gutenberg Blocks.
 }
 
 body:not(.pique-sidebar).pique-singular .alignfull,
-body.home .alignfull {
+body.home .alignfull,
+body.blog .alignfull,
+body.archive .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	width: auto;
@@ -37,7 +39,9 @@ body.home .alignfull {
 }
 
 body:not(.pique-sidebar).pique-singular .alignwide,
-body.home .alignwide {
+body.home .alignwide,
+body.blog .alignwide,
+body.archive .alignwide {
 	margin-left: calc(25% - 25vw);
 	margin-right: calc(25% - 25vw);
 	width: auto;
@@ -46,7 +50,9 @@ body.home .alignwide {
 
 @media (min-width: 1400px) {
 	body:not(.pique-sidebar).pique-singular .alignwide,
-	body.home .alignwide {
+	body.home .alignwide,
+	body.blog .alignwide,
+	body.archive .alignwide {
 		margin-left: -15%;
 		margin-right: -15%;
 	}
@@ -55,7 +61,11 @@ body.home .alignwide {
 body:not(.pique-sidebar).pique-singular .wp-block-embed.is-type-video.alignfull iframe,
 body:not(.pique-sidebar).pique-singular .wp-block-embed.is-type-video.alignwide iframe,
 body.home .wp-block-embed.is-type-video.alignfull iframe,
-body.home .wp-block-embed.is-type-video.alignwide iframe {
+body.blog .wp-block-embed.is-type-video.alignfull iframe,
+body.archive .wp-block-embed.is-type-video.alignfull iframe,
+body.home .wp-block-embed.is-type-video.alignwide iframe,
+body.blog .wp-block-embed.is-type-video.alignwide iframe,
+body.archive .wp-block-embed.is-type-video.alignwide iframe {
 	width: 100% !important;
 	height: 100% !important;
 }
@@ -63,12 +73,33 @@ body.home .wp-block-embed.is-type-video.alignwide iframe {
 /* Make non image-based blocks a bit narrower, so they don't get cut off. */
 
 body:not(.pique-sidebar).pique-singular .wp-block-columns.alignfull,
+body.home .wp-block-columns.alignfull,
+body.blog .wp-block-columns.alignfull,
+body.archive .wp-block-columns.alignfull,
 body:not(.pique-sidebar).pique-singular .wp-block-audio.alignfull,
+body.home .wp-block-audio.alignfull,
+body.blog .wp-block-audio.alignfull,
+body.archive .wp-block-audio.alignfull,
 body:not(.pique-sidebar).pique-singular .wp-block-table.alignfull,
+body.home .wp-block-table.alignfull,
+body.blog .wp-block-table.alignfull,
+body.archive .wp-block-table.alignfull,
 body:not(.pique-sidebar).pique-singular .wp-block-latest-comments.alignfull,
+body.home .wp-block-latest-comments.alignfull,
+body.blog .wp-block-latest-comments.alignfull,
+body.archive .wp-block-latest-comments.alignfull,
 body:not(.pique-sidebar).pique-singular .wp-block-latest-posts.alignfull,
+body.home .wp-block-latest-posts.alignfull,
+body.blog .wp-block-latest-posts.alignfull,
+body.archive .wp-block-latest-posts.alignfull,
 body:not(.pique-sidebar).pique-singular .wp-block-categories.alignfull,
-body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull {
+body.home .wp-block-categories.alignfull,
+body.blog .wp-block-categories.alignfull,
+body.archive .wp-block-categories.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull,
+body.home .wp-block-archives.alignfull,
+body.blog .wp-block-archives.alignfull,
+body.archive .wp-block-archives.alignfull {
 	margin-left: calc(50% - 48vw);
 	margin-right: calc(50% - 48vw);
 }
@@ -107,7 +138,9 @@ body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull {
 
 @media (min-width: 1400px) {
 	body:not(.pique-sidebar).pique-singular .alignfull,
-	body.home .alignfull {
+	body.home .alignfull,
+	body.blog .alignfull,
+	body.archive .alignfull {
 		margin-left: calc(50% - 700px);
 		margin-right: calc(50% - 700px);
 		width: auto;
@@ -118,18 +151,32 @@ body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull {
 
 	body:not(.pique-sidebar).pique-singular .wp-block-columns.alignfull,
 	body.home .wp-block-columns.alignfull,
+	body.blog .wp-block-columns.alignfull,
+	body.archive .wp-block-columns.alignfull,
 	body:not(.pique-sidebar).pique-singular .wp-block-audio.alignfull,
 	body.home .wp-block-audio.alignfull,
+	body.blog .wp-block-audio.alignfull,
+	body.archive .wp-block-audio.alignfull,
 	body:not(.pique-sidebar).pique-singular .wp-block-table.alignfull,
 	body.home .wp-block-table.alignfull,
+	body.blog .wp-block-table.alignfull,
+	body.archive .wp-block-table.alignfull,
 	body:not(.pique-sidebar).pique-singular .wp-block-latest-comments.alignfull,
 	body.home .wp-block-latest-comments.alignfull,
+	body.blog .wp-block-latest-comments.alignfull,
+	body.archive .wp-block-latest-comments.alignfull,
 	body:not(.pique-sidebar).pique-singular .wp-block-latest-posts.alignfull,
 	body.home .wp-block-latest-posts.alignfull,
+	body.blog .wp-block-latest-posts.alignfull,
+	body.archive .wp-block-latest-posts.alignfull,
 	body:not(.pique-sidebar).pique-singular .wp-block-categories.alignfull,
 	body.home .wp-block-categories.alignfull,
+	body.blog .wp-block-categories.alignfull,
+	body.archive .wp-block-categories.alignfull,
 	body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull,
-	body.home .wp-block-archives.alignfull {
+	body.home .wp-block-archives.alignfull,
+	body.blog .wp-block-archives.alignfull,
+	body.archive .wp-block-archives.alignfull {
 		margin-left: calc(50% - 680px);
 		margin-right: calc(50% - 680px);
 	}
