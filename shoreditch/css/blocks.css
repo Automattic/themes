@@ -26,9 +26,12 @@ Description: Used to style Gutenberg Blocks.
 .alignfull,
 .alignwide {
 	clear: both;
+	margin: 0;
 }
 
-.can-align-wide .alignfull {
+.can-align-wide .alignfull,
+.page-template-full-width-page .alignfull,
+.page-template-panel-page .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	width: auto;
@@ -37,12 +40,26 @@ Description: Used to style Gutenberg Blocks.
 /* Make non image-based blocks a bit narrower, so they don't get cut off. */
 
 .can-align-wide .wp-block-columns.alignfull,
+.page-template-full-width-page .wp-block-columns.alignfull,
+.page-template-panel-page .wp-block-columns.alignfull,
 .can-align-wide .wp-block-audio.alignfull,
+.page-template-full-width-page .wp-block-audio.alignfull,
+.page-template-panel-page .wp-block-audio.alignfull,
 .can-align-wide .wp-block-table.alignfull,
+.page-template-full-width-page .wp-block-table.alignfull,
+.page-template-panel-page .wp-block-table.alignfull,
 .can-align-wide .wp-block-latest-comments.alignfull,
+.page-template-full-width-page .wp-block-latest-comments.alignfull,
+.page-template-panel-page .wp-block-latest-comments.alignfull,
 .can-align-wide .wp-block-latest-posts.alignfull,
+.page-template-full-width-page .wp-block-latest-posts.alignfull,
+.page-template-panel-page .wp-block-latest-posts.alignfull,
 .can-align-wide .wp-block-categories.alignfull,
-.can-align-wide .wp-block-archives.alignfull {
+.page-template-full-width-page .wp-block-categories.alignfull,
+.page-template-panel-page .wp-block-categories.alignfull,
+.can-align-wide .wp-block-archives.alignfull,
+.page-template-full-width-page .wp-block-archives.alignfull,
+.page-template-panel-page .wp-block-archives.alignfull {
 	margin-left: calc(50% - 48vw );
 	margin-right: calc(50% - 48vw );
 }
@@ -65,9 +82,17 @@ Description: Used to style Gutenberg Blocks.
 	}
 
 	.can-align-wide .alignwide {
+		margin-left: 0;
 		margin-right: calc(25% - 25vw);
 		width: auto;
 		max-width: 900px;
+	}
+
+	.page-template-full-width-page .alignwide,
+	.page-template-panel-page .alignwide {
+		margin-left: calc(25% - 25vw);
+		margin-right: calc(25% - 25vw);
+		width: auto;
 	}
 
 	.rtl.can-align-wide .alignfull {
@@ -115,11 +140,15 @@ Description: Used to style Gutenberg Blocks.
 	padding-bottom: 0.25em;
 }
 
-.can-align-wide [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption {
+.can-align-wide [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
+.page-template-full-width-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
+.page-template-panel-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption {
 	text-align: left;
 }
 
-.rtl.can-align-wide  [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption {
+.rtl.can-align-wide [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
+.rtl.page-template-full-width-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
+.rtl.page-template-panel-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption {
 	text-align: right;
 }
 
@@ -153,11 +182,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-bottom: 1.5em;
 }
 
-.wp-block-gallery:not(.alignfull) {
+.wp-block-gallery:not(.alignfull):not(.alignwide) {
 	margin-left: 0;
 }
 
-.rtl .wp-block-gallery:not(.alignfull) {
+.rtl .wp-block-gallery:not(.alignfull):not(.alignwide) {
 	margin-right: 0;
 }
 
@@ -252,6 +281,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 	outline: none;
 }
 
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
+
+@media (min-width: 768px) {
+	.wp-block-file a.wp-block-file__button,
+	.wp-block-file a.wp-block-file__button:visited {
+		font-size: 16px;
+	}
+}
+
 /* Video */
 
 .wp-block-video video {
@@ -286,10 +327,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 /* Table */
-
-.wp-block-table th {
-	text-align: left;
-}
 
 .wp-block-table.alignfull {
 	width: 96vw;
@@ -345,6 +382,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-button__link:not(.has-background):focus {
 	background: #2c313f;
 	outline: none;
+}
+
+@media (min-width: 768px) {
+	.wp-block-button .wp-block-button__link {
+		font-size: 16px;
+	}
 }
 
 /* Separator */
