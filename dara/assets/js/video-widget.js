@@ -3,7 +3,7 @@
  */
 ( function( $ ) {
 
-	$( window ).on( 'load', function() {
+	$( document ).on( 'ready', function() {
 		setTimeout( function(){
 			if ( typeof( Event ) === 'function' ) {
 				window.dispatchEvent( new Event( 'resize' ) );

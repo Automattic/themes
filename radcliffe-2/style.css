@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/radcliffe-2
 Author: Anders Norén
 Author URI: http://www.andersnoren.se
 Description: A theme for bloggers who want their content to take center stage.
-Version: 2.0.2-wpcom
+Version: 2.0.5-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: radcliffe-2
@@ -1487,9 +1487,9 @@ textarea {
 	background: rgba(0, 0, 0, 0.6);
 }
 
-.archive .entry-header:hover,
-.blog .entry-header:hover,
-.search-results .entry-header:hover {
+.archive article .entry-header:hover,
+.blog article .entry-header:hover,
+.search-results article .entry-header:hover {
 	background: rgba(0, 0, 0, 0.75);
 }
 
@@ -1779,7 +1779,6 @@ textarea {
 	font-size: 24px;
 	font-size: 2.4rem;
 	font-weight: 700;
-	letter-spacing: 1;
 	margin-bottom: 36px;
 	text-align: center;
 }
@@ -2171,8 +2170,8 @@ object {
 		position: relative;
 		width: 100%;
 		-webkit-transition: max-height 0.425s ease-in-out;
-		-moz-transition: max-height all 0.425s ease-in-out;
-		transition: max-height all 0.425s ease-in-out;
+		-moz-transition: max-height 0.425s ease-in-out;
+		transition: max-height 0.425s ease-in-out;
 	}
 
 	.main-navigation.toggled > div {
@@ -2692,6 +2691,6 @@ object {
 	.site-branding .custom-logo {
 		height: auto;
 		max-width: 90vw;
-		max-height: auto;
+		max-height: 1000%;
 	}
 }

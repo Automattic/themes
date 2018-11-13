@@ -14,9 +14,10 @@
 	$( document ).ready( function() {
 
 		/**
-		 * Set variable
+		 * Set variables
 		 */
-		var $container = $( '#infinite-wrap' );
+		var $container = $( '#infinite-wrap' ),
+			$wrapper = $( '.js body' );
 
 		/**
 		 * Append HTML to masonry wrapper for responsive sizing
@@ -32,16 +33,6 @@
 		 * Move Jetpack sharing and post flair into the entry-footer
 		 */
 		$( '.entry-footer' ).append( $( '#jp-post-flair' ).detach() );
-
-	});
-
-	$( window ).on( 'load', function() {
-
-		/**
-		 * Set variables
-		 */
-		var $wrapper = $( '.js body' ),
-			$container = $( '#infinite-wrap' );
 
 		/*
 		 * Fade in page
@@ -71,15 +62,20 @@
 				'opacity' : 1
 			} );
 		});
+	});
 
-		// Handle new items appended by infinite scroll
-		$( document ).on( 'post-load', function() {
-			$container.imagesLoaded( function() {
-				$container.masonry( 'reloadItems').masonry( 'layout' );
-				// Fade in cards
-				$container.find( '.card' ).animate( {
-					'opacity' : 1
-				});
+	// Handle new items appended by infinite scroll
+	$( document ).on( 'post-load', function() {
+		/**
+		 * Set variables
+		 */
+		var $container = $( '#infinite-wrap' );
+
+		$container.imagesLoaded( function() {
+			$container.masonry( 'reloadItems').masonry( 'layout' );
+			// Fade in cards
+			$container.find( '.card' ).animate( {
+				'opacity' : 1
 			});
 		});
 	});

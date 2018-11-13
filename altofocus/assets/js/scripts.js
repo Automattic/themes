@@ -115,17 +115,13 @@
 	$( document )
 		.ready( initColumnLists )
 		.ready( initGallerySlider )
+		.ready( fadeInPage )
 		.ready( function() {
 
 			body = $( document.body );
 
 			window.addEventListener( 'scroll', altofocus_debounce( stickyPageHeader, 20, 1 ) );
 
-			/**
-			 * Window calls
-			 */
-			$( window )
-				.load( fadeInPage );
 		} );
 
 })(jQuery);

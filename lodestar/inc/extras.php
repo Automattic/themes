@@ -94,3 +94,13 @@ function lodestar_is_frontpage() {
 		return false;
 	endif;
 }
+
+/**
+ * Adjust content_width value for portfolio page template.
+ */
+function lodestar_portfolio_content_width() {
+	if ( is_page_template( 'templates/portfolio-page.php' ) ) {
+		$GLOBALS['content_width'] = 1120;
+	}
+}
+add_action( 'template_redirect', 'lodestar_portfolio_content_width' );

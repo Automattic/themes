@@ -28,11 +28,9 @@
 				} );
 			}
 		} );
-
 	}
 
 	$( window ).load( function() {
-
 		/*
 		 * Wrap portfolio-featured-image in a div.
 		 */
@@ -41,6 +39,10 @@
 		} );
 
 		calc();
+
+	} );
+
+	$( document ).ready( function() {
 
 		var portfolio_wrapper = $( '.portfolio-wrapper, .jetpack-portfolio-shortcode' );
 

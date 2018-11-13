@@ -1,0 +1,174 @@
+/*!
+Editor Styles for Radcliffe 2: Vintage Style Pack
+--------------------------------------------------------------*/
+
+/* Temporary method to include Google Fonts */
+@import url( "https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700" );
+
+/* Widths */
+.wp-block-cover-image.alignleft,
+.wp-block-cover-image.alignright {
+	left: auto;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.edit-post-visual-editor figure {
+	margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+	.editor-block-list__layout .editor-block-list__block[data-align="full"] > .editor-block-list__block-edit,
+	.edit-post-visual-editor .editor-block-list__block[data-align="full"] .editor-block-list__block-edit,
+	.editor-block-list__layout .editor-block-list__block[data-align="wide"] > .editor-block-list__block-edit,
+	.edit-post-visual-editor .editor-block-list__block[data-align="wide"] .editor-block-list__block-edit {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.editor-writing-flow {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 900px;
+	}
+
+	.edit-post-visual-editor textarea.editor-post-title__input {
+		margin: 50px auto 10px;
+		width: 740px;
+	}
+
+	.editor-block-list__layout .editor-block-list__block[data-align="full"],
+	.editor-block-list__layout .editor-block-list__block[data-type="core/cover-image"] {
+		margin-left: calc(30% - 30vw);
+		margin-right: calc(30% - 30vw);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	/* .folded - WordPress left sidebar is closed */
+	/* .is-sidebar-opened - Gutenberg right slidebar is opened */
+
+	.editor-block-list__layout .editor-block-list__block[data-align="wide"] {
+		margin-left: calc(20% - 20vw);
+		margin-right: calc(20% - 20vw);
+		width: auto;
+		max-width: 1000%;
+	}
+}
+
+/* Editor Layout */
+.edit-post-layout {
+	background-color: #eae8dc;
+}
+
+.editor-writing-flow {
+	border: 4px double #c7c4b4;
+	background-color: rgba(255,255,255,0.3);
+	padding-bottom: 4em;
+}
+
+.editor-block-list__layout .editor-block-list__block[data-align="full"],
+.editor-block-list__layout .editor-block-list__block[data-align="wide"],
+.wp-block-cover-image {
+	background-color: rgba(255,255,255,0.7);
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.8+0,1+20,1+80,0.8+100 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.6) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 85%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,1) 15%,rgba(255,255,255,1) 85%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	border: 4px double #c7c4b4;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.editor-block-list__layout .editor-block-list__block[data-align="full"] .is-focused,
+.editor-block-list__layout .editor-block-list__block[data-align="wide"] .is-focused,
+.wp-block-cover-image .is-focused {
+	outline: none;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+.edit-post-visual-editor p,
+.edit-post-visual-editor li {
+	font-size: 18px;
+}
+
+.edit-post-visual-editor,
+.edit-post-visual-editor p,
+.edit-post-visual-editor button,
+.edit-post-visual-editor input,
+.edit-post-visual-editor select,
+.edit-post-visual-editor optgroup,
+.edit-post-visual-editor textarea {
+	color: #222;
+	font-family: 'Libre Baskerville', 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
+
+h1.mce-content-body,
+h2.mce-content-body,
+h3.mce-content-body,
+h4.mce-content-body,
+h5.mce-content-body,
+h6.mce-content-body,
+.edit-post-visual-editor textarea.editor-post-title__input,
+.mce-content-body h1,
+.mce-content-body h2,
+.mce-content-body h3,
+.mce-content-body h4,
+.mce-content-body h5,
+.mce-content-body h6,
+#poststuff h1,
+#poststuff h2,
+#poststuff h3,
+#poststuff h4,
+#poststuff h5,
+#poststuff h6 {
+	font-family: 'Libre Baskerville', 'Helvetica Neue', Helvetica, arial, sans-serif;
+	font-weight: 400;
+}
+
+/* Post/Page title */
+.edit-post-visual-editor textarea.editor-post-title__input {
+	font-weight: 400;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+.mce-content-body a,
+.wp-block-freeform.core-blocks-rich-text__tinymce a,
+.wp-block-categories a,
+.wp-block-latest-posts a {
+	color: #2b6e9d;
+}
+
+/*--------------------------------------------------------------
+## Gutenberg Styles
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .wp-block-button__link {
+	border: 3px double #c7c4b4;
+	border-radius: 0;
+	font-family: 'Libre Baskerville', 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
+
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus {
+	background-color: #2b6e9d;
+}
+
+
+.wp-block-pullquote,
+.wp-block-pullquote p,
+.wp-block-pullquote cite {
+	color: #666;
+}

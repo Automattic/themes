@@ -65,7 +65,7 @@
 			// jscs:enable
 
 			// Update screen reader text
-			screenReaderSpan.text( altoFocusScreenReaderText.text() === altoFocusScreenReaderText.expand ? altoFocusScreenReaderText.collapse : altoFocusScreenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === altoFocusScreenReaderText.expand ? altoFocusScreenReaderText.collapse : altoFocusScreenReaderText.expand );
 
 		} );
 

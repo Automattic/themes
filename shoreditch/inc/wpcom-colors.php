@@ -187,6 +187,10 @@ add_color_rule( 'bg', '#ffffff', array(
 		#comments #respond .comment-form-fields div.comment-form-input', 'color', 'bg', '1.1'
 	),
 
+	array(
+		'.widget-footer-top-area select option', 'color', 'fg2'
+	),
+
 ), __( 'Background' ) );
 
 add_color_rule( 'txt', '#7a7c84', array(
