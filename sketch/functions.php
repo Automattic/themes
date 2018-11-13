@@ -102,6 +102,38 @@ function sketch_setup() {
 	 * See: https://wordpress.org/plugins/eventbrite-api/
 	 */
 	add_theme_support( 'eventbrite' );
+
+		// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Orange', 'sketch' ),
+			'slug'  => 'orange',
+			'color' => '#f68060',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'sketch' ),
+			'slug'  => 'dark-gray',
+			'color' => '#333',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'sketch' ),
+			'slug'  => 'medium-gray',
+			'color' => '#999',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'sketch' ),
+			'slug'  => 'light-gray',
+			'color' => '#eee',
+		),
+		array(
+			'name'  => esc_html__( 'White', 'sketch' ),
+			'slug'  => 'white',
+			'color' => '#fff',
+		),
+	) );
 }
 endif; // sketch_setup
 add_action( 'after_setup_theme', 'sketch_setup' );
@@ -131,6 +163,10 @@ function sketch_scripts() {
 	wp_enqueue_style( 'sketch-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'sketch-lato', sketch_fonts_url(), array(), null );
 
+	// Block stylesheets
+	wp_enqueue_style( 'sketch-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'sketch-style' ), '20181018' );
+
+
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
 	if ( sketch_has_featured_posts( 2 ) && is_page_template( 'portfolio-page.php' ) ) {
@@ -151,6 +187,18 @@ function sketch_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'sketch_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function sketch_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'sketch-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+
+	// Font styles.
+	wp_enqueue_style( 'sketch-fonts', sketch_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'sketch_block_editor_styles' );
 
 /**
  * Register Google Fonts
