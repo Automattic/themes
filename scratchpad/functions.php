@@ -44,22 +44,22 @@ function scratchpad_setup() {
 			array(
 				'name'  => esc_html__( 'Black', 'scratchpad' ),
 				'slug' => 'black',
-				'color' => '#26231e',
+				'color' => '#222222',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Gray', 'scratchpad' ),
 				'slug' => 'dark-gray',
-				'color' => '#787065',
+				'color' => '#777777',
 			),
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'scratchpad' ),
 				'slug' => 'medium-gray',
-				'color' => '#a09a92',
+				'color' => '#999999',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'scratchpad' ),
 				'slug' => 'light-gray',
-				'color' => '#d9d6d0',
+				'color' => '#bdcbcc',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'scratchpad' ),
@@ -67,26 +67,36 @@ function scratchpad_setup() {
 				'color' => '#ffffff',
 			),
 			array(
-				'name'  => esc_html__( 'Red', 'scratchpad' ),
-				'slug' => 'red',
-				'color' => '#932817',
+				'name'  => esc_html__( 'Blue', 'scratchpad' ),
+				'slug' => 'blue',
+				'color' => '#7ba6a9',
 			),
 			array(
-				'name'  => esc_html__( 'Dark Red', 'scratchpad' ),
-				'slug' => 'dark-red',
-				'color' => '#712012',
+				'name'  => esc_html__( 'Dark Blue', 'scratchpad' ),
+				'slug' => 'dark-blue',
+				'color' => '#537375',
 			),
+			array(
+				'name'  => esc_html__( 'Orange', 'scratchpad' ),
+				'slug' => 'orange',
+				'color' => '#d16221',
+			),
+			array(
+				'name'  => esc_html__( 'Yellow', 'scratchpad' ),
+				'slug' => 'yellow',
+				'color' => '#e4b500',
+			),	
 		)
 	);
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * @link https://developer.wordpress.org/themes/functionality/featuBlue-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'scratchpad-avatar', 85, 85, true );
-	add_image_size( 'scratchpad-featured', 1000, 9999 );
+	add_image_size( 'scratchpad-featuBlue', 1000, 9999 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
