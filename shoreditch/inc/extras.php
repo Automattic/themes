@@ -36,6 +36,11 @@ function shoreditch_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Adds a class of no-sidebar specifically to be used for Gutenberg styles, without interfering with the above.
+	if ( ( is_home() || is_singular() || is_archive() ) && ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'can-align-wide';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'shoreditch_body_classes' );
