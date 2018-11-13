@@ -1,0 +1,466 @@
+/*
+Theme Name: Shoreditch
+Description: Used to style Gutenberg Blocks in the editor.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Typography
+2.0 General Block Settings
+3.0 Blocks - Common Blocks
+4.0 Blocks - Formatting
+5.0 Blocks - Layout Elements
+6.0 Blocks - Widgets
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Typography
+--------------------------------------------------------------*/
+
+.edit-post-visual-editor .editor-block-list__block,
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+	font-family: Lato, sans-serif;
+}
+
+/* Font size */
+
+.edit-post-visual-editor .editor-block-list__block,
+.edit-post-visual-editor .editor-block-list__block p,
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+	.edit-post-visual-editor .editor-block-list__block,
+	.edit-post-visual-editor .editor-block-list__block p,
+	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+		font-size: 20px;
+	}
+}
+
+/* Color */
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #7a7c84;
+}
+
+/* Post title */
+
+.editor-post-title__block .editor-post-title__input {
+	color: #2c313f;
+	font-family: Poppins, sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+@media screen and (min-width: 768px) {
+	.editor-post-title__block .editor-post-title__input {
+		font-size: 49px;
+	}
+}
+
+/* Headings */
+
+.edit-post-visual-editor h1,
+.wp-block-freeform.block-library-rich-text__tinymce h1,
+.edit-post-visual-editor h2,
+.wp-block-freeform.block-library-rich-text__tinymce h2,
+.edit-post-visual-editor h3,
+.wp-block-freeform.block-library-rich-text__tinymce h3,
+.edit-post-visual-editor h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4,
+.edit-post-visual-editor h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5,
+.edit-post-visual-editor h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
+	color: #2c313f;
+	font-family: Poppins, sans-serif;
+	font-weight: bold;
+}
+
+.edit-post-visual-editor h1,
+.wp-block-freeform.block-library-rich-text__tinymce h1 {
+	font-size: 40px;
+}
+
+.edit-post-visual-editor h2,
+.wp-block-freeform.block-library-rich-text__tinymce h2 {
+	font-size: 32px;
+}
+
+.edit-post-visual-editor h3,
+.wp-block-freeform.block-library-rich-text__tinymce h3 {
+	font-size: 25px;
+}
+
+.edit-post-visual-editor h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4 {
+	font-size: 20px;
+}
+
+.edit-post-visual-editor h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5 {
+	font-size: 16px;
+}
+
+.edit-post-visual-editor h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
+	font-size: 13px;
+}
+
+@media screen and (min-width: 768px) {
+	.edit-post-visual-editor h1,
+	.wp-block-freeform.block-library-rich-text__tinymce h1 {
+		font-size: 49px;
+	}
+
+	.edit-post-visual-editor h2,
+	.wp-block-freeform.block-library-rich-text__tinymce h2 {
+		font-size: 40px;
+	}
+
+	.edit-post-visual-editor h3,
+	.wp-block-freeform.block-library-rich-text__tinymce h3 {
+		font-size: 32px;
+	}
+
+	.edit-post-visual-editor h4,
+	.wp-block-freeform.block-library-rich-text__tinymce h4 {
+		font-size: 25px;
+	}
+
+	.edit-post-visual-editor h5,
+	.wp-block-freeform.block-library-rich-text__tinymce h5 {
+		font-size: 20px;
+	}
+
+	.edit-post-visual-editor h6,
+	.wp-block-freeform.block-library-rich-text__tinymce h6 {
+		font-size: 16px;
+	}
+}
+
+/*--------------------------------------------------------------
+2.0 General Block Settings
+--------------------------------------------------------------*/
+
+/* Main content width */
+
+.wp-block {
+	max-width: 610px; /* 580px + 30px to account for padding */
+}
+
+/* Link styles */
+
+.edit-post-visual-editor a,
+.editor-block-list__block a,
+.wp-block-freeform.block-library-rich-text__tinymce a {
+	color: #2c313f;
+	text-decoration: underline;
+}
+
+/* Table styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce table,
+.wp-block-freeform.block-library-rich-text__tinymce table th,
+.wp-block-freeform.block-library-rich-text__tinymce table td {
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table th,
+.wp-block-freeform.block-library-rich-text__tinymce table td {
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce td,
+.rtl .wp-block-freeform.block-library-rich-text__tinymce th {
+	text-align: right;
+}
+
+/* Quote styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote {
+
+}
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-freeform.block-library-rich-text__tinymce blockquote p {
+
+}
+
+/* List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce li,
+.editor-styles-wrapper li {
+	margin-bottom: 0;
+}
+
+/* Code styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce code {
+	background: transparent;
+}
+
+/* Caption styles */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: 16px;
+	font-style: italic;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	border-bottom: 1px solid #f3f3f3;
+	margin-top: 0.25em;
+	padding-bottom: 0.25em;
+}
+
+.wp-block:not[data-align="full"] [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	text-align: left;
+}
+
+.rtl .wp-block:not[data-align="full"] [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	text-align: right;
+}
+
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce dd {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Pre styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce pre {
+
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+	margin-top: 0.15em;
+}
+
+/* Quote */
+
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	border: 0 solid #3e69dc;
+	border-left-width: 3px;
+	color: inherit;
+	font-style: italic;
+	line-height: 1.5;
+	margin: 0 0 1.5rem;
+	padding-left: 1.5rem;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large) p {
+	font-size: 20px;
+}
+
+.editor-styles-wrapper .wp-block-quote.is-large p,
+.editor-styles-wrapper .wp-block-quote.is-style-large p {
+	font-size: 26px;
+}
+
+.wp-block-quote .wp-block-quote__citation {
+	color: #2c313f;
+	font-style: italic;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large) .wp-block-quote__citation {
+	font-size: 20px;
+}
+
+.wp-block-quote.is-large .wp-block-quote__citation,
+.wp-block-quote.is-style-large .wp-block-quote__citation {
+	font-size: 26px
+}
+
+@media (min-width: 768px) {
+	.wp-block-quote:not(.is-large):not(.is-style-large) p {
+		font-size: 25px;
+	}
+
+	.editor-styles-wrapper .wp-block-quote.is-large p,
+	.editor-styles-wrapper .wp-block-quote.is-style-large p {
+		font-size: 32px;
+	}
+
+	.wp-block-quote:not(.is-large):not(.is-style-large) .wp-block-quote__citation {
+		font-size: 26px;
+	}
+
+	.wp-block-quote.is-large .wp-block-quote__citation,
+	.wp-block-quote.is-style-large .wp-block-quote__citation {
+		font-size: 26px
+	}
+}
+
+.rtl .wp-block-quote .wp-block-quote__citation {
+	text-align: left;
+}
+
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 1.5em;
+}
+
+/* File */
+
+.wp-block-file__textlink {
+	color: #2c313f;
+	text-decoration: underline;
+}
+
+.wp-block-file .wp-block-file__button,
+.wp-block-file .wp-block-file__button:visited {
+	background: #3e69dc;
+	border: 0;
+	border-radius: 5em;
+	color: #fff;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-weight: bold;
+	letter-spacing: 0.0625em;
+	line-height: 1.3847;
+	padding: 0.5625rem 1.5em;
+	text-transform: uppercase;
+}
+
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus {
+	background: #2c313f;
+	outline: none;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse pre {
+
+}
+
+/* Code */
+
+.wp-block-code {
+	border: none;
+	border-radius: 0;
+}
+
+.wp-block-code textarea {
+	background: transparent;
+}
+
+/* Preformatted */
+
+.wp-block-preformatted {
+
+}
+
+/* Pullquote */
+
+.wp-block-pullquote {
+
+}
+
+.wp-block-pullquote blockquote {
+
+}
+
+
+.wp-block-pullquote__citation {
+
+}
+
+.wp-block-pullquote.alignleft blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
+.wp-block-pullquote.alignright blockquote > .block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty="true"]::before,
+.wp-block-pullquote.alignleft blockquote > .editor-rich-text p,
+.wp-block-pullquote.alignright blockquote > .editor-rich-text p {
+	font-size: 20px;
+}
+
+/* Table */
+
+.wp-block-table th,
+.wp-block-table td {
+}
+
+.wp-block-table th {
+	text-align: left;
+}
+
+.wp-block-table__cell-content {
+}
+
+.rtl .wp-block-table th {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .editor-rich-text__tinymce.mce-content-body {
+}
+
+.wp-block-button .wp-block-button__link {
+}
+
+.wp-block-button__link:hover {
+}
+
+.wp-block-button__link:focus,
+.wp-block-button__link:active {
+}
+
+/* Separator */
+
+.wp-block-separator {
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Categories, Latest Posts & Archives */
+
+[data-align="center"] .wp-block-categories ul,
+[data-align="center"] .wp-block-latest-posts ul,
+[data-align="center"] .wp-block-archives ul {
+	list-style-position: inside;
+}
+
+/* Latest Comments */
+
+.editor-styles-wrapper .wp-block-latest-comments {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: inherit;
+}
