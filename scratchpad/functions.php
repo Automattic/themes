@@ -35,6 +35,50 @@ function scratchpad_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+ 	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'scratchpad' ),
+				'slug' => 'black',
+				'color' => '#26231e',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'scratchpad' ),
+				'slug' => 'dark-gray',
+				'color' => '#787065',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'scratchpad' ),
+				'slug' => 'medium-gray',
+				'color' => '#a09a92',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'scratchpad' ),
+				'slug' => 'light-gray',
+				'color' => '#d9d6d0',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'scratchpad' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Red', 'scratchpad' ),
+				'slug' => 'red',
+				'color' => '#932817',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Red', 'scratchpad' ),
+				'slug' => 'dark-red',
+				'color' => '#712012',
+			),
+		)
+	);
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -135,6 +179,9 @@ function scratchpad_scripts() {
 
 	wp_enqueue_style( 'scratchpad-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'scratchpad-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_script( 'scratchpad-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'scratchpad-javascript', get_template_directory_uri() . '/js/scratchpad.js', array( 'jquery', 'masonry' ), '20151215', true );
@@ -146,6 +193,15 @@ function scratchpad_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'scratchpad_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function scratchpad_editor_styles() {
+	wp_enqueue_style( 'scratchpad-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+	wp_enqueue_style( 'scratchpad-fonts', scratchpad_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'scratchpad_editor_styles' );
 
 /**
  * Get first image from a post
