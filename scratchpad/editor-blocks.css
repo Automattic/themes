@@ -135,14 +135,6 @@
 	}
 }
 
-/* Images */
-
-.wp-block-image figcaption {
-	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
-	font-size: 15px;
-	line-height: 1.5;
-}
-
 /*--------------------------------------------------------------
 2.0 General Block Styles
 --------------------------------------------------------------*/
@@ -226,10 +218,50 @@
 
 /* Captions */
 
-[class^="wp-block-"] figcaption {
+[class^="wp-block-"] figcaption,
+.wp-caption-dd {
 	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
 	font-size: 15px;
 	line-height: 1.5;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption,
+.wp-caption-dd {
+	border-bottom: 1px solid #ddd;
+	color: #b9b9b9;
+	padding-bottom: 0.5em;
+}
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce dd {
+	margin-bottom: 1em;
+}
+
+/* Code styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce code,
+.wp-block-freeform.block-library-rich-text__tinymce kbd,
+.wp-block-freeform.block-library-rich-text__tinymce tt,
+.wp-block-freeform.block-library-rich-text__tinymce var {
+	background: transparent;
+	color: #777;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+}
+
+/* Mark, Ins styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce mark,
+.wp-block-freeform.block-library-rich-text__tinymce ins {
+	background: #fff9c0;
 }
 
 /*--------------------------------------------------------------
@@ -248,6 +280,14 @@
 
 .edit-post-visual-editor blockquote p {
 	margin: 0 0 1.5em;
+}
+
+/* Images */
+
+.wp-block-image figcaption {
+	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
+	font-size: 15px;
+	line-height: 1.5;
 }
 
 /* Quote */
@@ -360,6 +400,17 @@
 .editor-block-list__block .wp-block-quote.is-style-large p {
 	margin-bottom: 1.5em;
 	font-style: normal;
+}
+
+/* Cover */
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
 }
 
 /* File */
@@ -760,6 +811,7 @@
 
 /* Buttons */
 .wp-block-button .wp-block-button__link {
+	background: transparent;
 	border: 2px solid currentColor;
 	border-radius: 255px 15px 225px 15px/15px 225px 15px;
 	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
@@ -799,6 +851,7 @@
 .wp-block-button__link:not(.has-background):active,
 .wp-block-button__link:not(.has-background):focus,
 .wp-block-button__link:not(.has-background):hover {
+	background: transparent;
 	border-color: rgba(119, 119, 119, 0.8);
 }
 
@@ -822,7 +875,6 @@
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
 
 .wp-block-separator.is-style-wide {
 	max-width: 100%;

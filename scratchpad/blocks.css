@@ -18,18 +18,19 @@ Description: Used to style Gutenberg Blocks.
 1.0 General Block Styles
 --------------------------------------------------------------*/
 
-/* Alignments */
-
-.no-sidebar #page {
-	overflow-x: hidden;
-}
-
 /* Captions */
 
 [class^="wp-block-"] figcaption {
 	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
 	font-size: 15px;
 	line-height: 1.5;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	border-bottom: 1px solid #ddd;
+	color: #b9b9b9;
+	margin-top: 0;
+	padding-bottom: 0.5em;
 }
 
 /*--------------------------------------------------------------
@@ -49,6 +50,15 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-cover.alignright,
 .wp-block-cover.aligncenter {
 	display: flex;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
 }
 
 /* Gallery */
@@ -88,6 +98,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 /* Audio */
+
+.wp-block-audio {
+	margin-bottom: 1.75em;
+}
 
 .wp-block-audio audio {
 	display: block;
@@ -306,17 +320,32 @@ hr.wp-block-separator {
 	max-width: 100%;
 }
 
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 1.75em;
+}
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
 
-/* Categories */
+/* Archives, Categories & Latest Posts */
 
-.wp-block-categories.aligncenter {
+.wp-block-archives.aligncenter,
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter {
+	list-style-position: inside;
 	margin-left: 1.5em;
 	margin-right: 1.5em;
 	text-align: center;
 }
+
+/* Categories */
 
 .wp-block-categories-list.alignleft {
 	margin-left: 1.5em;
@@ -329,16 +358,14 @@ hr.wp-block-separator {
 	margin-right: 0;
 }
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
+.wp-block-latest-comments__comment-meta a {
 	font-weight: 700;
 	text-decoration: none;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
-	border-top: 1px solid #ccc;
 	margin-bottom: 0;
-	padding: .75em 0;
+	padding: 0.75em 0;
 }
 
 .wp-block-latest-comments .avatar,
@@ -346,9 +373,20 @@ hr.wp-block-separator {
 	margin: 0;
 }
 
-.wp-block-latest-comments__comment-excerpt p:last-child {
-	margin-bottom: 0;
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
 }
+
+.wp-block-latest-comments__comment-date {
+	color: #999;
+	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+/* Latest Posts */
 
 .wp-block-latest-posts.is-grid,
 .rtl .wp-block-latest-posts.is-grid {
