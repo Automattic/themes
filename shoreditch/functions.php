@@ -78,6 +78,41 @@ function shoreditch_setup() {
 	 * See: https://wordpress.org/plugins/eventbrite-api/
 	 */
 	add_theme_support( 'eventbrite' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Blue', 'shoreditch' ),
+			'slug'  => 'blue',
+			'color' => '#3e69dc',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'shoreditch' ),
+			'slug'  => 'dark-gray',
+			'color' => '#2c313f',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'shoreditch' ),
+			'slug'  => 'medium-gray',
+			'color' => '#7a7c84',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'shoreditch' ),
+			'slug'  => 'light-gray',
+			'color' => '#f3f3f3',
+		),
+		array(
+			'name'  => esc_html__( 'White', 'shoreditch' ),
+			'slug'  => 'white',
+			'color' => '#fff',
+		),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'shoreditch_setup' );
@@ -181,6 +216,9 @@ function shoreditch_scripts() {
 
 	wp_enqueue_style( 'shoreditch-style', get_stylesheet_uri() );
 
+	// Block stylesheets
+	wp_enqueue_style( 'shoreditch-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'shoreditch-style' ), '20181018' );
+
 	wp_enqueue_script( 'shoreditch-back-top', get_template_directory_uri() . '/js/back-top.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'shoreditch-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -205,6 +243,18 @@ function shoreditch_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'shoreditch_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function shoreditch_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'shoreditch-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+
+	// Font styles.
+	wp_enqueue_style( 'shoreditch-fonts', shoreditch_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'shoreditch_block_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
