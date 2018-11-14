@@ -67,6 +67,47 @@ function textbook_setup() {
 		'caption',
 	) );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Red', 'textbook' ),
+			'slug'  => 'red',
+			'color' => '#ce4639',
+		),
+		array(
+			'name'  => esc_html__( 'Green', 'textbook' ),
+			'slug'  => 'green',
+			'color' => '#26866d',
+		),
+		array(
+			'name'  => esc_html__( 'Purple', 'textbook' ),
+			'slug'  => 'purple',
+			'color' => '#8b66d6',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'textbook' ),
+			'slug'  => 'dark-gray',
+			'color' => '#222',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'textbook' ),
+			'slug'  => 'medium-gray',
+			'color' => '#777',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'textbook' ),
+			'slug'  => 'light-gray',
+			'color' => '#e1dfdc',
+		),
+		array(
+			'name'  => esc_html__( 'White', 'textbook' ),
+			'slug'  => 'white',
+			'color' => '#fff',
+		),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'textbook_setup' );
@@ -250,6 +291,10 @@ function textbook_scripts() {
 	// Textbook Stylesheet
 	wp_enqueue_style( 'textbook-style', get_stylesheet_uri() );
 
+	// Block stylesheets
+	wp_enqueue_style( 'textbook-block-style', get_template_directory_uri() . '/assets/css/blocks.css', array( 'textbook-style' ), '20181018' );
+
+
 	/*
 	 * Scripts
 	 */
@@ -291,6 +336,27 @@ function textbook_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'textbook_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function textbook_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'textbook-block-editor-style', get_template_directory_uri() . '/assets/css/editor-blocks.css' );
+
+	// Libre Franklin font
+	wp_register_style( 'textbook-libre-franklin', textbook_libre_franklin_url(), array(), null );
+	wp_enqueue_style( 'textbook-libre-franklin' );
+
+	// Playfair Display font
+	wp_register_style( 'textbook-playfair-display', textbook_playfair_display_url(), array(), null );
+	wp_enqueue_style( 'textbook-playfair-display' );
+
+	// Playfair Display Small Caps font
+	wp_register_style( 'textbook-playfair-display-sc', textbook_playfair_display_sc_url(), array(), null );
+	wp_enqueue_style( 'textbook-playfair-display-sc' );
+}
+add_action( 'enqueue_block_editor_assets', 'textbook_block_editor_styles' );
 
 /*
  * Check whether the browser supports JavaScript.
