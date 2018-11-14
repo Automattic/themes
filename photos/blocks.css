@@ -1,6 +1,7 @@
-/*--------------------------------------------------------------
-## Gutenberg Styles
---------------------------------------------------------------*/
+/*
+Theme Name: Photos
+Description: Gutenberg Block Styles
+*/
 
 /* Alignments */
 .alignfull {
@@ -15,18 +16,83 @@
 	margin-right: auto;
 }
 
-.alignleft figcaption {}
+/* Images */
+.wp-block-image img {
+	display: block;
+}
 
-.alignright figcaption {}
+.wp-block-image .alignleft {
+	margin-bottom: 1.5em;
+	margin-left: -190px;
+	margin-right: 1.5em;
+	margin-top: 0;
+}
 
-.wp-block-image.alignleft {}
+.wp-block-image .alignright {
+	margin-bottom: 1.5em;
+	margin-left: 1.5em;
+	margin-right: -190px;
+	margin-top: 0;
+}
 
-.wp-block-image.alignright {}
+.wp-block-image .aligncenter {}
 
-.wp-block-image.aligncenter {}
+.wp-block-image figcaption {
+	color: #606060;
+	font-size: 0.8em;
+	margin-top: 0;
+	padding-top: 0.625em;
+	text-align: center;
+}
+
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block.image .alignright > figcaption {
+}
 
 .wp-block-gallery.alignleft,
 .wp-block-gallery.alignright {}
+
+/* Colors */
+.has-red-color {
+	color: #d63031;
+}
+
+.has-red-background-color {
+	background-color: #d63031;
+}
+
+.has-charcoal-color {
+	color: #111;
+}
+
+.has-charcoal-background-color {
+	background-color: #111;
+}
+
+.has-very-light-gray-color {
+	color: #f0f0f0;
+}
+
+.has-very-light-gray-background-color {
+	background-color: #f0f0f0;
+}
+
+.has-very-dark-gray-color {
+	color: #404040;
+}
+
+.has-very-dark-gray-background-color {
+	background-color: #404040;
+}
+
+.has-medium-gray-color {
+	color: #606060;
+}
+
+.has-medium-gray-background-color {
+	background-color: #606060;
+}
 
 /* Text sizing */
 .is-small-text {}
@@ -36,10 +102,12 @@
 
 
 /* Dropcaps */
-p.has-drop-cap:first-letter {
+p.has-drop-cap:not(:focus):first-letter {
 	font-family: -apple-system, "SF Pro Text", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-	font-size: 64px;
-	font-size: 6.4rem;
+	font-size: 106px;
+	font-size: 10.6rem;
+	font-weight: 300;
+	margin: 0.08em 0.1em 0 0;
 }
 
 /* Images */
@@ -51,11 +119,6 @@ p.has-drop-cap:first-letter {
 .wp-block-gallery {
 	margin-bottom: 3rem;
 }
-.columns-1 {}
-.columns-2 {}
-.columns-3 {}
-.columns-4 {}
-.columns-5 {}
 
 /* Captions */
 .wp-block-image figcaption,
@@ -66,16 +129,16 @@ p.has-drop-cap:first-letter {
 
 /* Blockquotes*/
 .wp-block-quote {
-	border-left: 3px solid #d63031;
+	border-left: 4px solid #d63031;
 	padding-left: 2.7rem;
 }
 
-.wp-block-quote.is-large {
-	border-left-width: 6px;
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 3rem;
-	padding-left: 3.4rem;
+	padding: 2rem 3rem;
 }
 
 .wp-block-quote p:last-of-type {
@@ -87,9 +150,6 @@ p.has-drop-cap:first-letter {
 	font-size: 16px;
 	font-weight: 300;
 }
-
-.blocks-quote-style-1 {}
-.blocks-quote-style-2 {}
 
 /* Cover Images */
 .wp-block-cover-image {}
@@ -117,36 +177,44 @@ p.has-drop-cap:first-letter {
 
 /* Pullquotes */
 .wp-block-pullquote {
-	border-bottom: 3px solid #d63031;
+	border-bottom: 4px solid #d63031;
 	border-left: none;
-	border-top: 3px solid #d63031;
+	border-top: 4px solid #d63031;
+	margin-bottom: 0;
 	padding: 1.5em;
 }
 
-.wp-block-pullquote > p {}
+.wp-block-pullquote p {
+	margin-bottom: 1em;
+}
 
-.wp-block-pullquote > cite {}
+.wp-block-pullquote cite {
+	color: #606060;
+}
 
 .wp-block-pullquote.alignleft > p,
 .wp-block-pullquote.alignright > p {}
 
-.entry-content .wp-block-pullquote.alignleft {
+.wp-block-pullquote.alignleft {
 	text-align: left;
 }
 
-.entry-content .wp-block-pullquote.alignright {
-	text-align: right;
+.wp-block-pullquote.alignright {
+	text-align: left;
 }
 
 .wp-block-pullquote.alignleft,
 .wp-block-pullquote.alignright {
 	max-width: 320px;
-	padding-bottom: 2rem;
-	padding-top: 1rem;
+	padding: 0;
 }
 
-.wp-block-pullquote.alignwide {
-	padding: 1.5em calc( 37.5% - 510px );
+.wp-block-pullquote.alignwide {}
+
+.wp-block-pullquote.alignwide blockquote {
+	border-bottom: 4px solid #d63031;
+	border-left: 0;
+	border-top: 3px solid #d63031;
 }
 
 .wp-block-pullquote.alignfull {
@@ -191,42 +259,65 @@ p.has-drop-cap:first-letter {
 	background-color: transparent;
 	border-bottom: 1px solid #dcdcdc;
 	margin-bottom: 1.5em;
+	width: 18rem;
 }
 
-.wp-block-separator.alignwide {
+.wp-block-separator.alignwide,
+.wp-block-separator.is-style-wide {
 	width: 75vw;
 }
 
-.wp-block-separator.alignfull {
-	width: 100vw;
+.wp-block-separator.is-style-dots:before {
+	color: #d63031;
 }
 
 /* Buttons */
+.wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link {
 	border-radius: 4px;
-	padding: 0.5em 0.75em;
+	font-weight: bold;
 	line-height: 1.5;
-	margin-bottom: 1.5em;
+	padding: 0.5em 0.75em;
 	text-align: center;
 	transition: background 150ms ease-in-out,
 		color 150ms ease-in-out;
 }
 
-.wp-block-button__link {
-	background: #f0f0f0;
+.wp-block-file .wp-block-file__button,
+.wp-block-button__link:not(.has-text-color) {
 	color: #d63031;
 }
 
-.wp-block-button__link:hover {
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:not(.has-text-color):active,
+.wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button__link:not(.has-text-color):hover {
 	color: #fff;
+}
+
+.wp-block-file .wp-block-file__button,
+.wp-block-button__link:not(.has-background) {
+	background: #f0f0f0;
+}
+
+.wp-block-file .wp-block-file__button:active,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:not(.has-background):active,
+.wp-block-button__link:not(.has-background):focus,
+.wp-block-button__link:not(.has-background):hover {
 	background-color: #d63031;
 }
 
-.wp-block-button .wp-block-button__link {}
-.wp-block-button a {}
-.wp-block-button a:hover,
-.wp-block-button a:focus,
-.wp-block-button a:active {}
+.wp-block-button.alignleft {
+	margin-left: calc( 50vw - 328px );
+}
+
+.wp-block-button.alignright {
+	margin-right: calc( 50vw - 328px );
+}
 
 /* Text Columns */
 .wp-block-text-columns {}
