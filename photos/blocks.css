@@ -10,48 +10,26 @@ Description: Gutenberg Block Styles
 }
 
 .alignwide {
-	/* max-width: 75%; */
-	max-width: 1020px;
+	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/* Images */
-.wp-block-image img {
-	display: block;
+@media screen and ( min-width: 1080px ) {
+	.alignwide {
+		max-width: 1020px;
+	}
+
+	.alignleft,
+	[class^="wp-block"] .alignleft {
+		margin-left: -190px;
+	}
+
+	.alignright,
+	[class^="wp-block"] .alignright {
+		margin-right: -190px;
+	}
 }
-
-.wp-block-image .alignleft {
-	margin-bottom: 1.5em;
-	margin-left: -190px;
-	margin-right: 1.5em;
-	margin-top: 0;
-}
-
-.wp-block-image .alignright {
-	margin-bottom: 1.5em;
-	margin-left: 1.5em;
-	margin-right: -190px;
-	margin-top: 0;
-}
-
-.wp-block-image .aligncenter {}
-
-.wp-block-image figcaption {
-	color: #606060;
-	font-size: 0.8em;
-	margin-top: 0;
-	padding-top: 0.625em;
-	text-align: center;
-}
-
-.wp-block-image .aligncenter > figcaption,
-.wp-block-image .alignleft > figcaption,
-.wp-block.image .alignright > figcaption {
-}
-
-.wp-block-gallery.alignleft,
-.wp-block-gallery.alignright {}
 
 /* Colors */
 .has-red-color {
@@ -101,7 +79,7 @@ Description: Gutenberg Block Styles
 .is-larger-text {}
 
 
-/* Dropcaps */
+/* Dropcap */
 p.has-drop-cap:not(:focus):first-letter {
 	font-family: -apple-system, "SF Pro Text", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 106px;
@@ -111,9 +89,17 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 /* Images */
-.wp-block-image {}
+.wp-block-image img {
+	display: block;
+}
 
-.wp-block-image figcaption {}
+.wp-block-image figcaption {
+	color: #606060;
+	font-size: 0.8em;
+	margin-top: 0;
+	padding-top: 0.625em;
+	text-align: center;
+}
 
 /* Galleries */
 .wp-block-gallery {
@@ -176,12 +162,12 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 /* Pullquotes */
-.wp-block-pullquote {
+.wp-block-pullquote blockquote {
 	border-bottom: 4px solid #d63031;
 	border-left: none;
 	border-top: 4px solid #d63031;
 	margin-bottom: 0;
-	padding: 1.5em;
+	padding: 3em;
 }
 
 .wp-block-pullquote p {
@@ -191,9 +177,6 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-pullquote cite {
 	color: #606060;
 }
-
-.wp-block-pullquote.alignleft > p,
-.wp-block-pullquote.alignright > p {}
 
 .wp-block-pullquote.alignleft {
 	text-align: left;
@@ -207,14 +190,6 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-pullquote.alignright {
 	max-width: 320px;
 	padding: 0;
-}
-
-.wp-block-pullquote.alignwide {}
-
-.wp-block-pullquote.alignwide blockquote {
-	border-bottom: 4px solid #d63031;
-	border-left: 0;
-	border-top: 3px solid #d63031;
 }
 
 .wp-block-pullquote.alignfull {
@@ -276,6 +251,7 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-button .wp-block-button__link {
 	border-radius: 4px;
 	font-weight: bold;
+	font-size: inherit;
 	line-height: 1.5;
 	padding: 0.5em 0.75em;
 	text-align: center;
@@ -309,14 +285,6 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-button__link:not(.has-background):focus,
 .wp-block-button__link:not(.has-background):hover {
 	background-color: #d63031;
-}
-
-.wp-block-button.alignleft {
-	margin-left: calc( 50vw - 328px );
-}
-
-.wp-block-button.alignright {
-	margin-right: calc( 50vw - 328px );
 }
 
 /* Text Columns */
