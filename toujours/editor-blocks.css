@@ -553,6 +553,17 @@
 	text-transform: uppercase;
 }
 
+.wp-block-freeform.block-library-rich-text__tinymce pre:before {
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	bottom: 3px;
+	content: "";
+	display: block;
+	left: 3px;
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+
 .wp-block-freeform.block-library-rich-text__tinymce pre {
 	color: #777;
 	background: #eee;
@@ -566,11 +577,11 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
-	border: 0;
-	border-collapse: collapse;
-	border-top: 1px solid #ddd;
-	color: #777;
-	margin: 0 0 1.5em;
+	border-bottom: 4px double #e1e1e1;
+	border-top: 4px double #e1e1e1;
+	margin: 0 0 30px;
+	max-width: 100%;
+	overflow: auto;
 	width: 100%;
 }
 
@@ -578,12 +589,15 @@
 	background: transparent;
 }
 
+.wp-block-freeform.block-library-rich-text__tinymce table tr {
+	border-bottom: 1px solid #e1e1e1;
+}
+
 .wp-block-freeform.block-library-rich-text__tinymce table td,
 .wp-block-freeform.block-library-rich-text__tinymce table th {
 	border: 0;
-	border-bottom: 1px solid #ddd;
 	font-size: 90%;
-	padding: 0.5em;
+	padding: 10px;
 	text-align: left;
 }
 
@@ -595,16 +609,27 @@
 
 /* Preformatted */
 
+.editor-block-list__block .wp-block-preformatted pre:before {
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	bottom: 3px;
+	content: "";
+	display: block;
+	left: 3px;
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+
 .editor-block-list__block .wp-block-preformatted pre {
-	color: #777;
-	background: #eee;
+	background: #333;
+	color: #ddd;
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	position: relative;
 }
 
 /* Pullquote */
@@ -697,24 +722,29 @@
 }
 
 .editor-block-list__block table.wp-block-table {
-	border-top: 1px solid #ddd;
-	margin: 0 0 1.5em;
+	border-bottom: 4px double #e1e1e1;
+	border-top: 4px double #e1e1e1;
+	margin: 0 0 30px;
+	max-width: 100%;
+	overflow: auto;
 	width: 100%;
+}
+
+.editor-block-list__block table.wp-block-table tr {
+	border-bottom: 1px solid #e1e1e1;
 }
 
 .editor-block-list__block table.wp-block-table td {
 	border: 0;
-	border-bottom: 1px solid #ddd;
 	font-size: 90%;
-	padding: 0.5em;
+	padding: 10px;
 	text-align: left;
 }
 
 .editor-block-list__block table.wp-block-table th {
 	border: 0;
-	border-bottom: 1px solid #ddd;
 	font-size: 90%;
-	padding: 0.5em;
+	padding: 10px;
 	text-align: left;
 }
 
@@ -730,48 +760,43 @@
 
 /* Buttons */
 .wp-block-button .wp-block-button__link {
-	background: transparent;
-	border: 2px solid currentColor;
-	border-radius: 255px 15px 225px 15px/15px 225px 15px;
-	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
+	border-radius: 0;
+	border: 0;
+	font-family: "Alegreya Sans", "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 14px;
-	letter-spacing: 0.05em;
-	outline: none;
-	padding: 10px 20px;
-	text-shadow: none;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	line-height: 1;
+	padding: 15px 30px;
 	text-transform: uppercase;
-	-webkit-transition: color 0.2s, border-color 0.2s;
-	   -moz-transition: color 0.2s, border-color 0.2s;
-	        transition: color 0.2s, border-color 0.2s;
+	-webkit-transition: background-color 0.2s;
+	   -moz-transition: background-color 0.2s;
+	        transition: background-color 0.2s;
 }
 
 .wp-block-button .wp-block-button__link:active,
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-	box-shadow: none;
-	text-decoration: none;
 }
 
 .wp-block-button__link:not(.has-background) {
-	background: transparent;
-	border: 2px solid rgba(119, 119, 119, 0.5);
+	background-color: #2590ec;
 }
 
 .wp-block-button__link:not(.has-text-color) {
-	color: rgba(119, 119, 119, 0.8);
+	color: #fff;
 }
 
 .wp-block-button__link:not(.has-text-color):active,
 .wp-block-button__link:not(.has-text-color):focus,
 .wp-block-button__link:not(.has-text-color):hover {
-	color: #777;
+	color: #fff;
 }
 
 .wp-block-button__link:not(.has-background):active,
 .wp-block-button__link:not(.has-background):focus,
 .wp-block-button__link:not(.has-background):hover {
-	background: transparent;
-	border-color: rgba(119, 119, 119, 0.8);
+	background-color: #444;
 }
 
 .wp-block-button.alignleft {
