@@ -185,13 +185,14 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 /* List styles */
 
-.wp-block-freeform.block-library-rich-text__tinymce ul,
-.wp-block-freeform.block-library-rich-text__tinymce ul ul {
-	list-style: disc;
+.wp-block-freeform.block-library-rich-text__tinymce ol {
+	list-style: decimal;
+	margin-left: 1.5em;
+	padding: 0;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce li {
-	margin-bottom: 0;
+.wp-block-freeform.block-library-rich-text__tinymce li > ol {
+	margin-left: 1.5em;
 }
 
 /* Table styles */
@@ -246,8 +247,17 @@ Description: Used to style Gutenberg Blocks in the editor.
 .wp-block-freeform.block-library-rich-text__tinymce kbd,
 .wp-block-freeform.block-library-rich-text__tinymce tt,
 .wp-block-freeform.block-library-rich-text__tinymce var {
+	background: transparent;
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 14.0625px;
+}
+
+/* Mark, Ins styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce mark,
+.wp-block-freeform.block-library-rich-text__tinymce ins {
+	background: #fff9c0;
+	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -262,13 +272,47 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* List */
 
-.editor-styles-wrapper [data-type="core/list"] ul,
-.editor-styles-wrapper [data-type="core/list"] ul ul {
+.edit-post-visual-editor ul:not(.wp-block-gallery),
+.editor-block-list__block ul:not(.wp-block-gallery),
+.block-library-list ul,
+.edit-post-visual-editor ol,
+.editor-block-list__block ol,
+.block-library-list ol.editor-rich-text__tinymce {
+  margin: 0 0 1.75em 25px;
+  padding: 0;
+}
+
+.edit-post-visual-editor ul:not(.wp-block-gallery),
+.editor-block-list__block ul:not(.wp-block-gallery),
+.block-library-list ul {
 	list-style: disc;
 }
 
-.editor-styles-wrapper [data-type="core/list"] li {
+.edit-post-visual-editor ol,
+.editor-block-list__block ol,
+.block-library-list ol.editor-rich-text__tinymce {
+	list-style: decimal;
+}
+
+.edit-post-visual-editor ul:not(.wp-block-gallery) li > ul,
+.editor-block-list__block ul:not(.wp-block-gallery) li > ul,
+.block-library-list li > ul,
+.edit-post-visual-editor li > ol,
+.editor-block-list__block li > ol,
+.block-library-list li > ol {
 	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+.rtl .edit-post-visual-editor ul:not(.wp-block-gallery),
+.rtl .editor-block-list__block ul:not(.wp-block-gallery),
+.rtl .block-library-list ul,
+.rtl .edit-post-visual-editor ol,
+.rtl .editor-block-list__block ol,
+.rtl .block-library-list ol.editor-rich-text__tinymce {
+	margin-left: 0;
+	margin-right: 1.5em;
+	padding: 0;
 }
 
 /* Quote */
