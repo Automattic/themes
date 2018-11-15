@@ -83,26 +83,29 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* File */
 
 .wp-block-file .wp-block-file__button {
-	background: #1a1a1a;
-	border: 0;
-	border-radius: 2px;
-	color: #fff;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-weight: 700;
-	letter-spacing: 0.046875em;
-	line-height: 1;
-	padding: 0.84375em 0.875em 0.78125em;
+	border-radius: 0;
+	display: inline-block;
+	font-size: 13.2px;
+	font-family: Raleway, "Helvetica Neue", sans-serif;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	line-height: 1;
+	transition: 0.3s;
+	text-decoration: none;
+	background-color: #99908a;
+	outline: 4px solid #99908a;
+	border: 2px solid white;
+	position: relative;
+	left: 4px;
 }
 
 .wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:focus {
-	background: #007acc;
-}
-
-.wp-block-file .wp-block-file__button:focus {
-	outline: thin dotted;
-	outline-offset: -4px;
+	outline-color: #5e5853;
+	background-color: #5e5853;
+	color: #fff;
 }
 
 .rtl .wp-block-file * + .wp-block-file__button {
