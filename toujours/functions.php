@@ -42,50 +42,30 @@ function toujours_setup() {
 	add_theme_support(
 		'editor-color-palette', array(
 			array(
-				'name'  => esc_html__( 'Black', 'toujours' ),
-				'slug' => 'black',
-				'color' => '#222222',
+				'name'  => esc_html__( 'Blue', 'toujours' ),
+				'slug' => 'blue',
+				'color' => '#2590ec',
 			),
 			array(
 				'name'  => esc_html__( 'Dark Gray', 'toujours' ),
 				'slug' => 'dark-gray',
-				'color' => '#777777',
+				'color' => '#404040',
 			),
 			array(
 				'name'  => esc_html__( 'Medium Gray', 'toujours' ),
 				'slug' => 'medium-gray',
-				'color' => '#999999',
+				'color' => '#666',
 			),
 			array(
 				'name'  => esc_html__( 'Light Gray', 'toujours' ),
 				'slug' => 'light-gray',
-				'color' => '#bdcbcc',
+				'color' => '#eee',
 			),
 			array(
 				'name'  => esc_html__( 'White', 'toujours' ),
 				'slug' => 'white',
-				'color' => '#ffffff',
+				'color' => '#fff',
 			),
-			array(
-				'name'  => esc_html__( 'Blue', 'toujours' ),
-				'slug' => 'blue',
-				'color' => '#7ba6a9',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Blue', 'toujours' ),
-				'slug' => 'dark-blue',
-				'color' => '#537375',
-			),
-			array(
-				'name'  => esc_html__( 'Orange', 'toujours' ),
-				'slug' => 'orange',
-				'color' => '#d16221',
-			),
-			array(
-				'name'  => esc_html__( 'Yellow', 'toujours' ),
-				'slug' => 'yellow',
-				'color' => '#e4b500',
-			),	
 		)
 	);
 
