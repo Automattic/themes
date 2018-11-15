@@ -56,6 +56,7 @@
 .edit-post-visual-editor h4,
 .edit-post-visual-editor h5,
 .edit-post-visual-editor h6 {
+	clear: both;
 	color: #5e5853;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 	font-style: italic;
@@ -353,22 +354,35 @@
 
 /* File */
 
-.wp-block-file__textlink {
-	box-shadow: 0 1px 0 0 currentColor;
-	color: #007acc;
+.wp-block-file .wp-block-file__button {
+	border-radius: 0;
+	display: inline-block;
+	font-size: 13.2px;
+	font-family: Raleway, "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	line-height: 1;
+	transition: 0.3s;
+	text-decoration: none;
+	background-color: #99908a;
+	outline: 4px solid #99908a;
+	border: 2px solid white;
+	position: relative;
+	left: 4px;
 }
 
-.wp-block-file .wp-block-file__button {
-	background: #1a1a1a;
-	border: 0;
-	border-radius: 2px;
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:focus {
+	outline-color: #5e5853;
+	background-color: #5e5853;
 	color: #fff;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-weight: 700;
-	letter-spacing: 0.046875em;
-	line-height: 1;
-	padding: 0.84375em 0.875em 0.78125em;
-	text-transform: uppercase;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
 }
 
 /*--------------------------------------------------------------
@@ -397,6 +411,10 @@
 }
 
 /* Classic */
+
+.wp-block-freeform.block-library-rich-text__tinymce address {
+	margin-bottom: 1.5em;
+}
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	color: #99908a;
@@ -560,6 +578,35 @@
 .rtl .wp-block-freeform.block-library-rich-text__tinymce th,
 .rtl .wp-block-freeform.block-library-rich-text__tinymce td {
 	text-align: right;
+}
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce dd {
+	margin-bottom: 1em;
+}
+
+/* Code styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce code,
+.wp-block-freeform.block-library-rich-text__tinymce kbd,
+.wp-block-freeform.block-library-rich-text__tinymce tt,
+.wp-block-freeform.block-library-rich-text__tinymce var {
+	background: transparent;
+	color: #777;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+}
+
+/* Mark, Ins styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce mark,
+.wp-block-freeform.block-library-rich-text__tinymce ins {
+	background: #fff9c0;
 }
 
 /* Preformatted */
