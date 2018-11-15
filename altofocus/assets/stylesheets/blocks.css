@@ -92,9 +92,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* File */
 
-a.wp-block-file__button,
-a.wp-block-file__button:not(.has-background),
-a.wp-block-file__button:visited {
+.wp-block-file a.wp-block-file__button,
+.wp-block-file a.wp-block-file__button:visited {
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
@@ -102,11 +101,10 @@ a.wp-block-file__button:visited {
 	border: 1px solid;
 	border-color: rgba(0, 0, 0, 0.2);
 	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
-	color: #111111;
+	color: #111;
 	display: inline-block;
 	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 13.875px;
-	font-size: 0.925rem;
 	font-weight: 300;
 	line-height: 1;
 	outline: none;
@@ -120,8 +118,7 @@ a.wp-block-file__button:visited {
 	word-break: break-word;
 }
 
-a.wp-block-file__button:hover,
-a.wp-block-file__button:not(.has-background):hover {
+.wp-block-file a.wp-block-file__button:hover {
 	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -129,12 +126,12 @@ a.wp-block-file__button:not(.has-background):hover {
 	background-color: #e38900;
 	border-color: #e38900;
 	color: #fff;
+	opacity: 1;
+
 }
 
-a.wp-block-file__button:focus,
-a.wp-block-file__button:not(.has-background):focus,
-a.wp-block-file__button:active,
-a.wp-block-file__button:not(.has-background):active {
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:active {
 	border-color: #aaa #bbb #bbb;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
 	-webkit-transform: scale(0.925);
@@ -142,13 +139,13 @@ a.wp-block-file__button:not(.has-background):active {
 	-o-transform: scale(0.925);
 	-ms-transform: scale(0.925);
 	transform: scale(0.925);
+	color: #111;
+	opacity: 1;
 }
 
 @media screen and (min-width: 37.5em) {
-	.wp-block-file .wp-block-file__button,
-	a.wp-block-file__button:not(.has-background) {
+	.wp-block-file .wp-block-file__button {
 		font-size: 15px;
-		font-size: 1rem;
 	}
 }
 
@@ -178,16 +175,12 @@ a.wp-block-file__button:not(.has-background):active {
 
 /* Buttons */
 
-.wp-block-button__link,
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link {
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
-	background: #fff;
-	border: 1px solid;
-	border-color: rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
-	color: #111111;
+	border: 1px solid currentColor;
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25) !important;
 	display: inline-block;
 	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 13.875px;
@@ -205,28 +198,50 @@ a.wp-block-file__button:not(.has-background):active {
 	word-break: break-word;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:not(.has-background):hover {
+.wp-block-button__link:not(.has-text-color) {
+	color: #111;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.wp-block-button__link:not(.has-background) {
+	background: #fff;
+}
+
+.wp-block-button__link:hover {
 	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	opacity: 1;
+}
+
+.wp-block-button__link:not(.has-background):hover {
 	background: #e38900;
 	border-color: #e38900;
+}
+
+.wp-block-button__link:not(.has-text-color):hover {
 	color: #fff;
 }
 
 .wp-block-button__link:focus,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:active,
-.wp-block-button__link:not(.has-background):active {
-	border-color: #aaa #bbb #bbb;
+.wp-block-button__link:active {
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
 	-webkit-transform: scale(0.925);
 	-moz-transform: scale(0.925);
 	-o-transform: scale(0.925);
 	-ms-transform: scale(0.925);
 	transform: scale(0.925);
+}
+
+.wp-block-button__link:not(.has-background):focus,
+.wp-block-button__link:not(.has-background):active {
+	border-color: #aaa #bbb #bbb;
+}
+
+.wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button__link:not(.has-text-color):active {
+	color: #fff;
 }
 
 @media screen and (min-width: 37.5em) {
