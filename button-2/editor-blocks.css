@@ -484,9 +484,9 @@ pre.wp-block-verse {
 --------------------------------------------------------------*/
 
 /* Buttons */
+
 .wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link {
-	background: #bbb;
 	border-radius: 0;
 	border: 1px dashed white;
 	box-shadow: none;
@@ -494,23 +494,35 @@ pre.wp-block-verse {
 	font-weight: bold;
 	line-height: 1;
 	margin: 5px;
-	outline: 5px solid #bbb;
 	padding: .75em 1em;
 	text-shadow: none;
 	text-transform: uppercase;
 	transition: .3s;
 }
 
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button,
+.wp-block-button__link:not(.has-background) {
+	background: #bbb;
+	outline: 5px solid #bbb;
+}
+
+.wp-block-file .wp-block-file__button,
+.wp-block-button__link:not(.has-text-color),
+.wp-block-button__link:not(.has-text-color):active,
+.wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button__link:not(.has-text-color):hover {
+	color: #fff;
+}
+
 .wp-block-file .wp-block-file__button:active,
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-button .wp-block-button__link:active {
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:not(.has-background):active,
+.wp-block-button__link:not(.has-background):focus,
+.wp-block-button__link:not(.has-background):hover {
 	background: #f78769;
-	box-shadow: none;
-	color: white;
 	outline: 5px solid #f78769;
+	box-shadow: none;
 }
 
 /* Separator */
