@@ -50,17 +50,19 @@ p.alignfull {
 	margin-right: auto;
 }
 
+@media (min-width: 1160px) {
+	.alignwide {
+		margin-left: -25%;
+		margin-right: -25%;
+		width: auto;
+		max-width: 1000%;
+	}
+}
+
 @media (min-width: 750px) {
 	.alignfull {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
-		width: auto;
-		max-width: 1000%;
-	}
-
-	.alignwide {
-		margin-left: calc(25% - 25vw);
-		margin-right: calc(25% - 25vw);
 		width: auto;
 		max-width: 1000%;
 	}
@@ -80,20 +82,6 @@ p.alignfull {
 	p.alignfull {
 		margin-left: calc(50% - 48vw);
 		margin-right: calc(50% - 48vw);
-	}
-
-	.wp-block-text-columns.alignwide,
-	.wp-block-columns.alignwide,
-	.wp-block-table.alignwide,
-	.wp-block-preformatted.alignwide,
-	.wp-block-button.alignwide,
-	.wp-block-pullquote.alignwide,
-	.wp-block-latest-posts.alignwide,
-	.wp-block-latest-comments.alignwide,
-	.wp-block-categories.alignwide,
-	p.alignwide {
-		margin-left: calc(25% - 23vw);
-		margin-right: calc(25% - 23vw);
 	}
 
 	.wp-block-embed.is-type-video.alignwide iframe,
@@ -254,15 +242,23 @@ ul.wp-block-gallery li {
 	padding: 9px 18px;
 }
 
+.style-pack-colorful .wp-block-file .wp-block-file__button,
+.style-pack-modern .wp-block-file .wp-block-file__button {
+	font-family: inherit;
+}
+
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-file .wp-block-file__button:focus {
 	background: #ca2017;
 	opacity: 1.0;
 }
 
-/* Video */
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
 
-.wp-block-video {}
+/* Video */
 
 .wp-block-video video,
 .wp-block-video iframe {
@@ -277,7 +273,7 @@ ul.wp-block-gallery li {
 
 .wp-block-verse {
 	background-color: transparent;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: inherit;
 	font-size: 1.1em;
 	font-style: italic;
 	line-height: 1.8;
@@ -295,15 +291,20 @@ ul.wp-block-gallery li {
 /* Pullquotes */
 
 .wp-block-pullquote {
-	border: none;
+	border-bottom: 2px solid #ddd;
+	border-top: 3px solid #ddd;
 	color: #666;
-	padding: 0;
 	margin-bottom: 0;
 }
 
 .wp-block-pullquote cite {
 	color: inherit;
 	opacity: 0.8;
+}
+
+.wp-block-pullquote blockquote::before,
+.wp-block-pullquote blockquote::after {
+	display: none;
 }
 
 /* Tables */
@@ -317,8 +318,19 @@ ul.wp-block-gallery li {
 	border: none;
 }
 
+.wp-block-table.alignwide,
 .wp-block-table.alignfull {
 	width: 96vw;
+}
+
+.wp-block-table.alignwide {
+	width: 100%;
+}
+
+@media (min-width: 1160px) {
+	.wp-block-table.alignwide {
+		width: 1110px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -334,6 +346,11 @@ ul.wp-block-gallery li {
 	font-size: 14px;
 	line-height: 1.29;
 	padding: 9px 18px;
+}
+
+.style-pack-colorful .wp-block-file .wp-block-file__button,
+.style-pack-modern .wp-block-file .wp-block-file__button {
+	font-family: inherit;
 }
 
 .wp-block-button__link {
@@ -356,8 +373,6 @@ ul.wp-block-gallery li {
 .wp-block-button.aligncenter {
 	display: block;
 }
-
-/* Columns */
 
 /* Separator */
 
@@ -446,7 +461,8 @@ ul.wp-block-gallery li {
 
 /* Latest Comments */
 
-.wp-block-latest-comments {
+.wp-block-latest-comments.not(.alignwide),
+.wp-block-latest-comments.not(.alignfull) {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -463,6 +479,11 @@ ul.wp-block-gallery li {
 	margin-bottom: 0;
 }
 
+.style-pack-colorful .wp-block-latest-comments__comment-meta,
+.style-pack-modern .wp-block-latest-comments__comment-meta {
+	font-family: inherit;
+}
+
 .wp-block-latest-comments__comment-excerpt p {
 	font-size: 90%;
 }
@@ -475,6 +496,8 @@ ul.wp-block-gallery li {
 /*--------------------------------------------------------------
 7.0 Blocks - Colors
 --------------------------------------------------------------*/
+
+/* Default */
 
 .has-white-color,
 .has-white-color:hover,
@@ -538,4 +561,168 @@ ul.wp-block-gallery li {
 .has-red-background-color:focus,
 .has-red-background-color:visited {
 	background-color: #ca2017;
+}
+
+/* Modern */
+
+.has-modern-white-color,
+.has-modern-white-color:hover,
+.has-modern-white-color:active,
+.has-modern-white-color:focus,
+.has-modern-white-color:visited {
+	color: #fff;
+}
+
+.has-modern-white-background-color,
+.has-modern-white-background-color:hover,
+.has-modern-white-background-color:active,
+.has-modern-white-background-color:focus,
+.has-modern-white-background-color:visited {
+	background-color: #fff
+}
+
+.has-modern-light-gray-color,
+.has-modern-light-gray-color:hover,
+.has-modern-light-gray-color:active,
+.has-modern-light-gray-color:focus,
+.has-modern-light-gray-color:visited {
+	color: #f1f1f1;
+}
+
+.has-modern-light-gray-background-color,
+.has-modern-light-gray-background-color:hover,
+.has-modern-light-gray-background-color:active,
+.has-modern-light-gray-background-color:focus,
+.has-modern-light-gray-background-color:visited {
+	background-color: #f1f1f1
+}
+
+.has-modern-medium-gray-color,
+.has-modern-medium-gray-color:hover,
+.has-modern-medium-gray-color:active,
+.has-modern-medium-gray-color:focus,
+.has-modern-medium-gray-color:visited {
+	color: #aaa;
+}
+
+.has-modern-medium-gray-background-color,
+.has-modern-medium-gray-background-color:hover,
+.has-modern-medium-gray-background-color:active,
+.has-modern-medium-gray-background-color:focus,
+.has-modern-medium-gray-background-color:visited {
+	background-color: #aaa
+}
+
+.has-modern-dark-gray-color,
+.has-modern-dark-gray-color:hover,
+.has-modern-dark-gray-color:active,
+.has-modern-dark-gray-color:focus,
+.has-modern-dark-gray-color:visited {
+	color: #222;
+}
+
+.has-modern-dark-gray-background-color,
+.has-modern-dark-gray-background-color:hover,
+.has-modern-dark-gray-background-color:active,
+.has-modern-dark-gray-background-color:focus,
+.has-modern-dark-gray-background-color:visited {
+	background-color: #222
+}
+
+/* Colorful */
+
+.has-colorful-white-color,
+.has-colorful-white-color:hover,
+.has-colorful-white-color:active,
+.has-colorful-white-color:focus,
+.has-colorful-white-color:visited {
+	color: #fff;
+}
+
+.has-colorful-white-background-color,
+.has-colorful-white-background-color:hover,
+.has-colorful-white-background-color:active,
+.has-colorful-white-background-color:focus,
+.has-colorful-white-background-color:visited {
+	background-color: #fff
+}
+
+.has-colorful-light-gray-color,
+.has-colorful-light-gray-color:hover,
+.has-colorful-light-gray-color:active,
+.has-colorful-light-gray-color:focus,
+.has-colorful-light-gray-color:visited {
+	color: #e5e5e5;
+}
+
+.has-colorful-light-gray-background-color,
+.has-colorful-light-gray-background-color:hover,
+.has-colorful-light-gray-background-color:active,
+.has-colorful-light-gray-background-color:focus,
+.has-colorful-light-gray-background-color:visited {
+	background-color: #e5e5e5
+}
+
+.has-colorful-dark-gray-color,
+.has-colorful-dark-gray-color:hover,
+.has-colorful-dark-gray-color:active,
+.has-colorful-dark-gray-color:focus,
+.has-colorful-dark-gray-color:visited {
+	color: #222;
+}
+
+.has-colorful-dark-gray-background-color,
+.has-colorful-dark-gray-background-color:hover,
+.has-colorful-dark-gray-background-color:active,
+.has-colorful-dark-gray-background-color:focus,
+.has-colorful-dark-gray-background-color:visited {
+	background-color: #222
+}
+
+.has-colorful-blue-color,
+.has-colorful-blue-color:hover,
+.has-colorful-blue-color:active,
+.has-colorful-blue-color:focus,
+.has-colorful-blue-color:visited {
+	color: #4ba3c3;
+}
+
+.has-colorful-blue-background-color,
+.has-colorful-blue-background-color:hover,
+.has-colorful-blue-background-color:active,
+.has-colorful-blue-background-color:focus,
+.has-colorful-blue-background-color:visited {
+	background-color: #4ba3c3
+}
+
+.has-colorful-green-color,
+.has-colorful-green-color:hover,
+.has-colorful-green-color:active,
+.has-colorful-green-color:focus,
+.has-colorful-green-color:visited {
+	color: #71db9d;
+}
+
+.has-colorful-green-background-color,
+.has-colorful-green-background-color:hover,
+.has-colorful-green-background-color:active,
+.has-colorful-green-background-color:focus,
+.has-colorful-green-background-color:visited {
+	background-color: #71db9d
+}
+
+.has-colorful-orange-color,
+.has-colorful-orange-color:hover,
+.has-colorful-orange-color:active,
+.has-colorful-orange-color:focus,
+.has-colorful-orange-color:visited {
+	color: #d97059;
+}
+
+.has-colorful-orange-background-color,
+.has-colorful-orange-background-color:hover,
+.has-colorful-orange-background-color:active,
+.has-colorful-orange-background-color:focus,
+.has-colorful-orange-background-color:visited {
+	background-color: #d97059
 }
