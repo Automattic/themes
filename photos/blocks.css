@@ -96,6 +96,10 @@ p.has-drop-cap:not(:focus):first-letter {
 	margin: 0.08em 0.1em 0 0;
 }
 
+.rtl p.has-drop-cap:not(:focus):first-letter {
+	margin: 0.08em 0 0 0.1em;
+}
+
 /* Images */
 .wp-block-image {
 	margin-bottom: 1.5em;
@@ -131,6 +135,11 @@ p.has-drop-cap:not(:focus):first-letter {
 	padding-left: 2.7rem;
 }
 
+.rtl .wp-block-quote {
+	border-left: none;
+	border-right: 4px solid #d63031;
+}
+
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	margin-left: auto;
@@ -158,6 +167,7 @@ p.has-drop-cap:not(:focus):first-letter {
 	background-color: #f0f0f0;
 	border-bottom: 4px solid #d63031;
 	border-left: none;
+	border-right: none;
 	border-top: 4px solid #d63031;
 	margin-bottom: 0;
 	padding: 1em 1.5em;
@@ -187,12 +197,14 @@ p.has-drop-cap:not(:focus):first-letter {
 	padding: 0;
 }
 
-.wp-block-pullquote.alignleft {
+.wp-block-pullquote.alignleft,
+.wp-block-pullquote.alignright {
 	text-align: left;
 }
 
-.wp-block-pullquote.alignright {
-	text-align: left;
+.rtl .wp-block-pullquote.alignleft,
+.rtl .wp-block-pullquote.alignright {
+	text-align: right;
 }
 
 .wp-block-pullquote.alignwide blockquote,
@@ -304,10 +316,17 @@ p.has-drop-cap:not(:focus):first-letter {
 	font-weight: bold;
 	font-size: inherit;
 	line-height: 1.5;
+	margin-left: 0.75em;
 	padding: 0.5em 0.75em;
 	text-align: center;
 	transition: background 150ms ease-in-out,
 		color 150ms ease-in-out;
+}
+
+.rtl .wp-block-file .wp-block-file__button,
+.rtl .wp-block-button .wp-block-button__link {
+	margin-left: 0;
+	margin-right: 0.75em;
 }
 
 .wp-block-file .wp-block-file__button,
@@ -352,4 +371,5 @@ Widgets
 --------------------------------------------------------------*/
 .wp-block-latest-comments {
 	padding-left: 0;
+	padding-right: 0;
 }
