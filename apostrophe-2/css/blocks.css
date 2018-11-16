@@ -57,11 +57,7 @@ body {
 	overflow-x: hidden;
 }
 
-.apostrophe-2-no-sidebar figure.alignfull,
-.apostrophe-2-no-sidebar .wp-block-cover.alignfull,
-.apostrophe-2-no-sidebar .wp-block-cover-image.alignfull,
-.apostrophe-2-no-sidebar .wp-block-gallery.alignfull,
-.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignfull {
+.apostrophe-2-no-sidebar .alignfull {
 	width: 100vw;
 	max-width: 100vw;
 	margin-left: 0;
@@ -71,14 +67,26 @@ body {
 	transform: translateX( -50% );
 }
 
-.rtl.apostrophe-2-no-sidebar figure.alignfull,
-.rtl.apostrophe-2-no-sidebar .wp-block-cover.alignfull,
-.rtl.apostrophe-2-no-sidebar .wp-block-cover-image.alignfull,
-.rtl.apostrophe-2-no-sidebar .wp-block-gallery.alignfull,
-.rtl.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignfull {
+.rtl.apostrophe-2-no-sidebar .alignfull {
 	left: auto;
 	right: 50%;
 	transform: translateX(50%);
+}
+
+.apostrophe-2-no-sidebar .wp-block-columns.alignfull,
+.apostrophe-2-no-sidebar .wp-block-latest-comments.alignfull,
+.apostrophe-2-no-sidebar .wp-block-archives.alignfull,
+.apostrophe-2-no-sidebar .wp-block-categories.alignfull,
+.apostrophe-2-no-sidebar .wp-block-archives.alignfull,
+.apostrophe-2-no-sidebar .wp-block-latest-posts.alignfull,
+.apostrophe-2-no-sidebar .wp-block-file.alignfull {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
+	width: 100% !important;
+	height: 100% !important;
 }
 
 .apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignfull:before {
@@ -99,15 +107,11 @@ body {
 /* Wide Width */
 
 @media (min-width: 1024px) {
-	.apostrophe-2-no-sidebar figure.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-cover.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-cover-image.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-gallery.alignwide,
-	.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignwide {
-		width: 120%;
-		max-width: 120%;
-		margin-left: -10%;
-		margin-right: -10%;
+	.apostrophe-2-no-sidebar .alignwide {
+		width: 860px;
+		max-width: 860px;
+		margin-left: -65px;
+		margin-right: -65px;
 		position: relative;
 	}
 
@@ -260,7 +264,7 @@ body {
 	font-size: 1.2em;
 	font-style: normal;
 	margin: 0 0 1.5em;
-	padding: 0;
+	padding: .75em 0;
 }
 
 .wp-block-pullquote.alignleft p,
@@ -458,7 +462,7 @@ hr.wp-block-separator {
 .has-white-color,
 .has-white-color:hover,
 .has-white-color:focus,
-,.has-white-color:active {
+.has-white-color:active {
 	color: #fff;
 }
 
