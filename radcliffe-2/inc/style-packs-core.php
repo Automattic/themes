@@ -66,6 +66,9 @@ class Style_Packs_Core {
 
 	public function enqueue_style() {
 		if ( array_key_exists( $this->style, $this->config['styles'] ) ) {
+			if ( 'default' === $this->style ) {
+				return;
+			}
 			$stylesheet = $this->get_stylesheet_uri( $this->style );
 			wp_enqueue_style( $this->get_style_pack_id( $this->style ), $stylesheet, array(), $this->theme_version );
 		}
@@ -182,7 +185,7 @@ class Style_Packs_Core {
 			'styles'            => $style_pack_stylesheets,
 			'fonts'             => $style_pack_fonts,
 		);
-		
+
 		wp_localize_script( 'style-packs-customizer', 'stylePacksData', $style_packs_data );
 	}
 
@@ -236,7 +239,7 @@ class Style_Packs_Core {
 		}
 		register_default_headers( $headers );
 	}
-	
+
 	static function get_description( $style ) {
 		if ( array_key_exists( $style, self::$instance->config['style_descriptions'] ) ) {
 			return self::$instance->config['style_descriptions'][ $style ];
