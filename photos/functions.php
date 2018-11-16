@@ -208,6 +208,14 @@ function photos_scripts() {
 add_action( 'wp_enqueue_scripts', 'photos_scripts' );
 
 /**
+ * Gutenberg Editor Styles
+ */
+function photos_editor_styles() {
+	wp_enqueue_style( 'photos-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'photos_editor_styles' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
