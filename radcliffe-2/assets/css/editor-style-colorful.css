@@ -1,10 +1,43 @@
-/*!
-Editor Styles for Radcliffe 2: Colorful Style Pack
+/*
+Theme Name: Radcliffe 2 - Colorful Style Pack
+Description: Used to style Gutenberg Blocks in the editor.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Typography
+2.0 General Block Settings
+3.0 Blocks - Common
+4.0 Blocks - Formatting
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Typography
 --------------------------------------------------------------*/
 
 /* Temporary method to include Google Fonts */
 @import url( "https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic" );
 @import url( "https://fonts.googleapis.com/css?family=Inconsolata:400,700" );
+
+.edit-post-visual-editor .editor-block-list__block,
+.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
+	font-family: Inconsolata, monospace;
+}
+
+/* Color */
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #222;
+}
+
+/* Post title */
+
+.editor-post-title__block .editor-post-title__input {
+	color: #4ba3c3;
+	font-family: 'Karla', 'Helvetica Neue', Helvetica, arial, sans-serif;
+}
 
 /* Widths */
 @media screen and (min-width: 768px) {
@@ -13,83 +46,62 @@ Editor Styles for Radcliffe 2: Colorful Style Pack
 		margin-right: auto;
 		padding: 0 0 72px;
 		max-width: 92%;
-		width: 1040px;
+		width: 1070px;
 	}
 }
 
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
+/* Headings */
 
-.edit-post-visual-editor,
-.edit-post-visual-editor p,
-.edit-post-visual-editor button,
-.edit-post-visual-editor input,
-.edit-post-visual-editor select,
-.edit-post-visual-editor optgroup,
-.edit-post-visual-editor textarea {
-	color: #222;
-	font-family: Inconsolata, monospace;
-}
-
-h1.mce-content-body,
-h2.mce-content-body,
-h3.mce-content-body,
-h4.mce-content-body,
-h5.mce-content-body,
-h6.mce-content-body,
-.mce-content-body h1,
-.mce-content-body h2,
-.mce-content-body h3,
-.mce-content-body h4,
-.mce-content-body h5,
-.mce-content-body h6,
-#poststuff h1,
-#poststuff h2,
-#poststuff h3,
-#poststuff h4,
-#poststuff h5,
-#poststuff h6 {
+.edit-post-visual-editor h1,
+.wp-block-freeform.block-library-rich-text__tinymce h1,
+.edit-post-visual-editor h2,
+.wp-block-freeform.block-library-rich-text__tinymce h2,
+.edit-post-visual-editor h3,
+.wp-block-freeform.block-library-rich-text__tinymce h3,
+.edit-post-visual-editor h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4,
+.edit-post-visual-editor h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5,
+.edit-post-visual-editor h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
 	color: #71db9d;
 	font-family: 'Karla', 'Helvetica Neue', Helvetica, arial, sans-serif;
-}
-
-/* Post/Page title */
-.edit-post-visual-editor textarea.editor-post-title__input {
-	color: #4ba3c3;
-	font-family: 'Karla', 'Helvetica Neue', Helvetica, arial, sans-serif;
+	text-transform: none;
 }
 
 /*--------------------------------------------------------------
-# Navigation
+2.0 General Block Settings
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-.mce-content-body a,
-.wp-block-freeform.core-blocks-rich-text__tinymce a,
-.wp-block-categories a,
-.wp-block-latest-posts a {
+
+/* Links */
+
+.edit-post-visual-editor a,
+.editor-block-list__block a,
+.wp-block-freeform.block-library-rich-text__tinymce a {
 	color: #d97059;
 }
 
-.mce-content-body a:hover,
-.mce-content-body a:focus,
-.mce-content-body a:active,
-.wp-block-freeform.core-blocks-rich-text__tinymce a:hover,
-.wp-block-freeform.core-blocks-rich-text__tinymce a:focus,
-.wp-block-freeform.core-blocks-rich-text__tinymce a:active,
-.wp-block-categories a:hover,
-.wp-block-categories a:focus,
-.wp-block-categories a:active,
-.wp-block-latest-posts a:hover,
-.wp-block-latest-posts a:focus,
-.wp-block-latest-posts a:active {
-	color: #e43a31;
+/*--------------------------------------------------------------
+3.0 Blocks - Common
+--------------------------------------------------------------*/
+
+/* File */
+
+.wp-block-file__textlink {
+	color: #d97059;
+}
+
+.wp-block-file .wp-block-file__button {
+	font-family: Inconsolata, monospace;
+}
+
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus {
+	background-color: #d97059;
 }
 
 /*--------------------------------------------------------------
-## Gutenberg Styles
+4.0 Blocks - Formatting
 --------------------------------------------------------------*/
 
 /* Buttons */
@@ -98,7 +110,17 @@ h6.mce-content-body,
 	font-family: Inconsolata, monospace;
 }
 
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
 	background-color: #d97059;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Latest Comments */
+
+.wp-block-latest-comments__comment-meta {
+	font-family: inherit;
 }
