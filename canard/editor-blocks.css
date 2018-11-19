@@ -115,17 +115,6 @@
 	margin-bottom: 30px;
 }
 
-/* Images */
-
-.wp-block-image figcaption {
-	color: #777;
-	font-family: Lato, sans-serif;
-	font-size: 16px;
-	line-height: 1.25;
-	margin-bottom: 25px;
-	max-width: 100%;
-}
-
 /*--------------------------------------------------------------
 2.0 General Block Styles
 --------------------------------------------------------------*/
@@ -259,7 +248,6 @@
 	font-family: Lato, sans-serif;
 	font-size: 16px;
 	line-height: 1.25;
-	margin-bottom: 25px;
 	max-width: 100%;
 }
 
@@ -271,6 +259,17 @@
 
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
 	font-size: 64px;
+}
+
+/* Image */
+
+.wp-block-image figcaption {
+	color: #777;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	line-height: 1.25;
+	margin-bottom: 25px;
+	max-width: 100%;
 }
 
 /* Quote */
@@ -333,6 +332,7 @@
 }
 
 .wp-block-quote__citation {
+	color: inherit;
 	font-style: normal;
 	font-weight: bold;
 	font-size: inherit;
@@ -559,7 +559,7 @@
 .wp-block-freeform.block-library-rich-text__tinymce pre {
 	background: #eee;
 	border-left: 2px solid #d11415;
-	font-size: 1em;
+	font-size: 16px;
 	max-width: 100%;
 	overflow: auto;
 	padding: 30px;
@@ -571,6 +571,8 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
+	border: 0;
+	border-collapse: collapse;
 	border-top: 1px solid #ddd;
 	margin: 0 0 30px;
 	text-align: left;
@@ -588,12 +590,18 @@
 	padding: 5px;
 }
 
+.wp-block-freeform.block-library-rich-text__tinymce table thead {
+	background-color: #eee;
+}
+
 .wp-block-freeform.block-library-rich-text__tinymce table td a,
 .wp-block-freeform.block-library-rich-text__tinymce table th a {
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table th {
 	border-bottom: 1px solid #ddd;
+	font-family: Lato, sans-serif;
+	text-transform: uppercase;
 }
 
 .rtl .wp-block-freeform.block-library-rich-text__tinymce th,
@@ -698,6 +706,16 @@
 
 .rtl .wp-block-table {
 	text-align: right;
+}
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce dd {
+	margin: 0 0 30px;
 }
 
 /*--------------------------------------------------------------
