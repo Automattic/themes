@@ -22,7 +22,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 .edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: 17px;
 }
 
 .edit-post-visual-editor .editor-block-list__block {
@@ -275,14 +275,14 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding-right: 1.5em;
 }
 
-.wp-block-quote.is-large p,
-.wp-block-quote.is-large-style p {
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large p,
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large p {
 	font-size: 24px;
 }
 
-.wp-block-quote.is-large cite,
-.wp-block-quote.is-style-large cite {
-	font-size: 80%;
+.wp-block-quote.is-large .wp-block-quote__citation,
+.wp-block-quote.is-style-large .wp-block-quote__citation {
+	font-size: 14.2833px;
 	text-align: inherit;
 }
 
@@ -511,7 +511,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-	background-color: inherit;
+	background-color: #678db8;
 	opacity: 0.75;
 }
 
@@ -526,3 +526,43 @@ p.has-drop-cap:not(:focus)::first-letter {
 /*--------------------------------------------------------------
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
+
+/* Archives, Categories & Latest Posts */
+
+[data-align="center"] .wp-block-archives ul,
+[data-align="center"] .wp-block-categories ul,
+[data-align="center"] .wp-block-latest-posts ul {
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments {
+	font-size: 17px;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments a {
+	text-decoration: none;
+}
+
+.wp-block-latest-comments__comment {
+	margin-bottom: 2em;
+}
+
+.wp-block-latest-comments__comment-date {
+	font-size: 15px;
+}
+
+.wp-block-latest-comments__comment-author,
+.wp-block-latest-comments__comment-link {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
+	margin: 0;
+}
