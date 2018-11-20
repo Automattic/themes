@@ -35,6 +35,60 @@ function karuna_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	/**
+	 * Gutenberg wide and full images support
+	 */
+	add_theme_support( 'align-wide' );
+
+	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'karuna' ),
+				'slug' => 'black',
+				'color' => '#333333',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'karuna' ),
+				'slug' => 'medium-gray',
+				'color' => '#999999',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'karuna' ),
+				'slug' => 'light-gray',
+				'color' => '#dddddd',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'karuna' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Purple', 'karuna' ),
+				'slug' => 'purple',
+				'color' => '#6636cc',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Purple', 'karuna' ),
+				'slug' => 'dark-purple',
+				'color' => '#471e9e',
+			),
+			array(
+				'name'  => esc_html__( 'Green', 'karuna' ),
+				'slug' => 'green',
+				'color' => '#85cc36',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Green', 'karuna' ),
+				'slug' => 'dark-green',
+				'color' => '#609d1b',
+			),
+		)
+	);
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -235,6 +289,9 @@ function karuna_fonts_url() {
 function karuna_scripts() {
 	wp_enqueue_style( 'karuna-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'karuna-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'karuna-fonts', karuna_fonts_url(), array(), null );
 
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/fonts/genericons/genericons.css', array(), '3.4.1' );
@@ -250,6 +307,15 @@ function karuna_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'karuna_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function karuna_editor_styles() {
+	wp_enqueue_style( 'karuna-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+	wp_enqueue_style( 'karuna-fonts', karuna_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'karuna_editor_styles' );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.

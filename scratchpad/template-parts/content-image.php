@@ -20,7 +20,7 @@ $image = get_media_embedded_in_content( $content, array( 'image' ) );
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php scratchpad_sticky(); ?>
 
-	<?php if ( has_post_thumbnail() ) { ?>
+	<?php if ( has_post_thumbnail() && ! post_password_required() ) { ?>
 		<div class="featured-image">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'scratchpad-featured' ); ?></a>
 			<div class="photo-corners">
@@ -33,7 +33,7 @@ $image = get_media_embedded_in_content( $content, array( 'image' ) );
 			</div><!-- .photo-corners -->
 		</div><!-- .featured-image -->
 
-	<?php } else if ( ! empty( $image ) ) { ?>
+	<?php } else if ( ! empty( $image ) && ! post_password_required() ) { ?>
 		<div class="featured-image">
 			<a href="<?php the_permalink(); ?>"><?php echo $image[0]; ?></a>
 			<div class="photo-corners">
@@ -67,4 +67,8 @@ $image = get_media_embedded_in_content( $content, array( 'image' ) );
 			?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
+
+	<?php if ( post_password_required() ) {
+		the_content();
+	} ?>
 </article><!-- #post-## -->

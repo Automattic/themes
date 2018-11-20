@@ -1,0 +1,542 @@
+/*
+Theme Name: Libre 2
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Block Alignments
+2.0 General Block Styles
+3.0 Blocks - Common Blocks
+4.0 Blocks - Formatting
+5.0 Blocks - Layout Elements
+6.0 Blocks - Widgets
+7.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Block Alignments
+--------------------------------------------------------------*/
+
+.singular.no-sidebar {
+	overflow-x: hidden; /* prevents side-scrolling caused by use of vw */
+}
+
+.alignfull,
+.alignwide {
+	clear: both;
+}
+
+@media (min-width: 1140px) {
+	.singular.no-sidebar .alignwide {
+		margin-left: -25%;
+		margin-right: -25%;
+		max-width: 1000%;
+		width: auto;
+	}
+
+	.singular.no-sidebar .wp-block-embed.is-type-video.alignwide iframe {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+.singular.no-sidebar .alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width: 1000%;
+	width: auto;
+}
+
+/* Make non image-based blocks a bit narrower, so they don't get cut off. */
+.singular.no-sidebar .wp-block-columns.alignfull,
+.singular.no-sidebar .wp-block-audio.alignfull,
+.singular.no-sidebar .wp-block-table.alignfull,
+.singular.no-sidebar .wp-block-latest-comments.alignfull,
+.singular.no-sidebar .wp-block-categories.alignfull,
+.singular.no-sidebar .wp-block-latest-posts.alignfull {
+	margin-left: calc(50% - 48vw);
+	margin-right: calc(50% - 48vw);
+}
+
+.singular.no-sidebar .wp-block-embed.is-type-video iframe {
+	max-height: 100%;
+}
+
+.singular.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/*--------------------------------------------------------------
+2.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Figures */
+
+figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull),
+[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) figure,
+[class^="wp-block-"] figure:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull), {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+	margin-top: 0.15em;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin: 0 0 1.75em;
+}
+
+/* Quote */
+
+.wp-block-quote p,
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	margin-bottom: 1.0em;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 1.25em;
+	font-style: normal;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	border: 0;
+	padding: 0;
+}
+
+.wp-block-quote.is-large:before,
+.wp-block-quote.is-style-large:before {
+	display: none;
+}
+
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-style-large cite {
+	font-size: inherit;
+	text-align: inherit;
+}
+
+/* Audio */
+
+.wp-block-audio {
+	margin: 0 0 1.75em;
+}
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover.aligncenter,
+.wp-block-cover-image.aligncenter,
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover-image.alignright {
+	display: flex;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+	font-size: 1.5em;
+}
+
+/* File */
+
+.wp-block-file a:not(.wp-block-file__button),
+.wp-block-file a:not(.wp-block-file__button):hover {
+	box-shadow: none;
+}
+
+.wp-block-file a.wp-block-file__button,
+.wp-block-file a.wp-block-file__button:visited {
+	border: 0 none;
+	border-radius: 0;
+	box-shadow: 0 2px 0 0 currentColor;
+	background: transparent;
+	color: #404040;
+	font-size: 18px;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0.21875em 0;
+	transition: 0.2s;
+}
+
+.wp-block-file a.wp-block-file__button:hover,
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:active {
+	background: transparent;
+	box-shadow: 0 4px 0 0 currentColor;
+	color: #404040;
+	outline: none;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: .75em;
+	margin-right: 0;
+}
+
+/* Video */
+
+.wp-block-video video {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	font-family: inherit;
+	font-style: italic;
+	padding: 0;
+}
+
+/* Code */
+
+/* Preformatted */
+
+/* Pullquote */
+
+.wp-block-pullquote blockquote {
+	margin-left: inherit;
+	padding: 0;
+}
+
+.wp-block-pullquote blockquote:before {
+	display: none;
+}
+
+.wp-block-pullquote blockquote p {
+	margin-bottom: 0.75em;
+}
+
+.wp-block-pullquote cite,
+.wp-block-pullquote.alignleft cite,
+.wp-block-pullquote.alignright cite {
+	font-size: 18px;
+}
+
+/* Table */
+
+.wp-block-table th {
+	text-align: left;
+}
+
+@media (min-width: 1140px) {
+	.singular.no-sidebar .wp-block-table.alignwide {
+		width: 1100px;
+	}
+}
+
+.singular.no-sidebar .wp-block-table.alignfull {
+	width: 96vw;
+}
+
+.rtl .wp-block-table th {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .wp-block-button__link {
+	border-radius: 0;
+	box-shadow: 0 2px 0 0 currentColor;
+}
+
+.wp-block-button .wp-block-button__link:not(.has-background) {
+	background: transparent;
+	padding: 0.21875em 0;
+}
+
+.wp-block-button .wp-block-button__link:not(.has-color) {
+	color: #404040;
+}
+
+.wp-block-button__link {
+	border: 0 none;
+	font-size: 18px;
+	font-size: 1rem;
+	font-weight: bold;
+	transition: 0.2s;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus,
+.wp-block-button__link:active {
+	background: transparent;
+	box-shadow: 0 4px 0 0 currentColor;
+	color: #404040;
+	outline: none;
+}
+
+/* Columns */
+
+/* Separator */
+
+.wp-block-separator {
+	border: 0;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 1.75em;
+}
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Categories, Latest Posts & Archives */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	text-align: center;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.wp-block-latest-comments__comment a {
+	box-shadow: 0 1px 0 0 rgba(0,0,0,0);
+}
+
+.wp-block-latest-comments__comment-date {
+	margin-top: 0.5em;
+}
+
+/* Latest Posts */
+
+.wp-block-latest-posts.is-grid {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+7.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+.has-pale-pink-color,
+.has-pale-pink-color:hover,
+.has-pale-pink-color:focus,
+.has-pale-pink-color:active {
+	color: #f78da7;
+}
+
+.has-pale-pink-background-color,
+.has-pale-pink-background-color:hover.
+.has-pale-pink-background-color:focus,
+.has-pale-pink-background-color:active,
+.has-pale-pink-background-color:visited {
+	background-color: #f78da7;
+}
+
+.has-vivid-red-color,
+.has-vivid-red-color:hover,
+.has-vivid-red-color:focus,
+.has-vivid-red-color:active,
+.has-vivid-red-color:visited {
+	color: #cf2e2e;
+}
+
+.has-vivid-red-background-color,
+.has-vivid-red-background-color:hover,
+.has-vivid-red-background-color:focus,
+.has-vivid-red-background-color:active,
+.has-vivid-red-background-color:visited {
+	background-color: #cf2e2e;
+}
+
+.has-luminous-vivid-orange-color,
+.has-luminous-vivid-orange-color:hover,
+.has-luminous-vivid-orange-color:focus,
+.has-luminous-vivid-orange-color:active,
+.has-luminous-vivid-orange-color:visited {
+	color: #ff6900;
+}
+
+.has-luminous-vivid-orange-background-color,
+.has-luminous-vivid-orange-background-color:hover,
+.has-luminous-vivid-orange-background-color:focus,
+.has-luminous-vivid-orange-background-color:active,
+.has-luminous-vivid-orange-background-color:visited {
+	background-color: #ff6900;
+}
+
+.has-luminous-vivid-amber-color,
+.has-luminous-vivid-amber-color:hover,
+.has-luminous-vivid-amber-color:focus,
+.has-luminous-vivid-amber-color:active,
+.has-luminous-vivid-amber-color:visited {
+	color: #fcb900;
+}
+
+.has-luminous-vivid-amber-background-color,
+.has-luminous-vivid-amber-background-color:hover,
+.has-luminous-vivid-amber-background-color:focus,
+.has-luminous-vivid-amber-background-color:active,
+.has-luminous-vivid-amber-background-color:visited {
+	background-color: #fcb900;
+}
+
+.has-light-green-cyan-color,
+.has-light-green-cyan-color:hover,
+.has-light-green-cyan-color:focus,
+.has-light-green-cyan-color:active,
+.has-light-green-cyan-color:visited {
+	color: #7bdcb5;
+}
+
+.has-light-green-cyan-background-color,
+.has-light-green-cyan-background-color:hover,
+.has-light-green-cyan-background-color:focus,
+.has-light-green-cyan-background-color:active,
+.has-light-green-cyan-background-color:visited {
+	background-color: #7bdcb5;
+}
+
+.has-vivid-green-cyan-color,
+.has-vivid-green-cyan-color:hover,
+.has-vivid-green-cyan-color:focus,
+.has-vivid-green-cyan-color:active,
+.has-vivid-green-cyan-color:visited {
+	color: #00d084;
+}
+
+.has-vivid-green-cyan-background-color,
+.has-vivid-green-cyan-background-color:hover,
+.has-vivid-green-cyan-background-color:focus,
+.has-vivid-green-cyan-background-color:active,
+.has-vivid-green-cyan-background-color:visited {
+	background-color: #00d084;
+}
+
+.has-pale-cyan-blue-color,
+.has-pale-cyan-blue-color:hover,
+.has-pale-cyan-blue-color:focus,
+.has-pale-cyan-blue-color:active,
+.has-pale-cyan-blue-color:visited {
+	color: #8ed1fc;
+}
+
+.has-pale-cyan-blue-background-color,
+.has-pale-cyan-blue-background-color:hover,
+.has-pale-cyan-blue-background-color:focus,
+.has-pale-cyan-blue-background-color:active,
+.has-pale-cyan-blue-background-color:visited {
+	background-color: #8ed1fc;
+}
+
+.has-vivid-cyan-blue-color,
+.has-vivid-cyan-blue-color:hover,
+.has-vivid-cyan-blue-color:focus,
+.has-vivid-cyan-blue-color:active,
+.has-vivid-cyan-blue-color:visited {
+	color: #0693e3;
+}
+
+.has-vivid-cyan-blue-background-color,
+.has-vivid-cyan-blue-background-color:hover,
+.has-vivid-cyan-blue-background-color:focus,
+.has-vivid-cyan-blue-background-color:active,
+.has-vivid-cyan-blue-background-color:visited {
+	background-color: #0693e3;
+}
+
+.has-very-light-gray-color,
+.has-very-light-gray-color:hover,
+.has-very-light-gray-color:focus,
+.has-very-light-gray-color:active,
+.has-very-light-gray-color:visited {
+	color: #eee;
+}
+
+.has-very-light-gray-background-color,
+.has-very-light-gray-background-color:hover,
+.has-very-light-gray-background-color:focus,
+.has-very-light-gray-background-color:active,
+.has-very-light-gray-background-color:visited {
+	background-color: #eee;
+}
+
+.has-cyan-bluish-gray-color,
+.has-cyan-bluish-gray-color:hover,
+.has-cyan-bluish-gray-color:focus,
+.has-cyan-bluish-gray-color:active,
+.has-cyan-bluish-gray-color:visited {
+	color: #abb8c3;
+}
+
+.has-cyan-bluish-gray-background-color,
+.has-cyan-bluish-gray-background-color:hover,
+.has-cyan-bluish-gray-background-color:focus,
+.has-cyan-bluish-gray-background-color:active,
+.has-cyan-bluish-gray-background-color:visited {
+	background-color: #abb8c3;
+}
+
+.has-very-dark-gray-color,
+.has-very-dark-gray-color:hover,
+.has-very-dark-gray-color:focus,
+.has-very-dark-gray-color:active,
+.has-very-dark-gray-color:visited {
+	color: #313131;
+}
+
+.has-very-dark-gray-background-color,
+.has-very-dark-gray-background-color:hover,
+.has-very-dark-gray-background-color:focus,
+.has-very-dark-gray-background-color:active,
+.has-very-dark-gray-background-color:visited {
+	background-color: #313131;
+}

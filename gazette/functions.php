@@ -86,6 +86,38 @@ function gazette_setup() {
 	add_theme_support( 'post-formats', array(
 		'image', 'video', 'link', 'gallery',
 	) );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Blue', 'gazette' ),
+			'slug'  => 'blue',
+			'color' => '#3863c1',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'gazette' ),
+			'slug'  => 'dark-gray',
+			'color' => '#222',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'gazette' ),
+			'slug'  => 'medium-gray',
+			'color' => '#777',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'gazette' ),
+			'slug'  => 'light-gray',
+			'color' => '#ddd',
+		),
+		array(
+			'name'  => esc_html__( 'White', 'gazette' ),
+			'slug'  => 'white',
+			'color' => '#fff',
+		),
+	) );
 }
 endif; // gazette_setup
 add_action( 'after_setup_theme', 'gazette_setup' );
@@ -192,6 +224,9 @@ function gazette_scripts() {
 
 	wp_enqueue_style( 'gazette-style', get_stylesheet_uri() );
 
+	// Block stylesheets
+	wp_enqueue_style( 'gazette-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'gazette-style' ), '20181018' );
+
 	wp_enqueue_script( 'gazette-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20150507', true );
 
 	wp_enqueue_script( 'gazette-featured-content', get_template_directory_uri() . '/js/featured-content.js', array( 'jquery' ), '20150507', true );
@@ -223,6 +258,19 @@ function gazette_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gazette_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function gazette_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'gazette-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+	// Custom fonts.
+	wp_enqueue_style( 'gazette-lato-inconsolata', gazette_lato_inconsolata_fonts_url(), array(), null );
+	// Genericons.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+}
+add_action( 'enqueue_block_editor_assets', 'gazette_block_editor_styles' );
 
 /**
  * Implement the Custom Header feature.

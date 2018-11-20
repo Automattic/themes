@@ -1,0 +1,267 @@
+/*
+Theme Name: Photos
+*/
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+blockquote {
+	border-left: none;
+	border-right: 4px solid #d63031;
+}
+
+ul, ol {
+	padding-left: 0;
+	padding-right: 1em;
+}
+
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	left: 0;
+	right: auto;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+}
+
+.main-navigation .menu-item-has-children a {
+	margin-left: 36px;
+	margin-right: 0;
+}
+
+.main-navigation .dropdown-toggle {
+	float: left;
+}
+
+.main-navigation .sub-menu.toggled-on {
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+.site-header.overlay:after {
+	left: auto;
+	right: 0;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: right;
+	text-align: right;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: left;
+	text-align: left;
+}
+
+.screen-reader-text:focus {
+	left: auto;
+	right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.widget ul {
+	padding-right: 0;
+}
+
+.widget_goodreads a > img {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.widget_authors ul ul {
+	margin-right: 0;
+}
+
+.site-main article .container .icon {
+	left: 10px;
+	right: auto;
+}
+
+.search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+
+.comment-list {
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.comment-author .avatar {
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+.comment-body .edit-link {
+	margin-left: auto;
+	margin-right: 0.5em;
+}
+
+.comment-reply-link {
+	padding: 0.3rem 0.6rem 0.5rem 1rem;
+}
+
+.comment-form input[type=checkbox] {
+	margin-left: 0.375em;
+	margin-right: 0;
+}
+
+#infinite-handle span {
+	border: none;
+}
+
+#infinite-handle span::before {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+/* Wide mobile screens ( > 658px ) */
+@media screen and ( min-width: 658px ) {
+
+	.site-logo,
+	.site-title {
+		text-align: right;
+	}
+
+	.main-navigation .menu-toggle {
+		left: 12px;
+		right: auto;
+	}
+
+	.main-navigation .menu-toggle span {
+		padding-left: 0;
+		padding-right: 0.25em;
+	}
+
+	.nav-links .icon {
+		transform: rotate( 180deg );
+	}
+
+	.nav-links .nav-previous .arrow {
+		float: right;
+		margin-left: 1em;
+		margin-right: 0;
+	}
+
+	.nav-links .nav-next .arrow {
+		float: left;
+		margin-left: 0;
+		margin-right: 1em;
+	}
+
+}
+
+/* Tablet styles ( > 768px ) */
+@media screen and ( min-width: 768px ) {
+
+	.alignleft {
+		margin-right: 0;
+	}
+
+	.alignright {
+		margin-left: 0;
+	}
+
+	.comment-list ol.children {
+		margin-right: 2.5em;
+	}
+
+}
+
+/* Small desktop screens ( > 1080px ) */
+@media screen and ( min-width: 1080px ) {
+
+	.site-branding {
+		margin-left: auto;
+		margin-right: 0;
+		padding-left: 2em;
+		padding-right: 0;
+	}
+
+	.site-title {
+		padding: 0 0 0 0.25em;
+	}
+
+	.main-navigation .menu-item-has-children a {
+		margin-left: 0;
+	}
+
+	.main-navigation .menu {
+		padding-right: 0;
+	}
+
+	.main-navigation .menu > li,
+	.main-navigation .menu > ul li {
+		margin: 0 0 0 1.8rem;
+	}
+
+	.main-navigation .menu > li:last-child,
+	.main-navigation .menu > ul li:last-child {
+		margin-left: 0;
+	}
+
+	.main-navigation a .icon {
+		margin: 0 2px -3px 0;
+	}
+
+	.main-navigation ul ul {
+		left: auto;
+		right: -9999em;
+		text-align: right;
+	}
+
+	.main-navigation ul li.focus > ul,
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li:hover > ul.toggled-on {
+		right: auto;
+	}
+
+	.main-navigation ul ul ul {
+		left: auto;
+		right: 0;
+		padding-right: 0.625em;
+		text-align: right;
+	}
+
+	.site-footer .container {
+		text-align: right;
+	}
+
+	.site-footer .site-info {
+		text-align: left;
+	}
+}
+
+/* Larger desktop screens */
+@media screen and ( min-width: 75em ) {
+	.post-navigation .previous {
+		left: auto;
+		right: calc( 50vw - 595px );
+	}
+
+	.post-navigation .next {
+		left: calc( 50vw - 595px );
+		right: auto;
+	}
+
+}

@@ -14,7 +14,6 @@ function pique_jetpack_setup() {
 		'render'         => 'pique_infinite_scroll_render',
 		'footer'         => 'tertiary',
 		'footer_widgets' => array( 'sidebar-2', 'sidebar-3', 'sidebar-4' ),
-		'posts_per_page' => 9
 	) );
 
 	// Add theme support for Responsive Videos.

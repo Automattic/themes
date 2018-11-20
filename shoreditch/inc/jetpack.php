@@ -71,7 +71,7 @@ add_action( 'after_setup_theme', 'shoreditch_jetpack_setup' );
  * Custom render function for Infinite Scroll.
  */
 function shoreditch_infinite_scroll_render() {
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( shoreditch_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		shoreditch_woocommerce_product_columns_wrapper();
 		woocommerce_product_loop_start();
 	}
@@ -80,7 +80,7 @@ function shoreditch_infinite_scroll_render() {
 		the_post();
 		if ( is_search() ) {
 			get_template_part( 'template-parts/content', 'search' );
-		} else if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+		} else if ( class_exists( 'WooCommerce' ) && ( shoreditch_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 			wc_get_template_part( 'content', 'product' );
 		} else if ( is_post_type_archive( 'jetpack-testimonial' ) ) {
 			get_template_part( 'template-parts/content', 'testimonial' );
@@ -89,7 +89,7 @@ function shoreditch_infinite_scroll_render() {
 		}
 	}
 
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( shoreditch_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		woocommerce_product_loop_end();
 		shoreditch_woocommerce_product_columns_wrapper_close();
 	}

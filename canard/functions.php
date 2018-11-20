@@ -64,6 +64,45 @@ function canard_setup() {
 	add_image_size( 'canard-featured-content-thumbnail', 915, 500, true );
 	add_image_size( 'canard-single-thumbnail', 1920, 768, true );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'canard' ),
+				'slug' => 'black',
+				'color' => '#222222',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'canard' ),
+				'slug' => 'dark-gray',
+				'color' => '#555555',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'canard' ),
+				'slug' => 'medium-gray',
+				'color' => '#777777',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'canard' ),
+				'slug' => 'light-gray',
+				'color' => '#dddddd',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'canard' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Red', 'canard' ),
+				'slug' => 'red',
+				'color' => '#d11415',
+			)
+		)
+	);
+
 	// This theme uses wp_nav_menu() in four locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Primary Location', 'canard' ),
@@ -201,6 +240,10 @@ function canard_pt_serif_playfair_display_font_url() {
  * Enqueue scripts and styles.
  */
 function canard_scripts() {
+
+	// Gutenberg styles
+	wp_enqueue_style( 'canard-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
 
 	wp_enqueue_style( 'canard-pt-serif-playfair-display', canard_pt_serif_playfair_display_font_url() );
@@ -240,6 +283,17 @@ function canard_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'canard_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function canard_editor_styles() {
+	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'canard-pt-serif-playfair-display', canard_pt_serif_playfair_display_font_url() );
+	wp_enqueue_style( 'canard-lato-inconsolata', canard_lato_inconsolata_fonts_url() );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+}
+add_action( 'enqueue_block_editor_assets', 'canard_editor_styles' );
 
 /**
  * Implement the Custom Header feature.

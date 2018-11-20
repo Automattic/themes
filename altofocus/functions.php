@@ -85,6 +85,38 @@ function altofocus_setup() {
 		'wp-head-callback'   => 'altofocus_custom_background_cb'
 	) ) );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'Orange', 'altofocus' ),
+			'slug'  => 'orange',
+			'color' => '#e38900',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'altofocus' ),
+			'slug'  => 'dark-gray',
+			'color' => '#111',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'altofocus' ),
+			'slug'  => 'medium-gray',
+			'color' => '#888',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'altofocus' ),
+			'slug'  => 'light-gray',
+			'color' => '#ccc',
+		),
+		array(
+			'name'  => esc_html__( 'White', 'altofocus' ),
+			'slug'  => 'white',
+			'color' => '#fff',
+		),
+	) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'altofocus_setup' );
@@ -223,6 +255,9 @@ function altofocus_scripts() {
 	// Stylesheet
 	wp_enqueue_style( 'altofocus-style', get_stylesheet_uri() );
 
+	// Block stylesheets
+	wp_enqueue_style( 'altofocus-block-style', get_template_directory_uri() . '/assets/stylesheets/blocks.css', array( 'altofocus-style' ), '20181018' );
+
 	/*
 	 * Scripts
 	 */
@@ -269,6 +304,22 @@ function altofocus_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'altofocus_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function altofocus_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'altofocus-block-editor-style', get_template_directory_uri() . '/assets/stylesheets/editor-blocks.css' );
+
+	// Libre Franklin font
+	wp_enqueue_style( 'altofocus-libre-baskerville', altofocus_libre_baskerville_url(), array(), null );
+
+	// Karla font
+	wp_enqueue_style( 'altofocus-karla', altofocus_karla_url(), array(), null );
+
+}
+add_action( 'enqueue_block_editor_assets', 'altofocus_block_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript

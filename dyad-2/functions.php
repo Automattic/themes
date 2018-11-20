@@ -83,6 +83,54 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 			'caption',
 		) );
 
+		// Load default block styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for custom color scheme.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Bright Blue', 'dyad-2' ),
+				'slug'  => 'bright-blue',
+				'color' => '#678db8',
+			),
+			array(
+				'name'  => esc_html__( 'Yellow', 'dyad-2' ),
+				'slug'  => 'yellow',
+				'color' => '#e7ae01',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray-Blue', 'dyad-2' ),
+				'slug'  => 'light-gray-blue',
+				'color' => '#abb7c3',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'dyad-2' ),
+				'slug'  => 'medium-gray',
+				'color' => '#6a6c6e',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'dyad-2' ),
+				'slug'  => 'dark-gray',
+				'color' => '#1a1c1e',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray-Blue', 'dyad-2' ),
+				'slug'  => 'dark-gray-blue',
+				'color' => '#292c2f',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'dyad-2' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+		) );
+
 	}
 endif; // dyad_2_setup
 add_action( 'after_setup_theme', 'dyad_2_setup' );
@@ -258,9 +306,26 @@ function dyad_2_scripts() {
 
 	wp_enqueue_style( 'dyad-2-style', get_stylesheet_uri(), array( 'genericons' ) );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'dyad-2-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'dyad-2-style' ), '20181018' );
+
 	wp_enqueue_script( 'dyad-2-global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'masonry' ), '20151204', true );
 }
 add_action( 'wp_enqueue_scripts', 'dyad_2_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ *
+ */
+function dyad_2_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'dyad-2-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+	// Add custom fonts.
+	wp_enqueue_style( 'dyad-2-fonts', dyad_2_fonts_url(), array(), null );
+	// Add Genericons.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.2' );
+}
+add_action( 'enqueue_block_editor_assets', 'dyad_2_block_editor_styles' );
 
 /**
  * Implement the Custom Header feature.

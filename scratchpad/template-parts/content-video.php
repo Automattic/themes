@@ -64,4 +64,8 @@ $content = apply_filters( 'the_content', get_the_content( $content_text ) );
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
+
+	<?php if ( post_password_required() ) {
+		the_content();
+	} ?>
 </article><!-- #post-## -->

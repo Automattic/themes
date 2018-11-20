@@ -72,6 +72,15 @@ function libre_2_setup() {
 	add_theme_support( 'custom-background', apply_filters( 'libre_2_custom_background_args', array(
 		'default-color' => 'ffffff',
 	) ) );
+
+	// Load regular editor styles into the new block-based editor.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
 }
 endif; // libre_2_setup
 add_action( 'after_setup_theme', 'libre_2_setup' );
@@ -187,7 +196,8 @@ function libre_2_fonts_url() {
  * @param array  $urls           URLs to print for resource hints.
  * @param string $relation_type  The relation type the URLs are printed.
  * @return array $urls           URLs to print for resource hints.
-
+ */
+/*
 function libre_2_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'libre-2-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
@@ -207,6 +217,9 @@ add_filter( 'wp_resource_hints', 'libre_2_resource_hints', 10, 2 );
 function libre_2_scripts() {
 	wp_enqueue_style( 'libre-2-style', get_stylesheet_uri() );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'libre-2-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'libre-2-style' ), '1.0' );
+
 	wp_enqueue_style( 'libre-2-fonts', libre_2_fonts_url(), array(), null );
 
 	wp_enqueue_script( 'libre-2-script', get_template_directory_uri() . '/js/libre.js', array( 'jquery' ), '20150623', true );
@@ -223,6 +236,19 @@ function libre_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'libre_2_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function libre_2_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'libre-2-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
+
+	// Fonts.
+	wp_enqueue_style( 'libre-2-fonts', libre_2_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'libre_2_block_editor_styles' );
+
 
 /*
  * Filters the Categories archive widget to add a span around the post count

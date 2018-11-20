@@ -28,7 +28,6 @@ if ( ! function_exists( 'dyad_2_jetpack' ) ) {
 			'footer_widgets' => array( 'sidebar-1'),
 			'render' => 'dyad_2_infinite_scroll_render',
 			'wrapper' => false,
-			'posts_per_page' => 12,
 		) );
 
 		//Content options
@@ -58,19 +57,19 @@ add_action( 'after_setup_theme', 'dyad_2_jetpack' );
  * Custom render function for Infinite Scroll.
  */
 function dyad_2_infinite_scroll_render() {
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		dyad_2_woocommerce_product_columns_wrapper();
 		woocommerce_product_loop_start();
 	}
 	while ( have_posts() ) {
 		the_post();
-		if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+		if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
 			wc_get_template_part( 'content', 'product' );
 		else :
 			get_template_part( 'template-parts/content', 'blocks' );
 		endif;
 	}
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		woocommerce_product_loop_end();
 		dyad_2_woocommerce_product_columns_wrapper_close();
 	}

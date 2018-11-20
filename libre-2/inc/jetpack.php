@@ -49,22 +49,23 @@ add_action( 'after_setup_theme', 'libre_2_jetpack_setup' );
  */
 function libre_2_infinite_scroll_render() {
 
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( libre_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		libre_2_woocommerce_product_columns_wrapper();
 		woocommerce_product_loop_start();
 	}
 
 	while ( have_posts() ) {
 		the_post();
-
-		if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+		if ( is_search() ) :
+			get_template_part( 'template-parts/content', 'search' );
+		elseif ( class_exists( 'WooCommerce' ) && ( libre_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
 			wc_get_template_part( 'content', 'product' );
 		else :
 			get_template_part( 'template-parts/content', get_post_format() );
 		endif;
 	}
 
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( libre_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		woocommerce_product_loop_end();
 		libre_2_woocommerce_product_columns_wrapper_close();
 	}

@@ -67,6 +67,11 @@ function pique_body_classes( $classes ) {
 		$classes[] = 'pique-sidebar';
 	endif;
 
+	// Adds a class on single CPTs.
+	if ( is_singular() ) {
+		$classes[] = 'pique-singular';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'pique_body_classes' );

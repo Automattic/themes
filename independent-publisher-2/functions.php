@@ -76,6 +76,44 @@ function independent_publisher_2_setup() {
 	add_theme_support( 'custom-background', apply_filters( 'independent_publisher_2_custom_background_args', array(
 		'default-color' => 'ffffff',
 	) ) );
+
+	// Load regular editor styles into the new block-based editor.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'Medium Blue', 'independent-publisher-2' ),
+			'slug'  => 'medium-blue',
+			'color' => '#0087be',
+		),
+		array(
+			'name'  => __( 'Bright Blue', 'independent-publisher-2' ),
+			'slug'  => 'bright-blue',
+			'color' => '#00aadc',
+		),
+		array(
+			'name'  => __( 'Dark Gray', 'independent-publisher-2' ),
+			'slug'  => 'dark-gray',
+			'color' => '#4d4d4b',
+		),
+		array(
+			'name'  => __( 'Light Gray', 'independent-publisher-2' ),
+			'slug'  => 'light-gray',
+			'color' => '#b3b3b1',
+		),
+		array(
+			'name'  => __( 'White', 'independent-publisher-2' ),
+			'slug'  => 'white',
+			'color' => '#fff',
+		),
+	) );
 }
 endif; // independent_publisher_2_setup
 add_action( 'after_setup_theme', 'independent_publisher_2_setup' );
@@ -162,6 +200,9 @@ function independent_publisher_2_scripts() {
 
 	wp_enqueue_style( 'independent-publisher-2-style', get_stylesheet_uri() );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'independent-publisher-2-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'independent-publisher-2-style' ), '1.0' );
+
 	wp_enqueue_script( 'independent-publisher-2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170317', true );
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -210,6 +251,15 @@ function independent_publisher_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'independent_publisher_2_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function independent_publisher_2_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'independent-pub-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
+}
+add_action( 'enqueue_block_editor_assets', 'independent_publisher_2_block_editor_styles' );
 
 /**
  * Returns true if a post Featured Image can be displayed.

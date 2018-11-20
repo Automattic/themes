@@ -4720,15 +4720,19 @@ body {
 }
 
 .widget_goodreads > div > div > div {
+  box-sizing: content-box;
   position: relative;
-  margin: 0 0 1.65em;
-  padding: 0 16.2px 1.65em;
+  margin: 0 0 1.65em !important;
+}
+
+.widget_goodreads > div > div > div[class$="currently_reading"],
+.widget_goodreads > div > div > div[class$="to_read"] {
+  margin: 0 !important;
 }
 
 .widget_goodreads > div > div > div:before {
   content: "";
   position: absolute;
-  border-bottom: 1px solid #cfccc7;
   bottom: 0;
   height: 0;
   left: 0;
@@ -4738,7 +4742,6 @@ body {
 .widget_goodreads > div > div > div:last-of-type {
   margin-bottom: 0;
 }
-
 .widget_goodreads > div > div > div div[class^="gr_custom_book_container"] {
   float: left;
   margin-right: 27px;

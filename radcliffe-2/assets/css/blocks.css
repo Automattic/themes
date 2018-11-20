@@ -1,0 +1,728 @@
+/*
+Theme Name: Radcliffe 2
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Block Alignments
+2.0 General Block Styles
+3.0 Blocks - Common Blocks
+4.0 Blocks - Formatting
+5.0 Blocks - Layout Elements
+6.0 Blocks - Widgets
+7.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Block Alignments
+--------------------------------------------------------------*/
+
+#page {
+	overflow-x: hidden;
+}
+
+.entry-content > *[class^="wp-block-"] {
+	margin-bottom: 1.5em;
+}
+
+.alignfull,
+.alignwide,
+.aligncenter {
+	clear: both;
+}
+
+/* Text-based blocks with alignfull */
+
+.wp-block-text-columns.alignfull,
+.wp-block-columns.alignfull,
+.wp-block-preformatted.alignfull,
+.wp-block-button.alignfull,
+.wp-block-pullquote.alignfull,
+.wp-block-latest-posts.alignfull,
+.wp-block-categories.alignfull,
+.wp-block-latest-comments.alignfull,
+.wp-block-verse.alignfull,
+.wp-block-audio.alignfull,
+p.alignfull {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 1160px) {
+	.alignwide {
+		margin-left: -25%;
+		margin-right: -25%;
+		width: auto;
+		max-width: 1000%;
+	}
+}
+
+@media (min-width: 750px) {
+	.alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	/* Let's reduce this a bit for blocks with text */
+	.wp-block-text-columns.alignfull,
+	.wp-block-columns.alignfull,
+	.wp-block-table.alignfull,
+	.wp-block-preformatted.alignfull,
+	.wp-block-button.alignfull,
+	.wp-block-pullquote.alignfull,
+	.wp-block-latest-posts.alignfull,
+	.wp-block-categories.alignfull,
+	.wp-block-latest-comments.alignfull,
+	.wp-block-verse.alignfull,
+	.wp-block-audio.alignfull,
+	p.alignfull {
+		margin-left: calc(50% - 48vw);
+		margin-right: calc(50% - 48vw);
+	}
+
+	.wp-block-embed.is-type-video.alignwide iframe,
+	.wp-block-embed.is-type-video.alignfull iframe {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+.alignfull > *,
+.alignwide > * {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignfull img,
+.alignwide img,
+.alignfull iframe,
+.alignwide iframe,
+.alignfull video,
+.alignwide video {
+	display: block;
+}
+
+.alignfull .jetpack-video-wrapper iframe,
+.alignwide .jetpack-video-wrapper iframe {
+	margin-left: auto !important; /* to override inline styles */
+	margin-right: auto !important;
+}
+
+/* Video */
+
+.wp-block-embed.is-type-video iframe {
+	max-height: 100%;
+}
+
+/*--------------------------------------------------------------
+2.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Caption */
+
+[class^="wp-block-"] figcaption {
+	font-size: 80%;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	opacity: 0.8;
+}
+
+/* Video */
+
+.wp-block-embed.is-type-video iframe {
+	max-height: 100%;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+	margin-top: 0.15em;
+}
+
+/* Image */
+
+.wp-block-image {}
+
+.wp-block-image figure {
+	margin-top: 0;
+}
+
+.wp-block-image img {
+	display: block;
+}
+
+.wp-block-image .alignleft {
+	margin-right: 1.6em;
+}
+
+.wp-block-image .alignright {
+	margin-left: 1.6em;
+}
+
+.wp-block-image.alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin: 2rem calc((100% - 100vw) * .5);
+}
+
+.wp-block-image figcaption {
+	color: inherit;
+	opacity: 0.8;
+}
+
+/* Gallery */
+
+ul.wp-block-gallery,
+ul.wp-block-gallery li {
+	padding: 0;
+}
+
+/* Quote */
+
+.wp-block-quote cite {
+	color: inherit;
+	opacity: 0.8;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 28px;
+}
+
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-style-large cite {
+	font-size: 22px;
+}
+
+@media (min-width: 600px) {
+	.wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignright {
+		max-width: 40%;
+	}
+}
+
+/* Audio */
+
+.wp-block-audio {}
+
+.wp-block-audio audio {
+	display: block;
+	min-width: 270px;
+	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover-image.alignwide,
+.wp-block-cover.alignwide,
+.wp-block-cover-image.alignfull,
+.wp-block-cover.alignfull {
+	height: 75vh;
+}
+
+/* File */
+
+.wp-block-file .wp-block-file__button {
+	background: #222;
+	border-radius: 3px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 1.4rem;
+	font-size: 14px;
+	line-height: 1.29;
+	padding: 9px 18px;
+}
+
+.style-pack-colorful .wp-block-file .wp-block-file__button,
+.style-pack-modern .wp-block-file .wp-block-file__button {
+	font-family: inherit;
+}
+
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus {
+	background: #ca2017;
+	opacity: 1.0;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
+
+/* Video */
+
+.wp-block-video video,
+.wp-block-video iframe {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	background-color: transparent;
+	font-family: inherit;
+	font-size: 1.1em;
+	font-style: italic;
+	line-height: 1.8;
+	padding: 0;
+}
+
+/* Code */
+
+.wp-block-code {}
+
+/* Preformatted */
+
+.wp-block-preformatted {}
+
+/* Pullquotes */
+
+.wp-block-pullquote {
+	border-bottom: 2px solid #ddd;
+	border-top: 3px solid #ddd;
+	color: #666;
+	margin-bottom: 0;
+}
+
+.wp-block-pullquote cite {
+	color: inherit;
+	opacity: 0.8;
+}
+
+.wp-block-pullquote blockquote::before,
+.wp-block-pullquote blockquote::after {
+	display: none;
+}
+
+/* Tables */
+
+.wp-block-table {
+	display: table;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	border: none;
+}
+
+.wp-block-table.alignwide,
+.wp-block-table.alignfull {
+	width: 96vw;
+}
+
+.wp-block-table.alignwide {
+	width: 100%;
+}
+
+@media (min-width: 1160px) {
+	.wp-block-table.alignwide {
+		width: 1110px;
+	}
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .wp-block-button__link {
+	border-radius: 3px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 1.4rem;
+	font-size: 14px;
+	line-height: 1.29;
+	padding: 9px 18px;
+}
+
+.style-pack-colorful .wp-block-file .wp-block-file__button,
+.style-pack-modern .wp-block-file .wp-block-file__button {
+	font-family: inherit;
+}
+
+.wp-block-button__link {
+	background: #222;
+	color: #fff;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+	opacity: 1.0;
+}
+
+.wp-block-button__link:not(.has-background):hover,
+.wp-block-button__link:not(.has-background):focus {
+	background: #ca2017;
+}
+
+.wp-block-button.alignwide,
+.wp-block-button.alignfull,
+.wp-block-button.aligncenter {
+	display: block;
+}
+
+/* Separator */
+
+.wp-block-separator {
+	border: none;
+	max-width: 100px;
+	margin: 1.6em auto;
+}
+
+.wp-block-separator.is-style-wide {
+	max-width: 100%;
+}
+
+/* Media & Text */
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Categories, Latest Posts & Archives */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+}
+
+.wp-block-archives,
+.wp-block-latest-comments,
+.wp-block-latest-posts,
+.wp-block-categories-list {
+	list-style: none;
+	padding: 0;
+}
+
+.wp-block-archives li,
+.wp-block-categories-list li {
+	padding: 0.25em 0;
+}
+
+.wp-block-archives li:not(:last-child),
+.wp-block-categories-list li:not(:last-child) {
+	border-bottom: 1px solid rgba(0,0,0,0.075);
+}
+
+.wp-block-categories-list ul ul {
+	padding-left: 2em;
+}
+
+.wp-block-categories-list ul ul li:last-child {
+	padding-bottom: 0;
+}
+
+/* Latest Posts */
+
+.wp-block-latest-posts__post-date {
+	color: inherit;
+	margin-bottom: 0;
+	opacity: 0.8;
+}
+
+.wp-block-latest-posts,
+.wp-block-latest-posts li {
+	list-style: none;
+}
+
+.wp-block-latest-posts li {
+	padding: 0.25em 0;
+}
+
+.wp-block-latest-posts li:not(:last-child) {
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.wp-block-latest-posts.is-grid li {
+	border: 0;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments.not(.alignwide),
+.wp-block-latest-comments.not(.alignfull) {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment-date {
+	font-size: inherit;
+}
+
+.wp-block-latest-comments__comment-meta {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 80%;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.style-pack-colorful .wp-block-latest-comments__comment-meta,
+.style-pack-modern .wp-block-latest-comments__comment-meta {
+	font-family: inherit;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 90%;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: #707070;
+	font-size: 80%;
+}
+
+/*--------------------------------------------------------------
+7.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/* Default */
+
+.has-white-color,
+.has-white-color:hover,
+.has-white-color:active,
+.has-white-color:focus,
+.has-white-color:visited {
+	color: #fff;
+}
+
+.has-white-background-color,
+.has-white-background-color:hover,
+.has-white-background-color:active,
+.has-white-background-color:focus,
+.has-white-background-color:visited {
+	background-color: #fff
+}
+
+.has-dark-gray-color,
+.has-dark-gray-color:hover,
+.has-dark-gray-color:active,
+.has-dark-gray-color:focus,
+.has-dark-gray-color:visited {
+	color: #222;
+}
+
+.has-dark-gray-background-color,
+.has-dark-gray-background-color:hover,
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:focus,
+.has-dark-gray-background-color:visited {
+	background-color: #222;
+}
+
+.has-light-gray-color,
+.has-light-gray-color:hover,
+.has-light-gray-color:active,
+.has-light-gray-color:focus,
+.has-light-gray-color:visited {
+	color: #666;
+}
+
+.has-light-gray-background-color,
+.has-light-gray-background-color:hover,
+.has-light-gray-background-color:active,
+.has-light-gray-background-color:focus,
+.has-light-gray-background-color:visited {
+	background-color: #666;
+}
+
+.has-red-color,
+.has-red-color:hover,
+.has-red-color:active,
+.has-red-color:focus,
+.has-red-color:visited {
+	color: #ca2017;
+}
+
+.has-red-background-color,
+.has-red-background-color:hover,
+.has-red-background-color:active,
+.has-red-background-color:focus,
+.has-red-background-color:visited {
+	background-color: #ca2017;
+}
+
+/* Modern */
+
+.has-modern-white-color,
+.has-modern-white-color:hover,
+.has-modern-white-color:active,
+.has-modern-white-color:focus,
+.has-modern-white-color:visited {
+	color: #fff;
+}
+
+.has-modern-white-background-color,
+.has-modern-white-background-color:hover,
+.has-modern-white-background-color:active,
+.has-modern-white-background-color:focus,
+.has-modern-white-background-color:visited {
+	background-color: #fff
+}
+
+.has-modern-light-gray-color,
+.has-modern-light-gray-color:hover,
+.has-modern-light-gray-color:active,
+.has-modern-light-gray-color:focus,
+.has-modern-light-gray-color:visited {
+	color: #f1f1f1;
+}
+
+.has-modern-light-gray-background-color,
+.has-modern-light-gray-background-color:hover,
+.has-modern-light-gray-background-color:active,
+.has-modern-light-gray-background-color:focus,
+.has-modern-light-gray-background-color:visited {
+	background-color: #f1f1f1
+}
+
+.has-modern-medium-gray-color,
+.has-modern-medium-gray-color:hover,
+.has-modern-medium-gray-color:active,
+.has-modern-medium-gray-color:focus,
+.has-modern-medium-gray-color:visited {
+	color: #aaa;
+}
+
+.has-modern-medium-gray-background-color,
+.has-modern-medium-gray-background-color:hover,
+.has-modern-medium-gray-background-color:active,
+.has-modern-medium-gray-background-color:focus,
+.has-modern-medium-gray-background-color:visited {
+	background-color: #aaa
+}
+
+.has-modern-dark-gray-color,
+.has-modern-dark-gray-color:hover,
+.has-modern-dark-gray-color:active,
+.has-modern-dark-gray-color:focus,
+.has-modern-dark-gray-color:visited {
+	color: #222;
+}
+
+.has-modern-dark-gray-background-color,
+.has-modern-dark-gray-background-color:hover,
+.has-modern-dark-gray-background-color:active,
+.has-modern-dark-gray-background-color:focus,
+.has-modern-dark-gray-background-color:visited {
+	background-color: #222
+}
+
+/* Colorful */
+
+.has-colorful-white-color,
+.has-colorful-white-color:hover,
+.has-colorful-white-color:active,
+.has-colorful-white-color:focus,
+.has-colorful-white-color:visited {
+	color: #fff;
+}
+
+.has-colorful-white-background-color,
+.has-colorful-white-background-color:hover,
+.has-colorful-white-background-color:active,
+.has-colorful-white-background-color:focus,
+.has-colorful-white-background-color:visited {
+	background-color: #fff
+}
+
+.has-colorful-light-gray-color,
+.has-colorful-light-gray-color:hover,
+.has-colorful-light-gray-color:active,
+.has-colorful-light-gray-color:focus,
+.has-colorful-light-gray-color:visited {
+	color: #e5e5e5;
+}
+
+.has-colorful-light-gray-background-color,
+.has-colorful-light-gray-background-color:hover,
+.has-colorful-light-gray-background-color:active,
+.has-colorful-light-gray-background-color:focus,
+.has-colorful-light-gray-background-color:visited {
+	background-color: #e5e5e5
+}
+
+.has-colorful-dark-gray-color,
+.has-colorful-dark-gray-color:hover,
+.has-colorful-dark-gray-color:active,
+.has-colorful-dark-gray-color:focus,
+.has-colorful-dark-gray-color:visited {
+	color: #222;
+}
+
+.has-colorful-dark-gray-background-color,
+.has-colorful-dark-gray-background-color:hover,
+.has-colorful-dark-gray-background-color:active,
+.has-colorful-dark-gray-background-color:focus,
+.has-colorful-dark-gray-background-color:visited {
+	background-color: #222
+}
+
+.has-colorful-blue-color,
+.has-colorful-blue-color:hover,
+.has-colorful-blue-color:active,
+.has-colorful-blue-color:focus,
+.has-colorful-blue-color:visited {
+	color: #4ba3c3;
+}
+
+.has-colorful-blue-background-color,
+.has-colorful-blue-background-color:hover,
+.has-colorful-blue-background-color:active,
+.has-colorful-blue-background-color:focus,
+.has-colorful-blue-background-color:visited {
+	background-color: #4ba3c3
+}
+
+.has-colorful-green-color,
+.has-colorful-green-color:hover,
+.has-colorful-green-color:active,
+.has-colorful-green-color:focus,
+.has-colorful-green-color:visited {
+	color: #71db9d;
+}
+
+.has-colorful-green-background-color,
+.has-colorful-green-background-color:hover,
+.has-colorful-green-background-color:active,
+.has-colorful-green-background-color:focus,
+.has-colorful-green-background-color:visited {
+	background-color: #71db9d
+}
+
+.has-colorful-orange-color,
+.has-colorful-orange-color:hover,
+.has-colorful-orange-color:active,
+.has-colorful-orange-color:focus,
+.has-colorful-orange-color:visited {
+	color: #d97059;
+}
+
+.has-colorful-orange-background-color,
+.has-colorful-orange-background-color:hover,
+.has-colorful-orange-background-color:active,
+.has-colorful-orange-background-color:focus,
+.has-colorful-orange-background-color:visited {
+	background-color: #d97059
+}

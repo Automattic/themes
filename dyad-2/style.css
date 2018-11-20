@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/dyad-2/
 Author: Automattic
 Author URI: http://wordpress.com/themes
 Description: Dyad pairs your written content and images together in perfect balance. The theme is geared towards photographers, foodies, artists, and anyone who is looking for a strong photographic presence on their website.
-Version: 2.0.5-wpcom
+Version: 2.0.6-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: art, artwork, blog, blue, classic-menu, custom-colors, custom-header, custom-menu, dark, design, editor-style, featured-images, food, grid-layout, infinite-scroll, photoblogging, photography, post-slider, responsive-layout, rtl-language-support, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, yellow
@@ -584,7 +584,6 @@ td, th {
 th {
 	font-size: 85%;
 	letter-spacing: 0.1em;
-	padding: ;
 	text-transform: uppercase;
 }
 
@@ -2004,7 +2003,7 @@ footer.comment-footer:after,
 	padding: 13.5rem 0 0;
 }
 
-.is-singular .site-content:before.
+.is-singular .site-content:before,
 .is-singular .site-content:after {
 	content: "";
 }
@@ -2100,7 +2099,7 @@ body:not(.has-post-thumbnail).is-singular .entry-inner,
 	padding-top: 3rem;
 }
 
-.is-singular:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header {
+.is-singular:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header {
 	font-style: italic;
 }
 
@@ -2111,7 +2110,7 @@ body:not(.has-post-thumbnail).is-singular .entry-inner,
 	text-align: center;
 }
 
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header {
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header {
 	background: rgba(0,0,0,0.4);
 	border-top: 1px solid rgba(255,255,255,0.2);
 	bottom: 0;
@@ -2123,34 +2122,34 @@ body:not(.has-post-thumbnail).is-singular .entry-inner,
 	width: 50%;
 }
 
-.page.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header {
+.page.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header {
 	padding-bottom: 8rem;
 	padding-top: 4rem;
 }
 
 
-.is-singular:not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header h1 {
+.is-singular:not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header h1 {
 	font-style: normal;
 	margin-top: 1rem;
 }
 
-.is-singular:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header a {
+.is-singular:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header a {
 	font-style: normal;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
 
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header h1,
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header a {
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header h1,
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header a {
 	color: #fff;
 }
 
-.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-meta {
+.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-meta {
 	font-size: 1.5rem;
 	top: -20px;
 }
 
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-meta {
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-meta {
 	position: relative;
 	width: 100%;
 }
@@ -2183,11 +2182,11 @@ body:not(.has-post-thumbnail).is-singular .entry-inner,
 	padding: 1.5em 0 0;
 }
 
-.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-posted .posted-info {
+.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-posted .posted-info {
 	float: left;
 }
 
-.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-posted .edit-link {
+.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-posted .edit-link {
 	float: right;
 }
 
@@ -2210,7 +2209,7 @@ body:not(.has-post-thumbnail).is-singular .entry-inner,
 
 /* entry content */
 
-.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-content {
+.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-content {
 	padding-top: 4em;
 }
 
@@ -2277,7 +2276,7 @@ body:not(.has-post-thumbnail).is-singular .entry-inner,
 	width: 12px;
 }
 
-.is-singular:not(.page-template-eventbrite-index):not(.woocommerce-active) .post-navigation .nav-links:before {
+.is-singular:not(.page-template-eventbrite-index):not(.woocommerce-page) .post-navigation .nav-links:before {
 	border-top: 1px solid #e0e0e0;
 	left: 37.5%;
 	right: 37.5%;
@@ -2959,7 +2958,7 @@ object {
 	position: relative;
 }
 
-.is-singular.has-post-thumbnail:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area {
+.is-singular.has-post-thumbnail:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area {
 	max-width: calc(72% + 4em);
 }
 
@@ -2971,13 +2970,13 @@ object {
 }
 
 .widget-area.widget-one .widget,
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area.widget-one .widget {
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area.widget-one .widget {
 	width: 100%;
 }
 
 .widget-area.widgets-two .widget,
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area .widget,
-.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area.widgets-three .widget {
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area .widget,
+.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area.widgets-three .widget {
 	width: 49.5%;
 }
 
@@ -3626,11 +3625,11 @@ object {
 		padding-top: 10px;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header {
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header {
 		padding: 0 4rem 3rem;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area .widget {
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area .widget {
 		width: 100%;
 	}
 }
@@ -3797,7 +3796,7 @@ object {
 	 /* site inner */
 
 
-	.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .site-inner {
+	.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .site-inner {
 		width: 65%;
 	}
 
@@ -3815,14 +3814,14 @@ object {
 	/* entry header */
 
 	.is-singular .entry-header,
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce) .entry-header,
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header,
 	.page-template-eventbrite-index .page-header,
 	.single-event .entry-header {
 		padding: 3em 0 0;
 		text-align: center;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header {
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header {
 		background: transparent;
 		color: #6a6c6e;
 		position: relative;
@@ -3839,12 +3838,12 @@ object {
 		font-size: 3rem;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header h1 {
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header h1 {
 		color: #1a1c1e;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header a,
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header .cat-links {
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header a,
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header .cat-links {
 		color: #6a6c6e;
 	}
 
@@ -3859,12 +3858,12 @@ object {
 		font-size: 1.5rem;
 	}
 
-	.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-posted .posted-info,
-	.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-posted .edit-link {
+	.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-posted .posted-info,
+	.is-singular.has-post-thumbnail:not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-posted .edit-link {
 		float: none;
 	}
 
-	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-meta {
+	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-meta {
 		top: auto;
 	}
 
@@ -3876,13 +3875,13 @@ object {
 	/* entry content */
 
 	.is-singular .entry-content,
-	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-content  {
+	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-content  {
 		padding-top: 3rem;
 	}
 
 	/* entry media */
 
-	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-media {
+	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-media {
 		width: 35%;
 	}
 
@@ -4086,7 +4085,7 @@ object {
 	/* site inner */
 
 	 .is-singular:not(.home) .site-inner,
-	 .is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .site-inner {
+	 .is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .site-inner {
 		width: 100%;
 	}
 
@@ -4131,7 +4130,7 @@ object {
 
 	.is-singular .entry-media,
 	.is-singular:not(.home) .entry-media,
-	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-media {
+	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-media {
 		background: none !important;
 		height: auto;
 		margin: 0 0 5.5rem;
@@ -4186,7 +4185,7 @@ object {
 
 	/* widgets */
 
-	.is-singular.has-post-thumbnail:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area .widget {
+	.is-singular.has-post-thumbnail:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area .widget {
 		width: 49.5%;
 	}
 
@@ -4477,7 +4476,7 @@ object {
 
 	.is-singular .entry-content,
 	.is-singular:not(.home) .entry-content,
-	.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-content {
+	.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-content {
 		padding-top: 2rem;
 	}
 
@@ -4513,9 +4512,9 @@ object {
 	.widget-area.widgets-two .widget,
 	.widget-area.widgets-three .widget,
 	.is-singular:not(.home) .widget-area .widget,
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area .widget,
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area.widgets-three .widget,
-	.is-singular.has-post-thumbnail:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-active) .widget-area .widget,
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area .widget,
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area.widgets-three .widget,
+	.is-singular.has-post-thumbnail:not(.home):not(.page-template-eventbrite-index):not(.woocommerce-page) .widget-area .widget,
 	.has-post-thumbnail.is-singular.single-format-image .widget-area .widget,
 	.has-post-thumbnail.is-singular.single-format-image .widget-area .widget,
 	.is-singular.single-format-image .widget-area .widget,
@@ -4626,7 +4625,7 @@ object {
 		padding-top: 0 !important;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header,
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header,
 	.is-singular .entry-media-thumb {
 		padding: 0 !important;
 	}
@@ -4638,7 +4637,7 @@ object {
 		margin: 0 !important;
 	}
 
-	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-media {
+	.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-media {
 		height: 100% !important;
 		position: relative !important;
 		top: 0 !important;
@@ -4649,11 +4648,11 @@ object {
 		max-width: 100% !important;
 	}
 
-	.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .site-inner {
+	.is-singular.has-post-thumbnail:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .site-inner {
 		width: 100%;
 	}
 
-	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-active) .entry-header {
+	.has-post-thumbnail.is-singular:not(.home):not(.single-format-image):not(.page-template-eventbrite-index):not(.woocommerce-page) .entry-header {
 		bottom: auto;
 		left: auto;
 		position: relative;

@@ -35,6 +35,16 @@ function affinity_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/*
+	 * Add editor styles
+	 */
+	add_editor_style();
+
+	/*
+	 * Add support for responsive embeds.
+	 */
+	add_theme_support( 'responsive-embeds' );
+
 	/**
 	 * Add support for core custom logo
 	 * - also see fallback in inc/jetpack.php
@@ -109,7 +119,7 @@ function affinity_content_width() {
 	// Largest width at mobile breakpoint 46em is 820px
 	// Actual width at largest possible screen size is 540px
 
-	$GLOBALS['content_width'] = apply_filters( 'affinity_content_width', 820 ); 
+	$GLOBALS['content_width'] = apply_filters( 'affinity_content_width', 820 );
 }
 add_action( 'after_setup_theme', 'affinity_content_width', 0 );
 
@@ -233,6 +243,9 @@ function affinity_fonts_url() {
 function affinity_scripts() {
 	wp_enqueue_style( 'affinity-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'affinity-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'affinity-fonts', affinity_fonts_url(), array(), null );
 
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons/genericons.css', array(), '3.4.1' );
@@ -252,6 +265,15 @@ function affinity_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'affinity_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function affinity_editor_styles() {
+	wp_enqueue_style( 'affinity-blocks-editor-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'affinity-fonts', affinity_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'affinity_editor_styles' );
 
 
 /* Allow user to adjust opacity of overlay to work with lighter/darker photos */

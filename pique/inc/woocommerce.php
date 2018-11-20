@@ -112,7 +112,10 @@ add_filter( 'body_class', 'pique_woocommerce_active_body_class' );
  * @return integer number of products.
  */
 function pique_woocommerce_products_per_page() {
-	return 12;
+	return absint( apply_filters( 'pique_woocommerce_products_per_page', 12 ) );
+}
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_per_page', 'pique_woocommerce_products_per_page' );
 }
 
 // Legacy WooCommerce products per page filter.
@@ -126,7 +129,7 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
  * @return integer number of columns.
  */
 function pique_woocommerce_thumbnail_columns() {
-	return 4;
+	return absint( apply_filters( 'pique_woocommerce_product_thumbnail_columns', 4 ) );
 }
 add_filter( 'woocommerce_product_thumbnails_columns', 'pique_woocommerce_thumbnail_columns' );
 
@@ -136,7 +139,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'pique_woocommerce_thumbna
  * @return integer products per row.
  */
 function pique_woocommerce_loop_columns() {
-	return 3;
+	return absint( apply_filters( 'pique_woocommerce_loop_columns', 3 ) );
 }
 
 // Legacy WooCommerce columns filter.
@@ -151,12 +154,10 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
  * @return array $args related products args.
  */
 function pique_woocommerce_related_products_args( $args ) {
-	$defaults = array(
+	$args = apply_filters( 'radcliffe_2_woocommerce_related_products_args', array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
-	);
-
-	$args = wp_parse_args( $defaults, $args );
+	) );
 
 	return $args;
 }
@@ -241,18 +242,6 @@ if ( ! function_exists( 'pique_woocommerce_wrapper_after' ) ) {
 	}
 }
 add_action( 'woocommerce_after_main_content', 'pique_woocommerce_wrapper_after' );
-
-/**
- * Sample implementation of the WooCommerce Mini Cart.
- *
- * You can add the WooCommerce Mini Cart to header.php like so ...
- *
-	<?php
-		if ( function_exists( 'pique_woocommerce_header_cart' ) ) {
-			pique_woocommerce_header_cart();
-		}
-	?>
- */
 
 if ( ! function_exists( 'pique_woocommerce_cart_link_fragment' ) ) {
 	/**
@@ -410,22 +399,6 @@ function pique_woocommerce_is_shop_page() {
 	}
 	return $is_shop_page;
 }
-
-/**
- * Jetpack infinite scroll duplicates posts where orderby is anything other than modified or date
- * This filter offsets the products returned by however many are displayed per page
- *
- * @link https://github.com/Automattic/jetpack/issues/1135
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function pique_woocommerce_jetpack_duplicate_products( $args ) {
-	if ( ( isset( $args['post_type'] ) && 'product' === $args['post_type'] ) || ( isset( $args['taxonomy'] ) && 'product_cat' === $args['taxonomy'] ) ) {
-		$args['offset'] = $args['posts_per_page'] * $args['paged'];
-	}
- 	return $args;
-}
-add_filter( 'infinite_scroll_query_args', 'pique_woocommerce_jetpack_duplicate_products', 100 );
 
 /**
  * Override number of products per page in Jetpack infinite scroll.

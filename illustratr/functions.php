@@ -60,6 +60,57 @@ function illustratr_setup() {
 	 */
 	add_editor_style( 'editor-style.css' );
 
+	/**
+	 * Responsive embeds
+	 */
+	add_theme_support( 'responsive-embeds' );
+
+	/**
+	 * Gutenberg wide and full images support
+	 */
+	add_theme_support( 'align-wide' );
+
+	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'illustratr' ),
+				'slug' => 'black',
+				'color' => '#24282d',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'illustratr' ),
+				'slug' => 'dark-gray',
+				'color' => '#464d4d',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'illustratr' ),
+				'slug' => 'medium-gray',
+				'color' => '#7f8d8c',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'illustratr' ),
+				'slug' => 'light-gray',
+				'color' => '#f1f2f3',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'illustratr' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Red', 'illustratr' ),
+				'slug' => 'red',
+				'color' => '#e06d5e',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Red', 'illustratr' ),
+				'slug' => 'dark-red',
+				'color' => '#b44738',
+			)
+		)
+	);
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -92,6 +143,9 @@ function illustratr_setup() {
 		'comment-form',
 		'gallery',
 	) );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // illustratr_setup
 add_action( 'after_setup_theme', 'illustratr_setup' );
@@ -203,6 +257,10 @@ function illustratr_source_code_pro_font_url() {
  * Enqueue scripts and styles.
  */
 function illustratr_scripts() {
+
+	// Gutenberg styles
+	wp_enqueue_style( 'illustratr-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'illustratr-source-sans-pro', illustratr_source_sans_pro_font_url(), array(), null );
 
 	wp_enqueue_style( 'illustratr-pt-serif', illustratr_pt_serif_font_url(), array(), null );
@@ -232,6 +290,17 @@ function illustratr_scripts() {
 	wp_enqueue_script( 'illustratr-script', get_template_directory_uri() . '/js/illustratr.js', array( 'jquery', 'underscore' ), '20140317', true );
 }
 add_action( 'wp_enqueue_scripts', 'illustratr_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function apostrophe_2_editor_styles() {
+	wp_enqueue_style( 'illustratr-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'illustratr-source-sans-pro', illustratr_source_sans_pro_font_url(), array(), null );
+	wp_enqueue_style( 'illustratr-pt-serif', illustratr_pt_serif_font_url(), array(), null );
+	wp_enqueue_style( 'illustratr-source-code-pro', illustratr_source_code_pro_font_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'apostrophe_2_editor_styles' );
 
 /**
  * Enqueue Google fonts style to admin screen for custom header display.

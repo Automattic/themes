@@ -83,6 +83,51 @@ if ( ! function_exists( 'pique_setup' ) ) :
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for custom color scheme.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Dark Blue', 'pique' ),
+				'slug'  => 'dark-blue',
+				'color' => '#293940',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Blue', 'pique' ),
+				'slug'  => 'medium-blue',
+				'color' => '#3c7993',
+			),
+			array(
+				'name'  => esc_html__( 'Light Blue', 'pique' ),
+				'slug'  => 'light-blue',
+				'color' => '#83b6cc',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Brown', 'pique' ),
+				'slug'  => 'dark-brown',
+				'color' => '#2d2a26',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'pique' ),
+				'slug'  => 'dark-gray',
+				'color' => '#5d5d5d',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'pique' ),
+				'slug'  => 'medium-gray',
+				'color' => '#a9a9a9',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'pique' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+		) );
 	}
 endif; // pique_setup
 add_action( 'after_setup_theme', 'pique_setup' );
@@ -216,6 +261,9 @@ function pique_scripts() {
 	wp_enqueue_style( 'pique-style', get_stylesheet_uri(), array(), null, 'screen' );
 	wp_enqueue_style( 'pique-fonts', pique_fonts_url(), array(), null );
 
+	// Block stylesheets
+	wp_enqueue_style( 'pique-block-style', get_template_directory_uri() . '/assets/css/blocks.css', array( 'pique-style' ), '20181018' );
+
 	// Background fix for iOS
 	if ( is_front_page() || is_home() ) :
 		wp_enqueue_script( 'pique-background-fix', get_template_directory_uri() . '/assets/js/background-fix.js', array( 'jquery' ), '20170302', true );
@@ -247,6 +295,18 @@ function pique_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'pique_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function pique_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'pique-block-editor-style', get_template_directory_uri() . '/assets/css/editor-blocks.css' );
+
+	// Font styles.
+	wp_enqueue_style( 'pique-fonts', pique_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'pique_block_editor_styles' );
 
 /**
  * Filter the front page template so it's bypassed entirely if the user selects
