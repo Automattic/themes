@@ -159,7 +159,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* File */
 
-.wp-block-file a.wp-block-file__button {
+.wp-block-file .wp-block-file__button {
 	background-color: #678db8;
 	border-color: #678db8;
 	border-radius: 0;
@@ -170,14 +170,19 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-transform: uppercase;
 }
 
-.wp-block-file a.wp-block-file__button:hover,
-.wp-block-file a.wp-block-file__button:focus {
+.wp-block-file__button:hover,
+.wp-block-file__button:focus {
 	background-color: #678db8;
 	opacity: 0.75;
 }
 
 .wp-block-file a.wp-block-file__button:active {
 	opacity: 0.9;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
 }
 
 /*--------------------------------------------------------------
@@ -283,6 +288,7 @@ body:not(.has-post-thumbnail) .wp-block-table.alignfull {
 .wp-block-archives.aligncenter,
 .wp-block-categories.aligncenter,
 .wp-block-latest-posts.aligncenter {
+	list-style-position: inside;
 	text-align: center;
 }
 
@@ -324,58 +330,114 @@ body:not(.has-post-thumbnail) .wp-block-table.alignfull {
 7.0 Blocks - Colors
 --------------------------------------------------------------*/
 
-.has-bright-blue-color {
+.has-bright-blue-color,
+.has-bright-blue-color:hover,
+.has-bright-blue-color:focus,
+.has-bright-blue-color:active,
+.has-bright-blue-color:visited {
 	color: #678db8;
 }
 
-.has-bright-blue-background-color {
+.has-bright-blue-background-color,
+.has-bright-blue-background-color:hover,
+.has-bright-blue-background-color:focus,
+.has-bright-blue-background-color:active,
+.has-bright-blue-background-color:visited {
 	background-color: #678db8;
 }
 
-.has-yellow-color {
+.has-yellow-color,
+.has-yellow-color:hover,
+.has-yellow-color:focus,
+.has-yellow-color:active,
+.has-yellow-color:visited {
 	color: #e7ae01;
 }
 
-.has-yellow-background-color {
+.has-yellow-background-color,
+.has-yellow-background-color:hover,
+.has-yellow-background-color:focus,
+.has-yellow-background-color:active,
+.has-yellow-background-color:visited {
 	background-color: #e7ae01;
 }
 
-.has-light-gray-blue-color {
+.has-light-gray-blue-color,
+.has-light-gray-blue-color:hover,
+.has-light-gray-blue-color:focus,
+.has-light-gray-blue-color:active,
+.has-light-gray-blue-color:visited {
 	color: #abb7c3;
 }
 
-.has-light-gray-blue-background-color {
+.has-light-gray-blue-background-color,
+.has-light-gray-blue-background-color:hover,
+.has-light-gray-blue-background-color:focus,
+.has-light-gray-blue-background-color:active,
+.has-light-gray-blue-background-color:visited {
 	background-color: #abb7c3;
 }
 
-.has-medium-gray-color {
+.has-medium-gray-color,
+.has-medium-gray-color:hover,
+.has-medium-gray-color:focus,
+.has-medium-gray-color:active,
+.has-medium-gray-color:visited {
 	color: #6a6c6e;
 }
 
-.has-medium-gray-background-color {
+.has-medium-gray-background-color,
+.has-medium-gray-background-color:hover,
+.has-medium-gray-background-color:focus,
+.has-medium-gray-background-color:active,
+.has-medium-gray-background-color:visited {
 	background-color: #6a6c6e;
 }
 
-.has-dark-gray-color {
+.has-dark-gray-color,
+.has-dark-gray-color:hover,
+.has-dark-gray-color:focus,
+.has-dark-gray-color:active,
+.has-dark-gray-color:visited {
 	color: #1a1c1e;
 }
 
-.has-dark-gray-background-color {
+.has-dark-gray-background-color,
+.has-dark-gray-background-color:hover,
+.has-dark-gray-background-color:focus,
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:visited {
 	background-color: #1a1c1e;
 }
 
-.has-dark-gray-blue-color {
+.has-dark-gray-blue-color,
+.has-dark-gray-blue-color:hover,
+.has-dark-gray-blue-color:focus,
+.has-dark-gray-blue-color:active,
+.has-dark-gray-blue-color:visited {
 	color: #292c2f;
 }
 
-.has-dark-gray-blue-background-color {
+.has-dark-gray-blue-background-color,
+.has-dark-gray-blue-background-color:hover,
+.has-dark-gray-blue-background-color:focus,
+.has-dark-gray-blue-background-color:active,
+.has-dark-gray-blue-background-color:visited {
 	background-color: #292c2f;
 }
 
-.has-white-color {
+.has-white-color,
+.has-white-color:hover,
+.has-white-color:focus,
+.has-white-color:active,
+.has-white-color:visited {
 	color: #fff;
 }
 
-.has-white-background-color {
+.has-white-background-color,
+.has-white-background-color:hover,
+.has-white-background-color:focus,
+.has-white-background-color:active,
+.has-white-background-color:visited {
 	background-color: #fff;
 }
