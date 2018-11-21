@@ -130,6 +130,12 @@ input[type="radio"] {
 	content: "\f432";
 }
 
+.post-navigation .nav-links .nav-next a:after {
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
 .post-navigation .nav-links .nav-next {
 	margin: 0 0 0 -.21875em;
 }
@@ -653,4 +659,19 @@ ol.comment-list .trackback {
 		margin-right: auto;
 	}
 
+}
+
+@media screen and (min-width: 68.75em) {
+	/* Large tiled galleries */
+	body:not(.has-sidebar) .tiled-gallery-wrapper,
+	body:not(.has-sidebar) .jetpack-video-wrapper,
+	body:not(.has-sidebar) img.size-big,
+	body:not(.has-sidebar) .wp-caption.size-big img {
+		margin-left: auto;
+		margin-right: -180px;
+	}
+
+	body:not(.has-sidebar) .jetpack-slideshow img.size-big {
+		margin-right: auto;
+	}
 }
