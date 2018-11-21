@@ -211,6 +211,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
 }
 
 /*--------------------------------------------------------------
@@ -224,6 +226,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -318,31 +321,28 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-shadow: none;
 }
 
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link {
 	background: transparent;
 	border: 2px solid #222;
-}
-
-.wp-block-button__link:not(.has-background):focus {
-	border-color: #222;
-	background: #222;
-}
-
-.wp-block-button__link:not(.has-text-color) {
 	color: #222;
 }
 
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover {
+	background: #222;
+	border: 2px solid #222;
 	color: #fff;
 }
 
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
-	background: #222;
-	border: 2px solid #222;
+.wp-block-button__link.has-text-color {
+	border-color: currentColor;
+}
+
+.wp-block-button__link.has-background:active,
+.wp-block-button__link.has-background:focus,
+.wp-block-button__link.has-background:hover {
+	border-color: currentColor;
 }
 
 /* Seperator */
@@ -377,11 +377,12 @@ hr.wp-block-separator {
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
 
-/* Categories */
+/* Archives, Categories & Latest Posts */
 
-.wp-block-categories.aligncenter {
-	margin-left: 1.5em;
-	margin-right: 1.5em;
+.wp-block-archives.aligncenter,
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter {
+	list-style-position: inside;
 	text-align: center;
 }
 
@@ -396,23 +397,26 @@ hr.wp-block-separator {
 	margin-right: 0;
 }
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
-	font-weight: 700;
-	text-decoration: none;
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 18px;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	color: #222;
+	text-transform: uppercase;
 }
 
 .wp-block-latest-comments__comment-date {
+	color: #767676;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	border-top: 1px solid #ccc;
 	margin-bottom: 0;
-	padding: .75em 0;
-}
-
-.wp-block-latest-comments__comment-excerpt p:last-child {
-	margin-bottom: 0;
+	padding: 1.75em 0 .75em;
 }
 
 /*--------------------------------------------------------------
@@ -422,98 +426,112 @@ hr.wp-block-separator {
 .has-dark-gray-color,
 .has-dark-gray-color:hover,
 .has-dark-gray-color:focus,
-.has-dark-gray-color:active {
+.has-dark-gray-color:active,
+.has-dark-gray-color:visited {
 	color: #333333;
 }
 
 .has-dark-gray-background-color,
 .has-dark-gray-background-color:hover,
 .has-dark-gray-background-color:focus,
-.has-dark-gray-background-color:active {
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:visited {
 	background-color: #333333;
 }
 
 .has-dark-green-color,
 .has-dark-green-color:hover,
 .has-dark-green-color:focus,
-.has-dark-green-color:active {
+.has-dark-green-color:active,
+.has-dark-green-color:visited {
 	color: #557d73;
 }
 
 .has-dark-green-background-color,
 .has-dark-green-background-color:hover,
 .has-dark-green-background-color:focus,
-.has-dark-green-background-color:active {
+.has-dark-green-background-color:active,
+.has-dark-green-background-color:visited {
 	background-color: #557d73;
 }
 
 .has-light-gray-color,
 .has-light-gray-color:hover,
 .has-light-gray-color:focus,
-.has-light-gray-color:active {
+.has-light-gray-color:active,
+.has-light-gray-color:visited {
 	color: #cccccc;
 }
 
 .has-light-gray-background-color,
 .has-light-gray-background-color:hover,
 .has-light-gray-background-color:focus,
-.has-light-gray-background-color:active {
+.has-light-gray-background-color:active,
+.has-light-gray-background-color:visited {
 	background-color: #cccccc;
 }
 
 .has-white-color,
 .has-white-color:hover,
 .has-white-color:focus,
-.has-white-color:active {
+.has-white-color:active,
+.has-white-color:visited {
 	color: #fff;
 }
 
 .has-white-background-color,
 .has-white-background-color:hover,
 .has-white-background-color:focus,
-.has-white-background-color:active {
+.has-white-background-color:active,
+.has-white-background-color:visited {
 	background-color: #fff;
 }
 
 .has-purple-color,
 .has-purple-color:hover,
 .has-purple-color:focus,
-.has-purple-color:active {
+.has-purple-color:active,
+.has-purple-color:visited {
 	color: #81699b;
 }
 
 .has-purple-background-color,
 .has-purple-background-color:hover,
 .has-purple-background-color:focus,
-.has-purple-background-color:active {
+.has-purple-background-color:active,
+.has-purple-background-color:visited {
 	background-color: #81699b;
 }
 
 .has-dark-purple-color,
 .has-dark-purple-color:hover,
 .has-dark-purple-color:focus,
-.has-dark-purple-color:active {
+.has-dark-purple-color:active,
+.has-dark-purple-color:visited {
 	color: #553a72;
 }
 
 .has-dark-purple-background-color,
 .has-dark-purple-background-color:hover,
 .has-dark-purple-background-color:focus,
-.has-dark-purple-background-color:active {
+.has-dark-purple-background-color:active,
+.has-dark-purple-background-color:visited {
 	background-color: #553a72;
 }
 
 .has-black-color,
 .has-black-color:hover,
 .has-black-color:focus,
-.has-black-color:active {
+.has-black-color:active,
+.has-black-color:visited {
 	color: #222222;
 }
 
 .has-black-background-color,
 .has-black-background-color:hover,
 .has-black-background-color:focus,
-.has-black-background-color:active {
+.has-black-background-color:active,
+.has-black-background-color:visited {
 	background-color: #222222;
 }
 
