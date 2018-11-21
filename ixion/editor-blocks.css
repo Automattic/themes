@@ -505,17 +505,6 @@
 	background: transparent;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce table td {
-	border: 0;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table th {
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce th,
-.rtl .wp-block-freeform.block-library-rich-text__tinymce td {
-}
-
 /* Preformatted */
 
 .editor-block-list__block .wp-block-preformatted pre {
@@ -655,6 +644,10 @@ table.wp-block-table th {
 	background: #c1a01e;
 }
 
+.wp-block-button .editor-rich-text__tinymce.mce-content-body {
+	line-height: 16px;
+}
+
 /* Separator */
 
 .wp-block-separator {
@@ -673,6 +666,15 @@ table.wp-block-table th {
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
+/* Archives, Categories & Latest Posts */
+
+[data-align=center] .wp-block-archives ul,
+[data-align=center] .wp-block-categories ul,
+[data-align=center] .wp-block-latest-posts ul {
+	list-style-position: inside;
+	text-align: center;
+}
+
 /* Categories */
 
 .editor-block-list__block[data-align=right] .wp-block-categories__list,
@@ -682,20 +684,33 @@ table.wp-block-table th {
 
 /* Latest Comments */
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
-	font-weight: 700;
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	color: #192930;
 	text-decoration: none;
+}
+
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 16px;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: #a5a29d;
+	font-family: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	border-top: 1px solid #eeece8;
 	margin-bottom: 0;
-	padding: .75em 0;
-}
-
-.rtl ol.wp-block-latest-comments {
-	margin-right: 0;
+	padding: .8em 0;
 }
 
 .wp-block-latest-comments__comment-excerpt p:last-child {

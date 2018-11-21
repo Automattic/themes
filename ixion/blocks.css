@@ -77,6 +77,8 @@ Description: Used to style Gutenberg Blocks.
 /* Captions */
 
 [class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: inherit;
 	text-align: center;
 }
 
@@ -207,6 +209,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-decoration: none;
 }
 
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
 
 /*--------------------------------------------------------------
 3.0 Blocks - Formatting Blocks
@@ -334,24 +340,17 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-decoration: none;
 }
 
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link,
+.wp-block-button__link:visited {
 	background: #d7b221;
-}
-
-.wp-block-button__link:not(.has-text-color) {
 	color: #fff;
 }
 
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #fff;
-}
-
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover {
 	background: #c1a01e;
+	color: #fff;
 }
 
 /* Seperator */
@@ -376,6 +375,15 @@ hr.wp-block-separator {
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
 
+/* Archives, Categories & Latest Posts */
+
+.wp-block-archives.aligncenter,
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
 /* Categories */
 
 .wp-block-categories.aligncenter {
@@ -395,13 +403,22 @@ hr.wp-block-separator {
 	margin-right: 0;
 }
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
-	font-weight: 700;
+.wp-block-latest-comments__comment-meta a {
+	color: #192930;
 	text-decoration: none;
 }
 
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 16px;
+}
+
 .wp-block-latest-comments__comment-date {
+	color: #a5a29d;
+	font-family: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
@@ -421,97 +438,111 @@ hr.wp-block-separator {
 .has-medium-gray-color,
 .has-medium-gray-color:hover,
 .has-medium-gray-color:focus,
-.has-medium-gray-color:active {
+.has-medium-gray-color:active,
+.has-medium-gray-color:visited {
 	color: #a5a29d;
 }
 
 .has-medium-gray-background-color,
 .has-medium-gray-background-color:hover,
 .has-medium-gray-background-color:focus,
-.has-medium-gray-background-color:active {
+.has-medium-gray-background-color:active.
+.has-medium-gray-background-color:visited {
 	background-color: #a5a29d;
 }
 
 .has-light-gray-color,
 .has-light-gray-color:hover,
 .has-light-gray-color:focus,
-.has-light-gray-color:active {
+.has-light-gray-color:active,
+.has-light-gray-color:visited {
 	color: #eeece8;
 }
 
 .has-light-gray-background-color,
 .has-light-gray-background-color:hover,
 .has-light-gray-background-color:focus,
-.has-light-gray-background-color:active {
+.has-light-gray-background-color:active,
+.has-light-gray-background-color:visited {
 	background-color: #eeece8;
 }
 
 .has-white-color,
 .has-white-color:hover,
 .has-white-color:focus,
-.has-white-color:active {
+.has-white-color:active,
+.has-white-color:visited {
 	color: #fff;
 }
 
 .has-white-background-color,
 .has-white-background-color:hover,
 .has-white-background-color:focus,
-.has-white-background-color:active {
+.has-white-background-color:active,
+.has-white-background-color:visited {
 	background-color: #fff;
 }
 
 .has-yellow-color,
 .has-yellow-color:hover,
 .has-yellow-color:focus,
-.has-yellow-color:active {
+.has-yellow-color:active,
+.has-yellow-color:visited {
 	color: #d7b221;
 }
 
 .has-yellow-background-color,
 .has-yellow-background-color:hover,
 .has-yellow-background-color:focus,
-.has-yellow-background-color:active {
+.has-yellow-background-color:active,
+.has-yellow-background-color:visited {
 	background-color: #d7b221;
 }
 
 .has-dark-yellow-color,
 .has-dark-yellow-color:hover,
 .has-dark-yellow-color:focus,
-.has-dark-yellow-color:active {
+.has-dark-yellow-color:active,
+.has-dark-yellow-color:visited {
 	color: #9c8012;
 }
 
 .has-dark-yellow-background-color,
 .has-dark-yellow-background-color:hover,
 .has-dark-yellow-background-color:focus,
-.has-dark-yellow-background-color:active {
+.has-dark-yellow-background-color:active,
+.has-dark-yellow-background-color:visited {
 	background-color: #9c8012;
 }
 
 .has-dark-gray-color,
 .has-dark-gray-color:hover,
 .has-dark-gray-color:focus,
-.has-dark-gray-color:active {
+.has-dark-gray-color:active,
+.has-dark-gray-color:visited {
 	color: #474f53;
 }
 
 .has-dark-gray-background-color,
 .has-dark-gray-background-color:hover,
 .has-dark-gray-background-color:focus,
-.has-dark-gray-background-color:active {
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:visited {
 	background-color: #474f53;
 }
 
 .has-black-color,
 .has-black-color:hover,
 .has-black-color:focus,
-.has-black-color:active {
+.has-black-color:active,
+.has-black-color:visited {
 	color: #192930;
 }
 
 .has-black-background-color,
 .has-black-background-color:hover,
 .has-black-background-color:focus,
-.has-black-background-color:active {
+.has-black-background-color:active,
+.has-black-background-color:visited {
 	background-color: #192930;
 }
