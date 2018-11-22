@@ -156,10 +156,12 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
 	border-collapse: collapse;
+	border: 0;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table th,
 .wp-block-freeform.block-library-rich-text__tinymce table td {
+	border: 0;
 	padding: 0.5em;
 }
 
@@ -276,7 +278,20 @@ Description: Used to style Gutenberg Blocks in the editor.
 /* Pre styles */
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
+	color: #666;
+	font-family: "Roboto Slab", Georgia, Times, serif;
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 27px;
+	overflow: auto;
+	max-width: 100%;
+	padding: 0;
+}
 
+@media (min-width: 50em) {
+	.wp-block-freeform.block-library-rich-text__tinymce pre {
+		font-size: 18px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -497,27 +512,35 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button .wp-block-button__link,
 .wp-block-button .wp-block-button__link:visited {
+	border-radius: 3px;
 	background: #e6e6e6;
 	border: 1px solid #ccc;
 	border-color: #ccc #ccc #bbb #ccc;
-	border-radius: 3px;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
 	color: rgba(0, 0, 0, .8);
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.wp-block-button .wp-block-button__link:not(.has-background),
+.wp-block-button .wp-block-button__link:not(.has-background):visited {
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
 	/* Corrects inability to style clickable 'input' types in iOS */
 	text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 	/* Improves usability and consistency of cursor style between image-type 'input' and others */
 }
 
 .wp-block-button .wp-block-button__link:hover {
-	background: #e6e6e6;
-	border-color: #ccc #bbb #aaa #bbb;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 15px 17px rgba(255, 255, 255, .8), inset 0 -5px 12px rgba(0, 0, 0, .02);
 	color: rgba(0, 0, 0, .8);
 }
 
+.wp-block-button .wp-block-button__link:not(.has-background):hover {
+	background: #e6e6e6;
+	border-color: #ccc #bbb #aaa #bbb;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 15px 17px rgba(255, 255, 255, .8), inset 0 -5px 12px rgba(0, 0, 0, .02);
+}
 
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-button .wp-block-button__link:active {
+.wp-block-button .wp-block-button__link:not(.has-background):focus,
+.wp-block-button .wp-block-button__link:not(.has-background):active {
 	background: #e6e6e6;
 	border-color: #aaa #bbb #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .5), inset 0 2px 5px rgba(0, 0, 0, .15);
