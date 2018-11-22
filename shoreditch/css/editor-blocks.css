@@ -513,6 +513,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-table th,
 .wp-block-table td {
 	border-color: #f3f3f3;
+	text-align: center;
 }
 
 .wp-block-table__cell-content {
@@ -534,9 +535,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 0.8125rem;
 	font-weight: bold;
 	letter-spacing: 0.0625em;
-	line-height: 1.3847;
+	line-height: 22.15px;
 	padding: 0.5625rem 1.5em;
 	text-transform: uppercase;
+}
+
+.wp-block-button .editor-rich-text__tinymce.mce-content-body {
+	line-height: 22.15px;
 }
 
 .wp-block-button__link:hover,
@@ -572,12 +577,22 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Latest Comments */
 
-.editor-styles-wrapper .wp-block-latest-comments {
-	padding-left: 0;
-	padding-right: 0;
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
 }
 
-.wp-block-latest-comments__comment {
+.wp-block-latest-comments__comment-date {
+	color: inherit;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	box-shadow: none;
+}
+
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-comments__comment-excerpt p {
 	font-size: inherit;
 }
 

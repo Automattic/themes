@@ -141,12 +141,14 @@ Description: Used to style Gutenberg Blocks.
 	padding-bottom: 0.25em;
 }
 
+[class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
 .can-align-wide [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
 .page-template-full-width-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
 .page-template-panel-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption {
 	text-align: left;
 }
 
+.rtl [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
 .rtl.can-align-wide [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
 .rtl.page-template-full-width-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption,
 .rtl.page-template-panel-page [class^="wp-block-"]:not(.wp-block-gallery):not(.alignfull) figcaption {
@@ -266,6 +268,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	background: #3e69dc;
 	border: 0;
 	border-radius: 5em;
+	box-shadow: none;
 	color: #fff;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -357,17 +360,15 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Buttons */
 
-.wp-block-button .wp-block-button__link:not(.has-text-color) {
-	color: #fff;
-}
-
-.wp-block-button .wp-block-button__link:not(.has-background) {
+.wp-block-button__link {
 	background: #3e69dc;
+	color: #fff;
 }
 
 .wp-block-button .wp-block-button__link {
 	border: 0;
 	border-radius: 5em;
+	box-shadow: none;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: bold;
@@ -378,11 +379,14 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-button__link:hover,
-.wp-block-button__link:not(.has-background):hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:not(.has-background):focus {
+.wp-block-button__link:focus {
 	background: #2c313f;
 	outline: none;
+}
+
+.wp-block-button__link.has-background:hover,
+.wp-block-button__link.has-background:focus {
+	opacity: 0.8;
 }
 
 @media (min-width: 768px) {
@@ -438,6 +442,10 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-latest-comments__comment-date {
 	color: inherit;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	box-shadow: none;
 }
 
 .wp-block-latest-comments__comment,
