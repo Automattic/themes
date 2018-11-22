@@ -85,17 +85,24 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 /* Headings */
 
 .edit-post-visual-editor h1,
+.wp-block-freeform.block-library-rich-text__tinymce h1,
 .edit-post-visual-editor h2,
+.wp-block-freeform.block-library-rich-text__tinymce h2,
 .edit-post-visual-editor h3,
+.wp-block-freeform.block-library-rich-text__tinymce h3,
 .edit-post-visual-editor h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4,
 .edit-post-visual-editor h5,
-.edit-post-visual-editor h6 {
+.wp-block-freeform.block-library-rich-text__tinymce h5,
+.edit-post-visual-editor h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
 	clear: both;
 	line-height: 1.6;
 	font-weight: normal;
 }
 
-.edit-post-visual-editor h1 {
+.edit-post-visual-editor h1,
+.wp-block-freeform.block-library-rich-text__tinymce h1 {
 	color: #a09a92;
 	font-family: "Playfair Display", Georgia, serif;
 	font-size: 44px;
@@ -103,7 +110,8 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	margin: 1em 0 0.5em;
 }
 
-.edit-post-visual-editor h2 {
+.edit-post-visual-editor h2,
+.wp-block-freeform.block-library-rich-text__tinymce h2 {
 	border-bottom: 1px solid #787065;
 	color: #787065;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -114,14 +122,16 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	text-transform: uppercase;
 }
 
-.edit-post-visual-editor h3 {
+.edit-post-visual-editor h3,
+.wp-block-freeform.block-library-rich-text__tinymce h3 {
 	color: #a09a92;
 	font-size: 25px;
 	font-style: italic;
 	margin: 2em 0 1em;
 }
 
-.edit-post-visual-editor h4 {
+.edit-post-visual-editor h4,
+.wp-block-freeform.block-library-rich-text__tinymce h4 {
 	color: #787065;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -130,30 +140,22 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	text-transform: uppercase;
 }
 
-.edit-post-visual-editor h5 {
+.edit-post-visual-editor h5,
+.wp-block-freeform.block-library-rich-text__tinymce h5 {
 	color: #a09a92;
 	font-size: 21px;
 	font-style: italic;
 	margin: 1.5em 0 0.75em;
 }
 
-.edit-post-visual-editor h6 {
+.edit-post-visual-editor h6,
+.wp-block-freeform.block-library-rich-text__tinymce h6 {
 	color: #787065;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	letter-spacing: 1px;
 	margin: 1.5em 0 0.75em;
 	text-transform: uppercase;
-}
-
-/* Images */
-
-.wp-block-image figcaption {
-	color: #a09a92;
-	font-size: 16px;
-	font-style: italic;
-	line-height: 1.2;
-	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -265,6 +267,172 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	text-align: center;
 }
 
+
+.wp-block-freeform.block-library-rich-text__tinymce address {
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce ol {
+	list-style: decimal;
+	margin-left: 3em;
+	padding: 0;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce li > ol {
+	margin-left: 1.5em;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
+	color: #ebe7e1;
+	content: "\201C";
+	display: block;
+	font-size: 208px;
+	font-style: normal;
+	left: -35px;
+	line-height: 1;
+	position: absolute;
+	top: -40px;
+	z-index: -1;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
+	content: "\201D";
+	right: -35px;
+	left: auto;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote {
+	border: 0;
+	color: #a09a92;
+	font-family: "Playfair Display", Georgia, serif;
+	font-size: 28px;
+	font-style: italic;
+	position: relative;
+	z-index: 2;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote p:not(.wp-block-cover-text) {
+	line-height: 1.4;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote cite {
+	color: #787065;
+	display: block;
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	letter-spacing: 1px;
+	margin-top: 1em;
+	text-transform: uppercase;
+	text-align: right;
+	width: 100%;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote {
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce .alignleft {
+	float: left;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce .alignright {
+	float: right;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignleft {
+	margin: .75em 1.5em .75em 0;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignright {
+	margin: .75em 0 .75em 1.5em;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce pre {
+	background: #d9d6d0;
+	font-family: "Droid Sans Mono", "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	padding: 1.6em;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table {
+	border-collapse: collapse;
+	border: 0;
+	font-size: 0.85em;
+	line-height: 1.4;
+	margin: 0.5em 0 1.5em;
+	width: 100%;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce .alternate {
+	background: transparent;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table tr:nth-of-type(odd) td {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table td {
+	border: 0;
+	border-bottom: 1px solid #d9d6d0;
+	padding: 0.8em 1em;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table thead:nth-of-type(odd) tr td {
+	background: none;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table th {
+	border: 0;
+	border-bottom: 1px solid #d9d6d0;
+	font-style: italic;
+	font-weight: normal;
+	padding: 0.8em 1em;
+	text-align: left;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce table thead th {
+	color: #a09a92;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.rtl .wp-block-freeform.block-library-rich-text__tinymce table th {
+	text-align: right;
+}
+
+/* Preformatted */
+
+.editor-block-list__block .wp-block-preformatted pre {
+	background: #d9d6d0;
+	font-family: "Droid Sans Mono", "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	padding: 1.6em;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+/* Definition List styles */
+
+.wp-block-freeform.block-library-rich-text__tinymce dt {
+	font-weight: bold;
+}
+
 /*--------------------------------------------------------------
 3.0 Blocks - Common Blocks
 --------------------------------------------------------------*/
@@ -341,6 +509,16 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	display: block;
 }
 
+/* Images */
+
+.wp-block-image figcaption {
+	color: #a09a92;
+	font-size: 16px;
+	font-style: italic;
+	line-height: 1.2;
+	text-align: center;
+}
+
 /* Quote */
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
@@ -363,7 +541,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .rtl .editor-block-list__block .wp-block-quote:before {
-	content: "\201C";
+	content: "\201D";
 	left: auto;
 	right: -35px;
 }
@@ -461,6 +639,10 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 
 /* File */
 
+.wp-block-file__textlink {
+	color: #932817;
+}
+
 .wp-block-file {
 	margin: 1.5em 0;
 }
@@ -507,6 +689,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -538,215 +721,6 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	overflow: visible;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce address {
-	margin-top: 0.75em; 
-	margin-bottom: 0.75em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce ol {
-	list-style: decimal;
-	margin-left: 3em;
-	padding: 0;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce li > ol {
-	margin-left: 1.5em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
-	color: #ebe7e1;
-	content: "\201C";
-	display: block;
-	font-size: 208px;
-	font-style: normal;
-	left: -35px;
-	line-height: 1;
-	position: absolute;
-	top: -40px;
-	z-index: -1;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote:before {
-	content: "\201D";
-	right: -35px;
-	left: auto;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce blockquote {
-	border: 0;
-	color: #a09a92;
-	font-family: "Playfair Display", Georgia, serif;
-	font-size: 28px;
-	font-style: italic;
-	line-height: 1.4;
-	position: relative;
-	z-index: 2;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce blockquote > :last-child {
-	margin-bottom: 0;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce blockquote cite {
-	color: #787065;
-	display: block;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	font-style: normal;
-	letter-spacing: 1px;
-	margin-top: 1em;
-	text-transform: uppercase;
-	text-align: right;
-	width: 100%;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote {
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 1.5em;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce .alignleft {
-	float: left;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce .alignright {
-	float: right;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignleft {
-	margin: .75em 1.5em .75em 0;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote.alignright {
-	margin: .75em 0 .75em 1.5em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h1,
-.wp-block-freeform.block-library-rich-text__tinymce h2,
-.wp-block-freeform.block-library-rich-text__tinymce h3,
-.wp-block-freeform.block-library-rich-text__tinymce h4,
-.wp-block-freeform.block-library-rich-text__tinymce h5,
-.wp-block-freeform.block-library-rich-text__tinymce h6 {
-	clear: both;
-	line-height: 1.6;
-	font-weight: normal;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h1 {
-	color: #a09a92;
-	font-family: "Playfair Display", Georgia, serif;
-	font-size: 44px;
-	font-style: italic;
-	margin: 1em 0 0.5em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h2 {
-	border-bottom: 1px solid #787065;
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 21px;
-	letter-spacing: 2px;
-	margin: 4em 0 2em;
-	padding-bottom: 0.5em;
-	text-transform: uppercase;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h3 {
-	color: #a09a92;
-	font-size: 25px;
-	font-style: italic;
-	margin: 2em 0 1em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h4 {
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	letter-spacing: 1px;
-	margin: 3em 0 1.5em;
-	text-transform: uppercase;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h5 {
-	color: #a09a92;
-	font-size: 21px;
-	font-style: italic;
-	margin: 1.5em 0 0.75em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce h6 {
-	color: #787065;
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	letter-spacing: 1px;
-	margin: 1.5em 0 0.75em;
-	text-transform: uppercase;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce pre {
-	background: #d9d6d0;
-	font-family: "Droid Sans Mono", "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
-	font-size: 16px;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	padding: 1.6em;
-	white-space: pre;
-	white-space: pre-wrap;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table {
-	font-size: 0.85em;
-	line-height: 1.4;
-	margin: 0.5em 0 1.5em;
-	width: 100%;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce .alternate {
-	background: transparent;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table tr:nth-of-type(odd) td {
-	background: rgba(255, 255, 255, 0.5);
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table td {
-	border: 0;
-	border-bottom: 1px solid #d9d6d0;
-	padding: 0.8em 1em;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table thead:nth-of-type(odd) tr td {
-	background: none;
-}
-
-.wp-block-freeform.block-library-rich-text__tinymce table th {
-	border: 0;
-	font-style: italic;
-	border-bottom: 1px solid #d9d6d0;
-	padding: 0.8em 1em;
-	text-align: left;
-}
-
-.rtl .wp-block-freeform.block-library-rich-text__tinymce table th {
-	text-align: right;
-}
-
-/* Preformatted */
-
-.editor-block-list__block .wp-block-preformatted pre {
-	background: #d9d6d0;
-	font-family: "Droid Sans Mono", "Andale Mono", Consolas, "DejaVu Sans Mono", monospace;
-	font-size: 16px;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	padding: 1.6em;
-	white-space: pre;
-	white-space: pre-wrap;
-}
-
 /* Pullquote */
 
 .editor-block-list__block .wp-block-pullquote blockquote {
@@ -764,7 +738,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 }
 
 .wp-block-pullquote {
-	color: #787065;
+	color: #a09a92;
 	border-top: 2px solid currentColor;
 	border-bottom: 2px solid currentColor;
 	font-style: italic;
@@ -853,7 +827,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
-	color: #787065;
+	color: #a09a92;
 	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-style: normal;
@@ -896,6 +870,13 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	border-bottom: 1px solid #d9d6d0;
 	padding: 0.8em 1em;
 	text-align: left;
+}
+
+.editor-block-list__block table.wp-block-table thead th {
+	border-width: 2px;
+	color: #a09a92;
+	font-style: normal;
+	font-weight: bold;
 }
 
 .rtl .editor-block-list__block table.wp-block-table th {
@@ -971,6 +952,14 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
+/* Categories, Latest Posts & Archives */
+
+[data-align="center"] .wp-block-categories ul,
+[data-align="center"] .wp-block-latest-posts ul,
+[data-align="center"] .wp-block-archives ul {
+	list-style-position: inside; /* makes sure bullets are centred with centred lists */
+}
+
 /* Categories */
 
 .editor-block-list__block[data-align=right] .wp-block-categories__list,
@@ -980,24 +969,43 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 
 /* Latest Comments */
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
-	font-weight: 700;
-	text-decoration: none;
-}
-
-.wp-block-latest-comments .wp-block-latest-comments__comment {
-	border-top: 1px solid #d9d6d0;
-	margin-bottom: 0;
-	padding: .75em 0;
-}
-
-.rtl ol.wp-block-latest-comments {
+.wp-block-latest-comments {
+	margin-left: 0;
 	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment {
+	margin-bottom: 2em;
+}
+
+.wp-block-latest-comments__comment-meta {
+	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	color: #363431;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: #787065;
+}
+
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	margin: 0;
 }
 
 .wp-block-latest-comments__comment-excerpt p:last-child {
 	margin-bottom: 0;
+}
+
+.rtl .wp-block-latest-posts {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 /* Latest Posts */
