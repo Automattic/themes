@@ -271,7 +271,8 @@
 /* Paragraph */
 
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
-	font-size: 80px;
+	font-size: 5em;
+	margin-top: 0.16em;
 }
 
 .edit-post-visual-editor p {
@@ -376,10 +377,6 @@
 	font-style: italic;
 }
 
-.rtl .wp-block-quote.is-large,
-.rtl .wp-block-quote.is-style-large {
-}
-
 .edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large,
 .edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large,
 .edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large p,
@@ -457,7 +454,7 @@
 .wp-block-verse pre {
 	background: transparent;
 	color: inherit;
-	font-family: inherit;
+	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
 	font-size: inherit;
 	line-height: inherit;
 	margin-bottom: 1.5em;
@@ -884,6 +881,14 @@
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
+[data-align="center"] .wp-block-archives ul,
+[data-align="center"] .wp-block-categories ul,
+[data-align="center"] .wp-block-latest-posts ul {
+	list-style-position: inside;
+	text-align: center;
+}
+
+
 /* Categories */
 
 .editor-block-list__block[data-align=right] .wp-block-categories__list,
@@ -893,24 +898,41 @@
 
 /* Latest Comments */
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-meta a {
 	font-weight: 700;
 	text-decoration: none;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
-	border-top: 1px solid #ccc;
 	margin-bottom: 0;
-	padding: .75em 0;
+	padding: 0.75em 0;
+}
+
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	margin: 0;
+}
+
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: #999;
+	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 .rtl ol.wp-block-latest-comments {
 	margin-right: 0;
-}
-
-.wp-block-latest-comments__comment-excerpt p:last-child {
-	margin-bottom: 0;
 }
 
 /* Latest Posts */
