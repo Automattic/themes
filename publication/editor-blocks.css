@@ -237,6 +237,7 @@
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
 	font-family: Neuton, serif;
 	font-size: 80px;
+	margin-top: 0.125em;
 }
 
 /* Images */
@@ -377,6 +378,7 @@
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 24px;
 	max-width: 100%;
@@ -521,6 +523,8 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table {
+	border: 0;
+	border-collapse: collapse;
 	border-top: 1px solid #ddd;
 	margin: 0 0 24px;
 	text-align: left;
@@ -536,13 +540,13 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table td {
+	border: 0;
 	border-bottom: 1px solid #ddd;
 	padding: 6px;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce table th {
 	border: 0;
-	background: #eee;
 	border-bottom: 1px solid #ddd;
 	padding: 6px;
 	font-weight: bold;
@@ -697,6 +701,12 @@
 --------------------------------------------------------------*/
 
 /* Buttons */
+
+.wp-block-button .wp-block-button__link,
+.wp-block-button .editor-rich-text__tinymce.mce-content-body {
+	line-height: 24px;
+}
+
 .wp-block-button .wp-block-button__link {
 	border-radius: 0;
 	border: 0;
@@ -770,24 +780,55 @@
 
 /* Latest Comments */
 
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-meta {
+	font-family: Neuton, serif;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	color: #222;
+	font-weight: normal;
+}
+
 .editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
-	font-weight: 700;
 	text-decoration: none;
 }
 
+.wp-block-latest-comments__comment-date {
+	color: #555;
+	font-family: Oswald, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	letter-spacing: 0.075em;
+	line-height: 1.8462;
+	text-transform: uppercase;
+}
+
 .wp-block-latest-comments .wp-block-latest-comments__comment {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #dddddd;
 	margin-bottom: 0;
 	padding: 12px 0;
 }
 
-.rtl ol.wp-block-latest-comments {
-	margin-right: 0;
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	margin: 0;
 }
 
 .wp-block-latest-comments__comment-excerpt p:last-child {
 	margin-bottom: 0;
+}
+
+.editor-block-list__block ol.wp-block-latest-comments,
+.rtl .editor-block-list__block ol.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 /* Latest Posts */
