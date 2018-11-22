@@ -239,6 +239,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -338,26 +339,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 	box-shadow: none;
 }
 
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link {
+	color: #6636cc;
+	border-color: currentColor;
 	background: transparent;
 }
 
-.wp-block-button__link:not(.has-text-color) {
-	color: #6636cc;
-	border-color: #6636cc;
-}
-
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover {
+	background: transparent;
 	border-color: #85cc36;
 	color: #85cc36;
-}
-
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
-	background: transparent;
 }
 
 /* Seperator */
@@ -423,6 +416,22 @@ hr.wp-block-separator {
 	margin-right: 0;
 }
 
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 16px;
+}
+
+.wp-block-latest-comments__comment-date {
+	font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+	.wp-block-latest-comments__comment-meta,
+	.wp-block-latest-comments__comment-excerpt p {
+		font-size: 18px;
+	}
+}
+
 .editor-block-list__block .wp-block-latest-comments__comment-meta a {
 	box-shadow: none;
 	font-weight: 700;
@@ -453,111 +462,127 @@ hr.wp-block-separator {
 .has-medium-gray-color,
 .has-medium-gray-color:hover,
 .has-medium-gray-color:focus,
-.has-medium-gray-color:active {
+.has-medium-gray-color:active,
+.has-medium-gray-color:visited {
 	color: #999;
 }
 
 .has-medium-gray-background-color,
 .has-medium-gray-background-color:hover,
 .has-medium-gray-background-color:focus,
-.has-medium-gray-background-color:active {
+.has-medium-gray-background-color:active,
+.has-medium-gray-background-color:visited {
 	background-color: #999;
 }
 
 .has-light-gray-color,
 .has-light-gray-color:hover,
 .has-light-gray-color:focus,
-.has-light-gray-color:active {
+.has-light-gray-color:active,
+.has-light-gray-color:visited {
 	color: #ddd;
 }
 
 .has-light-gray-background-color,
 .has-light-gray-background-color:hover,
 .has-light-gray-background-color:focus,
-.has-light-gray-background-color:active {
+.has-light-gray-background-color:active,
+.has-light-gray-background-color:visited {
 	background-color: #ddd;
 }
 
 .has-white-color,
 .has-white-color:hover,
 .has-white-color:focus,
-.has-white-color:active {
+.has-white-color:active,
+.has-white-color:visited {
 	color: #fff;
 }
 
 .has-white-background-color,
 .has-white-background-color:hover,
 .has-white-background-color:focus,
-.has-white-background-color:active {
+.has-white-background-color:active,
+.has-white-background-color:visited {
 	background-color: #fff;
 }
 
 .has-purple-color,
 .has-purple-color:hover,
 .has-purple-color:focus,
-.has-purple-color:active {
+.has-purple-color:active,
+.has-purple-color:visited {
 	color: #6636cc;
 }
 
 .has-purple-background-color,
 .has-purple-background-color:hover,
 .has-purple-background-color:focus,
-.has-purple-background-color:active {
+.has-purple-background-color:active,
+.has-purple-background-color:visited {
 	background-color: #6636cc;
 }
 
 .has-dark-purple-color,
 .has-dark-purple-color:hover,
 .has-dark-purple-color:focus,
-.has-dark-purple-color:active {
+.has-dark-purple-color:active,
+.has-dark-purple-color:visited {
 	color: #471e9e;
 }
 
 .has-dark-purple-background-color,
 .has-dark-purple-background-color:hover,
 .has-dark-purple-background-color:focus,
-.has-dark-purple-background-color:active {
+.has-dark-purple-background-color:active,
+.has-dark-purple-background-color:visited {
 	background-color: #471e9e;
 }
 
 .has-green-color,
 .has-green-color:hover,
 .has-green-color:focus,
-.has-green-color:active {
+.has-green-color:active,
+.has-green-color:visited {
 	color: #85cc36;
 }
 
 .has-green-background-color,
 .has-green-background-color:hover,
 .has-green-background-color:focus,
-.has-green-background-color:active {
+.has-green-background-color:active,
+.has-green-background-color:visited {
 	background-color: #85cc36;
 }
 
 .has-dark-green-color,
 .has-dark-green-color:hover,
 .has-dark-green-color:focus,
-.has-dark-green-color:active {
+.has-dark-green-color:active,
+.has-dark-green-color:visited {
 	color: #609d1b;
 }
 
 .has-dark-green-background-color,
 .has-dark-green-background-color:hover,
 .has-dark-green-background-color:focus,
-.has-dark-green-background-color:active {
+.has-dark-green-background-color:active,
+.has-dark-green-background-color:visited {
 	background-color: #609d1b;
 }
 
 .has-black-color,
 .has-black-color:hover,
 .has-black-color:focus,
-.has-black-color:active {
+.has-black-color:active,
+.has-black-color:visited {
 	color: #333;
 }
 
 .has-black-background-color,
 .has-black-background-color:hover,
 .has-black-background-color:focus,
-.has-black-background-color:active {
+.has-black-background-color:active,
+.has-black-background-color:visited {
 	background-color: #333;
 }
