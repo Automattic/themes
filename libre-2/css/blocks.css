@@ -77,9 +77,41 @@ Description: Used to style Gutenberg Blocks.
 
 figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull),
 [class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) figure,
-[class^="wp-block-"] figure:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull), {
+[class^="wp-block-"] figure:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) {
 	margin-left: 0;
 	margin-right: 0;
+}
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: 14px;
+	font-style: italic;
+	position: relative;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	text-align: left;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption::after {
+	border-top: 1px solid;
+	clear: both;
+	content: "";
+	display: block;
+	margin-top: .875em;
+	padding-top: .875em;
+	width: 25%;
+}
+
+[class^="wp-block-"].alignfull:not(.wp-block-gallery) figcaption {
+	padding-left: 2vw;
+	padding-right: 2vw;
+}
+
+.rtl [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
@@ -270,21 +302,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 	box-shadow: 0 2px 0 0 currentColor;
 }
 
-.wp-block-button .wp-block-button__link:not(.has-background) {
-	background: transparent;
-	padding: 0.21875em 0;
-}
-
-.wp-block-button .wp-block-button__link:not(.has-color) {
-	color: #404040;
-}
-
 .wp-block-button__link {
+	background: transparent;
+	color: #404040;
 	border: 0 none;
 	font-size: 18px;
 	font-size: 1rem;
 	font-weight: bold;
 	transition: 0.2s;
+}
+
+.wp-block-button .wp-block-button__link:not(.has-background) {
+	padding: 0.21875em 0;
 }
 
 .wp-block-button__link:hover,

@@ -133,6 +133,33 @@ Description: Used to style Gutenberg Blocks in the editor.
 	transition: 0.2s;
 }
 
+/* Caption styles */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: 14px;
+	font-style: italic;
+	position: relative;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	text-align: left;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption::after {
+	border-top: 1px solid;
+	clear: both;
+	content: "";
+	display: block;
+	margin-top: .875em;
+	padding-top: .875em;
+	width: 25%;
+}
+
+.rtl [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	text-align: right;
+}
+
 /* Table styles */
 
 .wp-block-freeform.block-library-rich-text__tinymce table,
@@ -204,8 +231,9 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 /* Pre styles */
 
-.wp-block-freeform.block-library-rich-text__tinymce pre {
-
+.editor-styles-wrapper .wp-block-freeform.block-library-rich-text__tinymce pre {
+	font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
+	font-size: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -312,6 +340,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	}
 }
 
+/* Audio */
+
+.editor-styles-wrapper .wp-block-audio {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 /* Cover */
 
 .edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
@@ -384,8 +419,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Preformatted */
 
-.wp-block-preformatted pre {
-	font-family: "Libre Baskerville", Libre, Georgia, Times, serif
+.editor-styles-wrapper .wp-block-preformatted pre {
+	font-family: "Libre Baskerville", Libre, Georgia, Times, serif;
 }
 
 /* Pullquote */
