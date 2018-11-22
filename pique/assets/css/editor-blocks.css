@@ -178,13 +178,6 @@ Description: Used to style Gutenberg Blocks in the editor.
 	font-size: 23.4px;
 }
 
-/* List styles */
-
-.wp-block-freeform.block-library-rich-text__tinymce li,
-.editor-styles-wrapper li {
-	margin-bottom: 0;
-}
-
 /* Code styles */
 
 .wp-block-freeform.block-library-rich-text__tinymce code {
@@ -217,7 +210,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 /* Pre styles */
 
 .wp-block-freeform.block-library-rich-text__tinymce pre {
-
+	color: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -228,7 +221,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 5em;
-	margin-top: 0.15em;
+	margin-top: 0.125em;
 }
 
 /* Quote */
@@ -495,11 +488,21 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Latest Comments */
 
-.editor-styles-wrapper .wp-block-latest-comments {
-	padding-left: 0;
-	padding-right: 0;
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
 }
 
 .wp-block-latest-comments__comment-date {
 	color: inherit;
+	font-family: Karla, Arial, sans-serif;
+	font-size: 13.6px;
+	font-size: 0.85rem;
+	font-weight: bold;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
 }
