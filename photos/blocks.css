@@ -39,44 +39,98 @@ Description: Gutenberg Block Styles
 	}
 }
 
+.wp-block-embed.is-type-video iframe,
+.wp-block-embed.is-type-video iframe {
+	max-height: 100%;
+}
+
+.wp-block-embed.is-type-video.alignwide iframe,
+.wp-block-embed.is-type-video.alignwide iframe,
+.wp-block-embed.is-type-video.alignfull iframe,
+.wp-block-embed.is-type-video.alignfull iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+
 /* Colors */
-.has-red-color {
+.has-red-color,
+.has-red-color:hover,
+.has-red-color:active,
+.has-red-color:focus,
+.has-red-color:visited {
 	color: #d63031;
 }
 
-.has-red-background-color {
+.has-red-background-color,
+.has-red-background-color:hover,
+.has-red-background-color:active,
+.has-red-background-color:focus,
+.has-red-background-color:visited {
 	background-color: #d63031;
 }
 
-.has-charcoal-color {
+.has-charcoal-color,
+.has-charcoal-color:hover,
+.has-charcoal-color:active,
+.has-charcoal-color:focus,
+.has-charcoal-color:visited {
 	color: #111;
 }
 
-.has-charcoal-background-color {
+.has-charcoal-background-color,
+.has-charcoal-background-color:hover,
+.has-charcoal-background-color:active,
+.has-charcoal-background-color:focus,
+.has-charcoal-background-color:visited {
 	background-color: #111;
 }
 
-.has-very-light-gray-color {
+.has-very-light-gray-color,
+.has-very-light-gray-color:hover,
+.has-very-light-gray-color:active,
+.has-very-light-gray-color:focus,
+.has-very-light-gray-color:visited {
 	color: #f0f0f0;
 }
 
-.has-very-light-gray-background-color {
+.has-very-light-gray-background-color,
+.has-very-light-gray-background-color:hover,
+.has-very-light-gray-background-color:active,
+.has-very-light-gray-background-color:focus,
+.has-very-light-gray-background-color:visited {
 	background-color: #f0f0f0;
 }
 
-.has-very-dark-gray-color {
+.has-very-dark-gray-color,
+.has-very-dark-gray-color:hover,
+.has-very-dark-gray-color:active,
+.has-very-dark-gray-color:focus,
+.has-very-dark-gray-color:visited {
 	color: #404040;
 }
 
-.has-very-dark-gray-background-color {
+.has-very-dark-gray-background-color,
+.has-very-dark-gray-background-color:hover,
+.has-very-dark-gray-background-color:active,
+.has-very-dark-gray-background-color:focus,
+.has-very-dark-gray-background-color:visited {
 	background-color: #404040;
 }
 
-.has-medium-gray-color {
+.has-medium-gray-color,
+.has-medium-gray-color:hover,
+.has-medium-gray-color:active,
+.has-medium-gray-color:focus,
+.has-medium-gray-color:visited {
 	color: #606060;
 }
 
-.has-medium-gray-background-color {
+.has-medium-gray-background-color,
+.has-medium-gray-background-color:hover,
+.has-medium-gray-background-color:active,
+.has-medium-gray-background-color:focus,
+.has-medium-gray-background-color:visited {
 	background-color: #606060;
 }
 
@@ -330,30 +384,30 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 .wp-block-file .wp-block-file__button,
-.wp-block-button__link:not(.has-text-color) {
+.wp-block-button__link {
 	color: #d63031;
 }
 
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover {
 	color: #fff;
 }
 
 .wp-block-file .wp-block-file__button,
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link {
 	background: #f0f0f0;
 }
 
 .wp-block-file .wp-block-file__button:active,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover {
 	background-color: #d63031;
 }
 
@@ -369,7 +423,28 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 Widgets
 --------------------------------------------------------------*/
+
+/* Categories, Latest Posts & Archives */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Latest comments */
+
 .wp-block-latest-comments {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.wp-block-latest-comments.alignfull {
+	text-align: left;
+}
+
+.rtl .wp-block-latest-comments.alignfull {
+	text-align: right;
 }
