@@ -332,6 +332,7 @@
 
 .wp-block-paragraph.has-drop-cap:not(:focus)::first-letter {
 	font-size: 80px;
+	margin-top: 0.1em;
 }
 
 .edit-post-visual-editor p {
@@ -448,7 +449,7 @@
 
 .wp-block-file .wp-block-file__button {
 	background: #fff;
-	border: 2px solid #000;
+	border: 2px solid currentColor;
 	border-radius: 0;
 	color: #f35029;
 	font-family: "Rubik", "Helvetica Neue", sans-serif;
@@ -481,6 +482,7 @@
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -619,15 +621,10 @@
 }
 
 .editor-block-list__block table.wp-block-table {
+	border: 0;
 	margin: 0 0 1.5em;
 	text-align: left;
 	width: 100%;
-}
-
-
-
-.rtl .editor-block-list__block table.wp-block-table {
-	text-align: right;
 }
 
 .editor-block-list__block table.wp-block-table td {
@@ -638,10 +635,6 @@
 
 .editor-block-list__block table.wp-block-table th {
 	text-align: left;
-}
-
-.rtl .editor-block-list__block table.wp-block-table th {
-	text-align: right;
 }
 
 .editor-block-list__block table.wp-block-table thead th {
@@ -660,46 +653,45 @@
 	padding: 10px;
 }
 
+.rtl .editor-block-list__block table.wp-block-table {
+	text-align: right;
+}
+
+.rtl .editor-block-list__block table.wp-block-table th {
+	text-align: right;
+}
 
 /*--------------------------------------------------------------
 5.0 Blocks - Layout Elements
 --------------------------------------------------------------*/
 
 /* Buttons */
+
 .wp-block-button .wp-block-button__link {
 	border: 2px solid;
 	border-radius: 0;
 	font-family: "Rubik", "Helvetica Neue", sans-serif;
 	font-weight: 500;
-	line-height: 1;
+	line-height: 18px;
 	padding: 15px 20px;
 }
 
-.wp-block-button .wp-block-button__link:active,
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
-	box-shadow: none;
+.wp-block-button .editor-rich-text__tinymce.mce-content-body {
+	line-height: 18px
 }
 
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link,
+.wp-block-button__link:visited {
 	background: #fff;
-	border-color: #000;
-}
-
-.wp-block-button__link:not(.has-text-color) {
+	border-color: currentColor;
 	color: #f35029;
 }
 
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #fff;
-}
-
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
+.wp-block-button__link:active,
+.wp-block-button__link:focus,
+.wp-block-button__link:hover {
 	background: #000;
+	color: #fff;
 }
 
 .wp-block-button.alignleft {
@@ -732,6 +724,12 @@
 6.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
+[data-align="center"] .wp-block-archives ul,
+[data-align="center"] .wp-block-latest-posts ul,
+[data-align="center"] .wp-block-categories ul {
+	list-style-position: inside;
+}
+
 /* Categories */
 
 .editor-block-list__block[data-align=right] .wp-block-categories__list,
@@ -741,8 +739,12 @@
 
 /* Latest Comments */
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-meta a {
 	font-weight: 700;
 	text-decoration: none;
 }
@@ -750,15 +752,21 @@
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	border-top: 1px solid #ccc;
 	margin-bottom: 0;
-	padding: .75em 0;
+	padding: 1.75em 0 0;
 }
 
-.rtl ol.wp-block-latest-comments {
-	margin-right: 0;
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	margin: 0;
 }
 
-.wp-block-latest-comments__comment-excerpt p:last-child {
-	margin-bottom: 0;
+.wp-block-latest-comments__comment-date {
+	font-size: 14px;
+}
+
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
 }
 
 /* Latest Posts */

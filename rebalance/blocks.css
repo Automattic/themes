@@ -21,6 +21,7 @@ Description: Used to style Gutenberg Blocks.
 /* Captions */
 
 [class^="wp-block-"] figcaption {
+	color: #999;
 	font-size: 14px;
 	line-height: 1.525em;
 	text-align: center;
@@ -34,6 +35,7 @@ Description: Used to style Gutenberg Blocks.
 
 p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 80px;
+	margin-top: 0.1em;
 }
 
 /* Images */
@@ -114,6 +116,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Audio */
 
+.wp-block-audio {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 .wp-block-audio audio {
 	display: block;
 	width: 100%;
@@ -128,13 +135,14 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-file a.wp-block-file__button,
 .wp-block-file a.wp-block-file__button:visited {
 	background: #fff;
-	border: 2px solid #000;
+	border: 2px solid currentColor;
 	border-radius: 0;
 	color: #f35029;
 	font-family: "Rubik", "Helvetica Neue", sans-serif;
 	font-weight: 500;
 	line-height: 1;
 	padding: 15px 20px;
+	text-decoration: none;
 	-webkit-appearance: none;
 }
 
@@ -162,6 +170,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	font-style: italic;
 	line-height: inherit;
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -256,34 +265,26 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-weight: 500;
 	line-height: 1;
 	padding: 15px 20px;
+	text-decoration: none;
 }
 
 .wp-block-button .wp-block-button__link:active,
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
-	box-shadow: none;
 	text-decoration: none;
 }
 
-.wp-block-button__link:not(.has-background) {
+a.wp-block-button__link {
 	background: #fff;
 	border-color: #000;
-}
-
-.wp-block-button__link:not(.has-text-color) {
 	color: #f35029;
 }
 
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #fff;
-}
-
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
+a.wp-block-button__link:active,
+a.wp-block-button__link:focus,
+a.wp-block-button__link:hover {
 	background: #000;
+	color: #fff;
 }
 
 .wp-block-button.alignleft {
@@ -320,16 +321,14 @@ hr.wp-block-separator {
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
 
-/* Categories */
+/* Categories, Latest Posts & Archives */
 
-.wp-block-categories.aligncenter {
-	margin-left: 1.5em;
-	margin-right: 1.5em;
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter {
+	list-style-position: inside;
 	text-align: center;
-}
-
-.wp-block-categories-list.alignleft {
-	margin-left: 1.5em;
 }
 
 /* Latest Comments */
@@ -339,8 +338,7 @@ hr.wp-block-separator {
 	margin-right: 0;
 }
 
-.editor-block-list__block .wp-block-latest-comments__comment-meta a {
-	box-shadow: none;
+.wp-block-latest-comments__comment-meta a {
 	font-weight: 700;
 	text-decoration: none;
 }
@@ -348,7 +346,7 @@ hr.wp-block-separator {
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	border-top: 1px solid #ccc;
 	margin-bottom: 0;
-	padding: .75em 0;
+	padding: 1.75em 0 0;
 }
 
 .wp-block-latest-comments .avatar,
@@ -356,9 +354,16 @@ hr.wp-block-separator {
 	margin: 0;
 }
 
-.wp-block-latest-comments__comment-excerpt p:last-child {
-	margin-bottom: 0;
+.wp-block-latest-comments__comment-date {
+	font-size: 14px;
 }
+
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
+}
+
+/* Latest Posts */
 
 .wp-block-latest-posts.is-grid,
 .rtl .wp-block-latest-posts.is-grid {
@@ -373,97 +378,111 @@ hr.wp-block-separator {
 .has-medium-gray-color,
 .has-medium-gray-color:hover,
 .has-medium-gray-color:focus,
-.has-medium-gray-color:active {
+.has-medium-gray-color:active,
+.has-medium-gray-color:visited {
 	color: #999;
 }
 
 .has-medium-gray-background-color,
 .has-medium-gray-background-color:hover,
 .has-medium-gray-background-color:focus,
-.has-medium-gray-background-color:active {
+.has-medium-gray-background-color:active,
+.has-medium-gray-background-color:visited {
 	background-color: #999;
 }
 
 .has-light-gray-color,
 .has-light-gray-color:hover,
 .has-light-gray-color:focus,
-.has-light-gray-color:active {
+.has-light-gray-color:active,
+.has-light-gray-color:visited {
 	color: #ccc;
 }
 
 .has-light-gray-background-color,
 .has-light-gray-background-color:hover,
 .has-light-gray-background-color:focus,
-.has-light-gray-background-color:active {
+.has-light-gray-background-color:active,
+.has-light-gray-background-color:visited {
 	background-color: #ccc;
 }
 
 .has-white-color,
 .has-white-color:hover,
 .has-white-color:focus,
-.has-white-color:active {
+.has-white-color:active,
+.has-white-color:visited {
 	color: #fff;
 }
 
 .has-white-background-color,
 .has-white-background-color:hover,
 .has-white-background-color:focus,
-.has-white-background-color:active {
+.has-white-background-color:active,
+.has-white-background-color:visited {
 	background-color: #fff;
 }
 
 .has-red-color,
 .has-red-color:hover,
 .has-red-color:focus,
-.has-red-color:active {
+.has-red-color:active,
+.has-red-color:visited {
 	color: #f35029;
 }
 
 .has-red-background-color,
 .has-red-background-color:hover,
 .has-red-background-color:focus,
-.has-red-background-color:active {
+.has-red-background-color:active,
+.has-red-background-color:visited {
 	background-color: #f35029;
 }
 
 .has-dark-red-color,
 .has-dark-red-color:hover,
 .has-dark-red-color:focus,
-.has-dark-red-color:active {
+.has-dark-red-color:active,
+.has-dark-red-color:visited {
 	color: #aa2e11;
 }
 
 .has-dark-red-background-color,
 .has-dark-red-background-color:hover,
 .has-dark-red-background-color:focus,
-.has-dark-red-background-color:active {
+.has-dark-red-background-color:active,
+.has-dark-red-background-color:visited {
 	background-color: #aa2e11;
 }
 
 .has-dark-gray-color,
 .has-dark-gray-color:hover,
 .has-dark-gray-color:focus,
-.has-dark-gray-color:active {
+.has-dark-gray-color:active,
+.has-dark-gray-color:visited {
 	color: #666;
 }
 
 .has-dark-gray-background-color,
 .has-dark-gray-background-color:hover,
 .has-dark-gray-background-color:focus,
-.has-dark-gray-background-color:active {
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:visited {
 	background-color: #666;
 }
 
 .has-black-color,
 .has-black-color:hover,
 .has-black-color:focus,
-.has-black-color:active {
+.has-black-color:active,
+.has-black-color:visited {
 	color: #000;
 }
 
 .has-black-background-color,
 .has-black-background-color:hover,
 .has-black-background-color:focus,
-.has-black-background-color:active {
+.has-black-background-color:active,
+.has-black-background-color:visited {
 	background-color: #000;
 }
