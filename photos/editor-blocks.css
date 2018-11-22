@@ -72,12 +72,9 @@ Description: Gutenberg Block Editor Styles
 	margin-right: auto;
 }
 
-a,
-a:link,
-a:visited,
-a:hover,
-a:focus,
-a:active {
+.edit-post-visual-editor a,
+.editor-block-list__block a,
+.wp-block-freeform.block-library-rich-text__tinymce a {
 	color: #d63031;
 }
 
@@ -179,6 +176,12 @@ a:active {
 /*--------------------------------------------------------------
 2.0 General Block Styles
 --------------------------------------------------------------*/
+
+/* Main content width */
+
+.wp-block {
+	max-width: 670px; /* 640px + 30px for editor padding */
+}
 
 /* Alignments */
 .alignfull {
@@ -527,6 +530,7 @@ blockquote p:last-child {
 
 .wp-block-code {
 	border: none;
+	border-radius: 0;
 }
 
 .wp-block-code .editor-plain-text {
@@ -752,10 +756,18 @@ blockquote p:last-child {
 4.0 Blocks - Widgets
 --------------------------------------------------------------*/
 
+/* Categories, Latest Posts & Archives */
+
 .block-editor ul.wp-block-archives,
 .block-editor ul.wp-block-categories,
 .block-editor ul.wp-block-latest-posts {
 	padding-left: 1em;
+}
+
+[data-align="center"] .wp-block-categories ul,
+[data-align="center"] .wp-block-latest-posts ul,
+[data-align="center"] .wp-block-archives ul {
+	list-style-position: inside;
 }
 
 .rtl .block-editor ul.wp-block-archives,

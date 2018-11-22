@@ -101,6 +101,9 @@ if ( ! function_exists( 'photos_setup' ) ) :
 		/* Gutenberg! */
 		add_theme_support( 'align-wide' );
 
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
 	    add_theme_support( 'editor-color-palette', array(
 			array(
 				'name' => esc_html__( 'red', 'photos' ),
