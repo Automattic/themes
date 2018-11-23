@@ -41,7 +41,7 @@ Description: Used to style Gutenberg Blocks.
 
 p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 5em;
-	margin-top: 0.15em;
+	margin-top: 0.125em;
 }
 
 /* Gallery */
@@ -192,19 +192,16 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Buttons */
 
-.wp-block-button__link:not(.has-text-color) {
+.wp-block-button__link {
+	background: #fff;
 	color: #ce4639;
-}
-
-.wp-block-button__link:not(.has-background) {
-	 background: #fff;
 }
 
 .wp-block-button .wp-block-button__link {
 	-webkit-border-radius: 0.333em;
 	-moz-border-radius: 0.333em;
 	border-radius: 0.333em;
-	border: 1px solid #ce4639;
+	border: 1px solid currentColor;
 	font-size: 16px;
 	font-size: 1rem;
 	font-weight: 600;
@@ -223,19 +220,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button__link:hover,
 .wp-block-button__link:focus {
-	font-weight: 600;
-	outline: none;
-}
-
-.wp-block-button__link:not(.has-text-color):hover,
-.wp-block-button__link:not(.has-text-color):focus {
+	background: #222;
 	color: #fff;
 }
 
-.wp-block-button__link:not(.has-background):hover,
-.wp-block-button__link:not(.has-background):focus {
-	border: 1px solid #222;
-	background: #222;
+.wp-block-button__link.has-background:hover,
+.wp-block-button__link.has-background:focus {
+	opacity: 0.9;
 }
 
 /* Separator */
