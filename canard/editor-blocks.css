@@ -20,9 +20,8 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	color: #222;
 	font-family: "PT Serif", serif;
 	font-size: 16px;
 }
@@ -30,10 +29,14 @@
 @media screen and ( min-width: 768px ) {
 
 	.edit-post-visual-editor .editor-block-list__block,
-	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+	.edit-post-visual-editor .editor-block-list__block p,
 	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 		font-size: 20px;
 	}
+}
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #222;
 }
 
 .alignleft {
@@ -368,8 +371,8 @@
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright  {
 }
 
-.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large p:not(.wp-block-cover-text),
-.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-large p,
+.edit-post-visual-editor .editor-block-list__block .wp-block-quote.is-style-large p {
 	font-size: 120%;
 }
 
@@ -380,7 +383,16 @@
 	width: 100%;
 }
 
-/* Cover Images */
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 2.0em; /* Cover images inherit the paragraph size; this resets it */
+}
 
 /* File */
 
