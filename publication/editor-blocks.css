@@ -19,12 +19,15 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	color: #222;
 	font-family: Lato, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+}
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #222;
 }
 
 .edit-post-visual-editor p {
@@ -273,7 +276,7 @@
 	padding: 24px 0;
 }
 
-.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block blockquote p {
 	color: #555;
 	font-family: Neuton, serif;
 	font-size: 20px;
@@ -329,6 +332,17 @@
 .editor-block-list__block .wp-block-quote.is-style-large p {
 	margin-bottom: 24px;
 	font-style: normal;
+}
+
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 2.0em; /* Cover images inherit the paragraph size; this resets it */
 }
 
 /* File */
@@ -581,13 +595,13 @@
 	border: 0;
 }
 
-.edit-post-visual-editor .editor-block-list__block .wp-block-pullquote blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block .wp-block-pullquote blockquote p {
 	font-size: 28px;
 	line-height: 34px;
 }
 
-.edit-post-visual-editor .editor-block-list__block .wp-block-pullquote.alignleft blockquote p:not(.wp-block-cover-text),
-.edit-post-visual-editor .editor-block-list__block .wp-block-pullquote.alignright blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block .wp-block-pullquote.alignleft blockquote p,
+.edit-post-visual-editor .editor-block-list__block .wp-block-pullquote.alignright blockquote p {
 	font-size: 24px;
 }
 
