@@ -20,17 +20,20 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	color: #7f8d8c;
 	font-family: "Source Sans Pro", sans-serif;
 	line-height: 1.5;
 	font-size: 22px;
 }
 
+.edit-post-visual-editor .editor-block-list__block {
+	color: #7f8d8c;
+}
+
 @media screen and (max-width: 767px) {
 	.edit-post-visual-editor .editor-block-list__block,
-	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+	.edit-post-visual-editor .editor-block-list__block p,
 	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 		font-size: 18px;
 	}
@@ -449,14 +452,14 @@
 	}
 }
 
-.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block blockquote p {
 	font-family: "PT Serif", serif;
 	font-size: 26px;
 	font-style: normal;
 }
 
 @media screen and (max-width: 767px) {
-	.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+	.edit-post-visual-editor .editor-block-list__block blockquote p {
 		font-size: 21px;
 	}
 }
@@ -538,6 +541,16 @@
 	padding-right: 40px;
 }
 
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 2.0em; /* Cover images inherit the paragraph size; this resets it */
+}
 
 /* File */
 
@@ -621,10 +634,6 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
-}
-
-.edit-post-visual-editor .wp-block-pullquote p:not(.wp-block-cover-text) {
-
 }
 
 .wp-block-pullquote {
