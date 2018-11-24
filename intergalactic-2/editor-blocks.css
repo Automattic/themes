@@ -20,12 +20,15 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 	font-family: Lato, Helvetica, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 1.5;
+}
+
+.edit-post-visual-editor .editor-block-list__block {
 	color: #000;
 }
 
@@ -412,7 +415,7 @@
 	color: #767676;
 }
 
-.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block blockquote p {
 	font-size: 24px;
 	color: #767676;
 }
@@ -465,6 +468,17 @@
 .wp-block-quote.is-large .wp-block-quote__citation,
 .wp-block-quote.is-style-large .wp-block-quote__citation {
 	font-size: 25.6px;
+}
+
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 2.0em; /* Cover images inherit the paragraph size; this resets it */
 }
 
 /* File */
