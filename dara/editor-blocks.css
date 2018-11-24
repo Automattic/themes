@@ -20,18 +20,21 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	color: #444340;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 1.6;
 }
 
+.edit-post-visual-editor .editor-block-list__block {
+	color: #444340;
+}
+
 @media screen and (min-width: 850px) {
 	.edit-post-visual-editor .editor-block-list__block,
-	.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+	.edit-post-visual-editor .editor-block-list__block p,
 	.editor-default-block-appender input[type="text"].editor-default-block-appender__content {
 		font-size: 18px;
 	}
@@ -286,7 +289,7 @@
 	position: relative;
 }
 
-.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block blockquote p {
 	font-family: "Yrsa", Georgia, serif;
 	font-size: 23px;
 	font-style: normal;
@@ -375,9 +378,16 @@
 	margin-bottom: .8em;
 }
 
-/* Audio */
+/* Cover */
 
-/* Cover Images */
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 2.0em; /* Cover images inherit the paragraph size; this resets it */
+}
 
 /* File */
 
@@ -651,7 +661,7 @@
 	border: 0;
 }
 
-.edit-post-visual-editor .wp-block-pullquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .wp-block-pullquote p {
 	font-family: "Yrsa", Georgia, serif;
 	font-size: 23px;
 	font-style: normal;
