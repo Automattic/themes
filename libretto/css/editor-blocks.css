@@ -19,12 +19,15 @@
 --------------------------------------------------------------*/
 
 .edit-post-visual-editor .editor-block-list__block,
-.edit-post-visual-editor .editor-block-list__block p:not(.wp-block-cover-text),
+.edit-post-visual-editor .editor-block-list__block p,
 .editor-default-block-appender input[type="text"].editor-default-block-appender__content {
-	color: #363431;
 	font-family: "Libre Baskerville", Baskerville, "Book Antiqua", Georgia, Times, serif;
 	font-size: 17px;
 	line-height: 2;
+}
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #363431;
 }
 
 .alignleft,
@@ -312,7 +315,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	z-index: 2;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce blockquote p:not(.wp-block-cover-text) {
+.wp-block-freeform.block-library-rich-text__tinymce blockquote p {
 	line-height: 1.4;
 }
 
@@ -556,7 +559,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	z-index: 2;
 }
 
-.edit-post-visual-editor .editor-block-list__block blockquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .editor-block-list__block blockquote p {
 	font-family: "Playfair Display", Georgia, serif;
 	color: #a09a92;
 	font-size: 26px;
@@ -635,6 +638,17 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 .editor-block-list__block .wp-block-quote.is-style-large p {
 	margin-bottom: .4em;
 	font-style: normal;
+}
+
+/* Cover */
+
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover-image h2,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-image-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover .wp-block-cover-text,
+.edit-post-visual-editor .editor-block-list__block .wp-block-cover h2 {
+	font-size: 2.0em; /* Cover images inherit the paragraph size; this resets it */
 }
 
 /* File */
@@ -729,7 +743,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	border: 0;
 }
 
-.edit-post-visual-editor .wp-block-pullquote p:not(.wp-block-cover-text) {
+.edit-post-visual-editor .wp-block-pullquote p {
 	font-size: 24px;
 }
 
