@@ -16,9 +16,14 @@ Description: Gutenberg Block Editor Styles
 1.0 General Typography
 --------------------------------------------------------------*/
 .block-editor .editor-styles-wrapper,
+.block-editor .editor-styles-wrapper p,
+.editor-default-block-appender textarea.editor-default-block-appender__content {
+	font-family: -apple-system, "SF Pro Text", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+.block-editor .editor-styles-wrapper,
 .block-editor .editor-styles-wrapper p {
 	color: #111;
-	font-family: -apple-system, "SF Pro Text", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 16px;
 	line-height: 1.5 !important;
 }
@@ -764,9 +769,9 @@ blockquote p:last-child {
 	padding-left: 1em;
 }
 
-[data-align="center"] .wp-block-categories ul,
-[data-align="center"] .wp-block-latest-posts ul,
-[data-align="center"] .wp-block-archives ul {
+.edit-post-visual-editor [data-align="center"] .wp-block-categories__list,
+.edit-post-visual-editor [data-align="center"] .wp-block-archives,
+.edit-post-visual-editor [data-align="center"] .wp-block-lastest-posts {
 	list-style-position: inside;
 }
 
@@ -775,5 +780,15 @@ blockquote p:last-child {
 .rtl .block-editor ul.wp-block-latest-posts {
 	padding-left: 0em;
 	padding-right: 1em;
+}
+
+/* Latest Comments */
+
+[data-align="full"] .wp-block-latest-comments {
+	text-align: left;
+}
+
+.rtl [data-align="full"] .wp-block-latest-comments.alignfull {
+	text-align: right;
 }
 
