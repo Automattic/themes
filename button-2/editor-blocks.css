@@ -21,7 +21,7 @@ Description: Gutenberg Block Editor Styles
 .editor-styles-wrapper,
 .editor-styles-wrapper p,
 .editor-styles-wrapper .mce-content-body {
-	line-height: 1.6 !important;
+	line-height: 1.6;
 }
 
 .edit-post-visual-editor .editor-block-list__block,
@@ -39,13 +39,6 @@ Description: Gutenberg Block Editor Styles
 .alignright,
 .editor-block-list__layout .editor-block-list__block[data-align="right"] .editor-block-list__block-edit {
 	margin-left: 24px;
-}
-
-.wp-block-columns.alignfull,
-.wp-block-latest-comments.alignfull,
-.editor-block-list__layout .editor-block-list__block[data-align=full] {
-	padding-left: 1.5em;
-	padding-right: 1.5em;
 }
 
 /* Title */
@@ -512,6 +505,10 @@ pre.wp-block-verse {
 	outline: 5px solid #bbb;
 }
 
+.wp-block-button .editor-rich-text__tinymce.mce-content-body {
+	line-height: 14px;
+}
+
 .wp-block-file .wp-block-file__button,
 .wp-block-button__link:not(.has-text-color),
 .wp-block-button__link:not(.has-text-color):active,
@@ -532,6 +529,7 @@ pre.wp-block-verse {
 }
 
 /* Separator */
+
 .wp-block-separator {
 	background-color: #f3f3f3;
 	height: 2px;
@@ -543,4 +541,16 @@ pre.wp-block-verse {
 
 .wp-block-separator.is-style-dots::before {
 	color: #ccc;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* Categories, Archives & Latest Posts */
+
+.edit-post-visual-editor [data-align="center"] .wp-block-categories__list,
+.edit-post-visual-editor [data-align="center"] .wp-block-archives,
+.edit-post-visual-editor [data-align="center"] .wp-block-lastest-posts {
+	list-style-position: inside;
 }
