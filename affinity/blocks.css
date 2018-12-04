@@ -60,9 +60,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 16px;
 }
 
-.wp-block-quote cite:before {
-}
-
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	padding: .4em 0 .8em;
@@ -71,6 +68,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
 	font-size: 26px;
+}
+
+@media screen and ( min-width: 68em ) {
+	.wp-block-quote,
+	.wp-block-pullquote blockquote {
+		font-size: 26px;
+	}
+
+	.wp-block-quote.is-large p,
+	.wp-block-quote.is-style-large p {
+		font-size: 36px;
+	}
 }
 
 /* Audio */
@@ -226,6 +235,17 @@ hr.wp-block-separator {
 5.0 Blocks - Widget Blocks
 --------------------------------------------------------------*/
 
+/* General Widget styles */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-archives.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-latest-comments.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
 /* Latest Comments */
 
 .wp-block-latest-comments {
@@ -249,18 +269,4 @@ hr.wp-block-separator {
 
 .wp-block-latest-comments__comment-excerpt p:last-child {
 	margin-bottom: 0;
-}
-
-/* Media queries */
-
-@media screen and ( min-width: 68em ) {
-	.wp-block-quote,
-	.wp-block-pullquote blockquote {
-		font-size: 26px;
-	}
-
-	.wp-block-quote.is-large p,
-	.wp-block-quote.is-style-large p {
-		font-size: 36px;
-	}
 }
