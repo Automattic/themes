@@ -375,7 +375,6 @@ big {
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
-	overflow-x: hidden;
 }
 
 *,
@@ -387,6 +386,10 @@ html {
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
 	word-wrap: break-word;
+}
+
+.site-wrapper {
+	overflow-x: hidden;
 }
 
 blockquote:before,
@@ -614,7 +617,8 @@ textarea {
 	padding-top: 1.75em;
 }
 
-@media (min-width: 720px) {
+/* Fakes out header background so it looks like it spans the whole browser window */
+@media (min-width: 1120px) {
 	.singular .site-header:before,
 	.singular .site-header:after {
 		background: inherit;
