@@ -91,7 +91,7 @@ figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):no
 	position: relative;
 }
 
-[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption :not(.aligncenter) {
 	text-align: left;
 }
 
@@ -105,9 +105,18 @@ figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):no
 	width: 25%;
 }
 
+[class^="wp-block-"]:not(.wp-block-gallery) .aligncenter figcaption::after {
+        margin-right: auto;
+        margin-left: auto;
+}
+
 [class^="wp-block-"].alignfull:not(.wp-block-gallery) figcaption {
 	padding-left: 2vw;
 	padding-right: 2vw;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) .aligncenter figcaption {
+        text-align: center;
 }
 
 .rtl [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
@@ -232,6 +241,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-video video {
 	width: 100%;
+}
+
+/* Image */
+.wp-block-image .aligncenter {
+        text-align: center;
 }
 
 /*--------------------------------------------------------------
