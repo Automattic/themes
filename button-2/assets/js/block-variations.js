@@ -9,6 +9,7 @@
 
 wp.blocks.registerBlockStyle( 'core/image', {
 	isDefault: true,
+	name: 'default', // Class will be turned into '.is-style-default', though no styles needed.
 	label: 'Default'
 } );
 
