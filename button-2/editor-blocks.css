@@ -171,6 +171,84 @@ Description: Gutenberg Block Editor Styles
 	font-size: 3.75em;
 }
 
+/* Images - Fancy styles */
+
+.wp-block-image.is-style-fancy,
+.wp-block-image.fancy {
+	position: relative;
+	line-height: 1;
+}
+
+.wp-block-image.is-style-fancy .alignright,
+.wp-block-image.fancy .alignright,
+.wp-block-image.is-style-fancy .alignleft,
+.wp-block-image.fancy .alignleft,
+.wp-block-image.is-style-fancy .aligncenter,
+.wp-block-image.fancy .aligncenter {
+	margin: 0;
+}
+
+.wp-block-image.is-style-fancy img,
+.wp-block-image.fancy img {
+	display: inline-block;
+	max-width: 99.9%;
+}
+
+.wp-block-image.is-style-fancy:before,
+.wp-block-image.fancy:before,
+.wp-block-image.is-style-fancy:after,
+.wp-block-image.fancy:after {
+	position: absolute;
+	z-index: 1;
+	top: -1px;
+	left: -1px;
+	display: block;
+	width: 45px;
+	height: 45px;
+	content: "";
+	background-image: url(img/corner.svg);
+	background-repeat: no-repeat;
+	background-size: 45px;
+}
+
+.wp-block-image.is-style-fancy:after,
+.wp-block-image.fancy:after {
+	right: -1px;
+	left: auto;
+	-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+}
+
+.wp-block-image.is-style-fancy .components-resizable-box__container:before,
+.wp-block-image.fancy .components-resizable-box__container:before,
+.wp-block-image.is-style-fancy .components-resizable-box__container:after,
+.wp-block-image.fancy .components-resizable-box__container:after {
+	position: absolute;
+	z-index: 1;
+	bottom: -1px;
+	left: -1px;
+	display: block;
+	width: 45px;
+	height: 45px;
+	content: "";
+	-webkit-transform: rotate(-90deg);
+		-ms-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+	background-image: url(img/corner.svg);
+	background-repeat: no-repeat;
+	background-size: 45px;
+}
+
+.wp-block-image.is-style-fancy .components-resizable-box__container:after,
+.wp-block-image.fancy .components-resizable-box__container:after {
+	right: -1px;
+	left: auto;
+	-webkit-transform: rotate(-180deg);
+		-ms-transform: rotate(-180deg);
+			transform: rotate(-180deg);
+}
+
 /* Quote */
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
