@@ -5,7 +5,7 @@
 ( function( $ ) {
 
 	function fancyImages() {
-		var imgs = $( '.entry-content img.fancy' );
+		var imgs = $( '.entry-content img.fancy, .entry-content .is-style-fancy' );
 
 		for ( var i = 0, imgslength = imgs.length; i < imgslength; i++ ) {
 			if ( '' !== $( imgs[i] ) ) {

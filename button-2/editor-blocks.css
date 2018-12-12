@@ -171,6 +171,75 @@ Description: Gutenberg Block Editor Styles
 	font-size: 3.75em;
 }
 
+/* Images - Fancy styles */
+
+.wp-block-image.is-style-fancy {
+	position: relative;
+	line-height: 1;
+}
+
+.wp-block-image.is-style-fancy .alignright,
+.wp-block-image.is-style-fancy .alignleft,
+.wp-block-image.is-style-fancy .aligncenter {
+	margin: 0;
+}
+
+.wp-block-image.is-style-fancy img {
+	display: inline-block;
+	max-width: 99.9%;
+}
+
+.wp-block-image.is-style-fancy:before,
+.wp-block-image.is-style-fancy:after {
+	position: absolute;
+	z-index: 1;
+	top: -1px;
+	left: -1px;
+	display: block;
+	width: 45px;
+	height: 45px;
+	content: "";
+	background-image: url(img/corner.svg);
+	background-repeat: no-repeat;
+	background-size: 45px;
+}
+
+.wp-block-image.is-style-fancy:after {
+	right: -1px;
+	left: auto;
+	-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+}
+
+.wp-block-image.is-style-fancy > div:before,
+.wp-block-image.is-style-fancy > div:after {
+	position: absolute;
+	z-index: 1;
+	bottom: -1px;
+	left: -1px;
+	display: block;
+	width: 45px;
+	height: 45px;
+	content: "";
+	-webkit-transform: rotate(-90deg);
+		-ms-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+	background-image: url(img/corner.svg);
+	background-repeat: no-repeat;
+	background-size: 45px;
+}
+
+.wp-block-image.is-style-fancy > div:after {
+	right: -1px;
+	left: auto;
+	-webkit-transform: rotate(-180deg);
+		-ms-transform: rotate(-180deg);
+			transform: rotate(-180deg);
+}
+
+
+
 /* Quote */
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
