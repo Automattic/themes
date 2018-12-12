@@ -173,24 +173,31 @@ Description: Gutenberg Block Editor Styles
 
 /* Images - Fancy styles */
 
-.wp-block-image.is-style-fancy {
+.wp-block-image.is-style-fancy,
+.wp-block-image.fancy {
 	position: relative;
 	line-height: 1;
 }
 
 .wp-block-image.is-style-fancy .alignright,
+.wp-block-image.fancy .alignright,
 .wp-block-image.is-style-fancy .alignleft,
-.wp-block-image.is-style-fancy .aligncenter {
+.wp-block-image.fancy .alignleft,
+.wp-block-image.is-style-fancy .aligncenter,
+.wp-block-image.fancy .aligncenter {
 	margin: 0;
 }
 
-.wp-block-image.is-style-fancy img {
+.wp-block-image.is-style-fancy img,
+.wp-block-image.fancy img {
 	display: inline-block;
 	max-width: 99.9%;
 }
 
 .wp-block-image.is-style-fancy:before,
-.wp-block-image.is-style-fancy:after {
+.wp-block-image.fancy:before,
+.wp-block-image.is-style-fancy:after,
+.wp-block-image.fancy:after {
 	position: absolute;
 	z-index: 1;
 	top: -1px;
@@ -204,7 +211,8 @@ Description: Gutenberg Block Editor Styles
 	background-size: 45px;
 }
 
-.wp-block-image.is-style-fancy:after {
+.wp-block-image.is-style-fancy:after,
+.wp-block-image.fancy:after {
 	right: -1px;
 	left: auto;
 	-webkit-transform: rotate(90deg);
@@ -213,7 +221,9 @@ Description: Gutenberg Block Editor Styles
 }
 
 .wp-block-image.is-style-fancy .components-resizable-box__container:before,
-.wp-block-image.is-style-fancy .components-resizable-box__container:after {
+.wp-block-image.fancy .components-resizable-box__container:before,
+.wp-block-image.is-style-fancy .components-resizable-box__container:after,
+.wp-block-image.fancy .components-resizable-box__container:after {
 	position: absolute;
 	z-index: 1;
 	bottom: -1px;
@@ -230,7 +240,8 @@ Description: Gutenberg Block Editor Styles
 	background-size: 45px;
 }
 
-.wp-block-image.is-style-fancy .components-resizable-box__container:after {
+.wp-block-image.is-style-fancy .components-resizable-box__container:after,
+.wp-block-image.fancy .components-resizable-box__container:after {
 	right: -1px;
 	left: auto;
 	-webkit-transform: rotate(-180deg);
