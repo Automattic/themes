@@ -249,6 +249,41 @@ Description: Gutenberg Block Editor Styles
 			transform: rotate(-180deg);
 }
 
+@media only screen and (min-width: 40.063em) {
+	.wp-block-image.is-style-fancy:before,
+	.wp-block-image.fancy:before,
+	.wp-block-image.is-style-fancy:after,
+	.wp-block-image.fancy:after,
+	.wp-block-image.is-style-fancy .components-resizable-box__container:before,
+	.wp-block-image.fancy .components-resizable-box__container:before,
+	.wp-block-image.is-style-fancy .components-resizable-box__container:after,
+	.wp-block-image.fancy .components-resizable-box__container:after {
+		width: 75px;
+		height: 75px;
+		background-size: 75px;
+	}
+}
+
+/* Improve appearance of fancy image block in preview */
+
+.editor-block-styles__item-preview .wp-block-image.is-style-fancy:before,
+.editor-block-styles__item-preview .wp-block-image.is-style-fancy:after,
+.editor-block-styles__item-preview .wp-block-image.is-style-fancy .components-resizable-box__container:before,
+.editor-block-styles__item-preview .wp-block-image.is-style-fancy .components-resizable-box__container:after {
+	width: 20px;
+	height: 20px;
+	background-size: 20px;
+}
+
+.editor-block-preview .wp-block-image.is-style-fancy:before,
+.editor-block-preview .wp-block-image.is-style-fancy:after,
+.editor-block-preview .wp-block-image.is-style-fancy .components-resizable-box__container:before,
+.editor-block-preview .wp-block-image.is-style-fancy .components-resizable-box__container:after {
+	width: 30px;
+	height: 30px;
+	background-size: 30px;
+}
+
 /* Quote */
 
 .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
