@@ -10,7 +10,7 @@ if ( empty( $featured ) )
 ?>
 
 <div id="featured-content" class="flexslider hero">
-	<div class="flex-viewport-wrapper hero-content propped-up">
+	<div class="flex-viewport-wrapper hero-content">
 		<div class="featured-posts slides" id="featured-slides">
 		<?php
 			foreach ( $featured as $post ) :
