@@ -1,5 +1,9 @@
 ( function( $ ) {
 
+	function removePlaceholderPadding() {
+		$('.flexslider .hero-content').removeClass( 'propped-up');
+	}
+
 	function loadFlexslider() {
 		$( '.flex-viewport-wrapper' ).flexslider( {
 			animation: "fade",
@@ -12,7 +16,8 @@
 			itemWidth: 1180,
 			itemHeight: 600,
 			smoothHeight: true,
-			selector: '.slides > .hero-content-wrapper'
+			selector: '.slides > .hero-content-wrapper',
+			init: removePlaceholderPadding,
 		} );
 	}
 
