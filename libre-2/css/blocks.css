@@ -73,15 +73,6 @@ Description: Used to style Gutenberg Blocks.
 2.0 General Block Styles
 --------------------------------------------------------------*/
 
-/* Figures */
-
-figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull),
-[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) figure,
-[class^="wp-block-"] figure:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) {
-	margin-left: 0;
-	margin-right: 0;
-}
-
 /* Captions */
 
 [class^="wp-block-"] figcaption {
@@ -91,7 +82,7 @@ figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):no
 	position: relative;
 }
 
-[class^="wp-block-"]:not(.wp-block-gallery) figcaption :not(.aligncenter) {
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
 	text-align: left;
 }
 
@@ -105,18 +96,9 @@ figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):no
 	width: 25%;
 }
 
-[class^="wp-block-"]:not(.wp-block-gallery) .aligncenter figcaption::after {
-        margin-right: auto;
-        margin-left: auto;
-}
-
 [class^="wp-block-"].alignfull:not(.wp-block-gallery) figcaption {
 	padding-left: 2vw;
 	padding-right: 2vw;
-}
-
-[class^="wp-block-"]:not(.wp-block-gallery) .aligncenter figcaption {
-        text-align: center;
 }
 
 .rtl [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
