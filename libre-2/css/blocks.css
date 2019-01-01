@@ -73,15 +73,6 @@ Description: Used to style Gutenberg Blocks.
 2.0 General Block Styles
 --------------------------------------------------------------*/
 
-/* Figures */
-
-figure[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull),
-[class^="wp-block-"]:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) figure,
-[class^="wp-block-"] figure:not(.aligncenter):not(.alignleft):not(.alignright):not(.alignwide):not(.alignfull) {
-	margin-left: 0;
-	margin-right: 0;
-}
-
 /* Captions */
 
 [class^="wp-block-"] figcaption {
@@ -232,6 +223,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-video video {
 	width: 100%;
+}
+
+/* Image */
+.wp-block-image .aligncenter {
+        text-align: center;
 }
 
 /*--------------------------------------------------------------
