@@ -50,18 +50,6 @@
 	margin-right: auto;
 }
 
-/*
-Browser hack that targets Safari only, to prevent first line from disappearing.
-See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
-*/
-@media not all and (min-resolution:.001dpcm) { @media {
-    .format-standard:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type::after,
-	.page:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type::after,
-	.emphasis::after {
-		display: inline-block;
-	}
-}}
-
 .wp-block > p:not(.no-emphasis):first-of-type + p,
 .page:not(.post-password-required) .entry-content > p:not(.no-emphasis):first-of-type + p,
 .emphasis + p {
@@ -482,7 +470,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 /* Theme has built-in dropcaps and emphasis on the first line of each paragraph */
 
 /* Drop cap and first line */
-.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):first-letter,
+.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):not(:focus):first-letter,
 .emphasis:first-letter {
 	color: #b7b1a9;
 	display: inline-block;
@@ -495,7 +483,7 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	margin: 6px 10px 0 -5px;
 }
 
-.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis):first-line,
+.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(:focus):not(.no-emphasis):first-line,
 .emphasis:first-line {
 	color: #787065;
 	font-family: "Playfair Display SC";
@@ -505,12 +493,23 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	letter-spacing: 2px;
 }
 
-.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type .wp-block-paragraph:not(.no-emphasis)::after,
+.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type:not(:focus) .wp-block-paragraph:not(:focus):not(.no-emphasis)::after,
 .emphasis::after {
 	clear: both;
 	content: "";
 	display: block;
 }
+
+/*
+Browser hack that targets Safari only, to prevent first line from disappearing.
+See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari-only-not-chrome
+*/
+@media not all and (min-resolution:.001dpcm) { @media {
+	.editor-writing-flow .editor-block-list__block[data-type="core/paragraph"]:first-of-type:not(:focus) .wp-block-paragraph:not(.no-emphasis):first-letter:after,
+	.emphasis:first-letter:after; {
+		display: inline-block;
+	}
+} }
 
 /* Images */
 
