@@ -275,7 +275,7 @@ function dara_scripts() {
 
 	if ( dara_has_featured_posts( 1 ) && ( is_home() || is_front_page() ) ) {
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider.js', array( 'jquery' ), '20161220', true );
-		wp_enqueue_script( 'dara-slider', get_template_directory_uri() . '/assets/js/slider.js', array( 'flexslider' ), '20161220', true );
+		wp_enqueue_script( 'dara-slider', get_template_directory_uri() . '/assets/js/slider.js', array( 'flexslider', 'imagesloaded' ), '20161220', true );
 	}
 
 	// If there's an active Video widget, and it's (hopefully) in the footer widget area
