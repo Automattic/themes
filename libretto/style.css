@@ -772,7 +772,6 @@ body {
 /* Style page title blocks */
 .title-block {
   text-align: center;
-  pointer-events: none;
 }
 
 .title-block h1 {
@@ -821,10 +820,9 @@ body:not(.libretto-has-header-image) .title-block {
   border-bottom: none;
   bottom: 0;
   color: #faf9f5;
-  left: 20%;
+  /* left: 40%; - still no luck in aligning */
   position: absolute;
   text-shadow: 0 1px 0 #000;
-  width: 60%;
   z-index: 1;
 }
 
@@ -870,10 +868,6 @@ body:not(.libretto-has-header-image) .title-block {
   box-shadow: none;
   font-weight: normal;
   padding: 0;
-}
-
-.site-logo.attachment-libretto-logo,.site-title {
-  pointer-events: all;
 }
 
 /*--------------------------------------------------------------
@@ -2651,7 +2645,7 @@ object {
   }
 
   .title-block .site-logo-link {
-    display: block;
+    display: inline-block;
     margin-bottom: 1.5rem;
   }
 
