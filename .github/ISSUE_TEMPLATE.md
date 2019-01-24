@@ -12,4 +12,3 @@
 
 * User report: [shortlink to chat/forum thread/ticket, ie #12345-hc]
 * Follow-up ticket: [shortlink to ticket, ie #12345-zd]
-* User's site: [link to user's site, including the specific page/post where issue is present]
