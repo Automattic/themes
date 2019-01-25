@@ -693,7 +693,6 @@
 /* Buttons */
 .wp-block-button .wp-block-button__link {
 	border: 2px solid currentColor;
-	border-radius: 10px;
 	box-shadow: none;
 	font-weight: bold;
 	font-size: 16px;
@@ -733,6 +732,15 @@
 .wp-block-button__link:not(.has-background):focus,
 .wp-block-button__link:not(.has-background):hover {
 	background: transparent;
+}
+
+.is-style-outline .wp-block-button__link { 
+	background-color: transparent !important; /* To override the colour so the actual result and the editor is identical */
+}
+
+.is-style-outline .wp-block-button__link, 
+.is-style-default .wp-block-button__link { 
+	border-radius: 10px;
 }
 
 /* Separator */
