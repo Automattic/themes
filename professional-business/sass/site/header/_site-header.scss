@@ -1,0 +1,100 @@
+// Site header
+
+.site-header {
+	padding: 1rem;
+
+	&.featured-image {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 90vh;
+
+		.site-branding-container {
+			margin-bottom: auto;
+		}
+	}
+
+	@include media(tablet) {
+		margin: 0;
+		padding: 2rem 0;
+
+		&.featured-image {
+			min-height: 100vh;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+// Site branding
+
+.site-branding {
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	color: $color__text-light;
+	position: relative;
+
+	@include media(tablet) {
+		margin: 0 $size__site-margins;
+	}}
+
+// Site logo
+
+.site-logo {
+	margin-right: $size__spacing-unit;
+
+	.custom-logo-link {
+		box-sizing: content-box;
+		display: block;
+		overflow: hidden;
+
+		.custom-logo {
+			max-height: 60px;
+			width: auto;
+		}
+	}
+}
+
+.site-title {
+	color: $color__text-main;
+	font-size: $font__size-md;
+	flex: 1 1 auto;
+	margin: 0;
+
+	a {
+		color: $color__text-main;
+
+		&:link,
+		&:visited {
+			color: $color__text-main;
+		}
+
+		&:hover {
+			color: $color__text-hover;
+		}
+	}
+
+	.featured-image & {
+		margin: 0;
+	}
+}
+
+/* Adjust Crimson Text font vertical alignment in Firefox */
+@-moz-document url-prefix() {
+	.site-title {
+		padding-top: 8px;
+	}
+}
+
+// Site description
+
+.site-description {
+	color: $color__text-main;
+	flex: initial;
+	font-size: $font__size-xs;
+	font-weight: normal;
+	margin: 7px 0 0;
+}
