@@ -1231,17 +1231,6 @@ body.page .main-navigation {
   margin-left: calc( .25 * 1rem);
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu {
-  display: block;
-  right: 0;
-  margin-top: 0;
-  opacity: 1;
-  width: auto;
-  min-width: 100%;
-  /* Non-mobile position */
-  /* Nested sub-menu dashes */
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu {
   display: block;
   right: 0;
@@ -1254,21 +1243,6 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu {
-    display: block;
-    margin-top: 0;
-    opacity: 1;
-    position: absolute;
-    right: 0;
-    left: auto;
-    top: auto;
-    bottom: auto;
-    height: auto;
-    min-width: -moz-max-content;
-    min-width: -webkit-max-content;
-    min-width: max-content;
-    transform: none;
-  }
   .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu {
     display: block;
     margin-top: 0;
@@ -1286,13 +1260,6 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu.hidden-links {
-  right: 0;
-  width: 100%;
-  display: table;
-  position: absolute;
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu.hidden-links {
   right: 0;
   width: 100%;
@@ -1301,12 +1268,6 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu.hidden-links {
-    left: 0;
-    right: auto;
-    display: block;
-    width: max-content;
-  }
   .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu.hidden-links {
     left: 0;
     right: auto;
@@ -1315,22 +1276,8 @@ body.page .main-navigation {
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .submenu-expand {
-  display: none;
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .submenu-expand {
   display: none;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
-  display: block;
-  margin-top: inherit;
-  position: relative;
-  width: 100%;
-  right: 0;
-  opacity: 1;
-  /* Non-mobile position */
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
@@ -1344,29 +1291,14 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
-    float: none;
-    max-width: 100%;
-  }
   .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
     float: none;
     max-width: 100%;
   }
 }
 
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu {
-  counter-reset: submenu;
-}
-
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu {
   counter-reset: submenu;
-}
-
-.main-navigation .main-menu .menu-item-has-children:not(.off-canvas)[focus-within] > .sub-menu .sub-menu > li > a::before {
-  font-family: "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
-  font-weight: normal;
-  content: "– " counters(submenu, "– ", none);
-  counter-increment: submenu;
 }
 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus-within > .sub-menu .sub-menu > li > a::before {
@@ -3128,13 +3060,17 @@ body.page .main-navigation {
 }
 
 /* 404 & Not found */
+.error-404.not-found .page-title,
 .error-404.not-found .page-content,
+.no-results.not-found .page-title,
 .no-results.not-found .page-content {
   margin: calc(3 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+  .error-404.not-found .page-title,
   .error-404.not-found .page-content,
+  .no-results.not-found .page-title,
   .no-results.not-found .page-content {
     margin: calc(3 * 1rem) auto calc(1rem / 2);
     max-width: calc(8 * (100vw / 12) - 28px);
@@ -3142,7 +3078,9 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 1168px) {
+  .error-404.not-found .page-title,
   .error-404.not-found .page-content,
+  .no-results.not-found .page-title,
   .no-results.not-found .page-content {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
@@ -4216,6 +4154,28 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-media-text .wp-block-media-text__content {
     padding-right: 8%;
     padding-left: 8%;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .entry .entry-content .wp-block-media-text:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+  .entry .entry-content .wp-block-media-text figure {
+    float: right;
+    width: 50%;
+  }
+  .entry .entry-content .wp-block-media-text .wp-block-media-text__content {
+    float: left;
+    width: 50%;
+  }
+  .entry .entry-content .wp-block-media-text.has-media-on-the-right figure {
+    float: left;
+  }
+  .entry .entry-content .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+    float: right;
   }
 }
 
