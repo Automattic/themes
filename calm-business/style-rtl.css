@@ -1,4 +1,3 @@
-/*THIS FILE IS COMPILED FROM AN .SCSS FILE - DO NOT EDIT DIRECTLY*/
 @charset "UTF-8";
 /*
 Theme Name: Calm Business
@@ -3290,13 +3289,17 @@ body.page .main-navigation {
 }
 
 /* 404 & Not found */
+.error-404.not-found .page-title,
 .error-404.not-found .page-content,
+.no-results.not-found .page-title,
 .no-results.not-found .page-content {
   margin: calc(3 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+  .error-404.not-found .page-title,
   .error-404.not-found .page-content,
+  .no-results.not-found .page-title,
   .no-results.not-found .page-content {
     margin: 32px auto;
     max-width: calc(6*(100vw/12) - 28px);
@@ -4463,6 +4466,28 @@ body.page .main-navigation {
   .entry .entry-content .wp-block-media-text .wp-block-media-text__content {
     padding-top: 32px;
     padding-bottom: 32px;
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .entry .entry-content .wp-block-media-text:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+  .entry .entry-content .wp-block-media-text figure {
+    float: right;
+    width: 50%;
+  }
+  .entry .entry-content .wp-block-media-text .wp-block-media-text__content {
+    float: left;
+    width: 50%;
+  }
+  .entry .entry-content .wp-block-media-text.has-media-on-the-right figure {
+    float: left;
+  }
+  .entry .entry-content .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+    float: right;
   }
 }
 
