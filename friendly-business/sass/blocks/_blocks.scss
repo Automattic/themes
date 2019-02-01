@@ -820,6 +820,34 @@
 				padding-right: 8%;
 			}
 		}
+
+		// Temporary fix for IE 11 for this issue: https://github.com/WordPress/gutenberg/issues/11577
+		@media all and (-ms-high-contrast:none) {
+
+			&:after {
+				display: table;
+				content: "";
+				clear: both;
+			}
+
+			figure {
+				float: left;
+				width: 50%;
+			}
+
+			.wp-block-media-text__content {
+				float: right;
+				width: 50%;
+			}
+
+			&.has-media-on-the-right figure {
+				float: right;
+			}
+
+			&.has-media-on-the-right .wp-block-media-text__content {
+				float: left;
+			}
+		}
 	}
 
 	//! Columns
