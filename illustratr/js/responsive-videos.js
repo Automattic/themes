@@ -13,7 +13,11 @@
 	function responsive_videos() {
 
 		$( '.video-wrapper embed, .video-wrapper iframe, .video-wrapper object' ).each( function() {
-
+			
+			if ( $( '.wp-block-column .video-wrapper embed, .wp-block-column .video-wrapper iframe, .wp-block-column .video-wrapper object' ) ) {
+				return;
+			}
+			
 			var video_ratio     = $( this ).attr( 'data-ratio' ),
 			    video_width     = $( this ).attr( 'data-width' ),
 			    video_height    = $( this ).attr( 'data-height' );
