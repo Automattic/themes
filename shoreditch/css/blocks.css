@@ -366,8 +366,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-button .wp-block-button__link {
-	border: 0;
-	border-radius: 5em;
 	box-shadow: none;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -378,15 +376,16 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-transform: uppercase;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus {
-	background: #2c313f;
-	outline: none;
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #3e69dc;
 }
 
-.wp-block-button__link.has-background:hover,
-.wp-block-button__link.has-background:focus {
-	opacity: 0.8;
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus {
+	background: #2c313f;
+	border-color: #2c313f;
+	color: #fff;
+	outline: none;
 }
 
 @media (min-width: 768px) {
