@@ -107,6 +107,7 @@ add_color_rule( 'link', '#ca2017', array(
 			.main-navigation li.focus > a,
 			.main-navigation li.current-menu-item > a,
 			.woocommerce-MyAccount-navigation li.is-active a,
+			.main-navigation li.current-menu-item ~ li.current-menu-item > a:hover,
 			.hero-area', 'background-color' ),
 
 	array( '.main-navigation ul ul > li:first-child:hover:after,
