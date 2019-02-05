@@ -67,6 +67,17 @@ add_color_rule( 'txt', '#117bb8', array(
 		  .sidebar-primary input[type="submit"]', 'color', 'link', 10 ),
 
   array( '.sidebar-primary button:hover,
+  		  .sidebar-primary button:focus,
+		  .sidebar-primary input[type="button"]:focus,
+		  .sidebar-primary input[type="button"]:hover,
+		  .sidebar-primary input[type="reset"]:focus,
+		  .sidebar-primary input[type="reset"]:hover,
+		  .sidebar-primary input[type="submit"]:focus,
+		  .sidebar-primary input[type="submit"]:hover,
+		  #subscribe-blog input[type="submit"]:focus,
+		  #subscribe-blog input[type="submit"]:hover', 'color', 'txt', 10 ),
+
+  array( '.sidebar-primary button:hover,
 		  .sidebar-primary input[type="button"]:hover,
 		  .sidebar-primary input[type="reset"]:hover,
 		  .sidebar-primary input[type="submit"]:hover', 'border-color', 'link' ),
