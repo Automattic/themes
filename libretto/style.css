@@ -622,6 +622,7 @@ input[type="email"],
 input[type="password"],
 input[type="search"],
 input[type="url"],
+input[type="tel"],
 textarea {
      -moz-transition: all 0.15s ease-in-out;
       -ms-transition: all 0.15s ease-in-out;
@@ -2037,14 +2038,19 @@ label[for="comment"] {
 .site-content .contact-form textarea,
 .site-content .contact-form input[type='text'],
 .site-content .contact-form input[type='email'],
-.site-content .contact-form input[type='url'],
-.site-content .contact-form select {
+.site-content .contact-form input[type='url'] {
   margin-bottom: .4375em;
   max-width: 100%;
+}
+.site-content .contact-form .grunion-field-checkbox-wrap {
+  clear: both;
 }
 .site-content .contact-form .grunion-field-label {
   margin-bottom: .21875em;
   width: 100%;
+}
+.site-content .contact-form select {
+  margin: 0.4375em 0;
 }
 .site-content .contact-form .grunion-field-label.textarea {
   width: 100%;
@@ -2607,6 +2613,12 @@ object {
     text-align: center;
   }
 
+  .grunion-field-checkbox-multiple-wrap .grunion-field-label,
+  .grunion-field-radio-wrap .grunion-field-label {
+    display: block;
+    text-align: center;
+  }
+
   input {
     margin-top: 10px;
   }
@@ -2875,23 +2887,32 @@ object {
   }
 
   label,
-  .site-content .contact-form .grunion-field-label.name,
-  .site-content .contact-form .grunion-field-label.url,
-  .site-content .contact-form .grunion-field-label.email {
+  .site-content .contact-form .grunion-field-label:not(.textarea):not(.checkbox) {
     clear: both;
     float: left;
     margin: 0.25em 2% 1em 0;
     width: 20%;
   }
 
+  .grunion-field-wrap {
+    clear: both;
+  }
+
   label + input:not(.search-submit),
   label + input[type="text"],
   label + input[type="email"],
   label + input[type="password"],
+  label + input[type="tel"],
   label:not(.screen-reader-text) + input[type="search"],
   label + input[type="url"],
-  .search-form label {
+  .search-form label,
+  label + select {
     float: left;
+    width: 78%;
+  }
+
+  .grunion-field-checkbox-wrap {
+    float: right;
     width: 78%;
   }
 
