@@ -2670,6 +2670,15 @@ object {
 		column-gap: 0;
 	}
 
+	/* Prevent media from being split between the columns */
+	.two-column .panel-content .entry-content .wp-block-image,
+	.two-column .panel-content .entry-content .wp-block-gallery,
+	.two-column .panel-content .entry-content .wp-block-embed {
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		          page-break-inside: avoid; /* Firefox */
+		               break-inside: avoid; /* IE 10+ */
+	}
+
 	/* Blog Posts on front page */
 	.one-column .panel-content .recent-posts .entry-content {
 		padding-left: 0;
