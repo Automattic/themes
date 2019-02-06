@@ -36,8 +36,52 @@ if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		// Load editor styles and custom fonts.
-		add_editor_style( array( 'editor-style.css', apostrophe_2_fonts_url() ) );
+		// Add wide styles support for Gutenberg
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette', array(
+				array(
+					'name'  => esc_html__( 'Black', 'apostrophe-2' ),
+					'slug' => 'black',
+					'color' => '#404040',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'apostrophe-2' ),
+					'slug' => 'dark-gray',
+					'color' => '#686868',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'apostrophe-2' ),
+					'slug' => 'medium-gray',
+					'color' => '#999999',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'apostrophe-2' ),
+					'slug' => 'light-gray',
+					'color' => '#d9d9d9',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'apostrophe-2' ),
+					'slug' => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Blue', 'apostrophe-2' ),
+					'slug' => 'blue',
+					'color' => '#159ae7',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Blue', 'apostrophe-2' ),
+					'slug' => 'dark-blue',
+					'color' => '#362e77',
+				)
+			)
+		);
 
 		/*
 		 * Let WordPress manage the document title.
@@ -192,6 +236,9 @@ function apostrophe_2_fonts_url() {
  */
 function apostrophe_2_scripts() {
 
+	// Gutenberg styles
+	wp_enqueue_style( 'apostrophe-2-blocks', get_template_directory_uri() . '/css/blocks.css' );
+
 	wp_enqueue_style( 'apostrophe-2-style', get_stylesheet_uri(), array(), '20140520' );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons.css', array(), '20131222' );
 	wp_enqueue_style( 'apostrophe-2-fonts', apostrophe_2_fonts_url(), array(), null );
@@ -210,6 +257,15 @@ function apostrophe_2_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'apostrophe_2_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function apostrophe_2_editor_styles() {
+	wp_enqueue_style( 'apostrophe-2-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css');
+	wp_enqueue_style( 'apostrophe-2-fonts', apostrophe_2_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'apostrophe_2_editor_styles' );
 
 /**
  * Use a specific size for the gallery shortcode.

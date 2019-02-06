@@ -109,3 +109,25 @@ function canard_jetpack_featured_image_display() {
 		}
 	}
 }
+
+/**
+ * Remove Post Format classes from Portfolio items.
+ */
+function canard_jetpack_portfolio_classes( $classes ) {
+	$post_format = get_post_format();
+
+	if ( $post_format && ! is_wp_error( $post_format ) ) {
+		$class = 'format-' . sanitize_html_class( $post_format );
+	} else {
+		$class = 'format-standard';
+	}
+
+	$class_key = array_search( $class, $classes );
+
+	if ( false !== $class_key && 'jetpack-portfolio' === get_post_type() ) {
+		unset( $classes[ $class_key ] );
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'canard_jetpack_portfolio_classes' );

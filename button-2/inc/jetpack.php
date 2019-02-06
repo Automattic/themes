@@ -67,7 +67,7 @@ add_filter( 'infinite_scroll_has_footer_widgets', 'button_2_has_footer_widgets' 
  * @since button 1.0
  */
 function button_2_infinite_scroll_render() {
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( button_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		button_2_woocommerce_product_columns_wrapper();
 		woocommerce_product_loop_start();
 	}
@@ -75,14 +75,16 @@ function button_2_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 
-		if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+		if ( is_search() ) :
+			get_template_part( 'components/content', 'search' );
+		elseif ( class_exists( 'WooCommerce' ) && ( button_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
 			wc_get_template_part( 'content', 'product' );
 		else :
 			get_template_part( 'components/content', get_post_format() );
 		endif;
 	}
 
-	if ( class_exists( 'WooCommerce' ) && ( is_shop() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+	if ( class_exists( 'WooCommerce' ) && ( button_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
 		woocommerce_product_loop_end();
 		button_2_woocommerce_product_columns_wrapper_close();
 	}

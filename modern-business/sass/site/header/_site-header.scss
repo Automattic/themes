@@ -1,0 +1,114 @@
+// Site header
+
+.site-header {
+	padding: 1em;
+
+	&.featured-image {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 90vh;
+
+		.site-branding-container {
+			margin-bottom: auto;
+		}
+	}
+
+	@include media(tablet) {
+		margin: 0;
+		padding: 2rem 0;
+
+		&.featured-image {
+			min-height: 100vh;
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+// Site branding
+
+.site-branding {
+
+	color: $color__text-light;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	@include media(tablet) {
+		margin: 0 $size__site-margins;
+	}
+}
+
+// Site logo
+
+.site-logo {
+	order: 2;
+	text-align: center;
+
+	.custom-logo-link {
+		display: inline-block;
+
+		.custom-logo {
+			max-height: 50px;
+			vertical-align: top;
+			width: auto;
+
+			@include media(tablet) {
+				max-height: 64px;
+			}
+		}
+	}
+}
+
+.site-logo + .site-title,
+.featured-image .site-logo + .site-title {
+	margin-top: 0.5rem;
+}
+
+// Site title
+
+.site-title {
+	color: $color__text-main;
+	margin: 0;
+	order: 2;
+
+	a {
+		color: $color__text-main;
+
+		&:link,
+		&:visited {
+			color: $color__text-main;
+		}
+
+		&:hover {
+			color: $color__text-hover;
+		}
+	}
+
+	.featured-image & {
+		margin: 0;
+
+		@include media(tablet) {}
+	}
+
+	/* When there is no description set, make sure navigation appears below title. */
+	+ .main-navigation {
+		display: block;
+	}
+
+	@include media(tablet) {}
+
+	&:not(:empty) + .site-description:not(:empty):before {
+		margin: 0 0.2em;
+	}
+}
+
+// Site description
+
+.site-description {
+	color: $color__text-main;
+	font-size: $font__size-xs;
+	font-weight: 300;
+	margin: 0 0 calc(0.5 * #{$size__spacing-unit});
+	order: 1;
+}

@@ -15,7 +15,18 @@
  * @return void
  */
 function shoreditch_woocommerce_setup() {
-	add_theme_support( 'woocommerce' );
+	add_theme_support( 'woocommerce', apply_filters( 'shoreditch_woocommerce_args', array(
+		'single_image_width'    => 580,
+		'thumbnail_image_width' => 290,
+		'product_grid'          => array(
+			'default_columns' => 2,
+			'default_rows'    => 3,
+			'min_columns'     => 1,
+			'max_columns'     => 5,
+			'min_rows'        => 1
+		)
+	) ) );
+
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -65,10 +76,13 @@ add_filter( 'body_class', 'shoreditch_woocommerce_active_body_class' );
  * @return integer number of products
  */
 function shoreditch_woocommerce_products_per_page() {
-	return intval( apply_filters( 'shoreditch_woocommerce_products_per_page', 6 ) );
+	return absint( apply_filters( 'shoreditch_woocommerce_products_per_page', 6 ) );
 }
 
-add_filter( 'loop_shop_per_page', 'shoreditch_woocommerce_products_per_page' );
+// Legacy WooCommerce products per page filter.
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_per_page', 'shoreditch_woocommerce_products_per_page' );
+}
 
 /**
  * Product gallery thumnbail columns
@@ -76,7 +90,7 @@ add_filter( 'loop_shop_per_page', 'shoreditch_woocommerce_products_per_page' );
  * @return integer number of columns
  */
 function shoreditch_woocommerce_thumbnail_columns() {
-	return intval( apply_filters( 'shoreditch_woocommerce_product_thumbnail_columns', 4 ) );
+	return absint( apply_filters( 'shoreditch_woocommerce_product_thumbnail_columns', 4 ) );
 }
 
 add_filter( 'woocommerce_product_thumbnails_columns', 'shoreditch_woocommerce_thumbnail_columns' );
@@ -87,10 +101,13 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'shoreditch_woocommerce_th
  * @return integer products per row
  */
 function shoreditch_woocommerce_loop_columns() {
-	return intval( apply_filters( 'shoreditch_woocommerce_loop_columns', 2 ) );
+	return absint( apply_filters( 'shoreditch_woocommerce_loop_columns', 2 ) );
 }
 
-add_filter( 'loop_shop_columns', 'shoreditch_woocommerce_loop_columns' );
+// Legacy WooCommerce columns filter.
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '3.3', '<' ) ) {
+	add_filter( 'loop_shop_columns', 'shoreditch_woocommerce_loop_columns' );
+}
 
 /**
  * Related Products Args
@@ -116,12 +133,27 @@ if ( ! function_exists( 'shoreditch_woocommerce_product_columns_wrapper' ) ) {
 	 * @return  void
 	 */
 	function shoreditch_woocommerce_product_columns_wrapper() {
-		$columns = shoreditch_woocommerce_loop_columns();
-		echo '<div class="columns-' . $columns . '">';
+		$columns = shoreditch_loop_columns();
+		echo '<div class="columns-' . absint( $columns ) . '">';
 	}
 }
 
 add_action( 'woocommerce_before_shop_loop', 'shoreditch_woocommerce_product_columns_wrapper', 40 );
+
+if ( ! function_exists( 'shoreditch_loop_columns' ) ) {
+	/**
+	 * Default loop columns on product archives
+	 *
+	 * @return integer products per row
+	 */
+	function shoreditch_loop_columns() {
+		$columns = 2; // 2 products per row
+		if ( function_exists( 'wc_get_default_products_per_row' ) ) {
+			$columns = wc_get_default_products_per_row();
+		}
+		return apply_filters( 'shoreditch_loop_columns', $columns );
+	}
+}
 
 if ( ! function_exists( 'shoreditch_woocommerce_product_columns_wrapper_close' ) ) {
 	/**
@@ -265,35 +297,3 @@ function shoreditch_woocommerce_is_shop_page() {
 
 	return $is_shop_page;
 }
-
-/**
- * Jetpack infinite scroll duplicates posts where orderby is anything other than modified or date
- * This filter offsets the products returned by however many are displayed per page
- *
- * @link https://github.com/Automattic/jetpack/issues/1135
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function shoreditch_woocommerce_jetpack_duplicate_products( $args ) {
-	if ( ( isset( $args['post_type'] ) && 'product' === $args['post_type'] ) || ( isset( $args['taxonomy'] ) && 'product_cat' === $args['taxonomy'] ) ) {
-		$args['offset'] = $args['posts_per_page'] * $args['paged'];
-	}
-
- 	return $args;
-}
-add_filter( 'infinite_scroll_query_args', 'shoreditch_woocommerce_jetpack_duplicate_products', 100 );
-
-/**
- * Override number of products per page in Jetpack infinite scroll.
- *
- * @param  array $args infinite scroll args.
- * @return array       infinite scroll args.
- */
-function shoreditch_woocommerce_jetpack_products_per_page( $args ) {
-	if ( is_array( $args ) && ( shoreditch_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		$args['posts_per_page'] = shoreditch_woocommerce_products_per_page();
-	}
-
-	return $args;
-}
-add_filter( 'infinite_scroll_settings', 'shoreditch_woocommerce_jetpack_products_per_page' );

@@ -1,0 +1,33 @@
+/*!
+Sophisticated Business Customizer Styles & Non-latin Font Fallbacks
+
+NOTE: This file is automatically populated with additional styles if the user selects a custom primary color in the customzier.
+*/
+
+/** === Includes === */
+
+@import "sass/mixins/mixins-master";
+
+/** === Non-Latin font fallbacks === */
+
+@include non-latin-fonts( '.wp-block' );
+
+/** === Temporary fix for https://github.com/WordPress/gutenberg/issues/12908 */
+
+.is-dark-theme .editor-block-list__layout .editor-block-list__layout .editor-block-mover__control,
+.is-dark-theme .editor-block-list__layout .editor-block-list__layout .editor-block-mover__control-drag-handle,
+.is-dark-theme .editor-block-list__layout .editor-block-list__layout .editor-block-mover__control-drag-handle:not(:disabled):not([aria-disabled="true"]):not(.is-default) {
+	background: transparent;
+	color: rgba(255,255,255,.65);
+	box-shadow: none;
+}
+
+.is-dark-theme .editor-block-list__layout .editor-block-list__layout .editor-block-mover__control:hover {
+	background: #fff;
+	color: #191e23;
+	box-shadow: inset 0 0 0 1px #e2e4e7,inset 0 0 0 2px #fff,0 1px 1px rgba(25,30,35,.2);
+}
+
+.is-dark-theme .editor-block-list__layout .editor-block-list__layout .editor-block-mover__control[aria-disabled=true] {
+	color: rgba(255,255,255,.2);
+}

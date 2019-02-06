@@ -4,7 +4,7 @@ Theme URI: https://wordpress.com/themes/pique/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: A one-page scrolling theme for small businesses.
-Version: 1.4.4-wpcom
+Version: 1.4.7-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pique
@@ -1106,32 +1106,43 @@ a:active {
 		left: 103%;
 		left: calc(100% + 5px);
 	}
+	.main-navigation #primary-menu > li.focus > ul,
 	.main-navigation #primary-menu > li:nth-last-child(1):hover > ul,
 	.main-navigation #primary-menu > li:nth-last-child(2):hover > ul {
 		left: auto;
 		right: 5%;
 	}
+	.main-navigation #primary-menu > li.focus ul::before,
 	.main-navigation #primary-menu > li:nth-last-child(1):hover ul::before,
 	.main-navigation #primary-menu > li:nth-last-child(2):hover ul::before {
 		left: auto;
 		right: 15px;
 	}
+	.main-navigation #primary-menu > li.focus li:hover ul,
 	.main-navigation #primary-menu > li:nth-last-child(1) li:hover ul,
 	.main-navigation #primary-menu > li:nth-last-child(2) li:hover ul {
 		left: auto;
 		right: 103%;
 		right: calc(100% + 5px);
 	}
+	.main-navigation #primary-menu > li.focus li:hover ul::before,
 	.main-navigation #primary-menu > li:nth-last-child(1) li:hover ul::before,
 	.main-navigation #primary-menu > li:nth-last-child(2) li:hover ul::before {
 		left: auto;
 		right: -8px;
 	}
+	.main-navigation #primary-menu > li.focus li:hover ul::after,
 	.main-navigation #primary-menu > li:nth-last-child(1) li:hover ul::after,
 	.main-navigation #primary-menu > li:nth-last-child(2) li:hover ul::after {
 		left: auto;
 		right: -15px;
 	}
+
+	.main-navigation #primary-menu > li.visible:not(.focus):hover > ul {
+		left: -999em;
+		right: auto;
+	}
+
 	/* Sticky menu */
 	.sticky {
 		bottom: auto;

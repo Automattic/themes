@@ -19,7 +19,7 @@ function radcliffe_2_jetpack_setup() {
 		'container'      => 'main',
 		'render'         => 'radcliffe_2_infinite_scroll_render',
 		'footer'         => 'page',
-		'wrapper'        => false,
+		'wrapper'         => false,
 		'footer_widgets' => array( 'sidebar-1', 'sidebar-2', 'sidebar-3' ),
 	) );
 
@@ -56,13 +56,26 @@ add_action( 'after_setup_theme', 'radcliffe_2_jetpack_setup' );
  * Custom render function for Infinite Scroll.
  */
 function radcliffe_2_infinite_scroll_render() {
+	if ( class_exists( 'WooCommerce' ) && ( radcliffe_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+		radcliffe_2_woocommerce_product_columns_wrapper();
+		woocommerce_product_loop_start();
+	}
+
 	while ( have_posts() ) {
 		the_post();
+
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
+		elseif ( class_exists( 'WooCommerce' ) && ( radcliffe_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+			wc_get_template_part( 'content', 'product' );
 		else :
 			get_template_part( 'template-parts/content', get_post_format() );
 		endif;
+	}
+
+	if ( class_exists( 'WooCommerce' ) && ( radcliffe_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+		woocommerce_product_loop_end();
+		radcliffe_2_woocommerce_product_columns_wrapper_close();
 	}
 }
 

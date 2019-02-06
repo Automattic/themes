@@ -1,0 +1,277 @@
+/*
+Theme Name: Affinity
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Block Styles
+2.0 Blocks - Common Blocks
+3.0 Blocks - Formatting
+4.0 Blocks - Layout Elements
+5.0 Blocks - Widgets
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Captions */
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	color: inherit;
+	font-size: 13.2px;
+	font-style: italic;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-family: Lora, Baskerville, Georgia, Times, serif;
+	font-size: 64px;
+}
+
+/* Images */
+
+.wp-block-cover {
+	display: flex;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin-bottom: 1.6em;
+	margin-left: auto;
+}
+
+.wp-block-gallery.is-cropped .blocks-gallery-item a {
+	overflow: hidden;
+}
+
+/* Quote */
+
+.wp-block-quote cite {
+	display: block;
+	text-align: right;
+	font-style: normal;
+	font-size: 16px;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding: .4em 0 .8em;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 26px;
+}
+
+@media screen and ( min-width: 68em ) {
+	.wp-block-quote,
+	.wp-block-pullquote blockquote {
+		font-size: 26px;
+	}
+
+	.wp-block-quote.is-large p,
+	.wp-block-quote.is-style-large p {
+		font-size: 36px;
+	}
+}
+
+/* Audio */
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* File */
+
+.wp-block-file .wp-block-file__button {
+	border-radius: 0;
+	display: inline-block;
+	font-size: 13.2px;
+	font-family: Raleway, "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	line-height: 1;
+	transition: 0.3s;
+	text-decoration: none;
+	background-color: #99908a;
+	outline: 4px solid #99908a;
+	border: 2px solid white;
+	position: relative;
+	left: 4px;
+}
+
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-file .wp-block-file__button:focus,
+.wp-block-file .wp-block-file__button:focus {
+	outline-color: #5e5853;
+	background-color: #5e5853;
+	color: #fff;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Formatting Blocks
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	background-color: transparent;
+	padding: 0;
+	font-family: inherit;
+	color: inherit;
+	font-size: inherit;
+}
+
+/* Code */
+
+.wp-block-code {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 13.2px;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote {
+	padding: 0;
+}
+
+.wp-block-pullquote blockquote {
+	color: #99908a;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0;
+	border-top: 3px solid #e8e9ea;
+	padding-top: .8em;
+	border-bottom: 1px solid #e8e9ea;
+	margin-bottom: .8em;
+	padding-bottom: .8em;
+}
+
+.wp-block-pullquote.alignleft p,
+.wp-block-pullquote.alignright p {
+	font-size: 18px;
+}
+
+.wp-block-pullquote cite {
+	color: #99908a;
+	display: block;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .wp-block-button__link {
+	border-radius: 0;
+	display: inline-block;
+	font-size: 13.2px;
+	font-family: Raleway, "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	line-height: 1;
+	transition: 0.3s;
+	text-decoration: none;
+}
+
+.wp-block-button__link:not(.has-text-color),
+.wp-block-button__link:not(.has-text-color):hover,
+.wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button__link:not(.has-text-color):active {
+	color: white;
+}
+
+.wp-block-button__link:not(.has-background) {
+	background-color: #99908a;
+	outline: 4px solid #99908a;
+	border: 2px solid white;
+	position: relative;
+	left: 4px;
+}
+
+.wp-block-button__link:not(.has-background):active,
+.wp-block-button__link:not(.has-background):focus,
+.wp-block-button__link:not(.has-background):hover {
+	outline-color: #5e5853;
+	background-color: #5e5853;
+}
+
+/* Seperator */
+
+hr.wp-block-separator {
+	border: 0;
+}
+
+.wp-block-separator {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 66%;
+}
+
+.wp-block-separator.is-style-wide {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widget Blocks
+--------------------------------------------------------------*/
+
+/* General Widget styles */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-archives.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-latest-comments.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	box-shadow: none;
+	font-weight: 700;
+}
+
+.wp-block-latest-comments__comment-date {
+	font-size: 13px;
+}
+
+.wp-block-latest-comments .wp-block-latest-comments__comment {
+	margin-bottom: 1.6em;
+	padding: 0;
+}
+
+.wp-block-latest-comments__comment-excerpt p:last-child {
+	margin-bottom: 0;
+}

@@ -1,0 +1,180 @@
+/* Next/Previous navigation */
+
+// Singular navigation
+.post-navigation {
+
+	margin: calc(3 * #{$size__spacing-unit}) $size__spacing-unit;
+
+	@include media(tablet) {
+		margin: calc(3 * #{$size__spacing-unit}) auto;
+		max-width: $size__site-tablet-content;
+	}
+
+	@include media(desktop) {
+		max-width: $size__site-desktop-content;
+	}
+
+	.nav-links {
+
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		@include media(tablet) {
+			flex-direction: row;
+		}
+
+		a {
+			.meta-nav {
+				color: $color__text-dark;
+				user-select: none;
+
+				&:before,
+				&:after {
+					display: none;
+					content: "—";
+					width: 2em;
+					color: $color__text-dark;
+					height: 1em;
+				}
+			}
+
+			.post-title {
+				hyphens: auto;
+			}
+
+			&:hover {
+				color: $color__link-hover;
+			}
+		}
+
+		.nav-previous {
+			order: 2;
+
+			+ .nav-next {
+				margin-bottom: $size__spacing-unit;
+			}
+
+			.meta-nav {
+				&:before {
+					display: inline;
+				}
+			}
+		}
+
+		.nav-next {
+			@include media(tablet) {
+				order: 2;
+				padding-left: $size__spacing-unit;
+				margin-left: auto;
+			}
+
+			.meta-nav {
+				&:after {
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
+// Index/archive navigation
+.pagination {
+
+	.nav-links {
+
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 calc(.5 * #{$size__spacing-unit});
+
+
+		& > * {
+			padding: calc(.5 * #{$size__spacing-unit});
+
+			&.dots,
+			&.prev {
+				padding-left: 0;
+			}
+
+			&.dots,
+			&.next {
+				padding-right: 0;
+			}
+		}
+
+		a:focus {
+			text-decoration: underline;
+			outline-offset: -1px;
+
+			&.prev,
+			&.next {
+				text-decoration: none;
+
+				.nav-prev-text,
+				.nav-next-text {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.nav-next-text,
+		.nav-prev-text {
+			display: none;
+		}
+
+		@include media(tablet) {
+
+			margin-left: $size__site-margins;
+			padding: 0;
+
+			.prev,
+			.next {
+
+				& > * {
+					display: inline-block;
+					vertical-align: text-bottom;
+				}
+			}
+
+			& > * {
+				padding: $size__spacing-unit;
+			}
+		}
+	}
+}
+
+// Comments navigation
+.comment-navigation {
+
+	.nav-links {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.nav-previous,
+	.nav-next {
+		min-width: 50%;
+		width: 100%;
+		font-family: $font__heading;
+		font-weight: bold;
+
+		.secondary-text {
+			display: none;
+
+			@include media(tablet) {
+				display: inline;
+			}
+		}
+
+		svg {
+			vertical-align: middle;
+			position: relative;
+			margin: 0 -0.35em;
+			top: -1px;
+		}
+	}
+
+	.nav-next {
+		margin-left: auto;
+	}
+}

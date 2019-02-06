@@ -4,7 +4,7 @@ Theme URI: http://theme.wordpress.com/themes/lodestar
 Author: Automattic
 Author URI: https://www.wordpress.com
 Description: Lodestar is a trendy one-page theme designed with startups and small business ventures in mind.
-Version: 1.0.11
+Version: 1.0.14-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: lodestar
@@ -2670,6 +2670,15 @@ object {
 		column-gap: 0;
 	}
 
+	/* Prevent media from being split between the columns */
+	.two-column .panel-content .entry-content .wp-block-image,
+	.two-column .panel-content .entry-content .wp-block-gallery,
+	.two-column .panel-content .entry-content .wp-block-embed {
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		          page-break-inside: avoid; /* Firefox */
+		               break-inside: avoid; /* IE 10+ */
+	}
+
 	/* Blog Posts on front page */
 	.one-column .panel-content .recent-posts .entry-content {
 		padding-left: 0;
@@ -2717,13 +2726,9 @@ object {
 	.main-navigation ul.nav-menu {
 		margin-bottom: 0;
 		padding: 0;
-		text-align: center;
-	}
-
-	.has-top-content .main-navigation ul.nav-menu {
 		text-align: left;
 	}
-
+	
 	.main-navigation li {
 		display: inline-block;
 		position: relative;

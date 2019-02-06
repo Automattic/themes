@@ -1,7 +1,7 @@
 /*
 Theme Name: Independent Publisher 2
 Theme URI: http://wordpress.com/themes/independent-publisher-2
-Version: 2.1.3-wpcom
+Version: 2.1.6-wpcom
 Description: Independent Publisher 2 is a clean and polished theme with a light color scheme, bold typography, and full-width images.
 Author: Raam Dev
 Author URI: http://raamdev.com/
@@ -1041,8 +1041,9 @@ input::-moz-focus-inner {
 .main-navigation ul:first-child > li:first-child {
 	border-top: 0;
 }
-.main-navigation li.current-menu-item > a,
-.main-navigation li.current_page_item > a {
+
+.main-navigation > div > ul > li.current-menu-item > a,
+.main-navigation > div > ul > li.current_page_item > a {
 	color: #00aadc;
 }
 
@@ -2171,7 +2172,6 @@ p.no-comments {
 .custom-logo {
 	display: block;
 	width: auto;
-	max-width: 750px;
 	height: auto;
 	max-height: 150px;
 	margin: 0 auto .875em;
@@ -3094,8 +3094,12 @@ time.published + .updated {
 		left: auto;
 	}
 
-	.main-navigation ul ul li:hover a,
-	.main-navigation ul ul li.focus a {
+	.main-navigation ul ul li:hover > a,
+	.main-navigation ul ul li.focus > a,
+	.main-navigation > div > ul > li.current-menu-item > a,
+	.main-navigation > div > ul > li.current_page_item > a,
+	.main-navigation > div > ul ul li.current-menu-item > a,
+	.main-navigation > div > ul ul li.current_page_item > a {
 		opacity: 0.7;
 	}
 
@@ -3126,6 +3130,11 @@ time.published + .updated {
 		transform: rotate(0deg);
 	}
 
+	.main-navigation > div > ul > li.current-menu-item > ul > li a,
+	.main-navigation > div > ul > li.current_page_item > ul > li a {
+		color: #fff;
+	}
+
 	.post-navigation .nav-links .nav-previous {
 		clear: none;
 		margin: 0 0 0 -.21875em;
@@ -3153,6 +3162,9 @@ time.published + .updated {
 
 @media screen and (min-width: 48.9375em) {
 
+	.custom-logo {
+		max-width: 750px;
+	}
 	.comment-form input[type="text"],
 	.comment-form input[type="password"],
 	.comment-form input[type="email"],
