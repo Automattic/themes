@@ -591,54 +591,64 @@ pre.wp-block-verse {
 	text-align: right;
 }
 
+/* File */
+
+.wp-block-file .wp-block-file__button {
+	background: #bbb;
+	border-radius: 0;
+	border: 1px dashed white;
+	box-shadow: none;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	margin: 5px;
+	padding: .75em 1em;
+	outline: 5px solid #bbb;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: .3s;
+}
+
 /*--------------------------------------------------------------
 5.0 Blocks - Layout Elements
 --------------------------------------------------------------*/
 
 /* Buttons */
 
-.wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link {
-	border-radius: 0;
-	border: 1px dashed white;
-	box-shadow: none;
+	background: #bbb;
+	color: #fff;
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 1;
-	margin: 5px;
-	padding: .75em 1em;
+	padding: calc( .75em + 5px ) calc( 1em + 5px );
 	text-shadow: none;
 	text-transform: uppercase;
 	transition: .3s;
 }
 
-.wp-block-file .wp-block-file__button,
 .wp-block-button__link:not(.has-background) {
-	background: #bbb;
-	outline: 5px solid #bbb;
+	border: 1px dashed white;
+	box-shadow: 0 0 0 5px #bbb;
+	margin: 0 5px;
+	padding: .75em 1em;
+}
+
+.is-style-outline .wp-block-button__link {
+	border: 1px dashed currentColor;
+	background: #fff;
+	box-shadow: none;
+	margin: 0;
+	padding: calc( .75em + 5px ) calc( 1em + 5px );
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #bbb;
 }
 
 .wp-block-button .editor-rich-text__tinymce.mce-content-body {
 	line-height: 14px;
-}
-
-.wp-block-file .wp-block-file__button,
-.wp-block-button__link:not(.has-text-color),
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #fff;
-}
-
-.wp-block-file .wp-block-file__button:active,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
-	background: #f78769;
-	outline: 5px solid #f78769;
-	box-shadow: none;
 }
 
 /* Separator */
