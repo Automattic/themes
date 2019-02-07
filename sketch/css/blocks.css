@@ -214,19 +214,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Buttons */
 
-.wp-block-button__link {
-	background: white;
-	color: #999999;
-}
-
 .wp-block-button .wp-block-button__link {
-	border: 3px solid #eeeeee;
-	border-radius: 3px;
 	font-family: Lato, Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 2px;
-	padding: 10px 14px;
+	padding: 10px 20px;
 	text-transform: uppercase;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -234,22 +227,23 @@ p.has-drop-cap:not(:focus)::first-letter {
 	transition: all 0.3s ease-in-out;
 }
 
-.wp-block-button__link.has-text-color {
-	border-color: currentColor;
+.wp-block-button__link,
+.wp-block-button__link:visited {
+	background: #999999;
+	color: #fff;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:not(.has-text-color):hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:not(.has-text-color):focus {
-	border-color: #f68060;
-	color: #f68060;
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #999;
 }
 
-.wp-block-button__link:not(.has-background):hover,
-.wp-block-button__link:not(.has-background):focus {
-	background: transparent;
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
+	background-color: #f68060;
+	color: #fff;
 }
+
 
 /* Separator */
 
