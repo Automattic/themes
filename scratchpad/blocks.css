@@ -257,12 +257,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	border-radius: 255px 15px 225px 15px/15px 225px 15px;
 	font-family: "Kalam", "Chalkboard", "Comic Sans", script;
 	font-size: 14px;
 	letter-spacing: 0.05em;
 	outline: none;
-	padding: 10px 20px;
+	padding: 12px 20px 10px;
 	text-shadow: none;
 	text-transform: uppercase;
 	-webkit-transition: color 0.2s, border-color 0.2s;
@@ -271,28 +270,21 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-button__link {
-	background: transparent;
+	background-color: rgba(119, 119, 119, 0.8);
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
 	color: rgba(119, 119, 119, 0.8);
-	border: 2px solid currentColor;
 }
 
 .wp-block-button .wp-block-button__link:active,
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-button .wp-block-button__link:focus {
 	box-shadow: none;
+	background: #777;
+	color: #fff;
 	text-decoration: none;
-}
-
-.wp-block-button__link:active,
-.wp-block-button__link:focus,
-.wp-block-button__link:hover {
-	color: #777;
-}
-
-.wp-block-button__link.has-background:active,
-.wp-block-button__link.has-background:hover,
-.wp-block-button__link.has-background:focus {
-	opacity: 0.8;
 }
 
 .wp-block-button.alignleft {
