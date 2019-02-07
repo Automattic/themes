@@ -500,8 +500,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button .wp-block-button__link {
 	background-color: #678db8;
-	border-color: #678db8;
-	border-radius: 0;
 	color: #fff;
 	font-size: 14px;
 	letter-spacing: 0.1em;
@@ -509,10 +507,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-transform: uppercase;
 }
 
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
-	background-color: #678db8;
-	opacity: 0.75;
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+	background: transparent;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #678db8;
 }
 
 /* Separator */

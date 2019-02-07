@@ -254,14 +254,24 @@ body:not(.has-post-thumbnail) .wp-block-table.alignfull {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	background-color: #678db8;
-	border-color: #678db8;
-	border-radius: 0;
-	color: #fff;
 	font-size: 1.4rem;
 	letter-spacing: 0.1em;
-	padding: 1em;
+	padding: 1em 1.5em;
 	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.wp-block-button__link {
+	background-color: #678db8;
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #678db8;
 }
 
 .wp-block-button .wp-block-button__link:hover,
