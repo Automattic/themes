@@ -42,7 +42,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 	font-size: 34px;
 	font-weight: 800;
 	letter-spacing: 0.1em;
-	line-height: 1.25;	
+	line-height: 1.25;
 }
 
 /* Headings */
@@ -322,12 +322,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	transition: background 0.2s;
 }
 
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:active {
-	background: #555;
-}
-
 /*--------------------------------------------------------------
 4.0 Blocks - Formatting
 --------------------------------------------------------------*/
@@ -409,8 +403,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button .wp-block-button__link {
 	background: #29292a;
-	border: 0;
-	border-radius: 0;
 	box-shadow: none;
 	color: #fff;
 	font-size: 14px;
@@ -418,15 +410,17 @@ p.has-drop-cap:not(:focus)::first-letter {
 	letter-spacing: 0.05em;
 	line-height: 1;
 	padding: 1em 1.5em;
-	text-shadow: none;
 	text-transform: uppercase;
 	transition: background 0.2s;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
-	background: #555;
+.wp-block-button.is-style-outline .wp-block-button__link {
+	border: 2px solid currentColor;
+	background: transparent;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #29292a;
 }
 
 /* Separator */

@@ -254,9 +254,8 @@ body.lodestar-front-page:not(.has-sidebar) .lodestar-panel:not(.two-column) .wp-
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	border: 0;
-	border-radius: 0;
 	box-shadow: none;
+	border: 0;
 	font-size: 14px;
 	font-size: 0.875rem;
 	letter-spacing: 0.05em;
@@ -267,21 +266,26 @@ body.lodestar-front-page:not(.has-sidebar) .lodestar-panel:not(.two-column) .wp-
 	transition: background 0.2s;
 }
 
-.wp-block-button__link {
+.wp-block-button__link,
+.wp-block-button__link:visited {
 	background: #29292a;
 	color: #fff;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
-	background: #555;
+.wp-block-button.is-style-outline .wp-block-button__link {
+	border: 2px solid currentColor;
 }
 
-.wp-block-button__link.has-background:hover,
-.wp-block-button__link.has-background:focus,
-.wp-block-button__link.has-background:active {
-	opacity: 0.8;
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #29292a;
+}
+
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
+	background: #555;
+	color: #fff;
+	box-shadow: none;
 }
 
 /* Separator */
