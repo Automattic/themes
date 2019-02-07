@@ -902,7 +902,6 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 
 /* Buttons */
 .wp-block-button .wp-block-button__link {
-	border-radius: 0;
 	font-size: 12px;
 	letter-spacing: 1px;
 	padding: 7px 14px;
@@ -911,41 +910,29 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	text-transform: uppercase;
 }
 
-.wp-block-button .wp-block-button__link:active,
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
-	box-shadow: none;
-}
-
-.wp-block-button__link:not(.has-background) {
+.wp-block-button__link {
 	background: #a09a92;
-	outline: 4px solid #a09a92;
-}
-
-.wp-block-button__link:not(.has-text-color) {
 	border: 1px solid #eae9e6;
 	color: #eae9e6;
 }
 
-.wp-block-button__link:not(.has-text-color):active {
-	color: #eae9e6;
+.wp-block-button__link:not(.has-background) {
+	box-shadow: 0 0 0 4px #a09a92;
 }
 
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #faf9f5;
+.wp-block-button .wp-block-button__link.has-background {
+	padding: 11px 18px;
 }
 
-.wp-block-button__link:not(.has-background):active {
-	background: #363431;
-	outline: 5px solid #363431;
+.is-style-outline .wp-block-button__link {
+	box-shadow: none;
 }
 
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
-	background: #a09a92;
-	outline: 2px solid #a09a92;
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #a09a92;
 }
+
+
 
 /* Separator */
 
