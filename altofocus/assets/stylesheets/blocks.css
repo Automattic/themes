@@ -176,10 +176,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button__link {
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-	border: 1px solid currentColor;
 	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25) !important;
 	display: inline-block;
 	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -198,16 +194,21 @@ p.has-drop-cap:not(:focus)::first-letter {
 	word-break: break-word;
 }
 
-.wp-block-button__link:not(.has-text-color) {
+.wp-block-button__link,
+.wp-block-button__link:visited {
+	background-color: #111;
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color),
+.is-style-outline .wp-block-button__link:not(.has-text-color):visited {
 	color: #111;
-	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.wp-block-button__link:not(.has-background) {
-	background: #fff;
-}
-
-.wp-block-button__link:hover {
+.entry-content .wp-block-button .wp-block-button__link:hover {
+	background-color: #e38900;
+	border-color: #e38900;
+	color: #fff;
 	-webkit-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	-moz-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 	-o-animation: bounce-reveal 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -215,18 +216,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 	opacity: 1;
 }
 
-.wp-block-button__link:not(.has-background):hover {
-	background: #e38900;
-	border-color: #e38900;
-}
-
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #fff;
-}
-
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
+.entry-content .wp-block-button .wp-block-button__link:focus,
+.entry-content .wp-block-button .wp-block-button__link:active {
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.125);
+	border-color: #aaa #bbb #bbb;
+	color: #fff;
 	-webkit-transform: scale(0.925);
 	-moz-transform: scale(0.925);
 	-o-transform: scale(0.925);
@@ -234,19 +228,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 	transform: scale(0.925);
 }
 
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):active {
-	border-color: #aaa #bbb #bbb;
-}
-
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):active {
-	color: #fff;
-}
-
 @media screen and (min-width: 37.5em) {
-	.wp-block-button .wp-block-button__link,
-	.wp-block-button .wp-block-button__link:not(.has-background) {
+	.wp-block-button .wp-block-button__link {
 		font-size: 15px;
 		font-size: 1rem;
 	}
@@ -307,44 +290,54 @@ hr.wp-block-separator {
 6.0 Blocks - Colors
 --------------------------------------------------------------*/
 
-.has-orange-color {
-	color: #e38900 !important;
+.has-orange-color,
+.has-orange-color:visited {
+	color: #e38900;
 }
 
-.has-orange-background-color {
-	background-color: #e38900 !important;
+.has-orange-background-color,
+.has-orange-background-color:visited {
+	background-color: #e38900;
 }
 
-.has-dark-gray-color {
-	color: #111 !important;
+.has-dark-gray-color,
+.has-dark-gray-color:visited {
+	color: #111;
 }
 
-.has-dark-gray-background-color {
-	background-color: #111 !important;
+.has-dark-gray-background-color,
+.has-dark-gray-background-color:visited {
+	background-color: #111;
 }
 
-.has-medium-888-color {
-	color: #111111 !important;
+.has-medium-gray-color,
+.has-medium-gray-color:visited {
+	color: #111111;
 }
 
-.has-medium-gray-background-color {
-	background-color: #888 !important;
+.has-medium-gray-background-color,
+.has-medium-gray-background-color:visited {
+	background-color: #888;
 }
 
-.has-light-gray-color {
-	color: #ccc !important;
+.has-light-gray-color,
+.has-light-gray-color:visited {
+	color: #ccc;
 }
 
-.has-light-gray-background-color {
-	background-color: #ccc !important;
+.has-light-gray-background-color,
+.has-light-gray-background-color:visited {
+	background-color: #ccc;
 }
 
-.has-white-color {
-	color: #fff !important;
+.has-white-color,
+.has-white-color:visited {
+	color: #fff;
 }
 
-.has-white-background-color {
-	background-color: #fff !important;
+.has-white-background-color,
+.has-white-background-color:visited {
+	background-color: #fff;
 }
 
 /*--------------------------------------------------------------
