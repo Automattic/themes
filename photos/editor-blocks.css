@@ -606,13 +606,16 @@ blockquote p:last-child {
 /* Buttons and File block */
 .wp-block-file .wp-block-file__button,
 .wp-block-button .wp-block-button__link {
-	border-radius: 4px;
 	font-weight: bold;
 	line-height: 1.5;
 	padding: 0.5em 0.75em;
 	text-align: center;
 	transition: background 150ms ease-in-out,
 		color 150ms ease-in-out;
+}
+
+.wp-block-file .wp-block-file__button {
+	border-radius: 4px;
 }
 
 .wp-block-file__textlink {
@@ -630,27 +633,13 @@ blockquote p:last-child {
 	color: #d63031;
 }
 
-.wp-block-file .wp-block-file__button:active,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:not(.has-text-color):active,
-.wp-block-button__link:not(.has-text-color):focus,
-.wp-block-button__link:not(.has-text-color):hover {
-	color: #fff;
-}
-
 .wp-block-file .wp-block-file__button,
 .wp-block-button__link:not(.has-background) {
 	background: #f0f0f0;
 }
 
-.wp-block-file .wp-block-file__button:active,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:not(.has-background):active,
-.wp-block-button__link:not(.has-background):focus,
-.wp-block-button__link:not(.has-background):hover {
-	background-color: #d63031;
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
 }
 
 /* Classic Editor */
