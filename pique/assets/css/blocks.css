@@ -382,14 +382,8 @@ body.home .wp-block-table.alignwide .wp-block-table.alignfull {
 
 /* Buttons */
 
-.wp-block-button__link {
-	background-color: #83b6cc;
-	color: #eff6f9;
-}
-
 .wp-block-button .wp-block-button__link {
 	border: 2px solid transparent;
-	border-radius: 2em;
 	display: inline-block;
 	font-family: Karla, Arial, sans-serif;
 	font-size: 15.2px;
@@ -404,14 +398,29 @@ body.home .wp-block-table.alignwide .wp-block-table.alignfull {
 	-webkit-appearance: none;
 }
 
-.wp-block-button__link:hover {
+.wp-block-button__link {
+	background-color: #83b6cc;
+	border-radius: 2em;
+	color: #eff6f9;
+}
+
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+	background: transparent;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #83b6cc;
+}
+
+.wp-block-button .wp-block-button__link:hover {
 	background-color: transparent;
 	border-color: currentColor;
 	color: #83b6cc;
 }
 
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
 	background-color: #4488a5;
 	border-color: currentColor;
 	color: #83b6cc;
