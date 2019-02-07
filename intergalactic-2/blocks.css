@@ -307,44 +307,38 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	border-radius: 0;
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 1;
-	padding: .75em;
+	padding: .75em 1.25em;
 	cursor: pointer;
 	-webkit-transition: .3s all ease-in-out;
 	   -moz-transition: .3s all ease-in-out;
 			transition: .3s all ease-in-out;
 	text-transform: uppercase;
-	border: 2px solid currentColor;
-	box-shadow: none;
-	text-shadow: none;
 }
 
-.wp-block-button__link {
-	background: transparent;
-	border: 2px solid #222;
+.wp-block-button__link,
+.wp-block-button__link:visited {
+	background: #222;
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	border-color: currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
 	color: #222;
 }
 
 .wp-block-button__link:active,
 .wp-block-button__link:focus,
 .wp-block-button__link:hover {
-	background: #222;
-	border: 2px solid #222;
-	color: #fff;
+	opacity: 0.8;
 }
 
-.wp-block-button__link.has-text-color {
-	border-color: currentColor;
-}
-
-.wp-block-button__link.has-background:active,
-.wp-block-button__link.has-background:focus,
-.wp-block-button__link.has-background:hover {
-	border-color: currentColor;
-}
 
 /* Seperator */
 
