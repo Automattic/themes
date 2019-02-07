@@ -365,19 +365,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:active {
-	outline: 0;
-	background: #767676;
-	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25), 0 0 0 6px rgba(0, 0, 0, .08);
-}
-
-.wp-block-file .wp-block-file__button:hover {
-	text-decoration: none;
-	color: #fff;
-	background: #767676;
-}
-
 /*--------------------------------------------------------------
 4.0 Blocks - Formatting
 --------------------------------------------------------------*/
@@ -524,11 +511,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	background: #0087be;
-	border: solid 1px transparent;
-	border-radius: 3px;
 	box-sizing: content-box;
-	color: #fff;
 	cursor: pointer;
 	-webkit-transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
 			transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
@@ -542,17 +525,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-button .wp-block-button__link:active {
-	outline: 0;
-	background: #767676;
-	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25), 0 0 0 6px rgba(0, 0, 0, .08);
+.wp-block-button__link {
+	background: #0087be;
+	color: #fff;
 }
 
-.wp-block-button .wp-block-button__link:hover {
-	text-decoration: none;
-	color: #fff;
-	background: #767676;
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #0087be;
 }
 
 /* Separator */
