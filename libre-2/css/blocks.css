@@ -294,31 +294,37 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	border-radius: 0;
-	box-shadow: 0 2px 0 0 currentColor;
+	box-shadow: none;
 }
 
 .wp-block-button__link {
-	background: transparent;
-	color: #404040;
-	border: 0 none;
 	font-size: 18px;
 	font-size: 1rem;
 	font-weight: bold;
+	padding: 0.5em 1.25em;
 	transition: 0.2s;
 }
 
-.wp-block-button .wp-block-button__link:not(.has-background) {
-	padding: 0.21875em 0;
+.wp-block-button__link,
+.wp-block-button__link:visited {
+	background: #404040;
+	color: #fff;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
 	background: transparent;
-	box-shadow: 0 4px 0 0 currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
 	color: #404040;
-	outline: none;
+}
+
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
+	opacity: 0.8;
+	box-shadow: none;
 }
 
 /* Columns */

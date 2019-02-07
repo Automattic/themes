@@ -360,13 +360,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* File */
 
-.wp-block-file :not(.wp-block-file__button),
-.wp-block-file :not(.wp-block-file__button):hover {
+.wp-block-file :not(.wp-block-file__button) {
 	box-shadow: none;
 }
 
-.wp-block-file .wp-block-file__button,
-.wp-block-file .wp-block-file__button:visited {
+.wp-block-file .wp-block-file__button {
 	border: 0 none;
 	border-radius: 0;
 	box-shadow: 0 2px 0 0 currentColor;
@@ -377,15 +375,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-weight: bold;
 	padding: 0.21875em 0;
 	transition: 0.2s;
-}
-
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus,
-.wp-block-file .wp-block-file__button:active {
-	background: transparent;
-	box-shadow: 0 4px 0 0 currentColor;
-	color: #404040;
-	outline: none;
 }
 
 /*--------------------------------------------------------------
@@ -482,34 +471,26 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	border-radius: 0;
-	box-shadow: 0 2px 0 0 currentColor;
-}
-
-.wp-block-button .wp-block-button__link:not(.has-background) {
-	background: transparent;
-	padding: 0.21875em 0;
-}
-
-.wp-block-button .wp-block-button__link:not(.has-color) {
-	color: #404040;
+	box-shadow: none;
 }
 
 .wp-block-button__link {
-	border: 0 none;
+	background: #404040;
+	color: #fff;
 	font-size: 18px;
 	font-size: 1rem;
 	font-weight: bold;
+	padding: 0.5em 1.25em;
 	transition: 0.2s;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:active {
-	background: transparent;
-	box-shadow: 0 4px 0 0 currentColor;
-	color: #404040;
-	outline: none;
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+	background-color: transparent;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #222;
 }
 
 /* Separator */
