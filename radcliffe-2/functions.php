@@ -89,7 +89,7 @@ function radcliffe_2_setup() {
 			array(
 				'name'  => esc_html__( 'Vintage Off-White', 'radcliffe-2' ),
 				'slug'  => 'vintage-off-white',
-				'color' => '#3e69dc',
+				'color' => '#fff',
 			),
 			array(
 				'name'  => esc_html__( 'Vintage Light Brown', 'radcliffe-2' ),
