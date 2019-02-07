@@ -392,13 +392,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	transition: all 0.3s ease-in-out;
 }
 
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus {
-	background: transparent;
-	border-color: #f68060;
-	color: #f68060;
-}
-
 /*--------------------------------------------------------------
 4.0 Blocks - Formatting
 --------------------------------------------------------------*/
@@ -492,36 +485,26 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	background: transparent;
-	border: 3px solid #eeeeee;
-	border-radius: 3px;
-	color: #999999;
 	font-family: Lato, Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 2px;
 	line-height: 24px;
-	padding: 10px 14px;
+	padding: 14px 20px;
 	text-transform: uppercase;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out
-	transition: all 0.3s ease-in-out;
+}
+
+.wp-block-button__link {
+	background-color: #999999;
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #999;
 }
 
 .wp-block-button .editor-rich-text__tinymce.mce-content-body {
 	line-height: 24px;
-}
-
-.wp-block-button .wp-block-button__link.has-text-color {
-	border-color: currentColor;
-}
-
-.wp-block-button__link:hover,
-.wp-block-button__link:focus {
-	background: transparent;
-	border-color: #f68060;
-	color: #f68060;
 }
 
 /* Separator */
