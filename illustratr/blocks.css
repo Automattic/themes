@@ -305,14 +305,9 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 .wp-block-button .wp-block-button__link {
 	padding: 10px 20px;
-	border: 1px solid;
-	box-shadow: none;
-	border-radius: 0;
 	display: inline-block;
 	text-transform: uppercase;
 	font-weight: 900;
-	cursor: pointer;
-	/* Improves usability and consistency of cursor style between image-type 'input' and others */
 }
 
 @media screen and (max-width: 767px) {
@@ -324,22 +319,21 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-button__link {
 	background: #464d4d;
 	color: white;
-	border: 1px solid #464d4d;
 }
 
-.wp-block-button__link:active,
-.wp-block-button__link:focus,
-.wp-block-button__link:hover {
-	color: white;
-	background: #e06d5e;
-	border-color: #e06d5e;
-}
-
-.wp-block-button__link.has-background:active,
-.wp-block-button__link.has-background:focus,
-.wp-block-button__link.has-background:hover {
+.is-style-outline .wp-block-button__link {
 	border-color: currentColor;
-	opacity: 0.8;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #464d4d;
+}
+
+.entry-content .wp-block-button .wp-block-button__link:active,
+.entry-content .wp-block-button .wp-block-button__link:focus,
+.entry-content .wp-block-button .wp-block-button__link:hover {
+	background: #e06d5e;
+	color: #fff;
 }
 
 /* Seperator */
