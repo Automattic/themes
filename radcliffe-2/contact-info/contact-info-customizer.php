@@ -31,12 +31,14 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	) );
 
 	/* Address */
-	$wp_customize->add_setting( 'radcliffe_2_contact_info_address', array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'transport'         => 'postMessage',
+	$wp_customize->add_setting( 'site_contact_info[address]', array(
+		'type'                 => 'option',
+		'sanitize_callback'    => 'sanitize_text_field',
+		'sanitize_js_callback' => radcliffe_2_generate_contact_compat_callback( 'address' ),
+		'transport'            => 'postMessage',
 	) );
 
-	$wp_customize->add_control( 'radcliffe_2_contact_info_address', array(
+	$wp_customize->add_control( 'site_contact_info[address]', array(
 		'label'             => esc_html__( 'Address', 'radcliffe-2' ),
 		'section'           => 'radcliffe_2_contact_info',
 		'type'              => 'textarea',
@@ -46,12 +48,14 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	) );
 
 	/* Phone */
-	$wp_customize->add_setting( 'radcliffe_2_contact_info_phone', array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'transport'         => 'postMessage',
+	$wp_customize->add_setting( 'site_contact_info[phone]', array(
+		'type'                 => 'option',
+		'sanitize_callback'    => 'sanitize_text_field',
+		'sanitize_js_callback' => radcliffe_2_generate_contact_compat_callback( 'phone' ),
+		'transport'            => 'postMessage',
 	) );
 
-	$wp_customize->add_control( 'radcliffe_2_contact_info_phone', array(
+	$wp_customize->add_control( 'site_contact_info[phone]', array(
 		'label'             => esc_html__( 'Phone', 'radcliffe-2' ),
 		'section'           => 'radcliffe_2_contact_info',
 		'type'              => 'text',
@@ -61,12 +65,14 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	) );
 
 	/* Email */
-	$wp_customize->add_setting( 'radcliffe_2_contact_info_email', array(
-		'sanitize_callback' => 'sanitize_email',
-		'transport'         => 'postMessage',
+	$wp_customize->add_setting( 'site_contact_info[email]', array(
+		'type'                 => 'option',
+		'sanitize_callback'    => 'sanitize_email',
+		'sanitize_js_callback' => radcliffe_2_generate_contact_compat_callback( 'email' ),
+		'transport'            => 'postMessage',
 	) );
 
-	$wp_customize->add_control( 'radcliffe_2_contact_info_email', array(
+	$wp_customize->add_control( 'site_contact_info[email]', array(
 		'label'             => esc_html__( 'Email', 'radcliffe-2' ),
 		'section'           => 'radcliffe_2_contact_info',
 		'type'              => 'email',
@@ -91,6 +97,29 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	) );
 }
 add_action( 'customize_register', 'radcliffe_2_contact_info_customize_register' );
+
+/**
+ * For use in `sanitize_js_callback` params to filter in our old,
+ * theme-mod based options. Using a generator because repetition is boring.
+ *
+ * @param  string $name The field we're maybe filtering in
+ * @return function     A function for use in `sanitize_js_callback`
+ */
+function radcliffe_2_generate_contact_compat_callback( $name ) {
+	return function( $value ) use ( $name ) {
+		// if there's a value, we're fine
+		if ( ! empty( $value ) ) {
+			return $value;
+		}
+		// pull from the old theme mod value
+		$option = get_theme_mod( 'radcliffe_2_contact_info_' . $name );
+		if ( ! empty( $option ) ) {
+			return $option;
+		}
+		// nothing to see here
+		return $value;
+	};
+}
 
 /**
  * Sanitize the checkbox.

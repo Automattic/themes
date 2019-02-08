@@ -5,9 +5,9 @@ if ( ! function_exists( 'radcliffe_2_contact_info' ) ) :
  */
 function radcliffe_2_contact_info( $section ) {
 	$location = get_theme_mod( 'radcliffe_2_contact_info_location',  'header' );
-	$address  = get_theme_mod( 'radcliffe_2_contact_info_address', '' );
-	$phone    = get_theme_mod( 'radcliffe_2_contact_info_phone',   '' );
-	$email    = get_theme_mod( 'radcliffe_2_contact_info_email',   '' );
+	$address  = get_option( 'site_contact_info' )['address'] ?: get_theme_mod( 'radcliffe_2_contact_info_address', '' );
+	$phone    = get_option( 'site_contact_info' )['phone'] ?: get_theme_mod( 'radcliffe_2_contact_info_phone',   '' );
+	$email    = get_option( 'site_contact_info' )['email'] ?: get_theme_mod( 'radcliffe_2_contact_info_email',   '' );
 	$hours    = get_theme_mod( 'radcliffe_2_contact_info_hours',   '' );
 
 	// If Address, Phone, Email and Hours are empty, return.
