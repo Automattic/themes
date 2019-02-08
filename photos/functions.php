@@ -88,16 +88,6 @@ if ( ! function_exists( 'photos_setup' ) ) :
 			),
 		) );
 
-		// Custom header support
-		add_theme_support( 'custom-header', apply_filters( 'photos_custom_header_args', array(
-			'default-image'          => '',
-			'default-text-color'     => '111111',
-			'width'                  => 1920,
-			'height'                 => 400,
-			'flex-height'            => true,
-			'flex-width'             => true,
-		) ) );
-
 		/* Gutenberg! */
 		add_theme_support( 'align-wide' );
 
