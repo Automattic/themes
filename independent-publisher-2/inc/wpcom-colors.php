@@ -86,6 +86,13 @@ add_color_rule( 'fg1', '#0087be', array(
             .button,
             #content #infinite-handle span button,
             .more-link', 'background-color' ),
+    array( 'button:not(.menu-toggle):hover,
+            input[type="button"]:hover,
+            input[type="reset"]:hover,
+            input[type="submit"]:hover,
+            .button:hover,
+            #content #infinite-handle span button:hover,
+            .more-link:hover', 'background-color', '-1' ),
 ),
 __( 'Buttons' ) );
 
@@ -110,12 +117,20 @@ add_color_rule( 'extra', '#ffffff', array(
             .main-navigation > div > ul > li.current_page_item > ul > li a', 'color', 'link' ),
 
     array( 'button:not(.menu-toggle),
+            button:not(.menu-toggle):hover,
             input[type="button"],
+            input[type="button"]:hover,
             input[type="reset"],
+            input[type="reset"]:hover,
             input[type="submit"],
+            input[type="submit"]:hover,
             .button,
+            .button:hover,
             #content #infinite-handle span button,
-            .more-link', 'color', 'fg1' ),
+            #content #infinite-handle span button:hover,
+            .more-link,
+            .more-link:hover,
+            .more-link:visited', 'color', 'fg1' ),
 ) );
 
 add_color_rule( 'extra', '#dddddd', array(
