@@ -47,6 +47,55 @@ function intergalactic_2_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	/**
+	 * Gutenberg wide and full images support
+	 */
+	add_theme_support( 'align-wide' );
+
+ 	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'intergalactic-2' ),
+				'slug' => 'black',
+				'color' => '#222222',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'intergalactic-2' ),
+				'slug' => 'dark-gray',
+				'color' => '#333333',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'intergalactic-2' ),
+				'slug' => 'light-gray',
+				'color' => '#cccccc',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'intergalactic-2' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Purple', 'intergalactic-2' ),
+				'slug' => 'purple',
+				'color' => '#81699b',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Purple', 'intergalactic-2' ),
+				'slug' => 'dark-purple',
+				'color' => '#553a72',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Green', 'intergalactic-2' ),
+				'slug' => 'dark-green',
+				'color' => '#557d73',
+			),
+		)
+	);
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -137,6 +186,9 @@ add_action( 'widgets_init', 'intergalactic_2_widgets_init' );
 function intergalactic_2_scripts() {
 	wp_enqueue_style( 'intergalactic-2-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'intergalactic-2-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
 	wp_enqueue_script( 'intergalactic-2-script', get_template_directory_uri() . '/js/intergalactic-2.js', array( 'jquery' ), '20170428', true );
@@ -150,6 +202,16 @@ function intergalactic_2_scripts() {
 	wp_enqueue_style( 'intergalactic-2-lato', intergalactic_2_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'intergalactic_2_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function intergalactic_2_editor_styles() {
+	wp_enqueue_style( 'intergalactic-2-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'intergalactic-2-lato', intergalactic_2_fonts_url() );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+}
+add_action( 'enqueue_block_editor_assets', 'intergalactic_2_editor_styles' );
 
 /**
  * Register Google Fonts

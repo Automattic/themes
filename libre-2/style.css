@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/libre-2/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: A stylish, classic look for your personal blog or long-form writing site. The main navigation bar stays fixed to the top while your visitors read, keeping your most important content at hand, while three footer widget areas give your secondary content a comfortable home.
-Version: 2.2.3-wpcom
+Version: 2.2.5-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: libre
@@ -152,7 +152,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 1em 0;
 }
 
 hr {
@@ -388,6 +388,10 @@ body {
 	word-wrap: break-word;
 }
 
+.site-wrapper {
+	overflow-x: hidden;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -612,6 +616,28 @@ textarea {
 	position: relative;
 	padding-top: 1.75em;
 }
+
+/* Fakes out header background so it looks like it spans the whole browser window */
+@media (min-width: 1120px) {
+	.singular .site-header:before,
+	.singular .site-header:after {
+		background: inherit;
+		bottom: 0;
+		content: "";
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.singular .site-header:before {
+		right: 100%;
+	}
+
+	.singular .site-header:after {
+		left: 100%;
+	}
+}
+
 .site-branding {
 	max-width: 70%;
 }

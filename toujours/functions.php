@@ -35,6 +35,40 @@ function toujours_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+ 	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Blue', 'toujours' ),
+				'slug' => 'blue',
+				'color' => '#2590ec',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'toujours' ),
+				'slug' => 'dark-gray',
+				'color' => '#404040',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'toujours' ),
+				'slug' => 'medium-gray',
+				'color' => '#666',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'toujours' ),
+				'slug' => 'light-gray',
+				'color' => '#eee',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'toujours' ),
+				'slug' => 'white',
+				'color' => '#fff',
+			),
+		)
+	);
+
 	/*
 	 * Editor styles
 	 */
@@ -364,6 +398,9 @@ function toujours_scripts() {
 	wp_enqueue_style( 'toujours-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'toujours-fonts', toujours_fonts_url(), array(), null );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'toujours-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', array( 'jquery' ), '20160104', true );
 	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pk.js', array( 'jquery' ), '20151221', true );
 	wp_enqueue_script( 'toujours-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -388,6 +425,15 @@ function toujours_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'toujours_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function toujours_editor_styles() {
+	wp_enqueue_style( 'toujours-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+	wp_enqueue_style( 'toujours-fonts', toujours_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'toujours_editor_styles' );
 
 /**
  * Implement the Custom Header feature.

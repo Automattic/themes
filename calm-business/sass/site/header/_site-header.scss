@@ -1,0 +1,115 @@
+// Site header
+
+.site-header {
+	padding: 1rem 1em 0.75rem;
+	text-align: center;
+	&.featured-image {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 90vh;
+
+		.site-branding-container {
+			margin-bottom: auto;
+		}
+	}
+
+	@include media(tablet) {
+		margin: 0;
+		padding: 2rem 0 1.5rem;
+
+		&.featured-image {
+			min-height: 100vh;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+// Site branding
+
+.site-branding {
+
+	color: $color__text-light;
+	position: relative;
+
+	@include media(tablet) {
+		margin: 0 $size__site-margins;
+	}
+}
+
+// Site logo
+
+.site-logo {
+
+	position: relative;
+	z-index: 999;
+
+	display: inline-block;
+    margin-bottom: 0.5rem;
+
+	@include media(tablet) {
+		margin-bottom: 1rem;
+		z-index: 999;
+	}
+
+	.custom-logo-link {
+		box-sizing: content-box;
+		overflow: hidden;
+		display: block;
+
+		.custom-logo {
+			min-height: inherit;
+			max-height: 66px;
+    		vertical-align: top;
+			width: auto;
+			@include media(tablet) {
+				max-height: 88px;
+			}
+		}
+	}
+}
+
+// Site title
+
+.site-title {
+	margin: 0;
+	display: block;
+	color: $color__text-main;
+	font-size: $font__size-lg;
+	a {
+		color: $color__text-main;
+
+		&:link,
+		&:visited {
+			color: $color__text-main;
+		}
+
+		&:hover {
+			color: $color__text-hover;
+		}
+	}
+
+	.featured-image & {
+		margin: 0;
+	}
+
+	/* When there is no description set, make sure navigation appears below title. */
+	+ .main-navigation {
+		display: block;
+	}
+
+	@include media(tablet) {
+		display: block;
+	}
+
+}
+
+// Site description
+
+.site-description {
+
+	display: block;
+	color: $color__text-main;
+	font-weight: normal;
+	margin: 8px 0 0;
+}

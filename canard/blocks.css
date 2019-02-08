@@ -1,0 +1,403 @@
+/*
+Theme Name: Canard
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Block Styles
+2.0 Blocks - Common Blocks
+3.0 Blocks - Formatting
+4.0 Blocks - Layout Elements
+5.0 Blocks - Widgets
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	line-height: 1.25;
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 64px;
+}
+
+/* Images */
+
+.wp-block-cover,
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover.aligncenter {
+	display: flex;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin-bottom: 30px;
+	margin-left: auto;
+}
+
+/* Quote */
+
+.wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
+.wp-block-quote:not(.is-large):not(.is-style-large).alignright {
+}
+
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
+}
+
+.wp-block-quote cite {
+	font-style: normal;
+}
+
+.wp-block-quote cite:before {
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 120%;
+}
+
+/* Audio */
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* File */
+
+.wp-block-file a.wp-block-file__button {
+	background: #d11415;
+	border: 2px solid #d11415;
+	border-radius: 0;
+	color: #fff;
+	font-family: Lato, sans-serif;
+	font-weight: bold;
+	padding: 5.5px 13px;
+	text-transform: uppercase;
+}
+
+.wp-block-file a.wp-block-file__button:hover,
+.wp-block-file a.wp-block-file__button:focus {
+	background: #fff;
+	color: #d11415;
+	outline: none;
+}
+
+.wp-block-file a.wp-block-file__button:focus {
+	background: #fff;
+	color: #d11415;
+	outline: none;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Formatting Blocks
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	background: transparent;
+	border: 0;
+	color: inherit;
+	font-family: inherit;
+	line-height: inherit;
+	margin-bottom: 30px;
+	max-width: 100%;
+	overflow: auto;
+	padding: 0;
+}
+
+/* Code */
+
+.wp-block-code {
+	font-family: Inconsolata, monospace;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.wp-block-pullquote blockquote {
+	border-top: 4px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	color: #555;
+	font-style: italic;
+	margin: 15px 0 30px;
+	padding: 15px 0;
+	position: relative;
+}
+
+.wp-block-pullquote blockquote:before {
+	display: none;
+}
+
+.wp-block-pullquote p,
+.wp-block-pullquote.alignleft p,
+.wp-block-pullquote.alignright p {
+	font-size: 20px;
+}
+
+.wp-block-pullquote.alignleft cite,
+.wp-block-pullquote.alignright cite {
+	font-size: 16px;
+}
+
+.rtl .wp-block-pullquote blockquote {
+}
+
+.wp-block-pullquote p {
+}
+
+.wp-block-pullquote cite {
+	text-transform: none;
+	font-size: inherit;
+	font-weight: bold;
+}
+
+.wp-block-pullquote cite:before {
+}
+
+/* Table */
+
+.wp-block-table,
+.wp-block-table th,
+.wp-block-table td {
+}
+
+.wp-block-table {
+}
+
+.wp-block-table th,
+.wp-block-table td {
+}
+
+.wp-block-table th {
+}
+
+.wp-block-table td {
+}
+
+.rtl .wp-block-table th,
+.rtl .wp-block-table td {
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .wp-block-button__link {
+	border: 2px solid;
+	display: inline-block;
+	font-family: Lato, sans-serif;
+	font-weight: bold;
+	padding: 5.5px 13px;
+	text-transform: uppercase;
+}
+
+.wp-block-button__link:not(.has-background) {
+	background: #d11415;
+	border-color: #d11415;
+}
+
+.wp-block-button__link:not(.has-text-color) {
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border-color: currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #d11415;
+}
+
+.entry-content .wp-block-button .wp-block-button__link:active,
+.entry-content .wp-block-button .wp-block-button__link:focus,
+.entry-content .wp-block-button .wp-block-button__link:hover {
+	color: #d11415;
+	background: #fff;
+	border-color: #d11415;
+}
+
+/* Seperator */
+
+hr.wp-block-separator {
+	border: 0;
+}
+
+.wp-block-separator {
+	background-color: #ddd;
+	border: 0;
+	height: 1px;
+	margin-bottom: 30px;
+	max-width: 66%;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
+.wp-block-separator.is-style-wide {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widget Blocks
+--------------------------------------------------------------*/
+
+/* General Widget styles */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-archives.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-latest-comments.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Latest Comments */
+
+.editor-block-list__block .wp-block-latest-comments__comment-meta a {
+	box-shadow: none;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wp-block-latest-comments__comment-date {
+}
+
+.wp-block-latest-comments .wp-block-latest-comments__comment {
+	border-top: 1px solid #d1d1d1;
+	margin-bottom: 0;
+	padding: 30px 0;
+}
+
+.wp-block-latest-comments__comment-excerpt p:last-child {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+.has-dark-gray-color,
+.has-dark-gray-color:hover,
+.has-dark-gray-color:focus,
+.has-dark-gray-color:active {
+	color: #555;
+}
+
+.has-dark-gray-background-color,
+.has-dark-gray-background-color:hover,
+.has-dark-gray-background-color:focus,
+.has-dark-gray-background-color:active {
+	background-color: #555;
+}
+
+.has-medium-gray-color,
+.has-medium-gray-color:hover,
+.has-medium-gray-color:focus,
+.has-medium-gray-color:active {
+	color: #777;
+}
+
+.has-medium-gray-background-color,
+.has-medium-gray-background-color:hover,
+.has-medium-gray-background-color:focus,
+.has-medium-gray-background-color:active {
+	background-color: #777;
+}
+
+.has-light-gray-color,
+.has-light-gray-color:hover,
+.has-light-gray-color:focus,
+.has-light-gray-color:active {
+	color: #ddd;
+}
+
+.has-light-gray-background-color,
+.has-light-gray-background-color:hover,
+.has-light-gray-background-color:focus,
+.has-light-gray-background-color:active {
+	background-color: #ddd;
+}
+
+.has-white-color,
+.has-white-color:hover,
+.has-white-color:focus,
+,.has-white-color:active {
+	color: #fff;
+}
+
+.has-white-background-color,
+.has-white-background-color:hover,
+.has-white-background-color:focus,
+.has-white-background-color:active {
+	background-color: #fff;
+}
+
+.has-red-color,
+.has-red-color:hover,
+.has-red-color:focus,
+.has-red-color:active {
+	color: #d11415;
+}
+
+.has-red-background-color,
+.has-red-background-color:hover,
+.has-red-background-color:focus,
+.has-red-background-color:active {
+	background-color: #d11415;
+}
+
+.has-black-color,
+.has-black-color:hover,
+.has-black-color:focus,
+.has-black-color:active {
+	color: #222;
+}
+
+.has-black-background-color,
+.has-black-background-color:hover,
+.has-black-background-color:focus,
+.has-black-background-color:active {
+	background-color: #222;
+}
+

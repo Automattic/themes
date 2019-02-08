@@ -127,7 +127,8 @@ blockquote:after {
 @media all and (min-width: 768px) {
 	.main-navigation li:hover > a,
 	.main-navigation li.focus > a,
-	.main-navigation li.current-menu-item > a {
+	.main-navigation li.current-menu-item > a,
+	.main-navigation li.current-menu-item ~ li.current-menu-item > a:hover {
 		background-color: #2b6e9d;
 	}
 }
@@ -267,6 +268,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+.wp-block-button .wp-block-button__link,
 #infinite-handle span {
 	font-family: 'Libre Baskerville', 'Helvetica Neue', Helvetica, arial, sans-serif;
 }

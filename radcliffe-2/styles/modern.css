@@ -88,21 +88,28 @@ a:visited,
 	color: #aaa;
 }
 
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color) {
+	color: #fff;
+}
+
 button:hover,
 .button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
+.entry-content .wp-block-button .wp-block-button__link:hover,
 button:focus,
 .button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
+.entry-content .wp-block-button .wp-block-button__link:focus,
 button:active,
 .button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
+.entry-content .wp-block-button .wp-block-button__link:active,
 .bypostauthor .by-post-author,
 #infinite-handle span:hover {
 	background-color: #aaa;
@@ -131,7 +138,8 @@ input[type="submit"]:active,
 @media all and (min-width: 768px) {
 	.main-navigation li:hover > a,
 	.main-navigation li.focus > a,
-	.main-navigation li.current-menu-item > a {
+	.main-navigation li.current-menu-item > a,
+	.main-navigation li.current-menu-item ~ li.current-menu-item > a:hover {
 		background-color: #e8e8e8;
 		color: #606060;
 	}
@@ -175,6 +183,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+.wp-block-button .wp-block-button__link,
 #infinite-handle span {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, arial, sans-serif;
 }
