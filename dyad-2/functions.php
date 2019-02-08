@@ -191,7 +191,13 @@ function dyad_2_count_widgets( $id ) {
 	$sidebars_widgets = wp_get_sidebars_widgets();
 
 	if ( array_key_exists( $id, $sidebars_widgets ) ) {
-		$count = ( int ) count( ( array ) $sidebars_widgets[ $id ] );
+
+		foreach ( ( array ) $sidebars_widgets[ $id ] as $value ) {
+			// Don't count the Cookies or Mailchimp widgets, since they're not visible in the widget area.
+			if ( strpos( $value, 'eu_cookie_law_widget' ) === 0 || strpos( $value, 'widget_mailchimp_subscriber_popup' ) === 0 ) {
+				$count++;
+			}
+		}
 	}
 	return $count;
 }
