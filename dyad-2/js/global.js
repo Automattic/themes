@@ -95,7 +95,7 @@
 				$contentHeight = $content.innerHeight(),
 				$wholeContentHeight = $headerHeight + $contentHeight;
 
-			if ( ( $innerContainHeight - $linkMoreHeight ) <= $wholeContentHeight ) {
+			if ( ( $innerContainHeight - $linkMoreHeight ) < $wholeContentHeight ) {
 				$contain.parent().addClass('too-short');
 			} else {
 				$contain.parent().removeClass('too-short');
