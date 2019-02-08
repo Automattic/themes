@@ -29,13 +29,23 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php // Set Up New Query
-				$paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
+				if ( get_query_var( 'paged' ) ) :
+					$paged = get_query_var( 'paged' );
+				elseif ( get_query_var( 'page' ) ) :
+					$paged = get_query_var( 'page' );
+				else :
+					$paged = 1;
+				endif;
+
+				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '10' );
+
 				$temp = null;
 				$project_query = $temp;
 				$project_query = new WP_Query();
 				$project_query->query( array(
 					'post_type'    => 'jetpack-portfolio',
 					'paged'        => $paged,
+					'posts_per_page' => $posts_per_page,
 					'post__not_in' => $featured_ids
 				) ); ?>
 
@@ -57,7 +67,7 @@ get_header(); ?>
 
 				</div>
 
-				<?php the_posts_navigation(); ?>
+				<?php rebalance_paging_nav( $project_query->max_num_pages ); ?>
 
 			<?php else : ?>
 
