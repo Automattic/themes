@@ -25,6 +25,7 @@ function photos_custom_header_setup() {
 		'height'                 => 400,
 		'flex-height'            => true,
 		'flex-width'             => true,
+		'wp-head-callback'       => 'photos_header_style'
 	) ) );
 }
 add_action( 'after_setup_theme', 'photos_custom_header_setup' );
