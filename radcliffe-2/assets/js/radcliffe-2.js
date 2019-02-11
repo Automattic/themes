@@ -70,6 +70,11 @@
 		fullScreenImages();
 	});
 
+	// One more time after everything (eg: Custom Fonts) has loaded for better height accuracy
+	$( window ).load( function() {
+		fullScreenImages();
+	});
+
 	// On window resize.
 	$( window ).on( 'resize', function() {
 		fullScreenImages();
