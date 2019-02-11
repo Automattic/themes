@@ -232,6 +232,11 @@ require get_template_directory() . '/inc/logo-resizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load Custom Header funtionality.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
  * SVG icons functions and filters.
  */
 require get_template_directory() . '/inc/icon-functions.php';
