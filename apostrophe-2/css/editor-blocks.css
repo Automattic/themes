@@ -297,32 +297,50 @@
 
 /* Quote */
 
-.editor-block-list__block .wp-block-quote {
-	border-left: 4px solid #d9d9d9;
+.wp-block-quote {
 	font-size: 19px;
 	font-style: italic;
 	margin: 0 1.5em 1.5em 0;
 	padding-left: 1.5em;
 }
 
-.editor-block-list__block .wp-block-quote p {
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	border-color: #d9d9d9;
+	border-width: 4px;
+}
+
+.wp-block-quote p {
 	color: inherit;
 	font-size: 19px;
 }
 
-.rtl .editor-block-list__block .wp-block-quote {
+.rtl .wp-block-quote {
+	margin: 0 0 1.5em 1.5em;
+}
+
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:right"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: right"] {
 	border-left: 0;
 	border-right: 4px solid #d9d9d9;
-	margin: 0 0 1.5em 1.5em;
 	padding-left: 0;
 	padding-right: 1.5em;
 }
 
-.editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
-.editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"] {
 	border-left: 4px solid #d9d9d9;
+	border-right: 0;
 	padding-left: 1.5em;
+	padding-right: 0;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:center"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: center"] {
+	border-left: 0;
+	border-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .editor-block-list__block .wp-block-quote__citation {
@@ -333,30 +351,13 @@
 	margin-top: 0.25em;
 }
 
-.editor-block-list__block .wp-block-quote__citation:before {
-	content: "—";
-}
-
 .editor-block-list__block .wp-block-quote em,
-.editor-block-list__block .wp-block-quote i,
-.editor-block-list__block .wp-block-quote__citation:before {
+.editor-block-list__block .wp-block-quote i {
 	font-style: normal;
 }
 
 .editor-block-list__block .wp-block-quote > :last-child {
 	margin-bottom: 0;
-}
-
-.editor-block-list__block .wp-block-quote.alignleft {
-	margin: .75em 1.5em .75em 0;
-}
-
-.editor-block-list__block .wp-block-quote.alignright {
-	margin: .75em 0 .75em 1.5em;
-}
-
-.editor-block-list__block .wp-block-quote.aligncenter {
-	margin-bottom: 1.5em;
 }
 
 .editor-block-list__block .wp-block-quote.is-large,

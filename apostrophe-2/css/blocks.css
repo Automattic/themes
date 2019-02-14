@@ -144,9 +144,19 @@ body {
 
 /* Quote */
 
-.wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
-.wp-block-quote:not(.is-large):not(.is-style-large).alignright {
+.wp-block-quote:not(.is-large):not(.is-style-large)[style="text-align:right"] {
+	border-left: 0;
+	border-right: 4px solid #d9d9d9;
+	padding-left: 0;
+	padding-right: 1.5em;
 }
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style="text-align:center"] {
+	border: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
 
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
 .rtl .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
