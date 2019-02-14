@@ -33,7 +33,7 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	/* Address */
 	$wp_customize->add_setting( 'site_contact_info[address]', array(
 		'type'                 => 'option',
-		'sanitize_callback'    => 'sanitize_text_field',
+		'sanitize_callback'    => 'radcliffe_2_contact_info_sanitize_address',
 		'sanitize_js_callback' => radcliffe_2_generate_contact_compat_callback( 'address' ),
 		'transport'            => 'postMessage',
 	) );
@@ -50,7 +50,7 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	/* Phone */
 	$wp_customize->add_setting( 'site_contact_info[phone]', array(
 		'type'                 => 'option',
-		'sanitize_callback'    => 'sanitize_text_field',
+		'sanitize_callback'    => 'radcliffe_2_contact_info_sanitize_phone',
 		'sanitize_js_callback' => radcliffe_2_generate_contact_compat_callback( 'phone' ),
 		'transport'            => 'postMessage',
 	) );
@@ -67,7 +67,7 @@ function radcliffe_2_contact_info_customize_register( $wp_customize ) {
 	/* Email */
 	$wp_customize->add_setting( 'site_contact_info[email]', array(
 		'type'                 => 'option',
-		'sanitize_callback'    => 'sanitize_email',
+		'sanitize_callback'    => 'radcliffe_2_contact_info_sanitize_email',
 		'sanitize_js_callback' => radcliffe_2_generate_contact_compat_callback( 'email' ),
 		'transport'            => 'postMessage',
 	) );
@@ -129,6 +129,48 @@ function radcliffe_2_generate_contact_compat_callback( $name ) {
  */
 function radcliffe_2_contact_info_sanitize_checkbox( $input ) {
 	return ( 1 == $input ? true : false );
+}
+
+/**
+ * Sanitize the Contact Info address value and remove legacy theme_mod value,
+ * since we're saving the values in blog options as of r52410.
+ *
+ * @param string $value.
+ * @return string.
+ */
+function radcliffe_2_contact_info_sanitize_address( $value ) {
+	if ( ! empty( get_theme_mod( 'radcliffe_2_contact_info_address' ) ) ) {
+		remove_theme_mod( 'radcliffe_2_contact_info_address' );
+	}
+	return sanitize_text_field( $value );
+}
+
+/**
+ * Sanitize the Contact Info phone value and remove legacy theme_mod value,
+ * since we're saving the values in blog options as of r52410.
+ *
+ * @param string $value.
+ * @return string.
+ */
+function radcliffe_2_contact_info_sanitize_phone( $value ) {
+	if ( ! empty( get_theme_mod( 'radcliffe_2_contact_info_phone' ) ) ) {
+		remove_theme_mod( 'radcliffe_2_contact_info_phone' );
+	}
+	return sanitize_text_field( $value );
+}
+
+/**
+ * Sanitize the Contact Info email value and remove legacy theme_mod value,
+ * since we're saving the values in blog options as of r52410.
+ *
+ * @param string $value.
+ * @return string.
+ */
+function radcliffe_2_contact_info_sanitize_email( $value ) {
+	if ( ! empty( get_theme_mod( 'radcliffe_2_contact_info_email' ) ) ) {
+		remove_theme_mod( 'radcliffe_2_contact_info_email' );
+	}
+	return sanitize_email( $value );
 }
 
 /**
