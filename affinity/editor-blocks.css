@@ -271,17 +271,26 @@
 	font-style: italic;
 	margin: 0;
 	margin-bottom: .8em;
-	border-top: 3px solid #e8e9ea;
-	border-bottom: 1px solid #e8e9ea;
 	padding-top: .8em;
 	padding-bottom: .8em;
 }
 
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align: center"] {
+	border-top: 3px solid #e8e9ea;
+	border-bottom: 1px solid #e8e9ea;
+}
+
+.wp-block-quote[style*="text-align:right"],
+.wp-block-quote[style*="text-align: right"],
 .wp-block-quote:not(.is-large):not(.is-style-large),
 .wp-block-quote:not(.is-large):not(.is-style-large).alignleft,
 .wp-block-quote:not(.is-large):not(.is-style-large).alignright {
 	border-left: 0;
+	border-right: 0;
 	padding-left: 0;
+	padding-right: 0;
 }
 
 .edit-post-visual-editor .editor-block-list__block .wp-block-quote p {
