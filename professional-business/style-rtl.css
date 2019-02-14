@@ -3182,13 +3182,17 @@ body.page .main-navigation {
 }
 
 /* 404 & Not found */
+.error-404.not-found .page-title,
 .error-404.not-found .page-content,
+.no-results.not-found .page-title,
 .no-results.not-found .page-content {
   margin: calc(3 * 1rem) 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+  .error-404.not-found .page-title,
   .error-404.not-found .page-content,
+  .no-results.not-found .page-title,
   .no-results.not-found .page-content {
     margin: calc(3 * 1rem) calc(10% + 60px) calc(1rem / 2);
   }
@@ -3848,7 +3852,8 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-quote:not(.is-large), .entry .entry-content .wp-block-quote:not(.is-style-large) {
-  border-right: 2px solid #0073aa;
+  border-color: #0073aa;
+  border-width: 2px;
   padding-top: 0;
   padding-bottom: 0;
 }
