@@ -63,22 +63,34 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Quote */
 
-.entry-content .wp-block-quote {
+.wp-block-quote,
+.rtl .wp-block-quote[style*="text-align:left"] {
 	border-left: 6px solid #f35029;
+	border-right: 0;
 	font-family: "Libre Baskerville", Georgia, serif;
 	font-style: italic;
 	font-size: 18px;
 	line-height: 1.825em;
 	margin: 0 0 1.5em -40px;
 	padding-left: 40px;
+	padding-right: 0;
 }
 
-.rtl .entry-content .wp-block-quote {
+.rtl .wp-block-quote,
+.wp-block-quote[style*="text-align:right"] {
 	border-left: 0;
 	border-right: 6px solid #f35029;
 	margin: 0 -40px 1.5em 0;
 	padding-left: 0;
 	padding-right: 40px;
+}
+
+.wp-block-quote[style*="text-align:center"] {
+	border: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .wp-block-quote cite {
@@ -95,10 +107,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
-}
-
-.wp-block-quote.is-large,
 .wp-block-quote.is-style-large,
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
@@ -108,10 +116,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
 	margin-bottom: 1.5em;
-}
-
-.rtl .wp-block-quote {
-	border: 0;
 }
 
 /* Audio */
