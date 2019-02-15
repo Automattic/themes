@@ -97,15 +97,35 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Quote */
 
-.wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
-	border: 0;
-	padding: 0;
-}
-
 .wp-block-quote.is-large cite,
 .wp-block-quote.is-style-large cite {
 	text-align: inherit;
+}
+
+.rtl .wp-block-quote,
+.wp-block-quote[style*="text-align:right"] {
+	margin-left: .875em;
+	margin-right: -1.9em;
+	padding-left: 0;
+	padding-right: 1.75em;
+	border-width: 0 3px 0 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"] {
+	margin-left: -1.9em;
+	margin-right: .875em;
+	padding-left: 1.75em;
+	padding-right: 0;
+	border-width: 0 0 0 3px;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
+.wp-block-quote[style*="text-align:center"] {
+	border: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0;
 }
 
 /* Audio */
