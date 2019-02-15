@@ -290,10 +290,27 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin: 1.75em 0;
 }
 
-.wp-block-quote:not(.is-large):not(.is-style-large) {
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"] {
 	border: solid #0087be;
 	border-width: 0 0 0 3px;
 	padding: 0 0 0 1.75em;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: center"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:center"] {
+	border: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: right"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:right"] {
+	border-width: 0 3px 0 0;
+	padding: 0 1.75em 0 0;
 }
 
 .wp-block-quote__citation {
