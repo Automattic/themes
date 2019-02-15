@@ -67,10 +67,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Quote */
 
 .wp-block-quote.is-large,
-.wp-block-quote.is-style-large {
-}
-
-.wp-block-quote.is-large,
 .wp-block-quote.is-style-large,
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
@@ -90,9 +86,22 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-align: left;
 }
 
-.rtl .wp-block-quote {
+.rtl .wp-block-quote,
+.wp-block-quote[style*="text-align:right"] {
 	border-left: 0;
 	border-right: 4px solid #f0f0f0;
+	padding: 0 30px 0 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"] {
+	border-left: 4px solid #f0f0f0;
+	border-right: 0;
+	padding: 0 0 0 30px;
+}
+
+.wp-block-quote[style*="text-align:center"] {
+	border: 0;
+	padding: 0;
 }
 
 /* Audio */
