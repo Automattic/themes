@@ -430,13 +430,13 @@
 
 /* Quote */
 
-.editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
+.wp-block-quote) {
 	margin: 0;
 	padding-left: 40px;
 	border-left: 2px solid #e06d5e;
 }
 
-.editor-block-list__block .wp-block-quote {
+.wp-block-quote {
 	padding-left: 40px;
 	margin: 0;
 	font-family: "PT Serif", serif;
@@ -445,7 +445,7 @@
 }
 
 @media screen and (max-width: 767px) {
-	.editor-block-list__block .wp-block-quote {
+	.wp-block-quote {
 		padding-left: 20px;
 		font-size: 21px;
 	}
@@ -477,30 +477,6 @@
 	margin-bottom: 0;
 }
 
-.editor-block-list__block .wp-block-quote.alignleft {
-	margin: 20px 40px 20px 0;
-}
-
-@media screen and (min-width: 1260px) {
-	.editor-block-list__block .wp-block-quote.alignleft {
-		margin-left: -130px;
-	}
-}
-
-.editor-block-list__block .wp-block-quote.alignright {
-	margin: 20px 0 20px 40px;
-}
-
-@media screen and (min-width: 1260px) {
-	.editor-block-list__block .wp-block-quote.alignright {
-		margin-left: -130px;
-	}
-}
-
-.editor-block-list__block .wp-block-quote.aligncenter {
-	margin-bottom: 20px;
-}
-
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	padding-left: 40px;
@@ -519,25 +495,38 @@
 	margin-bottom: 20px;
 }
 
-.rtl .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
-.rtl .editor-block-list__block .wp-block-quote {
+.rtl .wp-block-quote,
+.wp-block-quote[style*="text-align:right"],
+.wp-block-quote[style*="text-align: right"] {
 	border-left: 0;
 	border-right: 2px solid #e06d5e;
-	padding-left: 0;
-	padding-right: 40px;
+	padding: 0 20px 0 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"],
+.rtl .wp-block-quote[style*="text-align: left"] {
+	border-left: 2px solid #e06d5e;
+	border-right: 0;
+	padding: 0 0 0 40px;
+}
+
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align: center"] {
+	border: 0;
+	padding: 0;
 }
 
 @media screen and (max-width: 767px) {
-	.rtl .editor-block-list__block .wp-block-quote {
-		padding-left: 0;
-		padding-right: 20px;
+	.rtl .wp-block-quote,
+	.wp-block-quote[style*="text-align:right"],
+	.wp-block-quote[style*="text-align: right"] {
+		padding: 0 20px 0 0;
 	}
-}
 
-.rtl .wp-block-quote.is-large,
-.rtl .wp-block-quote.is-style-large {
-	padding-left: 0;
-	padding-right: 40px;
+	.rtl .wp-block-quote[style*="text-align:left"],
+	.rtl .wp-block-quote[style*="text-align: left"] {
+		padding: 0 0 0 20px;
+	}
 }
 
 /* Cover */
