@@ -69,6 +69,26 @@ blockquote cite {
 	font-style: normal;
 }
 
+.wp-block-quote[style*="text-align:right"] {
+	padding-left: 0;
+	padding-right: 2.4em;
+}
+
+.wp-block-quote[style*="text-align:right"]::before {
+	left: auto;
+	right: -10px;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"] {
+	padding-left: 2.4em;
+	padding-right: 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"]::before {
+	left: -10px;
+	right: auto;
+}
+
 .wp-block-quote cite {
 	display: block;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
