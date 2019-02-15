@@ -87,9 +87,31 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .rtl .wp-block-quote.is-large,
-.rtl .wp-block-quote.is-style-large {
+.rtl .wp-block-quote.is-style-large,
+.wp-block-quote[style*="text-align:right"],
+.wp-block-quote.is-large[style*="text-align:right"],
+.wp-block-quote.is-style-large[style*="text-align:right"] {
+	border-left: 0;
+	border-right: 3px solid #eee;
 	padding-left: 0;
 	padding-right: 24px;
+}
+
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote.is-large[style*="text-align:center"],
+.wp-block-quote.is-style-large[style*="text-align:center"] {
+	border: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"],
+.rtl .wp-block-quote.is-large[style*="text-align:left"],
+.rtl .wp-block-quote.is-style-large[style*="text-align:left"] {
+	border-left: 3px solid #eee;
+	border-right: 0;
+	padding-left: 24px;
+	padding-right: 0;
 }
 
 /* Audio */
