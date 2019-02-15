@@ -181,9 +181,14 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 /* Blockquotes*/
-.wp-block-quote {
+.wp-block-quote,
+.rtl .wp-block-quote[style*="text-align:left"] {
 	border-left: 4px solid #d63031;
-	padding-left: 2.7rem;
+}
+
+.wp-block-quote[style*="text-align:right"] {
+	border: 0;
+	border-right: 4px solid #d63031;
 }
 
 .rtl .wp-block-quote {
