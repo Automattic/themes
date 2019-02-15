@@ -144,9 +144,38 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-bottom: .8em;
 }
 
-.rtl .wp-block-quote {
+.rtl .wp-block-quote,
+.wp-block-quote[style*="text-align:right"] {
 	border: 0;
 	border-right: 2px solid #e06d5e;
+	padding: 0 40px 0 0;
+}
+
+.wp-block-quote[style*="text-align:center"] {
+	border: 0;
+	padding: 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"] {
+	border: 0;
+	border-left: 2px solid #e06d5e;
+	padding: 0 0 0 40px;
+}
+
+@media screen and (max-width: 767px) {
+	.wp-block-quote.is-large,
+	.wp-block-quote.is-style-large {
+		padding-left: 20px;
+	}
+
+	.rtl .wp-block-quote,
+	.wp-block-quote[style*="text-align:right"] {
+		padding: 0 20px 0 0;
+	}
+
+	.rtl .wp-block-quote[style*="text-align:left"] {
+		padding: 0 0 0 20px;
+	}
 }
 
 /* Audio */
