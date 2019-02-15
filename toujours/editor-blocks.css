@@ -423,21 +423,38 @@
 
 /* Quote */
 
-.editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
-.editor-block-list__block .wp-block-quote {
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-quote,
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"],
+.rtl .wp-block-quote[style*="text-align:left"],
+.rtl .wp-block-quote[style*="text-align: left"] {
 	color: #888;
+	border: 0;
 	border-left: 4px solid #f0f0f0;
 	margin: 0 0 1.5em;
 	padding: 0 0 0 30px;
 }
 
-.rtl .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large),
-.rtl .editor-block-list__block .wp-block-quote {
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:right"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: right"],
+.wp-block-quote[style*="text-align:right"],
+.wp-block-quote[style*="text-align: right"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large),
+.rtl .wp-block-quote {
 	border: 0;
 	border-right: 4px solid #f0f0f0;
 	margin: 0;
 	padding-left: 0;
 	padding-right: 30px;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:center"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: center"],
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align: center"] {
+	border: 0;
+	padding: 0;
 }
 
 .edit-post-visual-editor .editor-block-list__block blockquote p {
@@ -463,18 +480,6 @@
 
 .editor-block-list__block .wp-block-quote > :last-child {
 	margin-bottom: 0;
-}
-
-.editor-block-list__block .wp-block-quote.alignleft {
-	margin: .75em 1.5em .75em 0;
-}
-
-.editor-block-list__block .wp-block-quote.alignright {
-	margin: .75em 0 .75em 1.5em;
-}
-
-.editor-block-list__block .wp-block-quote.aligncenter {
-	margin-bottom: .75em;
 }
 
 .wp-block-quote.is-large,
