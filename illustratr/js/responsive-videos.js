@@ -13,11 +13,11 @@
 	function responsive_videos() {
 
 		$( '.video-wrapper embed, .video-wrapper iframe, .video-wrapper object' ).each( function() {
-			
-			if ( $( '.wp-block-column .video-wrapper embed, .wp-block-column .video-wrapper iframe, .wp-block-column .video-wrapper object' ) ) {
+
+			if ( $( this ).parents( '.wp-block-column' ).length ) {
 				return;
 			}
-			
+
 			var video_ratio     = $( this ).attr( 'data-ratio' ),
 			    video_width     = $( this ).attr( 'data-width' ),
 			    video_height    = $( this ).attr( 'data-height' );
@@ -44,6 +44,10 @@
 		} );
 
 		$( '.hentry.format-video .entry-media embed, .hentry.format-video .entry-media iframe, .hentry.format-video .entry-media object, .hentry.format-video > .video-wrapper embed, .hentry.format-video > .video-wrapper iframe, .hentry.format-video > .video-wrapper object, .portfolio-entry embed, .portfolio-entry iframe, .portfolio-entry object' ).each( function() {
+
+			if ( $( this ).parents( '.wp-block-column' ).length ) {
+				return;
+			}
 
 			var video_ratio   = $( this ).attr( 'data-ratio' ),
 			    video_wrapper = $( this ).parent();
