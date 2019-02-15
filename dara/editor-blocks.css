@@ -274,13 +274,19 @@
 
 /* Quote */
 
-.editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"] {
 	border: 0;
 	padding-left: 2.4em;
 	padding-right: 0;
 }
 
-.editor-block-list__block .wp-block-quote {
+.wp-block-quote,
+.rtl .wp-block-quote[style*="text-align:left"],
+.rtl .wp-block-quote[style*="text-align: left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"] {
 	border: none;
 	margin-left: 0;
 	margin-bottom: 1.6em;
@@ -295,7 +301,9 @@
 	font-style: normal;
 }
 
-.editor-block-list__block .wp-block-quote:before {
+.wp-block-quote::before,
+.rtl .wp-block-quote[style*="text-align:left"]::before,
+.rtl .wp-block-quote[style*="text-align: left"]::before {
 	color: #ccc;
 	content: "\201C";
 	font-family: "Yrsa", Georgia, serif;
@@ -305,6 +313,21 @@
 	position: absolute;
 	top: -5px;
 	left: -10px;
+	right: auto;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:right"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: right"],
+.wp-block-quote[style*="text-align:right"],
+.wp-block-quote[style*="text-align: right"] {
+	padding-left: 0;
+	padding-right: 2.4em;
+}
+
+.wp-block-quote[style*="text-align:right"]::before,
+.wp-block-quote[style*="text-align: right"]::before {
+	left: auto;
+	right: -10px;
 }
 
 .editor-block-list__block .wp-block-quote__citation {
@@ -317,18 +340,18 @@
 	text-transform: uppercase;
 }
 
-.rtl .editor-block-list__block .wp-block-quote:not(.is-large):not(.is-style-large) {
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large) {
 	padding-left: 0;
 	padding-right: 2.4em;
 }
 
-.rtl .editor-block-list__block .wp-block-quote.is-large,
-.rtl .editor-block-list__block .wp-block-quote.is-style-large {
+.rtl .wp-block-quote.is-large,
+.rtl .wp-block-quote.is-style-large {
 	padding-left: 0;
 	padding-right: 1.6em;
 }
 
-.rtl .editor-block-list__block .wp-block-quote:before {
+.rtl .wp-block-quote:before {
 	position: absolute;
 	left: auto;
 	right: -10px;
