@@ -97,10 +97,31 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-bottom: 1.5em;
 }
 
-.wp-block-quote:not(.is-large):not(.is-style-large) {
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style="text-align:left"] {
 	border-left: 3px solid #ddd;
+	border-right: 0;
 	margin: 0 0 1.5em 1.5em;
 	padding-left: 1.5em;
+	padding-right: 0;
+}
+
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-quote:not(.is-large):not(.is-style-large)[style="text-align:right"] {
+	border-left: 0;
+	border-right: 3px solid #ddd;
+	margin-left: 0;
+	margin-right: 1.5em;
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large)[style="text-align:center"] {
+	border: 0;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .wp-block-quote p:not(:last-child) {
@@ -119,15 +140,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-quote.is-style-large cite {
 	font-size: 80%;
 	text-align: inherit;
-}
-
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large) {
-	border-left: 0;
-	border-right: 3px solid #ddd;
-	margin-left: 0;
-	margin-right: 1.5em;
-	padding-left: 0;
-	padding-right: 1.5em;
 }
 
 /* Audio */

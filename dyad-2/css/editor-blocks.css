@@ -250,10 +250,38 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-bottom: 1.5em;
 }
 
-.wp-block-quote:not(.is-large):not(.is-style-large) {
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"] {
 	border-left: 3px solid #ddd;
+	border-right: 0;
 	margin-left: 1.5em;
+	margin-right: 0;
 	padding-left: 1.5em;
+	padding-right: 0;
+}
+
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: right"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:right"] {
+	border-left: 0;
+	border-right: 3px solid #ddd;
+	margin-left: 0;
+	margin-right: 1.5em;
+	padding-left: 0;
+	padding-right: 1.5em;
+}
+
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: center"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: center"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:center"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:center"] {
+	border-left: 0;
+	border-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .edit-post-visual-editor .editor-block-list__block .wp-block-quote p {
