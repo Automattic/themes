@@ -118,6 +118,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-align: right;
 }
 
+.wp-block-quote[style="text-align:right"]:before {
+	content: "\201D";
+	left: auto;
+	right: -35px;
+}
+
+.rtl .wp-block-quote[style="text-align:left"]:before {
+	content: "\201C";
+	left: -35px;
+	right: auto;
+}
+
 /* Audio */
 
 .wp-block-audio {

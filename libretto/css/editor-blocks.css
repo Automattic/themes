@@ -529,7 +529,9 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	padding: 0;
 }
 
-.editor-block-list__block .wp-block-quote:before {
+.wp-block-quote:before,
+.rtl .wp-block-quote[style*="text-align:left"]:before,
+.rtl .wp-block-quote[style*="text-align: left"]:before {
 	color: #ebe7e1;
 	content: "\201C";
 	display: block;
@@ -542,7 +544,9 @@ See: https://stackoverflow.com/questions/16348489/is-there-a-css-hack-for-safari
 	z-index: -1;
 }
 
-.rtl .editor-block-list__block .wp-block-quote:before {
+.rtl .wp-block-quote:before,
+.wp-block-quote[style*="text-align:right"]:before,
+.wp-block-quote[style*="text-align: right"]:before {
 	content: "\201D";
 	left: auto;
 	right: -35px;
