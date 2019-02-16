@@ -249,9 +249,9 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Quote */
 
-.editor-styles-wrapper .wp-block-quote p,
-.editor-styles-wrapper .wp-block-quote.is-large p,
-.editor-styles-wrapper .wp-block-quote.is-style-large p {
+.wp-block-quote p,
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
 	margin-bottom: 1.0em;
 }
 
@@ -260,12 +260,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding-left: 0.5em;
 }
 
-.editor-styles-wrapper .wp-block-quote:before {
+.wp-block-quote:before {
 	left: -40.5px;
 }
 
-.editor-styles-wrapper .wp-block-quote.wp-block-quote.is-large:before,
-.editor-styles-wrapper .wp-block-quote.wp-block-quote.is-style-large:before {
+.wp-block-quote.is-large:before,
+.wp-block-quote.is-style-large:before {
 	display: none
 }
 
@@ -292,24 +292,33 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 18px;
 }
 
-.rtl .wp-block-quote:not(.is-large):not(.is-style-large) {
-	padding-left: 0;
-	padding-right: 0.5em;
-}
-
-.rtl .editor-styles-wrapper .wp-block-quote:before {
+.rtl .wp-block-quote:before,
+.wp-block-quote[style*="text-align:right"]:before,
+.wp-block-quote[style*="text-align: right"]:before {
 	left: auto;
 	right: -40.5px;
 }
 
-@media (min-width: 720px) {
-	.wp-block-quote:not(.is-large):not(.is-style-large)  {
-		padding-left: 4em;
-	}
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:left"],
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: left"] {
+	padding-left: 0.5em;
+	padding-right: 0;
+}
 
-	.wp-block-quote:not(.is-large):not(.is-style-large) {
-		padding-left: 2.0em;
-	}
+.rtl .wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align:right"],
+.wp-block-quote:not(.is-large):not(.is-style-large)[style*="text-align: right"] {
+	padding-left: 0;
+	padding-right: 0.5em;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"]:before,
+.rtl .wp-block-quote[style*="text-align: left"]:before {
+	left: -40.5px;
+	right: auto;
+}
+
+@media (min-width: 720px) {
 
 	.edit-post-visual-editor .editor-block-list__block .wp-block-quote p {
 		font-size: 23px;
@@ -329,14 +338,15 @@ p.has-drop-cap:not(:focus)::first-letter {
 		font-size: 23px;
 	}
 
-	.rtl .wp-block-quote:not(.is-large):not(.is-style-large)  {
-		padding-left: 0;
-		padding-right: 4em;
+	.rtl .wp-block-quote:before,
+	.wp-block-quote[style*="text-align:right"]:before,
+	.wp-block-quote[style*="text-align: right"]:before {
+		right: -70.5px;
 	}
 
-	.rtl .wp-block-quote:not(.is-large):not(.is-style-large) {
-		padding-left: 0;
-		padding-right: 2.0em;
+	.rtl .wp-block-quote[style*="text-align:left"]:before,
+	.rtl .wp-block-quote[style*="text-align: left"]:before {
+		left: -70.5px;
 	}
 }
 
