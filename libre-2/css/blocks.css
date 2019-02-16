@@ -153,6 +153,38 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-align: inherit;
 }
 
+.wp-block-quote[style*="text-align:right"]{
+	margin-left: 0;
+	margin-right: 3.5em;
+}
+
+.wp-block-quote[style*="text-align:right"]::before {
+	left: auto;
+	right: 0.6em;
+}
+
+@media (min-width: 720px){
+	.wp-block-quote[style*="text-align:right"]::before {
+		right: -0.6em;
+	}
+}
+
+.rtl .wp-block-quote[style*="text-align:left"]{
+	margin-left: 3.5em;
+	margin-right: 0;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"]::before {
+	left: 0.6em;
+	right: auto;
+}
+
+@media (min-width: 720px){
+	.rtl .wp-block-quote[style*="text-align:left"]::before {
+		left: -0.6em;
+	}
+}
+
 /* Audio */
 
 .wp-block-audio {
