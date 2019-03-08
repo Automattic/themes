@@ -884,17 +884,16 @@
 			}
 
 			&[class*='has-'] > * {
+				margin-left: $size__spacing-unit;
 				margin-right: $size__spacing-unit;
+
+				&:first-child {
+					margin-left: 0;
+				}
 
 				&:last-child {
 					margin-right: 0;
 				}
-			}
-
-			&.alignfull,
-			&.alignfull .wp-block-column {
-				padding-left: calc(2 * #{$size__spacing-unit});
-				padding-right: calc(2 * #{$size__spacing-unit});
 			}
 		}
 	}
