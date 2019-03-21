@@ -178,7 +178,8 @@ add_color_rule( 'extra', '#ffffff', array(
 
 	array( '.main-navigation li:hover > a,
 			.main-navigation li.focus > a,
-			.main-navigation ul li.current-menu-item > a', 'color', 'link', 3 ),
+			.main-navigation ul li.current-menu-item > a,
+			button:hover', 'color', 'link', 3 ),
 
 	array( 'a:hover + .dropdown-toggle,
 			a:focus + .dropdown-toggle,
@@ -257,7 +258,6 @@ add_color_rule( 'extra', '#222222', array(
 			.contact-info-area,
 			.contact-info-area a,
 			body,
-			button,
 			th', 'color', 'bg' ),
 
 	array( '.button,
