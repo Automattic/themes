@@ -1,0 +1,65 @@
+/* !Site Builder styles */
+
+.entry .entry-content {
+
+	// Site header
+
+	.site-builder__header {
+		align-items: center;
+		color: $color__text-light;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		line-height: 1.25;
+		position: relative;
+		display: flex;
+
+		left: calc( -#{$size__spacing-unit } + 1em );
+		width: calc( 100% + (2 * #{$size__spacing-unit}) - 2em );
+		max-width: calc( 100% + (2 * #{$size__spacing-unit}) + 2em );
+
+		@include media(tablet) {
+			left: calc( -12.5% - 75px + 1em );
+			width: calc( 125% + 150px - 2em );
+			max-width: calc( 125% + 150px + 2em );
+		}
+	}
+
+	// Site title
+
+	.site-builder__title {
+		color: $color__text-main;
+		flex: 1 1 auto;
+		font-family: $font__heading;
+		font-size: $font__size-md;
+		font-weight: 600;
+		letter-spacing: 0;
+		line-height: $font__line-height-heading;
+		margin: 0;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+
+			&:link,
+			&:visited {
+				color: $color__text-main;
+			}
+
+			&:hover {
+				color: $color__text-hover;
+			}
+		}
+	}
+
+	// Site description
+
+	.site-builder__description {
+		flex: initial;
+		color: $color__text-main;
+		font-size: $font__size-xs;
+		font-weight: normal;
+		margin: 0.27rem 0 0;
+	}
+}
