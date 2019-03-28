@@ -1,0 +1,59 @@
+/* !Site Builder styles */
+
+.entry .entry-content {
+
+	// Site header
+
+	.site-builder__header {
+		color: $color__text-light;
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		text-align: center;
+	}
+
+	// Site title
+
+	.site-builder__title {
+		color: $color__text-main;
+		font-family: $font__heading;
+		font-weight: 700;
+		font-size: $font__size-md;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		letter-spacing: 0;
+		line-height: $font__line-height-heading;
+		margin: 0;
+		order: 2;
+
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+
+			&:link,
+			&:visited {
+				color: $color__text-main;
+			}
+
+			&:hover {
+				color: $color__text-hover;
+			}
+		}
+
+		@include media(tablet) {}
+
+		&:not(:empty) + .site-description:not(:empty):before {
+			margin: 0 0.2em;
+		}
+	}
+
+	// Site description
+
+	.site-builder__description {
+		color: $color__text-main;
+		font-size: $font__size-xs;
+		font-weight: 300;
+		margin: 0 0 calc(0.5 * #{$size__spacing-unit});
+		order: 1;
+	}
+}

@@ -1,0 +1,61 @@
+/* !Site Builder styles */
+
+.entry .entry-content {
+
+	// Site header
+
+	.site-builder__header {
+		align-items: center;
+		color: $color__text-light;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-width: 100%;
+		position: relative;
+	}
+
+	// Site title
+
+	.site-builder__title {
+		color: $color__text-main;
+		flex: 1 1 auto;
+		font-family: $font__heading;
+		font-size: $font__size-md;
+		font-weight: 600;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		line-height: $font__line-height-heading;
+		margin: 0;
+
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+
+			&:link,
+			&:visited {
+				color: $color__text-main;
+			}
+
+			&:hover {
+				color: $color__text-hover;
+			}
+		}
+	}
+
+	/* Adjust Crimson Text font vertical alignment in Firefox */
+	@-moz-document url-prefix() {
+		.site-builder__title {
+			padding-top: 8px;
+		}
+	}
+
+	// Site description
+
+	.site-builder__description {
+		color: $color__text-main;
+		flex: initial;
+		font-size: $font__size-xs;
+		font-weight: normal;
+		margin: 7px 0 0;
+	}
+}
