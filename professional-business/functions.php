@@ -83,6 +83,11 @@ add_action( 'wp_enqueue_scripts', 'professional_business_scripts' );
 function professional_business_block_editor_scripts() {
 
 	/**
+	 * Styles
+	 */
+	wp_enqueue_style( 'professional-business-fonts', professional_business_fonts_url(), array(), null );
+
+	/**
 	 * Block Editor Scripts
 	 */
 	wp_enqueue_script( 'professional-business-block-editor-filters', get_theme_file_uri( '/js/block-editor-filters.js' ), array(), '1.0', true );
