@@ -46,6 +46,7 @@ if ( ! function_exists( 'libretto_header_style' ) ) :
 		<style type="text/css">
 		<?php if ( 'blank' === $header_text_color ) : // Hide text if user has set to hide ?>
 			.site-title,
+			.mobile-site-title,
 			.site-description {
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
