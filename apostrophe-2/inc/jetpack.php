@@ -61,13 +61,23 @@ function apostrophe_2_has_post_thumbnail( $post = null ) {
 }
 
 /**
- * Return early if Social Menu is not available.
+ * Return early if Social Menu is not available and check if it should be displayed on mobile.
  */
 function apostrophe_2_social_menu() {
 	if ( ! function_exists( 'jetpack_social_menu' ) ) {
 		return;
-	} else {
+	} 
+	
+	if ( function_exists( 'jetpack_social_menu' ) && ( get_theme_mod( 'apostrophe_2_mobile_social' ) == 0 )) {
 		jetpack_social_menu();
+	} 
+	
+	if ( function_exists( 'jetpack_social_menu' ) && ( get_theme_mod( 'apostrophe_2_mobile_social' ) == 1 ) ) {
+	?>
+		<div class="social-mobile-menu">
+			<?php jetpack_social_menu(); ?>
+		</div>
+	<?php
 	}
 }
 
