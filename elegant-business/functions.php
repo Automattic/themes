@@ -113,6 +113,19 @@ function elegant_business_scripts() {
 add_action( 'wp_enqueue_scripts', 'elegant_business_scripts', 99 );
 
 /**
+ * Enqueue supplemental block editor scripts.
+ */
+function elegant_business_block_editor_scripts() {
+
+	/**
+	 * Styles
+	 */
+	wp_enqueue_style( 'elegant-business-fonts', elegant_business_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'elegant_business_block_editor_scripts' );
+
+
+/**
  * Load extras.php file (if necessary).
  */
 require get_stylesheet_directory() . '/inc/extras.php';
