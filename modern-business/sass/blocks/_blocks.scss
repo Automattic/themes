@@ -2,13 +2,13 @@
 
 .entry .entry-content > *,
 .entry .entry-summary > * {
-	margin: 32px 0;
+	margin: $size__vertical-spacing-unit 0;
 	max-width: 100%;
 
 	@include postContentMaxWidth();
 
 	@include media(tablet) {
-		margin: 32px auto;
+		margin: $size__vertical-spacing-unit auto;
 	}
 
 	> *:first-child {
@@ -38,8 +38,8 @@
 		clear: both;
 
 		@include media(tablet) {
-			margin-top: calc(2 * #{$size__spacing-unit});
-			margin-bottom: calc(2 * #{$size__spacing-unit});
+			margin-top: calc(2 * #{$size__vertical-spacing-unit});
+			margin-bottom: calc(2 * #{$size__vertical-spacing-unit});
 			left: calc( -12.5% - 75px );
 			width: calc( 125% + 150px );
 			max-width: calc( 125% + 150px );
@@ -125,7 +125,7 @@
 	& > h4,
 	& > h5,
 	& > h6 {
-		margin: 2rem auto;
+		margin: #{2 * $size__vertical-spacing-unit} auto;
 		text-align: center;
 	}
 
@@ -200,7 +200,7 @@
 		}
 
 		@include media(tablet) {
-			padding: 60px 0;
+			padding: #{2 * $size__vertical-spacing-unit} 0;
 
 			.wp-block-media-text__media {
 				margin-left: -60px;
@@ -359,7 +359,7 @@
 			font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 			font-weight: bold;
 			line-height: $font__line-height-heading;
-			padding-bottom: ( .75 * $size__spacing-unit );
+			padding-bottom: #{ .75 * $size__vertical-spacing-unit };
 
 			&.menu-item-has-children,
 			&:last-child {
@@ -384,7 +384,7 @@
 	.wp-block-categories {
 
 		ul {
-			padding-top: ( .75 * $size__spacing-unit );
+			padding-top: #{ .75 * $size__vertical-spacing-unit };
 		}
 
 		li ul {
@@ -399,8 +399,8 @@
 	.wp-block-latest-posts.is-grid {
 		li {
 			border-top: 2px solid $color__border;
-			padding-top: (1 * $size__spacing-unit);
-			margin-bottom: (2 * $size__spacing-unit);
+			padding-top: #{1 * $size__spacing-unit};
+			margin-bottom: #{2 * $size__vertical-spacing-unit};
 			a {
 				&:after {
 					content: '';
@@ -449,8 +449,8 @@
 		blockquote {
 			color: $color__text-main;
 			border: none;
-			margin-top: calc(4 * #{ $size__spacing-unit});
-			margin-bottom: calc(4.33 * #{ $size__spacing-unit});
+			margin-top: calc(3 * #{ $size__vertical-spacing-unit});
+			margin-bottom: calc(3.33 * #{ $size__vertical-spacing-unit});
 			margin-right: 0;
 			padding-left: 0;
 		}
@@ -491,7 +491,7 @@
 			padding: 0;
 
 			blockquote {
-				margin: $size__spacing-unit 0;
+				margin: $size__vertical-spacing-unit 0;
 				padding: 0;
 				text-align: left;
 				max-width: 100%;
@@ -599,7 +599,7 @@
 
 		&.is-large,
 		&.is-style-large {
-			margin: $size__spacing-unit auto;
+			margin: $size__vertical-spacing-unit auto;
 			padding: 0;
 			border-left: none;
 
@@ -619,7 +619,7 @@
 			}
 
 			@include media(tablet) {
-				margin: $size__spacing-unit auto;
+				margin: $size__vertical-spacing-unit auto;
 				padding: $size__spacing-unit 0;
 
 				p {
@@ -762,7 +762,7 @@
 		background-color: $color__text-light;
 		border: 0;
 		height: 1px;
-		margin: (2 * $size__spacing-unit) auto;
+		margin: (2 * $size__vertical-spacing-unit) auto;
 		max-width: 5em;
 		text-align: left;
 
@@ -828,7 +828,7 @@
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
 			color: #fff;
 			margin-left: 0;
-			margin-top: calc(0.75 * #{$size__spacing-unit});
+			margin-top: calc(0.75 * #{$size__vertical-spacing-unit});
 
 			@include media(desktop) {
 				font-size: $font__size-base;
