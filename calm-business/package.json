@@ -22,14 +22,13 @@
       "stringMap": []
     },
     "plugins": [],
-    "map": false,
-    "sourceMap": true
+    "map": false
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "build:style": "node-sass style.scss style.css --output-style expanded --source-map true && postcss -r style.css",
+    "build:style": "node-sass style.scss style.css --output-style expanded && postcss -r style.css",
     "build:style-editor": "node-sass style-editor.scss style-editor.css --output-style expanded && postcss -r style-editor.css",
     "build:style-editor-customizer": "node-sass style-editor-customizer.scss style-editor-customizer.css --output-style expanded && postcss -r style-editor-customizer.css",
     "build:style-jetpack": "node-sass style-jetpack.scss style-jetpack.css --output-style expanded && postcss -r style-jetpack.css",
