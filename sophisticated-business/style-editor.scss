@@ -610,7 +610,7 @@ figcaption,
 	}
 
 	& + [data-type="core/media-text"] {
-		margin-top: -32px;
+		margin-top: -$size__vertical-spacing-unit;
 	}
 
 	@include media(desktop) {
@@ -800,4 +800,23 @@ ul.wp-block-archives,
 	border-color: transparent;
 	background-color: transparent;
 	color: #fff !important;
+}
+
+/** === Business Hours Block - Temp Fix === */
+
+.wp-block-jetpack-business-hours {
+	dt,
+	dd {
+		float: left;
+	}
+
+	dt {
+		clear: both;
+		font-weight: bold;
+		margin-right: ( $size__spacing-unit * .5 );
+	}
+
+	dd {
+		margin: 0;
+	}
 }

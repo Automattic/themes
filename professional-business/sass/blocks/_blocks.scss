@@ -2,13 +2,13 @@
 
 .entry .entry-content > *,
 .entry .entry-summary > * {
-	margin: 32px 0;
+	margin: $size__vertical-spacing-unit 0;
 	max-width: 100%;
 
 	@include postContentMaxWidth();
 
 	@include media(tablet) {
-		margin: 32px auto;
+		margin: $size__vertical-spacing-unit auto;
 	}
 
 	> *:first-child {
@@ -38,8 +38,8 @@
 		clear: both;
 
 		@include media(tablet) {
-			margin-top: calc(2 * #{$size__spacing-unit});
-			margin-bottom: calc(2 * #{$size__spacing-unit});
+			margin-top: $size__vertical-spacing-unit;
+			margin-bottom: $size__vertical-spacing-unit;
 			left: calc( -12.5% - 75px );
 			width: calc( 125% + 150px );
 			max-width: calc( 125% + 150px );
@@ -263,8 +263,8 @@
 	.wp-block-latest-posts.is-grid {
 		li {
 			border-top: 2px solid $color__border;
-			padding-top: (1 * $size__spacing-unit);
-			margin-bottom: (2 * $size__spacing-unit);
+			padding-top: $size__spacing-unit;
+			margin-bottom: $size__vertical-spacing-unit;
 			a {
 				&:after {
 					content: '';
@@ -313,8 +313,8 @@
 		blockquote {
 			color: $color__text-main;
 			border: none;
-			margin-top: calc(4 * #{ $size__spacing-unit});
-			margin-bottom: calc(4.33 * #{ $size__spacing-unit});
+			margin-top: calc(3 * #{$size__vertical-spacing-unit});
+			margin-bottom: calc(3.33 * #{ $size__vertical-spacing-unit});
 			margin-right: 0;
 		}
 
@@ -469,7 +469,7 @@
 			}
 
 			@include media(tablet) {
-				margin: $size__spacing-unit auto;
+				margin: $size__vertical-spacing-unit auto;
 				padding: $size__spacing-unit 0;
 
 				p {
@@ -515,7 +515,7 @@
 
 		& + .wp-block-cover:not(.alignleft):not(.alignrights),
 		& + .wp-block-cover-image:not(.alignleft):not(.alignrights) {
-			margin-top: 64px;
+			margin-top: $size__vertical-spacing-unit;
 		}
 
 		.wp-block-cover-image-text,
@@ -600,8 +600,8 @@
 	hr {
 		background: #fff;
 		border: 0;
-		margin-bottom: (2 * $size__spacing-unit);
-		margin-top: (2 * $size__spacing-unit);
+		margin-bottom: $size__vertical-spacing-unit;
+		margin-top: $size__vertical-spacing-unit;
 		max-width: 100%;
 		@include postContentMaxWidth();
 
@@ -686,7 +686,7 @@
 			padding: ($size__spacing-unit * .75) $size__spacing-unit;
 			color: #fff;
 			margin-left: 0;
-			margin-top: calc(0.75 * #{$size__spacing-unit});
+			margin-top: calc(0.75 * #{$size__vertical-spacing-unit});
 
 			@include media(desktop) {
 				font-size: $font__size-base;
