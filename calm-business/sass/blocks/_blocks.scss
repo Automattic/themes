@@ -642,7 +642,7 @@
 		}
 		border: 0;
     	&:after {
-			background-color: $color__text-main-alt;
+			background-color: $color__background-hr;
 			content: '';
 			display: block;
 			height: 2px;
@@ -650,8 +650,13 @@
 		}
 
 		&.is-style-wide {
+			background-color: $color__background-hr;
 			max-width: 100%;
 			@include postContentMaxWidth();
+
+			&:after {
+				display: none;
+			}
 		}
 
 		&.is-style-dots {
@@ -663,10 +668,14 @@
 			text-align: center;
 
 			&:before {
-				color: $color__text-light;
+				color: $color__background-hr;
 				font-size: $font__size-lg;
 				letter-spacing: $font__size-sm;
 				padding-left: $font__size-sm;
+			}
+
+			&:after {
+				display: none;
 			}
 		}
 
