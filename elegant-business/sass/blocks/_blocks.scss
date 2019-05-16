@@ -510,6 +510,10 @@
 		}
 	}
 
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		h2
+
 	//! Cover Image
 	.wp-block-cover-image,
 	.wp-block-cover {
@@ -520,6 +524,14 @@
 		@include media(tablet) {
 			min-height: 560px;
 			padding: $size__spacing-unit 10%;
+		}
+
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		h2 {
+			margin-bottom: 1rem;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		& + .wp-block-cover:not(.alignleft):not(.alignrights),
@@ -864,23 +876,6 @@
 		&.has-excerpts {
 
 		}
-	}
-
-	//! Font Sizes
-	.has-small-font-size {
-		font-size: $font__size-sm;
-	}
-
-	.has-normal-font-size {
-		font-size: $font__size_base;
-	}
-
-	.has-large-font-size {
-		font-size: $font__size-lg;
-	}
-
-	.has-huge-font-size {
-		font-size: $font__size-xl;
 	}
 
 	//! Custom background colors
