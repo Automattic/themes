@@ -593,7 +593,7 @@ hr {
 	max-width: calc(6*(100vw/12) - 28px) !important;
 	border: 0;
 	&:after {
-		background-color: $color__text-main-alt;
+		background-color: $color__background-hr;
 		content: '';
 		display: block;
 		height: 2px;
@@ -601,7 +601,12 @@ hr {
 	}
 
 	&.is-style-wide {
+		background-color: $color__background-hr;
 		@include postContentMaxWidth();
+
+		&:after {
+			display: none;
+		}
 	}
 
 	&.is-style-dots {
@@ -612,10 +617,14 @@ hr {
 		text-align: center;
 
 		&:before {
-			color: $color__text-light;
+			color: $color__background-hr;
 			font-size: $font__size-lg;
 			letter-spacing: $font__size-sm;
 			padding-left: $font__size-sm;
+		}
+
+		&:after {
+			display: none;
 		}
 	}
 
