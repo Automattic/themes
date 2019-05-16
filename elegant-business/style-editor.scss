@@ -260,12 +260,7 @@ figcaption,
 
 	min-height: 420px;
 
-	h2,
-	.wp-block-cover-text {
-		font-family: $font__heading;
-		font-size: $font__size-lg;
-		font-weight: bold;
-		line-height: 1.4;
+	.wp-block-cover__inner-container {
 		padding-left: $size__spacing-unit;
 		padding-right: $size__spacing-unit;
 
@@ -284,18 +279,13 @@ figcaption,
 		min-height: 560px;
 		padding-left: 10%;
 		padding-right: 10%;
-
-		h2,
-		.wp-block-cover-text {
-			font-size: $font__size-xl;
-		}
 	}
 }
 
 .wp-block[data-type="core/cover"][data-align="left"],
 .wp-block[data-type="core/cover"][data-align="right"] {
 
-	.editor-block-list__block-edit {
+	.wp-block-cover__inner-container {
 		width: calc(4 * (100vw / 12));
 	}
 
@@ -316,16 +306,14 @@ figcaption,
 
 	@include media(tablet) {
 
-		h2,
-		.wp-block-cover-text {
+		.wp-block-cover__inner-container {
 			max-width: calc(8 * (100vw / 12));
 		}
 	}
 
 	@include media(desktop) {
 
-		h2,
-		.wp-block-cover-text {
+		.wp-block-cover__inner-container {
 			max-width: calc(6 * (100vw / 12));
 		}
 	}
@@ -335,8 +323,7 @@ figcaption,
 
 	@include media(tablet) {
 
-		h2,
-		.wp-block-cover-text {
+		.wp-block-cover__inner-container {
 			max-width: 100%;
 		}
 
