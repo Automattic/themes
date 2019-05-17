@@ -89,7 +89,7 @@ h4,
 h5,
 h6 {
 	font-family: $font__heading;
-	font-weight: 700;
+	font-weight: 300;
 	text-align: center;
 }
 
@@ -102,12 +102,7 @@ h1 {
 }
 
 h2 {
-	font-size: $font__size-base;
-	text-align: center;
-
-	@include media(tablet) {
-		font-size: $font__size-md;
-	}
+	font-size: $font__size-lg;
 }
 
 h3 {
@@ -252,15 +247,11 @@ figcaption,
 
 /** === Cover === */
 
+.wp-block-cover-image,
 .wp-block-cover {
 	min-height: 640px;
 
-	h2,
-	.wp-block-cover-text {
-		font-family: $font__heading;
-		font-size: $font__size-lg;
-		font-weight: 300;
-		line-height: 1.4;
+	.wp-block-cover__inner-container {
 		max-width: 100%;
 		padding-left: $size__spacing-unit;
 		padding-right: $size__spacing-unit;
@@ -275,22 +266,24 @@ figcaption,
 		}
 	}
 
+	.wp-block-cover-image-text,
+	.wp-block-cover-text,
+	h2 {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	@include media(tablet) {
 		padding-left: 10%;
 		padding-right: 10%;
-
-		h2,
-		.wp-block-cover-text {
-			font-size: $font__size-xl;
-		}
 	}
 }
 
 .wp-block[data-type="core/cover"][data-align="left"],
 .wp-block[data-type="core/cover"][data-align="right"] {
 
-	.editor-block-list__block-edit {
-		width: calc(4 * (100vw / 12));
+	.wp-block-cover__inner-container {
+		width: calc(2 * (100vw / 12));
 	}
 
 	.wp-block-cover {
@@ -298,7 +291,7 @@ figcaption,
 		max-width: 100%;
 		padding: calc(1.375 * #{$size__spacing-unit});
 
-		p {
+		.wp-block-cover__inner-container {
 			padding-left: 0;
 			padding-right: 0;
 		}
