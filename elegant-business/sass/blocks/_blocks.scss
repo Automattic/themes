@@ -522,14 +522,6 @@
 			padding: $size__spacing-unit 10%;
 		}
 
-		.wp-block-cover-image-text,
-		.wp-block-cover-text,
-		h2 {
-			margin-bottom: 1rem;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
 		& + .wp-block-cover:not(.alignleft):not(.alignrights),
 		& + .wp-block-cover-image:not(.alignleft):not(.alignrights) {
 			margin-top: $size__vertical-spacing-unit;
@@ -546,6 +538,12 @@
 			@include media(tablet) {
 				max-width: 100%;
 			}
+		}
+
+		h2 {
+			max-width: inherit;
+			margin: inherit;
+			text-align: inherit;
 		}
 
 		&.has-left-content {
