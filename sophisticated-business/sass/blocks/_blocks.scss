@@ -534,6 +534,7 @@
 	//! Cover Image
 	.wp-block-cover-image,
 	.wp-block-cover {
+
 		position: relative;
 		min-height: 430px;
 		padding: $size__spacing-unit;
@@ -543,22 +544,21 @@
 			min-height: 60vh;
 		}
 
-		.wp-block-cover-image-text,
-		.wp-block-cover-text,
-		h2 {
-			font-family: $font__heading;
-			font-size: $font__size-lg;
-			font-weight: 700;
-			line-height: 1.25;
+		.wp-block-cover__inner-container {
 			padding: 0;
 			color: #fff;
 
 			@include media(tablet) {
-				font-size: $font__size-xxl;
 				max-width: 100%;
 				margin-left: auto;
 				margin-right: auto;
 			}
+		}
+
+		h2 {
+			margin: inherit;
+			max-width: inherit;
+			text-align: inherit;
 		}
 
 		&.alignleft,
@@ -572,27 +572,20 @@
 
 		&.alignwide {
 
-			.wp-block-cover-image-text,
-			.wp-block-cover-text,
-			h2 {
+			.wp-block-cover__inner-container {
 				@include postContentMaxWidth();
 			}
 
 			@include media(tablet) {
-				.wp-block-cover-image-text,
-				.wp-block-cover-text,
-				h2 {
+				.wp-block-cover__inner-container {
 					padding: 0;
-					font-size: $font__size-xxxxl;
 				}
 			}
 		}
 
 		&.alignfull {
 
-			.wp-block-cover-image-text,
-			.wp-block-cover-text,
-			h2 {
+			.wp-block-cover__inner-container {
 				max-width: calc(8 * (100vw / 12));
 			}
 
@@ -600,11 +593,8 @@
 				padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 				padding-right: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 
-				.wp-block-cover-image-text,
-				.wp-block-cover-text,
-				h2 {
+				.wp-block-cover__inner-container {
 					padding: 0;
-					font-size: $font__size-xxxxl;
 				}
 			}
 		}

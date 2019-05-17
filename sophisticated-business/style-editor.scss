@@ -120,7 +120,7 @@ h2 {
 	font-size: $font__size-md;
 
 	@include media(tablet) {
-		font-size: $font__size-md;
+		font-size: $font__size-lg;
 	}
 }
 
@@ -261,11 +261,8 @@ figcaption,
 .wp-block-cover {
 	min-height: 80vh;
 
-	h2,
+	.wp-block-cover__inner-container,
 	.wp-block-cover-text {
-		font-family: $font__heading;
-		font-weight: 700;
-		line-height: 1.25;
 		padding-left: $size__spacing-unit;
 		padding-right: $size__spacing-unit;
 
@@ -274,7 +271,6 @@ figcaption,
 		}
 
 		@include media(tablet) {
-			font-size: $font__size-xxl;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 0;
@@ -313,9 +309,9 @@ figcaption,
 .wp-block[data-type="core/cover"][data-align="wide"],
 .wp-block[data-type="core/cover"][data-align="full"] {
 	@include media(tablet) {
-		h2,
-		.wp-block-cover-text {
-			font-size: $font__size-xxxxl;
+
+		.wp-block-cover-text,
+		.wp-block-cover__inner-container {
 			max-width: calc(8 * (100vw / 12));
 		}
 	}
