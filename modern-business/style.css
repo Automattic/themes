@@ -499,20 +499,28 @@ h6 {
   line-height: 1.25;
 }
 
+.has-huge-font-size,
 h1 {
-  font-size: 2.25em;
+  font-size: 1.6875em;
 }
 
 @media only screen and (min-width: 768px) {
+  .has-huge-font-size,
   h1 {
-    font-size: 2.8125em;
+    font-size: 2.25em;
   }
 }
 
 .entry-title,
 .not-found .page-title,
 .error-404 .page-title,
-.has-larger-font-size,
+.has-large-font-size,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2,
 h2 {
   font-size: 1.125em;
   font-weight: 300;
@@ -523,9 +531,15 @@ h2 {
   .entry-title,
   .not-found .page-title,
   .error-404 .page-title,
-  .has-larger-font-size,
+  .has-large-font-size,
+  .wp-block-cover-image .wp-block-cover-image-text,
+  .wp-block-cover-image .wp-block-cover-text,
+  .wp-block-cover-image h2,
+  .wp-block-cover .wp-block-cover-image-text,
+  .wp-block-cover .wp-block-cover-text,
+  .wp-block-cover h2,
   h2 {
-    font-size: 2.25em;
+    font-size: 1.6875em;
   }
 }
 
@@ -543,7 +557,6 @@ h3 {
 }
 
 .has-regular-font-size,
-.has-large-font-size,
 .comments-title,
 h4 {
   font-size: 22px;
@@ -4051,27 +4064,35 @@ body.page .main-navigation {
   }
 }
 
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container,
 .entry .entry-content .wp-block-cover-image .wp-block-cover-image-text,
 .entry .entry-content .wp-block-cover-image .wp-block-cover-text,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container,
 .entry .entry-content .wp-block-cover .wp-block-cover-image-text,
 .entry .entry-content .wp-block-cover .wp-block-cover-text {
   color: #fff;
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.6875em;
-  font-weight: 300;
-  line-height: 1.25;
   padding: 0;
   text-shadow: 0 0 12px #000;
 }
 
 @media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container,
   .entry .entry-content .wp-block-cover-image .wp-block-cover-image-text,
   .entry .entry-content .wp-block-cover-image .wp-block-cover-text,
+  .entry .entry-content .wp-block-cover .wp-block-cover__inner-container,
   .entry .entry-content .wp-block-cover .wp-block-cover-image-text,
   .entry .entry-content .wp-block-cover .wp-block-cover-text {
-    font-size: 2.8125em;
     max-width: 100%;
   }
+}
+
+.entry .entry-content .wp-block-cover-image .has-large-font-size,
+.entry .entry-content .wp-block-cover-image h2,
+.entry .entry-content .wp-block-cover .has-large-font-size,
+.entry .entry-content .wp-block-cover h2 {
+  max-width: inherit;
+  margin: inherit;
+  text-align: inherit;
 }
 
 .entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
@@ -4094,9 +4115,11 @@ body.page .main-navigation {
     padding-left: calc(10% + 58px + (2 * 1rem));
     padding-right: calc(10% + 58px + (2 * 1rem));
   }
+  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover__inner-container,
   .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-image-text,
   .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-text,
   .entry .entry-content .wp-block-cover-image.alignfull h2,
+  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover__inner-container,
   .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-image-text,
   .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-text,
   .entry .entry-content .wp-block-cover.alignfull h2 {
@@ -4307,22 +4330,6 @@ body.page .main-navigation {
 
 .entry .entry-content .wp-block-latest-comments.has-dates .wp-block-latest-comments__comment-date {
   font-size: 0.71111em;
-}
-
-.entry .entry-content .has-small-font-size {
-  font-size: 0.88889em;
-}
-
-.entry .entry-content .has-normal-font-size {
-  font-size: 1.125em;
-}
-
-.entry .entry-content .has-large-font-size {
-  font-size: 1.6875em;
-}
-
-.entry .entry-content .has-huge-font-size {
-  font-size: 2.25em;
 }
 
 .entry .entry-content .has-primary-background-color,
