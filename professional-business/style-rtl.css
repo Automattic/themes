@@ -3899,6 +3899,7 @@ body.page .main-navigation {
 .entry .entry-content .wp-block-cover h2 {
   max-width: inherit;
   margin: inherit;
+  text-align: inherit;
 }
 
 .entry .entry-content .wp-block-cover-image.alignleft, .entry .entry-content .wp-block-cover-image.alignright,
@@ -4233,6 +4234,18 @@ body.page .main-navigation {
   padding-left: 1rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .entry .entry-content .wp-block-columns .wp-block-column {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .entry .entry-content .wp-block-columns .wp-block-column:first-child {
+    margin-right: 0;
+  }
+  .entry .entry-content .wp-block-columns .wp-block-column:last-child {
+    margin-left: 0;
+  }
+}
 @media only screen and (min-width: 782px) {
   .entry .entry-content .wp-block-columns .wp-block-column > *:first-child {
     margin-top: 0;
