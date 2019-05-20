@@ -1,6 +1,7 @@
 .archive .page-header,
 .search .page-header,
-.error404 .page-header {
+.error404 .page-header,
+.not-found .page-header {
 
 	margin: $size__spacing-unit $size__spacing-unit calc(3 * #{$size__spacing-unit});
 	text-align: center;
@@ -14,6 +15,12 @@
 		color: $color__text-light;
 		display: inline;
 		letter-spacing: normal;
+		font-size: $font__size-md;
+		font-weight: 300;
+
+		@include media(tablet) {
+			font-size: $font__size-lg;
+		}
 
 		&:before {
 			display: none;
@@ -70,3 +77,4 @@
 		width: 100%;
 	}
 }
+

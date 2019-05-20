@@ -466,21 +466,14 @@ h6 {
 .comments-title,
 .comment-author .fn,
 .no-comments,
-.site-title {
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.2;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+.site-title,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
@@ -499,45 +492,27 @@ h6 {
   line-height: 1.25;
 }
 
+.has-larger-font-size,
 .has-huge-font-size,
 h1 {
   font-size: 1.6875em;
 }
 
 @media only screen and (min-width: 768px) {
+  .has-larger-font-size,
   .has-huge-font-size,
   h1 {
     font-size: 2.25em;
   }
 }
 
-.entry-title,
-.not-found .page-title,
-.error-404 .page-title,
 .has-large-font-size,
-.wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image .wp-block-cover-text,
-.wp-block-cover-image h2,
-.wp-block-cover .wp-block-cover-image-text,
-.wp-block-cover .wp-block-cover-text,
-.wp-block-cover h2,
 h2 {
   font-size: 1.125em;
-  font-weight: 300;
-  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
-  .entry-title,
-  .not-found .page-title,
-  .error-404 .page-title,
   .has-large-font-size,
-  .wp-block-cover-image .wp-block-cover-image-text,
-  .wp-block-cover-image .wp-block-cover-text,
-  .wp-block-cover-image h2,
-  .wp-block-cover .wp-block-cover-image-text,
-  .wp-block-cover .wp-block-cover-text,
-  .wp-block-cover h2,
   h2 {
     font-size: 1.6875em;
   }
@@ -563,6 +538,7 @@ h4 {
 }
 
 .pagination .nav-links,
+.has-small-font-size,
 .comment-content,
 h5 {
   font-size: 0.88889em;
@@ -572,7 +548,6 @@ h5 {
 .entry-footer,
 .discussion-meta-info,
 .site-info,
-.has-small-font-size,
 .comment-reply-link,
 .comment-metadata,
 .comment-notes,
@@ -2383,7 +2358,16 @@ body.page .main-navigation {
 }
 
 .entry .entry-title {
+  font-size: 1.125em;
+  font-weight: 300;
   margin: 0;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry .entry-title {
+    font-size: 1.6875em;
+  }
 }
 
 .entry .entry-title a {
@@ -3094,7 +3078,8 @@ body.page .main-navigation {
 --------------------------------------------------------------*/
 .archive .page-header,
 .search .page-header,
-.error404 .page-header {
+.error404 .page-header,
+.not-found .page-header {
   margin: 1rem 1rem calc(3 * 1rem);
   text-align: center;
 }
@@ -3102,22 +3087,36 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .archive .page-header,
   .search .page-header,
-  .error404 .page-header {
+  .error404 .page-header,
+  .not-found .page-header {
     margin: 0 calc(10% + 60px) calc(10% + 60px);
   }
 }
 
 .archive .page-header .page-title,
 .search .page-header .page-title,
-.error404 .page-header .page-title {
+.error404 .page-header .page-title,
+.not-found .page-header .page-title {
   color: #686868;
   display: inline;
   letter-spacing: normal;
+  font-size: 1.125em;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 768px) {
+  .archive .page-header .page-title,
+  .search .page-header .page-title,
+  .error404 .page-header .page-title,
+  .not-found .page-header .page-title {
+    font-size: 1.6875em;
+  }
 }
 
 .archive .page-header .page-title:before,
 .search .page-header .page-title:before,
-.error404 .page-header .page-title:before {
+.error404 .page-header .page-title:before,
+.not-found .page-header .page-title:before {
   display: none;
 }
 
@@ -3126,7 +3125,9 @@ body.page .main-navigation {
 .search .page-header .search-term,
 .search .page-header .page-description,
 .error404 .page-header .search-term,
-.error404 .page-header .page-description {
+.error404 .page-header .page-description,
+.not-found .page-header .search-term,
+.not-found .page-header .page-description {
   display: inherit;
   clear: both;
 }
@@ -3136,7 +3137,9 @@ body.page .main-navigation {
 .search .page-header .search-term:after,
 .search .page-header .page-description:after,
 .error404 .page-header .search-term:after,
-.error404 .page-header .page-description:after {
+.error404 .page-header .page-description:after,
+.not-found .page-header .search-term:after,
+.not-found .page-header .page-description:after {
   content: ".";
   font-weight: bold;
   color: #686868;
@@ -4073,6 +4076,45 @@ body.page .main-navigation {
   color: #fff;
   padding: 0;
   text-shadow: 0 0 12px #000;
+}
+
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container h1,
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container h2,
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container h3,
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container h4,
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container h5,
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container h6,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text h1,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text h2,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text h3,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text h4,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text h5,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text h6,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text h1,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text h2,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text h3,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text h4,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text h5,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text h6,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container h1,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container h2,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container h3,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container h4,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container h5,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container h6,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text h1,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text h2,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text h3,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text h4,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text h5,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text h6,
+.entry .entry-content .wp-block-cover .wp-block-cover-text h1,
+.entry .entry-content .wp-block-cover .wp-block-cover-text h2,
+.entry .entry-content .wp-block-cover .wp-block-cover-text h3,
+.entry .entry-content .wp-block-cover .wp-block-cover-text h4,
+.entry .entry-content .wp-block-cover .wp-block-cover-text h5,
+.entry .entry-content .wp-block-cover .wp-block-cover-text h6 {
+  font-weight: 300;
 }
 
 @media only screen and (min-width: 768px) {
