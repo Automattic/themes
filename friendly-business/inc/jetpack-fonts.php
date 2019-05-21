@@ -88,6 +88,7 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
 		'.button,
 		button,
+		.entry .entry-content .wp-block-file .wp-block-file__button,
 		input,
 		input[type="button"],
 		input[type="reset"],
@@ -101,6 +102,13 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 		)
 	);
 
+	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
+		'table',
+		array(
+			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
+		)
+	);
+
 	TypekitTheme::add_font_category_rule( $category_rules, 'headings',
 		'th',
 		array(
@@ -109,14 +117,9 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 	);
 
 	TypekitTheme::add_font_category_rule( $category_rules, 'headings',
-		'#cancel-comment-reply-link,
-		.author-description .author-link,
+		'.author-description .author-link,
 		.comment-author .fn,
-		.comment-metadata,
-		.comment-reply-link,
 		.comments-title,
-		.discussion-meta-info,
-		.entry-meta,
 		.error-404 .page-title,
 		.main-navigation,
 		.no-comments,
@@ -141,7 +144,12 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 	);
 
 	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
-		'.entry-footer',
+		'#cancel-comment-reply-link,
+		.entry-footer,
+		.comment-metadata,
+		.comment-reply-link,
+		.discussion-meta-info,
+		.entry-meta',
 		array(
 			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
 		)
@@ -236,6 +244,21 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 		)
 	);
 
+	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
+		'.wp-caption-text,
+		blockquote cite,
+		.entry .entry-content .wp-block-audio figcaption,
+		.entry .entry-content .wp-block-video figcaption,
+		.entry .entry-content .wp-block-image figcaption,
+		.entry .entry-content .wp-block-gallery .blocks-gallery-image figcaption,
+		.entry .entry-content .wp-block-gallery .blocks-gallery-item figcaption,
+		.entry .entry-content .wp-block-verse,
+		.entry .entry-content .wp-block-pullquote cite',
+		array(
+			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
+		)
+	);
+
 	TypekitTheme::add_font_category_rule( $category_rules, 'headings',
 		'.widget_links li,
 		.widget_jp_blogs_i_follow li,
@@ -247,7 +270,10 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 		.widget_pages ul li,
 		.widget_recent_comments ul li,
 		.widget_recent_entries ul li,
-		.widget_rss ul li',
+		.widget_rss ul li,
+		.entry .entry-content .wp-block-archives li,
+		.entry .entry-content .wp-block-categories li,
+		.entry .entry-content .wp-block-latest-posts li',
 		array(
 			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
 			array( 'property' => 'font-weight', 'value' => '700' ),
