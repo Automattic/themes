@@ -661,20 +661,33 @@
 			padding: $size__spacing-unit 10%;
 		}
 
+		.wp-block-cover__inner-container,
 		.wp-block-cover-image-text,
 		.wp-block-cover-text {
 			color: #fff;
-			font-family: $font__heading;
-			font-size: $font__size-lg;
-			font-weight: 300;
-			line-height: 1.25;
 			padding: 0;
 			text-shadow: 0 0 12px #000;
 
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-weight: 300;
+			}
+
+
 			@include media(tablet) {
-				font-size: $font__size-xxl;
 				max-width: 100%;
 			}
+		}
+
+		.has-large-font-size,
+		h2 {
+			max-width: inherit;
+			margin: inherit;
+			text-align: inherit;
 		}
 
 		&.alignleft,
@@ -692,6 +705,7 @@
 				padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 				padding-right: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 
+				.wp-block-cover__inner-container,
 				.wp-block-cover-image-text,
 				.wp-block-cover-text,
 				h2 {
@@ -910,23 +924,6 @@
 		&.has-excerpts {
 
 		}
-	}
-
-	//! Font Sizes
-	.has-small-font-size {
-		font-size: $font__size-sm;
-	}
-
-	.has-normal-font-size {
-		font-size: $font__size-md;
-	}
-
-	.has-large-font-size {
-		font-size: $font__size-lg;
-	}
-
-	.has-huge-font-size {
-		font-size: $font__size-xl;
 	}
 
 	//! Custom background colors
