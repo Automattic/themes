@@ -87,7 +87,11 @@
 	
 	@include media(tablet) {
 		margin: 32px auto;
-		max-width: calc(6*(100vw/12) - 28px);
+		max-width: $size__site-tablet-content;
+	}
+
+	@include media(desktop) {
+		max-width: $size__site-desktop-content;
 	}
 
 	> .comments-title:last-child {

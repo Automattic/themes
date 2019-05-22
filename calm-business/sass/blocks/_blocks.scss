@@ -2,14 +2,18 @@
 
 .entry .entry-content > *,
 .entry .entry-summary > * {
-	margin: $size__vertical-spacing-unit auto;
+	margin: $size__vertical-spacing-unit 0;
 	max-width: 100%;
 
 	@include postContentMaxWidth();
 
 	@include media(tablet) {
 		margin: $size__vertical-spacing-unit auto;
-		max-width: calc(6*(100vw/12) - 28px);
+		max-width: $size__site-tablet-content;
+	}
+
+	@include media(desktop) {
+		max-width: $size__site-desktop-content;
 	}
 
 	> *:first-child {
