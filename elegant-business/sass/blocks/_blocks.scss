@@ -680,10 +680,15 @@
 		}
 	}
 
-	//! Separator
+	//! Spacer
 	.wp-block-spacer {
-		margin-bottom: $size__vertical-spacing-unit;
-		margin-top: $size__vertical-spacing-unit;
+		&.desktop-only {
+			display: none;
+
+			@include media(tablet) {
+				display: block;
+			}
+		}
 	}
 
 	//! Twitter Embed
