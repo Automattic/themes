@@ -2,6 +2,22 @@
 
 add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 
+	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
+		'html',
+		array(
+			array( 'property' => 'font-size', 'value' => '22px' ),
+		)
+	);
+
+	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
+		'body',
+		array(
+			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
+			array( 'property' => 'font-weight', 'value' => '400' ),
+			array( 'property' => 'font-size', 'value' => '1em' ),
+		)
+	);
+
 	TypekitTheme::add_font_category_rule( $category_rules, 'headings',
 		'h1',
 		array(
@@ -66,22 +82,6 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 		'::-webkit-file-upload-button',
 		array(
 			array( 'property' => 'font', 'value' => 'inherit' ),
-		)
-	);
-
-	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
-		'html',
-		array(
-			array( 'property' => 'font-size', 'value' => '22px' ),
-		)
-	);
-
-	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
-		'body',
-		array(
-			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
-			array( 'property' => 'font-weight', 'value' => '400' ),
-			array( 'property' => 'font-size', 'value' => '1em' ),
 		)
 	);
 
@@ -229,15 +229,8 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 	);
 
 	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
-		'.wp-caption-text',
-		array(
-			array( 'property' => 'font-size', 'value' => '0.71111em' ),
-			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
-		)
-	);
-
-	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
-		'.gallery-caption',
+		'.wp-caption-text,
+		.gallery-caption',
 		array(
 			array( 'property' => 'font-size', 'value' => '0.71111em' ),
 			array( 'property' => 'font-family', 'value' => '"Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif' ),
@@ -280,7 +273,7 @@ add_filter( 'typekit_add_font_category_rules', function( $category_rules ) {
 		)
 	);
 
-	TypekitTheme::add_font_category_rule( $category_rules, 'headings',
+	TypekitTheme::add_font_category_rule( $category_rules, 'body-text',
 		'.site-main #infinite-handle span button,
 		.site-main #infinite-handle span button:focus,
 		.site-main #infinite-handle span button:hover',
