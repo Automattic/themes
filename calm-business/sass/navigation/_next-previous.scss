@@ -3,15 +3,15 @@
 // Singular navigation
 .post-navigation {
 
-	margin: calc(3 * 1rem) 0;
+	margin: calc(3 * #{ $size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
 	@include media(tablet) {
-		margin: calc(3 * #{$size__spacing-unit}) auto;
+		margin: calc(3 * 1rem) auto calc(1rem / 2);
 		max-width: $size__site-tablet-content;
 	}
 
 	@include media(desktop) {
-		max-width: calc(6*(100vw/12) - 28px);
+		max-width: $size__site-desktop-content;
 	}
 
 	.nav-links {
