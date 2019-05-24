@@ -492,37 +492,56 @@ h6 {
 }
 
 .entry-title,
+.has-huge-font-size,
 h1 {
-  font-size: 1.125em;
+  font-size: 1.6875em;
 }
 
 @media only screen and (min-width: 768px) {
   .entry-title,
+  .has-huge-font-size,
   h1 {
+    font-size: 2.25em;
+  }
+}
+
+.has-large-font-size,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+  font-size: 1.125em;
+}
+
+@media only screen and (min-width: 768px) {
+  .has-large-font-size,
+  .wp-block-cover-image .wp-block-cover-image-text,
+  .wp-block-cover-image .wp-block-cover-text,
+  .wp-block-cover-image h2,
+  .wp-block-cover .wp-block-cover-image-text,
+  .wp-block-cover .wp-block-cover-text,
+  .wp-block-cover h2 {
     font-size: 1.6875em;
   }
 }
 
 .site-title,
 .not-found .page-title,
-.error-404 .page-title,
-.has-larger-font-size,
-h2 {
+.error-404 .page-title {
   font-size: 22px;
 }
 
 @media only screen and (min-width: 768px) {
   .site-title,
   .not-found .page-title,
-  .error-404 .page-title,
-  .has-larger-font-size,
-  h2 {
+  .error-404 .page-title {
     font-size: 1.125em;
   }
 }
 
 .has-regular-font-size,
-.has-large-font-size,
 .comments-title,
 h2.author-title,
 .author-description,
@@ -535,6 +554,7 @@ h3 {
 .nav-links,
 .page-title,
 .page-description,
+.has-small-font-size,
 .comment-author .fn,
 .no-comments,
 p.author-bio,
@@ -552,7 +572,6 @@ h5 {
 .entry-meta,
 .entry-footer,
 .discussion-meta-info,
-.has-small-font-size,
 .comment-reply-link,
 .comment-metadata,
 .comment-notes,
@@ -3885,51 +3904,65 @@ body.page .main-navigation {
   margin-top: 32px;
 }
 
-.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text,
-.entry .entry-content .wp-block-cover-image .wp-block-cover-text,
-.entry .entry-content .wp-block-cover-image h2,
-.entry .entry-content .wp-block-cover .wp-block-cover-image-text,
-.entry .entry-content .wp-block-cover .wp-block-cover-text,
-.entry .entry-content .wp-block-cover h2 {
-  font-family: "Source Serif Pro", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-size: 1.6875em;
-  font-weight: bold;
-  line-height: 1.25;
-  padding: 0;
+.entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container,
+.entry .entry-content .wp-block-cover .wp-block-cover__inner-container {
   color: #fff;
-  text-align: center;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
 @media only screen and (min-width: 768px) {
-  .entry .entry-content .wp-block-cover-image .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover-image .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover-image h2,
-  .entry .entry-content .wp-block-cover .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover h2 {
-    font-size: 2.25em;
+  .entry .entry-content .wp-block-cover-image .wp-block-cover__inner-container,
+  .entry .entry-content .wp-block-cover .wp-block-cover__inner-container {
     max-width: 100%;
   }
 }
 
-.entry .entry-content .wp-block-cover-image.has-left-content .wp-block-cover-image-text,
-.entry .entry-content .wp-block-cover-image.has-left-content .wp-block-cover-text,
-.entry .entry-content .wp-block-cover-image.has-left-content h2,
-.entry .entry-content .wp-block-cover.has-left-content .wp-block-cover-image-text,
-.entry .entry-content .wp-block-cover.has-left-content .wp-block-cover-text,
-.entry .entry-content .wp-block-cover.has-left-content h2 {
+.entry .entry-content .wp-block-cover-image h1,
+.entry .entry-content .wp-block-cover h1 {
+  font-size: 2.8125em;
+}
+
+.entry .entry-content .wp-block-cover-image .wp-block-cover-image-text,
+.entry .entry-content .wp-block-cover-image .wp-block-cover-text,
+.entry .entry-content .wp-block-cover-image h2,
+.entry .entry-content .wp-block-cover .wp-block-cover-image-text,
+.entry .entry-content .wp-block-cover .wp-block-cover-text,
+.entry .entry-content .wp-block-cover h2 {
+  font-size: 2.25em;
+  margin: inherit;
+  max-width: inherit;
+  text-align: inherit;
+}
+
+.entry .entry-content .wp-block-cover-image h3,
+.entry .entry-content .wp-block-cover h3 {
+  font-size: 1.6875em;
+}
+
+.entry .entry-content .wp-block-cover-image h4,
+.entry .entry-content .wp-block-cover h4 {
+  font-size: 1.125em;
+}
+
+.entry .entry-content .wp-block-cover-image h5,
+.entry .entry-content .wp-block-cover h5 {
+  font-size: 22px;
+}
+
+.entry .entry-content .wp-block-cover-image h6,
+.entry .entry-content .wp-block-cover h6 {
+  font-size: 0.88889em;
+}
+
+.entry .entry-content .wp-block-cover-image.has-left-content .wp-block-cover__inner-container,
+.entry .entry-content .wp-block-cover.has-left-content .wp-block-cover__inner-container {
   text-align: right;
 }
 
-.entry .entry-content .wp-block-cover-image.has-right-content .wp-block-cover-image-text,
-.entry .entry-content .wp-block-cover-image.has-right-content .wp-block-cover-text,
-.entry .entry-content .wp-block-cover-image.has-right-content h2,
-.entry .entry-content .wp-block-cover.has-right-content .wp-block-cover-image-text,
-.entry .entry-content .wp-block-cover.has-right-content .wp-block-cover-text,
-.entry .entry-content .wp-block-cover.has-right-content h2 {
+.entry .entry-content .wp-block-cover-image.has-right-content .wp-block-cover__inner-container,
+.entry .entry-content .wp-block-cover.has-right-content .wp-block-cover__inner-container {
   text-align: left;
 }
 
@@ -3948,23 +3981,15 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover-image.alignfull h2,
-  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover.alignfull h2 {
+  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover__inner-container,
+  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover__inner-container {
     max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover-image.alignfull h2,
-  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover.alignfull h2 {
+  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover__inner-container,
+  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover__inner-container {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
@@ -3978,12 +4003,8 @@ body.page .main-navigation {
     width: calc( 125% + 150px);
     max-width: calc( 125% + 150px);
   }
-  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover-image.alignfull h2,
-  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-image-text,
-  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover-text,
-  .entry .entry-content .wp-block-cover.alignfull h2 {
+  .entry .entry-content .wp-block-cover-image.alignfull .wp-block-cover__inner-container,
+  .entry .entry-content .wp-block-cover.alignfull .wp-block-cover__inner-container {
     padding: 0;
     max-width: 100%;
   }
@@ -4259,22 +4280,6 @@ body.page .main-navigation {
   font-size: 0.71111em;
 }
 
-.entry .entry-content .has-small-font-size {
-  font-size: 0.88889em;
-}
-
-.entry .entry-content .has-normal-font-size {
-  font-size: 22px;
-}
-
-.entry .entry-content .has-large-font-size {
-  font-size: 1.6875em;
-}
-
-.entry .entry-content .has-huge-font-size {
-  font-size: 2.25em;
-}
-
 .entry .entry-content .has-primary-background-color,
 .entry .entry-content .has-secondary-background-color,
 .entry .entry-content .has-dark-gray-background-color,
@@ -4444,13 +4449,13 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .a8c-posts-list-item__title {
-  font-size: 1.125em;
+  font-size: 1.6875em;
   margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-content .a8c-posts-list-item__title {
-    font-size: 1.6875em;
+    font-size: 2.25em;
   }
 }
 

@@ -534,6 +534,7 @@
 	//! Cover Image
 	.wp-block-cover-image,
 	.wp-block-cover {
+
 		position: relative;
 		min-height: 430px;
 		padding: $size__spacing-unit;
@@ -543,21 +544,78 @@
 			min-height: 60vh;
 		}
 
-		.wp-block-cover-image-text,
-		.wp-block-cover-text,
-		h2 {
-			font-family: $font__heading;
-			font-size: $font__size-lg;
-			font-weight: 700;
-			line-height: 1.25;
+		.wp-block-cover__inner-container {
 			padding: 0;
 			color: #fff;
 
 			@include media(tablet) {
-				font-size: $font__size-xxl;
 				max-width: 100%;
 				margin-left: auto;
 				margin-right: auto;
+			}
+
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: 700;
+		}
+
+		h1 {
+			font-size: $font__size-xxl;
+		}
+
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		h2 {
+			font-size: $font__size-xl;
+			font-weight: 700;
+			margin: inherit;
+			max-width: inherit;
+			text-align: inherit;
+		}
+
+		h3 {
+			font-size: $font__size-lg;
+		}
+
+		h4 {
+			font-size: $font__size-md;
+		}
+
+		h5 {
+			font-size: $font__size-base;
+		}
+
+		h6 {
+			font-size: $font__size-sm;
+		}
+
+		@include media(tablet) {
+
+			h1 {
+				font-size: $font__size-xxxl;
+			}
+
+			.wp-block-cover-image-text,
+			.wp-block-cover-text,
+			h2 {
+				font-size: $font__size-xxl;
+			}
+
+			h3 {
+				font-size: $font__size-lg;
+			}
+
+			h4 {
+				font-size: $font__size-md;
+			}
+
+			h5 {
+				font-size: $font__size-base;
+			}
+
+			h6 {
+				font-size: $font__size-sm;
 			}
 		}
 
@@ -572,39 +630,49 @@
 
 		&.alignwide {
 
-			.wp-block-cover-image-text,
-			.wp-block-cover-text,
-			h2 {
+			.wp-block-cover__inner-container {
 				@include postContentMaxWidth();
 			}
 
 			@include media(tablet) {
-				.wp-block-cover-image-text,
-				.wp-block-cover-text,
-				h2 {
+				.wp-block-cover__inner-container {
 					padding: 0;
-					font-size: $font__size-xxxxl;
 				}
 			}
 		}
 
 		&.alignfull {
 
+			.wp-block-cover__inner-container {
+				max-width: calc(8 * (100vw / 12));
+			}
+
 			.wp-block-cover-image-text,
 			.wp-block-cover-text,
+			h1 {
+				font-size: $font__size-xxxl;
+			}
+
 			h2 {
-				max-width: calc(8 * (100vw / 12));
+				font-size: $font__size-xxl;
 			}
 
 			@include media(tablet) {
 				padding-left: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 				padding-right: calc(10% + 58px + (2 * #{$size__spacing-unit}));
 
+				.wp-block-cover__inner-container {
+					padding: 0;
+				}
+
 				.wp-block-cover-image-text,
 				.wp-block-cover-text,
-				h2 {
-					padding: 0;
+				h1 {
 					font-size: $font__size-xxxxl;
+				}
+
+				h2 {
+					font-size: $font__size-xxxl;
 				}
 			}
 		}

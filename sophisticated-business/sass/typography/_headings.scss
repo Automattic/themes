@@ -72,11 +72,21 @@ h1 {
 	}
 }
 
+
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
 .not-found .page-title,
 .error-404 .page-title,
 .has-larger-font-size,
 h2 {
 	font-size: $font__size-md;
+	@include media(tablet) {
+		font-size: $font__size-lg;
+	}
 }
 
 .has-regular-font-size,
