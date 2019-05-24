@@ -7,7 +7,7 @@ Author URI: https://wordpress.com/
 Template: twentynineteen
 Description: Simple, yet sophisticated, with subtle, elegant typography, Professional Business conveys quality and integrity, which makes it especially good fit for accounting, law, and consultancy firms.
 Requires at least: WordPress 4.9.6
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: professional-business
@@ -1592,25 +1592,23 @@ body.page .main-navigation {
 --------------------------------------------------------------*/
 /* Next/Previous navigation */
 .post-navigation {
-  margin: calc(3 * 1rem) 0;
+  margin: calc(3 * 1rem) 1rem 1rem;
 }
 
 @media only screen and (min-width: 768px) {
   .post-navigation {
-    margin: calc(3 * 1rem) calc(10% + 60px);
-    max-width: calc(6 * (100vw / 12));
+    margin: calc(3 * 1rem) auto calc(1rem / 2);
+    max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
   .post-navigation {
-    margin: calc(3 * 1rem) 0;
-    max-width: 100%;
+    max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
 
 .post-navigation .nav-links {
-  margin: 0 1rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -1618,20 +1616,12 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .post-navigation .nav-links {
-    margin: 0;
-  }
-}
-
-@media only screen and (min-width: 1168px) {
-  .post-navigation .nav-links {
     flex-direction: row;
-    margin: 0 auto;
-    max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
 
 .post-navigation .nav-links a .meta-nav {
-  color: #767676;
+  color: #1e1e1e;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1642,7 +1632,7 @@ body.page .main-navigation {
   display: none;
   content: "—";
   width: 2em;
-  color: #767676;
+  color: #1e1e1e;
   height: 1em;
 }
 
@@ -1656,21 +1646,8 @@ body.page .main-navigation {
   color: #005177;
 }
 
-@media only screen and (min-width: 1168px) {
-  .post-navigation .nav-links .nav-previous,
-  .post-navigation .nav-links .nav-next {
-    min-width: calc(50% - 2 * 1rem);
-  }
-}
-
 .post-navigation .nav-links .nav-previous {
   order: 2;
-}
-
-@media only screen and (min-width: 1168px) {
-  .post-navigation .nav-links .nav-previous {
-    order: 1;
-  }
 }
 
 .post-navigation .nav-links .nav-previous + .nav-next {
@@ -1681,14 +1658,11 @@ body.page .main-navigation {
   display: inline;
 }
 
-.post-navigation .nav-links .nav-next {
-  order: 1;
-}
-
-@media only screen and (min-width: 1168px) {
+@media only screen and (min-width: 768px) {
   .post-navigation .nav-links .nav-next {
     order: 2;
     padding-left: 1rem;
+    margin-left: auto;
   }
 }
 
@@ -2358,6 +2332,12 @@ body.page .main-navigation {
   }
 }
 
+@media only screen and (min-width: 1168px) {
+  .entry .entry-header {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
 .entry .entry-title {
   margin: 0;
 }
@@ -2422,7 +2402,7 @@ body.page .main-navigation {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1168px) {
   .entry .entry-footer {
     max-width: calc(6 * (100vw / 12) - 28px);
   }

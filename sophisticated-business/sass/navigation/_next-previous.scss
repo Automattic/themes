@@ -3,37 +3,30 @@
 // Singular navigation
 .post-navigation {
 
-	margin: calc(3 * 1rem) 0;
+	margin: calc(3 * #{ $size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
 	@include media(tablet) {
-		margin: calc(3 * 1rem) auto;
-		max-width: calc(6 * (100vw / 12));
+		margin: calc(3 * 1rem) auto calc(1rem / 2);
+		max-width: $size__site-tablet-content;
 	}
 
 	@include media(desktop) {
-		margin: calc(3 * 1rem) 0;
-		max-width: 100%;
+		max-width: $size__site-desktop-content;
 	}
 
 	.nav-links {
-		margin: 0 $size__spacing-unit;
+
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
 
 		@include media(tablet) {
-			margin: 0;
-		}
-
-		@include media(desktop) {
 			flex-direction: row;
-			margin: 0 auto;
-			max-width: $size__site-desktop-content;
 		}
 
 		a {
 			.meta-nav {
-				color: $color__text-light;
+				color: $color__text-main;
 				user-select: none;
 
 				&:before,
@@ -41,7 +34,7 @@
 					display: none;
 					content: "—";
 					width: 2em;
-					color: $color__text-light;
+					color: $color__text-main;
 					height: 1em;
 				}
 			}
@@ -55,20 +48,8 @@
 			}
 		}
 
-		.nav-previous,
-		.nav-next {
-
-			@include media(desktop) {
-				min-width: calc(50% - 2 * #{$size__spacing-unit});
-			}
-		}
-
 		.nav-previous {
 			order: 2;
-
-			@include media(desktop) {
-				order: 1;
-			}
 
 			+ .nav-next {
 				margin-bottom: $size__spacing-unit;
@@ -82,11 +63,10 @@
 		}
 
 		.nav-next {
-			order: 1;
-
-			@include media(desktop) {
+			@include media(tablet) {
 				order: 2;
 				padding-left: $size__spacing-unit;
+				margin-left: auto;
 			}
 
 			.meta-nav {

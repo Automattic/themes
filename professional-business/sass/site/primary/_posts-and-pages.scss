@@ -38,6 +38,10 @@
 			margin: calc(3 * #{ $size__spacing-unit}) auto $size__spacing-unit;
 			@include postContentMaxWidth();
 		}
+
+		@include media(desktop) {
+			max-width: $size__site-desktop-content;
+		}
 	}
 
 	.entry-title {
@@ -101,7 +105,7 @@
 			max-width: $size__site-tablet-content;
 		}
 
-		@include media(tablet) {
+		@include media(desktop) {
 			max-width: $size__site-desktop-content;
 		}
 	}
