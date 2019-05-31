@@ -90,7 +90,7 @@ function professional_business_block_editor_scripts() {
 	/**
 	 * Block Editor Scripts
 	 */
-	wp_enqueue_script( 'professional-business-block-editor-filters', get_theme_file_uri( 'sass/js/block-editor-filters.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'professional-business-block-editor-filters', get_theme_file_uri( 'js/block-editor-filters.js' ), array(), '1.0', true );
 }
 add_action( 'enqueue_block_editor_assets', 'professional_business_block_editor_scripts' );
 
