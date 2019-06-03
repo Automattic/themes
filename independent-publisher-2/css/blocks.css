@@ -13,6 +13,7 @@ Description: Used to style Gutenberg Blocks.
 5.0 Blocks - Layout Elements
 6.0 Blocks - Widgets
 7.0 Blocks - Colors
+8.0 Blocks - Posts List Block
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -450,4 +451,131 @@ body:not(.has-sidebar) .wp-block-table.alignfull {
 .has-white-background-color:active,
 .has-white-background-color:visited {
 	background-color: #fff;
+}
+
+/*--------------------------------------------------------------
+8.0 Blocks - Posts List Block
+--------------------------------------------------------------*/
+
+li.a8c-posts-list__item {
+	margin-top: 0;
+}
+
+li.a8c-posts-list__item article {
+	margin-top: 1.75em;
+	padding-top: 1.75em;
+	border-top: solid 1px #ddd;
+}
+
+h2.a8c-posts-list-item__title {
+	font-size: 32px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	line-height: 1.3;
+	color: #333332;
+	-webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 32.375em) {
+	h2.a8c-posts-list-item__title {
+		font-size: 47px;
+	}	
+}
+
+h2.a8c-posts-list-item__title a {
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: opacity 140ms ease-in-out;
+			transition: opacity 140ms ease-in-out;
+}
+
+h2.a8c-posts-list-item__title a:hover,
+h2.a8c-posts-list-item__title a:focus,
+h2.a8c-posts-list-item__title a:active {
+	opacity: .8;
+}
+
+div.a8c-posts-list-item__meta {
+	margin-top: .875em;
+	margin-bottom: .875em;
+	color: #b3b3b1;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span.a8c-posts-list-item__datetime:before {
+	content: "\f303";
+	position: relative;
+	top: -1px;
+	display: inline-block;
+	font-family: "Genericons";
+	font-size: 16px;
+	line-height: 1;
+	vertical-align: middle;
+	transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding-right: 5px;
+}
+
+span.a8c-posts-list-item__author a {
+	color: #b3b3b1;
+}
+
+div.a8c-posts-list-item__excerpt {
+	margin-top: .875em;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 17px;
+}
+
+@media screen and (min-width: 32.375em) {
+	div.a8c-posts-list-item__excerpt {
+		font-size: 19px;
+	}
+}
+
+figure.a8c-posts-list-item__post-thumbnail {
+	margin-bottom: 1.75em;
+}
+
+a.a8c-posts-list__view-all {
+	display: inline-block;
+	box-sizing: content-box;
+	padding: .4375em .875em;
+	cursor: pointer;
+	-webkit-transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
+			transition: background 120ms ease-in-out, box-shadow 120ms ease-in-out;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	text-decoration: none;
+	color: #fff;
+	border: solid 1px transparent;
+	border-radius: 3px;
+	background: #0087be;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: .875em 0;
+}
+
+a.a8c-posts-list__view-all:focus,
+a.a8c-posts-list__view-all:active {
+	outline: 0;
+	background: #767676;
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25), 0 0 0 6px rgba(0, 0, 0, .08);
+}
+
+a.a8c-posts-list__view-all:hover {
+	text-decoration: none;
+	color: #fff;
+	background: #767676;
+}
+
+a.a8c-posts-list__view-all:visited {
+	color: white;
 }
