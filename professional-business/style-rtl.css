@@ -137,7 +137,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -574,14 +575,18 @@ h6 {
 .error-404 .page-title,
 .comments-title,
 blockquote {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   word-break: break-word;
 }
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 @media only screen and (min-width: 768px) {
   .entry-title {
-    hyphens: none;
+    -webkit-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none;
   }
 }
 
@@ -731,10 +736,6 @@ html[lang="vi"] .site * {
 /* Elements */
 html {
   box-sizing: border-box;
-}
-
-::-moz-selection {
-  background-color: #bfdcea;
 }
 
 ::selection {
@@ -1278,6 +1279,8 @@ body.page .main-navigation {
     left: 0;
     right: auto;
     display: block;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -1364,6 +1367,8 @@ body.page .main-navigation {
     left: 0;
     right: auto;
     display: table;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -1617,7 +1622,10 @@ body.page .main-navigation {
 
 .post-navigation .nav-links a .meta-nav {
   color: #1e1e1e;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .post-navigation .nav-links a .meta-nav:before, .post-navigation .nav-links a .meta-nav:after {
@@ -1629,7 +1637,9 @@ body.page .main-navigation {
 }
 
 .post-navigation .nav-links a .post-title {
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .post-navigation .nav-links a:hover {
@@ -1755,7 +1765,8 @@ body.page .main-navigation {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -1771,7 +1782,8 @@ body.page .main-navigation {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  clip-path: none;
+  -webkit-clip-path: none;
+          clip-path: none;
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -2048,7 +2060,6 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation svg,
 .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
-  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 
@@ -2070,11 +2081,12 @@ body.page .main-navigation {
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-@supports (object-fit: cover) {
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
   .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     top: 0;
     transform: none;
     width: 100%;
@@ -2251,10 +2263,6 @@ body.page .main-navigation {
   .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
   }
-}
-
-.site-header.featured-image ::-moz-selection {
-  background: rgba(255, 255, 255, 0.17);
 }
 
 .site-header.featured-image ::selection {
@@ -3856,7 +3864,6 @@ body.page .main-navigation {
   padding: 0;
   color: #fff;
   -ms-hyphens: auto;
-  -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
