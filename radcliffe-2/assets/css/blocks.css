@@ -13,6 +13,7 @@ Description: Used to style Gutenberg Blocks.
 5.0 Blocks - Layout Elements
 6.0 Blocks - Widgets
 7.0 Blocks - Colors
+7.0 Blocks - Posts List
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -805,3 +806,119 @@ ul.wp-block-gallery li {
 	background-color: #2b6e9d;
 }
 
+/*--------------------------------------------------------------
+8.0 Blocks - Posts List Block
+--------------------------------------------------------------*/
+
+.a8c-posts-list {
+	text-align: center;
+}
+
+.a8c-posts-list-item__post-thumbnail {
+	margin: 0 0 36px;
+}
+
+.a8c-posts-list-item__post-thumbnail img {
+	display: block;
+}
+
+.a8c-posts-list-item__featured,
+.a8c-posts-list-item__meta {
+	color: #666;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	margin-top: 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.a8c-posts-list-item__title {
+	font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Times,"Times New Roman",serif;
+	font-size: 36px;
+	font-size: 3.6rem;
+	font-weight: 600;
+	line-height: 1.25;
+	margin: 0 auto;
+	max-width: 100%;
+	word-wrap: break-word;
+	width: 1040px;
+}
+
+.a8c-posts-list-item__title a {
+	color: #222;
+}
+
+.a8c-posts-list-item__meta {
+	margin-bottom: 36px;
+}
+
+.a8c-posts-list-item__meta a {
+	color: #666;
+}
+
+.a8c-posts-list-item__title a:hover,
+.a8c-posts-list-item__meta a:hover {
+	color: #ca2017;
+	text-decoration: none;
+}
+
+.a8c-posts-list-item__edit-link:before {
+	content: "/";
+	color: rgba(0,0,0,0.15);
+	margin: 0 0.5em;
+}
+
+.a8c-posts-list-item__excerpt {
+	text-align: left;
+}
+
+.a8c-posts-list .a8c-posts-list__view-all {
+	background: #222;
+	border-radius: 3px;
+	color: #fff;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.29;
+	margin: 0;
+	padding: 9px 18px;
+}
+
+.a8c-posts-list .a8c-posts-list__view-all:hover {
+	background: #ca2017;
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+@media all and (min-width: 600px) {
+	.a8c-posts-list-item__featured,
+	.a8c-posts-list-item__meta {
+		font-size: 16px;
+		font-size: 1.6rem;
+		line-height: 1.125;
+	}
+
+	.a8c-posts-list-item__title {
+		font-size: 50px;
+		font-size: 5rem;
+		line-height: 1.44;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.a8c-posts-list-item__title {
+		font-size: 60px;
+		font-size: 6rem;
+		line-height: 1.2;
+	}
+
+	.a8c-posts-list-item__post-thumbnail,
+	.a8c-posts-list-item__meta {
+		margin-bottom: 72px;
+	}
+}
