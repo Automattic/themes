@@ -54,18 +54,22 @@ body .wp-block[data-align="full"] {
 
 @media only screen and (min-width: 768px) {
   .wp-block {
-    width: calc(8 * (100vw / 12));
+    width: calc(8 * (100vw / 12) - 28px);
   }
 }
 
 @media only screen and (min-width: 1168px) {
   .wp-block {
-    width: calc(6 * (100vw / 12 ));
+    width: calc(6 * (100vw / 12) - 28px);
   }
 }
 
 .wp-block .wp-block {
   width: 100%;
+}
+
+.block-editor-block-list__layout {
+  padding: 0;
 }
 
 /** === Base Typography === */
@@ -196,23 +200,39 @@ figcaption,
 }
 
 /** === Post Title === */
+.editor-post-title {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .editor-post-title {
+    width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  .editor-post-title {
+    width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
 .editor-post-title__block {
   margin: 0;
 }
 
 .editor-post-title__block:before {
-  width: 2.8125em;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 1em;
   position: relative;
   top: 0.5em;
 }
 
 .editor-post-title__block .editor-post-title__input {
   font-family: "Poppins", sans-serif;
-  font-size: 2.8125em;
-  font-weight: 700;
+  font-size: 2.25em;
+  font-weight: 600;
 }
 
 /** === Default Appender === */

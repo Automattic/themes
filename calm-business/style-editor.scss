@@ -57,17 +57,22 @@ body {
 	max-width: 100%;
 
 	@include media(tablet) {
-		width: calc(8 * (100vw / 12));
+		width: $size__site-tablet-content;
 	}
 
 	@include media(desktop) {
-		width: calc(6 * (100vw / 12 ));
+		width: $size__site-desktop-content;
 	}
 
 	// Only the top level blocks need specific widths, therefore override for every nested block.
 	.wp-block {
 		width: 100%;
 	}
+
+}
+
+.block-editor-block-list__layout {
+	padding: 0;
 }
 
 /** === Base Typography === */
@@ -183,22 +188,33 @@ figcaption,
 
 /** === Post Title === */
 
+.editor-post-title {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	@include media(tablet) {
+		width: $size__site-tablet-content;
+	}
+
+	@include media(desktop) {
+		width: $size__site-desktop-content;
+	}
+}
+
 .editor-post-title__block {
 
 	margin: 0;
 	&:before {
-		width: $font__size-xxl;
 		margin-top: 0;
 		margin-bottom: 0;
-		margin-left: 1em;
 		position: relative;
 		top: 0.5em;
 	}
 
 	.editor-post-title__input {
 		font-family: $font__heading;
-		font-size: $font__size-xxl;
-		font-weight: 700;
+		font-size: $font__size-xl;
+		font-weight: 600;
 	}
 }
 
