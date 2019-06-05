@@ -192,7 +192,7 @@ figcaption,
 /** === Post Title === */
 
 .editor-post-title__block {
-
+	font-size: $font__size_base;
 	&:before {
 		width: $font__size-xxl;
 		margin-top: 0;
@@ -204,7 +204,11 @@ figcaption,
 
 	.editor-post-title__input {
 		font-family: $font__heading;
-		font-size: $font__size-xxl;
+		font-size: $font__size-lg;
+
+		@include media(tablet) {
+			font-size: $font__size-xl;
+		}
 		font-weight: 600;
 	}
 }
