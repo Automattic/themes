@@ -82,6 +82,22 @@ p {
   font-weight: 300;
 }
 
+p.has-small-font-size {
+  font-size: 0.88889em;
+}
+
+p.has-normal-font-size {
+  font-size: 1.125em;
+}
+
+p.has-large-font-size {
+  font-size: 1.6875em;
+}
+
+p.has-huge-font-size {
+  font-size: 2.25em;
+}
+
 h1,
 h2,
 h3,
@@ -90,37 +106,45 @@ h5,
 h6 {
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
+}
+
+.editor-inner-blocks h1, .editor-inner-blocks
+h2, .editor-inner-blocks
+h3, .editor-inner-blocks
+h4, .editor-inner-blocks
+h5, .editor-inner-blocks
+h6 {
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+  text-align: inherit;
 }
 
 h1 {
   font-size: 1.6875em;
 }
 
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 2.25em;
-  }
-}
-
 h2 {
-  font-size: 1.6875em;
-}
-
-h3 {
   font-size: 1.125em;
 }
 
-h4 {
+h3 {
   font-size: 22px;
 }
 
-h5 {
+h4 {
   font-size: 0.88889em;
 }
 
-h6 {
+h5 {
   font-size: 0.71111em;
+}
+
+h6 {
+  font-size: 0.59259em;
 }
 
 a {
@@ -227,12 +251,12 @@ figcaption,
   font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
   text-align: center;
-  font-size: 1.125em;
+  font-size: 1.6875em;
 }
 
 @media only screen and (min-width: 768px) {
   .editor-post-title__block .editor-post-title__input {
-    font-size: 1.6875em;
+    font-size: 2.8125em;
   }
 }
 
@@ -264,11 +288,29 @@ figcaption,
 /** === Cover === */
 .wp-block-cover-image,
 .wp-block-cover {
-  min-height: 640px;
+  position: relative;
+  min-height: 420px;
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover-image,
+  .wp-block-cover {
+    min-height: 640px;
+    padding: 1rem 10%;
+  }
+}
+
+.wp-block-cover-image + .wp-block-cover:not(.alignleft):not(.alignrights),
+.wp-block-cover-image + .wp-block-cover-image:not(.alignleft):not(.alignrights),
+.wp-block-cover + .wp-block-cover:not(.alignleft):not(.alignrights),
+.wp-block-cover + .wp-block-cover-image:not(.alignleft):not(.alignrights) {
+  margin-top: 32px;
 }
 
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover__inner-container {
+  color: #fff;
   max-width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -288,7 +330,7 @@ figcaption,
 @media only screen and (min-width: 768px) {
   .wp-block-cover-image .wp-block-cover__inner-container,
   .wp-block-cover .wp-block-cover__inner-container {
-    padding: 0;
+    max-width: 100%;
   }
 }
 
@@ -305,6 +347,19 @@ figcaption,
 .wp-block-cover h5,
 .wp-block-cover h6 {
   font-weight: 300;
+  text-align: left;
+}
+
+.wp-block-cover-image h1,
+.wp-block-cover h1 {
+  font-size: 2.25em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover-image h1,
+  .wp-block-cover h1 {
+    font-size: 3.375em;
+  }
 }
 
 .wp-block-cover-image .wp-block-cover-image-text,
@@ -313,15 +368,69 @@ figcaption,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text,
 .wp-block-cover h2 {
+  font-size: 1.6875em;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
+  padding: 0;
 }
 
 @media only screen and (min-width: 768px) {
-  .wp-block-cover-image,
-  .wp-block-cover {
-    padding-left: 10%;
-    padding-right: 10%;
+  .wp-block-cover-image .wp-block-cover-image-text,
+  .wp-block-cover-image .wp-block-cover-text,
+  .wp-block-cover-image h2,
+  .wp-block-cover .wp-block-cover-image-text,
+  .wp-block-cover .wp-block-cover-text,
+  .wp-block-cover h2 {
+    font-size: 2.8125em;
+  }
+}
+
+.wp-block-cover-image h3,
+.wp-block-cover h3 {
+  font-size: 1.125em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover-image h3,
+  .wp-block-cover h3 {
+    font-size: 2.25em;
+  }
+}
+
+.wp-block-cover-image h4,
+.wp-block-cover h4 {
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover-image h4,
+  .wp-block-cover h4 {
+    font-size: 1.6875em;
+  }
+}
+
+.wp-block-cover-image h5,
+.wp-block-cover h5 {
+  font-size: 0.88889em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover-image h5,
+  .wp-block-cover h5 {
+    font-size: 1.125em;
+  }
+}
+
+.wp-block-cover-image h6,
+.wp-block-cover h6 {
+  font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover-image h6,
+  .wp-block-cover h6 {
+    font-size: 22px;
   }
 }
 
@@ -400,13 +509,6 @@ figcaption,
 .wp-block-media-text a,
 .wp-block-media-text a:hover {
   color: inherit;
-}
-
-.wp-block-media-text h2,
-.wp-block-media-text h3,
-.wp-block-media-text h4 {
-  font-weight: 700;
-  text-align: left;
 }
 
 .wp-block-media-text > .editor-inner-blocks {
