@@ -80,6 +80,22 @@ p {
   font-size: 22px;
 }
 
+p.has-small-font-size {
+  font-size: 0.88889em;
+}
+
+p.has-normal-font-size {
+  font-size: 1.125em;
+}
+
+p.has-large-font-size {
+  font-size: 1.6875em;
+}
+
+p.has-huge-font-size {
+  font-size: 2.25em;
+}
+
 h1,
 h2,
 h3,
@@ -88,36 +104,79 @@ h5,
 h6 {
   font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   font-weight: 600;
+  line-height: 1.2;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.editor-inner-blocks h1, .editor-inner-blocks
+h2, .editor-inner-blocks
+h3, .editor-inner-blocks
+h4, .editor-inner-blocks
+h5, .editor-inner-blocks
+h6 {
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
 }
 
 h1 {
-  font-size: 2.25em;
+  font-size: 1.6875em;
 }
 
 @media only screen and (min-width: 768px) {
   h1 {
-    font-size: 2.8125em;
+    font-size: 2.25em;
   }
 }
 
 h2 {
-  font-size: 1.6875em;
+  font-size: 1.125em;
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.6875em;
+  }
 }
 
 h3 {
-  font-size: 1.125em;
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.125em;
+  }
 }
 
 h4 {
   font-size: 0.88889em;
 }
 
+@media only screen and (min-width: 768px) {
+  h4 {
+    font-size: 22px;
+  }
+}
+
 h5 {
-  font-size: 0.88889em;
+  font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  h5 {
+    font-size: 0.88889em;
+  }
 }
 
 h6 {
-  font-size: 0.71111em;
+  font-size: 0.59259em;
+}
+
+@media only screen and (min-width: 768px) {
+  h6 {
+    font-size: 0.71111em;
+  }
 }
 
 a {
@@ -263,9 +322,6 @@ figcaption,
 
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover-text {
-  font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-  font-size: 1.6875em;
-  line-height: 1.4;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -275,6 +331,91 @@ figcaption,
   font-weight: bolder;
 }
 
+.wp-block-cover .wp-block-cover__inner-container h1, .wp-block-cover .wp-block-cover__inner-container h2, .wp-block-cover .wp-block-cover__inner-container h3, .wp-block-cover .wp-block-cover__inner-container h4, .wp-block-cover .wp-block-cover__inner-container h5, .wp-block-cover .wp-block-cover__inner-container h6,
+.wp-block-cover .wp-block-cover-text h1,
+.wp-block-cover .wp-block-cover-text h2,
+.wp-block-cover .wp-block-cover-text h3,
+.wp-block-cover .wp-block-cover-text h4,
+.wp-block-cover .wp-block-cover-text h5,
+.wp-block-cover .wp-block-cover-text h6 {
+  font-weight: 400;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h1,
+.wp-block-cover .wp-block-cover-text h1 {
+  font-size: 2.25em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h1,
+  .wp-block-cover .wp-block-cover-text h1 {
+    font-size: 2.8125em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h2,
+.wp-block-cover .wp-block-cover-text h2 {
+  font-size: 1.6875em;
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h2,
+  .wp-block-cover .wp-block-cover-text h2 {
+    font-size: 2.25em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h3,
+.wp-block-cover .wp-block-cover-text h3 {
+  font-size: 1.125em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h3,
+  .wp-block-cover .wp-block-cover-text h3 {
+    font-size: 1.6875em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h4,
+.wp-block-cover .wp-block-cover-text h4 {
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h4,
+  .wp-block-cover .wp-block-cover-text h4 {
+    font-size: 1.125em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h5,
+.wp-block-cover .wp-block-cover-text h5 {
+  font-size: 0.88889em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h5,
+  .wp-block-cover .wp-block-cover-text h5 {
+    font-size: 22px;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h6,
+.wp-block-cover .wp-block-cover-text h6 {
+  font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h6,
+  .wp-block-cover .wp-block-cover-text h6 {
+    font-size: 0.88889em;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .wp-block-cover .wp-block-cover__inner-container,
   .wp-block-cover .wp-block-cover-text {
@@ -282,6 +423,10 @@ figcaption,
     margin-right: auto;
     padding: 0;
   }
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+  width: 100%;
 }
 
 .wp-block-cover .wp-block-cover__inner-container a {
