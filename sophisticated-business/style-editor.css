@@ -82,6 +82,22 @@ p {
   font-size: 22px;
 }
 
+p.has-small-font-size {
+  font-size: 0.88889em;
+}
+
+p.has-normal-font-size {
+  font-size: 1.125em;
+}
+
+p.has-large-font-size {
+  font-size: 1.6875em;
+}
+
+p.has-huge-font-size {
+  font-size: 2.25em;
+}
+
 h1,
 h2,
 h3,
@@ -91,15 +107,20 @@ h6 {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   letter-spacing: 0;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.wp-block .wp-block h1,
-.wp-block .wp-block h2,
-.wp-block .wp-block h3,
-.wp-block .wp-block h4,
-.wp-block .wp-block h5,
-.wp-block .wp-block h6 {
+.editor-inner-blocks h1, .editor-inner-blocks
+h2, .editor-inner-blocks
+h3, .editor-inner-blocks
+h4, .editor-inner-blocks
+h5, .editor-inner-blocks
+h6 {
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
   text-align: inherit;
 }
 
@@ -107,36 +128,24 @@ h1 {
   font-size: 1.6875em;
 }
 
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 2.25em;
-  }
-}
-
 h2 {
   font-size: 1.125em;
 }
 
-@media only screen and (min-width: 768px) {
-  h2 {
-    font-size: 1.6875em;
-  }
-}
-
 h3 {
-  font-size: 1.125em;
+  font-size: 22px;
 }
 
 h4 {
-  font-size: 1.125em;
-}
-
-h5 {
   font-size: 0.88889em;
 }
 
-h6 {
+h5 {
   font-size: 0.71111em;
+}
+
+h6 {
+  font-size: 0.59259em;
 }
 
 a {
@@ -297,6 +306,78 @@ figcaption,
   color: inherit;
 }
 
+.wp-block-cover .wp-block-cover__inner-container h1, .wp-block-cover .wp-block-cover__inner-container h2, .wp-block-cover .wp-block-cover__inner-container h3, .wp-block-cover .wp-block-cover__inner-container h4, .wp-block-cover .wp-block-cover__inner-container h5, .wp-block-cover .wp-block-cover__inner-container h6 {
+  font-weight: 700;
+}
+
+.wp-block-cover .wp-block-cover__inner-container h1 {
+  font-size: 2.25em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h1 {
+    font-size: 2.8125em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover__inner-container .wp-block-cover-text,
+.wp-block-cover .wp-block-cover__inner-container h2 {
+  font-size: 1.6875em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container .wp-block-cover-image-text,
+  .wp-block-cover .wp-block-cover__inner-container .wp-block-cover-text,
+  .wp-block-cover .wp-block-cover__inner-container h2 {
+    font-size: 2.25em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h3 {
+  font-size: 1.125em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h3 {
+    font-size: 1.6875em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h4 {
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h4 {
+    font-size: 1.125em;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h5 {
+  font-size: 0.88889em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h5 {
+    font-size: 22px;
+  }
+}
+
+.wp-block-cover .wp-block-cover__inner-container h6 {
+  font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover .wp-block-cover__inner-container h6 {
+    font-size: 0.88889em;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .wp-block-cover {
     padding-left: 10%;
@@ -349,6 +430,12 @@ figcaption,
   .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover {
     padding-left: calc(10% + 64px);
     padding-right: calc(10% + 64px);
+  }
+  .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover .wp-block-cover__inner-container h1 {
+    font-size: 4.5em;
+  }
+  .wp-block[data-type="core/cover"][data-align="full"] .wp-block-cover .wp-block-cover__inner-container h2 {
+    font-size: 3.375em;
   }
 }
 
