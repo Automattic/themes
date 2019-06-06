@@ -67,7 +67,7 @@ h1 {
 	font-size: $font__size-lg;
 
 	@include media(tablet) {
-		font-size: $font__size-xl;
+		font-size: $font__size-xxl;
 	}
 }
 
@@ -78,7 +78,7 @@ h1 {
 .wp-block-cover-image h2,
 .wp-block-cover h2,
 h2 {
-	font-size: $font__size-lg;
+	font-size: $font__size-md;
 
 	@include media(tablet) {
 		font-size: $font__size-xl;
@@ -90,7 +90,11 @@ h2 {
 .has-large-font-size,
 .comments-title,
 h3 {
-	font-size: $font__size-lg;
+	font-size: $font__size_base;
+
+	@include media(tablet) {
+		font-size: $font__size-lg;
+	}
 }
 
 .main-navigation,
@@ -102,13 +106,21 @@ h3 {
 h2.author-title,
 p.author-bio,
 h4 {
-	font-size: $font__size-md;
+	font-size: $font__size-sm;
+
+	@include media(tablet) {
+		font-size: $font__size-md;
+	}
 }
 
 .pagination .nav-links,
 .comment-content,
 h5 {
-	font-size: $font__size-sm;
+	font-size: $font__size-xs;
+
+	@include media(tablet) {
+		font-size: $font__size_base;
+	}
 }
 
 .site-description,
@@ -124,7 +136,11 @@ h5 {
 #cancel-comment-reply-link,
 img:after,
 h6 {
-	font-size: $font__size-xs;
+	font-size: $font__size-xxs;
+
+	@include media(tablet) {
+		font-size: $font__size-sm;
+	}
 }
 
 .page-description,

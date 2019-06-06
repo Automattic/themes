@@ -86,6 +86,22 @@ p {
   font-size: 22px;
 }
 
+p.has-small-font-size {
+  font-size: 0.88889em;
+}
+
+p.has-normal-font-size {
+  font-size: 1.125em;
+}
+
+p.has-large-font-size {
+  font-size: 1.6875em;
+}
+
+p.has-huge-font-size {
+  font-size: 2.25em;
+}
+
 h1,
 h2,
 h3,
@@ -95,6 +111,19 @@ h6 {
   font-family: "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   font-weight: 700;
   text-align: center;
+  line-height: 1.2;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.editor-inner-blocks h1, .editor-inner-blocks
+h2, .editor-inner-blocks
+h3, .editor-inner-blocks
+h4, .editor-inner-blocks
+h5, .editor-inner-blocks
+h6 {
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
 }
 
 h1 {
@@ -103,12 +132,12 @@ h1 {
 
 @media only screen and (min-width: 768px) {
   h1 {
-    font-size: 2.25em;
+    font-size: 2.8125em;
   }
 }
 
 h2 {
-  font-size: 1.6875em;
+  font-size: 1.125em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -118,19 +147,43 @@ h2 {
 }
 
 h3 {
-  font-size: 1.6875em;
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.6875em;
+  }
 }
 
 h4 {
-  font-size: 1.125em;
-}
-
-h5 {
   font-size: 0.88889em;
 }
 
-h6 {
+@media only screen and (min-width: 768px) {
+  h4 {
+    font-size: 1.125em;
+  }
+}
+
+h5 {
   font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  h5 {
+    font-size: 22px;
+  }
+}
+
+h6 {
+  font-size: 0.59259em;
+}
+
+@media only screen and (min-width: 768px) {
+  h6 {
+    font-size: 0.88889em;
+  }
 }
 
 a {
@@ -267,27 +320,85 @@ figcaption,
 }
 
 /** === Cover === */
+.wp-block-cover strong {
+  font-weight: bolder;
+}
+
+.wp-block-cover h1,
+.wp-block-cover h2,
+.wp-block-cover h3,
+.wp-block-cover h4,
+.wp-block-cover h5,
+.wp-block-cover h6 {
+  text-align: left;
+}
+
+.wp-block-cover h1 {
+  font-size: 2.25em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h1 {
+    font-size: 2.8125em;
+  }
+}
+
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-text {
   font-family: "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
   font-size: 1.6875em;
   font-weight: bold;
   line-height: 1.4;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.wp-block-cover h2 strong,
-.wp-block-cover .wp-block-cover-text strong {
-  font-weight: bolder;
+  padding: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .wp-block-cover h2,
   .wp-block-cover .wp-block-cover-text {
+    font-size: 2.25em;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+  }
+}
+
+.wp-block-cover h3 {
+  font-size: 1.125em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h3 {
+    font-size: 1.6875em;
+  }
+}
+
+.wp-block-cover h4 {
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h4 {
+    font-size: 1.125em;
+  }
+}
+
+.wp-block-cover h5 {
+  font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h5 {
+    font-size: 22px;
+  }
+}
+
+.wp-block-cover h6 {
+  font-size: 0.71111em;
+}
+
+@media only screen and (min-width: 768px) {
+  .wp-block-cover h6 {
+    font-size: 0.88889em;
   }
 }
 
@@ -628,8 +739,6 @@ figcaption,
 .wp-block[data-type="core/media-text"] .wp-block-heading h5,
 .wp-block[data-type="core/media-text"] .wp-block-heading h6 {
   text-align: inherit;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
 }
 
 .wp-block[data-type="core/media-text"] a {
