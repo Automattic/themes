@@ -86,6 +86,23 @@ body {
 
 p {
 	font-size: $font__size_base;
+
+	//! Font Sizes
+	&.has-small-font-size {
+		font-size: $font__size-sm;
+	}
+
+	&.has-normal-font-size {
+		font-size: $font__size-md;
+	}
+
+	&.has-large-font-size {
+		font-size: $font__size-lg;
+	}
+
+	&.has-huge-font-size {
+		font-size: $font__size-xl;
+	}
 }
 
 h1,
@@ -96,30 +113,38 @@ h5,
 h6 {
 	font-family: $font__heading;
 	font-weight: 600;
+	line-height: $font__line-height-heading;
+	margin-top: $size__vertical-spacing-unit;
+	margin-bottom: $size__vertical-spacing-unit;
+
+	.editor-inner-blocks & {
+		margin-top: 1.375rem;
+		margin-bottom: 1.375rem;
+	}
 }
 
 h1 {
-	font-size: $font__size-xl;
-}
-
-h2 {
 	font-size: $font__size-lg;
 }
 
-h3 {
+h2 {
 	font-size: $font__size-md;
 }
 
-h4 {
-	font-size: $font__size-base;
+h3 {
+	font-size: $font__size_base;
 }
 
-h5 {
+h4 {
 	font-size: $font__size-sm;
 }
 
-h6 {
+h5 {
 	font-size: $font__size-xs;
+}
+
+h6 {
+	font-size: $font__size-xxs;
 }
 
 a {
@@ -274,10 +299,70 @@ figcaption,
 			font-weight: bolder;
 		}
 
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: 700;
+		}
+
+		h1 {
+			font-size: $font__size-xl;
+		}
+
+		h2 {
+			font-size: $font__size-lg;
+			max-width: 100%;
+			padding: 0;
+			text-align: left;
+		}
+
+		h3 {
+			font-size: $font__size-md;
+		}
+
+		h4 {
+			font-size: $font__size_base;
+		}
+
+		h5 {
+			font-size: $font__size-sm;
+		}
+
+		h6 {
+			font-size: $font__size-xs;
+		}
+
 		@include media(tablet) {
 			margin-left: auto;
 			margin-right: auto;
 			padding: 0;
+
+			h1 {
+				font-size: $font__size-xxxl;
+			}
+
+			h2 {
+				font-size: $font__size-xxl;
+			}
+
+			h3 {
+				font-size: $font__size-lg;
+			}
+
+			h4 {
+				font-size: $font__size-md;
+			}
+
+			h5 {
+				font-size: $font__size_base;
+			}
+
+			h6 {
+				font-size: $font__size-sm;
+			}
 		}
 	}
 
@@ -847,18 +932,6 @@ ul.wp-block-archives,
 
 // Remove spacing between consecutive Media & Text blocks.
 [data-type="core/media-text"] {
-
-	.wp-block-heading {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin-bottom: $size__spacing-unit;
-			margin-top: $size__spacing-unit;
-		}
-	}
 
 	& + [data-type="core/media-text"] {
 		margin-top: -32px;
