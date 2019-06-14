@@ -10,7 +10,7 @@ $jetpack_portfolio_content = get_option( 'jetpack_portfolio_content' ); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main class="site-main" role="main">
 
 		<?php
 			if ( have_posts() ) {

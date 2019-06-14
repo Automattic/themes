@@ -61,7 +61,7 @@ add_color_rule( 'extra', '#222222', array(
 	array( 'button, input[type="button"], input[type="reset"], input[type="submit"]', 'color', 'bg' ),
 	array( '.lines, .lines:before, .lines:after', 'background-color', 'bg' ),
 	array( '.comment-author .fn a, .comment-author .fn a:visited', 'color', 'bg' ),
-	array( '.search .site-title a, .search .site-title a:visited, .search .site-title a:hover, .archive .site-title a, .archive .site-title a:visited, .archive .site-title a:hover, .blog .site-title a, .blog .site-title a:visited, .blog .site-title a:hover, .page .site-title a, .page .site-title a:visited, .page .site-title a:hover', 'color', 'bg' ),
+	array( '.search .site-title a, .search .site-title a:visited, .search .site-title a:hover, .archive .site-title a, .archive .site-title a:visited, .archive .site-title a:hover, .blog .site-title a, .blog .site-title a:visited, .blog .site-title a:hover, .page:not(.singular) .site-title a, .page:not(.singular) .site-title a:visited, .page:not(.singular) .site-title a:hover', 'color', 'bg' ),
 
 	array( '.entry-content a.more-link:hover, .entry-content a.more-link:active, .entry-content a.more-link:focus', 'color', '#fff' ),
 ) );

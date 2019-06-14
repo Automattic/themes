@@ -1,0 +1,324 @@
+/*
+Theme Name: Gazette
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 General Block Styles
+2.0 Blocks - Common Blocks
+3.0 Blocks - Formatting
+4.0 Blocks - Layout Elements
+5.0 Blocks - Widgets
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	line-height: 1.25;
+}
+
+[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
+	color: inherit;
+}
+
+/*--------------------------------------------------------------
+2.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+	margin-top: 0.125em;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin-bottom: 30px;
+}
+
+/* Quote */
+
+.wp-block-quote[style*="text-align:right"]::before {
+	float: right;
+}
+
+.rtl .wp-block-quote[style*="text-align:left"]::before {
+	float: left;
+}
+
+/* Audio */
+
+.wp-block-audio {
+	margin-bottom: 30px;
+}
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover.aligncenter,
+.wp-block-cover-image.aligncenter,
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover-image.alignright {
+	display: flex;
+}
+
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image h2 {
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+
+/* File */
+
+.wp-block-file a.wp-block-file__button {
+	background: #3863c1;
+	border: 2px solid #3863c1;
+	border-radius: 0;
+	color: #fff;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.875;
+	padding: 5.5px 13px;
+	text-transform: uppercase;
+}
+
+.wp-block-file a.wp-block-file__button:active,
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:hover {
+	background: #fff;
+	color: #3863c1;
+	outline: none;
+}
+
+.rtl .wp-block-file * + .wp-block-file__button {
+	margin-left: 0.75em;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	background: transparent;
+	border: 0;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: italic;
+	padding: 0;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote blockquote::before {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Button */
+
+.wp-block-button .wp-block-button__link {
+	border: 2px solid #3863c1;
+	font-family: Lato, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.875;
+	padding: 5.5px 13px;
+	text-transform: uppercase;
+}
+
+.wp-block-button__link,
+.wp-block-button__link:visited {
+	background: #3863c1;
+	color: #fff;
+}
+
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #3863c1;
+}
+
+.wp-block-button__link.has-background.has-text-color {
+	border-color: currentColor;
+}
+
+.entry-content .wp-block-button .wp-block-button__link:active,
+.entry-content .wp-block-button .wp-block-button__link:focus,
+.entry-content .wp-block-button .wp-block-button__link:hover {
+	background: #fff;
+	color: #3863c1;
+}
+
+/* Seperator */
+
+.wp-block-separator:not(.is-style-wide) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
+.wp-block-separator.is-style-dots::before {
+	padding: 0;
+}
+
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 30px;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* General Widget styles */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-archives.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-latest-comments.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments__comment,
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 16px;
+}
+
+.wp-block-latest-comments__comment:not(:last-child) {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-date {
+	font-family: "Lato", sans-serif;
+}
+
+.wp-block-latest-comments__comment-meta a {
+	font-weight: bold;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: #777;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 0.5em;
+	text-transform: uppercase;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+.has-blue-color,
+.has-blue-color:hover,
+.has-blue-color:focus,
+.has-blue-color:active,
+.has-blue-color:visited {
+	color: #3863c1;
+}
+
+.has-blue-background-color,
+.has-blue-background-color:hover,
+.has-blue-background-color:focus,
+.has-blue-background-color:active,
+.has-blue-background-color:visited {
+	background-color: #3863c1;
+}
+
+.has-dark-gray-color,
+.has-dark-gray-color:hover,
+.has-dark-gray-color:focus,
+.has-dark-gray-color:active,
+.has-dark-gray-color:visited {
+	color: #222;
+}
+
+.has-dark-gray-background-color,
+.has-dark-gray-background-color:hover,
+.has-dark-gray-background-color:focus,
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:visited {
+	background-color: #222;
+}
+
+.has-medium-gray-color,
+.has-medium-gray-color:hover,
+.has-medium-gray-color:focus,
+.has-medium-gray-color:active,
+.has-medium-gray-color:visited {
+	color: #777;
+}
+
+.has-medium-gray-background-color,
+.has-medium-gray-background-color:hover,
+.has-medium-gray-background-color:focus,
+.has-medium-gray-background-color:active,
+.has-medium-gray-background-color:visited {
+	background-color: #777;
+}
+
+.has-light-gray-color,
+.has-light-gray-color:hover,
+.has-light-gray-color:focus,
+.has-light-gray-color:active,
+.has-light-gray-color:visited {
+	color: #ddd;
+}
+
+.has-light-gray-background-color,
+.has-light-gray-background-color:hover,
+.has-light-gray-background-color:focus,
+.has-light-gray-background-color:active,
+.has-light-gray-background-color:visited {
+	background-color: #ddd;
+}
+
+.has-white-color,
+.has-white-color:hover,
+.has-white-color:focus,
+.has-white-color:active,
+.has-white-color:visited {
+	color: #fff;
+}
+
+.has-white-background-color,
+.has-white-background-color:hover,
+.has-white-background-color:focus,
+.has-white-background-color:active,
+.has-white-background-color:visited {
+	background-color: #fff;
+}

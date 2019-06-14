@@ -8,8 +8,9 @@ get_header();
 
 $jetpack_portfolio_content = get_option( 'jetpack_portfolio_content' ); ?>
 
+<div class="wrap">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main class="site-main" role="main">
 
 		<?php
 			if ( have_posts() ) {
@@ -21,5 +22,6 @@ $jetpack_portfolio_content = get_option( 'jetpack_portfolio_content' ); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+</div><!-- .wrap -->
 <?php
 get_footer();

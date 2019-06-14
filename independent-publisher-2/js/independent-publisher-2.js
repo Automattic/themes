@@ -30,9 +30,11 @@
 
                     var img_width = new_img.width;
 
-                    if ( img_width >= 1100 && img.parents( '.tiled-gallery-item-large' ).length === 0 ) {
-                        $( img ).addClass( 'size-big' );
-                    }
+                    if ( img_width >= 1100
+                        && img.parents( '.tiled-gallery-item-large' ).length === 0
+                        && img.parents( '[class^="wp-block-"]' ).length === 0 ) {
+                            $( img ).addClass( 'size-big' );
+                     }
 
                     if ( caption.hasClass( 'wp-caption' ) && img_width >= 1100 ) {
                         caption.addClass( 'size-big' );

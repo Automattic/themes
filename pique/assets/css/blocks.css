@@ -1,0 +1,620 @@
+/*
+Theme Name: Pique
+Description: Used to style Gutenberg Blocks.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Block Alignments
+2.0 General Block Styles
+3.0 Blocks - Common Blocks
+4.0 Blocks - Formatting
+5.0 Blocks - Layout Elements
+6.0 Blocks - Widgets
+7.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Block Alignments
+--------------------------------------------------------------*/
+
+.site-content {
+	overflow-x: hidden;
+}
+
+.alignfull,
+.alignwide {
+	clear: both;
+}
+
+body:not(.pique-sidebar).pique-singular .alignfull,
+body.home .alignfull,
+body.blog .alignfull,
+body.archive .alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	width: auto;
+	max-width: 1400px;
+}
+
+body:not(.pique-sidebar).pique-singular .alignwide,
+body.home .alignwide,
+body.blog .alignwide,
+body.archive .alignwide {
+	margin-left: calc(25% - 25vw);
+	margin-right: calc(25% - 25vw);
+	width: auto;
+	max-width: 1400px;
+}
+
+@media (min-width: 1400px) {
+	body:not(.pique-sidebar).pique-singular .alignwide,
+	body.home .alignwide,
+	body.blog .alignwide,
+	body.archive .alignwide {
+		margin-left: -15%;
+		margin-right: -15%;
+	}
+}
+
+body:not(.pique-sidebar).pique-singular .wp-block-embed.is-type-video.alignfull iframe,
+body:not(.pique-sidebar).pique-singular .wp-block-embed.is-type-video.alignwide iframe,
+body.home .wp-block-embed.is-type-video.alignfull iframe,
+body.blog .wp-block-embed.is-type-video.alignfull iframe,
+body.archive .wp-block-embed.is-type-video.alignfull iframe,
+body.home .wp-block-embed.is-type-video.alignwide iframe,
+body.blog .wp-block-embed.is-type-video.alignwide iframe,
+body.archive .wp-block-embed.is-type-video.alignwide iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Make non image-based blocks a bit narrower, so they don't get cut off. */
+
+body:not(.pique-sidebar).pique-singular .wp-block-columns.alignfull,
+body.home .wp-block-columns.alignfull,
+body.blog .wp-block-columns.alignfull,
+body.archive .wp-block-columns.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-audio.alignfull,
+body.home .wp-block-audio.alignfull,
+body.blog .wp-block-audio.alignfull,
+body.archive .wp-block-audio.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-table.alignfull,
+body.home .wp-block-table.alignfull,
+body.blog .wp-block-table.alignfull,
+body.archive .wp-block-table.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-latest-comments.alignfull,
+body.home .wp-block-latest-comments.alignfull,
+body.blog .wp-block-latest-comments.alignfull,
+body.archive .wp-block-latest-comments.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-latest-posts.alignfull,
+body.home .wp-block-latest-posts.alignfull,
+body.blog .wp-block-latest-posts.alignfull,
+body.archive .wp-block-latest-posts.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-categories.alignfull,
+body.home .wp-block-categories.alignfull,
+body.blog .wp-block-categories.alignfull,
+body.archive .wp-block-categories.alignfull,
+body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull,
+body.home .wp-block-archives.alignfull,
+body.blog .wp-block-archives.alignfull,
+body.archive .wp-block-archives.alignfull {
+	margin-left: calc(50% - 48vw);
+	margin-right: calc(50% - 48vw);
+}
+
+/* When sidebar is below the content */
+
+@media (max-width: 999px) {
+	body.pique-sidebar.pique-singular .alignwide {
+		margin-left: -15%;
+		margin-right: -15%;
+		width: auto;
+		max-width: 1400px;
+	}
+
+	body.pique-sidebar.pique-singular .alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		width: auto;
+		max-width: 1400px;
+	}
+
+	/* Make non image-based blocks a bit narrower, so they don't get cut off. */
+	body.pique-sidebar.pique-singular .wp-block-columns.alignfull,
+	body.pique-sidebar.pique-singular .wp-block-audio.alignfull,
+	body.pique-sidebar.pique-singular .wp-block-table.alignfull,
+	body.pique-sidebar.pique-singular .wp-block-latest-comments.alignfull,
+	body.pique-sidebar.pique-singular .wp-block-latest-posts.alignfull,
+	body.pique-sidebar.pique-singular .wp-block-categories.alignfull,
+	body.pique-sidebar.pique-singular .wp-block-archives.alignfull {
+		margin-left: calc(50% - 48vw);
+		margin-right: calc(50% - 48vw);
+	}
+}
+
+/* Make sure the full and wide blocks still stay in Twenty Thirteen's wide container */
+
+@media (min-width: 1400px) {
+	body:not(.pique-sidebar).pique-singular .alignfull,
+	body.home .alignfull,
+	body.blog .alignfull,
+	body.archive .alignfull {
+		margin-left: calc(50% - 700px);
+		margin-right: calc(50% - 700px);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	/* Make non image-based blocks a bit narrower, so they don't get cut off. */
+
+	body:not(.pique-sidebar).pique-singular .wp-block-columns.alignfull,
+	body.home .wp-block-columns.alignfull,
+	body.blog .wp-block-columns.alignfull,
+	body.archive .wp-block-columns.alignfull,
+	body:not(.pique-sidebar).pique-singular .wp-block-audio.alignfull,
+	body.home .wp-block-audio.alignfull,
+	body.blog .wp-block-audio.alignfull,
+	body.archive .wp-block-audio.alignfull,
+	body:not(.pique-sidebar).pique-singular .wp-block-table.alignfull,
+	body.home .wp-block-table.alignfull,
+	body.blog .wp-block-table.alignfull,
+	body.archive .wp-block-table.alignfull,
+	body:not(.pique-sidebar).pique-singular .wp-block-latest-comments.alignfull,
+	body.home .wp-block-latest-comments.alignfull,
+	body.blog .wp-block-latest-comments.alignfull,
+	body.archive .wp-block-latest-comments.alignfull,
+	body:not(.pique-sidebar).pique-singular .wp-block-latest-posts.alignfull,
+	body.home .wp-block-latest-posts.alignfull,
+	body.blog .wp-block-latest-posts.alignfull,
+	body.archive .wp-block-latest-posts.alignfull,
+	body:not(.pique-sidebar).pique-singular .wp-block-categories.alignfull,
+	body.home .wp-block-categories.alignfull,
+	body.blog .wp-block-categories.alignfull,
+	body.archive .wp-block-categories.alignfull,
+	body:not(.pique-sidebar).pique-singular .wp-block-archives.alignfull,
+	body.home .wp-block-archives.alignfull,
+	body.blog .wp-block-archives.alignfull,
+	body.archive .wp-block-archives.alignfull {
+		margin-left: calc(50% - 680px);
+		margin-right: calc(50% - 680px);
+	}
+}
+
+/*--------------------------------------------------------------
+2.0 General Block Styles
+--------------------------------------------------------------*/
+
+/* Caption */
+
+[class^="wp-block-"] figcaption {
+	color: inherit;
+	font-size: inherit;
+	font-style: italic;
+}
+
+/* Video */
+
+.wp-block-embed.is-type-video iframe {
+	max-height: 100%;
+}
+
+/*--------------------------------------------------------------
+3.0 Blocks - Common Blocks
+--------------------------------------------------------------*/
+
+/* Paragraph */
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 5em;
+	margin-top: 0.125em;
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin: 0 0 1.5em;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	font-size: 15px;
+}
+
+/* Quote */
+
+.wp-block-quote::before {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.wp-block-quote cite {
+	text-align: right;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding: 0;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-size: 28px;
+}
+
+.rtl .wp-block-quote cite {
+	text-align: left;
+}
+
+/* Audio */
+
+.wp-block-audio {
+	margin: 0 0 1.5em;
+}
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+/* Cover */
+
+.wp-block-cover.aligncenter,
+.wp-block-cover-image.aligncenter,
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft,
+.wp-block-cover.alignright,
+.wp-block-cover-image.alignright {
+	display: flex;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+	font-size: 1.5em;
+}
+
+/* File */
+
+.wp-block-file a.wp-block-file__button,
+.wp-block-file a.wp-block-file__button:visited {
+	background-color: #83b6cc;
+	border: 2px solid transparent;
+	border-radius: 2em;
+	color: #eff6f9;
+	display: inline-block;
+	font-family: Karla, Arial, sans-serif;
+	font-size: 15.2px;
+	font-size: 0.95rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 1;
+	padding: 1em 3em;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: background-color 0.125s ease-in;
+	-webkit-appearance: none;
+
+}
+
+.wp-block-file a.wp-block-file__button:hover {
+	background-color: transparent;
+	border-color: currentColor;
+	color: #83b6cc;
+}
+
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:active {
+	background-color: #4488a5;
+	border-color: currentColor;
+	color: #83b6cc;
+}
+
+/* Video */
+
+.wp-block-video video {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+4.0 Blocks - Formatting
+--------------------------------------------------------------*/
+
+/* Verse */
+
+.wp-block-verse {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: italic;
+	padding: 0;
+}
+
+/* Preformatted */
+
+.wp-block-preformatted {
+	padding: 0;
+}
+
+/* Pullquote */
+
+.wp-block-pullquote blockquote p {
+	text-align: center;
+}
+
+.wp-block-pullquote cite {
+	font-family: "Lora", Georgia, serif;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: 0;
+	text-align: center;
+	text-transform: none;
+}
+
+.wp-block-pullquote cite:before {
+	display: none;
+}
+
+/* Table */
+
+.wp-block-table th {
+	text-align: left;
+
+}
+
+@media (min-width: 950px) {
+	body:not(.pique-sidebar).pique-singular .wp-block-table.alignwide,
+	body.home .wp-block-table.alignwide {
+		width: 1115px;
+	}
+}
+
+body:not(.pique-sidebar).pique-singular .wp-block-table.alignfull,
+body.home .wp-block-table.alignwide .wp-block-table.alignfull {
+	width: 96vw;
+}
+
+.rtl .wp-block-table th {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+5.0 Blocks - Layout Elements
+--------------------------------------------------------------*/
+
+/* Buttons */
+
+.wp-block-button .wp-block-button__link {
+	border: 2px solid transparent;
+	display: inline-block;
+	font-family: Karla, Arial, sans-serif;
+	font-size: 15.2px;
+	font-size: 0.95rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 1;
+	padding: 1em 3em;
+	text-shadow: none;
+	text-transform: uppercase;
+	transition: background-color 0.125s ease-in;
+	-webkit-appearance: none;
+}
+
+.wp-block-button__link {
+	background-color: #83b6cc;
+	border-radius: 2em;
+	color: #eff6f9;
+}
+
+.is-style-outline .wp-block-button__link {
+	border-color: currentColor;
+	background: transparent;
+}
+
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #83b6cc;
+}
+
+.wp-block-button .wp-block-button__link:hover {
+	background-color: transparent;
+	border-color: currentColor;
+	color: #83b6cc;
+}
+
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:active {
+	background-color: #4488a5;
+	border-color: currentColor;
+	color: #83b6cc;
+}
+
+@media (max-width: 767px) {
+	.wp-block-button .wp-block-button__link {
+		width: 75%;
+	}
+}
+
+/* Separator */
+
+.wp-block-separator {
+	border: 0;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100px;
+}
+
+/* Media & Text */
+
+.wp-block-media-text {
+	margin-bottom: 1.5em;
+}
+
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+/* General Widget styles */
+
+.wp-block-categories.aligncenter,
+.wp-block-categories.aligncenter ul,
+.wp-block-archives.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-latest-comments.aligncenter {
+	list-style-position: inside;
+	text-align: center;
+}
+
+/* Latest Comments */
+
+.wp-block-latest-comments {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: inherit;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: inherit;
+	font-family: Karla, Arial, sans-serif;
+	font-size: 13.6px;
+	font-size: 0.85rem;
+	font-weight: bold;
+	letter-spacing: 0.05rem;
+	text-transform: uppercase;
+}
+
+/* Latest Posts */
+
+.wp-block-latest-posts.is-grid {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+7.0 Blocks - Colors
+--------------------------------------------------------------*/
+
+.has-light-blue-color,
+.has-light-blue-color:hover,
+.has-light-blue-color:focus,
+.has-light-blue-color:active,
+.has-light-blue-color:visited {
+	color: #83b6cc;
+}
+
+.has-light-blue-background-color,
+.has-light-blue-background-color:hover,
+.has-light-blue-background-color:focus,
+.has-light-blue-background-color:active,
+.has-light-blue-background-color:visited {
+	background-color: #83b6cc;
+}
+
+.has-medium-blue-color,
+.has-medium-blue-color:hover,
+.has-medium-blue-color:focus,
+.has-medium-blue-color:active,
+.has-medium-blue-color:visited {
+	color: #3c7993;
+}
+
+.has-medium-blue-background-color,
+.has-medium-blue-background-color:hover,
+.has-medium-blue-background-color:focus,
+.has-medium-blue-background-color:active,
+.has-medium-blue-background-color:visited {
+	background-color: #3c7993;
+}
+
+.has-dark-blue-color,
+.has-dark-blue-color:hover,
+.has-dark-blue-color:focus,
+.has-dark-blue-color:active,
+.has-dark-blue-color:visited {
+	color: #293940;
+}
+
+.has-dark-blue-background-color,
+.has-dark-blue-background-color:hover,
+.has-dark-blue-background-color:focus,
+.has-dark-blue-background-color:active,
+.has-dark-blue-background-color:visited {
+	background-color: #293940;
+}
+
+.has-dark-brown-color,
+.has-dark-brown-color:hover,
+.has-dark-brown-color:focus,
+.has-dark-brown-color:active,
+.has-dark-brown-color:visited {
+	color: #2d2a26;
+}
+
+.has-dark-brown-background-color,
+.has-dark-brown-background-color:hover,
+.has-dark-brown-background-color:focus,
+.has-dark-brown-background-color:active,
+.has-dark-brown-background-color:visited {
+	background-color: #2d2a26;
+}
+
+.has-dark-gray-color,
+.has-dark-gray-color:hover,
+.has-dark-gray-color:focus,
+.has-dark-gray-color:active,
+.has-dark-gray-color:visited {
+	color: #5d5d5d;
+}
+
+.has-dark-gray-background-color,
+.has-dark-gray-background-color:hover,
+.has-dark-gray-background-color:focus,
+.has-dark-gray-background-color:active,
+.has-dark-gray-background-color:visited {
+	background-color: #5d5d5d;
+}
+
+.has-medium-gray-color,
+.has-medium-gray-color:hover,
+.has-medium-gray-color:focus,
+.has-medium-gray-color:active,
+.has-medium-gray-color:visited {
+	color: #a9a9a9;
+}
+
+.has-medium-gray-background-color,
+.has-medium-gray-background-color:hover,
+.has-medium-gray-background-color:focus,
+.has-medium-gray-background-color:active,
+.has-medium-gray-background-color:visited {
+	background-color: #a9a9a9;
+}
+
+.has-white-color,
+.has-white-color:hover,
+.has-white-color:focus,
+.has-white-color:active,
+.has-white-color:visited {
+	color: #fff;
+}
+
+.has-white-background-color,
+.has-white-background-color:hover,
+.has-white-background-color:focus,
+.has-white-background-color:active,
+.has-white-background-color:visited {
+	background-color: #fff;
+}

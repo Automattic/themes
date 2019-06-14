@@ -1,0 +1,503 @@
+/*
+Theme Name: Affinity
+Description: Used to style the TinyMCE editor.
+*/
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Body
+ * 2.0 - Typography
+ * 3.0 - Elements
+ * 4.0 - Alignment
+ * 5.0 - Caption
+ * 6.0 - Galleries
+ * 7.0 - Audio / Video
+ * 8.0 - RTL
+ */
+
+
+/**
+ * 1.0 - Body
+ */
+
+body {
+	color: #1e1c1b;
+	font-family: Lora, Baskerville, Georgia, Times, serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+body.post-type-page {
+	max-width: 716px;
+}
+
+
+/**
+ * 2.0 - Typography
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family: Lora, Baskerville, Georgia, Times, serif;
+	font-style: italic;
+	font-weight: normal;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+h1 {
+	font-size: 34px;
+	font-size: 2.125rem;
+}
+
+h2 {
+	font-size: 29.2px;
+	font-size: 1.825rem;
+}
+
+h3 {
+	font-size: 26px;
+	font-size: 1.625rem;
+}
+
+h4 {
+	font-size: 18px;
+	font-size: 1.125rem;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+h5 {
+	font-size: 16px;
+	font-size: 1rem;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+h6 {
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+}
+
+@media screen and (min-width: 46em) {
+	h1 {
+		font-size: 47.12px;
+	}
+
+	h2 {
+		font-size: 42px;
+	}
+
+	h3 {
+		font-size: 29.2px;
+	}
+
+	h4 {
+		font-size: 26px;
+	}
+
+	h5 {
+		font-size: 18px;
+	}
+
+	h6 {
+		font-size: 16px;
+	}
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left: 4px solid #1a1a1a;
+	color: #686868;
+	font-size: 19px;
+	font-style: italic;
+	line-height: 1.4736842105;
+	margin-bottom: 28px;
+	overflow: hidden;
+	padding: 0 0 0 24px;
+}
+
+blockquote {
+	color: #99908a;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0;
+	border-top: 3px solid #e8e9ea;
+	padding-top: .8em;
+	border-bottom: 1px solid #e8e9ea;
+	margin-bottom: .8em;
+	padding-bottom: .8em;
+}
+blockquote.aligncenter {
+	text-align: center;
+}
+blockquote p:last-of-type {
+	margin-bottom: 0;
+}
+blockquote blockquote {
+	border-top: 0;
+	border-bottom: 0;
+	padding-left: .8em;
+	padding-bottom: 0;
+}
+blockquote cite {
+	display: block;
+	text-align: right;
+	font-style: normal;
+	font-size: 16px;
+	font-size: 1rem;
+}
+blockquote, q {
+	quotes: "" "";
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+}
+
+address {
+	margin: 0 0 1.6em;
+}
+
+pre {
+	background: #e8e9ea;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 13.2px;
+	font-size: 0.825rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 13.2px;
+	font-size: 0.825rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted #d1d1d1;
+	cursor: help;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+
+/**
+ * 3.0 - Elements
+ */
+
+hr {
+	background-color: #e8e9ea;
+	border: 0;
+	height: 1px;
+	margin: 0.8em auto;
+	max-width: 66%;
+}
+
+ul, ol {
+	margin: 0 0 1.6em 3.2em;
+	padding-left: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.6em;
+	padding-left: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.6em 1.6em;
+}
+
+.mce-item-table,
+table {
+	margin: 0 0 1.6em;
+	width: 100%;
+}
+
+td,
+th
+.mce-item-table th,
+.mce-item-table td {
+	padding: 0.4em 0.2em;
+	border-bottom: 1px solid #e8e9ea;
+}
+
+th {
+	font-weight: bold;
+	border-bottom-width: 3px;
+	text-align: left;
+}
+
+caption {
+	font-style: italic;
+	font-weight: bold;
+}
+
+img {
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+a img {
+	display: block;
+}
+
+figure {
+	margin: 0;
+}
+
+del {
+	opacity: 0.8;
+}
+
+a {
+	color: #99908a;
+	transition: 0.3s;
+}
+a:visited {
+	color: #99908a;
+}
+a:hover, a:focus, a:active {
+	color: #383e44;
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover, a:active {
+	outline: 0;
+}
+
+fieldset {
+	border: 1px solid silver;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+
+/**
+ * 4.0 - Alignment
+ */
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin: 0.4em 1.6em 0.4em 0;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin: 0.4em 0 0.4em 1.6em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/**
+ * 5.0 - Caption
+ */
+
+.wp-caption {
+	font-size: 13.2px;
+	font-style: italic;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption-text,
+.wp-caption-dd {
+	margin: 0.8em 0;
+	text-align: center;
+}
+
+
+/**
+ * 6.0 - Galleries
+ */
+
+.mce-content-body .wpview-wrap {
+	margin-bottom: 1.6em;
+}
+
+.gallery .gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	padding: .4em;
+	width: 100%;
+}
+
+.gallery-columns-1 .gallery-item {
+	max-width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery .gallery-caption {
+	display: block;
+	font-size: 13.2px;
+	font-size: 0.825rem;
+}
+
+
+/**
+ * 7.0 - Audio / Video
+ */
+
+.wp-audio-shortcode a,
+.wp-playlist a {
+	box-shadow: none;
+}
+
+.mce-content-body .wp-audio-playlist {
+	margin: 0;
+	padding-bottom: 0;
+}
+
+.mce-content-body .wp-playlist-tracks {
+	margin-top: 0;
+}
+
+.mce-content-body  .wp-playlist-item {
+	padding: .8em 0;
+}
+
+.mce-content-body .wp-playlist-item-length {
+	top: .8em;
+}
+
+
+/**
+ * 8.0 - RTL
+ */
+
+.rtl blockquote:not(.alignleft):not(.alignright) {
+	padding: 0 1.6em 0 0;
+}
+
+.rtl blockquote blockquote:not(.alignleft):not(.alignright) {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.rtl li > ul,
+.rtl blockquote > ul {
+	margin-right: 1.6em;
+	margin-left: auto;
+}
+
+.rtl li > ol,
+.rtl blockquote > ol {
+	margin-right: 1.6em;
+	margin-left: auto;
+}
+
+.rtl table th,
+.rtl .mce-item-table th,
+.rtl table caption {
+	text-align: right;
+}

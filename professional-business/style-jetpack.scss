@@ -1,0 +1,112 @@
+/* Reset font-family styles for Jetpack
+ *
+ * See: https://github.com/Automattic/jetpack/blob/master/modules/theme-tools/compat/twentynineteen.css
+ *
+ * Note: Use $font__heading or $font__body variables approriately
+ */
+@import "sass/variables-site/variables-site";
+
+/* Infinite scroll */
+.site-main #infinite-handle span button,
+.site-main #infinite-handle span button:hover,
+.site-main #infinite-handle span button:focus {
+	font-family: $font__body;
+}
+
+/**
+ * Responsive Videos
+ */
+
+/**
+ * Sharing
+ */
+
+.entry div.sharedaddy h3.sd-title,
+.entry h3.sd-title {
+	font-family: $font__heading;
+}
+
+/**
+ * Related Posts
+ */
+
+.entry #jp-relatedposts h3.jp-relatedposts-headline {
+	font-family: $font__heading;
+}
+
+.entry #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title,
+.entry #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+	font-family: $font__body;
+}
+
+.entry #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+.entry #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+	font-family: $font__body;
+}
+
+/**
+ * Stats
+ */
+
+/**
+ * Comments
+ */
+
+/**
+ * Widgets
+ */
+
+/* Authors Widget */
+.widget_authors > ul > li > a {
+	font-family: $font__body;
+}
+
+/* Display WordPress Posts */
+
+/* GoodReads */
+
+/* EU cookie law */
+.widget_eu_cookie_law_widget #eu-cookie-law {
+	font-family: $font__body;
+}
+
+/* RSS Links */
+.widget_rss_links li {
+	font-family: $font__body;
+}
+
+/**
+ * Content Options
+ */
+
+/**
+ * Blocks
+ */
+
+/* Mailchimp Block - Temp Fix */
+.wp-block-jetpack-mailchimp {
+	input[type="email"] {
+		width: 100%;
+	}
+
+	#wp-block-jetpack-mailchimp_consent-text {
+		font-size: $font__size-xs;
+	}
+}
+
+/* Business Hours - Temp Fix */
+.jetpack-business-hours {
+	dt,
+	dd {
+		float: left;
+	}
+
+	dt {
+		clear: both;
+		margin-right: ( $size__spacing-unit * .5 );
+	}
+
+	dd {
+		margin: 0;
+	}
+}

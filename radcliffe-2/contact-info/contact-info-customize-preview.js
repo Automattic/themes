@@ -29,7 +29,7 @@
 	} );
 
 	// Update the contact info address in real time...
-	wp.customize( 'radcliffe_2_contact_info_address', function( value ) {
+	wp.customize( 'site_contact_info[address]', function( value ) {
 		value.bind( function( to ) {
 			$( '.contact-info-area .contact-info-address .contact-info-label' ).text( to );
 
@@ -44,7 +44,7 @@
 	} );
 
 	// Update the contact info phone in real time...
-	wp.customize( 'radcliffe_2_contact_info_phone', function( value ) {
+	wp.customize( 'site_contact_info[phone]', function( value ) {
 		value.bind( function( to ) {
 			$( '.contact-info-area .contact-info-phone .contact-info-label' ).text( to );
 
@@ -59,7 +59,7 @@
 	} );
 
 	// Update the contact info email in real time...
-	wp.customize( 'radcliffe_2_contact_info_email', function( value ) {
+	wp.customize( 'site_contact_info[email]', function( value ) {
 		value.bind( function( to ) {
 			$( '.contact-info-area .contact-info-email .contact-info-label' ).text( to );
 

@@ -111,7 +111,7 @@ function lodestar_infinite_scroll_render() {
 			wc_get_template_part( 'content', 'product' );
 		} else if ( is_search() ) {
 			get_template_part( 'components/post/content', 'search' );
-		} else if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
+		} else if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-tag' ) || is_tax( 'jetpack-portfolio-type' ) ) {
 			get_template_part( 'components/features/portfolio/content', 'portfolio' );
 		} else if ( is_post_type_archive( 'jetpack-testimonial' ) ) {
 			get_template_part( 'components/features/testimonials/content', 'testimonials' );

@@ -88,18 +88,11 @@ if ( ! function_exists( 'photos_setup' ) ) :
 			),
 		) );
 
-		// Custom header support
-		add_theme_support( 'custom-header', apply_filters( 'photos_custom_header_args', array(
-			'default-image'          => '',
-			'default-text-color'     => '111111',
-			'width'                  => 1920,
-			'height'                 => 400,
-			'flex-height'            => true,
-			'flex-width'             => true,
-		) ) );
-
 		/* Gutenberg! */
 		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
 
 	    add_theme_support( 'editor-color-palette', array(
 			array(
@@ -195,17 +188,23 @@ function photos_scripts() {
 
 	$photos_l10n = array();
 
-	if ( has_nav_menu( 'menu-1' ) ) {
-		wp_enqueue_script( 'photos-navigation', get_theme_file_uri( '/js/navigation.js' ), array( 'jquery' ), '1.0', true );
-		$photos_l10n['expand']   = esc_attr__( 'Expand child menu', 'photos' );
-		$photos_l10n['collapse'] = esc_attr__( 'Collapse child menu', 'photos' );
-		$photos_l10n['icon']     = photos_get_svg( array( 'icon' => 'expand', 'fallback' => true ) );
-	}
+	wp_enqueue_script( 'photos-navigation', get_theme_file_uri( '/js/navigation.js' ), array( 'jquery' ), '1.0', true );
+	$photos_l10n['expand']   = esc_attr__( 'Expand child menu', 'photos' );
+	$photos_l10n['collapse'] = esc_attr__( 'Collapse child menu', 'photos' );
+	$photos_l10n['icon']     = photos_get_svg( array( 'icon' => 'expand', 'fallback' => true ) );
 
 	wp_localize_script( 'photos-navigation', 'photosScreenReaderText', $photos_l10n );
 
 }
 add_action( 'wp_enqueue_scripts', 'photos_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function photos_editor_styles() {
+	wp_enqueue_style( 'photos-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'photos_editor_styles' );
 
 /**
  * Custom template tags for this theme.
@@ -231,6 +230,11 @@ require get_template_directory() . '/inc/logo-resizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load Custom Header funtionality.
+ */
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * SVG icons functions and filters.

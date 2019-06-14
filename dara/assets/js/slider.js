@@ -12,10 +12,22 @@
 			itemWidth: 1180,
 			itemHeight: 600,
 			smoothHeight: true,
-			selector: '.slides > .hero-content-wrapper'
+			selector: '.slides > .hero-content-wrapper',
+			start: function(){
+				window.dispatchEvent(new Event('resize'));
+			},
 		} );
 	}
 
-	$(document).on( 'ready', loadFlexslider );
+	function refreshFlexslider() {
+		$( '.flex-viewport-wrapper' ).imagesLoaded( function() {
+			window.dispatchEvent(new Event('resize'));
+		});
+	}
+
+	$(document).on( 'ready', function() {
+		loadFlexslider();
+		refreshFlexslider();
+	} );
 
 } )(jQuery);

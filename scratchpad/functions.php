@@ -35,14 +35,68 @@ function scratchpad_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+ 	// Add custom colors to Gutenberg
+	add_theme_support(
+		'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Black', 'scratchpad' ),
+				'slug' => 'black',
+				'color' => '#222222',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Gray', 'scratchpad' ),
+				'slug' => 'dark-gray',
+				'color' => '#777777',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'scratchpad' ),
+				'slug' => 'medium-gray',
+				'color' => '#999999',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'scratchpad' ),
+				'slug' => 'light-gray',
+				'color' => '#bdcbcc',
+			),
+			array(
+				'name'  => esc_html__( 'White', 'scratchpad' ),
+				'slug' => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Blue', 'scratchpad' ),
+				'slug' => 'blue',
+				'color' => '#7ba6a9',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Blue', 'scratchpad' ),
+				'slug' => 'dark-blue',
+				'color' => '#537375',
+			),
+			array(
+				'name'  => esc_html__( 'Orange', 'scratchpad' ),
+				'slug' => 'orange',
+				'color' => '#d16221',
+			),
+			array(
+				'name'  => esc_html__( 'Yellow', 'scratchpad' ),
+				'slug' => 'yellow',
+				'color' => '#e4b500',
+			),	
+		)
+	);
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * @link https://developer.wordpress.org/themes/functionality/featuBlue-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'scratchpad-avatar', 85, 85, true );
-	add_image_size( 'scratchpad-featured', 1000, 9999 );
+	add_image_size( 'scratchpad-featuBlue', 1000, 9999 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -135,6 +189,9 @@ function scratchpad_scripts() {
 
 	wp_enqueue_style( 'scratchpad-style', get_stylesheet_uri() );
 
+	// Gutenberg styles
+	wp_enqueue_style( 'scratchpad-blocks', get_template_directory_uri() . '/blocks.css' );
+
 	wp_enqueue_script( 'scratchpad-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'scratchpad-javascript', get_template_directory_uri() . '/js/scratchpad.js', array( 'jquery', 'masonry' ), '20151215', true );
@@ -146,6 +203,15 @@ function scratchpad_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'scratchpad_scripts' );
+
+/**
+ * Gutenberg Editor Styles
+ */
+function scratchpad_editor_styles() {
+	wp_enqueue_style( 'scratchpad-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+	wp_enqueue_style( 'scratchpad-fonts', scratchpad_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'scratchpad_editor_styles' );
 
 /**
  * Get first image from a post

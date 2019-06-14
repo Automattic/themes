@@ -1,0 +1,40 @@
+{
+  "name": "elegant-business",
+  "version": "1.0.0",
+  "description": "Style Variation of the Default WP Theme",
+  "devDependencies": {
+    "@wordpress/browserslist-config": "^2.3.0",
+    "autoprefixer": "^9.5.0",
+    "chokidar-cli": "^1.2.2",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
+    "rtlcss": "^2.4.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "build:style": "node-sass style.scss style.css --output-style expanded && postcss -r style.css",
+    "build:style-editor": "node-sass style-editor.scss style-editor.css --output-style expanded && postcss -r style-editor.css",
+    "build:style-editor-customizer": "node-sass style-editor-customizer.scss style-editor-customizer.css --output-style expanded && postcss -r style-editor-customizer.css",
+    "build:style-jetpack": "node-sass style-jetpack.scss style-jetpack.css --output-style expanded && postcss -r style-jetpack.css",
+    "build:rtl": "rtlcss style.css style-rtl.css",
+    "build:print": "node-sass print.scss print.css --output-style expanded && postcss -r print.css",
+    "build": "run-p \"build:*\"",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
+  }
+}
