@@ -783,8 +783,12 @@
 				color: inherit;
 			}
 
-			& :last-child {
-				margin-bottom: 1.5em;
+			> :first-child {
+				margin-top: 0.88889rem;
+			}
+
+			> :last-child {
+				margin-bottom: 0.88889rem;
 			}
 
 			h1,
@@ -796,17 +800,6 @@
 				text-align: left;
 			}
 		}
-
-		&.has-media-on-the-right .wp-block-media-text__content {
-			:first-child {
-				margin-top: $size__vertical-spacing-unit;
-			}
-
-			:last-child {
-				margin-bottom: $size__vertical-spacing-unit;
-			}
-		}
-
 
 		&.has-media-on-the-right.is-stacked-on-mobile {
 			.wp-block-media-text__media {
@@ -829,25 +822,6 @@
 				}
 				.wp-block-media-text__content {
 					grid-area: media-text-content;
-				}
-			}
-		}
-
-		@include media(tablet) {
-
-			.wp-block-media-text__content {
-				:last-child {
-					margin-bottom: $size__vertical-spacing-unit;
-				}
-			}
-
-			&.has-media-on-the-right {
-
-				.wp-block-media-text__content {
-
-					:first-child {
-						margin-top: $size__vertical-spacing-unit;
-					}
 				}
 			}
 		}
