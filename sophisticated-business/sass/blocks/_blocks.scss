@@ -843,12 +843,21 @@
 			padding: 0 1rem;
 
 			@include media(tablet) {
-				padding-left: 4.5%;
+				padding-left: 8%;
+				padding-right: 8%;
+				margin-left: 0;
+			}
+
+			@include media(desktop) {
+				padding-left: 1rem;
+				padding-right: 1rem;
 				margin-left: 7.5%;
 			}
 		}
 
 		.wp-block-media-text__content {
+			padding-left: 1rem;
+			padding-right: 1rem;
 
 			h1, h2, h3, h4, h5, h6 {
 				text-align: left;
@@ -867,12 +876,20 @@
 		@include media(tablet) {
 
 			.wp-block-media-text__content {
-				padding-left: 4.5%;
-				margin-left: 7.5%;
+				margin-left: 0;
 			}
 
 			&.alignfull + .wp-block-media-text {
 				margin-top: -$size__vertical-spacing-unit;
+			}
+		}
+
+		@include media(desktop) {
+
+			.wp-block-media-text__content {
+				padding-left: 8%;
+				padding-right: 8%;
+				margin-left: 0;
 			}
 		}
 
