@@ -3486,6 +3486,13 @@ body.page .main-navigation {
 }
 
 /*
+ * Make sure the first block has margin-top: 0
+ */
+.entry:not(.has-post-thumbnail) .entry-content > :first-child {
+  margin-top: 0;
+}
+
+/*
  * Unset nested content selector styles
  * - Prevents layout styles from cascading too deeply
  * - helps with plugin compatibility
