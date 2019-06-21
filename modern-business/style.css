@@ -2333,14 +2333,14 @@ body.page .main-navigation {
 }
 
 .entry .entry-header {
-  margin: calc(3 * 1rem) 1rem 1rem;
+  margin: calc(3 * 1rem) 1rem 32px;
   position: relative;
   text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
   .entry .entry-header {
-    margin: calc(3 * 1rem) calc(10% + 60px) 1rem;
+    margin: calc(3 * 1rem) calc(10% + 60px) 32px;
   }
 }
 
@@ -2348,6 +2348,7 @@ body.page .main-navigation {
   font-size: 1.6875em;
   font-weight: 300;
   margin: 0;
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -3492,6 +3493,13 @@ body.page .main-navigation {
   .entry .entry-summary > *.aligncenter {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
+}
+
+/*
+ * Make sure the first block has margin-top: 0
+ */
+.entry:not(.has-post-thumbnail) .entry-content > :first-child {
+  margin-top: 0;
 }
 
 /*
