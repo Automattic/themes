@@ -32,11 +32,11 @@
 
 	.entry-header {
 
-		margin: calc(3 * #{ $size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
+		margin: calc(3 * #{ $size__spacing-unit}) $size__spacing-unit $size__vertical-spacing-unit;
 		position: relative;
 
 		@include media(tablet) {
-			margin: calc(3 * 1rem) auto calc(1rem / 2);
+			margin: calc(3 * 1rem) auto $size__vertical-spacing-unit;
     		max-width: $size__site-tablet-content;
 		}
 
@@ -47,16 +47,16 @@
 
 	.entry-title {
 		font-size: $font__size-lg;
+		margin: 0;
+
 		@include media(tablet) {
-			margin: 32px auto;
+			margin: $size__vertical-spacing-unit auto;
 			max-width: $size__site-tablet-content;
 		}
 
 		@include media(desktop) {
 			max-width: $size__site-desktop-content;
 		}
-
-		margin: 0;
 
 		a {
 			color: inherit;
