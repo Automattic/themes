@@ -2366,7 +2366,7 @@ body.page .main-navigation {
 
 @media only screen and (min-width: 768px) {
   .entry .entry-header {
-    margin: calc(3 * 1rem) auto 1rem;
+    margin: calc(3 * 1rem) auto 32px;
   }
 }
 
@@ -2390,6 +2390,7 @@ body.page .main-navigation {
 
 .entry .entry-title {
   margin: 0;
+  margin-bottom: 32px;
 }
 
 .entry .entry-title a {
@@ -3483,6 +3484,13 @@ body.page .main-navigation {
   .entry .entry-summary > *.aligncenter {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
+}
+
+/*
+ * Make sure the first block has margin-top: 0
+ */
+.entry:not(.has-post-thumbnail) .entry-content > :first-child {
+  margin-top: 0;
 }
 
 /*
