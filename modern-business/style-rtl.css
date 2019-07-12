@@ -444,6 +444,7 @@ textarea {
 .pagination .nav-links,
 .sticky-post,
 .site-title,
+.site-title:focus,
 .site-info,
 #cancel-comment-reply-link,
 img:after,
@@ -467,6 +468,7 @@ h6 {
 .comment-author .fn,
 .no-comments,
 .site-title,
+.site-title:focus,
 h1,
 h2,
 h3,
@@ -506,6 +508,7 @@ h2 {
 }
 
 .site-title,
+.site-title:focus,
 .site-description,
 .nav-links,
 .page-title,
@@ -1897,6 +1900,7 @@ body.page .main-navigation {
 --------------------------------------------------------------*/
 .site-header {
   padding: 1em;
+  text-align: center;
 }
 
 .site-header.featured-image {
@@ -1960,43 +1964,65 @@ body.page .main-navigation {
   margin-top: 0.5rem;
 }
 
-.site-title {
+.site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
   color: #181818;
   margin: 0;
   order: 2;
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a {
+.site-title a,
+.wp-block-a8c-site-title a,
+.wp-block-a8c-site-title:focus a {
   color: #181818;
 }
 
-.site-title a:link, .site-title a:visited {
+.site-title a:link, .site-title a:visited,
+.wp-block-a8c-site-title a:link,
+.wp-block-a8c-site-title a:visited,
+.wp-block-a8c-site-title:focus a:link,
+.wp-block-a8c-site-title:focus a:visited {
   color: #181818;
 }
 
-.site-title a:hover {
+.site-title a:hover,
+.wp-block-a8c-site-title a:hover,
+.wp-block-a8c-site-title:focus a:hover {
   color: #4a4a4a;
 }
 
-.featured-image .site-title {
+.featured-image .site-title, .featured-image
+.wp-block-a8c-site-title, .featured-image
+.wp-block-a8c-site-title:focus {
   margin: 0;
 }
 
-.site-title + .main-navigation {
+.site-title + .main-navigation,
+.wp-block-a8c-site-title + .main-navigation,
+.wp-block-a8c-site-title:focus + .main-navigation {
   display: block;
 }
 
-.site-title:not(:empty) + .site-description:not(:empty):before {
+.site-title:not(:empty) + .site-description:not(:empty):before,
+.wp-block-a8c-site-title:not(:empty) + .site-description:not(:empty):before,
+.wp-block-a8c-site-title:focus:not(:empty) + .site-description:not(:empty):before {
   margin: 0 0.2em;
 }
 
-.site-description {
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
   color: #181818;
   font-size: 0.71111em;
   font-weight: 300;
   margin: 0 0 calc(0.5 * 1rem);
   order: 1;
+}
+
+.wp-block-image.is-resized {
+  display: block;
 }
 
 .site-header.featured-image {

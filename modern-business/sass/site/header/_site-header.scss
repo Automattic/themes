@@ -2,6 +2,7 @@
 
 .site-header {
 	padding: 1em;
+	text-align: center;
 
 	&.featured-image {
 		display: flex;
@@ -67,7 +68,9 @@
 
 // Site title
 
-.site-title {
+.site-title, 
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
 	color: $color__text-main;
 	margin: 0;
 	order: 2;
@@ -105,10 +108,18 @@
 
 // Site description
 
-.site-description {
+.site-description, 
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
 	color: $color__text-main;
 	font-size: $font__size-xs;
 	font-weight: 300;
 	margin: 0 0 calc(0.5 * #{$size__spacing-unit});
 	order: 1;
+}
+
+// Site Image Logo
+
+.wp-block-image.is-resized {
+	display: block;
 }
