@@ -29,7 +29,7 @@
 
 .site-branding {
 
-	align-items: center;
+	align-items: flex-start;
 	color: $color__text-dark;
 	display: flex;
 	flex-wrap: wrap;
@@ -67,8 +67,9 @@
 
 // Site title
 
-.site-title {
-
+.site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
 	color: $color__text-main;
 	flex: 1 1 auto;
 	margin: 0 #{0.7 * $size__spacing-unit} 0 0;
@@ -89,11 +90,16 @@
 
 // Site description
 
-.site-description {
-
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
 	flex: initial;
 	color: $color__text-dark;
 	font-size: $font__size-xs;
 	font-weight: normal;
 	margin: 14px 0 0;
+
+	@include media(tablet) {
+		text-align: right;
+	}
 }
