@@ -83,3 +83,15 @@ require get_stylesheet_directory() . '/inc/jetpack.php';
  * WP.com compatibility file.
  */
 require get_stylesheet_directory() . '/inc/wpcom.php';
+
+/**
+ * Full Site Editing template data population file.
+ */
+require get_stylesheet_directory() . '/inc/fse-template-data.php';
+
+function a8c_fse_insert_theme_template_data() {
+	$data_inserter = new A8C_WP_Template_Data_Inserter();
+	$data_inserter->insert_default_template_data();
+}
+
+add_action( 'after_switch_theme', 'a8c_fse_insert_theme_template_data' );
