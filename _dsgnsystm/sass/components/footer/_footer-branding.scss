@@ -1,0 +1,27 @@
+// Footer Branding
+
+.site-info {
+
+	color: #{map-deep-get($config-footer, "color", "text")};
+	font-family: #{map-deep-get($config-footer, "font", "family")};
+	font-size: #{map-deep-get($config-footer, "font", "size")};
+	line-height: #{map-deep-get($config-footer, "font", "line-height")};
+
+	.site-name {
+		font-weight: bold;
+	}
+
+	a {
+		color: currentColor;
+
+		&:link,
+		&:visited {
+			color: currentColor;
+		}
+
+		&:hover {
+			color: #{map-deep-get($config-footer, "color", "link-hover")};
+		}
+	}
+}
+

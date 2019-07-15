@@ -1,0 +1,26 @@
+/**
+ * Editor Structure
+ */
+
+/**
+ * Content Width
+ * - Set vertical padding and horizontal margins
+ */
+
+$horizontal-padding: (2 * map-deep-get($config-global, "spacing", "horizontal") - 30px);
+$content-width-flex: 100%;
+$content-width-sm: ( map-deep-get($config-global, "breakpoint", "sm") - $horizontal-padding );
+$content-width-md: ( map-deep-get($config-global, "breakpoint", "md") - $horizontal-padding );
+$content-width-lg: ( map-deep-get($config-global, "breakpoint", "lg") - $horizontal-padding );
+$content-width-xl: ( map-deep-get($config-global, "breakpoint", "xl") - $horizontal-padding );
+$content-width-xxl:( map-deep-get($config-global, "breakpoint", "xxl") - $horizontal-padding );
+
+/* Width of "default" blocks */
+.wp-block {
+	max-width: $content-width-lg;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+    max-width: $content-width-xl;
+}

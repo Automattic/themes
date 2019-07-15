@@ -1,0 +1,23 @@
+.wp-block-quote {
+	border-left-color: #{map-deep-get($config-global, "color", "primary", "default")};
+	margin: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+	p {
+		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h4")) + 0em);
+		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
+		line-height: #{map-deep-get($config-global, "font", "line-height", "h4")};
+	}
+
+    &.is-large,
+    &.is-style-large {
+		border: none;
+		padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+
+		p {
+			font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h3")) + 0em);
+			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
+			line-height: #{map-deep-get($config-heading, "font", "line-height", "h3")};
+		}
+	}
+}

@@ -1,0 +1,54 @@
+$config-header: (
+	"branding": (
+		// Colors
+		"color": (
+			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"link": map-deep-get($config-global, "color", "primary", "default"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		),
+		// Fonts & Typography
+		"title": (
+			// Fonts
+			"font": (
+				"family": map-deep-get($config-global, "font", "family", "primary"),
+				"size": map-deep-get($config-global, "font", "size", "md"),
+				"weight": bold,
+				"line-height": 1,
+			),
+		),
+		// Fonts & Typography
+		"description": (
+			// Fonts
+			"font": (
+				"family": map-deep-get($config-global, "font", "family", "secondary"),
+				"size": map-deep-get($config-global, "font", "size", "sm"),
+			),
+		),
+	),
+
+	"main-nav": (
+		// Colors
+		"color": (
+			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"link": map-deep-get($config-global, "color", "primary", "default"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		),
+		// Fonts
+		"font": (
+			"family": map-deep-get($config-global, "font", "family", "primary"),
+			"size": map-deep-get($config-global, "font", "size", "md"),
+			"weight": bold,
+			"line-height": 1,
+		),
+		"link-padding": map-deep-get($config-global, "spacing", "unit"),
+	),
+
+	"social-nav": (
+		// Colors
+		"color": (
+			"link": map-deep-get($config-global, "color", "primary", "default"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		),
+		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
+	),
+);

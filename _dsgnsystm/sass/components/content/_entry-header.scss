@@ -1,0 +1,68 @@
+.entry-header {
+
+}
+
+.entry-title {
+
+	font-size: #{map-deep-get($config-heading, "font", "size", "h2")};
+	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
+	line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
+
+	a {
+
+	}
+}
+
+.entry-meta,
+.entry-footer {
+
+	color: #{map-deep-get($config-global, "color", "foreground", "light")};
+	clear: both;
+	float: none;
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+	display: block;
+
+	> span {
+		display: inline-block;
+		margin-right: #{map-deep-get($config-global, "spacing", "unit")};
+
+		& > * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.published + .updated {
+			display: none; // Hide updated date?
+		}
+	}
+
+	a {
+		color: currentColor;
+
+		&:hover,
+		&:active {
+			color: #{map-deep-get($config-global, "color", "primary", "hover")};
+		}
+	}
+
+	.svg-icon {
+		fill: currentColor;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: calc(0.25 * #{map-deep-get($config-global, "spacing", "unit")});
+	}
+}
+
+.entry-meta {
+
+}
+
+.entry-footer {
+
+}
+

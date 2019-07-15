@@ -1,0 +1,41 @@
+.wp-block-media-text {
+
+	.wp-block-media-text__content {
+
+		padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+		h1, h2, h3, h4, h5, h6, p, hr {
+			margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		a {
+			color: currentColor;
+		}
+	}
+
+	/**
+	 * Block Options
+	 */
+
+	&.is-stacked-on-mobile .wp-block-media-text__content {
+		padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+
+	@include media(tablet) {
+
+		&.is-stacked-on-mobile .wp-block-media-text__content {
+			padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+		}
+	}
+}

@@ -1,0 +1,112 @@
+/**
+ * Page Layout Styles & Repsonsive Styles
+ */
+
+/* Responsive width-content overrides */
+$horizontal-padding: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+$content-width-flex: 100%;
+$content-width-sm: calc( #{map-deep-get($config-global, "breakpoint", "sm")} - #{$horizontal-padding} );
+$content-width-md: calc( #{map-deep-get($config-global, "breakpoint", "md")} - #{$horizontal-padding} );
+$content-width-lg: calc( #{map-deep-get($config-global, "breakpoint", "lg")} - #{$horizontal-padding} );
+$content-width-xl: calc( #{map-deep-get($config-global, "breakpoint", "xl")} - #{$horizontal-padding} );
+$content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} - #{$horizontal-padding} );
+
+%responsive-width-normal {
+
+	max-width: $content-width-flex;
+
+	@include media(mobile) {
+		max-width: $content-width-sm;
+	}
+
+	@include media(tablet) {
+		max-width: $content-width-md;
+	}
+
+	@include media(laptop) {
+		max-width: $content-width-lg;
+	}
+
+	@include media(desktop) {
+		max-width: $content-width-lg;
+	}
+
+	@include media(wide) {
+		max-width: $content-width-lg;
+	}
+}
+
+%responsive-width-wide {
+
+	@include align-width( $content-width-flex, -0.25 );
+
+	@include media(mobile) {
+		@include align-width( $content-width-sm, -0.25 );
+	}
+
+	@include media(tablet) {
+		@include align-width( $content-width-md, -0.25 );
+	}
+
+	@include media(laptop) {
+		@include align-width( $content-width-lg, -0.25 );
+	}
+
+	@include media(desktop) {
+		@include alignwide-width( $content-width-lg );
+	}
+
+	@include media(wide) {
+		@include alignwide-width( $content-width-lg );
+	}
+}
+
+%responsive-width-full {
+
+	@include align-width( $content-width-flex, -0.5 );
+
+	@include media(mobile) {
+		@include align-width( $content-width-sm, -0.5 );
+	}
+
+	@include media(tablet) {
+		@include align-width( $content-width-md, -0.5 );
+	}
+
+	@include media(laptop) {
+		@include align-width( $content-width-lg, -0.5 );
+	}
+
+	@include media(desktop) {
+		@include align-width( $content-width-lg, -0.5 );
+	}
+
+	@include media(wide) {
+		@include align-width( $content-width-lg, -0.5 );
+	}
+}
+
+%responsive-align-container {
+
+	@include align-container-width( $content-width-flex );
+
+	@include media(mobile) {
+		@include align-container-width( $content-width-sm );
+	}
+
+	@include media(tablet) {
+		@include align-container-width( $content-width-md );
+	}
+
+	@include media(laptop) {
+		@include align-container-width( $content-width-lg );
+	}
+
+	@include media(desktop) {
+		@include align-container-width( $content-width-lg );
+	}
+
+	@include media(wide) {
+		@include align-container-width( $content-width-lg );
+	}
+}

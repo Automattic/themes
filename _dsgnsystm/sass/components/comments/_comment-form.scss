@@ -1,0 +1,71 @@
+.comment-respond {
+	margin-top: calc(2 * #{map-deep-get($config-global, "spacing", "vertical")});
+}
+
+.comment-respond > * {
+	margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+	margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.comment-form > p {
+	margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+	margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	label,
+	input[type="email"],
+	input[type="text"],
+	input[type="url"],
+	textarea {
+		width: 100%;
+	}
+
+	&.comment-form-cookies-consent > label {
+		width: auto;
+	}
+
+	@include media(mobile) {
+		display: flex;
+
+		label {
+			width: 25%;
+		}
+
+		&.comment-form-cookies-consent {
+
+			margin-left: 25%;
+
+			& > label {
+				width: auto;
+				display: inline-block;
+			}
+		}
+
+		input[type="email"],
+		input[type="text"],
+		input[type="url"],
+		textarea {
+			width: 75%;
+		}
+
+		&.comment-notes,
+		&.logged-in-as {
+			display: block;
+		}
+	}
+}

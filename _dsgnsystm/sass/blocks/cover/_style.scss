@@ -1,0 +1,56 @@
+.wp-block-cover,
+.wp-block-cover-image {
+
+	background-color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	min-height: #{map-deep-get($config-cover, "height")};
+	margin: inherit;
+
+	.wp-block-cover__inner-container,
+	.wp-block-cover-image-text,
+	.wp-block-cover-text {
+		color: #{map-deep-get($config-global, "color", "background")};
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+		a {
+			color: currentColor;
+		}
+	}
+
+	/* Treating H2 separately to account for legacy /core styles */
+	h2 {
+		font-size: #{map-deep-get($config-heading, "font", "size", "h2")};
+		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
+		line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
+		max-width: inherit; // undo opinionated styles
+		text-align: inherit; // undo opinionated styles
+		padding: 0;
+	}
+
+	/**
+	 * Block Options
+	 */
+	&.alignleft,
+	&.alignright {
+		margin-top: 0;
+
+		> * {
+			margin-top: calc(2 * #{map-deep-get($config-global, "spacing", "vertical")});
+			margin-bottom: calc(2 * #{map-deep-get($config-global, "spacing", "vertical")});
+			padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+			padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+			width: 100%;
+		}
+	}
+
+	&.has-left-content,
+	&.has-right-content {
+		justify-content: center;
+	}
+}
+
+.wp-block-cover__inner-container,
+.wp-block-cover-image-text,
+.wp-block-cover-text {
+	@extend %responsive-align-container;
+}

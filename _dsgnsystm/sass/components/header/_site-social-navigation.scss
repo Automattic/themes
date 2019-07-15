@@ -1,0 +1,34 @@
+.social-navigation {
+
+// 	margin-top: calc(-1.5 * #{map-deep-get($config-global, "spacing", "vertical")});
+
+	& > div > ul {
+		align-content: center;
+		display: flex;
+		list-style: none;
+		margin: 0 calc(-0.5 * #{map-deep-get($config-global, "spacing", "unit")});
+	}
+
+	a {
+		color: #{map-deep-get($config-header, "social-nav", "color", "link")};
+		display: inline-block;
+		padding: 0 #{map-deep-get($config-header, "social-nav", "link-padding")};
+
+		&:hover {
+			color: #{map-deep-get($config-header, "social-nav", "color", "link-hover")};
+		}
+	}
+
+	svg {
+		fill: currentColor;
+		vertical-align: middle;
+	}
+}
+
+.site-title + .social-navigation,
+.site-description + .social-navigation {
+
+	@include media(tablet) {
+
+	}
+}

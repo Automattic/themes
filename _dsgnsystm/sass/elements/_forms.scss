@@ -1,0 +1,43 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #{map-deep-get($config-elements, "form", "color", "text")};
+	border: #{map-deep-get($config-elements, "form", "border", "width")} solid #{map-deep-get($config-elements, "form", "color", "border")};
+	border-radius: #{map-deep-get($config-elements, "form", "border", "radius")};
+	padding: #{map-deep-get($config-elements, "form", "border", "padding")};
+
+	&:focus {
+		color: #{map-deep-get($config-elements, "form", "color", "text")};
+		border-color: #{map-deep-get($config-elements, "form", "color", "border-focus")};
+	}
+}
+
+select {
+	border: #{map-deep-get($config-elements, "form", "border", "width")} solid #{map-deep-get($config-elements, "form", "color", "border")};
+}
+
+textarea {
+	padding: #{map-deep-get($config-elements, "form", "border", "padding")};
+	width: 100%;
+}
+
+// Vertically align checkbox + label relationship
+input[type=checkbox] + label {
+    display: inline;
+    margin-left: 0.5em;
+    margin-right: 2em;
+    line-height: 1em;
+}

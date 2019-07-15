@@ -1,0 +1,71 @@
+/* Next/Previous navigation */
+
+// Singular navigation
+.post-navigation {
+
+	.meta-nav {
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+	}
+
+	.post-title {
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		font-size: #{map-deep-get($config-global, "font", "size", "lg")};
+		font-weight: 600;
+	}
+
+	.nav-next,
+	.nav-previous {
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Index/archive navigation
+.pagination {
+
+	.nav-links {
+		justify-content: start;
+		margin: 0 calc(-0.66 * #{map-deep-get($config-global, "spacing", "unit")});
+
+		& > * {
+			font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+			font-size: #{map-deep-get($config-global, "font", "size", "md")};
+			font-weight: 600;
+			padding-left: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
+			padding-right: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		.svg-icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
+@include media(mobile) {
+
+	.nav-links {
+		display: flex;
+		justify-content: space-between;
+
+		.nav-next,
+		.nav-previous {
+			flex: 0 1 auto;
+			margin-bottom: inherit;
+			margin-top: inherit;
+			max-width: calc(50% - (0.5 * #{map-deep-get($config-global, "spacing", "unit")}));
+		}
+
+		.nav-next {
+			text-align: right;
+		}
+	}
+}

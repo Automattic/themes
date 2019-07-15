@@ -1,0 +1,23 @@
+.wp-block-separator,
+hr {
+    border-bottom: #{map-deep-get($config-separator, "height")} solid #{map-deep-get($config-global, "color", "border", "default")};
+    clear: both;
+
+	&[style*="text-align:right"],
+	&[style*="text-align: right"] {
+		border-right-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+
+	&.is-style-wide {
+		border-bottom-width: #{map-deep-get($config-separator, "height")};
+	}
+
+	&.is-style-dots {
+
+		border-bottom: none;
+
+		&:before {
+			color: #{map-deep-get($config-global, "color", "border", "default")};
+		}
+	}
+}

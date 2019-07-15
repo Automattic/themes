@@ -1,0 +1,48 @@
+blockquote {
+
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+	p {
+		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
+		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};
+	}
+
+	cite,
+	footer {
+		color: #{map-deep-get($config-global, "color", "forground-light")};
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
+	}
+
+	& > * {
+		margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.alignleft,
+	&.alignright {
+
+		padding-left: inherit;
+
+		p {
+			font-size: #{map-deep-get($config-heading, "font", "size", "h5")};
+			max-width: inherit;
+			width: inherit;
+		}
+
+		cite,
+		footer {
+			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+			letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "xs")};
+		}
+	}
+}

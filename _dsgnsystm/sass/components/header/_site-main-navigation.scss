@@ -1,0 +1,164 @@
+// Navigation
+
+.main-navigation {
+
+	color: #{map-deep-get($config-header, "main-nav", "color", "text")};
+
+	// Menu wrapper
+	& > div {
+		display: none;
+	}
+
+	// Mobile menu toggle
+	#toggle-menu {
+		display: inline-block;
+	}
+
+	// Checkbox hack
+	& #tm:checked + div {
+		display: block;
+	}
+
+	input[type="checkbox"] {
+		display: none;
+	}
+
+	@include media(mobile) {
+
+		& > div {
+			display: block;
+		}
+
+		#toggle-menu {
+			display: none;
+		}
+
+		// Hide sub-sub-menus
+		& > div > ul > li > ul {
+			display: none;
+		}
+	}
+
+	// Menu list wrapper
+	& > div > ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		max-width: none;
+		margin: 0 #{-1 * map-deep-get($config-global, "spacing", "unit")};
+		position: relative;
+
+		li {
+			display: block;
+			position: relative;
+			width: 100%;
+			z-index: 1;
+
+			&:hover,
+			&:focus-within {
+				cursor: pointer;
+				z-index: 99999;
+			}
+
+			&:focus-within a {
+			//	outline: none;
+			}
+
+			@include media(mobile) {
+				display: inherit;
+				width: inherit;
+
+				/* Submenu display */
+				&:hover > ul,
+				&:focus-within > ul,
+				& ul:hover,
+				& ul:focus {
+					visibility: visible;
+					opacity: 1;
+					display: block;
+				}
+			}
+		}
+
+		& > li > a {
+			@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+		}
+
+		/* Sub-menus Flyout */
+		& > li > .sub-menu {
+			margin: 0;
+			position: relative;
+
+			@include media(mobile) {
+				background: map-deep-get($config-global, "color", "background");
+				box-shadow: map-deep-get($config-global, "elevation", "4dp");
+				left: 0;
+				top: 100%;
+				min-width: max-content;
+				opacity: 0;
+				position: absolute;
+				transition: all 0.5s ease;
+				visibility: hidden;
+			}
+
+			.sub-menu {
+				width: 100%;
+			}
+		}
+	}
+
+	// Menu Link
+	a {
+		color: #{map-deep-get($config-header, "main-nav", "color", "link")};
+		display: block;
+		font-family: #{map-deep-get($config-header, "main-nav", "font", "family")};
+		font-size: #{map-deep-get($config-header, "main-nav", "font", "size")};
+		font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
+		padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+
+		&:link,
+		&:visited {
+			color: #{map-deep-get($config-header, "main-nav", "color", "link")};
+		}
+
+		&:hover {
+			color: #{map-deep-get($config-header, "main-nav", "color", "link-hover")};
+		}
+	}
+
+	// Sub-menu depth indicators
+	.sub-menu {
+
+		list-style: none;
+		margin-left: 0;
+		/* Reset the counter for each UL */
+		counter-reset: nested-list;
+
+		.menu-item a {
+
+			padding-top: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
+			padding-bottom: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
+
+			&::before {
+				/* Increment the dashes */
+				counter-increment: nested-list;
+				/* Insert dashes with spaces in between */
+				content: "\2013\00a0" counters( nested-list, "\2013\00a0", none );
+			}
+		}
+	}
+
+	// Show top-level sub-menu indicators above mobile-breakpoint-only
+	@include media(mobile) {
+		& > div > ul > .menu-item-has-children > a {
+
+			&::after {
+				content: "\00a0\25BC";
+				display: inline-block;
+				font-size: map-deep-get($config-global, "font", "size", "xs");
+				height: inherit;
+				width: inherit;
+			}
+		}
+	}
+}

@@ -1,0 +1,116 @@
+// Vertical Rhythm Multiplier
+$baseline-unit: 8px;
+
+$typescale-root: 18px; // Set 16px/1em default on html
+$typescale-base: 1rem; // Set 1em default on body == $typescale-root;
+$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+
+$config-global: (
+
+	/* Fonts */
+	"font": (
+		/* Font Family */
+		"family": (
+			"primary": "sans-serif",
+			"secondary": "serif",
+			"code": "monospace, monospace",
+			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+		),
+		/* Font Size */
+		"size": (
+			"root": $typescale-root,
+			"ratio": $typescale-ratio,
+			"xs": ($typescale-base / $typescale-ratio / $typescale-ratio),
+			"sm": ($typescale-base / $typescale-ratio),
+			"base": $typescale-base,
+			"md": ($typescale-base * $typescale-ratio),
+			"lg": ($typescale-base * $typescale-ratio * $typescale-ratio),
+			"xl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+			"xxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+			"xxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+			"xxxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+		),
+		/* Letter Spacing */
+		"letter-spacing": (
+			"base": normal,
+			"xs": normal,
+			"sm": normal,
+			"md": normal,
+			"lg": normal,
+			"xl": normal,
+			"xxl": normal,
+			"xxxl": normal,
+		),
+		/* Line Height */
+		"line-height": (
+			"base": strip-unit($typescale-base),
+			"body": 1.78,
+			"heading": 1.125,
+		),
+	),
+
+	/* Colors */
+	"color": (
+		"primary": (
+			"default": blue,
+			"hover": indigo,
+		),
+		"secondary": (
+			"default": red,
+			"hover": darkred,
+		),
+		"foreground": (
+			"default": #444444,
+			"light": #767676, // must be accesible!
+			"dark": #111111, // must be accesible!
+		),
+		"background": white,
+		"border": (
+			"default": #DDDDDD,
+			"light": #FAFAFA,
+			"dark": #AAAAAA,
+		),
+		"text-selection": lightblue,
+		"black": black,
+		"white": white,
+	),
+
+	/* Spacing */
+	"spacing": (
+		"unit": (2 * $baseline-unit), // 16px
+		"measure": inherit, // Use ch units here. ie: 60ch = 60 character max-width
+		"horizontal": (2 * $baseline-unit), // 16px
+		"vertical": (4 * $baseline-unit), // 32px matches default spacing in the editor.
+	),
+
+	/* Breakpoints */
+	"breakpoint": (
+		"sm": 560px,
+		"md": 640px,
+		"lg": 782px,
+		"xl": 1024px,
+		"xxl": 1280px,
+	),
+
+	/* Elevation */
+	"elevation": (
+		"none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
+		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		"4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ),
+		"6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ),
+		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
+	),
+
+	/* Border radius */
+	"border-radius": (
+		"sm": (0.5 * $typescale-root),
+		"md": (0.75 * $typescale-root),
+		"lg": $typescale-root,
+		"pill": (10 * $typescale-root),
+	),
+);
+
+@import "../elements/config";
+@import "../blocks/config";
+@import "../components/config";

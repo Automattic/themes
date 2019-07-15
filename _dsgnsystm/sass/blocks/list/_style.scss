@@ -1,0 +1,28 @@
+ul,
+ol {
+	font-family: #{map-deep-get($config-list, "font", "family")};
+	margin: 0 0 0 #{map-deep-get($config-global, "spacing", "unit")};
+	padding: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+
+}
+
+dt {
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 0 #{map-deep-get($config-global, "spacing", "unit")};
+}

@@ -1,0 +1,29 @@
+body {
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	background-color: #{map-deep-get($config-global, "color", "background")};
+	font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+	font-size: #{map-deep-get($config-global, "font", "size", "root")};
+	font-weight: normal;
+	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+p {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
+	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+}
+
+// Links styles
+a {
+	color: #{map-deep-get($config-global, "color", "primary", "default")};
+
+	&:hover {
+		color: #{map-deep-get($config-global, "color", "primary", "hover")};
+	}
+}
+
+button,
+a {
+  cursor: pointer;
+}

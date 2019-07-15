@@ -1,0 +1,193 @@
+/**
+ * Comments Wrapper
+ */
+.comments-area {
+
+	& > * {
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/**
+ * Comment Title
+ */
+
+.comments-title {
+	font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
+	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
+}
+
+.comment-reply-title {
+	font-size: #{map-deep-get($config-global, "font", "size", "xl")};
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	small {
+		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		letter-spacing: normal;
+		line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	}
+}
+
+/**
+ * Comment Lists
+ */
+
+.comment-list {
+	border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
+	margin-left: 0;
+	list-style: none;
+
+	> li {
+		border-top: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+.children {
+	list-style: none;
+	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+	> li {
+		border-top: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+
+	@include media(mobile) {
+		margin-left: calc(2 * #{map-deep-get($config-global, "spacing", "horizontal")});
+	}
+}
+
+/**
+ * Comment Meta
+ */
+
+.comment-meta {
+
+	$avatar-size: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	margin-right: calc( $avatar-size + (0.5 * #{map-deep-get($config-global, "spacing", "horizontal")}) );
+
+	@include media(mobile) {
+		margin-right: inherit;
+	}
+
+	.comment-author {
+
+		@include media(mobile) {
+			display: flex;
+			align-items: center;
+		}
+
+		.avatar {
+			display: block;
+			position: absolute;
+			right: 0;
+
+			@include media(mobile) {
+				margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+				display: inherit;
+				position: inherit;
+				right: inherit;
+			}
+		}
+	}
+
+	.comment-metadata {
+
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+
+		a {
+			color: currentColor;
+
+			&:hover,
+			&:active {
+				color: #{map-deep-get($config-global, "color", "primary", "hover")};
+			}
+		}
+	}
+
+	@include media(mobile) {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.comment-metadata,
+.reply {
+	font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+}
+
+.reply {
+	text-align: right;
+	@include media(mobile) {
+		text-align: left;
+	}
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.says {
+	display: none;
+}
+
+.comment-author .fn,
+.pingback .url,
+.trackback .url {
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+}
+
+/**
+ * Comment body
+ */
+
+.comment-body {
+
+	position: relative;
+
+	& > * {
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+/**
+ * Pingbacks & Trackbacks
+ */
+
+.pingback .comment-body,
+.trackback .comment-body {
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+}
+
+/**
+ * Comment Form
+ */
+@import "comment-form";
+
+/**
+ * Comment Nav
+ */
+@import "comment-navigation";

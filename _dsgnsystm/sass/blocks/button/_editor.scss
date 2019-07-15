@@ -1,0 +1,42 @@
+.wp-block-button {
+
+	/* Default Style */
+	.wp-block-button__link {
+		color: #{map-deep-get($config-button, "color", "text")};
+		font-weight: #{map-deep-get($config-button, "font", "weight")};
+		font-family: #{map-deep-get($config-button, "font", "family")};
+		font-size: (strip-unit(map-deep-get($config-button, "font", "size")) + 0em);
+		line-height: #{map-deep-get($config-button, "font", "line-height")};
+		background-color: #{map-deep-get($config-button, "color", "background")};
+		border-radius: #{map-deep-get($config-button, "border-radius")};
+		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			color: #{map-deep-get($config-button, "color", "text-hover")};
+			background-color: #{map-deep-get($config-button, "color", "background-hover")};
+		}
+	}
+
+	/* Outline Style */
+	&.is-style-outline {
+
+		.wp-block-button__link {
+			color: #{map-deep-get($config-button, "color", "background")};
+			background: transparent;
+			border: 2px solid currentcolor;
+
+			&:hover,
+			&:focus,
+			&.has-focus {
+				color: #{map-deep-get($config-button, "color", "background-hover")};
+			}
+		}
+	}
+
+	/* Squared Style */
+	&.is-style-squared .wp-block-button__link {
+		border-radius: 0;
+	}
+}

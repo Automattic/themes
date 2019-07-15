@@ -1,0 +1,96 @@
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Apply generic border-box to all elements.
+ * See:
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+/**
+ * Apply border-box across the entire page.
+ */
+html {
+	box-sizing: border-box;
+}
+
+/**
+ * Relax the definition a bit, to allow components to override it manually.
+ */
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+
+/**
+ * HTML resets
+ */
+html {
+	// Set mobile font-size to one step lower for mobile
+	font-size: #{map-deep-get($config-global, "font", "size", "root") / map-deep-get($config-global, "font", "size", "ratio")};
+	font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+
+	// Set mobile and ^ font-size to normal root
+	@include media(mobile) {
+		font-size: #{map-deep-get($config-global, "font", "size", "root")};
+	}
+}
+
+body {
+	font-size: #{map-deep-get($config-global, "font", "size", "base")};
+	font-weight: normal;
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	text-align: left;
+	background-color: #{map-deep-get($config-global, "color", "background")};
+}
+
+/**
+ * Links styles
+ */
+a {
+	color: #{map-deep-get($config-global, "color", "primary", "default")};
+
+	&:hover {
+		color: #{map-deep-get($config-global, "color", "primary", "hover")};
+	}
+}
+
+button,
+a {
+  cursor: pointer;
+}

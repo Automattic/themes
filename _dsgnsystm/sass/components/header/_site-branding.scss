@@ -1,0 +1,44 @@
+// Site logo
+
+.site-logo {
+
+}
+
+// Site branding
+
+.site-branding {
+	color: #{map-deep-get($config-header, "branding", "color", "text")};
+}
+
+// Site title
+
+.site-title {
+
+	color: #{map-deep-get($config-header, "branding", "color", "link")};
+	font-family: #{map-deep-get($config-header, "branding", "title", "font", "family")};
+	font-size: #{map-deep-get($config-header, "branding", "title", "font", "size")};
+	letter-spacing: normal;
+	line-height: #{map-deep-get($config-header, "branding", "title", "font", "line-height")};
+
+	a {
+		color: currentColor;
+		font-weight: #{map-deep-get($config-header, "branding", "title", "font", "weight")};
+
+		&:link,
+		&:visited {
+			color: currentColor;
+		}
+
+		&:hover {
+			color: #{map-deep-get($config-header, "branding", "color", "link-hover")};
+		}
+	}
+}
+
+// Site description
+
+.site-description {
+	color: currentColor;
+	font-family: #{map-deep-get($config-header, "branding", "description", "font", "family")};
+	font-size: #{map-deep-get($config-header, "branding", "description", "font", "size")};
+}

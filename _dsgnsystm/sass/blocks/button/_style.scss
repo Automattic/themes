@@ -1,0 +1,53 @@
+button,
+.button,
+input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button {
+
+	@include crop-text(map-deep-get($config-button, "font", "line-height"));
+	color: #{map-deep-get($config-button, "color", "text")};
+	cursor: pointer;
+	font-weight: #{map-deep-get($config-button, "font", "weight")};
+	font-family: #{map-deep-get($config-button, "font", "family")};
+	font-size: #{map-deep-get($config-button, "font", "size")};
+	background-color: #{map-deep-get($config-button, "color", "background")};
+	border-radius: #{map-deep-get($config-button, "border-radius")};
+	border-width: 0;
+	padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+
+	&:hover,
+	&:focus,
+	&.has-focus {
+		color: #{map-deep-get($config-button, "color", "text-hover")};
+		background-color: #{map-deep-get($config-button, "color", "background-hover")};
+	}
+}
+
+/**
+ * Block Options
+ */
+.wp-block-button {
+
+	// Outline Style
+	&.is-style-outline {
+
+		.wp-block-button__link {
+			color: #{map-deep-get($config-button, "color", "background")};
+			background: transparent;
+			border: #{map-deep-get($config-button, "border-width")} solid currentcolor;
+			padding: #{map-deep-get($config-button, "padding", "vertical") - map-deep-get($config-button, "border-width")} #{map-deep-get($config-button, "padding", "horizontal")};
+
+
+			&:hover,
+			&:focus,
+			&.has-focus {
+				color: #{map-deep-get($config-button, "color", "background-hover")};
+			}
+		}
+	}
+
+	// Squared Style
+	&.is-style-squared .wp-block-button__link {
+		border-radius: 0;
+	}
+}

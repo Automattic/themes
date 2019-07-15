@@ -1,0 +1,63 @@
+.wp-block-quote {
+
+	border-left-color: #{map-deep-get($config-global, "color", "primary", "default")};
+	margin: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+	padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+
+	& > * {
+		margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	p {
+		font-family: #{map-deep-get($config-heading, "font", "family")};
+		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
+		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};
+	}
+
+	.wp-block-quote__citation,
+	cite,
+	footer {
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
+	}
+
+	/**
+	 * Block Options
+	 */
+	&[style*="text-align:right"],
+	&[style*="text-align: right"] {
+		border-right-color: #{map-deep-get($config-global, "color", "primary", "default")};
+	}
+
+	&.is-style-large,
+	&.is-large {
+		/* Resetting margins to match _block-container.scss */
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+		p {
+			font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
+			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
+			line-height: #{map-deep-get($config-heading, "font", "line-height", "h3")};
+		}
+
+		.wp-block-quote__citation,
+		cite,
+		footer {
+			color: #{map-deep-get($config-global, "color", "foreground", "light")};
+			font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+			letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
+		}
+	}
+}

@@ -1,0 +1,110 @@
+/**
+ * Responsive breakpoints
+ * - breakpoints values are defined in _config-global.scss
+ */
+@mixin media( $res ) {
+
+	@if mobile-only == $res {
+		@media only screen and (max-width: calc(map-deep-get($config-global, "breakpoint", "sm") - 1)) {
+			@content;
+		}
+	}
+
+	@if mobile == $res {
+		@media only screen and (min-width: map-deep-get($config-global, "breakpoint", "sm")) {
+			@content;
+		}
+	}
+
+	@if tablet == $res {
+		@media only screen and (min-width: map-deep-get($config-global, "breakpoint", "md")) {
+			@content;
+		}
+	}
+
+	@if laptop == $res {
+		@media only screen and (min-width: map-deep-get($config-global, "breakpoint", "lg")) {
+			@content;
+		}
+	}
+
+	@if desktop == $res {
+		@media only screen and (min-width: map-deep-get($config-global, "breakpoint", "xl")) {
+			@content;
+		}
+	}
+
+	@if wide == $res {
+		@media only screen and (min-width: map-deep-get($config-global, "breakpoint", "xxl")) {
+			@content;
+		}
+	}
+}
+
+/**
+ * Align widths
+ * - Sets negative margin for .alignwide and .alignfull blocks
+ */
+@mixin align-width( $width: 100%, $multiplier: -0.25 ) {
+
+	$positive_multiplier: abs($multiplier);
+
+	margin-left: calc( #{$multiplier} * ( 100vw - #{$width} ) );
+	margin-right: calc( #{$multiplier} * ( 100vw - #{$width} ) );
+	width: calc( #{$width} + (#{$positive_multiplier} * 2) * ( 100vw - #{$width} ) );
+	max-width: calc( #{$width} + (#{$positive_multiplier} * 2) * ( 100vw - #{$width} ) );
+}
+
+/**
+ * Align wide widths
+ * - Sets negative margin for .alignwide and .alignfull blocks
+ */
+@mixin alignwide-width( $width: 100%, $multiplier...) {
+
+	@if length($multiplier) == 0 {
+		$multiplier: (8 * map-deep-get($config-global, "spacing", "horizontal"));
+	}
+
+	//margin-left: calc( #{$multiplier} - ( 100vw - #{$width} ) );
+	//margin-right: calc( #{$multiplier} - ( 100vw - #{$width} ) );
+	margin-left: #{-1 * $multiplier};
+	margin-right: #{-1 * $multiplier};
+	width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+	max-width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+}
+
+/**
+ * Align container widths
+ * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+@mixin align-container-width( $width: 100%, $multiplier: "2", $columns: "12" ) {
+	max-width: calc( #{$width} - (#{$multiplier} * ( #{$width} / #{$columns} )));
+	width: calc( #{$width} - (#{$multiplier} * ( #{$width} / #{$columns} )));
+}
+
+/**
+ * Crop Text Boundry
+ * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+@mixin crop-text($inset-line-height: 1) {
+
+	line-height: $inset-line-height;
+	$offset-top: (.5em * $inset-line-height + -.38);
+	$offset-bottom: (.5em * $inset-line-height + -.39);
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+	}
+
+	&:before {
+		margin-bottom: -($offset-top);
+	}
+
+	&:after {
+		margin-top: -($offset-bottom);
+	}
+}

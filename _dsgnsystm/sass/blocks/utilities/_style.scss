@@ -1,0 +1,187 @@
+/* Text Alignments */
+.alignleft {
+	/*rtl:ignore*/
+	text-align: left;
+	/*rtl:ignore*/
+	float: left;
+	/*rtl:ignore*/
+	margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+	margin-top: 0;
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	max-width: 50%;
+}
+
+.aligncenter {
+	clear: both;
+	float: none;
+	text-align: center;
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	/*rtl:ignore*/
+	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+	margin-top: 0;
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	max-width: 50%;
+}
+
+// Alignwide & Alignfull
+// - More selector specificity needed here to deal with
+//   group-block expected behavior
+// - See: sass/blocks/group/_style.scss
+.entry-content > .alignwide {
+	@extend %responsive-width-wide;
+	clear: both;
+}
+
+.entry-content > .alignfull {
+	@extend %responsive-width-full;
+	clear: both;
+}
+
+// Content alignment
+.has-left-content {
+	justify-content: flex-start;
+}
+
+.has-right-content {
+	justify-content: flex-end;
+}
+
+// Parallax
+.has-parallax {
+    background-attachment: fixed;
+}
+
+// Gutenberg text color options
+.has-text-color {}
+
+.has-primary-color[class] {
+	color: #{map-deep-get($config-global, "color", "primary", "default")} !important;
+}
+
+.has-secondary-color[class] {
+	color: #{map-deep-get($config-global, "color", "secondary", "default")} !important;
+}
+
+.has-foreground-color[class] {
+	color: #{map-deep-get($config-global, "color", "foreground", "default")} !important;
+}
+
+.has-foreground-light-color[class] {
+	color: #{map-deep-get($config-global, "color", "foreground", "light")} !important;
+}
+
+.has-foreground-dark-color[class] {
+	color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
+}
+
+.has-background-color[class] {
+	color: #{map-deep-get($config-global, "color", "background")} !important;
+}
+
+// Gutenberg background-color options
+.has-background {}
+
+.has-primary-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "primary", "default")} !important;
+	color: #{map-deep-get($config-global, "color", "background")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-secondary-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "secondary", "default")} !important;
+	color: #{map-deep-get($config-global, "color", "background")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-foreground-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "default")} !important;
+	color: #{map-deep-get($config-global, "color", "background")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-foreground-light-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "light")} !important;
+	color: #{map-deep-get($config-global, "color", "background")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-foreground-dark-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
+	color: #{map-deep-get($config-global, "color", "background")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-background-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "background")} !important;
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+// Gutenberg Font-size options
+.is-small-text,
+.has-small-font-size {
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+}
+
+.is-regular-text,
+.has-regular-font-size,
+.has-normal-font-size,
+.has-medium-font-size {
+	font-size: #{map-deep-get($config-global, "font", "size", "md")};
+}
+
+.is-large-text,
+.has-large-font-size {
+	font-size: #{map-deep-get($config-global, "font", "size", "lg")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+}
+
+.is-larger-text,
+.has-larger-font-size,
+.has-huge-font-size {
+	font-size: #{map-deep-get($config-global, "font", "size", "xl")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+}
+
+// Drop caps
+.has-drop-cap:not(:focus)::first-letter {
+	font-family: #{map-deep-get($config-heading, "font", "family")};
+	font-size: calc(2 * #{map-deep-get($config-heading, "font", "size", "h1")};);
+	font-weight: #{map-deep-get($config-heading, "font", "weight")};
+	line-height: 0.66;
+	text-transform: uppercase;
+	font-style: normal;
+	float: left;
+	margin: 0.1em 0.1em 0 0;
+}
+
+.has-drop-cap:not(:focus)::after {
+	content: "";
+	display: table;
+	clear: both;
+	padding-top: 14px;
+}
+
+.desktop-only {
+	display: none;
+
+	@include media(mobile) {
+		display: block;
+	}
+}

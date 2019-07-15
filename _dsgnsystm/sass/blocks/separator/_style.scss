@@ -1,0 +1,24 @@
+.wp-block-separator,
+hr {
+	border-bottom: #{map-deep-get($config-separator, "height")} solid #{map-deep-get($config-global, "color", "border", "default")};
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+
+	/**
+	 * Block Options
+	 */
+	&.is-style-wide {
+		border-bottom-width: #{map-deep-get($config-separator, "height")};
+	}
+
+	&.is-style-dots {
+
+		&:before {
+			color: #{map-deep-get($config-global, "color", "border", "default")};
+			font-size: #{map-deep-get($config-global, "font", "size", "xl")};
+			letter-spacing: #{map-deep-get($config-global, "font", "size", "sm")};
+			padding-left: #{map-deep-get($config-global, "font", "size", "sm")};
+		}
+	}
+}

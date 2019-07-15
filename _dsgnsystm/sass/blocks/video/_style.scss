@@ -1,0 +1,16 @@
+.wp-block-video {
+
+	figcaption {
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};
+		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		margin-top: calc(0.5 * #{map-deep-get($config-global, "spacing", "unit")});
+		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		text-align: center;
+	}
+}
+
+* > figure > video {
+	max-width: unset;
+	width: 100%;
+	vertical-align: middle;
+}

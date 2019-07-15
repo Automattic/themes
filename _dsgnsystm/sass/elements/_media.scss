@@ -1,0 +1,34 @@
+figure {
+
+}
+
+figcaption {
+	color: #{map-deep-get($config-global, "color", "foreground", "light")};
+	font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "xs")};
+	margin-top: calc(0.5 * #{map-deep-get($config-global, "spacing", "unit")});
+	margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+	text-align: center;
+
+	.alignleft &,
+	.alignright & {
+		margin-bottom: 0;
+	}
+}
+
+/* WP Smiley */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
