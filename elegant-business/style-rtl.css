@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Template: twentynineteen
 Description: Simple, yet sophisticated, with subtle, beautiful typography, Elegant Business conveys quality and integrity, which makes it especially good fit for coffee shops, pop-up shops, and brick & mortar store fronts.
 Requires at least: WordPress 4.9.6
-Version: 1.3
+Version: 1.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: elegant-business
@@ -444,6 +444,7 @@ textarea {
 .pagination .nav-links,
 .sticky-post,
 .site-title,
+.site-title:focus,
 .site-info,
 #cancel-comment-reply-link,
 img:after,
@@ -467,6 +468,7 @@ h6 {
 .comment-author .fn,
 .no-comments,
 .site-title,
+.site-title:focus,
 h1,
 h2,
 h3,
@@ -506,6 +508,7 @@ h2 {
 }
 
 .site-title,
+.site-title:focus,
 .not-found .page-title,
 .error-404 .page-title {
   font-size: 22px;
@@ -513,6 +516,7 @@ h2 {
 
 @media only screen and (min-width: 768px) {
   .site-title,
+  .site-title:focus,
   .not-found .page-title,
   .error-404 .page-title {
     font-size: 1.125em;
@@ -528,6 +532,7 @@ h3 {
 }
 
 .site-description,
+.site-description:focus,
 .main-navigation,
 .nav-links,
 .page-title,
@@ -1916,6 +1921,7 @@ body.page .main-navigation {
 --------------------------------------------------------------*/
 .site-header {
   padding: 1.5em 1em 1em;
+  text-align: center;
 }
 
 .site-header.featured-image {
@@ -1965,40 +1971,58 @@ body.page .main-navigation {
   width: auto;
 }
 
-.site-title {
+.site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
   margin: auto;
   display: inline;
   color: #111;
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a {
+.site-title a,
+.wp-block-a8c-site-title a,
+.wp-block-a8c-site-title:focus a {
   color: #111;
 }
 
-.site-title a:link, .site-title a:visited {
+.site-title a:link, .site-title a:visited,
+.wp-block-a8c-site-title a:link,
+.wp-block-a8c-site-title a:visited,
+.wp-block-a8c-site-title:focus a:link,
+.wp-block-a8c-site-title:focus a:visited {
   color: #111;
 }
 
-.site-title a:hover {
+.site-title a:hover,
+.wp-block-a8c-site-title a:hover,
+.wp-block-a8c-site-title:focus a:hover {
   color: #4a4a4a;
 }
 
-.featured-image .site-title {
+.featured-image .site-title, .featured-image
+.wp-block-a8c-site-title, .featured-image
+.wp-block-a8c-site-title:focus {
   margin: 0;
 }
 
 @media only screen and (min-width: 768px) {
-  .featured-image .site-title {
+  .featured-image .site-title, .featured-image
+  .wp-block-a8c-site-title, .featured-image
+  .wp-block-a8c-site-title:focus {
     display: inline-block;
   }
 }
 
-.site-title + .main-navigation {
+.site-title + .main-navigation,
+.wp-block-a8c-site-title + .main-navigation,
+.wp-block-a8c-site-title:focus + .main-navigation {
   display: block;
 }
 
-.site-description {
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
   color: #111;
   display: block;
   font-size: 0.71111em;
