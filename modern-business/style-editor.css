@@ -807,7 +807,8 @@ body .wp-block[data-align="full"] {
 }
 
 @media only screen and (min-width: 600px) {
-  body .wp-block[data-align="full"] {
+  body .wp-block[data-align="full"],
+  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="full"] {
     width: calc( 100% + 90px);
     max-width: calc( 100% + 90px);
   }
@@ -818,39 +819,51 @@ body .wp-block[data-align="full"] {
     max-width: 80%;
     margin: 0 10%;
   }
-  body .wp-block[data-align="wide"] {
+  body .wp-block[data-align="wide"],
+  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="wide"] {
     width: 100%;
   }
-  body .wp-block[data-align="full"] {
+  body .wp-block[data-align="full"],
+  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="full"] {
     position: relative;
     left: calc( -12.5% - 14px);
     width: calc( 125% + 116px);
     max-width: calc( 125% + 115px);
   }
-  body .wp-block[data-align="right"] {
+  body .wp-block[data-align="right"],
+  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="right"] {
     max-width: 125%;
   }
 }
 
 /** === Content Width === */
-.wp-block {
+.wp-block,
+.wp-block[data-type="a8c/post-content"] .wp-block {
   width: calc(100vw - (2 * 1rem));
   max-width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-  .wp-block {
+  .wp-block,
+  .wp-block[data-type="a8c/post-content"] .wp-block {
     width: calc(8 * (100vw / 12));
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  .wp-block {
+  .wp-block,
+  .wp-block[data-type="a8c/post-content"] .wp-block {
     width: calc(6 * (100vw / 12 ));
   }
 }
 
-.wp-block .wp-block {
+.wp-block .wp-block,
+.wp-block[data-type="a8c/post-content"] .wp-block .wp-block {
+  width: 100%;
+}
+
+/** === FSE Post Content Block Override === */
+.wp-block[data-type="a8c/post-content"] {
   width: 100%;
 }
 
