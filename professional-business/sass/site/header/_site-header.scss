@@ -31,7 +31,7 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 
 	color: $color__text-light;
@@ -58,7 +58,9 @@
 	}
 }
 
-.site-title {
+.site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
 	color: $color__text-main;
 	font-size: $font__size-md;
 	flex: 1 1 auto;
@@ -84,17 +86,26 @@
 
 /* Adjust Crimson Text font vertical alignment in Firefox */
 @-moz-document url-prefix() {
-	.site-title {
+	.site-title,
+	.wp-block-a8c-site-title,
+	.wp-block-a8c-site-title:focus {
 		padding-top: 8px;
 	}
 }
 
 // Site description
 
-.site-description {
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
 	color: $color__text-main;
 	flex: initial;
 	font-size: $font__size-xs;
 	font-weight: normal;
 	margin: 7px 0 0;
+
+
+	@include media(tablet) {
+		text-align: right;
+	}
 }
