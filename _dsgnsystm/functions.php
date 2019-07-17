@@ -343,8 +343,3 @@ require get_template_directory() . '/inc/icon-functions.php';
  * Custom template tags for the theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
