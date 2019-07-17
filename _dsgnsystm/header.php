@@ -29,8 +29,12 @@
 
 			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 				<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', '_dsgnsystm' ); ?>">
-					<label for="tm" id="toggle-menu" class="button"><?php _e( 'Menu', '_dsgnsystm' ); ?> <span class="dropdown-icon">▾</span></label>
-					<input type="checkbox" id="tm">
+					<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
+					<label for="toggle" id="toggle-menu" class="button">
+						<?php _e( 'Menu', '_dsgnsystm' ); ?>
+						<span class="hide-visually expanded-text">expanded</span>
+						<span class="hide-visually collapsed-text">collapsed</span>
+					</label>
 					<?php
 					wp_nav_menu(
 						array(
