@@ -441,6 +441,8 @@ textarea {
 .pagination .nav-links,
 .sticky-post,
 .site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus,
 .site-info,
 #cancel-comment-reply-link,
 img:after,
@@ -464,6 +466,8 @@ h6 {
 .comment-author .fn,
 .no-comments,
 .site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus,
 h1,
 h2,
 h3,
@@ -521,6 +525,8 @@ h2 {
 }
 
 .site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus,
 .has-regular-font-size,
 .has-large-font-size,
 .comments-title,
@@ -530,6 +536,8 @@ h3 {
 
 @media only screen and (min-width: 768px) {
   .site-title,
+  .wp-block-a8c-site-title,
+  .wp-block-a8c-site-title:focus,
   .has-regular-font-size,
   .has-large-font-size,
   .comments-title,
@@ -1953,7 +1961,7 @@ body.page .main-navigation {
 }
 
 .site-branding {
-  align-items: center;
+  align-items: flex-start;
   color: #0d1b24;
   display: flex;
   flex-wrap: wrap;
@@ -1989,30 +1997,50 @@ body.page .main-navigation {
   }
 }
 
-.site-title {
+.site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
   color: #3c2323;
   flex: 1 1 auto;
   margin: 0 0 0 0.7rem;
 }
 
-.site-title a {
+.site-title a,
+.wp-block-a8c-site-title a,
+.wp-block-a8c-site-title:focus a {
   color: #0d1b24;
 }
 
-.site-title a:link, .site-title a:visited {
+.site-title a:link, .site-title a:visited,
+.wp-block-a8c-site-title a:link,
+.wp-block-a8c-site-title a:visited,
+.wp-block-a8c-site-title:focus a:link,
+.wp-block-a8c-site-title:focus a:visited {
   color: #0d1b24;
 }
 
-.site-title a:hover {
+.site-title a:hover,
+.wp-block-a8c-site-title a:hover,
+.wp-block-a8c-site-title:focus a:hover {
   color: #4a4a4a;
 }
 
-.site-description {
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
   flex: initial;
   color: #0d1b24;
   font-size: 0.71111em;
   font-weight: normal;
   margin: 14px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-description,
+  .wp-block-a8c-site-description,
+  .wp-block-a8c-site-description:focus {
+    text-align: left;
+  }
 }
 
 .site-header.featured-image {
