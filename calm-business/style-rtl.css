@@ -7,7 +7,7 @@ Author URI: https://wordpress.com
 Template: twentynineteen
 Description: Your classy establishment needs an equally classy website to showcase your stylish rooms and quality products! With its bold typography and peaceful color scheme, Calm Business exudes a calm, inviting atmosphere as a bed and breakfast, time share, or brick & mortar store fronts.
 Requires at least: WordPress 4.9.6
-Version: 1.5
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: calm-business
@@ -441,6 +441,7 @@ textarea {
 .pagination .nav-links,
 .sticky-post,
 .site-title,
+.site-title:focus,
 .site-info,
 #cancel-comment-reply-link,
 img:after,
@@ -464,6 +465,7 @@ h6 {
 .comment-author .fn,
 .no-comments,
 .site-title,
+.site-title:focus,
 h1,
 h2,
 h3,
@@ -509,7 +511,9 @@ h3 {
 }
 
 .site-title,
+.site-title:focus,
 .site-description,
+.site-description:focus,
 .main-navigation,
 .nav-links,
 .page-title,
@@ -544,6 +548,7 @@ h6 {
 }
 
 .site-title,
+.site-title:focus,
 .page-title {
   font-weight: 700;
   font-size: 1.125em;
@@ -554,7 +559,9 @@ h6 {
   font-weight: bold;
 }
 
-.site-description {
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
   letter-spacing: normal;
   font-size: 0.71111em;
 }
@@ -1988,7 +1995,9 @@ body.page .main-navigation {
   }
 }
 
-.site-title {
+.site-title,
+.site-title.wp-block-a8c-site-title,
+.site-title.wp-block-a8c-site-title:focus {
   margin: 0;
   display: block;
   color: #242424;
@@ -1996,33 +2005,50 @@ body.page .main-navigation {
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a {
+.site-title a,
+.site-title.wp-block-a8c-site-title a,
+.site-title.wp-block-a8c-site-title:focus a {
   color: #242424;
 }
 
-.site-title a:link, .site-title a:visited {
+.site-title a:link, .site-title a:visited,
+.site-title.wp-block-a8c-site-title a:link,
+.site-title.wp-block-a8c-site-title a:visited,
+.site-title.wp-block-a8c-site-title:focus a:link,
+.site-title.wp-block-a8c-site-title:focus a:visited {
   color: #242424;
 }
 
-.site-title a:hover {
+.site-title a:hover,
+.site-title.wp-block-a8c-site-title a:hover,
+.site-title.wp-block-a8c-site-title:focus a:hover {
   color: #4a4a4a;
 }
 
-.featured-image .site-title {
+.featured-image .site-title, .featured-image
+.site-title.wp-block-a8c-site-title, .featured-image
+.site-title.wp-block-a8c-site-title:focus {
   margin: 0;
 }
 
-.site-title + .main-navigation {
+.site-title + .main-navigation,
+.site-title.wp-block-a8c-site-title + .main-navigation,
+.site-title.wp-block-a8c-site-title:focus + .main-navigation {
   display: block;
 }
 
 @media only screen and (min-width: 768px) {
-  .site-title {
+  .site-title,
+  .site-title.wp-block-a8c-site-title,
+  .site-title.wp-block-a8c-site-title:focus {
     display: block;
   }
 }
 
-.site-description {
+.site-description,
+.block-editor .wp-block-a8c-site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
   display: block;
   color: #242424;
   font-weight: normal;
