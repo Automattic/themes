@@ -18,12 +18,12 @@
 	 */
 	function redhill_theme_setup() {
 
-		// ? remove_editor_style( 'editor-color-palette' );
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
 		// Remove parent theme font sizes
 		remove_theme_support( 'editor-font-sizes' );
+
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-font-sizes',
@@ -61,8 +61,6 @@
 			)
 		);
 
-		// Remove parent theme color palette
-		// remove_theme_support( 'editor-color-palette' );
 		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-color-palette',
@@ -70,12 +68,12 @@
 				array(
 					'name'  => __( 'Primary', 'redhill' ),
 					'slug'  => 'primary',
-					'color' => '#CA2017', // _dsgnsystm_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#CA2017',
 				),
 				array(
 					'name'  => __( 'Secondary', 'redhill' ),
 					'slug'  => 'secondary',
-					'color' => '#007FDB', // _dsgnsystm_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#007FDB',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'redhill' ),
