@@ -1986,14 +1986,29 @@ table th,
 
 .main-navigation #toggle-menu {
 	display: inline-block;
+	margin: 0;
 }
 
-.main-navigation #tm:checked + div {
+.main-navigation #toggle:checked ~ div {
 	display: block;
 }
 
-.main-navigation input[type="checkbox"] {
+.main-navigation #toggle:focus + #toggle-menu {
+	background-color: indigo;
+	outline: inherit;
+	text-decoration: underline;
+}
+
+.main-navigation .dropdown-icon.close {
 	display: none;
+}
+
+.main-navigation #toggle:checked + #toggle-menu .open {
+	display: none;
+}
+
+.main-navigation #toggle:checked + #toggle-menu .close {
+	display: inline;
 }
 
 @media only screen and (min-width: 560px) {
@@ -2145,6 +2160,16 @@ table th,
 		height: inherit;
 		width: inherit;
 	}
+}
+
+.main-navigation .hide-visually {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
 }
 
 .social-navigation > div > ul {

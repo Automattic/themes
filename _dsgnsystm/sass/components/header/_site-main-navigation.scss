@@ -12,15 +12,32 @@
 	// Mobile menu toggle
 	#toggle-menu {
 		display: inline-block;
+		margin: 0;
 	}
 
 	// Checkbox hack
-	& #tm:checked + div {
+	#toggle:checked ~ div {
 		display: block;
 	}
 
-	input[type="checkbox"] {
+	#toggle:focus + #toggle-menu {
+		background-color: #{map-deep-get($config-header, "main-nav", "color", "link-hover")};
+		outline: inherit;
+		text-decoration: underline;
+	}
+
+	.dropdown-icon.close {
 		display: none;
+	}
+
+	#toggle:checked + #toggle-menu {
+		.open {
+			display: none;
+		}
+
+		.close {
+			display: inline;
+		}
 	}
 
 	@include media(mobile) {
@@ -160,5 +177,15 @@
 				width: inherit;
 			}
 		}
+	}
+
+	.hide-visually {
+		position: absolute !important;
+		clip: rect(1px, 1px, 1px, 1px);
+		padding:0 !important;
+		border:0 !important;
+		height: 1px !important;
+		width: 1px !important;
+		overflow: hidden;
 	}
 }
