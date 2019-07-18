@@ -20,6 +20,19 @@
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
 		line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
 		padding: 0;
-		text-align: left;
+		max-width: inherit; // undo opinionated styles
+		text-align: inherit;
+
+		&.has-text-align-left {
+			text-align: left;
+		}
+
+		&.has-text-align-center {
+			text-align: center;
+		}
+
+		&.has-text-align-right {
+			text-align: right;
+		}
 	}
 }
