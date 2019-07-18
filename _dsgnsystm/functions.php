@@ -275,51 +275,6 @@ function _dsgnsystm_editor_content_width() {
 add_action( 'enqueue_block_editor_assets', '_dsgnsystm_editor_content_width' );
 
 /**
- * Enqueue supplemental block editor styles.
- */
-function _dsgnsystm_editor_customizer_styles() {
-
-	wp_enqueue_style( '_dsgnsystm-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, wp_get_theme()->get( 'Version' ), 'all' );
-
-	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
-		// Include color patterns.
-		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
-		wp_add_inline_style( '_dsgnsystm-editor-customizer-styles', _dsgnsystm_custom_colors_css() );
-	}
-}
-// add_action( 'enqueue_block_editor_assets', '_dsgnsystm_editor_customizer_styles' );
-
-/**
- * Display custom color CSS in customizer and on frontend.
- */
-function _dsgnsystm_colors_css_wrap() {
-
-	// Only bother if we haven't customized the color.
-	if ( ( ! is_customize_preview() && 'default' === get_theme_mod( 'primary_color', 'default' ) ) || is_admin() ) {
-		return;
-	}
-
-	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
-
-	$primary_color = _dsgnsystm_get_default_hue();
-	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
-		$primary_color = get_theme_mod( 'primary_color_hue', $primary_color );
-	}
-	?>
-
-	<style type="text/css" id="custom-theme-colors" <?php echo is_customize_preview() ? 'data-hue="' . absint( $primary_color ) . '"' : ''; ?>>
-		<?php echo _dsgnsystm_custom_colors_css(); ?>
-	</style>
-	<?php
-}
-// add_action( 'wp_head', '_dsgnsystm_colors_css_wrap' );
-
-/**
- * Default color filters.
- */
-require get_template_directory() . '/inc/color-filters.php';
-
-/**
  * SVG Icons class.
  */
 require get_template_directory() . '/classes/class-_dsgnsystm-svg-icons.php';
