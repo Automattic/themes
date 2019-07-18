@@ -26,14 +26,14 @@
 
     <?php
         // If FSE plugin is active, use Header template part for content.
-        if( defined( 'A8C_FSE_VERSION' ) ) {
+        if( class_exists( 'Full_Site_Editing' ) ) {
             fse_get_header();
         }
 
         // Otherwise we'll fall back to default Twenty Nineteen header below.
     ?>
 
-    <?php if( ! defined( 'A8C_FSE_VERSION' ) ) : ?>
+    <?php if( ! class_exists( 'Full_Site_Editing' ) ) : ?>
 
         <header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
             <div class="site-branding-container">

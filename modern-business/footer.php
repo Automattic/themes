@@ -17,14 +17,14 @@
 
 <?php
 // If FSE plugin is active, use Footer template part for content.
-if( defined( 'A8C_FSE_VERSION' ) ) {
+if( class_exists( 'Full_Site_Editing' ) ) {
 	fse_get_footer();
 }
 
 // Otherwise we'll fall back to default Twenty Nineteen footer below.
 ?>
 
-<?php if( ! defined( 'A8C_FSE_VERSION' ) ) : ?>
+<?php if( ! class_exists( 'Full_Site_Editing' ) ) : ?>
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 		<div class="site-info">
