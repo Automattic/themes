@@ -97,6 +97,18 @@
 				),
 			)
 		);
+
+		// Add child theme support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 120,
+				'width'       => 100,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title', 'site-description' ),
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'redhill_theme_setup', 12 );
