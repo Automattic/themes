@@ -39,18 +39,22 @@ a {
 
 // Header
 #masthead {
+  padding-top: map-deep-get($config-global, "spacing", "vertical");
+
 	.custom-logo-link {
 		display: inline-block;
 		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	}
 
-	@include media(mobile) {
-		max-width: 92vw;
-		align-content: center;
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
-	  justify-content: center;
+  @include media(mobile) {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 92vw;
+    padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+    padding-top: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		.site-branding {
 			flex: 1 100%;
@@ -60,7 +64,6 @@ a {
 			padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 			padding-right: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 		}
-
 
 		.social-navigation {
 			padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
@@ -161,19 +164,6 @@ a {
 	}
 }
 
-// Set entry title vertical margins
-article .entry-header .entry-title,
-.page-title {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
-	margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-	margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-}
-
-// Set content font-family
-.entry-content {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
-}
-
 // Center common elements
 .site-branding,
 .site-info,
@@ -244,10 +234,68 @@ table,
 }
 
 .entry-footer {
-	border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+	border-top: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
   font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
-	font-size: map-deep-get($config-global, "font", "size", "xs");
-	padding-top: map-deep-get($config-global, "spacing", "unit");
+	font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+	padding-top: #{map-deep-get($config-global, "spacing", "unit")};
+}
+
+article .entry-header .entry-title,
+.page-title {
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+
+  a {
+    color: inherit;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #{map-deep-get($config-global, "color", "primary", "default")};
+    }
+  }
+}
+
+.entry-content {
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+}
+
+// Pagination
+.pagination {
+  text-align: center;
+
+  .nav-links > * {
+    color: map-deep-get($config-global, "color", "foreground", "light");
+    font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+    font-size: #{map-deep-get($config-global, "font", "size", "base")};
+    text-transform: uppercase;
+
+    &.current,
+    &:active,
+    &:focus,
+    &:hover {
+      color: map-deep-get($config-global, "color", "primary", "default");
+    }
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:before {
+		background: map-deep-get($config-global, "color", "border", "default");;
+		height: 1px;
+		content: "";
+		display: block;
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+
+		@include media(mobile) {
+			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		@extend %responsive-width-full;
+	}
 }
 
 // Post Navigation
@@ -265,7 +313,7 @@ table,
 	.meta-nav {
 		color: map-deep-get($config-global, "color", "foreground", "light");
     font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
-		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -279,7 +327,7 @@ table,
 		height: 1px;
 		content: "";
 		display: block;
-		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		@include media(mobile) {
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
@@ -343,6 +391,26 @@ table,
   }
 }
 
+// Comments Navigation
+.comment-navigation {
+    a {
+    color: map-deep-get($config-global, "color", "foreground", "light");
+    font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+    font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+    text-transform: uppercase;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: map-deep-get($config-global, "color", "primary", "default");
+    }
+  }
+
+  .comments-title + & {
+    display: none;
+  }
+}
+
 // Widgets
 .widget-area {
   font-size: #{map-deep-get($config-global, "font", "size", "sm")};
@@ -364,7 +432,7 @@ table,
 		height: 1px;
 		content: "";
 		display: block;
-    margin-top: map-deep-get($config-global, "spacing", "vertical");
+    margin-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		@include media(mobile) {
 		    margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};

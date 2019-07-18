@@ -5,7 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage PACKAGENAME
  * @since 1.0.0
  */
 
@@ -19,12 +18,12 @@
 	 */
 	function redhill_theme_setup() {
 
-		// ? remove_editor_style( 'editor-color-palette' );
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
 		// Remove parent theme font sizes
 		remove_theme_support( 'editor-font-sizes' );
+
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-font-sizes',
@@ -32,32 +31,36 @@
 				array(
 					'name'      => __( 'Small', 'redhill' ),
 					'shortName' => __( 'S', 'redhill' ),
-					'size'      => 18.5,
+					'size'      => 16.66,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'redhill' ),
-					'shortName' => __( 'M', 'redhill' ),
-					'size'      => 22,
+					'shortName' => __( 'N', 'redhill' ),
+					'size'      => 20,
 					'slug'      => 'normal',
+				),
+				array(
+					'name'      => __( 'Medium', 'redhill' ),
+					'shortName' => __( 'M', 'redhill' ),
+					'size'      => 24,
+					'slug'      => 'medium',
 				),
 				array(
 					'name'      => __( 'Large', 'redhill' ),
 					'shortName' => __( 'L', 'redhill' ),
-					'size'      => 32,
+					'size'      => 28.8,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'redhill' ),
 					'shortName' => __( 'XL', 'redhill' ),
-					'size'      => 38,
+					'size'      => 34.56,
 					'slug'      => 'huge',
 				),
 			)
 		);
 
-		// Remove parent theme color palette
-		// remove_theme_support( 'editor-color-palette' );
 		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-color-palette',
@@ -65,12 +68,12 @@
 				array(
 					'name'  => __( 'Primary', 'redhill' ),
 					'slug'  => 'primary',
-					'color' => '#CA2017', // _dsgnsystm_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#CA2017',
 				),
 				array(
 					'name'  => __( 'Secondary', 'redhill' ),
 					'slug'  => 'secondary',
-					'color' => '#007FDB', // _dsgnsystm_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#007FDB',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'redhill' ),
@@ -92,6 +95,18 @@
 					'slug'  => 'background',
 					'color' => '#FFFFFF',
 				),
+			)
+		);
+
+		// Add child theme support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 120,
+				'width'       => 100,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title', 'site-description' ),
 			)
 		);
 	}

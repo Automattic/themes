@@ -440,6 +440,8 @@ textarea {
 .pagination .nav-links,
 .sticky-post,
 .site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus,
 .site-info,
 #cancel-comment-reply-link,
 img:after,
@@ -462,6 +464,8 @@ h6 {
 .comment-author .fn,
 .no-comments,
 .site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus,
 h1,
 h2,
 h3,
@@ -516,6 +520,8 @@ h3 {
 }
 
 .site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus,
 .site-description,
 .nav-links,
 .page-title,
@@ -549,7 +555,6 @@ h6 {
   font-size: 0.59259em;
 }
 
-.site-title,
 .page-title {
   font-weight: normal;
 }
@@ -1910,7 +1915,7 @@ body.page .main-navigation {
 .site-branding {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   color: #cccccc;
   position: relative;
@@ -1932,36 +1937,58 @@ body.page .main-navigation {
   width: auto;
 }
 
-.site-title {
+.site-title,
+.wp-block-a8c-site-title,
+.wp-block-a8c-site-title:focus {
   color: #fff;
-  font-size: 1.125em;
+  font-size: 1.125em !important;
   font-weight: 600;
   flex: 1 1 auto;
   margin: 0;
 }
 
-.site-title a {
+.site-title a,
+.wp-block-a8c-site-title a,
+.wp-block-a8c-site-title:focus a {
   color: #fff;
 }
 
-.site-title a:link, .site-title a:visited {
+.site-title a:link, .site-title a:visited,
+.wp-block-a8c-site-title a:link,
+.wp-block-a8c-site-title a:visited,
+.wp-block-a8c-site-title:focus a:link,
+.wp-block-a8c-site-title:focus a:visited {
   color: #fff;
 }
 
-.site-title a:hover {
+.site-title a:hover,
+.wp-block-a8c-site-title a:hover,
+.wp-block-a8c-site-title:focus a:hover {
   color: #c6c6c6;
 }
 
-.featured-image .site-title {
+.featured-image .site-title, .featured-image
+.wp-block-a8c-site-title, .featured-image
+.wp-block-a8c-site-title:focus {
   margin: 0;
 }
 
-.site-description {
+.site-description,
+.wp-block-a8c-site-description,
+.wp-block-a8c-site-description:focus {
   flex: initial;
   color: #fff;
   font-size: 0.71111em;
   font-weight: normal;
   margin: 0.27rem 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-description,
+  .wp-block-a8c-site-description,
+  .wp-block-a8c-site-description:focus {
+    text-align: left;
+  }
 }
 
 .site-header.featured-image {
