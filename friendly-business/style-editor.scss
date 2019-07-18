@@ -26,14 +26,8 @@ Friendly Business Editor Styles
 		$main-block-selector: ".wp-block[data-align=\"#{$alignment}\"]";
 	}
 
-	$template-selector: "";
-	@if $alignment == "full" {
-		$template-selector: ".wp-block[data-type=\"a8c/template\"],";
-	}
-
 	@return "
 	  #{$main-block-selector},
-	  #{$template-selector}
 	  .wp-block[data-type=\"a8c/post-content\"] #{$main-block-selector}";
 }
 
