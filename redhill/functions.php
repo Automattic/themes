@@ -32,25 +32,31 @@
 				array(
 					'name'      => __( 'Small', 'redhill' ),
 					'shortName' => __( 'S', 'redhill' ),
-					'size'      => 18.5,
+					'size'      => 16.66,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'redhill' ),
-					'shortName' => __( 'M', 'redhill' ),
-					'size'      => 22,
+					'shortName' => __( 'N', 'redhill' ),
+					'size'      => 20,
 					'slug'      => 'normal',
+				),
+				array(
+					'name'      => __( 'Medium', 'redhill' ),
+					'shortName' => __( 'M', 'redhill' ),
+					'size'      => 24,
+					'slug'      => 'medium',
 				),
 				array(
 					'name'      => __( 'Large', 'redhill' ),
 					'shortName' => __( 'L', 'redhill' ),
-					'size'      => 32,
+					'size'      => 28.8,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'redhill' ),
 					'shortName' => __( 'XL', 'redhill' ),
-					'size'      => 38,
+					'size'      => 34.56,
 					'slug'      => 'huge',
 				),
 			)
