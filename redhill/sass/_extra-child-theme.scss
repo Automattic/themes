@@ -39,18 +39,21 @@ a {
 
 // Header
 #masthead {
+  padding-top: map-deep-get($config-global, "spacing", "vertical");
+
 	.custom-logo-link {
 		display: inline-block;
 		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	}
 
-	@include media(mobile) {
-		max-width: 92vw;
-		align-content: center;
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
-	  justify-content: center;
+  @include media(mobile) {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 92vw;
+    padding-top: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		.site-branding {
 			flex: 1 100%;
