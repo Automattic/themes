@@ -17,12 +17,25 @@
 
 <?php
 // If FSE plugin is active, use Footer template part for content.
-if( class_exists( 'Full_Site_Editing' ) ) {
-	fse_get_footer();
-}
+if ( class_exists( 'Full_Site_Editing' ) ) : ?>
+	<footer id="colophon" class="site-footer">
+		<?php fse_get_footer(); ?>
+		<div class="site-info">
+			<?php $blog_info = get_bloginfo( 'name' ); ?>
+			<?php if ( ! empty( $blog_info ) ) : ?>
+				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
+			<?php endif; ?>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
+				<?php
+				/* translators: %s: WordPress. */
+				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
+				?>
+			</a>
+		</div>
+	</footer>
+<?php endif; ?>
 
-// Otherwise we'll fall back to default Twenty Nineteen footer below.
-?>
+<?php // Otherwise we'll fall back to default Twenty Nineteen footer below. ?>
 
 <?php if( ! class_exists( 'Full_Site_Editing' ) ) : ?>
 	<footer id="colophon" class="site-footer">

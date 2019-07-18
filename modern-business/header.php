@@ -24,14 +24,14 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentynineteen' ); ?></a>
 
-    <?php
-        // If FSE plugin is active, use Header template part for content.
-        if( class_exists( 'Full_Site_Editing' ) ) {
-            fse_get_header();
-        }
+    <?php // If FSE plugin is active, use Header template part for content. ?>
+    <?php if( class_exists( 'Full_Site_Editing' ) ) : ?>
+        <header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
+            <?php fse_get_header(); ?>
+        </header>
+    <?php endif; ?>
 
-        // Otherwise we'll fall back to default Twenty Nineteen header below.
-    ?>
+    <?php // Otherwise we'll fall back to default Twenty Nineteen header below. ?>
 
     <?php if( ! class_exists( 'Full_Site_Editing' ) ) : ?>
 
