@@ -108,7 +108,16 @@ class A8C_WP_Template_Data_Inserter {
 	 * @return string
 	 */
 	public function get_footer_content() {
-		return '<!-- wp:a8c/navigation-menu {\"themeLocation\":"footer"} /-->';
+		return '<!-- wp:group {"align":"full","className":"site-footer"} -->' .
+			   '<div class="wp-block-group alignfull site-footer">' .
+			   '<div class="wp-block-group__inner-container">' .
+			   '<!-- wp:separator {"className":"is-style-default"} -->' .
+			   '<hr class="wp-block-separator is-style-default"/>' .
+			   '<!-- /wp:separator -->' .
+			   '<!-- wp:a8c/navigation-menu /-->' .
+			   '</div>' .
+			   '</div>' .
+			   '<!-- /wp:group -->';
 	}
 
 	/**
