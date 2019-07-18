@@ -441,6 +441,35 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
 }
 
+.pagination:before {
+	background: #DDDDDD;
+	height: 1px;
+	content: "";
+	display: block;
+	margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 560px) {
+	.pagination:before {
+		margin-bottom: 64px;
+	}
+}
+
+.pagination .nav-links > * {
+	color: #666666;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.pagination .nav-links > *.current, .pagination .nav-links > *:active, .pagination .nav-links > *:focus, .pagination .nav-links > *:hover {
+	color: #CA2017;
+}
+
+.pagination svg {
+	fill: currentColor;
+}
+
 .post-navigation a {
 	color: #222222;
 }
@@ -3263,7 +3292,7 @@ table th,
 	}
 }
 
-.post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+.pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 	margin-right: calc( -0.5 * ( 100vw - 100% ));
 	margin-left: calc( -0.5 * ( 100vw - 100% ));
 	width: calc( 100% + (0.5 * 2) * ( 100vw - 100% ));
@@ -3271,7 +3300,7 @@ table th,
 }
 
 @media only screen and (min-width: 560px) {
-	.post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+	.pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
 		width: calc( calc( 560px - 32px) + (0.5 * 2) * ( 100vw - calc( 560px - 32px) ));
@@ -3280,7 +3309,7 @@ table th,
 }
 
 @media only screen and (min-width: 640px) {
-	.post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+	.pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
 		width: calc( calc( 640px - 32px) + (0.5 * 2) * ( 100vw - calc( 640px - 32px) ));
@@ -3289,7 +3318,7 @@ table th,
 }
 
 @media only screen and (min-width: 772px) {
-	.post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+	.pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
 		width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
@@ -3298,7 +3327,7 @@ table th,
 }
 
 @media only screen and (min-width: 1024px) {
-	.post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+	.pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
 		width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
@@ -3307,7 +3336,7 @@ table th,
 }
 
 @media only screen and (min-width: 1280px) {
-	.post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+	.pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after, .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
 		width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
@@ -3651,6 +3680,35 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 
 .entry-content {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+}
+
+.pagination:before {
+	background: #DDDDDD;
+	height: 1px;
+	content: "";
+	display: block;
+	margin-bottom: 32px;
+}
+
+@media only screen and (min-width: 560px) {
+	.pagination:before {
+		margin-bottom: 64px;
+	}
+}
+
+.pagination .nav-links > * {
+	color: #666666;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.pagination .nav-links > *.current, .pagination .nav-links > *:active, .pagination .nav-links > *:focus, .pagination .nav-links > *:hover {
+	color: #CA2017;
+}
+
+.pagination svg {
+	fill: currentColor;
 }
 
 .post-navigation a {

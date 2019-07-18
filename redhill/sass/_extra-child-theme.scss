@@ -261,6 +261,41 @@ article .entry-header .entry-title,
 	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
 }
 
+// Pagination
+.pagination {
+  .nav-links > * {
+    color: map-deep-get($config-global, "color", "foreground", "light");
+    font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+    font-size: #{map-deep-get($config-global, "font", "size", "base")};
+    text-transform: uppercase;
+
+    &.current,
+    &:active,
+    &:focus,
+    &:hover {
+      color: map-deep-get($config-global, "color", "primary", "default");
+    }
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  &:before {
+		background: map-deep-get($config-global, "color", "border", "default");;
+		height: 1px;
+		content: "";
+		display: block;
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+
+		@include media(mobile) {
+			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		@extend %responsive-width-full;
+	}
+}
+
 // Post Navigation
 .post-navigation {
 	a {
