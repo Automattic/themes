@@ -313,7 +313,7 @@ article .entry-header .entry-title,
 	.meta-nav {
 		color: map-deep-get($config-global, "color", "foreground", "light");
     font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
-		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -388,6 +388,26 @@ article .entry-header .entry-title,
     a:hover {
       color: map-deep-get($config-global, "color", "primary", "default");
     }
+  }
+}
+
+// Comments Navigation
+.comment-navigation {
+    a {
+    color: map-deep-get($config-global, "color", "foreground", "light");
+    font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+    font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+    text-transform: uppercase;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: map-deep-get($config-global, "color", "primary", "default");
+    }
+  }
+
+  .comments-title + & {
+    display: none;
   }
 }
 
