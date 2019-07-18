@@ -263,6 +263,8 @@ article .entry-header .entry-title,
 
 // Pagination
 .pagination {
+  text-align: center;
+
   .nav-links > * {
     color: map-deep-get($config-global, "color", "foreground", "light");
     font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
@@ -286,7 +288,7 @@ article .entry-header .entry-title,
 		height: 1px;
 		content: "";
 		display: block;
-		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		@include media(mobile) {
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
@@ -325,7 +327,7 @@ article .entry-header .entry-title,
 		height: 1px;
 		content: "";
 		display: block;
-		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		@include media(mobile) {
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
@@ -410,7 +412,7 @@ article .entry-header .entry-title,
 		height: 1px;
 		content: "";
 		display: block;
-    margin-top: map-deep-get($config-global, "spacing", "vertical");
+    margin-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		@include media(mobile) {
 		    margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
