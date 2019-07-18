@@ -10,18 +10,40 @@ Friendly Business Editor Styles
 @import "sass/navigation/menu-main-navigation";
 @import "sass/typography/headings";
 
+/** === Helper Functions === */
+
+/**
+ Given a string, $alignment, returns the nested FSE block selectors
+ required for Full Site Editing to look correct. If $alignment is given,
+ we use it to target wp-blocks with a matching data-align attribute.
+ If no alignment is given, we target the base wp-block class. In both
+ of these scenarios, we target top level blocks, and any top level blocks
+ inside one of the FSE template part blocks.
+ */
+ @function get-block-selector($alignment) {
+	$main-block-selector: ".wp-block";
+	@if $alignment != "" {
+		$main-block-selector: ".wp-block[data-align=\"#{$alignment}\"]";
+	}
+
+	@return "
+	  #{$main-block-selector},
+	  .wp-block[data-type=\"a8c/post-content\"] #{$main-block-selector}";
+}
+
 /** === Editor Frame === */
 
 body {
 	background: $color__background-body;
 
+	.wp-block[data-type="a8c/template"],
 	.wp-block[data-align="full"] {
 		width: 100%;
 	}
 
 	@include media(mobile) {
-
-		.wp-block[data-align="full"] {
+		.wp-block[data-type="a8c/template"],
+		#{get-block-selector("full")} {
 			width: calc( 100% + 90px );
 			max-width: calc( 100% + 90px );
 		}
@@ -41,18 +63,19 @@ body {
 			margin-right: 0;
 		}
 
-		.wp-block[data-align="wide"] {
+		#{get-block-selector("wide")} {
 			width: 100%;
 		}
 
-		.wp-block[data-align="full"] {
+		.wp-block[data-type="a8c/template"],
+		#{get-block-selector("full")} {
 			position: relative;
 			left: calc( -12.5% - 14px );
 			width: calc( 125% + 116px );
 			max-width: calc( 125% + 115px ); // Subtract 1px here to avoid the rounding errors that happen due to the usage of percentages.
 		}
 
-		.wp-block[data-align="right"] {
+		#{get-block-selector("right")} {
 			max-width: 125%;
 		}
 	}
@@ -61,10 +84,13 @@ body {
 /** === Content Width === */
 
 .wp-block {
-	width: calc(100vw - (2 * #{$size__spacing-unit}));
-	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#{get-block-selector("")} {
+	width: calc(100vw - (2 * #{$size__spacing-unit}));
+	max-width: 100%;
 
 	@include media(tablet) {
 		width: calc(8 * (100vw / 12));
@@ -79,6 +105,12 @@ body {
 		width: 100%;
 	}
 }
+
+/** === FSE Template Part Blocks === */
+.wp-block[data-type="a8c/post-content"] {
+	width: 100%;
+}
+
 
 /** === Base Typography === */
 
