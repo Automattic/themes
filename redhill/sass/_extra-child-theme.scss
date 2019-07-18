@@ -53,6 +53,7 @@ a {
     flex-flow: row wrap;
     justify-content: center;
     max-width: 92vw;
+    padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
     padding-top: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		.site-branding {
@@ -63,7 +64,6 @@ a {
 			padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 			padding-right: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 		}
-
 
 		.social-navigation {
 			padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
@@ -168,7 +168,7 @@ a {
 article .entry-header .entry-title,
 .page-title {
 	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
-	margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: map-deep-get($config-global, "spacing", "vertical");
 	margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 }
 
