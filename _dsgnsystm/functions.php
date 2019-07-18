@@ -85,10 +85,11 @@ if ( ! function_exists( '_dsgnsystm_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 190,
-				'width'       => 190,
-				'flex-width'  => false,
+				'height'      => 96,
+				'width'       => 100,
+				'flex-width'  => true,
 				'flex-height' => false,
+				'header-text' => array( 'site-title', 'site-description' ),
 			)
 		);
 
@@ -342,8 +343,3 @@ require get_template_directory() . '/inc/icon-functions.php';
  * Custom template tags for the theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
