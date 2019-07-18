@@ -27,6 +27,7 @@
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
+		display: block;
 	}
 
 	/**
@@ -34,6 +35,16 @@
 	 */
 	&:not(.is-style-solid-color) {
 		background: none;
+	}
+
+	&.is-style-default {
+		&.alignleft,
+		&.aligncenter,
+		&.alignright {
+			blockquote > * {
+				text-align: center;
+			}
+		}
 	}
 
 	&.is-style-solid-color {

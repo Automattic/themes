@@ -1594,10 +1594,15 @@ p.has-background {
 	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
+	display: block;
 }
 
 .wp-block-pullquote:not(.is-style-solid-color) {
 	background: none;
+}
+
+.wp-block-pullquote.is-style-default.alignleft blockquote > *, .wp-block-pullquote.is-style-default.aligncenter blockquote > *, .wp-block-pullquote.is-style-default.alignright blockquote > * {
+	text-align: center;
 }
 
 .wp-block-pullquote.is-style-solid-color {
@@ -1765,7 +1770,6 @@ table th,
 	margin-right: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
-	max-width: 50%;
 }
 
 .aligncenter {
@@ -1779,7 +1783,6 @@ table th,
 	margin-left: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
-	max-width: 50%;
 }
 
 .entry-content > .alignwide {
