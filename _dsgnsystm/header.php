@@ -34,8 +34,8 @@
 						<?php _e( 'Menu', '_dsgnsystm' ); ?>
 						<span class="dropdown-icon open">+</span>
 						<span class="dropdown-icon close">&times;</span>
-						<span class="hide-visually expanded-text">expanded</span>
-						<span class="hide-visually collapsed-text">collapsed</span>
+						<span class="hide-visually expanded-text"><?php _e( 'expanded', '_dsgnsystm' ); ?></span>
+						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', '_dsgnsystm' ); ?></span>
 					</label>
 					<?php
 					wp_nav_menu(
