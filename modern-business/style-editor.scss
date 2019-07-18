@@ -26,8 +26,14 @@ Modern Business Editor Styles
 		$main-block-selector: ".wp-block[data-align=\"#{$alignment}\"]";
 	}
 
+	$template-selector: "";
+	@if $alignment == "full" {
+		$template-selector: ".wp-block[data-type=\"a8c/template\"],";
+	}
+
 	@return "
 	  #{$main-block-selector},
+	  #{$template-selector}
 	  .wp-block[data-type=\"a8c/post-content\"] #{$main-block-selector}";
 }
 
@@ -36,14 +42,12 @@ Modern Business Editor Styles
 body {
 	font-weight: 300;
 
-	.wp-block[data-type="a8c/template"],
 	.wp-block[data-align="full"] {
 		width: 100%;
 	}
 
 	@include media(mobile) {
 
-		.wp-block[data-type="a8c/template"],
 		#{get-block-selector("full")} {
 			width: calc( 100% + 90px );
 			max-width: calc( 100% + 90px );
@@ -61,7 +65,6 @@ body {
 			width: 100%;
 		}
 
-		.wp-block[data-type="a8c/template"],
 		#{get-block-selector("full")} {
 			position: relative;
 			left: calc( -12.5% - 14px );
