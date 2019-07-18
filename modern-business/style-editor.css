@@ -139,6 +139,95 @@ Modern Business Editor Styles
   display: block;
 }
 
+/* Site footer */
+.site-footer {
+  padding: 1em 0;
+  color: #686868;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-footer {
+    margin: 0 calc(10% + 60px) 2em;
+  }
+}
+
+.site-footer .wp-block-separator {
+  margin: 0 0 1em;
+  background-color: #686868;
+  border: 0;
+  height: 1px;
+}
+
+#colophon .widget-area,
+#colophon .site-info {
+  margin: calc(2 * 1rem) 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  #colophon .widget-area,
+  #colophon .site-info {
+    margin: calc(3 * 1rem) auto;
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  #colophon .widget-area,
+  #colophon .site-info {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+#colophon .widget-column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#colophon .widget-column .widget {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1168px) {
+  #colophon .widget-column .widget {
+    margin-right: calc(3 * 1rem);
+    width: calc(50% - (3 * 1rem));
+  }
+}
+
+#colophon .site-info {
+  color: #686868;
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 768px) {
+  #colophon .site-info {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  #colophon .site-info {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+#colophon .site-info a {
+  color: inherit;
+}
+
+#colophon .site-info a:hover {
+  text-decoration: none;
+  color: #c43d80;
+}
+
+#colophon .site-info .imprint,
+#colophon .site-info .privacy-policy-link {
+  margin-right: 1rem;
+}
+
 /** === Main menu === */
 .main-navigation {
   display: block;
