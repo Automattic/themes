@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -23,7 +23,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_dsgnsystm' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'varia' ),
 				'after'  => '</div>',
 			)
 		);
@@ -37,7 +37,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', '_dsgnsystm' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'varia' ),
 						array(
 							'span' => array(
 								'class' => array(),

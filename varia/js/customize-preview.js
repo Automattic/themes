@@ -22,7 +22,7 @@
 				color = wp.customize.get().primary_color_hue;
 			} else {
 				// If the "default" option is selected, get the default primary_color_hue
-				color = _DsgnsystmPreviewData.default_hue;
+				color = VariaPreviewData.default_hue;
 			}
 
 			// Equivalent to css.replaceAll, with hue followed by comma to prevent values with units from being changed.

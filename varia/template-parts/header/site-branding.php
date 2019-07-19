@@ -3,7 +3,7 @@
  * Displays header site branding
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 ?>

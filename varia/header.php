@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 ?><!doctype html>
@@ -21,21 +21,21 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_dsgnsystm' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'varia' ); ?></a>
 
 		<header id="masthead" class="site-header responsive-max-width">
 
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
 			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-				<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', '_dsgnsystm' ); ?>">
+				<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'varia' ); ?>">
 					<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
 					<label for="toggle" id="toggle-menu" class="button">
-						<?php _e( 'Menu', '_dsgnsystm' ); ?>
+						<?php _e( 'Menu', 'varia' ); ?>
 						<span class="dropdown-icon open">+</span>
 						<span class="dropdown-icon close">&times;</span>
-						<span class="hide-visually expanded-text"><?php _e( 'expanded', '_dsgnsystm' ); ?></span>
-						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', '_dsgnsystm' ); ?></span>
+						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'varia' ); ?></span>
+						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'varia' ); ?></span>
 					</label>
 					<?php
 					wp_nav_menu(
@@ -50,14 +50,14 @@
 			<?php endif; ?>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', '_dsgnsystm' ); ?>">
+				<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'varia' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
 							'theme_location' => 'social',
 							'menu_class'     => 'social-links-menu',
 							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>' . _dsgnsystm_get_icon_svg( 'link' ),
+							'link_after'     => '</span>' . varia_get_icon_svg( 'link' ),
 							'depth'          => 1,
 						)
 					);

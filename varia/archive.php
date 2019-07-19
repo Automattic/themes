@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -39,7 +39,7 @@ get_header();
 			endwhile;
 
 			// Previous/next page navigation.
-			_dsgnsystm_the_posts_navigation();
+			varia_the_posts_navigation();
 
 			// If no content, include the "No posts found" template.
 		else :

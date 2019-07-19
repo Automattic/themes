@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -15,7 +15,7 @@
 	<header class="entry-header responsive-max-width">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', '_dsgnsystm' ) );
+			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'varia' ) );
 		}
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -25,7 +25,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php _dsgnsystm_post_thumbnail(); ?>
+	<?php varia_post_thumbnail(); ?>
 
 	<div class="entry-content responsive-max-width">
 		<?php
@@ -33,7 +33,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_dsgnsystm' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'varia' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -46,7 +46,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_dsgnsystm' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'varia' ),
 				'after'  => '</div>',
 			)
 		);
@@ -54,6 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer responsive-max-width">
-		<?php _dsgnsystm_entry_footer(); ?>
+		<?php varia_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-${ID} -->

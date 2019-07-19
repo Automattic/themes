@@ -10,7 +10,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -30,7 +30,7 @@ get_header();
 			}
 
 			// Previous/next page navigation.
-			_dsgnsystm_the_posts_navigation();
+			varia_the_posts_navigation();
 
 		} else {
 

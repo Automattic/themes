@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _Dsgnsystm
+ * @package Varia
  */
 
 /*
@@ -28,18 +28,18 @@ if ( post_password_required() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
-			$_dsgnsystm_comment_count = get_comments_number();
-			if ( '1' === $_dsgnsystm_comment_count ) {
+			$varia_comment_count = get_comments_number();
+			if ( '1' === $varia_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', '_dsgnsystm' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'varia' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $_dsgnsystm_comment_count, 'comments title', '_dsgnsystm' ) ),
-					number_format_i18n( $_dsgnsystm_comment_count ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $varia_comment_count, 'comments title', 'varia' ) ),
+					number_format_i18n( $varia_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
@@ -63,7 +63,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', '_dsgnsystm' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'varia' ); ?></p>
 			<?php
 		endif;
 

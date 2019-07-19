@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -22,10 +22,10 @@
 			<?php if ( ! empty( $blog_info ) ) : ?>
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="comma">,</span>
 			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_dsgnsystm' ) ); ?>" class="imprint">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'varia' ) ); ?>" class="imprint">
 				<?php
 				/* translators: %s: WordPress. */
-				printf( __( 'proudly powered by %s.', '_dsgnsystm' ), 'WordPress' );
+				printf( __( 'proudly powered by %s.', 'varia' ), 'WordPress' );
 				?>
 			</a>
 			<?php

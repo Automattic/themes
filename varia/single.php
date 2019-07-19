@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -28,18 +28,18 @@ get_header();
 					the_post_navigation(
 						array(
 							/* translators: %s: parent post link */
-							'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', '_dsgnsystm' ), '%title' ),
+							'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'varia' ), '%title' ),
 						)
 					);
 				} elseif ( is_singular( 'post' ) ) {
 					// Previous/next post navigation.
 					the_post_navigation(
 						array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', '_dsgnsystm' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Next post:', '_dsgnsystm' ) . '</span> <br/>' .
+							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'varia' ) . '</span> ' .
+								'<span class="screen-reader-text">' . __( 'Next post:', 'varia' ) . '</span> <br/>' .
 								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', '_dsgnsystm' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Previous post:', '_dsgnsystm' ) . '</span> <br/>' .
+							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'varia' ) . '</span> ' .
+								'<span class="screen-reader-text">' . __( 'Previous post:', 'varia' ) . '</span> <br/>' .
 								'<span class="post-title">%title</span>',
 						)
 					);

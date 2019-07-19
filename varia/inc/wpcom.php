@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package _Dsgnsystm
+ * @package Varia
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function _dsgnsystm_wpcom_setup() {
+function varia_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,29 +26,29 @@ function _dsgnsystm_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', '_dsgnsystm_wpcom_setup' );
+add_action( 'after_setup_theme', 'varia_wpcom_setup' );
 
 /**
  * Add setting for hiding page title on the homepage.
  */
-function _dsgnsystm_wpcom_customize_update( $wp_customize ) {
+function varia_wpcom_customize_update( $wp_customize ) {
 	$wp_customize->add_setting( 'hide_front_page_title', array(
 		'default'              => false,
 		'type'                 => 'theme_mod',
 		'transport'            => 'postMessage',
-		'sanitize_callback'    => '_dsgnsystm_sanitize_checkbox',
+		'sanitize_callback'    => 'varia_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'hide_front_page_title', array(
-		'label'		  => esc_html__( 'Hide Homepage Title', '_dsgnsystm' ),
-		'description' => esc_html__( 'Check to hide the page title, if your homepage is set to display a static page.', '_dsgnsystm' ),
+		'label'		  => esc_html__( 'Hide Homepage Title', 'varia' ),
+		'description' => esc_html__( 'Check to hide the page title, if your homepage is set to display a static page.', 'varia' ),
 		'section'	  => 'static_front_page',
 		'priority'	  => 10,
 		'type'		  => 'checkbox',
 		'settings'	  => 'hide_front_page_title',
 	) );
 }
-add_action( 'customize_register', '_dsgnsystm_wpcom_customize_update' );
+add_action( 'customize_register', 'varia_wpcom_customize_update' );
 
 /**
 * Sanitize the checkbox.
@@ -57,7 +57,7 @@ add_action( 'customize_register', '_dsgnsystm_wpcom_customize_update' );
 *
 * @return boolean true if is 1 or '1', false if anything else
 */
-function _dsgnsystm_sanitize_checkbox( $input ) {
+function varia_sanitize_checkbox( $input ) {
 	if ( 1 == $input ) {
 		return true;
 	} else {
@@ -68,19 +68,19 @@ function _dsgnsystm_sanitize_checkbox( $input ) {
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function _dsgnsystm_wpcom_customize_preview_js() {
-	wp_enqueue_script( '_dsgnsystm_wpcom_customize_preview', get_theme_file_uri( '/inc/customize-preview-wpcom.js' ), array( 'customize-preview' ), '1.0', true );
+function varia_wpcom_customize_preview_js() {
+	wp_enqueue_script( 'varia_wpcom_customize_preview', get_theme_file_uri( '/inc/customize-preview-wpcom.js' ), array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', '_dsgnsystm_wpcom_customize_preview_js' );
+add_action( 'customize_preview_init', 'varia_wpcom_customize_preview_js' );
 
 /**
  * Enqueue our WP.com styles for front-end.
  * Loads after style.css so we can add overrides.
  */
-function _dsgnsystm_wpcom_scripts() {
-	wp_enqueue_style( '_dsgnsystm-wpcom-style', get_template_directory_uri() . '/inc/style-wpcom.css', array( '_dsgnsystm-style' ), '20181218' );
+function varia_wpcom_scripts() {
+	wp_enqueue_style( 'varia-wpcom-style', get_template_directory_uri() . '/inc/style-wpcom.css', array( 'varia-style' ), '20181218' );
 }
-add_action( 'wp_enqueue_scripts', '_dsgnsystm_wpcom_scripts' );
+add_action( 'wp_enqueue_scripts', 'varia_wpcom_scripts' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -88,7 +88,7 @@ add_action( 'wp_enqueue_scripts', '_dsgnsystm_wpcom_scripts' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function _dsgnsystm_wpcom_body_classes( $classes ) {
+function varia_wpcom_body_classes( $classes ) {
 
 	$hide = get_theme_mod( 'hide_front_page_title', false );
 
@@ -104,4 +104,4 @@ function _dsgnsystm_wpcom_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', '_dsgnsystm_wpcom_body_classes' );
+add_filter( 'body_class', 'varia_wpcom_body_classes' );

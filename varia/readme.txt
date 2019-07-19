@@ -1,4 +1,4 @@
-=== _Dsgnsystm ===
+=== Varia ===
 Contributors: the WordPress team
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 Requires at least: 4.9.6
@@ -7,7 +7,7 @@ Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-_Dsgnsystm to rule them all.
+Varia to rule them all.
 
 == Description ==
 A design system for WordPress sites built with Gutenberg.

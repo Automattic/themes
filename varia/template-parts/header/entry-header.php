@@ -3,7 +3,7 @@
  * Displays the post header
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 ?>
@@ -12,6 +12,6 @@
 
 <?php if ( ! is_page() ) : ?>
 <div class="entry-meta">
-	<?php _dsgnsystm_entry_footer(); ?>
+	<?php varia_entry_footer(); ?>
 </div><!-- .meta-info -->
 <?php endif; ?>

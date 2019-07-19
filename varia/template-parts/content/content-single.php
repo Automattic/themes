@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
@@ -17,12 +17,12 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( ! is_page() ) : ?>
 		<div class="entry-meta">
-			<?php _dsgnsystm_entry_meta(); ?>
+			<?php varia_entry_meta(); ?>
 		</div><!-- .meta-info -->
 		<?php endif; ?>
 	</header>
 
-	<?php _dsgnsystm_post_thumbnail(); ?>
+	<?php varia_post_thumbnail(); ?>
 
 	<div class="entry-content responsive-max-width">
 		<?php
@@ -30,7 +30,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_dsgnsystm' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'varia' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -43,7 +43,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_dsgnsystm' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'varia' ),
 				'after'  => '</div>',
 			)
 		);
@@ -51,7 +51,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer responsive-max-width">
-		<?php _dsgnsystm_entry_footer(); ?>
+		<?php varia_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>

@@ -3,7 +3,7 @@
  * SVG Icons class
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 

@@ -1,23 +1,23 @@
 <?php
 /**
- * _Dsgnsystm functions and definitions
+ * Varia functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage _Dsgnsystm
+ * @subpackage Varia
  * @since 1.0.0
  */
 
 /**
- * _Dsgnsystm only works in WordPress 4.7 or later.
+ * Varia only works in WordPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
 }
 
-if ( ! function_exists( '_dsgnsystm_setup' ) ) :
+if ( ! function_exists( 'varia_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -25,14 +25,14 @@ if ( ! function_exists( '_dsgnsystm_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function _dsgnsystm_setup() {
+	function varia_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on _Dsgnsystm, use a find and replace
-		 * to change '_dsgnsystm' to the name of your theme in all the template files.
+		 * If you're building a theme based on Varia, use a find and replace
+		 * to change 'varia' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( '_dsgnsystm', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'varia', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -56,9 +56,9 @@ if ( ! function_exists( '_dsgnsystm_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', '_dsgnsystm' ),
-				'footer' => __( 'Footer Menu', '_dsgnsystm' ),
-				'social' => __( 'Social Links Menu', '_dsgnsystm' ),
+				'menu-1' => __( 'Primary', 'varia' ),
+				'footer' => __( 'Footer Menu', 'varia' ),
+				'social' => __( 'Social Links Menu', 'varia' ),
 			)
 		);
 
@@ -114,68 +114,68 @@ if ( ! function_exists( '_dsgnsystm_setup' ) ) :
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __( 'Small', '_dsgnsystm' ),
-					'shortName' => __( 'S', '_dsgnsystm' ),
+					'name'      => __( 'Small', 'varia' ),
+					'shortName' => __( 'S', 'varia' ),
 					'size'      => 15,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __( 'Normal', '_dsgnsystm' ),
-					'shortName' => __( 'M', '_dsgnsystm' ),
+					'name'      => __( 'Normal', 'varia' ),
+					'shortName' => __( 'M', 'varia' ),
 					'size'      => 18,
 					'slug'      => 'normal',
 				),
 				array(
-					'name'      => __( 'Large', '_dsgnsystm' ),
-					'shortName' => __( 'L', '_dsgnsystm' ),
+					'name'      => __( 'Large', 'varia' ),
+					'shortName' => __( 'L', 'varia' ),
 					'size'      => 25.92,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => __( 'Huge', '_dsgnsystm' ),
-					'shortName' => __( 'XL', '_dsgnsystm' ),
+					'name'      => __( 'Huge', 'varia' ),
+					'shortName' => __( 'XL', 'varia' ),
 					'size'      => 31.105,
 					'slug'      => 'huge',
 				),
 			)
 		);
 
-		// $default_hue     = _dsgnsystm_get_default_hue();
-		// $saturation      = _dsgnsystm_get_default_saturation();
-		// $lightness       = _dsgnsystm_get_default_lightness();
-		// $lightness_hover = _dsgnsystm_get_default_lightness_hover();
+		// $default_hue     = varia_get_default_hue();
+		// $saturation      = varia_get_default_saturation();
+		// $lightness       = varia_get_default_lightness();
+		// $lightness_hover = varia_get_default_lightness_hover();
 
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary', '_dsgnsystm' ),
+					'name'  => __( 'Primary', 'varia' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // _dsgnsystm_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
 				),
 				array(
-					'name'  => __( 'Secondary', '_dsgnsystm' ),
+					'name'  => __( 'Secondary', 'varia' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // _dsgnsystm_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
 				),
 				array(
-					'name'  => __( 'Dark Gray', '_dsgnsystm' ),
+					'name'  => __( 'Dark Gray', 'varia' ),
 					'slug'  => 'foreground-dark',
 					'color' => '#111111',
 				),
 				array(
-					'name'  => __( 'Gray', '_dsgnsystm' ),
+					'name'  => __( 'Gray', 'varia' ),
 					'slug'  => 'foreground',
 					'color' => '#444444',
 				),
 				array(
-					'name'  => __( 'Light Gray', '_dsgnsystm' ),
+					'name'  => __( 'Light Gray', 'varia' ),
 					'slug'  => 'foreground-light',
 					'color' => '#767676',
 				),
 				array(
-					'name'  => __( 'White', '_dsgnsystm' ),
+					'name'  => __( 'White', 'varia' ),
 					'slug'  => 'background',
 					'color' => '#FFFFFF',
 				),
@@ -186,20 +186,20 @@ if ( ! function_exists( '_dsgnsystm_setup' ) ) :
 		add_theme_support( 'responsive-embeds' );
 	}
 endif;
-add_action( 'after_setup_theme', '_dsgnsystm_setup' );
+add_action( 'after_setup_theme', 'varia_setup' );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _dsgnsystm_widgets_init() {
+function varia_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer', '_dsgnsystm' ),
+			'name'          => __( 'Footer', 'varia' ),
 			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', '_dsgnsystm' ),
+			'description'   => __( 'Add widgets here to appear in your footer.', 'varia' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -208,7 +208,7 @@ function _dsgnsystm_widgets_init() {
 	);
 
 }
-add_action( 'widgets_init', '_dsgnsystm_widgets_init' );
+add_action( 'widgets_init', 'varia_widgets_init' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -217,33 +217,33 @@ add_action( 'widgets_init', '_dsgnsystm_widgets_init' );
  *
  * @global int $content_width Content width.
  */
-function _dsgnsystm_content_width() {
+function varia_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( '_dsgnsystm_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'varia_content_width', 640 );
 }
-add_action( 'after_setup_theme', '_dsgnsystm_content_width', 0 );
+add_action( 'after_setup_theme', 'varia_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
-function _dsgnsystm_scripts() {
+function varia_scripts() {
 	// Theme styles
-	wp_enqueue_style( '_dsgnsystm-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'varia-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// RTL styles
-	wp_style_add_data( '_dsgnsystm-style', 'rtl', 'replace' );
+	wp_style_add_data( 'varia-style', 'rtl', 'replace' );
 
 	// Print styles
-	wp_enqueue_style( '_dsgnsystm-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+	wp_enqueue_style( 'varia-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 
 	// Threaded comment reply styles
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_dsgnsystm_scripts' );
+add_action( 'wp_enqueue_scripts', 'varia_scripts' );
 
 /**
  * Fix skip link focus in IE11.
@@ -253,7 +253,7 @@ add_action( 'wp_enqueue_scripts', '_dsgnsystm_scripts' );
  *
  * @link https://git.io/vWdr2
  */
-function _dsgnsystm_skip_link_focus_fix() {
+function varia_skip_link_focus_fix() {
 	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
 	?>
 	<script>
@@ -261,7 +261,7 @@ function _dsgnsystm_skip_link_focus_fix() {
 	</script>
 	<?php
 }
-add_action( 'wp_print_footer_scripts', '_dsgnsystm_skip_link_focus_fix' );
+add_action( 'wp_print_footer_scripts', 'varia_skip_link_focus_fix' );
 
 /**
  * Enqueue block editor content-width styles.
@@ -269,20 +269,20 @@ add_action( 'wp_print_footer_scripts', '_dsgnsystm_skip_link_focus_fix' );
  *   that live outside of `.editor-styles-wrapper`
  *
  */
-function _dsgnsystm_editor_content_width() {
-	wp_enqueue_style( '_dsgnsystm-editor-content-width-style', get_theme_file_uri( '/style-editor-content-width.css' ), false, wp_get_theme()->get( 'Version' ), 'all' );
+function varia_editor_content_width() {
+	wp_enqueue_style( 'varia-editor-content-width-style', get_theme_file_uri( '/style-editor-content-width.css' ), false, wp_get_theme()->get( 'Version' ), 'all' );
 }
-add_action( 'enqueue_block_editor_assets', '_dsgnsystm_editor_content_width' );
+add_action( 'enqueue_block_editor_assets', 'varia_editor_content_width' );
 
 /**
  * SVG Icons class.
  */
-require get_template_directory() . '/classes/class-_dsgnsystm-svg-icons.php';
+require get_template_directory() . '/classes/class-varia-svg-icons.php';
 
 /**
  * Custom Comment Walker template.
  */
-require get_template_directory() . '/classes/class-_dsgnsystm-walker-comment.php';
+require get_template_directory() . '/classes/class-varia-walker-comment.php';
 
 /**
  * Enhance the theme by hooking into WordPress.
