@@ -1,21 +1,20 @@
 /*
-Theme Name: Redhill
-Theme URI: https://github.com/Automattic/redhill
+Theme Name: Varia
+Theme URI: https://github.com/Automattic/themes/varia
 Author: Automattic
 Author URI: https://automattic.com/
-Description: A design system for WordPress sites built with Gutenberg.
+Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Template: varia
-Text Domain: redhill
+Text Domain: varia
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-_Dsgnsystm is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Varia is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -26,30 +25,25 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * Abstracts
  * - Mixins, variables and functions
  */
-@import "../../varia/sass/abstracts/imports";
-
-/**
- * Child Theme Deep
- */
-@import "config-child-theme-deep";
+@import "sass/abstracts/imports";
 
 /**
  * Base
  * - Reset the browser
  */
-@import "../../varia/sass/base/imports";
+@import "sass/base/imports";
 
 /**
  * Layout
  * - Structral and responsive styles
  */
-@import "../../varia/sass/layout/imports";
+@import "sass/layout/imports";
 
 /**
  * Elements
  * - Styles for basic HTML elemants
  */
-@import "../../varia/sass/elements/imports";
+@import "sass/elements/imports";
 
 /**
  * Blocks
@@ -58,33 +52,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * - In the future the Block styles may get compiled to individual .css
  *   files and conditionally loaded
  */
-@import "../../varia/sass/blocks/imports";
+@import "sass/blocks/imports";
 
 /**
  * Components
  * - Similar to Blocks but exist outside of the "current" editor context
  */
-@import "../../varia/sass/components/imports";
+@import "sass/components/imports";
 
 /**
  * Site Pages
  * - Page specific styles
  */
-@import "../../varia/sass/pages/imports";
+@import "sass/pages/imports";
+
+/**
+ * Vendors
+ * - 3rd-party styles
+ */
+@import "sass/vendors/imports";
 
 /**
  * Responsive Logic
  * - Loading this last to respect cascaing rules
  */
-@import "../../varia/sass/abstracts/responsive-logic";
+@import "sass/abstracts/responsive-logic";
 
 /**
  * Vendors
  * - Styles for 3rd party plugins and WP extensions
  */
-@import "../../varia/sass/vendors/imports";
-
-/**
- * Child Theme Extra Styles
- */
-@import "extra-child-theme";
+@import "sass/vendors/imports";

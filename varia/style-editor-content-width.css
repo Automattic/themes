@@ -1,0 +1,139 @@
+/**
+ * Varia Editor Content Width Styles
+ */
+/**
+ * Abstracts
+ * - Mixins, variables and functions
+ */
+/* Sass Functions go here */
+/**
+ * Map deep get
+ * @author Hugo Giraudel
+ * @access public
+ * @param {Map} $map - Map
+ * @param {Arglist} $keys - Key chain
+ * @return {*} - Desired value
+ *
+ * Example:
+ * $m-breakpoint: map-deep-get($__prefix-default-config, "layouts", "M");
+ */
+/**
+ * Deep set function to set a value in nested maps
+ * @author Hugo Giraudel
+ * @access public
+ * @param {Map} $map - Map
+ * @param {List} $keys -  Key chaine
+ * @param {*} $value - Value to assign
+ * @return {Map}
+ *
+ * Example:
+ * $__prefix-default-config: map-deep-set($__prefix-default-config, "layouts" "M", 650px);
+ */
+/**
+ * jQuery-style extend function
+ * - Child themes can use this function to `reset` the values in
+ *   config maps without editing the `master` Sass files.
+ * - src: https://www.sitepoint.com/extra-map-functions-sass/
+ * - About `map-merge()`:
+ * - - only takes 2 arguments
+ * - - is not recursive
+ * @param {Map} $map - first map
+ * @param {ArgList} $maps - other maps
+ * @param {Bool} $deep - recursive mode
+ * @return {Map}
+ *
+ * Examples:
+
+$grid-configuration-default: (
+	'columns': 12,
+	'layouts': (
+		'small': 800px,
+		'medium': 1000px,
+		'large': 1200px,
+	),
+);
+
+$grid-configuration-custom: (
+	'layouts': (
+		'large': 1300px,
+		'huge': 1500px
+	),
+);
+
+$grid-configuration-user: (
+	'direction': 'ltr',
+	'columns': 16,
+	'layouts': (
+		'large': 1300px,
+		'huge': 1500px
+	),
+);
+
+// $deep: false
+$grid-configuration: map-extend($grid-configuration-default, $grid-configuration-custom, $grid-configuration-user);
+// --> ("columns": 16, "layouts": (("large": 1300px, "huge": 1500px)), "direction": "ltr")
+
+// $deep: true
+$grid-configuration: map-extend($grid-configuration-default, $grid-configuration-custom, $grid-configuration-user, true);
+// --> ("columns": 16, "layouts": (("small": 800px, "medium": 1000px, "large": 1300px, "huge": 1500px)), "direction": "ltr")
+
+ */
+/**
+ * Button
+ */
+/**
+ * Cover
+ */
+/**
+ * Heading
+ */
+/**
+ * List
+ */
+/**
+ * Pullquote
+ */
+/**
+ * Quote
+ */
+/**
+ * Separator
+ */
+/**
+ * Responsive breakpoints
+ * - breakpoints values are defined in _config-global.scss
+ */
+/**
+ * Align widths
+ * - Sets negative margin for .alignwide and .alignfull blocks
+ */
+/**
+ * Align wide widths
+ * - Sets negative margin for .alignwide and .alignfull blocks
+ */
+/**
+ * Align container widths
+ * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+/**
+ * Crop Text Boundry
+ * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+/**
+ * Structure
+ * - Only sets the default width for blocks in the editor
+ */
+/**
+ * Editor Structure
+ */
+/**
+ * Content Width
+ * - Set vertical padding and horizontal margins
+ */
+/* Width of "default" blocks */
+.wp-block {
+  max-width: 780px; }
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+  max-width: 1022px; }

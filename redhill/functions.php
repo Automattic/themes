@@ -134,7 +134,7 @@ add_action( 'after_setup_theme', 'redhill_theme_content_width', 0 );
 function redhill_theme_scripts() {
 
 	// dequeue parent styles
-	wp_dequeue_style( '_dsgnsystm-style' );
+	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
 	wp_enqueue_style( 'redhill-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));

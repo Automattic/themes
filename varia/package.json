@@ -1,11 +1,11 @@
 {
-  "name": "redhill",
+  "name": "varia",
   "version": "1.0.0",
-  "description": "redhill",
+  "description": "Dsgnsystm",
   "bugs": {
-    "url": "https://github.com/Automattic/themes/issues"
+    "url": "https://github.com/Automattic/varia/issues"
   },
-  "homepage": "https://github.com/Automattic/themes/redhill#readme",
+  "homepage": "https://github.com/Automattic/varia#readme",
   "devDependencies": {
     "@wordpress/browserslist-config": "^2.2.2",
     "autoprefixer": "^9.5.1",
@@ -34,13 +34,12 @@
   ],
   "scripts": {
     "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-    "build:style": "node-sass sass/style-child-theme.scss style.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style.css",
-    "build:style-editor": "node-sass sass/style-child-theme-editor.scss style-editor.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-editor.css",
+    "build:style": "node-sass style.scss style.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style.css",
+    "build:style-editor": "node-sass style-editor.scss style-editor.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-editor.css",
     "build:rtl": "rtlcss style.css style-rtl.css",
+    "build:print": "node-sass print.scss print.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r print.css",
     "build": "run-p \"build:*\"",
-    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
-  },
-  "dependencies": {
-    "core-util-is": "^1.0.2"
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "child-theme": "sh ../theme-dev-utils/build-child-theme.sh"
   }
 }

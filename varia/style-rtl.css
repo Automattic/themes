@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
-Theme Name: Redhill
-Theme URI: https://github.com/Automattic/redhill
+Theme Name: Varia
+Theme URI: https://github.com/Automattic/varia
 Author: Automattic
 Author URI: https://automattic.com/
 Description: A design system for WordPress sites built with Gutenberg.
@@ -9,14 +9,13 @@ Requires at least: WordPress 4.9.6
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Template: varia
-Text Domain: redhill
+Text Domain: varia
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-_Dsgnsystm is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Varia is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -143,46 +142,6 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 /**
  * Crop Text Boundry
  * - Sets a fixed-width on content within alignwide and alignfull blocks
- */
-/**
- * Child Theme Deep
- */
-/**
- * Redefine Sass map values for child theme output.
- * - See: style-child-theme.scss
- */
-/**
- * Global
- */
-/**
- * Elements
- */
-/**
- * Button
- */
-/**
- * Cover
- */
-/**
- * Heading
- */
-/**
- * List
- */
-/**
- * Pullquote
- */
-/**
- * Quote
- */
-/**
- * Separator
- */
-/**
- * Header
- */
-/**
- * Footer
  */
 /**
  * Base
@@ -588,22 +547,22 @@ html {
  * HTML resets
  */
 html {
-	font-size: 16.66667px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	line-height: 1.6;
+	font-size: 15px;
+	font-family: serif;
+	line-height: 1.78;
 }
 
 @media only screen and (min-width: 560px) {
 	html {
-		font-size: 20px;
+		font-size: 18px;
 	}
 }
 
 body {
 	font-size: 1rem;
 	font-weight: normal;
-	color: #222222;
-	text-align: left;
+	color: #444444;
+	text-align: right;
 	background-color: white;
 }
 
@@ -611,11 +570,11 @@ body {
  * Links styles
  */
 a {
-	color: #CA2017;
+	color: blue;
 }
 
 a:hover {
-	color: #222222;
+	color: indigo;
 }
 
 button,
@@ -644,12 +603,12 @@ a {
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #222222;
+	color: #444444;
 	display: block;
 	font-size: 1.2rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -717,11 +676,11 @@ footer {
 }
 
 ::selection {
-	background-color: #DDDDDD;
+	background-color: lightblue;
 }
 
 ::-moz-selection {
-	background-color: #DDDDDD;
+	background-color: lightblue;
 }
 
 /**
@@ -748,8 +707,8 @@ footer {
 .site-main,
 .site-footer {
 	padding: 16px 16px;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 @media only screen and (min-width: 560px) {
@@ -757,9 +716,9 @@ footer {
 	.site-main,
 	.site-footer {
 		padding-top: 32px;
-		padding-right: 0;
-		padding-bottom: 32px;
 		padding-left: 0;
+		padding-bottom: 32px;
+		padding-right: 0;
 	}
 }
 
@@ -768,8 +727,8 @@ footer {
  * - Add double vertical margins here for clearer heirarchy
  */
 .site-main > * {
-	margin-top: calc(2 * 32px);
-	margin-bottom: calc(2 * 32px);
+	margin-top: calc(3 * 32px);
+	margin-bottom: calc(3 * 32px);
 }
 
 .site-main > *:first-child {
@@ -806,9 +765,9 @@ footer {
 .author-bio,
 .widget-area {
 	margin-top: 32px;
-	margin-right: auto;
-	margin-bottom: 32px;
 	margin-left: auto;
+	margin-bottom: 32px;
+	margin-right: auto;
 }
 
 /*
@@ -908,11 +867,11 @@ footer {
  * - Styles for basic HTML elemants
  */
 blockquote {
-	padding-left: 16px;
+	padding-right: 16px;
 }
 
 blockquote p {
-	font-size: 1.44rem;
+	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -937,11 +896,11 @@ blockquote > *:last-child {
 }
 
 blockquote.alignleft, blockquote.alignright {
-	padding-left: inherit;
+	padding-right: inherit;
 }
 
 blockquote.alignleft p, blockquote.alignright p {
-	font-size: 1.2rem;
+	font-size: 1.44rem;
 	max-width: inherit;
 	width: inherit;
 }
@@ -969,9 +928,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #222222;
+	color: #444444;
 	border: 1px solid #DDDDDD;
 	border-radius: 3px;
+	padding: 16px;
 }
 
 input[type="text"]:focus,
@@ -990,8 +950,8 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #222222;
-	border-color: #222222;
+	color: #444444;
+	border-color: indigo;
 }
 
 select {
@@ -1004,13 +964,13 @@ textarea {
 
 input[type=checkbox] + label {
 	display: inline;
-	margin-left: 0.5em;
-	margin-right: 2em;
+	margin-right: 0.5em;
+	margin-left: 2em;
 	line-height: 1em;
 }
 
 figcaption {
-	color: #666666;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -1070,12 +1030,12 @@ input[type="submit"],
 	color: white;
 	cursor: pointer;
 	font-weight: bold;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	background-color: #CA2017;
-	border-radius: 4px;
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	background-color: blue;
+	border-radius: 9px;
 	border-width: 0;
-	padding: 16px 24px;
+	padding: 16px 16px;
 }
 
 button:before, button:after,
@@ -1123,21 +1083,21 @@ input[type="submit"].has-focus,
 .wp-block-file__button:focus,
 .wp-block-file__button.has-focus {
 	color: white;
-	background-color: #222222;
+	background-color: indigo;
 }
 
 /**
  * Block Options
  */
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: #CA2017;
+	color: blue;
 	background: transparent;
 	border: 2px solid currentcolor;
-	padding: 14px 24px;
+	padding: 14px 16px;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: #222222;
+	color: indigo;
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -1145,14 +1105,14 @@ input[type="submit"].has-focus,
 }
 
 .wp-block-code {
-	color: #222222;
+	color: #444444;
 	font-size: 0.83333rem;
 	padding: 16px;
 	border-color: #DDDDDD;
 }
 
 .wp-block-code pre {
-	color: #222222;
+	color: #444444;
 }
 
 .wp-block-columns {
@@ -1187,14 +1147,14 @@ input[type="submit"].has-focus,
 }
 
 .wp-block-columns.alignfull {
-	padding-left: 16px;
 	padding-right: 16px;
+	padding-left: 16px;
 }
 
 .wp-block-cover,
 .wp-block-cover-image {
-	background-color: #222222;
-	min-height: calc( 18 * 32px);
+	background-color: #444444;
+	min-height: calc( 15 * 32px);
 	margin: inherit;
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
@@ -1224,7 +1184,7 @@ input[type="submit"].has-focus,
 
 .wp-block-cover h2,
 .wp-block-cover-image h2 {
-	font-size: 2.0736rem;
+	font-size: 2.48832rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 	max-width: inherit;
@@ -1234,7 +1194,7 @@ input[type="submit"].has-focus,
 
 .wp-block-cover h2.has-text-align-left,
 .wp-block-cover-image h2.has-text-align-left {
-	text-align: left;
+	text-align: right;
 }
 
 .wp-block-cover h2.has-text-align-center,
@@ -1244,7 +1204,7 @@ input[type="submit"].has-focus,
 
 .wp-block-cover h2.has-text-align-right,
 .wp-block-cover-image h2.has-text-align-right {
-	text-align: right;
+	text-align: left;
 }
 
 .wp-block-cover.alignleft, .wp-block-cover.alignright,
@@ -1258,8 +1218,8 @@ input[type="submit"].has-focus,
 .wp-block-cover-image.alignright > * {
 	margin-top: calc(2 * 32px);
 	margin-bottom: calc(2 * 32px);
-	padding-left: 16px;
 	padding-right: 16px;
+	padding-left: 16px;
 	width: 100%;
 }
 
@@ -1270,11 +1230,11 @@ input[type="submit"].has-focus,
 }
 
 .wp-block-file .wp-block-file__button {
-	background-color: #CA2017;
+	background-color: blue;
 	color: white;
 	font-size: 0.83333rem;
-	margin-left: 16px;
 	margin-right: 16px;
+	margin-left: 16px;
 }
 
 .wp-block-file .wp-block-file__button:before, .wp-block-file .wp-block-file__button:after {
@@ -1306,8 +1266,8 @@ input[type="submit"].has-focus,
 }
 
 .wp-block-group .wp-block-group__inner-container {
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-block-group .wp-block-group__inner-container h1, .wp-block-group .wp-block-group__inner-container h2, .wp-block-group .wp-block-group__inner-container h3, .wp-block-group .wp-block-group__inner-container h4, .wp-block-group .wp-block-group__inner-container h5, .wp-block-group .wp-block-group__inner-container h6, .wp-block-group .wp-block-group__inner-container p, .wp-block-group .wp-block-group__inner-container hr {
@@ -1361,49 +1321,49 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: sans-serif;
 	font-weight: bold;
 	clear: both;
 }
 
 h1, .h1 {
-	font-size: 2.48832rem;
+	font-size: 2.98598rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 h2, .h2 {
-	font-size: 2.0736rem;
+	font-size: 2.48832rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 h3, .h3 {
-	font-size: 1.728rem;
+	font-size: 2.0736rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 h4, .h4 {
-	font-size: 1.44rem;
+	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 h5, .h5 {
-	font-size: 1.2rem;
+	font-size: 1.44rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 h6, .h6 {
-	font-size: 1rem;
+	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 .wp-block-image figcaption {
-	color: #666666;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -1417,12 +1377,12 @@ img {
 }
 
 .wp-block-latest-comments {
-	margin-left: 0;
+	margin-right: 0;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	/* Vertical margins logic */
 	margin-top: 32px;
 	margin-bottom: 32px;
@@ -1437,22 +1397,22 @@ img {
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: sans-serif;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
-	color: #666666;
+	color: #767676;
 	font-size: 0.83333rem;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	margin: 0;
 }
 
 .wp-block-latest-posts {
-	margin-left: 0;
+	margin-right: 0;
 }
 
 .wp-block-latest-posts > li {
@@ -1470,21 +1430,21 @@ img {
 }
 
 .wp-block-latest-posts > li > a {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.44rem;
+	font-family: sans-serif;
+	font-size: 1.728rem;
 	font-weight: bold;
 	line-height: 1.125;
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
-	color: #666666;
+	color: #767676;
 	font-size: 0.69444rem;
-	line-height: 1.6;
+	line-height: 1.78;
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	margin: 0;
 }
 
@@ -1537,8 +1497,8 @@ img {
 
 ul,
 ol {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-	margin: 0 0 0 16px;
+	font-family: serif;
+	margin: 0 16px 0 0;
 	padding: 0;
 }
 
@@ -1551,12 +1511,12 @@ ol {
 }
 
 dt {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: sans-serif;
 	font-weight: bold;
 }
 
 dd {
-	margin: 0 0 0 16px;
+	margin: 0 16px 0 0;
 }
 
 .wp-block-media-text {
@@ -1566,8 +1526,8 @@ dd {
 }
 
 .wp-block-media-text .wp-block-media-text__content {
-	padding-left: 16px;
 	padding-right: 16px;
+	padding-left: 16px;
 }
 
 .wp-block-media-text .wp-block-media-text__content h1, .wp-block-media-text .wp-block-media-text__content h2, .wp-block-media-text .wp-block-media-text__content h3, .wp-block-media-text .wp-block-media-text__content h4, .wp-block-media-text .wp-block-media-text__content h5, .wp-block-media-text .wp-block-media-text__content h6, .wp-block-media-text .wp-block-media-text__content p, .wp-block-media-text .wp-block-media-text__content hr {
@@ -1604,22 +1564,22 @@ p.has-background {
 
 .wp-block-pullquote {
 	padding: calc( 3 * 16px) 0;
-	margin-left: 0;
 	margin-right: 0;
+	margin-left: 0;
 	text-align: center;
 	border-top-color: #DDDDDD;
 	border-top-width: 4px;
 	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
-	color: #222222;
+	color: #444444;
 	/**
 	 * Block Options
 	 */
 }
 
 .wp-block-pullquote p {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.44rem;
+	font-family: sans-serif;
+	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -1631,29 +1591,34 @@ p.has-background {
 .wp-block-pullquote .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
-	color: #666666;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
+	display: block;
 }
 
 .wp-block-pullquote:not(.is-style-solid-color) {
 	background: none;
 }
 
+.wp-block-pullquote.is-style-default.alignleft blockquote > *, .wp-block-pullquote.is-style-default.aligncenter blockquote > *, .wp-block-pullquote.is-style-default.alignright blockquote > * {
+	text-align: center;
+}
+
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #CA2017;
+	background-color: blue;
 	color: white;
 }
 
 .wp-block-pullquote.is-style-solid-color.alignleft blockquote,
 .wp-block-pullquote.is-style-solid-color.alignright blockquote {
-	padding-left: 16px;
 	padding-right: 16px;
+	padding-left: 16px;
 	max-width: inherit;
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote {
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -1666,12 +1631,12 @@ p.has-background {
 .wp-block-pullquote.alignfull > p,
 .wp-block-pullquote.alignwide blockquote,
 .wp-block-pullquote.alignfull blockquote {
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-block-quote {
-	border-left-color: #CA2017;
+	border-right-color: blue;
 	margin: 32px 0;
 	padding: 0 16px;
 	/**
@@ -1693,8 +1658,8 @@ p.has-background {
 }
 
 .wp-block-quote p {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.44rem;
+	font-family: sans-serif;
+	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -1702,13 +1667,13 @@ p.has-background {
 .wp-block-quote .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
-	color: #666666;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
 
 .wp-block-quote[style*="text-align:right"], .wp-block-quote[style*="text-align: right"] {
-	border-right-color: #CA2017;
+	border-left-color: blue;
 }
 
 .wp-block-quote.is-style-large, .wp-block-quote.is-large {
@@ -1718,7 +1683,7 @@ p.has-background {
 }
 
 .wp-block-quote.is-style-large p, .wp-block-quote.is-large p {
-	font-size: 1.728rem;
+	font-size: 2.0736rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -1728,7 +1693,7 @@ p.has-background {
 .wp-block-quote.is-style-large footer, .wp-block-quote.is-large .wp-block-quote__citation,
 .wp-block-quote.is-large cite,
 .wp-block-quote.is-large footer {
-	color: #666666;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
@@ -1737,8 +1702,8 @@ p.has-background {
 hr {
 	border-bottom: 2px solid #DDDDDD;
 	clear: both;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 	/**
 	 * Block Options
 	 */
@@ -1754,7 +1719,7 @@ hr.is-style-dots:before {
 	color: #DDDDDD;
 	font-size: 1.728rem;
 	letter-spacing: 0.83333rem;
-	padding-left: 0.83333rem;
+	padding-right: 0.83333rem;
 }
 
 .wp-block-spacer {
@@ -1772,7 +1737,7 @@ table,
 
 table th,
 .wp-block-table th {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: sans-serif;
 }
 
 table td,
@@ -1785,7 +1750,7 @@ table th,
 }
 
 .wp-block-video figcaption {
-	color: #666666;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -1800,15 +1765,11 @@ table th,
 
 /* Text Alignments */
 .alignleft {
-	/*rtl:ignore*/
 	text-align: left;
-	/*rtl:ignore*/
 	float: left;
-	/*rtl:ignore*/
 	margin-right: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
-	max-width: 50%;
 }
 
 .aligncenter {
@@ -1818,13 +1779,10 @@ table th,
 }
 
 .alignright {
-	/*rtl:ignore*/
 	float: right;
-	/*rtl:ignore*/
 	margin-left: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
-	max-width: 50%;
 }
 
 .entry-content > .alignwide {
@@ -1848,19 +1806,19 @@ table th,
 }
 
 .has-primary-color[class] {
-	color: #CA2017 !important;
+	color: blue !important;
 }
 
 .has-secondary-color[class] {
-	color: #007FDB !important;
+	color: red !important;
 }
 
 .has-foreground-color[class] {
-	color: #222222 !important;
+	color: #444444 !important;
 }
 
 .has-foreground-light-color[class] {
-	color: #666666 !important;
+	color: #767676 !important;
 }
 
 .has-foreground-dark-color[class] {
@@ -1872,7 +1830,7 @@ table th,
 }
 
 .has-primary-background-color[class] {
-	background-color: #CA2017 !important;
+	background-color: blue !important;
 	color: white;
 }
 
@@ -1881,7 +1839,7 @@ table th,
 }
 
 .has-secondary-background-color[class] {
-	background-color: #007FDB !important;
+	background-color: red !important;
 	color: white;
 }
 
@@ -1890,7 +1848,7 @@ table th,
 }
 
 .has-foreground-background-color[class] {
-	background-color: #222222 !important;
+	background-color: #444444 !important;
 	color: white;
 }
 
@@ -1899,7 +1857,7 @@ table th,
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: #666666 !important;
+	background-color: #767676 !important;
 	color: white;
 }
 
@@ -1918,7 +1876,7 @@ table th,
 
 .has-background-background-color[class] {
 	background-color: white !important;
-	color: #222222;
+	color: #444444;
 }
 
 .has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6 {
@@ -1951,14 +1909,14 @@ table th,
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: calc(2 * 2.48832rem);
+	font-family: sans-serif;
+	font-size: calc(2 * 2.98598rem);
 	font-weight: bold;
 	line-height: 0.66;
 	text-transform: uppercase;
 	font-style: normal;
-	float: left;
-	margin: 0.1em 0.1em 0 0;
+	float: right;
+	margin: 0.1em 0 0 0.1em;
 }
 
 .has-drop-cap:not(:focus)::after {
@@ -1987,13 +1945,13 @@ table th,
  * - Similar to Blocks but exist outside of the "current" editor context
  */
 .site-branding {
-	color: #666666;
+	color: #444444;
 }
 
 .site-title {
-	color: #111111;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-	font-size: 2.98598rem;
+	color: blue;
+	font-family: sans-serif;
+	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2008,17 +1966,17 @@ table th,
 }
 
 .site-title a:hover {
-	color: #CA2017;
+	color: indigo;
 }
 
 .site-description {
 	color: currentColor;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: serif;
 	font-size: 0.83333rem;
 }
 
 .main-navigation {
-	color: #222222;
+	color: #444444;
 }
 
 .main-navigation > div {
@@ -2027,14 +1985,29 @@ table th,
 
 .main-navigation #toggle-menu {
 	display: inline-block;
+	margin: 0;
 }
 
-.main-navigation #tm:checked + div {
+.main-navigation #toggle:checked ~ div {
 	display: block;
 }
 
-.main-navigation input[type="checkbox"] {
+.main-navigation #toggle:focus + #toggle-menu {
+	background-color: indigo;
+	outline: inherit;
+	text-decoration: underline;
+}
+
+.main-navigation .dropdown-icon.close {
 	display: none;
+}
+
+.main-navigation #toggle:checked + #toggle-menu .open {
+	display: none;
+}
+
+.main-navigation #toggle:checked + #toggle-menu .close {
+	display: inline;
 }
 
 @media only screen and (min-width: 560px) {
@@ -2128,7 +2101,7 @@ table th,
 	.main-navigation > div > ul > li > .sub-menu {
 		background: white;
 		box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
-		left: 0;
+		right: 0;
 		top: 100%;
 		min-width: max-content;
 		opacity: 0;
@@ -2143,25 +2116,25 @@ table th,
 }
 
 .main-navigation a {
-	color: #222222;
+	color: blue;
 	display: block;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
+	font-family: sans-serif;
+	font-size: 1.2rem;
 	font-weight: bold;
 	padding: 16px;
 }
 
 .main-navigation a:link, .main-navigation a:visited {
-	color: #222222;
+	color: blue;
 }
 
 .main-navigation a:hover {
-	color: #CA2017;
+	color: indigo;
 }
 
 .main-navigation .sub-menu {
 	list-style: none;
-	margin-left: 0;
+	margin-right: 0;
 	/* Reset the counter for each UL */
 	counter-reset: nested-list;
 }
@@ -2188,6 +2161,16 @@ table th,
 	}
 }
 
+.main-navigation .hide-visually {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
 .social-navigation > div > ul {
 	align-content: center;
 	display: flex;
@@ -2196,13 +2179,13 @@ table th,
 }
 
 .social-navigation a {
-	color: #CA2017;
+	color: blue;
 	display: inline-block;
-	padding: 0 4px;
+	padding: 0 calc( 0.5 * calc(0.66 * 16px ));
 }
 
 .social-navigation a:hover {
-	color: #222222;
+	color: indigo;
 }
 
 .social-navigation svg {
@@ -2211,9 +2194,9 @@ table th,
 }
 
 .site-info {
-	color: #666666;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.69444rem;
+	color: #767676;
+	font-family: sans-serif;
+	font-size: 0.83333rem;
 }
 
 .site-info .site-name {
@@ -2229,7 +2212,7 @@ table th,
 }
 
 .site-info a:hover {
-	color: #CA2017;
+	color: indigo;
 }
 
 .footer-navigation {
@@ -2242,23 +2225,23 @@ table th,
 
 .footer-navigation .footer-menu {
 	display: inline;
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .footer-navigation .footer-menu li {
 	display: inline;
-	margin-right: 16px;
+	margin-left: 16px;
 }
 
 .entry-title {
-	font-size: 2.0736rem;
+	font-size: 2.48832rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 .entry-meta,
 .entry-footer {
-	color: #666666;
+	color: #767676;
 	clear: both;
 	float: none;
 	font-size: 0.83333rem;
@@ -2268,7 +2251,7 @@ table th,
 .entry-meta > span,
 .entry-footer > span {
 	display: inline-block;
-	margin-right: 16px;
+	margin-left: 16px;
 }
 
 .entry-meta > span > *,
@@ -2279,7 +2262,7 @@ table th,
 
 .entry-meta > span:last-child,
 .entry-footer > span:last-child {
-	margin-right: 0;
+	margin-left: 0;
 }
 
 .entry-meta > span .published + .updated,
@@ -2295,7 +2278,7 @@ table th,
 .entry-meta a:hover, .entry-meta a:active,
 .entry-footer a:hover,
 .entry-footer a:active {
-	color: #222222;
+	color: indigo;
 }
 
 .entry-meta .svg-icon,
@@ -2304,7 +2287,7 @@ table th,
 	position: relative;
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: calc(0.25 * 16px);
+	margin-left: calc(0.25 * 16px);
 }
 
 /**
@@ -2322,7 +2305,7 @@ table th,
 .entry-content .more-link:after {
 	content: "\02192";
 	display: inline-block;
-	margin-left: 0.5em;
+	margin-right: 0.5em;
 }
 
 .entry-content .more-link:hover {
@@ -2360,7 +2343,7 @@ table th,
 }
 
 .author-bio .author-title {
-	font-size: 1.728rem;
+	font-size: 2.0736rem;
 }
 
 /* Next/Previous navigation */
@@ -2369,7 +2352,7 @@ table th,
 }
 
 .post-navigation .post-title {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: sans-serif;
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2396,11 +2379,11 @@ table th,
 }
 
 .pagination .nav-links > * {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: sans-serif;
 	font-size: 1.2rem;
 	font-weight: 600;
-	padding-left: calc(0.66 * 16px);
 	padding-right: calc(0.66 * 16px);
+	padding-left: calc(0.66 * 16px);
 }
 
 .pagination .nav-links .svg-icon {
@@ -2421,7 +2404,7 @@ table th,
 		max-width: calc(50% - (0.5 * 16px));
 	}
 	.nav-links .nav-next {
-		text-align: right;
+		text-align: left;
 	}
 }
 
@@ -2445,7 +2428,7 @@ table th,
  * Comment Title
  */
 .comments-title {
-	font-size: 1.728rem;
+	font-size: 2.0736rem;
 	letter-spacing: normal;
 }
 
@@ -2458,7 +2441,7 @@ table th,
 
 .comment-reply-title small {
 	font-size: 1rem;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: serif;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -2468,7 +2451,7 @@ table th,
  */
 .comment-list {
 	border-bottom: 1px solid #DDDDDD;
-	margin-left: 0;
+	margin-right: 0;
 	list-style: none;
 }
 
@@ -2480,7 +2463,7 @@ table th,
 
 .children {
 	list-style: none;
-	margin-left: 16px;
+	margin-right: 16px;
 }
 
 .children > li {
@@ -2491,7 +2474,7 @@ table th,
 
 @media only screen and (min-width: 560px) {
 	.children {
-		margin-left: calc(2 * 16px);
+		margin-right: calc(2 * 16px);
 	}
 }
 
@@ -2499,12 +2482,12 @@ table th,
  * Comment Meta
  */
 .comment-meta {
-	margin-right: calc( $avatar-size + (0.5 * 16px));
+	margin-left: calc( $avatar-size + (0.5 * 16px));
 }
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
-		margin-right: inherit;
+		margin-left: inherit;
 	}
 }
 
@@ -2518,20 +2501,20 @@ table th,
 .comment-meta .comment-author .avatar {
 	display: block;
 	position: absolute;
-	right: 0;
+	left: 0;
 }
 
 @media only screen and (min-width: 560px) {
 	.comment-meta .comment-author .avatar {
-		margin-right: 16px;
+		margin-left: 16px;
 		display: inherit;
 		position: inherit;
-		right: inherit;
+		left: inherit;
 	}
 }
 
 .comment-meta .comment-metadata {
-	color: #222222;
+	color: #444444;
 }
 
 .comment-meta .comment-metadata a {
@@ -2539,7 +2522,7 @@ table th,
 }
 
 .comment-meta .comment-metadata a:hover, .comment-meta .comment-metadata a:active {
-	color: #222222;
+	color: indigo;
 }
 
 @media only screen and (min-width: 560px) {
@@ -2557,12 +2540,12 @@ table th,
 }
 
 .reply {
-	text-align: right;
+	text-align: left;
 }
 
 @media only screen and (min-width: 560px) {
 	.reply {
-		text-align: left;
+		text-align: right;
 	}
 }
 
@@ -2577,7 +2560,7 @@ table th,
 .comment-author .fn,
 .pingback .url,
 .trackback .url {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: sans-serif;
 }
 
 /**
@@ -2658,7 +2641,7 @@ table th,
 		width: 25%;
 	}
 	.comment-form > p.comment-form-cookies-consent {
-		margin-left: 25%;
+		margin-right: 25%;
 	}
 	.comment-form > p.comment-form-cookies-consent > label {
 		width: auto;
@@ -2679,7 +2662,7 @@ table th,
  * Comment Nav
  */
 .comment-navigation a {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: sans-serif;
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -2694,8 +2677,8 @@ table th,
  */
 .sticky-post {
 	color: white;
-	background-color: #CA2017;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	background-color: blue;
+	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -2703,9 +2686,17 @@ table th,
 }
 
 .page-title {
-	font-size: 1.44rem;
+	font-size: 1.728rem;
 }
 
+/**
+ * Vendors
+ * - 3rd-party styles
+ */
+/**
+ * Vendors
+ * - 3rd-party compatibility styles
+ */
 /**
  * Responsive Logic
  * - Loading this last to respect cascaing rules
@@ -2730,29 +2721,29 @@ table th,
 	}
 }
 
-@media only screen and (min-width: 772px) {
+@media only screen and (min-width: 782px) {
 	.responsive-max-width, .wp-block-group .wp-block-group__inner-container {
-		max-width: calc( 772px - 32px);
+		max-width: calc( 782px - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.responsive-max-width, .wp-block-group .wp-block-group__inner-container {
-		max-width: calc( 772px - 32px);
+		max-width: calc( 782px - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
 	.responsive-max-width, .wp-block-group .wp-block-group__inner-container {
-		max-width: calc( 772px - 32px);
+		max-width: calc( 782px - 32px);
 	}
 }
 
 .wp-block-group.alignwide .alignwide,
 .wp-block-group.alignwide .alignfull,
 .wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-	margin-left: calc( -0.25 * ( 100vw - 100% ));
 	margin-right: calc( -0.25 * ( 100vw - 100% ));
+	margin-left: calc( -0.25 * ( 100vw - 100% ));
 	width: calc( 100% + (0.25 * 2) * ( 100vw - 100% ));
 	max-width: calc( 100% + (0.25 * 2) * ( 100vw - 100% ));
 }
@@ -2761,8 +2752,8 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-left: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
 		margin-right: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
+		margin-left: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
 		width: calc( calc( 560px - 32px) + (0.25 * 2) * ( 100vw - calc( 560px - 32px) ));
 		max-width: calc( calc( 560px - 32px) + (0.25 * 2) * ( 100vw - calc( 560px - 32px) ));
 	}
@@ -2772,21 +2763,21 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-left: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
 		margin-right: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
+		margin-left: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
 		width: calc( calc( 640px - 32px) + (0.25 * 2) * ( 100vw - calc( 640px - 32px) ));
 		max-width: calc( calc( 640px - 32px) + (0.25 * 2) * ( 100vw - calc( 640px - 32px) ));
 	}
 }
 
-@media only screen and (min-width: 772px) {
+@media only screen and (min-width: 782px) {
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-left: calc( -0.25 * ( 100vw - calc( 772px - 32px) ));
-		margin-right: calc( -0.25 * ( 100vw - calc( 772px - 32px) ));
-		width: calc( calc( 772px - 32px) + (0.25 * 2) * ( 100vw - calc( 772px - 32px) ));
-		max-width: calc( calc( 772px - 32px) + (0.25 * 2) * ( 100vw - calc( 772px - 32px) ));
+		margin-right: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
+		margin-left: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
+		width: calc( calc( 782px - 32px) + (0.25 * 2) * ( 100vw - calc( 782px - 32px) ));
+		max-width: calc( calc( 782px - 32px) + (0.25 * 2) * ( 100vw - calc( 782px - 32px) ));
 	}
 }
 
@@ -2794,10 +2785,10 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-left: -128px;
 		margin-right: -128px;
-		width: calc(calc( 772px - 32px) + 256px);
-		max-width: calc(calc( 772px - 32px) + 256px);
+		margin-left: -128px;
+		width: calc(calc( 782px - 32px) + 256px);
+		max-width: calc(calc( 782px - 32px) + 256px);
 	}
 }
 
@@ -2805,62 +2796,62 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-left: -128px;
 		margin-right: -128px;
-		width: calc(calc( 772px - 32px) + 256px);
-		max-width: calc(calc( 772px - 32px) + 256px);
+		margin-left: -128px;
+		width: calc(calc( 782px - 32px) + 256px);
+		max-width: calc(calc( 782px - 32px) + 256px);
 	}
 }
 
-.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after {
-	margin-left: calc( -0.5 * ( 100vw - 100% ));
+.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 	margin-right: calc( -0.5 * ( 100vw - 100% ));
+	margin-left: calc( -0.5 * ( 100vw - 100% ));
 	width: calc( 100% + (0.5 * 2) * ( 100vw - 100% ));
 	max-width: calc( 100% + (0.5 * 2) * ( 100vw - 100% ));
 }
 
 @media only screen and (min-width: 560px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after {
-		margin-left: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
+		margin-left: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
 		width: calc( calc( 560px - 32px) + (0.5 * 2) * ( 100vw - calc( 560px - 32px) ));
 		max-width: calc( calc( 560px - 32px) + (0.5 * 2) * ( 100vw - calc( 560px - 32px) ));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after {
-		margin-left: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
+		margin-left: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
 		width: calc( calc( 640px - 32px) + (0.5 * 2) * ( 100vw - calc( 640px - 32px) ));
 		max-width: calc( calc( 640px - 32px) + (0.5 * 2) * ( 100vw - calc( 640px - 32px) ));
 	}
 }
 
-@media only screen and (min-width: 772px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after {
-		margin-left: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
-		margin-right: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
-		width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
-		max-width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
+@media only screen and (min-width: 782px) {
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
+		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
+		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
+		max-width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after {
-		margin-left: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
-		margin-right: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
-		width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
-		max-width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
+		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
+		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
+		max-width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before, .widget-area:after {
-		margin-left: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
-		margin-right: calc( -0.5 * ( 100vw - calc( 772px - 32px) ));
-		width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
-		max-width: calc( calc( 772px - 32px) + (0.5 * 2) * ( 100vw - calc( 772px - 32px) ));
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
+		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
+		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
+		max-width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
 	}
 }
 
@@ -2898,15 +2889,15 @@ table th,
 	}
 }
 
-@media only screen and (min-width: 772px) {
+@media only screen and (min-width: 782px) {
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text, .wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
 	.wp-block-pullquote.alignfull blockquote, .entry-content .wp-audio-shortcode {
-		max-width: calc( calc( 772px - 32px) - (2 * ( calc( 772px - 32px) / 12 )));
-		width: calc( calc( 772px - 32px) - (2 * ( calc( 772px - 32px) / 12 )));
+		max-width: calc( calc( 782px - 32px) - (2 * ( calc( 782px - 32px) / 12 )));
+		width: calc( calc( 782px - 32px) - (2 * ( calc( 782px - 32px) / 12 )));
 	}
 }
 
@@ -2917,8 +2908,8 @@ table th,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
 	.wp-block-pullquote.alignfull blockquote, .entry-content .wp-audio-shortcode {
-		max-width: calc( calc( 772px - 32px) - (2 * ( calc( 772px - 32px) / 12 )));
-		width: calc( calc( 772px - 32px) - (2 * ( calc( 772px - 32px) / 12 )));
+		max-width: calc( calc( 782px - 32px) - (2 * ( calc( 782px - 32px) / 12 )));
+		width: calc( calc( 782px - 32px) - (2 * ( calc( 782px - 32px) / 12 )));
 	}
 }
 
@@ -2929,8 +2920,8 @@ table th,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
 	.wp-block-pullquote.alignfull blockquote, .entry-content .wp-audio-shortcode {
-		max-width: calc( calc( 772px - 32px) - (2 * ( calc( 772px - 32px) / 12 )));
-		width: calc( calc( 772px - 32px) - (2 * ( calc( 772px - 32px) / 12 )));
+		max-width: calc( calc( 782px - 32px) - (2 * ( calc( 782px - 32px) / 12 )));
+		width: calc( calc( 782px - 32px) - (2 * ( calc( 782px - 32px) / 12 )));
 	}
 }
 
@@ -2942,524 +2933,3 @@ table th,
  * Vendors
  * - 3rd-party compatibility styles
  */
-/**
- * Child Theme Extra Styles
- */
-/**
- * Extra Child Theme Styles
- */
-html {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-}
-
-a {
-	text-decoration: none;
-}
-
-.wp-block-cover a,
-.wp-block-cover-image a {
-	text-decoration: underline;
-}
-
-.wp-block-cover a.wp-block-button__link, .wp-block-cover a:hover,
-.wp-block-cover-image a.wp-block-button__link,
-.wp-block-cover-image a:hover {
-	text-decoration: none;
-}
-
-.site {
-	border-top: 5px solid #222222;
-	position: relative;
-}
-
-.site:before {
-	border-top: 1px solid rgba(255, 255, 255, 0.5);
-	content: "";
-	left: 0;
-	position: absolute;
-	top: -5px;
-	width: 100%;
-}
-
-#masthead {
-	padding-top: 32px;
-}
-
-#masthead .custom-logo-link {
-	display: inline-block;
-	margin-bottom: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	#masthead {
-		align-content: center;
-		align-items: center;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		max-width: 92vw;
-		padding-bottom: 16px;
-		padding-top: 48px;
-	}
-	#masthead .site-branding {
-		flex: 1 100%;
-	}
-	#masthead .main-navigation {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
-	#masthead .social-navigation {
-		padding-left: 32px;
-		padding-right: 32px;
-		margin: 0;
-	}
-}
-
-#colophon {
-	border-top: 1px solid #DDDDDD;
-}
-
-@media only screen and (min-width: 560px) {
-	#colophon {
-		margin-top: 32px;
-		max-width: 100%;
-	}
-}
-
-#colophon .site-info {
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-@media only screen and (min-width: 560px) {
-	#colophon .site-info {
-		max-width: 92vw;
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-.main-navigation #toggle-menu {
-	text-transform: uppercase;
-}
-
-.main-navigation a {
-	padding: 12px 16px;
-}
-
-.main-navigation > div > ul > li > a {
-	text-transform: uppercase;
-}
-
-.main-navigation > div {
-	background: #FAFAFA;
-	border-radius: 4px;
-	padding-left: 16px;
-	padding-right: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div {
-		background: none;
-		border-radius: 0;
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div > ul > li {
-		margin: 0 4px;
-	}
-	.main-navigation > div > ul > li:hover > a,
-	.main-navigation > div > ul > li.focus > a,
-	.main-navigation > div > ul > li.current-menu-item > a {
-		background: #CA2017;
-		border-radius: 4px;
-		color: white;
-	}
-	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li.focus > ul,
-	.main-navigation > div > ul > li.current-menu-item > ul {
-		border-radius: 4px;
-		overflow: hidden;
-	}
-	.main-navigation > div > ul > li:hover li > a,
-	.main-navigation > div > ul > li.focus li > a,
-	.main-navigation > div > ul > li.current-menu-item li > a {
-		background: #222222;
-		color: white;
-		font-weight: normal;
-	}
-	.main-navigation > div > ul > li:hover li:hover > a,
-	.main-navigation > div > ul > li:hover li.focus > a,
-	.main-navigation > div > ul > li:hover li.current-menu-item > a,
-	.main-navigation > div > ul > li.focus li:hover > a,
-	.main-navigation > div > ul > li.focus li.focus > a,
-	.main-navigation > div > ul > li.focus li.current-menu-item > a,
-	.main-navigation > div > ul > li.current-menu-item li:hover > a,
-	.main-navigation > div > ul > li.current-menu-item li.focus > a,
-	.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
-		background: #CA2017;
-	}
-	.main-navigation > div > ul > .menu-item-has-children > a::after {
-		opacity: 0.67;
-	}
-}
-
-.site-branding,
-.site-info,
-.main-navigation,
-.entry-header,
-.entry-footer,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: left;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
-	display: flex;
-}
-
-.main-navigation > div > ul,
-.social-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
-}
-
-.wp-block-cover .wp-block-cover__inner-container > *,
-.wp-block-coblocks-hero .wp-block-coblocks-hero__box > * {
-	margin-top: 21.312px;
-	margin-bottom: 21.312px;
-}
-
-@media only screen and (min-width: 560px) {
-	.wp-block-cover .wp-block-cover__inner-container > *,
-	.wp-block-coblocks-hero .wp-block-coblocks-hero__box > * {
-		margin-top: 32px;
-		margin-bottom: 32px;
-	}
-}
-
-.wp-block-cover .wp-block-cover__inner-container > *:first-child,
-.wp-block-coblocks-hero .wp-block-coblocks-hero__box > *:first-child {
-	margin-top: 0;
-}
-
-.wp-block-cover .wp-block-cover__inner-container > *:last-child,
-.wp-block-coblocks-hero .wp-block-coblocks-hero__box > *:last-child {
-	margin-bottom: 0;
-}
-
-table td,
-table th,
-.wp-block-table td,
-.wp-block-table th {
-	border-color: #DDDDDD;
-}
-
-.entry-header .entry-meta {
-	display: none;
-}
-
-.entry-footer {
-	border-top: 1px solid #DDDDDD;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.69444rem;
-	padding-top: 16px;
-}
-
-article .entry-header .entry-title,
-.page-title {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-	margin-top: 32px;
-	margin-bottom: 64px;
-}
-
-article .entry-header .entry-title a,
-.page-title a {
-	color: inherit;
-}
-
-article .entry-header .entry-title a:active, article .entry-header .entry-title a:focus, article .entry-header .entry-title a:hover,
-.page-title a:active,
-.page-title a:focus,
-.page-title a:hover {
-	color: #CA2017;
-}
-
-.entry-content {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-}
-
-.pagination {
-	text-align: center;
-}
-
-.pagination .nav-links > * {
-	color: #666666;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	text-transform: uppercase;
-}
-
-.pagination .nav-links > *.current, .pagination .nav-links > *:active, .pagination .nav-links > *:focus, .pagination .nav-links > *:hover {
-	color: #CA2017;
-}
-
-.pagination svg {
-	fill: currentColor;
-}
-
-.pagination:before {
-	background: #DDDDDD;
-	height: 1px;
-	content: "";
-	display: block;
-	margin-bottom: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.pagination:before {
-		margin-bottom: 64px;
-	}
-}
-
-.post-navigation a {
-	color: #222222;
-}
-
-.post-navigation a:active, .post-navigation a:hover, .post-navigation a:focus {
-	color: #CA2017;
-}
-
-.post-navigation .meta-nav {
-	color: #666666;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.post-navigation .post-title {
-	font-size: 1rem;
-}
-
-.post-navigation:before {
-	background: #DDDDDD;
-	height: 1px;
-	content: "";
-	display: block;
-	margin-bottom: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.post-navigation:before {
-		margin-bottom: 64px;
-	}
-}
-
-.comments-area:before {
-	background: #DDDDDD;
-	height: 1px;
-	content: "";
-	display: block;
-	margin-bottom: 32px;
-}
-
-@media only screen and (min-width: 560px) {
-	.comments-area:before {
-		margin-bottom: 64px;
-	}
-}
-
-.comments-area .comment-list {
-	border-bottom: 1px solid #FAFAFA;
-}
-
-.comments-area .comment-list > li {
-	border-top: 1px solid #FAFAFA;
-}
-
-.comments-area .children > li {
-	border-top: 1px solid #FAFAFA;
-}
-
-.comments-title,
-.comment-reply-title {
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-	font-size: 1.728rem;
-}
-
-.comment-meta .comment-metadata {
-	color: #666666;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-}
-
-.comment-meta .comment-metadata a {
-	color: inherit;
-}
-
-.comment-meta .comment-metadata a:active,
-.comment-meta .comment-metadata a:focus,
-.comment-meta .comment-metadata a:hover {
-	color: #CA2017;
-}
-
-.comment-navigation a {
-	color: #666666;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
-	text-transform: uppercase;
-}
-
-.comment-navigation a:active, .comment-navigation a:focus, .comment-navigation a:hover {
-	color: #CA2017;
-}
-
-.comments-title + .comment-navigation {
-	display: none;
-}
-
-.widget-area {
-	font-size: 0.83333rem;
-}
-
-.widget-area .widget-title,
-.widget-area .widgettitle {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1rem;
-	margin-bottom: 16px;
-	text-transform: uppercase;
-}
-
-.widget-area .widget-title:empty,
-.widget-area .widgettitle:empty {
-	display: none;
-}
-
-.widget-area:after {
-	background: #DDDDDD;
-	height: 1px;
-	content: "";
-	display: block;
-	margin-top: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.widget-area:after {
-		margin-top: 64px;
-	}
-}
-
-@media only screen and (min-width: 772px) {
-	.widget-area:after {
-		margin-top: 32px;
-	}
-}
-
-@media only screen and (min-width: 560px) {
-	.widget-area {
-		padding-top: 32px;
-	}
-}
-
-@media only screen and (min-width: 772px) {
-	.widget-area {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	.widget-area > *:nth-child(2) {
-		margin-top: 0;
-	}
-	.widget-area .widget {
-		width: calc(50% - 16px);
-	}
-}
-
-.widget_calendar caption,
-.widget_calendar caption {
-	font-weight: bold;
-}
-
-.widget_calendar td,
-.widget_calendar th,
-.widget_calendar td,
-.widget_calendar th {
-	text-align: center;
-}
-
-.widget_archive ul,
-.widget_categories ul,
-.widget_links ul,
-.widget_meta ul,
-.widget_nav_menu ul,
-.widget_pages ul,
-.widget_recent_comments ul,
-.widget_recent_entries ul,
-.widget_rss ul,
-.widget_rss_links ul,
-.widget_top-posts ul,
-.widget_authors ul,
-.widget_jp_blogs_i_follow ul,
-.widget_top-click ul,
-.widget_upcoming_events_widget ul {
-	border-bottom: 1px solid #FAFAFA;
-	list-style: none;
-	margin-left: 0;
-}
-
-.widget_archive li,
-.widget_categories li,
-.widget_links li,
-.widget_meta li,
-.widget_nav_menu li,
-.widget_pages li,
-.widget_recent_comments li,
-.widget_recent_entries li,
-.widget_rss li,
-.widget_rss_links li,
-.widget_top-posts li,
-.widget_authors li,
-.widget_jp_blogs_i_follow li,
-.widget_top-click li,
-.widget_upcoming_events_widget li {
-	border-top: 1px solid #FAFAFA;
-	padding: 8px 0;
-}
-
-.widget_categories .children,
-.widget_nav_menu .sub-menu,
-.widget_pages .children {
-	border-bottom: 0;
-	margin-bottom: -8px;
-	margin-top: 8px;
-	padding-left: 16px;
-}
-
-.widget_recent_entries .post-date {
-	display: block;
-}
-
-.widget_rss cite,
-.widget_rss .rssSummary,
-.widget_rss .rss-date {
-	display: block;
-}
-
-.widget_search input[type="search"] {
-	display: block;
-	margin-bottom: 8px;
-	width: 100%;
-}
