@@ -768,8 +768,8 @@ footer {
  * - Add double vertical margins here for clearer heirarchy
  */
 .site-main > * {
-	margin-top: calc(2 * 32px);
-	margin-bottom: calc(2 * 32px);
+	margin-top: calc(3 * 32px);
+	margin-bottom: calc(3 * 32px);
 }
 
 .site-main > *:first-child {
@@ -972,6 +972,7 @@ textarea {
 	color: #222222;
 	border: 1px solid #DDDDDD;
 	border-radius: 3px;
+	padding: calc( 0.33 * 16px);
 }
 
 input[type="text"]:focus,
@@ -1634,10 +1635,15 @@ p.has-background {
 	color: #666666;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
+	display: block;
 }
 
 .wp-block-pullquote:not(.is-style-solid-color) {
 	background: none;
+}
+
+.wp-block-pullquote.is-style-default.alignleft blockquote > *, .wp-block-pullquote.is-style-default.aligncenter blockquote > *, .wp-block-pullquote.is-style-default.alignright blockquote > * {
+	text-align: center;
 }
 
 .wp-block-pullquote.is-style-solid-color {
@@ -1808,7 +1814,6 @@ table th,
 	margin-right: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
-	max-width: 50%;
 }
 
 .aligncenter {
@@ -1824,7 +1829,6 @@ table th,
 	margin-left: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
-	max-width: 50%;
 }
 
 .entry-content > .alignwide {
@@ -2027,14 +2031,29 @@ table th,
 
 .main-navigation #toggle-menu {
 	display: inline-block;
+	margin: 0;
 }
 
-.main-navigation #tm:checked + div {
+.main-navigation #toggle:checked ~ div {
 	display: block;
 }
 
-.main-navigation input[type="checkbox"] {
+.main-navigation #toggle:focus + #toggle-menu {
+	background-color: #CA2017;
+	outline: inherit;
+	text-decoration: underline;
+}
+
+.main-navigation .dropdown-icon.close {
 	display: none;
+}
+
+.main-navigation #toggle:checked + #toggle-menu .open {
+	display: none;
+}
+
+.main-navigation #toggle:checked + #toggle-menu .close {
+	display: inline;
 }
 
 @media only screen and (min-width: 560px) {
@@ -2186,6 +2205,16 @@ table th,
 		height: inherit;
 		width: inherit;
 	}
+}
+
+.main-navigation .hide-visually {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
 }
 
 .social-navigation > div > ul {
@@ -3183,7 +3212,7 @@ article .entry-header .entry-title,
 .page-title {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
 	margin-top: 32px;
-	margin-bottom: 64px;
+	margin-bottom: 48px;
 }
 
 article .entry-header .entry-title a,
