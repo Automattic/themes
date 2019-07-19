@@ -4,6 +4,10 @@
  *
  * Contains the closing of the #content div and all content after.
  *
+ * If the full site editing plugin is active then remove the widgets section,
+ * privacy policy, and navigation area in place of the footer template part
+ * that can be edited directly in the block editor.
+ *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
@@ -15,47 +19,38 @@
 
 </div><!-- #content -->
 
-<?php
-// If FSE plugin is active, use Footer template part for content.
-if ( class_exists( 'Full_Site_Editing' ) ) : ?>
-	<footer id="colophon" class="site-footer">
-		<?php fse_get_footer(); ?>
-		<div class="site-info">
-			<?php $blog_info = get_bloginfo( 'name' ); ?>
-			<?php if ( ! empty( $blog_info ) ) : ?>
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
-				?>
-			</a>
-		</div>
-	</footer>
-<?php endif; ?>
+<footer id="colophon" class="site-footer">
+	
+	<?php 
+		if ( class_exists( 'Full_Site_Editing' ) ) {
+			fse_get_footer();
+		} else {
+			get_template_part( 'template-parts/footer/footer', 'widgets' ); 
+		}
+	?>
+	
+	<div class="site-info">
+		<?php $blog_info = get_bloginfo( 'name' ); ?>
+		
+		<?php if ( ! empty( $blog_info ) ) : ?>
+			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
+		<?php endif; ?>
+		
+		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
+			<?php
+			/* translators: %s: WordPress. */
+			printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
+			?>
+		</a>
 
-<?php // Otherwise we'll fall back to default Twenty Nineteen footer below. ?>
+		<?php if ( !class_exists( 'Full_Site_Editing' ) ) : ?>
 
-<?php if( ! class_exists( 'Full_Site_Editing' ) ) : ?>
-	<footer id="colophon" class="site-footer">
-		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
-		<div class="site-info">
-			<?php $blog_info = get_bloginfo( 'name' ); ?>
-			<?php if ( ! empty( $blog_info ) ) : ?>
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
-				?>
-			</a>
 			<?php
 			if ( function_exists( 'the_privacy_policy_link' ) ) {
 				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 			}
 			?>
+
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'twentynineteen' ); ?>">
 					<?php
@@ -69,9 +64,11 @@ if ( class_exists( 'Full_Site_Editing' ) ) : ?>
 					?>
 				</nav><!-- .footer-navigation -->
 			<?php endif; ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-<?php endif; ?>
+
+		<?php endif; ?>
+	</div><!-- .site-info -->
+
+</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
