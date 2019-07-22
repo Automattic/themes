@@ -57,7 +57,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => __( 'Primary', 'varia' ),
-				'footer' => __( 'Footer Menu', 'varia' ),
+				'menu-2' => __( 'Footer Menu', 'varia' ),
 				'social' => __( 'Social Links Menu', 'varia' ),
 			)
 		);
