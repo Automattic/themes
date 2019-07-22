@@ -1584,7 +1584,7 @@ dd {
 	margin-bottom: 0;
 }
 
-.wp-block-media-text .wp-block-media-text__content a {
+.wp-block-media-text[class*="background-color"]:not(.has-background-background-color) .wp-block-media-text__content a, .wp-block-media-text[style*="background-color"] .wp-block-media-text__content a {
 	color: currentColor;
 }
 
@@ -1601,6 +1601,10 @@ dd {
 
 p.has-background {
 	padding: 16px 16px;
+}
+
+p.has-background:not(.has-background-background-color) a {
+	color: currentColor;
 }
 
 .wp-block-pullquote {
