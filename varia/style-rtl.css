@@ -1371,7 +1371,7 @@ h6, .h6 {
 }
 
 img {
-	width: auto;
+	height: auto;
 	vertical-align: middle;
 	max-width: 100%;
 }
@@ -1560,6 +1560,68 @@ dd {
 
 p.has-background {
 	padding: 16px 16px;
+}
+
+.a8c-posts-list__listing {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.a8c-posts-list-item__featured span {
+	color: white;
+	background-color: blue;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.83333rem;
+	line-height: 1;
+	padding: calc(0.5 * 16px) calc(0.66 * 16px);
+}
+
+.a8c-posts-list__item {
+	display: block;
+	/* Vertical margins logic between posts */
+	margin-top: calc(3 * 32px);
+	margin-bottom: calc(3 * 32px);
+}
+
+.a8c-posts-list__item:first-child {
+	margin-top: 0;
+}
+
+.a8c-posts-list__item:last-child {
+	margin-bottom: 0;
+}
+
+.a8c-posts-list__item .entry > * {
+	/* Vertical margins logic between post details */
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.a8c-posts-list__item .entry > *:first-child {
+	margin-top: 0;
+}
+
+.a8c-posts-list__item .entry > *:last-child {
+	margin-bottom: 0;
+}
+
+.a8c-posts-list__item .a8c-posts-list-item__meta {
+	color: #767676;
+	font-size: 0.83333rem;
+}
+
+.a8c-posts-list__item .a8c-posts-list-item__meta a {
+	color: currentColor;
+}
+
+.a8c-posts-list__item .a8c-posts-list-item__meta a:hover, .a8c-posts-list__item .a8c-posts-list-item__meta a:active {
+	color: indigo;
+}
+
+.a8c-posts-list__item .a8c-posts-list-item__edit-link {
+	margin-right: 16px;
 }
 
 .wp-block-pullquote {
