@@ -2204,10 +2204,29 @@ table th,
 	vertical-align: middle;
 }
 
+@media only screen and (min-width: 640px) {
+	.site-footer {
+		align-items: baseline;
+		display: flex;
+		justify-content: space-between;
+	}
+	.site-footer > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
 .site-info {
 	color: #767676;
 	font-family: sans-serif;
 	font-size: 0.83333rem;
+}
+
+@media only screen and (min-width: 640px) {
+	.site-info {
+		order: 1;
+		flex: 1 0 50%;
+	}
 }
 
 .site-info .site-name {
@@ -2230,18 +2249,51 @@ table th,
 	display: inline;
 }
 
+@media only screen and (min-width: 640px) {
+	.footer-navigation {
+		flex: 1 0 50%;
+		order: 2;
+		text-align: right;
+	}
+}
+
 .footer-navigation > div {
 	display: inline;
 }
 
 .footer-navigation .footer-menu {
-	display: inline;
+	color: #767676;
 	padding-left: 0;
+	margin-left: -16px;
+	margin-right: -16px;
+}
+
+@media only screen and (min-width: 640px) {
+	.footer-navigation .footer-menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
 }
 
 .footer-navigation .footer-menu li {
 	display: inline;
-	margin-right: 16px;
+}
+
+.footer-navigation .footer-menu a {
+	font-family: sans-serif;
+	font-size: 0.83333rem;
+	font-weight: bold;
+	padding: 16px;
+	color: currentColor;
+}
+
+.footer-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited {
+	color: currentColor;
+}
+
+.footer-navigation .footer-menu a:hover {
+	color: indigo;
 }
 
 .entry-title {
