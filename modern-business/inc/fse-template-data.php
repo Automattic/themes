@@ -129,9 +129,9 @@ class A8C_WP_Template_Data_Inserter {
 	 * @return string
 	 */
 	public function get_template_content( $header_id, $footer_id ) {
-		return "<!-- wp:a8c/template {\"templateId\":$header_id,\"align\":\"full\"} /-->" .
-		       '<!-- wp:a8c/post-content {"align":"full"} /-->' .
-		       "<!-- wp:a8c/template {\"templateId\":$footer_id,\"align\":\"full\"} /-->";
+		return "<!-- wp:a8c/template {\"templateId\":$header_id} /-->" .
+		       '<!-- wp:a8c/post-content /-->' .
+		       "<!-- wp:a8c/template {\"templateId\":$footer_id} /-->";
 	}
 
 	/**

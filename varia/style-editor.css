@@ -134,6 +134,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.editor-post-title__block {
+	font-size: 18px;
+}
+
 p {
 	font-size: 1em;
 	line-height: 1.78;
@@ -390,7 +394,15 @@ object {
 	padding-left: 0;
 }
 
-.wp-block-media-text .block-editor-inner-blocks a {
+.wp-block-media-text[style*="background-color"]:not(.has-background-background-color) .block-editor-inner-blocks a {
+	color: currentColor;
+}
+
+p.has-background {
+	padding: 16px 16px;
+}
+
+p.has-background:not(.has-background-background-color) a {
 	color: currentColor;
 }
 
