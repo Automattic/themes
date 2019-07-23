@@ -9,6 +9,11 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+// Set font size of title block the same as body.
+.editor-post-title__block {
+	font-size: #{map-deep-get($config-global, "font", "size", "root")};
+}
+
 p {
 	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
 	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
@@ -25,5 +30,5 @@ a {
 
 button,
 a {
-  cursor: pointer;
+	cursor: pointer;
 }
