@@ -1,9 +1,10 @@
-button,
-.button,
-input[type="submit"],
-.wp-block-button__link,
-.wp-block-file__button {
-
+/**
+ * Placeholder button style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+%button-style {
 	@include crop-text(map-deep-get($config-button, "font", "line-height"));
 	color: #{map-deep-get($config-button, "color", "text")};
 	cursor: pointer;
@@ -21,6 +22,15 @@ input[type="submit"],
 		color: #{map-deep-get($config-button, "color", "text-hover")};
 		background-color: #{map-deep-get($config-button, "color", "background-hover")};
 	}
+}
+
+button,
+.button,
+input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button {
+	// Extend button style
+	@extend %button-style;
 }
 
 /**
