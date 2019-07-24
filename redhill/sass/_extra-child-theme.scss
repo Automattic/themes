@@ -77,22 +77,20 @@ a {
 
 // Footer
 #colophon {
-	border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-
 	@include media(mobile) {
 		margin-top: map-deep-get($config-global, "spacing", "vertical");
-		max-width: 100%;
 	}
 
 	.site-info {
-		font-weight: bold;
-		text-transform: uppercase;
-
 		@include media(mobile) {
 			max-width: 92vw;
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
+
+	.footer-navigation + .site-info {
+		text-align: left;
 	}
 }
 
@@ -175,7 +173,8 @@ a {
 .page-title,
 .author-title,
 .comments-title,
-.comment-reply-title {
+.comment-reply-title,
+.a8c-posts-list {
 	text-align: center;
 }
 
@@ -235,6 +234,11 @@ table,
 	}
 }
 
+// Posts List block
+.a8c-posts-list-item__excerpt {
+	text-align: left;
+}
+
 // Hentry
 .entry-header {
 	.entry-meta {
@@ -250,10 +254,10 @@ table,
 }
 
 article .entry-header .entry-title,
-.page-title {
+.page-title,
+.a8c-posts-list-item__title {
 	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
-  font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
-	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
 	margin-bottom: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
   a {
@@ -436,24 +440,6 @@ article .entry-header .entry-title,
       display: none;
     }
   }
-
-  &:after {
-		background: map-deep-get($config-global, "color", "border", "default");;
-		height: 1px;
-		content: "";
-		display: block;
-    margin-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
-
-		@include media(mobile) {
-		    margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		}
-
-    @include media(laptop) {
-		    margin-top: map-deep-get($config-global, "spacing", "vertical");
-		}
-
-		@extend %responsive-width-full;
-	}
 
   @include media(mobile) {
     padding-top: map-deep-get($config-global, "spacing", "vertical");
