@@ -5,7 +5,7 @@
 @mixin media( $res ) {
 
 	@if mobile-only == $res {
-		@media only screen and (max-width: calc(map-deep-get($config-global, "breakpoint", "sm") - 1)) {
+		@media only screen and (max-width: #{map-deep-get($config-global, "breakpoint", "sm") - 1}) {
 			@content;
 		}
 	}

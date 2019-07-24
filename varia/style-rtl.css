@@ -1810,8 +1810,14 @@ hr.is-style-dots:before {
 
 .wp-block-spacer {
 	display: block;
-	margin-bottom: 0;
-	margin-top: 0;
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
+@media only screen and (max-width: 559px) {
+	.wp-block-spacer[style] {
+		height: 32px !important;
+	}
 }
 
 table,

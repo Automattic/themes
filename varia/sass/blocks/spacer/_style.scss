@@ -1,6 +1,12 @@
 .wp-block-spacer {
 	display: block;
 	// Remove vertical margins
-	margin-bottom: 0;
-	margin-top: 0;
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+
+	@include media(mobile-only) {
+		&[style] {
+			height: map-deep-get($config-global, "spacing", "unit") !important;
+		}
+	}
 }
