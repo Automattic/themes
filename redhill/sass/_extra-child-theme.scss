@@ -77,22 +77,20 @@ a {
 
 // Footer
 #colophon {
-	border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-
 	@include media(mobile) {
 		margin-top: map-deep-get($config-global, "spacing", "vertical");
-		max-width: 100%;
 	}
 
 	.site-info {
-		font-weight: bold;
-		text-transform: uppercase;
-
 		@include media(mobile) {
 			max-width: 92vw;
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
+
+	.footer-navigation + .site-info {
+		text-align: left;
 	}
 }
 
@@ -436,24 +434,6 @@ article .entry-header .entry-title,
       display: none;
     }
   }
-
-  &:after {
-		background: map-deep-get($config-global, "color", "border", "default");;
-		height: 1px;
-		content: "";
-		display: block;
-    margin-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
-
-		@include media(mobile) {
-		    margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		}
-
-    @include media(laptop) {
-		    margin-top: map-deep-get($config-global, "spacing", "vertical");
-		}
-
-		@extend %responsive-width-full;
-	}
 
   @include media(mobile) {
     padding-top: map-deep-get($config-global, "spacing", "vertical");
