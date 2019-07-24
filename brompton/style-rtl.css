@@ -3147,6 +3147,8 @@ table th,
 
 #masthead:after {
 	background: #C04239;
+	border-top-right-radius: 210px;
+	border-top-left-radius: 210px;
 	height: 110px;
 	margin-right: -105px;
 	transform: translateY(-5px);
@@ -3435,7 +3437,7 @@ table th,
 
 #colophon {
 	flex-direction: column;
-	padding-bottom: 5px;
+	padding-bottom: 37px;
 }
 
 #colophon .site-info {
@@ -3443,7 +3445,8 @@ table th,
 	border-bottom: 5px solid #C04239;
 	border-top: 5px solid #C04239;
 	font-weight: 900;
-	padding: 16px 16px;
+	padding: 32px 16px;
+	position: relative;
 	text-transform: uppercase;
 }
 
@@ -3459,6 +3462,35 @@ table th,
 
 #colophon .site-info .site-name {
 	font-weight: inherit;
+}
+
+#colophon .site-info > * {
+	position: relative;
+}
+
+#colophon .site-info:before, #colophon .site-info:after {
+	background: #252E36;
+	border-bottom-right-radius: 200px;
+	border-bottom-left-radius: 200px;
+	content: "";
+	display: block;
+	height: 100px;
+	right: 50%;
+	margin-right: -100px;
+	position: absolute;
+	bottom: -32px;
+	width: 200px;
+}
+
+#colophon .site-info:after {
+	background: #C04239;
+	border-bottom-right-radius: 210px;
+	border-bottom-left-radius: 210px;
+	height: 110px;
+	margin-right: -105px;
+	transform: translateY(5px);
+	width: 210px;
+	z-index: -1;
 }
 
 .comments-area .comment-list,

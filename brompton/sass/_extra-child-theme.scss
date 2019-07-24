@@ -357,14 +357,16 @@ table,
 // Footer
 #colophon {
 	flex-direction: column;
-	padding-bottom: 5px;
+	padding-bottom: #{5 + map-deep-get($config-global, "spacing", "vertical")};
 
 	.site-info {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		border-bottom: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
 		border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
 		font-weight: 900;
-		padding: #{0.5 * map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
+		min-height: #{110 - map-deep-get($config-global, "spacing", "vertical")};
+		padding: #{map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
+		position: relative;
 		text-transform: uppercase;
 		@extend %responsive-width-full;
 
@@ -378,6 +380,36 @@ table,
 
 		.site-name {
 			font-weight: inherit;
+		}
+
+		& > * {
+			position: relative;
+		}
+
+		&:before,
+		&:after {
+			background: #{map-deep-get($config-global, "color", "foreground", "default")};
+			border-bottom-left-radius: 200px;
+			border-bottom-right-radius: 200px;
+			content: "";
+			display: block;
+			height: 100px;
+			left: 50%;
+			margin-left: -100px;
+			position: absolute;
+			bottom: -#{map-deep-get($config-global, "spacing", "vertical")};
+			width: 200px;
+		}
+
+		&:after {
+			background: #{map-deep-get($config-global, "color", "primary", "default")};
+			border-bottom-left-radius: 210px;
+			border-bottom-right-radius: 210px;
+			height: 110px;
+			margin-left: -105px;
+			transform: translateY(5px);
+			width: 210px;
+			z-index: -1;
 		}
 	}
 }
