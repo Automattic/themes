@@ -2,19 +2,51 @@
 
 	display: inline;
 
+	@include media(tablet) {
+		flex: 1 0 50%;
+		order: 2;
+		margin-top: 0;
+		margin-bottom: 0;
+		text-align: right;
+	}
+
 	& > div {
 		display: inline;
 	}
 
 	.footer-menu {
 
-		display: inline;
+		color: #{map-deep-get($config-footer, "color", "text")};
 		padding-left: 0;
+		margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
+		margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
+
+		@include media(tablet) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
 
 		li {
 			display: inline;
-			margin-right: #{map-deep-get($config-global, "spacing", "unit")}
+		}
+
+		a {
+			font-family: #{map-deep-get($config-header, "main-nav", "font", "family")};
+			font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+			font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
+			padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+
+			color: currentColor;
+
+			&:link,
+			&:visited {
+				color: currentColor;
+			}
+
+			&:hover {
+				color: #{map-deep-get($config-footer, "color", "link-hover")};
+			}
 		}
 	}
-
 }

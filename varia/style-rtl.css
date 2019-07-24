@@ -2279,10 +2279,28 @@ table th,
 	vertical-align: middle;
 }
 
+@media only screen and (min-width: 640px) {
+	.site-footer {
+		align-items: flex-end;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
+
 .site-info {
 	color: #767676;
 	font-family: sans-serif;
 	font-size: 0.83333rem;
+}
+
+@media only screen and (min-width: 640px) {
+	.site-info {
+		order: 1;
+		flex: 1 0 50%;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
 .site-info .site-name {
@@ -2305,18 +2323,53 @@ table th,
 	display: inline;
 }
 
+@media only screen and (min-width: 640px) {
+	.footer-navigation {
+		flex: 1 0 50%;
+		order: 2;
+		margin-top: 0;
+		margin-bottom: 0;
+		text-align: left;
+	}
+}
+
 .footer-navigation > div {
 	display: inline;
 }
 
 .footer-navigation .footer-menu {
-	display: inline;
+	color: #767676;
 	padding-right: 0;
+	margin-right: -16px;
+	margin-left: -16px;
+}
+
+@media only screen and (min-width: 640px) {
+	.footer-navigation .footer-menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
 }
 
 .footer-navigation .footer-menu li {
 	display: inline;
-	margin-left: 16px;
+}
+
+.footer-navigation .footer-menu a {
+	font-family: sans-serif;
+	font-size: 0.83333rem;
+	font-weight: bold;
+	padding: 16px;
+	color: currentColor;
+}
+
+.footer-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited {
+	color: currentColor;
+}
+
+.footer-navigation .footer-menu a:hover {
+	color: indigo;
 }
 
 .entry-title {
@@ -2751,6 +2804,10 @@ table th,
 	font-family: sans-serif;
 	font-size: 1.2rem;
 	font-weight: 600;
+}
+
+.widget-area {
+	flex: 0 0 100%;
 }
 
 /**
