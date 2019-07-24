@@ -8,6 +8,7 @@
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text {
+		@extend %responsive-align-container;
 		color: #{map-deep-get($config-global, "color", "background")};
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
@@ -59,10 +60,4 @@
 	&.has-right-content {
 		justify-content: center;
 	}
-}
-
-.wp-block-cover__inner-container,
-.wp-block-cover-image-text,
-.wp-block-cover-text {
-	@extend %responsive-align-container;
 }

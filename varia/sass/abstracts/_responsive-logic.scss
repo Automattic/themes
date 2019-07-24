@@ -88,7 +88,7 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 
 %responsive-align-container {
 
-	@include align-container-width( $content-width-flex );
+	@include align-container-width( calc( #{$content-width-flex} - #{$horizontal-padding} ) );
 
 	@include media(mobile) {
 		@include align-container-width( $content-width-sm );
