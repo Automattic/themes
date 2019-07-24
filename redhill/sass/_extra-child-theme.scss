@@ -173,7 +173,8 @@ a {
 .page-title,
 .author-title,
 .comments-title,
-.comment-reply-title {
+.comment-reply-title,
+.a8c-posts-list {
 	text-align: center;
 }
 
@@ -233,6 +234,11 @@ table,
 	}
 }
 
+// Posts List block
+.a8c-posts-list-item__excerpt {
+	text-align: left;
+}
+
 // Hentry
 .entry-header {
 	.entry-meta {
@@ -248,10 +254,10 @@ table,
 }
 
 article .entry-header .entry-title,
-.page-title {
+.page-title,
+.a8c-posts-list-item__title {
 	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
-  font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
-	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
 	margin-bottom: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
   a {
