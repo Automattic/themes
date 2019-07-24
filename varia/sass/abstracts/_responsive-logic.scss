@@ -91,22 +91,22 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	@include align-container-width( calc( #{$content-width-flex} - #{$horizontal-padding} ) );
 
 	@include media(mobile) {
-		@include align-container-width( calc( #{$content-width-sm} - #{$horizontal-padding} ) );
+		@include align-container-width( #{$content-width-sm} );
 	}
 
 	@include media(tablet) {
-		@include align-container-width( calc( #{$content-width-md} - #{$horizontal-padding} ) );
+		@include align-container-width( #{$content-width-md} );
 	}
 
 	@include media(laptop) {
-		@include align-container-width( calc( #{$content-width-lg} - #{$horizontal-padding} ) );
+		@include align-container-width( #{$content-width-lg} );
 	}
 
 	@include media(desktop) {
-		@include align-container-width( calc( #{$content-width-lg} - #{$horizontal-padding} ) );
+		@include align-container-width( #{$content-width-lg} );
 	}
 
 	@include media(wide) {
-		@include align-container-width( calc( #{$content-width-lg} - #{$horizontal-padding} ) );
+		@include align-container-width( #{$content-width-lg} );
 	}
 }
