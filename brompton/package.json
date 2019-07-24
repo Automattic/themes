@@ -1,0 +1,44 @@
+{
+  "name": "brompton",
+  "version": "1.0.0",
+  "description": "Brompton",
+  "bugs": {
+    "url": "https://github.com/Automattic/themes/issues"
+  },
+  "homepage": "https://github.com/Automattic/themes/varia#readme",
+  "devDependencies": {
+    "@wordpress/browserslist-config": "^2.2.2",
+    "autoprefixer": "^9.5.1",
+    "chokidar-cli": "^1.2.2",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
+    "postcss-focus-within": "^3.0.0",
+    "rtlcss": "^2.4.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "build:style": "node-sass sass/style-child-theme.scss style.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style.css",
+    "build:style-editor": "node-sass sass/style-child-theme-editor.scss style-editor.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-editor.css",
+    "build:rtl": "rtlcss style.css style-rtl.css",
+    "build:print": "node-sass sass/print.scss print.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r print.css",
+    "build": "run-p \"build:*\"",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
+  }
+}

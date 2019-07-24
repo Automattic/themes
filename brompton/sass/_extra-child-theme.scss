@@ -1,0 +1,574 @@
+/**
+ * Extra Child Theme Styles
+ */
+// @import "";
+
+// Header
+#masthead {
+	align-content: center;
+	align-items: center;
+	background: #{map-deep-get($config-global, "color", "foreground", "default")};
+	border-bottom: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+	border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	margin-top: #{5 + map-deep-get($config-global, "spacing", "vertical")};
+	max-width: 100vw;
+	min-height: #{210 - map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+	position: relative;
+
+	&:before,
+	&:after {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-radius: 50%;
+		content: "";
+		display: block;
+		position: absolute;
+		top: -#{map-deep-get($config-global, "spacing", "vertical")};
+		left: 50%;
+		margin-left: -100px;
+		width: 200px;
+		height: 200px;
+	}
+
+	&:after {
+		background: #{map-deep-get($config-global, "color", "primary", "default")};
+		height: 210px;
+		margin-left: -105px;
+		transform: translateY(-5px);
+		width: 210px;
+		z-index: -1;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.custom-logo-link {
+		display: inline-block;
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+
+	.site-branding {
+		margin-bottom: 0;
+		order: 1;
+		position: relative;
+		text-align: center;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.main-navigation {
+		margin-bottom: 0;
+		order: 3;
+		position: relative;
+		text-align: center;
+
+		& > div > ul {
+			text-align: left;
+		}
+	}
+
+	.social-navigation {
+		order: 2;
+		position: relative;
+	}
+
+  @include media(mobile) {
+		padding: #{map-deep-get($config-global, "spacing", "vertical")} #{2* map-deep-get($config-global, "spacing", "horizontal")};
+
+		.main-navigation {
+			& > div > ul {
+				justify-content: center;
+			}
+		}
+	}
+
+	@include media(laptop) {
+		flex-flow: row wrap;
+
+		.site-branding,
+		.main-navigation,
+		.social-navigation {
+			margin: 0;
+			width: 33.3333%;
+			width: calc(33.3333% - #{map-deep-get($config-global, "spacing", "horizontal")})
+		}
+
+		.site-branding {
+			order: 2;
+		}
+
+		.main-navigation {
+			order: 1;
+
+			& > div > ul {
+				justify-content: flex-start;
+			}
+		}
+
+		.social-navigation {
+			order: 3;
+
+			& > div > ul {
+				justify-content: flex-end;
+			}
+		}
+	}
+}
+
+// Main Navigation
+.main-navigation {
+	.button {
+		background: #{map-deep-get($config-global, "color", "secondary", "default")};
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+		text-transform: uppercase;
+
+		&:active,
+		&:focus,
+		&:hover {
+			background: #{map-deep-get($config-global, "color", "secondary", "hover")};
+			text-decoration: none;
+		}
+	}
+
+	& > div > ul > li > a {
+		text-transform: uppercase;
+	}
+
+	& > div > ul > li.current-menu-item {
+		& > a {
+			color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+		}
+	}
+
+	@include media(mobile) {
+		& > div > ul > li:hover,
+		& > div > ul > li.focus,
+		& > div > ul > li.current-menu-item {
+
+			& > ul {
+				box-shadow: none;
+				overflow: hidden;
+			}
+
+			& li {
+				& > a {
+					background: #{map-deep-get($config-global, "color", "foreground", "default")};
+					border-top: 1px solid #{map-deep-get($config-global, "color", "secondary", "hover")};
+				}
+			}
+		}
+	}
+}
+
+.site-info,
+.entry-header,
+.page-title,
+.author-title,
+.comments-title,
+.comment-reply-title {
+	text-align: center;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.pagination .nav-links {
+	justify-content: center;
+}
+
+// Main
+#main {
+	padding-top: 0;
+}
+
+// Hentry
+.entry-header {
+	.entry-meta {
+		display: none;
+	}
+
+	.sticky-post {
+		border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
+		display: inline-block;
+		font-weight: 900;
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		text-transform: uppercase;
+
+		@include media(mobile) {
+			margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		& + .entry-title {
+			margin-top: 0;
+		}
+	}
+}
+
+.entry-footer {
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+
+	& > span {
+		display: block;
+		margin: 0;
+	}
+
+	a {
+    color: inherit;
+		text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #{map-deep-get($config-global, "color", "primary", "default")};
+    }
+  }
+}
+
+article .entry-header .entry-title,
+.page-title {
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
+  a {
+    color: inherit;
+		text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #{map-deep-get($config-global, "color", "primary", "default")};
+    }
+  }
+
+	@include media(mobile) {
+		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+// Cover & Hero block
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-coblocks-hero .wp-block-coblocks-hero__box {
+	& > * {
+		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Quote block
+.wp-block-quote {
+  p {
+    font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+  }
+}
+
+// Table block
+table,
+.wp-block-table {
+	td,
+	th {
+		border-color: map-deep-get($config-global, "color", "border", "default");
+	}
+}
+
+// Pagination
+.pagination {
+  text-align: center;
+
+  .nav-links {
+		& > * {
+	    color: #{map-deep-get($config-global, "color", "foreground", "default")};
+			font-size: #{map-deep-get($config-global, "font", "size", "base")};
+			font-weight: 900;
+	    text-transform: uppercase;
+
+	    &.current,
+	    &:active,
+	    &:focus,
+	    &:hover {
+	      color: #{map-deep-get($config-global, "color", "primary", "default")};
+	    }
+	  }
+
+		a {
+			text-decoration: none;
+		}
+
+	  .svg-icon {
+	    display: none;
+	  }
+	}
+}
+
+// Post Navigation
+.post-navigation {
+	border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
+	margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+
+	a {
+		color: map-deep-get($config-global, "color", "foreground", "default");
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		text-decoration: none;
+
+		&:active,
+		&:hover,
+		&:focus {
+			color: map-deep-get($config-global, "color", "primary", "default");
+		}
+	}
+
+	.meta-nav {
+		//color: map-deep-get($config-global, "color", "foreground", "light");
+    //font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		text-transform: uppercase;
+	}
+
+	.post-title {
+		font-family: inherit;
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-weight: normal;
+	}
+}
+
+// Footer
+#colophon {
+	flex-direction: column;
+	padding-bottom: 5px;
+
+	.site-info {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-bottom: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+		border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+		font-weight: 900;
+		padding: #{0.5 * map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
+		text-transform: uppercase;
+		@extend %responsive-width-full;
+
+		@include media(tablet) {
+			flex: 1 100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.site-name {
+			font-weight: inherit;
+		}
+	}
+}
+
+// Comments
+.comments-area {
+	.comment-list,
+	.children {
+		border: 0;
+
+		> li {
+			border: 0;
+
+			.comment-body {
+				border: 1px solid map-deep-get($config-global, "color", "border", "light");
+				padding: 0 #{map-deep-get($config-global, "spacing", "vertical")};
+			}
+		}
+	}
+
+	.comment-meta {
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: #{map-deep-get($config-global, "color", "primary", "default")};
+			}
+		}
+
+		.fn {
+			font-weight: 900;
+		}
+	}
+
+	.avatar {
+		border-radius: 50%;
+	}
+
+	.reply {
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};;
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		font-weight: 900;
+		text-align: center;
+		text-transform: uppercase;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: #{map-deep-get($config-global, "color", "primary", "default")};
+			}
+		}
+	}
+
+	@include media(mobile) {
+		.comment-meta,
+		.comment-author {
+			flex-direction: column;
+		}
+
+		.comment-meta {
+			margin-top: -16px;
+		}
+
+		.avatar {
+			margin-left: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+	}
+}
+
+.comments-title,
+.comment-reply-title {
+	font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+}
+
+.comment-form {
+	.form-submit {
+		justify-content: center;
+		text-align: center;
+	}
+}
+
+// Comments Navigation
+.comment-navigation {
+    a {
+    font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		font-weight: 900;
+		text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+// Widgets
+.widget-area {
+	border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
+	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
+  .widget-title,
+  .widgettitle {
+  	font-size: #{map-deep-get($config-global, "font", "size", "base")};
+    margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+    text-transform: uppercase;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  @include media(laptop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > *:nth-child(2) {
+      margin-top: 0;
+    }
+
+    .widget {
+      width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
+    }
+  }
+}
+
+.widget_calendar,
+.widget_calendar {
+  caption {
+    font-weight: bold;
+  }
+
+  td,
+  th {
+	   text-align: center;
+  }
+}
+
+.widget_archive,
+.widget_categories,
+.widget_links,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss,
+.widget_rss_links,
+.widget_top-posts,
+.widget_authors,
+.widget_jp_blogs_i_follow,
+.widget_top-click,
+.widget_upcoming_events_widget {
+  ul {
+    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "light");
+    list-style: none;
+    margin-left: 0;
+  }
+
+  li {
+    border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
+    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+  }
+}
+
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+  border-bottom: 0;
+  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+}
+
+.widget_recent_entries .post-date {
+  display: block;
+}
+
+.widget_rss {
+  cite,
+  .rssSummary,
+  .rss-date {
+    display: block;
+  }
+}
+
+.widget_search {
+  input[type="search"] {
+    display: block;
+    margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+    width: 100%;
+  }
+}
