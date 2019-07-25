@@ -459,6 +459,44 @@ table,
 			z-index: -1;
 		}
 	}
+
+	.footer-navigation {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+		display: block;
+		margin-bottom: 0;
+		padding: #{0.5 * map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		z-index: 1;
+
+		@extend %responsive-width-full;
+
+		@include media(tablet) {
+			flex: 1 100%;
+			order: 1;
+
+			.footer-menu {
+				justify-content: center;
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		& + .site-info {
+			border-top: 0;
+			margin-top: 0;
+			min-height: 0;
+			padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")} #{0.666 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		& > div {
+			display: block;
+		}
+	}
 }
 
 // Comments
