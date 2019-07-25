@@ -1545,7 +1545,7 @@ img {
 
 ul,
 ol {
-	font-family: "Crimson Text", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	margin: 0 16px 0 0;
 	padding: 0;
 }
@@ -3138,49 +3138,66 @@ a {
 }
 
 /**
- * Mobile-Menu-Only
+ * Mobile-Menu
  */
-.site-header {
-	align-items: center;
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
-	grid-column-gap: 16px;
-	grid-template-areas: "site-branding main-navigation" " . social-navigation";
+#masthead {
+	position: relative;
 }
 
-.site-header:before, .site-header:after {
-	content: none;
-	display: none;
+#toggle-menu {
+	position: absolute;
+	left: 16px;
+	top: 16px;
 }
 
-.site-header > * {
-	margin-top: 0;
-	margin-bottom: 0;
+.site-branding {
+	max-width: calc(100% - 100px - 16px);
 }
 
-.site-header .site-logo {
-	display: block;
-}
-
-.site-header .site-branding {
-	grid-area: site-branding;
-}
-
-.site-header .main-navigation {
-	grid-area: main-navigation;
-	justify-self: end;
-}
-
-.site-header .main-navigation > div > ul {
-	justify-content: flex-end;
-}
-
-.site-header .social-navigation {
-	grid-area: social-navigation;
-	justify-self: end;
-}
-
-.site-header .social-navigation > div > ul {
-	justify-content: flex-end;
+/**
+ * CSS-grid Desktop Menu
+ */
+@media only screen and (min-width: 560px) {
+	#toggle-menu {
+		position: inherit;
+		left: auto;
+		top: auto;
+	}
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: 16px;
+		grid-template-areas: "site-branding main-navigation" " . social-navigation";
+	}
+	.site-header:before, .site-header:after {
+		content: none;
+		display: none;
+	}
+	.site-header > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.site-header .site-logo {
+		display: block;
+	}
+	.site-header .site-branding {
+		grid-area: site-branding;
+		max-width: unset;
+	}
+	.site-header .main-navigation {
+		grid-area: main-navigation;
+		justify-self: end;
+	}
+	.site-header .main-navigation > div > ul {
+		justify-content: flex-end;
+	}
+	.site-header .social-navigation {
+		grid-area: social-navigation;
+		justify-self: end;
+	}
+	.site-header .social-navigation > div > ul {
+		justify-content: flex-end;
+	}
 }

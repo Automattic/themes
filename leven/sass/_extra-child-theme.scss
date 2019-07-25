@@ -1,7 +1,6 @@
 /**
  * Extra Child Theme Styles
  */
-// @import "";
 
 html {
 	letter-spacing: -0.02em;
@@ -15,9 +14,12 @@ a {
 	text-decoration: none;
 
 	.wp-block-cover &,
-	.wp-block-cover-image & {
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
 		text-decoration: underline;
 
+		&.wp-block-button__link,
 		&:hover {
 			text-decoration: none;
 		}
@@ -25,52 +27,80 @@ a {
 }
 
 /**
- * Mobile-Menu-Only
+ * Mobile-Menu
  */
 
-.site-header {
-	align-items: center;
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
-	grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
-	grid-template-areas:
-		"site-branding main-navigation"
-		" . social-navigation";
+#masthead {
+	position: relative;
+}
 
-	&:before,
-	&:after {
-		content: none;
-		display: none;
+#toggle-menu {
+	position: absolute;
+	right: #{map-deep-get($config-global, "spacing", "unit")};
+	top: #{map-deep-get($config-global, "spacing", "unit")};
+}
+
+.site-branding {
+	max-width: calc(100% - 100px - #{map-deep-get($config-global, "spacing", "unit")});
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+
+@include media(mobile) {
+
+	#toggle-menu {
+		position: inherit;
+		right: auto;
+		top: auto;
 	}
 
-	& > * {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-branding main-navigation"
+			" . social-navigation";
 
-	.site-logo {
-		display: block;
-	}
-
-	.site-branding {
-		grid-area: site-branding;
-	}
-
-	.main-navigation {
-		grid-area: main-navigation;
-		justify-self: end;
-
-		& > div > ul {
-			justify-content: flex-end;
+		&:before,
+		&:after {
+			content: none;
+			display: none;
 		}
-	}
-	.social-navigation {
-		grid-area: social-navigation;
-		justify-self: end;
 
-		& > div > ul {
-			justify-content: flex-end;
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			display: block;
+		}
+
+		.site-branding {
+			grid-area: site-branding;
+			max-width: unset;
+		}
+
+		.main-navigation {
+			grid-area: main-navigation;
+			justify-self: end;
+
+			& > div > ul {
+				justify-content: flex-end;
+			}
+		}
+		.social-navigation {
+			grid-area: social-navigation;
+			justify-self: end;
+
+			& > div > ul {
+				justify-content: flex-end;
+			}
 		}
 	}
 }

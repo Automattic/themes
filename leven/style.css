@@ -3133,59 +3133,83 @@ a {
 }
 
 .wp-block-cover a,
-.wp-block-cover-image a {
+.wp-block-cover-image a,
+.wp-block-media-text a,
+p:not(.site-title) a {
 	text-decoration: underline;
 }
 
-.wp-block-cover a:hover,
-.wp-block-cover-image a:hover {
+.wp-block-cover a.wp-block-button__link, .wp-block-cover a:hover,
+.wp-block-cover-image a.wp-block-button__link,
+.wp-block-cover-image a:hover,
+.wp-block-media-text a.wp-block-button__link,
+.wp-block-media-text a:hover,
+p:not(.site-title) a.wp-block-button__link,
+p:not(.site-title) a:hover {
 	text-decoration: none;
 }
 
 /**
- * Mobile-Menu-Only
+ * Mobile-Menu
  */
-.site-header {
-	align-items: center;
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: auto;
-	grid-column-gap: 16px;
-	grid-template-areas: "site-branding main-navigation" " . social-navigation";
+#masthead {
+	position: relative;
 }
 
-.site-header:before, .site-header:after {
-	content: none;
-	display: none;
+#toggle-menu {
+	position: absolute;
+	right: 16px;
+	top: 16px;
 }
 
-.site-header > * {
-	margin-top: 0;
-	margin-bottom: 0;
+.site-branding {
+	max-width: calc(100% - 100px - 16px);
 }
 
-.site-header .site-logo {
-	display: block;
-}
-
-.site-header .site-branding {
-	grid-area: site-branding;
-}
-
-.site-header .main-navigation {
-	grid-area: main-navigation;
-	justify-self: end;
-}
-
-.site-header .main-navigation > div > ul {
-	justify-content: flex-end;
-}
-
-.site-header .social-navigation {
-	grid-area: social-navigation;
-	justify-self: end;
-}
-
-.site-header .social-navigation > div > ul {
-	justify-content: flex-end;
+/**
+ * CSS-grid Desktop Menu
+ */
+@media only screen and (min-width: 560px) {
+	#toggle-menu {
+		position: inherit;
+		right: auto;
+		top: auto;
+	}
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: 16px;
+		grid-template-areas: "site-branding main-navigation" " . social-navigation";
+	}
+	.site-header:before, .site-header:after {
+		content: none;
+		display: none;
+	}
+	.site-header > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.site-header .site-logo {
+		display: block;
+	}
+	.site-header .site-branding {
+		grid-area: site-branding;
+		max-width: unset;
+	}
+	.site-header .main-navigation {
+		grid-area: main-navigation;
+		justify-self: end;
+	}
+	.site-header .main-navigation > div > ul {
+		justify-content: flex-end;
+	}
+	.site-header .social-navigation {
+		grid-area: social-navigation;
+		justify-self: end;
+	}
+	.site-header .social-navigation > div > ul {
+		justify-content: flex-end;
+	}
 }
