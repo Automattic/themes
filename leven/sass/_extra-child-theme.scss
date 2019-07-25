@@ -29,9 +29,11 @@ a {
  */
 
 .site-header {
+	align-items: center;
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto;
+	grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 	grid-template-areas:
 		"site-branding main-navigation"
 		" . social-navigation";
@@ -53,14 +55,6 @@ a {
 
 	.site-branding {
 		grid-area: site-branding;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		flex: 1 0 auto;
-
-		.site-description {
-			padding-left: #{map-deep-get($config-global, "spacing", "unit")};
-		}
 	}
 
 	.main-navigation {
