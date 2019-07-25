@@ -3115,23 +3115,11 @@ table th,
 /**
  * Extra Child Theme Styles
  */
-#masthead {
-	align-content: center;
-	align-items: center;
-	background: #252E36;
-	border-bottom: 5px solid #C04239;
-	border-top: 5px solid #C04239;
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: space-between;
-	margin-top: 64px;
-	max-width: 100vw;
-	min-height: 78px;
-	padding-top: 16px;
+#page {
 	position: relative;
 }
 
-#masthead:before, #masthead:after {
+#page:before, #page:after {
 	background: #252E36;
 	border-top-right-radius: 200px;
 	border-top-left-radius: 200px;
@@ -3145,13 +3133,58 @@ table th,
 	width: 200px;
 }
 
-#masthead:after {
+#page:before {
+	z-index: 1;
+}
+
+#page:after {
 	background: #C04239;
 	border-top-right-radius: 210px;
 	border-top-left-radius: 210px;
 	height: 110px;
 	margin-right: -105px;
 	transform: translateY(-5px);
+	width: 210px;
+	z-index: -1;
+}
+
+#masthead {
+	align-content: center;
+	align-items: center;
+	background: #252E36;
+	border-bottom: 5px solid #C04239;
+	border-top: 5px solid #C04239;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	margin: 64px 0 32px;
+	max-width: 100vw;
+	min-height: 78px;
+	padding-top: 16px;
+	position: relative;
+}
+
+#masthead:before, #masthead:after {
+	background: #252E36;
+	border-bottom-right-radius: 200px;
+	border-bottom-left-radius: 200px;
+	content: "";
+	display: block;
+	height: 100px;
+	right: 50%;
+	margin-right: -100px;
+	position: absolute;
+	bottom: -32px;
+	width: 200px;
+}
+
+#masthead:after {
+	background: #C04239;
+	border-bottom-right-radius: 210px;
+	border-bottom-left-radius: 210px;
+	height: 110px;
+	margin-right: -105px;
+	transform: translateY(5px);
 	width: 210px;
 	z-index: -1;
 }
@@ -3179,6 +3212,7 @@ table th,
 	order: 3;
 	position: relative;
 	text-align: center;
+	z-index: 2;
 }
 
 #masthead .main-navigation > div > ul {
@@ -3188,6 +3222,7 @@ table th,
 #masthead .social-navigation {
 	order: 2;
 	position: relative;
+	z-index: 2;
 }
 
 @media only screen and (min-width: 560px) {
@@ -3283,10 +3318,6 @@ table th,
 	justify-content: center;
 }
 
-#main {
-	padding-top: 0;
-}
-
 .entry-header .entry-meta {
 	display: none;
 }
@@ -3297,12 +3328,6 @@ table th,
 	font-weight: 900;
 	margin-top: 32px;
 	text-transform: uppercase;
-}
-
-@media only screen and (min-width: 560px) {
-	.entry-header .sticky-post {
-		margin-top: 64px;
-	}
 }
 
 .entry-header .sticky-post + .entry-title {
@@ -3328,12 +3353,14 @@ table th,
 }
 
 article .entry-header .entry-title,
-.page-title {
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title {
 	margin-top: 32px;
 }
 
 article .entry-header .entry-title a,
-.page-title a {
+.page-title a,
+.a8c-posts-list .a8c-posts-list-item__title a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -3341,15 +3368,11 @@ article .entry-header .entry-title a,
 article .entry-header .entry-title a:active, article .entry-header .entry-title a:focus, article .entry-header .entry-title a:hover,
 .page-title a:active,
 .page-title a:focus,
-.page-title a:hover {
+.page-title a:hover,
+.a8c-posts-list .a8c-posts-list-item__title a:active,
+.a8c-posts-list .a8c-posts-list-item__title a:focus,
+.a8c-posts-list .a8c-posts-list-item__title a:hover {
 	color: #C04239;
-}
-
-@media only screen and (min-width: 560px) {
-	article .entry-header .entry-title,
-	.page-title {
-		margin-top: 64px;
-	}
 }
 
 .wp-block-cover .wp-block-cover__inner-container > *,
@@ -3391,6 +3414,10 @@ table th,
 	text-align: center;
 }
 
+.a8c-posts-list .a8c-posts-list-item__featured {
+	margin-top: 32px;
+}
+
 .a8c-posts-list .a8c-posts-list-item__featured span {
 	border-radius: 4px;
 	display: inline-block;
@@ -3398,13 +3425,8 @@ table th,
 	text-transform: uppercase;
 }
 
-.a8c-posts-list .a8c-posts-list-item__title a {
-	color: inherit;
-	text-decoration: none;
-}
-
-.a8c-posts-list .a8c-posts-list-item__title a:active, .a8c-posts-list .a8c-posts-list-item__title a:focus, .a8c-posts-list .a8c-posts-list-item__title a:hover {
-	color: #C04239;
+.a8c-posts-list .a8c-posts-list-item__featured + .a8c-posts-list-item__title {
+	margin-top: 0;
 }
 
 .a8c-posts-list .a8c-posts-list-item__meta a {

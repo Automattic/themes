@@ -3,20 +3,8 @@
  */
 // @import "";
 
-// Header
-#masthead {
-	align-content: center;
-	align-items: center;
-	background: #{map-deep-get($config-global, "color", "foreground", "default")};
-	border-bottom: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
-	border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
-	display: flex;
-	flex-flow: column wrap;
-	justify-content: space-between;
-	margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-	max-width: 100vw;
-	min-height: #{110 - map-deep-get($config-global, "spacing", "vertical")};
-	padding-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+// Pgae
+#page {
 	position: relative;
 
 	&:before,
@@ -34,6 +22,10 @@
 		width: 200px;
 	}
 
+	&:before {
+		z-index: 1;
+	}
+
 	&:after {
 		background: #{map-deep-get($config-global, "color", "primary", "default")};
 		border-top-left-radius: 210px;
@@ -41,6 +33,49 @@
 		height: 110px;
 		margin-left: -105px;
 		transform: translateY(-5px);
+		width: 210px;
+		z-index: -1;
+	}
+}
+
+// Header
+#masthead {
+	align-content: center;
+	align-items: center;
+	background: #{map-deep-get($config-global, "color", "foreground", "default")};
+	border-bottom: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+	border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	margin: #{2 * map-deep-get($config-global, "spacing", "vertical")} 0 #{map-deep-get($config-global, "spacing", "vertical")};
+	max-width: 100vw;
+	min-height: #{110 - map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+	position: relative;
+
+	&:before,
+	&:after {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-bottom-left-radius: 200px;
+		border-bottom-right-radius: 200px;
+		content: "";
+		display: block;
+		height: 100px;
+		left: 50%;
+		margin-left: -100px;
+		position: absolute;
+		bottom: -#{map-deep-get($config-global, "spacing", "vertical")};
+		width: 200px;
+	}
+
+	&:after {
+		background: #{map-deep-get($config-global, "color", "primary", "default")};
+		border-bottom-left-radius: 210px;
+		border-bottom-right-radius: 210px;
+		height: 110px;
+		margin-left: -105px;
+		transform: translateY(5px);
 		width: 210px;
 		z-index: -1;
 	}
@@ -68,6 +103,7 @@
 		order: 3;
 		position: relative;
 		text-align: center;
+		z-index: 2;
 
 		& > div > ul {
 			text-align: left;
@@ -77,6 +113,7 @@
 	.social-navigation {
 		order: 2;
 		position: relative;
+		z-index: 2;
 	}
 
   @include media(mobile) {
@@ -189,11 +226,6 @@
 	justify-content: center;
 }
 
-// Main
-#main {
-	padding-top: 0;
-}
-
 // Hentry
 .entry-header {
 	.entry-meta {
@@ -206,10 +238,6 @@
 		font-weight: 900;
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		text-transform: uppercase;
-
-		@include media(mobile) {
-			margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		}
 
 		& + .entry-title {
 			margin-top: 0;
@@ -238,7 +266,8 @@
 }
 
 article .entry-header .entry-title,
-.page-title {
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title {
 	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 
   a {
@@ -251,10 +280,6 @@ article .entry-header .entry-title,
       color: #{map-deep-get($config-global, "color", "primary", "default")};
     }
   }
-
-	@include media(mobile) {
-		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-	}
 }
 
 // Cover & Hero block
@@ -300,24 +325,17 @@ table,
 	text-align: center;
 
 	.a8c-posts-list-item__featured {
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
 		span {
 			border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
 			display: inline-block;
 			font-weight: 900;
 			text-transform: uppercase;
 		}
-	}
 
-	.a8c-posts-list-item__title {
-		a {
-			color: inherit;
-			text-decoration: none;
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: #{map-deep-get($config-global, "color", "primary", "default")};
-			}
+		& + .a8c-posts-list-item__title {
+			margin-top: 0;
 		}
 	}
 
