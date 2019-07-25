@@ -374,26 +374,29 @@ table,
 .post-navigation {
 	border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
 	margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
 
 	a {
-		color: map-deep-get($config-global, "color", "foreground", "default");
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		text-decoration: none;
 
 		&:active,
 		&:hover,
 		&:focus {
-			color: map-deep-get($config-global, "color", "primary", "default");
+			color: #{map-deep-get($config-global, "color", "primary", "default")};
 		}
 	}
 
 	.meta-nav {
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-weight: 900;
 		text-transform: uppercase;
 	}
 
 	.post-title {
-		font-family: inherit;
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};;
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: normal;
 	}
