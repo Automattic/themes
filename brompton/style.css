@@ -2176,6 +2176,11 @@ table th,
 	z-index: 99999;
 }
 
+.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
+	cursor: pointer;
+	z-index: 99999;
+}
+
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2186,6 +2191,14 @@ table th,
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
+	}
+	.main-navigation > div > ul li:hover > ul,
+	.main-navigation > div > ul li[focus-within] > ul,
+	.main-navigation > div > ul li ul:hover,
+	.main-navigation > div > ul li ul:focus {
+		visibility: visible;
+		opacity: 1;
+		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li[focus-within] > ul,
@@ -3242,20 +3255,20 @@ table th,
 @media only screen and (min-width: 782px) {
 	#masthead {
 		flex-flow: row wrap;
-		justify-content: flex-start;
+		justify-content: center;
 	}
-	#masthead .site-branding,
-	#masthead .main-navigation,
-	#masthead .social-navigation {
+	#masthead > *:nth-child(1):nth-last-child(3),
+	#masthead > *:nth-child(2):nth-last-child(2),
+	#masthead > *:nth-child(3):nth-last-child(1) {
 		margin: 0 8px;
 		width: 33.3333%;
 		width: calc(33.3333% - 16px);
 	}
+	#masthead > *:nth-child(2):nth-last-child(2) {
+		order: 1;
+	}
 	#masthead .site-branding {
 		order: 2;
-	}
-	#masthead .main-navigation {
-		order: 1;
 	}
 	#masthead .main-navigation > div > ul {
 		justify-content: flex-start;

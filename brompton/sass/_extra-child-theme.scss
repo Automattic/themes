@@ -128,14 +128,18 @@
 
 	@include media(laptop) {
 		flex-flow: row wrap;
-		justify-content: flex-start;
+		justify-content: center;
 
-		.site-branding,
-		.main-navigation,
-		.social-navigation {
+		& > *:nth-child(1):nth-last-child(3),
+		& > *:nth-child(2):nth-last-child(2),
+		& > *:nth-child(3):nth-last-child(1) {
 			margin: 0 #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 			width: 33.3333%;
 			width: calc(33.3333% - #{map-deep-get($config-global, "spacing", "horizontal")})
+		}
+
+		& > *:nth-child(2):nth-last-child(2) {
+			order: 1;
 		}
 
 		.site-branding {
@@ -143,8 +147,6 @@
 		}
 
 		.main-navigation {
-			order: 1;
-
 			& > div > ul {
 				justify-content: flex-start;
 			}
