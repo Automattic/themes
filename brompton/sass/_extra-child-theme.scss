@@ -290,7 +290,54 @@ table,
 .wp-block-table {
 	td,
 	th {
-		border-color: map-deep-get($config-global, "color", "border", "default");
+		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+// Blog Posts Listing
+.a8c-posts-list {
+	text-align: center;
+
+	.a8c-posts-list-item__featured {
+		span {
+			border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
+			display: inline-block;
+			font-weight: 900;
+			text-transform: uppercase;
+		}
+	}
+
+	.a8c-posts-list-item__title {
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: #{map-deep-get($config-global, "color", "primary", "default")};
+			}
+		}
+	}
+
+	.a8c-posts-list-item__meta {
+		a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: #{map-deep-get($config-global, "color", "primary", "default")};
+			}
+		}
+	}
+
+	.a8c-posts-list-item__excerpt {
+		text-align: left;
+	}
+
+	.a8c-posts-list__view-all {
+		text-decoration: none;
 	}
 }
 
