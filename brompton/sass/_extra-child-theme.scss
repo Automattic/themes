@@ -7,8 +7,7 @@
 #page {
 	position: relative;
 
-	&:before,
-	&:after {
+	&:before {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		border-top-left-radius: 200px;
 		border-top-right-radius: 200px;
@@ -18,23 +17,9 @@
 		left: 50%;
 		margin-left: -100px;
 		position: absolute;
-		top: -#{map-deep-get($config-global, "spacing", "vertical")};
+		top: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
 		width: 200px;
-	}
-
-	&:before {
 		z-index: 1;
-	}
-
-	&:after {
-		background: #{map-deep-get($config-global, "color", "primary", "default")};
-		border-top-left-radius: 210px;
-		border-top-right-radius: 210px;
-		height: 110px;
-		margin-left: -105px;
-		transform: translateY(-5px);
-		width: 210px;
-		z-index: -1;
 	}
 }
 
@@ -50,12 +35,11 @@
 	justify-content: space-between;
 	margin: #{2 * map-deep-get($config-global, "spacing", "vertical")} 0 #{map-deep-get($config-global, "spacing", "vertical")};
 	max-width: 100vw;
-	min-height: #{110 - map-deep-get($config-global, "spacing", "vertical")};
+	min-height: #{100 - map-deep-get($config-global, "spacing", "vertical")};
 	padding-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	position: relative;
 
-	&:before,
-	&:after {
+	&:before {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		border-bottom-left-radius: 200px;
 		border-bottom-right-radius: 200px;
@@ -65,19 +49,8 @@
 		left: 50%;
 		margin-left: -100px;
 		position: absolute;
-		bottom: -#{map-deep-get($config-global, "spacing", "vertical")};
+		bottom: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
 		width: 200px;
-	}
-
-	&:after {
-		background: #{map-deep-get($config-global, "color", "primary", "default")};
-		border-bottom-left-radius: 210px;
-		border-bottom-right-radius: 210px;
-		height: 110px;
-		margin-left: -105px;
-		transform: translateY(5px);
-		width: 210px;
-		z-index: -1;
 	}
 
 	a {
@@ -678,4 +651,22 @@ table,
     margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
     width: 100%;
   }
+}
+
+// Homepage, if first block is full-width
+.home.hide-homepage-title {
+	#masthead {
+		&:before {
+			z-index: 1;
+		}
+	}
+
+	.entry-content {
+		& > *:first-child {
+			&.alignfull {
+				margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+				position: relative;
+			}
+		}
+	}
 }
