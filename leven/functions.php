@@ -29,25 +29,25 @@ if ( ! function_exists( 'leven_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'leven' ),
 					'shortName' => __( 'S', 'leven' ),
-					'size'      => 19.5,
+					'size'      => 15,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'leven' ),
 					'shortName' => __( 'M', 'leven' ),
-					'size'      => 22,
+					'size'      => 18,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'leven' ),
 					'shortName' => __( 'L', 'leven' ),
-					'size'      => 36.5,
+					'size'      => 32,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'leven' ),
 					'shortName' => __( 'XL', 'leven' ),
-					'size'      => 49.5,
+					'size'      => 47.17,
 					'slug'      => 'huge',
 				),
 			)
@@ -60,12 +60,12 @@ if ( ! function_exists( 'leven_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'leven' ),
 					'slug'  => 'primary',
-					'color' => '#FF302C', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#FF302C',
 				),
 				array(
 					'name'  => __( 'Secondary', 'leven' ),
 					'slug'  => 'secondary',
-					'color' => '#1285CE', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#1285CE',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'leven' ),
