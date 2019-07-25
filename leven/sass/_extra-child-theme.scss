@@ -1,0 +1,82 @@
+/**
+ * Extra Child Theme Styles
+ */
+// @import "";
+
+html {
+	letter-spacing: -0.02em;
+}
+
+.has-small-font-size {
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+}
+
+a {
+	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image & {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+/**
+ * Mobile-Menu-Only
+ */
+
+.site-header {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"site-branding main-navigation"
+		" . social-navigation";
+
+	&:before,
+	&:after {
+		content: none;
+		display: none;
+	}
+
+	& > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.site-logo {
+		display: block;
+	}
+
+	.site-branding {
+		grid-area: site-branding;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex: 1 0 auto;
+
+		.site-description {
+			padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+		}
+	}
+
+	.main-navigation {
+		grid-area: main-navigation;
+		justify-self: end;
+
+		& > div > ul {
+			justify-content: flex-end;
+		}
+	}
+	.social-navigation {
+		grid-area: social-navigation;
+		justify-self: end;
+
+		& > div > ul {
+			justify-content: flex-end;
+		}
+	}
+}
