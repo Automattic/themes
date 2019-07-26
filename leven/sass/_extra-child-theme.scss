@@ -45,7 +45,7 @@ a {
 }
 
 .site-logo:not(:last-child) {
-	margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+	padding-bottom: (0.5 * map-deep-get($config-global, "spacing", "unit"));
 }
 
 /**
@@ -67,7 +67,7 @@ a {
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
-			"site-branding ."
+			"site-logo site-logo"
 			"site-branding main-navigation"
 			"site-branding social-navigation";
 
@@ -84,15 +84,17 @@ a {
 
 		.site-logo {
 			display: block;
+			grid-area: site-logo;
 		}
 
 		.site-branding {
-			align-self: auto;
+			align-self: baseline;
 			max-width: inherit;
 			grid-area: site-branding;
 		}
 
 		.main-navigation {
+			align-self: baseline;
 			grid-area: main-navigation;
 			justify-self: end;
 
@@ -100,9 +102,10 @@ a {
 				justify-content: flex-end;
 			}
 		}
+
 		.social-navigation {
 			grid-area: social-navigation;
-			justify-self: end;
+			justify-self: flex-end;
 
 			& > div > ul {
 				justify-content: flex-end;
