@@ -2160,7 +2160,7 @@ table th,
 	flex-wrap: wrap;
 	list-style: none;
 	max-width: none;
-	margin: 0 -16px;
+	margin: 0 -8px;
 	position: relative;
 	/* Sub-menus Flyout */
 }
@@ -2254,7 +2254,7 @@ table th,
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	font-weight: bold;
-	padding: 16px;
+	padding: 8px;
 }
 
 .main-navigation a:link, .main-navigation a:visited {
@@ -2273,8 +2273,8 @@ table th,
 }
 
 .main-navigation .sub-menu .menu-item a {
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .main-navigation .sub-menu .menu-item a::before {
@@ -2407,7 +2407,7 @@ table th,
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 0.82474rem;
 	font-weight: bold;
-	padding: 16px;
+	padding: 8px;
 	color: currentColor;
 }
 
@@ -3222,7 +3222,7 @@ p:not(.site-title) a:hover {
 }
 
 .site-logo:not(:last-child) {
-	margin-bottom: 16px;
+	padding-bottom: 8px;
 }
 
 /**
@@ -3240,7 +3240,7 @@ p:not(.site-title) a:hover {
 		grid-template-columns: auto;
 		grid-template-rows: auto;
 		grid-column-gap: 16px;
-		grid-template-areas: "site-branding ." "site-branding main-navigation" "site-branding social-navigation";
+		grid-template-areas: "site-logo site-logo" "site-branding main-navigation" "site-branding social-navigation";
 	}
 	.site-header:before, .site-header:after {
 		content: none;
@@ -3252,13 +3252,15 @@ p:not(.site-title) a:hover {
 	}
 	.site-header .site-logo {
 		display: block;
+		grid-area: site-logo;
 	}
 	.site-header .site-branding {
-		align-self: auto;
+		align-self: baseline;
 		max-width: inherit;
 		grid-area: site-branding;
 	}
 	.site-header .main-navigation {
+		align-self: baseline;
 		grid-area: main-navigation;
 		justify-self: end;
 	}
@@ -3267,7 +3269,7 @@ p:not(.site-title) a:hover {
 	}
 	.site-header .social-navigation {
 		grid-area: social-navigation;
-		justify-self: end;
+		justify-self: flex-end;
 	}
 	.site-header .social-navigation > div > ul {
 		justify-content: flex-end;
