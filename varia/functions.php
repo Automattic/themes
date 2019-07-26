@@ -175,6 +175,11 @@ if ( ! function_exists( 'varia_setup' ) ) :
 					'color' => '#767676',
 				),
 				array(
+					'name'  => __( 'Lighter Gray', 'varia' ),
+					'slug'  => 'foreground-lighter',
+					'color' => '#FAFAFA',
+				),
+				array(
 					'name'  => __( 'White', 'varia' ),
 					'slug'  => 'background',
 					'color' => '#FFFFFF',
