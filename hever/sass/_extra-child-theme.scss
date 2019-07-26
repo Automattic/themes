@@ -1,0 +1,191 @@
+/**
+ * Extra Child Theme Styles
+ */
+// @import "";
+
+a {
+	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+/**
+ * Mobile-Menu
+ */
+
+#masthead {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+
+	@extend %responsive-width-wide;
+}
+
+#toggle-menu {
+	position: absolute;
+	right: #{map-deep-get($config-global, "spacing", "unit")};
+	top: #{map-deep-get($config-global, "spacing", "unit")};
+}
+
+.site-branding {
+	max-width: calc(100% - 100px - #{map-deep-get($config-global, "spacing", "unit")});
+}
+
+.site-logo:not(:last-child) {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+
+@include media(mobile) {
+
+	#toggle-menu {
+		position: inherit;
+		right: auto;
+		top: auto;
+	}
+
+	.site-header {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-branding ."
+			"site-branding main-navigation"
+			"site-branding social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			display: block;
+		}
+
+		.site-branding {
+			align-self: auto;
+			max-width: inherit;
+			grid-area: site-branding;
+		}
+
+		.main-navigation {
+			grid-area: main-navigation;
+			justify-self: end;
+
+			& > div > ul {
+				justify-content: flex-end;
+
+				& > li {
+					margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+
+					& > a {
+						padding-bottom: 0;
+						padding-top: 0;
+					}
+				}
+			}
+		}
+		.social-navigation {
+			grid-area: social-navigation;
+			justify-self: end;
+
+			& > div > ul {
+				justify-content: flex-end;
+			}
+		}
+	}
+}
+
+/**
+ * Blocks
+ */
+
+// Cover & Hero block
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-coblocks-hero .wp-block-coblocks-hero__box {
+	& > * {
+		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Quote block
+.wp-block-quote {
+  p {
+    font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+  }
+}
+
+// Table block
+table,
+.wp-block-table {
+	td,
+	th {
+		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+/*
+.site-branding,
+.site-info,
+.main-navigation,
+.entry-header,
+.entry-footer,
+.page-title,
+.author-title,
+.comments-title,
+.comment-reply-title {
+	text-align: center;
+}
+
+.main-navigation > div {
+	text-align: left;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.main-navigation > div > ul,
+.social-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+*/
