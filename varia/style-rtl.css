@@ -992,16 +992,6 @@ figcaption {
 	padding: 0;
 }
 
-/* WP Stats */
-img#wpstats {
-	position: absolute;
-	opacity: 0;
-	right: 100%;
-	top: 100%;
-	height: 0;
-	width: 0;
-}
-
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
@@ -2824,6 +2814,17 @@ table th,
 
 .widget-area {
 	flex: 0 0 100%;
+}
+
+/* WP Stats */
+img#wpstats {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 0 !important;
+	width: 0 !important;
+	overflow: hidden;
 }
 
 /**
