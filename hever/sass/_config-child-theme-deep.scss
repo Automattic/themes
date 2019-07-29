@@ -300,7 +300,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "secondary"),
-				"size": map-deep-get($config-global, "font", "size", "sm"),
+				"size": map-deep-get($config-global, "font", "size", "xs"),
 			),
 		),
 	),
@@ -319,7 +319,7 @@ $config-header: (
 			"weight": bold,
 			"line-height": 1,
 		),
-		"link-padding": map-deep-get($config-global, "spacing", "unit"),
+		"link-padding": (0.5 * map-deep-get($config-global, "spacing", "unit")),
 	),
 
 	"social-nav": (
@@ -328,7 +328,7 @@ $config-header: (
 			"link": map-deep-get($config-global, "color", "foreground", "light"),
 			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
-		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
+		"link-padding": (0.5 * map-deep-get($config-global, "spacing", "unit")),
 	),
 );
 
