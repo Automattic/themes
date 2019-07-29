@@ -117,14 +117,24 @@ a {
 			& > div > ul > li.current-menu-item {
 
 				& > a {
-					//box-shadow: 0 2px 0 0 #{map-deep-get($config-global, "color", "primary", "default")};
-					//color: #{map-deep-get($config-global, "color", "background")};
 					text-decoration: underline;
 				}
 
 				& > ul {
 					box-shadow: none;
+					margin-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 					overflow: hidden;
+					padding-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+
+					&:before {
+						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid;
+						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						content: "";
+						display: block;
+						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+						width: #{map-deep-get($config-global, "spacing", "unit")};
+					}
 				}
 
 				& li {
@@ -262,7 +272,7 @@ article .entry-header .entry-title,
       display: none;
     }
   }
-	
+
   @include media(laptop) {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);

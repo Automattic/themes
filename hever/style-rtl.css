@@ -3307,7 +3307,20 @@ p:not(.site-title) a:hover {
 	.site-header .main-navigation > div > ul > li.focus > ul,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
+		margin-right: 8px;
 		overflow: hidden;
+		padding-top: 8px;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid;
+		border-right: 8px solid transparent;
+		border-left: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-right: 16px;
+		width: 16px;
 	}
 	.site-header .main-navigation > div > ul > li:hover li > a,
 	.site-header .main-navigation > div > ul > li.focus li > a,
@@ -3462,11 +3475,11 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 }
 
 @media only screen and (min-width: 1024px) {
+	.widget-area {
+		grid-template-columns: repeat(3, 1fr);
+	}
 	.widget-area > *:nth-child(3) {
 		margin-top: 0;
-	}
-	.widget-area .widget {
-		flex: 0 0 calc(33.3333% - 16px);
 	}
 }
 
