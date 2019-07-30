@@ -73,11 +73,15 @@ $config-global: (
 			"light": #666666, // must be accesible!
 			"dark": #474747, // must be accesible!
 		),
-		"background": #E8E4DD,
+		"background": (
+			"default": #E8E4DD,
+			"light": #CFCDC7, // must be accessible against foreground-default
+			"dark": #B9B6B2, // must be accessible against foreground-default
+		),
 		"border": (
-			"default": rgba(#000, 0.25),
-			"light": rgba(#000, 0.1),
-			"dark": rgba(#000, 0.5),
+			"default": #B9B6B2,
+			"light": #CFCDC7,
+			"dark": #8B8985,
 		),
 		"text-selection": #F1D6D0,
 		"black": black,
@@ -158,8 +162,8 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "background"),
-		"text-hover": map-deep-get($config-global, "color", "background"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
 		"background": map-deep-get($config-global, "color", "foreground", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "default"),
 	),
