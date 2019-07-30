@@ -83,15 +83,25 @@ if ( ! function_exists( 'leven_setup' ) ) :
 					'color' => '#767676',
 				),
 				array(
-					'name'  => __( 'White', 'leven' ),
-					'slug'  => 'background',
+					'name'  => __( 'Lighter Gray', 'varia' ),
+					'slug'  => 'background-dark',
+					'color' => '#DDDDDD',
+				),
+				array(
+					'name'  => __( 'White', 'varia' ),
+					'slug'  => 'background-light',
 					'color' => '#FFFFFF',
+				),
+				array(
+					'name'  => __( 'Subtle Gray', 'leven' ),
+					'slug'  => 'background',
+					'color' => '#F7F7F6',
 				),
 			)
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'leven_setup' );
+add_action( 'after_setup_theme', 'leven_setup', 12 );
 
 /**
  * Set the content width in pixels, based on the child-theme's design and stylesheet.
