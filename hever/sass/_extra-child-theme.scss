@@ -265,10 +265,14 @@ article .entry-header .entry-title,
   }
 }
 
-.singular .hentry .entry-content {
+.singular:not(.home.hide-homepage-title) .hentry .entry-content {
 	& > *:first-child {
 		&.alignfull {
-			margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+			margin-top: -#{0.666 * map-deep-get($config-global, "spacing", "vertical")};
+
+			@include media(mobile) {
+				margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+			}
 		}
 	}
 }
