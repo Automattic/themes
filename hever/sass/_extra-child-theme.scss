@@ -23,10 +23,10 @@ a {
  * Wide Header & Footer
  */
 #masthead,
-#colophon,
-.widget-area {
+#colophon {
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
 
 	@extend %responsive-width-wide;
 }
@@ -165,6 +165,14 @@ a {
 }
 
 /**
+ * Footer Menu
+ */
+.footer-navigation .footer-menu {
+	margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+	margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+}
+
+/**
  * Blocks
  */
 // Cover & Hero block
@@ -260,11 +268,11 @@ article .entry-header .entry-title,
  * Widgets
  */
 .widget-area {
-	border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
-	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	max-width: 100%;
+	width: 100%;
 
-  .widget-title,
-  .widgettitle {
+	.widget-title,
+	.widgettitle {
   	font-size: #{map-deep-get($config-global, "font", "size", "md")};
     margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
@@ -272,6 +280,10 @@ article .entry-header .entry-title,
       display: none;
     }
   }
+
+	@include media(mobile) {
+		padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
 
   @include media(laptop) {
 		display: grid;

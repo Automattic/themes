@@ -2924,8 +2924,7 @@ table th,
 .wp-block-group.alignwide .alignwide,
 .wp-block-group.alignwide .alignfull,
 .wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
-#colophon,
-.widget-area {
+#colophon {
 	margin-right: calc( -0.25 * ( 100vw - 100% ));
 	margin-left: calc( -0.25 * ( 100vw - 100% ));
 	width: calc( 100% + (0.25 * 2) * ( 100vw - 100% ));
@@ -2936,8 +2935,7 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
-	#colophon,
-	.widget-area {
+	#colophon {
 		margin-right: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
 		margin-left: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
 		width: calc( calc( 560px - 32px) + (0.25 * 2) * ( 100vw - calc( 560px - 32px) ));
@@ -2949,8 +2947,7 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
-	#colophon,
-	.widget-area {
+	#colophon {
 		margin-right: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
 		margin-left: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
 		width: calc( calc( 640px - 32px) + (0.25 * 2) * ( 100vw - calc( 640px - 32px) ));
@@ -2962,8 +2959,7 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
-	#colophon,
-	.widget-area {
+	#colophon {
 		margin-right: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
 		margin-left: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
 		width: calc( calc( 782px - 32px) + (0.25 * 2) * ( 100vw - calc( 782px - 32px) ));
@@ -2975,8 +2971,7 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
-	#colophon,
-	.widget-area {
+	#colophon {
 		margin-right: -128px;
 		margin-left: -128px;
 		width: calc(calc( 782px - 32px) + 256px);
@@ -2988,8 +2983,7 @@ table th,
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
 	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
-	#colophon,
-	.widget-area {
+	#colophon {
 		margin-right: -128px;
 		margin-left: -128px;
 		width: calc(calc( 782px - 32px) + 256px);
@@ -3224,10 +3218,10 @@ p:not(.site-title) a:hover {
  * Wide Header & Footer
  */
 #masthead,
-#colophon,
-.widget-area {
+#colophon {
 	margin-right: auto;
 	margin-left: auto;
+	position: relative;
 }
 
 /**
@@ -3348,6 +3342,11 @@ p:not(.site-title) a:hover {
 	}
 }
 
+.footer-navigation .footer-menu {
+	margin-right: -8px;
+	margin-left: -8px;
+}
+
 /**
  * Blocks
  */
@@ -3447,8 +3446,8 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
  * Widgets
  */
 .widget-area {
-	border-top: 1px solid #F8F8F8;
-	padding-top: 32px;
+	max-width: 100%;
+	width: 100%;
 }
 
 .widget-area .widget-title,
@@ -3460,6 +3459,12 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .widget-area .widget-title:empty,
 .widget-area .widgettitle:empty {
 	display: none;
+}
+
+@media only screen and (min-width: 560px) {
+	.widget-area {
+		padding-bottom: 32px;
+	}
 }
 
 @media only screen and (min-width: 782px) {
