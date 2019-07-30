@@ -97,6 +97,8 @@ a {
 
 			& > div > ul {
 				justify-content: flex-end;
+				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 
 				& > li {
 					margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
@@ -117,17 +119,16 @@ a {
 			& > div > ul > li.current-menu-item {
 
 				& > a {
-					text-decoration: underline;
+					color: #{map-deep-get($config-global, "color", "primary", "default")};
 				}
 
 				& > ul {
 					box-shadow: none;
-					margin-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 					overflow: hidden;
 					padding-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 
 					&:before {
-						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid;
+						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
 						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
 						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
 						content: "";
@@ -140,14 +141,14 @@ a {
 				& li {
 
 					& > a {
-						background: #{map-deep-get($config-global, "color", "foreground", "default")};
+						background: #{map-deep-get($config-global, "color", "primary", "default")};
 						color: #{map-deep-get($config-global, "color", "background")};
 					}
 
 					&:hover > a,
 					&.focus > a,
 					&.current-menu-item > a {
-						background: #{map-deep-get($config-global, "color", "primary", "default")};
+						background: #{map-deep-get($config-global, "color", "primary", "hover")};
 					}
 				}
 			}
@@ -156,11 +157,14 @@ a {
 		.social-navigation {
 			grid-area: social-navigation;
 			justify-self: flex-end;
-
-			& > div > ul {
-				justify-content: flex-end;
-			}
 		}
+	}
+}
+
+// Social Menu
+.social-navigation {
+	& > div > ul {
+		justify-content: flex-end;
 	}
 }
 
@@ -230,13 +234,18 @@ table,
 	}
 
 	&:after {
-		margin-bottom: 0;
 		margin-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		@include media(mobile) {
-			margin-bottom: 0;
 			margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
+	}
+}
+
+// Entry Meta
+.entry-header {
+	.entry-meta {
+		display: none;
 	}
 }
 
@@ -256,11 +265,27 @@ article .entry-header .entry-title,
   }
 }
 
-.page .hentry .entry-content {
+.singular .hentry .entry-content {
 	& > *:first-child {
 		&.alignfull {
-			margin-top: -#{map-deep-get($config-global, "spacing", "vertical")};
+			margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
+	}
+}
+
+/**
+ * Comments
+ */
+.comment {
+	.avatar {
+		border-radius: 50%;
+	}
+}
+
+.comment-respond {
+	.form-submit {
+		display: flex;
+		justify-content: flex-end;
 	}
 }
 
@@ -372,35 +397,3 @@ article .entry-header .entry-title,
     width: 100%;
   }
 }
-
-/*
-.site-branding,
-.site-info,
-.main-navigation,
-.entry-header,
-.entry-footer,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: left;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
-	display: flex;
-}
-
-.main-navigation > div > ul,
-.social-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
-}
-*/

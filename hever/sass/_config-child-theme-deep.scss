@@ -145,7 +145,7 @@ $config-elements: (
 		// Borders
 		"border": (
 			"width": 1px,
-			"radius": 3px,
+			"radius": map-deep-get($config-global, "border-radius", "sm"),
 		),
 
 		"padding": #{map-deep-get($config-global, "spacing", "unit")},
@@ -166,7 +166,7 @@ $config-button: (
 	// Fonts
 	"font": (
 		"family": map-deep-get($config-global, "font", "family", "ui"),
-		"size": map-deep-get($config-global, "font", "size", "md"),
+		"size": map-deep-get($config-global, "font", "size", "base"),
 		"weight": bold,
 		"line-height": 1,
 	),
@@ -176,7 +176,7 @@ $config-button: (
 	// Padding
 	"padding": (
 		"vertical": map-deep-get($config-global, "spacing", "unit"),
-		"horizontal": map-deep-get($config-global, "spacing", "unit"),
+		"horizontal": #{1.5 * map-deep-get($config-global, "spacing", "unit")},
 	),
 );
 
