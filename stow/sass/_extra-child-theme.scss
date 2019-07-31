@@ -133,6 +133,7 @@ a {
 					}
 				}
 				@include media(mobile) {
+					padding-left: 0;
 					list-style-type: disc;
 					&.current-menu-item {
 						a {
@@ -141,6 +142,7 @@ a {
 					}
 					a {
 						color: #{map-deep-get($config-global, "color", "white")};
+						font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 						&:hover {
 							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
 						}
@@ -197,7 +199,11 @@ a {
 			&:visited {
 				text-decoration: none;
 			}
+			@include media(mobile) {
+				display: none;
+			}
 		}
+		
 		
 	}
 }
