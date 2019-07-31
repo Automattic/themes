@@ -199,6 +199,8 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * 7.3. Hero Block and Cover Block
  * 7.4. File Block
  * 7.5. Latest Comments Block
+ * 7.6. Button Block
+ * 7.7. Posts List Block
  * 8. Widgets
  */
 /**
@@ -288,11 +290,6 @@ a {
 /**
  * 4. Navigation Menu
  */
-#site-navigation {
-	background-color: #f25f70;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-}
-
 #site-navigation.main-navigation ul li {
 	padding-right: 16px;
 }
@@ -312,6 +309,7 @@ a {
 
 @media only screen and (min-width: 560px) {
 	#site-navigation.main-navigation ul li {
+		padding-right: 0;
 		list-style-type: disc;
 	}
 	#site-navigation.main-navigation ul li.current-menu-item a {
@@ -351,27 +349,22 @@ a {
 		content: "";
 	}
 	#site-navigation.main-navigation ul ul li a:hover {
-		color: #e1122a;
+		color: #f25f70;
 	}
 	#site-navigation.main-navigation ul ul li:hover {
 		background: #f2f2f2;
 	}
 }
 
+#site-navigation.main-navigation .menu-main-menu-container {
+	background-color: #f25f70;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
 #site-navigation.main-navigation #toggle-menu {
-	display: block;
+	border-radius: 0;
+	width: 100% !important;
 	text-align: center;
-	text-decoration: none;
-}
-
-#site-navigation.main-navigation #toggle-menu:hover, #site-navigation.main-navigation #toggle-menu:focus, #site-navigation.main-navigation #toggle-menu:visited {
-	text-decoration: none;
-}
-
-@media only screen and (min-width: 560px) {
-	#site-navigation.main-navigation #toggle-menu {
-		display: none;
-	}
 }
 
 /**
@@ -405,24 +398,6 @@ a {
 .wp-block-coblocks-column h5,
 .wp-block-coblocks-column h6 {
 	margin-bottom: .857em;
-}
-
-.wp-block-coblocks-column h1::before,
-.wp-block-coblocks-column h2::before,
-.wp-block-coblocks-column h3::before,
-.wp-block-coblocks-column h4::before,
-.wp-block-coblocks-column h5::before,
-.wp-block-coblocks-column h6::before {
-	content: " - ";
-}
-
-.wp-block-coblocks-column h1::after,
-.wp-block-coblocks-column h2::after,
-.wp-block-coblocks-column h3::after,
-.wp-block-coblocks-column h4::after,
-.wp-block-coblocks-column h5::after,
-.wp-block-coblocks-column h6::after {
-	content: " - ";
 }
 
 .wp-block-coblocks-column a {
@@ -489,12 +464,13 @@ a {
  * 7.4. File Block
  */
 .wp-block-file a.wp-block-file__button {
+	text-transform: uppercase;
 	line-height: 1;
 	color: #f0f0f0;
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2rem;
+	font-size: 0.69444rem;
 	background-color: #f25f70;
 	border-radius: 9px;
 	border-width: 2px;
@@ -520,6 +496,20 @@ a {
 }
 
 /**
+ * 7.6. Button Block
+ */
+.wp-block-button a.wp-block-button__link {
+	text-transform: uppercase;
+}
+
+/**
+ * 7.7. Posts List Block
+ */
+.a8c-posts-list a.a8c-posts-list__view-all {
+	text-transform: uppercase;
+}
+
+/**
  * 8. Widgets
  */
 .site-footer .widget-area {
@@ -536,14 +526,6 @@ a {
 
 .site-footer .widget-area .widget-title {
 	margin-bottom: .857em;
-}
-
-.site-footer .widget-area .widget-title::before {
-	content: " - ";
-}
-
-.site-footer .widget-area .widget-title::after {
-	content: " - ";
 }
 
 .home.page .site-main {
@@ -989,7 +971,7 @@ a {
 }
 
 a:hover {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 button,
@@ -1366,7 +1348,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: #444444;
-	border-color: #e1122a;
+	border-color: #f25f70;
 }
 
 select {
@@ -1452,7 +1434,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2rem;
+	font-size: 0.69444rem;
 	background-color: #f25f70;
 	border-radius: 9px;
 	border-width: 0;
@@ -2047,7 +2029,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__meta a:hover, .a8c-posts-list__item .a8c-posts-list-item__meta a:active {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__edit-link {
@@ -2467,7 +2449,7 @@ table th,
 }
 
 .site-title a:hover {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 .site-description {
@@ -2494,7 +2476,7 @@ table th,
 }
 
 .main-navigation #toggle:focus + #toggle-menu {
-	background-color: #e1122a;
+	background-color: #f25f70;
 	outline: inherit;
 	text-decoration: underline;
 }
@@ -2630,7 +2612,7 @@ table th,
 }
 
 .main-navigation a:hover {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 .main-navigation .sub-menu {
@@ -2686,7 +2668,7 @@ table th,
 }
 
 .social-navigation a:hover {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 .social-navigation svg {
@@ -2832,7 +2814,7 @@ table th,
 .entry-meta a:hover, .entry-meta a:active,
 .entry-footer a:hover,
 .entry-footer a:active {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 .entry-meta .svg-icon,
@@ -3076,7 +3058,7 @@ table th,
 }
 
 .comment-meta .comment-metadata a:hover, .comment-meta .comment-metadata a:active {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 @media only screen and (min-width: 560px) {
@@ -3501,6 +3483,8 @@ table th,
  * 7.3. Hero Block and Cover Block
  * 7.4. File Block
  * 7.5. Latest Comments Block
+ * 7.6. Button Block
+ * 7.7. Posts List Block
  * 8. Widgets
  */
 /**
@@ -3590,11 +3574,6 @@ a {
 /**
  * 4. Navigation Menu
  */
-#site-navigation {
-	background-color: #f25f70;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-}
-
 #site-navigation.main-navigation ul li {
 	padding-right: 16px;
 }
@@ -3614,6 +3593,7 @@ a {
 
 @media only screen and (min-width: 560px) {
 	#site-navigation.main-navigation ul li {
+		padding-right: 0;
 		list-style-type: disc;
 	}
 	#site-navigation.main-navigation ul li.current-menu-item a {
@@ -3653,27 +3633,22 @@ a {
 		content: "";
 	}
 	#site-navigation.main-navigation ul ul li a:hover {
-		color: #e1122a;
+		color: #f25f70;
 	}
 	#site-navigation.main-navigation ul ul li:hover {
 		background: #f2f2f2;
 	}
 }
 
+#site-navigation.main-navigation .menu-main-menu-container {
+	background-color: #f25f70;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
 #site-navigation.main-navigation #toggle-menu {
-	display: block;
+	border-radius: 0;
+	width: 100% !important;
 	text-align: center;
-	text-decoration: none;
-}
-
-#site-navigation.main-navigation #toggle-menu:hover, #site-navigation.main-navigation #toggle-menu:focus, #site-navigation.main-navigation #toggle-menu:visited {
-	text-decoration: none;
-}
-
-@media only screen and (min-width: 560px) {
-	#site-navigation.main-navigation #toggle-menu {
-		display: none;
-	}
 }
 
 /**
@@ -3707,24 +3682,6 @@ a {
 .wp-block-coblocks-column h5,
 .wp-block-coblocks-column h6 {
 	margin-bottom: .857em;
-}
-
-.wp-block-coblocks-column h1::before,
-.wp-block-coblocks-column h2::before,
-.wp-block-coblocks-column h3::before,
-.wp-block-coblocks-column h4::before,
-.wp-block-coblocks-column h5::before,
-.wp-block-coblocks-column h6::before {
-	content: " - ";
-}
-
-.wp-block-coblocks-column h1::after,
-.wp-block-coblocks-column h2::after,
-.wp-block-coblocks-column h3::after,
-.wp-block-coblocks-column h4::after,
-.wp-block-coblocks-column h5::after,
-.wp-block-coblocks-column h6::after {
-	content: " - ";
 }
 
 .wp-block-coblocks-column a {
@@ -3791,12 +3748,13 @@ a {
  * 7.4. File Block
  */
 .wp-block-file a.wp-block-file__button {
+	text-transform: uppercase;
 	line-height: 1;
 	color: #f0f0f0;
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2rem;
+	font-size: 0.69444rem;
 	background-color: #f25f70;
 	border-radius: 9px;
 	border-width: 2px;
@@ -3822,6 +3780,20 @@ a {
 }
 
 /**
+ * 7.6. Button Block
+ */
+.wp-block-button a.wp-block-button__link {
+	text-transform: uppercase;
+}
+
+/**
+ * 7.7. Posts List Block
+ */
+.a8c-posts-list a.a8c-posts-list__view-all {
+	text-transform: uppercase;
+}
+
+/**
  * 8. Widgets
  */
 .site-footer .widget-area {
@@ -3838,14 +3810,6 @@ a {
 
 .site-footer .widget-area .widget-title {
 	margin-bottom: .857em;
-}
-
-.site-footer .widget-area .widget-title::before {
-	content: " - ";
-}
-
-.site-footer .widget-area .widget-title::after {
-	content: " - ";
 }
 
 .home.page .site-main {

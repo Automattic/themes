@@ -60,12 +60,12 @@ if ( ! function_exists( 'stow_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'stow' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#0000FF', 
 				),
 				array(
 					'name'  => __( 'Secondary', 'stow' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => '#f25f70', 
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'stow' ),
@@ -91,7 +91,7 @@ if ( ! function_exists( 'stow_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'stow_setup' );
+add_action( 'after_setup_theme', 'stow_setup', 12 );
 
 /**
  * Set the content width in pixels, based on the child-theme's design and stylesheet.

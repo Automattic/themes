@@ -192,7 +192,7 @@ a {
 }
 
 a:hover {
-	color: #e1122a;
+	color: #f25f70;
 }
 
 button,
@@ -307,7 +307,7 @@ object {
 	color: #f0f0f0;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2em;
+	font-size: 0.69444em;
 	line-height: 1;
 	background-color: #f25f70;
 	border-radius: 9px;
@@ -718,7 +718,8 @@ table th,
  * 2.2. Quote Block
  * 2.3. Hero Block and Cover Block
  * 2.4. File Block
- * 7.5. Pre Block and Verse Block
+ * 2.5. Pre Block and Verse Block
+ * 2.6. Button Block
  */
 .editor-post-title__input {
 	text-align: center;
@@ -749,24 +750,6 @@ a {
 .wp-block-coblocks-column h5,
 .wp-block-coblocks-column h6 {
 	margin-bottom: .857em;
-}
-
-.wp-block-coblocks-column h1::before,
-.wp-block-coblocks-column h2::before,
-.wp-block-coblocks-column h3::before,
-.wp-block-coblocks-column h4::before,
-.wp-block-coblocks-column h5::before,
-.wp-block-coblocks-column h6::before {
-	content: " - ";
-}
-
-.wp-block-coblocks-column h1::after,
-.wp-block-coblocks-column h2::after,
-.wp-block-coblocks-column h3::after,
-.wp-block-coblocks-column h4::after,
-.wp-block-coblocks-column h5::after,
-.wp-block-coblocks-column h6::after {
-	content: " - ";
 }
 
 .wp-block-coblocks-column a {
@@ -833,12 +816,13 @@ a {
  * 2.4. File Block
  */
 .wp-block-file div.wp-block-file__button {
+	text-transform: uppercase;
 	line-height: 1;
 	color: #f0f0f0;
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2rem;
+	font-size: 0.69444rem;
 	background-color: #f25f70;
 	border-radius: 9px;
 	border-width: 2px;
@@ -858,4 +842,11 @@ a {
 .wp-block-preformatted pre,
 .wp-block-verse pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
+}
+
+/**
+ * 2.6. Button Block
+ */
+.wp-block-button div.wp-block-button__link {
+	text-transform: uppercase;
 }

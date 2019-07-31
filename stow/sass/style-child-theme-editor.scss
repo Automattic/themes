@@ -42,7 +42,8 @@
  * 2.2. Quote Block
  * 2.3. Hero Block and Cover Block
  * 2.4. File Block
- * 7.5. Pre Block and Verse Block
+ * 2.5. Pre Block and Verse Block
+ * 2.6. Button Block
  */
 
 .editor-post-title__input {
@@ -76,12 +77,6 @@ a {
 	h5, 
 	h6 {
 		margin-bottom: .857em;
-		&::before {
-			content: " - ";
-		}
-		&::after {
-			content: " - ";
-		}
 	}
 	a {
 		color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -134,6 +129,7 @@ a {
 .wp-block-file {
 	div {
 		&.wp-block-file__button {
+			text-transform: uppercase;
 			line-height: #{map-deep-get($config-button, "font", "line-height")};
 			color: #{map-deep-get($config-button, "color", "text")};
 			cursor: pointer;
@@ -163,5 +159,16 @@ a {
 .wp-block-verse {
 	pre {
 		font-family: #{map-deep-get($config-global, "font", "family", "code")};
+	}
+}
+
+/**
+ * 2.6. Button Block
+ */
+ .wp-block-button {
+	div {
+		&.wp-block-button__link {
+			text-transform: uppercase;
+		}
 	}
 }

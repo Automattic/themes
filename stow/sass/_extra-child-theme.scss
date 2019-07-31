@@ -13,6 +13,8 @@
  * 7.3. Hero Block and Cover Block
  * 7.4. File Block
  * 7.5. Latest Comments Block
+ * 7.6. Button Block
+ * 7.7. Posts List Block
  * 8. Widgets
  */
 
@@ -114,8 +116,6 @@ a {
  * 4. Navigation Menu
  */
 #site-navigation {
-	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
-	border-bottom: 2px solid rgba(0,0,0,.15);
 	&.main-navigation {
 		ul {
 			li {
@@ -187,24 +187,17 @@ a {
 						}
 					}
 				}
-			}
+			}			
 		}
-		
+		.menu-main-menu-container {
+			background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
+			border-bottom: 2px solid rgba(0,0,0,.15);
+		}
 		#toggle-menu {
-			display: block;
+			border-radius: 0;
+			width: 100% !important;
 			text-align: center;
-			text-decoration: none;
-			&:hover, 
-			&:focus,
-			&:visited {
-				text-decoration: none;
-			}
-			@include media(mobile) {
-				display: none;
-			}
 		}
-		
-		
 	}
 }
 
@@ -246,12 +239,6 @@ a {
 	h5, 
 	h6 {
 		margin-bottom: .857em;
-		&::before {
-			content: " - ";
-		}
-		&::after {
-			content: " - ";
-		}
 	}
 	a {
 		color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -304,6 +291,7 @@ a {
 .wp-block-file {
 	a {
 		&.wp-block-file__button {
+			text-transform: uppercase;
 			line-height: #{map-deep-get($config-button, "font", "line-height")};
 			color: #{map-deep-get($config-button, "color", "text")};
 			cursor: pointer;
@@ -339,6 +327,28 @@ a {
 }
 
 /**
+ * 7.6. Button Block
+ */
+ .wp-block-button {
+	a {
+		&.wp-block-button__link {
+			text-transform: uppercase;
+		}
+	}
+}
+
+/**
+ * 7.7. Posts List Block
+ */
+.a8c-posts-list {
+	a {
+		&.a8c-posts-list__view-all {
+			text-transform: uppercase;
+		}
+	}
+}
+
+/**
  * 8. Widgets
  */
 .site-footer {
@@ -352,12 +362,6 @@ a {
 		}
 		.widget-title {
 			margin-bottom: .857em;
-			&::before {
-				content: " - ";
-			}
-			&::after {
-				content: " - ";
-			}
 		}
 	}
 }
