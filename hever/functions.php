@@ -83,6 +83,16 @@ if ( ! function_exists( 'hever_setup' ) ) :
 					'color' => '#757575',
 				),
 				array(
+					'name'  => __( 'Lighter Gray', 'varia' ),
+					'slug'  => 'background-dark',
+					'color' => '#C5C5C5',
+				),
+				array(
+					'name'  => __( 'Subtle Gray', 'varia' ),
+					'slug'  => 'background-light',
+					'color' => '#F8F8F8',
+				),
+				array(
 					'name'  => __( 'White', 'hever' ),
 					'slug'  => 'background',
 					'color' => '#FFFFFF',
