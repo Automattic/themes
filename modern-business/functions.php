@@ -122,7 +122,7 @@ require get_stylesheet_directory() . '/inc/wpcom.php';
 require get_stylesheet_directory() . '/inc/fse-template-data.php';
 
 function a8c_fse_insert_theme_template_data() {
-	$data_inserter = new A8C_WP_Template_Data_Inserter();
+	$data_inserter = new A8C_WP_Templates_Data_Inserter();
 	$data_inserter->insert_default_template_data();
 }
 
