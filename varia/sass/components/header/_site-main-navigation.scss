@@ -62,7 +62,7 @@
 		flex-wrap: wrap;
 		list-style: none;
 		max-width: none;
-		margin: 0 #{-1 * map-deep-get($config-global, "spacing", "unit")};
+		margin: 0 #{-1 * map-deep-get($config-header, "main-nav", "link-padding")};
 		position: relative;
 
 		li {
@@ -107,7 +107,7 @@
 			position: relative;
 
 			@include media(mobile) {
-				background: map-deep-get($config-global, "color", "background");
+				background: map-deep-get($config-global, "color", "background", "default");
 				box-shadow: map-deep-get($config-global, "elevation", "4dp");
 				left: 0;
 				top: 100%;

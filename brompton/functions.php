@@ -92,7 +92,17 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 					'color' => '#666666',
 				),
 				array(
-					'name'  => __( 'Ivory', 'brompton' ),
+					'name'  => __( 'Dark Ivory', 'varia' ),
+					'slug'  => 'background-dark',
+					'color' => '#B9B6B2',
+				),
+				array(
+					'name'  => __( 'Ivory', 'varia' ),
+					'slug'  => 'background-light',
+					'color' => '#CFCDC7',
+				),
+				array(
+					'name'  => __( 'Light Ivory', 'brompton' ),
 					'slug'  => 'background',
 					'color' => '#E8E4DD',
 				),

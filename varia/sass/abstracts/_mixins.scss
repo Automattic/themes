@@ -5,7 +5,7 @@
 @mixin media( $res ) {
 
 	@if mobile-only == $res {
-		@media only screen and (max-width: calc(map-deep-get($config-global, "breakpoint", "sm") - 1)) {
+		@media only screen and (max-width: #{map-deep-get($config-global, "breakpoint", "sm") - 1}) {
 			@content;
 		}
 	}
@@ -77,9 +77,9 @@
  * Align container widths
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
-@mixin align-container-width( $width: 100%, $multiplier: "2", $columns: "12" ) {
-	max-width: calc( #{$width} - (#{$multiplier} * ( #{$width} / #{$columns} )));
-	width: calc( #{$width} - (#{$multiplier} * ( #{$width} / #{$columns} )));
+@mixin align-container-width( $width: 100% ) {
+	max-width: calc( #{$width} );
+	width: calc( #{$width} );
 }
 
 /**

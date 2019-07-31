@@ -1,0 +1,115 @@
+/**
+ * Extra Child Theme Styles
+ */
+
+html {
+	letter-spacing: -0.02em;
+}
+
+.has-small-font-size {
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+}
+
+a {
+	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+/**
+ * Mobile-Menu
+ */
+
+#masthead {
+	position: relative;
+}
+
+#toggle-menu {
+	position: absolute;
+	right: #{map-deep-get($config-global, "spacing", "unit")};
+	top: #{map-deep-get($config-global, "spacing", "unit")};
+}
+
+.site-branding {
+	max-width: calc(100% - 100px - #{map-deep-get($config-global, "spacing", "unit")});
+}
+
+.site-logo:not(:last-child) {
+	padding-bottom: (0.5 * map-deep-get($config-global, "spacing", "unit"));
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+
+@include media(mobile) {
+
+	#toggle-menu {
+		position: inherit;
+		right: auto;
+		top: auto;
+	}
+
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-logo site-logo"
+			"site-branding main-navigation"
+			"site-branding social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			display: block;
+			grid-area: site-logo;
+		}
+
+		.site-branding {
+			align-self: baseline;
+			max-width: inherit;
+			grid-area: site-branding;
+		}
+
+		.main-navigation {
+			align-self: baseline;
+			grid-area: main-navigation;
+			justify-self: end;
+
+			& > div > ul {
+				justify-content: flex-end;
+			}
+		}
+
+		.social-navigation {
+			grid-area: social-navigation;
+			justify-self: flex-end;
+
+			& > div > ul {
+				justify-content: flex-end;
+			}
+		}
+	}
+}

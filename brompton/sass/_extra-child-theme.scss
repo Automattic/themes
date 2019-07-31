@@ -3,6 +3,26 @@
  */
 // @import "";
 
+// Pgae
+#page {
+	position: relative;
+
+	&:before {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-top-left-radius: 200px;
+		border-top-right-radius: 200px;
+		content: "";
+		display: block;
+		height: 100px;
+		left: 50%;
+		margin-left: -100px;
+		position: absolute;
+		top: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
+		width: 200px;
+		z-index: 1;
+	}
+}
+
 // Header
 #masthead {
 	align-content: center;
@@ -13,36 +33,24 @@
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: space-between;
-	margin-top: #{5 + map-deep-get($config-global, "spacing", "vertical")};
+	margin: #{2 * map-deep-get($config-global, "spacing", "vertical")} 0 #{map-deep-get($config-global, "spacing", "vertical")};
 	max-width: 100vw;
-	min-height: #{110 - map-deep-get($config-global, "spacing", "vertical")};
+	min-height: #{100 - map-deep-get($config-global, "spacing", "vertical")};
 	padding-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	position: relative;
 
-	&:before,
-	&:after {
+	&:before {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
-		border-top-left-radius: 200px;
-		border-top-right-radius: 200px;
+		border-bottom-left-radius: 200px;
+		border-bottom-right-radius: 200px;
 		content: "";
 		display: block;
 		height: 100px;
 		left: 50%;
 		margin-left: -100px;
 		position: absolute;
-		top: -#{map-deep-get($config-global, "spacing", "vertical")};
+		bottom: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
 		width: 200px;
-	}
-
-	&:after {
-		background: #{map-deep-get($config-global, "color", "primary", "default")};
-		border-top-left-radius: 210px;
-		border-top-right-radius: 210px;
-		height: 110px;
-		margin-left: -105px;
-		transform: translateY(-5px);
-		width: 210px;
-		z-index: -1;
 	}
 
 	a {
@@ -68,6 +76,7 @@
 		order: 3;
 		position: relative;
 		text-align: center;
+		z-index: 2;
 
 		& > div > ul {
 			text-align: left;
@@ -77,6 +86,7 @@
 	.social-navigation {
 		order: 2;
 		position: relative;
+		z-index: 2;
 	}
 
   @include media(mobile) {
@@ -91,13 +101,19 @@
 
 	@include media(laptop) {
 		flex-flow: row wrap;
+		justify-content: center;
 
-		.site-branding,
-		.main-navigation,
-		.social-navigation {
+		& > *:nth-child(1):nth-last-child(3),
+		& > *:nth-child(2):nth-last-child(2),
+		& > *:nth-child(3):nth-last-child(1) {
 			margin: 0;
-			width: 33.3333%;
+			padding: 0 #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+			width: 30%;
 			width: calc(33.3333% - #{map-deep-get($config-global, "spacing", "horizontal")})
+		}
+
+		& > *:nth-child(2):nth-last-child(2) {
+			order: 1;
 		}
 
 		.site-branding {
@@ -105,8 +121,6 @@
 		}
 
 		.main-navigation {
-			order: 1;
-
 			& > div > ul {
 				justify-content: flex-start;
 			}
@@ -188,11 +202,6 @@
 	justify-content: center;
 }
 
-// Main
-#main {
-	padding-top: 0;
-}
-
 // Hentry
 .entry-header {
 	.entry-meta {
@@ -205,10 +214,6 @@
 		font-weight: 900;
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		text-transform: uppercase;
-
-		@include media(mobile) {
-			margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		}
 
 		& + .entry-title {
 			margin-top: 0;
@@ -237,7 +242,8 @@
 }
 
 article .entry-header .entry-title,
-.page-title {
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title {
 	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 
   a {
@@ -250,10 +256,6 @@ article .entry-header .entry-title,
       color: #{map-deep-get($config-global, "color", "primary", "default")};
     }
   }
-
-	@include media(mobile) {
-		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-	}
 }
 
 // Cover & Hero block
@@ -299,24 +301,17 @@ table,
 	text-align: center;
 
 	.a8c-posts-list-item__featured {
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
 		span {
 			border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
 			display: inline-block;
 			font-weight: 900;
 			text-transform: uppercase;
 		}
-	}
 
-	.a8c-posts-list-item__title {
-		a {
-			color: inherit;
-			text-decoration: none;
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: #{map-deep-get($config-global, "color", "primary", "default")};
-			}
+		& + .a8c-posts-list-item__title {
+			margin-top: 0;
 		}
 	}
 
@@ -374,28 +369,29 @@ table,
 .post-navigation {
 	border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
 	margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
 
 	a {
-		color: map-deep-get($config-global, "color", "foreground", "default");
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		text-decoration: none;
 
 		&:active,
 		&:hover,
 		&:focus {
-			color: map-deep-get($config-global, "color", "primary", "default");
+			color: #{map-deep-get($config-global, "color", "primary", "default")};
 		}
 	}
 
 	.meta-nav {
-		//color: map-deep-get($config-global, "color", "foreground", "light");
-    //font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-weight: 900;
 		text-transform: uppercase;
 	}
 
 	.post-title {
-		font-family: inherit;
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};;
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: normal;
 	}
@@ -404,17 +400,14 @@ table,
 // Footer
 #colophon {
 	flex-direction: column;
-	padding-bottom: #{5 + map-deep-get($config-global, "spacing", "vertical")};
+	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 
 	.site-info {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		border-bottom: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
 		border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
 		font-weight: 900;
-		min-height: #{110 - map-deep-get($config-global, "spacing", "vertical")};
 		padding: #{map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
-		position: relative;
-		text-transform: uppercase;
 		@extend %responsive-width-full;
 
 		@include media(tablet) {
@@ -428,36 +421,6 @@ table,
 		.site-name {
 			font-weight: inherit;
 		}
-
-		& > * {
-			position: relative;
-		}
-
-		&:before,
-		&:after {
-			background: #{map-deep-get($config-global, "color", "foreground", "default")};
-			border-bottom-left-radius: 200px;
-			border-bottom-right-radius: 200px;
-			content: "";
-			display: block;
-			height: 100px;
-			left: 50%;
-			margin-left: -100px;
-			position: absolute;
-			bottom: -#{map-deep-get($config-global, "spacing", "vertical")};
-			width: 200px;
-		}
-
-		&:after {
-			background: #{map-deep-get($config-global, "color", "primary", "default")};
-			border-bottom-left-radius: 210px;
-			border-bottom-right-radius: 210px;
-			height: 110px;
-			margin-left: -105px;
-			transform: translateY(5px);
-			width: 210px;
-			z-index: -1;
-		}
 	}
 
 	.footer-navigation {
@@ -466,10 +429,8 @@ table,
 		display: block;
 		margin-bottom: 0;
 		padding: #{0.5 * map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
-		position: relative;
 		text-align: center;
 		text-transform: uppercase;
-		z-index: 1;
 
 		@extend %responsive-width-full;
 
@@ -489,7 +450,6 @@ table,
 		& + .site-info {
 			border-top: 0;
 			margin-top: 0;
-			min-height: 0;
 			padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")} #{0.666 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 
@@ -598,6 +558,7 @@ table,
 .widget-area {
 	border-top: 1px solid map-deep-get($config-global, "color", "border", "light");
 	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	width: 100%;
 
   .widget-title,
   .widgettitle {
@@ -691,4 +652,22 @@ table,
     margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
     width: 100%;
   }
+}
+
+// Homepage, if first block is full-width
+.home.hide-homepage-title {
+	#masthead {
+		&:before {
+			z-index: 1;
+		}
+	}
+
+	.entry-content {
+		& > *:first-child {
+			&.alignfull {
+				margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+				position: relative;
+			}
+		}
+	}
 }
