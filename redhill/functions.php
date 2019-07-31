@@ -91,6 +91,16 @@
 					'color' => '#666666',
 				),
 				array(
+					'name'  => __( 'Lighter Gray', 'varia' ),
+					'slug'  => 'background-dark',
+					'color' => '#DDDDDD',
+				),
+				array(
+					'name'  => __( 'Subtle Gray', 'varia' ),
+					'slug'  => 'background-light',
+					'color' => '#FAFAFA',
+				),
+				array(
 					'name'  => __( 'White', 'redhill' ),
 					'slug'  => 'background',
 					'color' => '#FFFFFF',

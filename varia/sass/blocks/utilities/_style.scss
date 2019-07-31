@@ -76,8 +76,16 @@
 	color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
 }
 
+.has-background-light-color[class] {
+	color: #{map-deep-get($config-global, "color", "background", "light")} !important;
+}
+
+.has-background-dark-color[class] {
+	color: #{map-deep-get($config-global, "color", "background", "dark")} !important;
+}
+
 .has-background-color[class] {
-	color: #{map-deep-get($config-global, "color", "background")} !important;
+	color: #{map-deep-get($config-global, "color", "background", "default")} !important;
 }
 
 // Gutenberg background-color options
@@ -85,7 +93,7 @@
 
 .has-primary-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")} !important;
-	color: #{map-deep-get($config-global, "color", "background")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
 	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;
 	}
@@ -93,7 +101,7 @@
 
 .has-secondary-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "secondary", "default")} !important;
-	color: #{map-deep-get($config-global, "color", "background")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
 	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;
 	}
@@ -101,7 +109,7 @@
 
 .has-foreground-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "default")} !important;
-	color: #{map-deep-get($config-global, "color", "background")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
 	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;
 	}
@@ -109,7 +117,7 @@
 
 .has-foreground-light-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "light")} !important;
-	color: #{map-deep-get($config-global, "color", "background")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
 	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;
 	}
@@ -117,14 +125,30 @@
 
 .has-foreground-dark-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
-	color: #{map-deep-get($config-global, "color", "background")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-background-light-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "background", "light")} !important;
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	p, h1, h2, h3, h4, h5, h6 {
+		color: currentColor;
+	}
+}
+
+.has-background-dark-background-color[class] {
+	background-color: #{map-deep-get($config-global, "color", "background", "dark")} !important;
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;
 	}
 }
 
 .has-background-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "background")} !important;
+	background-color: #{map-deep-get($config-global, "color", "background", "default")} !important;
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;

@@ -16,7 +16,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Varia is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
+Bromtpon is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -970,7 +970,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #252E36;
-	border: 1px solid rgba(0, 0, 0, 0.25);
+	border: 1px solid #B9B6B2;
 	border-radius: 3px;
 	padding: 16px;
 }
@@ -996,7 +996,7 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid rgba(0, 0, 0, 0.25);
+	border: 1px solid #B9B6B2;
 }
 
 textarea {
@@ -1155,7 +1155,7 @@ input.has-focus[type="submit"],
 	color: #252E36;
 	font-size: 0.83333rem;
 	padding: 16px;
-	border-color: rgba(0, 0, 0, 0.25);
+	border-color: #B9B6B2;
 }
 
 .wp-block-code pre {
@@ -1694,9 +1694,9 @@ p.has-background:not(.has-background-background-color) a {
 	margin-left: 0;
 	margin-right: 0;
 	text-align: center;
-	border-top-color: rgba(0, 0, 0, 0.25);
+	border-top-color: #B9B6B2;
 	border-top-width: 5px;
-	border-bottom-color: rgba(0, 0, 0, 0.25);
+	border-bottom-color: #B9B6B2;
 	border-bottom-width: 5px;
 	color: #252E36;
 	/**
@@ -1822,7 +1822,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-separator,
 hr {
-	border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+	border-bottom: 2px solid #B9B6B2;
 	clear: both;
 	margin-left: auto;
 	margin-right: auto;
@@ -1838,7 +1838,7 @@ hr.is-style-wide {
 
 .wp-block-separator.is-style-dots:before,
 hr.is-style-dots:before {
-	color: rgba(0, 0, 0, 0.25);
+	color: #B9B6B2;
 	font-size: 1.728rem;
 	letter-spacing: 0.83333rem;
 	padding-left: 0.83333rem;
@@ -1963,6 +1963,14 @@ table th,
 	color: #474747 !important;
 }
 
+.has-background-light-color[class] {
+	color: #CFCDC7 !important;
+}
+
+.has-background-dark-color[class] {
+	color: #B9B6B2 !important;
+}
+
 .has-background-color[class] {
 	color: #E8E4DD !important;
 }
@@ -2009,6 +2017,24 @@ table th,
 }
 
 .has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
+	color: currentColor;
+}
+
+.has-background-light-background-color[class] {
+	background-color: #CFCDC7 !important;
+	color: #252E36;
+}
+
+.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
+	color: currentColor;
+}
+
+.has-background-dark-background-color[class] {
+	background-color: #B9B6B2 !important;
+	color: #252E36;
+}
+
+.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
 	color: currentColor;
 }
 
@@ -2641,13 +2667,13 @@ table th,
  * Comment Lists
  */
 .comment-list {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	border-bottom: 1px solid #B9B6B2;
 	margin-left: 0;
 	list-style: none;
 }
 
 .comment-list > li {
-	border-top: 1px solid rgba(0, 0, 0, 0.25);
+	border-top: 1px solid #B9B6B2;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -2658,7 +2684,7 @@ table th,
 }
 
 .children > li {
-	border-top: 1px solid rgba(0, 0, 0, 0.25);
+	border-top: 1px solid #B9B6B2;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -2860,6 +2886,17 @@ table th,
 
 .widget-area {
 	flex: 0 0 100%;
+}
+
+/* Utilities */
+img#wpstats {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 0 !important;
+	width: 0 !important;
+	overflow: hidden;
 }
 
 /**
@@ -3448,7 +3485,7 @@ table td,
 table th,
 .wp-block-table td,
 .wp-block-table th {
-	border-color: rgba(0, 0, 0, 0.25);
+	border-color: #B9B6B2;
 }
 
 .a8c-posts-list {
@@ -3510,7 +3547,7 @@ table th,
 }
 
 .post-navigation {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid #CFCDC7;
 	margin-top: -64px;
 	padding-top: 32px;
 }
@@ -3611,7 +3648,7 @@ table th,
 
 .comments-area .comment-list > li .comment-body,
 .comments-area .children > li .comment-body {
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid #CFCDC7;
 	padding: 0 32px;
 }
 
@@ -3681,7 +3718,7 @@ table th,
 }
 
 .widget-area {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid #CFCDC7;
 	padding-top: 32px;
 	width: 100%;
 }
@@ -3739,7 +3776,7 @@ table th,
 .widget_jp_blogs_i_follow ul,
 .widget_top-click ul,
 .widget_upcoming_events_widget ul {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #CFCDC7;
 	list-style: none;
 	margin-left: 0;
 }
@@ -3759,7 +3796,7 @@ table th,
 .widget_jp_blogs_i_follow li,
 .widget_top-click li,
 .widget_upcoming_events_widget li {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid #CFCDC7;
 	padding: 8px 0;
 }
 
