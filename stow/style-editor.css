@@ -620,6 +620,14 @@ table th,
 	color: #111111 !important;
 }
 
+.has-background-light-color[class] {
+	color: #FFFFFF !important;
+}
+
+.has-background-dark-color[class] {
+	color: #DDDDDD !important;
+}
+
 .has-background-color[class] {
 	color: #f0f0f0 !important;
 }
@@ -666,6 +674,24 @@ table th,
 }
 
 .has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
+	color: currentColor;
+}
+
+.has-background-light-background-color[class] {
+	background-color: #FFFFFF !important;
+	color: #444444;
+}
+
+.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
+	color: currentColor;
+}
+
+.has-background-dark-background-color[class] {
+	background-color: #DDDDDD !important;
+	color: #444444;
+}
+
+.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
 	color: currentColor;
 }
 
@@ -720,6 +746,7 @@ table th,
  * 2.4. File Block
  * 2.5. Pre Block and Verse Block
  * 2.6. Button Block
+ * 2.7. Search Block
  */
 .editor-post-title__input {
 	text-align: center;
@@ -849,4 +876,30 @@ a {
  */
 .wp-block-button div.wp-block-button__link {
 	text-transform: uppercase;
+}
+
+/**
+ * 2.7. Search Block
+ */
+.wp-block-search .wp-block-search__button {
+	text-transform: uppercase;
+	line-height: 1;
+	color: #f0f0f0;
+	cursor: pointer;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.69444rem;
+	background-color: #f25f70;
+	border-radius: 9px;
+	border-width: 2px;
+	padding: 16px 16px;
+	display: inline-block;
+	border: none;
+	box-shadow: none;
+}
+
+.wp-block-search .wp-block-search__button:focus, .wp-block-search .wp-block-search__button:hover, .wp-block-search .wp-block-search__button:visited {
+	color: #f0f0f0;
+	background-color: #4f4f4f;
+	opacity: 1;
 }

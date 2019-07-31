@@ -44,6 +44,7 @@
  * 2.4. File Block
  * 2.5. Pre Block and Verse Block
  * 2.6. Button Block
+ * 2.7. Search Block
  */
 
 .editor-post-title__input {
@@ -170,5 +171,34 @@ a {
 		&.wp-block-button__link {
 			text-transform: uppercase;
 		}
+	}
+}
+
+/**
+ * 2.7. Search Block
+ */
+ .wp-block-search {
+	.wp-block-search__button {
+		text-transform: uppercase;
+		line-height: #{map-deep-get($config-button, "font", "line-height")};
+		color: #{map-deep-get($config-button, "color", "text")};
+		cursor: pointer;
+		font-weight: #{map-deep-get($config-button, "font", "weight")};
+		font-family: #{map-deep-get($config-button, "font", "family")};
+		font-size: #{map-deep-get($config-button, "font", "size")};
+		background-color: #{map-deep-get($config-button, "color", "background")};
+		border-radius: #{map-deep-get($config-button, "border-radius")};
+		border-width: #{map-deep-get($config-button, "border-width")};
+		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+		display: inline-block;
+		&:focus, 
+		&:hover, 
+		&:visited {
+			color: #{map-deep-get($config-button, "color", "text-hover")};
+			background-color: #{map-deep-get($config-button, "color", "background-hover")};
+			opacity: 1;
+		}
+		border: none;
+		box-shadow: none;
 	}
 }
