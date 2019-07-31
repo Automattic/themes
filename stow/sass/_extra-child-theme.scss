@@ -1,7 +1,27 @@
 /**
  * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper
+ * 4. Navigation Menu
+ * 5. Footer
+ * 6. Archive Pagination and Post Navigation
+ * 7. Block Specific Styles
+ * 7.1. Column Block
+ * 7.2. Quote Block
+ * 7.3. Hero Block and Cover Block
+ * 7.4. File Block
+ * 7.5. Latest Comments Block
+ * 8. Widgets
  */
-// @import "";
+
+/**
+ * 1. General Helper Styles
+ */
+body {
+	font-weight: 300;
+}
 
 a {
 	text-decoration: none;
@@ -16,23 +36,339 @@ a {
 .author-title,
 .comments-title,
 .comment-reply-title {
-	text-align: center;
+	text-transform: uppercase;
 }
 
-.main-navigation > div {
-	text-align: left;
-}
+// .main-navigation > div {
+// 	text-align: left;
+// }
 
-.comment-reply-title {
-	display: inherit;
-}
+// .comment-reply-title {
+// 	display: inherit;
+// }
 
-.comment .comment-reply-title {
-	display: flex;
-}
+// .comment .comment-reply-title {
+// 	display: flex;
+// }
 
 .main-navigation > div > ul,
 .social-navigation > div > ul,
 .pagination .nav-links {
 	justify-content: center;
+}
+
+/**
+ * 2. Header
+ */
+#masthead {
+	background-color: #{map-deep-get($config-global, "color", "white")};
+	padding: 0;
+	.site-title {
+		font-size: #{map-deep-get($config-global, "font", "size", "xxl")};
+	}
+	.site-description {
+		color: #333;
+	}
+	.site-branding {
+		text-align: center;
+		background: #fff;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+		height: 100%;
+		min-height: 72px;
+		padding: 3em 0 36px;
+	}
+	margin: 0 auto;
+	max-width: 1180px;
+	.social-navigation {
+		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		ul {
+			li {
+				a {
+					color: #{map-deep-get($config-global, "color", "secondary", "default")};
+					&:hover {
+						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * 3. Main Wrapper
+ */
+.site {
+	max-width:1180px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.site-content {
+	background-color: #{map-deep-get($config-global, "color", "white")};
+}
+
+/**
+ * 4. Navigation Menu
+ */
+#site-navigation {
+	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
+	border-bottom: 2px solid rgba(0,0,0,.15);
+	&.main-navigation {
+		ul {
+			li {
+				padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+				&.current-menu-item {
+					a {
+						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					}
+				}
+				a {
+					color: #{map-deep-get($config-global, "color", "white")};
+					text-decoration: none;
+					&:hover {
+						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					}
+				}
+				@include media(mobile) {
+					list-style-type: disc;
+					&.current-menu-item {
+						a {
+							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+						}
+					}
+					a {
+						color: #{map-deep-get($config-global, "color", "white")};
+						&:hover {
+							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+						}
+						&::after {
+							color: #ffa4ad;
+							content: " \2022";
+							margin-left: 1em;
+							display: inline;
+							font-size: #{map-deep-get($config-global, "font", "size", "base")};
+						}
+					}
+					&:last-child {
+						a {
+							&::after {
+								content: "";
+							}
+						}
+					}
+				}
+			}
+			ul {
+				@include media(mobile) {
+					background-color: #{map-deep-get($config-global, "color", "white")};
+					box-shadow: rgba(0,0,0,.1) 0 1px 2px;
+					li {
+						&.current-menu-item {
+							a {
+								color: #{map-deep-get($config-global, "color", "secondary", "default")};
+							}
+						}
+						a {
+							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+							&::after {
+								content: "";
+							}
+							&:hover {
+								color: #{map-deep-get($config-global, "color", "primary", "hover")};
+							}
+						}
+						&:hover {
+							background: #f2f2f2;
+						}
+					}
+				}
+			}
+		}
+		
+		#toggle-menu {
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			&:hover, 
+			&:focus,
+			&:visited {
+				text-decoration: none;
+			}
+		}
+		
+	}
+}
+
+/**
+ * 5. Footer
+ */
+.site-footer {
+	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: #{map-deep-get($config-global, "spacing", "vertical")};
+}
+
+
+
+// UNSURE ABOUT KEEPING
+
+/**
+ * 6. Archive Pagination and Post Navigation
+ */
+.pagination .nav-links > *, 
+.post-navigation .post-title {
+	font-weight: normal;
+}
+
+
+/**
+ * 7. Block Specific Styles
+ */
+
+/**
+ * 7.1. Column Block
+ */
+.wp-block-coblocks-column {
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6 {
+		margin-bottom: .857em;
+		&::before {
+			content: " - ";
+		}
+		&::after {
+			content: " - ";
+		}
+	}
+	a {
+		color: #{map-deep-get($config-global, "color", "secondary", "default")};
+		&:hover {
+			color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+		}
+	}
+}
+
+/**
+ * 7.2. Quote Block
+ */
+.wp-block-quote, 
+.wp-block-quote[style*="text-align:center"], 
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f2f2f2;
+	padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
+	p {
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+	}
+	cite {
+		color: #{map-deep-get($config-global, "color", "secondary", "default")};
+	}
+}
+
+/**
+ * 7.3. Hero Block and Cover Block
+ */
+.wp-block-coblocks-hero__box, 
+.wp-block-cover__inner-container {
+	background: #fff;
+    box-shadow: rgba(0,0,0,.1) 0 1px 2px;
+	padding: #{map-deep-get($config-global, "spacing", "vertical")};
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+	p {
+		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+}
+
+/**
+ * 7.4. File Block
+ */
+.wp-block-file {
+	a {
+		&.wp-block-file__button {
+			line-height: #{map-deep-get($config-button, "font", "line-height")};
+			color: #{map-deep-get($config-button, "color", "text")};
+			cursor: pointer;
+			font-weight: #{map-deep-get($config-button, "font", "weight")};
+			font-family: #{map-deep-get($config-button, "font", "family")};
+			font-size: #{map-deep-get($config-button, "font", "size")};
+			background-color: #{map-deep-get($config-button, "color", "background")};
+			border-radius: #{map-deep-get($config-button, "border-radius")};
+			border-width: #{map-deep-get($config-button, "border-width")};
+			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+			display: inline-block;
+			&:focus, 
+			&:hover, 
+			&:visited {
+				color: #{map-deep-get($config-button, "color", "text-hover")};
+				background-color: #{map-deep-get($config-button, "color", "background-hover")};
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * 7.5. Latest Comments Block
+ */
+.wp-block-latest-comments {
+	.wp-block-latest-comments__comment-meta {
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		.wp-block-latest-comments__comment-date {
+			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		}
+	}
+}
+
+/**
+ * 8. Widgets
+ */
+.site-footer {
+	.widget-area {
+		color: map-deep-get($config-footer, "color", "text");
+		a {
+			color: map-deep-get($config-footer, "color", "link");
+			&:hover {
+				color: map-deep-get($config-footer, "color", "link-hover");
+			}
+		}
+		.widget-title {
+			margin-bottom: .857em;
+			&::before {
+				content: " - ";
+			}
+			&::after {
+				content: " - ";
+			}
+		}
+	}
+}
+
+// ONLY IF HOME WITH NO HEADER - REMOVE FOR PRODUCTION
+.home {
+	&.page {
+		.site-main {
+			padding: 0;
+			article {
+				.entry-content {
+					margin-top: 0;
+				}
+			}
+		}
+		.entry-header {
+			display: none;
+		}		
+	}
 }

@@ -83,9 +83,9 @@ if ( ! function_exists( 'stow_setup' ) ) :
 					'color' => '#767676',
 				),
 				array(
-					'name'  => __( 'White', 'stow' ),
+					'name'  => __( 'White Smoke', 'stow' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => '#f0f0f0',
 				),
 			)
 		);
@@ -117,35 +117,38 @@ function stow_fonts_url() {
 
 	$fonts_url = '';
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Lora, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$playfair = esc_html_x( 'on', 'Playfair Display font: on or off', 'stow' );
+	/* translators: If there are characters in your language that are not supported
+	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
+	 */
+	$source_sans_pro  = _x( 'on', 'Source Sans Pro font: on or off',  'stow' );
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Open Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$roboto = esc_html_x( 'on', 'Roboto Sans font: on or off', 'stow' );
+	/* translators: If there are characters in your language that are not supported
+	 * by Droid Serif, translate this to 'off'. Do not translate into your own language.
+	 */
+	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'stow' );
 
-	if ( 'off' !== $playfair || 'off' !== $roboto ) {
+	/* translators: If there are characters in your language that are not supported
+	 * by Oswald, translate this to 'off'. Do not translate into your own language.
+	 */
+	$oswald  = _x( 'on', 'Oswald font: on or off',  'stow' );
+
+	if ( 'off' !== $source_sans_pro || 'off' !== $droid_serif || 'off' !== $oswald ) {
 		$font_families = array();
 
-		if ( 'off' !== $playfair ) {
-			$font_families[] = 'Playfair+Display:400,400i';
+		if ( 'off' !== $source_sans_pro ) {
+			$font_families[] = 'Source Sans Pro:300,300italic,400,400italic,600';
 		}
-
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:300,300i,700';
+		if ( 'off' !== $droid_serif ) {
+			$font_families[] = 'Droid Serif:400,400italic';
 		}
-
+		if ( 'off' !== $oswald ) {
+			$font_families[] = 'Oswald:300,400';
+		}
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
 	}
 
 	return esc_url_raw( $fonts_url );
@@ -157,7 +160,7 @@ function stow_fonts_url() {
 function stow_scripts() {
 
 	// enqueue Google fonts, if necessary
-	// wp_enqueue_style( 'stow-fonts', stow_fonts_url(), array(), null );
+	wp_enqueue_style( 'stow-fonts', stow_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );

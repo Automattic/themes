@@ -34,8 +34,134 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
- * Extras
+ * Extra Editor Styles
+ *
+ * 1. General Styles
+ * 2. Block Specific Styles
+ * 2.1. Column Block
+ * 2.2. Quote Block
+ * 2.3. Hero Block and Cover Block
+ * 2.4. File Block
+ * 7.5. Pre Block and Verse Block
  */
+
 .editor-post-title__input {
 	text-align: center;
+}
+
+/**
+ * 1. General Styles
+ */
+body {
+	background-color: #{map-deep-get($config-global, "color", "white")};
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+}
+
+/**
+ * 2. Block Specific Styles
+ */
+
+/**
+ * 2.1. Column Block
+ */
+ .wp-block-coblocks-column {
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6 {
+		margin-bottom: .857em;
+		&::before {
+			content: " - ";
+		}
+		&::after {
+			content: " - ";
+		}
+	}
+	a {
+		color: #{map-deep-get($config-global, "color", "secondary", "default")};
+		&:hover {
+			color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+		}
+	}
+}
+
+/**
+ * 2.2. Quote Block
+ */
+ .wp-block-quote, 
+ .wp-block-quote[style*="text-align:center"], 
+ .wp-block-quote[style*="text-align:right"] {
+	 border: 1px solid #f2f2f2;
+	 padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
+	 p {
+		 font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+	 }
+	 .wp-block-quote__citation {
+		 color: #{map-deep-get($config-global, "color", "secondary", "default")};
+	 }
+ }
+
+/**
+ * 2.3. Hero Block and Cover Block
+ */
+ .wp-block-coblocks-hero__box, 
+ .wp-block-cover__inner-container {
+	background: #fff;
+    box-shadow: rgba(0,0,0,.1) 0 1px 2px;
+	padding: #{map-deep-get($config-global, "spacing", "unit")};
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		padding: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+	p {
+		padding: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+ }
+
+ /**
+ * 2.4. File Block
+ */
+.wp-block-file {
+	div {
+		&.wp-block-file__button {
+			line-height: #{map-deep-get($config-button, "font", "line-height")};
+			color: #{map-deep-get($config-button, "color", "text")};
+			cursor: pointer;
+			font-weight: #{map-deep-get($config-button, "font", "weight")};
+			font-family: #{map-deep-get($config-button, "font", "family")};
+			font-size: #{map-deep-get($config-button, "font", "size")};
+			background-color: #{map-deep-get($config-button, "color", "background")};
+			border-radius: #{map-deep-get($config-button, "border-radius")};
+			border-width: #{map-deep-get($config-button, "border-width")};
+			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+			display: inline-block;
+			&:focus, 
+			&:hover, 
+			&:visited {
+				color: #{map-deep-get($config-button, "color", "text-hover")};
+				background-color: #{map-deep-get($config-button, "color", "background-hover")};
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * 2.5. Pre Block and Verse Block
+ */
+.wp-block-preformatted,
+.wp-block-verse {
+	pre {
+		font-family: #{map-deep-get($config-global, "font", "family", "code")};
+	}
 }

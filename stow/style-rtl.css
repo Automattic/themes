@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /*
 Theme Name: Stow
-Theme URI: https://github.com/Automattic/themes/varia
-Author: the WordPress team
-Author URI: https://wordpress.org/
+Theme URI: https://github.com/Automattic/themes/stow
+Author: Automattic
+Author URI: https://automattic.com/
 Description: A design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
 Version: 1.0
@@ -186,7 +186,28 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  */
 /**
  * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper
+ * 4. Navigation Menu
+ * 5. Footer
+ * 6. Archive Pagination and Post Navigation
+ * 7. Block Specific Styles
+ * 7.1. Column Block
+ * 7.2. Quote Block
+ * 7.3. Hero Block and Cover Block
+ * 7.4. File Block
+ * 7.5. Latest Comments Block
+ * 8. Widgets
  */
+/**
+ * 1. General Helper Styles
+ */
+body {
+	font-weight: 300;
+}
+
 a {
 	text-decoration: none;
 }
@@ -200,25 +221,330 @@ a {
 .author-title,
 .comments-title,
 .comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: right;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
-	display: flex;
+	text-transform: uppercase;
 }
 
 .main-navigation > div > ul,
 .social-navigation > div > ul,
 .pagination .nav-links {
 	justify-content: center;
+}
+
+/**
+ * 2. Header
+ */
+#masthead {
+	background-color: white;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1180px;
+}
+
+#masthead .site-title {
+	font-size: 2.0736rem;
+}
+
+#masthead .site-description {
+	color: #333;
+}
+
+#masthead .site-branding {
+	text-align: center;
+	background: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	height: 100%;
+	min-height: 72px;
+	padding: 3em 0 36px;
+}
+
+#masthead .social-navigation {
+	margin-bottom: 16px;
+}
+
+#masthead .social-navigation ul li a {
+	color: #f25f70;
+}
+
+#masthead .social-navigation ul li a:hover {
+	color: #4f4f4f;
+}
+
+/**
+ * 3. Main Wrapper
+ */
+.site {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.site-content {
+	background-color: white;
+}
+
+/**
+ * 4. Navigation Menu
+ */
+#site-navigation {
+	background-color: #f25f70;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+#site-navigation.main-navigation ul li.current-menu-item a {
+	color: #4f4f4f;
+}
+
+#site-navigation.main-navigation ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+#site-navigation.main-navigation ul li a:hover {
+	color: #4f4f4f;
+}
+
+@media only screen and (min-width: 560px) {
+	#site-navigation.main-navigation ul li {
+		list-style-type: disc;
+	}
+	#site-navigation.main-navigation ul li.current-menu-item a {
+		color: #4f4f4f;
+	}
+	#site-navigation.main-navigation ul li a {
+		color: white;
+	}
+	#site-navigation.main-navigation ul li a:hover {
+		color: #4f4f4f;
+	}
+	#site-navigation.main-navigation ul li a::after {
+		color: #ffa4ad;
+		content: " \2022";
+		margin-right: 1em;
+		display: inline;
+		font-size: 1rem;
+	}
+	#site-navigation.main-navigation ul li:last-child a::after {
+		content: "";
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	#site-navigation.main-navigation ul ul {
+		background-color: white;
+		box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+	}
+	#site-navigation.main-navigation ul ul li.current-menu-item a {
+		color: #f25f70;
+	}
+	#site-navigation.main-navigation ul ul li a {
+		color: #4f4f4f;
+	}
+	#site-navigation.main-navigation ul ul li a::after {
+		content: "";
+	}
+	#site-navigation.main-navigation ul ul li a:hover {
+		color: #e1122a;
+	}
+	#site-navigation.main-navigation ul ul li:hover {
+		background: #f2f2f2;
+	}
+}
+
+#site-navigation.main-navigation #toggle-menu {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+#site-navigation.main-navigation #toggle-menu:hover, #site-navigation.main-navigation #toggle-menu:focus, #site-navigation.main-navigation #toggle-menu:visited {
+	text-decoration: none;
+}
+
+/**
+ * 5. Footer
+ */
+.site-footer {
+	background-color: #404040;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 32px;
+}
+
+/**
+ * 6. Archive Pagination and Post Navigation
+ */
+.pagination .nav-links > *,
+.post-navigation .post-title {
+	font-weight: normal;
+}
+
+/**
+ * 7. Block Specific Styles
+ */
+/**
+ * 7.1. Column Block
+ */
+.wp-block-coblocks-column h1,
+.wp-block-coblocks-column h2,
+.wp-block-coblocks-column h3,
+.wp-block-coblocks-column h4,
+.wp-block-coblocks-column h5,
+.wp-block-coblocks-column h6 {
+	margin-bottom: .857em;
+}
+
+.wp-block-coblocks-column h1::before,
+.wp-block-coblocks-column h2::before,
+.wp-block-coblocks-column h3::before,
+.wp-block-coblocks-column h4::before,
+.wp-block-coblocks-column h5::before,
+.wp-block-coblocks-column h6::before {
+	content: " - ";
+}
+
+.wp-block-coblocks-column h1::after,
+.wp-block-coblocks-column h2::after,
+.wp-block-coblocks-column h3::after,
+.wp-block-coblocks-column h4::after,
+.wp-block-coblocks-column h5::after,
+.wp-block-coblocks-column h6::after {
+	content: " - ";
+}
+
+.wp-block-coblocks-column a {
+	color: #f25f70;
+}
+
+.wp-block-coblocks-column a:hover {
+	color: #4f4f4f;
+}
+
+/**
+ * 7.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f2f2f2;
+	padding: 16px;
+}
+
+.wp-block-quote p,
+.wp-block-quote[style*="text-align:center"] p,
+.wp-block-quote[style*="text-align:right"] p {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.wp-block-quote cite,
+.wp-block-quote[style*="text-align:center"] cite,
+.wp-block-quote[style*="text-align:right"] cite {
+	color: #f25f70;
+}
+
+/**
+ * 7.3. Hero Block and Cover Block
+ */
+.wp-block-coblocks-hero__box,
+.wp-block-cover__inner-container {
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+	padding: 32px;
+}
+
+.wp-block-coblocks-hero__box h1,
+.wp-block-coblocks-hero__box h2,
+.wp-block-coblocks-hero__box h3,
+.wp-block-coblocks-hero__box h4,
+.wp-block-coblocks-hero__box h5,
+.wp-block-coblocks-hero__box h6,
+.wp-block-cover__inner-container h1,
+.wp-block-cover__inner-container h2,
+.wp-block-cover__inner-container h3,
+.wp-block-cover__inner-container h4,
+.wp-block-cover__inner-container h5,
+.wp-block-cover__inner-container h6 {
+	padding: 16px;
+}
+
+.wp-block-coblocks-hero__box p,
+.wp-block-cover__inner-container p {
+	padding: 16px;
+}
+
+/**
+ * 7.4. File Block
+ */
+.wp-block-file a.wp-block-file__button {
+	line-height: 1;
+	color: #f0f0f0;
+	cursor: pointer;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 1.2rem;
+	background-color: #f25f70;
+	border-radius: 9px;
+	border-width: 2px;
+	padding: 16px 16px;
+	display: inline-block;
+}
+
+.wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
+	color: #f0f0f0;
+	background-color: #4f4f4f;
+	opacity: 1;
+}
+
+/**
+ * 7.5. Latest Comments Block
+ */
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta .wp-block-latest-comments__comment-date {
+	font-size: 0.69444rem;
+}
+
+/**
+ * 8. Widgets
+ */
+.site-footer .widget-area {
+	color: white;
+}
+
+.site-footer .widget-area a {
+	color: white;
+}
+
+.site-footer .widget-area a:hover {
+	color: #f25f70;
+}
+
+.site-footer .widget-area .widget-title {
+	margin-bottom: .857em;
+}
+
+.site-footer .widget-area .widget-title::before {
+	content: " - ";
+}
+
+.site-footer .widget-area .widget-title::after {
+	content: " - ";
+}
+
+.home.page .site-main {
+	padding: 0;
+}
+
+.home.page .site-main article .entry-content {
+	margin-top: 0;
+}
+
+.home.page .entry-header {
+	display: none;
 }
 
 /**
@@ -626,7 +952,7 @@ html {
  */
 html {
 	font-size: 15px;
-	font-family: serif;
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	line-height: 1.78;
 }
 
@@ -641,18 +967,18 @@ body {
 	font-weight: normal;
 	color: #444444;
 	text-align: right;
-	background-color: white;
+	background-color: #f0f0f0;
 }
 
 /**
  * Links styles
  */
 a {
-	color: blue;
+	color: #404040;
 }
 
 a:hover {
-	color: indigo;
+	color: #e1122a;
 }
 
 button,
@@ -676,7 +1002,7 @@ a {
 }
 
 .screen-reader-text:focus {
-	background-color: white;
+	background-color: #f0f0f0;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
@@ -949,15 +1275,15 @@ blockquote {
 }
 
 blockquote p {
-	font-size: 1.728rem;
-	letter-spacing: normal;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
 blockquote cite,
 blockquote footer {
 	font-size: 0.83333rem;
-	letter-spacing: normal;
+	letter-spacing: 2px;
 }
 
 blockquote > * {
@@ -978,7 +1304,7 @@ blockquote.alignleft, blockquote.alignright {
 }
 
 blockquote.alignleft p, blockquote.alignright p {
-	font-size: 1.44rem;
+	font-size: 1rem;
 	max-width: inherit;
 	width: inherit;
 }
@@ -987,7 +1313,7 @@ blockquote.alignleft cite,
 blockquote.alignleft footer, blockquote.alignright cite,
 blockquote.alignright footer {
 	font-size: 0.69444rem;
-	letter-spacing: normal;
+	letter-spacing: 2px;
 }
 
 input[type="text"],
@@ -1029,7 +1355,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: #444444;
-	border-color: indigo;
+	border-color: #e1122a;
 }
 
 select {
@@ -1111,12 +1437,12 @@ input[type="submit"],
 .wp-block-button__link,
 .wp-block-file__button, .a8c-posts-list__view-all {
 	line-height: 1;
-	color: white;
+	color: #f0f0f0;
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 1.2rem;
-	background-color: blue;
+	background-color: #f25f70;
 	border-radius: 9px;
 	border-width: 0;
 	padding: 16px 16px;
@@ -1166,22 +1492,22 @@ input:focus[type="submit"],
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
 .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all {
-	color: white;
-	background-color: indigo;
+	color: #f0f0f0;
+	background-color: #4f4f4f;
 }
 
 /**
  * Block Options
  */
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: blue;
+	color: #f25f70;
 	background: transparent;
 	border: 2px solid currentcolor;
 	padding: 14px 16px;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: indigo;
+	color: #4f4f4f;
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -1252,7 +1578,7 @@ input.has-focus[type="submit"],
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image .wp-block-cover-text {
-	color: white;
+	color: #f0f0f0;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -1268,8 +1594,8 @@ input.has-focus[type="submit"],
 
 .wp-block-cover h2,
 .wp-block-cover-image h2 {
-	font-size: 2.48832rem;
-	letter-spacing: normal;
+	font-size: 1.728rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 	max-width: inherit;
 	text-align: inherit;
@@ -1314,8 +1640,8 @@ input.has-focus[type="submit"],
 }
 
 .wp-block-file .wp-block-file__button {
-	background-color: blue;
-	color: white;
+	background-color: #f25f70;
+	color: #f0f0f0;
 	font-size: 0.83333rem;
 	margin-right: 16px;
 	margin-left: 16px;
@@ -1329,7 +1655,7 @@ input.has-focus[type="submit"],
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:visited {
-	color: white;
+	color: #f0f0f0;
 	opacity: .85;
 }
 
@@ -1405,44 +1731,44 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: sans-serif;
-	font-weight: normal;
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
 	clear: both;
 }
 
 h1, .h1 {
-	font-size: 2.98598rem;
-	letter-spacing: normal;
+	font-size: 2.0736rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
 h2, .h2 {
-	font-size: 2.48832rem;
-	letter-spacing: normal;
+	font-size: 1.728rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
 h3, .h3 {
-	font-size: 2.0736rem;
-	letter-spacing: normal;
+	font-size: 1.44rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
 h4, .h4 {
-	font-size: 1.728rem;
-	letter-spacing: normal;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
 h5, .h5 {
-	font-size: 1.44rem;
-	letter-spacing: normal;
+	font-size: 1rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
 h6, .h6 {
-	font-size: 1.2rem;
-	letter-spacing: normal;
+	font-size: 0.83333rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
@@ -1482,7 +1808,7 @@ img {
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1515,9 +1841,9 @@ img {
 }
 
 .wp-block-latest-posts > li > a {
-	font-family: sans-serif;
-	font-size: 1.728rem;
-	font-weight: normal;
+	font-family: "Oswald", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 300;
 	line-height: 1.125;
 }
 
@@ -1582,7 +1908,7 @@ img {
 
 ul,
 ol {
-	font-family: serif;
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	margin: 0 16px 0 0;
 	padding: 0;
 }
@@ -1596,7 +1922,7 @@ ol {
 }
 
 dt {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 	font-weight: bold;
 }
 
@@ -1662,9 +1988,9 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .a8c-posts-list-item__featured span {
-	color: white;
-	background-color: blue;
-	font-family: sans-serif;
+	color: #f0f0f0;
+	background-color: #404040;
+	font-family: "Oswald", sans-serif;
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -1710,7 +2036,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__meta a:hover, .a8c-posts-list__item .a8c-posts-list-item__meta a:active {
-	color: indigo;
+	color: #e1122a;
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__edit-link {
@@ -1737,9 +2063,9 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote p {
-	font-family: sans-serif;
-	font-size: 1.728rem;
-	letter-spacing: normal;
+	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
@@ -1752,7 +2078,7 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote footer {
 	color: #767676;
 	font-size: 0.83333rem;
-	letter-spacing: normal;
+	letter-spacing: 2px;
 	display: block;
 }
 
@@ -1765,8 +2091,8 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: blue;
-	color: white;
+	background-color: #404040;
+	color: #f0f0f0;
 }
 
 .wp-block-pullquote.is-style-solid-color.alignleft blockquote,
@@ -1795,7 +2121,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote {
-	border-right-color: blue;
+	border-right-color: #404040;
 	margin: 32px 0;
 	padding: 0 16px;
 	/**
@@ -1817,9 +2143,9 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote p {
-	font-family: sans-serif;
-	font-size: 1.728rem;
-	letter-spacing: normal;
+	font-family: "Oswald", sans-serif;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
@@ -1828,11 +2154,11 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-quote footer {
 	color: #767676;
 	font-size: 0.83333rem;
-	letter-spacing: normal;
+	letter-spacing: 2px;
 }
 
 .wp-block-quote[style*="text-align:right"], .wp-block-quote[style*="text-align: right"] {
-	border-left-color: blue;
+	border-left-color: #404040;
 }
 
 .wp-block-quote.is-style-large, .wp-block-quote.is-large {
@@ -1842,8 +2168,8 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote.is-style-large p, .wp-block-quote.is-large p {
-	font-size: 2.0736rem;
-	letter-spacing: normal;
+	font-size: 1.44rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
@@ -1854,7 +2180,7 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-quote.is-large footer {
 	color: #767676;
 	font-size: 0.83333rem;
-	letter-spacing: normal;
+	letter-spacing: 2px;
 }
 
 .wp-block-separator,
@@ -1901,7 +2227,7 @@ table,
 
 table th,
 .wp-block-table th {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 table td,
@@ -1970,11 +2296,11 @@ table th,
 }
 
 .has-primary-color[class] {
-	color: blue !important;
+	color: #404040 !important;
 }
 
 .has-secondary-color[class] {
-	color: red !important;
+	color: #f25f70 !important;
 }
 
 .has-foreground-color[class] {
@@ -1990,12 +2316,12 @@ table th,
 }
 
 .has-background-color[class] {
-	color: white !important;
+	color: #f0f0f0 !important;
 }
 
 .has-primary-background-color[class] {
-	background-color: blue !important;
-	color: white;
+	background-color: #404040 !important;
+	color: #f0f0f0;
 }
 
 .has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6 {
@@ -2003,8 +2329,8 @@ table th,
 }
 
 .has-secondary-background-color[class] {
-	background-color: red !important;
-	color: white;
+	background-color: #f25f70 !important;
+	color: #f0f0f0;
 }
 
 .has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6 {
@@ -2013,7 +2339,7 @@ table th,
 
 .has-foreground-background-color[class] {
 	background-color: #444444 !important;
-	color: white;
+	color: #f0f0f0;
 }
 
 .has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6 {
@@ -2022,7 +2348,7 @@ table th,
 
 .has-foreground-light-background-color[class] {
 	background-color: #767676 !important;
-	color: white;
+	color: #f0f0f0;
 }
 
 .has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6 {
@@ -2031,7 +2357,7 @@ table th,
 
 .has-foreground-dark-background-color[class] {
 	background-color: #111111 !important;
-	color: white;
+	color: #f0f0f0;
 }
 
 .has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
@@ -2039,7 +2365,7 @@ table th,
 }
 
 .has-background-background-color[class] {
-	background-color: white !important;
+	background-color: #f0f0f0 !important;
 	color: #444444;
 }
 
@@ -2073,9 +2399,9 @@ table th,
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: sans-serif;
-	font-size: calc(2 * 2.98598rem);
-	font-weight: normal;
+	font-family: "Oswald", sans-serif;
+	font-size: calc(2 * 2.0736rem);
+	font-weight: 300;
 	line-height: 0.66;
 	text-transform: uppercase;
 	font-style: normal;
@@ -2113,16 +2439,16 @@ table th,
 }
 
 .site-title {
-	color: blue;
-	font-family: sans-serif;
+	color: #404040;
+	font-family: "Oswald", sans-serif;
 	font-size: 1.2rem;
 	letter-spacing: normal;
-	line-height: 1;
+	line-height: 1.3333;
 }
 
 .site-title a {
 	color: currentColor;
-	font-weight: normal;
+	font-weight: 300;
 }
 
 .site-title a:link, .site-title a:visited {
@@ -2130,12 +2456,12 @@ table th,
 }
 
 .site-title a:hover {
-	color: indigo;
+	color: #e1122a;
 }
 
 .site-description {
 	color: currentColor;
-	font-family: serif;
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	font-size: 0.83333rem;
 }
 
@@ -2157,7 +2483,7 @@ table th,
 }
 
 .main-navigation #toggle:focus + #toggle-menu {
-	background-color: indigo;
+	background-color: #e1122a;
 	outline: inherit;
 	text-decoration: underline;
 }
@@ -2263,7 +2589,7 @@ table th,
 
 @media only screen and (min-width: 560px) {
 	.main-navigation > div > ul > li > .sub-menu {
-		background: white;
+		background: #f0f0f0;
 		box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
 		right: 0;
 		top: 100%;
@@ -2280,20 +2606,20 @@ table th,
 }
 
 .main-navigation a {
-	color: blue;
+	color: #404040;
 	display: block;
-	font-family: serif;
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	font-size: 1.2rem;
-	font-weight: normal;
+	font-weight: 700;
 	padding: 16px;
 }
 
 .main-navigation a:link, .main-navigation a:visited {
-	color: blue;
+	color: #404040;
 }
 
 .main-navigation a:hover {
-	color: indigo;
+	color: #e1122a;
 }
 
 .main-navigation .sub-menu {
@@ -2343,13 +2669,13 @@ table th,
 }
 
 .social-navigation a {
-	color: blue;
+	color: #404040;
 	display: inline-block;
 	padding: 0 calc( 0.5 * calc(0.66 * 16px ));
 }
 
 .social-navigation a:hover {
-	color: indigo;
+	color: #e1122a;
 }
 
 .social-navigation svg {
@@ -2367,8 +2693,8 @@ table th,
 }
 
 .site-info {
-	color: #767676;
-	font-family: sans-serif;
+	color: white;
+	font-family: "Oswald", sans-serif;
 	font-size: 0.83333rem;
 }
 
@@ -2394,7 +2720,7 @@ table th,
 }
 
 .site-info a:hover {
-	color: indigo;
+	color: #f25f70;
 }
 
 .footer-navigation {
@@ -2416,7 +2742,7 @@ table th,
 }
 
 .footer-navigation .footer-menu {
-	color: #767676;
+	color: white;
 	padding-right: 0;
 	margin-right: -16px;
 	margin-left: -16px;
@@ -2435,9 +2761,9 @@ table th,
 }
 
 .footer-navigation .footer-menu a {
-	font-family: serif;
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	font-size: 0.83333rem;
-	font-weight: normal;
+	font-weight: 700;
 	padding: 16px;
 	color: currentColor;
 }
@@ -2447,12 +2773,12 @@ table th,
 }
 
 .footer-navigation .footer-menu a:hover {
-	color: indigo;
+	color: #f25f70;
 }
 
 .entry-title {
-	font-size: 2.48832rem;
-	letter-spacing: normal;
+	font-size: 1.728rem;
+	letter-spacing: 2px;
 	line-height: 1.125;
 }
 
@@ -2495,7 +2821,7 @@ table th,
 .entry-meta a:hover, .entry-meta a:active,
 .entry-footer a:hover,
 .entry-footer a:active {
-	color: indigo;
+	color: #e1122a;
 }
 
 .entry-meta .svg-icon,
@@ -2560,7 +2886,7 @@ table th,
 }
 
 .author-bio .author-title {
-	font-size: 2.0736rem;
+	font-size: 1.44rem;
 }
 
 /* Next/Previous navigation */
@@ -2569,7 +2895,7 @@ table th,
 }
 
 .post-navigation .post-title {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2596,7 +2922,7 @@ table th,
 }
 
 .pagination .nav-links > * {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-right: calc(0.66 * 16px);
@@ -2645,8 +2971,8 @@ table th,
  * Comment Title
  */
 .comments-title {
-	font-size: 2.0736rem;
-	letter-spacing: normal;
+	font-size: 1.44rem;
+	letter-spacing: 2px;
 }
 
 .comment-reply-title {
@@ -2658,7 +2984,7 @@ table th,
 
 .comment-reply-title small {
 	font-size: 1rem;
-	font-family: serif;
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -2739,7 +3065,7 @@ table th,
 }
 
 .comment-meta .comment-metadata a:hover, .comment-meta .comment-metadata a:active {
-	color: indigo;
+	color: #e1122a;
 }
 
 @media only screen and (min-width: 560px) {
@@ -2777,7 +3103,7 @@ table th,
 .comment-author .fn,
 .pingback .url,
 .trackback .url {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 
 /**
@@ -2879,7 +3205,7 @@ table th,
  * Comment Nav
  */
 .comment-navigation a {
-	font-family: sans-serif;
+	font-family: "Oswald", sans-serif;
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -2897,9 +3223,9 @@ table th,
  * - Page specific styles
  */
 .sticky-post {
-	color: white;
-	background-color: blue;
-	font-family: sans-serif;
+	color: #f0f0f0;
+	background-color: #404040;
+	font-family: "Oswald", sans-serif;
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -2907,7 +3233,7 @@ table th,
 }
 
 .page-title {
-	font-size: 1.728rem;
+	font-size: 1.2rem;
 }
 
 /**
@@ -3151,7 +3477,28 @@ table th,
  */
 /**
  * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper
+ * 4. Navigation Menu
+ * 5. Footer
+ * 6. Archive Pagination and Post Navigation
+ * 7. Block Specific Styles
+ * 7.1. Column Block
+ * 7.2. Quote Block
+ * 7.3. Hero Block and Cover Block
+ * 7.4. File Block
+ * 7.5. Latest Comments Block
+ * 8. Widgets
  */
+/**
+ * 1. General Helper Styles
+ */
+body {
+	font-weight: 300;
+}
+
 a {
 	text-decoration: none;
 }
@@ -3165,23 +3512,328 @@ a {
 .author-title,
 .comments-title,
 .comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: right;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
-	display: flex;
+	text-transform: uppercase;
 }
 
 .main-navigation > div > ul,
 .social-navigation > div > ul,
 .pagination .nav-links {
 	justify-content: center;
+}
+
+/**
+ * 2. Header
+ */
+#masthead {
+	background-color: white;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1180px;
+}
+
+#masthead .site-title {
+	font-size: 2.0736rem;
+}
+
+#masthead .site-description {
+	color: #333;
+}
+
+#masthead .site-branding {
+	text-align: center;
+	background: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	height: 100%;
+	min-height: 72px;
+	padding: 3em 0 36px;
+}
+
+#masthead .social-navigation {
+	margin-bottom: 16px;
+}
+
+#masthead .social-navigation ul li a {
+	color: #f25f70;
+}
+
+#masthead .social-navigation ul li a:hover {
+	color: #4f4f4f;
+}
+
+/**
+ * 3. Main Wrapper
+ */
+.site {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.site-content {
+	background-color: white;
+}
+
+/**
+ * 4. Navigation Menu
+ */
+#site-navigation {
+	background-color: #f25f70;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+#site-navigation.main-navigation ul li.current-menu-item a {
+	color: #4f4f4f;
+}
+
+#site-navigation.main-navigation ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+#site-navigation.main-navigation ul li a:hover {
+	color: #4f4f4f;
+}
+
+@media only screen and (min-width: 560px) {
+	#site-navigation.main-navigation ul li {
+		list-style-type: disc;
+	}
+	#site-navigation.main-navigation ul li.current-menu-item a {
+		color: #4f4f4f;
+	}
+	#site-navigation.main-navigation ul li a {
+		color: white;
+	}
+	#site-navigation.main-navigation ul li a:hover {
+		color: #4f4f4f;
+	}
+	#site-navigation.main-navigation ul li a::after {
+		color: #ffa4ad;
+		content: " \2022";
+		margin-right: 1em;
+		display: inline;
+		font-size: 1rem;
+	}
+	#site-navigation.main-navigation ul li:last-child a::after {
+		content: "";
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	#site-navigation.main-navigation ul ul {
+		background-color: white;
+		box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+	}
+	#site-navigation.main-navigation ul ul li.current-menu-item a {
+		color: #f25f70;
+	}
+	#site-navigation.main-navigation ul ul li a {
+		color: #4f4f4f;
+	}
+	#site-navigation.main-navigation ul ul li a::after {
+		content: "";
+	}
+	#site-navigation.main-navigation ul ul li a:hover {
+		color: #e1122a;
+	}
+	#site-navigation.main-navigation ul ul li:hover {
+		background: #f2f2f2;
+	}
+}
+
+#site-navigation.main-navigation #toggle-menu {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+#site-navigation.main-navigation #toggle-menu:hover, #site-navigation.main-navigation #toggle-menu:focus, #site-navigation.main-navigation #toggle-menu:visited {
+	text-decoration: none;
+}
+
+/**
+ * 5. Footer
+ */
+.site-footer {
+	background-color: #404040;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 32px;
+}
+
+/**
+ * 6. Archive Pagination and Post Navigation
+ */
+.pagination .nav-links > *,
+.post-navigation .post-title {
+	font-weight: normal;
+}
+
+/**
+ * 7. Block Specific Styles
+ */
+/**
+ * 7.1. Column Block
+ */
+.wp-block-coblocks-column h1,
+.wp-block-coblocks-column h2,
+.wp-block-coblocks-column h3,
+.wp-block-coblocks-column h4,
+.wp-block-coblocks-column h5,
+.wp-block-coblocks-column h6 {
+	margin-bottom: .857em;
+}
+
+.wp-block-coblocks-column h1::before,
+.wp-block-coblocks-column h2::before,
+.wp-block-coblocks-column h3::before,
+.wp-block-coblocks-column h4::before,
+.wp-block-coblocks-column h5::before,
+.wp-block-coblocks-column h6::before {
+	content: " - ";
+}
+
+.wp-block-coblocks-column h1::after,
+.wp-block-coblocks-column h2::after,
+.wp-block-coblocks-column h3::after,
+.wp-block-coblocks-column h4::after,
+.wp-block-coblocks-column h5::after,
+.wp-block-coblocks-column h6::after {
+	content: " - ";
+}
+
+.wp-block-coblocks-column a {
+	color: #f25f70;
+}
+
+.wp-block-coblocks-column a:hover {
+	color: #4f4f4f;
+}
+
+/**
+ * 7.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f2f2f2;
+	padding: 16px;
+}
+
+.wp-block-quote p,
+.wp-block-quote[style*="text-align:center"] p,
+.wp-block-quote[style*="text-align:right"] p {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.wp-block-quote cite,
+.wp-block-quote[style*="text-align:center"] cite,
+.wp-block-quote[style*="text-align:right"] cite {
+	color: #f25f70;
+}
+
+/**
+ * 7.3. Hero Block and Cover Block
+ */
+.wp-block-coblocks-hero__box,
+.wp-block-cover__inner-container {
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+	padding: 32px;
+}
+
+.wp-block-coblocks-hero__box h1,
+.wp-block-coblocks-hero__box h2,
+.wp-block-coblocks-hero__box h3,
+.wp-block-coblocks-hero__box h4,
+.wp-block-coblocks-hero__box h5,
+.wp-block-coblocks-hero__box h6,
+.wp-block-cover__inner-container h1,
+.wp-block-cover__inner-container h2,
+.wp-block-cover__inner-container h3,
+.wp-block-cover__inner-container h4,
+.wp-block-cover__inner-container h5,
+.wp-block-cover__inner-container h6 {
+	padding: 16px;
+}
+
+.wp-block-coblocks-hero__box p,
+.wp-block-cover__inner-container p {
+	padding: 16px;
+}
+
+/**
+ * 7.4. File Block
+ */
+.wp-block-file a.wp-block-file__button {
+	line-height: 1;
+	color: #f0f0f0;
+	cursor: pointer;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 1.2rem;
+	background-color: #f25f70;
+	border-radius: 9px;
+	border-width: 2px;
+	padding: 16px 16px;
+	display: inline-block;
+}
+
+.wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover, .wp-block-file a.wp-block-file__button:visited {
+	color: #f0f0f0;
+	background-color: #4f4f4f;
+	opacity: 1;
+}
+
+/**
+ * 7.5. Latest Comments Block
+ */
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta {
+	font-family: "Source Sans Pro", Arial, sans-serif;
+}
+
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta .wp-block-latest-comments__comment-date {
+	font-size: 0.69444rem;
+}
+
+/**
+ * 8. Widgets
+ */
+.site-footer .widget-area {
+	color: white;
+}
+
+.site-footer .widget-area a {
+	color: white;
+}
+
+.site-footer .widget-area a:hover {
+	color: #f25f70;
+}
+
+.site-footer .widget-area .widget-title {
+	margin-bottom: .857em;
+}
+
+.site-footer .widget-area .widget-title::before {
+	content: " - ";
+}
+
+.site-footer .widget-area .widget-title::after {
+	content: " - ";
+}
+
+.home.page .site-main {
+	padding: 0;
+}
+
+.home.page .site-main article .entry-content {
+	margin-top: 0;
+}
+
+.home.page .entry-header {
+	display: none;
 }

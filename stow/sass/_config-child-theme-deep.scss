@@ -20,9 +20,9 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "sans-serif",
-			"secondary": "serif",
-			"code": "monospace, monospace",
+			"primary": "\"Oswald\"\, sans-serif",	
+			"secondary": "\"Source Sans Pro\"\, Arial\, sans-serif",
+			"code": "\"Courier 10 Pitch\"\, Courier\, monospace",
 			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
 		/* Font Size */
@@ -42,13 +42,13 @@ $config-global: (
 		/* Letter Spacing */
 		"letter-spacing": (
 			"base": normal,
-			"xs": normal,
-			"sm": normal,
-			"md": normal,
-			"lg": normal,
-			"xl": normal,
-			"xxl": normal,
-			"xxxl": normal,
+			"xs": 2px,
+			"sm": 2px,
+			"md": 2px,
+			"lg": 2px,
+			"xl": 2px,
+			"xxl": 2px,
+			"xxxl": 2px,
 		),
 		/* Line Height */
 		"line-height": (
@@ -61,19 +61,19 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": blue,
-			"hover": indigo,
+			"default": #404040,
+			"hover": #e1122a,
 		),
 		"secondary": (
-			"default": red,
-			"hover": darkred,
+			"default": #f25f70,
+			"hover": #4f4f4f,
 		),
 		"foreground": (
 			"default": #444444,
 			"light": #767676, // must be accesible!
 			"dark": #111111, // must be accesible!
 		),
-		"background": white,
+		"background": #f0f0f0,
 		"border": (
 			"default": #DDDDDD,
 			"light": #FAFAFA,
@@ -160,8 +160,8 @@ $config-button: (
 	"color": (
 		"text": map-deep-get($config-global, "color", "background"),
 		"text-hover": map-deep-get($config-global, "color", "background"),
-		"background": map-deep-get($config-global, "color", "primary", "default"),
-		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		"background": map-deep-get($config-global, "color", "secondary", "default"),
+		"background-hover": map-deep-get($config-global, "color", "secondary", "hover"),
 	),
 	// Fonts
 	"font": (
@@ -197,12 +197,12 @@ $config-heading: (
 		"family": map-deep-get($config-global, "font", "family", "primary"),
 		// Size
 		"size": (
-			"h6": map-deep-get($config-global, "font", "size", "md"),
-			"h5": map-deep-get($config-global, "font", "size", "lg"),
-			"h4": map-deep-get($config-global, "font", "size", "xl"),
-			"h3": map-deep-get($config-global, "font", "size", "xxl"),
-			"h2": map-deep-get($config-global, "font", "size", "xxxl"),
-			"h1": map-deep-get($config-global, "font", "size", "xxxxl"),
+			"h6": map-deep-get($config-global, "font", "size", "sm"),
+			"h5": map-deep-get($config-global, "font", "size", "base"),
+			"h4": map-deep-get($config-global, "font", "size", "md"),
+			"h3": map-deep-get($config-global, "font", "size", "lg"),
+			"h2": map-deep-get($config-global, "font", "size", "xl"),
+			"h1": map-deep-get($config-global, "font", "size", "xxl"),
 		),
 		// Letter spacing
 		"line-height": (
@@ -223,7 +223,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": normal,
+		"weight": 300,
 	),
 );
 
@@ -243,7 +243,7 @@ $config-list: (
 $config-pullquote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-heading, "font", "family")},
+		"family": #{map-deep-get($config-global, "font", "family", "secondary")},
 	),
 	// Border
 	"color": (
@@ -262,7 +262,7 @@ $config-pullquote: (
 $config-quote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-heading, "font", "family")},
+		"family": #{map-deep-get($config-global, "font", "family", "secondary")},
 	),
 );
 
@@ -291,8 +291,8 @@ $config-header: (
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
 				"size": map-deep-get($config-global, "font", "size", "md"),
-				"weight": normal,
-				"line-height": 1,
+				"weight": 300,
+				"line-height": 1.3333,
 			),
 		),
 		// Fonts & Typography
@@ -316,7 +316,7 @@ $config-header: (
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
 			"size": map-deep-get($config-global, "font", "size", "md"),
-			"weight": normal,
+			"weight": 700,
 			"line-height": 1,
 		),
 		"link-padding": map-deep-get($config-global, "spacing", "unit"),
@@ -338,9 +338,9 @@ $config-header: (
 $config-footer: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "foreground", "light"),
-		"link": map-deep-get($config-global, "color", "primary", "default"),
-		"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		"text": map-deep-get($config-global, "color", "white"),
+		"link": map-deep-get($config-global, "color", "white"),
+		"link-hover": map-deep-get($config-global, "color", "secondary", "default"),
 	),
 	// Fonts
 	"font": (
