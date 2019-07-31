@@ -323,6 +323,10 @@ article .entry-header .entry-title,
 	max-width: 100%;
 	width: 100%;
 
+	& > *:last-child {
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+
 	.widget-title,
 	.widgettitle {
   	font-size: #{map-deep-get($config-global, "font", "size", "md")};
@@ -333,23 +337,24 @@ article .entry-header .entry-title,
     }
   }
 
-	@include media(mobile) {
-		padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
-	}
-
   @include media(laptop) {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-column-gap: #{map-deep-get($config-global, "spacing", "vertical")};
+		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 
-    & > *:nth-child(2) {
+		.widget {
+			width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")})
+		}
+
+		& > *:nth-child(2) {
       margin-top: 0;
     }
   }
 
 	@include media(desktop) {
-	grid-template-columns: repeat(3, 1fr);
+		.widget {
+			width: calc(33.3333% - #{1.333 * map-deep-get($config-global, "spacing", "horizontal")})
+		}
 
 		& > *:nth-child(3) {
       margin-top: 0;
