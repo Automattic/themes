@@ -101,7 +101,7 @@ if ( ! function_exists( 'hever_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'hever_setup' );
+add_action( 'after_setup_theme', 'hever_setup', 12 );
 
 /**
  * Set the content width in pixels, based on the child-theme's design and stylesheet.
