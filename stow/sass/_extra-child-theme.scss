@@ -3,7 +3,7 @@
  *
  * 1. General Helper Styles
  * 2. Header
- * 3. Main Wrapper
+ * 3. Main Wrapper and Content
  * 4. Navigation Menu
  * 5. Footer
  * 6. Archive Pagination and Post Navigation
@@ -33,18 +33,6 @@ a {
 .main-navigation {
 	text-transform: uppercase;
 }
-
-// .main-navigation > div {
-// 	text-align: left;
-// }
-
-// .comment-reply-title {
-// 	display: inherit;
-// }
-
-// .comment .comment-reply-title {
-// 	display: flex;
-// }
 
 .main-navigation > div > ul,
 .social-navigation > div > ul,
@@ -93,7 +81,7 @@ a {
 }
 
 /**
- * 3. Main Wrapper
+ * 3. Main Wrapper and Content
  */
 .site {
 	margin: 0 auto;
@@ -211,34 +199,17 @@ a {
  */
 .site-footer {
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
-	
 	margin: 0 auto;
 	padding: #{map-deep-get($config-global, "spacing", "vertical")};
 	@extend %responsive-width-full;
 	@include media(tablet) {
-		aside {
-			&.widget-area {
-				display:flex;
-				flex-wrap:wrap;
-				flex-direction:row;
-				justify-content:flex-start;
-				align-items:stretch;
-				section {
-					&.widget {
-						flex-basis: 50%;
-					}
-				}
-				> *:first-child {
-					margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
-				}
+		div {
+			&.footer-nav-credits {
+				width: 100%;
 			}
 		}
 	}
 }
-
-
-
-// UNSURE ABOUT KEEPING
 
 /**
  * 6. Archive Pagination and Post Navigation
@@ -247,7 +218,6 @@ a {
 .post-navigation .post-title {
 	font-weight: normal;
 }
-
 
 /**
  * 7. Block Specific Styles
@@ -397,21 +367,29 @@ a {
 			margin-bottom: .857em;
 		}
 	}
-}
-
-// ONLY IF HOME WITH NO HEADER - REMOVE FOR PRODUCTION
-.home {
-	&.page {
-		.site-main {
-			padding: 0;
-			article {
-				.entry-content {
-					margin-top: 0;
+	@include media(tablet) {
+		div {
+			&.footer-widgets {
+				width: 100%;
+				aside {
+					&.widget-area {
+						display:flex;
+						flex-wrap:wrap;
+						flex-direction:row;
+						justify-content:flex-start;
+						align-items:stretch;
+						section {
+							&.widget {
+								flex-basis: 50%;
+							}
+						}
+						> *:first-child {
+							margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+						}
+					}
 				}
+				
 			}
 		}
-		.entry-header {
-			display: none;
-		}		
 	}
 }
