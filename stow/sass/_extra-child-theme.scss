@@ -24,6 +24,16 @@
  */
 body {
 	font-weight: 300;
+	&.hide-homepage-title {
+		.site-main {
+			padding: 0;
+			article {
+				.entry-content {
+					margin-top: 0;
+				}
+			}
+		}
+	}
 }
 
 a {
@@ -320,35 +330,14 @@ a {
 
 /**
  * 7.6. Button Block
- */
- .wp-block-button {
-	a {
-		&.wp-block-button__link {
-			text-transform: uppercase;
-		}
-	}
-}
-
-/**
  * 7.7. Posts List Block
- */
-.a8c-posts-list {
-	a {
-		&.a8c-posts-list__view-all {
-			text-transform: uppercase;
-		}
-	}
-}
-
-/**
  * 7.8. Search Block
  */
-.wp-block-search {
-	.wp-block-search__button {
-		text-transform: uppercase;
-	}
+ .wp-block-button a.wp-block-button__link,
+ .a8c-posts-list a.a8c-posts-list__view-all,
+ .wp-block-search .wp-block-search__button {
+	text-transform: uppercase;
 }
-
 
 /**
  * 8. Widgets
