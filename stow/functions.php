@@ -60,7 +60,7 @@ if ( ! function_exists( 'stow_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'stow' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', 
+					'color' => '#404040', 
 				),
 				array(
 					'name'  => __( 'Secondary', 'stow' ),
