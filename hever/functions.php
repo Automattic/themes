@@ -29,25 +29,25 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'hever' ),
 					'shortName' => __( 'S', 'hever' ),
-					'size'      => 19.5,
+					'size'      => 17.3914,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __( 'Normal', 'hever' ),
+					'name'      => __( 'Medium', 'hever' ),
 					'shortName' => __( 'M', 'hever' ),
-					'size'      => 22,
+					'size'      => 23,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'hever' ),
 					'shortName' => __( 'L', 'hever' ),
-					'size'      => 36.5,
+					'size'      => 26.45,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'hever' ),
 					'shortName' => __( 'XL', 'hever' ),
-					'size'      => 49.5,
+					'size'      => 30.4174,
 					'slug'      => 'huge',
 				),
 			)
