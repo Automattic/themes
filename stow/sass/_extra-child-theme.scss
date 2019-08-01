@@ -30,15 +30,7 @@ a {
 	text-decoration: none;
 }
 
-.site-branding,
-.site-info,
-.main-navigation,
-.entry-header,
-.entry-footer,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
+.main-navigation {
 	text-transform: uppercase;
 }
 
@@ -66,6 +58,7 @@ a {
 #masthead {
 	background-color: #{map-deep-get($config-global, "color", "white")};
 	padding: 0;
+	@extend %responsive-width-full;
 	.site-title {
 		font-size: #{map-deep-get($config-global, "font", "size", "xxl")};
 	}
@@ -84,7 +77,6 @@ a {
 		padding: 3em 0 36px;
 	}
 	margin: 0 auto;
-	max-width: 1180px;
 	.social-navigation {
 		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
 		ul {
@@ -104,7 +96,6 @@ a {
  * 3. Main Wrapper
  */
 .site {
-	max-width:1180px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -113,10 +104,22 @@ a {
 	background-color: #{map-deep-get($config-global, "color", "white")};
 }
 
+#page {
+	.entry-header, 
+	.page-header,
+	.entry-footer,
+	.a8c-posts-list {
+		text-align: center;
+	}
+	.a8c-posts-list-item__excerpt {
+		text-align: left;
+	}
+}
 /**
  * 4. Navigation Menu
  */
 #site-navigation {
+	
 	&.main-navigation {
 		ul {
 			li {
@@ -190,7 +193,7 @@ a {
 				}
 			}			
 		}
-		.menu-main-menu-container {
+		.main-menu {
 			background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
 			border-bottom: 2px solid rgba(0,0,0,.15);
 		}
@@ -208,9 +211,29 @@ a {
  */
 .site-footer {
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
-	max-width: 1180px;
+	
 	margin: 0 auto;
 	padding: #{map-deep-get($config-global, "spacing", "vertical")};
+	@extend %responsive-width-full;
+	@include media(tablet) {
+		aside {
+			&.widget-area {
+				display:flex;
+				flex-wrap:wrap;
+				flex-direction:row;
+				justify-content:flex-start;
+				align-items:stretch;
+				section {
+					&.widget {
+						flex-basis: 50%;
+					}
+				}
+				> *:first-child {
+					margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+				}
+			}
+		}
+	}
 }
 
 
@@ -271,8 +294,6 @@ a {
  */
 .wp-block-coblocks-hero__box, 
 .wp-block-cover__inner-container {
-	background: #fff;
-    box-shadow: rgba(0,0,0,.1) 0 1px 2px;
 	padding: #{map-deep-get($config-global, "spacing", "vertical")};
 	h1,
 	h2,
