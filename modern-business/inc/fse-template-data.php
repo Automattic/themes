@@ -65,23 +65,6 @@ class A8C_WP_Template_Data_Inserter {
 
 		wp_set_object_terms( $footer_id, "$current_theme_name-footer", 'wp_template_part_type' );
 
-		$page_template_id = wp_insert_post(
-			[
-				'post_title'     => 'Page Template',
-				'post_content'   => $this->get_template_content( $header_id, $footer_id ),
-				'post_status'    => 'publish',
-				'post_type'      => 'wp_template',
-				'comment_status' => 'closed',
-				'ping_status'    => 'closed',
-			]
-		);
-
-		if ( ! term_exists( "$current_theme_name-page-template", 'wp_template_type' ) ) {
-			wp_insert_term( "$current_theme_name-page-template", 'wp_template_type' );
-		}
-
-		wp_set_object_terms( $page_template_id, "$current_theme_name-page-template", 'wp_template_type' );
-
 		add_option( $fse_template_data_option, true );
 	}
 
@@ -110,79 +93,9 @@ class A8C_WP_Template_Data_Inserter {
 	}
 
 	/**
-	 * Returns default page template content.
-	 *
-	 * @param int $header_id ID of referenced header template part CPT.
-	 * @param int $footer_id ID of referenced footer template part CPT.
-	 *
-	 * @return string
-	 */
-	public function get_template_content( $header_id, $footer_id ) {
-		return "<!-- wp:a8c/template {\"templateId\":$header_id,\"className\":\"site-header site-branding\"} /-->" .
-		       '<!-- wp:a8c/post-content /-->' .
-		       "<!-- wp:a8c/template {\"templateId\":$footer_id,\"className\":\"site-footer\"} /-->";
-	}
-
-	/**
 	 * Register post types.
 	 */
 	public function register_template_post_types() {
-		register_post_type(
-			'wp_template',
-			array(
-				'labels'                => array(
-					'name'                     => _x( 'Templates', 'post type general name', 'full-site-editing' ),
-					'singular_name'            => _x( 'Template', 'post type singular name', 'full-site-editing' ),
-					'menu_name'                => _x( 'Templates', 'admin menu', 'full-site-editing' ),
-					'name_admin_bar'           => _x( 'Template', 'add new on admin bar', 'full-site-editing' ),
-					'add_new'                  => _x( 'Add New', 'Template', 'full-site-editing' ),
-					'add_new_item'             => __( 'Add New Template', 'full-site-editing' ),
-					'new_item'                 => __( 'New Template', 'full-site-editing' ),
-					'edit_item'                => __( 'Edit Template', 'full-site-editing' ),
-					'view_item'                => __( 'View Template', 'full-site-editing' ),
-					'all_items'                => __( 'All Templates', 'full-site-editing' ),
-					'search_items'             => __( 'Search Templates', 'full-site-editing' ),
-					'not_found'                => __( 'No templates found.', 'full-site-editing' ),
-					'not_found_in_trash'       => __( 'No templates found in Trash.', 'full-site-editing' ),
-					'filter_items_list'        => __( 'Filter templates list', 'full-site-editing' ),
-					'items_list_navigation'    => __( 'Templates list navigation', 'full-site-editing' ),
-					'items_list'               => __( 'Templates list', 'full-site-editing' ),
-					'item_published'           => __( 'Template published.', 'full-site-editing' ),
-					'item_published_privately' => __( 'Template published privately.', 'full-site-editing' ),
-					'item_reverted_to_draft'   => __( 'Template reverted to draft.', 'full-site-editing' ),
-					'item_scheduled'           => __( 'Template scheduled.', 'full-site-editing' ),
-					'item_updated'             => __( 'Template updated.', 'full-site-editing' ),
-				),
-				'menu_icon'             => 'dashicons-layout',
-				'public'                => false,
-				'show_ui'               => true,
-				'show_in_menu'          => true,
-				'rewrite'               => false,
-				'show_in_rest'          => true,
-				'rest_base'             => 'templates',
-				'rest_controller_class' => 'A8C_REST_Templates_Controller',
-				'capability_type'       => 'template',
-				'capabilities'          => array(
-					// You need to be able to edit posts, in order to read templates in their raw form.
-					'read'                   => 'edit_posts',
-					// You need to be able to customize, in order to create templates.
-					'create_posts'           => 'edit_theme_options',
-					'edit_posts'             => 'edit_theme_options',
-					'delete_posts'           => 'edit_theme_options',
-					'edit_published_posts'   => 'edit_theme_options',
-					'delete_published_posts' => 'edit_theme_options',
-					'edit_others_posts'      => 'edit_theme_options',
-					'delete_others_posts'    => 'edit_theme_options',
-					'publish_posts'          => 'edit_theme_options',
-				),
-				'map_meta_cap'          => true,
-				'supports'              => array(
-					'title',
-					'editor',
-				),
-			)
-		);
-
 		register_post_type(
 			'wp_template_part',
 			array(
@@ -235,46 +148,6 @@ class A8C_WP_Template_Data_Inserter {
 				'supports'              => array(
 					'title',
 					'editor',
-				),
-			)
-		);
-
-		register_taxonomy(
-			'wp_template_type',
-			'wp_template',
-			array(
-				'labels'             => array(
-					'name'              => _x( 'Template Types', 'taxonomy general name', 'full-site-editing' ),
-					'singular_name'     => _x( 'Template Type', 'taxonomy singular name', 'full-site-editing' ),
-					'menu_name'         => _x( 'Template Types', 'admin menu', 'full-site-editing' ),
-					'all_items'         => __( 'All Template Types', 'full-site-editing' ),
-					'edit_item'         => __( 'Edit Template Type', 'full-site-editing' ),
-					'view_item'         => __( 'View Template Type', 'full-site-editing' ),
-					'update_item'       => __( 'Update Template Type', 'full-site-editing' ),
-					'add_new_item'      => __( 'Add New Template Type', 'full-site-editing' ),
-					'new_item_name'     => __( 'New Template Type', 'full-site-editing' ),
-					'parent_item'       => __( 'Parent Template Type', 'full-site-editing' ),
-					'parent_item_colon' => __( 'Parent Template Type:', 'full-site-editing' ),
-					'search_items'      => __( 'Search Template Types', 'full-site-editing' ),
-					'not_found'         => __( 'No template types found.', 'full-site-editing' ),
-					'back_to_items'     => __( 'Back to template types', 'full-site-editing' ),
-				),
-				'public'             => false,
-				'publicly_queryable' => true,
-				'show_ui'            => true,
-				'show_in_menu'       => false,
-				'show_in_nav_menu'   => false,
-				'show_in_rest'       => true,
-				'rest_base'          => 'template_types',
-				'show_tagcloud'      => false,
-				'show_admin_column'  => true,
-				'hierarchical'       => true,
-				'rewrite'            => false,
-				'capabilities'       => array(
-					'manage_terms' => 'edit_theme_options',
-					'edit_terms'   => 'edit_theme_options',
-					'delete_terms' => 'edit_theme_options',
-					'assign_terms' => 'edit_theme_options',
 				),
 			)
 		);
