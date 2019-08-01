@@ -3214,7 +3214,7 @@ img#wpstats {
  *
  * 1. General Helper Styles
  * 2. Header
- * 3. Main Wrapper
+ * 3. Main Wrapper and Content
  * 4. Navigation Menu
  * 5. Footer
  * 6. Archive Pagination and Post Navigation
@@ -3292,7 +3292,7 @@ a {
 }
 
 /**
- * 3. Main Wrapper
+ * 3. Main Wrapper and Content
  */
 .site {
 	margin: 0 auto;
@@ -3364,7 +3364,6 @@ a {
 @media only screen and (min-width: 560px) {
 	#site-navigation.main-navigation ul ul {
 		background-color: white;
-		box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
 	}
 	#site-navigation.main-navigation ul ul li.current-menu-item a {
 		color: #f25f70;
@@ -3405,22 +3404,6 @@ a {
 }
 
 @media only screen and (min-width: 640px) {
-	.site-footer div.footer-widgets {
-		width: 100%;
-	}
-	.site-footer div.footer-widgets aside.widget-area {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: stretch;
-	}
-	.site-footer div.footer-widgets aside.widget-area section.widget {
-		flex-basis: 50%;
-	}
-	.site-footer div.footer-widgets aside.widget-area > *:first-child {
-		margin-top: 32px;
-	}
 	.site-footer div.footer-nav-credits {
 		width: 100%;
 	}
@@ -3580,6 +3563,25 @@ a {
 
 .site-footer .widget-area .widget-title {
 	margin-bottom: .857em;
+}
+
+@media only screen and (min-width: 640px) {
+	.site-footer div.footer-widgets {
+		width: 100%;
+	}
+	.site-footer div.footer-widgets aside.widget-area {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: stretch;
+	}
+	.site-footer div.footer-widgets aside.widget-area section.widget {
+		flex-basis: 50%;
+	}
+	.site-footer div.footer-widgets aside.widget-area > *:first-child {
+		margin-top: 32px;
+	}
 }
 
 .home.page .site-main {
