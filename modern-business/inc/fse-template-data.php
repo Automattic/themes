@@ -92,14 +92,9 @@ class A8C_WP_Template_Data_Inserter {
 	 */
 	public function get_header_content() {
 		// TODO: replace with header blocks once they are ready.
-		return '<!-- wp:group {"className":"site-header site-branding"} -->' .
-		       '<div class="wp-block-group site-header site-branding">' .
-		       '<div class="wp-block-group__inner-container">' .
-		       '<!-- wp:a8c/site-description /-->' .
+		return '<!-- wp:a8c/site-description /-->' .
 		       '<!-- wp:a8c/site-title /-->' .
-		       '<!-- wp:a8c/navigation-menu /-->' .
-		       '</div></div>' .
-		       '<!-- /wp:group -->';
+		       '<!-- wp:a8c/navigation-menu /-->';
 	}
 
 	/**
@@ -108,16 +103,10 @@ class A8C_WP_Template_Data_Inserter {
 	 * @return string
 	 */
 	public function get_footer_content() {
-		return '<!-- wp:group {"align":"full","className":"site-footer"} -->' .
-			   '<div class="wp-block-group alignfull site-footer">' .
-			   '<div class="wp-block-group__inner-container">' .
-			   '<!-- wp:separator {"className":"is-style-default"} -->' .
+		return '<!-- wp:separator {"className":"is-style-default"} -->' .
 			   '<hr class="wp-block-separator is-style-default"/>' .
 			   '<!-- /wp:separator -->' .
-			   '<!-- wp:a8c/navigation-menu /-->' .
-			   '</div>' .
-			   '</div>' .
-			   '<!-- /wp:group -->';
+			   '<!-- wp:a8c/navigation-menu /-->';
 	}
 
 	/**
@@ -129,9 +118,9 @@ class A8C_WP_Template_Data_Inserter {
 	 * @return string
 	 */
 	public function get_template_content( $header_id, $footer_id ) {
-		return "<!-- wp:a8c/template {\"templateId\":$header_id} /-->" .
+		return "<!-- wp:a8c/template {\"templateId\":$header_id,\"className\":\"site-header site-branding\"} /-->" .
 		       '<!-- wp:a8c/post-content /-->' .
-		       "<!-- wp:a8c/template {\"templateId\":$footer_id} /-->";
+		       "<!-- wp:a8c/template {\"templateId\":$footer_id,\"className\":\"site-footer\"} /-->";
 	}
 
 	/**
