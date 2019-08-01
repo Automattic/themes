@@ -104,7 +104,7 @@ function coutoire_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'coutoire_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'coutoire_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'coutoire_content_width', 0 );
 
@@ -121,23 +121,23 @@ function coutoire_fonts_url() {
 	* supported by Lora, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$playfair = esc_html_x( 'on', 'Playfair Display font: on or off', 'coutoire' );
+	$work_sans = esc_html_x( 'on', 'Work Sans font: on or off', 'coutoire' );
 
 	/* Translators: If there are characters in your language that are not
 	* supported by Open Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$roboto = esc_html_x( 'on', 'Roboto Sans font: on or off', 'coutoire' );
+	$eb_garamond = esc_html_x( 'on', 'EB Garamond font: on or off', 'coutoire' );
 
-	if ( 'off' !== $playfair || 'off' !== $roboto ) {
+	if ( 'off' !== $work_sans || 'off' !== $eb_garamond ) {
 		$font_families = array();
 
-		if ( 'off' !== $playfair ) {
-			$font_families[] = 'Playfair+Display:400,400i';
+		if ( 'off' !== $work_sans ) {
+			$font_families[] = 'Work Sans:300,500,600';
 		}
 
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:300,300i,700';
+		if ( 'off' !== $eb_garamond ) {
+			$font_families[] = 'EB Garamond:400,400i';
 		}
 
 		$query_args = array(
@@ -157,7 +157,7 @@ function coutoire_fonts_url() {
 function coutoire_scripts() {
 
 	// enqueue Google fonts, if necessary
-	// wp_enqueue_style( 'coutoire-fonts', coutoire_fonts_url(), array(), null );
+	wp_enqueue_style( 'coutoire-fonts', coutoire_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );
@@ -167,6 +167,9 @@ function coutoire_scripts() {
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'coutoire-style', 'rtl', 'replace' );
+
+	// enqueue header spacing JS
+	wp_enqueue_script('coutoire-header-spacing', get_stylesheet_directory_uri() . '/js/header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true);
 
 }
 add_action( 'wp_enqueue_scripts', 'coutoire_scripts', 99 );
