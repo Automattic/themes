@@ -128,27 +128,15 @@ function morden_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Lora, translate this to 'off'. Do not translate
+	* supported by Noto Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$playfair = esc_html_x( 'on', 'Playfair Display font: on or off', 'morden' );
+	$notosans = esc_html_x( 'on', 'Noto Sans font: on or off', 'morden' );
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Open Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$roboto = esc_html_x( 'on', 'Roboto Sans font: on or off', 'morden' );
-
-	if ( 'off' !== $playfair || 'off' !== $roboto ) {
+	if ( 'off' !== $notosans ) {
 		$font_families = array();
 
-		if ( 'off' !== $playfair ) {
-			$font_families[] = 'Playfair+Display:400,400i';
-		}
-
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:300,300i,700';
-		}
+		$font_families[] = 'Noto+Sans:400,400i,700,700i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
