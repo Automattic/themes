@@ -16,6 +16,19 @@
 		a {
 			color: currentColor;
 		}
+
+		& > * {
+			margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+			margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	/* Treating H2 separately to account for legacy /core styles */
