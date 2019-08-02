@@ -169,7 +169,7 @@ function coutoire_scripts() {
 	wp_style_add_data( 'coutoire-style', 'rtl', 'replace' );
 
 	// enqueue header spacing JS
-	wp_enqueue_script('coutoire-header-spacing', get_stylesheet_directory_uri() . '/js/header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true);
+	wp_enqueue_script('coutoire-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 }
 add_action( 'wp_enqueue_scripts', 'coutoire_scripts', 99 );
