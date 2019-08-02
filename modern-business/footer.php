@@ -20,22 +20,22 @@
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer">
-	
-	<?php 
-		if ( class_exists( 'Full_Site_Editing' ) ) {
-			fse_get_footer();
+	<?php
+		if ( class_exists( 'A8C_WP_Template' ) ) {
+			$template = new A8C_WP_Template();
+			$template->output_template_part_content( A8C_WP_Template::FOOTER );
 		} else {
-			get_template_part( 'template-parts/footer/footer', 'widgets' ); 
+			get_template_part( 'template-parts/footer/footer', 'widgets' );
 		}
 	?>
-	
+
 	<div class="site-info">
 		<?php $blog_info = get_bloginfo( 'name' ); ?>
-		
+
 		<?php if ( ! empty( $blog_info ) ) : ?>
 			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 		<?php endif; ?>
-		
+
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
 			<?php
 			/* translators: %s: WordPress. */
@@ -43,7 +43,7 @@
 			?>
 		</a>
 
-		<?php if ( !class_exists( 'Full_Site_Editing' ) ) : ?>
+		<?php if ( !class_exists( 'A8C_WP_Template' ) ) : ?>
 
 			<?php
 			if ( function_exists( 'the_privacy_policy_link' ) ) {
