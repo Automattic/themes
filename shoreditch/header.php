@@ -18,6 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+<?php wp_body_open(); ?>
 </head>
 
 <body <?php body_class(); ?>>
