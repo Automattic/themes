@@ -16,21 +16,53 @@ if ( ! function_exists( 'modern_business_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function modern_business_setup() {
-	    /**
-	     * Add support for core custom logo.
-	     *
-	     * @link https://codex.wordpress.org/Theme_Logo
-	     */
-	    add_theme_support(
-	        'custom-logo',
-	        array(
-	            'height'      => 128,
-	            'width'       => 128,
-	            'flex-width'  => true,
-	            'flex-height' => false,
-	            'header-text' => array( 'site-title' ),
-	        )
-	    );
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+				'custom-logo',
+				array(
+						'height'      => 128,
+						'width'       => 128,
+						'flex-width'  => true,
+						'flex-height' => false,
+						'header-text' => array( 'site-title' ),
+				)
+		);
+
+		// Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'modern-business' ),
+					'slug'  => 'primary',
+					'color' => '#c43d80', // $color__link
+				),
+				array(
+					'name'  => __( 'Secondary', 'modern-business' ),
+					'slug'  => 'secondary',
+					'color' => '#9e3067', // $color__border-link-hover
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'modern-business' ),
+					'slug'  => 'dark-gray',
+					'color' => '#181818', // $color__text-main
+				),
+				array(
+					'name'  => __( 'Light Gray', 'modern-business' ),
+					'slug'  => 'light-gray',
+					'color' => '#686868', // $color__text-light
+				),
+				array(
+					'name'  => __( 'White', 'modern-business' ),
+					'slug'  => 'white',
+					'color' => '#FFF',
+				),
+			)
+		);
 	}
 endif; // modern_business_setup
 add_action( 'after_setup_theme', 'modern_business_setup', 30 );

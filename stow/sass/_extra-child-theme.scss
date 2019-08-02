@@ -1,0 +1,333 @@
+/**
+ * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper and Content
+ * 4. Navigation Menu
+ * 5. Archive Pagination and Post Navigation
+ * 6. Block Specific Styles
+ * 6.1. Column Block
+ * 6.2. Quote Block
+ * 6.3. Hero Block and Cover Block
+ * 6.4. File Block
+ * 6.5. Latest Comments Block
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ * 7. Widgets
+ */
+
+/**
+ * 1. General Helper Styles
+ */
+body {
+	font-weight: 300;
+	&.hide-homepage-title {
+		.site-main {
+			padding: 0;
+			article {
+				.entry-content {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+.main-navigation {
+	text-transform: uppercase;
+}
+
+.main-navigation > div > ul,
+.social-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
+/**
+ * 2. Header
+ */
+#masthead {
+	background-color: #{map-deep-get($config-global, "color", "white")};
+	padding: 0;
+	@extend %responsive-width-full;
+	.site-title {
+		font-size: #{map-deep-get($config-global, "font", "size", "xxl")};
+	}
+	.site-description {
+		color: #333;
+	}
+	.site-branding {
+		text-align: center;
+		background: #fff;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+		height: 100%;
+		min-height: 72px;
+		padding: 3em 0 36px;
+	}
+	margin: 0 auto;
+	.social-navigation {
+		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		ul {
+			li {
+				a {
+					color: #{map-deep-get($config-global, "color", "secondary", "default")};
+					&:hover {
+						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * 3. Main Wrapper and Content
+ */
+.site {
+	margin: 0 auto;
+	padding: 0;
+}
+
+.site-content {
+	background-color: #{map-deep-get($config-global, "color", "white")};
+}
+
+#page {
+	.entry-header, 
+	.page-header,
+	.entry-footer,
+	.a8c-posts-list {
+		text-align: center;
+	}
+	.a8c-posts-list-item__excerpt {
+		text-align: left;
+	}
+}
+/**
+ * 4. Navigation Menu
+ */
+#site-navigation {
+	
+	&.main-navigation {
+		ul {
+			li {
+				padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+				&.current-menu-item {
+					a {
+						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					}
+				}
+				a {
+					color: #{map-deep-get($config-global, "color", "white")};
+					text-decoration: none;
+					&:hover {
+						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					}
+				}
+				@include media(mobile) {
+					padding-left: 0;
+					list-style-type: disc;
+					&.current-menu-item {
+						a {
+							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+						}
+					}
+					a {
+						color: #{map-deep-get($config-global, "color", "white")};
+						font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+						&:hover {
+							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+						}
+						&::after {
+							color: #ffa4ad;
+							content: " \2022";
+							margin-left: 1em;
+							display: inline;
+							font-size: #{map-deep-get($config-global, "font", "size", "base")};
+						}
+					}
+					&:last-child {
+						a {
+							&::after {
+								content: "";
+							}
+						}
+					}
+				}
+			}
+			ul {
+				@include media(mobile) {
+					background-color: #{map-deep-get($config-global, "color", "white")};
+					li {
+						&.current-menu-item {
+							a {
+								color: #{map-deep-get($config-global, "color", "secondary", "default")};
+							}
+						}
+						a {
+							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+							&::after {
+								content: "";
+							}
+							&:hover {
+								color: #{map-deep-get($config-global, "color", "primary", "hover")};
+							}
+						}
+						&:hover {
+							background: #f2f2f2;
+						}
+					}
+				}
+			}			
+		}
+		.main-menu {
+			background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
+			border-bottom: 2px solid rgba(0,0,0,.15);
+		}
+		#toggle-menu {
+			border-radius: 0;
+			width: 100% !important;
+			text-align: center;
+			font-size: map-deep-get($config-header, "main-nav", "font", "size");
+		}
+	}
+}
+
+/**
+ * 5. Archive Pagination and Post Navigation
+ */
+.pagination .nav-links > *, 
+.post-navigation .post-title {
+	font-weight: normal;
+}
+
+/**
+ * 6. Block Specific Styles
+ */
+
+/**
+ * 6.1. Column Block
+ */
+.wp-block-coblocks-column {
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6 {
+		margin-bottom: .857em;
+	}
+	a {
+		color: #{map-deep-get($config-global, "color", "secondary", "default")};
+		&:hover {
+			color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+		}
+	}
+}
+
+/**
+ * 6.2. Quote Block
+ */
+.wp-block-quote, 
+.wp-block-quote[style*="text-align:center"], 
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f2f2f2;
+	padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
+	p {
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+	}
+	cite {
+		color: #{map-deep-get($config-global, "color", "secondary", "default")};
+	}
+}
+
+/**
+ * 6.3. Hero Block and Cover Block
+ */
+.wp-block-coblocks-hero__box, 
+.wp-block-cover__inner-container {
+	padding: #{map-deep-get($config-global, "spacing", "vertical")};
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+	p {
+		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+}
+
+/**
+ * 6.4. File Block
+ */
+.wp-block-file {
+	a {
+		&.wp-block-file__button {
+			text-transform: uppercase;
+			line-height: #{map-deep-get($config-button, "font", "line-height")};
+			color: #{map-deep-get($config-button, "color", "text")};
+			cursor: pointer;
+			font-weight: #{map-deep-get($config-button, "font", "weight")};
+			font-family: #{map-deep-get($config-button, "font", "family")};
+			font-size: #{map-deep-get($config-button, "font", "size")};
+			background-color: #{map-deep-get($config-button, "color", "background")};
+			border-radius: #{map-deep-get($config-button, "border-radius")};
+			border-width: #{map-deep-get($config-button, "border-width")};
+			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+			display: inline-block;
+			&:focus, 
+			&:hover, 
+			&:visited {
+				color: #{map-deep-get($config-button, "color", "text-hover")};
+				background-color: #{map-deep-get($config-button, "color", "background-hover")};
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * 6.5. Latest Comments Block
+ */
+.wp-block-latest-comments {
+	.wp-block-latest-comments__comment-meta {
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		.wp-block-latest-comments__comment-date {
+			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		}
+	}
+}
+
+/**
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ */
+ .wp-block-button a.wp-block-button__link,
+ .a8c-posts-list a.a8c-posts-list__view-all,
+ .wp-block-search .wp-block-search__button {
+	text-transform: uppercase;
+}
+
+/**
+ * 7. Widgets
+ */
+.site-footer {
+	.widget-area {
+		.widget-title {
+			margin-bottom: .857em;
+		}
+	}
+}
