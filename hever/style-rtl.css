@@ -3273,36 +3273,17 @@ p:not(.site-title) a:hover {
 /**
  * Mobile-Menu
  */
-#toggle-menu {
-	position: absolute;
-	left: 16px;
-	top: 16px;
-}
-
-.site-branding {
-	max-width: calc(100% - 100px - 16px);
-}
-
-.site-logo:not(:last-child) {
-	padding-bottom: 16px;
-}
-
 /**
  * CSS-grid Desktop Menu
  */
 @media only screen and (min-width: 560px) {
-	#toggle-menu {
-		position: inherit;
-		left: auto;
-		top: auto;
-	}
 	.site-header {
 		align-items: center;
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
 		grid-column-gap: 16px;
-		grid-template-areas: "site-logo site-logo" "site-branding main-navigation" "site-branding social-navigation";
+		grid-template-areas: "site-logo site-logo" "site-title main-navigation" "site-description social-navigation";
 	}
 	.site-header:before, .site-header:after {
 		content: none;
@@ -3313,18 +3294,24 @@ p:not(.site-title) a:hover {
 		margin-bottom: 0;
 	}
 	.site-header .site-logo {
-		display: block;
 		grid-area: site-logo;
+		margin-bottom: 16px;
 	}
-	.site-header .site-branding {
-		align-self: baseline;
-		grid-area: site-branding;
-		max-width: inherit;
+	.site-header .site-title {
+		align-self: flex-end;
+		grid-area: site-title;
+	}
+	.site-header .site-title + .site-description {
+		margin-top: 0;
+	}
+	.site-header .site-description {
+		align-self: center;
+		grid-area: site-description;
 	}
 	.site-header .main-navigation {
-		align-self: baseline;
+		align-self: center;
 		grid-area: main-navigation;
-		justify-self: end;
+		justify-self: flex-end;
 	}
 	.site-header .main-navigation > div > ul {
 		justify-content: flex-end;
@@ -3332,8 +3319,7 @@ p:not(.site-title) a:hover {
 		margin-left: -8px;
 	}
 	.site-header .main-navigation > div > ul > li {
-		margin-bottom: 16px;
-		padding: 0 8px;
+		padding: 8px;
 	}
 	.site-header .main-navigation > div > ul > li > a {
 		padding: 0;
@@ -3351,7 +3337,6 @@ p:not(.site-title) a:hover {
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
-		padding-top: 8px;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
 	.site-header .main-navigation > div > ul > li.focus > ul:before,
@@ -3382,14 +3367,25 @@ p:not(.site-title) a:hover {
 		background: #303030;
 	}
 	.site-header .social-navigation {
+		align-self: center;
 		grid-area: social-navigation;
 		justify-self: flex-end;
 	}
 }
 
 .social-navigation > div > ul {
-	justify-content: flex-end;
 	flex-wrap: wrap;
+}
+
+/**
+ * Site Title
+ */
+.site-description {
+	color: #757575;
+}
+
+.site-title + .site-description {
+	margin-top: -16px;
 }
 
 /**

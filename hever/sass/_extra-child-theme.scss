@@ -38,30 +38,12 @@ a {
 /**
  * Mobile-Menu
  */
-#toggle-menu {
-	position: absolute;
-	right: #{map-deep-get($config-global, "spacing", "unit")};
-	top: #{map-deep-get($config-global, "spacing", "unit")};
-}
 
-.site-branding {
-	max-width: calc(100% - 100px - #{map-deep-get($config-global, "spacing", "unit")});
-}
-
-.site-logo:not(:last-child) {
-	padding-bottom: #{map-deep-get($config-global, "spacing", "unit")};
-}
 
 /**
  * CSS-grid Desktop Menu
  */
 @include media(mobile) {
-	#toggle-menu {
-		position: inherit;
-		right: auto;
-		top: auto;
-	}
-
 	.site-header {
 		align-items: center;
 		display: grid;
@@ -70,8 +52,8 @@ a {
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
 			"site-logo site-logo"
-			"site-branding main-navigation"
-			"site-branding social-navigation";
+			"site-title main-navigation"
+			"site-description social-navigation";
 
 		&:before,
 		&:after {
@@ -85,20 +67,28 @@ a {
 		}
 
 		.site-logo {
-			display: block;
 			grid-area: site-logo;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
 		}
 
-		.site-branding {
-			align-self: baseline;
-			grid-area: site-branding;
-			max-width: inherit;
+		.site-title {
+			align-self: flex-end;
+			grid-area: site-title;
+
+			& + .site-description {
+				margin-top: 0;
+			}
+		}
+
+		.site-description {
+			align-self: center;
+			grid-area: site-description;
 		}
 
 		.main-navigation {
-			align-self: baseline;
+			align-self: center;
 			grid-area: main-navigation;
-			justify-self: end;
+			justify-self: flex-end;
 
 			& > div > ul {
 				justify-content: flex-end;
@@ -106,8 +96,7 @@ a {
 				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 
 				& > li {
-					margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
-					padding: 0 #{map-deep-get($config-header, "main-nav", "link-padding")};
+					padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
 
 					& > a {
 						padding: 0;
@@ -130,7 +119,6 @@ a {
 				& > ul {
 					box-shadow: none;
 					overflow: hidden;
-					padding-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 
 					&:before {
 						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
@@ -160,6 +148,7 @@ a {
 		}
 
 		.social-navigation {
+			align-self: center;
 			grid-area: social-navigation;
 			justify-self: flex-end;
 		}
@@ -169,9 +158,19 @@ a {
 // Social Menu
 .social-navigation {
 	& > div > ul {
-		justify-content: flex-end;
 		flex-wrap: wrap;
 	}
+}
+
+/**
+ * Site Title
+ */
+.site-description {
+	color: #{map-deep-get($config-header, "branding", "color", "text")};
+}
+
+.site-title + .site-description {
+	margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
 }
 
 /**
