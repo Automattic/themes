@@ -3021,7 +3021,7 @@ img#wpstats {
 	}
 }
 
-.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .site-header {
+.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 	margin-right: calc( -0.5 * ( 100vw - 100% ));
 	margin-left: calc( -0.5 * ( 100vw - 100% ));
 	width: calc( 100% + (0.5 * 2) * ( 100vw - 100% ));
@@ -3029,7 +3029,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 560px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .site-header {
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
 		width: calc( calc( 560px - 32px) + (0.5 * 2) * ( 100vw - calc( 560px - 32px) ));
@@ -3038,7 +3038,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 640px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .site-header {
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
 		width: calc( calc( 640px - 32px) + (0.5 * 2) * ( 100vw - calc( 640px - 32px) ));
@@ -3047,7 +3047,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 782px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .site-header {
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
 		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
@@ -3056,7 +3056,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 1024px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .site-header {
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
 		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
@@ -3065,7 +3065,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 1280px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .site-header {
+	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
 		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
 		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
 		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
@@ -3235,10 +3235,6 @@ a:hover, a:focus {
 /**
  * Components
  */
-.site-header {
-	right: 0;
-}
-
 .site-title,
 .site-description {
 	color: black;
@@ -3373,14 +3369,16 @@ input[type="submit"],
 }
 
 @media only screen and (min-width: 560px) {
-	.site-header {
+	.site-header.alignfull {
 		align-items: flex-end;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		max-width: 100vw;
 		padding-right: 32px;
 		padding-left: 32px;
 		margin-bottom: 0;
+		width: 100%;
 		z-index: 10;
 	}
 	.site-branding {
@@ -3410,7 +3408,7 @@ input[type="submit"],
 }
 
 @media only screen and (min-width: 640px) {
-	.site-header {
+	.site-header.alignfull {
 		position: fixed;
 	}
 	.site-branding {
