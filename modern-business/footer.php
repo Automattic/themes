@@ -21,9 +21,9 @@
 
 <footer id="colophon" class="site-footer">
 	<?php
-		if ( class_exists( 'A8C_WP_Template' ) ) {
-			$template = new A8C_WP_Template();
-			$template->output_template_content( A8C_WP_Template::FOOTER );
+		if ( class_exists( 'A8C\FSE\WP_Template' ) ) {
+			$template = new A8C\FSE\WP_Template();
+			$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
 		} else {
 			get_template_part( 'template-parts/footer/footer', 'widgets' );
 		}
@@ -43,7 +43,7 @@
 			?>
 		</a>
 
-		<?php if ( !class_exists( 'A8C_WP_Template' ) ) : ?>
+		<?php if ( !class_exists( 'A8C\FSE\WP_Template' ) ) : ?>
 
 			<?php
 			if ( function_exists( 'the_privacy_policy_link' ) ) {
