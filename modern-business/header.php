@@ -24,12 +24,12 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentynineteen' ); ?></a>
 
-    <?php // If FSE plugin is active, use Header template part for content. ?>
+    <?php // If FSE plugin is active, use Header template for content. ?>
     <?php if( class_exists( 'A8C_WP_Template' ) ) : ?>
         <header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
             <?php
                 $template = new A8C_WP_Template();
-                $template->output_template_part_content( A8C_WP_Template::HEADER );
+                $template->output_template_content( A8C_WP_Template::HEADER );
             ?>
         </header>
     <?php endif; ?>
