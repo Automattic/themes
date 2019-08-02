@@ -910,8 +910,13 @@ ul.wp-block-archives,
 /** === Site Description Block === */
 
 .wp-block-a8c-site-description {
-	text-align: center;
-	margin: 0;
+	&,&:focus {
+		text-align: center;
+		margin: 0;
+		// Line height rounded up from the description text-size set in style.css.
+		// It needs to be a bit larger to prevent text from getting cropped on top.
+		line-height: 0.8em;
+	}
 }
 
 /** === Classic Editor === */
