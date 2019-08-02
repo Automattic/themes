@@ -10,9 +10,9 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 18px; // Set 16px/1em default on html
+$typescale-root: 17px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.333; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.200; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -29,7 +29,7 @@ $config-global: (
 		"size": (
 			"root": $typescale-root,
 			"ratio": $typescale-ratio,
-			"xs": ($typescale-base / $typescale-ratio),
+			"xs": ($typescale-base / $typescale-ratio / $typescale-ratio),
 			"sm": ($typescale-base / $typescale-ratio),
 			"base": $typescale-base,
 			"md": ($typescale-base * $typescale-ratio),
@@ -294,7 +294,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "xl"),
+				"size": map-deep-get($config-global, "font", "size", "xxxl"),
 				"weight": normal,
 				"line-height": 1,
 			),
@@ -304,7 +304,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "xl"),
+				"size": map-deep-get($config-global, "font", "size", "xxxl"),
 			),
 		),
 	),

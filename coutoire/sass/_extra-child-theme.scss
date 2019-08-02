@@ -68,19 +68,24 @@ a {
 	font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
 }
 
-.page-header .page-title {
-	font-size: #{map-deep-get($config-global, "font", "size", "base")};
-	font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
-	font-weight: 500;
-	text-transform: uppercase;
-	line-height: 1;
+#main .page-header {
+
+	margin-top: $spacing_vertical;
+
+	.page-title {
+		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-weight: 500;
+		text-transform: uppercase;
+		line-height: 1;
+	}
 }
 
 .entry-title,
 .post-navigation .post-title,
 .comment-reply-title {
-	font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
-	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
+	font-size: #{map-deep-get($config-heading, "font", "size", "h2")};
+	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
 	line-height: 1;
 	text-transform: uppercase;
 }
