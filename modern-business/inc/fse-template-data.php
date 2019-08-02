@@ -24,7 +24,7 @@ class A8C_WP_Template_Data_Inserter {
 		if ( get_option( $fse_template_data_option ) ) {
 			/*
 			 * Bail here to prevent inserting the FSE data twice for any given theme.
-			 * Multiple themes will still be able to insert different template parts.
+			 * Multiple themes will still be able to insert different templates.
 			 */
 			return;
 		}
@@ -36,40 +36,40 @@ class A8C_WP_Template_Data_Inserter {
 				'post_title'     => 'Header',
 				'post_content'   => $this->get_header_content(),
 				'post_status'    => 'publish',
-				'post_type'      => 'wp_template_part',
+				'post_type'      => 'wp_template',
 				'comment_status' => 'closed',
 				'ping_status'    => 'closed',
 			]
 		);
 
-		if ( ! term_exists( "$current_theme_name-header", 'wp_template_part_type' ) ) {
-			wp_insert_term( "$current_theme_name-header", 'wp_template_part_type' );
+		if ( ! term_exists( "$current_theme_name-header", 'wp_template_type' ) ) {
+			wp_insert_term( "$current_theme_name-header", 'wp_template_type' );
 		}
 
-		wp_set_object_terms( $header_id, "$current_theme_name-header", 'wp_template_part_type' );
+		wp_set_object_terms( $header_id, "$current_theme_name-header", 'wp_template_type' );
 
 		$footer_id = wp_insert_post(
 			[
 				'post_title'     => 'Footer',
 				'post_content'   => $this->get_footer_content(),
 				'post_status'    => 'publish',
-				'post_type'      => 'wp_template_part',
+				'post_type'      => 'wp_template',
 				'comment_status' => 'closed',
 				'ping_status'    => 'closed',
 			]
 		);
 
-		if ( ! term_exists( "$current_theme_name-footer", 'wp_template_part_type' ) ) {
-			wp_insert_term( "$current_theme_name-footer", 'wp_template_part_type' );
+		if ( ! term_exists( "$current_theme_name-footer", 'wp_template_type' ) ) {
+			wp_insert_term( "$current_theme_name-footer", 'wp_template_type' );
 		}
 
-		wp_set_object_terms( $footer_id, "$current_theme_name-footer", 'wp_template_part_type' );
+		wp_set_object_terms( $footer_id, "$current_theme_name-footer", 'wp_template_type' );
 
 		add_option( $fse_template_data_option, true );
 	}
 
 	/**
-	 * Returns default header template part content.
+	 * Returns default header template content.
 	 *
 	 * @return string
 	 */
@@ -81,7 +81,7 @@ class A8C_WP_Template_Data_Inserter {
 	}
 
 	/**
-	 * Returns default footer template part content.
+	 * Returns default footer template content.
 	 *
 	 * @return string
 	 */
@@ -97,30 +97,30 @@ class A8C_WP_Template_Data_Inserter {
 	 */
 	public function register_template_post_types() {
 		register_post_type(
-			'wp_template_part',
+			'wp_template',
 			array(
 				'labels'                => array(
-					'name'                     => _x( 'Template Parts', 'post type general name', 'full-site-editing' ),
-					'singular_name'            => _x( 'Template Part', 'post type singular name', 'full-site-editing' ),
-					'menu_name'                => _x( 'Template Parts', 'admin menu', 'full-site-editing' ),
-					'name_admin_bar'           => _x( 'Template Part', 'add new on admin bar', 'full-site-editing' ),
-					'add_new'                  => _x( 'Add New', 'Template Part', 'full-site-editing' ),
-					'add_new_item'             => __( 'Add New Template Part', 'full-site-editing' ),
-					'new_item'                 => __( 'New Template Part', 'full-site-editing' ),
-					'edit_item'                => __( 'Edit Template Part', 'full-site-editing' ),
-					'view_item'                => __( 'View Template Part', 'full-site-editing' ),
-					'all_items'                => __( 'All Template Parts', 'full-site-editing' ),
-					'search_items'             => __( 'Search Template Parts', 'full-site-editing' ),
-					'not_found'                => __( 'No template parts found.', 'full-site-editing' ),
-					'not_found_in_trash'       => __( 'No template parts found in Trash.', 'full-site-editing' ),
-					'filter_items_list'        => __( 'Filter template parts list', 'full-site-editing' ),
-					'items_list_navigation'    => __( 'Template parts list navigation', 'full-site-editing' ),
-					'items_list'               => __( 'Template parts list', 'full-site-editing' ),
-					'item_published'           => __( 'Template part published.', 'full-site-editing' ),
-					'item_published_privately' => __( 'Template part published privately.', 'full-site-editing' ),
-					'item_reverted_to_draft'   => __( 'Template part reverted to draft.', 'full-site-editing' ),
-					'item_scheduled'           => __( 'Template part scheduled.', 'full-site-editing' ),
-					'item_updated'             => __( 'Template part updated.', 'full-site-editing' ),
+					'name'                     => _x( 'Templates', 'post type general name', 'full-site-editing' ),
+					'singular_name'            => _x( 'Template', 'post type singular name', 'full-site-editing' ),
+					'menu_name'                => _x( 'Templates', 'admin menu', 'full-site-editing' ),
+					'name_admin_bar'           => _x( 'Template', 'add new on admin bar', 'full-site-editing' ),
+					'add_new'                  => _x( 'Add New', 'Template', 'full-site-editing' ),
+					'add_new_item'             => __( 'Add New Template', 'full-site-editing' ),
+					'new_item'                 => __( 'New Template', 'full-site-editing' ),
+					'edit_item'                => __( 'Edit Template', 'full-site-editing' ),
+					'view_item'                => __( 'View Template', 'full-site-editing' ),
+					'all_items'                => __( 'All Templates', 'full-site-editing' ),
+					'search_items'             => __( 'Search Templates', 'full-site-editing' ),
+					'not_found'                => __( 'No templates found.', 'full-site-editing' ),
+					'not_found_in_trash'       => __( 'No templates found in Trash.', 'full-site-editing' ),
+					'filter_items_list'        => __( 'Filter templates list', 'full-site-editing' ),
+					'items_list_navigation'    => __( 'Templates list navigation', 'full-site-editing' ),
+					'items_list'               => __( 'Templates list', 'full-site-editing' ),
+					'item_published'           => __( 'Template published.', 'full-site-editing' ),
+					'item_published_privately' => __( 'Template published privately.', 'full-site-editing' ),
+					'item_reverted_to_draft'   => __( 'Template reverted to draft.', 'full-site-editing' ),
+					'item_scheduled'           => __( 'Template scheduled.', 'full-site-editing' ),
+					'item_updated'             => __( 'Template updated.', 'full-site-editing' ),
 				),
 				'menu_icon'             => 'dashicons-layout',
 				'public'                => false,
@@ -128,9 +128,9 @@ class A8C_WP_Template_Data_Inserter {
 				'show_in_menu'          => true,
 				'rewrite'               => false,
 				'show_in_rest'          => true,
-				'rest_base'             => 'template_parts',
+				'rest_base'             => 'template',
 				'rest_controller_class' => 'A8C_REST_Templates_Controller',
-				'capability_type'       => 'template_part',
+				'capability_type'       => 'template',
 				'capabilities'          => array(
 					// You need to be able to edit posts, in order to read templates in their raw form.
 					'read'                   => 'edit_posts',
@@ -153,24 +153,24 @@ class A8C_WP_Template_Data_Inserter {
 		);
 
 		register_taxonomy(
-			'wp_template_part_type',
-			'wp_template_part',
+			'wp_template_type',
+			'wp_template',
 			array(
 				'labels'             => array(
-					'name'              => _x( 'Template Part Types', 'taxonomy general name', 'full-site-editing' ),
-					'singular_name'     => _x( 'Template Part Type', 'taxonomy singular name', 'full-site-editing' ),
-					'menu_name'         => _x( 'Template Part Types', 'admin menu', 'full-site-editing' ),
-					'all_items'         => __( 'All Template Part Types', 'full-site-editing' ),
-					'edit_item'         => __( 'Edit Template Part Type', 'full-site-editing' ),
-					'view_item'         => __( 'View Template Part Type', 'full-site-editing' ),
-					'update_item'       => __( 'Update Template Part Type', 'full-site-editing' ),
-					'add_new_item'      => __( 'Add New Template Part Type', 'full-site-editing' ),
-					'new_item_name'     => __( 'New Template Part Type', 'full-site-editing' ),
-					'parent_item'       => __( 'Parent Template Part Type', 'full-site-editing' ),
-					'parent_item_colon' => __( 'Parent Template Part Type:', 'full-site-editing' ),
-					'search_items'      => __( 'Search Template Part Types', 'full-site-editing' ),
-					'not_found'         => __( 'No template part types found.', 'full-site-editing' ),
-					'back_to_items'     => __( 'Back to template part types', 'full-site-editing' ),
+					'name'              => _x( 'Template Types', 'taxonomy general name', 'full-site-editing' ),
+					'singular_name'     => _x( 'Template Type', 'taxonomy singular name', 'full-site-editing' ),
+					'menu_name'         => _x( 'Template Types', 'admin menu', 'full-site-editing' ),
+					'all_items'         => __( 'All Template Types', 'full-site-editing' ),
+					'edit_item'         => __( 'Edit Template Type', 'full-site-editing' ),
+					'view_item'         => __( 'View Template Type', 'full-site-editing' ),
+					'update_item'       => __( 'Update Template Type', 'full-site-editing' ),
+					'add_new_item'      => __( 'Add New Template Type', 'full-site-editing' ),
+					'new_item_name'     => __( 'New Template Type', 'full-site-editing' ),
+					'parent_item'       => __( 'Parent Template Type', 'full-site-editing' ),
+					'parent_item_colon' => __( 'Parent Template Type:', 'full-site-editing' ),
+					'search_items'      => __( 'Search Template Types', 'full-site-editing' ),
+					'not_found'         => __( 'No template types found.', 'full-site-editing' ),
+					'back_to_items'     => __( 'Back to template types', 'full-site-editing' ),
 				),
 				'public'             => false,
 				'publicly_queryable' => true,
@@ -178,7 +178,7 @@ class A8C_WP_Template_Data_Inserter {
 				'show_in_menu'       => false,
 				'show_in_nav_menu'   => false,
 				'show_in_rest'       => true,
-				'rest_base'          => 'template_part_types',
+				'rest_base'          => 'template_types',
 				'show_tagcloud'      => false,
 				'show_admin_column'  => true,
 				'hierarchical'       => true,
