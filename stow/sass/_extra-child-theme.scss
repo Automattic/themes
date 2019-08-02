@@ -102,7 +102,7 @@ a {
 }
 
 #page {
-	.entry-header, 
+	.entry-header,
 	.page-header,
 	.entry-footer,
 	.a8c-posts-list {
@@ -113,10 +113,15 @@ a {
 	}
 }
 /**
- * 4. Navigation Menu
+ * 4. Navigation
+ */
+
+
+/**
+ * 4.1 Main Navigation
  */
 #site-navigation {
-	
+
 	&.main-navigation {
 		ul {
 			li {
@@ -187,7 +192,7 @@ a {
 						}
 					}
 				}
-			}			
+			}
 		}
 		.main-menu {
 			background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -203,9 +208,17 @@ a {
 }
 
 /**
+ * 4.2 Social Navigation
+ */
+.social-navigation > div > ul {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/**
  * 5. Archive Pagination and Post Navigation
  */
-.pagination .nav-links > *, 
+.pagination .nav-links > *,
 .post-navigation .post-title {
 	font-weight: normal;
 }
@@ -218,11 +231,11 @@ a {
  * 6.1. Column Block
  */
 .wp-block-coblocks-column {
-	h1, 
-	h2, 
-	h3, 
-	h4, 
-	h5, 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
 	h6 {
 		margin-bottom: .857em;
 	}
@@ -237,8 +250,8 @@ a {
 /**
  * 6.2. Quote Block
  */
-.wp-block-quote, 
-.wp-block-quote[style*="text-align:center"], 
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
 .wp-block-quote[style*="text-align:right"] {
 	border: 1px solid #f2f2f2;
 	padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
@@ -253,7 +266,7 @@ a {
 /**
  * 6.3. Hero Block and Cover Block
  */
-.wp-block-coblocks-hero__box, 
+.wp-block-coblocks-hero__box,
 .wp-block-cover__inner-container {
 	padding: #{map-deep-get($config-global, "spacing", "vertical")};
 	h1,
@@ -287,8 +300,8 @@ a {
 			border-width: #{map-deep-get($config-button, "border-width")};
 			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
 			display: inline-block;
-			&:focus, 
-			&:hover, 
+			&:focus,
+			&:hover,
 			&:visited {
 				color: #{map-deep-get($config-button, "color", "text-hover")};
 				background-color: #{map-deep-get($config-button, "color", "background-hover")};
