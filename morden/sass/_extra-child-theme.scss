@@ -32,11 +32,10 @@ a {
 }
 
 #masthead {
-	padding-bottom: 0;
+	//padding-bottom: 0;
 
 	&:before {
 		background: #{map-deep-get($config-global, "color", "primary", "default")};
-		border-bottom: #{map-deep-get($config-global, "spacing", "vertical")} solid #{map-deep-get($config-global, "color", "primary", "default")};
 		box-sizing: content-box;
 		content: "";
 		display: block;
@@ -195,6 +194,15 @@ a {
 }
 
 /**
+ * Main
+ */
+@include media(mobile) {
+	#main {
+		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+/**
  * Footer
  */
 #colophon {
@@ -273,12 +281,14 @@ table,
 .singular .hentry .entry-title,
 .page-title {
 	background: #{map-deep-get($config-global, "color", "background", "light")};
+	margin-top: -#{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
 	text-align: center;
 
 	@include media(mobile) {
 		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
 		padding-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 	}
@@ -291,6 +301,16 @@ table,
 	.entry-meta {
 		display: none;
 	}
+}
+
+// Sticky
+
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	background: #{map-deep-get($config-global, "color", "background", "light")};
+	border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
+	color: inherit;
+	text-transform: uppercase;
 }
 
 // Entry Title Link
