@@ -60,37 +60,37 @@ if ( ! function_exists( 'morden_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'morden' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#E22C2C',
 				),
 				array(
 					'name'  => __( 'Secondary', 'morden' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => '#EF6F13',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'morden' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#111111',
+					'color' => '#101010',
 				),
 				array(
 					'name'  => __( 'Gray', 'morden' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => '#303030',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'morden' ),
 					'slug'  => 'foreground-light',
-					'color' => '#767676',
+					'color' => '#757575',
 				),
 				array(
 					'name'  => __( 'Lighter Gray', 'morden' ),
 					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
+					'color' => '#C5C5C5',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'morden' ),
 					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
+					'color' => '#F8F8F8',
 				),
 				array(
 					'name'  => __( 'White', 'morden' ),

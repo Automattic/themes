@@ -33,12 +33,39 @@ a {
 
 #masthead {
 	padding-bottom: 0;
+
+	&:before {
+		background: #{map-deep-get($config-global, "color", "primary", "default")};
+		border-bottom: #{map-deep-get($config-global, "spacing", "vertical")} solid #{map-deep-get($config-global, "color", "primary", "default")};
+		box-sizing: content-box;
+		content: "";
+		display: block;
+		height: 100%;
+		left: 50%;
+		position: absolute;
+		top: 0;
+		transform: translateX(-50%);
+		width: 100vw;
+		z-index: -1;
+	}
 }
 
 /**
  * Mobile-Menu
  */
+.main-navigation #toggle:focus + #toggle-menu,
+#toggle-menu {
+	background: map-deep-get($config-global, "color", "background", "default");
+	color: map-deep-get($config-global, "color", "foreground", "default");
+	text-decoration: none;
 
+	&:active,
+	&:focus,
+	&:hover {
+		background: map-deep-get($config-global, "color", "foreground", "default");
+		color: map-deep-get($config-global, "color", "background", "default");
+	}
+}
 
 /**
  * CSS-grid Desktop Menu
@@ -113,29 +140,23 @@ a {
 			& > div > ul > li.current-menu-item {
 
 				& > a {
-					color: #{map-deep-get($config-global, "color", "primary", "default")};
+					color: rgba(map-deep-get($config-global, "color", "background", "default"), 0.8);
 				}
 
 				& > ul {
+					border: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 25%);
+					border-top: 0;
 					box-shadow: none;
 					overflow: hidden;
-
-					&:before {
-						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
-						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						content: "";
-						display: block;
-						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
-						width: #{map-deep-get($config-global, "spacing", "unit")};
-					}
 				}
 
 				& li {
+					border-top: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 25%);
 
 					& > a {
 						background: #{map-deep-get($config-global, "color", "primary", "default")};
 						color: #{map-deep-get($config-global, "color", "background", "default")};
+						padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{1.5 * map-deep-get($config-global, "spacing", "unit")};
 					}
 
 					&:hover > a,
@@ -174,8 +195,38 @@ a {
 }
 
 /**
- * Footer Menu
+ * Footer
  */
+#colophon {
+	padding-bottom: 0;
+}
+
+// Footer Wrapper
+.footer-wrapper {
+	align-items: flex-end;
+  display: flex;
+	flex: 1 0 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	position: relative;
+
+	&:before {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		content: "";
+		display: block;
+		height: 100%;
+		left: 50%;
+		position: absolute;
+		top: 0;
+		transform: translateX(-50%);
+		width: 100vw;
+		z-index: -1;
+	}
+}
+
+// Footer Menu
 .footer-navigation .footer-menu {
 	margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 	margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
@@ -221,30 +272,18 @@ table,
 // Entry Title
 .singular .hentry .entry-title,
 .page-title {
+	background: #{map-deep-get($config-global, "color", "background", "light")};
+	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
 	text-align: center;
 
-	&:before,
-	&:after {
-		background: map-deep-get($config-global, "color", "border", "light");;
-		height: 1px;
-		content: "";
-		display: block;
-		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
-
-		@include media(mobile) {
-			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		}
-
-		@extend %responsive-width-full;
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		padding-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 	}
 
-	&:after {
-		margin-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
-
-		@include media(mobile) {
-			margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		}
-	}
+	@extend %responsive-width-full;
 }
 
 // Entry Meta
