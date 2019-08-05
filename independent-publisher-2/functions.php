@@ -129,6 +129,10 @@ function independent_publisher_2_word_count() {
 	$content = get_post_field( 'post_content', get_the_ID() );
 	$count   = str_word_count( strip_tags( $content ) );
 	$time    = $count / 250; //Roughly 250 wpm reading time
+	// if time less than 1 explicitly set to 1.
+	if( $time < 1 ) {
+		$time = 1;
+	}
 	return number_format( $time );
 }
 endif; // independent_publisher_2_word_count
