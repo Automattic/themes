@@ -94,19 +94,12 @@ endif;
 add_action( 'after_setup_theme', 'coutoire_setup' );
 
 /**
- * Set the content width in pixels, based on the child-theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width Content width.
+ * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
  */
 function coutoire_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'coutoire_content_width', 1200 );
+	return 1200;
 }
-add_action( 'after_setup_theme', 'coutoire_content_width', 0 );
+add_filter( 'varia_content_width', 'coutoire_content_width' );
 
 /**
  * Add Google webfonts, if necessary
