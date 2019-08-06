@@ -3,6 +3,56 @@
  */
 // @import "";
 
+%responsive-width-wide {
+
+	@include align-width( $content-width-flex, -0.15 );
+
+	@include media(mobile) {
+		@include align-width( $content-width-sm, -0.15 );
+	}
+
+	@include media(tablet) {
+		@include align-width( $content-width-md, -0.15 );
+	}
+
+	@include media(laptop) {
+		@include align-width( $content-width-lg, -0.15 );
+	}
+
+	@include media(desktop) {
+		@include align-width( $content-width-lg, -0.15 );
+	}
+
+	@include media(wide) {
+		@include align-width( $content-width-lg, -0.15 );
+	}
+}
+
+%responsive-width-full {
+
+	@include align-width( $content-width-flex, -0.4 );
+
+	@include media(mobile) {
+		@include align-width( $content-width-sm, -0.4 );
+	}
+
+	@include media(tablet) {
+		@include align-width( $content-width-md, -0.4 );
+	}
+
+	@include media(laptop) {
+		@include align-width( $content-width-lg, -0.4 );
+	}
+
+	@include media(desktop) {
+		@include align-width( $content-width-lg, -0.4 );
+	}
+
+	@include media(wide) {
+		@include align-width( $content-width-lg, -0.4 );
+	}
+}
+
 a {
 	text-decoration: none;
 
@@ -19,6 +69,18 @@ a {
 	}
 }
 
+#page {
+	background: #{map-deep-get($config-global, "color", "background", "default")};
+	margin-left: auto;
+	margin-right: auto;
+
+	@extend %responsive-width-full;
+}
+
+body {
+	background: #{map-deep-get($config-global, "color", "background", "dark")};
+}
+
 /**
  * Wide Header & Footer
  */
@@ -29,22 +91,6 @@ a {
 	position: relative;
 
 	@extend %responsive-width-wide;
-}
-
-#masthead {
-	&:before {
-		background: #{map-deep-get($config-global, "color", "primary", "default")};
-		box-sizing: content-box;
-		content: "";
-		display: block;
-		height: 100%;
-		left: 50%;
-		position: absolute;
-		top: 0;
-		transform: translateX(-50%);
-		width: 100vw;
-		z-index: -1;
-	}
 }
 
 /**
@@ -163,6 +209,13 @@ a {
 					}
 				}
 			}
+
+			& > div > ul > li.current-menu-item {
+				& > a {
+					color: inherit;
+					box-shadow: 0 2px 0;
+				}
+			}
 		}
 
 		.social-navigation {
@@ -181,8 +234,30 @@ a {
 }
 
 /**
- * Site Title
+ * Header
  */
+#masthead {
+	& > * {
+		position: relative;
+	}
+
+	&:before {
+		background: #{map-deep-get($config-global, "color", "primary", "default")};
+		content: "";
+		display: block;
+		height: 100%;
+		left: 50%;
+		margin: 0;
+		position: absolute;
+		top: 0;
+		transform: translateX(-50%);
+		z-index: 0;
+
+		@extend %responsive-width-full;
+	}
+}
+
+// Site Title
 .site-description {
 	color: #{map-deep-get($config-header, "branding", "color", "text")};
 }
@@ -218,17 +293,23 @@ a {
 	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
 	position: relative;
 
+	& > * {
+		position: relative;
+	}
+
 	&:before {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		content: "";
 		display: block;
 		height: 100%;
 		left: 50%;
+		margin: 0;
 		position: absolute;
 		top: 0;
 		transform: translateX(-50%);
-		width: 100vw;
-		z-index: -1;
+		z-index: 0;
+
+		@extend %responsive-width-full;
 	}
 }
 
