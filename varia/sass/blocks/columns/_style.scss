@@ -1,12 +1,7 @@
 .wp-block-columns {
 
 	.wp-block-column {
-
-		/* Resetting margins to match _block-container.scss */
-		margin-bottom: 0;
-
 		& > * {
-
 			margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 			margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 
@@ -22,6 +17,23 @@
 			&:last-child {
 				margin-bottom: 0;
 			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.wp-block-column:not(:last-child) {
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		@include media(laptop) {
+			/* Resetting margins to match _block-container.scss */
+			margin-bottom: 0;
 		}
 	}
 
