@@ -188,14 +188,19 @@ body {
 				}
 
 				& > ul {
-					border: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 25%);
-					border-top: 0;
+					background: #{map-deep-get($config-global, "color", "primary", "default")};
+					border: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 20%);
+					border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
 					box-shadow: none;
 					overflow: hidden;
 				}
 
 				& li {
-					border-top: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 25%);
+					border-top: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 20%);
+
+					&:first-child {
+						border-top: 0;
+					}
 
 					& > a {
 						background: #{map-deep-get($config-global, "color", "primary", "default")};
@@ -206,7 +211,7 @@ body {
 					&:hover > a,
 					&.focus > a,
 					&.current-menu-item > a {
-						background: #{map-deep-get($config-global, "color", "primary", "hover")};
+						background: darken(map-deep-get($config-global, "color", "primary", "default"), 10%);
 					}
 				}
 			}
