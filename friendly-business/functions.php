@@ -55,7 +55,7 @@ function friendly_business_setup() {
 			array(
 				'name'  => __( 'Light Gray', 'friendly-business' ),
 				'slug'  => 'light-gray',
-				'color' => '#fdf9ec', // $color__background-screen
+				'color' => '#0d1b24', // $color__text-dark
 			),
 
 			array(
