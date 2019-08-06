@@ -140,12 +140,38 @@ a {
  * Blocks
  */
 
+// Button
 button,
 .button,
 input[type="submit"],
-.wp-block-button__link,
-.wp-block-file__button {
+a.wp-block-button__link,
+a.wp-block-file__button {
 	font-weight: 800;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+// Cover
+.wp-block-cover,
+.wp-block-cover-image {
+
+	.wp-block-cover__inner-container,
+	.wp-block-cover-image-text,
+	.wp-block-cover-text {
+
+		a {
+			text-decoration-color: currentColor;
+
+			&:hover,
+			&:active, {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+// Latest Post
+.wp-block-latest-posts > li > a {
 	text-transform: uppercase;
 }
 
