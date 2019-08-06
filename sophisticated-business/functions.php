@@ -50,9 +50,9 @@ function sophisticated_business_setup() {
 				'color' => '#b59439', // $color__border-link-hover
 			),
 			array(
-				'name'  => __( 'Dark Blue', 'sophisticated-business' ),
-				'slug'  => 'dark-blue',
-				'color' => '#21759b', // $color__text-screen
+				'name'  => __( 'Dark Gray', 'sophisticated-business' ),
+				'slug'  => 'dark-gray',
+				'color' => '#1c1c1c', // $color__text-screen
 			),
 			array(
 				'name'  => __( 'Light Gray', 'sophisticated-business' ),
