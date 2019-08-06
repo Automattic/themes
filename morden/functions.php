@@ -29,25 +29,25 @@ if ( ! function_exists( 'morden_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'morden' ),
 					'shortName' => __( 'S', 'morden' ),
-					'size'      => 19.5,
+					'size'      => 16.6,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'morden' ),
 					'shortName' => __( 'M', 'morden' ),
-					'size'      => 22,
+					'size'      => 20,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'morden' ),
 					'shortName' => __( 'L', 'morden' ),
-					'size'      => 36.5,
+					'size'      => 26.45,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'morden' ),
 					'shortName' => __( 'XL', 'morden' ),
-					'size'      => 49.5,
+					'size'      => 30.4174,
 					'slug'      => 'huge',
 				),
 			)
@@ -85,7 +85,7 @@ if ( ! function_exists( 'morden_setup' ) ) :
 				array(
 					'name'  => __( 'Lighter Gray', 'morden' ),
 					'slug'  => 'background-dark',
-					'color' => '#C5C5C5',
+					'color' => '#E1DFDF',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'morden' ),
