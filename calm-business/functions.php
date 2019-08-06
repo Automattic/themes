@@ -53,6 +53,11 @@ if ( ! function_exists( 'calm_business_setup' ) ) {
 					'color' => '#242424', // $color__text-main
 				),
 				array(
+					'name'  => __( 'Light Gray', 'calm-business' ),
+					'slug'  => 'light-gray',
+					'color' => '#6C6C74', // $color__background-body-dark
+				),
+				array(
 					'name'  => __( 'White', 'calm-business' ),
 					'slug'  => 'white',
 					'color' => '#ffffff', // $color__text-light
