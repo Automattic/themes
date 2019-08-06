@@ -75,6 +75,19 @@
 		.wp-block-cover-image-text,
 		.wp-block-cover-text {
 			@extend %responsive-align-container;
+
+			// Make sure nested block respects .alignwide utility classes.
+			& > .alignwide {
+				@extend %responsive-width-wide;
+				clear: both;
+			}
+
+			// Make sure nested block respect .alignfull utility classes.
+			& > .alignfull {
+				@extend %responsive-width-full;
+				clear: both;
+			}
+
 		}
 	}
 
