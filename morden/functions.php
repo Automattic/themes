@@ -60,12 +60,12 @@ if ( ! function_exists( 'morden_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'morden' ),
 					'slug'  => 'primary',
-					'color' => '#E22C2C',
+					'color' => '#CD2220',
 				),
 				array(
 					'name'  => __( 'Secondary', 'morden' ),
 					'slug'  => 'secondary',
-					'color' => '#EF6F13',
+					'color' => '#007AB7',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'morden' ),
