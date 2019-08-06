@@ -6,20 +6,78 @@
  */
 
 /**
- * Class A8C_WP_Template_Data_Inserter
+ * Class A8C_WP_Templates_Data_Inserter
  */
-class A8C_WP_Template_Data_Inserter {
+class A8C_WP_Templates_Data_Inserter {
+	/*
+	 * Modern Business header content.
+	 *
+	 * @var string $header_content
+	 */
+	private $header_content;
+
+	/*
+	 * Modern Business footer content.
+	 *
+	 * @var string $footer_content
+	 */
+	private $footer_content;
+
+	/*
+	 * Current theme slug.
+	 *
+	 * @var string $theme_slug
+	 */
+	private $theme_slug;
+
+	/**
+	 * A8C_WP_Template_Parts_Data_Inserter constructor.
+	 */
+	public function __construct() {
+		$this->theme_slug = get_option( 'stylesheet' );
+		$this->header_content = '';
+		$this->footer_content = '';
+	}
+
+	/**
+	 * Retrieves template parts content from WP.com API.
+	 */
+	public function fetch_template_parts() {
+		$request_url = 'https://public-api.wordpress.com/wpcom/v2/full-site-editing/templates';
+
+		$request_args = [
+			'body' => [ 'theme_slug' => $this->theme_slug ],
+		];
+
+		$response = wp_remote_get( $request_url, $request_args );
+
+		if ( is_wp_error( $response ) ) {
+			return;
+		}
+
+		$api_response = json_decode( wp_remote_retrieve_body( $response ), true );
+
+		// Default to first returned header for now. Support for multiple headers will be added in future iterations.
+		if ( ! empty( $api_response['headers'] ) ) {
+			$this->header_content = $api_response['headers'][0];
+		}
+
+		// Default to first returned footer for now. Support for multiple footers will be added in future iterations.
+		if ( ! empty( $api_response['footers'] ) ) {
+			$this->footer_content = $api_response['footers'][0];
+		}
+	}
+
 	/**
 	 * This function will be called on plugin activation hook.
 	 */
 	public function insert_default_template_data() {
-		$current_theme_name = get_option( 'stylesheet' );
 		/**
 		 * This site option will be used to indicate that template data has already been
 		 * inserted for this theme, in order to prevent this functionality from running
 		 * more than once.
 		 */
-		$fse_template_data_option = $current_theme_name . '-fse-template-data';
+		$fse_template_data_option = $this->theme_slug . '-fse-template-data';
 
 		if ( get_option( $fse_template_data_option ) ) {
 			/*
@@ -29,12 +87,20 @@ class A8C_WP_Template_Data_Inserter {
 			return;
 		}
 
+		// Set header and footer content based on data fetched from the WP.com API.
+		$this->fetch_template_parts();
+
+		// Avoid creating template parts if data hasn't been fetched properly.
+		if ( empty( $this->header_content ) || empty( $this->footer_content ) ) {
+			return;
+		}
+
 		$this->register_template_post_types();
 
 		$header_id = wp_insert_post(
 			[
 				'post_title'     => 'Header',
-				'post_content'   => $this->get_header_content(),
+				'post_content'   => $this->header_content,
 				'post_status'    => 'publish',
 				'post_type'      => 'wp_template',
 				'comment_status' => 'closed',
@@ -42,16 +108,16 @@ class A8C_WP_Template_Data_Inserter {
 			]
 		);
 
-		if ( ! term_exists( "$current_theme_name-header", 'wp_template_type' ) ) {
-			wp_insert_term( "$current_theme_name-header", 'wp_template_type' );
+		if ( ! term_exists( "$this->theme_slug-header", 'wp_template_type' ) ) {
+			wp_insert_term( "$this->theme_slug-header", 'wp_template_type' );
 		}
 
-		wp_set_object_terms( $header_id, "$current_theme_name-header", 'wp_template_type' );
+		wp_set_object_terms( $header_id, "$this->theme_slug-header", 'wp_template_type' );
 
 		$footer_id = wp_insert_post(
 			[
 				'post_title'     => 'Footer',
-				'post_content'   => $this->get_footer_content(),
+				'post_content'   => $this->footer_content,
 				'post_status'    => 'publish',
 				'post_type'      => 'wp_template',
 				'comment_status' => 'closed',
@@ -59,37 +125,13 @@ class A8C_WP_Template_Data_Inserter {
 			]
 		);
 
-		if ( ! term_exists( "$current_theme_name-footer", 'wp_template_type' ) ) {
-			wp_insert_term( "$current_theme_name-footer", 'wp_template_type' );
+		if ( ! term_exists( "$this->theme_slug-footer", 'wp_template_type' ) ) {
+			wp_insert_term( "$this->theme_slug-footer", 'wp_template_type' );
 		}
 
-		wp_set_object_terms( $footer_id, "$current_theme_name-footer", 'wp_template_type' );
+		wp_set_object_terms( $footer_id, "$this->theme_slug-footer", 'wp_template_type' );
 
 		add_option( $fse_template_data_option, true );
-	}
-
-	/**
-	 * Returns default header template content.
-	 *
-	 * @return string
-	 */
-	public function get_header_content() {
-		// TODO: replace with header blocks once they are ready.
-		return '<!-- wp:a8c/site-description /-->' .
-		       '<!-- wp:a8c/site-title /-->' .
-		       '<!-- wp:a8c/navigation-menu /-->';
-	}
-
-	/**
-	 * Returns default footer template content.
-	 *
-	 * @return string
-	 */
-	public function get_footer_content() {
-		return '<!-- wp:separator {"className":"is-style-default"} -->' .
-			   '<hr class="wp-block-separator is-style-default"/>' .
-			   '<!-- /wp:separator -->' .
-			   '<!-- wp:a8c/navigation-menu /-->';
 	}
 
 	/**
@@ -109,6 +151,7 @@ class A8C_WP_Template_Data_Inserter {
 					'new_item'                 => __( 'New Template', 'full-site-editing' ),
 					'edit_item'                => __( 'Edit Template', 'full-site-editing' ),
 					'view_item'                => __( 'View Template', 'full-site-editing' ),
+					'view_items'               => __( 'View Templates', 'full-site-editing' ),
 					'all_items'                => __( 'All Templates', 'full-site-editing' ),
 					'search_items'             => __( 'Search Templates', 'full-site-editing' ),
 					'not_found'                => __( 'No templates found.', 'full-site-editing' ),
