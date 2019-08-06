@@ -75,18 +75,30 @@
 		.wp-block-cover-image-text,
 		.wp-block-cover-text {
 			@extend %responsive-align-container;
+		}
+	}
 
-			// Make sure nested block respects .alignwide utility classes.
-			& > .alignwide {
-				@extend %responsive-width-wide;
-				clear: both;
-			}
+	&.alignwide {
+		// Make sure nested blocks respects .alignwide utility classes.
+		& > .wp-block-cover__inner-container > .alignwide {
+			@extend %responsive-width-wide;
+		}
 
-			// Make sure nested block respect .alignfull utility classes.
-			& > .alignfull {
-				@extend %responsive-width-full;
-				clear: both;
-			}
+		// Make sure nested blocks respect .alignfull utility classes.
+		& > .wp-block-cover__inner-container > .alignfull {
+			@extend %responsive-width-wide;
+		}
+	}
+
+	&.alignfull {
+		// Make sure nested blocks respects .alignwide utility classes.
+		& > .wp-block-cover__inner-container > .alignwide {
+			@extend %responsive-width-wide;
+		}
+
+		// Make sure nested blocks respect .alignfull utility classes.
+		& > .wp-block-cover__inner-container > .alignfull {
+			@extend %responsive-width-full;
 		}
 	}
 
