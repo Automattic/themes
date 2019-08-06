@@ -154,8 +154,8 @@ function morden_fonts_url() {
  */
 function morden_scripts() {
 
-	// enqueue Google fonts, if necessary
-	// wp_enqueue_style( 'morden-fonts', morden_fonts_url(), array(), null );
+	// enqueue Google fonts
+	wp_enqueue_style( 'morden-fonts', morden_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );
@@ -174,7 +174,7 @@ add_action( 'wp_enqueue_scripts', 'morden_scripts', 99 );
  */
 function morden_editor_styles() {
 
-	// Enqueue Google fonts in the editor, if necessary
+	// enqueue Google fonts in the editor
 	wp_enqueue_style( 'morden-editor-fonts', morden_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'morden_editor_styles' );
