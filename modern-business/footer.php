@@ -19,7 +19,7 @@
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="<?php echo class_exists( 'A8C\FSE\WP_Template' ) ? 'site-footer fse-template-content' : 'site-footer' ?>">
 	<?php
 		if ( class_exists( 'A8C\FSE\WP_Template' ) ) {
 			$template = new A8C\FSE\WP_Template();

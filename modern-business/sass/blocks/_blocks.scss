@@ -1,7 +1,8 @@
 /* !Block styles */
 
 .entry .entry-content > *,
-.entry .entry-summary > * {
+.entry .entry-summary > * 
+.fse-template-content > * {
 	margin: $size__vertical-spacing-unit 0;
 	max-width: 100%;
 
@@ -96,7 +97,8 @@
 /*
  * Make sure the first block has margin-top: 0
  */
-.entry:not(.has-post-thumbnail) .entry-content > :first-child {
+.entry:not(.has-post-thumbnail) .entry-content > :first-child,
+.fse-template-content > :first-child {
 	margin-top: 0;
 }
 
@@ -106,7 +108,8 @@
  * - helps with plugin compatibility
  */
 .entry .entry-content,
-.entry .entry-summary {
+.entry .entry-summary,
+.fse-template-content {
 
 	.entry-content,
 	.entry-summary,
@@ -123,7 +126,8 @@
 	}
 }
 
-.entry .entry-content {
+.entry .entry-content,
+.fse-template-content {
 
 	//! Headers
 	& > h1,
