@@ -48,15 +48,16 @@ function friendly_business_setup() {
 				'color' => '#133a24', // $color__border-link-hover
 			),
 			array(
-				'name'  => __( 'Dark Brown', 'friendly-business' ),
-				'slug'  => 'dark-brown',
+				'name'  => __( 'Dark Gray', 'friendly-business' ),
+				'slug'  => 'dark-gray',
 				'color' => '#3c2323', // $color__text-main
 			),
 			array(
-				'name'  => __( 'Floral White', 'friendly-business' ),
-				'slug'  => 'floral-white',
+				'name'  => __( 'Light Gray', 'friendly-business' ),
+				'slug'  => 'light-gray',
 				'color' => '#fdf9ec', // $color__background-screen
 			),
+
 			array(
 				'name'  => __( 'White', 'friendly-business' ),
 				'slug'  => 'white',
