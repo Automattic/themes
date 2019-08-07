@@ -79,7 +79,7 @@
 		});
 
 		// Close expanded sub-menus when clicking links
-		container.find( 'a' ).click( function( e ) {
+		container.find( "a:not([target='_blank'])" ).click( function( e ) {
 
 			var _this         = $( this ),
 				anchor        = _this.attr( 'href' ),
