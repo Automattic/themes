@@ -134,6 +134,7 @@ class A8C_WP_Templates_Data_Inserter {
 		add_option( $fse_template_data_option, true );
 	}
 
+	
 	/**
 	 * Register post types.
 	 */
