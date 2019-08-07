@@ -79,7 +79,7 @@ a {
 }
 
 body {
-	background: #{map-deep-get($config-global, "color", "background", "dark")};
+	background: #{map-deep-get($config-global, "color", "background", "light")};
 }
 
 /**
@@ -106,7 +106,7 @@ body {
 	&:active,
 	&:focus,
 	&:hover {
-		background: map-deep-get($config-global, "color", "foreground", "default");
+		background: map-deep-get($config-global, "color", "primary", "default");
 		color: map-deep-get($config-global, "color", "background", "default");
 	}
 }
@@ -188,21 +188,21 @@ body {
 				}
 
 				& > ul {
-					background: #{map-deep-get($config-global, "color", "primary", "default")};
-					border: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 20%);
+					background: #{map-deep-get($config-global, "color", "foreground", "default")};
+					border: 1px solid #{map-deep-get($config-global, "color", "foreground", "dark")};
 					border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
 					overflow: hidden;
 				}
 
 				& li {
-					border-top: 1px solid darken(map-deep-get($config-global, "color", "primary", "default"), 20%);
+					border-top: 1px solid #{map-deep-get($config-global, "color", "foreground", "dark")};
 
 					&:first-child {
 						border-top: 0;
 					}
 
 					& > a {
-						background: #{map-deep-get($config-global, "color", "primary", "default")};
+						background: #{map-deep-get($config-global, "color", "foreground", "default")};
 						color: #{map-deep-get($config-global, "color", "background", "default")};
 						padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{1.5 * map-deep-get($config-global, "spacing", "unit")};
 					}
@@ -210,7 +210,7 @@ body {
 					&:hover > a,
 					&.focus > a,
 					&.current-menu-item > a {
-						background: darken(map-deep-get($config-global, "color", "primary", "default"), 10%);
+						background: #{map-deep-get($config-global, "color", "primary", "default")};
 					}
 				}
 			}
@@ -247,7 +247,7 @@ body {
 	}
 
 	&:before {
-		background: #{map-deep-get($config-global, "color", "primary", "default")};
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		content: "";
 		display: block;
 		height: 100%;
