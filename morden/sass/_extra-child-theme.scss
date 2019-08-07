@@ -283,45 +283,15 @@ body {
 /**
  * Footer
  */
-#colophon {
-	padding-bottom: 0;
-}
-
-// Footer Wrapper
-.footer-wrapper {
-	align-items: flex-end;
-  display: flex;
-	flex: 1 0 100%;
-  flex-wrap: wrap;
-  justify-content: space-between;
-	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
-	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
-	position: relative;
-
-	& > * {
-		position: relative;
-	}
-
-	&:before {
-		background: #{map-deep-get($config-global, "color", "foreground", "default")};
-		content: "";
-		display: block;
-		height: 100%;
-		left: 50%;
-		margin: 0;
-		position: absolute;
-		top: 0;
-		transform: translateX(-50%);
-		z-index: 0;
-
-		@extend %responsive-width-full;
-	}
-}
-
 // Footer Menu
 .footer-navigation .footer-menu {
 	margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 	margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+
+	a {
+		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		line-height: #{map-deep-get($config-global, "font", "line-height", "xs")};
+	}
 }
 
 /**

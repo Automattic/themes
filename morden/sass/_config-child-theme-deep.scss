@@ -252,7 +252,7 @@ $config-pullquote: (
 	// Border
 	"color": (
 		"border": #{map-deep-get($config-global, "color", "border", "default")},
-		"background": #{map-deep-get($config-global, "color", "background", "light")},
+		"background": #{map-deep-get($config-global, "color", "primary", "default")},
 	),
 	// Border
 	"border": (
@@ -342,14 +342,14 @@ $config-header: (
 $config-footer: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "background", "default"),
-		"link": map-deep-get($config-global, "color", "background", "default"),
-		"link-hover": map-deep-get($config-global, "color", "background", "dark"),
+		"text": map-deep-get($config-global, "color", "foreground", "light"),
+		"link": map-deep-get($config-global, "color", "foreground", "light"),
+		"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 	),
 	// Fonts
 	"font": (
 		"family": map-deep-get($config-global, "font", "family", "primary"),
-		"size": map-deep-get($config-global, "font", "size", "sm"),
-		"line-height": map-deep-get($config-global, "font", "line-height", "sm"),
+		"size": map-deep-get($config-global, "font", "size", "xs"),
+		"line-height": map-deep-get($config-global, "font", "line-height", "xs"),
 	),
 );
