@@ -18,23 +18,6 @@
 		}
 	}
 
-	&.alignwide .wp-block-group__inner-container,
-	&.alignfull .wp-block-group__inner-container {
-		@extend %responsive-align-container;
-	}
-
-	&.alignwide .alignwide,
-	&.alignwide .alignfull,
-	&.alignfull .alignwide {
-		@extend %responsive-width-wide;
-		clear: both;
-	}
-
-	&.alignfull .alignfull, {
-		@extend %responsive-width-full;
-		clear: both;
-	}
-
 	&.has-background {
 		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
 

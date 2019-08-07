@@ -31,6 +31,14 @@
 		}
 	}
 
+	&.alignwide,
+	&.alignfull {
+		.wp-block-cover-image-text,
+		.wp-block-cover-text {
+			@extend %responsive-align-container;
+		}
+	}
+
 	/* Treating H2 separately to account for legacy /core styles */
 	h2 {
 		font-size: #{map-deep-get($config-heading, "font", "size", "h2")};
@@ -66,53 +74,6 @@
 			padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 			padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 			width: 100%;
-		}
-	}
-
-	&.alignwide,
-	&.alignfull {
-		.wp-block-cover__inner-container,
-		.wp-block-cover-image-text,
-		.wp-block-cover-text {
-			@extend %responsive-align-container;
-		}
-	}
-
-	&:not(.alignwide):not(.alignfull) {
-		// Make sure nested blocks respect .alignwide utility classes.
-		& > .wp-block-cover__inner-container > .alignwide {
-			@extend %responsive-width-normal;
-		}
-
-		// Make sure nested blocks respect .alignfull utility classes.
-		& > .wp-block-cover__inner-container > .alignfull {
-			max-width: calc( 100% + #{2 * map-deep-get($config-global, "spacing", "horizontal")} );
-			margin-left: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
-			margin-right: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
-		}
-	}
-
-	&.alignwide {
-		// Make sure nested blocks respect .alignwide utility classes.
-		& > .wp-block-cover__inner-container > .alignwide {
-			@extend %responsive-width-wide;
-		}
-
-		// Make sure nested blocks respect .alignfull utility classes.
-		& > .wp-block-cover__inner-container > .alignfull {
-			@extend %responsive-width-wide;
-		}
-	}
-
-	&.alignfull {
-		// Make sure nested blocks respect .alignwide utility classes.
-		& > .wp-block-cover__inner-container > .alignwide {
-			@extend %responsive-width-wide;
-		}
-
-		// Make sure nested blocks respect .alignfull utility classes.
-		& > .wp-block-cover__inner-container > .alignfull {
-			@extend %responsive-width-full;
 		}
 	}
 

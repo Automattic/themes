@@ -64,13 +64,13 @@
 	$spacing_variable: map-deep-get($config-global, "spacing", "horizontal");
 
 	@if length($multiplier) == 0 {
-		$multiplier: (10 * $spacing_variable);
+		$multiplier: (9 * $spacing_variable);
 	}
 
 	//margin-left: calc( #{$multiplier} - ( 100vw - #{$width} ) );
 	//margin-right: calc( #{$multiplier} - ( 100vw - #{$width} ) );
-	margin-left: #{-1 * $multiplier};
-	margin-right: #{-1 * $multiplier};
+	margin-left: #{-1 * $multiplier + $spacing_variable};
+	margin-right: #{-1 * $multiplier + $spacing_variable};
 	width: calc(#{$width} + #{2 * $multiplier} - #{2 * $spacing_variable}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
 	max-width: calc(#{$width} + #{2 * $multiplier} - #{2 * $spacing_variable}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
 }

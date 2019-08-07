@@ -29,15 +29,66 @@
 // - More selector specificity needed here to deal with
 //   group-block expected behavior
 // - See: sass/blocks/group/_style.scss
+
+// Normal width blocks
+.entry-content > [class^="wp-block"]:not(.alignwide):not(.alignfull) {
+
+	// Make sure nested blocks respect .alignwide utility classes.
+	[class*="inner-container"] > .alignwide {
+		@extend %responsive-width-normal;
+	}
+
+	// Make sure nested blocks respect .alignfull utility classes.
+	[class*="inner-container"] > .alignfull {
+		max-width: calc( 100% + #{2 * map-deep-get($config-global, "spacing", "horizontal")} );
+		margin-left: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+		margin-right: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+	}
+}
+
+// Wide width blocks
 .entry-content > .alignwide {
 	@extend %responsive-width-wide;
 	clear: both;
+
+	// Make sure nested blocks respect .alignwide utility classes.
+	[class*="inner-container"] > .alignwide {
+		@extend %responsive-width-wide;
+		padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+
+	// Make sure nested blocks respect .alignfull utility classes.
+	[class*="inner-container"] > .alignfull {
+		@extend %responsive-width-wide;
+	}
 }
 
+// Full width blocks
 .entry-content > .alignfull {
 	@extend %responsive-width-full;
 	clear: both;
+
+	// Make sure nested blocks respect .alignwide utility classes.
+	[class*="inner-container"] > .alignwide {
+		@extend %responsive-width-wide;
+	}
+
+	// Make sure nested blocks respect .alignfull utility classes.
+	[class*="inner-container"] > .alignfull {
+		@extend %responsive-width-full;
+	}
 }
+
+// Containers
+.entry-content > .alignwide,
+.entry-content > .alignfull {
+	[class*="inner-container"] {
+		@extend %responsive-align-container;
+	}
+}
+
+
 
 // Content alignment
 .has-left-content {
