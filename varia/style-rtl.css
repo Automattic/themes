@@ -1258,6 +1258,13 @@ input.has-focus[type="submit"],
 	width: 100%;
 }
 
+.wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignfull,
+.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignfull {
+	max-width: calc( 100% + 32px);
+	margin-right: -16px;
+	margin-left: -16px;
+}
+
 .wp-block-cover.has-left-content, .wp-block-cover.has-right-content,
 .wp-block-cover-image.has-left-content,
 .wp-block-cover-image.has-right-content {
@@ -2924,36 +2931,42 @@ img#wpstats {
  * Page Layout Styles & Repsonsive Styles
  */
 /* Responsive width-content overrides */
-.responsive-max-width {
+.responsive-max-width, .wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide,
+.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide {
 	max-width: 100%;
 }
 
 @media only screen and (min-width: 560px) {
-	.responsive-max-width {
+	.responsive-max-width, .wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide,
+	.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide {
 		max-width: calc( 560px - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.responsive-max-width {
+	.responsive-max-width, .wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide,
+	.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide {
 		max-width: calc( 640px - 32px);
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.responsive-max-width {
+	.responsive-max-width, .wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide,
+	.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide {
 		max-width: calc( 782px - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.responsive-max-width {
+	.responsive-max-width, .wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide,
+	.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide {
 		max-width: calc( 782px - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.responsive-max-width {
+	.responsive-max-width, .wp-block-cover:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide,
+	.wp-block-cover-image:not(.alignwide):not(.alignfull) > .wp-block-cover__inner-container > .alignwide {
 		max-width: calc( 782px - 32px);
 	}
 }

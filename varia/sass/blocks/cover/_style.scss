@@ -78,6 +78,20 @@
 		}
 	}
 
+	&:not(.alignwide):not(.alignfull) {
+		// Make sure nested blocks respect .alignwide utility classes.
+		& > .wp-block-cover__inner-container > .alignwide {
+			@extend %responsive-width-normal;
+		}
+
+		// Make sure nested blocks respect .alignfull utility classes.
+		& > .wp-block-cover__inner-container > .alignfull {
+			max-width: calc( 100% + #{2 * map-deep-get($config-global, "spacing", "horizontal")} );
+			margin-left: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+			margin-right: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+		}
+	}
+
 	&.alignwide {
 		// Make sure nested blocks respect .alignwide utility classes.
 		& > .wp-block-cover__inner-container > .alignwide {

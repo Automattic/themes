@@ -61,16 +61,18 @@
  */
 @mixin alignwide-width( $width: 100%, $multiplier...) {
 
+	$spacing_variable: map-deep-get($config-global, "spacing", "horizontal");
+
 	@if length($multiplier) == 0 {
-		$multiplier: (8 * map-deep-get($config-global, "spacing", "horizontal"));
+		$multiplier: (10 * $spacing_variable);
 	}
 
 	//margin-left: calc( #{$multiplier} - ( 100vw - #{$width} ) );
 	//margin-right: calc( #{$multiplier} - ( 100vw - #{$width} ) );
 	margin-left: #{-1 * $multiplier};
 	margin-right: #{-1 * $multiplier};
-	width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
-	max-width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+	width: calc(#{$width} + #{2 * $multiplier} - #{2 * $spacing_variable}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+	max-width: calc(#{$width} + #{2 * $multiplier} - #{2 * $spacing_variable}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
 }
 
 /**
