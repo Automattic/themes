@@ -127,16 +127,3 @@ function a8c_fse_insert_theme_template_data() {
 }
 
 add_action( 'after_switch_theme', 'a8c_fse_insert_theme_template_data' );
-
-/**
- * Add Full Site Editing class to body so block specific styles can be targetted
- * to theme parts if FSE enabled.
- */
-add_filter('body_class', 'fse_body_class');
-function fse_body_class($classes)
-{
-	if (class_exists('A8C\FSE\WP_Template')) {
-		$classes[] = 'fse-enabled';
-	}
-	return $classes;
-}
