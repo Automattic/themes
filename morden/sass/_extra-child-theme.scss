@@ -402,10 +402,10 @@ article .entry-header .entry-title,
 	.hentry .entry-content {
 		& > *:first-child {
 			&.alignfull {
-				margin-top: 0;
+				margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
 
 				@include media(mobile) {
-					margin-top: 0;
+					margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
 				}
 			}
 		}
