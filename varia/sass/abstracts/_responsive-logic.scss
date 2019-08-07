@@ -38,10 +38,10 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 
 %responsive-width-wide {
 
-	@include align-width( $content-width-flex, -0.25 );
+	@include align-width( $content-width-flex, 0 );
 
 	@include media(mobile) {
-		@include align-width( $content-width-sm, -0.25 );
+		@include align-width( $content-width-sm, 0 );
 	}
 
 	@include media(tablet) {
@@ -91,7 +91,7 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	@include align-container-width( calc( #{$content-width-flex} - #{$horizontal-padding} ) );
 
 	@include media(mobile) {
-		@include align-container-width( #{$content-width-sm} );
+		@include align-container-width( calc( #{$content-width-sm} - #{$horizontal-padding} ) );
 	}
 
 	@include media(tablet) {
