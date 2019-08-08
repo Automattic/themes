@@ -1,7 +1,7 @@
 /* !Block styles */
 
 .entry .entry-content > *,
-.entry .entry-summary > *, 
+.entry .entry-summary > *,
 .fse-enabled .site-header > *,
 .fse-enabled .site-footer > * {
 	margin: $size__vertical-spacing-unit 0;
@@ -19,6 +19,12 @@
 
 	> *:last-child {
 		margin-bottom: 0;
+	}
+
+	> .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+		margin-right: auto;
+		margin-left: auto;
+		@include postContentMaxWidth();
 	}
 
 	&.alignwide {
@@ -45,6 +51,43 @@
 			left: calc( -12.5% - 75px );
 			width: calc( 125% + 150px );
 			max-width: calc( 125% + 150px );
+		}
+
+		& > .wp-block-group__inner-container {
+			@include media(tablet) {
+				max-width: 80%;
+				margin: 0 10%;
+				padding: 0 60px;
+			}
+
+			> * {
+				&.alignwide {
+					clear: both;
+				}
+
+				&.alignfull {
+					clear: both;
+					position: relative;
+					left: -#{$size__spacing-unit };
+					width: calc( 100% + (2 * #{$size__spacing-unit}));
+					max-width: calc( 100% + (2 * #{$size__spacing-unit}));
+
+					@include media(tablet) {
+						margin-top: $size__vertical-spacing-unit;
+						margin-bottom: $size__vertical-spacing-unit;
+						left: calc( -12.5% - 75px );
+						width: calc( 125% + 150px );
+						max-width: calc( 125% + 150px );
+					}
+				}
+
+				&.wp-block-media-text.alignfull {
+					@include media(tablet) {
+						width: calc( 125% + 150px - 128px );
+						max-width: calc( 125% + 150px - 128px );
+					}
+				}
+			}
 		}
 	}
 
@@ -666,7 +709,10 @@
 		img {
 			display: block;
 		}
+	}
 
+	//! Top level image block extend edge to edge.
+	> .wp-block-image {
 		&.alignfull img {
 			width: 100vw;
 			max-width: calc( 100% + (2 * #{$size__spacing-unit}));
