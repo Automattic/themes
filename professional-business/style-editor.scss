@@ -329,10 +329,22 @@ figcaption,
 			font-size: $font__size-lg;
 			max-width: 100%;
 			padding: 0;
-			text-align: left;
+			text-align: inherit;
 
 			@include media(tablet) {
 				font-size: $font__size-xl;
+			}
+
+			&.has-text-align-left {
+				text-align: left;
+			}
+
+			&.has-text-align-center {
+				text-align: center;
+			}
+
+			&.has-text-align-right {
+				text-align: right;
 			}
 		}
 
@@ -419,7 +431,6 @@ figcaption,
 
 	@include media(tablet) {
 
-		h2,
 		.wp-block-cover-text {
 			max-width: calc(8 * (100vw / 12) - 43px); // 43px is the 28px + 15px -- half of the padding on blocks like paragraph
 		}
@@ -427,7 +438,6 @@ figcaption,
 
 	@include media(desktop) {
 
-		h2,
 		.wp-block-cover-text {
 			max-width: calc(6 * (100vw / 12) - 43px); // 43px is the 28px + 15px -- half of the padding on blocks like paragraph
 		}

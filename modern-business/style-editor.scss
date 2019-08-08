@@ -33,9 +33,11 @@ Modern Business Editor Styles
 }
 
 /** === Editor Frame === */
-
+// Targets just the editor frame area, not outside it.
+// See https://github.com/WordPress/gutenberg/blob/0ad0414e7a469254ef1ad105fdcf14248a986686/docs/designers-developers/developers/themes/theme-support.md#editor-styles
 body {
 	font-weight: 300;
+	background: $color__background-body;
 
 	.wp-block[data-align="full"] {
 		width: 100%;
@@ -346,7 +348,19 @@ figcaption,
 	h5,
 	h6 {
 		font-weight: 300;
-		text-align: left;
+		text-align: inherit;
+
+		&.has-text-align-left {
+			text-align: left;
+		}
+
+		&.has-text-align-center {
+			text-align: center;
+		}
+
+		&.has-text-align-right {
+			text-align: right;
+		}
 	}
 
 	h1 {
@@ -917,6 +931,15 @@ ul.wp-block-archives,
 		// It needs to be a bit larger to prevent text from getting cropped on top.
 		line-height: 0.8em;
 	}
+}
+
+/** === Site Logo Block === */
+.template__site-logo {
+	.components-placeholder.block-editor-media-placeholder {
+		width: 380px;
+		margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /** === Classic Editor === */

@@ -1,7 +1,9 @@
 /* !Block styles */
 
 .entry .entry-content > *,
-.entry .entry-summary > * {
+.entry .entry-summary > *, 
+.fse-enabled .site-header > *,
+.fse-enabled .site-footer > * {
 	margin: $size__vertical-spacing-unit 0;
 	max-width: 100%;
 
@@ -96,7 +98,9 @@
 /*
  * Make sure the first block has margin-top: 0
  */
-.entry:not(.has-post-thumbnail) .entry-content > :first-child {
+.entry:not(.has-post-thumbnail) .entry-content > :first-child,
+.fse-enabled .site-header > :first-child,
+.fse-enabled .site-footer > :first-child {
 	margin-top: 0;
 }
 
@@ -106,7 +110,9 @@
  * - helps with plugin compatibility
  */
 .entry .entry-content,
-.entry .entry-summary {
+.entry .entry-summary,
+.fse-enabled .site-header,
+.fse-enabled .site-footer {
 
 	.entry-content,
 	.entry-summary,
@@ -123,7 +129,9 @@
 	}
 }
 
-.entry .entry-content {
+.entry .entry-content,
+.fse-enabled .site-header,
+.fse-enabled .site-footer {
 
 	//! Headers
 	& > h1,
@@ -727,6 +735,20 @@
 
 			@include media(tablet) {
 				font-size: $font__size-xxl;
+			}
+		}
+
+		h2 {
+			&.has-text-align-left {
+				text-align: left;
+			}
+
+			&.has-text-align-center {
+				text-align: center;
+			}
+
+			&.has-text-align-right {
+				text-align: right;
 			}
 		}
 

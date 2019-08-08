@@ -39,6 +39,15 @@ Modern Business Editor Styles
   }
 }
 
+.site-header .fse-site-logo {
+  margin-bottom: 0;
+}
+
+.site-header .fse-site-logo img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site-branding {
   color: #686868;
   display: flex;
@@ -247,6 +256,10 @@ Modern Business Editor Styles
   /**
 	 * Off-canvas touch device styles
 	 */
+}
+
+body.fse-enabled .main-navigation {
+  order: initial;
 }
 
 body.page .main-navigation {
@@ -911,6 +924,7 @@ blockquote {
 /** === Editor Frame === */
 body {
   font-weight: 300;
+  background: #fff;
 }
 
 body .wp-block[data-align="full"] {
@@ -1264,7 +1278,52 @@ figcaption,
 .wp-block-cover h5,
 .wp-block-cover h6 {
   font-weight: 300;
+  text-align: inherit;
+}
+
+.wp-block-cover-image h1.has-text-align-left,
+.wp-block-cover-image h2.has-text-align-left,
+.wp-block-cover-image h3.has-text-align-left,
+.wp-block-cover-image h4.has-text-align-left,
+.wp-block-cover-image h5.has-text-align-left,
+.wp-block-cover-image h6.has-text-align-left,
+.wp-block-cover h1.has-text-align-left,
+.wp-block-cover h2.has-text-align-left,
+.wp-block-cover h3.has-text-align-left,
+.wp-block-cover h4.has-text-align-left,
+.wp-block-cover h5.has-text-align-left,
+.wp-block-cover h6.has-text-align-left {
   text-align: left;
+}
+
+.wp-block-cover-image h1.has-text-align-center,
+.wp-block-cover-image h2.has-text-align-center,
+.wp-block-cover-image h3.has-text-align-center,
+.wp-block-cover-image h4.has-text-align-center,
+.wp-block-cover-image h5.has-text-align-center,
+.wp-block-cover-image h6.has-text-align-center,
+.wp-block-cover h1.has-text-align-center,
+.wp-block-cover h2.has-text-align-center,
+.wp-block-cover h3.has-text-align-center,
+.wp-block-cover h4.has-text-align-center,
+.wp-block-cover h5.has-text-align-center,
+.wp-block-cover h6.has-text-align-center {
+  text-align: center;
+}
+
+.wp-block-cover-image h1.has-text-align-right,
+.wp-block-cover-image h2.has-text-align-right,
+.wp-block-cover-image h3.has-text-align-right,
+.wp-block-cover-image h4.has-text-align-right,
+.wp-block-cover-image h5.has-text-align-right,
+.wp-block-cover-image h6.has-text-align-right,
+.wp-block-cover h1.has-text-align-right,
+.wp-block-cover h2.has-text-align-right,
+.wp-block-cover h3.has-text-align-right,
+.wp-block-cover h4.has-text-align-right,
+.wp-block-cover h5.has-text-align-right,
+.wp-block-cover h6.has-text-align-right {
+  text-align: right;
 }
 
 .wp-block-cover-image h1,
@@ -1844,6 +1903,13 @@ ul.wp-block-archives li ul,
   text-align: center;
   margin: 0;
   line-height: 0.8em;
+}
+
+/** === Site Logo Block === */
+.template__site-logo .components-placeholder.block-editor-media-placeholder {
+  width: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /** === Classic Editor === */

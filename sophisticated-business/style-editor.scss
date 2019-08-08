@@ -170,10 +170,10 @@ a {
 	}
 }
 
-// Use white text against these backgrounds by default.
+// Use dark gray text against these background by default.
 .has-primary-background-color,
 .has-secondary-background-color,
-.has-dark-gray-background-color,
+.has-white-background-color,
 .has-light-gray-background-color {
 	color: $color__background-body;
 
@@ -189,8 +189,8 @@ a {
 	}
 }
 
-// Use dark gray text against this background by default.
-.has-white-background-color {
+// Use white text against these backgrounds by default.
+.has-dark-gray-background-color {
 	color: $color__text-main;
 
 	p,
@@ -293,6 +293,18 @@ figcaption,
 
 		h1, h2, h3, h4, h5, h6 {
 			font-weight: 700;
+
+			&.has-text-align-left {
+				text-align: left;
+			}
+
+			&.has-text-align-center {
+				text-align: center;
+			}
+
+			&.has-text-align-right {
+				text-align: right;
+			}
 		}
 
 		h1 {
