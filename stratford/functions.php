@@ -121,26 +121,36 @@ function stratford_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
+	* supported by Poppins, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$playfair = esc_html_x( 'on', 'Playfair Display font: on or off', 'stratford' );
+	$poppins = esc_html_x( 'on', 'Poppins font: on or off', 'stratford' );
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Roboto Sans, translate this to 'off'. Do not translate
+	* supported by Lato, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$roboto = esc_html_x( 'on', 'Roboto Sans font: on or off', 'stratford' );
+	$lato = esc_html_x( 'on', 'Lato font: on or off', 'stratford' );
+
+	/* Translators: If there are characters in your language that are not
+	* supported by Inconsolata, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$inconsolata = esc_html_x( 'on', 'Inconsolata font: on or off', 'stratford' );
 
 	if ( 'off' !== $playfair || 'off' !== $roboto ) {
 		$font_families = array();
 
-		if ( 'off' !== $playfair ) {
-			$font_families[] = 'Playfair+Display:400,400i';
+		if ( 'off' !== $poppins ) {
+			$font_families[] = 'Poppins:400,700';
 		}
 
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:300,300i,700';
+		if ( 'off' !== $lato ) {
+			$font_families[] = 'Lato:400,700,400italic,700italic';
+		}
+	
+		if ( 'off' !== $inconsolata ) {
+			$font_families[] = 'Inconsolata:400,700';
 		}
 
 		$query_args = array(
@@ -160,7 +170,7 @@ function stratford_fonts_url() {
 function stratford_scripts() {
 
 	// enqueue Google fonts, if necessary
-	// wp_enqueue_style( 'stratford-fonts', stratford_fonts_url(), array(), null );
+	wp_enqueue_style( 'stratford-fonts', stratford_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );
