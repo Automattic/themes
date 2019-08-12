@@ -304,7 +304,7 @@ object {
 }
 
 .wp-block-button .wp-block-button__link {
-	color: ("default": white, "light": #F4F5F5, "dark": #E8E9EA);
+	color: white;
 	font-weight: bold;
 	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 0.83333em;
@@ -315,7 +315,7 @@ object {
 }
 
 .wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus, .wp-block-button .wp-block-button__link.has-focus {
-	color: ("default": white, "light": #F4F5F5, "dark": #E8E9EA);
+	color: white;
 	background-color: #5E5853;
 }
 
@@ -336,7 +336,7 @@ object {
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: #5E5853;
-	min-height: calc( 15 * 32px);
+	min-height: 90vh;
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
@@ -855,4 +855,24 @@ table th,
  */
 .editor-post-title__input {
 	text-align: center;
+}
+
+.wp-block-button__link {
+	position: relative;
+}
+
+.wp-block-button__link:before {
+	border: 2px solid;
+	content: "";
+	display: block;
+	left: 3px;
+	margin: 0;
+	position: absolute;
+	top: 3px;
+	height: calc(100% - 6px);
+	width: calc(100% - 6px);
+}
+
+.is-style-circular .wp-block-button__link:before {
+	border-radius: 100px;
 }

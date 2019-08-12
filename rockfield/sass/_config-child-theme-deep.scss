@@ -141,15 +141,15 @@ $config-elements: (
 		// Fonts
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "primary"),
-			"line-height": map-deep-get($config-global, "font", "line-height", "md"),
-			"size": map-deep-get($config-global, "font", "size", "md"),
-			"weight": bold,
+			"line-height": map-deep-get($config-global, "font", "line-height", "base"),
+			"size": map-deep-get($config-global, "font", "size", "base"),
+			"weight": normal,
 		),
 
 		// Borders
 		"border": (
-			"width": 1px,
-			"radius": 3px,
+			"width": 2px,
+			"radius": 0,
 		),
 
 		"padding": #{map-deep-get($config-global, "spacing", "unit")},
@@ -162,8 +162,8 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "background"),
-		"text-hover": map-deep-get($config-global, "color", "background"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
 		"background": map-deep-get($config-global, "color", "primary", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
 	),
@@ -188,7 +188,7 @@ $config-button: (
  * Cover
  */
 $config-cover: (
-	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	"height": 90vh,
 );
 
 /**
@@ -285,9 +285,9 @@ $config-header: (
 	"branding": (
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "light"),
-			"link": map-deep-get($config-global, "color", "primary", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"text": map-deep-get($config-global, "color", "background", "default"),
+			"link": map-deep-get($config-global, "color", "background", "default"),
+			"link-hover": map-deep-get($config-global, "color", "foreground", "light"),
 		),
 		// Fonts & Typography
 		"title": (
@@ -312,9 +312,9 @@ $config-header: (
 	"main-nav": (
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "default"),
-			"link": map-deep-get($config-global, "color", "primary", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"text": map-deep-get($config-global, "color", "background", "default"),
+			"link": map-deep-get($config-global, "color", "background", "default"),
+			"link-hover": map-deep-get($config-global, "color", "foreground", "light"),
 		),
 		// Fonts
 		"font": (
@@ -329,10 +329,10 @@ $config-header: (
 	"social-nav": (
 		// Colors
 		"color": (
-			"link": map-deep-get($config-global, "color", "primary", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"link": map-deep-get($config-global, "color", "background", "default"),
+			"link-hover": map-deep-get($config-global, "color", "foreground", "light"),
 		),
-		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
+		"link-padding": #{0.5 * map-deep-get($config-global, "spacing", "unit")},
 	),
 );
 
@@ -342,9 +342,9 @@ $config-header: (
 $config-footer: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "foreground", "default"),
-		"link": map-deep-get($config-global, "color", "foreground", "default"),
-		"link-hover": map-deep-get($config-global, "color", "secondary", "default"),
+		"text": map-deep-get($config-global, "color", "foreground", "light"),
+		"link": map-deep-get($config-global, "color", "foreground", "light"),
+		"link-hover": map-deep-get($config-global, "color", "foreground", "dark"),
 	),
 	// Fonts
 	"font": (

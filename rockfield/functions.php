@@ -60,37 +60,37 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'rockfield' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF',
+					'color' => '#7E756E',
 				),
 				array(
 					'name'  => __( 'Secondary', 'rockfield' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000',
+					'color' => '#208751',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'rockfield' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#111111',
+					'color' => '#1E1C1B',
 				),
 				array(
 					'name'  => __( 'Gray', 'rockfield' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => '#5E5853',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'rockfield' ),
 					'slug'  => 'foreground-light',
-					'color' => '#767676',
+					'color' => '#99908A',
 				),
 				array(
 					'name'  => __( 'Lighter Gray', 'rockfield' ),
 					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
+					'color' => '#E8E9EA',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'rockfield' ),
 					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
+					'color' => '#F4F5F5',
 				),
 				array(
 					'name'  => __( 'White', 'rockfield' ),
@@ -159,7 +159,7 @@ function rockfield_fonts_url() {
  */
 function rockfield_scripts() {
 
-	// enqueue Google fonts, if necessary
+	// enqueue Google fonts
 	wp_enqueue_style( 'rockfield-fonts', rockfield_fonts_url(), array(), null );
 
 	// dequeue parent styles
@@ -171,6 +171,9 @@ function rockfield_scripts() {
 	// enqueue child RTL styles
 	wp_style_add_data( 'rockfield-style', 'rtl', 'replace' );
 
+	// enqueue header spacing JS
+	wp_enqueue_script('rockfield-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+
 }
 add_action( 'wp_enqueue_scripts', 'rockfield_scripts', 99 );
 
@@ -179,7 +182,7 @@ add_action( 'wp_enqueue_scripts', 'rockfield_scripts', 99 );
  */
 function rockfield_editor_styles() {
 
-	// Enqueue Google fonts in the editor, if necessary
+	// Enqueue Google fonts in the editor
 	wp_enqueue_style( 'rockfield-editor-fonts', rockfield_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'rockfield_editor_styles' );
