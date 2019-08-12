@@ -944,11 +944,22 @@ ul.wp-block-archives,
 
 /* Remove 100% width on figure to center align logo in editor on smaller screens */
 .block-editor-block-list__layout  {
-    .block-editor-block-list__block[data-align="full"] > .block-editor-block-list__block-edit  {
-	    figure.fse-site-logo {
-	        width: inherit;
-        }
+	.block-editor-block-list__block[data-align="full"] > .block-editor-block-list__block-edit  {
+		figure.fse-site-logo {
+			width: inherit;
+		}
 	}
+}
+
+.site-header .wp-block[data-align="full"] {
+	left: calc( -12.5% - 12px );
+	max-width: calc( 125% + 114px );
+	width: calc( 125% + 114px );
+}
+.template-block.site-header .wp-block[data-align="full"] {
+	left: calc( -12.5% - 9px );
+	max-width: calc( 125% + 111px );
+	width: calc( 125% + 111px );
 }
 
 /** === Classic Editor === */
