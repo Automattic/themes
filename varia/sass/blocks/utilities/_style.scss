@@ -25,10 +25,15 @@
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 }
 
-// Alignwide & Alignfull
+// *.alignnormal, .alignwide & .alignfull
 // - More selector specificity needed here to deal with
 //   group-block expected behavior
 // - See: sass/blocks/group/_style.scss
+.entry-content > *:not(.alignwide):not(.alignfull) {
+	@extend %responsive-width-normal;
+	clear: both;
+}
+
 .entry-content > .alignwide {
 	@extend %responsive-width-wide;
 	clear: both;

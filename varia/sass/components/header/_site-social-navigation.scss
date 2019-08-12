@@ -6,7 +6,15 @@
 		align-content: center;
 		display: flex;
 		list-style: none;
-		margin: 0 calc(-0.5 * #{map-deep-get($config-global, "spacing", "unit")});
+		margin: 0;
+
+		& > li:first-of-type {
+			margin-left: calc(-0.5 * #{map-deep-get($config-global, "spacing", "unit")})
+		}
+
+		& > li:last-of-type {
+			margin-right: calc(-0.5 * #{map-deep-get($config-global, "spacing", "unit")})
+		}
 	}
 
 	a {

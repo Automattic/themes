@@ -61,8 +61,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		list-style: none;
+		margin: 0;
 		max-width: none;
-		margin: 0 #{-1 * map-deep-get($config-header, "main-nav", "link-padding")};
 		position: relative;
 
 		li {
@@ -84,6 +84,14 @@
 			@include media(mobile) {
 				display: inherit;
 				width: inherit;
+
+				&:first-of-type {
+					margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
+				}
+
+				&:last-of-type {
+					margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
+				}
 
 				/* Submenu display */
 				&:hover > ul,

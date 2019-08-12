@@ -1928,6 +1928,10 @@ table th,
 	margin-bottom: 32px;
 }
 
+.entry-content > *:not(.alignwide):not(.alignfull) {
+	clear: both;
+}
+
 .entry-content > .alignwide {
 	clear: both;
 }
@@ -2300,8 +2304,8 @@ table th,
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
+	margin: 0;
 	max-width: none;
-	margin: 0 -16px;
 	position: relative;
 	/* Sub-menus Flyout */
 }
@@ -2328,6 +2332,12 @@ table th,
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
+	}
+	.main-navigation > div > ul li:first-of-type {
+		margin-right: -16px;
+	}
+	.main-navigation > div > ul li:last-of-type {
+		margin-left: -16px;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li[focus-within] > ul,
@@ -2449,7 +2459,15 @@ table th,
 	align-content: center;
 	display: flex;
 	list-style: none;
-	margin: 0 calc(-0.5 * 16px);
+	margin: 0;
+}
+
+.social-navigation > div > ul > li:first-of-type {
+	margin-right: calc(-0.5 * 16px);
+}
+
+.social-navigation > div > ul > li:last-of-type {
+	margin-left: calc(-0.5 * 16px);
 }
 
 .social-navigation a {
@@ -2465,6 +2483,10 @@ table th,
 .social-navigation svg {
 	fill: currentColor;
 	vertical-align: middle;
+}
+
+.site-footer {
+	overflow: hidden;
 }
 
 @media only screen and (min-width: 640px) {
@@ -2527,9 +2549,8 @@ table th,
 
 .footer-navigation .footer-menu {
 	color: #767676;
+	margin: 0;
 	padding-right: 0;
-	margin-right: -16px;
-	margin-left: -16px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -2540,8 +2561,16 @@ table th,
 	}
 }
 
-.footer-navigation .footer-menu li {
+.footer-navigation .footer-menu > li {
 	display: inline;
+}
+
+.footer-navigation .footer-menu > li:first-of-type {
+	margin-right: -16px;
+}
+
+.footer-navigation .footer-menu > li:last-of-type {
+	margin-left: -16px;
 }
 
 .footer-navigation .footer-menu a {
@@ -3047,154 +3076,84 @@ img#wpstats {
  * Page Layout Styles & Repsonsive Styles
  */
 /* Responsive width-content overrides */
-.responsive-max-width {
-	max-width: 100%;
-}
+.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull) {
+	/*
+	max-width: $content-width-flex;
 
-@media only screen and (min-width: 560px) {
-	.responsive-max-width {
-		max-width: calc( 560px - 32px);
+	@include media(mobile) {
+		max-width: $content-width-sm;
 	}
-}
 
-@media only screen and (min-width: 640px) {
-	.responsive-max-width {
-		max-width: calc( 640px - 32px);
+	@include media(tablet) {
+		max-width: $content-width-md;
 	}
-}
 
-@media only screen and (min-width: 782px) {
-	.responsive-max-width {
-		max-width: calc( 782px - 32px);
+	@include media(laptop) {
+		max-width: $content-width-lg;
 	}
-}
 
-@media only screen and (min-width: 1024px) {
-	.responsive-max-width {
-		max-width: calc( 782px - 32px);
+	@include media(desktop) {
+		max-width: $content-width-lg;
 	}
-}
 
-@media only screen and (min-width: 1280px) {
-	.responsive-max-width {
-		max-width: calc( 782px - 32px);
+	@include media(wide) {
+		max-width: $content-width-lg;
 	}
+*/
 }
 
 .wp-block-group.alignwide .alignwide,
 .wp-block-group.alignwide .alignfull,
 .wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-	margin-right: calc( -0.25 * ( 100vw - 100% ));
-	margin-left: calc( -0.25 * ( 100vw - 100% ));
-	width: calc( 100% + (0.25 * 2) * ( 100vw - 100% ));
-	max-width: calc( 100% + (0.25 * 2) * ( 100vw - 100% ));
-}
+	/*
+	@include align-width( $content-width-flex, -0.25 );
 
-@media only screen and (min-width: 560px) {
-	.wp-block-group.alignwide .alignwide,
-	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
-		margin-left: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
-		width: calc( calc( 560px - 32px) + (0.25 * 2) * ( 100vw - calc( 560px - 32px) ));
-		max-width: calc( calc( 560px - 32px) + (0.25 * 2) * ( 100vw - calc( 560px - 32px) ));
+	@include media(mobile) {
+		@include align-width( $content-width-sm, -0.25 );
 	}
-}
 
-@media only screen and (min-width: 640px) {
-	.wp-block-group.alignwide .alignwide,
-	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
-		margin-left: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
-		width: calc( calc( 640px - 32px) + (0.25 * 2) * ( 100vw - calc( 640px - 32px) ));
-		max-width: calc( calc( 640px - 32px) + (0.25 * 2) * ( 100vw - calc( 640px - 32px) ));
+	@include media(tablet) {
+		@include align-width( $content-width-md, -0.25 );
 	}
-}
 
-@media only screen and (min-width: 782px) {
-	.wp-block-group.alignwide .alignwide,
-	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
-		margin-left: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
-		width: calc( calc( 782px - 32px) + (0.25 * 2) * ( 100vw - calc( 782px - 32px) ));
-		max-width: calc( calc( 782px - 32px) + (0.25 * 2) * ( 100vw - calc( 782px - 32px) ));
+	@include media(laptop) {
+		@include align-width( $content-width-lg, -0.25 );
 	}
-}
 
-@media only screen and (min-width: 1024px) {
-	.wp-block-group.alignwide .alignwide,
-	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-right: -128px;
-		margin-left: -128px;
-		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(calc( 782px - 32px) + 256px);
+	@include media(desktop) {
+		@include alignwide-width( $content-width-lg );
 	}
-}
 
-@media only screen and (min-width: 1280px) {
-	.wp-block-group.alignwide .alignwide,
-	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		margin-right: -128px;
-		margin-left: -128px;
-		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(calc( 782px - 32px) + 256px);
+	@include media(wide) {
+		@include alignwide-width( $content-width-lg );
 	}
+*/
 }
 
 .wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-	margin-right: calc( -0.5 * ( 100vw - 100% ));
-	margin-left: calc( -0.5 * ( 100vw - 100% ));
-	width: calc( 100% + (0.5 * 2) * ( 100vw - 100% ));
-	max-width: calc( 100% + (0.5 * 2) * ( 100vw - 100% ));
-}
+	/*
+	@include align-width( $content-width-flex, -0.5 );
 
-@media only screen and (min-width: 560px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
-		margin-left: calc( -0.5 * ( 100vw - calc( 560px - 32px) ));
-		width: calc( calc( 560px - 32px) + (0.5 * 2) * ( 100vw - calc( 560px - 32px) ));
-		max-width: calc( calc( 560px - 32px) + (0.5 * 2) * ( 100vw - calc( 560px - 32px) ));
+	@include media(mobile) {
+		@include align-width( $content-width-sm, -0.5 );
 	}
-}
 
-@media only screen and (min-width: 640px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
-		margin-left: calc( -0.5 * ( 100vw - calc( 640px - 32px) ));
-		width: calc( calc( 640px - 32px) + (0.5 * 2) * ( 100vw - calc( 640px - 32px) ));
-		max-width: calc( calc( 640px - 32px) + (0.5 * 2) * ( 100vw - calc( 640px - 32px) ));
+	@include media(tablet) {
+		@include align-width( $content-width-md, -0.5 );
 	}
-}
 
-@media only screen and (min-width: 782px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
-		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
-		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
-		max-width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
+	@include media(laptop) {
+		@include align-width( $content-width-lg, -0.5 );
 	}
-}
 
-@media only screen and (min-width: 1024px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
-		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
-		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
-		max-width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
+	@include media(desktop) {
+		@include align-width( $content-width-lg, -0.5 );
 	}
-}
 
-@media only screen and (min-width: 1280px) {
-	.wp-block-group.alignfull .alignfull, .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-		margin-right: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
-		margin-left: calc( -0.5 * ( 100vw - calc( 782px - 32px) ));
-		width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
-		max-width: calc( calc( 782px - 32px) + (0.5 * 2) * ( 100vw - calc( 782px - 32px) ));
+	@include media(wide) {
+		@include align-width( $content-width-lg, -0.5 );
 	}
+*/
 }
 
 .wp-block-cover.alignwide .wp-block-cover__inner-container,

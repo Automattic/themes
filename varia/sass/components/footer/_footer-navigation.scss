@@ -17,9 +17,8 @@
 	.footer-menu {
 
 		color: #{map-deep-get($config-footer, "color", "text")};
+		margin: 0;
 		padding-left: 0;
-		margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
-		margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
 
 		@include media(tablet) {
 			display: flex;
@@ -27,8 +26,16 @@
 			justify-content: flex-end;
 		}
 
-		li {
+		& > li {
 			display: inline;
+
+			&:first-of-type {
+				margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			&:last-of-type {
+				margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
+			}
 		}
 
 		a {
