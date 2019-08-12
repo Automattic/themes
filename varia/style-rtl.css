@@ -128,10 +128,6 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - breakpoints values are defined in _config-global.scss
  */
 /**
- * Align widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-/**
  * Align wide widths
  * - Sets negative margin for .alignwide and .alignfull blocks
  */
@@ -1185,16 +1181,6 @@ input.has-focus[type="submit"],
 	/**
 	 * Block Options
 	 */
-	/*
-	&.alignwide,
-	&.alignfull {
-		.wp-block-cover__inner-container,
-		.wp-block-cover-image-text,
-		.wp-block-cover-text {
-			@extend %responsive-align-container;
-		}
-	}
-*/
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1326,27 +1312,6 @@ input.has-focus[type="submit"],
 
 .wp-block-gallery.alignleft, .wp-block-gallery.alignright {
 	max-width: 50%;
-}
-
-.wp-block-group {
-	/*
-	&.alignwide .wp-block-group__inner-container,
-	&.alignfull .wp-block-group__inner-container {
-		@extend %responsive-align-container;
-	}
-
-	&.alignwide .alignwide,
-	&.alignwide .alignfull,
-	&.alignfull .alignwide {
-		@extend %responsive-width-wide;
-		clear: both;
-	}
-
-	&.alignfull .alignfull, {
-		@extend %responsive-width-full;
-		clear: both;
-	}
-*/
 }
 
 .wp-block-group .wp-block-group__inner-container {
@@ -1759,6 +1724,10 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-pullquote:not(.is-style-solid-color) {
 	background: none;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) blockquote {
+	padding-right: 0;
 }
 
 .wp-block-pullquote.is-style-default.alignleft blockquote > *, .wp-block-pullquote.is-style-default.aligncenter blockquote > *, .wp-block-pullquote.is-style-default.alignright blockquote > * {
@@ -3127,44 +3096,62 @@ img#wpstats {
  * Page Layout Styles & Repsonsive Styles
  */
 /* Responsive width-content overrides */
-.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
+.wp-block-pullquote.alignfull > p,
+.wp-block-pullquote.alignwide blockquote,
+.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 @media only screen and (min-width: 560px) {
-	.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
+	.wp-block-pullquote.alignfull > p,
+	.wp-block-pullquote.alignwide blockquote,
+	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 560px - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
+	.wp-block-pullquote.alignfull > p,
+	.wp-block-pullquote.alignwide blockquote,
+	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 640px - 32px);
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
+	.wp-block-pullquote.alignfull > p,
+	.wp-block-pullquote.alignwide blockquote,
+	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
+	.wp-block-pullquote.alignfull > p,
+	.wp-block-pullquote.alignwide blockquote,
+	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.responsive-max-width, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
+	.wp-block-pullquote.alignfull > p,
+	.wp-block-pullquote.alignwide blockquote,
+	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
 	}
 }
@@ -3212,29 +3199,7 @@ img#wpstats {
 }
 
 .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-	/*
-	@include align-width( $content-width-flex, -0.5 );
-
-	@include media(mobile) {
-		@include align-width( $content-width-sm, -0.5 );
-	}
-
-	@include media(tablet) {
-		@include align-width( $content-width-md, -0.5 );
-	}
-
-	@include media(laptop) {
-		@include align-width( $content-width-lg, -0.5 );
-	}
-
-	@include media(desktop) {
-		@include align-width( $content-width-lg, -0.5 );
-	}
-
-	@include media(wide) {
-		@include align-width( $content-width-lg, -0.5 );
-	}
-*/
+	/* Letting the box-model do all the work here. */
 }
 
 .alignright {
@@ -3303,35 +3268,6 @@ img#wpstats {
 	.alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
-}
-
-.wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote, .entry-content .wp-audio-shortcode {
-	/*
-	@include align-container-width( calc( 100% - 32px ) );
-
-	@include media(mobile) {
-		@include align-container-width( calc( 560px - 32px) );
-	}
-
-	@include media(tablet) {
-		@include align-container-width( calc( 640px - 32px) );
-	}
-
-	@include media(laptop) {
-		@include align-container-width( calc( 782px - 32px) );
-	}
-
-	@include media(desktop) {
-		@include align-container-width( calc( 782px - 32px) );
-	}
-
-	@include media(wide) {
-		@include align-container-width( calc( 782px - 32px) );
-	}
-*/
 }
 
 /**

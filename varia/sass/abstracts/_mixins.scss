@@ -42,20 +42,6 @@
 }
 
 /**
- * Align widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-@mixin align-width( $width: 100%, $multiplier: -0.25 ) {
-
-	$positive_multiplier: abs($multiplier);
-
-	margin-left: calc( #{$multiplier} * ( 100vw - #{$width} ) );
-	margin-right: calc( #{$multiplier} * ( 100vw - #{$width} ) );
-	width: calc( #{$width} + (#{$positive_multiplier} * 2) * ( 100vw - #{$width} ) );
-	max-width: calc( #{$width} + (#{$positive_multiplier} * 2) * ( 100vw - #{$width} ) );
-}
-
-/**
  * Align wide widths
  * - Sets negative margin for .alignwide and .alignfull blocks
  */
