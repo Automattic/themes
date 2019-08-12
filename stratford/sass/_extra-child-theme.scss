@@ -3,36 +3,59 @@
  */
 // @import "";
 
-a {
-	text-decoration: none;
+$color_background: map-deep-get($config-global, "color", "background", "default");
+$color_primary: map-deep-get($config-global, "color", "primary", "default");
+$color_primary_hover: map-deep-get($config-global, "color", "primary", "hover");
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+
+// Main Menu
+#masthead {
+	border-bottom: 1px solid #f3f3f3;
+	position: fixed;
+	z-index: 9999;
+	background: #fff;
+	width: 100%;
+	-webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
 }
 
-.site-branding,
-.site-info,
-.main-navigation,
-.entry-header,
-.entry-footer,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: left;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
+.site-header-wrapper {
 	display: flex;
-}
-
-.main-navigation > div > ul,
-.social-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
+	flex-wrap: wrap;	
+	position: relative;
+	z-index: 1;
+	-webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: calc(100% - 1.5em);
+	.site-branding {
+		-webkit-transition: margin-top .25s ease-in-out;
+		-moz-transition: margin-top .25s ease-in-out;
+		transition: margin-top .25s ease-in-out;
+		margin-left: 1.5em;
+		margin-right: auto;
+		.site-description {
+			display: none;
+		}
+	}
+	.site-menu {
+		display: block;
+		-webkit-flex: 0 1 auto;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+	}
+	.main-navigation {
+		ul {
+			li {
+				&:hover {
+					ul {
+						left: auto;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
 }
