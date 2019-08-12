@@ -25,42 +25,46 @@
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 }
 
-// *.alignnormal, .alignwide & .alignfull
-// - More selector specificity needed here to deal with
-//   group-block expected behavior
-// - See: sass/blocks/group/_style.scss
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+/**
+ * .aligndefault
+ */
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) {
 	@extend %responsive-aligndefault;
+}
+
+.entry-content [class*="inner-container"] {
+	max-width: inherit;
+}
+
+/**
+ * .alignwide
+ */
+.alignwide {
+	clear: both;
 }
 
 .entry-content > .alignwide {
 	@extend %responsive-alignwide;
-	clear: both;
-}
-.entry-content > .alignwide [class*="inner-container"] > .alignwide ,
-.entry-content > .alignwide [class*="inner-container"] > .alignfull {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 100%;
-	width: 100%;
 }
 
-.entry-content > .alignfull [class*="inner-container"] > .alignwide {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: calc( 100% - #{4 * map-deep-get($config-global, "spacing", "horizontal")} );
-	width: calc( 100% - #{4 * map-deep-get($config-global, "spacing", "horizontal")} );
+.entry-content > .alignwide [class*="inner-container"] > .alignwide {
+	@extend %responsive-alignwide-nested;
+}
+
+/**
+ * .alignfull
+ */
+.alignfull {
+	clear: both;
 }
 
 .entry-content > .alignfull {
 	@extend %responsive-alignfull;
-	clear: both;
 }
 
-.entry-content [class*="inner-container"] > .alignfull {
-	max-width: 100%;
-	width: 100%;
+.entry-content > .alignfull [class*="inner-container"] > .alignwide {
+	@extend %responsive-alignwide-nested;
 }
 
 // Content alignment

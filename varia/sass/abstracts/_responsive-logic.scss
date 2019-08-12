@@ -65,6 +65,33 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	}
 }
 
+%responsive-alignwide-nested {
+
+	@include alignwide-width-nested( $content-width-flex );
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media(mobile) {
+		@include alignwide-width-nested( $content-width-sm );
+	}
+
+	@include media(tablet) {
+		@include alignwide-width-nested( $content-width-md );
+	}
+
+	@include media(laptop) {
+		@include alignwide-width-nested( $content-width-lg );
+	}
+
+	@include media(desktop) {
+		@include alignwide-width-nested( $content-width-lg );
+	}
+
+	@include media(wide) {
+		@include alignwide-width-nested( $content-width-lg );
+	}
+}
+
 %responsive-alignfull {
 	/* Letting the box-model do all the work here. */
 }
@@ -134,26 +161,27 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 %responsive-align-container {
 
 /*
-	@include align-container-width( calc( #{$content-width-flex} - #{$horizontal-padding} ) );
+	max-width: calc( #{$content-width-flex} - #{$horizontal-padding} );
+	width: calc( #{$content-width-flex} - #{$horizontal-padding} );
 
 	@include media(mobile) {
-		@include align-container-width( #{$content-width-sm} );
+		max-width: #{$content-width-sm};
 	}
 
 	@include media(tablet) {
-		@include align-container-width( #{$content-width-md} );
+		max-width: #{$content-width-md};
 	}
 
 	@include media(laptop) {
-		@include align-container-width( #{$content-width-lg} );
+		max-width: #{$content-width-lg};
 	}
 
 	@include media(desktop) {
-		@include align-container-width( #{$content-width-lg} );
+		max-width: #{$content-width-lg};
 	}
 
 	@include media(wide) {
-		@include align-container-width( #{$content-width-lg} );
+		max-width: #{$content-width-lg};
 	}
 */
 }
