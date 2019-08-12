@@ -61,8 +61,8 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": blue,
-			"hover": indigo,
+			"default": #2c313f,
+			"hover": #3e69dc,
 		),
 		"secondary": (
 			"default": red,
@@ -286,17 +286,17 @@ $config-header: (
 		// Colors
 		"color": (
 			"text": map-deep-get($config-global, "color", "foreground", "light"),
-			"link": map-deep-get($config-global, "color", "primary", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"link": map-deep-get($config-global, "color", "primary", "hover"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
 		// Fonts & Typography
 		"title": (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "md"),
+				"size": map-deep-get($config-global, "font", "size", "lg"),
 				"weight": 700,
-				"line-height": 1,
+				"line-height": 1.2,
 			),
 		),
 		// Fonts & Typography
@@ -319,9 +319,9 @@ $config-header: (
 		// Fonts
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
-			"size": map-deep-get($config-global, "font", "size", "md"),
+			"size": map-deep-get($config-global, "font", "size", "base"),
 			"weight": 700,
-			"line-height": 1,
+			"line-height": 1.5,
 		),
 		"link-padding": map-deep-get($config-global, "spacing", "unit"),
 	),
