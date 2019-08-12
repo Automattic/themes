@@ -65,12 +65,15 @@
 		$multiplier: (8 * map-deep-get($config-global, "spacing", "horizontal"));
 	}
 
-	//margin-left: calc( #{$multiplier} - ( 100vw - #{$width} ) );
-	//margin-right: calc( #{$multiplier} - ( 100vw - #{$width} ) );
-	margin-left: #{-1 * $multiplier};
-	margin-right: #{-1 * $multiplier};
 	width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
-	max-width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+	max-width: calc(100vw - #{2 * map-deep-get($config-global, "spacing", "horizontal")}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+}
+
+/**
+ * Align right widths
+ */
+@mixin alignright-margin( $width: 100%, $multiplier...) {
+	margin-right: calc( 0.5 * (100vw - #{$width}));
 }
 
 /**

@@ -17,7 +17,7 @@
 		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
 
-	<div class="entry-content responsive-max-width">
+	<div class="entry-content">
 		<?php
 		the_content();
 

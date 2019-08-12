@@ -1,11 +1,10 @@
 /* Text Alignments */
 .alignleft {
+	@extend %responsive-alignleft;
 	/*rtl:ignore*/
 	text-align: left;
 	/*rtl:ignore*/
 	float: left;
-	/*rtl:ignore*/
-	margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 	margin-top: 0;
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 }
@@ -17,6 +16,7 @@
 }
 
 .alignright {
+	@extend %responsive-alignright;
 	/*rtl:ignore*/
 	float: right;
 	/*rtl:ignore*/
@@ -29,19 +29,44 @@
 // - More selector specificity needed here to deal with
 //   group-block expected behavior
 // - See: sass/blocks/group/_style.scss
-.entry-content > *:not(.alignwide):not(.alignfull) {
-	@extend %responsive-width-normal;
-	clear: both;
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.aligncenter) {
+	@extend %responsive-aligndefault;
 }
 
 .entry-content > .alignwide {
-	@extend %responsive-width-wide;
+	@extend %responsive-alignwide;
 	clear: both;
+}
+.entry-content > .alignwide [class*="inner-container"] > .alignwide ,
+.entry-content > .alignwide [class*="inner-container"] > .alignfull {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	width: 100%;
+}
+
+.entry-content > .alignfull [class*="inner-container"] > .alignwide {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: calc( 100% - #{4 * map-deep-get($config-global, "spacing", "horizontal")} );
+	width: calc( 100% - #{4 * map-deep-get($config-global, "spacing", "horizontal")} );
 }
 
 .entry-content > .alignfull {
-	@extend %responsive-width-full;
+	@extend %responsive-alignfull;
 	clear: both;
+}
+
+.entry-content [class*="inner-container"] > .alignfull {
+	max-width: 100%;
+	width: 100%;
+}
+
+.entry-content [class*="inner-container"] {
+//	@extend %responsive-aligndefault;
+//	@extend %responsive-align-container;
+//	clear: both;
 }
 
 // Content alignment

@@ -85,14 +85,6 @@
 				display: inherit;
 				width: inherit;
 
-				&:first-of-type {
-					margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
-				}
-
-				&:last-of-type {
-					margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
-				}
-
 				/* Submenu display */
 				&:hover > ul,
 				&:focus-within > ul,
@@ -105,8 +97,19 @@
 			}
 		}
 
-		& > li > a {
-			@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+		& > li {
+
+			&:first-of-type {
+				margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			&:last-of-type {
+				margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			& > a {
+				@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+			}
 		}
 
 		/* Sub-menus Flyout */

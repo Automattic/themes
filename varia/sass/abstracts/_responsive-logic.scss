@@ -11,10 +11,11 @@ $content-width-lg: calc( #{map-deep-get($config-global, "breakpoint", "lg")} - #
 $content-width-xl: calc( #{map-deep-get($config-global, "breakpoint", "xl")} - #{$horizontal-padding} );
 $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} - #{$horizontal-padding} );
 
-%responsive-width-normal {
+%responsive-aligndefault {
 
-/*
 	max-width: $content-width-flex;
+	margin-left: auto;
+	margin-right: auto;
 
 	@include media(mobile) {
 		max-width: $content-width-sm;
@@ -35,24 +36,24 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	@include media(wide) {
 		max-width: $content-width-lg;
 	}
-*/
 }
 
-%responsive-width-wide {
+%responsive-alignwide {
 
-/*
-	@include align-width( $content-width-flex, -0.25 );
+	@include alignwide-width( $content-width-flex );
+	margin-left: auto;
+	margin-right: auto;
 
 	@include media(mobile) {
-		@include align-width( $content-width-sm, -0.25 );
+		@include alignwide-width( $content-width-sm );
 	}
 
 	@include media(tablet) {
-		@include align-width( $content-width-md, -0.25 );
+		@include alignwide-width( $content-width-md );
 	}
 
 	@include media(laptop) {
-		@include align-width( $content-width-lg, -0.25 );
+		@include alignwide-width( $content-width-lg );
 	}
 
 	@include media(desktop) {
@@ -62,10 +63,9 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	@include media(wide) {
 		@include alignwide-width( $content-width-lg );
 	}
-*/
 }
 
-%responsive-width-full {
+%responsive-alignfull {
 
 /*
 	@include align-width( $content-width-flex, -0.5 );
@@ -92,8 +92,71 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 */
 }
 
+%responsive-alignright {
+
+	/*rtl:ignore*/
+	margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+	@include media(mobile) {
+		/*rtl:ignore*/
+		margin-right: calc( 0.5 * (100vw - #{$content-width-sm}) );
+	}
+
+	@include media(tablet) {
+		/*rtl:ignore*/
+		margin-right: calc( 0.5 * (100vw - #{$content-width-md}) );
+	}
+
+	@include media(laptop) {
+		/*rtl:ignore*/
+		margin-right: calc( 0.5 * (100vw - #{$content-width-lg}) );
+	}
+
+	@include media(desktop) {
+		/*rtl:ignore*/
+		margin-right: calc( 0.5 * (100vw - #{$content-width-lg}) );
+	}
+
+	@include media(wide) {
+		/*rtl:ignore*/
+		margin-right: calc( 0.5 * (100vw - #{$content-width-lg}) );
+	}
+}
+
+%responsive-alignleft {
+
+	/*rtl:ignore*/
+	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+	@include media(mobile) {
+		/*rtl:ignore*/
+		margin-left: calc( 0.5 * (100vw - #{$content-width-sm}) );
+	}
+
+	@include media(tablet) {
+		/*rtl:ignore*/
+		margin-left: calc( 0.5 * (100vw - #{$content-width-md}) );
+	}
+
+	@include media(laptop) {
+		/*rtl:ignore*/
+		margin-left: calc( 0.5 * (100vw - #{$content-width-lg}) );
+	}
+
+	@include media(desktop) {
+		/*rtl:ignore*/
+		margin-left: calc( 0.5 * (100vw - #{$content-width-lg}) );
+	}
+
+	@include media(wide) {
+		/*rtl:ignore*/
+		margin-left: calc( 0.5 * (100vw - #{$content-width-lg}) );
+	}
+}
+
 %responsive-align-container {
 
+/*
 	@include align-container-width( calc( #{$content-width-flex} - #{$horizontal-padding} ) );
 
 	@include media(mobile) {
@@ -115,4 +178,5 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	@include media(wide) {
 		@include align-container-width( #{$content-width-lg} );
 	}
+*/
 }
