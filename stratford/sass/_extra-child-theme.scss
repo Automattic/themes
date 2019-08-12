@@ -9,6 +9,12 @@ $color_primary_hover: map-deep-get($config-global, "color", "primary", "hover");
 $spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
 $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 
+// General
+
+a {
+	text-decoration: none;
+}
+
 // Main Menu
 #masthead {
 	border-bottom: 1px solid #f3f3f3;
@@ -39,6 +45,11 @@ $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 		.site-description {
 			display: none;
 		}
+		.site-title {
+			a {
+				text-decoration: none;
+			}
+		}
 	}
 	.site-menu {
 		display: block;
@@ -47,12 +58,63 @@ $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 		flex: 0 1 auto;
 	}
 	.main-navigation {
+		> ul {
+			> li {
+				&:first-child {
+					margin-left: 0;
+				}
+				&.current-menu-item {
+					a {
+						border-color: #3e69dc;
+						border-style: solid;
+						border-width: 0 0 .125em;
+						color: $color_primary_hover;
+					}
+				}
+			}
+		}
 		ul {
 			li {
+				margin: 0 .75em;
+				&:first-child {
+					margin-left: 0;
+				}
 				&:hover {
 					ul {
 						left: auto;
 						right: 0;
+					}
+				}
+				&.current-menu-item {
+					> a {
+						border-color: #3e69dc;
+						border-style: solid;
+						border-width: 0 0 .125em;
+						color: $color_primary_hover;
+					}
+				}
+				a {
+					padding: .25em 0;
+					&::after {
+						color: $color_primary_hover;
+					}
+				}
+				ul {
+					color: #f3f3f3;
+					li {
+						border-bottom: 1px solid;
+						margin: 0;
+						&:first-child {
+							border-top: 1px solid;
+						}
+						&.current-menu-item {
+							a {
+								border: none;
+							}
+						}
+						a {
+							padding: .75em;
+						}
 					}
 				}
 			}
