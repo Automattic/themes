@@ -10,9 +10,9 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 18px; // Set 16px/1em default on html
+$typescale-root: 22px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.125; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -20,8 +20,8 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "sans-serif",
-			"secondary": "serif",
+			"primary": "\"Rubik\"\, Trebuchet MS\, Lucida Grande\, Lucida Sans Unicode\, Lucida Sans\, Tahoma\, sans-serif",
+			"secondary": "\"Rubik\"\, Trebuchet MS\, Lucida Grande\, Lucida Sans Unicode\, Lucida Sans\, Tahoma\, sans-serif",
 			"code": "monospace, monospace",
 			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
@@ -53,28 +53,28 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.78,
-			"heading": 1.125,
+			"body": 1.8,
+			"heading": 1.2,
 		),
 	),
 
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": blue,
-			"hover": indigo,
+			"default": #20603c,
+			"hover": darken( #20603c, 10% ),
 		),
 		"secondary": (
 			"default": red,
 			"hover": darkred,
 		),
 		"foreground": (
-			"default": #444444,
-			"light": #767676, // must be accessible against background
-			"dark": #111111, // must be accessible against background
+			"default": #3c2323,
+			"light": lighten( #111, 22.5% ), // must be accessible against background
+			"dark": #0d1b24, // must be accessible against background
 		),
 		"background": (
-			"default": white,
+			"default": #FFFDF6,
 			"light": #FAFAFA, // must be accessible against foreground-default
 			"dark": #DDDDDD, // must be accessible against foreground-default
 		),
@@ -83,7 +83,7 @@ $config-global: (
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
-		"text-selection": lightblue,
+		"text-selection": lighten( #20603c, 55% ),
 		"black": black,
 		"white": white,
 	),
@@ -162,7 +162,7 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "background"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
 		"text-hover": map-deep-get($config-global, "color", "background"),
 		"background": map-deep-get($config-global, "color", "primary", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
