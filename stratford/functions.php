@@ -99,6 +99,8 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 				),
 			)
 		);
+		// Remove footer menu
+		unregister_nav_menu( 'menu-2' );
 	}
 endif;
 add_action( 'after_setup_theme', 'stratford_setup', 12 );
