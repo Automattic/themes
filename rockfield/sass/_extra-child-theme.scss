@@ -188,6 +188,16 @@ a {
 /**
  * Content Area
  */
+.site-main > * {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
 @include media(mobile) {
 	#main {
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
@@ -240,6 +250,68 @@ a {
 }
 
 /**
+ * Blocks
+ */
+// Cover & Hero block
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-coblocks-hero .wp-block-coblocks-hero__box {
+	& > * {
+		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Pullquote
+.wp-block-pullquote {
+	border-bottom-width: 1px;
+
+	blockquote {
+		padding: 0;
+	}
+}
+
+// Table block
+table,
+.wp-block-table {
+	td,
+	th {
+		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+// Blog Posts Listing
+.a8c-posts-list__item {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+.a8c-posts-list__listing:not(:last-child) {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+/**
  * Comments
  */
 .comment-list {
@@ -272,6 +344,13 @@ a {
 
 .comment .comment-reply-title {
 	display: flex;
+}
+
+.comment-respond {
+	.form-submit {
+		display: flex;
+		justify-content: flex-end;
+	}
 }
 
 @include media(tablet) {
