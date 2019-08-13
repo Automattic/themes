@@ -41,23 +41,21 @@
 	 * site-content when above mobile breakpoint
 	 */
 	function pageHeaderHeight() {
+		var body = document.body;
+
 		if ( document.documentElement.clientWidth <= 640 ) {
-
-			document.getElementById("primary").style.marginTop = 0;
-
+			document.getElementById( "primary" ).style.marginTop = 0;
+			body.classList.remove( 'wp-sticky-header' );
 		} else {
-			var body          = document.body;
-			var header        = document.getElementById("masthead");
-			var content       = document.getElementById("primary");
-			var archiveHeader = body.querySelector('.page-header');
+			var header  = document.getElementById( 'masthead' );
+			var content = document.getElementById( 'primary' );
 
-			if ( body.classList.contains("archive") ) {
+			content.style.marginTop = header.offsetHeight + "px";
 
-				content.style.marginTop = header.offsetHeight + "px";
-
+			if ( document.documentElement.clientHeight / 5 - header.offsetHeight >= 0 ) {
+				body.classList.add( 'wp-sticky-header' );
 			} else {
-
-				content.style.marginTop = header.offsetHeight + "px";
+				body.classList.remove( 'wp-sticky-header' );
 			}
 		}
 	};
