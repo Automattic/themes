@@ -153,11 +153,32 @@ input[type="submit"],
 .a8c-posts-list__view-all {
 	border: 0;
 	border-radius: 5em;
+	text-transform: uppercase;
 	&.has-background {
 		&:focus,
 		&:hover,
 		&:visited {
 			opacity: .8;
+		}
+	}
+}
+
+.wp-block-file {
+	a {
+		&.wp-block-file__button {
+			line-height: #{map-deep-get($config-button, "font", "line-height")};
+			cursor: pointer;
+			font-weight: #{map-deep-get($config-button, "font", "weight")};
+			font-family: #{map-deep-get($config-button, "font", "family")};
+			font-size: #{map-deep-get($config-button, "font", "size")};
+			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+			display: inline-block;
+			&:focus,
+			&:hover {
+				color: #{map-deep-get($config-button, "color", "text-hover")};
+				background-color: #{map-deep-get($config-button, "color", "background-hover")};
+				opacity: 1;
+			}
 		}
 	}
 }
