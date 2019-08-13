@@ -32,8 +32,6 @@
 					<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
 					<label for="toggle" id="toggle-menu" class="button">
 						<?php _e( 'Menu', 'rockfield' ); ?>
-						<span class="dropdown-icon open">+</span>
-						<span class="dropdown-icon close">&times;</span>
 						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'rockfield' ); ?></span>
 						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'rockfield' ); ?></span>
 					</label>
