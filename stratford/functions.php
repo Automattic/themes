@@ -107,7 +107,7 @@ add_action( 'after_setup_theme', 'stratford_setup', 12 );
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
  */
 function stratford_content_width() {
-	return 750;
+	return 900;
 }
 add_filter( 'varia_content_width', 'stratford_content_width' );
 
