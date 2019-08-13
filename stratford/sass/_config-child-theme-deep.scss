@@ -10,9 +10,9 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 18px; // Set 16px/1em default on html
+$typescale-root: 16px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.25; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -53,7 +53,7 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.78,
+			"body": 1.5,
 			"heading": 1.125,
 		),
 	),
@@ -100,7 +100,7 @@ $config-global: (
 	"breakpoint": (
 		"sm": 560px,
 		"md": 640px,
-		"lg": 782px,
+		"lg": 932px,
 		"xl": 1024px,
 		"xxl": 1280px,
 	),
@@ -162,10 +162,10 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "background"),
-		"text-hover": map-deep-get($config-global, "color", "background"),
-		"background": map-deep-get($config-global, "color", "primary", "default"),
-		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
+		"background": map-deep-get($config-global, "color", "primary", "hover"),
+		"background-hover": map-deep-get($config-global, "color", "primary", "default"),
 	),
 	// Fonts
 	"font": (
@@ -202,9 +202,9 @@ $config-heading: (
 		// Size
 		"size": (
 			"h6": map-deep-get($config-global, "font", "size", "md"),
-			"h5": map-deep-get($config-global, "font", "size", "lg"),
-			"h4": map-deep-get($config-global, "font", "size", "xl"),
-			"h3": map-deep-get($config-global, "font", "size", "xxl"),
+			"h5": map-deep-get($config-global, "font", "size", "md"),
+			"h4": map-deep-get($config-global, "font", "size", "lg"),
+			"h3": map-deep-get($config-global, "font", "size", "xl"),
 			"h2": map-deep-get($config-global, "font", "size", "xxxl"),
 			"h1": map-deep-get($config-global, "font", "size", "xxxxl"),
 		),
@@ -348,8 +348,8 @@ $config-footer: (
 	),
 	// Fonts
 	"font": (
-		"family": map-deep-get($config-global, "font", "family", "primary"),
-		"size": map-deep-get($config-global, "font", "size", "sm"),
-		"line-height": map-deep-get($config-global, "font", "line-height", "sm"),
+		"family": map-deep-get($config-global, "font", "family", "secondary"),
+		"size": map-deep-get($config-global, "font", "size", "base"),
+		"line-height": map-deep-get($config-global, "font", "line-height", "base"),
 	),
 );
