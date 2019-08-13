@@ -60,12 +60,12 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'stratford' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF',
+					'color' => '#2c313f',
 				),
 				array(
 					'name'  => __( 'Secondary', 'stratford' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000',
+					'color' => '#3e69dc',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'stratford' ),
@@ -90,7 +90,7 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 				array(
 					'name'  => __( 'Subtle Gray', 'stratford' ),
 					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
+					'color' => '#f3f3f3',
 				),
 				array(
 					'name'  => __( 'White', 'stratford' ),
