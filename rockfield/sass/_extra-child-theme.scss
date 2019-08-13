@@ -135,6 +135,17 @@ a {
 					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 			}
 
+			.sub-menu .menu-item a {
+				&::before {
+					display: none;
+				}
+
+				&::after {
+					counter-increment: nested-list;
+					content: " –" counters(nested-list, " –", none);
+				}
+			}
+
 			@include media(mobile) {
 				> li {
 					&:not(:first-child):before {
@@ -163,15 +174,6 @@ a {
 						left: auto;
 						right: 0;
 						text-align: right;
-
-						.menu-item a::before {
-							display: none;
-						}
-
-						.menu-item a::after {
-							counter-increment: nested-list;
-							content: " –" counters(nested-list, " –", none);
-						}
 					}
 				}
 			}

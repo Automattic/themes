@@ -3519,6 +3519,15 @@ p:not(.site-title) a:hover {
 	font-size: 0.5rem;
 }
 
+#site-navigation > div > ul .sub-menu .menu-item a::before {
+	display: none;
+}
+
+#site-navigation > div > ul .sub-menu .menu-item a::after {
+	counter-increment: nested-list;
+	content: " –" counters(nested-list, " –", none);
+}
+
 @media only screen and (min-width: 560px) {
 	#site-navigation > div > ul > li:not(:first-child):before {
 		color: #99908A;
@@ -3542,13 +3551,6 @@ p:not(.site-title) a:hover {
 		left: auto;
 		right: 0;
 		text-align: right;
-	}
-	#site-navigation > div > ul > li > .sub-menu .menu-item a::before {
-		display: none;
-	}
-	#site-navigation > div > ul > li > .sub-menu .menu-item a::after {
-		counter-increment: nested-list;
-		content: " –" counters(nested-list, " –", none);
 	}
 }
 
