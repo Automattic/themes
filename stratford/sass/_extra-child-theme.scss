@@ -11,6 +11,10 @@ $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 
 // General
 
+body {
+	font-size: map-deep-get($config-global, "font", "size", "md");
+}
+
 a {
 	text-decoration: none;
 }
@@ -132,15 +136,131 @@ a {
 
 // Buttons
 
-.wp-block-button {
-	a {
-		border: 0;
-    	border-radius: 5em;
-	}
+.wp-block-button, .a8c-posts-list {
 	&.minimal {
 		a {
 			background: 0 0;
 			border: 2px solid;
+		}
+	}
+}
+
+button, 
+.button, 
+input[type="submit"], 
+.wp-block-button__link, 
+.wp-block-file__button, 
+.a8c-posts-list__view-all {
+	border: 0;
+	border-radius: 5em;
+	&.has-background {
+		&:focus,
+		&:hover,
+		&:visited {
+			opacity: .8;
+		}
+	}
+}
+
+// Content Container 
+.site-content {
+	padding-top: 4.75em;
+}
+
+body {
+	&.home {
+		.entry-header {
+			display: none;
+		}
+		.site-main {
+			padding-top: 0;
+			.entry-content {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+// Hero
+.wp-block-coblocks-hero__box,
+.wp-block-cover__inner-container,
+.wp-block-columns,
+.wp-block-group {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+	p {
+		padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+	.wp-block-button {
+		padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+	.wp-block-latest-posts {
+		border-bottom: 1px solid #f3f3f3;
+		> li {
+			border-top: 1px solid #f3f3f3;
+			margin: 0;
+			padding-top: #{map-deep-get($config-global, "spacing", "horizontal")};
+			padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+			> a {
+				font-size: #{map-deep-get($config-global, "font", "size", "base")};
+				font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+				font-weight: normal;
+				line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+			}
+			> time {
+				&.wp-block-latest-posts__post-date {
+					font-size: #{map-deep-get($config-global, "font", "size", "base")};	
+				}
+			}
+		}
+	}
+}
+
+.wp-block-group {
+	// padding: #{map-deep-get($config-global, "spacing", "vertical")};
+}
+
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f3f3f3;
+	padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+	&.is-style-large {
+		p {
+			line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+		}
+	}
+	p {
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-size: #{map-deep-get($config-global, "font", "size", "md")};
+		line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+		opacity: 0.6;
+	}
+	cite {
+		color: inherit;
+		font-size: #{map-deep-get($config-global, "font", "size", "md")};
+	}
+}
+
+.site-footer {
+	.widget-area {
+		.widget-title {
+			margin-bottom: .857em;
+		}
+	}
+}
+
+.wp-block-latest-comments {
+	.wp-block-latest-comments__comment-meta {
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		.wp-block-latest-comments__comment-date {
+			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
 		}
 	}
 }
