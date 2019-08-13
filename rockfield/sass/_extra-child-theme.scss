@@ -25,29 +25,7 @@ a {
 	}
 }
 
-// Reset Layout
-.site-info,
-.main-navigation,
-.entry-header,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: left;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
-	display: flex;
-}
-
+// Reset Navigations
 .main-navigation > div > ul,
 .social-navigation > div > ul,
 .pagination .nav-links {
@@ -210,6 +188,12 @@ a {
 /**
  * Content Area
  */
+@include media(mobile) {
+	#main {
+		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
 @include media(tablet) {
 	#primary {
 		margin-top: 44px; // JS Fallback
@@ -244,6 +228,82 @@ a {
 	.entry-meta {
 		display: none;
 	}
+}
+
+// Sticky Post
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	background: #{map-deep-get($config-global, "color", "secondary", "default")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	text-transform: uppercase;
+}
+
+/**
+ * Comments
+ */
+.comment-list {
+	> li:first-child {
+		border-top-width: 2px;
+	}
+}
+
+.comment-body {
+	content: "";
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.comment-meta .comment-metadata {
+	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.reply {
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+@include media(tablet) {
+	.comment-meta {
+		border-right: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
+		display: block;
+		float: left;
+		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+		width: 20%;
+
+		.comment-author {
+			display: block;
+			width: 100%;
+
+			.avatar,
+			.fn {
+		    display: block;
+				margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+			}
+		}
+	}
+
+	.comment-content, .reply {
+		float: right;
+		width: 75%;
+		width: calc(80% - #{map-deep-get($config-global, "spacing", "horizontal")} - 1px);
+	}
+}
+
+.comment-navigation a {
+	font-size: inherit;
+	font-weight: bold;
 }
 
 /**
@@ -410,69 +470,11 @@ a {
  */
 .site-info {
 	font-weight: bold;
+	text-align: center;
 
 	a {
 		font-weight: inherit;
 	}
-}
-
-/**
- * Comments
- */
-.comment-list {
-	> li:first-child {
-		border-top-width: 2px;
-	}
-}
-
-.comment-body {
-	content: "";
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-}
-
-.comment-meta .comment-metadata {
-	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
-	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.reply {
-	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
-}
-
-@include media(tablet) {
-	.comment-meta {
-		border-right: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
-		display: block;
-		float: left;
-		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
-		width: 20%;
-
-		.comment-author {
-			display: block;
-			width: 100%;
-
-			.avatar,
-			.fn {
-		    display: block;
-				margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-			}
-		}
-	}
-
-	.comment-content, .reply {
-		float: right;
-		width: 75%;
-		width: calc(80% - #{map-deep-get($config-global, "spacing", "horizontal")} - 1px);
-	}
-}
-
-.comment-navigation a {
-	font-size: inherit;
-	font-weight: bold;
 }
 
 /**

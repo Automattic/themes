@@ -3398,28 +3398,6 @@ p:not(.site-title) a:hover {
 	text-decoration: none;
 }
 
-.site-info,
-.main-navigation,
-.entry-header,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: right;
-}
-
-.comment-reply-title {
-	display: inherit;
-}
-
-.comment .comment-reply-title {
-	display: flex;
-}
-
 .main-navigation > div > ul,
 .social-navigation > div > ul,
 .pagination .nav-links {
@@ -3577,6 +3555,12 @@ p:not(.site-title) a:hover {
 /**
  * Content Area
  */
+@media only screen and (min-width: 560px) {
+	#main {
+		padding-top: 64px;
+	}
+}
+
 @media only screen and (min-width: 640px) {
 	#primary {
 		margin-top: 44px;
@@ -3608,6 +3592,76 @@ p:not(.site-title) a:hover {
  */
 .entry-header .entry-meta {
 	display: none;
+}
+
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	background: #208751;
+	color: white;
+	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	text-transform: uppercase;
+}
+
+/**
+ * Comments
+ */
+.comment-list > li:first-child {
+	border-top-width: 2px;
+}
+
+.comment-body {
+	content: "";
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.comment-meta .comment-metadata {
+	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.83333rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.reply {
+	font-size: 0.83333rem;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+@media only screen and (min-width: 640px) {
+	.comment-meta {
+		border-left: 1px solid #E8E9EA;
+		display: block;
+		float: right;
+		padding-left: 16px;
+		width: 20%;
+	}
+	.comment-meta .comment-author {
+		display: block;
+		width: 100%;
+	}
+	.comment-meta .comment-author .avatar,
+	.comment-meta .comment-author .fn {
+		display: block;
+		margin-bottom: 8px;
+	}
+	.comment-content, .reply {
+		float: left;
+		width: 75%;
+		width: calc(80% - 16px - 1px);
+	}
+}
+
+.comment-navigation a {
+	font-size: inherit;
+	font-weight: bold;
 }
 
 /**
@@ -3779,64 +3833,11 @@ p:not(.site-title) a:hover {
  */
 .site-info {
 	font-weight: bold;
+	text-align: center;
 }
 
 .site-info a {
 	font-weight: inherit;
-}
-
-/**
- * Comments
- */
-.comment-list > li:first-child {
-	border-top-width: 2px;
-}
-
-.comment-body {
-	content: "";
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-}
-
-.comment-meta .comment-metadata {
-	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-.reply {
-	font-size: 0.83333rem;
-}
-
-@media only screen and (min-width: 640px) {
-	.comment-meta {
-		border-left: 1px solid #E8E9EA;
-		display: block;
-		float: right;
-		padding-left: 16px;
-		width: 20%;
-	}
-	.comment-meta .comment-author {
-		display: block;
-		width: 100%;
-	}
-	.comment-meta .comment-author .avatar,
-	.comment-meta .comment-author .fn {
-		display: block;
-		margin-bottom: 8px;
-	}
-	.comment-content, .reply {
-		float: left;
-		width: 75%;
-		width: calc(80% - 16px - 1px);
-	}
-}
-
-.comment-navigation a {
-	font-size: inherit;
-	font-weight: bold;
 }
 
 /**
