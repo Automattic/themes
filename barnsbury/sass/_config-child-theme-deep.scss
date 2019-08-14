@@ -61,17 +61,17 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": #20603c,
-			"hover": darken( #20603c, 10% ),
+			"default": #20603C,
+			"hover": darken( #20603C, 10% ),
 		),
 		"secondary": (
 			"default": red,
 			"hover": darkred,
 		),
 		"foreground": (
-			"default": #3c2323,
+			"default": #3C2323,
 			"light": lighten( #111, 22.5% ), // must be accessible against background
-			"dark": #0d1b24, // must be accessible against background
+			"dark": #0D1B24, // must be accessible against background
 		),
 		"background": (
 			"default": #FFFDF6,
@@ -83,7 +83,7 @@ $config-global: (
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
-		"text-selection": lighten( #20603c, 55% ),
+		"text-selection": lighten( #20603C, 55% ),
 		"black": black,
 		"white": white,
 	),
@@ -169,18 +169,18 @@ $config-button: (
 	),
 	// Fonts
 	"font": (
-		"family": map-deep-get($config-global, "font", "family", "ui"),
-		"size": map-deep-get($config-global, "font", "size", "md"),
-		"weight": 600,
+		"family": map-deep-get($config-global, "font", "family", "primary"),
+		"size": map-deep-get($config-global, "font", "size", "base"),
+		"weight": bold,
 		"line-height": 1,
 	),
 	// Borders
-	"border-radius": map-deep-get($config-global, "border-radius", "sm"),
+	"border-radius": 5px,
 	"border-width": 2px,
 	// Padding
 	"padding": (
-		"vertical": map-deep-get($config-global, "spacing", "unit"),
-		"horizontal": map-deep-get($config-global, "spacing", "unit"),
+		"vertical": (1.5 * map-deep-get($config-global, "spacing", "unit")),
+		"horizontal": (1.5 * map-deep-get($config-global, "spacing", "unit")),
 	),
 );
 
