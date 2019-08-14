@@ -23,6 +23,7 @@ $button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}
 $button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
 $button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
 $button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
+$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
 
 // General
 
@@ -228,17 +229,6 @@ body {
 .wp-block-cover__inner-container,
 .wp-block-columns,
 .wp-block-group {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		padding-bottom: $spacing_horizontal;
-	}
-	p {
-		padding-bottom: $spacing_horizontal;
-	}
 	.wp-block-button {
 		padding-bottom: $spacing_horizontal;
 	}
@@ -250,14 +240,14 @@ body {
 			padding-top: $spacing_horizontal;
 			padding-bottom: $spacing_horizontal;
 			> a {
-				// font-size: $font_size_base;
+				font-size: $font_size_base;
 				font-weight: normal;
 				font-family: $font_family_secondary;
 				line-height: $font_line_height_body;
 			}
 			> time {
 				&.wp-block-latest-posts__post-date {
-					// font-size: $font_size_base;
+					font-size: $font_size_base;
 				}
 			}
 		}
@@ -276,13 +266,13 @@ body {
 	}
 	p {
 		font-family: $font_family_secondary;
-		// font-size: $font_size_md;
+		font-size: $font_size_md;
 		line-height: $font_line_height_body;
 		opacity: 0.6;
 	}
 	cite {
 		color: inherit;
-		// font-size: $font_size_md;
+		font-size: $font_size_md;
 	}
 }
 
@@ -299,6 +289,14 @@ body {
 		font-family: $font_family_secondary;
 		.wp-block-latest-comments__comment-date {
 			// font-size: $font_size_xs;
+		}
+	}
+}
+
+.site-footer {
+	.widget-area {
+		.widget-title {
+			font-size: $font_size_widget_title;
 		}
 	}
 }
