@@ -107,6 +107,31 @@ a {
 }
 
 /**
+ * Posts
+ */
+
+.entry-title a {
+	color: map-deep-get($config-global, "color", "primary", "hover");
+
+	&:hover,
+	&:active {
+		color: map-deep-get($config-global, "color", "primary", "default");
+	}
+}
+
+.entry-meta,
+.entry-footer {
+	color: map-deep-get($config-global, "color", "foreground", "default");
+}
+
+.entry-meta a:hover,
+.entry-meta a:active,
+.entry-footer a:hover,
+.entry-footer a:active {
+	color: map-deep-get($config-global, "color", "primary", "default");
+}
+
+/**
  * Blocks
  */
 
