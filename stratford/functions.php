@@ -75,7 +75,7 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 				array(
 					'name'  => __( 'Gray', 'stratford' ),
 					'slug'  => 'foreground',
-					'color' => '#7a7c84',
+					'color' => '#74767e',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'stratford' ),

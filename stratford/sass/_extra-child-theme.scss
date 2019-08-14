@@ -1,7 +1,23 @@
 /**
  * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper and Content
+ * 4. Navigation Menu
+ * 5. Archive Pagination and Post Navigation
+ * 6. Block Specific Styles
+ * 6.1. Column Block
+ * 6.2. Quote Block
+ * 6.3. Hero Block and Cover Block
+ * 6.4. File Block
+ * 6.5. Latest Comments Block
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ * 7. Widgets
  */
-
+ 
 $color_background: #{map-deep-get($config-global, "color", "background", "default")};
 $color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
 $color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
@@ -27,8 +43,9 @@ $button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
 $button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
 $font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h4")};
 
-// General
-
+/**
+ * 1. General Styles
+ */
 h1,
 h2,
 h3,
@@ -41,7 +58,9 @@ a {
 	text-decoration: none;
 }
 
-// Main Menu
+/**
+ * 2. Header
+ */
 #masthead {
 	border-bottom: 1px solid $color_background_light;
 	position: fixed;
@@ -167,16 +186,146 @@ a {
 
 }
 
-// Social Links Footer Menu
+ @include media(mobile-only) {
+	#masthead {
+		max-height: 100%;
+		overflow-y: scroll;
+		.site-header-wrapper {
+			width: 100%;
+			.site-branding {
+				margin-left: 0;
+			}
+		}
+	}
+	.site-header {
+		position: relative;
+	}
+
+	.site-title,
+	.site-description {
+		font-size: $font_size_xl;
+		hyphens: auto;
+	}
+}
+
+/**
+ * 3. Main Wrapper and Content
+ */
+.site-content {
+	padding-top: 4.75em;
+}
+
+/**
+ * 4. Navigation
+ */
+
+/**
+ * 4.1 Main Navigation
+ */
+@include media(mobile-only) {
+	#toggle-menu {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+/**
+ * 4.2 Social Navigation
+ */
 .social-links-menu {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 }
 
+@include media(mobile-only) {
+	.social-links-menu {
+		justify-content: center;
+	}
+}
 
-// Buttons
+/**
+ * 5. Archive Pagination and Post Navigation
+ */
 
+
+/**
+ * 6. Block Specific Styles
+ */
+
+/**
+ * 6.1. Column Block
+ */
+ 
+
+/**
+ * 6.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid $color_background_light;
+	padding: $spacing_horizontal;
+	&.is-style-large {
+		p {
+			line-height: $font_line_height_body;
+		}
+	}
+	p {
+		font-family: $font_family_secondary;
+		font-size: $font_size_md;
+		line-height: $font_line_height_body;
+		opacity: 0.6;
+	}
+	cite {
+		color: inherit;
+		font-size: $font_size_md;
+	}
+}
+
+/**
+ * 6.3. Hero Block and Cover Block
+ */
+ 
+
+/**
+ * 6.4. File Block
+ */
+.wp-block-file {
+	a {
+		&.wp-block-file__button {
+			line-height: $button_line_height;
+			cursor: pointer;
+			font-weight: $button_font_weight;
+			font-family: $button_font_family;
+			// font-size: $button_font_size;
+			padding: $button_spacing_vertical $button_spacing_horizontal;
+			display: inline-block;
+			&:focus,
+			&:hover {
+				color: $button_color_hover;
+				background-color: $button_background_hover;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * 6.5. Latest Comments Block
+ */
+.wp-block-latest-comments {
+	.wp-block-latest-comments__comment-meta {
+		font-family: $font_family_secondary;
+	}
+}
+
+/**
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ */
 .wp-block-button, .a8c-posts-list {
 	&.minimal {
 		a {
@@ -204,47 +353,6 @@ input[type="submit"],
 	}
 }
 
-.wp-block-file {
-	a {
-		&.wp-block-file__button {
-			line-height: $button_line_height;
-			cursor: pointer;
-			font-weight: $button_font_weight;
-			font-family: $button_font_family;
-			// font-size: $button_font_size;
-			padding: $button_spacing_vertical $button_spacing_horizontal;
-			display: inline-block;
-			&:focus,
-			&:hover {
-				color: $button_color_hover;
-				background-color: $button_background_hover;
-				opacity: 1;
-			}
-		}
-	}
-}
-
-// Content Container 
-.site-content {
-	padding-top: 4.75em;
-}
-
-//DEBUG Styles
-body {
-	// &.home {
-	// 	.entry-header {
-	// 		display: none;
-	// 	}
-	// 	.site-main {
-	// 		padding-top: 0;
-	// 		.entry-content {
-	// 			margin-top: 0;
-	// 		}
-	// 	}
-	// }
-}
-
-// Hero
 .wp-block-coblocks-hero__box,
 .wp-block-cover__inner-container,
 .wp-block-columns,
@@ -264,88 +372,36 @@ body {
 			}
 			> time {
 				&.wp-block-latest-posts__post-date {
-					font-size: $font_size_base;
+				 font-size: $font_size_base;
 				}
 			}
 		}
 	}
 }
 
-.wp-block-quote,
-.wp-block-quote[style*="text-align:center"],
-.wp-block-quote[style*="text-align:right"] {
-	border: 1px solid $color_background_light;
-	padding: $spacing_horizontal;
-	&.is-style-large {
-		p {
-			line-height: $font_line_height_body;
-		}
-	}
-	p {
-		font-family: $font_family_secondary;
-		font-size: $font_size_md;
-		line-height: $font_line_height_body;
-		opacity: 0.6;
-	}
-	cite {
-		color: inherit;
-		font-size: $font_size_md;
-	}
-}
-
+/**
+ * 7. Widgets
+ */
 .site-footer {
 	.widget-area {
 		.widget-title {
+			font-size: $font_size_widget_title;
 			margin-bottom: .857em;
 		}
 	}
 }
 
-.wp-block-latest-comments {
-	.wp-block-latest-comments__comment-meta {
-		font-family: $font_family_secondary;
-		.wp-block-latest-comments__comment-date {
-			// font-size: $font_size_xs;
-		}
-	}
-}
-
-.site-footer {
-	.widget-area {
-		.widget-title {
-			font-size: $font_size_widget_title;
-		}
-	}
-}
-
-
-@include media(mobile-only) {
-	#masthead {
-		max-height: 100%;
-		overflow-y: scroll;
-		.site-header-wrapper {
-			width: 100%;
-			.site-branding {
-				margin-left: 0;
-			}
-		}
-	}
-	.site-header {
-		position: relative;
-	}
-
-	.site-title,
-	.site-description {
-		font-size: $font_size_xl;
-		hyphens: auto;
-	}
-
-	#toggle-menu {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-	.social-links-menu {
-		justify-content: center;
-	}
+//DEBUG Styles
+body {
+	// &.home {
+	// 	.entry-header {
+	// 		display: none;
+	// 	}
+	// 	.site-main {
+	// 		padding-top: 0;
+	// 		.entry-content {
+	// 			margin-top: 0;
+	// 		}
+	// 	}
+	// }
 }

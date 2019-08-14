@@ -602,7 +602,7 @@ html {
 body {
 	font-size: 1rem;
 	font-weight: normal;
-	color: #7a7c84;
+	color: #74767e;
 	text-align: right;
 	background-color: white;
 }
@@ -644,7 +644,7 @@ a {
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #7a7c84;
+	color: #74767e;
 	display: block;
 	font-size: 1.2rem;
 	font-weight: bold;
@@ -969,7 +969,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #7a7c84;
+	color: #74767e;
 	border: 1px solid #DDDDDD;
 	border-radius: 3px;
 	padding: 16px;
@@ -991,7 +991,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #7a7c84;
+	color: #74767e;
 	border-color: #3e69dc;
 }
 
@@ -1152,14 +1152,14 @@ input.has-focus[type="submit"],
 }
 
 .wp-block-code {
-	color: #7a7c84;
+	color: #74767e;
 	font-size: 0.83333rem;
 	padding: 16px;
 	border-color: #DDDDDD;
 }
 
 .wp-block-code pre {
-	color: #7a7c84;
+	color: #74767e;
 }
 
 .wp-block-columns {
@@ -1216,7 +1216,7 @@ input.has-focus[type="submit"],
 
 .wp-block-cover,
 .wp-block-cover-image {
-	background-color: #7a7c84;
+	background-color: #74767e;
 	min-height: calc( 15 * 32px);
 	margin: inherit;
 	/* Treating H2 separately to account for legacy /core styles */
@@ -1753,7 +1753,7 @@ p.has-background:not(.has-background-background-color) a {
 	border-top-width: 4px;
 	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
-	color: #7a7c84;
+	color: #74767e;
 	/**
 	 * Block Options
 	 */
@@ -2013,7 +2013,7 @@ table th,
 }
 
 .has-foreground-color[class] {
-	color: #7a7c84 !important;
+	color: #74767e !important;
 }
 
 .has-foreground-light-color[class] {
@@ -2055,7 +2055,7 @@ table th,
 }
 
 .has-foreground-background-color[class] {
-	background-color: #7a7c84 !important;
+	background-color: #74767e !important;
 	color: white;
 }
 
@@ -2083,7 +2083,7 @@ table th,
 
 .has-background-light-background-color[class] {
 	background-color: #f3f3f3 !important;
-	color: #7a7c84;
+	color: #74767e;
 }
 
 .has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
@@ -2092,7 +2092,7 @@ table th,
 
 .has-background-dark-background-color[class] {
 	background-color: #DDDDDD !important;
-	color: #7a7c84;
+	color: #74767e;
 }
 
 .has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
@@ -2101,7 +2101,7 @@ table th,
 
 .has-background-background-color[class] {
 	background-color: white !important;
-	color: #7a7c84;
+	color: #74767e;
 }
 
 .has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6 {
@@ -2306,7 +2306,7 @@ table th,
 }
 
 .main-navigation {
-	color: #7a7c84;
+	color: #74767e;
 }
 
 .main-navigation > div {
@@ -2898,7 +2898,7 @@ table th,
 }
 
 .comment-meta .comment-metadata {
-	color: #7a7c84;
+	color: #74767e;
 }
 
 .comment-meta .comment-metadata a {
@@ -3383,6 +3383,25 @@ img#wpstats {
  */
 /**
  * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper and Content
+ * 4. Navigation Menu
+ * 5. Archive Pagination and Post Navigation
+ * 6. Block Specific Styles
+ * 6.1. Column Block
+ * 6.2. Quote Block
+ * 6.3. Hero Block and Cover Block
+ * 6.4. File Block
+ * 6.5. Latest Comments Block
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ * 7. Widgets
+ */
+/**
+ * 1. General Styles
  */
 h1,
 h2,
@@ -3397,6 +3416,9 @@ a {
 	text-decoration: none;
 }
 
+/**
+ * 2. Header
+ */
 #masthead {
 	border-bottom: 1px solid #f3f3f3;
 	position: fixed;
@@ -3499,12 +3521,137 @@ a {
 	}
 }
 
+@media only screen and (max-width: 559px) {
+	#masthead {
+		max-height: 100%;
+		overflow-y: scroll;
+	}
+	#masthead .site-header-wrapper {
+		width: 100%;
+	}
+	#masthead .site-header-wrapper .site-branding {
+		margin-right: 0;
+	}
+	.site-header {
+		position: relative;
+	}
+	.site-title,
+	.site-description {
+		font-size: 1.728rem;
+		hyphens: auto;
+	}
+}
+
+/**
+ * 3. Main Wrapper and Content
+ */
+.site-content {
+	padding-top: 4.75em;
+}
+
+/**
+ * 4. Navigation
+ */
+/**
+ * 4.1 Main Navigation
+ */
+@media only screen and (max-width: 559px) {
+	#toggle-menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+/**
+ * 4.2 Social Navigation
+ */
 .social-links-menu {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
 }
 
+@media only screen and (max-width: 559px) {
+	.social-links-menu {
+		justify-content: center;
+	}
+}
+
+/**
+ * 5. Archive Pagination and Post Navigation
+ */
+/**
+ * 6. Block Specific Styles
+ */
+/**
+ * 6.1. Column Block
+ */
+/**
+ * 6.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f3f3f3;
+	padding: 16px;
+}
+
+.wp-block-quote.is-style-large p,
+.wp-block-quote[style*="text-align:center"].is-style-large p,
+.wp-block-quote[style*="text-align:right"].is-style-large p {
+	line-height: 1.6;
+}
+
+.wp-block-quote p,
+.wp-block-quote[style*="text-align:center"] p,
+.wp-block-quote[style*="text-align:right"] p {
+	font-family: "Lato", sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.6;
+	opacity: 0.6;
+}
+
+.wp-block-quote cite,
+.wp-block-quote[style*="text-align:center"] cite,
+.wp-block-quote[style*="text-align:right"] cite {
+	color: inherit;
+	font-size: 1.2rem;
+}
+
+/**
+ * 6.3. Hero Block and Cover Block
+ */
+/**
+ * 6.4. File Block
+ */
+.wp-block-file a.wp-block-file__button {
+	line-height: 1.44;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	padding: 16px 16px;
+	display: inline-block;
+}
+
+.wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover {
+	color: white;
+	background-color: #2c313f;
+	opacity: 1;
+}
+
+/**
+ * 6.5. Latest Comments Block
+ */
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta {
+	font-family: "Lato", sans-serif;
+}
+
+/**
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ */
 .wp-block-button.minimal a, .a8c-posts-list.minimal a {
 	background: 100% 0;
 	border: 2px solid;
@@ -3538,25 +3685,6 @@ input[type="submit"].has-background:visited,
 .a8c-posts-list__view-all.has-background:hover,
 .a8c-posts-list__view-all.has-background:visited {
 	opacity: .8;
-}
-
-.wp-block-file a.wp-block-file__button {
-	line-height: 1.44;
-	cursor: pointer;
-	font-weight: 700;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	padding: 16px 16px;
-	display: inline-block;
-}
-
-.wp-block-file a.wp-block-file__button:focus, .wp-block-file a.wp-block-file__button:hover {
-	color: white;
-	background-color: #2c313f;
-	opacity: 1;
-}
-
-.site-content {
-	padding-top: 4.75em;
 }
 
 .wp-block-coblocks-hero__box .wp-block-latest-posts,
@@ -3593,73 +3721,10 @@ input[type="submit"].has-background:visited,
 	font-size: 1rem;
 }
 
-.wp-block-quote,
-.wp-block-quote[style*="text-align:center"],
-.wp-block-quote[style*="text-align:right"] {
-	border: 1px solid #f3f3f3;
-	padding: 16px;
-}
-
-.wp-block-quote.is-style-large p,
-.wp-block-quote[style*="text-align:center"].is-style-large p,
-.wp-block-quote[style*="text-align:right"].is-style-large p {
-	line-height: 1.6;
-}
-
-.wp-block-quote p,
-.wp-block-quote[style*="text-align:center"] p,
-.wp-block-quote[style*="text-align:right"] p {
-	font-family: "Lato", sans-serif;
-	font-size: 1.2rem;
-	line-height: 1.6;
-	opacity: 0.6;
-}
-
-.wp-block-quote cite,
-.wp-block-quote[style*="text-align:center"] cite,
-.wp-block-quote[style*="text-align:right"] cite {
-	color: inherit;
-	font-size: 1.2rem;
-}
-
-.site-footer .widget-area .widget-title {
-	margin-bottom: .857em;
-}
-
-.wp-block-latest-comments .wp-block-latest-comments__comment-meta {
-	font-family: "Lato", sans-serif;
-}
-
+/**
+ * 7. Widgets
+ */
 .site-footer .widget-area .widget-title {
 	font-size: 1.728rem;
-}
-
-@media only screen and (max-width: 559px) {
-	#masthead {
-		max-height: 100%;
-		overflow-y: scroll;
-	}
-	#masthead .site-header-wrapper {
-		width: 100%;
-	}
-	#masthead .site-header-wrapper .site-branding {
-		margin-right: 0;
-	}
-	.site-header {
-		position: relative;
-		padding-left: 32px;
-	}
-	.site-title,
-	.site-description {
-		font-size: 1.728rem;
-		hyphens: auto;
-	}
-	#toggle-menu {
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	.social-links-menu {
-		justify-content: center;
-	}
+	margin-bottom: .857em;
 }
