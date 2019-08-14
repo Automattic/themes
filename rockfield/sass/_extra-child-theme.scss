@@ -292,6 +292,21 @@ a {
 	}
 }
 
+// Remove margin if alignfull is last element
+.page:not(.logged-in) {
+	.hentry .entry-content {
+		& > *:last-child {
+			&.alignfull {
+				margin-bottom: -#{map-deep-get($config-global, "spacing", "vertical")};
+
+				@include media(mobile) {
+					margin-bottom: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+				}
+			}
+		}
+	}
+}
+
 // Author Bio
 .author-bio {
 	border: 2px solid #{map-deep-get($config-global, "color", "border", "default")};
