@@ -29,25 +29,25 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'rockfield' ),
 					'shortName' => __( 'S', 'rockfield' ),
-					'size'      => 19.5,
+					'size'      => 15,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'rockfield' ),
 					'shortName' => __( 'M', 'rockfield' ),
-					'size'      => 22,
+					'size'      => 18,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'rockfield' ),
 					'shortName' => __( 'L', 'rockfield' ),
-					'size'      => 36.5,
+					'size'      => 25.92,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'rockfield' ),
 					'shortName' => __( 'XL', 'rockfield' ),
-					'size'      => 49.5,
+					'size'      => 31.104,
 					'slug'      => 'huge',
 				),
 			)
@@ -60,37 +60,37 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'rockfield' ),
 					'slug'  => 'primary',
-					'color' => '#7E756E',
+					'color' => '#222222',
 				),
 				array(
 					'name'  => __( 'Secondary', 'rockfield' ),
 					'slug'  => 'secondary',
-					'color' => '#208751',
+					'color' => '#116821',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'rockfield' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#1E1C1B',
+					'color' => '#111111',
 				),
 				array(
 					'name'  => __( 'Gray', 'rockfield' ),
 					'slug'  => 'foreground',
-					'color' => '#5E5853',
+					'color' => '#444444',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'rockfield' ),
 					'slug'  => 'foreground-light',
-					'color' => '#99908A',
+					'color' => '#757575',
 				),
 				array(
 					'name'  => __( 'Lighter Gray', 'rockfield' ),
 					'slug'  => 'background-dark',
-					'color' => '#E8E9EA',
+					'color' => '#E0E0E0',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'rockfield' ),
 					'slug'  => 'background-light',
-					'color' => '#F4F5F5',
+					'color' => '#F0F0F0',
 				),
 				array(
 					'name'  => __( 'White', 'rockfield' ),
