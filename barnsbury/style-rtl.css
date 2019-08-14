@@ -2374,11 +2374,6 @@ table th,
 	z-index: 99999;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2389,14 +2384,6 @@ table th,
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li[focus-within] > ul,
@@ -3449,6 +3436,13 @@ a {
 .site-header .social-navigation {
 	line-height: 1;
 	margin-top: 0;
+}
+
+.site-header .social-navigation ul li a svg {
+	display: block;
+	width: 32px;
+	height: 32px;
+	transform: translateZ(0);
 }
 
 .site-branding {
