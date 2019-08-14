@@ -1,30 +1,53 @@
 /**
  * Extra Child Theme Styles
  */
-// @import "";
 
-$color_background: map-deep-get($config-global, "color", "background", "default");
-$color_primary: map-deep-get($config-global, "color", "primary", "default");
-$color_primary_hover: map-deep-get($config-global, "color", "primary", "hover");
-$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
-$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+$color_background: #{map-deep-get($config-global, "color", "background", "default")};
+$color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
+$color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
+$color_primary: #{map-deep-get($config-global, "color", "primary", "default")};
+$color_secondary: #{map-deep-get($config-global, "color", "secondary", "default")};
+$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover")};
+$spacing_horizontal: #{map-deep-get($config-global, "spacing", "horizontal")};
+$spacing_vertical: #{map-deep-get($config-global, "spacing", "vertical")};
+$font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
+$font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
+$font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
+$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
+$font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
+$button_line_height: #{map-deep-get($config-button, "font", "line-height")};
+$button_font_weight: #{map-deep-get($config-button, "font", "weight")};
+$button_font_family: #{map-deep-get($config-button, "font", "family")};
+$button_font_size: #{map-deep-get($config-button, "font", "size")};
+$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}; 
+$button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
+$button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
+$button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
 
 // General
 
 body {
-	font-size: map-deep-get($config-global, "font", "size", "md");
+	font-size: $font_size_md;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color_primary;
+}
 a {
 	text-decoration: none;
 }
 
 // Main Menu
 #masthead {
-	border-bottom: 1px solid #f3f3f3;
+	border-bottom: 1px solid $color_background_light;
 	position: fixed;
 	z-index: 9999;
-	background: #fff;
+	background: $color_background;
 	width: 100%;
 	-webkit-transition: all .25s ease-in-out;
     -moz-transition: all .25s ease-in-out;
@@ -69,7 +92,7 @@ a {
 				}
 				&.current-menu-item {
 					a {
-						border-color: #3e69dc;
+						border-color: $color_secondary;
 						border-style: solid;
 						border-width: 0 0 .125em;
 						color: $color_primary_hover;
@@ -91,7 +114,7 @@ a {
 				}
 				&.current-menu-item {
 					> a {
-						border-color: #3e69dc;
+						border-color: $color_secondary;
 						border-style: solid;
 						border-width: 0 0 .125em;
 						color: $color_primary_hover;
@@ -104,7 +127,7 @@ a {
 					}
 				}
 				ul {
-					color: #f3f3f3;
+					color: $color_background_light;
 					li {
 						border-bottom: 1px solid;
 						margin: 0;
@@ -166,17 +189,17 @@ input[type="submit"],
 .wp-block-file {
 	a {
 		&.wp-block-file__button {
-			line-height: #{map-deep-get($config-button, "font", "line-height")};
+			line-height: $button_line_height;
 			cursor: pointer;
-			font-weight: #{map-deep-get($config-button, "font", "weight")};
-			font-family: #{map-deep-get($config-button, "font", "family")};
-			font-size: #{map-deep-get($config-button, "font", "size")};
-			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+			font-weight: $button_font_weight;
+			font-family: $button_font_family;
+			font-size: $button_font_size;
+			padding: $button_spacing_vertical $button_spacing_horizontal;
 			display: inline-block;
 			&:focus,
 			&:hover {
-				color: #{map-deep-get($config-button, "color", "text-hover")};
-				background-color: #{map-deep-get($config-button, "color", "background-hover")};
+				color: $button_color_hover;
+				background-color: $button_background_hover;
 				opacity: 1;
 			}
 		}
@@ -213,59 +236,55 @@ body {
 	h4,
 	h5,
 	h6 {
-		padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+		padding-bottom: $spacing_horizontal;
 	}
 	p {
-		padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+		padding-bottom: $spacing_horizontal
 	}
 	.wp-block-button {
-		padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+		padding-bottom: $spacing_horizontal;
 	}
 	.wp-block-latest-posts {
-		border-bottom: 1px solid #f3f3f3;
+		border-bottom: 1px solid $color_background_light;
 		> li {
-			border-top: 1px solid #f3f3f3;
+			border-top: 1px solid $color_background_light;
 			margin: 0;
-			padding-top: #{map-deep-get($config-global, "spacing", "horizontal")};
-			padding-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+			padding-top: $spacing_horizontal;
+			padding-bottom: $spacing_horizontal;
 			> a {
-				font-size: #{map-deep-get($config-global, "font", "size", "base")};
-				font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+				font-size: $font_size_base;
 				font-weight: normal;
-				line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+				font-family: $font_family_secondary;
+				line-height: $font_line_height_body;
 			}
 			> time {
 				&.wp-block-latest-posts__post-date {
-					font-size: #{map-deep-get($config-global, "font", "size", "base")};	
+					font-size: $font_size_base;
 				}
 			}
 		}
 	}
 }
 
-.wp-block-group {
-	// padding: #{map-deep-get($config-global, "spacing", "vertical")};
-}
-
 .wp-block-quote,
 .wp-block-quote[style*="text-align:center"],
 .wp-block-quote[style*="text-align:right"] {
-	border: 1px solid #f3f3f3;
-	padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+	border: 1px solid $color_background_light;
+	padding: $spacing_horizontal;
 	&.is-style-large {
 		p {
-			line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+			line-height: $font_line_height_body;
 		}
 	}
 	p {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
-		font-size: #{map-deep-get($config-global, "font", "size", "md")};
-		line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+		font-family: $font_family_secondary;
+		font-size: $font_size_md;
+		line-height: $font_line_height_body;
 		opacity: 0.6;
 	}
 	cite {
 		color: inherit;
-		font-size: #{map-deep-get($config-global, "font", "size", "md")};
+		font-size: $font_size_md;
 	}
 }
 
@@ -279,9 +298,9 @@ body {
 
 .wp-block-latest-comments {
 	.wp-block-latest-comments__comment-meta {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-family: $font_family_secondary;
 		.wp-block-latest-comments__comment-date {
-			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+			font-size: $font_size_xs;
 		}
 	}
 }
