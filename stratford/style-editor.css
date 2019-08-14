@@ -865,6 +865,13 @@ table th,
 /**
  * Extras
  */
+/**
+ * 1. General Styles
+ */
+a {
+	text-decoration: none;
+}
+
 .editor-post-title__block .editor-post-title__input {
 	text-align: center;
 	color: #2c313f;
@@ -877,4 +884,131 @@ h4,
 h5,
 h6 {
 	color: #2c313f;
+}
+
+/**
+ * 2. Block Specific Styles
+ */
+/**
+ * 2.1. Column Block
+ */
+/**
+ * 2.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f3f3f3;
+	padding: 16px;
+}
+
+.wp-block-quote p,
+.wp-block-quote[style*="text-align:center"] p,
+.wp-block-quote[style*="text-align:right"] p {
+	font-family: "Lato", sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+.wp-block-quote .wp-block-quote__citation,
+.wp-block-quote[style*="text-align:center"] .wp-block-quote__citation,
+.wp-block-quote[style*="text-align:right"] .wp-block-quote__citation {
+	color: inherit;
+	font-size: 1.2rem;
+}
+
+/**
+ * 2.3. File Block
+ */
+.wp-block-file div.wp-block-file__button {
+	line-height: 1.44;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	background-color: #3e69dc;
+	font-size: 0.83333rem;
+	padding: 16px 16px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.wp-block-file div.wp-block-file__button:focus, .wp-block-file div.wp-block-file__button:hover {
+	color: white;
+	background-color: #2c313f;
+	opacity: 1;
+}
+
+/**
+ * 2.4. Pre Block and Verse Block
+ */
+.wp-block-preformatted pre,
+.wp-block-verse pre {
+	font-family: "Inconsolata", monospace;
+}
+
+/**
+ * 2.5. Button Block
+ */
+.wp-block-button div.wp-block-button__link {
+	text-transform: uppercase;
+	border: 0;
+	border-radius: 5em;
+	text-transform: uppercase;
+}
+
+.wp-block-button div.wp-block-button__link.has-background:focus, .wp-block-button div.wp-block-button__link.has-background:hover, .wp-block-button div.wp-block-button__link.has-background:visited {
+	opacity: .8;
+}
+
+.wp-block-button.minimal .wp-block-button__link {
+	background: 0 0;
+	border: 2px solid;
+}
+
+/**
+ * 2.6. Search Block
+ */
+.wp-block-search .wp-block-search__button {
+	text-transform: uppercase;
+	line-height: 1.44;
+	color: white;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.83333rem;
+	background-color: #3e69dc;
+	border-radius: 5em;
+	border-width: 0;
+	padding: 16px 16px;
+	display: inline-block;
+	border: none;
+	box-shadow: none;
+}
+
+.wp-block-search .wp-block-search__button:focus, .wp-block-search .wp-block-search__button:hover, .wp-block-search .wp-block-search__button:visited {
+	color: white;
+	background-color: #2c313f;
+	opacity: 1;
+}
+
+.wp-block-columns .wp-block-latest-posts {
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.wp-block-columns .wp-block-latest-posts > li {
+	border-top: 1px solid #f3f3f3;
+	margin: 0;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.wp-block-columns .wp-block-latest-posts > li > a {
+	font-size: 1rem;
+	font-weight: normal;
+	font-family: "Lato", sans-serif;
+	line-height: 1.6;
+}
+
+.wp-block-columns .wp-block-latest-posts > li > time.wp-block-latest-posts__post-date {
+	font-size: 1rem;
 }
