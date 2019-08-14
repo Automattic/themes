@@ -13,6 +13,8 @@ $spacing_vertical: #{map-deep-get($config-global, "spacing", "vertical")};
 $font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
 $font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
 $font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
+$font_size_lg: #{map-deep-get($config-global, "font", "size", "lg")};
+$font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
 $font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
 $font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
 $button_line_height: #{map-deep-get($config-button, "font", "line-height")};
@@ -23,7 +25,7 @@ $button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}
 $button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
 $button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
 $button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
-$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
+$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h4")};
 
 // General
 
@@ -321,15 +323,20 @@ body {
 	#masthead {
 		max-height: 100%;
 		overflow-y: scroll;
+		.site-header-wrapper {
+			width: 100%;
+			.site-branding {
+				margin-left: 0;
+			}
+		}
 	}
 	.site-header {
 		position: relative;
-		padding-right: $spacing_vertical;
 	}
 
 	.site-title,
 	.site-description {
-		font-size: #{map-deep-get($config-global, "font", "size", "lg")};
+		font-size: $font_size_xl;
 		hyphens: auto;
 	}
 
