@@ -49,7 +49,6 @@ a {
 	-webkit-transition: all .25s ease-in-out;
     -moz-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
-
 	.site-header-wrapper {
 		display: flex;
 		flex-wrap: wrap;	
@@ -83,9 +82,6 @@ a {
 		.main-navigation {
 			> ul {
 				> li {
-					&:first-child {
-						margin-left: 0;
-					}
 					&.current-menu-item {
 						a {
 							border-color: $color_secondary;
@@ -98,16 +94,6 @@ a {
 			}
 			ul {
 				li {
-					margin: 0 .75em;
-					&:first-child {
-						margin-left: 0;
-					}
-					&:hover {
-						ul {
-							left: auto;
-							right: 0;
-						}
-					}
 					&.current-menu-item {
 						> a {
 							border-color: $color_secondary;
@@ -117,7 +103,6 @@ a {
 						}
 					}
 					a {
-						padding: .25em 0;
 						&::after {
 							color: $color_primary_hover;
 						}
@@ -135,8 +120,41 @@ a {
 									border: none;
 								}
 							}
-							a {
-								padding: .75em;
+						}
+					}
+				}
+			}
+			
+		}
+		@include media(mobile) {
+			.main-navigation {
+				> ul {
+					> li {
+						&:first-child {
+							margin-left: 0;
+						}
+					}
+				}
+				ul {
+					li {
+						margin: 0 .75em;
+						&:first-child {
+							margin-left: 0;
+						}
+						&:hover {
+							ul {
+								left: auto;
+								right: 0;
+							}
+						}
+						a {
+							padding: .25em 0;
+						}
+						ul {
+							li {
+								a {
+									padding: .75em;
+								}
 							}
 						}
 					}
@@ -295,5 +313,29 @@ body {
 		.widget-title {
 			font-size: $font_size_widget_title;
 		}
+	}
+}
+
+
+@include media(mobile-only) {
+	#masthead {
+		max-height: 100%;
+		overflow-y: scroll;
+	}
+	.site-header {
+		position: relative;
+		padding-right: $spacing_vertical;
+	}
+
+	.site-title,
+	.site-description {
+		font-size: #{map-deep-get($config-global, "font", "size", "lg")};
+		hyphens: auto;
+	}
+
+	#toggle-menu {
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }

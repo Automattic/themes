@@ -3447,10 +3447,6 @@ a {
 	flex: 0 1 auto;
 }
 
-#masthead .site-header-wrapper .main-navigation > ul > li:first-child {
-	margin-left: 0;
-}
-
 #masthead .site-header-wrapper .main-navigation > ul > li.current-menu-item a {
 	border-color: #3e69dc;
 	border-style: solid;
@@ -3458,28 +3454,11 @@ a {
 	color: #3e69dc;
 }
 
-#masthead .site-header-wrapper .main-navigation ul li {
-	margin: 0 .75em;
-}
-
-#masthead .site-header-wrapper .main-navigation ul li:first-child {
-	margin-left: 0;
-}
-
-#masthead .site-header-wrapper .main-navigation ul li:hover ul {
-	left: auto;
-	right: 0;
-}
-
 #masthead .site-header-wrapper .main-navigation ul li.current-menu-item > a {
 	border-color: #3e69dc;
 	border-style: solid;
 	border-width: 0 0 .125em;
 	color: #3e69dc;
-}
-
-#masthead .site-header-wrapper .main-navigation ul li a {
-	padding: .25em 0;
 }
 
 #masthead .site-header-wrapper .main-navigation ul li a::after {
@@ -3503,8 +3482,26 @@ a {
 	border: none;
 }
 
-#masthead .site-header-wrapper .main-navigation ul li ul li a {
-	padding: .75em;
+@media only screen and (min-width: 560px) {
+	#masthead .site-header-wrapper .main-navigation > ul > li:first-child {
+		margin-left: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li {
+		margin: 0 .75em;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li:first-child {
+		margin-left: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li:hover ul {
+		left: auto;
+		right: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li a {
+		padding: .25em 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li a {
+		padding: .75em;
+	}
 }
 
 .social-links-menu {
@@ -3640,4 +3637,25 @@ input[type="submit"].has-background:visited,
 
 .site-footer .widget-area .widget-title {
 	font-size: 2.0736rem;
+}
+
+@media only screen and (max-width: 559px) {
+	#masthead {
+		max-height: 100%;
+		overflow-y: scroll;
+	}
+	.site-header {
+		position: relative;
+		padding-right: 32px;
+	}
+	.site-title,
+	.site-description {
+		font-size: 1.44rem;
+		hyphens: auto;
+	}
+	#toggle-menu {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }

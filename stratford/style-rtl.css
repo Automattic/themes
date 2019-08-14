@@ -3442,10 +3442,6 @@ a {
 	flex: 0 1 auto;
 }
 
-#masthead .site-header-wrapper .main-navigation > ul > li:first-child {
-	margin-right: 0;
-}
-
 #masthead .site-header-wrapper .main-navigation > ul > li.current-menu-item a {
 	border-color: #3e69dc;
 	border-style: solid;
@@ -3453,28 +3449,11 @@ a {
 	color: #3e69dc;
 }
 
-#masthead .site-header-wrapper .main-navigation ul li {
-	margin: 0 .75em;
-}
-
-#masthead .site-header-wrapper .main-navigation ul li:first-child {
-	margin-right: 0;
-}
-
-#masthead .site-header-wrapper .main-navigation ul li:hover ul {
-	right: auto;
-	left: 0;
-}
-
 #masthead .site-header-wrapper .main-navigation ul li.current-menu-item > a {
 	border-color: #3e69dc;
 	border-style: solid;
 	border-width: 0 0 .125em;
 	color: #3e69dc;
-}
-
-#masthead .site-header-wrapper .main-navigation ul li a {
-	padding: .25em 0;
 }
 
 #masthead .site-header-wrapper .main-navigation ul li a::after {
@@ -3498,8 +3477,26 @@ a {
 	border: none;
 }
 
-#masthead .site-header-wrapper .main-navigation ul li ul li a {
-	padding: .75em;
+@media only screen and (min-width: 560px) {
+	#masthead .site-header-wrapper .main-navigation > ul > li:first-child {
+		margin-right: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li {
+		margin: 0 .75em;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li:first-child {
+		margin-right: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li:hover ul {
+		right: auto;
+		left: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li a {
+		padding: .25em 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li a {
+		padding: .75em;
+	}
 }
 
 .social-links-menu {
@@ -3560,13 +3557,6 @@ input[type="submit"].has-background:visited,
 
 .site-content {
 	padding-top: 4.75em;
-}
-
-.wp-block-coblocks-hero__box .wp-block-button,
-.wp-block-cover__inner-container .wp-block-button,
-.wp-block-columns .wp-block-button,
-.wp-block-group .wp-block-button {
-	padding-bottom: 16px;
 }
 
 .wp-block-coblocks-hero__box .wp-block-latest-posts,
@@ -3642,4 +3632,21 @@ input[type="submit"].has-background:visited,
 
 .site-footer .widget-area .widget-title {
 	font-size: 2.0736rem;
+}
+
+@media only screen and (max-width: 559px) {
+	.site-header {
+		position: relative;
+		padding-left: 32px;
+	}
+	.site-title,
+	.site-description {
+		font-size: 1.44rem;
+		hyphens: auto;
+	}
+	#toggle-menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
