@@ -32,6 +32,7 @@ $font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
 $font_size_lg: #{map-deep-get($config-global, "font", "size", "lg")};
 $font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
 $font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
+$font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
 $font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
 $button_line_height: #{map-deep-get($config-button, "font", "line-height")};
 $button_font_weight: #{map-deep-get($config-button, "font", "weight")};
@@ -389,6 +390,23 @@ input[type="submit"],
 			margin-bottom: .857em;
 		}
 	}
+}
+
+
+/**
+ * 6.9. Code, Pre Blocks
+ */
+.wp-block-code {
+	code {
+		font-family: $font_family_code;
+		font-size: $font_size_base;
+	}
+}
+
+.wp-block-preformatted, 
+.wp-block-verse {
+	font-family: $font_family_code;
+	font-size: $font_size_base;
 }
 
 //DEBUG Styles
