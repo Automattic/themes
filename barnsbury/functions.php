@@ -68,7 +68,7 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 					'color' => '#655441',
 				),
 				array(
-					'name'  => __( 'Dark Brown', 'barnsbury' ),
+					'name'  => __( 'Deep Blue', 'barnsbury' ),
 					'slug'  => 'foreground-dark',
 					'color' => '#0D1B24',
 				),
@@ -78,22 +78,22 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 					'color' => '#3C2323',
 				),
 				array(
-					'name'  => __( 'Light Brown', 'barnsbury' ),
+					'name'  => __( 'Clay', 'barnsbury' ),
 					'slug'  => 'foreground-light',
 					'color' => '#844D4D',
 				),
 				array(
-					'name'  => __( 'Lighter Gray', 'barnsbury' ),
+					'name'  => __( 'Light Gray', 'barnsbury' ),
 					'slug'  => 'background-dark',
 					'color' => '#DDDDDD',
 				),
 				array(
-					'name'  => __( 'Subtle Gray', 'barnsbury' ),
+					'name'  => __( 'Subtle Off White', 'barnsbury' ),
 					'slug'  => 'background-light',
 					'color' => '#FDF9EC',
 				),
 				array(
-					'name'  => __( 'White', 'barnsbury' ),
+					'name'  => __( 'Off White', 'barnsbury' ),
 					'slug'  => 'background',
 					'color' => '#FFFDF6',
 				),
