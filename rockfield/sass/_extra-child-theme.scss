@@ -1,0 +1,644 @@
+/**
+ * Extra Child Theme Styles
+ */
+// @import "";
+
+/**
+ * Reset
+ */
+// Reset Links
+a {
+	text-decoration: none;
+
+	.reply &,
+	.widget-area &,
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// Reset Navigations
+.main-navigation > div > ul,
+.social-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
+/**
+ * Header
+ */
+#masthead {
+	background: #{map-deep-get($config-global, "color", "foreground", "dark")};
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
+	position: relative;
+	text-align: left;
+	z-index: 9999;
+
+	@extend %responsive-width-full;
+
+	@include media(mobile) {
+		align-items: flex-end;
+	}
+
+	@include media(tablet) {
+		left: 0;
+		max-width: 100%;
+		position: absolute;
+		right: 0;
+
+		.wp-sticky-header & {
+			position: fixed;
+		}
+	}
+}
+
+/**
+ * Site Branding
+ */
+.site-branding {
+	margin: 0;
+	margin-right: auto;
+	padding-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	text-align: inherit;
+
+	@include media(mobile) {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+}
+
+.site-title {
+	display: inline;
+}
+
+.site-description {
+	display: none;
+}
+
+@include media(tablet) {
+	.site-description {
+		display: inline;
+	}
+
+	.site-title:not(:empty) + .site-description:not(:empty):before {
+		color: map-deep-get($config-global, "color", "foreground", "light");
+		content: "\2666";
+		font-family: Arial, Helvetica, sans-serif;
+		margin: 0 .25em;
+	}
+}
+
+/**
+ * Header Menu
+ */
+#site-navigation {
+	margin: 0;
+	text-align: right;
+
+ 	> div {
+		background: #{map-deep-get($config-global, "color", "foreground", "dark")};
+		border-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} solid #{map-deep-get($config-global, "color", "foreground", "dark")};
+		box-shadow: inset 0 1px 0 0 #{map-deep-get($config-global, "color", "primary", "default")};
+		left: 0;
+		position: absolute;
+		padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+		right: 0;
+
+		@include media(mobile) {
+			background: transparent;
+			border: 0;
+			box-shadow: none;
+			left: auto;
+			margin-bottom: -2px;
+			position: inherit;
+			padding: 0;
+			right: auto;
+		}
+
+		> ul {
+			justify-content: flex-end;
+
+			& > .menu-item-has-children > a::after {
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+			}
+
+			.sub-menu .menu-item a {
+				&::before {
+					display: none;
+				}
+
+				&::after {
+					counter-increment: nested-list;
+					content: " –" counters(nested-list, " –", none);
+				}
+			}
+
+			@include media(mobile) {
+				> li {
+					&:not(:first-child):before {
+						color: map-deep-get($config-global, "color", "foreground", "light");
+						content: "\2666";
+						font-family: Arial, Helvetica, sans-serif;
+						font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+						line-height: 1;
+						padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+						padding-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+					}
+
+					> a {
+						padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+						padding-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+
+						&:before,
+						&:after {
+							margin: 0;
+						}
+					}
+
+					> .sub-menu {
+						background: map-deep-get($config-global, "color", "foreground", "dark");
+						box-shadow: none;
+						left: auto;
+						right: 0;
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Toggle Menu
+#site-navigation #toggle:focus + #toggle-menu,
+#toggle-menu {
+	text-decoration: none;
+}
+
+#site-navigation #toggle-menu {
+	align-items: center;
+	display: flex;
+	padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{map-deep-get($config-global, "spacing", "unit")};
+
+	&:after {
+		content: "";
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E");
+		display: block;
+		height: 24px;
+		margin: 0;
+		margin-left: #{0.25 * map-deep-get($config-global, "spacing", "unit")};
+		width: 24px;
+	}
+
+	@include media(mobile) {
+		display: none;
+	}
+}
+
+#site-navigation #toggle:checked + #toggle-menu {
+	&:after {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'%3E%3C/path%3E%3C/svg%3E");
+	}
+}
+
+/**
+ * Content Area
+ */
+.site-main > * {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+@include media(mobile) {
+	#main {
+		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+@include media(tablet) {
+	#primary {
+		margin-top: 44px; // JS Fallback
+	}
+}
+
+/**
+ * Post Navigation
+ */
+.post-navigation {
+	border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
+	border-top: 2px solid #{map-deep-get($config-global, "color", "border", "default")};
+	padding: #{0.5 * map-deep-get($config-global, "spacing", "vertical")} 0;
+
+	.meta-nav {
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};
+		font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	.post-title {
+		font-size: inherit;
+	}
+}
+
+/**
+ * Hentry
+ */
+// Entry Header
+.entry-header {
+	.entry-meta {
+		display: none;
+	}
+}
+
+// Sticky Post
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	background: #{map-deep-get($config-global, "color", "secondary", "default")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	text-transform: uppercase;
+}
+
+// Remove margin if alignfull is first element
+.home.hide-homepage-title {
+	.hentry .entry-content {
+		& > *:first-child {
+			&.alignfull {
+				margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
+
+				@include media(mobile) {
+					margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+				}
+			}
+		}
+	}
+}
+
+// Author Bio
+.author-bio {
+	border: 2px solid #{map-deep-get($config-global, "color", "border", "default")};
+	padding: #{map-deep-get($config-global, "spacing", "unit")};
+
+	.author-title {
+		font-size: inherit;
+	}
+}
+
+/**
+ * Blocks
+ */
+// Cover & Hero block
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-coblocks-hero .wp-block-coblocks-hero__box {
+	& > * {
+		margin-top: #{0.666 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{0.666 * map-deep-get($config-global, "spacing", "vertical")};
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Pullquote
+.wp-block-pullquote {
+	border-bottom-width: 1px;
+
+	blockquote {
+		padding: 0;
+	}
+}
+
+// Table block
+table,
+.wp-block-table {
+	td,
+	th {
+		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+// Blog Posts Listing
+.a8c-posts-list__item {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+.a8c-posts-list__listing:not(:last-child) {
+	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+/**
+ * Comments
+ */
+.comment-list {
+	> li:first-child {
+		border-top-width: 2px;
+	}
+}
+
+.comment-body {
+	content: "";
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.comment-meta .comment-metadata {
+	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.reply {
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.comment-respond {
+	.form-submit {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+@include media(tablet) {
+	.comment-meta {
+		border-right: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
+		display: block;
+		float: left;
+		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+		width: 20%;
+
+		.comment-author {
+			display: block;
+			width: 100%;
+
+			.avatar,
+			.fn {
+		    display: block;
+				margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+			}
+		}
+	}
+
+	.comment-content, .reply {
+		float: right;
+		width: 75%;
+		width: calc(80% - #{map-deep-get($config-global, "spacing", "horizontal")} - 1px);
+	}
+}
+
+.comment-navigation a {
+	font-size: inherit;
+	font-weight: bold;
+}
+
+/**
+ * Widgets
+ */
+// Widget Area
+.widget-area {
+	width: 100%;
+
+	&:before {
+		background: map-deep-get($config-global, "color", "border", "default");;
+		height: 1px;
+		content: "";
+		display: block;
+		margin-bottom: #{0.666 * map-deep-get($config-global, "spacing", "vertical")};
+
+		@include media(mobile) {
+			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		@extend %responsive-width-full;
+	}
+
+  .widget-title,
+  .widgettitle {
+  	font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+    margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  @include media(laptop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & > *:nth-child(2) {
+      margin-top: 0;
+    }
+
+    .widget {
+      width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
+    }
+  }
+}
+
+// Widgets
+.widget_calendar,
+.widget_calendar {
+  caption {
+    font-weight: bold;
+  }
+
+  td,
+  th {
+	   text-align: center;
+  }
+}
+
+.widget_archive,
+.widget_categories,
+.widget_links,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss,
+.widget_rss_links,
+.widget_top-posts,
+.widget_authors,
+.widget_jp_blogs_i_follow,
+.widget_top-click,
+.widget_upcoming_events_widget {
+  ul {
+    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+    list-style: none;
+    margin-left: 0;
+  }
+
+  li {
+    border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+  }
+}
+
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+  border-bottom: 0;
+  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+}
+
+.widget_recent_entries .post-date {
+  display: block;
+}
+
+.widget_rss {
+  cite,
+  .rssSummary,
+  .rss-date {
+    display: block;
+  }
+}
+
+.widget_search {
+  input[type="search"] {
+    display: block;
+    margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+    width: 100%;
+  }
+}
+
+/**
+ * Social Menu
+ */
+.social-navigation {
+	background: #{map-deep-get($config-global, "color", "foreground", "dark")};
+	padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+
+	@extend %responsive-width-full;
+
+	.social-links-menu {
+		margin: 0;
+		padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+		text-align: center;
+	}
+}
+
+/**
+ * Footer Menu
+ */
+.footer-navigation {
+	display: block;
+	flex: 1 0 100%;
+	order: 1;
+	text-align: center;
+
+	.footer-menu {
+		justify-content: center;
+		text-align: inherit;
+
+		> li {
+			&:not(:first-child):before {
+				color: map-deep-get($config-global, "color", "border", "dark");
+				content: "\2666";
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		}
+	}
+
+	@include media(mobile) {
+		margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+/**
+ * Site Info
+ */
+.site-info {
+	font-weight: bold;
+	text-align: center;
+
+	a {
+		font-weight: inherit;
+	}
+}
+
+/**
+ * Buttons
+ */
+.button,
+.wp-block-button__link,
+.wp-block-file__button,
+.a8c-posts-list__view-all {
+	position: relative;
+
+	&:before {
+		border: 2px solid;
+		content: "";
+		display: block;
+		left: 3px;
+		margin: 0;
+		position: absolute;
+		top: 3px;
+		height: calc(100% - 6px);
+		width: calc(100% - 6px);
+	}
+}
+
+button,
+input[type="submit"] {
+	outline: 2px solid;
+	outline-offset: -5px;
+}
+
+.is-style-circular .wp-block-button__link {
+	&:before {
+		border-radius: 100px;
+	}
+}
