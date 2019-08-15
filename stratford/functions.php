@@ -29,25 +29,25 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'stratford' ),
 					'shortName' => __( 'S', 'stratford' ),
-					'size'      => 19.5,
+					'size'      => 16.6,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'stratford' ),
 					'shortName' => __( 'M', 'stratford' ),
-					'size'      => 22,
+					'size'      => 20,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'stratford' ),
 					'shortName' => __( 'L', 'stratford' ),
-					'size'      => 36.5,
+					'size'      => 28.8,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'stratford' ),
 					'shortName' => __( 'XL', 'stratford' ),
-					'size'      => 49.5,
+					'size'      => 34.56,
 					'slug'      => 'huge',
 				),
 			)
