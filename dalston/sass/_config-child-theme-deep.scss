@@ -10,7 +10,7 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 20px; // Set 16px/1em default on html
+$typescale-root: 22px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
 $typescale-ratio: 1.125; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
@@ -71,7 +71,7 @@ $config-global: (
 		"foreground": (
 			"default": #1e1e1e,
 			"light": #767676, // must be accessible against background
-			"dark": #111111, // must be accessible against background
+			"dark": #000000, // must be accessible against background
 		),
 		"background": (
 			"default": #FFFFFF,
@@ -319,7 +319,7 @@ $config-header: (
 		// Fonts
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
-			"size": map-deep-get($config-global, "font", "size", "md"),
+			"size": map-deep-get($config-global, "font", "size", "base"),
 			"weight": normal,
 			"line-height": 1,
 		),

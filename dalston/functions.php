@@ -60,27 +60,22 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'dalston' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF',
-				),
-				array(
-					'name'  => __( 'Secondary', 'dalston' ),
-					'slug'  => 'secondary',
-					'color' => '#FF0000',
+					'color' => '#0073AA',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'dalston' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#111111',
+					'color' => '#000000',
 				),
 				array(
 					'name'  => __( 'Gray', 'dalston' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => '#1E1E1E',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'dalston' ),
 					'slug'  => 'foreground-light',
-					'color' => '#767676',
+					'color' => '#FAFAFA',
 				),
 				array(
 					'name'  => __( 'Lighter Gray', 'dalston' ),
