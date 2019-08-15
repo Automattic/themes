@@ -276,6 +276,11 @@ a {
 	text-align: center;
 }
 
+// Entry Footer
+.entry-footer {
+	text-align: center;
+}
+
 // Sticky Post
 .sticky-post,
 .a8c-posts-list .a8c-posts-list-item__featured span {
@@ -369,6 +374,10 @@ table,
 }
 
 // Blog Posts Listing
+.a8c-posts-list {
+	text-align: center;
+}
+
 .a8c-posts-list__item {
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
@@ -377,13 +386,21 @@ table,
 		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 	}
+
+	.a8c-posts-list-item__meta {
+		text-align: center;
+	}
 }
 
-.a8c-posts-list__listing:not(:last-child) {
-	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+.a8c-posts-list__listing {
+	text-align: left;
 
-	@include media(mobile) {
-		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	&:not(:last-child) {
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
+		@include media(mobile) {
+			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		}
 	}
 }
 
@@ -430,7 +447,7 @@ table,
 .comment-respond {
 	.form-submit {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
 	}
 }
 
