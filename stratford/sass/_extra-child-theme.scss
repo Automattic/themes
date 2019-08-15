@@ -100,6 +100,9 @@ a {
 			-webkit-flex: 0 1 auto;
 			-ms-flex: 0 1 auto;
 			flex: 0 1 auto;
+			@include media(mobile-only) {
+				width: 100%;
+			}
 		}
 		.main-navigation {
 			> ul {
@@ -215,6 +218,18 @@ a {
 .site-content {
 	padding-top: 4.75em;
 }
+
+.home.page.hide-homepage-title { 
+	.site-content {
+		.site-main {
+			padding-top: 0;
+		}
+		@include media(mobile-only) {
+			padding-top: 4em;
+		}
+	}
+}
+
 
 /**
  * 4. Navigation
