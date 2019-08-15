@@ -27,9 +27,7 @@ Modern Business Editor Styles
 		$main-block-selector: ".wp-block[data-align=\"#{$alignment}\"]";
 	}
 
-	@return "
-	  #{$main-block-selector},
-	  .wp-block.post-content__block #{$main-block-selector}";
+	@return "#{$main-block-selector}, .wp-block.post-content__block #{$main-block-selector}";
 }
 
 /** === Editor Frame === */
@@ -1038,5 +1036,34 @@ ul.wp-block-archives,
 
 	dd {
 		margin: 0;
+	}
+}
+
+// Full Site Editing Overrides
+
+.a8c-template-editor, .template-block {
+	&.site-branding {
+		margin: 0;
+	}
+
+	.wp-block[data-align='full'] {
+		left: calc( -12.5% - 12px );
+		max-width: calc( 125% + 114px );
+		width: calc( 125% + 114px );
+	}
+
+	.wp-block-a8c-site-description {
+		color: $color__text-main;
+		font-size: $font__size-xs;
+		font-weight: 300;
+		// Line height rounded up from the description text-size set in style.css.
+		// It needs to be a bit larger to prevent text from getting cropped on top.
+		line-height: 0.8em;
+		margin: 0;
+		order: 1;
+		text-align: center;
+	}
+	[data-type='a8c/site-description'] [data-block] {
+		margin-bottom: 32px;
 	}
 }
