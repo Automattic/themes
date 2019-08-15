@@ -894,6 +894,69 @@ blockquote {
   }
 }
 
+.a8c-template-editor.site-branding, .a8c-template-editor.site-footer, .template-block.site-branding, .template-block.site-footer {
+  margin: 0;
+}
+
+.a8c-template-editor .wp-block[data-align='full'], .template-block .wp-block[data-align='full'] {
+  left: calc( -12.5% - 12px);
+  max-width: calc( 125% + 114px);
+  width: calc( 125% + 114px);
+}
+
+.a8c-template-editor .template__site-logo .components-placeholder.block-editor-media-placeholder, .template-block .template__site-logo .components-placeholder.block-editor-media-placeholder {
+  margin: 0 auto;
+  max-width: 380px;
+}
+
+.a8c-template-editor .wp-block-a8c-site-description, .template-block .wp-block-a8c-site-description {
+  color: #181818;
+  font-size: 0.71111em;
+  font-weight: 300;
+  line-height: 0.8em;
+  margin: 0;
+  order: 1;
+  text-align: center;
+}
+
+.a8c-template-editor [data-type='a8c/site-description'] [data-block], .template-block [data-type='a8c/site-description'] [data-block] {
+  margin-bottom: 32px;
+}
+
+.a8c-template-editor .wp-block-a8c-site-title, .template-block .wp-block-a8c-site-title {
+  text-align: center;
+}
+
+.a8c-template-editor [data-type='a8c/site-title'] [data-block], .template-block [data-type='a8c/site-title'] [data-block] {
+  margin: 32px 0;
+}
+
+.a8c-template-editor .wp-block-a8c-navigation-menu a, .template-block .wp-block-a8c-navigation-menu a {
+  text-decoration: none;
+}
+
+.a8c-template-editor.site-header .wp-block-a8c-navigation-menu, .template-block.site-header .wp-block-a8c-navigation-menu {
+  text-align: center;
+}
+
+.a8c-template-editor.site-footer .wp-block-a8c-navigation-menu, .template-block.site-footer .wp-block-a8c-navigation-menu {
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .a8c-template-editor [data-type='a8c/navigation-menu'] .wp-block-a8c-navigation-menu, .template-block [data-type='a8c/navigation-menu'] .wp-block-a8c-navigation-menu {
+    text-align: center;
+  }
+}
+
+.a8c-template-editor .wp-block-separator.is-style-default, .template-block .wp-block-separator.is-style-default {
+  background: transparent;
+}
+
+.template-block .site-header {
+  margin-bottom: 2rem;
+}
+
 /** === Helper Functions === */
 /**
  Given a string, $alignment, returns the nested FSE block selectors
@@ -1969,67 +2032,4 @@ ul.wp-block-archives li ul,
 
 .wp-block-jetpack-business-hours dd {
   margin: 0;
-}
-
-.a8c-template-editor.site-branding, .a8c-template-editor.site-footer, .template-block.site-branding, .template-block.site-footer {
-  margin: 0;
-}
-
-.a8c-template-editor .wp-block[data-align='full'], .template-block .wp-block[data-align='full'] {
-  left: calc( -12.5% - 12px);
-  max-width: calc( 125% + 114px);
-  width: calc( 125% + 114px);
-}
-
-.a8c-template-editor .template__site-logo .components-placeholder.block-editor-media-placeholder, .template-block .template__site-logo .components-placeholder.block-editor-media-placeholder {
-  margin: 0 auto;
-  max-width: 380px;
-}
-
-.a8c-template-editor .wp-block-a8c-site-description, .template-block .wp-block-a8c-site-description {
-  color: #181818;
-  font-size: 0.71111em;
-  font-weight: 300;
-  line-height: 0.8em;
-  margin: 0;
-  order: 1;
-  text-align: center;
-}
-
-.a8c-template-editor [data-type='a8c/site-description'] [data-block], .template-block [data-type='a8c/site-description'] [data-block] {
-  margin-bottom: 32px;
-}
-
-.a8c-template-editor .wp-block-a8c-site-title, .template-block .wp-block-a8c-site-title {
-  text-align: center;
-}
-
-.a8c-template-editor [data-type='a8c/site-title'] [data-block], .template-block [data-type='a8c/site-title'] [data-block] {
-  margin: 32px 0;
-}
-
-.a8c-template-editor .wp-block-a8c-navigation-menu a, .template-block .wp-block-a8c-navigation-menu a {
-  text-decoration: none;
-}
-
-.a8c-template-editor.site-header .wp-block-a8c-navigation-menu, .template-block.site-header .wp-block-a8c-navigation-menu {
-  text-align: center;
-}
-
-.a8c-template-editor.site-footer .wp-block-a8c-navigation-menu, .template-block.site-footer .wp-block-a8c-navigation-menu {
-  text-align: left;
-}
-
-@media only screen and (min-width: 768px) {
-  .a8c-template-editor [data-type='a8c/navigation-menu'] .wp-block-a8c-navigation-menu, .template-block [data-type='a8c/navigation-menu'] .wp-block-a8c-navigation-menu {
-    text-align: center;
-  }
-}
-
-.a8c-template-editor .wp-block-separator.is-style-default, .template-block .wp-block-separator.is-style-default {
-  background: transparent;
-}
-
-.template-block .site-header {
-  margin-bottom: 2rem;
 }
