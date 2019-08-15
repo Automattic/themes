@@ -25,7 +25,7 @@
 		border: none;
 		padding: 0;
 		margin: 0;
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-weight: 700;
 		line-height: $font__line-height-heading;
 		text-decoration: none;
@@ -339,7 +339,7 @@
 		}
 
 		.sub-menu > li > a::before {
-			font-family: $font__body;
+			font-family: var(--font-base, $font__body);
 			font-weight: normal;
 			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
 			counter-increment: submenu
@@ -415,7 +415,7 @@
 		}
 
 		.sub-menu > li > a::before {
-			font-family: $font__body;
+			font-family: var(--font-base, $font__body);
 			font-weight: normal;
 			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
 			counter-increment: submenu

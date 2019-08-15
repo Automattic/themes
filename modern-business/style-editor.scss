@@ -104,7 +104,7 @@ body {
 
 body {
 	font-size: $font__size_base;
-	font-family: $font__body;
+	font-family: var(--font-base, $font__body);
 	line-height: $font__line-height-body;
 	color: $color__text-main;
 }
@@ -136,7 +136,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font__heading;
+	font-family: var(--font-headings, $font__heading);
 	font-weight: 700;
 	line-height: $font__line-height-heading;
 	margin-top: 2rem;
@@ -236,7 +236,7 @@ a {
 
 figcaption,
 .gallery-caption {
-	font-family: $font__heading;
+	font-family: var(--font-headings, $font__heading);
 	font-size: $font__size-xs;
 	line-height: 1.6;
 	color: $color__text-light;
@@ -258,7 +258,7 @@ figcaption,
 	}
 
 	.editor-post-title__input {
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-weight: 300;
 		text-align: center;
 		font-size: $font__size-lg;
@@ -272,7 +272,7 @@ figcaption,
 /** === Default Appender === */
 
 .editor-default-block-appender .editor-default-block-appender__content {
-	font-family: $font__body;
+	font-family: var(--font-base, $font__body);
 	font-size: $font__size_base;
 }
 
@@ -289,7 +289,7 @@ figcaption,
 .wp-block-paragraph {
 
 	&.has-drop-cap:not(:focus)::first-letter {
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-size: $font__size-xxxl;
 		line-height: 1;
 		font-weight: 700;
@@ -300,7 +300,7 @@ figcaption,
 /** === Table === */
 
 .wp-block-table {
-	font-family: $font__heading;
+	font-family: var(--font-headings, $font__heading);
 }
 
 /** === Cover === */
@@ -557,7 +557,7 @@ figcaption,
 
 	.wp-block-button__link {
 		line-height: 1.8;
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-size: $font__size-sm;
 		font-weight: 700;
 	}
@@ -613,7 +613,7 @@ figcaption,
 	cite,
 	footer,
 	.wp-block-quote__citation {
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-size: $font__size-xs;
 		line-height: 1.6;
 		color: $color__text-light;
@@ -684,7 +684,7 @@ figcaption,
 	}
 
 	.wp-block-pullquote__citation {
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-size: $font__size-xs;
 		line-height: 1.6;
 		text-transform: none;
@@ -733,7 +733,7 @@ figcaption,
 /** === File === */
 
 .wp-block-file {
-	font-family: $font__heading;
+	font-family: var(--font-headings, $font__heading);
 
 	.wp-block-file__textlink {
 		text-decoration: underline;
@@ -834,7 +834,7 @@ ul.wp-block-archives,
 
 	li {
 		color: $color__text-light;
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-size: calc(#{$font__size_base} * #{$font__size-ratio});
 		font-weight: 700;
 		line-height: $font__line-height-heading;
@@ -895,7 +895,7 @@ ul.wp-block-archives,
 .wp-block-latest-comments {
 
 	.wp-block-latest-comments__comment-meta {
-		font-family: $font__heading;
+		font-family: var(--font-headings, $font__heading);
 		font-weight: 700;
 
 		.wp-block-latest-comments__comment-date {
@@ -969,7 +969,7 @@ ul.wp-block-archives,
 	dd {
 		color: $color__text-light;
  		font-size: $font__size-xs;
- 		font-family: $font__heading;
+ 		font-family: var(--font-headings, $font__heading);
  		line-height: $font__line-height-pre;
  		margin: 0;
  		padding: ( $size__spacing-unit * .5 );
@@ -987,7 +987,7 @@ ul.wp-block-archives,
 		border-left: 2px solid $color__link;
 
 		cite {
-			font-family: $font__heading;
+			font-family: var(--font-headings, $font__heading);
 			font-size: $font__size-xs;
 			font-style: normal;
 			line-height: 1.6;

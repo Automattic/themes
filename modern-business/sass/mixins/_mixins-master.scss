@@ -99,7 +99,7 @@
 	html[lang="fa-IR"] #{$wrapper_classname} *,
 	html[lang="haz"] #{$wrapper_classname} *,
 	html[lang="ps"] #{$wrapper_classname} * {
-	  font-family: Tahoma, Arial, sans-serif !important;
+	  font-family: var(--font-base, Tahoma, Arial, sans-serif !important);
 	}
 
 	/* Cyrillic */
@@ -113,22 +113,22 @@
 	html[lang="sr-RS"] #{$wrapper_classname} *,
 	html[lang="tt-RU"] #{$wrapper_classname} *,
 	html[lang="uk"] #{$wrapper_classname} * {
-	  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important;
+	  font-family: var(--font-base, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif !important);
 	}
 
 	/* Chinese (Hong Kong) */
 	html[lang="zh-HK"] #{$wrapper_classname} * {
-		font-family: -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+		font-family: var(--font-base, -apple-system, BlinkMacSystemFont, 'PingFang HK', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important);
 	}
 
 	/* Chinese (Taiwan) */
 	html[lang="zh-TW"] #{$wrapper_classname} * {
-		font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+		font-family: var(--font-base, -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important);
 	}
 
 	/* Chinese (China) */
 	html[lang="zh-CN"] #{$wrapper_classname} * {
-		font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important;
+		font-family: var(--font-base, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', "Microsoft YaHei New", STHeiti Light, sans-serif !important);
 	}
 
 	/* Devanagari */
@@ -136,42 +136,42 @@
 	html[lang="hi-IN"] #{$wrapper_classname} *,
 	html[lang="mr"] #{$wrapper_classname} *,
 	html[lang="ne-NP"] #{$wrapper_classname} * {
-	  font-family: Arial, sans-serif !important;
+	  font-family: var(--font-base, Arial, sans-serif !important);
 	}
 
 	/* Greek */
 	html[lang="el"] #{$wrapper_classname} * {
-	  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	  font-family: var(--font-base, 'Helvetica Neue', Helvetica, Arial, sans-serif !important);
 	}
 
 	/* Gujarati */
 	html[lang="gu"] #{$wrapper_classname} * {
-	  font-family: Arial, sans-serif !important;
+	  font-family: var(--font-base, Arial, sans-serif !important);
 	}
 
 	/* Hebrew */
 	html[lang="he-IL"] #{$wrapper_classname} * {
-	  font-family: 'Arial Hebrew', Arial, sans-serif !important;
+	  font-family: var(--font-base, 'Arial Hebrew', Arial, sans-serif !important);
 	}
 
 	/* Japanese */
 	html[lang="ja"] #{$wrapper_classname} * {
-	  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important;
+	  font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif !important);
 	}
 
 	/* Korean */
 	html[lang="ko-KR"] #{$wrapper_classname} * {
-	  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important;
+	  font-family: var(--font-base, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', Dotum, sans-serif !important);
 	}
 
 	/* Thai */
 	html[lang="th"] #{$wrapper_classname} * {
-	  font-family: 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+	  font-family: var(--font-base, 'Sukhumvit Set', 'Helvetica Neue', helvetica, arial, sans-serif !important);
 	}
 
 	/* Vietnamese */
 	html[lang="vi"] #{$wrapper_classname} * {
-	  font-family: 'Libre Franklin', sans-serif !important;
+	  font-family: var(--font-base, 'Libre Franklin', sans-serif !important);
 	}
 }
 
@@ -195,7 +195,7 @@
 	}
 
 	ul > li > a::before {
-		font-family: $font__body;
+		font-family: var(--font-base, $font__body);
 		font-weight: normal;
 		content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
 		counter-increment: submenu
