@@ -1,0 +1,253 @@
+/**
+ * These styles should be loaded by the Block Editor only
+ */
+
+/**
+ * Abstracts
+ * - Mixins, variables and functions
+ */
+@import "../../varia/sass/abstracts/imports";
+
+/**
+ * Child Theme Name
+ */
+@import "config-child-theme-deep";
+
+/**
+ * Base
+ * - Reset the browser
+ */
+@import "../../varia/sass/base/editor";
+
+/**
+ * Elements
+ * - Styles for basic HTML elemants
+ */
+@import "../../varia/sass/elements/editor";
+
+/**
+ * Blocks
+ * - These styles replace key Gutenberg Block styles for fonts, colors, and
+ *   spacing with CSS-variables overrides
+ */
+@import "../../varia/sass/blocks/editor";
+
+/**
+ * Extras
+ */
+$color_background: #{map-deep-get($config-global, "color", "background", "default")};
+$color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
+$color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
+$color_primary: #{map-deep-get($config-global, "color", "primary", "default")};
+$color_secondary: #{map-deep-get($config-global, "color", "secondary", "default")};
+$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover")};
+$spacing_horizontal: #{map-deep-get($config-global, "spacing", "horizontal")};
+$spacing_vertical: #{map-deep-get($config-global, "spacing", "vertical")};
+$font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
+$font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
+$font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
+$font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
+$font_family_primary: #{map-deep-get($config-global, "font", "family", "primary")};
+$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
+$font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
+$font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
+$button_line_height: #{map-deep-get($config-button, "font", "line-height")};
+$button_font_weight: #{map-deep-get($config-button, "font", "weight")};
+$button_font_family: #{map-deep-get($config-button, "font", "family")};
+$button_font_size: #{map-deep-get($config-button, "font", "size")};
+$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}; 
+$button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
+$button_color: #{map-deep-get($config-button, "color", "text")};
+$button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
+$button_background: #{map-deep-get($config-button, "color", "background")};
+$button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
+$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
+  
+/**
+ * 1. General Styles
+ */
+ a {
+	text-decoration: none;
+
+	.wp-block-group &,
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.has-background {
+	a {
+		color: currentColor;
+	}
+}
+
+.editor-post-title__block .editor-post-title__input {
+	text-align: left;
+	color: $color_primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color_primary;
+}
+
+
+/**
+ * 2. Block Specific Styles
+ */
+
+/**
+ * 2.1. Column Block
+ */
+ .wp-block-columns {
+	.wp-block-latest-posts {
+		border-bottom: 1px solid $color_background_light;
+		> li {
+			border-top: 1px solid $color_background_light;
+			margin: 0;
+			padding-top: $spacing_horizontal;
+			padding-bottom: $spacing_horizontal;
+			> a {
+				font-size: $font_size_base;
+				font-weight: normal;
+				font-family: $font_family_secondary;
+				line-height: $font_line_height_body;
+			}
+			> time {
+				&.wp-block-latest-posts__post-date {
+					font-size: $font_size_base;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * 2.2. Quote Block
+ */
+ .wp-block-quote, 
+ .wp-block-quote[style*="text-align:center"], 
+ .wp-block-quote[style*="text-align:right"] {
+	border: 1px solid $color_background_light;
+	padding: $spacing_horizontal;
+	p {
+		font-family: $font_family_secondary;
+		font-size: $font_size_md;
+		line-height: $font_line_height_body;
+	}
+	.wp-block-quote__citation {
+		color: inherit;
+		font-size: $font_size_md;
+	}
+ }
+
+ /**
+ * 2.3. File Block
+ */
+.wp-block-file {
+	div {
+		&.wp-block-file__button {
+			line-height: $button_line_height;
+			cursor: pointer;
+			font-weight: $button_font_weight;
+			font-family: $button_font_family;
+			background-color: $button_background;
+			font-size: $button_font_size;
+			padding: $button_spacing_vertical $button_spacing_horizontal;
+			text-transform: uppercase;
+			display: inline-block;
+			&:focus,
+			&:hover {
+				color: $button_color_hover;
+				background-color: $button_background_hover;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * 2.4. Pre Block, Code Block and Verse Block
+ */
+.wp-block-preformatted,
+.wp-block-verse {
+	pre {
+		font-family: $font_family_code;
+		font-size: $font_size_base;
+	}
+}
+
+.wp-block-code {
+	.block-editor-plain-text {
+		font-family: $font_family_code;
+		font-size: $font_size_base;
+	}
+}
+
+/**
+ * 2.5. Button Block
+ */
+ .wp-block-button {
+	div {
+		&.wp-block-button__link {
+			text-transform: uppercase;
+			border: 0;
+			border-radius: 5em;
+			text-transform: uppercase;
+			&.has-background {
+				&:focus,
+				&:hover,
+				&:visited {
+					opacity: .8;
+				}
+			}
+		}
+	}
+	&.minimal {
+		.wp-block-button__link {
+			background: 0 0;
+			border: 2px solid;
+		}
+	}
+}
+
+/**
+ * 2.6. Search Block
+ */
+ .wp-block-search {
+	.wp-block-search__button {
+		text-transform: uppercase;
+		line-height: $button_line_height;
+		color: $button_color;
+		cursor: pointer;
+		font-weight: $button_font_weight;
+		font-family: $button_font_family;
+		font-size: $button_font_size;
+		background-color: $button_background;
+		border-radius: 5em;
+		border-width: 0;
+		padding: $button_spacing_vertical $button_spacing_horizontal;
+		display: inline-block;
+		&:focus, 
+		&:hover, 
+		&:visited {
+			color: $button_color_hover;
+			background-color: $button_background_hover;
+			opacity: 1;
+		}
+		border: none;
+		box-shadow: none;
+	}
+}

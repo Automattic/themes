@@ -1,0 +1,447 @@
+/**
+ * Extra Child Theme Styles
+ *
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper and Content
+ * 4. Navigation Menu
+ * 5. Archive Pagination and Post Navigation
+ * 6. Block Specific Styles
+ * 6.1. Column Block
+ * 6.2. Quote Block
+ * 6.3. Hero Block and Cover Block
+ * 6.4. File Block
+ * 6.5. Latest Comments Block
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ * 7. Widgets
+ */
+ 
+$color_background: #{map-deep-get($config-global, "color", "background", "default")};
+$color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
+$color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
+$color_primary: #{map-deep-get($config-global, "color", "primary", "default")};
+$color_secondary: #{map-deep-get($config-global, "color", "secondary", "default")};
+$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover")};
+$spacing_horizontal: #{map-deep-get($config-global, "spacing", "horizontal")};
+$spacing_vertical: #{map-deep-get($config-global, "spacing", "vertical")};
+$font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
+$font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
+$font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
+$font_size_lg: #{map-deep-get($config-global, "font", "size", "lg")};
+$font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
+$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
+$font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
+$font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
+$button_line_height: #{map-deep-get($config-button, "font", "line-height")};
+$button_font_weight: #{map-deep-get($config-button, "font", "weight")};
+$button_font_family: #{map-deep-get($config-button, "font", "family")};
+$button_font_size: #{map-deep-get($config-button, "font", "size")};
+$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}; 
+$button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
+$button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
+$button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
+$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h4")};
+
+/**
+ * 1. General Styles
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color_primary;
+}
+
+a {
+	text-decoration: none;
+
+	.wp-block-group &,
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.has-background {
+	a {
+		color: currentColor;
+	}
+}
+
+/**
+ * 2. Header
+ */
+#masthead {
+	border-bottom: 1px solid $color_background_light;
+	position: fixed;
+	z-index: 9999;
+	background: $color_background;
+	width: 100%;
+	-webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+	.site-header-wrapper {
+		display: flex;
+		flex-wrap: wrap;	
+		position: relative;
+		z-index: 1;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		width: calc(100% - 1.5em);
+		.site-branding {
+			-webkit-transition: margin-top .25s ease-in-out;
+			-moz-transition: margin-top .25s ease-in-out;
+			transition: margin-top .25s ease-in-out;
+			margin-left: 1.5em;
+			margin-right: auto;
+			.site-description {
+				display: none;
+			}
+			.site-title {
+				a {
+					text-decoration: none;
+				}
+			}
+			.site-logo {
+				margin-bottom: $spacing_horizontal;
+			}
+		}
+		.site-menu {
+			display: block;
+			-webkit-flex: 0 1 auto;
+			-ms-flex: 0 1 auto;
+			flex: 0 1 auto;
+			@include media(mobile-only) {
+				width: 100%;
+			}
+		}
+		.main-navigation {
+			> ul {
+				> li {
+					&.current-menu-item {
+						a {
+							border-color: $color_secondary;
+							border-style: solid;
+							border-width: 0 0 .125em;
+							color: $color_primary_hover;
+						}
+					}
+				}
+			}
+			ul {
+				li {
+					&.current-menu-item {
+						> a {
+							border-color: $color_secondary;
+							border-style: solid;
+							border-width: 0 0 .125em;
+							color: $color_primary_hover;
+						}
+					}
+					a {
+						&::after {
+							color: $color_primary_hover;
+						}
+					}
+					ul {
+						color: $color_background_light;
+						li {
+							border-bottom: 1px solid;
+							margin: 0;
+							&:first-child {
+								border-top: 1px solid;
+							}
+							&.current-menu-item {
+								a {
+									border: none;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+		@include media(mobile) {
+			.main-navigation {
+				> ul {
+					> li {
+						&:first-child {
+							margin-left: 0;
+						}
+					}
+				}
+				ul {
+					li {
+						margin: 0 .75em;
+						&:first-child {
+							margin-left: 0;
+						}
+						&:hover {
+							ul {
+								left: auto;
+								right: 0;
+							}
+						}
+						a {
+							padding: .25em 0;
+						}
+						ul {
+							li {
+								a {
+									padding: .75em;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+ @include media(mobile-only) {
+	#masthead {
+		max-height: 100%;
+		overflow-y: scroll;
+		.site-header-wrapper {
+			width: 100%;
+			.site-branding {
+				margin-left: 0;
+			}
+		}
+	}
+	.site-header {
+		position: relative;
+	}
+
+	.site-title,
+	.site-description {
+		font-size: $font_size_xl;
+		hyphens: auto;
+	}
+}
+
+/**
+ * 3. Main Wrapper and Content
+ */
+.site-content {
+	padding-top: 4.75em;
+}
+
+.home.page.hide-homepage-title { 
+	.site-content {
+		.site-main {
+			padding-top: 0;
+		}
+		@include media(mobile-only) {
+			padding-top: 4em;
+		}
+	}
+}
+
+
+/**
+ * 4. Navigation
+ */
+
+/**
+ * 4.1 Main Navigation
+ */
+@include media(mobile-only) {
+	#toggle-menu {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+/**
+ * 4.2 Social Navigation
+ */
+.social-links-menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+@include media(mobile-only) {
+	.social-links-menu {
+		justify-content: center;
+	}
+}
+
+/**
+ * 5. Archive Pagination and Post Navigation
+ */
+
+
+/**
+ * 6. Block Specific Styles
+ */
+
+/**
+ * 6.1. Column Block
+ */
+ 
+
+/**
+ * 6.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid $color_background_light;
+	padding: $spacing_horizontal;
+	&.is-style-large {
+		p {
+			line-height: $font_line_height_body;
+		}
+	}
+	p {
+		font-family: $font_family_secondary;
+		font-size: $font_size_md;
+		line-height: $font_line_height_body;
+	}
+	cite {
+		color: inherit;
+		font-size: $font_size_md;
+	}
+}
+
+/**
+ * 6.3. Hero Block and Cover Block
+ */
+ 
+
+/**
+ * 6.4. File Block
+ */
+.wp-block-file {
+	a {
+		&.wp-block-file__button {
+			line-height: $button_line_height;
+			cursor: pointer;
+			font-weight: $button_font_weight;
+			font-family: $button_font_family;
+			// font-size: $button_font_size;
+			padding: $button_spacing_vertical $button_spacing_horizontal;
+			display: inline-block;
+			&:focus,
+			&:hover {
+				color: $button_color_hover;
+				background-color: $button_background_hover;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * 6.5. Latest Comments Block
+ */
+.wp-block-latest-comments {
+	.wp-block-latest-comments__comment-meta {
+		font-family: $font_family_secondary;
+	}
+}
+
+/**
+ * 6.6. Button Block
+ * 6.7. Posts List Block
+ * 6.8. Search Block
+ */
+.wp-block-button, .a8c-posts-list {
+	&.minimal {
+		a {
+			background: 0 0;
+			border: 2px solid;
+		}
+	}
+}
+
+button, 
+.button, 
+input[type="submit"], 
+.wp-block-button__link, 
+.wp-block-file__button, 
+.a8c-posts-list__view-all {
+	border: 0;
+	border-radius: 5em;
+	text-transform: uppercase;
+	&.has-background {
+		&:focus,
+		&:hover,
+		&:visited {
+			opacity: .8;
+		}
+	}
+}
+
+.wp-block-coblocks-hero__box,
+.wp-block-cover__inner-container,
+.wp-block-columns,
+.wp-block-group {
+	.wp-block-latest-posts {
+		border-bottom: 1px solid $color_background_light;
+		> li {
+			border-top: 1px solid $color_background_light;
+			margin: 0;
+			padding-top: $spacing_horizontal;
+			padding-bottom: $spacing_horizontal;
+			> a {
+				font-size: $font_size_base;
+				font-weight: normal;
+				font-family: $font_family_secondary;
+				line-height: $font_line_height_body;
+			}
+			> time {
+				&.wp-block-latest-posts__post-date {
+				 font-size: $font_size_base;
+				}
+			}
+		}
+	}
+}
+
+/**
+ * 7. Widgets
+ */
+.site-footer {
+	.widget-area {
+		.widget-title {
+			font-size: $font_size_widget_title;
+			margin-bottom: .857em;
+		}
+	}
+}
+
+
+/**
+ * 6.9. Code, Pre Blocks
+ */
+.wp-block-code {
+	code {
+		font-family: $font_family_code;
+		font-size: $font_size_base;
+	}
+}
+
+.wp-block-preformatted, 
+.wp-block-verse {
+	font-family: $font_family_code;
+	font-size: $font_size_base;
+}
