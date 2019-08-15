@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: stratford
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: one-column, fixed-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -3415,6 +3415,7 @@ a {
 	text-decoration: none;
 }
 
+.wp-block-group a,
 .wp-block-cover a,
 .wp-block-cover-image a,
 .wp-block-media-text a,
@@ -3422,7 +3423,9 @@ p:not(.site-title) a {
 	text-decoration: underline;
 }
 
-.wp-block-cover a.wp-block-button__link, .wp-block-cover a:hover,
+.wp-block-group a.wp-block-button__link, .wp-block-group a:hover,
+.wp-block-cover a.wp-block-button__link,
+.wp-block-cover a:hover,
 .wp-block-cover-image a.wp-block-button__link,
 .wp-block-cover-image a:hover,
 .wp-block-media-text a.wp-block-button__link,
@@ -3475,6 +3478,10 @@ p:not(.site-title) a:hover {
 
 #masthead .site-header-wrapper .site-branding .site-title a {
 	text-decoration: none;
+}
+
+#masthead .site-header-wrapper .site-branding .site-logo {
+	margin-bottom: 16px;
 }
 
 #masthead .site-header-wrapper .site-menu {
@@ -3776,4 +3783,16 @@ input[type="submit"].has-background:visited,
 .wp-block-verse {
 	font-family: "Inconsolata", monospace;
 	font-size: 1rem;
+}
+
+.home .entry-header {
+	display: none;
+}
+
+.home .entry-content {
+	margin-top: 0;
+}
+
+.home .site-main {
+	padding-top: 0;
 }
