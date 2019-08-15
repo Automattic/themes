@@ -35,6 +35,24 @@
 /**
  * Extras
  */
-.editor-post-title__input {
-	text-align: center;
+.editor-post-title__block .editor-post-title__input {
+	font-weight: 600;
+}
+
+.wp-block-media-text {
+
+	background: #{map-deep-get($config-global, "color", "secondary", "default")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+		border: 1px solid #{map-deep-get($config-global, "color", "background", "default")};
+		z-index: 1;
+	}
 }

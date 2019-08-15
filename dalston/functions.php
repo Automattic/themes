@@ -63,6 +63,11 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 					'color' => '#0073AA',
 				),
 				array(
+					'name'  => __( 'Secondary', 'dalston' ),
+					'slug'  => 'secondary',
+					'color' => '#0D1B24',
+				),
+				array(
 					'name'  => __( 'Dark Gray', 'dalston' ),
 					'slug'  => 'foreground-dark',
 					'color' => '#000000',

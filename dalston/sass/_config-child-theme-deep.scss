@@ -12,7 +12,7 @@ $baseline-unit: 8px;
 
 $typescale-root: 22px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.125; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.15; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -65,8 +65,8 @@ $config-global: (
 			"hover": #005177,
 		),
 		"secondary": (
-			"default": #0073AA,
-			"hover": #005177,
+			"default": #0d1b24,
+			"hover": #000000,
 		),
 		"foreground": (
 			"default": #1e1e1e,
@@ -169,13 +169,13 @@ $config-button: (
 	),
 	// Fonts
 	"font": (
-		"family": map-deep-get($config-global, "font", "family", "ui"),
-		"size": map-deep-get($config-global, "font", "size", "md"),
+		"family": map-deep-get($config-global, "font", "family", "primary"),
+		"size": map-deep-get($config-global, "font", "size", "base"),
 		"weight": 600,
 		"line-height": 1,
 	),
 	// Borders
-	"border-radius": map-deep-get($config-global, "border-radius", "sm"),
+	"border-radius": 5px,
 	"border-width": 2px,
 	// Padding
 	"padding": (
@@ -227,7 +227,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": normal,
+		"weight": 600,
 	),
 );
 
@@ -251,7 +251,7 @@ $config-pullquote: (
 	),
 	// Border
 	"color": (
-		"border": #{map-deep-get($config-global, "color", "border", "default")},
+		"border": transparent,
 		"background": #{map-deep-get($config-global, "color", "primary", "default")},
 	),
 	// Border
@@ -285,7 +285,7 @@ $config-header: (
 	"branding": (
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "light"),
+			"text": map-deep-get($config-global, "color", "foreground", "dark"),
 			"link": map-deep-get($config-global, "color", "foreground", "dark"),
 			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
@@ -304,7 +304,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "secondary"),
-				"size": map-deep-get($config-global, "font", "size", "sm"),
+				"size": map-deep-get($config-global, "font", "size", "xs"),
 			),
 		),
 	),

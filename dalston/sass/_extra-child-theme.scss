@@ -3,6 +3,10 @@
  */
 // @import "";
 
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+
 a {
 	text-decoration: none;
 }
@@ -32,7 +36,7 @@ a {
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
-		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-column-gap: $spacing_unit;
 		grid-template-areas:
 			"site-logo site-logo"
 			"site-title main-navigation"
@@ -51,7 +55,7 @@ a {
 
 		.site-logo {
 			grid-area: site-logo;
-			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+			margin-bottom: $spacing_unit;
 		}
 
 		.site-title {
@@ -75,13 +79,13 @@ a {
 
 			& > div > ul {
 				justify-content: flex-end;
-				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+				margin-left: -#{0.5 * $spacing_horizontal};
+				margin-right: -#{0.5 * $spacing_horizontal};
 
 				& > li {
 
 					& > a {
-						padding: 0 #{map-deep-get($config-header, "main-nav", "link-padding")};
+						padding: 0 #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
 					}
 				}
 
@@ -99,13 +103,13 @@ a {
 					overflow: hidden;
 
 					&:before {
-						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
-						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						border-bottom: #{0.5 * $spacing_unit} solid #{map-deep-get($config-global, "color", "primary", "default")};
+						border-left: #{0.5 * $spacing_unit} solid transparent;
+						border-right: #{0.5 * $spacing_unit} solid transparent;
 						content: "";
 						display: block;
-						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
-						width: #{map-deep-get($config-global, "spacing", "unit")};
+						margin-left: #{$spacing_unit};
+						width: #{$spacing_unit};
 					}
 				}
 
@@ -151,3 +155,43 @@ a {
 	margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
 }
 
+/**
+ * Content
+ */
+.site-main > article > .entry-header {
+	margin: #{3 * $spacing_unit} $spacing_unit $spacing_unit;
+	position: relative;
+}
+
+@include media(mobile) {
+	.site-main > article > .entry-header {
+		margin: #{3 * $spacing_vertical} auto #{2 * $spacing_unit};
+	}
+}
+
+.entry-title {
+	font-size: map-deep-get($config-global, "font", "size", "xxxxl");
+	font-weight: 600;
+}
+
+/**
+ * Blocks
+ */
+
+.entry .entry-content .wp-block-media-text {
+
+	background: #{map-deep-get($config-global, "color", "secondary", "default")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+		border: 1px solid #{map-deep-get($config-global, "color", "background", "default")};
+		z-index: 1;
+	}
+}
