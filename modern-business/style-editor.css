@@ -923,7 +923,7 @@ blockquote {
  we use it to target wp-blocks with a matching data-align attribute.
  If no alignment is given, we target the base wp-block class. In both
  of these scenarios, we target top level blocks, and any top level blocks
- inside one of the FSE template part blocks.
+ inside one of the FSE template blocks.
  */
 /** === Editor Frame === */
 body {
@@ -938,7 +938,7 @@ body .wp-block[data-align="full"] {
 @media only screen and (min-width: 600px) {
   
   body .wp-block[data-align="full"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="full"] {
+  body .wp-block.post-content__block .wp-block[data-align="full"] {
     width: calc( 100% + 90px);
     max-width: calc( 100% + 90px);
   }
@@ -951,12 +951,12 @@ body .wp-block[data-align="full"] {
   }
   
   body .wp-block[data-align="wide"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="wide"] {
+  body .wp-block.post-content__block .wp-block[data-align="wide"] {
     width: 100%;
   }
   
   body .wp-block[data-align="full"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="full"] {
+  body .wp-block.post-content__block .wp-block[data-align="full"] {
     position: relative;
     left: calc( -12.5% - 14px);
     width: calc( 125% + 116px);
@@ -964,7 +964,7 @@ body .wp-block[data-align="full"] {
   }
   
   body .wp-block[data-align="right"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="right"] {
+  body .wp-block.post-content__block .wp-block[data-align="right"] {
     max-width: 125%;
   }
 }
@@ -972,7 +972,7 @@ body .wp-block[data-align="full"] {
 /** === Content Width === */
 
 .wp-block,
-.wp-block[data-type="a8c/post-content"] .wp-block {
+.wp-block.post-content__block .wp-block {
   width: calc(100vw - (2 * 1rem));
   max-width: 100%;
 }
@@ -980,7 +980,7 @@ body .wp-block[data-align="full"] {
 @media only screen and (min-width: 768px) {
   
   .wp-block,
-  .wp-block[data-type="a8c/post-content"] .wp-block {
+  .wp-block.post-content__block .wp-block {
     width: calc(8 * (100vw / 12));
   }
 }
@@ -988,19 +988,19 @@ body .wp-block[data-align="full"] {
 @media only screen and (min-width: 1168px) {
   
   .wp-block,
-  .wp-block[data-type="a8c/post-content"] .wp-block {
+  .wp-block.post-content__block .wp-block {
     width: calc(6 * (100vw / 12 ));
   }
 }
 
 
 .wp-block .wp-block,
-.wp-block[data-type="a8c/post-content"] .wp-block .wp-block {
+.wp-block.post-content__block .wp-block .wp-block {
   width: 100%;
 }
 
-/** === FSE Template Part Blocks === */
-.wp-block[data-type="a8c/post-content"] {
+/** === FSE Template Blocks === */
+.wp-block.post-content__block {
   width: 100%;
 }
 
