@@ -10,9 +10,9 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 18px; // Set 16px/1em default on html
+$typescale-root: 20px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.125; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -20,9 +20,9 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "sans-serif",
-			"secondary": "serif",
-			"code": "monospace, monospace",
+			"primary": "\"Crimson Text\"\, \"Baskerville Old Face\"\, Garamond\, \"Times New Roman\"\, serif",
+			"secondary": "\"Crimson Text\"\, \"Baskerville Old Face\"\, Garamond\, \"Times New Roman\"\, serif",
+			"code": "Menlo\, monaco\, Consolas\, Lucida Console\, monospace",
 			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
 		/* Font Size */
@@ -53,37 +53,37 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.78,
-			"heading": 1.125,
+			"body": 1.6,
+			"heading": 1.2,
 		),
 	),
 
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": blue,
-			"hover": indigo,
+			"default": #0073AA,
+			"hover": darken( #0073AA, 10% ),
 		),
 		"secondary": (
-			"default": red,
-			"hover": darkred,
+			"default": #0073AA,
+			"hover": darken( #0073AA, 10% ),
 		),
 		"foreground": (
-			"default": #444444,
+			"default": #1e1e1e,
 			"light": #767676, // must be accessible against background
 			"dark": #111111, // must be accessible against background
 		),
 		"background": (
-			"default": white,
+			"default": #FFFFFF,
 			"light": #FAFAFA, // must be accessible against foreground-default
 			"dark": #DDDDDD, // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #DDDDDD,
+			"default": #CCCCCC,
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
-		"text-selection": lightblue,
+		"text-selection": lighten( #0073aa, 45% ),
 		"black": black,
 		"white": white,
 	),
