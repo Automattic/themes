@@ -66,8 +66,26 @@ $font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
 /**
  * 1. General Styles
  */
-a {
+ a {
 	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.has-background {
+	a {
+		color: currentColor;
+	}
 }
 
 .editor-post-title__block .editor-post-title__input {

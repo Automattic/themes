@@ -2535,8 +2535,7 @@ table th,
 .site-info {
 	color: #767676;
 	font-family: "Lato", sans-serif;
-	font-size: 1rem;
-	line-height: 1;
+	font-size: 0.83333rem;
 }
 
 @media only screen and (min-width: 640px) {
@@ -3414,6 +3413,27 @@ h6 {
 
 a {
 	text-decoration: none;
+}
+
+.wp-block-cover a,
+.wp-block-cover-image a,
+.wp-block-media-text a,
+p:not(.site-title) a {
+	text-decoration: underline;
+}
+
+.wp-block-cover a.wp-block-button__link, .wp-block-cover a:hover,
+.wp-block-cover-image a.wp-block-button__link,
+.wp-block-cover-image a:hover,
+.wp-block-media-text a.wp-block-button__link,
+.wp-block-media-text a:hover,
+p:not(.site-title) a.wp-block-button__link,
+p:not(.site-title) a:hover {
+	text-decoration: none;
+}
+
+.has-background a {
+	color: currentColor;
 }
 
 /**

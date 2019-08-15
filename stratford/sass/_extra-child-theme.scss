@@ -55,8 +55,27 @@ h5,
 h6 {
 	color: $color_primary;
 }
+
 a {
 	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.has-background {
+	a {
+		color: currentColor;
+	}
 }
 
 /**
