@@ -1,0 +1,206 @@
+/**
+ * Extra Child Theme Styles
+ */
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+
+b, strong {
+	font-weight: 600;
+}
+
+a {
+	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.site-branding,
+.main-navigation,
+.entry-header,
+.entry-footer,
+.page-title,
+.author-title,
+.comments-title,
+.comment-reply-title,
+.logged-in-as,
+.comment-notes {
+	text-align: center;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.main-navigation > div {
+	text-align: left;
+}
+
+.main-navigation > div > ul,
+.social-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
+
+/**
+ * Header
+ */
+#masthead {
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: $spacing_vertical;
+	padding-bottom: $spacing_vertical;
+
+	@extend %responsive-width-wide;
+
+	@include media(mobile) {
+		padding-top: #{2 * $spacing_vertical};
+		padding-bottom: #{1.5 * $spacing_vertical};
+	}
+}
+
+.site-title {
+	letter-spacing: map-deep-get($config-global, "font", "letter-spacing", "xl");
+}
+
+.site-logo + .site-title {
+	margin-top: #{ 0.25 * $spacing_vertical};
+}
+
+.site-title + .site-description {
+	margin-top: #{ 0.5 * $spacing_unit};
+}
+
+/**
+ * Navigation
+ */
+.site-header > * {
+	&.main-navigation {
+		@include media(mobile) {
+			margin-bottom: 0;
+		}
+	}
+
+	&.social-navigation {
+		@include media(mobile) {
+			margin-top: 0;
+		}
+	}
+}
+
+/**
+ * Main
+ */
+#main {
+	padding-top: 0;
+}
+
+.site-main > article > .entry-header {
+	margin-top: #{0.666 * $spacing_vertical};
+		@include media(mobile) {
+			margin-top: $spacing_vertical;
+		}
+}
+
+// Entry Title Link
+.entry-title,
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title {
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: map-deep-get($config-global, "color", "primary", "default");
+		}
+	}
+}
+
+// Sticky tag
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	font-weight: 600;
+	padding: #{0.25 * $baseline-unit} #{0.66 * $spacing_unit};
+}
+
+/**
+ * Next/Previous navigation
+ */
+// Singular navigation
+.post-navigation {
+	.meta-nav {
+		color: map-deep-get($config-global, "color", "foreground", "light");
+	}
+
+	.post-title {
+		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	}
+}
+
+/**
+ * Comments
+ */
+.logged-in-as,
+.comment-notes,
+.comment-form-cookies-consent {
+	font-size: map-deep-get($config-global, "font", "size", "sm");
+}
+
+.comment-form-cookies-consent input[type=checkbox] + label {
+	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+}
+
+.comment-notes {
+	color: map-deep-get($config-global, "color", "foreground", "light");
+}
+
+.comment-form > p:not(.comment-form-cookies-consent) label {
+	font-weight: 600;
+}
+
+.comment-respond {
+	.form-submit {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+/**
+ * Blocks
+ */
+
+// Posts List
+.a8c-posts-list {
+	text-align: center;
+}
+
+.a8c-posts-list-item__excerpt {
+	text-align: left;
+}
+
+/**
+ * Widget
+ */
+
+.widget-title {
+	font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
+	margin-bottom: #{0.5 * $spacing_vertical};
+}
