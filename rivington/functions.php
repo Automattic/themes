@@ -1,0 +1,185 @@
+<?php
+/**
+ * Child Theme Functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage Rivington
+ * @since 1.0.0
+ */
+
+if ( ! function_exists( 'rivington_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function rivington_setup() {
+
+		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
+		add_editor_style( 'style-editor.css' );
+
+		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => __( 'Small', 'rivington' ),
+					'shortName' => __( 'S', 'rivington' ),
+					'size'      => 19.5,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => __( 'Normal', 'rivington' ),
+					'shortName' => __( 'M', 'rivington' ),
+					'size'      => 22,
+					'slug'      => 'normal',
+				),
+				array(
+					'name'      => __( 'Large', 'rivington' ),
+					'shortName' => __( 'L', 'rivington' ),
+					'size'      => 36.5,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => __( 'Huge', 'rivington' ),
+					'shortName' => __( 'XL', 'rivington' ),
+					'size'      => 49.5,
+					'slug'      => 'huge',
+				),
+			)
+		);
+
+		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'rivington' ),
+					'slug'  => 'primary',
+					'color' => '#0000FF',
+				),
+				array(
+					'name'  => __( 'Secondary', 'rivington' ),
+					'slug'  => 'secondary',
+					'color' => '#FF0000',
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'rivington' ),
+					'slug'  => 'foreground-dark',
+					'color' => '#111111',
+				),
+				array(
+					'name'  => __( 'Gray', 'rivington' ),
+					'slug'  => 'foreground',
+					'color' => '#444444',
+				),
+				array(
+					'name'  => __( 'Light Gray', 'rivington' ),
+					'slug'  => 'foreground-light',
+					'color' => '#767676',
+				),
+				array(
+					'name'  => __( 'Lighter Gray', 'rivington' ),
+					'slug'  => 'background-dark',
+					'color' => '#DDDDDD',
+				),
+				array(
+					'name'  => __( 'Subtle Gray', 'rivington' ),
+					'slug'  => 'background-light',
+					'color' => '#FAFAFA',
+				),
+				array(
+					'name'  => __( 'White', 'rivington' ),
+					'slug'  => 'background',
+					'color' => '#FFFFFF',
+				),
+			)
+		);
+	}
+endif;
+add_action( 'after_setup_theme', 'rivington_setup', 12 );
+
+/**
+ * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
+ */
+function rivington_content_width() {
+	return 750;
+}
+add_filter( 'varia_content_width', 'rivington_content_width' );
+
+/**
+ * Add Google webfonts, if necessary
+ *
+ * - See: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
+ */
+function rivington_fonts_url() {
+
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	* supported by Playfair Display, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$playfair = esc_html_x( 'on', 'Playfair Display font: on or off', 'rivington' );
+
+	/* Translators: If there are characters in your language that are not
+	* supported by Roboto Sans, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$roboto = esc_html_x( 'on', 'Roboto Sans font: on or off', 'rivington' );
+
+	if ( 'off' !== $playfair || 'off' !== $roboto ) {
+		$font_families = array();
+
+		if ( 'off' !== $playfair ) {
+			$font_families[] = 'Playfair+Display:400,400i';
+		}
+
+		if ( 'off' !== $roboto ) {
+			$font_families[] = 'Roboto:300,300i,700';
+		}
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
+/**
+ * Enqueue scripts and styles.
+ */
+function rivington_scripts() {
+
+	// enqueue Google fonts, if necessary
+	// wp_enqueue_style( 'rivington-fonts', rivington_fonts_url(), array(), null );
+
+	// dequeue parent styles
+	wp_dequeue_style( 'varia-style' );
+
+	// enqueue child styles
+	wp_enqueue_style('rivington-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+
+	// enqueue child RTL styles
+	wp_style_add_data( 'rivington-style', 'rtl', 'replace' );
+
+}
+add_action( 'wp_enqueue_scripts', 'rivington_scripts', 99 );
+
+/**
+ * Enqueue theme styles for the block editor.
+ */
+function rivington_editor_styles() {
+
+	// Enqueue Google fonts in the editor, if necessary
+	wp_enqueue_style( 'rivington-editor-fonts', rivington_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'rivington_editor_styles' );
