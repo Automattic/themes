@@ -3136,7 +3136,8 @@ img#wpstats {
 
 .wp-block-group.alignwide .alignwide,
 .wp-block-group.alignwide .alignfull,
-.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
+.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
+#colophon {
 	margin-left: calc( -0.25 * ( 100vw - 100% ));
 	margin-right: calc( -0.25 * ( 100vw - 100% ));
 	width: calc( 100% + (0.25 * 2) * ( 100vw - 100% ));
@@ -3146,7 +3147,8 @@ img#wpstats {
 @media only screen and (min-width: 560px) {
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
+	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
+	#colophon {
 		margin-left: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
 		margin-right: calc( -0.25 * ( 100vw - calc( 560px - 32px) ));
 		width: calc( calc( 560px - 32px) + (0.25 * 2) * ( 100vw - calc( 560px - 32px) ));
@@ -3157,7 +3159,8 @@ img#wpstats {
 @media only screen and (min-width: 640px) {
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
+	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
+	#colophon {
 		margin-left: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
 		margin-right: calc( -0.25 * ( 100vw - calc( 640px - 32px) ));
 		width: calc( calc( 640px - 32px) + (0.25 * 2) * ( 100vw - calc( 640px - 32px) ));
@@ -3168,7 +3171,8 @@ img#wpstats {
 @media only screen and (min-width: 782px) {
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
+	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
+	#colophon {
 		margin-left: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
 		margin-right: calc( -0.25 * ( 100vw - calc( 782px - 32px) ));
 		width: calc( calc( 782px - 32px) + (0.25 * 2) * ( 100vw - calc( 782px - 32px) ));
@@ -3179,7 +3183,8 @@ img#wpstats {
 @media only screen and (min-width: 1024px) {
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
+	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
+	#colophon {
 		margin-left: -128px;
 		margin-right: -128px;
 		width: calc(calc( 782px - 32px) + 256px);
@@ -3190,7 +3195,8 @@ img#wpstats {
 @media only screen and (min-width: 1280px) {
 	.wp-block-group.alignwide .alignwide,
 	.wp-block-group.alignwide .alignfull,
-	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
+	.wp-block-group.alignfull .alignwide, .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
+	#colophon {
 		margin-left: -128px;
 		margin-right: -128px;
 		width: calc(calc( 782px - 32px) + 256px);
@@ -3392,32 +3398,131 @@ a {
 	text-decoration: none;
 }
 
-.site-branding,
-.site-info,
-.main-navigation,
-.entry-header,
-.entry-footer,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
+/**
+ * Wide Header & Footer
+ */
+#masthead,
+#colophon {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
 }
 
-.main-navigation > div {
-	text-align: left;
+#masthead {
+	padding-bottom: 0;
 }
 
-.comment-reply-title {
-	display: inherit;
+/**
+ * CSS-grid Desktop Menu
+ */
+@media only screen and (min-width: 560px) {
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: 16px;
+		grid-template-areas: "site-logo site-logo" "site-title main-navigation" "site-description social-navigation";
+	}
+	.site-header:before, .site-header:after {
+		content: none;
+		display: none;
+	}
+	.site-header > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.site-header .site-logo {
+		grid-area: site-logo;
+		margin-bottom: 16px;
+	}
+	.site-header .site-title {
+		align-self: flex-end;
+		grid-area: site-title;
+	}
+	.site-header .site-title + .site-description {
+		margin-top: 0;
+	}
+	.site-header .site-description {
+		align-self: center;
+		grid-area: site-description;
+	}
+	.site-header .main-navigation {
+		align-self: center;
+		grid-area: main-navigation;
+		justify-self: flex-end;
+	}
+	.site-header .main-navigation > div > ul {
+		justify-content: flex-end;
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+	.site-header .main-navigation > div > ul > li {
+		padding: 16px;
+	}
+	.site-header .main-navigation > div > ul > li > a {
+		padding: 0;
+	}
+	.site-header .main-navigation > div > ul > .menu-item-has-children > a::after {
+		font-size: 0.5rem;
+	}
+	.site-header .main-navigation > div > ul > li:hover > a,
+	.site-header .main-navigation > div > ul > li.focus > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item > a {
+		color: #0073AA;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul,
+	.site-header .main-navigation > div > ul > li.focus > ul,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid #0073AA;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-left: 16px;
+		width: 16px;
+	}
+	.site-header .main-navigation > div > ul > li:hover li > a,
+	.site-header .main-navigation > div > ul > li.focus li > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
+		background: #0073AA;
+		color: #FFFFFF;
+	}
+	.site-header .main-navigation > div > ul > li:hover li:hover > a,
+	.site-header .main-navigation > div > ul > li:hover li.focus > a,
+	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li.focus li:hover > a,
+	.site-header .main-navigation > div > ul > li.focus li.focus > a,
+	.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
+		background: #005177;
+	}
+	.site-header .social-navigation {
+		align-self: center;
+		grid-area: social-navigation;
+		justify-self: flex-end;
+	}
 }
 
-.comment .comment-reply-title {
-	display: flex;
+.social-navigation > div > ul {
+	flex-wrap: wrap;
 }
 
-.main-navigation > div > ul,
-.social-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
+/**
+ * Site Title
+ */
+.site-description {
+	color: #767676;
+}
+
+.site-title + .site-description {
+	margin-top: -16px;
 }

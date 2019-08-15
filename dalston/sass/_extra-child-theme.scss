@@ -7,32 +7,152 @@ a {
 	text-decoration: none;
 }
 
-.site-branding,
-.site-info,
-.main-navigation,
-.entry-header,
-.entry-footer,
-.page-title,
-.author-title,
-.comments-title,
-.comment-reply-title {
-	text-align: center;
+/**
+ * Wide Header & Footer
+ */
+#masthead,
+#colophon {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+
+	@extend %responsive-width-wide;
 }
 
-.main-navigation > div {
-	text-align: left;
+#masthead {
+	padding-bottom: 0;
 }
 
-.comment-reply-title {
-	display: inherit;
+/**
+ * CSS-grid Desktop Menu
+ */
+@include media(mobile) {
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-logo site-logo"
+			"site-title main-navigation"
+			"site-description social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			grid-area: site-logo;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		.site-title {
+			align-self: flex-end;
+			grid-area: site-title;
+
+			& + .site-description {
+				margin-top: 0;
+			}
+		}
+
+		.site-description {
+			align-self: center;
+			grid-area: site-description;
+		}
+
+		.main-navigation {
+			align-self: center;
+			grid-area: main-navigation;
+			justify-self: flex-end;
+
+			& > div > ul {
+				justify-content: flex-end;
+				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+
+				& > li {
+					padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+
+					& > a {
+						padding: 0;
+					}
+				}
+
+				& > .menu-item-has-children > a::after {
+						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				}
+			}
+
+			& > div > ul > li:hover,
+			& > div > ul > li.focus,
+			& > div > ul > li.current-menu-item {
+
+				& > a {
+					color: #{map-deep-get($config-global, "color", "primary", "default")};
+				}
+
+				& > ul {
+					box-shadow: none;
+					overflow: hidden;
+
+					&:before {
+						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
+						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						content: "";
+						display: block;
+						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+						width: #{map-deep-get($config-global, "spacing", "unit")};
+					}
+				}
+
+				& li {
+
+					& > a {
+						background: #{map-deep-get($config-global, "color", "primary", "default")};
+						color: #{map-deep-get($config-global, "color", "background", "default")};
+					}
+
+					&:hover > a,
+					&.focus > a,
+					&.current-menu-item > a {
+						background: #{map-deep-get($config-global, "color", "primary", "hover")};
+					}
+				}
+			}
+		}
+
+		.social-navigation {
+			align-self: center;
+			grid-area: social-navigation;
+			justify-self: flex-end;
+		}
+	}
 }
 
-.comment .comment-reply-title {
-	display: flex;
+// Social Menu
+.social-navigation {
+	& > div > ul {
+		flex-wrap: wrap;
+	}
 }
 
-.main-navigation > div > ul,
-.social-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
+/**
+ * Site Title
+ */
+.site-description {
+	color: #{map-deep-get($config-header, "branding", "color", "text")};
 }
+
+.site-title + .site-description {
+	margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
+}
+
