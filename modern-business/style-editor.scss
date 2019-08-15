@@ -1042,7 +1042,7 @@ ul.wp-block-archives,
 // Full Site Editing Overrides
 
 .a8c-template-editor, .template-block {
-	&.site-branding {
+	&.site-branding, &.site-footer {
 		margin: 0;
 	}
 
@@ -1078,6 +1078,28 @@ ul.wp-block-archives,
 
 	[data-type='a8c/site-title'] [data-block] {
 		margin: 32px 0;
+	}
+
+	.wp-block-a8c-navigation-menu {
+		a {
+			text-decoration: none;
+		}
+	}
+	&.site-header .wp-block-a8c-navigation-menu {
+		text-align: center;
+	}
+	&.site-footer .wp-block-a8c-navigation-menu {
+		text-align: left;
+	}
+	@include media(tablet) {
+		// Awkward selector to fight specificity
+		[data-type='a8c/navigation-menu'] .wp-block-a8c-navigation-menu {
+			text-align: center;
+		}
+	}
+
+	.wp-block-separator.is-style-default {
+		background: transparent;
 	}
 }
 
