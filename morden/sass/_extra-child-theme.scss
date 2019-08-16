@@ -3,56 +3,6 @@
  */
 // @import "";
 
-%responsive-width-wide {
-
-	@include align-width( $content-width-flex, -0.25 );
-
-	@include media(mobile) {
-		@include align-width( $content-width-sm, 0 );
-	}
-
-	@include media(tablet) {
-		@include align-width( $content-width-md, 0 );
-	}
-
-	@include media(laptop) {
-		@include align-width( $content-width-lg, -0.15 );
-	}
-
-	@include media(desktop) {
-		@include align-width( $content-width-lg, -0.25 );
-	}
-
-	@include media(wide) {
-		@include align-width( $content-width-lg, -0.3 );
-	}
-}
-
-%responsive-width-full {
-
-	@include align-width( $content-width-flex, -0.5 );
-
-	@include media(mobile) {
-		@include align-width( $content-width-sm, -0.5 );
-	}
-
-	@include media(tablet) {
-		@include align-width( $content-width-md, -0.3 );
-	}
-
-	@include media(laptop) {
-		@include align-width( $content-width-lg, -0.4 );
-	}
-
-	@include media(desktop) {
-		@include align-width( $content-width-lg, -0.4 );
-	}
-
-	@include media(wide) {
-		@include align-width( $content-width-lg, -0.4 );
-	}
-}
-
 a {
 	text-decoration: none;
 
@@ -75,7 +25,7 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 
-	@extend %responsive-width-full;
+	@extend %responsive-alignwide;
 }
 
 body {
@@ -90,8 +40,6 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-
-	@extend %responsive-width-wide;
 }
 
 /**
@@ -242,24 +190,23 @@ body {
  * Header
  */
 #masthead {
+	background: #{map-deep-get($config-global, "color", "foreground", "default")};
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+
 	& > * {
 		position: relative;
 	}
+}
 
-	&:before {
-		background: #{map-deep-get($config-global, "color", "foreground", "default")};
-		content: "";
-		display: block;
-		height: 100%;
-		left: 50%;
-		margin: 0;
-		position: absolute;
-		top: 0;
-		transform: translateX(-50%);
-		z-index: 0;
+.main-navigation > div > ul > li:first-of-type,
+.social-navigation > div > ul > li:first-of-type {
+	margin-left: inherit;
+}
 
-		@extend %responsive-width-full;
-	}
+.main-navigation > div > ul > li:last-of-type,
+.social-navigation > div > ul > li:last-of-type {
+	margin-right: inherit;
 }
 
 // Site Title
@@ -274,6 +221,12 @@ body {
 /**
  * Main
  */
+
+.site-main {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 @include media(mobile) {
 	#main {
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
@@ -347,7 +300,7 @@ table,
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 	}
 
-	@extend %responsive-width-full;
+	@extend %responsive-alignfull;
 }
 
 // Entry Meta
