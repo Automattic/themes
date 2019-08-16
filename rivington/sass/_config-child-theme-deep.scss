@@ -12,7 +12,7 @@ $baseline-unit: 8px;
 
 $typescale-root: 18px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.25; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -20,8 +20,8 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "sans-serif",
-			"secondary": "serif",
+			"primary": "\"Poppins\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+			"secondary": "\"Poppins\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 			"code": "monospace, monospace",
 			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
@@ -53,7 +53,7 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.78,
+			"body": 1.6,
 			"heading": 1.125,
 		),
 	),
@@ -61,20 +61,20 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": blue,
-			"hover": indigo,
+			"default": #CAAB57,
+			"hover": #B59439,
 		),
 		"secondary": (
-			"default": red,
-			"hover": darkred,
+			"default": #CAAB57,
+			"hover": #B59439,
 		),
 		"foreground": (
-			"default": #444444,
-			"light": #767676, // must be accessible against background
+			"default": #FFFFFF,
+			"light": darken( #FFFFFF, 20% ), // must be accessible against background
 			"dark": #111111, // must be accessible against background
 		),
 		"background": (
-			"default": white,
+			"default": #080808,
 			"light": #FAFAFA, // must be accessible against foreground-default
 			"dark": #DDDDDD, // must be accessible against foreground-default
 		),
@@ -83,7 +83,7 @@ $config-global: (
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
-		"text-selection": lightblue,
+		"text-selection": lighten( #CAAB57, 30% ),
 		"black": black,
 		"white": white,
 	),
@@ -201,12 +201,12 @@ $config-heading: (
 		"family": map-deep-get($config-global, "font", "family", "primary"),
 		// Size
 		"size": (
-			"h6": map-deep-get($config-global, "font", "size", "md"),
-			"h5": map-deep-get($config-global, "font", "size", "lg"),
-			"h4": map-deep-get($config-global, "font", "size", "xl"),
-			"h3": map-deep-get($config-global, "font", "size", "xxl"),
-			"h2": map-deep-get($config-global, "font", "size", "xxxl"),
-			"h1": map-deep-get($config-global, "font", "size", "xxxxl"),
+			"h6": map-deep-get($config-global, "font", "size", "sm"),
+			"h5": map-deep-get($config-global, "font", "size", "base"),
+			"h4": map-deep-get($config-global, "font", "size", "md"),
+			"h3": map-deep-get($config-global, "font", "size", "lg"),
+			"h2": map-deep-get($config-global, "font", "size", "xl"),
+			"h1": map-deep-get($config-global, "font", "size", "xxl"),
 		),
 		// Letter spacing
 		"line-height": (
@@ -227,7 +227,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": normal,
+		"weight": 600,
 	),
 );
 
@@ -285,17 +285,17 @@ $config-header: (
 	"branding": (
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "light"),
-			"link": map-deep-get($config-global, "color", "primary", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"link": map-deep-get($config-global, "color", "foreground", "default"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
 		// Fonts & Typography
 		"title": (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "md"),
-				"weight": normal,
+				"size": map-deep-get($config-global, "font", "size", "lg"),
+				"weight": 600,
 				"line-height": 1,
 			),
 		),
@@ -304,7 +304,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "secondary"),
-				"size": map-deep-get($config-global, "font", "size", "sm"),
+				"size": map-deep-get($config-global, "font", "size", "xs"),
 			),
 		),
 	),
@@ -319,8 +319,8 @@ $config-header: (
 		// Fonts
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
-			"size": map-deep-get($config-global, "font", "size", "md"),
-			"weight": normal,
+			"size": map-deep-get($config-global, "font", "size", "base"),
+			"weight": 600,
 			"line-height": 1,
 		),
 		"link-padding": map-deep-get($config-global, "spacing", "unit"),
@@ -329,7 +329,7 @@ $config-header: (
 	"social-nav": (
 		// Colors
 		"color": (
-			"link": map-deep-get($config-global, "color", "primary", "default"),
+			"link": map-deep-get($config-global, "color", "foreground", "default"),
 			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
 		),
 		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),

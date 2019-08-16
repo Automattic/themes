@@ -1,15 +1,166 @@
 /**
  * Extra Child Theme Styles
  */
-// @import "";
 
+$color_background: map-deep-get($config-global, "color", "background", "default");
+$color_foreground: map-deep-get($config-global, "color", "foreground", "default");
+$color_foreground_light: map-deep-get($config-global, "color", "foreground", "light");
+$color_primary: map-deep-get($config-global, "color", "primary", "default");
+$color_primary_hover: map-deep-get($config-global, "color", "primary", "hover");
+
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+
+/**
+ * Elements
+ */
 a {
 	text-decoration: none;
 }
 
-.site-branding,
-.site-info,
-.main-navigation,
+/**
+ * Header
+ */
+#masthead {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $spacing_unit;
+	padding-right: $spacing_unit;
+	position: relative;
+	@extend %responsive-width-full;
+
+	@include media(mobile) {
+		padding-left: $spacing_vertical;
+		padding-right: $spacing_vertical;
+	}
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+@include media(mobile) {
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-logo site-logo"
+			"site-title main-navigation"
+			"site-description social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			grid-area: site-logo;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		.site-title {
+			align-self: flex-end;
+			grid-area: site-title;
+
+			& + .site-description {
+				margin-top: 0;
+			}
+		}
+
+		.site-description {
+			align-self: center;
+			grid-area: site-description;
+		}
+
+		.main-navigation {
+			align-self: center;
+			grid-area: main-navigation;
+			justify-self: flex-end;
+
+			& > div > ul {
+				justify-content: flex-end;
+				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+
+				& > li > a {
+					padding: 0 #{map-deep-get($config-header, "main-nav", "link-padding")};
+				}
+
+				& > .menu-item-has-children > a::after {
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				}
+			}
+
+			& > div > ul > li:hover,
+			& > div > ul > li.focus,
+			& > div > ul > li.current-menu-item {
+
+				& > a {
+					color: #{map-deep-get($config-global, "color", "primary", "default")};
+				}
+
+				& > ul {
+					box-shadow: none;
+					overflow: hidden;
+
+					&:before {
+						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
+						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						content: "";
+						display: block;
+						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+						width: #{map-deep-get($config-global, "spacing", "unit")};
+					}
+				}
+
+				& li {
+
+					& > a {
+						background: #{map-deep-get($config-global, "color", "primary", "default")};
+						color: #{map-deep-get($config-global, "color", "background", "default")};
+					}
+
+					&:hover > a,
+					&.focus > a,
+					&.current-menu-item > a {
+						background: #{map-deep-get($config-global, "color", "primary", "hover")};
+					}
+				}
+			}
+		}
+
+		.social-navigation {
+			align-self: center;
+			grid-area: social-navigation;
+			justify-self: flex-end;
+		}
+	}
+}
+
+/**
+ * Content
+ */
+
+.entry .entry-title a {
+
+	color: $color_foreground;
+
+	&:hover,
+	&:active {
+		color: $color_foreground_light;
+	}
+}
+
 .entry-header,
 .entry-footer,
 .page-title,
@@ -17,10 +168,6 @@ a {
 .comments-title,
 .comment-reply-title {
 	text-align: center;
-}
-
-.main-navigation > div {
-	text-align: left;
 }
 
 .comment-reply-title {
@@ -31,8 +178,36 @@ a {
 	display: flex;
 }
 
-.main-navigation > div > ul,
-.social-navigation > div > ul,
 .pagination .nav-links {
 	justify-content: center;
+}
+
+/**
+ * Blocks
+ */
+
+.wp-block-cover {
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+	}
+
+	h6 {
+		font-size: map-deep-get($config-global, "font", "size", "lg");
+	}
+	h5 {
+		font-size: map-deep-get($config-global, "font", "size", "xl");
+	}
+	h4 {
+		font-size: map-deep-get($config-global, "font", "size", "xxl");
+	}
+	h3 {
+		font-size: map-deep-get($config-global, "font", "size", "xxxl");
+	}
+	h2 {
+		font-size: map-deep-get($config-global, "font", "size", "xxxxl");
+	}
+	h1 {
+		font-size: ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio);
+	}
 }
