@@ -1,13 +1,20 @@
 .wp-block-media-text {
 
 	.wp-block-media-text__content {
+		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
 
-		padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
-		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+		@include media(tablet) {
+			padding: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
 
-		h1, h2, h3, h4, h5, h6, p, hr {
-			margin-top: #{map-deep-get($config-global, "spacing", "unit")};
-			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+			& > * {
+				margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+				margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+			@include media(mobile) {
+				margin-top: map-deep-get($config-global, "spacing", "vertical");
+				margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+			}
 
 			&:first-child {
 				margin-top: 0;
@@ -33,14 +40,9 @@
 	 */
 
 	&.is-stacked-on-mobile .wp-block-media-text__content {
-		padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
-		padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
-	}
-
-	@include media(tablet) {
-
-		&.is-stacked-on-mobile .wp-block-media-text__content {
-			padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+		@include media(mobile) {
+			padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+			padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 }

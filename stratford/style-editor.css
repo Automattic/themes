@@ -5,6 +5,10 @@
  * Abstracts
  * - Mixins, variables and functions
  */
+/**
+ * Abstracts
+ * - Mixins, variables and functions
+ */
 /* Sass Functions go here */
 /**
  * Map deep get
@@ -104,43 +108,91 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - breakpoints values are defined in _config-global.scss
  */
 /**
+ * Align widths
+ * - Sets negative margin for .alignwide and .alignfull blocks
+ */
+/**
  * Align wide widths
- * - Sets .alignwide widths
+ * - Sets negative margin for .alignwide and .alignfull blocks
+ */
+/**
+ * Align container widths
+ * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
  * Crop Text Boundry
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Child Theme Name
+ */
+/**
+ * Redefine Sass map values for child theme output.
+ * - See: style-child-theme.scss
+ */
+/**
+ * Global
+ */
+/**
+ * Elements
+ */
+/**
+ * Button
+ */
+/**
+ * Cover
+ */
+/**
+ * Heading
+ */
+/**
+ * List
+ */
+/**
+ * Pullquote
+ */
+/**
+ * Quote
+ */
+/**
+ * Separator
+ */
+/**
+ * Header
+ */
+/**
+ * Footer
+ */
+/**
  * Base
  * - Reset the browser
  */
 body {
-	color: #444444;
+	color: #74767e;
 	background-color: white;
-	font-family: serif;
-	font-size: 18px;
+	font-family: "Lato", sans-serif;
+	font-size: 20px;
 	font-weight: normal;
-	line-height: 1.78;
+	line-height: 1.6;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 .editor-post-title__block {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 p {
 	font-size: 1em;
-	line-height: 1.78;
+	line-height: 1.6;
 }
 
 a {
-	color: blue;
+	color: #2c313f;
 }
 
 a:hover {
-	color: indigo;
+	color: #3e69dc;
 }
 
 button,
@@ -253,28 +305,28 @@ object {
 
 .wp-block-button .wp-block-button__link {
 	color: white;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-size: 1.2em;
-	line-height: 1;
-	background-color: blue;
-	border-radius: 9px;
+	font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.83333em;
+	line-height: 1.44;
+	background-color: #3e69dc;
+	border-radius: 10px;
 	padding: 16px 16px;
 }
 
 .wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus, .wp-block-button .wp-block-button__link.has-focus {
 	color: white;
-	background-color: indigo;
+	background-color: #2c313f;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: blue;
+	color: #3e69dc;
 	background: transparent;
 	border: 2px solid currentcolor;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: indigo;
+	color: #2c313f;
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -283,7 +335,7 @@ object {
 
 .wp-block-cover,
 .wp-block-cover-image {
-	background-color: #444444;
+	background-color: #74767e;
 	min-height: calc( 15 * 32px);
 	/* Treating H2 separately to account for legacy /core styles */
 }
@@ -337,8 +389,8 @@ object {
 .wp-block-heading h4, h4, .h4,
 .wp-block-heading h5, h5, .h5,
 .wp-block-heading h6, h6, .h6 {
-	font-family: sans-serif;
-	font-weight: bold;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
 	clear: both;
 }
 
@@ -423,7 +475,7 @@ p.has-background:not(.has-background-background-color) a {
 	border-top-width: 4px;
 	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
-	color: #444444;
+	color: #74767e;
 	/**
 	 * Block Options
 	 */
@@ -434,7 +486,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote p {
-	font-family: sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-size: 1.728em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -457,7 +509,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: blue;
+	background-color: #2c313f;
 	color: white;
 }
 
@@ -487,13 +539,13 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote {
-	border-left-color: blue;
+	border-left-color: #2c313f;
 	margin: 32px 0;
 	padding-left: 16px;
 }
 
 .wp-block-quote p {
-	font-family: sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-size: 1.728em;
 	letter-spacing: normal;
 }
@@ -504,7 +556,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
-	font-family: sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-size: 2.0736em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -539,7 +591,7 @@ hr.is-style-dots:before {
 
 table th,
 .wp-block-table th {
-	font-family: sans-serif;
+	font-family: "Poppins", sans-serif;
 }
 
 table td,
@@ -554,24 +606,24 @@ table th,
  * - Needs a special styles
  */
 .editor-post-title__block .editor-post-title__input {
-	color: #444444;
-	font-family: sans-serif;
-	font-weight: bold;
+	color: #74767e;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
 	font-size: 2.48832em;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 .has-primary-color[class] {
-	color: blue !important;
+	color: #2c313f !important;
 }
 
 .has-secondary-color[class] {
-	color: red !important;
+	color: #3e69dc !important;
 }
 
 .has-foreground-color[class] {
-	color: #444444 !important;
+	color: #74767e !important;
 }
 
 .has-foreground-light-color[class] {
@@ -583,7 +635,7 @@ table th,
 }
 
 .has-background-light-color[class] {
-	color: #FAFAFA !important;
+	color: #f3f3f3 !important;
 }
 
 .has-background-dark-color[class] {
@@ -595,7 +647,7 @@ table th,
 }
 
 .has-primary-background-color[class] {
-	background-color: blue !important;
+	background-color: #2c313f !important;
 	color: white;
 }
 
@@ -605,7 +657,7 @@ table th,
 }
 
 .has-secondary-background-color[class] {
-	background-color: red !important;
+	background-color: #3e69dc !important;
 	color: white;
 }
 
@@ -615,7 +667,7 @@ table th,
 }
 
 .has-foreground-background-color[class] {
-	background-color: #444444 !important;
+	background-color: #74767e !important;
 	color: white;
 }
 
@@ -645,8 +697,8 @@ table th,
 }
 
 .has-background-light-background-color[class] {
-	background-color: #FAFAFA !important;
-	color: #444444;
+	background-color: #f3f3f3 !important;
+	color: #74767e;
 }
 
 .has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6,
@@ -656,7 +708,7 @@ table th,
 
 .has-background-dark-background-color[class] {
 	background-color: #DDDDDD !important;
-	color: #444444;
+	color: #74767e;
 }
 
 .has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6,
@@ -666,7 +718,7 @@ table th,
 
 .has-background-background-color[class] {
 	background-color: white !important;
-	color: #444444;
+	color: #74767e;
 }
 
 .has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6,
@@ -700,9 +752,9 @@ table th,
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-size: calc(2 * 2.98598em);
-	font-weight: bold;
+	font-weight: 700;
 }
 
 /**
@@ -808,4 +860,185 @@ table th,
 
 .padding-left-default {
 	padding-top: 32px !important;
+}
+
+/**
+ * Extras
+ */
+/**
+ * 1. General Styles
+ */
+a {
+	text-decoration: none;
+}
+
+.wp-block-group a,
+.wp-block-cover a,
+.wp-block-cover-image a,
+.wp-block-media-text a,
+p:not(.site-title) a {
+	text-decoration: underline;
+}
+
+.wp-block-group a.wp-block-button__link, .wp-block-group a:hover,
+.wp-block-cover a.wp-block-button__link,
+.wp-block-cover a:hover,
+.wp-block-cover-image a.wp-block-button__link,
+.wp-block-cover-image a:hover,
+.wp-block-media-text a.wp-block-button__link,
+.wp-block-media-text a:hover,
+p:not(.site-title) a.wp-block-button__link,
+p:not(.site-title) a:hover {
+	text-decoration: none;
+}
+
+.has-background a {
+	color: currentColor;
+}
+
+.editor-post-title__block .editor-post-title__input {
+	text-align: left;
+	color: #2c313f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #2c313f;
+}
+
+/**
+ * 2. Block Specific Styles
+ */
+/**
+ * 2.1. Column Block
+ */
+.wp-block-columns .wp-block-latest-posts {
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.wp-block-columns .wp-block-latest-posts > li {
+	border-top: 1px solid #f3f3f3;
+	margin: 0;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.wp-block-columns .wp-block-latest-posts > li > a {
+	font-size: 1rem;
+	font-weight: normal;
+	font-family: "Lato", sans-serif;
+	line-height: 1.6;
+}
+
+.wp-block-columns .wp-block-latest-posts > li > time.wp-block-latest-posts__post-date {
+	font-size: 1rem;
+}
+
+/**
+ * 2.2. Quote Block
+ */
+.wp-block-quote,
+.wp-block-quote[style*="text-align:center"],
+.wp-block-quote[style*="text-align:right"] {
+	border: 1px solid #f3f3f3;
+	padding: 16px;
+}
+
+.wp-block-quote p,
+.wp-block-quote[style*="text-align:center"] p,
+.wp-block-quote[style*="text-align:right"] p {
+	font-family: "Lato", sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+.wp-block-quote .wp-block-quote__citation,
+.wp-block-quote[style*="text-align:center"] .wp-block-quote__citation,
+.wp-block-quote[style*="text-align:right"] .wp-block-quote__citation {
+	color: inherit;
+	font-size: 1.2rem;
+}
+
+/**
+ * 2.3. File Block
+ */
+.wp-block-file div.wp-block-file__button {
+	line-height: 1.44;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	background-color: #3e69dc;
+	font-size: 0.83333rem;
+	padding: 16px 16px;
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+.wp-block-file div.wp-block-file__button:focus, .wp-block-file div.wp-block-file__button:hover {
+	color: white;
+	background-color: #2c313f;
+	opacity: 1;
+}
+
+/**
+ * 2.4. Pre Block, Code Block and Verse Block
+ */
+.wp-block-preformatted pre,
+.wp-block-verse pre {
+	font-family: "Inconsolata", monospace;
+	font-size: 1rem;
+}
+
+.wp-block-code .block-editor-plain-text {
+	font-family: "Inconsolata", monospace;
+	font-size: 1rem;
+}
+
+/**
+ * 2.5. Button Block
+ */
+.wp-block-button div.wp-block-button__link {
+	text-transform: uppercase;
+	border: 0;
+	border-radius: 5em;
+	text-transform: uppercase;
+}
+
+.wp-block-button div.wp-block-button__link.has-background:focus, .wp-block-button div.wp-block-button__link.has-background:hover, .wp-block-button div.wp-block-button__link.has-background:visited {
+	opacity: .8;
+}
+
+.wp-block-button.minimal .wp-block-button__link {
+	background: 0 0;
+	border: 2px solid;
+}
+
+/**
+ * 2.6. Search Block
+ */
+.wp-block-search .wp-block-search__button {
+	text-transform: uppercase;
+	line-height: 1.44;
+	color: white;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.83333rem;
+	background-color: #3e69dc;
+	border-radius: 5em;
+	border-width: 0;
+	padding: 16px 16px;
+	display: inline-block;
+	border: none;
+	box-shadow: none;
+}
+
+.wp-block-search .wp-block-search__button:focus, .wp-block-search .wp-block-search__button:hover, .wp-block-search .wp-block-search__button:visited {
+	color: white;
+	background-color: #2c313f;
+	opacity: 1;
 }
