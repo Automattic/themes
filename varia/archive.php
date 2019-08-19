@@ -13,7 +13,7 @@ get_header();
 ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main responsive-max-width">
+		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
