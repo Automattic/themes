@@ -20,10 +20,10 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "\"Source Serif Pro\"\, \"Baskerville Old Face\"\, Garamond\, \"Times New Roman\", serif",
+			"primary": "\"Source Sans Pro\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 			"secondary": "\"Source Serif Pro\"\, \"Baskerville Old Face\"\, Garamond\, \"Times New Roman\", serif",
-			"code": "monospace, monospace",
-			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+			"code": "Monaco, Consolas, Lucida Console, monospace",
+			"ui": "\"Source Sans Pro\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
 		/* Font Size */
 		"size": (
@@ -61,12 +61,12 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": #c43d80,
-			"hover": #8a2a5a,
+			"default": #23883D,
+			"hover": darken(#23883D, 10%),
 		),
 		"secondary": (
-			"default": #0B3954,
-			"hover": #051a27,
+			"default": #0963C4,
+			"hover": darken(#0963C4, 10%),
 		),
 		"foreground": (
 			"default": #111111,
@@ -83,7 +83,7 @@ $config-global: (
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
-		"text-selection": lightblue,
+		"text-selection": lighten(#23883D, 60%),
 		"black": black,
 		"white": white,
 	),
@@ -188,7 +188,7 @@ $config-button: (
  * Cover
  */
 $config-cover: (
-	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	"height": #{15 * map-deep-get($config-global, "spacing", "vertical")},
 );
 
 /**
@@ -287,7 +287,7 @@ $config-header: (
 		"color": (
 			"text": map-deep-get($config-global, "color", "foreground", "light"),
 			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
 		// Fonts & Typography
 		"title": (
@@ -303,7 +303,7 @@ $config-header: (
 		"description": (
 			// Fonts
 			"font": (
-				"family": map-deep-get($config-global, "font", "family", "primary"),
+				"family": map-deep-get($config-global, "font", "family", "secondary"),
 				"size": map-deep-get($config-global, "font", "size", "sm"),
 			),
 		),
@@ -330,7 +330,7 @@ $config-header: (
 		// Colors
 		"color": (
 			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
 		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
 	),

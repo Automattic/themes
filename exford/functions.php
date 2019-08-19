@@ -126,11 +126,21 @@ function exford_fonts_url() {
 	*/
 	$source_serif_pro = esc_html_x( 'on', 'Source Serif Pro font: on or off', 'exford' );
 
-	if ( 'off' !== $source_serif_pro ) {
+	/* Translators: If there are characters in your language that are not
+	* supported by Source Sans Pro, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$source_sans_pro = esc_html_x( 'on', 'Source Sans Pro font: on or off', 'exford' );
+
+	if ( 'off' !== $source_serif_pro || 'off' !== $source_sans_pro ) {
 		$font_families = array();
 
 		if ( 'off' !== $source_serif_pro ) {
 			$font_families[] = 'Source Serif Pro:400,700,400i,700i';
+		}
+
+		if ( 'off' !== $source_sans_pro ) {
+			$font_families[] = 'Source Sans Pro:400,700,400i,700i';
 		}
 
 		$query_args = array(
