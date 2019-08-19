@@ -121,7 +121,7 @@ function exford_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Source Sans, translate this to 'off'. Do not translate
+	* supported by Source Serif Pro, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$source_serif_pro = esc_html_x( 'on', 'Source Serif Pro font: on or off', 'exford' );
@@ -129,7 +129,9 @@ function exford_fonts_url() {
 	if ( 'off' !== $source_serif_pro ) {
 		$font_families = array();
 
-		$font_families[] = 'Source+Sans+Pro:400,400i,700,700i';
+		if ( 'off' !== $source_serif_pro ) {
+			$font_families[] = 'Source Serif Pro:400,700,400i,700i';
+		}
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -148,7 +150,7 @@ function exford_fonts_url() {
 function exford_scripts() {
 
 	// enqueue Google fonts, if necessary
-	 wp_enqueue_style( 'exford-fonts', exford_fonts_url(), array(), null );
+	wp_enqueue_style( 'exford-fonts', exford_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );
