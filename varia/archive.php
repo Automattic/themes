@@ -17,7 +17,7 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header responsive-max-width">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 				?>
