@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
+	<header class="entry-header responsive-max-width">
 		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
 
