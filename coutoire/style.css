@@ -1873,24 +1873,31 @@ p.has-background:not(.has-background-background-color) a {
 	letter-spacing: normal;
 }
 
-.wp-block-separator,
 hr {
-	border-bottom: 2px solid #DDDDDD;
+	border-bottom-color: #DDDDDD;
+	border-bottom-width: 2px;
 	clear: both;
 	margin-left: auto;
 	margin-right: auto;
-	/**
-	 * Block Options
-	 */
 }
 
-.wp-block-separator.is-style-wide,
-hr.is-style-wide {
+hr.wp-block-separator {
+	border-bottom-color: #DDDDDD;
+	/**
+		 * Block Options
+		 */
+}
+
+hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 96px;
+}
+
+hr.wp-block-separator.is-style-wide {
+	border-bottom-color: #DDDDDD;
 	border-bottom-width: 2px;
 }
 
-.wp-block-separator.is-style-dots:before,
-hr.is-style-dots:before {
+hr.wp-block-separator.is-style-dots:before {
 	color: #DDDDDD;
 	font-size: 1.728rem;
 	letter-spacing: 0.83333rem;
@@ -3133,7 +3140,7 @@ img#wpstats {
 .responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 .wp-block-pullquote.alignfull > p,
 .wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 .entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 	max-width: 100%;
 	margin-left: auto;
@@ -3144,7 +3151,7 @@ img#wpstats {
 	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 560px - 32px);
 	}
@@ -3154,7 +3161,7 @@ img#wpstats {
 	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 640px - 32px);
 	}
@@ -3164,7 +3171,7 @@ img#wpstats {
 	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
 	}
@@ -3174,7 +3181,7 @@ img#wpstats {
 	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
 	}
@@ -3184,7 +3191,7 @@ img#wpstats {
 	.responsive-max-width, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
 	.wp-block-pullquote.alignfull > p,
 	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright),
+	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
 	}
