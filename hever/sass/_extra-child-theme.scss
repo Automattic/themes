@@ -196,9 +196,12 @@ a {
 /**
  * Footer Menu
  */
-.footer-navigation .footer-menu {
-	margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-	margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+.footer-navigation .footer-menu > li:first-of-type {
+	margin-left: 0;
+}
+
+.footer-navigation .footer-menu > li:last-of-type {
+	margin-right: 0;
 }
 
 /**
