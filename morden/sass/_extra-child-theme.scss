@@ -24,10 +24,21 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 
-	@extend %responsive-alignwide;
-
 	@include media(mobile) {
 		box-shadow: 0 0 30px rgba(#000, 0.2);
+		max-width: 95vw;
+	}
+
+	@include media(tablet) {
+		max-width: 92vw;
+	}
+
+	@include media(desktop) {
+		max-width: 87vw;
+	}
+
+	@include media(wide) {
+		max-width: 1200px;
 	}
 }
 
@@ -281,6 +292,7 @@ body {
 // alignwide spaceing
 .entry-content > .alignwide {
 	@include media(mobile) {
+		width: 100%;
 		padding-left: #{2 * map-deep-get($config-global, "spacing", "unit")};
 		padding-right: #{2 * map-deep-get($config-global, "spacing", "unit")};
 	}

@@ -136,7 +136,7 @@ function morden_fonts_url() {
 	if ( 'off' !== $notosans ) {
 		$font_families = array();
 
-		$font_families[] = 'Noto+Sans:400,400i,700,700i';
+		$font_families[] = 'Noto Sans:400,400i,700,700i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
