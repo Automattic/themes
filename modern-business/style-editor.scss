@@ -19,7 +19,7 @@ Modern Business Editor Styles
  we use it to target wp-blocks with a matching data-align attribute.
  If no alignment is given, we target the base wp-block class. In both
  of these scenarios, we target top level blocks, and any top level blocks
- inside one of the FSE template part blocks.
+ inside one of the FSE template blocks.
  */
 @function get-block-selector($alignment) {
 	$main-block-selector: ".wp-block";
@@ -29,7 +29,7 @@ Modern Business Editor Styles
 
 	@return "
 	  #{$main-block-selector},
-	  .wp-block[data-type=\"a8c/post-content\"] #{$main-block-selector}";
+	  .wp-block.post-content__block #{$main-block-selector}";
 }
 
 /** === Editor Frame === */
@@ -95,8 +95,8 @@ body {
 	}
 }
 
-/** === FSE Template Part Blocks === */
-.wp-block[data-type="a8c/post-content"] {
+/** === FSE Template Blocks === */
+.wp-block.post-content__block {
 	width: 100%;
 }
 
