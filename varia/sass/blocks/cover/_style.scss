@@ -8,7 +8,6 @@
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text {
-		width: calc(100% - #{2 * map-deep-get($config-global, "spacing", "horizontal")});
 		color: #{map-deep-get($config-global, "color", "background", "default")};
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
@@ -41,6 +40,9 @@
 	}
 
 	.wp-block-cover__inner-container {
+
+		width: calc(100% - #{ 2 * map-deep-get($config-global, "spacing", "vertical") };
+
 		& > * {
 			margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 			margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
@@ -73,15 +75,6 @@
 			padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 			padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 			width: 100%;
-		}
-	}
-
-	&.alignwide,
-	&.alignfull {
-		.wp-block-cover__inner-container,
-		.wp-block-cover-image-text,
-		.wp-block-cover-text {
-			@extend %responsive-align-container;
 		}
 	}
 

@@ -42,22 +42,8 @@
 }
 
 /**
- * Align widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-@mixin align-width( $width: 100%, $multiplier: -0.25 ) {
-
-	$positive_multiplier: abs($multiplier);
-
-	margin-left: calc( #{$multiplier} * ( 100vw - #{$width} ) );
-	margin-right: calc( #{$multiplier} * ( 100vw - #{$width} ) );
-	width: calc( #{$width} + (#{$positive_multiplier} * 2) * ( 100vw - #{$width} ) );
-	max-width: calc( #{$width} + (#{$positive_multiplier} * 2) * ( 100vw - #{$width} ) );
-}
-
-/**
  * Align wide widths
- * - Sets negative margin for .alignwide and .alignfull blocks
+ * - Sets .alignwide widths
  */
 @mixin alignwide-width( $width: 100%, $multiplier...) {
 
@@ -65,21 +51,18 @@
 		$multiplier: (8 * map-deep-get($config-global, "spacing", "horizontal"));
 	}
 
-	//margin-left: calc( #{$multiplier} - ( 100vw - #{$width} ) );
-	//margin-right: calc( #{$multiplier} - ( 100vw - #{$width} ) );
-	margin-left: #{-1 * $multiplier};
-	margin-right: #{-1 * $multiplier};
-	width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
-	max-width: calc(#{$width} + #{2 * $multiplier}); // calc( #{$width} + #{$positive_multiplier * 2} + ( 100vw - #{$width} ) );
+	width: calc(#{$width} + #{2 * $multiplier});
+	max-width: calc(100vw - #{2 * map-deep-get($config-global, "spacing", "horizontal")});
 }
 
-/**
- * Align container widths
- * - Sets a fixed-width on content within alignwide and alignfull blocks
- */
-@mixin align-container-width( $width: 100% ) {
-	max-width: calc( #{$width} );
-	width: calc( #{$width} );
+@mixin alignwide-width-nested( $width: 100%, $multiplier...) {
+
+	@if length($multiplier) == 0 {
+		$multiplier: (8 * map-deep-get($config-global, "spacing", "horizontal"));
+	}
+
+	width: calc(#{$width} + #{2 * $multiplier});
+	max-width: 100%;
 }
 
 /**

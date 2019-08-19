@@ -10,6 +10,18 @@
 	}
 }
 
+// Remove vertical margins from image block wrappers when floated
+.entry-content > *[class="wp-block-image"],
+.entry-content [class*="inner-container"] > *[class="wp-block-image"] {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	// Remove top margins from the following element when previous image block is floated
+	& + * {
+		margin-top: 0;
+	}
+}
+
 img {
 	height: auto;
 	max-width: 100%;

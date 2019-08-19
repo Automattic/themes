@@ -61,8 +61,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		list-style: none;
+		margin: 0;
 		max-width: none;
-		margin: 0 #{-1 * map-deep-get($config-header, "main-nav", "link-padding")};
 		position: relative;
 
 		li {
@@ -97,8 +97,19 @@
 			}
 		}
 
-		& > li > a {
-			@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+		& > li {
+
+			&:first-of-type {
+				margin-left: -#{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			&:last-of-type {
+				margin-right: -#{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			& > a {
+				@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+			}
 		}
 
 		/* Sub-menus Flyout */

@@ -27,7 +27,7 @@
 
 	<?php varia_post_thumbnail(); ?>
 
-	<div class="entry-content responsive-max-width">
+	<div class="entry-content">
 		<?php
 		the_content(
 			sprintf(

@@ -35,6 +35,10 @@
 	 */
 	&:not(.is-style-solid-color) {
 		background: none;
+
+		blockquote {
+			padding-left: 0;
+		}
 	}
 
 	&.is-style-default {
@@ -53,8 +57,7 @@
 		color: #{map-deep-get($config-global, "color", "background", "default")};
 
 		&:not(.alignleft):not(.alignright) blockquote {
-			@extend %responsive-align-container;
-			// max-width: calc( var(--global--width-content) - (2 * calc( var(--global--width-content) / 12 )) );
+			@extend %responsive-aligndefault;
 		}
 
 		blockquote {
@@ -76,6 +79,6 @@
 	&.alignfull blockquote {
 		margin-left: auto;
 		margin-right: auto;
-		@extend %responsive-align-container;
+		@extend %responsive-aligndefault;
 	}
 }
