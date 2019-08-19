@@ -400,6 +400,8 @@ table,
 // Footer
 #colophon {
 	flex-direction: column;
+	padding-left: 0;
+	padding-right: 0;
 	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 
 	.site-info {
@@ -408,10 +410,11 @@ table,
 		border-top: 5px solid #{map-deep-get($config-global, "color", "primary", "default")};
 		font-weight: 900;
 		padding: #{map-deep-get($config-global, "spacing", "vertical")} #{map-deep-get($config-global, "spacing", "horizontal")};
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 
 		@include media(tablet) {
-			flex: 1 100%;
+			flex: 1 0 100%;
+			width: 100%;
 		}
 
 		a {
@@ -432,11 +435,12 @@ table,
 		text-align: center;
 		text-transform: uppercase;
 
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 
 		@include media(tablet) {
-			flex: 1 100%;
+			flex: 1 0 100%;
 			order: 1;
+			width: 100%;
 
 			.footer-menu {
 				justify-content: center;
