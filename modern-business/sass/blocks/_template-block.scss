@@ -48,15 +48,23 @@
 	&.site-footer .wp-block-a8c-navigation-menu {
 		text-align: left;
 	}
-	@include media(tablet) {
-		// Awkward selector to fight specificity
-		[data-type='a8c/navigation-menu'] .wp-block-a8c-navigation-menu {
-			text-align: center;
-		}
-	}
 
-	.wp-block-separator.is-style-default {
-		background: transparent;
+	&.site-footer {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			text-align: left;
+		}
+
+		.wp-block-separator {
+			margin: 16px 0;
+		}
+		.wp-block-a8c-navigation-menu {
+			margin-top: 0.6rem;
+		}
 	}
 }
 
