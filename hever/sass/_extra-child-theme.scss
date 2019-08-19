@@ -24,21 +24,29 @@ a {
  */
 #masthead,
 #colophon {
-	margin-left: auto;
-	margin-right: auto;
 	position: relative;
 
-	@extend %responsive-width-wide;
+	@extend %responsive-alignwide;
 }
 
 #masthead {
+	padding-left: 0;
+	padding-right: 0;
 	padding-bottom: 0;
+}
+
+#colophon {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /**
  * Mobile-Menu
  */
-
+.site-header {
+	margin-left: 0;
+	margin-right: 0;
+}
 
 /**
  * CSS-grid Desktop Menu
@@ -47,6 +55,8 @@ a {
 	.site-header {
 		align-items: center;
 		display: grid;
+		margin-left: auto;
+		margin-right: auto;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
@@ -155,6 +165,16 @@ a {
 	}
 }
 
+.main-navigation > div > ul > li:first-of-type,
+.social-navigation > div > ul > li:first-of-type {
+	margin-left: 0;
+}
+
+.main-navigation > div > ul > li:last-of-type,
+.social-navigation > div > ul > li:last-of-type {
+	margin-right: 0;
+}
+
 // Social Menu
 .social-navigation {
 	& > div > ul {
@@ -176,9 +196,12 @@ a {
 /**
  * Footer Menu
  */
-.footer-navigation .footer-menu {
-	margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-	margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+.footer-navigation .footer-menu > li:first-of-type {
+	margin-left: 0;
+}
+
+.footer-navigation .footer-menu > li:last-of-type {
+	margin-right: 0;
 }
 
 /**
@@ -235,7 +258,7 @@ table,
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 	}
 
 	&:after {
