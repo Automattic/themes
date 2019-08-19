@@ -45,7 +45,7 @@ a {
 	text-align: left;
 	z-index: 9999;
 
-	@extend %responsive-width-full;
+	@extend %responsive-alignfull;
 
 	@include media(mobile) {
 		align-items: flex-end;
@@ -501,7 +501,7 @@ table,
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 	}
 
   .widget-title,
@@ -605,14 +605,23 @@ table,
 .social-navigation {
 	background: #{map-deep-get($config-global, "color", "foreground", "dark")};
 	padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+	width: 100%;
 
-	@extend %responsive-width-full;
+	@extend %responsive-alignfull;
 
 	.social-links-menu {
 		margin: 0;
 		padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
 		text-align: center;
 	}
+}
+
+/**
+ * Footer Menu
+ */
+.site-footer > * {
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 }
 
 /**
