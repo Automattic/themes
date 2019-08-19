@@ -85,6 +85,11 @@ a {
 	&.main-navigation {
 		@include media(mobile) {
 			margin-bottom: 0;
+
+			> div > ul > li > .sub-menu {
+				border: 1px solid map-deep-get($config-global, "color", "border", "light");
+				box-shadow: none;
+			}
 		}
 	}
 
