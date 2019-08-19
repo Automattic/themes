@@ -3558,9 +3558,102 @@ p:not(.site-title) a:hover {
 }
 
 /**
- * Widget
+ * Widgets
  */
+.widget select {
+	max-width: 100%;
+}
+
 .widget-title {
 	font-size: 1.44rem;
 	margin-bottom: 16px;
+}
+
+.widget_archive ul,
+.widget_categories ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_pages ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+	margin-left: 0;
+	margin-right: 0;
+	list-style: none;
+}
+
+.widget_archive ul li,
+.widget_categories ul li,
+.widget_meta ul li,
+.widget_nav_menu ul li,
+.widget_pages ul li,
+.widget_recent_comments ul li,
+.widget_recent_entries ul li,
+.widget_rss ul li {
+	color: #6e6e6e;
+	font-weight: 700;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.widget_archive ul ul,
+.widget_categories ul ul,
+.widget_meta ul ul,
+.widget_nav_menu ul ul,
+.widget_pages ul ul,
+.widget_recent_comments ul ul,
+.widget_recent_entries ul ul,
+.widget_rss ul ul {
+	counter-reset: submenu;
+}
+
+.widget_archive ul ul > li > a::before,
+.widget_categories ul ul > li > a::before,
+.widget_meta ul ul > li > a::before,
+.widget_nav_menu ul ul > li > a::before,
+.widget_pages ul ul > li > a::before,
+.widget_recent_comments ul ul > li > a::before,
+.widget_recent_entries ul ul > li > a::before,
+.widget_rss ul ul > li > a::before {
+	font-weight: normal;
+	content: "– " counters(submenu, "– ", none);
+	counter-increment: submenu;
+}
+
+.widget_tag_cloud .tagcloud {
+	font-weight: 700;
+}
+
+.widget_search .search-field {
+	width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+	.widget_search .search-field {
+		width: auto;
+	}
+}
+
+.widget_search .search-submit {
+	display: block;
+	margin-top: 1rem;
+}
+
+.widget_calendar .calendar_wrap {
+	text-align: center;
+}
+
+.widget_calendar .calendar_wrap table td,
+.widget_calendar .calendar_wrap table th {
+	border: none;
+}
+
+.widget_calendar .calendar_wrap a {
+	text-decoration: underline;
+}
+
+.widget_links li,
+.widget_jp_blogs_i_follow li,
+.widget_rss_links li {
+	font-family: inherit;
 }

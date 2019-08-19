@@ -193,10 +193,88 @@ a {
 }
 
 /**
- * Widget
+ * Widgets
  */
+.widget {
+	select {
+		max-width: 100%;
+	}
+}
 
 .widget-title {
 	font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
 	margin-bottom: #{0.5 * $spacing_vertical};
+}
+
+.widget_archive,
+.widget_categories,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss {
+
+	ul {
+		margin-left: 0;
+		margin-right: 0;
+		list-style: none;
+
+		li {
+			color: map-deep-get($config-global, "color", "foreground", "light");
+			font-weight: 700;
+			margin-top: #{0.5 * $spacing_vertical};
+			margin-bottom: #{0.5 * $spacing_vertical};
+		}
+
+		ul {
+			counter-reset: submenu;
+		}
+
+		ul > li > a::before {
+			font-weight: normal;
+			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
+			counter-increment: submenu
+		}
+	}
+}
+
+.widget_tag_cloud {
+	.tagcloud {
+		font-weight: 700;
+	}
+}
+
+.widget_search {
+	.search-field {
+		width: 100%;
+
+		@include media(mobile) {
+			width: auto;
+		}
+	}
+
+	.search-submit {
+		display: block;
+		margin-top: $typescale-base;
+	}
+}
+
+.widget_calendar .calendar_wrap {
+	text-align: center;
+
+	table td,
+	table th {
+		border: none;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.widget_links li,
+.widget_jp_blogs_i_follow li,
+.widget_rss_links li {
+	font-family: inherit;
 }
