@@ -278,6 +278,14 @@ body {
 	}
 }
 
+// alignwide spaceing
+.entry-content > .alignwide {
+	@include media(mobile) {
+		padding-left: #{2 * map-deep-get($config-global, "spacing", "unit")};
+		padding-right: #{2 * map-deep-get($config-global, "spacing", "unit")};
+	}
+}
+
 // Table block
 table,
 .wp-block-table {
