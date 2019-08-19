@@ -140,7 +140,7 @@ function stratford_fonts_url() {
 	*/
 	$inconsolata = esc_html_x( 'on', 'Inconsolata font: on or off', 'stratford' );
 
-	if ( 'off' !== $playfair || 'off' !== $roboto ) {
+	if ( 'off' !== $poppins || 'off' !== $lato || 'off' !== $inconsolata ) {
 		$font_families = array();
 
 		if ( 'off' !== $poppins ) {
@@ -150,7 +150,7 @@ function stratford_fonts_url() {
 		if ( 'off' !== $lato ) {
 			$font_families[] = 'Lato:400,700,400italic,700italic';
 		}
-	
+
 		if ( 'off' !== $inconsolata ) {
 			$font_families[] = 'Inconsolata:400,700';
 		}
