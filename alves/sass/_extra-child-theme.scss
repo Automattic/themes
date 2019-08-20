@@ -1,0 +1,425 @@
+/**
+ * Extra Child Theme Styles
+ *
+ * 0. Mixins & Variables
+ * 1. General Helper Styles
+ * 2. Header
+ * 3. Main Wrapper and Content
+ * 4. Navigation Menu
+ * 6. Block Specific Styles
+ * 7. Widgets
+ */
+
+/**
+ * 0. Mixins and Variables
+ */
+@mixin alves-media( $res ) {
+	@if laptop-only == $res {
+		@media only screen and (max-width: #{map-deep-get($config-global, "breakpoint", "lg") - 1}) {
+			@content;
+		}
+	}
+}
+
+$color_background: #{map-deep-get($config-global, "color", "background", "default")};
+$color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
+$color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
+$color_primary: #{map-deep-get($config-global, "color", "primary", "default")};
+$color_secondary: #{map-deep-get($config-global, "color", "secondary", "default")};
+$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover")};
+$color_secondary_hover: #{map-deep-get($config-global, "color", "secondary", "hover")};
+$spacing_horizontal: #{map-deep-get($config-global, "spacing", "horizontal")};
+$spacing_vertical: #{map-deep-get($config-global, "spacing", "vertical")};
+$font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
+$font_size_sm: #{map-deep-get($config-global, "font", "size", "sm")};
+$font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
+$font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
+$font_size_lg: #{map-deep-get($config-global, "font", "size", "lg")};
+$font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
+$font_family_primary: #{map-deep-get($config-global, "font", "family", "primary")};
+$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
+$font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
+$font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
+$button_line_height: #{map-deep-get($config-button, "font", "line-height")};
+$button_font_weight: #{map-deep-get($config-button, "font", "weight")};
+$button_font_family: #{map-deep-get($config-button, "font", "family")};
+$button_font_size: #{map-deep-get($config-button, "font", "size")};
+$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")};
+$button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
+$button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
+$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h4")};
+$footer_widget_area_spacing_horizontal: 2 * map-deep-get($config-global, "spacing", "horizontal");
+$site_main_spacing_vertical: 2 * map-deep-get($config-global, "spacing", "vertical");
+
+/**
+ * 1. General Styles
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color_foreground;
+}
+
+a {
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	.wp-block-group &,
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.has-background {
+	a {
+		color: currentColor;
+	}
+}
+
+
+a {
+	text-decoration: none;
+}
+
+.site-branding,
+.site-info,
+.main-navigation,
+.entry-header,
+.entry-footer,
+.page-title,
+.author-title,
+.comments-title,
+.comment-reply-title {
+	text-align: center;
+}
+
+button,
+.archive .read-more a,
+.blog .read-more a,
+.search-results .read-more a,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button a {
+	transition: background-color 0.125s ease-in;
+}
+
+h3,
+blockquote cite,
+.site-branding .site-title,
+.widget-title  {
+	font-family: $font_family_secondary;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.entry-meta,
+.entry-footer {
+	color: $color_foreground;
+}
+
+/**
+ * 2. Header
+ */
+.site-header {
+	@extend %responsive-alignwide;
+	margin: 0 auto;
+
+	@include media(desktop) {
+		padding-top: $site_main_spacing_vertical;
+	}
+}
+
+/**
+ * 3. Main Wrapper and Content
+ */
+.site-content {
+	padding-top: $spacing_vertical;
+}
+
+
+ .home.page.hide-homepage-title {
+	.site-content {
+		.site-main {
+			padding-top: 0;
+		}
+		@include media(mobile-only) {
+			padding-top: $spacing_vertical;
+		}
+	}
+}
+
+.entry-content {
+	font-family: $font_family_primary;
+}
+
+
+
+
+#post-5 .entry-title {
+	display: none;
+}
+
+.site-content {
+	.site-main {
+		padding-top: 0;
+		padding-bottom: $site_main_spacing_vertical;
+	}
+
+	@include media(mobile-only) {
+		padding-top: $site_main_spacing_vertical;
+	}
+}
+
+/**
+ * 4. Navigation
+ */
+ .main-navigation > div {
+	text-align: left;
+}
+
+.main-navigation > div > ul,
+.social-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
+/**
+ * 5. General Block Styles
+ */
+ .has-secondary-hover-color[class] {
+	color: $color_secondary_hover !important;
+}
+
+.has-primary-hover-color[class] {
+	color: $color_primary_hover !important;
+}
+
+.has-foreground-default-color[class] {
+	color: $color_foreground !important;
+}
+
+.has-text-color {
+	&.has-secondary-hover-color[class] {
+		color: $color_secondary_hover !important;
+
+		&:hover {
+			color: $color_secondary_hover !important;
+		}
+	}
+
+	&.has-primary-hover-color[class] {
+		color: $color_primary_hover !important;
+
+		&:hover {
+			color: $color_primary_hover !important;
+		}
+	}
+
+	&.has-foreground-default-color[class] {
+		color: $color_foreground !important;
+
+		&:hover {
+			color: $color_foreground !important;
+		}
+	}
+}
+
+.has-background {
+	&.has-secondary-hover-background-color[class] {
+		background: $color_secondary_hover !important;
+
+		&:hover {
+			background: $color_secondary_hover !important;
+		}
+	}
+
+	&.has-primary-hover-background-color[class] {
+		background: $color_primary_hover !important;
+
+		&:hover {
+			background: $color_primary_hover !important;
+		}
+	}
+
+	&.has-foreground-default-background-color[class] {
+		background: $color_foreground !important;
+
+		&:hover {
+			background: $color_foreground !important;
+		}
+	}
+}
+
+/**
+ * Footer & Footer Widgets
+ */
+.site-footer {
+	@extend %responsive-alignfull;
+	background: $color_primary;
+	margin: 0 auto;
+	display: block;
+	color: $color_secondary;
+
+	button,
+	.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"], {
+		background:: #{map-deep-get($config-global, "color", "secondary", "default")};
+		color: #{map-deep-get($config-global, "color", "primary", "default")};
+
+		&:hover {
+		}
+}
+
+	#footer-widgets {
+		border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "light")};
+		@extend %responsive-alignwide;
+		display: flex;
+		flex-wrap: nowrap;
+		flex: 1 0 100%;
+		margin: 0 auto;
+
+		@include alves-media(laptop-only) {
+			display: block;
+		}
+
+		.widget-area {
+			flex: 1;
+			font-size: $font_size_sm;
+
+			@include media(laptop) {
+
+				padding-right: $footer_widget_area_spacing_horizontal;
+
+				&:last-of-type {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	#footer-info-wrapper {
+		@extend %responsive-alignwide;
+		display: flex;
+		margin: 0 auto;
+		padding-top: ($baseline-unit * .75);
+		max-width: 100%;
+
+
+		a {
+			font-family: $font_family_primary;
+			color: $color_secondary;
+			padding: 0;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+			}
+		}
+
+		.footer-navigation {
+			order: 1;
+			font-style: italic;
+			flex-wrap: nowrap;
+			flex: 1;
+			text-align: left;
+			padding-right: $spacing_horizontal;
+
+			.footer-menu {
+				display: block;
+				justify-content: left;
+				margin: 0;
+				color: $color_secondary;
+
+				li:after {
+					content: ' · ';
+					display: inline;
+					padding-right: 5px;
+					vertical-align: middle;
+				}
+
+				li:last-of-type:after {
+					content: '';
+				}
+			}
+		}
+
+		.site-info {
+			color: $color_secondary;
+			text-align: right;
+			order: 2;
+			font-style: italic;
+			flex-wrap: nowrap;
+			flex: 1;
+		}
+	}
+}
+
+/**
+ * Widgets
+ */
+.widget {
+	.widget-title {
+		font-weight: 700;
+		color: $color_secondary;
+		margin-bottom: $spacing_vertical;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+
+		&.children > li {
+			margin-bottom: 0;
+			margin-top: 0;
+			border: 0;
+
+			a {
+				padding-left: $spacing_horizontal;
+			}
+		}
+
+		li {
+			a {
+				color: $color_secondary;
+				border-top: 1px solid #{map-deep-get($config-global, "color", "border", "light")};
+				display: inline-block;
+				padding: ($baseline-unit * .75) 0;
+
+				&:hover {
+					color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+				}
+			}
+
+			&.recentcomments a {
+				padding: ($baseline-unit * .75) 0 !important;
+				display: inline-block !important;
+			}
+		}
+	}
+}
