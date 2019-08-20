@@ -10,6 +10,7 @@ Modern Business Editor Styles
 @import "sass/site/footer/site-footer";
 @import "sass/navigation/menu-main-navigation";
 @import "sass/typography/headings";
+@import "sass/blocks/template-block";
 
 /** === Helper Functions === */
 
@@ -27,9 +28,7 @@ Modern Business Editor Styles
 		$main-block-selector: ".wp-block[data-align=\"#{$alignment}\"]";
 	}
 
-	@return "
-	  #{$main-block-selector},
-	  .wp-block.post-content__block #{$main-block-selector}";
+	@return "#{$main-block-selector}, .wp-block.post-content__block #{$main-block-selector}";
 }
 
 /** === Editor Frame === */
@@ -911,69 +910,6 @@ ul.wp-block-archives,
 
 	.wp-block-latest-comments__comment-date {
 		font-size: $font__size-xs;
-	}
-}
-
-
-/** === Site Title Block === */
-
-.wp-block-a8c-site-title {
-	text-align: center;
-}
-
-/** === Site Description Block === */
-
-.wp-block-a8c-site-description {
-	&,&:focus {
-		text-align: center;
-		margin: 0;
-		// Line height rounded up from the description text-size set in style.css.
-		// It needs to be a bit larger to prevent text from getting cropped on top.
-		line-height: 0.8em;
-	}
-}
-
-/** === Site Logo Block === */
-.template__site-logo {
-	.components-placeholder.block-editor-media-placeholder {
-		width: 380px;
-		margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* Remove 100% width on figure to center align logo in editor on smaller screens */
-.block-editor-block-list__layout  {
-	.block-editor-block-list__block[data-align="full"] > .block-editor-block-list__block-edit  {
-		figure.fse-site-logo {
-			width: inherit;
-		}
-	}
-}
-
-.site-header .wp-block[data-align="full"] {
-	left: calc( -12.5% - 12px );
-	max-width: calc( 125% + 114px );
-	width: calc( 125% + 114px );
-}
-
-.template-block.site-header .wp-block[data-align="full"] {
-	left: calc( -12.5% - 9px );
-	max-width: calc( 125% + 111px );
-	width: calc( 125% + 111px );
-}
-
-.site-footer {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		text-align: left;
-	}
-	.wp-block-separator {
-		margin: 16px 0;
 	}
 }
 
