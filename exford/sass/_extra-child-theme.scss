@@ -218,6 +218,14 @@ a {
 	h6 {
 		font-size: #{map-deep-get($config-global, "font", "size", "md")};
 	}
+
+	@include media(mobile) {
+		min-height: 60vh;
+	}
+
+	@include media(laptop) {
+		min-height: 80vh;
+	}
 }
 
 /**

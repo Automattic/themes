@@ -328,7 +328,7 @@ object {
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: #111111;
-	min-height: 80vh;
+	min-height: 480px;
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
@@ -889,4 +889,18 @@ table th,
 .wp-block-cover h6,
 .wp-block-cover-image h6 {
 	font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-cover,
+	.wp-block-cover-image {
+		min-height: 60vh;
+	}
+}
+
+@media only screen and (min-width: 782px) {
+	.wp-block-cover,
+	.wp-block-cover-image {
+		min-height: 80vh;
+	}
 }
