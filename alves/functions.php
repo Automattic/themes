@@ -29,25 +29,25 @@ if ( ! function_exists( 'alves_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'alves' ),
 					'shortName' => __( 'S', 'alves' ),
-					'size'      => 19.5,
+					'size'      => 16.6667,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'alves' ),
 					'shortName' => __( 'M', 'alves' ),
-					'size'      => 22,
+					'size'      => 20,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'alves' ),
 					'shortName' => __( 'L', 'alves' ),
-					'size'      => 36.5,
+					'size'      => 34.5667,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'alves' ),
 					'shortName' => __( 'XL', 'alves' ),
-					'size'      => 49.5,
+					'size'      => 49.7667,
 					'slug'      => 'huge',
 				),
 			)
