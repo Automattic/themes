@@ -62,21 +62,21 @@ $config-global: (
 	"color": (
 		"primary": (
 			"default": #3E7D98,
-			"hover": #9B6A36,
+			"hover": #2f5f74,
 		),
 		"secondary": (
-			"default": #fcfbf9,
-			"hover": #ffcf96,
+			"default": #9B6A36,
+			"hover": #755029,
 		),
 		"foreground": (
 			"default": #394d55,
-			"light": #394d55, // must be accessible against background (#fcfbf9,)
-			"dark": darkgray, // must be accessible against background
+			"light": #4d6974, // must be accessible against background (#fcfbf9,)
+			"dark": #253136, // must be accessible against background
 		),
 		"background": (
-			"default": white,
+			"default": #ffffff,
 			"light": #fafafa, // must be accessible against foreground-default
-			"dark": #2d2a26, // must be accessible against foreground-default
+			"dark": #d9d9d9, // must be accessible against foreground-default
 		),
 		"border": (
 			"default": #3E7D98,
@@ -100,7 +100,7 @@ $config-global: (
 	"breakpoint": (
 		"sm": 560px,
 		"md": 640px,
-		"lg": 732px,
+		"lg": 782px,
 		"xl": 1024px,
 		"xxl": 1280px,
 	),
@@ -162,8 +162,8 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "secondary", "default"),
-		"text-hover": map-deep-get($config-global, "color", "secondary", "default"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
 		"background": map-deep-get($config-global, "color", "primary", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
 	),
@@ -294,7 +294,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "xl"),
+				"size": map-deep-get($config-global, "font", "size", "lg"),
 				"weight": bold,
 				"line-height": 1,
 			),
@@ -319,7 +319,7 @@ $config-header: (
 		// Fonts
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
-			"size": map-deep-get($config-global, "font", "size", "base"),
+			"size": map-deep-get($config-global, "font", "size", "sm"),
 			"weight": bold,
 			"line-height": 1,
 		),

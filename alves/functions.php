@@ -65,23 +65,28 @@ if ( ! function_exists( 'alves_setup' ) ) :
 				array(
 					'name'  => __( 'Secondary', 'alves' ),
 					'slug'  => 'secondary',
-					'color' => '#fcfbf9',
-				),
-				array(
-					'name'  => __( 'Dark Orange', 'alves' ),
-					'slug'  => 'primary-hover',
 					'color' => '#9B6A36',
 				),
 				array(
+					'name'  => __( 'Dark Gray', 'alves' ),
+					'slug'  => 'foreground-dark',
+					'color' => '#253136',
+				),
+				array(
 					'name'  => __( 'Gray', 'alves' ),
-					'slug'  => 'foreground-default',
+					'slug'  => 'foreground',
 					'color' => '#394d55',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'alves' ),
-					'slug'  => 'secondary-hover',
-					'color' => '#ffcf96',
+					'slug'  => 'foreground-light',
+					'color' => '#4d6974',
 				),
+				array(
+                    'name'  => __( 'White', 'alves' ),
+                    'slug'  => 'background',
+                    'color' => '#ffffff',
+                ),
 			)
 		);
 	}
