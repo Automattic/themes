@@ -83,16 +83,20 @@ a {
 	}
 }
 
-
 a {
 	text-decoration: none;
 }
 
+.entry-header,
+.page-header {
+	padding-top: $spacing_vertical;
+}
 
 .site-info,
-.entry-header,
 .entry-footer,
+.entry-header,
 .page-title,
+.page-header,
 .author-title,
 .comments-title,
 .comment-reply-title {
@@ -140,17 +144,6 @@ blockquote p {
 /**
  * 2. Header
  */
-/*
-.site-header {
-	@extend %responsive-alignwide;
-	margin: 0 auto;
-
-	@include media(desktop) {
-		padding-top: $site_main_spacing_vertical;
-	}
-}
-*/
-
 /**
  * Wide Header & Footer
  */
@@ -163,7 +156,7 @@ blockquote p {
 #masthead {
 	padding-left: 0;
 	padding-right: 0;
-	padding-bottom: 0;
+	padding-bottom: $spacing_vertical;
 }
 
 /**
