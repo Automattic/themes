@@ -189,6 +189,10 @@ $config-button: (
  */
 $config-cover: (
 	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	"color": (
+		"foreground": #{map-deep-get($config-global, "color", "background", "default")},
+		"background": #{map-deep-get($config-global, "color", "foreground", "default")},
+	)
 );
 
 /**
