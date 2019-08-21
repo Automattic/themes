@@ -66,11 +66,16 @@ body {
  * Wide Header & Footer
  */
 #masthead {
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
-	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 	position: relative;
+
+	.site-header-wrap {
+
+		@extend %responsive-alignwide;
+
+		& > * {
+			max-width: 100%;
+		}
+	}
 }
 
 #colophon {
@@ -99,7 +104,7 @@ body {
  * CSS-grid Desktop Menu
  */
 @include media(mobile) {
-	.site-header {
+	.site-header-wrap {
 		align-items: center;
 		display: grid;
 		grid-template-columns: auto;
@@ -217,8 +222,8 @@ body {
  */
 #masthead {
 	background: #{map-deep-get($config-global, "color", "foreground", "default")};
-	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
-	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-left: 0;
+	padding-right: 0;
 
 	& > * {
 		position: relative;
@@ -228,10 +233,6 @@ body {
 // Site Title
 .site-description {
 	color: #{map-deep-get($config-header, "branding", "color", "text")};
-}
-
-.site-title + .site-description {
-	margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
 }
 
 /**
