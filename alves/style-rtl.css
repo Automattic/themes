@@ -3558,7 +3558,6 @@ blockquote p {
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
-		padding-top: 8px;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
 	.site-header .main-navigation > div > ul > li.focus > ul:before,
@@ -3588,6 +3587,10 @@ blockquote p {
 	margin-left: 0;
 }
 
+.footer-navigation .footer-menu > li:first-of-type {
+	margin-right: 0;
+}
+
 .social-navigation > div > ul {
 	flex-wrap: wrap;
 }
@@ -3605,13 +3608,9 @@ blockquote p {
 	}
 }
 
-#post-5 .entry-title {
-	display: none;
-}
-
 .site-content .site-main {
 	padding-top: 0;
-	padding-bottom: 64px;
+	padding-bottom: 0;
 }
 
 @media only screen and (max-width: 559px) {
@@ -3633,85 +3632,13 @@ blockquote p {
 }
 
 /**
- * 5. General Block Styles
- */
-.has-secondary-hover-color[class] {
-	color: #755029 !important;
-}
-
-.has-primary-hover-color[class] {
-	color: #2f5f74 !important;
-}
-
-.has-foreground-default-color[class] {
-	color: #394d55 !important;
-}
-
-.has-text-color.has-secondary-hover-color[class] {
-	color: #755029 !important;
-}
-
-.has-text-color.has-secondary-hover-color[class]:hover {
-	color: #755029 !important;
-}
-
-.has-text-color.has-primary-hover-color[class] {
-	color: #2f5f74 !important;
-}
-
-.has-text-color.has-primary-hover-color[class]:hover {
-	color: #2f5f74 !important;
-}
-
-.has-text-color.has-foreground-default-color[class] {
-	color: #394d55 !important;
-}
-
-.has-text-color.has-foreground-default-color[class]:hover {
-	color: #394d55 !important;
-}
-
-.has-background.has-secondary-hover-background-color[class] {
-	background: #755029 !important;
-}
-
-.has-background.has-secondary-hover-background-color[class]:hover {
-	background: #755029 !important;
-}
-
-.has-background.has-primary-hover-background-color[class] {
-	background: #2f5f74 !important;
-}
-
-.has-background.has-primary-hover-background-color[class]:hover {
-	background: #2f5f74 !important;
-}
-
-.has-background.has-foreground-default-background-color[class] {
-	background: #394d55 !important;
-}
-
-.has-background.has-foreground-default-background-color[class]:hover {
-	background: #394d55 !important;
-}
-
-/**
  * Footer & Footer Widgets
  */
 .site-footer {
-	background: #3E7D98;
 	margin: 0 auto;
 	display: block;
-	color: #ffffff;
-}
-
-.site-footer button,
-.site-footer .button,
-.site-footer input[type="button"],
-.site-footer input[type="reset"],
-.site-footer input[type="submit"] {
-	background: #9B6A36;
-	color: #3E7D98;
+	padding-right: spacing_horizontal;
+	padding-left: spacing_horizontal;
 }
 
 .site-footer #footer-widgets {
@@ -3750,19 +3677,18 @@ blockquote p {
 }
 
 .site-footer #footer-info-wrapper a {
-	font-family: "Lora", Georgia, sans-serif;
-	color: #ffffff;
+	color: #394d55;
+	font-family: "Karla", Arial, sans-serif;
 	padding: 0;
 	text-decoration: none;
 }
 
 .site-footer #footer-info-wrapper a:hover, .site-footer #footer-info-wrapper a:focus {
-	text-decoration: underline;
+	color: #3E7D98;
 }
 
 .site-footer #footer-info-wrapper .footer-navigation {
 	order: 1;
-	font-style: italic;
 	flex-wrap: nowrap;
 	flex: 1;
 	text-align: right;
@@ -3773,7 +3699,6 @@ blockquote p {
 	display: block;
 	justify-content: left;
 	margin: 0;
-	color: #9B6A36;
 }
 
 .site-footer #footer-info-wrapper .footer-navigation .footer-menu li:after {
@@ -3800,7 +3725,6 @@ blockquote p {
  * Widgets
  */
 .widget .widget-title {
-	color: #ffffff;
 	margin-bottom: 32px;
 }
 
@@ -3820,7 +3744,6 @@ blockquote p {
 }
 
 .widget ul li a {
-	color: #ffffff;
 	padding: 6px 0;
 }
 
@@ -3830,4 +3753,9 @@ blockquote p {
 
 .widget ul li.recentcomments a {
 	padding: 6px 0 !important;
+}
+
+.wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.wp-block-cover .wp-block-cover__inner-container .wp-block-quote cite {
+	color: #d9d9d9;
 }

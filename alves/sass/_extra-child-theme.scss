@@ -23,6 +23,7 @@
 
 $color_background: #{map-deep-get($config-global, "color", "background", "default")};
 $color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
+$color_background_dark: #{map-deep-get($config-global, "color", "background", "dark")};
 $color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
 $color_primary: #{map-deep-get($config-global, "color", "primary", "default")};
 $color_secondary: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -48,7 +49,7 @@ $button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}
 $button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
 $button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
 $font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h4")};
-$footer_widget_area_spacing_horizontal: 2 * map-deep-get($config-global, "spacing", "horizontal");
+$footer_spacing_horizontal: 2 * map-deep-get($config-global, "spacing", "horizontal");
 $site_main_spacing_vertical: 2 * map-deep-get($config-global, "spacing", "vertical");
 
 /**
@@ -304,6 +305,10 @@ blockquote p {
 	margin-right: 0;
 }
 
+.footer-navigation .footer-menu > li:first-of-type {
+	margin-left: 0;
+}
+
 // Social Menu
 .social-navigation {
 	& > div > ul {
@@ -326,14 +331,10 @@ blockquote p {
 	}
 }
 
-#post-5 .entry-title {
-	display: none;
-}
-
 .site-content {
 	.site-main {
 		padding-top: 0;
-		padding-bottom: $site_main_spacing_vertical;
+		padding-bottom: 0;
 	}
 
 	@include media(mobile-only) {
@@ -354,93 +355,23 @@ blockquote p {
 }
 
 /**
- * 5. General Block Styles
- */
- .has-secondary-hover-color[class] {
-	color: $color_secondary_hover !important;
-}
-
-.has-primary-hover-color[class] {
-	color: $color_primary_hover !important;
-}
-
-.has-foreground-default-color[class] {
-	color: $color_foreground !important;
-}
-
-.has-text-color {
-	&.has-secondary-hover-color[class] {
-		color: $color_secondary_hover !important;
-
-		&:hover {
-			color: $color_secondary_hover !important;
-		}
-	}
-
-	&.has-primary-hover-color[class] {
-		color: $color_primary_hover !important;
-
-		&:hover {
-			color: $color_primary_hover !important;
-		}
-	}
-
-	&.has-foreground-default-color[class] {
-		color: $color_foreground !important;
-
-		&:hover {
-			color: $color_foreground !important;
-		}
-	}
-}
-
-.has-background {
-	&.has-secondary-hover-background-color[class] {
-		background: $color_secondary_hover !important;
-
-		&:hover {
-			background: $color_secondary_hover !important;
-		}
-	}
-
-	&.has-primary-hover-background-color[class] {
-		background: $color_primary_hover !important;
-
-		&:hover {
-			background: $color_primary_hover !important;
-		}
-	}
-
-	&.has-foreground-default-background-color[class] {
-		background: $color_foreground !important;
-
-		&:hover {
-			background: $color_foreground !important;
-		}
-	}
-}
-
-/**
  * Footer & Footer Widgets
  */
 .site-footer {
 	@extend %responsive-alignfull;
-	background: $color_primary;
 	margin: 0 auto;
 	display: block;
-	color: $color_background;
+	padding-left: $spacing_horizontal;
+	padding-right: $spacing_horizontal;
 
 	button,
 	.button,
 	input[type="button"],
 	input[type="reset"],
 	input[type="submit"], {
-		background:: #{map-deep-get($config-global, "color", "secondary", "default")};
-		color: #{map-deep-get($config-global, "color", "primary", "default")};
-
 		&:hover {
 		}
-}
+	}
 
 	#footer-widgets {
 		border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "light")};
@@ -460,7 +391,7 @@ blockquote p {
 
 			@include media(laptop) {
 
-				padding-right: $footer_widget_area_spacing_horizontal;
+				padding-right: $footer_spacing_horizontal;
 
 				&:last-of-type {
 					padding-right: 0;
@@ -478,20 +409,19 @@ blockquote p {
 
 
 		a {
-			font-family: $font_family_primary;
-			color: $color_background;
+			color: $color_foreground;
+			font-family: $font_family_secondary;
 			padding: 0;
 			text-decoration: none;
 
 			&:hover,
 			&:focus {
-				text-decoration: underline;
+				color: $color_primary;
 			}
 		}
 
 		.footer-navigation {
 			order: 1;
-			font-style: italic;
 			flex-wrap: nowrap;
 			flex: 1;
 			text-align: left;
@@ -501,7 +431,6 @@ blockquote p {
 				display: block;
 				justify-content: left;
 				margin: 0;
-				color: $color_secondary;
 
 				li:after {
 					content: ' · ';
@@ -532,7 +461,6 @@ blockquote p {
  */
 .widget {
 	.widget-title {
-		color: $color_background;
 		margin-bottom: $spacing_vertical;
 	}
 
@@ -552,7 +480,6 @@ blockquote p {
 
 		li {
 			a {
-				color: $color_background;
 				padding: ($baseline-unit * .75) 0;
 
 				&:hover {
@@ -565,4 +492,9 @@ blockquote p {
 			}
 		}
 	}
+}
+
+.wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.wp-block-cover .wp-block-cover__inner-container .wp-block-quote cite {
+	color: $color_background_dark;
 }
