@@ -2377,6 +2377,11 @@ table th,
 	z-index: 1;
 }
 
+.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
+	cursor: pointer;
+	z-index: 99999;
+}
+
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2387,6 +2392,14 @@ table th,
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
+	}
+	.main-navigation > div > ul li:hover > ul,
+	.main-navigation > div > ul li[focus-within] > ul,
+	.main-navigation > div > ul li ul:hover,
+	.main-navigation > div > ul li ul:focus {
+		visibility: visible;
+		opacity: 1;
+		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,
@@ -3694,7 +3707,7 @@ blockquote p {
 	background: #3E7D98;
 	margin: 0 auto;
 	display: block;
-	color: #9B6A36;
+	color: #ffffff;
 }
 
 .site-footer button,
@@ -3743,13 +3756,13 @@ blockquote p {
 
 .site-footer #footer-info-wrapper a {
 	font-family: "Lora", Georgia, sans-serif;
-	color: #9B6A36;
+	color: #ffffff;
 	padding: 0;
 	text-decoration: none;
 }
 
 .site-footer #footer-info-wrapper a:hover, .site-footer #footer-info-wrapper a:focus {
-	color: #755029;
+	text-decoration: underline;
 }
 
 .site-footer #footer-info-wrapper .footer-navigation {
@@ -3792,7 +3805,7 @@ blockquote p {
  * Widgets
  */
 .widget .widget-title {
-	color: #9B6A36;
+	color: #ffffff;
 	margin-bottom: 32px;
 }
 
@@ -3812,12 +3825,12 @@ blockquote p {
 }
 
 .widget ul li a {
-	color: #9B6A36;
+	color: #ffffff;
 	padding: 6px 0;
 }
 
 .widget ul li a:hover {
-	color: #755029;
+	text-decoration: underline;
 }
 
 .widget ul li.recentcomments a {

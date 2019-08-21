@@ -244,7 +244,7 @@ blockquote p {
 						background: #{map-deep-get($config-global, "color", "primary", "default")};
 
 						a {
-							color: #{map-deep-get($config-global, "color", "secondary", "default")};
+							color: $color_background;
 
 							&:hover,
 							&:focus {
@@ -436,7 +436,7 @@ blockquote p {
 	background: $color_primary;
 	margin: 0 auto;
 	display: block;
-	color: $color_secondary;
+	color: $color_background;
 
 	button,
 	.button,
@@ -487,13 +487,13 @@ blockquote p {
 
 		a {
 			font-family: $font_family_primary;
-			color: $color_secondary;
+			color: $color_background;
 			padding: 0;
 			text-decoration: none;
 
 			&:hover,
 			&:focus {
-				color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+				text-decoration: underline;
 			}
 		}
 
@@ -540,7 +540,7 @@ blockquote p {
  */
 .widget {
 	.widget-title {
-		color: $color_secondary;
+		color: $color_background;
 		margin-bottom: $spacing_vertical;
 	}
 
@@ -560,11 +560,11 @@ blockquote p {
 
 		li {
 			a {
-				color: $color_secondary;
+				color: $color_background;
 				padding: ($baseline-unit * .75) 0;
 
 				&:hover {
-					color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+					text-decoration: underline;
 				}
 			}
 
