@@ -43,5 +43,11 @@
 	&.alignfull {
 		padding-left: #{map-deep-get($config-global, "spacing", "unit")};
 		padding-right: #{map-deep-get($config-global, "spacing", "unit")};
+
+		.entry-content [class*="inner-container"] &,
+		.entry-content .has-background & {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
