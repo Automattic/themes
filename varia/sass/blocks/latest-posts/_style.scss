@@ -26,11 +26,22 @@
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
 		line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+
+		.entry-content [class*="inner-container"] &,
+		.entry-content .has-background & {
+			color: currentColor;
+		}
 	}
 
-	.wp-block-latest-posts__post-excerpt {
+	.wp-block-latest-posts__post-excerpt,
+	.wp-block-latest-posts__post-full-content {
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
 		margin: 0;
+	}
+
+	&.alignfull {
+		padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+		padding-right: #{map-deep-get($config-global, "spacing", "unit")};
 	}
 }
