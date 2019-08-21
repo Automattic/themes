@@ -41,13 +41,13 @@ if ( ! function_exists( 'alves_setup' ) ) :
 				array(
 					'name'      => __( 'Large', 'alves' ),
 					'shortName' => __( 'L', 'alves' ),
-					'size'      => 34.5667,
+					'size'      => 28.8,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'alves' ),
 					'shortName' => __( 'XL', 'alves' ),
-					'size'      => 49.7667,
+					'size'      => 34.5667,
 					'slug'      => 'huge',
 				),
 			)
