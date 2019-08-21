@@ -60,12 +60,12 @@ if ( ! function_exists( 'exford_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'exford' ),
 					'slug'  => 'primary',
-					'color' => '#c43d80',
+					'color' => '#23883D',
 				),
 				array(
 					'name'  => __( 'Secondary', 'exford' ),
 					'slug'  => 'secondary',
-					'color' => '#0B3954',
+					'color' => '#0963C4',
 				),
 				array(
 					'name'  => __( 'Black', 'exford' ),
@@ -80,17 +80,17 @@ if ( ! function_exists( 'exford_setup' ) ) :
 				array(
 					'name'  => __( 'Gray', 'exford' ),
 					'slug'  => 'foreground-light',
-					'color' => '#6e6e6e',
+					'color' => '#6E6E6E',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'exford' ),
 					'slug'  => 'background-dark',
-					'color' => '#dddddd',
+					'color' => '#CCCCCC',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'exford' ),
 					'slug'  => 'background-light',
-					'color' => '#f7f7f7',
+					'color' => '#F7F7F7',
 				),
 				array(
 					'name'  => __( 'White', 'exford' ),
