@@ -42,6 +42,19 @@ a {
 	}
 }
 
+.responsive-max-width,
+.wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote,
+.wp-block-pullquote.alignwide > p,
+.wp-block-pullquote.alignfull > p,
+.wp-block-pullquote.alignwide blockquote,
+.wp-block-pullquote.alignfull blockquote,
+hr.wp-block-separator.is-style-wide,
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+.entry-content .wp-audio-shortcode, .post-navigation, .pagination {
+	width: calc(100% - #{2 * map-deep-get($config-global, "spacing", "unit")});
+}
+
 body {
 	background: #{map-deep-get($config-global, "color", "background", "white")};
 	@include media(mobile) {
@@ -52,11 +65,17 @@ body {
 /**
  * Wide Header & Footer
  */
-#masthead,
-#colophon {
+#masthead {
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 	position: relative;
+}
+
+#colophon {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 /**
@@ -128,16 +147,6 @@ body {
 
 			& > div > ul {
 				justify-content: flex-end;
-				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-
-				& > li {
-					padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
-
-					& > a {
-						padding: 0;
-					}
-				}
 
 				& > .menu-item-has-children > a::after {
 						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
@@ -216,16 +225,6 @@ body {
 	}
 }
 
-.main-navigation > div > ul > li:first-of-type,
-.social-navigation > div > ul > li:first-of-type {
-	margin-left: inherit;
-}
-
-.main-navigation > div > ul > li:last-of-type,
-.social-navigation > div > ul > li:last-of-type {
-	margin-right: inherit;
-}
-
 // Site Title
 .site-description {
 	color: #{map-deep-get($config-header, "branding", "color", "text")};
@@ -255,9 +254,6 @@ body {
  */
 // Footer Menu
 .footer-navigation .footer-menu {
-	margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-	margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-
 	a {
 		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
 		line-height: #{map-deep-get($config-global, "font", "line-height", "xs")};
@@ -289,15 +285,6 @@ body {
 	}
 }
 
-// alignwide spaceing
-.entry-content > .alignwide {
-	@include media(mobile) {
-		width: 100%;
-		padding-left: #{2 * map-deep-get($config-global, "spacing", "unit")};
-		padding-right: #{2 * map-deep-get($config-global, "spacing", "unit")};
-	}
-}
-
 // Table block
 table,
 .wp-block-table {
@@ -325,8 +312,6 @@ table,
 		padding-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 	}
-
-	@extend %responsive-alignfull;
 }
 
 // Entry Meta
@@ -337,7 +322,6 @@ table,
 }
 
 // Sticky
-
 .sticky-post,
 .a8c-posts-list .a8c-posts-list-item__featured span {
 	background: #{map-deep-get($config-global, "color", "background", "light")};
