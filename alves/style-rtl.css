@@ -3361,12 +3361,12 @@ img#wpstats {
  * Extra Child Theme Styles
  *
  * 0. Mixins & Variables
- * 1. General Helper Styles
- * 2. Header
+ * 1. General Styles
+ * 2. Header & Navigation
  * 3. Main Wrapper and Content
- * 4. Navigation Menu
- * 6. Block Specific Styles
- * 7. Widgets
+ * 4. Footer & Footer Widgets
+ * 5. Block Specific Styles
+ * 6. Widgets
  */
 /**
  * 0. Mixins and Variables
@@ -3465,7 +3465,7 @@ blockquote p {
 }
 
 /**
- * 2. Header
+ * 2. Header & Navigation
  */
 /**
  * Wide Header & Footer
@@ -3595,6 +3595,15 @@ blockquote p {
 	flex-wrap: wrap;
 }
 
+.main-navigation > div {
+	text-align: right;
+}
+
+.main-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
 /**
  * 3. Main Wrapper and Content
  */
@@ -3620,25 +3629,13 @@ blockquote p {
 }
 
 /**
- * 4. Navigation
- */
-.main-navigation > div {
-	text-align: right;
-}
-
-.main-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
-}
-
-/**
- * Footer & Footer Widgets
+ * 4. Footer & Footer Widgets
  */
 .site-footer {
 	margin: 0 auto;
 	display: block;
-	padding-right: spacing_horizontal;
-	padding-left: spacing_horizontal;
+	padding-right: 16px;
+	padding-left: 16px;
 }
 
 .site-footer #footer-widgets {
@@ -3722,7 +3719,7 @@ blockquote p {
 }
 
 /**
- * Widgets
+ * 5. Widgets
  */
 .widget .widget-title {
 	margin-bottom: 32px;
@@ -3755,6 +3752,9 @@ blockquote p {
 	padding: 6px 0 !important;
 }
 
+/**
+ * 6. Blocks
+ */
 .wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts .wp-block-latest-posts__post-date,
 .wp-block-cover .wp-block-cover__inner-container .wp-block-quote cite {
 	color: #d9d9d9;

@@ -2,12 +2,12 @@
  * Extra Child Theme Styles
  *
  * 0. Mixins & Variables
- * 1. General Helper Styles
- * 2. Header
+ * 1. General Styles
+ * 2. Header & Navigation
  * 3. Main Wrapper and Content
- * 4. Navigation Menu
- * 6. Block Specific Styles
- * 7. Widgets
+ * 4. Footer & Footer Widgets
+ * 5. Widgets
+ * 6. Blocks
  */
 
 /**
@@ -143,7 +143,7 @@ blockquote p {
 }
 
 /**
- * 2. Header
+ * 2. Header & Navigation
  */
 /**
  * Wide Header & Footer
@@ -316,6 +316,15 @@ blockquote p {
 	}
 }
 
+.main-navigation > div {
+	text-align: left;
+}
+
+.main-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
 /**
  * 3. Main Wrapper and Content
  */
@@ -343,19 +352,7 @@ blockquote p {
 }
 
 /**
- * 4. Navigation
- */
- .main-navigation > div {
-	text-align: left;
-}
-
-.main-navigation > div > ul,
-.pagination .nav-links {
-	justify-content: center;
-}
-
-/**
- * Footer & Footer Widgets
+ * 4. Footer & Footer Widgets
  */
 .site-footer {
 	@extend %responsive-alignfull;
@@ -457,7 +454,7 @@ blockquote p {
 }
 
 /**
- * Widgets
+ * 5. Widgets
  */
 .widget {
 	.widget-title {
@@ -494,6 +491,9 @@ blockquote p {
 	}
 }
 
+/**
+ * 6. Blocks
+ */
 .wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts .wp-block-latest-posts__post-date,
 .wp-block-cover .wp-block-cover__inner-container .wp-block-quote cite {
 	color: $color_background_dark;
