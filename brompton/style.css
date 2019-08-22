@@ -1962,29 +1962,45 @@ table th,
 	vertical-align: middle;
 }
 
-/* Text Alignments */
+/* Block Alignments */
+/**
+ * .alignleft
+ */
 .alignleft {
 	/*rtl:ignore*/
 	text-align: left;
 	/*rtl:ignore*/
 	float: left;
 	margin-top: 0;
+	/*rtl:ignore*/
+	margin-right: 16px;
 	margin-bottom: 32px;
 }
 
+/**
+ * .aligncenter
+ */
 .aligncenter {
 	clear: both;
 	float: none;
 	text-align: center;
 }
 
+/**
+ * .alignright
+ */
 .alignright {
 	/*rtl:ignore*/
 	float: right;
-	/*rtl:ignore*/
-	margin-left: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
+	/*rtl:ignore*/
+	margin-left: 16px;
+}
+
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
 }
 
 /**
@@ -2419,12 +2435,12 @@ table th,
 	}
 }
 
-.main-navigation > div > ul > li:first-of-type {
-	margin-left: -16px;
+.main-navigation > div > ul > li:first-of-type > a {
+	padding-left: 0;
 }
 
-.main-navigation > div > ul > li:last-of-type {
-	margin-right: -16px;
+.main-navigation > div > ul > li:last-of-type > a {
+	padding-right: 0;
 }
 
 .main-navigation > div > ul > li > a {
@@ -2532,12 +2548,12 @@ table th,
 	margin: 0;
 }
 
-.social-navigation > div > ul > li:first-of-type {
-	margin-left: calc(-0.5 * 16px);
+.social-navigation > div > ul > li:first-of-type > a {
+	padding-left: 0;
 }
 
-.social-navigation > div > ul > li:last-of-type {
-	margin-right: calc(-0.5 * 16px);
+.social-navigation > div > ul > li:last-of-type > a {
+	padding-right: 0;
 }
 
 .social-navigation a {
@@ -2635,12 +2651,12 @@ table th,
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type {
-	margin-left: -16px;
+.footer-navigation .footer-menu > li:first-of-type > a {
+	padding-left: 0;
 }
 
 .footer-navigation .footer-menu > li:last-of-type {
-	margin-right: -16px;
+	padding-right: 0;
 }
 
 .footer-navigation .footer-menu a {
@@ -3200,7 +3216,7 @@ img#wpstats {
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 	width: calc(100% + 256px);
-	max-width: calc(100vw - 32px);
+	max-width: calc(100% - 32px);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -3208,35 +3224,35 @@ img#wpstats {
 @media only screen and (min-width: 560px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 560px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 640px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 782px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
@@ -3283,84 +3299,95 @@ img#wpstats {
 }
 
 .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, #colophon .site-info, #colophon .footer-navigation {
-	/* Letting the box-model do all the work here. */
+	margin-left: -16px;
+	margin-right: -16px;
+	width: calc(100% + 32px);
+	/* Letting the box-model do most of the work here. */
 }
 
-.alignright {
+@media only screen and (min-width: 560px) {
+	.entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, #colophon .site-info, #colophon .footer-navigation {
+		margin-left: inherit;
+		margin-right: inherit;
+		width: inherit;
+	}
+}
+
+.entry-content > .alignright {
 	/*rtl:ignore*/
 	margin-right: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
-.alignleft {
+.entry-content > .alignleft {
 	/*rtl:ignore*/
 	margin-left: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
@@ -3374,6 +3401,29 @@ img#wpstats {
  * Vendors
  * - 3rd-party compatibility styles
  */
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-jetpack-subscriptions form > * {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.wp-block-jetpack-subscriptions form > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-subscriptions form > *:last-child {
+	margin-bottom: 0;
+}
+
 /**
  * Child Theme Extra Styles
  */
