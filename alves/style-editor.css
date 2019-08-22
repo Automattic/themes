@@ -430,6 +430,45 @@ object {
 	padding-left: 0;
 }
 
+.wp-block-latest-posts > li > a {
+	font-family: "Lora", Georgia, sans-serif;
+	font-size: 1.8rem;
+	font-weight: normal;
+	line-height: 1.125;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li {
+	/* Vertical margins logic */
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:first-child {
+	margin-top: 0;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: #4d6974;
+	font-size: 1.04167rem;
+	line-height: 1.6;
+}
+
+[class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
+	font-size: 1.04167rem;
+	line-height: 1.6;
+	margin: 0;
+}
+
 .wp-block-media-text .block-editor-inner-blocks {
 	padding-right: 16px;
 	padding-left: 16px;
@@ -638,14 +677,14 @@ table th,
 	color: #ffffff !important;
 }
 
+.has-background p, .has-background a, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6,
+.has-background .wp-block-quote__citation {
+	color: currentColor;
+}
+
 .has-primary-background-color[class] {
 	background-color: #3E7D98 !important;
 	color: #ffffff;
-}
-
-.has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6,
-.has-primary-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .has-secondary-background-color[class] {
@@ -653,19 +692,9 @@ table th,
 	color: #ffffff;
 }
 
-.has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6,
-.has-secondary-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-foreground-background-color[class] {
 	background-color: #394d55 !important;
 	color: #ffffff;
-}
-
-.has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6,
-.has-foreground-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .has-foreground-light-background-color[class] {
@@ -673,19 +702,9 @@ table th,
 	color: #ffffff;
 }
 
-.has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6,
-.has-foreground-light-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-foreground-dark-background-color[class] {
 	background-color: #253136 !important;
 	color: #ffffff;
-}
-
-.has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6,
-.has-foreground-dark-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .has-background-light-background-color[class] {
@@ -693,29 +712,14 @@ table th,
 	color: #394d55;
 }
 
-.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6,
-.has-background-light-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-background-dark-background-color[class] {
 	background-color: #d9d9d9 !important;
 	color: #394d55;
 }
 
-.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6,
-.has-background-dark-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-background-background-color[class] {
 	background-color: #ffffff !important;
 	color: #394d55;
-}
-
-.has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6,
-.has-background-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .is-small-text,
