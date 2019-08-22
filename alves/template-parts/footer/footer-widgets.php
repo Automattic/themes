@@ -51,4 +51,3 @@ if ( is_active_sidebar( 'sidebar-1' ) || is_active_sidebar( 'sidebar-2') || is_a
 <?php if ( is_active_sidebar( 'sidebar-1' ) || is_active_sidebar( 'sidebar-2') || is_active_sidebar( 'sidebar-3' ) ) : ?>
 	</div>
 <?php endif; ?>
-
