@@ -355,7 +355,6 @@ blockquote p {
  * 4. Footer & Footer Widgets
  */
 .site-footer {
-	@extend %responsive-alignfull;
 	margin: 0 auto;
 	display: block;
 	padding-left: $spacing_horizontal;
@@ -372,7 +371,7 @@ blockquote p {
 
 	#footer-widgets {
 		border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "light")};
-		@extend %responsive-alignwide;
+		@extend %responsive-alignwide-nested;
 		display: flex;
 		flex-wrap: nowrap;
 		flex: 1 0 100%;
@@ -398,7 +397,7 @@ blockquote p {
 	}
 
 	#footer-info-wrapper {
-		@extend %responsive-alignwide;
+		@extend %responsive-alignwide-nested;
 		display: flex;
 		margin: 0 auto;
 		padding-top: ($baseline-unit * .75);
