@@ -1917,7 +1917,10 @@ table th,
 	vertical-align: middle;
 }
 
-/* Text Alignments */
+/* Block Alignments */
+/**
+ * .alignleft
+ */
 .alignleft {
 	/*rtl:ignore*/
 	text-align: left;
@@ -1929,20 +1932,30 @@ table th,
 	margin-bottom: 32px;
 }
 
+/**
+ * .aligncenter
+ */
 .aligncenter {
 	clear: both;
 	float: none;
 	text-align: center;
 }
 
+/**
+ * .alignright
+ */
 .alignright {
 	/*rtl:ignore*/
 	float: right;
-	/*rtl:ignore*/
 	margin-top: 0;
 	margin-bottom: 32px;
 	/*rtl:ignore*/
 	margin-left: 16px;
+}
+
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
 }
 
 /**
@@ -3062,14 +3075,6 @@ img#wpstats {
 }
 
 /**
- * Vendors
- * - 3rd-party styles
- */
-/**
- * Vendors
- * - 3rd-party compatibility styles
- */
-/**
  * Responsive Logic
  * - Loading this last to respect cascaing rules
  */
@@ -3225,81 +3230,81 @@ img#wpstats {
 	/* Letting the box-model do all the work here. */
 }
 
-.alignright {
+.entry-content > .alignright {
 	/*rtl:ignore*/
 	margin-right: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
-.alignleft {
+.entry-content > .alignleft {
 	/*rtl:ignore*/
 	margin-left: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
@@ -3313,3 +3318,25 @@ img#wpstats {
  * Vendors
  * - 3rd-party compatibility styles
  */
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-jetpack-subscriptions form > * {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.wp-block-jetpack-subscriptions form > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-subscriptions form > *:last-child {
+	margin-bottom: 0;
+}
