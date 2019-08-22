@@ -1531,10 +1531,27 @@ img {
 	line-height: 1.6;
 }
 
-.wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
+.entry-content [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.entry-content .has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 0.83333rem;
 	line-height: 1.6;
 	margin: 0;
+}
+
+.wp-block-latest-posts.alignfull {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+.entry-content [class*="inner-container"] .wp-block-latest-posts.alignfull,
+.entry-content .has-background .wp-block-latest-posts.alignfull {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .gallery-item {
@@ -1962,25 +1979,40 @@ table th,
 	vertical-align: middle;
 }
 
-/* Text Alignments */
+/* Block Alignments */
+/**
+ * .alignleft
+ */
 .alignleft {
 	text-align: left;
 	float: left;
 	margin-top: 0;
+	margin-right: 16px;
 	margin-bottom: 32px;
 }
 
+/**
+ * .aligncenter
+ */
 .aligncenter {
 	clear: both;
 	float: none;
 	text-align: center;
 }
 
+/**
+ * .alignright
+ */
 .alignright {
 	float: right;
-	margin-left: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
+	margin-left: 16px;
+}
+
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
 }
 
 /**
@@ -2048,13 +2080,13 @@ table th,
 	color: white !important;
 }
 
+.has-background p, .has-background a, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+	color: currentColor;
+}
+
 .has-primary-background-color[class] {
 	background-color: #2c313f !important;
 	color: white;
-}
-
-.has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-secondary-background-color[class] {
@@ -2062,17 +2094,9 @@ table th,
 	color: white;
 }
 
-.has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-background-color[class] {
 	background-color: #74767e !important;
 	color: white;
-}
-
-.has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-foreground-light-background-color[class] {
@@ -2080,17 +2104,9 @@ table th,
 	color: white;
 }
 
-.has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-dark-background-color[class] {
 	background-color: #111111 !important;
 	color: white;
-}
-
-.has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-background-light-background-color[class] {
@@ -2098,26 +2114,14 @@ table th,
 	color: #74767e;
 }
 
-.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-dark-background-color[class] {
 	background-color: #DDDDDD !important;
 	color: #74767e;
 }
 
-.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-background-color[class] {
 	background-color: white !important;
 	color: #74767e;
-}
-
-.has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6 {
-	color: currentColor;
 }
 
 .is-small-text,
@@ -2415,14 +2419,6 @@ table th,
 	}
 }
 
-.main-navigation > div > ul > li:first-of-type {
-	margin-right: -16px;
-}
-
-.main-navigation > div > ul > li:last-of-type {
-	margin-left: -16px;
-}
-
 .main-navigation > div > ul > li > a {
 	line-height: 1.5;
 }
@@ -2440,6 +2436,15 @@ table th,
 
 .main-navigation > div > ul > li > a:after {
 	margin-top: -0.36em;
+}
+
+@media only screen and (min-width: 560px) {
+	.main-navigation > div > ul > li:first-of-type > a {
+		padding-right: 0;
+	}
+	.main-navigation > div > ul > li:last-of-type > a {
+		padding-left: 0;
+	}
 }
 
 .main-navigation > div > ul > li > .sub-menu {
@@ -2471,7 +2476,13 @@ table th,
 	font-family: "Lato", sans-serif;
 	font-size: 0.83333rem;
 	font-weight: 700;
-	padding: 16px;
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.main-navigation a {
+		padding: 16px;
+	}
 }
 
 .main-navigation a:link, .main-navigation a:visited {
@@ -2528,12 +2539,12 @@ table th,
 	margin: 0;
 }
 
-.social-navigation > div > ul > li:first-of-type {
-	margin-right: calc(-0.5 * 16px);
+.social-navigation > div > ul > li:first-of-type > a {
+	padding-right: 0;
 }
 
-.social-navigation > div > ul > li:last-of-type {
-	margin-left: calc(-0.5 * 16px);
+.social-navigation > div > ul > li:last-of-type > a {
+	padding-left: 0;
 }
 
 .social-navigation a {
@@ -2631,12 +2642,12 @@ table th,
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type {
-	margin-right: -16px;
+.footer-navigation .footer-menu > li:first-of-type > a {
+	padding-right: 0;
 }
 
 .footer-navigation .footer-menu > li:last-of-type {
-	margin-left: -16px;
+	padding-left: 0;
 }
 
 .footer-navigation .footer-menu a {
@@ -3196,7 +3207,7 @@ img#wpstats {
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 	width: calc(100% + 256px);
-	max-width: calc(100vw - 32px);
+	max-width: calc(100% - 32px);
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -3204,35 +3215,35 @@ img#wpstats {
 @media only screen and (min-width: 560px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 560px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 640px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 932px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 932px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 932px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 932px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
@@ -3282,70 +3293,70 @@ img#wpstats {
 	/* Letting the box-model do all the work here. */
 }
 
-.alignright {
+.entry-content > .alignright {
 	margin-right: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 932px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 932px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 932px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 932px - 32px)));
 	}
 }
 
-.alignleft {
+.entry-content > .alignleft {
 	margin-left: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 932px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 932px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 932px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 932px - 32px)));
 	}
 }
@@ -3358,6 +3369,29 @@ img#wpstats {
  * Vendors
  * - 3rd-party compatibility styles
  */
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-jetpack-subscriptions form > * {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.wp-block-jetpack-subscriptions form > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-subscriptions form > *:last-child {
+	margin-bottom: 0;
+}
+
 /**
  * Child Theme Extra Styles
  */
