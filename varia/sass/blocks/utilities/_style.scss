@@ -1,6 +1,9 @@
-/* Text Alignments */
+/* Block Alignments */
+
+/**
+ * .alignleft
+ */
 .alignleft {
-	@extend %responsive-alignleft;
 	/*rtl:ignore*/
 	text-align: left;
 	/*rtl:ignore*/
@@ -11,21 +14,39 @@
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 }
 
+.entry-content > .alignleft {
+	@extend %responsive-alignleft;
+}
+
+/**
+ * .aligncenter
+ */
 .aligncenter {
 	clear: both;
 	float: none;
 	text-align: center;
 }
 
+/**
+ * .alignright
+ */
 .alignright {
-	@extend %responsive-alignright;
 	/*rtl:ignore*/
 	float: right;
-	/*rtl:ignore*/
 	margin-top: 0;
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 	/*rtl:ignore*/
 	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+}
+
+.entry-content > .alignright {
+	@extend %responsive-alignright;
+}
+
+// Make sure siblings of floated elements are top-aligned when nested
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
 }
 
 /**
