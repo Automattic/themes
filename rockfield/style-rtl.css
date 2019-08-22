@@ -1967,6 +1967,7 @@ table th,
 	text-align: left;
 	float: left;
 	margin-top: 0;
+	margin-right: 16px;
 	margin-bottom: 32px;
 }
 
@@ -1978,9 +1979,9 @@ table th,
 
 .alignright {
 	float: right;
-	margin-left: 16px;
 	margin-top: 0;
 	margin-bottom: 32px;
+	margin-left: 16px;
 }
 
 /**
@@ -2415,12 +2416,12 @@ table th,
 	}
 }
 
-.main-navigation > div > ul > li:first-of-type {
-	margin-right: -16px;
+.main-navigation > div > ul > li:first-of-type > a {
+	padding-right: 0;
 }
 
-.main-navigation > div > ul > li:last-of-type {
-	margin-left: -16px;
+.main-navigation > div > ul > li:last-of-type > a {
+	padding-left: 0;
 }
 
 .main-navigation > div > ul > li > a {
@@ -2528,12 +2529,12 @@ table th,
 	margin: 0;
 }
 
-.social-navigation > div > ul > li:first-of-type {
-	margin-right: calc(-0.5 * 16px);
+.social-navigation > div > ul > li:first-of-type > a {
+	padding-right: 0;
 }
 
-.social-navigation > div > ul > li:last-of-type {
-	margin-left: calc(-0.5 * 16px);
+.social-navigation > div > ul > li:last-of-type > a {
+	padding-left: 0;
 }
 
 .social-navigation a {
@@ -2631,12 +2632,12 @@ table th,
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type {
-	margin-right: -16px;
+.footer-navigation .footer-menu > li:first-of-type > a {
+	padding-right: 0;
 }
 
 .footer-navigation .footer-menu > li:last-of-type {
-	margin-left: -16px;
+	padding-left: 0;
 }
 
 .footer-navigation .footer-menu a {
@@ -3196,7 +3197,7 @@ img#wpstats {
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 	width: calc(100% + 256px);
-	max-width: calc(100vw - 32px);
+	max-width: calc(100% - 32px);
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -3204,35 +3205,35 @@ img#wpstats {
 @media only screen and (min-width: 560px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 560px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 640px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 782px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100vw - 32px);
+		max-width: calc(100% - 32px);
 	}
 }
 
@@ -3465,7 +3466,7 @@ p:not(.site-title) a:hover {
 	}
 	.site-title:not(:empty) + .site-description:not(:empty):before {
 		color: #757575;
-		content: "\2666";
+		content: "\2666\FE0E";
 		font-family: Arial, Helvetica, sans-serif;
 		margin: 0 .25em;
 	}
@@ -3522,7 +3523,7 @@ p:not(.site-title) a:hover {
 @media only screen and (min-width: 560px) {
 	#site-navigation > div > ul > li:not(:first-child):before {
 		color: #757575;
-		content: "\2666";
+		content: "\2666\FE0E";
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 0.83333rem;
 		line-height: 1;
@@ -3989,7 +3990,7 @@ table th,
 
 .footer-navigation .footer-menu > li:not(:first-child):before {
 	color: #D0D0D0;
-	content: "\2666";
+	content: "\2666\FE0E";
 	font-family: Arial, Helvetica, sans-serif;
 }
 
