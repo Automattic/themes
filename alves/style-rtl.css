@@ -4,7 +4,7 @@ Theme Name: Alves
 Theme URI: https://github.com/Automattic/themes/varia
 Author: Automattic
 Author URI: https://automattic.com/
-Description: A design system for WordPress sites built with Gutenberg.
+Description: Convincing design for your charity or organization’s online presence. Highlight your actions, causes and projects, Alves is versatile enough to be your personal site too.
 Requires at least: WordPress 4.9.6
 Version: 1.0
 License: GNU General Public License v2 or later
@@ -1531,10 +1531,27 @@ img {
 	line-height: 1.6;
 }
 
-.wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
+.entry-content [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.entry-content .has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 1.04167rem;
 	line-height: 1.6;
 	margin: 0;
+}
+
+.wp-block-latest-posts.alignfull {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+.entry-content [class*="inner-container"] .wp-block-latest-posts.alignfull,
+.entry-content .has-background .wp-block-latest-posts.alignfull {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .gallery-item {
@@ -2059,13 +2076,13 @@ table th,
 	color: #ffffff !important;
 }
 
+.has-background p, .has-background a, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+	color: currentColor;
+}
+
 .has-primary-background-color[class] {
 	background-color: #3E7D98 !important;
 	color: #ffffff;
-}
-
-.has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-secondary-background-color[class] {
@@ -2073,17 +2090,9 @@ table th,
 	color: #ffffff;
 }
 
-.has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-background-color[class] {
 	background-color: #394d55 !important;
 	color: #ffffff;
-}
-
-.has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-foreground-light-background-color[class] {
@@ -2091,17 +2100,9 @@ table th,
 	color: #ffffff;
 }
 
-.has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-dark-background-color[class] {
 	background-color: #253136 !important;
 	color: #ffffff;
-}
-
-.has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-background-light-background-color[class] {
@@ -2109,26 +2110,14 @@ table th,
 	color: #394d55;
 }
 
-.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-dark-background-color[class] {
 	background-color: #d9d9d9 !important;
 	color: #394d55;
 }
 
-.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-background-color[class] {
 	background-color: #ffffff !important;
 	color: #394d55;
-}
-
-.has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6 {
-	color: currentColor;
 }
 
 .is-small-text,
@@ -2392,11 +2381,6 @@ table th,
 	z-index: 1;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2407,14 +2391,6 @@ table th,
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,
