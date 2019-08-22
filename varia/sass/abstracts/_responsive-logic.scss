@@ -93,7 +93,17 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 }
 
 %responsive-alignfull {
-	/* Letting the box-model do all the work here. */
+
+	margin-left: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+	margin-right: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+	width: calc(100% + #{$horizontal-padding});
+
+	/* Letting the box-model do most of the work here. */
+	@include media(mobile) {
+		margin-left: inherit;
+		margin-right: inherit;
+		width: inherit;
+	}
 }
 
 %responsive-alignright {
