@@ -1962,7 +1962,10 @@ table th,
 	vertical-align: middle;
 }
 
-/* Text Alignments */
+/* Block Alignments */
+/**
+ * .alignleft
+ */
 .alignleft {
 	text-align: left;
 	float: left;
@@ -1971,17 +1974,28 @@ table th,
 	margin-bottom: 32px;
 }
 
+/**
+ * .aligncenter
+ */
 .aligncenter {
 	clear: both;
 	float: none;
 	text-align: center;
 }
 
+/**
+ * .alignright
+ */
 .alignright {
 	float: right;
 	margin-top: 0;
 	margin-bottom: 32px;
 	margin-left: 16px;
+}
+
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
 }
 
 /**
@@ -3280,73 +3294,84 @@ img#wpstats {
 }
 
 .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-	/* Letting the box-model do all the work here. */
+	margin-right: -16px;
+	margin-left: -16px;
+	width: calc(100% + 32px);
+	/* Letting the box-model do most of the work here. */
 }
 
-.alignright {
+@media only screen and (min-width: 560px) {
+	.entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+		margin-right: inherit;
+		margin-left: inherit;
+		width: inherit;
+	}
+}
+
+.entry-content > .alignright {
 	margin-right: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignright {
+	.entry-content > .alignright {
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
-.alignleft {
+.entry-content > .alignleft {
 	margin-left: 16px;
 }
 
 @media only screen and (min-width: 560px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 560px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 640px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.alignleft {
+	.entry-content > .alignleft {
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
 	}
 }
@@ -3359,6 +3384,29 @@ img#wpstats {
  * Vendors
  * - 3rd-party compatibility styles
  */
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-jetpack-subscriptions form > * {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.wp-block-jetpack-subscriptions form > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-subscriptions form > *:last-child {
+	margin-bottom: 0;
+}
+
 /**
  * Child Theme Extra Styles
  */
