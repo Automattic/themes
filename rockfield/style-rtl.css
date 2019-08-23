@@ -3294,7 +3294,18 @@ img#wpstats {
 }
 
 .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, #masthead, .widget-area:before, .social-navigation {
-	/* Letting the box-model do all the work here. */
+	margin-right: -16px;
+	margin-left: -16px;
+	width: calc(100% + 32px);
+	/* Letting the box-model do most of the work here. */
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, #masthead, .widget-area:before, .social-navigation {
+		margin-right: inherit;
+		margin-left: inherit;
+		width: inherit;
+	}
 }
 
 .entry-content > .alignright {
@@ -3992,7 +4003,7 @@ table th,
 .social-navigation {
 	background: #111111;
 	padding: 32px 0;
-	width: 100%;
+	width: calc(100% + 16px);
 }
 
 .social-navigation .social-links-menu {
@@ -4004,6 +4015,11 @@ table th,
 /**
  * Footer Menu
  */
+.site-footer {
+	padding-right: 0;
+	padding-left: 0;
+}
+
 .site-footer > * {
 	padding-right: 16px;
 	padding-left: 16px;
