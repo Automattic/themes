@@ -99,16 +99,18 @@
 
 		& > li {
 
-			&:first-of-type > a {
-				padding-left: 0;
-			}
+			@include media(mobile) {
+				& > a {
+					@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+				}
 
-			&:last-of-type > a {
-				padding-right: 0;
-			}
+				&:first-of-type > a {
+					padding-left: 0;
+				}
 
-			& > a {
-				@include crop-text(map-deep-get($config-header, "main-nav", "font", "line-height"));
+				&:last-of-type > a {
+					padding-right: 0;
+				}
 			}
 		}
 
@@ -142,7 +144,11 @@
 		font-family: #{map-deep-get($config-header, "main-nav", "font", "family")};
 		font-size: #{map-deep-get($config-header, "main-nav", "font", "size")};
 		font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
-		padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+		padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
+
+		@include media(mobile) {
+			padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+		}
 
 		&:link,
 		&:visited {

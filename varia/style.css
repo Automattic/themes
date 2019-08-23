@@ -2381,31 +2381,28 @@ table th,
 	}
 }
 
-.main-navigation > div > ul > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.main-navigation > div > ul > li:last-of-type > a {
-	padding-right: 0;
-}
-
-.main-navigation > div > ul > li > a {
-	line-height: 1;
-}
-
-.main-navigation > div > ul > li > a:before, .main-navigation > div > ul > li > a:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-.main-navigation > div > ul > li > a:before {
-	margin-bottom: -0.12em;
-}
-
-.main-navigation > div > ul > li > a:after {
-	margin-top: -0.11em;
+@media only screen and (min-width: 560px) {
+	.main-navigation > div > ul > li > a {
+		line-height: 1;
+	}
+	.main-navigation > div > ul > li > a:before, .main-navigation > div > ul > li > a:after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+	}
+	.main-navigation > div > ul > li > a:before {
+		margin-bottom: -0.12em;
+	}
+	.main-navigation > div > ul > li > a:after {
+		margin-top: -0.11em;
+	}
+	.main-navigation > div > ul > li:first-of-type > a {
+		padding-left: 0;
+	}
+	.main-navigation > div > ul > li:last-of-type > a {
+		padding-right: 0;
+	}
 }
 
 .main-navigation > div > ul > li > .sub-menu {
@@ -2437,7 +2434,13 @@ table th,
 	font-family: sans-serif;
 	font-size: 1.2rem;
 	font-weight: bold;
-	padding: 16px;
+	padding: 8px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.main-navigation a {
+		padding: 16px;
+	}
 }
 
 .main-navigation a:link, .main-navigation a:visited {
