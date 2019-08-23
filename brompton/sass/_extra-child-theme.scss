@@ -162,6 +162,15 @@
 	}
 
 	@include media(mobile) {
+
+		& > div > ul > li:first-of-type > a {
+			padding-left: #{map-deep-get($config-header, "main-nav", "link-padding")};
+		}
+
+		& > div > ul > li:last-of-type > a {
+			padding-right: #{map-deep-get($config-header, "main-nav", "link-padding")};
+		}
+
 		& > div > ul > li:hover,
 		& > div > ul > li.focus,
 		& > div > ul > li.current-menu-item {
