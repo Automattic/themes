@@ -1531,10 +1531,27 @@ img {
 	line-height: 1.78;
 }
 
-.wp-block-latest-posts .wp-block-latest-posts__post-excerpt {
+.entry-content [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.entry-content .has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 0.83333rem;
 	line-height: 1.78;
 	margin: 0;
+}
+
+.wp-block-latest-posts.alignfull {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+.entry-content [class*="inner-container"] .wp-block-latest-posts.alignfull,
+.entry-content .has-background .wp-block-latest-posts.alignfull {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .gallery-item {
@@ -2063,13 +2080,13 @@ table th,
 	color: white !important;
 }
 
+.has-background p, .has-background a, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+	color: currentColor;
+}
+
 .has-primary-background-color[class] {
 	background-color: #222222 !important;
 	color: white;
-}
-
-.has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-secondary-background-color[class] {
@@ -2077,17 +2094,9 @@ table th,
 	color: white;
 }
 
-.has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-background-color[class] {
 	background-color: #444444 !important;
 	color: white;
-}
-
-.has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-foreground-light-background-color[class] {
@@ -2095,17 +2104,9 @@ table th,
 	color: white;
 }
 
-.has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-dark-background-color[class] {
 	background-color: #111111 !important;
 	color: white;
-}
-
-.has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-background-light-background-color[class] {
@@ -2113,26 +2114,14 @@ table th,
 	color: #444444;
 }
 
-.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-dark-background-color[class] {
 	background-color: #E0E0E0 !important;
 	color: #444444;
 }
 
-.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-background-color[class] {
 	background-color: white !important;
 	color: #444444;
-}
-
-.has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6 {
-	color: currentColor;
 }
 
 .is-small-text,
@@ -2430,31 +2419,28 @@ table th,
 	}
 }
 
-.main-navigation > div > ul > li:first-of-type > a {
-	padding-right: 0;
-}
-
-.main-navigation > div > ul > li:last-of-type > a {
-	padding-left: 0;
-}
-
-.main-navigation > div > ul > li > a {
-	line-height: 1;
-}
-
-.main-navigation > div > ul > li > a:before, .main-navigation > div > ul > li > a:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-.main-navigation > div > ul > li > a:before {
-	margin-bottom: -0.12em;
-}
-
-.main-navigation > div > ul > li > a:after {
-	margin-top: -0.11em;
+@media only screen and (min-width: 560px) {
+	.main-navigation > div > ul > li > a {
+		line-height: 1;
+	}
+	.main-navigation > div > ul > li > a:before, .main-navigation > div > ul > li > a:after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+	}
+	.main-navigation > div > ul > li > a:before {
+		margin-bottom: -0.12em;
+	}
+	.main-navigation > div > ul > li > a:after {
+		margin-top: -0.11em;
+	}
+	.main-navigation > div > ul > li:first-of-type > a {
+		padding-right: 0;
+	}
+	.main-navigation > div > ul > li:last-of-type > a {
+		padding-left: 0;
+	}
 }
 
 .main-navigation > div > ul > li > .sub-menu {
@@ -2486,7 +2472,13 @@ table th,
 	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 0.83333rem;
 	font-weight: bold;
-	padding: 16px;
+	padding: 8px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.main-navigation a {
+		padding: 16px;
+	}
 }
 
 .main-navigation a:link, .main-navigation a:visited {
