@@ -1676,10 +1676,6 @@ p.has-background {
 	padding: 16px 16px;
 }
 
-p.has-background:not(.has-background-background-color) a {
-	color: currentColor;
-}
-
 .a8c-posts-list__listing {
 	list-style: none;
 	margin: 0;
@@ -2080,7 +2076,9 @@ table th,
 	color: white !important;
 }
 
-.has-background p, .has-background a, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+.has-background:not(.has-background-background-color) a,
+.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6,
+.has-background .wp-block-quote__citation {
 	color: currentColor;
 }
 
@@ -3286,7 +3284,18 @@ img#wpstats {
 }
 
 .entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before {
-	/* Letting the box-model do all the work here. */
+	margin-right: -16px;
+	margin-left: -16px;
+	width: calc(100% + 32px);
+	/* Letting the box-model do most of the work here. */
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content > .alignfull, .entry-content > .alignfull.wp-block-jetpack-gif, .entry-content > .alignfull.wp-block-jetpack-tiled-gallery, .pagination:before, .post-navigation:before, .comments-area:before {
+		margin-right: inherit;
+		margin-left: inherit;
+		width: inherit;
+	}
 }
 
 .entry-content > .alignright {

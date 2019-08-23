@@ -1,7 +1,6 @@
 /**
  * Extra Child Theme Styles
  */
-// @import "";
 
 /**
  * Reset
@@ -45,7 +44,7 @@ a {
 	text-align: left;
 	z-index: 9999;
 
-	@extend %responsive-alignfull;
+	//@extend %responsive-alignfull;
 
 	@include media(mobile) {
 		align-items: flex-end;
@@ -604,7 +603,7 @@ table,
 .social-navigation {
 	background: #{map-deep-get($config-global, "color", "foreground", "dark")};
 	padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
-	width: 100%;
+	width: calc(100% + #{map-deep-get($config-global, "spacing", "horizontal")});
 
 	@extend %responsive-alignfull;
 
@@ -618,6 +617,11 @@ table,
 /**
  * Footer Menu
  */
+.site-footer {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .site-footer > * {
 	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 	padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
