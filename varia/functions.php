@@ -85,10 +85,10 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 96,
-				'width'       => 100,
+				'height'      => 1200,
+				'width'       => 900,
 				'flex-width'  => true,
-				'flex-height' => false,
+				'flex-height' => true,
 				'header-text' => array( 'site-title', 'site-description' ),
 			)
 		);
@@ -308,3 +308,8 @@ require get_template_directory() . '/inc/icon-functions.php';
  * Custom template tags for the theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Logo Resizer
+ */
+require get_template_directory() . '/inc/logo-resizer.php';
