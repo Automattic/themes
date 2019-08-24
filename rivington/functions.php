@@ -22,6 +22,11 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
+		// Dark backgrounds
+		// - See: https://developer.wordpress.org/block-editor/developers/themes/theme-support/#dark-backgrounds
+		add_theme_support( 'editor-styles' );
+		add_theme_support( 'dark-editor-style' );
+
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-font-sizes',
@@ -29,25 +34,25 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'rivington' ),
 					'shortName' => __( 'S', 'rivington' ),
-					'size'      => 19.5,
+					'size'      => 14.4,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'rivington' ),
 					'shortName' => __( 'M', 'rivington' ),
-					'size'      => 22,
+					'size'      => 18,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'rivington' ),
 					'shortName' => __( 'L', 'rivington' ),
-					'size'      => 36.5,
+					'size'      => 28.12,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'rivington' ),
 					'shortName' => __( 'XL', 'rivington' ),
-					'size'      => 49.5,
+					'size'      => 35.15,
 					'slug'      => 'huge',
 				),
 			)
@@ -60,42 +65,42 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'rivington' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF',
+					'color' => '#CAAB57',
 				),
 				array(
 					'name'  => __( 'Secondary', 'rivington' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000',
+					'color' => '#CAAB57',
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'rivington' ),
+					'name'  => __( 'Skin', 'rivington' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#111111',
+					'color' => '#e0d4c2',
 				),
 				array(
-					'name'  => __( 'Gray', 'rivington' ),
+					'name'  => __( 'Off White', 'rivington' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'rivington' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'rivington' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'rivington' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
+					'color' => '#F1ECE4',
 				),
 				array(
 					'name'  => __( 'White', 'rivington' ),
+					'slug'  => 'foreground-light',
+					'color' => '#faf8f5',
+				),
+				array(
+					'name'  => __( 'Black', 'rivington' ),
+					'slug'  => 'background-dark',
+					'color' => '#000000',
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'rivington' ),
+					'slug'  => 'background-light',
+					'color' => '#151515',
+				),
+				array(
+					'name'  => __( 'Black', 'rivington' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => '#080808',
 				),
 			)
 		);

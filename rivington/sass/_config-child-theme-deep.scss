@@ -53,7 +53,7 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.6,
+			"body": 1.778,
 			"heading": 1.125,
 		),
 	),
@@ -62,26 +62,26 @@ $config-global: (
 	"color": (
 		"primary": (
 			"default": #CAAB57,
-			"hover": #B59439,
+			"hover": darken( #CAAB57, 10% )
 		),
 		"secondary": (
 			"default": #CAAB57,
-			"hover": #B59439,
+			"hover": darken( #CAAB57, 10% )
 		),
 		"foreground": (
-			"default": #FFFFFF,
-			"light": darken( #FFFFFF, 20% ), // must be accessible against background
-			"dark": #111111, // must be accessible against background
+			"default": #F1ECE4,
+			"light": lighten( #F1ECE4, 5% ), // must be accessible against background
+			"dark": darken( #F1ECE4, 10% ), // must be accessible against background
 		),
 		"background": (
 			"default": #080808,
-			"light": #FAFAFA, // must be accessible against foreground-default
-			"dark": #DDDDDD, // must be accessible against foreground-default
+			"light": lighten( #080808, 5% ), // must be accessible against foreground-default
+			"dark": #000000, // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #DDDDDD,
-			"light": #FAFAFA,
-			"dark": #AAAAAA,
+			"default": #595959,
+			"light": #727272,
+			"dark": #3f3f3f,
 		),
 		"text-selection": lighten( #CAAB57, 30% ),
 		"black": black,
@@ -117,8 +117,8 @@ $config-global: (
 
 	/* Border radius */
 	"border-radius": (
-		"sm": (0.5 * $typescale-root),
-		"md": (0.75 * $typescale-root),
+		"sm": (0.25 * $typescale-root),
+		"md": (0.5 * $typescale-root),
 		"lg": $typescale-root,
 		"pill": (10 * $typescale-root),
 	),
@@ -142,7 +142,7 @@ $config-elements: (
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
 			"line-height": map-deep-get($config-global, "font", "line-height", "md"),
-			"size": map-deep-get($config-global, "font", "size", "md"),
+			"size": map-deep-get($config-global, "font", "size", "base"),
 			"weight": bold,
 		),
 
@@ -170,7 +170,7 @@ $config-button: (
 	// Fonts
 	"font": (
 		"family": map-deep-get($config-global, "font", "family", "ui"),
-		"size": map-deep-get($config-global, "font", "size", "md"),
+		"size": map-deep-get($config-global, "font", "size", "base"),
 		"weight": 600,
 		"line-height": 1,
 	),
@@ -308,7 +308,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "secondary"),
-				"size": map-deep-get($config-global, "font", "size", "xs"),
+				"size": map-deep-get($config-global, "font", "size", "sm"),
 			),
 		),
 	),
