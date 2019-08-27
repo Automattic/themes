@@ -85,12 +85,12 @@ if ( ! function_exists( 'shawburn_setup' ) ) :
 				array(
 					'name'  => __( 'Light Gray', 'shawburn' ),
 					'slug'  => 'background-dark',
-					'color' => '#E0E0E0',
+					'color' => '#EAEAEA',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'shawburn' ),
 					'slug'  => 'background-light',
-					'color' => '#F0F0F0',
+					'color' => '#FAFAFA',
 				),
 				array(
 					'name'  => __( 'White', 'shawburn' ),
