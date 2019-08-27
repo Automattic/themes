@@ -1,2 +1,22 @@
 @import "../components/header/header";
 @import "../components/footer/footer";
+
+.site-header {
+	.site-title {
+		font-size: 21.6px;
+		font-weight: 700;
+		text-decoration: underline;
+	
+		&:focus {
+			color: #{map-deep-get($config-header, "branding", "color", "link")};
+		}
+	}
+	
+	.site-description {
+		font-size: 15px;
+	}
+	
+	.main-navigation a {
+		font-size: 21.6px;
+	}
+}
