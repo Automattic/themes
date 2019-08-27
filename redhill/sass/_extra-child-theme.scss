@@ -48,15 +48,15 @@ a {
 		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	}
 
-  @include media(mobile) {
-    align-content: center;
-    align-items: center;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    max-width: 92vw;
-    padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
-    padding-top: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
+	@include media(mobile) {
+		align-content: center;
+		align-items: center;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		max-width: 92vw;
+		padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+		padding-top: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
 		.site-branding {
 			flex: 1 100%;
@@ -100,8 +100,10 @@ a {
 		text-transform: uppercase;
 	}
 
-	a {
-		padding: #{0.75 * map-deep-get($config-header, "main-nav", "link-padding")} map-deep-get($config-header, "main-nav", "link-padding");
+	@include media(mobile) {
+		a {
+			padding: #{0.75 * map-deep-get($config-header, "main-nav", "link-padding")} map-deep-get($config-header, "main-nav", "link-padding");
+		}
 	}
 
 	& > div > ul > li > a {
@@ -125,6 +127,14 @@ a {
 	@include media(mobile) {
 		& > div > ul > li {
 			margin: 0 #{0.25 * map-deep-get($config-global, "spacing", "horizontal")};
+		}
+
+		& > div > ul > li:first-of-type > a {
+			padding-left: #{map-deep-get($config-header, "main-nav", "link-padding")};
+		}
+
+		& > div > ul > li:last-of-type > a {
+			padding-right: #{map-deep-get($config-header, "main-nav", "link-padding")};
 		}
 
 		& > div > ul > li:hover,
@@ -308,7 +318,7 @@ article .entry-header .entry-title,
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 	}
 }
 
@@ -347,7 +357,7 @@ article .entry-header .entry-title,
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 	}
 }
 
@@ -364,7 +374,7 @@ article .entry-header .entry-title,
 			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
 	}
 
 	.comment-list {

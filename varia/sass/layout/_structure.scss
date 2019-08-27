@@ -60,7 +60,7 @@
  * .widget-area
  */
 .responsive-max-width {
-	@extend %responsive-width-normal;
+	@extend %responsive-aligndefault;
 }
 
 /*
@@ -85,7 +85,9 @@
  */
 .site-footer > *,
 .site-main > article > *, // apply vertical margins to article level
+.site-main > .not-found > *, // apply vertical margins to article level
 .entry-content > *,
+[class*="inner-container"] > *,
 .widget-area > * {
 
 	margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
@@ -112,6 +114,7 @@
 .site-header > *,
 .entry-header > *,
 .post-thumbnail > *,
+.page-content > *,
 .comment-content > *,
 .author-bio > * {
 	margin-top: map-deep-get($config-global, "spacing", "unit");

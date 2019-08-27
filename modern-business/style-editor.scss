@@ -10,6 +10,7 @@ Modern Business Editor Styles
 @import "sass/site/footer/site-footer";
 @import "sass/navigation/menu-main-navigation";
 @import "sass/typography/headings";
+@import "sass/blocks/template-block";
 
 /** === Helper Functions === */
 
@@ -19,7 +20,7 @@ Modern Business Editor Styles
  we use it to target wp-blocks with a matching data-align attribute.
  If no alignment is given, we target the base wp-block class. In both
  of these scenarios, we target top level blocks, and any top level blocks
- inside one of the FSE template part blocks.
+ inside one of the FSE template blocks.
  */
 @function get-block-selector($alignment) {
 	$main-block-selector: ".wp-block";
@@ -27,15 +28,15 @@ Modern Business Editor Styles
 		$main-block-selector: ".wp-block[data-align=\"#{$alignment}\"]";
 	}
 
-	@return "
-	  #{$main-block-selector},
-	  .wp-block[data-type=\"a8c/post-content\"] #{$main-block-selector}";
+	@return "#{$main-block-selector}, .wp-block.post-content__block #{$main-block-selector}";
 }
 
 /** === Editor Frame === */
-
+// Targets just the editor frame area, not outside it.
+// See https://github.com/WordPress/gutenberg/blob/0ad0414e7a469254ef1ad105fdcf14248a986686/docs/designers-developers/developers/themes/theme-support.md#editor-styles
 body {
 	font-weight: 300;
+	background: $color__background-body;
 
 	.wp-block[data-align="full"] {
 		width: 100%;
@@ -93,8 +94,8 @@ body {
 	}
 }
 
-/** === FSE Template Part Blocks === */
-.wp-block[data-type="a8c/post-content"] {
+/** === FSE Template Blocks === */
+.wp-block.post-content__block {
 	width: 100%;
 }
 
@@ -346,7 +347,19 @@ figcaption,
 	h5,
 	h6 {
 		font-weight: 300;
-		text-align: left;
+		text-align: inherit;
+
+		&.has-text-align-left {
+			text-align: left;
+		}
+
+		&.has-text-align-center {
+			text-align: center;
+		}
+
+		&.has-text-align-right {
+			text-align: right;
+		}
 	}
 
 	h1 {
@@ -897,25 +910,6 @@ ul.wp-block-archives,
 
 	.wp-block-latest-comments__comment-date {
 		font-size: $font__size-xs;
-	}
-}
-
-
-/** === Site Title Block === */
-
-.wp-block-a8c-site-title {
-	text-align: center;
-}
-
-/** === Site Description Block === */
-
-.wp-block-a8c-site-description {
-	&,&:focus {
-		text-align: center;
-		margin: 0;
-		// Line height rounded up from the description text-size set in style.css.
-		// It needs to be a bit larger to prevent text from getting cropped on top.
-		line-height: 0.8em;
 	}
 }
 

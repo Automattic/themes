@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main responsive-max-width">
+		<main id="main" class="site-main">
 
 			<?php
 				// Start the loop.
@@ -25,7 +25,7 @@ get_header();
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					</header><!-- .entry-header -->
 
-					<div class="entry-content responsive-max-width">
+					<div class="entry-content">
 
 						<figure class="entry-attachment wp-block-image">
 						<?php

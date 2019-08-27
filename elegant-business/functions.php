@@ -32,6 +32,38 @@ function elegant_business_setup() {
 			'header-text' => array( 'site-title' ),
 		)
 	);
+
+	// Editor color palette.
+	add_theme_support(
+		'editor-color-palette',
+		array(
+			array(
+				'name'  => __( 'Primary', 'elegant-business' ),
+				'slug'  => 'primary',
+				'color' => '#c43d80', // $color__link
+			),
+			array(
+				'name'  => __( 'Secondary', 'elegant-business' ),
+				'slug'  => 'secondary',
+				'color' => '#9e3067', // $color__border-link-hover
+			),
+			array(
+				'name'  => __( 'Dark Gray', 'elegant-business' ),
+				'slug'  => 'dark-gray',
+				'color' => '#111111', // $color__text-main
+			),
+			array(
+				'name'  => __( 'Light Gray', 'elegant-business' ),
+				'slug'  => 'light-gray',
+				'color' => '#767676', // $color__text-light
+			),
+			array(
+				'name'  => __( 'White', 'elegant-business' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+		)
+	);
 }
 endif; // elegant_business_setup
 add_action( 'after_setup_theme', 'elegant_business_setup', 30 );

@@ -1,0 +1,26 @@
+/**
+ * Filter Sass map values for child theme output.
+ * - See: style-child-theme.scss
+ */
+
+// @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:400,400i,700&display=swap');
+
+$config-global: map-deep-set($config-global, "font" "size" "root", "20px");
+$config-global: map-deep-set($config-global, "font" "family" "primary", "\'Playfair Display\', serif");
+$config-global: map-deep-set($config-global, "font" "family" "secondary", "\'Roboto\', sans-serif");
+$config-global: map-deep-set($config-global, "color" "primary" "default", pink);
+$config-global: map-deep-set($config-global, "font" "size" "root", "20px");
+
+// Button
+$config-button: map-deep-set($config-button, "color" "background", orange);
+
+// Headings
+$config-heading: map-deep-set($config-heading, "font" "family", "\'Playfair Display\', serif");
+$config-heading: map-deep-set($config-heading, "font" "weight", 200);
+
+// Header
+$config-header: map-deep-set($config-header, "branding" "title" "font" "family", "\'Playfair Display\', serif");
+$config-header: map-deep-set($config-header, "branding" "title" "font" "weight", 200);
+$config-header: map-deep-set($config-header, "branding" "description" "font" "family", "\'Roboto\', sans-serif");
+$config-header: map-deep-set($config-header, "branding" "color" "link", orange);
+$config-header: map-deep-set($config-header, "main-nav" "color" "link", orange);

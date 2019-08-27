@@ -2,7 +2,7 @@
 
 	&.wp-block-jetpack-gif,
 	&.wp-block-jetpack-tiled-gallery {
-		@extend %responsive-width-wide;
+		@extend %responsive-alignwide;
 	}
 }
 
@@ -10,6 +10,27 @@
 
 	&.wp-block-jetpack-gif,
 	&.wp-block-jetpack-tiled-gallery {
-		@extend %responsive-width-full;
+		@extend %responsive-alignfull;
+	}
+}
+
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+	margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+	@include media(mobile) {
+		margin-top: map-deep-get($config-global, "spacing", "vertical");
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
 	}
 }

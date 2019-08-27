@@ -1,0 +1,506 @@
+/**
+ * Extra Child Theme Styles
+ */
+
+a {
+	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+#page {
+	background: #{map-deep-get($config-global, "color", "background", "default")};
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media(mobile) {
+		box-shadow: 0 0 30px rgba(#000, 0.2);
+		max-width: 95vw;
+	}
+
+	@include media(tablet) {
+		max-width: 92vw;
+	}
+
+	@include media(desktop) {
+		max-width: 87vw;
+	}
+
+	@include media(wide) {
+		max-width: 1200px;
+	}
+}
+
+.responsive-max-width,
+.wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote,
+.wp-block-pullquote.alignwide > p,
+.wp-block-pullquote.alignfull > p,
+.wp-block-pullquote.alignwide blockquote,
+.wp-block-pullquote.alignfull blockquote,
+hr.wp-block-separator.is-style-wide,
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+.entry-content .wp-audio-shortcode, .post-navigation, .pagination {
+	width: calc(100% - #{2 * map-deep-get($config-global, "spacing", "unit")});
+}
+
+body {
+	background: #{map-deep-get($config-global, "color", "background", "white")};
+	@include media(mobile) {
+		background: #{map-deep-get($config-global, "color", "background", "light")};
+	}
+}
+
+/**
+ * Wide Header & Footer
+ */
+#masthead {
+	position: relative;
+
+	.site-header-wrap {
+
+		@extend %responsive-alignwide;
+
+		& > * {
+			max-width: 100%;
+		}
+	}
+}
+
+#colophon {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/**
+ * Mobile-Menu
+ */
+.main-navigation #toggle:focus + #toggle-menu,
+#toggle-menu {
+	background: map-deep-get($config-global, "color", "background", "default");
+	color: map-deep-get($config-global, "color", "foreground", "default");
+	text-decoration: none;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background: map-deep-get($config-global, "color", "primary", "default");
+		color: map-deep-get($config-global, "color", "background", "default");
+	}
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+@include media(mobile) {
+	.site-header-wrap {
+		align-items: center;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-logo site-logo"
+			"site-title main-navigation"
+			"site-description social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			grid-area: site-logo;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		.site-title {
+			align-self: flex-end;
+			grid-area: site-title;
+
+			& + .site-description {
+				margin-top: 0;
+			}
+		}
+
+		.site-description {
+			align-self: center;
+			grid-area: site-description;
+		}
+
+		.main-navigation {
+			align-self: center;
+			grid-area: main-navigation;
+			justify-self: flex-end;
+
+			& > div > ul {
+				justify-content: flex-end;
+
+				& > .menu-item-has-children > a::after {
+						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				}
+			}
+
+			& > div > ul > li:hover,
+			& > div > ul > li.focus,
+			& > div > ul > li.current-menu-item {
+
+				& > a {
+					color: rgba(map-deep-get($config-global, "color", "background", "default"), 0.8);
+				}
+
+				& > ul {
+					background: #{map-deep-get($config-global, "color", "foreground", "default")};
+					border: 1px solid #{map-deep-get($config-global, "color", "foreground", "dark")};
+					border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
+					overflow: hidden;
+				}
+
+				& li {
+					border-top: 1px solid #{map-deep-get($config-global, "color", "foreground", "dark")};
+
+					&:first-child {
+						border-top: 0;
+					}
+
+					& > a {
+						background: #{map-deep-get($config-global, "color", "foreground", "default")};
+						color: #{map-deep-get($config-global, "color", "background", "default")};
+						padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{1.5 * map-deep-get($config-global, "spacing", "unit")};
+					}
+
+					&:hover > a,
+					&.focus > a,
+					&.current-menu-item > a {
+						background: #{map-deep-get($config-global, "color", "primary", "default")};
+					}
+				}
+			}
+
+			& > div > ul > li.current-menu-item {
+				& > a {
+					color: inherit;
+					box-shadow: 0 2px 0;
+				}
+			}
+		}
+
+		.social-navigation {
+			align-self: center;
+			grid-area: social-navigation;
+			justify-self: flex-end;
+		}
+	}
+}
+
+// Social Menu
+.social-navigation {
+	& > div > ul {
+		flex-wrap: wrap;
+	}
+}
+
+/**
+ * Header
+ */
+#masthead {
+	background: #{map-deep-get($config-global, "color", "foreground", "default")};
+	padding-left: 0;
+	padding-right: 0;
+
+	& > * {
+		position: relative;
+	}
+}
+
+// Site Title
+.site-description {
+	color: #{map-deep-get($config-header, "branding", "color", "text")};
+}
+
+/**
+ * Main
+ */
+
+.site-main {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@include media(mobile) {
+	#main {
+		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+/**
+ * Footer
+ */
+// Footer Menu
+.footer-navigation .footer-menu {
+	a {
+		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+		line-height: #{map-deep-get($config-global, "font", "line-height", "xs")};
+	}
+}
+
+/**
+ * Blocks
+ */
+// Cover & Hero block
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-coblocks-hero .wp-block-coblocks-hero__box {
+	& > * {
+		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Table block
+table,
+.wp-block-table {
+	td,
+	th {
+		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+/**
+ * Hentry
+ */
+// Entry Title
+.singular .hentry .entry-title,
+.page-title {
+	background: #{map-deep-get($config-global, "color", "background", "light")};
+	margin-top: -#{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	padding-top: #{map-deep-get($config-global, "spacing", "vertical")};
+	text-align: center;
+
+	@include media(mobile) {
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+		padding-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
+
+// Entry Meta
+.entry-header {
+	.entry-meta {
+		display: none;
+	}
+}
+
+// Sticky
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	background: #{map-deep-get($config-global, "color", "background", "light")};
+	border-radius: #{map-deep-get($config-global, "border-radius", "sm")};
+	color: inherit;
+	text-transform: uppercase;
+}
+
+// Entry Title Link
+article .entry-header .entry-title,
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title {
+  a {
+    color: inherit;
+		text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #{map-deep-get($config-global, "color", "primary", "default")};
+    }
+  }
+}
+
+// Remove margin if alignfull is first element
+.singular {
+	.hentry .entry-content {
+		& > *:first-child {
+			&.alignfull {
+				margin-top: -#{0.666 * map-deep-get($config-global, "spacing", "vertical")};
+
+				@include media(mobile) {
+					margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+				}
+			}
+		}
+	}
+}
+
+.home.hide-homepage-title {
+	.hentry .entry-content {
+		& > *:first-child {
+			&.alignfull {
+				margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
+
+				@include media(mobile) {
+					margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Comments
+ */
+.comment {
+	.avatar {
+		border-radius: 50%;
+	}
+}
+
+.comment-respond {
+	.form-submit {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+/**
+ * Widgets
+ */
+.widget-area {
+	max-width: 100%;
+	width: 100%;
+
+	& > *:last-child {
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+
+	.widget-title,
+	.widgettitle {
+  	font-size: #{map-deep-get($config-global, "font", "size", "md")};
+    margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  @include media(laptop) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.widget {
+			width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")})
+		}
+
+		& > *:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+
+	@include media(desktop) {
+		.widget {
+			width: calc(33.3333% - #{1.333 * map-deep-get($config-global, "spacing", "horizontal")})
+		}
+
+		& > *:nth-child(3) {
+      margin-top: 0;
+    }
+  }
+}
+
+.widget_calendar,
+.widget_calendar {
+  caption {
+    font-weight: bold;
+  }
+
+  td,
+  th {
+	   text-align: center;
+  }
+}
+
+.widget_archive,
+.widget_categories,
+.widget_links,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss,
+.widget_rss_links,
+.widget_top-posts,
+.widget_authors,
+.widget_jp_blogs_i_follow,
+.widget_top-click,
+.widget_upcoming_events_widget {
+  ul {
+    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+    list-style: none;
+    margin-left: 0;
+  }
+
+  li {
+    border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+  }
+}
+
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+  border-bottom: 0;
+  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+}
+
+.widget_recent_entries .post-date {
+  display: block;
+}
+
+.widget_rss {
+  cite,
+  .rssSummary,
+  .rss-date {
+    display: block;
+  }
+}
+
+.widget_search {
+  input[type="search"] {
+    display: block;
+    margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+    width: 100%;
+  }
+}

@@ -162,8 +162,8 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "background"),
-		"text-hover": map-deep-get($config-global, "color", "background"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
 		"background": map-deep-get($config-global, "color", "primary", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
 	),
@@ -188,7 +188,11 @@ $config-button: (
  * Cover
  */
 $config-cover: (
-	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	"height": #{15 * map-deep-get($config-global, "spacing", "vertical")},
+	"color": (
+		"foreground": #{map-deep-get($config-global, "color", "white")},
+		"background": #{map-deep-get($config-global, "color", "black")},
+	)
 );
 
 /**

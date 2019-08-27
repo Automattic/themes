@@ -32,6 +32,38 @@ if ( ! function_exists( 'calm_business_setup' ) ) {
                 'header-text' => array( 'site-title' ),
             )
         );
+
+        // Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'calm-business' ),
+					'slug'  => 'primary',
+					'color' => '#8D6708', // $color__link
+				),
+				array(
+					'name'  => __( 'Secondary', 'calm-business' ),
+					'slug'  => 'secondary',
+					'color' => '#5d4405', // $color__border-link-hover
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'calm-business' ),
+					'slug'  => 'dark-gray',
+					'color' => '#242424', // $color__text-main
+				),
+				array(
+					'name'  => __( 'Light Gray', 'calm-business' ),
+					'slug'  => 'light-gray',
+					'color' => '#6C6C74', // $color__background-body-dark
+				),
+				array(
+					'name'  => __( 'White', 'calm-business' ),
+					'slug'  => 'white',
+					'color' => '#ffffff', // $color__text-light
+				),
+			)
+		);
     }
 } // calm_business_setup
 add_action( 'after_setup_theme', 'calm_business_setup', 30 );

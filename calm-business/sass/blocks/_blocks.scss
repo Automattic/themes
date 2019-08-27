@@ -573,6 +573,24 @@
 			text-align: inherit;
 		}
 
+		h2 {
+			padding: 0;
+			max-width: inherit; // undo opinionated styles
+			text-align: inherit;
+
+			&.has-text-align-left {
+				text-align: left;
+			}
+
+			&.has-text-align-center {
+				text-align: center;
+			}
+
+			&.has-text-align-right {
+				text-align: right;
+			}
+		}
+
 		h3 {
 			font-size: $font__size-md;
 		}
@@ -1060,7 +1078,7 @@
 
 	.has-light-gray-background-color,
 	.wp-block-pullquote.is-style-solid-color.has-light-gray-background-color {
-		background-color: $color__text-light;
+		background-color: $color__background-body-dark;
 	}
 
 	.has-white-background-color,

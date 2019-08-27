@@ -1,0 +1,499 @@
+/**
+ * Extra Child Theme Styles
+ *
+ * 0. Mixins & Variables
+ * 1. General Styles
+ * 2. Header & Navigation
+ * 3. Main Wrapper and Content
+ * 4. Footer & Footer Widgets
+ * 5. Widgets
+ * 6. Blocks
+ */
+
+/**
+ * 0. Mixins and Variables
+ */
+@mixin alves-media( $res ) {
+	@if laptop-only == $res {
+		@media only screen and (max-width: #{map-deep-get($config-global, "breakpoint", "lg") - 1}) {
+			@content;
+		}
+	}
+}
+
+$color_background: #{map-deep-get($config-global, "color", "background", "default")};
+$color_background_light: #{map-deep-get($config-global, "color", "background", "light")};
+$color_background_dark: #{map-deep-get($config-global, "color", "background", "dark")};
+$color_foreground: #{map-deep-get($config-global, "color", "foreground", "default")};
+$color_primary: #{map-deep-get($config-global, "color", "primary", "default")};
+$color_secondary: #{map-deep-get($config-global, "color", "secondary", "default")};
+$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover")};
+$color_secondary_hover: #{map-deep-get($config-global, "color", "secondary", "hover")};
+$spacing_horizontal: #{map-deep-get($config-global, "spacing", "horizontal")};
+$spacing_vertical: #{map-deep-get($config-global, "spacing", "vertical")};
+$font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
+$font_size_sm: #{map-deep-get($config-global, "font", "size", "sm")};
+$font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
+$font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
+$font_size_lg: #{map-deep-get($config-global, "font", "size", "lg")};
+$font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
+$font_family_primary: #{map-deep-get($config-global, "font", "family", "primary")};
+$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
+$font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
+$font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
+$button_line_height: #{map-deep-get($config-button, "font", "line-height")};
+$button_font_weight: #{map-deep-get($config-button, "font", "weight")};
+$button_font_family: #{map-deep-get($config-button, "font", "family")};
+$button_font_size: #{map-deep-get($config-button, "font", "size")};
+$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")};
+$button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
+$button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
+$font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h4")};
+$footer_spacing_horizontal: 2 * map-deep-get($config-global, "spacing", "horizontal");
+$site_main_spacing_vertical: 2 * map-deep-get($config-global, "spacing", "vertical");
+
+/**
+ * 1. General Styles
+ */
+
+a {
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	.wp-block-group &,
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.has-background {
+	a {
+		color: currentColor;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+.entry-header,
+.page-header {
+	padding-top: $spacing_vertical;
+}
+
+.site-info,
+.entry-footer,
+.entry-header,
+.page-title,
+.page-header,
+.author-title,
+.comments-title,
+.comment-reply-title {
+	text-align: center;
+}
+
+button,
+.archive .read-more a,
+.blog .read-more a,
+.search-results .read-more a,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button a {
+	transition: background-color 0.125s ease-in;
+}
+
+.widget-title {
+	font-family: $font_family_primary;
+}
+
+blockquote cite {
+	font-family: $font_family_secondary;
+}
+
+.wp-block-quote p,
+blockquote p {
+	font-size: $font_size_md;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.entry-meta,
+.entry-footer {
+	color: $color_foreground;
+}
+
+/**
+ * 2. Header & Navigation
+ */
+/**
+ * Wide Header & Footer
+ */
+#masthead {
+	position: relative;
+
+	@extend %responsive-alignwide;
+}
+
+#masthead {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: $spacing_vertical;
+}
+
+/**
+ * Mobile-Menu
+ */
+.site-header {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+@include media(mobile) {
+	.site-header {
+		align-items: center;
+		display: grid;
+		margin-left: auto;
+		margin-right: auto;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-template-areas:
+			"site-logo site-logo"
+			"site-title main-navigation"
+			"site-description social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-logo {
+			grid-area: site-logo;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		.site-title {
+			grid-area: site-title;
+
+			& + .site-description {
+				margin-top: 0;
+			}
+		}
+
+		.site-description {
+			align-self: center;
+			grid-area: site-description;
+		}
+
+		.main-navigation {
+			align-self: center;
+			justify-self: flex-end;
+			grid-area: main-navigation;
+
+			& > div > ul {
+				justify-content: flex-end;
+				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+
+				& > li {
+					padding-left: #{map-deep-get($config-header, "main-nav", "link-padding")};
+					padding-right: #{map-deep-get($config-header, "main-nav", "link-padding")};
+					padding-top: $baseline-unit;
+					padding-bottom: $baseline-unit;
+
+					& > a {
+						padding: 0;
+					}
+
+					.sub-menu {
+						a {
+							background: $color_primary;
+							color: $color_background;
+
+							&:hover,
+							&:focus {
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+
+				& > .menu-item-has-children > a::after {
+						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				}
+			}
+
+			& > div > ul > li:hover,
+			& > div > ul > li.focus,
+			& > div > ul > li.current-menu-item {
+
+				& > a {
+				}
+
+				& > ul {
+					box-shadow: none;
+					overflow: hidden;
+
+					&:before {
+						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
+						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
+						content: "";
+						display: block;
+						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+						width: #{map-deep-get($config-global, "spacing", "unit")};
+					}
+				}
+
+				& li {
+
+					& > a {
+					}
+
+					&:hover > a,
+					&.focus > a,
+					&.current-menu-item > a {
+					}
+				}
+			}
+		}
+
+		.social-navigation {
+			align-self: center;
+			grid-area: social-navigation;
+			justify-self: flex-end;
+		}
+	}
+}
+
+.main-navigation > div > ul > li:first-of-type,
+.social-navigation > div > ul > li:first-of-type {
+	margin-left: 0;
+}
+
+.main-navigation > div > ul > li:last-of-type,
+.social-navigation > div > ul > li:last-of-type {
+	margin-right: 0;
+}
+
+.footer-navigation .footer-menu > li:first-of-type {
+	margin-left: 0;
+}
+
+// Social Menu
+.social-navigation {
+	& > div > ul {
+		flex-wrap: wrap;
+	}
+}
+
+.main-navigation > div {
+	text-align: left;
+}
+
+.main-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
+/**
+ * 3. Main Wrapper and Content
+ */
+
+ .home.page.hide-homepage-title {
+	.site-content {
+		.site-main {
+			padding-top: 0;
+		}
+		@include media(mobile-only) {
+			padding-top: $spacing_vertical;
+		}
+	}
+}
+
+.site-content {
+	.site-main {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	@include media(mobile-only) {
+		padding-top: $site_main_spacing_vertical;
+	}
+}
+
+/**
+ * 4. Footer & Footer Widgets
+ */
+.site-footer {
+	margin: 0 auto;
+	display: block;
+	padding-left: $spacing_horizontal;
+	padding-right: $spacing_horizontal;
+
+	button,
+	.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"], {
+		&:hover {
+		}
+	}
+
+	#footer-widgets {
+		border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "light")};
+		@extend %responsive-alignwide-nested;
+		display: flex;
+		flex-wrap: nowrap;
+		flex: 1 0 100%;
+		margin: 0 auto;
+
+		@include alves-media(laptop-only) {
+			display: block;
+		}
+
+		.widget-area {
+			flex: 1;
+			font-size: $font_size_sm;
+
+			@include media(laptop) {
+
+				padding-right: $footer_spacing_horizontal;
+
+				&:last-of-type {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	#footer-info-wrapper {
+		@extend %responsive-alignwide-nested;
+		display: flex;
+		margin: 0 auto;
+		padding-top: ($baseline-unit * .75);
+		max-width: 100%;
+
+
+		a {
+			color: $color_foreground;
+			font-family: $font_family_secondary;
+			padding: 0;
+			text-decoration: none;
+
+			&:hover,
+			&:focus {
+				color: $color_primary;
+			}
+		}
+
+		.footer-navigation {
+			order: 1;
+			flex-wrap: nowrap;
+			flex: 1;
+			text-align: left;
+			padding-right: $spacing_horizontal;
+
+			.footer-menu {
+				display: block;
+				justify-content: left;
+				margin: 0;
+
+				li:after {
+					content: ' · ';
+					display: inline;
+					padding-right: 5px;
+					vertical-align: middle;
+				}
+
+				li:last-of-type:after {
+					content: '';
+				}
+			}
+		}
+
+		.site-info {
+			color: $color_secondary;
+			text-align: right;
+			order: 2;
+			font-style: italic;
+			flex-wrap: nowrap;
+			flex: 1;
+		}
+	}
+}
+
+/**
+ * 5. Widgets
+ */
+.widget {
+	.widget-title {
+		margin-bottom: $spacing_vertical;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+
+		&.children > li {
+			margin-bottom: 0;
+			margin-top: 0;
+			border: 0;
+
+			a {
+				padding-left: $spacing_horizontal;
+			}
+		}
+
+		li {
+			a {
+				padding: ($baseline-unit * .75) 0;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&.recentcomments a {
+				padding: ($baseline-unit * .75) 0 !important;
+			}
+		}
+	}
+}
+
+/**
+ * 6. Blocks
+ */
+.wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.wp-block-cover .wp-block-cover__inner-container .wp-block-quote cite {
+	color: $color_background_dark;
+}

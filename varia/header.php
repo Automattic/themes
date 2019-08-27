@@ -23,6 +23,17 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'varia' ); ?></a>
 
+	<?php if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content. ?>
+
+		<header id="masthead" class="site-header responsive-max-width">
+			<?php
+				$template = new A8C\FSE\WP_Template();
+				$template->output_template_content( A8C\FSE\WP_Template::HEADER );
+			?>
+		</header>
+
+	<?php else : // Otherwise we'll fallback to the default Varia header below. ?>
+
 		<header id="masthead" class="site-header responsive-max-width">
 
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
@@ -66,5 +77,7 @@
 			<?php endif; ?>
 
 		</header><!-- #masthead -->
+
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
