@@ -809,6 +809,7 @@ footer {
  */
 .site-footer > *,
 .site-main > article > *,
+.site-main > .not-found > *,
 .entry-content > *,
 [class*="inner-container"] > *,
 .widget-area > * {
@@ -819,6 +820,7 @@ footer {
 @media only screen and (min-width: 560px) {
 	.site-footer > *,
 	.site-main > article > *,
+	.site-main > .not-found > *,
 	.entry-content > *,
 	[class*="inner-container"] > *,
 	.widget-area > * {
@@ -829,6 +831,7 @@ footer {
 
 .site-footer > *:first-child,
 .site-main > article > *:first-child,
+.site-main > .not-found > *:first-child,
 .entry-content > *:first-child,
 [class*="inner-container"] > *:first-child,
 .widget-area > *:first-child {
@@ -837,6 +840,7 @@ footer {
 
 .site-footer > *:last-child,
 .site-main > article > *:last-child,
+.site-main > .not-found > *:last-child,
 .entry-content > *:last-child,
 [class*="inner-container"] > *:last-child,
 .widget-area > *:last-child {
@@ -850,6 +854,7 @@ footer {
 .site-header > *,
 .entry-header > *,
 .post-thumbnail > *,
+.page-content > *,
 .comment-content > *,
 .author-bio > * {
 	margin-top: 16px;
@@ -859,6 +864,7 @@ footer {
 .site-header > *:first-child,
 .entry-header > *:first-child,
 .post-thumbnail > *:first-child,
+.page-content > *:first-child,
 .comment-content > *:first-child,
 .author-bio > *:first-child {
 	margin-top: 0;
@@ -867,6 +873,7 @@ footer {
 .site-header > *:last-child,
 .entry-header > *:last-child,
 .post-thumbnail > *:last-child,
+.page-content > *:last-child,
 .comment-content > *:last-child,
 .author-bio > *:last-child {
 	margin-bottom: 0;
@@ -3202,8 +3209,8 @@ img#wpstats {
 }
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, .site-header, #colophon {
-	width: calc(100% + 256px);
-	max-width: calc(100% - 32px);
+	width: 100%;
+	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -3289,6 +3296,7 @@ img#wpstats {
 	margin-left: -16px;
 	margin-right: -16px;
 	width: calc(100% + 32px);
+	max-width: calc(100% + 32px);
 	/* Letting the box-model do most of the work here. */
 }
 
@@ -3297,6 +3305,7 @@ img#wpstats {
 		margin-left: inherit;
 		margin-right: inherit;
 		width: inherit;
+		max-width: inherit;
 	}
 }
 
