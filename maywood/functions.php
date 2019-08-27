@@ -60,12 +60,12 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'maywood' ),
 					'slug'  => 'primary',
-					'color' => '#c43d80',
+					'color' => '#897248',
 				),
 				array(
 					'name'  => __( 'Secondary', 'maywood' ),
 					'slug'  => 'secondary',
-					'color' => '#9e3067',
+					'color' => '#c4493f',
 				),
 				array(
 					'name'  => __( 'Black', 'maywood' ),
