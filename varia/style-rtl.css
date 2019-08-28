@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: varia
@@ -768,6 +768,7 @@ footer {
  */
 .site-footer > *,
 .site-main > article > *,
+.site-main > .not-found > *,
 .entry-content > *,
 [class*="inner-container"] > *,
 .widget-area > * {
@@ -778,6 +779,7 @@ footer {
 @media only screen and (min-width: 560px) {
 	.site-footer > *,
 	.site-main > article > *,
+	.site-main > .not-found > *,
 	.entry-content > *,
 	[class*="inner-container"] > *,
 	.widget-area > * {
@@ -788,6 +790,7 @@ footer {
 
 .site-footer > *:first-child,
 .site-main > article > *:first-child,
+.site-main > .not-found > *:first-child,
 .entry-content > *:first-child,
 [class*="inner-container"] > *:first-child,
 .widget-area > *:first-child {
@@ -796,6 +799,7 @@ footer {
 
 .site-footer > *:last-child,
 .site-main > article > *:last-child,
+.site-main > .not-found > *:last-child,
 .entry-content > *:last-child,
 [class*="inner-container"] > *:last-child,
 .widget-area > *:last-child {
@@ -809,6 +813,7 @@ footer {
 .site-header > *,
 .entry-header > *,
 .post-thumbnail > *,
+.page-content > *,
 .comment-content > *,
 .author-bio > * {
 	margin-top: 16px;
@@ -818,6 +823,7 @@ footer {
 .site-header > *:first-child,
 .entry-header > *:first-child,
 .post-thumbnail > *:first-child,
+.page-content > *:first-child,
 .comment-content > *:first-child,
 .author-bio > *:first-child {
 	margin-top: 0;
@@ -826,6 +832,7 @@ footer {
 .site-header > *:last-child,
 .entry-header > *:last-child,
 .post-thumbnail > *:last-child,
+.page-content > *:last-child,
 .comment-content > *:last-child,
 .author-bio > *:last-child {
 	margin-bottom: 0;
@@ -1569,11 +1576,11 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	list-style-type: disc;
 }
 
 ol {
-	list-style: decimal;
+	list-style-type: decimal;
 }
 
 dt {
@@ -2154,15 +2161,15 @@ table th,
 }
 
 .margin-right-none {
-	margin-top: 0 !important;
+	margin-left: 0 !important;
 }
 
 .margin-right-half {
-	margin-top: 16px !important;
+	margin-left: 16px !important;
 }
 
 .margin-right-default {
-	margin-top: 32px !important;
+	margin-left: 32px !important;
 }
 
 .margin-bottom-none {
@@ -2178,15 +2185,15 @@ table th,
 }
 
 .margin-left-none {
-	margin-top: 0 !important;
+	margin-right: 0 !important;
 }
 
 .margin-left-half {
-	margin-top: 16px !important;
+	margin-right: 16px !important;
 }
 
 .margin-left-default {
-	margin-top: 32px !important;
+	margin-right: 32px !important;
 }
 
 /*
@@ -2205,15 +2212,15 @@ table th,
 }
 
 .padding-right-none {
-	padding-top: 0 !important;
+	padding-left: 0 !important;
 }
 
 .padding-right-half {
-	padding-top: 16px !important;
+	padding-left: 16px !important;
 }
 
 .padding-right-default {
-	padding-top: 32px !important;
+	padding-left: 32px !important;
 }
 
 .padding-bottom-none {
@@ -2229,15 +2236,15 @@ table th,
 }
 
 .padding-left-none {
-	padding-top: 0 !important;
+	padding-right: 0 !important;
 }
 
 .padding-left-half {
-	padding-top: 16px !important;
+	padding-right: 16px !important;
 }
 
 .padding-left-default {
-	padding-top: 32px !important;
+	padding-right: 32px !important;
 }
 
 /**

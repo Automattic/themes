@@ -20,7 +20,7 @@ get_header();
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'varia' ); ?></h1>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
+				<div class="page-content responsive-max-width">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'varia' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .page-content -->

@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A fully responsive theme, ideal for creating a strong — yet beautiful — online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -809,6 +809,7 @@ footer {
  */
 .site-footer > *,
 .site-main > article > *,
+.site-main > .not-found > *,
 .entry-content > *,
 [class*="inner-container"] > *,
 .widget-area > * {
@@ -819,6 +820,7 @@ footer {
 @media only screen and (min-width: 560px) {
 	.site-footer > *,
 	.site-main > article > *,
+	.site-main > .not-found > *,
 	.entry-content > *,
 	[class*="inner-container"] > *,
 	.widget-area > * {
@@ -829,6 +831,7 @@ footer {
 
 .site-footer > *:first-child,
 .site-main > article > *:first-child,
+.site-main > .not-found > *:first-child,
 .entry-content > *:first-child,
 [class*="inner-container"] > *:first-child,
 .widget-area > *:first-child {
@@ -837,6 +840,7 @@ footer {
 
 .site-footer > *:last-child,
 .site-main > article > *:last-child,
+.site-main > .not-found > *:last-child,
 .entry-content > *:last-child,
 [class*="inner-container"] > *:last-child,
 .widget-area > *:last-child {
@@ -850,6 +854,7 @@ footer {
 .site-header > *,
 .entry-header > *,
 .post-thumbnail > *,
+.page-content > *,
 .comment-content > *,
 .author-bio > * {
 	margin-top: 16px;
@@ -859,6 +864,7 @@ footer {
 .site-header > *:first-child,
 .entry-header > *:first-child,
 .post-thumbnail > *:first-child,
+.page-content > *:first-child,
 .comment-content > *:first-child,
 .author-bio > *:first-child {
 	margin-top: 0;
@@ -867,6 +873,7 @@ footer {
 .site-header > *:last-child,
 .entry-header > *:last-child,
 .post-thumbnail > *:last-child,
+.page-content > *:last-child,
 .comment-content > *:last-child,
 .author-bio > *:last-child {
 	margin-bottom: 0;
@@ -1213,7 +1220,7 @@ input.has-focus[type="submit"],
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: #303030;
-	min-height: calc( 15 * 32px);
+	min-height: 480px;
 	margin: inherit;
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
