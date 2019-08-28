@@ -25,13 +25,11 @@
 
 	<?php if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content. ?>
 
-		<header id="masthead" class="site-header entry-content">
-			<div class="site-branding">
-				<?php
-					$template = new A8C\FSE\WP_Template();
-					$template->output_template_content( A8C\FSE\WP_Template::HEADER );
-				?>
-			</div>
+		<header id="masthead" class="site-header site-branding entry-content">
+			<?php
+				$template = new A8C\FSE\WP_Template();
+				$template->output_template_content( A8C\FSE\WP_Template::HEADER );
+			?>
 		</header>
 
 	<?php else : // Otherwise we'll fallback to the default Varia header below. ?>
