@@ -367,16 +367,29 @@ a {
 }
 
 /**
- * Footer Navigation
+ * Footer
  */
-.footer-navigation {
-	.footer-menu {
-		a {
-			padding: 0 #{0.5 * $spacing_unit};
-		}
 
-		> li:last-of-type {
-			margin-right: -#{0.5 * $spacing_unit};
-		}
+@include media(mobile-only) {
+	.site-info {
+		text-align: center;
+	}
+}
+
+//Social Navigation
+.social-navigation {
+	flex: 1 0 50%;
+	order: 2;
+	margin-bottom: 0;
+}
+
+.social-links-menu {
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+@include media(mobile-only) {
+	.social-links-menu {
+		justify-content: center;
 	}
 }

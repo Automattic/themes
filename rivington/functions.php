@@ -104,6 +104,8 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 				),
 			)
 		);
+		// Remove footer menu
+		unregister_nav_menu( 'menu-2' );
 	}
 endif;
 add_action( 'after_setup_theme', 'rivington_setup', 12 );
