@@ -3802,12 +3802,27 @@ p:not(.site-title) a:hover {
 }
 
 /**
- * Footer Navigation
+ * Footer
  */
-.footer-navigation .footer-menu a {
-	padding: 0 8px;
+@media only screen and (max-width: 559px) {
+	.site-info {
+		text-align: center;
+	}
 }
 
-.footer-navigation .footer-menu > li:last-of-type {
-	margin-right: -8px;
+.social-navigation {
+	flex: 1 0 50%;
+	order: 2;
+	margin-bottom: 0;
+}
+
+.social-links-menu {
+	flex-wrap: wrap;
+	justify-content: flex-end;
+}
+
+@media only screen and (max-width: 559px) {
+	.social-links-menu {
+		justify-content: center;
+	}
 }
