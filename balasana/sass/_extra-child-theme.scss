@@ -14,6 +14,7 @@ $spacing_unit: map-deep-get($config-global, "spacing", "unit");
 $spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
 $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 $border_radius_sm: map-deep-get($config-global, "border-radius", "sm");
+$font_size_sm: map-deep-get($config-global, "font", "size", "sm");
 $font_size_lg: map-deep-get($config-global, "font", "size", "lg");
 $font_size_xl: map-deep-get($config-global, "font", "size", "xl");
 
@@ -389,4 +390,72 @@ table,
 .is-large-text,
 .has-large-font-size {
 	line-height: #{(strip-unit($baseline-unit) * 5) / (strip-unit($font_size_lg * $typescale-root))};
+}
+
+// Cookie
+body {
+	.widget_eu_cookie_law_widget {
+		background: transparent;
+		bottom: 0;
+		left: 0;
+		padding: 0;
+		right: 0;
+
+		&.widget.top {
+			bottom: auto;
+			top: 0;
+		}
+
+		#eu-cookie-law {
+			background: rgba($color_background, 0.9);
+			border: none;
+			color: $color_foreground;
+			font-size: $font_size_sm;
+			line-height: inherit;
+			padding: $spacing_unit;
+
+			@media (max-width: 600px) {
+				padding-bottom: #{4 * $spacing_horizontal + $spacing_unit};
+			}
+
+			&.negative {
+				background: rgba($color_foreground, 0.9);
+				color: $color_background;
+
+				input.accept {
+					background: $color_background;
+					color: $color_foreground;
+
+					&:active,
+					&:focus,
+					&:hover {
+						background: $color_background_light;
+					}
+				}
+			}
+
+			input.accept {
+				margin: 0;
+				margin-left: #{2 * $spacing_horizontal};
+
+				@extend %button-style;
+
+				@media (max-width: 600px) {
+					bottom: $spacing_unit;
+					left: $spacing_unit;
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&.admin-bar .widget_eu_cookie_law_widget {
+		&.widget.top {
+			top: 32px;
+
+			@media (max-width: 782px) {
+				top: 46px;
+			}
+		}
+	}
 }
