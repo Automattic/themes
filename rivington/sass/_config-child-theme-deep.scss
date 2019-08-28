@@ -10,9 +10,9 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 20px; // Set 16px/1em default on html
+$typescale-root: 18px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+$typescale-ratio: 1.25; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
 $config-global: (
 
@@ -20,10 +20,10 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "\"IBM Plex Sans\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-			"secondary": "\"IBM Plex Sans\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-			"code": "Monaco, Consolas, Lucida Console, monospace",
-			"ui": "\"Source Sans Pro\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+			"primary": "\"Poppins\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+			"secondary": "\"Poppins\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+			"code": "monospace, monospace",
+			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
 		/* Font Size */
 		"size": (
@@ -53,7 +53,7 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.6,
+			"body": 1.778,
 			"heading": 1.125,
 		),
 	),
@@ -61,29 +61,29 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": #897248,
-			"hover": darken(#897248, 10%),
+			"default": #CAAB57,
+			"hover": darken( #CAAB57, 10% )
 		),
 		"secondary": (
-			"default": #c4493f,
-			"hover": darken(#c4493f, 10%),
+			"default": #EE4266,
+			"hover": darken( #EE4266, 10% )
 		),
 		"foreground": (
-			"default": #181818,
-			"light": #686868, // must be accessible against background
-			"dark": #020202, // must be accessible against background
+			"default": #f2f2f2,
+			"light": lighten( #f2f2f2, 5% ), // must be accessible against background
+			"dark": #8F8F8F, // must be accessible against background
 		),
 		"background": (
-			"default": #FFFFFF,
-			"light": #F7F7F7, // must be accessible against foreground-default
-			"dark": #CCCCCC, // must be accessible against foreground-default
+			"default": #060f29,
+			"light": #0d1f55, // must be accessible against foreground-default
+			"dark": #030713, // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #CCCCCC,
-			"light": #F7F7F7,
-			"dark": #AAAAAA,
+			"default": #353a46,
+			"light": #4b5263,
+			"dark": #1f2229,
 		),
-		"text-selection": lightblue,
+		"text-selection": lighten( #CAAB57, 30% ),
 		"black": black,
 		"white": white,
 	),
@@ -108,11 +108,11 @@ $config-global: (
 	/* Elevation */
 	"elevation": (
 		"none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
-		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.1 ),
-		"4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.1 ),
-		"6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.1 ),
-		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.1 ),
-		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.1 ),
+		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		"4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ),
+		"6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ),
+		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
 	),
 
 	/* Border radius */
@@ -133,7 +133,7 @@ $config-elements: (
 
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"text": map-deep-get($config-global, "color", "background", "default"),
 			"border": map-deep-get($config-global, "color", "border", "default"),
 			"border-focus": map-deep-get($config-global, "color", "primary", "hover"),
 		),
@@ -148,7 +148,7 @@ $config-elements: (
 
 		// Borders
 		"border": (
-			"width": 1px,
+			"width": 0,
 			"radius": 3px,
 		),
 
@@ -162,20 +162,20 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "white"),
-		"text-hover": map-deep-get($config-global, "color", "white"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
 		"background": map-deep-get($config-global, "color", "primary", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
 	),
 	// Fonts
 	"font": (
 		"family": map-deep-get($config-global, "font", "family", "ui"),
-		"size": map-deep-get($config-global, "font", "size", "sm"),
-		"weight": 700,
-		"line-height": 1,
+		"size": map-deep-get($config-global, "font", "size", "base"),
+		"weight": 600,
+		"line-height": 1.15,
 	),
 	// Borders
-	"border-radius": map-deep-get($config-global, "border-radius", "sm"),
+	"border-radius": 3px,
 	"border-width": 2px,
 	// Padding
 	"padding": (
@@ -188,7 +188,7 @@ $config-button: (
  * Cover
  */
 $config-cover: (
-	"height": #{15 * map-deep-get($config-global, "spacing", "vertical")},
+	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
 	"color": (
 		"foreground": #{map-deep-get($config-global, "color", "white")},
 		"background": #{map-deep-get($config-global, "color", "black")},
@@ -231,7 +231,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": 700,
+		"weight": 600,
 	),
 );
 
@@ -241,7 +241,7 @@ $config-heading: (
 $config-list: (
 	// Fonts
 	"font": (
-		"family": #{map-deep-get($config-global, "font", "family", "secondary")},
+		"family": map-deep-get($config-global, "font", "family", "secondary"),
 	),
 );
 
@@ -251,7 +251,7 @@ $config-list: (
 $config-pullquote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-global, "font", "family", "primary")},
+		"family": #{map-deep-get($config-heading, "font", "family")},
 	),
 	// Border
 	"color": (
@@ -270,7 +270,7 @@ $config-pullquote: (
 $config-quote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-global, "font", "family", "primary")},
+		"family": #{map-deep-get($config-heading, "font", "family")},
 	),
 );
 
@@ -289,7 +289,7 @@ $config-header: (
 	"branding": (
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "light"),
+			"text": map-deep-get($config-global, "color", "foreground", "default"),
 			"link": map-deep-get($config-global, "color", "foreground", "default"),
 			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 		),
@@ -299,7 +299,7 @@ $config-header: (
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
 				"size": map-deep-get($config-global, "font", "size", "md"),
-				"weight": 700,
+				"weight": 600,
 				"line-height": 1,
 			),
 		),
@@ -322,19 +322,19 @@ $config-header: (
 		),
 		// Fonts
 		"font": (
-			"family": map-deep-get($config-global, "font", "family", "primary"),
+			"family": map-deep-get($config-global, "font", "family", "secondary"),
 			"size": map-deep-get($config-global, "font", "size", "base"),
-			"weight": 700,
+			"weight": 600,
 			"line-height": 1,
 		),
-		"link-padding": $baseline-unit,
+		"link-padding": map-deep-get($config-global, "spacing", "unit"),
 	),
 
 	"social-nav": (
 		// Colors
 		"color": (
 			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
+			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
 		),
 		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
 	),

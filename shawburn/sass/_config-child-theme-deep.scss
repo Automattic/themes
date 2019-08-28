@@ -10,7 +10,7 @@
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
 
-$typescale-root: 20px; // Set 16px/1em default on html
+$typescale-root: 18px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
 $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
@@ -20,10 +20,10 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "\"IBM Plex Sans\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-			"secondary": "\"IBM Plex Sans\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-			"code": "Monaco, Consolas, Lucida Console, monospace",
-			"ui": "\"Source Sans Pro\"\, -apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+			"primary": "\"PT Serif\"\, Times, sans-serif",
+			"secondary": "\"PT Sans\"\, Arial\, sans-serif",
+			"code": "\"Courier 10 Pitch\"\, Courier\, monospace",
+			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
 		),
 		/* Font Size */
 		"size": (
@@ -53,7 +53,7 @@ $config-global: (
 		/* Line Height */
 		"line-height": (
 			"base": strip-unit($typescale-base),
-			"body": 1.6,
+			"body": 1.78,
 			"heading": 1.125,
 		),
 	),
@@ -61,29 +61,29 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": #897248,
-			"hover": darken(#897248, 10%),
+			"default": #0C80A1,
+			"hover": darken(#0C80A1, 10%),
 		),
 		"secondary": (
-			"default": #c4493f,
-			"hover": darken(#c4493f, 10%),
+			"default": #D4401C,
+			"hover": darken(#D4401C, 10%),
 		),
 		"foreground": (
-			"default": #181818,
-			"light": #686868, // must be accessible against background
-			"dark": #020202, // must be accessible against background
+			"default": #444444,
+			"light": #767676, // must be accessible against background-default
+			"dark": #222222, // must be accessible against background-default
 		),
 		"background": (
-			"default": #FFFFFF,
-			"light": #F7F7F7, // must be accessible against foreground-default
-			"dark": #CCCCCC, // must be accessible against foreground-default
+			"default": white,
+			"light": #FAFAFA, // must be accessible against foreground-default
+			"dark": #EAEAEA, // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #CCCCCC,
-			"light": #F7F7F7,
-			"dark": #AAAAAA,
+			"default": #EAEAEA,
+			"light": #FAFAFA,
+			"dark": #DADADA,
 		),
-		"text-selection": lightblue,
+		"text-selection": lighten(#0C80A1, 55%),
 		"black": black,
 		"white": white,
 	),
@@ -108,18 +108,18 @@ $config-global: (
 	/* Elevation */
 	"elevation": (
 		"none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
-		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.1 ),
-		"4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.1 ),
-		"6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.1 ),
-		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.1 ),
-		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.1 ),
+		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		"4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ),
+		"6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ),
+		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
 	),
 
 	/* Border radius */
 	"border-radius": (
-		"sm": (0.25 * $typescale-root),
-		"md": (0.5 * $typescale-root),
-		"lg": $typescale-root,
+		"sm": 4px,
+		"md": 8px,
+		"lg": 12px,
 		"pill": (10 * $typescale-root),
 	),
 );
@@ -141,18 +141,18 @@ $config-elements: (
 		// Fonts
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "secondary"),
-			"line-height": map-deep-get($config-global, "font", "line-height", "md"),
+			"line-height": map-deep-get($config-global, "font", "line-height", "base"),
 			"size": map-deep-get($config-global, "font", "size", "base"),
-			"weight": bold,
+			"weight": 400,
 		),
 
 		// Borders
 		"border": (
 			"width": 1px,
-			"radius": 3px,
+			"radius": 4px,
 		),
 
-		"padding": #{map-deep-get($config-global, "spacing", "unit")},
+		"padding": #{0.5 * map-deep-get($config-global, "spacing", "unit")},
 	),
 );
 
@@ -162,14 +162,14 @@ $config-elements: (
 $config-button: (
 	// Colors
 	"color": (
-		"text": map-deep-get($config-global, "color", "white"),
-		"text-hover": map-deep-get($config-global, "color", "white"),
+		"text": map-deep-get($config-global, "color", "background", "default"),
+		"text-hover": map-deep-get($config-global, "color", "background", "default"),
 		"background": map-deep-get($config-global, "color", "primary", "default"),
 		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
 	),
 	// Fonts
 	"font": (
-		"family": map-deep-get($config-global, "font", "family", "ui"),
+		"family": map-deep-get($config-global, "font", "family", "secondary"),
 		"size": map-deep-get($config-global, "font", "size", "sm"),
 		"weight": 700,
 		"line-height": 1,
@@ -179,8 +179,8 @@ $config-button: (
 	"border-width": 2px,
 	// Padding
 	"padding": (
-		"vertical": map-deep-get($config-global, "spacing", "unit"),
-		"horizontal": map-deep-get($config-global, "spacing", "unit"),
+		"vertical": #{map-deep-get($config-global, "spacing", "unit")},
+		"horizontal": #{1.5 * map-deep-get($config-global, "spacing", "unit")},
 	),
 );
 
@@ -188,11 +188,11 @@ $config-button: (
  * Cover
  */
 $config-cover: (
-	"height": #{15 * map-deep-get($config-global, "spacing", "vertical")},
+	"height": #{18 * map-deep-get($config-global, "spacing", "vertical")},
 	"color": (
 		"foreground": #{map-deep-get($config-global, "color", "white")},
 		"background": #{map-deep-get($config-global, "color", "black")},
-	)
+	),
 );
 
 /**
@@ -231,7 +231,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": 700,
+		"weight": 400,
 	),
 );
 
@@ -241,7 +241,7 @@ $config-heading: (
 $config-list: (
 	// Fonts
 	"font": (
-		"family": #{map-deep-get($config-global, "font", "family", "secondary")},
+		"family": map-deep-get($config-global, "font", "family", "secondary"),
 	),
 );
 
@@ -251,7 +251,7 @@ $config-list: (
 $config-pullquote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-global, "font", "family", "primary")},
+		"family": #{map-deep-get($config-global, "font", "family", "secondary")},
 	),
 	// Border
 	"color": (
@@ -260,7 +260,7 @@ $config-pullquote: (
 	),
 	// Border
 	"border": (
-		"width": #{0.5 * $baseline-unit},
+		"width": 2px,
 	),
 );
 
@@ -270,16 +270,16 @@ $config-pullquote: (
 $config-quote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-global, "font", "family", "primary")},
+		"family": #{map-deep-get($config-global, "font", "family", "secondary")},
 	),
 );
 
 /**
  * Separator
  */
-
 $config-separator: (
-	"height": #{0.25 * $baseline-unit},
+	"height": 1px,
+	"width": #{6 * map-deep-get($config-global, "spacing", "horizontal")},
 );
 
 /**
@@ -298,16 +298,15 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "md"),
-				"weight": 700,
-				"line-height": 1,
+				"size": map-deep-get($config-global, "font", "size", "xxl"),
+				"weight": 400,
 			),
 		),
 		// Fonts & Typography
 		"description": (
 			// Fonts
 			"font": (
-				"family": map-deep-get($config-global, "font", "family", "secondary"),
+				"family": map-deep-get($config-global, "font", "family", "primary"),
 				"size": map-deep-get($config-global, "font", "size", "sm"),
 			),
 		),
@@ -316,27 +315,27 @@ $config-header: (
 	"main-nav": (
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "default"),
-			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
+			"text": map-deep-get($config-global, "color", "white"),
+			"link": map-deep-get($config-global, "color", "white"),
+			"link-hover": map-deep-get($config-global, "color", "white"),
 		),
 		// Fonts
 		"font": (
-			"family": map-deep-get($config-global, "font", "family", "primary"),
-			"size": map-deep-get($config-global, "font", "size", "base"),
+			"family": map-deep-get($config-global, "font", "family", "secondary"),
+			"size": map-deep-get($config-global, "font", "size", "sm"),
 			"weight": 700,
 			"line-height": 1,
 		),
-		"link-padding": $baseline-unit,
+		"link-padding": map-deep-get($config-global, "spacing", "unit"),
 	),
 
 	"social-nav": (
 		// Colors
 		"color": (
-			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "default"),
+			"link": map-deep-get($config-global, "color", "white"),
+			"link-hover": map-deep-get($config-global, "color", "white"),
 		),
-		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
+		"link-padding": 0,
 	),
 );
 
@@ -347,8 +346,8 @@ $config-footer: (
 	// Colors
 	"color": (
 		"text": map-deep-get($config-global, "color", "foreground", "light"),
-		"link": map-deep-get($config-global, "color", "primary", "default"),
-		"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		"link": map-deep-get($config-global, "color", "foreground", "light"),
+		"link-hover": map-deep-get($config-global, "color", "primary", "default"),
 	),
 	// Fonts
 	"font": (

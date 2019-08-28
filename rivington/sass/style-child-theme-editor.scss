@@ -35,6 +35,7 @@
 /**
  * Extras
  */
+
 $font_size_xxxxl: map-deep-get($config-global, "font", "size", "xxxxl");
 $font_size_xxxl: map-deep-get($config-global, "font", "size", "xxxl");
 $font_size_xxl: map-deep-get($config-global, "font", "size", "xxl");
@@ -42,31 +43,10 @@ $font_size_xl: map-deep-get($config-global, "font", "size", "xl");
 $font_size_lg: map-deep-get($config-global, "font", "size", "lg");
 $font_size_md: map-deep-get($config-global, "font", "size", "md");
 
-html,
-body {
-	font-weight: 300;
-}
-
-.editor-post-title__block .editor-post-title__input {
-	font-weight: 300;
-	text-align: center;
-	font-size: (strip-unit( $font_size_xxl ) + 0em);
-
-	@include media(laptop) {
-		font-size: (strip-unit( $font_size_xxxxl ) + 0em);
-	}
-}
-
-
 .wp-block-cover,
 .wp-block-cover-image {
-	p {
-		text-shadow: 0 0 6px #000;
-	}
-
 	h1,h2,h3,h4,h5,h6 {
-		font-weight: 300;
-		text-shadow: 0 0 12px #000;
+		font-weight: 700;
 	}
 
 	@include media(desktop) {
