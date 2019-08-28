@@ -70,37 +70,37 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 				array(
 					'name'  => __( 'Secondary', 'rivington' ),
 					'slug'  => 'secondary',
-					'color' => '#CAAB57',
+					'color' => '#EE4266',
 				),
 				array(
-					'name'  => __( 'Skin', 'rivington' ),
+					'name'  => __( 'Light Gray', 'rivington' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#e0d4c2',
+					'color' => '#8F8F8F',
 				),
 				array(
 					'name'  => __( 'Off White', 'rivington' ),
 					'slug'  => 'foreground',
-					'color' => '#F1ECE4',
+					'color' => '#F2F2F2',
 				),
 				array(
 					'name'  => __( 'White', 'rivington' ),
 					'slug'  => 'foreground-light',
-					'color' => '#faf8f5',
+					'color' => '#FFFFFF',
 				),
 				array(
-					'name'  => __( 'Black', 'rivington' ),
+					'name'  => __( 'Dark Navy', 'rivington' ),
 					'slug'  => 'background-dark',
-					'color' => '#000000',
+					'color' => '#030713',
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'rivington' ),
-					'slug'  => 'background-light',
-					'color' => '#151515',
-				),
-				array(
-					'name'  => __( 'Black', 'rivington' ),
+					'name'  => __( 'Navy', 'rivington' ),
 					'slug'  => 'background',
-					'color' => '#080808',
+					'color' => '#060f29',
+				),
+				array(
+					'name'  => __( 'Light Navy', 'rivington' ),
+					'slug'  => 'background-light',
+					'color' => '#0d1f55',
 				),
 			)
 		);

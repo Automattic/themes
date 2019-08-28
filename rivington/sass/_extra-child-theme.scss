@@ -45,7 +45,7 @@ a {
 	position: relative;
 
 	@include media(mobile) {
-		padding: $spacing_unit $spacing_vertical;
+		padding: #{1.5 * $spacing_unit} $spacing_vertical;
 	}
 }
 
@@ -60,9 +60,7 @@ a {
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
-			"site-logo site-logo"
-			"site-title main-navigation"
-			"site-description social-navigation";
+			"site-branding main-navigation";
 
 		&:before,
 		&:after {
@@ -75,23 +73,21 @@ a {
 			margin-bottom: 0;
 		}
 
-		.site-logo {
-			grid-area: site-logo;
-			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+		.site-branding {
+			grid-area: site-branding;
+			align-self: center;
 		}
 
-		.site-title {
-			align-self: flex-end;
-			grid-area: site-title;
-
-			& + .site-description {
-				margin-top: 0;
+		.site-logo {
+			& + .site-title {
+				margin-top: #{map-deep-get($config-global, "spacing", "unit")};
 			}
 		}
 
-		.site-description {
-			align-self: center;
-			grid-area: site-description;
+		.site-title {
+			& + .site-description {
+				margin-top: #{0.5 * $baseline-unit};
+			}
 		}
 
 		.main-navigation {
@@ -154,7 +150,6 @@ a {
 
 		.social-navigation {
 			align-self: center;
-			grid-area: social-navigation;
 			justify-self: flex-end;
 		}
 	}
@@ -167,7 +162,9 @@ a {
 	padding-top: 0;
 }
 
-.site-main > article > .entry-header {
+.site-main > article > .entry-header,
+.site-main > .page-header,
+.site-main > .not-found > .page-header {
 	margin-top: #{0.666 * $spacing_vertical};
 		@include media(mobile) {
 			margin-top: #{2 * $spacing_vertical};
@@ -240,29 +237,47 @@ a {
  * Blocks
  */
 
-.wp-block-cover {
-
+// Cover
+.wp-block-cover,
+.wp-block-cover-image {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 700;
 	}
 
-	h6 {
-		font-size: map-deep-get($config-global, "font", "size", "lg");
+	@include media(desktop) {
+		min-height: #{20 * map-deep-get($config-global, "spacing", "vertical")};
+
+		h1 {
+			font-size: map-deep-get($config-global, "font", "size", "xxxxl")
+		}
+
+		h2 {
+			font-size: map-deep-get($config-global, "font", "size", "xxxl");
+		}
+
+		h3 {
+			font-size: map-deep-get($config-global, "font", "size", "xxl");
+		}
+
+		h4 {
+			font-size: map-deep-get($config-global, "font", "size", "xl");
+		}
+
+		h5 {
+			font-size: map-deep-get($config-global, "font", "size", "lg");
+		}
+
+		h6 {
+			font-size: map-deep-get($config-global, "font", "size", "md");
+		}
 	}
-	h5 {
-		font-size: map-deep-get($config-global, "font", "size", "xl");
-	}
-	h4 {
-		font-size: map-deep-get($config-global, "font", "size", "xxl");
-	}
-	h3 {
-		font-size: map-deep-get($config-global, "font", "size", "xxxl");
-	}
-	h2 {
-		font-size: map-deep-get($config-global, "font", "size", "xxxxl");
-	}
-	h1 {
-		font-size: ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio);
+}
+
+// Column
+.wp-block-columns.alignfull {
+	@include media(mobile) {
+		padding-right: $spacing_vertical;
+		padding-left: $spacing_vertical;
 	}
 }
 
