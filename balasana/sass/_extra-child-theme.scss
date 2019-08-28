@@ -8,6 +8,7 @@
 $color_background: map-deep-get($config-global, "color", "background", "default");
 $color_background_light: map-deep-get($config-global, "color", "background", "light");
 $color_foreground: map-deep-get($config-global, "color", "foreground", "default");
+$color_foreground_light: map-deep-get($config-global, "color", "foreground", "light");
 $color_primary: map-deep-get($config-global, "color", "primary", "default");
 $color_border: map-deep-get($config-global, "color", "border", "default");
 $spacing_unit: map-deep-get($config-global, "spacing", "unit");
@@ -321,21 +322,90 @@ dt {
 }
 
 /**
+ * Pagination
+ */
+.pagination .nav-links > * {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 400;
+}
+
+/**
  * Post Navigation
  */
 .post-navigation {
+	a {
+		.post-title {
+			color: $color_foreground;
+		}
+	}
+
 	a:active,
 	a:focus,
 	a:hover {
 		text-decoration: none;
 
 		.post-title {
+			color: $color_primary;
 			text-decoration: underline;
 		}
 	}
 
 	.meta-nav {
 		color: $color_foreground;
+	}
+}
+
+/**
+ * Comment Navigation
+ */
+.comment-navigation {
+	a {
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: 400;
+	}
+}
+
+/**
+ * Comments
+ */
+.comment-meta {
+	.comment-author {
+		.fn {
+			font-family: inherit;
+
+			a {
+				color: inherit;
+
+				&:active,
+				&:focus,
+				&:hover {
+					color: $color_primary;
+				}
+			}
+		}
+
+		.avatar {
+			border-radius: 50%;
+		}
+	}
+
+	.comment-metadata {
+		font-size: $font_size_sm;
+		line-height: inherit;
+	}
+}
+
+.reply {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.pingback,
+.trackback {
+	.url {
+		font-family: inherit;
 	}
 }
 
@@ -353,6 +423,11 @@ dt {
 			margin-top: 0;
 		}
 	}
+}
+
+// Latest Comments
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta {
+	font-family: inherit;
 }
 
 // Pullquote
