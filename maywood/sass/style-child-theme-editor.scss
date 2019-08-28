@@ -35,12 +35,12 @@
 /**
  * Extras
  */
-$font_size_xxxxxl: map-deep-get($config-global, "font", "size", "xxxxxl");
 $font_size_xxxxl: map-deep-get($config-global, "font", "size", "xxxxl");
 $font_size_xxxl: map-deep-get($config-global, "font", "size", "xxxl");
 $font_size_xxl: map-deep-get($config-global, "font", "size", "xxl");
 $font_size_xl: map-deep-get($config-global, "font", "size", "xl");
 $font_size_lg: map-deep-get($config-global, "font", "size", "lg");
+$font_size_md: map-deep-get($config-global, "font", "size", "md");
 
 html,
 body {
@@ -73,27 +73,27 @@ body {
 		min-height: #{20 * map-deep-get($config-global, "spacing", "vertical")};
 
 		h1 {
-			font-size: (strip-unit( $font_size_xxxxxl ) + 0em);
-		}
-
-		h2 {
 			font-size: (strip-unit( $font_size_xxxxl ) + 0em);
 		}
 
-		h3 {
+		h2 {
 			font-size: (strip-unit( $font_size_xxxl ) + 0em);
 		}
 
-		h4 {
+		h3 {
 			font-size: (strip-unit( $font_size_xxl ) + 0em);
 		}
 
-		h5 {
+		h4 {
 			font-size: (strip-unit( $font_size_xl ) + 0em);
 		}
 
-		h6 {
+		h5 {
 			font-size: (strip-unit( $font_size_lg ) + 0em);
+		}
+
+		h6 {
+			font-size: (strip-unit( $font_size_md ) + 0em);
 		}
 	}
 }
