@@ -60,12 +60,12 @@ if ( ! function_exists( 'balasana_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'balasana' ),
 					'slug'  => 'primary',
-					'color' => '#0877D8',
+					'color' => '#19744C',
 				),
 				array(
 					'name'  => __( 'Secondary', 'balasana' ),
 					'slug'  => 'secondary',
-					'color' => '#238751',
+					'color' => '#BC2213',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'balasana' ),
