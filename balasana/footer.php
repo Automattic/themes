@@ -23,7 +23,7 @@
 			else : // Otherwise we'll fallback to the default Balasana footer below.
 				get_template_part( 'template-parts/footer/footer', 'widgets' );
 
-				if ( has_nav_menu( 'menu-2' ) && has_nav_menu( 'social' ) ) : ?>
+				if ( has_nav_menu( 'menu-2' ) || has_nav_menu( 'social' ) ) : ?>
 					<div class="footer-menus">
 
 						<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
