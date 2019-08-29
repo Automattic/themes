@@ -1,0 +1,69 @@
+@import "../components/header/header";
+@import "../components/footer/footer";
+
+.template-block {
+	.site-header,
+	.site-footer {
+		padding: #{map-deep-get($config-global, "spacing", "unit")};
+
+		@include media(mobile) {
+			padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+		}
+	}
+}
+
+.a8c-template-editor {
+	.wp-block:not(.is-selected) [data-block] {
+		margin-bottom: 14px;
+	}
+	.wp-block:not(:first-child):not(.is-selected) [data-block] {
+		margin-top: 14px;
+	}
+}
+
+.site-header {
+	.site-title {
+		font-size: 21.6px;
+		font-weight: 700;
+		text-decoration: underline;
+
+		&:focus {
+			color: #{map-deep-get($config-header, "branding", "color", "link")};
+		}
+	}
+
+	.site-description {
+		font-size: 15px;
+	}
+
+	.main-navigation a {
+		font-size: 21.6px;
+	}
+}
+
+.site-footer {
+	@include media(tablet) {
+		display: block;
+	}
+}
+
+.main-navigation {
+	@include media(mobile-only) {
+		background-color: #{map-deep-get($config-button, "color", "background")};
+		border-radius: #{map-deep-get($config-button, "border-radius")};
+		color: #{map-deep-get($config-button, "color", "text")};
+		display: inline-block;
+		font-family: #{map-deep-get($config-button, "font", "family")};
+		font-size: 18px;
+		font-weight: #{map-deep-get($config-button, "font", "weight")};
+		line-height: #{map-deep-get($config-button, "font", "line-height")};
+		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+
+		&:before {
+			content: "Menu";
+		}
+		&:after {
+			content: "+";
+		}
+	}
+}
