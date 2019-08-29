@@ -12,11 +12,35 @@
 		text-align: center;
 	}
 
-	.main-navigation ul {
-		justify-content: center;
+	.main-navigation {
+		text-align: center;
+		ul {
+			justify-content: center;
+			a {
+				font-size: 20px;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.site-footer {
+	.main-navigation .footer-menu {
+		justify-content: flex-start;
+		
+		@include media(mobile) {
+			justify-content: center;
+		}
+		@include media(tablet) {
+			justify-content: flex-end;
+		}
+
 		a {
-			font-size: 20px;
+			font-size: 16.6px;
 			text-decoration: none;
+			@include media(mobile-only) {
+				font-size: 13.8px;
+			}
 		}
 	}
 }
