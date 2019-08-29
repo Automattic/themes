@@ -104,8 +104,8 @@ if ( ! function_exists( 'balasana_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 120,
-				'width'       => 100,
+				'height'      => 96,
+				'width'       => 96,
 				'flex-width'  => true,
 				'flex-height' => true,
 				'header-text' => array( 'site-title', 'site-description' ),
