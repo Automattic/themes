@@ -18,6 +18,7 @@ $border_radius_sm: map-deep-get($config-global, "border-radius", "sm");
 $font_size_sm: map-deep-get($config-global, "font", "size", "sm");
 $font_size_lg: map-deep-get($config-global, "font", "size", "lg");
 $font_size_xl: map-deep-get($config-global, "font", "size", "xl");
+$font_size_h1: map-deep-get($config-heading, "font", "size", "h1");
 
 /**
  * Reset
@@ -309,6 +310,11 @@ dt {
 			color: $color_primary;
 		}
 	}
+}
+
+.entry-title,
+.page-title {
+	font-size: $font_size_h1;
 }
 
 // Sticky tag
