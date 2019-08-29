@@ -1,0 +1,27 @@
+.fse-enabled {
+	.site-footer {
+		.main-navigation {
+			@extend .footer-navigation;
+
+			display: block;
+
+			.hide-visually,
+			#toggle-menu {
+				display: none;
+			}
+
+			@include media(mobile-only) {
+				.menu-primary-container {
+					display: block;
+				}
+				li {
+					width: auto;
+
+					.sub-menu {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

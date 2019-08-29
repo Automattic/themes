@@ -1154,12 +1154,12 @@ table th,
 	color: indigo;
 }
 
-.footer-navigation {
+.footer-navigation, .site-footer .main-navigation {
 	display: inline;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation {
+	.footer-navigation, .site-footer .main-navigation {
 		flex: 1 0 50%;
 		order: 2;
 		margin-top: 0;
@@ -1168,37 +1168,37 @@ table th,
 	}
 }
 
-.footer-navigation > div {
+.footer-navigation > div, .site-footer .main-navigation > div {
 	display: inline;
 }
 
-.footer-navigation .footer-menu {
+.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
 	color: #767676;
 	margin: 0;
 	padding-left: 0;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu {
+	.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
 	}
 }
 
-.footer-navigation .footer-menu > li {
+.footer-navigation .footer-menu > li, .site-footer .main-navigation .footer-menu > li {
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type > a {
+.footer-navigation .footer-menu > li:first-of-type > a, .site-footer .main-navigation .footer-menu > li:first-of-type > a {
 	padding-left: 0;
 }
 
-.footer-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type, .site-footer .main-navigation .footer-menu > li:last-of-type {
 	padding-right: 0;
 }
 
-.footer-navigation .footer-menu a {
+.footer-navigation .footer-menu a, .site-footer .main-navigation .footer-menu a {
 	font-family: sans-serif;
 	font-size: 0.83333rem;
 	font-weight: bold;
@@ -1206,11 +1206,11 @@ table th,
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited {
+.footer-navigation .footer-menu a:link, .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .site-footer .main-navigation .footer-menu a:visited {
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:hover {
+.footer-navigation .footer-menu a:hover, .site-footer .main-navigation .footer-menu a:hover {
 	color: indigo;
 }
 
@@ -1258,22 +1258,23 @@ table th,
 	}
 }
 
+.site-footer .main-navigation {
+	display: block;
+}
+
+.site-footer .main-navigation .hide-visually,
+.site-footer .main-navigation #toggle-menu {
+	display: none;
+}
+
 @media only screen and (max-width: 559px) {
-	.main-navigation {
-		background-color: blue;
-		border-radius: 9px;
-		color: white;
-		display: inline-block;
-		font-family: sans-serif;
-		font-size: 18px;
-		font-weight: bold;
-		line-height: 1;
-		padding: 16px 16px;
+	.site-footer .main-navigation .menu-primary-container {
+		display: block;
 	}
-	.main-navigation:before {
-		content: "Menu";
+	.site-footer .main-navigation li {
+		width: auto;
 	}
-	.main-navigation:after {
-		content: "+";
+	.site-footer .main-navigation li .sub-menu {
+		display: none;
 	}
 }
