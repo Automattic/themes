@@ -194,7 +194,6 @@ if ( ! function_exists( 'varia_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-		
 	}
 endif;
 add_action( 'after_setup_theme', 'varia_setup' );
