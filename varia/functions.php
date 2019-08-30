@@ -194,9 +194,6 @@ if ( ! function_exists( 'varia_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-
-		// Enable Full Site Editing
-		add_theme_support( 'full-site-editing');
 		
 	}
 endif;
