@@ -148,7 +148,7 @@ function balasana_fonts_url() {
 		$font_families = array();
 
 		if ( 'off' !== $roboto_condensed ) {
-			$font_families[] = 'Roboto+Condensed:400,400i,700,700i';
+			$font_families[] = 'Roboto Condensed:400,400i,700,700i';
 		}
 
 		if ( 'off' !== $roboto ) {
