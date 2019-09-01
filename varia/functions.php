@@ -194,6 +194,11 @@ if ( ! function_exists( 'varia_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'navigation-menu-block', array( 
+			'template_path' => get_template_directory() . '/inc/navigation-menu-block.php',
+			'method' => 'varia_get_navigation_menu_block'
+			) 
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'varia_setup' );
