@@ -1,14 +1,28 @@
 @import "../../varia/sass/full-site-editing/editor";
 
+.site-header, .site-footer {
+	.site-title {
+		font-size: 20px;
+		@include media(mobile) {
+			font-size: 24px;
+		}
+	}
+
+	.site-description {
+		font-size: 13.8px;
+		@include media(mobile) {
+			font-size: 16.6px;
+		}
+	}
+}
+
 .site-header {
 	.site-title {
-		font-size: 24px;
 		text-align: center;
 		text-decoration: none;
 	}
 
 	.site-description{
-		font-size: 16.6px;
 		text-align: center;
 	}
 
@@ -25,12 +39,13 @@
 }
 
 .site-footer {
+	.site-title {
+		font-weight: 700;
+	}
+
 	.main-navigation .footer-menu {
-		justify-content: flex-start;
-		
-		@include media(mobile) {
-			justify-content: center;
-		}
+		justify-content: center;
+
 		@include media(tablet) {
 			justify-content: flex-end;
 		}
