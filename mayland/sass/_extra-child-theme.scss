@@ -37,6 +37,12 @@ a {
 	@include media(mobile) {
 		padding: #{1.5 * $spacing_unit} $spacing_vertical;
 	}
+
+	.site-branding {
+		.site-description {
+			display: none;
+		}
+	}
 }
 
 /**
@@ -44,13 +50,7 @@ a {
  */
 @include media(mobile) {
 	.site-header {
-		align-items: center;
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
-		grid-template-areas:
-			"site-branding main-navigation";
+		display: flex;
 
 		&:before,
 		&:after {
@@ -64,8 +64,9 @@ a {
 		}
 
 		.site-branding {
-			grid-area: site-branding;
 			align-self: center;
+			flex: 1 1 auto;
+			padding-right: #{map-deep-get($config-global, "spacing", "unit")};
 		}
 
 		.site-logo {
@@ -82,8 +83,6 @@ a {
 
 		.main-navigation {
 			align-self: center;
-			grid-area: main-navigation;
-			justify-self: flex-end;
 
 			& > div > ul {
 				justify-content: flex-end;
@@ -91,7 +90,7 @@ a {
 				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 
 				& > li > a {
-					padding: 0 #{map-deep-get($config-header, "main-nav", "link-padding")};
+					padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} #{map-deep-get($config-header, "main-nav", "link-padding")};
 				}
 
 				& > .menu-item-has-children > a::after {
@@ -141,6 +140,7 @@ a {
 		.social-navigation {
 			align-self: center;
 			justify-self: flex-end;
+			padding-left: #{map-deep-get($config-global, "spacing", "unit")};
 		}
 	}
 }

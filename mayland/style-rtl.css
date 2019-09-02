@@ -3448,17 +3448,16 @@ p:not(.site-title) a:hover {
 	}
 }
 
+.site-header .site-branding .site-description {
+	display: none;
+}
+
 /**
  * CSS-grid Desktop Menu
  */
 @media only screen and (min-width: 560px) {
 	.site-header {
-		align-items: center;
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		grid-column-gap: 16px;
-		grid-template-areas: "site-branding main-navigation";
+		display: flex;
 	}
 	.site-header:before, .site-header:after {
 		content: none;
@@ -3469,8 +3468,8 @@ p:not(.site-title) a:hover {
 		margin-bottom: 0;
 	}
 	.site-header .site-branding {
-		grid-area: site-branding;
 		align-self: center;
+		flex: 1 1 auto;
 	}
 	.site-header .site-logo + .site-title {
 		margin-top: 16px;
@@ -3480,8 +3479,6 @@ p:not(.site-title) a:hover {
 	}
 	.site-header .main-navigation {
 		align-self: center;
-		grid-area: main-navigation;
-		justify-self: flex-end;
 	}
 	.site-header .main-navigation > div > ul {
 		justify-content: flex-end;
@@ -3489,7 +3486,7 @@ p:not(.site-title) a:hover {
 		margin-left: -8px;
 	}
 	.site-header .main-navigation > div > ul > li > a {
-		padding: 0 16px;
+		padding: 8px 16px;
 	}
 	.site-header .main-navigation > div > ul > .menu-item-has-children > a::after {
 		font-size: 0.5rem;
@@ -3536,6 +3533,7 @@ p:not(.site-title) a:hover {
 	.site-header .social-navigation {
 		align-self: center;
 		justify-self: flex-end;
+		padding-right: 16px;
 	}
 }
 
