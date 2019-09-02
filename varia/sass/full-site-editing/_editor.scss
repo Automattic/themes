@@ -48,7 +48,11 @@
 .post-content__block {
 	margin-bottom: 160px;
 	margin-top: 36px;
-	z-index: 20; // Minimum to appear above the Template block overlay
+
+	// Minimum z-index to appear above the Template block overlay.
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/packages/block-editor/src/components/block-list/style.scss#L495-L496
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/assets/stylesheets/_z-index.scss#L8
+	z-index: 20;
 }
 
 .site-footer {
