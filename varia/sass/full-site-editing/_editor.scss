@@ -36,8 +36,12 @@
 		font-size: 15px;
 	}
 
-	.main-navigation a {
-		font-size: 21.6px;
+	.main-navigation {
+		@import "../blocks/button/style";
+
+		a {
+			font-size: 21.6px;
+		}
 	}
 }
 
@@ -45,25 +49,28 @@
 	@include media(tablet) {
 		display: block;
 	}
-}
 
-.main-navigation {
-	@include media(mobile-only) {
-		background-color: #{map-deep-get($config-button, "color", "background")};
-		border-radius: #{map-deep-get($config-button, "border-radius")};
-		color: #{map-deep-get($config-button, "color", "text")};
-		display: inline-block;
-		font-family: #{map-deep-get($config-button, "font", "family")};
-		font-size: 18px;
-		font-weight: #{map-deep-get($config-button, "font", "weight")};
-		line-height: #{map-deep-get($config-button, "font", "line-height")};
-		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+	.main-navigation {
+		@extend .footer-navigation;
 
-		&:before {
-			content: "Menu";
+		display: block;
+
+		.hide-visually,
+		#toggle-menu {
+			display: none;
 		}
-		&:after {
-			content: "+";
+
+		@include media(mobile-only) {
+			.menu-primary-container {
+				display: block;
+			}
+			li {
+				width: auto;
+
+				.sub-menu {
+					display: none;
+				}
+			}
 		}
 	}
 }

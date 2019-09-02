@@ -1,8 +1,16 @@
+@import "../../varia/sass/full-site-editing/imports";
+
 .fse-enabled {
 	.site-header.entry-content {
 		margin-bottom: 0;
 		max-width: 100%;
 		padding: 0;
 		width: 100%;
+
+		@include media(mobile-only) {
+			.main-navigation .menu-primary-container {
+				padding: 0 32px;
+			}
+		}
 	}
 }
