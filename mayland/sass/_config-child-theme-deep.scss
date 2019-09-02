@@ -189,6 +189,10 @@ $config-button: (
  */
 $config-cover: (
 	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	"color": (
+		"foreground": #{map-deep-get($config-global, "color", "white")},
+		"background": #{map-deep-get($config-global, "color", "black")},
+	)
 );
 
 /**
@@ -294,7 +298,7 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
-				"size": map-deep-get($config-global, "font", "size", "xl"),
+				"size": map-deep-get($config-global, "font", "size", "lg"),
 				"weight": 700,
 				"line-height": 1,
 			),
