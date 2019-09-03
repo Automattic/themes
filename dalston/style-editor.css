@@ -108,16 +108,8 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - breakpoints values are defined in _config-global.scss
  */
 /**
- * Align widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-/**
  * Align wide widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-/**
- * Align container widths
- * - Sets a fixed-width on content within alignwide and alignfull blocks
+ * - Sets .alignwide widths
  */
 /**
  * Crop Text Boundry
@@ -335,26 +327,31 @@ object {
 
 .wp-block-cover,
 .wp-block-cover-image {
-	background-color: #1e1e1e;
-	min-height: calc( 15 * 32px);
+	background-color: black;
+	color: white;
+	min-height: 480px;
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text,
+.wp-block-cover .block-editor-block-list__block,
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image .wp-block-cover-text {
-	color: #FFFFFF;
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image .block-editor-block-list__block {
+	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container a,
 .wp-block-cover .wp-block-cover-image-text a,
 .wp-block-cover .wp-block-cover-text a,
+.wp-block-cover .block-editor-block-list__block a,
 .wp-block-cover-image .wp-block-cover__inner-container a,
 .wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a {
+.wp-block-cover-image .wp-block-cover-text a,
+.wp-block-cover-image .block-editor-block-list__block a {
 	color: currentColor;
 }
 
@@ -436,6 +433,45 @@ object {
 
 .wp-block-latest-posts {
 	padding-left: 0;
+}
+
+.wp-block-latest-posts > li > a {
+	font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+	font-size: 1.52087rem;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li {
+	/* Vertical margins logic */
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:first-child {
+	margin-top: 0;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: #767676;
+	font-size: 0.86957rem;
+	line-height: 1.6;
+}
+
+[class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
+	font-size: 0.86957rem;
+	line-height: 1.6;
+	margin: 0;
 }
 
 .wp-block-media-text .block-editor-inner-blocks {
@@ -646,14 +682,20 @@ table th,
 	color: #FFFFFF !important;
 }
 
+.has-background:not(.has-background-background-color) a,
+.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6,
+.has-background .wp-block-quote__citation {
+	color: currentColor;
+}
+
 .has-primary-background-color[class] {
 	background-color: #0073AA !important;
 	color: #FFFFFF;
 }
 
-.has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6,
-.has-primary-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
+.has-primary-background-color[class] {
+	background-color: #0073AA !important;
+	color: #FFFFFF;
 }
 
 .has-secondary-background-color[class] {
@@ -661,19 +703,9 @@ table th,
 	color: #FFFFFF;
 }
 
-.has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6,
-.has-secondary-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-foreground-background-color[class] {
 	background-color: #1e1e1e !important;
 	color: #FFFFFF;
-}
-
-.has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6,
-.has-foreground-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .has-foreground-light-background-color[class] {
@@ -681,19 +713,9 @@ table th,
 	color: #FFFFFF;
 }
 
-.has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6,
-.has-foreground-light-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-foreground-dark-background-color[class] {
 	background-color: #000000 !important;
 	color: #FFFFFF;
-}
-
-.has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6,
-.has-foreground-dark-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .has-background-light-background-color[class] {
@@ -701,29 +723,14 @@ table th,
 	color: #1e1e1e;
 }
 
-.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6,
-.has-background-light-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-background-dark-background-color[class] {
 	background-color: #DDDDDD !important;
 	color: #1e1e1e;
 }
 
-.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6,
-.has-background-dark-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
-}
-
 .has-background-background-color[class] {
 	background-color: #FFFFFF !important;
 	color: #1e1e1e;
-}
-
-.has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6,
-.has-background-background-color[class] .wp-block-quote__citation {
-	color: currentColor;
 }
 
 .is-small-text,
@@ -776,15 +783,18 @@ table th,
 }
 
 .margin-right-none {
-	margin-top: 0 !important;
+	/*rtl:ignore*/
+	margin-right: 0 !important;
 }
 
 .margin-right-half {
-	margin-top: 16px !important;
+	/*rtl:ignore*/
+	margin-right: 16px !important;
 }
 
 .margin-right-default {
-	margin-top: 32px !important;
+	/*rtl:ignore*/
+	margin-right: 32px !important;
 }
 
 .margin-bottom-none {
@@ -800,15 +810,18 @@ table th,
 }
 
 .margin-left-none {
-	margin-top: 0 !important;
+	/*rtl:ignore*/
+	margin-left: 0 !important;
 }
 
 .margin-left-half {
-	margin-top: 16px !important;
+	/*rtl:ignore*/
+	margin-left: 16px !important;
 }
 
 .margin-left-default {
-	margin-top: 32px !important;
+	/*rtl:ignore*/
+	margin-left: 32px !important;
 }
 
 /*
@@ -827,15 +840,18 @@ table th,
 }
 
 .padding-right-none {
-	padding-top: 0 !important;
+	/*rtl:ignore*/
+	padding-right: 0 !important;
 }
 
 .padding-right-half {
-	padding-top: 16px !important;
+	/*rtl:ignore*/
+	padding-right: 16px !important;
 }
 
 .padding-right-default {
-	padding-top: 32px !important;
+	/*rtl:ignore*/
+	padding-right: 32px !important;
 }
 
 .padding-bottom-none {
@@ -851,15 +867,18 @@ table th,
 }
 
 .padding-left-none {
-	padding-top: 0 !important;
+	/*rtl:ignore*/
+	padding-left: 0 !important;
 }
 
 .padding-left-half {
-	padding-top: 16px !important;
+	/*rtl:ignore*/
+	padding-left: 16px !important;
 }
 
 .padding-left-default {
-	padding-top: 32px !important;
+	/*rtl:ignore*/
+	padding-left: 32px !important;
 }
 
 /**
