@@ -60,42 +60,42 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'mayland' ),
 					'slug'  => 'primary',
-					'color' => '#8D6708',
+					'color' => '#000000',
 				),
 				array(
 					'name'  => __( 'Secondary', 'mayland' ),
 					'slug'  => 'secondary',
-					'color' => '#403D39',
+					'color' => '#1a1a1a',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'mayland' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#111111',
+					'color' => '#333333',
 				),
 				array(
-					'name'  => __( 'Gray', 'mayland' ),
+					'name'  => __( 'Black', 'mayland' ),
 					'slug'  => 'foreground',
-					'color' => '#242424',
+					'color' => '#000000',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'mayland' ),
 					'slug'  => 'foreground-light',
-					'color' => '#6e6e6e',
-				),
-				array(
-					'name'  => __( 'Antique Gray', 'mayland' ),
-					'slug'  => 'background-dark',
-					'color' => '#CCC5B9',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'mayland' ),
-					'slug'  => 'background-light',
-					'color' => '#DDDDDD',
+					'color' => '#666666',
 				),
 				array(
 					'name'  => __( 'Subtle Gray', 'mayland' ),
+					'slug'  => 'background-dark',
+					'color' => '#d9d9d9',
+				),
+				array(
+					'name'  => __( 'Off White', 'mayland' ),
+					'slug'  => 'background-light',
+					'color' => '#F2F2F2',
+				),
+				array(
+					'name'  => __( 'White', 'mayland' ),
 					'slug'  => 'background',
-					'color' => '#FAFAFA',
+					'color' => '#FFFFFF',
 				),
 			)
 		);
@@ -129,7 +129,7 @@ function mayland_fonts_url() {
 	if ( 'off' !== $poppins ) {
 		$font_families = array();
 
-		$font_families[] = 'Poppins:400,400i,600,600i,700,700i';
+		$font_families[] = 'Poppins:400,400i,600,600i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),

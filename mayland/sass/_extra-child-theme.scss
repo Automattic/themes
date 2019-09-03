@@ -10,45 +10,39 @@ b, strong {
 }
 
 a {
-	text-decoration: none;
-
-	.wp-block-cover &,
-	.wp-block-cover-image &,
-	.wp-block-media-text &,
-	p:not(.site-title) & {
-		text-decoration: underline;
-
-		&.wp-block-button__link,
-		&:hover {
-			text-decoration: none;
-		}
+	.site-header &,
+	&:hover,
+	&:focus {
+		text-decoration: none;
 	}
 }
 
 /**
  * Header
  */
-.site-header {
+.site-header,
+.site-footer {
 	max-width: 100%;
 	padding-left: $spacing_unit;
 	padding-right: $spacing_unit;
 	position: relative;
 
 	@include media(mobile) {
-		padding: #{1.5 * $spacing_unit} $spacing_vertical;
-	}
-
-	.site-branding {
-		.site-description {
-			display: none;
-		}
+		padding: $spacing_vertical;
 	}
 }
+
+.site-branding {
+	.site-description {
+		display: none;
+	}
+}
+
 
 /**
  * CSS-grid Desktop Menu
  */
-@include media(mobile) {
+@include media(laptop) {
 	.site-header {
 		display: flex;
 
@@ -75,72 +69,25 @@ a {
 			}
 		}
 
-		.site-title {
-			& + .site-description {
-				margin-top: #{0.5 * $baseline-unit};
-			}
-		}
-
 		.main-navigation {
 			align-self: center;
 
-			& > div > ul {
-				justify-content: flex-end;
-				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-
-				& > li > a {
-					padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} #{map-deep-get($config-header, "main-nav", "link-padding")};
-				}
-
-				& > .menu-item-has-children > a::after {
-					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
-				}
+			> div > ul > li > .sub-menu {
+				border: 1px solid map-deep-get($config-global, "color", "border", "default");
+				box-shadow: none;
+				border-radius: 0;
 			}
 
-			& > div > ul > li:hover,
-			& > div > ul > li.focus,
-			& > div > ul > li.current-menu-item {
-
-				& > a {
-					color: #{map-deep-get($config-global, "color", "primary", "default")};
-				}
-
-				& > ul {
-					box-shadow: none;
-					overflow: hidden;
-
-					&:before {
-						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
-						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						content: "";
-						display: block;
-						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
-						width: #{map-deep-get($config-global, "spacing", "unit")};
-					}
-				}
-
-				& li {
-
-					& > a {
-						background: #{map-deep-get($config-global, "color", "primary", "default")};
-						color: #{map-deep-get($config-global, "color", "background", "default")};
-					}
-
-					&:hover > a,
-					&.focus > a,
-					&.current-menu-item > a {
-						background: #{map-deep-get($config-global, "color", "primary", "hover")};
-					}
-				}
+			.sub-menu .menu-item a {
+				padding-top: #{map-deep-get($config-header, "main-nav", "link-padding")};
+				padding-bottom: #{map-deep-get($config-header, "main-nav", "link-padding")};
 			}
 		}
 
 		.social-navigation {
 			align-self: center;
 			justify-self: flex-end;
-			padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+			padding-left: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 }
@@ -159,6 +106,22 @@ a {
 		@include media(mobile) {
 			margin-top: #{2 * $spacing_vertical};
 		}
+}
+
+.site-main > {
+	article > .entry-header,
+	.page-header,
+	.not-found > .page-header {
+		margin-top: #{0.666 * $spacing_vertical};
+
+		@include media(mobile) {
+			margin-top: #{2 * $spacing_vertical};
+		}
+	}
+}
+
+#main .entry-content .entry-attachment {
+	max-width: calc( 100% - #{2 * $spacing_vertical} );
 }
 
 // Entry Title Link
@@ -223,7 +186,10 @@ a {
 /**
  * Blocks
  */
-
+.wp-block-columns.alignfull {
+	padding-right: $spacing_vertical;
+	padding-left: $spacing_vertical;
+}
 
 /**
  * Widgets

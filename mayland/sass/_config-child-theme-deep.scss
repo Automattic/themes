@@ -61,27 +61,27 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": #8D6708,
-			"hover": #5d4405,
+			"default": black,
+			"hover": #666666,
 		),
 		"secondary": (
-			"default": #403D39,
-			"hover": #252321,
+			"default": #1a1a1a,
+			"hover": #666666,
 		),
 		"foreground": (
-			"default": #242424,
-			"light": #6e6e6e, // must be accessible against background
-			"dark": #111111, // must be accessible against background
+			"default": black,
+			"light": #666666, // must be accessible against background
+			"dark": #333333, // must be accessible against background
 		),
 		"background": (
-			"default": #FAF8F5,
-			"light": #DDDDDD, // must be accessible against foreground-default
-			"dark": #CCC5B9, // must be accessible against foreground-default
+			"default": white,
+			"light": #f2f2f2, // must be accessible against foreground-default
+			"dark": #d9d9d9, // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #cccccc,
-			"light": #FAFAFA,
-			"dark": #AAAAAA,
+			"default": #e6e6e6,
+			"light": #f2f2f2,
+			"dark": #d9d9d9,
 		),
 		"text-selection": lightblue,
 		"black": black,
@@ -230,7 +230,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": 700,
+		"weight": 600,
 	),
 );
 
@@ -298,7 +298,7 @@ $config-header: (
 			"font": (
 				"family": map-deep-get($config-global, "font", "family", "primary"),
 				"size": map-deep-get($config-global, "font", "size", "lg"),
-				"weight": 700,
+				"weight": 600,
 				"line-height": 1,
 			),
 		),
@@ -323,10 +323,10 @@ $config-header: (
 		"font": (
 			"family": map-deep-get($config-global, "font", "family", "primary"),
 			"size": map-deep-get($config-global, "font", "size", "sm"),
-			"weight": 600,
+			"weight": 400,
 			"line-height": 1,
 		),
-		"link-padding": map-deep-get($config-global, "spacing", "unit"),
+		"link-padding": $baseline-unit,
 	),
 
 	"social-nav": (
