@@ -2471,7 +2471,7 @@ table th,
 	color: #8D6708;
 	display: block;
 	font-family: Poppins, sans-serif;
-	font-size: 1rem;
+	font-size: 0.83333rem;
 	font-weight: 600;
 	padding: 8px 0;
 }
@@ -3470,6 +3470,7 @@ p:not(.site-title) a:hover {
 	.site-header .site-branding {
 		align-self: center;
 		flex: 1 1 auto;
+		padding-left: 16px;
 	}
 	.site-header .site-logo + .site-title {
 		margin-top: 16px;
@@ -3490,6 +3491,32 @@ p:not(.site-title) a:hover {
 	}
 	.site-header .main-navigation > div > ul > .menu-item-has-children > a::after {
 		font-size: 0.5rem;
+	}
+	.site-header .main-navigation > div > ul > .menu-item-has-children .submenu-expand {
+		display: inline-block;
+		margin-left: 0;
+		/* Priority+ Menu */
+	}
+	.site-header .main-navigation > div > ul > .menu-item-has-children .submenu-expand.main-menu-more-toggle {
+		position: relative;
+		height: 24px;
+		line-height: 1;
+		width: 24px;
+		padding: 0;
+		margin-right: 0;
+	}
+	.site-header .main-navigation > div > ul > .menu-item-has-children .submenu-expand.main-menu-more-toggle svg {
+		height: 24px;
+		width: 24px;
+		top: 0;
+		vertical-align: text-bottom;
+	}
+	.wp-customizer-unloading .site-header .main-navigation > div > ul > .menu-item-has-children .submenu-expand, .site-header .main-navigation > div > ul > .menu-item-has-children .submenu-expand.is-empty {
+		display: none;
+	}
+	.site-header .main-navigation > div > ul > .menu-item-has-children .submenu-expand svg {
+		position: relative;
+		top: 0.2rem;
 	}
 	.site-header .main-navigation > div > ul > li:hover > a,
 	.site-header .main-navigation > div > ul > li.focus > a,
