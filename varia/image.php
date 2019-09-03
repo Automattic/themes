@@ -20,6 +20,12 @@ get_header();
 				?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<nav id="image-navigation" class="navigation image-navigation responsive-max-width">
+						<div class="nav-links">
+							<div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'varia' ) ); ?></div>
+							<div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'varia' ) ); ?></div>
+						</div><!-- .nav-links -->
+					</nav><!-- .image-navigation -->
 
 					<header class="entry-header responsive-max-width">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
