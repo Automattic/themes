@@ -15,7 +15,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer responsive-max-width">
+	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 		<?php
 		if ( function_exists( 'the_privacy_policy_link' ) ) {

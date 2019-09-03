@@ -108,16 +108,8 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - breakpoints values are defined in _config-global.scss
  */
 /**
- * Align widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-/**
  * Align wide widths
- * - Sets negative margin for .alignwide and .alignfull blocks
- */
-/**
- * Align container widths
- * - Sets a fixed-width on content within alignwide and alignfull blocks
+ * - Sets .alignwide widths
  */
 /**
  * Crop Text Boundry
@@ -336,25 +328,30 @@ object {
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: #444444;
-	min-height: calc( 15 * 32px);
+	color: white;
+	min-height: 480px;
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text,
+.wp-block-cover .block-editor-block-list__block,
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image .wp-block-cover-text {
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image .block-editor-block-list__block {
 	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container a,
 .wp-block-cover .wp-block-cover-image-text a,
 .wp-block-cover .wp-block-cover-text a,
+.wp-block-cover .block-editor-block-list__block a,
 .wp-block-cover-image .wp-block-cover__inner-container a,
 .wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a {
+.wp-block-cover-image .wp-block-cover-text a,
+.wp-block-cover-image .block-editor-block-list__block a {
 	color: currentColor;
 }
 
@@ -438,7 +435,58 @@ object {
 	padding-left: 0;
 }
 
-.wp-block-media-text[style*="background-color"]:not(.has-background-background-color) .block-editor-inner-blocks a {
+.wp-block-latest-posts > li > a {
+	font-family: "Oswald", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 300;
+	line-height: 1.125;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li {
+	/* Vertical margins logic */
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:first-child {
+	margin-top: 0;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: #767676;
+	font-size: 0.83333rem;
+	line-height: 1.78;
+}
+
+[class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
+	font-size: 0.83333rem;
+	line-height: 1.78;
+	margin: 0;
+}
+
+.wp-block-media-text .block-editor-inner-blocks {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+@media only screen and (min-width: 640px) {
+	.wp-block-media-text .block-editor-inner-blocks {
+		padding-right: 32px;
+		padding-left: 32px;
+	}
+}
+
+.wp-block-media-text .block-editor-inner-blocks[style*="background-color"]:not(.has-background-background-color) a {
 	color: currentColor;
 }
 
@@ -533,6 +581,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote p {
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	font-size: 1.2em;
 	letter-spacing: normal;
 }
@@ -543,6 +592,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
+	font-family: "Source Sans Pro", Arial, sans-serif;
 	font-size: 1.44em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -632,13 +682,20 @@ table th,
 	color: white !important;
 }
 
+.has-background:not(.has-background-background-color) a,
+.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6,
+.has-background .wp-block-quote__citation {
+	color: currentColor;
+}
+
 .has-primary-background-color[class] {
 	background-color: #404040 !important;
 	color: white;
 }
 
-.has-primary-background-color[class] p, .has-primary-background-color[class] h1, .has-primary-background-color[class] h2, .has-primary-background-color[class] h3, .has-primary-background-color[class] h4, .has-primary-background-color[class] h5, .has-primary-background-color[class] h6 {
-	color: currentColor;
+.has-primary-background-color[class] {
+	background-color: #404040 !important;
+	color: white;
 }
 
 .has-secondary-background-color[class] {
@@ -646,17 +703,9 @@ table th,
 	color: white;
 }
 
-.has-secondary-background-color[class] p, .has-secondary-background-color[class] h1, .has-secondary-background-color[class] h2, .has-secondary-background-color[class] h3, .has-secondary-background-color[class] h4, .has-secondary-background-color[class] h5, .has-secondary-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-background-color[class] {
 	background-color: #444444 !important;
 	color: white;
-}
-
-.has-foreground-background-color[class] p, .has-foreground-background-color[class] h1, .has-foreground-background-color[class] h2, .has-foreground-background-color[class] h3, .has-foreground-background-color[class] h4, .has-foreground-background-color[class] h5, .has-foreground-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-foreground-light-background-color[class] {
@@ -664,17 +713,9 @@ table th,
 	color: white;
 }
 
-.has-foreground-light-background-color[class] p, .has-foreground-light-background-color[class] h1, .has-foreground-light-background-color[class] h2, .has-foreground-light-background-color[class] h3, .has-foreground-light-background-color[class] h4, .has-foreground-light-background-color[class] h5, .has-foreground-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-foreground-dark-background-color[class] {
 	background-color: #111111 !important;
 	color: white;
-}
-
-.has-foreground-dark-background-color[class] p, .has-foreground-dark-background-color[class] h1, .has-foreground-dark-background-color[class] h2, .has-foreground-dark-background-color[class] h3, .has-foreground-dark-background-color[class] h4, .has-foreground-dark-background-color[class] h5, .has-foreground-dark-background-color[class] h6 {
-	color: currentColor;
 }
 
 .has-background-light-background-color[class] {
@@ -682,26 +723,14 @@ table th,
 	color: #444444;
 }
 
-.has-background-light-background-color[class] p, .has-background-light-background-color[class] h1, .has-background-light-background-color[class] h2, .has-background-light-background-color[class] h3, .has-background-light-background-color[class] h4, .has-background-light-background-color[class] h5, .has-background-light-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-dark-background-color[class] {
 	background-color: #DDDDDD !important;
 	color: #444444;
 }
 
-.has-background-dark-background-color[class] p, .has-background-dark-background-color[class] h1, .has-background-dark-background-color[class] h2, .has-background-dark-background-color[class] h3, .has-background-dark-background-color[class] h4, .has-background-dark-background-color[class] h5, .has-background-dark-background-color[class] h6 {
-	color: currentColor;
-}
-
 .has-background-background-color[class] {
 	background-color: white !important;
 	color: #444444;
-}
-
-.has-background-background-color[class] p, .has-background-background-color[class] h1, .has-background-background-color[class] h2, .has-background-background-color[class] h3, .has-background-background-color[class] h4, .has-background-background-color[class] h5, .has-background-background-color[class] h6 {
-	color: currentColor;
 }
 
 .is-small-text,
@@ -733,6 +762,123 @@ table th,
 	font-family: "Oswald", sans-serif;
 	font-size: calc(2 * 2.0736em);
 	font-weight: 300;
+}
+
+/**
+ * Spacing Overrides
+ */
+/*
+ * Margins
+ */
+.margin-top-none {
+	margin-top: 0 !important;
+}
+
+.margin-top-half {
+	margin-top: 16px !important;
+}
+
+.margin-top-default {
+	margin-top: 32px !important;
+}
+
+.margin-right-none {
+	/*rtl:ignore*/
+	margin-right: 0 !important;
+}
+
+.margin-right-half {
+	/*rtl:ignore*/
+	margin-right: 16px !important;
+}
+
+.margin-right-default {
+	/*rtl:ignore*/
+	margin-right: 32px !important;
+}
+
+.margin-bottom-none {
+	margin-bottom: 0 !important;
+}
+
+.margin-bottom-half {
+	margin-bottom: 16px !important;
+}
+
+.margin-bottom-default {
+	margin-bottom: 32px !important;
+}
+
+.margin-left-none {
+	/*rtl:ignore*/
+	margin-left: 0 !important;
+}
+
+.margin-left-half {
+	/*rtl:ignore*/
+	margin-left: 16px !important;
+}
+
+.margin-left-default {
+	/*rtl:ignore*/
+	margin-left: 32px !important;
+}
+
+/*
+ * Padding
+ */
+.padding-top-none {
+	padding-top: 0 !important;
+}
+
+.padding-top-half {
+	padding-top: 16px !important;
+}
+
+.padding-top-default {
+	padding-top: 32px !important;
+}
+
+.padding-right-none {
+	/*rtl:ignore*/
+	padding-right: 0 !important;
+}
+
+.padding-right-half {
+	/*rtl:ignore*/
+	padding-right: 16px !important;
+}
+
+.padding-right-default {
+	/*rtl:ignore*/
+	padding-right: 32px !important;
+}
+
+.padding-bottom-none {
+	padding-bottom: 0 !important;
+}
+
+.padding-bottom-half {
+	padding-bottom: 16px !important;
+}
+
+.padding-bottom-default {
+	padding-bottom: 32px !important;
+}
+
+.padding-left-none {
+	/*rtl:ignore*/
+	padding-left: 0 !important;
+}
+
+.padding-left-half {
+	/*rtl:ignore*/
+	padding-left: 16px !important;
+}
+
+.padding-left-default {
+	/*rtl:ignore*/
+	padding-left: 32px !important;
 }
 
 /**

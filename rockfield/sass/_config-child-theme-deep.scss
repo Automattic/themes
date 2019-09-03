@@ -189,6 +189,10 @@ $config-button: (
  */
 $config-cover: (
 	"height": 90vh,
+	"color": (
+		"foreground": #{map-deep-get($config-global, "color", "background", "default")},
+		"background": #{map-deep-get($config-global, "color", "foreground", "default")},
+	)
 );
 
 /**
@@ -276,6 +280,7 @@ $config-quote: (
 
 $config-separator: (
 	"height": 2px,
+	"width": #{6 * map-deep-get($config-global, "spacing", "horizontal")},
 );
 
 /**

@@ -91,65 +91,43 @@ Modern Business Editor Styles
   margin-top: 0.5rem;
 }
 
-.site-title,
-.wp-block-a8c-site-title,
-.wp-block-a8c-site-title:focus {
+.site-title {
   color: #181818;
   margin: 0;
   order: 2;
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a,
-.wp-block-a8c-site-title a,
-.wp-block-a8c-site-title:focus a {
+.site-title a {
   color: #181818;
 }
 
-.site-title a:link, .site-title a:visited,
-.wp-block-a8c-site-title a:link,
-.wp-block-a8c-site-title a:visited,
-.wp-block-a8c-site-title:focus a:link,
-.wp-block-a8c-site-title:focus a:visited {
+.site-title a:link, .site-title a:visited {
   color: #181818;
 }
 
-.site-title a:hover,
-.wp-block-a8c-site-title a:hover,
-.wp-block-a8c-site-title:focus a:hover {
+.site-title a:hover {
   color: #4a4a4a;
 }
 
-.featured-image .site-title, .featured-image
-.wp-block-a8c-site-title, .featured-image
-.wp-block-a8c-site-title:focus {
+.featured-image .site-title {
   margin: 0;
 }
 
-.site-title + .main-navigation,
-.wp-block-a8c-site-title + .main-navigation,
-.wp-block-a8c-site-title:focus + .main-navigation {
+.site-title + .main-navigation {
   display: block;
 }
 
-.site-title:not(:empty) + .site-description:not(:empty):before,
-.wp-block-a8c-site-title:not(:empty) + .site-description:not(:empty):before,
-.wp-block-a8c-site-title:focus:not(:empty) + .site-description:not(:empty):before {
+.site-title:not(:empty) + .site-description:not(:empty):before {
   margin: 0 0.2em;
 }
 
-.site-description,
-.wp-block-a8c-site-description,
-.wp-block-a8c-site-description:focus {
+.site-description {
   color: #181818;
   font-size: 0.71111em;
   font-weight: 300;
   margin: 0 0 calc(0.5 * 1rem);
   order: 1;
-}
-
-.wp-block-image.is-resized {
-  display: block;
 }
 
 /* Site footer */
@@ -916,6 +894,81 @@ blockquote {
   }
 }
 
+.a8c-template-editor.site-branding, .a8c-template-editor.site-footer, .template-block.site-branding, .template-block.site-footer {
+  margin: 0;
+}
+
+.a8c-template-editor .wp-block[data-align='full'], .template-block .wp-block[data-align='full'] {
+  left: calc( -12.5% - 12px);
+  max-width: calc( 125% + 114px);
+  width: calc( 125% + 114px);
+}
+
+.a8c-template-editor .template__site-logo .components-placeholder.block-editor-media-placeholder, .template-block .template__site-logo .components-placeholder.block-editor-media-placeholder {
+  margin: 0 auto;
+  max-width: 380px;
+}
+
+.a8c-template-editor .wp-block-a8c-site-description, .template-block .wp-block-a8c-site-description {
+  color: #181818;
+  font-size: 0.71111em;
+  font-weight: 300;
+  line-height: 0.8em;
+  margin: 0;
+  order: 1;
+  text-align: center;
+}
+
+.a8c-template-editor [data-type='a8c/site-description'] [data-block], .template-block [data-type='a8c/site-description'] [data-block] {
+  margin-bottom: 32px;
+}
+
+.a8c-template-editor .wp-block-a8c-site-title, .template-block .wp-block-a8c-site-title {
+  text-align: center;
+}
+
+.a8c-template-editor [data-type='a8c/site-title'] [data-block], .template-block [data-type='a8c/site-title'] [data-block] {
+  margin: 32px 0;
+}
+
+.a8c-template-editor .wp-block-a8c-navigation-menu a, .template-block .wp-block-a8c-navigation-menu a {
+  text-decoration: none;
+}
+
+.a8c-template-editor.site-header .wp-block-a8c-navigation-menu, .template-block.site-header .wp-block-a8c-navigation-menu {
+  text-align: center;
+}
+
+.a8c-template-editor.site-footer .wp-block-a8c-navigation-menu, .template-block.site-footer .wp-block-a8c-navigation-menu {
+  text-align: left;
+}
+
+.a8c-template-editor.site-footer h1,
+.a8c-template-editor.site-footer h2,
+.a8c-template-editor.site-footer h3,
+.a8c-template-editor.site-footer h4,
+.a8c-template-editor.site-footer h5,
+.a8c-template-editor.site-footer h6, .template-block.site-footer h1,
+.template-block.site-footer h2,
+.template-block.site-footer h3,
+.template-block.site-footer h4,
+.template-block.site-footer h5,
+.template-block.site-footer h6 {
+  text-align: left;
+}
+
+.a8c-template-editor.site-footer .wp-block-separator, .template-block.site-footer .wp-block-separator {
+  margin: 16px 0;
+}
+
+.a8c-template-editor.site-footer .wp-block-a8c-navigation-menu, .template-block.site-footer .wp-block-a8c-navigation-menu {
+  margin-top: 0.6rem;
+}
+
+.template-block .site-header {
+  margin-bottom: 2rem;
+}
+
 /** === Helper Functions === */
 /**
  Given a string, $alignment, returns the nested FSE block selectors
@@ -923,7 +976,7 @@ blockquote {
  we use it to target wp-blocks with a matching data-align attribute.
  If no alignment is given, we target the base wp-block class. In both
  of these scenarios, we target top level blocks, and any top level blocks
- inside one of the FSE template part blocks.
+ inside one of the FSE template blocks.
  */
 /** === Editor Frame === */
 body {
@@ -936,9 +989,7 @@ body .wp-block[data-align="full"] {
 }
 
 @media only screen and (min-width: 600px) {
-  
-  body .wp-block[data-align="full"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="full"] {
+  body .wp-block[data-align="full"], body .wp-block.post-content__block .wp-block[data-align="full"] {
     width: calc( 100% + 90px);
     max-width: calc( 100% + 90px);
   }
@@ -949,58 +1000,44 @@ body .wp-block[data-align="full"] {
     max-width: 80%;
     margin: 0 10%;
   }
-  
-  body .wp-block[data-align="wide"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="wide"] {
+  body .wp-block[data-align="wide"], body .wp-block.post-content__block .wp-block[data-align="wide"] {
     width: 100%;
   }
-  
-  body .wp-block[data-align="full"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="full"] {
+  body .wp-block[data-align="full"], body .wp-block.post-content__block .wp-block[data-align="full"] {
     position: relative;
     left: calc( -12.5% - 14px);
     width: calc( 125% + 116px);
     max-width: calc( 125% + 115px);
   }
-  
-  body .wp-block[data-align="right"],
-  body .wp-block[data-type="a8c/post-content"] .wp-block[data-align="right"] {
+  body .wp-block[data-align="right"], body .wp-block.post-content__block .wp-block[data-align="right"] {
     max-width: 125%;
   }
 }
 
 /** === Content Width === */
-
-.wp-block,
-.wp-block[data-type="a8c/post-content"] .wp-block {
+.wp-block, .wp-block.post-content__block .wp-block {
   width: calc(100vw - (2 * 1rem));
   max-width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-  
-  .wp-block,
-  .wp-block[data-type="a8c/post-content"] .wp-block {
+  .wp-block, .wp-block.post-content__block .wp-block {
     width: calc(8 * (100vw / 12));
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  
-  .wp-block,
-  .wp-block[data-type="a8c/post-content"] .wp-block {
+  .wp-block, .wp-block.post-content__block .wp-block {
     width: calc(6 * (100vw / 12 ));
   }
 }
 
-
-.wp-block .wp-block,
-.wp-block[data-type="a8c/post-content"] .wp-block .wp-block {
+.wp-block .wp-block, .wp-block.post-content__block .wp-block .wp-block {
   width: 100%;
 }
 
-/** === FSE Template Part Blocks === */
-.wp-block[data-type="a8c/post-content"] {
+/** === FSE Template Blocks === */
+.wp-block.post-content__block {
   width: 100%;
 }
 
@@ -1895,42 +1932,6 @@ ul.wp-block-archives li ul,
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
   font-size: 0.71111em;
-}
-
-/** === Site Title Block === */
-.wp-block-a8c-site-title {
-  text-align: center;
-}
-
-/** === Site Description Block === */
-.wp-block-a8c-site-description, .wp-block-a8c-site-description:focus {
-  text-align: center;
-  margin: 0;
-  line-height: 0.8em;
-}
-
-/** === Site Logo Block === */
-.template__site-logo .components-placeholder.block-editor-media-placeholder {
-  width: 380px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Remove 100% width on figure to center align logo in editor on smaller screens */
-.block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] > .block-editor-block-list__block-edit figure.fse-site-logo {
-  width: inherit;
-}
-
-.site-header .wp-block[data-align="full"] {
-  left: calc( -12.5% - 12px);
-  max-width: calc( 125% + 114px);
-  width: calc( 125% + 114px);
-}
-
-.template-block.site-header .wp-block[data-align="full"] {
-  left: calc( -12.5% - 9px);
-  max-width: calc( 125% + 111px);
-  width: calc( 125% + 111px);
 }
 
 /** === Classic Editor === */

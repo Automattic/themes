@@ -1,0 +1,86 @@
+@import "../components/header/header";
+@import "../components/footer/footer";
+
+.template-block {
+	.site-header,
+	.site-footer {
+		padding: #{map-deep-get($config-global, "spacing", "unit")};
+
+		@include media(mobile) {
+			padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+		}
+	}
+}
+
+.a8c-template-editor {
+	.wp-block:not(.is-selected) [data-block] {
+		margin-bottom: 14px;
+	}
+	.wp-block:not(:first-child):not(.is-selected) [data-block] {
+		margin-top: 14px;
+	}
+}
+
+.site-header {
+	.site-title {
+		font-size: 21.6px;
+		font-weight: 700;
+		text-decoration: underline;
+
+		&:focus {
+			color: #{map-deep-get($config-header, "branding", "color", "link")};
+		}
+	}
+
+	.site-description {
+		font-size: 15px;
+	}
+
+	.main-navigation {
+		@import "../blocks/button/style";
+
+		a {
+			font-size: 21.6px;
+		}
+	}
+}
+
+.post-content__block {
+	margin-bottom: 160px;
+	margin-top: 36px;
+
+	// Minimum z-index to appear above the Template block overlay.
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/packages/block-editor/src/components/block-list/style.scss#L495-L496
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/assets/stylesheets/_z-index.scss#L8
+	z-index: 20;
+}
+
+.site-footer {
+	@include media(tablet) {
+		display: block;
+	}
+
+	.main-navigation {
+		@extend .footer-navigation;
+
+		display: block;
+
+		.hide-visually,
+		#toggle-menu {
+			display: none;
+		}
+
+		@include media(mobile-only) {
+			.menu-primary-container {
+				display: block;
+			}
+			li {
+				width: auto;
+
+				.sub-menu {
+					display: none;
+				}
+			}
+		}
+	}
+}

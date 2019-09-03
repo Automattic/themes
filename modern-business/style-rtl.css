@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Description: A minimalist theme for those with an eye for style. Modern Business is a perfect choice for stores offering high-end products and services, or the fashion and beauty industries -- any site where elegance and polish is key.
 Requires at least: WordPress 4.9.6
 Template: twentynineteen
-Version: 1.5
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
@@ -1600,10 +1600,6 @@ body.page .main-navigation {
   margin-left: 1rem;
 }
 
-footer .wp-block-a8c-navigation-menu .sub-menu {
-  visibility: hidden;
-}
-
 /*--------------------------------------------------------------
 ## Next / Previous
 --------------------------------------------------------------*/
@@ -1998,65 +1994,43 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
   margin-top: 0.5rem;
 }
 
-.site-title,
-.wp-block-a8c-site-title,
-.wp-block-a8c-site-title:focus {
+.site-title {
   color: #181818;
   margin: 0;
   order: 2;
   /* When there is no description set, make sure navigation appears below title. */
 }
 
-.site-title a,
-.wp-block-a8c-site-title a,
-.wp-block-a8c-site-title:focus a {
+.site-title a {
   color: #181818;
 }
 
-.site-title a:link, .site-title a:visited,
-.wp-block-a8c-site-title a:link,
-.wp-block-a8c-site-title a:visited,
-.wp-block-a8c-site-title:focus a:link,
-.wp-block-a8c-site-title:focus a:visited {
+.site-title a:link, .site-title a:visited {
   color: #181818;
 }
 
-.site-title a:hover,
-.wp-block-a8c-site-title a:hover,
-.wp-block-a8c-site-title:focus a:hover {
+.site-title a:hover {
   color: #4a4a4a;
 }
 
-.featured-image .site-title, .featured-image
-.wp-block-a8c-site-title, .featured-image
-.wp-block-a8c-site-title:focus {
+.featured-image .site-title {
   margin: 0;
 }
 
-.site-title + .main-navigation,
-.wp-block-a8c-site-title + .main-navigation,
-.wp-block-a8c-site-title:focus + .main-navigation {
+.site-title + .main-navigation {
   display: block;
 }
 
-.site-title:not(:empty) + .site-description:not(:empty):before,
-.wp-block-a8c-site-title:not(:empty) + .site-description:not(:empty):before,
-.wp-block-a8c-site-title:focus:not(:empty) + .site-description:not(:empty):before {
+.site-title:not(:empty) + .site-description:not(:empty):before {
   margin: 0 0.2em;
 }
 
-.site-description,
-.wp-block-a8c-site-description,
-.wp-block-a8c-site-description:focus {
+.site-description {
   color: #181818;
   font-size: 0.71111em;
   font-weight: 300;
   margin: 0 0 calc(0.5 * 1rem);
   order: 1;
-}
-
-.wp-block-image.is-resized {
-  display: block;
 }
 
 .site-header.featured-image {
@@ -3433,8 +3407,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 /* !Block styles */
 .entry .entry-content > *,
 .entry .entry-summary > *,
-.fse-enabled .site-header > *,
-.fse-enabled .site-footer > * {
+.fse-enabled .site-header > * {
   margin: 32px 0;
   max-width: 100%;
 }
@@ -3442,8 +3415,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *,
   .entry .entry-summary > *,
-  .fse-enabled .site-header > *,
-  .fse-enabled .site-footer > * {
+  .fse-enabled .site-header > * {
     max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
@@ -3451,8 +3423,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 1168px) {
   .entry .entry-content > *,
   .entry .entry-summary > *,
-  .fse-enabled .site-header > *,
-  .fse-enabled .site-footer > * {
+  .fse-enabled .site-header > * {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
@@ -3460,30 +3431,26 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *,
   .entry .entry-summary > *,
-  .fse-enabled .site-header > *,
-  .fse-enabled .site-footer > * {
+  .fse-enabled .site-header > * {
     margin: 32px auto;
   }
 }
 
 .entry .entry-content > * > *:first-child,
 .entry .entry-summary > * > *:first-child,
-.fse-enabled .site-header > * > *:first-child,
-.fse-enabled .site-footer > * > *:first-child {
+.fse-enabled .site-header > * > *:first-child {
   margin-top: 0;
 }
 
 .entry .entry-content > * > *:last-child,
 .entry .entry-summary > * > *:last-child,
-.fse-enabled .site-header > * > *:last-child,
-.fse-enabled .site-footer > * > *:last-child {
+.fse-enabled .site-header > * > *:last-child {
   margin-bottom: 0;
 }
 
 .entry .entry-content > *.alignwide,
 .entry .entry-summary > *.alignwide,
-.fse-enabled .site-header > *.alignwide,
-.fse-enabled .site-footer > *.alignwide {
+.fse-enabled .site-header > *.alignwide {
   margin-right: auto;
   margin-left: auto;
   clear: both;
@@ -3492,8 +3459,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.alignwide,
   .entry .entry-summary > *.alignwide,
-  .fse-enabled .site-header > *.alignwide,
-  .fse-enabled .site-footer > *.alignwide {
+  .fse-enabled .site-header > *.alignwide {
     width: 100%;
     max-width: 100%;
   }
@@ -3501,8 +3467,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 
 .entry .entry-content > *.alignfull,
 .entry .entry-summary > *.alignfull,
-.fse-enabled .site-header > *.alignfull,
-.fse-enabled .site-footer > *.alignfull {
+.fse-enabled .site-header > *.alignfull {
   position: relative;
   right: -1rem;
   width: calc( 100% + (2 * 1rem));
@@ -3513,8 +3478,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.alignfull,
   .entry .entry-summary > *.alignfull,
-  .fse-enabled .site-header > *.alignfull,
-  .fse-enabled .site-footer > *.alignfull {
+  .fse-enabled .site-header > *.alignfull {
     margin-top: 32px;
     margin-bottom: 32px;
     right: calc( -12.5% - 75px);
@@ -3525,8 +3489,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 
 .entry .entry-content > *.alignleft,
 .entry .entry-summary > *.alignleft,
-.fse-enabled .site-header > *.alignleft,
-.fse-enabled .site-footer > *.alignleft {
+.fse-enabled .site-header > *.alignleft {
   float: left;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
@@ -3537,8 +3500,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.alignleft,
   .entry .entry-summary > *.alignleft,
-  .fse-enabled .site-header > *.alignleft,
-  .fse-enabled .site-footer > *.alignleft {
+  .fse-enabled .site-header > *.alignleft {
     max-width: calc(4 * (100vw / 12));
     margin-right: calc(2 * 1rem);
   }
@@ -3546,8 +3508,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 
 .entry .entry-content > *.alignright,
 .entry .entry-summary > *.alignright,
-.fse-enabled .site-header > *.alignright,
-.fse-enabled .site-footer > *.alignright {
+.fse-enabled .site-header > *.alignright {
   float: right;
   max-width: calc(5 * (100vw / 12));
   margin-top: 0;
@@ -3558,8 +3519,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.alignright,
   .entry .entry-summary > *.alignright,
-  .fse-enabled .site-header > *.alignright,
-  .fse-enabled .site-footer > *.alignright {
+  .fse-enabled .site-header > *.alignright {
     max-width: calc(4 * (100vw / 12));
     margin-left: 0;
     margin-left: calc(2 * 1rem);
@@ -3568,8 +3528,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 
 .entry .entry-content > *.aligncenter,
 .entry .entry-summary > *.aligncenter,
-.fse-enabled .site-header > *.aligncenter,
-.fse-enabled .site-footer > *.aligncenter {
+.fse-enabled .site-header > *.aligncenter {
   margin-right: auto;
   margin-left: auto;
   /*
@@ -3583,8 +3542,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 768px) {
   .entry .entry-content > *.aligncenter,
   .entry .entry-summary > *.aligncenter,
-  .fse-enabled .site-header > *.aligncenter,
-  .fse-enabled .site-footer > *.aligncenter {
+  .fse-enabled .site-header > *.aligncenter {
     max-width: calc(8 * (100vw / 12) - 28px);
   }
 }
@@ -3592,8 +3550,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 @media only screen and (min-width: 1168px) {
   .entry .entry-content > *.aligncenter,
   .entry .entry-summary > *.aligncenter,
-  .fse-enabled .site-header > *.aligncenter,
-  .fse-enabled .site-footer > *.aligncenter {
+  .fse-enabled .site-header > *.aligncenter {
     max-width: calc(6 * (100vw / 12) - 28px);
   }
 }
@@ -3617,13 +3574,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
 .entry .entry-content .entry,
 .entry .entry-summary .entry-content,
 .entry .entry-summary .entry-summary,
-.entry .entry-summary .entry,
-.fse-enabled .site-header .entry-content,
-.fse-enabled .site-header .entry-summary,
-.fse-enabled .site-header .entry,
-.fse-enabled .site-footer .entry-content,
-.fse-enabled .site-footer .entry-summary,
-.fse-enabled .site-footer .entry {
+.entry .entry-summary .entry {
   margin: inherit;
   max-width: inherit;
   padding: inherit;
@@ -3635,13 +3586,7 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
   .entry .entry-content .entry,
   .entry .entry-summary .entry-content,
   .entry .entry-summary .entry-summary,
-  .entry .entry-summary .entry,
-  .fse-enabled .site-header .entry-content,
-  .fse-enabled .site-header .entry-summary,
-  .fse-enabled .site-header .entry,
-  .fse-enabled .site-footer .entry-content,
-  .fse-enabled .site-footer .entry-summary,
-  .fse-enabled .site-footer .entry {
+  .entry .entry-summary .entry {
     margin: inherit;
     max-width: inherit;
     padding: inherit;
@@ -5599,6 +5544,39 @@ footer .wp-block-a8c-navigation-menu .sub-menu {
   background: #9e3067;
   outline: thin dotted;
   outline-offset: -4px;
+}
+
+.fse-enabled .site-footer {
+  padding: 1rem 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .fse-enabled .site-footer {
+    padding: 1rem 0;
+  }
+}
+
+.fse-enabled .site-footer h1,
+.fse-enabled .site-footer h2,
+.fse-enabled .site-footer h3,
+.fse-enabled .site-footer h4,
+.fse-enabled .site-footer h5,
+.fse-enabled .site-footer h6 {
+  margin: 32px 0;
+  text-align: right;
+}
+
+.fse-enabled .site-footer .wp-block-button, .fse-enabled .site-footer p {
+  margin: 15px 0;
+}
+
+.fse-enabled .site-footer .wp-block-separator {
+  margin: 16px 0;
+}
+
+.fse-enabled .site-footer#colophon .site-info {
+  text-align: right;
+  margin: 0;
 }
 
 /* Site Builder */

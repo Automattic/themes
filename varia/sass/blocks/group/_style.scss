@@ -23,42 +23,11 @@
 		}
 	}
 
-	&.alignwide .wp-block-group__inner-container,
-	&.alignfull .wp-block-group__inner-container {
-		@extend %responsive-align-container;
-	}
-
-	&.alignwide .alignwide,
-	&.alignwide .alignfull,
-	&.alignfull .alignwide {
-		@extend %responsive-width-wide;
-		clear: both;
-	}
-
-	&.alignfull .alignfull, {
-		@extend %responsive-width-full;
-		clear: both;
-	}
-
 	&.has-background {
-		padding: #{map-deep-get($config-global, "spacing", "horizontal")};
+		padding: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 
-		&.alignwide > .wp-block-group__inner-container > .alignwide:first-of-type,
-		&.alignwide > .wp-block-group__inner-container > .alignfull:first-of-type {
-			margin-top: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
-		}
-
-		&.alignwide > .wp-block-group__inner-container > .alignwide:last-of-type,
-		&.alignwide > .wp-block-group__inner-container > .alignfull:last-of-type {
-			margin-bottom: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
-		}
-
-		&.alignfull > .wp-block-group__inner-container > .alignfull:first-of-type {
-			margin-top: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
-		}
-
-		&.alignfull > .wp-block-group__inner-container > .alignfull:last-of-type {
-			margin-bottom: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
+		@include media(mobile) {
+			padding: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 }

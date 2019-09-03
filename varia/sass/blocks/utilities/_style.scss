@@ -1,42 +1,94 @@
-/* Text Alignments */
+/* Block Alignments */
+
+/**
+ * .alignleft
+ */
 .alignleft {
 	/*rtl:ignore*/
 	text-align: left;
 	/*rtl:ignore*/
 	float: left;
+	margin-top: 0;
 	/*rtl:ignore*/
 	margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
-	margin-top: 0;
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 }
 
+.entry-content > .alignleft {
+	@extend %responsive-alignleft;
+}
+
+/**
+ * .aligncenter
+ */
 .aligncenter {
 	clear: both;
 	float: none;
 	text-align: center;
 }
 
+/**
+ * .alignright
+ */
 .alignright {
 	/*rtl:ignore*/
 	float: right;
-	/*rtl:ignore*/
-	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 	margin-top: 0;
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	/*rtl:ignore*/
+	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 }
 
-// Alignwide & Alignfull
-// - More selector specificity needed here to deal with
-//   group-block expected behavior
-// - See: sass/blocks/group/_style.scss
+.entry-content > .alignright {
+	@extend %responsive-alignright;
+}
+
+// Make sure siblings of floated elements are top-aligned when nested
+.entry-content * > .alignleft + *,
+.entry-content * > .alignright + * {
+	margin-top: 0;
+}
+
+/**
+ * .aligndefault
+ */
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+	@extend %responsive-aligndefault;
+}
+
+.entry-content [class*="inner-container"] {
+	max-width: inherit;
+}
+
+/**
+ * .alignwide
+ */
+.alignwide {
+	clear: both;
+}
+
 .entry-content > .alignwide {
-	@extend %responsive-width-wide;
+	@extend %responsive-alignwide;
+}
+
+.entry-content > .alignwide [class*="inner-container"] > .alignwide {
+	@extend %responsive-alignwide-nested;
+}
+
+/**
+ * .alignfull
+ */
+.alignfull {
 	clear: both;
 }
 
 .entry-content > .alignfull {
-	@extend %responsive-width-full;
-	clear: both;
+	@extend %responsive-alignfull;
+}
+
+.entry-content > .alignfull [class*="inner-container"] > .alignwide {
+	@extend %responsive-alignwide-nested;
 }
 
 // Content alignment
@@ -89,70 +141,53 @@
 }
 
 // Gutenberg background-color options
-.has-background {}
+.has-background {
+
+	&:not(.has-background-background-color) a,
+	p, h1, h2, h3, h4, h5, h6,
+	.wp-block-quote__citation {
+		color: currentColor;
+	}
+}
 
 .has-primary-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")} !important;
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-secondary-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "secondary", "default")} !important;
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-foreground-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "default")} !important;
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-foreground-light-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "light")} !important;
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-foreground-dark-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-background-light-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "background", "light")} !important;
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-background-dark-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "background", "dark")} !important;
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-background-background-color[class] {
 	background-color: #{map-deep-get($config-global, "color", "background", "default")} !important;
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 // Gutenberg Font-size options

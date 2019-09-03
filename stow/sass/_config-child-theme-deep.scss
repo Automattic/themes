@@ -20,7 +20,7 @@ $config-global: (
 	"font": (
 		/* Font Family */
 		"family": (
-			"primary": "\"Oswald\"\, sans-serif",	
+			"primary": "\"Oswald\"\, sans-serif",
 			"secondary": "\"Source Sans Pro\"\, Arial\, sans-serif",
 			"code": "\"Courier 10 Pitch\"\, Courier\, monospace",
 			"ui": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
@@ -173,7 +173,7 @@ $config-button: (
 		"size": map-deep-get($config-global, "font", "size", "xs"),
 		"weight": 600,
 		"line-height": 1,
-	),	
+	),
 	// Borders
 	"border-radius": map-deep-get($config-global, "border-radius", "sm"),
 	"border-width": 2px,
@@ -188,7 +188,11 @@ $config-button: (
  * Cover
  */
 $config-cover: (
-	"height": calc( 15 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	"height": #{15 * map-deep-get($config-global, "spacing", "vertical")},
+	"color": (
+		"foreground": #{map-deep-get($config-global, "color", "background", "default")},
+		"background": #{map-deep-get($config-global, "color", "foreground", "default")},
+	)
 );
 
 /**
@@ -275,7 +279,8 @@ $config-quote: (
  */
 
 $config-separator: (
-	"height": #{0.25 * $baseline-unit},
+	"height": #{0.125 * map-deep-get($config-global, "spacing", "unit")},
+	"width": #{6 * map-deep-get($config-global, "spacing", "horizontal")},
 );
 
 /**

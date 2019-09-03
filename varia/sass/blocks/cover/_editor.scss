@@ -1,13 +1,15 @@
 .wp-block-cover,
 .wp-block-cover-image {
 
-	background-color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	background-color: #{map-deep-get($config-cover, "color", "background")};
+	color: #{map-deep-get($config-cover, "color", "foreground")};
 	min-height: #{map-deep-get($config-cover, "height")};
 
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
-	.wp-block-cover-text {
-		color: #{map-deep-get($config-global, "color", "background", "default")};
+	.wp-block-cover-text,
+	.block-editor-block-list__block {
+		color: #{map-deep-get($config-cover, "color", "foreground")};
 
 		a {
 			color: currentColor;

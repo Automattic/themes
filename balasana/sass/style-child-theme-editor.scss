@@ -1,0 +1,41 @@
+/**
+ * These styles should be loaded by the Block Editor only
+ */
+
+/**
+ * Abstracts
+ * - Mixins, variables and functions
+ */
+@import "../../varia/sass/abstracts/imports";
+
+/**
+ * Child Theme Name
+ */
+@import "config-child-theme-deep";
+
+/**
+ * Base
+ * - Reset the browser
+ */
+@import "../../varia/sass/base/editor";
+
+/**
+ * Elements
+ * - Styles for basic HTML elemants
+ */
+@import "../../varia/sass/elements/editor";
+
+/**
+ * Blocks
+ * - These styles replace key Gutenberg Block styles for fonts, colors, and
+ *   spacing with CSS-variables overrides
+ */
+@import "../../varia/sass/blocks/editor";
+
+/**
+ * Extras
+ */
+.editor-post-title__block .editor-post-title__input {
+	text-align: center;
+	font-size: (strip-unit( map-deep-get($config-heading, "font", "size", "h1") ) + 0em);
+}
