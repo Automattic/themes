@@ -187,8 +187,10 @@ a {
  * Blocks
  */
 .wp-block-columns.alignfull {
-	padding-right: $spacing_vertical;
-	padding-left: $spacing_vertical;
+	@include media(mobile) {
+		padding-right: $spacing_vertical;
+		padding-left: $spacing_vertical;
+	}
 }
 
 /**
