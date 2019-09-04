@@ -38,6 +38,11 @@ a {
 	}
 }
 
+.main-navigation > div > ul li.current-menu-item a {
+	text-decoration: underline;
+}
+
+
 
 /**
  * CSS-grid Desktop Menu
@@ -196,6 +201,17 @@ a {
 /**
  * Widgets
  */
+
+@include media(laptop) {
+	.site-footer .widget-area {
+		max-width: 100%;
+
+		& > * {
+			max-width: 50%;
+		}
+	}
+}
+
 .widget {
 	select {
 		max-width: 100%;
