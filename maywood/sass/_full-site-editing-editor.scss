@@ -1,22 +1,65 @@
 @import "../../varia/sass/full-site-editing/editor";
 
+.site-header, .site-footer {
+	.site-title {
+		font-size: 20px;
+		@include media(mobile) {
+			font-size: 24px;
+		}
+	}
+
+	.site-description {
+		font-size: 13.8px;
+		@include media(mobile) {
+			font-size: 16.6px;
+		}
+	}
+}
+
 .site-header {
 	.site-title {
-		font-size: 24px;
 		text-align: center;
 		text-decoration: none;
 	}
 
 	.site-description{
-		font-size: 16.6px;
 		text-align: center;
 	}
 
-	.main-navigation ul {
-		justify-content: center;
-		a {
-			font-size: 20px;
-			text-decoration: none;
+	.main-navigation {
+		text-align: center;
+		ul {
+			justify-content: center;
+			a {
+				font-size: 20px;
+				text-decoration: none;
+			}
 		}
 	}
+}
+
+.site-footer {
+	.site-title {
+		font-weight: 700;
+	}
+
+	.main-navigation .footer-menu {
+		justify-content: center;
+
+		@include media(tablet) {
+			justify-content: flex-end;
+		}
+
+		a {
+			font-size: 16.6px;
+			text-decoration: none;
+			@include media(mobile-only) {
+				font-size: 13.8px;
+			}
+		}
+	}
+}
+
+.post-content__block {
+	margin-top: -36px;
 }

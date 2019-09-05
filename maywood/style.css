@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Maywood is a refined theme designed for restaurants and food-related businesses seeking a modern look.
 Requires at least: WordPress 4.9.6
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2621,12 +2621,12 @@ table th,
 	color: #685636;
 }
 
-.footer-navigation {
+.footer-navigation, .fse-enabled .site-footer .main-navigation {
 	display: inline;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation {
+	.footer-navigation, .fse-enabled .site-footer .main-navigation {
 		flex: 1 0 50%;
 		order: 2;
 		margin-top: 0;
@@ -2635,37 +2635,37 @@ table th,
 	}
 }
 
-.footer-navigation > div {
+.footer-navigation > div, .fse-enabled .site-footer .main-navigation > div {
 	display: inline;
 }
 
-.footer-navigation .footer-menu {
+.footer-navigation .footer-menu, .fse-enabled .site-footer .main-navigation .footer-menu {
 	color: #686868;
 	margin: 0;
 	padding-left: 0;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu {
+	.footer-navigation .footer-menu, .fse-enabled .site-footer .main-navigation .footer-menu {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
 	}
 }
 
-.footer-navigation .footer-menu > li {
+.footer-navigation .footer-menu > li, .fse-enabled .site-footer .main-navigation .footer-menu > li {
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type > a {
+.footer-navigation .footer-menu > li:first-of-type > a, .fse-enabled .site-footer .main-navigation .footer-menu > li:first-of-type > a {
 	padding-left: 0;
 }
 
-.footer-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type, .fse-enabled .site-footer .main-navigation .footer-menu > li:last-of-type {
 	padding-right: 0;
 }
 
-.footer-navigation .footer-menu a {
+.footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 0.83333rem;
 	font-weight: 700;
@@ -2673,11 +2673,11 @@ table th,
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited {
+.footer-navigation .footer-menu a:link, .fse-enabled .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .fse-enabled .site-footer .main-navigation .footer-menu a:visited {
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:hover {
+.footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
 	color: #685636;
 }
 
@@ -3797,11 +3797,11 @@ p:not(.site-title) a:hover {
 /**
  * Footer Navigation
  */
-.footer-navigation .footer-menu a {
+.footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	padding: 0 8px;
 }
 
-.footer-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type, .fse-enabled .site-footer .main-navigation .footer-menu > li:last-of-type {
 	margin-right: -8px;
 }
 
@@ -3809,9 +3809,54 @@ p:not(.site-title) a:hover {
  * Full Site Editing
  * - Full Site Editing overrides
  */
+.fse-enabled .site-footer {
+	display: block;
+}
+
+.fse-enabled .site-footer .main-navigation {
+	display: block;
+}
+
+.fse-enabled .site-footer .main-navigation .hide-visually,
+.fse-enabled .site-footer .main-navigation #toggle-menu {
+	display: none;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-enabled .site-footer .main-navigation .menu-primary-container {
+		display: block;
+	}
+	.fse-enabled .site-footer .main-navigation li {
+		width: auto;
+	}
+	.fse-enabled .site-footer .main-navigation li .sub-menu {
+		display: none;
+	}
+}
+
 .fse-enabled .site-header.entry-content {
 	margin-bottom: 0;
 	max-width: 100%;
 	padding: 0;
+	width: 100%;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-enabled .site-header.entry-content .main-navigation .menu-primary-container {
+		padding: 0 32px;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.fse-enabled .site-footer .wp-block-a8c-navigation-menu {
+		margin-bottom: 21.312px;
+		margin-top: 21.312px;
+	}
+}
+
+.fse-enabled #colophon {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: none;
 	width: 100%;
 }

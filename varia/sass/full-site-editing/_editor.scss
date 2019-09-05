@@ -36,34 +36,51 @@
 		font-size: 15px;
 	}
 
-	.main-navigation a {
-		font-size: 21.6px;
+	.main-navigation {
+		@import "../blocks/button/style";
+
+		a {
+			font-size: 21.6px;
+		}
 	}
+}
+
+.post-content__block {
+	margin-bottom: 160px;
+	margin-top: 36px;
+
+	// Minimum z-index to appear above the Template block overlay.
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/packages/block-editor/src/components/block-list/style.scss#L495-L496
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/assets/stylesheets/_z-index.scss#L8
+	z-index: 20;
 }
 
 .site-footer {
 	@include media(tablet) {
 		display: block;
 	}
-}
 
-.main-navigation {
-	@include media(mobile-only) {
-		background-color: #{map-deep-get($config-button, "color", "background")};
-		border-radius: #{map-deep-get($config-button, "border-radius")};
-		color: #{map-deep-get($config-button, "color", "text")};
-		display: inline-block;
-		font-family: #{map-deep-get($config-button, "font", "family")};
-		font-size: 18px;
-		font-weight: #{map-deep-get($config-button, "font", "weight")};
-		line-height: #{map-deep-get($config-button, "font", "line-height")};
-		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+	.main-navigation {
+		@extend .footer-navigation;
 
-		&:before {
-			content: "Menu";
+		display: block;
+
+		.hide-visually,
+		#toggle-menu {
+			display: none;
 		}
-		&:after {
-			content: "+";
+
+		@include media(mobile-only) {
+			.menu-primary-container {
+				display: block;
+			}
+			li {
+				width: auto;
+
+				.sub-menu {
+					display: none;
+				}
+			}
 		}
 	}
 }

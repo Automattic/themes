@@ -1,6 +1,9 @@
-@charset "UTF-8";
 /**
  * These styles should be loaded by the Block Editor only
+ */
+/**
+ * Abstracts
+ * - Mixins, variables and functions
  */
 /**
  * Abstracts
@@ -113,35 +116,75 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Child Theme Name
+ */
+/**
+ * Redefine Sass map values for child theme output.
+ * - See: style-child-theme.scss
+ */
+/**
+ * Global
+ */
+/**
+ * Elements
+ */
+/**
+ * Button
+ */
+/**
+ * Cover
+ */
+/**
+ * Heading
+ */
+/**
+ * List
+ */
+/**
+ * Pullquote
+ */
+/**
+ * Quote
+ */
+/**
+ * Separator
+ */
+/**
+ * Header
+ */
+/**
+ * Footer
+ */
+/**
  * Base
  * - Reset the browser
  */
 body {
-	color: #444444;
+	color: black;
 	background-color: white;
-	font-family: serif;
-	font-size: 18px;
+	font-family: Poppins, serif;
+	font-size: 20px;
 	font-weight: normal;
-	line-height: 1.78;
+	line-height: 1.6;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 .editor-post-title__block {
-	font-size: 18px;
+	font-size: 20px;
 }
 
 p {
 	font-size: 1em;
-	line-height: 1.78;
+	line-height: 1.6;
 }
 
 a {
-	color: blue;
+	color: black;
 }
 
 a:hover {
-	color: indigo;
+	color: #666666;
 }
 
 button,
@@ -162,7 +205,7 @@ blockquote {
 }
 
 blockquote p {
-	font-size: 1.728rem;
+	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -191,7 +234,7 @@ blockquote.alignleft, blockquote.alignright {
 }
 
 blockquote.alignleft p, blockquote.alignright p {
-	font-size: 1.44rem;
+	font-size: 1rem;
 	max-width: inherit;
 	width: inherit;
 }
@@ -204,7 +247,7 @@ blockquote.alignright footer {
 }
 
 figcaption {
-	color: #767676;
+	color: #666666;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -254,28 +297,28 @@ object {
 
 .wp-block-button .wp-block-button__link {
 	color: white;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-size: 1.2em;
+	font-weight: 600;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.83333em;
 	line-height: 1;
-	background-color: blue;
-	border-radius: 9px;
+	background-color: black;
+	border-radius: 5px;
 	padding: 16px 16px;
 }
 
 .wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus, .wp-block-button .wp-block-button__link.has-focus {
 	color: white;
-	background-color: indigo;
+	background-color: #666666;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: blue;
+	color: black;
 	background: transparent;
 	border: 2px solid currentcolor;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover, .wp-block-button.is-style-outline .wp-block-button__link:focus, .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: indigo;
+	color: #666666;
 }
 
 .wp-block-button.is-style-squared .wp-block-button__link {
@@ -286,7 +329,6 @@ object {
 .wp-block-cover-image {
 	background-color: black;
 	color: white;
-	min-height: 480px;
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
@@ -314,8 +356,8 @@ object {
 
 .wp-block-cover h2,
 .wp-block-cover-image h2 {
-	font-size: 2.48832em;
-	letter-spacing: normal;
+	font-size: 1.728em;
+	letter-spacing: -0.015em;
 	line-height: 1.125;
 	padding: 0;
 	max-width: inherit;
@@ -343,43 +385,43 @@ object {
 .wp-block-heading h4, h4, .h4,
 .wp-block-heading h5, h5, .h5,
 .wp-block-heading h6, h6, .h6 {
-	font-family: sans-serif;
-	font-weight: bold;
+	font-family: Poppins, sans-serif;
+	font-weight: 600;
 	clear: both;
 }
 
 .wp-block-heading h1, h1, .h1 {
-	font-size: 2.98598em;
-	letter-spacing: normal;
+	font-size: 2.0736em;
+	letter-spacing: -0.015em;
 	line-height: 1.125;
 }
 
 .wp-block-heading h2, h2, .h2 {
-	font-size: 2.48832em;
-	letter-spacing: normal;
+	font-size: 1.728em;
+	letter-spacing: -0.015em;
 	line-height: 1.125;
 }
 
 .wp-block-heading h3, h3, .h3 {
-	font-size: 2.0736em;
-	letter-spacing: normal;
+	font-size: 1.44em;
+	letter-spacing: -0.015em;
 	line-height: 1.125;
 }
 
 .wp-block-heading h4, h4, .h4 {
-	font-size: 1.728em;
+	font-size: 1.2em;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 .wp-block-heading h5, h5, .h5 {
-	font-size: 1.44em;
+	font-size: 1em;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
 
 .wp-block-heading h6, h6, .h6 {
-	font-size: 1.2em;
+	font-size: 0.83333em;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -393,9 +435,9 @@ object {
 }
 
 .wp-block-latest-posts > li > a {
-	font-family: sans-serif;
-	font-size: 1.728rem;
-	font-weight: bold;
+	font-family: Poppins, sans-serif;
+	font-size: 1.2rem;
+	font-weight: 600;
 	line-height: 1.125;
 }
 
@@ -414,9 +456,9 @@ object {
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
-	color: #767676;
+	color: #666666;
 	font-size: 0.83333rem;
-	line-height: 1.78;
+	line-height: 1.6;
 }
 
 [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
@@ -427,7 +469,7 @@ object {
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 0.83333rem;
-	line-height: 1.78;
+	line-height: 1.6;
 	margin: 0;
 }
 
@@ -464,11 +506,11 @@ p.has-background:not(.has-background-background-color) a {
 	margin-left: 0;
 	margin-right: 0;
 	text-align: center;
-	border-top-color: #DDDDDD;
+	border-top-color: #e6e6e6;
 	border-top-width: 4px;
-	border-bottom-color: #DDDDDD;
+	border-bottom-color: #e6e6e6;
 	border-bottom-width: 4px;
-	color: #444444;
+	color: black;
 	/**
 	 * Block Options
 	 */
@@ -479,8 +521,8 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote p {
-	font-family: sans-serif;
-	font-size: 1.728em;
+	font-family: Poppins, sans-serif;
+	font-size: 1.2em;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -492,7 +534,7 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
-	color: #767676;
+	color: #666666;
 	font-size: 0.83333em;
 	letter-spacing: normal;
 }
@@ -502,7 +544,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: blue;
+	background-color: black;
 	color: white;
 }
 
@@ -532,14 +574,14 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote {
-	border-left-color: blue;
+	border-left-color: black;
 	margin: 32px 0;
 	padding-left: 16px;
 }
 
 .wp-block-quote p {
-	font-family: sans-serif;
-	font-size: 1.728em;
+	font-family: Poppins, sans-serif;
+	font-size: 1.2em;
 	letter-spacing: normal;
 }
 
@@ -549,22 +591,22 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
-	font-family: sans-serif;
-	font-size: 2.0736em;
-	letter-spacing: normal;
+	font-family: Poppins, sans-serif;
+	font-size: 1.44em;
+	letter-spacing: -0.015em;
 	line-height: 1.125;
 }
 
 .wp-block-separator,
 hr {
-	border-bottom: 2px solid #DDDDDD;
+	border-bottom: 2px solid #e6e6e6;
 	clear: both;
 }
 
 .wp-block-separator[style*="text-align:right"], .wp-block-separator[style*="text-align: right"],
 hr[style*="text-align:right"],
 hr[style*="text-align: right"] {
-	border-right-color: #DDDDDD;
+	border-right-color: #e6e6e6;
 }
 
 .wp-block-separator.is-style-wide,
@@ -579,12 +621,12 @@ hr.is-style-dots {
 
 .wp-block-separator.is-style-dots:before,
 hr.is-style-dots:before {
-	color: #DDDDDD;
+	color: #e6e6e6;
 }
 
 table th,
 .wp-block-table th {
-	font-family: sans-serif;
+	font-family: Poppins, sans-serif;
 }
 
 table td,
@@ -599,40 +641,40 @@ table th,
  * - Needs a special styles
  */
 .editor-post-title__block .editor-post-title__input {
-	color: #444444;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 2.48832em;
-	letter-spacing: normal;
+	color: black;
+	font-family: Poppins, sans-serif;
+	font-weight: 600;
+	font-size: 1.728em;
+	letter-spacing: -0.015em;
 	line-height: 1.125;
 }
 
 .has-primary-color[class] {
-	color: blue !important;
+	color: black !important;
 }
 
 .has-secondary-color[class] {
-	color: red !important;
+	color: #1a1a1a !important;
 }
 
 .has-foreground-color[class] {
-	color: #444444 !important;
+	color: black !important;
 }
 
 .has-foreground-light-color[class] {
-	color: #767676 !important;
+	color: #666666 !important;
 }
 
 .has-foreground-dark-color[class] {
-	color: #111111 !important;
+	color: #333333 !important;
 }
 
 .has-background-light-color[class] {
-	color: #FAFAFA !important;
+	color: #f2f2f2 !important;
 }
 
 .has-background-dark-color[class] {
-	color: #DDDDDD !important;
+	color: #d9d9d9 !important;
 }
 
 .has-background-color[class] {
@@ -646,48 +688,48 @@ table th,
 }
 
 .has-primary-background-color[class] {
-	background-color: blue !important;
+	background-color: black !important;
 	color: white;
 }
 
 .has-primary-background-color[class] {
-	background-color: blue !important;
+	background-color: black !important;
 	color: white;
 }
 
 .has-secondary-background-color[class] {
-	background-color: red !important;
+	background-color: #1a1a1a !important;
 	color: white;
 }
 
 .has-foreground-background-color[class] {
-	background-color: #444444 !important;
+	background-color: black !important;
 	color: white;
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: #767676 !important;
+	background-color: #666666 !important;
 	color: white;
 }
 
 .has-foreground-dark-background-color[class] {
-	background-color: #111111 !important;
+	background-color: #333333 !important;
 	color: white;
 }
 
 .has-background-light-background-color[class] {
-	background-color: #FAFAFA !important;
-	color: #444444;
+	background-color: #f2f2f2 !important;
+	color: black;
 }
 
 .has-background-dark-background-color[class] {
-	background-color: #DDDDDD !important;
-	color: #444444;
+	background-color: #d9d9d9 !important;
+	color: black;
 }
 
 .has-background-background-color[class] {
 	background-color: white !important;
-	color: #444444;
+	color: black;
 }
 
 .is-small-text,
@@ -716,9 +758,9 @@ table th,
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: sans-serif;
-	font-size: calc(2 * 2.98598em);
-	font-weight: bold;
+	font-family: Poppins, sans-serif;
+	font-size: calc(2 * 2.0736em);
+	font-weight: 600;
 }
 
 /**
@@ -836,543 +878,4 @@ table th,
 .padding-left-default {
 	/*rtl:ignore*/
 	padding-left: 32px !important;
-}
-
-/**
- * Full Site Editing
- * - Full Site Editing overrides
- */
-.site-branding {
-	color: #444444;
-}
-
-.site-title {
-	color: blue;
-	font-family: sans-serif;
-	font-size: 1.2rem;
-	letter-spacing: normal;
-	line-height: 1;
-}
-
-.site-title a {
-	color: currentColor;
-	font-weight: bold;
-}
-
-.site-title a:link, .site-title a:visited {
-	color: currentColor;
-}
-
-.site-title a:hover {
-	color: indigo;
-}
-
-.site-description {
-	color: currentColor;
-	font-family: serif;
-	font-size: 0.83333rem;
-}
-
-.main-navigation {
-	color: #444444;
-}
-
-.main-navigation > div {
-	display: none;
-}
-
-.main-navigation #toggle-menu {
-	display: inline-block;
-	margin: 0;
-}
-
-.main-navigation #toggle:checked ~ div {
-	display: block;
-}
-
-.main-navigation #toggle:focus + #toggle-menu {
-	background-color: indigo;
-	outline: inherit;
-	text-decoration: underline;
-}
-
-.main-navigation .dropdown-icon.close {
-	display: none;
-}
-
-.main-navigation #toggle:checked + #toggle-menu .open {
-	display: none;
-}
-
-.main-navigation #toggle:checked + #toggle-menu .close {
-	display: inline;
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div {
-		display: block;
-	}
-	.main-navigation #toggle-menu {
-		display: none;
-	}
-	.main-navigation > div > ul > li > ul {
-		display: none;
-	}
-}
-
-.main-navigation > div > ul {
-	display: flex;
-	flex-wrap: wrap;
-	list-style: none;
-	margin: 0;
-	max-width: none;
-	position: relative;
-	/* Sub-menus Flyout */
-}
-
-.main-navigation > div > ul li {
-	display: block;
-	position: relative;
-	width: 100%;
-	z-index: 1;
-}
-
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
-	cursor: pointer;
-	z-index: 99999;
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div > ul li {
-		display: inherit;
-		width: inherit;
-		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li:focus-within > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
-	}
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div > ul > li > a {
-		line-height: 1;
-	}
-	.main-navigation > div > ul > li > a:before, .main-navigation > div > ul > li > a:after {
-		content: '';
-		display: block;
-		height: 0;
-		width: 0;
-	}
-	.main-navigation > div > ul > li > a:before {
-		margin-bottom: -0.12em;
-	}
-	.main-navigation > div > ul > li > a:after {
-		margin-top: -0.11em;
-	}
-	.main-navigation > div > ul > li:first-of-type > a {
-		padding-left: 0;
-	}
-	.main-navigation > div > ul > li:last-of-type > a {
-		padding-right: 0;
-	}
-}
-
-.main-navigation > div > ul > li > .sub-menu {
-	margin: 0;
-	position: relative;
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div > ul > li > .sub-menu {
-		background: white;
-		box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
-		left: 0;
-		top: 100%;
-		min-width: max-content;
-		opacity: 0;
-		position: absolute;
-		transition: all 0.5s ease;
-		visibility: hidden;
-	}
-}
-
-.main-navigation > div > ul > li > .sub-menu .sub-menu {
-	width: 100%;
-}
-
-.main-navigation a {
-	color: blue;
-	display: block;
-	font-family: sans-serif;
-	font-size: 1.2rem;
-	font-weight: bold;
-	padding: 8px 0;
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation a {
-		padding: 16px;
-	}
-}
-
-.main-navigation a:link, .main-navigation a:visited {
-	color: blue;
-}
-
-.main-navigation a:hover {
-	color: indigo;
-}
-
-.main-navigation .sub-menu {
-	list-style: none;
-	margin-left: 0;
-	/* Reset the counter for each UL */
-	counter-reset: nested-list;
-}
-
-.main-navigation .sub-menu .menu-item a {
-	padding-top: 8px;
-	padding-bottom: 8px;
-}
-
-.main-navigation .sub-menu .menu-item a::before {
-	/* Increment the dashes */
-	counter-increment: nested-list;
-	/* Insert dashes with spaces in between */
-	content: "– " counters(nested-list, "– ", none);
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation > div > ul > .menu-item-has-children > a::after {
-		content: "\00a0\25BC";
-		display: inline-block;
-		font-size: 0.69444rem;
-		height: inherit;
-		width: inherit;
-	}
-}
-
-.main-navigation .hide-visually {
-	position: absolute !important;
-	clip: rect(1px, 1px, 1px, 1px);
-	padding: 0 !important;
-	border: 0 !important;
-	height: 1px !important;
-	width: 1px !important;
-	overflow: hidden;
-}
-
-.social-navigation > div > ul {
-	align-content: center;
-	display: flex;
-	list-style: none;
-	margin: 0;
-}
-
-.social-navigation > div > ul > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.social-navigation > div > ul > li:last-of-type > a {
-	padding-right: 0;
-}
-
-.social-navigation a {
-	color: blue;
-	display: inline-block;
-	padding: 0 calc( 0.5 * calc(0.66 * 16px ));
-}
-
-.social-navigation a:hover {
-	color: indigo;
-}
-
-.social-navigation svg {
-	fill: currentColor;
-	vertical-align: middle;
-}
-
-.site-footer {
-	overflow: hidden;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-footer {
-		align-items: flex-end;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-}
-
-.site-info {
-	color: #767676;
-	font-family: sans-serif;
-	font-size: 0.83333rem;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-info {
-		order: 1;
-		flex: 1 0 50%;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-
-.site-info .site-name {
-	font-weight: bold;
-}
-
-.site-info a {
-	color: currentColor;
-}
-
-.site-info a:link, .site-info a:visited {
-	color: currentColor;
-}
-
-.site-info a:hover {
-	color: indigo;
-}
-
-.footer-navigation, .site-footer .main-navigation {
-	display: inline;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation, .site-footer .main-navigation {
-		flex: 1 0 50%;
-		order: 2;
-		margin-top: 0;
-		margin-bottom: 0;
-		text-align: right;
-	}
-}
-
-.footer-navigation > div, .site-footer .main-navigation > div {
-	display: inline;
-}
-
-.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
-	color: #767676;
-	margin: 0;
-	padding-left: 0;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
-}
-
-.footer-navigation .footer-menu > li, .site-footer .main-navigation .footer-menu > li {
-	display: inline;
-}
-
-.footer-navigation .footer-menu > li:first-of-type > a, .site-footer .main-navigation .footer-menu > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.footer-navigation .footer-menu > li:last-of-type, .site-footer .main-navigation .footer-menu > li:last-of-type {
-	padding-right: 0;
-}
-
-.footer-navigation .footer-menu a, .site-footer .main-navigation .footer-menu a {
-	font-family: sans-serif;
-	font-size: 0.83333rem;
-	font-weight: bold;
-	padding: 16px;
-	color: currentColor;
-}
-
-.footer-navigation .footer-menu a:link, .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .site-footer .main-navigation .footer-menu a:visited {
-	color: currentColor;
-}
-
-.footer-navigation .footer-menu a:hover, .site-footer .main-navigation .footer-menu a:hover {
-	color: indigo;
-}
-
-.template-block .site-header,
-.template-block .site-footer {
-	padding: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.template-block .site-header,
-	.template-block .site-footer {
-		padding: 32px 0;
-	}
-}
-
-.a8c-template-editor .wp-block:not(.is-selected) [data-block] {
-	margin-bottom: 14px;
-}
-
-.a8c-template-editor .wp-block:not(:first-child):not(.is-selected) [data-block] {
-	margin-top: 14px;
-}
-
-.site-header .site-title {
-	font-size: 21.6px;
-	font-weight: 700;
-	text-decoration: underline;
-}
-
-.site-header .site-title:focus {
-	color: blue;
-}
-
-.site-header .site-description {
-	font-size: 15px;
-}
-
-.site-header .main-navigation {
-	/**
- * Placeholder button style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-	/**
- * Block Options
- */
-}
-
-.site-header .main-navigation button,
-.site-header .main-navigation .button,
-.site-header .main-navigation input[type="submit"],
-.site-header .main-navigation .wp-block-button__link,
-.site-header .main-navigation .wp-block-file__button {
-	line-height: 1;
-	color: white;
-	cursor: pointer;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-size: 1.2rem;
-	background-color: blue;
-	border-radius: 9px;
-	border-width: 0;
-	padding: 16px 16px;
-}
-
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before, .site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before {
-	margin-bottom: -0.12em;
-}
-
-.site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
-	margin-top: -0.11em;
-}
-
-.site-header .main-navigation button:hover,
-.site-header .main-navigation .button:hover,
-.site-header .main-navigation input:hover[type="submit"],
-.site-header .main-navigation .wp-block-button__link:hover,
-.site-header .main-navigation .wp-block-file__button:hover, .site-header .main-navigation button:focus,
-.site-header .main-navigation .button:focus,
-.site-header .main-navigation input:focus[type="submit"],
-.site-header .main-navigation .wp-block-button__link:focus,
-.site-header .main-navigation .wp-block-file__button:focus, .site-header .main-navigation button.has-focus,
-.site-header .main-navigation .has-focus.button,
-.site-header .main-navigation input.has-focus[type="submit"],
-.site-header .main-navigation .has-focus.wp-block-button__link,
-.site-header .main-navigation .has-focus.wp-block-file__button {
-	color: white;
-	background-color: indigo;
-}
-
-.site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link {
-	color: blue;
-	background: transparent;
-	border: 2px solid currentcolor;
-	padding: 14px 16px;
-}
-
-.site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link:hover, .site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link:focus, .site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: indigo;
-}
-
-.site-header .main-navigation .wp-block-button.is-style-squared .wp-block-button__link {
-	border-radius: 0;
-}
-
-.site-header .main-navigation a {
-	font-size: 21.6px;
-}
-
-.post-content__block {
-	margin-bottom: 160px;
-	margin-top: 36px;
-	z-index: 20;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-footer {
-		display: block;
-	}
-}
-
-.site-footer .main-navigation {
-	display: block;
-}
-
-.site-footer .main-navigation .hide-visually,
-.site-footer .main-navigation #toggle-menu {
-	display: none;
-}
-
-@media only screen and (max-width: 559px) {
-	.site-footer .main-navigation .menu-primary-container {
-		display: block;
-	}
-	.site-footer .main-navigation li {
-		width: auto;
-	}
-	.site-footer .main-navigation li .sub-menu {
-		display: none;
-	}
 }

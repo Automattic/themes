@@ -5,11 +5,11 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage Maywood
+ * @subpackage mayland
  * @since 1.0.0
  */
 
-if ( ! function_exists( 'maywood_setup' ) ) :
+if ( ! function_exists( 'mayland_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -17,7 +17,7 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function maywood_setup() {
+	function mayland_setup() {
 
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
@@ -27,26 +27,26 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __( 'Small', 'maywood' ),
-					'shortName' => __( 'S', 'maywood' ),
+					'name'      => __( 'Small', 'mayland' ),
+					'shortName' => __( 'S', 'mayland' ),
 					'size'      => 16.6,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __( 'Normal', 'maywood' ),
-					'shortName' => __( 'M', 'maywood' ),
+					'name'      => __( 'Normal', 'mayland' ),
+					'shortName' => __( 'M', 'mayland' ),
 					'size'      => 20,
 					'slug'      => 'normal',
 				),
 				array(
-					'name'      => __( 'Large', 'maywood' ),
-					'shortName' => __( 'L', 'maywood' ),
+					'name'      => __( 'Large', 'mayland' ),
+					'shortName' => __( 'L', 'mayland' ),
 					'size'      => 28.8,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => __( 'Huge', 'maywood' ),
-					'shortName' => __( 'XL', 'maywood' ),
+					'name'      => __( 'Huge', 'mayland' ),
+					'shortName' => __( 'XL', 'mayland' ),
 					'size'      => 34.56,
 					'slug'      => 'huge',
 				),
@@ -58,81 +58,78 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary', 'maywood' ),
+					'name'  => __( 'Primary', 'mayland' ),
 					'slug'  => 'primary',
-					'color' => '#897248',
+					'color' => '#000000',
 				),
 				array(
-					'name'  => __( 'Secondary', 'maywood' ),
+					'name'  => __( 'Secondary', 'mayland' ),
 					'slug'  => 'secondary',
-					'color' => '#c4493f',
+					'color' => '#1a1a1a',
 				),
 				array(
-					'name'  => __( 'Black', 'maywood' ),
+					'name'  => __( 'Dark Gray', 'mayland' ),
 					'slug'  => 'foreground-dark',
-					'color' => '#020202',
+					'color' => '#333333',
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'maywood' ),
+					'name'  => __( 'Black', 'mayland' ),
 					'slug'  => 'foreground',
-					'color' => '#181818',
+					'color' => '#000000',
 				),
 				array(
-					'name'  => __( 'Gray', 'maywood' ),
+					'name'  => __( 'Light Gray', 'mayland' ),
 					'slug'  => 'foreground-light',
-					'color' => '#686868',
+					'color' => '#666666',
 				),
 				array(
-					'name'  => __( 'Light Gray', 'maywood' ),
+					'name'  => __( 'Subtle Gray', 'mayland' ),
 					'slug'  => 'background-dark',
-					'color' => '#CCCCCC',
+					'color' => '#d9d9d9',
 				),
 				array(
-					'name'  => __( 'Subtle Gray', 'maywood' ),
+					'name'  => __( 'Off White', 'mayland' ),
 					'slug'  => 'background-light',
-					'color' => '#F7F7F7',
+					'color' => '#F2F2F2',
 				),
 				array(
-					'name'  => __( 'White', 'maywood' ),
+					'name'  => __( 'White', 'mayland' ),
 					'slug'  => 'background',
 					'color' => '#FFFFFF',
 				),
 			)
 		);
-
-		// Enable Full Site Editing
-		add_theme_support( 'full-site-editing');
 	}
 endif;
-add_action( 'after_setup_theme', 'maywood_setup', 12 );
+add_action( 'after_setup_theme', 'mayland_setup', 12 );
 
 /**
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
  */
-function maywood_content_width() {
+function mayland_content_width() {
 	return 750;
 }
-add_filter( 'varia_content_width', 'maywood_content_width' );
+add_filter( 'varia_content_width', 'mayland_content_width' );
 
 /**
  * Add Google webfonts, if necessary
  *
  * - See: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
  */
-function maywood_fonts_url() {
+function mayland_fonts_url() {
 
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by IBM Plex Sans, translate this to 'off'. Do not translate
+	* supported by Poppins, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$ibm_plex_sans = esc_html_x( 'on', 'IBM Plex Sans font: on or off', 'maywood' );
+	$poppins = esc_html_x( 'on', 'Poppins font: on or off', 'mayland' );
 
-	if ( 'off' !== $ibm_plex_sans ) {
+	if ( 'off' !== $poppins ) {
 		$font_families = array();
 
-		$font_families[] = 'IBM Plex Sans:300,300i,500,700';
+		$font_families[] = 'Poppins:400,400i,600,600i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -148,29 +145,29 @@ function maywood_fonts_url() {
 /**
  * Enqueue scripts and styles.
  */
-function maywood_scripts() {
+function mayland_scripts() {
 
 	// enqueue Google fonts, if necessary
-	wp_enqueue_style( 'maywood-fonts', maywood_fonts_url(), array(), null );
+	wp_enqueue_style( 'mayland-fonts', mayland_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('maywood-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style('mayland-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
 
 	// enqueue child RTL styles
-	wp_style_add_data( 'maywood-style', 'rtl', 'replace' );
+	wp_style_add_data( 'mayland-style', 'rtl', 'replace' );
 
 }
-add_action( 'wp_enqueue_scripts', 'maywood_scripts', 99 );
+add_action( 'wp_enqueue_scripts', 'mayland_scripts', 99 );
 
 /**
  * Enqueue theme styles for the block editor.
  */
-function maywood_editor_styles() {
+function mayland_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
-	wp_enqueue_style( 'maywood-editor-fonts', maywood_fonts_url(), array(), null );
+	wp_enqueue_style( 'mayland-editor-fonts', mayland_fonts_url(), array(), null );
 }
-add_action( 'enqueue_block_editor_assets', 'maywood_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'mayland_editor_styles' );
