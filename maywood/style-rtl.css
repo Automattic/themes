@@ -1896,23 +1896,17 @@ p.has-background {
 }
 
 hr {
-	border-bottom-color: #CCCCCC;
-	border-bottom-width: 2px;
+	border-bottom: 2px solid #CCCCCC;
 	clear: both;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom-color: #CCCCCC;
+	border-bottom: 2px solid #CCCCCC;
 	/**
 		 * Block Options
 		 */
-}
-
-hr.wp-block-separator.is-style-wide {
-	border-bottom-color: #CCCCCC;
-	border-bottom-width: 2px;
 }
 
 hr.wp-block-separator.is-style-dots:before {
@@ -3794,7 +3788,7 @@ p:not(.site-title) a:hover {
 }
 
 @media only screen and (max-width: 559px) {
-	.fse-enabled .site-footer .main-navigation .menu-primary-container {
+	.fse-enabled .site-footer .main-navigation > div {
 		display: block;
 	}
 	.fse-enabled .site-footer .main-navigation li {
@@ -3813,7 +3807,7 @@ p:not(.site-title) a:hover {
 }
 
 @media only screen and (max-width: 559px) {
-	.fse-enabled .site-header.entry-content .main-navigation .menu-primary-container {
+	.fse-enabled .site-header.entry-content .main-navigation > div {
 		padding: 0 32px;
 	}
 }
@@ -3822,6 +3816,12 @@ p:not(.site-title) a:hover {
 	.fse-enabled .site-footer .wp-block-a8c-navigation-menu {
 		margin-bottom: 21.312px;
 		margin-top: 21.312px;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .site-footer .wp-block-a8c-navigation-menu .footer-menu a {
+		padding: 8px;
 	}
 }
 
