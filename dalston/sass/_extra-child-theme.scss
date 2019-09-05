@@ -19,8 +19,7 @@ a {
 	margin-right: auto;
 	padding-bottom: 0;
 	position: relative;
-
-	@extend %responsive-alignwide-nested;
+	width: calc(100% - #{$spacing_unit * 2});
 }
 
 /**
@@ -32,11 +31,11 @@ a {
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
+		grid-auto-flow: row;
 		grid-column-gap: $spacing_unit;
 		grid-template-areas:
-			"site-logo site-logo"
-			"site-title main-navigation"
-			"site-description social-navigation";
+			"site-branding main-navigation main-navigation social-navigation"
+			"site-branding site-description site-description .";
 
 		&:before,
 		&:after {
@@ -49,39 +48,41 @@ a {
 			margin-bottom: 0;
 		}
 
+		.site-branding {
+			align-self: flex-end;
+			grid-area: site-branding;
+		}
+
 		.site-logo {
-			grid-area: site-logo;
 			margin-bottom: $spacing_unit;
 		}
 
 		.site-title {
-			align-self: flex-end;
-			grid-area: site-title;
-
 			& + .site-description {
 				margin-top: 0;
 			}
 		}
 
 		.site-description {
-			align-self: center;
+			align-self: flex-end;
 			grid-area: site-description;
 		}
 
 		.main-navigation {
-			align-self: center;
+			align-self: flex-start;
+			margin-bottom: $spacing_unit;
 			grid-area: main-navigation;
-			justify-self: flex-end;
+			justify-self: flex-start;
 
 			& > div > ul {
-				justify-content: flex-end;
+				justify-content: flex-start;
 				margin-left: -#{0.5 * $spacing_horizontal};
 				margin-right: -#{0.5 * $spacing_horizontal};
 
 				& > li {
 
 					& > a {
-						padding: 0 #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
+						padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
 					}
 				}
 
@@ -126,7 +127,8 @@ a {
 		}
 
 		.social-navigation {
-			align-self: center;
+			line-height: 1;
+			align-self: flex-start;
 			grid-area: social-navigation;
 			justify-self: flex-end;
 		}

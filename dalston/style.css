@@ -3256,7 +3256,7 @@ img#wpstats {
 	}
 }
 
-.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide, #masthead {
+.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
 	width: calc(100% + 256px);
 	max-width: 100%;
 	margin-left: auto;
@@ -3264,35 +3264,35 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 560px) {
-	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide, #masthead {
+	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
 		width: calc(calc( 560px - 32px) + 256px);
 		max-width: 100%;
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide, #masthead {
+	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
 		width: calc(calc( 640px - 32px) + 256px);
 		max-width: 100%;
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide, #masthead {
+	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
 		width: calc(calc( 782px - 32px) + 256px);
 		max-width: 100%;
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide, #masthead {
+	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
 		width: calc(calc( 782px - 32px) + 256px);
 		max-width: 100%;
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide, #masthead {
+	.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
 		width: calc(calc( 782px - 32px) + 256px);
 		max-width: 100%;
 	}
@@ -3442,6 +3442,7 @@ a {
 	margin-right: auto;
 	padding-bottom: 0;
 	position: relative;
+	width: calc(100% - 32px);
 }
 
 /**
@@ -3453,8 +3454,9 @@ a {
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
+		grid-auto-flow: row;
 		grid-column-gap: 16px;
-		grid-template-areas: "site-logo site-logo" "site-title main-navigation" "site-description social-navigation";
+		grid-template-areas: "site-branding main-navigation main-navigation social-navigation" "site-branding site-description site-description .";
 	}
 	.site-header:before, .site-header:after {
 		content: none;
@@ -3464,33 +3466,33 @@ a {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-	.site-header .site-logo {
-		grid-area: site-logo;
-		margin-bottom: 16px;
-	}
-	.site-header .site-title {
+	.site-header .site-branding {
 		align-self: flex-end;
-		grid-area: site-title;
+		grid-area: site-branding;
+	}
+	.site-header .site-logo {
+		margin-bottom: 16px;
 	}
 	.site-header .site-title + .site-description {
 		margin-top: 0;
 	}
 	.site-header .site-description {
-		align-self: center;
+		align-self: flex-end;
 		grid-area: site-description;
 	}
 	.site-header .main-navigation {
-		align-self: center;
+		align-self: flex-start;
+		margin-bottom: 16px;
 		grid-area: main-navigation;
-		justify-self: flex-end;
+		justify-self: flex-start;
 	}
 	.site-header .main-navigation > div > ul {
-		justify-content: flex-end;
+		justify-content: flex-start;
 		margin-left: -8px;
 		margin-right: -8px;
 	}
 	.site-header .main-navigation > div > ul > li > a {
-		padding: 0 8px;
+		padding: 8px;
 	}
 	.site-header .main-navigation > div > ul > .menu-item-has-children > a::after {
 		font-size: 0.5rem;
@@ -3530,7 +3532,8 @@ a {
 		background: #005177;
 	}
 	.site-header .social-navigation {
-		align-self: center;
+		line-height: 1;
+		align-self: flex-start;
 		grid-area: social-navigation;
 		justify-self: flex-end;
 	}
