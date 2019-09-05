@@ -3,7 +3,10 @@
 
 	background-color: #{map-deep-get($config-cover, "color", "background")};
 	color: #{map-deep-get($config-cover, "color", "foreground")};
-	min-height: #{map-deep-get($config-cover, "height")};
+
+	.block-library-cover__resize-container:not([style*="min-height"]) & {
+		min-height: #{map-deep-get($config-cover, "height")};
+	}
 
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,

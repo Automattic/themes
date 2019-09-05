@@ -286,8 +286,12 @@ object {
 .wp-block-cover-image {
 	background-color: black;
 	color: white;
-	min-height: 480px;
 	/* Treating H2 separately to account for legacy /core styles */
+}
+
+.block-library-cover__resize-container:not([style*="min-height"]) .wp-block-cover, .block-library-cover__resize-container:not([style*="min-height"])
+.wp-block-cover-image {
+	min-height: 480px;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,

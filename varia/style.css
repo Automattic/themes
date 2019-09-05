@@ -1179,12 +1179,16 @@ input.has-focus[type="submit"],
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: black;
-	min-height: 480px;
 	margin: inherit;
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
 	 * Block Options
 	 */
+}
+
+.wp-block-cover:not([style*="min-height"]),
+.wp-block-cover-image:not([style*="min-height"]) {
+	min-height: 480px;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
