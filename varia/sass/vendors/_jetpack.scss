@@ -106,3 +106,34 @@ body {
 		}
 	}
 }
+
+/**
+ * Mailchimp Subscription Form
+ */
+.wp-block-jetpack-mailchimp {
+	p {
+		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	input[type=email] {
+		width: 100%;
+	}
+}
+
+#wp-block-jetpack-mailchimp_consent-text {
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+}

@@ -212,7 +212,7 @@ if ( ! function_exists( 'varia_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure class="post-thumbnail responsive-max-width">
+			<figure class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
