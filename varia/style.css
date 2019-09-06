@@ -1986,10 +1986,6 @@ table th,
 /**
  * .aligndefault
  */
-.entry-content [class*="inner-container"] {
-	max-width: inherit;
-}
-
 /**
  * .alignwide
  */
@@ -3172,23 +3168,21 @@ img#wpstats {
 }
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-	width: 100%;
-	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 100%;
+	/* Matches normal width until laptop breakpoint */
 }
 
 @media only screen and (min-width: 560px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		width: calc(calc( 560px - 32px) + 256px);
-		max-width: calc(100% - 32px);
+		max-width: calc( 560px - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-		width: calc(calc( 640px - 32px) + 256px);
-		max-width: calc(100% - 32px);
+		max-width: calc( 640px - 32px);
 	}
 }
 
