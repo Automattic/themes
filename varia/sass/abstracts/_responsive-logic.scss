@@ -52,11 +52,11 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 		max-width: $content-width-md;
 	}
 
-	/* Matches normal width until laptop breakpoint */
-
 	@include media(laptop) {
-		@include alignwide-width( $content-width-lg );
+		max-width: $content-width-lg;
 	}
+
+	/* Matches normal width until desktop breakpoint */
 
 	@include media(desktop) {
 		@include alignwide-width( $content-width-lg );
