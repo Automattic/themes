@@ -105,3 +105,21 @@ function varia_wpcom_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'varia_wpcom_body_classes' );
+
+/**
+ * Adds custom classes to the admin body classes.
+ *
+ * @param string $classes Classes for the body element.
+ * @return string
+ */
+function varia_wpcom_admin_body_classes( $classes ) {
+	$is_block_editor_screen = ( function_exists( 'get_current_screen' ) && get_current_screen() && get_current_screen()->is_block_editor() );
+	$hide = get_theme_mod( 'hide_front_page_title', false );
+
+	if ( $is_block_editor_screen && true === $hide ) {
+		$classes .= ' hide-homepage-title';
+	}
+
+	return $classes;
+}
+add_filter( 'admin_body_class', 'varia_wpcom_admin_body_classes' );
