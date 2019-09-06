@@ -123,3 +123,11 @@ function varia_wpcom_admin_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'admin_body_class', 'varia_wpcom_admin_body_classes' );
+
+/**
+ * Enqueue our WP.com styles for the block editor.
+ */
+function varia_wpcom_editor_scripts() {
+	wp_enqueue_style( 'varia-wpcom-editor-style', get_template_directory_uri() . '/inc/style-editor-wpcom.css', array(), '20190906' );
+}
+add_action( 'enqueue_block_editor_assets', 'varia_wpcom_editor_scripts' );
