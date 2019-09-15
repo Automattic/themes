@@ -19,7 +19,23 @@ a {
 	margin-right: auto;
 	padding-bottom: 0;
 	position: relative;
-	width: calc(100% - #{$spacing_unit * 2});
+	width: $content-width-flex;
+
+	@include media(mobile) {
+		width: $content-width-sm;
+	}
+
+	@include media(tablet) {
+		width: $content-width-md;
+	}
+
+	@include media(laptop) {
+		width: $content-width-lg;
+	}
+
+	@include media(desktop) {
+		width: calc(#{$content-width-flex} - #{$spacing_vertical});
+	}
 }
 
 /**
@@ -29,13 +45,14 @@ a {
 	.site-header {
 		align-items: center;
 		display: grid;
-		grid-template-columns: auto;
+		grid-template-columns: 66% auto;
 		grid-template-rows: auto;
 		grid-auto-flow: row;
 		grid-column-gap: $spacing_unit;
 		grid-template-areas:
-			"site-branding main-navigation main-navigation social-navigation"
-			"site-branding site-description site-description .";
+			"site-branding site-branding"
+			"site-description site-description"
+			"main-navigation social-navigation";
 
 		&:before,
 		&:after {
@@ -49,8 +66,9 @@ a {
 		}
 
 		.site-branding {
-			align-self: flex-end;
+			align-self: baseline;
 			grid-area: site-branding;
+			flex: 0 1 25%;
 		}
 
 		.site-logo {
@@ -64,13 +82,13 @@ a {
 		}
 
 		.site-description {
-			align-self: flex-end;
+			align-self: baseline;
 			grid-area: site-description;
 		}
 
 		.main-navigation {
 			align-self: flex-start;
-			margin-bottom: $spacing_unit;
+			margin-bottom: (2 * $spacing_unit);
 			grid-area: main-navigation;
 			justify-self: flex-start;
 
@@ -135,6 +153,19 @@ a {
 	}
 }
 
+@include media(desktop) {
+	.site-header {
+		grid-template-columns: calc( 0.5 * (100vw - #{$content-width-lg} - #{4 * $spacing_unit}) ) auto 15%;
+		grid-template-rows: auto;
+		grid-auto-flow: row;
+		grid-column-gap: $spacing_unit;
+		grid-template-areas:
+			". main-navigation social-navigation"
+			"site-branding site-description .";
+
+	}
+}
+
 // Social Menu
 .social-navigation {
 	& > div > ul {
@@ -192,4 +223,17 @@ a {
 		border: 1px solid #{map-deep-get($config-global, "color", "background", "default")};
 		z-index: 1;
 	}
+}
+
+
+/**
+ * Footer
+ */
+
+#colophon {
+	@extend %responsive-alignwide;
+}
+
+.footer-navigation .footer-menu a {
+	font-size: map-deep-get($config-global, "font", "size", "xs");
 }
