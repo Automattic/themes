@@ -221,8 +221,6 @@ body {
  */
 #masthead {
 	background: #{map-deep-get($config-global, "color", "foreground", "default")};
-	padding-left: 0;
-	padding-right: 0;
 
 	& > * {
 		position: relative;
@@ -291,6 +289,17 @@ table,
 	td,
 	th {
 		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+.entry-content > .alignfull,
+.entry-content > .alignfull.wp-block-jetpack-gif,
+.entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
+	@include media(mobile-only) {
+		margin-left: inherit;
+		margin-right: inherit;
+		width: inherit;
+		max-width: inherit;
 	}
 }
 

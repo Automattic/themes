@@ -2011,10 +2011,6 @@ table th,
 /**
  * .aligndefault
  */
-.entry-content [class*="inner-container"] {
-	max-width: inherit;
-}
-
 /**
  * .alignwide
  */
@@ -3197,8 +3193,8 @@ img#wpstats {
 }
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-	width: calc(100% + 256px);
-	max-width: calc(100% - 32px);
+	width: 100%;
+	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -3284,6 +3280,7 @@ img#wpstats {
 	margin-right: -16px;
 	margin-left: -16px;
 	width: calc(100% + 32px);
+	max-width: calc(100% + 32px);
 	/* Letting the box-model do most of the work here. */
 }
 
@@ -3292,6 +3289,7 @@ img#wpstats {
 		margin-right: inherit;
 		margin-left: inherit;
 		width: inherit;
+		max-width: inherit;
 	}
 }
 
