@@ -180,6 +180,7 @@ add_action( 'enqueue_block_editor_assets', 'dalston_editor_styles' );
  */
 function dalston_block_extends() {
 
+	// Cover Block Tweaks
 	wp_enqueue_script( 'dalston-extend-cover-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
 		array( 'wp-blocks' )
@@ -187,6 +188,16 @@ function dalston_block_extends() {
 
 	wp_enqueue_style( 'dalston-extend-cover-block-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.css'
+	);
+
+	// Columns Block Tweaks
+	wp_enqueue_script( 'dalston-extend-columns-block',
+		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.js',
+		array( 'wp-blocks' )
+	);
+
+	wp_enqueue_style( 'dalston-extend-cover-columns-style',
+		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.css'
 	);
 }
 add_action( 'enqueue_block_assets', 'dalston_block_extends' );

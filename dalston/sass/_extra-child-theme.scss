@@ -188,13 +188,23 @@ a {
  * Content
  */
 .site-main > article > .entry-header {
-	margin: #{3 * $spacing_unit} $spacing_unit $spacing_unit;
+	margin: #{3 * $spacing_unit} 0 $spacing_unit;
 	position: relative;
 }
 
 @include media(mobile) {
 	.site-main > article > .entry-header {
 		margin: #{3 * $spacing_vertical} auto #{2 * $spacing_unit};
+	}
+}
+
+.site-main .page-header {
+	margin-top: #{3 * $spacing_unit};
+}
+
+@include media(mobile) {
+	.site-main .page-header {
+		margin-top: #{3 * $spacing_vertical};
 	}
 }
 
@@ -232,6 +242,7 @@ a {
 
 #colophon {
 	@extend %responsive-alignwide;
+	max-width: 100%;
 }
 
 .footer-navigation .footer-menu a {
