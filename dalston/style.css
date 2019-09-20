@@ -2309,7 +2309,7 @@ table th,
 .site-title {
 	color: #000000;
 	font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-	font-size: 1.42383rem;
+	font-size: 1.60181rem;
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2330,7 +2330,7 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-	font-size: 1.42383rem;
+	font-size: 1.60181rem;
 }
 
 .main-navigation {
@@ -3565,11 +3565,11 @@ a {
 
 @media only screen and (min-width: 1024px) {
 	.site-header {
-		grid-template-columns: calc( 0.5 * (100vw - calc( 782px - 32px) - 64px)) auto 15%;
+		grid-template-columns: calc( 0.5 * (100vw - calc( 782px - 32px) - 64px)) auto calc( 0.5 * (100vw - calc( 782px - 32px) - 64px));
 		grid-template-rows: auto;
 		grid-auto-flow: row;
 		grid-column-gap: 16px;
-		grid-template-areas: ". main-navigation social-navigation" "site-branding site-description .";
+		grid-template-areas: ". main-navigation social-navigation" "site-branding site-description social-navigation";
 	}
 }
 
@@ -3580,6 +3580,10 @@ a {
 /**
  * Site Title
  */
+.site-title {
+	font-style: italic;
+}
+
 .site-description {
 	color: #000000;
 }
