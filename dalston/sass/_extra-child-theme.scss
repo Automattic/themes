@@ -7,6 +7,7 @@ $spacing_unit: map-deep-get($config-global, "spacing", "unit");
 $spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
 $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 $header-css-grid-width: calc( 0.5 * (100vw - #{$content-width-lg} - #{4 * $spacing_unit}) );
+$primary_color: map-deep-get($config-global, "color", "primary", "default");
 
 a {
 	text-decoration: none;
@@ -211,6 +212,14 @@ a {
 	.site-main .page-header {
 		margin-top: #{3 * $spacing_vertical};
 	}
+}
+
+.sticky-post {
+	color: $primary_color;
+	border: 1px solid currentColor;
+	background: transparent;
+	padding-bottom: 3px;
+	text-transform: uppercase;
 }
 
 .entry-title {
