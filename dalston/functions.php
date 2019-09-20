@@ -199,5 +199,15 @@ function dalston_block_extends() {
 	wp_enqueue_style( 'dalston-extend-cover-columns-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.css'
 	);
+
+	// Columns Block Tweaks
+	wp_enqueue_script( 'dalston-extend-media-text-block',
+		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.js',
+		array( 'wp-blocks' )
+	);
+
+	wp_enqueue_style( 'dalston-extend-cover-media-text-style',
+		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.css'
+	);
 }
 add_action( 'enqueue_block_assets', 'dalston_block_extends' );

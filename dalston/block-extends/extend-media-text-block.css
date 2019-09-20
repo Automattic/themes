@@ -1,0 +1,38 @@
+/* Media & Text Inset Borders */
+
+.wp-block-media-text.is-style-inset-borders {
+	position: relative;
+}
+
+.wp-block-media-text.is-style-inset-borders:before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+	border: 1px solid #FFFFFF;
+	z-index: 1;
+}
+
+.wp-block-media-text.is-style-inset-borders.is-selected:before {
+	content: inherit;
+	display: none;
+}
+
+.wp-block-media-text.is-style-inset-borders.is-selected .block-library-media-text__media-container:before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+	border: 1px solid #FFFFFF;
+	z-index: 1;
+	border-right-width: inherit;
+}
+
+.wp-block-media-text.has-media-on-the-right.is-style-inset-borders.is-selected .block-library-media-text__media-container:before {
+	border-left-width: inherit;
+	border-right-width: 1px;
+}
