@@ -14,9 +14,14 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.1.1 =
+* Fix: Fix typos in spacing override utility classes.
+* Released: August 29, 2019
+
 = 1.1.0 =
 * Implements Semver version numbering system: MAJOR.minor.Bugfix
 * Upgrades package dependancies to latest versions: autoprefixer, chokidar-cli, postcss-cli.
+* Released: August 28, 2019
 
 = 1.0 =
 * Released: May 10, 2019

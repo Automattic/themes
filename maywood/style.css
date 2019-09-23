@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Maywood is a refined theme designed for restaurants and food-related businesses seeking a modern look.
 Requires at least: WordPress 4.9.6
-Version: 1.0.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1896,23 +1896,17 @@ p.has-background {
 }
 
 hr {
-	border-bottom-color: #CCCCCC;
-	border-bottom-width: 2px;
+	border-bottom: 2px solid #CCCCCC;
 	clear: both;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom-color: #CCCCCC;
+	border-bottom: 2px solid #CCCCCC;
 	/**
 		 * Block Options
 		 */
-}
-
-hr.wp-block-separator.is-style-wide {
-	border-bottom-color: #CCCCCC;
-	border-bottom-width: 2px;
 }
 
 hr.wp-block-separator.is-style-dots:before {
@@ -2023,10 +2017,6 @@ table th,
 /**
  * .aligndefault
  */
-.entry-content [class*="inner-container"] {
-	max-width: inherit;
-}
-
 /**
  * .alignwide
  */
@@ -2203,15 +2193,18 @@ table th,
 }
 
 .margin-right-none {
-	margin-top: 0 !important;
+	/*rtl:ignore*/
+	margin-right: 0 !important;
 }
 
 .margin-right-half {
-	margin-top: 16px !important;
+	/*rtl:ignore*/
+	margin-right: 16px !important;
 }
 
 .margin-right-default {
-	margin-top: 32px !important;
+	/*rtl:ignore*/
+	margin-right: 32px !important;
 }
 
 .margin-bottom-none {
@@ -2227,15 +2220,18 @@ table th,
 }
 
 .margin-left-none {
-	margin-top: 0 !important;
+	/*rtl:ignore*/
+	margin-left: 0 !important;
 }
 
 .margin-left-half {
-	margin-top: 16px !important;
+	/*rtl:ignore*/
+	margin-left: 16px !important;
 }
 
 .margin-left-default {
-	margin-top: 32px !important;
+	/*rtl:ignore*/
+	margin-left: 32px !important;
 }
 
 /*
@@ -2254,15 +2250,18 @@ table th,
 }
 
 .padding-right-none {
-	padding-top: 0 !important;
+	/*rtl:ignore*/
+	padding-right: 0 !important;
 }
 
 .padding-right-half {
-	padding-top: 16px !important;
+	/*rtl:ignore*/
+	padding-right: 16px !important;
 }
 
 .padding-right-default {
-	padding-top: 32px !important;
+	/*rtl:ignore*/
+	padding-right: 32px !important;
 }
 
 .padding-bottom-none {
@@ -2278,15 +2277,18 @@ table th,
 }
 
 .padding-left-none {
-	padding-top: 0 !important;
+	/*rtl:ignore*/
+	padding-left: 0 !important;
 }
 
 .padding-left-half {
-	padding-top: 16px !important;
+	/*rtl:ignore*/
+	padding-left: 16px !important;
 }
 
 .padding-left-default {
-	padding-top: 32px !important;
+	/*rtl:ignore*/
+	padding-left: 32px !important;
 }
 
 /**
@@ -2609,12 +2611,12 @@ table th,
 	color: #685636;
 }
 
-.footer-navigation {
+.footer-navigation, .fse-enabled .site-footer .main-navigation {
 	display: inline;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation {
+	.footer-navigation, .fse-enabled .site-footer .main-navigation {
 		flex: 1 0 50%;
 		order: 2;
 		margin-top: 0;
@@ -2623,37 +2625,37 @@ table th,
 	}
 }
 
-.footer-navigation > div {
+.footer-navigation > div, .fse-enabled .site-footer .main-navigation > div {
 	display: inline;
 }
 
-.footer-navigation .footer-menu {
+.footer-navigation .footer-menu, .fse-enabled .site-footer .main-navigation .footer-menu {
 	color: #686868;
 	margin: 0;
 	padding-left: 0;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu {
+	.footer-navigation .footer-menu, .fse-enabled .site-footer .main-navigation .footer-menu {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
 	}
 }
 
-.footer-navigation .footer-menu > li {
+.footer-navigation .footer-menu > li, .fse-enabled .site-footer .main-navigation .footer-menu > li {
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type > a {
+.footer-navigation .footer-menu > li:first-of-type > a, .fse-enabled .site-footer .main-navigation .footer-menu > li:first-of-type > a {
 	padding-left: 0;
 }
 
-.footer-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type, .fse-enabled .site-footer .main-navigation .footer-menu > li:last-of-type {
 	padding-right: 0;
 }
 
-.footer-navigation .footer-menu a {
+.footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-size: 0.83333rem;
 	font-weight: 700;
@@ -2661,11 +2663,11 @@ table th,
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited {
+.footer-navigation .footer-menu a:link, .fse-enabled .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .fse-enabled .site-footer .main-navigation .footer-menu a:visited {
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:hover {
+.footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
 	color: #685636;
 }
 
@@ -3658,27 +3660,27 @@ p:not(.site-title) a:hover {
 	}
 	.wp-block-cover h1,
 	.wp-block-cover-image h1 {
-		font-size: 3.58318rem;
+		font-size: 2.98598rem;
 	}
 	.wp-block-cover h2,
 	.wp-block-cover-image h2 {
-		font-size: 2.98598rem;
+		font-size: 2.48832rem;
 	}
 	.wp-block-cover h3,
 	.wp-block-cover-image h3 {
-		font-size: 2.48832rem;
+		font-size: 2.0736rem;
 	}
 	.wp-block-cover h4,
 	.wp-block-cover-image h4 {
-		font-size: 2.0736rem;
+		font-size: 1.728rem;
 	}
 	.wp-block-cover h5,
 	.wp-block-cover-image h5 {
-		font-size: 1.728rem;
+		font-size: 1.44rem;
 	}
 	.wp-block-cover h6,
 	.wp-block-cover-image h6 {
-		font-size: 1.44rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -3787,10 +3789,76 @@ p:not(.site-title) a:hover {
 /**
  * Footer Navigation
  */
-.footer-navigation .footer-menu a {
+.footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	padding: 0 8px;
 }
 
-.footer-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type, .fse-enabled .site-footer .main-navigation .footer-menu > li:last-of-type {
 	margin-right: -8px;
+}
+
+/**
+ * Full Site Editing
+ * - Full Site Editing overrides
+ */
+.fse-enabled .site-footer {
+	display: block;
+}
+
+.fse-enabled .site-footer .main-navigation {
+	display: block;
+}
+
+.fse-enabled .site-footer .main-navigation .hide-visually,
+.fse-enabled .site-footer .main-navigation #toggle-menu {
+	display: none;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-enabled .site-footer .main-navigation > div {
+		display: block;
+	}
+	.fse-enabled .site-footer .main-navigation li {
+		width: auto;
+	}
+	.fse-enabled .site-footer .main-navigation li .sub-menu {
+		display: none;
+	}
+}
+
+.fse-enabled .site-footer .site-info {
+	text-align: center;
+}
+
+.fse-enabled .site-header.entry-content {
+	margin-bottom: 0;
+	max-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-enabled .site-header.entry-content .main-navigation > div {
+		padding: 0 32px;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.fse-enabled .site-footer .wp-block-a8c-navigation-menu {
+		margin-bottom: 21.312px;
+		margin-top: 21.312px;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .site-footer .wp-block-a8c-navigation-menu .footer-menu a {
+		padding: 8px;
+	}
+}
+
+.fse-enabled #colophon {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: none;
+	width: 100%;
 }
