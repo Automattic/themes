@@ -149,13 +149,16 @@ blockquote p {
  * Wide Header & Footer
  */
 #masthead {
-	position: relative;
-
-	@extend %responsive-alignwide;
-}
-
-#masthead {
+	padding-left: 16px;
+	padding-right: 16px;
 	padding-bottom: $spacing_vertical;
+	position: relative;
+	@extend %responsive-alignwide-nested;
+
+	@include media(desktop) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 /**
