@@ -29,25 +29,25 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'barnsbury' ),
 					'shortName' => __( 'S', 'barnsbury' ),
-					'size'      => 19.5,
+					'size'      => 16,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'barnsbury' ),
 					'shortName' => __( 'M', 'barnsbury' ),
-					'size'      => 22,
+					'size'      => 23,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'barnsbury' ),
 					'shortName' => __( 'L', 'barnsbury' ),
-					'size'      => 36.5,
+					'size'      => 27,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'barnsbury' ),
 					'shortName' => __( 'XL', 'barnsbury' ),
-					'size'      => 49.5,
+					'size'      => 32,
 					'slug'      => 'huge',
 				),
 			)
