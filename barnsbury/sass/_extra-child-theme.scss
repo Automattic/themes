@@ -11,7 +11,12 @@ $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
  */
 
 a {
-	text-decoration: none;
+	.site-header &,
+	&:hover,
+	&:focus,
+	.nav-links & {
+		text-decoration: none;
+	}
 }
 
 /**
@@ -156,58 +161,54 @@ a {
 		justify-self: flex-end;
 	}
 }
+/**
+ * Main
+ */
+.site-main {
+	padding-top: 0;
+}
 
-.site-branding {
-	align-items: flex-start;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+.site-main > article > .entry-header,
+.site-main > .page-header,
+.site-main > .not-found > .page-header {
+	margin-top: #{0.666 * $spacing_vertical};
+		@include media(mobile) {
+			margin-top: #{2 * $spacing_vertical};
+		}
+}
 
-	.site-logo {
-		display: inherit;
+.site-main > {
+	article > .entry-header,
+	.page-header,
+	.not-found > .page-header {
+		margin-top: #{0.666 * $spacing_vertical};
 
 		@include media(mobile) {
-			padding-right: $spacing_unit;
+			margin-top: #{2 * $spacing_vertical};
 		}
 	}
+}
 
-	.site-description {
-		line-height: 1;
-		margin-top: (0.5 * $spacing_unit);
-
-		@include media(mobile) {
-			text-align: right;
-		}
-	}
-
-	.site-title,
-	.wp-block-a8c-site-title,
-	.wp-block-a8c-site-title:focus {
-		flex: 1 1 auto;
-	}
-
-	@include media(desktop) {
-
-		.site-logo {
-			margin-right: (0.5 * $spacing_unit);
-		}
-
-		.site-description {
-			margin-top: inherit;
-		}
-	}
+#main .entry-content .entry-attachment {
+	max-width: calc( 100% - #{2 * $spacing_vertical} );
 }
 
 /**
  * Posts
  */
 
-.entry-title a {
-	color: map-deep-get($config-global, "color", "primary", "hover");
+.entry-title,
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title {
+	a {
+		color: inherit;
+		text-decoration: none;
 
-	&:hover,
-	&:active {
-		color: map-deep-get($config-global, "color", "primary", "default");
+		&:active,
+		&:focus,
+		&:hover {
+			color: map-deep-get($config-global, "color", "primary", "default");
+		}
 	}
 }
 
@@ -224,6 +225,27 @@ a {
 }
 
 /**
+ * Comments
+ */
+.logged-in-as,
+.comment-notes,
+.comment-form-cookies-consent {
+	font-size: map-deep-get($config-global, "font", "size", "sm");
+}
+
+.comment-form-cookies-consent input[type=checkbox] + label {
+	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+}
+
+.comment-notes {
+	color: map-deep-get($config-global, "color", "foreground", "light");
+}
+
+.comment-form > p:not(.comment-form-cookies-consent) label {
+	font-weight: 600;
+}
+
+/**
  * Widgets
  */
 
@@ -232,7 +254,7 @@ a {
 		max-width: 100%;
 
 		& > .widget {
-			max-width: 50%;
+			width: 50%;
 		}
 	}
 }
