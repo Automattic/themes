@@ -17,7 +17,7 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header responsive-max-width">
 				<?php
 				printf(
 					/* translators: 1: search result title. 2: search term. */

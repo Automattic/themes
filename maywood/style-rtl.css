@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Maywood is a refined theme designed for restaurants and food-related businesses seeking a modern look.
 Requires at least: WordPress 4.9.6
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1896,23 +1896,17 @@ p.has-background {
 }
 
 hr {
-	border-bottom-color: #CCCCCC;
-	border-bottom-width: 2px;
+	border-bottom: 2px solid #CCCCCC;
 	clear: both;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom-color: #CCCCCC;
+	border-bottom: 2px solid #CCCCCC;
 	/**
 		 * Block Options
 		 */
-}
-
-hr.wp-block-separator.is-style-wide {
-	border-bottom-color: #CCCCCC;
-	border-bottom-width: 2px;
 }
 
 hr.wp-block-separator.is-style-dots:before {
@@ -2018,10 +2012,6 @@ table th,
 /**
  * .aligndefault
  */
-.entry-content [class*="inner-container"] {
-	max-width: inherit;
-}
-
 /**
  * .alignwide
  */
@@ -3204,8 +3194,8 @@ img#wpstats {
 }
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, .site-header, #colophon {
-	width: calc(100% + 256px);
-	max-width: calc(100% - 32px);
+	width: 100%;
+	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -3291,6 +3281,7 @@ img#wpstats {
 	margin-right: -16px;
 	margin-left: -16px;
 	width: calc(100% + 32px);
+	max-width: calc(100% + 32px);
 	/* Letting the box-model do most of the work here. */
 }
 
@@ -3299,6 +3290,7 @@ img#wpstats {
 		margin-right: inherit;
 		margin-left: inherit;
 		width: inherit;
+		max-width: inherit;
 	}
 }
 
@@ -3794,7 +3786,7 @@ p:not(.site-title) a:hover {
 }
 
 @media only screen and (max-width: 559px) {
-	.fse-enabled .site-footer .main-navigation .menu-primary-container {
+	.fse-enabled .site-footer .main-navigation > div {
 		display: block;
 	}
 	.fse-enabled .site-footer .main-navigation li {
@@ -3805,6 +3797,10 @@ p:not(.site-title) a:hover {
 	}
 }
 
+.fse-enabled .site-footer .site-info {
+	text-align: center;
+}
+
 .fse-enabled .site-header.entry-content {
 	margin-bottom: 0;
 	max-width: 100%;
@@ -3813,7 +3809,7 @@ p:not(.site-title) a:hover {
 }
 
 @media only screen and (max-width: 559px) {
-	.fse-enabled .site-header.entry-content .main-navigation .menu-primary-container {
+	.fse-enabled .site-header.entry-content .main-navigation > div {
 		padding: 0 32px;
 	}
 }
@@ -3822,6 +3818,12 @@ p:not(.site-title) a:hover {
 	.fse-enabled .site-footer .wp-block-a8c-navigation-menu {
 		margin-bottom: 21.312px;
 		margin-top: 21.312px;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .site-footer .wp-block-a8c-navigation-menu .footer-menu a {
+		padding: 8px;
 	}
 }
 

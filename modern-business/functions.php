@@ -63,9 +63,6 @@ if ( ! function_exists( 'modern_business_setup' ) ) :
 				),
 			)
 		);
-		
-		// Enable Full Site Editing
-		add_theme_support( 'full-site-editing');
 	}
 endif; // modern_business_setup
 add_action( 'after_setup_theme', 'modern_business_setup', 30 );
