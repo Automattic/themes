@@ -29,25 +29,25 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				array(
 					'name'      => __( 'Small', 'dalston' ),
 					'shortName' => __( 'S', 'dalston' ),
-					'size'      => 19.5,
+					'size'      => 16.5,
 					'slug'      => 'small',
 				),
 				array(
 					'name'      => __( 'Normal', 'dalston' ),
 					'shortName' => __( 'M', 'dalston' ),
-					'size'      => 22,
+					'size'      => 19,
 					'slug'      => 'normal',
 				),
 				array(
 					'name'      => __( 'Large', 'dalston' ),
 					'shortName' => __( 'L', 'dalston' ),
-					'size'      => 36.5,
+					'size'      => 25.1275,
 					'slug'      => 'large',
 				),
 				array(
 					'name'      => __( 'Huge', 'dalston' ),
 					'shortName' => __( 'XL', 'dalston' ),
-					'size'      => 49.5,
+					'size'      => 28.9,
 					'slug'      => 'huge',
 				),
 			)
@@ -68,7 +68,12 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 					'color' => '#0D1B24',
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'dalston' ),
+					'name'  => __( 'Dark Blue', 'dalston' ),
+					'slug'  => 'foreground-light',
+					'color' => '#005177',
+				),
+				array(
+					'name'  => __( 'Black', 'dalston' ),
 					'slug'  => 'foreground-dark',
 					'color' => '#000000',
 				),
@@ -76,11 +81,6 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 					'name'  => __( 'Gray', 'dalston' ),
 					'slug'  => 'foreground',
 					'color' => '#1E1E1E',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'dalston' ),
-					'slug'  => 'foreground-light',
-					'color' => '#FAFAFA',
 				),
 				array(
 					'name'  => __( 'Lighter Gray', 'dalston' ),
