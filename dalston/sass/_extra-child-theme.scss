@@ -6,7 +6,7 @@
 $spacing_unit: map-deep-get($config-global, "spacing", "unit");
 $spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
 $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
-$header-css-grid-width: calc( 0.5 * (100vw - #{$content-width-lg} - #{4 * $spacing_unit}) );
+$header-css-grid-width: calc( 0.5 * (100vw - #{$content-width-lg} - #{8 * $spacing_unit}) );
 $primary_color: map-deep-get($config-global, "color", "primary", "default");
 
 a {
@@ -36,7 +36,7 @@ a {
 	}
 
 	@include media(desktop) {
-		width: calc(#{$content-width-flex} - #{$spacing_vertical});
+		width: calc(#{$content-width-flex} - #{2 * $spacing_vertical});
 	}
 }
 
@@ -155,12 +155,29 @@ a {
 	}
 }
 
+@include media(mobile) {
+	.site-header  {
+		.site-title {
+			margin-top: 0;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		.site-description {
+			margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		&[class*="navigation"] {
+			margin-bottom: 0;
+		}
+	}
+}
+
 @include media(desktop) {
 	.site-header {
 		grid-template-columns: $header-css-grid-width auto $header-css-grid-width;
 		grid-template-rows: auto;
 		grid-auto-flow: row;
-		grid-column-gap: $spacing_unit;
+		grid-column-gap: #{2 * $spacing_unit};
 		grid-template-areas:
 			". main-navigation social-navigation"
 			"site-branding site-description social-navigation";
@@ -184,6 +201,7 @@ a {
 
 .site-description {
 	color: #{map-deep-get($config-header, "branding", "color", "text")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
 }
 
 .site-title + .site-description {
@@ -247,8 +265,6 @@ a {
  */
 
 #colophon {
-	@extend %responsive-alignwide;
-	max-width: 100%;
 }
 
 .footer-navigation .footer-menu a {

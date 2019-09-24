@@ -1220,6 +1220,7 @@ input.has-focus[type="submit"],
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: black;
+	min-height: 480px;
 	margin: inherit;
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
@@ -3213,7 +3214,7 @@ img#wpstats {
 	}
 }
 
-.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #colophon {
+.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 	width: calc(100% + 256px);
 	max-width: calc(100% - 32px);
 	margin-left: auto;
@@ -3221,35 +3222,35 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 560px) {
-	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #colophon {
+	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 560px - 32px) + 256px);
 		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #colophon {
+	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 640px - 32px) + 256px);
 		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 782px) {
-	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #colophon {
+	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
 		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1024px) {
-	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #colophon {
+	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
 		max-width: calc(100% - 32px);
 	}
 }
 
 @media only screen and (min-width: 1280px) {
-	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #colophon {
+	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
 		width: calc(calc( 782px - 32px) + 256px);
 		max-width: calc(100% - 32px);
 	}
@@ -3464,7 +3465,7 @@ a {
 
 @media only screen and (min-width: 1024px) {
 	#masthead {
-		width: calc(100% - 32px);
+		width: calc(100% - 64px);
 	}
 }
 
@@ -3563,12 +3564,25 @@ a {
 	}
 }
 
+@media only screen and (min-width: 560px) {
+	.site-header .site-title {
+		margin-top: 0;
+		margin-bottom: 32px;
+	}
+	.site-header .site-description {
+		margin-bottom: 32px;
+	}
+	.site-header[class*="navigation"] {
+		margin-bottom: 0;
+	}
+}
+
 @media only screen and (min-width: 1024px) {
 	.site-header {
-		grid-template-columns: calc( 0.5 * (100vw - calc( 782px - 32px) - 64px)) auto calc( 0.5 * (100vw - calc( 782px - 32px) - 64px));
+		grid-template-columns: calc( 0.5 * (100vw - calc( 782px - 32px) - 128px)) auto calc( 0.5 * (100vw - calc( 782px - 32px) - 128px));
 		grid-template-rows: auto;
 		grid-auto-flow: row;
-		grid-column-gap: 16px;
+		grid-column-gap: 32px;
 		grid-template-areas: ". main-navigation social-navigation" "site-branding site-description social-navigation";
 	}
 }
@@ -3586,6 +3600,7 @@ a {
 
 .site-description {
 	color: #000000;
+	line-height: 1.2;
 }
 
 .site-title + .site-description {
@@ -3644,10 +3659,6 @@ a {
 /**
  * Footer
  */
-#colophon {
-	max-width: 100%;
-}
-
 .footer-navigation .footer-menu a {
 	font-size: 0.75614rem;
 }
