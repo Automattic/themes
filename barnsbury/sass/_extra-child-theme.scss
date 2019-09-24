@@ -17,48 +17,41 @@ a {
 /**
  * Header
  */
-
-.site-header {
-
-	margin-left: auto;
-	margin-right: auto;
+.site-header,
+.site-footer {
+	max-width: 100%;
+	padding-left: $spacing_unit;
+	padding-right: $spacing_unit;
 	position: relative;
-
-	@extend %responsive-alignfull;
-
-	padding: $spacing_unit;
 
 	@include media(mobile) {
 		padding: $spacing_vertical;
 	}
+}
 
-/*
-	.main-navigation {
-		margin-bottom: 0;
+.social-navigation {
+	a {
+		vertical-align: middle;
 	}
 
-	.social-navigation {
-		line-height: 1;
-		margin-top: 0;
-	}
-*/
-
-	.social-navigation ul li a svg {
+	ul li a svg {
 		display: block;
-		width: $spacing_vertical;
-		height: $spacing_vertical;
+		width: (1.5 * $spacing_unit);
+		height: (1.5 * $spacing_unit);
 		transform: translateZ(0);
 	}
+}
 
-	/**
-	 * CSS-grid Desktop Menu
-	 */
-	@include media(mobile) {
+/**
+ * CSS-grid Desktop Menu
+ */
+@include media(mobile) {
+	.site-header {
 		align-items: center;
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: auto;
-		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
+		grid-column-gap: $spacing_unit;
 		grid-template-areas:
 			"site-logo site-logo"
 			"site-title main-navigation"
@@ -74,93 +67,93 @@ a {
 			margin-top: 0;
 			margin-bottom: 0;
 		}
+	}
 
-		.site-logo {
-			grid-area: site-logo;
-			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+	.site-logo {
+		grid-area: site-logo;
+		margin-bottom: $spacing_unit;
+	}
+
+	.site-title {
+		align-self: flex-end;
+		grid-area: site-title;
+
+		& + .site-description {
+			margin-top: 0;
 		}
+	}
 
-		.site-title {
-			align-self: flex-end;
-			grid-area: site-title;
+	.site-description {
+		align-self: center;
+		grid-area: site-description;
+	}
 
-			& + .site-description {
-				margin-top: 0;
-			}
-		}
+	.main-navigation {
+		align-self: center;
+		grid-area: main-navigation;
+		justify-self: flex-end;
 
-		.site-description {
-			align-self: center;
-			grid-area: site-description;
-		}
+		& > div > ul {
+			justify-content: flex-end;
+			margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+			margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
 
-		.main-navigation {
-			align-self: center;
-			grid-area: main-navigation;
-			justify-self: flex-end;
-
-			& > div > ul {
-				justify-content: flex-end;
-				margin-left: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-				margin-right: -#{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
-
-				& > li {
-					padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
-
-					& > a {
-						padding: 0;
-					}
-				}
-
-				& > .menu-item-has-children > a::after {
-						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
-				}
-			}
-
-			& > div > ul > li:hover,
-			& > div > ul > li.focus,
-			& > div > ul > li.current-menu-item {
+			& > li {
+				padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
 
 				& > a {
-					color: #{map-deep-get($config-global, "color", "primary", "default")};
+					padding: 0;
 				}
+			}
 
-				& > ul {
-					box-shadow: none;
-					overflow: hidden;
-
-					&:before {
-						border-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid #{map-deep-get($config-global, "color", "primary", "default")};
-						border-left: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						border-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")} solid transparent;
-						content: "";
-						display: block;
-						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
-						width: #{map-deep-get($config-global, "spacing", "unit")};
-					}
-				}
-
-				& li {
-
-					& > a {
-						background: #{map-deep-get($config-global, "color", "primary", "default")};
-						color: #{map-deep-get($config-global, "color", "background", "default")};
-					}
-
-					&:hover > a,
-					&.focus > a,
-					&.current-menu-item > a {
-						background: #{map-deep-get($config-global, "color", "primary", "hover")};
-					}
-				}
+			& > .menu-item-has-children > a::after {
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 			}
 		}
 
-		.social-navigation {
-			align-self: center;
-			grid-area: social-navigation;
-			justify-self: flex-end;
+		& > div > ul > li:hover,
+		& > div > ul > li.focus,
+		& > div > ul > li.current-menu-item {
+
+			& > a {
+				color: #{map-deep-get($config-global, "color", "primary", "default")};
+			}
+
+			& > ul {
+				box-shadow: none;
+				overflow: hidden;
+
+				&:before {
+					border-bottom: (0.5 * $spacing_unit) solid #{map-deep-get($config-global, "color", "primary", "default")};
+					border-left: (0.5 * $spacing_unit) solid transparent;
+					border-right: (0.5 * $spacing_unit) solid transparent;
+					content: "";
+					display: block;
+					margin-left: $spacing_unit;
+					width: $spacing_unit;
+				}
+			}
+
+			& li {
+
+				& > a {
+					background: #{map-deep-get($config-global, "color", "primary", "default")};
+					color: #{map-deep-get($config-global, "color", "background", "default")};
+				}
+
+				&:hover > a,
+				&.focus > a,
+				&.current-menu-item > a {
+					background: #{map-deep-get($config-global, "color", "primary", "hover")};
+				}
+			}
 		}
+	}
+
+	.social-navigation {
+		align-self: center;
+		grid-area: social-navigation;
+		justify-self: flex-end;
 	}
 }
 
@@ -234,6 +227,94 @@ a {
  * Widgets
  */
 
+@include media(laptop) {
+	.site-footer .widget-area {
+		max-width: 100%;
+
+		& > .widget {
+			max-width: 50%;
+		}
+	}
+}
+
+.widget {
+	select {
+		max-width: 100%;
+	}
+}
+
 .widget-title {
-	font-size: map-deep-get($config-heading, "font", "size", "h3"),
+	font-size: #{map-deep-get($config-heading, "font", "size", "h5")};
+	margin-bottom: #{0.5 * $spacing_vertical};
+}
+
+.widget_archive,
+.widget_categories,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss {
+
+	ul {
+		margin-left: 0;
+		margin-right: 0;
+		list-style: none;
+
+		li {
+			color: map-deep-get($config-global, "color", "foreground", "light");
+			font-weight: 600;
+		}
+
+		ul {
+			counter-reset: submenu;
+		}
+
+		ul > li > a::before {
+			font-weight: normal;
+			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
+			counter-increment: submenu
+		}
+	}
+}
+
+.widget_tag_cloud {
+	.tagcloud {
+		font-weight: 600;
+	}
+}
+
+.widget_search {
+	.search-field {
+		width: 100%;
+
+		@include media(mobile) {
+			width: auto;
+		}
+	}
+
+	.search-submit {
+		display: block;
+		margin-top: $typescale-base;
+	}
+}
+
+.widget_calendar .calendar_wrap {
+	text-align: center;
+
+	table td,
+	table th {
+		border: none;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.widget_links li,
+.widget_jp_blogs_i_follow li,
+.widget_rss_links li {
+	font-family: inherit;
 }
