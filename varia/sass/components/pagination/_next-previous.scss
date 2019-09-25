@@ -10,6 +10,7 @@
 
 	.post-title {
 		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
 		font-size: #{map-deep-get($config-global, "font", "size", "lg")};
 		font-weight: 600;
 	}
@@ -39,6 +40,7 @@
 
 		& > * {
 			font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+			font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
 			font-size: #{map-deep-get($config-global, "font", "size", "md")};
 			font-weight: 600;
 			padding-left: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
