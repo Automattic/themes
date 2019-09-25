@@ -102,6 +102,15 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 
 		// Enable Full Site Editing
 		add_theme_support( 'full-site-editing');
+
+		add_theme_support(
+			'a8c-global-styles',
+			[
+				'enqueue_styles' => true,
+				'font_base'      => '"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+				'font_headings'  => '"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+			]
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'maywood_setup', 12 );
