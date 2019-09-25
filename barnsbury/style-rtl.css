@@ -973,7 +973,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #3C2323;
-	border: 1px solid #DDDDDD;
+	border: 1px solid #AAAAAA;
 	border-radius: 3px;
 	padding: 16px;
 }
@@ -999,7 +999,7 @@ textarea:focus {
 }
 
 select {
-	border: 1px solid #DDDDDD;
+	border: 1px solid #AAAAAA;
 }
 
 textarea {
@@ -1158,7 +1158,7 @@ input.has-focus[type="submit"],
 	color: #3C2323;
 	font-size: 0.84746rem;
 	padding: 16px;
-	border-color: #DDDDDD;
+	border-color: #3C2323;
 }
 
 .wp-block-code pre {
@@ -1767,9 +1767,9 @@ p.has-background {
 	margin-right: 0;
 	margin-left: 0;
 	text-align: center;
-	border-top-color: #DDDDDD;
+	border-top-color: #3C2323;
 	border-top-width: 4px;
-	border-bottom-color: #DDDDDD;
+	border-bottom-color: #3C2323;
 	border-bottom-width: 4px;
 	color: #3C2323;
 	/**
@@ -1904,21 +1904,21 @@ p.has-background {
 }
 
 hr {
-	border-bottom: 2.64px solid #DDDDDD;
+	border-bottom: 2.64px solid #3C2323;
 	clear: both;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom: 2.64px solid #DDDDDD;
+	border-bottom: 2.64px solid #3C2323;
 	/**
 		 * Block Options
 		 */
 }
 
 hr.wp-block-separator.is-style-dots:before {
-	color: #DDDDDD;
+	color: #3C2323;
 	font-size: 1.64303rem;
 	letter-spacing: 0.84746rem;
 	padding-right: 0.84746rem;
@@ -2467,7 +2467,7 @@ table th,
 }
 
 .main-navigation a {
-	color: #20603C;
+	color: #3C2323;
 	display: block;
 	font-family: "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
 	font-size: 1rem;
@@ -2482,7 +2482,7 @@ table th,
 }
 
 .main-navigation a:link, .main-navigation a:visited {
-	color: #20603C;
+	color: #3C2323;
 }
 
 .main-navigation a:hover {
@@ -2727,7 +2727,7 @@ table th,
 }
 
 .entry-content .more-link {
-	display: inline;
+	display: block;
 	color: inherit;
 }
 
@@ -2879,13 +2879,13 @@ table th,
  * Comment Lists
  */
 .comment-list {
-	border-bottom: 1px solid #DDDDDD;
+	border-bottom: 1px solid #3C2323;
 	margin-right: 0;
 	list-style: none;
 }
 
 .comment-list > li {
-	border-top: 1px solid #DDDDDD;
+	border-top: 1px solid #3C2323;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -2896,7 +2896,7 @@ table th,
 }
 
 .children > li {
-	border-top: 1px solid #DDDDDD;
+	border-top: 1px solid #3C2323;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -3416,7 +3416,7 @@ body .widget_eu_cookie_law_widget.widget.top {
 
 body .widget_eu_cookie_law_widget #eu-cookie-law {
 	background: #FFFDF6;
-	border: 1px solid #DDDDDD;
+	border: 1px solid #3C2323;
 	color: #3C2323;
 	font-size: 0.84746rem;
 	line-height: inherit;
@@ -3838,4 +3838,33 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 .widget_jp_blogs_i_follow li,
 .widget_rss_links li {
 	font-family: inherit;
+}
+
+/**
+ * Blocks
+ */
+.wp-block-cover .wp-block-separator,
+.wp-block-cover-image .wp-block-separator,
+.has-background .wp-block-separator {
+	border-color: currentColor;
+}
+
+.wp-block-latest-posts > li > a {
+	color: #3C2323;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.wp-block-latest-posts > li > a:hover, .wp-block-latest-posts > li > a:focus, .wp-block-latest-posts > li > a:active {
+	color: #20603C;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-latest-posts > li > a:hover, .has-background:not(.has-background-background-color) .wp-block-latest-posts > li > a:focus, .has-background:not(.has-background-background-color) .wp-block-latest-posts > li > a:active {
+	color: currentColor;
+	text-decoration: underline;
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
+.wp-block-latest-posts .wp-block-latest-posts__post-full-content {
+	margin-top: 16px;
 }

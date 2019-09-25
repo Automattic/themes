@@ -79,7 +79,7 @@ $config-global: (
 			"dark": #DDDDDD, // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #DDDDDD,
+			"default": #3C2323,
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
@@ -134,7 +134,7 @@ $config-elements: (
 		// Colors
 		"color": (
 			"text": map-deep-get($config-global, "color", "foreground", "default"),
-			"border": map-deep-get($config-global, "color", "border", "default"),
+			"border": map-deep-get($config-global, "color", "border", "dark"),
 			"border-focus": map-deep-get($config-global, "color", "primary", "hover"),
 		),
 
@@ -317,7 +317,7 @@ $config-header: (
 		// Colors
 		"color": (
 			"text": map-deep-get($config-global, "color", "foreground", "default"),
-			"link": map-deep-get($config-global, "color", "primary", "default"),
+			"link": map-deep-get($config-global, "color", "foreground", "default"),
 			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
 		),
 		// Fonts

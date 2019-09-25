@@ -31,3 +31,37 @@
  *   spacing with CSS-variables overrides
  */
 @import "../../varia/sass/blocks/editor";
+
+
+.wp-block-cover,
+.wp-block-cover-image,
+.has-background {
+	.wp-block-separator {
+		border-color: currentColor;
+	}
+}
+
+.wp-block-latest-posts {
+	> li {
+		> a {
+			color: map-deep-get($config-global, "color", "foreground", "default");
+			display: inline-block;
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: map-deep-get($config-global, "color", "primary", "default");
+
+				.has-background:not(.has-background-background-color) & {
+					color: currentColor;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.wp-block-latest-posts__post-excerpt,
+	.wp-block-latest-posts__post-full-content {
+		margin-top: map-deep-get($config-global, "spacing", "unit");
+	}
+}
