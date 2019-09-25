@@ -5,6 +5,7 @@
 
 	p {
 		font-family: #{map-deep-get($config-quote, "font", "family")};
+		font-family: var( --font-headings, #{map-deep-get($config-quote, "font", "family")} );
 		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h4")) + 0em);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: #{map-deep-get($config-global, "font", "line-height", "h4")};
@@ -17,6 +18,7 @@
 
 		p {
 			font-family: #{map-deep-get($config-quote, "font", "family")};
+			font-family: var( --font-headings, #{map-deep-get($config-quote, "font", "family")} );
 			font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h3")) + 0em);
 			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
 			line-height: #{map-deep-get($config-heading, "font", "line-height", "h3")};
