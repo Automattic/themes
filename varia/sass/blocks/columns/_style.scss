@@ -43,5 +43,13 @@
 	&.alignfull {
 		padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 		padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+
+		&:not(:first-child) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:not(:last-child) {
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
 	}
 }

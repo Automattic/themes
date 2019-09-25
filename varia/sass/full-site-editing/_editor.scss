@@ -10,6 +10,15 @@
 			padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
 		}
 	}
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+		.site-title,
+		.site-description {
+			background: transparent;
+			color: inherit;	
+		}
+	}
 }
 
 .a8c-template-editor {
@@ -19,6 +28,16 @@
 	.wp-block:not(:first-child):not(.is-selected) [data-block] {
 		margin-top: 14px;
 	}
+
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+		.site-title,
+		.site-description {
+			background: transparent;
+			color: inherit;	
+		}
+	}
 }
 
 .site-header {
@@ -26,10 +45,6 @@
 		font-size: 21.6px;
 		font-weight: 700;
 		text-decoration: underline;
-
-		&:focus {
-			color: #{map-deep-get($config-header, "branding", "color", "link")};
-		}
 	}
 
 	.site-description {
@@ -71,7 +86,7 @@
 		}
 
 		@include media(mobile-only) {
-			.menu-primary-container {
+			> div {
 				display: block;
 			}
 			li {

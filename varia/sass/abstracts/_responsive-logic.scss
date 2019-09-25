@@ -40,21 +40,23 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 
 %responsive-alignwide {
 
-	@include alignwide-width( $content-width-flex );
 	margin-left: auto;
 	margin-right: auto;
+	max-width: $content-width-flex;
 
 	@include media(mobile) {
-		@include alignwide-width( $content-width-sm );
+		max-width: $content-width-sm;
 	}
 
 	@include media(tablet) {
-		@include alignwide-width( $content-width-md );
+		max-width: $content-width-md;
 	}
 
 	@include media(laptop) {
-		@include alignwide-width( $content-width-lg );
+		max-width: $content-width-lg;
 	}
+
+	/* Matches normal width until desktop breakpoint */
 
 	@include media(desktop) {
 		@include alignwide-width( $content-width-lg );
@@ -97,12 +99,14 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 	margin-left: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
 	margin-right: #{-1 * map-deep-get($config-global, "spacing", "horizontal")};
 	width: calc(100% + #{$horizontal-padding});
+	max-width: calc(100% + #{$horizontal-padding});
 
 	/* Letting the box-model do most of the work here. */
 	@include media(mobile) {
 		margin-left: inherit;
 		margin-right: inherit;
 		width: inherit;
+		max-width: inherit;
 	}
 }
 
