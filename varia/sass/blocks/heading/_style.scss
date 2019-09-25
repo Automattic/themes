@@ -5,6 +5,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: #{map-deep-get($config-heading, "font", "family")};
+	font-family: var( --font-headings, #{map-deep-get($config-heading, "font", "family")} );
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 	clear: both;
 }
