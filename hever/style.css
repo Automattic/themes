@@ -1896,15 +1896,14 @@ p.has-background {
 }
 
 hr {
-	border-bottom-color: #C5C5C5;
-	border-bottom-width: 2px;
+	border-bottom: 2px solid #C5C5C5;
 	clear: both;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom-color: #C5C5C5;
+	border-bottom: 2px solid #C5C5C5;
 	/**
 		 * Block Options
 		 */
@@ -1912,11 +1911,6 @@ hr.wp-block-separator {
 
 hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 96px;
-}
-
-hr.wp-block-separator.is-style-wide {
-	border-bottom-color: #C5C5C5;
-	border-bottom-width: 2px;
 }
 
 hr.wp-block-separator.is-style-dots:before {
@@ -2027,10 +2021,6 @@ table th,
 /**
  * .aligndefault
  */
-.entry-content [class*="inner-container"] {
-	max-width: inherit;
-}
-
 /**
  * .alignwide
  */
@@ -3226,8 +3216,8 @@ img#wpstats {
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, #masthead,
 #colophon {
-	width: calc(100% + 256px);
-	max-width: calc(100% - 32px);
+	width: 100%;
+	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -3320,6 +3310,7 @@ img#wpstats {
 	margin-left: -16px;
 	margin-right: -16px;
 	width: calc(100% + 32px);
+	max-width: calc(100% + 32px);
 	/* Letting the box-model do most of the work here. */
 }
 
@@ -3330,6 +3321,7 @@ img#wpstats {
 		margin-left: inherit;
 		margin-right: inherit;
 		width: inherit;
+		max-width: inherit;
 	}
 }
 
@@ -3476,24 +3468,26 @@ p:not(.site-title) a:hover {
  */
 #masthead,
 #colophon {
+	padding-left: 16px;
+	padding-right: 16px;
 	position: relative;
 }
 
+@media only screen and (min-width: 560px) {
+	#masthead,
+	#colophon {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 #masthead {
-	padding-left: 0;
-	padding-right: 0;
 	padding-bottom: 0;
 }
 
 #colophon {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-@media only screen and (max-width: 559px) {
-	#colophon {
-		padding: 0;
-	}
 }
 
 /**

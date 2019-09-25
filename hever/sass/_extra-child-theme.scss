@@ -24,24 +24,24 @@ a {
  */
 #masthead,
 #colophon {
+	padding-left: 16px;
+	padding-right: 16px;
 	position: relative;
-
 	@extend %responsive-alignwide;
+
+	@include media(mobile) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 #masthead {
-	padding-left: 0;
-	padding-right: 0;
 	padding-bottom: 0;
 }
 
 #colophon {
 	margin-left: auto;
 	margin-right: auto;
-
-	@include media(mobile-only) {
-		padding: 0;
-	}
 }
 
 /**

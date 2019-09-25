@@ -1341,6 +1341,14 @@ b, strong {
 	}
 }
 
+.template-block .wp-block-cover .site-title,
+.template-block .wp-block-cover .site-description,
+.template-block .wp-block-cover-image .site-title,
+.template-block .wp-block-cover-image .site-description {
+	background: transparent;
+	color: inherit;
+}
+
 .a8c-template-editor .wp-block:not(.is-selected) [data-block] {
 	margin-bottom: 14px;
 }
@@ -1349,14 +1357,18 @@ b, strong {
 	margin-top: 14px;
 }
 
+.a8c-template-editor .wp-block-cover .site-title,
+.a8c-template-editor .wp-block-cover .site-description,
+.a8c-template-editor .wp-block-cover-image .site-title,
+.a8c-template-editor .wp-block-cover-image .site-description {
+	background: transparent;
+	color: inherit;
+}
+
 .site-header .site-title {
 	font-size: 21.6px;
 	font-weight: 700;
 	text-decoration: underline;
-}
-
-.site-header .site-title:focus {
-	color: #181818;
 }
 
 .site-header .site-description {
@@ -1481,7 +1493,7 @@ b, strong {
 }
 
 @media only screen and (max-width: 559px) {
-	.site-footer .main-navigation .menu-primary-container {
+	.site-footer .main-navigation > div {
 		display: block;
 	}
 	.site-footer .main-navigation li {
@@ -1510,6 +1522,16 @@ b, strong {
 	.site-header .site-description, .site-footer .site-description {
 		font-size: 16.6px;
 	}
+}
+
+.site-header .wp-block-cover .site-title,
+.site-header .wp-block-cover .site-description,
+.site-header .wp-block-cover-image .site-title,
+.site-header .wp-block-cover-image .site-description, .site-footer .wp-block-cover .site-title,
+.site-footer .wp-block-cover .site-description,
+.site-footer .wp-block-cover-image .site-title,
+.site-footer .wp-block-cover-image .site-description {
+	text-shadow: 0 0 6px black;
 }
 
 .site-header .site-title {
@@ -1556,6 +1578,7 @@ b, strong {
 @media only screen and (max-width: 559px) {
 	.site-footer .main-navigation .footer-menu a {
 		font-size: 13.8px;
+		padding: 0 8px;
 	}
 }
 
