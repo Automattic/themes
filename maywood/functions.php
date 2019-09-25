@@ -106,8 +106,7 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 		add_theme_support(
 			'a8c-global-styles',
 			[
-				'font_base'      => '"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-				'font_headings'  => '"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+				'enable_theme_default' => true,
 			]
 		);
 	}
