@@ -6,6 +6,7 @@
 .editor-post-title__block .editor-post-title__input {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	font-family: #{map-deep-get($config-heading, "font", "family")};
+	font-family: var( --font-headings, #{map-deep-get($config-heading, "font", "family")} );
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 	font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0em);
 	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
@@ -129,6 +130,7 @@
 // Drop cap
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: #{map-deep-get($config-heading, "font", "family")};
+	font-family: var( --font-headings, #{map-deep-get($config-heading, "font", "family")} );
 	font-size: calc(2 * #{strip-unit(map-deep-get($config-heading, "font", "size", "h1")) + 0em});
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 }
