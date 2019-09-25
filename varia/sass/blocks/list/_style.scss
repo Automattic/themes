@@ -1,6 +1,7 @@
 ul,
 ol {
 	font-family: #{map-deep-get($config-list, "font", "family")};
+	font-family: var( --font-base, #{map-deep-get($config-list, "font", "family")} );
 	margin: 0;
 	padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 }
@@ -20,6 +21,7 @@ li > ol {
 
 dt {
 	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+	font-family: va( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
 	font-weight: bold;
 }
 
