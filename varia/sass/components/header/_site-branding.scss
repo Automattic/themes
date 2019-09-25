@@ -16,6 +16,7 @@
 
 	color: #{map-deep-get($config-header, "branding", "color", "link")};
 	font-family: #{map-deep-get($config-header, "branding", "title", "font", "family")};
+	font-family: var( --font-headings, #{map-deep-get($config-header, "branding", "title", "font", "family")} );
 	font-size: #{map-deep-get($config-header, "branding", "title", "font", "size")};
 	letter-spacing: normal;
 	line-height: #{map-deep-get($config-header, "branding", "title", "font", "line-height")};
@@ -40,5 +41,6 @@
 .site-description {
 	color: currentColor;
 	font-family: #{map-deep-get($config-header, "branding", "description", "font", "family")};
+	font-family: var( --font-base, #{map-deep-get($config-header, "branding", "description", "font", "family")} );
 	font-size: #{map-deep-get($config-header, "branding", "description", "font", "size")};
 }
