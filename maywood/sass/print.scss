@@ -34,7 +34,8 @@ Andreas Hecht in https://www.jotform.com/blog/css-perfect-print-stylesheet-98272
   /* Fonts */
 
   body {
-    font: 13pt Georgia, "Times New Roman", Times, serif;
+    font: 13pt Georgia, "Times New Roman", Times, serif; // for browsers without CSS custom properties support
+    font: 13pt var( --font-base, 'Georgia, "Times New Roman", Times, serif' );
     line-height: 1.3;
     background: #fff !important;
     color: #000;
