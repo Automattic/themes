@@ -4,7 +4,8 @@
 .wp-block-heading h4, h4, .h4,
 .wp-block-heading h5, h5, .h5,
 .wp-block-heading h6, h6, .h6 {
-	font-family: #{map-deep-get($config-heading, "font", "family")};
+	font-family: #{map-deep-get($config-heading, "font", "family")}; // For browsers that don't support CSS variables.
+	font-family: var( --font-headings, #{map-deep-get($config-heading, "font", "family")} );
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 	clear: both;
 }
