@@ -1075,7 +1075,7 @@ button,
 .button,
 input[type="submit"],
 .wp-block-button__link,
-.wp-block-file__button, .a8c-posts-list__view-all {
+.wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -1092,11 +1092,11 @@ button:before,
 .button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, button:after,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button:after,
 .button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -1107,7 +1107,7 @@ button:before,
 .button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before {
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
 	margin-bottom: -0.12em;
 }
 
@@ -1115,7 +1115,7 @@ button:after,
 .button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	margin-top: -0.11em;
 }
 
@@ -1123,15 +1123,15 @@ button:hover,
 .button:hover,
 input:hover[type="submit"],
 .wp-block-button__link:hover,
-.wp-block-file__button:hover, .a8c-posts-list__view-all:hover, button:focus,
+.wp-block-file__button:hover, .a8c-posts-list__view-all:hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover, button:focus,
 .button:focus,
 input:focus[type="submit"],
 .wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, button.has-focus,
+.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, button.has-focus,
 .has-focus.button,
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all {
+.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
 	color: white;
 	background-color: #685636;
 }
@@ -1215,6 +1215,14 @@ input.has-focus[type="submit"],
 .wp-block-columns.alignfull {
 	padding-left: 16px;
 	padding-right: 16px;
+}
+
+.wp-block-columns.alignfull:not(:first-child) {
+	margin-top: 32px;
+}
+
+.wp-block-columns.alignfull:not(:last-child) {
+	margin-bottom: 32px;
 }
 
 .wp-block-cover,
@@ -3211,30 +3219,27 @@ img#wpstats {
 }
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, .site-header, #colophon {
-	width: 100%;
-	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 100%;
+	/* Matches normal width until desktop breakpoint */
 }
 
 @media only screen and (min-width: 560px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, .site-header, #colophon {
-		width: calc(calc( 560px - 32px) + 256px);
-		max-width: calc(100% - 32px);
+		max-width: calc( 560px - 32px);
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, .site-header, #colophon {
-		width: calc(calc( 640px - 32px) + 256px);
-		max-width: calc(100% - 32px);
+		max-width: calc( 640px - 32px);
 	}
 }
 
 @media only screen and (min-width: 782px) {
 	.entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery, .site-header, #colophon {
-		width: calc(calc( 782px - 32px) + 256px);
-		max-width: calc(100% - 32px);
+		max-width: calc( 782px - 32px);
 	}
 }
 
@@ -3420,6 +3425,75 @@ img#wpstats {
 
 .wp-block-jetpack-subscriptions form > *:last-child {
 	margin-bottom: 0;
+}
+
+/**
+ * Cookies & Consents Banner
+ */
+body .widget_eu_cookie_law_widget {
+	background: transparent;
+	bottom: 0;
+	left: 0;
+	padding: 8px;
+	right: 0;
+}
+
+body .widget_eu_cookie_law_widget.widget.top {
+	bottom: auto;
+	top: 0;
+}
+
+body .widget_eu_cookie_law_widget #eu-cookie-law {
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	color: #181818;
+	font-size: 0.83333rem;
+	line-height: inherit;
+	padding: 16px;
+}
+
+@media (max-width: 600px) {
+	body .widget_eu_cookie_law_widget #eu-cookie-law {
+		padding-bottom: 80px;
+	}
+}
+
+body .widget_eu_cookie_law_widget #eu-cookie-law.negative {
+	background: #181818;
+	border-color: #020202;
+	color: #FFFFFF;
+}
+
+body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept {
+	background: #FFFFFF;
+	color: #181818;
+}
+
+body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus {
+	background: #CCCCCC;
+}
+
+body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
+	margin: 0;
+	margin-left: 32px;
+}
+
+@media (max-width: 600px) {
+	body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
+		bottom: 16px;
+		left: 16px;
+		margin: 0;
+	}
+}
+
+body.admin-bar .widget_eu_cookie_law_widget.widget.top {
+	top: 32px;
+}
+
+@media (max-width: 782px) {
+	body.admin-bar .widget_eu_cookie_law_widget.widget.top {
+		top: 46px;
+	}
 }
 
 /**
@@ -3670,7 +3744,7 @@ p:not(.site-title) a:hover {
 
 .wp-block-cover p,
 .wp-block-cover-image p {
-	text-shadow: 0 0 6px #000;
+	text-shadow: 0 0 6px black;
 }
 
 .wp-block-cover h1, .wp-block-cover h2, .wp-block-cover h3, .wp-block-cover h4, .wp-block-cover h5, .wp-block-cover h6,
@@ -3681,7 +3755,7 @@ p:not(.site-title) a:hover {
 .wp-block-cover-image h5,
 .wp-block-cover-image h6 {
 	font-weight: 300;
-	text-shadow: 0 0 10px #000;
+	text-shadow: 0 0 10px black;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -3895,6 +3969,40 @@ p:not(.site-title) a:hover {
 	.fse-enabled .site-footer .wp-block-a8c-navigation-menu .footer-menu a {
 		padding: 8px;
 	}
+}
+
+.fse-enabled .wp-block-cover .site-title,
+.fse-enabled .wp-block-cover-image .site-title {
+	font-size: 20px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .wp-block-cover .site-title,
+	.fse-enabled .wp-block-cover-image .site-title {
+		font-size: 24px;
+	}
+}
+
+.fse-enabled .wp-block-cover .site-title a,
+.fse-enabled .wp-block-cover-image .site-title a {
+	text-decoration: none;
+}
+
+.fse-enabled .wp-block-cover .site-description,
+.fse-enabled .wp-block-cover-image .site-description {
+	font-size: 13.8px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .wp-block-cover .site-description,
+	.fse-enabled .wp-block-cover-image .site-description {
+		font-size: 16.6px;
+	}
+}
+
+.fse-enabled .wp-block-cover .main-navigation a,
+.fse-enabled .wp-block-cover-image .main-navigation a {
+	text-decoration: none;
 }
 
 .fse-enabled #colophon {
