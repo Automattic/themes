@@ -1189,6 +1189,7 @@ input.has-focus[type="submit"],
 	background-color: black;
 	min-height: 480px;
 	margin: inherit;
+	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
 	 * Block Options
@@ -1201,7 +1202,7 @@ input.has-focus[type="submit"],
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image .wp-block-cover-text {
-	color: white;
+	color: currentColor;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -1213,6 +1214,15 @@ input.has-focus[type="submit"],
 .wp-block-cover-image .wp-block-cover-image-text a,
 .wp-block-cover-image .wp-block-cover-text a {
 	color: currentColor;
+}
+
+.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
+.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
+.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
+.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
+.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
+.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text {
+	color: white;
 }
 
 .wp-block-cover h2,
