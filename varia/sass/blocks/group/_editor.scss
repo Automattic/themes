@@ -1,0 +1,14 @@
+.wp-block-group {
+	&.has-background {
+		padding: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			padding: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+	}
+}
+
+.wp-block[data-type="core/group"] > .editor-block-list__block-edit > div > .wp-block-group.has-background > .wp-block-group__inner-container > .editor-inner-blocks > .editor-block-list__layout > .wp-block[data-align=full] {
+	margin: 0;
+	width: 100%;
+}
