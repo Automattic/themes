@@ -555,6 +555,22 @@ p.has-background:not(.has-background-background-color) a {
 	line-height: 1.125;
 }
 
+.has-background:not(.has-background-background-color) .wp-block-quote,
+[class*=background-color]:not(.has-background-background-color) .wp-block-quote {
+	border-color: currentColor;
+}
+
+.wp-block-quote .wp-block-quote__citation {
+	color: #767676;
+	font-size: 0.83333em;
+	letter-spacing: normal;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+[class*=background-color]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation {
+	color: currentColor;
+}
+
 .wp-block-separator,
 hr {
 	border-bottom: 2px solid #DDDDDD;
@@ -640,8 +656,7 @@ table th,
 }
 
 .has-background:not(.has-background-background-color) a,
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6,
-.has-background .wp-block-quote__citation {
+.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
 	color: currentColor;
 }
 
