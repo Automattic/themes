@@ -583,7 +583,9 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .has-background:not(.has-background-background-color) .wp-block-quote,
-[class*=background-color]:not(.has-background-background-color) .wp-block-quote {
+[class*="background-color"]:not(.has-background-background-color) .wp-block-quote,
+[style*="background-color"]:not(.has-background-background-color) .wp-block-quote,
+.wp-block-cover[style*="background-image"] .wp-block-quote {
 	border-color: currentColor;
 }
 
@@ -594,7 +596,9 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .has-background:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
-[class*=background-color]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation {
+[class*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+[style*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+.wp-block-cover[style*="background-image"] .wp-block-quote .wp-block-quote__citation {
 	color: currentColor;
 }
 
@@ -626,9 +630,15 @@ hr.is-style-dots:before {
 }
 
 .has-background:not(.has-background-background-color) .wp-block-separator,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-separator, .has-background:not(.has-background-background-color)
+[class*="background-color"]:not(.has-background-background-color) .wp-block-separator,
+[style*="background-color"]:not(.has-background-background-color) .wp-block-separator,
+.wp-block-cover[style*="background-image"] .wp-block-separator, .has-background:not(.has-background-background-color)
 hr,
 [class*="background-color"]:not(.has-background-background-color)
+hr,
+[style*="background-color"]:not(.has-background-background-color)
+hr,
+.wp-block-cover[style*="background-image"]
 hr {
 	border-color: currentColor;
 }
