@@ -50,8 +50,7 @@
 // Gutenberg background-color options
 .has-background {
 	&:not(.has-background-background-color) a,
-	p, h1, h2, h3, h4, h5, h6,
-	.wp-block-quote__citation {
+	p, h1, h2, h3, h4, h5, h6 {
 		color: currentColor;
 	}
 }
@@ -137,5 +136,15 @@
 /**
  * Spacing Overrides
  */
+
+[data-block] {
+	margin-top:#{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+	margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+	@include media(mobile) {
+		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+}
 
 @import "spacing-overrides";

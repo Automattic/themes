@@ -15,7 +15,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer responsive-max-width">
+	<footer id="colophon" class="site-footer <?php echo class_exists( 'A8C\FSE\WP_Template' ) ? 'entry-content' : 'responsive-max-width'; ?>">
 		<?php
 			if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content.
 				$template = new A8C\FSE\WP_Template();

@@ -1,0 +1,69 @@
+@import "../../varia/sass/full-site-editing/imports";
+
+.fse-enabled {
+	.site-header.entry-content {
+		margin-bottom: 0;
+		max-width: 100%;
+		padding: 0;
+		width: 100%;
+
+		@include media(mobile-only) {
+			.main-navigation > div {
+				padding: 0 32px;
+			}
+		}
+	}
+	&.home.page.hide-homepage-title .site-header.entry-content {
+		padding-bottom: $spacing_vertical;
+		@include media(mobile) {
+			padding-bottom: #{1.5 * $spacing_vertical};
+		}
+	}
+
+	.site-footer {
+		.wp-block-a8c-navigation-menu {
+			@include media(tablet) {
+				margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+				margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+			}
+			@include media(mobile) {
+				.footer-menu a {
+					padding: 8px;
+				}
+			}
+		}
+	}
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+		.site-title {
+			font-size: 20px;
+			@include media(mobile) {
+				font-size: 24px;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.site-description {
+			font-size: 13.8px;
+
+			@include media(mobile) {
+				font-size: 16.6px;
+			}
+		}
+
+		.main-navigation a {
+			text-decoration: none;
+		}
+	}
+
+	#colophon {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: none;
+		width: 100%;
+	}
+}

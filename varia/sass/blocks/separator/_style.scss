@@ -1,12 +1,11 @@
 hr {
-	border-bottom-color: #{map-deep-get($config-global, "color", "border", "default")};
-	border-bottom-width: #{map-deep-get($config-separator, "height")};
+	border-bottom: #{map-deep-get($config-separator, "height")} solid #{map-deep-get($config-global, "color", "border", "default")};
 	clear: both;
 	margin-left: auto;
 	margin-right: auto;
 
 	&.wp-block-separator {
-		border-bottom-color: #{map-deep-get($config-global, "color", "border", "default")};
+		border-bottom: #{map-deep-get($config-separator, "height")} solid #{map-deep-get($config-global, "color", "border", "default")};
 
 		&:not(.is-style-wide):not(.is-style-dots) {
 			max-width: #{map-deep-get($config-separator, "width")};
@@ -17,8 +16,6 @@ hr {
 		 */
 		&.is-style-wide {
 			@extend %responsive-aligndefault;
-			border-bottom-color: #{map-deep-get($config-global, "color", "border", "default")};
-			border-bottom-width: #{map-deep-get($config-separator, "height")};
 		}
 
 		&.is-style-dots {
@@ -29,6 +26,13 @@ hr {
 				letter-spacing: #{map-deep-get($config-global, "font", "size", "sm")};
 				padding-left: #{map-deep-get($config-global, "font", "size", "sm")};
 			}
+		}
+
+		.has-background:not(.has-background-background-color) &,
+		[class*="background-color"]:not(.has-background-background-color) &,
+		[style*="background-color"] &,
+		.wp-block-cover[style*="background-image"] & {
+			border-color: currentColor;
 		}
 	}
 }

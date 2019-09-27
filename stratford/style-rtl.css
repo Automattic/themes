@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Stratford is the perfect design for your business or educational institutes online presence. Highlight your products and services, Stratford is versatile enough to be your personal blog too.
 Requires at least: WordPress 4.9.6
-Version: 1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -809,6 +809,7 @@ footer {
  */
 .site-footer > *,
 .site-main > article > *,
+.site-main > .not-found > *,
 .entry-content > *,
 [class*="inner-container"] > *,
 .widget-area > * {
@@ -819,6 +820,7 @@ footer {
 @media only screen and (min-width: 560px) {
 	.site-footer > *,
 	.site-main > article > *,
+	.site-main > .not-found > *,
 	.entry-content > *,
 	[class*="inner-container"] > *,
 	.widget-area > * {
@@ -829,6 +831,7 @@ footer {
 
 .site-footer > *:first-child,
 .site-main > article > *:first-child,
+.site-main > .not-found > *:first-child,
 .entry-content > *:first-child,
 [class*="inner-container"] > *:first-child,
 .widget-area > *:first-child {
@@ -837,6 +840,7 @@ footer {
 
 .site-footer > *:last-child,
 .site-main > article > *:last-child,
+.site-main > .not-found > *:last-child,
 .entry-content > *:last-child,
 [class*="inner-container"] > *:last-child,
 .widget-area > *:last-child {
@@ -850,6 +854,7 @@ footer {
 .site-header > *,
 .entry-header > *,
 .post-thumbnail > *,
+.page-content > *,
 .comment-content > *,
 .author-bio > * {
 	margin-top: 16px;
@@ -859,6 +864,7 @@ footer {
 .site-header > *:first-child,
 .entry-header > *:first-child,
 .post-thumbnail > *:first-child,
+.page-content > *:first-child,
 .comment-content > *:first-child,
 .author-bio > *:first-child {
 	margin-top: 0;
@@ -867,6 +873,7 @@ footer {
 .site-header > *:last-child,
 .entry-header > *:last-child,
 .post-thumbnail > *:last-child,
+.page-content > *:last-child,
 .comment-content > *:last-child,
 .author-bio > *:last-child {
 	margin-bottom: 0;
@@ -1213,7 +1220,7 @@ input.has-focus[type="submit"],
 .wp-block-cover,
 .wp-block-cover-image {
 	background-color: #74767e;
-	min-height: calc( 15 * 32px);
+	min-height: 480px;
 	margin: inherit;
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
@@ -1604,16 +1611,17 @@ img {
 ul,
 ol {
 	font-family: "Lato", sans-serif;
+	list-style-position: inside;
 	margin: 0 16px 0 0;
 	padding: 0;
 }
 
 ul {
-	list-style: disc;
+	list-style-type: disc;
 }
 
 ol {
-	list-style: decimal;
+	list-style-type: decimal;
 }
 
 dt {
@@ -1888,15 +1896,14 @@ p.has-background {
 }
 
 hr {
-	border-bottom-color: #DDDDDD;
-	border-bottom-width: 2px;
+	border-bottom: 2px solid #DDDDDD;
 	clear: both;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom-color: #DDDDDD;
+	border-bottom: 2px solid #DDDDDD;
 	/**
 		 * Block Options
 		 */
@@ -1904,11 +1911,6 @@ hr.wp-block-separator {
 
 hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 96px;
-}
-
-hr.wp-block-separator.is-style-wide {
-	border-bottom-color: #DDDDDD;
-	border-bottom-width: 2px;
 }
 
 hr.wp-block-separator.is-style-dots:before {
@@ -2014,10 +2016,6 @@ table th,
 /**
  * .aligndefault
  */
-.entry-content [class*="inner-container"] {
-	max-width: inherit;
-}
-
 /**
  * .alignwide
  */
@@ -2194,15 +2192,15 @@ table th,
 }
 
 .margin-right-none {
-	margin-top: 0 !important;
+	margin-right: 0 !important;
 }
 
 .margin-right-half {
-	margin-top: 16px !important;
+	margin-right: 16px !important;
 }
 
 .margin-right-default {
-	margin-top: 32px !important;
+	margin-right: 32px !important;
 }
 
 .margin-bottom-none {
@@ -2218,15 +2216,15 @@ table th,
 }
 
 .margin-left-none {
-	margin-top: 0 !important;
+	margin-left: 0 !important;
 }
 
 .margin-left-half {
-	margin-top: 16px !important;
+	margin-left: 16px !important;
 }
 
 .margin-left-default {
-	margin-top: 32px !important;
+	margin-left: 32px !important;
 }
 
 /*
@@ -2245,15 +2243,15 @@ table th,
 }
 
 .padding-right-none {
-	padding-top: 0 !important;
+	padding-right: 0 !important;
 }
 
 .padding-right-half {
-	padding-top: 16px !important;
+	padding-right: 16px !important;
 }
 
 .padding-right-default {
-	padding-top: 32px !important;
+	padding-right: 32px !important;
 }
 
 .padding-bottom-none {
@@ -2269,15 +2267,15 @@ table th,
 }
 
 .padding-left-none {
-	padding-top: 0 !important;
+	padding-left: 0 !important;
 }
 
 .padding-left-half {
-	padding-top: 16px !important;
+	padding-left: 16px !important;
 }
 
 .padding-left-default {
-	padding-top: 32px !important;
+	padding-left: 32px !important;
 }
 
 /**
@@ -3200,8 +3198,8 @@ img#wpstats {
 }
 
 .entry-content > .alignwide, .entry-content > .alignwide.wp-block-jetpack-gif, .entry-content > .alignwide.wp-block-jetpack-tiled-gallery {
-	width: calc(100% + 256px);
-	max-width: calc(100% - 32px);
+	width: 100%;
+	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -3287,6 +3285,7 @@ img#wpstats {
 	margin-right: -16px;
 	margin-left: -16px;
 	width: calc(100% + 32px);
+	max-width: calc(100% + 32px);
 	/* Letting the box-model do most of the work here. */
 }
 
@@ -3295,6 +3294,7 @@ img#wpstats {
 		margin-right: inherit;
 		margin-left: inherit;
 		width: inherit;
+		max-width: inherit;
 	}
 }
 

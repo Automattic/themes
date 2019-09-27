@@ -8,12 +8,21 @@
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text {
-		color: #{map-deep-get($config-cover, "color", "foreground")};
+		color: currentColor; // uses text color specified with background-color options in /blocks/utilities/_style.scss
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 
 		a {
 			color: currentColor;
+		}
+	}
+
+	/* default & custom background-color */
+	&:not([class*='background-color']){
+		.wp-block-cover__inner-container,
+		.wp-block-cover-image-text,
+		.wp-block-cover-text {
+			color: #{map-deep-get($config-cover, "color", "foreground")};
 		}
 	}
 
@@ -41,7 +50,7 @@
 
 	.wp-block-cover__inner-container {
 
-		width: calc(100% - #{ 2 * map-deep-get($config-global, "spacing", "vertical") };
+		width: calc(100% - #{ 2 * map-deep-get($config-global, "spacing", "vertical") });
 
 		& > * {
 			margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };

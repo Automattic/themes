@@ -1,7 +1,7 @@
 .wp-block-separator,
 hr {
-    border-bottom: #{map-deep-get($config-separator, "height")} solid #{map-deep-get($config-global, "color", "border", "default")};
-    clear: both;
+	border-bottom: #{map-deep-get($config-separator, "height")} solid #{map-deep-get($config-global, "color", "border", "default")};
+	clear: both;
 
 	&[style*="text-align:right"],
 	&[style*="text-align: right"] {
@@ -19,5 +19,12 @@ hr {
 		&:before {
 			color: #{map-deep-get($config-global, "color", "border", "default")};
 		}
+	}
+
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"]:not(.has-background-background-color) &,
+	.wp-block-cover[style*="background-image"] & {
+		border-color: currentColor;
 	}
 }

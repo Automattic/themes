@@ -1,0 +1,281 @@
+/**
+ * Extra Child Theme Styles
+ */
+// @import "";
+
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+$header-css-grid-width: calc( 0.5 * (100vw - #{$content-width-lg} - #{8 * $spacing_unit}) );
+$primary_color: map-deep-get($config-global, "color", "primary", "default");
+
+a {
+	text-decoration: none;
+}
+
+/**
+ * Wide Header & Footer
+ */
+#masthead {
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 0;
+	position: relative;
+	width: $content-width-flex;
+
+	@include media(mobile) {
+		width: $content-width-sm;
+	}
+
+	@include media(tablet) {
+		width: $content-width-md;
+	}
+
+	@include media(laptop) {
+		width: $content-width-lg;
+	}
+
+	@include media(desktop) {
+		width: calc(#{$content-width-flex} - #{2 * $spacing_vertical});
+	}
+}
+
+/**
+ * CSS-grid Desktop Menu
+ */
+@include media(mobile) {
+	.site-header {
+		align-items: center;
+		display: grid;
+		grid-template-columns: 66% auto;
+		grid-template-rows: auto;
+		grid-auto-flow: row;
+		grid-column-gap: $spacing_unit;
+		grid-template-areas:
+			"site-branding site-branding"
+			"site-description site-description"
+			"main-navigation social-navigation";
+
+		&:before,
+		&:after {
+			content: none;
+			display: none;
+		}
+
+		& > * {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.site-branding {
+			align-self: baseline;
+			grid-area: site-branding;
+			flex: 0 1 25%;
+		}
+
+		.site-logo {
+			margin-bottom: $spacing_unit;
+		}
+
+		.site-title {
+			& + .site-description {
+				margin-top: 0;
+			}
+		}
+
+		.site-description {
+			align-self: baseline;
+			grid-area: site-description;
+		}
+
+		.main-navigation {
+			align-self: flex-start;
+			margin-bottom: (2 * $spacing_unit);
+			grid-area: main-navigation;
+			justify-self: flex-start;
+
+			& > div > ul {
+				justify-content: flex-start;
+				margin-left: -#{0.5 * $spacing_horizontal};
+				margin-right: -#{0.5 * $spacing_horizontal};
+
+				& > li {
+
+					& > a {
+						padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")};
+					}
+				}
+
+				& > .menu-item-has-children > a::after {
+						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				}
+			}
+
+			& > div > ul > li:hover,
+			& > div > ul > li.focus,
+			& > div > ul > li.current-menu-item {
+
+				& > ul {
+					box-shadow: none;
+					overflow: hidden;
+
+					&:before {
+						border-bottom: #{0.5 * $spacing_unit} solid #{map-deep-get($config-global, "color", "primary", "default")};
+						border-left: #{0.5 * $spacing_unit} solid transparent;
+						border-right: #{0.5 * $spacing_unit} solid transparent;
+						content: "";
+						display: block;
+						margin-left: #{$spacing_unit};
+						width: #{$spacing_unit};
+					}
+				}
+
+				& li {
+
+					& > a {
+						background: #{map-deep-get($config-global, "color", "primary", "default")};
+						color: #{map-deep-get($config-global, "color", "background", "default")};
+					}
+
+					&:hover > a,
+					&.focus > a,
+					&.current-menu-item > a {
+						background: #{map-deep-get($config-global, "color", "primary", "hover")};
+					}
+				}
+			}
+		}
+
+		.social-navigation {
+			line-height: 1;
+			align-self: flex-start;
+			grid-area: social-navigation;
+			justify-self: flex-end;
+		}
+	}
+}
+
+@include media(mobile) {
+	.site-header  {
+		.site-title {
+			margin-top: 0;
+			margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		.site-description {
+			margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		&[class*="navigation"] {
+			margin-bottom: 0;
+		}
+	}
+}
+
+@include media(desktop) {
+	.site-header {
+		grid-template-columns: $header-css-grid-width auto $header-css-grid-width;
+		grid-template-rows: auto;
+		grid-auto-flow: row;
+		grid-column-gap: #{2 * $spacing_unit};
+		grid-template-areas:
+			". main-navigation social-navigation"
+			"site-branding site-description social-navigation";
+
+	}
+}
+
+// Social Menu
+.social-navigation {
+	& > div > ul {
+		flex-wrap: wrap;
+	}
+}
+
+/**
+ * Site Title
+ */
+.site-title {
+	font-weight: bold;
+	word-wrap: break-word;
+}
+
+.site-description {
+	color: #{map-deep-get($config-header, "branding", "color", "text")};
+	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+}
+
+.site-title + .site-description {
+	margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
+}
+
+/**
+ * Content
+ */
+.site-main > article > .entry-header {
+	margin: #{3 * $spacing_unit} 0 $spacing_unit;
+	position: relative;
+}
+
+@include media(mobile) {
+	.site-main > article > .entry-header {
+		margin: #{3 * $spacing_vertical} auto #{2 * $spacing_unit};
+	}
+}
+
+.site-main .page-header {
+	margin-top: #{3 * $spacing_unit};
+}
+
+@include media(mobile) {
+	.site-main .page-header {
+		margin-top: #{3 * $spacing_vertical};
+	}
+}
+
+.a8c-posts-list-item__featured span,
+.sticky-post {
+	color: $primary_color;
+	border: 1px solid currentColor;
+	background: transparent;
+	padding-bottom: 3px;
+	text-transform: uppercase;
+}
+
+.entry-title {
+	font-size: map-deep-get($config-global, "font", "size", "xxxxl");
+	font-weight: 600;
+}
+
+/**
+ * Blocks
+ */
+
+.entry .entry-content .wp-block-media-text {
+
+	background: #{map-deep-get($config-global, "color", "secondary", "default")};
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+
+	&.is-style-inset-borders:before {
+		border-color: #{map-deep-get($config-global, "color", "background", "default")};
+	}
+}
+
+.entry-content [class*="__inner-container"] a {
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+/**
+ * Footer
+ */
+
+#colophon {
+}
+
+.footer-navigation .footer-menu a {
+	font-size: map-deep-get($config-global, "font", "size", "xs");
+}
