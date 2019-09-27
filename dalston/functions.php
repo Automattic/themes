@@ -99,22 +99,6 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				),
 			)
 		);
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 96,
-				'width'       => 100,
-				'flex-width'  => true,
-				'flex-height' => false,
-				'header-text' => array( 'site-title' ),
-			)
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'dalston_setup', 12 );
