@@ -1841,12 +1841,22 @@ p.has-background {
 }
 
 .has-background:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
-[class*=background-color]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation, .has-background:not(.has-background-background-color)
+[class*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+[style*="background-color"] .wp-block-quote .wp-block-quote__citation,
+.wp-block-cover[style*="background-image"] .wp-block-quote .wp-block-quote__citation, .has-background:not(.has-background-background-color)
 .wp-block-quote cite,
-[class*=background-color]:not(.has-background-background-color)
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-quote cite,
+[style*="background-color"]
+.wp-block-quote cite,
+.wp-block-cover[style*="background-image"]
 .wp-block-quote cite, .has-background:not(.has-background-background-color)
 .wp-block-quote footer,
-[class*=background-color]:not(.has-background-background-color)
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-quote footer,
+[style*="background-color"]
+.wp-block-quote footer,
+.wp-block-cover[style*="background-image"]
 .wp-block-quote footer {
 	color: currentColor;
 }
@@ -1878,7 +1888,9 @@ p.has-background {
 }
 
 .has-background:not(.has-background-background-color) .wp-block-quote,
-[class*=background-color]:not(.has-background-background-color) .wp-block-quote {
+[class*="background-color"]:not(.has-background-background-color) .wp-block-quote,
+[style*="background-color"] .wp-block-quote,
+.wp-block-cover[style*="background-image"] .wp-block-quote {
 	border-color: currentColor;
 }
 
@@ -1908,7 +1920,9 @@ hr.wp-block-separator.is-style-dots:before {
 }
 
 .has-background:not(.has-background-background-color) hr.wp-block-separator,
-[class*="background-color"]:not(.has-background-background-color) hr.wp-block-separator {
+[class*="background-color"]:not(.has-background-background-color) hr.wp-block-separator,
+[style*="background-color"] hr.wp-block-separator,
+.wp-block-cover[style*="background-image"] hr.wp-block-separator {
 	border-color: currentColor;
 }
 

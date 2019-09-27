@@ -32,7 +32,9 @@
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 
 		.has-background:not(.has-background-background-color) &,
-		[class*=background-color]:not(.has-background-background-color) & {
+		[class*="background-color"]:not(.has-background-background-color) &,
+		[style*="background-color"] &,
+		.wp-block-cover[style*="background-image"] & {
 			color: currentColor;
 		}
 	}
@@ -67,7 +69,9 @@
 	}
 
 	.has-background:not(.has-background-background-color) &,
-	[class*=background-color]:not(.has-background-background-color) & {
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"] &,
+	.wp-block-cover[style*="background-image"] & {
 		border-color: currentColor;
 	}
 }
