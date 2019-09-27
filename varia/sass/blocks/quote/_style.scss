@@ -2,7 +2,7 @@
 
 	border-left-color: #{map-deep-get($config-global, "color", "primary", "default")};
 	margin: #{map-deep-get($config-global, "spacing", "vertical")} 0;
-	padding: 0 #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 
 	& > * {
 		margin-top: #{map-deep-get($config-global, "spacing", "unit")};
@@ -52,6 +52,7 @@
 		/* Resetting margins to match _block-container.scss */
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+		padding: 0;
 
 		p {
 			font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
