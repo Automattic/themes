@@ -1,9 +1,8 @@
 ul,
 ol {
 	font-family: #{map-deep-get($config-list, "font", "family")};
-	list-style-position: inside;
-	margin: 0 0 0 #{map-deep-get($config-global, "spacing", "unit")};
-	padding: 0;
+	margin: 0;
+	padding-left: calc(2 * #{map-deep-get($config-global, "spacing", "horizontal")});
 }
 
 ul {
@@ -25,5 +24,6 @@ dt {
 }
 
 dd {
-	margin: 0 0 0 #{map-deep-get($config-global, "spacing", "unit")};
+	margin: 0;
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 }
