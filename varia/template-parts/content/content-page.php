@@ -17,6 +17,8 @@
 		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
 
+	<?php varia_post_thumbnail(); ?>
+
 	<div class="entry-content">
 		<?php
 		the_content();
