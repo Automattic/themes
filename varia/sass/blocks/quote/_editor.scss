@@ -4,7 +4,7 @@
 	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 
 	p {
-		font-family: #{map-deep-get($config-quote, "font", "family")};
+		font-family: #{map-deep-get($config-quote, "font", "family")}; // For browsers without support for CSS variables.
 		font-family: var( --font-headings, #{map-deep-get($config-quote, "font", "family")} );
 		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h4")) + 0em);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
@@ -17,7 +17,7 @@
 		padding: 0;
 
 		p {
-			font-family: #{map-deep-get($config-quote, "font", "family")};
+			font-family: #{map-deep-get($config-quote, "font", "family")}; // For browsers without support for CSS variables.
 			font-family: var( --font-headings, #{map-deep-get($config-quote, "font", "family")} );
 			font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h3")) + 0em);
 			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
