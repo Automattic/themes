@@ -46,7 +46,7 @@
 
 .comment-list {
 	border-bottom: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
-	margin-left: 0;
+	padding-left: 0;
 	list-style: none;
 
 	> li {
@@ -58,7 +58,7 @@
 
 .children {
 	list-style: none;
-	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 
 	> li {
 		border-top: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
@@ -67,7 +67,7 @@
 	}
 
 	@include media(mobile) {
-		margin-left: calc(2 * #{map-deep-get($config-global, "spacing", "horizontal")});
+		padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 	}
 }
 
