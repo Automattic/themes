@@ -181,3 +181,17 @@ function shawburn_editor_styles() {
 	wp_enqueue_style( 'shawburn-editor-fonts', shawburn_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'shawburn_editor_styles' );
+
+/**
+ * Add custom body classes.
+ *
+ * @param array $classes The existing body classes.
+ * @return array $classes The updated body classes.
+ */
+function shawburn_body_classes( $classes ) {
+	if ( ! has_nav_menu( 'social' ) ) {
+		$classes[] = 'has-no-social-menu';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'shawburn_body_classes' );

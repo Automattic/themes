@@ -22,6 +22,20 @@ body {
 	}
 }
 
+.home.has-no-social-menu.hide-homepage-title {
+	.hentry .entry-content {
+		& > *:first-child {
+			&.alignfull {
+				margin-top: -#{1 * map-deep-get($config-global, "spacing", "unit")};
+
+				@include media(mobile) {
+					margin-top: -#{2 * map-deep-get($config-global, "spacing", "unit")};
+				}
+			}
+		}
+	}
+}
+
 a {
 	text-decoration: none;
 }
