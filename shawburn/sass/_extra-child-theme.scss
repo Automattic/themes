@@ -12,7 +12,7 @@ body {
 	.hentry .entry-content {
 		& > *:first-child {
 			&.alignfull {
-				margin-top: -#{2 * map-deep-get($config-global, "spacing", "unit")};
+				margin-top: -#{map-deep-get($config-global, "spacing", "unit")};
 
 				@include media(mobile) {
 					margin-top: -#{3 * map-deep-get($config-global, "spacing", "unit")};
@@ -27,6 +27,7 @@ a {
 }
 
 .main-navigation {
+	margin-bottom: 0;
 	text-transform: uppercase;
 }
 
@@ -135,6 +136,12 @@ hr.wp-block-separator.is-style-wide,
 .site {
 	margin: 0 auto;
 	padding: 0;
+}
+
+.site-main {
+	@include media(mobile) {
+		padding-top: #{3 * map-deep-get($config-global, "spacing", "unit")};
+	}
 }
 
 #page {
