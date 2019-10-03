@@ -185,7 +185,7 @@ function alves_fonts_url() {
 function alves_scripts() {
 
 	// enqueue Google fonts, if necessary
-	// wp_enqueue_style( 'alves-fonts', alves_fonts_url(), array(), null );
+	 wp_enqueue_style( 'alves-fonts', alves_fonts_url(), array(), null );
 
 	// dequeue parent styles
 	wp_dequeue_style( 'varia-style' );

@@ -463,7 +463,7 @@ blockquote p {
 
 	ul {
 		list-style: none;
-		margin: 0;
+		padding-left: 0;
 
 		&.children > li {
 			margin-bottom: 0;
@@ -494,7 +494,21 @@ blockquote p {
 /**
  * 6. Blocks
  */
-.wp-block-cover .wp-block-cover__inner-container .wp-block-latest-posts .wp-block-latest-posts__post-date,
-.wp-block-cover .wp-block-cover__inner-container .wp-block-quote cite {
-	color: $color_background_dark;
+.wp-block-latest-posts {
+	> li {
+		> a {
+			display: inline-block;
+			text-decoration: none;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: underline;
+			}
+		}
+	}
+	.wp-block-latest-posts__post-excerpt,
+	.wp-block-latest-posts__post-full-content {
+		margin-top: $spacing_vertical;
+	}
 }
