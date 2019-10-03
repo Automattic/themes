@@ -157,7 +157,7 @@ a {
 						&::after {
 							color: #ffa4ad;
 							content: " \2022";
-							margin-left: 1em;
+							margin-left: #{map-deep-get($config-global, "spacing", "unit")};
 							display: inline;
 							font-size: #{map-deep-get($config-global, "font", "size", "base")};
 						}
@@ -166,6 +166,7 @@ a {
 						a {
 							&::after {
 								content: "";
+								margin-left: 0;
 							}
 						}
 					}
@@ -201,6 +202,10 @@ a {
 			border-bottom: 2px solid rgba(0,0,0,.15);
 			margin-left: 0;
 			margin-right: 0;
+
+			& > li > a {
+				padding-left: 0;
+			}
 		}
 		#toggle-menu {
 			border-radius: 0;
