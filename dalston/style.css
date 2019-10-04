@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Make your online portfolio impressively awesome with Dalston. With the ability to beautifully highlight your illustration and other projects, Dalston is also versatile enough to be your personal site too.
 Requires at least: WordPress 4.9.6
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: dalston
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1464,6 +1464,10 @@ h6, .h6 {
 	line-height: 1.2;
 }
 
+.wp-block-image {
+	text-align: center;
+}
+
 .wp-block-image figcaption {
 	color: #767676;
 	font-size: 0.75614rem;
@@ -1487,11 +1491,10 @@ img {
 	height: auto;
 	max-width: 100%;
 	vertical-align: middle;
-	width: auto;
 }
 
 .wp-block-latest-comments {
-	margin-left: 0;
+	padding-left: 0;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
@@ -1526,7 +1529,7 @@ img {
 }
 
 .wp-block-latest-posts {
-	margin-left: 0;
+	padding-left: 0;
 }
 
 .wp-block-latest-posts > li {
@@ -1629,9 +1632,8 @@ img {
 ul,
 ol {
 	font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-	list-style-position: inside;
-	margin: 0 0 0 16px;
-	padding: 0;
+	margin: 0;
+	padding-left: 32px;
 }
 
 ul {
@@ -1648,7 +1650,8 @@ dt {
 }
 
 dd {
-	margin: 0 0 0 16px;
+	margin: 0;
+	padding-left: 32px;
 }
 
 .wp-block-media-text {
@@ -1847,7 +1850,7 @@ p.has-background {
 .wp-block-quote {
 	border-left-color: #0073AA;
 	margin: 32px 0;
-	padding: 0 16px;
+	padding-left: 16px;
 	/**
 	 * Block Options
 	 */
@@ -1910,6 +1913,7 @@ p.has-background {
 	/* Resetting margins to match _block-container.scss */
 	margin-top: 32px;
 	margin-bottom: 32px;
+	padding: 0;
 }
 
 .wp-block-quote.is-style-large p, .wp-block-quote.is-large p {
@@ -2429,8 +2433,13 @@ table th,
 	list-style: none;
 	margin: 0;
 	max-width: none;
+	padding-left: 0;
 	position: relative;
 	/* Sub-menus Flyout */
+}
+
+.main-navigation > div > ul ul {
+	padding-left: 0;
 }
 
 .main-navigation > div > ul li {
@@ -2588,6 +2597,7 @@ table th,
 	display: flex;
 	list-style: none;
 	margin: 0;
+	padding-left: 0;
 }
 
 .social-navigation > div > ul > li:first-of-type > a {
@@ -2939,7 +2949,7 @@ table th,
  */
 .comment-list {
 	border-bottom: 1px solid #CCCCCC;
-	margin-left: 0;
+	padding-left: 0;
 	list-style: none;
 }
 
@@ -2951,7 +2961,7 @@ table th,
 
 .children {
 	list-style: none;
-	margin-left: 16px;
+	padding-left: 16px;
 }
 
 .children > li {
@@ -2962,7 +2972,7 @@ table th,
 
 @media only screen and (min-width: 560px) {
 	.children {
-		margin-left: calc(2 * 16px);
+		padding-left: 32px;
 	}
 }
 
