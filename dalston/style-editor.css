@@ -439,6 +439,15 @@ object {
 	line-height: 1.2;
 }
 
+/* Center image block by default in the editor */
+.wp-block-image > div {
+	text-align: center;
+}
+
+[data-type="core/image"] .block-editor-block-list__block-edit figure.is-resized {
+	margin: 0 auto;
+}
+
 .wp-block-gallery figcaption {
 	margin-bottom: 0;
 }
@@ -456,6 +465,10 @@ object {
 .wp-block[data-type="core/group"] > .editor-block-list__block-edit > div > .wp-block-group.has-background > .wp-block-group__inner-container > .editor-inner-blocks > .editor-block-list__layout > .wp-block[data-align=full] {
 	margin: 0;
 	width: 100%;
+}
+
+.wp-block-latest-comments {
+	margin-left: 0;
 }
 
 .wp-block-latest-posts {
@@ -498,6 +511,17 @@ object {
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 0.86957rem;
 	line-height: 1.6;
+	margin: 0;
+}
+
+.block-library-list ul,
+.block-library-list ol {
+	margin: 32px 0;
+	padding-left: 32px;
+}
+
+.block-library-list li > ul,
+.block-library-list li > ol {
 	margin: 0;
 }
 
@@ -615,7 +639,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-quote.is-large, .wp-block-quote.is-style-large {
 	border: none;
-	padding: 0 16px;
+	padding: 0;
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
