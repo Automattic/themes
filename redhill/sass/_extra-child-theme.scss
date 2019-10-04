@@ -89,8 +89,14 @@ a {
 		}
 	}
 
-	.footer-navigation + .site-info {
-		text-align: left;
+	.footer-navigation {
+		& + .site-info {
+			text-align: left;
+		}
+
+		.footer-menu > li:last-of-type > a {
+			padding-right: 0;
+		}
 	}
 }
 
@@ -204,6 +210,10 @@ a {
 .social-navigation > div > ul,
 .pagination .nav-links {
 	justify-content: center;
+}
+
+.home.page.hide-homepage-title .site-main {
+	padding-top: 0;
 }
 
 // Cover & Hero block
@@ -500,7 +510,7 @@ article .entry-header .entry-title,
   ul {
     border-bottom: 1px solid map-deep-get($config-global, "color", "border", "light");
     list-style: none;
-    margin-left: 0;
+    padding-left: 0;
   }
 
   li {
