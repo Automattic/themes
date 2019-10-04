@@ -23,35 +23,10 @@ a {
 	margin-left: auto;
 	margin-right: auto;
 
-	@include media(mobile) {
-		box-shadow: 0 0 30px rgba(#000, 0.2);
-		max-width: 95vw;
-	}
-
-	@include media(tablet) {
-		max-width: 92vw;
-	}
-
-	@include media(desktop) {
-		max-width: 87vw;
-	}
-
 	@include media(wide) {
-		max-width: 1200px;
+		box-shadow: 0 0 30px rgba(#000, 0.2);
+		max-width: 1280px;
 	}
-}
-
-.responsive-max-width,
-.wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote,
-.wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote,
-hr.wp-block-separator.is-style-wide,
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator),
-.entry-content .wp-audio-shortcode, .post-navigation, .pagination {
-	width: calc(100% - #{2 * map-deep-get($config-global, "spacing", "unit")});
 }
 
 body {
@@ -73,11 +48,18 @@ body {
 		margin-right: auto;
 
 		@include media(mobile-only) {
-			width: calc(100% - #{2 * map-deep-get($config-global, "spacing", "unit")});
-		}
+			& > * {
+				margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+				margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+				max-width: 100%;
+				&:first-child {
+					margin-top: 0;
+				}
 
-		& > * {
-			max-width: 100%;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 }
@@ -241,11 +223,6 @@ body {
  * Main
  */
 
-.site-main {
-	padding-left: 0;
-	padding-right: 0;
-}
-
 @include media(mobile) {
 	#main {
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
@@ -294,17 +271,6 @@ table,
 	td,
 	th {
 		border-color: #{map-deep-get($config-global, "color", "border", "default")};
-	}
-}
-
-.entry-content > .alignfull,
-.entry-content > .alignfull.wp-block-jetpack-gif,
-.entry-content > .alignfull.wp-block-jetpack-tiled-gallery {
-	@include media(mobile-only) {
-		margin-left: inherit;
-		margin-right: inherit;
-		width: inherit;
-		max-width: inherit;
 	}
 }
 
@@ -481,7 +447,7 @@ article .entry-header .entry-title,
   ul {
     border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
     list-style: none;
-    margin-left: 0;
+    padding-left: 0;
   }
 
   li {
