@@ -1,0 +1,75 @@
+/**
+ * Main WooCommerce styles
+ */
+
+// Fonts
+$fontsize_small: map-deep-get($config-global, "font", "size", "sm");
+$fontsize_base: map-deep-get($config-global, "font", "size", "base");
+$fontsize_medium: map-deep-get($config-global, "font", "size", "md");
+$fontsize_large: map-deep-get($config-global, "font", "size", "lg");
+$fontsize_xl: map-deep-get($config-global, "font", "size", "xl");
+$font_line_height: map-deep-get($config-global, "font", "line-height", "body");
+$font_line_height_heading: map-deep-get($config-global, "font", "line-height", "heading");
+// Colors
+$color_primary: map-deep-get($config-global, "color", "primary", "default");
+$color_secondary: map-deep-get($config-global, "color", "secondary", "default");
+$color_subtext: map-deep-get($config-global, "color", "foreground", "light");
+$color_background: map-deep-get($config-global, "color", "background", "default");
+$color_foreground: map-deep-get($config-global, "color", "foreground", "default");
+$color_border_default: map-deep-get($config-global, "color", "border", "default");
+$color_border_light: map-deep-get($config-global, "color", "border", "light");
+$color_border_dark: map-deep-get($config-global, "color", "border", "dark");
+$color_highlight: map-deep-get($config-global, "color", "text-selection");
+// Spacing
+$spacing_base: (0.5 * map-deep-get($config-global, "spacing", "unit"));
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+$border_radius: map-deep-get($config-global, "border-radius", "sm");
+
+.woocommerce {
+
+	a.remove {
+		font-size: 1.5rem;
+		height: 1rem;
+		width: 1rem;
+		color: red !important; // Required for default theme compatibility
+
+		&:hover {
+			color: #fff !important; // Required for default theme compatibility
+			background: red;
+		}
+	}
+
+	small.note {
+		color: $color_subtext;
+		font-size: $fontsize_small;
+		margin-top: $spacing_unit;
+	}
+
+	.woocommerce-breadcrumb {
+
+		margin-bottom: $spacing_vertical;
+		font-size: $fontsize_base;
+		color: $color_subtext;
+
+		a {
+			color: currentColor;
+		}
+	}
+
+}
+
+// Blocks
+@import "blocks/button/style";
+
+// Components
+@import "components/reviews";
+@import "components/star-rating";
+@import "components/tables";
+
+// Layout
+@import "layout/structure";
+
+// Pages
+@import "pages/product-page";

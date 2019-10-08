@@ -1,0 +1,86 @@
+/**
+ * Reviews
+ */
+
+.woocommerce #content { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Reviews
+	 */
+	#reviews {
+
+		h2 small {
+			color: $color_subtext;
+			font-size: $fontsize_small;
+			margin: inherit;
+
+			a {
+				color: currentColor;
+			}
+		}
+
+		#comments {
+
+			ol.commentlist {
+
+				li {
+					margin-bottom: $spacing_unit;
+
+					.meta {
+						color: $color_subtext;
+						font-size: $fontsize_small;
+					}
+
+					img.avatar {
+						float: left;
+						position: absolute;
+						top: 0;
+						left: 0;
+						padding: 3px;
+						width: 32px;
+						height: auto;
+						background: $color_secondary;
+						border-color: $color_border_default;
+						margin: 0;
+						box-shadow: none;
+					}
+
+					.comment-text {
+						margin: 0 0 0 50px;
+						border: 1px solid darken($color_secondary, 3%);
+						border-radius: 4px;
+						padding: 1em 1em 0;
+
+						p {
+							margin: 0 0 1em;
+						}
+
+						p.meta {
+							font-size: 0.83em;
+						}
+					}
+				}
+
+				ul.children {
+					list-style: none outside;
+					margin: 20px 0 0 50px;
+
+					.star-rating {
+						display: none;
+					}
+				}
+
+				#respond {
+					border: 1px solid darken($color_secondary, 3%);
+					border-radius: 4px;
+					padding: 1em 1em 0;
+					margin: 20px 0 0 50px;
+				}
+			}
+
+			.commentlist > li::before {
+				content: "";
+			}
+		}
+	}
+}
