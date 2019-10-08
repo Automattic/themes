@@ -16,7 +16,6 @@
 
 	color: #{map-deep-get($config-header, "branding", "color", "link")};
 	font-family: #{map-deep-get($config-header, "branding", "title", "font", "family")};
-	font-size: #{map-deep-get($config-header, "branding", "title", "font", "size")};
 	letter-spacing: normal;
 	line-height: #{map-deep-get($config-header, "branding", "title", "font", "line-height")};
 
@@ -40,5 +39,15 @@
 .site-description {
 	color: currentColor;
 	font-family: #{map-deep-get($config-header, "branding", "description", "font", "family")};
-	font-size: #{map-deep-get($config-header, "branding", "description", "font", "size")};
+}
+
+// Prevent overruling the user defined font size value set inside Gutenberg
+// for Full Site Editing's Site Title and Site Description blocks.
+body:not( .fse-enabled ) {
+	.site-title {
+		font-size: #{map-deep-get($config-header, "branding", "title", "font", "size")};
+	}
+	.site-description {
+		font-size: #{map-deep-get($config-header, "branding", "description", "font", "size")};
+	}
 }
