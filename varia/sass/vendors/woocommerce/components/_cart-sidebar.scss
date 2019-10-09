@@ -2,7 +2,7 @@
  * Reviews
  */
 
-.woocommerce #content { // adding #content here to override default wc styles without !important
+.woocommerce #page { // adding #page here to override default wc styles without !important
 
 	/**
 	 * Cart sidebar
@@ -27,15 +27,20 @@
 		}
 	}
 
-	&.widget_shopping_cart,
 	.widget_shopping_cart {
 
 		.total {
-			border-top-color: $color_secondary;
+			border-top: 1px solid $color_border_default;
+			padding-top: $spacing_unit;
 		}
 
 		.cart_list li {
-			padding-left: $spacing_horizontal;
+			border-top: 1px solid $color_border_default;
+			padding: $spacing_unit 0 $spacing_unit #{2 * $spacing_horizontal};
+
+			a.remove {
+				top: $spacing_unit;
+			}
 		}
 	}
 }

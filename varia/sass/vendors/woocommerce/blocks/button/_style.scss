@@ -2,7 +2,7 @@
  * Button
  */
 
-body[class*="woocommerce"] #content { // adding #content here to override default wc styles without !important
+body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
 
 	#respond input#submit,
 	#respond input#submit.alt,
@@ -18,7 +18,9 @@ body[class*="woocommerce"] #content { // adding #content here to override defaul
 	.woocommerce #respond input#submit,
 	.woocommerce a.button,
 	.woocommerce button.button,
-	.woocommerce input.button {
+	.woocommerce input.button,
+	.woocommerce .widget_shopping_cart .buttons a,
+	.woocommerce.widget_shopping_cart .buttons a {
 		// Extend button style
 		@extend %button-style;
 	}
