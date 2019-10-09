@@ -1,0 +1,36 @@
+/**
+ * Notices
+ */
+
+.woocommerce {
+	.woocommerce-message,
+	.woocommerce-error,
+	.woocommerce-info {
+		padding: $spacing_unit $spacing_vertical $spacing_unit #{2 * $spacing_vertical};
+		margin-bottom: $spacing_vertical;
+		background-color: $color_background_light;
+		color: $color_foreground_dark;
+		border-top-color: $color_primary;
+	}
+
+	.woocommerce-message {
+		border-top-color: $color_success;
+		&:before {
+			color: $color_success;
+		}
+	}
+
+	.woocommerce-error {
+		border-top-color: $color_error;
+		&:before {
+			color: $color_error;
+		}
+	}
+
+	.woocommerce-info {
+		border-top-color: $color_primary;
+		&:before {
+			color: $color_primary;
+		}
+	}
+}

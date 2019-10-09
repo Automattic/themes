@@ -1,0 +1,58 @@
+/**
+ * Cart Collaterals
+ */
+
+.woocommerce-cart,
+.woocommerce-checkout,
+#add_payment_method {
+
+	.cart-collaterals {
+
+		.shipping-calculator-button {
+			margin-top: #{0.5 * $spacing_vertical};
+		}
+
+		.shipping-calculator-form {
+			margin-top: $spacing_horizontal;
+		}
+
+		.cart_totals {
+
+			p small {
+				color: $color_subtext;
+				font-size: $fontsize_small;
+			}
+
+			table {
+				margin: 0 0 $spacing_base;
+
+				td,
+				th {
+					line-height: $font_line_height;
+				}
+
+				small {
+					color: $color_subtext;
+				}
+			}
+
+			.discount td {
+				color: $color_highlight;
+			}
+
+			tr td,
+			tr th {
+				border-top-color: $color_border_default;
+			}
+		}
+	}
+}
+
+.woocommerce .cart-collaterals .cross-sells,
+.woocommerce-page .cart-collaterals .cross-sells,
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+	& > h2 {
+		font-size: $fontsize_large;
+	}
+}

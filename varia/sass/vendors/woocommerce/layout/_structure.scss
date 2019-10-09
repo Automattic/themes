@@ -2,18 +2,58 @@
  * Structure
  */
 
-.woocommerce #content { // adding #content here to override default wc styles without !important
+/**
+ * Vertical Space - 32px
+ */
+.woocommerce #content div.summary,
+.woocommerce #content div.product .woocommerce-tabs .panel,
+.woocommerce #content .products.related,
+.woocommerce .woocommerce-MyAccount-content,
+.woocommerce .woocommerce-EditAccountForm,
+.woocommerce .up-sells {
 
-	div.summary,
-	div.product .woocommerce-tabs .panel,
-	.products.related {
+	& > *:not(:first-child) {
+		margin-top: $spacing_vertical;
+	}
 
-		& > *:not(:first-child) {
-			margin-top: $spacing_vertical;
-		}
+	& > *:not(:last-child) {
+		margin-bottom: $spacing_vertical;
+	}
 
-		& > *:not(:last-child) {
-			margin-bottom: $spacing_vertical;
-		}
+	& > *:empty + *,
+	& > .form-row-last {
+		margin-top: 0;
+	}
+
+	& > *:empty {
+		margin: 0;
+	}
+}
+
+/**
+ * Vertical Space - 16px
+ */
+#content .woocommerce ul.products li.product a,
+#content .woocommerce ul.products li.product-category a,
+.woocommerce .cart-collaterals .cross-sells,
+.woocommerce-page .cart-collaterals .cross-sells,
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+
+	& > *:not(:first-child) {
+		margin-top: $spacing_unit;
+	}
+
+	& > *:not(:last-child),
+	& > .price {
+		margin-bottom: $spacing_unit;
+	}
+
+	& > *:not(img):empty + * {
+		margin-top: 0;
+	}
+
+	& > *:empty {
+		margin: 0;
 	}
 }

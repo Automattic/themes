@@ -1,0 +1,41 @@
+/**
+ * Reviews
+ */
+
+.woocommerce #content { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Cart sidebar
+	 */
+	ul.cart_list,
+	ul.product_list_widget {
+
+		li {
+			img {
+				margin-left: 4px;
+				width: $spacing_vertical;
+			}
+
+			dl {
+				border-left-color: $color_border_default;
+
+				dt,
+				dd {
+					margin-bottom: $spacing_vertical;
+				}
+			}
+		}
+	}
+
+	&.widget_shopping_cart,
+	.widget_shopping_cart {
+
+		.total {
+			border-top-color: $color_secondary;
+		}
+
+		.cart_list li {
+			padding-left: $spacing_horizontal;
+		}
+	}
+}

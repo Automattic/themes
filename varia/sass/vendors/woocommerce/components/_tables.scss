@@ -2,21 +2,24 @@
  * Tables
  */
 
-.woocommerce { // adding #content here to override default wc styles without !important
+.woocommerce {
 
 	table.shop_attributes {
-		border-top-color: $color_border_light;
+		border-top-color: $color_border_default;
+		border-top-style: solid;
 		margin-bottom: $spacing_vertical;
 
 		th {
 			padding: $spacing_base;
-			border-bottom-color: $color_border_light;
+			border-bottom-color: $color_border_default;
+			border-bottom-style: solid;
 			line-height: $font_line_height;
 		}
 
 		td {
 			font-style: inherit;
-			border-bottom-color: $color_border_light;
+			border-bottom-color: $color_border_default;
+			border-bottom-style: solid;
 			line-height: $font_line_height;
 
 			p {
@@ -31,55 +34,8 @@
 		}
 	}
 
-	.woocommerce-cart #content & table.shop_table {
-		border-color: transparent;
-		border-radius: 0;
-
-		th {
-			border-color: $color_border_default;
-			padding: $spacing_base $spacing_unit;
-			line-height: $font_line_height;
-		}
-
-		td {
-			border-color: $color_border_default;
-			padding: $spacing_base $spacing_unit;
-			line-height: $font_line_height;
-		}
-
-		tfoot td,
-		tfoot th,
-		tbody th {
-			border-top-color: $color_border_light;
-		}
-	}
-
-	table.my_account_orders {
-		font-size: $fontsize_small;
-
-		th,
-		td {
-			padding: (0.5 * $spacing_base) $spacing_base;
-		}
-	}
-
-	td.product-name {
-
-		dl.variation,
-		.wc-item-meta {
-
-			dt,
-			.wc-item-meta-label {
-				margin-right: $spacing_base;
-			}
-		}
-
-		p.backorder_notification {
-			font-size: $fontsize_small;
-		}
-	}
-
-	td.product-quantity {
-		min-width: 80px;
+	table td,
+	table th {
+		border: inherit;
 	}
 }

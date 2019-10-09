@@ -1,7 +1,14 @@
 /**
- * Product Page
+ * Single Product Page
  */
-.woocommerce #content { // adding #content here to override default wc styles without !important
+.woocommerce-page #content { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Remove the bright yellow background on mark elements.
+	 */
+	mark {
+		background: transparent;
+	}
 
 	div.product {
 
@@ -64,6 +71,10 @@
 			margin-bottom: $spacing_vertical;
 		}
 
+		.product_meta > * {
+			display: block;
+		}
+
 		.woocommerce-tabs {
 
 			ul.tabs {
@@ -72,7 +83,7 @@
 
 				li {
 					border-color: $color_border_default;
-					background-color: $color_secondary;
+					background-color: $color_background;
 					border-radius: $border_radius $border_radius 0 0;
 					padding-left: $spacing_horizontal;
 					padding-right: $spacing_horizontal;
@@ -80,10 +91,10 @@
 					a {
 						padding-top: (0.5 * $spacing_horizontal);
 						padding-bottom: (0.5 * $spacing_horizontal);
-						color: $color_secondary;
+						color: $color_foreground;
 
 						&:hover {
-							color: lighten($color_secondary, 10%);
+							color: $color_primary;
 						}
 					}
 
@@ -111,11 +122,11 @@
 					}
 
 					&::before {
-						box-shadow: 2px 2px 0 $color_secondary;
+						box-shadow: 2px 2px 0 $color_border_default;
 					}
 
 					&::after {
-						box-shadow: -2px 2px 0 $color_secondary;
+						box-shadow: -2px 2px 0 $color_border_default;
 					}
 				}
 
@@ -126,6 +137,16 @@
 
 			.panel {
 				margin-bottom: $spacing_vertical;
+
+				& > h2 {
+					font-size: $fontsize_large;
+				}
+			}
+		}
+
+		.up-sells {
+			& > h2 {
+				font-size: $fontsize_large;
 			}
 		}
 
