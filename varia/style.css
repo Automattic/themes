@@ -2514,6 +2514,11 @@ table th,
 	z-index: 99999;
 }
 
+.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
+	cursor: pointer;
+	z-index: 99999;
+}
+
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2524,6 +2529,14 @@ table th,
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
+	}
+	.main-navigation > div > ul li:hover > ul,
+	.main-navigation > div > ul li[focus-within] > ul,
+	.main-navigation > div > ul li ul:hover,
+	.main-navigation > div > ul li ul:focus {
+		visibility: visible;
+		opacity: 1;
+		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li[focus-within] > ul,
@@ -4113,6 +4126,20 @@ woocommerce-password-hint {
 /**
  * Tables
  */
+.woocommerce table.shop_table {
+	border-collapse: collapse;
+	border: 1px solid #DDDDDD;
+	margin-bottom: 32px;
+}
+
+.woocommerce table.shop_table td {
+	border-top: none;
+}
+
+.woocommerce table.shop_table tr {
+	border-bottom: 1px solid #DDDDDD;
+}
+
 .woocommerce table.shop_attributes {
 	border-top-color: #DDDDDD;
 	border-top-style: solid;
@@ -4298,7 +4325,7 @@ woocommerce-password-hint {
 .woocommerce-cart table.cart img,
 .woocommerce-checkout table.cart img,
 #add_payment_method table.cart img {
-	width: 16px;
+	width: 64px;
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text,
