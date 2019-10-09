@@ -1,29 +1,6 @@
 /**
- * Placeholder button style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
+ * Button
  */
-%button-style {
-	@include crop-text(map-deep-get($config-button, "font", "line-height"));
-	color: #{map-deep-get($config-button, "color", "text")};
-	cursor: pointer;
-	font-weight: #{map-deep-get($config-button, "font", "weight")};
-	font-family: #{map-deep-get($config-button, "font", "family")};
-	font-size: #{map-deep-get($config-button, "font", "size")};
-	background-color: #{map-deep-get($config-button, "color", "background")};
-	border-radius: #{map-deep-get($config-button, "border-radius")};
-	border-width: 0;
-	padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
-
-	&:hover,
-	&:focus,
-	&.has-focus {
-		color: #{map-deep-get($config-button, "color", "text-hover")};
-		background-color: #{map-deep-get($config-button, "color", "background-hover")};
-	}
-}
-
 button,
 .button,
 input[type="submit"],

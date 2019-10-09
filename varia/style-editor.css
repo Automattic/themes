@@ -113,6 +113,77 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Button Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+.site-header .main-navigation button,
+.site-header .main-navigation .button,
+.site-header .main-navigation input[type="submit"],
+.site-header .main-navigation .wp-block-button__link,
+.site-header .main-navigation .wp-block-file__button {
+	line-height: 1;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	background-color: blue;
+	border-radius: 9px;
+	border-width: 0;
+	padding: 16px 16px;
+}
+
+.site-header .main-navigation button:before,
+.site-header .main-navigation .button:before,
+.site-header .main-navigation input[type="submit"]:before,
+.site-header .main-navigation .wp-block-button__link:before,
+.site-header .main-navigation .wp-block-file__button:before, .site-header .main-navigation button:after,
+.site-header .main-navigation .button:after,
+.site-header .main-navigation input[type="submit"]:after,
+.site-header .main-navigation .wp-block-button__link:after,
+.site-header .main-navigation .wp-block-file__button:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+}
+
+.site-header .main-navigation button:before,
+.site-header .main-navigation .button:before,
+.site-header .main-navigation input[type="submit"]:before,
+.site-header .main-navigation .wp-block-button__link:before,
+.site-header .main-navigation .wp-block-file__button:before {
+	margin-bottom: -0.12em;
+}
+
+.site-header .main-navigation button:after,
+.site-header .main-navigation .button:after,
+.site-header .main-navigation input[type="submit"]:after,
+.site-header .main-navigation .wp-block-button__link:after,
+.site-header .main-navigation .wp-block-file__button:after {
+	margin-top: -0.11em;
+}
+
+.site-header .main-navigation button:hover,
+.site-header .main-navigation .button:hover,
+.site-header .main-navigation input:hover[type="submit"],
+.site-header .main-navigation .wp-block-button__link:hover,
+.site-header .main-navigation .wp-block-file__button:hover, .site-header .main-navigation button:focus,
+.site-header .main-navigation .button:focus,
+.site-header .main-navigation input:focus[type="submit"],
+.site-header .main-navigation .wp-block-button__link:focus,
+.site-header .main-navigation .wp-block-file__button:focus, .site-header .main-navigation button.has-focus,
+.site-header .main-navigation .has-focus.button,
+.site-header .main-navigation input.has-focus[type="submit"],
+.site-header .main-navigation .has-focus.wp-block-button__link,
+.site-header .main-navigation .has-focus.wp-block-file__button {
+	color: white;
+	background-color: indigo;
+}
+
+/**
  * Base
  * - Reset the browser
  */
@@ -1364,79 +1435,11 @@ table th,
 
 .site-header .main-navigation {
 	/**
- * Placeholder button style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
+ * Button
  */
 	/**
  * Block Options
  */
-}
-
-.site-header .main-navigation button,
-.site-header .main-navigation .button,
-.site-header .main-navigation input[type="submit"],
-.site-header .main-navigation .wp-block-button__link,
-.site-header .main-navigation .wp-block-file__button {
-	line-height: 1;
-	color: white;
-	cursor: pointer;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-size: 1.2rem;
-	background-color: blue;
-	border-radius: 9px;
-	border-width: 0;
-	padding: 16px 16px;
-}
-
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before, .site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before {
-	margin-bottom: -0.12em;
-}
-
-.site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
-	margin-top: -0.11em;
-}
-
-.site-header .main-navigation button:hover,
-.site-header .main-navigation .button:hover,
-.site-header .main-navigation input:hover[type="submit"],
-.site-header .main-navigation .wp-block-button__link:hover,
-.site-header .main-navigation .wp-block-file__button:hover, .site-header .main-navigation button:focus,
-.site-header .main-navigation .button:focus,
-.site-header .main-navigation input:focus[type="submit"],
-.site-header .main-navigation .wp-block-button__link:focus,
-.site-header .main-navigation .wp-block-file__button:focus, .site-header .main-navigation button.has-focus,
-.site-header .main-navigation .has-focus.button,
-.site-header .main-navigation input.has-focus[type="submit"],
-.site-header .main-navigation .has-focus.wp-block-button__link,
-.site-header .main-navigation .has-focus.wp-block-file__button {
-	color: white;
-	background-color: indigo;
 }
 
 .site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link {
