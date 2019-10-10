@@ -2,7 +2,10 @@
  * Product loops
  */
 
-#woocommerce-wrapper {
+#woocommerce-wrapper,
+body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells,
+body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
+
 
 	.products ul,
 	ul.products {
@@ -16,6 +19,7 @@
 		}
 
 		.star-rating {
+			font-size: $fontsize_small;
 			margin: inherit;
 		}
 
@@ -23,7 +27,6 @@
 		.woocommerce-loop-product__title,
 		.woocommerce-loop-category__title {
 			padding: inherit;
-			margin: inherit;
 			font-size: $fontsize_base;
 		}
 
@@ -38,18 +41,14 @@
 			border-color: $color_border_default;
 		}
 
-		.star-rating {
-			font-size: $fontsize_small;
-		}
-
 		.button {
 			margin-top: inherit;
 		}
 
 		.price {
 			color: $color_foreground_dark;
-			margin-bottom: inherit;
 			font-size: $fontsize_medium;
+			line-height: $font_line_height_heading;
 
 			del {
 				color: inherit;
