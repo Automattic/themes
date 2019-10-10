@@ -6,10 +6,10 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 	.woocommerce-breadcrumb {
 
-		margin-bottom: $spacing_vertical;
-		font-size: $fontsize_base;
-		font-family: $font_family_primary;
-		color: $color_subtext;
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		font-size: map-deep-get($config-global, "font", "size", "base");
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		color: map-deep-get($config-global, "color", "foreground", "light");
 
 		a {
 			color: currentColor;

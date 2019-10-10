@@ -10,8 +10,8 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 	#reviews {
 
 		h2 small {
-			color: $color_subtext;
-			font-size: $fontsize_small;
+			color: map-deep-get($config-global, "color", "foreground", "light");
+			font-size: map-deep-get($config-global, "font", "size", "sm");
 			margin: inherit;
 
 			a {
@@ -28,30 +28,30 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 			ol.commentlist {
 
 				li {
-					margin-bottom: $spacing_unit;
+					margin-bottom: map-deep-get($config-global, "spacing", "unit");
 
 					.meta {
-						color: $color_subtext;
-						font-size: $fontsize_small;
+						color: map-deep-get($config-global, "color", "foreground", "light");
+						font-size: map-deep-get($config-global, "font", "size", "sm");
 					}
 
 					img.avatar {
 						padding: 0;
-						width: $spacing_vertical;
+						width: map-deep-get($config-global, "spacing", "vertical");
 						height: auto;
 						background: transparent;
-						border-color: $color_border_default;
+						border-color: map-deep-get($config-global, "color", "border", "default");
 						margin: 0;
 						box-shadow: none;
 					}
 
 					.woocommerce-review__author {
-						font-family: $font_family_primary;
+						font-family: #{map-deep-get($config-global, "font", "family", "primary")};
 					}
 
 					.comment-text {
-						margin-left: #{3 * $spacing_unit};
-						border: 1px solid $color_border_default;
+						margin-left: #{3 * map-deep-get($config-global, "spacing", "unit")};
+						border: 1px solid map-deep-get($config-global, "color", "border", "default");
 						border-radius: 4px;
 						padding: 1em 1em 0;
 
@@ -75,7 +75,7 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 				}
 
 				#respond {
-					border: 1px solid darken($color_secondary, 3%);
+					border: 1px solid map-deep-get($config-global, "color", "border", "default");
 					border-radius: 4px;
 					padding: 1em 1em 0;
 					margin: 20px 0 0 50px;

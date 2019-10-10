@@ -4,38 +4,38 @@
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
 	table.shop_table {
-		border-color: $color_border_default;
+		border-color: map-deep-get($config-global, "color", "border", "default");
 		border-radius: 3px;
 
 		th {
-			padding: $spacing_base $spacing_unit;
-			line-height: $font_line_height;
+			padding: map-deep-get($config-global, "spacing", "unit") map-deep-get($config-global, "spacing", "unit");
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
 		}
 
 		td {
-			padding: $spacing_base $spacing_unit;
-			line-height: $font_line_height;
+			padding: map-deep-get($config-global, "spacing", "unit") map-deep-get($config-global, "spacing", "unit");
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
 		}
 
 		tfoot td,
 		tfoot th,
 		tbody th {
-			border-top-color: $color_border_default;
+			border-top-color: map-deep-get($config-global, "color", "border", "default");
 		}
 	}
 
 	table.my_account_orders {
-		font-size: $fontsize_small;
+		font-size: map-deep-get($config-global, "font", "size", "sm");
 
 		th,
 		td {
-			padding: (0.5 * $spacing_base) $spacing_base;
+			padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 		}
 	}
 
 	td.product-name {
 
-		font-family: $font_family_primary;
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
 		font-weight: 700;
 
 		dl.variation,
@@ -43,23 +43,23 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 			dt,
 			.wc-item-meta-label {
-				margin-right: $spacing_base;
+				margin-right: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 			}
 		}
 
 		p.backorder_notification {
-			font-size: $fontsize_small;
+			font-size: map-deep-get($config-global, "font", "size", "sm");
 		}
 	}
 
 	td.product-quantity {
-		min-width: #{5 * $spacing_unit};
+		min-width: #{5 * map-deep-get($config-global, "spacing", "unit")};
 	}
 
 	table.cart td.actions .input-text {
 		width: inherit;
 		float: inherit;
-		padding: $spacing_unit;
+		padding: map-deep-get($config-global, "spacing", "unit");
 	}
 
 	#add_payment_method {
@@ -67,114 +67,114 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		table.cart {
 
 			.product-thumbnail {
-				min-width: $spacing_horizontal;
+				min-width: map-deep-get($config-global, "spacing", "horizontal");
 			}
 
 			img {
-				width: #{2 * $spacing_vertical};
+				width: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 			}
 
 			td.actions .coupon .input-text {
-				border-color: $color_border_default;
-				padding: $spacing_base;
-				margin: 0 $spacing_base 0 0;
+				border-color: map-deep-get($config-global, "color", "border", "default");
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+				margin: 0 map-deep-get($config-global, "spacing", "unit") 0 0;
 			}
 		}
 
 		.wc-proceed-to-checkout {
 
-			padding: $spacing_vertical 0;
+			padding: map-deep-get($config-global, "spacing", "vertical") 0;
 
 			a.checkout-button {
-				margin-bottom: $spacing_vertical;
-				font-size: $fontsize_medium;
-				padding: $spacing_unit;
+				margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+				font-size: map-deep-get($config-global, "font", "size", "md");
+				padding: map-deep-get($config-global, "spacing", "unit");
 			}
 		}
 
 		.checkout {
 
 			.create-account small {
-				font-size: $fontsize_xs;
-				color: $color_subtext;
+				font-size: map-deep-get($config-global, "font", "size", "xs");
+				color: map-deep-get($config-global, "color", "foreground", "light");
 			}
 		}
 
 		#payment {
-			background: $color_background_light;
+			background: map-deep-get($config-global, "color", "background", "light");
 			border-radius: 3px;
 
 			ul.payment_methods {
 
-				padding: $spacing_base;
-				border-bottom-color: $color_border_default;
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+				border-bottom-color: map-deep-get($config-global, "color", "border", "default");
 
 				li {
-					line-height: $font_line_height;
+					line-height: map-deep-get($config-global, "font", "line-height", "body");
 
 					input {
-						margin-right: $font_line_height;
+						margin-right: map-deep-get($config-global, "font", "line-height", "body");
 					}
 				}
 			}
 
 			div.form-row {
-				padding: $spacing_base;
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 			}
 
 			div.payment_box {
-				padding: $spacing_base;
-				margin-bottom: $spacing_base;
-				margin-top: $spacing_base;
-				font-size: $fontsize_small;
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+				margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+				margin-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+				font-size: map-deep-get($config-global, "font", "size", "sm");
 				border-radius: 3px;
-				line-height: $font_line_height;
-				background-color: $color_border_default;
-				color: $color_foreground;
+				line-height: map-deep-get($config-global, "font", "line-height", "body");
+				background-color: map-deep-get($config-global, "color", "border", "default");
+				color: map-deep-get($config-global, "color", "foreground", "default");
 
 				input.input-text,
 				textarea {
-					border-color: $color_border_default;
-					border-top-color: $color_border_default;
+					border-color: map-deep-get($config-global, "color", "border", "default");
+					border-top-color: map-deep-get($config-global, "color", "border", "default");
 				}
 
 				::-webkit-input-placeholder {
-					color: $color_foreground_light;
+					color: map-deep-get($config-global, "color", "foreground", "light");
 				}
 
 				:-moz-placeholder {
-					color: $color_foreground_light;
+					color: map-deep-get($config-global, "color", "foreground", "light");
 				}
 
 				:-ms-input-placeholder {
-					color: $color_foreground_light;
+					color: map-deep-get($config-global, "color", "foreground", "light");
 				}
 
 				.woocommerce-SavedPaymentMethods {
 
 					.woocommerce-SavedPaymentMethods-tokenInput {
-						margin-right: $spacing_unit;
+						margin-right: map-deep-get($config-global, "spacing", "unit");
 					}
 				}
 
 				.wc-credit-card-form {
-					margin-top: $spacing_unit;
+					margin-top: map-deep-get($config-global, "spacing", "unit");
 				}
 
 				.wc-credit-card-form-card-number,
 				.wc-credit-card-form-card-expiry,
 				.wc-credit-card-form-card-cvc {
-					font-size: $fontsize_large;
-					padding: $spacing_base;
+					font-size: map-deep-get($config-global, "font", "size", "lg");
+					padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 				}
 
 				span.help {
-					font-size: $fontsize_small;
-					color: $color_subtext;
+					font-size: map-deep-get($config-global, "font", "size", "sm");
+					color: map-deep-get($config-global, "color", "foreground", "light");
 				}
 
 				.form-row {
-					margin: 0 0 $spacing_vertical;
+					margin: 0 0 map-deep-get($config-global, "spacing", "vertical");
 				}
 
 				p:last-child {
@@ -182,7 +182,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				}
 
 				&::before {
-					border-bottom-color: $color_border_default; /* arrow size / color */
+					border-bottom-color: map-deep-get($config-global, "color", "border", "default"); /* arrow size / color */
 				}
 			}
 
@@ -191,7 +191,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				.about_paypal {
 					float: right;
 					line-height: 52px;
-					font-size: $fontsize_small;
+					font-size: map-deep-get($config-global, "font", "size", "sm");
 				}
 
 				img {
@@ -203,12 +203,12 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	}
 
 	.woocommerce-terms-and-conditions {
-		border-color: $color_border_default;
+		border-color: map-deep-get($config-global, "color", "border", "default");
 	}
 
 	.woocommerce-invalid {
 		#terms {
-			outline-color: $color_error;
+			outline-color: map-deep-get($config-global, "color", "alert", "error");
 		}
 	}
 }

@@ -11,49 +11,49 @@
 		}
 
 		div.images {
-			margin-bottom: $spacing_vertical;
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 			div.thumbnails {
-				padding-top: $spacing_unit;
+				padding-top: map-deep-get($config-global, "spacing", "unit");
 			}
 
 			.woocommerce-product-gallery__wrapper .zoomImg {
-				background-color: $color_background;
+				background-color: map-deep-get($config-global, "color", "background", "default");
 			}
 
 			.woocommerce-product-gallery__image--placeholder {
-				border-color: $color_border_light;
+				border-color: map-deep-get($config-global, "color", "border", "light");
 			}
 
 			.woocommerce-product-gallery__trigger {
-				font-size: $fontsize_medium;
-				background: $color_background;
+				font-size: map-deep-get($config-global, "font", "size", "md");
+				background: map-deep-get($config-global, "color", "background", "default");
 
 				&::before {
-					border-color: $color_border_dark;
+					border-color: map-deep-get($config-global, "color", "border", "dark");
 				}
 
 				&::after {
-					background-color: $color_border_dark;
+					background-color: map-deep-get($config-global, "color", "border", "dark");
 				}
 			}
 		}
 
 		div.summary {
-			margin-bottom: $spacing_vertical;
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 			span.price,
 			p.price {
-				color: $color_foreground_dark;
-				font-size: $fontsize_xl;
+				color: map-deep-get($config-global, "color", "foreground", "dark");
+				font-size: map-deep-get($config-global, "font", "size", "xl");
 			}
 
 			p.stock {
-				font-size: $fontsize_base;
+				font-size: map-deep-get($config-global, "font", "size", "base")
 			}
 
 			.stock {
-				color: $color_primary;
+				color: map-deep-get($config-global, "color", "primary", "default");
 			}
 
 			.out-of-stock {
@@ -61,13 +61,13 @@
 			}
 
 			.woocommerce-product-rating {
-				margin-bottom: $spacing_vertical;
+				margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 			}
 
 		}
 
 		div.social {
-			margin-bottom: $spacing_vertical;
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 		}
 
 		.product_meta > * {
@@ -76,50 +76,50 @@
 
 		.up-sells {
 			& > h2 {
-				font-size: $fontsize_large;
+				font-size: map-deep-get($config-global, "font", "size", "lg");
 			}
 		}
 
 		p.cart {
-			margin-bottom: $spacing_vertical;
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 		}
 
 		form.cart {
 
 			.variations {
-				margin-bottom: $spacing_unit;
+				margin-bottom: map-deep-get($config-global, "spacing", "unit");
 
 				td,
 				th {
-					line-height: $font_line_height;
+					line-height: map-deep-get($config-global, "font", "line-height", "body");
 				}
 
 				select {
-					margin-right: $spacing_unit;
+					margin-right: map-deep-get($config-global, "spacing", "unit");
 				}
 
 				td.label {
-					padding-right: $spacing_unit;
+					padding-right: map-deep-get($config-global, "spacing", "unit");
 				}
 			}
 
 			.woocommerce-variation-description p {
-				margin-bottom: $spacing_unit;
+				margin-bottom: map-deep-get($config-global, "spacing", "unit");
 			}
 
 			.reset_variations {
-				font-size: $fontsize_small;
+				font-size: map-deep-get($config-global, "font", "size", "sm");
 			}
 
 			.group_table {
 
 				td.woocommerce-grouped-product-list-item__label {
-					padding-right: $spacing_unit;
-					padding-left: $spacing_unit;
+					padding-right: map-deep-get($config-global, "spacing", "unit");
+					padding-left: map-deep-get($config-global, "spacing", "unit");
 				}
 
 				td {
-					padding-bottom: $spacing_unit;
+					padding-bottom: map-deep-get($config-global, "spacing", "unit");
 				}
 			}
 

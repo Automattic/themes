@@ -15,19 +15,22 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 
 	ul.products li.product {
 
+		text-align: center;
+
 		.onsale {
 		}
 
 		.star-rating {
-			font-size: $fontsize_small;
-			margin: inherit;
+			font-size: map-deep-get($config-global, "font", "size", "sm");
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		h3,
 		.woocommerce-loop-product__title,
 		.woocommerce-loop-category__title {
 			padding: inherit;
-			font-size: $fontsize_base;
+			font-size: map-deep-get($config-global, "font", "size", "base")
 		}
 
 		a img {
@@ -38,7 +41,7 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 		}
 
 		.woocommerce-placeholder {
-			border-color: $color_border_default;
+			border-color: map-deep-get($config-global, "color", "border", "default");
 		}
 
 		.button {
@@ -46,9 +49,9 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 		}
 
 		.price {
-			color: $color_foreground_dark;
-			font-size: $fontsize_medium;
-			line-height: $font_line_height_heading;
+			color: map-deep-get($config-global, "color", "foreground", "dark");
+			font-size: map-deep-get($config-global, "font", "size", "md");
+			line-height: map-deep-get($config-global, "font", "line-height", "heading");
 
 			del {
 				color: inherit;
@@ -63,22 +66,22 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 			}
 
 			.from {
-				font-size: $fontsize_xs;
-				color: $color_highlight;
+				font-size: map-deep-get($config-global, "font", "size", "xs");
+				color: map-deep-get($config-global, "color", "alert", "warning");
 			}
 		}
 
 		&.sale a > .price ins {
-			color: $color_success;
+			color: map-deep-get($config-global, "color", "alert", "success");
 		}
 	}
 
 	.woocommerce-result-count {
-		margin-bottom: $spacing_unit;
+		margin-bottom: map-deep-get($config-global, "spacing", "unit");
 	}
 
 	.woocommerce-ordering {
-		margin-bottom: $spacing_unit;
+		margin-bottom: map-deep-get($config-global, "spacing", "unit");
 
 		select {
 			vertical-align: top;
@@ -93,12 +96,12 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 			white-space: nowrap;
 			padding: 0;
 			clear: both;
-			border-color: $color_border_default;
+			border-color: map-deep-get($config-global, "color", "border", "default");
 			border-right: 0;
 			margin: 1px;
 
 			li {
-				border-color: $color_border_default;
+				border-color: map-deep-get($config-global, "color", "border", "default");
 				padding: 0;
 				margin: 0;
 				float: left;
@@ -121,8 +124,8 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 				span.current,
 				a:hover,
 				a:focus {
-					background: $color_border_default;
-					color: $color_foreground_light;
+					background: map-deep-get($config-global, "color", "border", "default");
+					color: map-deep-get($config-global, "color", "foreground", "light");
 				}
 			}
 		}

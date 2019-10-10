@@ -10,71 +10,71 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 	.woocommerce-tabs {
 
 		ul.tabs {
-			padding-left: $spacing_horizontal;
-			margin-bottom: $spacing_vertical;
+			padding-left: map-deep-get($config-global, "spacing", "horizontal");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 			li {
-				border-color: $color_border_default;
-				background-color: $color_background_light;
-				border-radius: $border_radius $border_radius 0 0;
-				padding-left: $spacing_horizontal;
-				padding-right: $spacing_horizontal;
+				border-color: map-deep-get($config-global, "color", "border", "default");
+				background-color: map-deep-get($config-global, "color", "background", "light");
+				border-radius: map-deep-get($config-global, "border-radius", "sm") map-deep-get($config-global, "border-radius", "sm") 0 0;
+				padding-left: map-deep-get($config-global, "spacing", "horizontal");
+				padding-right: map-deep-get($config-global, "spacing", "horizontal");
 
 				a {
-					padding-top: (0.5 * $spacing_horizontal);
-					padding-bottom: (0.5 * $spacing_horizontal);
-					color: $color_foreground_light;
+					padding-top: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+					padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+					color: map-deep-get($config-global, "color", "foreground", "light");
 
 					&:hover {
-						color: $color_foreground_dark;
+						color: map-deep-get($config-global, "color", "foreground", "dark");
 					}
 				}
 
 				&.active {
-					background-color: $color_background;
-					border-color: $color_border_default;
-					border-bottom-color: $color_background;
+					background-color: map-deep-get($config-global, "color", "background", "default");
+					border-color: map-deep-get($config-global, "color", "border", "default");
+					border-bottom-color: map-deep-get($config-global, "color", "background", "default");
 
 					a {
-						color: $color_foreground_dark;
+						color: map-deep-get($config-global, "color", "foreground", "dark");
 						text-shadow: inherit;
 					}
 
 					&::before {
-						box-shadow: 2px 2px 0 $color_background;
+						box-shadow: 2px 2px 0 map-deep-get($config-global, "color", "background", "default");
 					}
 
 					&::after {
-						box-shadow: -2px 2px 0 $color_background;
+						box-shadow: -2px 2px 0 map-deep-get($config-global, "color", "background", "default");
 					}
 				}
 
 				&::before,
 				&::after {
-					border-color: $color_border_default;
+					border-color: map-deep-get($config-global, "color", "border", "default");
 				}
 
 				&::before {
-					box-shadow: 2px 2px 0 $color_background_light;
+					box-shadow: 2px 2px 0 map-deep-get($config-global, "color", "background", "light");
 				}
 
 				&::after {
-					box-shadow: -2px 2px 0 $color_background_light;
+					box-shadow: -2px 2px 0 map-deep-get($config-global, "color", "background", "light");
 				}
 			}
 
 			&::before {
-				border-bottom-color: $color_border_default;
+				border-bottom-color: map-deep-get($config-global, "color", "border", "default");
 			}
 		}
 
 		.panel {
-			margin-bottom: $spacing_vertical;
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 			h2,
 			.comment-reply-title {
-				font-family: $font_family_primary;
-				font-size: $fontsize_large;
+				font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+				font-size: map-deep-get($config-global, "font", "size", "lg");
 				font-weight: bold;
 			}
 		}

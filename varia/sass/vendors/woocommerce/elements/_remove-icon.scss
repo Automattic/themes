@@ -5,13 +5,13 @@
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
 	a.remove {
-		font-size: $fontsize_large;
-		height: $fontsize_large;
-		width: $fontsize_large;
+		font-size: map-deep-get($config-global, "font", "size", "lg");
+		height: map-deep-get($config-global, "font", "size", "lg");
+		width: map-deep-get($config-global, "font", "size", "lg");
 		color: red !important; // Required for default theme compatibility
 
 		&:hover {
-			color: $color_background !important; // Required for default theme compatibility
+			color: map-deep-get($config-global, "color", "background", "default") !important; // Required for default theme compatibility
 			background: red;
 		}
 	}

@@ -2,7 +2,7 @@
  * Button
  */
 
-body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
 	#respond input#submit,
 	#respond input#submit.alt,
@@ -40,7 +40,7 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 		cursor: not-allowed;
 
 		&:hover {
-			background-color: $color_primary;
+			background-color: map-deep-get($config-global, "color", "primary", "default");
 		}
 	}
 }

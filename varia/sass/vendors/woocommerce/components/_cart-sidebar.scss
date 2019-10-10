@@ -13,20 +13,20 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		li {
 
 			a:not(.remove) {
-				font-family: $font_family_primary;
+				font-family: #{map-deep-get($config-global, "font", "family", "primary")};
 			}
 
 			img {
 				margin-left: 4px;
-				width: #{2 * $spacing_vertical};
+				width: #{2 * map-deep-get($config-global, "spacing", "vertical")};
 			}
 
 			dl {
-				border-left-color: $color_border_default;
+				border-left-color: map-deep-get($config-global, "color", "border", "default");
 
 				dt,
 				dd {
-					margin-bottom: $spacing_vertical;
+					margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 				}
 			}
 		}
@@ -35,16 +35,16 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	.widget_shopping_cart {
 
 		.total {
-			border-top: 1px solid $color_border_default;
-			padding-top: $spacing_unit;
+			border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+			padding-top: map-deep-get($config-global, "spacing", "unit");
 		}
 
 		.cart_list li {
-			border-top: 1px solid $color_border_default;
-			padding: $spacing_unit 0 $spacing_unit #{2 * $spacing_horizontal};
+			border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+			padding: map-deep-get($config-global, "spacing", "unit") 0 map-deep-get($config-global, "spacing", "unit") #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 
 			a.remove {
-				top: $spacing_unit;
+				top: map-deep-get($config-global, "spacing", "unit");
 			}
 		}
 	}

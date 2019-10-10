@@ -7,39 +7,39 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	table.shop_table {
 
 		border-collapse: collapse;
-		border: 1px solid $color_border_default;
-		margin-bottom: $spacing_vertical;
+		border: 1px solid map-deep-get($config-global, "color", "border", "default");
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 		td {
 			border-top: none;
 		}
 
 		tr {
-			border-bottom: 1px solid $color_border_default;
+			border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
 		}
 	}
 
 	table.shop_attributes {
-		border-top-color: $color_border_default;
+		border-top-color: map-deep-get($config-global, "color", "border", "default");
 		border-top-style: solid;
-		margin-bottom: $spacing_vertical;
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 		th {
-			padding: $spacing_base;
-			border-bottom-color: $color_border_default;
+			padding: (0.5 * map-deep-get($config-global, "spacing", "unit"));
+			border-bottom-color: map-deep-get($config-global, "color", "border", "default");
 			border-bottom-style: solid;
-			line-height: $font_line_height;
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
 		}
 
 		td {
 			font-style: inherit;
-			border-bottom-color: $color_border_default;
+			border-bottom-color: map-deep-get($config-global, "color", "border", "default");
 			border-bottom-style: solid;
-			line-height: $font_line_height;
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
 
 			p {
 				margin: 0;
-				padding: $spacing_base 0;
+				padding: map-deep-get($config-global, "spacing", "base") 0;
 			}
 		}
 

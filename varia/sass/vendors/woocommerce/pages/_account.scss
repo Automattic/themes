@@ -9,14 +9,14 @@
 		}
 
 		fieldset {
-			border: 1px solid $color_border_default;
-			padding: $spacing_unit;
+			border: 1px solid map-deep-get($config-global, "color", "border", "default");
+			padding: map-deep-get($config-global, "spacing", "unit");
 			border-radius: 3px;
 		}
 	}
 
 	.addresses .title h3 {
-		font-size: $fontsize_base;
+		font-size: map-deep-get($config-global, "font", "size", "base")
 	}
 
 	.woocommerce {

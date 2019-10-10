@@ -7,11 +7,13 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	.star-rating {
 
 		&::before {
-			color: $color_secondary;
+			color: map-deep-get($config-global, "color", "secondary", "default");
+			content: "\53\53\53\53\53";
+			opacity: 0.5;
 		}
 
 		span {
-			color: $color_secondary;
+			color: map-deep-get($config-global, "color", "secondary", "default");
 		}
 	}
 }

@@ -14,11 +14,11 @@ body[class*="woocommerce"] #page .woocommerce-address-fields,
 .woocommerce-Reviews #comments {
 
 	& > *:not(:first-child) {
-		margin-top: $spacing_vertical;
+		margin-top: map-deep-get($config-global, "spacing", "vertical");
 	}
 
 	& > *:not(:last-child) {
-		margin-bottom: $spacing_vertical;
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 	}
 
 	& > *:empty + *,
@@ -53,12 +53,12 @@ body[class*="woocommerce"] #page .woocommerce-checkout,
 body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper {
 
 	& > *:not(:first-child) {
-		margin-top: $spacing_unit;
+		margin-top: map-deep-get($config-global, "spacing", "unit");
 	}
 
 	& > *:not(:last-child),
 	& > .price {
-		margin-bottom: $spacing_unit;
+		margin-bottom: map-deep-get($config-global, "spacing", "unit");
 	}
 
 	& > *:not(img):empty + *,
