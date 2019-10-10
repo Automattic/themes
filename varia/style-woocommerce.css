@@ -114,6 +114,15 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * WooCommerce Abstracts
+ */
+/**
+ * Abstracts Imports
+ */
+/**
+ * Varia Extends
+ */
+/**
  * Button Placeholder style
  * - Since buttons appear in various blocks,
  *   let’s use a placeholder to keep them all
@@ -277,10 +286,7 @@ body[class*="woocommerce"] #page span.onsale, #content .wc-block-grid .wc-block-
 }
 
 /**
- * Abstracts Imports
- */
-/**
- * WooCommerce
+ * WooCommerce Styles
  */
 /**
  * Main WooCommerce styles
@@ -413,6 +419,10 @@ body[class*="woocommerce"] #page .star-rating span {
 	color: red;
 }
 
+body[class*="woocommerce"] #page p.stars a {
+	color: red;
+}
+
 /**
  * Tables
  */
@@ -434,6 +444,7 @@ body[class*="woocommerce"] #page table.shop_attributes {
 	border-top-color: #DDDDDD;
 	border-top-style: solid;
 	margin-bottom: 32px;
+	border-bottom: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page table.shop_attributes th {
@@ -554,11 +565,31 @@ body[class*="woocommerce"] #page .woocommerce input.button:disabled[disabled]:ho
 #content .wc-block-grid .wc-block-grid__product-price ins {
 	color: yellowgreen;
 	font-weight: bold;
+	text-decoration: none;
 }
 
 #content .wc-block-grid .wc-block-grid__product .wc-block-grid__product-onsale {
 	right: calc(-0.5em + 16px);
 	margin: 0;
+}
+
+/**
+ * WooCommerce Featured Product
+ */
+#content .wc-block-featured-product .wc-block-featured-product__description:empty,
+#content .wc-block-featured-product .wc-block-featured-product__link:empty,
+#content .wc-block-featured-product .wc-block-featured-product__price:empty,
+#content .wc-block-featured-product .wc-block-featured-product__title:empty,
+#content .wc-block-featured-product .wc-block-featured-product__variation:empty {
+	padding: 0;
+}
+
+#content .wc-block-featured-product .wc-block-featured-product__price {
+	font-size: 1.728rem;
+}
+
+#content .wc-block-featured-product .wc-block-featured-product__price ins {
+	text-decoration: none;
 }
 
 /**
@@ -597,8 +628,12 @@ body[class*="woocommerce"] #page ul.product_list_widget li dl dd {
 }
 
 body[class*="woocommerce"] #page .widget_shopping_cart .total {
-	border-top: 1px solid #DDDDDD;
-	padding-top: 16px;
+	border-top: none;
+	padding-top: 0;
+}
+
+body[class*="woocommerce"] #page .widget_shopping_cart .cart_list {
+	border-bottom: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .widget_shopping_cart .cart_list li {
@@ -860,6 +895,10 @@ body[class*="woocommerce"] #page #reviews h2 small a {
 	color: currentColor;
 }
 
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist {
+	padding-left: 0;
+}
+
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li {
 	margin-bottom: 16px;
 }
@@ -871,7 +910,7 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .meta {
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li img.avatar {
 	padding: 0;
-	width: 32px;
+	width: 48px;
 	height: auto;
 	background: transparent;
 	border-color: #DDDDDD;
@@ -884,7 +923,7 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .woocommer
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text {
-	margin-left: 48px;
+	margin-left: 64px;
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
 	padding: 1em 1em 0;

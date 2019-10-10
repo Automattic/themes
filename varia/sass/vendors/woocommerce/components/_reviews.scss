@@ -27,6 +27,8 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 
 			ol.commentlist {
 
+				padding-left: 0;
+
 				li {
 					margin-bottom: map-deep-get($config-global, "spacing", "unit");
 
@@ -37,7 +39,7 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 
 					img.avatar {
 						padding: 0;
-						width: map-deep-get($config-global, "spacing", "vertical");
+						width: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 						height: auto;
 						background: transparent;
 						border-color: map-deep-get($config-global, "color", "border", "default");
@@ -50,7 +52,7 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 					}
 
 					.comment-text {
-						margin-left: #{3 * map-deep-get($config-global, "spacing", "unit")};
+						margin-left: #{4 * map-deep-get($config-global, "spacing", "unit")};
 						border: 1px solid map-deep-get($config-global, "color", "border", "default");
 						border-radius: 4px;
 						padding: 1em 1em 0;

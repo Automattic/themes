@@ -35,16 +35,21 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	.widget_shopping_cart {
 
 		.total {
-			border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-			padding-top: map-deep-get($config-global, "spacing", "unit");
+			border-top: none;
+			padding-top: 0;
 		}
 
-		.cart_list li {
-			border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-			padding: map-deep-get($config-global, "spacing", "unit") 0 map-deep-get($config-global, "spacing", "unit") #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+		.cart_list {
 
-			a.remove {
-				top: map-deep-get($config-global, "spacing", "unit");
+			border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+
+			li {
+				border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+				padding: map-deep-get($config-global, "spacing", "unit") 0 map-deep-get($config-global, "spacing", "unit") #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+
+				a.remove {
+					top: map-deep-get($config-global, "spacing", "unit");
+				}
 			}
 		}
 	}
