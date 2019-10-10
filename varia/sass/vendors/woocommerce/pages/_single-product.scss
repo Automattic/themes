@@ -3,14 +3,12 @@
  */
 .single-product #page #woocommerce-wrapper { // adding #content here to override default wc styles without !important
 
-	/**
-	 * Remove the bright yellow background on mark elements.
-	 */
-	mark {
-		background: transparent;
-	}
-
 	div.product {
+
+		& > .onsale {
+			right: auto;
+			left: -0.5em;
+		}
 
 		div.images {
 			margin-bottom: $spacing_vertical;
@@ -46,7 +44,7 @@
 
 			span.price,
 			p.price {
-				color: $color_primary;
+				color: $color_foreground_dark;
 				font-size: $fontsize_xl;
 			}
 

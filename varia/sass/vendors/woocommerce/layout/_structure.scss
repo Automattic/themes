@@ -8,12 +8,9 @@
 body[class*="woocommerce"] #page div.summary,
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel,
 body[class*="woocommerce"] #page .products.related,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content,
-body[class*="woocommerce"] #page .woocommerce-EditAccountForm,
-body[class*="woocommerce"] #page .woocommerce-billing-fields,
-body[class*="woocommerce"] #page .woocommerce-shipping-fields,
-body[class*="woocommerce"] #page .woocommerce-checkout,
 body[class*="woocommerce"] #page .up-sells,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form,
+body[class*="woocommerce"] #page .woocommerce-address-fields,
 .woocommerce-Reviews #comments {
 
 	& > *:not(:first-child) {
@@ -44,7 +41,16 @@ body[class*="woocommerce"] #page ul.products li.product-category a,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells,
 body[class*="woocommerce"] #page .cart-collaterals .cart_totals,
 body[class*="woocommerce"] #page .widget_shopping_cart,
-body[class*="woocommerce"] #page .widget_shopping_cart_content {
+body[class*="woocommerce"] #page .widget_shopping_cart_content,
+body[class*="woocommerce"] #page div.product form.variations_form,
+body[class*="woocommerce"] #page div.product form.variations_form .variations,
+body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content,
+body[class*="woocommerce"] #page .woocommerce-EditAccountForm,
+body[class*="woocommerce"] #page .woocommerce-billing-fields,
+body[class*="woocommerce"] #page .woocommerce-shipping-fields,
+body[class*="woocommerce"] #page .woocommerce-checkout,
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper {
 
 	& > *:not(:first-child) {
 		margin-top: $spacing_unit;
@@ -55,7 +61,8 @@ body[class*="woocommerce"] #page .widget_shopping_cart_content {
 		margin-bottom: $spacing_unit;
 	}
 
-	& > *:not(img):empty + * {
+	& > *:not(img):empty + *,
+	& > .form-row-last {
 		margin-top: 0;
 	}
 
