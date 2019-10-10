@@ -19,6 +19,10 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 			}
 		}
 
+		.woocommerce-Reviews-title {
+
+		}
+
 		#comments {
 
 			ol.commentlist {
@@ -32,22 +36,22 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 					}
 
 					img.avatar {
-						float: left;
-						position: absolute;
-						top: 0;
-						left: 0;
-						padding: 3px;
-						width: 32px;
+						padding: 0;
+						width: $spacing_vertical;
 						height: auto;
-						background: $color_secondary;
+						background: transparent;
 						border-color: $color_border_default;
 						margin: 0;
 						box-shadow: none;
 					}
 
+					.woocommerce-review__author {
+						font-family: $font_family_primary;
+					}
+
 					.comment-text {
-						margin: 0 0 0 50px;
-						border: 1px solid darken($color_secondary, 3%);
+						margin-left: #{3 * $spacing_unit};
+						border: 1px solid $color_border_default;
 						border-radius: 4px;
 						padding: 1em 1em 0;
 

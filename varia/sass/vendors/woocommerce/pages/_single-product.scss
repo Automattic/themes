@@ -1,7 +1,7 @@
 /**
  * Single Product Page
  */
-.woocommerce-page #content { // adding #content here to override default wc styles without !important
+.single-product #page #woocommerce-wrapper { // adding #content here to override default wc styles without !important
 
 	/**
 	 * Remove the bright yellow background on mark elements.
@@ -11,28 +11,6 @@
 	}
 
 	div.product {
-
-		span.price,
-		p.price {
-			color: $color_primary;
-			font-size: $fontsize_xl;
-		}
-
-		p.stock {
-			font-size: $fontsize_base;
-		}
-
-		.stock {
-			color: $color_primary;
-		}
-
-		.out-of-stock {
-			color: red;
-		}
-
-		.woocommerce-product-rating {
-			margin-bottom: $spacing_vertical;
-		}
 
 		div.images {
 			margin-bottom: $spacing_vertical;
@@ -65,6 +43,29 @@
 
 		div.summary {
 			margin-bottom: $spacing_vertical;
+
+			span.price,
+			p.price {
+				color: $color_primary;
+				font-size: $fontsize_xl;
+			}
+
+			p.stock {
+				font-size: $fontsize_base;
+			}
+
+			.stock {
+				color: $color_primary;
+			}
+
+			.out-of-stock {
+				color: red;
+			}
+
+			.woocommerce-product-rating {
+				margin-bottom: $spacing_vertical;
+			}
+
 		}
 
 		div.social {
@@ -73,75 +74,6 @@
 
 		.product_meta > * {
 			display: block;
-		}
-
-		.woocommerce-tabs {
-
-			ul.tabs {
-				padding-left: $spacing_horizontal;
-				margin-bottom: $spacing_vertical;
-
-				li {
-					border-color: $color_border_default;
-					background-color: $color_background;
-					border-radius: $border_radius $border_radius 0 0;
-					padding-left: $spacing_horizontal;
-					padding-right: $spacing_horizontal;
-
-					a {
-						padding-top: (0.5 * $spacing_horizontal);
-						padding-bottom: (0.5 * $spacing_horizontal);
-						color: $color_foreground;
-
-						&:hover {
-							color: $color_primary;
-						}
-					}
-
-					&.active {
-						background-color: $color_background;
-						border-bottom-color: $color_background;
-
-						a {
-							color: inherit;
-							text-shadow: inherit;
-						}
-
-						&::before {
-							box-shadow: 2px 2px 0 $color_background;
-						}
-
-						&::after {
-							box-shadow: -2px 2px 0 $color_background;
-						}
-					}
-
-					&::before,
-					&::after {
-						border-color: $color_border_default;
-					}
-
-					&::before {
-						box-shadow: 2px 2px 0 $color_border_default;
-					}
-
-					&::after {
-						box-shadow: -2px 2px 0 $color_border_default;
-					}
-				}
-
-				&::before {
-					border-bottom-color: $color_border_default;
-				}
-			}
-
-			.panel {
-				margin-bottom: $spacing_vertical;
-
-				& > h2 {
-					font-size: $fontsize_large;
-				}
-			}
 		}
 
 		.up-sells {

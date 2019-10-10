@@ -1,0 +1,82 @@
+/**
+ * Reviews
+ */
+
+body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Tabs
+	 */
+	.woocommerce-tabs {
+
+		ul.tabs {
+			padding-left: $spacing_horizontal;
+			margin-bottom: $spacing_vertical;
+
+			li {
+				border-color: $color_border_default;
+				background-color: $color_background_light;
+				border-radius: $border_radius $border_radius 0 0;
+				padding-left: $spacing_horizontal;
+				padding-right: $spacing_horizontal;
+
+				a {
+					padding-top: (0.5 * $spacing_horizontal);
+					padding-bottom: (0.5 * $spacing_horizontal);
+					color: $color_foreground_light;
+
+					&:hover {
+						color: $color_foreground_dark;
+					}
+				}
+
+				&.active {
+					background-color: $color_background;
+					border-color: $color_border_default;
+					border-bottom-color: $color_background;
+
+					a {
+						color: $color_foreground_dark;
+						text-shadow: inherit;
+					}
+
+					&::before {
+						box-shadow: 2px 2px 0 $color_background;
+					}
+
+					&::after {
+						box-shadow: -2px 2px 0 $color_background;
+					}
+				}
+
+				&::before,
+				&::after {
+					border-color: $color_border_default;
+				}
+
+				&::before {
+					box-shadow: 2px 2px 0 $color_background_light;
+				}
+
+				&::after {
+					box-shadow: -2px 2px 0 $color_background_light;
+				}
+			}
+
+			&::before {
+				border-bottom-color: $color_border_default;
+			}
+		}
+
+		.panel {
+			margin-bottom: $spacing_vertical;
+
+			h2,
+			.comment-reply-title {
+				font-family: $font_family_primary;
+				font-size: $fontsize_large;
+				font-weight: bold;
+			}
+		}
+	}
+}
