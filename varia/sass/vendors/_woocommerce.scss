@@ -38,58 +38,17 @@ $spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
 $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 $border_radius: map-deep-get($config-global, "border-radius", "sm");
 
-.woocommerce {
-
-	a.remove {
-		font-size: $fontsize_large;
-		height: $fontsize_large;
-		width: $fontsize_large;
-		color: red !important; // Required for default theme compatibility
-
-		&:hover {
-			color: $color_background !important; // Required for default theme compatibility
-			background: red;
-		}
-	}
-
-	small.note {
-		color: $color_subtext;
-		font-size: $fontsize_small;
-		margin-top: $spacing_unit;
-	}
-
-	.woocommerce-breadcrumb {
-
-		margin-bottom: $spacing_vertical;
-		font-size: $fontsize_base;
-		color: $color_subtext;
-
-		a {
-			color: currentColor;
-		}
-	}
-
-}
+// Elements
+@import "woocommerce/elements/imports";
 
 // Blocks
-@import "woocommerce/blocks/button/style";
+@import "woocommerce/blocks/imports";
 
 // Components
-@import "woocommerce/components/cart-sidebar";
-@import "woocommerce/components/cart-collaterals";
-@import "woocommerce/components/notices";
-@import "woocommerce/components/onsale";
-@import "woocommerce/components/password-strength-meter";
-@import "woocommerce/components/product-loops";
-@import "woocommerce/components/reviews";
-@import "woocommerce/components/star-rating";
-@import "woocommerce/components/tables";
+@import "woocommerce/components/imports";
 
 // Layout
 @import "woocommerce/layout/structure";
 
 // Pages
-@import "woocommerce/pages/account";
-@import "woocommerce/pages/cart";
-@import "woocommerce/pages/product-page";
-@import "woocommerce/pages/single-product";
+@import "woocommerce/pages/imports";

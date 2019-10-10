@@ -33,6 +33,24 @@ function varia_woocommerce_setup() {
 add_action( 'after_setup_theme', 'varia_woocommerce_setup' );
 
 /**
+ * Add a custom wrapper for woocomerce content
+ */
+function varia_wrapper_start() {
+  echo '<article id="woocommerce-wrapper" class="responsive-max-width">';
+}
+add_action('woocommerce_before_main_content', 'varia_wrapper_start', 10);
+
+function varia_wrapper_end() {
+  echo '</article>';
+}
+add_action('woocommerce_after_main_content', 'varia_wrapper_end', 10);
+
+/**
+ * Remove WooCommerce Sidebar
+ */
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+/**
  * Enqueue scripts and styles.
  */
 function varia_woocommerce_scripts() {
