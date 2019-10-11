@@ -1342,14 +1342,6 @@ body:not(.fse-enabled) .site-description {
 	color: inherit;
 }
 
-.a8c-template-editor .wp-block:not(.is-selected) [data-block] {
-	margin-bottom: 14px;
-}
-
-.a8c-template-editor .wp-block:not(:first-child):not(.is-selected) [data-block] {
-	margin-top: 14px;
-}
-
 .a8c-template-editor .wp-block-cover .site-title,
 .a8c-template-editor .wp-block-cover .site-description,
 .a8c-template-editor .wp-block-cover-image .site-title,
@@ -1502,5 +1494,30 @@ body:not(.fse-enabled) .site-description {
 .site-footer .site-title.has-background,
 .site-footer .site-description.has-background {
 	border-radius: 0;
-	padding: 16px 16px;
+	padding: 16px;
+}
+
+.site-header .main-navigation .has-text-color > ul > li > a,
+.site-footer .main-navigation .has-text-color > ul > li > a {
+	color: inherit;
+}
+
+.site-header .main-navigation .has-text-align-left > ul,
+.site-footer .main-navigation .has-text-align-left > ul {
+	justify-content: flex-start;
+}
+
+.site-header .main-navigation .has-text-align-center > ul,
+.site-footer .main-navigation .has-text-align-center > ul {
+	justify-content: center;
+}
+
+.site-header .main-navigation .has-text-align-right > ul,
+.site-footer .main-navigation .has-text-align-right > ul {
+	justify-content: flex-end;
+}
+
+.site-header .main-navigation .has-background > ul,
+.site-footer .main-navigation .has-background > ul {
+	padding: 16px;
 }
