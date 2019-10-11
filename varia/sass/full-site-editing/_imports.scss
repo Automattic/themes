@@ -1,5 +1,14 @@
 .fse-enabled {
 	.main-navigation {
+		.has-text-align-left > ul {
+			justify-content: flex-start;
+		}
+		.has-text-align-center > ul {
+			justify-content: center;
+		}
+		.has-text-align-right > ul {
+			justify-content: flex-end;
+		}
 		.has-background > ul {
 			padding: #{map-deep-get($config-global, "spacing", "unit")} 0;
 			@include media(mobile) {
