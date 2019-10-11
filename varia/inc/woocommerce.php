@@ -19,7 +19,7 @@ function varia_woocommerce_setup() {
 		'single_image_width'    => 750,
 		'thumbnail_image_width' => 350,
 		'product_grid'          => array(
-			'default_columns' => 2,
+			'default_columns' => 3,
 			'default_rows'    => 6,
 			'min_columns'     => 1,
 			'max_columns'     => 6,
@@ -91,7 +91,7 @@ if ( ! function_exists( 'varia_cart_link' ) ) {
 		$link_output = sprintf(
 			'<a class="woocommerce-cart-link" href="%1$s" title="%2$s">
 				%3$s
-				<span class="woocommerce-cart-subtotal">%4$s</span> - <span class="woocommerce-cart-count">%5$s</span>
+				<span class="woocommerce-cart-subtotal">%4$s</span> - <small class="woocommerce-cart-count">%5$s</small>
 			</a>',
 			esc_url( wc_get_cart_url() ),
 			esc_attr__( 'View your shopping cart', 'varia' ),
@@ -101,26 +101,6 @@ if ( ! function_exists( 'varia_cart_link' ) ) {
 		);
 
 		return $link_output;
-	}
-}
-
-/**
- * Setup cart widget for main menu
- */
-if ( ! function_exists( 'varia_cart_widget' ) ) {
-	/**
-	 * Cart Items List
-	 * Ensure cart contents update when products are added to the cart via AJAX
-	 *
-	 * @param  array $fragments Fragments to refresh via AJAX.
-	 * @return array            Fragments to refresh via AJAX
-	 */
-	function varia_cart_widget() {
-		ob_start();
-		the_widget( 'WC_Widget_Cart', 'title=' );
-		$widget_output = ob_get_contents();
-		ob_end_clean();
-		return $widget_output;
 	}
 }
 
@@ -153,9 +133,29 @@ if ( ! function_exists( 'varia_cart_count_fragment' ) ) {
 	 */
 	function varia_cart_count_fragment( $fragments ) {
 		ob_start();
-		echo '<span class="woocommerce-cart-count">' . wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'varia' ), WC()->cart->get_cart_contents_count() ) ) . '</span>';
+		echo '<small class="woocommerce-cart-count">' . wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'varia' ), WC()->cart->get_cart_contents_count() ) ) . '</small>';
 		$fragments['.woocommerce-cart-count'] = ob_get_clean();
 		return $fragments;
+	}
+}
+
+/**
+ * Setup cart widget for main menu
+ */
+if ( ! function_exists( 'varia_cart_widget' ) ) {
+	/**
+	 * Cart Items List
+	 * Ensure cart contents update when products are added to the cart via AJAX
+	 *
+	 * @param  array $fragments Fragments to refresh via AJAX.
+	 * @return array            Fragments to refresh via AJAX
+	 */
+	function varia_cart_widget() {
+		ob_start();
+		the_widget( 'WC_Widget_Cart', 'title=' );
+		$widget_output = ob_get_contents();
+		ob_end_clean();
+		return $widget_output;
 	}
 }
 
@@ -179,7 +179,7 @@ function varia_add_cart_menu( $nav, $args ) {
 	if ( $args->theme_location == 'menu-1' ) {
 		return sprintf(
 			'%1$s
-			<li class="menu-item wc-menu-item %6$s" title="%2$s">
+			<li class="menu-item woocommerce-menu-item %6$s" title="%2$s">
 				%4$s
 				<ul class="sub-menu">
 					<li class="woocommerce-cart-widget" title="%3$s">
