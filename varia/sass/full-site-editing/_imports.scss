@@ -1,4 +1,13 @@
 .fse-enabled {
+	.main-navigation {
+		.has-background > ul {
+			padding: #{map-deep-get($config-global, "spacing", "unit")} 0;
+			@include media(mobile) {
+				padding: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+	}
+
 	.site-footer {
 		display: block;
 
