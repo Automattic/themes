@@ -36,14 +36,30 @@ add_action( 'after_setup_theme', 'varia_woocommerce_setup' );
  * Add a custom wrapper for woocomerce content
  */
 function varia_wrapper_start() {
-  echo '<article id="woocommerce-wrapper" class="responsive-max-width">';
+	echo '<article id="woocommerce-wrapper" class="responsive-max-width">';
 }
 add_action('woocommerce_before_main_content', 'varia_wrapper_start', 10);
 
 function varia_wrapper_end() {
-  echo '</article>';
+	echo '</article>';
 }
 add_action('woocommerce_after_main_content', 'varia_wrapper_end', 10);
+
+/**
+ * Display category image on category archive
+ */
+function varia_category_image() {
+    if ( is_product_category() ){
+		global $wp_query;
+		$cat = $wp_query->get_queried_object();
+		$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+		$image = wp_get_attachment_url( $thumbnail_id );
+		if ( $image ) {
+			echo '<img src="' . $image . '" alt="' . $cat->name . '" />';
+		}
+	}
+}
+add_action( 'woocommerce_archive_description', 'varia_category_image', 2 );
 
 /**
  * Remove WooCommerce Sidebar

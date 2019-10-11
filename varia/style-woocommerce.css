@@ -902,84 +902,10 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-
 }
 
 /**
- * Reviews
+ * Product loops
  */
-body[class*="woocommerce"] #page {
-	/**
-	 * Reviews
-	 */
-}
-
-body[class*="woocommerce"] #page #reviews h2 small {
-	color: #767676;
-	font-size: 0.83333rem;
-	margin: inherit;
-}
-
-body[class*="woocommerce"] #page #reviews h2 small a {
-	color: currentColor;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist {
-	padding-left: 0;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li {
-	margin-bottom: 16px;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .meta {
-	color: #767676;
-	font-size: 0.83333rem;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li img.avatar {
-	padding: 0;
-	width: 48px;
-	height: auto;
-	background: transparent;
-	border-color: #DDDDDD;
-	margin: 0;
-	box-shadow: none;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .woocommerce-review__author {
-	font-family: sans-serif;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text {
-	margin-left: 64px;
-	border: 1px solid #DDDDDD;
-	border-radius: 4px;
-	padding: 1em 1em 0;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text p {
-	margin: 0 0 1em;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text p.meta {
-	font-size: 0.83em;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children {
-	list-style: none outside;
-	margin: 20px 0 0 50px;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children .star-rating {
-	display: none;
-}
-
-body[class*="woocommerce"] #page #reviews #comments ol.commentlist #respond {
-	border: 1px solid #DDDDDD;
-	border-radius: 4px;
-	padding: 1em 1em 0;
-	margin: 20px 0 0 50px;
-}
-
-body[class*="woocommerce"] #page #reviews #comments .commentlist > li::before {
-	content: "";
+body[class*="woocommerce"] #page .woocommerce-products-header img {
+	display: block;
 }
 
 /**
@@ -1061,6 +987,87 @@ body[class*="woocommerce"] #page .woocommerce-tabs .panel .comment-reply-title {
 }
 
 /**
+ * Reviews
+ */
+body[class*="woocommerce"] #page {
+	/**
+	 * Reviews
+	 */
+}
+
+body[class*="woocommerce"] #page #reviews h2 small {
+	color: #767676;
+	font-size: 0.83333rem;
+	margin: inherit;
+}
+
+body[class*="woocommerce"] #page #reviews h2 small a {
+	color: currentColor;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist {
+	padding-left: 0;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li {
+	margin-bottom: 16px;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .meta {
+	color: #767676;
+	font-size: 0.83333rem;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li img.avatar {
+	padding: 0;
+	width: 48px;
+	height: auto;
+	background: transparent;
+	border-color: #DDDDDD;
+	margin: 0;
+	box-shadow: none;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .woocommerce-review__author {
+	font-family: sans-serif;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text {
+	margin-left: 64px;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+	padding: 1em 1em 0;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text p {
+	margin: 0 0 1em;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text p.meta {
+	font-size: 0.83em;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children {
+	list-style: none outside;
+	margin: 20px 0 0 50px;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children .star-rating {
+	display: none;
+}
+
+body[class*="woocommerce"] #page #reviews #comments ol.commentlist #respond {
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+	padding: 1em 1em 0;
+	margin: 20px 0 0 50px;
+}
+
+body[class*="woocommerce"] #page #reviews #comments .commentlist > li::before {
+	content: "";
+}
+
+/**
  * Structure
  */
 /**
@@ -1072,7 +1079,8 @@ body[class*="woocommerce"] #page .products.related > *:not(:first-child),
 body[class*="woocommerce"] #page .up-sells > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(:first-child),
-.woocommerce-Reviews #comments > *:not(:first-child) {
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:first-child) {
 	margin-top: 32px;
 }
 
@@ -1082,7 +1090,8 @@ body[class*="woocommerce"] #page .products.related > *:not(:last-child),
 body[class*="woocommerce"] #page .up-sells > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(:last-child),
-.woocommerce-Reviews #comments > *:not(:last-child) {
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:last-child) {
 	margin-bottom: 32px;
 }
 
@@ -1098,18 +1107,21 @@ body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:empty +
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-address-fields > *:empty + *,
 body[class*="woocommerce"] #page .woocommerce-address-fields > .form-row-last,
-.woocommerce-Reviews #comments > *:empty + *,
-.woocommerce-Reviews #comments > .form-row-last {
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:empty + *,
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-products-header > *:empty + *,
+body[class*="woocommerce"] #page .woocommerce-products-header > .form-row-last {
 	margin-top: 0;
 }
 
-body[class*="woocommerce"] #page div.summary > *:empty,
-body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:empty,
-body[class*="woocommerce"] #page .products.related > *:empty,
-body[class*="woocommerce"] #page .up-sells > *:empty,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:empty,
-body[class*="woocommerce"] #page .woocommerce-address-fields > *:empty,
-.woocommerce-Reviews #comments > *:empty {
+body[class*="woocommerce"] #page div.summary > *:not(img):empty,
+body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(img):empty,
+body[class*="woocommerce"] #page .products.related > *:not(img):empty,
+body[class*="woocommerce"] #page .up-sells > *:not(img):empty,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(img):empty,
+body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(img):empty,
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(img):empty,
+body[class*="woocommerce"] #page .woocommerce-products-header > *:not(img):empty {
 	margin: 0;
 }
 

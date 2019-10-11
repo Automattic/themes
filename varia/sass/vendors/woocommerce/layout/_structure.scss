@@ -11,7 +11,8 @@ body[class*="woocommerce"] #page .products.related,
 body[class*="woocommerce"] #page .up-sells,
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content form,
 body[class*="woocommerce"] #page .woocommerce-address-fields,
-.woocommerce-Reviews #comments {
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments,
+body[class*="woocommerce"] #page .woocommerce-products-header {
 
 	& > *:not(:first-child) {
 		margin-top: map-deep-get($config-global, "spacing", "vertical");
@@ -26,7 +27,7 @@ body[class*="woocommerce"] #page .woocommerce-address-fields,
 		margin-top: 0;
 	}
 
-	& > *:empty {
+	& > *:not(img):empty {
 		margin: 0;
 	}
 }
