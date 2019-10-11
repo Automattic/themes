@@ -8,5 +8,21 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		display: inline-block;
 		text-decoration: none;
 	}
+
+	.main-navigation {
+
+		.woocommerce-cart-widget {
+			padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
+
+			@include media(mobile) {
+				padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+			}
+		}
+
+		ul.cart_list li a,
+		ul.product_list_widget li a {
+			padding: 0;
+		}
+	}
 }
 

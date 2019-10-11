@@ -71,6 +71,7 @@ if ( ! function_exists( 'varia_cart_link' ) ) {
 	 * @since  1.0.0
 	 */
 	function varia_cart_link() {
+
 		$link_output = sprintf(
 			'<a class="woocommerce-cart-link" href="%1$s" title="%2$s">
 				%3$s
@@ -82,6 +83,7 @@ if ( ! function_exists( 'varia_cart_link' ) ) {
 			wp_kses_post( WC()->cart->get_cart_subtotal() ),
 			wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'varia' ), WC()->cart->get_cart_contents_count() ) )
 		);
+
 		return $link_output;
 	}
 }
@@ -164,7 +166,7 @@ function varia_add_cart_menu( $nav, $args ) {
 			<li class="menu-item wc-menu-item %6$s" title="%2$s">
 				%4$s
 				<ul class="sub-menu">
-					<li class="wc-menu-items-list" title="%3$s">
+					<li class="woocommerce-cart-widget" title="%3$s">
 						%5$s
 					</li>
 				</ul>
