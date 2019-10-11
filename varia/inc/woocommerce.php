@@ -54,10 +54,131 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
  * Enqueue scripts and styles.
  */
 function varia_woocommerce_scripts() {
-
 	// WooCommerce styles
 	wp_enqueue_style( 'varia-woocommerce-style', get_stylesheet_directory_uri() . '/style-woocommerce.css', array(), wp_get_theme()->get( 'Version' ) );
-
 }
 add_action( 'wp_enqueue_scripts', 'varia_woocommerce_scripts' );
 
+/**
+ * Setup cart link for main menu
+ */
+if ( ! function_exists( 'varia_cart_link' ) ) {
+	/**
+	 * Cart Link
+	 * Display a link to the cart including the number of items present and the cart total
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	function varia_cart_link() {
+		$link_output = sprintf(
+			'<a class="woocommerce-cart-link" href="%1$s" title="%2$s">
+				%3$s
+				<span class="woocommerce-cart-subtotal">%4$s</span> - <span class="woocommerce-cart-count">%5$s</span>
+			</a>',
+			esc_url( wc_get_cart_url() ),
+			esc_attr__( 'View your shopping cart', 'varia' ),
+			varia_get_icon_svg( 'shopping_cart', 16 ),
+			wp_kses_post( WC()->cart->get_cart_subtotal() ),
+			wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'varia' ), WC()->cart->get_cart_contents_count() ) )
+		);
+		return $link_output;
+	}
+}
+
+/**
+ * Setup cart widget for main menu
+ */
+if ( ! function_exists( 'varia_cart_widget' ) ) {
+	/**
+	 * Cart Items List
+	 * Ensure cart contents update when products are added to the cart via AJAX
+	 *
+	 * @param  array $fragments Fragments to refresh via AJAX.
+	 * @return array            Fragments to refresh via AJAX
+	 */
+	function varia_cart_widget() {
+		ob_start();
+		the_widget( 'WC_Widget_Cart', 'title=' );
+		$widget_output = ob_get_contents();
+		ob_end_clean();
+		return $widget_output;
+	}
+}
+
+/**
+ * Setup cart fragments
+ */
+if ( ! function_exists( 'varia_cart_subtotal_fragment' ) ) {
+	/**
+	 * Cart Subtotal Fragments
+	 * Ensure cart subtotal amount update when products are added to the cart via AJAX
+	 *
+	 * @param  array $fragments Fragments to refresh via AJAX.
+	 * @return array            Fragments to refresh via AJAX
+	 */
+	function varia_cart_subtotal_fragment( $fragments ) {
+		ob_start();
+		echo '<span class="woocommerce-cart-subtotal">' . wp_kses_post( WC()->cart->get_cart_subtotal() ) . '</span>';
+		$fragments['.woocommerce-cart-subtotal'] = ob_get_clean();
+		return $fragments;
+	}
+}
+
+if ( ! function_exists( 'varia_cart_count_fragment' ) ) {
+	/**
+	 * Cart Count Fragments
+	 * Ensure cart item count update when products are added to the cart via AJAX
+	 *
+	 * @param  array $fragments Fragments to refresh via AJAX.
+	 * @return array            Fragments to refresh via AJAX
+	 */
+	function varia_cart_count_fragment( $fragments ) {
+		ob_start();
+		echo '<span class="woocommerce-cart-count">' . wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'varia' ), WC()->cart->get_cart_contents_count() ) ) . '</span>';
+		$fragments['.woocommerce-cart-count'] = ob_get_clean();
+		return $fragments;
+	}
+}
+
+/**
+ * Add cart fragment filters
+ *
+ * @see varia_cart_subtotal_fragment() and varia_cart_count_fragment()
+ */
+if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
+	add_filter( 'woocommerce_add_to_cart_fragments', 'varia_cart_subtotal_fragment', 10, 1 );
+	add_filter( 'woocommerce_add_to_cart_fragments', 'varia_cart_count_fragment', 10, 1 );
+} else {
+	add_filter( 'add_to_cart_fragments', 'varia_cart_subtotal_fragment' );
+	add_filter( 'add_to_cart_fragments', 'varia_cart_count_fragment' );
+}
+
+/**
+ * Add WooCommerce mini-cart link to primary menu
+ */
+function varia_add_cart_menu( $nav, $args ) {
+	if ( $args->theme_location == 'menu-1' ) {
+		return sprintf(
+			'%1$s
+			<li class="menu-item wc-menu-item %6$s" title="%2$s">
+				%4$s
+				<ul class="sub-menu">
+					<li class="wc-menu-items-list" title="%3$s">
+						%5$s
+					</li>
+				</ul>
+			</li>',
+			$nav,
+			esc_attr__( 'View your shopping cart', 'varia' ),
+			esc_attr__( 'View your shopping list', 'varia' ),
+			varia_cart_link(),
+			varia_cart_widget(),
+			is_cart() ? 'current-menu-item' : ''
+		);
+	}
+
+	// Our primary menu isn't set, return the regular nav
+	return $nav;
+}
+add_filter( 'wp_nav_menu_items', 'varia_add_cart_menu', 10, 2 );
