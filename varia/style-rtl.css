@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: varia
@@ -2302,7 +2302,6 @@ table th,
 .site-title {
 	color: blue;
 	font-family: sans-serif;
-	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2323,6 +2322,13 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: serif;
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 1.2rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
@@ -2480,7 +2486,6 @@ table th,
 	color: blue;
 	display: block;
 	font-family: sans-serif;
-	font-size: 1.2rem;
 	font-weight: bold;
 	padding: 8px 0;
 }
@@ -2536,6 +2541,10 @@ table th,
 	height: 1px !important;
 	width: 1px !important;
 	overflow: hidden;
+}
+
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1.2rem;
 }
 
 .social-navigation > div > ul {
@@ -2659,7 +2668,6 @@ table th,
 
 .footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: sans-serif;
-	font-size: 0.83333rem;
 	font-weight: bold;
 	padding: 16px;
 	color: currentColor;
@@ -2671,6 +2679,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
 	color: indigo;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -3525,6 +3537,14 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 	display: block;
 }
 
+.fse-enabled .site-footer .main-navigation .footer-menu {
+	color: inherit;
+}
+
+.fse-enabled .site-footer .main-navigation > div {
+	display: block;
+}
+
 .fse-enabled .site-footer .main-navigation .hide-visually,
 .fse-enabled .site-footer .main-navigation #toggle-menu {
 	display: none;
@@ -3544,4 +3564,35 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 
 .fse-enabled .site-footer .site-info {
 	text-align: center;
+}
+
+.fse-enabled .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-enabled .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-enabled .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-enabled .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-enabled .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
 }
