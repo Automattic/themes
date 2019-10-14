@@ -4,6 +4,18 @@
 
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
+	.woocommerce-message,
+	.woocommerce-info,
+	.woocommerce-success,
+	.woocommerce-error,
+	.woocommerce-warning {
+		padding: map-deep-get($config-global, "spacing", "unit") map-deep-get($config-global, "spacing", "vertical") map-deep-get($config-global, "spacing", "unit") #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		background-color: map-deep-get($config-global, "color", "background", "light");
+		color: map-deep-get($config-global, "color", "foreground", "dark");
+		border-top-color: map-deep-get($config-global, "color", "primary", "default");
+	}
+
 	.woocommerce-notice--message,
 	.woocommerce-notice--info {
 		color: map-deep-get($config-global, "color", "alert", "info");
@@ -19,18 +31,6 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 	.woocommerce-notice--warning {
 		color: map-deep-get($config-global, "color", "alert", "warning");
-	}
-
-	.woocommerce-message,
-	.woocommerce-info,
-	.woocommerce-success,
-	.woocommerce-error,
-	.woocommerce-warning {
-		padding: map-deep-get($config-global, "spacing", "unit") map-deep-get($config-global, "spacing", "vertical") map-deep-get($config-global, "spacing", "unit") #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
-		background-color: map-deep-get($config-global, "color", "background", "light");
-		color: map-deep-get($config-global, "color", "foreground", "dark");
-		border-top-color: map-deep-get($config-global, "color", "primary", "default");
 	}
 
 	.woocommerce-message,

@@ -2,10 +2,15 @@
  * Product loops
  */
 
+body[class*="woocommerce"] #page .woocommerce-products-header {
+	img {
+		display: block;
+	}
+}
+
 #woocommerce-wrapper,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
-
 
 	.products ul,
 	ul.products {
@@ -16,9 +21,6 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
 	ul.products li.product {
 
 		text-align: center;
-
-		.onsale {
-		}
 
 		.star-rating {
 			font-size: map-deep-get($config-global, "font", "size", "sm");

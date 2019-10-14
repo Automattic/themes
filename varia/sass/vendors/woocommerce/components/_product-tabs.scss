@@ -1,5 +1,5 @@
 /**
- * Reviews
+ * Tabs
  */
 
 body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
@@ -10,14 +10,15 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 	.woocommerce-tabs {
 
 		ul.tabs {
+
 			padding-left: map-deep-get($config-global, "spacing", "horizontal");
 			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 			li {
 				background-color: map-deep-get($config-global, "color", "background", "light");
-				border-color: map-deep-get($config-woocommerce, "tab", "border", "color");
-				border-top-left-radius: map-deep-get($config-woocommerce, "tab", "border", "radius");
-				border-top-right-radius: map-deep-get($config-woocommerce, "tab", "border", "radius");
+				border-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
+				border-top-left-radius: map-deep-get($config-woocommerce, "tabs", "border", "radius");
+				border-top-right-radius: map-deep-get($config-woocommerce, "tabs", "border", "radius");
 				padding-left: 0;
 				padding-right: 0;
 
@@ -29,13 +30,13 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 					padding-bottom: #{0.5 * map-deep-get($config-woocommerce, "tabs", "padding")};
 
 					&:hover {
-						color: map-deep-get($config-global, "color", "foreground", "dark");
+						color: map-deep-get($config-global, "color", "primary", "hover");
 					}
 				}
 
 				&.active {
 					background-color: map-deep-get($config-global, "color", "background", "default");
-					border-color: map-deep-get($config-woocommerce, "tab", "border", "color");
+					border-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
 					border-bottom-color: map-deep-get($config-global, "color", "background", "default");
 
 					a {
@@ -54,7 +55,7 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 
 				&::before,
 				&::after {
-					border-color: map-deep-get($config-woocommerce, "tab", "border", "color");
+					border-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
 				}
 
 				&::before {
@@ -67,11 +68,12 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 			}
 
 			&::before {
-				border-bottom-color: map-deep-get($config-woocommerce, "tab", "border", "color");
+				border-bottom-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
 			}
 		}
 
 		.panel {
+
 			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
 			h2,

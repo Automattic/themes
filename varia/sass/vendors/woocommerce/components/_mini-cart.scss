@@ -30,6 +30,13 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		ul.product_list_widget li a {
 			padding: 0;
 		}
+
+		ul.cart_list li .quantity,
+		ul.product_list_widget li .quantity,
+		ul.cart_list li a:not(.remove),
+		ul.product_list_widget li a:not(.remove) {
+			font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		}
 	}
 }
 
