@@ -1,32 +1,18 @@
 .fse-enabled {
-	.main-navigation {
-		.has-text-color > ul > li > a {
-			color: inherit;
-		}
-		.has-text-align-left > ul {
-			justify-content: flex-start;
-		}
-		.has-text-align-center > ul {
-			justify-content: center;
-		}
-		.has-text-align-right > ul {
-			justify-content: flex-end;
-		}
-		.has-background > ul {
-			padding: #{map-deep-get($config-global, "spacing", "unit")} 0;
-			@include media(mobile) {
-				padding: #{map-deep-get($config-global, "spacing", "unit")};
-			}
-		}
-	}
-
 	.site-footer {
 		display: block;
 
 		.main-navigation {
 			@extend .footer-navigation;
 
+			.footer-menu {
+				color: inherit;
+			}
+
 			display: block;
+			& > div {
+				display: block;
+			}
 
 			.hide-visually,
 			#toggle-menu {
@@ -49,6 +35,31 @@
 
 		.site-info {
 			text-align: center;
+		}
+	}
+
+	.main-navigation {
+		.has-text-color > .main-menu.footer-menu > li > a {
+			color: inherit;
+		}
+		.has-text-align-left > .main-menu.footer-menu {
+			justify-content: flex-start;
+		}
+		.has-text-align-center > .main-menu.footer-menu {
+			justify-content: center;
+		}
+		.has-text-align-right > .main-menu.footer-menu {
+			justify-content: flex-end;
+		}
+		.has-background > .main-menu.footer-menu {
+			padding: #{map-deep-get($config-global, "spacing", "unit")} 0;
+			@include media(mobile) {
+				padding: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+		& > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+			font-size: 0.6em;
+			vertical-align: middle;
 		}
 	}
 }

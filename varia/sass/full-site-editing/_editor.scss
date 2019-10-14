@@ -45,10 +45,6 @@
 
 	.main-navigation {
 		@import "../blocks/button/style";
-
-		a {
-			font-size: 21.6px;
-		}
 	}
 }
 
@@ -69,8 +65,15 @@
 
 	.main-navigation {
 		@extend .footer-navigation;
+		
+		.footer-menu {
+			color: inherit;
+		}
 
 		display: block;
+		& > div {
+			display: block;
+		}
 
 		.hide-visually,
 		#toggle-menu {
@@ -103,19 +106,28 @@
 	}
 
 	.main-navigation {
-		.has-text-color > ul > li > a {
+		.main-menu.footer-menu li {
+			a {
+				font-size: inherit;
+			}
+			&.menu-item-has-children > a::after {
+				font-size: 0.6em;
+				vertical-align: middle;
+			}
+		}
+		.has-text-color > .main-menu.footer-menu > li > a {
 			color: inherit;
 		}
-		.has-text-align-left > ul {
+		.has-text-align-left > .main-menu.footer-menu {
 			justify-content: flex-start;
 		}
-		.has-text-align-center > ul {
+		.has-text-align-center > .main-menu.footer-menu {
 			justify-content: center;
 		}
-		.has-text-align-right > ul {
+		.has-text-align-right > .main-menu.footer-menu {
 			justify-content: flex-end;
 		}
-		.has-background > ul {
+		.has-background > .main-menu.footer-menu {
 			padding: #{map-deep-get($config-global, "spacing", "unit")};
 		}
 	}

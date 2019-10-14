@@ -2523,7 +2523,6 @@ body:not(.fse-enabled) .site-description {
 	color: #181818;
 	display: block;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1rem;
 	font-weight: 700;
 	padding: 4px 0;
 }
@@ -2579,6 +2578,10 @@ body:not(.fse-enabled) .site-description {
 	height: 1px !important;
 	width: 1px !important;
 	overflow: hidden;
+}
+
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1rem;
 }
 
 .social-navigation > div > ul {
@@ -2702,7 +2705,6 @@ body:not(.fse-enabled) .site-description {
 
 .footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
 	font-weight: 700;
 	padding: 8px;
 	color: currentColor;
@@ -2714,6 +2716,10 @@ body:not(.fse-enabled) .site-description {
 
 .footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
 	color: #685636;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -3935,37 +3941,15 @@ p:not(.site-title) a:hover {
  * Full Site Editing
  * - Full Site Editing overrides
  */
-.fse-enabled .main-navigation .has-text-color > ul > li > a {
-	color: inherit;
-}
-
-.fse-enabled .main-navigation .has-text-align-left > ul {
-	justify-content: flex-start;
-}
-
-.fse-enabled .main-navigation .has-text-align-center > ul {
-	justify-content: center;
-}
-
-.fse-enabled .main-navigation .has-text-align-right > ul {
-	justify-content: flex-end;
-}
-
-.fse-enabled .main-navigation .has-background > ul {
-	padding: 16px 0;
-}
-
-@media only screen and (min-width: 560px) {
-	.fse-enabled .main-navigation .has-background > ul {
-		padding: 16px;
-	}
-}
-
 .fse-enabled .site-footer {
 	display: block;
 }
 
-.fse-enabled .site-footer .main-navigation {
+.fse-enabled .site-footer .main-navigation .footer-menu {
+	color: inherit;
+}
+
+.fse-enabled .site-footer .main-navigation > div {
 	display: block;
 }
 
@@ -3988,6 +3972,37 @@ p:not(.site-title) a:hover {
 
 .fse-enabled .site-footer .site-info {
 	text-align: center;
+}
+
+.fse-enabled .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-enabled .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-enabled .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-enabled .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-enabled .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
 }
 
 .fse-enabled .site-header.entry-content {

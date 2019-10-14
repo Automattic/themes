@@ -40,7 +40,6 @@
 
 		a {
 			font-family: #{map-deep-get($config-header, "main-nav", "font", "family")};
-			font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 			font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
 			padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
 
@@ -55,5 +54,13 @@
 				color: #{map-deep-get($config-footer, "color", "link-hover")};
 			}
 		}
+	}
+}
+
+// Prevent overruling the user defined font size value set inside Gutenberg
+// for Full Site Editing's Menu Navigation block.
+body:not( .fse-enabled ) {
+	.footer-menu a {
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 	}
 }
