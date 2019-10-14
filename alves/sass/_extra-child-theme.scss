@@ -117,11 +117,13 @@ input[type="submit"],
 }
 
 .widget-title {
-	font-family: $font_family_primary;
+	font-family: $font_family_primary; // For browsers without support for CSS custom properties.
+	font-family: var( --font-headings, $font_family_primary );
 }
 
 blockquote cite {
-	font-family: $font_family_secondary;
+	font-family: $font_family_secondary; // For browsers without support for CSS custom properties.
+	font-family: var( --font-base, $font_family_secondary );
 }
 
 .wp-block-quote p,
@@ -407,7 +409,8 @@ blockquote p {
 
 		a {
 			color: $color_foreground;
-			font-family: $font_family_secondary;
+			font-family: $font_family_secondary; // For browsers without support for CSS custom properties.
+			font-family: var( --font-base, $font_family_secondary );
 			padding: 0;
 			text-decoration: none;
 
