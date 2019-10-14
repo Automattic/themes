@@ -734,6 +734,93 @@ body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a {
 }
 
 /**
+ * Pagination
+ */
+body[class*="woocommerce"] #page .woocommerce-pagination {
+	margin: 0 calc(-0.66 * 16px);
+	width: 100%;
+}
+
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers {
+	border: none;
+	display: flex;
+	justify-content: start;
+}
+
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li > * {
+	display: block;
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding-left: calc(0.66 * 16px);
+	padding-right: calc(0.66 * 16px);
+}
+
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li {
+	border: none;
+	float: inherit;
+}
+
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li a {
+	text-decoration: unset;
+}
+
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li span.current,
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li a:hover,
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li a:focus {
+	background: transparent;
+	color: #444444;
+}
+
+body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers .svg-icon {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+sssnav.woocommerce-pagination {
+	text-align: center;
+}
+
+sssnav.woocommerce-pagination ul {
+	display: inline-block;
+	white-space: nowrap;
+	padding: 0;
+	clear: both;
+	border-color: #DDDDDD;
+	border-right: 0;
+	margin: 1px;
+}
+
+sssnav.woocommerce-pagination ul li {
+	border-color: #DDDDDD;
+	padding: 0;
+	margin: 0;
+	float: left;
+	display: inline;
+	overflow: hidden;
+}
+
+sssnav.woocommerce-pagination ul li a,
+sssnav.woocommerce-pagination ul li span {
+	margin: 0;
+	text-decoration: none;
+	padding: 0;
+	line-height: 1;
+	font-size: 1em;
+	font-weight: normal;
+	padding: 0.5em;
+	min-width: 1em;
+	display: block;
+}
+
+sssnav.woocommerce-pagination ul li span.current,
+sssnav.woocommerce-pagination ul li a:hover,
+sssnav.woocommerce-pagination ul li a:focus {
+	background: #DDDDDD;
+	color: #767676;
+}
+
+/**
  * Product loops
  */
 #woocommerce-wrapper .products ul,
@@ -826,83 +913,6 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.p
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product.sale a > .price ins,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product.sale a > .price ins {
 	color: yellowgreen;
-}
-
-#woocommerce-wrapper .woocommerce-result-count,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells .woocommerce-result-count,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells .woocommerce-result-count {
-	margin-bottom: 16px;
-}
-
-#woocommerce-wrapper .woocommerce-ordering,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells .woocommerce-ordering,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells .woocommerce-ordering {
-	margin-bottom: 16px;
-}
-
-#woocommerce-wrapper .woocommerce-ordering select,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells .woocommerce-ordering select,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells .woocommerce-ordering select {
-	vertical-align: top;
-}
-
-#woocommerce-wrapper nav.woocommerce-pagination,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination {
-	text-align: center;
-}
-
-#woocommerce-wrapper nav.woocommerce-pagination ul,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul {
-	display: inline-block;
-	white-space: nowrap;
-	padding: 0;
-	clear: both;
-	border-color: #DDDDDD;
-	border-right: 0;
-	margin: 1px;
-}
-
-#woocommerce-wrapper nav.woocommerce-pagination ul li,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul li,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul li {
-	border-color: #DDDDDD;
-	padding: 0;
-	margin: 0;
-	float: left;
-	display: inline;
-	overflow: hidden;
-}
-
-#woocommerce-wrapper nav.woocommerce-pagination ul li a,
-#woocommerce-wrapper nav.woocommerce-pagination ul li span,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul li a,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul li span,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul li a,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul li span {
-	margin: 0;
-	text-decoration: none;
-	padding: 0;
-	line-height: 1;
-	font-size: 1em;
-	font-weight: normal;
-	padding: 0.5em;
-	min-width: 1em;
-	display: block;
-}
-
-#woocommerce-wrapper nav.woocommerce-pagination ul li span.current,
-#woocommerce-wrapper nav.woocommerce-pagination ul li a:hover,
-#woocommerce-wrapper nav.woocommerce-pagination ul li a:focus,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul li span.current,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul li a:hover,
-body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells nav.woocommerce-pagination ul li a:focus,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul li span.current,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul li a:hover,
-body[class*="woocommerce"] #page .cart-collaterals .cross-sells nav.woocommerce-pagination ul li a:focus {
-	background: #DDDDDD;
-	color: #767676;
 }
 
 /**
@@ -1464,14 +1474,26 @@ body[class*="woocommerce"] #page .woocommerce-invalid #terms {
 /**
  * Products Page
  */
-.woocommerce #page {
+body[class*="woocommerce"] #page {
 	/**
 	 * Remove the bright yellow background on mark elements.
 	 */
 }
 
-.woocommerce #page mark {
+body[class*="woocommerce"] #page mark {
 	background: transparent;
+}
+
+body[class*="woocommerce"] #page .woocommerce-result-count {
+	margin-bottom: 16px;
+}
+
+body[class*="woocommerce"] #page .woocommerce-ordering {
+	margin-bottom: 16px;
+}
+
+body[class*="woocommerce"] #page .woocommerce-ordering select {
+	vertical-align: top;
 }
 
 /**

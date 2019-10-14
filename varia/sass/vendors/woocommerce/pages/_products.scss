@@ -1,12 +1,25 @@
 /**
  * Products Page
  */
-.woocommerce #page { // adding #content here to override default wc styles without !important
+
+body[class*="woocommerce"] #page {
 
 	/**
 	 * Remove the bright yellow background on mark elements.
 	 */
 	mark {
 		background: transparent;
+	}
+
+	.woocommerce-result-count {
+		margin-bottom: map-deep-get($config-global, "spacing", "unit");
+	}
+
+	.woocommerce-ordering {
+		margin-bottom: map-deep-get($config-global, "spacing", "unit");
+
+		select {
+			vertical-align: top;
+		}
 	}
 }

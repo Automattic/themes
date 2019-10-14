@@ -1,0 +1,89 @@
+/**
+ * Pagination
+ */
+
+// Index/archive navigation
+body[class*="woocommerce"] #page .woocommerce-pagination {
+
+	margin: 0 calc(-0.66 * #{map-deep-get($config-global, "spacing", "unit")});
+	width: 100%;
+
+	.page-numbers {
+		border: none;
+		display: flex;
+		justify-content: start;
+
+		li > * {
+			display: block;
+			font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+			font-size: #{map-deep-get($config-global, "font", "size", "md")};
+			font-weight: 600;
+			padding-left: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
+			padding-right: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		li {
+			border: none;
+			float: inherit;
+
+			a {
+				text-decoration: unset;
+			}
+		}
+
+		li span.current,
+		li a:hover,
+		li a:focus {
+			background: transparent;
+			color: map-deep-get($config-global, "color", "foreground", "default");
+		}
+
+		.svg-icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
+	sssnav.woocommerce-pagination {
+		text-align: center;
+
+		ul {
+			display: inline-block;
+			white-space: nowrap;
+			padding: 0;
+			clear: both;
+			border-color: map-deep-get($config-global, "color", "border", "default");
+			border-right: 0;
+			margin: 1px;
+
+			li {
+				border-color: map-deep-get($config-global, "color", "border", "default");
+				padding: 0;
+				margin: 0;
+				float: left;
+				display: inline;
+				overflow: hidden;
+
+				a,
+				span {
+					margin: 0;
+					text-decoration: none;
+					padding: 0;
+					line-height: 1;
+					font-size: 1em;
+					font-weight: normal;
+					padding: 0.5em;
+					min-width: 1em;
+					display: block;
+				}
+
+				span.current,
+				a:hover,
+				a:focus {
+					background: map-deep-get($config-global, "color", "border", "default");
+					color: map-deep-get($config-global, "color", "foreground", "light");
+				}
+			}
+		}
+	}
