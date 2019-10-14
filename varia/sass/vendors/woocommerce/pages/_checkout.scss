@@ -28,6 +28,10 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			padding: map-deep-get($config-global, "spacing", "unit");
 			text-transform: none;
 
+			&.email {
+				word-break: break-word;
+			}
+
 			&:not(:last-child) {
 				border-right: 1px solid map-deep-get($config-global, "color", "border", "default");
 			}

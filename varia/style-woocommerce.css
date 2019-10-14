@@ -311,9 +311,28 @@ body[class*="woocommerce"] #page .woocommerce-breadcrumb a {
 /**
  * Notices
  */
+body[class*="woocommerce"] #page .woocommerce-notice--message,
+body[class*="woocommerce"] #page .woocommerce-notice--info {
+	color: skyblue;
+}
+
+body[class*="woocommerce"] #page .woocommerce-notice--success {
+	color: yellowgreen;
+}
+
+body[class*="woocommerce"] #page .woocommerce-notice--error {
+	color: salmon;
+}
+
+body[class*="woocommerce"] #page .woocommerce-notice--warning {
+	color: gold;
+}
+
 body[class*="woocommerce"] #page .woocommerce-message,
+body[class*="woocommerce"] #page .woocommerce-info,
+body[class*="woocommerce"] #page .woocommerce-success,
 body[class*="woocommerce"] #page .woocommerce-error,
-body[class*="woocommerce"] #page .woocommerce-info {
+body[class*="woocommerce"] #page .woocommerce-warning {
 	padding: 16px 32px 16px 64px;
 	margin-bottom: 32px;
 	background-color: #FAFAFA;
@@ -321,11 +340,21 @@ body[class*="woocommerce"] #page .woocommerce-info {
 	border-top-color: blue;
 }
 
-body[class*="woocommerce"] #page .woocommerce-message {
+body[class*="woocommerce"] #page .woocommerce-message,
+body[class*="woocommerce"] #page .woocommerce-info {
+	border-top-color: skyblue;
+}
+
+body[class*="woocommerce"] #page .woocommerce-message:before,
+body[class*="woocommerce"] #page .woocommerce-info:before {
+	color: skyblue;
+}
+
+body[class*="woocommerce"] #page .woocommerce-success {
 	border-top-color: yellowgreen;
 }
 
-body[class*="woocommerce"] #page .woocommerce-message:before {
+body[class*="woocommerce"] #page .woocommerce-success:before {
 	color: yellowgreen;
 }
 
@@ -337,12 +366,12 @@ body[class*="woocommerce"] #page .woocommerce-error:before {
 	color: salmon;
 }
 
-body[class*="woocommerce"] #page .woocommerce-info {
-	border-top-color: blue;
+body[class*="woocommerce"] #page .woocommerce-warning {
+	border-top-color: gold;
 }
 
-body[class*="woocommerce"] #page .woocommerce-info:before {
-	color: blue;
+body[class*="woocommerce"] #page .woocommerce-warning:before {
+	color: gold;
 }
 
 /**
@@ -1534,6 +1563,10 @@ body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li {
 	margin-right: 0;
 	padding: 16px;
 	text-transform: none;
+}
+
+body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li.email {
+	word-break: break-word;
 }
 
 body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li:not(:last-child) {
