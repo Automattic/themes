@@ -463,6 +463,7 @@ body[class*="woocommerce"] #page table.shop_table {
 
 body[class*="woocommerce"] #page table.shop_table td {
 	border-top: none;
+	word-break: break-word;
 }
 
 body[class*="woocommerce"] #page table.shop_table tr {
@@ -1187,6 +1188,7 @@ body[class*="woocommerce"] #page .woocommerce-shipping-fields > *:not(:first-chi
 body[class*="woocommerce"] #page .woocommerce-column--shipping-address > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-checkout > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-order-downloads > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-order-details > *:not(:first-child) {
 	margin-top: 16px;
 }
@@ -1239,6 +1241,8 @@ body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:last-chil
 body[class*="woocommerce"] #page .woocommerce-products-header > .price,
 body[class*="woocommerce"] #page .woocommerce-checkout > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-checkout > .price,
+body[class*="woocommerce"] #page .woocommerce-order-downloads > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-order-downloads > .price,
 body[class*="woocommerce"] #page .woocommerce-order-details > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-order-details > .price {
 	margin-bottom: 16px;
@@ -1292,6 +1296,8 @@ body[class*="woocommerce"] #page .woocommerce-products-header > *:not(img):empty
 body[class*="woocommerce"] #page .woocommerce-products-header > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-checkout > *:not(img):empty + *,
 body[class*="woocommerce"] #page .woocommerce-checkout > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-order-downloads > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-order-downloads > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-order-details > *:not(img):empty + *,
 body[class*="woocommerce"] #page .woocommerce-order-details > .form-row-last {
 	margin-top: 0;
@@ -1321,6 +1327,7 @@ body[class*="woocommerce"] #page .woocommerce-shipping-fields > *:empty,
 body[class*="woocommerce"] #page .woocommerce-column--shipping-address > *:empty,
 body[class*="woocommerce"] #page .woocommerce-products-header > *:empty,
 body[class*="woocommerce"] #page .woocommerce-checkout > *:empty,
+body[class*="woocommerce"] #page .woocommerce-order-downloads > *:empty,
 body[class*="woocommerce"] #page .woocommerce-order-details > *:empty {
 	margin: 0;
 }
@@ -1331,6 +1338,19 @@ body[class*="woocommerce"] #page .woocommerce-order-details > *:empty {
 /**
  * Account page
  */
+body[class*="woocommerce"] #page .woocommerce-MyAccount-navigation {
+	width: 20%;
+}
+
+body[class*="woocommerce"] #page .woocommerce-MyAccount-navigation ul li a {
+	line-height: 1.125;
+	display: inline-table;
+}
+
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content {
+	width: calc(80% - 16px);
+}
+
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content .woocommerce-notices-wrapper:empty {
 	display: none;
 }
@@ -1727,8 +1747,8 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 	color: red;
 }
 
-.single-product #page #woocommerce-wrapper div.product div.summary .woocommerce-product-rating {
-	margin-bottom: 32px;
+.single-product #page #woocommerce-wrapper div.product div.summary .entry-title + .woocommerce-product-rating {
+	margin-top: -32px;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.social {

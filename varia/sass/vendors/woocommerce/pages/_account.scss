@@ -3,7 +3,18 @@
  */
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
+	.woocommerce-MyAccount-navigation {
+		width: 20%;
+
+		ul li a {
+			line-height: map-deep-get($config-global, "font", "line-height", "heading");
+			display: inline-table;
+		}
+	}
+
 	.woocommerce-MyAccount-content {
+		width: calc(80% - #{map-deep-get($config-global, "spacing", "horizontal")});
+
 		.woocommerce-notices-wrapper:empty {
 			display: none;
 		}
