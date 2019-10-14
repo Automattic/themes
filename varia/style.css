@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: varia
@@ -2503,7 +2503,6 @@ body:not(.fse-enabled) .site-description {
 	color: blue;
 	display: block;
 	font-family: sans-serif;
-	font-size: 1.2rem;
 	font-weight: bold;
 	padding: 8px 0;
 }
@@ -2559,6 +2558,10 @@ body:not(.fse-enabled) .site-description {
 	height: 1px !important;
 	width: 1px !important;
 	overflow: hidden;
+}
+
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1.2rem;
 }
 
 .social-navigation > div > ul {
@@ -2682,7 +2685,6 @@ body:not(.fse-enabled) .site-description {
 
 .footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: sans-serif;
-	font-size: 0.83333rem;
 	font-weight: bold;
 	padding: 16px;
 	color: currentColor;
@@ -2694,6 +2696,10 @@ body:not(.fse-enabled) .site-description {
 
 .footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
 	color: indigo;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -3552,37 +3558,19 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
  * Full Site Editing
  * - Full Site Editing overrides
  */
-.fse-enabled .main-navigation .has-text-color > ul > li > a {
-	color: inherit;
-}
-
-.fse-enabled .main-navigation .has-text-align-left > ul {
-	justify-content: flex-start;
-}
-
-.fse-enabled .main-navigation .has-text-align-center > ul {
-	justify-content: center;
-}
-
-.fse-enabled .main-navigation .has-text-align-right > ul {
-	justify-content: flex-end;
-}
-
-.fse-enabled .main-navigation .has-background > ul {
-	padding: 16px 0;
-}
-
-@media only screen and (min-width: 560px) {
-	.fse-enabled .main-navigation .has-background > ul {
-		padding: 16px;
-	}
-}
-
 .fse-enabled .site-footer {
 	display: block;
 }
 
 .fse-enabled .site-footer .main-navigation {
+	display: block;
+}
+
+.fse-enabled .site-footer .main-navigation .footer-menu {
+	color: inherit;
+}
+
+.fse-enabled .site-footer .main-navigation > div {
 	display: block;
 }
 
@@ -3605,4 +3593,35 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 
 .fse-enabled .site-footer .site-info {
 	text-align: center;
+}
+
+.fse-enabled .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-enabled .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-enabled .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-enabled .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-enabled .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
 }
