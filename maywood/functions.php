@@ -103,12 +103,6 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 		// Enable Full Site Editing
 		add_theme_support( 'full-site-editing');
 
-		add_theme_support(
-			'a8c-global-styles',
-			[
-				'enable_theme_default' => true,
-			]
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'maywood_setup', 12 );
