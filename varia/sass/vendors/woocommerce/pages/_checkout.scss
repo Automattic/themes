@@ -50,6 +50,27 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		}
 	}
 
+	.woocommerce-form-coupon-toggle {
+		.woocommerce-info {
+		//	margin-bottom: 0;
+		}
+
+		& + .checkout_coupon {
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+	}
+
+	form.checkout_coupon,
+	form.login,
+	form.register {
+		border-color: map-deep-get($config-global, "color", "border", "default");
+		padding: map-deep-get($config-global, "spacing", "unit");
+		margin-top: inherit;
+		margin-bottom: inherit;
+		text-align: left;
+		border-radius: 0;
+	}
+
 	ul.order_details {
 		padding-left: 0;
 	}
