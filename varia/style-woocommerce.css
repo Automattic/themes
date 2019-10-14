@@ -729,7 +729,8 @@ body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a {
 	padding: 0;
 }
 
-.woocommerce-cart #page .woocommerce-menu-item .sub-menu {
+.woocommerce-cart #page .woocommerce-menu-item .sub-menu,
+.woocommerce-checkout #page .woocommerce-menu-item .sub-menu {
 	display: none;
 }
 
@@ -1091,10 +1092,7 @@ body[class*="woocommerce"] #page div.summary > *:not(:first-child),
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(:first-child),
 body[class*="woocommerce"] #page .products.related > *:not(:first-child),
 body[class*="woocommerce"] #page .up-sells > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:first-child) {
+body[class*="woocommerce"] #page .woocommerce-order > *:not(:first-child) {
 	margin-top: 32px;
 }
 
@@ -1102,10 +1100,7 @@ body[class*="woocommerce"] #page div.summary > *:not(:last-child),
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(:last-child),
 body[class*="woocommerce"] #page .products.related > *:not(:last-child),
 body[class*="woocommerce"] #page .up-sells > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:last-child) {
+body[class*="woocommerce"] #page .woocommerce-order > *:not(:last-child) {
 	margin-bottom: 32px;
 }
 
@@ -1117,14 +1112,8 @@ body[class*="woocommerce"] #page .products.related > *:empty + *,
 body[class*="woocommerce"] #page .products.related > .form-row-last,
 body[class*="woocommerce"] #page .up-sells > *:empty + *,
 body[class*="woocommerce"] #page .up-sells > .form-row-last,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:empty + *,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > .form-row-last,
-body[class*="woocommerce"] #page .woocommerce-address-fields > *:empty + *,
-body[class*="woocommerce"] #page .woocommerce-address-fields > .form-row-last,
-body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:empty + *,
-body[class*="woocommerce"] #page .woocommerce-Reviews #comments > .form-row-last,
-body[class*="woocommerce"] #page .woocommerce-products-header > *:empty + *,
-body[class*="woocommerce"] #page .woocommerce-products-header > .form-row-last {
+body[class*="woocommerce"] #page .woocommerce-order > *:empty + *,
+body[class*="woocommerce"] #page .woocommerce-order > .form-row-last {
 	margin-top: 0;
 }
 
@@ -1132,10 +1121,7 @@ body[class*="woocommerce"] #page div.summary > *:not(img):empty,
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(img):empty,
 body[class*="woocommerce"] #page .products.related > *:not(img):empty,
 body[class*="woocommerce"] #page .up-sells > *:not(img):empty,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(img):empty,
-body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(img):empty,
-body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(img):empty,
-body[class*="woocommerce"] #page .woocommerce-products-header > *:not(img):empty {
+body[class*="woocommerce"] #page .woocommerce-order > *:not(img):empty {
 	margin: 0;
 }
 
@@ -1153,12 +1139,20 @@ body[class*="woocommerce"] #page .widget_shopping_cart_content > *:not(:first-ch
 body[class*="woocommerce"] #page div.product form.variations_form > *:not(:first-child),
 body[class*="woocommerce"] #page div.product form.variations_form .variations > *:not(:first-child),
 body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-EditAccountForm > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-Address > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-billing-fields > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-column--billing-address > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-shipping-fields > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-column--shipping-address > *:not(:first-child),
+body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:first-child),
 body[class*="woocommerce"] #page .woocommerce-checkout > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:not(:first-child) {
+body[class*="woocommerce"] #page .woocommerce-order-details > *:not(:first-child) {
 	margin-top: 16px;
 }
 
@@ -1184,18 +1178,34 @@ body[class*="woocommerce"] #page div.product form.variations_form .variations > 
 body[class*="woocommerce"] #page div.product form.variations_form .variations > .price,
 body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap > *:not(:last-child),
 body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap > .price,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content > .price,
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > .price,
 body[class*="woocommerce"] #page .woocommerce-EditAccountForm > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-EditAccountForm > .price,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content > .price,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > .price,
+body[class*="woocommerce"] #page .woocommerce-Address > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-Address > .price,
+body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-address-fields > .price,
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > .price,
 body[class*="woocommerce"] #page .woocommerce-billing-fields > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-billing-fields > .price,
+body[class*="woocommerce"] #page .woocommerce-column--billing-address > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-column--billing-address > .price,
 body[class*="woocommerce"] #page .woocommerce-shipping-fields > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-shipping-fields > .price,
+body[class*="woocommerce"] #page .woocommerce-column--shipping-address > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-column--shipping-address > .price,
+body[class*="woocommerce"] #page .woocommerce-products-header > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-products-header > .price,
 body[class*="woocommerce"] #page .woocommerce-checkout > *:not(:last-child),
 body[class*="woocommerce"] #page .woocommerce-checkout > .price,
-body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > .price {
+body[class*="woocommerce"] #page .woocommerce-order-details > *:not(:last-child),
+body[class*="woocommerce"] #page .woocommerce-order-details > .price {
 	margin-bottom: 16px;
 }
 
@@ -1221,18 +1231,34 @@ body[class*="woocommerce"] #page div.product form.variations_form .variations > 
 body[class*="woocommerce"] #page div.product form.variations_form .variations > .form-row-last,
 body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap > *:not(img):empty + *,
 body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap > .form-row-last,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:not(img):empty + *,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-EditAccountForm > *:not(img):empty + *,
 body[class*="woocommerce"] #page .woocommerce-EditAccountForm > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-Address > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-Address > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-address-fields > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-address-fields > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-billing-fields > *:not(img):empty + *,
 body[class*="woocommerce"] #page .woocommerce-billing-fields > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-column--billing-address > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-column--billing-address > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-shipping-fields > *:not(img):empty + *,
 body[class*="woocommerce"] #page .woocommerce-shipping-fields > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-column--shipping-address > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-column--shipping-address > .form-row-last,
+body[class*="woocommerce"] #page .woocommerce-products-header > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-products-header > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-checkout > *:not(img):empty + *,
 body[class*="woocommerce"] #page .woocommerce-checkout > .form-row-last,
-body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:not(img):empty + *,
-body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > .form-row-last {
+body[class*="woocommerce"] #page .woocommerce-order-details > *:not(img):empty + *,
+body[class*="woocommerce"] #page .woocommerce-order-details > .form-row-last {
 	margin-top: 0;
 }
 
@@ -1247,12 +1273,20 @@ body[class*="woocommerce"] #page .widget_shopping_cart_content > *:empty,
 body[class*="woocommerce"] #page div.product form.variations_form > *:empty,
 body[class*="woocommerce"] #page div.product form.variations_form .variations > *:empty,
 body[class*="woocommerce"] #page div.product form.variations_form .single_variation_wrap > *:empty,
-body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:empty,
+body[class*="woocommerce"] #page .woocommerce-Reviews #comments > *:empty,
 body[class*="woocommerce"] #page .woocommerce-EditAccountForm > *:empty,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content > *:empty,
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content form > *:empty,
+body[class*="woocommerce"] #page .woocommerce-Address > *:empty,
+body[class*="woocommerce"] #page .woocommerce-address-fields > *:empty,
+body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:empty,
 body[class*="woocommerce"] #page .woocommerce-billing-fields > *:empty,
+body[class*="woocommerce"] #page .woocommerce-column--billing-address > *:empty,
 body[class*="woocommerce"] #page .woocommerce-shipping-fields > *:empty,
+body[class*="woocommerce"] #page .woocommerce-column--shipping-address > *:empty,
+body[class*="woocommerce"] #page .woocommerce-products-header > *:empty,
 body[class*="woocommerce"] #page .woocommerce-checkout > *:empty,
-body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:empty {
+body[class*="woocommerce"] #page .woocommerce-order-details > *:empty {
 	margin: 0;
 }
 
@@ -1262,22 +1296,35 @@ body[class*="woocommerce"] #page .woocommerce-address-fields__field-wrapper > *:
 /**
  * Account page
  */
-.woocommerce-account #page .woocommerce-MyAccount-content .woocommerce-notices-wrapper:empty {
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content .woocommerce-notices-wrapper:empty {
 	display: none;
 }
 
-.woocommerce-account #page .woocommerce-MyAccount-content fieldset {
+body[class*="woocommerce"] #page .woocommerce-MyAccount-content fieldset {
 	border: 1px solid #DDDDDD;
 	padding: 16px;
 	border-radius: 3px;
 }
 
-.woocommerce-account #page .addresses .title h3 {
+body[class*="woocommerce"] #page table.my_account_orders {
+	font-size: 0.83333rem;
+}
+
+body[class*="woocommerce"] #page table.my_account_orders th,
+body[class*="woocommerce"] #page table.my_account_orders td {
+	padding: 8px 8px;
+}
+
+body[class*="woocommerce"] #page .addresses .title h3 {
 	font-size: 1rem;
 }
 
+body[class*="woocommerce"] #page .addresses .title .edit {
+	line-height: 1;
+}
+
 /**
- * Cart/checkout page
+ * Cart page
  */
 body[class*="woocommerce"] #page table.shop_table {
 	border-color: #DDDDDD;
@@ -1291,22 +1338,13 @@ body[class*="woocommerce"] #page table.shop_table th {
 
 body[class*="woocommerce"] #page table.shop_table td {
 	padding: 16px 16px;
-	line-height: 1.78;
+	line-height: 1.125;
 }
 
 body[class*="woocommerce"] #page table.shop_table tfoot td,
 body[class*="woocommerce"] #page table.shop_table tfoot th,
 body[class*="woocommerce"] #page table.shop_table tbody th {
 	border-top-color: #DDDDDD;
-}
-
-body[class*="woocommerce"] #page table.my_account_orders {
-	font-size: 0.83333rem;
-}
-
-body[class*="woocommerce"] #page table.my_account_orders th,
-body[class*="woocommerce"] #page table.my_account_orders td {
-	padding: 8px 8px;
 }
 
 body[class*="woocommerce"] #page td.product-name {
@@ -1368,29 +1406,30 @@ body[class*="woocommerce"] #page #add_payment_method .checkout .create-account s
 	color: #767676;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment {
-	background: #FAFAFA;
-	border-radius: 3px;
+body[class*="woocommerce"] #page #payment {
+	background: transparent;
+	border: 1px solid #DDDDDD;
+	border-radius: 0;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment ul.payment_methods {
+body[class*="woocommerce"] #page #payment ul.payment_methods {
 	padding: 8px;
 	border-bottom-color: #DDDDDD;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment ul.payment_methods li {
+body[class*="woocommerce"] #page #payment ul.payment_methods li {
 	line-height: 1.78;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment ul.payment_methods li input {
+body[class*="woocommerce"] #page #payment ul.payment_methods li input {
 	margin-right: 1.78;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.form-row {
+body[class*="woocommerce"] #page #payment div.form-row {
 	padding: 8px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box {
+body[class*="woocommerce"] #page #payment div.payment_box {
 	padding: 8px;
 	margin-bottom: 8px;
 	margin-top: 8px;
@@ -1401,66 +1440,132 @@ body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box {
 	color: #444444;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box input.input-text,
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box textarea {
+body[class*="woocommerce"] #page #payment div.payment_box input.input-text,
+body[class*="woocommerce"] #page #payment div.payment_box textarea {
 	border-color: #DDDDDD;
 	border-top-color: #DDDDDD;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box ::-webkit-input-placeholder {
+body[class*="woocommerce"] #page #payment div.payment_box ::-webkit-input-placeholder {
 	color: #767676;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box :-moz-placeholder {
+body[class*="woocommerce"] #page #payment div.payment_box :-moz-placeholder {
 	color: #767676;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box :-ms-input-placeholder {
+body[class*="woocommerce"] #page #payment div.payment_box :-ms-input-placeholder {
 	color: #767676;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput {
+body[class*="woocommerce"] #page #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput {
 	margin-right: 16px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box .wc-credit-card-form {
+body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form {
 	margin-top: 16px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number,
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry,
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc {
+body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form-card-number,
+body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form-card-expiry,
+body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form-card-cvc {
 	font-size: 1.44rem;
 	padding: 8px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box span.help {
+body[class*="woocommerce"] #page #payment div.payment_box span.help {
 	font-size: 0.83333rem;
 	color: #767676;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box .form-row {
+body[class*="woocommerce"] #page #payment div.payment_box .form-row {
 	margin: 0 0 32px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box p:last-child {
+body[class*="woocommerce"] #page #payment div.payment_box p:last-child {
 	margin-bottom: 0;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment div.payment_box::before {
+body[class*="woocommerce"] #page #payment div.payment_box::before {
 	border-bottom-color: #DDDDDD;
 	/* arrow size / color */
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment .payment_method_paypal .about_paypal {
+body[class*="woocommerce"] #page #payment .payment_method_paypal .about_paypal {
 	float: right;
 	line-height: 52px;
 	font-size: 0.83333rem;
 }
 
-body[class*="woocommerce"] #page #add_payment_method #payment .payment_method_paypal img {
+body[class*="woocommerce"] #page #payment .payment_method_paypal img {
 	max-height: 52px;
 	vertical-align: middle;
+}
+
+body[class*="woocommerce"] #page .woocommerce-terms-and-conditions {
+	border-color: #DDDDDD;
+}
+
+body[class*="woocommerce"] #page .woocommerce-invalid #terms {
+	outline-color: salmon;
+}
+
+/**
+ * Checkout page
+ */
+body[class*="woocommerce"] #page .woocommerce-order h2 {
+	font-family: sans-serif;
+	font-size: 1.44rem;
+	font-weight: bold;
+}
+
+body[class*="woocommerce"] #page .woocommerce-order-overview.order_details {
+	display: flex;
+	justify-content: space-between;
+	align-content: flex-start;
+	align-items: stretch;
+	border: 1px solid #DDDDDD;
+}
+
+body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li {
+	border: none;
+	font-family: sans-serif;
+	font-size: 0.83333rem;
+	margin-right: 0;
+	padding: 16px;
+	text-transform: none;
+}
+
+body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li:not(:last-child) {
+	border-right: 1px solid #DDDDDD;
+}
+
+body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li strong {
+	font-family: serif;
+	font-size: 1.2rem;
+	line-height: 1.125;
+}
+
+body[class*="woocommerce"] #page .woocommerce-order-overview.order_details:before, body[class*="woocommerce"] #page .woocommerce-order-overview.order_details:after {
+	content: none !important;
+	display: none;
+}
+
+body[class*="woocommerce"] #page ul.order_details {
+	padding-left: 0;
+}
+
+body[class*="woocommerce"] #page .woocommerce-customer-details address {
+	border-radius: 0;
+	border-color: #DDDDDD;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+}
+
+body[class*="woocommerce"] #page .checkout h3 {
+	font-family: sans-serif;
+	font-size: 1.44rem;
+	font-weight: bold;
 }
 
 body[class*="woocommerce"] #page .woocommerce-terms-and-conditions {

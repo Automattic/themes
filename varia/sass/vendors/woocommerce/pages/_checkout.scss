@@ -1,0 +1,75 @@
+/**
+ * Checkout page
+ */
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.woocommerce-order {
+
+		h2 {
+			font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+			font-size: map-deep-get($config-global, "font", "size", "lg");
+			font-weight: bold;
+		}
+
+	}
+
+	.woocommerce-order-overview.order_details {
+		display: flex;
+		justify-content: space-between;
+		align-content: flex-start;
+		align-items: stretch;
+		border: 1px solid map-deep-get($config-global, "color", "border", "default");
+
+		li {
+			border: none;
+			font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+			font-size: map-deep-get($config-global, "font", "size", "sm");
+			margin-right: 0;
+			padding: map-deep-get($config-global, "spacing", "unit");
+			text-transform: none;
+
+			&:not(:last-child) {
+				border-right: 1px solid map-deep-get($config-global, "color", "border", "default");
+			}
+
+			strong {
+				font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+				font-size: map-deep-get($config-global, "font", "size", "md");
+				line-height: map-deep-get($config-global, "font", "line-height", "heading");
+			}
+		}
+
+		&:before,
+		&:after {
+			content: none !important;
+			display: none;
+		}
+	}
+
+	ul.order_details {
+		padding-left: 0;
+	}
+
+	.woocommerce-customer-details address {
+		border-radius: 0;
+		border-color: map-deep-get($config-global, "color", "border", "default");
+		border-right-width: 1px;
+		border-bottom-width: 1px;
+	}
+
+	.checkout h3 {
+		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		font-size: map-deep-get($config-global, "font", "size", "lg");
+		font-weight: bold;
+	}
+
+	.woocommerce-terms-and-conditions {
+		border-color: map-deep-get($config-global, "color", "border", "default");
+	}
+
+	.woocommerce-invalid {
+		#terms {
+			outline-color: map-deep-get($config-global, "color", "alert", "error");
+		}
+	}
+}

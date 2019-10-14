@@ -1,7 +1,7 @@
 /**
  * Account page
  */
-.woocommerce-account #page { // adding #page here to override default wc styles without !important
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
 	.woocommerce-MyAccount-content {
 		.woocommerce-notices-wrapper:empty {
@@ -15,6 +15,15 @@
 		}
 	}
 
+	table.my_account_orders {
+		font-size: map-deep-get($config-global, "font", "size", "sm");
+
+		th,
+		td {
+			padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+		}
+	}
+
 	.addresses .title h3 {
 		font-size: map-deep-get($config-global, "font", "size", "base")
 	}
@@ -23,6 +32,9 @@
 	}
 
 	.addresses .title {
+		.edit {
+			line-height: 1;
+		}
 	}
 
 	ol.commentlist.notes li.note {
