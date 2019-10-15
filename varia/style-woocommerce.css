@@ -769,6 +769,7 @@ body[class*="woocommerce"] #page .wc-block-grid__product-add-to-cart .added_to_c
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
 	text-decoration: none;
+	line-height: 1;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link > *:not(:last-child) {
@@ -1373,9 +1374,15 @@ body[class*="woocommerce"] #page .woocommerce-order-details > *:empty {
 /**
  * Cart page
  */
-body[class*="woocommerce"] #page td.product-remove {
-	height: 1.44rem;
-	width: 1.44rem;
+body[class*="woocommerce"] #page table.shop_table td.product-remove {
+	border-width: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+	body[class*="woocommerce"] #page table.shop_table td.product-remove {
+		height: 1.44rem;
+		width: 1.44rem;
+	}
 }
 
 body[class*="woocommerce"] #page td.product-thumbnail {
@@ -1545,6 +1552,7 @@ body[class*="woocommerce"] #page #payment div.payment_box {
 	margin-bottom: 8px;
 	margin-top: 8px;
 	font-size: 0.83333rem;
+	font-weight: bold;
 	border-radius: 0;
 	line-height: 1.78;
 	background-color: #DDDDDD;
