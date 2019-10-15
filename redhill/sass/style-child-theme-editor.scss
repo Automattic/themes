@@ -21,12 +21,14 @@
 
 // Reset the font-family override on html to make editor fonts match front-end
 html {
-  font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+  font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
+  font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
 }
 
 // Set the correct font family/size for the title
 .editor-post-title .editor-post-title__block .editor-post-title__input {
-  font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+  font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
+  font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
   font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
   text-align: center;
 }
