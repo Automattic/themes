@@ -7,7 +7,8 @@ html {
 }
 
 .has-small-font-size {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without support for CSS custom properties.
+	font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
 }
 
 a {
