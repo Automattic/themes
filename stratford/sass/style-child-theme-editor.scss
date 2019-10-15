@@ -122,7 +122,8 @@ h6 {
 			> a {
 				font-size: $font_size_base;
 				font-weight: normal;
-				font-family: $font_family_secondary;
+				font-family: $font_family_secondary; // For browsers without CSS custom properties support.
+				font-family: var( --font-base, $font_family_secondary );
 				line-height: $font_line_height_body;
 			}
 			> time {
@@ -143,7 +144,8 @@ h6 {
 	border: 1px solid $color_background_light;
 	padding: $spacing_horizontal;
 	p {
-		font-family: $font_family_secondary;
+		font-family: $font_family_secondary; // For browsers without CSS custom properties support.
+		font-family: var( --font-base, $font_family_secondary );
 		font-size: $font_size_md;
 		line-height: $font_line_height_body;
 	}
