@@ -1,37 +1,31 @@
 /**
  * WooCommerce Styles
- * - These styles should be loaded when WooCommerce is active
+ * - These styles should only be loaded when WooCommerce is active
  */
 
 /**
- * Varia Abstracts
- * - Mixins, variables and functions
+ * Abstracts
+ * - Functions and config
  */
-@import "sass/abstracts/functions";
-@import "sass/abstracts/config-global";
-@import "sass/abstracts/mixins";
+@import "../abstracts/functions";
+@import "../abstracts/config-global";
 
 /**
- * WooCommerce Abstracts
+ * WooCommerce Config
  */
-@import "sass/vendors/woocommerce/abstracts/imports";
+@import "../vendors/woocommerce/abstracts/config-woocommerce";
 
 /**
- * Child Theme Name Variables
+ * Varia Mixins
  */
-@import "config-child-theme-deep";
-
-/**
- * Child Theme Name WooCommerce Variables
- */
-@import "config-child-theme-woocommerce";
+@import "../abstracts/mixins";
 
 /**
  * Varia Extends
  */
-@import "sass/base/extends";
+@import "../base/extends";
 
 /**
  * WooCommerce Styles
  */
-@import "sass/vendors/woocommerce";
+@import "../vendors/woocommerce/style";
