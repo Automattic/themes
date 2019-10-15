@@ -91,7 +91,7 @@ if ( ! function_exists( 'varia_cart_link' ) ) {
 		$link_output = sprintf(
 			'<a class="woocommerce-cart-link" href="%1$s" title="%2$s">
 				%3$s
-				<span class="woocommerce-cart-subtotal">%4$s</span> - <small class="woocommerce-cart-count">%5$s</small>
+				<span class="woocommerce-cart-subtotal">%4$s</span><small class="woocommerce-cart-count">%5$s</small>
 			</a>',
 			esc_url( wc_get_cart_url() ),
 			esc_attr__( 'View your shopping cart', 'varia' ),

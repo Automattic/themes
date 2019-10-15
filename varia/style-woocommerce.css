@@ -767,21 +767,66 @@ body[class*="woocommerce"] #page .wc-block-grid__product-add-to-cart .added_to_c
 	text-decoration: none;
 }
 
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
+	text-decoration: none;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link > *:not(:last-child) {
+	margin-right: 4px;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .woocommerce-cart-subtotal {
+	color: #444444;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .woocommerce-cart-count {
+	color: #767676;
+	font-weight: normal;
+}
+
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-icon {
 	float: left;
 	height: 1.2rem;
 	width: 1.2rem;
 }
 
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-menu {
+	padding: 0 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-menu {
+		padding: 0;
+	}
+}
+
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
-	max-width: 320px;
+	max-width: 100%;
 	padding: 8px 0;
 }
 
 @media only screen and (min-width: 560px) {
 	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		max-width: 320px;
 		padding: 16px;
 	}
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__total {
+	text-align: right;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons {
+	text-align: right;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a {
+	margin: 0;
+	text-align: right;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:not(:last-child) {
+	margin-right: 8px;
 }
 
 body[class*="woocommerce"] #page .main-navigation ul.cart_list li a,
@@ -792,7 +837,9 @@ body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a {
 body[class*="woocommerce"] #page .main-navigation ul.cart_list li .quantity,
 body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li .quantity,
 body[class*="woocommerce"] #page .main-navigation ul.cart_list li a:not(.remove),
-body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a:not(.remove) {
+body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a:not(.remove),
+body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total {
+	font-family: sans-serif;
 	font-size: 1rem;
 }
 
