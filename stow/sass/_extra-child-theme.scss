@@ -265,7 +265,8 @@ a {
 	border: 1px solid #f2f2f2;
 	padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
 	p {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
+		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
 	}
 	cite {
 		color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -325,7 +326,8 @@ a {
  */
 .wp-block-latest-comments {
 	.wp-block-latest-comments__comment-meta {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
+		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
 		.wp-block-latest-comments__comment-date {
 			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
 		}
