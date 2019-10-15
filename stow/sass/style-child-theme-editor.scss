@@ -94,7 +94,8 @@ a {
 	 border: 1px solid #f2f2f2;
 	 padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
 	 p {
-		 font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
 	 }
 	 .wp-block-quote__citation {
 		 color: #{map-deep-get($config-global, "color", "secondary", "default")};
