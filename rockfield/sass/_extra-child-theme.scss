@@ -507,7 +507,8 @@ table,
   .widget-title,
   .widgettitle {
     font-size: #{map-deep-get($config-global, "font", "size", "base")};
-    font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+    font-family: #{map-deep-get($config-global, "font", "family", "ui")}; // For browsers without CSS custom properties support.
+    font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "ui")} );
     margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
     &:empty {
