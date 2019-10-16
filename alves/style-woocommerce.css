@@ -163,6 +163,61 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Varia Responsive logic
+ */
+/**
+ * Page Layout Styles & Repsonsive Styles
+ */
+/* Responsive width-content overrides */
+body[class*="woocommerce"] #page .woocommerce,
+body[class*="woocommerce"] #page #woocommerce-wrapper {
+	width: calc(100% + 256px);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .woocommerce,
+	body[class*="woocommerce"] #page #woocommerce-wrapper {
+		width: calc(calc( 560px - 32px) + 256px);
+		max-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	body[class*="woocommerce"] #page .woocommerce,
+	body[class*="woocommerce"] #page #woocommerce-wrapper {
+		width: calc(calc( 640px - 32px) + 256px);
+		max-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 782px) {
+	body[class*="woocommerce"] #page .woocommerce,
+	body[class*="woocommerce"] #page #woocommerce-wrapper {
+		width: calc(calc( 782px - 32px) + 256px);
+		max-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	body[class*="woocommerce"] #page .woocommerce,
+	body[class*="woocommerce"] #page #woocommerce-wrapper {
+		width: calc(calc( 782px - 32px) + 256px);
+		max-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	body[class*="woocommerce"] #page .woocommerce,
+	body[class*="woocommerce"] #page #woocommerce-wrapper {
+		width: calc(calc( 782px - 32px) + 256px);
+		max-width: 100%;
+	}
+}
+
+/**
  * Varia Extends
  */
 /**
@@ -863,8 +918,8 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .wooc
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a {
-	color: #ffffff;
-	background-color: #3E7D98;
+	color: #3E7D98;
+	background-color: #ffffff;
 	margin: 0;
 	text-align: right;
 }
@@ -1878,4 +1933,40 @@ body[class*="woocommerce"] #page .widget_price_filter .ui-slider .ui-slider-hand
 
 body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-widget-content {
 	background-color: #4d6974;
+}
+
+/**
+ * WC Wrap
+ */
+/**
+ * Mini cart
+ */
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+	background-color: #3E7D98;
+}
+
+body[class*="woocommerce"] #page .main-navigation .quantity,
+body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total {
+	color: #ffffff;
+}
+
+body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li .sub-menu a.remove:hover,
+body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li .sub-menu a.remove:focus {
+	text-decoration: none;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
+		left: auto;
+		right: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		max-width: 400px;
+	}
+	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item:hover > ul:before,
+	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item.focus > ul:before,
+	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
+		margin-left: auto;
+		margin-right: 16px;
+	}
 }

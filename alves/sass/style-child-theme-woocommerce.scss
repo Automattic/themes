@@ -26,6 +26,11 @@
 @import "../../varia/sass/abstracts/mixins";
 
 /**
+ * Varia Responsive logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
  * Varia Extends
  */
 @import "../../varia/sass/base/extends";
@@ -34,3 +39,48 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * WC Wrap
+ */
+
+body[class*="woocommerce"] #page .woocommerce,
+body[class*="woocommerce"] #page #woocommerce-wrapper {
+	@extend %responsive-alignwide-nested;
+}
+
+/**
+ * Mini cart
+ */
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
+}
+
+body[class*="woocommerce"] #page .main-navigation .quantity,
+body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total {
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+}
+
+body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li .sub-menu a.remove:hover,
+body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li .sub-menu a.remove:focus {
+	text-decoration: none;
+}
+
+@include media(mobile) {
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
+		left: auto;
+		right: 0;
+	}
+
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		max-width: 400px;
+	}
+
+	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item:hover > ul:before,
+	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item.focus > ul:before,
+	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
+		margin-left: auto;
+		margin-right: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+}
