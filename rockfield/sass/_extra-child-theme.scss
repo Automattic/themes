@@ -249,6 +249,7 @@ a {
 	.meta-nav {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+		font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "ui")} );
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -287,6 +288,7 @@ a {
 	background: #{map-deep-get($config-global, "color", "secondary", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "ui")} );
 	text-transform: uppercase;
 }
 
@@ -426,6 +428,7 @@ table,
 
 .comment-meta .comment-metadata {
 	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "ui")} );
 	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 	font-weight: bold;
 	text-transform: uppercase;
