@@ -203,6 +203,8 @@ a {
 .site-description {
 	color: #{map-deep-get($config-header, "branding", "color", "text")};
 	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	font-family: #{map-deep-get($config-header, "branding", "description", "font", "family")}; // For browsers without support for CSS variables.
+	font-family: var( --font-headings, #{map-deep-get($config-header, "branding", "description", "font", "family")} );
 }
 
 .site-title + .site-description {
