@@ -26,9 +26,23 @@ $config-woocommerce: (
 		"padding": map-deep-get($config-global, "spacing", "horizontal"),
 	),
 
+	/* Mini cart */
+	"mini-cart": (
+		/* Color */
+		"color": (
+			"subtotal": map-deep-get($config-global, "color", "foreground", "default"),
+			"count": map-deep-get($config-global, "color", "foreground", "light"),
+		),
+		/* Button */
+		"button": (
+			"color": map-deep-get($config-button, "color", "text"),
+			"background-color": map-deep-get($config-button, "color", "background"),
+		),
+	),
+
 	/* Star Rating */
 	"star-rating": (
-		/* Font Family */
+		/* Color */
 		"color": map-deep-get($config-global, "color", "alert", "warning"),
 	),
 );
