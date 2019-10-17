@@ -46,7 +46,24 @@
 			padding: #{map-deep-get($config-global, "spacing", "unit")};
 		}
 	}
+}
 
+// Remove top margin/padding from the header if the first block is .alignfull
+@include media(mobile) {
+	.a8c-template-editor.fse-header .block-editor-block-list__layout > .block-editor-block-list__block {
+		&.is-selected:first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+			margin-top: 14px;
+		}
+		&:not(.is-selected):first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+			margin-top: 0;
+		}
+	}
+}
+.template-block .fse-header .block-editor-block-list__layout > .block-editor-block-list__block:first-child[data-align='full'] {
+	margin-top: -16px;
+	@include media(mobile) {
+		margin-top: -32px;
+	}
 }
 
 .post-content__block {
