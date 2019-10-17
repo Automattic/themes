@@ -3890,8 +3890,8 @@ p:not(.site-title) a:hover {
 	.wp-block-cover-image {
 		min-height: 640px;
 	}
-	.wp-block-cover h1,
-	.wp-block-cover-image h1 {
+	.wp-block-cover h1:not(.site-title),
+	.wp-block-cover-image h1:not(.site-title) {
 		font-size: 2.98598rem;
 	}
 	.wp-block-cover h2,
@@ -4034,6 +4034,69 @@ p:not(.site-title) a:hover {
  * Full Site Editing
  * - Full Site Editing overrides
  */
+.fse-template {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.fse-template .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-template .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-template .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-template .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-template .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-template .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+.fse-header > *:first-child:not(.alignfull) {
+	margin-top: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-header > *:first-child:not(.alignfull) {
+		margin-top: 32px;
+	}
+}
+
+.fse-footer {
+	display: block;
+}
+
+.fse-footer .site-info {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-footer .site-info {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
 .fse-enabled.home.page.hide-homepage-title .site-header.entry-content {
 	padding-bottom: 32px;
 }
@@ -4055,4 +4118,9 @@ p:not(.site-title) a:hover {
 	.fse-template .main-navigation > div {
 		padding: 0 32px;
 	}
+}
+
+.fse-template .wp-block-cover .site-title a,
+.fse-template .wp-block-cover-image .site-title a {
+	text-decoration: none;
 }

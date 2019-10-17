@@ -3919,8 +3919,8 @@ p:not(.site-title) a:hover {
 	.wp-block-cover-image {
 		min-height: 640px;
 	}
-	.wp-block-cover h1,
-	.wp-block-cover-image h1 {
+	.wp-block-cover h1:not(.site-title),
+	.wp-block-cover-image h1:not(.site-title) {
 		font-size: 2.98598rem;
 	}
 	.wp-block-cover h2,
@@ -4147,4 +4147,14 @@ p:not(.site-title) a:hover {
 	.fse-template .main-navigation > div {
 		padding: 0 32px;
 	}
+}
+
+.fse-template .wp-block-cover .site-title a,
+.fse-template .wp-block-cover-image .site-title a {
+	text-decoration: none;
+}
+
+.fse-template .wp-block-cover .has-background,
+.fse-template .wp-block-cover-image .has-background {
+	text-shadow: none;
 }
