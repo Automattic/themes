@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Description: A minimalist theme for those with an eye for style. Modern Business is a perfect choice for stores offering high-end products and services, or the fashion and beauty industries -- any site where elegance and polish is key.
 Requires at least: WordPress 4.9.6
 Template: twentynineteen
-Version: 1.7
+Version: 1.7.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
@@ -1162,7 +1162,6 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
     width: auto;
-    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
   }
@@ -1268,7 +1267,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
@@ -1288,7 +1286,6 @@ body.page .main-navigation {
     left: auto;
     display: block;
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -1352,7 +1349,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
@@ -1376,7 +1372,6 @@ body.page .main-navigation {
     left: auto;
     display: table;
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -3634,13 +3629,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__media {
-  grid-area: media-text-content;
-}
-
-@media only screen and (min-width: 600px) {
-  .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__media {
-    grid-area: media-text-media;
-  }
+  grid-row: 1;
 }
 
 .entry .entry-content .wp-block-media-text.alignfull .wp-block-media-text__content {
@@ -3664,12 +3653,12 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__content {
-  grid-area: media-text-media;
+  grid-row: 2;
 }
 
 @media only screen and (min-width: 600px) {
   .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__content {
-    grid-area: media-text-content;
+    grid-row: 1;
   }
 }
 
