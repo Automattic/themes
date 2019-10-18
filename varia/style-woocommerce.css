@@ -1899,3 +1899,20 @@ body[class*="woocommerce"] #page .widget_price_filter .ui-slider .ui-slider-hand
 body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-widget-content {
 	background-color: #767676;
 }
+
+/**
+ * Filter by Product List Widgets
+ */
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li {
+		flex: 0 1 auto;
+		margin-bottom: 32px;
+		padding: 0;
+		width: calc((100% / 3) - 16px);
+	}
+}
