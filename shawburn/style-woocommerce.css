@@ -842,14 +842,35 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .wooc
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a {
+	clear: right;
 	color: #0C80A1;
 	background-color: white;
 	margin: 0;
-	text-align: right;
+	float: right;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2),
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2) ~ a {
+	clear: inherit;
+	float: inherit;
+	margin-bottom: 0;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2):not(:last-child),
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2) ~ a:not(:last-child) {
+	margin-right: 8px;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:not(:last-child) {
-	margin-right: 8px;
+	margin-bottom: 8px;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a.wcppec-cart-widget-button {
+	display: inline-block;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget p.buttons.wcppec-cart-widget-spb {
+	padding: 0;
 }
 
 body[class*="woocommerce"] #page .main-navigation ul.cart_list li a,
@@ -975,6 +996,12 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.p
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .button,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .button {
 	margin-top: inherit;
+}
+
+#woocommerce-wrapper ul.products li.product .added_to_cart,
+body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .added_to_cart,
+body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .added_to_cart {
+	margin-top: 16px;
 }
 
 #woocommerce-wrapper ul.products li.product .price,
@@ -1186,7 +1213,8 @@ body[class*="woocommerce"] #page div.summary > *:not(:first-child),
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(:first-child),
 body[class*="woocommerce"] #page .products.related > *:not(:first-child),
 body[class*="woocommerce"] #page .up-sells > *:not(:first-child),
-body[class*="woocommerce"] #page .woocommerce-order > *:not(:first-child) {
+body[class*="woocommerce"] #page .woocommerce-order > *:not(:first-child),
+.woocommerce-account #page .entry-content .woocommerce > *:not(:first-child) {
 	margin-top: 32px;
 }
 
@@ -1194,7 +1222,8 @@ body[class*="woocommerce"] #page div.summary > *:not(:last-child),
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(:last-child),
 body[class*="woocommerce"] #page .products.related > *:not(:last-child),
 body[class*="woocommerce"] #page .up-sells > *:not(:last-child),
-body[class*="woocommerce"] #page .woocommerce-order > *:not(:last-child) {
+body[class*="woocommerce"] #page .woocommerce-order > *:not(:last-child),
+.woocommerce-account #page .entry-content .woocommerce > *:not(:last-child) {
 	margin-bottom: 32px;
 }
 
@@ -1207,7 +1236,9 @@ body[class*="woocommerce"] #page .products.related > .form-row-last,
 body[class*="woocommerce"] #page .up-sells > *:empty + *,
 body[class*="woocommerce"] #page .up-sells > .form-row-last,
 body[class*="woocommerce"] #page .woocommerce-order > *:empty + *,
-body[class*="woocommerce"] #page .woocommerce-order > .form-row-last {
+body[class*="woocommerce"] #page .woocommerce-order > .form-row-last,
+.woocommerce-account #page .entry-content .woocommerce > *:empty + *,
+.woocommerce-account #page .entry-content .woocommerce > .form-row-last {
 	margin-top: 0;
 }
 
@@ -1215,7 +1246,8 @@ body[class*="woocommerce"] #page div.summary > *:not(img):empty,
 body[class*="woocommerce"] #page div.product .woocommerce-tabs .panel > *:not(img):empty,
 body[class*="woocommerce"] #page .products.related > *:not(img):empty,
 body[class*="woocommerce"] #page .up-sells > *:not(img):empty,
-body[class*="woocommerce"] #page .woocommerce-order > *:not(img):empty {
+body[class*="woocommerce"] #page .woocommerce-order > *:not(img):empty,
+.woocommerce-account #page .entry-content .woocommerce > *:not(img):empty {
 	margin: 0;
 }
 
@@ -1530,17 +1562,21 @@ body[class*="woocommerce"] #page #add_payment_method table.cart td.actions .coup
 	margin: 0 16px 0 0;
 }
 
-body[class*="woocommerce"] #page #add_payment_method .wc-proceed-to-checkout {
+body[class*="woocommerce"] #page .wc-proceed-to-checkout {
 	padding: 32px 0;
 }
 
-body[class*="woocommerce"] #page #add_payment_method .wc-proceed-to-checkout a.checkout-button {
-	margin-bottom: 32px;
+body[class*="woocommerce"] #page .wc-proceed-to-checkout a.checkout-button {
+	margin-bottom: 16px;
 	font-size: 1.2rem;
 	padding: 16px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method .checkout .create-account small {
+body[class*="woocommerce"] #page .wc-proceed-to-checkout a.wcppec-checkout-buttons__button {
+	padding-top: 0;
+}
+
+body[class*="woocommerce"] #page .checkout .create-account small {
 	font-size: 0.69444rem;
 	color: #767676;
 }
@@ -1699,6 +1735,10 @@ body[class*="woocommerce"] #page .addresses .title .edit {
 	line-height: 1;
 }
 
+.woocommerce-account .entry-content .woocommerce > h2 {
+	font-size: 1.44rem;
+}
+
 /**
  * Products Page
  */
@@ -1844,6 +1884,19 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 	vertical-align: middle;
 }
 
+.single-product #page #woocommerce-wrapper div.product form.cart div.quantity.hidden,
+.single-product #page #woocommerce-wrapper div.product form.cart button.hidden {
+	display: none;
+}
+
+.single-product #page #woocommerce-wrapper div.product .woo_pp_cart_buttons_div {
+	text-align: left;
+}
+
+.single-product #page #woocommerce-wrapper div.product .woo_pp_cart_buttons_div .wcppec-checkout-buttons__button {
+	padding-top: 0;
+}
+
 /**
  * Widget Imports
  */
@@ -1857,4 +1910,21 @@ body[class*="woocommerce"] #page .widget_price_filter .ui-slider .ui-slider-hand
 
 body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-widget-content {
 	background-color: #767676;
+}
+
+/**
+ * Filter by Product List Widgets
+ */
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li {
+		flex: 0 1 auto;
+		margin-bottom: 32px;
+		padding: 0;
+		width: calc((100% / 3) - 16px);
+	}
 }
