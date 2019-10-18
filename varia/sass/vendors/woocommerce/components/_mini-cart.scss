@@ -61,16 +61,38 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 			.woocommerce-mini-cart__buttons {
 				text-align: right;
+
 				a {
+					clear: right;
 					color: map-deep-get($config-woocommerce, "mini-cart", "button", "color");
 					background-color: map-deep-get($config-woocommerce, "mini-cart", "button", "background-color");
 					margin: 0;
-					text-align: right;
+					float: right;
+
+					// Default WooCommerce View Cart/Checkout buttons
+					&:first-child:nth-last-child(2),
+					&:first-child:nth-last-child(2) ~ a {
+						clear: inherit;
+						float: inherit;
+						margin-bottom: 0;
+
+						&:not(:last-child) {
+							margin-right: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+						}
+					}
 
 					&:not(:last-child) {
-						margin-right: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+						margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+					}
+
+					&.wcppec-cart-widget-button {
+						display: inline-block;
 					}
 				}
+			}
+
+			p.buttons.wcppec-cart-widget-spb {
+				padding: 0;
 			}
 		}
 
