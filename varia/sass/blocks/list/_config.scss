@@ -4,6 +4,9 @@
 $config-list: (
 	// Fonts
 	"font": (
-		"family": map-deep-get($config-global, "font", "family", "secondary"),
+		"family": (
+			"fallback": map-deep-get($config-global, "font", "family", "secondary"),
+			"css-var": '--font-base',
+		)
 	),
 );

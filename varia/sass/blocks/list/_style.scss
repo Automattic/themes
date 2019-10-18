@@ -1,7 +1,6 @@
 ul,
 ol {
-	font-family: #{map-deep-get($config-list, "font", "family")}; // For browsers without support for CSS variables.
-	font-family: var( --font-base, #{map-deep-get($config-list, "font", "family")} );
+	@include font-family( map-deep-get($config-list, "font", "family") );
 	margin: 0;
 	padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
 }
