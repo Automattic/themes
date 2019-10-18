@@ -2,8 +2,7 @@
 	padding-left: 0;
 
 	& > li > a {
-		font-family: #{map-deep-get($config-heading, "font", "family")}; // For browsers without support for CSS variables.
-		font-family: var( --font-headings, #{map-deep-get($config-heading, "font", "family")} );
+		@include font-family( map-deep-get($config-heading, "font", "family") );
 		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
 		font-weight: #{map-deep-get($config-heading, "font", "weight")};
 		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};

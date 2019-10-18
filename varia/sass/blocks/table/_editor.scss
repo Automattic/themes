@@ -2,8 +2,7 @@ table,
 .wp-block-table {
 
 	th {
-		font-family: #{map-deep-get($config-heading, "font", "family")}; // For browsers without support for CSS variables.
-		font-family: var( --font-headings, #{map-deep-get($config-heading, "font", "family")} );
+		@include font-family( map-deep-get($config-heading, "font", "family") );
 	}
 
 	td,

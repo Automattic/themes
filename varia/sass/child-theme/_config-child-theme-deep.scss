@@ -202,7 +202,10 @@ $config-heading: (
 	// Fonts & Typography
 	"font": (
 		// Family
-		"family": map-deep-get($config-global, "font", "family", "primary"),
+		"family": (
+			"fallback": map-deep-get($config-global, "font", "family", "primary"),
+			"css-var": '--font-headings',
+		),
 		// Size
 		"size": (
 			"h6": map-deep-get($config-global, "font", "size", "md"),
@@ -251,7 +254,10 @@ $config-list: (
 $config-pullquote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-heading, "font", "family")},
+		"family": (
+			"fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
+			"css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
+		),
 	),
 	// Border
 	"color": (
@@ -270,7 +276,10 @@ $config-pullquote: (
 $config-quote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-heading, "font", "family")},
+		"family": (
+			"fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
+			"css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
+		),
 	),
 );
 

@@ -5,7 +5,10 @@ $config-heading: (
 	// Fonts & Typography
 	"font": (
 		// Family
-		"family": map-deep-get($config-global, "font", "family", "primary"),
+		"family": (
+			"fallback": map-deep-get($config-global, "font", "family", "primary"),
+			"css-var": '--font-headings',
+		),
 		// Size
 		"size": (
 			"h6": map-deep-get($config-global, "font", "size", "md"),
