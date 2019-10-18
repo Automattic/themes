@@ -4,8 +4,7 @@
 
 // HTML reset
 html {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "primary")} );
+	@include font-family (map-deep-get($config-global, "font", "family", "primary") );
 }
 
 // Link style
@@ -242,8 +241,7 @@ a {
 // Quote block
 .wp-block-quote {
   p {
-    font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "primary") );
   }
 }
 
@@ -270,8 +268,7 @@ table,
 
 .entry-footer {
 	border-top: 1px solid #{map-deep-get($config-global, "color", "border", "default")};
-	font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 	font-size: #{map-deep-get($config-global, "font", "size", "xs")};
 	padding-top: #{map-deep-get($config-global, "spacing", "unit")};
 }
@@ -279,8 +276,7 @@ table,
 article .entry-header .entry-title,
 .page-title,
 .a8c-posts-list-item__title {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-	font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 	font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
 	margin-bottom: #{1.5 * map-deep-get($config-global, "spacing", "vertical")};
 
@@ -296,8 +292,7 @@ article .entry-header .entry-title,
 }
 
 .entry-content {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "primary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 }
 
 // Pagination
@@ -306,8 +301,7 @@ article .entry-header .entry-title,
 
   .nav-links > * {
     color: map-deep-get($config-global, "color", "foreground", "light");
-    font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "secondary") );
     font-size: #{map-deep-get($config-global, "font", "size", "base")};
     text-transform: uppercase;
 
@@ -352,8 +346,7 @@ article .entry-header .entry-title,
 
 	.meta-nav {
 		color: map-deep-get($config-global, "color", "foreground", "light");
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: bold;
 		text-transform: uppercase;
@@ -411,16 +404,14 @@ article .entry-header .entry-title,
 
 .comments-title,
 .comment-reply-title {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-	font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 	font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
 }
 
 .comment-meta {
   .comment-metadata {
     color: map-deep-get($config-global, "color", "foreground", "light");
-    font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 
     a {
       color: inherit;
@@ -438,8 +429,7 @@ article .entry-header .entry-title,
 .comment-navigation {
     a {
     color: map-deep-get($config-global, "color", "foreground", "light");
-    font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "secondary") );
     font-size: #{map-deep-get($config-global, "font", "size", "sm")};
     text-transform: uppercase;
 
@@ -461,8 +451,7 @@ article .entry-header .entry-title,
 
   .widget-title,
   .widgettitle {
-    font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "secondary")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "secondary") );
     font-size: #{map-deep-get($config-global, "font", "size", "base")};
     margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
     text-transform: uppercase;
