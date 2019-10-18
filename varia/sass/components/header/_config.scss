@@ -11,8 +11,8 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": (
-					"fallback": map-deep-get($config-global, "font", "family", "primary"),
-					"css-var": '--font-headings',
+					"fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
+					"css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
 				),
 				"size": map-deep-get($config-global, "font", "size", "md"),
 				"weight": bold,
@@ -24,8 +24,8 @@ $config-header: (
 			// Fonts
 			"font": (
 				"family": (
-					"fallback": map-deep-get($config-global, "font", "family", "secondary"),
-					"css-var": '--font-base',
+					"fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
+					"css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
 				),
 				"size": map-deep-get($config-global, "font", "size", "sm"),
 			),
@@ -42,8 +42,8 @@ $config-header: (
 		// Fonts
 		"font": (
 			"family": (
-				"fallback": map-deep-get($config-global, "font", "family", "primary"),
-				"css-var": '--font-headings',
+				"fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
+				"css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
 			),
 			"size": map-deep-get($config-global, "font", "size", "md"),
 			"weight": bold,

@@ -11,8 +11,7 @@
 .a8c-posts-list-item__featured span {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without support for CSS variables.
-	font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 	font-weight: bold;
 	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 	line-height: 1;

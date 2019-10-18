@@ -1,8 +1,7 @@
 body {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	background-color: #{map-deep-get($config-global, "color", "background", "default")};
-	font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers that don't support CSS variables.
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 	font-size: #{map-deep-get($config-global, "font", "size", "root")};
 	font-weight: normal;
 	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};

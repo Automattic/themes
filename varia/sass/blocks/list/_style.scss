@@ -19,8 +19,7 @@ li > ol {
 }
 
 dt {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without support for CSS variables.
-	font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 	font-weight: bold;
 }
 

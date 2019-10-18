@@ -9,8 +9,7 @@
 	}
 
 	.post-title {
-		font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without support for CSS variables.
-		font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 		font-size: #{map-deep-get($config-global, "font", "size", "lg")};
 		font-weight: 600;
 	}
@@ -39,8 +38,7 @@
 		margin: 0 calc(-0.66 * #{map-deep-get($config-global, "spacing", "unit")});
 
 		& > * {
-			font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without support for CSS variables.
-			font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+			@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 			font-size: #{map-deep-get($config-global, "font", "size", "md")};
 			font-weight: 600;
 			padding-left: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
