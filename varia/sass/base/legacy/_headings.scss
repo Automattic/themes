@@ -24,8 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-	@include font-family-old( $font__heading ); // For browsers without support for CSS variables.
-	font-family: var( --font-headings, $font_heading );
+	@include font-family( $font__heading );
 }
 
 .main-navigation,
@@ -53,8 +52,7 @@ h6 {
 }
 
 .page-title {
-	@include font-family-old( $font__body ); // For browsers without support for CSS variables.
-	font-family: var( --font-base, $font_body );
+	@include font-family( $font__body );
 }
 
 .site-branding,

@@ -107,8 +107,7 @@
 	}
 
 	ul > li > a::before {
-		font-family: $font__body; // For browsers without support for CSS variables.
-		font-family: var( --font-base, $font__body );
+		font-family: $font__body;
 		font-weight: normal;
 		content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
 		counter-increment: submenu
@@ -116,6 +115,6 @@
 }
 
 /* Ensure all font family declarations come with non-latin fallbacks */
-@mixin font-family-old( $font_family: $font__body ) {
+@mixin font-family( $font_family: $font__body ) {
 	font-family: $font_family;
 }
