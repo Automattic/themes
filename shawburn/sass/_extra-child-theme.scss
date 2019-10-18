@@ -332,8 +332,7 @@ hr.wp-block-separator.is-style-wide,
 .a8c-posts-list .a8c-posts-list-item__featured span {
 	background: #{map-deep-get($config-global, "color", "background", "light")};
 	color: #{map-deep-get($config-global, "color", "foreground", "light")};
-	font-family: #{map-deep-get($config-global, "font", "family", "ui")}; // For browsers without CSS custom properties support.
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "ui")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 	//text-transform: uppercase;
 }
 
