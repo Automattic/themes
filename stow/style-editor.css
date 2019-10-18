@@ -116,6 +116,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Child Theme Name
  */
 /**
@@ -578,7 +582,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-pullquote p {
 	font-family: "Source Sans Pro", Arial, sans-serif;
-	font-family: var(--font-headings, "Source Sans Pro", Arial, sans-serif);
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-size: 1.2em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -638,7 +642,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-quote p {
 	font-family: "Source Sans Pro", Arial, sans-serif;
-	font-family: var(--font-headings, "Source Sans Pro", Arial, sans-serif);
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-size: 1.2em;
 	letter-spacing: normal;
 }
@@ -650,7 +654,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
 	font-family: "Source Sans Pro", Arial, sans-serif;
-	font-family: var(--font-headings, "Source Sans Pro", Arial, sans-serif);
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-size: 1.44em;
 	letter-spacing: normal;
 	line-height: 1.125;

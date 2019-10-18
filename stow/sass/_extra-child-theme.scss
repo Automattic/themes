@@ -265,8 +265,7 @@ a {
 	border: 1px solid #f2f2f2;
 	padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
 	p {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 	}
 	cite {
 		color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -303,8 +302,7 @@ a {
 			color: #{map-deep-get($config-button, "color", "text")};
 			cursor: pointer;
 			font-weight: #{map-deep-get($config-button, "font", "weight")};
-			font-family: #{map-deep-get($config-button, "font", "family")};
-			font-family: var( --font-base, #{map-deep-get($config-button, "font", "family")} );
+			@include font-family( map-deep-get($config-button, "font", "family") );
 			font-size: #{map-deep-get($config-button, "font", "size")};
 			background-color: #{map-deep-get($config-button, "color", "background")};
 			border-radius: #{map-deep-get($config-button, "border-radius")};
@@ -327,8 +325,7 @@ a {
  */
 .wp-block-latest-comments {
 	.wp-block-latest-comments__comment-meta {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		.wp-block-latest-comments__comment-date {
 			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
 		}
