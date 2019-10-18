@@ -31,12 +31,10 @@ $font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
 $font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
 $font_size_lg: #{map-deep-get($config-global, "font", "size", "lg")};
 $font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
-$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
 $font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
 $font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
 $button_line_height: #{map-deep-get($config-button, "font", "line-height")};
 $button_font_weight: #{map-deep-get($config-button, "font", "weight")};
-$button_font_family: #{map-deep-get($config-button, "font", "family")};
 $button_font_size: #{map-deep-get($config-button, "font", "size")};
 $button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")};
 $button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
@@ -312,8 +310,7 @@ a {
 		}
 	}
 	p {
-		font-family: $font_family_secondary; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, $font_family_secondary );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		font-size: $font_size_md;
 		line-height: $font_line_height_body;
 	}
@@ -337,8 +334,7 @@ a {
 			line-height: $button_line_height;
 			cursor: pointer;
 			font-weight: $button_font_weight;
-			font-family: $button_font_family;
-			font-family: var( --font-base, $button_font_family );
+			@include font-family( map-deep-get($config-button, "font", "family") );
 			// font-size: $button_font_size;
 			padding: $button_spacing_vertical $button_spacing_horizontal;
 			display: inline-block;
@@ -357,8 +353,7 @@ a {
  */
 .wp-block-latest-comments {
 	.wp-block-latest-comments__comment-meta {
-		font-family: $font_family_secondary; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, $font_family_secondary );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 	}
 }
 
@@ -408,8 +403,7 @@ input[type="submit"],
 			> a {
 				font-size: $font_size_base;
 				font-weight: normal;
-				font-family: $font_family_secondary; // For browsers without CSS custom properties support.
-				font-family: var( --font-base, $font_family_secondary );
+				@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 				line-height: $font_line_height_body;
 			}
 			> time {

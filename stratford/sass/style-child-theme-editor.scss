@@ -47,13 +47,10 @@ $font_size_xs: #{map-deep-get($config-global, "font", "size", "xs")};
 $font_size_md: #{map-deep-get($config-global, "font", "size", "md")};
 $font_size_base: #{map-deep-get($config-global, "font", "size", "base")};
 $font_size_xl: #{map-deep-get($config-global, "font", "size", "xl")};
-$font_family_primary: #{map-deep-get($config-global, "font", "family", "primary")};
-$font_family_secondary: #{map-deep-get($config-global, "font", "family", "secondary")};
 $font_family_code: #{map-deep-get($config-global, "font", "family", "code")};
 $font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "body")};
 $button_line_height: #{map-deep-get($config-button, "font", "line-height")};
 $button_font_weight: #{map-deep-get($config-button, "font", "weight")};
-$button_font_family: #{map-deep-get($config-button, "font", "family")};
 $button_font_size: #{map-deep-get($config-button, "font", "size")};
 $button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}; 
 $button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
@@ -122,8 +119,7 @@ h6 {
 			> a {
 				font-size: $font_size_base;
 				font-weight: normal;
-				font-family: $font_family_secondary; // For browsers without CSS custom properties support.
-				font-family: var( --font-base, $font_family_secondary );
+				@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 				line-height: $font_line_height_body;
 			}
 			> time {
@@ -144,8 +140,7 @@ h6 {
 	border: 1px solid $color_background_light;
 	padding: $spacing_horizontal;
 	p {
-		font-family: $font_family_secondary; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, $font_family_secondary );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		font-size: $font_size_md;
 		line-height: $font_line_height_body;
 	}
@@ -164,8 +159,7 @@ h6 {
 			line-height: $button_line_height;
 			cursor: pointer;
 			font-weight: $button_font_weight;
-			font-family: $button_font_family;
-			font-family: var( --font-base, $button_font_family );
+			@include font-family( map-deep-get($config-button, "font", "family") );
 			background-color: $button_background;
 			font-size: $button_font_size;
 			padding: $button_spacing_vertical $button_spacing_horizontal;
@@ -236,8 +230,7 @@ h6 {
 		color: $button_color;
 		cursor: pointer;
 		font-weight: $button_font_weight;
-		font-family: $button_font_family;
-		font-family: var( --font-base, $button_font_family );
+		@include font-family( map-deep-get($config-button, "font", "family") );
 		font-size: $button_font_size;
 		background-color: $button_background;
 		border-radius: 5em;
