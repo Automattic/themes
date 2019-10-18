@@ -292,8 +292,7 @@ article .entry-header .entry-title,
 // Quote block
 .wp-block-quote {
   p {
-    font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "secondary") );
   }
 }
 
@@ -394,16 +393,14 @@ table,
 
 	.meta-nav {
 		color: #{map-deep-get($config-global, "color", "foreground", "default")};
-		font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-		font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: 900;
 		text-transform: uppercase;
 	}
 
 	.post-title {
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")}; // For browsers without CSS custom properties support.
-		font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "secondary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		font-weight: normal;
 	}
@@ -514,8 +511,7 @@ table,
 
 	.reply {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};;
-		font-family: #{map-deep-get($config-global, "font", "family", "primary")}; // For browsers without CSS custom properties support.
-		font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "primary")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 		font-size: #{map-deep-get($config-global, "font", "size", "base")};
 		font-weight: 900;
 		text-align: center;
