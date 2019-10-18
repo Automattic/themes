@@ -10,7 +10,10 @@ $config-header: (
 		"title": (
 			// Fonts
 			"font": (
-				"family": map-deep-get($config-global, "font", "family", "primary"),
+				"family": (
+					"fallback": map-deep-get($config-global, "font", "family", "primary"),
+					"css-var": '--font-headings',
+				),
 				"size": map-deep-get($config-global, "font", "size", "md"),
 				"weight": bold,
 				"line-height": 1,
@@ -20,7 +23,10 @@ $config-header: (
 		"description": (
 			// Fonts
 			"font": (
-				"family": map-deep-get($config-global, "font", "family", "secondary"),
+				"family": (
+					"fallback": map-deep-get($config-global, "font", "family", "secondary"),
+					"css-var": '--font-base',
+				),
 				"size": map-deep-get($config-global, "font", "size", "sm"),
 			),
 		),

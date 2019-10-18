@@ -15,8 +15,7 @@
 .site-title {
 
 	color: #{map-deep-get($config-header, "branding", "color", "link")};
-	font-family: #{map-deep-get($config-header, "branding", "title", "font", "family")}; // For browsers without support for CSS variables.
-	font-family: var( --font-headings, #{map-deep-get($config-header, "branding", "title", "font", "family")} );
+	@include font-family( map-deep-get( $config-header, "branding", "title", "font", "family" ) );
 	letter-spacing: normal;
 	line-height: #{map-deep-get($config-header, "branding", "title", "font", "line-height")};
 
@@ -39,8 +38,7 @@
 
 .site-description {
 	color: currentColor;
-	font-family: #{map-deep-get($config-header, "branding", "description", "font", "family")}; // For browsers without support for CSS variables.
-	font-family: var( --font-base, #{map-deep-get($config-header, "branding", "description", "font", "family")} );
+	@include font-family( map-deep-get($config-header, "branding", "description", "font", "family") );
 }
 
 // Prevent overruling the user defined font size value set inside Gutenberg
