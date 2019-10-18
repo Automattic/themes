@@ -322,8 +322,10 @@ $config-header: (
 		),
 		// Fonts
 		"font": (
-			"family": map-deep-get($config-global, "font", "family", "secondary"),
-			"family-css-variable": '--font-base',
+			"family": (
+				"fallback": map-deep-get($config-global, "font", "family", "secondary"),
+				"css-var": '--font-base',
+			),
 			"size": map-deep-get($config-global, "font", "size", "md"),
 			"weight": normal,
 			"line-height": 1,

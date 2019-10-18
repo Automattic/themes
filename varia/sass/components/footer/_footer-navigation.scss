@@ -39,8 +39,7 @@
 		}
 
 		a {
-			font-family: #{map-deep-get($config-header, "main-nav", "font", "family")}; // For browsers without support for CSS variables.
-			font-family: var( #{map-deep-get($config-header, "main-nav", "font", "family-css-variable")}, #{map-deep-get($config-header, "main-nav", "font", "family")} );
+			@include font-family( map-deep-get( $config-header, "main-nav", "font", "family" ) );
 			font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
 			padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
 
