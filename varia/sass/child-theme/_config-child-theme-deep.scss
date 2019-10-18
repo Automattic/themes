@@ -361,7 +361,10 @@ $config-footer: (
 	),
 	// Fonts
 	"font": (
-		"family": map-deep-get($config-global, "font", "family", "primary"),
+		"family": (
+			"fallback": map-deep-get($config-global, "font", "family", "primary"),
+			"css-var": '--font-headings',
+		),
 		"size": map-deep-get($config-global, "font", "size", "sm"),
 		"line-height": map-deep-get($config-global, "font", "line-height", "sm"),
 	),
