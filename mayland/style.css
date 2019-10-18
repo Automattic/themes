@@ -137,6 +137,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Child Theme Deep
  */
 /**
@@ -1636,7 +1640,7 @@ img {
 ul,
 ol {
 	font-family: Poppins, sans-serif;
-	font-family: var(--font-base, Poppins, sans-serif);
+	font-family: var(--font-headings, Poppins, sans-serif);
 	margin: 0;
 	padding-left: 32px;
 }
@@ -2388,7 +2392,7 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: Poppins, sans-serif;
-	font-family: var(--font-base, Poppins, sans-serif);
+	font-family: var(--font-headings, Poppins, sans-serif);
 }
 
 body:not(.fse-enabled) .site-title {
