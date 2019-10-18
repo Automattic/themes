@@ -116,6 +116,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Child Theme Name
  */
 /**
@@ -300,7 +304,7 @@ object {
 	color: #FFFFFF;
 	font-weight: 600;
 	font-family: "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
-	font-family: var(--font-base, "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif);
+	font-family: var(--font-headings, "Crimson Text", "Baskerville Old Face", Garamond, "Times New Roman", serif);
 	font-size: 1em;
 	line-height: 1;
 	background-color: #0073AA;
