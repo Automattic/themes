@@ -137,6 +137,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Child Theme Deep
  */
 /**
@@ -1637,7 +1641,7 @@ img {
 ul,
 ol {
 	font-family: Lora, Baskerville, Georgia, Times, serif;
-	font-family: var(--font-base, Lora, Baskerville, Georgia, Times, serif);
+	font-family: var(--font-headings, Lora, Baskerville, Georgia, Times, serif);
 	margin: 0;
 	padding-right: 32px;
 }
@@ -2355,7 +2359,7 @@ table th,
 .site-title {
 	color: white;
 	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: var(--font-base, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2376,7 +2380,7 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: Lora, Baskerville, Georgia, Times, serif;
-	font-family: var(--font-base, Lora, Baskerville, Georgia, Times, serif);
+	font-family: var(--font-headings, Lora, Baskerville, Georgia, Times, serif);
 }
 
 body:not(.fse-enabled) .site-title {
@@ -2650,7 +2654,7 @@ body:not(.fse-enabled) .main-navigation a {
 .site-info {
 	color: #757575;
 	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: var(--font-base, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
 }
 
@@ -3847,7 +3851,7 @@ p:not(.site-title) a:hover {
 .post-navigation .meta-nav {
 	color: #757575;
 	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: var(--font-base, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -4086,7 +4090,7 @@ table th,
 .widget-area .widgettitle {
 	font-size: 1rem;
 	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: var(--font-base, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	margin-bottom: 16px;
 }
 

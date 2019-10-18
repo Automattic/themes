@@ -248,8 +248,7 @@ a {
 
 	.meta-nav {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-family: #{map-deep-get($config-global, "font", "family", "ui")};
-		font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "ui")} );
+		@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -287,8 +286,7 @@ a {
 .a8c-posts-list .a8c-posts-list-item__featured span {
 	background: #{map-deep-get($config-global, "color", "secondary", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "ui")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 	text-transform: uppercase;
 }
 
@@ -427,8 +425,7 @@ table,
 }
 
 .comment-meta .comment-metadata {
-	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
-	font-family: var( --font-base, #{map-deep-get($config-global, "font", "family", "ui")} );
+	@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 	font-weight: bold;
 	text-transform: uppercase;
@@ -510,8 +507,7 @@ table,
   .widget-title,
   .widgettitle {
     font-size: #{map-deep-get($config-global, "font", "size", "base")};
-    font-family: #{map-deep-get($config-global, "font", "family", "ui")}; // For browsers without CSS custom properties support.
-    font-family: var( --font-headings, #{map-deep-get($config-global, "font", "family", "ui")} );
+    @include font-family( map-deep-get($config-global, "font", "family", "ui") );
     margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
     &:empty {
