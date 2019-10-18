@@ -137,6 +137,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Child Theme Deep
  */
 /**
@@ -2392,7 +2396,7 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: "EB Garamond", serif;
-	font-family: var(--font-base, "EB Garamond", serif);
+	font-family: var(--font-headings, "EB Garamond", serif);
 }
 
 body:not(.fse-enabled) .site-title {
@@ -2666,7 +2670,7 @@ body:not(.fse-enabled) .main-navigation a {
 .site-info {
 	color: #767676;
 	font-family: "Work Sans", sans-serif;
-	font-family: var(--font-headings, "Work Sans", sans-serif);
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	font-size: 0.83333rem;
 }
 
