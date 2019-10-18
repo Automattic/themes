@@ -830,14 +830,35 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .wooc
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a {
+	clear: right;
 	color: white;
 	background-color: blue;
 	margin: 0;
-	text-align: right;
+	float: right;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2),
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2) ~ a {
+	clear: inherit;
+	float: inherit;
+	margin-bottom: 0;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2):not(:last-child),
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2) ~ a:not(:last-child) {
+	margin-right: 8px;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:not(:last-child) {
-	margin-right: 8px;
+	margin-bottom: 8px;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a.wcppec-cart-widget-button {
+	display: inline-block;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget p.buttons.wcppec-cart-widget-spb {
+	padding: 0;
 }
 
 body[class*="woocommerce"] #page .main-navigation ul.cart_list li a,
@@ -1529,17 +1550,21 @@ body[class*="woocommerce"] #page #add_payment_method table.cart td.actions .coup
 	margin: 0 16px 0 0;
 }
 
-body[class*="woocommerce"] #page #add_payment_method .wc-proceed-to-checkout {
+body[class*="woocommerce"] #page .wc-proceed-to-checkout {
 	padding: 32px 0;
 }
 
-body[class*="woocommerce"] #page #add_payment_method .wc-proceed-to-checkout a.checkout-button {
-	margin-bottom: 32px;
+body[class*="woocommerce"] #page .wc-proceed-to-checkout a.checkout-button {
+	margin-bottom: 16px;
 	font-size: 1.2rem;
 	padding: 16px;
 }
 
-body[class*="woocommerce"] #page #add_payment_method .checkout .create-account small {
+body[class*="woocommerce"] #page .wc-proceed-to-checkout a.wcppec-checkout-buttons__button {
+	padding-top: 0;
+}
+
+body[class*="woocommerce"] #page .checkout .create-account small {
 	font-size: 0.69444rem;
 	color: #767676;
 }
@@ -1850,6 +1875,14 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 .single-product #page #woocommerce-wrapper div.product form.cart div.quantity.hidden,
 .single-product #page #woocommerce-wrapper div.product form.cart button.hidden {
 	display: none;
+}
+
+.single-product #page #woocommerce-wrapper div.product .woo_pp_cart_buttons_div {
+	text-align: left;
+}
+
+.single-product #page #woocommerce-wrapper div.product .woo_pp_cart_buttons_div .wcppec-checkout-buttons__button {
+	padding-top: 0;
 }
 
 /**
