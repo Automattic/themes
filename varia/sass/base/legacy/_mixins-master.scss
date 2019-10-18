@@ -116,6 +116,11 @@
 }
 
 /* Ensure all font family declarations come with non-latin fallbacks */
-@mixin font-family( $font_family: $font__body ) {
+@mixin font-family-old( $font_family: $font__body ) {
 	font-family: $font_family;
+}
+
+@mixin font-family( $config_map ) {
+	font-family: #{map-deep-get( $config_map, 'fallback' )}; // For browsers without CSS custom properties support.
+	font-family: var( #{map-deep-get( $config_map, 'css-var')}, #{map-deep-get( $config_map, 'fallback' )} );
 }
