@@ -1060,7 +1060,6 @@ b, strong {
 .site-title {
 	color: #181818;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -1081,6 +1080,13 @@ b, strong {
 .site-description {
 	color: currentColor;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 1.2rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
@@ -1238,7 +1244,6 @@ b, strong {
 	color: #181818;
 	display: block;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1rem;
 	font-weight: 700;
 	padding: 4px 0;
 }
@@ -1294,6 +1299,10 @@ b, strong {
 	height: 1px !important;
 	width: 1px !important;
 	overflow: hidden;
+}
+
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1rem;
 }
 
 .social-navigation > div > ul {
@@ -1417,7 +1426,6 @@ b, strong {
 
 .footer-navigation .footer-menu a, .site-footer .main-navigation .footer-menu a {
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
 	font-weight: 700;
 	padding: 8px;
 	color: currentColor;
@@ -1429,6 +1437,10 @@ b, strong {
 
 .footer-navigation .footer-menu a:hover, .site-footer .main-navigation .footer-menu a:hover {
 	color: #685636;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .template-block .site-header,
@@ -1449,14 +1461,6 @@ b, strong {
 .template-block .wp-block-cover-image .site-description {
 	background: transparent;
 	color: inherit;
-}
-
-.a8c-template-editor .wp-block:not(.is-selected) [data-block] {
-	margin-bottom: 14px;
-}
-
-.a8c-template-editor .wp-block:not(:first-child):not(.is-selected) [data-block] {
-	margin-top: 14px;
 }
 
 .a8c-template-editor .wp-block-cover .site-title,
@@ -1569,10 +1573,6 @@ b, strong {
 	border-radius: 0;
 }
 
-.site-header .main-navigation a {
-	font-size: 21.6px;
-}
-
 .post-content__block {
 	margin-bottom: 160px;
 	margin-top: 36px;
@@ -1586,6 +1586,14 @@ b, strong {
 }
 
 .site-footer .main-navigation {
+	display: block;
+}
+
+.site-footer .main-navigation .footer-menu {
+	color: inherit;
+}
+
+.site-footer .main-navigation > div {
 	display: block;
 }
 
@@ -1604,6 +1612,50 @@ b, strong {
 	.site-footer .main-navigation li .sub-menu {
 		display: none;
 	}
+}
+
+.site-header .site-title.has-background,
+.site-header .site-description.has-background,
+.site-footer .site-title.has-background,
+.site-footer .site-description.has-background {
+	border-radius: 0;
+	padding: 16px;
+}
+
+.site-header .main-navigation .main-menu.footer-menu li a,
+.site-footer .main-navigation .main-menu.footer-menu li a {
+	font-size: inherit;
+}
+
+.site-header .main-navigation .main-menu.footer-menu li.menu-item-has-children > a::after,
+.site-footer .main-navigation .main-menu.footer-menu li.menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+.site-header .main-navigation .has-text-color > .main-menu.footer-menu > li > a,
+.site-footer .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.site-header .main-navigation .has-text-align-left > .main-menu.footer-menu,
+.site-footer .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.site-header .main-navigation .has-text-align-center > .main-menu.footer-menu,
+.site-footer .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.site-header .main-navigation .has-text-align-right > .main-menu.footer-menu,
+.site-footer .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.site-header .main-navigation .has-background > .main-menu.footer-menu,
+.site-footer .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px;
 }
 
 .site-header .site-title, .site-footer .site-title {
@@ -1637,12 +1689,7 @@ b, strong {
 }
 
 .site-header .site-title {
-	text-align: center;
 	text-decoration: none;
-}
-
-.site-header .site-description {
-	text-align: center;
 }
 
 .site-header .main-navigation {

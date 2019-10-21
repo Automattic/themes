@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Maywood is a refined theme designed for restaurants and food-related businesses seeking a modern look.
 Requires at least: WordPress 4.9.6
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2356,7 +2356,6 @@ table th,
 .site-title {
 	color: #181818;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2377,6 +2376,13 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 1.2rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
@@ -2534,7 +2540,6 @@ table th,
 	color: #181818;
 	display: block;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1rem;
 	font-weight: 700;
 	padding: 4px 0;
 }
@@ -2590,6 +2595,10 @@ table th,
 	height: 1px !important;
 	width: 1px !important;
 	overflow: hidden;
+}
+
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1rem;
 }
 
 .social-navigation > div > ul {
@@ -2713,7 +2722,6 @@ table th,
 
 .footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
 	font-weight: 700;
 	padding: 8px;
 	color: currentColor;
@@ -2725,6 +2733,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
 	color: #685636;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -3966,6 +3978,14 @@ p:not(.site-title) a:hover {
 	display: block;
 }
 
+.fse-enabled .site-footer .main-navigation .footer-menu {
+	color: inherit;
+}
+
+.fse-enabled .site-footer .main-navigation > div {
+	display: block;
+}
+
 .fse-enabled .site-footer .main-navigation .hide-visually,
 .fse-enabled .site-footer .main-navigation #toggle-menu {
 	display: none;
@@ -3985,6 +4005,37 @@ p:not(.site-title) a:hover {
 
 .fse-enabled .site-footer .site-info {
 	text-align: center;
+}
+
+.fse-enabled .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-enabled .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-enabled .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-enabled .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-enabled .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
 }
 
 .fse-enabled .site-header.entry-content {
