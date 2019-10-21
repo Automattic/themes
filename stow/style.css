@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A bold and clean theme - Stow is the ideal choice for creating an online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.1.2
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: stow
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -135,6 +135,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 /**
  * Crop Text Boundry
  * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+/**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
  */
 /**
  * Child Theme Name
@@ -582,6 +586,7 @@ html {
 html {
 	font-size: 15px;
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	line-height: 1.78;
 }
 
@@ -1081,6 +1086,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.69444rem;
 	background-color: #f25f70;
 	border-radius: 9px;
@@ -1424,6 +1430,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-weight: 300;
 	clear: both;
 }
@@ -1515,6 +1522,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1548,6 +1556,7 @@ img {
 
 .wp-block-latest-posts > li > a {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-size: 1.2rem;
 	font-weight: 300;
 	line-height: 1.125;
@@ -1632,6 +1641,7 @@ img {
 ul,
 ol {
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	margin: 0;
 	padding-left: 32px;
 }
@@ -1646,6 +1656,7 @@ ol {
 
 dt {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-weight: bold;
 }
 
@@ -1719,6 +1730,7 @@ p.has-background {
 	color: white;
 	background-color: #404040;
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -1792,6 +1804,7 @@ p.has-background {
 
 .wp-block-pullquote p {
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -1871,6 +1884,7 @@ p.has-background {
 
 .wp-block-quote p {
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-size: 1.2rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -2003,6 +2017,7 @@ table,
 table th,
 .wp-block-table th {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 }
 
 table td,
@@ -2202,6 +2217,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-size: calc(2 * 2.0736rem);
 	font-weight: 300;
 	line-height: 0.66;
@@ -2360,7 +2376,7 @@ table th,
 .site-title {
 	color: #404040;
 	font-family: "Oswald", sans-serif;
-	font-size: 1.2rem;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	letter-spacing: normal;
 	line-height: 1.3333;
 }
@@ -2381,6 +2397,14 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 1.2rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
@@ -2538,7 +2562,7 @@ table th,
 	color: #404040;
 	display: block;
 	font-family: "Source Sans Pro", Arial, sans-serif;
-	font-size: 1.2rem;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-weight: 700;
 	padding: 8px 0;
 }
@@ -2596,6 +2620,10 @@ table th,
 	overflow: hidden;
 }
 
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1.2rem;
+}
+
 .social-navigation > div > ul {
 	align-content: center;
 	display: flex;
@@ -2643,6 +2671,7 @@ table th,
 .site-info {
 	color: #404040;
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-size: 0.83333rem;
 }
 
@@ -2717,7 +2746,7 @@ table th,
 
 .footer-navigation .footer-menu a {
 	font-family: "Source Sans Pro", Arial, sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	font-weight: 700;
 	padding: 16px;
 	color: currentColor;
@@ -2729,6 +2758,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover {
 	color: #4f4f4f;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -2855,6 +2888,7 @@ table th,
 
 .post-navigation .post-title {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2882,6 +2916,7 @@ table th,
 
 .pagination .nav-links > * {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-left: calc(0.66 * 16px);
@@ -2944,6 +2979,7 @@ table th,
 .comment-reply-title small {
 	font-size: 1rem;
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -2963,19 +2999,19 @@ table th,
 	margin-bottom: 32px;
 }
 
-.children {
+.comment-list .children {
 	list-style: none;
 	padding-left: 16px;
 }
 
-.children > li {
+.comment-list .children > li {
 	border-top: 1px solid #DDDDDD;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
 
 @media only screen and (min-width: 560px) {
-	.children {
+	.comment-list .children {
 		padding-left: 32px;
 	}
 }
@@ -3063,6 +3099,7 @@ table th,
 .pingback .url,
 .trackback .url {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 }
 
 /**
@@ -3165,6 +3202,7 @@ table th,
  */
 .comment-navigation a {
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -3196,6 +3234,7 @@ img#wpstats {
 	color: white;
 	background-color: #404040;
 	font-family: "Oswald", sans-serif;
+	font-family: var(--font-headings, "Oswald", sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -3843,6 +3882,7 @@ a {
 .wp-block-quote[style*="text-align:center"] p,
 .wp-block-quote[style*="text-align:right"] p {
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 }
 
 .wp-block-quote cite,
@@ -3889,6 +3929,7 @@ a {
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.69444rem;
 	background-color: #f25f70;
 	border-radius: 9px;
@@ -3908,6 +3949,7 @@ a {
  */
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", Arial, sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta .wp-block-latest-comments__comment-date {

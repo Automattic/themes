@@ -95,7 +95,8 @@ a {
 	.site-title:not(:empty) + .site-description:not(:empty):before {
 		color: map-deep-get($config-global, "color", "foreground", "light");
 		content: "\2022";
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: Arial, Helvetica, sans-serif; // For browsers without CSS custom properties support.
+		font-family: var( --font-headings, 'Arial, Helvetica, sans-serif' );
 		margin: 0 .25em;
 	}
 }
@@ -150,7 +151,8 @@ a {
 					&:not(:first-child):before {
 						color: map-deep-get($config-global, "color", "foreground", "light");
 						content: "\2022";
-						font-family: Arial, Helvetica, sans-serif;
+						font-family: Arial, Helvetica, sans-serif; // For browsers without CSS custom properties support.
+						font-family: var( --font-headings, Arial, Helvetica, sans-serif );
 						line-height: 1;
 						padding-bottom: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
 						padding-top: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
@@ -246,7 +248,7 @@ a {
 
 	.meta-nav {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+		@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -284,7 +286,7 @@ a {
 .a8c-posts-list .a8c-posts-list-item__featured span {
 	background: #{map-deep-get($config-global, "color", "secondary", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
-	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 	text-transform: uppercase;
 }
 
@@ -423,7 +425,7 @@ table,
 }
 
 .comment-meta .comment-metadata {
-	font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+	@include font-family( map-deep-get($config-global, "font", "family", "ui") );
 	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 	font-weight: bold;
 	text-transform: uppercase;
@@ -504,8 +506,8 @@ table,
 
   .widget-title,
   .widgettitle {
-  	font-size: #{map-deep-get($config-global, "font", "size", "base")};
-		font-family: #{map-deep-get($config-global, "font", "family", "ui")};
+    font-size: #{map-deep-get($config-global, "font", "size", "base")};
+    @include font-family( map-deep-get($config-global, "font", "family", "ui") );
     margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
     &:empty {
@@ -644,7 +646,8 @@ table,
 			&:not(:first-child):before {
 				color: map-deep-get($config-global, "color", "border", "dark");
 				content: "\2022";
-				font-family: Arial, Helvetica, sans-serif;
+				font-family: Arial, Helvetica, sans-serif; // For browsers without CSS custom properties support.
+				font-family: var( --font-headings, 'Arial, Helvetica, sans-serif' );
 			}
 		}
 	}

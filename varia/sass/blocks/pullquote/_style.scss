@@ -11,7 +11,7 @@
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 
 	p {
-		font-family: #{map-deep-get($config-pullquote, "font", "family")};
+		@include font-family( map-deep-get($config-pullquote, "font", "family") );
 		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};

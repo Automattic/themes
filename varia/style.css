@@ -6,11 +6,11 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.2.5
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: varia
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, full-site-editing
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, full-site-editing, a8c-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -136,6 +136,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Extends
  */
 /**
@@ -154,6 +158,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: bold;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	background-color: blue;
 	border-radius: 9px;
@@ -239,6 +244,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: bold;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	background-color: blue;
 	border-radius: 9px;
@@ -698,6 +704,7 @@ html {
 html {
 	font-size: 15px;
 	font-family: serif;
+	font-family: var(--font-base, serif);
 	line-height: 1.78;
 }
 
@@ -1475,6 +1482,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	clear: both;
 }
@@ -1566,6 +1574,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1599,6 +1608,7 @@ img {
 
 .wp-block-latest-posts > li > a {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	font-weight: bold;
 	line-height: 1.125;
@@ -1683,6 +1693,7 @@ img {
 ul,
 ol {
 	font-family: serif;
+	font-family: var(--font-base, serif);
 	margin: 0;
 	padding-left: 32px;
 }
@@ -1697,6 +1708,7 @@ ol {
 
 dt {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 }
 
@@ -1770,6 +1782,7 @@ p.has-background {
 	color: white;
 	background-color: blue;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -1843,6 +1856,7 @@ p.has-background {
 
 .wp-block-pullquote p {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -1922,6 +1936,7 @@ p.has-background {
 
 .wp-block-quote p {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -2054,6 +2069,7 @@ table,
 table th,
 .wp-block-table th {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 table td,
@@ -2253,6 +2269,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: calc(2 * 2.98598rem);
 	font-weight: bold;
 	line-height: 0.66;
@@ -2411,6 +2428,7 @@ table th,
 .site-title {
 	color: blue;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2431,6 +2449,7 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: serif;
+	font-family: var(--font-base, serif);
 }
 
 body:not(.fse-enabled) .site-title {
@@ -2595,6 +2614,7 @@ body:not(.fse-enabled) .site-description {
 	color: blue;
 	display: block;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	padding: 8px 0;
 }
@@ -2703,6 +2723,7 @@ body:not(.fse-enabled) .main-navigation a {
 .site-info {
 	color: #767676;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 0.83333rem;
 }
 
@@ -2777,6 +2798,7 @@ body:not(.fse-enabled) .main-navigation a {
 
 .footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	padding: 16px;
 	color: currentColor;
@@ -2918,6 +2940,7 @@ body:not(.fse-enabled) .footer-menu a {
 
 .post-navigation .post-title {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2945,6 +2968,7 @@ body:not(.fse-enabled) .footer-menu a {
 
 .pagination .nav-links > * {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-left: calc(0.66 * 16px);
@@ -3007,6 +3031,7 @@ body:not(.fse-enabled) .footer-menu a {
 .comment-reply-title small {
 	font-size: 1rem;
 	font-family: serif;
+	font-family: var(--font-base, serif);
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -3126,6 +3151,7 @@ body:not(.fse-enabled) .footer-menu a {
 .pingback .url,
 .trackback .url {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 /**
@@ -3228,6 +3254,7 @@ body:not(.fse-enabled) .footer-menu a {
  */
 .comment-navigation a {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -3259,6 +3286,7 @@ img#wpstats {
 	color: white;
 	background-color: blue;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
