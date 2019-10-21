@@ -1148,10 +1148,8 @@ table th,
 	color: indigo;
 }
 
-.site-description {
-	color: currentColor;
-	font-family: serif;
-	font-family: var(--font-base, serif);
+.template-block .fse-template {
+	padding: 16px;
 }
 
 @media only screen and (min-width: 560px) {
@@ -1166,6 +1164,10 @@ table th,
 .fse-template .wp-block-cover-image .site-description {
 	background: transparent;
 	color: inherit;
+}
+
+.fse-template .block-editor-block-list__layout .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit figure.fse-site-logo {
+	width: auto;
 }
 
 .fse-template .main-navigation {
@@ -1380,208 +1382,7 @@ table th,
 	overflow: hidden;
 }
 
-body:not(.fse-enabled) .main-navigation a {
-	font-size: 1.2rem;
-}
-
-.social-navigation > div > ul {
-	align-content: center;
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.social-navigation > div > ul > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.social-navigation > div > ul > li:last-of-type > a {
-	padding-right: 0;
-}
-
-.social-navigation a {
-	color: blue;
-	display: inline-block;
-	padding: 0 calc( 0.5 * calc(0.66 * 16px ));
-}
-
-.social-navigation a:hover {
-	color: indigo;
-}
-
-.social-navigation svg {
-	fill: currentColor;
-	vertical-align: middle;
-}
-
-.site-footer {
-	overflow: hidden;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-footer {
-		align-items: flex-end;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-}
-
-.site-info {
-	color: #767676;
-	font-family: sans-serif;
-	font-family: var(--font-headings, sans-serif);
-	font-size: 0.83333rem;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-info {
-		order: 1;
-		flex: 1 0 50%;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-
-.site-info .site-name {
-	font-weight: bold;
-}
-
-.site-info a {
-	color: currentColor;
-}
-
-.site-info a:link, .site-info a:visited {
-	color: currentColor;
-}
-
-.site-info a:hover {
-	color: indigo;
-}
-
-.footer-navigation, .site-footer .main-navigation {
-	display: inline;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation, .site-footer .main-navigation {
-		flex: 1 0 50%;
-		order: 2;
-		margin-top: 0;
-		margin-bottom: 0;
-		text-align: right;
-	}
-}
-
-.footer-navigation > div, .site-footer .main-navigation > div {
-	display: inline;
-}
-
-.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
-	color: #767676;
-	margin: 0;
-	padding-left: 0;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
-}
-
-.footer-navigation .footer-menu > li, .site-footer .main-navigation .footer-menu > li {
-	display: inline;
-}
-
-.footer-navigation .footer-menu > li:first-of-type > a, .site-footer .main-navigation .footer-menu > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.footer-navigation .footer-menu > li:last-of-type, .site-footer .main-navigation .footer-menu > li:last-of-type {
-	padding-right: 0;
-}
-
-.footer-navigation .footer-menu a, .site-footer .main-navigation .footer-menu a {
-	font-family: sans-serif;
-	font-family: var(--font-headings, sans-serif);
-	font-weight: bold;
-	padding: 16px;
-	color: currentColor;
-}
-
-.footer-navigation .footer-menu a:link, .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .site-footer .main-navigation .footer-menu a:visited {
-	color: currentColor;
-}
-
-.footer-navigation .footer-menu a:hover, .site-footer .main-navigation .footer-menu a:hover {
-	color: indigo;
-}
-
-body:not(.fse-enabled) .footer-menu a {
-	font-size: 0.83333rem;
-}
-
-.template-block .site-header,
-.template-block .site-footer {
-	padding: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.template-block .site-header,
-	.template-block .site-footer {
-		padding: 32px 0;
-	}
-}
-
-.template-block .wp-block-cover .site-title,
-.template-block .wp-block-cover .site-description,
-.template-block .wp-block-cover-image .site-title,
-.template-block .wp-block-cover-image .site-description {
-	background: transparent;
-	color: inherit;
-}
-
-.a8c-template-editor .wp-block-cover .site-title,
-.a8c-template-editor .wp-block-cover .site-description,
-.a8c-template-editor .wp-block-cover-image .site-title,
-.a8c-template-editor .wp-block-cover-image .site-description {
-	background: transparent;
-	color: inherit;
-}
-
-.site-header .site-title {
-	font-size: 21.6px;
-	font-weight: 700;
-	text-decoration: underline;
-}
-
-.site-header .site-description {
-	font-size: 15px;
-}
-
-.site-header .main-navigation {
-	/**
- * Button
- */
-	/**
- * Block Options
- */
-}
-
-.site-header .main-navigation button,
-.site-header .main-navigation .button,
-.site-header .main-navigation input[type="submit"],
-.site-header .main-navigation .wp-block-button__link,
-.site-header .main-navigation .wp-block-file__button {
-	line-height: 1;
-	color: white;
-	cursor: pointer;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-family: var(--font-headings, sans-serif);
+.fse-template body:not(.fse-enabled) .main-navigation a {
 	font-size: 1.2rem;
 }
 
@@ -1612,6 +1413,25 @@ body:not(.fse-enabled) .footer-menu a {
 
 .fse-template .main-navigation .has-background > .main-menu.footer-menu {
 	padding: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.a8c-template-editor.fse-header .block-editor-block-list__layout > .block-editor-block-list__block.is-selected:first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+		margin-top: 14px;
+	}
+	.a8c-template-editor.fse-header .block-editor-block-list__layout > .block-editor-block-list__block:not(.is-selected):first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+		margin-top: 0;
+	}
+}
+
+.template-block .fse-header .block-editor-block-list__layout > .block-editor-block-list__block:first-child[data-align='full'] {
+	margin-top: -16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.template-block .fse-header .block-editor-block-list__layout > .block-editor-block-list__block:first-child[data-align='full'] {
+		margin-top: -32px;
+	}
 }
 
 .post-content__block {
