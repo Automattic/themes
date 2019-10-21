@@ -48,7 +48,7 @@ body[class*="woocommerce"] #page { // adding #content here to override default w
 					}
 
 					.woocommerce-review__author {
-						font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+						@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 					}
 
 					.comment-text {
