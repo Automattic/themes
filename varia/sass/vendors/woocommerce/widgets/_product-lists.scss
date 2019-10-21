@@ -15,6 +15,11 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 				padding: 0;
 				width: calc((100% / 3) - #{map-deep-get($config-global, "spacing", "unit")});
+
+				&:nth-child(3n+2):last-child {
+					margin-left: #{1.5 * map-deep-get($config-global, "spacing", "unit")};
+					margin-right: auto;
+				}
 			}
 		}
 	}
