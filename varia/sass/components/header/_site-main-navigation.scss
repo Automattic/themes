@@ -146,7 +146,7 @@
 	a {
 		color: #{map-deep-get($config-header, "main-nav", "color", "link")};
 		display: block;
-		font-family: #{map-deep-get($config-header, "main-nav", "font", "family")};
+		@include font-family( map-deep-get($config-header, "main-nav", "font", "family" ) );
 		font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
 		padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
 

@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.1.2
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: coutoire
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -135,6 +135,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 /**
  * Crop Text Boundry
  * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+/**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
  */
 /**
  * Child Theme Deep
@@ -582,6 +586,7 @@ html {
 html {
 	font-size: 14.16667px;
 	font-family: "Work Sans", sans-serif;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	line-height: 1.78;
 }
 
@@ -1081,6 +1086,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: 600;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
 	background-color: black;
 	border-width: 0;
@@ -1423,6 +1429,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-weight: 200;
 	clear: both;
 }
@@ -1514,6 +1521,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1547,6 +1555,7 @@ img {
 
 .wp-block-latest-posts > li > a {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.728rem;
 	font-weight: 200;
 	line-height: 1;
@@ -1631,6 +1640,7 @@ img {
 ul,
 ol {
 	font-family: "Work Sans", sans-serif;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	margin: 0;
 	padding-right: 32px;
 }
@@ -1645,6 +1655,7 @@ ol {
 
 dt {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-weight: bold;
 }
 
@@ -1718,6 +1729,7 @@ p.has-background {
 	color: white;
 	background-color: black;
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -1791,6 +1803,7 @@ p.has-background {
 
 .wp-block-pullquote p {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1;
@@ -1870,6 +1883,7 @@ p.has-background {
 
 .wp-block-quote p {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1;
@@ -2002,6 +2016,7 @@ table,
 table th,
 .wp-block-table th {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 }
 
 table td,
@@ -2196,6 +2211,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: calc(2 * 2.98598rem);
 	font-weight: 200;
 	line-height: 0.66;
@@ -2342,7 +2358,7 @@ table th,
 .site-title {
 	color: black;
 	font-family: "EB Garamond", serif;
-	font-size: 2.48832rem;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2363,6 +2379,14 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 2.48832rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 2.48832rem;
 }
 
@@ -2520,7 +2544,7 @@ table th,
 	color: black;
 	display: block;
 	font-family: "Work Sans", sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	font-weight: 600;
 	padding: 5px 0;
 }
@@ -2578,6 +2602,10 @@ table th,
 	overflow: hidden;
 }
 
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 0.83333rem;
+}
+
 .social-navigation > div > ul {
 	align-content: center;
 	display: flex;
@@ -2625,6 +2653,7 @@ table th,
 .site-info {
 	color: #767676;
 	font-family: "Work Sans", sans-serif;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	font-size: 0.83333rem;
 }
 
@@ -2699,7 +2728,7 @@ table th,
 
 .footer-navigation .footer-menu a {
 	font-family: "Work Sans", sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	font-weight: 600;
 	padding: 10px;
 	color: currentColor;
@@ -2711,6 +2740,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover {
 	color: #FF7A5C;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -2837,6 +2870,7 @@ table th,
 
 .post-navigation .post-title {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2864,6 +2898,7 @@ table th,
 
 .pagination .nav-links > * {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-right: calc(0.66 * 16px);
@@ -2926,6 +2961,7 @@ table th,
 .comment-reply-title small {
 	font-size: 1rem;
 	font-family: "Work Sans", sans-serif;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2945,19 +2981,19 @@ table th,
 	margin-bottom: 32px;
 }
 
-.children {
+.comment-list .children {
 	list-style: none;
 	padding-right: 16px;
 }
 
-.children > li {
+.comment-list .children > li {
 	border-top: 1px solid #DDDDDD;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
 
 @media only screen and (min-width: 560px) {
-	.children {
+	.comment-list .children {
 		padding-right: 32px;
 	}
 }
@@ -3045,6 +3081,7 @@ table th,
 .pingback .url,
 .trackback .url {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 }
 
 /**
@@ -3147,6 +3184,7 @@ table th,
  */
 .comment-navigation a {
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -3178,6 +3216,7 @@ img#wpstats {
 	color: white;
 	background-color: black;
 	font-family: "EB Garamond", serif;
+	font-family: var(--font-headings, "EB Garamond", serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -3629,6 +3668,7 @@ a:hover, a:focus {
 .sticky-post {
 	text-transform: uppercase;
 	font-family: "Work Sans", sans-serif;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 }
 
 #main .page-header {
@@ -3638,6 +3678,7 @@ a:hover, a:focus {
 #main .page-header .page-title {
 	font-size: 1rem;
 	font-family: "Work Sans", sans-serif;
+	font-family: var(--font-base, "Work Sans", sans-serif);
 	font-weight: 500;
 	text-transform: uppercase;
 	line-height: 1;

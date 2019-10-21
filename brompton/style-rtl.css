@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Running a business is no small task. But with the right tools and support, creating a website doesn’t have to be another chore on your to-do list: enter Brompton, a simple yet powerful theme for small-business owners and entrepreneurs.
 Requires at least: WordPress 4.9.6
-Version: 1.1.2
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: brompton
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -135,6 +135,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 /**
  * Crop Text Boundry
  * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+/**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
  */
 /**
  * Child Theme Name
@@ -582,6 +586,7 @@ html {
 html {
 	font-size: 16.66667px;
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 	line-height: 1.78;
 }
 
@@ -1081,6 +1086,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: 900;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
 	background-color: #252E36;
 	border-radius: 4px;
@@ -1424,6 +1430,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: 900;
 	clear: both;
 }
@@ -1515,6 +1522,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1548,6 +1556,7 @@ img {
 
 .wp-block-latest-posts > li > a {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1.728rem;
 	font-weight: 900;
 	line-height: 1.125;
@@ -1632,6 +1641,7 @@ img {
 ul,
 ol {
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 	margin: 0;
 	padding-right: 32px;
 }
@@ -1646,6 +1656,7 @@ ol {
 
 dt {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 }
 
@@ -1719,6 +1730,7 @@ p.has-background {
 	color: #E8E4DD;
 	background-color: #C04239;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -1792,6 +1804,7 @@ p.has-background {
 
 .wp-block-pullquote p {
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -1871,6 +1884,7 @@ p.has-background {
 
 .wp-block-quote p {
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -2003,6 +2017,7 @@ table,
 table th,
 .wp-block-table th {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 }
 
 table td,
@@ -2197,6 +2212,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: calc(2 * 2.98598rem);
 	font-weight: 900;
 	line-height: 0.66;
@@ -2343,7 +2359,7 @@ table th,
 .site-title {
 	color: #FFFFFF;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 1.728rem;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2364,6 +2380,14 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 1.728rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
@@ -2521,7 +2545,7 @@ table th,
 	color: #FFFFFF;
 	display: block;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: 900;
 	padding: 8px 0;
 }
@@ -2579,6 +2603,10 @@ table th,
 	overflow: hidden;
 }
 
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 0.83333rem;
+}
+
 .social-navigation > div > ul {
 	align-content: center;
 	display: flex;
@@ -2626,6 +2654,7 @@ table th,
 .site-info {
 	color: #FFFFFF;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.69444rem;
 }
 
@@ -2700,7 +2729,7 @@ table th,
 
 .footer-navigation .footer-menu a {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: 900;
 	padding: 16px;
 	color: currentColor;
@@ -2712,6 +2741,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover {
 	color: rgba(255, 255, 255, 0.5);
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -2838,6 +2871,7 @@ table th,
 
 .post-navigation .post-title {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2865,6 +2899,7 @@ table th,
 
 .pagination .nav-links > * {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-right: calc(0.66 * 16px);
@@ -2927,6 +2962,7 @@ table th,
 .comment-reply-title small {
 	font-size: 1rem;
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -3046,6 +3082,7 @@ table th,
 .pingback .url,
 .trackback .url {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 }
 
 /**
@@ -3148,6 +3185,7 @@ table th,
  */
 .comment-navigation a {
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -3179,6 +3217,7 @@ img#wpstats {
 	color: #E8E4DD;
 	background-color: #C04239;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -3828,6 +3867,7 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 
 .wp-block-quote p {
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 }
 
 table td,
@@ -3913,6 +3953,7 @@ table th,
 .post-navigation .meta-nav {
 	color: #252E36;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -3920,6 +3961,7 @@ table th,
 
 .post-navigation .post-title {
 	font-family: Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+	font-family: var(--font-base, Lora, Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif);
 	font-size: 0.83333rem;
 	font-weight: normal;
 }
@@ -4025,6 +4067,7 @@ table th,
 .comments-area .reply {
 	color: #666666;
 	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
 	font-weight: 900;
 	text-align: center;

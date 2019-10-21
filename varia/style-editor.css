@@ -113,6 +113,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Base
  * - Reset the browser
  */
@@ -120,6 +124,7 @@ body {
 	color: #444444;
 	background-color: white;
 	font-family: serif;
+	font-family: var(--font-base, serif);
 	font-size: 18px;
 	font-weight: normal;
 	line-height: 1.78;
@@ -256,6 +261,7 @@ object {
 	color: white;
 	font-weight: bold;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2em;
 	line-height: 1;
 	background-color: blue;
@@ -356,6 +362,7 @@ object {
 .wp-block-heading h5, h5, .h5,
 .wp-block-heading h6, h6, .h6 {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	clear: both;
 }
@@ -434,6 +441,7 @@ object {
 
 .wp-block-latest-posts > li > a {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	font-weight: bold;
 	line-height: 1.125;
@@ -531,6 +539,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-pullquote p {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -590,6 +599,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-quote p {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728em;
 	letter-spacing: normal;
 }
@@ -601,6 +611,7 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 2.0736em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -670,6 +681,7 @@ hr {
 table th,
 .wp-block-table th {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 table td,
@@ -686,6 +698,7 @@ table th,
 .editor-post-title__block .editor-post-title__input {
 	color: #444444;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	font-size: 2.48832em;
 	letter-spacing: normal;
@@ -801,6 +814,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: calc(2 * 2.98598em);
 	font-weight: bold;
 }
@@ -945,6 +959,7 @@ table th,
 .site-title {
 	color: blue;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -965,6 +980,7 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: serif;
+	font-family: var(--font-base, serif);
 }
 
 body:not(.fse-enabled) .site-title {
@@ -1129,6 +1145,7 @@ body:not(.fse-enabled) .site-description {
 	color: blue;
 	display: block;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	padding: 8px 0;
 }
@@ -1237,6 +1254,7 @@ body:not(.fse-enabled) .main-navigation a {
 .site-info {
 	color: #767676;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 0.83333rem;
 }
 
@@ -1311,6 +1329,7 @@ body:not(.fse-enabled) .main-navigation a {
 
 .footer-navigation .footer-menu a, .site-footer .main-navigation .footer-menu a {
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	padding: 16px;
 	color: currentColor;
@@ -1388,6 +1407,7 @@ body:not(.fse-enabled) .footer-menu a {
 	cursor: pointer;
 	font-weight: bold;
 	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	background-color: blue;
 	border-radius: 9px;

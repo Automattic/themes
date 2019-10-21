@@ -5,7 +5,7 @@
 .sticky-post {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 	font-weight: bold;
 	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 	line-height: 1;

@@ -212,8 +212,8 @@
 
 // Drop caps
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: #{map-deep-get($config-heading, "font", "family")};
-	font-size: calc(2 * #{map-deep-get($config-heading, "font", "size", "h1")};);
+	@include font-family( map-deep-get($config-heading, "font", "family") );
+	font-size: calc(2 * #{map-deep-get($config-heading, "font", "size", "h1")} );
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 	line-height: 0.66;
 	text-transform: uppercase;

@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A simple theme with clean typography, created with entrepreneurs and small business owners in mind.
 Requires at least: WordPress 4.9.6
-Version: 1.1.3
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: redhill
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-globals-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -135,6 +135,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 /**
  * Crop Text Boundry
  * - Sets a fixed-width on content within alignwide and alignfull blocks
+ */
+/**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
  */
 /**
  * Child Theme Deep
@@ -582,6 +586,7 @@ html {
 html {
 	font-size: 16.66667px;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	line-height: 1.6;
 }
 
@@ -1081,6 +1086,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: bold;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
 	background-color: #CA2017;
 	border-radius: 4px;
@@ -1424,6 +1430,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 	clear: both;
 }
@@ -1515,6 +1522,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1548,6 +1556,7 @@ img {
 
 .wp-block-latest-posts > li > a {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1.44rem;
 	font-weight: bold;
 	line-height: 1.125;
@@ -1632,6 +1641,7 @@ img {
 ul,
 ol {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	margin: 0;
 	padding-left: 32px;
 }
@@ -1646,6 +1656,7 @@ ol {
 
 dt {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-weight: bold;
 }
 
@@ -1719,6 +1730,7 @@ p.has-background {
 	color: white;
 	background-color: #CA2017;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -1792,6 +1804,7 @@ p.has-background {
 
 .wp-block-pullquote p {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1.44rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -1871,6 +1884,7 @@ p.has-background {
 
 .wp-block-quote p {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1.44rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -2003,6 +2017,7 @@ table,
 table th,
 .wp-block-table th {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 }
 
 table td,
@@ -2202,6 +2217,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: calc(2 * 2.48832rem);
 	font-weight: bold;
 	line-height: 0.66;
@@ -2360,7 +2376,7 @@ table th,
 .site-title {
 	color: #111111;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
-	font-size: 2.98598rem;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2381,6 +2397,14 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 2.98598rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 0.83333rem;
 }
 
@@ -2538,7 +2562,7 @@ table th,
 	color: #222222;
 	display: block;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 	padding: 8px 0;
 }
@@ -2596,6 +2620,10 @@ table th,
 	overflow: hidden;
 }
 
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 0.83333rem;
+}
+
 .social-navigation > div > ul {
 	align-content: center;
 	display: flex;
@@ -2643,6 +2671,7 @@ table th,
 .site-info {
 	color: #666666;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
 }
 
@@ -2717,7 +2746,7 @@ table th,
 
 .footer-navigation .footer-menu a {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-size: 0.83333rem;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
 	padding: 16px;
 	color: currentColor;
@@ -2729,6 +2758,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover {
 	color: #CA2017;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 0.83333rem;
 }
 
 .entry-title {
@@ -2855,6 +2888,7 @@ table th,
 
 .post-navigation .post-title {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -2882,6 +2916,7 @@ table th,
 
 .pagination .nav-links > * {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-left: calc(0.66 * 16px);
@@ -2944,6 +2979,7 @@ table th,
 .comment-reply-title small {
 	font-size: 1rem;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -2963,19 +2999,19 @@ table th,
 	margin-bottom: 32px;
 }
 
-.children {
+.comment-list .children {
 	list-style: none;
 	padding-left: 16px;
 }
 
-.children > li {
+.comment-list .children > li {
 	border-top: 1px solid #DDDDDD;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
 
 @media only screen and (min-width: 560px) {
-	.children {
+	.comment-list .children {
 		padding-left: 32px;
 	}
 }
@@ -3063,6 +3099,7 @@ table th,
 .pingback .url,
 .trackback .url {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 }
 
 /**
@@ -3165,6 +3202,7 @@ table th,
  */
 .comment-navigation a {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -3196,6 +3234,7 @@ img#wpstats {
 	color: white;
 	background-color: #CA2017;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -3591,6 +3630,7 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
  */
 html {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 }
 
 a {
@@ -3821,6 +3861,7 @@ p:not(.site-title) a:hover {
 
 .wp-block-quote p {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 }
 
 table td,
@@ -3841,6 +3882,7 @@ table th,
 .entry-footer {
 	border-top: 1px solid #DDDDDD;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.69444rem;
 	padding-top: 16px;
 }
@@ -3849,6 +3891,7 @@ article .entry-header .entry-title,
 .page-title,
 .a8c-posts-list-item__title {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 2.48832rem;
 	margin-bottom: 48px;
 }
@@ -3871,6 +3914,7 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 
 .entry-content {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 }
 
 .pagination {
@@ -3880,6 +3924,7 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .pagination .nav-links > * {
 	color: #666666;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
 	text-transform: uppercase;
 }
@@ -3917,6 +3962,7 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .post-navigation .meta-nav {
 	color: #666666;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -3969,12 +4015,14 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .comments-title,
 .comment-reply-title {
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1.728rem;
 }
 
 .comment-meta .comment-metadata {
 	color: #666666;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 }
 
 .comment-meta .comment-metadata a {
@@ -3990,6 +4038,7 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .comment-navigation a {
 	color: #666666;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
 	text-transform: uppercase;
 }
@@ -4009,6 +4058,7 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .widget-area .widget-title,
 .widget-area .widgettitle {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
 	margin-bottom: 16px;
 	text-transform: uppercase;
