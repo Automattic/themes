@@ -16,7 +16,7 @@
 	</div><!-- #content -->
 
 	<?php if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content. ?>
-	<footer class="fse-template fse-footer entry-content">
+	<footer class="fse-template-part fse-footer entry-content">
 	<?php
 		$template = new A8C\FSE\WP_Template();
 		$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
