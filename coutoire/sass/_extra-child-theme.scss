@@ -77,7 +77,7 @@ a {
 
 .sticky-post {
 	text-transform: uppercase;
-	font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+	@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 }
 
 #main .page-header {
@@ -86,7 +86,7 @@ a {
 
 	.page-title {
 		font-size: #{map-deep-get($config-global, "font", "size", "base")};
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		font-weight: 500;
 		text-transform: uppercase;
 		line-height: 1;

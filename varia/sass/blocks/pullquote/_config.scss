@@ -4,7 +4,10 @@
 $config-pullquote: (
 	// Font
 	"font": (
-		"family": #{map-deep-get($config-heading, "font", "family")},
+		"family": (
+			"fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
+			"css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
+		),
 	),
 	// Border
 	"color": (

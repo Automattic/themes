@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Convincing design for your charity or organization’s online presence. Highlight your actions, causes and projects, Alves is versatile enough to be your personal site too.
 Requires at least: WordPress 4.9.6
-Version: 1.1.2
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: alves
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -137,6 +137,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Child Theme Deep
  */
 /**
@@ -200,6 +204,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-weight: bold;
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	font-size: 1.04167rem;
 	background-color: #3E7D98;
 	border-radius: 160px;
@@ -659,6 +664,7 @@ html {
 html {
 	font-size: 13.33333px;
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	line-height: 1.6;
 }
 
@@ -1436,6 +1442,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-weight: normal;
 	clear: both;
 }
@@ -1527,6 +1534,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
@@ -1560,6 +1568,7 @@ img {
 
 .wp-block-latest-posts > li > a {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.8rem;
 	font-weight: normal;
 	line-height: 1.125;
@@ -1644,6 +1653,7 @@ img {
 ul,
 ol {
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	margin: 0;
 	padding-left: 32px;
 }
@@ -1658,6 +1668,7 @@ ol {
 
 dt {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-weight: bold;
 }
 
@@ -1731,6 +1742,7 @@ p.has-background {
 	color: #ffffff;
 	background-color: #3E7D98;
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-weight: bold;
 	font-size: 1.04167rem;
 	line-height: 1;
@@ -1804,6 +1816,7 @@ p.has-background {
 
 .wp-block-pullquote p {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.8rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -1883,6 +1896,7 @@ p.has-background {
 
 .wp-block-quote p {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.8rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -1965,6 +1979,10 @@ hr.wp-block-separator {
 		 */
 }
 
+hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 96px;
+}
+
 hr.wp-block-separator.is-style-dots:before {
 	color: #3E7D98;
 	font-size: 2.16rem;
@@ -2011,6 +2029,7 @@ table,
 table th,
 .wp-block-table th {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 }
 
 table td,
@@ -2210,6 +2229,7 @@ table th,
 
 .has-drop-cap:not(:focus)::first-letter {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: calc(2 * 3.1104rem);
 	font-weight: normal;
 	line-height: 0.66;
@@ -2368,7 +2388,7 @@ table th,
 .site-title {
 	color: #394d55;
 	font-family: "Lora", Georgia, sans-serif;
-	font-size: 1.8rem;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2389,6 +2409,14 @@ table th,
 .site-description {
 	color: currentColor;
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
+}
+
+body:not(.fse-enabled) .site-title {
+	font-size: 1.8rem;
+}
+
+body:not(.fse-enabled) .site-description {
 	font-size: 1.04167rem;
 }
 
@@ -2546,7 +2574,7 @@ table th,
 	color: #394d55;
 	display: block;
 	font-family: "Karla", Arial, sans-serif;
-	font-size: 1.04167rem;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	font-weight: bold;
 	padding: 8px 0;
 }
@@ -2604,6 +2632,10 @@ table th,
 	overflow: hidden;
 }
 
+body:not(.fse-enabled) .main-navigation a {
+	font-size: 1.04167rem;
+}
+
 .social-navigation > div > ul {
 	align-content: center;
 	display: flex;
@@ -2651,6 +2683,7 @@ table th,
 .site-info {
 	color: #4d6974;
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.04167rem;
 }
 
@@ -2725,7 +2758,7 @@ table th,
 
 .footer-navigation .footer-menu a {
 	font-family: "Karla", Arial, sans-serif;
-	font-size: 1.04167rem;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	font-weight: bold;
 	padding: 16px;
 	color: currentColor;
@@ -2737,6 +2770,10 @@ table th,
 
 .footer-navigation .footer-menu a:hover {
 	color: #2f5f74;
+}
+
+body:not(.fse-enabled) .footer-menu a {
+	font-size: 1.04167rem;
 }
 
 .entry-title {
@@ -2863,6 +2900,7 @@ table th,
 
 .post-navigation .post-title {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.8rem;
 	font-weight: 600;
 }
@@ -2890,6 +2928,7 @@ table th,
 
 .pagination .nav-links > * {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.5rem;
 	font-weight: 600;
 	padding-left: calc(0.66 * 16px);
@@ -2952,6 +2991,7 @@ table th,
 .comment-reply-title small {
 	font-size: 1.25rem;
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -3071,6 +3111,7 @@ table th,
 .pingback .url,
 .trackback .url {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 }
 
 /**
@@ -3173,6 +3214,7 @@ table th,
  */
 .comment-navigation a {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-size: 1.5rem;
 	font-weight: 600;
 }
@@ -3204,6 +3246,7 @@ img#wpstats {
 	color: #ffffff;
 	background-color: #3E7D98;
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 	font-weight: bold;
 	font-size: 1.04167rem;
 	line-height: 1;
@@ -3677,10 +3720,12 @@ input[type="submit"],
 
 .widget-title {
 	font-family: "Lora", Georgia, sans-serif;
+	font-family: var(--font-headings, "Lora", Georgia, sans-serif);
 }
 
 blockquote cite {
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 }
 
 .wp-block-quote p,
@@ -3917,6 +3962,7 @@ blockquote p {
 .site-footer #footer-info-wrapper a {
 	color: #394d55;
 	font-family: "Karla", Arial, sans-serif;
+	font-family: var(--font-base, "Karla", Arial, sans-serif);
 	padding: 0;
 	text-decoration: none;
 }

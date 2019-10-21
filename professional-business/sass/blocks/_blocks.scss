@@ -813,20 +813,17 @@
 
 		&.has-media-on-the-right.is-stacked-on-mobile {
 			.wp-block-media-text__media {
-				grid-area: media-text-content;
+				grid-row: 1;
 			}
 			.wp-block-media-text__content {
-				grid-area: media-text-media;
+				grid-row: 2;
 			}
 		}
 
 		@include media(mobile) {
 			&.has-media-on-the-right.is-stacked-on-mobile {
-				.wp-block-media-text__media {
-					grid-area: media-text-media;
-				}
 				.wp-block-media-text__content {
-					grid-area: media-text-content;
+					grid-row: 1;
 				}
 			}
 		}

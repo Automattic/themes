@@ -34,7 +34,7 @@
 
 	small {
 		font-size: #{map-deep-get($config-global, "font", "size", "base")};
-		font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		letter-spacing: normal;
 		line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
 	}
@@ -151,7 +151,7 @@
 .comment-author .fn,
 .pingback .url,
 .trackback .url {
-	font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 }
 
 /**

@@ -1,11 +1,11 @@
 /**
- * Reviews
+ * Cart Widget
  */
 
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
 	/**
-	 * Cart sidebar
+	 * Cart Widget product list
 	 */
 	ul.cart_list,
 	ul.product_list_widget {
@@ -13,7 +13,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		li {
 
 			a:not(.remove) {
-				font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+				@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 				line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
 			}
 
@@ -33,7 +33,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		}
 	}
 
-	.widget_shopping_cart {
+	.woocommerce.widget_shopping_cart {
 
 		.total {
 			border-top: none;
@@ -52,6 +52,10 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 					top: map-deep-get($config-global, "spacing", "unit");
 				}
 			}
+		}
+
+		.buttons a#woo_pp_ec_button {
+			padding: 0;
 		}
 	}
 }
