@@ -146,8 +146,7 @@
 	a {
 		color: #{map-deep-get($config-header, "main-nav", "color", "link")};
 		display: block;
-		font-family: #{map-deep-get($config-header, "main-nav", "font", "family")};
-		font-size: #{map-deep-get($config-header, "main-nav", "font", "size")};
+		@include font-family( map-deep-get($config-header, "main-nav", "font", "family" ) );
 		font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
 		padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
 
@@ -209,5 +208,13 @@
 		height: 1px !important;
 		width: 1px !important;
 		overflow: hidden;
+	}
+}
+
+// Prevent overruling the user defined font size value set inside Gutenberg
+// for Full Site Editing's Menu Navigation block.
+body:not( .fse-enabled ) {
+	.main-navigation a {
+		font-size: #{map-deep-get($config-header, "main-nav", "font", "size")};
 	}
 }

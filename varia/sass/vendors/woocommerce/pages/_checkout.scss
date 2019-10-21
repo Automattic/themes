@@ -4,7 +4,7 @@
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
 	.woocommerce-order h2 {
-		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 		font-size: map-deep-get($config-global, "font", "size", "lg");
 		font-weight: bold;
 	}
@@ -18,7 +18,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 		li {
 			border: none;
-			font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+			@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 			font-size: map-deep-get($config-global, "font", "size", "sm");
 			margin-right: 0;
 			padding: map-deep-get($config-woocommerce, "table", "padding");
@@ -33,7 +33,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			}
 
 			strong {
-				font-family: #{map-deep-get($config-global, "font", "family", "secondary")};
+				@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 				font-size: map-deep-get($config-global, "font", "size", "md");
 				line-height: map-deep-get($config-global, "font", "line-height", "heading");
 			}
@@ -220,7 +220,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	}
 
 	.checkout h3 {
-		font-family: #{map-deep-get($config-global, "font", "family", "primary")};
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 		font-size: map-deep-get($config-global, "font", "size", "lg");
 		font-weight: bold;
 	}

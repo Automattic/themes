@@ -203,6 +203,7 @@ a {
 .site-description {
 	color: #{map-deep-get($config-header, "branding", "color", "text")};
 	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	@include font-family( map-deep-get($config-header, "branding", "description", "font", "family") );
 }
 
 .site-title + .site-description {

@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Template: twentynineteen
 Description: Simple, yet sophisticated, with subtle, beautiful typography, Elegant Business conveys quality and integrity, which makes it especially good fit for coffee shops, pop-up shops, and brick & mortar store fronts.
 Requires at least: WordPress 4.9.6
-Version: 1.4
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: elegant-business
@@ -1179,7 +1179,6 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
     width: auto;
-    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
   }
@@ -1276,7 +1275,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
@@ -1296,7 +1294,6 @@ body.page .main-navigation {
     left: auto;
     display: block;
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -1360,7 +1357,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
@@ -1384,7 +1380,6 @@ body.page .main-navigation {
     left: auto;
     display: table;
     width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -4284,19 +4279,16 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__media {
-  grid-area: media-text-content;
+  grid-row: 1;
 }
 
 .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__content {
-  grid-area: media-text-media;
+  grid-row: 2;
 }
 
 @media only screen and (min-width: 600px) {
-  .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__media {
-    grid-area: media-text-media;
-  }
   .entry .entry-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile .wp-block-media-text__content {
-    grid-area: media-text-content;
+    grid-row: 1;
   }
 }
 
