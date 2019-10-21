@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -3012,6 +3010,16 @@ body:not(.fse-enabled) .footer-menu a {
 	}
 }
 
+.comment-meta .comment-author {
+	max-width: calc(100% - 48px);
+}
+
+.comment-meta .comment-author .fn {
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+}
+
 @media only screen and (min-width: 560px) {
 	.comment-meta .comment-author {
 		display: flex;
@@ -3051,6 +3059,16 @@ body:not(.fse-enabled) .footer-menu a {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+	.comment-meta .comment-author {
+		max-width: inherit;
+		flex: 0 1 auto;
+	}
+	.comment-meta .comment-author .fn {
+		padding-left: 16px;
+	}
+	.comment-meta .comment-metadata {
+		flex: 0 1 auto;
 	}
 }
 
