@@ -142,6 +142,10 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * - Sets a fixed-width on content within alignwide and alignfull blocks
  */
 /**
+ * Add font-family using CSS variables.
+ * It also adds the proper fallback for browsers without support.
+ */
+/**
  * Varia Extends
  */
 /**
@@ -172,6 +176,7 @@ body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a {
 	cursor: pointer;
 	font-weight: 700;
 	font-family: "PT Sans", Arial, sans-serif;
+	font-family: var(--font-base, "PT Sans", Arial, sans-serif);
 	font-size: 0.83333rem;
 	background-color: #0C80A1;
 	border-radius: 4px;
@@ -292,7 +297,7 @@ body[class*="woocommerce"] #page span.onsale, #content .wc-block-grid .wc-block-
 	color: #222222;
 	font-size: 0.83333rem;
 	font-weight: 700;
-	font-family: "PT Serif", Times, sans-serif;
+	font-family: ("fallback": '"PT Serif", Times, sans-serif', "css-var": "--font-headings");
 	min-height: 3.236rem;
 	min-width: 3.236rem;
 	padding: 0.202rem;
@@ -323,6 +328,7 @@ body[class*="woocommerce"] #page .woocommerce-breadcrumb {
 	margin-bottom: 32px;
 	font-size: 1rem;
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	color: #767676;
 }
 
@@ -626,6 +632,7 @@ body[class*="woocommerce"] #page .woocommerce input.button:disabled[disabled]:ho
 
 #content .wc-block-grid .wc-block-grid__product-title {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-size: 1rem;
 }
 
@@ -833,6 +840,7 @@ body[class*="woocommerce"] #page .main-navigation ul.cart_list li a:not(.remove)
 body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a:not(.remove),
 body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total {
 	font-family: "PT Sans", Arial, sans-serif;
+	font-family: var(--font-base, "PT Sans", Arial, sans-serif);
 	font-size: 1rem;
 }
 
@@ -858,6 +866,7 @@ body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers {
 body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li > * {
 	display: block;
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-left: calc(0.66 * 16px);
@@ -1067,6 +1076,7 @@ body[class*="woocommerce"] #page .woocommerce-tabs .panel {
 body[class*="woocommerce"] #page .woocommerce-tabs .panel h2,
 body[class*="woocommerce"] #page .woocommerce-tabs .panel .comment-reply-title {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-size: 1.44rem;
 	font-weight: bold;
 }
@@ -1115,6 +1125,7 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist li img.avatar
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .woocommerce-review__author {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text {
@@ -1398,6 +1409,7 @@ body[class*="woocommerce"] #page td.product-thumbnail img {
 
 body[class*="woocommerce"] #page td.product-name {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-weight: 700;
 }
 
@@ -1431,6 +1443,7 @@ body[class*="woocommerce"] #page table.cart td.actions .input-text {
  */
 body[class*="woocommerce"] #page .woocommerce-order h2 {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-size: 1.44rem;
 	font-weight: bold;
 }
@@ -1446,6 +1459,7 @@ body[class*="woocommerce"] #page .woocommerce-order-overview.order_details {
 body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li {
 	border: none;
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-size: 0.83333rem;
 	margin-right: 0;
 	padding: 16px;
@@ -1462,6 +1476,7 @@ body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li:no
 
 body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li strong {
 	font-family: "PT Sans", Arial, sans-serif;
+	font-family: var(--font-base, "PT Sans", Arial, sans-serif);
 	font-size: 1.2rem;
 	line-height: 1.125;
 }
@@ -1638,6 +1653,7 @@ body[class*="woocommerce"] #page .woocommerce-invalid #terms {
 
 body[class*="woocommerce"] #page .checkout h3 {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	font-size: 1.44rem;
 	font-weight: bold;
 }
@@ -1861,6 +1877,7 @@ body[class*="woocommerce"] #page {
 body[class*="woocommerce"] #page ul.cart_list li a:not(.remove),
 body[class*="woocommerce"] #page ul.product_list_widget li a:not(.remove) {
 	font-family: "PT Serif", Times, sans-serif;
+	font-family: var(--font-headings, "PT Serif", Times, sans-serif);
 	line-height: 1.125;
 }
 
