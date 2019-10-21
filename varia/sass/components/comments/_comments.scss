@@ -81,28 +81,20 @@
 
 	margin-right: calc( $avatar-size + (0.5 * #{map-deep-get($config-global, "spacing", "horizontal")}) );
 
-	@include media(mobile) {
-		margin-right: inherit;
-	}
-
 	.comment-author {
 
-		@include media(mobile) {
-			display: flex;
-			align-items: center;
+		max-width: calc(100% - #{3 * map-deep-get($config-global, "spacing", "horizontal")});
+
+		.fn {
+			word-wrap: break-word;
+			word-break: break-word;
+			hyphens: auto;
 		}
 
 		.avatar {
 			display: block;
 			position: absolute;
 			right: 0;
-
-			@include media(mobile) {
-				margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
-				display: inherit;
-				position: inherit;
-				right: inherit;
-			}
 		}
 	}
 
@@ -121,9 +113,32 @@
 	}
 
 	@include media(mobile) {
+		margin-right: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+
+		.comment-author {
+			display: flex;
+			align-items: center;
+			max-width: inherit;
+			flex: 0 1 auto;
+
+			.fn {
+				padding-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+			}
+
+			.avatar {
+				margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+				display: inherit;
+				position: inherit;
+				right: inherit;
+			}
+		}
+
+		.comment-metadata {
+			flex: 0 1 auto;
+		}
 	}
 }
 
