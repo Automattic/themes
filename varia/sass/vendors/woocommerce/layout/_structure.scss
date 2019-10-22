@@ -2,6 +2,28 @@
  * Structure
  */
 
+
+/**
+ * WooCommerce Wrapper Width
+ */
+
+body[class*="woocommerce"] #page .woocommerce,
+body[class*="woocommerce"] #page #woocommerce-wrapper,
+body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
+
+	// Get wrapper width setting
+	$wc-wrapper-width: map-deep-get($config-woocommerce, "wrapper-width");
+
+	@if $wc-wrapper-width == wide {
+		@extend %responsive-alignwide-nested;
+	} @else if $wc-wrapper-width == full {
+		@extend %responsive-alignfull;
+	} @else {
+		// Default width
+	}
+}
+
+
 /**
  * Vertical Space - 32px
  */
