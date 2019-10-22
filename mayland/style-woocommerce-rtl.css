@@ -173,7 +173,7 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * Page Layout Styles & Repsonsive Styles
  */
 /* Responsive width-content overrides */
-body[class*="woocommerce"] #page .woocommerce,
+body[class*="woocommerce"] #page .woocommerce:not(.widget),
 body[class*="woocommerce"] #page #woocommerce-wrapper,
 body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
 	width: 100%;
@@ -183,7 +183,7 @@ body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.
 }
 
 @media only screen and (min-width: 560px) {
-	body[class*="woocommerce"] #page .woocommerce,
+	body[class*="woocommerce"] #page .woocommerce:not(.widget),
 	body[class*="woocommerce"] #page #woocommerce-wrapper,
 	body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
 		width: calc(100% - 64px);
