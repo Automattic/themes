@@ -3,7 +3,7 @@
  */
 
 /* Responsive width-content overrides */
-$horizontal-padding: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+$horizontal-padding: (2 * map-deep-get($config-global, "spacing", "horizontal"));
 $content-width-flex: 100%;
 $content-width-sm: calc( #{map-deep-get($config-global, "breakpoint", "sm")} - #{$horizontal-padding} );
 $content-width-md: calc( #{map-deep-get($config-global, "breakpoint", "md")} - #{$horizontal-padding} );
@@ -107,6 +107,19 @@ $content-width-xxl: calc( #{map-deep-get($config-global, "breakpoint", "xxl")} -
 		margin-right: inherit;
 		width: inherit;
 		max-width: inherit;
+	}
+}
+
+%responsive-alignfull-nested {
+
+	width: 100%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media(mobile) {
+		width: calc(100% - #{2 * $horizontal-padding});
+		max-width: 100%;
 	}
 }
 
