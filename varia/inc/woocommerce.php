@@ -70,8 +70,13 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
  * Enqueue scripts and styles.
  */
 function varia_woocommerce_scripts() {
+
 	// WooCommerce styles
 	wp_enqueue_style( 'varia-woocommerce-style', get_stylesheet_directory_uri() . '/style-woocommerce.css', array(), wp_get_theme()->get( 'Version' ) );
+
+	// WooCommerce RTL styles
+	wp_style_add_data( 'varia-woocommerce-style', 'rtl', 'replace' );
+
 }
 add_action( 'wp_enqueue_scripts', 'varia_woocommerce_scripts' );
 
