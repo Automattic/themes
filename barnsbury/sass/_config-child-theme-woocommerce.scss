@@ -30,13 +30,16 @@ $config-woocommerce: (
 	"mini-cart": (
 		/* Color */
 		"color": (
+			"background": map-deep-get($config-global, "color", "primary", "default"),
+			"border": map-deep-get($config-global, "color", "border", "light"),
+			"text": map-deep-get($config-global, "color", "background", "light"),
 			"subtotal": map-deep-get($config-global, "color", "foreground", "default"),
 			"count": map-deep-get($config-global, "color", "foreground", "light"),
 		),
 		/* Button */
 		"button": (
-			"color": map-deep-get($config-button, "color", "text"),
-			"background-color": map-deep-get($config-button, "color", "background"),
+			"color": map-deep-get($config-global, "color", "primary", "default"),
+			"background-color": map-deep-get($config-global, "color", "background", "light"),
 		),
 	),
 
