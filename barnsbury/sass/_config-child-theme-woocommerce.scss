@@ -4,6 +4,9 @@
 
 $config-woocommerce: (
 
+	/* Wrapper Width - accepts full, wide, or defuault */
+	"wrapper-width": default,
+
 	/* Tables */
 	"table": (
 		/* Borders */
@@ -41,6 +44,7 @@ $config-woocommerce: (
 			"color": map-deep-get($config-global, "color", "primary", "default"),
 			"background-color": map-deep-get($config-global, "color", "background", "light"),
 		),
+		"width": #{25 * map-deep-get($config-global, "spacing", "unit")},
 	),
 
 	/* Star Rating */
