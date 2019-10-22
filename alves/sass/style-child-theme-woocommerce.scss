@@ -49,30 +49,3 @@ body[class*="woocommerce"] #page #woocommerce-wrapper,
 body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
 	@extend %responsive-alignwide-nested;
 }
-
-/**
- * Mini cart
- */
-
-body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li .sub-menu a.remove:hover,
-body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li .sub-menu a.remove:focus {
-	text-decoration: none;
-}
-
-@include media(mobile) {
-	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
-		left: auto;
-		right: 0;
-	}
-
-	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
-		max-width: 400px;
-	}
-
-	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item:hover > ul:before,
-	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item.focus > ul:before,
-	body[class*="woocommerce"] #page .site-header .main-navigation > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
-		margin-left: auto;
-		margin-right: #{map-deep-get($config-global, "spacing", "unit")};
-	}
-}
