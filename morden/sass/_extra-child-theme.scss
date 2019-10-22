@@ -63,10 +63,14 @@ body {
 		}
 	}
 }
-
 #colophon {
 	padding-left: 0;
 	padding-right: 0;
+
+	@include media(mobile-only) {
+		padding-left: map-deep-get($config-global, "spacing", "horizontal");
+		padding-right: map-deep-get($config-global, "spacing", "horizontal");
+	}
 }
 
 /**
