@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -3668,6 +3666,13 @@ p:not(.site-title) a:hover {
 #colophon {
 	padding-right: 0;
 	padding-left: 0;
+}
+
+@media only screen and (max-width: 559px) {
+	#colophon {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
 }
 
 /**
