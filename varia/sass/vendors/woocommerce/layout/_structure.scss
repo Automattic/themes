@@ -7,7 +7,7 @@
  * WooCommerce Wrapper Width
  */
 
-body[class*="woocommerce"] #page .woocommerce,
+body[class*="woocommerce"] #page .woocommerce:not(.widget),
 body[class*="woocommerce"] #page #woocommerce-wrapper,
 body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
 
@@ -17,7 +17,7 @@ body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.
 	@if $wc-wrapper-width == wide {
 		@extend %responsive-alignwide-nested;
 	} @else if $wc-wrapper-width == full {
-		@extend %responsive-alignfull;
+		@extend %responsive-alignfull-nested;
 	} @else {
 		// Default width
 	}
