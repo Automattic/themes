@@ -1,0 +1,53 @@
+/**
+ * Cart Collaterals
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.cart-collaterals,
+	#add_payment_method .cart-collaterals {
+
+		.cart_totals,
+		.cross-sells {
+
+			tr td,
+			tr th {
+				border-top-color: map-deep-get($config-woocommerce, "table", "border", "color");
+			}
+
+			& > h2 {
+				font-size: map-deep-get($config-global, "font", "size", "lg");
+			}
+		}
+
+		.cart_totals {
+
+			p small {
+				color: map-deep-get($config-global, "color", "foreground", "light");
+				font-size: map-deep-get($config-global, "font", "size", "sm");
+			}
+
+			table {
+				margin: 0 0 (0.5 * map-deep-get($config-woocommerce, "table", "padding"));
+
+				td,
+				th {
+					line-height: map-deep-get($config-global, "font", "line-height", "body");
+				}
+
+				small {
+					color: map-deep-get($config-global, "color", "foreground", "light");
+				}
+			}
+
+			.discount td {
+				color: map-deep-get($config-global, "color", "alert", "warning");
+			}
+		}
+
+		.shipping-calculator-button,
+		.shipping-calculator-form {
+			margin-top: map-deep-get($config-woocommerce, "table", "padding");
+		}
+	}
+}

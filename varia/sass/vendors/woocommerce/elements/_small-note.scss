@@ -1,0 +1,11 @@
+/**
+ * Small Note
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+	small.note {
+		color: map-deep-get($config-global, "color", "foreground", "light");
+		font-size: map-deep-get($config-global, "font", "size", "sm");
+		margin-top: map-deep-get($config-global, "spacing", "unit");
+	}
+}

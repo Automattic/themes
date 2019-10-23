@@ -1,0 +1,18 @@
+/**
+ * Small Note
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.woocommerce-breadcrumb {
+
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		font-size: map-deep-get($config-global, "font", "size", "base");
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+		color: map-deep-get($config-global, "color", "foreground", "light");
+
+		a {
+			color: currentColor;
+		}
+	}
+}

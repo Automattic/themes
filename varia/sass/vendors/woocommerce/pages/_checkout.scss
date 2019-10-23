@@ -1,0 +1,235 @@
+/**
+ * Checkout page
+ */
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.woocommerce-order h2 {
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+		font-size: map-deep-get($config-global, "font", "size", "lg");
+		font-weight: bold;
+	}
+
+	.woocommerce-order-overview.order_details {
+		display: flex;
+		justify-content: space-between;
+		align-content: flex-start;
+		align-items: stretch;
+		border: 1px solid map-deep-get($config-woocommerce, "table", "border", "color");
+
+		li {
+			border: none;
+			@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+			font-size: map-deep-get($config-global, "font", "size", "sm");
+			margin-right: 0;
+			padding: map-deep-get($config-woocommerce, "table", "padding");
+			text-transform: none;
+
+			&.email {
+				word-break: break-word;
+			}
+
+			&:not(:last-child) {
+				border-right: 1px solid map-deep-get($config-woocommerce, "table", "border", "color");
+			}
+
+			strong {
+				@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
+				font-size: map-deep-get($config-global, "font", "size", "md");
+				line-height: map-deep-get($config-global, "font", "line-height", "heading");
+			}
+		}
+
+		&:before,
+		&:after {
+			content: none !important;
+			display: none;
+		}
+	}
+
+	.woocommerce-form-coupon-toggle + .checkout_coupon {
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+	}
+
+	form.checkout_coupon,
+	form.login,
+	form.register {
+		border-color: map-deep-get($config-woocommerce, "table", "border", "color");
+		padding: map-deep-get($config-woocommerce, "table", "padding");
+		margin-top: inherit;
+		margin-bottom: inherit;
+		text-align: left;
+		border-radius: 0;
+	}
+
+	ul.order_details {
+		padding-left: 0;
+	}
+
+	.woocommerce-customer-details address {
+		border-radius: 0;
+		border-color: map-deep-get($config-global, "color", "border", "default");
+		border-right-width: 1px;
+		border-bottom-width: 1px;
+	}
+
+	#add_payment_method {
+		table.cart {
+			.product-thumbnail {
+				min-width: map-deep-get($config-global, "spacing", "horizontal");
+			}
+
+			img {
+				width: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+			}
+
+			td.actions .coupon .input-text {
+				border-color: map-deep-get($config-global, "color", "border", "default");
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+				margin: 0 map-deep-get($config-global, "spacing", "unit") 0 0;
+			}
+		}
+	}
+
+	.wc-proceed-to-checkout {
+
+		padding: map-deep-get($config-global, "spacing", "vertical") 0;
+
+		a.checkout-button {
+			margin-bottom: map-deep-get($config-global, "spacing", "unit");
+			font-size: map-deep-get($config-global, "font", "size", "md");
+			padding: map-deep-get($config-global, "spacing", "unit");
+		}
+
+		a.wcppec-checkout-buttons__button {
+			padding-top: 0;
+		}
+	}
+
+	.checkout .create-account small {
+		font-size: map-deep-get($config-global, "font", "size", "xs");
+		color: map-deep-get($config-global, "color", "foreground", "light");
+	}
+
+	#payment {
+		background: transparent;
+		border: map-deep-get($config-woocommerce, "table", "border", "width") solid map-deep-get($config-woocommerce, "table", "border", "color");
+		border-radius: map-deep-get($config-woocommerce, "table", "border", "radius");
+
+		ul.payment_methods {
+
+			padding: map-deep-get($config-woocommerce, "table", "padding");
+			border-bottom-color: map-deep-get($config-woocommerce, "table", "border", "color");
+
+			li {
+				line-height: map-deep-get($config-global, "font", "line-height", "body");
+
+				input {
+					margin-right: map-deep-get($config-global, "font", "line-height", "body");
+				}
+			}
+		}
+
+		div.form-row {
+			padding: map-deep-get($config-woocommerce, "table", "padding");
+			margin-bottom: 0;
+		}
+
+		div.payment_box {
+			padding: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
+			margin-bottom: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
+			margin-top: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
+			font-size: map-deep-get($config-global, "font", "size", "sm");
+			font-weight: bold;
+			border-radius: map-deep-get($config-woocommerce, "table", "border", "radius");
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
+			background-color: map-deep-get($config-global, "color", "background", "dark");
+			color: map-deep-get($config-global, "color", "foreground", "dark");
+
+			input.input-text,
+			textarea {
+				border-color: map-deep-get($config-woocommerce, "table", "border", "color");
+				border-top-color: map-deep-get($config-woocommerce, "table", "border", "color");
+			}
+
+			::-webkit-input-placeholder {
+				color: map-deep-get($config-global, "color", "foreground", "light");
+			}
+
+			:-moz-placeholder {
+				color: map-deep-get($config-global, "color", "foreground", "light");
+			}
+
+			:-ms-input-placeholder {
+				color: map-deep-get($config-global, "color", "foreground", "light");
+			}
+
+			.woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput {
+				margin-right: map-deep-get($config-global, "spacing", "unit");
+			}
+
+			.wc-credit-card-form {
+				margin-top: map-deep-get($config-woocommerce, "table", "padding");
+			}
+
+			.wc-credit-card-form-card-number,
+			.wc-credit-card-form-card-expiry,
+			.wc-credit-card-form-card-cvc {
+				font-size: map-deep-get($config-global, "font", "size", "lg");
+				padding: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
+			}
+
+			span.help {
+				font-size: map-deep-get($config-global, "font", "size", "sm");
+				color: map-deep-get($config-global, "color", "foreground", "light");
+			}
+
+			.form-row {
+				margin: 0 0 map-deep-get($config-global, "spacing", "vertical");
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+
+			&::before {
+				border-bottom-color: map-deep-get($config-global, "color", "background", "dark"); /* arrow size / color */
+			}
+		}
+
+		.payment_method_paypal {
+
+			.about_paypal {
+				float: right;
+				line-height: 52px;
+				font-size: map-deep-get($config-global, "font", "size", "sm");
+			}
+
+			img {
+				max-height: 52px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.woocommerce-terms-and-conditions {
+		border-color: map-deep-get($config-woocommerce, "table", "border", "color");
+	}
+
+	.woocommerce-invalid #terms {
+		outline-color: map-deep-get($config-global, "color", "alert", "error");
+	}
+
+	.checkout h3 {
+		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+		font-size: map-deep-get($config-global, "font", "size", "lg");
+		font-weight: bold;
+	}
+
+	.woocommerce-terms-and-conditions {
+		border-color: map-deep-get($config-woocommerce, "table", "border", "color");
+	}
+
+	.woocommerce-invalid #terms {
+		outline-color: map-deep-get($config-global, "color", "alert", "error");
+	}
+}

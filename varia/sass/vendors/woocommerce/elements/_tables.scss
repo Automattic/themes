@@ -1,0 +1,83 @@
+/**
+ * Tables
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	table.shop_table {
+
+		border-collapse: collapse;
+		border: map-deep-get($config-woocommerce, "table", "border", "width") solid map-deep-get($config-woocommerce, "table", "border", "color");
+		border-radius: map-deep-get($config-woocommerce, "table", "border", "radius");
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+
+		th {
+			padding: map-deep-get($config-woocommerce, "table", "padding");
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
+		}
+
+		td {
+			border-top: none;
+			padding: map-deep-get($config-woocommerce, "table", "padding");
+			word-break: break-word;
+		}
+
+		tr {
+			border-bottom: map-deep-get($config-woocommerce, "table", "border", "width") solid map-deep-get($config-woocommerce, "table", "border", "color");
+		}
+
+		tfoot td,
+		tfoot th,
+		tbody th {
+			border-top-color: map-deep-get($config-woocommerce, "table", "border", "color");
+		}
+	}
+
+	table.shop_attributes {
+
+		border-top-color: map-deep-get($config-woocommerce, "table", "border", "color");
+		border-top-style: solid;
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		border-bottom: map-deep-get($config-woocommerce, "table", "border", "width") solid map-deep-get($config-woocommerce, "table", "border", "color");
+
+		th {
+			padding: (0.5 * map-deep-get($config-woocommerce, "table", "padding"));
+			border-bottom-color: map-deep-get($config-woocommerce, "table", "border", "color");
+			border-bottom-style: solid;
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
+		}
+
+		td {
+			font-style: inherit;
+			border-bottom-color: map-deep-get($config-woocommerce, "table", "border", "color");
+			border-bottom-style: solid;
+			line-height: map-deep-get($config-global, "font", "line-height", "body");
+			padding: (0.5 * map-deep-get($config-woocommerce, "table", "padding"));
+
+			p {
+				margin: 0;
+				padding-top: (0.5 * map-deep-get($config-woocommerce, "table", "padding"));
+				padding-bottom: (0.5 * map-deep-get($config-woocommerce, "table", "padding"));
+			}
+		}
+
+		tr:nth-child(even) td,
+		tr:nth-child(even) th {
+			background: map-deep-get($config-global, "color", "background", "light");
+		}
+	}
+
+	table.my_account_orders {
+		font-size: map-deep-get($config-global, "font", "size", "sm");
+
+		th,
+		td {
+			padding: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
+		}
+	}
+
+	table td,
+	table th {
+		border: inherit;
+	}
+}
