@@ -1,0 +1,60 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * Remove grid-products flexbox layout
+ */
+@include media(mobile) {
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+
+		display: inherit;
+
+		& > li {
+			width: inherit;
+
+			&:nth-child(3n+2):last-child {
+				margin-left: inherit;
+				margin-right: inherit;
+			}
+		}
+	}
+}
