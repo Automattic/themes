@@ -789,6 +789,19 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
 	}
 }
 
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list {
+	border-bottom: 1px solid;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list li {
+	border-top: 1px solid;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list a.remove:hover,
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list a.remove:focus {
+	text-decoration: none;
+}
+
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__total {
 	text-align: right;
 }
@@ -842,6 +855,19 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total 
 	font-family: "PT Sans", Arial, sans-serif;
 	font-family: var(--font-base, "PT Sans", Arial, sans-serif);
 	font-size: 1rem;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
+		left: auto;
+		right: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item:hover > ul:before,
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item.focus > ul:before,
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
+		margin-left: auto;
+		margin-right: 16px;
+	}
 }
 
 .woocommerce-cart #page .woocommerce-menu-item .sub-menu,
@@ -1165,6 +1191,9 @@ body[class*="woocommerce"] #page #reviews #comments .commentlist > li::before {
 
 /**
  * Structure
+ */
+/**
+ * WooCommerce Wrapper Width
  */
 /**
  * Vertical Space - 32px
