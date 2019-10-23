@@ -7,16 +7,6 @@
 
 	var $window = $( window );
 
-	// Toggle search form.
-	function searchToggle() {
-		$( '.search-toggle' ).on( 'click', function() {
-			$( this ).toggleClass( 'active' );
-			$( '.header-search' ).slideToggle();
-			$( '.header-search .s' ).focus();
-			return false;
-		} );
-	}
-
 	// Manage full-screen featured images.
 	function fullScreenImages() {
 		var $entryBackground = $( '.entry-thumbnail' ),
@@ -60,7 +50,6 @@
 
 	// Initialize init on page load.
 	$( document ).on( 'ready', function() {
-		searchToggle();
 		fullScreenImages();
 		imageZoomIcon();
 	});
