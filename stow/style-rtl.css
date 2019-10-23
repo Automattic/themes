@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /*
 Theme Name: Stow
-Theme URI: https://github.com/Automattic/themes/stow
+Theme URI: https://github.com/Automattic/themes/tree/master/stow
 Author: Automattic
 Author URI: https://automattic.com/
 Description: A bold and clean theme - Stow is the ideal choice for creating an online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -3622,11 +3620,11 @@ body {
 	font-weight: 300;
 }
 
-body.hide-homepage-title .site-main {
+.home.page.hide-homepage-title .site-main {
 	padding: 0;
 }
 
-body.hide-homepage-title .site-main article .entry-content {
+.home.page.hide-homepage-title .site-main article .entry-content {
 	margin-top: 0;
 }
 
