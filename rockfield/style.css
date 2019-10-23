@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -4234,9 +4232,11 @@ table th,
 }
 
 /**
- * Footer Menu
+ * Footer
  */
 .site-footer {
+	align-items: unset;
+	flex-direction: column;
 	padding-left: 0;
 	padding-right: 0;
 }
