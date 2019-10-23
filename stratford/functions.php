@@ -183,6 +183,8 @@ function stratford_scripts() {
 	// enqueue child RTL styles
 	wp_style_add_data( 'stratford-style', 'rtl', 'replace' );
 
+	// enqueue header spacing JS
+	wp_enqueue_script('stratford-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'stratford_scripts', 99 );
 
