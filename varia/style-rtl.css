@@ -2963,12 +2963,6 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-left: calc( $avatar-size + (0.5 * 16px));
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta {
-		margin-left: inherit;
-	}
-}
-
 .comment-meta .comment-author {
 	max-width: calc(100% - 48px);
 }
@@ -2979,26 +2973,10 @@ body:not(.fse-enabled) .footer-menu a {
 	hyphens: auto;
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author {
-		display: flex;
-		align-items: center;
-	}
-}
-
 .comment-meta .comment-author .avatar {
 	display: block;
 	position: absolute;
 	left: 0;
-}
-
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author .avatar {
-		margin-left: 16px;
-		display: inherit;
-		position: inherit;
-		left: inherit;
-	}
 }
 
 .comment-meta .comment-metadata {
@@ -3015,16 +2993,25 @@ body:not(.fse-enabled) .footer-menu a {
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
+		margin-left: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
 	}
 	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
 		max-width: inherit;
 		flex: 0 1 auto;
 	}
 	.comment-meta .comment-author .fn {
 		padding-left: 16px;
+	}
+	.comment-meta .comment-author .avatar {
+		margin-left: 16px;
+		display: inherit;
+		position: inherit;
+		left: inherit;
 	}
 	.comment-meta .comment-metadata {
 		flex: 0 1 auto;
