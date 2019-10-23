@@ -317,3 +317,8 @@ require get_template_directory() . '/inc/icon-functions.php';
  * Custom template tags for the theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/*
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
