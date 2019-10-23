@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -1965,6 +1963,10 @@ hr.wp-block-separator {
 	/**
 		 * Block Options
 		 */
+}
+
+hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 96px;
 }
 
 hr.wp-block-separator.is-style-dots:before {
@@ -3681,8 +3683,9 @@ p:not(.site-title) a:hover {
 	}
 	.site-header > *.main-navigation > div > ul > li > .sub-menu {
 		border: 1px solid #CCCCCC;
-		box-shadow: none;
 		border-radius: 5px;
+		box-shadow: none;
+		box-sizing: content-box;
 	}
 }
 
