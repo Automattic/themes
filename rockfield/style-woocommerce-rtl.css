@@ -782,11 +782,11 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link > *:not
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .woocommerce-cart-subtotal {
-	color: #444444;
+	color: white;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .woocommerce-cart-count {
-	color: #757575;
+	color: white;
 	font-weight: normal;
 }
 
@@ -807,8 +807,8 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
-	background-color: white;
-	color: #444444;
+	background-color: #111111;
+	color: white;
 	max-width: 100%;
 	padding: 8px 0;
 }
@@ -2015,4 +2015,60 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 		margin-right: 24px;
 		margin-left: auto;
 	}
+}
+
+/**
+ * Remove grid-products flexbox layout
+ */
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+		display: inherit;
+	}
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li {
+		width: inherit;
+	}
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li:nth-child(3n+2):last-child {
+		margin-right: inherit;
+		margin-left: inherit;
+	}
+}
+
+body[class*="woocommerce"] #page #respond input#submit,
+body[class*="woocommerce"] #page #respond input#submit.alt,
+body[class*="woocommerce"] #page a.button,
+body[class*="woocommerce"] #page a.button.alt,
+body[class*="woocommerce"] #page button.button,
+body[class*="woocommerce"] #page button.button.alt,
+body[class*="woocommerce"] #page input.button,
+body[class*="woocommerce"] #page input.button.alt,
+body[class*="woocommerce"] #page .cart .button,
+body[class*="woocommerce"] #page .cart input.button,
+body[class*="woocommerce"] #page a.added_to_cart,
+body[class*="woocommerce"] #page .woocommerce #respond input#submit,
+body[class*="woocommerce"] #page .woocommerce a.button,
+body[class*="woocommerce"] #page .woocommerce button.button,
+body[class*="woocommerce"] #page .woocommerce input.button,
+body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a,
+body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a {
+	outline: 2px solid;
+	outline-offset: -5px;
+}
+
+body[class*="woocommerce"] #page #respond input#submit:before,
+body[class*="woocommerce"] #page #respond input#submit.alt:before,
+body[class*="woocommerce"] #page a.button:before,
+body[class*="woocommerce"] #page a.button.alt:before,
+body[class*="woocommerce"] #page button.button:before,
+body[class*="woocommerce"] #page button.button.alt:before,
+body[class*="woocommerce"] #page input.button:before,
+body[class*="woocommerce"] #page input.button.alt:before,
+body[class*="woocommerce"] #page .cart .button:before,
+body[class*="woocommerce"] #page a.added_to_cart:before,
+body[class*="woocommerce"] #page .woocommerce #respond input#submit:before,
+body[class*="woocommerce"] #page .woocommerce a.button:before,
+body[class*="woocommerce"] #page .woocommerce button.button:before,
+body[class*="woocommerce"] #page .woocommerce input.button:before,
+body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a:before,
+body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a:before {
+	display: none;
 }
