@@ -4,6 +4,9 @@
 
 $config-woocommerce: (
 
+	/* Wrapper Width - accepts full, wide, or defuault */
+	"wrapper-width": default,
+
 	/* Tables */
 	"table": (
 		/* Borders */
@@ -30,6 +33,9 @@ $config-woocommerce: (
 	"mini-cart": (
 		/* Color */
 		"color": (
+			"background": map-deep-get($config-global, "color", "background", "default"),
+			"border": map-deep-get($config-global, "color", "border", "dark"),
+			"text": map-deep-get($config-global, "color", "foreground", "default"),
 			"subtotal": map-deep-get($config-global, "color", "foreground", "default"),
 			"count": map-deep-get($config-global, "color", "foreground", "light"),
 		),
@@ -38,6 +44,7 @@ $config-woocommerce: (
 			"color": map-deep-get($config-button, "color", "text"),
 			"background-color": map-deep-get($config-button, "color", "background"),
 		),
+		"width": #{25 * map-deep-get($config-global, "spacing", "unit")},
 	),
 
 	/* Star Rating */

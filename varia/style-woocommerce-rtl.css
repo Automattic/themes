@@ -766,6 +766,8 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+	background-color: white;
+	color: #444444;
 	max-width: 100%;
 	padding: 8px 0;
 }
@@ -775,6 +777,19 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
 		max-width: 320px;
 		padding: 16px;
 	}
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list {
+	border-bottom: 1px solid #AAAAAA;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list li {
+	border-top: 1px solid #AAAAAA;
+}
+
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list a.remove:hover,
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list a.remove:focus {
+	text-decoration: none;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__total {
@@ -830,6 +845,22 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total 
 	font-family: sans-serif;
 	font-family: var(--font-headings, sans-serif);
 	font-size: 1rem;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
+		right: auto;
+		left: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		max-width: 400px;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item:hover > ul:before,
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item.focus > ul:before,
+	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
+		margin-right: auto;
+		margin-left: 16px;
+	}
 }
 
 .woocommerce-cart #page .woocommerce-menu-item .sub-menu,
@@ -1153,6 +1184,9 @@ body[class*="woocommerce"] #page #reviews #comments .commentlist > li::before {
 
 /**
  * Structure
+ */
+/**
+ * WooCommerce Wrapper Width
  */
 /**
  * Vertical Space - 32px

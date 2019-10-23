@@ -47,12 +47,27 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		}
 
 		.woocommerce-cart-widget {
+
+			background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
+			color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
 			max-width: 100%;
 			padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
 
 			@include media(mobile) {
 				max-width: #{20 * map-deep-get($config-global, "spacing", "horizontal")};
 				padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+			}
+
+			.woocommerce.widget_shopping_cart .cart_list {
+				border-bottom: 1px solid map-deep-get($config-woocommerce, "mini-cart", "color", "border");
+				li {
+					border-top: 1px solid map-deep-get($config-woocommerce, "mini-cart", "color", "border");
+				}
+
+				a.remove:hover,
+				a.remove:focus {
+					text-decoration: none;
+				}
 			}
 
 			.woocommerce-mini-cart__total {
@@ -108,6 +123,25 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		.woocommerce-mini-cart__total {
 			@include font-family( map-deep-get($config-header, "main-nav", "font", "family") );
 			font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		}
+
+		@include media(mobile) {
+
+			& > div > ul > li.woocommerce-menu-item > .sub-menu {
+				left: auto;
+				right: 0;
+			}
+
+			.woocommerce-cart-widget {
+				max-width: #{map-deep-get($config-woocommerce, "mini-cart", "width")};
+			}
+
+			& > div > ul > li.woocommerce-menu-item:hover > ul:before,
+			& > div > ul > li.woocommerce-menu-item.focus > ul:before,
+			& > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
+				margin-left: auto;
+				margin-right: #{map-deep-get($config-global, "spacing", "unit")};
+			}
 		}
 	}
 }
