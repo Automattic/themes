@@ -3687,13 +3687,11 @@ p:not(.site-title) a:hover {
  */
 #masthead {
 	border-bottom: 1px solid #f3f3f3;
-	position: fixed;
-	z-index: 9999;
 	background: white;
-	width: 100%;
 	-webkit-transition: all .25s ease-in-out;
 	-moz-transition: all .25s ease-in-out;
 	transition: all .25s ease-in-out;
+	width: 100%;
 }
 
 #masthead .site-header-wrapper {
@@ -3704,14 +3702,12 @@ p:not(.site-title) a:hover {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	width: calc(100% - 1.5em);
 }
 
 #masthead .site-header-wrapper .site-branding {
 	-webkit-transition: margin-top .25s ease-in-out;
 	-moz-transition: margin-top .25s ease-in-out;
 	transition: margin-top .25s ease-in-out;
-	margin-left: 1.5em;
 	margin-right: auto;
 }
 
@@ -3797,41 +3793,20 @@ p:not(.site-title) a:hover {
 	}
 }
 
-@media only screen and (max-width: 559px) {
-	#masthead {
-		max-height: 100%;
-		overflow-y: scroll;
-	}
-	#masthead .site-header-wrapper {
-		width: 100%;
-	}
-	#masthead .site-header-wrapper .site-branding {
-		margin-left: 0;
-	}
+@media only screen and (min-width: 560px) {
 	.site-header {
-		position: relative;
+		padding-right: 32px;
+		padding-left: 32px;
+		position: fixed;
+		z-index: 9999;
 	}
+}
+
+@media only screen and (max-width: 559px) {
 	.site-title,
 	.site-description {
 		font-size: 1.728rem;
 		hyphens: auto;
-	}
-}
-
-/**
- * 3. Main Wrapper and Content
- */
-.site-content {
-	padding-top: 4.75em;
-}
-
-.home.page.hide-homepage-title .site-content .site-main {
-	padding-top: 0;
-}
-
-@media only screen and (max-width: 559px) {
-	.home.page.hide-homepage-title .site-content {
-		padding-top: 4em;
 	}
 }
 
