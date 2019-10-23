@@ -325,7 +325,8 @@ body[class*="woocommerce"] #page span.onsale, #content .wc-block-grid .wc-block-
 	color: #111111;
 	font-size: 0.83333rem;
 	font-weight: 700;
-	font-family: ("fallback": 'Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif', "css-var": "--font-headings");
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	min-height: 3.236rem;
 	min-width: 3.236rem;
 	padding: 0.202rem;
@@ -2019,6 +2020,15 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 /**
  * Remove grid-products flexbox layout
  */
+body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover > a.woocommerce-cart-link .woocommerce-cart-subtotal,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover > a.woocommerce-cart-link .woocommerce-cart-count,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus > a.woocommerce-cart-link .woocommerce-cart-subtotal,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus > a.woocommerce-cart-link .woocommerce-cart-count,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link .woocommerce-cart-subtotal,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link .woocommerce-cart-count {
+	color: currentColor;
+}
+
 @media only screen and (min-width: 560px) {
 	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
 		display: inherit;
@@ -2030,13 +2040,4 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 		margin-left: inherit;
 		margin-right: inherit;
 	}
-}
-
-body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover > a.woocommerce-cart-link .woocommerce-cart-subtotal,
-body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover > a.woocommerce-cart-link .woocommerce-cart-count,
-body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus > a.woocommerce-cart-link .woocommerce-cart-subtotal,
-body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus > a.woocommerce-cart-link .woocommerce-cart-count,
-body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link .woocommerce-cart-subtotal,
-body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link .woocommerce-cart-count {
-	color: currentColor;
 }
