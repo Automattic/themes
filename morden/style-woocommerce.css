@@ -2069,3 +2069,19 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 		margin-right: auto;
 	}
 }
+
+/**
+ * Remove grid-products flexbox layout
+ */
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+		display: inherit;
+	}
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li {
+		width: inherit;
+	}
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li:nth-child(3n+2):last-child {
+		margin-left: inherit;
+		margin-right: inherit;
+	}
+}
