@@ -23,7 +23,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 		// Checkbox hack
 		#woocommerce-toggle:checked ~ div {
-			display: block;
+			display: inline-block;
 		}
 
 		#woocommerce-toggle:focus + #toggle-cart {
@@ -60,6 +60,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
 				color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
 				padding-top: #{map-deep-get($config-header, "main-nav", "link-padding")};
+				width: 100%;
 
 				a,
 				a:link,
