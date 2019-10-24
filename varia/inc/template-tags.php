@@ -219,8 +219,8 @@ if ( ! function_exists( 'varia_post_thumbnail' ) ) :
 		else :
 		?>
 
-			<figure class="post-thumbnail responsive-max-width">
-				<a class="post-thumbnail-inner" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<figure class="post-thumbnail">
+				<a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
 				</a>
 			</figure>
