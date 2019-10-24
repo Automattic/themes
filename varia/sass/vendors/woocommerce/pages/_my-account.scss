@@ -3,12 +3,16 @@
  */
 body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
 
-	.woocommerce-MyAccount-navigation {
+	.entry-content .woocommerce-MyAccount-navigation {
 		width: 20%;
 
 		ul li a {
 			line-height: map-deep-get($config-global, "font", "line-height", "heading");
 			display: inline-table;
+		}
+
+		& + *:not(:first-child) {
+			margin-top: 0;
 		}
 	}
 
@@ -37,6 +41,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	}
 }
 
-.woocommerce-account .entry-content .woocommerce > h2 {
+.woocommerce-account .entry-content .woocommerce > h2,
+body[class*="woocommerce"] #page div[class*="woocommerce"] h2 {
 	font-size: map-deep-get($config-global, "font", "size", "lg");
 }
