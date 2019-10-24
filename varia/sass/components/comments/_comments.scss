@@ -82,14 +82,23 @@
 	margin-right: calc( $avatar-size + (0.5 * #{map-deep-get($config-global, "spacing", "horizontal")}) );
 
 	.comment-author {
-
+		line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+		margin-bottom: #{.25 * map-deep-get($config-global, "spacing", "unit")};
+		padding-right: #{2.5 * map-deep-get($config-global, "spacing", "horizontal")};
 		max-width: calc(100% - #{3 * map-deep-get($config-global, "spacing", "horizontal")});
 
-		.fn {
+		@include media(mobile) {
+			display: flex;
+			align-items: center;
+			margin-bottom: 0;
+			padding-right: 0;
+		}
+    
+    .fn {
 			word-wrap: break-word;
 			word-break: break-word;
 			hyphens: auto;
-		}
+    }
 
 		.avatar {
 			display: block;
@@ -99,8 +108,12 @@
 	}
 
 	.comment-metadata {
-
 		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+		padding-right: #{2.5 * map-deep-get($config-global, "spacing", "horizontal")};
+
+		@include media(mobile) {
+			padding-right: 0;
+		}
 
 		a {
 			color: currentColor;

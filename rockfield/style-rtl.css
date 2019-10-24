@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Rockfield is a refined theme designed for restaurants and food-related businesses seeking a classic, elegant look.
 Requires at least: WordPress 4.9.6
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2058,7 +2058,10 @@ table th,
  */
 .aligncenter {
 	clear: both;
+	display: block;
 	float: none;
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 }
 
@@ -3005,7 +3008,19 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .comment-meta .comment-author {
-	max-width: calc(100% - 48px);
+	line-height: 1.125;
+	margin-bottom: 4px;
+	padding-left: 40px;
+  max-width: calc(100% - 48px);
+}
+
+@media only screen and (min-width: 560px) {
+	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
+		margin-bottom: 0;
+		padding-left: 0;
+	}
 }
 
 .comment-meta .comment-author .fn {
@@ -3022,6 +3037,13 @@ body:not(.fse-enabled) .footer-menu a {
 
 .comment-meta .comment-metadata {
 	color: #444444;
+	padding-left: 40px;
+}
+
+@media only screen and (min-width: 560px) {
+	.comment-meta .comment-metadata {
+		padding-left: 0;
+	}
 }
 
 .comment-meta .comment-metadata a {
@@ -4210,9 +4232,11 @@ table th,
 }
 
 /**
- * Footer Menu
+ * Footer
  */
 .site-footer {
+	align-items: unset;
+	flex-direction: column;
 	padding-right: 0;
 	padding-left: 0;
 }
