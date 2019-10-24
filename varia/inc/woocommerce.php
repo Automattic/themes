@@ -185,15 +185,29 @@ function varia_add_cart_menu( $nav, $args ) {
 	if ( $args->theme_location == 'menu-1' ) {
 		return sprintf(
 			'%1$s
-			<li class="menu-item woocommerce-menu-item %6$s" title="%2$s">
-				%4$s
+			</ul></div>
+			<input type="checkbox" role="button" aria-haspopup="true" id="woocommerce-toggle" class="hide-visually">
+			<label for="woocommerce-toggle" id="toggle-cart" class="button">%2$s %3$s
+				<span class="dropdown-icon open">+</span>
+				<span class="dropdown-icon close">×</span>
+				<span class="hide-visually expanded-text">%4$s</span>
+				<span class="hide-visually collapsed-text">%5$s</span>
+			</label>
+			<div class="woocommerce-menu-container">
+			<ul id="woocommerce-menu" class="main-menu" aria-label="submenu">
+			<li class="menu-item woocommerce-menu-item %10$s" title="%6$s">
+				%8$s
 				<ul class="sub-menu">
-					<li class="woocommerce-cart-widget" title="%3$s">
-						%5$s
+					<li class="woocommerce-cart-widget" title="%7$s">
+						%9$s
 					</li>
 				</ul>
 			</li>',
 			$nav,
+			varia_get_icon_svg( 'shopping_cart', 16 ),
+			esc_html__( 'Cart', 'varia' ),
+			esc_html__( 'expanded', 'varia' ),
+			esc_html__( 'collapsed', 'varia' ),
 			esc_attr__( 'View your shopping cart', 'varia' ),
 			esc_attr__( 'View your shopping list', 'varia' ),
 			varia_cart_link(),

@@ -732,6 +732,38 @@ body[class*="woocommerce"] #page .wc-block-grid__product-add-to-cart .added_to_c
 	text-decoration: none;
 }
 
+body[class*="woocommerce"] #page .main-navigation #toggle-cart {
+	display: inline-block;
+	margin: 0;
+}
+
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:checked ~ div {
+	display: block;
+}
+
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:focus + #toggle-cart {
+	background-color: indigo;
+	outline: inherit;
+	text-decoration: underline;
+}
+
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:checked + #toggle-cart .open {
+	display: none;
+}
+
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:checked + #toggle-cart .close {
+	display: inline;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation > div:not(:last-of-type) {
+		margin-right: 32px;
+	}
+	body[class*="woocommerce"] #page .main-navigation #toggle-cart {
+		display: none;
+	}
+}
+
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
 	text-decoration: none;
 	line-height: 1;
@@ -754,16 +786,6 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-ic
 	float: left;
 	height: 1.2rem;
 	width: 1.2rem;
-}
-
-body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-menu {
-	padding: 0 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-menu {
-		padding: 0;
-	}
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
