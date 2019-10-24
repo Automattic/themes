@@ -195,9 +195,9 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
-		// Add support for Global Styles as defined by the a8c plugin.
+		// Add support for Global Styles.
 		add_theme_support(
-			'a8c-global-styles',
+			'jetpack-global-styles',
 			[
 				'enable_theme_default' => true,
 			]
