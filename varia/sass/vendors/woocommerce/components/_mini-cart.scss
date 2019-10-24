@@ -15,6 +15,10 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		#toggle-cart {
 			display: inline-block;
 			margin: 0;
+
+			.svg-icon {
+				vertical-align: top;
+			}
 		}
 
 		// Checkbox hack
@@ -49,8 +53,25 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			}
 		}
 
+		@include media(mobile-only) {
+
+			.woocommerce-menu-container {
+
+				background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
+				color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
+				padding-top: #{map-deep-get($config-header, "main-nav", "link-padding")};
+
+				a,
+				a:link,
+				a:visited {
+					color: currentColor;
+				}
+			}
+		}
+
 		.woocommerce-cart-link {
 
+			display: none;
 			text-decoration: none;
 			line-height: 1;
 
@@ -71,6 +92,11 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				float: left;
 				height: #{map-deep-get($config-header, "main-nav", "font", "size")};
 				width: #{map-deep-get($config-header, "main-nav", "font", "size")};
+				vertical-align: top;
+			}
+
+			@include media(mobile) {
+				display: inline-block;
 			}
 		}
 
@@ -79,7 +105,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
 			color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
 			max-width: 100%;
-			padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
+			padding: 0;
 
 			@include media(mobile) {
 				max-width: #{20 * map-deep-get($config-global, "spacing", "horizontal")};

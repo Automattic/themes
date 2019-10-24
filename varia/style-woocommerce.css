@@ -737,6 +737,10 @@ body[class*="woocommerce"] #page .main-navigation #toggle-cart {
 	margin: 0;
 }
 
+body[class*="woocommerce"] #page .main-navigation #toggle-cart .svg-icon {
+	vertical-align: top;
+}
+
 body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:checked ~ div {
 	display: block;
 }
@@ -764,7 +768,21 @@ body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:checked + 
 	}
 }
 
+@media only screen and (max-width: 559px) {
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-menu-container {
+		background-color: white;
+		color: #444444;
+		padding-top: 16px;
+	}
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-menu-container a,
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-menu-container a:link,
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-menu-container a:visited {
+		color: currentColor;
+	}
+}
+
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
+	display: none;
 	text-decoration: none;
 	line-height: 1;
 }
@@ -786,13 +804,20 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-ic
 	float: left;
 	height: 1.2rem;
 	width: 1.2rem;
+	vertical-align: top;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
+		display: inline-block;
+	}
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
 	background-color: white;
 	color: #444444;
 	max-width: 100%;
-	padding: 8px 0;
+	padding: 0;
 }
 
 @media only screen and (min-width: 560px) {
