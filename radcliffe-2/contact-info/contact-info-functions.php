@@ -75,9 +75,9 @@ function radcliffe_2_contact_info( $section ) {
 
 			<?php if ( $email || is_customize_preview() ) : ?>
 			<span class="contact-info-email">
-				<a href="mailto:<?php echo sanitize_email( $email ); ?>">
+				<a href="mailto:<?php echo antispambot( sanitize_email( $email ) ); ?>">
 					<?php echo radcliffe_2_get_svg( array( 'icon' => 'mail', 'title' => esc_html__( 'E-mail', 'radcliffe-2' ) ) ); ?>
-					<span class="contact-info-label"><?php echo sanitize_email( $email ); ?></span>
+					<span class="contact-info-label"><?php echo antispambot( sanitize_email( $email ) ); ?></span>
 				</a>
 			</span>
 			<?php endif; ?>
