@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: maywood
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, full-site-editing, a8c-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, full-site-editing, jetpack-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -1967,6 +1965,10 @@ hr.wp-block-separator {
 		 */
 }
 
+hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 96px;
+}
+
 hr.wp-block-separator.is-style-dots:before {
 	color: #CCCCCC;
 	font-size: 1.728rem;
@@ -2059,7 +2061,10 @@ table th,
  */
 .aligncenter {
 	clear: both;
+	display: block;
 	float: none;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
 }
 
@@ -3019,17 +3024,26 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-right: calc( $avatar-size + (0.5 * 16px));
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta {
-		margin-right: inherit;
-	}
+.comment-meta .comment-author {
+	line-height: 1.125;
+	margin-bottom: 4px;
+	padding-right: 40px;
+	max-width: calc(100% - 48px);
 }
 
 @media only screen and (min-width: 560px) {
 	.comment-meta .comment-author {
 		display: flex;
 		align-items: center;
+		margin-bottom: 0;
+		padding-right: 0;
 	}
+}
+
+.comment-meta .comment-author .fn {
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 .comment-meta .comment-author .avatar {
@@ -3038,17 +3052,15 @@ body:not(.fse-enabled) .footer-menu a {
 	right: 0;
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author .avatar {
-		margin-right: 16px;
-		display: inherit;
-		position: inherit;
-		right: inherit;
-	}
-}
-
 .comment-meta .comment-metadata {
 	color: #181818;
+	padding-right: 40px;
+}
+
+@media only screen and (min-width: 560px) {
+	.comment-meta .comment-metadata {
+		padding-right: 0;
+	}
 }
 
 .comment-meta .comment-metadata a {
@@ -3061,9 +3073,28 @@ body:not(.fse-enabled) .footer-menu a {
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
+		margin-right: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
+		max-width: inherit;
+		flex: 0 1 auto;
+	}
+	.comment-meta .comment-author .fn {
+		padding-right: 16px;
+	}
+	.comment-meta .comment-author .avatar {
+		margin-right: 16px;
+		display: inherit;
+		position: inherit;
+		right: inherit;
+	}
+	.comment-meta .comment-metadata {
+		flex: 0 1 auto;
 	}
 }
 
