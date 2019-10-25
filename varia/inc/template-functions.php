@@ -165,6 +165,28 @@ function varia_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
 }
 add_filter( 'nav_menu_link_attributes', 'varia_nav_menu_link_attributes', 10, 4 );
 
+/*
+ * Create the continue reading link
+ */
+function varia_continue_reading_link() {
+
+	if ( ! is_admin() ) {
+		$continue_reading = sprintf(
+			/* translators: %s: Name of current post. */
+			wp_kses( __( 'Continue reading %s', 'varia' ), array( 'span' => array( 'class' => array() ) ) ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		);
+
+		return '<a class="more-link" href="' . esc_url( get_permalink() ) . '">' . $continue_reading . '</a>';
+	}
+}
+
+// Filter the excerpt more link
+add_filter( 'excerpt_more', 'varia_continue_reading_link' );
+
+// Filter the content more link
+add_filter( 'the_content_more_link', 'varia_continue_reading_link' );
+
 /**
  * Add a dropdown icon to top-level menu items.
  *
