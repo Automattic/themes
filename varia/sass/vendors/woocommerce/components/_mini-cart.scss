@@ -59,9 +59,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 				background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
 				color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
-				padding-top: #{map-deep-get($config-header, "main-nav", "link-padding")};
-				padding-left: #{map-deep-get($config-header, "main-nav", "link-padding")};
-				padding-right: #{map-deep-get($config-header, "main-nav", "link-padding")};
+				padding: 0;
 				width: 100%;
 
 				a,
@@ -108,7 +106,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
 			color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
 			max-width: 100%;
-			padding: 0;
+			padding: #{map-deep-get($config-header, "main-nav", "link-padding")} 0;
 
 			@include media(mobile) {
 				max-width: #{20 * map-deep-get($config-global, "spacing", "horizontal")};
