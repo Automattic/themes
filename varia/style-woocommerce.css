@@ -1828,11 +1828,6 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 /**
  * Single Product Page
  */
-.single-product #page #woocommerce-wrapper div.product > .onsale {
-	right: auto;
-	left: -0.5em;
-}
-
 .single-product #page #woocommerce-wrapper div.product div.images {
 	margin-bottom: 32px;
 }
@@ -1870,6 +1865,27 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 .single-product #page #woocommerce-wrapper div.product div.summary p.price {
 	color: #111111;
 	font-size: 1.728rem;
+	line-height: 1.125;
+}
+
+.single-product #page #woocommerce-wrapper div.product div.summary span.price del,
+.single-product #page #woocommerce-wrapper div.product div.summary p.price del {
+	color: currentColor;
+	opacity: 0.5;
+	display: inline-block;
+}
+
+.single-product #page #woocommerce-wrapper div.product div.summary span.price ins,
+.single-product #page #woocommerce-wrapper div.product div.summary p.price ins {
+	background: none;
+	font-weight: 700;
+	display: inline-block;
+}
+
+.single-product #page #woocommerce-wrapper div.product div.summary span.price .from,
+.single-product #page #woocommerce-wrapper div.product div.summary p.price .from {
+	font-size: 0.69444rem;
+	color: gold;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.summary p.stock {
@@ -1888,12 +1904,22 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 	margin-top: -32px;
 }
 
-.single-product #page #woocommerce-wrapper div.product div.social {
-	margin-bottom: 32px;
-}
-
 .single-product #page #woocommerce-wrapper div.product .product_meta > * {
 	display: block;
+}
+
+.single-product #page #woocommerce-wrapper div.product > .onsale {
+	right: auto;
+	left: -0.5em;
+}
+
+.single-product #page #woocommerce-wrapper div.product.sale div.summary .span.price ins,
+.single-product #page #woocommerce-wrapper div.product.sale div.summary p.price ins {
+	color: yellowgreen;
+}
+
+.single-product #page #woocommerce-wrapper div.product div.social {
+	margin-bottom: 32px;
 }
 
 .single-product #page #woocommerce-wrapper div.product .up-sells > h2 {

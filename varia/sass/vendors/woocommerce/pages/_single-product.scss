@@ -5,11 +5,6 @@
 
 	div.product {
 
-		& > .onsale {
-			right: auto;
-			left: -0.5em;
-		}
-
 		div.images {
 			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 
@@ -46,6 +41,24 @@
 			p.price {
 				color: map-deep-get($config-global, "color", "foreground", "dark");
 				font-size: map-deep-get($config-global, "font", "size", "xl");
+				line-height: map-deep-get($config-global, "font", "line-height", "heading");
+
+				del {
+					color: currentColor;
+					opacity: 0.5;
+					display: inline-block;
+				}
+
+				ins {
+					background: none;
+					font-weight: 700;
+					display: inline-block;
+				}
+
+				.from {
+					font-size: map-deep-get($config-global, "font", "size", "xs");
+					color: map-deep-get($config-global, "color", "alert", "warning");
+				}
 			}
 
 			p.stock {
@@ -66,12 +79,26 @@
 
 		}
 
-		div.social {
-			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
-		}
-
 		.product_meta > * {
 			display: block;
+		}
+
+		// Sale
+		& > .onsale {
+			right: auto;
+			left: -0.5em;
+		}
+
+		&.sale div.summary .span.price,
+		&.sale div.summary p.price {
+			ins {
+				color: map-deep-get($config-global, "color", "alert", "success");
+			}
+		}
+
+		// Social
+		div.social {
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 		}
 
 		.up-sells {
@@ -80,6 +107,7 @@
 			}
 		}
 
+		// Add to cart form
 		p.cart {
 			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
 		}
