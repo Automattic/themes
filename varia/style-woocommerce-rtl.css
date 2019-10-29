@@ -1764,7 +1764,7 @@ body[class*="woocommerce"] #page .woocommerce-invalid #terms {
  * Account page
  */
 body[class*="woocommerce"] #page .entry-content .woocommerce-MyAccount-navigation {
-	width: 20%;
+	width: 100%;
 }
 
 body[class*="woocommerce"] #page .entry-content .woocommerce-MyAccount-navigation ul li a {
@@ -1776,8 +1776,14 @@ body[class*="woocommerce"] #page .entry-content .woocommerce-MyAccount-navigatio
 	margin-top: 0;
 }
 
+@media only screen and (min-width: 640px) {
+	body[class*="woocommerce"] #page .entry-content .woocommerce-MyAccount-navigation {
+		width: 20%;
+	}
+}
+
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content {
-	width: calc(80% - 16px);
+	width: 100%;
 }
 
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content .woocommerce-notices-wrapper:empty {
@@ -1788,6 +1794,12 @@ body[class*="woocommerce"] #page .woocommerce-MyAccount-content fieldset {
 	border: 1px solid #DDDDDD;
 	padding: 16px;
 	border-radius: 3px;
+}
+
+@media only screen and (min-width: 640px) {
+	body[class*="woocommerce"] #page .woocommerce-MyAccount-content {
+		width: calc(80% - 16px);
+	}
 }
 
 body[class*="woocommerce"] #page .addresses .title h3 {
