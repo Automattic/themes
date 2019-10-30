@@ -39,3 +39,23 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+// Adjust margins in cart widget
+body[class*="woocommerce"] #page .main-navigation {
+
+	.woocommerce-cart-widget {
+		padding: (0.5 * map-deep-get($config-global, "spacing", "unit"));
+	}
+
+	@include media(mobile) {
+		text-align: right;
+
+		& > div:not(:last-of-type) {
+			margin-right: 0;
+		}
+
+		& > div:last-of-type {
+			margin-left: (2 * map-deep-get($config-global, "spacing", "unit"));
+		}
+	}
+}
