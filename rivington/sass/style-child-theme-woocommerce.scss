@@ -53,3 +53,10 @@ body[class*="woocommerce"] #page span.onsale,
 #content .wc-block-grid .wc-block-grid__product-onsale {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
+
+// Fix mini-cart padding
+@include media(mobile-only) {
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		padding: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+}
