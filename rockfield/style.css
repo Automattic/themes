@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: rockfield
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -2434,7 +2434,7 @@ body:not(.fse-enabled) .site-description {
 	margin: 0;
 }
 
-.main-navigation #toggle:checked ~ div {
+.main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
 	display: block;
 }
 
@@ -2458,7 +2458,7 @@ body:not(.fse-enabled) .site-description {
 
 @media only screen and (min-width: 560px) {
 	.main-navigation > div {
-		display: block;
+		display: inline-block;
 	}
 	.main-navigation #toggle-menu {
 		display: none;
@@ -2844,6 +2844,13 @@ body:not(.fse-enabled) .footer-menu a {
 .entry-content .more-link {
 	display: block;
 	color: inherit;
+	margin-top: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content .more-link {
+		margin-top: 32px;
+	}
 }
 
 .entry-content .more-link:after {
@@ -3040,13 +3047,7 @@ body:not(.fse-enabled) .footer-menu a {
 	line-height: 1.125;
 	margin-bottom: 4px;
 	padding-right: 40px;
-  max-width: calc(100% - 48px);
-}
-
-.comment-meta .comment-author {
-	line-height: 1.125;
-	margin-bottom: 4px;
-	padding-right: 40px;
+	max-width: calc(100% - 48px);
 }
 
 @media only screen and (min-width: 560px) {
