@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: barnsbury
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -772,7 +772,7 @@ a {
 header *,
 main *,
 footer * {
-	max-width: inherit;
+	max-width: unset;
 }
 
 html,
@@ -3006,10 +3006,11 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-left: calc( $avatar-size + (0.5 * 16px));
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta {
-		margin-left: inherit;
-	}
+.comment-meta .comment-author {
+	line-height: 1.15;
+	margin-bottom: 4px;
+	padding-left: 40px;
+	max-width: calc(100% - 48px);
 }
 
 .comment-meta .comment-author {
@@ -3027,19 +3028,16 @@ body:not(.fse-enabled) .footer-menu a {
 	}
 }
 
+.comment-meta .comment-author .fn {
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+}
+
 .comment-meta .comment-author .avatar {
 	display: block;
 	position: absolute;
 	left: 0;
-}
-
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author .avatar {
-		margin-left: 16px;
-		display: inherit;
-		position: inherit;
-		left: inherit;
-	}
 }
 
 .comment-meta .comment-metadata {
@@ -3063,9 +3061,28 @@ body:not(.fse-enabled) .footer-menu a {
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
+		margin-left: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
+		max-width: inherit;
+		flex: 0 1 auto;
+	}
+	.comment-meta .comment-author .fn {
+		padding-left: 16px;
+	}
+	.comment-meta .comment-author .avatar {
+		margin-left: 16px;
+		display: inherit;
+		position: inherit;
+		left: inherit;
+	}
+	.comment-meta .comment-metadata {
+		flex: 0 1 auto;
 	}
 }
 

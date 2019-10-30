@@ -16,6 +16,11 @@
 	.more-link {
 		display: block;
 		color: inherit;
+		margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+
+		@include media(mobile) {
+			margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
 
 		&:after {
 			content: "\02192";
