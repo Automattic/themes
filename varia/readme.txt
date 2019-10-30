@@ -1,6 +1,6 @@
 === Varia ===
 Contributors: the WordPress team
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, a8c-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, jetpack-global-styles
 Requires at least: 4.9.6
 Tested up to: WordPress 5.0
 Stable tag: 1.1.0

@@ -11,8 +11,68 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 	.main-navigation {
 
+		// Mobile menu toggle
+		#toggle-cart {
+			display: inline-block;
+			margin: 0;
+
+			.svg-icon {
+				vertical-align: middle;
+			}
+		}
+
+		// Checkbox hack
+		#woocommerce-toggle:checked ~ div {
+			display: inline-block;
+		}
+
+		#woocommerce-toggle:focus + #toggle-cart {
+			background-color: #{map-deep-get($config-header, "main-nav", "color", "link-hover")};
+			outline: inherit;
+			text-decoration: underline;
+		}
+
+		#woocommerce-toggle:checked + #toggle-cart {
+			.open {
+				display: none;
+			}
+
+			.close {
+				display: inline;
+			}
+		}
+
+		@include media(mobile-only) {
+
+			.woocommerce-menu-container {
+
+				background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
+				color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
+				padding: 0;
+				width: 100%;
+
+				a,
+				a:link,
+				a:visited {
+					color: currentColor;
+				}
+			}
+		}
+
+		@include media(mobile) {
+
+			& > div:not(:last-of-type) {
+				margin-right: #{ 2 * map-deep-get($config-global, "spacing", "horizontal")};
+			}
+
+			#toggle-cart {
+				display: none;
+			}
+		}
+
 		.woocommerce-cart-link {
 
+			display: none;
 			text-decoration: none;
 			line-height: 1;
 
@@ -33,16 +93,11 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				float: left;
 				height: #{map-deep-get($config-header, "main-nav", "font", "size")};
 				width: #{map-deep-get($config-header, "main-nav", "font", "size")};
-			}
-
-			& + .sub-menu {
-				padding: 0 #{map-deep-get($config-header, "main-nav", "link-padding")};
+				vertical-align: middle;
 			}
 
 			@include media(mobile) {
-				& + .sub-menu {
-					padding: 0;
-				}
+				display: inline-block;
 			}
 		}
 
@@ -51,7 +106,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
 			color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
 			max-width: 100%;
-			padding: #{0.5 * map-deep-get($config-header, "main-nav", "link-padding")} 0;
+			padding: #{map-deep-get($config-header, "main-nav", "link-padding")} 0;
 
 			@include media(mobile) {
 				max-width: #{20 * map-deep-get($config-global, "spacing", "horizontal")};
@@ -60,8 +115,14 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 			.woocommerce.widget_shopping_cart .cart_list {
 				border-bottom: 1px solid map-deep-get($config-woocommerce, "mini-cart", "color", "border");
+
 				li {
 					border-top: 1px solid map-deep-get($config-woocommerce, "mini-cart", "color", "border");
+				}
+
+				a:hover,
+				a:focus {
+					background-color: transparent;
 				}
 
 				a.remove:hover,
