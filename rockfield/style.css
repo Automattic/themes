@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Rockfield is a refined theme designed for restaurants and food-related businesses seeking a classic, elegant look.
 Requires at least: WordPress 4.9.6
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2061,7 +2061,10 @@ table th,
  */
 .aligncenter {
 	clear: both;
+	display: block;
 	float: none;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
 }
 
@@ -3021,17 +3024,26 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-right: calc( $avatar-size + (0.5 * 16px));
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta {
-		margin-right: inherit;
-	}
+.comment-meta .comment-author {
+	line-height: 1.125;
+	margin-bottom: 4px;
+	padding-right: 40px;
+  max-width: calc(100% - 48px);
 }
 
 @media only screen and (min-width: 560px) {
 	.comment-meta .comment-author {
 		display: flex;
 		align-items: center;
+		margin-bottom: 0;
+		padding-right: 0;
 	}
+}
+
+.comment-meta .comment-author .fn {
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 .comment-meta .comment-author .avatar {
@@ -3040,17 +3052,15 @@ body:not(.fse-enabled) .footer-menu a {
 	right: 0;
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author .avatar {
-		margin-right: 16px;
-		display: inherit;
-		position: inherit;
-		right: inherit;
-	}
-}
-
 .comment-meta .comment-metadata {
 	color: #444444;
+	padding-right: 40px;
+}
+
+@media only screen and (min-width: 560px) {
+	.comment-meta .comment-metadata {
+		padding-right: 0;
+	}
 }
 
 .comment-meta .comment-metadata a {
@@ -3063,9 +3073,28 @@ body:not(.fse-enabled) .footer-menu a {
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
+		margin-right: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
+		max-width: inherit;
+		flex: 0 1 auto;
+	}
+	.comment-meta .comment-author .fn {
+		padding-right: 16px;
+	}
+	.comment-meta .comment-author .avatar {
+		margin-right: 16px;
+		display: inherit;
+		position: inherit;
+		right: inherit;
+	}
+	.comment-meta .comment-metadata {
+		flex: 0 1 auto;
 	}
 }
 
