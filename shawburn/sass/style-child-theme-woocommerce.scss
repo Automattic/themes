@@ -33,3 +33,32 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * WooCommerce Mobile Menu
+ */
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:focus + #toggle-cart,
+body[class*="woocommerce"] #page #toggle-cart {
+	background: map-deep-get($config-global, "color", "primary", "default");
+	color: map-deep-get($config-global, "color", "background", "default");
+	border-radius: 0;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background: map-deep-get($config-global, "color", "primary", "hover");
+		color: map-deep-get($config-global, "color", "background", "default");
+	}
+}
+
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:checked ~ div {
+	border-top: 2px solid map-deep-get($config-global, "color", "background", "default");
+
+	@include media(mobile) {
+		border-top: 0;
+	}
+}
+
