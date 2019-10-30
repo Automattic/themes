@@ -36,7 +36,9 @@
     "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
     "build:style": "node-sass sass/style-child-theme.scss style.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style.css",
     "build:style-editor": "node-sass sass/style-child-theme-editor.scss style-editor.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-editor.css",
+    "build:woocommerce": "node-sass sass/style-child-theme-woocommerce.scss style-woocommerce.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-woocommerce.css",
     "build:rtl": "rtlcss style.css style-rtl.css",
+    "build:woocommerce-rtl": "rtlcss style-woocommerce.css style-woocommerce-rtl.css",
     "build": "run-p \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   },

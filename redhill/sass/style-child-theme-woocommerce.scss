@@ -56,6 +56,12 @@ body[class*="woocommerce"] #page {
 		}
 	}
 
+	@include media(mobile-only) {
+		.main-navigation .woocommerce-cart-widget {
+			padding: map-deep-get($config-global, "spacing", "unit");
+		}
+	}
+
 	@include media(mobile) {
 		.widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
 
