@@ -39,3 +39,18 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+@include media(mobile-only) {
+	body[class*="woocommerce"] #page .main-navigation {
+//		display: flex;
+//		align-items: flex-start;
+	}
+
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-menu-container {
+		width: inherit;
+	}
+
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		padding: map-deep-get($config-global, "spacing", "unit");
+	}
+}
