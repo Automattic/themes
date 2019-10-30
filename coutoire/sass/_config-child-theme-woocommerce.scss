@@ -1,0 +1,55 @@
+/**
+ * Redefine Sass map values for child theme WooCommerce output.
+ */
+
+$config-woocommerce: (
+
+	/* Wrapper Width - accepts full, wide, or defuault */
+	"wrapper-width": default,
+
+	/* Tables */
+	"table": (
+		/* Borders */
+		"border": (
+			"color": map-deep-get($config-global, "color", "border", "default"),
+			"radius": 0,
+			"width": 1px,
+		),
+		"padding": map-deep-get($config-global, "spacing", "unit"),
+	),
+
+	/* Tabs */
+	"tabs": (
+		/* Borders */
+		"border": (
+			"color": map-deep-get($config-global, "color", "border", "default"),
+			"radius": 10px,
+			"width": 1px,
+		),
+		"padding": map-deep-get($config-global, "spacing", "horizontal"),
+	),
+
+	/* Mini cart */
+	"mini-cart": (
+		/* Color */
+		"color": (
+			"background": map-deep-get($config-global, "color", "background", "default"),
+			"border": map-deep-get($config-global, "color", "border", "dark"),
+			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"subtotal": map-deep-get($config-global, "color", "foreground", "default"),
+			"count": map-deep-get($config-global, "color", "foreground", "light"),
+		),
+		/* Button */
+		"button": (
+			"color": map-deep-get($config-button, "color", "text"),
+			"background-color": map-deep-get($config-button, "color", "background"),
+		),
+		"width": #{25 * map-deep-get($config-global, "spacing", "unit")},
+	),
+
+	/* Star Rating */
+	"star-rating": (
+		/* Color */
+		"color": map-deep-get($config-global, "color", "alert", "warning"),
+	),
+);
