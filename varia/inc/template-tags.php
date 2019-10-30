@@ -201,8 +201,7 @@ if ( ! function_exists( 'varia_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
+	 * Wraps the post thumbnail in an anchor element on index views
 	 */
 	function varia_post_thumbnail() {
 		if ( ! varia_can_show_post_thumbnail() ) {
