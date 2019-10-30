@@ -39,3 +39,35 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+// Fix margins and positioning in menu
+body[class*="woocommerce"] #page .main-navigation {
+
+	#toggle-menu {
+		position: inherit;
+		top: inherit;
+		right: inherit;
+	}
+
+	.woocommerce-menu-container .cart_list a,
+	.woocommerce-menu-container .cart_list a:link,
+	.woocommerce-menu-container .cart_list a:visited {
+		color: map-deep-get($config-global, "color", "secondary", "default");
+	}
+
+	@include media(mobile) {
+		text-align: right;
+
+		& > div {
+			text-align: left;
+		}
+
+		& > div:not(:last-of-type) {
+			margin-right: 0;
+		}
+
+		& > div:last-of-type {
+			margin-left: (2 * map-deep-get($config-global, "spacing", "unit"));
+		}
+	}
+}

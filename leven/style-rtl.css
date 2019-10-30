@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: leven
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -2417,7 +2417,7 @@ body:not(.fse-enabled) .site-description {
 	margin: 0;
 }
 
-.main-navigation #toggle:checked ~ div {
+.main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
 	display: block;
 }
 
@@ -2441,7 +2441,7 @@ body:not(.fse-enabled) .site-description {
 
 @media only screen and (min-width: 560px) {
 	.main-navigation > div {
-		display: block;
+		display: inline-block;
 	}
 	.main-navigation #toggle-menu {
 		display: none;
@@ -2473,11 +2473,6 @@ body:not(.fse-enabled) .site-description {
 	z-index: 1;
 }
 
-.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
-	cursor: pointer;
-	z-index: 99999;
-}
-
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2488,14 +2483,6 @@ body:not(.fse-enabled) .site-description {
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
-	}
-	.main-navigation > div > ul li:hover > ul,
-	.main-navigation > div > ul li[focus-within] > ul,
-	.main-navigation > div > ul li ul:hover,
-	.main-navigation > div > ul li ul:focus {
-		visibility: visible;
-		opacity: 1;
-		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,
@@ -2827,6 +2814,13 @@ body:not(.fse-enabled) .footer-menu a {
 .entry-content .more-link {
 	display: block;
 	color: inherit;
+	margin-top: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content .more-link {
+		margin-top: 32px;
+	}
 }
 
 .entry-content .more-link:after {
@@ -3019,16 +3013,11 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-left: calc( $avatar-size + (0.5 * 16px));
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta {
-		margin-left: inherit;
-	}
-}
-
 .comment-meta .comment-author {
 	line-height: 1.125;
 	margin-bottom: 4px;
 	padding-left: 40px;
+	max-width: calc(100% - 48px);
 }
 
 @media only screen and (min-width: 560px) {
@@ -3040,19 +3029,16 @@ body:not(.fse-enabled) .footer-menu a {
 	}
 }
 
+.comment-meta .comment-author .fn {
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+}
+
 .comment-meta .comment-author .avatar {
 	display: block;
 	position: absolute;
 	left: 0;
-}
-
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author .avatar {
-		margin-left: 16px;
-		display: inherit;
-		position: inherit;
-		left: inherit;
-	}
 }
 
 .comment-meta .comment-metadata {
@@ -3076,9 +3062,28 @@ body:not(.fse-enabled) .footer-menu a {
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
+		margin-left: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
+		max-width: inherit;
+		flex: 0 1 auto;
+	}
+	.comment-meta .comment-author .fn {
+		padding-left: 16px;
+	}
+	.comment-meta .comment-author .avatar {
+		margin-left: 16px;
+		display: inherit;
+		position: inherit;
+		left: inherit;
+	}
+	.comment-meta .comment-metadata {
+		flex: 0 1 auto;
 	}
 }
 
