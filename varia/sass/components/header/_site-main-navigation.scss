@@ -16,7 +16,7 @@
 	}
 
 	// Checkbox hack
-	#toggle:checked ~ div {
+	#toggle:checked ~ div:not(.woocommerce-menu-container) {
 		display: block;
 	}
 
@@ -43,7 +43,7 @@
 	@include media(mobile) {
 
 		& > div {
-			display: block;
+			display: inline-block;
 		}
 
 		#toggle-menu {

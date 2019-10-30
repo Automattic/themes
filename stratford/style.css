@@ -6,12 +6,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Stratford is the perfect design for your business or educational institutes online presence. Highlight your products and services, Stratford is versatile enough to be your personal blog too.
 Requires at least: WordPress 4.9.6
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: stratford
-Tags: one-column, fixed-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, a8c-global-styles
+Tags: one-column, fixed-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -684,9 +684,7 @@ a {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	content: "";
-	display: table;
-	table-layout: fixed;
+	clear: both;
 }
 
 /**
@@ -696,7 +694,7 @@ a {
 header *,
 main *,
 footer * {
-	max-width: inherit;
+	max-width: unset;
 }
 
 html,
@@ -2063,7 +2061,10 @@ table th,
  */
 .aligncenter {
 	clear: both;
+	display: block;
 	float: none;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
 }
 
@@ -3023,17 +3024,26 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-right: calc( $avatar-size + (0.5 * 16px));
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta {
-		margin-right: inherit;
-	}
+.comment-meta .comment-author {
+	line-height: 1.125;
+	margin-bottom: 4px;
+	padding-right: 40px;
+	max-width: calc(100% - 48px);
 }
 
 @media only screen and (min-width: 560px) {
 	.comment-meta .comment-author {
 		display: flex;
 		align-items: center;
+		margin-bottom: 0;
+		padding-right: 0;
 	}
+}
+
+.comment-meta .comment-author .fn {
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 .comment-meta .comment-author .avatar {
@@ -3042,17 +3052,15 @@ body:not(.fse-enabled) .footer-menu a {
 	right: 0;
 }
 
-@media only screen and (min-width: 560px) {
-	.comment-meta .comment-author .avatar {
-		margin-right: 16px;
-		display: inherit;
-		position: inherit;
-		right: inherit;
-	}
-}
-
 .comment-meta .comment-metadata {
 	color: #74767e;
+	padding-right: 40px;
+}
+
+@media only screen and (min-width: 560px) {
+	.comment-meta .comment-metadata {
+		padding-right: 0;
+	}
 }
 
 .comment-meta .comment-metadata a {
@@ -3065,9 +3073,28 @@ body:not(.fse-enabled) .footer-menu a {
 
 @media only screen and (min-width: 560px) {
 	.comment-meta {
+		margin-right: inherit;
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+	}
+	.comment-meta .comment-author {
+		display: flex;
+		align-items: center;
+		max-width: inherit;
+		flex: 0 1 auto;
+	}
+	.comment-meta .comment-author .fn {
+		padding-right: 16px;
+	}
+	.comment-meta .comment-author .avatar {
+		margin-right: 16px;
+		display: inherit;
+		position: inherit;
+		right: inherit;
+	}
+	.comment-meta .comment-metadata {
+		flex: 0 1 auto;
 	}
 }
 
@@ -3689,13 +3716,11 @@ p:not(.site-title) a:hover {
  */
 #masthead {
 	border-bottom: 1px solid #f3f3f3;
-	position: fixed;
-	z-index: 9999;
 	background: white;
-	width: 100%;
 	-webkit-transition: all .25s ease-in-out;
 	-moz-transition: all .25s ease-in-out;
 	transition: all .25s ease-in-out;
+	width: 100%;
 }
 
 #masthead .site-header-wrapper {
@@ -3706,14 +3731,12 @@ p:not(.site-title) a:hover {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	width: calc(100% - 1.5em);
 }
 
 #masthead .site-header-wrapper .site-branding {
 	-webkit-transition: margin-top .25s ease-in-out;
 	-moz-transition: margin-top .25s ease-in-out;
 	transition: margin-top .25s ease-in-out;
-	margin-left: 1.5em;
 	margin-right: auto;
 }
 
@@ -3799,41 +3822,20 @@ p:not(.site-title) a:hover {
 	}
 }
 
-@media only screen and (max-width: 559px) {
-	#masthead {
-		max-height: 100%;
-		overflow-y: scroll;
-	}
-	#masthead .site-header-wrapper {
-		width: 100%;
-	}
-	#masthead .site-header-wrapper .site-branding {
-		margin-left: 0;
-	}
+@media only screen and (min-width: 560px) {
 	.site-header {
-		position: relative;
+		padding-right: 32px;
+		padding-left: 32px;
+		position: fixed;
+		z-index: 9999;
 	}
+}
+
+@media only screen and (max-width: 559px) {
 	.site-title,
 	.site-description {
 		font-size: 1.728rem;
 		hyphens: auto;
-	}
-}
-
-/**
- * 3. Main Wrapper and Content
- */
-.site-content {
-	padding-top: 4.75em;
-}
-
-.home.page.hide-homepage-title .site-content .site-main {
-	padding-top: 0;
-}
-
-@media only screen and (max-width: 559px) {
-	.home.page.hide-homepage-title .site-content {
-		padding-top: 4em;
 	}
 }
 
