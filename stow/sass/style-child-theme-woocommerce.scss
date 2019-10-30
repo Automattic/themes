@@ -39,3 +39,27 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+// Fix mobile-cart button
+#site-navigation {
+
+	&.main-navigation {
+
+		#toggle-menu {
+			border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+		}
+
+		#toggle-cart {
+			border-radius: 0;
+			width: 100% !important;
+			text-align: center;
+			font-size: map-deep-get($config-header, "main-nav", "font", "size");
+		}
+	}
+}
+
+// Fix SVG cart icon height
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-icon {
+	height: 1em;
+	width: 1em;
+}

@@ -123,6 +123,16 @@ a {
  */
 #site-navigation {
 
+	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
+	border-bottom: 2px solid rgba(0,0,0,.15);
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+
+	& > div {
+		text-align: left;
+	}
+
 	&.main-navigation {
 		ul {
 			li {
@@ -199,11 +209,6 @@ a {
 			}
 		}
 		.main-menu {
-			background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
-			border-bottom: 2px solid rgba(0,0,0,.15);
-			margin-left: 0;
-			margin-right: 0;
-
 			& > li > a {
 				padding-left: 0;
 			}
