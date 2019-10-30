@@ -66,3 +66,18 @@ body[class*="woocommerce"] #page #masthead .site-header-wrapper .main-navigation
 #masthead .site-header-wrapper .main-navigation ul li svg {
 	margin-top: .25em;
 }
+
+body[class*="woocommerce"] #page {
+
+	@include media(mobile-only) {
+		.site-branding {
+			margin-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+		}
+
+		#toggle-menu {
+			position: inherit !important;
+			top: inherit;
+			right: inherit;
+		}
+	}
+}
