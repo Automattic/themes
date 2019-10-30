@@ -26,7 +26,7 @@
 @import "../../varia/sass/abstracts/mixins";
 
 /**
- * Varia Responsive Logic
+ * Varia Responsive logic
  */
 @import "../../varia/sass/abstracts/responsive-logic";
 
@@ -39,23 +39,3 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
-
-/**
- * Remove grid-products flexbox layout
- */
-
-@include media(mobile) {
-	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
-
-		display: inherit;
-
-		& > li {
-			width: inherit;
-
-			&:nth-child(3n+2):last-child {
-				margin-left: inherit;
-				margin-right: inherit;
-			}
-		}
-	}
-}

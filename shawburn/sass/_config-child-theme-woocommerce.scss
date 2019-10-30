@@ -1,0 +1,48 @@
+/**
+ * Redefine Sass map values for child theme WooCommerce output.
+ */
+
+$config-woocommerce: (
+
+	/* Tables */
+	"table": (
+		/* Borders */
+		"border": (
+			"color": map-deep-get($config-global, "color", "border", "default"),
+			"radius": 0,
+			"width": 1px,
+		),
+		"padding": map-deep-get($config-global, "spacing", "unit"),
+	),
+
+	/* Tabs */
+	"tabs": (
+		/* Borders */
+		"border": (
+			"color": map-deep-get($config-global, "color", "border", "default"),
+			"radius": 10px,
+			"width": 1px,
+		),
+		"padding": map-deep-get($config-global, "spacing", "horizontal"),
+	),
+
+	/* Mini cart */
+	"mini-cart": (
+		/* Color */
+		"color": (
+			"subtotal": map-deep-get($config-global, "color", "white"),
+			"count": map-deep-get($config-global, "color", "white"),
+		),
+		/* Button */
+		"button": (
+			"color": map-deep-get($config-global, "color", "primary", "default"),
+			"background-color": map-deep-get($config-global, "color", "white"),
+		),
+	),
+
+	/* Star Rating */
+	"star-rating": (
+		/* Color */
+		"color": map-deep-get($config-global, "color", "alert", "warning"),
+	),
+);

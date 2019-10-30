@@ -173,60 +173,6 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * Page Layout Styles & Repsonsive Styles
  */
 /* Responsive width-content overrides */
-body[class*="woocommerce"] #page .woocommerce:not(.widget),
-body[class*="woocommerce"] #page #woocommerce-wrapper,
-body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
-	width: calc(100% + 256px);
-	max-width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-@media only screen and (min-width: 560px) {
-	body[class*="woocommerce"] #page .woocommerce:not(.widget),
-	body[class*="woocommerce"] #page #woocommerce-wrapper,
-	body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
-		width: calc(calc( 560px - 32px) + 256px);
-		max-width: 100%;
-	}
-}
-
-@media only screen and (min-width: 640px) {
-	body[class*="woocommerce"] #page .woocommerce:not(.widget),
-	body[class*="woocommerce"] #page #woocommerce-wrapper,
-	body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
-		width: calc(calc( 640px - 32px) + 256px);
-		max-width: 100%;
-	}
-}
-
-@media only screen and (min-width: 782px) {
-	body[class*="woocommerce"] #page .woocommerce:not(.widget),
-	body[class*="woocommerce"] #page #woocommerce-wrapper,
-	body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
-		width: calc(calc( 782px - 32px) + 256px);
-		max-width: 100%;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	body[class*="woocommerce"] #page .woocommerce:not(.widget),
-	body[class*="woocommerce"] #page #woocommerce-wrapper,
-	body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
-		width: calc(calc( 782px - 32px) + 256px);
-		max-width: 100%;
-	}
-}
-
-@media only screen and (min-width: 1280px) {
-	body[class*="woocommerce"] #page .woocommerce:not(.widget),
-	body[class*="woocommerce"] #page #woocommerce-wrapper,
-	body[class*="woocommerce"] #page .woocommerce-Tabs-panel.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment) {
-		width: calc(calc( 782px - 32px) + 256px);
-		max-width: 100%;
-	}
-}
-
 /**
  * Varia Extends
  */
@@ -257,11 +203,11 @@ body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a {
 	color: white;
 	cursor: pointer;
 	font-weight: bold;
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
-	background-color: #CD2220;
-	border-radius: 5px;
+	background-color: #CA2017;
+	border-radius: 4px;
 	border-width: 0;
 	padding: 16px 24px;
 }
@@ -364,7 +310,7 @@ body[class*="woocommerce"] #page a.has-focus.added_to_cart,
 body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a.has-focus,
 body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a.has-focus {
 	color: white;
-	background-color: #303030;
+	background-color: #222222;
 }
 
 /**
@@ -375,12 +321,12 @@ body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a.ha
  */
 body[class*="woocommerce"] #page span.onsale, #content .wc-block-grid .wc-block-grid__product-onsale {
 	border-radius: 100%;
-	background-color: #ffc107;
-	color: #101010;
-	font-size: 0.86957rem;
+	background-color: gold;
+	color: #111111;
+	font-size: 0.83333rem;
 	font-weight: 700;
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	min-height: 3.236rem;
 	min-width: 3.236rem;
 	padding: 0.202rem;
@@ -389,8 +335,8 @@ body[class*="woocommerce"] #page span.onsale, #content .wc-block-grid .wc-block-
 	text-transform: none;
 	line-height: 3.236;
 	top: -0.5em;
-	left: -0.5em;
-	right: auto;
+	right: -0.5em;
+	left: auto;
 	margin: 0;
 	z-index: 9;
 }
@@ -410,9 +356,9 @@ body[class*="woocommerce"] #page span.onsale, #content .wc-block-grid .wc-block-
 body[class*="woocommerce"] #page .woocommerce-breadcrumb {
 	margin-bottom: 32px;
 	font-size: 1rem;
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	color: #757575;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page .woocommerce-breadcrumb a {
@@ -427,62 +373,62 @@ body[class*="woocommerce"] #page .woocommerce-info,
 body[class*="woocommerce"] #page .woocommerce-success,
 body[class*="woocommerce"] #page .woocommerce-error,
 body[class*="woocommerce"] #page .woocommerce-warning {
-	padding: 16px 64px 16px 32px;
+	padding: 16px 32px 16px 64px;
 	margin-bottom: 32px;
-	background-color: #F8F8F8;
-	color: #101010;
-	border-top-color: #CD2220;
+	background-color: #FAFAFA;
+	color: #111111;
+	border-top-color: #CA2017;
 }
 
 body[class*="woocommerce"] #page .woocommerce-notice--message,
 body[class*="woocommerce"] #page .woocommerce-notice--info {
-	color: #2196f3;
+	color: skyblue;
 }
 
 body[class*="woocommerce"] #page .woocommerce-notice--success {
-	color: #4caf50;
+	color: yellowgreen;
 }
 
 body[class*="woocommerce"] #page .woocommerce-notice--error {
-	color: #CD2220;
+	color: salmon;
 }
 
 body[class*="woocommerce"] #page .woocommerce-notice--warning {
-	color: #ffc107;
+	color: gold;
 }
 
 body[class*="woocommerce"] #page .woocommerce-message,
 body[class*="woocommerce"] #page .woocommerce-info {
-	border-top-color: #2196f3;
+	border-top-color: skyblue;
 }
 
 body[class*="woocommerce"] #page .woocommerce-message:before,
 body[class*="woocommerce"] #page .woocommerce-info:before {
-	color: #2196f3;
+	color: skyblue;
 }
 
 body[class*="woocommerce"] #page .woocommerce-success {
-	border-top-color: #4caf50;
+	border-top-color: yellowgreen;
 }
 
 body[class*="woocommerce"] #page .woocommerce-success:before {
-	color: #4caf50;
+	color: yellowgreen;
 }
 
 body[class*="woocommerce"] #page .woocommerce-error {
-	border-top-color: #CD2220;
+	border-top-color: salmon;
 }
 
 body[class*="woocommerce"] #page .woocommerce-error:before {
-	color: #CD2220;
+	color: salmon;
 }
 
 body[class*="woocommerce"] #page .woocommerce-warning {
-	border-top-color: #ffc107;
+	border-top-color: gold;
 }
 
 body[class*="woocommerce"] #page .woocommerce-warning:before {
-	color: #ffc107;
+	color: gold;
 }
 
 /**
@@ -495,41 +441,41 @@ body[class*="woocommerce"] #page .woocommerce-password-strength {
 	text-align: center;
 	font-weight: 600;
 	padding: 0.5 * 16px;
-	font-size: 0.86957rem;
+	font-size: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page .woocommerce-password-strength.strong {
-	background-color: #4caf50;
+	background-color: yellowgreen;
 	border-color: none;
 }
 
 body[class*="woocommerce"] #page .woocommerce-password-strength.good {
-	background-color: #ffc107;
+	background-color: gold;
 	border-color: none;
 }
 
 body[class*="woocommerce"] #page .woocommerce-password-strength.short {
-	background-color: #CD2220;
+	background-color: salmon;
 	border-color: none;
 }
 
 body[class*="woocommerce"] #page .woocommerce-password-strength.bad {
-	background-color: #CD2220;
+	background-color: salmon;
 	border-color: none;
 }
 
 body[class*="woocommerce"] #page .woocommerce-password-hint {
-	font-size: 0.75614rem;
+	font-size: 0.69444rem;
 }
 
 /**
  * Remove Icon
  */
 body[class*="woocommerce"] #page a.remove {
-	font-size: 1.3225rem;
+	font-size: 1.44rem;
 	font-family: sans-serif !important;
-	height: 1.3225rem;
-	width: 1.3225rem;
+	height: 1.44rem;
+	width: 1.44rem;
 	color: red !important;
 }
 
@@ -542,8 +488,8 @@ body[class*="woocommerce"] #page a.remove:hover {
  * Small Note
  */
 body[class*="woocommerce"] #page small.note {
-	color: #757575;
-	font-size: 0.86957rem;
+	color: #666666;
+	font-size: 0.83333rem;
 	margin-top: 16px;
 }
 
@@ -551,17 +497,17 @@ body[class*="woocommerce"] #page small.note {
  * Star ratings
  */
 body[class*="woocommerce"] #page .star-rating::before {
-	color: #ffc107;
+	color: gold;
 	content: "\53\53\53\53\53";
 	opacity: 0.4;
 }
 
 body[class*="woocommerce"] #page .star-rating span {
-	color: #ffc107;
+	color: gold;
 }
 
 body[class*="woocommerce"] #page p.stars a {
-	color: #ffc107;
+	color: gold;
 }
 
 /**
@@ -569,7 +515,7 @@ body[class*="woocommerce"] #page p.stars a {
  */
 body[class*="woocommerce"] #page table.shop_table {
 	border-collapse: collapse;
-	border: 1px solid #C5C5C5;
+	border: 1px solid #DDDDDD;
 	border-radius: 0;
 	margin-bottom: 32px;
 }
@@ -586,32 +532,32 @@ body[class*="woocommerce"] #page table.shop_table td {
 }
 
 body[class*="woocommerce"] #page table.shop_table tr {
-	border-bottom: 1px solid #C5C5C5;
+	border-bottom: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page table.shop_table tfoot td,
 body[class*="woocommerce"] #page table.shop_table tfoot th,
 body[class*="woocommerce"] #page table.shop_table tbody th {
-	border-top-color: #C5C5C5;
+	border-top-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page table.shop_attributes {
-	border-top-color: #C5C5C5;
+	border-top-color: #DDDDDD;
 	border-top-style: solid;
 	margin-bottom: 32px;
-	border-bottom: 1px solid #C5C5C5;
+	border-bottom: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page table.shop_attributes th {
 	padding: 8px;
-	border-bottom-color: #C5C5C5;
+	border-bottom-color: #DDDDDD;
 	border-bottom-style: solid;
 	line-height: 1.6;
 }
 
 body[class*="woocommerce"] #page table.shop_attributes td {
 	font-style: inherit;
-	border-bottom-color: #C5C5C5;
+	border-bottom-color: #DDDDDD;
 	border-bottom-style: solid;
 	line-height: 1.6;
 	padding: 8px;
@@ -625,11 +571,11 @@ body[class*="woocommerce"] #page table.shop_attributes td p {
 
 body[class*="woocommerce"] #page table.shop_attributes tr:nth-child(even) td,
 body[class*="woocommerce"] #page table.shop_attributes tr:nth-child(even) th {
-	background: #F8F8F8;
+	background: #FAFAFA;
 }
 
 body[class*="woocommerce"] #page table.my_account_orders {
-	font-size: 0.86957rem;
+	font-size: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page table.my_account_orders th,
@@ -675,7 +621,7 @@ body[class*="woocommerce"] #page .woocommerce button.button:disabled[disabled]:h
 body[class*="woocommerce"] #page .woocommerce input.button.disabled:hover,
 body[class*="woocommerce"] #page .woocommerce input.button:disabled:hover,
 body[class*="woocommerce"] #page .woocommerce input.button:disabled[disabled]:hover {
-	background-color: #CD2220;
+	background-color: #CA2017;
 }
 
 /**
@@ -714,29 +660,29 @@ body[class*="woocommerce"] #page .woocommerce input.button:disabled[disabled]:ho
 }
 
 #content .wc-block-grid .wc-block-grid__product-title {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-size: 1rem;
 }
 
 #content .wc-block-grid .wc-block-grid__product-rating .star-rating span:before {
-	color: #007AB7;
+	color: #007FDB;
 }
 
 #content .wc-block-grid .wc-block-grid__product-price {
-	color: #101010;
-	font-size: 1.15rem;
+	color: #111111;
+	font-size: 1.2rem;
 	line-height: 1.125;
 }
 
 #content .wc-block-grid .wc-block-grid__product-price ins {
-	color: #4caf50;
+	color: yellowgreen;
 	font-weight: bold;
 	text-decoration: none;
 }
 
 #content .wc-block-grid .wc-block-grid__product .wc-block-grid__product-onsale {
-	left: calc(-0.5em + 16px);
+	right: calc(-0.5em + 16px);
 	margin: 0;
 }
 
@@ -752,7 +698,7 @@ body[class*="woocommerce"] #page .woocommerce input.button:disabled[disabled]:ho
 }
 
 #content .wc-block-featured-product .wc-block-featured-product__price {
-	font-size: 1.52087rem;
+	font-size: 1.728rem;
 }
 
 #content .wc-block-featured-product .wc-block-featured-product__price ins {
@@ -773,20 +719,20 @@ body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_tot
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_totals tr th,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells tr td,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells tr th {
-	border-top-color: #C5C5C5;
+	border-top-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .cart-collaterals .cart_totals > h2,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells > h2,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_totals > h2,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells > h2 {
-	font-size: 1.3225rem;
+	font-size: 1.44rem;
 }
 
 body[class*="woocommerce"] #page .cart-collaterals .cart_totals p small,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_totals p small {
-	color: #757575;
-	font-size: 0.86957rem;
+	color: #666666;
+	font-size: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page .cart-collaterals .cart_totals table,
@@ -803,12 +749,12 @@ body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_tot
 
 body[class*="woocommerce"] #page .cart-collaterals .cart_totals table small,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_totals table small {
-	color: #757575;
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page .cart-collaterals .cart_totals .discount td,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cart_totals .discount td {
-	color: #ffc107;
+	color: gold;
 }
 
 body[class*="woocommerce"] #page .cart-collaterals .shipping-calculator-button,
@@ -832,26 +778,26 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link > *:not(:last-child) {
-	margin-left: 4px;
+	margin-right: 4px;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .woocommerce-cart-subtotal {
-	color: white;
+	color: #222222;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .woocommerce-cart-count {
-	color: white;
+	color: #666666;
 	font-weight: normal;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-icon {
-	float: right;
-	height: 1rem;
-	width: 1rem;
+	float: left;
+	height: 0.83333rem;
+	width: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-menu {
-	padding: 0 8px;
+	padding: 0 16px;
 }
 
 @media only screen and (min-width: 560px) {
@@ -861,25 +807,25 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link + .sub-
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
-	background-color: #303030;
+	background-color: #222222;
 	color: white;
 	max-width: 100%;
-	padding: 4px 0;
+	padding: 8px 0;
 }
 
 @media only screen and (min-width: 560px) {
 	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
 		max-width: 320px;
-		padding: 8px;
+		padding: 16px;
 	}
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list {
-	border-bottom: 1px solid #A5A5A5;
+	border-bottom: 1px solid #AAAAAA;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list li {
-	border-top: 1px solid #A5A5A5;
+	border-top: 1px solid #AAAAAA;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce.widget_shopping_cart .cart_list a.remove:hover,
@@ -888,19 +834,19 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .wooc
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__total {
-	text-align: left;
+	text-align: right;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons {
-	text-align: left;
+	text-align: right;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a {
-	clear: left;
+	clear: right;
 	color: white;
-	background-color: #CD2220;
+	background-color: #CA2017;
 	margin: 0;
-	float: left;
+	float: right;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2),
@@ -912,7 +858,7 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .wooc
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2):not(:last-child),
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:first-child:nth-last-child(2) ~ a:not(:last-child) {
-	margin-left: 8px;
+	margin-right: 8px;
 }
 
 body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget .woocommerce-mini-cart__buttons a:not(:last-child) {
@@ -937,15 +883,15 @@ body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li .qua
 body[class*="woocommerce"] #page .main-navigation ul.cart_list li a:not(.remove),
 body[class*="woocommerce"] #page .main-navigation ul.product_list_widget li a:not(.remove),
 body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 1rem;
 }
 
 @media only screen and (min-width: 560px) {
 	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
-		right: auto;
-		left: 0;
+		left: auto;
+		right: 0;
 	}
 	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
 		max-width: 400px;
@@ -953,8 +899,8 @@ body[class*="woocommerce"] #page .main-navigation .woocommerce-mini-cart__total 
 	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item:hover > ul:before,
 	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item.focus > ul:before,
 	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
-		margin-right: auto;
-		margin-left: 16px;
+		margin-left: auto;
+		margin-right: 16px;
 	}
 }
 
@@ -979,12 +925,12 @@ body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers {
 
 body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li > * {
 	display: block;
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 1.15rem;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+	font-size: 1.2rem;
 	font-weight: 600;
-	padding-right: calc(0.66 * 16px);
 	padding-left: calc(0.66 * 16px);
+	padding-right: calc(0.66 * 16px);
 }
 
 body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li {
@@ -1000,7 +946,7 @@ body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li span.c
 body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li a:hover,
 body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers li a:focus {
 	background: transparent;
-	color: #303030;
+	color: #222222;
 }
 
 body[class*="woocommerce"] #page .woocommerce-pagination .page-numbers .svg-icon {
@@ -1034,9 +980,9 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.p
 #woocommerce-wrapper ul.products li.product .star-rating,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .star-rating,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .star-rating {
-	font-size: 0.86957rem;
-	margin-right: auto;
+	font-size: 0.83333rem;
 	margin-left: auto;
+	margin-right: auto;
 }
 
 #woocommerce-wrapper ul.products li.product h3,
@@ -1061,7 +1007,7 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.p
 #woocommerce-wrapper ul.products li.product .woocommerce-placeholder,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .woocommerce-placeholder,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .woocommerce-placeholder {
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 }
 
 #woocommerce-wrapper ul.products li.product .button,
@@ -1079,8 +1025,8 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.p
 #woocommerce-wrapper ul.products li.product .price,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .price,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .price {
-	color: #101010;
-	font-size: 1.15rem;
+	color: #111111;
+	font-size: 1.2rem;
 	line-height: 1.125;
 }
 
@@ -1103,14 +1049,14 @@ body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.p
 #woocommerce-wrapper ul.products li.product .price .from,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .price .from,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .price .from {
-	font-size: 0.75614rem;
-	color: #ffc107;
+	font-size: 0.69444rem;
+	color: gold;
 }
 
 #woocommerce-wrapper ul.products li.product.sale a > .price ins,
 body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product.sale a > .price ins,
 body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product.sale a > .price ins {
-	color: #4caf50;
+	color: yellowgreen;
 }
 
 /**
@@ -1123,64 +1069,64 @@ body[class*="woocommerce"] #page {
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs {
-	padding-right: 16px;
+	padding-left: 16px;
 	margin-bottom: 32px;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li {
-	background-color: #F8F8F8;
-	border-color: #C5C5C5;
-	border-top-right-radius: 10px;
+	background-color: #FAFAFA;
+	border-color: #DDDDDD;
 	border-top-left-radius: 10px;
-	padding-right: 0;
+	border-top-right-radius: 10px;
 	padding-left: 0;
+	padding-right: 0;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li a {
-	color: #757575;
-	padding-right: 16px;
+	color: #666666;
 	padding-left: 16px;
+	padding-right: 16px;
 	padding-top: 8px;
 	padding-bottom: 8px;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li a:hover {
-	color: #303030;
+	color: #222222;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li.active {
 	background-color: white;
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 	border-bottom-color: white;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li.active a {
-	color: #101010;
+	color: #111111;
 	text-shadow: inherit;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li.active::before {
-	box-shadow: -2px 2px 0 white;
-}
-
-body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li.active::after {
 	box-shadow: 2px 2px 0 white;
 }
 
+body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li.active::after {
+	box-shadow: -2px 2px 0 white;
+}
+
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li::before, body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li::after {
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li::before {
-	box-shadow: -2px 2px 0 #F8F8F8;
+	box-shadow: 2px 2px 0 #FAFAFA;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs li::after {
-	box-shadow: 2px 2px 0 #F8F8F8;
+	box-shadow: -2px 2px 0 #FAFAFA;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs ul.tabs::before {
-	border-bottom-color: #C5C5C5;
+	border-bottom-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce-tabs .panel {
@@ -1189,9 +1135,9 @@ body[class*="woocommerce"] #page .woocommerce-tabs .panel {
 
 body[class*="woocommerce"] #page .woocommerce-tabs .panel h2,
 body[class*="woocommerce"] #page .woocommerce-tabs .panel .comment-reply-title {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 1.3225rem;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+	font-size: 1.44rem;
 	font-weight: bold;
 }
 
@@ -1205,8 +1151,8 @@ body[class*="woocommerce"] #page {
 }
 
 body[class*="woocommerce"] #page #reviews h2 small {
-	color: #757575;
-	font-size: 0.86957rem;
+	color: #666666;
+	font-size: 0.83333rem;
 	margin: inherit;
 }
 
@@ -1215,7 +1161,7 @@ body[class*="woocommerce"] #page #reviews h2 small a {
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist {
-	padding-right: 0;
+	padding-left: 0;
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li {
@@ -1223,8 +1169,8 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist li {
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .meta {
-	color: #757575;
-	font-size: 0.86957rem;
+	color: #666666;
+	font-size: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li img.avatar {
@@ -1232,19 +1178,19 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist li img.avatar
 	width: 48px;
 	height: auto;
 	background: transparent;
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 	margin: 0;
 	box-shadow: none;
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .woocommerce-review__author {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-text {
-	margin-right: 64px;
-	border: 1px solid #C5C5C5;
+	margin-left: 64px;
+	border: 1px solid #DDDDDD;
 	border-radius: 4px;
 	padding: 1em 1em 0;
 }
@@ -1259,7 +1205,7 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist li .comment-t
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children {
 	list-style: none outside;
-	margin: 20px 50px 0 0;
+	margin: 20px 0 0 50px;
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children .star-rating {
@@ -1267,10 +1213,10 @@ body[class*="woocommerce"] #page #reviews #comments ol.commentlist ul.children .
 }
 
 body[class*="woocommerce"] #page #reviews #comments ol.commentlist #respond {
-	border: 1px solid #C5C5C5;
+	border: 1px solid #DDDDDD;
 	border-radius: 4px;
 	padding: 1em 1em 0;
-	margin: 20px 50px 0 0;
+	margin: 20px 0 0 50px;
 }
 
 body[class*="woocommerce"] #page #reviews #comments .commentlist > li::before {
@@ -1511,8 +1457,8 @@ body[class*="woocommerce"] #page table.shop_table td.product-remove {
 
 @media only screen and (min-width: 1024px) {
 	body[class*="woocommerce"] #page table.shop_table td.product-remove {
-		height: 1.3225rem;
-		width: 1.3225rem;
+		height: 1.44rem;
+		width: 1.44rem;
 	}
 }
 
@@ -1525,8 +1471,8 @@ body[class*="woocommerce"] #page td.product-thumbnail img {
 }
 
 body[class*="woocommerce"] #page td.product-name {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	font-weight: 700;
 }
 
@@ -1538,11 +1484,11 @@ body[class*="woocommerce"] #page td.product-name dl.variation dt,
 body[class*="woocommerce"] #page td.product-name dl.variation .wc-item-meta-label,
 body[class*="woocommerce"] #page td.product-name .wc-item-meta dt,
 body[class*="woocommerce"] #page td.product-name .wc-item-meta .wc-item-meta-label {
-	margin-left: 8px;
+	margin-right: 8px;
 }
 
 body[class*="woocommerce"] #page td.product-name p.backorder_notification {
-	font-size: 0.86957rem;
+	font-size: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page td.product-quantity {
@@ -1559,9 +1505,9 @@ body[class*="woocommerce"] #page table.cart td.actions .input-text {
  * Checkout page
  */
 body[class*="woocommerce"] #page .woocommerce-order h2 {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 1.3225rem;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+	font-size: 1.44rem;
 	font-weight: bold;
 }
 
@@ -1570,15 +1516,15 @@ body[class*="woocommerce"] #page .woocommerce-order-overview.order_details {
 	justify-content: space-between;
 	align-content: flex-start;
 	align-items: stretch;
-	border: 1px solid #C5C5C5;
+	border: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li {
 	border: none;
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 0.86957rem;
-	margin-left: 0;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+	font-size: 0.83333rem;
+	margin-right: 0;
 	padding: 16px;
 	text-transform: none;
 }
@@ -1588,13 +1534,13 @@ body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li.em
 }
 
 body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li:not(:last-child) {
-	border-left: 1px solid #C5C5C5;
+	border-right: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce-order-overview.order_details li strong {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 1.15rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-size: 1.2rem;
 	line-height: 1.125;
 }
 
@@ -1610,22 +1556,22 @@ body[class*="woocommerce"] #page .woocommerce-form-coupon-toggle + .checkout_cou
 body[class*="woocommerce"] #page form.checkout_coupon,
 body[class*="woocommerce"] #page form.login,
 body[class*="woocommerce"] #page form.register {
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 	padding: 16px;
 	margin-top: inherit;
 	margin-bottom: inherit;
-	text-align: right;
+	text-align: left;
 	border-radius: 0;
 }
 
 body[class*="woocommerce"] #page ul.order_details {
-	padding-right: 0;
+	padding-left: 0;
 }
 
 body[class*="woocommerce"] #page .woocommerce-customer-details address {
 	border-radius: 0;
-	border-color: #C5C5C5;
-	border-left-width: 1px;
+	border-color: #DDDDDD;
+	border-right-width: 1px;
 	border-bottom-width: 1px;
 }
 
@@ -1638,9 +1584,9 @@ body[class*="woocommerce"] #page #add_payment_method table.cart img {
 }
 
 body[class*="woocommerce"] #page #add_payment_method table.cart td.actions .coupon .input-text {
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 	padding: 8px;
-	margin: 0 0 0 16px;
+	margin: 0 16px 0 0;
 }
 
 body[class*="woocommerce"] #page .wc-proceed-to-checkout {
@@ -1649,7 +1595,7 @@ body[class*="woocommerce"] #page .wc-proceed-to-checkout {
 
 body[class*="woocommerce"] #page .wc-proceed-to-checkout a.checkout-button {
 	margin-bottom: 16px;
-	font-size: 1.15rem;
+	font-size: 1.2rem;
 	padding: 16px;
 }
 
@@ -1658,19 +1604,19 @@ body[class*="woocommerce"] #page .wc-proceed-to-checkout a.wcppec-checkout-butto
 }
 
 body[class*="woocommerce"] #page .checkout .create-account small {
-	font-size: 0.75614rem;
-	color: #757575;
+	font-size: 0.69444rem;
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page #payment {
 	background: transparent;
-	border: 1px solid #C5C5C5;
+	border: 1px solid #DDDDDD;
 	border-radius: 0;
 }
 
 body[class*="woocommerce"] #page #payment ul.payment_methods {
 	padding: 16px;
-	border-bottom-color: #C5C5C5;
+	border-bottom-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page #payment ul.payment_methods li {
@@ -1678,7 +1624,7 @@ body[class*="woocommerce"] #page #payment ul.payment_methods li {
 }
 
 body[class*="woocommerce"] #page #payment ul.payment_methods li input {
-	margin-left: 1.6;
+	margin-right: 1.6;
 }
 
 body[class*="woocommerce"] #page #payment div.form-row {
@@ -1690,34 +1636,34 @@ body[class*="woocommerce"] #page #payment div.payment_box {
 	padding: 8px;
 	margin-bottom: 8px;
 	margin-top: 8px;
-	font-size: 0.86957rem;
+	font-size: 0.83333rem;
 	font-weight: bold;
 	border-radius: 0;
 	line-height: 1.6;
-	background-color: #E1DFDF;
-	color: #101010;
+	background-color: #DDDDDD;
+	color: #111111;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box input.input-text,
 body[class*="woocommerce"] #page #payment div.payment_box textarea {
-	border-color: #C5C5C5;
-	border-top-color: #C5C5C5;
+	border-color: #DDDDDD;
+	border-top-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box ::-webkit-input-placeholder {
-	color: #757575;
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box :-moz-placeholder {
-	color: #757575;
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box :-ms-input-placeholder {
-	color: #757575;
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput {
-	margin-left: 16px;
+	margin-right: 16px;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form {
@@ -1727,13 +1673,13 @@ body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form {
 body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form-card-number,
 body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form-card-expiry,
 body[class*="woocommerce"] #page #payment div.payment_box .wc-credit-card-form-card-cvc {
-	font-size: 1.3225rem;
+	font-size: 1.44rem;
 	padding: 8px;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box span.help {
-	font-size: 0.86957rem;
-	color: #757575;
+	font-size: 0.83333rem;
+	color: #666666;
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box .form-row {
@@ -1745,14 +1691,14 @@ body[class*="woocommerce"] #page #payment div.payment_box p:last-child {
 }
 
 body[class*="woocommerce"] #page #payment div.payment_box::before {
-	border-bottom-color: #E1DFDF;
+	border-bottom-color: #DDDDDD;
 	/* arrow size / color */
 }
 
 body[class*="woocommerce"] #page #payment .payment_method_paypal .about_paypal {
-	float: left;
+	float: right;
 	line-height: 52px;
-	font-size: 0.86957rem;
+	font-size: 0.83333rem;
 }
 
 body[class*="woocommerce"] #page #payment .payment_method_paypal img {
@@ -1761,26 +1707,26 @@ body[class*="woocommerce"] #page #payment .payment_method_paypal img {
 }
 
 body[class*="woocommerce"] #page .woocommerce-terms-and-conditions {
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce-invalid #terms {
-	outline-color: #CD2220;
+	outline-color: salmon;
 }
 
 body[class*="woocommerce"] #page .checkout h3 {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 1.3225rem;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
+	font-size: 1.44rem;
 	font-weight: bold;
 }
 
 body[class*="woocommerce"] #page .woocommerce-terms-and-conditions {
-	border-color: #C5C5C5;
+	border-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce-invalid #terms {
-	outline-color: #CD2220;
+	outline-color: salmon;
 }
 
 /**
@@ -1804,7 +1750,7 @@ body[class*="woocommerce"] #page .woocommerce-MyAccount-content .woocommerce-not
 }
 
 body[class*="woocommerce"] #page .woocommerce-MyAccount-content fieldset {
-	border: 1px solid #C5C5C5;
+	border: 1px solid #DDDDDD;
 	padding: 16px;
 	border-radius: 3px;
 }
@@ -1818,7 +1764,7 @@ body[class*="woocommerce"] #page .addresses .title .edit {
 }
 
 .woocommerce-account .entry-content .woocommerce > h2 {
-	font-size: 1.3225rem;
+	font-size: 1.44rem;
 }
 
 /**
@@ -1850,8 +1796,8 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
  * Single Product Page
  */
 .single-product #page #woocommerce-wrapper div.product > .onsale {
-	left: auto;
-	right: -0.5em;
+	right: auto;
+	left: -0.5em;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.images {
@@ -1867,20 +1813,20 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 }
 
 .single-product #page #woocommerce-wrapper div.product div.images .woocommerce-product-gallery__image--placeholder {
-	border-color: #F8F8F8;
+	border-color: #FAFAFA;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.images .woocommerce-product-gallery__trigger {
-	font-size: 1.15rem;
+	font-size: 1.2rem;
 	background: white;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.images .woocommerce-product-gallery__trigger::before {
-	border-color: #A5A5A5;
+	border-color: #AAAAAA;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.images .woocommerce-product-gallery__trigger::after {
-	background-color: #A5A5A5;
+	background-color: #AAAAAA;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.summary {
@@ -1889,8 +1835,8 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 
 .single-product #page #woocommerce-wrapper div.product div.summary span.price,
 .single-product #page #woocommerce-wrapper div.product div.summary p.price {
-	color: #101010;
-	font-size: 1.52087rem;
+	color: #111111;
+	font-size: 1.728rem;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.summary p.stock {
@@ -1898,7 +1844,7 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 }
 
 .single-product #page #woocommerce-wrapper div.product div.summary .stock {
-	color: #CD2220;
+	color: #CA2017;
 }
 
 .single-product #page #woocommerce-wrapper div.product div.summary .out-of-stock {
@@ -1918,7 +1864,7 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 }
 
 .single-product #page #woocommerce-wrapper div.product .up-sells > h2 {
-	font-size: 1.3225rem;
+	font-size: 1.44rem;
 }
 
 .single-product #page #woocommerce-wrapper div.product p.cart {
@@ -1935,11 +1881,11 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 }
 
 .single-product #page #woocommerce-wrapper div.product form.cart .variations select {
-	margin-left: 16px;
+	margin-right: 16px;
 }
 
 .single-product #page #woocommerce-wrapper div.product form.cart .variations td.label {
-	padding-left: 16px;
+	padding-right: 16px;
 }
 
 .single-product #page #woocommerce-wrapper div.product form.cart .woocommerce-variation-description p {
@@ -1947,12 +1893,12 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 }
 
 .single-product #page #woocommerce-wrapper div.product form.cart .reset_variations {
-	font-size: 0.86957rem;
+	font-size: 0.83333rem;
 }
 
 .single-product #page #woocommerce-wrapper div.product form.cart .group_table td.woocommerce-grouped-product-list-item__label {
-	padding-left: 16px;
 	padding-right: 16px;
+	padding-left: 16px;
 }
 
 .single-product #page #woocommerce-wrapper div.product form.cart .group_table td {
@@ -1972,7 +1918,7 @@ body[class*="woocommerce"] #page .woocommerce-ordering select {
 }
 
 .single-product #page #woocommerce-wrapper div.product .woo_pp_cart_buttons_div {
-	text-align: right;
+	text-align: left;
 }
 
 .single-product #page #woocommerce-wrapper div.product .woo_pp_cart_buttons_div .wcppec-checkout-buttons__button {
@@ -1993,20 +1939,20 @@ body[class*="woocommerce"] #page {
 
 body[class*="woocommerce"] #page ul.cart_list li a:not(.remove),
 body[class*="woocommerce"] #page ul.product_list_widget li a:not(.remove) {
-	font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif;
+	font-family: var(--font-headings, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Times, "Times New Roman", serif);
 	line-height: 1.125;
 }
 
 body[class*="woocommerce"] #page ul.cart_list li img,
 body[class*="woocommerce"] #page ul.product_list_widget li img {
-	margin-right: 4px;
+	margin-left: 4px;
 	width: 64px;
 }
 
 body[class*="woocommerce"] #page ul.cart_list li dl,
 body[class*="woocommerce"] #page ul.product_list_widget li dl {
-	border-right-color: #C5C5C5;
+	border-left-color: #DDDDDD;
 }
 
 body[class*="woocommerce"] #page ul.cart_list li dl dt,
@@ -2022,12 +1968,12 @@ body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .total {
 }
 
 body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .cart_list {
-	border-bottom: 1px solid #C5C5C5;
+	border-bottom: 1px solid #DDDDDD;
 }
 
 body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .cart_list li {
-	border-top: 1px solid #C5C5C5;
-	padding: 16px 32px 16px 0;
+	border-top: 1px solid #DDDDDD;
+	padding: 16px 0 16px 32px;
 }
 
 body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .cart_list li a.remove {
@@ -2043,11 +1989,11 @@ body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a#wo
  */
 body[class*="woocommerce"] #page .widget_price_filter .ui-slider .ui-slider-range,
 body[class*="woocommerce"] #page .widget_price_filter .ui-slider .ui-slider-handle {
-	background-color: #CD2220;
+	background-color: #CA2017;
 }
 
 body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-widget-content {
-	background-color: #757575;
+	background-color: #666666;
 }
 
 /**
@@ -2066,14 +2012,23 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 		width: calc((100% / 3) - 16px);
 	}
 	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li:nth-child(3n+2):last-child {
-		margin-right: 24px;
-		margin-left: auto;
+		margin-left: 24px;
+		margin-right: auto;
 	}
 }
 
 /**
  * Remove grid-products flexbox layout
  */
+body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover > a.woocommerce-cart-link .woocommerce-cart-subtotal,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover > a.woocommerce-cart-link .woocommerce-cart-count,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus > a.woocommerce-cart-link .woocommerce-cart-subtotal,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus > a.woocommerce-cart-link .woocommerce-cart-count,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link .woocommerce-cart-subtotal,
+body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link .woocommerce-cart-count {
+	color: currentColor;
+}
+
 @media only screen and (min-width: 560px) {
 	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
 		display: inherit;
@@ -2082,7 +2037,7 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 		width: inherit;
 	}
 	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) > li:nth-child(3n+2):last-child {
-		margin-right: inherit;
 		margin-left: inherit;
+		margin-right: inherit;
 	}
 }

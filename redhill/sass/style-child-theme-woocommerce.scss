@@ -1,0 +1,74 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * Remove grid-products flexbox layout
+ */
+
+body[class*="woocommerce"] #page {
+
+	.main-navigation > div > ul > li:hover > a.woocommerce-cart-link,
+	.main-navigation > div > ul > li.focus > a.woocommerce-cart-link,
+	.main-navigation > div > ul > li.current-menu-item > a.woocommerce-cart-link {
+
+		.woocommerce-cart-subtotal,
+		.woocommerce-cart-count {
+			color: currentColor;
+		}
+	}
+
+	@include media(mobile) {
+		.widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+
+			display: inherit;
+
+			& > li {
+				width: inherit;
+
+				&:nth-child(3n+2):last-child {
+					margin-left: inherit;
+					margin-right: inherit;
+				}
+			}
+		}
+	}
+}
