@@ -50,7 +50,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails', array( 'post' ) );
+		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 1568, 9999 );
 
 		// This theme uses wp_nav_menu() in two locations.
@@ -317,8 +317,3 @@ require get_template_directory() . '/inc/icon-functions.php';
  * Custom template tags for the theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/*
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
