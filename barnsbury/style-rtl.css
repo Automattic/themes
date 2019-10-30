@@ -2417,7 +2417,7 @@ body:not(.fse-enabled) .site-description {
 	margin: 0;
 }
 
-.main-navigation #toggle:checked ~ div {
+.main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
 	display: block;
 }
 
@@ -2441,7 +2441,7 @@ body:not(.fse-enabled) .site-description {
 
 @media only screen and (min-width: 560px) {
 	.main-navigation > div {
-		display: block;
+		display: inline-block;
 	}
 	.main-navigation #toggle-menu {
 		display: none;
@@ -2473,6 +2473,11 @@ body:not(.fse-enabled) .site-description {
 	z-index: 1;
 }
 
+.main-navigation > div > ul li:hover, .main-navigation > div > ul li[focus-within] {
+	cursor: pointer;
+	z-index: 99999;
+}
+
 .main-navigation > div > ul li:hover, .main-navigation > div > ul li:focus-within {
 	cursor: pointer;
 	z-index: 99999;
@@ -2483,6 +2488,14 @@ body:not(.fse-enabled) .site-description {
 		display: inherit;
 		width: inherit;
 		/* Submenu display */
+	}
+	.main-navigation > div > ul li:hover > ul,
+	.main-navigation > div > ul li[focus-within] > ul,
+	.main-navigation > div > ul li ul:hover,
+	.main-navigation > div > ul li ul:focus {
+		visibility: visible;
+		opacity: 1;
+		display: block;
 	}
 	.main-navigation > div > ul li:hover > ul,
 	.main-navigation > div > ul li:focus-within > ul,
@@ -2814,6 +2827,13 @@ body:not(.fse-enabled) .footer-menu a {
 .entry-content .more-link {
 	display: block;
 	color: inherit;
+	margin-top: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content .more-link {
+		margin-top: 32px;
+	}
 }
 
 .entry-content .more-link:after {
@@ -3011,12 +3031,6 @@ body:not(.fse-enabled) .footer-menu a {
 	margin-bottom: 4px;
 	padding-left: 40px;
 	max-width: calc(100% - 48px);
-}
-
-.comment-meta .comment-author {
-	line-height: 1.15;
-	margin-bottom: 4px;
-	padding-left: 40px;
 }
 
 @media only screen and (min-width: 560px) {
