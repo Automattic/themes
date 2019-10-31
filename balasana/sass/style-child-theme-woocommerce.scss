@@ -63,6 +63,17 @@ body[class*="woocommerce"] #page {
 
 			#toggle-cart {
 				margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} map-deep-get($config-global, "spacing", "unit");
+
+				.svg-icon {
+					height: 24px;
+					width: 24px;
+				}
+
+				&:before,
+				&:after {
+					margin: 0;
+				}
 			}
 
 			& > div {
@@ -77,7 +88,6 @@ body[class*="woocommerce"] #page {
 			}
 		}
 	}
-}
 
 	// Clean up mini-cart styles for desktop
 	@include media(mobile) {
