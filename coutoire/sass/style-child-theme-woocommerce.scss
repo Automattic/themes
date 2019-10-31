@@ -39,3 +39,17 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+@include media(mobile) {
+	body[class*="woocommerce"] #page .main-navigation > div {
+		display: block;
+	}
+}
+
+@include media(mobile-only) {
+	#toggle-cart {
+		position: absolute;
+		top: (2 * map-deep-get($config-global, "spacing", "vertical"));
+		right: (0.5 * map-deep-get($config-global, "spacing", "vertical"));
+	}
+}

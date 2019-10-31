@@ -1,0 +1,86 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+// Fix menu positioning
+body[class*="woocommerce"] #page {
+
+	.woocommerce-products-header .page-title {
+		background-color: transparent;
+	}
+
+	.main-navigation {
+
+		@include media(mobile) {
+			text-align: right;
+
+			& > div {
+				text-align: left;
+			}
+
+			& > div:not(:last-of-type) {
+				margin-right: 0;
+			}
+
+			& > div:last-of-type {
+				margin-left: (2 * map-deep-get($config-global, "spacing", "unit"));
+			}
+		}
+	}
+}
+
+/**
+ * Mobile-Menu
+ */
+body[class*="woocommerce"] #page .main-navigation #woocommerce-toggle:focus + #toggle-cart,
+body[class*="woocommerce"] #page #toggle-cart {
+	background: map-deep-get($config-global, "color", "background", "default");
+	color: map-deep-get($config-global, "color", "foreground", "default");
+	text-decoration: none;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background: map-deep-get($config-global, "color", "primary", "default");
+		color: map-deep-get($config-global, "color", "background", "default");
+	}
+}
+

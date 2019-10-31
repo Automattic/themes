@@ -161,7 +161,9 @@ hr.wp-block-separator.is-style-wide,
  * Main Menu
  */
 #site-navigation {
+	background-color: $color_primary_default;
 	order: 2;
+	text-align: center;
 	width: 100%;
 
 	&.main-navigation {
@@ -172,7 +174,11 @@ hr.wp-block-separator.is-style-wide,
 		}
 
 		ul {
+			text-align: inherit;
+
 			li {
+				text-align: left;
+
 				&:first-of-type {
 					> a {
 						padding-left: map-deep-get($config-global, "spacing", "unit");
@@ -222,7 +228,6 @@ hr.wp-block-separator.is-style-wide,
 		}
 
 		.main-menu {
-			background-color: $color_primary_default;
 			margin-left: 0;
 			margin-right: 0;
 		}
