@@ -16,6 +16,15 @@ hr {
 
 		border-bottom: none;
 
+		&.has-background,
+		&.has-text-color {
+			background-color: transparent !important;
+
+			&:before {
+				color: currentColor !important;
+			}
+		}
+
 		&:before {
 			color: #{map-deep-get($config-global, "color", "border", "default")};
 		}

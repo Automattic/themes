@@ -20,6 +20,15 @@ hr {
 
 		&.is-style-dots {
 
+			&.has-background,
+			&.has-text-color {
+				background-color: transparent !important;
+
+				&:before {
+					color: currentColor !important;
+				}
+			}
+
 			&:before {
 				color: #{map-deep-get($config-global, "color", "border", "default")};
 				font-size: #{map-deep-get($config-global, "font", "size", "xl")};
