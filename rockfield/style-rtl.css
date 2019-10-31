@@ -188,6 +188,84 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * Base
  * - Reset the browser
  */
+/**
+ * Button Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+button,
+.button,
+input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
+	line-height: 1;
+	color: white;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-size: 0.83333rem;
+	background-color: #222222;
+	border-radius: 0;
+	border-width: 0;
+	padding: 16px 20px;
+}
+
+button:before,
+.button:before,
+input[type="submit"]:before,
+.wp-block-button__link:before,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button:after,
+.button:after,
+input[type="submit"]:after,
+.wp-block-button__link:after,
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+}
+
+button:before,
+.button:before,
+input[type="submit"]:before,
+.wp-block-button__link:before,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
+	margin-bottom: -0.12em;
+}
+
+button:after,
+.button:after,
+input[type="submit"]:after,
+.wp-block-button__link:after,
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+	margin-top: -0.11em;
+}
+
+button:hover,
+.button:hover,
+input:hover[type="submit"],
+.wp-block-button__link:hover,
+.wp-block-file__button:hover, .a8c-posts-list__view-all:hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover, button:focus,
+.button:focus,
+input:focus[type="submit"],
+.wp-block-button__link:focus,
+.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, button.has-focus,
+.has-focus.button,
+input.has-focus[type="submit"],
+.has-focus.wp-block-button__link,
+.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
+	color: white;
+	background-color: #444444;
+}
+
+/**
+ * Onsale Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -859,7 +937,8 @@ footer {
 .post-thumbnail > *,
 .page-content > *,
 .comment-content > *,
-.author-bio > * {
+.author-bio > *,
+.widget-area > .widget > * {
 	margin-top: 16px;
 	margin-bottom: 16px;
 }
@@ -869,7 +948,8 @@ footer {
 .post-thumbnail > *:first-child,
 .page-content > *:first-child,
 .comment-content > *:first-child,
-.author-bio > *:first-child {
+.author-bio > *:first-child,
+.widget-area > .widget > *:first-child {
 	margin-top: 0;
 }
 
@@ -878,7 +958,8 @@ footer {
 .post-thumbnail > *:last-child,
 .page-content > *:last-child,
 .comment-content > *:last-child,
-.author-bio > *:last-child {
+.author-bio > *:last-child,
+.widget-area > .widget > *:last-child {
 	margin-bottom: 0;
 }
 
@@ -1069,77 +1150,8 @@ object {
 }
 
 /**
- * Placeholder button style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
+ * Button
  */
-button,
-.button,
-input[type="submit"],
-.wp-block-button__link,
-.wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
-	line-height: 1;
-	color: white;
-	cursor: pointer;
-	font-weight: bold;
-	font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 0.83333rem;
-	background-color: #222222;
-	border-radius: 0;
-	border-width: 0;
-	padding: 16px 20px;
-}
-
-button:before,
-.button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button:after,
-.button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-button:before,
-.button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
-	margin-bottom: -0.12em;
-}
-
-button:after,
-.button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
-	margin-top: -0.11em;
-}
-
-button:hover,
-.button:hover,
-input:hover[type="submit"],
-.wp-block-button__link:hover,
-.wp-block-file__button:hover, .a8c-posts-list__view-all:hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover, button:focus,
-.button:focus,
-input:focus[type="submit"],
-.wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, button.has-focus,
-.has-focus.button,
-input.has-focus[type="submit"],
-.has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
-	color: white;
-	background-color: #444444;
-}
-
 /**
  * Block Options
  */
@@ -2405,7 +2417,7 @@ body:not(.fse-enabled) .site-description {
 	margin: 0;
 }
 
-.main-navigation #toggle:checked ~ div {
+.main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
 	display: block;
 }
 
@@ -2429,7 +2441,7 @@ body:not(.fse-enabled) .site-description {
 
 @media only screen and (min-width: 560px) {
 	.main-navigation > div {
-		display: block;
+		display: inline-block;
 	}
 	.main-navigation #toggle-menu {
 		display: none;
@@ -2815,6 +2827,13 @@ body:not(.fse-enabled) .footer-menu a {
 .entry-content .more-link {
 	display: block;
 	color: inherit;
+	margin-top: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content .more-link {
+		margin-top: 32px;
+	}
 }
 
 .entry-content .more-link:after {

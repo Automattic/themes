@@ -1,0 +1,180 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * Remove grid-products flexbox layout
+ */
+@include media(mobile) {
+	body[class*="woocommerce"] #page .widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+
+		display: inherit;
+
+		& > li {
+			width: inherit;
+
+			&:nth-child(3n+2):last-child {
+				margin-left: inherit;
+				margin-right: inherit;
+			}
+		}
+	}
+}
+
+body[class*="woocommerce"] #page {
+
+	.main-navigation #toggle-cart .svg-icon {
+		vertical-align: middle;
+		height: 24px;
+		width: 24px;
+	}
+
+	// Toggle Menu
+	#site-navigation #woocommerce-toggle:focus + #toggle-cart,
+	#toggle-cart {
+		text-decoration: none;
+	}
+
+	#site-navigation #toggle-cart {
+		align-items: center;
+		display: flex;
+		padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{map-deep-get($config-global, "spacing", "unit")};
+
+		@include media(mobile) {
+			display: none;
+		}
+	}
+
+	// Clean up mini-cart styles for mobile
+	@include media(mobile-only) {
+
+		#masthead {
+			position: relative;
+			display: block;
+		}
+
+		#site-navigation {
+
+			#toggle-menu,
+			#toggle-cart {
+				float: left;
+			}
+
+			#toggle-cart {
+				margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			& > div {
+				left: #{map-deep-get($config-global, "spacing", "unit")};
+				right: #{map-deep-get($config-global, "spacing", "unit")};
+				top: 100%;
+				width: calc(100vw - #{2 * map-deep-get($config-global, "spacing", "unit")});
+			}
+
+			.woocommerce-cart-widget {
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+	}
+
+	// Clean up mini-cart styles for desktop
+	@include media(mobile) {
+
+		.main-navigation {
+
+			text-align: right;
+
+			ul {
+				justify-content: flex-end;
+			}
+
+			& > div:not(:last-of-type) {
+				margin-right: 0;
+			}
+
+			& > div:last-of-type {
+				margin-left: (2 * map-deep-get($config-global, "spacing", "horizontal"));
+			}
+		}
+	}
+}
+
+/* Add outlines to WC buttons */
+body[class*="woocommerce"] #page #respond input#submit,
+body[class*="woocommerce"] #page #respond input#submit.alt,
+body[class*="woocommerce"] #page a.button,
+body[class*="woocommerce"] #page a.button.alt,
+body[class*="woocommerce"] #page button.button,
+body[class*="woocommerce"] #page button.button.alt,
+body[class*="woocommerce"] #page input.button,
+body[class*="woocommerce"] #page input.button.alt,
+body[class*="woocommerce"] #page .cart .button,
+body[class*="woocommerce"] #page .cart input.button,
+body[class*="woocommerce"] #page a.added_to_cart,
+body[class*="woocommerce"] #page .woocommerce #respond input#submit,
+body[class*="woocommerce"] #page .woocommerce a.button,
+body[class*="woocommerce"] #page .woocommerce button.button,
+body[class*="woocommerce"] #page .woocommerce input.button,
+body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a,
+body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a {
+	outline: 2px solid;
+	outline-offset: -5px;
+}
+
+/* Remove weird square artifact in WC buttons */
+body[class*="woocommerce"] #page #respond input#submit:before,
+body[class*="woocommerce"] #page #respond input#submit.alt:before,
+body[class*="woocommerce"] #page a.button:before,
+body[class*="woocommerce"] #page a.button.alt:before,
+body[class*="woocommerce"] #page button.button:before,
+body[class*="woocommerce"] #page button.button.alt:before,
+body[class*="woocommerce"] #page input.button:before,
+body[class*="woocommerce"] #page input.button.alt:before,
+body[class*="woocommerce"] #page .cart .button:before,
+body[class*="woocommerce"] #page a.added_to_cart:before,
+body[class*="woocommerce"] #page .woocommerce #respond input#submit:before,
+body[class*="woocommerce"] #page .woocommerce a.button:before,
+body[class*="woocommerce"] #page .woocommerce button.button:before,
+body[class*="woocommerce"] #page .woocommerce input.button:before,
+body[class*="woocommerce"] #page .woocommerce .widget_shopping_cart .buttons a:before,
+body[class*="woocommerce"] #page .woocommerce.widget_shopping_cart .buttons a:before {
+	display: none;
+}
