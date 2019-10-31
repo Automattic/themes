@@ -125,11 +125,7 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  *   let’s use a placeholder to keep them all
  *   in-sync
  */
-.site-header .main-navigation button,
-.site-header .main-navigation .button,
-.site-header .main-navigation input[type="submit"],
-.site-header .main-navigation .wp-block-button__link,
-.site-header .main-navigation .wp-block-file__button {
+.fse-template-part .main-navigation .button {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -143,50 +139,22 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 	padding: 16px 16px;
 }
 
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before, .site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
+.fse-template-part .main-navigation .button:before, .fse-template-part .main-navigation .button:after {
 	content: '';
 	display: block;
 	height: 0;
 	width: 0;
 }
 
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before {
+.fse-template-part .main-navigation .button:before {
 	margin-bottom: -0.12em;
 }
 
-.site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
+.fse-template-part .main-navigation .button:after {
 	margin-top: -0.11em;
 }
 
-.site-header .main-navigation button:hover,
-.site-header .main-navigation .button:hover,
-.site-header .main-navigation input:hover[type="submit"],
-.site-header .main-navigation .wp-block-button__link:hover,
-.site-header .main-navigation .wp-block-file__button:hover, .site-header .main-navigation button:focus,
-.site-header .main-navigation .button:focus,
-.site-header .main-navigation input:focus[type="submit"],
-.site-header .main-navigation .wp-block-button__link:focus,
-.site-header .main-navigation .wp-block-file__button:focus, .site-header .main-navigation button.has-focus,
-.site-header .main-navigation .has-focus.button,
-.site-header .main-navigation input.has-focus[type="submit"],
-.site-header .main-navigation .has-focus.wp-block-button__link,
-.site-header .main-navigation .has-focus.wp-block-file__button {
+.fse-template-part .main-navigation .button:hover, .fse-template-part .main-navigation .button:focus, .fse-template-part .main-navigation .has-focus.button {
 	color: white;
 	background-color: indigo;
 }
@@ -1187,7 +1155,7 @@ table th,
 	margin: 0;
 }
 
-.fse-template-part .main-navigation #toggle:checked ~ div {
+.fse-template-part .main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
 	display: block;
 }
 
@@ -1211,7 +1179,7 @@ table th,
 
 @media only screen and (min-width: 560px) {
 	.fse-template-part .main-navigation > div {
-		display: block;
+		display: inline-block;
 	}
 	.fse-template-part .main-navigation #toggle-menu {
 		display: none;
@@ -1391,23 +1359,22 @@ table th,
 }
 
 .fse-template-part .main-navigation {
+	text-align: center;
 	/**
- * Placeholder button style
+ * Button Placeholder style
  * - Since buttons appear in various blocks,
  *   let’s use a placeholder to keep them all
  *   in-sync
  */
 	/**
- * Block Options
+ * Onsale Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
  */
-	text-align: center;
 }
 
-.fse-template-part .main-navigation button,
-.fse-template-part .main-navigation .button,
-.fse-template-part .main-navigation input[type="submit"],
-.fse-template-part .main-navigation .wp-block-button__link,
-.fse-template-part .main-navigation .wp-block-file__button {
+.fse-template-part .main-navigation .button {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -1421,67 +1388,24 @@ table th,
 	padding: 16px 16px;
 }
 
-.fse-template-part .main-navigation button:before,
-.fse-template-part .main-navigation .button:before,
-.fse-template-part .main-navigation input[type="submit"]:before,
-.fse-template-part .main-navigation .wp-block-button__link:before,
-.fse-template-part .main-navigation .wp-block-file__button:before, .fse-template-part .main-navigation button:after,
-.fse-template-part .main-navigation .button:after,
-.fse-template-part .main-navigation input[type="submit"]:after,
-.fse-template-part .main-navigation .wp-block-button__link:after,
-.fse-template-part .main-navigation .wp-block-file__button:after {
+.fse-template-part .main-navigation .button:before, .fse-template-part .main-navigation .button:after {
 	content: '';
 	display: block;
 	height: 0;
 	width: 0;
 }
 
-.fse-template-part .main-navigation button:before,
-.fse-template-part .main-navigation .button:before,
-.fse-template-part .main-navigation input[type="submit"]:before,
-.fse-template-part .main-navigation .wp-block-button__link:before,
-.fse-template-part .main-navigation .wp-block-file__button:before {
+.fse-template-part .main-navigation .button:before {
 	margin-bottom: -0.12em;
 }
 
-.fse-template-part .main-navigation button:after,
-.fse-template-part .main-navigation .button:after,
-.fse-template-part .main-navigation input[type="submit"]:after,
-.fse-template-part .main-navigation .wp-block-button__link:after,
-.fse-template-part .main-navigation .wp-block-file__button:after {
+.fse-template-part .main-navigation .button:after {
 	margin-top: -0.11em;
 }
 
-.fse-template-part .main-navigation button:hover,
-.fse-template-part .main-navigation .button:hover,
-.fse-template-part .main-navigation input:hover[type="submit"],
-.fse-template-part .main-navigation .wp-block-button__link:hover,
-.fse-template-part .main-navigation .wp-block-file__button:hover, .fse-template-part .main-navigation button:focus,
-.fse-template-part .main-navigation .button:focus,
-.fse-template-part .main-navigation input:focus[type="submit"],
-.fse-template-part .main-navigation .wp-block-button__link:focus,
-.fse-template-part .main-navigation .wp-block-file__button:focus, .fse-template-part .main-navigation button.has-focus,
-.fse-template-part .main-navigation .has-focus.button,
-.fse-template-part .main-navigation input.has-focus[type="submit"],
-.fse-template-part .main-navigation .has-focus.wp-block-button__link,
-.fse-template-part .main-navigation .has-focus.wp-block-file__button {
+.fse-template-part .main-navigation .button:hover, .fse-template-part .main-navigation .button:focus, .fse-template-part .main-navigation .has-focus.button {
 	color: white;
 	background-color: indigo;
-}
-
-.fse-template-part .main-navigation .wp-block-button.is-style-outline .wp-block-button__link {
-	color: blue;
-	background: transparent;
-	border: 2px solid currentcolor;
-	padding: 14px 16px;
-}
-
-.fse-template-part .main-navigation .wp-block-button.is-style-outline .wp-block-button__link:hover, .fse-template-part .main-navigation .wp-block-button.is-style-outline .wp-block-button__link:focus, .fse-template-part .main-navigation .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: indigo;
-}
-
-.fse-template-part .main-navigation .wp-block-button.is-style-squared .wp-block-button__link {
-	border-radius: 0;
 }
 
 .fse-template-part .main-navigation .main-menu.footer-menu li a {

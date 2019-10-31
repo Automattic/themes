@@ -38,8 +38,12 @@
 	@import '../components/header/site-main-navigation';
 
 	.main-navigation {
-		@import "../blocks/button/style";
 		text-align: center;
+
+		@import "../base/extends";
+		.button {
+			@extend %button-style
+		}
 
 		.main-menu.footer-menu li {
 			a {
