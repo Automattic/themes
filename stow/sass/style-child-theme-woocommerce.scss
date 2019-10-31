@@ -41,7 +41,7 @@
 @import "../../varia/sass/vendors/woocommerce/style";
 
 // Fix mobile-cart button
-#site-navigation {
+body[class*="woocommerce"] #page #site-navigation {
 
 	&.main-navigation {
 
@@ -55,11 +55,24 @@
 			text-align: center;
 			font-size: map-deep-get($config-header, "main-nav", "font", "size");
 		}
-	}
-}
 
-// Fix SVG cart icon height
-body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-icon {
-	height: 1em;
-	width: 1em;
+		// Fix SVG cart icon height
+		.woocommerce-cart-link .svg-icon {
+			height: 1em;
+			width: 1em;
+		}
+
+		// Fix currnet-menu-item text color on mobile
+		@include media(mobile-only) {
+
+			& > div {
+				padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+				padding-right: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			ul li.current-menu-item a {
+				color: map-deep-get($config-global, "color", "background", "default");
+			}
+		}
+	}
 }

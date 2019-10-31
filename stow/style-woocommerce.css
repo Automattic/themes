@@ -2131,18 +2131,28 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 	}
 }
 
-#site-navigation.main-navigation #toggle-menu {
+body[class*="woocommerce"] #page #site-navigation.main-navigation #toggle-menu {
 	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 }
 
-#site-navigation.main-navigation #toggle-cart {
+body[class*="woocommerce"] #page #site-navigation.main-navigation #toggle-cart {
 	border-radius: 0;
 	width: 100% !important;
 	text-align: center;
 	font-size: 1.2rem;
 }
 
-body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link .svg-icon {
+body[class*="woocommerce"] #page #site-navigation.main-navigation .woocommerce-cart-link .svg-icon {
 	height: 1em;
 	width: 1em;
+}
+
+@media only screen and (max-width: 559px) {
+	body[class*="woocommerce"] #page #site-navigation.main-navigation > div {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	body[class*="woocommerce"] #page #site-navigation.main-navigation ul li.current-menu-item a {
+		color: white;
+	}
 }
