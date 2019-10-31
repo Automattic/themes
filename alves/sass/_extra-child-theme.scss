@@ -215,8 +215,14 @@ blockquote p {
 
 		.main-navigation {
 			align-self: center;
-			justify-self: flex-end;
+			display: flex;
+			justify-content: flex-end;
 			grid-area: main-navigation;
+			flex-wrap: wrap;
+
+			& > div {
+				justify-content: flex-end;
+			}
 
 			& > div > ul {
 				justify-content: flex-end;
@@ -319,7 +325,6 @@ blockquote p {
 	text-align: left;
 }
 
-.main-navigation > div > ul,
 .pagination .nav-links {
 	justify-content: center;
 }

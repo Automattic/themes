@@ -39,3 +39,19 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+// Fix margins for header layout
+@include media(mobile) {
+	body[class*="woocommerce"] #page .main-navigation > div:not(:last-of-type) {
+		margin-right: 0;
+	}
+
+	body[class*="woocommerce"] #page .main-navigation > div:last-of-type {
+		margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+}
+
+// Fix mini-cart padding
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+	padding: #{map-deep-get($config-global, "spacing", "unit")};
+}

@@ -39,3 +39,75 @@
  * WooCommerce Styles
  */
 @import "../../varia/sass/vendors/woocommerce/style";
+
+
+body[class*="woocommerce"] #page {
+
+	// Clean up mini-cart styles for mobile
+	@include media(mobile-only) {
+
+		#masthead {
+			position: relative;
+
+			.site-branding {
+				margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+
+		#site-navigation {
+
+			#toggle-menu,
+			#toggle-cart {
+				float: left;
+			}
+
+			#toggle-cart {
+				margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} map-deep-get($config-global, "spacing", "unit");
+
+				.svg-icon {
+					height: 24px;
+					width: 24px;
+				}
+
+				&:before,
+				&:after {
+					margin: 0;
+				}
+			}
+
+			& > div {
+				left: #{map-deep-get($config-global, "spacing", "unit")};
+				right: #{map-deep-get($config-global, "spacing", "unit")};
+				top: calc(100% - #{map-deep-get($config-global, "spacing", "unit")};
+				width: calc(100vw - #{2 * map-deep-get($config-global, "spacing", "unit")});
+			}
+
+			.woocommerce-cart-widget {
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+	}
+
+	// Clean up mini-cart styles for desktop
+	@include media(mobile) {
+
+		.main-navigation {
+
+			text-align: right;
+
+			ul {
+				text-align: left;
+				justify-content: flex-end;
+			}
+
+			& > div:not(:last-of-type) {
+				margin-right: 0;
+			}
+
+			& > div:last-of-type {
+				margin-left: (2 * map-deep-get($config-global, "spacing", "horizontal"));
+			}
+		}
+	}
+}

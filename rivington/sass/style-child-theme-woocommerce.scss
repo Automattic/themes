@@ -1,0 +1,62 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * Fix price color or better legibility
+ */
+#woocommerce-wrapper ul.products li.product .price,
+body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells ul.products li.product .price,
+body[class*="woocommerce"] #page .cart-collaterals .cross-sells ul.products li.product .price {
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
+}
+
+body[class*="woocommerce"] #page span.onsale,
+#content .wc-block-grid .wc-block-grid__product-onsale {
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+}
+
+// Fix mini-cart padding
+@include media(mobile-only) {
+	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+		padding: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+}
