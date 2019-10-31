@@ -59,6 +59,84 @@
 	}
 }
 
+body[class*="woocommerce"] #page {
+
+	.main-navigation #toggle-cart .svg-icon {
+		vertical-align: middle;
+		height: 24px;
+		width: 24px;
+	}
+
+	// Toggle Menu
+	#site-navigation #woocommerce-toggle:focus + #toggle-cart,
+	#toggle-cart {
+		text-decoration: none;
+	}
+
+	#site-navigation #toggle-cart {
+		align-items: center;
+		display: flex;
+		padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")} #{map-deep-get($config-global, "spacing", "unit")};
+
+		@include media(mobile) {
+			display: none;
+		}
+	}
+
+	// Clean up mini-cart styles for mobile
+	@include media(mobile-only) {
+
+		#masthead {
+			position: relative;
+			display: block;
+		}
+
+		#site-navigation {
+
+			#toggle-menu,
+			#toggle-cart {
+				float: left;
+			}
+
+			#toggle-cart {
+				margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			& > div {
+				left: #{map-deep-get($config-global, "spacing", "unit")};
+				right: #{map-deep-get($config-global, "spacing", "unit")};
+				top: 100%;
+				width: calc(100vw - #{2 * map-deep-get($config-global, "spacing", "unit")});
+			}
+
+			.woocommerce-cart-widget {
+				padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+	}
+
+	// Clean up mini-cart styles for desktop
+	@include media(mobile) {
+
+		.main-navigation {
+
+			text-align: right;
+
+			ul {
+				justify-content: flex-end;
+			}
+
+			& > div:not(:last-of-type) {
+				margin-right: 0;
+			}
+
+			& > div:last-of-type {
+				margin-left: (2 * map-deep-get($config-global, "spacing", "horizontal"));
+			}
+		}
+	}
+}
+
 /* Add outlines to WC buttons */
 body[class*="woocommerce"] #page #respond input#submit,
 body[class*="woocommerce"] #page #respond input#submit.alt,

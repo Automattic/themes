@@ -2147,6 +2147,67 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 	}
 }
 
+body[class*="woocommerce"] #page .main-navigation #toggle-cart .svg-icon {
+	vertical-align: middle;
+	height: 24px;
+	width: 24px;
+}
+
+body[class*="woocommerce"] #page #site-navigation #woocommerce-toggle:focus + #toggle-cart,
+body[class*="woocommerce"] #page #toggle-cart {
+	text-decoration: none;
+}
+
+body[class*="woocommerce"] #page #site-navigation #toggle-cart {
+	align-items: center;
+	display: flex;
+	padding: 8px 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page #site-navigation #toggle-cart {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 559px) {
+	body[class*="woocommerce"] #page #masthead {
+		position: relative;
+		display: block;
+	}
+	body[class*="woocommerce"] #page #site-navigation #toggle-menu,
+	body[class*="woocommerce"] #page #site-navigation #toggle-cart {
+		float: left;
+	}
+	body[class*="woocommerce"] #page #site-navigation #toggle-cart {
+		margin-left: 16px;
+	}
+	body[class*="woocommerce"] #page #site-navigation > div {
+		left: 16px;
+		right: 16px;
+		top: 100%;
+		width: calc(100vw - 32px);
+	}
+	body[class*="woocommerce"] #page #site-navigation .woocommerce-cart-widget {
+		padding: 8px;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation {
+		text-align: right;
+	}
+	body[class*="woocommerce"] #page .main-navigation ul {
+		justify-content: flex-end;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div:not(:last-of-type) {
+		margin-right: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div:last-of-type {
+		margin-left: 32px;
+	}
+}
+
 /* Add outlines to WC buttons */
 body[class*="woocommerce"] #page #respond input#submit,
 body[class*="woocommerce"] #page #respond input#submit.alt,
