@@ -1,0 +1,46 @@
+/**
+ * Pagination
+ */
+
+body[class*="woocommerce"] #page .woocommerce-pagination {
+
+	margin: 0 calc(-0.66 * #{map-deep-get($config-global, "spacing", "unit")});
+	width: 100%;
+
+	.page-numbers {
+
+		border: none;
+		display: flex;
+		justify-content: start;
+
+		li > * {
+			display: block;
+			@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+			font-size: #{map-deep-get($config-global, "font", "size", "md")};
+			font-weight: 600;
+			padding-left: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
+			padding-right: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
+		}
+
+		li {
+			border: none;
+			float: inherit;
+
+			a {
+				text-decoration: unset;
+			}
+		}
+
+		li span.current,
+		li a:hover,
+		li a:focus {
+			background: transparent;
+			color: map-deep-get($config-global, "color", "foreground", "default");
+		}
+
+		.svg-icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}

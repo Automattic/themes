@@ -1,0 +1,57 @@
+/**
+ * Account page
+ */
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.entry-content .woocommerce-MyAccount-navigation {
+
+		width: 100%;
+
+		ul li a {
+			line-height: map-deep-get($config-global, "font", "line-height", "heading");
+			display: inline-table;
+		}
+
+		& + *:not(:first-child) {
+			margin-top: 0;
+		}
+
+		@include media(tablet) {
+			width: 20%;
+		}
+	}
+
+	.woocommerce-MyAccount-content {
+
+		width: 100%;
+
+		.woocommerce-notices-wrapper:empty {
+			display: none;
+		}
+
+		fieldset {
+			border: 1px solid map-deep-get($config-global, "color", "border", "default");
+			padding: map-deep-get($config-global, "spacing", "unit");
+			border-radius: 3px;
+		}
+
+		@include media(tablet) {
+			width: calc(80% - #{map-deep-get($config-global, "spacing", "horizontal")});
+		}
+	}
+
+	.addresses .title h3 {
+		font-size: map-deep-get($config-global, "font", "size", "base")
+	}
+
+	.addresses .title {
+		.edit {
+			line-height: 1;
+		}
+	}
+}
+
+.woocommerce-account .entry-content .woocommerce > h2,
+body[class*="woocommerce"] #page div[class*="woocommerce"] h2 {
+	font-size: map-deep-get($config-global, "font", "size", "lg");
+}

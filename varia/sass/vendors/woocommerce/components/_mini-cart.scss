@@ -1,0 +1,213 @@
+/**
+ * Mini-cart
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.wc-block-grid__product-add-to-cart .added_to_cart {
+		display: inline-block;
+		text-decoration: none;
+	}
+
+	.main-navigation {
+
+		// Mobile menu toggle
+		#toggle-cart {
+			display: inline-block;
+			margin: 0;
+
+			.svg-icon {
+				vertical-align: middle;
+			}
+		}
+
+		// Checkbox hack
+		#woocommerce-toggle:checked ~ div {
+			display: inline-block;
+		}
+
+		#woocommerce-toggle:focus + #toggle-cart {
+			background-color: #{map-deep-get($config-header, "main-nav", "color", "link-hover")};
+			outline: inherit;
+			text-decoration: underline;
+		}
+
+		#woocommerce-toggle:checked + #toggle-cart {
+			.open {
+				display: none;
+			}
+
+			.close {
+				display: inline;
+			}
+		}
+
+		@include media(mobile-only) {
+
+			.woocommerce-menu-container {
+
+				background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
+				color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
+				padding: 0;
+				width: 100%;
+
+				a,
+				a:link,
+				a:visited {
+					color: currentColor;
+				}
+			}
+		}
+
+		@include media(mobile) {
+
+			& > div:not(:last-of-type) {
+				margin-right: #{ 2 * map-deep-get($config-global, "spacing", "horizontal")};
+			}
+
+			#toggle-cart {
+				display: none;
+			}
+		}
+
+		.woocommerce-cart-link {
+
+			display: none;
+			text-decoration: none;
+			line-height: 1;
+
+			& > *:not(:last-child) {
+				margin-right: #{0.25 * map-deep-get($config-global, "spacing", "horizontal")};
+			}
+
+			.woocommerce-cart-subtotal {
+				color: #{map-deep-get($config-woocommerce, "mini-cart", "color", "subtotal")};
+			}
+
+			.woocommerce-cart-count {
+				color: #{map-deep-get($config-woocommerce, "mini-cart", "color", "count")};
+				font-weight: normal;
+			}
+
+			.svg-icon {
+				float: left;
+				height: #{map-deep-get($config-header, "main-nav", "font", "size")};
+				width: #{map-deep-get($config-header, "main-nav", "font", "size")};
+				vertical-align: middle;
+			}
+
+			@include media(mobile) {
+				display: inline-block;
+			}
+		}
+
+		.woocommerce-cart-widget {
+
+			background-color: map-deep-get($config-woocommerce, "mini-cart", "color", "background");
+			color: map-deep-get($config-woocommerce, "mini-cart", "color", "text");
+			max-width: 100%;
+			padding: #{map-deep-get($config-header, "main-nav", "link-padding")} 0;
+
+			@include media(mobile) {
+				max-width: #{20 * map-deep-get($config-global, "spacing", "horizontal")};
+				padding: #{map-deep-get($config-header, "main-nav", "link-padding")};
+			}
+
+			.woocommerce.widget_shopping_cart .cart_list {
+				border-bottom: 1px solid map-deep-get($config-woocommerce, "mini-cart", "color", "border");
+
+				li {
+					border-top: 1px solid map-deep-get($config-woocommerce, "mini-cart", "color", "border");
+				}
+
+				a:hover,
+				a:focus {
+					background-color: transparent;
+				}
+
+				a.remove:hover,
+				a.remove:focus {
+					text-decoration: none;
+				}
+			}
+
+			.woocommerce-mini-cart__total {
+				text-align: right;
+			}
+
+			.woocommerce-mini-cart__buttons {
+				text-align: right;
+
+				a {
+					clear: right;
+					color: map-deep-get($config-woocommerce, "mini-cart", "button", "color");
+					background-color: map-deep-get($config-woocommerce, "mini-cart", "button", "background-color");
+					margin: 0;
+					float: right;
+
+					// Default WooCommerce View Cart/Checkout buttons
+					&:first-child:nth-last-child(2),
+					&:first-child:nth-last-child(2) ~ a {
+						clear: inherit;
+						float: inherit;
+						margin-bottom: 0;
+
+						&:not(:last-child) {
+							margin-right: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+						}
+					}
+
+					&:not(:last-child) {
+						margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "horizontal")};
+					}
+
+					&.wcppec-cart-widget-button {
+						display: inline-block;
+					}
+				}
+			}
+
+			p.buttons.wcppec-cart-widget-spb {
+				padding: 0;
+			}
+		}
+
+		ul.cart_list li a,
+		ul.product_list_widget li a {
+			padding: 0;
+		}
+
+		ul.cart_list li .quantity,
+		ul.product_list_widget li .quantity,
+		ul.cart_list li a:not(.remove),
+		ul.product_list_widget li a:not(.remove),
+		.woocommerce-mini-cart__total {
+			@include font-family( map-deep-get($config-header, "main-nav", "font", "family") );
+			font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		}
+
+		@include media(mobile) {
+
+			& > div > ul > li.woocommerce-menu-item > .sub-menu {
+				left: auto;
+				right: 0;
+			}
+
+			.woocommerce-cart-widget {
+				max-width: #{map-deep-get($config-woocommerce, "mini-cart", "width")};
+			}
+
+			& > div > ul > li.woocommerce-menu-item:hover > ul:before,
+			& > div > ul > li.woocommerce-menu-item.focus > ul:before,
+			& > div > ul > li.woocommerce-menu-item.current-menu-item > ul:before {
+				margin-left: auto;
+				margin-right: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+	}
+}
+
+.woocommerce-cart #page .woocommerce-menu-item .sub-menu,
+.woocommerce-checkout #page .woocommerce-menu-item .sub-menu {
+	display: none;
+}

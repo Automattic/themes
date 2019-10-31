@@ -1,0 +1,87 @@
+/**
+ * Tabs
+ */
+
+body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Tabs
+	 */
+	.woocommerce-tabs {
+
+		ul.tabs {
+
+			padding-left: map-deep-get($config-global, "spacing", "horizontal");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+
+			li {
+				background-color: map-deep-get($config-global, "color", "background", "light");
+				border-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
+				border-top-left-radius: map-deep-get($config-woocommerce, "tabs", "border", "radius");
+				border-top-right-radius: map-deep-get($config-woocommerce, "tabs", "border", "radius");
+				padding-left: 0;
+				padding-right: 0;
+
+				a {
+					color: map-deep-get($config-global, "color", "foreground", "light");
+					padding-left: map-deep-get($config-woocommerce, "tabs", "padding");
+					padding-right: map-deep-get($config-woocommerce, "tabs", "padding");
+					padding-top: #{0.5 * map-deep-get($config-woocommerce, "tabs", "padding")};
+					padding-bottom: #{0.5 * map-deep-get($config-woocommerce, "tabs", "padding")};
+
+					&:hover {
+						color: map-deep-get($config-global, "color", "primary", "hover");
+					}
+				}
+
+				&.active {
+					background-color: map-deep-get($config-global, "color", "background", "default");
+					border-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
+					border-bottom-color: map-deep-get($config-global, "color", "background", "default");
+
+					a {
+						color: map-deep-get($config-global, "color", "foreground", "dark");
+						text-shadow: inherit;
+					}
+
+					&::before {
+						box-shadow: 2px 2px 0 map-deep-get($config-global, "color", "background", "default");
+					}
+
+					&::after {
+						box-shadow: -2px 2px 0 map-deep-get($config-global, "color", "background", "default");
+					}
+				}
+
+				&::before,
+				&::after {
+					border-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
+				}
+
+				&::before {
+					box-shadow: 2px 2px 0 map-deep-get($config-global, "color", "background", "light");
+				}
+
+				&::after {
+					box-shadow: -2px 2px 0 map-deep-get($config-global, "color", "background", "light");
+				}
+			}
+
+			&::before {
+				border-bottom-color: map-deep-get($config-woocommerce, "tabs", "border", "color");
+			}
+		}
+
+		.panel {
+
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+
+			h2,
+			.comment-reply-title {
+				@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+				font-size: map-deep-get($config-global, "font", "size", "lg");
+				font-weight: bold;
+			}
+		}
+	}
+}

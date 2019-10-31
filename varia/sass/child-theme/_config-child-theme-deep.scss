@@ -16,9 +16,9 @@ $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-
 
 $config-global: (
 
-	/* Fonts */
+	// Fonts
 	"font": (
-		/* Font Family */
+		// Font Family
 		"family": (
 			"primary": (
 				"fallback": "sans-serif",
@@ -34,7 +34,7 @@ $config-global: (
 				"css-var": '--font-base',
 			),
 		),
-		/* Font Size */
+		// Font Size
 		"size": (
 			"root": $typescale-root,
 			"ratio": $typescale-ratio,
@@ -48,7 +48,7 @@ $config-global: (
 			"xxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
 			"xxxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
 		),
-		/* Letter Spacing */
+		// Letter Spacing
 		"letter-spacing": (
 			"base": normal,
 			"xs": normal,
@@ -59,7 +59,7 @@ $config-global: (
 			"xxl": normal,
 			"xxxl": normal,
 		),
-		/* Line Height */
+		// Line Height
 		"line-height": (
 			"base": strip-unit($typescale-base),
 			"body": 1.78,
@@ -67,7 +67,7 @@ $config-global: (
 		),
 	),
 
-	/* Colors */
+	// Colors
 	"color": (
 		"primary": (
 			"default": blue,
@@ -92,20 +92,24 @@ $config-global: (
 			"light": #FAFAFA,
 			"dark": #AAAAAA,
 		),
+		"alert": (
+			"success": yellowgreen,
+			"info": skyblue,
+			"warning": gold,
+			"error": salmon,
+		),
 		"text-selection": lightblue,
 		"black": black,
 		"white": white,
 	),
-
-	/* Spacing */
+	// Spacing
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
 		"measure": unset, // Use ch units here. ie: 60ch = 60 character max-width
 		"horizontal": (2 * $baseline-unit), // 16px
 		"vertical": (4 * $baseline-unit), // 32px matches default spacing in the editor.
 	),
-
-	/* Breakpoints */
+	// Breakpoints
 	"breakpoint": (
 		"sm": 560px,
 		"md": 640px,
@@ -113,8 +117,7 @@ $config-global: (
 		"xl": 1024px,
 		"xxl": 1280px,
 	),
-
-	/* Elevation */
+	// Elevation
 	"elevation": (
 		"none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
 		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
@@ -123,8 +126,7 @@ $config-global: (
 		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ),
 		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
 	),
-
-	/* Border radius */
+	// Border radius
 	"border-radius": (
 		"sm": (0.5 * $typescale-root),
 		"md": (0.75 * $typescale-root),
@@ -137,16 +139,13 @@ $config-global: (
  * Elements
  */
 $config-elements: (
-
 	"form": (
-
 		// Colors
 		"color": (
 			"text": map-deep-get($config-global, "color", "foreground", "default"),
 			"border": map-deep-get($config-global, "color", "border", "default"),
 			"border-focus": map-deep-get($config-global, "color", "primary", "hover"),
 		),
-
 		// Fonts
 		"font": (
 			"family": (
@@ -157,13 +156,11 @@ $config-elements: (
 			"size": map-deep-get($config-global, "font", "size", "md"),
 			"weight": bold,
 		),
-
 		// Borders
 		"border": (
 			"width": 1px,
 			"radius": 3px,
 		),
-
 		"padding": #{map-deep-get($config-global, "spacing", "unit")},
 	),
 );
@@ -304,7 +301,6 @@ $config-quote: (
 /**
  * Separator
  */
-
 $config-separator: (
 	"height": #{0.25 * $baseline-unit},
 	"width": #{6 * map-deep-get($config-global, "spacing", "horizontal")},
@@ -321,7 +317,7 @@ $config-header: (
 			"link": map-deep-get($config-global, "color", "primary", "default"),
 			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
 		),
-		// Fonts & Typography
+		// Title
 		"title": (
 			// Fonts
 			"font": (
@@ -334,7 +330,7 @@ $config-header: (
 				"line-height": 1,
 			),
 		),
-		// Fonts & Typography
+		// Description
 		"description": (
 			// Fonts
 			"font": (

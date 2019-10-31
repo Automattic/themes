@@ -1,0 +1,57 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+// Fix margins for header layout
+@include media(mobile) {
+	body[class*="woocommerce"] #page .main-navigation > div:not(:last-of-type) {
+		margin-right: 0;
+	}
+
+	body[class*="woocommerce"] #page .main-navigation > div:last-of-type {
+		margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+	}
+}
+
+// Fix mini-cart padding
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
+	padding: #{map-deep-get($config-global, "spacing", "unit")};
+}

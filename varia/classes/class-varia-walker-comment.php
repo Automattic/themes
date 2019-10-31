@@ -12,7 +12,7 @@
  *
  * @since 1.0.0
  */
-class TwentyNineteen_Walker_Comment extends Walker_Comment {
+class Varia_Walker_Comment extends Walker_Comment {
 
 	/**
 	 * Outputs a comment in the HTML5 format.

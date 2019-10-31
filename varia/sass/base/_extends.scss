@@ -1,0 +1,52 @@
+/**
+ * Button Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+%button-style {
+	@include crop-text(map-deep-get($config-button, "font", "line-height"));
+	color: #{map-deep-get($config-button, "color", "text")};
+	cursor: pointer;
+	font-weight: #{map-deep-get($config-button, "font", "weight")};
+	@include font-family( map-deep-get($config-button, "font", "family") );
+	font-size: #{map-deep-get($config-button, "font", "size")};
+	background-color: #{map-deep-get($config-button, "color", "background")};
+	border-radius: #{map-deep-get($config-button, "border-radius")};
+	border-width: 0;
+	padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+
+	&:hover,
+	&:focus,
+	&.has-focus {
+		color: #{map-deep-get($config-button, "color", "text-hover")};
+		background-color: #{map-deep-get($config-button, "color", "background-hover")};
+	}
+}
+
+/**
+ * Onsale Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+%onsale-style {
+	border-radius: 100%;
+	background-color: map-deep-get($config-global, "color", "alert", "warning");
+	color: map-deep-get($config-global, "color", "foreground", "dark");
+	font-size: map-deep-get($config-global, "font", "size", "sm");
+	font-weight: 700;
+	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+	min-height: 3.236rem;
+	min-width: 3.236rem;
+	padding: 0.202rem;
+	position: absolute;
+	text-align: center;
+	text-transform: none;
+	line-height: 3.236;
+	top: -0.5em;
+	right: -0.5em;
+	left: auto;
+	margin: 0;
+	z-index: 9;
+}
