@@ -1,0 +1,78 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+// Fix mobile-cart button
+body[class*="woocommerce"] #page #site-navigation {
+
+	&.main-navigation {
+
+		#toggle-menu {
+			border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+		}
+
+		#toggle-cart {
+			border-radius: 0;
+			width: 100% !important;
+			text-align: center;
+			font-size: map-deep-get($config-header, "main-nav", "font", "size");
+		}
+
+		// Fix SVG cart icon height
+		.woocommerce-cart-link .svg-icon {
+			height: 1em;
+			width: 1em;
+		}
+
+		// Fix currnet-menu-item text color on mobile
+		@include media(mobile-only) {
+
+			& > div {
+				padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+				padding-right: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			ul li.current-menu-item a {
+				color: map-deep-get($config-global, "color", "background", "default");
+			}
+		}
+	}
+}
