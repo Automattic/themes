@@ -2185,6 +2185,10 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 	}
 }
 
+body[class*="woocommerce"] #page #masthead .main-navigation {
+	text-align: center;
+}
+
 body[class*="woocommerce"] #page .main-navigation > div > ul > li:hover ul.cart_list li > a,
 body[class*="woocommerce"] #page .main-navigation > div > ul > li.focus ul.cart_list li > a,
 body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-item ul.cart_list li > a {
@@ -2192,8 +2196,35 @@ body[class*="woocommerce"] #page .main-navigation > div > ul > li.current-menu-i
 }
 
 @media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page #masthead .main-navigation {
+		text-align: center;
+	}
 	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
 		right: auto;
 		left: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div:not(:last-of-type) {
+		margin-right: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div:last-of-type {
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	body[class*="woocommerce"] #page #masthead .main-navigation {
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 782px) {
+	body[class*="woocommerce"] #page #masthead .main-navigation {
+		text-align: left;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	body[class*="woocommerce"] #page #masthead .main-navigation {
+		text-align: left;
 	}
 }

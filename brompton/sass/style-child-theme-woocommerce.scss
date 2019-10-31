@@ -40,17 +40,68 @@
  */
 @import "../../varia/sass/vendors/woocommerce/style";
 
+
 body[class*="woocommerce"] #page {
+
+	// Fix menu mini-cart alignment
+	#masthead .main-navigation {
+		text-align: center;
+	}
+
+	// Fix mini-cart borders
 	.main-navigation > div > ul > li:hover ul.cart_list li > a,
 	.main-navigation > div > ul > li.focus ul.cart_list li > a,
 	.main-navigation > div > ul > li.current-menu-item ul.cart_list li > a {
 		border-top: none;
 	}
-}
 
-@include media(mobile) {
-	body[class*="woocommerce"] #page .main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
-		right: auto;
-		left: 0;
+	@include media(mobile) {
+
+		// Fix menu mini-cart alignment
+		#masthead .main-navigation {
+			text-align: center;
+		}
+
+		// Clean up mini-cart positioning
+		.main-navigation > div > ul > li.woocommerce-menu-item > .sub-menu {
+			right: auto;
+			left: 0;
+		}
+
+		// Clean up mini-cart styles for desktop
+		.main-navigation {
+
+			& > div:not(:last-of-type) {
+				margin-right: 0;
+			}
+
+			& > div:last-of-type {
+				margin-left: 0;
+			}
+		}
+	}
+
+	@include media(tablet) {
+
+		// Fix menu mini-cart alignment
+		#masthead .main-navigation {
+			text-align: center;
+		}
+	}
+
+	@include media(laptop) {
+
+		// Fix menu mini-cart alignment
+		#masthead .main-navigation {
+			text-align: left;
+		}
+	}
+
+	@include media(desktop) {
+
+		// Fix menu mini-cart alignment
+		#masthead .main-navigation {
+			text-align: left;
+		}
 	}
 }
