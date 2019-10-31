@@ -1,0 +1,83 @@
+/**
+ * WooCommerce Styles
+ * - These styles should only be loaded when WooCommerce is active
+ */
+
+/**
+ * Abstracts
+ * - Functions and config
+ */
+@import "../../varia/sass/abstracts/functions";
+@import "../../varia/sass/abstracts/config-global";
+
+/**
+ * Child Theme Name Config
+ */
+@import "config-child-theme-deep";
+
+/**
+ * WooCommerce Config
+ */
+@import "config-child-theme-woocommerce";
+
+/**
+ * Varia Mixins
+ */
+@import "../../varia/sass/abstracts/mixins";
+
+/**
+ * Varia Responsive Logic
+ */
+@import "../../varia/sass/abstracts/responsive-logic";
+
+/**
+ * Varia Extends
+ */
+@import "../../varia/sass/base/extends";
+
+/**
+ * WooCommerce Styles
+ */
+@import "../../varia/sass/vendors/woocommerce/style";
+
+/**
+ * Fix cart-link line-height
+ */
+body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-link {
+	line-height: inherit;
+}
+
+/**
+ * Fix mini-cart text color
+ */
+body[class*="woocommerce"] #page #masthead .site-header-wrapper .main-navigation ul li ul.cart_list {
+	color: map-deep-get($config-global, "color", "foreground", "default");
+}
+
+body[class*="woocommerce"] #page #masthead .site-header-wrapper .main-navigation ul li ul.cart_list > li {
+	border-bottom: none;
+}
+
+body[class*="woocommerce"] #page #masthead .site-header-wrapper .main-navigation ul li ul.sub-menu li:first-child,
+body[class*="woocommerce"] #page #masthead .site-header-wrapper .main-navigation ul li ul.cart_list > li:first-child {
+	border-color: map-deep-get($config-global, "color", "background", "light");
+}
+
+#masthead .site-header-wrapper .main-navigation ul li svg {
+	margin-top: .25em;
+}
+
+body[class*="woocommerce"] #page {
+
+	@include media(mobile-only) {
+		.site-branding {
+			margin-bottom: #{map-deep-get($config-global, "spacing", "horizontal")};
+		}
+
+		#toggle-menu {
+			position: inherit !important;
+			top: inherit;
+			right: inherit;
+		}
+	}
+}
