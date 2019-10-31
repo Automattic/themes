@@ -40,9 +40,12 @@
  */
 @import "../../varia/sass/vendors/woocommerce/style";
 
-@include media(mobile-only) {
 
-	body[class*="woocommerce"] #page {
+body[class*="woocommerce"] #page {
+
+	// Clean up mini-cart styles for mobile
+	@include media(mobile-only) {
+
 		#masthead {
 			position: relative;
 
@@ -76,9 +79,8 @@
 	}
 }
 
-@include media(mobile) {
-
-	body[class*="woocommerce"] #page {
+	// Clean up mini-cart styles for desktop
+	@include media(mobile) {
 
 		.main-navigation {
 
