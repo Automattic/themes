@@ -2186,10 +2186,39 @@ body[class*="woocommerce"] #page .widget_price_filter .price_slider_wrapper .ui-
 }
 
 @media only screen and (max-width: 559px) {
-	body[class*="woocommerce"] #page .main-navigation .woocommerce-menu-container {
-		width: inherit;
+	body[class*="woocommerce"] #page #masthead {
+		position: relative;
 	}
-	body[class*="woocommerce"] #page .main-navigation .woocommerce-cart-widget {
-		padding: 16px;
+	body[class*="woocommerce"] #page #site-navigation #toggle-menu,
+	body[class*="woocommerce"] #page #site-navigation #toggle-cart {
+		float: right;
+	}
+	body[class*="woocommerce"] #page #site-navigation #toggle-cart {
+		margin-right: 16px;
+	}
+	body[class*="woocommerce"] #page #site-navigation > div {
+		right: 16px;
+		left: 16px;
+		top: calc(100% - 16px);
+		width: calc(100vw - 32px);
+	}
+	body[class*="woocommerce"] #page #site-navigation .woocommerce-cart-widget {
+		padding: 8px;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	body[class*="woocommerce"] #page .main-navigation {
+		text-align: left;
+	}
+	body[class*="woocommerce"] #page .main-navigation ul {
+		text-align: right;
+		justify-content: flex-end;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div:not(:last-of-type) {
+		margin-left: 0;
+	}
+	body[class*="woocommerce"] #page .main-navigation > div:last-of-type {
+		margin-right: 32px;
 	}
 }
