@@ -145,10 +145,7 @@ add_color_rule( 'extra', '#192930', array(
     array( '.comment-author,
             .footer-widgets .widget a,
             body,
-            button,
-            input,
-            select,
-            textarea', 'color', 'bg', 12 ),
+            button', 'color', 'bg', 12 ),
 ) );
 
 add_color_rule( 'extra', '#eeece8', array(
