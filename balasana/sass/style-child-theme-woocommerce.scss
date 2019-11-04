@@ -43,19 +43,22 @@
 
 body[class*="woocommerce"] #page {
 
-	// Clean up mini-cart styles for mobile
+	// Clean up sit-branding, menu & mini-cart styles for mobile
 	@include media(mobile-only) {
 
 		#masthead {
 			position: relative;
-			display: inherit; // Remove flexbox to allot space for the mini-cart toggle
+			flex-wrap: wrap;
 
 			.site-branding {
+				margin-top: #{map-deep-get($config-global, "spacing", "unit")};
 				margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
 			}
 		}
 
 		#site-navigation {
+
+			margin-left: 0;
 
 			#toggle-menu,
 			#toggle-cart {
@@ -90,7 +93,7 @@ body[class*="woocommerce"] #page {
 		}
 	}
 
-	// Clean up mini-cart styles for desktop
+	// Clean up mini-cart styles for mobile and up
 	@include media(mobile) {
 
 		.main-navigation {
