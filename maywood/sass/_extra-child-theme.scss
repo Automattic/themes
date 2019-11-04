@@ -230,7 +230,9 @@ a {
 	@include media(desktop) {
 		min-height: #{20 * map-deep-get($config-global, "spacing", "vertical")};
 
-		h1 {
+		// Prevent overruling the user defined font size value set inside Gutenberg
+		// for Full Site Editing's Site Title block.
+		h1:not(.site-title) {
 			font-size: #{map-deep-get($config-global, "font", "size", "xxxxl")};
 		}
 

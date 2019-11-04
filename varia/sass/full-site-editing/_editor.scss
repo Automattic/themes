@@ -1,17 +1,27 @@
-@import "../base/extends";
-@import "../components/header/header";
-@import "../components/footer/footer";
+.a8c-template-editor {
+	@media (min-width: 600px) {
+		.block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
 
 .template-block {
-	.site-header,
-	.site-footer {
+	.fse-template-part {
 		padding: #{map-deep-get($config-global, "spacing", "unit")};
 
 		@include media(mobile) {
 			padding: #{map-deep-get($config-global, "spacing", "vertical")} 0;
 		}
-	}
 
+		figure.fse-site-logo {
+			width: auto;
+		}
+	}
+}
+
+.fse-template-part {
 	.wp-block-cover,
 	.wp-block-cover-image {
 		.site-title,
@@ -20,93 +30,21 @@
 			color: inherit;
 		}
 	}
-}
 
-.a8c-template-editor {
-	.wp-block-cover,
-	.wp-block-cover-image {
-		.site-title,
-		.site-description {
-			background: transparent;
-			color: inherit;
-		}
-	}
-}
-
-.site-header {
-	.site-title {
-		font-size: 21.6px;
-		font-weight: 700;
-		text-decoration: underline;
+	.block-editor-block-list__layout .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit figure.fse-site-logo {
+		width: auto;
 	}
 
-	.site-description {
-		font-size: 15px;
-	}
+	@import '../components/header/site-main-navigation';
 
 	.main-navigation {
-		@import "../blocks/button/style";
-	}
-}
+		text-align: center;
 
-.post-content__block {
-	margin-bottom: 160px;
-	margin-top: 36px;
-
-	// Minimum z-index to appear above the Template block overlay.
-	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/packages/block-editor/src/components/block-list/style.scss#L495-L496
-	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/assets/stylesheets/_z-index.scss#L8
-	z-index: 20;
-}
-
-.site-footer {
-	@include media(tablet) {
-		display: block;
-	}
-
-	.main-navigation {
-		@extend .footer-navigation;
-
-		.footer-menu {
-			color: inherit;
+		@import "../base/extends";
+		.button {
+			@extend %button-style
 		}
 
-		display: block;
-		& > div {
-			display: block;
-		}
-
-		.hide-visually,
-		#toggle-menu {
-			display: none;
-		}
-
-		@include media(mobile-only) {
-			> div {
-				display: block;
-			}
-			li {
-				width: auto;
-
-				.sub-menu {
-					display: none;
-				}
-			}
-		}
-	}
-}
-
-.site-header,
-.site-footer {
-	.site-title,
-	.site-description {
-		&.has-background {
-			border-radius: 0;
-			padding: #{map-deep-get($config-global, "spacing", "unit")};
-		}
-	}
-
-	.main-navigation {
 		.main-menu.footer-menu li {
 			a {
 				font-size: inherit;
@@ -132,4 +70,32 @@
 			padding: #{map-deep-get($config-global, "spacing", "unit")};
 		}
 	}
+}
+
+// Remove top margin/padding from the header if the first block is .alignfull
+@include media(mobile) {
+	.a8c-template-editor.fse-header .block-editor-block-list__layout > .block-editor-block-list__block {
+		&.is-selected:first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+			margin-top: 14px;
+		}
+		&:not(.is-selected):first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+			margin-top: 0;
+		}
+	}
+}
+.template-block .fse-header .block-editor-block-list__layout > .block-editor-block-list__block:first-child[data-align='full'] {
+	margin-top: -16px;
+	@include media(mobile) {
+		margin-top: -32px;
+	}
+}
+
+.post-content__block {
+	margin-bottom: 160px;
+	margin-top: 36px;
+
+	// Minimum z-index to appear above the Template block overlay.
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/packages/block-editor/src/components/block-list/style.scss#L495-L496
+	// @see https://github.com/WordPress/gutenberg/blob/f198997e2c8e377423beb230ce5283914076d396/assets/stylesheets/_z-index.scss#L8
+	z-index: 20;
 }

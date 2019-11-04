@@ -1,65 +1,22 @@
 @import "../../varia/sass/full-site-editing/editor";
 
-.site-header, .site-footer {
-	.site-title {
-		font-size: 20px;
-		@include media(mobile) {
-			font-size: 24px;
-		}
+.fse-template-part {
+	.has-normal-font-size {
+		font-size: map-deep-get($config-global, "font", "size", "md");
 	}
 
-	.site-description {
-		font-size: 13.8px;
-		@include media(mobile) {
-			font-size: 16.6px;
-		}
+	.main-navigation a {
+		text-decoration: none;
 	}
 
 	.wp-block-cover,
 	.wp-block-cover-image {
-		.site-title,
-		.site-description {
-			text-shadow: 0 0 6px map-deep-get($config-global, "color", "black");
-		}
-	}
-}
-
-.site-header {
-	.site-title {
-		text-decoration: none;
-	}
-
-	.main-navigation {
-		text-align: center;
-		ul {
-			justify-content: center;
-			a {
-				font-size: 20px;
-				text-decoration: none;
-			}
-		}
-	}
-}
-
-.site-footer {
-	.site-title {
-		font-weight: 700;
-	}
-
-	.main-navigation .footer-menu {
-		justify-content: center;
-
-		@include media(tablet) {
-			justify-content: flex-end;
+		.site-title {
+			font-weight: #{map-deep-get($config-heading, "font", "weight")};
 		}
 
-		a {
-			font-size: 16.6px;
-			text-decoration: none;
-			@include media(mobile-only) {
-				font-size: 13.8px;
-				padding: 0 8px;
-			}
+		.has-background {
+			text-shadow: none;
 		}
 	}
 }

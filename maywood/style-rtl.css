@@ -2704,12 +2704,12 @@ body:not(.fse-enabled) .main-navigation a {
 	color: #685636;
 }
 
-.footer-navigation, .fse-enabled .site-footer .main-navigation {
+.footer-navigation {
 	display: inline;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation, .fse-enabled .site-footer .main-navigation {
+	.footer-navigation {
 		flex: 1 0 50%;
 		order: 2;
 		margin-top: 0;
@@ -2718,37 +2718,37 @@ body:not(.fse-enabled) .main-navigation a {
 	}
 }
 
-.footer-navigation > div, .fse-enabled .site-footer .main-navigation > div {
+.footer-navigation > div {
 	display: inline;
 }
 
-.footer-navigation .footer-menu, .fse-enabled .site-footer .main-navigation .footer-menu {
+.footer-navigation .footer-menu {
 	color: #686868;
 	margin: 0;
 	padding-right: 0;
 }
 
 @media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu, .fse-enabled .site-footer .main-navigation .footer-menu {
+	.footer-navigation .footer-menu {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
 	}
 }
 
-.footer-navigation .footer-menu > li, .fse-enabled .site-footer .main-navigation .footer-menu > li {
+.footer-navigation .footer-menu > li {
 	display: inline;
 }
 
-.footer-navigation .footer-menu > li:first-of-type > a, .fse-enabled .site-footer .main-navigation .footer-menu > li:first-of-type > a {
+.footer-navigation .footer-menu > li:first-of-type > a {
 	padding-right: 0;
 }
 
-.footer-navigation .footer-menu > li:last-of-type, .fse-enabled .site-footer .main-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type {
 	padding-left: 0;
 }
 
-.footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
+.footer-navigation .footer-menu a {
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-family: var(--font-headings, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: 700;
@@ -2756,11 +2756,11 @@ body:not(.fse-enabled) .main-navigation a {
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:link, .fse-enabled .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .fse-enabled .site-footer .main-navigation .footer-menu a:visited {
+.footer-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited {
 	color: currentColor;
 }
 
-.footer-navigation .footer-menu a:hover, .fse-enabled .site-footer .main-navigation .footer-menu a:hover {
+.footer-navigation .footer-menu a:hover {
 	color: #685636;
 }
 
@@ -3890,8 +3890,8 @@ p:not(.site-title) a:hover {
 	.wp-block-cover-image {
 		min-height: 640px;
 	}
-	.wp-block-cover h1,
-	.wp-block-cover-image h1 {
+	.wp-block-cover h1:not(.site-title),
+	.wp-block-cover-image h1:not(.site-title) {
 		font-size: 2.98598rem;
 	}
 	.wp-block-cover h2,
@@ -4022,11 +4022,11 @@ p:not(.site-title) a:hover {
 /**
  * Footer Navigation
  */
-.footer-navigation .footer-menu a, .fse-enabled .site-footer .main-navigation .footer-menu a {
+.footer-navigation .footer-menu a {
 	padding: 0 8px;
 }
 
-.footer-navigation .footer-menu > li:last-of-type, .fse-enabled .site-footer .main-navigation .footer-menu > li:last-of-type {
+.footer-navigation .footer-menu > li:last-of-type {
 	margin-left: -8px;
 }
 
@@ -4034,147 +4034,98 @@ p:not(.site-title) a:hover {
  * Full Site Editing
  * - Full Site Editing overrides
  */
-.fse-enabled .site-footer {
-	display: block;
+.fse-template-part {
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
-.fse-enabled .site-footer .main-navigation {
-	display: block;
-}
-
-.fse-enabled .site-footer .main-navigation .footer-menu {
+.fse-template-part .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
 	color: inherit;
 }
 
-.fse-enabled .site-footer .main-navigation > div {
-	display: block;
-}
-
-.fse-enabled .site-footer .main-navigation .hide-visually,
-.fse-enabled .site-footer .main-navigation #toggle-menu {
-	display: none;
-}
-
-@media only screen and (max-width: 559px) {
-	.fse-enabled .site-footer .main-navigation > div {
-		display: block;
-	}
-	.fse-enabled .site-footer .main-navigation li {
-		width: auto;
-	}
-	.fse-enabled .site-footer .main-navigation li .sub-menu {
-		display: none;
-	}
-}
-
-.fse-enabled .site-footer .site-info {
-	text-align: center;
-}
-
-.fse-enabled .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
-	color: inherit;
-}
-
-.fse-enabled .main-navigation .has-text-align-left > .main-menu.footer-menu {
+.fse-template-part .main-navigation .has-text-align-left > .main-menu.footer-menu {
 	justify-content: flex-start;
 }
 
-.fse-enabled .main-navigation .has-text-align-center > .main-menu.footer-menu {
+.fse-template-part .main-navigation .has-text-align-center > .main-menu.footer-menu {
 	justify-content: center;
 }
 
-.fse-enabled .main-navigation .has-text-align-right > .main-menu.footer-menu {
+.fse-template-part .main-navigation .has-text-align-right > .main-menu.footer-menu {
 	justify-content: flex-end;
 }
 
-.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
 	padding: 16px 0;
 }
 
 @media only screen and (min-width: 560px) {
-	.fse-enabled .main-navigation .has-background > .main-menu.footer-menu {
+	.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
 		padding: 16px;
 	}
 }
 
-.fse-enabled .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+.fse-template-part .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
 	font-size: 0.6em;
 	vertical-align: middle;
 }
 
-.fse-enabled .site-header.entry-content {
-	margin-bottom: 0;
-	max-width: 100%;
-	padding: 0;
-	width: 100%;
+.fse-header > *:first-child:not(.alignfull) {
+	margin-top: 21.312px;
 }
 
-@media only screen and (max-width: 559px) {
-	.fse-enabled .site-header.entry-content .main-navigation > div {
-		padding: 0 32px;
+@media only screen and (min-width: 560px) {
+	.fse-header > *:first-child:not(.alignfull) {
+		margin-top: 32px;
 	}
 }
 
-.fse-enabled.home.page.hide-homepage-title .site-header.entry-content {
+.fse-footer {
+	display: block;
+}
+
+.fse-footer .site-info {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-footer .site-info {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
 	padding-bottom: 32px;
 }
 
 @media only screen and (min-width: 560px) {
-	.fse-enabled.home.page.hide-homepage-title .site-header.entry-content {
+	.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
 		padding-bottom: 48px;
 	}
 }
 
-@media only screen and (min-width: 640px) {
-	.fse-enabled .site-footer .wp-block-a8c-navigation-menu {
-		margin-bottom: 21.312px;
-		margin-top: 21.312px;
-	}
-}
-
-@media only screen and (min-width: 560px) {
-	.fse-enabled .site-footer .wp-block-a8c-navigation-menu .footer-menu a {
-		padding: 8px;
-	}
-}
-
-.fse-enabled .wp-block-cover .site-title,
-.fse-enabled .wp-block-cover-image .site-title {
-	font-size: 20px;
-}
-
-@media only screen and (min-width: 560px) {
-	.fse-enabled .wp-block-cover .site-title,
-	.fse-enabled .wp-block-cover-image .site-title {
-		font-size: 24px;
-	}
-}
-
-.fse-enabled .wp-block-cover .site-title a,
-.fse-enabled .wp-block-cover-image .site-title a {
+.fse-template-part .main-navigation a {
 	text-decoration: none;
 }
 
-.fse-enabled .wp-block-cover .site-description,
-.fse-enabled .wp-block-cover-image .site-description {
-	font-size: 13.8px;
-}
-
-@media only screen and (min-width: 560px) {
-	.fse-enabled .wp-block-cover .site-description,
-	.fse-enabled .wp-block-cover-image .site-description {
-		font-size: 16.6px;
+@media only screen and (max-width: 559px) {
+	.fse-template-part {
+		max-width: calc( 100% - 32px);
+	}
+	.fse-template-part .main-navigation > div {
+		padding: 0 32px;
 	}
 }
 
-.fse-enabled .wp-block-cover .main-navigation a,
-.fse-enabled .wp-block-cover-image .main-navigation a {
+.fse-template-part .wp-block-cover .site-title a,
+.fse-template-part .wp-block-cover-image .site-title a {
 	text-decoration: none;
 }
 
-.fse-enabled #colophon {
-	margin-right: auto;
-	margin-left: auto;
-	max-width: none;
-	width: 100%;
+.fse-template-part .wp-block-cover .has-background,
+.fse-template-part .wp-block-cover-image .has-background {
+	text-shadow: none;
 }
