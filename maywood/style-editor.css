@@ -1079,107 +1079,11 @@ b, strong {
  * Full Site Editing
  * - Full Site Editing overrides
  */
-/**
- * Button Placeholder style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-.site-header .main-navigation button,
-.site-header .main-navigation .button,
-.site-header .main-navigation input[type="submit"],
-.site-header .main-navigation .wp-block-button__link,
-.site-header .main-navigation .wp-block-file__button {
-	line-height: 1;
-	color: white;
-	cursor: pointer;
-	font-weight: 700;
-	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 0.83333rem;
-	background-color: #897248;
-	border-radius: 5px;
-	border-width: 0;
-	padding: 16px 16px;
-}
-
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before, .site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-.site-header .main-navigation button:before,
-.site-header .main-navigation .button:before,
-.site-header .main-navigation input[type="submit"]:before,
-.site-header .main-navigation .wp-block-button__link:before,
-.site-header .main-navigation .wp-block-file__button:before {
-	margin-bottom: -0.12em;
-}
-
-.site-header .main-navigation button:after,
-.site-header .main-navigation .button:after,
-.site-header .main-navigation input[type="submit"]:after,
-.site-header .main-navigation .wp-block-button__link:after,
-.site-header .main-navigation .wp-block-file__button:after {
-	margin-top: -0.11em;
-}
-
-.site-header .main-navigation button:hover,
-.site-header .main-navigation .button:hover,
-.site-header .main-navigation input:hover[type="submit"],
-.site-header .main-navigation .wp-block-button__link:hover,
-.site-header .main-navigation .wp-block-file__button:hover, .site-header .main-navigation button:focus,
-.site-header .main-navigation .button:focus,
-.site-header .main-navigation input:focus[type="submit"],
-.site-header .main-navigation .wp-block-button__link:focus,
-.site-header .main-navigation .wp-block-file__button:focus, .site-header .main-navigation button.has-focus,
-.site-header .main-navigation .has-focus.button,
-.site-header .main-navigation input.has-focus[type="submit"],
-.site-header .main-navigation .has-focus.wp-block-button__link,
-.site-header .main-navigation .has-focus.wp-block-file__button {
-	color: white;
-	background-color: #685636;
-}
-
-/**
- * Onsale Placeholder style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-.site-branding {
-	color: #686868;
-}
-
-.site-title {
-	color: #181818;
-	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	letter-spacing: normal;
-	line-height: 1;
-}
-
-.site-title a {
-	color: currentColor;
-	font-weight: 700;
-}
-
-.site-title a:link, .site-title a:visited {
-	color: currentColor;
-}
-
-.site-title a:hover {
-	color: #897248;
+@media (min-width: 600px) {
+	.a8c-template-editor .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 .template-block .fse-template-part {
@@ -1221,11 +1125,7 @@ b, strong {
 	margin: 0;
 }
 
-<<<<<<< HEAD
-.main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
-=======
 .fse-template-part .main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
->>>>>>> Temporary fix for missing alert colors in Maywood
 	display: block;
 }
 
@@ -1248,7 +1148,7 @@ b, strong {
 }
 
 @media only screen and (min-width: 560px) {
-	.main-navigation > div {
+	.fse-template-part .main-navigation > div {
 		display: inline-block;
 	}
 	.fse-template-part .main-navigation #toggle-menu {
@@ -1428,259 +1328,57 @@ b, strong {
 	font-size: 1rem;
 }
 
-.social-navigation > div > ul {
-	align-content: center;
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.social-navigation > div > ul > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.social-navigation > div > ul > li:last-of-type > a {
-	padding-right: 0;
-}
-
-.social-navigation a {
-	color: #181818;
-	display: inline-block;
-	padding: 0 calc( 0.5 * calc(0.66 * 16px ));
-}
-
-.social-navigation a:hover {
-	color: #897248;
-}
-
-.social-navigation svg {
-	fill: currentColor;
-	vertical-align: middle;
-}
-
-.site-footer {
-	overflow: hidden;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-footer {
-		align-items: flex-end;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-}
-
-.site-info {
-	color: #686868;
-	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 0.83333rem;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-info {
-		order: 1;
-		flex: 1 0 50%;
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-
-.site-info .site-name {
-	font-weight: bold;
-}
-
-.site-info a {
-	color: currentColor;
-}
-
-.site-info a:link, .site-info a:visited {
-	color: currentColor;
-}
-
-.site-info a:hover {
-	color: #685636;
-}
-
-.footer-navigation, .site-footer .main-navigation {
-	display: inline;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation, .site-footer .main-navigation {
-		flex: 1 0 50%;
-		order: 2;
-		margin-top: 0;
-		margin-bottom: 0;
-		text-align: right;
-	}
-}
-
-.footer-navigation > div, .site-footer .main-navigation > div {
-	display: inline;
-}
-
-.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
-	color: #686868;
-	margin: 0;
-	padding-left: 0;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation .footer-menu, .site-footer .main-navigation .footer-menu {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
-}
-
-.footer-navigation .footer-menu > li, .site-footer .main-navigation .footer-menu > li {
-	display: inline;
-}
-
-.footer-navigation .footer-menu > li:first-of-type > a, .site-footer .main-navigation .footer-menu > li:first-of-type > a {
-	padding-left: 0;
-}
-
-.footer-navigation .footer-menu > li:last-of-type, .site-footer .main-navigation .footer-menu > li:last-of-type {
-	padding-right: 0;
-}
-
-.footer-navigation .footer-menu a, .site-footer .main-navigation .footer-menu a {
-	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-weight: 700;
-	padding: 8px;
-	color: currentColor;
-}
-
-.footer-navigation .footer-menu a:link, .site-footer .main-navigation .footer-menu a:link, .footer-navigation .footer-menu a:visited, .site-footer .main-navigation .footer-menu a:visited {
-	color: currentColor;
-}
-
-.footer-navigation .footer-menu a:hover, .site-footer .main-navigation .footer-menu a:hover {
-	color: #685636;
-}
-
-body:not(.fse-enabled) .footer-menu a {
-	font-size: 0.83333rem;
-}
-
-.template-block .site-header,
-.template-block .site-footer {
-	padding: 16px;
-}
-
-@media only screen and (min-width: 560px) {
-	.template-block .site-header,
-	.template-block .site-footer {
-		padding: 32px 0;
-	}
-}
-
-.template-block .wp-block-cover .site-title,
-.template-block .wp-block-cover .site-description,
-.template-block .wp-block-cover-image .site-title,
-.template-block .wp-block-cover-image .site-description {
-	background: transparent;
-	color: inherit;
-}
-
-.a8c-template-editor .wp-block-cover .site-title,
-.a8c-template-editor .wp-block-cover .site-description,
-.a8c-template-editor .wp-block-cover-image .site-title,
-.a8c-template-editor .wp-block-cover-image .site-description {
-	background: transparent;
-	color: inherit;
-}
-
-.site-header .site-title {
-	font-size: 21.6px;
-	font-weight: 700;
-	text-decoration: underline;
-}
-
-.site-header .site-description {
-	font-size: 15px;
-}
-
-.site-header .main-navigation {
+.fse-template-part .main-navigation {
+	text-align: center;
 	/**
- * Button
+ * Button Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
  */
 	/**
- * Block Options
+ * Onsale Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
  */
 }
 
-.site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link {
-	color: #897248;
-	background: transparent;
-	border: 2px solid currentcolor;
-	padding: 14px 16px;
+.fse-template-part .main-navigation .button {
+	line-height: 1;
+	color: white;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-size: 0.83333rem;
+	background-color: #897248;
+	border-radius: 5px;
+	border-width: 0;
+	padding: 16px 16px;
 }
 
-.site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link:hover, .site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link:focus, .site-header .main-navigation .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: #685636;
-}
-
-.site-header .main-navigation .wp-block-button.is-style-squared .wp-block-button__link {
-	border-radius: 0;
-}
-
-.post-content__block {
-	margin-bottom: 160px;
-	margin-top: 36px;
-	z-index: 20;
-}
-
-@media only screen and (min-width: 640px) {
-	.site-footer {
-		display: block;
-	}
-}
-
-.site-footer .main-navigation {
+.fse-template-part .main-navigation .button:before, .fse-template-part .main-navigation .button:after {
+	content: '';
 	display: block;
+	height: 0;
+	width: 0;
 }
 
-.site-footer .main-navigation .footer-menu {
-	color: inherit;
+.fse-template-part .main-navigation .button:before {
+	margin-bottom: -0.12em;
 }
 
-.site-footer .main-navigation > div {
-	display: block;
+.fse-template-part .main-navigation .button:after {
+	margin-top: -0.11em;
 }
 
-.site-footer .main-navigation .hide-visually,
-.site-footer .main-navigation #toggle-menu {
-	display: none;
+.fse-template-part .main-navigation .button:hover, .fse-template-part .main-navigation .button:focus, .fse-template-part .main-navigation .has-focus.button {
+	color: white;
+	background-color: #685636;
 }
 
-@media only screen and (max-width: 559px) {
-	.site-footer .main-navigation > div {
-		display: block;
-	}
-	.site-footer .main-navigation li {
-		width: auto;
-	}
-	.site-footer .main-navigation li .sub-menu {
-		display: none;
-	}
-}
-
-.site-header .site-title.has-background,
-.site-header .site-description.has-background,
-.site-footer .site-title.has-background,
-.site-footer .site-description.has-background {
-	border-radius: 0;
-	padding: 16px;
-}
-
-.site-header .main-navigation .main-menu.footer-menu li a,
-.site-footer .main-navigation .main-menu.footer-menu li a {
+.fse-template-part .main-navigation .main-menu.footer-menu li a {
 	font-size: inherit;
 }
 
