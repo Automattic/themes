@@ -99,6 +99,9 @@ if ( ! function_exists( 'shawburn_setup' ) ) :
 				),
 			)
 		);
+
+		// Enable Full Site Editing
+		add_theme_support( 'full-site-editing');
 	}
 endif;
 add_action( 'after_setup_theme', 'shawburn_setup', 12 );

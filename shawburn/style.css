@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: shawburn
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles, full-site-editing
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -3841,105 +3841,6 @@ hr.wp-block-separator.is-style-wide,
 }
 
 /**
- * Main Menu
- */
-#site-navigation {
-	background-color: #0C80A1;
-	order: 2;
-	text-align: center;
-	width: 100%;
-}
-
-#site-navigation.main-navigation ul > li:hover > a,
-#site-navigation.main-navigation ul > li.focus > a,
-#site-navigation.main-navigation ul > li.current-menu-item > a {
-	background-color: #085a72;
-}
-
-#site-navigation.main-navigation ul {
-	text-align: inherit;
-}
-
-#site-navigation.main-navigation ul li {
-	text-align: left;
-}
-
-#site-navigation.main-navigation ul li:first-of-type > a {
-	padding-left: 16px;
-}
-
-#site-navigation.main-navigation ul li:last-of-type > a {
-	padding-right: 16px;
-}
-
-#site-navigation.main-navigation ul li a {
-	padding: 16px;
-	text-decoration: none;
-}
-
-#site-navigation.main-navigation ul li a:before, #site-navigation.main-navigation ul li a:after {
-	margin: 0;
-}
-
-@media only screen and (min-width: 560px) {
-	#site-navigation.main-navigation ul li {
-		padding: 0;
-	}
-	#site-navigation.main-navigation ul.main-menu > li:after {
-		color: #085a72;
-		content: "\2022";
-		display: inline;
-		font-size: 0.83333rem;
-		line-height: 1;
-		padding: 16px 8px;
-	}
-	#site-navigation.main-navigation ul.main-menu > li:last-child:after {
-		display: none;
-	}
-}
-
-#site-navigation.main-navigation ul ul {
-	background-color: #0C80A1;
-	box-shadow: none;
-}
-
-#site-navigation.main-navigation .main-menu {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-/**
- * Mobile Menu
- */
-.main-navigation #toggle:focus + #toggle-menu,
-#toggle-menu {
-	background: #0C80A1;
-	color: white;
-	border-radius: 0;
-	text-align: center;
-	text-decoration: none;
-	width: 100%;
-}
-
-.main-navigation #toggle:focus + #toggle-menu:active, .main-navigation #toggle:focus + #toggle-menu:focus, .main-navigation #toggle:focus + #toggle-menu:hover,
-#toggle-menu:active,
-#toggle-menu:focus,
-#toggle-menu:hover {
-	background: #085a72;
-	color: white;
-}
-
-.main-navigation #toggle:checked ~ div {
-	border-top: 2px solid white;
-}
-
-@media only screen and (min-width: 560px) {
-	.main-navigation #toggle:checked ~ div {
-		border-top: 0;
-	}
-}
-
-/**
  * Footer Menu
  */
 .footer-navigation {
@@ -4115,4 +4016,208 @@ table th,
 .widget_rss .rssSummary,
 .widget_rss .rss-date {
 	display: block;
+}
+
+/**
+ * Site Navigation Styles
+ */
+/**
+ * Main Menu
+ */
+#site-navigation, .fse-template-part .main-navigation {
+	background-color: #0C80A1;
+	order: 2;
+	text-align: center;
+	width: 100%;
+}
+
+#site-navigation.main-navigation ul > li:hover > a, .fse-template-part .main-navigation ul > li:hover > a,
+#site-navigation.main-navigation ul > li.focus > a,
+.fse-template-part .main-navigation ul > li.focus > a,
+#site-navigation.main-navigation ul > li.current-menu-item > a,
+.fse-template-part .main-navigation ul > li.current-menu-item > a {
+	background-color: #085a72;
+}
+
+#site-navigation.main-navigation ul, .fse-template-part .main-navigation ul {
+	text-align: inherit;
+}
+
+#site-navigation.main-navigation ul li, .fse-template-part .main-navigation ul li {
+	text-align: left;
+}
+
+#site-navigation.main-navigation ul li:first-of-type > a, .fse-template-part .main-navigation ul li:first-of-type > a {
+	padding-left: 16px;
+}
+
+#site-navigation.main-navigation ul li:last-of-type > a, .fse-template-part .main-navigation ul li:last-of-type > a {
+	padding-right: 16px;
+}
+
+#site-navigation.main-navigation ul li a, .fse-template-part .main-navigation ul li a {
+	padding: 16px;
+	text-decoration: none;
+}
+
+#site-navigation.main-navigation ul li a:before, .fse-template-part .main-navigation ul li a:before, #site-navigation.main-navigation ul li a:after, .fse-template-part .main-navigation ul li a:after {
+	margin: 0;
+}
+
+@media only screen and (min-width: 560px) {
+	#site-navigation.main-navigation ul li, .fse-template-part .main-navigation ul li {
+		padding: 0;
+	}
+	#site-navigation.main-navigation ul.main-menu > li:after, .fse-template-part .main-navigation ul.main-menu > li:after {
+		color: #085a72;
+		content: "\2022";
+		display: inline;
+		font-size: 0.83333rem;
+		line-height: 1;
+		padding: 16px 8px;
+	}
+	#site-navigation.main-navigation ul.main-menu > li:last-child:after, .fse-template-part .main-navigation ul.main-menu > li:last-child:after {
+		display: none;
+	}
+}
+
+#site-navigation.main-navigation ul ul, .fse-template-part .main-navigation ul ul {
+	background-color: #0C80A1;
+	box-shadow: none;
+}
+
+#site-navigation.main-navigation .main-menu, .fse-template-part .main-navigation .main-menu {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/**
+ * Mobile Menu
+ */
+.main-navigation #toggle:focus + #toggle-menu,
+#toggle-menu {
+	background: #0C80A1;
+	color: white;
+	border-radius: 0;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+}
+
+.main-navigation #toggle:focus + #toggle-menu:active, .main-navigation #toggle:focus + #toggle-menu:focus, .main-navigation #toggle:focus + #toggle-menu:hover,
+#toggle-menu:active,
+#toggle-menu:focus,
+#toggle-menu:hover {
+	background: #085a72;
+	color: white;
+}
+
+.main-navigation #toggle:checked ~ div {
+	border-top: 2px solid white;
+}
+
+@media only screen and (min-width: 560px) {
+	.main-navigation #toggle:checked ~ div {
+		border-top: 0;
+	}
+}
+
+/**
+ * Full Site Editing
+ * - Full Site Editing overrides
+ */
+.fse-template-part {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.fse-template-part .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-template-part .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-template-part .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-template-part .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-template-part .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+.fse-header > *:first-child:not(.alignfull) {
+	margin-top: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-header > *:first-child:not(.alignfull) {
+		margin-top: 32px;
+	}
+}
+
+.fse-footer {
+	display: block;
+}
+
+.fse-footer .site-info {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-footer .site-info {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+	padding-bottom: 32px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+		padding-bottom: 48px;
+	}
+}
+
+.fse-template-part .site-title + .site-description {
+	margin-top: 8px;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-template-part {
+		max-width: calc( 100% - 32px);
+	}
+	.fse-template-part .main-navigation > div {
+		padding: 0 32px;
+	}
+}
+
+.fse-template-part .wp-block-cover .site-title a,
+.fse-template-part .wp-block-cover-image .site-title a {
+	text-decoration: none;
+}
+
+.fse-template-part .wp-block-cover .has-background,
+.fse-template-part .wp-block-cover-image .has-background {
+	text-shadow: none;
 }
