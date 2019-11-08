@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: exford
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles, full-site-editing
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -4061,4 +4061,104 @@ p:not(.site-title) a:hover {
 
 .footer-navigation .footer-menu > li:last-of-type {
 	margin-right: -8px;
+}
+
+/**
+ * Full Site Editing
+ * - Full Site Editing overrides
+ */
+.fse-template-part {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.fse-template-part .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-template-part .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-template-part .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-template-part .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-template-part .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+.fse-header > *:first-child:not(.alignfull) {
+	margin-top: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-header > *:first-child:not(.alignfull) {
+		margin-top: 32px;
+	}
+}
+
+.fse-footer {
+	display: block;
+}
+
+.fse-footer .site-info {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-footer .site-info {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+	padding-bottom: 32px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+		padding-bottom: 48px;
+	}
+}
+
+.fse-template-part .main-navigation a {
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-template-part {
+		max-width: calc( 100% - 32px);
+	}
+	.fse-template-part .main-navigation > div {
+		padding: 0 32px;
+	}
+}
+
+.fse-template-part .wp-block-cover .site-title a,
+.fse-template-part .wp-block-cover-image .site-title a {
+	text-decoration: none;
+}
+
+.fse-template-part .wp-block-cover .has-background,
+.fse-template-part .wp-block-cover-image .has-background {
+	text-shadow: none;
 }

@@ -99,6 +99,9 @@ if ( ! function_exists( 'exford_setup' ) ) :
 				),
 			)
 		);
+
+		// Enable Full Site Editing
+		add_theme_support( 'full-site-editing');
 	}
 endif;
 add_action( 'after_setup_theme', 'exford_setup', 12 );

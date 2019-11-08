@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * These styles should be loaded by the Block Editor only
  */
@@ -1052,4 +1053,383 @@ table th,
 	.wp-block-cover-image {
 		min-height: 80vh;
 	}
+}
+
+/**
+ * Full Site Editing
+ * - Full Site Editing overrides
+ */
+@media (min-width: 600px) {
+	.a8c-template-editor .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.template-block .fse-template-part {
+	padding: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.template-block .fse-template-part {
+		padding: 32px 0;
+	}
+}
+
+.template-block .fse-template-part figure.fse-site-logo {
+	width: auto;
+}
+
+.fse-template-part .wp-block-cover .site-title,
+.fse-template-part .wp-block-cover .site-description,
+.fse-template-part .wp-block-cover-image .site-title,
+.fse-template-part .wp-block-cover-image .site-description {
+	background: transparent;
+	color: inherit;
+}
+
+.fse-template-part .block-editor-block-list__layout .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit figure.fse-site-logo {
+	width: auto;
+}
+
+.fse-template-part .main-navigation {
+	color: #111111;
+}
+
+.fse-template-part .main-navigation > div {
+	display: none;
+}
+
+.fse-template-part .main-navigation #toggle-menu {
+	display: inline-block;
+	margin: 0;
+}
+
+.fse-template-part .main-navigation #toggle:checked ~ div:not(.woocommerce-menu-container) {
+	display: block;
+}
+
+.fse-template-part .main-navigation #toggle:focus + #toggle-menu {
+	background-color: #195f2b;
+	outline: inherit;
+	text-decoration: underline;
+}
+
+.fse-template-part .main-navigation .dropdown-icon.close {
+	display: none;
+}
+
+.fse-template-part .main-navigation #toggle:checked + #toggle-menu .open {
+	display: none;
+}
+
+.fse-template-part .main-navigation #toggle:checked + #toggle-menu .close {
+	display: inline;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation > div {
+		display: inline-block;
+	}
+	.fse-template-part .main-navigation #toggle-menu {
+		display: none;
+	}
+	.fse-template-part .main-navigation > div > ul > li > ul {
+		display: none;
+	}
+}
+
+.fse-template-part .main-navigation > div > ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	max-width: none;
+	padding-left: 0;
+	position: relative;
+	/* Sub-menus Flyout */
+}
+
+.fse-template-part .main-navigation > div > ul ul {
+	padding-left: 0;
+}
+
+.fse-template-part .main-navigation > div > ul li {
+	display: block;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.fse-template-part .main-navigation > div > ul li:hover, .fse-template-part .main-navigation > div > ul li[focus-within] {
+	cursor: pointer;
+	z-index: 99999;
+}
+
+.fse-template-part .main-navigation > div > ul li:hover, .fse-template-part .main-navigation > div > ul li:focus-within {
+	cursor: pointer;
+	z-index: 99999;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation > div > ul li {
+		display: inherit;
+		width: inherit;
+		/* Submenu display */
+	}
+	.fse-template-part .main-navigation > div > ul li:hover > ul,
+	.fse-template-part .main-navigation > div > ul li[focus-within] > ul,
+	.fse-template-part .main-navigation > div > ul li ul:hover,
+	.fse-template-part .main-navigation > div > ul li ul:focus {
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+	.fse-template-part .main-navigation > div > ul li:hover > ul,
+	.fse-template-part .main-navigation > div > ul li:focus-within > ul,
+	.fse-template-part .main-navigation > div > ul li ul:hover,
+	.fse-template-part .main-navigation > div > ul li ul:focus {
+		visibility: visible;
+		opacity: 1;
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation > div > ul > li > a {
+		line-height: 1;
+	}
+	.fse-template-part .main-navigation > div > ul > li > a:before, .fse-template-part .main-navigation > div > ul > li > a:after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+	}
+	.fse-template-part .main-navigation > div > ul > li > a:before {
+		margin-bottom: -0.12em;
+	}
+	.fse-template-part .main-navigation > div > ul > li > a:after {
+		margin-top: -0.11em;
+	}
+	.fse-template-part .main-navigation > div > ul > li:first-of-type > a {
+		padding-left: 0;
+	}
+	.fse-template-part .main-navigation > div > ul > li:last-of-type > a {
+		padding-right: 0;
+	}
+}
+
+.fse-template-part .main-navigation > div > ul > li > .sub-menu {
+	margin: 0;
+	position: relative;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation > div > ul > li > .sub-menu {
+		background: #FFFFFF;
+		box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+		left: 0;
+		top: 100%;
+		min-width: max-content;
+		opacity: 0;
+		position: absolute;
+		transition: all 0.5s ease;
+		visibility: hidden;
+	}
+}
+
+.fse-template-part .main-navigation > div > ul > li > .sub-menu .sub-menu {
+	width: 100%;
+}
+
+.fse-template-part .main-navigation a {
+	color: #23883D;
+	display: block;
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-headings, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-weight: 700;
+	padding: 8px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation a {
+		padding: 16px;
+	}
+}
+
+.fse-template-part .main-navigation a:link, .fse-template-part .main-navigation a:visited {
+	color: #23883D;
+}
+
+.fse-template-part .main-navigation a:hover {
+	color: #195f2b;
+}
+
+.fse-template-part .main-navigation .sub-menu {
+	list-style: none;
+	margin-left: 0;
+	/* Reset the counter for each UL */
+	counter-reset: nested-list;
+}
+
+.fse-template-part .main-navigation .sub-menu .menu-item a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.fse-template-part .main-navigation .sub-menu .menu-item a::before {
+	/* Increment the dashes */
+	counter-increment: nested-list;
+	/* Insert dashes with spaces in between */
+	content: "– " counters(nested-list, "– ", none);
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation > div > ul > .menu-item-has-children > a::after {
+		content: "\00a0\25BC";
+		display: inline-block;
+		font-size: 0.69444rem;
+		height: inherit;
+		width: inherit;
+	}
+}
+
+.fse-template-part .main-navigation .hide-visually {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.fse-template-part body:not(.fse-enabled) .main-navigation a {
+	font-size: 1rem;
+}
+
+.fse-template-part .main-navigation {
+	text-align: center;
+	/**
+ * Button Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+	/**
+ * Onsale Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+}
+
+.fse-template-part .main-navigation .button {
+	line-height: 1;
+	color: white;
+	cursor: pointer;
+	font-weight: 700;
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-size: 0.83333rem;
+	background-color: #23883D;
+	border-radius: 5px;
+	border-width: 0;
+	padding: 16px 16px;
+}
+
+.fse-template-part .main-navigation .button:before, .fse-template-part .main-navigation .button:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+}
+
+.fse-template-part .main-navigation .button:before {
+	margin-bottom: -0.12em;
+}
+
+.fse-template-part .main-navigation .button:after {
+	margin-top: -0.11em;
+}
+
+.fse-template-part .main-navigation .button:hover, .fse-template-part .main-navigation .button:focus, .fse-template-part .main-navigation .has-focus.button {
+	color: white;
+	background-color: #195f2b;
+}
+
+.fse-template-part .main-navigation .main-menu.footer-menu li a {
+	font-size: inherit;
+}
+
+.fse-template-part .main-navigation .main-menu.footer-menu li.menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+.fse-template-part .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-template-part .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-template-part .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-template-part .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.a8c-template-editor.fse-header .block-editor-block-list__layout > .block-editor-block-list__block.is-selected:first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+		margin-top: 14px;
+	}
+	.a8c-template-editor.fse-header .block-editor-block-list__layout > .block-editor-block-list__block:not(.is-selected):first-child[data-align='full'] > .block-editor-block-list__block-edit > [data-block] {
+		margin-top: 0;
+	}
+}
+
+.template-block .fse-header .block-editor-block-list__layout > .block-editor-block-list__block:first-child[data-align='full'] {
+	margin-top: -16px;
+}
+
+@media only screen and (min-width: 560px) {
+	.template-block .fse-header .block-editor-block-list__layout > .block-editor-block-list__block:first-child[data-align='full'] {
+		margin-top: -32px;
+	}
+}
+
+.post-content__block {
+	margin-bottom: 160px;
+	margin-top: 36px;
+	z-index: 20;
+}
+
+.fse-template-part .has-normal-font-size {
+	font-size: 1.2rem;
+}
+
+.fse-template-part .main-navigation a {
+	text-decoration: none;
+}
+
+.fse-template-part .wp-block-cover .site-title,
+.fse-template-part .wp-block-cover-image .site-title {
+	font-weight: 700;
+}
+
+.fse-template-part .wp-block-cover .has-background,
+.fse-template-part .wp-block-cover-image .has-background {
+	text-shadow: none;
+}
+
+.post-content__block {
+	margin-top: -36px;
 }
