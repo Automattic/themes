@@ -226,4 +226,4 @@ function dalston_block_extends() {
 		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.css'
 	);
 }
-add_action( 'enqueue_block_assets', 'dalston_block_extends' );
+add_action( 'enqueue_block_editor_assets', 'dalston_block_extends' );
