@@ -75,7 +75,7 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 				array(
 					'name'  => __( 'Black', 'mayland' ),
 					'slug'  => 'foreground',
-					'color' => '#000000',
+					'color' => '#010101',
 				),
 				array(
 					'name'  => __( 'Light Gray', 'mayland' ),
