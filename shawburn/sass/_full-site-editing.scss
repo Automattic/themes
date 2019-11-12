@@ -18,12 +18,12 @@ $spacing_unit: map-deep-get($config-global, "spacing", "unit");
 	.main-navigation {
 		@extend #site-navigation;
 
-		& > div {
-			@include media(mobile) {
-				display: block;
-			}
+		.has-background > .main-menu.footer-menu {
+			padding: 0;
 		}
-
+		.has-text-color ul.main-menu > li:after {
+			color: inherit;
+		}
 	}
 	
 	@include media(mobile-only) {
