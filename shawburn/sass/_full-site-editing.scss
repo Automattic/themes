@@ -11,16 +11,19 @@ $spacing_unit: map-deep-get($config-global, "spacing", "unit");
 }
 
 .fse-template-part {
-	.alignfull {
-		width: 100%;
-	}
-
 	.site-title + .site-description {
 		margin-top: #{0.5 * $spacing_unit};
 	}
 	
 	.main-navigation {
 		@extend #site-navigation;
+
+		.has-background > .main-menu.footer-menu {
+			padding: 0;
+		}
+		.has-text-color ul.main-menu > li:after {
+			color: inherit;
+		}
 	}
 	
 	@include media(mobile-only) {
