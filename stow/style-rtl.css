@@ -11,7 +11,7 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: stow
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles, full-site-editing
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1981,6 +1981,14 @@ hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 96px;
 }
 
+hr.wp-block-separator.is-style-dots.has-background, hr.wp-block-separator.is-style-dots.has-text-color {
+	background-color: transparent !important;
+}
+
+hr.wp-block-separator.is-style-dots.has-background:before, hr.wp-block-separator.is-style-dots.has-text-color:before {
+	color: currentColor !important;
+}
+
 hr.wp-block-separator.is-style-dots:before {
 	color: #DDDDDD;
 	font-size: 1.728rem;
@@ -3700,6 +3708,10 @@ a {
 /**
  * 2. Header
  */
+body:not(.fse-enabled) #masthead .site-description {
+	color: #333;
+}
+
 #masthead {
 	background-color: white;
 	padding: 0;
@@ -3708,10 +3720,6 @@ a {
 
 #masthead .site-title {
 	font-size: 2.0736rem;
-}
-
-#masthead .site-description {
-	color: #333;
 }
 
 #masthead .site-branding {
@@ -3767,7 +3775,7 @@ a {
 /**
  * 4.1 Main Navigation
  */
-#site-navigation {
+#site-navigation, .main-navigation {
 	background-color: #f25f70;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 	margin-right: 0;
@@ -3775,83 +3783,83 @@ a {
 	text-align: center;
 }
 
-#site-navigation > div {
+#site-navigation > div, .main-navigation > div {
 	text-align: right;
 }
 
-#site-navigation.main-navigation > div {
+#site-navigation.main-navigation > div, .main-navigation.main-navigation > div {
 	padding-right: 16px;
 	padding-left: 16px;
 }
 
-#site-navigation.main-navigation ul li.current-menu-item a {
+#site-navigation.main-navigation ul li.current-menu-item a, .main-navigation.main-navigation ul li.current-menu-item a {
 	color: #4f4f4f;
 }
 
-#site-navigation.main-navigation ul li a {
+#site-navigation.main-navigation ul li a, .main-navigation.main-navigation ul li a {
 	color: white;
 	text-decoration: none;
 }
 
-#site-navigation.main-navigation ul li a:hover {
+#site-navigation.main-navigation ul li a:hover, .main-navigation.main-navigation ul li a:hover {
 	color: #4f4f4f;
 }
 
 @media only screen and (min-width: 560px) {
-	#site-navigation.main-navigation ul li {
+	#site-navigation.main-navigation ul li, .main-navigation.main-navigation ul li {
 		padding-right: 0;
 		padding-left: 0;
 		list-style-type: disc;
 	}
-	#site-navigation.main-navigation ul li.current-menu-item a {
+	#site-navigation.main-navigation ul li.current-menu-item a, .main-navigation.main-navigation ul li.current-menu-item a {
 		color: #4f4f4f;
 	}
-	#site-navigation.main-navigation ul li a {
+	#site-navigation.main-navigation ul li a, .main-navigation.main-navigation ul li a {
 		color: white;
 		font-size: 0.83333rem;
 	}
-	#site-navigation.main-navigation ul li a:hover {
+	#site-navigation.main-navigation ul li a:hover, .main-navigation.main-navigation ul li a:hover {
 		color: #4f4f4f;
 	}
-	#site-navigation.main-navigation ul li a::after {
+	#site-navigation.main-navigation ul li a::after, .main-navigation.main-navigation ul li a::after {
 		color: #ffa4ad;
 		content: " \2022";
 		margin-right: 16px;
 		display: inline;
 		font-size: 1rem;
 	}
-	#site-navigation.main-navigation ul li:last-child a::after {
+	#site-navigation.main-navigation ul li:last-child a::after, .main-navigation.main-navigation ul li:last-child a::after {
 		content: "";
 		margin-right: 0;
 	}
 }
 
 @media only screen and (min-width: 560px) {
-	#site-navigation.main-navigation ul ul {
+	#site-navigation.main-navigation ul ul, .main-navigation.main-navigation ul ul {
 		background-color: white;
 	}
-	#site-navigation.main-navigation ul ul li.current-menu-item a {
+	#site-navigation.main-navigation ul ul li.current-menu-item a, .main-navigation.main-navigation ul ul li.current-menu-item a {
 		color: #f25f70;
 	}
-	#site-navigation.main-navigation ul ul li a {
+	#site-navigation.main-navigation ul ul li a, .main-navigation.main-navigation ul ul li a {
 		color: #4f4f4f;
 	}
-	#site-navigation.main-navigation ul ul li a::after {
+	#site-navigation.main-navigation ul ul li a::after, .main-navigation.main-navigation ul ul li a::after {
 		content: "";
 	}
-	#site-navigation.main-navigation ul ul li a:hover {
+	#site-navigation.main-navigation ul ul li a:hover, .main-navigation.main-navigation ul ul li a:hover {
 		color: #f25f70;
 	}
-	#site-navigation.main-navigation ul ul li:hover {
+	#site-navigation.main-navigation ul ul li:hover, .main-navigation.main-navigation ul ul li:hover {
 		background: #f2f2f2;
 	}
 }
 
-#site-navigation.main-navigation .main-menu > li > a {
+#site-navigation.main-navigation .main-menu > li > a, .main-navigation.main-navigation .main-menu > li > a {
 	padding-right: 0;
 }
 
-#site-navigation.main-navigation #toggle-menu {
+#site-navigation.main-navigation #toggle-menu, .main-navigation.main-navigation #toggle-menu {
 	border-radius: 0;
 	width: 100% !important;
 	text-align: center;
@@ -4001,4 +4009,112 @@ a {
  */
 .site-footer .widget-area .widget-title {
 	margin-bottom: .857em;
+}
+
+/**
+ * Full Site Editing
+ * - Full Site Editing overrides
+ */
+.fse-template-part {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.fse-template-part .main-navigation .alignwide, .fse-template-part .main-navigation .alignfull {
+	width: 100%;
+}
+
+.fse-template-part .main-navigation .has-text-color > .main-menu.footer-menu > li > a {
+	color: inherit;
+}
+
+.fse-template-part .main-navigation .has-text-align-left > .main-menu.footer-menu {
+	justify-content: flex-start;
+}
+
+.fse-template-part .main-navigation .has-text-align-center > .main-menu.footer-menu {
+	justify-content: center;
+}
+
+.fse-template-part .main-navigation .has-text-align-right > .main-menu.footer-menu {
+	justify-content: flex-end;
+}
+
+.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 16px 0;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+		padding: 16px;
+	}
+}
+
+.fse-template-part .main-navigation > div > .main-menu.footer-menu > .menu-item-has-children > a::after {
+	font-size: 0.6em;
+	vertical-align: middle;
+}
+
+.fse-header > *:first-child:not(.alignfull) {
+	margin-top: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-header > *:first-child:not(.alignfull) {
+		margin-top: 32px;
+	}
+}
+
+.fse-footer {
+	display: block;
+}
+
+.fse-footer .site-info {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-footer .site-info {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+	padding-bottom: 32px;
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+		padding-bottom: 48px;
+	}
+}
+
+.fse-enabled .site-description {
+	color: none;
+}
+
+.fse-template-part .main-navigation a {
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 559px) {
+	.fse-template-part {
+		max-width: calc( 100% - 32px);
+	}
+	.fse-template-part .main-navigation > div {
+		padding: 0 32px;
+	}
+}
+
+.fse-template-part .wp-block-cover .site-title a,
+.fse-template-part .wp-block-cover-image .site-title a {
+	text-decoration: none;
+}
+
+.fse-template-part .wp-block-cover .has-background,
+.fse-template-part .wp-block-cover-image .has-background {
+	text-shadow: none;
 }

@@ -5,9 +5,32 @@
 		font-size: map-deep-get($config-global, "font", "size", "md");
 	}
 
-	.main-navigation a {
-		text-decoration: none;
-	}
+	.main-navigation {
+		border-bottom: 2px solid rgba(0,0,0,.15);
+
+		.alignwide, .alignfull {
+			width: 100%;
+		}
+
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		div ul li {
+			@include media(mobile) {
+				a::after {
+					color: #ffa4ad;
+					content: " \2022";
+					margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+					display: inline;
+				}
+				&:last-child a::after {
+					content: "";
+					margin-left: 0;
+				}
+			}
+		}
 
 	.wp-block-cover,
 	.wp-block-cover-image {
@@ -21,6 +44,11 @@
 	}
 }
 
+.template-block {
+	.wp-block-social-links {
+		margin-top: 20px;
+	}
+}
 .post-content__block {
 	margin-top: -36px;
 }
