@@ -21,6 +21,8 @@ a {
  * Header
  */
 .site-header,
+.fse-header,
+.fse-footer,
 .site-footer {
 	max-width: 100%;
 	padding-left: $spacing_unit;
@@ -38,11 +40,33 @@ a {
 	}
 }
 
-.main-navigation > div > ul li.current-menu-item a {
-	text-decoration: underline;
+.main-navigation > div > ul li a {
+	text-decoration: none;
 }
 
+.main-navigation > div > ul li {
+	a {
+		text-decoration: none;
+	}
+	&.current-menu-item a,
+	&.current_page_item a {
+		text-decoration: underline;
+	}
+}
 
+.site-header,
+.fse-header {
+	.site-title a {
+		text-decoration: none;
+	}
+}
+
+.site-footer,
+.fse-footer {
+	.main-navigation > div > ul li a {
+		text-decoration: underline;
+	}
+}
 
 /**
  * CSS-grid Desktop Menu

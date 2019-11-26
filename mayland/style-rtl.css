@@ -3672,6 +3672,8 @@ strong {
  * Header
  */
 .site-header,
+.fse-header,
+.fse-footer,
 .site-footer {
 	max-width: 100%;
 	padding-right: 16px;
@@ -3681,6 +3683,8 @@ strong {
 
 @media only screen and (min-width: 560px) {
 	.site-header,
+	.fse-header,
+	.fse-footer,
 	.site-footer {
 		padding: 32px;
 	}
@@ -3690,7 +3694,21 @@ strong {
 	display: none;
 }
 
-.main-navigation > div > ul li.current-menu-item a {
+.main-navigation > div > ul li a {
+	text-decoration: none;
+}
+
+.main-navigation > div > ul li a {
+	text-decoration: none;
+}
+
+.main-navigation > div > ul li.current-menu-item a,
+.main-navigation > div > ul li.current_page_item a {
+	text-decoration: underline;
+}
+
+.site-footer .main-navigation > div > ul li a,
+.fse-footer .main-navigation > div > ul li a {
 	text-decoration: underline;
 }
 
@@ -4030,10 +4048,6 @@ strong {
 	}
 }
 
-.fse-template-part .main-navigation a {
-	text-decoration: none;
-}
-
 @media only screen and (max-width: 559px) {
 	.fse-template-part {
 		max-width: calc( 100% - 32px);
@@ -4041,11 +4055,6 @@ strong {
 	.fse-template-part .main-navigation > div {
 		padding: 0 32px;
 	}
-}
-
-.fse-template-part .wp-block-cover .site-title a,
-.fse-template-part .wp-block-cover-image .site-title a {
-	text-decoration: none;
 }
 
 .fse-template-part .wp-block-cover .has-background,
