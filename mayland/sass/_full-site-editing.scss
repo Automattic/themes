@@ -10,10 +10,6 @@
 .fse-template-part {
 	@include media(mobile-only) {
 		max-width: calc( 100% - #{ $spacing_vertical } );
-
-		.main-navigation > div {
-			padding: 0 32px;
-		}
 	}
 
 	.wp-block-cover,
@@ -21,5 +17,10 @@
 		.has-background {
 			text-shadow: none;
 		}
+	}
+
+	// Fix incorrect positioning of social link SVG.
+	.wp-block-column .wp-block-social-links a {
+		padding: 0;
 	}
 }
