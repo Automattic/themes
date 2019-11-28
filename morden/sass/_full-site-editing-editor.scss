@@ -1,0 +1,26 @@
+@import "../../varia/sass/full-site-editing/editor";
+
+.fse-template-part {
+	.has-normal-font-size {
+		font-size: map-deep-get($config-global, "font", "size", "md");
+	}
+
+	.main-navigation a {
+		text-decoration: none;
+	}
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+		.site-title {
+			font-weight: #{map-deep-get($config-heading, "font", "weight")};
+		}
+
+		.has-background {
+			text-shadow: none;
+		}
+	}
+}
+
+.post-content__block {
+	margin-top: -36px;
+}
