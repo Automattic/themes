@@ -18,6 +18,16 @@
 		figure.fse-site-logo {
 			width: auto;
 		}
+
+		// Hide the (+) icons when rendering the Template Part block inside the Page editor.
+		.block-list-appender {
+			display: none;
+		}
+
+		// Remove the top margin if the Site Title block is the first in a column block
+		.wp-block-column .block-editor-block-list__layout [data-type='a8c/site-title']:first-child .site-title {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -31,8 +41,13 @@
 		}
 	}
 
-	.block-editor-block-list__layout .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit figure.fse-site-logo {
+	.block-editor-block-list__layout .block-editor-block-list__block[data-align='full'] > .block-editor-block-list__block-edit figure.fse-site-logo {
 		width: auto;
+	}
+
+	// Make sure each column in a Columns block is max width, so that nested FSE blocks can behave as expected.
+	.wp-block-column {
+		width: 100%;
 	}
 
 	@import '../components/header/site-main-navigation';

@@ -146,16 +146,18 @@ blockquote p {
 /**
  * Wide Header & Footer
  */
-#masthead {
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-bottom: $spacing_vertical;
-	position: relative;
-	@extend %responsive-alignwide-nested;
+body:not(.fse-enabled) {
+	#masthead {
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-bottom: $spacing_vertical;
+		position: relative;
+		@extend %responsive-alignwide-nested;
 
-	@include media(desktop) {
-		padding-left: 0;
-		padding-right: 0;
+		@include media(desktop) {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
 
