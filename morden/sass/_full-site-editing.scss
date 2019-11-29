@@ -14,6 +14,9 @@ $spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
 	@include media(mobile-only) {
 		max-width: calc( 100% - #{ $spacing_vertical } );
 
+		#toggle-menu.has-background-color {
+			color: map-deep-get($config-global, "color", "foreground", "default") !important;
+		}
 		.main-navigation > div {
 			padding: 0 32px;
 		}
