@@ -57,6 +57,13 @@
 		width: 100%;
 	}
 
+	// Remove large margins on column children when used in a template part.
+	.wp-block-columns .wp-block-column {
+		& > * {
+			margin: 0 0 5px 0;
+		}
+	}
+
 	@import '../components/header/site-main-navigation';
 
 	.main-navigation {
