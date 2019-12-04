@@ -4129,6 +4129,36 @@ body:not(.fse-enabled) #site-navigation.main-navigation #toggle-menu, body:not(.
 	border-bottom: none;
 }
 
+.fse-template-part .main-navigation .alignwide, .fse-template-part .main-navigation .alignfull {
+	width: 100%;
+}
+
+.fse-template-part .main-navigation a {
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.fse-template-part .main-navigation .has-background > .main-menu.footer-menu {
+	padding: 0;
+}
+
+.fse-template-part.fse-header .main-navigation {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+@media only screen and (min-width: 560px) {
+	.fse-template-part.fse-header .main-navigation div ul li a::after {
+		color: #ffa4ad;
+		content: " \2022";
+		margin-left: 16px;
+		display: inline;
+	}
+	.fse-template-part.fse-header .main-navigation div ul li:last-child a::after {
+		content: "";
+		margin-left: 0;
+	}
+}
+
 @media only screen and (max-width: 559px) {
 	.fse-template-part {
 		max-width: calc( 100% - 32px);
