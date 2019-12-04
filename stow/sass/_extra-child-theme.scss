@@ -57,14 +57,6 @@ a {
 	background-color: #{map-deep-get($config-global, "color", "white")};
 	padding: 0;
 
-	.site-title {
-		font-size: #{map-deep-get($config-global, "font", "size", "xxl")};
-	}
-
-	.site-description {
-		color: #333;
-	}
-
 	.site-branding {
 		text-align: center;
 		background: #fff;
@@ -89,6 +81,16 @@ a {
 				}
 			}
 		}
+	}
+}
+
+body:not( .fse-enabled ) {
+	.site-title {
+		font-size: #{map-deep-get($config-global, "font", "size", "xxl")};
+	}
+
+	.site-description {
+		color: #333;
 	}
 }
 
@@ -123,42 +125,27 @@ a {
 /**
  * 4.1 Main Navigation
  */
-#site-navigation, .main-navigation {
-	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
-	border-bottom: 2px solid rgba(0,0,0,.15);
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
-
-	& > div {
-		text-align: left;
-	}
-
-	&.main-navigation {
-
+body:not( .fse-enabled ) {
+	#site-navigation, .main-navigation {
+		background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
+		border-bottom: 2px solid rgba(0,0,0,.15);
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+	
 		& > div {
-			padding-left: #{map-deep-get($config-global, "spacing", "unit")};
-			padding-right: #{map-deep-get($config-global, "spacing", "unit")};
+			text-align: left;
 		}
-
-		ul {
-			li {
-				&.current-menu-item {
-					a {
-						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
-					}
-				}
-				a {
-					color: #{map-deep-get($config-global, "color", "white")};
-					text-decoration: none;
-					&:hover {
-						color: #{map-deep-get($config-global, "color", "secondary", "hover")};
-					}
-				}
-				@include media(mobile) {
-					padding-left: 0;
-					padding-right: 0;
-					list-style-type: disc;
+	
+		&.main-navigation {
+	
+			& > div {
+				padding-left: #{map-deep-get($config-global, "spacing", "unit")};
+				padding-right: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+	
+			ul {
+				li {
 					&.current-menu-item {
 						a {
 							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
@@ -166,63 +153,80 @@ a {
 					}
 					a {
 						color: #{map-deep-get($config-global, "color", "white")};
-						font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+						text-decoration: none;
 						&:hover {
 							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
 						}
-						&::after {
-							color: #ffa4ad;
-							content: " \2022";
-							margin-left: #{map-deep-get($config-global, "spacing", "unit")};
-							display: inline;
-							font-size: #{map-deep-get($config-global, "font", "size", "base")};
-						}
 					}
-					&:last-child {
-						a {
-							&::after {
-								content: "";
-								margin-left: 0;
-							}
-						}
-					}
-				}
-			}
-			ul {
-				@include media(mobile) {
-					background-color: #{map-deep-get($config-global, "color", "white")};
-					li {
+					@include media(mobile) {
+						padding-left: 0;
+						padding-right: 0;
+						list-style-type: disc;
 						&.current-menu-item {
 							a {
-								color: #{map-deep-get($config-global, "color", "secondary", "default")};
+								color: #{map-deep-get($config-global, "color", "secondary", "hover")};
 							}
 						}
 						a {
-							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
-							&::after {
-								content: "";
-							}
+							color: #{map-deep-get($config-global, "color", "white")};
+							font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 							&:hover {
-								color: #{map-deep-get($config-global, "color", "primary", "hover")};
+								color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+							}
+							&::after {
+								color: #ffa4ad;
+								content: " \2022";
+								margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+								display: inline;
+								font-size: #{map-deep-get($config-global, "font", "size", "base")};
 							}
 						}
-						&:hover {
-							background: #f2f2f2;
+						&:last-child {
+							a {
+								&::after {
+									content: "";
+									margin-left: 0;
+								}
+							}
+						}
+					}
+				}
+				ul {
+					@include media(mobile) {
+						background-color: #{map-deep-get($config-global, "color", "white")};
+						li {
+							&.current-menu-item {
+								a {
+									color: #{map-deep-get($config-global, "color", "secondary", "default")};
+								}
+							}
+							a {
+								color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+								&::after {
+									content: "";
+								}
+								&:hover {
+									color: #{map-deep-get($config-global, "color", "primary", "hover")};
+								}
+							}
+							&:hover {
+								background: #f2f2f2;
+							}
 						}
 					}
 				}
 			}
-		}
-		.main-menu {
-			& > li > a {
-				padding-left: 0;
+			.main-menu {
+				& > li > a {
+					padding-left: 0;
+				}
 			}
-		}
-		#toggle-menu {
-			border-radius: 0;
-			width: 100% !important;
-			text-align: center;
-			font-size: map-deep-get($config-header, "main-nav", "font", "size");
+			#toggle-menu {
+				border-radius: 0;
+				width: 100% !important;
+				text-align: center;
+				font-size: map-deep-get($config-header, "main-nav", "font", "size");
+			}
 		}
 	}
 }
