@@ -111,7 +111,7 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				'height'      => 96,
 				'width'       => 100,
 				'flex-width'  => true,
-				'flex-height' => false,
+				'flex-height' => true,
 				'header-text' => array( 'site-title' ),
 			)
 		);
