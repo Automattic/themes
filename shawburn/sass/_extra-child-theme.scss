@@ -148,12 +148,37 @@ hr.wp-block-separator.is-style-wide,
 	.entry-header,
 	.page-header,
 	.entry-footer,
-	.a8c-posts-list {
+	.a8c-posts-list,
+	.wp-block-newspack-blocks-homepage-articles article {
 		text-align: center;
 	}
 
-	.a8c-posts-list-item__excerpt {
+	.wp-block-newspack-blocks-homepage-articles article .entry-title {
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: map-deep-get($config-global, "color", "primary", "default");
+			}
+		}
+	}
+
+	.a8c-posts-list-item__excerpt,
+	.wp-block-newspack-blocks-homepage-articles article p {
 		text-align: left;
+	}
+
+	.wp-block-newspack-blocks-homepage-articles article .entry-meta {
+		display: block;
+	}
+
+	//Newspack 'load more' is outside the wrapper.
+	button[data-load-more-btn] {
+		display: flex;
+		margin: 0 auto;
 	}
 }
 
@@ -286,14 +311,14 @@ table,
  * Widgets
  */
 .widget_calendar {
-  caption {
-    font-weight: bold;
-  }
+	caption {
+		font-weight: bold;
+	}
 
-  td,
-  th {
-	   text-align: center;
-  }
+	td,
+	th {
+		text-align: center;
+	}
 }
 
 .widget_archive,
@@ -311,35 +336,35 @@ table,
 .widget_jp_blogs_i_follow,
 .widget_top-click,
 .widget_upcoming_events_widget {
-  ul {
-    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
-    list-style: none;
-    padding-left: 0;
-  }
+	ul {
+		border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+		list-style: none;
+		padding-left: 0;
+	}
 
-  li {
-    border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
-  }
+	li {
+		border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+		padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+	}
 }
 
 .widget_categories .children,
 .widget_nav_menu .sub-menu,
 .widget_pages .children {
-  border-bottom: 0;
-  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+	border-bottom: 0;
+	margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-left: map-deep-get($config-global, "spacing", "horizontal");
 }
 
 .widget_recent_entries .post-date {
-  display: block;
+	display: block;
 }
 
 .widget_rss {
-  cite,
-  .rssSummary,
-  .rss-date {
-    display: block;
-  }
+	cite,
+	.rssSummary,
+	.rss-date {
+		display: block;
+	}
 }
