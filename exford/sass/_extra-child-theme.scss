@@ -111,15 +111,16 @@ a {
 
 .site-main > article > .entry-header {
 	margin-top: #{0.666 * $spacing_vertical};
-		@include media(mobile) {
-			margin-top: $spacing_vertical;
-		}
+	@include media(mobile) {
+		margin-top: $spacing_vertical;
+	}
 }
 
 // Entry Title Link
 .entry-title,
 .page-title,
-.a8c-posts-list .a8c-posts-list-item__title {
+.a8c-posts-list .a8c-posts-list-item__title,
+.wp-block-newspack-blocks-homepage-articles article .entry-title {
 	a {
 		color: inherit;
 		text-decoration: none;
@@ -185,12 +186,24 @@ a {
  * Blocks
  */
 // Posts List
-.a8c-posts-list {
+.a8c-posts-list,
+.wp-block-newspack-blocks-homepage-articles article {
 	text-align: center;
 }
 
-.a8c-posts-list-item__excerpt {
+.a8c-posts-list-item__excerpt,
+.wp-block-newspack-blocks-homepage-articles article p {
 	text-align: left;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta {
+	display: block;
+}
+
+//Newspack 'load more' is outside the wrapper.
+button[data-load-more-btn] {
+	display: flex;
+	margin: 0 auto;
 }
 
 // Cover
