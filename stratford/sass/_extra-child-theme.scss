@@ -217,7 +217,7 @@ a {
 	}
 }
 
- @include media(mobile-only) {
+@include media(mobile-only) {
 	.site-title,
 	.site-description {
 		font-size: $font_size_xl;
@@ -344,12 +344,17 @@ a {
 	}
 }
 
+.wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	text-decoration: none;
+}
+
 button,
 .button,
 input[type="submit"],
 .wp-block-button__link,
 .wp-block-file__button,
-.a8c-posts-list__view-all {
+.a8c-posts-list__view-all,
+button[data-load-more-btn] {
 	border: 0;
 	border-radius: 5em;
 	text-transform: uppercase;
@@ -381,7 +386,7 @@ input[type="submit"],
 			}
 			> time {
 				&.wp-block-latest-posts__post-date {
-				 font-size: $font_size_base;
+					font-size: $font_size_base;
 				}
 			}
 		}
