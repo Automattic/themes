@@ -63,7 +63,7 @@ html {
 	// Set mobile font-size to one step lower for mobile
 	font-size: #{map-deep-get($config-global, "font", "size", "root") / map-deep-get($config-global, "font", "size", "ratio")};
 	@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
-	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+	line-height: var( --line-height-body );
 
 	// Set mobile and ^ font-size to normal root
 	@include media(mobile) {

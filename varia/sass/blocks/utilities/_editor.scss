@@ -9,7 +9,7 @@
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 	font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0em);
 	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
-	line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
+	line-height: var(--line-height-h2);
 }
 
 // Gutenberg text color options
@@ -116,14 +116,14 @@
 .is-large-text,
 .has-large-font-size {
 	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "lg")) + 0em);
-	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	line-height: var(--line-height-heading);
 }
 
 .is-larger-text,
 .has-larger-font-size,
 .has-huge-font-size {
 	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "xl")) + 0em);
-	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	line-height: var(--line-height-heading);
 }
 
 // Drop cap

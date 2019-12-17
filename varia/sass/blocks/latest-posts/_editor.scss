@@ -5,7 +5,7 @@
 		@include font-family( map-deep-get($config-heading, "font", "family") );
 		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
 		font-weight: #{map-deep-get($config-heading, "font", "weight")};
-		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};
+		line-height: var(--line-height-h4);
 	}
 
 	&:not(.is-grid) > li {
@@ -25,7 +25,7 @@
 	.wp-block-latest-posts__post-date {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
-		line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+		line-height: var(--line-height-body);
 
 		[class*="inner-container"] &,
 		.has-background & {
@@ -36,7 +36,7 @@
 	.wp-block-latest-posts__post-excerpt,
 	.wp-block-latest-posts__post-full-content {
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
-		line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+		line-height: var(--line-height-body);
 		margin: 0;
 	}
 }

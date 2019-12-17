@@ -4,7 +4,7 @@ body {
 	@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 	font-size: #{map-deep-get($config-global, "font", "size", "root")};
 	font-weight: normal;
-	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+	line-height: var( --line-height-body );
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
@@ -16,7 +16,7 @@ body {
 
 p {
 	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
-	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+	line-height: var( --line-height-body );
 }
 
 // Links styles
