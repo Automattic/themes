@@ -18,10 +18,6 @@
 	}
 
 	.entry-title {
-		font-size: #{map-deep-get($config-heading, "font", "size", "h2")};
-		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
-		line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
-
 		a {
 			color: #{map-deep-get($config-global, "color", "primary", "default")};
 			text-decoration: underline;
@@ -91,6 +87,10 @@
 			margin-right: calc(0.25 * #{map-deep-get($config-global, "spacing", "unit")});
 		}
 	}
+}
+
+.wp-block-newspack-blocks-homepage-articles.is-grid article {
+	margin-top: 0;
 }
 
 button[data-load-more-btn] {
