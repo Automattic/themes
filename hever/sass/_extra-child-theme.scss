@@ -22,14 +22,14 @@ a {
 /**
  * Wide Header & Footer
  */
-body:not(.fse-enabled) { 
+body:not(.fse-enabled) {
 	#masthead,
 	#colophon {
 		padding-left: 16px;
 		padding-right: 16px;
 		position: relative;
 		@extend %responsive-alignwide;
-	
+
 		@include media(mobile) {
 			padding-left: 0;
 			padding-right: 0;
@@ -67,9 +67,9 @@ body:not(.fse-enabled) {
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
-			"site-logo site-logo"
-			"site-title main-navigation"
-			"site-description social-navigation";
+				"site-logo site-logo"
+				"site-title main-navigation"
+				"site-description social-navigation";
 
 		&:before,
 		&:after {
@@ -120,7 +120,7 @@ body:not(.fse-enabled) {
 				}
 
 				& > .menu-item-has-children > a::after {
-						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 				}
 			}
 
@@ -245,7 +245,7 @@ table,
  * Hentry
  */
 // Entry Title
-.singular .hentry .entry-title,
+.singular .hentry .entry-header .entry-title,
 .page-title {
 	text-align: center;
 
@@ -283,17 +283,18 @@ table,
 // Entry Title Link
 article .entry-header .entry-title,
 .page-title,
-.a8c-posts-list .a8c-posts-list-item__title {
-  a {
-    color: inherit;
+.a8c-posts-list .a8c-posts-list-item__title,
+.wp-block-newspack-blocks-homepage-articles article .entry-title {
+	a {
+		color: inherit;
 		text-decoration: none;
 
-    &:active,
-    &:focus,
-    &:hover {
-      color: #{map-deep-get($config-global, "color", "primary", "default")};
-    }
-  }
+		&:active,
+		&:focus,
+		&:hover {
+			color: #{map-deep-get($config-global, "color", "primary", "default")};
+		}
+	}
 }
 
 // Remove margin if alignfull is first element
@@ -354,15 +355,15 @@ article .entry-header .entry-title,
 
 	.widget-title,
 	.widgettitle {
-  	font-size: #{map-deep-get($config-global, "font", "size", "md")};
-    margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+		font-size: #{map-deep-get($config-global, "font", "size", "md")};
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
-    &:empty {
-      display: none;
-    }
-  }
+		&:empty {
+			display: none;
+		}
+	}
 
-  @include media(laptop) {
+	@include media(laptop) {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -372,9 +373,9 @@ article .entry-header .entry-title,
 		}
 
 		& > *:nth-child(2) {
-      margin-top: 0;
-    }
-  }
+			margin-top: 0;
+		}
+	}
 
 	@include media(desktop) {
 		.widget {
@@ -382,21 +383,21 @@ article .entry-header .entry-title,
 		}
 
 		& > *:nth-child(3) {
-      margin-top: 0;
-    }
-  }
+			margin-top: 0;
+		}
+	}
 }
 
 .widget_calendar,
 .widget_calendar {
-  caption {
-    font-weight: bold;
-  }
+	caption {
+		font-weight: bold;
+	}
 
-  td,
-  th {
-	   text-align: center;
-  }
+	td,
+	th {
+		text-align: center;
+	}
 }
 
 .widget_archive,
@@ -414,43 +415,43 @@ article .entry-header .entry-title,
 .widget_jp_blogs_i_follow,
 .widget_top-click,
 .widget_upcoming_events_widget {
-  ul {
-    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
-    list-style: none;
-    padding-left: 0;
-  }
+	ul {
+		border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+		list-style: none;
+		padding-left: 0;
+	}
 
-  li {
-    border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
-  }
+	li {
+		border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+		padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+	}
 }
 
 .widget_categories .children,
 .widget_nav_menu .sub-menu,
 .widget_pages .children {
-  border-bottom: 0;
-  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+	border-bottom: 0;
+	margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-left: map-deep-get($config-global, "spacing", "horizontal");
 }
 
 .widget_recent_entries .post-date {
-  display: block;
+	display: block;
 }
 
 .widget_rss {
-  cite,
-  .rssSummary,
-  .rss-date {
-    display: block;
-  }
+	cite,
+	.rssSummary,
+	.rss-date {
+		display: block;
+	}
 }
 
 .widget_search {
-  input[type="search"] {
-    display: block;
-    margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-    width: 100%;
-  }
+	input[type="search"] {
+		display: block;
+		margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+		width: 100%;
+	}
 }

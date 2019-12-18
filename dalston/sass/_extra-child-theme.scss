@@ -52,9 +52,9 @@ a {
 		grid-auto-flow: row;
 		grid-column-gap: $spacing_unit;
 		grid-template-areas:
-			"site-branding site-branding"
-			"site-description site-description"
-			"main-navigation social-navigation";
+				"site-branding site-branding"
+				"site-description site-description"
+				"main-navigation social-navigation";
 
 		&:before,
 		&:after {
@@ -107,7 +107,7 @@ a {
 				}
 
 				& > .menu-item-has-children > a::after {
-						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 				}
 			}
 
@@ -179,8 +179,8 @@ a {
 		grid-auto-flow: row;
 		grid-column-gap: #{2 * $spacing_unit};
 		grid-template-areas:
-			". main-navigation social-navigation"
-			"site-branding site-description social-navigation";
+				". main-navigation social-navigation"
+				"site-branding site-description social-navigation";
 
 	}
 }
@@ -246,6 +246,10 @@ a {
 .entry-title {
 	font-size: map-deep-get($config-global, "font", "size", "xxxxl");
 	font-weight: 600;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	text-decoration: none;
 }
 
 /**

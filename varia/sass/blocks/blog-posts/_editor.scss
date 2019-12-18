@@ -1,0 +1,39 @@
+.wp-block-a8c-blog-posts {
+	article {
+		margin-bottom: calc(3 * #{map-deep-get($config-global, "spacing", "vertical")});
+	}
+
+	.post-thumbnail img {
+		width: auto;
+	}
+
+	.entry-title {
+		a {
+			color: #{map-deep-get($config-global, "color", "primary", "default")};
+			text-decoration: underline;
+
+			&:hover {
+				color: #{map-deep-get($config-global, "color", "primary", "hover")};
+			}
+
+			.has-background:not(.has-background-background-color) &,
+			[class*="background-color"]:not(.has-background-background-color) &,
+			[style*="background-color"] & {
+				color: currentColor;
+			}
+		}
+	}
+
+	.entry-meta,
+	.entry-footer,
+	.cat-links {
+		color: #{map-deep-get($config-global, "color", "foreground", "light")};
+		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+
+		.has-background:not(.has-background-background-color) &,
+		[class*="background-color"]:not(.has-background-background-color) &,
+		[style*="background-color"] & {
+			color: currentColor;
+		}
+	}
+}

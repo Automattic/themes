@@ -194,7 +194,7 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  *   let’s use a placeholder to keep them all
  *   in-sync
  */
-button,
+button[data-load-more-btn], button,
 .button,
 input[type="submit"],
 .wp-block-button__link,
@@ -212,11 +212,11 @@ input[type="submit"],
 	padding: 16px 16px;
 }
 
-button:before,
+button[data-load-more-btn]:before, button:before,
 .button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button:after,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, button:after,
 .button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
@@ -227,7 +227,7 @@ input[type="submit"]:after,
 	width: 0;
 }
 
-button:before,
+button[data-load-more-btn]:before, button:before,
 .button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
@@ -235,7 +235,7 @@ input[type="submit"]:before,
 	margin-bottom: -0.12em;
 }
 
-button:after,
+button[data-load-more-btn]:after, button:after,
 .button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
@@ -1147,6 +1147,148 @@ object {
 
 .wp-block-audio.alignleft, .wp-block-audio.alignright {
 	min-width: 300px;
+}
+
+.wp-block-newspack-blocks-homepage-articles article {
+	display: block;
+	/* Vertical margins logic between posts */
+	margin-top: calc(3 * 32px);
+	margin-bottom: calc(3 * 32px);
+}
+
+.wp-block-newspack-blocks-homepage-articles article:first-child {
+	margin-top: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article:last-child {
+	margin-bottom: calc(3 * 32px);
+}
+
+.wp-block-newspack-blocks-homepage-articles article .post-thumbnail img {
+	width: auto;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	color: #897248;
+	text-decoration: underline;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
+	color: #685636;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > * {
+	/* Vertical margins logic between post details */
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .more-link {
+	margin-top: 16px;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer,
+.wp-block-newspack-blocks-homepage-articles article .cat-links {
+	color: #686868;
+	font-size: 0.83333rem;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .entry-footer,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .entry-footer,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .entry-footer, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > span,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer > span,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > span {
+	display: inline-block;
+	margin-right: 16px;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > span > *,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer > span > *,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > span > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > span:last-child,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer > span:last-child,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > span:last-child {
+	margin-right: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > span .published + .updated,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer > span .published + .updated,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > span .published + .updated {
+	display: none;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta a,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer a,
+.wp-block-newspack-blocks-homepage-articles article .cat-links a {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer a:hover,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer a:active,
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
+	color: #685636;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta .svg-icon,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer .svg-icon,
+.wp-block-newspack-blocks-homepage-articles article .cat-links .svg-icon {
+	fill: currentColor;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: calc(0.25 * 16px);
+}
+
+.wp-block-newspack-blocks-homepage-articles.is-grid article {
+	margin-top: 0;
+	margin-bottom: calc(3 * 32px);
+}
+
+button[data-load-more-btn] {
+	display: inline-block;
+}
+
+.has-background:not(.has-background-background-color) button[data-load-more-btn],
+[class*="background-color"]:not(.has-background-background-color) button[data-load-more-btn],
+[style*="background-color"] button[data-load-more-btn] {
+	background-color: transparent;
+	border: 2px solid currentColor;
+	color: currentColor;
 }
 
 /**
@@ -3824,7 +3966,8 @@ p:not(.site-title) a:hover {
 
 .entry-title a,
 .page-title a,
-.a8c-posts-list .a8c-posts-list-item__title a {
+.a8c-posts-list .a8c-posts-list-item__title a,
+.wp-block-newspack-blocks-homepage-articles article .entry-title a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -3835,7 +3978,10 @@ p:not(.site-title) a:hover {
 .page-title a:hover,
 .a8c-posts-list .a8c-posts-list-item__title a:active,
 .a8c-posts-list .a8c-posts-list-item__title a:focus,
-.a8c-posts-list .a8c-posts-list-item__title a:hover {
+.a8c-posts-list .a8c-posts-list-item__title a:hover,
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
 	color: #897248;
 }
 
