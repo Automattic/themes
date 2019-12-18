@@ -1224,29 +1224,23 @@ object {
 	color: currentColor;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > span,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer > span,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > span {
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > *,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer > *,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > * {
 	display: inline-block;
 	margin-right: 16px;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > span > *,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer > span > *,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > span > * {
-	display: inline-block;
 	vertical-align: middle;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > span:last-child,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer > span:last-child,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > span:last-child {
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > *:last-child,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer > *:last-child,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > *:last-child {
 	margin-right: 0;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > span .published + .updated,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer > span .published + .updated,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > span .published + .updated {
+.wp-block-newspack-blocks-homepage-articles article .entry-meta .published + .updated,
+.wp-block-newspack-blocks-homepage-articles article .entry-footer .published + .updated,
+.wp-block-newspack-blocks-homepage-articles article .cat-links .published + .updated {
 	display: none;
 }
 
@@ -3822,6 +3816,29 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
  */
 .jetpack-business-hours dd {
 	padding-left: 0;
+}
+
+/**
+ * Layout Grid
+ */
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > * {
+	margin-top: 21.312px;
+	margin-bottom: 21.312px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > * {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:last-child {
+	margin-bottom: 0;
 }
 
 /**
