@@ -296,7 +296,7 @@ object {
  *   files and conditionally loaded
  */
 .wp-block-a8c-blog-posts article {
-	margin-bottom: 96px;
+	margin-bottom: calc(3 * 32px);
 }
 
 .wp-block-a8c-blog-posts .post-thumbnail img {
@@ -312,11 +312,33 @@ object {
 	color: #f25f70;
 }
 
+.has-background:not(.has-background-background-color) .wp-block-a8c-blog-posts .entry-title a,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-a8c-blog-posts .entry-title a,
+[style*="background-color"] .wp-block-a8c-blog-posts .entry-title a {
+	color: currentColor;
+}
+
 .wp-block-a8c-blog-posts .entry-meta,
 .wp-block-a8c-blog-posts .entry-footer,
 .wp-block-a8c-blog-posts .cat-links {
 	color: #767676;
 	font-size: 0.83333rem;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-a8c-blog-posts .entry-meta,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-a8c-blog-posts .entry-meta,
+[style*="background-color"] .wp-block-a8c-blog-posts .entry-meta, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts .entry-footer,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts .entry-footer,
+[style*="background-color"]
+.wp-block-a8c-blog-posts .entry-footer, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts .cat-links,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts .cat-links,
+[style*="background-color"]
+.wp-block-a8c-blog-posts .cat-links {
+	color: currentColor;
 }
 
 .wp-block-button {

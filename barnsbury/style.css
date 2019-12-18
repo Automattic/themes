@@ -1177,6 +1177,12 @@ object {
 	color: #133a24;
 }
 
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	color: currentColor;
+}
+
 .wp-block-newspack-blocks-homepage-articles article .entry-wrapper > * {
 	/* Vertical margins logic between post details */
 	margin-top: 16px;
@@ -1200,6 +1206,22 @@ object {
 .wp-block-newspack-blocks-homepage-articles article .cat-links {
 	color: #844d4d;
 	font-size: 0.84746rem;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .entry-footer,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .entry-footer,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .entry-footer, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links {
+	color: currentColor;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta > span,
@@ -1254,10 +1276,19 @@ object {
 
 .wp-block-newspack-blocks-homepage-articles.is-grid article {
 	margin-top: 0;
+	margin-bottom: calc(3 * 32px);
 }
 
 button[data-load-more-btn] {
 	display: inline-block;
+}
+
+.has-background:not(.has-background-background-color) button[data-load-more-btn],
+[class*="background-color"]:not(.has-background-background-color) button[data-load-more-btn],
+[style*="background-color"] button[data-load-more-btn] {
+	background-color: transparent;
+	border: 2px solid currentColor;
+	color: currentColor;
 }
 
 /**
