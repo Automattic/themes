@@ -64,22 +64,18 @@
 			color: currentColor;
 		}
 
-		> span {
+		> * {
 			display: inline-block;
 			margin-right: #{map-deep-get($config-global, "spacing", "unit")};
-
-			& > * {
-				display: inline-block;
-				vertical-align: middle;
-			}
+			vertical-align: middle;
 
 			&:last-child {
 				margin-right: 0;
 			}
+		}
 
-			.published + .updated {
-				display: none; // Hide updated date?
-			}
+		.published + .updated {
+			display: none;
 		}
 
 		a {

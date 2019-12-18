@@ -35,5 +35,19 @@
 		[style*="background-color"] & {
 			color: currentColor;
 		}
+
+		> * {
+			display: inline-block;
+			margin-right: #{map-deep-get($config-global, "spacing", "unit")};
+			vertical-align: middle;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		.published + .updated {
+			display: none;
+		}
 	}
 }
