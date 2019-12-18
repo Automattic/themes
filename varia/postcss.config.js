@@ -1,4 +1,5 @@
-var postcssFocusWithin = require('postcss-focus-within');
+const postcssFocusWithin = require('postcss-focus-within');
+const postcssCustomProperties = require('postcss-custom-properties');
 
 module.exports = {
     plugins: {
@@ -8,6 +9,7 @@ module.exports = {
 
 module.exports = {
     plugins: [
-        postcssFocusWithin(/* pluginOptions */)
+        postcssFocusWithin(/* pluginOptions */),
+        postcssCustomProperties( /* pluginOptions */ )
     ]
 };

@@ -97,6 +97,5 @@
  * It also adds the proper fallback for browsers without support.
  */
 @mixin font-family( $config_map ) {
-	font-family: #{map-deep-get( $config_map, 'fallback' )}; // For browsers without CSS custom properties support.
 	font-family: var( #{map-deep-get( $config_map, 'css-var')}, #{map-deep-get( $config_map, 'fallback' )} );
 }
