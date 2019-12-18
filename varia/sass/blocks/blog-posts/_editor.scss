@@ -15,6 +15,12 @@
 			&:hover {
 				color: #{map-deep-get($config-global, "color", "primary", "hover")};
 			}
+
+			.has-background:not(.has-background-background-color) &,
+			[class*="background-color"]:not(.has-background-background-color) &,
+			[style*="background-color"] & {
+				color: currentColor;
+			}
 		}
 	}
 
@@ -23,5 +29,11 @@
 	.cat-links {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+
+		.has-background:not(.has-background-background-color) &,
+		[class*="background-color"]:not(.has-background-background-color) &,
+		[style*="background-color"] & {
+			color: currentColor;
+		}
 	}
 }

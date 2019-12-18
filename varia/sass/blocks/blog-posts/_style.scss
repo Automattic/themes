@@ -25,6 +25,12 @@
 			&:hover {
 				color: #{map-deep-get($config-global, "color", "primary", "hover")};
 			}
+
+			.has-background:not(.has-background-background-color) &,
+			[class*="background-color"]:not(.has-background-background-color) &,
+			[style*="background-color"] & {
+				color: currentColor;
+			}
 		}
 	}
 
@@ -51,6 +57,12 @@
 	.cat-links {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+
+		.has-background:not(.has-background-background-color) &,
+		[class*="background-color"]:not(.has-background-background-color) &,
+		[style*="background-color"] & {
+			color: currentColor;
+		}
 
 		> span {
 			display: inline-block;
@@ -98,4 +110,12 @@ button[data-load-more-btn] {
 	// Extend button style
 	@extend %button-style;
 	display: inline-block;
+
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"] & {
+		background-color: transparent;
+		border: 2px solid currentColor;
+		color: currentColor;
+	}
 }
