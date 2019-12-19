@@ -1189,11 +1189,54 @@ object {
 	min-width: 300px;
 }
 
+.wp-block-newspack-blocks-homepage-articles.image-aligntop .post-thumbnail {
+	margin-bottom: 16px;
+}
+
+.wp-block-newspack-blocks-homepage-articles.image-alignleft .post-thumbnail {
+	margin-right: 32px;
+}
+
+.wp-block-newspack-blocks-homepage-articles.image-alignright .post-thumbnail {
+	margin-left: 32px;
+}
+
+.wp-block-newspack-blocks-homepage-articles.image-alignbehind .post-has-image .entry-wrapper {
+	padding: 32px;
+}
+
+.wp-block-newspack-blocks-homepage-articles.is-grid article {
+	margin-top: 0;
+	margin-bottom: 64px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-newspack-blocks-homepage-articles.is-grid article {
+		margin-bottom: 96px;
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles .article-section-title {
+	font-size: 1rem;
+	margin-bottom: 16px;
+}
+
+.wp-block-newspack-blocks-homepage-articles .article-section-title + article {
+	margin-top: 0;
+}
+
 .wp-block-newspack-blocks-homepage-articles article {
 	display: block;
 	/* Vertical margins logic between posts */
-	margin-top: calc(3 * 32px);
-	margin-bottom: calc(3 * 32px);
+	margin-top: 64px;
+	margin-bottom: 64px;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-newspack-blocks-homepage-articles article {
+		margin-top: 96px;
+		margin-bottom: 96px;
+	}
 }
 
 .wp-block-newspack-blocks-homepage-articles article:first-child {
@@ -1201,26 +1244,11 @@ object {
 }
 
 .wp-block-newspack-blocks-homepage-articles article:last-child {
-	margin-bottom: calc(3 * 32px);
+	margin-bottom: 96px;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .post-thumbnail img {
 	width: auto;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	color: blue;
-	text-decoration: underline;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
-	color: indigo;
-}
-
-.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	color: currentColor;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-wrapper > * {
@@ -1237,12 +1265,34 @@ object {
 	margin-bottom: 0;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .more-link {
-	margin-top: 16px;
+.wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	color: blue;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
+	color: indigo;
+	text-decoration: underline;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
+	color: currentColor;
+}
+
+@media only screen and (min-width: 560px) {
+	.wp-block-newspack-blocks-homepage-articles article .more-link {
+		margin-top: 16px;
+	}
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer,
 .wp-block-newspack-blocks-homepage-articles article .cat-links {
 	color: #767676;
 	font-size: 0.83333rem;
@@ -1251,11 +1301,6 @@ object {
 .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
 [class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
 [style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta, .has-background:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .entry-footer,
-[class*="background-color"]:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .entry-footer,
-[style*="background-color"]
-.wp-block-newspack-blocks-homepage-articles article .entry-footer, .has-background:not(.has-background-background-color)
 .wp-block-newspack-blocks-homepage-articles article .cat-links,
 [class*="background-color"]:not(.has-background-background-color)
 .wp-block-newspack-blocks-homepage-articles article .cat-links,
@@ -1264,53 +1309,50 @@ object {
 	color: currentColor;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > *,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer > *,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > * {
-	display: inline-block;
-	margin-right: 16px;
-	vertical-align: middle;
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > span > *,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > span > * {
+	vertical-align: top;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > *:last-child,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer > *:last-child,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > *:last-child {
-	margin-right: 0;
+.wp-block-newspack-blocks-homepage-articles article .entry-meta .byline:not(:last-child),
+.wp-block-newspack-blocks-homepage-articles article .cat-links .byline:not(:last-child) {
+	margin-right: 16px;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta .published + .updated,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer .published + .updated,
 .wp-block-newspack-blocks-homepage-articles article .cat-links .published + .updated {
 	display: none;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta a,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer a,
 .wp-block-newspack-blocks-homepage-articles article .cat-links a {
 	color: currentColor;
+	text-decoration: underline;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer a:hover,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer a:active,
 .wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
 .wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
 	color: indigo;
+	text-decoration: none;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-meta .svg-icon,
-.wp-block-newspack-blocks-homepage-articles article .entry-footer .svg-icon,
-.wp-block-newspack-blocks-homepage-articles article .cat-links .svg-icon {
-	fill: currentColor;
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: calc(0.25 * 16px);
-}
-
-.wp-block-newspack-blocks-homepage-articles.is-grid article {
-	margin-top: 0;
-	margin-bottom: calc(3 * 32px);
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
+	color: currentColor;
 }
 
 button[data-load-more-btn] {
