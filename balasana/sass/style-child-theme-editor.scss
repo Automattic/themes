@@ -39,3 +39,21 @@
 	text-align: center;
 	font-size: (strip-unit( map-deep-get($config-heading, "font", "size", "h1") ) + 0em);
 }
+
+.wp-block-a8c-blog-posts {
+	.entry-title a {
+		color: inherit;
+	}
+
+	.cat-links a,
+	.more-link,
+	.byline a {
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
