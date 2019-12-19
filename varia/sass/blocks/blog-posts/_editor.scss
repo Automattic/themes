@@ -146,24 +146,24 @@
 			}
 		}
 	}
+}
 
-	@import "../../base/extends";
-	& + .button {
+@import "../../base/extends";
+.wp-block-a8c-blog-posts + .button {
 	// Extend button style
 	@extend %button-style;
 	display: inline-block;
 	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0em);
 
-		&:hover {
-			cursor: default;
-		}
+	&:hover {
+		cursor: default;
+	}
 
-		.has-background:not(.has-background-background-color) &,
-		[class*="background-color"]:not(.has-background-background-color) &,
-		[style*="background-color"] & {
-			background-color: transparent;
-			border: 2px solid currentColor;
-			color: currentColor;
-		}
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"] & {
+		background-color: transparent;
+		border: 2px solid currentColor;
+		color: currentColor;
 	}
 }
