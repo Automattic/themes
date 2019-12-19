@@ -295,21 +295,6 @@ object {
  * - In the future the Block styles may get compiled to individual .css
  *   files and conditionally loaded
  */
-.wp-block-a8c-blog-posts {
-	/**
- * Button Placeholder style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-	/**
- * Onsale Placeholder style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-}
-
 .wp-block-a8c-blog-posts.image-aligntop .post-thumbnail {
 	margin-bottom: 16px;
 }
@@ -469,7 +454,13 @@ object {
 	color: currentColor;
 }
 
-.wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button {
+/**
+ * Button Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
+.wp-block-a8c-blog-posts + .button, .fse-template-part .main-navigation .button {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -483,26 +474,32 @@ object {
 	padding: 16px 24px;
 }
 
-.wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button:before, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button:before, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button:before, .wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button:after, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button:after, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button:after {
+.wp-block-a8c-blog-posts + .button:before, .fse-template-part .main-navigation .button:before, .wp-block-a8c-blog-posts + .button:after, .fse-template-part .main-navigation .button:after {
 	content: '';
 	display: block;
 	height: 0;
 	width: 0;
 }
 
-.wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button:before, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button:before, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button:before {
+.wp-block-a8c-blog-posts + .button:before, .fse-template-part .main-navigation .button:before {
 	margin-bottom: -0.12em;
 }
 
-.wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button:after, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button:after, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button:after {
+.wp-block-a8c-blog-posts + .button:after, .fse-template-part .main-navigation .button:after {
 	margin-top: -0.11em;
 }
 
-.wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button:hover, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button:hover, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button:hover, .wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .button:focus, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .button:focus, .wp-block-a8c-blog-posts .wp-block-a8c-blog-posts + .has-focus.button, .wp-block-a8c-blog-posts .fse-template-part .main-navigation .has-focus.button, .fse-template-part .main-navigation .wp-block-a8c-blog-posts .has-focus.button {
+.wp-block-a8c-blog-posts + .button:hover, .fse-template-part .main-navigation .button:hover, .wp-block-a8c-blog-posts + .button:focus, .fse-template-part .main-navigation .button:focus, .wp-block-a8c-blog-posts + .has-focus.button, .fse-template-part .main-navigation .has-focus.button {
 	color: white;
 	background-color: #085a72;
 }
 
+/**
+ * Onsale Placeholder style
+ * - Since buttons appear in various blocks,
+ *   let’s use a placeholder to keep them all
+ *   in-sync
+ */
 .wp-block-a8c-blog-posts + .button {
 	display: inline-block;
 	font-size: 1.2em;
