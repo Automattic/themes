@@ -132,7 +132,7 @@ add_action( 'widgets_init', 'alves_widgets_init', 12 );
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
  */
 function alves_content_width() {
-	return 700;
+	return 750;
 }
 add_filter( 'varia_content_width', 'alves_content_width' );
 
