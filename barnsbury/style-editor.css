@@ -563,6 +563,8 @@ object {
 	background-color: #0D1B24;
 	color: #FDF9EC;
 	min-height: calc( 15 * 32px);
+	margin-top: inherit;
+	margin-bottom: inherit;
 	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 }
@@ -749,14 +751,27 @@ object {
 	margin: 0;
 }
 
-.block-library-list ul,
-.block-library-list ol {
+ul,
+ol {
 	margin: 32px 0;
 	padding-left: 32px;
 }
 
-.block-library-list li > ul,
-.block-library-list li > ol {
+ul.aligncenter,
+ol.aligncenter {
+	list-style-position: inside;
+	padding: 0;
+}
+
+ul.alignright,
+ol.alignright {
+	list-style-position: inside;
+	text-align: right;
+	padding: 0;
+}
+
+li > ul,
+li > ol {
 	margin: 0;
 }
 
