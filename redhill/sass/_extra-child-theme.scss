@@ -259,6 +259,55 @@ table,
 	text-align: left;
 }
 
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.cat-links,
+		.entry-meta {
+			@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 // Hentry
 .entry-header {
 	.entry-meta {
