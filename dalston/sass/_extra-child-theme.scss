@@ -248,9 +248,6 @@ a {
 	font-weight: 600;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	text-decoration: none;
-}
 
 /**
  * Blocks
@@ -271,6 +268,42 @@ a {
 
 	&:hover {
 		text-decoration: none;
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.cat-links a,
+		.entry-title a:hover,
+		.entry-meta a {
+			text-decoration: none;
+		}
+	}
+
+	&.image-alignbehind article {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.more-link:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a,
+		.more-link {
+			text-decoration: none;
+		}
+
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
 	}
 }
 

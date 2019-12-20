@@ -152,19 +152,6 @@ hr.wp-block-separator.is-style-wide,
 		text-align: center;
 	}
 
-	.wp-block-newspack-blocks-homepage-articles article .entry-title {
-		a {
-			color: inherit;
-			text-decoration: none;
-
-			&:active,
-			&:focus,
-			&:hover {
-				color: map-deep-get($config-global, "color", "primary", "default");
-			}
-		}
-	}
-
 	.a8c-posts-list-item__excerpt {
 		text-align: left;
 	}
@@ -292,6 +279,58 @@ table,
 	td,
 	th {
 		border-color: #{map-deep-get($config-global, "color", "border", "default")};
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a {
+			color: inherit;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: map-deep-get($config-global, "color", "primary", "default");
+				text-decoration: none;
+			}
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				color: inherit;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 

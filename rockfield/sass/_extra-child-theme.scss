@@ -407,26 +407,50 @@ table,
 /**
  * Blog Posts (Newspack)
  */
-.wp-block-newspack-blocks-homepage-articles article {
-	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
-	margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
 
-	@include media(mobile) {
-		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
-		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	text-decoration: none;
-}
-
-.wp-block-newspack-blocks-homepage-articles article p {
-	&:not(:last-child) {
-		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
-
-		@include media(mobile) {
-			margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }

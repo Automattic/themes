@@ -259,6 +259,47 @@ a {
 	}
 }
 
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a:hover {
+			text-decoration: none;
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.more-link:hover {
+			color: map-deep-get($config-global, "color", "primary", "hover");
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+
+		.more-link:hover {
+			color: inherit;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
 /**
  * Widgets
  */
