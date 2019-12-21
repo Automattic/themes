@@ -3,6 +3,18 @@ ol {
 	@include font-family( map-deep-get($config-list, "font", "family") );
 	margin: 0;
 	padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+
+	// Utility classes
+	&.aligncenter {
+		list-style-position: inside;
+		padding: 0;
+	}
+
+	&.alignright {
+		list-style-position: inside;
+		text-align: right;
+		padding: 0;
+	}
 }
 
 ul {
@@ -11,11 +23,6 @@ ul {
 
 ol {
 	list-style-type: decimal;
-}
-
-li > ul,
-li > ol {
-
 }
 
 dt {

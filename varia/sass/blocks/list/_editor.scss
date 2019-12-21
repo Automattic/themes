@@ -1,14 +1,24 @@
-.block-library-list {
-	ul,
-	ol {
-		margin: #{map-deep-get($config-global, "spacing", "vertical")} 0;
-		padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+ul,
+ol {
+	margin: #{map-deep-get($config-global, "spacing", "vertical")} 0;
+	padding-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+
+	// Utility classes
+	&.aligncenter {
+		list-style-position: inside;
+		padding: 0;
 	}
 
-	li {
-		> ul,
-		> ol {
-			margin: 0;
-		}
+	&.alignright {
+		list-style-position: inside;
+		text-align: right;
+		padding: 0;
+	}
+}
+
+li {
+	> ul,
+	> ol {
+		margin: 0;
 	}
 }

@@ -39,6 +39,48 @@
 	text-align: center;
 }
 
+.wp-block-a8c-blog-posts {
+	.entry-title a {
+		color: inherit;
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: #{map-deep-get($config-global, "color", "primary", "default")};
+		}
+	}
+
+	.cat-links a,
+	.entry-title a:hover,
+	.entry-meta a {
+		text-decoration: none;
+	}
+
+	&.image-alignbehind {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
+}
+
 /**
  * Full Site Editing
  * - Full Site Editing overrides

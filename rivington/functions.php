@@ -128,27 +128,15 @@ function rivington_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
+	* supported by Poppins, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$playfair = esc_html_x( 'on', 'Playfair Display font: on or off', 'rivington' );
+	$poppins = esc_html_x( 'on', 'Poppins font: on or off', 'rivington' );
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Roboto Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$roboto = esc_html_x( 'on', 'Roboto Sans font: on or off', 'rivington' );
-
-	if ( 'off' !== $playfair || 'off' !== $roboto ) {
+	if ( 'off' !== $poppins ) {
 		$font_families = array();
 
-		if ( 'off' !== $playfair ) {
-			$font_families[] = 'Playfair+Display:400,400i';
-		}
-
-		if ( 'off' !== $roboto ) {
-			$font_families[] = 'Roboto:300,300i,700';
-		}
+		$font_families[] = 'Poppins:400,400i,600,600i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
