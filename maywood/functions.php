@@ -133,7 +133,7 @@ function maywood_fonts_url() {
 	if ( 'off' !== $ibm_plex_sans ) {
 		$font_families = array();
 
-		$font_families[] = 'IBM Plex Sans:300,300i,500,700';
+		$font_families[] = 'IBM Plex Sans:300,300i,500,500i,700';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
