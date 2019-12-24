@@ -19,6 +19,7 @@
 	</head>
 
 	<body <?php body_class(); ?>>
+		<?php wp_body_open(); ?>
 
 		<header class="nav-bar">
 			<?php if ( ! is_home() ) : // On the blog index page the site title is displayed below nav-bar ?>
