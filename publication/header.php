@@ -19,6 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'publication' ); ?></a>
 
 	<div id="body-wrapper" class="body-wrapper">
