@@ -1,0 +1,47 @@
+@import "../../varia/sass/full-site-editing/imports";
+
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+
+.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+	padding-bottom: 0;
+}
+
+.fse-template-part {
+	.main-navigation a {
+		text-decoration: none;
+	}
+	
+	@include media(mobile-only) {
+		max-width: calc( 100% - #{ $spacing_vertical } );
+
+		#toggle-menu.has-background-color {
+			color: map-deep-get($config-global, "color", "foreground", "default") !important;
+		}
+		.main-navigation > div {
+			padding: 0 32px;
+		}
+	}
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+		.site-title a {
+			text-decoration: none;
+		}
+
+		.has-background {
+			text-shadow: none;
+		}
+	}
+}
+
+.fse-header .wp-block-cover:first-child .wp-block-cover__inner-container {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	.wp-block-spacer:first-child {
+		display: none;
+	}
+	.wp-block-columns.alignfull:nth-child(2) {
+		margin-top: 0;
+	}
+}

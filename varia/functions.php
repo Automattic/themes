@@ -273,6 +273,12 @@ add_action( 'wp_enqueue_scripts', 'varia_scripts' );
  * @link https://git.io/vWdr2
  */
 function varia_skip_link_focus_fix() {
+	// Prevent outputting skip-link-focus-fix in AMP since the AMP framework has it built-in,
+	// per <https://github.com/ampproject/amphtml/issues/18671>.
+	if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+		return;
+	}
+
 	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
 	?>
 	<script>

@@ -141,9 +141,35 @@ body {
 /**
  * Business Hours
  */
-
 .jetpack-business-hours {
 	dd {
 		padding-left: 0;
+	}
+}
+
+/**
+ * Layout Grid
+ */
+.wp-block-jetpack-layout-grid {
+
+	.wp-block-jetpack-layout-grid-column {
+
+		& > * {
+			margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+			margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+			@include media(mobile) {
+				margin-top: map-deep-get($config-global, "spacing", "vertical");
+				margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }

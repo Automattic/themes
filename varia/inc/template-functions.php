@@ -95,11 +95,17 @@ function varia_get_the_archive_title() {
 	} elseif ( is_day() ) {
 		$title = __( 'Daily Archives: ', 'varia' ) . '<span class="page-description">' . get_the_date() . '</span>';
 	} elseif ( is_post_type_archive() ) {
-		$title = __( 'Post Type Archives: ', 'varia' ) . '<span class="page-description">' . post_type_archive_title( '', false ) . '</span>';
+		$cpt = get_post_type_object( get_queried_object()->name );
+		/* translators: %s: Post type singular name */
+		$title = sprintf( esc_html__( '%s Archives', 'varia' ),
+			$cpt->labels->singular_name
+		);
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: %s: Taxonomy singular name */
-		$title = sprintf( esc_html__( '%s Archives:', 'varia' ), $tax->labels->singular_name );
+		$title = sprintf( esc_html__( '%s Archives', 'varia' ),
+			$tax->labels->singular_name
+		);
 	} else {
 		$title = __( 'Archives:', 'varia' );
 	}

@@ -15,6 +15,12 @@
 
 	</div><!-- #content -->
 
+	<?php if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content. ?>
+	<footer class="fse-template-part fse-footer entry-content">
+	<?php
+		$template = new A8C\FSE\WP_Template();
+		$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
+	else : // Otherwise we'll fallback to the default Varia footer below. ?>
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 
@@ -37,7 +43,8 @@
 				);
 				?>
 			</nav><!-- .footer-navigation -->
-		<?php endif; ?>
+			<?php endif;
+	endif; ?>
 
 		<div class="site-info">
 				<?php $blog_info = get_bloginfo( 'name' ); ?>

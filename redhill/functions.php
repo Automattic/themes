@@ -115,7 +115,7 @@
 				'height'      => 120,
 				'width'       => 100,
 				'flex-width'  => true,
-				'flex-height' => false,
+				'flex-height' => true,
 				'header-text' => array( 'site-title', 'site-description' ),
 			)
 		);
