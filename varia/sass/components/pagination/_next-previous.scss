@@ -5,12 +5,12 @@
 	@extend %responsive-aligndefault;
 
 	.meta-nav {
-		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-size: var(--font-size-sm);
 	}
 
 	.post-title {
 		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
-		font-size: #{map-deep-get($config-global, "font", "size", "lg")};
+		font-size: var(--font-size-lg);
 		font-weight: 600;
 	}
 
@@ -39,7 +39,7 @@
 
 		& > * {
 			@include font-family( map-deep-get($config-global, "font", "family", "primary") );
-			font-size: #{map-deep-get($config-global, "font", "size", "md")};
+			font-size: var(--font-size-md);
 			font-weight: 600;
 			padding-left: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};
 			padding-right: calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")};

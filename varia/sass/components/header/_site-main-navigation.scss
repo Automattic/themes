@@ -193,7 +193,7 @@
 			&::after {
 				content: "\00a0\25BC";
 				display: inline-block;
-				font-size: map-deep-get($config-global, "font", "size", "xs");
+				font-size: var(--font-size-xs);
 				height: inherit;
 				width: inherit;
 			}
@@ -215,6 +215,6 @@
 // for Full Site Editing's Menu Navigation block.
 body:not( .fse-enabled ) {
 	.main-navigation a {
-		font-size: #{map-deep-get($config-header, "main-nav", "font", "size")};
+		font-size: var(--font-size-header-main-nav);
 	}
 }

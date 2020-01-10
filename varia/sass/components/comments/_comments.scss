@@ -22,18 +22,18 @@
  */
 
 .comments-title {
-	font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
+	font-size: var(--font-size-h3);
 	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
 }
 
 .comment-reply-title {
-	font-size: #{map-deep-get($config-global, "font", "size", "xl")};
+	font-size: var(--font-size-xl);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	small {
-		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		font-size: var(--font-size-base);
 		@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
 		letter-spacing: normal;
 		line-height: var(--line-height-heading);
@@ -157,7 +157,7 @@
 
 .comment-metadata,
 .reply {
-	font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+	font-size: var(--font-size-xs);
 	line-height: var(--line-height-heading);
 }
 

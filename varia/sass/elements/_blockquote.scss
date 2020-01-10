@@ -3,7 +3,7 @@ blockquote {
 	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 
 	p {
-		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		font-size: var(--font-size-h4);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: var(--line-height-heading);
 	}
@@ -11,7 +11,7 @@ blockquote {
 	cite,
 	footer {
 		color: #{map-deep-get($config-global, "color", "forground-light")};
-		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-size: var(--font-size-sm);
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 	}
 
@@ -34,14 +34,14 @@ blockquote {
 		padding-left: inherit;
 
 		p {
-			font-size: #{map-deep-get($config-heading, "font", "size", "h5")};
+			font-size: var(--font-size-h5);
 			max-width: inherit;
 			width: inherit;
 		}
 
 		cite,
 		footer {
-			font-size: #{map-deep-get($config-global, "font", "size", "xs")};
+			font-size: var(--font-size-xs);
 			letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "xs")};
 		}
 	}

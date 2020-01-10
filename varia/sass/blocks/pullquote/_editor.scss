@@ -16,7 +16,7 @@
 
 	p {
 		@include font-family( map-deep-get($config-pullquote, "font", "family") );
-		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h4")) + 0em);
+		font-size: var(--font-size-h4-editor);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: var(--line-height-heading);
 	}
@@ -29,7 +29,7 @@
 	cite,
 	footer {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+		font-size: var(--font-size-sm-editor);
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 	}
 

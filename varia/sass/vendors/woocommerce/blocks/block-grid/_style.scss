@@ -41,7 +41,7 @@
 
 	.wc-block-grid__product-title {
 		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
-		font-size: map-deep-get($config-global, "font", "size", "base")
+		font-size: var(--font-size-base);
 	}
 
 	.wc-block-grid__product-rating .star-rating span:before {
@@ -50,7 +50,7 @@
 
 	.wc-block-grid__product-price {
 		color: map-deep-get($config-global, "color", "foreground", "dark");
-		font-size: map-deep-get($config-global, "font", "size", "md");
+		font-size: var(--font-size-md);
 		line-height: var(--line-height-heading);
 
 		ins {

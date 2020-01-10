@@ -10,7 +10,7 @@
 	cursor: pointer;
 	font-weight: #{map-deep-get($config-button, "font", "weight")};
 	@include font-family( map-deep-get($config-button, "font", "family") );
-	font-size: #{map-deep-get($config-button, "font", "size")};
+	font-size: var(--font-size-button);
 	background-color: #{map-deep-get($config-button, "color", "background")};
 	border-radius: #{map-deep-get($config-button, "border-radius")};
 	border-width: 0;
@@ -34,7 +34,7 @@
 	border-radius: 100%;
 	background-color: map-deep-get($config-global, "color", "alert", "warning");
 	color: map-deep-get($config-global, "color", "foreground", "dark");
-	font-size: map-deep-get($config-global, "font", "size", "sm");
+	font-size: var(--font-size-sm);
 	font-weight: 700;
 	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
 	min-height: 3.236rem;

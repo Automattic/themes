@@ -5,7 +5,7 @@
 
 	p {
 		@include font-family( map-deep-get($config-quote, "font", "family") );
-		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h4")) + 0em);
+		font-size: var(--font-size-h4-editor);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: var(--line-height-heading);
 	}
@@ -17,7 +17,7 @@
 
 		p {
 			@include font-family( map-deep-get($config-quote, "font", "family") );
-			font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h3")) + 0em);
+			font-size: var(--font-size-h3-editor);
 			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
 			line-height: var(--line-height-heading);
 		}
@@ -32,7 +32,7 @@
 
 	.wp-block-quote__citation {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+		font-size: var(--font-size-sm-editor);
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 
 		.has-background:not(.has-background-background-color) &,

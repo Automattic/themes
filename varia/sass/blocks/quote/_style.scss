@@ -19,7 +19,7 @@
 
 	p {
 		@include font-family( map-deep-get($config-quote, "font", "family") );
-		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		font-size: var(--font-size-h4);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: var(--line-height-heading);
 	}
@@ -28,7 +28,7 @@
 	cite,
 	footer {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-size: var(--font-size-sm);
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 
 		.has-background:not(.has-background-background-color) &,
@@ -55,7 +55,7 @@
 		padding: 0;
 
 		p {
-			font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
+			font-size: var(--font-size-h3);
 			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
 			line-height: var(--line-height-heading);
 		}
@@ -64,7 +64,7 @@
 		cite,
 		footer {
 			color: #{map-deep-get($config-global, "color", "foreground", "light")};
-			font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+			font-size: var(--font-size-sm);
 			letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 		}
 	}

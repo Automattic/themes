@@ -2,7 +2,7 @@ body {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	background-color: #{map-deep-get($config-global, "color", "background", "default")};
 	@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
-	font-size: #{map-deep-get($config-global, "font", "size", "root")};
+	font-size: var(--font-size-root);
 	font-weight: normal;
 	line-height: var( --line-height-body );
 	-moz-osx-font-smoothing: grayscale;
@@ -11,11 +11,11 @@ body {
 
 // Set font size of title block the same as body.
 .editor-post-title__block {
-	font-size: #{map-deep-get($config-global, "font", "size", "root")};
+	font-size: var(--font-size-root);
 }
 
 p {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
+	font-size: var(--font-size-base-editor);
 	line-height: var( --line-height-body );
 }
 

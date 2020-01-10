@@ -1,5 +1,53 @@
 :root {
-	// --line-height-base: strip-unit($typescale-base);
+	// VARIABLES USERS CAN CHANGE THROUGH GLOBAL STYLES
 	--line-height-body: 1.78;
 	--line-height-heading: 1.125;
+	--type-scale-root: 18px;
+	--type-scale-base: 1; // unitless, so we can use rem (style) or em (editor) depending on context.
+	--type-scale-ratio: 1.2;
+
+	// HELPERS VARIABLES (derived from the above ones)
+	--font-size-root:  var(--type-scale-root);
+	--font-size-ratio: var(--type-scale-ratio);
+	--font-size-xs:    calc( 1rem * var(--type-scale-base) / var(--type-scale-ratio) / var(--type-scale-ratio) );
+	--font-size-sm:    calc( 1rem * var(--type-scale-base) / var(--type-scale-ratio) );
+	--font-size-base:  calc( 1rem * var(--type-scale-base) );
+	--font-size-md:    calc( 1rem * var(--type-scale-base) * var(--type-scale-ratio) );
+	--font-size-lg:    calc( 1rem * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xl:    calc( 1rem * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xxl:   calc( 1rem * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xxxl:  calc( 1rem * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xxxxl: calc( 1rem * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xs-editor:    calc( 1em * var(--type-scale-base) / var(--type-scale-ratio) / var(--type-scale-ratio) );
+	--font-size-sm-editor:    calc( 1em * var(--type-scale-base) / var(--type-scale-ratio) );
+	--font-size-base-editor:  calc( 1em * var(--type-scale-base) );
+	--font-size-md-editor:    calc( 1em * var(--type-scale-base) * var(--type-scale-ratio) );
+	--font-size-lg-editor:    calc( 1em * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xl-editor:    calc( 1em * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xxl-editor:   calc( 1em * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xxxl-editor:  calc( 1em * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	--font-size-xxxxl-editor: calc( 1em * var(--type-scale-base) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) * var(--type-scale-ratio) );
+	// These are theme dependent. How should themes modify them?
+	--font-size-button:                      var(--font-size-md);
+	--font-size-h6:                          var(--font-size-md);
+	--font-size-h5:                          var(--font-size-lg);
+	--font-size-h4:                          var(--font-size-xl);
+	--font-size-h3:                          var(--font-size-xxl);
+	--font-size-h2:                          var(--font-size-xxxl);
+	--font-size-h1:                          var(--font-size-xxxxl);
+	--font-size-footer:                      var(--font-size-sm);
+	--font-size-header-branding-title:       var(--font-size-md);
+	--font-size-header-branding-description: var(--font-size-sm);
+	--font-size-main-nav:                    var(--font-size-md);
+	--font-size-button-editor:                      var(--font-size-md-editor);
+	--font-size-h6-editor:                          var(--font-size-md-editor);
+	--font-size-h5-editor:                          var(--font-size-lg-editor);
+	--font-size-h4-editor:                          var(--font-size-xl-editor);
+	--font-size-h3-editor:                          var(--font-size-xxl-editor);
+	--font-size-h2-editor:                          var(--font-size-xxxl-editor);
+	--font-size-h1-editor:                          var(--font-size-xxxxl-editor);
+	--font-size-footer-editor:                      var(--font-size-sm-editor);
+	--font-size-header-branding-title-editor:       var(--font-size-md-editor);
+	--font-size-header-branding-description-editor: var(--font-size-sm-editor);
+	--font-size-header-main-nav-editor:             var(--font-size-md-editor);
 }

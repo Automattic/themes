@@ -7,7 +7,7 @@
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	@include font-family( map-deep-get($config-heading, "font", "family") );
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
-	font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0em);
+	font-size: var(--font-size-h2-editor);
 	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
 	line-height: var(--line-height-heading);
 }
@@ -103,33 +103,33 @@
 // Gutenberg Font-size utility classes
 .is-small-text,
 .has-small-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+	font-size: var(--font-size-sm-editor);
 }
 
 .is-regular-text,
 .has-regular-font-size,
 .has-normal-font-size,
 .has-medium-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0em);
+	font-size: var(--font-size-md-editor);
 }
 
 .is-large-text,
 .has-large-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "lg")) + 0em);
+	font-size: var(--font-size-lg-editor);
 	line-height: var(--line-height-heading);
 }
 
 .is-larger-text,
 .has-larger-font-size,
 .has-huge-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "xl")) + 0em);
+	font-size: var(--font-size-xl-editor);
 	line-height: var(--line-height-heading);
 }
 
 // Drop cap
 .has-drop-cap:not(:focus)::first-letter {
 	@include font-family( map-deep-get($config-heading, "font", "family") );
-	font-size: calc(2 * #{strip-unit(map-deep-get($config-heading, "font", "size", "h1")) + 0em});
+	font-size: calc(2 * var(--font-size-h1-editor));
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 }
 

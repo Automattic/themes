@@ -3,7 +3,7 @@
 
 	& > li > a {
 		@include font-family( map-deep-get($config-heading, "font", "family") );
-		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		font-size: var(--font-size-h4);
 		font-weight: #{map-deep-get($config-heading, "font", "weight")};
 		line-height: var(--line-height-heading);
 	}
@@ -24,7 +24,7 @@
 
 	.wp-block-latest-posts__post-date {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-size: var(--font-size-sm);
 		line-height: var(--line-height-body);
 
 		[class*="inner-container"] &,
@@ -35,7 +35,7 @@
 
 	.wp-block-latest-posts__post-excerpt,
 	.wp-block-latest-posts__post-full-content {
-		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+		font-size: var(--font-size-sm);
 		line-height: var(--line-height-body);
 		margin: 0;
 	}

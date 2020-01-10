@@ -5,7 +5,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 	.woocommerce-order h2 {
 		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
-		font-size: map-deep-get($config-global, "font", "size", "lg");
+		font-size: var(--font-size-lg);
 		font-weight: bold;
 	}
 
@@ -19,7 +19,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		li {
 			border: none;
 			@include font-family( map-deep-get($config-global, "font", "family", "primary") );
-			font-size: map-deep-get($config-global, "font", "size", "sm");
+			font-size: var(--font-size-sm);
 			margin-right: 0;
 			padding: map-deep-get($config-woocommerce, "table", "padding");
 			text-transform: none;
@@ -34,7 +34,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 			strong {
 				@include font-family( map-deep-get($config-global, "font", "family", "secondary") );
-				font-size: map-deep-get($config-global, "font", "size", "md");
+				font-size: var(--font-size-md);
 				line-height: var(--line-height-heading);
 			}
 		}
@@ -96,7 +96,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 		a.checkout-button {
 			margin-bottom: map-deep-get($config-global, "spacing", "unit");
-			font-size: map-deep-get($config-global, "font", "size", "md");
+			font-size: var(--font-size-md);
 			padding: map-deep-get($config-global, "spacing", "unit");
 		}
 
@@ -106,7 +106,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	}
 
 	.checkout .create-account small {
-		font-size: map-deep-get($config-global, "font", "size", "xs");
+		font-size: var(--font-size-xs);
 		color: map-deep-get($config-global, "color", "foreground", "light");
 	}
 
@@ -138,7 +138,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			padding: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
 			margin-bottom: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
 			margin-top: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
-			font-size: map-deep-get($config-global, "font", "size", "sm");
+			font-size: var(--font-size-sm);
 			font-weight: bold;
 			border-radius: map-deep-get($config-woocommerce, "table", "border", "radius");
 			line-height: var(--line-height-body);
@@ -174,12 +174,12 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			.wc-credit-card-form-card-number,
 			.wc-credit-card-form-card-expiry,
 			.wc-credit-card-form-card-cvc {
-				font-size: map-deep-get($config-global, "font", "size", "lg");
+				font-size: var(--font-size-lg);
 				padding: #{0.5 * map-deep-get($config-woocommerce, "table", "padding")};
 			}
 
 			span.help {
-				font-size: map-deep-get($config-global, "font", "size", "sm");
+				font-size: var(--font-size-sm);
 				color: map-deep-get($config-global, "color", "foreground", "light");
 			}
 
@@ -201,7 +201,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 			.about_paypal {
 				float: right;
 				line-height: 52px;
-				font-size: map-deep-get($config-global, "font", "size", "sm");
+				font-size: var(--font-size-sm);
 			}
 
 			img {
@@ -221,7 +221,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 
 	.checkout h3 {
 		@include font-family( map-deep-get($config-global, "font", "family", "primary") );
-		font-size: map-deep-get($config-global, "font", "size", "lg");
+		font-size: var(--font-size-lg);
 		font-weight: bold;
 	}
 

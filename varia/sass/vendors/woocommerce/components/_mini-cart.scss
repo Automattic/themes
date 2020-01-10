@@ -183,7 +183,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		ul.product_list_widget li a:not(.remove),
 		.woocommerce-mini-cart__total {
 			@include font-family( map-deep-get($config-header, "main-nav", "font", "family") );
-			font-size: #{map-deep-get($config-global, "font", "size", "base")};
+			font-size: var(--font-size-base);
 		}
 
 		@include media(mobile) {
