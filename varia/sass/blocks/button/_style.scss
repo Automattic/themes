@@ -24,6 +24,9 @@ input[type="submit"],
 			border: #{map-deep-get($config-button, "border-width")} solid currentcolor;
 			padding: #{map-deep-get($config-button, "padding", "vertical") - map-deep-get($config-button, "border-width")} #{map-deep-get($config-button, "padding", "horizontal")};
 
+			&:active {
+				color: #{map-deep-get($config-button, "color", "background")};
+			}
 
 			&:hover,
 			&:focus,
