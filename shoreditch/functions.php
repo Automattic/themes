@@ -100,7 +100,7 @@ function shoreditch_setup() {
 		array(
 			'name'  => esc_html__( 'Medium Gray', 'shoreditch' ),
 			'slug'  => 'medium-gray',
-			'color' => '#7a7c84',
+			'color' => '#767676',
 		),
 		array(
 			'name'  => esc_html__( 'Light Gray', 'shoreditch' ),

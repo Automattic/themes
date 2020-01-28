@@ -20,7 +20,7 @@ function shoreditch_wpcom_setup() {
 		$themecolors = array(
 			'bg'     => 'ffffff',
 			'border' => 'f3f3f3',
-			'text'   => '7a7c84',
+			'text'   => '767676',
 			'link'   => '3e69dc',
 			'url'    => '3e69dc',
 		);
