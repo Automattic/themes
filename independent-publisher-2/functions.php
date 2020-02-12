@@ -209,6 +209,8 @@ function independent_publisher_2_scripts() {
 
 	wp_enqueue_script( 'independent-publisher-2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170317', true );
 
+	wp_enqueue_script( 'independent-publisher-2-subnavigation', get_template_directory_uri() . '/js/subnavigation.js', array('independent-publisher-2-navigation'), '20190212', true );
+
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		wp_enqueue_script( 'independent-publisher-2-images', get_template_directory_uri() . '/js/independent-publisher-2.js', array( 'jquery' ), '20170406', true );
 	}
