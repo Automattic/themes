@@ -175,3 +175,22 @@ function maywood_editor_styles() {
 	wp_enqueue_style( 'maywood-editor-fonts', maywood_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'maywood_editor_styles' );
+
+/**
+ * Register Custom Block Styles
+ */
+if ( function_exists( 'register_block_style' ) ) {
+	function maywood_block_styles() {
+
+		register_block_style(
+			'core/cover',
+			array(
+				'name'         => 'no-text-shadow',
+				'label'        => 'No Text Shadow',
+				'style_handle' => 'maywood-style',
+			)
+		);
+	}
+
+	add_action( 'init', 'maywood_block_styles' );
+}

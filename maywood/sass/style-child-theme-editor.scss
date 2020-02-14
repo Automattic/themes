@@ -73,6 +73,12 @@ b, strong {
 		text-shadow: 0 0 12px #000;
 	}
 
+	&.is-style-no-text-shadow {
+		p,h1,h2,h3,h4,h5,h6 {
+			text-shadow: none;
+		}
+	}
+
 	@include media(desktop) {
 		min-height: #{20 * map-deep-get($config-global, "spacing", "vertical")};
 
