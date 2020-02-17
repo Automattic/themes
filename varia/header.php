@@ -45,7 +45,7 @@
 
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
-			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+			<?php if ( has_nav_menu( 'menu-1' ) && wp_get_nav_menu_items( 'menu-1' ) ) : ?>
 				<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'varia' ); ?>">
 					<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
 					<label for="toggle" id="toggle-menu" class="button">
