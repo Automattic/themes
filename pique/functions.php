@@ -382,3 +382,24 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 
+/**
+ * Modifies Jetpack Testimonial Post Loop to include
+ * post ordering by menu_order
+ *
+ * New Order - Date - DESC, Menu Order - ASC
+ *
+ * @param array $query
+ * @return array $query
+ */
+function modify_jetpack_testimonial_archive_query( $query ) {
+	if ( $query->is_main_query() && is_post_type_archive( 'jetpack-testimonial' ) && ! is_admin() ) {
+		$query -> set(
+			'orderby',
+			array(
+				'menu_order' => 'ASC',
+			)
+		);
+	}
+	return $query;
+}
+add_action( 'pre_get_posts', 'modify_jetpack_testimonial_archive_query' );
