@@ -3165,8 +3165,14 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .entry-content > iframe[style] {
-	margin-right: auto;
-	margin-left: auto;
+	margin: 32px 0 !important;
+	max-width: 100% !important;
+}
+
+@media only screen and (min-width: 560px) {
+	.entry-content > iframe[style] {
+		max-width: unset !important;
+	}
 }
 
 .entry-attachment {

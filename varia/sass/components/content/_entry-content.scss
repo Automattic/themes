@@ -40,7 +40,12 @@
 	// Overwrite iframe embeds that have inline styles.
 	> iframe[style] {
 
-		display: block;
+		margin: #{map-deep-get($config-global, "spacing", "vertical")} 0 !important;
+		max-width: 100% !important;
+
+		@include media(mobile) {
+			max-width: #{map-deep-get($config-global, "spacing", "measure")} !important;
+		}
 
 	}
 
