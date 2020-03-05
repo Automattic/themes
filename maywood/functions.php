@@ -175,3 +175,20 @@ function maywood_editor_styles() {
 	wp_enqueue_style( 'maywood-editor-fonts', maywood_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'maywood_editor_styles' );
+
+/**
+ * Enqueue Custom Cover Block Styles and Scripts
+ */
+function maywood_block_extends() {
+
+	// Cover Block Tweaks
+	wp_enqueue_script( 'maywood-extend-cover-block',
+		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
+		array( 'wp-blocks' )
+	);
+
+	wp_enqueue_style( 'maywood-extend-cover-block-style',
+		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.css'
+	);
+}
+add_action( 'enqueue_block_assets', 'maywood_block_extends' );
