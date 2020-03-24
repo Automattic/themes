@@ -36,13 +36,6 @@ Description: Used to style Gutenberg Blocks.
 		max-width: 1000%;
 		width: auto;
 	}
-
-	/* Child blocks should not get wider than their parent */
-	body:not(.has-sidebar) [class^="wp-block-"] .alignwide {
-		margin-right: inherit;
-		margin-left: inherit;
-		max-width: 100%;
-	}
 }
 
 body:not(.has-sidebar) .alignfull {
@@ -180,6 +173,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-cover .wp-block-cover-text, .wp-block-cover h2 {
 	font-size: 1.5em;
 	margin-bottom: inherit;
+}
+
+.wp-block-cover.alignfull .wp-block-cover__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
 }
 
 /* File */
