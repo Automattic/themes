@@ -36,6 +36,13 @@ Description: Used to style Gutenberg Blocks.
 		max-width: 1000%;
 		width: auto;
 	}
+
+	/* Child blocks should not get wider than their parent */
+	body:not(.has-sidebar) [class^="wp-block-"] .alignwide {
+		margin-right: inherit;
+		margin-left: inherit;
+		max-width: 100%;
+	}
 }
 
 body:not(.has-sidebar) .alignfull {
@@ -319,6 +326,13 @@ body:not(.has-sidebar) .wp-block-table.alignfull {
 	text-decoration: none;
 	color: #fff;
 	background: #767676;
+}
+
+/* Group */
+
+.wp-block-group.alignfull .wp-block-group__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
 }
 
 /* Separator */
