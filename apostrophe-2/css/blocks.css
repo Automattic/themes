@@ -115,6 +115,13 @@ body {
 		position: relative;
 	}
 
+	/* Child blocks should not get wider than their parent */
+	.apostrophe-2-no-sidebar [class^="wp-block-"] .alignwide {
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.apostrophe-2-no-sidebar .wp-block-embed.is-type-video.alignwide:before {
 		content: "";
 		display: block;
