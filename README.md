@@ -23,3 +23,21 @@ Found a bug you can fix? Fantastic! Patches are always welcome. Here are a coupl
 * Reference any existing issues that relate to your PR. This allows everyone to easily see all related discussions.
 
 By contributing code to our free themes, you grant its use under the [GNU General Public License v2 (or later)](LICENSE).
+
+## Testing pull requests
+
+### Using GitHub 
+
+1. Clone repository locally `git clone git@github.com:Automattic/themes.git`
+2. Look up featured branch of pull request, e.g. `update/#1889` 
+3. Check out featured branch of pull request, e.g. `git checkout update/#1889`
+4. Symlink or copy affected theme OR zip affected theme and import into WordPress site
+
+### Manually download
+
+1. Look up featured branch of pull request, e.g. `update/#1889` 
+2. Download featured branch of pull request, e.g. `https://github.com/Automattic/themes/archive/update/%231889.zip`
+3. Unzip the zipped featured branch
+4. Zip affected theme and import into WordPress site
+
+**Note:** In case the affected theme already exists on the WordPress site, it needs to be deleted before the theme zip file gets uploaded.
