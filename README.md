@@ -36,7 +36,7 @@ By contributing code to our free themes, you grant its use under the [GNU Genera
 ### Manually download
 
 1. Identify and visit [the branch](https://cloudup.com/cAy1j0D8tvH) of the pull request.
-2. Download featured branch of pull request, e.g. `https://github.com/Automattic/themes/archive/update/%231889.zip`
+2. Change the `/tree/` part of the branch's URL to `archive`, and add a `.zip` to the end to download a zip of the branch. e.g. `https://github.com/Automattic/themes/tree/update/%231889` would become `https://github.com/Automattic/themes/archive/update/%231889.zip`
 3. Unzip the zipped featured branch
 4. Zip affected theme and import into WordPress site
 
