@@ -29,7 +29,7 @@ By contributing code to our free themes, you grant its use under the [GNU Genera
 ### Using GitHub 
 
 1. Clone repository locally `git clone git@github.com:Automattic/themes.git`
-2. Look up featured branch of pull request, e.g. `update/#1889` 
+2. [Identify the branch](https://cloudup.com/cAy1j0D8tvH) of the pull request, e.g. `update/#1889` 
 3. Check out featured branch of pull request, e.g. `git checkout update/#1889`
 4. Symlink or copy affected theme OR zip affected theme and import into WordPress site
 
