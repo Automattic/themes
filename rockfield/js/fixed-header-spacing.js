@@ -81,5 +81,6 @@
 	/**
 	 * Run our page header height function
 	 */
+	window.addEventListener( 'load', pageHeaderHeight );
 	pageHeaderHeight();
 })();
