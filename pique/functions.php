@@ -60,6 +60,8 @@ if ( ! function_exists( 'pique_setup' ) ) :
 			'comment-list',
 			'gallery',
 			'caption',
+			'style',
+			'script',
 		) );
 
 		/*

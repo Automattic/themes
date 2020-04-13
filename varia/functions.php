@@ -74,6 +74,8 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				'comment-list',
 				'gallery',
 				'caption',
+				'style',
+				'script',
 			)
 		);
 

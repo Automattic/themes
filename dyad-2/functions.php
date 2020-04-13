@@ -81,6 +81,8 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 			'comment-form',
 			'gallery',
 			'caption',
+			'style',
+			'script',
 		) );
 
 		// Load default block styles.

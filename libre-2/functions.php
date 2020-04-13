@@ -66,6 +66,8 @@ function libre_2_setup() {
 		'comment-form',
 		'gallery',
 		'caption',
+		'style',
+		'script',
 	) );
 
 	// Set up the WordPress core custom background feature.

@@ -56,6 +56,8 @@ function button_2_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+		'style',
+		'script',
 	) );
 
 	// Enable support for custom logo.

@@ -122,7 +122,13 @@ function intergalactic_2_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+		'style',
+		'script',
 	) );
 
 	// Setup the WordPress core custom background feature.

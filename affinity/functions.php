@@ -79,6 +79,8 @@ function affinity_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+		'style',
+		'script',
 	) );
 
 	// Set up the WordPress core custom background feature.

@@ -113,6 +113,8 @@ function scratchpad_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+		'style',
+		'script',
 	) );
 
 	/*

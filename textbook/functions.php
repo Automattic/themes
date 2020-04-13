@@ -65,6 +65,8 @@ function textbook_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+		'style',
+		'script',
 	) );
 
 	// Add support for responsive embeds.
