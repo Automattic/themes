@@ -40,4 +40,14 @@ input[type="submit"],
 	&.is-style-squared .wp-block-button__link {
 		border-radius: 0;
 	}
+
+	// Set alignleft as default floating behavior
+	.entry-content > &:not(.alignleft):not(.alignright) {
+		@extend %responsive-alignleft;
+	}
+
+	// Set aligndefault as center floating behavior
+	.entry-content > &.aligncenter {
+		@extend %responsive-aligndefault;
+	}
 }
