@@ -77,7 +77,7 @@ add_action( 'customize_register', 'dara_customize_register' );
  * @return interger.
  */
 function dara_sanitize_dropdown_pages( $input ) {
-	if ( is_numeric( $input ) ) {
+	if ( is_numeric( $input ) && $input != get_option( 'page_on_front' ) ) {
 		return intval( $input );
 	}
 }
