@@ -136,7 +136,7 @@ function hever_fonts_url() {
 	if ( 'off' !== $ptsans ) {
 		$font_families = array();
 
-		$font_families[] = 'PT+Sans:400,400i,700,700i';
+		$font_families[] = 'PT Sans:400,400i,700,700i';
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
