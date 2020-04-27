@@ -193,7 +193,7 @@ add_color_rule( 'txt', '#444444', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	// Text-color
-	// Needs contrast against `bg` (white content background color)
+	// Needs contrast against `bg`
 	array( '.comment-meta .comment-metadata,
 			.has-background-background-color[class],
 			.has-background-dark-background-color[class],
@@ -206,8 +206,11 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-code pre,
 			.wp-block-pullquote,
 			body,
-			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
+			body .widget_eu_cookie_law_widget #eu-cookie-law', 'color', 'bg' ),
+
+	// Text-color (forms)
+	// Needs contrast against form background-color which is always white
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			input[type="color"],
 			input[type="color"]:focus,
 			input[type="date"],
@@ -239,10 +242,10 @@ add_color_rule( 'txt', '#444444', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus', 'color', 'bg' ),
+			textarea:focus', 'color', '#ffffff', 8 ),
 
 	// Text-color
-	// Needs contrast against `bg` with less contrast
+	// Needs contrast against `bg` with less contrast (dim)
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
@@ -270,8 +273,55 @@ add_color_rule( 'txt', '#444444', array(
 			figcaption', 'color', 'bg', 3 ),
 
 	// Text-color
-	// Needs contrast against `bg` with transparency
-	array( '.has-foreground-light-background-color[class]', 'background-color', 'bg', 0.5 ),
+	// Needs contrast against `bg` with less contrast
+	array( '.has-foreground-light-background-color[class]', 'background-color', 'bg', 3 ),
+
+	// Border-color
+	// Needs contrast against `bg` with more contrast
+	array( '.wp-block-code,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			input[type="color"],
+			input[type="date"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="email"],
+			input[type="month"],
+			input[type="number"],
+			input[type="password"],
+			input[type="range"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="text"],
+			input[type="time"],
+			input[type="url"],
+			input[type="week"],
+			select,
+			textarea', 'border-color', 'bg', 7 ),
+
+	// Border-top-color
+	// Needs contrast against `bg` with more contrast
+	array( '.comment-list .children > li,
+			.comment-list > li,
+			.wp-block-pullquote', 'border-top-color', 'bg', 7 ),
+
+	// Border-bottom-color
+	// Needs contrast against `bg` with more contrast
+	array( '.comment-list,
+			.wp-block-pullquote,
+			hr,
+			hr.wp-block-separator', 'border-bottom-color', 'bg', 7 ),
+
+	// Text-color
+	// Needs contrast against `bg` with more contrast
+	array( '.has-background-dark-color[class],
+			hr.wp-block-separator.is-style-dots:before', 'color', 'bg', 7 ),
+
+	// Background-color
+	// Needs contrast against `bg` with more contrast
+	array( '.has-background-dark-background-color[class],
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', 'bg', 7 ),
 
 ), __( 'Text Color' ) );
 
