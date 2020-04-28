@@ -133,3 +133,14 @@ function varia_wpcom_editor_scripts() {
 	wp_enqueue_style( 'varia-wpcom-editor-style', get_template_directory_uri() . '/inc/style-editor-wpcom.css', array(), '20190906' );
 }
 add_action( 'enqueue_block_editor_assets', 'varia_wpcom_editor_scripts' );
+
+function varia_custom_colors_extra_css() { ?>
+	::selection {
+		background-color: initial;
+	}
+
+	::-moz-selection {
+		background-color: initial;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );

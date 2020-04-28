@@ -1,7 +1,8 @@
 <?php
 /* Custom Colors: Varia */
 
-// Background Color: White
+// Background Color (White)
+// $config-global--color-background-default
 add_color_rule( 'bg', '#ffffff', array(
 
 	// Background-color
@@ -13,7 +14,7 @@ add_color_rule( 'bg', '#ffffff', array(
 			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
 	// Text-color
-    // Needs contrast against `link` (primary background color)
+	// Needs contrast against `link` (primary background color)
 	array( '.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.a8c-posts-list__view-all:focus,
@@ -26,11 +27,7 @@ add_color_rule( 'bg', '#ffffff', array(
 			.has-focus.button,
 			.has-focus.wp-block-button__link,
 			.has-focus.wp-block-file__button,
-			.has-foreground-background-color[class],
-			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class],
 			.has-primary-background-color[class],
-			.has-secondary-background-color[class],
 			.sticky-post,
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
@@ -67,9 +64,26 @@ add_color_rule( 'bg', '#ffffff', array(
 			input:hover[type="submit"],
 			input[type="submit"]', 'color', 'link' ),
 
+	// Text-color
+	// Needs contrast against `bgdark` with more contrast
+	array( '.has-background-dark-background-color[class]', 'color', 'bgdark', 7 ),
+
+	// Text-color
+	// Needs contrast against `bglight` with more contrast
+	array( '.has-background-light-background-color[class]', 'color', 'bglight', 7 ),
+
+	// Text-color
+	// Needs contrast against `fgdark` with more contrast
+	array( '.has-foreground-dark-background-color[class]', 'color', 'fgdark', 7 ),
+
+	// Text-color
+	// Needs contrast against `fgdark` with more contrast
+	array( '.has-foreground-light-background-color[class]', 'color', 'fglight', 7 ),
+
 ), __( 'Background Color' ) );
 
-// Link Color: Blue
+// Link Color (Blue)
+// $config-global--color-primary-default
 add_color_rule( 'link', '#0000ff', array(
 
 	// Background-color
@@ -185,12 +199,15 @@ add_color_rule( 'link', '#0000ff', array(
 
 ), __( 'Link Color' ) );
 
-// Text Color: Gray
+// Text Color (Gray)
+// $config-global--color-foreground-default
 add_color_rule( 'txt', '#444444', array(
 
 	// Background-color
 	array( '.has-foreground-background-color[class],
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
+
+	array( '.has-foreground-dark-background-color[class]', 'background-color', 'bg' ),
 
 	// Text-color
 	// Needs contrast against `bg`
@@ -206,7 +223,7 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-code pre,
 			.wp-block-pullquote,
 			body,
-			body .widget_eu_cookie_law_widget #eu-cookie-law', 'color', 'bg' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law', 'color', 'bg', 6 ),
 
 	// Text-color (forms)
 	// Needs contrast against form background-color which is always white
@@ -270,9 +287,9 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
-			figcaption', 'color', 'bg', 3 ),
+			figcaption', 'color', 'bg', 4 ),
 
-	// Text-color
+	// Background-color
 	// Needs contrast against `bg` with less contrast
 	array( '.has-foreground-light-background-color[class]', 'background-color', 'bg', 3 ),
 
@@ -316,6 +333,10 @@ add_color_rule( 'txt', '#444444', array(
 	array( '.has-background-dark-color[class],
 			hr.wp-block-separator.is-style-dots:before', 'color', 'bg', 7 ),
 
+	// Text-color
+	// Needs contrast against `fg1` with more contrast
+	array( '.has-secondary-background-color[class]', 'color', 'fg1', 10 ),
+
 	// Background-color
 	// Needs contrast against `bg` with more contrast
 	array( '.has-background-dark-background-color[class],
@@ -325,13 +346,54 @@ add_color_rule( 'txt', '#444444', array(
 
 ), __( 'Text Color' ) );
 
-// Accent Color: Red
+// Accent Color (Red)
+// $config-global--color-secondary-default
 add_color_rule( 'fg1', '#ff0000', array(
 
 	// Text-color
 	array( '.has-secondary-color[class]', 'color', 'bg' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class]', 'background-color', 'bg' ),
 
-), __( 'Accent Color' ) );
+), __( 'Secondary Color' ) );
+
+// Foreground Dark
+// $config-global--color-foreground-dark
+add_color_rule( 'fgdark', '#111111', array(
+
+	array( '.has-foreground-dark-color[class]', 'color', 'bg' ),
+
+	array( '.has-foreground-dark-background-color[class]', 'background-color', 'bg' ),
+
+), __( 'Foreground Dark' ) );
+
+// Foreground Light
+// $config-global--color-foreground-light
+add_color_rule( 'fglight', '#767676', array(
+
+	array( '.has-foreground-light-color[class]', 'color', 'bg' ),
+
+	array( '.has-foreground-light-background-color[class]', 'background-color', 'bg' ),
+
+), __( 'Foreground Light' ) );
+
+// Background Dark
+// $config-global--color-background-dark
+add_color_rule( 'bgdark', '#dddddd', array(
+
+	array( '.has-background-dark-color[class]', 'color', 'bg' ),
+
+	array( '.has-background-dark-background-color[class]', 'background-color', 'bg' ),
+
+), __( 'Background Dark' ) );
+
+// Background Dark
+// $config-global--color-background-light
+add_color_rule( 'bglight', '#fafafa', array(
+
+	array( '.has-background-light-color[class]', 'color', 'bg' ),
+
+	array( '.has-background-light-background-color[class]', 'background-color', 'bg' ),
+
+), __( 'Background Light' ) );
