@@ -6,8 +6,7 @@
 add_color_rule( 'bg', '#ffffff', array(
 
 	// Background-color
-	array( '.has-background-background-color[class],
-			.screen-reader-text:focus,
+	array( '.screen-reader-text:focus,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
@@ -22,12 +21,10 @@ add_color_rule( 'bg', '#ffffff', array(
 			.button,
 			.button:focus,
 			.button:hover,
-			.has-background-color[class],
 			.has-focus.a8c-posts-list__view-all,
 			.has-focus.button,
 			.has-focus.wp-block-button__link,
 			.has-focus.wp-block-file__button,
-			.has-primary-background-color[class],
 			.sticky-post,
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
@@ -64,21 +61,23 @@ add_color_rule( 'bg', '#ffffff', array(
 			input:hover[type="submit"],
 			input[type="submit"]', 'color', 'link' ),
 
-	// Text-color
-	// Needs contrast against `bgdark` with more contrast
-	array( '.has-background-dark-background-color[class]', 'color', 'bgdark', 7 ),
+	/**
+	 * Utility Classes
+	 */
+	array( '.has-primary-background-color[class]', 'color', 'link' ),
+	array( '.has-secondary-background-color[class]', 'color', 'fg1' ),
 
-	// Text-color
-	// Needs contrast against `bglight` with more contrast
-	array( '.has-background-light-background-color[class]', 'color', 'bglight', 7 ),
+	array( '.has-foreground-background-color[class],
+			.has-foreground-dark-background-color[class],
+			.has-foreground-light-background-color[class]', 'color', 'txt', 12 ),
 
-	// Text-color
-	// Needs contrast against `fgdark` with more contrast
-	array( '.has-foreground-dark-background-color[class]', 'color', 'fgdark', 7 ),
+	array( '.has-background-background-color[class],
+			.has-background-dark-background-color[class],
+			.has-background-light-background-color[class]', 'background-color' ),
 
-	// Text-color
-	// Needs contrast against `fgdark` with more contrast
-	array( '.has-foreground-light-background-color[class]', 'color', 'fglight', 7 ),
+	array( '.has-background-background-color[class],
+			.has-background-dark-background-color[class],
+			.has-background-light-background-color[class]', 'color', 'txt', 12 ),
 
 ), __( 'Background Color' ) );
 
@@ -90,7 +89,6 @@ add_color_rule( 'link', '#0000ff', array(
 	array( '.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.button,
-			.has-primary-background-color[class],
 			.sticky-post,
 			.wp-block-button__link,
 			.wp-block-file .wp-block-file__button,
@@ -103,8 +101,7 @@ add_color_rule( 'link', '#0000ff', array(
 
 	// Text-color
 	// Needs contrast against `bg` (white content background color)
-	array( '.has-primary-color[class],
-			.main-navigation a,
+	array( '.main-navigation a,
 			.main-navigation a:link,
 			.main-navigation a:visited,
 			.site-title,
@@ -197,6 +194,12 @@ add_color_rule( 'link', '#0000ff', array(
 			input[type="week"]:focus,
 			textarea:focus', 'border-color', 'bg', 3 ),
 
+	/**
+	 * Utility Classes
+	 */
+	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-color[class]', 'color', 'bg' ),
+
 ), __( 'Link Color' ) );
 
 // Text Color (Gray)
@@ -204,18 +207,11 @@ add_color_rule( 'link', '#0000ff', array(
 add_color_rule( 'txt', '#444444', array(
 
 	// Background-color
-	array( '.has-foreground-background-color[class],
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
-
-	array( '.has-foreground-dark-background-color[class]', 'background-color', 'bg' ),
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	// Text-color
 	// Needs contrast against `bg`
 	array( '.comment-meta .comment-metadata,
-			.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class],
-			.has-foreground-color[class],
 			.main-navigation,
 			.screen-reader-text:focus,
 			.site-branding,
@@ -267,7 +263,6 @@ add_color_rule( 'txt', '#444444', array(
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color[class],
 			.site-info,
 			.wp-block-image figcaption,
 			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
@@ -288,10 +283,6 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
 			figcaption', 'color', 'bg', 4 ),
-
-	// Background-color
-	// Needs contrast against `bg` with less contrast
-	array( '.has-foreground-light-background-color[class]', 'background-color', 'bg', 3 ),
 
 	// Border-color
 	// Needs contrast against `bg` with more contrast
@@ -330,19 +321,30 @@ add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
 	// Needs contrast against `bg` with more contrast
-	array( '.has-background-dark-color[class],
-			hr.wp-block-separator.is-style-dots:before', 'color', 'bg', 7 ),
-
-	// Text-color
-	// Needs contrast against `fg1` with more contrast
-	array( '.has-secondary-background-color[class]', 'color', 'fg1', 10 ),
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color', 'bg', 7 ),
 
 	// Background-color
 	// Needs contrast against `bg` with more contrast
-	array( '.has-background-dark-background-color[class],
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', 'bg', 7 ),
+
+	/**
+	 * Utility Classes
+	 */
+	// Foreground
+	array( '.has-foreground-color[class]', 'color', 'bg' ),
+	array( '.has-foreground-background-color[class]', 'background-color' ),
+
+	// Foreground-dark
+	// Needs contrast against `bg` with less contrast
+	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+
+	// Foreground-light
+	// Needs contrast against `bg` with less contrast
+	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
 ), __( 'Text Color' ) );
 
@@ -350,50 +352,13 @@ add_color_rule( 'txt', '#444444', array(
 // $config-global--color-secondary-default
 add_color_rule( 'fg1', '#ff0000', array(
 
+	/**
+	 * Utility Classes
+	 */
 	// Text-color
 	array( '.has-secondary-color[class]', 'color', 'bg' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color', 'bg' ),
+	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
-
-// Foreground Dark
-// $config-global--color-foreground-dark
-add_color_rule( 'fgdark', '#111111', array(
-
-	array( '.has-foreground-dark-color[class]', 'color', 'bg' ),
-
-	array( '.has-foreground-dark-background-color[class]', 'background-color', 'bg' ),
-
-), __( 'Foreground Dark' ) );
-
-// Foreground Light
-// $config-global--color-foreground-light
-add_color_rule( 'fglight', '#767676', array(
-
-	array( '.has-foreground-light-color[class]', 'color', 'bg' ),
-
-	array( '.has-foreground-light-background-color[class]', 'background-color', 'bg' ),
-
-), __( 'Foreground Light' ) );
-
-// Background Dark
-// $config-global--color-background-dark
-add_color_rule( 'bgdark', '#dddddd', array(
-
-	array( '.has-background-dark-color[class]', 'color', 'bg' ),
-
-	array( '.has-background-dark-background-color[class]', 'background-color', 'bg' ),
-
-), __( 'Background Dark' ) );
-
-// Background Dark
-// $config-global--color-background-light
-add_color_rule( 'bglight', '#fafafa', array(
-
-	array( '.has-background-light-color[class]', 'color', 'bg' ),
-
-	array( '.has-background-light-background-color[class]', 'background-color', 'bg' ),
-
-), __( 'Background Light' ) );
