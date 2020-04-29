@@ -228,8 +228,9 @@ b, strong {
 		font-weight: 300;
 	}
 
-	// Only use a text shadow if there's a background image.
-	&[style*="background-image"] {
+	// Only use a text shadow if there's a background image or video.
+	&[style*="background-image"],
+	video + .wp-block-cover__inner-container {
 		p {
 			text-shadow: 0 0 6px map-deep-get($config-global, "color", "black");
 		}
