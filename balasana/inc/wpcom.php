@@ -10,11 +10,11 @@ function balasana_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'ffffff',
-			'border' => '767676',
-			'text'   => '111111',
-			'link'   => '0073aa',
-			'url'    => '0073aa',
+			'bg'     => 'white', // $config-global--color-background-default
+			'border' => 'D0D0D0', // $config-global--color-border-default
+			'text'   => '303030', // $config-global--color-foreground-default
+			'link'   => '19744C', // $config-global--color-primary-default
+			'url'    => '19744C', // $config-global--color-primary-default
 		);
 	}
 }
