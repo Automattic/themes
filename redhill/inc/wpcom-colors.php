@@ -9,7 +9,8 @@ add_color_rule( 'bg', 'white', array(
 	array( '.screen-reader-text:focus,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'background-color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
+			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
 	// Text-color
 	// Needs contrast against `link` (primary)
@@ -54,7 +55,13 @@ add_color_rule( 'bg', 'white', array(
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"],
-			input[type="submit"]', 'color', 'link' ),
+			input[type="submit"],
+			.main-navigation > div > ul > li.current-menu-item > a,
+			.main-navigation > div > ul > li.current-menu-item li > a,
+			.main-navigation > div > ul > li.focus > a,
+			.main-navigation > div > ul > li.focus li > a,
+			.main-navigation > div > ul > li:hover > a,
+			.main-navigation > div > ul > li:hover li > a', 'color', 'link' ),
 
 	/**
 	 * Utility Classes
@@ -105,7 +112,19 @@ add_color_rule( 'link', '#CA2017', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			input[type="submit"],
+			.main-navigation > div > ul > li.current-menu-item > a,
+			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.main-navigation > div > ul > li.current-menu-item li.focus > a,
+			.main-navigation > div > ul > li.current-menu-item li:hover > a,
+			.main-navigation > div > ul > li.focus > a,
+			.main-navigation > div > ul > li.focus li.current-menu-item > a,
+			.main-navigation > div > ul > li.focus li.focus > a,
+			.main-navigation > div > ul > li.focus li:hover > a,
+			.main-navigation > div > ul > li:hover > a,
+			.main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.main-navigation > div > ul > li:hover li.focus > a,
+			.main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
 
 	// Text-color
 	// Needs contrast against `bg`
@@ -265,7 +284,10 @@ add_color_rule( 'txt', '#222222', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'background-color', 'bg', 7 ),
+			input:hover[type="submit"],
+			.main-navigation > div > ul > li.current-menu-item li > a,
+			.main-navigation > div > ul > li.focus li > a,
+			.main-navigation > div > ul > li:hover li > a', 'background-color', 'bg', 7 ),
 
 	// Border-color
 	// Needs contrast against `bg` with more contrast
