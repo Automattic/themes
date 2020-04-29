@@ -10,11 +10,11 @@ function brompton_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'white', // $config-global--color-background-default
-			'border' => 'DDDDDD', // $config-global--color-border-default
-			'text'   => '222222', // $config-global--color-foreground-default
-			'link'   => 'CA2017', // $config-global--color-primary-default
-			'url'    => 'CA2017', // $config-global--color-primary-default
+			'bg'     => 'E8E4DD', // $config-global--color-background-default
+			'border' => 'B9B6B2', // $config-global--color-border-default
+			'text'   => '252E36', // $config-global--color-foreground-default
+			'link'   => 'C04239', // $config-global--color-primary-default
+			'url'    => 'C04239', // $config-global--color-primary-default
 		);
 	}
 }
