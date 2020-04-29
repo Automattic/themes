@@ -13,7 +13,7 @@ add_color_rule( 'bg', '#ffffff', array(
 			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
 	// Text-color
-	// Needs contrast against `link` (primary background color)
+	// Needs contrast against `link` (primary)
 	array( '.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.a8c-posts-list__view-all:focus,
@@ -64,20 +64,32 @@ add_color_rule( 'bg', '#ffffff', array(
 	/**
 	 * Utility Classes
 	 */
+	// Text-color
+	// Needs contrast against `link` (primary)
 	array( '.has-primary-background-color[class]', 'color', 'link' ),
+	// Text-color
+	// Needs contrast against `fg1` (secondary)
 	array( '.has-secondary-background-color[class]', 'color', 'fg1' ),
 
+	// Text-color
+	// Needs contrast against `txt` (foreground)
 	array( '.has-foreground-background-color[class],
 			.has-foreground-dark-background-color[class],
 			.has-foreground-light-background-color[class]', 'color', 'txt', 12 ),
-
-	array( '.has-background-background-color[class],
+	// Text-color
+	// Needs contrast against `txt` (background)
+	array( '.has-background-color[class],
+			.has-background-dark-color[class],
+			.has-background-light-color[class],
+			.has-background-background-color[class],
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'background-color' ),
-
-	array( '.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color', 'txt', 12 ),
+			.has-background-light-background-color[class]', 'color', 'bg', 12 ),
+	// Background-color
+	array( '.has-background-background-color[class]', 'background-color' ),
+	// Background-color darkened
+	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	// Background-color lightened
+	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
@@ -100,7 +112,7 @@ add_color_rule( 'link', '#0000ff', array(
 			input[type="submit"]', 'background-color' ),
 
 	// Text-color
-	// Needs contrast against `bg` (white content background color)
+	// Needs contrast against `bg`
 	array( '.main-navigation a,
 			.main-navigation a:link,
 			.main-navigation a:visited,
@@ -175,7 +187,7 @@ add_color_rule( 'link', '#0000ff', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			a:hover', 'color', 'bg', 3 ),
 
-	// Border-color
+	// Border-color (forms)
 	// Needs contrast against `bg` with less contrast
 	array( 'input[type="color"]:focus,
 			input[type="date"]:focus,
@@ -197,7 +209,10 @@ add_color_rule( 'link', '#0000ff', array(
 	/**
 	 * Utility Classes
 	 */
+	// Background-color
 	array( '.has-primary-background-color[class]', 'background-color' ),
+	// Text-color
+	// Needs contrast against `bg`
 	array( '.has-primary-color[class]', 'color', 'bg' ),
 
 ), __( 'Link Color' ) );
@@ -210,7 +225,7 @@ add_color_rule( 'txt', '#444444', array(
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	// Text-color
-	// Needs contrast against `bg`
+	// Needs contrast against `bg` with more contrast
 	array( '.comment-meta .comment-metadata,
 			.main-navigation,
 			.screen-reader-text:focus,
@@ -219,10 +234,10 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-code pre,
 			.wp-block-pullquote,
 			body,
-			body .widget_eu_cookie_law_widget #eu-cookie-law', 'color', 'bg', 6 ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law', 'color', 'bg', 7 ),
 
 	// Text-color (forms)
-	// Needs contrast against form background-color which is always white
+	// Needs contrast against form background-color (which is always white)
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			input[type="color"],
 			input[type="color"]:focus,
@@ -333,17 +348,18 @@ add_color_rule( 'txt', '#444444', array(
 	 * Utility Classes
 	 */
 	// Foreground
+	// Needs contrast against `bg`
 	array( '.has-foreground-color[class]', 'color', 'bg' ),
 	array( '.has-foreground-background-color[class]', 'background-color' ),
 
-	// Foreground-dark
-	// Needs contrast against `bg` with less contrast
+	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	// Background-color darkened
 	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
 
-	// Foreground-light
-	// Needs contrast against `bg` with less contrast
+	// Text-color brightened
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
 ), __( 'Text Color' ) );
@@ -356,6 +372,7 @@ add_color_rule( 'fg1', '#ff0000', array(
 	 * Utility Classes
 	 */
 	// Text-color
+	// Needs contrast against `bg`
 	array( '.has-secondary-color[class]', 'color', 'bg' ),
 
 	// Background-color
