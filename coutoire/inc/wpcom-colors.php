@@ -278,7 +278,7 @@ add_color_rule( 'fg1', '#FF7A5C', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'bg', 7 ),
+			input:hover[type="submit"]', 'background-color', 'bg', 7 ),
 
 	// Border-color
 	// Needs contrast against `bg`
@@ -297,14 +297,14 @@ add_color_rule( 'fg1', '#FF7A5C', array(
 			input[type="time"]:focus,
 			input[type="url"]:focus,
 			input[type="week"]:focus,
-			textarea:focus', 'bg' ),
+			textarea:focus', 'border-color', 'bg' ),
 
 	// Text-decoration-color
 	// Needs contrast against `bg` with more contrast
 	array( '.entry-content a,
 			.main-navigation > div > ul > li > a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
-			a', 'bg', 7 ),
+			a', 'text-decoration-color', 'bg', 7 ),
 
 	/**
 	 * Utility Classes
