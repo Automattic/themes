@@ -145,6 +145,12 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// $lightness       = varia_get_default_lightness();
 		// $lightness_hover = varia_get_default_lightness_hover();
 
+		$colors_array = get_theme_mod( 'colors_manager' );
+		$background   = $colors_array['colors']['bg'];
+		$primary      = $colors_array['colors']['link'];
+		$foreground   = $colors_array['colors']['txt'];
+		$secondary    = $colors_array['colors']['fg1'];
+
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
@@ -152,12 +158,12 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'varia' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => '#0000FF' === $primary ? '#0000FF' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'varia' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => '#FF0000' === $secondary ? '#FF0000' : $secondary,
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'varia' ),
@@ -167,7 +173,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				array(
 					'name'  => __( 'Gray', 'varia' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => '#444444' === $foreground ? '#444444' : $foreground,
 				),
 				array(
 					'name'  => __( 'Light Gray', 'varia' ),
@@ -187,7 +193,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				array(
 					'name'  => __( 'White', 'varia' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => '#FFFFFF' === $background ? '#FFFFFF' : $background,
 				),
 			)
 		);
