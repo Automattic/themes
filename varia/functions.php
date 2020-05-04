@@ -140,16 +140,16 @@ if ( ! function_exists( 'varia_setup' ) ) :
 			)
 		);
 
-		// $default_hue     = varia_get_default_hue();
-		// $saturation      = varia_get_default_saturation();
-		// $lightness       = varia_get_default_lightness();
-		// $lightness_hover = varia_get_default_lightness_hover();
-
-		$colors_array = get_theme_mod( 'colors_manager' );
-		$background   = $colors_array['colors']['bg'];
-		$primary      = $colors_array['colors']['link'];
-		$foreground   = $colors_array['colors']['txt'];
-		$secondary    = $colors_array['colors']['fg1'];
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
 
 		// Editor color palette.
 		add_theme_support(

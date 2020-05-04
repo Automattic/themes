@@ -18,11 +18,11 @@ function varia_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'ffffff',
-			'border' => '767676',
-			'text'   => '111111',
-			'link'   => '0073aa',
-			'url'    => '0073aa',
+			'bg'     => 'ffffff', // $config-global--color-background-default;
+			'border' => 'dddddd', // $config-global--color-border-default;
+			'text'   => '444444', // $config-global--color-foreground-default;
+			'link'   => '0000ff', // $config-global--color-primary-default;
+			'url'    => '0000ff', // $config-global--color-primary-default;
 		);
 	}
 }
