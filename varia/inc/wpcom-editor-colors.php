@@ -18,4 +18,4 @@ add_color_rule( 'txt', '#444444', array(
 	// Needs contrast against `bg` with more contrast
 	array( '#editor .editor-styles-wrapper', 'color', 'bg', 7 ),
 
-), __( 'Forground Color' ) );
+), __( 'Foreground Color' ) );
