@@ -6,7 +6,7 @@
 add_color_rule( 'bg', '#ffffff', array(
 
 	// Background-color
-	array( '.editor-styles-wrapper', 'background-color' ),
+	array( '#editor .editor-styles-wrapper', 'background-color' ),
 
 ), __( 'Background Color' ) );
 
@@ -16,6 +16,6 @@ add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
 	// Needs contrast against `bg` with more contrast
-	array( '.editor-styles-wrapper', 'color', 'bg', 7 ),
+	array( '#editor .editor-styles-wrapper', 'color', 'bg', 7 ),
 
 ), __( 'Forground Color' ) );
