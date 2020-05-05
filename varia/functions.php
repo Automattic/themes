@@ -171,7 +171,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
-					'name'  => __( 'White', 'varia' ),
+					'name'  => __( 'Background', 'varia' ),
 					'slug'  => 'background',
 					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
