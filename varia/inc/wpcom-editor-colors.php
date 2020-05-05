@@ -6,41 +6,46 @@
 add_color_rule( 'bg', '#ffffff', array(
 
 	// Background-color
-	array( '#editor .editor-styles-wrapper ', 'background-color' ),
+	array( '#editor .editor-styles-wrapper,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:hover', 'background-color' ),
 
 	// Text-color
 	// Needs contrast against `link` (primary)
-	array( '#editor .editor-styles-wrapper .a8c-posts-list-item__featured span,
-			#editor .editor-styles-wrapper .a8c-posts-list__view-all,
-			#editor .editor-styles-wrapper .a8c-posts-list__view-all:focus,
-			#editor .editor-styles-wrapper .a8c-posts-list__view-all:hover,
-			#editor .editor-styles-wrapper .button,
+	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .button.has-focus,
 			#editor .editor-styles-wrapper .button:focus,
 			#editor .editor-styles-wrapper .button:hover,
-			#editor .editor-styles-wrapper .has-focus.a8c-posts-list__view-all,
-			#editor .editor-styles-wrapper .has-focus.button,
-			#editor .editor-styles-wrapper .has-focus.wp-block-button__link,
-			#editor .editor-styles-wrapper .has-focus.wp-block-file__button,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:focus,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:hover,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
 			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-cover,
+			#editor .editor-styles-wrapper .wp-block-cover-image,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .block-editor-block-list__block,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-file .wp-block-file__button,
-			#editor .editor-styles-wrapper .wp-block-file a.wp-block-file__button:active,
-			#editor .editor-styles-wrapper .wp-block-file a.wp-block-file__button:focus,
-			#editor .editor-styles-wrapper .wp-block-file a.wp-block-file__button:hover,
-			#editor .editor-styles-wrapper .wp-block-file a.wp-block-file__button:visited,
-			#editor .editor-styles-wrapper .wp-block-file__button,
-			#editor .editor-styles-wrapper .wp-block-file__button:focus,
-			#editor .editor-styles-wrapper .wp-block-file__button:hover,
-			#editor .editor-styles-wrapper .wp-block-gallery .blocks-gallery-image figcaption,
-			#editor .editor-styles-wrapper .wp-block-gallery .blocks-gallery-item figcaption,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color', 'link' ),
+
+	// Background-color
+	array( '#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:hover', 'color', 'link', 16 ),
 
 	/**
 	 * Utility Classes
@@ -79,21 +84,20 @@ add_color_rule( 'bg', '#ffffff', array(
 add_color_rule( 'link', '#0000ff', array(
 
 	// Background-color
-	array( '#editor .editor-styles-wrapper .a8c-posts-list-item__featured span,
-			#editor .editor-styles-wrapper .a8c-posts-list__view-all,
-			#editor .editor-styles-wrapper .button,
+	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-file .wp-block-file__button,
-			#editor .editor-styles-wrapper .wp-block-file__button,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
 	// Needs contrast against `bg`
-	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:active,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline.wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline.wp-block-button__link:active,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+	array( '#editor .editor-styles-wrapper .fse-template-part .main-navigation a,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:link,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper a', 'color', 'bg' ),
 
 	// Border color left
@@ -107,35 +111,36 @@ add_color_rule( 'link', '#0000ff', array(
 
 	// Background-color
 	// Needs contrast against `bg` with less contrast
-	array( '#editor .editor-styles-wrapper .a8c-posts-list__view-all:focus,
-			#editor .editor-styles-wrapper .a8c-posts-list__view-all:hover,
+	array( '#editor .editor-styles-wrapper .button.has-focus,
 			#editor .editor-styles-wrapper .button:focus,
 			#editor .editor-styles-wrapper .button:hover,
-			#editor .editor-styles-wrapper .has-focus.a8c-posts-list__view-all,
-			#editor .editor-styles-wrapper .has-focus.button,
-			#editor .editor-styles-wrapper .has-focus.wp-block-button__link,
-			#editor .editor-styles-wrapper .has-focus.wp-block-file__button,
-			#editor .editor-styles-wrapper .main-navigation #toggle:focus + #toggle-menu,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation #toggle:focus + #toggle-menu,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:focus,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:hover,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
-			#editor .editor-styles-wrapper .wp-block-file__button:focus,
-			#editor .editor-styles-wrapper .wp-block-file__button:hover', 'background-color', 'bg', 3 ),
+			#editor .editor-styles-wrapper .wp-block-button__link:hover', 'background-color', 'bg', 3 ),
 
 	// Text-color
 	// Needs contrast against `bg` with less contrast
-	array( '#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta a:active,
-			#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:hover,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline.wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline.wp-block-button__link:hover,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+	array( '#editor .editor-styles-wrapper .fse-template-part .main-navigation a:hover,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:active,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta a:active,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:active,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:hover,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:focus,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:hover,
 			#editor .editor-styles-wrapper a:hover', 'color', 'bg', 3 ),
 
 	/**
@@ -158,10 +163,10 @@ add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
 	// Needs contrast against `bg` with more contrast
-	array( '#editor .editor-styles-wrapper .wp-block-code,
-			#editor .editor-styles-wrapper .wp-block-code pre,
+	array( '#editor .editor-post-title__block .editor-post-title__input,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
-			#editor .editor-styles-wrapper body', 'color', 'bg', 7 ),
+			#editor .editor-styles-wrapper', 'color', 'bg', 7 ),
 
 	// Text-color
 	// Needs contrast against `bg` with less contrast (dim)
@@ -213,7 +218,11 @@ add_color_rule( 'txt', '#444444', array(
 	// Foreground
 	// Needs contrast against `bg`
 	array( '#editor .editor-styles-wrapper .has-foreground-color[class]', 'color', 'bg' ),
-	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
+
+	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
+			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .has-background-light-background-color[class],
+			#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
 
 	// Text-color darkened
 	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class]', 'color', '-1' ),
