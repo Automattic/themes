@@ -158,42 +158,22 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'varia' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF' === $primary ? '#0000FF' : $primary,
+					'color' => ! isset($primary) ? '#0000FF' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'varia' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000' === $secondary ? '#FF0000' : $secondary,
+					'color' => ! isset($secondary) ? '#FF0000' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'varia' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'varia' ),
+					'name'  => __( 'Foreground', 'varia' ),
 					'slug'  => 'foreground',
-					'color' => '#444444' === $foreground ? '#444444' : $foreground,
-				),
-				array(
-					'name'  => __( 'Light Gray', 'varia' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
+					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
 					'name'  => __( 'White', 'varia' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF' === $background ? '#FFFFFF' : $background,
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
