@@ -83,6 +83,62 @@ add_color_rule( 'bg', 'white', array(
 	// Background-color lightened
 	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
 
+	/**
+	 * Grays
+	 * Uses a slightly darker color
+	 */
+	// Border-color
+	array( '.wp-block-code,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			input[type="color"],
+			input[type="date"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="email"],
+			input[type="month"],
+			input[type="number"],
+			input[type="password"],
+			input[type="range"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="text"],
+			input[type="time"],
+			input[type="url"],
+			input[type="week"],
+			select,
+			textarea,
+			.wp-block-quote,
+			.wp-block-quote[style*="text-align:center"],
+			.wp-block-quote[style*="text-align:right"],
+			#masthead .site-header-wrapper .main-navigation ul li ul li,
+			#masthead .site-header-wrapper .main-navigation ul li ul li:first-child', 'border-color', '-1' ),
+	// Border-top-color
+	array( '.comment-list .children > li,
+			.comment-list > li,
+			.wp-block-pullquote,
+			.wp-block-coblocks-hero__box .wp-block-latest-posts > li,
+			.wp-block-columns .wp-block-latest-posts > li,
+			.wp-block-cover__inner-container .wp-block-latest-posts > li,
+			.wp-block-group .wp-block-latest-posts > li', 'border-top-color', '-1' ),
+	// Border-bottom-color
+	array( '.comment-list,
+			.wp-block-pullquote,
+			hr,
+			hr.wp-block-separator,
+			#masthead,
+			.wp-block-coblocks-hero__box .wp-block-latest-posts,
+			.wp-block-columns .wp-block-latest-posts,
+			.wp-block-cover__inner-container .wp-block-latest-posts,
+			.wp-block-group .wp-block-latest-posts', 'border-bottom-color', '-1' ),
+	// Color
+	array( 'hr.wp-block-separator.is-style-dots:before,
+			#masthead .site-header-wrapper .main-navigation ul li ul,', 'color', '-1' ),
+	// Background-color
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
+
+
 ), __( 'Background Color' ) );
 
 // Link Color
@@ -223,6 +279,39 @@ add_color_rule( 'txt', '#74767e', array(
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+
+	/**
+	 * Grays
+	 * Uses a slightly lighter color
+	 */
+	// Text-color
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.entry-footer,
+			.entry-meta,
+			.footer-navigation .footer-menu,
+			.has-foreground-light-color[class],
+			.site-branding,
+			.site-info,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-table figcaption,
+			.wp-block-video figcaption,
+			figcaption', 'color', '+1' ),
 
 ), __( 'Text Color' ) );
 
