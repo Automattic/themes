@@ -113,7 +113,11 @@ add_color_rule( 'link', '#222222', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			input[type="submit"],
+			#masthead,
+			#site-navigation > div,
+			.social-navigation,
+			#site-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
 	// Text-color
 	array( '.wp-block-button.is-style-outline .wp-block-button__link,
@@ -121,7 +125,15 @@ add_color_rule( 'link', '#222222', array(
 			.wp-block-button.is-style-outline.wp-block-button__link,
 			.wp-block-button.is-style-outline.wp-block-button__link:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
-			a', 'color' ),
+			a,
+			.footer-navigation .footer-menu a:hover,
+			.site-info a:hover', 'color' ),
+
+	// Border color
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color' ),
+
+	// Border color top
+	array( '#site-navigation > div', 'border-top-color' ),
 
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
