@@ -253,7 +253,7 @@ add_color_rule( 'txt', '#444444', array(
 			textarea:focus', 'color', '#ffffff', 8 ),
 
 	// Text-color
-	// Needs contrast against `bg` with less contrast (dim)
+	// Needs contrast against `bg` with less opacity (dim)
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
@@ -277,7 +277,7 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
-			figcaption', 'color', 'bg', 4 ),
+			figcaption', 'color', '0.8' ),
 
 	// Background-color
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
