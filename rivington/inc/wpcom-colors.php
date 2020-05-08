@@ -10,7 +10,19 @@ add_color_rule( 'bg', '#060f29', array(
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
+			.main-navigation > div > ul > li > .sub-menu,
+			.site-header .main-navigation > div > ul > li:hover li > a, 
+			.site-header .main-navigation > div > ul > li.focus li > a, 
+			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+			.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li.focus li.focus > a,
+			.site-header .main-navigation > div > ul > li.focus li:hover > a,
+			.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li:hover li.focus > a,
+			.site-header .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -82,10 +94,7 @@ add_color_rule( 'bg', '#060f29', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus,
-			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
-			.site-header .main-navigation > div > ul > li.focus li > a,
-			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
+			textarea:focus', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -133,7 +142,10 @@ add_color_rule( 'bg', '#060f29', array(
 			input[type="url"],
 			input[type="week"],
 			select,
-			textarea', 'border-color', '-1' ),
+			textarea,
+			.main-navigation > div > ul > li > .sub-menu > li > a,
+			.main-navigation > div > ul > li > .sub-menu > li:first-child > a,
+			.main-navigation > div > ul > li > .sub-menu > li:last-child > a', 'border-color', '-1' ),
 	// Border-top-color
 	array( '.comment-list .children > li,
 			.comment-list > li,
@@ -165,10 +177,7 @@ add_color_rule( 'link', '#CAAB57', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"],
-			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
-			.site-header .main-navigation > div > ul > li.focus li > a,
-			.site-header .main-navigation > div > ul > li:hover li > a', 'background-color' ),
+			input[type="submit"]', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
@@ -191,9 +200,13 @@ add_color_rule( 'link', '#CAAB57', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
+			.site-header .main-navigation > div > ul > li.focus li > a,
+			.site-header .main-navigation > div > ul > li:hover li > a,
+			.site-header .main-navigation > div > ul > li:hover > a, 
+			.site-header .main-navigation > div > ul > li.focus > a, 
 			.site-header .main-navigation > div > ul > li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.focus > a,
-			.site-header .main-navigation > div > ul > li:hover > a', 'color' ),
+			.site-header .main-navigation > div > ul > li > .sub-menu > li:hover > a', 'color' ),
 
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
@@ -236,7 +249,10 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			.wp-block-pullquote,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
+			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
+			.site-header .main-navigation > div > ul > li.focus li > a,
+			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color
 	array( '.has-foreground-background-color[class],
@@ -370,16 +386,6 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			input[type="url"]:focus,
 			input[type="week"]:focus,
 			textarea:focus', 'border-color', 0.7 ),
-	// Background-color
-	array( '.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
-			.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
-			.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.focus li.focus > a,
-			.site-header .main-navigation > div > ul > li.focus li:hover > a,
-			.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li:hover li.focus > a,
-			.site-header .main-navigation > div > ul > li:hover li:hover > a', 'background-color', 0.7 ),
 
 ), __( 'Text Color' ) );
 
@@ -397,3 +403,35 @@ add_color_rule( 'fg1', '#EE4266', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function rivington_custom_colors_extra_css() { ?>
+	::selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	::-moz-selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	@media screen and (min-width: 560px) {
+		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
+			border-top: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li > a {
+			border-left: 1px solid;
+			border-right: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li:last-child > a {
+			border-bottom: 1px solid;
+		}
+		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
+		.site-header .main-navigation > div > ul > li.focus > ul::before,
+		.site-header .main-navigation > div > ul > li:hover > ul::before {
+			opacity: 0;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'rivington_custom_colors_extra_css' );
