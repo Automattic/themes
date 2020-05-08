@@ -12,10 +12,7 @@ add_color_rule( 'bg', 'white', array(
 			.site-content,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul ul,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul', 'background-color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -68,7 +65,9 @@ add_color_rule( 'bg', 'white', array(
 			input:hover[type="submit"],
 			input[type="submit"],
 			body:not(.fse-enabled) #site-navigation.main-navigation ul li a,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul li a', 'color' ),
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li a,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a, 
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -95,9 +94,6 @@ add_color_rule( 'bg', 'white', array(
 	/**
 	 * Grays
 	 */
-	// Background-color (Light)
-	array( 'body:not(.fse-enabled) #site-navigation.main-navigation ul ul li:hover,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li:hover', 'background-color', '+1' ),
 	// Border-color (Light)
 	array( '.wp-block-quote,
 			.wp-block-quote[style*="text-align:center"],
@@ -261,7 +257,12 @@ add_color_rule( 'fg1', '#f25f70', array(
 			body:not(.fse-enabled) .main-navigation,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			input[type="submit"],
+			.main-navigation > div > ul > li > .sub-menu,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li:hover', 'background-color' ),
 
 	// Text-color
 	array( '#masthead .social-navigation ul li a,
@@ -293,11 +294,7 @@ add_color_rule( 'fg1', '#f25f70', array(
 			.wp-block-quote cite,
 			.wp-block-quote[style*="text-align:center"] cite,
 			.wp-block-quote[style*="text-align:right"] cite,
-			a:hover,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a', 'color' ),
+			a:hover', 'color' ),
 
 	// Border-color
 	array( 'input[type="color"]:focus,
@@ -371,10 +368,12 @@ add_color_rule( 'fg1', '#f25f70', array(
 			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
 			body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
 			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a,
 			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
 			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a', 'color', '-2' ),
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a', 'color', '-2' ),
 
 
 ), __( 'Secondary Color' ) );
