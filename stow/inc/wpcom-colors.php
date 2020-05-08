@@ -7,6 +7,7 @@ add_color_rule( 'bg', 'white', array(
 
 	// Background-color
 	array( '#masthead,
+			#masthead .site-branding,
 			.screen-reader-text:focus,
 			.site-content,
 			body,
@@ -90,6 +91,17 @@ add_color_rule( 'bg', 'white', array(
 	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+
+	/**
+	 * Grays
+	 */
+	// Background-color (Light)
+	array( 'body:not(.fse-enabled) #site-navigation.main-navigation ul ul li:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li:hover', 'background-color', '+1' ),
+	// Border-color (Light)
+	array( '.wp-block-quote,
+			.wp-block-quote[style*="text-align:center"],
+			.wp-block-quote[style*="text-align:right"]', 'background-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
@@ -201,6 +213,35 @@ add_color_rule( 'txt', '#444444', array(
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
+	/**
+	 * Gray (Same as text color)
+	 */
+	// Text-color
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.entry-footer,
+			.entry-meta,
+			.site-branding,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-video figcaption,
+			figcaption,
+			body:not(.fse-enabled) .site-description', 'color' ),
+
 ), __( 'Text Color' ) );
 
 // Accent Color
@@ -284,5 +325,56 @@ add_color_rule( 'fg1', '#f25f70', array(
 
 	// Background-color
 	array( '.has-secondary-background-color[class]', 'background-color' ),
+
+	/**
+	 * Hovers
+	 */
+	// Background-color
+	array( '.a8c-posts-list__view-all:focus,
+			.a8c-posts-list__view-all:hover,
+			.button:focus,
+			.button:hover,
+			.has-focus.a8c-posts-list__view-all,
+			.has-focus.button,
+			.has-focus.wp-block-button__link,
+			.has-focus.wp-block-file__button,
+			.wp-block-button__link:focus,
+			.wp-block-button__link:hover,
+			.wp-block-file a.wp-block-file__button:focus,
+			.wp-block-file a.wp-block-file__button:hover,
+			.wp-block-file a.wp-block-file__button:visited,
+			.wp-block-file__button:focus,
+			.wp-block-file__button:hover,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
+			button.has-focus,
+			button:focus,
+			button:hover,
+			input.has-focus[type="submit"],
+			input:focus[type="submit"],
+			input:hover[type="submit"]', 'background-color', '-2' ),
+	// Text-color
+	array( '#masthead .social-navigation ul li a:hover,
+			.footer-navigation .footer-menu a:hover,
+			.site-info a:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-coblocks-column a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a', 'color', '-2' ),
+
 
 ), __( 'Secondary Color' ) );
