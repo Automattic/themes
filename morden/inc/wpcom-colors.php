@@ -12,8 +12,7 @@ add_color_rule( 'bg', 'white', array(
 			.screen-reader-text:focus,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'background-color' ),
 
 	// Text-color
 	array( '#toggle-menu:active,
@@ -172,6 +171,19 @@ add_color_rule( 'bg', 'white', array(
 	// Color
 	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 
+	/**
+	 * Grays
+	 * Uses a slightly less opaque color
+	 */
+	// Text color
+	array( '.site-title a:hover,
+			.site-header-wrap .main-navigation > div > ul > li:hover > a, 
+			.site-header-wrap .main-navigation > div > ul > li.focus > a, 
+			.site-header-wrap .main-navigation > div > ul > li.current-menu-item > a,
+			.site-header-wrap .main-navigation > div > ul > li:hover li.focus > a,
+			.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a,
+			.social-navigation a:hover', 'color', 0.8 ),
+
 
 ), __( 'Background Color' ) );
 
@@ -201,12 +213,7 @@ add_color_rule( 'link', '#CD2220', array(
 		.site-header-wrap .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
 		.site-header-wrap .main-navigation > div > ul > li.current-menu-item li.focus > a,
 		.site-header-wrap .main-navigation > div > ul > li.current-menu-item li:hover > a,
-		.site-header-wrap .main-navigation > div > ul > li.focus li.current-menu-item > a,
-		.site-header-wrap .main-navigation > div > ul > li.focus li.focus > a,
-		.site-header-wrap .main-navigation > div > ul > li.focus li:hover > a,
-		.site-header-wrap .main-navigation > div > ul > li:hover li.current-menu-item > a,
-		.site-header-wrap .main-navigation > div > ul > li:hover li.focus > a,
-		.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
+		.site-header-wrap .main-navigation > div > ul > li.focus li.current-menu-item > a', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
@@ -347,7 +354,12 @@ add_color_rule( 'txt', '#303030', array(
 			.site-header-wrap .main-navigation > div > ul > li.focus > ul,
 			.site-header-wrap .main-navigation > div > ul > li.focus li > a,
 			.site-header-wrap .main-navigation > div > ul > li:hover > ul,
-			.site-header-wrap .main-navigation > div > ul > li:hover li > a', 'background-color' ),
+			.site-header-wrap .main-navigation > div > ul > li:hover li > a,
+			.site-header-wrap .main-navigation > div > ul > li.focus li.focus > a,
+			.site-header-wrap .main-navigation > div > ul > li.focus li:hover > a,
+			.site-header-wrap .main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.site-header-wrap .main-navigation > div > ul > li:hover li.focus > a,
+			.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
 
 	// Border color
 	array( 'input[type="color"]:focus,
@@ -411,6 +423,7 @@ add_color_rule( 'txt', '#303030', array(
 			.wp-block-quote.is-style-large .wp-block-quote__citation,
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
+			.wp-block-table figcaption,
 			.wp-block-video figcaption,
 			figcaption', 'color' ),
 
@@ -433,3 +446,28 @@ add_color_rule( 'fg1', '#007AB7', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function barnsbury_custom_colors_extra_css() { ?>
+	::selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	::-moz-selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	@media screen and (min-width: 560px) {
+		.site-header-wrap .main-navigation > div > ul > li:hover > ul,
+		.site-header-wrap .main-navigation > div > ul > li.focus > ul,
+		.site-header-wrap .main-navigation > div > ul > li.current-menu-item > ul,
+		.site-header-wrap .main-navigation > div > ul > li:hover li, 
+		.site-header-wrap .main-navigation > div > ul > li.focus li, 
+		.site-header-wrap .main-navigation > div > ul > li.current-menu-item li {
+			border-color: transparent;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'barnsbury_custom_colors_extra_css' );
