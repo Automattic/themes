@@ -82,6 +82,52 @@ add_color_rule( 'bg', 'white', array(
 	// Background-color lightened
 	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
 
+	/**
+	 * Grays
+	 * Uses a slightly darker color
+	 */
+	// Border-color
+	array( '.main-navigation > div,
+			.wp-block-code,
+			.wp-block-table td,
+			.wp-block-table th,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			input[type="color"],
+			input[type="date"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="email"],
+			input[type="month"],
+			input[type="number"],
+			input[type="password"],
+			input[type="range"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="text"],
+			input[type="time"],
+			input[type="url"],
+			input[type="week"],
+			select,
+			table td,
+			table th,
+			textarea', 'border-color', '-1' ),
+	// Border-top-color
+	array( '.comment-list .children > li,
+			.comment-list > li,
+			.wp-block-pullquote', 'border-top-color', '-1' ),
+	// Border-bottom-color
+	array( '.comment-list,
+			.wp-block-pullquote,
+			hr,
+			hr.wp-block-separator', 'border-bottom-color', '-1' ),
+	// Color
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
+	// Background-color
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', '-1' ),
+
+
 ), __( 'Background Color' ) );
 
 // Link Color (Blue)
@@ -168,7 +214,6 @@ add_color_rule( 'txt', '#303030', array(
 			.site-info,
 			.site-title,
 			.social-navigation a,
-			.sticky-post,
 			.wp-block-code,
 			.wp-block-code pre,
 			.wp-block-pullquote,
@@ -228,6 +273,35 @@ add_color_rule( 'txt', '#303030', array(
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
+	/**
+	 * Gray (Same as text color)
+	 */
+	// Text-color
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.entry-footer,
+			.entry-meta,
+			.has-foreground-light-color[class],
+			.site-branding,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-video figcaption,
+			figcaption', 'color' ),
+
 ), __( 'Text Color' ) );
 
 // Accent Color (Red)
@@ -244,3 +318,23 @@ add_color_rule( 'fg1', '#BC2213', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function balasana_custom_colors_extra_css() { ?>
+	::selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	::-moz-selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	@media screen and (min-width: 560px) {
+		.main-navigation > div > ul > .menu-item-has-children > a::after {
+			border-top-color: currentColor;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'balasana_custom_colors_extra_css' );
