@@ -18,11 +18,11 @@ function varia_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'ffffff', // $config-global--color-background-default;
-			'border' => 'dddddd', // $config-global--color-border-default;
-			'text'   => '444444', // $config-global--color-foreground-default;
-			'link'   => '0000ff', // $config-global--color-primary-default;
-			'url'    => '0000ff', // $config-global--color-primary-default;
+			'bg'     => 'ffffff',
+			'border' => '767676',
+			'text'   => '111111',
+			'link'   => '0073aa',
+			'url'    => '0073aa',
 		);
 	}
 }
@@ -47,6 +47,17 @@ function varia_wpcom_customize_update( $wp_customize ) {
 		'type'		  => 'checkbox',
 		'settings'	  => 'hide_front_page_title',
 	) );
+
+    $wp_customize->add_setting( 'color_a11y_warning' );
+    $wp_customize->add_control( 'color_a11y_warning', array(
+        'id'          => 'id',
+        'label'       => esc_html__( 'Color Accessibility Warning', 'varia' ),
+		'description' => esc_html__( 'In order to ensure people can read your site, try to maintain a strong contrast ratio between the colors you choose here. Learn more.', 'varia' ),
+        'section'     => 'colors_manager_tool',
+		'priority'	  => 10,
+		'type'		  => 'hidden',
+    ) );
+
 }
 add_action( 'customize_register', 'varia_wpcom_customize_update' );
 
@@ -147,3 +158,24 @@ function varia_custom_colors_extra_css() { ?>
 	}
 <?php }
 add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );
+
+/**
+ * Enqueue CSS and JS for customizer pane.
+ */
+function varia_enqueue_message_scripts() {
+	wp_enqueue_script( 'varia-customize-message-wpcom-script', get_template_directory_uri() . '/inc/customize-message-wpcom.js', array( 'customize-controls' ), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'varia-customize-message-wpcom-style', get_template_directory_uri() . '/inc/customize-message-wpcom.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'varia_enqueue_message_scripts' );
+
+/**
+ * Add message about a11y
+ */
+function varia_print_customizer_message() {
+	?>
+	<script type="text/html" id="tmpl-varia-custom-message">
+		<p class="varia-custom-message"><?php esc_html_e( 'This is a custom message being added to the WordPress Customizer.', 'varia' ) ?></p>
+	</script>
+	<?php
+}
+add_action( 'customize_controls_print_footer_scripts', 'varia_print_customizer_message' );
