@@ -60,6 +60,40 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	array( '.entry .entry-content .wp-block-media-text.is-style-inset-borders:before', 'border-color' ),
 
 	/**
+	 * Grays
+	 * Uses a slightly darker color
+	 */
+	// Border-color
+	array( '.wp-block-code,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			input[type="color"],
+			input[type="date"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="email"],
+			input[type="month"],
+			input[type="number"],
+			input[type="password"],
+			input[type="range"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="text"],
+			input[type="time"],
+			input[type="url"],
+			input[type="week"],
+			select,
+			textarea', 'border-color', '-1' ),
+	// Border-top-color
+	array( '.comment-list .children > li,
+			.comment-list > li', 'border-top-color', '-1' ),
+	// Border-bottom-color
+	array( '.comment-list,
+			hr,
+			hr.wp-block-separator', 'border-bottom-color', '-1' ),
+	// Color
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
+
+	/**
 	 * Utility Classes
 	 */
 	// Text-color
@@ -113,7 +147,6 @@ add_color_rule( 'link', '#0073AA', array(
 			.main-navigation a:visited,
 			.site-title a:hover,
 			.social-navigation a:hover,
-			.sticky-post,
 			.wp-block-button.is-style-outline .wp-block-button__link,
 			.wp-block-button.is-style-outline .wp-block-button__link:active,
 			.wp-block-button.is-style-outline.wp-block-button__link,
@@ -209,6 +242,42 @@ add_color_rule( 'txt', '#1e1e1e', array(
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+
+	/**
+	 * Gray (Same as text color)
+	 */
+	// Text-color
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.entry-footer,
+			.entry-meta,
+			.footer-navigation .footer-menu,
+			.has-foreground-light-color[class],
+			.site-info,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-video figcaption,
+			figcaption,
+			.site-branding,
+			.site-description,
+			.site-title,
+			.social-navigation a', 'color' ),
+	// Border-color
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color' ),
 
 ), __( 'Text Color' ) );
 
