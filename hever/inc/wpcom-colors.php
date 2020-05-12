@@ -10,7 +10,19 @@ add_color_rule( 'bg', 'white', array(
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
+			.main-navigation > div > ul > li > .sub-menu,
+			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
+			.site-header .main-navigation > div > ul > li.focus li > a,
+			.site-header .main-navigation > div > ul > li:hover li > a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+			.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+			.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li.focus li.focus > a,
+			.site-header .main-navigation > div > ul > li.focus li:hover > a,
+			.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li:hover li.focus > a,
+			.site-header .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -59,10 +71,7 @@ add_color_rule( 'bg', 'white', array(
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"],
-			input[type="submit"],
-			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
-			.site-header .main-navigation > div > ul > li.focus li > a,
-			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
+			input[type="submit"]', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -160,7 +169,6 @@ add_color_rule( 'bg', 'white', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', '-1' ),
 
-
 ), __( 'Background Color' ) );
 
 // Link Color
@@ -180,10 +188,7 @@ add_color_rule( 'link', '#1279BE', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"],
-			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
-			.site-header .main-navigation > div > ul > li.focus li > a,
-			.site-header .main-navigation > div > ul > li:hover li > a', 'background-color' ),
+			input[type="submit"]', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
@@ -211,7 +216,12 @@ add_color_rule( 'link', '#1279BE', array(
 			article .entry-header .entry-title a:hover,
 			.site-header .main-navigation > div > ul > li.current-menu-item > a,
 			.site-header .main-navigation > div > ul > li.focus > a,
-			.site-header .main-navigation > div > ul > li:hover > a', 'color' ),
+			.site-header .main-navigation > div > ul > li:hover > a,
+			.site-header .main-navigation > div > ul > li.focus li.focus > a,
+			.site-header .main-navigation > div > ul > li.focus li:hover > a,
+			.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+			.site-header .main-navigation > div > ul > li:hover li.focus > a,
+			.site-header .main-navigation > div > ul > li:hover li:hover > a', 'color' ),
 
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
@@ -304,7 +314,10 @@ add_color_rule( 'txt', '#303030', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus', 'color' ),
+			textarea:focus,
+			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
+			.site-header .main-navigation > div > ul > li.focus li > a,
+			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color
 	array( '.a8c-posts-list__view-all:focus,
@@ -330,16 +343,7 @@ add_color_rule( 'txt', '#303030', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"],
-			.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
-			.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
-			.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.focus li.focus > a,
-			.site-header .main-navigation > div > ul > li.focus li:hover > a,
-			.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li:hover li.focus > a,
-			.site-header .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
+			input:hover[type="submit"]', 'background-color' ),
 
 	// Border color
 	array( 'input[type="color"]:focus,
@@ -415,17 +419,6 @@ add_color_rule( 'txt', '#303030', array(
 // $config-global--color-secondary-default
 add_color_rule( 'fg1', '#FFB302', array(
 
-	// Background color
-	array( '.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
-			.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
-			.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li.focus li.focus > a,
-			.site-header .main-navigation > div > ul > li.focus li:hover > a,
-			.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li:hover li.focus > a,
-			.site-header .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
-
 	/**
 	 * Utility Classes
 	 */
@@ -436,3 +429,28 @@ add_color_rule( 'fg1', '#FFB302', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function hever_custom_colors_extra_css() { ?>
+	::selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	::-moz-selection {
+		background-color: currentColor;
+		mix-blend-mode: hard-light;
+	}
+	@media screen and (min-width: 560px) {
+		.site-header .main-navigation > div > ul > li:hover > ul.sub-menu {
+			box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+		}
+		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
+		.site-header .main-navigation > div > ul > li.focus > ul::before,
+		.site-header .main-navigation > div > ul > li:hover > ul::before {
+			border: none;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'hever_custom_colors_extra_css' );
