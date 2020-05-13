@@ -12,12 +12,11 @@ add_color_rule( 'bg', '#ffffff', array(
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
+			.main-navigation > div > ul > li > .sub-menu,
+			.site-header .main-navigation > div > ul > li .sub-menu a', 'background-color' ),
 
 	// Text-color
-	// Needs contrast against `link` (primary)
-	array( '.site-header .main-navigation > div > ul > li .sub-menu a,
-			.a8c-posts-list-item__featured span,
+	array( '.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.a8c-posts-list__view-all:focus,
 			.a8c-posts-list__view-all:hover,
@@ -62,37 +61,42 @@ add_color_rule( 'bg', '#ffffff', array(
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"],
-			input[type="submit"]', 'color', 'link' ),
+			input[type="submit"]', 'color' ),
+	// Border-bottom-color
+	array( '.site-header .main-navigation > div > ul > li:hover > ul::before, 
+			.site-header .main-navigation > div > ul > li.focus > ul::before, 
+			.site-header .main-navigation > div > ul > li.current-menu-item > ul::before', 'border-bottom-color' ),
 
 	/**
 	 * Utility Classes
 	 */
 	// Text-color
-	// Needs contrast against `link` (primary)
-	array( '.has-primary-background-color[class]', 'color', 'link' ),
-	// Text-color
-	// Needs contrast against `fg1` (secondary)
-	array( '.has-secondary-background-color[class]', 'color', 'fg1' ),
-
-	// Text-color
-	// Needs contrast against `txt` (foreground)
-	array( '.has-foreground-background-color[class],
+	array( '.has-primary-background-color[class],
+			.has-secondary-background-color[class],
+			.has-foreground-background-color[class],
 			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class]', 'color', 'txt', 12 ),
-	// Text-color
-	// Needs contrast against `txt` (background)
-	array( '.has-background-color[class],
+			.has-foreground-light-background-color[class],
+			.has-background-color[class],
 			.has-background-dark-color[class],
 			.has-background-light-color[class],
 			.has-background-background-color[class],
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color', 'bg', 12 ),
+			.has-background-light-background-color[class]', 'color' ),
 	// Background-color
 	array( '.has-background-background-color[class]', 'background-color' ),
 	// Background-color darkened
 	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+
+	/**
+ 	 * Grays
+ 	 * Uses a slightly darker color
+ 	 */
+ 	// Border-color
+ 	array( '.main-navigation > div > ul > li > .sub-menu > li > a,
+ 			.main-navigation > div > ul > li > .sub-menu > li > a:first-child,
+ 			.main-navigation > div > ul > li > .sub-menu > li > a:last-child', 'border-color', '-1' ),
 
 ), __( 'Background Color' ) );
 
@@ -116,7 +120,6 @@ add_color_rule( 'link', '#3e7d98', array(
 			input[type="submit"]', 'background-color' ),
 
 	// Text-color
-	// Needs contrast against `bg`
 	array( '.has-primary-color[class],
 			.site-footer #footer-info-wrapper a:focus,
 			.site-footer #footer-info-wrapper a:hover,
@@ -126,10 +129,9 @@ add_color_rule( 'link', '#3e7d98', array(
 			.wp-block-button.is-style-outline.wp-block-button__link:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			a,
-			hr.wp-block-separator.is-style-dots:before', 'color', 'bg' ),
+			hr.wp-block-separator.is-style-dots:before', 'color' ),
 
 	// Border color top
-	// Needs contrast against `bg`
 	array( '.wp-block-code,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			input[type="color"],
@@ -148,29 +150,25 @@ add_color_rule( 'link', '#3e7d98', array(
 			input[type="url"],
 			input[type="week"],
 			select,
-			textarea', 'border-color', 'bg' ),
+			textarea', 'border-color' ),
 
 	// Border color top
-	// Needs contrast against `bg`
 	array( '.comment-list .children > li,
 			.comment-list > li,
-			.wp-block-pullquote', 'border-top-color', 'bg' ),
+			.wp-block-pullquote', 'border-top-color' ),
 
 	// Border color right
-	// Needs contrast against `bg`
 	array( '.wp-block-quote[style*="text-align: right"],
-			.wp-block-quote[style*="text-align:right"]', 'border-right-color', 'bg' ),
+			.wp-block-quote[style*="text-align:right"]', 'border-right-color' ),
 
 	// Border color bottom
-	// Needs contrast against `bg`
 	array( '.comment-list,
 			.wp-block-pullquote,
 			hr,
-			hr.wp-block-separator', 'border-bottom-color', 'bg' ),
+			hr.wp-block-separator', 'border-bottom-color' ),
 
 	// Border color left
-	// Needs contrast against `bg`
-	array( '.wp-block-quote', 'border-left-color', 'bg' ),
+	array( '.wp-block-quote', 'border-left-color' ),
 
 	/**
 	 * Utility Classes
@@ -178,8 +176,7 @@ add_color_rule( 'link', '#3e7d98', array(
 	// Background-color
 	array( '.has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	// Needs contrast against `bg`
-	array( '.has-primary-color[class]', 'color', 'bg' ),
+	array( '.has-primary-color[class]', 'color' ),
 
 ), __( 'Link Color' ) );
 
@@ -188,7 +185,6 @@ add_color_rule( 'link', '#3e7d98', array(
 add_color_rule( 'txt', '#394d55', array(
 
 	// Text-color
-	// Needs contrast against `bg` with more contrast
 	array( '.comment-meta .comment-metadata,
 			.entry-footer,
 			.entry-meta,
@@ -241,20 +237,45 @@ add_color_rule( 'txt', '#394d55', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus', 'color', 'bg', 7 ),
+			textarea:focus,
+			.site-header .main-navigation > div > ul > li .sub-menu a,
+			.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.entry-footer,
+			.entry-meta,
+			.footer-navigation .footer-menu,
+			.has-foreground-light-color[class],
+			.site-branding,
+			.site-info,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-video figcaption,
+			figcaption', 'color' ),
 
 	// Background-color
-	// Needs contrast against `bg` with more contrast
 	array( '.wp-block-cover,
 			.wp-block-cover-image,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color', 'bg', 7 ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
 	 * Utility Classes
 	 */
 	// Foreground
-	// Needs contrast against `bg`
-	array( '.has-foreground-color[class]', 'color', 'bg' ),
+	array( '.has-foreground-color[class]', 'color' ),
 	array( '.has-foreground-background-color[class]', 'background-color' ),
 
 	// Text-color darkened
@@ -274,7 +295,6 @@ add_color_rule( 'txt', '#394d55', array(
 add_color_rule( 'fg1', '#FF7A5C', array(
 
 	// Text-color
-	// Needs contrast against `bg` with more contrast
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
 			.comment-meta .comment-metadata a:active,
@@ -299,10 +319,9 @@ add_color_rule( 'fg1', '#FF7A5C', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			a:hover', 'color', 'bg', 7 ),
+			a:hover', 'color' ),
 
 	// Background-color
-	// Needs contrast against `bg` with more contrast
 	array( '.a8c-posts-list__view-all:focus,
 			.a8c-posts-list__view-all:hover,
 			.button:focus,
@@ -324,10 +343,9 @@ add_color_rule( 'fg1', '#FF7A5C', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'background-color', 'bg', 7 ),
+			input:hover[type="submit"]', 'background-color' ),
 
 	// Border-color
-	// Needs contrast against `bg`
 	array( 'input[type="color"]:focus,
 			input[type="date"]:focus,
 			input[type="datetime"]:focus,
@@ -343,23 +361,70 @@ add_color_rule( 'fg1', '#FF7A5C', array(
 			input[type="time"]:focus,
 			input[type="url"]:focus,
 			input[type="week"]:focus,
-			textarea:focus', 'border-color', 'bg' ),
+			textarea:focus', 'border-color' ),
 
 	// Text-decoration-color
-	// Needs contrast against `bg` with more contrast
 	array( '.entry-content a,
 			.main-navigation > div > ul > li > a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
-			a', 'text-decoration-color', 'bg', 7 ),
+			a', 'text-decoration-color' ),
 
 	/**
 	 * Utility Classes
 	 */
 	// Text-color
-	// Needs contrast against `bg`
-	array( '.has-secondary-color[class]', 'color', 'bg' ),
+	array( '.has-secondary-color[class]', 'color' ),
 
 	// Background-color
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function alves_custom_colors_extra_css() { ?>
+	@media screen and (min-width: 560px) {
+		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
+			border-top: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li > a {
+			border-left: 1px solid;
+			border-right: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li:last-child > a {
+			border-bottom: 1px solid;
+		}
+		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
+		.site-header .main-navigation > div > ul > li.focus > ul::before,
+		.site-header .main-navigation > div > ul > li:hover > ul::before {
+			border: none;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'alves_custom_colors_extra_css' );
+
+/**
+ * Featured Varia Palettes
+ */
+// Light
+add_color_palette( array(
+	'#FFFFFF',
+	'#1D1E1E',
+	'#C8133E',
+	'#4E2F4B',
+), 'Light' );
+// Medium
+add_color_palette( array(
+	'#EEF4F7',
+	'#242527',
+	'#35845D',
+	'#233252',
+), 'Medium' );
+// Dark
+add_color_palette( array(
+	'#1F2527',
+	'#FFFFFF',
+	'#9FD3E8',
+	'#FBE6AA',
+), 'Dark' );
