@@ -423,14 +423,6 @@ add_color_rule( 'fg1', '#007FDB', array(
  * Custom CSS
  */
 function redhill_custom_colors_extra_css() { ?>
-	::selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
-	::-moz-selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
 	@media screen and (max-width: 560px) {
 		/* Prevent background color hovers on mobile */
 		.site-header .main-navigation > div,
