@@ -460,6 +460,13 @@ add_color_rule( 'fg1', '#007AB7', array(
  * Custom CSS
  */
 function barnsbury_custom_colors_extra_css() { ?>
+	@media screen and (max-width: 559px) {
+		.entry-header {
+			width: calc( 100% + 32px );
+			max-width: calc( 100% + 32px );
+			margin-left: -16px;
+		}
+	}
 	@media screen and (min-width: 560px) {
 		.site-header-wrap .main-navigation > div > ul > li:hover > ul,
 		.site-header-wrap .main-navigation > div > ul > li.focus > ul,
