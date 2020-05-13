@@ -77,7 +77,12 @@ add_color_rule( 'bg', 'white', array(
 			input[type="submit"],
 			.site-header-wrap .main-navigation > div > ul > li.current-menu-item li > a,
 			.site-header-wrap .main-navigation > div > ul > li.focus li > a,
-			.site-header-wrap .main-navigation > div > ul > li:hover li > a', 'color' ),
+			.site-header-wrap .main-navigation > div > ul > li:hover li > a,
+			.a8c-posts-list .a8c-posts-list-item__featured span,
+			.page-title,
+			.singular .hentry .entry-header .entry-title,
+			.sticky-post,
+			.entry-header .entry-meta', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -359,7 +364,11 @@ add_color_rule( 'txt', '#303030', array(
 			.site-header-wrap .main-navigation > div > ul > li.focus li:hover > a,
 			.site-header-wrap .main-navigation > div > ul > li:hover li.current-menu-item > a,
 			.site-header-wrap .main-navigation > div > ul > li:hover li.focus > a,
-			.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a', 'background-color' ),
+			.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a,
+			.a8c-posts-list .a8c-posts-list-item__featured span,
+			.page-title,
+			.singular .hentry .entry-header .entry-title,
+			.sticky-post', 'background-color' ),
 
 	// Border color
 	array( 'input[type="color"]:focus,
