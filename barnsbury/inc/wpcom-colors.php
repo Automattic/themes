@@ -301,14 +301,6 @@ add_color_rule( 'fg1', '#655441', array(
  * Custom CSS
  */
 function barnsbury_custom_colors_extra_css() { ?>
-	::selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
-	::-moz-selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
 	@media screen and (min-width: 560px) {
 		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
 			border-top: 1px solid;
