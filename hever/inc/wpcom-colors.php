@@ -122,7 +122,10 @@ add_color_rule( 'bg', 'white', array(
 			select,
 			table td,
 			table th,
-			textarea', 'border-color', '-1' ),
+			textarea,
+			.main-navigation > div > ul > li > .sub-menu > li > a,
+			.main-navigation > div > ul > li > .sub-menu > li > a:first-child,
+			.main-navigation > div > ul > li > .sub-menu > li > a:last-child', 'border-color', '-1' ),
 	// Border-top-color
 	array( '.comment-list .children > li,
 			.comment-list > li,
@@ -443,8 +446,15 @@ function hever_custom_colors_extra_css() { ?>
 		mix-blend-mode: hard-light;
 	}
 	@media screen and (min-width: 560px) {
-		.site-header .main-navigation > div > ul > li:hover > ul.sub-menu {
-			box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
+			border-top: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li > a {
+			border-left: 1px solid;
+			border-right: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li:last-child > a {
+			border-bottom: 1px solid;
 		}
 		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
 		.site-header .main-navigation > div > ul > li.focus > ul::before,
