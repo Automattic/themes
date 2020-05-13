@@ -1399,7 +1399,7 @@ button[data-load-more-btn], .button {
 /**
  * Block Options
  */
-.wp-block-button.is-style-outline,
+.wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
 	color: #CA2017;
 	background: transparent;
@@ -1407,12 +1407,12 @@ button[data-load-more-btn], .button {
 	padding: 14px 24px;
 }
 
-.wp-block-button.is-style-outline:active,
+.wp-block-button.is-style-outline.wp-block-button__link:active,
 .wp-block-button.is-style-outline .wp-block-button__link:active {
 	color: #CA2017;
 }
 
-.wp-block-button.is-style-outline:hover, .wp-block-button.is-style-outline:focus, .wp-block-button.is-style-outline.has-focus,
+.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
 .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
@@ -2249,6 +2249,10 @@ hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 96px;
 }
 
+hr.wp-block-separator.is-style-wide {
+	border-bottom-width: 2px;
+}
+
 hr.wp-block-separator.is-style-dots.has-background, hr.wp-block-separator.is-style-dots.has-text-color {
 	background-color: transparent !important;
 }
@@ -2403,35 +2407,35 @@ table th,
 }
 
 .has-primary-color[class] {
-	color: #CA2017 !important;
+	color: #CA2017;
 }
 
 .has-secondary-color[class] {
-	color: #007FDB !important;
+	color: #007FDB;
 }
 
 .has-foreground-color[class] {
-	color: #222222 !important;
+	color: #222222;
 }
 
 .has-foreground-light-color[class] {
-	color: #666666 !important;
+	color: #666666;
 }
 
 .has-foreground-dark-color[class] {
-	color: #111111 !important;
+	color: #111111;
 }
 
 .has-background-light-color[class] {
-	color: #FAFAFA !important;
+	color: #FAFAFA;
 }
 
 .has-background-dark-color[class] {
-	color: #DDDDDD !important;
+	color: #DDDDDD;
 }
 
 .has-background-color[class] {
-	color: white !important;
+	color: white;
 }
 
 .has-background:not(.has-background-background-color) a,
@@ -2440,42 +2444,42 @@ table th,
 }
 
 .has-primary-background-color[class] {
-	background-color: #CA2017 !important;
+	background-color: #CA2017;
 	color: white;
 }
 
 .has-secondary-background-color[class] {
-	background-color: #007FDB !important;
+	background-color: #007FDB;
 	color: white;
 }
 
 .has-foreground-background-color[class] {
-	background-color: #222222 !important;
+	background-color: #222222;
 	color: white;
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: #666666 !important;
+	background-color: #666666;
 	color: white;
 }
 
 .has-foreground-dark-background-color[class] {
-	background-color: #111111 !important;
+	background-color: #111111;
 	color: white;
 }
 
 .has-background-light-background-color[class] {
-	background-color: #FAFAFA !important;
+	background-color: #FAFAFA;
 	color: #222222;
 }
 
 .has-background-dark-background-color[class] {
-	background-color: #DDDDDD !important;
+	background-color: #DDDDDD;
 	color: #222222;
 }
 
 .has-background-background-color[class] {
-	background-color: white !important;
+	background-color: white;
 	color: #222222;
 }
 
@@ -3222,6 +3226,7 @@ body:not(.fse-enabled) .footer-menu a {
 .pagination .nav-links .svg-icon {
 	display: inline-block;
 	vertical-align: middle;
+	fill: currentColor;
 }
 
 @media only screen and (min-width: 560px) {
