@@ -27,8 +27,3 @@ function alves_wpcom_setup() {
 	}
 }
 add_action( 'after_setup_theme', 'alves_wpcom_setup' );
-
-function alves_custom_colors_extra_css() { ?>
-
-<?php }
-// add_theme_support( 'custom_colors_extra_css', 'alves_custom_colors_extra_css' );

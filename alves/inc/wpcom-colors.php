@@ -89,6 +89,15 @@ add_color_rule( 'bg', '#ffffff', array(
 	// Background-color lightened
 	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
 
+	/**
+ 	 * Grays
+ 	 * Uses a slightly darker color
+ 	 */
+ 	// Border-color
+ 	array( '.main-navigation > div > ul > li > .sub-menu > li > a,
+ 			.main-navigation > div > ul > li > .sub-menu > li > a:first-child,
+ 			.main-navigation > div > ul > li > .sub-menu > li > a:last-child', 'border-color', '-1' ),
+
 ), __( 'Background Color' ) );
 
 // Link Color
@@ -370,6 +379,30 @@ add_color_rule( 'fg1', '#FF7A5C', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function alves_custom_colors_extra_css() { ?>
+	@media screen and (min-width: 560px) {
+		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
+			border-top: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li > a {
+			border-left: 1px solid;
+			border-right: 1px solid;
+		}
+		.main-navigation > div > ul > li > .sub-menu > li:last-child > a {
+			border-bottom: 1px solid;
+		}
+		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
+		.site-header .main-navigation > div > ul > li.focus > ul::before,
+		.site-header .main-navigation > div > ul > li:hover > ul::before {
+			border: none;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'alves_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes
