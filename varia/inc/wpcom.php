@@ -145,20 +145,6 @@ function varia_wpcom_editor_scripts() {
 }
 add_action( 'enqueue_block_editor_assets', 'varia_wpcom_editor_scripts' );
 
-function varia_custom_colors_extra_css() { ?>
-
-	::selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
-
-	::-moz-selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
-<?php }
-add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );
-
 /**
  * Enqueue CSS and JS for customizer pane.
  */
