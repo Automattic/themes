@@ -323,14 +323,6 @@ add_color_rule( 'fg1', '#BC2213', array(
   * Custom CSS
   */
 function balasana_custom_colors_extra_css() { ?>
-	::selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
-	::-moz-selection {
-		background-color: currentColor;
-		mix-blend-mode: hard-light;
-	}
 	@media screen and (min-width: 560px) {
 		.main-navigation > div > ul > .menu-item-has-children > a::after {
 			border-top-color: currentColor;
