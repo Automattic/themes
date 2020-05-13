@@ -372,25 +372,6 @@ add_color_rule( 'fg1', '#ff0000', array(
 
 ), __( 'Secondary Color' ) );
 
-function varia_custom_colors_extra_css() {
-	// Get stored colors
-	$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-	$foreground   = $colors_array['colors']['link']; // $config-global--color-primary-default;
-	$background   = $colors_array['colors']['bg'];   // $config-global--color-primary-default;
-?>
-	::selection {
-		background-color: <?php echo $foreground; ?>;
-		color: <?php echo $background; ?>;
-		mix-blend-mode: hard-light;
-	}
-	::-moz-selection {
-		background-color: <?php echo $foreground; ?>;
-		color: <?php echo $background; ?>;
-		mix-blend-mode: hard-light;
-	}
-<?php }
-add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );
-
 /**
  * Featured Varia Palettes
  */
