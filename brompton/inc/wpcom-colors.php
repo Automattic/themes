@@ -11,7 +11,7 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
+			.main-navigation .button', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -58,7 +58,17 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"],
-			input[type="submit"]' ),
+			input[type="submit"],
+			.footer-navigation .footer-menu,
+			.has-secondary-color[class],
+			.main-navigation,
+			.main-navigation a,
+			.main-navigation a:link,
+			.main-navigation a:visited,
+			.site-branding,
+			.site-info,
+			.site-title,
+			.social-navigation a', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -81,6 +91,63 @@ add_color_rule( 'bg', '#E8E4DD', array(
 	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+
+	/**
+	 * Grays
+	 * Uses a slightly darker color
+	 */
+	// Border-color
+	array( '.wp-block-code,
+			.wp-block-table td,
+			.wp-block-table th,
+			body .widget_eu_cookie_law_widget #eu-cookie-law,
+			input[type="color"],
+			input[type="date"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="email"],
+			input[type="month"],
+			input[type="number"],
+			input[type="password"],
+			input[type="range"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="text"],
+			input[type="time"],
+			input[type="url"],
+			input[type="week"],
+			select,
+			table td,
+			table th,
+			textarea', 'border-color', '-1' ),
+	// Border-top-color
+	array( '.comment-list .children > li,
+			.comment-list > li,
+			.wp-block-pullquote', 'border-top-color', '-1' ),
+	// Border-bottom-color
+	array( '.comment-list,
+			.wp-block-pullquote,
+			hr,
+			hr.wp-block-separator', 'border-bottom-color', '-1' ),
+	// Color
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
+	// Background-color
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', '-1' ),
+
+	/**
+	 * Menu Hovers
+	 * Uses a slightly less opaque color
+	 */
+	// Text-color
+	array( '#masthead a:hover,
+			.site-title a:hover,
+			.social-navigation a:hover', 'color', 0.8 ),
+	// Background-color
+	array( '.main-navigation .button:active, 
+			.main-navigation .button:focus, 
+			.main-navigation .button:hover', 'background-color', 0.8 ),
 
 ), __( 'Background Color' ) );
 
@@ -305,6 +372,36 @@ add_color_rule( 'txt', '#252E36', array(
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
+	/**
+	 * Gray (Same as text color)
+	 */
+	// Text-color
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.comments-area .reply,
+			.entry-footer,
+			.entry-meta,
+			.has-foreground-light-color[class],
+			.post-navigation a,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-video figcaption,
+			figcaption', 'color' ),
+
 ), __( 'Text Color' ) );
 
 // Accent Color
@@ -315,19 +412,9 @@ add_color_rule( 'fg1', '#FFFFFF', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.footer-navigation .footer-menu,
-			.has-secondary-color[class],
-			.main-navigation,
-			.main-navigation a,
-			.main-navigation a:link,
-			.main-navigation a:visited,
-			.site-branding,
-			.site-info,
-			.site-title,
-			.social-navigation a', 'color' ),
+	array( '.has-secondary-color[class]', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class],
-			.main-navigation .button', 'background-color' ),
+	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
