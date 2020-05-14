@@ -18,14 +18,11 @@ Description: Used to style Gutenberg Blocks in the editor.
 1.0 General Typography
 --------------------------------------------------------------*/
 
-.editor-styles-wrapper .wp-block,
-.editor-styles-wrapper .wp-block p,
+.editor-styles-wrapper,
+.editor-styles-wrapper p,
 .editor-default-block-appender textarea.editor-default-block-appender__content {
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 17px;
-}
-
-.editor-styles-wrapper .wp-block {
 	color: #6a6c6e;
 }
 
@@ -128,27 +125,30 @@ h6.wp-block,
 
 /* Quote styles */
 
-.wp-block-freeform.block-library-rich-text__tinymce blockquote {
+.wp-block-freeform.block-library-rich-text__tinymce blockquote,
+.wp-block-quote {
 	border-left: 3px solid #ddd;
 	margin-left: 1.5em;
 	padding-left: 1.5em;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote,
-.wp-block-freeform.block-library-rich-text__tinymce blockquote > p {
+.wp-block-freeform.block-library-rich-text__tinymce blockquote > p,
+.wp-block-quote {
 	color: #393d41;
 	font-family: "Noto Serif", Georgia, serif;
 	font-size: 1.05em;
 	font-style: italic;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce blockquote cite {
-	color: #444;
+.wp-block-freeform.block-library-rich-text__tinymce blockquote cite,
+.wp-block-quote .wp-block-quote__citation {
+	color: #6c7781;
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 0.9em;
 }
 
-.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote {
+.rtl .wp-block-freeform.block-library-rich-text__tinymce blockquote,
+.rtl .wp-block-quote {
 	border-left: 0;
 	border-right: 3px solid #ddd;
 	margin-left: 0;
@@ -284,7 +284,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	margin-right: 0;
 }
 
-.editor-styles-wrapper .wp-block .wp-block-quote p {
+.editor-styles-wrapper .wp-block-quote p {
 	color: #393d41;
 	font-family: "Noto Serif", Georgia, serif;
 	font-size: 1.05em;
@@ -303,8 +303,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding-right: 1.5em;
 }
 
-.editor-styles-wrapper .wp-block .wp-block-quote.is-large p,
-.editor-styles-wrapper .wp-block .wp-block-quote.is-style-large p {
+.editor-styles-wrapper .wp-block-quote.is-large p,
+.editor-styles-wrapper .wp-block-quote.is-style-large p {
 	font-size: 24px;
 }
 
@@ -325,8 +325,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Cover */
 
-.editor-styles-wrapper .wp-block .wp-block-cover p,
-.editor-styles-wrapper .wp-block .wp-block-cover-image p {
+.editor-styles-wrapper .wp-block-cover p,
+.editor-styles-wrapper .wp-block-cover-image p {
 	font-size: 24px;
 }
 
@@ -337,6 +337,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-file .wp-block-file__button {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #678db8;
 	border-color: #678db8;
 	border-radius: 0;
@@ -434,6 +435,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-pullquote .wp-block-pullquote__citation {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #6c7781;
 	font-size: 13px;
 	text-transform: none;
@@ -527,6 +529,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Button */
 
 .wp-block-button .wp-block-button__link {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-color: #678db8;
 	color: #fff;
 	font-size: 14px;
