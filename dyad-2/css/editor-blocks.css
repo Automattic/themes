@@ -12,6 +12,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 4.0 Blocks - Formatting
 5.0 Blocks - Layout Elements
 6.0 Blocks - Widgets
+7.0 Blocks - Utilities
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -85,7 +86,9 @@ h6 {
 }
 
 .wp-block.alignwide,
-.wp-block.alignfull {
+.wp-block[data-align="wide"],
+.wp-block.alignfull,
+.wp-block[data-align="full"] {
 	max-width: inherit;
 }
 
@@ -593,3 +596,16 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: inherit;
 	margin: 0;
 }
+
+/*--------------------------------------------------------------
+7.0 Blocks - Utilities
+--------------------------------------------------------------*/
+
+.has-bright-blue-color {
+	color: #678db8;
+}
+
+.has-bright-blue-background-color {
+	background-color: #678db8;
+}
+
