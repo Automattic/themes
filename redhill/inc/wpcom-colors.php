@@ -117,7 +117,8 @@ add_color_rule( 'bg', 'white', array(
 	array( '.comment-list .children > li,
 			.comment-list > li,
 			.entry-footer,
-			.wp-block-pullquote', 'border-top-color', '-1' ),
+			.wp-block-pullquote,
+			#jp-relatedposts h3.jp-relatedposts-headline em:before', 'border-top-color', '-1' ),
 	// Border-bottom-color
 	array( '.comment-list,
 			.wp-block-pullquote,
@@ -127,10 +128,8 @@ add_color_rule( 'bg', 'white', array(
 	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 	// Background-color
 	array( '.comments-area:before,
-			.pagination:before,
 			.post-navigation:before,
-			::-moz-selection,
-			::selection,
+			.pagination:before,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
@@ -426,37 +425,37 @@ function redhill_custom_colors_extra_css() { ?>
 	@media screen and (max-width: 560px) {
 		/* Prevent background color hovers on mobile */
 		.site-header .main-navigation > div,
-		.site-header .main-navigation > div > ul > li.current-menu-item > a, 
-		.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a, 
-		.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a, 
-		.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a, 
-		.site-header .main-navigation > div > ul > li.focus > a, 
-		.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a, 
+		.site-header .main-navigation > div > ul > li.current-menu-item > a,
+		.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+		.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+		.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+		.site-header .main-navigation > div > ul > li.focus > a,
+		.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
 		.site-header .main-navigation > div > ul > li.focus li.focus > a,
-		.site-header .main-navigation > div > ul > li.focus li:hover > a, 
+		.site-header .main-navigation > div > ul > li.focus li:hover > a,
 		.site-header .main-navigation > div > ul > li:hover > a,
 		.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-		.site-header .main-navigation > div > ul > li:hover li.focus > a, 
+		.site-header .main-navigation > div > ul > li:hover li.focus > a,
 		.site-header .main-navigation > div > ul > li:hover li:hover > a,
 		.site-header .main-navigation > div > ul > li:hover li > a {
 			background: transparent;
 			color: inherit;
 		}
-		.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a, 
-		.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a, 
-		.site-header .main-navigation > div > ul > li.focus > a, 
-		.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a, 
+		.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+		.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+		.site-header .main-navigation > div > ul > li.focus > a,
+		.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
 		.site-header .main-navigation > div > ul > li.focus li.focus > a,
-		.site-header .main-navigation > div > ul > li.focus li:hover > a, 
+		.site-header .main-navigation > div > ul > li.focus li:hover > a,
 		.site-header .main-navigation > div > ul > li:hover > a,
 		.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-		.site-header .main-navigation > div > ul > li:hover li.focus > a, 
+		.site-header .main-navigation > div > ul > li:hover li.focus > a,
 		.site-header .main-navigation > div > ul > li:hover li:hover > a {
 			text-decoration: underline;
 		}
 	}
 <?php }
-add_theme_support( 'custom_colors_extra_css', 'redhill_custom_colors_extra_css' ); 
+add_theme_support( 'custom_colors_extra_css', 'redhill_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes
