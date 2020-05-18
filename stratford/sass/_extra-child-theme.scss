@@ -16,6 +16,7 @@
  * 6.7. Posts List Block
  * 6.8. Search Block
  * 7. Widgets
+ * 8. AMP Support
  */
 
 $color_background: #{map-deep-get($config-global, "color", "background", "default")};
@@ -489,4 +490,25 @@ button[data-load-more-btn] {
 .wp-block-verse {
 	font-family: $font_family_code;
 	font-size: $font_size_base;
+}
+
+/**
+ * 8. AMP Support
+ */
+html[amp] {
+	@include media( mobile ) {
+		.site-header {
+			position: sticky;
+			top: 0;
+		}
+
+		.logged-in .site-header {
+			top: 32px;
+		}
+	}
+	@media screen and ( max-width: 782px ) {
+		.logged-in .site-header {
+			top: 46px;
+		}
+	}
 }
