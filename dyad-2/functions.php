@@ -96,7 +96,6 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Editor Styles
-	//	add_editor_style( 'editor-style.css' );
 		add_editor_style( 'css/editor-blocks.css' );
 		add_editor_style( dyad_2_fonts_url() );
 
