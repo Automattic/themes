@@ -35,18 +35,18 @@ Description: Used to style Gutenberg Blocks.
 		width: auto;
 	}
 
-	body:not(.has-post-thumbnail) .alignfull .wp-block-group__inner-container .alignwide {
+	body:not(.has-post-thumbnail) .alignfull *[class*="__inner-container"] .alignwide {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: calc(700px + 40%);
 	}
 
-	body:not(.has-post-thumbnail) .wp-block-group__inner-container .alignwide {
+	body:not(.has-post-thumbnail) *[class*="__inner-container"] .alignwide {
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	body:not(.has-post-thumbnail) .wp-block-group__inner-container > *:not(.alignwide):not(.alignfull) {
+	body:not(.has-post-thumbnail) *[class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 700px;
@@ -59,9 +59,19 @@ body:not(.has-post-thumbnail) .alignfull {
 	width: auto;
 }
 
-body:not(.has-post-thumbnail) .wp-block-group__inner-container .alignfull {
+body:not(.has-post-thumbnail) *[class*="__inner-container"] .alignfull {
 	margin-left: 0;
 	margin-right: 0;
+}
+
+/* Prevent children of columns from expanding outside of their container */
+
+body:not(.has-post-thumbnail) .wp-block-column .alignfull,
+body:not(.has-post-thumbnail) .wp-block-column .alignwide {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+	width: 100%;
 }
 
 /* Make non image-based blocks a bit narrower, so they don't get cut off. */
