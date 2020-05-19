@@ -4717,3 +4717,22 @@ input[type="submit"] {
 .is-style-circular .wp-block-button__link:before {
 	border-radius: 100px;
 }
+
+/**
+ * AMP Support
+ */
+@media only screen and (min-width: 640px) {
+	html[amp] #masthead {
+		position: sticky;
+		top: 0;
+	}
+	html[amp] .logged-in #masthead {
+		top: 32px;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	html[amp] .logged-in #masthead {
+		top: 46px;
+	}
+}
