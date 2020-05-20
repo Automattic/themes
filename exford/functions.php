@@ -53,49 +53,40 @@ if ( ! function_exists( 'exford_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'exford' ),
 					'slug'  => 'primary',
-					'color' => '#23883D',
+					'color' => ! isset($primary) ? '#23883D' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'exford' ),
 					'slug'  => 'secondary',
-					'color' => '#0963C4',
+					'color' => ! isset($secondary) ? '#0963C4' : $secondary,
 				),
 				array(
-					'name'  => __( 'Black', 'exford' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#020202',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'exford' ),
+					'name'  => __( 'Foreground', 'exford' ),
 					'slug'  => 'foreground',
-					'color' => '#111111',
+					'color' => ! isset($foreground) ? '#111111' : $foreground,
 				),
 				array(
-					'name'  => __( 'Gray', 'exford' ),
-					'slug'  => 'foreground-light',
-					'color' => '#6E6E6E',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'exford' ),
-					'slug'  => 'background-dark',
-					'color' => '#CCCCCC',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'exford' ),
-					'slug'  => 'background-light',
-					'color' => '#F7F7F7',
-				),
-				array(
-					'name'  => __( 'White', 'exford' ),
+					'name'  => __( 'Background', 'exford' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
