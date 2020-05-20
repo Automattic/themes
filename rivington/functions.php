@@ -58,52 +58,44 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'rivington' ),
 					'slug'  => 'primary',
-					'color' => '#CAAB57',
+					'color' => ! isset($primary) ? '#CAAB57' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'rivington' ),
 					'slug'  => 'secondary',
-					'color' => '#EE4266',
+					'color' => ! isset($secondary) ? '#EE4266' : $secondary,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'rivington' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#8F8F8F',
-				),
-				array(
-					'name'  => __( 'Off White', 'rivington' ),
+					'name'  => __( 'Foreground', 'rivington' ),
 					'slug'  => 'foreground',
-					'color' => '#F2F2F2',
+					'color' => ! isset($foreground) ? '#F2F2F2' : $foreground,
 				),
 				array(
-					'name'  => __( 'White', 'rivington' ),
-					'slug'  => 'foreground-light',
-					'color' => '#FFFFFF',
-				),
-				array(
-					'name'  => __( 'Dark Navy', 'rivington' ),
-					'slug'  => 'background-dark',
-					'color' => '#030713',
-				),
-				array(
-					'name'  => __( 'Navy', 'rivington' ),
+					'name'  => __( 'Background', 'rivington' ),
 					'slug'  => 'background',
-					'color' => '#060f29',
-				),
-				array(
-					'name'  => __( 'Light Navy', 'rivington' ),
-					'slug'  => 'background-light',
-					'color' => '#0d1f55',
+					'color' => ! isset($background) ? '#060f29' : $background,
 				),
 			)
 		);
+
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
 	}
