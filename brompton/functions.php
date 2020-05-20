@@ -62,49 +62,40 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'brompton' ),
 					'slug'  => 'primary',
-					'color' => '#C04239',
+					'color' => ! isset($primary) ? '#C04239' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'brompton' ),
 					'slug'  => 'secondary',
-					'color' => '#FFFFFF',
+					'color' => ! isset($secondary) ? '#FFFFFF' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'brompton' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#474747',
-				),
-				array(
-					'name'  => __( 'Gray', 'brompton' ),
+					'name'  => __( 'Foreground', 'brompton' ),
 					'slug'  => 'foreground',
-					'color' => '#505050',
+					'color' => ! isset($foreground) ? '#505050' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'brompton' ),
-					'slug'  => 'foreground-light',
-					'color' => '#666666',
-				),
-				array(
-					'name'  => __( 'Dark Ivory', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#B9B6B2',
-				),
-				array(
-					'name'  => __( 'Ivory', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#CFCDC7',
-				),
-				array(
-					'name'  => __( 'Light Ivory', 'brompton' ),
+					'name'  => __( 'Background', 'brompton' ),
 					'slug'  => 'background',
-					'color' => '#E8E4DD',
+					'color' => ! isset($background) ? '#E8E4DD' : $background,
 				),
 			)
 		);
