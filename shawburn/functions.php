@@ -53,49 +53,40 @@ if ( ! function_exists( 'shawburn_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'shawburn' ),
 					'slug'  => 'primary',
-					'color' => '#0C80A1',
+					'color' => ! isset($primary) ? '#0C80A1' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'shawburn' ),
 					'slug'  => 'secondary',
-					'color' => '#D4401C',
+					'color' => ! isset($secondary) ? '#D4401C' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'shawburn' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#222222',
-				),
-				array(
-					'name'  => __( 'Gray', 'shawburn' ),
+					'name'  => __( 'Foreground', 'shawburn' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'shawburn' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'shawburn' ),
-					'slug'  => 'background-dark',
-					'color' => '#EAEAEA',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'shawburn' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
-				),
-				array(
-					'name'  => __( 'White', 'shawburn' ),
+					'name'  => __( 'Background', 'shawburn' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
