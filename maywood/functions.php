@@ -53,49 +53,40 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'maywood' ),
 					'slug'  => 'primary',
-					'color' => '#897248',
+					'color' => ! isset($primary) ? '#897248' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'maywood' ),
 					'slug'  => 'secondary',
-					'color' => '#c4493f',
+					'color' => ! isset($secondary) ? '#c4493f' : $secondary,
 				),
 				array(
-					'name'  => __( 'Black', 'maywood' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#020202',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'maywood' ),
+					'name'  => __( 'Foreground', 'maywood' ),
 					'slug'  => 'foreground',
-					'color' => '#181818',
+					'color' => ! isset($foreground) ? '#181818' : $foreground,
 				),
 				array(
-					'name'  => __( 'Gray', 'maywood' ),
-					'slug'  => 'foreground-light',
-					'color' => '#686868',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'maywood' ),
-					'slug'  => 'background-dark',
-					'color' => '#CCCCCC',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'maywood' ),
-					'slug'  => 'background-light',
-					'color' => '#F7F7F7',
-				),
-				array(
-					'name'  => __( 'White', 'maywood' ),
+					'name'  => __( 'Background', 'maywood' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
