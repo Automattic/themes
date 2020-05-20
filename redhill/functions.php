@@ -61,49 +61,40 @@
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'redhill' ),
 					'slug'  => 'primary',
-					'color' => '#CA2017',
+					'color' => ! isset($primary) ? '#CA2017' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'redhill' ),
 					'slug'  => 'secondary',
-					'color' => '#007FDB',
+					'color' => ! isset($secondary) ? '#007FDB' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'redhill' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'redhill' ),
+					'name'  => __( 'Foreground', 'redhill' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'redhill' ),
-					'slug'  => 'foreground-light',
-					'color' => '#666666',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
-				),
-				array(
-					'name'  => __( 'White', 'redhill' ),
+					'name'  => __( 'Background', 'redhill' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
