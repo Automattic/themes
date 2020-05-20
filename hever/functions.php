@@ -53,49 +53,40 @@ if ( ! function_exists( 'hever_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'hever' ),
 					'slug'  => 'primary',
-					'color' => '#1279BE',
+					'color' => ! isset($primary) ? '#1279BE' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'hever' ),
 					'slug'  => 'secondary',
-					'color' => '#FFB302',
+					'color' => ! isset($secondary) ? '#FFB302' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'hever' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#101010',
-				),
-				array(
-					'name'  => __( 'Gray', 'hever' ),
+					'name'  => __( 'Foreground', 'hever' ),
 					'slug'  => 'foreground',
-					'color' => '#303030',
+					'color' => ! isset($foreground) ? '#303030' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'hever' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#C5C5C5',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#F8F8F8',
-				),
-				array(
-					'name'  => __( 'White', 'hever' ),
+					'name'  => __( 'Background', 'hever' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
