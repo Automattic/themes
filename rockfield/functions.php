@@ -53,49 +53,40 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'rockfield' ),
 					'slug'  => 'primary',
-					'color' => '#222222',
+					'color' => ! isset($primary) ? '#222222' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'rockfield' ),
 					'slug'  => 'secondary',
-					'color' => '#116821',
+					'color' => ! isset($secondary) ? '#116821' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'rockfield' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'rockfield' ),
+					'name'  => __( 'Foreground', 'rockfield' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'rockfield' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'rockfield' ),
-					'slug'  => 'background-dark',
-					'color' => '#E0E0E0',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'rockfield' ),
-					'slug'  => 'background-light',
-					'color' => '#F0F0F0',
-				),
-				array(
-					'name'  => __( 'White', 'rockfield' ),
+					'name'  => __( 'Background', 'rockfield' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
