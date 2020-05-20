@@ -53,49 +53,40 @@ if ( ! function_exists( 'leven_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'leven' ),
 					'slug'  => 'primary',
-					'color' => '#FF302C',
+					'color' => ! isset($primary) ? '#FF302C' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'leven' ),
 					'slug'  => 'secondary',
-					'color' => '#1285CE',
+					'color' => ! isset($secondary) ? '#1285CE' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'leven' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'leven' ),
+					'name'  => __( 'Foreground', 'leven' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'leven' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'White', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#FFFFFF',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'leven' ),
+					'name'  => __( 'Background', 'leven' ),
 					'slug'  => 'background',
-					'color' => '#F7F7F6',
+					'color' => ! isset($background) ? '#F7F7F6' : $background,
 				),
 			)
 		);
