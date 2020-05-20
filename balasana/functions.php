@@ -53,49 +53,40 @@ if ( ! function_exists( 'balasana_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'balasana' ),
 					'slug'  => 'primary',
-					'color' => '#19744C',
+					'color' => ! isset($primary) ? '#19744C' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'balasana' ),
 					'slug'  => 'secondary',
-					'color' => '#BC2213',
+					'color' => ! isset($secondary) ? '#BC2213' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'balasana' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#101010',
-				),
-				array(
-					'name'  => __( 'Gray', 'balasana' ),
+					'name'  => __( 'Foreground', 'balasana' ),
 					'slug'  => 'foreground',
-					'color' => '#303030',
+					'color' => ! isset($foreground) ? '#303030' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'balasana' ),
-					'slug'  => 'foreground-light',
-					'color' => '#505050',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'balasana' ),
-					'slug'  => 'background-dark',
-					'color' => '#D0D0D0',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'balasana' ),
-					'slug'  => 'background-light',
-					'color' => '#F0F0F0',
-				),
-				array(
-					'name'  => __( 'White', 'balasana' ),
+					'name'  => __( 'Background', 'balasana' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
