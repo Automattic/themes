@@ -53,49 +53,40 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'barnsbury' ),
 					'slug'  => 'primary',
-					'color' => '#20603C',
+					'color' => ! isset($primary) ? '#20603C' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'barnsbury' ),
 					'slug'  => 'secondary',
-					'color' => '#655441',
+					'color' => ! isset($secondary) ? '#655441' : $secondary,
 				),
 				array(
-					'name'  => __( 'Deep Blue', 'barnsbury' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#0D1B24',
-				),
-				array(
-					'name'  => __( 'Brown', 'barnsbury' ),
+					'name'  => __( 'Foreground', 'barnsbury' ),
 					'slug'  => 'foreground',
-					'color' => '#3C2323',
+					'color' => ! isset($foreground) ? '#3C2323' : $foreground,
 				),
 				array(
-					'name'  => __( 'Clay', 'barnsbury' ),
-					'slug'  => 'foreground-light',
-					'color' => '#844D4D',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'barnsbury' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Off White', 'barnsbury' ),
-					'slug'  => 'background-light',
-					'color' => '#FDF9EC',
-				),
-				array(
-					'name'  => __( 'Off White', 'barnsbury' ),
+					'name'  => __( 'Background', 'barnsbury' ),
 					'slug'  => 'background',
-					'color' => '#FFFDF6',
+					'color' => ! isset($background) ? '#FFFDF6' : $background,
 				),
 			)
 		);
