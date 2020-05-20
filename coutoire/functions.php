@@ -53,39 +53,40 @@ if ( ! function_exists( 'coutoire_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'coutoire' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => ! isset($primary) ? '#0000FF' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'coutoire' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => ! isset($secondary) ? '#FF0000' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'coutoire' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'coutoire' ),
+					'name'  => __( 'Foreground', 'coutoire' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => ! isset($foreground) ? '#444444' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'coutoire' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'White', 'coutoire' ),
+					'name'  => __( 'Background', 'coutoire' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
