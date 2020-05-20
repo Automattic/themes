@@ -53,52 +53,44 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
+		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
+		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
+		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'stratford' ),
 					'slug'  => 'primary',
-					'color' => '#2c313f',
+					'color' => ! isset($primary) ? '#2c313f' : $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'stratford' ),
 					'slug'  => 'secondary',
-					'color' => '#3e69dc',
+					'color' => ! isset($secondary) ? '#3e69dc' : $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'stratford' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'stratford' ),
+					'name'  => __( 'Foreground', 'stratford' ),
 					'slug'  => 'foreground',
-					'color' => '#74767e',
+					'color' => ! isset($foreground) ? '#74767e' : $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'stratford' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'stratford' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'stratford' ),
-					'slug'  => 'background-light',
-					'color' => '#f3f3f3',
-				),
-				array(
-					'name'  => __( 'White', 'stratford' ),
+					'name'  => __( 'Background', 'stratford' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => ! isset($background) ? '#FFFFFF' : $background,
 				),
 			)
 		);
+
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
 	}
