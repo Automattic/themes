@@ -67,11 +67,11 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#C04239'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#505050';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#E8E4DD';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -80,22 +80,22 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'brompton' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#C04239' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'brompton' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#FFFFFF' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'brompton' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#505050' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'brompton' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#E8E4DD' : $background,
+					'color' => $background,
 				),
 			)
 		);
