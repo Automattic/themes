@@ -30,7 +30,7 @@ add_editor_color_rule( 'bg', '#FFFDF6', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
-			#editor .editor-styles-wrapper body', 'background-color' ),
+			#editor .editor-styles-wrapper', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -114,7 +114,7 @@ add_editor_color_rule( 'txt', '#3C2323', array(
 		#editor .editor-styles-wrapper .wp-block-latest-posts > li > a,
 		#editor .editor-styles-wrapper .wp-block-pullquote,
 		#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before,
-		#editor .editor-styles-wrapper body,
+		#editor .editor-styles-wrapper,
 		#editor .editor-styles-wrapper hr.is-style-dots:before', 'color' ),
 
 	// Border-top-color
