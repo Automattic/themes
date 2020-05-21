@@ -145,7 +145,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
 		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF0000'; // $config-global--color-primary-default;
 		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
 		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
