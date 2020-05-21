@@ -63,11 +63,11 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#CAAB57'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#EE4266';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#F2F2F2';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#060f29';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -76,22 +76,22 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'rivington' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#CAAB57' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'rivington' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#EE4266' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'rivington' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#F2F2F2' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'rivington' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#060f29' : $background,
+					'color' => $background,
 				),
 			)
 		);
