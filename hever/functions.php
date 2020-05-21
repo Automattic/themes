@@ -58,11 +58,11 @@ if ( ! function_exists( 'hever_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#1279BE'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFB302';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#303030';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -71,22 +71,22 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'hever' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#1279BE' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'hever' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#FFB302' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'hever' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#303030' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'hever' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#FFFFFF' : $background,
+					'color' => $background,
 				),
 			)
 		);
