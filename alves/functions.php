@@ -59,10 +59,10 @@ if ( ! function_exists( 'alves_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#3E7D98'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#9B6A36';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#394d55';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -71,22 +71,22 @@ if ( ! function_exists( 'alves_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'alves' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#3E7D98' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'alves' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#9B6A36' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'alves' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#394d55' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'alves' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#ffffff' : $background,
+					'color' => $background,
 				),
 			)
 		);
