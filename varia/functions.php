@@ -146,10 +146,10 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF0000'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#0000FF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -158,22 +158,22 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'varia' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#0000FF' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'varia' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#FF0000' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'varia' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#444444' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'varia' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#FFFFFF' : $background,
+					'color' => $background,
 				),
 			)
 		);
