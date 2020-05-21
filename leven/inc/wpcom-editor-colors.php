@@ -34,19 +34,14 @@ add_editor_color_rule( 'bg', '#f7f7f6', array(
 			#editor .editor-styles-wrapper .has-foreground-dark-background-color[class],
 			#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
 			#editor .editor-styles-wrapper .has-background-color[class]', 'color' ),
-
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class]', 'background-color' ),
-
 	// Text-color darkened
 	array( '#editor .editor-styles-wrapper .has-background-dark-color[class]', 'color', '-1'  ),
-
 	// Background-color darkened
 	array( '#editor .editor-styles-wrapper .has-background-dark-background-color[class]', 'background-color', '-1' ),
-
 	// Text-color lightened
 	array( '#editor .editor-styles-wrapper .has-background-light-color[class]', 'color', '+1'  ),
-
 	// Background-color lightened
 	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class]', 'background-color', '+1' ),
 
@@ -100,10 +95,8 @@ add_editor_color_rule( 'link', '#ff302c', array(
 	/**
 	 * Utility Classes
 	 */
-
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-primary-background-color[class]', 'background-color' ),
-
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-primary-color[class]', 'color' ),
 
@@ -145,25 +138,19 @@ add_editor_color_rule( 'txt', '#444444', array(
 	/**
 	 * Utility Classes
 	 */
-
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
 			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
 			#editor .editor-styles-wrapper .has-background-light-background-color[class],
 			#editor .editor-styles-wrapper .has-foreground-color[class]', 'color' ),
-
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
-
 	// Text-color darkened
 	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class]', 'color', '-1' ),
-
 	// Background-color darkened
 	array( '#editor .editor-styles-wrapper .has-foreground-dark-background-color[class]', 'background-color', '-1' ),
-
 	// Text-color brightened
 	array( '#editor .editor-styles-wrapper .has-foreground-light-color[class]', 'color', '+2' ),
-
 	// Background-color brightened
 	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
@@ -206,7 +193,6 @@ add_editor_color_rule( 'fg1', '#1285ce', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-secondary-color[class]', 'color' ),
-
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
 
