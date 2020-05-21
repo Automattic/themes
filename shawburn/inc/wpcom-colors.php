@@ -402,7 +402,6 @@ add_color_rule( 'txt', '#444444', array(
 			.has-foreground-light-color[class],
 			.site-branding,
 			.site-info,
-			.sticky-post,
 			.wp-block-image figcaption,
 			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
 			.wp-block-latest-posts .wp-block-latest-posts__post-date,
