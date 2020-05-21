@@ -66,11 +66,11 @@
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#CA2017'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#007FDB';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -79,22 +79,22 @@
 				array(
 					'name'  => __( 'Primary', 'redhill' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#CA2017' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'redhill' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#007FDB' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'redhill' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#444444' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'redhill' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#FFFFFF' : $background,
+					'color' => $background,
 				),
 			)
 		);
