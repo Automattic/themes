@@ -5,42 +5,35 @@
 
 // Background Color (White)
 // $config-global--color-background-default
-add_editor_color_rule( 'bg', 'white', array(
+add_editor_color_rule( 'bg', '#FFFFFF', array(
 
 	// Text-color
-	array( '.button,
-			.button.has-focus,
-			.button:focus,
-			.button:hover,
-			.has-background-color[class],
-			.has-foreground-background-color[class],
-			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class],
-			.has-primary-background-color[class],
-			.has-secondary-background-color[class],
-			.wp-block-a8c-blog-posts + .button,
-			.wp-block-a8c-blog-posts + .button:focus,
-			.wp-block-a8c-blog-posts + .button:hover,
-			.wp-block-a8c-blog-posts + .has-focus.button,
-			.wp-block-button__link,
-			.wp-block-button__link.has-focus,
-			.wp-block-button__link:focus,
-			.wp-block-button__link:hover,
-			.wp-block-cover,
-			.wp-block-cover-image,
-			.wp-block-cover-image:not([class*='background-color']) .block-editor-block-list__block,
-			.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*='background-color']) .block-editor-block-list__block,
-			.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
-			.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
-			.wp-block-pullquote.is-style-solid-color', 'color' ),
+	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .button.has-focus,
+			#editor .editor-styles-wrapper .button:focus,
+			#editor .editor-styles-wrapper .button:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-cover,
+			#editor .editor-styles-wrapper .wp-block-cover-image,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .block-editor-block-list__block,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	// Background-color
-	array( '.has-background-background-color[class],
-			body', 'background-color' ),
+	array( '#editor .editor-styles-wrapper', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -76,18 +69,18 @@ add_editor_color_rule( 'bg', 'white', array(
 add_editor_color_rule( 'link', '#19744C', array(
 
 	// Text-color
-	array( '.has-primary-color[class],
-			.is-style-outline .wp-block-button__link,
-			.wp-block-a8c-blog-posts .entry-title a,
-			.wp-block-button__link.is-style-outline,
-			a', 'color' ),
+	array( '#editor .editor-styles-wrapper #editor .editor-styles-wrapper .has-primary-color[class],
+			#editor .editor-styles-wrapper #editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+			#editor .editor-styles-wrapper #editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
+			#editor .editor-styles-wrapper #editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
+			#editor .editor-styles-wrapper #editor .editor-styles-wrapper a', 'color' ),
 
 	// Background-color
-	array( '.button,
-			.has-primary-background-color[class],
-			.wp-block-a8c-blog-posts + .button,
-			.wp-block-button__link,
-			.wp-block-pullquote.is-style-solid-color', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .has-primary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
+			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -106,16 +99,13 @@ add_editor_color_rule( 'link', '#19744C', array(
 add_editor_color_rule( 'txt', '#303030', array(
 
 	// Text-color
-	array( '.editor-post-title__block .editor-post-title__input,
-			.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class],
-			.has-foreground-color[class],
-			.wp-block-pullquote,
-			body', 'color' ),
-
-	// Background-color
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
+			#editor .editor-styles-wrapper .has-background-background-color[class],
+			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .has-background-light-background-color[class],
+			#editor .editor-styles-wrapper .has-foreground-color[class],
+			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper ', 'color' ),
 
 	/**
 	 * Utility Classes
