@@ -58,11 +58,11 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager'); // color annotations array()
-		$background   = $colors_array['colors']['bg'];   // $config-global--color-background-default;
-		$primary      = $colors_array['colors']['link']; // $config-global--color-primary-default;
-		$foreground   = $colors_array['colors']['txt'];  // $config-global--color-foreground-default;
-		$secondary    = $colors_array['colors']['fg1'];  // $config-global--color-secondary-default;
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#20603C'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#655441';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#3C2323';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFDF6';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -71,22 +71,22 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'barnsbury' ),
 					'slug'  => 'primary',
-					'color' => ! isset($primary) ? '#20603C' : $primary,
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'barnsbury' ),
 					'slug'  => 'secondary',
-					'color' => ! isset($secondary) ? '#655441' : $secondary,
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'barnsbury' ),
 					'slug'  => 'foreground',
-					'color' => ! isset($foreground) ? '#3C2323' : $foreground,
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Background', 'barnsbury' ),
 					'slug'  => 'background',
-					'color' => ! isset($background) ? '#FFFDF6' : $background,
+					'color' => $background,
 				),
 			)
 		);
