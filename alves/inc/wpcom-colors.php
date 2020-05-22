@@ -72,16 +72,13 @@ add_color_rule( 'bg', '#ffffff', array(
 	 */
 	// Text-color
 	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
-			.has-foreground-background-color[class],
-			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class],
-			.has-background-color[class],
-			.has-background-dark-color[class],
-			.has-background-light-color[class],
-			.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
+		.has-secondary-background-color[class],
+		.has-foreground-background-color[class],
+		.has-foreground-dark-background-color[class],
+		.has-foreground-light-background-color[class],
+		.has-background-color[class],
+		.has-background-dark-color[class],
+		.has-background-light-color[class]', 'color' ),
 	// Background-color
 	array( '.has-background-background-color[class]', 'background-color' ),
 	// Background-color darkened
@@ -275,7 +272,10 @@ add_color_rule( 'txt', '#394d55', array(
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color[class]', 'color' ),
+	array( '.has-foreground-color[class],
+		.has-background-background-color[class],
+		.has-background-dark-background-color[class],
+		.has-background-light-background-color[class]', 'color' ),
 	array( '.has-foreground-background-color[class]', 'background-color' ),
 
 	// Text-color darkened
