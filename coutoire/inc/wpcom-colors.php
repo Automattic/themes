@@ -3,7 +3,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', 'white', array(
+add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '.screen-reader-text:focus,
@@ -126,7 +126,7 @@ add_color_rule( 'bg', 'white', array(
 
 // Link Color
 // $config-global--color-primary-default
-add_color_rule( 'link', 'black', array(
+add_color_rule( 'link', '#000000', array(
 
 	// Background-color
 	array( '.a8c-posts-list-item__featured span,
