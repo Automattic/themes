@@ -11,8 +11,8 @@ add_color_rule( 'bg', '#060f29', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			.main-navigation > div > ul > li > .sub-menu,
-			.site-header .main-navigation > div > ul > li:hover li > a, 
-			.site-header .main-navigation > div > ul > li.focus li > a, 
+			.site-header .main-navigation > div > ul > li:hover li > a,
+			.site-header .main-navigation > div > ul > li.focus li > a,
 			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
 			.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
 			.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
@@ -101,12 +101,7 @@ add_color_rule( 'bg', '#060f29', array(
 	 */
 	// Text-color
 	// Needs contrast against `link` (primary)
-	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
-			.has-foreground-background-color[class],
-			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class],
-			.has-background-color[class],
+	array( '.has-background-color[class],
 			.has-background-dark-color[class],
 			.has-background-light-color[class]', 'color' ),
 	// Background-color
@@ -200,8 +195,8 @@ add_color_rule( 'link', '#CAAB57', array(
 			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
 			.site-header .main-navigation > div > ul > li.focus li > a,
 			.site-header .main-navigation > div > ul > li:hover li > a,
-			.site-header .main-navigation > div > ul > li:hover > a, 
-			.site-header .main-navigation > div > ul > li.focus > a, 
+			.site-header .main-navigation > div > ul > li:hover > a,
+			.site-header .main-navigation > div > ul > li.focus > a,
 			.site-header .main-navigation > div > ul > li.current-menu-item > a,
 			.site-header .main-navigation > div > ul > li > .sub-menu > li:hover > a', 'color' ),
 
@@ -259,10 +254,7 @@ add_color_rule( 'txt', '#f2f2f2', array(
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color[class],
-			.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
+	array( '.has-foreground-color[class]', 'color' ),
 	array( '.has-foreground-background-color[class]', 'background-color' ),
 
 	// Text-color darkened
