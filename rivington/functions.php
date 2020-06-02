@@ -66,8 +66,11 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
 		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#CAAB57'; // $config-global--color-primary-default;
 		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#EE4266';  // $config-global--color-secondary-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#F2F2F2';  // $config-global--color-foreground-default;
 		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#060f29';   // $config-global--color-background-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#F2F2F2';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) ? $colors_array['colors']['txt'] : '#FFFFFF';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) ? $colors_array['colors']['txt'] : '#8F8F8F';  // $config-global--color-foreground-dark-default;
+
 
 		// Editor color palette.
 		add_theme_support(
@@ -84,14 +87,24 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 					'color' => $secondary,
 				),
 				array(
+					'name'  => __( 'Background', 'rivington' ),
+					'slug'  => 'background',
+					'color' => $background,
+				),
+				array(
 					'name'  => __( 'Foreground', 'rivington' ),
 					'slug'  => 'foreground',
 					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Background', 'rivington' ),
-					'slug'  => 'background',
-					'color' => $background,
+					'name'  => __( 'Foreground Light', 'rivington' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'rivington' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
