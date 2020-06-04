@@ -130,3 +130,18 @@ $font_size_md: map-deep-get($config-global, "font", "size", "md");
 .wp-block-a8c-blog-posts + .button {
 	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
 }
+
+// Table with Stripes style
+.wp-block-table.is-style-stripes {
+	border-spacing: 0;
+	border-collapse: inherit;
+	background-color: transparent;
+
+	tbody tr:nth-child(odd), &.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
+		background-color: #060f29;
+	}
+
+	th, td {
+		border-color: transparent;
+	}
+}
