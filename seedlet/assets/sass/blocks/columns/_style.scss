@@ -1,0 +1,47 @@
+.wp-block-columns {
+
+	.wp-block-column {
+		& > * {
+			margin-top: calc(0.66 * var(--global--spacing-vertical));
+			margin-bottom: calc(0.66 * var(--global--spacing-vertical));
+
+			@include media(mobile) {
+				margin-top: var(--global--spacing-vertical);
+				margin-bottom: var(--global--spacing-vertical);
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.wp-block-column:not(:last-child) {
+		margin-bottom: calc(0.66 * var(--global--spacing-vertical));
+
+		@include media(mobile) {
+			margin-bottom: var(--global--spacing-vertical);
+		}
+
+		@include media(laptop) {
+			/* Resetting margins to match _block-container.scss */
+			margin-bottom: 0;
+		}
+	}
+
+	/**
+	 * Block Options
+	 */
+	&.alignfull {
+		padding-left: var(--global--spacing-unit);
+		padding-right: var(--global--spacing-unit);
+	}
+}

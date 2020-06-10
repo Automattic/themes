@@ -1,0 +1,26 @@
+/**
+ * Filter by Product List Widgets
+ */
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.widget.woocommerce ul.product_list_widget:not(.woocommerce-mini-cart) {
+
+		@include media(mobile) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			& > li {
+				flex: 0 1 auto;
+				margin-bottom: var(--global--spacing-vertical);
+				padding: 0;
+				width: calc((100% / 3) - var(--global--spacing-unit));
+
+				&:nth-child(3n+2):last-child {
+					margin-left: calc(1.5 * var(--global--spacing-unit));
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}
