@@ -10,11 +10,11 @@ function coutoire_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'white', // $config-global--color-background-default
+			'bg'     => 'FFFFFF', // $config-global--color-background-default
 			'border' => 'DDDDDD', // $config-global--color-border-default
 			'text'   => '444444', // $config-global--color-foreground-default
-			'link'   => 'black', // $config-global--color-primary-default
-			'url'    => 'black', // $config-global--color-primary-default
+			'link'   => '000000', // $config-global--color-primary-default
+			'url'    => '000000', // $config-global--color-primary-default
 		);
 	}
 }
