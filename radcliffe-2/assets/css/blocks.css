@@ -52,7 +52,8 @@ p.alignfull {
 }
 
 @media (min-width: 1160px) {
-	.alignwide {
+	.alignwide,
+	.wp-block-group.alignfull .alignwide {
 		margin-left: -25%;
 		margin-right: -25%;
 		width: auto;
@@ -61,7 +62,8 @@ p.alignfull {
 }
 
 @media (min-width: 750px) {
-	.alignfull {
+	.alignfull,
+	.wp-block-group.alignfull .alignfull {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
 		width: auto;
@@ -92,10 +94,19 @@ p.alignfull {
 	}
 }
 
+/* Nested Blocks */
+
 .alignfull > *,
 .alignwide > * {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+*[class^="wp-block"] .alignwide,
+*[class^="wp-block"] .alignfull {
+	max-width: 100%;
+	margin-left: inherit;
+	margin-right: inherit;
 }
 
 .alignfull img,

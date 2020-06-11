@@ -30,7 +30,8 @@ Description: Used to style Gutenberg Blocks.
 }
 
 @media (min-width: 1140px) {
-	body:not(.has-sidebar) .alignwide {
+	body:not(.has-sidebar) .alignwide,
+	body:not(.has-sidebar) .wp-block-group.alignfull .alignwide {
 		margin-left: -25%;
 		margin-right: -25%;
 		max-width: 1000%;
@@ -38,7 +39,8 @@ Description: Used to style Gutenberg Blocks.
 	}
 }
 
-body:not(.has-sidebar) .alignfull {
+body:not(.has-sidebar) .alignfull,
+body:not(.has-sidebar) .wp-block-group.alignfull .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
@@ -63,6 +65,13 @@ body:not(.has-sidebar) .wp-block-latest-posts.alignfull {
 .wp-block-embed.is-type-video.alignfull iframe {
 	width: 100% !important;
 	height: 100% !important;
+}
+
+body:not(.has-sidebar) *[class^="wp-block"] .alignwide,
+body:not(.has-sidebar) *[class^="wp-block"] .alignfull {
+	max-width: inherit;
+	margin-left: inherit;
+	margin-right: inherit;
 }
 
 /*--------------------------------------------------------------
