@@ -40,6 +40,8 @@ add_color_rule( 'bg', '#060f29', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link,
+			.wp-block-button.is-style-outline .wp-block-button__link,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -49,6 +51,12 @@ add_color_rule( 'bg', '#060f29', array(
 			.wp-block-file__button:focus,
 			.wp-block-file__button:hover,
 			.wp-block-pullquote.is-style-solid-color,
+			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-image-text,
+			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-text,
+			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
+			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-image-text,
+			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-text,
+			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
@@ -101,7 +109,12 @@ add_color_rule( 'bg', '#060f29', array(
 	 */
 	// Text-color
 	// Needs contrast against `link` (primary)
-	array( '.has-background-color[class],
+	array( '.has-primary-background-color[class],
+			.has-secondary-background-color[class],
+			.has-foreground-background-color[class],
+			.has-foreground-dark-background-color[class],
+			.has-foreground-light-background-color[class],
+			.has-background-color[class],
 			.has-background-dark-color[class],
 			.has-background-light-color[class]', 'color' ),
 	// Background-color
@@ -183,10 +196,10 @@ add_color_rule( 'link', '#CAAB57', array(
 			.page-title a:focus,
 			.page-title a:hover,
 			.site-title a:hover,
-			.wp-block-button.is-style-outline .wp-block-button__link,
-			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
-			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
@@ -248,6 +261,8 @@ add_color_rule( 'txt', '#f2f2f2', array(
 
 	// Background-color
 	array( '.has-foreground-background-color[class],
+			table.is-style-stripes tbody tr:nth-child(odd),
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
