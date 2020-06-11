@@ -1401,10 +1401,19 @@ button[data-load-more-btn], .button {
  */
 .wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: #3E7D98;
-	background: transparent;
+	color: inherit;
 	border: 2px solid currentcolor;
 	padding: 14px 48px;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background: transparent;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #3E7D98;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:active,
