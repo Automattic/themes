@@ -51,6 +51,8 @@ add_color_rule( 'bg', '#060f29', array(
 			.wp-block-file__button:focus,
 			.wp-block-file__button:hover,
 			.wp-block-pullquote.is-style-solid-color,
+			table.is-style-stripes tbody tr:nth-child(odd),
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-image-text,
 			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-text,
 			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
