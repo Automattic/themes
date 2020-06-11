@@ -9,4 +9,9 @@ table,
 	th {
 		padding: calc( 0.5 * #{map-deep-get($config-global, "spacing", "unit")} );
 	}
+
+	&.is-style-stripes tbody tr:nth-child(odd) {
+		background-color: #{map-deep-get($config-global, "color", "border", "light")};
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	}
 }

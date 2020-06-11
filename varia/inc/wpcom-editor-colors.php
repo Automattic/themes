@@ -31,6 +31,8 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
@@ -190,6 +192,10 @@ add_editor_color_rule( 'txt', '#444444', array(
 	// Border-bottom-color with less opacity (dim)
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', 0.8 ),
+
+	// Background-color
+	array( '#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd)', 'background-color' ),
 
 	/**
 	 * Utility Classes

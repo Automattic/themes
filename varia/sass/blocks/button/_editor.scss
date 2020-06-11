@@ -20,14 +20,14 @@
 	&.is-style-outline,
 	.is-style-outline & {
 
-		color: #{map-deep-get($config-button, "color", "background")};
 		background: transparent;
 		border: 2px solid currentcolor;
 
 		&:hover,
 		&:focus,
 		&.has-focus {
-			color: #{map-deep-get($config-button, "color", "background-hover")};
+			color: #{map-deep-get($config-global, "color", "primary", "hover")};
+			background: transparent;
 		}
 	}
 
