@@ -53,6 +53,8 @@ add_color_rule( 'bg', '#ffffff', array(
 			.wp-block-gallery .blocks-gallery-image figcaption,
 			.wp-block-gallery .blocks-gallery-item figcaption,
 			.wp-block-pullquote.is-style-solid-color,
+			table.is-style-stripes tbody tr:nth-child(odd),
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
@@ -265,6 +267,8 @@ add_color_rule( 'txt', '#394d55', array(
 	// Background-color
 	array( '.wp-block-cover,
 			.wp-block-cover-image,
+			table.is-style-stripes tbody tr:nth-child(odd),
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
