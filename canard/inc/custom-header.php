@@ -33,10 +33,11 @@ if ( ! function_exists( 'canard_header_style' ) ) :
 function canard_header_style() {
 	$header_text_color = get_header_textcolor();
 
-	preg_match( '/^(?:[0-9a-fA-F]{3}){1,2}$/', $header_text_color, $hex_match );
-
-	// If no custom options for text are set, let's bail
-	if ( 'blank' !== $header_text_color && count( $hex_match ) === 0 ) {
+	/*
+	 * If no custom options for text are set, let's bail.
+	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+	 */
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 		return;
 	}
 
