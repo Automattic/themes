@@ -15,6 +15,8 @@ add_editor_color_rule( 'bg', '#060f29', array(
 			#editor .editor-styles-wrapper .button.has-focus,
 			#editor .editor-styles-wrapper .button:focus,
 			#editor .editor-styles-wrapper .button:hover,
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
@@ -24,12 +26,12 @@ add_editor_color_rule( 'bg', '#060f29', array(
 			#editor .editor-styles-wrapper .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class=*"background-color"]) .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class=*"background-color"]) .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class=*"background-color"]) .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class=*"background-color"]) .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class=*"background-color"]) .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class=*"background-color"]) .wp-block-cover__inner-container', 'color' ),
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container', 'color' ),
 
 	/**
 	 * Utility Classes
