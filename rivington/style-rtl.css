@@ -1401,10 +1401,19 @@ button[data-load-more-btn], .button {
  */
 .wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: #CAAB57;
-	background: transparent;
+	color: inherit;
 	border: 2px solid currentcolor;
 	padding: 14px 16px;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background: transparent;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #CAAB57;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:active,
@@ -1501,7 +1510,6 @@ button[data-load-more-btn], .button {
 	min-height: calc( 15 * 32px);
 	margin-top: inherit;
 	margin-bottom: inherit;
-	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
 	 * Block Options
@@ -1514,6 +1522,7 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image .wp-block-cover-text {
+	color: currentColor;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -1531,15 +1540,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link),
 .wp-block-cover-image .wp-block-cover-text a.wp-block-button__link:hover {
 	color: currentColor;
-}
-
-.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text {
-	color: white;
 }
 
 .wp-block-cover h2,
@@ -2324,6 +2324,12 @@ table th,
 	word-break: break-all;
 }
 
+table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #4b5263;
+	color: #f2f2f2;
+}
+
 .wp-block-video figcaption {
 	color: white;
 	font-size: 0.64rem;
@@ -2434,6 +2440,7 @@ table th,
 	color: #030713;
 }
 
+.has-background-dim,
 .has-background-color {
 	color: #060f29;
 }
@@ -2470,7 +2477,7 @@ table th,
 }
 
 .has-background-light-background-color,
-.has-foreground-light-background-color.has-background-dim {
+.has-background-light-background-color.has-background-dim {
 	background-color: #0d1f55;
 }
 
@@ -4275,6 +4282,10 @@ p:not(.site-title) a:hover {
 [class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 [style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
 	text-decoration: underline;
+}
+
+.wp-block-table .has-background[class*="has-subtle"] {
+	color: #060f29;
 }
 
 /**
