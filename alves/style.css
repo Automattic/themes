@@ -1401,10 +1401,19 @@ button[data-load-more-btn], .button {
  */
 .wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: #3E7D98;
-	background: transparent;
+	color: inherit;
 	border: 2px solid currentcolor;
 	padding: 14px 48px;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background: transparent;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #3E7D98;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:active,
@@ -1501,7 +1510,6 @@ button[data-load-more-btn], .button {
 	min-height: calc( 17 * 32px);
 	margin-top: inherit;
 	margin-bottom: inherit;
-	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
 	 * Block Options
@@ -1514,6 +1522,7 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image .wp-block-cover-text {
+	color: currentColor;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -1531,15 +1540,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link),
 .wp-block-cover-image .wp-block-cover-text a.wp-block-button__link:hover {
 	color: currentColor;
-}
-
-.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text {
-	color: white;
 }
 
 .wp-block-cover h2,
@@ -2439,6 +2439,7 @@ table th,
 	color: #d9d9d9;
 }
 
+.has-background-dim,
 .has-background-color {
 	color: #ffffff;
 }
