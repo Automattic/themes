@@ -33,9 +33,10 @@ if ( ! function_exists( 'canard_header_style' ) ) :
 function canard_header_style() {
 	$header_text_color = get_header_textcolor();
 
+	preg_match( '/^(?:[0-9a-fA-F]{3}){1,2}$/', $header_text_color, $hex_match );
+
 	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
+	if ( 'blank' !== $header_text_color && count( $hex_match ) === 0 ) {
 		return;
 	}
 
