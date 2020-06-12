@@ -42,6 +42,8 @@ add_color_rule( 'bg', '#ffffff', array(
 			.wp-block-cover.has-background-background-color .wp-block-cover-image-text,
 			.wp-block-cover.has-background-background-color .wp-block-cover-text,
 			.wp-block-cover.has-background-background-color .wp-block-cover__inner-container,
+			.wp-block-cover.has-background-dim,
+			.wp-block-cover-image.has-background-dim,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -265,8 +267,8 @@ add_color_rule( 'txt', '#394d55', array(
 			figcaption', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover,
-			.wp-block-cover-image,
+	array( '.wp-block-cover.has-background-dim,
+			.wp-block-cover-image.has-background-dim,
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
