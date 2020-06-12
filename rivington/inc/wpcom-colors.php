@@ -59,6 +59,8 @@ add_color_rule( 'bg', '#060f29', array(
 			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-image-text,
 			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-text,
 			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
+			.wp-block-cover.has-background-dim,
+			.wp-block-cover-image.has-background-dim,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
@@ -262,7 +264,9 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color
-	array( '.has-foreground-background-color[class],
+	array( '.wp-block-cover.has-background-dim,
+			.wp-block-cover-image.has-background-dim,
+			.has-foreground-background-color[class],
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
