@@ -7,6 +7,11 @@
 	margin-top: inherit;
 	margin-bottom: inherit;
 
+	&.has-background-dim {
+		background-color: #{map-deep-get($config-cover, "color", "background")};
+		color: #{map-deep-get($config-cover, "color", "foreground")};
+	}
+
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text,

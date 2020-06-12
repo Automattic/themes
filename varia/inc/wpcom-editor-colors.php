@@ -43,6 +43,8 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	// Background-color
@@ -194,7 +196,9 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', 0.8 ),
 
 	// Background-color
-	array( '#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+	array( '#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd)', 'background-color' ),
 
 	/**
