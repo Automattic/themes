@@ -1,0 +1,46 @@
+/**
+ * Button
+ */
+
+body[class*="woocommerce"] #page .site-content { // adding #page here to override default wc styles without !important
+
+	#respond input#submit,
+	#respond input#submit.alt,
+	a.button,
+	a.button.alt,
+	button.button,
+	button.button.alt,
+	input.button,
+	input.button.alt,
+	.cart .button,
+	.cart input.button,
+	a.added_to_cart,
+	.woocommerce #respond input#submit,
+	.woocommerce a.button,
+	.woocommerce button.button,
+	.woocommerce input.button,
+	.woocommerce .widget_shopping_cart .buttons a,
+	.woocommerce.widget_shopping_cart .buttons a {
+		// Extend button style
+		@extend %button-style;
+	}
+
+	.woocommerce #respond input#submit.disabled,
+	.woocommerce #respond input#submit:disabled,
+	.woocommerce #respond input#submit:disabled[disabled],
+	.woocommerce a.button.disabled,
+	.woocommerce a.button:disabled,
+	.woocommerce a.button:disabled[disabled],
+	.woocommerce button.button.disabled,
+	.woocommerce button.button:disabled,
+	.woocommerce button.button:disabled[disabled],
+	.woocommerce input.button.disabled,
+	.woocommerce input.button:disabled,
+	.woocommerce input.button:disabled[disabled] {
+		cursor: not-allowed;
+
+		&:hover {
+			background-color: var(--global--color-primary-default);
+		}
+	}
+}

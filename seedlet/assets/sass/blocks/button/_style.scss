@@ -1,0 +1,49 @@
+/**
+ * Button
+ */
+button,
+.button,
+input[type="submit"],
+.wp-block-button__link {
+	// Extend button style
+	@extend %button-style;
+}
+
+/**
+ * Block Options
+ */
+.wp-block-button {
+
+	font-family: var(--button--font-family);
+	font-size: var(--button--font-size);
+	font-weight: var(--button--font-weight);
+	line-height: var(--button--line-height);
+
+	// Outline Style
+	&.is-style-outline {
+		border: none;
+
+		&.wp-block-button__link,
+		.wp-block-button__link {
+			color: var(--button--color-background);
+			background: transparent;
+			border: var(--button--border-width) solid currentcolor;
+			padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+			&:active {
+				color: var(--button--color-background);
+			}
+
+			&:hover,
+			&:focus,
+			&.has-focus {
+				color: var(--button--color-background-hover);
+			}
+		}
+	}
+
+	// Squared Style
+	&.is-style-squared .wp-block-button__link {
+		border-radius: 0;
+	}
+}
