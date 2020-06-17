@@ -1083,7 +1083,13 @@ table.is-style-stripes tbody tr:nth-child(odd),
 
 .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
 .has-background a:not(.wp-block-button__link),
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+.has-background p:not(.has-text-color),
+.has-background h1:not(.has-text-color),
+.has-background h2:not(.has-text-color),
+.has-background h3:not(.has-text-color),
+.has-background h4:not(.has-text-color),
+.has-background h5:not(.has-text-color),
+.has-background h6:not(.has-text-color) {
 	color: currentColor;
 }
 
@@ -1373,8 +1379,4 @@ table.is-style-stripes tbody tr:nth-child(odd),
 
 .wp-block-a8c-blog-posts + .button {
 	font-size: 1em;
-}
-
-.wp-block-table .has-background[class*="has-subtle"] {
-	color: #060f29;
 }
