@@ -6,24 +6,21 @@
 	margin-top: inherit;
 	margin-bottom: inherit;
 
+	&.has-background-dim {
+		background-color: #{map-deep-get($config-cover, "color", "background")};
+		color: #{map-deep-get($config-cover, "color", "foreground")};
+	}
+
 	.wp-block-cover__inner-container,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text {
-		color: currentColor; // uses text color specified with background-color options in /blocks/utilities/_style.scss
+		color: currentColor;
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 
-		a {
+		a:not(.wp-block-button__link),
+		a.wp-block-button__link:hover {
 			color: currentColor;
-		}
-	}
-
-	/* default & custom background-color */
-	&:not([class*='background-color']){
-		.wp-block-cover__inner-container,
-		.wp-block-cover-image-text,
-		.wp-block-cover-text {
-			color: #{map-deep-get($config-cover, "color", "foreground")};
 		}
 	}
 

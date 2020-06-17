@@ -46,15 +46,4 @@
 		});
 	});
 
-	// Image filter.
-	wp.customize( 'image_filter', function( value ) {
-		value.bind( function( to ) {
-			if ( to ) {
-				$( 'body' ).addClass( 'image-filters-enabled' );
-			} else {
-				$( 'body' ).removeClass( 'image-filters-enabled' );
-			}
-		} );
-	} );
-
 })( jQuery );

@@ -19,10 +19,17 @@ input[type="submit"],
 	&.is-style-outline.wp-block-button__link,
 	&.is-style-outline .wp-block-button__link {
 
-		color: #{map-deep-get($config-button, "color", "background")};
-		background: transparent;
+		color: inherit;
 		border: #{map-deep-get($config-button, "border-width")} solid currentcolor;
 		padding: #{map-deep-get($config-button, "padding", "vertical") - map-deep-get($config-button, "border-width")} #{map-deep-get($config-button, "padding", "horizontal")};
+
+		&:not(.has-background-color) {
+			background: transparent;
+		}
+
+		&:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "background")};
+		}
 
 		&:active {
 			color: #{map-deep-get($config-button, "color", "background")};
