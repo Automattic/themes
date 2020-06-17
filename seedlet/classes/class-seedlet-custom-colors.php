@@ -22,12 +22,12 @@ class Seedlet_Custom_Colors {
 		 * Define color variables
 		 */
 		$this->seedlet_custom_color_variables = array(
-			array( '--global--color-background', '#FFFFFF', 'Background Color' ),
-			array( '--global--color-foreground', '#333333', 'Foreground Color' ),
-			array( '--global--color-primary', '#000000', 'Primary Color' ),
-			array( '--global--color-secondary', '#3C8067', 'Secondary Color' ),
-			array( '--global--color-tertiary', '#FAFBF6', 'Tertiary Color' ),
-			array( '--global--color-border', '#EFEFEF', 'Borders Color' )
+			array( '--global--color-background', '#FFFFFF', __( 'Background Color', 'seedlet' ) ),
+			array( '--global--color-foreground', '#333333', __( 'Foreground Color', 'seedlet' ) ),
+			array( '--global--color-primary', '#000000', __( 'Primary Color', 'seedlet' ) ),
+			array( '--global--color-secondary', '#3C8067', __( 'Secondary Color', 'seedlet' ) ),
+			array( '--global--color-tertiary', '#FAFBF6', __( 'Tertiary Color', 'seedlet' ) ),
+			array( '--global--color-border', '#EFEFEF', __( 'Borders Color', 'seedlet' ) )
 		);
 
 		/**
@@ -191,7 +191,7 @@ class Seedlet_Custom_Colors {
 				"seedlet_$variable[0]",
 				array(
 					'section'   => 'seedlet_options',
-					'label'     => __( $variable[2], 'seedlet' ),
+					'label'     => $variable[2],
 					'active_callback' => function() use ( $wp_customize ) {
 						return ( 'custom' === $wp_customize->get_setting( 'custom_colors_active' )->value() );
 					},
@@ -292,7 +292,7 @@ class Seedlet_Custom_Colors {
 		wp_script_add_data( $handle, 'data', sprintf( 'var _validateWCAGColorContrastExports = %s;', wp_json_encode( $exports ) ) );
 
 		// Custom color contrast validation text
-		wp_localize_script( $handle, 'validateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.'));
+		wp_localize_script( $handle, 'validateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.', 'seedlet' ));
 	}
 
 	/**
