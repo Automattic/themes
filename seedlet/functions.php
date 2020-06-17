@@ -205,47 +205,47 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 			'editor-gradient-presets',
 			array(
 				array(
-					'name'     => __( 'Diagonal', 'en' ),
+					'name'     => __( 'Diagonal', 'seedlet' ),
 					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b  . ' 50%)',
 					'slug'     => 'hard-diagonal',
 				),
 				array(
-					'name'     => __( 'Diagonal inverted', 'en' ),
+					'name'     => __( 'Diagonal inverted', 'seedlet' ),
 					'gradient' => 'linear-gradient(to top left, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b . ' 50%)',
 					'slug'     => 'hard-diagonal-inverted',
 				),
 				array(
-					'name'     => __( 'Horizontal', 'en' ),
+					'name'     => __( 'Horizontal', 'seedlet' ),
 					'gradient' => 'linear-gradient(to bottom, ' . $gradient_color_a . ' 50%, ' . $gradient_color_b . ' 50%)',
 					'slug'     => 'hard-horizontal',
 				),
 				array(
-					'name'     => __( 'Horizontal inverted', 'en' ),
+					'name'     => __( 'Horizontal inverted', 'seedlet' ),
 					'gradient' => 'linear-gradient(to top, ' . $gradient_color_a . ' 50%, ' . $gradient_color_b . ' 50%)',
 					'slug'     => 'hard-horizontal-inverted',
 				),
 				array(
-					'name'     => __( 'Diagonal gradient', 'en' ),
+					'name'     => __( 'Diagonal gradient', 'seedlet' ),
 					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
 					'slug'     => 'diagonal',
 				),
 				array(
-					'name'     => __( 'Diagonal inverted gradient', 'en' ),
+					'name'     => __( 'Diagonal inverted gradient', 'seedlet' ),
 					'gradient' => 'linear-gradient(to top left, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
 					'slug'     => 'diagonal-inverted',
 				),
 				array(
-					'name'     => __( 'Horizontal gradient', 'en' ),
+					'name'     => __( 'Horizontal gradient', 'seedlet' ),
 					'gradient' => 'linear-gradient(to bottom, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
 					'slug'     => 'horizontal',
 				),
 				array(
-					'name'     => __( 'Horizontal inverted gradient', 'en' ),
+					'name'     => __( 'Horizontal inverted gradient', 'seedlet' ),
 					'gradient' => 'linear-gradient(to top, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
 					'slug'     => 'horizontal-inverted',
 				),
 				array(
-					'name'     => __( 'Stripe', 'en' ),
+					'name'     => __( 'Stripe', 'seedlet' ),
 					'gradient' => 'linear-gradient(to bottom, transparent 20%, ' . $gradient_color_a . ' 20%, ' . $gradient_color_a . ' 80%, transparent 80%)',
 					'slug'     => 'stripe',
 				),
