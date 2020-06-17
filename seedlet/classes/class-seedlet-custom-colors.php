@@ -183,7 +183,8 @@ class Seedlet_Custom_Colors {
 			$wp_customize->add_setting(
 				"seedlet_$variable[0]",
 				array(
-					'default'	=> esc_html( $variable[1] )
+					'default'	=> esc_html( $variable[1] ),
+					'sanitize_callback' => 'sanitize_hex_color'
 				)
 			);
 			$wp_customize->add_control( new WP_Customize_Color_Control(
