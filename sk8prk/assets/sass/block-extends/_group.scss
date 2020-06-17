@@ -1,0 +1,12 @@
+.wp-block-group {
+    &.is-style-outline {
+        border: 3px solid var(--global--color-border);
+        padding: var(--global--spacing-unit);
+        @include media( mobile ){
+            padding: calc( 3 * var(--global--spacing-unit) );
+        }
+        &.alignwide {
+            max-width: calc( var(--responsive--alignwide-width) + 6 * var(--global--spacing-unit));
+        }
+    }
+}
