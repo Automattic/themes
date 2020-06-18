@@ -363,18 +363,7 @@ function seedlet_scripts() {
 	}
 
 	// Main navigation scripts
-	// Check to see if the menu is not assigned and or empty
-	$menu = wp_nav_menu(
-		array (
-			'echo' => FALSE,
-			'menu' => 'primary',
-			'fallback_cb' => '__return_false'
-		)
-	);
-
-	if ( ! empty ( $menu ) ) {
-		wp_enqueue_script( 'seedlet-primary-navigation-script', get_template_directory_uri() . '/assets/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
-	}
+	wp_enqueue_script( 'seedlet-primary-navigation-script', get_template_directory_uri() . '/assets/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'seedlet_scripts' );
 
