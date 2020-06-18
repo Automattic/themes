@@ -58,13 +58,13 @@ if ( ! function_exists( 'alves_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
 		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#3E7D98'; // $config-global--color-primary-default;
 		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#9B6A36';  // $config-global--color-secondary-default;
 		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
 		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#394d55';  // $config-global--color-foreground-default;
-		$foreground_light = ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ? $colors_array['colors']['txt'] : '#4d6974';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ? $colors_array['colors']['txt'] : '#253136';  // $config-global--color-foreground-dark-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#4d6974';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#253136';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
