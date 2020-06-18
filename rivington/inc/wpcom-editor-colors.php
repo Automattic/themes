@@ -129,7 +129,10 @@ add_editor_color_rule( 'txt', '#f2f2f2', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-foreground-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-color[class],
+			#editor .editor-styles-wrapper .has-background-background-color[class],
+			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .has-background-light-background-color[class]', 'color' ),
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
 	// Text-color darkened
