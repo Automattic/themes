@@ -758,13 +758,23 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
 	color: var(--global--color-primary-hover);
+}
+
+a:active {
+	color: var(--global--color-primary);
 }
 
 button,
 a {
 	cursor: pointer;
+}
+
+*:focus {
+	outline-width: 1px;
+	outline-style: dotted;
+	outline-color: var(--global--color-secondary);
 }
 
 /* Text meant only for screen readers. */
