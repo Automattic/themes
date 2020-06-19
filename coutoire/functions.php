@@ -174,8 +174,10 @@ function coutoire_scripts() {
 	// enqueue child RTL styles
 	wp_style_add_data( 'coutoire-style', 'rtl', 'replace' );
 
-	// enqueue header spacing JS
-	wp_enqueue_script('coutoire-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	if ( ! coutoire_is_amp() ) {
+		// enqueue header spacing JS.
+		wp_enqueue_script( 'coutoire-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'coutoire_scripts', 99 );
@@ -189,3 +191,10 @@ function coutoire_editor_styles() {
 	wp_enqueue_style( 'coutoire-editor-fonts', coutoire_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'coutoire_editor_styles' );
+
+/**
+ * Checks whether the endpoint is AMP.
+ */
+function coutoire_is_amp() {
+	return ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() );
+}

@@ -4318,3 +4318,25 @@ a.wp-block-file__button {
 		text-align: left;
 	}
 }
+
+/**
+ * AMP Support
+ */
+@media only screen and (min-width: 640px) {
+	html[amp] .site-header {
+		position: sticky;
+		top: 0;
+	}
+	html[amp] .logged-in .site-header {
+		top: 32px;
+	}
+	html[amp] .content-area {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	html[amp] .logged-in .site-header {
+		top: 46px;
+	}
+}

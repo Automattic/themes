@@ -327,3 +327,29 @@ a.wp-block-file__button {
 @include media(desktop) {
 
 }
+
+/**
+ * AMP Support
+ */
+ html[amp] {
+
+	@include media( tablet ) {
+		.site-header {
+			position: sticky;
+			top: 0;
+		}
+
+		.logged-in .site-header {
+			top: 32px;
+		}
+
+		.content-area {
+			margin: 0;
+		}
+	}
+	@media screen and ( max-width: 782px ) {
+		.logged-in .site-header {
+			top: 46px;
+		}
+	}
+}
