@@ -3972,6 +3972,7 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
  * 6.7. Posts List Block
  * 6.8. Search Block
  * 7. Widgets
+ * 8. AMP Support
  */
 /**
  * 1. General Styles
@@ -4393,4 +4394,23 @@ button[data-load-more-btn].has-background:visited {
 .wp-block-verse {
 	font-family: "Inconsolata", monospace;
 	font-size: 1rem;
+}
+
+/**
+ * 8. AMP Support
+ */
+@media only screen and (min-width: 560px) {
+	html[amp] .site-header {
+		position: sticky;
+		top: 0;
+	}
+	html[amp] .logged-in .site-header {
+		top: 32px;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	html[amp] .logged-in .site-header {
+		top: 46px;
+	}
 }
