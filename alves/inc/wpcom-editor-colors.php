@@ -38,7 +38,9 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim', 'color' ),
+			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim a,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
+			#editor .editor-styles-wrapper .has-background a', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -167,7 +169,8 @@ add_editor_color_rule( 'txt', '#394d55', array(
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
 			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
 			#editor .editor-styles-wrapper .has-background-light-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-color[class]', 'color' ),
+			#editor .editor-styles-wrapper .has-foreground-color[class],
+			#editor .editor-styles-wrapper .has-background-background-color[class] a', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
