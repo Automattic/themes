@@ -172,7 +172,8 @@ add_color_rule( 'link', '#000000', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color[class],
+			.wp-block-cover.has-background-dim.has-primary-background-color[class]', 'background-color' ),
 	// Text-color
 	array( '.has-primary-color[class]', 'color' ),
 
@@ -241,6 +242,11 @@ add_color_rule( 'txt', '#444444', array(
 			.has-background-dark-background-color[class],
 			.has-background-light-background-color[class]', 'color' ),
 	array( '.has-foreground-background-color[class]', 'background-color' ),
+
+	// Text color
+ 	array( '.has-background-background-color[class],
+			.has-background-light-background-color[class],
+			.has-background-dark-background-color[class]', 'color' ),
 
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
