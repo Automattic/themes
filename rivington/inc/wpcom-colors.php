@@ -278,6 +278,11 @@ add_color_rule( 'txt', '#f2f2f2', array(
 	array( '.has-foreground-color[class]', 'color' ),
 	array( '.has-foreground-background-color[class]', 'background-color' ),
 
+	// Text color
+	array( '.has-background-background-color[class],
+			.has-background-light-background-color[class],
+			.has-background-dark-background-color[class]', 'color' ),
+
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
