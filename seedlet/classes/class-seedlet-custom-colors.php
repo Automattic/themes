@@ -231,7 +231,6 @@ class Seedlet_Custom_Colors {
 				}
 
 				if ( $theme_mod_variable_name === '--global--color-secondary' && $theme_mod_default_color !== $theme_mod_custom_color ) {
-					$theme_css .= "--global--color-primary-hover: " . $adjusted_color . ";"; // Since the default palette uses --global--color-secondary as its primary hover color, we need to change the primary hover color when a user selects a different secondary color
 					$theme_css .= "--global--color-secondary-hover: " . $adjusted_color . ";";
 				}
 
