@@ -774,6 +774,12 @@ a:active {
 	color: var(--global--color-primary);
 }
 
+*:focus {
+	outline-width: 1px;
+	outline-style: dotted;
+	outline-color: var(--global--color-secondary);
+}
+
 button,
 a {
 	cursor: pointer;
@@ -1117,15 +1123,21 @@ object {
 	color: currentColor;
 }
 
-.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus {
 	color: var(--global--color-primary-hover);
 	text-decoration: underline;
 }
 
 .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 [class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus {
 	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:active {
+	color: var(--global--color-primary);
 }
 
 @media only screen and (min-width: 482px) {
@@ -2778,11 +2790,11 @@ table th,
 	text-shadow: 1px 0px var(--global--color-background), -1px 0px var(--global--color-background), -2px 0px var(--global--color-background), 2px 0px var(--global--color-background), -3px 0px var(--global--color-background), 3px 0px var(--global--color-background), -4px 0px var(--global--color-background), 4px 0px var(--global--color-background), -5px 0px var(--global--color-background), 5px 0px var(--global--color-background);
 }
 
-.site-title a:link, .site-title a:visited {
+.site-title a:link, .site-title a:visited, .site-title a:active {
 	color: currentColor;
 }
 
-.site-title a:hover {
+.site-title a:hover, .site-title a:focus {
 	color: var(--branding--color-link-hover);
 }
 
@@ -3103,9 +3115,15 @@ nav a {
 	color: var(--primary-nav--color-link);
 }
 
-.primary-navigation .menu-item > a:hover,
-.woo-navigation .menu-item > a:hover {
+.primary-navigation .menu-item > a:hover, .primary-navigation .menu-item > a:focus,
+.woo-navigation .menu-item > a:hover,
+.woo-navigation .menu-item > a:focus {
 	color: var(--primary-nav--color-link-hover);
+}
+
+.primary-navigation .menu-item > a:active,
+.woo-navigation .menu-item > a:active {
+	color: var(--primary-nav--color-link);
 }
 
 .primary-navigation a,
@@ -3226,8 +3244,12 @@ nav a {
 	padding: 0 var(--social-nav--padding);
 }
 
-.social-navigation a:hover {
+.social-navigation a:hover, .social-navigation a:focus {
 	color: var(--social-nav--color-link-hover);
+}
+
+.social-navigation a:active {
+	color: var(--social-nav--color-link);
 }
 
 .social-navigation svg {
@@ -3269,11 +3291,11 @@ nav a {
 	color: currentColor;
 }
 
-.site-footer > .site-info a:link, .site-footer > .site-info a:visited {
+.site-footer > .site-info a:link, .site-footer > .site-info a:visited, .site-footer > .site-info a:active {
 	color: currentColor;
 }
 
-.site-footer > .site-info a:hover {
+.site-footer > .site-info a:hover, .site-footer > .site-info a:focus {
 	color: var(--footer--color-link);
 }
 
@@ -3327,11 +3349,11 @@ nav a {
 	color: currentColor;
 }
 
-.site-footer > .footer-navigation .footer-menu a:link, .site-footer > .footer-navigation .footer-menu a:visited {
+.site-footer > .footer-navigation .footer-menu a:link, .site-footer > .footer-navigation .footer-menu a:visited, .site-footer > .footer-navigation .footer-menu a:active {
 	color: currentColor;
 }
 
-.site-footer > .footer-navigation .footer-menu a:hover {
+.site-footer > .footer-navigation .footer-menu a:hover, .site-footer > .footer-navigation .footer-menu a:focus {
 	color: var(--footer--color-link-hover);
 }
 
@@ -3350,8 +3372,12 @@ nav a {
 	color: var(--entry-header--color-link);
 }
 
-.entry-title a:hover, .entry-title a:active {
+.entry-title a:hover, .entry-title a:focus {
 	color: var(--entry-header--color-hover);
+}
+
+.entry-title a:active {
+	color: var(--entry-header--color-link);
 }
 
 /**
@@ -3442,10 +3468,15 @@ nav a {
 	color: var(--entry-meta--color-link);
 }
 
-.entry-meta a:hover, .entry-meta a:active,
+.entry-meta a:hover, .entry-meta a:focus,
 .entry-footer a:hover,
-.entry-footer a:active {
+.entry-footer a:focus {
 	color: var(--entry-meta--color-hover);
+}
+
+.entry-meta a:active,
+.entry-footer a:active {
+	color: var(--entry-meta--color-link);
 }
 
 .entry-meta .svg-icon,
@@ -3505,8 +3536,12 @@ nav a {
 	color: var(--global--color-primary);
 }
 
-.navigation a:hover {
+.navigation a:hover, .navigation a:focus {
 	color: var(--global--color-primary-hover);
+}
+
+.navigation a:active {
+	color: var(--global--color-primary);
 }
 
 @media only screen and (min-width: 482px) {
@@ -3719,8 +3754,12 @@ nav a {
 	color: currentColor;
 }
 
-.comment-meta .comment-metadata a:hover, .comment-meta .comment-metadata a:active {
+.comment-meta .comment-metadata a:hover, .comment-meta .comment-metadata a:focus {
 	color: var(--global--color-primary-hover);
+}
+
+.comment-meta .comment-metadata a:active {
+	color: currentColor;
 }
 
 .comment-meta .comment-metadata .edit-link {

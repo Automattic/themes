@@ -87,7 +87,7 @@
 
 	.comment-author {
 		line-height: var(--global--line-height-heading);
-		margin-bottom: calc(0.25 * var(--global--spacing-unit);
+		margin-bottom: calc(0.25 * var(--global--spacing-unit));
 		padding-right: calc(2.5 * var(--global--spacing-horizontal));
 		max-width: calc(100% - (3 * var(--global--spacing-horizontal)));
 
@@ -124,8 +124,12 @@
 			color: currentColor;
 
 			&:hover,
-			&:active {
+			&:focus {
 				color: var(--global--color-primary-hover);
+			}
+
+			&:active {
+				color: currentColor;
 			}
 		}
 
