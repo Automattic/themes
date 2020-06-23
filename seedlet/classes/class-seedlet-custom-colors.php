@@ -212,6 +212,8 @@ class Seedlet_Custom_Colors {
 			$theme_css = ':root {';
 		}
 
+		// Check to see if a custom background color has been set that is needed for our color calculation
+		// If this check isn't present, the color calculation generates a warning that an invalid color has been supplied
 		$theme_mod_bg_color = empty( get_theme_mod( "seedlet_--global--color-background" ) ) ? '#FFFFFF' : get_theme_mod( "seedlet_--global--color-background" );
 
 		foreach ( $this->seedlet_custom_color_variables as $variable ) {
