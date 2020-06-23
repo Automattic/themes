@@ -35,7 +35,7 @@ In each view, the variables are loaded first and then the stylesheet is loaded w
 4. Visit the WordPress admin, access the Themes page and activate the new child-theme. 
 5. Then, visit the frontend of your site and to see how it looks by default.
 6. Next, open `child-theme/variables.css` in a text editor, change one or more of the variables, save the file and then refresh the front end of your site to see how it affects the design. 
-7. Continue to add and/or remove variables based on the [full list of available variables in Seedlet](https://github.com/Automattic/themes-workspace/blob/add/variatheme/seedlet/variables.css).
+7. Continue to add and/or remove variables based on the [full list of available variables in Seedlet](https://github.com/Automattic/themes/blob/add/variatheme/seedlet/variables.css).
 8. Once you’re variables are all set you can continue development like you would with any child-theme using `child-theme/style.css` to add any extra CSS you might need to accomplish a design. 
 
 #### Create a child-theme manually (*optional)
@@ -53,7 +53,7 @@ To use the system, simply duplicate the `seedlet-child` theme directory and rena
 ## Simple child-theme structure
 (See: `/seedlet-child`)
 
-Use this simple Seedlet child-theme example to familiarize yourself with the CSS-variables and to see how they influence the theme design when you change them. To start, open up the `/seedlet-child-simple/variables.css` file. Change any of the values, save the file, and refresh the frontend of your site to see the changes. To add more variables, view the [full list of available variables](https://github.com/Automattic/themes-workspace/blob/add/variatheme/seedlet/variables.css) from the Seedlet parent them and copy any variables you want in to your child theme. 
+Use this simple Seedlet child-theme example to familiarize yourself with the CSS-variables and to see how they influence the theme design when you change them. To start, open up the `/seedlet-child-simple/variables.css` file. Change any of the values, save the file, and refresh the frontend of your site to see the changes. To add more variables, view the [full list of available variables](https://github.com/Automattic/themes/blob/add/variatheme/seedlet/variables.css) from the Seedlet parent them and copy any variables you want in to your child theme. 
 The stylesheet structure for a child-theme cascades downward like this:
 
 ### Frontend
