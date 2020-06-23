@@ -258,9 +258,11 @@ add_color_rule( 'txt', '#303030', array(
 	 */
 	// Foreground
 	array( '.has-foreground-color[class],
-		.has-background-background-color[class],
-		.has-background-dark-background-color[class],
-		.has-background-light-background-color[class]', 'color' ),
+			.has-background-background-color[class],
+			.has-background-dark-background-color[class],
+			.has-background-light-background-color[class]', 'color' ),
+
+	// Background
 	array( '.has-foreground-background-color[class]', 'background-color' ),
 
 	// Text-color darkened
