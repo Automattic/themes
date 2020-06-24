@@ -6,7 +6,9 @@
 add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
-	array( '.main-navigation > div,
+	array( '.has-background-background-color,
+			.has-background-background-color.has-background-dim,
+			.main-navigation > div,
 			.screen-reader-text:focus,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
@@ -24,16 +26,16 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.button,
 			.button:focus,
 			.button:hover,
+			.has-focus.a8c-posts-list__view-all,
+			.has-focus.button,
+			.has-focus.wp-block-button__link,
+			.has-focus.wp-block-file__button,
 			.sticky-post,
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover.has-background-dim,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -64,20 +66,27 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-background-color[class],
-		.has-secondary-background-color[class],
-		.has-foreground-background-color[class],
-		.has-foreground-dark-background-color[class],
-		.has-foreground-light-background-color[class],
-		.has-background-color[class],
-		.has-background-dark-color[class],
-		.has-background-light-color[class]', 'color' ),
+	array( '.has-background-color,
+			.has-background-dim,
+			.has-foreground-background-color,
+			.has-foreground-background-color.has-background-dim,
+			.has-foreground-dark-background-color,
+			.has-foreground-dark-background-color.has-background-dim,
+			.has-foreground-light-background-color,
+			.has-foreground-light-background-color.has-background-dim,
+			.has-primary-background-color,
+			.has-primary-background-color.has-background-dim,
+			.has-secondary-background-color,
+			.has-secondary-background-color.has-background-dim,
+			.has-background-color,
+			.has-background-dark-color,
+			.has-background-light-color', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color', 'background-color' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color', 'background-color', '-1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color', 'background-color', '+1' ),
 
 	/**
 	 * Grays
@@ -135,7 +144,6 @@ add_color_rule( 'link', '#19744C', array(
 	array( '.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.button,
-			.has-primary-background-color[class],
 			.main-navigation #toggle:focus + #toggle-menu,
 			.sticky-post,
 			.wp-block-button__link,
@@ -158,7 +166,7 @@ add_color_rule( 'link', '#19744C', array(
 			.entry-title a:focus,
 			.entry-title a:hover,
 			.footer-navigation .footer-menu a:hover,
-			.has-primary-color[class],
+			.has-primary-color,
 			.main-navigation a:hover,
 			.page-title a:active,
 			.page-title a:focus,
@@ -183,13 +191,16 @@ add_color_rule( 'link', '#19744C', array(
 	array( '.wp-block-quote[style*="text-align: right"],
 			.wp-block-quote[style*="text-align:right"]', 'border-right-color' ),
 
+	// Border color left
+	array( '.wp-block-quote', 'border-left-color' ),
+
 	/**
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color', 'color' ),
 
 ), __( 'Link Color' ) );
 
@@ -214,6 +225,7 @@ add_color_rule( 'txt', '#303030', array(
 			.wp-block-code,
 			.wp-block-code pre,
 			.wp-block-pullquote,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
@@ -251,29 +263,34 @@ add_color_rule( 'txt', '#303030', array(
 			textarea:focus', 'color' ),
 
 	// Background-color
-	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
+	array( '.has-background-dim,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover.has-background-dim,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color[class],
-			.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
+	array( '.has-foreground-color,
+			.has-background-background-color,
+			.has-background-dark-background-color,
+			.has-background-light-background-color', 'color' ),
 
 	// Background
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+	array( '.has-background-dim,
+			.has-foreground-background-color,
+			.has-foreground-background-color.has-background-dim', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color', 'background-color', '-1' ),
 
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-color', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color', 'background-color', '+2' ),
 
 	/**
 	 * Gray (Same as text color)
@@ -282,7 +299,7 @@ add_color_rule( 'txt', '#303030', array(
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
-			.has-foreground-light-color[class],
+			.has-foreground-light-color,
 			.site-branding,
 			.wp-block-image figcaption,
 			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
@@ -314,18 +331,25 @@ add_color_rule( 'fg1', '#BC2213', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.has-secondary-color', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 
 /**
   * Custom CSS
   */
-function balasana_custom_colors_extra_css() { ?>
+function balasana_custom_colors_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$bg           = $colors_array['colors']['bg'];
+	$link         = $colors_array['colors']['link'];
+?>
 	@media screen and (min-width: 560px) {
+		.main-navigation > div > ul > li > .sub-menu {
+			background-color: <?php echo $bg; ?>;
+		}
 		.main-navigation > div > ul > .menu-item-has-children > a::after {
 			border-top-color: currentColor;
 		}
