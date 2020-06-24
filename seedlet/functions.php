@@ -345,9 +345,6 @@ function seedlet_scripts() {
 	// Enqueue Google fonts
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
-	// Theme variables
-	wp_enqueue_style( 'seedlet-variables-style', get_template_directory_uri() . '/assets/css/variables.css', array(), wp_get_theme()->get( 'Version' ) );
-
 	// Theme styles
 	wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
