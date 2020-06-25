@@ -25,6 +25,7 @@ a {
 
 	@include media(desktop) {
 		box-shadow: 0 0 30px rgba(#000, 0.2);
+		max-width: $content-width-xxl;
 	}
 }
 
@@ -246,6 +247,24 @@ body {
 /**
  * Blocks
  */
+
+// Constrain left-aligned blocks
+@media only screen and (min-width: 1280px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain right-aligned blocks
+@media only screen and (min-width: 1280px) {
+	.entry-content > .alignright {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
 // Cover & Hero block
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-coblocks-hero .wp-block-coblocks-hero__box {
