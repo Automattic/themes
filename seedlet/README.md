@@ -33,7 +33,7 @@ The theme is built to offer the following controls:
 
 ### Structure
 
-The system itself lives in the `/seedlet/sass` directory as a collection of Sass partials broken up by scope and hierarchy. The partials get compiled down to singular CSS files that live in the main Seedlet directory and cascade downward like so:
+The system itself lives in the `/assets/sass` directory as a collection of Sass partials broken up by scope and hierarchy. The partials get compiled down to singular CSS files that live in the main Seedlet directory and cascade downward like so:
 
 **Frontend** 
 - `/seedlet/variables.css`
