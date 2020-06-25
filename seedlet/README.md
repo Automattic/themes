@@ -39,5 +39,6 @@ In each view, the variables are loaded first and then the stylesheet is loaded w
 
 ## License
 
-GNU General Public License v2 or later
+GNU General Public License v2 or later.
+
 URI: [LICENSE](https://github.com/Automattic/themes/blob/master/seedlet/LICENSE)
