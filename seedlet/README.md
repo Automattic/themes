@@ -1,8 +1,8 @@
 # Seedlet
 
-![](https://github.com/Automattic/themes/raw/master/seedlet/screenshot.png)
-
 Seedlet is simple, text-driven WordPress theme.
+
+![](https://github.com/Automattic/themes/raw/master/seedlet/screenshot.png)
 
 Along with being an excellent standalone theme, Seedlet is designed to be a parent-theme that allows folks to quickly create Gutenberg-ready child-themes for WordPress. *[Instructions for how to make child themes are coming soon]*
 
