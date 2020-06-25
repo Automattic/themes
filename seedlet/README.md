@@ -6,6 +6,14 @@ Seedlet is simple, text-driven WordPress theme.
 
 Along with being an excellent standalone theme, Seedlet is designed to be a parent-theme that allows folks to quickly create Gutenberg-ready child-themes for WordPress. *[Instructions for how to make child themes are coming soon]*
 
+## Development
+
+To make changes to the styles, [node.js](https://nodejs.org/en/) is recommended:
+
+1. `npm i` to install the required development dependencies
+2. `npm start` to start the development server
+3. Make changes in `assets/sass` 
+
 ## Technical Overview
 
 ### Principles
