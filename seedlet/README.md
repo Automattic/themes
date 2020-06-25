@@ -36,12 +36,12 @@ The theme is built to offer the following controls:
 The system itself lives in the `/assets/sass` directory as a collection of Sass partials broken up by scope and hierarchy. The partials get compiled down to singular CSS files that live in the main Seedlet directory and cascade downward like so:
 
 **Frontend** 
-- `/seedlet/variables.css`
-- `/seedlet/style.css`
+- `/assets/css/variables.css`
+- `/style.css`
 
 **Editor** 
-- `/seedlet/variables-editor.css`
-- `/seedlet/style-editor.css`
+- `/assets/css/variables-editor.css`
+- `/style-editor.css`
 
 In each view, the variables are loaded first and then the stylesheet is loaded which applies the variables.
 
