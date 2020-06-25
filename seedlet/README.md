@@ -8,7 +8,7 @@ Along with being an excellent standalone theme, Seedlet is designed to be a pare
 
 ## Technical Overview
 
-# Principles
+### Principles
 
 When you reduce a theme design down to a set of systematic design decisions, you end up with something called a _Style Guide_. The Seedlet system works by taking the rules of a Style Guide and expressing them through carefully placed variables or _design tokens_ that influence the appearance of a WordPress site. 
 
@@ -23,7 +23,7 @@ The theme is built to offer the following controls:
 - **Spacing** - A default 8px vertical rhythm between all blocks and major components. It also includes utility spacing classes for negative margins.
 - **Responsive Logic** - Built-in responsive behavior across Blocks and Components.
 
-## Structure
+### Structure
 
 The system itself lives in the `/seedlet/sass` directory as a collection of Sass partials broken up by scope and hierarchy. The partials get compiled down to singular CSS files that live in the main Seedlet directory and cascade downward like so:
 
@@ -37,7 +37,7 @@ The system itself lives in the `/seedlet/sass` directory as a collection of Sass
 
 In each view, the variables are loaded first and then the stylesheet is loaded which applies the variables.
 
-### License
+## License
 
 GNU General Public License v2 or later
 
