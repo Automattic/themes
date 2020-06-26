@@ -3987,7 +3987,7 @@ p:not(.site-title) a:hover {
 @media only screen and (min-width: 1024px) {
 	#page {
 		box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-		max-width: 1134px;
+		max-width: calc( 1280px - 32px);
 	}
 }
 
@@ -4189,6 +4189,76 @@ p:not(.site-title) a:hover {
 /**
  * Blocks
  */
+@media only screen and (min-width: 560px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-left: 16px;
+	}
+	.entry-content > .alignright {
+		margin-right: 16px;
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-right: calc( 0.5 * (100% - calc( 640px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+@media only screen and (min-width: 640px) {
+	.entry-content > .alignright {
+		margin-left: calc( 0.5 * (100% - calc( 640px - 32px)));
+		max-width: calc( 0.5 * calc( 640px - 32px));
+	}
+}
+
+@media only screen and (min-width: 782px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+@media only screen and (min-width: 782px) {
+	.entry-content > .alignright {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.entry-content > .alignright {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.entry-content > .alignright {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
 .wp-block-cover .wp-block-cover__inner-container > *,
 .wp-block-coblocks-hero .wp-block-coblocks-hero__box > * {
 	margin-top: 21.312px;
