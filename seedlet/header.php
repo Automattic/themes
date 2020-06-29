@@ -48,7 +48,7 @@
 							'theme_location'  => 'primary',
 							'menu_class'      => 'menu-wrapper',
 							'container_class' => 'primary-menu-container menu-'. $menu->slug .'-container',
-							'items_wrap'      => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
+							'items_wrap'      => '<ul id="%1$s" class="%2$s" aria-label="' . esc_attr__( 'submenu', 'seedlet' ) . '">%3$s</ul>',
 						)
 					);
 					?>
@@ -65,12 +65,12 @@
 							<span class="hide-visually collapsed-text">%6$s</span>
 						</button>
 						<div class="woocommerce-menu-container">
-						<ul id="woocommerce-menu" class="menu-wrapper" aria-label="submenu">
-						<li class="menu-item woocommerce-menu-item %7$s" title="%8$s">
-							%9$s
+						<ul id="woocommerce-menu" class="menu-wrapper" aria-label="%7$s">
+						<li class="menu-item woocommerce-menu-item %8$s" title="%9$s">
+							%10$s
 							<ul class="sub-menu">
-								<li class="woocommerce-cart-widget" title="%10$s">
-									%11$s
+								<li class="woocommerce-cart-widget" title="%11$s">
+									%12$s
 								</li>
 							</ul>
 						</li>',
@@ -80,6 +80,7 @@
 						seedlet_get_icon_svg( 'close' ),
 						esc_html__( 'expanded', 'seedlet' ),
 						esc_html__( 'collapsed', 'seedlet' ),
+						esc_attr__( 'submenu', 'seedlet' ),
 						is_cart() ? 'current-menu-item' : '',
 						esc_attr__( 'View your shopping cart', 'seedlet' ),
 						seedlet_cart_link(),
