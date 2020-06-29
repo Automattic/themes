@@ -45,8 +45,8 @@
     "build:woocommerce-rtl": "rtlcss assets/css/style-woocommerce.css assets/css/style-woocommerce-rtl.css",
     "build:rtl": "rtlcss style.css style-rtl.css",
     "build:print": "node-sass assets/sass/print.scss assets/css/print.css --output-style expanded --indent-type tab --indent-width 1",
-    "ie": "postcss style.css -o style.css",
     "build": "run-p \"build:*\" && npm run ie",
+    "ie": "postcss style.css -o assets/css/ie.css",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
     "child-theme": "sh ../theme-dev-utils/build-child-theme.sh"
   }
