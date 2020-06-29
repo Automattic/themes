@@ -151,8 +151,17 @@
 	}
 
 	/* Reset alignleft and alignright margins after alignfull */
-	&.alignfull + .alignleft,
-	&.alignfull + .alignright {
+	&.alignfull + .alignleft {
+		float: left;
 		margin-top: map-deep-get($config-global, "spacing", "vertical");
+		margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+		margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+
+	&.alignfull + .alignright {
+		float: right;
+		margin-top: map-deep-get($config-global, "spacing", "vertical");
+		margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+		margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 	}
 }
