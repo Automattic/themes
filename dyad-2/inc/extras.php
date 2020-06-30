@@ -20,7 +20,6 @@
 
 // Add specific CSS class to body
 function dyad_2_body_classes( $classes ) {
-	global $post;
 
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
@@ -30,16 +29,11 @@ function dyad_2_body_classes( $classes ) {
 	//Singular?
 	if ( is_singular() ) {
 		$classes[] = 'is-singular';
-	}
-
-	//Has featured image?
-	if ( ! is_page() && dyad_2_has_post_thumbnail( $post->ID ) && dyad_2_jetpack_featured_image_display() ) {
-		$classes[] = 'has-post-thumbnail';
-	}
-
-	//Has featured image?
-	if ( is_page() && has_post_thumbnail() && dyad_2_jetpack_featured_image_display() ) {
-		$classes[] = 'has-post-thumbnail';
+		
+		//Has featured image?
+		if ( dyad_2_has_post_thumbnail() && dyad_2_jetpack_featured_image_display() ) {
+			$classes[] = 'has-post-thumbnail';
+		}
 	}
 
 	$header_image = get_header_image();
