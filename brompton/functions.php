@@ -100,12 +100,12 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Foreground Light', 'balasana' ),
+					'name'  => __( 'Foreground Light', 'barnsbury' ),
 					'slug'  => 'foreground-light',
 					'color' => $foreground_light,
 				),
 				array(
-					'name'  => __( 'Foreground Dark', 'balasana' ),
+					'name'  => __( 'Foreground Dark', 'barnsbury' ),
 					'slug'  => 'foreground-dark',
 					'color' => $foreground_dark,
 				),
