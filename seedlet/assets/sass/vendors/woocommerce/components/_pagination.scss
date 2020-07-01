@@ -1,0 +1,46 @@
+/**
+ * Pagination
+ */
+
+body[class*="woocommerce"] #page .woocommerce-pagination {
+
+	margin: 0 calc(-0.66 * var(--global--spacing-unit));
+	width: 100%;
+
+	.page-numbers {
+
+		border: none;
+		display: flex;
+		justify-content: start;
+
+		li > * {
+			display: block;
+			font-family: var(--global--font-primary);
+			font-size: var(--global--font-size-md);
+			font-weight: 600;
+			padding-left: calc(0.66 * var(--global--spacing-unit));
+			padding-right: calc(0.66 * var(--global--spacing-unit));
+		}
+
+		li {
+			border: none;
+			float: inherit;
+
+			a {
+				text-decoration: unset;
+			}
+		}
+
+		li span.current,
+		li a:hover,
+		li a:focus {
+			background: transparent;
+			color: var(--global--color-foreground-default);
+		}
+
+		.svg-icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}

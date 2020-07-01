@@ -79,7 +79,7 @@
 
 	$avatar-size: #{map-deep-get($config-global, "spacing", "vertical")};
 
-	margin-right: calc( $avatar-size + (0.5 * #{map-deep-get($config-global, "spacing", "horizontal")}) );
+	margin-right: calc( #{$avatar-size} + (0.5 * #{map-deep-get($config-global, "spacing", "horizontal")}) );
 
 	.comment-author {
 		line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
@@ -144,7 +144,7 @@
 			.avatar {
 				margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 				display: inherit;
-				position: inherit;
+				position: relative;
 				right: inherit;
 			}
 		}

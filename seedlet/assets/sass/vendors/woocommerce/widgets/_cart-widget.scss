@@ -1,0 +1,61 @@
+/**
+ * Cart Widget
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	/**
+	 * Cart Widget product list
+	 */
+	ul.cart_list,
+	ul.product_list_widget {
+
+		li {
+
+			a:not(.remove) {
+				font-family: var(--global--font-primary);
+				line-height: var(--global--line-height-heading);
+			}
+
+			img {
+				margin-left: var(--global--spacing-unit);
+				width: calc(2 * var(--global--spacing-vertical));
+			}
+
+			dl {
+				border-left-color: var(--wc--table--border-color);
+
+				dt,
+				dd {
+					margin-bottom: var(--global--spacing-vertical);
+				}
+			}
+		}
+	}
+
+	.woocommerce.widget_shopping_cart {
+
+		.total {
+			border-top: none;
+			padding-top: 0;
+		}
+
+		.cart_list {
+
+			border-bottom: 1px solid var(--wc--table--border-color);
+
+			li {
+				border-top: 1px solid var(--wc--table--border-color);
+				padding: var(--global--spacing-unit) 0 var(--global--spacing-unit) calc(2 * var(--global--spacing-horizontal));
+
+				a.remove {
+					top: var(--global--spacing-unit);
+				}
+			}
+		}
+
+		.buttons a#woo_pp_ec_button {
+			padding: 0;
+		}
+	}
+}

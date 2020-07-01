@@ -1,0 +1,38 @@
+@import '../structure/responsive-logic';
+
+body {
+	--wp--typography--line-height: var(--global--line-height-body);
+	color: var(--global--color-foreground);
+	background-color: var(--global--color-background);
+	font-family: var(--global--font-secondary);
+	font-size: var(--global--font-size-root);
+	font-weight: normal;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Set font size of title block the same as body.
+.editor-post-title__block {
+	font-size: var(--global--font-size-root);
+}
+
+// Links styles
+a {
+	border-bottom: 1px solid var(--global--color-secondary);
+	color: var(--global--color-primary);
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: var(--global--color-primary-hover);
+	}
+
+	&:active {
+		color: var(--global--color-primary);
+	}
+}
+
+button,
+a {
+	cursor: pointer;
+}

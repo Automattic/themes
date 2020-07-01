@@ -53,39 +53,52 @@ if ( ! function_exists( 'coutoire_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#000000'; // $config-global--color-primary-default;
+		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FF7A5C';  // $config-global--color-secondary-default;
+		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'coutoire' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'coutoire' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'coutoire' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'coutoire' ),
-					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'coutoire' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'White', 'coutoire' ),
+					'name'  => __( 'Background', 'coutoire' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground', 'coutoire' ),
+					'slug'  => 'foreground',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'coutoire' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'coutoire' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -161,8 +174,10 @@ function coutoire_scripts() {
 	// enqueue child RTL styles
 	wp_style_add_data( 'coutoire-style', 'rtl', 'replace' );
 
-	// enqueue header spacing JS
-	wp_enqueue_script('coutoire-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	if ( ! coutoire_is_amp() ) {
+		// enqueue header spacing JS.
+		wp_enqueue_script( 'coutoire-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'coutoire_scripts', 99 );
@@ -176,3 +191,10 @@ function coutoire_editor_styles() {
 	wp_enqueue_style( 'coutoire-editor-fonts', coutoire_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'coutoire_editor_styles' );
+
+/**
+ * Checks whether the endpoint is AMP.
+ */
+function coutoire_is_amp() {
+	return ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() );
+}
