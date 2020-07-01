@@ -1,5 +1,5 @@
 /**
- * File customize-preview-wpcom.js.
+ * File wpcom-customize-preview.js.
  *
  * Instantly live-update customizer settings in the preview for improved user experience,
  * targeting the updates needed to hide the page title on the homepage on WordPress.com.
