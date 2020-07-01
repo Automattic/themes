@@ -320,8 +320,6 @@ function barnsbury_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
 ?>
-function barnsbury_custom_colors_extra_css() { ?>
-
 	@media screen and (min-width: 560px) {
 		
 		.main-navigation > div > ul > li > .sub-menu {
