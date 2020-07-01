@@ -35,9 +35,7 @@ add_editor_color_rule( 'bg', '#E8E4DD', array(
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper,
-			#editor .editor-styles-wrapper .has-background-background-color,
-			#editor .editor-styles-wrapper .wp-block .has-background-background-color,', 'background-color' ),
+	array( '#editor .editor-styles-wrapper', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -149,6 +147,12 @@ add_editor_color_rule( 'txt', '#252E36', array(
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)
 			#editor .editor-styles-wrapper a:hover,
 			#editor .editor-styles-wrapper', 'color' ),
+
+	// Border-bottom-color
+	array( '#editor .editor-styles-wrapper .comment-list, 
+			#editor .editor-styles-wrapper .wp-block-pullquote, 
+			#editor .editor-styles-wrapper hr, 
+			#editor .editor-styles-wrapper hr.wp-block-separator', 'border-bottom-color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,

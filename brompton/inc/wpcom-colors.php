@@ -61,8 +61,9 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			input:hover[type="submit"],
 			input[type="submit"],
 			.footer-navigation .footer-menu,
-			.has-secondary-color[class],
 			.main-navigation,
+			.main-navigation > div > ul > li.current-menu-item > a,
+			.main-navigation > div > ul > li:hover li > a,
 			.main-navigation a,
 			.main-navigation a:link,
 			.main-navigation a:visited,
@@ -70,6 +71,12 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			.site-info,
 			.site-title,
 			.social-navigation a', 'color' ),
+
+	// Border-bottom-color
+	array( '.comment-list, 
+			.wp-block-pullquote, 
+			hr, 
+			hr.wp-block-separator', 'border-bottom-color' ),
 
 	/**
 	 * Utility Classes
@@ -149,7 +156,10 @@ add_color_rule( 'bg', '#E8E4DD', array(
 	// Text-color
 	array( '#masthead a:hover,
 			.site-title a:hover,
-			.social-navigation a:hover', 'color', 0.8 ),
+			.social-navigation a:hover,
+			.footer-navigation .footer-menu a:hover,
+			.site-info a:hover', 'color', 0.8 ),
+
 	// Background-color
 	array( '.main-navigation .button:active, 
 			.main-navigation .button:focus, 
@@ -322,7 +332,13 @@ add_color_rule( 'txt', '#252E36', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus', 'color' ),
+			textarea:focus,
+			.main-navigation > div > ul > li.current-menu-item li > a,
+			.main-navigation > div > ul > li.focus li > a,
+			#masthead .main-navigation .sub-menu a, 
+			#masthead .main-navigation .sub-menu a:link, 
+			#masthead .main-navigation .sub-menu a:visited,
+			#masthead .main-navigation > div > ul > li:hover li > a:hover', 'color' ),
 
 	// Background-color
 	array( '#colophon .footer-navigation,
@@ -343,10 +359,7 @@ add_color_rule( 'txt', '#252E36', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"],
-			.main-navigation > div > ul > li.current-menu-item li > a,
-			.main-navigation > div > ul > li.focus li > a,
-			.main-navigation > div > ul > li:hover li > a', 'background-color' ),
+			input[type="submit"]', 'background-color' ),
 
 	// Border-color
 	array( 'input[type="color"]:focus,
@@ -432,16 +445,7 @@ add_color_rule( 'fg1', '#FFFFFF', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.footer-navigation .footer-menu,
-			.has-secondary-color,
-			.main-navigation,
-			.main-navigation a,
-			.main-navigation a:link,
-			.main-navigation a:visited,
-			.site-branding,
-			.site-info,
-			.site-title,
-			.social-navigation a', 'color' ),
+	array( '.has-secondary-color', 'color' ),
 
 	// Background-color
 	array( '.has-secondary-background-color,
@@ -457,11 +461,16 @@ add_color_rule( 'fg1', '#FFFFFF', array(
 function brompton_custom_colors_extra_css() { 
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
+	$txt          = $colors_array['colors']['txt'];
 ?>
 	@media screen and (min-width: 560px) {
 		
-		.main-navigation > div > ul > li > .sub-menu {
+		.main-navigation > div > ul > li > .sub-menu,
+		.main-navigation > div > ul > li:hover li > a, 
+		.main-navigation > div > ul > li.focus li > a, 
+		.main-navigation > div > ul > li.current-menu-item li > a {
 			background-color: <?php echo $bg; ?>;
+			border-top-color: <?php echo $txt; ?>;
 		}
 	}
 <?php }
