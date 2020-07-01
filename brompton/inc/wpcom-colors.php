@@ -21,7 +21,8 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			.button,
 			.button:focus,
 			.button:hover,
-			.has-background-color[class],
+			.has-background-color,
+			.has-background-dim,
 			.has-focus.a8c-posts-list__view-all,
 			.has-focus.button,
 			.has-focus.wp-block-button__link,
@@ -74,20 +75,28 @@ add_color_rule( 'bg', '#E8E4DD', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
-			.has-foreground-background-color[class],
-			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class],
-			.has-background-color[class],
-			.has-background-dark-color[class],
-			.has-background-light-color[class]', 'color' ),
+	array( '.has-foreground-background-color,
+			.has-foreground-background-color.has-background-dim,
+			.has-foreground-dark-background-color,
+			.has-foreground-dark-background-color.has-background-dim,
+			.has-foreground-light-background-color,
+			.has-foreground-light-background-color.has-background-dim,
+			.has-primary-background-color,
+			.has-primary-background-color.has-background-dim,
+			.has-secondary-background-color,
+			.has-secondary-background-color.has-background-dim,
+			.has-background-color,
+			.has-background-dark-color,
+			.has-background-light-color', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color,
+			.has-background-background-color.has-background-dim', 'background-color' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color,
+			.has-background-dark-background-color.has-background-dim', 'background-color', '-1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color,
+			.has-background-light-background-color.has-background-dim', 'background-color', '+1' ),
 
 	/**
 	 * Grays
@@ -239,9 +248,10 @@ add_color_rule( 'link', '#C04239', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color,
+			.has-primary-background-color.has-background-dim,', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color', 'color' ),
 
 ), __( 'Link Color' ) );
 
@@ -263,10 +273,10 @@ add_color_rule( 'txt', '#252E36', array(
 			.pagination .nav-links > *,
 			.post-navigation .meta-nav,
 			.screen-reader-text:focus,
-			.wp-block-button.is-style-outline,
-			.wp-block-button.is-style-outline .wp-block-button__link,
 			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
 			.wp-block-code,
 			.wp-block-code pre,
 			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
@@ -275,6 +285,8 @@ add_color_rule( 'txt', '#252E36', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			.wp-block-pullquote,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
 			a:hover,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
@@ -323,6 +335,8 @@ add_color_rule( 'txt', '#252E36', array(
 			.wp-block-button__link,
 			.wp-block-cover,
 			.wp-block-cover-image,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover.has-background-dim,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file__button,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
@@ -356,11 +370,17 @@ add_color_rule( 'txt', '#252E36', array(
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color[class],
-			.has-background-background-color[class],
-			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color,
+			.has-background-background-color.has-background-dim,
+			.has-background-dark-background-color,
+			.has-background-dark-background-color.has-background-dim,
+			.has-background-light-background-color,
+			.has-background-light-background-color.has-background-dim,
+			.has-foreground-color,', 'color' ),
+
+	array( '.has-background-dim,
+			.has-foreground-background-color,
+			.has-foreground-background-color.has-background-dim,', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
@@ -412,12 +432,40 @@ add_color_rule( 'fg1', '#FFFFFF', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.footer-navigation .footer-menu,
+			.has-secondary-color,
+			.main-navigation,
+			.main-navigation a,
+			.main-navigation a:link,
+			.main-navigation a:visited,
+			.site-branding,
+			.site-info,
+			.site-title,
+			.social-navigation a', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color,
+			.has-secondary-background-color.has-background-dim,
+			.main-navigation .button', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+
+function brompton_custom_colors_extra_css() { 
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$bg           = $colors_array['colors']['bg'];
+?>
+	@media screen and (min-width: 560px) {
+		
+		.main-navigation > div > ul > li > .sub-menu {
+			background-color: <?php echo $bg; ?>;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'brompton_custom_colors_extra_css' ); 
 
 /**
  * Featured Varia Palettes
