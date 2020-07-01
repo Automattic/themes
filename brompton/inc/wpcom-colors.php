@@ -72,12 +72,6 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			.site-title,
 			.social-navigation a', 'color' ),
 
-	// Border-bottom-color
-	array( '.comment-list, 
-			.wp-block-pullquote, 
-			hr, 
-			hr.wp-block-separator', 'border-bottom-color' ),
-
 	/**
 	 * Utility Classes
 	 */
@@ -137,11 +131,6 @@ add_color_rule( 'bg', '#E8E4DD', array(
 	array( '.comment-list .children > li,
 			.comment-list > li,
 			.wp-block-pullquote', 'border-top-color', '-1' ),
-	// Border-bottom-color
-	array( '.comment-list,
-			.wp-block-pullquote,
-			hr,
-			hr.wp-block-separator', 'border-bottom-color', '-1' ),
 	// Color
 	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 	// Background-color
@@ -259,7 +248,8 @@ add_color_rule( 'link', '#C04239', array(
 	 */
 	// Background-color
 	array( '.has-primary-background-color,
-			.has-primary-background-color.has-background-dim,', 'background-color' ),
+			.has-primary-background-color.has-background-dim', 'background-color' ),
+
 	// Text-color
 	array( '.has-primary-color', 'color' ),
 
@@ -332,13 +322,7 @@ add_color_rule( 'txt', '#252E36', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus,
-			.main-navigation > div > ul > li.current-menu-item li > a,
-			.main-navigation > div > ul > li.focus li > a,
-			#masthead .main-navigation .sub-menu a, 
-			#masthead .main-navigation .sub-menu a:link, 
-			#masthead .main-navigation .sub-menu a:visited,
-			#masthead .main-navigation > div > ul > li:hover li > a:hover', 'color' ),
+			textarea:focus', 'color' ),
 
 	// Background-color
 	array( '#colophon .footer-navigation,
@@ -359,7 +343,10 @@ add_color_rule( 'txt', '#252E36', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			input[type="submit"],
+			.main-navigation > div > ul > li:hover li > a, 
+			.main-navigation > div > ul > li.focus li > a, 
+			.main-navigation > div > ul > li.current-menu-item li > a', 'background-color' ),
 
 	// Border-color
 	array( 'input[type="color"]:focus,
@@ -378,6 +365,12 @@ add_color_rule( 'txt', '#252E36', array(
 			input[type="url"]:focus,
 			input[type="week"]:focus,
 			textarea:focus', 'border-color' ),
+
+	// Border-bottom-color
+	array( '.comment-list,
+			.wp-block-pullquote,
+			hr,
+			hr.wp-block-separator', 'border-bottom-color', '-1' ),
 
 	/**
 	 * Utility Classes
@@ -449,8 +442,7 @@ add_color_rule( 'fg1', '#FFFFFF', array(
 
 	// Background-color
 	array( '.has-secondary-background-color,
-			.has-secondary-background-color.has-background-dim,
-			.main-navigation .button', 'background-color' ),
+			.has-secondary-background-color.has-background-dim', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 
@@ -461,16 +453,12 @@ add_color_rule( 'fg1', '#FFFFFF', array(
 function brompton_custom_colors_extra_css() { 
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
-	$txt          = $colors_array['colors']['txt'];
 ?>
 	@media screen and (min-width: 560px) {
-		
-		.main-navigation > div > ul > li > .sub-menu,
 		.main-navigation > div > ul > li:hover li > a, 
 		.main-navigation > div > ul > li.focus li > a, 
 		.main-navigation > div > ul > li.current-menu-item li > a {
-			background-color: <?php echo $bg; ?>;
-			border-top-color: <?php echo $txt; ?>;
+			border-top-color: currentColor;
 		}
 	}
 <?php }
