@@ -19,7 +19,7 @@ body {
 // Links styles
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link);
 	text-decoration: none;
 
 	&:hover,
@@ -28,7 +28,13 @@ a {
 	}
 
 	&:active {
-		color: var(--global--color-primary);
+		color: var(--wp--style--color--link);
+	}
+
+	// If a custom link color has been assigned,
+	// switch the color of the bottom border too. 
+	.has-link-color & {
+		border-bottom: 1px solid var(--wp--style--color--link);
 	}
 }
 

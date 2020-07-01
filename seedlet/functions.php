@@ -254,6 +254,9 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+
+		// Add support for experimental link color control.
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'seedlet_setup' );

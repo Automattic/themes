@@ -121,6 +121,8 @@ Included in theme screenshot.
 	--global--border-radius-lg: 18px;
 	--global--border-radius-pill: 180px;
 	--global--border-radius-none: 0;
+	/* WordPress Variables */
+	--wp--style--color--link: var(--global--color-primary);
 	--form--font-family: var(--global--font-secondary);
 	--form--font-size: var(--global--font-size-md);
 	--form--line-height: var(--global-line-height-body);
@@ -973,7 +975,7 @@ body {
 
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link);
 	text-decoration: none;
 }
 
@@ -982,7 +984,11 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link);
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link);
 }
 
 *:focus {
