@@ -17,12 +17,30 @@
 			padding-left: var(--layout-grid--background-offset) !important;
 			padding-right: var(--layout-grid--background-offset) !important;
 		}
+
+		> * {
+			margin-top: calc( 0.666 * var(--global--spacing-vertical) );
+			margin-bottom: calc( 0.666 * var(--global--spacing-vertical) );
+
+			@include media(mobile) {
+				margin-top: var(--global--spacing-vertical);
+				margin-bottom: var(--global--spacing-vertical);
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
 /* Gutter Options */
 @each $size in $layout-gutter-sizes {
-.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-gutter__#{$size} {
+	.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-gutter__#{$size} {
 		grid-gap: var(--layout-grid--gutter-#{$size}) !important;
 	}
 }
