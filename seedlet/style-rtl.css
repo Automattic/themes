@@ -85,6 +85,7 @@ Included in theme screenshot.
 	--global--font-size-xl: 28px;
 	--global--font-size-xxl: 32px;
 	--global--font-size-xxxl: 48px;
+	--global--letter-spacing: normal;
 	/* Line Height */
 	--global--line-height-base: 1;
 	--global--line-height-body: 1.7;
@@ -123,7 +124,7 @@ Included in theme screenshot.
 	--global--border-radius-none: 0;
 	--form--font-family: var(--global--font-secondary);
 	--form--font-size: var(--global--font-size-md);
-	--form--line-height: var(--global-line-height-body);
+	--form--line-height: var(--global--line-height-body);
 	--form--color-text: var(--global--color-foreground);
 	--form--border-color: var(--global--color-border);
 	--form--border-width: 2px;
@@ -154,12 +155,12 @@ Included in theme screenshot.
 	--heading--font-size-h3: var(--global--font-size-xl);
 	--heading--font-size-h2: var(--global--font-size-xxl);
 	--heading--font-size-h1: var(--global--font-size-xxxl);
-	--heading--letter-spacing-h6: var(--global--letter-spacing-md);
-	--heading--letter-spacing-h5: var(--global--letter-spacing-md);
-	--heading--letter-spacing-h4: var(--global--letter-spacing-lg);
-	--heading--letter-spacing-h3: var(--global--letter-spacing-xl);
-	--heading--letter-spacing-h2: var(--global--letter-spacing-xxl);
-	--heading--letter-spacing-h1: var(--global--letter-spacing-xxxl);
+	--heading--letter-spacing-h6: var(--global--letter-spacing);
+	--heading--letter-spacing-h5: var(--global--letter-spacing);
+	--heading--letter-spacing-h4: var(--global--letter-spacing);
+	--heading--letter-spacing-h3: var(--global--letter-spacing);
+	--heading--letter-spacing-h2: var(--global--letter-spacing);
+	--heading--letter-spacing-h1: var(--global--letter-spacing);
 	--heading--line-height-h6: 1.3;
 	--heading--line-height-h5: 1.3;
 	--heading--line-height-h4: 1.3;
@@ -1110,7 +1111,7 @@ blockquote cite,
 blockquote footer {
 	color: var(--global--color-foreground-light);
 	font-size: var(--global--font-size-xs);
-	letter-spacing: var(--global--letter-spacing-xs);
+	letter-spacing: var(--global--letter-spacing);
 }
 
 blockquote > * {
@@ -1140,7 +1141,7 @@ blockquote.alignleft cite,
 blockquote.alignleft footer, blockquote.alignright cite,
 blockquote.alignright footer {
 	font-size: var(--global--font-size-xs);
-	letter-spacing: var(--global--letter-spacing-xs);
+	letter-spacing: var(--global--letter-spacing);
 }
 
 input[type="text"],
@@ -1206,7 +1207,7 @@ figcaption,
 .wp-caption-text {
 	color: var(--global--color-foreground-light);
 	font-size: var(--global--font-size-xs);
-	line-height: var(--global--font-line-height-xs);
+	line-height: var(--global--line-height-body);
 	margin-top: calc(0.5 * var(--global--spacing-unit));
 	margin-bottom: var(--global--spacing-unit);
 	text-align: center;
@@ -1600,7 +1601,7 @@ h6, .h6 {
 .wp-block-image figcaption {
 	color: var(--global--color-foreground-light);
 	font-size: var(--global--font-size-xs);
-	line-height: var(--global--line-height-xs);
+	line-height: var(--global--line-height-body);
 	margin-top: calc(0.5 * var(--global--spacing-unit));
 	margin-bottom: var(--global--spacing-unit);
 	text-align: center;
@@ -2291,7 +2292,7 @@ hr.wp-block-separator.is-style-dots:before {
 }
 
 .jetpack_subscription_widget input[type="text"] {
-	padding: var(--elements--form-padding) !important;
+	padding: var(--global--spacing-horizontal) !important;
 	width: 100% !important;
 }
 
@@ -2839,7 +2840,7 @@ nav a {
 
 .primary-navigation > .button:hover,
 .woo-navigation > .button:hover {
-	color: var(--primary-nav--color-hover);
+	color: var(--primary-nav--color-link-hover);
 }
 
 .primary-navigation-open .primary-navigation > .primary-menu-container, .primary-navigation-open
@@ -3675,7 +3676,7 @@ nav a {
 }
 
 .comment-meta .comment-author .avatar {
-	border: 2px solid var(--global--border-color);
+	border: 2px solid var(--global--color-border);
 	border-radius: 50%;
 	position: absolute;
 	top: 5px;
