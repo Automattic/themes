@@ -93,9 +93,11 @@ add_color_rule( 'bg', '#E8E4DD', array(
 	array( '.has-background-background-color,
 			.has-background-background-color.has-background-dim', 'background-color' ),
 	// Background-color darkened
+	array( '.has-background-dark-color', 'color', '-1' ),
 	array( '.has-background-dark-background-color,
 			.has-background-dark-background-color.has-background-dim', 'background-color', '-1' ),
 	// Background-color lightened
+	array( '.has-background-light-color', 'color', '+1' ),
 	array( '.has-background-light-background-color,
 			.has-background-light-background-color.has-background-dim', 'background-color', '+1' ),
 
@@ -150,9 +152,9 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			.site-info a:hover', 'color', 0.8 ),
 
 	// Background-color
-	array( '.main-navigation .button:active, 
-			.main-navigation .button:focus, 
-			.main-navigation .button:hover', 'background-color', 0.8 ),
+	array( '.main-navigation #toggle-menu:active, 
+			.main-navigation #toggle-menu:focus, 
+			.main-navigation #toggle-menu:hover', 'background-color', 0.8 ),
 
 ), __( 'Background Color' ) );
 
@@ -290,39 +292,7 @@ add_color_rule( 'txt', '#252E36', array(
 			a:hover,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			input[type="color"],
-			input[type="color"]:focus,
-			input[type="date"],
-			input[type="date"]:focus,
-			input[type="datetime"],
-			input[type="datetime"]:focus,
-			input[type="datetime-local"],
-			input[type="datetime-local"]:focus,
-			input[type="email"],
-			input[type="email"]:focus,
-			input[type="month"],
-			input[type="month"]:focus,
-			input[type="number"],
-			input[type="number"]:focus,
-			input[type="password"],
-			input[type="password"]:focus,
-			input[type="range"],
-			input[type="range"]:focus,
-			input[type="search"],
-			input[type="search"]:focus,
-			input[type="tel"],
-			input[type="tel"]:focus,
-			input[type="text"],
-			input[type="text"]:focus,
-			input[type="time"],
-			input[type="time"]:focus,
-			input[type="url"],
-			input[type="url"]:focus,
-			input[type="week"],
-			input[type="week"]:focus,
-			textarea,
-			textarea:focus', 'color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'color' ),
 
 	// Background-color
 	array( '#colophon .footer-navigation,
@@ -344,6 +314,7 @@ add_color_rule( 'txt', '#252E36', array(
 			button,
 			button[data-load-more-btn],
 			input[type="submit"],
+			.main-navigation > div > ul > li > .sub-menu,
 			.main-navigation > div > ul > li:hover li > a, 
 			.main-navigation > div > ul > li.focus li > a, 
 			.main-navigation > div > ul > li.current-menu-item li > a', 'background-color' ),
@@ -382,11 +353,11 @@ add_color_rule( 'txt', '#252E36', array(
 			.has-background-dark-background-color.has-background-dim,
 			.has-background-light-background-color,
 			.has-background-light-background-color.has-background-dim,
-			.has-foreground-color,', 'color' ),
+			.has-foreground-color', 'color' ),
 
 	array( '.has-background-dim,
 			.has-foreground-background-color,
-			.has-foreground-background-color.has-background-dim,', 'background-color' ),
+			.has-foreground-background-color.has-background-dim', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
@@ -454,6 +425,43 @@ function brompton_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
 ?>
+
+	input[type="color"],
+	input[type="color"]:focus,
+	input[type="date"],
+	input[type="date"]:focus,
+	input[type="datetime"],
+	input[type="datetime"]:focus,
+	input[type="datetime-local"],
+	input[type="datetime-local"]:focus,
+	input[type="email"],
+	input[type="email"]:focus,
+	input[type="month"],
+	input[type="month"]:focus,
+	input[type="number"],
+	input[type="number"]:focus,
+	input[type="password"],
+	input[type="password"]:focus,
+	input[type="range"],
+	input[type="range"]:focus,
+	input[type="search"],
+	input[type="search"]:focus,
+	input[type="tel"],
+	input[type="tel"]:focus,
+	input[type="text"],
+	input[type="text"]:focus,
+	input[type="time"],
+	input[type="time"]:focus,
+	input[type="url"],
+	input[type="url"]:focus,
+	input[type="week"],
+	input[type="week"]:focus,
+	textarea,
+	textarea:focus {
+	    	color: black;
+	    	background: white;
+	}
+
 	@media screen and (min-width: 560px) {
 		.main-navigation > div > ul > li:hover li > a, 
 		.main-navigation > div > ul > li.focus li > a, 
