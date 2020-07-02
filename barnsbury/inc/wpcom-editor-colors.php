@@ -70,7 +70,7 @@ add_editor_color_rule( 'bg', '#FFFDF6', array(
 add_editor_color_rule( 'link', '#20603C', array(
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:active,
@@ -84,7 +84,8 @@ add_editor_color_rule( 'link', '#20603C', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Border-left-color
