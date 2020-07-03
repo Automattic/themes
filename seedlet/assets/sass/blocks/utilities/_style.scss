@@ -12,9 +12,6 @@
 	/*rtl:ignore*/
 	margin-right: var(--global--spacing-horizontal);
 	margin-bottom: var(--global--spacing-vertical);
-}
-
-.entry-content > .alignleft {
 	@extend %responsive-alignleft-mobile;
 	@extend %responsive-alignleft;
 }
@@ -41,16 +38,13 @@
 	margin-bottom: var(--global--spacing-vertical);
 	/*rtl:ignore*/
 	margin-left: var(--global--spacing-horizontal);
-}
-
-.entry-content > .alignright {
 	@extend %responsive-alignright-mobile;
 	@extend %responsive-alignright;
 }
 
 // Make sure siblings of floated elements are top-aligned when nested
-.entry-content * > .alignleft + *,
-.entry-content * > .alignright + * {
+* > .alignleft + *,
+* > .alignright + * {
 	margin-top: 0;
 }
 
@@ -67,13 +61,10 @@
  */
 .alignwide {
 	clear: both;
-}
-
-.entry-content > .alignwide {
 	@extend %responsive-alignwide-width;
 }
 
-.entry-content > .alignwide [class*="inner-container"] > .alignwide {
+.alignwide [class*="inner-container"] > .alignwide {
 	@extend %responsive-alignwide-width-nested;
 }
 
@@ -82,14 +73,11 @@
  */
 .alignfull {
 	clear: both;
-}
-
-.entry-content > .alignfull {
 	@extend %responsive-alignfull-width-mobile;
 	@extend %responsive-alignfull-width;
 }
 
-.entry-content > .alignfull [class*="inner-container"] > .alignwide {
+.alignfull [class*="inner-container"] > .alignwide {
 	@extend %responsive-alignwide-width-nested;
 }
 

@@ -362,13 +362,13 @@ Included in theme screenshot.
 	margin-right: auto;
 }
 
-.wide-max-width, .entry-content > .alignwide {
+.wide-max-width, .alignwide {
 	max-width: var(--responsive--alignwide-width);
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .entry-content > .alignfull, .singular .post-thumbnail {
+.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .alignfull, .singular .post-thumbnail {
 	max-width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	margin-left: calc(-1 * var(--global--spacing-horizontal));
@@ -376,7 +376,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.full-max-width, .entry-content > .alignfull, .singular .post-thumbnail {
+	.full-max-width, .alignfull, .singular .post-thumbnail {
 		max-width: var(--responsive--alignfull-width);
 		width: auto;
 		margin-left: auto;
@@ -384,14 +384,14 @@ Included in theme screenshot.
 	}
 }
 
-.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
+.alignwide [class*="inner-container"] > .alignwide, .alignfull [class*="inner-container"] > .alignwide {
 	margin-left: auto;
 	margin-right: auto;
 	width: var(--responsive--alignwide-width);
 	max-width: var(--responsive--alignfull-width);
 }
 
-.entry-content > .alignleft {
+.alignleft {
 	/*rtl:ignore*/
 	margin-left: 0;
 	/*rtl:ignore*/
@@ -399,7 +399,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .entry-content > .alignleft {
+	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .alignleft {
 		/*rtl:ignore*/
 		margin-left: var(--responsive--alignleft-margin);
 		/*rtl:ignore*/
@@ -407,7 +407,7 @@ Included in theme screenshot.
 	}
 }
 
-.entry-content > .alignright {
+.alignright {
 	/*rtl:ignore*/
 	margin-left: var(--responsive--spacing-horizontal);
 	/*rtl:ignore*/
@@ -415,7 +415,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .entry-content > .alignright {
+	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .alignright {
 		/*rtl:ignore*/
 		margin-left: var(--global--spacing-horizontal);
 		/*rtl:ignore*/
@@ -2382,8 +2382,8 @@ table th,
 	margin-left: var(--global--spacing-horizontal);
 }
 
-.entry-content * > .alignleft + *,
-.entry-content * > .alignright + * {
+* > .alignleft + *,
+* > .alignright + * {
 	margin-top: 0;
 }
 
