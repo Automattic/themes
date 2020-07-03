@@ -1434,9 +1434,10 @@ pre.wp-block-verse {
 	padding-left: calc(var(--layout-grid--gutter-huge) + var(--layout-grid--background-offset));
 }
 
-/* Overlay grid */
+/* Overlay styles and margin reset */
 .wp-block-jetpack-layout-grid {
 	/* wpcom-overlay-grid is the classname targeting the grid overlay visual aid displayed in the editor */
+	/* Override default block margin rules */
 }
 
 .wp-block-jetpack-layout-grid .wpcom-overlay-grid {
@@ -1448,6 +1449,11 @@ pre.wp-block-verse {
 .wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__nowrap .wpcom-overlay-grid {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.wp-block-jetpack-layout-grid [data-type="jetpack/layout-grid-column"] {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__none .wpcom-overlay-grid {
