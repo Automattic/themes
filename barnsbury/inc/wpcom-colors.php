@@ -92,9 +92,7 @@ add_color_rule( 'bg', '#FFFDF6', array(
 	 * Uses a slightly darker color
 	 */
 	// Border-color
-	array( '.main-navigation > div > ul > li > .sub-menu > li:first-child > a,
-			.main-navigation > div > ul > li > .sub-menu > li:last-child > a,
-			.main-navigation > div > ul > li > .sub-menu > li > a', 'border-color', '-1' ),
+	array( '.main-navigation > div > ul > li > .sub-menu', 'border-color', '-1' ),
 
 ), __( 'Background Color' ) );
 
@@ -323,21 +321,12 @@ function barnsbury_custom_colors_extra_css() {
 		
 		.main-navigation > div > ul > li > .sub-menu {
 			background-color: <?php echo $bg; ?>;
+			border: 1px solid;
 		}
 		.main-navigation > div > ul > li.current-menu-item li > a,
 		.main-navigation > div > ul > li.focus li > a,
 		.main-navigation > div > ul > li:hover li > a {
 			color: <?php echo $bg; ?>;
-		}
-		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
-			border-top: 1px solid;
-		}
-		.main-navigation > div > ul > li > .sub-menu > li > a {
-			border-left: 1px solid;
-			border-right: 1px solid;
-		}
-		.main-navigation > div > ul > li > .sub-menu > li:last-child > a {
-			border-bottom: 1px solid;
 		}
 		.site-header .main-navigation > div > ul > li.current-menu-item > ul::before,
 		.site-header .main-navigation > div > ul > li.focus > ul::before,
