@@ -394,13 +394,66 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 /**
  * Custom CSS
  */
-function seedlet_custom_colors_extra_css() { ?>
-	/* Revert back to a less custom treatment for the site title underline. */
+function seedlet_custom_colors_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$color_bg = $colors_array['colors']['bg'];
+	$color_fg1 = $colors_array['colors']['fg1'];
+	$color_fg2 = $colors_array['colors']['fg2']; ?>
+
+	/* 
+	 * Revert back to a less custom treatment for the site title underline. 
+	*/
 	.site-title a {
-		background-image: none;
-		text-shadow: none;
-		text-decoration: underline;
-		text-decoration-thickness: 2px;
+		background-image: linear-gradient(to right, <?php echo $color_fg1; ?> 100%, transparent 100%);
+		text-shadow: 1px 0px <?php echo $color_bg; ?>, 
+					 -1px 0px <?php echo $color_bg; ?>, 
+					 -2px 0px <?php echo $color_bg; ?>, 
+					 2px 0px <?php echo $color_bg; ?>, 
+					 -3px 0px <?php echo $color_bg; ?>, 
+					 3px 0px <?php echo $color_bg; ?>, 
+					 -4px 0px <?php echo $color_bg; ?>, 
+					 4px 0px <?php echo $color_bg; ?>, 
+					 -5px 0px <?php echo $color_bg; ?>, 
+					 5px 0px <?php echo $color_bg; ?>;
+	}
+
+	/* 
+	 * Custom gradients.
+	*/
+	.has-hard-diagonal-gradient-background {
+		background: linear-gradient(to bottom right, <?php echo $color_fg1; ?> 49.9%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	.has-hard-diagonal-inverted-gradient-background {
+		background: linear-gradient(to top left, <?php echo $color_fg1; ?> 49.9%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	.has-diagonal-gradient-background {
+		background: linear-gradient(to bottom right, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	.has-diagonal-inverted-gradient-background {
+		background: linear-gradient(to top left, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	.has-hard-horizontal-gradient-background {
+		background: linear-gradient(to bottom, <?php echo $color_fg1; ?> 50%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	.has-hard-horizontal-inverted-gradient-background {
+		background: linear-gradient(to top, <?php echo $color_fg1; ?> 50%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	.has-horizontal-gradient-background {
+		background: linear-gradient(to bottom, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	.has-horizontal-inverted-gradient-background {
+		background: linear-gradient(to top, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	.has-stripe-gradient-background {
+		background: linear-gradient(to bottom, transparent 20%, <?php echo $color_fg1; ?> 20%, <?php echo $color_fg1; ?> 80%, transparent 80%);
 	}
 <?php }
 add_theme_support( 'custom_colors_extra_css', 'seedlet_custom_colors_extra_css' );
