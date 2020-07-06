@@ -8,6 +8,27 @@
  */
 
 /**
+ * Adds support for wp.com-specific theme functions.
+ *
+ * @global array $themecolors
+ */
+function seedlet_wpcom_setup() {
+	global $themecolors;
+
+	// Set theme colors for third party services.
+	if ( ! isset( $themecolors ) ) {
+		$themecolors = array(
+			'background'     => 'FFFFFF',
+			'foreground' => '333333',
+			'primary'   => '000000',
+			'secondary'   => '3C8067',
+			'tertiary'    => 'FAFBF6',
+		);
+	}
+}
+add_action( 'after_setup_theme', 'seedlet_wpcom_setup' );
+
+/**
  * Add setting for hiding page title on the homepage.
  */
 function seedlet_wpcom_customize_update( $wp_customize ) {
