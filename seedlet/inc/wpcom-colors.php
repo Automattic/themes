@@ -150,8 +150,9 @@ add_color_rule( 'txt', '#444444', array(
 			textarea:focus', 'color' ),
 
 	// Background-color
-	array( '.has-foreground-background-color[class],
-			.wp-block-pullquote.is-style-solid-color', 'background-color' ),
+	array( '.wp-block-pullquote.is-style-solid-color,
+			.wp-block-cover-image.has-background-dim, 
+			.wp-block-cover.has-background-dim', 'background-color' ),
 
 	// Border-bottom-color
 	array( '.pagination .nav-links > *.current', 'border-bottom-color' ),
@@ -223,12 +224,10 @@ add_color_rule( 'link', '#000000', array(
 	 */
 
 	// Background-color
-	array( '.has-primary-background-color[class],
-			.has-foreground-dark-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color[class]', 'background-color' ),
 
 	// Text-color
 	array( '.has-black-background-color[class],
-			.has-foreground-dark-color[class],
 			.has-primary-color[class]', 'color' ),
 
 ), __( 'Primary Color' ) );
@@ -467,6 +466,7 @@ add_color_palette( array(
 	'#1D1E1E',
 	'#C8133E',
 	'#4E2F4B',
+	'#F9F9F9',
 ), 'Light' );
 // Medium
 add_color_palette( array(
@@ -474,6 +474,7 @@ add_color_palette( array(
 	'#242527',
 	'#35845D',
 	'#233252',
+	'#F9F9F9',
 ), 'Medium' );
 // Dark
 add_color_palette( array(
