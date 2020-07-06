@@ -264,8 +264,8 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
+	array( '.wp-block-cover.has-background-dim:not([class*="background-color"]),
+			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
 			.has-foreground-background-color[class],
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
