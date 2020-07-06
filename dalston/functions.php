@@ -197,33 +197,50 @@ add_action( 'enqueue_block_editor_assets', 'dalston_editor_styles' );
 function dalston_block_extends() {
 
 	// Cover Block Tweaks
-	wp_enqueue_script( 'dalston-extend-cover-block',
-		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
-		array( 'wp-blocks' )
-	);
+	if ( ! dalston_is_amp() ) {
+		wp_enqueue_script( 'dalston-extend-cover-block',
+			get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
+			array( 'wp-blocks' )
+		);
+	}
 
 	wp_enqueue_style( 'dalston-extend-cover-block-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.css'
 	);
 
 	// Columns Block Tweaks
-	wp_enqueue_script( 'dalston-extend-columns-block',
-		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.js',
-		array( 'wp-blocks' )
-	);
+	if ( ! dalston_is_amp() ) {
+		wp_enqueue_script( 'dalston-extend-columns-block',
+			get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.js',
+			array( 'wp-blocks' )
+		);
+	}
 
 	wp_enqueue_style( 'dalston-extend-cover-columns-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.css'
 	);
 
 	// Columns Block Tweaks
-	wp_enqueue_script( 'dalston-extend-media-text-block',
-		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.js',
-		array( 'wp-blocks' )
-	);
+	if ( ! dalston_is_amp() ) {
+		wp_enqueue_script( 'dalston-extend-media-text-block',
+			get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.js',
+			array( 'wp-blocks' )
+		);
+	}
 
 	wp_enqueue_style( 'dalston-extend-cover-media-text-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.css'
 	);
 }
 add_action( 'enqueue_block_assets', 'dalston_block_extends' );
+
+/**
+ * Whether this is an AMP endpoint.
+ *
+ * @see https://github.com/Automattic/amp-wp/blob/e4472bfa5c304b6c1b968e533819e3fa96579ad4/includes/amp-helper-functions.php#L248
+ * @return bool
+ */
+function dalston_is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
+
