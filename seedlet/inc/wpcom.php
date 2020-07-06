@@ -18,11 +18,11 @@ function seedlet_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'background'     => 'FFFFFF',
-			'foreground' => '333333',
-			'primary'   => '000000',
-			'secondary'   => '3C8067',
-			'tertiary'    => 'FAFBF6',
+			'bg'     => 'FFFFFF',
+			'txt'    => '333333',
+			'link'   => '000000',
+			'fg1'    => '3C8067',
+			'fg2'    => 'FAFBF6',
 		);
 	}
 }
