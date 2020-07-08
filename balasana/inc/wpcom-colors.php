@@ -34,8 +34,8 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover-image.has-background-dim,
-			.wp-block-cover.has-background-dim,
+			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
+			.wp-block-cover.has-background-dim:not([class*="background-color"]),
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -146,14 +146,37 @@ add_color_rule( 'link', '#19744C', array(
 			.button,
 			.main-navigation #toggle:focus + #toggle-menu,
 			.sticky-post,
-			.wp-block-button__link,
+			.wp-block-file__button:focus,
+			.wp-block-file__button:hover,
+			.wp-block-button__link:focus,
+			.wp-block-button__link:hover,
+			.wp-block-button__link:not([class*="background-color"]),
+			.wp-block-button__link:not([class*="background-color"]):focus,
+			.wp-block-button__link:not([class*="background-color"]):hover,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file__button,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			input[type="submit"],
+			.a8c-posts-list__view-all:focus,
+			.a8c-posts-list__view-all:hover,
+			.button:focus,
+			.button:hover,
+			.has-focus.a8c-posts-list__view-all,
+			.has-focus.button,
+			.has-focus.wp-block-button__link,
+			.has-focus.wp-block-file__button,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
+			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
+			button.has-focus,
+			button:focus,
+			button:hover,
+			input.has-focus[type="submit"],
+			input:focus[type="submit"],
+			input:hover[type="submit"]', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
@@ -185,7 +208,27 @@ add_color_rule( 'link', '#19744C', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			a', 'color' ),
+			a,
+			a:hover
+			.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
+			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
+			.comment-meta .comment-metadata a:active,
+			.comment-meta .comment-metadata a:hover,
+			.entry-footer a:active,
+			.entry-footer a:hover,
+			.entry-meta a:active,
+			.entry-meta a:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover', 'color' ),
 
 	// Border color right
 	array( '.wp-block-quote[style*="text-align: right"],
@@ -193,6 +236,24 @@ add_color_rule( 'link', '#19744C', array(
 
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
+	
+	// Border color
+	array( 'input[type="color"]:focus,
+			input[type="date"]:focus,
+			input[type="datetime"]:focus,
+			input[type="datetime-local"]:focus,
+			input[type="email"]:focus,
+			input[type="month"]:focus,
+			input[type="number"]:focus,
+			input[type="password"]:focus,
+			input[type="range"]:focus,
+			input[type="search"]:focus,
+			input[type="tel"]:focus,
+			input[type="text"]:focus,
+			input[type="time"]:focus,
+			input[type="url"]:focus,
+			input[type="week"]:focus,
+			textarea:focus', 'border-color' ),
 
 	/**
 	 * Utility Classes
@@ -263,9 +324,8 @@ add_color_rule( 'txt', '#303030', array(
 			textarea:focus', 'color' ),
 
 	// Background-color
-	array( '.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
-			.wp-block-cover.has-background-dim,
+	array( '.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
+			.wp-block-cover.has-background-dim:not([class*="background-color"]),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
@@ -278,7 +338,7 @@ add_color_rule( 'txt', '#303030', array(
 			.has-background-light-background-color', 'color' ),
 
 	// Background
-	array( '.has-background-dim,
+	array( '.has-background-dim:not([class*="background-color"]),
 			.has-foreground-background-color,
 			.has-foreground-background-color.has-background-dim', 'background-color' ),
 
