@@ -1519,18 +1519,12 @@ button[data-load-more-btn], .button {
 	margin-bottom: 32px;
 }
 
-.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover__inner-container a.wp-block-button__link:hover,
-.wp-block-cover .wp-block-cover-image-text a:not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover-image-text a.wp-block-button__link:hover,
-.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover-text a.wp-block-button__link:hover,
-.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover__inner-container a.wp-block-button__link:hover,
-.wp-block-cover-image .wp-block-cover-image-text a:not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover-image-text a.wp-block-button__link:hover,
-.wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover-text a.wp-block-button__link:hover {
+.wp-block-cover .wp-block-cover__inner-container a,
+.wp-block-cover .wp-block-cover-image-text a,
+.wp-block-cover .wp-block-cover-text a,
+.wp-block-cover-image .wp-block-cover__inner-container a,
+.wp-block-cover-image .wp-block-cover-image-text a,
+.wp-block-cover-image .wp-block-cover-text a {
 	color: currentColor;
 }
 
@@ -2255,10 +2249,6 @@ hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 96px;
 }
 
-hr.wp-block-separator.is-style-wide {
-	border-bottom-width: 2px;
-}
-
 hr.wp-block-separator.is-style-dots.has-background, hr.wp-block-separator.is-style-dots.has-text-color {
 	background-color: transparent !important;
 }
@@ -2407,36 +2397,36 @@ table th,
 	background-attachment: fixed;
 }
 
-.has-primary-color {
-	color: #3E7D98;
+.has-primary-color[class] {
+	color: #3E7D98 !important;
 }
 
-.has-secondary-color {
-	color: #9B6A36;
+.has-secondary-color[class] {
+	color: #9B6A36 !important;
 }
 
-.has-foreground-color {
-	color: #394d55;
+.has-foreground-color[class] {
+	color: #394d55 !important;
 }
 
-.has-foreground-light-color {
-	color: #4d6974;
+.has-foreground-light-color[class] {
+	color: #4d6974 !important;
 }
 
-.has-foreground-dark-color {
-	color: #253136;
+.has-foreground-dark-color[class] {
+	color: #253136 !important;
 }
 
-.has-background-light-color {
-	color: #fafafa;
+.has-background-light-color[class] {
+	color: #fafafa !important;
 }
 
-.has-background-dark-color {
-	color: #d9d9d9;
+.has-background-dark-color[class] {
+	color: #d9d9d9 !important;
 }
 
-.has-background-color {
-	color: #ffffff;
+.has-background-color[class] {
+	color: #ffffff !important;
 }
 
 .has-background:not(.has-background-background-color) a,
@@ -2444,43 +2434,43 @@ table th,
 	color: currentColor;
 }
 
-.has-primary-background-color {
-	background-color: #3E7D98;
+.has-primary-background-color[class] {
+	background-color: #3E7D98 !important;
 	color: #ffffff;
 }
 
-.has-secondary-background-color {
-	background-color: #9B6A36;
+.has-secondary-background-color[class] {
+	background-color: #9B6A36 !important;
 	color: #ffffff;
 }
 
-.has-foreground-background-color {
-	background-color: #394d55;
+.has-foreground-background-color[class] {
+	background-color: #394d55 !important;
 	color: #ffffff;
 }
 
-.has-foreground-light-background-color {
-	background-color: #4d6974;
+.has-foreground-light-background-color[class] {
+	background-color: #4d6974 !important;
 	color: #ffffff;
 }
 
-.has-foreground-dark-background-color {
-	background-color: #253136;
+.has-foreground-dark-background-color[class] {
+	background-color: #253136 !important;
 	color: #ffffff;
 }
 
-.has-background-light-background-color {
-	background-color: #fafafa;
+.has-background-light-background-color[class] {
+	background-color: #fafafa !important;
 	color: #394d55;
 }
 
-.has-background-dark-background-color {
-	background-color: #d9d9d9;
+.has-background-dark-background-color[class] {
+	background-color: #d9d9d9 !important;
 	color: #394d55;
 }
 
-.has-background-background-color {
-	background-color: #ffffff;
+.has-background-background-color[class] {
+	background-color: #ffffff !important;
 	color: #394d55;
 }
 
@@ -3215,7 +3205,6 @@ body:not(.fse-enabled) .footer-menu a {
 .pagination .nav-links .svg-icon {
 	display: inline-block;
 	vertical-align: middle;
-	fill: currentColor;
 }
 
 @media only screen and (min-width: 560px) {

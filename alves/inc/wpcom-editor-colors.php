@@ -24,23 +24,33 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
-			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim', 'color' ),
 
 	/**
 	 * Utility Classes
 	 */
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
-			#editor .editor-styles-wrapper .has-secondary-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-dark-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
-			#editor .editor-styles-wrapper .has-background-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-background-color,
+			#editor .editor-styles-wrapper .has-secondary-background-color,
+			#editor .editor-styles-wrapper .has-foreground-background-color,
+			#editor .editor-styles-wrapper .has-foreground-dark-background-color,
+			#editor .editor-styles-wrapper .has-foreground-light-background-color,
+			#editor .editor-styles-wrapper .has-background-color', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class]', 'background-color' ),
@@ -57,23 +67,37 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 	// Background-color lightened
 	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class]', 'background-color', '+1' ),
 
+	/**
+	 * Clean up for nested items
+	 */
+	// Text-color
+	array( '#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+			#editor .editor-styles-wrapper [class*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+			#editor .editor-styles-wrapper [style*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] .wp-block-quote .wp-block-quote__citation', 'color' ),
+	// Border-color
+	array( '#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) .wp-block-quote,
+			#editor .editor-styles-wrapper [class*="background-color"]:not(.has-background-background-color) .wp-block-quote,
+			#editor .editor-styles-wrapper [style*="background-color"]:not(.has-background-background-color) .wp-block-quote,
+			#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] .wp-block-quote', 'border-color'),
+
 ), __( 'Background Color' ) );
 
 // Link Color (Blue)
 // $config-global--color-primary-default
-add_editor_color_rule( 'link', '#3e7d98', array(
+add_editor_color_rule( 'link', '#3E7D98', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before,
 			#editor .editor-styles-wrapper a,
 			#editor .editor-styles-wrapper hr.is-style-dots:before', 'color' ),
@@ -112,16 +136,28 @@ add_editor_color_rule( 'link', '#3e7d98', array(
 add_editor_color_rule( 'txt', '#394d55', array(
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
+	array( '#editor .editor-styles-wrapper,
+			#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:link,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited,
 			#editor .editor-styles-wrapper .has-foreground-color[class],
 			#editor .editor-styles-wrapper .wp-block-pullquote,
-			#editor .editor-styles-wrapper,
 			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-pullquote:not(.is-style-solid-color) .wp-block-pullquote__citation', 'color' ),
+			#editor .editor-styles-wrapper .wp-block-pullquote:not(.is-style-solid-color) .wp-block-pullquote__citation,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:hover,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:focus,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus', 'color' ),
+
+	// Background-color
+	array( '#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd)', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -152,7 +188,7 @@ add_editor_color_rule( 'txt', '#394d55', array(
 
 // Accent Color (Red)
 // $config-global--color-secondary-default
-add_editor_color_rule( 'fg1', '#FF7A5C', array(
+add_editor_color_rule( 'fg1', '#9B6A36', array(
 
 	/**
 	 * Utility Classes
