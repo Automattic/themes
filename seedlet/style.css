@@ -391,7 +391,7 @@ Included in theme screenshot.
 	max-width: var(--responsive--alignfull-width);
 }
 
-.alignleft {
+.entry-content > .alignleft {
 	/*rtl:ignore*/
 	margin-left: 0;
 	/*rtl:ignore*/
@@ -399,7 +399,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .alignleft {
+	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: var(--responsive--alignleft-margin);
 		/*rtl:ignore*/
@@ -407,7 +407,7 @@ Included in theme screenshot.
 	}
 }
 
-.alignright {
+.entry-content > .alignright {
 	/*rtl:ignore*/
 	margin-left: var(--responsive--spacing-horizontal);
 	/*rtl:ignore*/
@@ -415,7 +415,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .alignright {
+	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-left: var(--global--spacing-horizontal);
 		/*rtl:ignore*/
@@ -2382,8 +2382,8 @@ table th,
 	margin-left: var(--global--spacing-horizontal);
 }
 
-* > .alignleft + *,
-* > .alignright + * {
+[class*="inner-container"] > .alignleft + *,
+[class*="inner-container"] > .alignright + * {
 	margin-top: 0;
 }
 
