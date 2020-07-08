@@ -109,7 +109,6 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( array(
 			seedlet_fonts_url(),
-			'./assets/css/variables-editor.css',
 			'./assets/css/style-editor.css'
 		) );
 
