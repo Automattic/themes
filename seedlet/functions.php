@@ -397,7 +397,7 @@ require get_template_directory() . '/classes/class-seedlet-svg-icons.php';
 /**
  * Custom colors class.
  */
-if ( empty( get_theme_mod( 'colors_manager' ) ) ) {
+if ( empty( get_theme_mod( 'colors_manager' ) ) ) { // If the theme is on wpcom, we bypass the theme's built in custom colors, because wpcom uses a different custom color implementation.
 	require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
 }
 
