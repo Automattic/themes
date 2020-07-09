@@ -227,8 +227,8 @@ add_color_rule( 'txt', '#444444', array(
 			textarea:focus', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
+	array( '.wp-block-cover.has-background-dim:not([class*="background-color"]),
+			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
