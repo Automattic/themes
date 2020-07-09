@@ -355,8 +355,8 @@ Included in theme screenshot.
 /**
  * Extends
  */
-.default-max-width, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
+.default-max-width, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
 	margin-right: auto;
@@ -2359,6 +2359,10 @@ table th,
 	margin-bottom: var(--global--spacing-vertical);
 }
 
+.entry-content > .alignleft {
+	max-width: var(--responsive--aligndefault-width);
+}
+
 /**
  * .aligncenter
  */
@@ -2381,6 +2385,10 @@ table th,
 	margin-bottom: var(--global--spacing-vertical);
 	/*rtl:ignore*/
 	margin-left: var(--global--spacing-horizontal);
+}
+
+.entry-content > .alignright {
+	max-width: var(--responsive--aligndefault-width);
 }
 
 [class*="inner-container"] > .alignleft + *,
