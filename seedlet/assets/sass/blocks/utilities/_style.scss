@@ -3,8 +3,8 @@
 /**
  * These selectors set the default max width for content appearing inside a post or page. 
  */
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+.entry-content > *:not(.alignwide):not(.alignfull):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
+.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.wp-block-separator) {
 	@extend %responsive-aligndefault-width;
 }
 
@@ -27,7 +27,6 @@
 .entry-content > .alignleft {
 	@extend %responsive-alignleft-mobile;
 	@extend %responsive-alignleft;
-	@extend %responsive-aligndefault-width;
 }
 
 /**
@@ -60,7 +59,6 @@
 .entry-content > .alignright {
 	@extend %responsive-alignright-mobile;
 	@extend %responsive-alignright;
-	@extend %responsive-aligndefault-width;
 }
 
 // Make sure siblings of floated elements are top-aligned when nested
