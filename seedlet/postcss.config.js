@@ -5,6 +5,8 @@ module.exports = {
 			"preserve": false,
 			"preserveAtRulesOrder": true
 		}),
-		require( 'postcss-calc' )
+		require( 'postcss-calc' )({
+			"precision": 0
+		})
 	]
 }
