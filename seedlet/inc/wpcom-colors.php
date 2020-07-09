@@ -388,6 +388,62 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 	array( '.has-tertiary-color[class],
 			.has-background-light-color[class]', 'color' ),
 
+	/**
+	 * Border Colors
+	 * --global--color-border
+	 */
+
+	// Border-color
+	array( '.comment-meta .comment-author .avatar,
+			.wp-block-code,
+			.wp-block-search .wp-block-search__input,
+			.wp-block-search .wp-block-search__input:focus,
+			input[type="color"],
+			input[type="color"]:focus,
+			input[type="date"],
+			input[type="date"]:focus,
+			input[type="datetime"],
+			input[type="datetime"]:focus,
+			input[type="datetime-local"],
+			input[type="datetime-local"]:focus,
+			input[type="email"],
+			input[type="email"]:focus,
+			input[type="month"],
+			input[type="month"]:focus,
+			input[type="number"],
+			input[type="number"]:focus,
+			input[type="password"],
+			input[type="password"]:focus,
+			input[type="range"],
+			input[type="range"]:focus,
+			input[type="search"],
+			input[type="search"]:focus,
+			input[type="tel"],
+			input[type="tel"]:focus,
+			input[type="text"],
+			input[type="text"]:focus,
+			input[type="time"],
+			input[type="time"]:focus,
+			input[type="url"],
+			input[type="url"]:focus,
+			input[type="week"],
+			input[type="week"]:focus,
+			select,
+			textarea,
+			textarea:focus', 'border-color' ),
+
+	// Border-bottom-color
+	array( '.comment-list > li:not(first-child),
+			hr,
+			hr.wp-block-separator', 'border-bottom-color' ),
+
+	// Border-top-color
+	array( '.comment-list .children > li,
+			.site-main > article > .entry-footer', 'border-top-color' ),
+
+	// Color
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color' ),
+
 ), __( 'Tertiary Color' ) );
 
 /**
