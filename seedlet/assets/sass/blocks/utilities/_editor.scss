@@ -233,6 +233,19 @@
 	}
 }
 
+// Selects the post editor and not the site editor
+.block-editor-block-list__layout:not(.edit-site-block-editor__block-list){
+	.wp-block {
+		&[data-align="full"],
+		&.alignfull {
+			&>[data-block] {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
 .alignleft {
 	margin: 0;
 	margin-right: var(--global--spacing-horizontal);
