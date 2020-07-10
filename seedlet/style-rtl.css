@@ -975,7 +975,7 @@ body {
 
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-decoration: none;
 }
 
@@ -984,7 +984,15 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link);
+}
+
+p.has-link-color.has-background a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
 }
 
 *:focus {

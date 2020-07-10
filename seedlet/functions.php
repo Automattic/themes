@@ -255,6 +255,9 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for experimental link color control.
+		add_theme_support( 'experimental-link-color' );
+    
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
