@@ -345,9 +345,6 @@ add_action( 'after_setup_theme', 'seedlet_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function seedlet_scripts() {
-	// Enqueue Google fonts
-	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
-
 	// Theme styles
 	if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)) {
 		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
