@@ -393,6 +393,25 @@ add_color_rule( 'fg1', '#EE4266', array(
  * Custom CSS
  */
 function rivington_custom_colors_extra_css() { ?>
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea {
+		border-width: 1px;
+	}
+
 	@media screen and (min-width: 560px) {
 		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
 			border-top: 1px solid;
