@@ -107,10 +107,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( array(
-			seedlet_fonts_url(),
-			'./assets/css/style-editor.css'
-		) );
+		add_editor_style( './assets/css/style-editor.css' );
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -260,50 +257,6 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'seedlet_setup' );
-
-/**
- * Add Google webfonts, if necessary
- *
- * - See: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
- */
-function seedlet_fonts_url() {
-
-	$fonts_url = '';
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$fira_sans = esc_html_x( 'on', 'Fira Sans: on or off', 'seedlet' );
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Roboto Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$playfair_display = esc_html_x( 'on', 'Playfair Display: on or off', 'seedlet' );
-
-	if ( 'off' !== $fira_sans || 'off' !== $playfair_display ) {
-		$font_families = array();
-
-		if ( 'off' !== $fira_sans ) {
-			$font_families[] = 'Fira Sans:ital,wght@0,400;0,500;1,400';
-		}
-
-		if ( 'off' !== $playfair_display ) {
-			$font_families[] = 'Playfair Display:ital,wght@0,400;0,700;1,400';
-		}
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
-
-	return esc_url_raw( $fonts_url );
-}
-
 
 /**
  * Register widget area.
