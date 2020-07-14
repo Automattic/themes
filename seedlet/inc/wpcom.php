@@ -25,6 +25,106 @@ function seedlet_wpcom_setup() {
 			'fg2'    => 'FAFBF6',
 		);
 	}
+
+	/**
+	 * De-register original editor color palette in favor of the wpcom implementation
+	 */
+	remove_theme_support( 'editor-color-palette' );
+	remove_theme_support( 'editor-gradient-presets' );
+
+	$wpcom_colors_array = get_theme_mod( 'colors_manager' );
+	if ( ! empty( $wpcom_colors_array ) ) {
+		$primary    = $wpcom_colors_array['colors']['link'];
+		$secondary  = $wpcom_colors_array['colors']['fg1'];
+		$foreground = $wpcom_colors_array['colors']['txt'];
+		$tertiary   = $wpcom_colors_array['colors']['fg2'];
+		$background = $wpcom_colors_array['colors']['bg'];
+
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'seedlet' ),
+					'slug'  => 'primary',
+					'color' => $primary
+				),
+				array(
+					'name'  => __( 'Secondary', 'seedlet' ),
+					'slug'  => 'secondary',
+					'color' => $secondary
+				),
+				array(
+					'name'  => __( 'Foreground', 'seedlet' ),
+					'slug'  => 'foreground',
+					'color' => $foreground
+				),
+				array(
+					'name'  => __( 'Tertiary', 'seedlet' ),
+					'slug'  => 'tertiary',
+					'color' => $tertiary
+				),
+				array(
+					'name'  => __( 'Background', 'seedlet' ),
+					'slug'  => 'background',
+					'color' => $background
+				),
+			)
+		);
+
+		$gradient_color_a = $secondary;
+		$gradient_color_b = $tertiary;
+
+		add_theme_support(
+			'editor-gradient-presets',
+			array(
+				array(
+					'name'     => __( 'Diagonal', 'seedlet' ),
+					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b  . ' 50%)',
+					'slug'     => 'hard-diagonal',
+				),
+				array(
+					'name'     => __( 'Diagonal inverted', 'seedlet' ),
+					'gradient' => 'linear-gradient(to top left, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b . ' 50%)',
+					'slug'     => 'hard-diagonal-inverted',
+				),
+				array(
+					'name'     => __( 'Horizontal', 'seedlet' ),
+					'gradient' => 'linear-gradient(to bottom, ' . $gradient_color_a . ' 50%, ' . $gradient_color_b . ' 50%)',
+					'slug'     => 'hard-horizontal',
+				),
+				array(
+					'name'     => __( 'Horizontal inverted', 'seedlet' ),
+					'gradient' => 'linear-gradient(to top, ' . $gradient_color_a . ' 50%, ' . $gradient_color_b . ' 50%)',
+					'slug'     => 'hard-horizontal-inverted',
+				),
+				array(
+					'name'     => __( 'Diagonal gradient', 'seedlet' ),
+					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
+					'slug'     => 'diagonal',
+				),
+				array(
+					'name'     => __( 'Diagonal inverted gradient', 'seedlet' ),
+					'gradient' => 'linear-gradient(to top left, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
+					'slug'     => 'diagonal-inverted',
+				),
+				array(
+					'name'     => __( 'Horizontal gradient', 'seedlet' ),
+					'gradient' => 'linear-gradient(to bottom, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
+					'slug'     => 'horizontal',
+				),
+				array(
+					'name'     => __( 'Horizontal inverted gradient', 'seedlet' ),
+					'gradient' => 'linear-gradient(to top, ' . $gradient_color_a . ', ' . $gradient_color_b . ')',
+					'slug'     => 'horizontal-inverted',
+				),
+				array(
+					'name'     => __( 'Stripe', 'seedlet' ),
+					'gradient' => 'linear-gradient(to bottom, transparent 20%, ' . $gradient_color_a . ' 20%, ' . $gradient_color_a . ' 80%, transparent 80%)',
+					'slug'     => 'stripe',
+				),
+			)
+		);
+	}
 }
 add_action( 'after_setup_theme', 'seedlet_wpcom_setup' );
 
