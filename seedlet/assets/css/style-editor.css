@@ -109,7 +109,7 @@ body {
 
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-decoration: none;
 }
 
@@ -118,7 +118,15 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+p.has-background.has-link-color:not(.has-background-background-color) a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link);
 }
 
 button,
@@ -1161,6 +1169,11 @@ pre.wp-block-verse {
 
 .wp-block[data-align="full"], .wp-block.alignfull {
 	max-width: none;
+}
+
+.block-editor-block-list__layout:not(.edit-site-block-editor__block-list) .wp-block[data-align="full"] > [data-block], .block-editor-block-list__layout:not(.edit-site-block-editor__block-list) .wp-block.alignfull > [data-block] {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .alignleft {
