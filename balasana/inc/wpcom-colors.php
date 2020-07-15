@@ -34,8 +34,16 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
-			.wp-block-cover.has-background-dim:not([class*="background-color"]),
+			.wp-block-cover.has-background-dim,
+			.wp-block-cover.has-background-dim .block-editor-block-list__block,
+			.wp-block-cover.has-background-dim .wp-block-cover-image-text,
+			.wp-block-cover.has-background-dim .wp-block-cover-text,
+			.wp-block-cover.has-background-dim .wp-block-cover__inner-container,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover-image.has-background-dim .block-editor-block-list__block,
+			.wp-block-cover-image.has-background-dim .wp-block-cover-image-text,
+			.wp-block-cover-image.has-background-dim .wp-block-cover-text,
+			.wp-block-cover-image.has-background-dim .wp-block-cover__inner-container,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -67,18 +75,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	 */
 	// Text-color
 	array( '.has-background-color,
-			.has-background-dim,
-			.has-foreground-background-color,
-			.has-foreground-background-color.has-background-dim,
-			.has-foreground-dark-background-color,
-			.has-foreground-dark-background-color.has-background-dim,
-			.has-foreground-light-background-color,
-			.has-foreground-light-background-color.has-background-dim,
-			.has-primary-background-color,
-			.has-primary-background-color.has-background-dim,
-			.has-secondary-background-color,
-			.has-secondary-background-color.has-background-dim,
-			.has-background-color,
 			.has-background-dark-color,
 			.has-background-light-color', 'color' ),
 	// Background-color
@@ -200,16 +196,16 @@ add_color_rule( 'link', '#19744C', array(
 			.site-info a:hover,
 			.site-title a:hover,
 			.social-navigation a:hover,
-			.wp-block-button.is-style-outline .wp-block-button__link,
-			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
-			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			a,
-			a:hover
+			a:hover,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
 			.comment-meta .comment-metadata a:active,
@@ -259,7 +255,8 @@ add_color_rule( 'link', '#19744C', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color', 'background-color' ),
+	array( '.has-primary-background-color,
+			.has-primary-background-color.has-background-dim', 'background-color' ),
 	// Text-color
 	array( '.has-primary-color', 'color' ),
 
@@ -345,12 +342,14 @@ add_color_rule( 'txt', '#303030', array(
 	// Text-color darkened
 	array( '.has-foreground-dark-color', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color,
+			.has-foreground-dark-background-color.has-background-dim', 'background-color', '-1' ),
 
 	// Text-color brightened
 	array( '.has-foreground-light-color', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color,
+			.has-foreground-light-background-color.has-background-dim', 'background-color', '+2' ),
 
 	/**
 	 * Gray (Same as text color)
@@ -394,7 +393,8 @@ add_color_rule( 'fg1', '#BC2213', array(
 	array( '.has-secondary-color', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color', 'background-color' ),
+	array( '.has-secondary-background-color,
+			.has-secondary-background-color.has-background-dim', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 

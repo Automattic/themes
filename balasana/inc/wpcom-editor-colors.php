@@ -81,12 +81,13 @@ add_editor_color_rule( 'link', '#19744C', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.editor-styles-wrapper a', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Border-left-color
