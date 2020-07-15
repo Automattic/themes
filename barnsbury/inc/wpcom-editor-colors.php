@@ -16,10 +16,10 @@ add_editor_color_rule( 'bg', '#FFFDF6', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button__link.has-focus:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	// Background-color
@@ -70,8 +70,8 @@ add_editor_color_rule( 'bg', '#FFFDF6', array(
 add_editor_color_rule( 'link', '#20603C', array(
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
+	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:active,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:focus,
@@ -83,7 +83,7 @@ add_editor_color_rule( 'link', '#20603C', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
@@ -143,7 +143,7 @@ add_editor_color_rule( 'txt', '#3C2323', array(
 			#editor .editor-styles-wrapper .has-background-light-background-color,
 			#editor .editor-styles-wrapper .wp-block .has-background-light-background-color,
 			#editor .editor-styles-wrapper .has-foreground-color,
-			#editor .editor-styles-wrapper .wp-block .has-foreground-color,', 'color' ),
+			#editor .editor-styles-wrapper .wp-block .has-foreground-color', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-foreground-background-color,

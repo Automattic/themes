@@ -210,38 +210,6 @@ add_color_rule( 'txt', '#3C2323', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			hr.wp-block-separator.is-style-dots:before,
-			input[type="color"],
-			input[type="color"]:focus,
-			input[type="date"],
-			input[type="date"]:focus,
-			input[type="datetime"],
-			input[type="datetime"]:focus,
-			input[type="datetime-local"],
-			input[type="datetime-local"]:focus,
-			input[type="email"],
-			input[type="email"]:focus,
-			input[type="month"],
-			input[type="month"]:focus,
-			input[type="number"],
-			input[type="number"]:focus,
-			input[type="password"],
-			input[type="password"]:focus,
-			input[type="range"],
-			input[type="range"]:focus,
-			input[type="search"],
-			input[type="search"]:focus,
-			input[type="tel"],
-			input[type="tel"]:focus,
-			input[type="text"],
-			input[type="text"]:focus,
-			input[type="time"],
-			input[type="time"]:focus,
-			input[type="url"],
-			input[type="url"]:focus,
-			input[type="week"],
-			input[type="week"]:focus,
-			textarea,
-			textarea:focus,
 			.site-title,
 			.main-navigation > div > ul > li.current-menu-item li > a,
 			.main-navigation > div > ul > li.focus li > a,
@@ -302,6 +270,14 @@ add_color_rule( 'txt', '#3C2323', array(
 // Accent Color
 // $config-global--color-secondary-default
 add_color_rule( 'fg1', '#655441', array(
+
+	// Text-color
+	array( '.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover', 'color' ),
+
+	// Background-color
+	array( '.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover', 'background-color' ),
 
 	/**
 	 * Utility Classes
