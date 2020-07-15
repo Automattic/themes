@@ -3177,15 +3177,13 @@ body:not(.fse-enabled) .footer-menu a {
 	text-decoration: none;
 }
 
-.entry-content > iframe[style] {
-	margin: 32px 0 !important;
-	max-width: 100% !important;
-}
-
-@media only screen and (min-width: 560px) {
-	.entry-content > iframe[style] {
-		max-width: 32px !important;
-	}
+.entry-content > iframe,
+.entry-content > iframe[style],
+.entry-content > fb\:post {
+	display: block !important;
+	margin-right: auto !important;
+	margin-left: auto !important;
+	overflow: scroll;
 }
 
 .entry-attachment {
