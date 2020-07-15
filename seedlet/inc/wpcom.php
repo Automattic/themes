@@ -129,7 +129,8 @@ function seedlet_wpcom_setup() {
 add_action( 'after_setup_theme', 'seedlet_wpcom_setup' );
 
 /**
- * Add setting for hiding page title on the homepage.
+ * Add settings for hiding page title on the homepage 
+ * and a customizer message about contrast.
  */
 function seedlet_wpcom_customize_update( $wp_customize ) {
 	$wp_customize->add_setting( 'hide_front_page_title', array(
@@ -146,6 +147,19 @@ function seedlet_wpcom_customize_update( $wp_customize ) {
 		'priority'	  => 10,
 		'type'		  => 'checkbox',
 		'settings'	  => 'hide_front_page_title',
+	) );
+
+	$wp_customize->add_setting( 'color_a11y_warning' );
+    $wp_customize->add_control( 'color_a11y_warning', array(
+        'id'          => 'id',
+        'label'       => esc_html__( 'Color Accessibility Warning', 'seedlet' ),
+		'description' => sprintf(
+							__( 'In order to ensure people can read your site, try to maintain a strong contrast ratio between the colors you choose here. <a href="%s" target="_blank">Learn more about color contrast</a>.', 'seedlet' ),
+							esc_url( 'https://a11yproject.com/posts/what-is-color-contrast/' )
+						 ),
+        'section'     => 'colors_manager_tool',
+		'priority'	  => 10,
+		'type'		  => 'hidden',
 	) );
 }
 add_action( 'customize_register', 'seedlet_wpcom_customize_update' );
@@ -233,3 +247,12 @@ function seedlet_wpcom_editor_scripts() {
 	wp_enqueue_style( 'seedlet-wpcom-editor-style', get_template_directory_uri() . '/inc/wpcom-style-editor.css', array(), '20200629' );
 }
 add_action( 'enqueue_block_editor_assets', 'seedlet_wpcom_editor_scripts' );
+
+/**
+ * Enqueue CSS and JS for customizer pane.
+ */
+function seedlet_enqueue_message_scripts() {
+	wp_enqueue_script( 'seedlet-customize-message-wpcom-script', get_template_directory_uri() . '/inc/wpcom-customize-message.js', array( 'customize-controls' ), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'seedlet-customize-message-wpcom-style', get_template_directory_uri() . '/inc/wpcom-customize-message.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'seedlet_enqueue_message_scripts' );
