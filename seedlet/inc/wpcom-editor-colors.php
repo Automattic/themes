@@ -43,7 +43,11 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper .has-foreground-background-color,
 			#editor .editor-styles-wrapper .has-foreground-dark-background-color,
 			#editor .editor-styles-wrapper .has-foreground-light-background-color,
-			#editor .editor-styles-wrapper .has-background-color', 'color' ),
+			#editor .editor-styles-wrapper .has-background-color,
+			#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a', 'color' ),
+
+	// Border-bottom-color
+	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class] a', 'border-bottom-color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class]', 'background-color' ),
@@ -79,7 +83,13 @@ add_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .wp-caption-text,
 			#editor .editor-styles-wrapper blockquote cite,
 			#editor .editor-styles-wrapper blockquote footer,
-			#editor .editor-styles-wrapper figcaption', 'color' ),
+			#editor .editor-styles-wrapper figcaption,
+			#editor .editor-styles-wrapper .editor-post-title .editor-post-title__input,
+			#editor .editor-styles-wrapper .editor-post-title .editor-post-title__input::placeholder', 'color' ),
+
+	// Background-color
+	array( '#editor .editor-styles-wrapper .wp-block-cover,
+			#editor .editor-styles-wrapper .wp-block-cover-image', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -115,8 +125,6 @@ add_color_rule( 'link', '#000000', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:active,
-			#editor .editor-styles-wrapper .wp-block-cover,
-			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:active', 'background-color' ),
 
 	// Text-color
@@ -130,8 +138,7 @@ add_color_rule( 'link', '#000000', array(
 	 */
 
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-dark-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-background-color[class]', 'background-color' ),
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-primary-color[class],
@@ -161,7 +168,7 @@ add_color_rule( 'fg1', '#3C8067', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-file .wp-block-file__button,
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button', 'background-color' ),
 

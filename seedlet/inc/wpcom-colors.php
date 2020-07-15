@@ -76,6 +76,9 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.has-foreground-light-background-color[class],
 			.has-background-color[class]', 'color' ),
 
+	// Border-bottom-color
+	array( '.has-secondary-background-color[class] a', 'border-bottom-color' ),
+
 	// Background-color
 	array( '.has-background-background-color[class]', 'background-color' ),
 
