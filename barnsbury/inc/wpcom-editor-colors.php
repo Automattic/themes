@@ -78,8 +78,7 @@ add_editor_color_rule( 'link', '#20603C', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:hover,
 			#editor .editor-styles-wrapper .wp-block-latest-posts > li > a:active,
 			#editor .editor-styles-wrapper .wp-block-latest-posts > li > a:focus,
-			#editor .editor-styles-wrapper .wp-block-latest-posts > li > a:hover,
-			#editor .editor-styles-wrapper a', 'color' ),
+			#editor .editor-styles-wrapper .wp-block-latest-posts > li > a:hover', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
