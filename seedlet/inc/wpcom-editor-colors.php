@@ -218,3 +218,53 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container', 'color' ),
 
 ), __( 'Tertiary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function seedlet_custom_colors_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$color_bg = $colors_array['colors']['bg'];
+	$color_fg1 = $colors_array['colors']['fg1'];
+	$color_fg2 = $colors_array['colors']['fg2']; ?>
+
+	/* 
+	 * Custom gradients.
+	*/
+	#editor .editor-styles-wrapper .has-hard-diagonal-gradient-background {
+		background: linear-gradient(to bottom right, <?php echo $color_fg1; ?> 49.9%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	#editor .editor-styles-wrapper .has-hard-diagonal-inverted-gradient-background {
+		background: linear-gradient(to top left, <?php echo $color_fg1; ?> 49.9%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	#editor .editor-styles-wrapper .has-diagonal-gradient-background {
+		background: linear-gradient(to bottom right, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	#editor .editor-styles-wrapper .has-diagonal-inverted-gradient-background {
+		background: linear-gradient(to top left, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	#editor .editor-styles-wrapper .has-hard-horizontal-gradient-background {
+		background: linear-gradient(to bottom, <?php echo $color_fg1; ?> 50%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	#editor .editor-styles-wrapper .has-hard-horizontal-inverted-gradient-background {
+		background: linear-gradient(to top, <?php echo $color_fg1; ?> 50%, <?php echo $color_fg2; ?> 50%);
+	}
+
+	#editor .editor-styles-wrapper .has-horizontal-gradient-background {
+		background: linear-gradient(to bottom, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	#editor .editor-styles-wrapper .has-horizontal-inverted-gradient-background {
+		background: linear-gradient(to top, <?php echo $color_fg1; ?>, <?php echo $color_fg2; ?>);
+	}
+
+	#editor .editor-styles-wrapper .has-stripe-gradient-background {
+		background: linear-gradient(to bottom, transparent 20%, <?php echo $color_fg1; ?> 20%, <?php echo $color_fg1; ?> 80%, transparent 80%);
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'seedlet_custom_colors_extra_css' );
