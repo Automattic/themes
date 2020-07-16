@@ -2,12 +2,10 @@
  * These styles should be loaded by the Block Editor only
  */
 :root, body {
-	/* Globals */
-	/* Font Family */
-	--global--font-primary: 'Playfair Display', Georgia, Times, serif;
-	--global--font-secondary: 'Fira Sans', Helvetica, Arial, sans-serif;
+	--global--font-primary: var(--font-headings, 'Playfair Display', Georgia, Times, serif);
+	--global--font-secondary: var(--font-base, 'Fira Sans', Helvetica, Arial, sans-serif);
 	--global--font-code: monospace, monospace;
-	--global--font-ui: var(--global--font-secondary);
+	--global--font-ui: var(--font-base, var(--global--font-secondary));
 	/* Font Size */
 	--global--font-size-root: 18px;
 	--global--font-size-ratio: 1.2;
@@ -305,7 +303,7 @@ body {
 
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-decoration: none;
 }
 
@@ -314,7 +312,15 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+p.has-background.has-link-color:not(.has-background-background-color) a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link);
 }
 
 button,
@@ -1180,6 +1186,120 @@ pre.wp-block-verse {
 /**
  * Spacing Overrides
  */
+/*
+ * Margins
+ */
+.margin-top-none {
+	margin-top: 0 !important;
+}
+
+.margin-top-half {
+	margin-top: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.margin-top-default {
+	margin-top: var(--global--spacing-vertical) !important;
+}
+
+.margin-right-none {
+	/*rtl:ignore*/
+	margin-right: 0 !important;
+}
+
+.margin-right-half {
+	/*rtl:ignore*/
+	margin-right: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.margin-right-default {
+	/*rtl:ignore*/
+	margin-right: var(--global--spacing-vertical) !important;
+}
+
+.margin-bottom-none {
+	margin-bottom: 0 !important;
+}
+
+.margin-bottom-half {
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.margin-bottom-default {
+	margin-bottom: var(--global--spacing-vertical) !important;
+}
+
+.margin-left-none {
+	/*rtl:ignore*/
+	margin-left: 0 !important;
+}
+
+.margin-left-half {
+	/*rtl:ignore*/
+	margin-left: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.margin-left-default {
+	/*rtl:ignore*/
+	margin-left: var(--global--spacing-vertical) !important;
+}
+
+/*
+ * Padding
+ */
+.padding-top-none {
+	padding-top: 0 !important;
+}
+
+.padding-top-half {
+	padding-top: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.padding-top-default {
+	padding-top: var(--global--spacing-vertical) !important;
+}
+
+.padding-right-none {
+	/*rtl:ignore*/
+	padding-right: 0 !important;
+}
+
+.padding-right-half {
+	/*rtl:ignore*/
+	padding-right: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.padding-right-default {
+	/*rtl:ignore*/
+	padding-right: var(--global--spacing-vertical) !important;
+}
+
+.padding-bottom-none {
+	padding-bottom: 0 !important;
+}
+
+.padding-bottom-half {
+	padding-bottom: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.padding-bottom-default {
+	padding-bottom: var(--global--spacing-vertical) !important;
+}
+
+.padding-left-none {
+	/*rtl:ignore*/
+	padding-left: 0 !important;
+}
+
+.padding-left-half {
+	/*rtl:ignore*/
+	padding-left: calc(0.5 * var(--global--spacing-vertical)) !important;
+}
+
+.padding-left-default {
+	/*rtl:ignore*/
+	padding-left: var(--global--spacing-vertical) !important;
+}
+
 [data-block] {
 	margin-top: var(--global--spacing-vertical);
 	margin-bottom: var(--global--spacing-vertical);
@@ -1243,6 +1363,11 @@ pre.wp-block-verse {
 
 .wp-block[data-align="full"], .wp-block.alignfull {
 	max-width: none;
+}
+
+.block-editor-block-list__layout:not(.edit-site-block-editor__block-list) .wp-block[data-align="full"] > [data-block], .block-editor-block-list__layout:not(.edit-site-block-editor__block-list) .wp-block.alignfull > [data-block] {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .alignleft {
@@ -1630,9 +1755,10 @@ pre.wp-block-verse {
 	padding-left: calc(var(--layout-grid--gutter-huge) + var(--layout-grid--background-offset));
 }
 
-/* Overlay grid */
+/* Overlay styles and margin reset */
 .wp-block-jetpack-layout-grid {
 	/* wpcom-overlay-grid is the classname targeting the grid overlay visual aid displayed in the editor */
+	/* Override default block margin rules */
 }
 
 .wp-block-jetpack-layout-grid .wpcom-overlay-grid {
@@ -1644,6 +1770,11 @@ pre.wp-block-verse {
 .wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__nowrap .wpcom-overlay-grid {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.wp-block-jetpack-layout-grid [data-type="jetpack/layout-grid-column"] {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__none .wpcom-overlay-grid {

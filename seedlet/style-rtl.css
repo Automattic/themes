@@ -70,10 +70,10 @@ Included in theme screenshot.
 */
 :root {
 	/* Font Family */
-	--global--font-primary: 'Playfair Display', Georgia, Times, serif;
-	--global--font-secondary: 'Fira Sans', Helvetica, Arial, sans-serif;
+	--global--font-primary: var(--font-headings, 'Playfair Display', Georgia, Times, serif);
+	--global--font-secondary: var(--font-base, 'Fira Sans', Helvetica, Arial, sans-serif);
 	--global--font-code: monospace, monospace;
-	--global--font-ui: var(--global--font-secondary);
+	--global--font-ui: var(--font-base, var(--global--font-secondary));
 	/* Font Size */
 	--global--font-size-root: 18px;
 	--global--font-size-ratio: 1.2;
@@ -975,7 +975,7 @@ body {
 
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-decoration: none;
 }
 
@@ -984,7 +984,15 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link);
+}
+
+p.has-link-color.has-background a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
 }
 
 *:focus {
@@ -4285,6 +4293,26 @@ button[data-load-more-btn],
 	margin-left: calc(var(--layout-grid--background-offset) * -1) !important;
 	padding-right: var(--layout-grid--background-offset) !important;
 	padding-left: var(--layout-grid--background-offset) !important;
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > * {
+	margin-top: calc( 0.666 * var(--global--spacing-vertical));
+	margin-bottom: calc( 0.666 * var(--global--spacing-vertical));
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > * {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:last-child {
+	margin-bottom: 0;
 }
 
 /* Gutter Options */
