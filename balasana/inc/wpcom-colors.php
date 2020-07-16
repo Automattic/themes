@@ -78,7 +78,13 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.has-background-dark-color,
 			.has-background-light-color,
 			.has-foreground-dark-background-color,
-			.has-foreground-light-background-color', 'color' ),
+			.has-foreground-light-background-color,
+			.has-primary-background-color,
+			.has-primary-background-color.has-background-dim,
+			.has-secondary-background-color,
+			.has-secondary-background-color.has-background-dim,
+			.has-foreground-background-color,
+			.has-foreground-background-color.has-background-dim', 'color' ),
 	// Background-color
 	array( '.has-background-background-color', 'background-color' ),
 	// Background-color darkened

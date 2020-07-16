@@ -82,7 +82,7 @@ add_editor_color_rule( 'link', '#19744C', array(
 	// Text-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-			.editor-styles-wrapper a', 'color' ),
+			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
@@ -172,3 +172,15 @@ add_editor_color_rule( 'fg1', '#BC2213', array(
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+
+/**
+  * Custom CSS
+  */
+function balasana_custom_colors_extra_css() { ?>
+	/* Ensure links match the front end when there's a custom background color. */
+	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'balasana_custom_colors_extra_css' );
