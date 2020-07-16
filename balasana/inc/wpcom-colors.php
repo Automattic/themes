@@ -76,7 +76,9 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	// Text-color
 	array( '.has-background-color,
 			.has-background-dark-color,
-			.has-background-light-color', 'color' ),
+			.has-background-light-color,
+			.has-foreground-dark-background-color,
+			.has-foreground-light-background-color', 'color' ),
 	// Background-color
 	array( '.has-background-background-color', 'background-color' ),
 	// Background-color darkened
