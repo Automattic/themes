@@ -459,7 +459,7 @@ function seedlet_custom_colors_extra_css() {
 	$color_fg2 = $colors_array['colors']['fg2']; ?>
 
 	/* 
-	 * Revert back to a less custom treatment for the site title underline. 
+	 * Site title text shadow. 
 	*/
 	.site-title a {
 		background-image: linear-gradient(to right, <?php echo $color_fg1; ?> 100%, transparent 100%);
