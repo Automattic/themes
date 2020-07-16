@@ -255,6 +255,9 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
 		// Add support for experimental link color control.
 		add_theme_support( 'experimental-link-color' );
     
