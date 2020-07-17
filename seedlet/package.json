@@ -39,6 +39,7 @@
   ],
   "scripts": {
     "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "build:fonts": "node-sass assets/sass/base/fonts -o assets/css",
     "build:style": "node-sass assets/sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
     "build:style-editor": "node-sass assets/sass/style-editor.scss assets/css/style-editor.css --output-style expanded --indent-type tab --indent-width 1",
     "build:woocommerce": "node-sass assets/sass/style-woocommerce.scss assets/css/style-woocommerce.css --output-style expanded --indent-type tab --indent-width 1",
