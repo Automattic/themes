@@ -13,8 +13,8 @@ if ( empty( $featured_posts ) ) {
 <div id="featured-content" class="featured-content">
 	<div class="featured-content-inner">
 		<?php
-			foreach ( $featured_posts as $post ) {
-				setup_postdata( $post );
+			foreach ( $featured_posts as $featured_post ) {
+				setup_postdata( $featured_post );
 
 				 // Include the featured content template.
 				get_template_part( 'content', 'featured-post' );
