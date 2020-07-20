@@ -355,21 +355,20 @@ Included in theme screenshot.
 /**
  * Extends
  */
-.default-max-width, hr.wp-block-separator.is-style-wide, .page-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
+.default-max-width, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
+*[class*="inner-container"] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
 	max-width: var(--responsive--aligndefault-width);
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.wide-max-width, .entry-content > .alignwide {
+.wide-max-width, .alignwide {
 	max-width: var(--responsive--alignwide-width);
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .entry-content > .alignfull, .singular .post-thumbnail {
+.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .alignfull, .singular .post-thumbnail {
 	max-width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	margin-right: calc(-1 * var(--global--spacing-horizontal));
@@ -377,7 +376,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.full-max-width, .entry-content > .alignfull, .singular .post-thumbnail {
+	.full-max-width, .alignfull, .singular .post-thumbnail {
 		max-width: var(--responsive--alignfull-width);
 		width: auto;
 		margin-right: auto;
@@ -385,7 +384,7 @@ Included in theme screenshot.
 	}
 }
 
-.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
+.alignwide [class*="inner-container"] > .alignwide, .alignfull [class*="inner-container"] > .alignwide {
 	margin-right: auto;
 	margin-left: auto;
 	width: var(--responsive--alignwide-width);
@@ -398,7 +397,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .entry-content > .alignleft {
+	.entry-content > .alignleft {
 		margin-left: var(--responsive--alignleft-margin);
 		margin-right: var(--global--spacing-horizontal);
 	}
@@ -410,7 +409,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .entry-content > .alignright {
+	.entry-content > .alignright {
 		margin-left: var(--global--spacing-horizontal);
 		margin-right: var(--responsive--alignright-margin);
 	}
@@ -987,7 +986,7 @@ a:active {
 	color: var(--wp--style--color--link);
 }
 
-p.has-link-color.has-background a {
+p.has-background.has-link-color:not(.has-background-background-color) a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
@@ -1491,7 +1490,7 @@ object {
 }
 
 .wp-block-gallery {
-	margin: 0;
+	margin: 0 auto;
 }
 
 .wp-block-gallery .blocks-gallery-image figcaption,
@@ -2040,8 +2039,6 @@ p.has-background {
 
 .wp-block-pullquote {
 	padding: calc( 2 * var(--global--spacing-unit)) 0;
-	margin-right: 0;
-	margin-left: 0;
 	text-align: right;
 	border-top-color: var(--pullquote--border-color);
 	border-top-width: var(--pullquote--border-width);
@@ -2346,6 +2343,9 @@ table th,
 
 /* Block Alignments */
 /**
+ * These selectors set the default max width for content appearing inside a post or page. 
+ */
+/**
  * .alignleft
  */
 .alignleft {
@@ -2354,6 +2354,10 @@ table th,
 	margin-top: 0;
 	margin-right: var(--global--spacing-horizontal);
 	margin-bottom: var(--global--spacing-vertical);
+}
+
+.entry-content > .alignleft {
+	max-width: var(--responsive--aligndefault-width);
 }
 
 /**
@@ -2378,14 +2382,15 @@ table th,
 	margin-left: var(--global--spacing-horizontal);
 }
 
-.entry-content * > .alignleft + *,
-.entry-content * > .alignright + * {
+.entry-content > .alignright {
+	max-width: var(--responsive--aligndefault-width);
+}
+
+[class*="inner-container"] > .alignleft + *,
+[class*="inner-container"] > .alignright + * {
 	margin-top: 0;
 }
 
-/**
- * .aligndefault
- */
 /**
  * .alignwide
  */
