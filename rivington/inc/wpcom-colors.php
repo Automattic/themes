@@ -73,40 +73,7 @@ add_color_rule( 'bg', '#060f29', array(
 			button[data-load-more-btn],
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"],
-			input[type="color"],
-			input[type="color"]:focus,
-			input[type="date"],
-			input[type="date"]:focus,
-			input[type="datetime"],
-			input[type="datetime"]:focus,
-			input[type="datetime-local"],
-			input[type="datetime-local"]:focus,
-			input[type="email"],
-			input[type="email"]:focus,
-			input[type="month"],
-			input[type="month"]:focus,
-			input[type="number"],
-			input[type="number"]:focus,
-			input[type="password"],
-			input[type="password"]:focus,
-			input[type="range"],
-			input[type="range"]:focus,
-			input[type="search"],
-			input[type="search"]:focus,
-			input[type="submit"],
-			input[type="tel"],
-			input[type="tel"]:focus,
-			input[type="text"],
-			input[type="text"]:focus,
-			input[type="time"],
-			input[type="time"]:focus,
-			input[type="url"],
-			input[type="url"]:focus,
-			input[type="week"],
-			input[type="week"]:focus,
-			textarea,
-			textarea:focus', 'color' ),
+			input:hover[type="submit"]', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -264,8 +231,8 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
+	array( '.wp-block-cover.has-background-dim:not([class*="background-color"]),
+			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
 			.has-foreground-background-color[class],
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
@@ -426,6 +393,25 @@ add_color_rule( 'fg1', '#EE4266', array(
  * Custom CSS
  */
 function rivington_custom_colors_extra_css() { ?>
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea {
+		border-width: 1px;
+	}
+
 	@media screen and (min-width: 560px) {
 		.main-navigation > div > ul > li > .sub-menu > li:first-child > a {
 			border-top: 1px solid;

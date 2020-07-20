@@ -8,10 +8,10 @@ $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-
 
 @mixin global-variables() {
 	/* Font Family */
-	--global--font-primary: 'Playfair Display', Georgia, Times, serif;
-	--global--font-secondary: 'Fira Sans', Helvetica, Arial, sans-serif;
+	--global--font-primary: var(--font-headings, 'Playfair Display', Georgia, Times, serif);
+	--global--font-secondary: var(--font-base, 'Fira Sans', Helvetica, Arial, sans-serif);
 	--global--font-code: monospace, monospace;
-	--global--font-ui: var(--global--font-secondary);
+	--global--font-ui: var(--font-base, var(--global--font-secondary));
 
 	/* Font Size */
 	--global--font-size-root: #{$typescale-root};
