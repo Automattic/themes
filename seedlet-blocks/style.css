@@ -47,3 +47,11 @@ GNU General Public License for more details.
 	--global--color-secondary: var(--wp--preset--color--secondary);
 	--global--color-tertiary: var(--wp--preset--color--tertiary);
 }
+
+/* Make sure full-width items in entry content show up as full-width. */
+.wp-block-group.site-content .wp-block-group__inner-container .entry-content {
+	max-width: calc(100% + (2 * var(--global--spacing-horizontal)));
+	width: calc(100% + (2 * var(--global--spacing-horizontal)));
+	margin-left: calc(-1 * var(--global--spacing-horizontal));
+	margin-right: auto;
+}
