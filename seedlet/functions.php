@@ -109,7 +109,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 
 			array(
-				apply_filters( 'seedlet_editor_fonts', './assets/css/fonts-editor.css' ),
+				apply_filters( 'seedlet_editor_fonts', './assets/css/fonts.css' ),
 				'./assets/css/style-editor.css',
 			)
 		);
@@ -312,7 +312,7 @@ add_action( 'after_setup_theme', 'seedlet_content_width', 0 );
  */
 function seedlet_scripts() {
 	// Fonts 
-	wp_enqueue_style( 'seedlet-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+	wp_enqueue_style( 'seedlet-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// Theme styles
 	if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)) {
