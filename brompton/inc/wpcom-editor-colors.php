@@ -99,6 +99,8 @@ add_editor_color_rule( 'link', '#C04239', array(
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
+			
+	array( '#editor .editor-styles-wrapper .wp-block-quote', 'border-left-color' ),
 
 	/**
 	 * Utility Classes
@@ -142,9 +144,14 @@ add_editor_color_rule( 'txt', '#252E36', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
-			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before, 
+			#editor .editor-styles-wrapper hr.is-style-dots:before,
 			#editor .editor-styles-wrapper a:hover,
 			#editor .editor-styles-wrapper', 'color' ),
+
+	// Border-top-color
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color' ),
 
 	// Border-bottom-color
 	array( '#editor .editor-styles-wrapper .comment-list, 
