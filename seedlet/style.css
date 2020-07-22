@@ -991,15 +991,16 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--wp--style--color--link);
-}
-
-p.has-background.has-link-color:not(.has-background-background-color) a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .has-link-color a {
 	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-background:not(.has-background-background-color) .has-link-color a,
+.has-background:not(.has-background-background-color).has-link-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 *:focus {
@@ -1397,6 +1398,15 @@ object {
 .wp-block-cover-image .wp-block-cover-image-text a,
 .wp-block-cover-image .wp-block-cover-text a {
 	color: currentColor;
+}
+
+.wp-block-cover .wp-block-cover__inner-container .has-link-color a,
+.wp-block-cover .wp-block-cover-image-text .has-link-color a,
+.wp-block-cover .wp-block-cover-text .has-link-color a,
+.wp-block-cover-image .wp-block-cover__inner-container .has-link-color a,
+.wp-block-cover-image .wp-block-cover-image-text .has-link-color a,
+.wp-block-cover-image .wp-block-cover-text .has-link-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
@@ -1856,6 +1866,14 @@ dd {
 }
 
 .wp-block-media-text {
+	/*&[class*="background-color"]:not(.has-background-background-color),
+	&[style*="background-color"] {
+		.wp-block-media-text__content {
+			a {
+				color: currentColor;
+			}
+		}
+	}*/
 	/**
 	 * Block Options
 	 */
@@ -1889,10 +1907,6 @@ dd {
 
 .wp-block-media-text .wp-block-media-text__content > *:last-child {
 	margin-bottom: 0;
-}
-
-.wp-block-media-text[class*="background-color"]:not(.has-background-background-color) .wp-block-media-text__content a, .wp-block-media-text[style*="background-color"] .wp-block-media-text__content a {
-	color: currentColor;
 }
 
 @media only screen and (min-width: 482px) {
@@ -1973,6 +1987,10 @@ p {
 
 p.has-background {
 	padding: var(--global--spacing-unit);
+}
+
+p.has-text-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .a8c-posts-list__listing {
