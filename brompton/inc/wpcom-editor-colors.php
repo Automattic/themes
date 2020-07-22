@@ -21,18 +21,21 @@ add_editor_color_rule( 'bg', '#E8E4DD', array(
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-button) .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-button) .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-cover,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim:not([class*="background-background-color"]),
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .block-editor-block-list__block,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim:not([class*="background-background-color"]),
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
+
+	// Color
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper', 'background-color' ),
@@ -145,8 +148,6 @@ add_editor_color_rule( 'txt', '#252E36', array(
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
-			#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before, 
-			#editor .editor-styles-wrapper hr.is-style-dots:before,
 			#editor .editor-styles-wrapper a:hover,
 			#editor .editor-styles-wrapper', 'color' ),
 

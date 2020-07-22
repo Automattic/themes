@@ -135,6 +135,7 @@ add_color_rule( 'bg', '#E8E4DD', array(
 			.wp-block-pullquote', 'border-top-color', '-1' ),
 	// Color
 	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
+
 	// Background-color
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
@@ -336,6 +337,9 @@ add_color_rule( 'txt', '#252E36', array(
 			input[type="url"]:focus,
 			input[type="week"]:focus,
 			textarea:focus', 'border-color' ),
+
+	// Border-top-color
+	array( '.wp-block-pullquote', 'border-top-color' ),
 
 	// Border-bottom-color
 	array( '.comment-list,
