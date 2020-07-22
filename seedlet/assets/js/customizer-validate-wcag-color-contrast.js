@@ -1,7 +1,7 @@
 /**
  * @author Per Soderlind
  * @link https://github.com/soderlind/2016-customizer-demo
- * global wp, _validateWCAGColorContrastExports
+ * global wp, seedletValidateWCAGColorContrastExports
  * global validateContrastText
  * exported validateWCAGColorContrast
 **/
@@ -210,4 +210,4 @@
 
 	return self;
 
-} )( jQuery, wp.customize, _validateWCAGColorContrastExports );
+} )( jQuery, wp.customize, seedletValidateWCAGColorContrastExports );

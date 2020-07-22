@@ -7,8 +7,7 @@
  * Each variable that needs to be updated is defined in the $seedlet_custom_color_variables array below.
  * A customizer setting is created for each color, and custom CSS-variables are enqueued in the front and back end.
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 
@@ -278,7 +277,7 @@ class Seedlet_Custom_Colors {
 	 * @link https://github.com/soderlind/2016-customizer-demo
 	 */
 	function on_customize_controls_enqueue_scripts() {
-		$handle = 'wcag-validate-customizer-color-contrast';
+		$handle = 'seedlet-wcag-validate-customizer-color-contrast';
 		$src    = get_template_directory_uri() . '/assets/js/customizer-validate-wcag-color-contrast.js';
 		$deps 	= [ 'customize-controls' ];
 
@@ -293,7 +292,7 @@ class Seedlet_Custom_Colors {
 		];
 
 		wp_enqueue_script( $handle, $src, $deps );
-		wp_script_add_data( $handle, 'data', sprintf( 'var _validateWCAGColorContrastExports = %s;', wp_json_encode( $exports ) ) );
+		wp_script_add_data( $handle, 'data', sprintf( 'var seedletValidateWCAGColorContrastExports = %s;', wp_json_encode( $exports ) ) );
 
 		// Custom color contrast validation text
 		wp_localize_script( $handle, 'validateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.', 'seedlet' ));

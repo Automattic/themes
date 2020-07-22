@@ -2,8 +2,7 @@
 /**
  * The template for displaying Author info
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 
