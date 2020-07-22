@@ -1058,7 +1058,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #111111;
+	color: black;
 	border: 1px solid #CCCCCC;
 	border-radius: 3px;
 	padding: 16px;
@@ -1080,7 +1080,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111111;
+	color: black;
 	border-color: #195f2b;
 }
 
@@ -3196,15 +3196,13 @@ body:not(.fse-enabled) .footer-menu a {
 	text-decoration: none;
 }
 
-.entry-content > iframe[style] {
-	margin: 32px 0 !important;
-	max-width: 100% !important;
-}
-
-@media only screen and (min-width: 560px) {
-	.entry-content > iframe[style] {
-		max-width: 32px !important;
-	}
+.entry-content > iframe,
+.entry-content > iframe[style],
+.entry-content > fb\:post {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	overflow: scroll;
 }
 
 .entry-attachment {

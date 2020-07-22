@@ -70,10 +70,10 @@ Included in theme screenshot.
 */
 :root {
 	/* Font Family */
-	--global--font-primary: 'Playfair Display', Georgia, Times, serif;
-	--global--font-secondary: 'Fira Sans', Helvetica, Arial, sans-serif;
+	--global--font-primary: var(--font-headings, 'Playfair Display', Georgia, Times, serif);
+	--global--font-secondary: var(--font-base, 'Fira Sans', Helvetica, Arial, sans-serif);
 	--global--font-code: monospace, monospace;
-	--global--font-ui: var(--global--font-secondary);
+	--global--font-ui: var(--font-base, var(--global--font-secondary));
 	/* Font Size */
 	--global--font-size-root: 18px;
 	--global--font-size-ratio: 1.2;
@@ -85,6 +85,7 @@ Included in theme screenshot.
 	--global--font-size-xl: 28px;
 	--global--font-size-xxl: 32px;
 	--global--font-size-xxxl: 48px;
+	--global--letter-spacing: normal;
 	/* Line Height */
 	--global--line-height-base: 1;
 	--global--line-height-body: 1.7;
@@ -123,7 +124,7 @@ Included in theme screenshot.
 	--global--border-radius-none: 0;
 	--form--font-family: var(--global--font-secondary);
 	--form--font-size: var(--global--font-size-md);
-	--form--line-height: var(--global-line-height-body);
+	--form--line-height: var(--global--line-height-body);
 	--form--color-text: var(--global--color-foreground);
 	--form--border-color: var(--global--color-border);
 	--form--border-width: 2px;
@@ -154,12 +155,12 @@ Included in theme screenshot.
 	--heading--font-size-h3: var(--global--font-size-xl);
 	--heading--font-size-h2: var(--global--font-size-xxl);
 	--heading--font-size-h1: var(--global--font-size-xxxl);
-	--heading--letter-spacing-h6: var(--global--letter-spacing-md);
-	--heading--letter-spacing-h5: var(--global--letter-spacing-md);
-	--heading--letter-spacing-h4: var(--global--letter-spacing-lg);
-	--heading--letter-spacing-h3: var(--global--letter-spacing-xl);
-	--heading--letter-spacing-h2: var(--global--letter-spacing-xxl);
-	--heading--letter-spacing-h1: var(--global--letter-spacing-xxxl);
+	--heading--letter-spacing-h6: var(--global--letter-spacing);
+	--heading--letter-spacing-h5: var(--global--letter-spacing);
+	--heading--letter-spacing-h4: var(--global--letter-spacing);
+	--heading--letter-spacing-h3: var(--global--letter-spacing);
+	--heading--letter-spacing-h2: var(--global--letter-spacing);
+	--heading--letter-spacing-h1: var(--global--letter-spacing);
 	--heading--line-height-h6: 1.3;
 	--heading--line-height-h5: 1.3;
 	--heading--line-height-h4: 1.3;
@@ -355,19 +356,19 @@ Included in theme screenshot.
  * Extends
  */
 .default-max-width, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
+*[class*="inner-container"] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
 	max-width: var(--responsive--aligndefault-width);
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.wide-max-width, .entry-content > .alignwide {
+.wide-max-width, .alignwide {
 	max-width: var(--responsive--alignwide-width);
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .entry-content > .alignfull, .singular .post-thumbnail {
+.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .alignfull, .singular .post-thumbnail {
 	max-width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	margin-right: calc(-1 * var(--global--spacing-horizontal));
@@ -375,7 +376,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.full-max-width, .entry-content > .alignfull, .singular .post-thumbnail {
+	.full-max-width, .alignfull, .singular .post-thumbnail {
 		max-width: var(--responsive--alignfull-width);
 		width: auto;
 		margin-right: auto;
@@ -383,7 +384,7 @@ Included in theme screenshot.
 	}
 }
 
-.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
+.alignwide [class*="inner-container"] > .alignwide, .alignfull [class*="inner-container"] > .alignwide {
 	margin-right: auto;
 	margin-left: auto;
 	width: var(--responsive--alignwide-width);
@@ -396,7 +397,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .entry-content > .alignleft {
+	.entry-content > .alignleft {
 		margin-left: var(--responsive--alignleft-margin);
 		margin-right: var(--global--spacing-horizontal);
 	}
@@ -408,7 +409,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .entry-content > .alignright {
+	.entry-content > .alignright {
 		margin-left: var(--global--spacing-horizontal);
 		margin-right: var(--responsive--alignright-margin);
 	}
@@ -619,10 +620,10 @@ Included in theme screenshot.
  * Base
  * - Reset the browser
  */
-button[data-load-more-btn],
-.button, button,
+button,
+.button,
 input[type="submit"],
-.wp-block-button__link, .wp-block-file .wp-block-file__button, .a8c-posts-list__view-all {
+.wp-block-button__link, .wp-block-file .wp-block-file__button, .a8c-posts-list__view-all, button[data-load-more-btn] {
 	line-height: var(--button--line-height);
 	color: var(--button--color-text);
 	cursor: pointer;
@@ -636,49 +637,49 @@ input[type="submit"],
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 }
 
-button[data-load-more-btn]:before,
-.button:before, button:before,
+button:before,
+.button:before,
 input[type="submit"]:before,
-.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:after,
-.button:after, button:after,
+.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
+.button:after,
 input[type="submit"]:after,
-.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after {
+.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
 	content: '';
 	display: block;
 	height: 0;
 	width: 0;
 }
 
-button[data-load-more-btn]:before,
-.button:before, button:before,
+button:before,
+.button:before,
 input[type="submit"]:before,
-.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before {
+.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
 	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
 }
 
-button[data-load-more-btn]:after,
-.button:after, button:after,
+button:after,
+.button:after,
 input[type="submit"]:after,
-.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after {
+.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
 	margin-top: -calc(.5em * var(--button--line-height) + -.39);
 }
 
-
-.button:active, button:active,
+button:active,
+.button:active,
 input:active[type="submit"],
 .wp-block-button__link:active, .wp-block-file .wp-block-file__button:active, .a8c-posts-list__view-all:active {
 	color: var(--button--color-text-active);
 	background-color: var(--button--color-background-active);
 }
 
-
-.button:hover, button:hover,
+button:hover,
+.button:hover,
 input:hover[type="submit"],
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .a8c-posts-list__view-all:hover,
-.button:focus, button:focus,
+.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .a8c-posts-list__view-all:hover, button:focus,
+.button:focus,
 input:focus[type="submit"],
-.wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .a8c-posts-list__view-all:focus,
-.has-focus.button, button.has-focus,
+.wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .a8c-posts-list__view-all:focus, button.has-focus,
+.has-focus.button,
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link, .wp-block-file .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all {
 	color: var(--button--color-text-hover);
@@ -973,7 +974,7 @@ body {
 
 a {
 	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-decoration: none;
 }
 
@@ -982,7 +983,15 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--global--color-primary);
+	color: var(--wp--style--color--link);
+}
+
+p.has-background.has-link-color:not(.has-background-background-color) a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
 }
 
 *:focus {
@@ -1110,7 +1119,7 @@ blockquote cite,
 blockquote footer {
 	color: var(--global--color-foreground-light);
 	font-size: var(--global--font-size-xs);
-	letter-spacing: var(--global--letter-spacing-xs);
+	letter-spacing: var(--global--letter-spacing);
 }
 
 blockquote > * {
@@ -1140,7 +1149,7 @@ blockquote.alignleft cite,
 blockquote.alignleft footer, blockquote.alignright cite,
 blockquote.alignright footer {
 	font-size: var(--global--font-size-xs);
-	letter-spacing: var(--global--letter-spacing-xs);
+	letter-spacing: var(--global--letter-spacing);
 }
 
 input[type="text"],
@@ -1206,7 +1215,7 @@ figcaption,
 .wp-caption-text {
 	color: var(--global--color-foreground-light);
 	font-size: var(--global--font-size-xs);
-	line-height: var(--global--font-line-height-xs);
+	line-height: var(--global--line-height-body);
 	margin-top: calc(0.5 * var(--global--spacing-unit));
 	margin-bottom: var(--global--spacing-unit);
 	text-align: center;
@@ -1246,262 +1255,6 @@ object {
 
 .wp-block-audio.alignleft, .wp-block-audio.alignright {
 	min-width: 300px;
-}
-
-.wp-block-newspack-blocks-homepage-articles.image-aligntop .post-thumbnail {
-	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
-}
-
-.wp-block-newspack-blocks-homepage-articles.image-alignleft .post-thumbnail {
-	margin-left: var(--global--spacing-vertical);
-}
-
-.wp-block-newspack-blocks-homepage-articles.image-alignright .post-thumbnail {
-	margin-right: var(--global--spacing-vertical);
-}
-
-.wp-block-newspack-blocks-homepage-articles.image-alignbehind .post-has-image .entry-wrapper {
-	padding: var(--global--spacing-vertical);
-}
-
-.wp-block-newspack-blocks-homepage-articles.is-grid article {
-	margin-top: 0;
-	margin-bottom: var(--global--spacing-vertical);
-}
-
-@media only screen and (min-width: 482px) {
-	.wp-block-newspack-blocks-homepage-articles.is-grid article {
-		margin-bottom: calc(3 * var(--global--spacing-vertical));
-	}
-}
-
-.wp-block-newspack-blocks-homepage-articles .article-section-title {
-	font-size: var(--global--font-size-base);
-	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
-}
-
-.wp-block-newspack-blocks-homepage-articles .article-section-title + article {
-	margin-top: 0;
-}
-
-.wp-block-newspack-blocks-homepage-articles article {
-	display: block;
-	/* Vertical margins logic between posts */
-	margin-top: calc(2 * var(--global--spacing-vertical));
-	margin-bottom: calc(2 * var(--global--spacing-vertical));
-}
-
-@media only screen and (min-width: 482px) {
-	.wp-block-newspack-blocks-homepage-articles article {
-		margin-top: calc(3 * var(--global--spacing-vertical));
-		margin-bottom: calc(3 * var(--global--spacing-vertical));
-	}
-}
-
-.wp-block-newspack-blocks-homepage-articles article:first-child {
-	margin-top: 0;
-}
-
-.wp-block-newspack-blocks-homepage-articles article:last-child {
-	margin-bottom: calc(3 * var(--global--spacing-vertical));
-}
-
-.wp-block-newspack-blocks-homepage-articles article .post-thumbnail img {
-	width: auto;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > * {
-	/* Vertical margins logic between post details */
-	margin-top: var(--global--spacing-unit);
-	margin-bottom: var(--global--spacing-unit);
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *:first-child {
-	margin-top: 0;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *:last-child {
-	margin-bottom: 0;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	color: var(--global--color-primary);
-}
-
-.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	color: currentColor;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus {
-	color: var(--global--color-primary-hover);
-	text-decoration: underline;
-}
-
-.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus {
-	color: currentColor;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-title a:active {
-	color: var(--global--color-primary);
-}
-
-@media only screen and (min-width: 482px) {
-	.wp-block-newspack-blocks-homepage-articles article .more-link {
-		margin-top: var(--global--spacing-unit);
-	}
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta,
-.wp-block-newspack-blocks-homepage-articles article .cat-links {
-	color: var(--global--color-foreground-light);
-	font-size: var(--global--font-size-sm);
-}
-
-.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta, .has-background:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .cat-links,
-[class*="background-color"]:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .cat-links,
-[style*="background-color"]
-.wp-block-newspack-blocks-homepage-articles article .cat-links {
-	color: currentColor;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta > span > *,
-.wp-block-newspack-blocks-homepage-articles article .cat-links > span > * {
-	vertical-align: top;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta .byline:not(:last-child),
-.wp-block-newspack-blocks-homepage-articles article .cat-links .byline:not(:last-child) {
-	margin-left: var(--global--spacing-unit);
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta .published + .updated,
-.wp-block-newspack-blocks-homepage-articles article .cat-links .published + .updated {
-	display: none;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta a,
-.wp-block-newspack-blocks-homepage-articles article .cat-links a {
-	color: currentColor;
-	text-decoration: underline;
-}
-
-.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
-	color: var(--global--color-primary-hover);
-	text-decoration: none;
-}
-
-.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
-[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
-[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active, .has-background:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
-[class*="background-color"]:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
-[style*="background-color"]
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover, .has-background:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
-[class*="background-color"]:not(.has-background-background-color)
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
-[style*="background-color"]
-.wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
-	color: currentColor;
-}
-
-button[data-load-more-btn],
-.button, button,
-input[type="submit"],
-.wp-block-button__link, .wp-block-file .wp-block-file__button, .a8c-posts-list__view-all {
-	line-height: var(--button--line-height);
-	color: var(--button--color-text);
-	cursor: pointer;
-	font-weight: var(--button--font-weight);
-	font-family: var(--button--font-family);
-	font-size: var(--button--font-size);
-	background-color: var(--button--color-background);
-	border-radius: var(--button--border-radius);
-	border-width: 0;
-	text-decoration: none;
-	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
-}
-
-button[data-load-more-btn]:before,
-.button:before, button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:after,
-.button:after, button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-button[data-load-more-btn]:before,
-.button:before, button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before {
-	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
-}
-
-button[data-load-more-btn]:after,
-.button:after, button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after {
-	margin-top: -calc(.5em * var(--button--line-height) + -.39);
-}
-
-
-.button:active, button:active,
-input:active[type="submit"],
-.wp-block-button__link:active, .wp-block-file .wp-block-file__button:active, .a8c-posts-list__view-all:active {
-	color: var(--button--color-text-active);
-	background-color: var(--button--color-background-active);
-}
-
-
-.button:hover, button:hover,
-input:hover[type="submit"],
-.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .a8c-posts-list__view-all:hover,
-.button:focus, button:focus,
-input:focus[type="submit"],
-.wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .a8c-posts-list__view-all:focus,
-.has-focus.button, button.has-focus,
-input.has-focus[type="submit"],
-.has-focus.wp-block-button__link, .wp-block-file .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all {
-	color: var(--button--color-text-hover);
-	background-color: var(--button--color-background-hover);
-}
-
-button[data-load-more-btn],
-.button {
-	display: inline-block;
-}
-
-.has-background:not(.has-background-background-color) button[data-load-more-btn],
-[class*="background-color"]:not(.has-background-background-color) button[data-load-more-btn],
-[style*="background-color"] button[data-load-more-btn], .has-background:not(.has-background-background-color)
-.button,
-[class*="background-color"]:not(.has-background-background-color)
-.button,
-[style*="background-color"]
-.button {
-	background-color: transparent;
-	border: var(--button--border-width, 2px) solid currentColor;
-	color: currentColor;
 }
 
 /**
@@ -1737,7 +1490,7 @@ button[data-load-more-btn],
 }
 
 .wp-block-gallery {
-	margin: 0;
+	margin: 0 auto;
 }
 
 .wp-block-gallery .blocks-gallery-image figcaption,
@@ -1856,7 +1609,7 @@ h6, .h6 {
 .wp-block-image figcaption {
 	color: var(--global--color-foreground-light);
 	font-size: var(--global--font-size-xs);
-	line-height: var(--global--line-height-xs);
+	line-height: var(--global--line-height-body);
 	margin-top: calc(0.5 * var(--global--spacing-unit));
 	margin-bottom: var(--global--spacing-unit);
 	text-align: center;
@@ -2286,8 +2039,6 @@ p.has-background {
 
 .wp-block-pullquote {
 	padding: calc( 2 * var(--global--spacing-unit)) 0;
-	margin-right: 0;
-	margin-left: 0;
 	text-align: right;
 	border-top-color: var(--pullquote--border-color);
 	border-top-width: var(--pullquote--border-width);
@@ -2547,7 +2298,7 @@ hr.wp-block-separator.is-style-dots:before {
 }
 
 .jetpack_subscription_widget input[type="text"] {
-	padding: var(--elements--form-padding) !important;
+	padding: var(--global--spacing-horizontal) !important;
 	width: 100% !important;
 }
 
@@ -2592,6 +2343,9 @@ table th,
 
 /* Block Alignments */
 /**
+ * These selectors set the default max width for content appearing inside a post or page. 
+ */
+/**
  * .alignleft
  */
 .alignleft {
@@ -2600,6 +2354,10 @@ table th,
 	margin-top: 0;
 	margin-right: var(--global--spacing-horizontal);
 	margin-bottom: var(--global--spacing-vertical);
+}
+
+.entry-content > .alignleft {
+	max-width: var(--responsive--aligndefault-width);
 }
 
 /**
@@ -2624,14 +2382,15 @@ table th,
 	margin-left: var(--global--spacing-horizontal);
 }
 
-.entry-content * > .alignleft + *,
-.entry-content * > .alignright + * {
+.entry-content > .alignright {
+	max-width: var(--responsive--aligndefault-width);
+}
+
+[class*="inner-container"] > .alignleft + *,
+[class*="inner-container"] > .alignright + * {
 	margin-top: 0;
 }
 
-/**
- * .aligndefault
- */
 /**
  * .alignwide
  */
@@ -3095,7 +2854,7 @@ nav a {
 
 .primary-navigation > .button:hover,
 .woo-navigation > .button:hover {
-	color: var(--primary-nav--color-hover);
+	color: var(--primary-nav--color-link-hover);
 }
 
 .primary-navigation-open .primary-navigation > .primary-menu-container, .primary-navigation-open
@@ -3931,7 +3690,7 @@ nav a {
 }
 
 .comment-meta .comment-author .avatar {
-	border: 2px solid var(--global--border-color);
+	border: 2px solid var(--global--color-border);
 	border-radius: 50%;
 	position: absolute;
 	top: 5px;
@@ -4192,6 +3951,341 @@ img#wpstats {
 /**
  * Jetpack Block styles
  */
+.wp-block-newspack-blocks-homepage-articles.image-aligntop .post-thumbnail,
+.wp-block-a8c-blog-posts.image-aligntop .post-thumbnail {
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+}
+
+.wp-block-newspack-blocks-homepage-articles.image-alignleft .post-thumbnail,
+.wp-block-a8c-blog-posts.image-alignleft .post-thumbnail {
+	margin-left: var(--global--spacing-vertical);
+}
+
+.wp-block-newspack-blocks-homepage-articles.image-alignright .post-thumbnail,
+.wp-block-a8c-blog-posts.image-alignright .post-thumbnail {
+	margin-right: var(--global--spacing-vertical);
+}
+
+.wp-block-newspack-blocks-homepage-articles.image-alignbehind .post-has-image .entry-wrapper,
+.wp-block-a8c-blog-posts.image-alignbehind .post-has-image .entry-wrapper {
+	padding: var(--global--spacing-vertical);
+}
+
+.wp-block-newspack-blocks-homepage-articles.is-grid article,
+.wp-block-a8c-blog-posts.is-grid article {
+	margin-top: 0;
+	margin-bottom: var(--global--spacing-vertical);
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-newspack-blocks-homepage-articles.is-grid article,
+	.wp-block-a8c-blog-posts.is-grid article {
+		margin-bottom: calc(3 * var(--global--spacing-vertical));
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles .article-section-title,
+.wp-block-a8c-blog-posts .article-section-title {
+	font-size: var(--global--font-size-base);
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+}
+
+.wp-block-newspack-blocks-homepage-articles .article-section-title + article,
+.wp-block-a8c-blog-posts .article-section-title + article {
+	margin-top: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article,
+.wp-block-a8c-blog-posts article {
+	display: block;
+	/* Vertical margins logic between posts */
+	margin-top: calc(2 * var(--global--spacing-vertical));
+	margin-bottom: calc(2 * var(--global--spacing-vertical));
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-newspack-blocks-homepage-articles article,
+	.wp-block-a8c-blog-posts article {
+		margin-top: calc(3 * var(--global--spacing-vertical));
+		margin-bottom: calc(3 * var(--global--spacing-vertical));
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles article:first-child,
+.wp-block-a8c-blog-posts article:first-child {
+	margin-top: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article:last-child,
+.wp-block-a8c-blog-posts article:last-child {
+	margin-bottom: calc(3 * var(--global--spacing-vertical));
+}
+
+.wp-block-newspack-blocks-homepage-articles article .post-thumbnail img,
+.wp-block-a8c-blog-posts article .post-thumbnail img {
+	width: auto;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *,
+.wp-block-a8c-blog-posts article .entry-wrapper > * {
+	/* Vertical margins logic between post details */
+	margin-top: var(--global--spacing-unit);
+	margin-bottom: var(--global--spacing-unit);
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *:first-child,
+.wp-block-a8c-blog-posts article .entry-wrapper > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper > *:last-child,
+.wp-block-a8c-blog-posts article .entry-wrapper > *:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a,
+.wp-block-a8c-blog-posts article .entry-title a {
+	color: var(--global--color-primary);
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-title a,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-title a,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .entry-title a {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+.wp-block-a8c-blog-posts article .entry-title a:hover,
+.wp-block-a8c-blog-posts article .entry-title a:focus {
+	color: var(--global--color-primary-hover);
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-title a:hover,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-title a:hover,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .entry-title a:hover, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-title a:focus,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-title a:focus,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .entry-title a:focus {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
+.wp-block-a8c-blog-posts article .entry-title a:active {
+	color: var(--global--color-primary);
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-newspack-blocks-homepage-articles article .more-link,
+	.wp-block-a8c-blog-posts article .more-link {
+		margin-top: var(--global--spacing-unit);
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+.wp-block-a8c-blog-posts article .entry-meta,
+.wp-block-a8c-blog-posts article .cat-links {
+	color: var(--global--color-foreground-light);
+	font-size: var(--global--font-size-sm);
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-meta,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-meta,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .entry-meta, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .cat-links,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .cat-links,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .cat-links {
+	color: currentColor;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta > span > *,
+.wp-block-newspack-blocks-homepage-articles article .cat-links > span > *,
+.wp-block-a8c-blog-posts article .entry-meta > span > *,
+.wp-block-a8c-blog-posts article .cat-links > span > * {
+	vertical-align: top;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta .byline:not(:last-child),
+.wp-block-newspack-blocks-homepage-articles article .cat-links .byline:not(:last-child),
+.wp-block-a8c-blog-posts article .entry-meta .byline:not(:last-child),
+.wp-block-a8c-blog-posts article .cat-links .byline:not(:last-child) {
+	margin-left: var(--global--spacing-unit);
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta .published + .updated,
+.wp-block-newspack-blocks-homepage-articles article .cat-links .published + .updated,
+.wp-block-a8c-blog-posts article .entry-meta .published + .updated,
+.wp-block-a8c-blog-posts article .cat-links .published + .updated {
+	display: none;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta a,
+.wp-block-newspack-blocks-homepage-articles article .cat-links a,
+.wp-block-a8c-blog-posts article .entry-meta a,
+.wp-block-a8c-blog-posts article .cat-links a {
+	color: currentColor;
+	text-decoration: underline;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+.wp-block-a8c-blog-posts article .entry-meta a:hover,
+.wp-block-a8c-blog-posts article .entry-meta a:active,
+.wp-block-a8c-blog-posts article .cat-links a:hover,
+.wp-block-a8c-blog-posts article .cat-links a:active {
+	color: var(--global--color-primary-hover);
+	text-decoration: none;
+}
+
+.has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+[class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+[style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover, .has-background:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+[style*="background-color"]
+.wp-block-newspack-blocks-homepage-articles article .cat-links a:active, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-meta a:hover,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-meta a:hover,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .entry-meta a:hover, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-meta a:active,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .entry-meta a:active,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .entry-meta a:active, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .cat-links a:hover,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .cat-links a:hover,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .cat-links a:hover, .has-background:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .cat-links a:active,
+[class*="background-color"]:not(.has-background-background-color)
+.wp-block-a8c-blog-posts article .cat-links a:active,
+[style*="background-color"]
+.wp-block-a8c-blog-posts article .cat-links a:active {
+	color: currentColor;
+}
+
+button,
+.button,
+input[type="submit"],
+.wp-block-button__link, .wp-block-file .wp-block-file__button, .a8c-posts-list__view-all, button[data-load-more-btn] {
+	line-height: var(--button--line-height);
+	color: var(--button--color-text);
+	cursor: pointer;
+	font-weight: var(--button--font-weight);
+	font-family: var(--button--font-family);
+	font-size: var(--button--font-size);
+	background-color: var(--button--color-background);
+	border-radius: var(--button--border-radius);
+	border-width: 0;
+	text-decoration: none;
+	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+}
+
+button:before,
+.button:before,
+input[type="submit"]:before,
+.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
+.button:after,
+input[type="submit"]:after,
+.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+}
+
+button:before,
+.button:before,
+input[type="submit"]:before,
+.wp-block-button__link:before, .wp-block-file .wp-block-file__button:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
+	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
+}
+
+button:after,
+.button:after,
+input[type="submit"]:after,
+.wp-block-button__link:after, .wp-block-file .wp-block-file__button:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+	margin-top: -calc(.5em * var(--button--line-height) + -.39);
+}
+
+button:active,
+.button:active,
+input:active[type="submit"],
+.wp-block-button__link:active, .wp-block-file .wp-block-file__button:active, .a8c-posts-list__view-all:active {
+	color: var(--button--color-text-active);
+	background-color: var(--button--color-background-active);
+}
+
+button:hover,
+.button:hover,
+input:hover[type="submit"],
+.wp-block-button__link:hover, .wp-block-file .wp-block-file__button:hover, .a8c-posts-list__view-all:hover, button:focus,
+.button:focus,
+input:focus[type="submit"],
+.wp-block-button__link:focus, .wp-block-file .wp-block-file__button:focus, .a8c-posts-list__view-all:focus, button.has-focus,
+.has-focus.button,
+input.has-focus[type="submit"],
+.has-focus.wp-block-button__link, .wp-block-file .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all {
+	color: var(--button--color-text-hover);
+	background-color: var(--button--color-background-hover);
+}
+
+button[data-load-more-btn],
+.button {
+	display: inline-block;
+}
+
+.has-background:not(.has-background-background-color) button[data-load-more-btn],
+[class*="background-color"]:not(.has-background-background-color) button[data-load-more-btn],
+[style*="background-color"] button[data-load-more-btn], .has-background:not(.has-background-background-color)
+.button,
+[class*="background-color"]:not(.has-background-background-color)
+.button,
+[style*="background-color"]
+.button {
+	background-color: transparent;
+	border: var(--button--border-width, 2px) solid currentColor;
+	color: currentColor;
+}
+
 .wp-block-jetpack-layout-grid {
 	grid-gap: var(--layout-grid--gutter-large) !important;
 	padding-right: var(--layout-grid--gutter-large) !important;
@@ -4204,6 +4298,26 @@ img#wpstats {
 	margin-left: calc(var(--layout-grid--background-offset) * -1) !important;
 	padding-right: var(--layout-grid--background-offset) !important;
 	padding-left: var(--layout-grid--background-offset) !important;
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > * {
+	margin-top: calc( 0.666 * var(--global--spacing-vertical));
+	margin-bottom: calc( 0.666 * var(--global--spacing-vertical));
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > * {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:last-child {
+	margin-bottom: 0;
 }
 
 /* Gutter Options */
