@@ -75,8 +75,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	 */
 	// Text-color
 	array( '.has-background-color,
-			.has-background-dark-color,
-			.has-background-light-color,
 			.has-foreground-dark-background-color,
 			.has-foreground-light-background-color,
 			.has-primary-background-color,
@@ -87,8 +85,12 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.has-foreground-background-color.has-background-dim', 'color' ),
 	// Background-color
 	array( '.has-background-background-color', 'background-color' ),
+	// Text-color darkened
+	array( '.has-background-dark-color', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-background-dark-background-color', 'background-color', '-1' ),
+	// Text-color lightened
+	array( '.has-background-light-color', 'color', '+1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color', 'background-color', '+1' ),
 
