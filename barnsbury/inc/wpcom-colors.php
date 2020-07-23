@@ -240,22 +240,27 @@ add_color_rule( 'txt', '#3C2323', array(
 	 * Utility Classes
 	 */
 	// Text color
-	array( '.has-foreground-color,
-			.has-background-background-color,
-			.has-background-dark-background-color,
-			.has-background-light-background-color', 'color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim,
+			.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim,
+			.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim', 'color' ),
+
 	// Background-color
 	array( '.has-background-dim,
-			.has-foreground-background-color,
+			.has-foreground-background-color[class],
 			.has-foreground-background-color.has-background-dim', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+
 	// Background-color darkened
 	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
