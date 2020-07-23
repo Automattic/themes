@@ -77,13 +77,15 @@ add_color_rule( 'bg', '#FFFDF6', array(
 			.has-foreground-background-color,
 			.has-foreground-dark-background-color,
 			.has-foreground-light-background-color,
-			.has-background-color,
-			.has-background-dark-color,
-			.has-background-light-color', 'color' ),
+			.has-background-color', 'color' ),
 	// Background-color
 	array( '.has-background-background-color', 'background-color' ),
+	// Color darkened
+	array( '.has-background-dark-color', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-background-dark-background-color', 'background-color', '-1' ),
+	// Color lightened
+	array( '.has-background-light-color', 'color', '+1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color', 'background-color', '+1' ),
 
@@ -240,7 +242,8 @@ add_color_rule( 'txt', '#3C2323', array(
 	 * Utility Classes
 	 */
 	// Text color
-	array( '.has-background-background-color[class],
+	array( '.has-foreground-color,
+			.has-background-background-color[class],
 			.has-background-background-color.has-background-dim,
 			.has-background-dark-background-color[class],
 			.has-background-dark-background-color.has-background-dim,
