@@ -9,7 +9,8 @@
 if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 <div class="author-bio">
 	<?php
-	_e(__( 'Published by', 'seedlet' )); ?>
+	_e( 'Published by', 'seedlet' );
+	?>
 	<h2 class="author-title">
 		<span class="author-heading">
 			<?php
