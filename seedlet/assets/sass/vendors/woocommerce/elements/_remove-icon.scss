@@ -1,0 +1,19 @@
+/**
+ * Remove Icon
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	a.remove {
+		font-size: var(--global--font-size-lg);
+		font-family: sans-serif !important; // Required for theme compatibility
+		height: var(--global--font-size-md);
+		width: var(--global--font-size-md);
+		color: red !important; // Required for default theme compatibility
+
+		&:hover {
+			color: var(--global--color-background) !important; // Required for default theme compatibility
+			background: red;
+		}
+	}
+}

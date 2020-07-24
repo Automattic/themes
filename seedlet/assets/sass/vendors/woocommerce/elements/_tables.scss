@@ -1,0 +1,83 @@
+/**
+ * Tables
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	table.shop_table {
+
+		border-collapse: collapse;
+		border: var(--wc--table--border-width) solid var(--wc--table--border-color);
+		border-radius: var(--wc--table--border-radius);
+		margin-bottom: var(--global--spacing-unit);
+
+		th {
+			padding: var(--wc--table--padding);
+			line-height: var(--global--line-height-body);
+		}
+
+		td {
+			border-top: none;
+			padding: var(--wc--table--padding);
+			word-break: break-word;
+		}
+
+		tr {
+			border-bottom: var(--wc--table--border-width) solid var(--wc--table--border-color);
+		}
+
+		tfoot td,
+		tfoot th,
+		tbody th {
+			border-top-color: var(--wc--table--border-color);
+		}
+	}
+
+	table.shop_attributes {
+
+		border-top-color: var(--wc--table--border-color);
+		border-top-style: solid;
+		margin-bottom: var(--global--spacing-vertical);
+		border-bottom: var(--wc--table--border-width) solid var(--wc--table--border-color);
+
+		th {
+			padding: calc(0.5 * var(--wc--table--padding));
+			border-bottom-color: var(--wc--table--border-color);
+			border-bottom-style: solid;
+			line-height: var(--global--line-height-body);
+		}
+
+		td {
+			font-style: inherit;
+			border-bottom-color: var(--wc--table--border-color);
+			border-bottom-style: solid;
+			line-height: var(--global--line-height-body);
+			padding: calc(0.5 * var(--wc--table--padding));
+
+			p {
+				margin: 0;
+				padding-top: calc(0.5 * var(--wc--table--padding));
+				padding-bottom: calc(0.5 * var(--wc--table--padding));
+			}
+		}
+
+		tr:nth-child(even) td,
+		tr:nth-child(even) th {
+			background: var(--global--color-tertiary);
+		}
+	}
+
+	table.my_account_orders {
+		font-size: var(--global--font-size-sm);
+
+		th,
+		td {
+			padding: calc(0.5 * var(--wc--table--padding));
+		}
+	}
+
+	table td,
+	table th {
+		border: inherit;
+	}
+}

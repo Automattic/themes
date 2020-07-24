@@ -223,13 +223,21 @@ b, strong {
 // Cover
 .wp-block-cover,
 .wp-block-cover-image {
-	p {
-		text-shadow: 0 0 6px map-deep-get($config-global, "color", "black");
-	}
 
 	h1,h2,h3,h4,h5,h6 {
 		font-weight: 300;
-		text-shadow: 0 0 10px map-deep-get($config-global, "color", "black");
+	}
+
+	// Only use a text shadow if there's a background image or video.
+	&[style*="background-image"],
+	video + .wp-block-cover__inner-container {
+		p {
+			text-shadow: 0 0 6px map-deep-get($config-global, "color", "black");
+		}
+		
+		h1,h2,h3,h4,h5,h6 {
+			text-shadow: 0 0 10px map-deep-get($config-global, "color", "black");
+		}
 	}
 
 	@include media(desktop) {
