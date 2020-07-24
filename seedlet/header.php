@@ -41,13 +41,13 @@
 					$location_name = 'primary';
 					$locations = get_nav_menu_locations();
 					$menu_id = $locations[ $location_name ];
-					$menu = wp_get_nav_menu_object( $menu_id );
+					$menu_obj = wp_get_nav_menu_object( $menu_id );
 
 					wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
 							'menu_class'      => 'menu-wrapper',
-							'container_class' => 'primary-menu-container menu-'. $menu->slug .'-container',
+							'container_class' => 'primary-menu-container menu-'. $menu_obj->slug .'-container',
 							'items_wrap'      => '<ul id="%1$s" class="%2$s" aria-label="' . esc_attr__( 'submenu', 'seedlet' ) . '">%3$s</ul>',
 						)
 					);
