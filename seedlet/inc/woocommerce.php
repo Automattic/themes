@@ -4,7 +4,9 @@
  *
  * @link https://woocommerce.com/
  *
- * @package Seedlet
+ * @package WordPress
+ * @subpackage Seedlet
+ * @since 1.0.0
  */
 
 /**

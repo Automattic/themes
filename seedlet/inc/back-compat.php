@@ -1,14 +1,14 @@
 <?php
 /**
- * seedlet back compat functionality
+ * Seedlet back compat functionality
  *
- * Prevents seedlet from running on WordPress versions prior to 4.7,
+ * Prevents Seedlet from running on WordPress versions prior to 4.7,
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.7.
  *
  * @package WordPress
  * @subpackage Seedlet
- * @since seedlet 1.0.0
+ * @since Seedlet 1.0.0
  */
 
 /**
@@ -16,7 +16,7 @@
  *
  * Switches to the default theme.
  *
- * @since seedlet 1.0.0
+ * @since Seedlet 1.0.0
  */
 function seedlet_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME );
@@ -31,7 +31,7 @@ add_action( 'after_switch_theme', 'seedlet_switch_theme' );
  * Prints an update nag after an unsuccessful attempt to switch to
  * seedlet on WordPress versions prior to 4.7.
  *
- * @since seedlet 1.0.0
+ * @since Seedlet 1.0.0
  *
  * @global string $wp_version WordPress version.
  */
@@ -43,7 +43,7 @@ function seedlet_upgrade_notice() {
 /**
  * Prevents the Customizer from being loaded on WordPress versions prior to 4.7.
  *
- * @since seedlet 1.0.0
+ * @since Seedlet 1.0.0
  *
  * @global string $wp_version WordPress version.
  */
@@ -64,7 +64,7 @@ add_action( 'load-customize.php', 'seedlet_customize' );
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.7.
  *
- * @since seedlet 1.0.0
+ * @since Seedlet 1.0.0
  *
  * @global string $wp_version WordPress version.
  */

@@ -3,7 +3,7 @@
  * The template for displaying image attachments
  *
  * @package WordPress
- * @subpackage Varia
+ * @subpackage Seedlet
  * @since 1.0.0
  */
 

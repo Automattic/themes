@@ -4,7 +4,9 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package Seedlet
+ * @package WordPress
+ * @subpackage Seedlet
+ * @since 1.0.0
  */
 
 /**

@@ -3,7 +3,7 @@
  * Functions which enhance the theme by hooking into WordPress
  *
  * @package WordPress
- * @subpackage Varia
+ * @subpackage Seedlet
  * @since 1.0.0
  */
 

@@ -7,7 +7,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Seedlet
+ * @package WordPress
+ * @subpackage Seedlet
+ * @since 1.0.0
  */
 
 /*
