@@ -86,7 +86,7 @@ add_editor_color_rule( 'link', '#1279BE', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation #toggle:focus + #toggle-menu,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
@@ -153,9 +153,9 @@ add_editor_color_rule( 'txt', '#303030', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image', 'background-color' ),
 
@@ -183,25 +183,7 @@ add_editor_color_rule( 'txt', '#303030', array(
 	 * Same as text color
 	 */
 	// Text-color
-	array( '#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta,
-			#editor .editor-styles-wrapper .wp-block-image figcaption,
-			#editor .editor-styles-wrapper .wp-block-latest-comments .wp-block-latest-comments__comment-date,
-			#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
-			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
-			#editor .editor-styles-wrapper .wp-block-pullquote cite,
-			#editor .editor-styles-wrapper .wp-block-pullquote footer,
-			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote cite,
-			#editor .editor-styles-wrapper .wp-block-quote footer,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large cite,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large footer,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
-			#editor .editor-styles-wrapper .wp-block-video figcaption,
+	array( '#editor .editor-styles-wrapper .wp-block-video figcaption,
 			#editor .editor-styles-wrapper figcaption', 'color' ),
 
 ), __( 'Text Color' ) );
@@ -220,3 +202,34 @@ add_editor_color_rule( 'fg1', '#FFB302', array(
 	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function hever_custom_colors_extra_css() { ?>
+	/* Ensure links match the front end when there's a custom background color. */
+	#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta,
+	#editor .editor-styles-wrapper .wp-block-image figcaption,
+	#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
+	#editor .editor-styles-wrapper .wp-block-pullquote cite,
+	#editor .editor-styles-wrapper .wp-block-pullquote footer,
+	#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
+	#editor .editor-styles-wrapper .wp-block-quote cite,
+	#editor .editor-styles-wrapper .wp-block-quote footer,
+	#editor .editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation,
+	#editor .editor-styles-wrapper .wp-block-quote.is-large cite,
+	#editor .editor-styles-wrapper .wp-block-quote.is-large footer,
+	#editor .editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation,
+	#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
+	#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
+	#editor .editor-styles-wrapper .wp-block-latest-comments .wp-block-latest-comments__comment-date,
+	#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
+	#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
+	#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container a,
+	#editor .editor-styles-wrapper .wp-block-cover .block-editor-block-list__block a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'hever_custom_colors_extra_css' );
