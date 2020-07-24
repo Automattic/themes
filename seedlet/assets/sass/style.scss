@@ -1,0 +1,108 @@
+/*
+Theme Name: Seedlet
+Theme URI: https://github.com/Automattic/themes/seedlet
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A simple, text-driven, single-column theme.
+Requires at least: 4.9.6
+Tested up to: 5.4.1
+Requires PHP: 7.3
+Version: 1.0.1-wpcom
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: seedlet
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Seedlet WordPress Theme, (C) 2020 Automattic, Inc.
+Seedlet is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Seedlet is derived from Twenty Nineteen. 2018-2020 WordPress.org
+Twenty Nineteen is distributed under the terms of the GNU GPL v2 or later.
+
+Seedlet is also based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. 
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+
+Unless otherwise noted, the icons in this theme are derived from the 
+WordPress Icons Library, licensed under the terms of the GNU GPL v2 or later.
+https://github.com/WordPress/gutenberg/tree/master/packages/icons
+
+Seedlet bundles the following third-party resources:
+
+Social Icons
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Source: WordPress Social Link Block (See wp-includes\blocks\social-link.php)
+
+Code from Twenty Twenty
+Copyright (C) 2020 WordPress.org
+License: GPLv2
+Source: https://wordpress.org/themes/twentytwenty/
+Included as part of the following classes and functions:
+- sanitize_select()
+
+Color Contrast Validation
+Copyright (C) 2016 Per Soderlind
+License: GNU General Public License v3 
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Source: https://github.com/soderlind/2016-customizer-demo
+Included as part of the following classes and functions:
+- on_customize_controls_enqueue_scripts()
+
+Images from Smithsonian Institution
+License: CC0
+Source: https://www.si.edu/object/hymenoxys-odorata-dc:nmnhbotany_13045011
+		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_10752403
+		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_10672835
+Included in theme screenshot.
+*/
+
+// Variables
+@import "variables";
+
+// Layout
+// - Structral and responsive styles
+@import "structure/style";
+
+// Abstracts
+// - Mixins, variables and functions
+@import "abstracts/style";
+
+// Base
+// - Reset the browser
+@import "base/style";
+
+// Elements
+// - Styles for basic HTML elemants
+@import "elements/style";
+
+// Blocks
+// - These styles replace key Gutenberg Block styles for fonts, colors, and
+//   spacing with CSS-variables overrides
+// - In the future the Block styles may get compiled to individual .css
+//   files and conditionally loaded
+@import "blocks/style";
+
+// Components
+// - Similar to Blocks but exist outside of the "current" editor context
+@import "components/style";
+
+// Site Pages
+// - Page specific styles
+@import "pages/style";
+
+// Vendors
+// - Styles for 3rd party plugins and WP extensions
+@import "vendors/style";

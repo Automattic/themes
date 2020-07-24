@@ -15,6 +15,9 @@
 }
 
 .entry-content > .alignleft {
+	/*rtl:ignore*/
+	float: left;
+
 	@extend %responsive-alignleft;
 }
 
@@ -43,6 +46,9 @@
 }
 
 .entry-content > .alignright {
+	/*rtl:ignore*/
+	float: right;
+
 	@extend %responsive-alignright;
 }
 
@@ -108,83 +114,99 @@
 // Gutenberg text color options
 .has-text-color {}
 
-.has-primary-color[class] {
-	color: #{map-deep-get($config-global, "color", "primary", "default")} !important;
+.has-primary-color {
+	color: #{map-deep-get($config-global, "color", "primary", "default")};
 }
 
-.has-secondary-color[class] {
-	color: #{map-deep-get($config-global, "color", "secondary", "default")} !important;
+.has-secondary-color {
+	color: #{map-deep-get($config-global, "color", "secondary", "default")};
 }
 
-.has-foreground-color[class] {
-	color: #{map-deep-get($config-global, "color", "foreground", "default")} !important;
+.has-foreground-color {
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
-.has-foreground-light-color[class] {
-	color: #{map-deep-get($config-global, "color", "foreground", "light")} !important;
+.has-foreground-light-color {
+	color: #{map-deep-get($config-global, "color", "foreground", "light")};
 }
 
-.has-foreground-dark-color[class] {
-	color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
+.has-foreground-dark-color {
+	color: #{map-deep-get($config-global, "color", "foreground", "dark")};
 }
 
-.has-background-light-color[class] {
-	color: #{map-deep-get($config-global, "color", "background", "light")} !important;
+.has-background-light-color {
+	color: #{map-deep-get($config-global, "color", "background", "light")};
 }
 
-.has-background-dark-color[class] {
-	color: #{map-deep-get($config-global, "color", "background", "dark")} !important;
+.has-background-dark-color {
+	color: #{map-deep-get($config-global, "color", "background", "dark")};
 }
 
-.has-background-color[class] {
-	color: #{map-deep-get($config-global, "color", "background", "default")} !important;
+.has-background-dim,
+.has-background-color {
+	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
 // Gutenberg background-color options
 .has-background {
-	&:not(.has-background-background-color) a,
-	p, h1, h2, h3, h4, h5, h6 {
+	&:not(.has-background-background-color) a:not(.wp-block-button__link),
+	p:not(.has-text-color),
+	h1:not(.has-text-color),
+	h2:not(.has-text-color),
+	h3:not(.has-text-color),
+	h4:not(.has-text-color),
+	h5:not(.has-text-color),
+	h6:not(.has-text-color) {
 		color: currentColor;
 	}
 }
 
-.has-primary-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "primary", "default")} !important;
+.has-primary-background-color,
+.has-primary-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
-.has-secondary-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "secondary", "default")} !important;
+.has-secondary-background-color,
+.has-secondary-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
-.has-foreground-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "foreground", "default")} !important;
+.has-background-dim,
+.has-foreground-background-color,
+.has-foreground-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
-.has-foreground-light-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "foreground", "light")} !important;
+.has-foreground-light-background-color,
+.has-foreground-light-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "light")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
-.has-foreground-dark-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "foreground", "dark")} !important;
+.has-foreground-dark-background-color,
+.has-foreground-dark-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "dark")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
-.has-background-light-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "background", "light")} !important;
+.has-background-light-background-color,
+.has-background-light-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "background", "light")};
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
-.has-background-dark-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "background", "dark")} !important;
+.has-background-dark-background-color,
+.has-background-dark-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "background", "dark")};
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
-.has-background-background-color[class] {
-	background-color: #{map-deep-get($config-global, "color", "background", "default")} !important;
+.has-background-background-color,
+.has-background-background-color.has-background-dim {
+	background-color: #{map-deep-get($config-global, "color", "background", "default")};
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
