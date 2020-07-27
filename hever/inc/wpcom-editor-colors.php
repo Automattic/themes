@@ -24,10 +24,10 @@ add_editor_color_rule( 'bg', 'white', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color).has-focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):hover,
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
@@ -86,7 +86,7 @@ add_editor_color_rule( 'link', '#1279BE', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation #toggle:focus + #toggle-menu,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
@@ -228,7 +228,8 @@ function hever_custom_colors_extra_css() { ?>
 	#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
 	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a,
 	#editor .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container a,
-	#editor .editor-styles-wrapper .wp-block-cover .block-editor-block-list__block a {
+	#editor .editor-styles-wrapper .wp-block-cover .block-editor-block-list__block a,
+	#editor .editor-styles-wrapper .wp-block-cover .has-foreground-color[class] {
 		color: currentColor;
 	}
 <?php }
