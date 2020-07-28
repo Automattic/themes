@@ -544,7 +544,6 @@ object {
 
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
-	color: #0073AA;
 	background: transparent;
 	border: 2px solid currentcolor;
 }
@@ -554,6 +553,7 @@ object {
 .is-style-outline .wp-block-button__link:focus,
 .is-style-outline .wp-block-button__link.has-focus {
 	color: #005177;
+	background: transparent;
 }
 
 .wp-block-button__link.is-style-squared,
@@ -594,6 +594,12 @@ object {
 	margin-bottom: inherit;
 	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
+}
+
+.wp-block-cover.has-background-dim,
+.wp-block-cover-image.has-background-dim {
+	background-color: black;
+	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1015,6 +1021,12 @@ table th,
 	padding: calc( 0.5 * 16px);
 }
 
+table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #FAFAFA;
+	color: #1e1e1e;
+}
+
 /**
  * Editor Post Title
  * - Needs a special styles
@@ -1029,83 +1041,100 @@ table th,
 	line-height: 1.2;
 }
 
+.wp-block .has-primary-color,
 .has-primary-color {
 	color: #0073AA;
 }
 
+.wp-block .has-secondary-color,
 .has-secondary-color {
 	color: #0d1b24;
 }
 
+.wp-block .has-foreground-color,
 .has-foreground-color {
 	color: #1e1e1e;
 }
 
+.wp-block .has-foreground-light-color,
 .has-foreground-light-color {
 	color: #767676;
 }
 
+.wp-block .has-foreground-dark-color,
 .has-foreground-dark-color {
 	color: #000000;
 }
 
+.wp-block .has-background-light-color,
 .has-background-light-color {
 	color: #FAFAFA;
 }
 
+.wp-block .has-background-dark-color,
 .has-background-dark-color {
 	color: #DDDDDD;
 }
 
+.wp-block .has-background-color,
 .has-background-color {
 	color: #FFFFFF;
 }
 
-.has-background:not(.has-background-background-color) a,
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+.has-background p:not(.has-text-color),
+.has-background h1:not(.has-text-color),
+.has-background h2:not(.has-text-color),
+.has-background h3:not(.has-text-color),
+.has-background h4:not(.has-text-color),
+.has-background h5:not(.has-text-color),
+.has-background h6:not(.has-text-color) {
 	color: currentColor;
 }
 
+.wp-block .has-primary-background-color,
 .has-primary-background-color {
 	background-color: #0073AA;
 	color: #FFFFFF;
 }
 
-.has-primary-background-color {
-	background-color: #0073AA;
-	color: #FFFFFF;
-}
-
+.wp-block .has-secondary-background-color,
 .has-secondary-background-color {
 	background-color: #0d1b24;
 	color: #FFFFFF;
 }
 
+.wp-block .has-foreground-background-color,
 .has-foreground-background-color {
 	background-color: #1e1e1e;
 	color: #FFFFFF;
 }
 
+.wp-block .has-foreground-light-background-color,
 .has-foreground-light-background-color {
 	background-color: #767676;
 	color: #FFFFFF;
 }
 
+.wp-block .has-foreground-dark-background-color,
 .has-foreground-dark-background-color {
 	background-color: #000000;
 	color: #FFFFFF;
 }
 
+.wp-block .has-background-light-background-color,
 .has-background-light-background-color {
 	background-color: #FAFAFA;
 	color: #1e1e1e;
 }
 
+.wp-block .has-background-dark-background-color,
 .has-background-dark-background-color {
 	background-color: #DDDDDD;
 	color: #1e1e1e;
 }
 
+.wp-block .has-background-background-color,
 .has-background-background-color {
 	background-color: #FFFFFF;
 	color: #1e1e1e;
@@ -1270,6 +1299,21 @@ table th,
 .padding-left-default {
 	/*rtl:ignore*/
 	padding-left: 32px !important;
+}
+
+/**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+/**
+ * Vendors
+ * - 3rd-party compatibility styles
+ */
+/**
+ * Set Jetpack form text color
+ */
+.jetpack-contact-info-block .is-selected textarea.block-editor-plain-text {
+	color: black;
 }
 
 /**

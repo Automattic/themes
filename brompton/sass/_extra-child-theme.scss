@@ -171,6 +171,10 @@
 			padding-right: #{map-deep-get($config-header, "main-nav", "link-padding")};
 		}
 
+		& > div > ul > li > .sub-menu {
+			background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		}
+
 		& > div > ul > li:hover,
 		& > div > ul > li.focus,
 		& > div > ul > li.current-menu-item {
@@ -643,6 +647,11 @@ table,
 		border-bottom: 1px solid map-deep-get($config-global, "color", "border", "light");
 		list-style: none;
 		margin-left: 0;
+		padding-left: 0;
+
+		li > ul {
+			padding-left: inherit;			
+		}
 	}
 
 	li {

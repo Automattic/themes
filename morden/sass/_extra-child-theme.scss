@@ -25,7 +25,7 @@ a {
 
 	@include media(desktop) {
 		box-shadow: 0 0 30px rgba(#000, 0.2);
-		max-width: 1134px;
+		max-width: $content-width-xxl;
 	}
 }
 
@@ -247,6 +247,86 @@ body {
 /**
  * Blocks
  */
+
+// Add space for floated content
+@media only screen and (min-width: 560px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+	.entry-content > .alignright {
+		margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
+	}
+}
+
+// Constrain left-aligned blocks
+@media only screen and (min-width: 640px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-left: calc( 0.5 * (100% - calc( 640px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain right-aligned blocks
+@media only screen and (min-width: 640px) {
+	.entry-content > .alignright {
+		margin-right: calc( 0.5 * (100% - calc( 640px - 32px)));
+		max-width: calc( 0.5 * calc( 640px - 32px));
+	}
+}
+
+// Constrain left-aligned blocks
+@media only screen and (min-width: 782px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain right-aligned blocks
+@media only screen and (min-width: 782px) {
+	.entry-content > .alignright {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain left-aligned blocks
+@media only screen and (min-width: 1024px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain right-aligned blocks
+@media only screen and (min-width: 1024px) {
+	.entry-content > .alignright {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain left-aligned blocks
+@media only screen and (min-width: 1280px) {
+	.entry-content > .wp-block-button:not(.alignleft):not(.alignright),
+	.entry-content > .alignleft {
+		margin-left: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
+// Constrain right-aligned blocks
+@media only screen and (min-width: 1280px) {
+	.entry-content > .alignright {
+		margin-right: calc( 0.5 * (100% - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
+	}
+}
+
 // Cover & Hero block
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-coblocks-hero .wp-block-coblocks-hero__box {

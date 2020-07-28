@@ -755,3 +755,25 @@ input[type="submit"] {
 		border-radius: 100px;
 	}
 }
+
+/**
+ * AMP Support
+ */
+html[amp] {
+
+	@include media( tablet ) {
+		#masthead {
+			position: sticky;
+			top: 0;
+		}
+
+		.logged-in #masthead {
+			top: 32px;
+		}
+	}
+	@media screen and ( max-width: 782px ) {
+		.logged-in #masthead {
+			top: 46px;
+		}
+	}
+}
