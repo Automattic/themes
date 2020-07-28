@@ -90,12 +90,6 @@ a {
 	}
 
 	&:active {
-		color: var(--wp--style--color--link);
-	}
-
-	// Enforce the custom link color even if a custom background color has been set.
-	// The extra specificity here is required to override the background color styles.
-	p.has-background.has-link-color:not(.has-background-background-color) & {
 		color: var( --wp--style--color--link, var(--global--color-primary) );
 	}
 
@@ -103,6 +97,15 @@ a {
 	// switch the color of the bottom border too. 
 	.has-link-color & {
 		border-bottom: 1px solid var( --wp--style--color--link, var(--global--color-primary) );
+	}
+}
+// Enforce the custom link color even if a custom background color has been set.
+// The extra specificity here is required to override the background color styles.
+.has-background:not(.has-background-background-color) {
+	// Target both current level and nested block.
+	.has-link-color a,
+	&.has-link-color a {
+		color: var( --wp--style--color--link, var(--global--color-primary) );
 	}
 }
 

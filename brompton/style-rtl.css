@@ -3177,15 +3177,13 @@ body:not(.fse-enabled) .footer-menu a {
 	text-decoration: none;
 }
 
-.entry-content > iframe[style] {
-	margin: 32px 0 !important;
-	max-width: 100% !important;
-}
-
-@media only screen and (min-width: 560px) {
-	.entry-content > iframe[style] {
-		max-width: 32px !important;
-	}
+.entry-content > iframe,
+.entry-content > iframe[style],
+.entry-content > fb\:post {
+	display: block !important;
+	margin-right: auto !important;
+	margin-left: auto !important;
+	overflow: scroll;
 }
 
 .entry-attachment {
@@ -4175,6 +4173,9 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 	.main-navigation > div > ul > li:last-of-type > a {
 		padding-left: 16px;
 	}
+	.main-navigation > div > ul > li > .sub-menu {
+		background: #252E36;
+	}
 	.main-navigation > div > ul > li:hover > ul,
 	.main-navigation > div > ul > li.focus > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
@@ -4610,6 +4611,25 @@ table th,
 	border-bottom: 1px solid #CFCDC7;
 	list-style: none;
 	margin-right: 0;
+	padding-right: 0;
+}
+
+.widget_archive ul li > ul,
+.widget_categories ul li > ul,
+.widget_links ul li > ul,
+.widget_meta ul li > ul,
+.widget_nav_menu ul li > ul,
+.widget_pages ul li > ul,
+.widget_recent_comments ul li > ul,
+.widget_recent_entries ul li > ul,
+.widget_rss ul li > ul,
+.widget_rss_links ul li > ul,
+.widget_top-posts ul li > ul,
+.widget_authors ul li > ul,
+.widget_jp_blogs_i_follow ul li > ul,
+.widget_top-click ul li > ul,
+.widget_upcoming_events_widget ul li > ul {
+	padding-right: inherit;
 }
 
 .widget_archive li,

@@ -355,21 +355,20 @@ Included in theme screenshot.
 /**
  * Extends
  */
-.default-max-width, hr.wp-block-separator.is-style-wide, .page-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
-.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
+.default-max-width, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
+*[class*="inner-container"] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce), .entry-content .wp-audio-shortcode, .post-thumbnail, .navigation {
 	max-width: var(--responsive--aligndefault-width);
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.wide-max-width, .entry-content > .alignwide {
+.wide-max-width, .alignwide {
 	max-width: var(--responsive--alignwide-width);
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .entry-content > .alignfull, .singular .post-thumbnail {
+.full-max-width, .wp-block-group .wp-block-group__inner-container > *.alignfull, .alignfull, .singular .post-thumbnail {
 	max-width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	width: calc(100% + (2 * var(--global--spacing-horizontal)));
 	margin-left: calc(-1 * var(--global--spacing-horizontal));
@@ -377,7 +376,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.full-max-width, .entry-content > .alignfull, .singular .post-thumbnail {
+	.full-max-width, .alignfull, .singular .post-thumbnail {
 		max-width: var(--responsive--alignfull-width);
 		width: auto;
 		margin-left: auto;
@@ -385,7 +384,7 @@ Included in theme screenshot.
 	}
 }
 
-.entry-content > .alignwide [class*="inner-container"] > .alignwide, .entry-content > .alignfull [class*="inner-container"] > .alignwide {
+.alignwide [class*="inner-container"] > .alignwide, .alignfull [class*="inner-container"] > .alignwide {
 	margin-left: auto;
 	margin-right: auto;
 	width: var(--responsive--alignwide-width);
@@ -400,7 +399,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignleft, .entry-content .wp-block-pullquote.alignleft, .entry-content .wp-block-video.alignleft, .entry-content > .alignleft {
+	.entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: var(--responsive--alignleft-margin);
 		/*rtl:ignore*/
@@ -416,7 +415,7 @@ Included in theme screenshot.
 }
 
 @media only screen and (min-width: 482px) {
-	.entry-content .wp-block-file.alignright, .entry-content .wp-block-pullquote.alignright, .entry-content .wp-block-video.alignright, .entry-content > .alignright {
+	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-left: var(--global--spacing-horizontal);
 		/*rtl:ignore*/
@@ -992,15 +991,16 @@ a:hover, a:focus {
 }
 
 a:active {
-	color: var(--wp--style--color--link);
-}
-
-p.has-background.has-link-color:not(.has-background-background-color) a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .has-link-color a {
 	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-background:not(.has-background-background-color) .has-link-color a,
+.has-background:not(.has-background-background-color).has-link-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 *:focus {
@@ -1400,6 +1400,15 @@ object {
 	color: currentColor;
 }
 
+.wp-block-cover .wp-block-cover__inner-container .has-link-color a,
+.wp-block-cover .wp-block-cover-image-text .has-link-color a,
+.wp-block-cover .wp-block-cover-text .has-link-color a,
+.wp-block-cover-image .wp-block-cover__inner-container .has-link-color a,
+.wp-block-cover-image .wp-block-cover-image-text .has-link-color a,
+.wp-block-cover-image .wp-block-cover-text .has-link-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
 .wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
 .wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
 .wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
@@ -1499,7 +1508,7 @@ object {
 }
 
 .wp-block-gallery {
-	margin: 0;
+	margin: 0 auto;
 }
 
 .wp-block-gallery .blocks-gallery-image figcaption,
@@ -1892,10 +1901,6 @@ dd {
 	margin-bottom: 0;
 }
 
-.wp-block-media-text[class*="background-color"]:not(.has-background-background-color) .wp-block-media-text__content a, .wp-block-media-text[style*="background-color"] .wp-block-media-text__content a {
-	color: currentColor;
-}
-
 @media only screen and (min-width: 482px) {
 	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
 		padding-top: var(--global--spacing-vertical);
@@ -1976,6 +1981,10 @@ p.has-background {
 	padding: var(--global--spacing-unit);
 }
 
+p.has-text-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
 .a8c-posts-list__listing {
 	list-style: none;
 	margin: 0;
@@ -2048,8 +2057,6 @@ p.has-background {
 
 .wp-block-pullquote {
 	padding: calc( 2 * var(--global--spacing-unit)) 0;
-	margin-left: 0;
-	margin-right: 0;
 	text-align: left;
 	border-top-color: var(--pullquote--border-color);
 	border-top-width: var(--pullquote--border-width);
@@ -2354,6 +2361,9 @@ table th,
 
 /* Block Alignments */
 /**
+ * These selectors set the default max width for content appearing inside a post or page. 
+ */
+/**
  * .alignleft
  */
 .alignleft {
@@ -2365,6 +2375,10 @@ table th,
 	/*rtl:ignore*/
 	margin-right: var(--global--spacing-horizontal);
 	margin-bottom: var(--global--spacing-vertical);
+}
+
+.entry-content > .alignleft {
+	max-width: var(--responsive--aligndefault-width);
 }
 
 /**
@@ -2391,14 +2405,15 @@ table th,
 	margin-left: var(--global--spacing-horizontal);
 }
 
-.entry-content * > .alignleft + *,
-.entry-content * > .alignright + * {
+.entry-content > .alignright {
+	max-width: var(--responsive--aligndefault-width);
+}
+
+[class*="inner-container"] > .alignleft + *,
+[class*="inner-container"] > .alignright + * {
 	margin-top: 0;
 }
 
-/**
- * .aligndefault
- */
 /**
  * .alignwide
  */
