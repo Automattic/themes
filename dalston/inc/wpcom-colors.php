@@ -111,17 +111,20 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.has-background-dark-color[class],
 			.has-background-light-color[class]', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color[class].has-background-dim', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-background-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color[class],
+			.has-background-dark-background-color[class].has-background-dim', 'background-color', '-1' ),
 
 	// Text-color lightened
 	array( '.has-background-light-color[class]', 'color', '+1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color[class].has-background-dim', 'background-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
@@ -271,6 +274,8 @@ add_color_rule( 'txt', '#1e1e1e', array(
 			.wp-block-code pre,
 			.wp-block-pullquote,
 			body,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			.site-header .main-navigation > div > ul > li > a:hover,
@@ -290,6 +295,33 @@ add_color_rule( 'txt', '#1e1e1e', array(
 			.site-description,
 			.site-title,
 			.social-navigation a', 'color', '-1' ),
+			
+	// Text-color lightened
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+			.entry-footer,
+			.entry-meta,
+			.footer-navigation .footer-menu,
+			.has-foreground-light-color,
+			.site-info,
+			.wp-block-image figcaption,
+			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			.wp-block-pullquote .wp-block-pullquote__citation,
+			.wp-block-pullquote cite,
+			.wp-block-pullquote footer,
+			.wp-block-quote .wp-block-quote__citation,
+			.wp-block-quote cite,
+			.wp-block-quote footer,
+			.wp-block-quote.is-large .wp-block-quote__citation,
+			.wp-block-quote.is-large cite,
+			.wp-block-quote.is-large footer,
+			.wp-block-quote.is-style-large .wp-block-quote__citation,
+			.wp-block-quote.is-style-large cite,
+			.wp-block-quote.is-style-large footer,
+			.wp-block-video figcaption,
+			figcaption', 'color', '+2' ),
 
 	// Background-color
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
@@ -301,13 +333,18 @@ add_color_rule( 'txt', '#1e1e1e', array(
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color[class],
-			.has-background-background-color[class],
+	array( '.has-background-background-color[class],
+			.has-background-background-color[class].has-background-dim,
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
+			.has-background-dark-background-color[class].has-background-dim,
+			.has-background-light-background-color[class],
+			.has-background-light-background-color[class].has-background-dim,
+			.has-foreground-color[class]', 'color' ),
 
 	// Background
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+	array( '.has-background-dim,
+			.has-foreground-background-color[class],
+			.has-foreground-background-color[class].has-background-dim,', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
@@ -317,7 +354,8 @@ add_color_rule( 'txt', '#1e1e1e', array(
 	// Text-color brightened
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color[class].has-background-dim', 'background-color', '+2' ),
 
 	/**
 	 * Gray (Same as text color)
