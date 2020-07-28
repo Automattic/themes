@@ -18,8 +18,8 @@
 		} );
 	} );
 
-	// The wpcom colors plugin does not handle live updates of extra CSS.
-	// This function provides the CSS updates via JavaScript.
+	// Since the plugin handles customizer preview updates via the postMessage transport,
+	// we need to manually override the "extra CSS" when a user selects a different color palette.
 	wp.customize( 'colors_manager[colors]', function( value ) {
 		value.bind( function( to ) {
 			const { bg, fg1, fg2 } = to;

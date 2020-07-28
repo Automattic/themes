@@ -450,7 +450,8 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 ), __( 'Tertiary Color' ) );
 
 /**
- * Custom CSS
+ * Custom CSS. 
+ * The plugin takes the body of this function and applies it in a style tag in the document head.
  */
 function seedlet_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
