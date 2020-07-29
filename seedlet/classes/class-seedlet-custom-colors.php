@@ -295,7 +295,7 @@ class Seedlet_Custom_Colors {
 		wp_script_add_data( $handle, 'data', sprintf( 'var seedletValidateWCAGColorContrastExports = %s;', wp_json_encode( $exports ) ) );
 
 		// Custom color contrast validation text
-		wp_localize_script( $handle, 'validateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.', 'seedlet' ));
+		wp_localize_script( $handle, 'seedletValidateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.', 'seedlet' ));
 	}
 
 	/**

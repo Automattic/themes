@@ -2,7 +2,7 @@
  * @author Per Soderlind
  * @link https://github.com/soderlind/2016-customizer-demo
  * global wp, seedletValidateWCAGColorContrastExports
- * global validateContrastText
+ * global seedletValidateContrastText
  * exported validateWCAGColorContrast
 **/
 ( function( $, api, exports ) {
@@ -49,7 +49,7 @@
 			});
 
 			if ( failsWCAG ){
-				var validationWarning = new api.Notification( code, { message: validateContrastText, type: 'warning' } );
+				var validationWarning = new api.Notification( code, { message: seedletValidateContrastText, type: 'warning' } );
 				setTimeout( function(){
 					self.custom_colors_setting.notifications.add( code, validationWarning );
 				}, 400);
