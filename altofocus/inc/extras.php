@@ -105,8 +105,8 @@ function altofocus_post_classes( $classes ) {
 		}
 
 		// Get featured content settings and options
-		$featured_options    = get_option( 'featured-content' );
-		$featured_tag_name   = $featured_options[ 'tag-name' ];
+		$featured_options  = get_option( 'featured-content' );
+		$featured_tag_name = isset( $featured_options['tag-name'] ) ? $featured_options['tag-name'] : '';
 
 		if ( ! empty( $featured_tag_name ) && has_tag( $featured_tag_name, $post->ID ) ) {
 

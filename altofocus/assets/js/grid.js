@@ -93,7 +93,7 @@
 	/**
 	 * Triggers re-layout on Isotope wrapper after infinite scroll has loaded new posts
 	 */
-	function reLayoutIsotope() {
+	function reLayoutIsotope( loadedPosts ) {
 
 		// Set array for newly added post IDs
 		var newPostIds = [];
@@ -103,7 +103,7 @@
 		if ( typeof loadedPosts !== 'undefined' ) {
 
 			// Create post IDs from IS results and push into post ID array
-			$.each( loadedPosts, function( index, value ) {
+			$.each( JSON.parse(loadedPosts), function( index, value ) {
 
 				var $appendedPost = '#post-'+ value;
 
@@ -171,7 +171,11 @@
 			/**
 			 * Relayout Isotope on post-load (Infinite Scroll)
 			 */
-			$body.on( 'post-load', reLayoutIsotope );
+			$body.on( 'post-load', function() {
+				var loadedPosts = $('#infinite-ids').attr('data');
+				reLayoutIsotope( loadedPosts );
+				$('#infinite-ids').remove();
+			});
 
 			/**
 			 * Window calls
