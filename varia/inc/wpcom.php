@@ -149,10 +149,9 @@ function varia_wpcom_editor_scripts() {
 add_action( 'enqueue_block_editor_assets', 'varia_wpcom_editor_scripts' );
 
 /**
- * Enqueue CSS and JS for customizer pane.
+ * Enqueue CSS for customizer a11y warning.
  */
 function varia_enqueue_message_scripts() {
-	wp_enqueue_script( 'varia-customize-message-wpcom-script', get_template_directory_uri() . '/inc/customize-message-wpcom.js', array( 'customize-controls' ), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_style( 'varia-customize-message-wpcom-style', get_template_directory_uri() . '/inc/customize-message-wpcom.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'varia_enqueue_message_scripts' );
