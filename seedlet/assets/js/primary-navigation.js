@@ -33,4 +33,48 @@
 		menuToggleUI( 'toggle-cart', 'wc-navigation-open' );
 	});
 
+	/**
+	 * Trap keyboard navigation in the menu modal.
+	 * Adapted from TwentyTwenty
+	 */
+	var _doc = document; 
+	var modal, elements, selectors, lastEl, firstEl, activeEl, tabKey, shiftKey, escKey;
+
+	_doc.addEventListener( 'keydown', function( event ) {
+		if ( _doc.body.classList.contains( 'primary-navigation-open' ) ){
+			modal = _doc.querySelector( '#site-navigation' );
+		} else if (  _doc.body.classList.contains( 'wc-navigation-open' ) ){
+			modal = _doc.querySelector( '.woo-navigation' );
+		} else {
+			return;
+		}
+
+		selectors = 'input, a, button';
+
+		elements = modal.querySelectorAll( selectors );
+		elements = Array.prototype.slice.call( elements );
+
+		lastEl = elements[ elements.length - 1 ];
+		firstEl = elements[0];
+		activeEl = _doc.activeElement;
+		tabKey = event.keyCode === 9;
+		shiftKey = event.shiftKey;
+		escKey = event.keyCode === 27;
+
+		if ( escKey ) {
+			event.preventDefault();
+			_doc.body.classList.remove( 'primary-navigation-open', 'wc-navigation-open' );
+			firstEl.focus();
+		}
+
+		if ( ! shiftKey && tabKey && lastEl === activeEl ) {
+			event.preventDefault();
+			firstEl.focus();
+		}
+
+		if ( shiftKey && tabKey && firstEl === activeEl ) {
+			event.preventDefault();
+			lastEl.focus();
+		}
+	});
 } )();
