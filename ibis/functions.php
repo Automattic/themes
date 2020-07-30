@@ -22,10 +22,10 @@ if ( ! function_exists( 'ibis_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style-editor.css' );
+		add_editor_style( get_stylesheet_directory_uri() . '/style-editor.css' );
 	}
 endif;
-add_action( 'after_setup_theme', 'ibis_setup' );
+add_action( 'after_setup_theme', 'ibis_setup', 999 );
 
 /**
  * Add Google webfonts
@@ -40,9 +40,9 @@ function ibis_fonts_url() {
 	* supported by Lora, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$poppins = esc_html_x( 'on', 'Lora font: on or off', 'ibis' );
+	$lora = esc_html_x( 'on', 'Lora font: on or off', 'ibis' );
 
-	if ( 'off' !== $poppins ) {
+	if ( 'off' !== $lora ) {
 		$font_families = array();
 
 		$font_families[] = 'Lora:400,400i,600,600i,700,700i';
