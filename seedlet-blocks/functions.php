@@ -25,7 +25,7 @@ if ( ! function_exists( 'seedlet_blocks_setup' ) ) :
 		add_editor_style( 'style-editor.css' );
 	}
 endif;
-add_action( 'after_setup_theme', 'seedlet_blocks_setup' );
+add_action( 'after_setup_theme', 'seedlet_blocks_setup', 999 );
 
 /**
  * Enqueue scripts and styles.
