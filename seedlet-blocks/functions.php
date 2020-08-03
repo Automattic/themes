@@ -25,7 +25,7 @@ if ( ! function_exists( 'seedlet_blocks_setup' ) ) :
 		add_editor_style( 'style-editor.css' );
 	}
 endif;
-add_action( 'after_setup_theme', 'seedlet_blocks_setup' );
+add_action( 'after_setup_theme', 'seedlet_blocks_setup', 11 );
 
 /**
  * Enqueue scripts and styles.
@@ -33,4 +33,4 @@ add_action( 'after_setup_theme', 'seedlet_blocks_setup' );
 function seedlet_blocks_enqueue() {
 	wp_enqueue_style( 'seedlet-blocks-styles', get_stylesheet_uri() );
 }
-add_action( 'wp_enqueue_scripts', 'seedlet_blocks_enqueue' );
+add_action( 'wp_enqueue_scripts', 'seedlet_blocks_enqueue', 11 );
