@@ -338,7 +338,7 @@ add_color_rule( 'txt', '#1e1e1e', array(
 	// Background
 	array( '.has-background-dim,
 			.has-foreground-background-color[class],
-			.has-foreground-background-color[class].has-background-dim,', 'background-color' ),
+			.has-foreground-background-color[class].has-background-dim', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
@@ -423,8 +423,8 @@ function dalston_custom_colors_extra_css() { ?>
 			border: 0;
 		}
  	}
- <?php }
- add_theme_support( 'custom_colors_extra_css', 'dalston_custom_colors_extra_css' ); 
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'dalston_custom_colors_extra_css' ); 
 
 /**
  * Featured Varia Palettes

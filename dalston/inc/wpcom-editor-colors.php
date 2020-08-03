@@ -70,12 +70,13 @@ add_editor_color_rule( 'link', '#0073AA', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background-color),
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
-			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Border color left
@@ -167,3 +168,15 @@ add_editor_color_rule( 'fg1', '#0d1b24', array(
 	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function dalston_editor_custom_colors_extra_css() { ?>
+	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+	#editor .editor-styles-wrapper p.has-text-color a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'dalston_editor_custom_colors_extra_css' ); 
+
