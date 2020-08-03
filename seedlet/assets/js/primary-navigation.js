@@ -5,6 +5,7 @@
  */
 
 ( function() {
+	var $ = jQuery;
 	/**
 	 * Menu Toggle Behaviors
 	 *
@@ -20,6 +21,11 @@
 		// Toggle click if it exists
 		toggleButton ?
 		toggleButton.onclick = function() {
+			$( toggleButton ).attr( 'tabindex', '' );
+			if ( wrapper.classList.contains( navOpenClass ) ){
+				$( toggleButton ).attr( 'tabindex', navOpenClass === 'primary-navigation-open' ? '3' : '2' );
+			}
+
 			wrapper.classList.toggle(navOpenClass);
 			wrapper.classList.toggle(lockScrollClass);
 		} : null;
