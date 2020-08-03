@@ -2,8 +2,7 @@
 /**
  * Seedlet Theme: Block Patterns
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 

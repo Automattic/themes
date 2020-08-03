@@ -2,8 +2,7 @@
 /**
  * The template for displaying image attachments
  *
- * @package WordPress
- * @subpackage Varia
+ * @package Seedlet
  * @since 1.0.0
  */
 

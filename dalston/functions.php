@@ -53,49 +53,40 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#0073AA'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#0D1B24';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#1E1E1E';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'dalston' ),
 					'slug'  => 'primary',
-					'color' => '#0073AA',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'dalston' ),
 					'slug'  => 'secondary',
-					'color' => '#0D1B24',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Blue', 'dalston' ),
-					'slug'  => 'foreground-light',
-					'color' => '#005177',
-				),
-				array(
-					'name'  => __( 'Black', 'dalston' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#000000',
-				),
-				array(
-					'name'  => __( 'Gray', 'dalston' ),
+					'name'  => __( 'Foreground', 'dalston' ),
 					'slug'  => 'foreground',
-					'color' => '#1E1E1E',
+					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Lighter Gray', 'dalston' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'dalston' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
-				),
-				array(
-					'name'  => __( 'White', 'dalston' ),
+					'name'  => __( 'Background', 'dalston' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
 				),
 			)
 		);

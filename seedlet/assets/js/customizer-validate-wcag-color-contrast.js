@@ -1,8 +1,8 @@
 /**
  * @author Per Soderlind
  * @link https://github.com/soderlind/2016-customizer-demo
- * global wp, _validateWCAGColorContrastExports
- * global validateContrastText
+ * global wp, seedletValidateWCAGColorContrastExports
+ * global seedletValidateContrastText
  * exported validateWCAGColorContrast
 **/
 ( function( $, api, exports ) {
@@ -49,7 +49,7 @@
 			});
 
 			if ( failsWCAG ){
-				var validationWarning = new api.Notification( code, { message: validateContrastText, type: 'warning' } );
+				var validationWarning = new api.Notification( code, { message: seedletValidateContrastText, type: 'warning' } );
 				setTimeout( function(){
 					self.custom_colors_setting.notifications.add( code, validationWarning );
 				}, 400);
@@ -210,4 +210,4 @@
 
 	return self;
 
-} )( jQuery, wp.customize, _validateWCAGColorContrastExports );
+} )( jQuery, wp.customize, seedletValidateWCAGColorContrastExports );
