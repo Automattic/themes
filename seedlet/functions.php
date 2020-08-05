@@ -107,12 +107,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 
-			array(
-				apply_filters( 'seedlet_editor_fonts', './assets/css/fonts.css' ),
-				'./assets/css/style-editor.css',
-			)
-		);
+		add_editor_style( './assets/css/style-editor.css' );
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -312,7 +307,7 @@ add_action( 'after_setup_theme', 'seedlet_content_width', 0 );
  */
 function seedlet_scripts() {
 	// Fonts 
-	wp_enqueue_style( 'seedlet-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// Theme styles
 	if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)) {
@@ -340,12 +335,19 @@ function seedlet_scripts() {
 add_action( 'wp_enqueue_scripts', 'seedlet_scripts' );
 
 /**
- * Allow the editor fonts to be filterable for child themes.
+ * Allow the fonts to be filterable for child themes.
  */
-function seedlet_filter_fonts_url( $editor_fonts_url ){
-	return $editor_fonts_url;
+function seedlet_fonts_url( ){
+	return get_template_directory_uri() . '/assets/css/fonts.css';
 }
-add_filter( 'seedlet_editor_fonts', 'seedlet_filter_fonts_url' );
+
+/**
+ * Enqueue theme styles for the block editor.
+ */
+function seedlet_editor_styles() {
+	wp_enqueue_style( 'seedlet-editor-fonts', seedlet_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'seedlet_editor_styles' );
 
 /**
  * Fix skip link focus in IE11.
