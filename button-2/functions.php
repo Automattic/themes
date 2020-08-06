@@ -116,6 +116,14 @@ function button_2_adjusted_content_width() {
 }
 add_action( 'template_redirect', 'button_2_adjusted_content_width', 0 );
 
+/** 
+ * Wrap more-link inside a paragraph 
+ */
+function button_2_more_link($more) {
+    return '<p>'.$more.'</p>';
+}
+add_filter('the_content_more_link','button_2_more_link');
+
 /**
  * Register widget area.
  *
