@@ -30,7 +30,7 @@
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'seedlet' ); ?>">
-					<button id="toggle-menu" class="button" tabindex="2">
+					<button id="toggle-menu" class="button">
 						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ) ?></span>
 						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ) ?></span>
 						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
@@ -58,7 +58,7 @@
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 				<nav class="woo-navigation" aria-label="<?php esc_attr_e( 'Woo Minicart', 'seedlet' ); ?>">
 					<?php echo( sprintf(
-						'<button id="toggle-cart" class="button" tabindex="1">
+						'<button id="toggle-cart" class="button">
 							<span class="dropdown-icon open">%1$s %2$s</span>
 							<span class="dropdown-icon close">%3$s %4$s</span>
 							<span class="hide-visually expanded-text">%5$s</span>
