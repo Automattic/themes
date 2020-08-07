@@ -201,3 +201,15 @@ add_editor_color_rule( 'fg1', '#0963C4', array(
 	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+
+/**
+ * Custom CSS
+ */
+function exford_editor_custom_colors_extra_css() { ?>
+	#editor .editor-styles-wrapper .has-text-color a,
+	#editor .editor-styles-wrapper .has-background a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'exford_editor_custom_colors_extra_css' );
