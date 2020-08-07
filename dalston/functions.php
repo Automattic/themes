@@ -210,6 +210,11 @@ add_action( 'enqueue_block_editor_assets', 'dalston_editor_styles' );
  */
 function dalston_block_extends() {
 
+	// Bail out early while in AMP endpoint.
+	if ( dalston_is_amp() ) {
+		return;
+	}
+
 	// Cover Block Tweaks
 	wp_enqueue_script( 'dalston-extend-cover-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
@@ -241,3 +246,14 @@ function dalston_block_extends() {
 	);
 }
 add_action( 'enqueue_block_assets', 'dalston_block_extends' );
+
+/**
+ * Whether this is an AMP endpoint.
+ *
+ * @see https://github.com/Automattic/amp-wp/blob/e4472bfa5c304b6c1b968e533819e3fa96579ad4/includes/amp-helper-functions.php#L248
+ * @return bool
+ */
+function dalston_is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
+
