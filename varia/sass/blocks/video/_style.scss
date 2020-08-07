@@ -1,5 +1,19 @@
 .wp-block-video {
 
+	iframe {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+
+	.wp-block-embed__wrapper {
+    	position: relative;
+		padding-bottom: 56.25%; // 16:9 Aspect ratio
+		height: 0;
+	}
+	
 	figcaption {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "xs")};
