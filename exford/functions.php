@@ -66,7 +66,6 @@ if ( ! function_exists( 'exford_setup' ) ) :
 		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#111111' ) ? $colors_array['colors']['txt'] : '#6E6E6E';  // $config-global--color-foreground-light-default;
 		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#111111' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
 
-
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
@@ -190,7 +189,7 @@ function exford_editor_styles() {
 	wp_enqueue_style( 'exford-editor-fonts', exford_fonts_url(), array(), null );
 
 	// Hide duplicate palette colors
-	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	$colors_array = get_theme_mod( 'colors_manager' );
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#6E6E6E' ) { // $config-global--color-foreground-light-default;
 		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
 			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
