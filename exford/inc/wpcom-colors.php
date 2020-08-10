@@ -43,7 +43,8 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.has-secondary-background-color[class],
 			.has-secondary-background-color.has-background-dim[class]', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
 	array( '.has-background-dark-color[class]', 'color', '-1' ),
