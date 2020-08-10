@@ -79,12 +79,17 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'spearhead' ),
 					'slug'  => 'primary',
+					'color' => '#DB0042',
+				),
+				array(
+					'name'  => __( 'Foreground', 'spearhead' ),
+					'slug'  => 'foreground',
 					'color' => '#000000',
 				),
 				array(
 					'name'  => __( 'Background', 'spearhead' ),
 					'slug'  => 'background',
-					'color' => '#BFF5A5',
+					'color' => '#FFFFFF',
 				),
 			)
         );
@@ -104,7 +109,6 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  * Enqueue scripts and styles.
  */
 function spearhead_scripts() {
-
 	// enqueue Google fonts, if necessary
     wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
 
@@ -116,7 +120,6 @@ function spearhead_scripts() {
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'spearhead-style', 'rtl', 'replace' );
-
 }
 add_action( 'wp_enqueue_scripts', 'spearhead_scripts', 11 );
 
@@ -141,8 +144,8 @@ function spearhead_fonts_url() : string {
     $fonts_url = '';
 
 	$font_families   = array();
-	$font_families[] = 'family=Red+Hat+Display:ital,wght@0,900;1,900';
-	$font_families[] = 'family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700';
+	$font_families[] = 'family=Libre+Franklin:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700';
+	$font_families[] = 'family=IBM+Plex+Mono:wght@400;700';
 	$font_families[] = 'display=swap';
 
     // Make a single request for the theme fonts.

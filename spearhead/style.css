@@ -1,0 +1,127 @@
+/*
+Theme Name: Spearhead
+Theme URI: https://github.com/Automattic/themes/root-child
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Share your podcast with the world using Spearhead.
+Requires at least: WordPress 5.4 
+Version: 1.2.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: spearhead 
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+*/
+/**
+ * Repsonsive Styles
+ */
+/**
+ * Required Variables
+ */
+/**
+ * Root Media Query Variables
+ */
+:root {
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal));
+	--responsive--aligndefault-width: 100%;
+	--responsive--alignwide-width: 100%;
+	--responsive--alignfull-width: 100%;
+	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
+	--responsive--alignright-margin: var(--global--spacing-horizontal);
+	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+}
+
+@media only screen and (min-width: 482px) {
+	:root {
+		--responsive--aligndefault-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 592px) {
+	:root {
+		--responsive--aligndefault-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(592px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: calc( 780px + 48px)) {
+	:root {
+		--responsive--aligndefault-width: calc(592px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(calc( 780px + 48px) - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: calc( 1247px + 48px)) {
+	:root {
+		--responsive--aligndefault-width: calc(calc( 780px + 48px) - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(calc( 1247px + 48px) - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	:root {
+		--responsive--aligndefault-width: calc(calc( 780px + 48px) - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(calc( 1247px + 48px) - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+a {
+	border-bottom: none;
+}
+
+.entry-content a {
+	font-weight: 500;
+}
+
+.post .entry-title {
+	font-size: var(--global--font-size-xl);
+}
+
+@media only screen and (min-width: 482px) {
+	.has-main-navigation .site-header {
+		padding: calc( 2 * var(--global--spacing-vertical)) 0;
+	}
+}
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	max-width: var(--responsive--alignwide-width);
+}
+
+.site-header .site-branding {
+	flex-grow: 1;
+}
+
+@media only screen and (min-width: 482px) {
+	.site-header .site-branding {
+		text-align: left;
+	}
+}
+
+.site-header .site-branding .site-title > a {
+	background: inherit;
+	text-shadow: none;
+}
+
+.site-header .primary-navigation {
+	flex-grow: 4;
+	justify-content: flex-end;
+	margin-top: 0;
+}
+
+.site-header .primary-navigation > div > ul li, .site-header .woo-navigation > div > ul li {
+	color: var(--global--color-secondary);
+	margin: 6px calc( var(--global--spacing-horizontal) / 2);
+}
