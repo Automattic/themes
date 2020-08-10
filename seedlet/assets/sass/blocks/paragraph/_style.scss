@@ -6,4 +6,9 @@ p {
 	&.has-background {
 		padding: var(--global--spacing-unit);
 	}
+
+	// Override `color: inherit` from Core styles.
+	&.has-text-color a {
+		color: var( --wp--style--color--link, var(--global--color-primary) );
+	}
 }

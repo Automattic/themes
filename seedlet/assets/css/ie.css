@@ -1,6 +1,6 @@
 /*
 Theme Name: Seedlet
-Theme URI: https://github.com/Automattic/themes/seedlet
+Theme URI: https://github.com/Automattic/themes/tree/master/seedlet
 Author: Automattic
 Author URI: https://automattic.com/
 Description: A simple, text-driven, single-column theme.
@@ -1520,15 +1520,19 @@ a:focus {
 }
 
 a:active {
-	color: undefined;
-}
-
-p.has-background.has-link-color:not(.has-background-background-color) a {
 	color: #000000;
 }
 
 .has-link-color a {
 	border-bottom: 1px solid #000000;
+}
+
+.has-background:not(.has-background-background-color) .has-link-color a {
+	color: #000000;
+}
+
+.has-background:not(.has-background-background-color).has-link-color a {
+	color: #000000;
 }
 
 *:focus {
@@ -2194,6 +2198,30 @@ object {
 .wp-block-cover-image .wp-block-cover-image-text a,
 .wp-block-cover-image .wp-block-cover-text a {
 	color: currentColor;
+}
+
+.wp-block-cover .wp-block-cover__inner-container .has-link-color a {
+	color: #000000;
+}
+
+.wp-block-cover .wp-block-cover-image-text .has-link-color a {
+	color: #000000;
+}
+
+.wp-block-cover .wp-block-cover-text .has-link-color a {
+	color: #000000;
+}
+
+.wp-block-cover-image .wp-block-cover__inner-container .has-link-color a {
+	color: #000000;
+}
+
+.wp-block-cover-image .wp-block-cover-image-text .has-link-color a {
+	color: #000000;
+}
+
+.wp-block-cover-image .wp-block-cover-text .has-link-color a {
+	color: #000000;
 }
 
 .wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container {
@@ -2909,10 +2937,6 @@ dd {
 	margin-bottom: 0;
 }
 
-.wp-block-media-text[class*="background-color"]:not(.has-background-background-color) .wp-block-media-text__content a, .wp-block-media-text[style*="background-color"] .wp-block-media-text__content a {
-	color: currentColor;
-}
-
 @media only screen and (min-width: 482px) {
 	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
 		padding-top: 30px;
@@ -2995,6 +3019,10 @@ p {
 
 p.has-background {
 	padding: 20px;
+}
+
+p.has-text-color a {
+	color: #000000;
 }
 
 .a8c-posts-list__listing {

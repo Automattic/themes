@@ -2,8 +2,7 @@
 /**
  * Displays the footer widget area
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 

@@ -4,8 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 
@@ -260,6 +259,9 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		// Add support for experimental link color control.
 		add_theme_support( 'experimental-link-color' );
+
+		// Add support for experimental cover block spacing.
+		add_theme_support( 'experimental-custom-spacing' );
     
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(

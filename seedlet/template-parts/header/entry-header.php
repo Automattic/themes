@@ -2,8 +2,7 @@
 /**
  * Displays the post header
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 ?>
