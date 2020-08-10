@@ -157,4 +157,11 @@ function spearhead_fonts_url() : string {
 /**
  * Load extras
  */
+function seedlet_entry_meta_header() : void {
+	// Hide author, post date, category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+		// Posted on
+		seedlet_posted_on();
+	}
+}
 // require get_stylesheet_directory() . '/inc/custom-header.php';
