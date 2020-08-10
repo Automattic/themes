@@ -1,0 +1,27 @@
+/**
+ * Navigation Block
+ */
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__container .wp-block-navigation-link:not(.has-text-color) {
+	color: #{map-deep-get($config-header, "main-nav", "color", "link")};	
+}
+
+.wp-block-navigation-link__content {
+	font-weight: #{map-deep-get($config-header, "main-nav", "font", "weight")};
+
+	&:hover {
+		color: #{map-deep-get($config-header, "main-nav", "color", "link-hover")};
+	}
+}
+
+.wp-block-navigation-link.has-child > .wp-block-navigation-link__submenu-icon {
+	padding-left: 0;
+}
+
+.wp-block-navigation-link.has-child .wp-block-navigation__container {
+	background: map-deep-get($config-global, "color", "border", "default");
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__container .wp-block-navigation__container {
+	background: map-deep-get($config-global, "color", "background", "default");
+}
