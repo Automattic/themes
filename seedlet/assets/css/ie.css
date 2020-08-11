@@ -4148,11 +4148,15 @@ nav a {
 
 .menu-button-container {
 	display: none;
-	justify-content: flex-end;
+	justify-content: space-between;
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
+}
+
+.menu-button-container #primary-open-menu {
+	margin-left: auto;
 }
 
 @media only screen and (max-width: 481px) {
@@ -4208,6 +4212,24 @@ nav a {
 	color: #3C8067;
 }
 
+.menu-button-container .button#woo-open-menu .svg-icon {
+	margin-left: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.primary-navigation .button#woo-open-menu .svg-icon {
+	margin-left: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.woo-navigation .button#woo-open-menu .svg-icon {
+	margin-left: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
 .menu-button-container .button .dropdown-icon,
 .primary-navigation .button .dropdown-icon,
 .woo-navigation .button .dropdown-icon {
@@ -4246,16 +4268,28 @@ nav a {
 	overflow: hidden;
 }
 
-.primary-navigation-open .menu-button-container .button.close, .primary-navigation-open
-.primary-navigation .button.close, .primary-navigation-open
-.woo-navigation .button.close {
+.primary-navigation-open .menu-button-container #primary-open-menu, .primary-navigation-open
+.primary-navigation #primary-open-menu, .primary-navigation-open
+.woo-navigation #primary-open-menu {
+	display: none;
+}
+
+.primary-navigation-open .menu-button-container #primary-close-menu, .primary-navigation-open
+.primary-navigation #primary-close-menu, .primary-navigation-open
+.woo-navigation #primary-close-menu {
 	display: flex;
 }
 
-.primary-navigation-open .menu-button-container .button.open, .primary-navigation-open
-.primary-navigation .button.open, .primary-navigation-open
-.woo-navigation .button.open {
+.woo-navigation-open .menu-button-container #woo-open-menu, .woo-navigation-open
+.primary-navigation #woo-open-menu, .woo-navigation-open
+.woo-navigation #woo-open-menu {
 	display: none;
+}
+
+.woo-navigation-open .menu-button-container #woo-close-menu, .woo-navigation-open
+.primary-navigation #woo-close-menu, .woo-navigation-open
+.woo-navigation #woo-close-menu {
+	display: flex;
 }
 
 .primary-navigation {

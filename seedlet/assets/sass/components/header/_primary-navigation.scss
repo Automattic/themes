@@ -3,11 +3,14 @@
 // Mobile menu toggles
 .menu-button-container {
 	display: none;
-	justify-content: flex-end;
+	justify-content: space-between;
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
+	#primary-open-menu {
+		margin-left: auto;
+	}
 
 	@include media(mobile-only){
 		display: flex;
@@ -37,6 +40,14 @@
 			color: var(--primary-nav--color-link-hover);
 		}
 
+		&#woo-open-menu {
+			.svg-icon {
+				margin-left: 0;
+				margin-right: calc(0.25 * var(--global--spacing-unit));
+				vertical-align: middle;
+			}
+		}
+
 		.dropdown-icon {
 			display: flex;
 			align-items: center;
@@ -44,6 +55,7 @@
 			.svg-icon {
 				margin-left: calc(0.25 * var(--global--spacing-unit));
 			}
+
 
 			// Menu icon is off-center vertically to prevent blurry pixels.
 			&.open .svg-icon {
@@ -64,15 +76,20 @@
 	}
 
 	.primary-navigation-open & {
-		.button {
-			&.close {
-				display: flex;
-			}
-			&.open {
-				display: none;
-			}
+		#primary-open-menu {
+			display: none;
 		}
-
+		#primary-close-menu {
+			display: flex;
+		}
+	}
+	.woo-navigation-open & {
+		#woo-open-menu {
+			display: none;
+		}
+		#woo-close-menu {
+			display: flex;
+		}
 	}
 }
 

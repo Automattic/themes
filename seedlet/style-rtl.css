@@ -2811,11 +2811,15 @@ nav a {
 
 .menu-button-container {
 	display: none;
-	justify-content: flex-end;
+	justify-content: space-between;
 	right: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
+}
+
+.menu-button-container #primary-open-menu {
+	margin-right: auto;
 }
 
 @media only screen and (max-width: 481px) {
@@ -2855,6 +2859,14 @@ nav a {
 	color: var(--primary-nav--color-link-hover);
 }
 
+.menu-button-container .button#woo-open-menu .svg-icon,
+.primary-navigation .button#woo-open-menu .svg-icon,
+.woo-navigation .button#woo-open-menu .svg-icon {
+	margin-right: 0;
+	margin-left: calc(0.25 * var(--global--spacing-unit));
+	vertical-align: middle;
+}
+
 .menu-button-container .button .dropdown-icon,
 .primary-navigation .button .dropdown-icon,
 .woo-navigation .button .dropdown-icon {
@@ -2875,12 +2887,6 @@ nav a {
 	top: -1px;
 }
 
-.menu-button-container .button .dropdown-icon.close,
-.primary-navigation .button .dropdown-icon.close,
-.woo-navigation .button .dropdown-icon.close {
-	display: flex;
-}
-
 .menu-button-container .button .hide-visually,
 .primary-navigation .button .hide-visually,
 .woo-navigation .button .hide-visually {
@@ -2893,16 +2899,28 @@ nav a {
 	overflow: hidden;
 }
 
-.primary-navigation-open .menu-button-container .button.close, .primary-navigation-open
-.primary-navigation .button.close, .primary-navigation-open
-.woo-navigation .button.close {
+.primary-navigation-open .menu-button-container #primary-open-menu, .primary-navigation-open
+.primary-navigation #primary-open-menu, .primary-navigation-open
+.woo-navigation #primary-open-menu {
+	display: none;
+}
+
+.primary-navigation-open .menu-button-container #primary-close-menu, .primary-navigation-open
+.primary-navigation #primary-close-menu, .primary-navigation-open
+.woo-navigation #primary-close-menu {
 	display: flex;
 }
 
-.primary-navigation-open .menu-button-container .button.open, .primary-navigation-open
-.primary-navigation .button.open, .primary-navigation-open
-.woo-navigation .button.open {
+.woo-navigation-open .menu-button-container #woo-open-menu, .woo-navigation-open
+.primary-navigation #woo-open-menu, .woo-navigation-open
+.woo-navigation #woo-open-menu {
 	display: none;
+}
+
+.woo-navigation-open .menu-button-container #woo-close-menu, .woo-navigation-open
+.primary-navigation #woo-close-menu, .woo-navigation-open
+.woo-navigation #woo-close-menu {
+	display: flex;
 }
 
 .primary-navigation,

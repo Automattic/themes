@@ -27,8 +27,8 @@
 		<header id="masthead" class="site-header default-max-width">
 			<div class="menu-button-container">
 				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-					<button id="toggle-cart" class="button open">
-						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ) ?><?php esc_html__( 'Cart', 'seedlet' ) ?></span>
+					<button id="woo-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
 						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ) ?></span>
 					</button>
 				<?php endif; ?>
@@ -69,17 +69,17 @@
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 				<nav class="woo-navigation" aria-label="<?php esc_attr_e( 'Woo Minicart', 'seedlet' ); ?>">
 					<?php echo( sprintf(
-						'<div class="woocommerce-menu-container">
-							<button id="toggle-cart" class="button close">
-								<span class="dropdown-icon close">%1$s %2$s</span>
-								<span class="hide-visually collapsed-text">%3$s</span>
-							</button>
-							<ul id="woocommerce-menu" class="menu-wrapper" aria-label="%1$s">
-							<li class="menu-item woocommerce-menu-item %2$s" title="%3$s">
-								%4$s
+						'<button id="woo-close-menu" class="button close">
+							<span class="dropdown-icon close">%1$s %2$s</span>
+							<span class="hide-visually collapsed-text">%3$s</span>
+						</button>
+						<div class="woocommerce-menu-container">
+							<ul id="woocommerce-menu" class="menu-wrapper" aria-label="%4$s">
+							<li class="menu-item woocommerce-menu-item %5$s" title="%6$s">
+								%7$s
 								<ul class="sub-menu">
-									<li class="woocommerce-cart-widget" title="%5$s">
-										%6$s
+									<li class="woocommerce-cart-widget" title="%8$s">
+										%9$s
 									</li>
 								</ul>
 							</li>',
