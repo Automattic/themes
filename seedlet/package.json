@@ -1,0 +1,53 @@
+{
+  "name": "seedlet",
+  "version": "1.0.0",
+  "description": "Seedlet",
+  "bugs": {
+    "url": "https://github.com/Automattic/seedlet/issues"
+  },
+  "homepage": "https://github.com/Automattic/seedlet#readme",
+  "devDependencies": {
+    "@wordpress/browserslist-config": "^2.2.2",
+    "autoprefixer": "^9.5.1",
+    "chokidar-cli": "^2.1.0",
+    "minimist": "^1.2.2",
+    "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-calc": "^7.0.2",
+    "postcss-cli": "^7.1.0",
+    "postcss-css-variables": "^0.17.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-focus-within": "^3.0.0",
+    "postcss-nested": "^4.2.1",
+    "rtlcss": "^2.4.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "build:style": "node-sass assets/sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
+    "build:style-editor": "node-sass assets/sass/style-editor.scss assets/css/style-editor.css --output-style expanded --indent-type tab --indent-width 1",
+    "build:woocommerce": "node-sass assets/sass/style-woocommerce.scss assets/css/style-woocommerce.css --output-style expanded --indent-type tab --indent-width 1",
+    "build:woocommerce-rtl": "rtlcss assets/css/style-woocommerce.css assets/css/style-woocommerce-rtl.css",
+    "build:rtl": "rtlcss style.css style-rtl.css",
+    "build:print": "node-sass assets/sass/print.scss assets/css/print.css --output-style expanded --indent-type tab --indent-width 1",
+    "build": "run-p \"build:*\" && npm run ie",
+    "ie": "postcss style.css -o assets/css/ie.css",
+    "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "child-theme": "sh ../theme-dev-utils/build-child-theme.sh"
+  }
+}
