@@ -10,28 +10,47 @@
 	 *
 	 * @param {Element} element
 	 */
-	function menuToggleUI( toggleButtonID, navOpenClass = 'primary-navigation-open' ) {
+
+	// on load, add event listeners for each menu
+	// clicking open-primary menu adds the primary-nav-open class and lock-scrolling class
+	// click close-primary-menu removes primary-nav-open- class and lock-scrolling class
+
+	// write a class that handles the opening and closing of a given menu within a single page context
+	// associates a specific button id with a specific menu according to the following pattern: [id]-button-open:[id]-navigation-open
+	// class NavigationController {
+	// 	constructor( navContainerClass, buttonId )
+	// }
+	function initNavMenu(){
+		var wrapper         = document.body;
+		var openButton    	= document.getElementById( 'primary-open-menu' );
+		var closeButton    	= document.getElementById( 'primary-close-menu' );
+
+		openButton.onclick = function() {
+			wrapper.classList.add( 'primary-navigation-open' );
+			wrapper.classList.add( 'lock-scrolling' );
+			$( closeButton ).focus();
+		}
+		closeButton.onclick = function() {
+			wrapper.classList.remove( 'primary-navigation-open' );
+			wrapper.classList.remove( 'lock-scrolling' );
+		}
+	}
+
+	window.addEventListener( 'load', initNavMenu );
+	function menuToggleUI( openButtonId, navOpenClass = 'primary-navigation-open' ) {
 
 		var wrapper         = document.body;
-		var toggleButton    = document.getElementById( toggleButtonID );
+		var openButton    	= document.getElementById( openButtonId );
 		var lockScrollClass = 'lock-scrolling';
 		var navOpenClass;
 
 		// Toggle click if it exists
-		toggleButton ?
+		toggleButton ? 
 		toggleButton.onclick = function() {
 			wrapper.classList.toggle(navOpenClass);
 			wrapper.classList.toggle(lockScrollClass);
 		} : null;
 	}
-
-	/**
-	 * Run our menuToggleUI function on load
-	 */
-	window.addEventListener( 'load', function() {
-		menuToggleUI( 'toggle-menu', 'primary-navigation-open' );
-		menuToggleUI( 'toggle-cart', 'wc-navigation-open' );
-	});
 
 	/**
 	 * Trap keyboard navigation in the menu modal.
@@ -63,7 +82,7 @@
 
 		if ( escKey ) {
 			event.preventDefault();
-			_doc.body.classList.remove( 'primary-navigation-open', 'wc-navigation-open' );
+			_doc.body.classList.remove( 'primary-navigation-open', 'wc-navigation-open', 'lock-scrolling' );
 			firstEl.focus();
 		}
 

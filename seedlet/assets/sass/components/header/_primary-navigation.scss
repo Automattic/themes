@@ -1,8 +1,83 @@
 // Navigation
 
+// Mobile menu toggles
+.menu-button-container {
+	display: none;
+	justify-content: flex-end;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	@include media(mobile-only){
+		display: flex;
+	}
+
+	.admin-bar:not(.primary-navigation-open) & {
+		top: 46px;
+	}
+}
+
+.menu-button-container,
+.primary-navigation,
+.woo-navigation {
+	.button {
+		background-color: transparent;
+		color: var(--primary-nav--color-link);
+		z-index: 500;
+		&.open {
+			display: flex;
+			z-index: 499;
+		}
+		&.close {
+			display: none;
+		}
+
+		&:hover {
+			color: var(--primary-nav--color-link-hover);
+		}
+
+		.dropdown-icon {
+			display: flex;
+			align-items: center;
+
+			.svg-icon {
+				margin-left: calc(0.25 * var(--global--spacing-unit));
+			}
+
+			// Menu icon is off-center vertically to prevent blurry pixels.
+			&.open .svg-icon {
+				position: relative;
+				top: -1px;
+			}
+		}
+
+		.hide-visually {
+			position: absolute !important;
+			clip: rect(1px, 1px, 1px, 1px);
+			padding:0 !important;
+			border:0 !important;
+			height: 1px !important;
+			width: 1px !important;
+			overflow: hidden;
+		}
+	}
+
+	.primary-navigation-open & {
+		.button {
+			&.close {
+				display: flex;
+			}
+			&.open {
+				display: none;
+			}
+		}
+
+	}
+}
+
 .primary-navigation,
 .woo-navigation { 
-
 	position: absolute;
  	top: 0;
  	right: 0;
@@ -36,20 +111,6 @@
 		}
 	}
 
-	// Mobile menu toggles
-	> .button {
-		position: absolute;
-		display: inline-block;
-		margin: 0;
-		right: 0;
-		top: 0;
-		background-color: transparent;
-		color: var(--primary-nav--color-link);
-
-		&:hover {
-			color: var(--primary-nav--color-link-hover);
-		}
-	}
 
 	// Mobile menu open
 	.primary-navigation-open & {
@@ -60,37 +121,6 @@
 			transform: translateY(0);
 		}
 
-		> #toggle-menu {
-
-			z-index: 500;
-
-			.open {
-				display: none;
-			}
-
-			.close {
-				display: flex;
-			}
-		}
-	}
-
-	.dropdown-icon {
-		display: flex;
-		align-items: center;
-
-		.svg-icon {
-			margin-left: calc(0.25 * var(--global--spacing-unit));
-		}
-
-		// Menu icon is off-center vertically to prevent blurry pixels.
-		&.open .svg-icon {
-			position: relative;
-			top: -1px;
-		}
-
-		&.close {
-			display: none;
-		}
 	}
 
 	// Adjust button postion when scrolling is locked
