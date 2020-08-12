@@ -232,7 +232,6 @@ add_color_rule( 'fg1', '#1285ce', array(
 			.entry-meta a:active,
 			.entry-meta a:hover,
 			.footer-navigation .footer-menu a:hover,
-			.has-secondary-color[class],
 			.main-navigation a,
 			.main-navigation a:link,
 			.main-navigation a:visited,
@@ -269,10 +268,7 @@ add_color_rule( 'fg1', '#1285ce', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
 			button.has-focus,
 			button:focus,
-			button:hover,
-			input.has-focus[type="submit"],
-			input:focus[type="submit"],
-			input:hover[type="submit"]', 'background-color' ),
+			button:hover', 'background-color' ),
 
 	// Border color
 	array( 'input[type="color"]:focus,
@@ -299,7 +295,8 @@ add_color_rule( 'fg1', '#1285ce', array(
 	array( '.has-secondary-color[class]', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 
