@@ -158,6 +158,9 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-cover-image.has-background-dim,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			.main-navigation #toggle:focus + #toggle-menu', 'background-color' ),
+			
+	// Border-color darkened
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color', '-1' ),
 
 	/**
 	 * Utility Classes
@@ -177,12 +180,14 @@ add_color_rule( 'txt', '#444444', array(
 	// Text-color darkened
 	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
 
 	/**
 	 * Gray (Same as text color)
@@ -192,7 +197,6 @@ add_color_rule( 'txt', '#444444', array(
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color[class],
 			.site-branding,
 			.site-info,
 			.wp-block-image figcaption,
