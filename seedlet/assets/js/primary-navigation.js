@@ -64,6 +64,11 @@
 				event.preventDefault();
 				lastEl.focus();
 			}
+
+			// If there are no elements in the menu, don't move the focus
+			if ( tabKey && firstEl === lastEl ) {
+				event.preventDefault();
+			}
 		});
 	}
 
