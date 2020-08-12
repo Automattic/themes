@@ -6,8 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 ?><!doctype html>
@@ -52,7 +51,7 @@
 					$location_name = 'primary';
 					$locations = get_nav_menu_locations();
 					$menu_id = $locations[ $location_name ];
-					$menu = wp_get_nav_menu_object( $menu_id );
+					$menu_obj = wp_get_nav_menu_object( $menu_id );
 
 					wp_nav_menu(
 						array(

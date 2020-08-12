@@ -2,8 +2,7 @@
 /**
  * Displays header site branding
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 ?>

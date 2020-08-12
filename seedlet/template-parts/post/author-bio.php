@@ -2,15 +2,14 @@
 /**
  * The template for displaying Author info
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 
 if ( (bool) get_the_author_meta( 'description' ) ) : ?>
 <div class="author-bio">
 	<?php
-	_e(__( 'Published by', 'seedlet' ));
+	_e( 'Published by', 'seedlet' );
 	?>
 	<h2 class="author-title">
 		<span class="author-heading">
