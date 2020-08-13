@@ -39,13 +39,13 @@ add_color_rule( 'bg', '#f7f7f6', array(
 			.has-background-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-background-dark-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-background-dark-background-color[class],
 			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color lightened
-	array( '.has-background-light-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-color[class]', 'color', '+1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color[class],
 			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
