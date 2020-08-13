@@ -312,6 +312,17 @@ add_color_rule( 'fg1', '#1285ce', array(
 ), __( 'Secondary Color' ) );
 
 /**
+ * Custom CSS
+ */
+function leven_custom_colors_extra_css() { ?>
+	.has-text-color a,
+	.has-background a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'leven_custom_colors_extra_css' );
+
+/**
  * Featured Varia Palettes
  */
 // Light
