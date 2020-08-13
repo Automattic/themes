@@ -15,16 +15,18 @@
 		var openButton    	= document.getElementById( `${ id }-open-menu` );
 		var closeButton    	= document.getElementById( `${ id }-close-menu` );
 
-		openButton.onclick = function() {
-			wrapper.classList.add( `${ id }-navigation-open` );
-			wrapper.classList.add( 'lock-scrolling' );
-			closeButton.focus();
-		}
+		if ( openButton && closeButton ){
+			openButton.onclick = function() {
+				wrapper.classList.add( `${ id }-navigation-open` );
+				wrapper.classList.add( 'lock-scrolling' );
+				closeButton.focus();
+			}
 
-		closeButton.onclick = function() {
-			wrapper.classList.remove( `${ id }-navigation-open` );
-			wrapper.classList.remove( 'lock-scrolling' );
-			openButton.focus();
+			closeButton.onclick = function() {
+				wrapper.classList.remove( `${ id }-navigation-open` );
+				wrapper.classList.remove( 'lock-scrolling' );
+				openButton.focus();
+			}
 		}
 
 		/**
