@@ -22,6 +22,20 @@ add_editor_color_rule( 'bg', '#f7f7f6', array(
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
+			
+	// Lighten bg-color
+	array( '#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+1' ),
+			
+	// Darken text-color
+	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before,
+			#editor .editor-styles-wrapper hr.is-style-dots:before', 'color', '-1' ),
+
+	// Darken border-color
+	array( '#editor .editor-styles-wrapper .wp-block-separator[style*="text-align: right"],
+			#editor .editor-styles-wrapper .wp-block-separator[style*="text-align:right"],
+			#editor .editor-styles-wrapper hr[style*="text-align: right"],
+			#editor .editor-styles-wrapper hr[style*="text-align:right"]', 'border-right-color', '-1' ),
 
 	/**
 	 * Utility Classes
@@ -146,6 +160,16 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
 			#editor .editor-styles-wrapper .wp-block-video figcaption,
 			#editor .editor-styles-wrapper figcaption', 'color' ),
+			
+	// Lighten text-color
+	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta,
+			#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
+			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
+			#editor .editor-styles-wrapper .wp-block-pullquote cite,
+			#editor .editor-styles-wrapper .wp-block-pullquote footer,
+			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
+			#editor .editor-styles-wrapper figcaption', 'color', '+2' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .wp-block-cover,
