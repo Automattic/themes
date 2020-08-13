@@ -1,10 +1,14 @@
 .has-main-navigation {
     .site-header {
-        @include media( mobile ){
-            padding: calc( 2 * var(--global--spacing-vertical) ) 0;
-        };
+        @include media( mobile-only ){
+            padding-top: 4px;
+            .site-description {
+                display: none;
+            }
+        }
     }
 }
+
 
 .site-header {
     display: flex;
