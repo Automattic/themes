@@ -22,6 +22,11 @@ add_color_rule( 'bg', '#f7f7f6', array(
 			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			.wp-block-pullquote.is-style-solid-color,
+			.wp-block-button.is-style-default a.wp-block-button__link,
+			.wp-block-button.is-style-default .wp-block-button__link:active, 
+			.wp-block-button.is-style-default .wp-block-button__link:focus, 
+			.wp-block-button.is-style-default .wp-block-button__link:hover, 
+			.wp-block-button.is-style-default .wp-block-button__link:visited,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'color' ),
 
 	/**
