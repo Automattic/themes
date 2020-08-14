@@ -75,9 +75,10 @@
 						<div class="woocommerce-menu-container">
 							<ul id="woocommerce-menu" class="menu-wrapper" aria-label="%4$s">
 							<li class="menu-item woocommerce-menu-item %5$s" title="%6$s">
+								%7$s
 								<ul class="sub-menu">
-									<li class="woocommerce-cart-widget" title="%7$s">
-										%8$s
+									<li class="woocommerce-cart-widget" title="%8$s">
+										%9$s
 									</li>
 								</ul>
 							</li>',
@@ -87,6 +88,7 @@
 						esc_attr__( 'submenu', 'seedlet' ),
 						is_cart() ? 'current-menu-item' : '',
 						esc_attr__( 'View your shopping cart', 'seedlet' ),
+						seedlet_cart_link(),
 						esc_attr__( 'View your shopping list', 'seedlet' ),
 						seedlet_cart_widget()
 					) ); ?>

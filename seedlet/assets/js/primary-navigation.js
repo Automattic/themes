@@ -33,7 +33,6 @@
 		 * Trap keyboard navigation in the menu modal.
 		 * Adapted from TwentyTwenty
 		 */
-
 		document.addEventListener( 'keydown', function( event ) {
 			if ( ! wrapper.classList.contains( `${ id }-navigation-open` ) ){
 				return;
@@ -41,9 +40,12 @@
 			var modal, elements, selectors, lastEl, firstEl, activeEl, tabKey, shiftKey, escKey;
 
 			modal = document.querySelector( `.${ id }-navigation` );
-			selectors = 'input, a, button';
+			selectors = "input, a, button";
 			elements = modal.querySelectorAll( selectors );
 			elements = Array.prototype.slice.call( elements );
+			elements = elements.filter( function( el ) {
+				return ! el.classList.contains( 'woocommerce-cart-link' ); // ignore this element because it's hidden on mobile
+			});
 			tabKey = event.keyCode === 9;
 			shiftKey = event.shiftKey;
 			escKey = event.keyCode === 27;
