@@ -4,8 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 

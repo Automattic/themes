@@ -2,8 +2,7 @@
 /**
  * SVG icons related functions
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 

@@ -4,8 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package WordPress
- * @subpackage Seedlet
+ * @package Seedlet
  * @since 1.0.0
  */
 

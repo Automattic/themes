@@ -87,7 +87,7 @@ function seedlet_category_image() {
 		$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
 		$image = wp_get_attachment_url( $thumbnail_id );
 		if ( $image ) {
-			echo '<img src="' . $image . '" alt="' . $cat->name . '" />';
+			echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $cat->name ) . '" />';
 		}
 	}
 }

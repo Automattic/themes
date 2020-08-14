@@ -14,6 +14,15 @@ Seedlet is a simple, text-driven, single-column theme.
 
 == Changelog ==
 
+= 1.0.2 =
+* Fix mobile menu tab accessibility issues
+* Fix escaping and prefixing issues
+* Support for IE styles
+
+= 1.0.1 =
+* Translate aria-labels
+* Remove remote files
+
 = 1.0 =
 * Initial release 
 
