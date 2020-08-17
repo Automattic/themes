@@ -161,7 +161,8 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
 			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
 			#editor .editor-styles-wrapper .wp-block-video figcaption,
-			#editor .editor-styles-wrapper figcaption', 'color' ),
+			#editor .editor-styles-wrapper figcaption,
+			#editor .editor-styles-wrapper .wp-block-code', 'color' ),
 			
 	// Lighten text-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links,
