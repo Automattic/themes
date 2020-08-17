@@ -10,22 +10,8 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 	}
 
 	.woo-navigation {
-
-		// Mobile menu toggle
-		> #toggle-cart {
-			left: 0;
-			top: 0;
-			right: auto;
-
-			.open .svg-icon {
-				margin-left: 0;
-				margin-right: calc(0.25 * var(--global--spacing-unit));
-				vertical-align: middle;
-			}
-		}
-
 		// Mobile menu open
-		@at-root body[class*="woocommerce"].wc-navigation-open #page .woo-navigation {
+		@at-root body[class*="woocommerce"].woo-navigation-open #page .woo-navigation {
 
 			> .woocommerce-menu-container {
 				visibility: visible;
@@ -33,7 +19,7 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 				transform: translateY(0);
 			}
 
-			#toggle-cart {
+			#woo-open-menu {
 
 				left: auto;
 				right: 0;
@@ -51,11 +37,6 @@ body[class*="woocommerce"] #page { // adding #page here to override default wc s
 		}
 
 		@include media(mobile-only) {
-
-			// Adjust position when logged-in
-			@at-root body[class*="woocommerce"].admin-bar.lock-scrolling #page .woo-navigation #toggle-cart {
-				top: 46px;
-			}
 
 			.woocommerce-menu-container {
 

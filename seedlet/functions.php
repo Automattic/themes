@@ -16,6 +16,14 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
+/**
+ * Determine whether the site is being requested from IE.
+ */
+$is_ie = false;
+if ( preg_match( '~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false ) ) {
+	$is_ie = true;
+}
+
 if ( ! function_exists( 'seedlet_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -105,10 +113,16 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
+		$editor_stylesheet_path = './assets/css/style-editor.css';
+		if ( $is_ie ) {
+			$editor_stylesheet_path = './assets/css/ie-editor.css';
+		}
+
 		// Enqueue editor styles.
-		add_editor_style( array(
-			seedlet_fonts_url(),
-			'./assets/css/style-editor.css'
+		add_editor_style(
+			array(
+				seedlet_fonts_url(),
+				$editor_stylesheet_path,
 		) );
 
 		// Add custom editor font sizes.
@@ -150,21 +164,11 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		// Editor color palette.
 		$colors_theme_mod = get_theme_mod( 'custom_colors_active' );
-		$primary          = ( ! empty( $colors_theme_mod ) &&
-								'default' === $colors_theme_mod ||
-								empty( get_theme_mod( 'seedlet_--global--color-primary' ) ) ) ? '#000000' : get_theme_mod( 'seedlet_--global--color-primary' );
-		$secondary        = ( ! empty( $colors_theme_mod ) &&
-								'default' === $colors_theme_mod ||
-								empty( get_theme_mod( 'seedlet_--global--color-secondary' ) ) ) ? '#3C8067' : get_theme_mod( 'seedlet_--global--color-secondary' );
-		$foreground       = ( ! empty( $colors_theme_mod ) &&
-								'default' === $colors_theme_mod ||
-								empty( get_theme_mod( 'seedlet_--global--color-foreground' ) ) ) ? '#333333' : get_theme_mod( 'seedlet_--global--color-foreground' );
-		$tertiary = ( ! empty( $colors_theme_mod ) &&
-								'default' === $colors_theme_mod ||
-								empty( get_theme_mod( 'seedlet_--global--color-tertiary' ) ) ) ? '#FAFBF6' : get_theme_mod( 'seedlet_--global--color-tertiary' );
-		$background       = ( ! empty( $colors_theme_mod ) &&
-								'default' === $colors_theme_mod ||
-								empty( get_theme_mod( 'seedlet_--global--color-background' ) ) ) ? '#FFFFFF' : get_theme_mod( 'seedlet_--global--color-background' );
+		$primary          = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-primary' ) ) ) ? '#000000' : get_theme_mod( 'seedlet_--global--color-primary' );
+		$secondary        = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-secondary' ) ) ) ? '#3C8067' : get_theme_mod( 'seedlet_--global--color-secondary' );
+		$foreground       = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-foreground' ) ) ) ? '#333333' : get_theme_mod( 'seedlet_--global--color-foreground' );
+		$tertiary         = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-tertiary' ) ) ) ? '#FAFBF6' : get_theme_mod( 'seedlet_--global--color-tertiary' );
+		$background       = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-background' ) ) ) ? '#FFFFFF' : get_theme_mod( 'seedlet_--global--color-background' );
 
 		add_theme_support(
 			'editor-color-palette',
@@ -362,7 +366,7 @@ function seedlet_scripts() {
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
 	// Theme styles
-	if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)) {
+	if ( $is_ie ) {
 		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
 		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
 	} else {
@@ -412,7 +416,9 @@ require get_template_directory() . '/classes/class-seedlet-svg-icons.php';
 /**
  * Custom colors class.
  */
-require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
+if ( empty( get_theme_mod( 'colors_manager' ) ) ) { // If the theme is on wpcom, we bypass the theme's built in custom colors, because wpcom uses a different custom color implementation.
+	require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
+}
 
 /**
  * Enhance the theme by hooking into WordPress.

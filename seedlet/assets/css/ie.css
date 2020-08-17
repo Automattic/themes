@@ -7,7 +7,7 @@ Description: A simple, text-driven, single-column theme.
 Requires at least: 4.9.6
 Tested up to: 5.4.1
 Requires PHP: 7.3
-Version: 1.0.1-wpcom
+Version: 1.0.3-wpcom
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: seedlet
@@ -795,6 +795,10 @@ hr.wp-block-separator.is-style-wide {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+.wp-block-template-part > * {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 .widget-area > * {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -825,6 +829,10 @@ hr.wp-block-separator.is-style-wide {
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
+	.wp-block-template-part > * {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
 	.widget-area > * {
 		margin-top: 30px;
 		margin-bottom: 30px;
@@ -840,6 +848,7 @@ hr.wp-block-separator.is-style-wide {
 .site-main > .not-found > *:first-child,
 .entry-content > *:first-child,
 [class*="inner-container"] > *:first-child,
+.wp-block-template-part > *:first-child,
 .widget-area > *:first-child,
 .widget-column > *:first-child {
 	margin-top: 0;
@@ -850,6 +859,7 @@ hr.wp-block-separator.is-style-wide {
 .site-main > .not-found > *:last-child,
 .entry-content > *:last-child,
 [class*="inner-container"] > *:last-child,
+.wp-block-template-part > *:last-child,
 .widget-area > *:last-child,
 .widget-column > *:last-child {
 	margin-bottom: 0;
@@ -1535,7 +1545,7 @@ a:active {
 	color: #000000;
 }
 
-*:focus {
+.site *:focus {
 	outline-width: 1px;
 	outline-style: dotted;
 	outline-color: #3C8067;
@@ -3722,43 +3732,43 @@ table th {
 }
 
 .has-primary-color[class] {
-	color: #000000 !important;
+	color: #000000;
 }
 
 .has-secondary-color[class] {
-	color: #3C8067 !important;
+	color: #3C8067;
 }
 
 .has-foreground-color[class] {
-	color: #333333 !important;
+	color: #333333;
 }
 
 .has-foreground-light-color[class] {
-	color: #444444 !important;
+	color: #444444;
 }
 
 .has-foreground-dark-color[class] {
-	color: #000000 !important;
+	color: #000000;
 }
 
 .has-tertiary-color[class] {
-	color: #FAFBF6 !important;
+	color: #FAFBF6;
 }
 
 .has-background-dark-color[class] {
-	color: #DDDDDD !important;
+	color: #DDDDDD;
 }
 
 .has-background-color[class] {
-	color: #FFFFFF !important;
+	color: #FFFFFF;
 }
 
 .has-white-color[class] {
-	color: white !important;
+	color: white;
 }
 
 .has-black-color[class] {
-	color: black !important;
+	color: black;
 }
 
 .has-background:not(.has-background-background-color) a,
@@ -3767,52 +3777,52 @@ table th {
 }
 
 .has-primary-background-color[class] {
-	background-color: #000000 !important;
+	background-color: #000000;
 	color: #FFFFFF;
 }
 
 .has-secondary-background-color[class] {
-	background-color: #3C8067 !important;
+	background-color: #3C8067;
 	color: #FFFFFF;
 }
 
 .has-foreground-background-color[class] {
-	background-color: #333333 !important;
+	background-color: #333333;
 	color: #FFFFFF;
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: #444444 !important;
+	background-color: #444444;
 	color: #FFFFFF;
 }
 
 .has-foreground-dark-background-color[class] {
-	background-color: #000000 !important;
+	background-color: #000000;
 	color: #FFFFFF;
 }
 
 .has-tertiary-background-color[class] {
-	background-color: #FAFBF6 !important;
+	background-color: #FAFBF6;
 	color: #333333;
 }
 
 .has-background-dark-background-color[class] {
-	background-color: #DDDDDD !important;
+	background-color: #DDDDDD;
 	color: #333333;
 }
 
 .has-background-background-color[class] {
-	background-color: #FFFFFF !important;
+	background-color: #FFFFFF;
 	color: #333333;
 }
 
 .has-white-background-color[class] {
-	background-color: white !important;
+	background-color: white;
 	color: #3C8067;
 }
 
 .has-black-background-color[class] {
-	background-color: black !important;
+	background-color: black;
 	color: #000000;
 }
 
@@ -4146,6 +4156,152 @@ nav a {
 	}
 }
 
+.menu-button-container {
+	display: none;
+	justify-content: space-between;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.menu-button-container #primary-open-menu {
+	margin-left: auto;
+}
+
+@media only screen and (max-width: 481px) {
+	.menu-button-container {
+		display: flex;
+	}
+}
+
+.admin-bar:not(.primary-navigation-open) .menu-button-container {
+	top: 46px;
+}
+
+.menu-button-container .button {
+	background-color: transparent;
+	color: #000000;
+	z-index: 500;
+}
+
+.primary-navigation .button {
+	background-color: transparent;
+	color: #000000;
+	z-index: 500;
+}
+
+.woo-navigation .button {
+	background-color: transparent;
+	color: #000000;
+	z-index: 500;
+}
+
+.menu-button-container .button.open,
+.primary-navigation .button.open,
+.woo-navigation .button.open {
+	display: flex;
+	z-index: 499;
+}
+
+.menu-button-container .button.close,
+.primary-navigation .button.close,
+.woo-navigation .button.close {
+	display: none;
+}
+
+.menu-button-container .button:hover {
+	color: #3C8067;
+}
+
+.primary-navigation .button:hover {
+	color: #3C8067;
+}
+
+.woo-navigation .button:hover {
+	color: #3C8067;
+}
+
+.menu-button-container .button#woo-open-menu .svg-icon {
+	margin-left: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.primary-navigation .button#woo-open-menu .svg-icon {
+	margin-left: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.woo-navigation .button#woo-open-menu .svg-icon {
+	margin-left: 0;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.menu-button-container .button .dropdown-icon,
+.primary-navigation .button .dropdown-icon,
+.woo-navigation .button .dropdown-icon {
+	display: flex;
+	align-items: center;
+}
+
+.menu-button-container .button .dropdown-icon .svg-icon {
+	margin-left: 5px;
+}
+
+.primary-navigation .button .dropdown-icon .svg-icon {
+	margin-left: 5px;
+}
+
+.woo-navigation .button .dropdown-icon .svg-icon {
+	margin-left: 5px;
+}
+
+.menu-button-container .button .dropdown-icon.open .svg-icon,
+.primary-navigation .button .dropdown-icon.open .svg-icon,
+.woo-navigation .button .dropdown-icon.open .svg-icon {
+	position: relative;
+	top: -1px;
+}
+
+.menu-button-container .button .hide-visually,
+.primary-navigation .button .hide-visually,
+.woo-navigation .button .hide-visually {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.primary-navigation-open .menu-button-container #primary-open-menu, .primary-navigation-open
+.primary-navigation #primary-open-menu, .primary-navigation-open
+.woo-navigation #primary-open-menu {
+	display: none;
+}
+
+.primary-navigation-open .menu-button-container #primary-close-menu, .primary-navigation-open
+.primary-navigation #primary-close-menu, .primary-navigation-open
+.woo-navigation #primary-close-menu {
+	display: flex;
+}
+
+.woo-navigation-open .menu-button-container #woo-open-menu, .woo-navigation-open
+.primary-navigation #woo-open-menu, .woo-navigation-open
+.woo-navigation #woo-open-menu {
+	display: none;
+}
+
+.woo-navigation-open .menu-button-container #woo-close-menu, .woo-navigation-open
+.primary-navigation #woo-close-menu, .woo-navigation-open
+.woo-navigation #woo-close-menu {
+	display: flex;
+}
+
 .primary-navigation {
 	position: absolute;
 	top: 0;
@@ -4212,79 +4368,11 @@ nav a {
 	}
 }
 
-.primary-navigation > .button {
-	position: absolute;
-	display: inline-block;
-	margin: 0;
-	right: 0;
-	top: 0;
-	background-color: transparent;
-	color: #000000;
-}
-
-.woo-navigation > .button {
-	position: absolute;
-	display: inline-block;
-	margin: 0;
-	right: 0;
-	top: 0;
-	background-color: transparent;
-	color: #000000;
-}
-
-.primary-navigation > .button:hover {
-	color: #3C8067;
-}
-
-.woo-navigation > .button:hover {
-	color: #3C8067;
-}
-
 .primary-navigation-open .primary-navigation > .primary-menu-container, .primary-navigation-open
 .woo-navigation > .primary-menu-container {
 	visibility: visible;
 	opacity: 1;
 	transform: translateY(0);
-}
-
-.primary-navigation-open .primary-navigation > #toggle-menu, .primary-navigation-open
-.woo-navigation > #toggle-menu {
-	z-index: 500;
-}
-
-.primary-navigation-open .primary-navigation > #toggle-menu .open, .primary-navigation-open
-.woo-navigation > #toggle-menu .open {
-	display: none;
-}
-
-.primary-navigation-open .primary-navigation > #toggle-menu .close, .primary-navigation-open
-.woo-navigation > #toggle-menu .close {
-	display: flex;
-}
-
-.primary-navigation .dropdown-icon,
-.woo-navigation .dropdown-icon {
-	display: flex;
-	align-items: center;
-}
-
-.primary-navigation .dropdown-icon .svg-icon {
-	margin-left: 5px;
-}
-
-.woo-navigation .dropdown-icon .svg-icon {
-	margin-left: 5px;
-}
-
-.primary-navigation .dropdown-icon.open .svg-icon,
-.woo-navigation .dropdown-icon.open .svg-icon {
-	position: relative;
-	top: -1px;
-}
-
-.primary-navigation .dropdown-icon.close,
-.woo-navigation .dropdown-icon.close {
-	display: none;
 }
 
 .lock-scrolling .primary-navigation > .button, .lock-scrolling
