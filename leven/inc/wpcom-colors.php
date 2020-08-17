@@ -119,11 +119,11 @@ add_color_rule( 'link', '#ff302c', array(
 	// Text-color
 	array( '.site-title a:hover,
 			.social-navigation a,
-			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
-			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color), 
 			.wp-block-button.is-style-outline.wp-block-button__link,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color), 
 			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			a', 'color' ),
