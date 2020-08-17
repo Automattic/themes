@@ -11,7 +11,9 @@ add_editor_color_rule( 'bg', '#f7f7f6', array(
 	array( '#editor .editor-styles-wrapper', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .wp-block-cover,
+	array( '#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
@@ -101,9 +103,8 @@ add_editor_color_rule( 'link', '#ff302c', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
-			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Border color left
