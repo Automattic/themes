@@ -1,0 +1,35 @@
+.site-header {
+	padding-top: calc(2 * var(--global--spacing-vertical));
+	padding-bottom: calc(1 * var(--global--spacing-vertical));
+
+	.has-main-navigation & {
+		padding-top: calc(2 * var(--global--spacing-vertical));
+	}
+
+	@include media(mobile) {
+		padding-top: calc(2 * var(--global--spacing-vertical));
+		padding-bottom: calc(1 * var(--global--spacing-vertical));
+
+		.has-main-navigation & {
+			padding-top: calc(1 * var(--global--spacing-vertical));
+		}
+	}
+}
+
+.site-logo img {
+	border-radius: 50%;
+	border: 3px solid var(--global--color-primary);
+}
+
+.site-title a {
+	font-weight: normal;
+	font-style: italic;
+	background-image: none;
+}
+
+/* Temporarily hide the page title on the homepage.
+ * (On WP.com, this will just be handled via Jetpack)
+ */
+.home .entry-header {
+	display: none;
+}

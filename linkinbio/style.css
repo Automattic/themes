@@ -1,0 +1,190 @@
+/*
+Theme Name: Link in Bio
+Theme URI: https://github.com/Automattic/themes/root-child
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A quick theme to share links.
+Requires at least: WordPress 5.4 
+Version: 1.2.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: linkinbio 
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+*/
+/**
+ * Repsonsive Styles
+ */
+/**
+ * Required Variables
+ */
+/**
+ * Root Media Query Variables
+ */
+:root {
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal));
+	--responsive--aligndefault-width: 100%;
+	--responsive--alignwide-width: 100%;
+	--responsive--alignfull-width: 100%;
+	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
+	--responsive--alignright-margin: var(--global--spacing-horizontal);
+	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+}
+
+@media only screen and (min-width: 482px) {
+	:root {
+		--responsive--aligndefault-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 592px) {
+	:root {
+		--responsive--aligndefault-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(592px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 652px) {
+	:root {
+		--responsive--aligndefault-width: calc(592px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(652px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 822px) {
+	:root {
+		--responsive--aligndefault-width: calc(652px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(822px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	:root {
+		--responsive--aligndefault-width: calc(652px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(822px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+/**
+ * Extends
+ */
+.default-max-width {
+	max-width: var(--responsive--aligndefault-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wide-max-width {
+	max-width: var(--responsive--alignwide-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 482px) {
+	.full-max-width {
+		max-width: var(--responsive--alignfull-width);
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/**
+ * Output
+ */
+.entry-content a {
+	font-weight: 500;
+}
+
+.site-header {
+	padding-top: calc(2 * var(--global--spacing-vertical));
+	padding-bottom: calc(1 * var(--global--spacing-vertical));
+}
+
+.has-main-navigation .site-header {
+	padding-top: calc(2 * var(--global--spacing-vertical));
+}
+
+@media only screen and (min-width: 482px) {
+	.site-header {
+		padding-top: calc(2 * var(--global--spacing-vertical));
+		padding-bottom: calc(1 * var(--global--spacing-vertical));
+	}
+	.has-main-navigation .site-header {
+		padding-top: calc(1 * var(--global--spacing-vertical));
+	}
+}
+
+.site-logo img {
+	border-radius: 50%;
+	border: 3px solid var(--global--color-primary);
+}
+
+.site-title a {
+	font-weight: normal;
+	font-style: italic;
+	background-image: none;
+}
+
+/* Temporarily hide the page title on the homepage.
+ * (On WP.com, this will just be handled via Jetpack)
+ */
+.home .entry-header {
+	display: none;
+}
+
+/**
+ * Block Styles
+ */
+.wp-block-social-links.is-style-linkinbio-large-buttons {
+	flex-direction: column;
+}
+
+.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 3.5em;
+	border-radius: 3px;
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+	font-size: var(--global--font-size-md);
+	background: var(--global--color-tertiary) !important;
+}
+
+.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link:hover {
+	transform: initial;
+}
+
+.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link a {
+	padding: 1.25em;
+	display: flex;
+	align-items: center;
+	color: var(--global--color-primary);
+}
+
+.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link a::after {
+	content: attr(aria-label);
+	margin-left: 0.5em;
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link {
+		font-size: var(--global--font-size-lg);
+	}
+}
+
+.site-main > article > .entry-footer {
+	border-top: none;
+}

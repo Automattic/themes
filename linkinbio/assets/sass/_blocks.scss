@@ -1,0 +1,39 @@
+/**
+ * Block Styles
+ */
+
+ .wp-block-social-links.is-style-linkinbio-large-buttons {
+ 	flex-direction: column;
+
+	.wp-social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 3.5em;
+		border-radius: 3px;
+		margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+		font-size: var(--global--font-size-md);
+		background: var(--global--color-tertiary) !important;
+
+		&:hover {
+			transform: initial;
+		}
+
+		a {
+			padding: 1.25em;
+			display: flex;
+			align-items: center;
+			color: var(--global--color-primary);
+
+			&::after {
+				content: attr(aria-label);
+				margin-left: 0.5em;
+			}
+		}
+
+		@include media(mobile) {
+			font-size: var(--global--font-size-lg);
+		}
+	}
+ }
