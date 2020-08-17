@@ -12,7 +12,7 @@ add_editor_color_rule( 'bg', '#f7f7f6', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color),
-			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
@@ -259,6 +259,12 @@ add_editor_color_rule( 'fg1', '#1285ce', array(
  * Custom CSS
  */
 function leven_editor_custom_colors_extra_css() { ?>
+
+	#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-background[class], 
+	#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-background[class] {
+		background: transparent !important;
+	}
+
 	#editor .editor-styles-wrapper .has-text-color a,
 	#editor .editor-styles-wrapper .has-background a {
 		color: currentColor;
