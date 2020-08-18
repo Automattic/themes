@@ -32,6 +32,11 @@ GNU General Public License for more details.
  * and that just makes doubling up on the :root selector really cool.
  */
 :root:root {
+	/* Line Height */
+	--global--line-height-base: 1;
+	--global--line-height-body: 1.67;
+	--global--line-height-heading: 1.3;
+
 	/* Font Family */
 	--global--font-primary: var(--font-headings, Lora, serif);
 	--global--font-secondary: var(--font-base, Lora, sans-serif);
@@ -46,6 +51,19 @@ GNU General Public License for more details.
 	--global--font-size-xl: var(--wp--preset--font-size--extra-large);
 	--global--font-size-xxl: var(--wp--preset--font-size--huge);
 	--global--font-size-xxxl: var(--wp--preset--font-size--gigantic);
+	--heading--line-height: 1.3;
+	--heading--font-size-h6: var(--global--font-size-base);
+	--heading--font-size-h5: var(--global--font-size-md);
+	--heading--font-size-h4: var(--global--font-size-lg);
+	--heading--font-size-h3: var(--global--font-size-xl);
+	--heading--font-size-h2: var(--global--font-size-xxl);
+	--heading--font-size-h1: var(--global--font-size-xxxl);
+	--heading--line-height-h6: 1.3;
+	--heading--line-height-h5: 1.3;
+	--heading--line-height-h4: 1.3;
+	--heading--line-height-h3: var(--heading--line-height);
+	--heading--line-height-h2: var(--heading--line-height);
+	--heading--line-height-h1: var(--heading--line-height);	
 	--heading--font-weight: 600;
 	--heading--font-weight-strong: 700;	
 
@@ -100,8 +118,8 @@ GNU General Public License for more details.
 }
 @media only screen and (min-width: 1024px) {
 	:root:root {
-		--responsive--aligndefault-width: calc(750px - var(--responsive--spacing-horizontal));
-		--responsive--alignwide-width: calc(990px - var(--responsive--spacing-horizontal));
+		--responsive--aligndefault-width: calc(610px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(1202px - var(--responsive--spacing-horizontal));
 		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 	}
