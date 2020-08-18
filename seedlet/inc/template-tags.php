@@ -240,3 +240,16 @@ if ( ! function_exists( 'seedlet_the_posts_pagination' ) ) :
 		);
 	}
 endif;
+
+if ( ! function_exists( 'seedlet_get_the_archive_title' ) ) :
+	/**
+	 * Returns the archive page heading, allowing it to be filterable.
+	 */
+	function seedlet_get_the_archive_title( $title, $original_title, $prefix ) {
+		$prefix = '<span class="archive-prefix">' . $prefix . '</span>';
+		$title 	= '<span class="archive-title">' . $original_title . '</span>';
+
+		return '<h1 class="page-title">' . $prefix . $title . '</h1>';
+	}
+	add_filter( 'get_the_archive_title', 'seedlet_get_the_archive_title', 10, 3 );
+endif;

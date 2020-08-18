@@ -75,7 +75,7 @@ add_filter( 'comment_form_defaults', 'seedlet_comment_form_defaults' );
 /**
  * Filters the default archive titles.
  */
-function seedlet_get_the_archive_title() {
+function seedlet_get_the_archive_title( $title, $original_title, $prefix ) {
 	if ( is_category() ) {
 		$title = __( 'Category Archives: ', 'seedlet' ) . '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
@@ -104,8 +104,13 @@ function seedlet_get_the_archive_title() {
 		$title = __( 'Archives:', 'seedlet' );
 	}
 	return $title;
+
+	$prefix = '<span class="archive-prefix">' . $prefix . '</span>';
+	$title 	= '<span class="archive-title">' . $original_title . '</span>';
+
+	return '<h1 class="page-title">' . $prefix . $title . '</h1>';
 }
-add_filter( 'get_the_archive_title', 'seedlet_get_the_archive_title' );
+add_filter( 'get_the_archive_title', 'seedlet_get_the_archive_title', 10, 3 );
 
 /**
  * Determines if post thumbnail can be displayed.
