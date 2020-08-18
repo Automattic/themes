@@ -53,49 +53,52 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#20603C'; // $config-global--color-primary-default;
+		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#655441';  // $config-global--color-secondary-default;
+		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFDF6';   // $config-global--color-background-default;
+		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#3C2323';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) ? $colors_array['colors']['txt'] : '#844d4d';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) ? $colors_array['colors']['txt'] : '#0D1B24';  // $config-global--color-foreground-dark-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'barnsbury' ),
 					'slug'  => 'primary',
-					'color' => '#20603C',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'barnsbury' ),
 					'slug'  => 'secondary',
-					'color' => '#655441',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Deep Blue', 'barnsbury' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#0D1B24',
-				),
-				array(
-					'name'  => __( 'Brown', 'barnsbury' ),
-					'slug'  => 'foreground',
-					'color' => '#3C2323',
-				),
-				array(
-					'name'  => __( 'Clay', 'barnsbury' ),
-					'slug'  => 'foreground-light',
-					'color' => '#844D4D',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'barnsbury' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Off White', 'barnsbury' ),
-					'slug'  => 'background-light',
-					'color' => '#FDF9EC',
-				),
-				array(
-					'name'  => __( 'Off White', 'barnsbury' ),
+					'name'  => __( 'Background', 'barnsbury' ),
 					'slug'  => 'background',
-					'color' => '#FFFDF6',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground', 'barnsbury' ),
+					'slug'  => 'foreground',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'balasana' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'balasana' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -171,5 +174,16 @@ function barnsbury_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'barnsbury-editor-fonts', barnsbury_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'barnsbury_editor_styles' );
+
