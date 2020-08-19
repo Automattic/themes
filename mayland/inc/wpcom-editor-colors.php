@@ -11,7 +11,10 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 	array( '#editor .editor-styles-wrapper', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -70,13 +73,18 @@ add_editor_color_rule( 'link', '#000000', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background-color),
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
+	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Border color left
@@ -127,7 +135,8 @@ add_editor_color_rule( 'txt', '#010101', array(
 			#editor .editor-styles-wrapper .wp-block-video figcaption,
 			#editor .editor-styles-wrapper figcaption,
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
-			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd)', 'color' ),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-code', 'color' ),
 
 	// Text-color brightened
 	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus,
@@ -160,9 +169,9 @@ add_editor_color_rule( 'txt', '#010101', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover', 'background-color', '+2' ),
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover', 'background-color', '+2' ),
 
 	/**
 	 * Utility Classes
@@ -218,6 +227,11 @@ add_editor_color_rule( 'fg1', '#1a1a1a', array(
  * Custom CSS
  */
 function mayland_editor_custom_colors_extra_css() { ?>
+	#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-background[class], 
+	#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-background[class] {
+		background: transparent !important;
+	}
+
 	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
 	#editor .editor-styles-wrapper p.has-text-color a {
 		color: currentColor;
