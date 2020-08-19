@@ -152,7 +152,7 @@ add_editor_color_rule( 'txt', '#010101', array(
 			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
 			#editor .editor-styles-wrapper a:hover,
 			#editor .editor-styles-wrapper figcaption', 'color', '+2' ),
-
+			
 	// Background-color brightened
 	array( '#editor .editor-styles-wrapper .button.has-focus,
 			#editor .editor-styles-wrapper .button:focus,
@@ -177,7 +177,9 @@ add_editor_color_rule( 'txt', '#010101', array(
 			#editor .editor-styles-wrapper .has-foreground-color[class],
 			#editor .editor-styles-wrapper .wp-block .has-foreground-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class],
+	array( '#editor .editor-styles-wrapper .has-background-dim[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dim[class],
+			#editor .editor-styles-wrapper .has-foreground-background-color[class],
 			#editor .editor-styles-wrapper .wp-block .has-foreground-background-color[class]', 'background-color' ),
 
 	// Text-color darkened
@@ -211,3 +213,15 @@ add_editor_color_rule( 'fg1', '#1a1a1a', array(
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function mayland_editor_custom_colors_extra_css() { ?>
+	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+	#editor .editor-styles-wrapper p.has-text-color a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'mayland_editor_custom_colors_extra_css' ); 
+
