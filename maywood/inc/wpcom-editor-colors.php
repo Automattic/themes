@@ -7,53 +7,68 @@
 // $config-global--color-background-default
 add_editor_color_rule( 'bg', '#FFFFFF', array(
 
+	// Text-color
+	array( '.wp-block-pullquote.is-style-solid-color', 'color' ),
 	// Background-color
 	array( '#editor .editor-styles-wrapper,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
-	// Text-color
-	array( '.wp-block-pullquote.is-style-solid-color', 'color' ),
+	// Text-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots', 'color', '-1' ),
+	// Border-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', '-1' ),
+	// Border-top-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color', '-1' ),
+	// Border-bottom-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
 
 	/**
 	 * Utility Classes
 	 */
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-background-color[class],
 			#editor .editor-styles-wrapper .has-secondary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class],
 			#editor .editor-styles-wrapper .has-foreground-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-background-color[class],
 			#editor .editor-styles-wrapper .has-foreground-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-dark-background-color[class],
 			#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
-			#editor .editor-styles-wrapper .has-background-color[class]', 'color' ),
+			#editor .editor-styles-wrapper .wp-block .has-foreground-light-background-color[class],
+			#editor .editor-styles-wrapper .has-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-background-background-color[class]', 'background-color' ),
-	// Text-color darkened
-	array( '#editor .editor-styles-wrapper .has-background-dark-color[class]', 'color', '-1'  ),
-	// Background-color darkened
-	array( '#editor .editor-styles-wrapper .has-background-dark-background-color[class]', 'background-color', '-1' ),
-	// Text-color lightened
-	array( '#editor .editor-styles-wrapper .has-background-light-color[class]', 'color', '+1'  ),
-	// Background-color lightened
-	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-background-color[class]', 'background-color' ),
 
-	/**
-	 * Grays
-	 * Uses a slightly darker color
-	 */
-	// Color
-	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots', 'color', '-1' ),
-	// Border-color
-	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', '-1' ),
-	// Border-top-color
-	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color', '-1' ),
-	// Border-bottom-color
-	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
-			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
+	// Text-color darkened
+	array( '#editor .editor-styles-wrapper .has-background-dark-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dark-color[class]', 'color', '-1'  ),
+	// Background-color darkened
+	array( '#editor .editor-styles-wrapper .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dark-background-color[class]', 'background-color', '-1' ),
+
+	// Text-color lightened
+	array( '#editor .editor-styles-wrapper .has-background-light-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-light-color[class]', 'color', '+1'  ),
+	// Background-color lightened
+	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-light-background-color[class]', 'background-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
 // Link Color
 // $config-global--color-primary-default
 add_editor_color_rule( 'link', '#897248', array(
+
+	// Text-color
+	array( '#editor .editor-styles-wrapper .fse-template-part .main-navigation a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
+			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
@@ -62,13 +77,6 @@ add_editor_color_rule( 'link', '#897248', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
-
-	// Text-color
-	array( '#editor .editor-styles-wrapper .fse-template-part .main-navigation a:hover,
-			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
-			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Border color left
 	array( '#editor .editor-styles-wrapper .wp-block-quote', 'border-left-color' ),
@@ -80,10 +88,12 @@ add_editor_color_rule( 'link', '#897248', array(
 	/**
 	 * Utility Classes
 	 */
-	// Background-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-primary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-color[class]', 'color' ),
+	// Background-color
+	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-background-color[class]', 'background-color' ),
 
 ), __( 'Link Color' ) );
 
