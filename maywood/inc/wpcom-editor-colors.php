@@ -85,6 +85,36 @@ add_editor_color_rule( 'link', '#897248', array(
 	array( '#editor .editor-styles-wrapper .wp-block-quote[style*="text-align: right"],
 			#editor .editor-styles-wrapper .wp-block-quote[style*="text-align:right"]', 'border-right-color' ),
 
+	// Text-color darkened
+	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:active,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta a:active,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:active,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:hover,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:focus,
+			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:hover,
+			#editor .editor-styles-wrapper a:hover', 'color', '-1' ),
+
+	// Background-color darkened
+	array( '#editor .editor-styles-wrapper .button.has-focus,
+			#editor .editor-styles-wrapper .button:focus,
+			#editor .editor-styles-wrapper .button:hover,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:focus,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:hover,
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button__link:hover', 'background-color', '-1' ),
+
 	/**
 	 * Utility Classes
 	 */
