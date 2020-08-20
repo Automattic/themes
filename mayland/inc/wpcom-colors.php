@@ -66,6 +66,7 @@ add_color_rule( 'bg', '#ffffff', array(
 	 */
 	// Text-color
 	array( '.has-background-color,
+			.wp-block-button .has-background-color[class]
 			.has-background-dim,
 			.has-foreground-background-color,
 			.has-foreground-background-color.has-background-dim,
@@ -83,6 +84,7 @@ add_color_rule( 'bg', '#ffffff', array(
 
 	// Text-color darkened
 	array( '.has-background-dark-color[class],
+			.wp-block-button .has-background-dark-color[class],
 			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-background-dark-background-color[class],
@@ -90,6 +92,7 @@ add_color_rule( 'bg', '#ffffff', array(
 
 	// Text-color lightened
 	array( '.has-background-light-color[class],
+			.wp-block-button .has-background-light-color[class],
 			.has-background-light-color.has-background-dim[class]', 'color', '+1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color[class],
@@ -128,6 +131,7 @@ add_color_rule( 'link', '#000000', array(
 			.page-title a:active,
 			.page-title a:focus,
 			.page-title a:hover,
+			.wp-block-button__link.is-style-outline:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
 			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
@@ -136,7 +140,7 @@ add_color_rule( 'link', '#000000', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			a,
+			a:not(.has-text-color),
 			.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
@@ -173,7 +177,8 @@ add_color_rule( 'link', '#000000', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.wp-block-button .has-primary-color[class]', 'color' ),
 	// Background-color
 	array( '.has-primary-background-color[class],
 			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
@@ -316,6 +321,7 @@ add_color_rule( 'txt', '#010101', array(
 	 */
 	// Foreground
 	array( '.has-foreground-color[class],
+			.wp-block-button .has-foreground-color[class],
 			.has-background-background-color[class],
 			.has-background-background-color.has-background-dim[class],
 			.has-background-dark-background-color[class],
@@ -328,13 +334,15 @@ add_color_rule( 'txt', '#010101', array(
 			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color[class],
+			.wp-block-button .has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-foreground-dark-background-color[class],
 			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-color[class],
+			.wp-block-button .has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class],
 			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
@@ -350,7 +358,8 @@ add_color_rule( 'fg1', '#1a1a1a', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.has-secondary-color[class],
+			.wp-block-button .has-secondary-color[class]', 'color' ),
 
 	// Background-color
 	array( '.has-secondary-background-color[class],
@@ -365,6 +374,11 @@ function mayland_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
 ?>
+
+	.wp-block-button.is-style-outline {
+		color: inherit;
+	}
+
 	@media only screen and (min-width: 560px) {
 		/* background-color */
 		.main-navigation > div > ul > li > .sub-menu {
