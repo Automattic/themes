@@ -1,0 +1,48 @@
+/* Override Seedlet variables with values from experimental-theme.json. */
+body {
+	/* Font Family */
+	--global--font-primary: var(--font-headings, Lora, serif);
+	--global--font-secondary: var(--font-base, Lora, sans-serif);
+	--global--font-code: monospace, monospace;
+	--global--font-ui: var(--font-base, var(--global--font-secondary));
+
+	/* Font Size */
+	--global--font-size-xs: var(--wp--preset--font-size--tiny);
+	--global--font-size-sm: var(--wp--preset--font-size--small);
+	--global--font-size-md: var(--wp--preset--font-size--medium);
+	--global--font-size-lg: var(--wp--preset--font-size--large);
+	--global--font-size-xl: var(--wp--preset--font-size--extra-large);
+	--global--font-size-xxl: var(--wp--preset--font-size--huge);
+	--global--font-size-xxxl: var(--wp--preset--font-size--gigantic);
+	--heading--font-weight: 600;
+	--heading--font-weight-strong: 700;	
+
+	/* Colors */
+	--global--color-background: var(--wp--preset--color--background);
+	--global--color-foreground: var(--wp--preset--color--foreground);
+	--global--color-primary: var(--wp--preset--color--primary);
+	--global--color-secondary: var(--wp--preset--color--secondary);
+	--global--color-tertiary: var(--wp--preset--color--tertiary);
+
+	/* Colors */
+	--button--padding-vertical: calc(.66 * var(--global--spacing-horizontal) - var(--button--border-width));
+	--button--padding-horizontal: var(--global--spacing-horizontal);
+}
+
+/**
+ * Override Seedlet Media Query Variables
+ */
+
+@media only screen and (min-width: 1024px) {
+	body {
+		--responsive--aligndefault-width: calc(750px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(990px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+.site-content .wp-block[data-align="full"] > [data-block], .site-content .wp-block.alignfull > [data-block] {
+	margin-top: 0;
+	margin-bottom: 0;
+}

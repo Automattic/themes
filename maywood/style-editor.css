@@ -283,6 +283,21 @@ object {
 }
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+/**
+ * Vendors
+ * - 3rd-party compatibility styles
+ */
+/**
+ * Set Jetpack form text color
+ */
+.jetpack-contact-info-block .is-selected textarea.block-editor-plain-text {
+	color: black;
+}
+
+/**
  * Blocks
  * - These styles replace key Gutenberg Block styles for fonts, colors, and
  *   spacing with CSS-variables overrides
@@ -544,7 +559,6 @@ object {
 
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
-	color: #897248;
 	background: transparent;
 	border: 2px solid currentcolor;
 }
@@ -554,6 +568,7 @@ object {
 .is-style-outline .wp-block-button__link:focus,
 .is-style-outline .wp-block-button__link.has-focus {
 	color: #685636;
+	background: transparent;
 }
 
 .wp-block-button__link.is-style-squared,
@@ -594,6 +609,12 @@ object {
 	margin-bottom: inherit;
 	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
+}
+
+.wp-block-cover.has-background-dim,
+.wp-block-cover-image.has-background-dim {
+	background-color: black;
+	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1015,6 +1036,12 @@ table th,
 	padding: calc( 0.5 * 16px);
 }
 
+table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #F7F7F7;
+	color: #181818;
+}
+
 /**
  * Editor Post Title
  * - Needs a special styles
@@ -1029,83 +1056,100 @@ table th,
 	line-height: 1.125;
 }
 
+.wp-block .has-primary-color,
 .has-primary-color {
 	color: #897248;
 }
 
+.wp-block .has-secondary-color,
 .has-secondary-color {
 	color: #c4493f;
 }
 
+.wp-block .has-foreground-color,
 .has-foreground-color {
 	color: #181818;
 }
 
+.wp-block .has-foreground-light-color,
 .has-foreground-light-color {
 	color: #686868;
 }
 
+.wp-block .has-foreground-dark-color,
 .has-foreground-dark-color {
 	color: #020202;
 }
 
+.wp-block .has-background-light-color,
 .has-background-light-color {
 	color: #F7F7F7;
 }
 
+.wp-block .has-background-dark-color,
 .has-background-dark-color {
 	color: #CCCCCC;
 }
 
+.wp-block .has-background-color,
 .has-background-color {
 	color: #FFFFFF;
 }
 
-.has-background:not(.has-background-background-color) a,
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+.has-background p:not(.has-text-color),
+.has-background h1:not(.has-text-color),
+.has-background h2:not(.has-text-color),
+.has-background h3:not(.has-text-color),
+.has-background h4:not(.has-text-color),
+.has-background h5:not(.has-text-color),
+.has-background h6:not(.has-text-color) {
 	color: currentColor;
 }
 
+.wp-block .has-primary-background-color,
 .has-primary-background-color {
 	background-color: #897248;
 	color: #FFFFFF;
 }
 
-.has-primary-background-color {
-	background-color: #897248;
-	color: #FFFFFF;
-}
-
+.wp-block .has-secondary-background-color,
 .has-secondary-background-color {
 	background-color: #c4493f;
 	color: #FFFFFF;
 }
 
+.wp-block .has-foreground-background-color,
 .has-foreground-background-color {
 	background-color: #181818;
 	color: #FFFFFF;
 }
 
+.wp-block .has-foreground-light-background-color,
 .has-foreground-light-background-color {
 	background-color: #686868;
 	color: #FFFFFF;
 }
 
+.wp-block .has-foreground-dark-background-color,
 .has-foreground-dark-background-color {
 	background-color: #020202;
 	color: #FFFFFF;
 }
 
+.wp-block .has-background-light-background-color,
 .has-background-light-background-color {
 	background-color: #F7F7F7;
 	color: #181818;
 }
 
+.wp-block .has-background-dark-background-color,
 .has-background-dark-background-color {
 	background-color: #CCCCCC;
 	color: #181818;
 }
 
+.wp-block .has-background-background-color,
 .has-background-background-color {
 	background-color: #FFFFFF;
 	color: #181818;
@@ -1296,11 +1340,6 @@ b, strong {
 	}
 }
 
-.wp-block-cover p,
-.wp-block-cover-image p {
-	text-shadow: 0 0 6px #000;
-}
-
 .wp-block-cover h1, .wp-block-cover h2, .wp-block-cover h3, .wp-block-cover h4, .wp-block-cover h5, .wp-block-cover h6,
 .wp-block-cover-image h1,
 .wp-block-cover-image h2,
@@ -1308,6 +1347,35 @@ b, strong {
 .wp-block-cover-image h4,
 .wp-block-cover-image h5,
 .wp-block-cover-image h6 {
+	font-weight: 300;
+}
+
+.wp-block-cover[style*="background-image"] p,
+.wp-block-cover video + .wp-block-cover__inner-container p,
+.wp-block-cover-image[style*="background-image"] p,
+.wp-block-cover-image video + .wp-block-cover__inner-container p {
+	text-shadow: 0 0 6px #000;
+}
+
+.wp-block-cover[style*="background-image"] h1, .wp-block-cover[style*="background-image"] h2, .wp-block-cover[style*="background-image"] h3, .wp-block-cover[style*="background-image"] h4, .wp-block-cover[style*="background-image"] h5, .wp-block-cover[style*="background-image"] h6,
+.wp-block-cover video + .wp-block-cover__inner-container h1,
+.wp-block-cover video + .wp-block-cover__inner-container h2,
+.wp-block-cover video + .wp-block-cover__inner-container h3,
+.wp-block-cover video + .wp-block-cover__inner-container h4,
+.wp-block-cover video + .wp-block-cover__inner-container h5,
+.wp-block-cover video + .wp-block-cover__inner-container h6,
+.wp-block-cover-image[style*="background-image"] h1,
+.wp-block-cover-image[style*="background-image"] h2,
+.wp-block-cover-image[style*="background-image"] h3,
+.wp-block-cover-image[style*="background-image"] h4,
+.wp-block-cover-image[style*="background-image"] h5,
+.wp-block-cover-image[style*="background-image"] h6,
+.wp-block-cover-image video + .wp-block-cover__inner-container h1,
+.wp-block-cover-image video + .wp-block-cover__inner-container h2,
+.wp-block-cover-image video + .wp-block-cover__inner-container h3,
+.wp-block-cover-image video + .wp-block-cover__inner-container h4,
+.wp-block-cover-image video + .wp-block-cover__inner-container h5,
+.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
 	font-weight: 300;
 	text-shadow: 0 0 12px #000;
 }

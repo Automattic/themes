@@ -38,14 +38,13 @@
 	}
 
 	// Overwrite iframe embeds that have inline styles.
-	> iframe[style] {
-
-		margin: #{map-deep-get($config-global, "spacing", "vertical")} 0 !important;
-		max-width: 100% !important;
-
-		@include media(mobile) {
-			max-width: #{map-deep-get($config-global, "spacing", "vertical")} !important;
-		}
+	> iframe,
+	> iframe[style],
+	> fb\:post {
+		display: block !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		overflow: scroll;
 	}
 
 	// Page links
