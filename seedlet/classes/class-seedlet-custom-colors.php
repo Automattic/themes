@@ -22,7 +22,7 @@ class Seedlet_Custom_Colors {
 		 */
 		$this->seedlet_custom_color_variables = array(
 			array( '--global--color-background', '#FFFFFF', __( 'Background Color', 'seedlet' ) ),
-			array( '--global--color-foreground', '#333333', __( 'Foreground Color', 'seedlet' ) ),
+			array( '--global--color-foreground', '#292929', __( 'Foreground Color', 'seedlet' ) ),
 			array( '--global--color-primary', '#000000', __( 'Primary Color', 'seedlet' ) ),
 			array( '--global--color-secondary', '#3C8067', __( 'Secondary Color', 'seedlet' ) ),
 			array( '--global--color-tertiary', '#FAFBF6', __( 'Tertiary Color', 'seedlet' ) ),
