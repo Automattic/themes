@@ -2799,7 +2799,7 @@ table th,
 
 a.custom-logo-link,
 nav a {
-	border-bottom: none;
+	border-bottom: 1px solid transparent;
 	text-decoration: none;
 }
 
@@ -3591,8 +3591,13 @@ nav a {
 	color: var(--global--color-primary);
 }
 
-.navigation a:hover, .navigation a:focus {
+.navigation a:hover {
 	color: var(--global--color-primary-hover);
+	border-color: var(--global--color-secondary);
+}
+
+.navigation a:focus {
+	color: var(--global--color-secondary);
 }
 
 .navigation a:active {
