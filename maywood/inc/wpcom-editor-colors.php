@@ -221,3 +221,48 @@ add_editor_color_rule( 'fg1', '#c4493f', array(
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function maywood_custom_editor_colors_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$txt           = $colors_array['colors']['txt'];
+?>
+
+.wp-block-cover[style*="background-image"] h1, 
+.wp-block-cover[style*="background-image"] h2, 
+.wp-block-cover[style*="background-image"] h3, 
+.wp-block-cover[style*="background-image"] h4, 
+.wp-block-cover[style*="background-image"] h5, 
+.wp-block-cover[style*="background-image"] h6,
+.wp-block-cover video + .wp-block-cover__inner-container h1,
+.wp-block-cover video + .wp-block-cover__inner-container h2,
+.wp-block-cover video + .wp-block-cover__inner-container h3,
+.wp-block-cover video + .wp-block-cover__inner-container h4,
+.wp-block-cover video + .wp-block-cover__inner-container h5,
+.wp-block-cover video + .wp-block-cover__inner-container h6,
+.wp-block-cover-image[style*="background-image"] h1,
+.wp-block-cover-image[style*="background-image"] h2,
+.wp-block-cover-image[style*="background-image"] h3,
+.wp-block-cover-image[style*="background-image"] h4,
+.wp-block-cover-image[style*="background-image"] h5,
+.wp-block-cover-image[style*="background-image"] h6,
+.wp-block-cover-image video + .wp-block-cover__inner-container h1,
+.wp-block-cover-image video + .wp-block-cover__inner-container h2,
+.wp-block-cover-image video + .wp-block-cover__inner-container h3,
+.wp-block-cover-image video + .wp-block-cover__inner-container h4,
+.wp-block-cover-image video + .wp-block-cover__inner-container h5,
+.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
+	text-shadow: 0 0 12px <?php echo $txt; ?>;
+}
+
+.wp-block-cover[style*="background-image"] p,
+.wp-block-cover video + .wp-block-cover__inner-container p,
+.wp-block-cover-image[style*="background-image"] p,
+.wp-block-cover-image video + .wp-block-cover__inner-container p {
+	text-shadow: 0 0 6px <?php echo $txt; ?>;
+}
+
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'maywood_custom_editor_colors_extra_css' );
