@@ -27,7 +27,7 @@
 	/* Colors */
 	--global--color-primary: #000000;
 	--global--color-secondary: #3C8067;
-	--global--color-primary-hover: var( --global--color-secondary );
+	--global--color-primary-hover: var( --global--color-primary );
 	--global--color-secondary-hover: #336D58;
 	--global--color-black: black;
 	--global--color-white: white;
@@ -168,6 +168,7 @@
 	--primary-nav--font-style: normal;
 	--primary-nav--font-style-sub-menu-mobile: italic;
 	--primary-nav--font-weight: normal;
+	--primary-nav--line-height: var(--global--line-height-body);
 	--primary-nav--color-link: var(--global--color-primary);
 	--primary-nav--color-link-hover: var(--global--color-primary-hover);
 	--primary-nav--color-text: var(--global--color-foreground);
@@ -223,7 +224,7 @@
 	/* Colors */
 	--global--color-primary: #000000;
 	--global--color-secondary: #3C8067;
-	--global--color-primary-hover: var( --global--color-secondary );
+	--global--color-primary-hover: var( --global--color-primary );
 	--global--color-secondary-hover: #336D58;
 	--global--color-black: black;
 	--global--color-white: white;
@@ -364,6 +365,7 @@
 	--primary-nav--font-style: normal;
 	--primary-nav--font-style-sub-menu-mobile: italic;
 	--primary-nav--font-weight: normal;
+	--primary-nav--line-height: var(--global--line-height-body);
 	--primary-nav--color-link: var(--global--color-primary);
 	--primary-nav--color-link-hover: var(--global--color-primary-hover);
 	--primary-nav--color-text: var(--global--color-foreground);
@@ -506,7 +508,15 @@ body {
 }
 
 .wp-block a:hover, .wp-block a:focus {
+	border-bottom-color: transparent;
+}
+
+.wp-block a:hover {
 	color: var(--global--color-primary-hover);
+}
+
+.wp-block a:focus {
+	color: var(--global--color-secondary);
 }
 
 .wp-block a:active {
@@ -1663,7 +1673,6 @@ pre.wp-block-verse {
 
 .wp-block-a8c-blog-posts .more-link {
 	display: block;
-	color: inherit;
 	margin-top: var(--global--spacing-unit);
 }
 
