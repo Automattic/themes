@@ -226,7 +226,27 @@ add_editor_color_rule( 'fg1', '#1a1a1a', array(
 /**
  * Custom CSS
  */
-function mayland_editor_custom_colors_extra_css() { ?>
+function mayland_editor_custom_colors_extra_css() { 
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$bg           = $colors_array['colors']['bg'];
+	$txt          = $colors_array['colors']['txt'];
+?>
+	#editor .editor-styles-wrapper .block-editor-default-block-appender textarea.block-editor-default-block-appender__content,
+	#editor .editor-styles-wrapper .wp-block .editor-post-title__input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: <?php echo $txt; ?>;
+		opacity: 0.66; /* Firefox */
+	}
+
+	#editor .editor-styles-wrapper .wp-block .editor-post-title__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: <?php echo $txt; ?>;
+		opacity: 0.66;
+	}
+
+	#editor .editor-styles-wrapper .wp-block .editor-post-title__input::-ms-input-placeholder { /* Microsoft Edge */
+		color: <?php echo $txt; ?>;
+		opacity: 0.66;
+	}
+
 	#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-background[class], 
 	#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-background[class] {
 		background: transparent !important;

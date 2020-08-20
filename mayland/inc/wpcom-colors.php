@@ -361,7 +361,7 @@ add_color_rule( 'fg1', '#1a1a1a', array(
 /**
  * Custom CSS
  */
-function mayland_custom_colors_extra_css() { 	
+function mayland_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
 ?>
