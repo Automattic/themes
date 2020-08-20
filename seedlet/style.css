@@ -3426,20 +3426,28 @@ nav a {
 	padding-right: 0;
 }
 
-.site-footer > .footer-navigation .footer-menu a {
+.site-footer > .footer-navigation .footer-menu .menu-item {
+	padding: var(--primary-nav--padding);
+}
+
+.site-footer > .footer-navigation .footer-menu .menu-item a {
 	font-family: var(--primary-nav--font-family);
 	font-size: var(--footer--font-size);
 	font-weight: var(--primary-nav--font-weight);
-	padding: var(--primary-nav--padding);
 	color: currentColor;
 }
 
-.site-footer > .footer-navigation .footer-menu a:link, .site-footer > .footer-navigation .footer-menu a:visited, .site-footer > .footer-navigation .footer-menu a:active {
+.site-footer > .footer-navigation .footer-menu .menu-item a:link, .site-footer > .footer-navigation .footer-menu .menu-item a:visited, .site-footer > .footer-navigation .footer-menu .menu-item a:active {
 	color: currentColor;
 }
 
-.site-footer > .footer-navigation .footer-menu a:hover, .site-footer > .footer-navigation .footer-menu a:focus {
+.site-footer > .footer-navigation .footer-menu .menu-item a:hover {
 	color: var(--footer--color-link-hover);
+	border-color: var(--global--color-secondary);
+}
+
+.site-footer > .footer-navigation .footer-menu .menu-item a:focus {
+	color: var(--global--color-secondary);
 }
 
 /**
