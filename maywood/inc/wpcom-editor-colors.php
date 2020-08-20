@@ -23,6 +23,10 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
 
+	// Background-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)', 'color', '-1' ),
+
 	/**
 	 * Utility Classes
 	 */
@@ -142,7 +146,7 @@ add_editor_color_rule( 'txt', '#181818', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:link,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited', 'color' ),
-
+			
 	/**
 	 * Utility Classes
 	 */

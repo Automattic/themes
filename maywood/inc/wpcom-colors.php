@@ -22,6 +22,10 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 
 	// Background-color darkened
+	array( '.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '-1' ),
+
+	// Background-color darkened
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
@@ -117,7 +121,7 @@ add_color_rule( 'link', '#897248', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			a:not(.has-text-color)', 'color'),
+			a', 'color'),
 
 	// Background-color
 	array( '.a8c-posts-list-item__featured span,
@@ -280,7 +284,6 @@ add_color_rule( 'txt', '#181818', array(
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color[class],
 			.post-navigation .meta-nav,
 			.site-branding,
 			.site-info,
