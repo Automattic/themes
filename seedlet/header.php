@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content" tabindex="1"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
 
 		<header id="masthead" class="site-header default-max-width">
 			<div class="menu-button-container">
