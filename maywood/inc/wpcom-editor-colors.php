@@ -230,39 +230,64 @@ function maywood_custom_editor_colors_extra_css() {
 	$txt           = $colors_array['colors']['txt'];
 ?>
 
-.wp-block-cover[style*="background-image"] h1, 
-.wp-block-cover[style*="background-image"] h2, 
-.wp-block-cover[style*="background-image"] h3, 
-.wp-block-cover[style*="background-image"] h4, 
-.wp-block-cover[style*="background-image"] h5, 
-.wp-block-cover[style*="background-image"] h6,
-.wp-block-cover video + .wp-block-cover__inner-container h1,
-.wp-block-cover video + .wp-block-cover__inner-container h2,
-.wp-block-cover video + .wp-block-cover__inner-container h3,
-.wp-block-cover video + .wp-block-cover__inner-container h4,
-.wp-block-cover video + .wp-block-cover__inner-container h5,
-.wp-block-cover video + .wp-block-cover__inner-container h6,
-.wp-block-cover-image[style*="background-image"] h1,
-.wp-block-cover-image[style*="background-image"] h2,
-.wp-block-cover-image[style*="background-image"] h3,
-.wp-block-cover-image[style*="background-image"] h4,
-.wp-block-cover-image[style*="background-image"] h5,
-.wp-block-cover-image[style*="background-image"] h6,
-.wp-block-cover-image video + .wp-block-cover__inner-container h1,
-.wp-block-cover-image video + .wp-block-cover__inner-container h2,
-.wp-block-cover-image video + .wp-block-cover__inner-container h3,
-.wp-block-cover-image video + .wp-block-cover__inner-container h4,
-.wp-block-cover-image video + .wp-block-cover__inner-container h5,
-.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
-	text-shadow: 0 0 12px <?php echo $txt; ?>;
-}
+	#editor .editor-styles-wrapper .block-editor-default-block-appender textarea.block-editor-default-block-appender__content,
+	#editor .editor-styles-wrapper .wp-block .editor-post-title__input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: <?php echo $txt; ?>;
+		opacity: 0.66; /* Firefox */
+	}
 
-.wp-block-cover[style*="background-image"] p,
-.wp-block-cover video + .wp-block-cover__inner-container p,
-.wp-block-cover-image[style*="background-image"] p,
-.wp-block-cover-image video + .wp-block-cover__inner-container p {
-	text-shadow: 0 0 6px <?php echo $txt; ?>;
-}
+	#editor .editor-styles-wrapper .wp-block .editor-post-title__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: <?php echo $txt; ?>;
+		opacity: 0.66;
+	}
 
+	#editor .editor-styles-wrapper .wp-block .editor-post-title__input::-ms-input-placeholder { /* Microsoft Edge */
+		color: <?php echo $txt; ?>;
+		opacity: 0.66;
+	}
+
+	#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-background[class], 
+	#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-background[class] {
+		background: transparent !important;
+	}
+
+	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+	#editor .editor-styles-wrapper p.has-text-color a {
+		color: currentColor;
+	}
+
+	.wp-block-cover[style*="background-image"] h1, 
+	.wp-block-cover[style*="background-image"] h2, 
+	.wp-block-cover[style*="background-image"] h3, 
+	.wp-block-cover[style*="background-image"] h4, 
+	.wp-block-cover[style*="background-image"] h5, 
+	.wp-block-cover[style*="background-image"] h6,
+	.wp-block-cover video + .wp-block-cover__inner-container h1,
+	.wp-block-cover video + .wp-block-cover__inner-container h2,
+	.wp-block-cover video + .wp-block-cover__inner-container h3,
+	.wp-block-cover video + .wp-block-cover__inner-container h4,
+	.wp-block-cover video + .wp-block-cover__inner-container h5,
+	.wp-block-cover video + .wp-block-cover__inner-container h6,
+	.wp-block-cover-image[style*="background-image"] h1,
+	.wp-block-cover-image[style*="background-image"] h2,
+	.wp-block-cover-image[style*="background-image"] h3,
+	.wp-block-cover-image[style*="background-image"] h4,
+	.wp-block-cover-image[style*="background-image"] h5,
+	.wp-block-cover-image[style*="background-image"] h6,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h1,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h2,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h3,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h4,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h5,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
+		text-shadow: 0 0 12px <?php echo $txt; ?>;
+	}
+	
+	.wp-block-cover[style*="background-image"] p,
+	.wp-block-cover video + .wp-block-cover__inner-container p,
+	.wp-block-cover-image[style*="background-image"] p,
+	.wp-block-cover-image video + .wp-block-cover__inner-container p {
+		text-shadow: 0 0 6px <?php echo $txt; ?>;
+	}
 <?php }
 add_theme_support( 'custom_colors_extra_css', 'maywood_custom_editor_colors_extra_css' );
