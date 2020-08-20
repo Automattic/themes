@@ -102,32 +102,46 @@ add_editor_color_rule( 'link', '#897248', array(
 add_editor_color_rule( 'txt', '#181818', array(
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
+	array( '#editor .editor-styles-wrapper,
+			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:link,
-			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited,
-			#editor .editor-styles-wrapper .wp-block-pullquote,
-			#editor .editor-styles-wrapper', 'color' ),
+			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited', 'color' ),
 
 	/**
 	 * Utility Classes
 	 */
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-background-color[class],
 			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dark-background-color[class],
 			#editor .editor-styles-wrapper .has-background-light-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-color[class]', 'color' ),
+			#editor .editor-styles-wrapper .wp-block .has-background-light-background-color[class],
+			#editor .editor-styles-wrapper .has-foreground-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-background-color[class]', 'background-color' ),
+
 	// Text-color darkened
-	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '#editor .editor-styles-wrapper .has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+
 	// Text-color brightened
-	array( '#editor .editor-styles-wrapper .has-foreground-light-color[class]', 'color', '+2' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-light-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
 	/**
 	 * Grays
@@ -166,8 +180,10 @@ add_editor_color_rule( 'fg1', '#c4493f', array(
 	 */
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-secondary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
