@@ -16,7 +16,7 @@
 		<?php get_template_part( 'template-parts/header/entry-header' ); ?>
 	</header>
 
-	<div class="entry-content">
+	<div class="entry-content" role="main">
 		<?php
 		the_content();
 
