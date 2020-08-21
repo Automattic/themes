@@ -17,15 +17,12 @@
 		color: var(--footer--color-text);
 		margin: 0;
 		padding-left: 0;
-
-		@include media(desktop) {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-end;
-		}
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 
 		& > li {
-			display: inline;
+			display: inline-block;
 
 			&:first-of-type > a {
 				padding-left: 0;
@@ -37,7 +34,7 @@
 		}
 
 		.menu-item {
-			padding: var(--primary-nav--padding);
+			padding: var(--primary-nav--padding) var(--primary-nav--padding) var(--primary-nav--padding) 0;
 
 			a {
 				font-family: var(--primary-nav--font-family);

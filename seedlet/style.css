@@ -3356,7 +3356,7 @@ nav a {
 .site-footer {
 	overflow: hidden;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	flex-direction: column;
 }
@@ -3411,18 +3411,13 @@ nav a {
 	color: var(--footer--color-text);
 	margin: 0;
 	padding-left: 0;
-}
-
-@media only screen and (min-width: 822px) {
-	.site-footer > .footer-navigation .footer-menu {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-	}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 .site-footer > .footer-navigation .footer-menu > li {
-	display: inline;
+	display: inline-block;
 }
 
 .site-footer > .footer-navigation .footer-menu > li:first-of-type > a {
@@ -3434,7 +3429,7 @@ nav a {
 }
 
 .site-footer > .footer-navigation .footer-menu .menu-item {
-	padding: var(--primary-nav--padding);
+	padding: var(--primary-nav--padding) var(--primary-nav--padding) var(--primary-nav--padding) 0;
 }
 
 .site-footer > .footer-navigation .footer-menu .menu-item a {
