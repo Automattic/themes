@@ -82,7 +82,7 @@
 									</li>
 								</ul>
 							</li>',
-						esc_html__( 'Cart', 'seedlet' ),
+						esc_html__( 'Close', 'seedlet' ),
 						seedlet_get_icon_svg( 'close' ),
 						esc_html__( 'collapsed', 'seedlet' ),
 						esc_attr__( 'submenu', 'seedlet' ),
