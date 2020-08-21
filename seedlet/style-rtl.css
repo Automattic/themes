@@ -93,7 +93,7 @@ Included in theme screenshot.
 	/* Colors */
 	--global--color-primary: #000000;
 	--global--color-secondary: #3C8067;
-	--global--color-primary-hover: var( --global--color-primary );
+	--global--color-primary-hover: var( --global--color-secondary );
 	--global--color-secondary-hover: #336D58;
 	--global--color-black: black;
 	--global--color-white: white;
@@ -982,6 +982,7 @@ a {
 	border-bottom: 1px solid var(--global--color-secondary);
 	color: var(--wp--style--color--link, var(--global--color-primary));
 	text-decoration: none;
+	transition: border-color 0.1s ease-out;
 }
 
 a:hover, a:focus {
@@ -2765,6 +2766,7 @@ table th,
 	color: currentColor;
 	font-weight: var(--branding--title--font-weight);
 	text-shadow: -1px 0px var(--global--color-background), 1px 0px var(--global--color-background), 2px 0px var(--global--color-background), -2px 0px var(--global--color-background), 3px 0px var(--global--color-background), -3px 0px var(--global--color-background), 4px 0px var(--global--color-background), -4px 0px var(--global--color-background), 5px 0px var(--global--color-background), -5px 0px var(--global--color-background);
+	transition: background-size 0.1s ease-out;
 }
 
 .site-title a:link, .site-title a:visited, .site-title a:active {
@@ -2772,11 +2774,8 @@ table th,
 }
 
 .site-title a:hover, .site-title a:focus {
-	background-image: none;
-}
-
-.site-title a:focus {
 	color: var(--global--color-secondary);
+	background-size: 8px 0px;
 }
 
 .site-title a::selection {
