@@ -61,8 +61,10 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
 		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#897248'; // $config-global--color-primary-default;
 		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#c4493f';  // $config-global--color-secondary-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#181818';  // $config-global--color-foreground-default;
 		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#181818';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#686868';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -79,14 +81,24 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 					'color' => $secondary,
 				),
 				array(
+					'name'  => __( 'Background', 'maywood' ),
+					'slug'  => 'background',
+					'color' => $background,
+				),
+				array(
 					'name'  => __( 'Foreground', 'maywood' ),
 					'slug'  => 'foreground',
 					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Background', 'maywood' ),
-					'slug'  => 'background',
-					'color' => $background,
+					'name'  => __( 'Foreground Light', 'maywood' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'maywood' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -164,5 +176,15 @@ function maywood_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'maywood-editor-fonts', maywood_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager' );
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#686868' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
+			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'maywood_editor_styles' );
