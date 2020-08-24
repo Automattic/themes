@@ -61,40 +61,49 @@
 			)
 		);
 
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#CA2017'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#007FDB';  // $config-global--color-secondary-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-
-		// Editor color palette.
+		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'redhill' ),
 					'slug'  => 'primary',
-					'color' => $primary,
+					'color' => '#CA2017',
 				),
 				array(
 					'name'  => __( 'Secondary', 'redhill' ),
 					'slug'  => 'secondary',
-					'color' => $secondary,
+					'color' => '#007FDB',
 				),
 				array(
-					'name'  => __( 'Foreground', 'redhill' ),
+					'name'  => __( 'Dark Gray', 'redhill' ),
+					'slug'  => 'foreground-dark',
+					'color' => '#111111',
+				),
+				array(
+					'name'  => __( 'Gray', 'redhill' ),
 					'slug'  => 'foreground',
-					'color' => $foreground,
+					'color' => '#444444',
 				),
 				array(
-					'name'  => __( 'Background', 'redhill' ),
+					'name'  => __( 'Light Gray', 'redhill' ),
+					'slug'  => 'foreground-light',
+					'color' => '#666666',
+				),
+				array(
+					'name'  => __( 'Lighter Gray', 'varia' ),
+					'slug'  => 'background-dark',
+					'color' => '#DDDDDD',
+				),
+				array(
+					'name'  => __( 'Subtle Gray', 'varia' ),
+					'slug'  => 'background-light',
+					'color' => '#FAFAFA',
+				),
+				array(
+					'name'  => __( 'White', 'redhill' ),
 					'slug'  => 'background',
-					'color' => $background,
+					'color' => '#FFFFFF',
 				),
 			)
 		);
