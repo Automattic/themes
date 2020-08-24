@@ -26,7 +26,7 @@
 
 	<?php seedlet_post_thumbnail(); ?>
 
-	<div class="entry-content" role="main">
+	<div class="entry-content">
 		<?php
 		the_content(
 			sprintf(
