@@ -8,8 +8,11 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	// Background-color
 	array( '.screen-reader-text:focus,
 			body,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
+			.main-navigation > div,
 			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
 	// Text-color
@@ -62,24 +65,82 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.main-navigation > div > ul > li:hover > a,
 			.main-navigation > div > ul > li:hover li > a', 'color' ),
 
+	// Background-color lightened
+	array( '.main-navigation > div,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+1' ),
+
+	// Border-bottom-color lightened
+	array( '.comments-area .comment-list,
+			.widget_archive ul,
+			.widget_authors ul,
+			.widget_categories ul,
+			.widget_jp_blogs_i_follow ul,
+			.widget_links ul,
+			.widget_meta ul,
+			.widget_nav_menu ul,
+			.widget_pages ul,
+			.widget_recent_comments ul,
+			.widget_recent_entries ul,
+			.widget_rss ul,
+			.widget_rss_links ul,
+			.widget_top-click ul,
+			.widget_top-posts ul,
+			.widget_upcoming_events_widget ul', 'border-bottom-color', '+1' ),
+
+	// Border-bottom-color lightened
+	array( '.comments-area .children > li,
+			.comments-area .comment-list > li,
+			.widget_archive li,
+			.widget_authors li,
+			.widget_categories li,
+			.widget_jp_blogs_i_follow li,
+			.widget_links li,
+			.widget_meta li,
+			.widget_nav_menu li,
+			.widget_pages li,
+			.widget_recent_comments li,
+			.widget_recent_entries li,
+			.widget_rss li,
+			.widget_rss_links li,
+			.widget_top-click li,
+			.widget_top-posts li,
+			.widget_upcoming_events_widget li', 'border-top-color', '+1' ),
+
 	/**
 	 * Utility Classes
 	 */
 	// Text-color
 	array( '.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class],
 			.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class],
 			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class],
 			.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class],
 			.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class],
 			.has-background-color[class],
 			.has-background-dark-color[class],
 			.has-background-light-color[class]', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]', 'background-color' ),
+
+	// Text-color darkened
+	array( '.has-background-dark-color[class],
+			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+
+	// Text-color lightened
+	array( '.has-background-light-color[class],
+			.has-background-light-color.has-background-dim[class]', 'color', '+1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
 
 	/**
 	 * Grays
@@ -315,43 +376,14 @@ add_color_rule( 'txt', '#222222', array(
 	// Border-top-color
 	array( '.site', 'border-top-color' ),
 
-	/**
-	 * Utility Classes
-	 */
-	// Foreground
-	array( '.has-background-background-color[class],
-			.has-background-background-color.has-background-dim[class],
-			.has-background-dark-background-color[class],
-			.has-background-dark-background-color.has-background-dim[class],
-			.has-background-light-background-color[class],
-			.has-background-light-background-color.has-background-dim[class],
-			.has-foreground-color[class]', 'color' ),
-	// Background-color
-	array( '.has-background-dim[class],
-			.has-foreground-background-color[class],
-			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
-
-	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
-	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
-
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
-	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
-
-	/**
-	 * Gray (Same as text color)
-	 */
-	// Text-color
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.comment-meta .comment-metadata,
 			.comment-navigation a,
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color[class],
+			.has-foreground-light-color,
 			.pagination .nav-links > *,
 			.post-navigation .meta-nav,
 			.site-branding,
@@ -374,10 +406,41 @@ add_color_rule( 'txt', '#222222', array(
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
-			figcaption,
-			.site-title', 'color' ),
-			// Border-color
-			array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color' ),
+			figcaption', 'color', '+2' ),
+
+	// Text-color darkened
+	array( '.site-title', 'color', '-1' ),
+	
+	// Border-color darkened
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color', '-1' ),
+
+	/**
+	 * Utility Classes
+	 */
+	// Foreground
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class],
+			.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class],
+			.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class],
+			.has-foreground-color[class]', 'color' ),
+	// Background-color
+	array( '.has-background-dim[class],
+			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
+
+	// Text-color darkened
+	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	// Background-color darkened
+	array( '.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+
+	// Text-color brightened
+	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	// Background-color brightened
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
 
 ), __( 'Text Color' ) );
 
@@ -389,10 +452,12 @@ add_color_rule( 'fg1', '#007FDB', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.has-secondary-color[class],
+			.has-secondary-color.has-background-dim[class]', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 

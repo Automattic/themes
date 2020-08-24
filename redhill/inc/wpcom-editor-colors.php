@@ -35,6 +35,19 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			.wp-block-pullquote.is-style-solid-color', 'color' ),
 
+	// Text-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots', 'color', '-1' ),
+	// Background color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '-1' ),
+	// Border-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', '-1' ),
+	// Border-top-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color', '-1' ),
+	// Border-bottom-color darkened
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
+
 	/**
 	 * Utility Classes
 	 */
@@ -55,20 +68,6 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	array( '#editor .editor-styles-wrapper .has-background-light-color[class]', 'color', '+1'  ),
 	// Background-color lightened
 	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class]', 'background-color', '+1' ),
-
-	/**
-	 * Grays
-	 * Uses a slightly darker color
-	 */
-	// Color
-	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots', 'color', '-1' ),
-	// Border-color
-	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', '-1' ),
-	// Border-top-color
-	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color', '-1' ),
-	// Border-bottom-color
-	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
-			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
 
 ), __( 'Background Color' ) );
 
@@ -150,6 +149,30 @@ add_editor_color_rule( 'txt', '#222222', array(
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim', 'background-color' ),
 
+	// Text-color brightened
+	array( '#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta,
+			#editor .editor-styles-wrapper .wp-block-image figcaption,
+			#editor .editor-styles-wrapper .wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
+			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
+			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
+			#editor .editor-styles-wrapper .wp-block-pullquote cite,
+			#editor .editor-styles-wrapper .wp-block-pullquote footer,
+			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-quote cite,
+			#editor .editor-styles-wrapper .wp-block-quote footer,
+			#editor .editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-quote.is-large cite,
+			#editor .editor-styles-wrapper .wp-block-quote.is-large footer,
+			#editor .editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
+			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
+			#editor .editor-styles-wrapper .wp-block-video figcaption,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links,
+			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta,
+			#editor .editor-styles-wrapper figcaption', 'color', '+2' ),
+
 	/**
 	 * Utility Classes
 	 */
@@ -180,32 +203,6 @@ add_editor_color_rule( 'txt', '#222222', array(
 	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
 			#editor .editor-styles-wrapper .wp-block .has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
-	/**
-	 * Grays
-	 * Same as text color
-	 */
-	// Text-color
-	array( '#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta,
-			#editor .editor-styles-wrapper .wp-block-image figcaption,
-			#editor .editor-styles-wrapper .wp-block-latest-comments .wp-block-latest-comments__comment-date,
-			#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
-			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
-			#editor .editor-styles-wrapper .wp-block-pullquote cite,
-			#editor .editor-styles-wrapper .wp-block-pullquote footer,
-			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote cite,
-			#editor .editor-styles-wrapper .wp-block-quote footer,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large cite,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large footer,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
-			#editor .editor-styles-wrapper .wp-block-video figcaption,
-			#editor .editor-styles-wrapper figcaption', 'color' ),
-
 ), __( 'Text Color' ) );
 
 // Accent Color (Red)
@@ -217,8 +214,10 @@ add_editor_color_rule( 'fg1', '#007FDB', array(
 	 */
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-secondary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
