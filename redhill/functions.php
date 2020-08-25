@@ -81,17 +81,12 @@
 				array(
 					'name'  => __( 'Primary', 'redhill' ),
 					'slug'  => 'primary',
-					'color' => '#CA2017',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'redhill' ),
 					'slug'  => 'secondary',
-					'color' => '#007FDB',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'redhill' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Background', 'redhill' ),
@@ -101,22 +96,7 @@
 				array(
 					'name'  => __( 'Foreground', 'redhill' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'redhill' ),
-					'slug'  => 'foreground-light',
-					'color' => '#666666',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Foreground Light', 'redhill' ),

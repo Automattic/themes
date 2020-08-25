@@ -66,8 +66,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color lightened
-	array( '.main-navigation > div,
-			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+	array( '.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+1' ),
 
 	// Border-bottom-color lightened
@@ -251,10 +250,12 @@ add_color_rule( 'link', '#CA2017', array(
 			.site-info a:hover,
 			.site-title a:hover,
 			.social-navigation a,
-			.wp-block-button.is-style-outline,
+			.wp-block-button.is-style-outline.wp-block-button__link, 
 			.wp-block-button.is-style-outline .wp-block-button__link,
-			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline:active,
+			.wp-block-button.is-style-outline:not(.has-text-color), 
+			.wp-block-button.is-style-outline:not(.has-text-color):active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
