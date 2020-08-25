@@ -446,6 +446,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/block-patterns.php';
 
 /**
+ * Block Styles.
+ */
+require get_template_directory() . '/inc/block-styles.php';
+
+/**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
