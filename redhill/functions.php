@@ -8,7 +8,7 @@
  * @since 1.0.0
  */
 
-	if ( ! function_exists( 'redhill_theme_setup' ) ) :
+if ( ! function_exists( 'redhill_theme_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
