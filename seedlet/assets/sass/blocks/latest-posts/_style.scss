@@ -93,3 +93,40 @@
 		}
 	}
 }
+
+@include media(tablet) {
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid {
+
+		// Necessary so that the block boundaries are respected.
+		overflow: hidden;
+		
+		> li {
+			width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			max-width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			text-align: right;
+
+			&:nth-child(2n + 1) {
+				float: right;
+				text-align: left;
+			}
+		}
+
+
+		&.is-grid {
+			display: inherit;
+
+			> li {
+				margin-top: var(--global--spacing-vertical);
+				margin-right: 0;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
