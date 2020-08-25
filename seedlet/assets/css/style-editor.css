@@ -1753,7 +1753,6 @@ pre.wp-block-verse {
 .wp-block-a8c-blog-posts .entry-meta a,
 .wp-block-a8c-blog-posts .cat-links a {
 	color: currentColor;
-	text-decoration: underline;
 }
 
 .wp-block-a8c-blog-posts .entry-meta a:hover, .wp-block-a8c-blog-posts .entry-meta a:active,
@@ -1779,6 +1778,39 @@ pre.wp-block-verse {
 [style*="background-color"]
 .wp-block-a8c-blog-posts .cat-links a:active {
 	color: currentColor;
+}
+
+@media only screen and (min-width: 592px) {
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid {
+		overflow: hidden;
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid h2 {
+		margin-left: calc(50% + (0.5 * var(--global--spacing-horizontal)));
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid article {
+		width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+		max-width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+		margin-top: 0;
+		margin-bottom: var(--global--spacing-vertical);
+		text-align: right;
+		clear: both;
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid article .entry-meta {
+		justify-content: flex-end;
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid article:nth-of-type(2n + 1) {
+		float: right;
+		text-align: left;
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid article:nth-of-type(2n + 1) .entry-meta {
+		justify-content: flex-start;
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid.wpnbha.is-grid > div {
+		display: inherit;
+	}
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid + .wpnbha__wp-block-button__wrapper {
+		text-align: center;
+	}
 }
 
 .wp-block-search .wp-block-search__button, .wp-block-a8c-blog-posts + .button {
