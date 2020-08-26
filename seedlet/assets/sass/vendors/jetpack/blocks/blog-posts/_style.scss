@@ -32,8 +32,10 @@
 		}
 	}
 
-	.article-section-title {
-		font-size: var(--global--font-size-base);
+	h2.article-section-title {
+		font-size: var(--heading--font-size-h4);
+		letter-spacing: var(--heading--letter-spacing-h4);
+		line-height: var(--heading--line-height-h4);
 		margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 
 		& + article {
@@ -159,7 +161,7 @@
 @include media(tablet) {
 	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid {
 
-		h2 {
+		.article-section-title {
 			margin-left: calc(50% + (0.5 * var(--global--spacing-horizontal)));
 		}
 
@@ -183,6 +185,10 @@
 					justify-content: flex-start;
 				}
 			}
+		}
+
+		.more-link {
+			display: inline-block;
 		}
 
 		// Remove the styles that enforce the grid setting.
