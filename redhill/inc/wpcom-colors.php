@@ -276,7 +276,8 @@ add_color_rule( 'link', '#CA2017', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.has-primary-color.has-background-dim[class]', 'color' ),
 	// Background-color
 	array( '.has-primary-background-color[class],
 			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
@@ -384,7 +385,6 @@ add_color_rule( 'txt', '#222222', array(
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color,
 			.pagination .nav-links > *,
 			.post-navigation .meta-nav,
 			.site-branding,
@@ -432,13 +432,15 @@ add_color_rule( 'txt', '#222222', array(
 			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color[class],
+			.has-foreground-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-foreground-dark-background-color[class],
 			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-color[class],
+			.has-foreground-light-color.has-background-dim[class]', 'color', '+2' ),
 	// Background-color brightened
 	array( '.has-foreground-light-background-color[class],
 			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),

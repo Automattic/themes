@@ -61,15 +61,20 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
 			#editor .editor-styles-wrapper .has-background-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-background-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-background-color[class]', 'background-color' ),
 	// Text-color darkened
-	array( '#editor .editor-styles-wrapper .has-background-dark-color[class]', 'color', '-1'  ),
+	array( '#editor .editor-styles-wrapper .has-background-dark-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dark-color[class]', 'color', '-1'  ),
 	// Background-color darkened
-	array( '#editor .editor-styles-wrapper .has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '#editor .editor-styles-wrapper .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dark-background-color[class]', 'background-color', '-1' ),
 	// Text-color lightened
-	array( '#editor .editor-styles-wrapper .has-background-light-color[class]', 'color', '+1'  ),
+	array( '#editor .editor-styles-wrapper .has-background-light-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-light-color[class]', 'color', '+1'  ),
 	// Background-color lightened
-	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '#editor .editor-styles-wrapper .has-background-light-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-light-background-color[class]', 'background-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
