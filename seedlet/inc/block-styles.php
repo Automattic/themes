@@ -10,10 +10,18 @@ if ( function_exists( 'register_block_style' ) ) {
 	function seedlet_register_block_styles() {
 
 		/**
-		 * Register block style
+		 * Register block styles
 		 */
 		register_block_style(
 			'core/latest-posts',
+			array(
+				'name'         => 'seedlet-alternating-grid',
+				'label'        => 'Alternating Grid',
+				'style_handle' => 'seedlet-alternating-grid',
+			)
+		);
+		register_block_style(
+			'a8c/blog-posts',
 			array(
 				'name'         => 'seedlet-alternating-grid',
 				'label'        => 'Alternating Grid',
