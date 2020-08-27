@@ -107,6 +107,8 @@ add_color_rule( 'link', '#897248', array(
 			.entry-title a:active,
 			.entry-title a:focus,
 			.entry-title a:hover,
+			.main-navigation li a:hover,
+			.main-navigation li:hover > a,
 			.main-navigation a:hover,
 			.page-title a:active,
 			.page-title a:focus,
