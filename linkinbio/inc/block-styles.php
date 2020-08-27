@@ -24,11 +24,27 @@ if ( function_exists( 'register_block_style' ) ) {
 			)
 		);
 		register_block_style(
-			'core/cover',
+			'core/buttons',
 			array(
-				'name'         => 'linkinbio-blurry-background',
-				'label'        => 'Blurry Background',
-				'style_handle' => 'linkinbio-blurry-background',
+				'name'         => 'linkinbio-large-transparent-white-buttons',
+				'label'        => 'Large Transparent White Buttons',
+				'style_handle' => 'linkinbio-large-transparent-white-buttons',
+			)
+		);
+		register_block_style(
+			'core/social-links',
+			array(
+				'name'         => 'linkinbio-transparent-white-buttons',
+				'label'        => 'Transparent White Buttons',
+				'style_handle' => 'linkinbio-transparent-white-buttons',
+			)
+		);
+		register_block_style(
+			'core/social-links',
+			array(
+				'name'         => 'linkinbio-secondary-color-buttons',
+				'label'        => 'Secondary Color Buttons',
+				'style_handle' => 'linkinbio-secondary-color-buttons',
 			)
 		);
 	}

@@ -103,10 +103,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 /**
  * Output
  */
-.entry-content a {
-	font-weight: 500;
-}
-
 .site-header {
 	padding-top: calc(2 * var(--global--spacing-vertical));
 	padding-bottom: calc(1 * var(--global--spacing-vertical));
@@ -149,6 +145,16 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 /**
  * Block Styles
  */
+/* Social Links Block Styles */
+.wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.wp-block-social-links.is-style-linkinbio-secondary-color-buttons .wp-social-link {
+	background-color: var(--global--color-secondary);
+}
+
+/* Buttons Block Styles */
 .wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button {
 	display: flex;
 	align-items: center;
@@ -157,22 +163,28 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	margin: 0;
 }
 
-.wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button__link:not(.has-background) {
+.wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button__link {
 	width: 100%;
 	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 	font-size: var(--global--font-size-md);
-	background-color: rgba(255, 255, 255, 0.15);
 }
 
-.wp-block-cover.is-style-linkinbio-blurry-background::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	-webkit-backdrop-filter: blur(200px);
-	backdrop-filter: blur(200px);
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link {
+	width: 100%;
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+	font-size: var(--global--font-size-md);
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background) {
+	background-color: rgba(255, 255, 255, 0.15);
 }
 
 .site-main > article > .entry-footer {
