@@ -162,6 +162,7 @@ add_editor_color_rule( 'txt', '#181818', array(
 			#editor .editor-styles-wrapper figcaption,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-code > code,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
