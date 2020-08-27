@@ -164,6 +164,7 @@ add_editor_color_rule( 'txt', '#181818', array(
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-code > code,
 			#editor .editor-styles-wrapper .wp-block-verse,
+			#editor .editor-styles-wrapper .components-button,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
@@ -255,7 +256,8 @@ function maywood_custom_editor_colors_extra_css() {
 	}
 
 	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
-	#editor .editor-styles-wrapper p.has-text-color a {
+	#editor .editor-styles-wrapper p.has-text-color a,
+	#editor .editor-styles-wrapper .has-background-dim a {
 		color: currentColor;
 	}
 
