@@ -4,8 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage linkinbio
+ * @package linkinbio
  * @since 1.0.0
  */
 
@@ -24,7 +23,6 @@ if ( ! function_exists( 'linkinbio_setup' ) ) :
 
 		// Enqueue editor styles.
 		add_editor_style( array(
-			linkinbio_fonts_url(),
 			'variables.css',
 			'style.css',
 		) );
@@ -109,8 +107,6 @@ add_filter( 'seedlet_content_width', 'linkinbio_content_width' );
  * Enqueue scripts and styles.
  */
 function linkinbio_scripts() {
-	// enqueue Google fonts, if necessary
-    wp_enqueue_style( 'linkinbio-fonts', linkinbio_fonts_url(), array(), null );
 
 	// Child theme variables
 	wp_enqueue_style( 'linkinbio-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
@@ -124,53 +120,11 @@ function linkinbio_scripts() {
 add_action( 'wp_enqueue_scripts', 'linkinbio_scripts', 11 );
 
 /**
- * Enqueue Custom Cover Block Styles and Scripts
+ * Block Patterns.
  */
-function linkinbio_block_extends() {
-	// Block Tweaks
-	wp_enqueue_script( 'linkinbio-block-extends',
-		get_stylesheet_directory_uri() . '/assets/js/extend-blocks.js',
-		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation 
-	);
-}
-add_action( 'enqueue_block_assets', 'linkinbio_block_extends' );
+require get_template_directory() . '/inc/block-patterns.php';
 
 /**
- * Add Google webfonts
- *
- * @return string
+ * Block Styles.
  */
-function linkinbio_fonts_url() : string {
-    $fonts_url = '';
-
-	$font_families   = array();
-	$font_families[] = 'family=Lora:ital,wght@0,400;0,700;1,400;1,700';
-	$font_families[] = 'display=swap';
-
-    // Make a single request for the theme fonts.
-    $fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
-    
-    return $fonts_url;
-}
-
-/**
- * Register Custom Block Styles
- */
-if ( function_exists( 'register_block_style' ) ) {
-	function linkinbio_register_block_styles() {
-
-		/**
-		 * Register block style
-		 */
-		register_block_style(
-			'core/social-links',
-			array(
-				'name'         => 'linkinbio-large-buttons',
-				'label'        => 'Large Buttons',
-				'style_handle' => 'linkinbio-large-buttons',
-			)
-		);
-	}
-
-	add_action( 'init', 'linkinbio_register_block_styles' );
-}
+require get_template_directory() . '/inc/block-styles.php';
