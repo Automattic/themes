@@ -266,6 +266,9 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		// Add support for experimental cover block spacing.
 		add_theme_support( 'experimental-custom-spacing' );
+
+		// Add support for custom units.
+		add_theme_support( 'custom-units' );
     
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(
