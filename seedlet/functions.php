@@ -114,9 +114,6 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		$editor_stylesheet_path = './assets/css/style-editor.css';
-		if ( $is_ie ) {
-			$editor_stylesheet_path = './assets/css/ie-editor.css';
-		}
 
 		// Enqueue editor styles.
 		add_editor_style(
@@ -365,14 +362,8 @@ function seedlet_scripts() {
 	// Enqueue Google fonts
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
-	// Theme styles
-	if ( $is_ie ) {
-		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
-		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
-	} else {
-		// If not IE, use the standard stylesheet
-		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-	}
+	// If not IE, use the standard stylesheet
+	wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// RTL styles
 	wp_style_add_data( 'seedlet-style', 'rtl', 'replace' );

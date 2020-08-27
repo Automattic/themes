@@ -13,14 +13,22 @@ if ( function_exists( 'register_block_style' ) ) {
 	function linkinbio_register_block_styles() {
 
 		/**
-		 * Register block style
+		 * Register block styles
 		 */
 		register_block_style(
-			'core/social-links',
+			'core/buttons',
 			array(
 				'name'         => 'linkinbio-large-buttons',
 				'label'        => 'Large Buttons',
 				'style_handle' => 'linkinbio-large-buttons',
+			)
+		);
+		register_block_style(
+			'core/cover',
+			array(
+				'name'         => 'linkinbio-blurry-background',
+				'label'        => 'Blurry Background',
+				'style_handle' => 'linkinbio-blurry-background',
 			)
 		);
 	}

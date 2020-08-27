@@ -122,9 +122,9 @@ add_action( 'wp_enqueue_scripts', 'linkinbio_scripts', 11 );
 /**
  * Block Patterns.
  */
-require get_template_directory() . '/inc/block-patterns.php';
+require get_stylesheet_directory() . '/inc/block-patterns.php';
 
 /**
  * Block Styles.
  */
-require get_template_directory() . '/inc/block-styles.php';
+require get_stylesheet_directory() . '/inc/block-styles.php';

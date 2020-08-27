@@ -132,8 +132,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-title a {
-	font-weight: normal;
-	font-style: italic;
 	background-image: none;
 }
 
@@ -151,42 +149,30 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 /**
  * Block Styles
  */
-.wp-block-social-links.is-style-linkinbio-large-buttons {
-	flex-direction: column;
-}
-
-.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link {
+.wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 3.5em;
-	border-radius: 3px;
+	margin: 0;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button__link:not(.has-background) {
+	width: 100%;
 	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 	font-size: var(--global--font-size-md);
-	background: var(--global--color-tertiary) !important;
+	background-color: rgba(255, 255, 255, 0.15);
 }
 
-.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link:hover {
-	transform: initial;
-}
-
-.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link a {
-	padding: 1.25em;
-	display: flex;
-	align-items: center;
-	color: var(--global--color-primary);
-}
-
-.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link a::after {
-	content: attr(aria-label);
-	margin-right: 0.5em;
-}
-
-@media only screen and (min-width: 482px) {
-	.wp-block-social-links.is-style-linkinbio-large-buttons .wp-social-link {
-		font-size: var(--global--font-size-lg);
-	}
+.wp-block-cover.is-style-linkinbio-blurry-background::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	-webkit-backdrop-filter: blur(200px);
+	backdrop-filter: blur(200px);
 }
 
 .site-main > article > .entry-footer {
