@@ -8,7 +8,10 @@
 add_editor_color_rule( 'bg', '#FFFFFF', array(
 
 	// Text-color
-	array( '.wp-block-pullquote.is-style-solid-color', 'color' ),
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color,
+			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim, 
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .block-editor-block-list__block', 'color' ),
 	// Background-color
 	array( '#editor .editor-styles-wrapper,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation > div > ul > li > .sub-menu', 'background-color' ),
@@ -137,6 +140,26 @@ add_editor_color_rule( 'txt', '#181818', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper,
+			#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta,
+			#editor .editor-styles-wrapper .wp-block-image figcaption,
+			#editor .editor-styles-wrapper .wp-block-latest-comments .wp-block-latest-comments__comment-date,
+			#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
+			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
+			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
+			#editor .editor-styles-wrapper .wp-block-pullquote cite,
+			#editor .editor-styles-wrapper .wp-block-pullquote footer,
+			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-quote cite,
+			#editor .editor-styles-wrapper .wp-block-quote footer,
+			#editor .editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-quote.is-large cite,
+			#editor .editor-styles-wrapper .wp-block-quote.is-large footer,
+			#editor .editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation,
+			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
+			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
+			#editor .editor-styles-wrapper .wp-block-video figcaption,
+			#editor .editor-styles-wrapper figcaption,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
@@ -146,6 +169,10 @@ add_editor_color_rule( 'txt', '#181818', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:link,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited', 'color' ),
+			
+	// Background-color
+	array( '#editor .editor-styles-wrapper .wp-block-cover.has-background-dim, 
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim', 'background-color' ),
 			
 	/**
 	 * Utility Classes
@@ -176,32 +203,6 @@ add_editor_color_rule( 'txt', '#181818', array(
 	// Background-color brightened
 	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
 			#editor .editor-styles-wrapper .wp-block .has-foreground-light-background-color[class]', 'background-color', '+2' ),
-
-	/**
-	 * Grays
-	 * Same as text color
-	 */
-	// Text-color
-	array( '#editor .editor-styles-wrapper .a8c-posts-list__item .a8c-posts-list-item__meta,
-			#editor .editor-styles-wrapper .wp-block-image figcaption,
-			#editor .editor-styles-wrapper .wp-block-latest-comments .wp-block-latest-comments__comment-date,
-			#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
-			#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
-			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
-			#editor .editor-styles-wrapper .wp-block-pullquote cite,
-			#editor .editor-styles-wrapper .wp-block-pullquote footer,
-			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote cite,
-			#editor .editor-styles-wrapper .wp-block-quote footer,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large cite,
-			#editor .editor-styles-wrapper .wp-block-quote.is-large footer,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
-			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
-			#editor .editor-styles-wrapper .wp-block-video figcaption,
-			#editor .editor-styles-wrapper figcaption', 'color' ),
 
 ), __( 'Text Color' ) );
 
@@ -256,38 +257,38 @@ function maywood_custom_editor_colors_extra_css() {
 		color: currentColor;
 	}
 
-	.wp-block-cover[style*="background-image"] h1, 
-	.wp-block-cover[style*="background-image"] h2, 
-	.wp-block-cover[style*="background-image"] h3, 
-	.wp-block-cover[style*="background-image"] h4, 
-	.wp-block-cover[style*="background-image"] h5, 
-	.wp-block-cover[style*="background-image"] h6,
-	.wp-block-cover video + .wp-block-cover__inner-container h1,
-	.wp-block-cover video + .wp-block-cover__inner-container h2,
-	.wp-block-cover video + .wp-block-cover__inner-container h3,
-	.wp-block-cover video + .wp-block-cover__inner-container h4,
-	.wp-block-cover video + .wp-block-cover__inner-container h5,
-	.wp-block-cover video + .wp-block-cover__inner-container h6,
-	.wp-block-cover-image[style*="background-image"] h1,
-	.wp-block-cover-image[style*="background-image"] h2,
-	.wp-block-cover-image[style*="background-image"] h3,
-	.wp-block-cover-image[style*="background-image"] h4,
-	.wp-block-cover-image[style*="background-image"] h5,
-	.wp-block-cover-image[style*="background-image"] h6,
-	.wp-block-cover-image video + .wp-block-cover__inner-container h1,
-	.wp-block-cover-image video + .wp-block-cover__inner-container h2,
-	.wp-block-cover-image video + .wp-block-cover__inner-container h3,
-	.wp-block-cover-image video + .wp-block-cover__inner-container h4,
-	.wp-block-cover-image video + .wp-block-cover__inner-container h5,
-	.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
-		text-shadow: 0 0 12px <?php echo $txt; ?>;
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] h1, 
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] h2, 
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] h3, 
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] h4, 
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] h5, 
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] h6,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container h1,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container h2,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container h3,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container h4,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container h5,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container h6,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] h1,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] h2,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] h3,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] h4,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] h5,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] h6,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container h1,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container h2,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container h3,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container h4,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container h5,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container h6 {
+		text-shadow: none;
 	}
 	
-	.wp-block-cover[style*="background-image"] p,
-	.wp-block-cover video + .wp-block-cover__inner-container p,
-	.wp-block-cover-image[style*="background-image"] p,
-	.wp-block-cover-image video + .wp-block-cover__inner-container p {
-		text-shadow: 0 0 6px <?php echo $txt; ?>;
+	#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] p,
+	#editor .editor-styles-wrapper .wp-block-cover video + .wp-block-cover__inner-container p,
+	#editor .editor-styles-wrapper .wp-block-cover-image[style*="background-image"] p,
+	#editor .editor-styles-wrapper .wp-block-cover-image video + .wp-block-cover__inner-container p {
+		text-shadow: none;
 	}
 <?php }
 add_theme_support( 'custom_colors_extra_css', 'maywood_custom_editor_colors_extra_css' );

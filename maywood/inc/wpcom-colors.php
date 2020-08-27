@@ -14,6 +14,8 @@ add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
+			.wp-block-cover.has-background-dim, 
+			.wp-block-cover-image.has-background-dim,
 			.sticky-post,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'color' ),
@@ -367,14 +369,14 @@ function maywood_custom_colors_extra_css() {
 	.wp-block-cover-image video + .wp-block-cover__inner-container h4, 
 	.wp-block-cover-image video + .wp-block-cover__inner-container h5, 
 	.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
-		text-shadow: 0 0 10px <?php echo $txt; ?>;
+		text-shadow: none;
 	}
 	
 	.wp-block-cover[style*="background-image"] p, 
 	.wp-block-cover video + .wp-block-cover__inner-container p, 
 	.wp-block-cover-image[style*="background-image"] p, 
 	.wp-block-cover-image video + .wp-block-cover__inner-container p {
-		text-shadow: 0 0 6px <?php echo $txt; ?>;
+		text-shadow: none;
 	}
 <?php }
 add_theme_support( 'custom_colors_extra_css', 'maywood_custom_colors_extra_css' );
