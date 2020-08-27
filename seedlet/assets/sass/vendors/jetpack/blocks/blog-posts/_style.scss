@@ -32,8 +32,10 @@
 		}
 	}
 
-	.article-section-title {
-		font-size: var(--global--font-size-base);
+	h2.article-section-title {
+		font-size: var(--heading--font-size-h4);
+		letter-spacing: var(--heading--letter-spacing-h4);
+		line-height: var(--heading--line-height-h4);
 		margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 
 		& + article {
@@ -137,7 +139,6 @@
 
 			a {
 				color: currentColor;
-				text-decoration: underline;
 
 				&:hover,
 				&:active {
@@ -151,6 +152,54 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+// Block Style
+
+@include media(tablet) {
+	.wp-block-newspack-blocks-homepage-articles.is-style-seedlet-alternating-grid,
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid {
+
+		.article-section-title {
+			margin-left: calc(50% + (0.5 * var(--global--spacing-horizontal)));
+		}
+
+		article {
+			width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			max-width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			margin-top: 0;
+			margin-bottom: var(--global--spacing-vertical);
+			text-align: right;
+			clear: both;
+
+			.entry-meta {
+				justify-content: flex-end;
+			}
+
+			&:nth-of-type(2n + 1) {
+				float: right;
+				text-align: left;
+
+				.entry-meta {
+					justify-content: flex-start;
+				}
+			}
+		}
+
+		.more-link {
+			display: inline-block;
+		}
+
+		// Remove the styles that enforce the grid setting.
+		&.wpnbha.is-grid > div {
+			display: inherit;
+		}
+
+		button {
+			clear: both;
+			margin: var(--global--spacing-vertical) auto;
 		}
 	}
 }

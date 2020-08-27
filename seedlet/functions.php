@@ -416,7 +416,7 @@ require get_template_directory() . '/classes/class-seedlet-svg-icons.php';
 /**
  * Custom colors class.
  */
-if ( empty( get_theme_mod( 'colors_manager' ) ) ) { // If the theme is on wpcom, we bypass the theme's built in custom colors, because wpcom uses a different custom color implementation.
+if ( ! class_exists( 'Colors_Manager' ) ) { // Check for presence of wpcom color manager to avoid duplicate color customization functionality.
 	require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
 }
 
@@ -444,6 +444,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
+
+/**
+ * Block Styles.
+ */
+require get_template_directory() . '/inc/block-styles.php';
 
 /**
  * Load WooCommerce compatibility file.

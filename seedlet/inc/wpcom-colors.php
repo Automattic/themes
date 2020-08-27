@@ -286,7 +286,8 @@ add_color_rule( 'fg1', '#3C8067', array(
 			.primary-navigation .primary-menu > .menu-item:hover > a,
 			.primary-navigation > .button:hover,
 			a:focus,
-			a:hover', 'color' ),
+			a:hover,
+			.site-footer > .footer-navigation .footer-menu .menu-item a:hover', 'color' ),
 
 	// Background-color
 	array( '.a8c-posts-list__view-all,
@@ -300,6 +301,13 @@ add_color_rule( 'fg1', '#3C8067', array(
 			button[data-load-more-btn],
 			input[type="submit"]', 'background-color' ),
 
+	// Border-color
+	array( '.primary-navigation .menu-item > a:hover, 
+			.woo-navigation .menu-item > a:hover,
+			.entry-meta a:hover,
+			.entry-footer a:hover,
+			.site-footer > .footer-navigation .footer-menu .menu-item a:hover', 'border-color' ),
+
 	// Border-bottom-color
 	array( 'a', 'border-bottom-color' ),
 
@@ -311,7 +319,7 @@ add_color_rule( 'fg1', '#3C8067', array(
 	array( '.wp-block-quote.has-text-align-right', 'border-right-color' ),
 
 	// Outline-color
-	array( '*:focus', 'outline-color' ),
+	array( '.site :focus', 'outline-color' ),
 	
 	// Background-image
 	array( '.site-title a', 'Background-image' ),

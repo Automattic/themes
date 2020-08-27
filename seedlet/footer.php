@@ -14,12 +14,12 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer default-max-width">
+	<footer id="colophon" class="site-footer default-max-width" role="contentinfo">
 
 		<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 
 		<?php if ( has_nav_menu( 'footer' ) ) : ?>
-		<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'seedlet' ); ?>">
+		<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'seedlet' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
