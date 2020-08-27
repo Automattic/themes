@@ -12,7 +12,7 @@ get_header();
 ?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main default-max-width">
+		<main id="main" class="site-main default-max-width" role="main">
 
 			<div class="error-404 not-found">
 				<header class="page-header">
