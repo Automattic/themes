@@ -42,9 +42,9 @@ if ( function_exists( 'register_block_style' ) ) {
 		register_block_style(
 			'core/social-links',
 			array(
-				'name'         => 'linkinbio-secondary-color-buttons',
-				'label'        => 'Secondary Color Buttons',
-				'style_handle' => 'linkinbio-secondary-color-buttons',
+				'name'         => 'linkinbio-foreground-color-buttons',
+				'label'        => 'Foreground Color Buttons',
+				'style_handle' => 'linkinbio-foreground-color-buttons',
 			)
 		);
 	}

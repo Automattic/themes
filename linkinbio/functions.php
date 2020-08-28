@@ -77,17 +77,17 @@ if ( ! function_exists( 'linkinbio_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'linkinbio' ),
 					'slug'  => 'primary',
-					'color' => '#DB0042',
+					'color' => '#FF0000',
 				),
 				array(
 					'name'  => __( 'Foreground', 'linkinbio' ),
 					'slug'  => 'foreground',
-					'color' => '#000000',
+					'color' => '#FFFFFF',
 				),
 				array(
 					'name'  => __( 'Background', 'linkinbio' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => '#141414',
 				),
 			)
         );

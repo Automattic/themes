@@ -6,10 +6,25 @@
 
 .wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link {
 	background-color: rgba(255, 255, 255, 0.15);
+	transition: background-color 0.2s ease-out,
+				color 0.2s ease-out;
+
+	&:hover,
+	&:focus {
+		color: var(--global--color-background);
+		background-color: #FFFFFF;
+	}
 }
 
-.wp-block-social-links.is-style-linkinbio-secondary-color-buttons .wp-social-link {
-	background-color: var(--global--color-secondary);
+.wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link {
+	color: var(--global--color-background);
+	background-color: var(--global--color-foreground);
+
+	&:hover,
+	&:focus {
+		color: var(--global--color-background);
+		background-color: var(--global--color-primary);
+	}
 }
 
 /* Buttons Block Styles */
@@ -45,9 +60,32 @@
 		width: 100%;
 		margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 		font-size: var(--global--font-size-md);
+		transition: background-color 0.2s ease-out,
+					color 0.2s ease-out;
+
+		&:not(.has-text-color) {
+			color: #FFFFFF;
+
+			&:hover,
+			&:focus {
+				color: var(--global--color-background);
+			}
+		}
 
 		&:not(.has-background) {
 			background-color: rgba(255, 255, 255, 0.15);
+
+			&:hover,
+			&:focus {
+				background-color: #FFFFFF;
+			}
 		}
+	}
+
+	// Clear this background if the user choose an outlined button style.
+	.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background),
+	.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover,
+	.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
+		background-color: inherit;
 	}
 }

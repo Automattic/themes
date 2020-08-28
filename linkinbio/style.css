@@ -124,11 +124,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-logo img {
 	border-radius: 50%;
-	border: 3px solid var(--global--color-primary);
-}
-
-.site-title a {
-	background-image: none;
+	border: 4px solid var(--global--color-primary);
 }
 
 /* Temporarily hide the page title on the homepage.
@@ -139,7 +135,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-footer {
-	justify-content: center;
+	text-align: center;
 }
 
 /**
@@ -148,10 +144,22 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 /* Social Links Block Styles */
 .wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link {
 	background-color: rgba(255, 255, 255, 0.15);
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
 
-.wp-block-social-links.is-style-linkinbio-secondary-color-buttons .wp-social-link {
-	background-color: var(--global--color-secondary);
+.wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link:hover, .wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link:focus {
+	color: var(--global--color-background);
+	background-color: #FFFFFF;
+}
+
+.wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link {
+	color: var(--global--color-background);
+	background-color: var(--global--color-foreground);
+}
+
+.wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link:hover, .wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link:focus {
+	color: var(--global--color-background);
+	background-color: var(--global--color-primary);
 }
 
 /* Buttons Block Styles */
@@ -181,10 +189,29 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	width: 100%;
 	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
 	font-size: var(--global--font-size-md);
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-text-color) {
+	color: #FFFFFF;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-text-color):hover, .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-text-color):focus {
+	color: var(--global--color-background);
 }
 
 .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background) {
 	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background):hover, .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background):focus {
+	background-color: #FFFFFF;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background),
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover,
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
+	background-color: inherit;
 }
 
 .site-main > article > .entry-footer {
