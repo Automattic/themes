@@ -107,6 +107,8 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		$editor_stylesheet_path = './assets/css/style-editor.css';
 
+		// Note, the is_IE global variable is defined by WordPress and is used
+		// to detect if the current browser is internet explorer.
 		global $is_IE;
 		if ( $is_IE ) {
 			$editor_stylesheet_path = './assets/css/ie-editor.css';
@@ -363,6 +365,9 @@ function seedlet_scripts() {
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
 	// Theme styles
+
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
 	global $is_IE;
 	if ( $is_IE ) {
 		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
