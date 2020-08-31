@@ -1,3 +1,24 @@
+body::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	backdrop-filter: blur(100px);
+	-webkit-backdrop-filter: blur(100px);
+	position: fixed;
+	z-index: -1;
+}
+
+body.unblurred-background-image::after {
+	display: none;
+}
+
+#page {
+	z-index: 1;
+}
+
 .site-main > article > .entry-footer {
 	border-top: none;
 }

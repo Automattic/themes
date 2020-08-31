@@ -11,6 +11,26 @@ License URI: LICENSE
 Template: seedlet
 Text Domain: linkinbio 
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+
+Link in Bio WordPress Theme, (C) 2020 Automattic, Inc.
+Seedlet is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Link in Bio bundles the following third-party resources:
+
+Image byAustin Neill on StockSnap.io
+License: CC0
+Source: https://stocksnap.io/photo/concert-stage-GC3VTMX89N
+Included as the default background image.
 */
 /**
  * Repsonsive Styles
@@ -122,9 +142,25 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	}
 }
 
+.site-title a {
+	background-image: none;
+	text-shadow: none;
+	border-bottom: 1px solid transparent;
+	transition: 0.15s color ease-in-out, 0.15s border-bottom-color ease-in-out;
+}
+
+.site-title a:hover {
+	border-bottom-color: var(--global--color-primary-hover);
+}
+
 .site-logo img {
 	border-radius: 50%;
 	border: 4px solid var(--global--color-primary);
+	transition: 0.15s border-color ease-in-out;
+}
+
+.site-logo img:hover {
+	border-color: var(--global--color-primary-hover);
 }
 
 /* Temporarily hide the page title on the homepage.
@@ -136,6 +172,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-footer {
 	text-align: center;
+	margin-top: calc(2 * var(--global--spacing-vertical));
 }
 
 /**
@@ -222,6 +259,27 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover,
 .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
 	background-color: inherit;
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	backdrop-filter: blur(100px);
+	-webkit-backdrop-filter: blur(100px);
+	position: fixed;
+	z-index: -1;
+}
+
+body.unblurred-background-image::after {
+	display: none;
+}
+
+#page {
+	z-index: 1;
 }
 
 .site-main > article > .entry-footer {

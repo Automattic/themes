@@ -91,9 +91,75 @@ if ( ! function_exists( 'linkinbio_setup' ) ) :
 				),
 			)
         );
+
+        // Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'radcliffe_2_custom_background_args', array(
+			'default-color' => '141414',
+			'default-image' => get_stylesheet_directory_uri() . '/assets/images/background-image.jpg',
+			'default-preset'=> 'Fill Screen',
+			'default-position' => 'center',
+			'default-repeat' => 'no-repeat',
+			'default-attachment' => 'fixed',
+		) ) );
 	}
 endif;
 add_action( 'after_setup_theme', 'linkinbio_setup', 12 );
+
+/**
+ * Add settings for hiding page title on the homepage 
+ * and a customizer message about contrast.
+ */
+function linkinbio_customize_update( $wp_customize ) {
+	$wp_customize->add_setting( 'linkinbio_blur_background_image', array(
+		'default'              => true,
+		'type'                 => 'theme_mod',
+		'transport'            => 'postMessage',
+		'sanitize_callback'    => 'linkinbio_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'linkinbio_blur_background_image', array(
+		'label'		  => esc_html__( 'Blur the background image', 'linkinbio' ),
+		'description' => esc_html__( 'Apply a blur filter to the background image.', 'linkinbio' ),
+		'section'	  => 'background_image',
+		'priority'	  => 10,
+		'type'		  => 'checkbox',
+		'settings'	  => 'linkinbio_blur_background_image',
+	) );
+}
+add_action( 'customize_register', 'linkinbio_customize_update' );
+
+/**
+* Sanitize the checkbox.
+*
+* @param boolean $input.
+*
+* @return boolean true if is 1 or '1', false if anything else
+*/
+function linkinbio_sanitize_checkbox( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function linkinbio_body_classes( $classes ) {
+
+	$blur = get_theme_mod( 'linkinbio_blur_background_image', true );
+
+	if ( false === $blur ) {
+		$classes[] = 'unblurred-background-image';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'linkinbio_body_classes' );
 
 /**
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
