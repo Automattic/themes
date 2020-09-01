@@ -53,49 +53,53 @@ if ( ! function_exists( 'leven_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF302C'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#1285CE';  // $config-global--color-secondary-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#F7F7F6';   // $config-global--color-background-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
+
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'leven' ),
 					'slug'  => 'primary',
-					'color' => '#FF302C',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'leven' ),
 					'slug'  => 'secondary',
-					'color' => '#1285CE',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'leven' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'leven' ),
+					'name'  => __( 'Foreground', 'leven' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'leven' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'White', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#FFFFFF',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'leven' ),
+					'name'  => __( 'Background', 'leven' ),
 					'slug'  => 'background',
-					'color' => '#F7F7F6',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'leven' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'leven' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -178,5 +182,15 @@ function leven_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'leven-editor-fonts', leven_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager' );
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#767676' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
+			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'leven_editor_styles' );

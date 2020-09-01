@@ -162,8 +162,10 @@ function rockfield_scripts() {
 	// enqueue child RTL styles
 	wp_style_add_data( 'rockfield-style', 'rtl', 'replace' );
 
-	// enqueue header spacing JS
-	wp_enqueue_script('rockfield-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	if ( ! rockfield_is_amp() ) {
+		// enqueue header spacing JS.
+		wp_enqueue_script( 'rockfield-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'rockfield_scripts', 99 );
@@ -177,3 +179,10 @@ function rockfield_editor_styles() {
 	wp_enqueue_style( 'rockfield-editor-fonts', rockfield_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'rockfield_editor_styles' );
+
+/**
+ * Checks whether the endpoint is AMP.
+ */
+function rockfield_is_amp() {
+	return ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() );
+}
