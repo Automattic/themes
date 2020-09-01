@@ -94,11 +94,11 @@ add_editor_color_rule( 'link', '#222222', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+	array( '#editor .editor-styles-wrapper .wp-block.is-style-outline .wp-block-button__link:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper a', 'color' ),
@@ -114,9 +114,11 @@ add_editor_color_rule( 'link', '#222222', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-primary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-color[class]', 'color' ),
 
 ), __( 'Link Color' ) );
 
@@ -166,10 +168,12 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .has-foreground-color[class]', 'color' ),
 	// Background-color
 	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
+
 	// Text-color darkened
 	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
 	array( '#editor .editor-styles-wrapper .has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+
 	// Text-color brightened
 	array( '#editor .editor-styles-wrapper .has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
