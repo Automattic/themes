@@ -3,7 +3,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', 'white', array(
+add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '.screen-reader-text:focus,
@@ -40,12 +40,8 @@ add_color_rule( 'bg', 'white', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover.has-background-dim,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -76,21 +72,33 @@ add_color_rule( 'bg', 'white', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
-			.has-foreground-background-color[class],
+	array( '.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class],
 			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class]
-			.has-background-color[class],
-			.has-background-dark-color[class],
-			.has-background-light-color[class]', 'color', 'bg', 12 ),
-	
+			.has-foreground-dark-background-color.has-background-dim[class],
+			.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class],
+			.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class],
+			.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'color', 'bg', 12 ),	
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]', 'background-color' ),
+
+	// Text-color darkened
+	array( '.has-background-dark-color[class],
+			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+
+	// Text-color lightened
+	array( '.has-background-light-color[class],
+			.has-background-light-color.has-background-dim[class]', 'color', '+1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
 
 	/**
 	 * Grays
@@ -422,6 +430,26 @@ add_color_rule( 'fg1', '#116821', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function rockfield_custom_colors_extra_css() { ?>
+
+	.wp-block-button.is-style-outline .wp-block-button__link.has-text-color {
+		color: currentColor;
+	}
+
+	@media screen and (max-width: 560px) {
+		/* Prevent background color hovers on mobile */
+		.main-navigation > div > ul > li > .sub-menu {
+			background: transparent;
+		}
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'rockfield_custom_colors_extra_css' );
+
+
 
 /**
  * Featured Varia Palettes
