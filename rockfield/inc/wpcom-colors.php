@@ -210,9 +210,9 @@ add_color_rule( 'link', '#222222', array(
 			#site-navigation > div > ul > li > .sub-menu', 'background-color' ),
 
 	// Text-color
-	array( '.wp-block-button.is-style-outline .wp-block-button__link,
+	array( '.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline.wp-block-button__link:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			a,
@@ -238,10 +238,12 @@ add_color_rule( 'link', '#222222', array(
 	/**
 	 * Utility Classes
 	 */
-	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.has-primary-color.has-background-dim[class]', 'color' ),
+	// Background-color
+	array( '.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Link Color' ) );
 
