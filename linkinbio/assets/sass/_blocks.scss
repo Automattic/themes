@@ -16,6 +16,26 @@
 	}
 }
 
+/* Columns */
+
+.wp-block-columns {
+
+	// No bottom margin when columns collapse on mobile.
+	@include media(tablet-only) {
+		.wp-block-column:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
+
+	// Narrower gutters for columns.
+	@include media(tablet) {
+		.wp-block-column:not(:first-child) {
+			margin-left: calc(0.5 * var(--global--spacing-vertical));
+		}
+	}
+
+}
+
 /* Social Links Block Styles */
 
 .wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link {

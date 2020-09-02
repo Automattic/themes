@@ -19,7 +19,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			'core/buttons',
 			array(
 				'name'         => 'linkinbio-large-buttons',
-				'label'        => 'Large Buttons',
+				'label'        => __( 'Large Buttons', 'linkinbio' ),
 				'style_handle' => 'linkinbio-large-buttons',
 			)
 		);
@@ -27,7 +27,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			'core/buttons',
 			array(
 				'name'         => 'linkinbio-large-transparent-white-buttons',
-				'label'        => 'Large Transparent White Buttons',
+				'label'        => __( 'Large Transparent White Buttons', 'linkinbio' ),
 				'style_handle' => 'linkinbio-large-transparent-white-buttons',
 			)
 		);
@@ -35,7 +35,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			'core/social-links',
 			array(
 				'name'         => 'linkinbio-transparent-white-buttons',
-				'label'        => 'Transparent White Buttons',
+				'label'        => __( 'Transparent White Buttons', 'linkinbio' ),
 				'style_handle' => 'linkinbio-transparent-white-buttons',
 			)
 		);
@@ -43,7 +43,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			'core/social-links',
 			array(
 				'name'         => 'linkinbio-foreground-color-buttons',
-				'label'        => 'Foreground Color Buttons',
+				'label'        => __( 'Foreground Color Buttons', 'linkinbio' ),
 				'style_handle' => 'linkinbio-foreground-color-buttons',
 			)
 		);

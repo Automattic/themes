@@ -24,7 +24,7 @@ if ( ! function_exists( 'linkinbio_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( array(
 			'variables.css',
-			'style.css',
+			'style-editor.css'
 		) );
 
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.

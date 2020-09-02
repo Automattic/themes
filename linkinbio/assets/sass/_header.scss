@@ -1,6 +1,6 @@
 .site-header {
 	padding-top: calc(2 * var(--global--spacing-vertical));
-	padding-bottom: calc(1 * var(--global--spacing-vertical));
+	padding-bottom: var(--global--spacing-vertical);
 
 	.has-main-navigation & {
 		padding-top: calc(2 * var(--global--spacing-vertical));
@@ -8,10 +8,10 @@
 
 	@include media(mobile) {
 		padding-top: calc(2 * var(--global--spacing-vertical));
-		padding-bottom: calc(1 * var(--global--spacing-vertical));
+		padding-bottom: var(--global--spacing-vertical);
 
 		.has-main-navigation & {
-			padding-top: calc(1 * var(--global--spacing-vertical));
+			padding-top: var(--global--spacing-vertical);
 		}
 	}
 }
@@ -25,16 +25,6 @@
 
 	&:hover {
 		border-bottom-color: var(--global--color-primary-hover);
-	}
-}
-
-.site-logo img {
-	border-radius: 50%;
-	border: 4px solid var(--global--color-primary);
-	transition: 0.15s border-color ease-in-out;
-
-	&:hover {
-		border-color: var(--global--color-primary-hover);
 	}
 }
 

@@ -125,7 +125,7 @@ Included as the default background image.
  */
 .site-header {
 	padding-top: calc(2 * var(--global--spacing-vertical));
-	padding-bottom: calc(1 * var(--global--spacing-vertical));
+	padding-bottom: var(--global--spacing-vertical);
 }
 
 .has-main-navigation .site-header {
@@ -135,10 +135,10 @@ Included as the default background image.
 @media only screen and (min-width: 482px) {
 	.site-header {
 		padding-top: calc(2 * var(--global--spacing-vertical));
-		padding-bottom: calc(1 * var(--global--spacing-vertical));
+		padding-bottom: var(--global--spacing-vertical);
 	}
 	.has-main-navigation .site-header {
-		padding-top: calc(1 * var(--global--spacing-vertical));
+		padding-top: var(--global--spacing-vertical);
 	}
 }
 
@@ -151,16 +151,6 @@ Included as the default background image.
 
 .site-title a:hover {
 	border-bottom-color: var(--global--color-primary-hover);
-}
-
-.site-logo img {
-	border-radius: 50%;
-	border: 4px solid var(--global--color-primary);
-	transition: 0.15s border-color ease-in-out;
-}
-
-.site-logo img:hover {
-	border-color: var(--global--color-primary-hover);
 }
 
 /* Temporarily hide the page title on the homepage.
@@ -186,6 +176,19 @@ Included as the default background image.
 .wp-block-media-text.is-image-fill .wp-block-media-text__content {
 	padding-top: var(--global--spacing-vertical);
 	padding-bottom: var(--global--spacing-vertical);
+}
+
+/* Columns */
+@media only screen and (max-width: 591px) {
+	.wp-block-columns .wp-block-column:not(:last-child) {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (min-width: 592px) {
+	.wp-block-columns .wp-block-column:not(:first-child) {
+		margin-right: calc(0.5 * var(--global--spacing-vertical));
+	}
 }
 
 /* Social Links Block Styles */
@@ -261,7 +264,7 @@ Included as the default background image.
 	background-color: inherit;
 }
 
-body::after {
+body.home::after {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -274,7 +277,7 @@ body::after {
 	z-index: -1;
 }
 
-body.unblurred-background-image::after {
+.home.unblurred-background-image::after {
 	display: none;
 }
 
