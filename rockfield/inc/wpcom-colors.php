@@ -422,10 +422,12 @@ add_color_rule( 'fg1', '#116821', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.has-secondary-color[class],
+			.has-secondary-color.has-background-dim[class]', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 

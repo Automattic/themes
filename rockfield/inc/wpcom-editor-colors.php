@@ -5,7 +5,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_editor_color_rule( 'bg', 'white', array(
+add_editor_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper', 'background-color' ),
@@ -231,8 +231,11 @@ add_editor_color_rule( 'fg1', '#116821', array(
 	 */
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-secondary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-color[class]', 'color' ),
+
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
