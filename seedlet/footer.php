@@ -14,7 +14,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer default-max-width" role="contentinfo">
+	<footer id="colophon" class="site-footer default-max-width" role="contentinfo" aria-label="<?php esc_attr_e( 'Footer', 'seedlet' ); ?>">
 
 		<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 

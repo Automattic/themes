@@ -31,12 +31,6 @@ function seedlet_wpcom_setup() {
 		'only-featured-palettes' => true,
 	) );
 
-	/**
-	 * De-register original editor color palette in favor of the wpcom implementation
-	 */
-	remove_theme_support( 'editor-color-palette' );
-	remove_theme_support( 'editor-gradient-presets' );
-
 	$wpcom_colors_array = get_theme_mod( 'colors_manager' );
 	if ( ! empty( $wpcom_colors_array ) ) {
 		$primary    = $wpcom_colors_array['colors']['link'];
@@ -44,6 +38,12 @@ function seedlet_wpcom_setup() {
 		$foreground = $wpcom_colors_array['colors']['txt'];
 		$tertiary   = $wpcom_colors_array['colors']['fg2'];
 		$background = $wpcom_colors_array['colors']['bg'];
+
+		/**
+		 * De-register original editor color palette in favor of the wpcom implementation
+		 */
+		remove_theme_support( 'editor-color-palette' );
+		remove_theme_support( 'editor-gradient-presets' );
 
 		add_theme_support(
 			'editor-color-palette',

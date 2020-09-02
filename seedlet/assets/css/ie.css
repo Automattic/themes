@@ -5,13 +5,12 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Seedlet is a free WordPress theme. A two-column layout and classically elegant typography creates a refined site that gives your works and images space to breathe - and shine. Seedlet was built to be the perfect partner to the block editor, and supports all the latest blocks. Writing, audio, illustrations, photography, video - use Seedlet to engage and direct visitors' eyes, without your theme getting in the way. And the responsive design shifts naturally between desktop and mobile devices. Seedlet is a great option for professionals and creatives looking for a sophisticated vibe. Whether you're looking to create a blog or a robust site promoting your business, do with simplicity, style, and Seedlet.
 Requires at least: 4.9.6
-Tested up to: 5.4.1
-Requires PHP: 7.3
-Version: 1.0.3-wpcom
+Tested up to: 5.5
+Version: 1.0.6-wpcom
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: seedlet
-Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, auto-loading-homepage, translation-ready
 
 Seedlet WordPress Theme, (C) 2020 Automattic, Inc.
 Seedlet is distributed under the terms of the GNU GPL.
@@ -2206,12 +2205,12 @@ object {
 	margin-bottom: 30px;
 }
 
-.wp-block-cover .wp-block-cover__inner-container a,
-.wp-block-cover .wp-block-cover-image-text a,
-.wp-block-cover .wp-block-cover-text a,
-.wp-block-cover-image .wp-block-cover__inner-container a,
-.wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a {
+.wp-block-cover .wp-block-cover__inner-container a:not(.has-text-color),
+.wp-block-cover .wp-block-cover-image-text a:not(.has-text-color),
+.wp-block-cover .wp-block-cover-text a:not(.has-text-color),
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.has-text-color),
+.wp-block-cover-image .wp-block-cover-image-text a:not(.has-text-color),
+.wp-block-cover-image .wp-block-cover-text a:not(.has-text-color) {
 	color: currentColor;
 }
 
@@ -3804,58 +3803,88 @@ table th {
 	color: black;
 }
 
-.has-background:not(.has-background-background-color) a,
+.has-background:not(.has-background-background-color) a:not(.has-text-color),
 .has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
 	color: currentColor;
 }
 
 .has-primary-background-color[class] {
 	background-color: #000000;
+}
+
+.has-primary-background-color[class]:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
 .has-secondary-background-color[class] {
 	background-color: #3C8067;
+}
+
+.has-secondary-background-color[class]:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
 .has-foreground-background-color[class] {
 	background-color: #333333;
+}
+
+.has-foreground-background-color[class]:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
 .has-foreground-light-background-color[class] {
 	background-color: #444444;
+}
+
+.has-foreground-light-background-color[class]:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
 .has-foreground-dark-background-color[class] {
 	background-color: #000000;
+}
+
+.has-foreground-dark-background-color[class]:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
 .has-tertiary-background-color[class] {
 	background-color: #FAFBF6;
+}
+
+.has-tertiary-background-color[class]:not(.has-text-color) {
 	color: #333333;
 }
 
 .has-background-dark-background-color[class] {
 	background-color: #DDDDDD;
+}
+
+.has-background-dark-background-color[class]:not(.has-text-color) {
 	color: #333333;
 }
 
 .has-background-background-color[class] {
 	background-color: #FFFFFF;
+}
+
+.has-background-background-color[class]:not(.has-text-color) {
 	color: #333333;
 }
 
 .has-white-background-color[class] {
 	background-color: white;
+}
+
+.has-white-background-color[class]:not(.has-text-color) {
 	color: #3C8067;
 }
 
 .has-black-background-color[class] {
 	background-color: black;
+}
+
+.has-black-background-color[class]:not(.has-text-color) {
 	color: #000000;
 }
 
