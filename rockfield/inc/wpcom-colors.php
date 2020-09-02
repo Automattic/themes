@@ -391,7 +391,7 @@ add_color_rule( 'txt', '#444444', array(
 			figcaption', 'color', '+1' ),
 
 	// Background-color lightened
-	array( '.main-navigation #toggle:focus + #toggle-menu', 'background-color', '+1' )
+	array( '.main-navigation #toggle:focus + #toggle-menu', 'background-color', '+1' ),
 
 	// Text-color darkened
 	array( '.footer-navigation .footer-menu a:hover,
