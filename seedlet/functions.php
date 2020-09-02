@@ -376,7 +376,7 @@ function seedlet_scripts() {
 		// If not IE, use the standard stylesheet
 		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
-  
+
 	// RTL styles
 	wp_style_add_data( 'seedlet-style', 'rtl', 'replace' );
 
