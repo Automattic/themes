@@ -276,42 +276,12 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			.wp-block-pullquote,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
 			a:hover,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			input[type="color"],
-			input[type="color"]:focus,
-			input[type="date"],
-			input[type="date"]:focus,
-			input[type="datetime"],
-			input[type="datetime"]:focus,
-			input[type="datetime-local"],
-			input[type="datetime-local"]:focus,
-			input[type="email"],
-			input[type="email"]:focus,
-			input[type="month"],
-			input[type="month"]:focus,
-			input[type="number"],
-			input[type="number"]:focus,
-			input[type="password"],
-			input[type="password"]:focus,
-			input[type="range"],
-			input[type="range"]:focus,
-			input[type="search"],
-			input[type="search"]:focus,
-			input[type="tel"],
-			input[type="tel"]:focus,
-			input[type="text"],
-			input[type="text"]:focus,
-			input[type="time"],
-			input[type="time"]:focus,
-			input[type="url"],
-			input[type="url"]:focus,
-			input[type="week"],
-			input[type="week"]:focus,
-			textarea,
-			textarea:focus', 'color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'color' ),
 
 	// Background-color
 	array( '.a8c-posts-list__view-all:focus,
@@ -322,8 +292,8 @@ add_color_rule( 'txt', '#444444', array(
 			.has-focus.button,
 			.has-focus.wp-block-button__link,
 			.has-focus.wp-block-file__button,
-			.wp-block-button__link:focus,
-			.wp-block-button__link:hover,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			.wp-block-cover,
 			.wp-block-cover-image,
 			.wp-block-file__button:focus,
@@ -356,32 +326,42 @@ add_color_rule( 'txt', '#444444', array(
 			input[type="url"]:focus,
 			input[type="week"]:focus,
 			textarea:focus', 'border-color' ),
-
+			
 	/**
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color[class],
-			.has-background-background-color[class],
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class],
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+			.has-background-dark-background-color.has-background-dim[class],
+			.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class],
+			.has-foreground-color[class],
+			.has-foreground-color.has-background-dim[class]', 'color' ),
+
+	array( '.has-background-dim[class],
+			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color[class],
+			.has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
 	array( '.has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
 
 	/**
 	 * Grays
 	 * Uses a slightly lighter color
 	 */
-	// Text-color
+	// Text-color lightened
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
@@ -409,8 +389,24 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-table figcaption,
 			.wp-block-video figcaption,
 			figcaption', 'color', '+1' ),
-		// Background-color
-		array( '.main-navigation #toggle:focus + #toggle-menu', 'background-color', '+1' )
+
+	// Background-color lightened
+	array( '.main-navigation #toggle:focus + #toggle-menu', 'background-color', '+1' )
+
+	// Text-color darkened
+	array( '.footer-navigation .footer-menu a:hover,
+			.site-info a:hover', 'color', '-1' ),
+
+	// Background-color darkened
+	array( '#masthead,
+			#site-navigation > div,
+			.social-navigation', 'color', '-1' ),
+			
+	// Border-color darkened
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color', '-1' ),
+			
+	// Border-top-color darkened
+	array( '#site-navigation > div', 'border-top-color', '-1' ),
 
 ), __( 'Text Color' ) );
 
