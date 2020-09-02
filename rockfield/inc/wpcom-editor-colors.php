@@ -94,7 +94,7 @@ add_editor_color_rule( 'link', '#222222', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
@@ -239,3 +239,17 @@ add_editor_color_rule( 'fg1', '#116821', array(
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function rockfield_custom_colors_extra_css() { ?>
+	/* Ensure links match the front end when there's a custom background color. */
+	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .has-text-color > a,
+	#editor .editor-styles-wrapper .wp-block .has-text-color > a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'rockfield_custom_colors_extra_css' );
