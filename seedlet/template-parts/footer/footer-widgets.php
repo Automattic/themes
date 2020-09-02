@@ -8,7 +8,7 @@
 
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
-	<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'seedlet' ); ?>">
+	<div class="widget-area">
 		<?php
 		if ( is_active_sidebar( 'sidebar-1' ) ) {
 			?>
@@ -18,6 +18,6 @@ if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 				<?php
 		}
 		?>
-	</aside><!-- .widget-area -->
+	</div><!-- .widget-area -->
 
 <?php endif; ?>
