@@ -81,7 +81,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.has-primary-background-color[class],
 			.has-primary-background-color.has-background-dim[class],
 			.has-secondary-background-color[class],
-			.has-secondary-background-color.has-background-dim[class]', 'color', 'bg', 12 ),	
+			.has-secondary-background-color.has-background-dim[class]', 'color' ),	
 	// Background-color
 	array( '.has-background-background-color[class],
 			.has-background-background-color.has-background-dim[class]', 'background-color' ),
