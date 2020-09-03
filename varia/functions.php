@@ -140,10 +140,16 @@ if ( ! function_exists( 'varia_setup' ) ) :
 			)
 		);
 
-		// $default_hue     = varia_get_default_hue();
-		// $saturation      = varia_get_default_saturation();
-		// $lightness       = varia_get_default_lightness();
-		// $lightness_hover = varia_get_default_lightness_hover();
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF0000'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#0000FF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -152,42 +158,22 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'varia' ),
 					'slug'  => 'primary',
-					'color' => '#0000FF', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness ),
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'varia' ),
 					'slug'  => 'secondary',
-					'color' => '#FF0000', // varia_hsl_hex( 'default' === get_theme_mod( 'primary_color' ) ? $default_hue : get_theme_mod( 'primary_color_hue', $default_hue ), $saturation, $lightness_hover ),
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'varia' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'varia' ),
+					'name'  => __( 'Foreground', 'varia' ),
 					'slug'  => 'foreground',
-					'color' => '#444444',
+					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'varia' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
-				),
-				array(
-					'name'  => __( 'White', 'varia' ),
+					'name'  => __( 'Background', 'varia' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
 				),
 			)
 		);

@@ -544,7 +544,6 @@ object {
 
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
-	color: #20603C;
 	background: transparent;
 	border: 2px solid currentcolor;
 }
@@ -554,6 +553,7 @@ object {
 .is-style-outline .wp-block-button__link:focus,
 .is-style-outline .wp-block-button__link.has-focus {
 	color: #133a24;
+	background: transparent;
 }
 
 .wp-block-button__link.is-style-squared,
@@ -594,6 +594,12 @@ object {
 	margin-bottom: inherit;
 	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
+}
+
+.wp-block-cover.has-background-dim,
+.wp-block-cover-image.has-background-dim {
+	background-color: #0D1B24;
+	color: #FDF9EC;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1015,6 +1021,12 @@ table th,
 	padding: calc( 0.5 * 16px);
 }
 
+table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #FAFAFA;
+	color: #3C2323;
+}
+
 /**
  * Editor Post Title
  * - Needs a special styles
@@ -1029,85 +1041,102 @@ table th,
 	line-height: 1.15;
 }
 
-.has-primary-color[class] {
-	color: #20603C !important;
+.wp-block .has-primary-color,
+.has-primary-color {
+	color: #20603C;
 }
 
-.has-secondary-color[class] {
-	color: #655441 !important;
+.wp-block .has-secondary-color,
+.has-secondary-color {
+	color: #655441;
 }
 
-.has-foreground-color[class] {
-	color: #3C2323 !important;
+.wp-block .has-foreground-color,
+.has-foreground-color {
+	color: #3C2323;
 }
 
-.has-foreground-light-color[class] {
-	color: #844d4d !important;
+.wp-block .has-foreground-light-color,
+.has-foreground-light-color {
+	color: #844d4d;
 }
 
-.has-foreground-dark-color[class] {
-	color: #0D1B24 !important;
+.wp-block .has-foreground-dark-color,
+.has-foreground-dark-color {
+	color: #0D1B24;
 }
 
-.has-background-light-color[class] {
-	color: #FDF9EC !important;
+.wp-block .has-background-light-color,
+.has-background-light-color {
+	color: #FDF9EC;
 }
 
-.has-background-dark-color[class] {
-	color: #DDDDDD !important;
+.wp-block .has-background-dark-color,
+.has-background-dark-color {
+	color: #DDDDDD;
 }
 
-.has-background-color[class] {
-	color: #FFFDF6 !important;
+.wp-block .has-background-color,
+.has-background-color {
+	color: #FFFDF6;
 }
 
-.has-background:not(.has-background-background-color) a,
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+.has-background p:not(.has-text-color),
+.has-background h1:not(.has-text-color),
+.has-background h2:not(.has-text-color),
+.has-background h3:not(.has-text-color),
+.has-background h4:not(.has-text-color),
+.has-background h5:not(.has-text-color),
+.has-background h6:not(.has-text-color) {
 	color: currentColor;
 }
 
-.has-primary-background-color[class] {
-	background-color: #20603C !important;
+.wp-block .has-primary-background-color,
+.has-primary-background-color {
+	background-color: #20603C;
 	color: #FFFDF6;
 }
 
-.has-primary-background-color[class] {
-	background-color: #20603C !important;
+.wp-block .has-secondary-background-color,
+.has-secondary-background-color {
+	background-color: #655441;
 	color: #FFFDF6;
 }
 
-.has-secondary-background-color[class] {
-	background-color: #655441 !important;
+.wp-block .has-foreground-background-color,
+.has-foreground-background-color {
+	background-color: #3C2323;
 	color: #FFFDF6;
 }
 
-.has-foreground-background-color[class] {
-	background-color: #3C2323 !important;
+.wp-block .has-foreground-light-background-color,
+.has-foreground-light-background-color {
+	background-color: #844d4d;
 	color: #FFFDF6;
 }
 
-.has-foreground-light-background-color[class] {
-	background-color: #844d4d !important;
+.wp-block .has-foreground-dark-background-color,
+.has-foreground-dark-background-color {
+	background-color: #0D1B24;
 	color: #FFFDF6;
 }
 
-.has-foreground-dark-background-color[class] {
-	background-color: #0D1B24 !important;
-	color: #FFFDF6;
-}
-
-.has-background-light-background-color[class] {
-	background-color: #FDF9EC !important;
+.wp-block .has-background-light-background-color,
+.has-background-light-background-color {
+	background-color: #FDF9EC;
 	color: #3C2323;
 }
 
-.has-background-dark-background-color[class] {
-	background-color: #DDDDDD !important;
+.wp-block .has-background-dark-background-color,
+.has-background-dark-background-color {
+	background-color: #DDDDDD;
 	color: #3C2323;
 }
 
-.has-background-background-color[class] {
-	background-color: #FFFDF6 !important;
+.wp-block .has-background-background-color,
+.has-background-background-color {
+	background-color: #FFFDF6;
 	color: #3C2323;
 }
 
@@ -1270,6 +1299,21 @@ table th,
 .padding-left-default {
 	/*rtl:ignore*/
 	padding-left: 32px !important;
+}
+
+/**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+/**
+ * Vendors
+ * - 3rd-party compatibility styles
+ */
+/**
+ * Set Jetpack form text color
+ */
+.jetpack-contact-info-block .is-selected textarea.block-editor-plain-text {
+	color: black;
 }
 
 .wp-block-cover .wp-block-separator,

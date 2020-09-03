@@ -1,0 +1,73 @@
+.wp-block-pullquote {
+	padding: calc( 2 * var(--global--spacing-unit) ) 0;
+	text-align: left;
+	// Theme?
+	border-top-color: var(--pullquote--border-color);
+	border-top-width: var(--pullquote--border-width);
+	border-bottom-color: var(--pullquote--border-color);
+	border-bottom-width: var(--pullquote--border-width);
+	color: var(--pullquote--color-foreground);
+
+	p {
+		font-family: var(--pullquote--font-family);
+		font-size: var(--pullquote--font-size);
+		font-style: var(--pullquote--font-style);
+		letter-spacing: var(--pullquote--letter-spacing);
+		line-height: var(--pullquote--line-height);
+		margin: 0;
+	}
+
+	a {
+		color: currentColor;
+	}
+
+	.wp-block-pullquote__citation,
+	cite,
+	footer {
+		color: currentColor;
+		display: block;
+		font-size: var(--global--font-size-xs);
+		text-transform: none;
+	}
+
+	/**
+	 * Block Options
+	 */
+	&:not(.is-style-solid-color) {
+		background: none;
+	}
+
+    &.is-style-large {
+        border-left-color: var(--quote--border-color);
+        border-left-style: solid;
+		border-left-width: var(--quote--border-width);
+		font-style: normal;
+	}
+
+	&.alignwide > p,
+	&.alignwide blockquote {
+		max-width: var(--responsive--alignwide-width);
+
+	}
+	&.alignfull:not(.is-style-solid-color) > p,
+	&.alignfull:not(.is-style-solid-color) blockquote {
+		padding: 0 calc( 2 * var(--global--spacing-unit) );
+	}
+
+	&.is-style-solid-color {
+
+		background-color: var(--pullquote--color-foreground);
+		color: var(--pullquote--color-background);
+		padding: calc( 2 * var(--global--spacing-unit) );
+
+		blockquote {
+			max-width: inherit;
+		}
+
+		.wp-block-pullquote__citation,
+		cite,
+		footer {
+			color: currentColor;
+		}
+	}
+}

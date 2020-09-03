@@ -1,0 +1,59 @@
+.site-footer > .footer-navigation {
+
+	display: inline;
+
+	@include media(desktop) {
+		margin-top: var(--global--spacing-unit);
+		margin-bottom: var(--global--spacing-unit);
+		text-align: left;
+	}
+
+	& > div {
+		display: inline;
+	}
+
+	.footer-menu {
+
+		color: var(--footer--color-text);
+		margin: 0;
+		padding-left: 0;
+
+		& > li {
+			display: inline-block;
+
+			&:first-of-type > a {
+				padding-left: 0;
+			}
+
+			&:last-of-type {
+				padding-right: 0;
+			}
+		}
+
+		.menu-item {
+			padding: var(--primary-nav--padding) var(--primary-nav--padding) var(--primary-nav--padding) 0;
+
+			a {
+				font-family: var(--primary-nav--font-family);
+				font-size: var(--footer--font-size);
+				font-weight: var(--primary-nav--font-weight);
+				color: currentColor;
+
+				&:link,
+				&:visited,
+				&:active {
+					color: currentColor;
+				}
+
+				&:hover {
+					color: var(--footer--color-link-hover);
+					border-color: var(--global--color-secondary);
+				}
+
+				&:focus {
+					color: var(--global--color-secondary);
+				}
+			}
+		}
+	}
+}
