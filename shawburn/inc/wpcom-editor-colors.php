@@ -121,11 +121,11 @@ add_editor_color_rule( 'link', '#0C80A1', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation ul ul,
 			#editor .editor-styles-wrapper .main-navigation #toggle:focus + #toggle-menu,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper a', 'color' ),
@@ -223,7 +223,6 @@ add_editor_color_rule( 'fg1', '#D4401C', array(
 	/**
 	 * Utility Classes
 	 */
-
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-secondary-color[class],
 			#editor .editor-styles-wrapper .wp-block .has-secondary-color[class]', 'color' ),
@@ -232,3 +231,19 @@ add_editor_color_rule( 'fg1', '#D4401C', array(
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function shawburn_custom_colors_editor_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$bg           = $colors_array['colors']['bg'];
+	$link         = $colors_array['colors']['link'];
+?>
+	#editor .editor-styles-wrapper .has-background > a,
+	#editor .editor-styles-wrapper .has-text-color > a {
+		text-decoration: underline;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'shawburn_custom_colors_editor_extra_css' );
+

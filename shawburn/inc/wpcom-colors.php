@@ -99,14 +99,14 @@ add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Text-color darkened
 	array( '.has-background-dark-color[class],
-			.has-background-dark-color.has-background-dim[class]', 'background-color', '-1' ),
+			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
 	array( '.has-background-dark-background-color[class],
 			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color lightened
 	array( '.has-background-light-background-color[class],
-			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
+			.has-background-light-background-color.has-background-dim[class]', 'color', '+1' ),
 	// Background-color lightened
 	array( '.has-background-light-background-color[class],
 			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
@@ -207,7 +207,7 @@ add_color_rule( 'link', '#0C80A1', array(
 			.fse-template-part .main-navigation ul ul,
 			.main-navigation #toggle:focus + #toggle-menu,
 			.sticky-post,
-			.wp-block-button__link,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file__button,
 			.wp-block-pullquote.is-style-solid-color,
@@ -226,10 +226,10 @@ add_color_rule( 'link', '#0C80A1', array(
 			.footer-navigation .footer-menu a:hover,
 			.site-info a:hover,
 			.site-title a:hover,
-			.wp-block-button.is-style-outline .wp-block-button__link,
-			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
-			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
@@ -247,9 +247,11 @@ add_color_rule( 'link', '#0C80A1', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.has-primary-color.has-background-dim[class]', 'color' ),
 
 	/**
 	 * Focus + Hovers
@@ -433,6 +435,21 @@ add_color_rule( 'fg1', '#D4401C', array(
 			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function shawburn_custom_colors_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$bg           = $colors_array['colors']['bg'];
+	$link         = $colors_array['colors']['link'];
+?>
+	.has-background a,
+	.has-text-color a {
+		text-decoration: underline;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'shawburn_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes
