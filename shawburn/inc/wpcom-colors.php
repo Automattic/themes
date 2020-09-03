@@ -3,7 +3,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', 'white', array(
+add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '#page,
@@ -81,20 +81,35 @@ add_color_rule( 'bg', 'white', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
+	array( '.has-background-color[class],
 			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class],
 			.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class],
 			.has-foreground-light-background-color[class],
-			.has-background-color[class],
-			.has-background-dark-color[class],
-			.has-background-light-color[class]', 'color' ),
+			.has-foreground-light-background-color.has-background-dim[class],
+			.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class],
+			.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class],
+			.has-background-dim[class]', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]', 'background-color' ),
+
+	// Text-color darkened
+	array( '.has-background-dark-color[class],
+			.has-background-dark-color.has-background-dim[class]', 'background-color', '-1' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+
+	// Text-color lightened
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
 
 	// Border color top
 	array( '.main-navigation #toggle:checked ~ div', 'border-top-color' ),
@@ -332,39 +347,7 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-pullquote,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			input[type="color"],
-			input[type="color"]:focus,
-			input[type="date"],
-			input[type="date"]:focus,
-			input[type="datetime"],
-			input[type="datetime"]:focus,
-			input[type="datetime-local"],
-			input[type="datetime-local"]:focus,
-			input[type="email"],
-			input[type="email"]:focus,
-			input[type="month"],
-			input[type="month"]:focus,
-			input[type="number"],
-			input[type="number"]:focus,
-			input[type="password"],
-			input[type="password"]:focus,
-			input[type="range"],
-			input[type="range"]:focus,
-			input[type="search"],
-			input[type="search"]:focus,
-			input[type="tel"],
-			input[type="tel"]:focus,
-			input[type="text"],
-			input[type="text"]:focus,
-			input[type="time"],
-			input[type="time"]:focus,
-			input[type="url"],
-			input[type="url"]:focus,
-			input[type="week"],
-			input[type="week"]:focus,
-			textarea,
-			textarea:focus', 'color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'color' ),
 
 	// Background-color
 	array( 'body,
@@ -373,22 +356,32 @@ add_color_rule( 'txt', '#444444', array(
 	/**
 	 * Utility Classes
 	 */
-	// Foreground
+	// Text-color
 	array( '.has-foreground-color[class],
 			.has-background-background-color[class],
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+			.has-background-light-background-color[class],
+			.has-foreground-color.has-background-dim[class],
+			.has-background-background-color.has-background-dim[class],
+			.has-background-dark-background-color.has-background-dim[class],
+			.has-background-light-background-color.has-background-dim[class]', 'color' ),
+	// Background-color
+	array( '.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color[class],
+			.has-foreground-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-color[class],
+			.has-foreground-light-color.has-background-dim[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
 
 	/*
 	 * Grays (Same as text color)
@@ -399,9 +392,9 @@ add_color_rule( 'txt', '#444444', array(
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color[class],
 			.site-branding,
 			.site-info,
+			.sticky-post,
 			.wp-block-image figcaption,
 			.wp-block-latest-comments .wp-block-latest-comments__comment-date,
 			.wp-block-latest-posts .wp-block-latest-posts__post-date,
@@ -432,10 +425,12 @@ add_color_rule( 'fg1', '#D4401C', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.has-secondary-color[class],
+			.has-secondary-color.has-background-dim[class]', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 
