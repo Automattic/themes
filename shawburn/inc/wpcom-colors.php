@@ -77,6 +77,9 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			input:hover[type="submit"],
 			input[type="submit"]', 'color' ),
 
+	// Border color top
+	array( '.main-navigation #toggle:checked ~ div', 'border-top-color' ),
+
 	/**
 	 * Utility Classes
 	 */
@@ -110,9 +113,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	// Background-color lightened
 	array( '.has-background-light-background-color[class],
 			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
-
-	// Border color top
-	array( '.main-navigation #toggle:checked ~ div', 'border-top-color' ),
 
 	/**
 	 * Grays
