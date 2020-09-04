@@ -156,6 +156,7 @@ add_editor_color_rule( 'txt', '#444444', array(
 	// Text-color
 	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-code,
 			#editor .editor-styles-wrapper', 'color' ),
 
 	/**
