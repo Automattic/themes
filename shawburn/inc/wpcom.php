@@ -10,7 +10,7 @@ function shawburn_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'white', // $config-global--color-background-default
+			'bg'     => 'FFFFFF', // $config-global--color-background-default
 			'border' => 'EAEAEA', // $config-global--color-border-default
 			'text'   => '444444', // $config-global--color-foreground-default
 			'link'   => '0C80A1', // $config-global--color-primary-default
