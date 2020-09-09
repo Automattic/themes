@@ -265,7 +265,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		// Add support for custom units.
 		add_theme_support( 'custom-units' );
-    
+
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
@@ -287,13 +287,13 @@ function seedlet_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
+	* supported by Fira Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$fira_sans = esc_html_x( 'on', 'Fira Sans: on or off', 'seedlet' );
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Roboto Sans, translate this to 'off'. Do not translate
+	* supported by Playfair Display, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$playfair_display = esc_html_x( 'on', 'Playfair Display: on or off', 'seedlet' );
