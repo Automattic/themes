@@ -1,0 +1,54 @@
+.wp-block-cover,
+.wp-block-cover-image {
+
+	background-color: var(--cover--color-foreground);
+	min-height: var(--cover--height);
+	margin-top: inherit;
+	margin-bottom: inherit;
+
+	.wp-block-cover__inner-container,
+	.wp-block-cover-image-text,
+	.wp-block-cover-text,
+	.block-editor-block-list__block {
+		color: currentColor; // uses text color specified with background-color options in /blocks/utilities/_style.scss
+
+		a:not(.has-text-color) {
+			color: currentColor;
+		}
+		.has-link-color a {
+			color: var( --wp--style--color--link, var(--global--color-primary) );
+		}
+	}
+
+	// Default & custom background-color
+	&:not([class*='background-color']){
+		.wp-block-cover__inner-container,
+		.wp-block-cover-image-text,
+		.wp-block-cover-text,
+		.block-editor-block-list__block {
+			color: var(--cover--color-background);
+		}
+	}
+
+	// Treating H2 separately to account for legacy /core styles
+	h2 {
+		font-size: var(--heading--font-size-h2);
+		letter-spacing: var(--heading--letter-spacing-h2);
+		line-height: var(--heading--line-height);
+		padding: 0;
+		max-width: inherit; // undo opinionated styles
+		text-align: inherit;
+
+		&.has-text-align-left {
+			text-align: left;
+		}
+
+		&.has-text-align-center {
+			text-align: center;
+		}
+
+		&.has-text-align-right {
+			text-align: right;
+		}
+	}
+}

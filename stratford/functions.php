@@ -175,8 +175,10 @@ function stratford_scripts() {
 	// enqueue child RTL styles
 	wp_style_add_data( 'stratford-style', 'rtl', 'replace' );
 
-	// enqueue header spacing JS
-	wp_enqueue_script('stratford-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	if ( ! stratford_is_amp() ) {
+		// enqueue header spacing JS.
+		wp_enqueue_script( 'stratford-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'stratford_scripts', 99 );
 
@@ -189,3 +191,10 @@ function stratford_editor_styles() {
 	wp_enqueue_style( 'stratford-editor-fonts', stratford_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'stratford_editor_styles' );
+
+/**
+ * Checks whether the endpoint is AMP.
+ */
+function stratford_is_amp() {
+	return ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() );
+}

@@ -29,7 +29,8 @@ Description: Used to style Gutenberg Blocks.
 }
 
 @media (min-width: 1140px) {
-	.singular.no-sidebar .alignwide {
+	.singular.no-sidebar .alignwide,
+	.singular.no-sidebar .wp-block-group .alignwide {
 		margin-left: -25%;
 		margin-right: -25%;
 		max-width: 1000%;
@@ -42,7 +43,8 @@ Description: Used to style Gutenberg Blocks.
 	}
 }
 
-.singular.no-sidebar .alignfull {
+.singular.no-sidebar .alignfull,
+.singular.no-sidebar .wp-block-group .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
@@ -67,6 +69,13 @@ Description: Used to style Gutenberg Blocks.
 .singular.no-sidebar .wp-block-embed.is-type-video.alignfull iframe {
 	width: 100% !important;
 	height: 100% !important;
+}
+
+.singular.no-sidebar *[class^="wp-block"] .alignwide,
+.singular.no-sidebar *[class^="wp-block"] .alignfull {
+	max-width: inherit;
+	margin-left: inherit;
+	margin-right: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -216,6 +225,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 1.5em;
 }
 
+.wp-block-cover.alignfull .wp-block-cover__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
+}
+
 /* File */
 
 .wp-block-file a:not(.wp-block-file__button),
@@ -359,7 +373,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 	box-shadow: none;
 }
 
-/* Columns */
+/* Group */
+
+.wp-block-group.alignfull .wp-block-group__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
+}
 
 /* Separator */
 

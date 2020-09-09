@@ -1,0 +1,23 @@
+/**
+ * Star ratings
+ */
+
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.star-rating {
+
+		&::before {
+			color: var(--wc--star-rating--color);
+			content: "\53\53\53\53\53";
+			opacity: 0.4;
+		}
+
+		span {
+			color: var(--wc--star-rating--color);
+		}
+	}
+
+	p.stars a {
+		color: var(--wc--star-rating--color);
+	}
+}

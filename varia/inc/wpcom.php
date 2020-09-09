@@ -15,6 +15,11 @@
 function varia_wpcom_setup() {
 	global $themecolors;
 
+	// Disable automatically generated color palettes.
+	add_theme_support( 'wpcom-colors', array(
+	        'only-featured-palettes' => true,
+	) );	
+	
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
@@ -47,6 +52,20 @@ function varia_wpcom_customize_update( $wp_customize ) {
 		'type'		  => 'checkbox',
 		'settings'	  => 'hide_front_page_title',
 	) );
+
+    $wp_customize->add_setting( 'color_a11y_warning' );
+    $wp_customize->add_control( 'color_a11y_warning', array(
+        'id'          => 'id',
+        'label'       => esc_html__( 'Color Accessibility Warning', 'varia' ),
+		'description' => sprintf(
+							__( 'In order to ensure people can read your site, try to maintain a strong contrast ratio between the colors you choose here. <a href="%s" target="_blank">Learn more about color contrast</a>.', 'varia' ),
+							esc_url( 'https://a11yproject.com/posts/what-is-color-contrast/' )
+						 ),
+        'section'     => 'colors_manager_tool',
+		'priority'	  => 10,
+		'type'		  => 'hidden',
+    ) );
+
 }
 add_action( 'customize_register', 'varia_wpcom_customize_update' );
 
@@ -133,3 +152,11 @@ function varia_wpcom_editor_scripts() {
 	wp_enqueue_style( 'varia-wpcom-editor-style', get_template_directory_uri() . '/inc/style-editor-wpcom.css', array(), '20190906' );
 }
 add_action( 'enqueue_block_editor_assets', 'varia_wpcom_editor_scripts' );
+
+/**
+ * Enqueue CSS for customizer a11y warning.
+ */
+function varia_enqueue_message_scripts() {
+	wp_enqueue_style( 'varia-customize-message-wpcom-style', get_template_directory_uri() . '/inc/customize-message-wpcom.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'varia_enqueue_message_scripts' );

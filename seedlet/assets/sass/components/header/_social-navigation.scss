@@ -1,0 +1,52 @@
+.social-navigation {
+
+	& > div > ul {
+		align-content: center;
+		justify-content: center;
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		& > li {
+			margin-bottom: calc(2 * var(--social-nav--padding));
+		}
+
+		& > li:first-of-type > a {
+			padding-left: 0;
+		}
+
+		& > li:last-of-type > a {
+			padding-right: 0;
+		}
+	}
+
+	a {
+		color: var(--social-nav--color-link);
+		display: inline-block;
+		padding: 0 var(--social-nav--padding);
+
+		&:hover,
+		&:focus {
+			color: var(--social-nav--color-link-hover);
+		}
+
+		&:active {
+			color: var(--social-nav--color-link);
+		}
+	}
+
+	svg {
+		fill: currentColor;
+		vertical-align: middle;
+	}
+}
+
+.site-title + .social-navigation,
+.site-description + .social-navigation {
+
+	@include media(tablet) {
+
+	}
+}
