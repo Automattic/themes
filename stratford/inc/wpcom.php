@@ -10,7 +10,7 @@ function stratford_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'white', // $config-global--color-background-default
+			'bg'     => 'FFFFFF', // $config-global--color-background-default
 			'border' => 'DDDDDD', // $config-global--color-border-default
 			'text'   => '74767e', // $config-global--color-foreground-default
 			'link'   => '2c313f', // $config-global--color-primary-default
