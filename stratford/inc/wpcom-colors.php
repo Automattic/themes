@@ -3,7 +3,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', 'white', array(
+add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '#masthead,
@@ -29,6 +29,8 @@ add_color_rule( 'bg', 'white', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover.has-background-dim,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
@@ -65,20 +67,35 @@ add_color_rule( 'bg', 'white', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
+	array( '.has-background-color[class],
+			.has-background-dim[class],
 			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class],
 			.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class],
 			.has-foreground-light-background-color[class],
-			.has-background-color[class],
-			.has-background-dark-color[class],
-			.has-background-light-color[class]', 'color' ),
+			.has-foreground-light-background-color.has-background-dim[class],
+			.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class],
+			.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]', 'background-color' ),
+
+	// Text-color darkened
+	array( '.has-background-dark-color[class],
+			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+
+	// Text-color lightened
+	array( '.has-background-light-color[class],
+			.has-background-light-color.has-background-dim[class]', 'color', '+1' ),
 	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
 
 	/**
 	 * Grays
@@ -128,13 +145,31 @@ add_color_rule( 'bg', 'white', array(
 			.wp-block-cover__inner-container .wp-block-latest-posts,
 			.wp-block-group .wp-block-latest-posts', 'border-bottom-color', '-1' ),
 	// Color
-	array( 'hr.wp-block-separator.is-style-dots:before,
-			#masthead .site-header-wrapper .main-navigation ul li ul,', 'color', '-1' ),
+	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 	// Background-color
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
 
+	// Color lightened
+	array( '#masthead .site-header-wrapper .main-navigation ul li ul', 'color', '+1' ),
+	
+	// Border-color lightened
+	array( '#masthead,
+			.wp-block-coblocks-hero__box .wp-block-latest-posts,
+			.wp-block-columns .wp-block-latest-posts,
+			.wp-block-cover__inner-container .wp-block-latest-posts,
+			.wp-block-group .wp-block-latest-posts', 'border-bottom-color', '+1' ),
+	// Border-color lightened
+	array( '.wp-block-quote,
+			.wp-block-quote[style*="text-align:center"],
+			.wp-block-quote[style*="text-align:right"]', 'border-color', '+1' ),
+			
+	// Border-color lightened
+	array( '.wp-block-coblocks-hero__box .wp-block-latest-posts > li,
+			.wp-block-columns .wp-block-latest-posts > li,
+			.wp-block-cover__inner-container .wp-block-latest-posts > li,
+			.wp-block-group .wp-block-latest-posts > li', 'border-top-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
