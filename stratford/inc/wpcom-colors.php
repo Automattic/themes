@@ -246,7 +246,7 @@ add_color_rule( 'link', '#2C313F', array(
 
 // Text Color
 // $config-global--color-foreground-default
-add_color_rule( 'txt', '#74767e', array(
+add_color_rule( 'txt', '#74767E', array(
 
 	// Text-color
 	array( '.comment-meta .comment-metadata,
@@ -255,66 +255,48 @@ add_color_rule( 'txt', '#74767e', array(
 			.wp-block-code,
 			.wp-block-code pre,
 			.wp-block-pullquote,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			input[type="color"],
-			input[type="color"]:focus,
-			input[type="date"],
-			input[type="date"]:focus,
-			input[type="datetime"],
-			input[type="datetime"]:focus,
-			input[type="datetime-local"],
-			input[type="datetime-local"]:focus,
-			input[type="email"],
-			input[type="email"]:focus,
-			input[type="month"],
-			input[type="month"]:focus,
-			input[type="number"],
-			input[type="number"]:focus,
-			input[type="password"],
-			input[type="password"]:focus,
-			input[type="range"],
-			input[type="range"]:focus,
-			input[type="search"],
-			input[type="search"]:focus,
-			input[type="tel"],
-			input[type="tel"]:focus,
-			input[type="text"],
-			input[type="text"]:focus,
-			input[type="time"],
-			input[type="time"]:focus,
-			input[type="url"],
-			input[type="url"]:focus,
-			input[type="week"],
-			input[type="week"]:focus,
-			textarea,
-			textarea:focus', 'color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept', 'color' ),
 
 	// Background-color
 	array( '.wp-block-cover,
+			.wp-block-cover.has-background-dim,
 			.wp-block-cover-image,
+			.wp-block-cover-image.has-background-dim,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
 	 * Utility Classes
 	 */
-	// Foreground
-	array( '.has-foreground-color[class],
-			.has-background-background-color[class],
+	// Text color
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class],
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+			.has-background-dark-background-color.has-background-dim[class],
+			.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class],
+			.has-foreground-color[class]', 'color' ),
+	// Background color
+	array( '.has-background-dim[class],
+			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color[class],
+			.has-foreground-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-color[class],
+			.has-foreground-light-color.has-background-dim[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
 
 	/**
 	 * Grays
