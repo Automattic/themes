@@ -177,6 +177,7 @@ add_editor_color_rule( 'txt', '#74767e', array(
 	// Text-color
 	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-code,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper', 'color' ),
