@@ -18,6 +18,15 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.0.8 =
+* Add block editor theme tags
+* Correct text color rules for nested blocks
+* Tidy up translation functions and comments
+
+= 1.0.7 =
+* Fix is_IE global bug
+* Remove duplicate inclusion of editor CSS variables
+
 = 1.0.6 =
 * Add block patterns 
 * Add support for IE editor styles 
