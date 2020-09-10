@@ -174,7 +174,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 
 // Link Color
 // $config-global--color-primary-default
-add_color_rule( 'link', '#2c313f', array(
+add_color_rule( 'link', '#2C313F', array(
 
 	// Background-color
 	array( '.a8c-posts-list-item__featured span,
@@ -236,9 +236,11 @@ add_color_rule( 'link', '#2c313f', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color[class]
+			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.has-primary-color.has-background-dim[class]', 'color' ),
 
 ), __( 'Link Color' ) );
 
