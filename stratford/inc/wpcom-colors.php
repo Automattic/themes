@@ -31,7 +31,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.wp-block-button__link:hover,
 			.wp-block-cover-image.has-background-dim,
 			.wp-block-cover.has-background-dim,
-			.wp-block-cover p:not(.has-text-color),
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
