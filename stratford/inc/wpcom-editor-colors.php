@@ -247,7 +247,7 @@ add_editor_color_rule( 'txt', '#74767e', array(
 
 // Accent Color (Red)
 // $config-global--color-secondary-default
-add_editor_color_rule( 'fg1', '#3e69dc', array(
+add_editor_color_rule( 'fg1', '#3E69DC', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,

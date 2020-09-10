@@ -31,6 +31,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.wp-block-button__link:hover,
 			.wp-block-cover-image.has-background-dim,
 			.wp-block-cover.has-background-dim,
+			.wp-block-cover p:not(.has-text-color),
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
@@ -67,8 +68,9 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-background-color[class],
-			.has-background-dim[class],
+	array( '.has-background-dim[class],
+			.has-background-color[class],
+			.has-background-color.has-background-dim[class],
 			.has-foreground-background-color[class],
 			.has-foreground-background-color.has-background-dim[class],
 			.has-foreground-dark-background-color[class],
@@ -278,7 +280,8 @@ add_color_rule( 'txt', '#74767E', array(
 			.has-background-dark-background-color.has-background-dim[class],
 			.has-background-light-background-color[class],
 			.has-background-light-background-color.has-background-dim[class],
-			.has-foreground-color[class]', 'color' ),
+			.has-foreground-color[class],
+			.has-foreground-color.has-background-dim[class]', 'color' ),
 	// Background color
 	array( '.has-background-dim[class],
 			.has-foreground-background-color[class],
@@ -334,13 +337,13 @@ add_color_rule( 'txt', '#74767E', array(
 
 // Accent Color
 // $config-global--color-secondary-default
-add_color_rule( 'fg1', '#3e69dc', array(
+add_color_rule( 'fg1', '#3E69DC', array(
 
 	// Background-color
 	array( '.a8c-posts-list__view-all,
 			.button,
 			.main-navigation #toggle:focus + #toggle-menu,
-			.wp-block-button__link,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file__button,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
@@ -365,9 +368,9 @@ add_color_rule( 'fg1', '#3e69dc', array(
 			.site-info a:hover,
 			.site-title,
 			.social-navigation a:hover,
-			.wp-block-button.is-style-outline .wp-block-button__link,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline.wp-block-button__link:active,
 			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
 			.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
@@ -409,6 +412,25 @@ add_color_rule( 'fg1', '#3e69dc', array(
 	array( '.has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+
+/**
+  * Custom CSS
+  */
+function stratford_custom_colors_extra_css() {
+	$colors_array = get_theme_mod( 'colors_manager' );
+	$bg           = $colors_array['colors']['bg'];
+	$link         = $colors_array['colors']['link'];
+?>
+	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
+	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):active, 
+	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):focus, 
+	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):hover, 
+	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):visited {
+		color: <?php echo $bg; ?>;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'stratford_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes
