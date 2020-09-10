@@ -121,9 +121,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			input[type="week"],
 			select,
 			textarea,
-			.wp-block-quote,
-			.wp-block-quote[style*="text-align:center"],
-			.wp-block-quote[style*="text-align:right"],
 			#masthead .site-header-wrapper .main-navigation ul li ul li,
 			#masthead .site-header-wrapper .main-navigation ul li ul li:first-child', 'border-color', '-1' ),
 	// Border-top-color
@@ -151,9 +148,12 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
 
+	/**
+	 * Grays
+	 * Uses a slightly lighter color
+	 */
 	// Color lightened
 	array( '#masthead .site-header-wrapper .main-navigation ul li ul', 'color', '+1' ),
-	
 	// Border-color lightened
 	array( '#masthead,
 			.wp-block-coblocks-hero__box .wp-block-latest-posts,
@@ -164,7 +164,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	array( '.wp-block-quote,
 			.wp-block-quote[style*="text-align:center"],
 			.wp-block-quote[style*="text-align:right"]', 'border-color', '+1' ),
-			
 	// Border-color lightened
 	array( '.wp-block-coblocks-hero__box .wp-block-latest-posts > li,
 			.wp-block-columns .wp-block-latest-posts > li,
