@@ -307,7 +307,6 @@ add_color_rule( 'txt', '#74767E', array(
 			.entry-footer,
 			.entry-meta,
 			.footer-navigation .footer-menu,
-			.has-foreground-light-color[class],
 			.site-branding,
 			.site-info,
 			.wp-block-image figcaption,

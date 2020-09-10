@@ -241,7 +241,7 @@ add_editor_color_rule( 'txt', '#74767e', array(
 			#editor .editor-styles-wrapper .wp-block-quote.is-style-large cite,
 			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
 			#editor .editor-styles-wrapper .wp-block-video figcaption,
-			#editor .editor-styles-wrapper figcaption', 'color' ),
+			#editor .editor-styles-wrapper figcaption', 'color', '+1' ),
 
 ), __( 'Text Color' ) );
 
