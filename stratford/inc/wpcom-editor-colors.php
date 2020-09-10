@@ -93,14 +93,12 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			
 	/**
 	 * Grays
-	 * Uses a slightly darker color
+	 * Uses a slightly lighter color
 	 */
 	// Border-bottom-color
 	array( '#editor .editor-styles-wrapper .wp-block-columns .wp-block-latest-posts', 'border-bottom-color', '+1' ),
-			
 	// Border-top-color
 	array( '#editor .editor-styles-wrapper .wp-block-columns .wp-block-latest-posts > li', 'border-top-color', '+1' ),
-			
 	// Border-color
 	array( '#editor .editor-styles-wrapper .wp-block-quote,
 			#editor .editor-styles-wrapper .wp-block-quote[style*="text-align:center"],
