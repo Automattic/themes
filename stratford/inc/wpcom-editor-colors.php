@@ -82,15 +82,22 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	 * Uses a slightly darker color
 	 */
 	// Color
-	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots', 'color', '-1' ),
+	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots,
+			#editor .editor-styles-wrapper hr.is-style-dots:before', 'color', '-1' ),
 	// Border-color
 	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', '-1' ),
 	// Border-top-color
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color', '-1' ),
 	// Border-bottom-color
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
-			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
-			
+			#editor .editor-styles-wrapper .wp-block-separator,
+			#editor .editor-styles-wrapper hr', 'border-bottom-color', '-1' ),
+	// Border-right-color
+	array( '#editor .editor-styles-wrapper .wp-block-separator[style*="text-align: right"],
+			#editor .editor-styles-wrapper .wp-block-separator[style*="text-align:right"],
+			#editor .editor-styles-wrapper hr[style*="text-align: right"],
+			#editor .editor-styles-wrapper hr[style*="text-align:right"]', 'border-bottom-color', '-1' ),
+
 	/**
 	 * Grays
 	 * Uses a slightly lighter color
@@ -108,7 +115,7 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 
 // Link Color
 // $config-global--color-primary-default
-add_editor_color_rule( 'link', '#2c313f', array(
+add_editor_color_rule( 'link', '#2C313F', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button.has-focus,
