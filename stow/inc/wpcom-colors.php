@@ -353,8 +353,8 @@ add_color_rule( 'fg1', '#F25F70', array(
 			.has-focus.button,
 			.has-focus.wp-block-button__link,
 			.has-focus.wp-block-file__button,
-			.wp-block-button__link:focus,
-			.wp-block-button__link:hover,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			.wp-block-file a.wp-block-file__button:focus,
 			.wp-block-file a.wp-block-file__button:hover,
 			.wp-block-file a.wp-block-file__button:visited,
@@ -394,6 +394,11 @@ function stow_custom_colors_extra_css() { ?>
 	.has-background-color:not(.has-background-background-color) a,
 	.wp-block .has-background-color:not(.has-background-background-color) a {
 		text-decoration: underline;
+	}
+
+	.wp-block-button.is-style-outline .wp-block-button__link:focus,
+	.wp-block-button.is-style-outline .wp-block-button__link:hover {
+		background-color: transparent;
 	}
 <?php }
 add_theme_support( 'custom_colors_extra_css', 'stow_custom_colors_extra_css' );
