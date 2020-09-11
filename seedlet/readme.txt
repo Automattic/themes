@@ -2,7 +2,7 @@
 Contributors: Automattic
 Requires at least: 5.0
 Tested up to: 5.4.1
-Requires PHP: 7.3
+Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,16 @@ Seedlet was built to be the perfect partner to the block editor, and supports al
 Seedlet is a great option for professionals and creatives looking for a sophisticated vibe. Whether you're looking to create a blog or a robust site promoting your business, do with simplicity, style, and Seedlet.
 
 == Changelog ==
+
+= 1.0.8 =
+* Add block editor theme tags
+* Correct text color rules for nested blocks
+* Tidy up translation functions and comments
+* Update minimum PHP version requirement
+
+= 1.0.7 =
+* Fix is_IE global bug
+* Remove duplicate inclusion of editor CSS variables
 
 = 1.0.6 =
 * Add block patterns 
