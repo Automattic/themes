@@ -147,9 +147,9 @@ add_editor_color_rule( 'txt', '#303030', array(
 	// Text-color
 	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
 			#editor .editor-styles-wrapper .fse-template-part #toggle-menu.has-background-color,
-			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:active,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta a:active,
@@ -157,10 +157,12 @@ add_editor_color_rule( 'txt', '#303030', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:active,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:hover,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:hover,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline:focus,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper a:hover,
 			#editor .editor-styles-wrapper', 'color' ),
 
@@ -174,11 +176,13 @@ add_editor_color_rule( 'txt', '#303030', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-cover,
-			#editor .editor-styles-wrapper .wp-block-cover-image', 'background-color' ),
+			#editor .editor-styles-wrapper .wp-block-cover-image,
+			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
+			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -187,17 +191,28 @@ add_editor_color_rule( 'txt', '#303030', array(
 	array( '#editor .editor-styles-wrapper .has-background-background-color[class],
 			#editor .editor-styles-wrapper .has-background-dark-background-color[class],
 			#editor .editor-styles-wrapper .has-background-light-background-color[class],
-			#editor .editor-styles-wrapper .has-foreground-color[class]', 'color' ),
+			#editor .editor-styles-wrapper .has-foreground-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-background-light-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-background-color[class]', 'background-color' ),
+
 	// Text-color darkened
-	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-dark-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-dark-color[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '#editor .editor-styles-wrapper .has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-dark-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+
 	// Text-color brightened
-	array( '#editor .editor-styles-wrapper .has-foreground-light-color[class]', 'color', '+2' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-light-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-light-color[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
 	/**
 	 * Grays
