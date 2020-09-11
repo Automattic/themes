@@ -61,10 +61,10 @@ if ( ! function_exists( 'hever_setup' ) ) :
 		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
 		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#1279BE'; // $config-global--color-primary-default;
 		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFB302';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#303030';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#FFFFFF';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#FFFFFF' ) ? $colors_array['colors']['txt'] : '#757575';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#FFFFFF' ) ? $colors_array['colors']['txt'] : '#101010';  // $config-global--color-foreground-dark-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#303030';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#303030' ) ? $colors_array['colors']['txt'] : '#757575';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#303030' ) ? $colors_array['colors']['txt'] : '#101010';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -99,44 +99,6 @@ if ( ! function_exists( 'hever_setup' ) ) :
 					'name'  => __( 'Foreground Dark', 'hever' ),
 					'slug'  => 'foreground-dark',
 					'color' => $foreground_dark,
-				),
-			)
-		);
-
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#1279BE'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFB302';  // $config-global--color-secondary-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#303030';  // $config-global--color-foreground-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-
-		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'hever' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'hever' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Foreground', 'hever' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Background', 'hever' ),
-					'slug'  => 'background',
-					'color' => $background,
 				),
 			)
 		);
