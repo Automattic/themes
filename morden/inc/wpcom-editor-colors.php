@@ -262,3 +262,14 @@ add_editor_color_rule( 'fg1', '#007AB7', array(
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function morden_custom_colors_extra_css() { ?>
+	/* Ensure links match the front end when there's a custom background color. */
+	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'morden_custom_colors_extra_css' );
