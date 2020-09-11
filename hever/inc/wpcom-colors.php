@@ -204,7 +204,7 @@ add_color_rule( 'link', '#1279BE', array(
 			.button,
 			.main-navigation #toggle:focus + #toggle-menu,
 			.sticky-post,
-			.wp-block-button__link,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file__button,
 			.wp-block-pullquote.is-style-solid-color,
@@ -225,16 +225,16 @@ add_color_rule( 'link', '#1279BE', array(
 			.entry-footer a:hover,
 			.entry-meta a:hover,
 			.social-navigation a:hover,
-			.wp-block-button.is-style-outline .wp-block-button__link,
-			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
-			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color), 
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color), 
-			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			a,
 			article .entry-header .entry-title a:active,
 			article .entry-header .entry-title a:focus,
@@ -268,9 +268,11 @@ add_color_rule( 'link', '#1279BE', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
+	array( '.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.has-primary-color.has-background-dim[class]', 'color' ),
 
 ), __( 'Link Color' ) );
 
