@@ -175,10 +175,7 @@ function altofocus_infinite_scroll_render() {
 			$loaded_post_IDs[] = get_the_ID();
 		}
 	} ?>
-	<script>
-		// Put returned posts' IDs in to an array
-		var loadedPosts = <?php echo json_encode( $loaded_post_IDs ); ?>;
-	</script>
+	<input type="hidden" data="<?php echo esc_attr( json_encode( $loaded_post_IDs ) ); ?>" id="infinite-ids" />
 <?php
 }
 

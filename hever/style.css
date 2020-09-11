@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A fully responsive theme, ideal for creating a strong — yet beautiful — online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.4.1
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -974,9 +974,18 @@ footer {
 	margin-bottom: 0;
 }
 
-.entry-content > *.alignfull + .alignleft,
-.entry-content > *.alignfull + .alignright {
+.entry-content > *.alignfull + .alignleft {
+	float: left;
 	margin-top: 32px;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.entry-content > *.alignfull + .alignright {
+	float: right;
+	margin-top: 32px;
+	margin-left: 16px;
+	margin-right: 16px;
 }
 
 /**
@@ -1049,7 +1058,7 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #303030;
+	color: black;
 	border: 1px solid #C5C5C5;
 	border-radius: 5px;
 	padding: 16px;
@@ -1071,7 +1080,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #303030;
+	color: black;
 	border-color: #303030;
 }
 
@@ -1401,10 +1410,19 @@ button[data-load-more-btn], .button {
  */
 .wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
-	color: #1279BE;
-	background: transparent;
+	color: inherit;
 	border: 2px solid currentcolor;
 	padding: 14px 24px;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background: transparent;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #1279BE;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:active,
@@ -1501,11 +1519,16 @@ button[data-load-more-btn], .button {
 	min-height: 480px;
 	margin-top: inherit;
 	margin-bottom: inherit;
-	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 	/**
 	 * Block Options
 	 */
+}
+
+.wp-block-cover.has-background-dim,
+.wp-block-cover-image.has-background-dim {
+	background-color: #303030;
+	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1519,22 +1542,19 @@ button[data-load-more-btn], .button {
 	margin-bottom: 32px;
 }
 
-.wp-block-cover .wp-block-cover__inner-container a,
-.wp-block-cover .wp-block-cover-image-text a,
-.wp-block-cover .wp-block-cover-text a,
-.wp-block-cover-image .wp-block-cover__inner-container a,
-.wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a {
+.wp-block-cover .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover__inner-container a.wp-block-button__link:hover,
+.wp-block-cover .wp-block-cover-image-text a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover-image-text a.wp-block-button__link:hover,
+.wp-block-cover .wp-block-cover-text a:not(.wp-block-button__link),
+.wp-block-cover .wp-block-cover-text a.wp-block-button__link:hover,
+.wp-block-cover-image .wp-block-cover__inner-container a:not(.wp-block-button__link),
+.wp-block-cover-image .wp-block-cover__inner-container a.wp-block-button__link:hover,
+.wp-block-cover-image .wp-block-cover-image-text a:not(.wp-block-button__link),
+.wp-block-cover-image .wp-block-cover-image-text a.wp-block-button__link:hover,
+.wp-block-cover-image .wp-block-cover-text a:not(.wp-block-button__link),
+.wp-block-cover-image .wp-block-cover-text a.wp-block-button__link:hover {
 	color: currentColor;
-}
-
-.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text {
-	color: white;
 }
 
 .wp-block-cover h2,
@@ -1806,6 +1826,7 @@ img {
 }
 
 .wp-block-latest-posts > li {
+	word-wrap: break-word;
 	/* Vertical margins logic */
 	margin-top: 32px;
 	margin-bottom: 32px;
@@ -2249,6 +2270,10 @@ hr.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 96px;
 }
 
+hr.wp-block-separator.is-style-wide {
+	border-bottom-width: 2px;
+}
+
 hr.wp-block-separator.is-style-dots.has-background, hr.wp-block-separator.is-style-dots.has-text-color {
 	background-color: transparent !important;
 }
@@ -2315,6 +2340,12 @@ table th,
 	word-break: break-all;
 }
 
+table.is-style-stripes tbody tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #F8F8F8;
+	color: #303030;
+}
+
 .wp-block-video figcaption {
 	color: #757575;
 	font-size: 0.75614rem;
@@ -2344,6 +2375,11 @@ table th,
 	margin-bottom: 32px;
 }
 
+.entry-content > .alignleft {
+	/*rtl:ignore*/
+	float: left;
+}
+
 /**
  * .aligncenter
  */
@@ -2366,6 +2402,11 @@ table th,
 	margin-bottom: 32px;
 	/*rtl:ignore*/
 	margin-left: 16px;
+}
+
+.entry-content > .alignright {
+	/*rtl:ignore*/
+	float: right;
 }
 
 .entry-content * > .alignleft + *,
@@ -2402,80 +2443,96 @@ table th,
 	background-attachment: fixed;
 }
 
-.has-primary-color[class] {
-	color: #1279BE !important;
+.has-primary-color {
+	color: #1279BE;
 }
 
-.has-secondary-color[class] {
-	color: #FFB302 !important;
+.has-secondary-color {
+	color: #FFB302;
 }
 
-.has-foreground-color[class] {
-	color: #303030 !important;
+.has-foreground-color {
+	color: #303030;
 }
 
-.has-foreground-light-color[class] {
-	color: #757575 !important;
+.has-foreground-light-color {
+	color: #757575;
 }
 
-.has-foreground-dark-color[class] {
-	color: #101010 !important;
+.has-foreground-dark-color {
+	color: #101010;
 }
 
-.has-background-light-color[class] {
-	color: #F8F8F8 !important;
+.has-background-light-color {
+	color: #F8F8F8;
 }
 
-.has-background-dark-color[class] {
-	color: #C5C5C5 !important;
+.has-background-dark-color {
+	color: #C5C5C5;
 }
 
-.has-background-color[class] {
-	color: white !important;
+.has-background-dim,
+.has-background-color {
+	color: white;
 }
 
-.has-background:not(.has-background-background-color) a,
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
+.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
+.has-background p:not(.has-text-color),
+.has-background h1:not(.has-text-color),
+.has-background h2:not(.has-text-color),
+.has-background h3:not(.has-text-color),
+.has-background h4:not(.has-text-color),
+.has-background h5:not(.has-text-color),
+.has-background h6:not(.has-text-color) {
 	color: currentColor;
 }
 
-.has-primary-background-color[class] {
-	background-color: #1279BE !important;
+.has-primary-background-color,
+.has-primary-background-color.has-background-dim {
+	background-color: #1279BE;
 	color: white;
 }
 
-.has-secondary-background-color[class] {
-	background-color: #FFB302 !important;
+.has-secondary-background-color,
+.has-secondary-background-color.has-background-dim {
+	background-color: #FFB302;
 	color: white;
 }
 
-.has-foreground-background-color[class] {
-	background-color: #303030 !important;
+.has-background-dim,
+.has-foreground-background-color,
+.has-foreground-background-color.has-background-dim {
+	background-color: #303030;
 	color: white;
 }
 
-.has-foreground-light-background-color[class] {
-	background-color: #757575 !important;
+.has-foreground-light-background-color,
+.has-foreground-light-background-color.has-background-dim {
+	background-color: #757575;
 	color: white;
 }
 
-.has-foreground-dark-background-color[class] {
-	background-color: #101010 !important;
+.has-foreground-dark-background-color,
+.has-foreground-dark-background-color.has-background-dim {
+	background-color: #101010;
 	color: white;
 }
 
-.has-background-light-background-color[class] {
-	background-color: #F8F8F8 !important;
+.has-background-light-background-color,
+.has-background-light-background-color.has-background-dim {
+	background-color: #F8F8F8;
 	color: #303030;
 }
 
-.has-background-dark-background-color[class] {
-	background-color: #C5C5C5 !important;
+.has-background-dark-background-color,
+.has-background-dark-background-color.has-background-dim {
+	background-color: #C5C5C5;
 	color: #303030;
 }
 
-.has-background-background-color[class] {
-	background-color: white !important;
+.has-background-background-color,
+.has-background-background-color.has-background-dim {
+	background-color: white;
 	color: #303030;
 }
 
@@ -3139,15 +3196,13 @@ body:not(.fse-enabled) .footer-menu a {
 	text-decoration: none;
 }
 
-.entry-content > iframe[style] {
-	margin: 32px 0 !important;
-	max-width: 100% !important;
-}
-
-@media only screen and (min-width: 560px) {
-	.entry-content > iframe[style] {
-		max-width: 32px !important;
-	}
+.entry-content > iframe,
+.entry-content > iframe[style],
+.entry-content > fb\:post {
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	overflow: scroll;
 }
 
 .entry-attachment {
@@ -3222,6 +3277,7 @@ body:not(.fse-enabled) .footer-menu a {
 .pagination .nav-links .svg-icon {
 	display: inline-block;
 	vertical-align: middle;
+	fill: currentColor;
 }
 
 @media only screen and (min-width: 560px) {
@@ -3316,7 +3372,7 @@ body:not(.fse-enabled) .footer-menu a {
  * Comment Meta
  */
 .comment-meta {
-	margin-right: calc( $avatar-size + (0.5 * 16px));
+	margin-right: calc( 32px + (0.5 * 16px));
 }
 
 .comment-meta .comment-author {
@@ -3385,7 +3441,7 @@ body:not(.fse-enabled) .footer-menu a {
 	.comment-meta .comment-author .avatar {
 		margin-right: 16px;
 		display: inherit;
-		position: inherit;
+		position: relative;
 		right: inherit;
 	}
 	.comment-meta .comment-metadata {
@@ -3751,13 +3807,14 @@ body:not(.fse-enabled) #colophon {
 
 .entry-content > .alignright {
 	/*rtl:ignore*/
-	margin-right: 16px;
 }
 
 @media only screen and (min-width: 560px) {
 	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 560px - 32px)));
+		max-width: calc( 0.5 * calc( 560px - 32px));
+		margin-left: 16px;
 	}
 }
 
@@ -3765,6 +3822,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 640px - 32px)));
+		max-width: calc( 0.5 * calc( 640px - 32px));
 	}
 }
 
@@ -3772,6 +3830,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
 	}
 }
 
@@ -3779,6 +3838,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
 	}
 }
 
@@ -3786,18 +3846,20 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .alignright {
 		/*rtl:ignore*/
 		margin-right: calc( 0.5 * (100vw - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
 	}
 }
 
 .entry-content > .wp-block-button:not(.alignleft):not(.alignright), .entry-content > .alignleft {
 	/*rtl:ignore*/
-	margin-left: 16px;
 }
 
 @media only screen and (min-width: 560px) {
 	.entry-content > .wp-block-button:not(.alignleft):not(.alignright), .entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 560px - 32px)));
+		max-width: calc( 0.5 * calc( 560px - 32px));
+		margin-right: 16px;
 	}
 }
 
@@ -3805,6 +3867,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .wp-block-button:not(.alignleft):not(.alignright), .entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 640px - 32px)));
+		max-width: calc( 0.5 * calc( 640px - 32px));
 	}
 }
 
@@ -3812,6 +3875,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .wp-block-button:not(.alignleft):not(.alignright), .entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
 	}
 }
 
@@ -3819,6 +3883,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .wp-block-button:not(.alignleft):not(.alignright), .entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
 	}
 }
 
@@ -3826,6 +3891,7 @@ body:not(.fse-enabled) #colophon {
 	.entry-content > .wp-block-button:not(.alignleft):not(.alignright), .entry-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: calc( 0.5 * (100vw - calc( 782px - 32px)));
+		max-width: calc( 0.5 * calc( 782px - 32px));
 	}
 }
 

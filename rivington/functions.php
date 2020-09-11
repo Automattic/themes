@@ -58,52 +58,57 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#CAAB57'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#EE4266';  // $config-global--color-secondary-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#060f29';   // $config-global--color-background-default;
+		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#F2F2F2';  // $config-global--color-foreground-default;
+		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) ? $colors_array['colors']['txt'] : '#FFFFFF';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) ? $colors_array['colors']['txt'] : '#8F8F8F';  // $config-global--color-foreground-dark-default;
+
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'rivington' ),
 					'slug'  => 'primary',
-					'color' => '#CAAB57',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'rivington' ),
 					'slug'  => 'secondary',
-					'color' => '#EE4266',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'rivington' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#8F8F8F',
-				),
-				array(
-					'name'  => __( 'Off White', 'rivington' ),
-					'slug'  => 'foreground',
-					'color' => '#F2F2F2',
-				),
-				array(
-					'name'  => __( 'White', 'rivington' ),
-					'slug'  => 'foreground-light',
-					'color' => '#FFFFFF',
-				),
-				array(
-					'name'  => __( 'Dark Navy', 'rivington' ),
-					'slug'  => 'background-dark',
-					'color' => '#030713',
-				),
-				array(
-					'name'  => __( 'Navy', 'rivington' ),
+					'name'  => __( 'Background', 'rivington' ),
 					'slug'  => 'background',
-					'color' => '#060f29',
+					'color' => $background,
 				),
 				array(
-					'name'  => __( 'Light Navy', 'rivington' ),
-					'slug'  => 'background-light',
-					'color' => '#0d1f55',
+					'name'  => __( 'Foreground', 'rivington' ),
+					'slug'  => 'foreground',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'rivington' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'rivington' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
+
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
 	}
@@ -176,5 +181,15 @@ function rivington_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'rivington-editor-fonts', rivington_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#F2F2F2' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
+			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'rivington_editor_styles' );

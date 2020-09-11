@@ -1,0 +1,86 @@
+/*
+Theme Name: SEEDLET CHILD THEME
+Theme URI: https://wordpress.com/theme/seedlet
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Seedlet is a free WordPress theme. A two-column layout and classically elegant typography creates a refined site that gives your works and images space to breathe - and shine. Seedlet was built to be the perfect partner to the block editor, and supports all the latest blocks. Writing, audio, illustrations, photography, video - use Seedlet to engage and direct visitors' eyes, without your theme getting in the way. And the responsive design shifts naturally between desktop and mobile devices. Seedlet is a great option for professionals and creatives looking for a sophisticated vibe. Whether you're looking to create a blog or a robust site promoting your business, do with simplicity, style, and Seedlet.
+Requires at least: 4.9.6
+Tested up to: 5.4.1
+Requires PHP: 5.6.2
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: seedlet-child-theme
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, full-site-editing, jetpack-global-styles
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Seedlet is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/**
+ * Abstracts
+ * - Mixins, variables and functions
+ */
+@import "../abstracts/imports";
+
+/**
+ * Child Theme Deep
+ */
+@import "config-child-theme";
+
+/**
+ * Base
+ * - Reset the browser
+ */
+@import "../base/imports";
+
+/**
+ * Layout
+ * - Structral and responsive styles
+ */
+@import "../layout/imports";
+
+/**
+ * Elements
+ * - Styles for basic HTML elemants
+ */
+@import "../elements/imports";
+
+/**
+ * Blocks
+ * - These styles replace key Gutenberg Block styles for fonts, colors, and
+ *   spacing with CSS-variables overrides
+ * - In the future the Block styles may get compiled to individual .css
+ *   files and conditionally loaded
+ */
+@import "../blocks/imports";
+
+/**
+ * Components
+ * - Similar to Blocks but exist outside of the "current" editor context
+ */
+@import "../components/imports";
+
+/**
+ * Site Pages
+ * - Page specific styles
+ */
+@import "../pages/imports";
+
+/**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../vendors/imports";
+
+/**
+ * Child Theme Extra Styles
+ */
+@import "extra-child-theme";
