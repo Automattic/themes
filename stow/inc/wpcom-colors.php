@@ -118,7 +118,6 @@ add_color_rule( 'link', '#404040', array(
 
 	// Background-color
 	array( '.a8c-posts-list-item__featured span,
-			.has-primary-background-color[class],
 			.sticky-post,
 			.wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
@@ -143,10 +142,12 @@ add_color_rule( 'link', '#404040', array(
 	/**
 	 * Utility Classes
 	 */
-	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+	array( '.has-primary-color[class],
+			.has-primary-color.has-background-dim[class]', 'color' ),
+	// Background-color
+	array( '.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Link Color' ) );
 

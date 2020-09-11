@@ -110,10 +110,12 @@ add_editor_color_rule( 'link', '#404040', array(
 	/**
 	 * Utility Classes
 	 */
-	// Background-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-primary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-color[class]', 'color' ),
+	// Background-color
+	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-background-color[class]', 'background-color' ),
 
 ), __( 'Link Color' ) );
 
