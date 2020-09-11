@@ -140,6 +140,7 @@ add_editor_color_rule( 'txt', '#303030', array(
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-code,
 			#editor .editor-styles-wrapper a:hover,
 			#editor .editor-styles-wrapper', 'color' ),
 
