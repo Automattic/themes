@@ -118,7 +118,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover,
 			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a,
 			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a', '-1' ),
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a', 'color', '-2' ),
 	// Border-color lightened
 	array( '.wp-block-quote,
 			.wp-block-quote[style*="text-align:center"],

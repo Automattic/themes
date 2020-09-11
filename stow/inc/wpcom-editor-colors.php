@@ -210,9 +210,11 @@ add_editor_color_rule( 'fg1', '#F25F70', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .fse-template-part .main-navigation a:hover,
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline:focus,
 			#editor .editor-styles-wrapper .wp-block-button .wp-block-button__link.is-style-outline:hover,
@@ -223,7 +225,6 @@ add_editor_color_rule( 'fg1', '#F25F70', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:active,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .more-link:hover,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-coblocks-column a,
 			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
 			#editor .editor-styles-wrapper .wp-block-quote[style*="text-align:center"] .wp-block-quote__citation,
@@ -264,9 +265,9 @@ add_editor_color_rule( 'fg1', '#F25F70', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .wp-block-file div.wp-block-file__button:focus,
 			#editor .editor-styles-wrapper .wp-block-file div.wp-block-file__button:hover,
 			#editor .editor-styles-wrapper .wp-block-file div.wp-block-file__button:visited,
@@ -275,3 +276,13 @@ add_editor_color_rule( 'fg1', '#F25F70', array(
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:visited', 'background-color', '-2' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+  * Custom CSS
+  */
+function stow_custom_colors_extra_css() { ?>
+	#editor .editor-styles-wrapper .wp-block-button.is-style-outline[class] .wp-block-button__link:not(.has-background-color)[style] {
+		background-color: transparent !important;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'stow_custom_colors_extra_css' );
