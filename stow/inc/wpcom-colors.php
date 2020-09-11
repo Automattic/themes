@@ -105,6 +105,20 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	// Background-color lightened
 	array( '.has-background-light-background-color[class],
 			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
+
+	// Text-color darkened
+	array( 'body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a', '-1' ),
 	// Border-color lightened
 	array( '.wp-block-quote,
 			.wp-block-quote[style*="text-align:center"],
@@ -365,19 +379,7 @@ add_color_rule( 'fg1', '#F25F70', array(
 			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
 			.wp-block-button.is-style-outline.wp-block-button__link:focus,
 			.wp-block-button.is-style-outline.wp-block-button__link:hover,
-			.wp-block-coblocks-column a:hover,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover,
-			body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover,
-			body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a', 'color', '-2' ),
+			.wp-block-coblocks-column a:hover', 'color', '-2' ),
 
 
 ), __( 'Secondary Color' ) );
