@@ -1,0 +1,84 @@
+/**
+ * Product loops
+ */
+
+body[class*="woocommerce"] #page .woocommerce-products-header {
+	img {
+		display: block;
+	}
+}
+
+#woocommerce-wrapper,
+body[class*="woocommerce"] #page #add_payment_method .cart-collaterals .cross-sells,
+body[class*="woocommerce"] #page .cart-collaterals .cross-sells {
+
+	.products ul,
+	ul.products {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul.products li.product {
+
+		text-align: center;
+
+		.star-rating {
+			font-size: var(--global--font-size-sm);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		h3,
+		.woocommerce-loop-product__title,
+		.woocommerce-loop-category__title {
+			padding: inherit;
+			font-size: var(--global--font-size-base);
+		}
+
+		a img {
+			margin: inherit;
+		}
+
+		strong {
+		}
+
+		.woocommerce-placeholder {
+			border-color: var(--global--color-border-default);
+		}
+
+		.button {
+			margin-top: inherit;
+		}
+
+		.added_to_cart {
+			margin-top: var(--global--spacing-unit);
+		}
+
+		.price {
+			color: var(--global--color-primary);
+			font-size: var(--global--font-size-md);
+			line-height: var(--global--line-height-heading);
+
+			del {
+				color: inherit;
+				opacity: 0.5;
+				display: inline-block;
+			}
+
+			ins {
+				background: none;
+				font-weight: 700;
+				display: inline-block;
+			}
+
+			.from {
+				font-size: var(--global--font-size-xs);
+				color: var(--global--color-alert-warning);
+			}
+		}
+
+		&.sale a > .price ins {
+			color: var(--global--color-alert-success);
+		}
+	}
+}

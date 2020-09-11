@@ -34,12 +34,44 @@ Description: Used to style Gutenberg Blocks.
 		margin-right: -20%;
 		width: auto;
 	}
+
+	body:not(.has-post-thumbnail) .alignfull *[class*="__inner-container"] .alignwide {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: calc(700px + 40%);
+	}
+
+	body:not(.has-post-thumbnail) *[class*="__inner-container"] .alignwide {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	body:not(.has-post-thumbnail) *[class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 700px;
+	}
 }
 
 body:not(.has-post-thumbnail) .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	width: auto;
+}
+
+body:not(.has-post-thumbnail) *[class*="__inner-container"] .alignfull {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Prevent children of columns from expanding outside of their container */
+
+body:not(.has-post-thumbnail) .wp-block-column .alignfull,
+body:not(.has-post-thumbnail) .wp-block-column .alignwide {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+	width: 100%;
 }
 
 /* Make non image-based blocks a bit narrower, so they don't get cut off. */
@@ -83,6 +115,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-image {
 	margin-bottom: 0;
 	max-width: 1000%;
+}
+
+.wp-block-image.is-resized {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Gallery */
@@ -271,6 +308,11 @@ body:not(.has-post-thumbnail) .wp-block-table.alignfull {
 	padding: 1em 1.5em;
 	text-transform: uppercase;
 	text-decoration: none;
+}
+
+.wp-block-button.aligncenter {
+	text-align: center;
+	margin-bottom: 1.5em;
 }
 
 .wp-block-button__link {

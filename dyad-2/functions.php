@@ -92,6 +92,13 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Editor Styles
+		add_editor_style( 'css/editor-blocks.css' );
+		add_editor_style( dyad_2_fonts_url() );
+
 		// Add support for custom color scheme.
 		add_theme_support( 'editor-color-palette', array(
 			array(
@@ -279,15 +286,6 @@ function dyad_2_fonts_url() {
 
 
 /**
- * Add Google Fonts, editor styles to WYSIWYG editor
- */
-function dyad_2_editor_styles() {
-	add_editor_style( array( 'editor-style.css', dyad_2_fonts_url() ) );
-}
-add_action( 'after_setup_theme', 'dyad_2_editor_styles' );
-
-
-/**
  * Enqueue scripts and styles.
  */
 function dyad_2_scripts() {
@@ -319,13 +317,14 @@ function dyad_2_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'dyad_2_scripts' );
 
+
 /**
  * Enqueue editor styles for Gutenberg
  *
  */
 function dyad_2_block_editor_styles() {
 	// Block styles.
-	wp_enqueue_style( 'dyad-2-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+	// wp_enqueue_style( 'dyad-2-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
 	// Add custom fonts.
 	wp_enqueue_style( 'dyad-2-fonts', dyad_2_fonts_url(), array(), null );
 	// Add Genericons.
