@@ -240,13 +240,13 @@ add_color_rule( 'txt', '#444444', array(
 
 // Accent Color
 // $config-global--color-secondary-default
-add_color_rule( 'fg1', '#f25f70', array(
+add_color_rule( 'fg1', '#F25F70', array(
 
 	// Background-color
 	array( '.a8c-posts-list__view-all,
 			.button,
 			.main-navigation #toggle:focus + #toggle-menu,
-			.wp-block-button__link,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background-color),
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button,
 			.wp-block-file__button,
@@ -272,14 +272,13 @@ add_color_rule( 'fg1', '#f25f70', array(
 			.entry-footer a:hover,
 			.entry-meta a:active,
 			.entry-meta a:hover,
-			.has-secondary-color[class],
 			.main-navigation a:hover,
 			.site-title a:hover,
 			.social-navigation a:hover,
-			.wp-block-button.is-style-outline .wp-block-button__link,
-			.wp-block-button.is-style-outline .wp-block-button__link:active,
-			.wp-block-button.is-style-outline.wp-block-button__link,
-			.wp-block-button.is-style-outline.wp-block-button__link:active,
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-coblocks-column a,
 			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
 			.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
@@ -316,10 +315,12 @@ add_color_rule( 'fg1', '#f25f70', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+	array( '.has-secondary-color[class],
+			.has-secondary-color.has-background-dim[class]', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 	/**
 	 * Hovers
