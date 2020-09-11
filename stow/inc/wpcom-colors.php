@@ -385,6 +385,20 @@ add_color_rule( 'fg1', '#F25F70', array(
 ), __( 'Secondary Color' ) );
 
 /**
+  * Custom CSS
+  */
+function stow_custom_colors_extra_css() { ?>
+	/* Ensure links match the front end when there's a custom background color. */
+	.has-background:not(.has-background-background-color) a,
+	.wp-block .has-background:not(.has-background-background-color) a,
+	.has-background-color:not(.has-background-background-color) a,
+	.wp-block .has-background-color:not(.has-background-background-color) a {
+		text-decoration: underline;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'stow_custom_colors_extra_css' );
+
+/**
  * Featured Varia Palettes
  */
 // Light

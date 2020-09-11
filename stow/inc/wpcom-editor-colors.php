@@ -280,9 +280,18 @@ add_editor_color_rule( 'fg1', '#F25F70', array(
 /**
   * Custom CSS
   */
-function stow_custom_colors_extra_css() { ?>
+function stow_custom_colors_editor_extra_css() { ?>
+	/* Ensure links match the front end when there's a custom background color. */
+	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .has-background-color:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .wp-block .has-background-color:not(.has-background-background-color) a {
+		color: currentColor;
+		text-decoration: underline;
+	}
+
 	#editor .editor-styles-wrapper .wp-block-button.is-style-outline[class] .wp-block-button__link:not(.has-background-color)[style] {
 		background-color: transparent !important;
 	}
 <?php }
-add_theme_support( 'custom_colors_extra_css', 'stow_custom_colors_extra_css' );
+add_theme_support( 'custom_colors_extra_css', 'stow_custom_colors_editor_extra_css' );
