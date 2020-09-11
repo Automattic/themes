@@ -96,16 +96,16 @@ add_editor_color_rule( 'link', '#CD2220', array(
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link.is-style-outline:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:active,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a:hover,
-			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Border color left
@@ -119,9 +119,11 @@ add_editor_color_rule( 'link', '#CD2220', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-background-color[class]', 'background-color' ),
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-primary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-primary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-primary-color[class]', 'color' ),
 
 ), __( 'Link Color' ) );
 
