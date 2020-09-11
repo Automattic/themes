@@ -5,7 +5,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_editor_color_rule( 'bg', 'white', array(
+add_editor_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .fse-template-part #toggle-menu.has-background-color,

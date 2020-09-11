@@ -10,7 +10,7 @@ function morden_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => 'white', // $config-global--color-background-default
+			'bg'     => 'FFFFFF', // $config-global--color-background-default
 			'border' => 'C5C5C5', // $config-global--color-border-default
 			'text'   => '303030', // $config-global--color-foreground-default
 			'link'   => 'CD2220', // $config-global--color-primary-default
