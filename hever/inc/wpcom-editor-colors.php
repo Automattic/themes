@@ -267,7 +267,10 @@ function hever_custom_colors_extra_css() { ?>
 	#editor .editor-styles-wrapper .wp-block-latest-posts .wp-block-latest-posts__post-date,
 	#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .cat-links,
 	#editor .editor-styles-wrapper .wp-block-newspack-blocks-homepage-articles article .entry-meta,
+	#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) a,
 	#editor .editor-styles-wrapper .wp-block .has-background:not(.has-background-background-color) a,
+	#editor .editor-styles-wrapper .has-text-color a,
+	#editor .editor-styles-wrapper .wp-block .has-text-color a,
 	#editor .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container a,
 	#editor .editor-styles-wrapper .wp-block-cover .block-editor-block-list__block a,
 	#editor .editor-styles-wrapper .wp-block-cover .has-foreground-color[class] {
