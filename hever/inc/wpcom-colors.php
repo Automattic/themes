@@ -190,7 +190,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	// Background-color
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', '-1' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
 
 ), __( 'Background Color' ) );
 
@@ -310,6 +310,8 @@ add_color_rule( 'txt', '#303030', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			.wp-block-pullquote,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd),
 			a:hover,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
@@ -333,25 +335,27 @@ add_color_rule( 'txt', '#303030', array(
 	// Background-color
 	array( '.a8c-posts-list__view-all:focus,
 			.a8c-posts-list__view-all:hover,
+			button.has-focus,
+			button:focus,
+			button:hover,
 			.button:focus,
 			.button:hover,
+			.button.has-focus,
 			.has-focus.a8c-posts-list__view-all,
-			.has-focus.button,
-			.has-focus.wp-block-button__link,
-			.has-focus.wp-block-file__button,
-			.wp-block-button__link:focus,
-			.wp-block-button__link:hover,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link.has-focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 			.wp-block-cover,
+			.wp-block-cover.has-background-dim,
 			.wp-block-cover-image,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-file__button.has-focus,
 			.wp-block-file__button:focus,
 			.wp-block-file__button:hover,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
-			button.has-focus,
-			button:focus,
-			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"]', 'background-color' ),
@@ -378,23 +382,31 @@ add_color_rule( 'txt', '#303030', array(
 	 * Utility Classes
 	 */
 	// Foreground
-	array( '.has-foreground-color,
-			.has-foreground-color[class],
+	array( '.has-foreground-color[class],
 			.has-background-background-color[class],
 			.has-background-dark-background-color[class],
-			.has-background-light-background-color[class]', 'color' ),
+			.has-background-light-background-color[class],
+			.has-foreground-color.has-background-dim[class],
+			.has-background-background-color.has-background-dim[class],
+			.has-background-dark-background-color.has-background-dim[class],
+			.has-background-light-background-color.has-background-dim[class]', 'color' ),
 	// Background-color
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+	array( '.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
 
 	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+	array( '.has-foreground-dark-color[class],
+			.has-foreground-dark-color.has-background-dim[class]', 'color', '-1' ),
 	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+	array( '.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
 
 	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
+	array( '.has-foreground-light-color[class],
+			.has-foreground-light-color.has-background-dim[class]', 'color', '+2' ),
 	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+	array( '.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
 
 	/**
 	 * Gray (Same as text color)
@@ -427,7 +439,10 @@ add_color_rule( 'txt', '#303030', array(
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
-			figcaption', 'color' ),
+			figcaption', 'color', '-1' ),
+
+	// Border-color
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color', '-1' ),
 
 ), __( 'Text Color' ) );
 
@@ -439,10 +454,11 @@ add_color_rule( 'fg1', '#FFB302', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
-
+	array( '.has-secondary-color[class],
+			.has-secondary-color.has-background-dim[class]', 'color' ),
 	// Background-color
-	array( '.has-secondary-background-color[class]', 'background-color' ),
+	array( '.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 
