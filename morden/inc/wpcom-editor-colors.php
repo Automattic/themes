@@ -239,6 +239,10 @@ add_editor_color_rule( 'txt', '#303030', array(
 			#editor .editor-styles-wrapper .wp-block-quote.is-style-large footer,
 			#editor .editor-styles-wrapper .wp-block-video figcaption,
 			#editor .editor-styles-wrapper figcaption', 'color' ),
+			
+	// BG-color
+	array( '#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+2' ),
 
 ), __( 'Text Color' ) );
 
@@ -251,8 +255,10 @@ add_editor_color_rule( 'fg1', '#007AB7', array(
 	 */
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .has-secondary-color[class]', 'color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-color[class]', 'color' ),
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
+	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class],
+			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
