@@ -22,6 +22,7 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 * Add block editor theme tags
 * Correct text color rules for nested blocks
 * Tidy up translation functions and comments
+* Update minimum PHP version requirement
 
 = 1.0.7 =
 * Fix is_IE global bug
