@@ -3,7 +3,7 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', 'white', array(
+add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Background-color
 	array( '#masthead,
@@ -27,9 +27,11 @@ add_color_rule( 'bg', 'white', array(
 			.has-focus.wp-block-button__link,
 			.has-focus.wp-block-file__button,
 			.sticky-post,
-			.wp-block-button__link,
-			.wp-block-button__link:focus,
-			.wp-block-button__link:hover,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):focus,
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):hover,
+			.wp-block-cover-image.has-background-dim,
+			.wp-block-cover.has-background-dim,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
 			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
@@ -73,28 +75,40 @@ add_color_rule( 'bg', 'white', array(
 	 * Utility Classes
 	 */
 	// Text-color
-	array( '.has-primary-background-color[class],
-			.has-secondary-background-color[class],
-			.has-foreground-background-color[class],
-			.has-foreground-dark-background-color[class],
-			.has-foreground-light-background-color[class],
+	array( '.has-background-dim[class],
 			.has-background-color[class],
-			.has-background-dark-color[class],
-			.has-background-light-color[class]', 'color' ),
+			.has-background-color.has-background-dim[class],
+			.has-foreground-background-color[class],
+			.has-foreground-background-color.has-background-dim[class],
+			.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class],
+			.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class],
+			.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class],
+			.has-secondary-background-color[class],
+			.has-secondary-background-color.has-background-dim[class]', 'color' ),
 	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
-	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
-	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+	array( '.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]', 'background-color' ),
 
-	/**
-	 * Grays
-	 */
-	// Border-color (Light)
+	// Text-color darkened
+	array( '.has-background-dark-color[class],
+			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
+	// Background-color darkened
+	array( '.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+
+	// Text-color lightened
+	array( '.has-background-light-color[class],
+			.has-background-light-color.has-background-dim[class]', 'color', '+1' ),
+	// Background-color lightened
+	array( '.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
+	// Border-color lightened
 	array( '.wp-block-quote,
 			.wp-block-quote[style*="text-align:center"],
-			.wp-block-quote[style*="text-align:right"]', 'background-color', '+1' ),
+			.wp-block-quote[style*="text-align:right"]', 'border-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
