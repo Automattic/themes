@@ -207,6 +207,20 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a,
 			.social-navigation a:hover', 'color', 0.8 ),
 
+	// Background-color lightened
+	array( '.a8c-posts-list .a8c-posts-list-item__featured span,
+			.has-background-light-background-color,
+			.has-background-light-background-color.has-background-dim,
+			.page-title,
+			.singular .hentry .entry-header .entry-title,
+			.sticky-post,
+			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+1' ),
+			
+	// Background-color darkened
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
 
 ), __( 'Background Color' ) );
 

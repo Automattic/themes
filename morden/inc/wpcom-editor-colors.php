@@ -94,6 +94,10 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	// Border-bottom-color
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
+			
+	// Background-color lightened
+	array( '#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+1' ),
 
 ), __( 'Background Color' ) );
 
