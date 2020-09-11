@@ -82,7 +82,8 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	 * Uses a slightly darker color
 	 */
 	// Color
-	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots', 'color', '-1' ),
+	array( '#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before,
+			#editor .editor-styles-wrapper hr.is-style-dots:before', 'color', '-1' ),
 	// Border-color
 	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', '-1' ),
 	// Border-top-color
@@ -90,6 +91,11 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	// Border-bottom-color
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-separator', 'border-bottom-color', '-1' ),
+	// Border-right-color
+	array( '#editor .editor-styles-wrapper .wp-block-separator[style*="text-align: right"],
+			#editor .editor-styles-wrapper .wp-block-separator[style*="text-align:right"],
+			#editor .editor-styles-wrapper hr[style*="text-align: right"],
+			#editor .editor-styles-wrapper hr[style*="text-align:right"]', 'border-right-color', '-1' ),
 
 ), __( 'Background Color' ) );
 
