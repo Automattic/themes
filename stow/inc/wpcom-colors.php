@@ -321,6 +321,11 @@ add_color_rule( 'fg1', '#F25F70', array(
 	// Background-color
 	array( '.has-secondary-background-color[class],
 			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
+			
+	// Text-color lightened
+	array( '.fse-template-part.fse-header .main-navigation div ul li a::after,
+			body:not(.fse-enabled) #site-navigation.main-navigation ul li a::after,
+			body:not(.fse-enabled) .main-navigation.main-navigation ul li a::after', 'color', '+1' ),
 
 	/**
 	 * Hovers

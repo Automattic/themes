@@ -129,6 +129,7 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-code,
 			#editor .editor-styles-wrapper', 'color' ),
 
 	// Background-color
@@ -248,7 +249,10 @@ add_editor_color_rule( 'fg1', '#F25F70', array(
 	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class],
 			#editor .editor-styles-wrapper .wp-block .has-secondary-background-color[class]', 'background-color' ),
 			
-	// Text-color
+	// Text-color lightened
+	array( '#editor .editor-styles-wrapper .fse-template-part.fse-header .main-navigation div ul li a::after', 'color', '+1' ),
+			
+	// Text-color darkened
 	array( '#editor .editor-styles-wrapper .wp-block-coblocks-column a:hover', 'color', '-2' ),
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button.has-focus,
