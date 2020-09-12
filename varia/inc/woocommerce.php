@@ -185,12 +185,11 @@ function varia_add_cart_menu( $nav, $args ) {
 	if ( $args->theme_location == 'menu-1' ) {
     $has_cart_icon = get_option( 'varia_cart_icon' );
 
-    if ( empty( $nav ) || empty( $has_cart_icon ) ) {
-      $has_cart_icon = false;
-      update_option( 'varia_cart_icon', $has_cart_icon );
+		if ( empty( $nav ) ) {
+			update_option( 'varia_cart_icon', false );
     }
     
-    if ( ! $has_cart_icon ) {
+    if ( ! $has_cart_icon && ! empty( $nav ) ) {
       update_option( 'varia_cart_icon', true );
       return sprintf(
         '%1$s
