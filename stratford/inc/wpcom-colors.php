@@ -421,6 +421,11 @@ function stratford_custom_colors_extra_css() {
 	$bg           = $colors_array['colors']['bg'];
 	$link         = $colors_array['colors']['link'];
 ?>
+	.has-text-color a,
+	.has-background a {
+		color: currentColor;
+	}
+
 	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
 	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):active, 
 	.has-background .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):focus, 
