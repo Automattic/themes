@@ -278,3 +278,20 @@ add_editor_color_rule( 'fg1', '#3E69DC', array(
 	array( '#editor .editor-styles-wrapper .has-secondary-background-color[class]', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
+
+/**
+ * Custom CSS
+ */
+function stratford_editor_custom_colors_extra_css() { ?>
+
+	#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline.has-background[class], 
+	#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-background[class] {
+		background: transparent !important;
+	}
+
+	#editor .editor-styles-wrapper .has-text-color a,
+	#editor .editor-styles-wrapper .has-background a {
+		color: currentColor;
+	}
+<?php }
+add_theme_support( 'custom_colors_extra_css', 'stratford_editor_custom_colors_extra_css' );
