@@ -237,7 +237,7 @@ add_color_rule( 'link', '#2C313F', array(
 	 * Utility Classes
 	 */
 	// Background-color
-	array( '.has-primary-background-color[class]
+	array( '.has-primary-background-color[class],
 			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
 	// Text-color
 	array( '.has-primary-color[class],

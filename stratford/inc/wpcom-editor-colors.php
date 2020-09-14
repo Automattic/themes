@@ -143,13 +143,7 @@ add_editor_color_rule( 'link', '#2C313F', array(
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-title a,
-			#editor .editor-styles-wrapper a,
-			#editor .editor-styles-wrapper h1,
-			#editor .editor-styles-wrapper h2,
-			#editor .editor-styles-wrapper h3,
-			#editor .editor-styles-wrapper h4,
-			#editor .editor-styles-wrapper h5,
-			#editor .editor-styles-wrapper h6', 'color' ),
+			#editor .editor-styles-wrapper a', 'color' ),
 
 	// Border color left
 	array( '#editor .editor-styles-wrapper .wp-block-quote', 'border-left-color' ),
