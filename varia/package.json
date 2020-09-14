@@ -42,6 +42,8 @@
     "build:woocommerce-rtl": "rtlcss style-woocommerce.css style-woocommerce-rtl.css",
     "build": "run-p \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-    "child-theme": "sh ../theme-dev-utils/build-child-theme.sh"
+    "child-theme": "sh ../theme-dev-utils/build-child-theme.sh",
+    "postinstall": "cd ../alves && npm install",
+    "children": "sh ./rebuild-child-themes.sh"
   }
 }
