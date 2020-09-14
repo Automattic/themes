@@ -19,10 +19,10 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
-			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:focus,
-			#editor .editor-styles-wrapper .wp-block-button__link:hover,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color).has-focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):focus,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):hover,
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
@@ -251,7 +251,7 @@ add_editor_color_rule( 'txt', '#74767e', array(
 add_editor_color_rule( 'fg1', '#3E69DC', array(
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link,
+	array( '#editor .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:active,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .cat-links a:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts .entry-meta a:active,
@@ -265,7 +265,7 @@ add_editor_color_rule( 'fg1', '#3E69DC', array(
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
-			#editor .editor-styles-wrapper .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-file div.wp-block-file__button,
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button', 'background-color' ),
 
