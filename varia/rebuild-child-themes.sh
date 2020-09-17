@@ -5,7 +5,5 @@ declare -a ChildThemes=("alves" "balasana" "barnsbury" "brompton" "coutoire" "da
 for child in ${ChildThemes[@]}; do
 	cd '../'${child}
 	echo 'Rebulding '${child}
-	perl -pi -e 's/Version: ((\d+\.)*)(\d+)(.*)$/"Version: ".$1.($3+1).$4/ge' sass/style-child-theme.scss
-	npm install
-	npm run build
+	perl -pi -e 's/\"version\": \"((\d+\.)*)(\d+)\"(.*)$/"\"version\": \"".$1.($3+1)."\"".$4/ge' package.json
 done
