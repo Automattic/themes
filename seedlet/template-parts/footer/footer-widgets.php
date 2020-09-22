@@ -9,9 +9,9 @@
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 
 	<div class="widget-area">
-				<div class="widget-column footer-widget-1">
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>
-				</div>
+		<div class="widget-column footer-widget-1">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		</div>
 	</div><!-- .widget-area -->
 
 <?php endif; ?>
