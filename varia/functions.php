@@ -146,10 +146,10 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF0000'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#0000FF'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FF0000';  // $config-global--color-secondary-default;
 		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#0000FF';   // $config-global--color-background-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(

@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Make your online presence as striking and stylish as your business with Exford.
 Requires at least: WordPress 4.9.6
-Version: 1.4.4
+Version: 1.4.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2130,7 +2130,6 @@ p.has-background {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #23883D;
 	color: #FFFFFF;
 }
 
@@ -2144,6 +2143,10 @@ p.has-background {
 .wp-block-pullquote.is-style-solid-color cite,
 .wp-block-pullquote.is-style-solid-color footer {
 	color: currentColor;
+}
+
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #23883D;
 }
 
 .wp-block-pullquote.alignwide > p,

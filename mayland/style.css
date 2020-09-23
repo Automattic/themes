@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Make your online portfolio wonderfully uncluttered with Mayland. Gracefully highlight your photography and other projects. Mayland is versatile enough to be your personal site too.
 Requires at least: WordPress 4.9.6
-Version: 1.2.3
+Version: 1.2.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2129,7 +2129,6 @@ p.has-background {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #000000;
 	color: #ffffff;
 }
 
@@ -2143,6 +2142,10 @@ p.has-background {
 .wp-block-pullquote.is-style-solid-color cite,
 .wp-block-pullquote.is-style-solid-color footer {
 	color: currentColor;
+}
+
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #000000;
 }
 
 .wp-block-pullquote.alignwide > p,

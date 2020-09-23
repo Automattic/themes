@@ -53,7 +53,6 @@
 
 	&.is-style-solid-color {
 
-		background-color: #{map-deep-get($config-pullquote, "color", "background")};
 		color: #{map-deep-get($config-global, "color", "background", "default")};
 
 		&:not(.alignleft):not(.alignright) blockquote {
@@ -70,6 +69,10 @@
 		cite,
 		footer {
 			color: currentColor;
+		}
+
+		&:not(.has-background) {
+			background-color: #{map-deep-get($config-pullquote, "color", "background")};
 		}
 	}
 
