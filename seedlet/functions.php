@@ -16,14 +16,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
-/**
- * Determine whether the site is being requested from IE.
- */
-$is_ie = false;
-if ( preg_match( '~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false ) ) {
-	$is_ie = true;
-}
-
 if ( ! function_exists( 'seedlet_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -83,6 +75,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 				'caption',
 				'style',
 				'script',
+				'navigation-widgets',
 			)
 		);
 
@@ -114,7 +107,11 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		$editor_stylesheet_path = './assets/css/style-editor.css';
-		if ( $is_ie ) {
+
+		// Note, the is_IE global variable is defined by WordPress and is used
+		// to detect if the current browser is internet explorer.
+		global $is_IE;
+		if ( $is_IE ) {
 			$editor_stylesheet_path = './assets/css/ie-editor.css';
 		}
 
@@ -266,7 +263,10 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		// Add support for experimental cover block spacing.
 		add_theme_support( 'experimental-custom-spacing' );
-    
+
+		// Add support for custom units.
+		add_theme_support( 'custom-units' );
+
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
@@ -288,13 +288,13 @@ function seedlet_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
+	* supported by Fira Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$fira_sans = esc_html_x( 'on', 'Fira Sans: on or off', 'seedlet' );
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Roboto Sans, translate this to 'off'. Do not translate
+	* supported by Playfair Display, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$playfair_display = esc_html_x( 'on', 'Playfair Display: on or off', 'seedlet' );
@@ -366,7 +366,11 @@ function seedlet_scripts() {
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
 	// Theme styles
-	if ( $is_ie ) {
+
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
 		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
 		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
 	} else {
@@ -416,7 +420,7 @@ require get_template_directory() . '/classes/class-seedlet-svg-icons.php';
 /**
  * Custom colors class.
  */
-if ( empty( get_theme_mod( 'colors_manager' ) ) ) { // If the theme is on wpcom, we bypass the theme's built in custom colors, because wpcom uses a different custom color implementation.
+if ( ! class_exists( 'Colors_Manager' ) ) { // Check for presence of wpcom color manager to avoid duplicate color customization functionality.
 	require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
 }
 
@@ -444,6 +448,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
+
+/**
+ * Block Styles.
+ */
+require get_template_directory() . '/inc/block-styles.php';
 
 /**
  * Load WooCommerce compatibility file.

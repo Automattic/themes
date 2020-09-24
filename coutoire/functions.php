@@ -143,7 +143,7 @@ function coutoire_fonts_url() {
 		}
 
 		if ( 'off' !== $eb_garamond ) {
-			$font_families[] = 'EB Garamond:400,400i';
+			$font_families[] = 'EB Garamond:400,400i,600';
 		}
 
 		$query_args = array(

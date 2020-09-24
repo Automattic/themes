@@ -83,10 +83,19 @@ a {
 	border-bottom: 1px solid var(--global--color-secondary);
 	color: var( --wp--style--color--link, var(--global--color-primary) );
 	text-decoration: none;
+	transition: border-color 0.1s ease-out;
 	
 	&:hover,
 	&:focus {
+		border-bottom-color: transparent;
+	}
+
+	&:hover {
 		color: var(--global--color-primary-hover);
+	}
+
+	&:focus {
+		color: var(--global--color-secondary);
 	}
 
 	&:active {
