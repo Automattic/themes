@@ -1,20 +1,20 @@
 .wp-block-pullquote {
-	padding: calc( 3 * #{map-deep-get($config-global, "spacing", "unit")} ) 0;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
-	// Theme?
 	border-top-color: #{map-deep-get($config-pullquote, "color", "border")};
 	border-top-width: #{map-deep-get($config-pullquote, "border", "width")};
 	border-bottom-color: #{map-deep-get($config-pullquote, "color", "border")};
 	border-bottom-width: #{map-deep-get($config-pullquote, "border", "width")};
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 
-	p {
+	blockquote p {
 		@include font-family( map-deep-get($config-pullquote, "font", "family") );
 		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};
+	}
+	&.is-style-solid-color {
+		blockquote p {
+			font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		}
 	}
 
 	a {
@@ -27,43 +27,14 @@
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
 		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
-		display: block;
 	}
 
-	/**
-	 * Block Options
-	 */
-	&:not(.is-style-solid-color) {
-		background: none;
-
-		blockquote {
-			padding-left: 0;
-		}
-	}
-
-	&.is-style-default {
-		&.alignleft,
-		&.aligncenter,
-		&.alignright {
-			blockquote > * {
-				text-align: center;
-			}
-		}
+	blockquote {
+		padding-left: 0;
 	}
 
 	&.is-style-solid-color {
-
 		color: #{map-deep-get($config-global, "color", "background", "default")};
-
-		&:not(.alignleft):not(.alignright) blockquote {
-			@extend %responsive-aligndefault;
-		}
-
-		blockquote {
-			padding-left: #{map-deep-get($config-global, "spacing", "unit")};
-			padding-right: #{map-deep-get($config-global, "spacing", "unit")};
-			max-width: inherit;
-		}
 
 		.wp-block-pullquote__citation,
 		cite,
@@ -74,14 +45,5 @@
 		&:not(.has-background) {
 			background-color: #{map-deep-get($config-pullquote, "color", "background")};
 		}
-	}
-
-	&.alignwide > p,
-	&.alignfull > p,
-	&.alignwide blockquote,
-	&.alignfull blockquote {
-		margin-left: auto;
-		margin-right: auto;
-		@extend %responsive-aligndefault;
 	}
 }
