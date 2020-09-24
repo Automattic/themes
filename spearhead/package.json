@@ -22,7 +22,7 @@
     "start": "npm run watch",
     "build:style": "node-sass assets/sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
     "build:rtl": "rtlcss style.css style-rtl.css",
-    "build": "run-p \"build:*\"",
+    "build": "run-s \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   }
 }
