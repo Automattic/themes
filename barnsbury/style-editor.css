@@ -837,30 +837,23 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote {
-	padding: calc( 3 * 16px) 0;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
 	border-top-color: #3C2323;
 	border-top-width: 4px;
 	border-bottom-color: #3C2323;
 	border-bottom-width: 4px;
 	color: #3C2323;
-	/**
-	 * Block Options
-	 */
 }
 
-.wp-block-pullquote blockquote {
-	padding-left: 0;
-}
-
-.wp-block-pullquote p {
+.wp-block-pullquote blockquote p {
 	font-family: "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
 	font-family: var(--font-headings, "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif);
-	font-size: 1.64303em;
+	font-size: 1.64303rem;
 	letter-spacing: normal;
 	line-height: 1.15;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	font-size: 1.64303rem;
 }
 
 .wp-block-pullquote a {
@@ -871,28 +864,16 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
 	color: #844d4d;
-	font-size: 0.84746em;
+	font-size: 0.84746rem;
 	letter-spacing: normal;
 }
 
-.wp-block-pullquote:not(.is-style-solid-color) {
-	background: none;
+.wp-block-pullquote blockquote {
+	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #20603C;
 	color: #FFFDF6;
-}
-
-.wp-block-pullquote.is-style-solid-color.alignleft blockquote,
-.wp-block-pullquote.is-style-solid-color.alignright blockquote {
-	padding-left: 16px;
-	padding-right: 16px;
-	max-width: inherit;
-}
-
-.wp-block-pullquote.is-style-solid-color blockquote {
-	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -901,12 +882,8 @@ p.has-background:not(.has-background-background-color) a {
 	color: currentColor;
 }
 
-.wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote {
-	margin-left: auto;
-	margin-right: auto;
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #20603C;
 }
 
 .wp-block-quote {

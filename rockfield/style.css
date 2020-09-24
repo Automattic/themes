@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Rockfield is a refined theme designed for restaurants and food-related businesses seeking a classic, elegant look.
 Requires at least: WordPress 4.9.6
-Version: 1.3.4
+Version: 1.3.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2082,26 +2082,23 @@ p.has-background {
 }
 
 .wp-block-pullquote {
-	padding: calc( 3 * 16px) 0;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
 	border-top-color: #E0E0E0;
 	border-top-width: 2px;
 	border-bottom-color: #E0E0E0;
 	border-bottom-width: 2px;
 	color: #444444;
-	/**
-	 * Block Options
-	 */
 }
 
-.wp-block-pullquote p {
+.wp-block-pullquote blockquote p {
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 	font-family: var(--font-headings, Lora, Baskerville, Georgia, Times, serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	font-size: 1.728rem;
 }
 
 .wp-block-pullquote a {
@@ -2114,29 +2111,14 @@ p.has-background {
 	color: #757575;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
-	display: block;
 }
 
-.wp-block-pullquote:not(.is-style-solid-color) {
-	background: none;
-}
-
-.wp-block-pullquote:not(.is-style-solid-color) blockquote {
+.wp-block-pullquote blockquote {
 	padding-left: 0;
-}
-
-.wp-block-pullquote.is-style-default.alignleft blockquote > *, .wp-block-pullquote.is-style-default.aligncenter blockquote > *, .wp-block-pullquote.is-style-default.alignright blockquote > * {
-	text-align: center;
 }
 
 .wp-block-pullquote.is-style-solid-color {
 	color: white;
-}
-
-.wp-block-pullquote.is-style-solid-color blockquote {
-	padding-left: 16px;
-	padding-right: 16px;
-	max-width: inherit;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -2147,14 +2129,6 @@ p.has-background {
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background) {
 	background-color: #222222;
-}
-
-.wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote {
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .wp-block-quote {
@@ -3629,10 +3603,7 @@ img#wpstats {
  * Page Layout Styles & Repsonsive Styles
  */
 /* Responsive width-content overrides */
-.responsive-max-width, .entry-content > .wp-block-button.aligncenter, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
+.responsive-max-width, .entry-content > .wp-block-button.aligncenter, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 .entry-content > *:not(.wp-block-button),
 .entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 	max-width: 100%;
@@ -3641,10 +3612,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 560px) {
-	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-	.wp-block-pullquote.alignfull > p,
-	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
+	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 	.entry-content > *:not(.wp-block-button),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 560px - 32px);
@@ -3652,10 +3620,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 640px) {
-	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-	.wp-block-pullquote.alignfull > p,
-	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
+	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 	.entry-content > *:not(.wp-block-button),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 640px - 32px);
@@ -3663,10 +3628,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 782px) {
-	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-	.wp-block-pullquote.alignfull > p,
-	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
+	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 	.entry-content > *:not(.wp-block-button),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
@@ -3674,10 +3636,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 1024px) {
-	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-	.wp-block-pullquote.alignfull > p,
-	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
+	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 	.entry-content > *:not(.wp-block-button),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
@@ -3685,10 +3644,7 @@ img#wpstats {
 }
 
 @media only screen and (min-width: 1280px) {
-	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, .wp-block-pullquote.is-style-solid-color:not(.alignleft):not(.alignright) blockquote, .wp-block-pullquote.alignwide > p,
-	.wp-block-pullquote.alignfull > p,
-	.wp-block-pullquote.alignwide blockquote,
-	.wp-block-pullquote.alignfull blockquote, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
+	.responsive-max-width, .entry-content > .wp-block-button.aligncenter, hr.wp-block-separator.is-style-wide, .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 	.entry-content > *:not(.wp-block-button),
 	.entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator), .entry-content .wp-audio-shortcode, .post-navigation, .pagination {
 		max-width: calc( 782px - 32px);
