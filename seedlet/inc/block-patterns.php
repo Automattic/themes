@@ -26,9 +26,10 @@ if ( function_exists( 'register_block_pattern' ) ) {
 		array (
 			'title'		=> __( 'Group with Split Background', 'seedlet' ),
 			'categories'=> array( 'seedlet' ),
-			'content'	=> "<!-- wp:group {\"align\":\"full\",\"gradient\":\"hard-diagonal\"} -->\n<div class=\"wp-block-group alignfull has-hard-diagonal-gradient-background has-background\"><div class=\"wp-block-group__inner-container\"><!-- wp:spacer -->\n<div style=\"height:100px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img alt=\"\"/></figure>\n<!-- /wp:image -->\n\n<!-- wp:spacer -->\n<div style=\"height:100px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n<!-- /wp:spacer --></div></div>\n<!-- /wp:group -->",
+			'content'	=> "<!-- wp:group {\"align\":\"full\",\"gradient\":\"hard-diagonal\"} -->\n<div class=\"wp-block-group alignfull has-hard-diagonal-gradient-background has-background\"><div class=\"wp-block-group__inner-container\"><!-- wp:spacer -->\n<div style=\"height:100px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n<!-- /wp:spacer -->\n\n<!-- wp:image -->\n<figure class=\"wp-block-image\"><img src=\"".get_template_directory_uri()."/assets/img/envelope-3.jpg\" alt=\"Envelope\" /></figure>\n<!-- /wp:image -->\n\n<!-- wp:spacer -->\n<div style=\"height:100px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n<!-- /wp:spacer --></div></div>\n<!-- /wp:group -->",
 		)
 	);
+
 	register_block_pattern(
 		'seedlet/group-image-overlap',
 		array (
