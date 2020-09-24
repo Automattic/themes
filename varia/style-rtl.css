@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.5.3
+Version: 1.5.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: varia
@@ -2163,7 +2163,6 @@ p.has-background {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: blue;
 	color: white;
 }
 
@@ -2177,6 +2176,10 @@ p.has-background {
 .wp-block-pullquote.is-style-solid-color cite,
 .wp-block-pullquote.is-style-solid-color footer {
 	color: currentColor;
+}
+
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: blue;
 }
 
 .wp-block-pullquote.alignwide > p,

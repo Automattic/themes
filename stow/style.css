@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A bold and clean theme - Stow is the ideal choice for creating an online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.4.3
+Version: 1.4.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -2130,7 +2130,6 @@ p.has-background {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #404040;
 	color: white;
 }
 
@@ -2144,6 +2143,10 @@ p.has-background {
 .wp-block-pullquote.is-style-solid-color cite,
 .wp-block-pullquote.is-style-solid-color footer {
 	color: currentColor;
+}
+
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #404040;
 }
 
 .wp-block-pullquote.alignwide > p,
