@@ -464,8 +464,18 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 function seedlet_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$color_bg = $colors_array['colors']['bg'];
+	$color_bg = $colors_array['colors']['txt'];
+	$color_bg = $colors_array['colors']['link'];
 	$color_fg1 = $colors_array['colors']['fg1'];
 	$color_fg2 = $colors_array['colors']['fg2']; ?>
+
+	:root {
+		--global--color-background: <?php echo $colors_array['colors']['bg']; ?>;
+		--global--color-foreground: <?php echo $colors_array['colors']['txt']; ?>;
+		--global--color-primary: <?php echo $colors_array['colors']['link']; ?>;
+		--global--color-secondary: <?php echo $colors_array['colors']['fg1']; ?>;
+		--global--color-tertiary: <?php echo $colors_array['colors']['fg2']; ?>;
+	}
 
 	/*
 	 * Site title text shadow.
