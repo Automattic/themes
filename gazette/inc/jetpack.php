@@ -75,10 +75,10 @@ add_action( 'loop_start', 'gazette_remove_sharedaddy' );
  * Return early if Site Logo is not available.
  */
 function gazette_the_site_logo() {
-	if ( ! function_exists( 'jetpack_the_site_logo' ) ) {
-		return;
-	} else {
+	if ( function_exists( 'jetpack_the_site_logo' ) && has_site_logo() ) {
 		jetpack_the_site_logo();
+	} else {
+		return;
 	}
 }
 
