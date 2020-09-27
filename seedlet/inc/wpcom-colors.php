@@ -91,7 +91,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 ), __( 'Background Color' ) );
 
 // Foreground Color
-// --global--color-background
+// --global--color-foreground-light
 add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
