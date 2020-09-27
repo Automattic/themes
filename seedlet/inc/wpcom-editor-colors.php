@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Custom Colors: Seedlet
+ * Custom Editor Colors: Seedlet
  */
 
 // Background Color

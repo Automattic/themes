@@ -22,16 +22,10 @@
 	// we need to manually override the "extra CSS" when a user selects a different color palette.
 	wp.customize( 'colors_manager[colors]', function( value ) {
 		value.bind( function( to ) {
-			const { bg, fg1, fg2, txt, link } = to;
-			const extraCSS = `
-				:root {
-					--global--color-background: ${ bg };
-					--global--color-foreground: ${ txt };
-					--global--color-primary: ${ link };
-					--global--color-secondary: ${ fg1 };
-					--global--color-tertiary: ${ fg2 };
-				}
-
+			const { bg, fg1, fg2 } = to;
+			const extraCSS = `/*
+				* Site title text shadow.
+				*/
 				.site-title a {
 					background-image: linear-gradient(to right, ${ fg1 } 100%, transparent 100%);
 					text-shadow: 1px 0px ${ bg },
