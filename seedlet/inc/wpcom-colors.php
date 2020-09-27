@@ -91,7 +91,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 ), __( 'Background Color' ) );
 
 // Foreground Color
-// --global--color-foreground-light
+// --global--color-background
 add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
@@ -102,6 +102,7 @@ add_color_rule( 'txt', '#444444', array(
 			.has-background-dark-background-color[class],
 			.has-foreground-color[class],
 			.has-tertiary-background-color[class],
+			.has-tertiary-background-color[class]:not(.has-text-color),
 			.navigation,
 			.pagination .nav-links > *,
 			.post-navigation .meta-nav,
@@ -118,6 +119,8 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-pullquote,
 			.wp-block-search .wp-block-search__input,
 			.wp-block-search .wp-block-search__input:focus,
+			.wp-block-latest-posts .wp-block-latest-posts__post-author,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
 			body,
 			input[type="color"],
 			input[type="color"]:focus,
@@ -464,18 +467,8 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 function seedlet_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$color_bg = $colors_array['colors']['bg'];
-	$color_bg = $colors_array['colors']['txt'];
-	$color_bg = $colors_array['colors']['link'];
 	$color_fg1 = $colors_array['colors']['fg1'];
 	$color_fg2 = $colors_array['colors']['fg2']; ?>
-
-	:root {
-		--global--color-background: <?php echo $colors_array['colors']['bg']; ?>;
-		--global--color-foreground: <?php echo $colors_array['colors']['txt']; ?>;
-		--global--color-primary: <?php echo $colors_array['colors']['link']; ?>;
-		--global--color-secondary: <?php echo $colors_array['colors']['fg1']; ?>;
-		--global--color-tertiary: <?php echo $colors_array['colors']['fg2']; ?>;
-	}
 
 	/*
 	 * Site title text shadow.
@@ -545,7 +538,7 @@ add_color_palette( array(
 	'#C8133E',
 	'#4E2F4B',
 	'#F9F9F9',
-), 'Light' );
+), /* translators: This is the name for a color scheme */ 'Light' );
 // Medium
 add_color_palette( array(
 	'#EEF4F7',
@@ -553,7 +546,7 @@ add_color_palette( array(
 	'#35845D',
 	'#233252',
 	'#F9F9F9',
-), 'Medium' );
+), /* translators: This is the name for a color scheme */ 'Medium' );
 // Dark
 add_color_palette( array(
 	'#1F2527',
@@ -561,4 +554,4 @@ add_color_palette( array(
 	'#9FD3E8',
 	'#FBE6AA',
 	'#364043',
-), 'Dark' );
+), /* translators: This is the name for a color scheme */ 'Dark' );
