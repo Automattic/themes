@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 /*
  * Custom Colors: Seedlet
  */
 
-// Background Color 
+// Background Color
 // --global--color-background
 add_color_rule( 'bg', '#FFFFFF', array(
 
@@ -91,7 +91,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 ), __( 'Background Color' ) );
 
 // Foreground Color
-// --global--color-background
+// --global--color-foreground-light
 add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
@@ -102,6 +102,7 @@ add_color_rule( 'txt', '#444444', array(
 			.has-background-dark-background-color[class],
 			.has-foreground-color[class],
 			.has-tertiary-background-color[class],
+			.has-tertiary-background-color[class]:not(.has-text-color),
 			.navigation,
 			.pagination .nav-links > *,
 			.post-navigation .meta-nav,
@@ -118,6 +119,8 @@ add_color_rule( 'txt', '#444444', array(
 			.wp-block-pullquote,
 			.wp-block-search .wp-block-search__input,
 			.wp-block-search .wp-block-search__input:focus,
+			.wp-block-latest-posts .wp-block-latest-posts__post-author,
+			.wp-block-latest-posts .wp-block-latest-posts__post-date,
 			body,
 			input[type="color"],
 			input[type="color"]:focus,
@@ -154,7 +157,7 @@ add_color_rule( 'txt', '#444444', array(
 
 	// Background-color
 	array( '.wp-block-pullquote.is-style-solid-color,
-			.wp-block-cover-image.has-background-dim, 
+			.wp-block-cover-image.has-background-dim,
 			.wp-block-cover.has-background-dim', 'background-color' ),
 
 	// Border-bottom-color
@@ -302,7 +305,7 @@ add_color_rule( 'fg1', '#3C8067', array(
 			input[type="submit"]', 'background-color' ),
 
 	// Border-color
-	array( '.primary-navigation .menu-item > a:hover, 
+	array( '.primary-navigation .menu-item > a:hover,
 			.woo-navigation .menu-item > a:hover,
 			.entry-meta a:hover,
 			.entry-footer a:hover,
@@ -320,10 +323,10 @@ add_color_rule( 'fg1', '#3C8067', array(
 
 	// Outline-color
 	array( '.site :focus', 'outline-color' ),
-	
+
 	// Background-image
 	array( '.site-title a', 'Background-image' ),
-	
+
 	// Text-decoration-color
 	array( '.site-title > a', 'text-decoration-color' ),
 
@@ -458,7 +461,7 @@ add_color_rule( 'fg2', '#FAFBF6', array(
 ), __( 'Tertiary Color' ) );
 
 /**
- * Custom CSS. 
+ * Custom CSS.
  * The plugin takes the body of this function and applies it in a style tag in the document head.
  */
 function seedlet_custom_colors_extra_css() {
@@ -467,24 +470,24 @@ function seedlet_custom_colors_extra_css() {
 	$color_fg1 = $colors_array['colors']['fg1'];
 	$color_fg2 = $colors_array['colors']['fg2']; ?>
 
-	/* 
-	 * Site title text shadow. 
+	/*
+	 * Site title text shadow.
 	*/
 	.site-title a {
 		background-image: linear-gradient(to right, <?php echo $color_fg1; ?> 100%, transparent 100%);
-		text-shadow: 1px 0px <?php echo $color_bg; ?>, 
-					 -1px 0px <?php echo $color_bg; ?>, 
-					 -2px 0px <?php echo $color_bg; ?>, 
-					 2px 0px <?php echo $color_bg; ?>, 
-					 -3px 0px <?php echo $color_bg; ?>, 
-					 3px 0px <?php echo $color_bg; ?>, 
-					 -4px 0px <?php echo $color_bg; ?>, 
-					 4px 0px <?php echo $color_bg; ?>, 
-					 -5px 0px <?php echo $color_bg; ?>, 
+		text-shadow: 1px 0px <?php echo $color_bg; ?>,
+					 -1px 0px <?php echo $color_bg; ?>,
+					 -2px 0px <?php echo $color_bg; ?>,
+					 2px 0px <?php echo $color_bg; ?>,
+					 -3px 0px <?php echo $color_bg; ?>,
+					 3px 0px <?php echo $color_bg; ?>,
+					 -4px 0px <?php echo $color_bg; ?>,
+					 4px 0px <?php echo $color_bg; ?>,
+					 -5px 0px <?php echo $color_bg; ?>,
 					 5px 0px <?php echo $color_bg; ?>;
 	}
 
-	/* 
+	/*
 	 * Custom gradients.
 	*/
 	.has-hard-diagonal-gradient-background {
@@ -535,7 +538,7 @@ add_color_palette( array(
 	'#C8133E',
 	'#4E2F4B',
 	'#F9F9F9',
-), 'Light' );
+), /* translators: This is the name for a color scheme */ 'Light' );
 // Medium
 add_color_palette( array(
 	'#EEF4F7',
@@ -543,7 +546,7 @@ add_color_palette( array(
 	'#35845D',
 	'#233252',
 	'#F9F9F9',
-), 'Medium' );
+), /* translators: This is the name for a color scheme */ 'Medium' );
 // Dark
 add_color_palette( array(
 	'#1F2527',
@@ -551,4 +554,4 @@ add_color_palette( array(
 	'#9FD3E8',
 	'#FBE6AA',
 	'#364043',
-), 'Dark' );
+), /* translators: This is the name for a color scheme */ 'Dark' );
