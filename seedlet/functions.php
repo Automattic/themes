@@ -75,6 +75,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 				'caption',
 				'style',
 				'script',
+				'navigation-widgets',
 			)
 		);
 

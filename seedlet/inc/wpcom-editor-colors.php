@@ -4,7 +4,7 @@
  * Custom Editor Colors: Seedlet
  */
 
-// Background Color 
+// Background Color
 // --global--color-background
 add_color_rule( 'bg', '#FFFFFF', array(
 
@@ -67,7 +67,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 ), __( 'Background Color' ) );
 
 // Foreground Color
-// --global--color-background
+// --global--color-foreground-light
 add_color_rule( 'txt', '#444444', array(
 
 	// Text-color
@@ -85,7 +85,11 @@ add_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper blockquote footer,
 			#editor .editor-styles-wrapper figcaption,
 			#editor .editor-styles-wrapper .editor-post-title .editor-post-title__input,
-			#editor .editor-styles-wrapper .editor-post-title .editor-post-title__input::placeholder', 'color' ),
+			#editor .editor-styles-wrapper .editor-post-title .editor-post-title__input::placeholder
+			#editor .editor-styles-wrapper .has-tertiary-background-color[class],
+			#editor .editor-styles-wrapper .has-tertiary-background-color[class] a,
+			#editor .editor-styles-wrapper .has-tertiary-background-color[class]:not(.has-text-color)
+			#editor .editor-styles-wrapper .has-tertiary-background-color[class]:not(.has-text-color) a', 'color' ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .wp-block-cover,
@@ -175,7 +179,7 @@ add_color_rule( 'fg1', '#3C8067', array(
 	// border-bottom-color
 	array( '#editor .editor-styles-wrapper .wp-block-file .wp-block-file__textlink,
 			#editor .editor-styles-wrapper a', 'border-bottom-color' ),
-	
+
 	// border-left-color
 	array( '#editor .editor-styles-wrapper .wp-block-quote,
 			#editor .editor-styles-wrapper .wp-block-quote.is-large,
@@ -229,7 +233,7 @@ function seedlet_custom_colors_extra_css() {
 	$color_fg1 = $colors_array['colors']['fg1'];
 	$color_fg2 = $colors_array['colors']['fg2']; ?>
 
-	/* 
+	/*
 	 * Custom gradients.
 	*/
 	#editor .editor-styles-wrapper .has-hard-diagonal-gradient-background {
