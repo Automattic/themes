@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<ruleset name="VariableAnalysis">
+ <description>A code sniff to detect problems with variables.</description>
+
+ <!-- If you want everything, with the defaults, just include this line -->
+ <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis"/>
+ <!--
+    You can also refer to these policy codes to customize them:
+      VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable
+      VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
+      VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
+      VariableAnalysis.CodeAnalysis.VariableAnalysis.SelfOutsideClass
+ -->
+
+ <!-- Include this block to customize VariableAnalysis behaviour -->
+ <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+  <properties>
+   <!--
+      Include the following property if you want to include your own list of pass-by-reference
+      functions defined in your codebase.
+      Format is "function:argnum" or "function:argnum1,argnum2" etc.
+      Whitespace delimits function definitions.
+      Argument numbers start at 1 and an elipsis '...' means all argument numbers
+      after the previous should be considered pass-by-reference.
+   -->
+   <property name="sitePassByRefFunctions" value="
+    function_with_first_arg_by_ref:1
+    function_with_second_and_third_arg_by_ref:2,3
+    function_with_third_and_remaining_args_by_ref:3,...
+    "/>
+   <!--
+      Include the following property if you want to prevent exception variables declared
+      in a catch block from causing an unused variable warning, this supports the common
+      (but not always wanted) pattern of:
+        try {
+            // stuff here
+        } catch (Exception $e) {
+            // Do something without ever using $e
+        }
+   -->
+   <property name="allowUnusedCaughtExceptions" value="1"/>
+   <!--
+      Include the following property if you want to prevent function parametets from causing an
+      unused variable warning, this supports the common pattern of defining callback functions that
+      demand a fixed parameter list without actually using all the paramets.
+        function foo ($a, $b, $c) {
+            // Do something without ever using some of $a, $b and/or $c
+        }
+   -->
+   <property name="allowUnusedFunctionParameters" value="1"/>
+   <!--
+      Include the following property if you want to have a whitelist of variable names
+      that are commonly used for placeholder "junk" values that ignored and that you
+      don't want to provoke an unused variable warning for.
+      Format is "variableName" without a leading $ with whitespace delimiting names.
+   -->
+   <property name="validUnusedVariableNames" value="
+    junk
+    dummy
+    "/>
+  </properties>
+ </rule>
+
+</ruleset>
