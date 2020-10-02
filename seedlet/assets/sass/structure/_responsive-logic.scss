@@ -5,9 +5,7 @@
 /**
  * Required Variables
  */
-$flexwidth: 100%;
-$horizontal_space: var(--global--spacing-horizontal);
-
+$default_width: 750px;
 $breakpoint_sm: 482px;
 $breakpoint_md: 592px;
 $breakpoint_lg: 652px;
@@ -82,9 +80,9 @@ $breakpoint_xxl: 1024px;
  * Root Media Query Variables
  */
 :root {
-	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal));
-	--responsive--aligndefault-width: 100%;
-	--responsive--alignwide-width: 100%;
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
+	--responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
 	--responsive--alignfull-width: 100%;
 	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
 	--responsive--alignright-margin: var(--global--spacing-horizontal);
@@ -93,17 +91,6 @@ $breakpoint_xxl: 1024px;
 
 @include media(mobile) {
 	:root {
-		--responsive--aligndefault-width: calc(#{$breakpoint_sm} - var(--responsive--spacing-horizontal));
-		--responsive--alignwide-width: calc(#{$breakpoint_sm} - var(--responsive--spacing-horizontal));
-		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-	}
-}
-
-@include media(tablet) {
-	:root {
-		--responsive--aligndefault-width: calc(#{$breakpoint_sm} - var(--responsive--spacing-horizontal));
-		--responsive--alignwide-width: calc(#{$breakpoint_md} - var(--responsive--spacing-horizontal));
 		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 	}
@@ -111,28 +98,8 @@ $breakpoint_xxl: 1024px;
 
 @include media(laptop) {
 	:root {
-		--responsive--aligndefault-width: calc(#{$breakpoint_md} - var(--responsive--spacing-horizontal));
-		--responsive--alignwide-width: calc(#{$breakpoint_lg} - var(--responsive--spacing-horizontal));
-		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-	}
-}
-
-@include media(desktop) {
-	:root {
-		--responsive--aligndefault-width: calc(#{$breakpoint_lg} - var(--responsive--spacing-horizontal));
-		--responsive--alignwide-width: calc(#{$breakpoint_xl} - var(--responsive--spacing-horizontal));
-		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-	}
-}
-
-@include media(wide) {
-	:root {
-		--responsive--aligndefault-width: calc(#{$breakpoint_lg} - var(--responsive--spacing-horizontal));
-		--responsive--alignwide-width: calc(#{$breakpoint_xl} - var(--responsive--spacing-horizontal));
-		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), #{$default_width});
+		--responsive--alignwide-width: calc(100vw - 8 * var(--global--spacing-horizontal));
 	}
 }
 

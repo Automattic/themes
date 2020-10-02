@@ -11,7 +11,7 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header default-max-width">
+	<header class="page-header alignwide">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'seedlet' ); ?></h1>
 	</header><!-- .page-header -->
 
