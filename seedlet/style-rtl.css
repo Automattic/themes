@@ -1007,20 +1007,24 @@ a:active {
 	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
 }
 
+.has-link-color a:hover, .has-link-color a:focus {
+	border-bottom-color: transparent;
+}
+
 .has-background:not(.has-background-background-color) .has-link-color a,
 .has-background:not(.has-background-background-color).has-link-color a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+button,
+a {
+	cursor: pointer;
 }
 
 .site *:focus {
 	outline-width: 1px;
 	outline-style: dotted;
 	outline-color: var(--global--color-secondary);
-}
-
-button,
-a {
-	cursor: pointer;
 }
 
 /* Text meant only for screen readers. */
