@@ -12,7 +12,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header alignwide">
+	<header class="entry-header default-max-width">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( ! is_page() ) : ?>
 		<div class="entry-meta">

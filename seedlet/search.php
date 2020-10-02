@@ -16,7 +16,7 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header alignwide">
+			<header class="page-header default-max-width">
 				<?php
 				printf(
 					/* translators: 1: search result title. 2: search term. */
