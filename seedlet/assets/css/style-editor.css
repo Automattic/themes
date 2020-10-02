@@ -289,6 +289,47 @@
 /**
  * Output
  */
+a {
+	border-bottom: 1px solid var(--global--color-secondary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
+	text-decoration: none;
+	transition: border-color 0.1s ease-out;
+}
+
+a:hover, a:focus {
+	border-bottom-color: transparent;
+}
+
+a:hover {
+	color: var(--global--color-primary-hover);
+}
+
+a:focus {
+	color: var(--global--color-secondary);
+}
+
+a:active {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a {
+	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.has-link-color a:hover, .has-link-color a:focus {
+	border-bottom-color: transparent;
+}
+
+.has-background:not(.has-background-background-color) .has-link-color a,
+.has-background:not(.has-background-background-color).has-link-color a {
+	color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+button,
+a {
+	cursor: pointer;
+}
+
 body {
 	--wp--typography--line-height: var(--global--line-height-body);
 	color: var(--global--color-foreground);
@@ -302,42 +343,6 @@ body {
 
 .editor-post-title__block {
 	font-size: var(--global--font-size-root);
-}
-
-.wp-block a {
-	border-bottom: 1px solid var(--global--color-secondary);
-	color: var(--wp--style--color--link, var(--global--color-primary));
-	text-decoration: none;
-}
-
-.wp-block a:hover, .wp-block a:focus {
-	border-bottom-color: transparent;
-}
-
-.wp-block a:hover {
-	color: var(--global--color-primary-hover);
-}
-
-.wp-block a:focus {
-	color: var(--global--color-secondary);
-}
-
-.wp-block a:active {
-	color: var(--wp--style--color--link, var(--global--color-primary));
-}
-
-.has-link-color .wp-block a {
-	border-bottom: 1px solid var(--wp--style--color--link);
-}
-
-.has-background:not(.has-background-background-color) .has-link-color a,
-.has-background:not(.has-background-background-color).has-link-color a {
-	color: var(--wp--style--color--link, var(--global--color-primary));
-}
-
-button,
-a {
-	cursor: pointer;
 }
 
 /**

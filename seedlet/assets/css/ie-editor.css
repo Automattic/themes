@@ -108,44 +108,35 @@
 /**
  * Output
  */
-body {
-	color: #333333;
-	background-color: #FFFFFF;
-	font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	font-weight: normal;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-}
-
-.editor-post-title__block {
-	font-size: 18px;
-}
-
-.wp-block a {
+a {
 	border-bottom: 1px solid #3C8067;
 	color: #000000;
 	text-decoration: none;
+	transition: border-color 0.1s ease-out;
 }
 
-.wp-block a:hover, .wp-block a:focus {
+a:hover, a:focus {
 	border-bottom-color: transparent;
 }
 
-.wp-block a:hover {
+a:hover {
 	color: #3C8067;
 }
 
-.wp-block a:focus {
+a:focus {
 	color: #3C8067;
 }
 
-.wp-block a:active {
+a:active {
 	color: #000000;
 }
 
-.has-link-color .wp-block a {
-	border-bottom: undefined;
+.has-link-color a {
+	border-bottom: 1px solid #000000;
+}
+
+.has-link-color a:hover, .has-link-color a:focus {
+	border-bottom-color: transparent;
 }
 
 .has-background:not(.has-background-background-color) .has-link-color a {
@@ -159,6 +150,20 @@ body {
 button,
 a {
 	cursor: pointer;
+}
+
+body {
+	color: #333333;
+	background-color: #FFFFFF;
+	font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+.editor-post-title__block {
+	font-size: 18px;
 }
 
 /**
