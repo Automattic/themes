@@ -20,7 +20,8 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 	function spearhead_setup() {
 
 		// Add support for editor styles.
-        add_theme_support( 'editor-styles' );
+		add_theme_support( 'editor-styles' );
+		add_theme_support( 'dark-editor-style' );
 
 		// Enqueue editor styles.
 		add_editor_style( array(
@@ -130,7 +131,7 @@ function spearhead_block_extends() {
 	// Block Tweaks
 	wp_enqueue_script( 'spearhead-block-extends',
 		get_stylesheet_directory_uri() . '/assets/js/extend-blocks.js',
-		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation 
+		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation
 	);
 }
 add_action( 'enqueue_block_assets', 'spearhead_block_extends' );
@@ -150,7 +151,7 @@ function spearhead_fonts_url() : string {
 
     // Make a single request for the theme fonts.
     $fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
-    
+
     return $fonts_url;
 }
 
