@@ -390,7 +390,8 @@ function seedlet_scripts() {
 		wp_register_script( 'css-vars-ponyfill', get_stylesheet_directory_uri() . '/assets/js/css-vars-ponyfill2.js' );
 		wp_enqueue_script( 'ie11-fix',
 			get_stylesheet_directory_uri() . '/assets/js/ie11-fix.js',
-			array( 'css-vars-ponyfill' )
+			array( 'css-vars-ponyfill' ),
+			'1.0'
 		);
 	}
 
