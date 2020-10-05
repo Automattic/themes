@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Seedlet
- * @since 1.0.1
+ * @since 1.0.10
  */
 
 /**
