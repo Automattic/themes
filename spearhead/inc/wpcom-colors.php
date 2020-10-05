@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Custom Colors: Seedlet
+ * Custom Colors: Spearhead
  */
 
 // Background Color
