@@ -1,7 +1,7 @@
 /* Block Alignments */
 
 /**
- * These selectors set the default max width for content appearing inside a post or page. 
+ * These selectors set the default max width for content appearing inside a post or page.
  */
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
 *[class*="inner-container"] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce) {
@@ -22,7 +22,7 @@
 	margin-bottom: var(--global--spacing-vertical);
 }
 
-// Targeting the .entry-content class is necessary to ensure these styles 
+// Targeting the .entry-content class is necessary to ensure these styles
 // only apply when the block isn't nested.
 .entry-content > .alignleft {
 	max-width: var(--responsive--aligndefault-width);
@@ -54,7 +54,7 @@
 	margin-left: var(--global--spacing-horizontal);
 }
 
-// Targeting the .entry-content class is necessary to ensure these styles 
+// Targeting the .entry-content class is necessary to ensure these styles
 // only apply when the block isn't nested.
 .entry-content > .alignright {
 	max-width: var(--responsive--aligndefault-width);
@@ -85,7 +85,6 @@
  */
 .alignfull {
 	clear: both;
-	@extend %responsive-alignfull-width-mobile;
 	@extend %responsive-alignfull-width;
 }
 
@@ -160,7 +159,7 @@
 
 .has-primary-background-color[class] {
 	background-color: var(--global--color-primary);
-	
+
 	&:not(.has-text-color) {
 		color: var(--global--color-background);
 	}
@@ -305,8 +304,8 @@
 
 @import "spacing-overrides";
 
-/* 
- * Custom gradients 
+/*
+ * Custom gradients
 */
 .has-hard-diagonal-gradient-background {
 	background: linear-gradient(to bottom right, var(--global--color-secondary) 49.9%, var(--global--color-tertiary) 50%);
