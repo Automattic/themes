@@ -1,6 +1,6 @@
 {
   "name": "seedlet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Seedlet",
   "bugs": {
     "url": "https://github.com/Automattic/seedlet/issues"
@@ -13,12 +13,6 @@
     "minimist": "^1.2.2",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
-    "postcss-calc": "^7.0.2",
-    "postcss-cli": "^7.1.0",
-    "postcss-css-variables": "^0.17.0",
-    "postcss-custom-media": "^7.0.8",
-    "postcss-focus-within": "^3.0.0",
-    "postcss-nested": "^4.2.1",
     "rtlcss": "^2.4.0"
   },
   "rtlcssConfig": {
@@ -45,8 +39,6 @@
     "build:woocommerce-rtl": "rtlcss assets/css/style-woocommerce.css assets/css/style-woocommerce-rtl.css",
     "build:rtl": "rtlcss style.css style-rtl.css",
     "build:print": "node-sass assets/sass/print.scss assets/css/print.css --output-style expanded --indent-type tab --indent-width 1 --source-map true",
-    "build:ie": "postcss style.css -o assets/css/ie.css",
-    "build:ie-editor": "postcss assets/css/style-editor.css -o assets/css/ie-editor.css",
     "build": "run-s \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
     "child-theme": "sh ../theme-dev-utils/build-child-theme.sh"

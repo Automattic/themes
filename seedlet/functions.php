@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Seedlet
- * @since 1.0.0
+ * @since 1.0.1
  */
 
 /**
@@ -366,17 +366,7 @@ function seedlet_scripts() {
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
 	// Theme styles
-
-	// Note, the is_IE global variable is defined by WordPress and is used
-	// to detect if the current browser is internet explorer.
-	global $is_IE;
-	if ( $is_IE ) {
-		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
-		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
-	} else {
-		// If not IE, use the standard stylesheet
-		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-	}
+	wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// RTL styles
 	wp_style_add_data( 'seedlet-style', 'rtl', 'replace' );
@@ -391,6 +381,20 @@ function seedlet_scripts() {
 
 	// Main navigation scripts
 	wp_enqueue_script( 'seedlet-primary-navigation-script', get_template_directory_uri() . '/assets/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
+
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
+		// If IE 11 or below, use a ponyfill to add CSS Variable support
+		wp_register_script( 'css-vars-ponyfill', get_stylesheet_directory_uri() . '/assets/js/css-vars-ponyfill2.js' );
+		wp_enqueue_script( 'ie11-fix',
+			get_stylesheet_directory_uri() . '/assets/js/ie11-fix.js',
+			array( 'css-vars-ponyfill' ),
+			'1.0'
+		);
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'seedlet_scripts' );
 
