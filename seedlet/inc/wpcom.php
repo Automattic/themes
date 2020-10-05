@@ -134,7 +134,7 @@ function seedlet_wpcom_setup() {
 add_action( 'after_setup_theme', 'seedlet_wpcom_setup' );
 
 /**
- * Add settings for hiding page title on the homepage 
+ * Add settings for hiding page title on the homepage
  * and a customizer message about contrast.
  */
 function seedlet_wpcom_customize_update( $wp_customize ) {
@@ -188,7 +188,7 @@ function seedlet_sanitize_checkbox( $input ) {
  * Bind JS handlers to instantly live-preview changes.
  */
 function seedlet_wpcom_customize_preview_js() {
-	wp_enqueue_script( 'seedlet_wpcom_customize_preview', get_theme_file_uri( '/inc/wpcom-customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+	wp_enqueue_script( 'seedlet_wpcom_customize_preview', get_theme_file_uri( '/inc/wpcom-customize-preview.js' ), array( 'customize-preview' ), '1.1', true );
 }
 add_action( 'customize_preview_init', 'seedlet_wpcom_customize_preview_js' );
 
