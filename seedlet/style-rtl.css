@@ -360,21 +360,11 @@ Included in theme screenshot and in block patterns.
 	max-width: var(--responsive--alignfull-width);
 }
 
-.entry-content > .alignleft {
-	margin-left: 0;
-	margin-right: var(--responsive--spacing-horizontal);
-}
-
 @media only screen and (min-width: 482px) {
 	.entry-content > .alignleft {
 		margin-left: var(--responsive--alignleft-margin);
 		margin-right: var(--global--spacing-horizontal);
 	}
-}
-
-.entry-content > .alignright {
-	margin-left: var(--responsive--spacing-horizontal);
-	margin-right: 0;
 }
 
 @media only screen and (min-width: 482px) {
@@ -1496,7 +1486,7 @@ object {
 	padding: calc(0.5 * var(--button--padding-vertical)) calc(0.5 * var(--button--padding-horizontal));
 }
 
-.wp-block-gallery:not(.alignfull) {
+.wp-block-gallery {
 	margin: 0 auto;
 }
 
@@ -1505,10 +1495,6 @@ object {
 	margin: 0;
 	color: var(--global--color-white);
 	font: var(--global--font-size-sm);
-}
-
-.wp-block-gallery.alignleft, .wp-block-gallery.alignright {
-	max-width: 50%;
 }
 
 .wp-block-gallery.alignfull .blocks-gallery-grid {
@@ -2384,14 +2370,22 @@ table th,
  */
 .alignleft {
 	text-align: left;
-	float: left;
 	margin-top: 0;
-	margin-right: var(--global--spacing-horizontal);
-	margin-bottom: var(--global--spacing-vertical);
 }
 
 .entry-content > .alignleft {
 	max-width: var(--responsive--aligndefault-width);
+}
+
+@media only screen and (min-width: 482px) {
+	.alignleft {
+		float: left;
+		margin-right: var(--global--spacing-horizontal);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+	.entry-content > .alignleft {
+		max-width: calc(50% - var(--responsive--alignleft-margin));
+	}
 }
 
 /**
@@ -2410,14 +2404,22 @@ table th,
  * .alignright
  */
 .alignright {
-	float: right;
 	margin-top: 0;
 	margin-bottom: var(--global--spacing-vertical);
-	margin-left: var(--global--spacing-horizontal);
 }
 
 .entry-content > .alignright {
 	max-width: var(--responsive--aligndefault-width);
+}
+
+@media only screen and (min-width: 482px) {
+	.alignright {
+		float: right;
+		margin-left: var(--global--spacing-horizontal);
+	}
+	.entry-content > .alignright {
+		max-width: calc(50% - var(--responsive--alignright-margin));
+	}
 }
 
 [class*="inner-container"] > .alignleft + *,
