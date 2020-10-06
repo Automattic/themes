@@ -3452,27 +3452,47 @@ nav a {
 /**
  * Content
  */
-.entry-title {
+/**
+* Editor Post Title
+* - Needs a special styles
+*/
+/*
+color: var(--global--color-primary);
+font-family: var(--heading--font-family);
+font-weight: var(--heading--font-weight);
+font-size: var(--heading--font-size-h2);
+letter-spacing: var(--heading--letter-spacing-h2);
+line-height: var(--heading--line-height);
+}
+*/
+.entry-title,
+.editor-post-title__block .editor-post-title__input {
 	color: var(--entry-header--color);
+	font-family: var(--heading--font-family);
 	font-size: var(--entry-header--font-size);
+	font-weight: var(--heading--font-weight);
 	letter-spacing: var(--heading--letter-spacing-h2);
 	line-height: var(--heading--line-height);
 	overflow-wrap: break-word;
 }
 
-.entry-title a {
+.entry-title a,
+.editor-post-title__block .editor-post-title__input a {
 	color: var(--entry-header--color-link);
 }
 
-.entry-title a:hover {
+.entry-title a:hover,
+.editor-post-title__block .editor-post-title__input a:hover {
 	color: var(--entry-header--color-hover);
 }
 
-.entry-title a:focus {
+.entry-title a:focus,
+.editor-post-title__block .editor-post-title__input a:focus {
 	color: var(--entry-header--color-focus);
 }
 
-.entry-title a:active {
+.entry-title a:active,
+.editor-post-title__block .editor-post-title__input a:active {
 	color: var(--entry-header--color-link);
 }
 
