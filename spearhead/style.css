@@ -59,7 +59,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-link-color a, a {
-	border-bottom: none;
+	border-bottom: 1px solid transparent;
 	transition: all 0.1s ease;
 }
 
@@ -122,6 +122,28 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .wp-block-latest-posts > li > a:hover {
 	color: var(--global--color-primary);
+}
+
+.wp-block-jetpack-related-posts .jp-related-posts-i2__post {
+	margin: 0 var(--global--spacing-horizontal) 0 0;
+}
+
+.wp-block-jetpack-related-posts .jp-related-posts-i2__row {
+	margin: auto;
+}
+
+.wp-block-jetpack-related-posts .jp-related-posts-i2__post-link {
+	font-weight: 500;
+	font-size: var(--wp--present--font-size--medium, --global--font-size-md);
+	line-height: var(--global--line-height-body);
+	width: fit-content;
+}
+
+.wp-block-jetpack-related-posts .jp-related-posts-i2__post-date,
+.wp-block-jetpack-related-posts .jp-related-posts-i2__post-context {
+	font-family: var(--global--font-primary);
+	font-size: var(--global--font-size-xs);
+	text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */
