@@ -119,7 +119,5 @@ if ( files.length ) {
 		if ( lintResult.status ) {
 			linterFailure();
 		}
-	} else {
-		printPhpcsDocs();
 	}
 }

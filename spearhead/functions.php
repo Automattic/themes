@@ -114,7 +114,7 @@ function spearhead_scripts() {
     wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
 
 	// Child theme variables
-	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style('spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child styles
 	wp_enqueue_style('spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
