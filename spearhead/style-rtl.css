@@ -109,8 +109,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	width: fit-content;
 }
 
-a {
+.has-link-color a, a {
 	border-bottom: none;
+	transition: all 0.1s ease;
+}
+
+.has-link-color a:hover, a:hover {
+	color: var(--global--color-primary-hover);
+	border-bottom: 1px solid var(--global--color-primary-hover);
 }
 
 .entry-content a {
