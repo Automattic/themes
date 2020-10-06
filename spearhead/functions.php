@@ -111,7 +111,7 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  */
 function spearhead_scripts() {
 	// enqueue Google fonts, if necessary
-    wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
+    wp_enqueue_style('spearhead-fonts', spearhead_fonts_url(), array(), null );
 
 	// Child theme variables
 	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
