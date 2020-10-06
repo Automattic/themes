@@ -4,14 +4,52 @@ Theme URI: https://github.com/Automattic/themes/root-child
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Share your podcast with the world using Spearhead.
-Requires at least: WordPress 5.4 
+Requires at least: WordPress 5.4
 Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: seedlet
-Text Domain: spearhead 
+Text Domain: spearhead
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+@media (min-width: 782px) {
+	:root {
+		--global--spacing-horizontal: 60px;
+		--global--spacing-vertical: 35px;
+	}
+}
+
 /**
  * Repsonsive Styles
  */
@@ -23,6 +61,16 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 		--responsive--aligndefault-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), 782px);
 		--responsive--alignwide-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), 1247px);
 	}
+}
+
+.has-main-navigation .site-header {
+	padding: var(--global--spacing-horizontal) var(--global--spacing-horizontal);
+}
+
+.site-content {
+	margin: 0 auto;
+	max-width: var(--global--content-width);
+	padding: 0 var(--global--spacing-horizontal);
 }
 
 .home .post .entry-title {
@@ -72,10 +120,38 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	font-weight: 500;
 }
 
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
 @media only screen and (max-width: 481px) {
-	.has-main-navigation .site-header {
-		padding-top: 4px;
-	}
 	.has-main-navigation .site-header .site-description {
 		display: none;
 	}
@@ -113,7 +189,17 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-header > .site-branding, .site-header > nav {
-	margin: 0 calc( var( --global--spacing-horizontal ) / 2);
+	margin: 0;
+}
+
+.menu-button-container {
+	display: flex;
+}
+
+@media (min-width: 782px) {
+	.menu-button-container {
+		display: none;
+	}
 }
 
 .wp-block-latest-posts > li > a {

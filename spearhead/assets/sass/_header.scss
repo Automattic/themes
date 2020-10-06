@@ -1,7 +1,9 @@
+@import '~@wordpress/base-styles/breakpoints';
+@import '~@wordpress/base-styles/mixins';
+
 .has-main-navigation {
     .site-header {
         @include media( mobile-only ){
-            padding-top: 4px;
             .site-description {
                 display: none;
             }
@@ -41,6 +43,14 @@
     }
 
     > .site-branding, > nav {
-        margin: 0 calc( var( --global--spacing-horizontal ) / 2 );
+        margin: 0;
     }
+}
+
+.menu-button-container {
+	display: flex;
+
+	@include break-medium() {
+		display: none;
+	}
 }
