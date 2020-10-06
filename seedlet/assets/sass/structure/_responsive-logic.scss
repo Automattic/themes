@@ -13,14 +13,12 @@
 	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
 	--responsive--alignfull-width: 100%;
 	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
-	--responsive--alignright-margin: var(--global--spacing-horizontal);
-	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+	--responsive--alignrightleft-width: var(--global--spacing-horizontal);
 }
 
 @include media(mobile) {
 	:root {
-		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignrightleft-width: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 	}
 }
 
@@ -72,7 +70,7 @@
 @include media(mobile) {
 	%responsive-alignleft {
 		/*rtl:ignore*/
-		margin-left: var(--responsive--alignleft-margin);
+		margin-left: var(--responsive--alignrightleft-width);
 		/*rtl:ignore*/
 		margin-right: var(--global--spacing-horizontal);
 	}
@@ -83,7 +81,7 @@
 		/*rtl:ignore*/
 		margin-left: var(--global--spacing-horizontal);
 		/*rtl:ignore*/
-		margin-right: var(--responsive--alignright-margin);
+		margin-right: var(--responsive--alignrightleft-width);
 	}
 }
 
