@@ -15,6 +15,7 @@ const _ = require( 'lodash' );
 
 const phpcsChangedPath = getPathForCommand( 'phpcs-changed' );
 const phpcsPath = getPathForCommand( 'phpcs' );
+const phpcbfPath = getPathForCommand( 'phpcbf' );
 
 function quotedPath( pathToQuote ) {
 	if ( pathToQuote.includes( ' ' ) ) {
@@ -37,7 +38,7 @@ function parseGitDiffToPathArray( command ) {
 }
 
 function getPathForCommand( command ) {
-	const composerBinDir = path.join( __dirname, '..', 'vendor', 'bin' );
+	const composerBinDir = path.join( __dirname, 'vendor', 'bin' );
 	let path_to_command;
 	try {
 		path_to_command = execSync( 'command -v ' + command, { encoding: 'utf8' } );
@@ -65,6 +66,13 @@ function phpcsInstalled() {
 	return false;
 }
 
+function phpcbfInstalled() {
+	if ( existsSync( phpcbfPath ) ) {
+		return true;
+	}
+	return false;
+}
+
 function linterFailure() {
 	console.log(
 		chalk.red( 'COMMIT ABORTED:' ),
@@ -78,10 +86,26 @@ function linterFailure() {
 // determine if PHPCS is available
 const phpcs = phpcsInstalled();
 
+// determine if PHPCBF is available
+const phpcbf = phpcbfInstalled();
+
 // grab a list of all the files staged to commit
 const files = parseGitDiffToPathArray( 'git diff --cached --name-only --diff-filter=ACM' ).filter( ( file ) => file.endsWith( '.php' ) );
 
 if ( files.length ) {
+	phpcbfResult = spawnSync( phpcbfPath,
+		[ ...files ],
+		{
+			shell: true,
+			stdio: 'inherit',
+		}
+	);
+
+	if ( phpcbfResult && phpcbfResult.status ) {
+		execSync( `git add ${ files.join( ' ' ) }` );
+		console.log( chalk.yellow( 'PHPCS issues detected and automatically fixed via PHPCBF.' ) );
+	}
+
 	if ( phpcs ) {
 		const lintResult = spawnSync(
 			`PHPCS=${ quotedPath( phpcsPath ) } ${ quotedPath( phpcsChangedPath ) }`,
