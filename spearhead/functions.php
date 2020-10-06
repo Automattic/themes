@@ -24,11 +24,13 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 		add_theme_support( 'dark-editor-style' );
 
 		// Enqueue editor styles.
-		add_editor_style( array(
-			spearhead_fonts_url(),
-			'variables.css',
-			'style.css',
-		) );
+		add_editor_style(
+			array(
+				spearhead_fonts_url(),
+				'variables.css',
+				'style.css',
+			)
+		);
 
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
@@ -93,7 +95,7 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 					'color' => '#FFFFFF',
 				),
 			)
-        );
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'spearhead_setup', 12 );
@@ -111,13 +113,13 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  */
 function spearhead_scripts() {
 	// enqueue Google fonts, if necessary
-    wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
+	wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
 
 	// Child theme variables
-	wp_enqueue_style('spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child styles
-	wp_enqueue_style('spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'spearhead-style', 'rtl', 'replace' );
@@ -129,7 +131,8 @@ add_action( 'wp_enqueue_scripts', 'spearhead_scripts', 11 );
  */
 function spearhead_block_extends() {
 	// Block Tweaks
-	wp_enqueue_script( 'spearhead-block-extends',
+	wp_enqueue_script(
+		'spearhead-block-extends',
 		get_stylesheet_directory_uri() . '/assets/js/extend-blocks.js',
 		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation
 	);
@@ -142,17 +145,17 @@ add_action( 'enqueue_block_assets', 'spearhead_block_extends' );
  * @return string
  */
 function spearhead_fonts_url() : string {
-    $fonts_url = '';
+	$fonts_url = '';
 
 	$font_families   = array();
 	$font_families[] = 'family=Libre+Franklin:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700';
 	$font_families[] = 'family=IBM+Plex+Mono:wght@400;700';
 	$font_families[] = 'display=swap';
 
-    // Make a single request for the theme fonts.
-    $fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
+	// Make a single request for the theme fonts.
+	$fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
 
-    return $fonts_url;
+	return $fonts_url;
 }
 
 /**
