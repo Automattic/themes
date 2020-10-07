@@ -18,7 +18,7 @@
 
 @include media(mobile) {
 	:root {
-		--responsive--alignrightleft-width: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignrightleft-width: calc( 50% - ( 0.5 * (100vw - var(--responsive--aligndefault-width))) ); //calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 	}
 }
 
@@ -70,7 +70,7 @@
 @include media(mobile) {
 	%responsive-alignleft {
 		/*rtl:ignore*/
-		margin-left: var(--responsive--alignrightleft-width);
+		margin-left:  calc( 50% - var(--responsive--alignrightleft-width));
 		/*rtl:ignore*/
 		margin-right: var(--global--spacing-horizontal);
 	}
@@ -81,7 +81,7 @@
 		/*rtl:ignore*/
 		margin-left: var(--global--spacing-horizontal);
 		/*rtl:ignore*/
-		margin-right: var(--responsive--alignrightleft-width);
+		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
 	}
 }
 

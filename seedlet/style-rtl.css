@@ -315,7 +315,7 @@ Included in theme screenshot and in block patterns.
 
 @media only screen and (min-width: 482px) {
 	:root {
-		--responsive--alignrightleft-width: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignrightleft-width: calc( 50% - ( 0.5 * (100vw - var(--responsive--aligndefault-width))) );
 	}
 }
 
@@ -360,7 +360,7 @@ Included in theme screenshot and in block patterns.
 
 @media only screen and (min-width: 482px) {
 	.entry-content > .alignleft {
-		margin-left: var(--responsive--alignrightleft-width);
+		margin-left: calc( 50% - var(--responsive--alignrightleft-width));
 		margin-right: var(--global--spacing-horizontal);
 	}
 }
@@ -368,7 +368,7 @@ Included in theme screenshot and in block patterns.
 @media only screen and (min-width: 482px) {
 	.entry-content > .alignright {
 		margin-left: var(--global--spacing-horizontal);
-		margin-right: var(--responsive--alignrightleft-width);
+		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
 	}
 }
 
@@ -2382,7 +2382,7 @@ table th,
 		margin-bottom: var(--global--spacing-vertical);
 	}
 	.entry-content > .alignleft {
-		max-width: calc(50% - var(--responsive--alignrightleft-width));
+		max-width: var(--responsive--alignrightleft-width);
 	}
 }
 
@@ -2416,7 +2416,7 @@ table th,
 		margin-left: var(--global--spacing-horizontal);
 	}
 	.entry-content > .alignright {
-		max-width: calc(50% - var(--responsive--alignrightleft-width));
+		max-width: var(--responsive--alignrightleft-width);
 	}
 }
 
