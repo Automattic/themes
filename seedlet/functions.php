@@ -368,6 +368,9 @@ function seedlet_scripts() {
 	// Theme styles
 	wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
+	// Navigation styles
+	wp_enqueue_style( 'seedlet-style-navigation', get_template_directory_uri() . '/assets/css/style-navigation.css', array(), wp_get_theme()->get( 'Version' ) );
+
 	// RTL styles
 	wp_style_add_data( 'seedlet-style', 'rtl', 'replace' );
 
