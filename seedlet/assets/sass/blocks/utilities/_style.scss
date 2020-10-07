@@ -21,7 +21,6 @@
 // only apply when the block isn't nested.
 .entry-content > .alignleft {
 	max-width: var(--responsive--aligndefault-width);
-	@extend %responsive-alignleft;
 }
 
 @include media(mobile) {
@@ -38,6 +37,10 @@
 
 	.entry-content > .alignleft {
 		max-width: var(--responsive--alignrightleft-width);
+		/*rtl:ignore*/
+		margin-left:  calc( 50% - var(--responsive--alignrightleft-width));
+		/*rtl:ignore*/
+		margin-right: var(--global--spacing-horizontal);
 	}
 }
 
@@ -65,7 +68,6 @@
 // only apply when the block isn't nested.
 .entry-content > .alignright {
 	max-width: var(--responsive--aligndefault-width);
-	@extend %responsive-alignright;
 }
 
 @include media(mobile) {
@@ -81,6 +83,10 @@
 
 	.entry-content > .alignright {
 		max-width: var(--responsive--alignrightleft-width);
+		/*rtl:ignore*/
+		margin-left: var(--global--spacing-horizontal);
+		/*rtl:ignore*/
+		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
 	}
 }
 

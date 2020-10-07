@@ -358,20 +358,6 @@ Included in theme screenshot and in block patterns.
 	max-width: var(--responsive--alignfull-width);
 }
 
-@media only screen and (min-width: 482px) {
-	.entry-content > .alignleft {
-		margin-left: calc( 50% - var(--responsive--alignrightleft-width));
-		margin-right: var(--global--spacing-horizontal);
-	}
-}
-
-@media only screen and (min-width: 482px) {
-	.entry-content > .alignright {
-		margin-left: var(--global--spacing-horizontal);
-		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
-	}
-}
-
 /**
  * Output
  */
@@ -2383,6 +2369,8 @@ table th,
 	}
 	.entry-content > .alignleft {
 		max-width: var(--responsive--alignrightleft-width);
+		margin-left: calc( 50% - var(--responsive--alignrightleft-width));
+		margin-right: var(--global--spacing-horizontal);
 	}
 }
 
@@ -2417,6 +2405,8 @@ table th,
 	}
 	.entry-content > .alignright {
 		max-width: var(--responsive--alignrightleft-width);
+		margin-left: var(--global--spacing-horizontal);
+		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
 	}
 }
 
