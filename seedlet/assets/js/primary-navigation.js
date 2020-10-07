@@ -36,7 +36,7 @@
 		document.addEventListener( 'keydown', function( event ) {
 			if ( ! wrapper.classList.contains( `${ id }-navigation-open` ) ){
 				return;
-			} 
+			}
 			var modal, elements, selectors, lastEl, firstEl, activeEl, tabKey, shiftKey, escKey;
 
 			modal = document.querySelector( `.${ id }-navigation` );

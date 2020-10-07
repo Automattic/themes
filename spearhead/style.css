@@ -102,7 +102,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header .primary-navigation {
 	flex-grow: 4;
-	justify-content: flex-end;
 	margin-top: 0;
 }
 
@@ -112,11 +111,33 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header .primary-navigation > div > ul li, .site-header .woo-navigation > div > ul li {
 	color: var(--global--color-secondary);
-	margin: 6px calc( var(--global--spacing-horizontal) / 2);
+	margin: 6px;
+	padding: var(--social-nav--padding);
+}
+
+.site-header .primary-navigation > div > ul li a:hover, .site-header .woo-navigation > div > ul li a:hover {
+	border-color: transparent;
+	color: var(--global--color-primary);
 }
 
 .site-header > .site-branding, .site-header > nav {
 	margin: 0;
+}
+
+.site-header .social-navigation ul {
+	justify-content: flex-end;
+	flex-wrap: nowrap;
+}
+
+.site-header .social-navigation li:first-of-type > a,
+.site-header .social-navigation a {
+	padding: 0 0 0 var(--social-nav--padding);
+}
+
+.site-header .social-navigation li:first-of-type > a:hover,
+.site-header .social-navigation a:hover {
+	border-color: transparent;
+	color: var(--global--color-primary);
 }
 
 .wp-block-latest-posts > li > a {
