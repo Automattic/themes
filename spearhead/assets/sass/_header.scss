@@ -29,6 +29,18 @@
 	.primary-navigation {
 		flex-grow: 4;
 		margin-top: 0;
+
+		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
+			.primary-menu-container {
+				padding: var(--global--spacing-unit);
+				background: var(--global--color-foreground);
+				top: 119px;
+
+				a {
+					color: var(--global--color-background);
+				}
+			}
+		}
 	}
 
 	.primary-navigation .menu-item-has-children > .svg-icon {
