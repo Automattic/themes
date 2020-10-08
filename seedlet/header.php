@@ -24,28 +24,10 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
 
 		<header id="masthead" class="site-header default-max-width" role="banner">
-			<div class="menu-button-container">
-				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-					<button id="woo-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
-						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ) ?></span>
-					</button>
-				<?php endif; ?>
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<button id="primary-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ) ?></span>
-						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
-					</button>
-				<?php endif; ?>
-			</div>
 			<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'seedlet' ); ?>">
-					<button id="primary-close-menu" class="button close">
-						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ) ?></span>
-						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'seedlet' ); ?></span>
-					</button>
 					<?php
 					// Get menu slug
 					$location_name = 'primary';
@@ -108,6 +90,25 @@
 					?>
 				</nav><!-- .social-navigation -->
 			<?php endif; ?>
+
+			<div class="menu-button-container">
+				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+					<button id="woo-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
+						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ) ?></span>
+					</button>
+				<?php endif; ?>
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+					<button id="primary-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ) ?></span>
+						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
+					</button>
+					<button id="primary-close-menu" class="button close">
+						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ) ?></span>
+						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'seedlet' ); ?></span>
+					</button>
+				<?php endif; ?>
+			</div>
 
 		</header><!-- #masthead -->
 

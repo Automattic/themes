@@ -8,15 +8,16 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
+
+	@include media( $navigation-max-break-point ){
+		display: block;
+	}
+
 	#primary-open-menu {
 		margin-left: auto;
 		padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
 		margin-top: calc(0.25 * var(--global--spacing-unit));
 		margin-right: calc(0.25 * var(--global--spacing-unit));
-	}
-
-	@include media( $navigation-max-break-point ){
-		display: flex;
 	}
 
 	.admin-bar:not(.primary-navigation-open) & {
