@@ -2,80 +2,7 @@
  * Repsonsive Styles
  */
 
-/**
- * Required Variables
- */
-$default_width: 620px;
-$alignwide_width: 790px;
-$breakpoint_sm: 482px;
-$breakpoint_md: 592px;
-$breakpoint_lg: 652px;
-$breakpoint_xl: 822px;
-$breakpoint_xxl: 1024px;
-
-// Responsive breakpoints mixin
-@mixin media( $res ) {
-
-	@if mobile-only == $res {
-		@media only screen and (max-width: #{$breakpoint_sm - 1}) {
-			@content;
-		}
-	}
-
-	@if mobile == $res {
-		@media only screen and (min-width: #{$breakpoint_sm}) {
-			@content;
-		}
-	}
-
-	@if tablet-only == $res {
-		@media only screen and (max-width: #{$breakpoint_md - 1}) {
-			@content;
-		}
-	}
-
-	@if tablet == $res {
-		@media only screen and (min-width: #{$breakpoint_md}) {
-			@content;
-		}
-	}
-
-	@if laptop-only == $res {
-		@media only screen and (max-width: #{$breakpoint_lg - 1}) {
-			@content;
-		}
-	}
-
-	@if laptop == $res {
-		@media only screen and (min-width: #{$breakpoint_lg}) {
-			@content;
-		}
-	}
-
-	@if desktop-only == $res {
-		@media only screen and (max-width: #{$breakpoint_xl - 1}) {
-			@content;
-		}
-	}
-
-	@if desktop == $res {
-		@media only screen and (min-width: #{$breakpoint_xl}) {
-			@content;
-		}
-	}
-
-	@if wide-only == $res {
-		@media only screen and (max-width: #{$breakpoint_xxl - 1}) {
-			@content;
-		}
-	}
-
-	@if wide == $res {
-		@media only screen and (min-width: #{$breakpoint_xxl}) {
-			@content;
-		}
-	}
-}
+@import '../abstracts/mixins';
 
 /**
  * Root Media Query Variables
@@ -86,14 +13,12 @@ $breakpoint_xxl: 1024px;
 	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
 	--responsive--alignfull-width: 100%;
 	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
-	--responsive--alignright-margin: var(--global--spacing-horizontal);
-	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+	--responsive--alignrightleft-width: var(--global--spacing-horizontal);
 }
 
 @include media(mobile) {
 	:root {
-		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
-		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignrightleft-width: calc( 50% - ( 0.5 * (100vw - var(--responsive--aligndefault-width))) ); //calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
 	}
 }
 
@@ -141,39 +66,6 @@ $breakpoint_xxl: 1024px;
 	width: calc(var(--responsive--alignfull-width) - calc(2 * var(--responsive--spacing-horizontal)));
 	max-width: var(--responsive--alignfull-width);
 }
-
-%responsive-alignleft-mobile {
-	/*rtl:ignore*/
-	margin-left: 0;
-	/*rtl:ignore*/
-	margin-right: var(--responsive--spacing-horizontal);
-}
-
-@include media(mobile) {
-	%responsive-alignleft {
-		/*rtl:ignore*/
-		margin-left: var(--responsive--alignleft-margin);
-		/*rtl:ignore*/
-		margin-right: var(--global--spacing-horizontal);
-	}
-}
-
-%responsive-alignright-mobile {
-	/*rtl:ignore*/
-	margin-left: var(--responsive--spacing-horizontal);
-	/*rtl:ignore*/
-	margin-right: 0;
-}
-
-@include media(mobile) {
-	%responsive-alignright {
-		/*rtl:ignore*/
-		margin-left: var(--global--spacing-horizontal);
-		/*rtl:ignore*/
-		margin-right: var(--responsive--alignright-margin);
-	}
-}
-
 
 /**
  * Output
