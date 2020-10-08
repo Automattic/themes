@@ -373,6 +373,7 @@ function seedlet_scripts() {
 
 	// RTL styles
 	wp_style_add_data( 'seedlet-style', 'rtl', 'replace' );
+	wp_style_add_data( 'seedlet-style-navigation', 'rtl', 'replace' );
 
 	// Print styles
 	wp_enqueue_style( 'seedlet-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
