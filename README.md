@@ -42,7 +42,7 @@ By contributing code to our free themes, you grant its use under the [GNU Genera
 
 **Note:** In case the affected theme already exists on the WordPress site, it needs to be deleted before the theme zip file gets uploaded.
 
-### Coding Standard
+### Coding Standards
 
 Themes code should adhere to the [WordPress coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/). This repo contains a pre-commit hook which enables you to detect and fix code that doesn't follow the standards.
 
