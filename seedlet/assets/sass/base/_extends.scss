@@ -1,8 +1,4 @@
-// Button Placeholder style
-// - Since buttons appear in various blocks,
-//   let’s use a placeholder to keep them all
-//   in-sync
-%button-style {
+@mixin button-style {
 	@include crop-text(var(--button--line-height));
 	color: var(--button--color-text);
 	cursor: pointer;
@@ -26,6 +22,14 @@
 		color: var(--button--color-text-hover);
 		background-color: var(--button--color-background-hover);
 	}
+}
+
+// Button Placeholder style
+// - Since buttons appear in various blocks,
+//   let’s use a placeholder to keep them all
+//   in-sync
+%button-style {
+	@include button-style;
 }
 
 // Onsale Placeholder style
