@@ -18,6 +18,12 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.0 =
+* Use ponyfill for IE11 support
+* Add CSS sourcemaps
+* Simplify the responsive rules and alignments
+* Bug fixes and improvements
+
 = 1.0.8 =
 * Add block editor theme tags
 * Correct text color rules for nested blocks
