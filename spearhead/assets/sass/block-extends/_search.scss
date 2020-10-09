@@ -1,20 +1,34 @@
 .wp-block-search {
-
-    &.wp-block-search__icon-button {
+    // wrong class on gutenberg editor, we'll need to change it after that's fixed
+    &.wp-block-search__text-button { 
 
         .wp-block-search__inside-wrapper{
             flex-direction: row-reverse;
+            align-items: center;
+            padding-left: 0;
         }
 
         .wp-block-search__input {
-            padding: 0 0 0 21px;
+            padding: 0 0 0 10px;
+            font-size: var(--global--font-size-sm);
         }
 
         .wp-block-search__button { 
             &.has-icon {
+                padding: 0;
                 margin-left: 0;
                 background: transparent;
                 border: none;
+                box-shadow: none;
+                color: var(--entry-header--color);
+                transform: scaleX(-1);
+                min-width: 14px;
+                width: 14px;
+                height: 14px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }

@@ -35,6 +35,15 @@ if ( ! function_exists( 'spearhead_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:separator {"className":"is-style-wide"} --><hr class="wp-block-separator is-style-wide"/><!-- /wp:separator --><!-- wp:paragraph {"fontSize":"medium"} --><p class="has-medium-font-size">Related</p><!-- /wp:paragraph --><!-- wp:jetpack/related-posts /-->',
 				)
 			);
+
+			register_block_pattern(
+				'spearhead/search-form',
+				array(
+					'title'      => __( 'Search Form', 'spearhead' ),
+					'categories' => array( 'spearhead' ),
+					'content'    => '<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->',
+				)
+			);
 		}
 
 		/**
