@@ -13,6 +13,13 @@
 		display: block;
 	}
 
+	// Adjust button postion when scrolling is locked
+	.lock-scrolling & > .button {
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
+
 	#primary-open-menu {
 		margin-left: auto;
 		padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
@@ -20,6 +27,7 @@
 		margin-right: calc(0.25 * var(--global--spacing-unit));
 	}
 
+	.admin-bar.lock-scrolling & > .button,
 	.admin-bar:not(.primary-navigation-open) & {
 		top: 46px;
 	}
@@ -152,17 +160,9 @@
 
 	}
 
-	// Adjust button postion when scrolling is locked
-	.lock-scrolling & > .button {
-		position: fixed;
-		top: 0;
-		right: 0;
-	}
-
 	// Adjust positions when logged-in
 	.admin-bar &,
-	.admin-bar & > div,
-	.admin-bar.lock-scrolling & > .button {
+	.admin-bar & > div {
 		top: 46px;
 	}
 
