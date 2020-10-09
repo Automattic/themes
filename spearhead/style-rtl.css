@@ -52,6 +52,20 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-transform: uppercase;
 }
 
+.site-main > * {
+	margin: 0;
+	padding: calc(3 * var(--global--spacing-vertical)) 0;
+}
+
+.has-sticky-post .site-main > *:first-child {
+	margin-top: calc( 0px - var(--global--spacing-vertical));
+	padding-top: var(--global--spacing-vertical);
+}
+
+.sticky {
+	background: var(--sticky-posts--color-background);
+}
+
 .sticky-post {
 	background-color: var(--global--color-primary);
 	margin-bottom: 0;
@@ -79,6 +93,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	.has-main-navigation .site-header .site-description {
 		display: none;
 	}
+}
+
+.has-sticky-post .site-header {
+	background: var(--sticky-posts--color-background);
 }
 
 .site-header {
