@@ -3,6 +3,10 @@
 		padding: var(--global--spacing-horizontal) var(--global--spacing-horizontal);
 
 		@include media( mobile-only ){
+			.site-title {
+				margin: 0;
+			}
+
 			.site-description {
 				display: none;
 			}
@@ -15,6 +19,10 @@
 	display: flex;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
+
+	@include media( mobile-only ){
+		align-items: center;
+	}
 
 	.site-branding {
 		flex-grow: 1;
@@ -67,11 +75,16 @@
 		ul {
 			justify-content: flex-end;
 			flex-wrap: nowrap;
+
+			li {
+				margin: 0;
+				padding: 0 0 0 var(--social-nav--padding);
+			}
 		}
 
 		li:first-of-type > a,
 		a {
-			padding: 0 0 0 var(--social-nav--padding);
+			padding: 0;
 
 			&:hover {
 				border-color: transparent;

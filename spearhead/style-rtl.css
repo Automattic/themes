@@ -82,6 +82,9 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 @media only screen and (max-width: 481px) {
+	.has-main-navigation .site-header .site-title {
+		margin: 0;
+	}
 	.has-main-navigation .site-header .site-description {
 		display: none;
 	}
@@ -91,6 +94,12 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	display: flex;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
+}
+
+@media only screen and (max-width: 481px) {
+	.site-header {
+		align-items: center;
+	}
 }
 
 .site-header .site-branding {
@@ -143,9 +152,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	flex-wrap: nowrap;
 }
 
+.site-header .social-navigation ul li {
+	margin: 0;
+	padding: 0 var(--social-nav--padding) 0 0;
+}
+
 .site-header .social-navigation li:first-of-type > a,
 .site-header .social-navigation a {
-	padding: 0 var(--social-nav--padding) 0 0;
+	padding: 0;
 }
 
 .site-header .social-navigation li:first-of-type > a:hover,
