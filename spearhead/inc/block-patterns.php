@@ -11,8 +11,6 @@
  */
 if ( function_exists( 'register_block_pattern_category' ) ) {
 
-	unregister_block_pattern_category( 'seedlet' );
-
 	register_block_pattern_category(
 		'spearhead',
 		array( 'label' => __( 'Spearhead', 'spearhead' ) )
@@ -23,10 +21,6 @@ if ( function_exists( 'register_block_pattern_category' ) ) {
  * Register Block Patterns.
  */
 if ( function_exists( 'register_block_pattern' ) ) {
-
-	unregister_block_pattern( 'seedlet/group-split-background' );
-	unregister_block_pattern( 'seedlet/group-image-overlap' );
-	unregister_block_pattern( 'seedlet/latest-posts-alternating-grid' );
 
 	register_block_pattern(
 		'spearhead/related-posts',
