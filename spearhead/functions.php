@@ -96,6 +96,8 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 				),
 			)
 		);
+		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
+		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
 	}
 endif;
 add_action( 'after_setup_theme', 'spearhead_setup', 12 );
@@ -192,3 +194,25 @@ add_filter(
 		return $classes;
 	}
 );
+
+/*
+ * Create the continue reading link
+ */
+function spearhead_continue_reading_link() {
+
+	if ( ! is_admin() ) {
+		$continue_reading = sprintf(
+			/* translators: %s: Name of current post. */
+			wp_kses( __( 'More %s', 'seedlet' ), array( 'span' => array( 'class' => array() ) ) ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
+		);
+
+		return '<a class="more-link" href="' . esc_url( get_permalink() ) . '">' . $continue_reading . ' ' . seedlet_get_icon_svg( 'dropdown' ) . '</a>';
+	}
+}
+
+// Filter the excerpt more link
+add_filter( 'excerpt_more', 'spearhead_continue_reading_link' );
+
+// Filter the content more link
+add_filter( 'the_content_more_link', 'spearhead_continue_reading_link' );

@@ -83,6 +83,32 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	display: none;
 }
 
+.entry-content .more-link {
+	margin-top: 0;
+	margin-left: 0.5rem;
+	display: inline-block;
+	color: var(--global--color-foreground);
+	font-size: calc(0.75 * var(--global--font-size-base));
+}
+
+.entry-content .more-link:hover {
+	border: none;
+	color: var(--global--color-primary);
+}
+
+.entry-content .more-link:after {
+	content: none;
+}
+
+.entry-content .more-link svg {
+	height: var(--global--font-size-base);
+	width: var(--global--font-size-base);
+	margin-left: -0.25em;
+	display: inline-block;
+	vertical-align: middle;
+	transform: rotate(-90deg);
+}
+
 .has-link-color a, a {
 	border-bottom: 1px solid transparent;
 	transition: all 0.1s ease;

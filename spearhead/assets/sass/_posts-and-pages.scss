@@ -49,3 +49,28 @@
 .sticky-post {
 	display: none;
 }
+
+.entry-content {
+    .more-link {
+        margin-top: 0;
+        margin-left: 0.5rem;
+        display: inline-block;
+        color: var(--global--color-foreground);
+        font-size: calc(0.75 * var(--global--font-size-base));
+        &:hover {
+            border: none;
+            color: var(--global--color-primary);
+        }
+        &:after {
+            content: none;
+        }
+        svg {
+            height: var(--global--font-size-base);
+            width: var(--global--font-size-base);
+            margin-left: -0.25em;
+            display: inline-block;
+            vertical-align: middle;
+            transform: rotate(-90deg);
+        }
+    }
+}
