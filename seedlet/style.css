@@ -1465,8 +1465,14 @@ object {
 	opacity: inherit;
 }
 
-.wp-block-file .wp-block-file__button {
+.wp-block-file a:after {
+	content: '';
+	display: block;
+}
+
+.wp-block-file a.wp-block-file__button {
 	display: inline-block;
+	margin: calc( 0.5 * var(--global--spacing-unit)) 0 0 0;
 	padding: calc(0.5 * var(--button--padding-vertical)) calc(0.5 * var(--button--padding-horizontal));
 }
 

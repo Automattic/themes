@@ -1,5 +1,4 @@
 .wp-block-file {
-
 	// Undo Gutenberg hover defaults
 	a.wp-block-file__button:active,
 	a.wp-block-file__button:focus,
@@ -9,10 +8,19 @@
 		opacity: inherit;
 	}
 
+	a:after {
+		content: '';
+		display: block;
+	}
+
 	.wp-block-file__button {
 		// Extend button style
 		@extend %button-style;
+	}
+
+	a.wp-block-file__button {
 		display: inline-block;
+		margin: calc( 0.5 * var(--global--spacing-unit) ) 0 0 0;
 		padding: calc(0.5 * var(--button--padding-vertical)) calc(0.5 * var(--button--padding-horizontal));
 	}
 }
