@@ -1,5 +1,5 @@
 $admin-bar-height: 46px;
-$site-branding-height: 59px;
+$site-branding-height: 72px;
 
 .has-main-navigation {
 	.site-header {
@@ -57,9 +57,9 @@ $site-branding-height: 59px;
 		}
 
 		button#primary-close-menu {
-			color: var(--global--color-background);
+			color: var(--global--color-secondary);
 			position: fixed;
-			top: $admin-bar-height + $site-branding-height;
+			top: 4px;
 			right: 0;
 
 			&:hover {
@@ -120,8 +120,10 @@ $site-branding-height: 59px;
 
 	button#primary-open-menu {
 		margin: 0;
-		padding: 6px;
-		position: static;
+		padding: 0;
+		top: var(--global--spacing-vertical);
+		right: var(--global--spacing-horizontal);
+		position: absolute;
 
 		&:before {
 			margin: 0;
