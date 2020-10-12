@@ -112,6 +112,9 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  * Enqueue scripts and styles.
  */
 function spearhead_scripts() {
+	// dequeue parent styles
+	wp_dequeue_style( 'seedlet-style-navigation' );
+
 	// enqueue Google fonts, if necessary
 	wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
 
@@ -120,9 +123,11 @@ function spearhead_scripts() {
 
 	// enqueue child styles
 	wp_enqueue_style( 'spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'spearhead-navigation', get_stylesheet_directory_uri() . '/navigation.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'spearhead-style', 'rtl', 'replace' );
+	wp_style_add_data( 'spearhead-navigation', 'rtl', 'replace' );
 }
 add_action( 'wp_enqueue_scripts', 'spearhead_scripts', 11 );
 

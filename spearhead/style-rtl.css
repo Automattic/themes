@@ -4,22 +4,27 @@ Theme URI: https://github.com/Automattic/themes/root-child
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Share your podcast with the world using Spearhead.
-Requires at least: WordPress 5.4 
+Requires at least: WordPress 5.4
 Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: seedlet
-Text Domain: spearhead 
+Text Domain: spearhead
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 */
 /**
- * Repsonsive Styles
+ * Required Variables
  */
 /**
  * Required Variables
  */
+/**
+ * Repsonsive Styles
+ */
 @media only screen and (min-width: 830px) {
 	:root {
+		--global--spacing-horizontal: 60px;
+		--global--spacing-vertical: 35px;
 		--responsive--aligndefault-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), 782px);
 		--responsive--alignwide-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), 1247px);
 	}
@@ -92,9 +97,13 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	font-weight: 500;
 }
 
+.has-main-navigation .site-header {
+	padding: var(--global--spacing-horizontal) var(--global--spacing-horizontal);
+}
+
 @media only screen and (max-width: 481px) {
-	.has-main-navigation .site-header {
-		padding-top: 4px;
+	.has-main-navigation .site-header .site-title {
+		margin: 0;
 	}
 	.has-main-navigation .site-header .site-description {
 		display: none;
@@ -107,8 +116,15 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	max-width: var(--responsive--alignwide-width);
+	max-width: var(--responsive--alignfull-width);
+}
+
+@media only screen and (max-width: 481px) {
+	.site-header {
+		align-items: center;
+	}
 }
 
 .site-header .site-branding {
@@ -123,8 +139,36 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header .primary-navigation {
 	flex-grow: 4;
-	justify-content: flex-end;
 	margin-top: 0;
+}
+
+@media only screen and (max-width: 829px) {
+	.site-header .primary-navigation .primary-menu-container {
+		background: var(--primary-nav--color-background);
+		padding: var(--global--spacing-unit);
+		top: 68px;
+	}
+	.admin-bar .site-header .primary-navigation .primary-menu-container {
+		top: 114px;
+	}
+	.site-header .primary-navigation .primary-menu-container a {
+		color: var(--global--color-background);
+	}
+}
+
+.site-header .primary-navigation button#primary-close-menu {
+	color: var(--global--color-secondary);
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.admin-bar .site-header .primary-navigation button#primary-close-menu {
+	top: 46px;
+}
+
+.site-header .primary-navigation button#primary-close-menu:hover {
+	color: var(--global--color-primary);
 }
 
 .site-header .primary-navigation .menu-item-has-children > .svg-icon {
@@ -133,11 +177,64 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header .primary-navigation > div > ul li, .site-header .woo-navigation > div > ul li {
 	color: var(--global--color-secondary);
-	margin: 6px calc( var(--global--spacing-horizontal) / 2);
+	margin: 6px;
+	padding: var(--social-nav--padding);
+}
+
+.site-header .primary-navigation > div > ul li a:hover, .site-header .woo-navigation > div > ul li a:hover {
+	border-color: transparent;
+	color: var(--global--color-primary);
 }
 
 .site-header > .site-branding, .site-header > nav {
-	margin: 0 calc( var( --global--spacing-horizontal ) / 2);
+	margin: 0;
+}
+
+.site-header .social-navigation {
+	flex-basis: 100%;
+}
+
+.site-header .social-navigation ul {
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	margin-top: var(--global--spacing-vertical);
+}
+
+.site-header .social-navigation ul li {
+	margin: 0;
+	padding: 0 0 0 var(--social-nav--padding);
+}
+
+@media only screen and (min-width: 830px) {
+	.site-header .social-navigation {
+		flex-basis: auto;
+	}
+	.site-header .social-navigation ul {
+		justify-content: flex-end;
+		margin-top: 0;
+	}
+	.site-header .social-navigation ul li {
+		padding: 0 var(--social-nav--padding) 0 0;
+	}
+}
+
+.site-header .social-navigation li:first-of-type > a,
+.site-header .social-navigation a {
+	padding: 0;
+}
+
+.site-header .social-navigation li:first-of-type > a:hover,
+.site-header .social-navigation a:hover {
+	border-color: transparent;
+	color: var(--global--color-primary);
+}
+
+.site-header div.menu-button-container button#primary-open-menu:before {
+	margin: 0;
+}
+
+.primary-navigation-open .site-header div.menu-button-container {
+	margin: 0;
 }
 
 .wp-block-latest-posts > li > a {

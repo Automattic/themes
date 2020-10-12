@@ -1,7 +1,3 @@
-// Abstracts
-// - Mixins, variables and functions
-@import "../../abstracts/mixins";
-
 // Navigation
 
 // Mobile menu toggles
@@ -12,6 +8,18 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
+
+	@include media( $navigation-max-break-point ){
+		display: block;
+	}
+
+	// Adjust button postion when scrolling is locked
+	.lock-scrolling & > .button {
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
+
 	#primary-open-menu {
 		margin-left: auto;
 		padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
@@ -19,10 +27,7 @@
 		margin-right: calc(0.25 * var(--global--spacing-unit));
 	}
 
-	@include media(mobile-only){
-		display: flex;
-	}
-
+	.admin-bar.lock-scrolling & > .button,
 	.admin-bar:not(.primary-navigation-open) & {
 		top: 46px;
 	}
@@ -42,7 +47,12 @@
 		}
 		&.close {
 			display: none;
+			position: absolute;
+			right: 0;
 			z-index: 501;
+			.admin-bar & {
+				top: -46px;
+			}
 		}
 
 		&#woo-open-menu {
@@ -118,7 +128,7 @@
 	margin-top: 0;
 	margin-bottom: 0;
 
-	@include media(mobile-only) {
+	@include media( $navigation-max-break-point ) {
 		width: 100%;
 	}
 
@@ -138,7 +148,7 @@
 		transition: all .15s ease-in-out;
 		transform: translateY(var(--global--spacing-vertical));
 
-		@include media(mobile-only) {
+		@include media( $navigation-max-break-point ) {
 			z-index: 499;
 		}
 	}
@@ -155,21 +165,13 @@
 
 	}
 
-	// Adjust button postion when scrolling is locked
-	.lock-scrolling & > .button {
-		position: fixed;
-		top: 0;
-		right: 0;
-	}
-
 	// Adjust positions when logged-in
 	.admin-bar &,
-	.admin-bar & > div,
-	.admin-bar.lock-scrolling & > .button {
+	.admin-bar & > div {
 		top: 46px;
 	}
 
-	@include media(mobile) {
+	@include media( $navigation-min-break-point ) {
 		position: relative;
 		display: flex;
 		justify-content: var(--primary-nav--justify-content);
@@ -233,7 +235,7 @@
 				z-index: 99999;
 			}
 
-			@include media(mobile) {
+			@include media( $navigation-min-break-point ) {
 				display: inherit;
 				width: inherit;
 
@@ -254,7 +256,7 @@
 
 			position: relative;
 
-			@include media(mobile) {
+			@include media( $navigation-min-break-point ) {
 				margin: 0;
 				background: var(--global--color-background);
 				box-shadow: var(--global--elevation);
@@ -282,7 +284,7 @@
 	.primary-menu-container > ul > .menu-item {
 		padding: calc(0.5 * var(--primary-nav--padding)) 0;
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 			display: flex;
 			align-items: center;
 			padding: var(--primary-nav--padding);
@@ -315,7 +317,7 @@
 		font-size: var(--primary-nav--font-size-mobile);
 		font-weight: var(--primary-nav--font-weight);
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 			display: block;
 			font-family: var(--primary-nav--font-family);
 			font-size: var(--primary-nav--font-size);
@@ -338,7 +340,7 @@
 		list-style: none;
 		margin-left: var(--primary-nav--padding);
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 			padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
 
 			> .menu-item > .sub-menu {
@@ -354,7 +356,7 @@
 			padding-top: calc(0.5 * var(--primary-nav--padding));
 			padding-bottom: calc(0.5 * var(--primary-nav--padding));
 
-			@include media(mobile) {
+			@include media( $navigation-min-break-point ) {
 				padding-top: calc(0.5 * var(--primary-nav--padding));
 				padding-bottom: calc(0.5 * var(--primary-nav--padding));
 			}
@@ -364,7 +366,7 @@
 				font-size: var(--primary-nav--font-size-sub-menu-mobile);
 				font-style: var(--primary-nav--font-style-sub-menu-mobile);
 
-				@include media(mobile) {
+				@include media( $navigation-min-break-point ) {
 					font-size: var(--primary-nav--font-size);
 					font-style: var(--primary-nav--font-style);
 				}
@@ -379,7 +381,7 @@
  			display: none;
  		}
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 
 			> .svg-icon {
 				display: inline-block;
@@ -400,9 +402,11 @@
 }
 
 // Keep the menu pinned to the top when the menu is open.
-@include media(mobile-only) {
+@include media( $navigation-max-break-point ) {
 	.lock-scrolling .site {
-		position: fixed;
+		left: 0;
 		max-width: 100%;
+		position: fixed;
+		right: 0;
 	}
 }

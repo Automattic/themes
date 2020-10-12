@@ -1,12 +1,20 @@
+$admin-bar-height: 46px;
+$site-branding-height: 68px;
+
 .has-main-navigation {
-    .site-header {
-        @include media( mobile-only ){
-            padding-top: 4px;
-            .site-description {
-                display: none;
-            }
-        }
-    }
+	.site-header {
+		padding: var(--global--spacing-horizontal) var(--global--spacing-horizontal);
+
+		@include media( mobile-only ){
+			.site-title {
+				margin: 0;
+			}
+
+			.site-description {
+				display: none;
+			}
+		}
+	}
 }
 
 .has-sticky-post .site-header {
@@ -14,36 +22,128 @@
 }
 
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    max-width: var(--responsive--alignwide-width);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: var(--responsive--alignfull-width);
 
-    .site-branding {
-        flex-grow: 1;
-        text-align: left;
+	@include media( mobile-only ){
+		align-items: center;
+	}
 
-        .site-title > a {
-                background: inherit;
-            text-shadow: none;
-        }
-    }
+	.site-branding {
+		flex-grow: 1;
+		text-align: left;
 
-    .primary-navigation {
-        flex-grow: 4;
-        justify-content: flex-end;
-        margin-top: 0;
-    }
+		.site-title > a {
+			background: inherit;
+			text-shadow: none;
+		}
+	}
 
-    .primary-navigation .menu-item-has-children > .svg-icon {
-        margin-top: -2px;
-    }
+	.primary-navigation {
+		flex-grow: 4;
+		margin-top: 0;
 
-    .primary-navigation > div > ul li, .woo-navigation > div > ul li {
-        color: var(--global--color-secondary);
-        margin: 6px calc( var(--global--spacing-horizontal) / 2);
-    }
+		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
+			.primary-menu-container {
+				background: var(--primary-nav--color-background);
+				padding: var(--global--spacing-unit);
+				top: $site-branding-height;
 
-    > .site-branding, > nav {
-        margin: 0 calc( var( --global--spacing-horizontal ) / 2 );
-    }
+				.admin-bar & {
+					top: $site-branding-height + $admin-bar-height;
+				}
+
+				a {
+					color: var(--global--color-background);
+				}
+			}
+		}
+
+		button#primary-close-menu {
+			color: var(--global--color-secondary);
+			position: fixed;
+			top: 0;
+			right: 0;
+
+			.admin-bar & {
+				top: $admin-bar-height;
+			}
+
+			&:hover {
+				color: var(--global--color-primary);
+			}
+		}
+	}
+
+	.primary-navigation .menu-item-has-children > .svg-icon {
+		margin-top: -2px;
+	}
+
+
+	.primary-navigation > div > ul li, .woo-navigation > div > ul li {
+		color: var(--global--color-secondary);
+		margin: 6px;
+		padding: var(--social-nav--padding);
+
+		a:hover {
+			border-color: transparent;
+			color: var(--global--color-primary);
+		}
+	}
+
+	> .site-branding, > nav {
+		margin: 0;
+	}
+
+	.social-navigation {
+		flex-basis: 100%;
+
+		ul {
+			justify-content: flex-start;
+			flex-wrap: nowrap;
+			margin-top: var(--global--spacing-vertical);
+
+			li {
+				margin: 0;
+				padding: 0 var(--social-nav--padding) 0 0;
+			}
+
+		}
+		@include media( laptop ){
+			flex-basis: auto;
+			ul {
+				justify-content: flex-end;
+				margin-top: 0;
+
+				li {
+					padding: 0 0 0 var(--social-nav--padding);
+				}
+			}
+		}
+
+		li:first-of-type > a,
+		a {
+			padding: 0;
+
+			&:hover {
+				border-color: transparent;
+				color: var(--global--color-primary);
+			}
+		}
+	}
+}
+
+
+.site-header div.menu-button-container {
+	button#primary-open-menu {
+		&:before {
+			margin: 0;
+		}
+	}
+
+	.primary-navigation-open & {
+		margin: 0;
+	}
 }
