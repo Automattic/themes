@@ -1,3 +1,6 @@
+$admin-bar-height: 46px;
+$site-branding-height: 73px;
+
 .has-main-navigation {
 	.site-header {
 		padding: var(--global--spacing-horizontal) var(--global--spacing-horizontal);
@@ -13,7 +16,6 @@
 		}
 	}
 }
-
 
 .site-header {
 	display: flex;
@@ -42,7 +44,11 @@
 			.primary-menu-container {
 				background: var(--primary-nav--color-background);
 				padding: var(--global--spacing-unit);
-				top: 119px;
+				top: $site-branding-height;
+
+				.admin-bar & {
+					top: $site-branding-height + $admin-bar-height;
+				}
 
 				a {
 					color: var(--global--color-background);
