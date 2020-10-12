@@ -37,7 +37,7 @@ function hexToHSL( hex ) {
 
 function changeColorLuminescence( hex, amount ) {
 	var hsl = hexToHSL( hex );
-	return 'hsl( ' + hsl.h + ',' + hsl.s * 100 + '%,' + ( hsl.l * 100  + amount ) + '%)';
+	return 'hsl( ' + hsl.h * 360 + ',' + hsl.s * 100 + '%,' + ( hsl.l * 100  + amount ) + '%)';
 }
 
 
