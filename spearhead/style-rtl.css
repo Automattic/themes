@@ -92,6 +92,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 }
@@ -121,10 +122,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	.site-header .primary-navigation .primary-menu-container {
 		background: var(--primary-nav--color-background);
 		padding: var(--global--spacing-unit);
-		top: 72px;
+		top: 68px;
 	}
 	.admin-bar .site-header .primary-navigation .primary-menu-container {
-		top: 118px;
+		top: 114px;
 	}
 	.site-header .primary-navigation .primary-menu-container a {
 		color: var(--global--color-background);
@@ -134,8 +135,12 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .site-header .primary-navigation button#primary-close-menu {
 	color: var(--global--color-secondary);
 	position: fixed;
-	top: 4px;
+	top: 0;
 	left: 0;
+}
+
+.admin-bar .site-header .primary-navigation button#primary-close-menu {
+	top: 46px;
 }
 
 .site-header .primary-navigation button#primary-close-menu:hover {
@@ -161,14 +166,32 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	margin: 0;
 }
 
+.site-header .social-navigation {
+	flex-basis: 100%;
+}
+
 .site-header .social-navigation ul {
-	justify-content: flex-end;
+	justify-content: flex-start;
 	flex-wrap: nowrap;
+	margin-top: var(--global--spacing-vertical);
 }
 
 .site-header .social-navigation ul li {
 	margin: 0;
-	padding: 0 var(--social-nav--padding) 0 0;
+	padding: 0 0 0 var(--social-nav--padding);
+}
+
+@media only screen and (min-width: 830px) {
+	.site-header .social-navigation {
+		flex-basis: auto;
+	}
+	.site-header .social-navigation ul {
+		justify-content: flex-end;
+		margin-top: 0;
+	}
+	.site-header .social-navigation ul li {
+		padding: 0 var(--social-nav--padding) 0 0;
+	}
 }
 
 .site-header .social-navigation li:first-of-type > a,
@@ -180,21 +203,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .site-header .social-navigation a:hover {
 	border-color: transparent;
 	color: var(--global--color-primary);
-}
-
-.site-header div.menu-button-container {
-	margin: 0 var(--social-nav--padding) 0 0;
-	order: 99;
-	position: static;
-	width: auto;
-}
-
-.site-header div.menu-button-container button#primary-open-menu {
-	margin: 0;
-	padding: 0;
-	top: var(--global--spacing-vertical);
-	left: var(--global--spacing-horizontal);
-	position: absolute;
 }
 
 .site-header div.menu-button-container button#primary-open-menu:before {

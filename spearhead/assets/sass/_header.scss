@@ -1,5 +1,5 @@
 $admin-bar-height: 46px;
-$site-branding-height: 72px;
+$site-branding-height: 68px;
 
 .has-main-navigation {
 	.site-header {
@@ -19,6 +19,7 @@ $site-branding-height: 72px;
 
 .site-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 
@@ -59,8 +60,12 @@ $site-branding-height: 72px;
 		button#primary-close-menu {
 			color: var(--global--color-secondary);
 			position: fixed;
-			top: 4px;
+			top: 0;
 			right: 0;
+
+			.admin-bar & {
+				top: $admin-bar-height;
+			}
 
 			&:hover {
 				color: var(--global--color-primary);
@@ -89,13 +94,28 @@ $site-branding-height: 72px;
 	}
 
 	.social-navigation {
+		flex-basis: 100%;
+
 		ul {
-			justify-content: flex-end;
+			justify-content: flex-start;
 			flex-wrap: nowrap;
+			margin-top: var(--global--spacing-vertical);
 
 			li {
 				margin: 0;
-				padding: 0 0 0 var(--social-nav--padding);
+				padding: 0 var(--social-nav--padding) 0 0;
+			}
+
+		}
+		@include media( laptop ){
+			flex-basis: auto;
+			ul {
+				justify-content: flex-end;
+				margin-top: 0;
+
+				li {
+					padding: 0 0 0 var(--social-nav--padding);
+				}
 			}
 		}
 
@@ -113,18 +133,7 @@ $site-branding-height: 72px;
 
 
 .site-header div.menu-button-container {
-	margin: 0 0 0 var(--social-nav--padding);
-	order: 99;
-	position: static;
-	width: auto;
-
 	button#primary-open-menu {
-		margin: 0;
-		padding: 0;
-		top: var(--global--spacing-vertical);
-		right: var(--global--spacing-horizontal);
-		position: absolute;
-
 		&:before {
 			margin: 0;
 		}
