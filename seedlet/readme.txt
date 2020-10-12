@@ -19,6 +19,7 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 == Changelog ==
 
 = 1.1.0 =
+* Refactor the menu styles so they can be loaded separately and dequeued in child themes
 * Use ponyfill for IE11 support
 * Add CSS sourcemaps
 * Simplify the responsive rules and alignments
