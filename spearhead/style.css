@@ -52,10 +52,30 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-transform: uppercase;
 }
 
+.site-main > * {
+	margin: 0 auto;
+	padding: calc(3 * var(--global--spacing-vertical)) 0;
+}
+
+.has-sticky-post .site-main > *:first-child {
+	margin-top: calc( 0px - var(--global--spacing-vertical));
+	padding-top: var(--global--spacing-vertical);
+}
+
+.post.sticky {
+	background: var(--sticky-posts--color-background);
+}
+
+.post.sticky .entry-title {
+	font-size: var(--sticky-posts--entry-title-font-size);
+}
+
+.post.sticky .entry-content {
+	font-size: var(--sticky-posts--entry-content-font-size);
+}
+
 .sticky-post {
-	background-color: var(--global--color-primary);
-	margin-bottom: 0;
-	width: fit-content;
+	display: none;
 }
 
 .has-link-color a, a {
@@ -79,6 +99,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	.has-main-navigation .site-header .site-description {
 		display: none;
 	}
+}
+
+.has-sticky-post .site-header {
+	background: var(--sticky-posts--color-background);
 }
 
 .site-header {
