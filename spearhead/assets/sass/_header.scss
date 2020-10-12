@@ -1,5 +1,5 @@
 $admin-bar-height: 46px;
-$site-branding-height: 73px;
+$site-branding-height: 59px;
 
 .has-main-navigation {
 	.site-header {
@@ -55,6 +55,17 @@ $site-branding-height: 73px;
 				}
 			}
 		}
+
+		button#primary-close-menu {
+			color: var(--global--color-background);
+			position: fixed;
+			top: $admin-bar-height + $site-branding-height;
+			right: 0;
+
+			&:hover {
+				color: var(--global--color-primary);
+			}
+		}
 	}
 
 	.primary-navigation .menu-item-has-children > .svg-icon {
@@ -107,7 +118,6 @@ $site-branding-height: 73px;
 	position: static;
 	width: auto;
 
-	button#primary-close-menu,
 	button#primary-open-menu {
 		margin: 0;
 		padding: 6px;
@@ -116,5 +126,9 @@ $site-branding-height: 73px;
 		&:before {
 			margin: 0;
 		}
+	}
+
+	.primary-navigation-open & {
+		margin: 0;
 	}
 }

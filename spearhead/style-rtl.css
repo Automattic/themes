@@ -121,14 +121,25 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	.site-header .primary-navigation .primary-menu-container {
 		background: var(--primary-nav--color-background);
 		padding: var(--global--spacing-unit);
-		top: 73px;
+		top: 59px;
 	}
 	.admin-bar .site-header .primary-navigation .primary-menu-container {
-		top: 119px;
+		top: 105px;
 	}
 	.site-header .primary-navigation .primary-menu-container a {
 		color: var(--global--color-background);
 	}
+}
+
+.site-header .primary-navigation button#primary-close-menu {
+	color: var(--global--color-background);
+	position: fixed;
+	top: 105px;
+	left: 0;
+}
+
+.site-header .primary-navigation button#primary-close-menu:hover {
+	color: var(--global--color-primary);
 }
 
 .site-header .primary-navigation .menu-item-has-children > .svg-icon {
@@ -178,15 +189,17 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	width: auto;
 }
 
-.site-header div.menu-button-container button#primary-close-menu,
 .site-header div.menu-button-container button#primary-open-menu {
 	margin: 0;
 	padding: 6px;
 	position: static;
 }
 
-.site-header div.menu-button-container button#primary-close-menu:before,
 .site-header div.menu-button-container button#primary-open-menu:before {
+	margin: 0;
+}
+
+.primary-navigation-open .site-header div.menu-button-container {
 	margin: 0;
 }
 
