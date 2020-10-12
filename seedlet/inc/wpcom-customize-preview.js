@@ -37,8 +37,6 @@ function hexToHSL( hex ) {
 
 function changeColorLuminescence( hex, amount ) {
 	var hsl = hexToHSL( hex );
-	console.log( hex );
-	console.log( hsl );
 	return 'hsl( ' + hsl.h * 360 + ',' + hsl.s * 100 + '%,' + ( hsl.l * 100  + amount ) + '%)';
 }
 
@@ -70,8 +68,6 @@ function changeColorLuminescence( hex, amount ) {
 			var foregroundDark = changeColorLuminescence( foreground, -10 );
 			var primaryHover = changeColorLuminescence( primary, 10 );
 			var secondaryHover = changeColorLuminescence( secondary, 10 );
-			console.log( primary );
-			console.log( primaryHover );
 			const extraCSS = ':root {' +
 					'--global--color-background: ' + background + ';' +
 					'--global--color-foreground: ' + foreground + ';' +
