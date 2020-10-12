@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage Sk8prk
+ * @subpackage Spearhead
  * @since 1.0.0
  */
 
@@ -179,3 +179,16 @@ function seedlet_entry_meta_header() : void {
  * Block Patterns.
  */
 require get_stylesheet_directory() . '/inc/block-patterns.php';
+
+add_filter(
+	'body_class',
+	function( $classes ) {
+		$stickies = get_option( 'sticky_posts' );
+
+		if ( count( $stickies ) && is_home() ) {
+			return array_merge( $classes, array( 'has-sticky-post' ) );
+		}
+
+		return $classes;
+	}
+);

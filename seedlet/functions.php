@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Seedlet
- * @since 1.0.10
+ * @since 1.1.0
  */
 
 /**
@@ -56,8 +56,8 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'seedlet' ),
-				'footer' => __( 'Footer Navigation', 'seedlet' ),
-				'social' => __( 'Social Links Navigation', 'seedlet' ),
+				'footer'  => __( 'Footer Navigation', 'seedlet' ),
+				'social'  => __( 'Social Links Navigation', 'seedlet' ),
 			)
 		);
 
@@ -120,14 +120,15 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 			array(
 				seedlet_fonts_url(),
 				$editor_stylesheet_path,
-		) );
+			)
+		);
 
 		// Add custom editor font sizes.
 		add_theme_support(
 			'editor-font-sizes',
 			array(
 				array(
-				'name'      => __( 'Tiny', 'seedlet' ),
+					'name'      => __( 'Tiny', 'seedlet' ),
 					'shortName' => __( 'XS', 'seedlet' ),
 					'size'      => 14,
 					'slug'      => 'tiny',
@@ -173,27 +174,27 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'seedlet' ),
 					'slug'  => 'primary',
-					'color' => $primary
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'seedlet' ),
 					'slug'  => 'secondary',
-					'color' => $secondary
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'seedlet' ),
 					'slug'  => 'foreground',
-					'color' => $foreground
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Tertiary', 'seedlet' ),
 					'slug'  => 'tertiary',
-					'color' => $tertiary
+					'color' => $tertiary,
 				),
 				array(
 					'name'  => __( 'Background', 'seedlet' ),
 					'slug'  => 'background',
-					'color' => $background
+					'color' => $background,
 				),
 			)
 		);
@@ -206,7 +207,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 			array(
 				array(
 					'name'     => __( 'Diagonal', 'seedlet' ),
-					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b  . ' 50%)',
+					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b . ' 50%)',
 					'slug'     => 'hard-diagonal',
 				),
 				array(
@@ -270,9 +271,9 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
-			[
+			array(
 				'enable_theme_default' => true,
-			]
+			)
 		);
 	}
 endif;
@@ -392,7 +393,8 @@ function seedlet_scripts() {
 	if ( $is_IE ) {
 		// If IE 11 or below, use a ponyfill to add CSS Variable support
 		wp_register_script( 'css-vars-ponyfill', get_stylesheet_directory_uri() . '/assets/js/css-vars-ponyfill2.js' );
-		wp_enqueue_script( 'ie11-fix',
+		wp_enqueue_script(
+			'ie11-fix',
 			get_stylesheet_directory_uri() . '/assets/js/ie11-fix.js',
 			array( 'css-vars-ponyfill' ),
 			'1.0'
