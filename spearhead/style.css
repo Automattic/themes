@@ -59,7 +59,11 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-main > * {
 	margin: 0 auto;
-	padding: calc(3 * var(--global--spacing-vertical)) 0;
+	padding: var(--global--spacing-vertical) 0;
+}
+
+.site-main > *:first-child {
+	padding-top: 0;
 }
 
 .has-sticky-post .site-main > *:first-child {
@@ -98,7 +102,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-main-navigation .site-header {
-	padding: var(--global--spacing-horizontal) var(--global--spacing-horizontal);
+	padding: 35px var(--global--spacing-horizontal);
 }
 
 @media only screen and (max-width: 481px) {
@@ -130,6 +134,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .site-header .site-branding {
 	flex-grow: 1;
 	text-align: left;
+}
+
+.site-header .site-branding .site-title {
+	margin-bottom: 4px;
 }
 
 .site-header .site-branding .site-title > a {
@@ -177,7 +185,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header .primary-navigation > div > ul li, .site-header .woo-navigation > div > ul li {
 	color: var(--global--color-secondary);
-	margin: 6px;
+	margin: 6px 8px;
 	padding: var(--social-nav--padding);
 }
 
