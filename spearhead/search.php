@@ -35,7 +35,7 @@ get_header();
 					</header><!-- .entry-header -->
 
 					<footer class="entry-footer default-max-width">
-						<?php spearhead_entry_meta_footer(); ?>
+						<?php seedlet_entry_meta_footer(); ?>
 					</footer><!-- .entry-footer -->
 				</article><!-- #post-${ID} -->
 
