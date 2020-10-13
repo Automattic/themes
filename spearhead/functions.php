@@ -248,13 +248,13 @@ add_filter( 'get_the_excerpt', 'spearhead_the_excerpt' );
  * Post footer meta
  */
 
-if ( ! function_exists( 'spearhead_entry_meta_footer' ) ) :
+if ( ! function_exists( 'seedlet_entry_meta_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function spearhead_entry_meta_footer() {
+	function seedlet_entry_meta_footer() {
 
-		spearhead_posted_on();
+		seedlet_posted_on();
 
 		// Edit post link.
 		edit_post_link(
@@ -276,11 +276,11 @@ if ( ! function_exists( 'spearhead_entry_meta_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'spearhead_posted_on' ) ) :
+if ( ! function_exists( 'seedlet_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function spearhead_posted_on() {
+	function seedlet_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
