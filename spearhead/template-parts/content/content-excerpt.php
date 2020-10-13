@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Seedlet
+ * @package Spearhead
  * @since 1.0.0
  */
 
