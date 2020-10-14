@@ -28,8 +28,8 @@ get_header();
 				get_template_part( 'template-parts/content/content' );
 			}
 
-			// Previous/next page navigation.
-			seedlet_the_posts_navigation();
+			// Numbered pagination.
+			seedlet_the_posts_pagination();
 
 		} else {
 

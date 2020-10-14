@@ -226,7 +226,6 @@ function spearhead_excerpt_more() {
 	return '…';
 }
 
-
 function spearhead_the_excerpt( $excerpt ) {
 	// For cases where the post excerpt is empty
 	// (but the post might have content)
@@ -236,6 +235,15 @@ function spearhead_the_excerpt( $excerpt ) {
 
 	return $excerpt . '<span class="excerpt-more-link">' . spearhead_more_link() . '</span>';
 }
+
+/**
+ * Overwrite Seedlet's post navigation template tag.
+ */
+if ( ! function_exists( 'seedlet_the_post_navigation' ) ) :
+	function seedlet_the_post_navigation() {
+		return null;
+	}
+endif;
 
 // Filter the excerpt more link
 add_filter( 'excerpt_more', 'spearhead_excerpt_more' );
