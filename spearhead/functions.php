@@ -96,6 +96,8 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 				),
 			)
 		);
+		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
+		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
 	}
 endif;
 add_action( 'after_setup_theme', 'spearhead_setup', 12 );
@@ -192,3 +194,54 @@ add_filter(
 		return $classes;
 	}
 );
+
+/**
+ * Create the continue reading link.
+ */
+function spearhead_continue_reading_link( $more ) {
+	if ( ! is_admin() ) {
+		$more_link = spearhead_more_link();
+
+		return '<p>' . $more_link . '</p>';
+	}
+}
+
+/**
+ * Create a more link for use in both "Read more" and excerpt contexts.
+ */
+function spearhead_more_link() {
+	$more_text = sprintf(
+		/* translators: %s: Name of current post. */
+		wp_kses( __( 'More', 'spearhead' ), array( 'span' => array( 'class' => array() ) ) ),
+		the_title( '<span class="screen-reader-text">"', '"</span>', false )
+	);
+
+	return '<a class="more-link" href="' . esc_url( get_permalink() ) . '">' . $more_text . ' ' . seedlet_get_icon_svg( 'dropdown' ) . '</a>';
+}
+
+/**
+ * Use this instead of the default WordPress ellipsis which is […].
+ */
+function spearhead_excerpt_more() {
+	return '…';
+}
+
+
+function spearhead_the_excerpt( $excerpt ) {
+	// For cases where the post excerpt is empty
+	// (but the post might have content)
+	if ( 0 === strlen( $excerpt ) ) {
+		return $excerpt . $link;
+	}
+
+	return $excerpt . '<span class="excerpt-more-link">' . spearhead_more_link() . '</span>';
+}
+
+// Filter the excerpt more link
+add_filter( 'excerpt_more', 'spearhead_excerpt_more' );
+
+// Filter the content more link
+add_filter( 'the_content_more_link', 'spearhead_continue_reading_link' );
+
+// Filter the excerpt
+add_filter( 'get_the_excerpt', 'spearhead_the_excerpt' );

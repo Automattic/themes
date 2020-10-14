@@ -30,6 +30,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	}
 }
 
+.archive .post .entry-title,
 .home .post .entry-title {
 	font-size: var(--global--font-size-lg);
 	margin-bottom: 0;
@@ -81,6 +82,34 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .sticky-post {
 	display: none;
+}
+
+.entry-content .more-link {
+	margin-top: 0;
+	display: inline-block;
+	color: var(--global--color-foreground);
+}
+
+.entry-content .more-link:hover {
+	color: var(--global--color-primary-hover);
+}
+
+.entry-content .more-link:after {
+	content: none;
+}
+
+.entry-content .more-link svg {
+	height: var(--global--font-size-base);
+	width: var(--global--font-size-base);
+	margin-right: -0.25em;
+	display: inline-block;
+	vertical-align: middle;
+	transform: rotate(90deg);
+}
+
+.entry-content .excerpt-more-link .more-link {
+	font-size: calc(0.75 * var(--global--font-size-base));
+	margin-right: 1rem;
 }
 
 .has-link-color a, a {
