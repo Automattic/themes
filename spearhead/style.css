@@ -301,6 +301,11 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	margin-top: 0;
 }
 
+.archive-page-heading {
+	line-height: 2.2em;
+	margin-bottom: 5px;
+}
+
 .wp-block-search.wp-block-search__icon-button.wp-block-search__button-inside .wp-block-search__button {
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
 }
@@ -357,11 +362,24 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	color: var(--global--color-secondary);
 }
 
+.wp-block-latest-posts {
+	margin: 0 auto var(--global--spacing-vertical);
+}
+
+.wp-block-latest-posts > li {
+	line-height: 2.2em;
+}
+
+.wp-block-latest-posts > li:not(.is-grid) {
+	margin: 0 0 5px 0;
+}
+
 .wp-block-latest-posts > li > a {
-	color: var(--global--color-foreground);
+	color: var(--global--color-foreground-light);
 }
 
 .wp-block-latest-posts > li > a:hover {
+	border-color: transparent;
 	color: var(--global--color-primary);
 }
 
@@ -387,6 +405,13 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-transform: uppercase;
 }
 
+ul.wp-block-categories,
+.wp-block-categories ul {
+	list-style-type: none;
+	margin-top: 0;
+	padding: 0;
+}
+
 .wp-block-categories ul {
 	list-style-type: none;
 	padding: 0;
@@ -397,11 +422,13 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .wp-block-categories a {
-	font-size: var(--heading--font-size-h3);
 	color: var(--entry-header--color);
+	font-size: var(--latest-posts--title-font-size);
+	font-weight: var(--heading--font-weight);
 }
 
 .wp-block-categories a:hover {
+	border-color: transparent;
 	color: var(--global--color-primary);
 }
 

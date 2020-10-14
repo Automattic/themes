@@ -1,8 +1,20 @@
 .wp-block-latest-posts {
-    > li > a {
-        color: var(--global--color-foreground);
-        &:hover {
-            color: var(--global--color-primary);
-        }
-    }
+	margin: 0 auto var(--global--spacing-vertical);
+
+	> li {
+		line-height: 2.2em;
+
+		&:not(.is-grid) {
+			margin: 0 0 5px 0;
+		}
+
+		> a {
+			color: var(--global--color-foreground-light);
+
+			&:hover {
+				border-color: transparent;
+				color: var(--global--color-primary);
+			}
+		}
+	}
 }

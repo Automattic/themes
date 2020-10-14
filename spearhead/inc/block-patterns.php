@@ -37,14 +37,15 @@ if ( ! function_exists( 'spearhead_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'spearhead/search-form',
+				'spearhead/archive-page',
 				array(
-					'title'      => __( 'Search Form', 'spearhead' ),
+					'title'      => __( 'Archive page', 'spearhead' ),
 					'categories' => array( 'spearhead' ),
-					'content'    => '<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /--><!-- wp:spacer {"height":50} -->
-					<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
-					<!-- /wp:spacer --><!-- wp:heading {"level":3,"style":{"color":{"text":"#cccccc"}}} -->
-					<h3 class="has-text-color" style="color:#346073">' . __( 'Categories', 'seedlet' ) . '</h3><!-- /wp:heading --><!-- wp:categories /-->',
+					'content'    => '<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+					<!-- wp:spacer {"height":50} --><div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+					<!-- wp:heading {"level":3,"className":"archive-page-heading"} --><h3 class="archive-page-heading">' . __( 'Top Posts', 'spearhead' ) . '</h3><!-- /wp:heading --><!-- wp:latest-posts /-->
+					<!-- wp:heading {"level":3,"className":"archive-page-heading"} --><h3 class="archive-page-heading">' . __( 'Categories', 'spearhead' ) . '</h3><!-- /wp:heading -->
+					<!-- wp:categories /-->',
 				)
 			);
 		}
