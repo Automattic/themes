@@ -245,6 +245,8 @@ add_filter( 'the_content_more_link', 'spearhead_continue_reading_link' );
 
 // Filter the excerpt
 add_filter( 'get_the_excerpt', 'spearhead_the_excerpt' );
+
+/*
  * Post footer meta
  */
 
