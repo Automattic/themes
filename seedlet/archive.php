@@ -37,8 +37,8 @@ get_header();
 				// End the loop.
 			endwhile;
 
-			// Previous/next page navigation.
-			seedlet_the_posts_navigation();
+			// Numbered pagination.
+			seedlet_the_posts_pagination();
 
 			// If no content, include the "No posts found" template.
 		else :
