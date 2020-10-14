@@ -155,9 +155,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
+}
+
+@media only screen and (max-width: 829px) {
+	.site-header {
+		flex-wrap: wrap;
+	}
 }
 
 @media only screen and (max-width: 481px) {
