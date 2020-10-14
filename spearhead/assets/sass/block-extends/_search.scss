@@ -1,3 +1,8 @@
+@mixin input-search-style() {
+    background: transparent;
+    color: var(--global--color-secondary);
+}
+
 .wp-block-search {
 
 	// wrong class on gutenberg editor, we'll need to change it after that's fixed
@@ -52,18 +57,13 @@
 	}
 
 	.wp-block-search__inside-wrapper {
+        @include input-search-style();
 		align-items: center;
-		@extend %input-search-style;
 	}
 
 	.wp-block-search__input {
+        @include input-search-style();
 		border: none;
 		border-bottom: var(--form--border-width) solid var(--form--border-color);
-		@extend %input-search-style;
 	}
-}
-
-%input-search-style {
-	background: transparent;
-	color: var(--global--color-secondary);
 }
