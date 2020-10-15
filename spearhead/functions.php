@@ -230,7 +230,7 @@ function spearhead_the_excerpt( $excerpt ) {
 	// For cases where the post excerpt is empty
 	// (but the post might have content)
 	if ( 0 === strlen( $excerpt ) ) {
-		return $excerpt . $link;
+		return $excerpt;
 	}
 
 	return $excerpt . '<span class="excerpt-more-link">' . spearhead_more_link() . '</span>';

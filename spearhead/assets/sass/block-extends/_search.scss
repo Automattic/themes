@@ -1,0 +1,69 @@
+@mixin input-search-style() {
+	background: transparent;
+	color: var(--global--color-secondary);
+}
+
+.wp-block-search {
+
+	// wrong class on gutenberg editor, we'll need to change it after that's fixed
+	&.wp-block-search__icon-button.wp-block-search__button-inside {
+		.wp-block-search__button {
+			padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+		}
+	}
+
+	// wrong class on gutenberg editor, we'll need to change it after that's fixed
+	&.wp-block-search__text-button.wp-block-search__button-inside {
+
+		.wp-block-search__inside-wrapper{
+			flex-direction: row-reverse;
+			padding-left: 0;
+			border: none;
+			border-bottom: var(--form--border-width) solid var(--form--border-color);
+		}
+
+		.wp-block-search__input {
+			border: none;
+			padding: 0 0 0 10px;
+			font-size: var(--global--font-size-sm);
+		}
+
+		.wp-block-search__button {
+			&.has-icon {
+				margin-left: 0;
+				background: transparent;
+				color: var(--entry-header--color);
+				padding: 0;
+				border: none;
+				transform: scaleX(-1);
+				min-width: 14px;
+				svg {
+					width: 14px;
+					height: 14px;
+				}
+			}
+		}
+	}
+
+	.wp-block-search__button {
+		border: none;
+		box-shadow: none;
+		&.has-icon {
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+
+	.wp-block-search__inside-wrapper {
+		@include input-search-style();
+		align-items: center;
+	}
+
+	.wp-block-search__input {
+		@include input-search-style();
+		border: none;
+		border-bottom: var(--form--border-width) solid var(--form--border-color);
+	}
+}

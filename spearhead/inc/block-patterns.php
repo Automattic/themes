@@ -35,6 +35,21 @@ if ( ! function_exists( 'spearhead_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:separator {"className":"is-style-wide"} --><hr class="wp-block-separator is-style-wide"/><!-- /wp:separator --><!-- wp:paragraph {"fontSize":"medium"} --><p class="has-medium-font-size">Related</p><!-- /wp:paragraph --><!-- wp:jetpack/related-posts /-->',
 				)
 			);
+
+			register_block_pattern(
+				'spearhead/archive-page',
+				array(
+					'title'      => __( 'Archive page', 'spearhead' ),
+					'categories' => array( 'spearhead' ),
+					'content'    => '<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
+					<!-- wp:spacer {"height":30} --><div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+					<!-- wp:paragraph --><p>' . __( 'Latest Posts', 'spearhead' ) . '</p><!-- /wp:paragraph -->
+					<!-- wp:latest-posts /-->
+					<!-- wp:spacer {"height":10} --><div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+					<!-- wp:paragraph --><p>' . __( 'Categories', 'spearhead' ) . '</p><!-- /wp:paragraph -->
+					<!-- wp:categories /-->',
+				)
+			);
 		}
 
 		/**
