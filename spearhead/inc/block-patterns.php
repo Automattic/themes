@@ -56,7 +56,18 @@ if ( ! function_exists( 'spearhead_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Podcast links', 'spearhead' ),
 					'categories' => array( 'spearhead' ),
-					'content'    => '<!-- wp:paragraph {"className":"podcast-links-block","style":{"typography":{"fontSize":17}}} --><p class="podcast-links-block" style="font-size:17px">Podcast available on:  <a rel="noreferrer noopener" target="_blank" href="https://www.apple.com/">Apple </a><a rel="noreferrer noopener" target="_blank" href="https://www.breaker.audio/">Breaker </a><a rel="noreferrer noopener" target="_blank" href="https://www.google.com/">Google </a><a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/">LinkedIn </a><a rel="noreferrer noopener" target="_blank" href="https://overcast.fm/">Overcast </a><a rel="noreferrer noopener" target="_blank" href="https://www.spotify.com/">Spotify </a><a rel="noreferrer noopener" target="_blank" href="https://twitter.com/">Twitter </a><a href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener">YouTube</a></p><!-- /wp:paragraph -->',
+					'content'    => '
+						<!-- wp:navigation {"orientation":"horizontal"} -->
+						<!-- wp:paragraph --><p>' . __( 'Podcast available on:', 'spearhead' ) . '</p><!-- /wp:paragraph -->
+						<!-- wp:navigation-link {"label":"Apple","url":"https://www.apple.com/"} /-->
+						<!-- wp:navigation-link {"label":"Breaker","url":"https://www.breaker.audio/"} /-->
+						<!-- wp:navigation-link {"label":"Google","url":"https://www.google.com/"} /-->
+						<!-- wp:navigation-link {"label":"LinkedIn","url":"https://www.linkedin.com/"} /-->
+						<!-- wp:navigation-link {"label":"Overcast","url":"https://overcast.fm/"} /-->
+						<!-- wp:navigation-link {"label":"Spotify","url":"https://spotify.com/"} /-->
+						<!-- wp:navigation-link {"label":"Twitter","url":"https://twitter.com/"} /-->
+						<!-- wp:navigation-link {"label":"YouTube","url":"https://youtube.com/"} /-->
+						<!-- /wp:navigation -->',
 				)
 			);
 
