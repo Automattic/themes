@@ -5,15 +5,16 @@
 
 .wp-block-search {
 
-	// wrong class on gutenberg editor, we'll need to change it after that's fixed
-	&.wp-block-search__icon-button.wp-block-search__button-inside {
-		.wp-block-search__button {
-			padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+	&.wp-block-search__button-inside {
+		.wp-block-search__inside-wrapper{
+			padding: 0;
+			.wp-block-search__button {
+				padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+			}
 		}
 	}
 
-	// wrong class on gutenberg editor, we'll need to change it after that's fixed
-	&.wp-block-search__text-button.wp-block-search__button-inside {
+	&.wp-block-search__icon-button.wp-block-search__button-inside {
 
 		.wp-block-search__inside-wrapper{
 			flex-direction: row-reverse;
@@ -32,15 +33,9 @@
 			&.has-icon {
 				margin-left: 0;
 				background: transparent;
-				color: var(--entry-header--color);
+				color: var(--form--border-color);
 				padding: 0;
 				border: none;
-				transform: scaleX(-1);
-				min-width: 14px;
-				svg {
-					width: 14px;
-					height: 14px;
-				}
 			}
 		}
 	}
@@ -49,9 +44,12 @@
 		border: none;
 		box-shadow: none;
 		&.has-icon {
+			min-height: calc(2* var(--button--padding-vertical) + 16px);
+			padding: var(--button--padding-vertical);
+			transform: scaleX(-1);
 			svg {
-				width: 24px;
-				height: 24px;
+				width: 29px;
+				height: 29px;
 			}
 		}
 	}
@@ -63,6 +61,8 @@
 
 	.wp-block-search__input {
 		@include input-search-style();
+		color: var(--form--color-text);
+		margin-right: calc( .1 * var(--global--spacing-horizontal));
 		border: none;
 		border-bottom: var(--form--border-width) solid var(--form--border-color);
 	}
