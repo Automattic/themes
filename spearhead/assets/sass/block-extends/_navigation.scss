@@ -1,12 +1,21 @@
 .wp-block-navigation {
 	.wp-block-navigation__container {
+		p {
+			line-height: 2.5;
+		}
 		.wp-block-navigation-link {
-			margin: 0 calc( 0.5 * var(--global--spacing-unit) );
+			margin: 0 calc( 0.2 * var(--global--spacing-unit) );
 
 			.wp-block-navigation-link__content {
+				border-bottom: 1px solid transparent;
 				color: var(--wp--style--color--link, var(--global--color-primary));
-				line-height: var(--global--line-height-body);
+				line-height: 1;
 				padding: 0;
+
+				&:hover {
+					border-color: var(--global--color-primary-hover);
+					color: var(--global--color-primary-hover);
+				}
 			}
 		}
 	}
