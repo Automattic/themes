@@ -11,14 +11,17 @@
 		margin-bottom: 0;
 	}
 	.entry-meta {
+		margin-bottom: var(--global--spacing-vertical);
 		order: -1;
+
 		.posted-on {
 			svg {
 				display: none;
 			}
 			a {
+				color: var(--global--color-foreground-light);
 				font-family: var(--global--font-primary);
-				text-transform: uppercase;
+				font-size: var(--global--font-size-md);
 			}
 		}
 	}
@@ -47,6 +50,9 @@
 
 	.entry-content {
 		font-size: var(--sticky-posts--entry-content-font-size);
+		> * {
+			color: var(--global--color-foreground-light);
+		}
 	}
 }
 
