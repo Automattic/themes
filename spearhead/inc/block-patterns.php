@@ -42,9 +42,11 @@ if ( ! function_exists( 'spearhead_register_block_patterns' ) ) :
 					'title'      => __( 'Archive page', 'spearhead' ),
 					'categories' => array( 'spearhead' ),
 					'content'    => '<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true} /-->
-					<!-- wp:spacer {"height":50} --><div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
-					<!-- wp:heading {"level":3,"className":"archive-page-heading"} --><h3 class="archive-page-heading">' . __( 'Top Posts', 'spearhead' ) . '</h3><!-- /wp:heading --><!-- wp:latest-posts /-->
-					<!-- wp:heading {"level":3,"className":"archive-page-heading"} --><h3 class="archive-page-heading">' . __( 'Categories', 'spearhead' ) . '</h3><!-- /wp:heading -->
+					<!-- wp:spacer {"height":30} --><div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+					<!-- wp:paragraph --><p>' . __( 'Latest Posts', 'spearhead' ) . '</p><!-- /wp:paragraph -->
+					<!-- wp:latest-posts /-->
+					<!-- wp:spacer {"height":10} --><div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+					<!-- wp:paragraph --><p>' . __( 'Categories', 'spearhead' ) . '</p><!-- /wp:paragraph -->
 					<!-- wp:categories /-->',
 				)
 			);
