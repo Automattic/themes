@@ -70,15 +70,6 @@ if ( ! function_exists( 'spearhead_register_block_patterns' ) ) :
 						<!-- /wp:navigation -->',
 				)
 			);
-
-			register_block_pattern(
-				'spearhead/podcast-links-list',
-				array(
-					'title'      => __( 'Podcast links list', 'spearhead' ),
-					'categories' => array( 'spearhead' ),
-					'content'    => '<!-- wp:paragraph {"className":"podcast-links-list-block","style":{"typography":{"fontSize":18}}} --><p class="podcast-links-list-block" style="font-size:18px"><a rel="noreferrer noopener" target="_blank" href="https://www.apple.com/">Apple </a>•<a rel="noreferrer noopener" target="_blank" href="https://www.breaker.audio/">Breaker </a>•<a rel="noreferrer noopener" target="_blank" href="https://www.google.com/">Google </a>•<a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/">LinkedIn </a>•<a rel="noreferrer noopener" target="_blank" href="https://overcast.fm/">Overcast </a>•<a rel="noreferrer noopener" target="_blank" href="https://www.spotify.com/">Spotify </a>•<a rel="noreferrer noopener" target="_blank" href="https://twitter.com/">Twitter </a>•<a href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener">YouTube</a></p><!-- /wp:paragraph -->',
-				)
-			);
 		}
 
 		/**
