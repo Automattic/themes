@@ -571,7 +571,7 @@ body {
 button,
 .button,
 input[type="submit"],
-.wp-block-button__link, .a8c-posts-list__view-all, button[data-load-more-btn] {
+.wp-block-button__link, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, button[data-load-more-btn] {
 	line-height: var(--button--line-height);
 	color: var(--button--color-text);
 	cursor: pointer;
@@ -588,10 +588,10 @@ input[type="submit"],
 button:before,
 .button:before,
 input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
+.wp-block-button__link:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, button[data-load-more-btn]:before, button:after,
 .button:after,
 input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+.wp-block-button__link:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, button[data-load-more-btn]:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -601,21 +601,21 @@ input[type="submit"]:after,
 button:before,
 .button:before,
 input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
+.wp-block-button__link:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, button[data-load-more-btn]:before {
 	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
 }
 
 button:after,
 .button:after,
 input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+.wp-block-button__link:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, button[data-load-more-btn]:after {
 	margin-top: -calc(.5em * var(--button--line-height) + -.39);
 }
 
 button:active,
 .button:active,
 input:active[type="submit"],
-.wp-block-button__link:active, .a8c-posts-list__view-all:active {
+.wp-block-button__link:active, .a8c-posts-list__view-all:active, .wp-block-search .wp-block-search__button:active {
 	color: var(--button--color-text-active);
 	background-color: var(--button--color-background-active);
 }
@@ -623,13 +623,13 @@ input:active[type="submit"],
 button:hover,
 .button:hover,
 input:hover[type="submit"],
-.wp-block-button__link:hover, .a8c-posts-list__view-all:hover, button:focus,
+.wp-block-button__link:hover, .a8c-posts-list__view-all:hover, .wp-block-search .wp-block-search__button:hover, button:focus,
 .button:focus,
 input:focus[type="submit"],
-.wp-block-button__link:focus, .a8c-posts-list__view-all:focus, button.has-focus,
+.wp-block-button__link:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, button.has-focus,
 .has-focus.button,
 input.has-focus[type="submit"],
-.has-focus.wp-block-button__link, .has-focus.a8c-posts-list__view-all {
+.has-focus.wp-block-button__link, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button {
 	color: var(--button--color-text-hover);
 	background-color: var(--button--color-background-hover);
 }
@@ -2269,8 +2269,25 @@ p.has-text-color a {
 }
 
 .wp-block-search {
-	display: flex;
-	max-width: var(--responsive--aligndefault-width);
+	flex-wrap: wrap;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	background: transparent;
+	border: var(--form--border-width) solid var(--form--border-color);
+	border-radius: var(--form--border-radius);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+	padding: var(--form--spacing-unit);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button.has-icon {
+	padding: 0;
 }
 
 .wp-block-search .wp-block-search__label {
@@ -2278,6 +2295,9 @@ p.has-text-color a {
 }
 
 .wp-block-search .wp-block-search__input {
+	font-family: var(--form--font-family);
+	font-size: var(--form--font-size);
+	line-height: var(--form--line-height);
 	border: var(--form--border-width) solid var(--form--border-color);
 	border-radius: var(--form--border-radius);
 	color: var(--form--color-text);
@@ -2285,11 +2305,30 @@ p.has-text-color a {
 	max-width: inherit;
 	margin-left: calc( .66 * var(--global--spacing-horizontal));
 	padding: var(--form--spacing-unit);
+	background: transparent;
 }
 
 .wp-block-search .wp-block-search__input:focus {
 	color: var(--form--color-text);
 	border-color: var(--form--border-color);
+}
+
+.wp-block-search .wp-block-search__button {
+	border: none;
+	box-shadow: none;
+}
+
+.wp-block-search .wp-block-search__button.has-icon {
+	transform: scaleX(-1);
+	padding: 0;
+	min-width: calc(2* var(--button--padding-vertical) + 16px);
+	min-height: calc(2* var(--button--padding-vertical) + 16px);
+}
+
+.wp-block-search .wp-block-search__button.has-icon svg {
+	fill: currentColor;
+	width: 29px;
+	height: 29px;
 }
 
 hr {
@@ -4000,7 +4039,7 @@ img#wpstats {
 button,
 .button,
 input[type="submit"],
-.wp-block-button__link, .a8c-posts-list__view-all, button[data-load-more-btn] {
+.wp-block-button__link, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, button[data-load-more-btn] {
 	line-height: var(--button--line-height);
 	color: var(--button--color-text);
 	cursor: pointer;
@@ -4017,10 +4056,10 @@ input[type="submit"],
 button:before,
 .button:before,
 input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
+.wp-block-button__link:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, button[data-load-more-btn]:before, button:after,
 .button:after,
 input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+.wp-block-button__link:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, button[data-load-more-btn]:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -4030,21 +4069,21 @@ input[type="submit"]:after,
 button:before,
 .button:before,
 input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
+.wp-block-button__link:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, button[data-load-more-btn]:before {
 	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
 }
 
 button:after,
 .button:after,
 input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+.wp-block-button__link:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, button[data-load-more-btn]:after {
 	margin-top: -calc(.5em * var(--button--line-height) + -.39);
 }
 
 button:active,
 .button:active,
 input:active[type="submit"],
-.wp-block-button__link:active, .a8c-posts-list__view-all:active {
+.wp-block-button__link:active, .a8c-posts-list__view-all:active, .wp-block-search .wp-block-search__button:active {
 	color: var(--button--color-text-active);
 	background-color: var(--button--color-background-active);
 }
@@ -4052,13 +4091,13 @@ input:active[type="submit"],
 button:hover,
 .button:hover,
 input:hover[type="submit"],
-.wp-block-button__link:hover, .a8c-posts-list__view-all:hover, button:focus,
+.wp-block-button__link:hover, .a8c-posts-list__view-all:hover, .wp-block-search .wp-block-search__button:hover, button:focus,
 .button:focus,
 input:focus[type="submit"],
-.wp-block-button__link:focus, .a8c-posts-list__view-all:focus, button.has-focus,
+.wp-block-button__link:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, button.has-focus,
 .has-focus.button,
 input.has-focus[type="submit"],
-.has-focus.wp-block-button__link, .has-focus.a8c-posts-list__view-all {
+.has-focus.wp-block-button__link, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button {
 	color: var(--button--color-text-hover);
 	background-color: var(--button--color-background-hover);
 }

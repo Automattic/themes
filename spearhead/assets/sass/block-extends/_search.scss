@@ -1,11 +1,4 @@
-@mixin input-search-style() {
-	background: transparent;
-	color: var(--global--color-secondary);
-}
-
 .wp-block-search {
-
-	flex-wrap: wrap;
 
 	&.wp-block-search__button-inside {
 		.wp-block-search__inside-wrapper{
@@ -51,24 +44,8 @@
 		}
 	}
 
-	.wp-block-search__button {
-		border: none;
-		box-shadow: none;
-		&.has-icon {
-			transform: scaleX(-1);	
-			padding: 0;		
-			min-width: calc(2* var(--button--padding-vertical) + 16px);
-			min-height: calc(2* var(--button--padding-vertical) + 16px);
-			svg {
-				fill: currentColor;
-				width: 29px;
-				height: 29px;
-			}
-		}
-	}
-
 	.wp-block-search__inside-wrapper {
-		@include input-search-style();
+		color: var(--global--color-secondary);
 		align-items: center;
 	}
 
@@ -77,7 +54,6 @@
 	}
 
 	.wp-block-search__input {
-		@include input-search-style();
 		color: var(--form--color-text);
 		margin-right: calc( .1 * var(--global--spacing-horizontal));
 		border: none;
