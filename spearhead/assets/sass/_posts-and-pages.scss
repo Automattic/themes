@@ -36,9 +36,13 @@
 }
 
 // Sticky posts
-.has-sticky-post .site-main > *:first-child {
-	margin-top: calc( 0px - var(--global--spacing-vertical) );
-	padding-top: var(--global--spacing-vertical);
+.has-sticky-post .site-main {
+	background: var(--sticky-posts--alt-color-background);
+
+	> *:first-child {
+		margin-top: calc( 0px - var(--global--spacing-vertical) );
+		padding-top: var(--global--spacing-vertical);
+	}
 }
 
 .post.sticky { // .post class needed to make this stronger
@@ -49,6 +53,7 @@
 	}
 
 	.entry-content {
+		color: var(--sticky-posts--color-text);
 		font-size: var(--sticky-posts--entry-content-font-size);
 		> * {
 			color: var(--global--color-foreground-light);
@@ -90,4 +95,8 @@
 			margin-left: 1rem;
 		}
 	}
+}
+
+.single {
+	color: var(--global--color-foreground-light);
 }
