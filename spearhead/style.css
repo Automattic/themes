@@ -133,7 +133,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .entry-content a {
-	font-weight: 500;
+	font-weight: var(--global--link-font-weight);
 }
 
 .has-main-navigation .site-header {
@@ -227,8 +227,6 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header .primary-navigation > div > ul li, .site-header .woo-navigation > div > ul li {
 	color: var(--global--color-secondary);
-	margin: 6px 8px;
-	padding: var(--social-nav--padding);
 }
 
 .site-header .primary-navigation > div > ul li a:hover, .site-header .woo-navigation > div > ul li a:hover {
@@ -372,20 +370,16 @@ ul.wp-block-categories,
 	line-height: 2.5;
 }
 
-.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link {
-	margin: 0 calc( 0.2 * var(--global--spacing-unit));
-}
-
 .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link .wp-block-navigation-link__content {
-	border-bottom: 1px solid transparent;
 	color: var(--wp--style--color--link, var(--global--color-primary));
 	line-height: 1;
+	margin: calc( var(--primary-nav--padding) - 1px);
 	padding: 0;
 }
 
-.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link .wp-block-navigation-link__content:hover {
-	border-color: var(--global--color-primary-hover);
-	color: var(--global--color-primary-hover);
+.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link .wp-block-navigation-link__content .wp-block-navigation-link__label {
+	font-size: var(--global--font-size-root);
+	font-weight: var(--global--link-font-weight);
 }
 
 .wp-block-jetpack-related-posts .jp-related-posts-i2__post {
