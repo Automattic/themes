@@ -3,12 +3,12 @@ $site-branding-height: 68px;
 
 .has-main-navigation {
 	.site-header {
-		padding: var(--global--spacing-horizontal);
-		@include media( laptop ){
-			padding: 35px var(--global--spacing-horizontal);
+		padding: var( --global--spacing-horizontal );
+		@include media( laptop ) {
+			padding: 35px var( --global--spacing-horizontal );
 		}
 
-		@include media( laptop-only ){
+		@include media( laptop-only ) {
 			.site-title {
 				margin: 0;
 			}
@@ -21,15 +21,15 @@ $site-branding-height: 68px;
 }
 
 .has-sticky-post .site-header {
-	background: var(--sticky-posts--color-background);
+	background: var( --sticky-posts--color-background );
 }
 
 .site-header {
 	display: flex;
 	justify-content: space-between;
-	max-width: var(--responsive--alignfull-width);
+	max-width: var( --responsive--alignfull-width );
 
-	@include media( laptop-only ){
+	@include media( laptop-only ) {
 		flex-wrap: wrap;
 	}
 
@@ -51,26 +51,25 @@ $site-branding-height: 68px;
 		flex-grow: 4;
 		margin-top: 0;
 
-		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
+		@include media( laptop-only ) { // TODO - use $navigation-max-break-point variable
 			.primary-menu-container {
-				background: var(--primary-nav--color-background);
-				padding: var(--global--spacing-unit);
+				background: var( --primary-nav--color-background );
+				padding: var( --global--spacing-unit );
 				top: $site-branding-height;
-
 				.admin-bar & {
 					top: $site-branding-height + $admin-bar-height;
 				}
 
 				a {
-					color: var(--global--color-background);
+					color: var( --global--color-background );
 				}
 			}
 		}
 
 		button#primary-close-menu {
-			color: var(--global--color-secondary);
+			color: var( --global--color-secondary );
 			margin: 0;
-			padding: var(--global--spacing-horizontal);
+			padding: var( --global--spacing-horizontal );
 			position: fixed;
 			top: 0;
 			right: 0;
@@ -80,7 +79,7 @@ $site-branding-height: 68px;
 			}
 
 			&:hover {
-				color: var(--global--color-primary);
+				color: var( --global--color-primary );
 			}
 		}
 	}
@@ -91,13 +90,13 @@ $site-branding-height: 68px;
 
 
 	.primary-navigation > div > ul li, .woo-navigation > div > ul li {
-		color: var(--global--color-secondary);
+		color: var( --global--color-secondary );
 		//margin: 6px 8px;
 		//padding: var(--social-nav--padding);
 
 		a:hover {
 			border-color: transparent;
-			color: var(--global--color-primary);
+			color: var( --global--color-primary );
 		}
 	}
 
@@ -111,22 +110,22 @@ $site-branding-height: 68px;
 		ul {
 			justify-content: flex-start;
 			flex-wrap: nowrap;
-			margin-top: var(--social-nav--padding);
+			margin-top: var( --social-nav--padding );
 
 			li {
 				margin: 0;
-				padding: 0 var(--social-nav--padding) 0 0;
+				padding: 0 var( --social-nav--padding ) 0 0;
 			}
 
 		}
-		@include media( laptop ){
+		@include media( laptop ) {
 			flex-basis: auto;
 			ul {
 				justify-content: flex-end;
 				margin-top: 0;
 
 				li {
-					padding: 0 0 0 var(--social-nav--padding);
+					padding: 0 0 0 var( --social-nav--padding );
 				}
 			}
 		}
@@ -137,7 +136,7 @@ $site-branding-height: 68px;
 
 			&:hover {
 				border-color: transparent;
-				color: var(--global--color-primary);
+				color: var( --global--color-primary );
 			}
 		}
 	}
@@ -148,9 +147,9 @@ $site-branding-height: 68px;
 	button#primary-open-menu {
 		margin-top: 0;
 		margin-right: 0;
-		padding: var(--global--spacing-horizontal);
+		padding: var( --global--spacing-horizontal );
 
-		&:before {
+		&::before {
 			margin: 0;
 		}
 	}

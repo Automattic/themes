@@ -121,3 +121,23 @@ if ( files.length ) {
 		}
 	}
 }
+
+// grab a list of all the files staged to commit
+const toStylelintFix = parseGitDiffToPathArray( 'git diff --cached --name-only --diff-filter=ACM' ).filter( ( file ) => file.endsWith( '.scss' ) );
+toStylelintFix.forEach( ( file ) => console.log( `stylelint formatting staged file: ${ file }` ) );
+if ( toStylelintFix.length ) {
+	console.log(`./node_modules/.bin/stylelint --fix ${ toStylelintFix.join( ' ' ) }`);
+	spawnSync( `./node_modules/.bin/stylelint --fix ${ toStylelintFix.join( ' ' ) }` );
+	execSync( `git add ${ toStylelintFix.join( ' ' ) }` );
+}
+
+if ( toStylelintFix.length ) {
+	const lintResult = spawnSync( './node_modules/.bin/stylelint', [ ...toStylelintFix ], {
+		shell: true,
+		stdio: 'inherit',
+	} );
+
+	if ( lintResult.status ) {
+		linterFailure();
+	}
+}
