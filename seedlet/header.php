@@ -24,20 +24,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
 
 		<header id="masthead" class="site-header default-max-width" role="banner">
-			<div class="menu-button-container">
-				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-					<button id="woo-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
-						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ); ?></span>
-					</button>
-				<?php endif; ?>
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<button id="primary-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ); ?></span>
-						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
-					</button>
-				<?php endif; ?>
-			</div>
 			<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -64,6 +50,15 @@
 					?>
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>
+
+			<div class="menu-button-container">
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+					<button id="primary-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ); ?></span>
+						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
+					</button>
+				<?php endif; ?>
+			</div>
 
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 				<nav class="woo-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Woo Minicart', 'seedlet' ); ?>">
@@ -95,6 +90,15 @@
 					?>
 				</nav><!-- .woo-navigation -->
 			<?php endif; ?>
+
+			<div class="menu-button-container">
+				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+					<button id="woo-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
+						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ); ?></span>
+					</button>
+				<?php endif; ?>
+			</div>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'seedlet' ); ?>">
