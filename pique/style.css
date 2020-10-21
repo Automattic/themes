@@ -1148,14 +1148,24 @@ a:active {
 
 /* Account for the admin bar */
 @media screen and (min-width: 600px) and (max-width: 782px) {
-	.admin-bar .main-navigation.sticky {
+	.admin-bar .main-navigation.sticky,
+	.has-marketing-bar .main-navigation.sticky {
 		top: 46px;
+	}
+	.admin-bar.has-marketing-bar .main-navigation.sticky {
+		top: calc(46px + 46px);
 	}
 }
 
 @media screen and (min-width: 782px) {
 	.admin-bar .main-navigation.sticky {
 		top: 32px;
+	}
+	.has-marketing-bar .main-navigation.sticky {
+		top: 49px;
+	}
+	.admin-bar.has-marketing-bar .main-navigation.sticky {
+		top: calc(32px + 49px);
 	}
 }
 
@@ -2951,9 +2961,21 @@ blockquote .overlay cite,
 .admin-bar.pique-frontpage #masthead {
 	top: 32px;
 }
+.has-marketing-bar.pique-frontpage #masthead {
+	top: 49px;
+}
+.admin-bar.has-marketing-bar.pique-frontpage #masthead {
+	top: calc(32px + 49px);
+}
 @media screen and (max-width: 782px) {
 	.admin-bar.pique-frontpage #masthead {
 		top: 46px;
+	}
+	.has-marketing-bar.pique-frontpage #masthead {
+		top: 49px;
+	}
+	.admin-bar.has-marketing-bar.pique-frontpage #masthead {
+		top: calc(32px + 49px);
 	}
 }
 
