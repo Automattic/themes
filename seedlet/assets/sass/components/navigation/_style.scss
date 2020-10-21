@@ -36,11 +36,11 @@
 
 	.has-marketing-bar.lock-scrolling & > .button,
 	.has-marketing-bar:not(.primary-navigation-open) & {
-		top: var(--marketing-bar--height);
+		top: var(--wpcom-marketing-bar--height);
 	}
 	.admin-bar.has-marketing-bar.lock-scrolling & > .button,
 	.admin-bar.has-marketing-bar:not(.primary-navigation-open) & {
-		top: calc(var(--wpadmin-bar--height) + var(--marketing-bar--height));
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
 	}
 }
 
@@ -62,13 +62,13 @@
 			right: 0;
 			z-index: 501;
 			.has-marketing-bar & {
-				top: calc(-1 * var(--marketing-bar--height));
+				top: calc(-1 * var(--wpcom-marketing-bar--height));
 			}
 			.admin-bar & {
 				top: calc(-1 * var(--wpadmin-bar--height));
 			}
 			.admin-bar.has-marketing-bar & {
-				top: calc(-1 * (var(--wpadmin-bar--height) + var(--marketing-bar--height)));
+				top: calc(-1 * (var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height)));
 			}
 		}
 
@@ -185,7 +185,7 @@
 	// Adjust positions when logged-in
 	.has-marketing-bar &,
 	.has-marketing-bar & > div {
-		top: var(--marketing-bar--height);
+		top: var(--wpcom-marketing-bar--height);
 	}
 
 	.admin-bar &,
@@ -195,7 +195,7 @@
 
 	.admin-bar.has-marketing-bar &,
 	.admin-bar.has-marketing-bar & > div {
-		top: calc(var(--wpadmin-bar--height) + var(--marketing-bar--height));
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
 	}
 
 	@include media( $navigation-min-break-point ) {
