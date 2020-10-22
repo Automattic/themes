@@ -106,7 +106,7 @@ add_action( 'after_setup_theme', 'spearhead_setup', 12 );
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
  */
 function spearhead_content_width() {
-	return 744;
+	return 782;
 }
 add_filter( 'seedlet_content_width', 'spearhead_content_width' );
 
