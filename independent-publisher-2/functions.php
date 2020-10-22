@@ -80,6 +80,9 @@ function independent_publisher_2_setup() {
 	// Load regular editor styles into the new block-based editor.
 	add_theme_support( 'editor-styles' );
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
