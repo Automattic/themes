@@ -17,14 +17,14 @@ function seedlet_define_color_annotations( $colors ) {
 	);
 
 	// Foreground Color
-	// --global--color-foreground-light
+	// --global--color-foreground
 	add_color_rule(
 		'txt',
 		$colors['foreground'],
 		array(
 
 			// This placeholder is needed to make the color annotations work
-			array( '.global--color-foreground-light', 'color' ),
+			array( '.global--color-foreground', 'color' ),
 
 		),
 		__( 'Foreground Color' )
@@ -131,18 +131,18 @@ function seedlet_custom_colors_extra_css() {
 	$secondary    = $colors_array['colors']['fg1'];
 	$tertiary     = $colors_array['colors']['fg2'];
 
-	$foreground_light = change_color_luminescence( $foreground, 10 );
-	$foreground_dark  = change_color_luminescence( $foreground, -10 );
-	$primary_hover    = change_color_luminescence( $primary, 10 );
-	$secondary_hover  = change_color_luminescence( $secondary, 10 );
+	$foreground_low_contrast  = change_color_luminescence( $foreground, 10 );
+	$foreground_high_contrast = change_color_luminescence( $foreground, -10 );
+	$primary_hover            = change_color_luminescence( $primary, 10 );
+	$secondary_hover          = change_color_luminescence( $secondary, 10 );
 	?>
 
 	:root,
 	#editor .editor-styles-wrapper {
 		--global--color-background: <?php echo $background; ?>;
 		--global--color-foreground: <?php echo $foreground; ?>;
-		--global--color-foreground-light: <?php echo $foreground_light; ?>;
-		--global--color-foreground-dark: <?php echo $foreground_dark; ?>;
+		--global--color-foreground-low-contrast: <?php echo $foreground_low_contrast; ?>;
+		--global--color-foreground-high-contrast: <?php echo $foreground_high_contrast; ?>;
 		--global--color-primary: <?php echo $primary; ?>;
 		--global--color-primary-hover: <?php echo $primary_hover; ?>;
 		--global--color-secondary: <?php echo $secondary; ?>;
