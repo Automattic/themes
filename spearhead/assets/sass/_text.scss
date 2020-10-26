@@ -1,7 +1,13 @@
-a {
-    border-bottom: none;
+.has-link-color a, a {
+    border-bottom: 1px solid transparent;
+    transition: all 0.1s ease;
+
+    &:hover:not(.wp-block-button__link) {
+        color: var( --global--color-primary-hover );
+        border-bottom: 1px solid var( --global--color-primary-hover );
+    }
 }
 
 .entry-content a {
-    font-weight: 500;
+    font-weight: var(--global--link-font-weight);
 }

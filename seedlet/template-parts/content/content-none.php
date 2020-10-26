@@ -15,7 +15,7 @@
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'seedlet' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content default-max-width">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage Sk8prk
+ * @subpackage Spearhead
  * @since 1.0.0
  */
 
@@ -20,14 +20,17 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 	function spearhead_setup() {
 
 		// Add support for editor styles.
-        add_theme_support( 'editor-styles' );
+		add_theme_support( 'editor-styles' );
+		add_theme_support( 'dark-editor-style' );
 
 		// Enqueue editor styles.
-		add_editor_style( array(
-			spearhead_fonts_url(),
-			'variables.css',
-			'style.css',
-		) );
+		add_editor_style(
+			array(
+				spearhead_fonts_url(),
+				'variables.css',
+				'style.css',
+			)
+		);
 
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
@@ -92,7 +95,9 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 					'color' => '#FFFFFF',
 				),
 			)
-        );
+		);
+		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
+		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
 	}
 endif;
 add_action( 'after_setup_theme', 'spearhead_setup', 12 );
@@ -101,7 +106,7 @@ add_action( 'after_setup_theme', 'spearhead_setup', 12 );
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
  */
 function spearhead_content_width() {
-	return 744;
+	return 782;
 }
 add_filter( 'seedlet_content_width', 'spearhead_content_width' );
 
@@ -109,17 +114,22 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  * Enqueue scripts and styles.
  */
 function spearhead_scripts() {
+	// dequeue parent styles
+	wp_dequeue_style( 'seedlet-style-navigation' );
+
 	// enqueue Google fonts, if necessary
-    wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
+	wp_enqueue_style( 'spearhead-fonts', spearhead_fonts_url(), array(), null );
 
 	// Child theme variables
 	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child styles
-	wp_enqueue_style('spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'spearhead-navigation', get_stylesheet_directory_uri() . '/navigation.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'spearhead-style', 'rtl', 'replace' );
+	wp_style_add_data( 'spearhead-navigation', 'rtl', 'replace' );
 }
 add_action( 'wp_enqueue_scripts', 'spearhead_scripts', 11 );
 
@@ -128,9 +138,10 @@ add_action( 'wp_enqueue_scripts', 'spearhead_scripts', 11 );
  */
 function spearhead_block_extends() {
 	// Block Tweaks
-	wp_enqueue_script( 'spearhead-block-extends',
+	wp_enqueue_script(
+		'spearhead-block-extends',
 		get_stylesheet_directory_uri() . '/assets/js/extend-blocks.js',
-		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation 
+		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation
 	);
 }
 add_action( 'enqueue_block_assets', 'spearhead_block_extends' );
@@ -141,17 +152,17 @@ add_action( 'enqueue_block_assets', 'spearhead_block_extends' );
  * @return string
  */
 function spearhead_fonts_url() : string {
-    $fonts_url = '';
+	$fonts_url = '';
 
 	$font_families   = array();
 	$font_families[] = 'family=Libre+Franklin:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700';
 	$font_families[] = 'family=IBM+Plex+Mono:wght@400;700';
 	$font_families[] = 'display=swap';
 
-    // Make a single request for the theme fonts.
-    $fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
-    
-    return $fonts_url;
+	// Make a single request for the theme fonts.
+	$fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
+
+	return $fonts_url;
 }
 
 /**
@@ -165,3 +176,138 @@ function seedlet_entry_meta_header() : void {
 	}
 }
 // require get_stylesheet_directory() . '/inc/custom-header.php';
+
+/**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/inc/block-patterns.php';
+
+add_filter(
+	'body_class',
+	function( $classes ) {
+		$stickies = get_option( 'sticky_posts' );
+
+		if ( count( $stickies ) && is_home() ) {
+			return array_merge( $classes, array( 'has-sticky-post' ) );
+		}
+
+		return $classes;
+	}
+);
+
+/**
+ * Create the continue reading link.
+ */
+function spearhead_continue_reading_link( $more ) {
+	if ( ! is_admin() ) {
+		$more_link = spearhead_more_link();
+
+		return '<p>' . $more_link . '</p>';
+	}
+}
+
+/**
+ * Create a more link for use in both "Read more" and excerpt contexts.
+ */
+function spearhead_more_link() {
+	$more_text = sprintf(
+		/* translators: %s: Name of current post. */
+		wp_kses( __( 'More', 'spearhead' ), array( 'span' => array( 'class' => array() ) ) ),
+		the_title( '<span class="screen-reader-text">"', '"</span>', false )
+	);
+
+	return '<a class="more-link" href="' . esc_url( get_permalink() ) . '">' . $more_text . ' ' . seedlet_get_icon_svg( 'dropdown' ) . '</a>';
+}
+
+/**
+ * Use this instead of the default WordPress ellipsis which is […].
+ */
+function spearhead_excerpt_more() {
+	return '…';
+}
+
+function spearhead_the_excerpt( $excerpt ) {
+	// For cases where the post excerpt is empty
+	// (but the post might have content)
+	if ( 0 === strlen( $excerpt ) ) {
+		return $excerpt;
+	}
+
+	return $excerpt . '<span class="excerpt-more-link">' . spearhead_more_link() . '</span>';
+}
+
+/**
+ * Overwrite Seedlet's post navigation template tag.
+ */
+if ( ! function_exists( 'seedlet_the_post_navigation' ) ) :
+	function seedlet_the_post_navigation() {
+		return null;
+	}
+endif;
+
+// Filter the excerpt more link
+add_filter( 'excerpt_more', 'spearhead_excerpt_more' );
+
+// Filter the content more link
+add_filter( 'the_content_more_link', 'spearhead_continue_reading_link' );
+
+// Filter the excerpt
+add_filter( 'get_the_excerpt', 'spearhead_the_excerpt' );
+
+/*
+ * Post footer meta
+ */
+
+if ( ! function_exists( 'seedlet_entry_meta_footer' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function seedlet_entry_meta_footer() {
+
+		seedlet_posted_on();
+
+		// Edit post link.
+		edit_post_link(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers. */
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'spearhead' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>'
+		);
+	}
+endif;
+
+if ( ! function_exists( 'seedlet_posted_on' ) ) :
+	/**
+	 * Prints HTML with meta information for the current post-date/time.
+	 */
+	function seedlet_posted_on() {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date( 'M d Y' ) ),
+			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		printf(
+			'<span class="posted-on"><a href="%1$s" rel="bookmark">%2$s</a></span>',
+			esc_url( get_permalink() ),
+			$time_string
+		);
+	}
+endif;

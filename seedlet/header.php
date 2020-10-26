@@ -24,34 +24,20 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
 
 		<header id="masthead" class="site-header default-max-width" role="banner">
-			<div class="menu-button-container">
-				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-					<button id="woo-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
-						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ) ?></span>
-					</button>
-				<?php endif; ?>
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<button id="primary-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ) ?></span>
-						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
-					</button>
-				<?php endif; ?>
-			</div>
 			<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'seedlet' ); ?>">
 					<button id="primary-close-menu" class="button close">
-						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ) ?></span>
+						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ); ?></span>
 						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'seedlet' ); ?></span>
 					</button>
 					<?php
 					// Get menu slug
 					$location_name = 'primary';
-					$locations = get_nav_menu_locations();
-					$menu_id = $locations[ $location_name ];
-					$menu_obj = wp_get_nav_menu_object( $menu_id );
+					$locations     = get_nav_menu_locations();
+					$menu_id       = $locations[ $location_name ];
+					$menu_obj      = wp_get_nav_menu_object( $menu_id );
 
 					wp_nav_menu(
 						array(
@@ -65,9 +51,19 @@
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>
 
+			<div class="menu-button-container">
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+					<button id="primary-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ); ?></span>
+						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
+					</button>
+				<?php endif; ?>
+			</div>
+
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 				<nav class="woo-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Woo Minicart', 'seedlet' ); ?>">
-					<?php echo( sprintf(
+					<?php
+					echo( sprintf(
 						'<button id="woo-close-menu" class="button close">
 							<span class="dropdown-icon close">%1$s %2$s</span>
 							<span class="hide-visually collapsed-text">%3$s</span>
@@ -90,9 +86,19 @@
 						seedlet_cart_link(),
 						esc_attr__( 'View your shopping list', 'seedlet' ),
 						seedlet_cart_widget()
-					) ); ?>
+					) );
+					?>
 				</nav><!-- .woo-navigation -->
 			<?php endif; ?>
+
+			<div class="menu-button-container">
+				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+					<button id="woo-open-menu" class="button open">
+						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
+						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'seedlet' ); ?></span>
+					</button>
+				<?php endif; ?>
+			</div>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'seedlet' ); ?>">

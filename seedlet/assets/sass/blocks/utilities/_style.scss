@@ -1,7 +1,7 @@
 /* Block Alignments */
 
 /**
- * These selectors set the default max width for content appearing inside a post or page. 
+ * These selectors set the default max width for content appearing inside a post or page.
  */
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
 *[class*="inner-container"] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce) {
@@ -14,20 +14,34 @@
 .alignleft {
 	/*rtl:ignore*/
 	text-align: left;
-	/*rtl:ignore*/
-	float: left;
 	margin-top: 0;
-	/*rtl:ignore*/
-	margin-right: var(--global--spacing-horizontal);
-	margin-bottom: var(--global--spacing-vertical);
 }
 
-// Targeting the .entry-content class is necessary to ensure these styles 
+// Targeting the .entry-content class is necessary to ensure these styles
 // only apply when the block isn't nested.
 .entry-content > .alignleft {
 	max-width: var(--responsive--aligndefault-width);
-	@extend %responsive-alignleft-mobile;
-	@extend %responsive-alignleft;
+}
+
+@include media(mobile) {
+
+	.alignleft {
+
+		/*rtl:ignore*/
+		float: left;
+
+		/*rtl:ignore*/
+		margin-right: var(--global--spacing-horizontal);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+
+	.entry-content > .alignleft {
+		max-width: var(--responsive--alignrightleft-width);
+		/*rtl:ignore*/
+		margin-left:  calc( 50% - var(--responsive--alignrightleft-width));
+		/*rtl:ignore*/
+		margin-right: var(--global--spacing-horizontal);
+	}
 }
 
 /**
@@ -46,20 +60,34 @@
  * .alignright
  */
 .alignright {
-	/*rtl:ignore*/
-	float: right;
 	margin-top: 0;
 	margin-bottom: var(--global--spacing-vertical);
-	/*rtl:ignore*/
-	margin-left: var(--global--spacing-horizontal);
 }
 
-// Targeting the .entry-content class is necessary to ensure these styles 
+// Targeting the .entry-content class is necessary to ensure these styles
 // only apply when the block isn't nested.
 .entry-content > .alignright {
 	max-width: var(--responsive--aligndefault-width);
-	@extend %responsive-alignright-mobile;
-	@extend %responsive-alignright;
+}
+
+@include media(mobile) {
+
+	.alignright {
+
+		/*rtl:ignore*/
+		float: right;
+
+		/*rtl:ignore*/
+		margin-left: var(--global--spacing-horizontal);
+	}
+
+	.entry-content > .alignright {
+		max-width: var(--responsive--alignrightleft-width);
+		/*rtl:ignore*/
+		margin-left: var(--global--spacing-horizontal);
+		/*rtl:ignore*/
+		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
+	}
 }
 
 // Make sure siblings of floated elements are top-aligned when nested
@@ -85,7 +113,6 @@
  */
 .alignfull {
 	clear: both;
-	@extend %responsive-alignfull-width-mobile;
 	@extend %responsive-alignfull-width;
 }
 
@@ -123,11 +150,11 @@
 }
 
 .has-foreground-light-color[class] {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 }
 
-.has-foreground-dark-color[class] {
-	color: var(--global--color-foreground-dark);
+.has-foreground-high-contrast-color[class] {
+	color: var(--global--color-foreground-high-contrast);
 }
 
 .has-tertiary-color[class] {
@@ -160,7 +187,7 @@
 
 .has-primary-background-color[class] {
 	background-color: var(--global--color-primary);
-	
+
 	&:not(.has-text-color) {
 		color: var(--global--color-background);
 	}
@@ -183,7 +210,7 @@
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: var(--global--color-foreground-light);
+	background-color: var(--global--color-foreground-low-contrast);
 
 	&:not(.has-text-color) {
 		color: var(--global--color-background);
@@ -191,8 +218,8 @@
 }
 
 
-.has-foreground-dark-background-color[class] {
-	background-color: var(--global--color-foreground-dark);
+.has-foreground-high-contrast-background-color[class] {
+	background-color: var(--global--color-foreground-high-contrast);
 
 	&:not(.has-text-color) {
 		color: var(--global--color-background);
@@ -305,8 +332,8 @@
 
 @import "spacing-overrides";
 
-/* 
- * Custom gradients 
+/*
+ * Custom gradients
 */
 .has-hard-diagonal-gradient-background {
 	background: linear-gradient(to bottom right, var(--global--color-secondary) 49.9%, var(--global--color-tertiary) 50%);

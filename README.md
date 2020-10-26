@@ -26,10 +26,10 @@ By contributing code to our free themes, you grant its use under the [GNU Genera
 
 ## Testing pull requests
 
-### Using GitHub 
+### Using GitHub
 
 1. Clone repository locally `git clone git@github.com:Automattic/themes.git`
-2. [Identify the branch](https://cloudup.com/cAy1j0D8tvH) of the pull request, e.g. `update/#1889` 
+2. [Identify the branch](https://cloudup.com/cAy1j0D8tvH) of the pull request, e.g. `update/#1889`
 3. Check out featured branch of pull request, e.g. `git checkout update/#1889`
 4. Symlink or copy affected theme OR zip affected theme and import into WordPress site
 
@@ -41,3 +41,13 @@ By contributing code to our free themes, you grant its use under the [GNU Genera
 4. Zip affected theme and import into WordPress site
 
 **Note:** In case the affected theme already exists on the WordPress site, it needs to be deleted before the theme zip file gets uploaded.
+
+### Coding Standards
+
+Themes code should adhere to the [WordPress coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/). This repo contains a pre-commit hook which enables you to detect and fix code that doesn't follow the standards.
+
+To set this uo follow these instructions:
+1. Run `npm i` in the root of the repo.
+2. Run `composer install`
+
+Now when you commit changes to a file PHPCBF will attempt to fix any issues with the file.

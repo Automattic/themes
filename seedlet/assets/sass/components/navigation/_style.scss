@@ -4,10 +4,24 @@
 .menu-button-container {
 	display: none;
 	justify-content: space-between;
+	margin: 0;
 	left: 0;
 	position: absolute;
 	top: 0;
 	width: 100%;
+
+	@include media( $navigation-max-break-point ){
+		display: block;
+		margin: 0;
+	}
+
+	// Adjust button postion when scrolling is locked
+	.lock-scrolling & > .button {
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
+
 	#primary-open-menu {
 		margin-left: auto;
 		padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
@@ -15,12 +29,18 @@
 		margin-right: calc(0.25 * var(--global--spacing-unit));
 	}
 
-	@include media(mobile-only){
-		display: flex;
+	.admin-bar.lock-scrolling & > .button,
+	.admin-bar:not(.primary-navigation-open) & {
+		top: var(--wpadmin-bar--height);
 	}
 
-	.admin-bar:not(.primary-navigation-open) & {
-		top: 46px;
+	.has-marketing-bar.lock-scrolling & > .button,
+	.has-marketing-bar:not(.primary-navigation-open) & {
+		top: var(--wpcom-marketing-bar--height);
+	}
+	.admin-bar.has-marketing-bar.lock-scrolling & > .button,
+	.admin-bar.has-marketing-bar:not(.primary-navigation-open) & {
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
 	}
 }
 
@@ -38,7 +58,18 @@
 		}
 		&.close {
 			display: none;
+			position: absolute;
+			right: 0;
 			z-index: 501;
+			.has-marketing-bar & {
+				top: calc(-1 * var(--wpcom-marketing-bar--height));
+			}
+			.admin-bar & {
+				top: calc(-1 * var(--wpadmin-bar--height));
+			}
+			.admin-bar.has-marketing-bar & {
+				top: calc(-1 * (var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height)));
+			}
 		}
 
 		&#woo-open-menu {
@@ -105,7 +136,7 @@
 }
 
 .primary-navigation,
-.woo-navigation { 
+.woo-navigation {
 	position: absolute;
  	top: 0;
  	right: 0;
@@ -114,7 +145,7 @@
 	margin-top: 0;
 	margin-bottom: 0;
 
-	@include media(mobile-only) {
+	@include media( $navigation-max-break-point ) {
 		width: 100%;
 	}
 
@@ -134,7 +165,7 @@
 		transition: all .15s ease-in-out;
 		transform: translateY(var(--global--spacing-vertical));
 
-		@include media(mobile-only) {
+		@include media( $navigation-max-break-point ) {
 			z-index: 499;
 		}
 	}
@@ -151,21 +182,23 @@
 
 	}
 
-	// Adjust button postion when scrolling is locked
-	.lock-scrolling & > .button {
-		position: fixed;
-		top: 0;
-		right: 0;
-	}
-
 	// Adjust positions when logged-in
-	.admin-bar &,
-	.admin-bar & > div,
-	.admin-bar.lock-scrolling & > .button {
-		top: 46px;
+	.has-marketing-bar &,
+	.has-marketing-bar & > div {
+		top: var(--wpcom-marketing-bar--height);
 	}
 
-	@include media(mobile) {
+	.admin-bar &,
+	.admin-bar & > div {
+		top: var(--wpadmin-bar--height);
+	}
+
+	.admin-bar.has-marketing-bar &,
+	.admin-bar.has-marketing-bar & > div {
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
+	}
+
+	@include media( $navigation-min-break-point ) {
 		position: relative;
 		display: flex;
 		justify-content: var(--primary-nav--justify-content);
@@ -193,6 +226,9 @@
 		}
 
 		// Don't adjust position when logged-in
+
+		.admin-bar.has-marketing-bar &,
+		.has-marketing-bar &,
 		.admin-bar & {
 			top: initial;
 
@@ -229,7 +265,7 @@
 				z-index: 99999;
 			}
 
-			@include media(mobile) {
+			@include media( $navigation-min-break-point ) {
 				display: inherit;
 				width: inherit;
 
@@ -250,7 +286,7 @@
 
 			position: relative;
 
-			@include media(mobile) {
+			@include media( $navigation-min-break-point ) {
 				margin: 0;
 				background: var(--global--color-background);
 				box-shadow: var(--global--elevation);
@@ -278,7 +314,7 @@
 	.primary-menu-container > ul > .menu-item {
 		padding: calc(0.5 * var(--primary-nav--padding)) 0;
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 			display: flex;
 			align-items: center;
 			padding: var(--primary-nav--padding);
@@ -311,7 +347,7 @@
 		font-size: var(--primary-nav--font-size-mobile);
 		font-weight: var(--primary-nav--font-weight);
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 			display: block;
 			font-family: var(--primary-nav--font-family);
 			font-size: var(--primary-nav--font-size);
@@ -334,7 +370,7 @@
 		list-style: none;
 		margin-left: var(--primary-nav--padding);
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 			padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
 
 			> .menu-item > .sub-menu {
@@ -350,7 +386,7 @@
 			padding-top: calc(0.5 * var(--primary-nav--padding));
 			padding-bottom: calc(0.5 * var(--primary-nav--padding));
 
-			@include media(mobile) {
+			@include media( $navigation-min-break-point ) {
 				padding-top: calc(0.5 * var(--primary-nav--padding));
 				padding-bottom: calc(0.5 * var(--primary-nav--padding));
 			}
@@ -360,7 +396,7 @@
 				font-size: var(--primary-nav--font-size-sub-menu-mobile);
 				font-style: var(--primary-nav--font-style-sub-menu-mobile);
 
-				@include media(mobile) {
+				@include media( $navigation-min-break-point ) {
 					font-size: var(--primary-nav--font-size);
 					font-style: var(--primary-nav--font-style);
 				}
@@ -375,7 +411,7 @@
  			display: none;
  		}
 
-		@include media(mobile) {
+		@include media( $navigation-min-break-point ) {
 
 			> .svg-icon {
 				display: inline-block;
@@ -396,9 +432,11 @@
 }
 
 // Keep the menu pinned to the top when the menu is open.
-@include media(mobile-only) {
+@include media( $navigation-max-break-point ) {
 	.lock-scrolling .site {
-		position: fixed;
+		left: 0;
 		max-width: 100%;
+		position: fixed;
+		right: 0;
 	}
 }

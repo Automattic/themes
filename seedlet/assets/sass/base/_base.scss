@@ -1,0 +1,49 @@
+// Links styles
+a {
+	border-bottom: 1px solid var(--global--color-secondary);
+	color: var( --wp--style--color--link, var(--global--color-primary) );
+	text-decoration: none;
+	transition: border-color 0.1s ease-out;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: transparent;
+	}
+
+	&:hover {
+		color: var(--global--color-primary-hover);
+	}
+
+	&:focus {
+		color: var(--global--color-secondary);
+	}
+
+	&:active {
+		color: var( --wp--style--color--link, var(--global--color-primary) );
+	}
+
+	// If a custom link color has been assigned,
+	// switch the color of the bottom border too.
+	.has-link-color & {
+		border-bottom: 1px solid var( --wp--style--color--link, var(--global--color-primary) );
+
+		&:hover,
+		&:focus {
+			border-bottom-color: transparent;
+		}
+	}
+}
+// Enforce the custom link color even if a custom background color has been set.
+// The extra specificity here is required to override the background color styles.
+.has-background:not(.has-background-background-color) {
+	// Target both current level and nested block.
+	.has-link-color a,
+	&.has-link-color a {
+		color: var( --wp--style--color--link, var(--global--color-primary) );
+	}
+}
+
+button,
+a {
+	cursor: pointer;
+}
