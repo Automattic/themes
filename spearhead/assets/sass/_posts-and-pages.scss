@@ -27,11 +27,22 @@
 	}
 }
 
-.site-main > * {
-	margin: 0 auto;
-	padding: var(--global--spacing-vertical) 0;
-	&:first-child {
-		padding-top: 0;
+.site-main {
+	& > * {
+		margin: 0 auto;
+		padding: var(--global--spacing-vertical) 0;
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+	article > * {
+		margin-top: calc( 0.48 * var(--global--spacing-vertical) );
+		margin-bottom: calc( 0.48 * var(--global--spacing-vertical) );
+ 
+	 	@include media(mobile) {
+			margin-top: calc( 0.48 * var(--global--spacing-vertical) );
+			margin-bottom: calc( 0.48 * var(--global--spacing-vertical) );
+	 	}
 	}
 }
 
