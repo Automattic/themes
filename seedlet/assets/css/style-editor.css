@@ -35,8 +35,8 @@
 	--global--color-black: black;
 	--global--color-white: white;
 	--global--color-foreground: #333333;
-	--global--color-foreground-light: #444444;
-	--global--color-foreground-dark: #000000;
+	--global--color-foreground-low-contrast: #444444;
+	--global--color-foreground-high-contrast: #000000;
 	--global--color-background: #FFFFFF;
 	--global--color-tertiary: #FAFBF6;
 	--global--color-background-dark: #DDDDDD;
@@ -86,7 +86,7 @@
 	--button--padding-vertical: calc(var(--global--spacing-horizontal) - var(--button--border-width));
 	--button--padding-horizontal: var(--global--spacing-horizontal);
 	--cover--height: calc( 15 * var(--global--spacing-vertical) );
-	--cover--color-foreground: var(--global--color-foreground-dark);
+	--cover--color-foreground: var(--global--color-foreground-high-contrast);
 	--cover--color-background: var(--global--color-tertiary);
 	--heading--font-family: var(--global--font-primary);
 	--heading--line-height: 1.3;
@@ -182,6 +182,8 @@
 	--social-nav--color-link: var(--global--color-foreground);
 	--social-nav--color-link-hover: var(--global--color-primary-hover);
 	--social-nav--padding: calc( 0.5 * var(--primary-nav--padding) );
+	--wpcom-marketing-bar--height: 45px;
+	--wpadmin-bar--height: 46px;
 	--entry-header--color: var(--global--color-primary);
 	--entry-header--color-link: currentColor;
 	--entry-header--color-hover: var(--global--color-primary-hover);
@@ -209,7 +211,7 @@
 	--wc--mini-cart--color-background: var(--global--color-background);
 	--wc--mini-cart--color-text: var(--global--color-foreground);
 	--wc--mini-cart--color-subtotal: var(--global--color-foreground);
-	--wc--mini-cart--color-count: var(--global--color-foreground-light);
+	--wc--mini-cart--color-count: var(--global--color-foreground-low-contrast);
 	--wc--mini-cart--color-border: var(--global--color-border);
 	--wc--mini-cart--button-text-color: var(--button--color-text);
 	--wc--mini-cart--button-background-color: var(--button--color-background);
@@ -390,7 +392,7 @@ blockquote p {
 
 blockquote cite,
 blockquote footer {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-xs);
 	letter-spacing: var(--global--letter-spacing);
 }
@@ -429,7 +431,7 @@ blockquote.alignright footer {
 figcaption,
 .wp-caption,
 .wp-caption-text {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-xs);
 	line-height: var(--global--line-height-body);
 	margin-top: calc(0.5 * var(--global--spacing-unit));
@@ -506,6 +508,17 @@ div[data-type="core/button"] {
 }
 
 .wp-block-calendar table tbody, .wp-block-calendar table caption {
+	color: var(--global--color-foreground);
+}
+
+.wp-block-code {
+	color: var(--global--color-foreground);
+	font-size: var(--global--font-size-sm);
+	padding: var(--global--spacing-unit);
+	border-color: var(--global--color-border);
+}
+
+.wp-block-code pre {
 	color: var(--global--color-foreground);
 }
 
@@ -778,7 +791,7 @@ div[data-type="core/button"] {
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-xs);
 	line-height: var(--global--line-height-body);
 }
@@ -968,7 +981,7 @@ p.has-background {
 .wp-block-pullquote .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-xs);
 }
 
@@ -1054,7 +1067,7 @@ p.has-background {
 }
 
 .wp-block-quote .wp-block-quote__citation {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-xs);
 }
 
@@ -1230,6 +1243,8 @@ table th,
 }
 
 pre.wp-block-verse {
+	color: var(--global--color-foreground);
+	font-family: var(--entry-content--font-family);
 	padding: 0;
 }
 
@@ -1250,12 +1265,12 @@ pre.wp-block-verse {
 	color: var(--global--color-foreground);
 }
 
-.has-foreground-light-color[class] {
-	color: var(--global--color-foreground-light);
+.has-foreground-low-contrast-color[class] {
+	color: var(--global--color-foreground-low-contrast);
 }
 
-.has-foreground-dark-color[class] {
-	color: var(--global--color-foreground-dark);
+.has-foreground-high-contrast-color[class] {
+	color: var(--global--color-foreground-high-contrast);
 }
 
 .has-tertiary-color[class] {
@@ -1296,12 +1311,12 @@ pre.wp-block-verse {
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: var(--global--color-foreground-light);
+	background-color: var(--global--color-foreground-low-contrast);
 	color: var(--global--color-background);
 }
 
-.has-foreground-dark-background-color[class] {
-	background-color: var(--global--color-foreground-dark);
+.has-foreground-high-contrast-background-color[class] {
+	background-color: var(--global--color-foreground-high-contrast);
 	color: var(--global--color-background);
 }
 
@@ -1864,7 +1879,7 @@ pre.wp-block-verse {
 
 .wp-block-a8c-blog-posts .entry-meta,
 .wp-block-a8c-blog-posts .cat-links {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-sm);
 }
 

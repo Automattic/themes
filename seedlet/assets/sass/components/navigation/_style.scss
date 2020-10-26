@@ -4,6 +4,7 @@
 .menu-button-container {
 	display: none;
 	justify-content: space-between;
+	margin: 0;
 	left: 0;
 	position: absolute;
 	top: 0;
@@ -11,6 +12,7 @@
 
 	@include media( $navigation-max-break-point ){
 		display: block;
+		margin: 0;
 	}
 
 	// Adjust button postion when scrolling is locked
@@ -29,7 +31,16 @@
 
 	.admin-bar.lock-scrolling & > .button,
 	.admin-bar:not(.primary-navigation-open) & {
-		top: 46px;
+		top: var(--wpadmin-bar--height);
+	}
+
+	.has-marketing-bar.lock-scrolling & > .button,
+	.has-marketing-bar:not(.primary-navigation-open) & {
+		top: var(--wpcom-marketing-bar--height);
+	}
+	.admin-bar.has-marketing-bar.lock-scrolling & > .button,
+	.admin-bar.has-marketing-bar:not(.primary-navigation-open) & {
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
 	}
 }
 
@@ -50,8 +61,14 @@
 			position: absolute;
 			right: 0;
 			z-index: 501;
+			.has-marketing-bar & {
+				top: calc(-1 * var(--wpcom-marketing-bar--height));
+			}
 			.admin-bar & {
-				top: -46px;
+				top: calc(-1 * var(--wpadmin-bar--height));
+			}
+			.admin-bar.has-marketing-bar & {
+				top: calc(-1 * (var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height)));
 			}
 		}
 
@@ -166,9 +183,19 @@
 	}
 
 	// Adjust positions when logged-in
+	.has-marketing-bar &,
+	.has-marketing-bar & > div {
+		top: var(--wpcom-marketing-bar--height);
+	}
+
 	.admin-bar &,
 	.admin-bar & > div {
-		top: 46px;
+		top: var(--wpadmin-bar--height);
+	}
+
+	.admin-bar.has-marketing-bar &,
+	.admin-bar.has-marketing-bar & > div {
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
 	}
 
 	@include media( $navigation-min-break-point ) {
@@ -199,6 +226,9 @@
 		}
 
 		// Don't adjust position when logged-in
+
+		.admin-bar.has-marketing-bar &,
+		.has-marketing-bar &,
 		.admin-bar & {
 			top: initial;
 

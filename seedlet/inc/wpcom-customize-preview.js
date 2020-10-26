@@ -64,15 +64,15 @@ function changeColorLuminescence( hex, amount ) {
 			var secondary = to.fg1;
 			var tertiary = to.fg2;
 
-			var foregroundLight = changeColorLuminescence( foreground, 10 );
-			var foregroundDark = changeColorLuminescence( foreground, -10 );
+			var foregroundLowContrast = changeColorLuminescence( foreground, 10 );
+			var foregroundHighContrast = changeColorLuminescence( foreground, -10 );
 			var primaryHover = changeColorLuminescence( primary, 10 );
 			var secondaryHover = changeColorLuminescence( secondary, 10 );
 			const extraCSS = ':root {' +
 					'--global--color-background: ' + background + ';' +
 					'--global--color-foreground: ' + foreground + ';' +
-					'--global--color-foreground-light: ' + foregroundLight + ';' +
-					'--global--color-foreground-dark: ' + foregroundDark + ';' +
+					'--global--color-foreground-low-contrast: ' + foregroundLowContrast + ';' +
+					'--global--color-foreground-high-contrast: ' + foregroundHighContrast + ';' +
 					'--global--color-primary: ' + primary + ';' +
 					'--global--color-primary-hover: ' + primaryHover + ';' +
 					'--global--color-secondary: ' + secondary + ';' +
