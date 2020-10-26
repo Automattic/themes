@@ -26,7 +26,7 @@ class Seedlet_Custom_Colors {
 			array( '--global--color-primary', '#000000', __( 'Primary Color', 'seedlet' ) ),
 			array( '--global--color-secondary', '#3C8067', __( 'Secondary Color', 'seedlet' ) ),
 			array( '--global--color-tertiary', '#FAFBF6', __( 'Tertiary Color', 'seedlet' ) ),
-			array( '--global--color-border', '#EFEFEF', __( 'Borders Color', 'seedlet' ) )
+			array( '--global--color-border', '#EFEFEF', __( 'Borders Color', 'seedlet' ) ),
 		);
 
 		/**
@@ -61,7 +61,7 @@ class Seedlet_Custom_Colors {
 	 * @param string $background Optional. Hexadecimal colour value of the background colour. Default is: <code>FFFFFF</code> aka white.
 	 * @return string Hexadecimal colour value. <code>false</code> on errors.
 	 */
-	function seedlet_color_blend_by_opacity( $foreground, $opacity, $background=null ) {
+	function seedlet_color_blend_by_opacity( $foreground, $opacity, $background = null ) {
 		static $colors_rgb = array(); // stores colour values already passed through the hexdec() functions below.
 
 		if ( ! is_null( $foreground ) ) {
@@ -78,53 +78,55 @@ class Seedlet_Custom_Colors {
 
 		$pattern = '~^[a-f0-9]{6,6}$~i'; // accept only valid hexadecimal colour values.
 
-		if ( !@preg_match($pattern, $foreground) or !@preg_match($pattern, $background) ) {
+		if ( ! @preg_match( $pattern, $foreground ) or ! @preg_match( $pattern, $background ) ) {
 			echo $foreground;
-			trigger_error( "Invalid hexadecimal color value(s) found", E_USER_WARNING );
+			trigger_error( 'Invalid hexadecimal color value(s) found', E_USER_WARNING );
 			return false;
 		}
 
 		$opacity = intval( $opacity ); // validate opacity data/number.
 
-		if ( $opacity > 100  || $opacity < 0 ) {
-			trigger_error( "Opacity percentage error, valid numbers are between 0 - 100", E_USER_WARNING );
+		if ( $opacity > 100 || $opacity < 0 ) {
+			trigger_error( 'Opacity percentage error, valid numbers are between 0 - 100', E_USER_WARNING );
 			return false;
 		}
 
-		if ( $opacity == 100 )  // $transparency == 0
+		if ( $opacity == 100 ) {  // $transparency == 0
 			return strtoupper( $foreground );
-		if ( $opacity == 0 )    // $transparency == 100
+		}
+		if ( $opacity == 0 ) {    // $transparency == 100
 			return strtoupper( $background );
-
-		// calculate $transparency value.
-		$transparency = 100-$opacity;
-
-		if ( !isset($colors_rgb[$foreground]) ) { // do this only ONCE per script, for each unique colour.
-			$f = array(
-				'r'=>hexdec($foreground[0].$foreground[1]),
-				'g'=>hexdec($foreground[2].$foreground[3]),
-				'b'=>hexdec($foreground[4].$foreground[5])
-			);
-			$colors_rgb[$foreground] = $f;
-		} else { // if this function is used 100 times in a script, this block is run 99 times.  Efficient.
-			$f = $colors_rgb[$foreground];
 		}
 
-		if ( !isset($colors_rgb[$background]) ) { // do this only ONCE per script, for each unique colour.
-			$b = array(
-				'r'=>hexdec($background[0].$background[1]),
-				'g'=>hexdec($background[2].$background[3]),
-				'b'=>hexdec($background[4].$background[5])
+		// calculate $transparency value.
+		$transparency = 100 - $opacity;
+
+		if ( ! isset( $colors_rgb[ $foreground ] ) ) { // do this only ONCE per script, for each unique colour.
+			$f                         = array(
+				'r' => hexdec( $foreground[0] . $foreground[1] ),
+				'g' => hexdec( $foreground[2] . $foreground[3] ),
+				'b' => hexdec( $foreground[4] . $foreground[5] ),
 			);
-			$colors_rgb[$background] = $b;
+			$colors_rgb[ $foreground ] = $f;
+		} else { // if this function is used 100 times in a script, this block is run 99 times.  Efficient.
+			$f = $colors_rgb[ $foreground ];
+		}
+
+		if ( ! isset( $colors_rgb[ $background ] ) ) { // do this only ONCE per script, for each unique colour.
+			$b                         = array(
+				'r' => hexdec( $background[0] . $background[1] ),
+				'g' => hexdec( $background[2] . $background[3] ),
+				'b' => hexdec( $background[4] . $background[5] ),
+			);
+			$colors_rgb[ $background ] = $b;
 		} else { // if this FUNCTION is used 100 times in a SCRIPT, this block will run 99 times.  Efficient.
-			$b = $colors_rgb[$background];
+			$b = $colors_rgb[ $background ];
 		}
 
 		$add = array(
-			'r'=>( $b['r']-$f['r'] ) / 100,
-			'g'=>( $b['g']-$f['g'] ) / 100,
-			'b'=>( $b['b']-$f['b'] ) / 100
+			'r' => ( $b['r'] - $f['r'] ) / 100,
+			'g' => ( $b['g'] - $f['g'] ) / 100,
+			'b' => ( $b['b'] - $f['b'] ) / 100,
 		);
 
 		$f['r'] += intval( $add['r'] * $transparency );
@@ -144,10 +146,13 @@ class Seedlet_Custom_Colors {
 		/**
 		 * Create color options panel.
 		 */
-		$wp_customize->add_section( 'seedlet_options', array(
-			'capability' => 'edit_theme_options',
-			'title'      => esc_html__( 'Colors', 'seedlet' ),
-		) );
+		$wp_customize->add_section(
+			'seedlet_options',
+			array(
+				'capability' => 'edit_theme_options',
+				'title'      => esc_html__( 'Colors', 'seedlet' ),
+			)
+		);
 
 		/**
 		 * Create toggle between default and custom colors.
@@ -182,21 +187,23 @@ class Seedlet_Custom_Colors {
 			$wp_customize->add_setting(
 				"seedlet_$variable[0]",
 				array(
-					'default'	=> esc_html( $variable[1] ),
-					'sanitize_callback' => 'sanitize_hex_color'
+					'default'           => esc_html( $variable[1] ),
+					'sanitize_callback' => 'sanitize_hex_color',
 				)
 			);
-			$wp_customize->add_control( new WP_Customize_Color_Control(
-				$wp_customize,
-				"seedlet_$variable[0]",
-				array(
-					'section'   => 'seedlet_options',
-					'label'     => $variable[2],
-					'active_callback' => function() use ( $wp_customize ) {
-						return ( 'custom' === $wp_customize->get_setting( 'custom_colors_active' )->value() );
-					},
+			$wp_customize->add_control(
+				new WP_Customize_Color_Control(
+					$wp_customize,
+					"seedlet_$variable[0]",
+					array(
+						'section'         => 'seedlet_options',
+						'label'           => $variable[2],
+						'active_callback' => function() use ( $wp_customize ) {
+							return ( 'custom' === $wp_customize->get_setting( 'custom_colors_active' )->value() );
+						},
+					)
 				)
-			) );
+			);
 		}
 	}
 
@@ -213,11 +220,11 @@ class Seedlet_Custom_Colors {
 
 		// Check to see if a custom background color has been set that is needed for our color calculation
 		// If this check isn't present, the color calculation generates a warning that an invalid color has been supplied
-		$theme_mod_bg_color = empty( get_theme_mod( "seedlet_--global--color-background" ) ) ? '#FFFFFF' : get_theme_mod( "seedlet_--global--color-background" );
+		$theme_mod_bg_color = empty( get_theme_mod( 'seedlet_--global--color-background' ) ) ? '#FFFFFF' : get_theme_mod( 'seedlet_--global--color-background' );
 
 		foreach ( $this->seedlet_custom_color_variables as $variable ) {
 
-			if ( ! empty ( get_theme_mod( "seedlet_$variable[0]" )  ) ) {
+			if ( ! empty( get_theme_mod( "seedlet_$variable[0]" ) ) ) {
 
 				$theme_mod_variable_name = $variable[0];
 				$theme_mod_default_color = $variable[1];
@@ -225,28 +232,28 @@ class Seedlet_Custom_Colors {
 				$opacity_integer         = 70;
 				$adjusted_color          = $this->seedlet_color_blend_by_opacity( $theme_mod_custom_color, $opacity_integer, $theme_mod_bg_color );
 
-				$theme_css .= $theme_mod_variable_name . ":" . $theme_mod_custom_color . ";";
+				$theme_css .= $theme_mod_variable_name . ':' . $theme_mod_custom_color . ';';
 
 				if ( $theme_mod_variable_name === '--global--color-primary' && $theme_mod_default_color !== $theme_mod_custom_color ) {
-					$theme_css .= "--global--color-primary-hover: " . $adjusted_color . ";";
+					$theme_css .= '--global--color-primary-hover: ' . $adjusted_color . ';';
 				}
 
 				if ( $theme_mod_variable_name === '--global--color-secondary' && $theme_mod_default_color !== $theme_mod_custom_color ) {
-					$theme_css .= "--global--color-secondary-hover: " . $adjusted_color . ";";
+					$theme_css .= '--global--color-secondary-hover: ' . $adjusted_color . ';';
 				}
 
 				if ( $theme_mod_variable_name === '--global--color-foreground' && $theme_mod_default_color !== $theme_mod_custom_color ) {
-					$theme_css .= "--global--color-foreground-low-contrast: " . $adjusted_color . ";";
+					$theme_css .= '--global--color-foreground-low-contrast: ' . $adjusted_color . ';';
 				}
 			}
 		}
 
-		$theme_css .= "}";
+		$theme_css .= '}';
 
 		// Text selection colors
-		$selection_background = $this->seedlet_color_blend_by_opacity( get_theme_mod( "seedlet_--global--color-primary" ), 5, $theme_mod_bg_color ) . ";";
-		$theme_css .= "::selection { background-color: " . $selection_background . "}";
-		$theme_css .= "::-moz-selection { background-color: ". $selection_background . "}";
+		$selection_background = $this->seedlet_color_blend_by_opacity( get_theme_mod( 'seedlet_--global--color-primary' ), 5, $theme_mod_bg_color ) . ';';
+		$theme_css           .= '::selection { background-color: ' . $selection_background . '}';
+		$theme_css           .= '::-moz-selection { background-color: ' . $selection_background . '}';
 
 		return $theme_css;
 	}
@@ -279,23 +286,23 @@ class Seedlet_Custom_Colors {
 	function on_customize_controls_enqueue_scripts() {
 		$handle = 'seedlet-wcag-validate-customizer-color-contrast';
 		$src    = get_template_directory_uri() . '/assets/js/customizer-validate-wcag-color-contrast.js';
-		$deps 	= [ 'customize-controls' ];
+		$deps   = array( 'customize-controls' );
 
-		$exports = [
-			'validate_color_contrast' => [
+		$exports = array(
+			'validate_color_contrast' => array(
 				// key = current color control , values = array with color controls to check color contrast against
-				'seedlet_--global--color-primary' => [ "seedlet_--global--color-background" ],
-				'seedlet_--global--color-secondary' => [ "seedlet_--global--color-background" ],
-				'seedlet_--global--color-foreground' => [ "seedlet_--global--color-background" ],
-				'seedlet_--global--color-background' => [ "seedlet_--global--color-foreground" ],
-			],
-		];
+				'seedlet_--global--color-primary'    => array( 'seedlet_--global--color-background' ),
+				'seedlet_--global--color-secondary'  => array( 'seedlet_--global--color-background' ),
+				'seedlet_--global--color-foreground' => array( 'seedlet_--global--color-background' ),
+				'seedlet_--global--color-background' => array( 'seedlet_--global--color-foreground' ),
+			),
+		);
 
 		wp_enqueue_script( $handle, $src, $deps );
 		wp_script_add_data( $handle, 'data', sprintf( 'var seedletValidateWCAGColorContrastExports = %s;', wp_json_encode( $exports ) ) );
 
 		// Custom color contrast validation text
-		wp_localize_script( $handle, 'seedletValidateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.', 'seedlet' ));
+		wp_localize_script( $handle, 'seedletValidateContrastText', esc_html__( 'This color combination may be hard for people to read. Try using a brighter background color and/or a darker foreground color.', 'seedlet' ) );
 	}
 
 	/**

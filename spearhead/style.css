@@ -69,6 +69,19 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	padding-top: 0;
 }
 
+.site-main article > * {
+	margin-top: calc( 0.48 * var(--global--spacing-vertical));
+	margin-bottom: calc( 0.48 * var(--global--spacing-vertical));
+	/* This overrides Seedlet's style for this breakpoint */
+}
+
+@media only screen and (min-width: 482px) {
+	.site-main article > * {
+		margin-top: calc( 0.48 * var(--global--spacing-vertical));
+		margin-bottom: calc( 0.48 * var(--global--spacing-vertical));
+	}
+}
+
 .has-sticky-post .site-main {
 	background: var(--sticky-posts--alt-color-background);
 }
@@ -131,7 +144,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	transition: all 0.1s ease;
 }
 
-.has-link-color a:hover, a:hover {
+.has-link-color a:hover:not(.wp-block-button__link), a:hover:not(.wp-block-button__link) {
 	color: var(--global--color-primary-hover);
 	border-bottom: 1px solid var(--global--color-primary-hover);
 }
