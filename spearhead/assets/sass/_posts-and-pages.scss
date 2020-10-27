@@ -59,6 +59,7 @@
 
 .post.sticky { // .post class needed to make this stronger
 	background: var(--sticky-posts--color-background);
+	padding-bottom: calc(2 * var(--global--spacing-vertical));
 
 	.entry-title {
 		font-size: var(--sticky-posts--entry-title-font-size);
@@ -66,6 +67,16 @@
 
 	.entry-content {
 		font-size: var(--sticky-posts--entry-content-font-size);
+	}
+
+	// Subsequent sticky posts do not need extra top padding.
+	+ .post.sticky {
+		padding-top: 0;
+	}
+
+	// The first non-sticky post does need extra top padding.
+	+ article:not(.post.sticky) {
+		padding-top: calc(2 * var(--global--spacing-vertical));
 	}
 }
 

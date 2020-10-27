@@ -93,6 +93,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .post.sticky {
 	background: var(--sticky-posts--color-background);
+	padding-bottom: calc(2 * var(--global--spacing-vertical));
 }
 
 .post.sticky .entry-title {
@@ -101,6 +102,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .post.sticky .entry-content {
 	font-size: var(--sticky-posts--entry-content-font-size);
+}
+
+.post.sticky + .post.sticky {
+	padding-top: 0;
+}
+
+.post.sticky + article:not(.post.sticky) {
+	padding-top: calc(2 * var(--global--spacing-vertical));
 }
 
 .sticky-post {
