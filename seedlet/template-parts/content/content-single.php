@@ -53,8 +53,6 @@
 		<?php seedlet_entry_meta_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php if ( ! is_singular( 'attachment' ) ) : ?>
-		<?php get_template_part( 'template-parts/post/author-bio' ); ?>
-	<?php endif; ?>
+	<?php seedlet_author_bio(); ?>
 
 </article><!-- #post-${ID} -->

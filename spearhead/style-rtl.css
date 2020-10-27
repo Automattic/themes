@@ -1,6 +1,6 @@
 /*
 Theme Name: Spearhead
-Theme URI: https://github.com/Automattic/themes/root-child
+Theme URI: https://wordpress.com/theme/spearhead
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Share your podcast with the world using Spearhead.
@@ -15,6 +15,31 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 /**
  * Required Variables
  */
+.author-link {
+	font-size: var(--global--font-size-xs);
+	position: relative;
+}
+
+.author-link:after {
+	background-image: url("data:image/svg+xml,%3Csvg class='svg-icon' width='24' height='24' aria-hidden='true' role='img' focusable='false' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.96954 10.2804L11.9999 15.3107L17.0302 10.2804L15.9695 9.21973L11.9999 13.1894L8.0302 9.21973L6.96954 10.2804Z' fill='%23DB0042'%3E%3C/path%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 14px 14px;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: -14px;
+	width: 14px;
+	height: 14px;
+	transform: rotate(90deg);
+}
+
+@media (prefers-color-scheme: dark) {
+	.author-link:after {
+		background-image: url("data:image/svg+xml,%3Csvg class='svg-icon' width='24' height='24' aria-hidden='true' role='img' focusable='false' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.96954 10.2804L11.9999 15.3107L17.0302 10.2804L15.9695 9.21973L11.9999 13.1894L8.0302 9.21973L6.96954 10.2804Z' fill='%23ff6a81'%3E%3C/path%3E%3C/svg%3E");
+	}
+}
+
 /**
  * Required Variables
  */
@@ -55,7 +80,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .post .entry-header .entry-meta .posted-on a {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-family: var(--global--font-primary);
 	font-size: var(--global--font-size-md);
 }
@@ -93,6 +118,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .post.sticky {
 	background: var(--sticky-posts--color-background);
+	padding-bottom: calc(2 * var(--global--spacing-vertical));
 }
 
 .post.sticky .entry-title {
@@ -100,12 +126,15 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .post.sticky .entry-content {
-	color: var(--sticky-posts--color-text);
 	font-size: var(--sticky-posts--entry-content-font-size);
 }
 
-.post.sticky .entry-content > * {
-	color: var(--global--color-foreground-light);
+.post.sticky + .post.sticky {
+	padding-top: 0;
+}
+
+.post.sticky + article:not(.post.sticky) {
+	padding-top: calc(2 * var(--global--spacing-vertical));
 }
 
 .sticky-post {
@@ -141,7 +170,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .single {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground);
 }
 
 .has-link-color a, a {
@@ -222,7 +251,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 		top: 114px;
 	}
 	.site-header .primary-navigation .primary-menu-container a {
-		color: var(--global--color-background);
+		color: var(--primary-nav--dropdown-color-link);
 	}
 }
 
@@ -366,7 +395,7 @@ ul.wp-block-categories,
 }
 
 .wp-block-latest-posts > li > a {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground-low-contrast);
 	font-size: var(--global--font-size-lg);
 	font-weight: 500;
 }
@@ -424,6 +453,51 @@ ul.wp-block-categories,
 	font-family: var(--global--font-primary);
 	font-size: var(--global--font-size-xs);
 	text-transform: uppercase;
+}
+
+.wp-block-newspack-blocks-homepage-articles.wpnbha article,
+.wp-block-a8c-blog-posts.wpnbha article {
+	margin: 0 auto;
+	padding: var(--global--spacing-vertical) 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper,
+.wp-block-a8c-blog-posts article .entry-wrapper {
+	margin: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-wrapper p,
+.wp-block-a8c-blog-posts article .entry-wrapper p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title,
+.wp-block-a8c-blog-posts article .entry-title {
+	margin-bottom: calc( 0.48 * var(--global--spacing-vertical));
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a,
+.wp-block-a8c-blog-posts article .entry-title a {
+	font-size: var(--global--font-size-lg);
+	color: var(--entry-header--color-link);
+	font-weight: var(--heading--font-weight);
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
+.wp-block-a8c-blog-posts article .entry-title a:hover,
+.wp-block-a8c-blog-posts article .entry-title a:focus {
+	color: var(--entry-header--color-hover);
+}
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
+.wp-block-a8c-blog-posts article .entry-title a:active {
+	color: var(--entry-header--color-link);
+}
+
+.wp-block-newspack-blocks-homepage-articles article .more-link,
+.wp-block-a8c-blog-posts article .more-link {
+	margin-top: 0;
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {

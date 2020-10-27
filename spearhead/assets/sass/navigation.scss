@@ -8,3 +8,16 @@ $navigation-min-break-point: 'laptop';
 $navigation-max-break-point: 'laptop-only';
 
 @import "../../../seedlet/assets/sass/components/navigation/style";
+
+.primary-navigation,
+.woo-navigation {
+	.sub-menu {
+		@include media( $navigation-min-break-point ) {
+			padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
+
+			> .menu-item.menu-item-has-children {
+				padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) ) 0 0;
+			}
+		}
+	}
+}

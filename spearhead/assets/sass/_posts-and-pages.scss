@@ -19,7 +19,7 @@
 				display: none;
 			}
 			a {
-				color: var(--global--color-foreground-light);
+				color: var(--global--color-foreground-low-contrast);
 				font-family: var(--global--font-primary);
 				font-size: var(--global--font-size-md);
 			}
@@ -38,7 +38,7 @@
 	article > * {
 		margin-top: calc( 0.48 * var(--global--spacing-vertical) );
 		margin-bottom: calc( 0.48 * var(--global--spacing-vertical) );
- 
+
 		/* This overrides Seedlet's style for this breakpoint */
 	 	@include media(mobile) {
 			margin-top: calc( 0.48 * var(--global--spacing-vertical) );
@@ -59,17 +59,24 @@
 
 .post.sticky { // .post class needed to make this stronger
 	background: var(--sticky-posts--color-background);
+	padding-bottom: calc(2 * var(--global--spacing-vertical));
 
 	.entry-title {
 		font-size: var(--sticky-posts--entry-title-font-size);
 	}
 
 	.entry-content {
-		color: var(--sticky-posts--color-text);
 		font-size: var(--sticky-posts--entry-content-font-size);
-		> * {
-			color: var(--global--color-foreground-light);
-		}
+	}
+
+	// Subsequent sticky posts do not need extra top padding.
+	+ .post.sticky {
+		padding-top: 0;
+	}
+
+	// The first non-sticky post does need extra top padding.
+	+ article:not(.post.sticky) {
+		padding-top: calc(2 * var(--global--spacing-vertical));
 	}
 }
 
@@ -110,5 +117,5 @@
 }
 
 .single {
-	color: var(--global--color-foreground-light);
+	color: var(--global--color-foreground);
 }

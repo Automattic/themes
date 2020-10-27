@@ -3,29 +3,30 @@
  * The template for displaying Author info
  *
  * @package Seedlet
- * @since 1.0.0
  */
 
 if ( (bool) get_the_author_meta( 'description' ) ) : ?>
-<div class="author-bio">
-	<?php
-	_e( 'Published by', 'seedlet' );
-	?>
-	<h2 class="author-title">
-		<span class="author-heading">
-			<?php
-			printf(
-				/* post author */
-				esc_html( get_the_author() )
-			);
-			?>
-		</span>
-	</h2>
-	<p class="author-description">
-		<?php the_author_meta( 'description' ); ?></br>
+<div class="entry-author">
+
+	<div class="author-heading">
+		<h2 class="author-title">
+			<?php esc_html_e( 'Published by', 'seedlet' ); ?>
+			<span class="author-name">
+				<?php
+				printf(
+					/* post author */
+					esc_html( get_the_author() )
+				);
+				?>
+			</span><!-- .author-name -->
+		</h2>
+	</div><!-- .author-heading -->
+
+	<p class="author-bio">
+		<?php the_author_meta( 'description' ); ?>
 		<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-			<?php _e( 'View more posts', 'seedlet' ); ?>
+			<?php printf( esc_html__( 'View all posts by %s', 'seedlet' ), get_the_author() ); ?>
 		</a>
-	</p><!-- .author-description -->
-</div><!-- .author-bio -->
+	</p><!-- .author-bio -->
+</div><!-- .entry-author -->
 <?php endif; ?>

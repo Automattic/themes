@@ -441,7 +441,7 @@ Included in theme screenshot and in block patterns.
 .post-thumbnail,
 .entry-content,
 .entry-footer,
-.author-bio,
+.entry-author,
 .widget-area {
 	margin-top: var(--global--spacing-vertical);
 	margin-left: auto;
@@ -510,7 +510,7 @@ Included in theme screenshot and in block patterns.
 .post-thumbnail > *,
 .page-content > *,
 .comment-content > *,
-.author-bio > *,
+.entry-author > *,
 .widget > * {
 	margin-top: var(--global--spacing-unit);
 	margin-bottom: var(--global--spacing-unit);
@@ -521,7 +521,7 @@ Included in theme screenshot and in block patterns.
 .post-thumbnail > *:first-child,
 .page-content > *:first-child,
 .comment-content > *:first-child,
-.author-bio > *:first-child,
+.entry-author > *:first-child,
 .widget > *:first-child {
 	margin-top: 0;
 }
@@ -531,7 +531,7 @@ Included in theme screenshot and in block patterns.
 .post-thumbnail > *:last-child,
 .page-content > *:last-child,
 .comment-content > *:last-child,
-.author-bio > *:last-child,
+.entry-author > *:last-child,
 .widget > *:last-child {
 	margin-bottom: 0;
 }
@@ -2429,11 +2429,6 @@ hr.wp-block-separator.is-style-dots:before {
 	}
 }
 
-.jetpack_subscription_widget input[type="text"] {
-	padding: var(--global--spacing-horizontal) !important;
-	width: 100% !important;
-}
-
 table,
 .wp-block-table {
 	width: 100%;
@@ -3290,22 +3285,38 @@ nav a {
  * Author
  */
 /* Author description */
-.author-bio {
+.entry-author {
 	font-size: var(--global--font-size-xs);
 	max-width: var(--responsive--aligndefault-width);
 }
 
-.site-main > article > .author-bio {
+.entry-author .author-avatar {
+	display: none;
+}
+
+.site-main > article > .entry-author {
 	margin-top: calc(2 * var(--global--spacing-vertical));
 }
 
-.author-bio .author-title {
+.entry-author .author-title {
+	font-family: var(--global--font-ui);
+	font-size: var(--global--font-size-xs);
+}
+
+.entry-author .author-title .author-name {
+	display: block;
+	margin-top: 4px;
 	font-family: var(--entry-author-bio--font-family);
 	font-size: var(--entry-author-bio--font-size);
 }
 
-.author-bio .author-description {
+.entry-author .author-bio {
 	font-size: var(--global--font-size-md);
+}
+
+.entry-author .author-link::before {
+	content: '';
+	display: block;
 }
 
 /* Next/Previous navigation */
@@ -3333,7 +3344,7 @@ nav a {
 @media only screen and (min-width: 482px) {
 	.navigation .nav-links {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 	}
 	.navigation .nav-links .nav-next,
 	.navigation .nav-links .nav-previous {
