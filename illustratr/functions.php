@@ -142,6 +142,8 @@ function illustratr_setup() {
 		'search-form',
 		'comment-form',
 		'gallery',
+		'style',
+		'script',
 	) );
 
 	// Add support for responsive embeds.
