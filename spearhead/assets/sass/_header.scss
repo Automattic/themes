@@ -1,14 +1,15 @@
+@import 'breakpoints';
 $admin-bar-height: 46px;
 $site-branding-height: 68px;
 
 .has-main-navigation {
 	.site-header {
 		padding: var(--global--spacing-horizontal);
-		@include media( laptop ){
+		@include media( $navigation-min-break-point ){
 			padding: 35px var(--global--spacing-horizontal);
 		}
 
-		@include media( laptop-only ){
+		@include media( $navigation-max-break-point ){
 			.site-title {
 				margin: 0;
 			}
@@ -29,7 +30,7 @@ $site-branding-height: 68px;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 
-	@include media( laptop-only ){
+	@include media( $navigation-max-break-point ){
 		flex-wrap: wrap;
 	}
 
@@ -51,7 +52,7 @@ $site-branding-height: 68px;
 		flex-grow: 4;
 		margin-top: 0;
 
-		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
+		@include media( $navigation-max-break-point ){ 
 			.primary-menu-container {
 				background: var(--primary-nav--color-background);
 				padding: var(--global--spacing-unit);
@@ -64,6 +65,21 @@ $site-branding-height: 68px;
 				a {
 					color: var(--primary-nav--dropdown-color-link);
 				}
+
+			}
+		}
+
+		@include media ($navigation-min-break-point){
+			.sub-menu {
+				padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
+
+				> .menu-item.menu-item-has-children {
+					padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) ) 0 0;
+				}
+			}
+
+			.primary-menu-container > ul > li {
+				padding-top: 0; // Align the baseline of the primary menu with the site title.
 			}
 		}
 
@@ -89,11 +105,8 @@ $site-branding-height: 68px;
 		margin-top: -2px;
 	}
 
-
 	.primary-navigation > div > ul li, .woo-navigation > div > ul li {
 		color: var(--global--color-secondary);
-		//margin: 6px 8px;
-		//padding: var(--social-nav--padding);
 
 		a:hover {
 			border-color: transparent;

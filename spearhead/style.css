@@ -187,6 +187,9 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	font-weight: var(--global--link-font-weight);
 }
 
+/**
+ * Required Variables
+ */
 .has-main-navigation .site-header {
 	padding: var(--global--spacing-horizontal);
 }
@@ -252,6 +255,18 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	}
 	.site-header .primary-navigation .primary-menu-container a {
 		color: var(--primary-nav--dropdown-color-link);
+	}
+}
+
+@media only screen and (min-width: 830px) {
+	.site-header .primary-navigation .sub-menu {
+		padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding));
+	}
+	.site-header .primary-navigation .sub-menu > .menu-item.menu-item-has-children {
+		padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding)) 0 0;
+	}
+	.site-header .primary-navigation .primary-menu-container > ul > li {
+		padding-top: 0;
 	}
 }
 
