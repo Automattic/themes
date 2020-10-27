@@ -422,6 +422,21 @@ function seedlet_skip_link_focus_fix() {
 }
 add_action( 'wp_print_footer_scripts', 'seedlet_skip_link_focus_fix' );
 
+if ( ! function_exists( 'seedlet_author_bio' ) ) {
+	/**
+	 * Implements the Jetpack Author bio
+	 */
+	function seedlet_author_bio() {
+		if ( ! function_exists( 'jetpack_author_bio' ) ) {
+			if ( ! is_singular( 'attachment' ) ) {
+				get_template_part( 'template-parts/post/author-bio' );
+			}
+		} else {
+			jetpack_author_bio();
+		}
+	}
+}
+
 /**
  * SVG Icons class.
  */
@@ -470,3 +485,8 @@ require get_template_directory() . '/inc/block-styles.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
