@@ -1761,17 +1761,32 @@ pre.wp-block-verse {
 	max-width: var(--responsive--aligndefault-width);
 }
 
+.entry-author .author-avatar {
+	display: none;
+}
+
 .site-main > article > .entry-author {
 	margin-top: calc(2 * var(--global--spacing-vertical));
 }
 
 .entry-author .author-title {
+	font-family: var(--global--font-ui);
+	font-size: var(--global--font-size-xs);
+}
+
+.entry-author .author-title .author-name {
+	display: block;
 	font-family: var(--entry-author-bio--font-family);
 	font-size: var(--entry-author-bio--font-size);
 }
 
 .entry-author .author-bio {
 	font-size: var(--global--font-size-md);
+}
+
+.entry-author .author-link::before {
+	content: '';
+	display: block;
 }
 
 /**
