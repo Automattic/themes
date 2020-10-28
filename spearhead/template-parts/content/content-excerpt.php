@@ -10,7 +10,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-excerpt' ); ?>>
 	<header class="entry-header default-max-width">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
