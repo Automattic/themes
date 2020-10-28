@@ -241,9 +241,18 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-shadow: none;
 }
 
+.site-header .site-branding .site-logo {
+	margin-left: 0;
+	margin-top: 0;
+}
+
 .site-header .primary-navigation {
 	flex-grow: 4;
 	margin-top: 0;
+}
+
+.site-header .primary-navigation .primary-menu-container {
+	margin-bottom: calc( .5 * var(--global--spacing-vertical));
 }
 
 @media only screen and (max-width: 829px) {
@@ -316,6 +325,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	.site-header .social-navigation ul li {
 		padding: 0 0 0 var(--social-nav--padding);
 	}
+}
+
+.site-header .social-navigation .menu-item {
+	width: auto;
 }
 
 .site-header .social-navigation .menu-item > a {

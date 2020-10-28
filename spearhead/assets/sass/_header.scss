@@ -49,11 +49,20 @@ $site-branding-height: 68px;
 				text-shadow: none;
 			}
 		}
+
+		.site-logo {
+			margin-left: 0;
+			margin-top: 0;
+		}
 	}
 
 	.primary-navigation {
 		flex-grow: 4;
 		margin-top: 0;
+
+		.primary-menu-container {
+			margin-bottom: calc( .5 * var(--global--spacing-vertical) );
+		}
 
 		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
 			.primary-menu-container {
@@ -130,12 +139,16 @@ $site-branding-height: 68px;
 			}
 		}
 
-		.menu-item > a {
-			padding: 0;
+		.menu-item {
+			width: auto;
 
-			&:hover {
-				border-color: var(--primary-nav--color-border);
-				color: var(--primary-nav--color-link-hover);
+			> a {
+				padding: 0;
+
+				&:hover {
+					border-color: var(--primary-nav--color-border);
+					color: var(--primary-nav--color-link-hover);
+				}
 			}
 		}
 	}
