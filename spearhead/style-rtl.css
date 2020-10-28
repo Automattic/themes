@@ -52,6 +52,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 		--global--spacing-vertical: 35px;
 		--responsive--aligndefault-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), 782px);
 		--responsive--alignwide-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), 1247px);
+		--wpadmin-bar--height: 32px;
 	}
 }
 
@@ -191,6 +192,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	padding: var(--global--spacing-horizontal);
 }
 
+.has-main-navigation .site-header a {
+	border-bottom: 1px solid transparent;
+}
+
 @media only screen and (min-width: 830px) {
 	.has-main-navigation .site-header {
 		padding: 35px var(--global--spacing-horizontal);
@@ -243,17 +248,21 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-shadow: none;
 }
 
+.site-header .site-branding .site-logo {
+	margin-right: 0;
+	margin-top: 0;
+}
+
 .site-header .primary-navigation {
 	flex-grow: 4;
 	margin-top: 0;
 }
 
+.site-header .primary-navigation .primary-menu-container {
+	margin-bottom: 6px;
+}
+
 @media only screen and (max-width: 829px) {
-	.site-header .primary-navigation .primary-menu-container {
-		background: var(--primary-nav--color-background);
-		padding: var(--global--spacing-unit);
-		top: 68px;
-	}
 	.admin-bar .site-header .primary-navigation .primary-menu-container {
 		top: 114px;
 	}
@@ -325,15 +334,17 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	}
 }
 
-.site-header .social-navigation li:first-of-type > a,
-.site-header .social-navigation a {
+.site-header .social-navigation .menu-item {
+	width: auto;
+}
+
+.site-header .social-navigation .menu-item > a {
 	padding: 0;
 }
 
-.site-header .social-navigation li:first-of-type > a:hover,
-.site-header .social-navigation a:hover {
-	border-color: transparent;
-	color: var(--global--color-primary);
+.site-header .social-navigation .menu-item > a:hover {
+	border-color: var(--primary-nav--color-border);
+	color: var(--primary-nav--color-link-hover);
 }
 
 .site-header div.menu-button-container button#primary-open-menu {

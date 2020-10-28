@@ -11,13 +11,54 @@ $navigation-max-break-point: 'laptop-only';
 
 .primary-navigation,
 .woo-navigation {
-	.sub-menu {
+	// Top-level Menu Item
+	.primary-menu-container > ul > .menu-item {
+		padding: 0;
+
+		@include media( $navigation-min-break-point ) {
+			padding: 0 var(--primary-nav--padding);
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+		}
+	}
+
+	& div ul > li > .sub-menu {
 		@include media( $navigation-min-break-point ) {
 			padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
+			transition: all 0.15s ease;
 
 			> .menu-item.menu-item-has-children {
 				padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) ) 0 0;
 			}
 		}
+	}
+}
+
+.social-navigation > div {
+	ul li {
+		width: auto;
+	}
+}
+
+
+$header-height: 80px;
+div.extra-navigation-wrapper {
+	@include media( $navigation-max-break-point ) {
+		background: var(--primary-nav--color-background);
+		padding: var(--global--spacing-unit) var(--global--spacing-horizontal);
+		top: 0;
+		right: 0;
+		bottom: $header-height;
+		left: 0;
+		transform: translateY( 90px ); // This can be any value > $header-height
+	}
+
+	.primary-navigation-open & {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY( $header-height );
 	}
 }
