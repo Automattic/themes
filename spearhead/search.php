@@ -45,7 +45,7 @@ get_header();
 			endwhile;
 
 			// Previous/next page navigation.
-			seedlet_the_posts_navigation();
+			seedlet_the_post_navigation();
 
 			// If no content, include the "No posts found" template.
 		else :
