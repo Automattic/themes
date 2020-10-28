@@ -25,9 +25,10 @@ $navigation-max-break-point: 'laptop-only';
 		}
 	}
 
-	.sub-menu {
+	& div ul > li > .sub-menu {
 		@include media( $navigation-min-break-point ) {
 			padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
+			transition: all 0.15s ease;
 
 			> .menu-item.menu-item-has-children {
 				padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) ) 0 0;
