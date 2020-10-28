@@ -11,6 +11,20 @@ $navigation-max-break-point: 'laptop-only';
 
 .primary-navigation,
 .woo-navigation {
+	// Top-level Menu Item
+	.primary-menu-container > ul > .menu-item {
+		padding: 0;
+
+		@include media( $navigation-min-break-point ) {
+			padding: 0 var(--primary-nav--padding);
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+		}
+	}
+
 	.sub-menu {
 		@include media( $navigation-min-break-point ) {
 			padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
@@ -20,4 +34,21 @@ $navigation-max-break-point: 'laptop-only';
 			}
 		}
 	}
+}
+
+.social-navigation > div {
+	ul li {
+		width: auto;
+	}
+}
+
+.primary-navigation-open .extra-navigation-wrapper {
+	background: var(--primary-nav--color-background);
+	padding: var(--global--spacing-unit) var(--global--spacing-horizontal);
+	visibility: visible;
+	opacity: 1;
+	top: 50px; // TODO adjust with admin bad
+	right: 0;
+	bottom: 30px; //Not sure why this div is offset by 30px
+	left: 0;
 }
