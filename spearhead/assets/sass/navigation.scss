@@ -43,18 +43,22 @@ $navigation-max-break-point: 'laptop-only';
 	}
 }
 
-.primary-navigation-open .extra-navigation-wrapper {
-	background: var(--primary-nav--color-background);
-	padding: var(--global--spacing-unit) var(--global--spacing-horizontal);
-	visibility: visible;
-	opacity: 1;
-	top: 50px;
-	right: 0;
-	bottom: 30px; // Not sure why this div is offset by 30px
-	left: 0;
-}
 
-.admin-bar.primary-navigation-open .extra-navigation-wrapper {
-	top: calc(50px + var(--wpadmin-bar--height));
-	bottom: 27px; // Don't get value yet
+$header-height: 80px;
+div.extra-navigation-wrapper {
+	@include media( $navigation-max-break-point ) {
+		background: var(--primary-nav--color-background);
+		padding: var(--global--spacing-unit) var(--global--spacing-horizontal);
+		top: 0;
+		right: 0;
+		bottom: $header-height;
+		left: 0;
+		transform: translateY( 200px ); // This can be any value > $header-height
+	}
+
+	.primary-navigation-open & {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY( $header-height );
+	}
 }
