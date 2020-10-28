@@ -21,3 +21,26 @@
 		text-transform: uppercase;
 	}
 }
+
+/* The built in Jetpack related posts has different markup */
+#jp-relatedposts {
+	.jp-relatedposts-items {
+		p {
+			font-size: var(--global--font-size-base);
+		}
+	}
+
+	h3.jp-relatedposts-headline {
+		font-size: var(--wp--present--font-size--medium, --global--font-size-md);
+		margin-bottom: var(--global--spacing-vertical);
+		width: 100%;
+
+		em {
+			font-weight: var(--global--font-weight);
+			&:before {
+				border-color: var(--separator--border-color);
+				margin-bottom: var(--global--spacing-vertical);
+			}
+		}
+	}
+}
