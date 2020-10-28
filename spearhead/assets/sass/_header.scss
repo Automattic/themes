@@ -4,6 +4,10 @@ $site-branding-height: 68px;
 .has-main-navigation {
 	.site-header {
 		padding: var(--global--spacing-horizontal);
+		a {
+			border-bottom: 1px solid transparent;
+		}
+
 		@include media( laptop ){
 			padding: 35px var(--global--spacing-horizontal);
 		}
@@ -50,18 +54,23 @@ $site-branding-height: 68px;
 				text-shadow: none;
 			}
 		}
+
+		.site-logo {
+			margin-left: 0;
+			margin-top: 0;
+		}
 	}
 
 	.primary-navigation {
 		flex-grow: 4;
 		margin-top: 0;
 
+		.primary-menu-container {
+			margin-bottom: 6px;
+		}
+
 		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
 			.primary-menu-container {
-				background: var(--primary-nav--color-background);
-				padding: var(--global--spacing-unit);
-				top: $site-branding-height;
-
 				.admin-bar & {
 					top: $site-branding-height + $admin-bar-height;
 				}
@@ -98,8 +107,6 @@ $site-branding-height: 68px;
 
 	.primary-navigation > div > ul li, .woo-navigation > div > ul li {
 		color: var(--global--color-secondary);
-		//margin: 6px 8px;
-		//padding: var(--social-nav--padding);
 
 		a:hover {
 			border-color: transparent;
@@ -137,13 +144,16 @@ $site-branding-height: 68px;
 			}
 		}
 
-		li:first-of-type > a,
-		a {
-			padding: 0;
+		.menu-item {
+			width: auto;
 
-			&:hover {
-				border-color: transparent;
-				color: var(--global--color-primary);
+			> a {
+				padding: 0;
+
+				&:hover {
+					border-color: var(--primary-nav--color-border);
+					color: var(--primary-nav--color-link-hover);
+				}
 			}
 		}
 	}
