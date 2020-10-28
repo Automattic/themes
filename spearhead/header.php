@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Seedlet
+ * @package Spearhead
  * @since 1.0.0
  */
 ?><!doctype html>
@@ -26,7 +26,7 @@
 		<header id="masthead" class="site-header default-max-width" role="banner">
 			<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
 				<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'seedlet' ); ?>">
 					<button id="primary-close-menu" class="button close">
 						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ); ?></span>
@@ -34,35 +34,34 @@
 					</button>
 					<div class="extra-navigation-wrapper">
 						<?php
-						// Get menu slug
-						$location_name = 'primary';
-						$locations     = get_nav_menu_locations();
-						$menu_id       = $locations[ $location_name ];
-						$menu_obj      = wp_get_nav_menu_object( $menu_id );
+						if ( has_nav_menu( 'primary' ) ) :
+							// Get menu slug
+							$location_name = 'primary';
+							$locations     = get_nav_menu_locations();
+							$menu_id       = $locations[ $location_name ];
+							$menu_obj      = wp_get_nav_menu_object( $menu_id );
 
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'primary',
-								'menu_class'      => 'menu-wrapper',
-								'container_class' => 'primary-menu-container',
-								'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-							)
-						);
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'primary',
+									'menu_class'      => 'menu-wrapper',
+									'container_class' => 'primary-menu-container',
+									'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+								)
+							);
+						endif;
+						if ( has_nav_menu( 'social' ) ) :
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'social',
+									'link_before'     => '<span class="screen-reader-text">',
+									'link_after'      => '</span>' . seedlet_get_icon_svg( 'link' ),
+									'container_class' => 'social-navigation',
+									'depth'           => 1,
+								)
+							);
+						endif;
 						?>
-						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'seedlet' ); ?>">
-								<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'social',
-										'link_before'    => '<span class="screen-reader-text">',
-										'link_after'     => '</span>' . seedlet_get_icon_svg( 'link' ),
-										'depth'          => 1,
-									)
-								);
-								?>
-							</nav><!-- .social-navigation -->
-						<?php endif; ?>
 					</div><!-- .extra-navigation-wrapper -->
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>
