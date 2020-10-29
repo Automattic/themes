@@ -23,6 +23,7 @@
 		font-family: var(--global--font-primary);
 		font-size: var(--global--font-size-xs);
 		text-transform: uppercase;
+		color: var(--global--color-foreground-low-contrast);
 	}
 }
 
@@ -31,7 +32,7 @@
 #jp-relatedposts {
 	.jp-relatedposts-items {
 		p {
-			font-size: var(--global--font-size-base);
+			font-size: var(--global--font-size-xs);
 		}
 
 		.jp-relatedposts-post {
@@ -39,11 +40,13 @@
 			.jp-relatedposts-post-context {
 				opacity: 1;
 				line-height: var(--global--line-height-body);
+				color: var(--global--color-foreground-low-contrast);
 			}
 	
 			.jp-relatedposts-post-title {
 				font-size: var(--global--font-size-lg);
 				line-height: var(--heading--line-height-h2);
+				margin-bottom: calc(0.3 * var(--global--spacing-vertical));
 				a {
 					color: var(--global--color-foreground);
 					&:hover {
@@ -51,19 +54,22 @@
 					}
 				}
 			}
+			&:hover {
+				.jp-relatedposts-post-title a{
+					text-decoration: none;
+				}
+			}
 		}
 	}
 
 	h3.jp-relatedposts-headline {
-		font-size: var(--global--font-size-lg);
+		font-size: var(--global--font-size-base);
 		margin-bottom: var(--global--spacing-vertical);
-		width: 100%;
 
 		em {
 			font-weight: var(--global--font-weight);
 			&:before {
-				border-color: var(--separator--border-color);
-				margin-bottom: var(--global--spacing-vertical);
+				content: none;
 			}
 		}
 	}

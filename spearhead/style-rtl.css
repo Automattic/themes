@@ -498,22 +498,25 @@ ul.wp-block-categories,
 	font-family: var(--global--font-primary);
 	font-size: var(--global--font-size-xs);
 	text-transform: uppercase;
+	color: var(--global--color-foreground-low-contrast);
 }
 
 /* The built in Jetpack related posts has different markup */
 #jp-relatedposts .jp-relatedposts-items p {
-	font-size: var(--global--font-size-base);
+	font-size: var(--global--font-size-xs);
 }
 
 #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
 #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
 	opacity: 1;
 	line-height: var(--global--line-height-body);
+	color: var(--global--color-foreground-low-contrast);
 }
 
 #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title {
 	font-size: var(--global--font-size-lg);
 	line-height: var(--heading--line-height-h2);
+	margin-bottom: calc(0.3 * var(--global--spacing-vertical));
 }
 
 #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
@@ -524,10 +527,13 @@ ul.wp-block-categories,
 	text-decoration: none;
 }
 
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+	text-decoration: none;
+}
+
 #jp-relatedposts h3.jp-relatedposts-headline {
-	font-size: var(--global--font-size-lg);
+	font-size: var(--global--font-size-base);
 	margin-bottom: var(--global--spacing-vertical);
-	width: 100%;
 }
 
 #jp-relatedposts h3.jp-relatedposts-headline em {
@@ -535,8 +541,7 @@ ul.wp-block-categories,
 }
 
 #jp-relatedposts h3.jp-relatedposts-headline em:before {
-	border-color: var(--separator--border-color);
-	margin-bottom: var(--global--spacing-vertical);
+	content: none;
 }
 
 .wp-block-newspack-blocks-homepage-articles.wpnbha article,
