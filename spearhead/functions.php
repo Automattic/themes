@@ -227,13 +227,26 @@ function spearhead_excerpt_more() {
 }
 
 function spearhead_the_excerpt( $excerpt ) {
+
+	$audio_block = '';
+	if ( has_block( 'audio' ) ) {
+		$post   = get_post();
+		$blocks = parse_blocks( $post->post_content );
+		foreach ( $blocks as $block ) {
+			if ( 'core/audio' === $block['blockName'] ) {
+				$audio_block .= '<div class="excerpt-audio-block">' . wp_kses_post( $block['innerHTML'] ) . '</div>';
+				break;
+			}
+		}
+	}
+
 	// For cases where the post excerpt is empty
 	// (but the post might have content)
 	if ( 0 === strlen( $excerpt ) ) {
-		return $excerpt;
+		return $excerpt . $audio_block;
 	}
 
-	return $excerpt . '<span class="excerpt-more-link">' . spearhead_more_link() . '</span>';
+	return $excerpt . '<span class="excerpt-more-link">' . spearhead_more_link() . '</span>' . $audio_block;
 }
 
 /**
