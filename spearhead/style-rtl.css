@@ -468,26 +468,80 @@ ul.wp-block-categories,
 	font-weight: var(--global--link-font-weight);
 }
 
+.jp-relatedposts-i2 .jp-related-posts-i2__post,
 .wp-block-jetpack-related-posts .jp-related-posts-i2__post {
 	margin: 0 0 0 var(--global--spacing-horizontal);
 }
 
+.jp-relatedposts-i2 .jp-related-posts-i2__row,
 .wp-block-jetpack-related-posts .jp-related-posts-i2__row {
 	margin: auto;
 }
 
+.jp-relatedposts-i2 .jp-related-posts-i2__post-link,
 .wp-block-jetpack-related-posts .jp-related-posts-i2__post-link {
-	font-weight: 500;
-	font-size: var(--wp--present--font-size--medium, --global--font-size-md);
+	font-weight: var(--global--font-weight);
+	font-size: var(--global--font-size-lg);
 	line-height: var(--global--line-height-body);
 	width: fit-content;
 }
 
+.jp-relatedposts-i2 .jp-related-posts-i2__post-link a,
+.wp-block-jetpack-related-posts .jp-related-posts-i2__post-link a {
+	color: var(--global--color-foreground);
+}
+
+.jp-relatedposts-i2 .jp-related-posts-i2__post-date,
+.jp-relatedposts-i2 .jp-related-posts-i2__post-context,
 .wp-block-jetpack-related-posts .jp-related-posts-i2__post-date,
 .wp-block-jetpack-related-posts .jp-related-posts-i2__post-context {
 	font-family: var(--global--font-primary);
 	font-size: var(--global--font-size-xs);
 	text-transform: uppercase;
+	color: var(--global--color-foreground-low-contrast);
+}
+
+/* The built in Jetpack related posts has different markup */
+#jp-relatedposts .jp-relatedposts-items p {
+	font-size: var(--global--font-size-xs);
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+	opacity: 1;
+	line-height: var(--global--line-height-body);
+	color: var(--global--color-foreground-low-contrast);
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title {
+	font-size: var(--global--font-size-lg);
+	line-height: var(--heading--line-height-h2);
+	margin-bottom: calc(0.3 * var(--global--spacing-vertical));
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+	color: var(--global--color-foreground);
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
+	text-decoration: none;
+}
+
+#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+	text-decoration: none;
+}
+
+#jp-relatedposts h3.jp-relatedposts-headline {
+	font-size: var(--global--font-size-base);
+	margin-bottom: var(--global--spacing-vertical);
+}
+
+#jp-relatedposts h3.jp-relatedposts-headline em {
+	font-weight: var(--global--font-weight);
+}
+
+#jp-relatedposts h3.jp-relatedposts-headline em:before {
+	content: none;
 }
 
 .wp-block-newspack-blocks-homepage-articles.wpnbha article,
