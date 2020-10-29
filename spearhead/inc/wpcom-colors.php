@@ -25,6 +25,7 @@ if ( ! function_exists( 'spearhead_wpcom_customize_update' ) ) :
 				'id'          => 'darkmode_notice',
 				'label'       => esc_html__( 'Dark Mode', 'spearhead' ),
 				'description' => sprintf(
+					/* translators: %s: link to how to support system display modes */
 					__( "This theme will automatically display a dark color palette for users who have dark mode enabled on their devices. The preview here will only reflect the light mode. <a href='%s' target='_blank'>Learn more about dark mode</a>.", 'spearhead' ),
 					esc_url( 'https://www.a11yproject.com/posts/2020-01-23-operating-system-and-browser-accessibility-display-modes/' )
 				),
