@@ -234,7 +234,7 @@ function spearhead_the_excerpt( $excerpt ) {
 		$blocks = parse_blocks( $post->post_content );
 		foreach ( $blocks as $block ) {
 			if ( 'core/audio' === $block['blockName'] ) {
-				$audio_block .= '<div class="excerpt-audio-block">' . $block['innerHTML'] . '</div>';
+				$audio_block .= '<div class="excerpt-audio-block">' . wp_kses_post( $block['innerHTML'] ) . '</div>';
 				break;
 			}
 		}
