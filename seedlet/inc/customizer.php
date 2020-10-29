@@ -118,6 +118,26 @@ if ( ! class_exists( 'Seedlet_Customize' ) ) {
 					),
 				)
 			);
+
+			// Add "display_title_and_tagline" setting for displaying the site-title & tagline.
+			$wp_customize->add_setting(
+				'display_title_and_tagline',
+				array(
+					'capability'        => 'edit_theme_options',
+					'default'           => true,
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			// Add control for the "display_title_and_tagline" setting.
+			$wp_customize->add_control(
+				'display_title_and_tagline',
+				array(
+					'type'    => 'checkbox',
+					'section' => 'title_tagline',
+					'label'   => esc_html__( 'Display Site Title & Tagline', 'seedlet' ),
+				)
+			);
 		}
 
 		/**
@@ -144,6 +164,21 @@ if ( ! class_exists( 'Seedlet_Customize' ) ) {
 		 */
 		public function partial_blogdescription() {
 			bloginfo( 'description' );
+		}
+
+		/**
+		 * Sanitize boolean for checkbox.
+		 *
+		 * @access public
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param bool $checked Whether or not a box is checked.
+		 *
+		 * @return bool
+		 */
+		public static function sanitize_checkbox( $checked = null ) {
+			return (bool) isset( $checked ) && true === $checked;
 		}
 	}
 

@@ -233,6 +233,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 	padding: var(--global--spacing-horizontal);
@@ -251,6 +252,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-header .site-branding {
+	flex-basis: 30%;
 	flex-grow: 1;
 	text-align: right;
 }
@@ -267,9 +269,11 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .site-header .site-branding .site-logo {
 	margin-right: 0;
 	margin-top: 0;
+	text-align: right;
 }
 
 .site-header .primary-navigation {
+	flex-basis: 70%;
 	flex-grow: 4;
 	margin-top: 0;
 }
@@ -361,6 +365,15 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .site-header .social-navigation .menu-item > a:hover {
 	border-color: var(--primary-nav--color-border);
 	color: var(--primary-nav--color-link-hover);
+}
+
+.has-title-and-tagline .site-logo {
+	flex-basis: 100%;
+	margin-bottom: var(--global--spacing-vertical);
+}
+
+.primary-navigation-open .has-title-and-tagline .site-logo {
+	display: none;
 }
 
 .site-header div.menu-button-container button#primary-open-menu {

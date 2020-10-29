@@ -61,4 +61,18 @@ div.extra-navigation-wrapper {
 		opacity: 1;
 		transform: translateY( $header-height );
 	}
+
+	$menu-offset-with-logo: calc( var(--branding--logo--max-height) + ( 2 * var(--global--spacing-vertical) ) );
+	.primary-navigation-open .has-logo:not(.has-title-and-tagline) & {
+		transform: translateY( $menu-offset-with-logo );
+		bottom: $menu-offset-with-logo;
+	}
+}
+
+.has-logo.has-title-and-tagline .menu-button-container {
+	top: calc( var(--branding--logo--max-height) + var(--global--spacing-vertical) );
+
+	.admin-bar & {
+		top: calc( var(--wpadmin-bar--height) + var(--branding--logo--max-height) + var(--global--spacing-vertical) );
+	}
 }

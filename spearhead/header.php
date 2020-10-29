@@ -9,6 +9,11 @@
  * @package Spearhead
  * @since 1.0.0
  */
+$has_primary_nav = has_nav_menu( 'primary' );
+$header_classes  = 'site-header header_classes';
+$header_classes .= has_custom_logo() ? ' has-logo' : '';
+$header_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) ? ' has-title-and-tagline' : '';
+$header_classes .= $has_primary_nav ? ' has-menu' : '';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,10 +28,10 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
 
-		<header id="masthead" class="site-header default-max-width" role="banner">
+		<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 			<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
-			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
+			<?php if ( $has_primary_nav || has_nav_menu( 'social' ) ) : ?>
 				<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'seedlet' ); ?>">
 					<button id="primary-close-menu" class="button close">
 						<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ); ?></span>
@@ -34,7 +39,7 @@
 					</button>
 					<div class="extra-navigation-wrapper">
 						<?php
-						if ( has_nav_menu( 'primary' ) ) :
+						if ( $has_primary_nav ) :
 							// Get menu slug
 							$location_name = 'primary';
 							$locations     = get_nav_menu_locations();
@@ -67,7 +72,7 @@
 			<?php endif; ?>
 
 			<div class="menu-button-container">
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+				<?php if ( $has_primary_nav ) : ?>
 					<button id="primary-open-menu" class="button open">
 						<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ); ?></span>
 						<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>

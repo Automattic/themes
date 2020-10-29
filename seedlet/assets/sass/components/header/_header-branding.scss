@@ -25,7 +25,7 @@
 		color: currentColor;
 		font-weight: var(--branding--title--font-weight);
 		text-shadow:
-			1px 0px var(--global--color-background), 
+			1px 0px var(--global--color-background),
 			-1px 0px var(--global--color-background),
 			-2px 0px var(--global--color-background),
 			2px 0px var(--global--color-background),
@@ -33,7 +33,7 @@
 			3px 0px var(--global--color-background),
 			-4px 0px var(--global--color-background),
 			4px 0px var(--global--color-background),
-			-5px 0px var(--global--color-background), 
+			-5px 0px var(--global--color-background),
 			5px 0px var(--global--color-background);
 		transition: background-size 0.1s ease-out;
 
@@ -51,7 +51,7 @@
 
 		&::selection {
 			text-shadow:
-				1px 0px var(--global--color-text-selection), 
+				1px 0px var(--global--color-text-selection),
 				-1px 0px var(--global--color-text-selection),
 				-2px 0px var(--global--color-text-selection),
 				2px 0px var(--global--color-text-selection),
@@ -59,7 +59,7 @@
 				3px 0px var(--global--color-text-selection),
 				-4px 0px var(--global--color-text-selection),
 				4px 0px var(--global--color-text-selection),
-				-5px 0px var(--global--color-text-selection), 
+				-5px 0px var(--global--color-text-selection),
 				5px 0px var(--global--color-text-selection);
 		}
 	}
@@ -94,21 +94,20 @@ nav a {
 // Site logo
 
 .site-logo {
-
 	margin: calc( var(--global--spacing-vertical) / 2 ) var(--global--spacing-horizontal);
+	text-align: center;
 
 	.custom-logo {
-		max-width: var(--branding--logo--max-width-mobile);
-		max-height: var(--branding--logo--max-height-mobile);
+		max-width: var(--branding--logo--max-width);
+		max-height: var(--branding--logo--max-height);
 		height: auto;
 	}
+}
 
-	@include media(mobile) {
-	
-		.custom-logo {
-			max-width: var(--branding--logo--max-width);
-			max-height: var(--branding--logo--max-height);
-			height: auto;
-		}
+// TODO - this should probably go in the variables declartion but we need the mixin...
+@include media(mobile-only) {
+	:root {
+		--branding--logo--max-width: var(--branding--logo--max-width-mobile);
+		--branding--logo--max-height: var(--branding--logo--max-height-mobile);
 	}
 }
