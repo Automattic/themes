@@ -2968,16 +2968,15 @@ nav a {
 }
 
 .site-logo .custom-logo {
-	max-width: var(--branding--logo--max-width-mobile);
-	max-height: var(--branding--logo--max-height-mobile);
+	max-width: var(--branding--logo--max-width);
+	max-height: var(--branding--logo--max-height);
 	height: auto;
 }
 
-@media only screen and (min-width: 482px) {
-	.site-logo .custom-logo {
-		max-width: var(--branding--logo--max-width);
-		max-height: var(--branding--logo--max-height);
-		height: auto;
+@media only screen and (max-width: 481px) {
+	:root {
+		--branding--logo--max-width: var(--branding--logo--max-width-mobile);
+		--branding--logo--max-height: var(--branding--logo--max-height-mobile);
 	}
 }
 

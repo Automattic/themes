@@ -30,6 +30,7 @@ $site-branding-height: 68px;
 
 .site-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 	padding: var(--global--spacing-horizontal);
@@ -157,6 +158,16 @@ $site-branding-height: 68px;
 			}
 		}
 	}
+}
+
+.has-title-and-tagline .site-logo {
+	flex-basis: 100%;
+	margin-bottom: var(--global--spacing-vertical);
+	text-align: center;
+}
+
+.primary-navigation-open .has-title-and-tagline .site-logo {
+	display: none;
 }
 
 

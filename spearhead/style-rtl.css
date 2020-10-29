@@ -233,6 +233,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 	padding: var(--global--spacing-horizontal);
@@ -361,6 +362,16 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 .site-header .social-navigation .menu-item > a:hover {
 	border-color: var(--primary-nav--color-border);
 	color: var(--primary-nav--color-link-hover);
+}
+
+.has-title-and-tagline .site-logo {
+	flex-basis: 100%;
+	margin-bottom: var(--global--spacing-vertical);
+	text-align: center;
+}
+
+.primary-navigation-open .has-title-and-tagline .site-logo {
+	display: none;
 }
 
 .site-header div.menu-button-container button#primary-open-menu {
