@@ -774,3 +774,29 @@ ul.wp-block-categories,
 .widget ul {
 	padding: 0;
 }
+
+#content .wc-block-grid .wc-block-grid__product-onsale {
+	font-family: var(--global--font-secondary);
+}
+
+body[class*="woocommerce"] #page span.onsale {
+	background-color: var(--global--color-background);
+	border: 1px solid var(--global--color-foreground);
+	border-radius: 0;
+	font-family: var(--global--font-secondary);
+	line-height: 1.6;
+	min-width: 0;
+	min-height: 0;
+	padding: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+	body[class*="woocommerce"] #page span.onsale {
+		background-color: var(--global--color-foreground);
+		border: 1px solid var(--global--color-background);
+	}
+}
+
+#woocommerce-wrapper ul.products li.product .price {
+	color: var(--global--color-foreground);
+}
