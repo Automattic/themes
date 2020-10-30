@@ -64,14 +64,16 @@ $site-branding-height: 68px;
 		}
 	}
 
+	.primary-navigation-wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: 6px;
+	}
+
 	.primary-navigation {
 		flex-basis: 70%;
 		flex-grow: 4;
 		margin-top: 0;
-
-		.primary-menu-container {
-			margin-bottom: 6px;
-		}
 
 		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
 			.primary-menu-container {
@@ -186,6 +188,10 @@ $site-branding-height: 68px;
 		&:before {
 			margin: 0;
 		}
+	}
+
+	#woo-open-menu {
+		margin-left: auto;
 	}
 
 	.primary-navigation-open & {
