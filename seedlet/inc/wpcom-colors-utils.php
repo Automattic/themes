@@ -97,7 +97,7 @@ function rgb_to_hsvl( $rgb ) {
 	$min_rgb           = min( $r, $g, $b );
 	$chroma            = $max_rgb - $min_rgb;
 	$v                 = 100 * $max_rgb;
-	if ( 0 == $chroma ) {
+	if ( 0 === (int) $chroma ) {
 		return array( 0, 0, $v, $l );
 	}
 	$s = 100 * ( $chroma / $max_rgb );
