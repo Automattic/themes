@@ -1,4 +1,12 @@
 .wp-block-group {
+
+	/* Treating H2 separately to account for legacy /core styles */
+	h2 {
+		&.has-text-align-left {
+			text-align: left;
+		}
+	}
+
 	&.has-background {
 		padding: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 
