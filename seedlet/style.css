@@ -187,7 +187,7 @@ Included in theme screenshot and in block patterns.
 	--layout-grid--gutter-medium: var(--global--spacing-unit);
 	--layout-grid--gutter-large: calc( var(--global--spacing-unit) * 2);
 	--layout-grid--gutter-huge: calc( var(--global--spacing-unit) * 3);
-	--layout-grid--background-offset: calc( var(--global--spacing-unit));
+	--layout-grid--background-offset: var(--global--spacing-unit);
 	--list--font-family: var(--global--font-secondary);
 	--definition-term--font-family: var(--global--font-primary);
 	--pullquote--font-family: var(--global--font-primary);
@@ -4197,10 +4197,35 @@ button[data-load-more-btn],
 }
 
 .wp-block-jetpack-layout-grid {
+	/* Grid gutter size options */
 	grid-gap: var(--layout-grid--gutter-large) !important;
 	padding-left: var(--layout-grid--gutter-large) !important;
 	padding-right: var(--layout-grid--gutter-large) !important;
 	/* Individual Column Options */
+}
+
+.wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__small {
+	grid-gap: var(--layout-grid--gutter-small) !important;
+	padding-left: var(--layout-grid--gutter-small) !important;
+	padding-right: var(--layout-grid--gutter-small) !important;
+}
+
+.wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__medium {
+	grid-gap: var(--layout-grid--gutter-medium) !important;
+	padding-left: var(--layout-grid--gutter-medium) !important;
+	padding-right: var(--layout-grid--gutter-medium) !important;
+}
+
+.wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__large {
+	grid-gap: var(--layout-grid--gutter-large) !important;
+	padding-left: var(--layout-grid--gutter-large) !important;
+	padding-right: var(--layout-grid--gutter-large) !important;
+}
+
+.wp-block-jetpack-layout-grid.wp-block-jetpack-layout-gutter__huge {
+	grid-gap: var(--layout-grid--gutter-huge) !important;
+	padding-left: var(--layout-grid--gutter-huge) !important;
+	padding-right: var(--layout-grid--gutter-huge) !important;
 }
 
 .wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column.has-background, .wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column[style^="background-color"] {
