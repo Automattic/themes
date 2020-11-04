@@ -51,3 +51,12 @@ To set this uo follow these instructions:
 2. Run `composer install`
 
 Now when you commit changes to a file PHPCBF will attempt to fix any issues with the file.
+
+## Packaging for WordPress.org Themes Showcase
+
+The code in this repository mirrors the code needed to function correctly on WordPress.com. To prepare a theme.zip that passes the theme review automated test, do the following:
+
+- From the top-level directory: `./package-dotorg [theme-slug]`
+- View the generated zip in the respective theme's sub-directory
+
+Note that this script rebuilds the theme stripping it of .com-specific functionality, and discards any changes via git after doing so. I.e. make sure that you have any working changes committed before running this script.
