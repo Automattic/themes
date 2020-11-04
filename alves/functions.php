@@ -204,7 +204,7 @@ function alves_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('alves-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'alves-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'alves-style', 'rtl', 'replace' );
@@ -221,10 +221,10 @@ function alves_editor_styles() {
 	wp_enqueue_style( 'alves-editor-fonts', alves_fonts_url(), array(), null );
 
 	// Hide duplicate palette colors
-	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) { // $config-global--color-foreground-light-default;
-		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
-			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
 				display: none;
 			}';
 		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
