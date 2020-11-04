@@ -1,0 +1,25 @@
+
+name: Theme Review 
+
+on: repository_dispatch
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download Theme
+      run: |
+        curl -L -o theme.zip "${{ github.event.client_payload.theme_zip }}"
+        unzip theme.zip
+    - name: Test My Theme
+      id: test
+      uses: StevenDufresne/wp-theme-validation-action-experiment@main
+      with:
+        root-folder: ${{ github.event.client_payload.theme_slug }}
+        accessible-ready: ${{ github.event.client_payload.accessible_ready }}
+    - uses: actions/upload-artifact@v2
+      if: ${{ always() }}
+      with:
+        name: Screenshots
+        path: ${{ steps.test.outputs.screenshots }}
