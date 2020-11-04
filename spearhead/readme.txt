@@ -29,7 +29,6 @@ Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and
 
 == Copyright ==
 
-Spearhead WordPress Theme, (C) 2020 Automattic, Inc.
 Spearhead is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
