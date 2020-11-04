@@ -77,6 +77,9 @@ if ( ! function_exists( 'canard_excerpt_more' ) && ! is_admin() ) :
  * @since Canard 1.0.3
  */
 function canard_excerpt_more( $more ) {
+	if ( is_admin() ) {
+        return $more;
+    }
 	return ' &hellip;';
 }
 add_filter( 'excerpt_more', 'canard_excerpt_more' );
@@ -126,3 +129,14 @@ function canard_get_link_url() {
 
 	return ( $has_url && has_post_format( 'link' ) ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
 }
+
+/**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
+function canard_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+	}
+}
+add_action( 'wp_head', 'canard_pingback_header' );
+
