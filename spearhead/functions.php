@@ -115,6 +115,7 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  */
 function spearhead_scripts() {
 	// dequeue parent styles
+	wp_dequeue_style( 'seedlet-style' ); // remove parent stylesheet
 	wp_dequeue_style( 'seedlet-style-navigation' );
 
 	// enqueue Google fonts, if necessary
@@ -122,6 +123,9 @@ function spearhead_scripts() {
 
 	// Child theme variables
 	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
+
+	// Re-enqueue parent stylesheet to sort it properly with inline styles
+	wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child styles
 	wp_enqueue_style( 'spearhead-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
