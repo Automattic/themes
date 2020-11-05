@@ -115,7 +115,7 @@ add_filter( 'seedlet_content_width', 'spearhead_content_width' );
  */
 function spearhead_scripts() {
 	// dequeue parent styles
-	wp_dequeue_style( 'seedlet-variable-overrides' ); // remove parent stylesheet
+	wp_dequeue_style( 'seedlet-variable-overrides' ); // remove parent variables
 	wp_dequeue_style( 'seedlet-style-navigation' );
 
 	// enqueue Google fonts, if necessary
@@ -124,7 +124,7 @@ function spearhead_scripts() {
 	// Child theme variables
 	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
 
-	// Re-enqueue parent stylesheet to sort it properly with inline styles
+	// Re-enqueue parent variables to sort them properly with custom inline styles
 	wp_enqueue_style( 'seedlet-variable-overrides' );
 
 	// enqueue child styles
