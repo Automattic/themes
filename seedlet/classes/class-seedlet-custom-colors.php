@@ -263,7 +263,9 @@ class Seedlet_Custom_Colors {
 	 */
 	function seedlet_custom_color_variables() {
 		if ( 'default' !== get_theme_mod( 'custom_colors_active' ) ) {
-			wp_add_inline_style( 'seedlet-style', $this->seedlet_generate_custom_color_variables() );
+			wp_register_style( 'seedlet-variable-overrides', false );
+			wp_enqueue_style( 'seedlet-variable-overrides' );
+			wp_add_inline_style( 'seedlet-variable-overrides', $this->seedlet_generate_custom_color_variables() );
 		}
 	}
 
