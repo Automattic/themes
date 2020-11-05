@@ -21,15 +21,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
-      - name: Run Theme Check Action
-        uses: StevenDufresne/wp-theme-validation-action-experiment@main
-        id: theme-check
-        with:
-          accessible-ready: false
-          root-folder: spearhead
-      - uses: actions/upload-artifact@v2
-        if: ${{ always() }}
-        with:
-          name: Screenshots
-          path: ${{ steps.theme-check.outputs.screenshots }}
+      - run: echo ${{ GITHUB_REF }}
+#       
+#       - name: Run Theme Check Action
+#         uses: StevenDufresne/wp-theme-validation-action-experiment@main
+#         id: theme-check
+#         with:
+#           accessible-ready: false
+#           root-folder: spearhead
+#       - uses: actions/upload-artifact@v2
+#         if: ${{ always() }}
+#         with:
+#           name: Screenshots
+#           path: ${{ steps.theme-check.outputs.screenshots }}
