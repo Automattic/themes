@@ -156,7 +156,7 @@ function spearhead_scripts() {
 	// Child theme variables
 	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
 
-	// Re-enqueue parent variables to sort them properly with custom inline styles
+	// Re-enqueue parent variables to sort them properly with custom-color inline styles
 	wp_enqueue_style( 'seedlet-variable-overrides' );
 
 	// enqueue child styles
