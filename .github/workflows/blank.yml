@@ -1,0 +1,31 @@
+name: Spearhead Theme Check
+
+on:
+  pull_request:
+    paths:
+    - 'spearhead/**'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - uses: actions/checkout@v2
+
+        ## We need this until WordPress 5.6 is shipped. @wordpress/env relies on a package that doesn't work with Node14
+        - uses: actions/setup-node@v1
+          with:
+            node-version: '12'  
+        
+        - name: Run Theme Check Action
+          uses: WordPress/theme-review-action@1
+          id: theme-check
+          with:
+            accessible-ready: true
+            root-folder: spearhead 
+        
+        - uses: actions/upload-artifact@v2
+          if: ${{ always() }}
+          with:
+            name: Screenshots
+            path: ${{ steps.theme-check.outputs.screenshots }}
