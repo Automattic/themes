@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 A theme designed with podcasting in mind with support for dark mode.
 
 == Description ==
-
+test
 Spearhead is a minimal, elegant theme which lets your content speak for itself.
 
 Spearhead comes with some block patterns to help get your podcast up and running. It works seamlessly with the block editor, supporting all the latest blocks — audio, illustrations, photography, video, to name a few.
