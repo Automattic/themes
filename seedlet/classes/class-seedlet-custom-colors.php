@@ -14,19 +14,35 @@
 class Seedlet_Custom_Colors {
 
 	private $seedlet_custom_color_variables = array();
+	private $default_background             = '#FFFFFF';
+	private $default_foreground             = '#333333';
+	private $default_primary                = '#000000';
+	private $default_secondary              = '#3C8067';
+	private $default_tertiary               = '#FAFBF6';
+	private $default_border                 = '#EFEFEF';
 
-	function __construct() {
+	function __construct( $background, $foreground, $primary, $secondary, $tertiary, $border ) {
 
 		/**
-		 * Define color variables
+		 * Define defaults
+		 */
+		$this->default_background = $background;
+		$this->default_foreground = $foreground;
+		$this->default_primary    = $primary;
+		$this->default_secondary  = $secondary;
+		$this->default_tertiary   = $tertiary;
+		$this->default_border     = $border;
+
+		/**
+		 * Define color variables with defaults
 		 */
 		$this->seedlet_custom_color_variables = array(
-			array( '--global--color-background', '#FFFFFF', __( 'Background Color', 'seedlet' ) ),
-			array( '--global--color-foreground', '#333333', __( 'Foreground Color', 'seedlet' ) ),
-			array( '--global--color-primary', '#000000', __( 'Primary Color', 'seedlet' ) ),
-			array( '--global--color-secondary', '#3C8067', __( 'Secondary Color', 'seedlet' ) ),
-			array( '--global--color-tertiary', '#FAFBF6', __( 'Tertiary Color', 'seedlet' ) ),
-			array( '--global--color-border', '#EFEFEF', __( 'Borders Color', 'seedlet' ) ),
+			array( '--global--color-background', $background, __( 'Background Color', 'seedlet' ) ),
+			array( '--global--color-foreground', $foreground, __( 'Foreground Color', 'seedlet' ) ),
+			array( '--global--color-primary', $primary, __( 'Primary Color', 'seedlet' ) ),
+			array( '--global--color-secondary', $secondary, __( 'Secondary Color', 'seedlet' ) ),
+			array( '--global--color-tertiary', $tertiary, __( 'Tertiary Color', 'seedlet' ) ),
+			array( '--global--color-border', $border, __( 'Borders Color', 'seedlet' ) ),
 		);
 
 		/**
@@ -232,7 +248,7 @@ class Seedlet_Custom_Colors {
 				$opacity_integer         = 70;
 				$adjusted_color          = $this->seedlet_color_blend_by_opacity( $theme_mod_custom_color, $opacity_integer, $theme_mod_bg_color );
 
-				$theme_css .= $theme_mod_variable_name . ':' . $theme_mod_custom_color . ';';
+				$theme_css .= $theme_mod_variable_name . ': ' . $theme_mod_custom_color . ';';
 
 				if ( $theme_mod_variable_name === '--global--color-primary' && $theme_mod_default_color !== $theme_mod_custom_color ) {
 					$theme_css .= '--global--color-primary-hover: ' . $adjusted_color . ';';
@@ -323,4 +339,7 @@ class Seedlet_Custom_Colors {
 
 }
 
-new Seedlet_Custom_Colors;
+// Instantiate Custom Colors if this is a parent theme
+if ( get_template_directory() === get_stylesheet_directory() ) {
+	new Seedlet_Custom_Colors;
+}
