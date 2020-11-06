@@ -75,27 +75,46 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		// Add child theme editor color pallete to match CSS-variables
+		// Editor color palette.
+		$colors_theme_mod = get_theme_mod( 'custom_colors_active' );
+		$primary          = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-primary' ) ) ) ? '#DB0042' : get_theme_mod( 'seedlet_--global--color-primary' );
+		$secondary        = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-secondary' ) ) ) ? '#555555' : get_theme_mod( 'seedlet_--global--color-secondary' );
+		$foreground       = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-foreground' ) ) ) ? '#000000' : get_theme_mod( 'seedlet_--global--color-foreground' );
+		$tertiary         = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-tertiary' ) ) ) ? '#FAFBF6' : get_theme_mod( 'seedlet_--global--color-tertiary' );
+		$background       = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-background' ) ) ) ? '#FFFFFF' : get_theme_mod( 'seedlet_--global--color-background' );
+
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'spearhead' ),
 					'slug'  => 'primary',
-					'color' => '#DB0042',
+					'color' => $primary,
+				),
+				array(
+					'name'  => __( 'Secondary', 'spearhead' ),
+					'slug'  => 'secondary',
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'spearhead' ),
 					'slug'  => 'foreground',
-					'color' => '#000000',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Tertiary', 'spearhead' ),
+					'slug'  => 'tertiary',
+					'color' => $tertiary,
 				),
 				array(
 					'name'  => __( 'Background', 'spearhead' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
 				),
 			)
 		);
+
 		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
 		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
 
@@ -107,7 +126,7 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 			'#000000', // foreground
 			'#DB0042', // primary
 			'#555555', // secondary
-			'#555555', // tertiary
+			'#FAFBF6', // tertiary
 			'#555555'  // border
 		);
 
