@@ -53,12 +53,12 @@ class Seedlet_Custom_Colors {
 		/**
 		 * Enqueue color variables for customizer & frontend.
 		 */
-		add_action( 'wp_enqueue_scripts', array( $this, 'seedlet_custom_color_variables' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'seedlet_enqueue_custom_color_variables' ) );
 
 		/**
 		 * Enqueue color variables for editor.
 		 */
-		add_action( 'enqueue_block_editor_assets', array( $this, 'seedlet_editor_custom_color_variables' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'seedlet_enqueue_editor_custom_color_variables' ) );
 
 		/**
 		 * Enqueue contrast checking.
@@ -277,7 +277,7 @@ class Seedlet_Custom_Colors {
 	/**
 	 * Customizer & frontend custom color variables.
 	 */
-	function seedlet_custom_color_variables() {
+	function seedlet_enqueue_custom_color_variables() {
 		if ( 'default' !== get_theme_mod( 'custom_colors_active' ) ) {
 			wp_register_style( 'seedlet-variable-overrides', false );
 			wp_enqueue_style( 'seedlet-variable-overrides' );
@@ -288,7 +288,7 @@ class Seedlet_Custom_Colors {
 	/**
 	 * Editor custom color variables.
 	 */
-	function seedlet_editor_custom_color_variables() {
+	function seedlet_enqueue_editor_custom_color_variables() {
 		wp_enqueue_style( 'seedlet-custom-color-overrides', get_template_directory_uri() . '/assets/css/custom-color-overrides.css', array(), wp_get_theme()->get( 'Version' ) );
 		if ( 'default' !== get_theme_mod( 'custom_colors_active' ) ) {
 			wp_add_inline_style( 'seedlet-custom-color-overrides', $this->seedlet_generate_custom_color_variables( 'editor' ) );
