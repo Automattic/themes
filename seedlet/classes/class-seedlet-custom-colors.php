@@ -21,7 +21,7 @@ class Seedlet_Custom_Colors {
 	private $default_tertiary               = '#FAFBF6';
 	private $default_border                 = '#EFEFEF';
 
-	function __construct( $background, $foreground, $primary, $secondary, $tertiary, $border ) {
+	function __construct( $background = $default_background, $foreground = $default_foreground, $primary = $default_primary, $secondary = $default_secondary, $tertiary = $default_tertiary, $border = $default_border ) {
 
 		/**
 		 * Define defaults
