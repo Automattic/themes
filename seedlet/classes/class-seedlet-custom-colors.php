@@ -14,14 +14,14 @@
 class Seedlet_Custom_Colors {
 
 	private $seedlet_custom_color_variables = array();
-	private $default_background             = '#FFFFFF';
-	private $default_foreground             = '#333333';
-	private $default_primary                = '#000000';
-	private $default_secondary              = '#3C8067';
-	private $default_tertiary               = '#FAFBF6';
-	private $default_border                 = '#EFEFEF';
+	private $default_background;
+	private $default_foreground;
+	private $default_primary;
+	private $default_secondary;
+	private $default_tertiary;
+	private $default_border;
 
-	function __construct( $background = $default_background, $foreground = $default_foreground, $primary = $default_primary, $secondary = $default_secondary, $tertiary = $default_tertiary, $border = $default_border ) {
+	function __construct( $background, $foreground, $primary, $secondary, $tertiary, $border ) {
 
 		/**
 		 * Define defaults
@@ -341,5 +341,15 @@ class Seedlet_Custom_Colors {
 
 // Instantiate Custom Colors if this is a parent theme
 if ( get_template_directory() === get_stylesheet_directory() ) {
-	new Seedlet_Custom_Colors;
+	/**
+	 * Set Seedlet Custom Color Defaults
+	 */
+	new Seedlet_Custom_Colors(
+		'#FFFFFF', // background
+		'#333333', // foreground
+		'#000000', // primary
+		'#3C8067', // secondary
+		'#FAFBF6', // tertiary
+		'#EFEFEF'  // border
+	);
 }
