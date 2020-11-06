@@ -98,6 +98,19 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 		);
 		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
 		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
+
+		/**
+		 * Set Spearhead Custom Color Defaults
+		 */
+		new Seedlet_Custom_Colors(
+			'#FFFFFF', // background
+			'#000000', // foreground
+			'#DB0042', // primary
+			'#555555', // secondary
+			'#555555', // tertiary
+			'#555555'  // border
+		);
+
 	}
 endif;
 add_action( 'after_setup_theme', 'spearhead_setup', 12 );
