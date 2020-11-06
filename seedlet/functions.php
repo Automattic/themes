@@ -112,7 +112,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		add_editor_style(
 			array(
 				seedlet_fonts_url(),
-				$editor_stylesheet_path,
+				'./assets/css/style-editor.css',
 			)
 		);
 
