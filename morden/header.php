@@ -10,6 +10,11 @@
  * @subpackage Varia
  * @since 1.0.0
  */
+$has_primary_nav = has_nav_menu( 'menu-1' );
+$header_classes  = 'site-header-wrap responsive-max-width';
+$header_classes .= has_custom_logo() ? ' has-logo' : '';
+$header_classes .= 1 === get_theme_mod( 'header_text', true ) ? ' has-title-and-tagline' : '';
+$header_classes .= $has_primary_nav ? ' has-menu' : '';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -26,13 +31,13 @@
 		wp_body_open();
 	}
 ?>
-	
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'varia' ); ?></a>
 
 	<?php if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content. ?>
 
-		<header class="fse-template-part fse-header entry-content">
+		<header id="masthead" class="fse-template-part fse-header entry-content">
 			<?php
 				$template = new A8C\FSE\WP_Template();
 				$template->output_template_content( A8C\FSE\WP_Template::HEADER );
@@ -40,15 +45,13 @@
 		</header>
 
 	<?php else : // Otherwise we'll fallback to the default Varia header below. ?>
-
-		<header id="masthead" class="site-header">
-
-			<div class="site-header-wrap">
-
+		<header id="masthead" class="site-header" role="banner">
+			<div class="<?php echo $header_classes; ?>">
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
-				<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+				<?php if ( $has_primary_nav ) : ?>
 					<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'varia' ); ?>">
+
 						<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
 						<label for="toggle" id="toggle-menu" class="button">
 							<?php _e( 'Menu', 'varia' ); ?>
@@ -57,6 +60,7 @@
 							<span class="hide-visually expanded-text"><?php _e( 'expanded', 'varia' ); ?></span>
 							<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'varia' ); ?></span>
 						</label>
+
 						<?php
 						wp_nav_menu(
 							array(
@@ -70,7 +74,7 @@
 				<?php endif; ?>
 
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'varia' ); ?>">
+					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'varia' ); ?>">
 						<?php
 						wp_nav_menu(
 							array(
@@ -85,7 +89,7 @@
 					</nav><!-- .social-navigation -->
 				<?php endif; ?>
 
-			</div>
+			</div><!-- .site-header-wrap -->
 
 		</header><!-- #masthead -->
 
