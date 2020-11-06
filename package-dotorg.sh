@@ -2,8 +2,8 @@
 if [[ "$1" != "" ]]; then
     THEME="$1"
 	find $THEME/assets/sass/*.scss -type f -exec sed -i '' 's/-wpcom//g' {} \; 
-	find $THEME/assets/sass/*.scss -type f -exec sed -i '' 's/, auto-loading-homepage, jetpack-global-styles//g' {} \; 
-	find $THEME/assets/sass/*.scss -type f -exec sed -i '' 's/auto-loading-homepage, //g' {} \; 
+	find $THEME/assets/sass/*.scss -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
+	find $THEME/assets/sass/*.scss -type f -exec sed -i '' 's/, jetpack-global-styles//g' {} \; 
 	cd $THEME && npm run build;
 	mkdir $THEME;
 	rsync -avz --exclude $THEME --exclude-from '../dotorg-exclude.txt' ./ $THEME
