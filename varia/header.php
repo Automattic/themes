@@ -13,7 +13,7 @@
 $has_primary_nav = has_nav_menu( 'menu-1' );
 $header_classes  = 'site-header responsive-max-width';
 $header_classes .= has_custom_logo() ? ' has-logo' : '';
-$header_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) ? ' has-title-and-tagline' : '';
+$header_classes .= 1 === get_theme_mod( 'header_text', true ) ? ' has-title-and-tagline' : '';
 $header_classes .= $has_primary_nav ? ' has-menu' : '';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>

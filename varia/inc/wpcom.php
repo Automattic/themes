@@ -18,8 +18,8 @@ function varia_wpcom_setup() {
 	// Disable automatically generated color palettes.
 	add_theme_support( 'wpcom-colors', array(
 	        'only-featured-palettes' => true,
-	) );	
-	
+	) );
+
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
