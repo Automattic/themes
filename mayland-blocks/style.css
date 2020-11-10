@@ -1,0 +1,57 @@
+/*
+Theme Name: Mayland (Blocks)
+Theme URI: https://github.com/Automattic/themes/tree/master/mayland-blocks
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Make your online portfolio wonderfully uncluttered with Mayland. Gracefully highlight your photography and other projects. Mayland is versatile enough to be your personal site too.
+Requires at least: WordPress 4.9.6
+Version: 1.2.9
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mayland-blocks
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Editor widths */
+
+.wp-block {
+	max-width: var(--wp--custom--width--default);
+}
+
+.wp-block[data-align="wide"] {
+	max-width: var(--wp--custom--width--wide);
+}
+
+.wp-block[data-align="full"] {
+	max-width: inherit;
+}
+
+/* Header spacing adjustments */
+
+.wp-block-site-title {
+	margin-bottom: 0.2rem;
+}
+
+.wp-block-site-title a {
+	text-decoration: none;
+}
+
+.wp-block-navigation {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 1290px) {
+	.site-header .wp-block-column,
+	.site-footer .wp-block-column {
+		padding-left: var(--wp--custom--margin--horizontal);
+		padding-right: var(--wp--custom--margin--horizontal);
+	}
+}
