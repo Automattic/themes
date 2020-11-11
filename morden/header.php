@@ -13,7 +13,7 @@
 $has_primary_nav = has_nav_menu( 'menu-1' );
 $header_classes  = 'site-header-wrap responsive-max-width';
 $header_classes .= has_custom_logo() ? ' has-logo' : '';
-$header_classes .= 1 === get_theme_mod( 'header_text', true ) ? ' has-title-and-tagline' : '';
+$header_classes .= 1 === (int) get_theme_mod( 'header_text', true ) ? ' has-title-and-tagline' : '';
 $header_classes .= $has_primary_nav ? ' has-menu' : '';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
@@ -27,9 +27,9 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 <body <?php body_class(); ?>>
 
 <?php
-	if ( function_exists( 'wp_body_open' ) ) {
-		wp_body_open();
-	}
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
 ?>
 
 <div id="page" class="site">
