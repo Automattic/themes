@@ -3,7 +3,7 @@
 if ( ! function_exists( 'mayland_blocks_support' ) ) :
 	function mayland_blocks_support()  {
 
-		// Alignwide and alignfull classes in the block editor
+		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
 
 		// Adding support for core block visual styles.
@@ -28,7 +28,7 @@ if ( ! function_exists( 'mayland_blocks_support' ) ) :
 endif;
 
 /**
- * Add Google webfonts, if necessary
+ * Add Google webfonts, if necessary.
  *
  * - See: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
  */
@@ -68,7 +68,7 @@ function mayland_blocks_scripts() {
 	// Enqueue front-end styles.
 	wp_enqueue_style( 'mayland-blocks-block-styles', get_template_directory_uri() . '/assets/alignments.css' );
 
-	// Enqueue Google fonts, if necessary
+	// Enqueue Google fonts, if necessary.
 	wp_enqueue_style( 'mayland-blocks-fonts', mayland_blocks_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts' );
