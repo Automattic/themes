@@ -53,6 +53,11 @@
 			nextText: '<span class="screen-reader-text">Next</span><svg version="1.1" id="next-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" xml:space="preserve"><polygon points="8,12.7 1.3,6 2.7,4.6 8,9.9 13.3,4.6 14.7,6 "/></svg>'
 		});
 
+		// Fade in body
+		wrapper.animate({
+			opacity: 1,
+		}, 30);
+
 		// Triggers resize event to make sure video widgets in the footer maintain the correct aspect ratio
 		setTimeout( function(){
 			if ( typeof( Event ) === 'function' ) {
