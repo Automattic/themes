@@ -3,26 +3,6 @@
  */
 // @import "";
 
-// Pgae
-#page {
-	position: relative;
-
-	&:before {
-		background: #{map-deep-get($config-global, "color", "foreground", "default")};
-		border-top-left-radius: 200px;
-		border-top-right-radius: 200px;
-		content: "";
-		display: block;
-		height: 100px;
-		left: 50%;
-		margin-left: -100px;
-		position: absolute;
-		top: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
-		width: 200px;
-		z-index: 3;
-	}
-}
-
 // Header
 #masthead {
 	align-content: center;
@@ -40,7 +20,7 @@
 	position: relative;
 	z-index: 2;
 
-	&:before {
+	&:after {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		border-bottom-left-radius: 200px;
 		border-bottom-right-radius: 200px;
@@ -51,6 +31,20 @@
 		margin-left: -100px;
 		position: absolute;
 		bottom: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
+		width: 200px;
+	}
+
+	&:before {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-top-left-radius: 200px;
+		border-top-right-radius: 200px;
+		content: "";
+		display: block;
+		height: 100px;
+		left: 50%;
+		margin-left: -100px;
+		position: absolute;
+		top: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
 		width: 200px;
 	}
 
