@@ -60,3 +60,15 @@ The code in this repository mirrors the code needed for the theme to function co
 - View the generated zip in the respective theme's sub-directory
 
 Note that this script rebuilds the theme to strip it of .com-specific functionality, and discards any changes via git after doing so. _Make sure you have committed any working changes before running this script._
+
+## Sandbox Tools
+
+If you use a sandbox to test or develop your themes you can use a couple of utilities to operate on that sandbox.
+
+- From the top-level directory, run `./sandbox.sh clean` to bring the public themes SVN repository to a clean state.  (This will only matter if your sandbox uses SVN such as how _WordPress.com_ is currently managed.)  Alternately you can trigger that as an npm script: `npm run sandbox:clean`
+
+- From the top-level directory, run `./sandbox.sh push` to push your working copy to the public themes folder of your sandbox.  Alternately you can trigger this as an npm script: `npm run sandbox:push` This command will rsync your local copy with the exception of anything in the `.sandbox-ignore` file. You should clean your sandbox before pushing any changes to it.
+
+- In addition to pushing your local changes you can also WATCH for any local changes and trigger the sandbox sync by using the `npm run sandbox:watch` Any changes to your local files will trigger the rsync.  Make sure that you have executed `npm install` to ensure the needed dependencies for this are installed.
+
+Note: The first time you run the `sandbox.sh` shell script you will be prompted for details about your sandbox which will be stored in a `.sandbox-config` file. Edit (or delete and be re-prompted) if details about your sandbox change.  This file will not be comitted to version controll and will not sync to your sandbox.
