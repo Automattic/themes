@@ -31,7 +31,7 @@ fi
 source $FILE 
 
 if [ $1 == "clean" ]; then
-ssh $SANDBOX_USER@$SANDBOX_LOCATION << EOF 
+ssh -T $SANDBOX_USER@$SANDBOX_LOCATION << EOF 
   cd '$SANDBOX_PUBLIC_THEMES_FOLDER'; 
   svn revert -R .;
   svn cleanup --remove-unversioned;
@@ -41,24 +41,43 @@ EOF
 elif [ $1 == "push" ]; then
 
   git remote update
-
   current_branch=$(git branch --show-current)
-  hash1=$(git show-ref --heads -s trunk)
-  hash2=$(git merge-base trunk ${current_branch})
+  hash1=$(git rev-parse origin/trunk)
+  hash2=$(git merge-base origin/trunk ${current_branch})
+  files_to_ignore=''
 
   if [ ! "${hash1}" = "${hash2}" ]; then
     echo "!! ----------------------------------------------------------- !!
 
     The branch you are pushing is not up-to-date with /trunk.
-    This will result in out-of-date resources on your sandbox.
-    Are you sure you wish to proceed?
+    This may result in out-of-date resources on your sandbox.
+    How do you wish to proceed?
+
+    1 - Nevermind, I'll merge/rebase my branch first.
+        (This option is the safest.)
+
+    2 - Go ahead, I know what I'm doing. I want the old files on my sandbox.
+        (This is a good option if you are evaluating an old branch for breakage
+         and want to have the sandbox reflect exactly the way it was back then.)
+
+    3 - IGNORE the files changed in /trunk since this branch diverged.
+        (This is great during development so that you don't have to keep your
+         branch completely up-to-date with /trunk and MIGHT be safe for pushing
+         a build.  Use at your own risk.)
 
 !! ----------------------------------------------------------- !!
+How do you wish to proceed? [1]
     "
-    exit 1;
+    read sync_type 
+
+    files_to_ignore=$(git diff ${hash2} origin/trunk --name-only)
+    printf -v ignore_string %s"','" $files_to_ignore
+    ignore_string=${ignore_string::${#ignore_string}-2}
+    ignore_string="{'$ignore_string}"
   fi
 
-  rsync -av --exclude-from='.sandbox-ignore' ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/
+  cmd="rsync -av --no-p --exclude-from='.sandbox-ignore' --exclude=$ignore_string ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/"
+  eval $cmd
 
 else 
   echo 'No known command given. [clean, push]'
