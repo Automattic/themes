@@ -39,6 +39,25 @@ ssh $SANDBOX_USER@$SANDBOX_LOCATION << EOF
 EOF
 
 elif [ $1 == "push" ]; then
+
+  git remote update
+
+  current_branch=$(git branch --show-current)
+  hash1=$(git show-ref --heads -s trunk)
+  hash2=$(git merge-base trunk ${current_branch})
+
+  if [ ! "${hash1}" = "${hash2}" ]; then
+    echo "!! ----------------------------------------------------------- !!
+
+    The branch you are pushing is not up-to-date with /trunk.
+    This will result in out-of-date resources on your sandbox.
+    Are you sure you wish to proceed?
+
+!! ----------------------------------------------------------- !!
+    "
+    exit 1;
+  fi
+
   rsync -av --exclude-from='.sandbox-ignore' ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/
 
 else 
