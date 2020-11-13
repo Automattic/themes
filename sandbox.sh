@@ -30,7 +30,7 @@ fi
 
 source $FILE 
 
-if [ $1 == "clean" ]; then
+if [[ $1 == "clean" ]]; then
 ssh -T $SANDBOX_USER@$SANDBOX_LOCATION << EOF 
   cd '$SANDBOX_PUBLIC_THEMES_FOLDER'; 
   svn revert -R .;
@@ -38,7 +38,7 @@ ssh -T $SANDBOX_USER@$SANDBOX_LOCATION << EOF
   svn up;
 EOF
 
-elif [ $1 == "push" ]; then
+elif [[ $1 == "push" ]]; then
 
   git remote update
   current_branch=$(git branch --show-current)
@@ -47,6 +47,9 @@ elif [ $1 == "push" ]; then
   files_to_ignore=''
 
   if [ ! "${hash1}" = "${hash2}" ]; then
+
+  if [[  $2 != '--force' && $2 != '--ignore' ]]; then
+
     echo "!! ----------------------------------------------------------- !!
 
     The branch you are pushing is not up-to-date with /trunk.
@@ -66,17 +69,29 @@ elif [ $1 == "push" ]; then
          a build.  Use at your own risk.)
 
 !! ----------------------------------------------------------- !!
-How do you wish to proceed? [1]
-    "
+How do you wish to proceed? [1]"
     read sync_type 
+    fi
 
-    files_to_ignore=$(git diff ${hash2} origin/trunk --name-only)
-    printf -v ignore_string %s"','" $files_to_ignore
-    ignore_string=${ignore_string::${#ignore_string}-2}
-    ignore_string="{'$ignore_string}"
+    if [[ $sync_type = "3" || $2 = '--ignore' ]]; then
+      echo "building ignore list based on divergence"
+      files_to_ignore=$(git diff ${hash2} origin/trunk --name-only)
+      printf -v ignore_string %s"','" $files_to_ignore
+      ignore_string=${ignore_string::${#ignore_string}-2}
+      ignore_string="{'$ignore_string}"
+
+    elif [[ $sync_type = "2" || $2 = '--force' ]]; then
+      echo "syncing to sandbox exactly what you have here"
+
+    else
+      echo "Exiting.  Clean yourself up and come back later."
+      exit 0;
+
+    fi
+
   fi
 
-  cmd="rsync -av --no-p --exclude-from='.sandbox-ignore' --exclude=$ignore_string ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/"
+  cmd="rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude=$ignore_string ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/"
   eval $cmd
 
 else 
