@@ -75,8 +75,42 @@ How do you wish to proceed? [1]"
 
     if [[ $sync_type = "3" || $2 = '--ignore' ]]; then
       echo "building ignore list based on divergence"
+
+      # These are the files that were changed in trunk since this branch diverged
       files_to_ignore=$(git diff ${hash2} origin/trunk --name-only)
-      printf -v ignore_string %s"','" $files_to_ignore
+      files_to_ignore=($files_to_ignore)
+
+      # These are the files changed in THIS branch since it diverged
+      # EVEN IF they changed in trunk we STILL want to include them in our sync
+      files_to_include=$(git diff ${hash2} ${current_branch} --name-only)
+      files_to_include=($files_to_include)
+
+      for target in "${files_to_include[@]}"; do
+        for i in "${!files_to_ignore[@]}"; do
+          if [[ ${files_to_ignore[i]} = $target ]]; then
+            unset 'files_to_ignore[i]'
+          fi
+        done
+      done
+
+      # These are the changes we have made but haven't committed yet
+      # EVEN IF they changed in trunk we STILL want to include them in our sync
+      files_to_include=$(git diff HEAD --name-only)
+      files_to_include=($files_to_include)
+
+      for target in "${files_to_include[@]}"; do
+        for i in "${!files_to_ignore[@]}"; do
+          if [[ ${files_to_ignore[i]} = $target ]]; then
+            unset 'files_to_ignore[i]'
+          fi
+        done
+      done
+
+      ignore_string=""
+
+      for target in "${files_to_ignore[@]}"; do
+        ignore_string="${ignore_string}${target}','"
+      done
       ignore_string=${ignore_string::${#ignore_string}-2}
       ignore_string="{'$ignore_string}"
 
