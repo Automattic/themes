@@ -68,6 +68,9 @@ If you use a sandbox to test or develop your themes you can use a couple of util
 - From the top-level directory, run `./sandbox.sh clean` to bring the public themes SVN repository to a clean state.  (This will only matter if your sandbox uses SVN such as how _WordPress.com_ is currently managed.)  Alternately you can trigger that as an npm script: `npm run sandbox:clean`
 
 - From the top-level directory, run `./sandbox.sh push` to push your working copy to the public themes folder of your sandbox.  Alternately you can trigger this as an npm script: `npm run sandbox:push` This command will rsync your local copy with the exception of anything in the `.sandbox-ignore` file. You should clean your sandbox before pushing any changes to it.
+NOTE: When pushing changes if your local branch is not current with /trunk you will be prompted to choose an option:
+* FORCE where all changes you have locally will be pushed to the sandbox.  This is helpful if you are doing regression testing and want to make sure that every change is pushed to the sandbox. This option is used if --force is passed to the script.
+* IGNORE where all of the files that were changed on the trunk since your current branch diverged will be ignored (with the exception of any files that you changed in your branch).  This is helpful during development, though it is advised that you bring your branch current with /trunk before pushing any builds. This option is used if --ignore is passed to the script.
 
 - In addition to pushing your local changes you can also WATCH for any local changes and trigger the sandbox sync by using the `npm run sandbox:watch` Any changes to your local files will trigger the rsync.  Make sure that you have executed `npm install` to ensure the needed dependencies for this are installed.
 
