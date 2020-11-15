@@ -15,6 +15,7 @@
 	.menu-button-container {
 		display: block;
 		margin: 0;
+		width: auto;
 	}
 }
 
@@ -22,6 +23,10 @@
 	position: fixed;
 	top: 0;
 	right: 0;
+}
+
+#site-navigation + div {
+    right: 0;
 }
 
 .menu-button-container #primary-open-menu {
@@ -136,9 +141,9 @@
 	overflow: hidden;
 }
 
-.primary-navigation-open .menu-button-container #primary-open-menu, .primary-navigation-open
-.primary-navigation #primary-open-menu, .primary-navigation-open
-.woo-navigation #primary-open-menu {
+.primary-navigation-open .menu-button-container #primary-open-menu,
+.primary-navigation-open .primary-navigation #primary-open-menu,
+.primary-navigation-open .menu-button-container #woo-open-menu {
 	display: none;
 }
 
@@ -151,9 +156,9 @@
 	margin-right: calc(0.25 * var(--global--spacing-unit));
 }
 
-.woo-navigation-open .menu-button-container #woo-open-menu, .woo-navigation-open
-.primary-navigation #woo-open-menu, .woo-navigation-open
-.woo-navigation #woo-open-menu {
+.woo-navigation-open .menu-button-container #primary-open-menu,
+.woo-navigation-open .primary-navigation #woo-open-menu,
+.woo-navigation-open .menu-button-container #woo-open-menu {
 	display: none;
 }
 
