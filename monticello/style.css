@@ -19,16 +19,6 @@ img {
 	height: auto;
 }
 
-.wp-block-button__link {
-	background-color: var(--wp--preset--color--beige);
-	color: var(--wp--preset--color--dark-gray);
-}
-
-.wp-block-button__link:hover {
-	color: var(--wp--preset--color--dark-gray);
-	opacity: .75;
-}
-
 .wp-block-site-title {
 	font-family: var(--wp--custom--font-family--primary);
 }
@@ -41,3 +31,54 @@ img {
 body, p {
 	font-family: var(--wp--custom--font-family--secondary);
 }
+
+/* These BUTTON styles should be representable in theme.json
+
+styles: {
+	button: {
+		font-family: var(--wp--custom--font-family--primary);
+		background-color: var(--wp--preset--color--beige);
+		...
+		visited: {
+			color: var(--wp--preset--color--dark-gray);
+		},
+		hover {
+			opacity: .75;
+		}
+	}
+}
+*/
+.wp-block-button__link {
+	font-family: var(--wp--custom--font-family--primary);
+	background-color: var(--wp--preset--color--beige);
+	color: var(--wp--preset--color--dark-gray);
+	border-radius: 0 0 6px;
+}
+
+.wp-block-button__link:visited {
+	color: var(--wp--preset--color--dark-gray);
+}
+
+.wp-block-button__link:hover {
+	opacity: .75;
+}
+
+/*
+I'm not sure that something like this would be able to be easily
+represented in .json
+*/
+.is-style-outline .wp-block-button__link:hover:not(.has-background) {
+	/* NOTE: This background color should have a .25 opacity value.
+	I'm unsure how to achieve that leveraging a preset color value.
+
+	Something like this below would be great but doesn't work.
+	background-color: var(--wp--preset--color--beige)33; 
+
+	If the color value were available as RGB values then we could do:
+	background-color: rgb(var(--wp--preset--color--rgb--beige), .25); 
+	*/
+	background-color: var(--wp--preset--color--beige); 
+	opacity: 1;
+}
+
+/* END BUTTON STYLES */
