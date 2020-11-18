@@ -22,7 +22,10 @@ if ( ! function_exists( 'sk8prk_support' ) ) :
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style.css' );
+		add_editor_style( array(
+			'style.css',
+			sk8prk_google_fonts_url()
+		) );
     }
     add_action( 'after_setup_theme', 'sk8prk_support' );
 endif;
