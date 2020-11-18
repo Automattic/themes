@@ -3,10 +3,44 @@
 		"settings": {
 			"color": {
 				"gradients": [ ],
-				"palette": [ ]
+				"palette": [
+					{
+						"slug": "primary",
+						"color": "#000000",
+						"name": "Primary"
+					},
+					{
+						"slug": "background",
+						"color": "#ffffff",
+						"name": "Background"
+					}
+				]
 			},
 			"typography": {
+				"customFontSize": true,
 				"customLineHeight": true,
+				"fontSizes": [
+					{
+						"name": "Small",
+						"size": "16.6px",
+						"slug": "small"
+					},
+					{
+						"name": "Normal",
+						"size": "20px",
+						"slug": "normal"
+					},
+					{
+						"name": "Large",
+						"size": "28.8px",
+						"slug": "large"
+					},
+					{
+						"name": "Huge",
+						"size": "34.56px",
+						"slug": "huge"
+					}
+				],
 				"fontFamilies": [
 					{
 						"fontFamily": "\"Red Hat Display\", sans-serif",
@@ -21,36 +55,41 @@
 				],
 				"fontSizes": [ ],
 				"spacing": {
-					"customPadding": true
+					"customPadding": true,
+					"units": [ "px", "em", "rem", "vh", "vw" ]
 				}
 			},
 			"custom": {
+				"line-height": {
+					"body": 1.6,
+					"headings": 1.125
+				},
 				"width": {
 					"default": "840px",
 					"wide": "1100px"
 				},
 				"margin": {
 					"horizontal": "14px"
-				},
-				"typography": {
-					"primary": "\"Red Hat Text\"",
-					"secondary": "\"Red Hat Display\""
 				}
 			}
 		},
 		"styles": {
-			"color": { },
+			"color": {
+				"background": "var(--wp--preset--color--background)",
+				"text": "var(--wp--preset--color--primary)",
+				"link": "var(--wp--preset--color--primary)"
+			},
 			"typography": {
 				"fontSize": "var(--wp--preset--font-size--normal)",
 				"lineHeight": "var(--wp--custom--line-height--body)",
-				"fontFamily": "var(--wp--custom--font-family--primary)"
+				"fontFamily": "var(--wp--preset--font-family--red-hat-text)"
 			}
 		}
 	},
 	"core/site-title": {
 		"styles": {
 			"typography": {
-				"fontFamily": "var(--wp--custom--font-family--primary)"
+				"fontFamily": "var(--wp--preset--font-family--red-hat-display)"
 			}
 		}
 	}
