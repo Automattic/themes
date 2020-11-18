@@ -56,33 +56,41 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			'title'      => esc_html__( 'Menu Item', 'monticello' ),
 			'categories' => array( 'monticello' ),
 			'content'    => '
-			<!-- wp:group {"className":"is-style-menu-list-item"} -->
-			<div class="wp-block-group is-style-menu-list-item"><div class="wp-block-group__inner-container">
-<!-- wp:columns -->
-<div class="wp-block-columns">
-    <!-- wp:column {"width":"80%"} -->
-    <div class="wp-block-column" style="flex-basis:80%">
-        <!-- wp:paragraph {"className":"menu-list-item-name"} -->
-        <p class="menu-list-item-name">Menu Item Name</p>
-        <!-- /wp:paragraph -->
+				<!-- wp:group {"className":"is-style-menu-list-item"} -->
+				<div class="wp-block-group is-style-menu-list-item"><div class="wp-block-group__inner-container">
+
+				<!-- wp:columns -->
+				<div class="wp-block-columns">
+
+    			<!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%">
+
+        		<!-- wp:paragraph {"className":"menu-list-item-name"} -->
+        		<p class="menu-list-item-name">Menu Item Name</p>
+        		<!-- /wp:paragraph -->
     
-        <!-- wp:paragraph {"className":"menu-list-item-description"} -->
-        <p class="menu-list-item-description">Menu Item Description</p>
-        <!-- /wp:paragraph -->
-    </div>
-    <!-- /wp:column -->
+        		<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+        		<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph -->
+
+    			</div>
+    			<!-- /wp:column -->
     
-    <!-- wp:column {"width":"20%"} -->
-    <div class="wp-block-column" style="flex-basis:20%">
-        <!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
-        <p class="has-text-align-right menu-list-item-price">$0.00</p>
-        <!-- /wp:paragraph -->
-    </div>
-    <!-- /wp:column -->
-</div>
-<!-- /wp:columns -->
-</div></div>
-<!-- /wp:group -->
+    			<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%">
+
+        		<!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+        		<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph -->
+
+    			</div>
+				<!-- /wp:column -->
+
+				</div>
+				<!-- /wp:columns -->
+
+				</div></div>
+				<!-- /wp:group -->
 			',
 
 		)
