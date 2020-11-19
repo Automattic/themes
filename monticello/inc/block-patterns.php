@@ -76,6 +76,346 @@ if ( function_exists( 'register_block_pattern' ) ) {
 		)
 	);
 
+	// Announcement.
+	register_block_pattern(
+		'monticello/announcement',
+		array(
+			'title'         => esc_html__( 'Announcement', 'monticello' ),
+			'categories'    => array( 'monticello' ),
+			'viewportWidth' => 1440,
+			'content'       => '<!-- wp:cover {"overlayColor":"orange","contentPosition":"center center","align":"wide"} -->
+			<div class="wp-block-cover alignwide has-orange-background-color has-background-dim"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":24} -->
+			<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+			<!-- /wp:spacer -->
+			<!-- wp:heading {"level":3} -->
+			<h3>Happy Hour</h3>
+			<!-- /wp:heading -->
+			<!-- wp:paragraph {"fontSize":"regular"} -->
+			<p class="has-regular-font-size"><strong>Every Night, 5 - 7:30 PM</strong></p>
+			<!-- /wp:paragraph -->
+			<!-- wp:paragraph {"fontSize":"regular"} -->
+			<p class="has-regular-font-size"><br>All food is HALF PRICE with $4 minimum beverage purchase per person. We offer this deal only inside for dining in. Sorry, the offer is not available at our outdoor patio tables or for take out.</p>
+			<!-- /wp:paragraph -->
+			<!-- wp:spacer {"height":24} -->
+			<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+			<!-- /wp:spacer -->
+			</div></div>
+			<!-- /wp:cover -->
+			<!-- wp:spacer {"height":24} -->
+			<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+			<!-- /wp:spacer -->',
+		)
+	);
+
+	// Menu List Item
+	register_block_pattern(
+		'monticello/menu',
+		array(
+			'title'      => esc_html__( 'Menu', 'monticello' ),
+			'categories' => array( 'monticello' ),
+			'content'    => '
+				<!-- wp:heading {"textAlign":"center"} -->
+				<h2 class="has-text-align-center">Our Menu</h2>
+				<!-- /wp:heading -->
+				<!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column -->
+				<div class="wp-block-column"><!-- wp:heading {"level":3,"fontSize":"medium"} -->
+				<h3 class="has-medium-font-size">Hot Drinks</h3>
+				<!-- /wp:heading -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"></div></div>
+				<!-- /wp:group --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns -->
+				<!-- wp:paragraph -->
+				<p></p>
+				<!-- /wp:paragraph --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:paragraph -->
+				<p></p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column -->
+				<div class="wp-block-column"><!-- wp:heading {"level":3,"fontSize":"medium"} -->
+				<h3 class="has-medium-font-size">Cold Drinks</h3>
+				<!-- /wp:heading -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns -->
+				<!-- wp:heading {"level":3} -->
+				<h3>Breakfast</h3>
+				<!-- /wp:heading -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+				<!-- wp:spacer {"height":8} -->
+				<div style="height:8px" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container"><!-- wp:columns -->
+				<div class="wp-block-columns"><!-- wp:column {"width":"80%"} -->
+				<div class="wp-block-column" style="flex-basis:80%"><!-- wp:paragraph {"className":"menu-list-item-name"} -->
+				<p class="menu-list-item-name">Menu Item Name</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"menu-list-item-description"} -->
+				<p class="menu-list-item-description">Menu Item Description</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column -->
+				<!-- wp:column {"width":"20%"} -->
+				<div class="wp-block-column" style="flex-basis:20%"><!-- wp:paragraph {"align":"right","className":"menu-list-item-price"} -->
+				<p class="has-text-align-right menu-list-item-price">$0.00</p>
+				<!-- /wp:paragraph --></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:group -->
+			',
+		)
+	);
+
 	// Menu List Item
 	register_block_pattern(
 		'monticello/menu-list-item',
