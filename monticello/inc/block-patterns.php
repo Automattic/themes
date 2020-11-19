@@ -26,7 +26,7 @@ if ( function_exists( 'register_block_pattern_category' ) ) {
  */
 if ( function_exists( 'register_block_pattern' ) ) {
 
-	// Large Text.
+	// Learn More.
 	register_block_pattern(
 		'monticello/learn-more',
 		array(
@@ -48,6 +48,31 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:button --></div>
 			<!-- /wp:buttons --></div></div>
 			<!-- /wp:group -->',
+		)
+	);
+
+	// Three Images.
+	register_block_pattern(
+		'monticello/three-images',
+		array(
+			'title'         => esc_html__( 'Three Images', 'monticello' ),
+			'categories'    => array( 'monticello' ),
+			'viewportWidth' => 1440,
+			'content'       => '<!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
+			<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
+			<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"width":535,"height":356,"sizeSlug":"large"} -->
+			<figure class="wp-block-image size-large is-resized"><img src="https://monticelloblocks.mystagingwebsite.com/wp-content/uploads/2020/11/marzocco.png" alt="" width="535" height="356"/></figure>
+			<!-- /wp:image --></div>
+			<!-- /wp:column -->
+			<!-- wp:column {"verticalAlignment":"center"} -->
+			<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"large"} -->
+			<figure class="wp-block-image size-large"><img src="https://monticelloblocks.mystagingwebsite.com/wp-content/uploads/2020/11/Screen-Shot-2020-11-16-at-12.10.55-PM.png" alt=""/></figure>
+			<!-- /wp:image -->
+			<!-- wp:image {"sizeSlug":"large"} -->
+			<figure class="wp-block-image size-large"><img src="https://monticelloblocks.mystagingwebsite.com/wp-content/uploads/2020/11/Screen-Shot-2020-11-16-at-12.10.49-PM.png" alt=""/></figure>
+			<!-- /wp:image --></div>
+			<!-- /wp:column --></div>
+			<!-- /wp:columns -->',
 		)
 	);
 
