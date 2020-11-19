@@ -87,3 +87,35 @@ function sk8prk_scripts() {
 	wp_enqueue_style( 'sk8prk-google-fonts', sk8prk_google_fonts_url() );
 }
 add_action( 'wp_enqueue_scripts', 'sk8prk_scripts' );
+
+/**
+ * Register Custom Block Styles
+ */
+if ( function_exists( 'register_block_style' ) ) {
+    function sk8prk_register_block_styles() {
+		
+		/**
+		** Register stylesheet
+		**/
+		wp_register_style(
+			'block-styles-stylesheet',
+			get_template_directory_uri() . '/assets/block-styles.css',
+			array(),
+			'1.1'
+		);
+
+        /**
+         * Register block style
+         */
+        register_block_style(
+            'core/separator',
+            array(
+                'name'         => 'thick-separator',
+                'label'        => 'Thick',
+                'style_handle' => 'block-styles-stylesheet',
+            )
+        );
+    }
+
+    add_action( 'init', 'sk8prk_register_block_styles' );
+}
