@@ -119,3 +119,8 @@ if ( function_exists( 'register_block_style' ) ) {
 
     add_action( 'init', 'sk8prk_register_block_styles' );
 }
+
+/**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/block-patterns.php';
