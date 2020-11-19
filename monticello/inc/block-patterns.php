@@ -56,8 +56,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			'title'      => esc_html__( 'Menu Item', 'monticello' ),
 			'categories' => array( 'monticello' ),
 			'content'    => '
-				<!-- wp:group {"className":"is-style-menu-list-item"} -->
-				<div class="wp-block-group is-style-menu-list-item"><div class="wp-block-group__inner-container">
+				<!-- wp:group {"className":"menu-list-item"} -->
+				<div class="wp-block-group menu-list-item"><div class="wp-block-group__inner-container">
 
 				<!-- wp:columns -->
 				<div class="wp-block-columns">

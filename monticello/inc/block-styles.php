@@ -31,8 +31,8 @@ if ( function_exists( 'register_block_style' ) ) {
 		register_block_style(
 			'core/group',
 			array(
-				'name'         => 'menu-list-item',
-				'label'        => 'Menu List Item',
+				'name'         => 'highlighted-group',
+				'label'        => 'Highlighted Group',
 				'style_handle' => 'monticello-block-style',
 			)
 		);
