@@ -157,11 +157,67 @@ if ( ! function_exists( 'sk8prk_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'sk8prk/blog-post-pattern-4',
+				'sk8prk/three-testimonials',
 				array(
 					'title'      => __( 'Three Testimonials', 'sk8prk' ),
 					'categories' => array( 'sk8prk' ),
-					'content'    => '',
+					'content'    => '<!-- wp:separator {"align":"wide","className":"is-style-thick-separator"} -->
+					<hr class="wp-block-separator alignwide is-style-thick-separator"/>
+					<!-- /wp:separator -->
+					
+					<!-- wp:spacer {"height":25} -->
+					<div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
+					<!-- /wp:spacer -->
+					
+					<!-- wp:columns {"align":"wide"} -->
+					<div class="wp-block-columns alignwide"><!-- wp:column -->
+					<div class="wp-block-column"><!-- wp:heading {"level":4} -->
+					<h4>HEADING A</h4>
+					<!-- /wp:heading -->
+					
+					<!-- wp:paragraph -->
+					<p>Add more info about your service. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id arcu aliquet, elementum nisi quis, condimentum nibh.</p>
+					<!-- /wp:paragraph --></div>
+					<!-- /wp:column -->
+					
+					<!-- wp:column -->
+					<div class="wp-block-column"><!-- wp:heading {"level":4} -->
+					<h4>HEADING B</h4>
+					<!-- /wp:heading -->
+					
+					<!-- wp:paragraph -->
+					<p>Add more info about your service. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id arcu aliquet, elementum nisi quis, condimentum nibh.</p>
+					<!-- /wp:paragraph --></div>
+					<!-- /wp:column -->
+					
+					<!-- wp:column -->
+					<div class="wp-block-column"><!-- wp:heading {"level":4} -->
+					<h4>HEADING C</h4>
+					<!-- /wp:heading -->
+					
+					<!-- wp:paragraph -->
+					<p>Add more info about your service. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id arcu aliquet, elementum nisi quis, condimentum nibh.</p>
+					<!-- /wp:paragraph --></div>
+					<!-- /wp:column --></div>
+					<!-- /wp:columns -->
+					
+					<!-- wp:columns {"align":"wide"} -->
+					<div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.33%"} -->
+					<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:separator {"className":"is-style-thick-separator"} -->
+					<hr class="wp-block-separator is-style-thick-separator"/>
+					<!-- /wp:separator --></div>
+					<!-- /wp:column -->
+					
+					<!-- wp:column {"width":"66.66%"} -->
+					<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:paragraph {"style":{"typography":{"fontSize":"36px"}}} -->
+					<p style="font-size:36px"><strong>Add a testimonial from someone who loves what you do.</strong></p>
+					<!-- /wp:paragraph -->
+					
+					<!-- wp:paragraph -->
+					<p>Jane Doe</p>
+					<!-- /wp:paragraph --></div>
+					<!-- /wp:column --></div>
+					<!-- /wp:columns -->',
 				)
 			);
 		}
