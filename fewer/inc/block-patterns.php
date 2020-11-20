@@ -37,7 +37,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 	// Team Page.
 	register_block_pattern(
-		'fewer/services', array(
+		'fewer/team', array(
 			'title'         => esc_html__( 'Team Page', 'fewer' ),
 			'categories'    => array( 'fewer' ),
 			'content'       => '<!-- wp:columns -->
@@ -63,7 +63,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team1.png" alt="' . esc_attr( 'Photo of architect', 'fewer' )  . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team1.png" alt="' . esc_attr__( 'Photo of architect', 'fewer' )  . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":3} -->
@@ -71,11 +71,11 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:heading -->
 
 			<!-- wp:heading {"level":5} -->
-			<h5>' . esc_attr( 'Architect', 'fewer' ) . '</h5>
+			<h5>' . esc_attr__( 'Architect', 'fewer' ) . '</h5>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>' . esc_attr( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
+			<p>' . esc_attr__( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph -->
@@ -85,7 +85,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team2.png" alt="' . esc_attr( 'Photo of architect', 'fewer' )  . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team2.png" alt="' . esc_attr__( 'Photo of architect', 'fewer' )  . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":3} -->
@@ -93,11 +93,11 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:heading -->
 
 			<!-- wp:heading {"level":5} -->
-			<h5>' . esc_attr( 'Architect', 'fewer' ) . '</h5>
+			<h5>' . esc_attr__( 'Architect', 'fewer' ) . '</h5>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>' . esc_attr( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
+			<p>' . esc_attr__( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph -->
@@ -113,7 +113,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team3.png" alt="' . esc_attr( 'Photo of architect', 'fewer' )  . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team3.png" alt="' . esc_attr__( 'Photo of architect', 'fewer' )  . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":3} -->
@@ -121,11 +121,11 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:heading -->
 
 			<!-- wp:heading {"level":5} -->
-			<h5>' . esc_attr( 'Architect', 'fewer' ) . '</h5>
+			<h5>' . esc_attr__( 'Architect', 'fewer' ) . '</h5>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>' . esc_attr( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
+			<p>' . esc_attr__( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph -->
@@ -135,7 +135,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team4.png" alt="' . esc_attr( 'Photo of architect', 'fewer' )  . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/team4.png" alt="' . esc_attr__( 'Photo of architect', 'fewer' )  . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":3} -->
@@ -143,11 +143,11 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:heading -->
 
 			<!-- wp:heading {"level":5} -->
-			<h5>' . esc_attr( 'Architect', 'fewer' ) . '</h5>
+			<h5>' . esc_attr__( 'Architect', 'fewer' ) . '</h5>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p>' . esc_attr( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
+			<p>' . esc_attr__( 'A short bio with personal history, key achievements, or an interesting fact.', 'fewer' ) . '</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph -->
@@ -178,5 +178,36 @@ if ( function_exists( 'register_block_pattern' ) ) {
 		)
 	);
 
+	// About Page.
+	register_block_pattern(
+		'fewer/about', array(
+			'title'         => esc_html__( 'About Page', 'fewer' ),
+			'categories'    => array( 'fewer' ),
+			'content'       => '<!-- wp:columns -->
+			<div class="wp-block-columns"><!-- wp:column -->
+			<div class="wp-block-column"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/about.png" alt="' . esc_attr__( 'Photo of CEO', 'fewer' ) . '" /></figure>
+			<!-- /wp:image --></div>
+			<!-- /wp:column -->
 
-	}
+			<!-- wp:column -->
+			<div class="wp-block-column"><!-- wp:post-title /-->
+
+			<!-- wp:paragraph -->
+			<p>' . esc_attr__( 'We’re a collaborative architecture office committed to sustainable, ethical architectural design.', 'fewer' ) . '</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph -->
+			<p> ' . esc_attr__( 'We have been designing and creating buildings with our diverse team for over ten years. We welcome projects of all sizes.', 'fewer' ) . '</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons -->
+			<div class="wp-block-buttons"><!-- wp:button -->
+			<div class="wp-block-button"><a class="wp-block-button__link">' . esc_attr__( 'Get in Touch', 'fewer' ) . '</a></div>
+			<!-- /wp:button --></div>
+			<!-- /wp:buttons --></div>
+			<!-- /wp:column --></div>
+			<!-- /wp:columns -->',
+		)
+	);
+}
