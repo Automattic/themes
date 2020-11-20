@@ -28,6 +28,7 @@ if ( ! function_exists( 'fewer_support' ) ) :
 		add_editor_style( array(
 			'style.css',
 			fewer_fonts_url(),
+			'./assets/style-editor.css'
 		) );
 	}
 	add_action( 'after_setup_theme', 'fewer_support' );
@@ -78,3 +79,6 @@ function fewer_fonts_url() {
 
 	return esc_url_raw( $fonts_url );
 }
+
+// Block Patterns.
+require get_template_directory() . '/inc/block-patterns.php';
