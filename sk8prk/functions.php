@@ -105,7 +105,7 @@ if ( function_exists( 'register_block_style' ) ) {
 		);
 
         /**
-         * Register block style
+         * Register Separator block style
          */
         register_block_style(
             'core/separator',
@@ -114,7 +114,43 @@ if ( function_exists( 'register_block_style' ) ) {
                 'label'        => 'Thick',
                 'style_handle' => 'block-styles-stylesheet',
             )
-        );
+		);
+		
+		/**
+         * Register Image block style
+         */
+        register_block_style(
+            'core/image',
+            array(
+                'name'         => 'filter-effect',
+                'label'        => 'Colored image',
+                'style_handle' => 'block-styles-stylesheet',
+            )
+		);
+
+		/**
+		* Register Featured Image block style
+		*/
+	   	register_block_style(
+		   'core/post-featured-image',
+		   	array(
+			   	'name'         => 'filter-effect',
+			   	'label'        => 'Colored image',
+			   	'style_handle' => 'block-styles-stylesheet',
+		   	)
+	   	);
+
+		/**
+		 * Register Featured Image block style
+		 */
+		register_block_style(
+			'core/gallery',
+			array(
+				'name'         => 'filter-effect',
+				'label'        => 'Colored image',
+				'style_handle' => 'block-styles-stylesheet',
+			)
+		);
     }
 
     add_action( 'init', 'sk8prk_register_block_styles' );

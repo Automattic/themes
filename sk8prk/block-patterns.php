@@ -27,12 +27,12 @@ if ( ! function_exists( 'sk8prk_register_block_patterns' ) ) :
 					'categories' => array( 'sk8prk' ),
 					'content'    => '<!-- wp:columns -->
 					<div class="wp-block-columns"><!-- wp:column {"width":"25%"} -->
-					<div class="wp-block-column" style="flex-basis:25%"><!-- wp:separator {"color":"primary","className":"is-style-thick-separator"} -->
-					<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-thick-separator"/>
+					<div class="wp-block-column" style="flex-basis:25%"><!-- wp:separator {"className":"is-style-thick-separator"} -->
+					<hr class="wp-block-separator is-style-thick-separator"/>
 					<!-- /wp:separator -->
 					
-					<!-- wp:image {"id":149,"sizeSlug":"large","linkDestination":"none"} -->
-					<figure class="wp-block-image size-large"><img src="http://sk8rprk.local/wp-content/uploads/2020/11/83aed971345021f0f3c8fd41a2906d4e-819x1024.jpg" alt="" class="wp-image-149"/><figcaption>Learn the basics of skating along with a group of your peers.</figcaption></figure>
+					<!-- wp:image {"id":149,"sizeSlug":"large","linkDestination":"none","className":"is-style-filter-effect"} -->
+					<figure class="wp-block-image size-large is-style-filter-effect"><img src="http://sk8rprk.local/wp-content/uploads/2020/11/83aed971345021f0f3c8fd41a2906d4e-819x1024.jpg" alt="" class="wp-image-149"/><figcaption>Learn the basics of skating along with a group of your peers.</figcaption></figure>
 					<!-- /wp:image --></div>
 					<!-- /wp:column -->
 					
@@ -69,8 +69,8 @@ if ( ! function_exists( 'sk8prk_register_block_patterns' ) ) :
 					'content'    => '
 					<!-- wp:columns -->
 					<div class="wp-block-columns"><!-- wp:column {"width":"25%"} -->
-					<div class="wp-block-column" style="flex-basis:25%"><!-- wp:separator {"color":"primary","className":"is-style-thick-separator"} -->
-					<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-thick-separator"/>
+					<div class="wp-block-column" style="flex-basis:25%"><!-- wp:separator {"className":"is-style-thick-separator"} -->
+					<hr class="wp-block-separator is-style-thick-separator"/>
 					<!-- /wp:separator -->
 					
 					<!-- wp:paragraph {"align":"right"} -->
@@ -85,8 +85,8 @@ if ( ! function_exists( 'sk8prk_register_block_patterns' ) ) :
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->
 					
-					<!-- wp:image {"align":"wide","id":164,"sizeSlug":"large","linkDestination":"none"} -->
-					<figure class="wp-block-image alignwide size-large"><img src="http://sk8rprk.local/wp-content/uploads/2020/11/8045e70b649d5576b1c2011c3f77b97e-1024x683.jpg" alt="" class="wp-image-164"/></figure>
+					<!-- wp:image {"align":"wide","id":164,"sizeSlug":"large","linkDestination":"none","className":"is-style-filter-effect"} -->
+					<figure class="wp-block-image alignwide size-large is-style-filter-effect"><img src="http://sk8rprk.local/wp-content/uploads/2020/11/8045e70b649d5576b1c2011c3f77b97e-1024x683.jpg" alt="" class="wp-image-164"/></figure>
 					<!-- /wp:image -->',
 				)
 			);
@@ -134,8 +134,8 @@ if ( ! function_exists( 'sk8prk_register_block_patterns' ) ) :
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->
 					
-					<!-- wp:gallery {"ids":[166,167,168,169],"columns":4,"linkTo":"none","align":"full"} -->
-					<figure class="wp-block-gallery alignfull columns-4 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/3c598f80ce1664b8f669fb521fdda9dd-683x1024.jpg" alt="" data-id="166" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/3c598f80ce1664b8f669fb521fdda9dd/" class="wp-image-166"/></figure></li><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/518f4af2b79d74510dc63665d2cec67e-576x1024.jpg" alt="" data-id="167" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/518f4af2b79d74510dc63665d2cec67e/" class="wp-image-167"/></figure></li><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/cb9f8776e749a062b7beb21a65e1e196-819x1024.jpg" alt="" data-id="168" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/cb9f8776e749a062b7beb21a65e1e196/" class="wp-image-168"/></figure></li><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/1a7c360b434981af2d748948f1602d64-1024x683.jpg" alt="" data-id="169" data-full-url="http://sk8rprk.local/wp-content/uploads/2020/11/1a7c360b434981af2d748948f1602d64-scaled.jpg" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/1a7c360b434981af2d748948f1602d64/" class="wp-image-169"/></figure></li></ul></figure>
+					<!-- wp:gallery {"ids":[166,167,168,169],"columns":4,"linkTo":"none","align":"full","className":"is-style-filter-effect"} -->
+					<figure class="wp-block-gallery alignfull columns-4 is-cropped is-style-filter-effect"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/3c598f80ce1664b8f669fb521fdda9dd-683x1024.jpg" alt="" data-id="166" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/3c598f80ce1664b8f669fb521fdda9dd/" class="wp-image-166"/></figure></li><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/518f4af2b79d74510dc63665d2cec67e-576x1024.jpg" alt="" data-id="167" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/518f4af2b79d74510dc63665d2cec67e/" class="wp-image-167"/></figure></li><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/cb9f8776e749a062b7beb21a65e1e196-819x1024.jpg" alt="" data-id="168" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/cb9f8776e749a062b7beb21a65e1e196/" class="wp-image-168"/></figure></li><li class="blocks-gallery-item"><figure><img src="http://sk8rprk.local/wp-content/uploads/2020/11/1a7c360b434981af2d748948f1602d64-1024x683.jpg" alt="" data-id="169" data-full-url="http://sk8rprk.local/wp-content/uploads/2020/11/1a7c360b434981af2d748948f1602d64-scaled.jpg" data-link="http://sk8rprk.local/5-simple-skateboarding-tricks/1a7c360b434981af2d748948f1602d64/" class="wp-image-169"/></figure></li></ul></figure>
 					<!-- /wp:gallery -->
 					
 					<!-- wp:columns -->
@@ -161,8 +161,8 @@ if ( ! function_exists( 'sk8prk_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Three Testimonials', 'sk8prk' ),
 					'categories' => array( 'sk8prk' ),
-					'content'    => '<!-- wp:separator {"align":"wide","className":"is-style-thick-separator"} -->
-					<hr class="wp-block-separator alignwide is-style-thick-separator"/>
+					'content'    => '<!-- wp:separator {"className":"is-style-thick-separator"} -->
+					<hr class="wp-block-separator is-style-thick-separator"/>
 					<!-- /wp:separator -->
 					
 					<!-- wp:spacer {"height":25} -->
