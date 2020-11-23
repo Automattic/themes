@@ -108,18 +108,11 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		$editor_stylesheet_path = './assets/css/style-editor.css';
 
-		// Note, the is_IE global variable is defined by WordPress and is used
-		// to detect if the current browser is internet explorer.
-		global $is_IE;
-		if ( $is_IE ) {
-			$editor_stylesheet_path = './assets/css/ie-editor.css';
-		}
-
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
 				seedlet_fonts_url(),
-				$editor_stylesheet_path,
+				'./assets/css/style-editor.css',
 			)
 		);
 
