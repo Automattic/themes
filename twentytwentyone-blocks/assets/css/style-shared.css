@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+# Defaults
+--------------------------------------------------------------*/
+
+body {
+	font-family: var(--wp--custom--font-primary);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+.has-huge-font-size,
+.has-gigantic-font-size {
+	font-weight: var(--wp--custom--font-weight-light);
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+/*
+ * text-underline-offset doesn't work in Chrome at all 👎
+ * But looks nice in Safari/Firefox, so let's keep it and
+ * maybe Chrome will support it soon.
+ */
+a {
+	cursor: pointer;
+	text-underline-offset: 3px;
+	text-decoration-skip-ink: all;
+}
+
+a:hover {
+	text-decoration-style: dotted;
+	text-decoration-skip-ink: none;
+}
+
+/*
+ * Gutenberg remotes this underline, but Twenty Twenty-One uses it. 
+ */
+.site-header h1.wp-block-site-title a:not(:hover):not(:focus):not(:active) {
+	text-decoration: underline;
+}

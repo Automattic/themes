@@ -1,0 +1,109 @@
+/*
+Theme Name: Twenty Twenty-One Blocks
+Theme URI: https://github.com/WordPress/theme-experiments/twentytwentyone-blocks
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.
+Requires at least: 5.3
+Tested up to: 5.5
+Requires PHP: 5.6
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: twentytwentyone-blocks
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Twenty Twenty-One WordPress Theme, (C) 2020 WordPress.org
+Twenty Twenty-One is distributed under the terms of the GNU GPL.
+*/
+
+/*--------------------------------------------------------------
+# Shared Styles
+--------------------------------------------------------------*/
+
+@import "assets/css/style-shared.css";
+@import "assets/css/blocks.css";
+
+/*--------------------------------------------------------------
+# Defaults
+--------------------------------------------------------------*/
+
+body {
+	margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+.wp-site-blocks,
+.wp-block-template-part.alignfull {
+	padding: 0 var(--wp--custom--spacing--horizontal);
+}
+
+.wp-site-blocks > *:not(.wp-block-post-content),
+.wp-site-blocks .wp-block-post-content > * {
+	max-width: var(--wp--custom--responsive--aligndefault-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-site-blocks .alignwide {
+	width: var(--wp--custom--responsive--alignwide-width);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-site-blocks .alignfull {
+	transform: translateX(calc(0px - var(--wp--custom--spacing--horizontal)));
+	width: calc(100% + (2 * var(--wp--custom--spacing--horizontal)));
+	max-width: calc(100% + (2 * var(--wp--custom--spacing--horizontal)));
+	margin-left: 0;
+	margin-right: 0;
+	box-sizing: content-box;
+}
+
+.wp-site-blocks .wp-block-template-part.alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+.wp-site-blocks .wp-block-columns.alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.wp-site-blocks .alignleft {
+	float: left;
+	margin-right: 2em;
+	max-width: 360px;
+}
+
+.wp-site-blocks .alignright {
+	float: right;
+	margin-left: 2em;
+	max-width: 360px;
+}
+
+@media screen and (min-width: 1290px) {
+
+	.wp-site-blocks,
+	.wp-block-template-part.alignfull {
+		padding: 0;
+	}
+
+	.wp-site-blocks .alignfull {
+		transform: translateX(0px);
+		width: 100% + var(--wp--custom--spacing--horizontal));
+		max-width: calc(100% + var(--wp--custom--spacing--horizontal));
+	}
+}
