@@ -42,11 +42,13 @@ if ( ! function_exists( 'twenty_twenty_one_blocks_setup' ) ) {
 		add_theme_support( 'editor-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( array( 
-			'./assets/css/blocks.css',
-			'./assets/css/style-shared.css',
-			'./assets/css/style-editor.css', 
-		) );
+		add_editor_style(
+			array(
+				'./assets/css/blocks.css',
+				'./assets/css/style-shared.css',
+				'./assets/css/style-editor.css',
+			)
+		);
 
 		// Add custom editor font sizes.
 		add_theme_support(
