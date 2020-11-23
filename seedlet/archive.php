@@ -18,7 +18,7 @@ get_header();
 
 			<header class="page-header default-max-width">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_title();
 				?>
 			</header><!-- .page-header -->
 
