@@ -78,39 +78,41 @@ add_filter( 'comment_form_defaults', 'seedlet_comment_form_defaults' );
 function seedlet_get_the_archive_title( $title, $original_title, $prefix ) {
 	if ( is_category() ) {
 		$prefix = '<span class="archive-prefix">' . __( 'Category Archives: ', 'seedlet' ) . '</span>';
-		$title 	= '<span class="page-description">' . single_term_title( '', false ) . '</span>';
+		$title  = '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_tag() ) {
 		$prefix = '<span class="archive-prefix">' . __( 'Tag Archives: ', 'seedlet' ) . ' </span>';
-		$title 	= '<span class="page-description">' . single_term_title( '', false ) . '</span>';
+		$title  = '<span class="page-description">' . single_term_title( '', false ) . '</span>';
 	} elseif ( is_author() ) {
 		$prefix = '<span class="archive-prefix">' . __( 'Author Archives: ', 'seedlet' ) . ' </span>';
-		$title 	= '<span class="page-description">' . get_the_author_meta( 'display_name' ) . '</span>';
+		$title  = '<span class="page-description">' . get_the_author_meta( 'display_name' ) . '</span>';
 	} elseif ( is_year() ) {
 		$prefix = '<span class="archive-prefix">' . __( 'Yearly Archives: ', 'seedlet' ) . ' </span>';
-		$title 	= '<span class="page-description">' . get_the_date( _x( 'Y', 'yearly archives date format', 'seedlet' ) ) . '</span>';
+		$title  = '<span class="page-description">' . get_the_date( _x( 'Y', 'yearly archives date format', 'seedlet' ) ) . '</span>';
 	} elseif ( is_month() ) {
 		$prefix = '<span class="archive-prefix">' . __( 'Monthly Archives: ', 'seedlet' ) . ' </span>';
-		$title 	= '<span class="page-description">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'seedlet' ) ) . '</span>';
+		$title  = '<span class="page-description">' . get_the_date( _x( 'F Y', 'monthly archives date format', 'seedlet' ) ) . '</span>';
 	} elseif ( is_day() ) {
 		$prefix = '<span class="archive-prefix">' . __( 'Daily Archives: ', 'seedlet' ) . ' </span>';
-		$title 	= '<span class="page-description">' . get_the_date() . '</span>';
+		$title  = '<span class="page-description">' . get_the_date() . '</span>';
 	} elseif ( is_post_type_archive() ) {
 		$prefix = '';
-		$cpt = get_post_type_object( get_queried_object()->name );
+		$cpt    = get_post_type_object( get_queried_object()->name );
 		/* translators: %s: Post type singular name */
-		$title = sprintf( esc_html__( '%s Archives', 'seedlet' ),
+		$title = sprintf(
+			esc_html__( '%s Archives', 'seedlet' ),
 			$cpt->labels->singular_name
 		);
 	} elseif ( is_tax() ) {
 		$prefix = '';
-		$tax = get_taxonomy( get_queried_object()->taxonomy );
+		$tax    = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: %s: Taxonomy singular name */
-		$title = sprintf( esc_html__( '%s Archives', 'seedlet' ),
+		$title = sprintf(
+			esc_html__( '%s Archives', 'seedlet' ),
 			$tax->labels->singular_name
 		);
 	} else {
 		$prefix = '';
-		$title 	= '<span class="archive-prefix">' . __( 'Archives: ', 'seedlet' ) . ' </span>';
+		$title  = '<span class="archive-prefix">' . __( 'Archives: ', 'seedlet' ) . ' </span>';
 	}
 
 	return '<h1 class="page-title">' . $prefix . $title . '</h1>';
