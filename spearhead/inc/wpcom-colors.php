@@ -1,7 +1,6 @@
 <?php
 
-// We can't assume that the theme is activated when this is called, so we can't rely on get_template_directory().
-require_once get_theme_root() . '/pub/seedlet/inc/wpcom-colors-utils.php';
+require_once 'wpcom-colors-utils.php';
 
 seedlet_define_color_annotations(
 	array(
