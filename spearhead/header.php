@@ -34,8 +34,8 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 			<?php if ( $has_primary_nav || has_nav_menu( 'social' ) ) : ?>
 				<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'spearhead' ); ?>">
 					<button id="primary-close-menu" class="button close">
-						<span class="dropdown-icon close"><?php _e( 'Close', 'spearhead' ); ?> <?php echo spearhead_get_icon_svg( 'close' ); ?></span>
-						<span class="hide-visually collapsed-text"><?php _e 'collapsed', 'spearhead' ); ?></span>
+						<span class="dropdown-icon close"><?php _e( 'Close', 'spearhead' ); ?> <?php echo seedlet_get_icon_svg( 'close' ); ?></span>
+						<span class="hide-visually collapsed-text"><?php _e( 'collapsed', 'spearhead' ); ?></span>
 					</button>
 					<div class="extra-navigation-wrapper">
 						<?php
@@ -58,13 +58,14 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 						if ( has_nav_menu( 'social' ) ) :
 							wp_nav_menu(
 								array(
-									'theme_location'  => 'social',
-									'link_before'     => '<span class="screen-reader-text">',
-									'link_after'      => '</span>' . spearhead_get_icon_svg( 'link' ),
-									'container_class' => 'social-navigation',
-									'depth'           => 1,
-								)
-							);
+									'theme_location' => 'social',
+									'link_before'    => '<span class="screen-reader-text">',
+									'link_after'     => '</span>' . seedlet_get_icon_svg(
+										'link',
+										'container_class' => 'social-navigation',
+										'depth'           => 1,
+									),
+								);
 						endif;
 						?>
 					</div><!-- .extra-navigation-wrapper -->
@@ -99,7 +100,7 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 								</ul>
 							</li>',
 						esc_html__( 'Close', 'spearhead' ),
-						spearhead_get_icon_svg( 'close' ),
+						seedlet_get_icon_svg( 'close' ),
 						esc_html__( 'collapsed', 'spearhead' ),
 						is_cart() ? 'current-menu-item' : '',
 						esc_attr__( 'View your shopping cart', 'spearhead' ),
@@ -114,7 +115,7 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 			<div class="menu-button-container">
 				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 					<button id="woo-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php echo spearhead_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
+						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
 						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'spearhead' ); ?></span>
 					</button>
 				<?php endif; ?>
