@@ -149,9 +149,9 @@ add_action( 'enqueue_block_assets', 'spearhead_block_extends' );
 /**
  * Add Google webfonts
  *
- * @return string
+ * @return value
  */
-function spearhead_fonts_url() : string {
+function spearhead_fonts_url() {
 	$fonts_url = '';
 
 	$font_families   = array();
@@ -168,7 +168,7 @@ function spearhead_fonts_url() : string {
 /**
  * Load extras
  */
-function seedlet_entry_meta_header() : void {
+function seedlet_entry_meta_header() {
 	// Hide author, post date, category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		// Posted on
