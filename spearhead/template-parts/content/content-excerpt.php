@@ -14,7 +14,7 @@
 	<header class="entry-header default-max-width">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
-			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'seedlet' ) );
+			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'spearhead' ) );
 		}
 		the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		?>
