@@ -63,7 +63,7 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 									'link_after'     => '</span>' . seedlet_get_icon_svg(
 										'link',
 										'container_class' => 'social-navigation',
-										'depth'           => 1,
+										'depth'           => 1
 									),
 								);
 						endif;
