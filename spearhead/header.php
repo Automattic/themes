@@ -115,7 +115,7 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 			<div class="menu-button-container">
 				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 					<button id="woo-open-menu" class="button open">
-						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'seedlet' ); ?></span>
+						<span class="dropdown-icon open"><?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?> <?php _e( 'Cart', 'spearhead' ); ?></span>
 						<span class="hide-visually expanded-text"><?php esc_html__( 'expanded', 'spearhead' ); ?></span>
 					</button>
 				<?php endif; ?>
