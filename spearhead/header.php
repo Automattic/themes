@@ -58,14 +58,13 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 						if ( has_nav_menu( 'social' ) ) :
 							wp_nav_menu(
 								array(
-									'theme_location' => 'social',
-									'link_before'    => '<span class="screen-reader-text">',
-									'link_after'     => '</span>' . seedlet_get_icon_svg(
-										'link',
-										'container_class' => 'social-navigation',
-										'depth'           => 1
-									),
-								);
+									'theme_location'  => 'social',
+									'link_before'     => '<span class="screen-reader-text">',
+									'link_after'      => '</span>' . seedlet_get_icon_svg( 'link' ),
+									'container_class' => 'social-navigation',
+									'depth'           => 1,
+								),
+							);
 						endif;
 						?>
 					</div><!-- .extra-navigation-wrapper -->
