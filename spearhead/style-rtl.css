@@ -202,8 +202,15 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	border-bottom: 1px solid var(--global--color-primary-hover);
 }
 
+.wp-block a,
 .entry-content a {
 	font-weight: var(--global--link-font-weight);
+	border-color: var(--global--color-primary);
+}
+
+.wp-block a:hover:not(.wp-block-button__link),
+.entry-content a:hover:not(.wp-block-button__link) {
+	border-bottom: 1px solid transparent;
 }
 
 .has-main-navigation .site-header {
