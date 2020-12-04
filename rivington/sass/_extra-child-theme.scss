@@ -457,3 +457,34 @@ a {
 		justify-content: center;
 	}
 }
+
+// Updates the Mobile Navigation to be next to the site title.
+.mobile-nav-side .site-title,
+.mobile-nav-side .site-description {
+	@include media(mobile-only) {
+		margin-right: 90px; /** This number is magic. */
+	}
+}
+
+.mobile-nav-side .main-navigation {
+	@include media(mobile-only) {
+		#toggle-menu {
+			position: absolute;
+			top: $baseline-unit; /* This is rivington specific */
+			right: 2 * $baseline-unit;
+		}
+
+		.menu-main-menu-container {
+			background: #{map-deep-get($config-global, "color", "background", "light") };
+			margin:0 ( -2 * $baseline-unit );
+			padding: 0 (2 * $baseline-unit) $baseline-unit;
+			.sub-menu {
+				padding-left: 2 * $baseline-unit;
+			}
+			a {
+				padding: $baseline-unit 0;
+				line-height: 1;
+			}
+		}
+	}
+}

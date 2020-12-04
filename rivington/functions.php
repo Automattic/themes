@@ -111,6 +111,9 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
+
+		// Add mobile-on-side body class.
+		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
 add_action( 'after_setup_theme', 'rivington_setup', 12 );
