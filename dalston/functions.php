@@ -119,6 +119,9 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				'header-text' => array( 'site-title' ),
 			)
 		);
+
+		// Add mobile-on-side body class.
+		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
 add_action( 'after_setup_theme', 'dalston_setup', 12 );
