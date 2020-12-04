@@ -112,7 +112,7 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
 
-		// Add mobile-on-side body class.
+		// Add .mobile-nav-side body class.
 		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
@@ -196,3 +196,11 @@ function rivington_editor_styles() {
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'rivington_editor_styles' );
+
+// This makes it possible to define the function in earlier to alter if the class should be applied or not.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		return array_merge( $classes, array( 'mobile-nav-side' ) );
+	}
+}
+

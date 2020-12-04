@@ -120,7 +120,7 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 			)
 		);
 
-		// Add mobile-on-side body class.
+		// Add .mobile-nav-side body class.
 		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
@@ -260,3 +260,9 @@ function dalston_is_amp() {
 	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 }
 
+// This makes it possible to define the function in earlier to alter if the class should be applied or not.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		return array_merge( $classes, array( 'mobile-nav-side' ) );
+	}
+}

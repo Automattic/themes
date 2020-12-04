@@ -103,7 +103,7 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 			)
 		);
 
-		// Add mobile-on-side body class.
+		// Add .mobile-nav-side body class.
 		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
@@ -187,3 +187,10 @@ function mayland_editor_styles() {
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'mayland_editor_styles' );
+
+// This makes it possible to define the function in earlier to alter if the class should be applied or not.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		return array_merge( $classes, array( 'mobile-nav-side' ) );
+	}
+}

@@ -100,7 +100,7 @@ if ( ! function_exists( 'hever_setup' ) ) :
 			)
 		);
 
-		// Add mobile-on-side body class.
+		// Add .mobile-nav-side body class.
 		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
@@ -182,3 +182,10 @@ function hever_editor_styles() {
 	wp_enqueue_style( 'hever-editor-fonts', hever_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'hever_editor_styles' );
+
+// This makes it possible to define the function in earlier to alter if the class should be applied or not.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		return array_merge( $classes, array( 'mobile-nav-side' ) );
+	}
+}
