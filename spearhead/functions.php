@@ -223,7 +223,10 @@ function spearhead_more_link() {
  * Use this instead of the default WordPress ellipsis which is […].
  */
 function spearhead_excerpt_more() {
-	return '…';
+	if ( is_admin() ) {
+		return $more;
+	}
+	return '&hellip;';
 }
 
 function spearhead_the_excerpt( $excerpt ) {

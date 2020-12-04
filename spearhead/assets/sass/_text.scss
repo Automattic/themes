@@ -2,12 +2,18 @@
     border-bottom: 1px solid transparent;
     transition: all 0.1s ease;
 
-    &:hover:not(.wp-block-button__link) {
+    &:hover:not(.wp-block-button__link):not(.wp-block-file__button) {
         color: var( --global--color-primary-hover );
         border-bottom: 1px solid var( --global--color-primary-hover );
     }
 }
 
+.wp-block a, // Target the editor link styles also.
 .entry-content a {
     font-weight: var(--global--link-font-weight);
+    border-color: var( --global--color-primary ); // Links inside the post content must be underlined.
+
+    &:hover:not(.wp-block-button__link) {
+        border-color: transparent;
+    }
 }

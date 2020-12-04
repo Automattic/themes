@@ -7,7 +7,7 @@ Description: Share your podcast with the world using Spearhead.
 Requires at least: 5.5
 Tested up to: 5.5
 Requires PHP: 5.6.2
-Version: 1.2.2
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: seedlet
@@ -197,13 +197,20 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	transition: all 0.1s ease;
 }
 
-.has-link-color a:hover:not(.wp-block-button__link), a:hover:not(.wp-block-button__link) {
+.has-link-color a:hover:not(.wp-block-button__link):not(.wp-block-file__button), a:hover:not(.wp-block-button__link):not(.wp-block-file__button) {
 	color: var(--global--color-primary-hover);
 	border-bottom: 1px solid var(--global--color-primary-hover);
 }
 
+.wp-block a,
 .entry-content a {
 	font-weight: var(--global--link-font-weight);
+	border-color: var(--global--color-primary);
+}
+
+.wp-block a:hover:not(.wp-block-button__link),
+.entry-content a:hover:not(.wp-block-button__link) {
+	border-color: transparent;
 }
 
 .has-main-navigation .site-header {
@@ -289,6 +296,9 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 		top: 114px;
 	}
 	.site-header .primary-navigation .primary-menu-container a {
+		color: var(--primary-nav--dropdown-color-link);
+	}
+	.site-header .primary-navigation .social-navigation a {
 		color: var(--primary-nav--dropdown-color-link);
 	}
 }
