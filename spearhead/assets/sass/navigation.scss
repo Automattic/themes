@@ -60,6 +60,12 @@ div.extra-navigation-wrapper {
 		visibility: visible;
 		opacity: 1;
 		transform: translateY( $header-height );
+
+		.menu-item > a {
+			&:focus {
+				color: #ff6a81; // Use the dark mode styles so that the focus styles are accessible.
+			}
+		}
 	}
 
 	$menu-offset-with-logo: calc( var(--branding--logo--max-height) + ( 2 * var(--global--spacing-vertical) ) );

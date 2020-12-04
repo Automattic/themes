@@ -197,7 +197,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	transition: all 0.1s ease;
 }
 
-.has-link-color a:hover:not(.wp-block-button__link), a:hover:not(.wp-block-button__link) {
+.has-link-color a:hover:not(.wp-block-button__link):not(.wp-block-file__button), a:hover:not(.wp-block-button__link):not(.wp-block-file__button) {
 	color: var(--global--color-primary-hover);
 	border-bottom: 1px solid var(--global--color-primary-hover);
 }
@@ -210,7 +210,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .wp-block a:hover:not(.wp-block-button__link),
 .entry-content a:hover:not(.wp-block-button__link) {
-	border-bottom: 1px solid transparent;
+	border-color: transparent;
 }
 
 .has-main-navigation .site-header {
@@ -296,6 +296,9 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 		top: 114px;
 	}
 	.site-header .primary-navigation .primary-menu-container a {
+		color: var(--primary-nav--dropdown-color-link);
+	}
+	.site-header .primary-navigation .social-navigation a {
 		color: var(--primary-nav--dropdown-color-link);
 	}
 }
