@@ -102,6 +102,8 @@ if ( ! function_exists( 'alves_setup' ) ) :
 				),
 			)
 		);
+		// Add mobile-on-side body class.
+		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
 add_action( 'after_setup_theme', 'alves_setup', 12 );
