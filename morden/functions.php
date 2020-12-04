@@ -99,6 +99,9 @@ if ( ! function_exists( 'morden_setup' ) ) :
 				),
 			)
 		);
+
+		// Add mobile-on-side body class.
+		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
 add_action( 'after_setup_theme', 'morden_setup', 12 );
