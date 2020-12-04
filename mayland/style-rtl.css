@@ -4296,3 +4296,39 @@ strong {
 	font-family: inherit;
 	font-family: var(--font-base, inherit);
 }
+
+@media only screen and (max-width: 559px) {
+	.mobile-nav-side .site-title,
+	.mobile-nav-side .site-description {
+		margin-left: 90px;
+		/** This number is magic. */
+	}
+}
+
+/* This is also mayland specific */
+@media only screen and (max-width: 559px) {
+	.mobile-nav-side .site-title {
+		margin-bottom: 16px;
+	}
+}
+
+@media only screen and (max-width: 559px) {
+	.mobile-nav-side .main-navigation #toggle-menu {
+		position: absolute;
+		top: 8px;
+		/* This is mayland specific */
+		left: 16px;
+	}
+	.mobile-nav-side .main-navigation .menu-main-menu-container {
+		background: #f2f2f2;
+		margin: 0 -16px;
+		padding: 0 16px 8px;
+	}
+	.mobile-nav-side .main-navigation .menu-main-menu-container .sub-menu {
+		padding-right: 16px;
+	}
+	.mobile-nav-side .main-navigation .menu-main-menu-container a {
+		padding: 8px 0;
+		line-height: 1;
+	}
+}
