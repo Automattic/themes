@@ -99,6 +99,9 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				),
 			)
 		);
+
+		// Add mobile-on-side body class.
+		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 	}
 endif;
 add_action( 'after_setup_theme', 'hever_setup', 12 );
