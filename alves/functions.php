@@ -237,6 +237,16 @@ add_action( 'enqueue_block_editor_assets', 'alves_editor_styles' );
 // This makes it possible to define the function in earlier to alter if the class should be applied or not.
 if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
 	function varia_mobile_nav_on_side( $classes ) {
-		return array_merge( $classes, array( 'mobile-nav-side' ) );
+		if ( get_theme_mod( 'enable_side_menu' ) === 1 || ( isset( $_GET['customize_theme'] ) && get_stylesheet() === $_GET['customize_theme'] ) ) {
+			return array_merge( $classes, array( 'mobile-nav-side' ) );
+		}
+		return $classes;
+	}
+}
+
+add_action( 'after_switch_theme', 'varia_enable_side_menu_on_mobile' );
+if ( ! function_exists( 'varia_enable_side_menu_on_mobile' ) ) {
+	function varia_enable_side_menu_on_mobile() {
+		set_theme_mod( 'enable_side_menu', 1 );
 	}
 }
