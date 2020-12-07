@@ -319,8 +319,9 @@ a {
 }
 
 // Updates the Mobile Navigation to be next to the site title.
-.mobile-nav-side .site-title,
-.mobile-nav-side .site-description {
+.mobile-nav-side .has-menu .site-logo,
+.mobile-nav-side .has-menu .site-title,
+.mobile-nav-side .has-menu .site-description {
 	@include media(mobile-only) {
 		margin-right: 90px; /** This number is magic. */
 	}
@@ -330,7 +331,7 @@ a {
 	@include media(mobile-only) {
 		#toggle-menu {
 			position: absolute;
-			top: $baseline-unit;
+			top: 2 * $baseline-unit;
 			right: 2 * $baseline-unit;
 		}
 

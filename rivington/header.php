@@ -10,6 +10,12 @@
  * @subpackage Rivington
  * @since 1.0.0
  */
+
+$has_primary_nav = has_nav_menu( 'menu-1' );
+$header_classes  = 'site-header responsive-max-width';
+$header_classes .= has_custom_logo() ? ' has-logo' : '';
+$header_classes .= 1 === get_theme_mod( 'header_text', 1 ) ? ' has-title-and-tagline' : '';
+$header_classes .= $has_primary_nav ? ' has-menu' : '';
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -41,10 +47,10 @@
 
 	<?php else : // Otherwise we'll fallback to the default header below. ?>
 
-		<header id="masthead" class="site-header responsive-max-width">
+		<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
-			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+			<?php if ( $has_primary_nav ) : ?>
 				<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'rivington' ); ?>">
 					<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">
 					<label for="toggle" id="toggle-menu" class="button">

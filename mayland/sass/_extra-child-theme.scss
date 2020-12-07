@@ -311,24 +311,31 @@ a {
 }
 
 // Updates the Mobile Navigation to be next to the site title.
-.mobile-nav-side .site-title,
-.mobile-nav-side .site-description {
+.mobile-nav-side .has-menu .site-logo,
+.mobile-nav-side .has-menu .site-title,
+.mobile-nav-side .has-menu .site-description {
 	@include media(mobile-only) {
 		margin-right: 90px; /** This number is magic. */
 	}
 }
 /* This is also mayland specific */
-.mobile-nav-side .site-title {
+.mobile-nav-side .has-menu .site-title {
 	@include media(mobile-only) {
-		margin-bottom: 2 * $baseline-unit;
+		margin-bottom: 3 * $baseline-unit;
 	}
 }
+.mobile-nav-side .has-logo .site-title {
+	@include media(mobile-only) {
+		margin-bottom: 0;
+	}
+}
+
 
 .mobile-nav-side .main-navigation {
 	@include media(mobile-only) {
 		#toggle-menu {
 			position: absolute;
-			top: $baseline-unit; /* This is mayland specific */
+			top: 2 * $baseline-unit; /* This is mayland specific */
 			right: 2 * $baseline-unit;
 		}
 
