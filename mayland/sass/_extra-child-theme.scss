@@ -311,14 +311,9 @@ a {
 }
 
 // Updates the Mobile Navigation to be next to the site title.
-.mobile-nav-side .has-menu .site-logo,
-.mobile-nav-side .has-menu .site-title,
-.mobile-nav-side .has-menu .site-description {
-	@include media(mobile-only) {
-		margin-right: 90px; /** This number is magic. */
-	}
-}
-/* This is also mayland specific */
+$mobile-nav-side-right-margin: 90px;
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
 .mobile-nav-side .has-menu .site-title {
 	@include media(mobile-only) {
 		margin-bottom: 3 * $baseline-unit;
@@ -327,29 +322,5 @@ a {
 .mobile-nav-side .has-logo .site-title {
 	@include media(mobile-only) {
 		margin-bottom: 0;
-	}
-}
-
-
-.mobile-nav-side .main-navigation {
-	@include media(mobile-only) {
-		#toggle-menu {
-			position: absolute;
-			top: 2 * $baseline-unit; /* This is mayland specific */
-			right: 2 * $baseline-unit;
-		}
-
-		.menu-main-menu-container {
-			background: #{map-deep-get($config-global, "color", "background", "light") };
-			margin:0 ( -2 * $baseline-unit );
-			padding: 0 (2 * $baseline-unit) $baseline-unit;
-			.sub-menu {
-				padding-left: 2 * $baseline-unit;
-			}
-			a {
-				padding: $baseline-unit 0;
-				line-height: 1;
-			}
-		}
 	}
 }

@@ -611,33 +611,17 @@ article .entry-header .entry-title,
 }
 
 // Updates the Mobile Navigation to be next to the site title.
-.mobile-nav-side .has-menu .site-logo,
-.mobile-nav-side .has-menu .site-title,
-.mobile-nav-side .has-menu .site-description {
-	@include media(mobile-only) {
-		margin-right: 115px; /** This number is magic. */
-	}
-}
+$mobile-nav-side-right-margin: 115px;
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
 
 .mobile-nav-side .main-navigation {
 	@include media(mobile-only) {
 		#toggle-menu {
-			position: absolute;
 			top: 0; /** Specific to Morden **/
 			right: 0; /** Specific to Morden **/
 		}
-
 		.menu-main-menu-container {
-			background: transparent; /** Specific to Morden **/
-			margin:0 ( -2 * $baseline-unit );
-			padding: 0 (2 * $baseline-unit) $baseline-unit;
-			.sub-menu {
-				padding-left: 2 * $baseline-unit;
-			}
-			a {
-				padding: $baseline-unit 0;
-				line-height: 1;
-			}
+			background: transparent;
 		}
 	}
 }
