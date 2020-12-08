@@ -222,7 +222,7 @@ function spearhead_more_link() {
 /**
  * Use this instead of the default WordPress ellipsis which is […].
  */
-function spearhead_excerpt_more() {
+function spearhead_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
