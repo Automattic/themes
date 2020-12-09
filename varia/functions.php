@@ -285,6 +285,46 @@ function varia_editor_content_width() {
 }
 add_action( 'enqueue_block_editor_assets', 'varia_editor_content_width' );
 
+// This makes it possible to define the function in earlier to alter in one way or another.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		if ( get_theme_mod( 'enable_side_menu' ) === 1 ) {
+			return array_merge( $classes, array( 'mobile-nav-side' ) );
+		}
+		return $classes;
+	}
+}
+
+if ( ! function_exists( 'varia_enable_side_menu_on_mobile' ) ) {
+	function varia_enable_side_menu_on_mobile() {
+		set_theme_mod( 'enable_side_menu', 1 );
+	}
+}
+
+if ( ! function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
+	function varia_register_mobile_nav_on_side_customizer_control( $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'enable_side_menu',
+			array(
+				'default'           => 1,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_control(
+			'enable_side_menu',
+			array(
+				'label'    => __( 'Display mobile menu on the side', 'varia' ),
+				'section'  => 'title_tagline',
+				'settings' => 'enable_side_menu',
+				'type'     => 'checkbox',
+			)
+		);
+
+	}
+}
+
 /**
  * SVG Icons class.
  */

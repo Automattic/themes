@@ -104,7 +104,9 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 		);
 
 		// Add .mobile-nav-side body class.
-		add_filter( 'body_class', 'varia_mobile_nav_on_side' );
+		if ( function_exists( 'varia_mobile_nav_on_side' ) ) {
+			add_filter( 'body_class', 'varia_mobile_nav_on_side' );
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'mayland_setup', 12 );
@@ -188,19 +190,12 @@ function mayland_editor_styles() {
 }
 add_action( 'enqueue_block_editor_assets', 'mayland_editor_styles' );
 
-// This makes it possible to define the function in earlier to alter if the class should be applied or not.
-if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
-	function varia_mobile_nav_on_side( $classes ) {
-		if ( get_theme_mod( 'enable_side_menu' ) === 1 || ( isset( $_GET['customize_theme'] ) && get_stylesheet() === $_GET['customize_theme'] ) ) {
-			return array_merge( $classes, array( 'mobile-nav-side' ) );
-		}
-		return $classes;
-	}
+// Enable the mobile nav on side on theme switch.
+if ( function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
+	add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
 }
 
-add_action( 'after_switch_theme', 'varia_enable_side_menu_on_mobile' );
-if ( ! function_exists( 'varia_enable_side_menu_on_mobile' ) ) {
-	function varia_enable_side_menu_on_mobile() {
-		set_theme_mod( 'enable_side_menu', 1 );
-	}
+// Enable the customizer control toggle for the mobile nav on the side.
+if ( function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
+	add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
 }
