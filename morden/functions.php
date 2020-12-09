@@ -104,6 +104,16 @@ if ( ! function_exists( 'morden_setup' ) ) :
 		if ( function_exists( 'varia_mobile_nav_on_side' ) ) {
 			add_filter( 'body_class', 'varia_mobile_nav_on_side' );
 		}
+
+		// Enable the mobile nav on side on theme switch.
+		if ( function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
+			add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
+		}
+
+		// Enable the customizer control toggle for the mobile nav on the side.
+		if ( function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
+			add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'morden_setup', 12 );
@@ -183,13 +193,3 @@ function morden_editor_styles() {
 	wp_enqueue_style( 'morden-editor-fonts', morden_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'morden_editor_styles' );
-
-// Enable the mobile nav on side on theme switch.
-if ( function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
-	add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
-}
-
-// Enable the customizer control toggle for the mobile nav on the side.
-if ( function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
-	add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
-}

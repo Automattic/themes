@@ -295,8 +295,8 @@ if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
 	}
 }
 
-if ( ! function_exists( 'varia_enable_side_menu_on_mobile' ) ) {
-	function varia_enable_side_menu_on_mobile() {
+if ( ! function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
+	function varia_enable_mobile_nav_on_side() {
 		set_theme_mod( 'enable_side_menu', 1 );
 	}
 }
