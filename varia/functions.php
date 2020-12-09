@@ -184,9 +184,9 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// Add support for Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
-			[
+			array(
 				'enable_theme_default' => true,
-			]
+			)
 		);
 
 	}
@@ -312,11 +312,19 @@ if ( ! function_exists( 'varia_register_mobile_nav_on_side_customizer_control' )
 			)
 		);
 
+		$wp_customize->add_section(
+			'nav_menus_mobile',
+			array(
+				'title' => __( 'Mobile Settings', 'varia' ),
+				'panel' => 'nav_menus',
+			)
+		);
+
 		$wp_customize->add_control(
 			'enable_side_menu',
 			array(
 				'label'    => __( 'Display mobile menu on the side', 'varia' ),
-				'section'  => 'title_tagline',
+				'section'  => 'nav_menus_mobile',
 				'settings' => 'enable_side_menu',
 				'type'     => 'checkbox',
 			)
