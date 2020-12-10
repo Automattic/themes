@@ -4027,40 +4027,6 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 	transform: translateZ(0);
 }
 
-.site-logo {
-	grid-area: site-logo;
-}
-
-.site-title {
-	grid-area: site-title;
-}
-
-.site-description {
-	grid-area: site-description;
-}
-
-.main-navigation {
-	grid-area: main-navigation;
-}
-
-.social-navigation {
-	grid-area: social-navigation;
-}
-
-@media only screen and (max-width: 559px) {
-	.mobile-nav-side .site-header {
-		align-items: start;
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		grid-column-gap: 16px;
-		grid-template-areas: "site-logo site-logo" "site-title main-navigation" "site-description main-navigation";
-	}
-	.mobile-nav-side .site-header .main-navigation {
-		text-align: left;
-	}
-}
-
 /**
  * CSS-grid Desktop Menu
  */
@@ -4085,19 +4051,23 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 		grid-template-areas: "site-logo main-navigation" "site-logo social-navigation";
 	}
 	.site-logo {
+		grid-area: site-logo;
 		margin-bottom: 16px;
 	}
 	.site-title {
 		align-self: flex-end;
+		grid-area: site-title;
 	}
 	.site-title + .site-description {
 		margin-top: 0;
 	}
 	.site-description {
 		align-self: center;
+		grid-area: site-description;
 	}
 	.main-navigation {
 		align-self: center;
+		grid-area: main-navigation;
 		justify-self: flex-end;
 	}
 	.main-navigation > div > ul {
@@ -4155,6 +4125,7 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 	}
 	.social-navigation {
 		align-self: center;
+		grid-area: social-navigation;
 		justify-self: flex-end;
 	}
 }
@@ -4418,4 +4389,33 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	margin-top: 16px;
+}
+
+@media only screen and (max-width: 559px) {
+	.mobile-nav-side .has-menu .site-logo,
+	.mobile-nav-side .has-menu .site-title,
+	.mobile-nav-side .has-menu .site-description {
+		margin-left: 100px;
+	}
+}
+
+@media only screen and (max-width: 559px) {
+	.mobile-nav-side .main-navigation #toggle-menu {
+		position: absolute;
+		top: 16px;
+		left: 16px;
+	}
+	.mobile-nav-side .main-navigation .menu-main-menu-container {
+		background: #FDF9EC;
+		margin: 0 -16px;
+		padding: 0 16px 8px;
+	}
+	.mobile-nav-side .main-navigation .menu-main-menu-container .sub-menu {
+		padding-right: 16px;
+		/** todo: variable */
+	}
+	.mobile-nav-side .main-navigation .menu-main-menu-container a {
+		padding: 8px 0;
+		line-height: 1;
+	}
 }

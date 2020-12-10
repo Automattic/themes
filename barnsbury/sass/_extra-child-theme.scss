@@ -47,45 +47,6 @@ a {
 	}
 }
 
-// Grid definitions
-.site-logo {
-	grid-area: site-logo;
-}
-.site-title {
-	grid-area: site-title;
-}
-.site-description {
-	grid-area: site-description;
-}
-.main-navigation {
-	grid-area: main-navigation;
-}
-.social-navigation {
-	grid-area: social-navigation;
-}
-
-@include media(mobile-only) {
-	.mobile-nav-side .site-header {
-		align-items: start;
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		grid-column-gap: $spacing_unit;
-		grid-template-areas:
-			"site-logo site-logo"
-			"site-title main-navigation"
-			"site-description main-navigation";
-
-		.site-description {
-			// TODO - align with the grid above
-		}
-
-		.main-navigation {
-			text-align: right;
-		}
-	}
-}
-
 /**
  * CSS-grid Desktop Menu
  */
@@ -117,14 +78,17 @@ a {
 				"site-logo main-navigation"
 				"site-logo social-navigation";
 		}
+
 	}
 
 	.site-logo {
+		grid-area: site-logo;
 		margin-bottom: $spacing_unit;
 	}
 
 	.site-title {
 		align-self: flex-end;
+		grid-area: site-title;
 
 		& + .site-description {
 			margin-top: 0;
@@ -133,10 +97,12 @@ a {
 
 	.site-description {
 		align-self: center;
+		grid-area: site-description;
 	}
 
 	.main-navigation {
 		align-self: center;
+		grid-area: main-navigation;
 		justify-self: flex-end;
 
 		& > div > ul {
@@ -198,6 +164,7 @@ a {
 
 	.social-navigation {
 		align-self: center;
+		grid-area: social-navigation;
 		justify-self: flex-end;
 	}
 }
@@ -426,3 +393,6 @@ a {
 		margin-top: $spacing_unit;
 	}
 }
+// Updates the Mobile Navigation to be next to the site title.
+$mobile-nav-side-right-margin: 100px;
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
