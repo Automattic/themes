@@ -34,12 +34,21 @@
 			grid-row-end: 4;
 			margin: 0;
 			justify-self: end;
+			text-align: right;
 
+			#toggle-cart[for="woocommerce-toggle"].button,
 			#toggle-menu {
 				padding: (1.5 * $baseline-unit);
 				display: inline-block;
 				text-align: center;
+				justify-self: end;
 				font-size: #{map-deep-get($config-global, "font", "size", "xs" )};
+			}
+			#toggle-cart[for="woocommerce-toggle"] {
+				margin-top: $baseline-unit;
+			}
+			#toggle-cart[for="woocommerce-toggle"].button svg {
+				margin-top: -2px;
 			}
 
 			.menu-main-menu-container {
@@ -52,6 +61,7 @@
 				padding: 0 (2 * $baseline-unit) $baseline-unit;
 				border: 1px solid #{map-deep-get( $config-global,"color","border","default")};
 				border-radius: #{map-deep-get($config-global, "border-radius", "xs" )};
+				text-align: left;
 			}
 
 			.menu-main-menu-container {
@@ -59,6 +69,16 @@
 					padding: $baseline-unit 0;
 					line-height: 1;
 				}
+			}
+
+			.woocommerce-menu-container {
+				text-align: left;
+				position: absolute;
+				right: 2 * $baseline-unit;
+				left: 2 * $baseline-unit;
+				width: calc(100% - 32px);
+				margin-top: 6 * $baseline-unit;
+				border-radius: #{map-deep-get($config-global, "border-radius", "xs" )};
 			}
 		}
 	}
