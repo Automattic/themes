@@ -1,31 +1,66 @@
 // Updates the Mobile Navigation to be next to the site title.
-.mobile-nav-side .has-menu .site-logo,
-.mobile-nav-side .has-menu .site-title,
-.mobile-nav-side .has-menu .site-description {
-  @include media(mobile-only) {
-    margin-right: $mobile-nav-side-right-margin;
-  }
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			position: relative;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 2px;
+
+			& > * {
+				grid-column-start: 1;
+				grid-column-end: span 3;
+				margin: 0;
+			}
+
+			.site-title {
+				align-self: end;
+			}
+
+			.site-description {
+				align-self: start;
+			}
+		}
+
+		.site-header .main-navigation ~ * {
+			grid-column-start: 1;
+			grid-column-end: span col4-end;
+		}
+
+		.site-header #site-navigation.main-navigation {
+			grid-column-start: 4;
+			grid-column-end: col4-end;
+			grid-row-start: row1-start;
+			grid-row-end: 4;
+			margin: 0;
+			justify-self: end;
+
+			#toggle-menu {
+				padding: (1.5 * $baseline-unit);
+				display: inline-block;
+				text-align: center;
+				font-size: #{map-deep-get($config-global, "font", "size", "xs" )};
+			}
+
+			.menu-main-menu-container {
+				margin-top: $baseline-unit;
+				position: absolute;
+				z-index: 100;
+				right: 2 * $baseline-unit;
+				left: 2 * $baseline-unit;
+				background: #{map-deep-get($config-global, "color", "background", "light") };
+				padding: 0 (2 * $baseline-unit) $baseline-unit;
+				border: 1px solid #{map-deep-get( $config-global,"color","border","default")};
+				border-radius: #{map-deep-get($config-global, "border-radius", "xs" )};
+			}
+
+			.menu-main-menu-container {
+				a {
+					padding: $baseline-unit 0;
+					line-height: 1;
+				}
+			}
+		}
+	}
 }
 
-.mobile-nav-side .main-navigation {
-  @include media(mobile-only) {
-    #toggle-menu {
-      position: absolute;
-      top: 2 * $baseline-unit;
-      right: 2 * $baseline-unit;
-    }
-
-    .menu-main-menu-container {
-      background: #{map-deep-get($config-global, "color", "background", "light") };
-      margin:0 (-2 * $baseline-unit );
-      padding: 0 (2 * $baseline-unit) $baseline-unit;
-      .sub-menu {
-        padding-left: 2 * $baseline-unit;  /** todo: variable */
-      }
-      a {
-        padding: $baseline-unit 0;
-        line-height: 1;
-      }
-    }
-  }
-}

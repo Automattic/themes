@@ -611,17 +611,68 @@ article .entry-header .entry-title,
 }
 
 // Updates the Mobile Navigation to be next to the site title.
-$mobile-nav-side-right-margin: 115px;
-@import "../../varia/sass/components/header/_site-mobile-nav-side";
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header-wrap.has-menu {
+			position: relative;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 2px;
 
-.mobile-nav-side .main-navigation {
-	@include media(mobile-only) {
-		#toggle-menu {
-			top: 0; /** Specific to Morden **/
-			right: 0; /** Specific to Morden **/
+			& > * {
+				grid-column-start: 1;
+				grid-column-end: span 3;
+				margin: 0!important;
+			}
+
+			.site-title {
+				align-self: end;
+			}
+
+			.site-description {
+				align-self: start;
+			}
 		}
-		.menu-main-menu-container {
-			background: transparent;
+
+		.site-header .main-navigation ~ * {
+			grid-column-start: 1;
+			grid-column-end: span col4-end;
+		}
+
+		.site-header #site-navigation.main-navigation {
+			grid-column-start: 4;
+			grid-column-end: col4-end;
+			grid-row-start: 1;
+			grid-row-end: 3;
+			margin: 0;
+			justify-self: end;
+
+			#toggle-menu {
+				padding: (1.5 * $baseline-unit);
+				display: inline-block;
+				text-align: center;
+				font-size: #{map-deep-get($config-global, "font", "size", "xs" )};
+			}
+
+			.menu-main-menu-container {
+				margin-top: $baseline-unit;
+				position: absolute;
+				z-index: 100;
+				right: 0;
+				left: 0;
+				font-weight: normal;
+				background: #{map-deep-get($config-global, "color", "foreground", "dark") };
+				padding: 0 (2 * $baseline-unit) $baseline-unit;
+				border-radius: #{map-deep-get($config-global, "border-radius", "xs" )};
+			}
+
+			.menu-main-menu-container {
+				a {
+					padding: $baseline-unit 0;
+					line-height: 1;
+					font-weight: normal;
+				}
+			}
 		}
 	}
 }

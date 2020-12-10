@@ -4562,43 +4562,56 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 }
 
 @media only screen and (max-width: 559px) {
-	.mobile-nav-side .has-menu .site-logo,
-	.mobile-nav-side .has-menu .site-title,
-	.mobile-nav-side .has-menu .site-description {
-		margin-left: 115px;
+	.mobile-nav-side .site-header-wrap.has-menu {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 2px;
 	}
-}
-
-@media only screen and (max-width: 559px) {
-	.mobile-nav-side .main-navigation #toggle-menu {
+	.mobile-nav-side .site-header-wrap.has-menu > * {
+		grid-column-start: 1;
+		grid-column-end: span 3;
+		margin: 0 !important;
+	}
+	.mobile-nav-side .site-header-wrap.has-menu .site-title {
+		align-self: end;
+	}
+	.mobile-nav-side .site-header-wrap.has-menu .site-description {
+		align-self: start;
+	}
+	.mobile-nav-side .site-header .main-navigation ~ * {
+		grid-column-start: 1;
+		grid-column-end: span col4-end;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation {
+		grid-column-start: 4;
+		grid-column-end: col4-end;
+		grid-row-start: 1;
+		grid-row-end: 3;
+		margin: 0;
+		justify-self: end;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
+		padding: 12px;
+		display: inline-block;
+		text-align: center;
+		font-size: 0.75614rem;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .menu-main-menu-container {
+		margin-top: 8px;
 		position: absolute;
-		top: 16px;
-		left: 16px;
-	}
-	.mobile-nav-side .main-navigation .menu-main-menu-container {
-		background: #F8F8F8;
-		margin: 0 -16px;
+		z-index: 100;
+		left: 0;
+		right: 0;
+		font-weight: normal;
+		background: #101010;
 		padding: 0 16px 8px;
+		border-radius: 5px;
 	}
-	.mobile-nav-side .main-navigation .menu-main-menu-container .sub-menu {
-		padding-right: 16px;
-		/** todo: variable */
-	}
-	.mobile-nav-side .main-navigation .menu-main-menu-container a {
+	.mobile-nav-side .site-header #site-navigation.main-navigation .menu-main-menu-container a {
 		padding: 8px 0;
 		line-height: 1;
-	}
-}
-
-@media only screen and (max-width: 559px) {
-	.mobile-nav-side .main-navigation #toggle-menu {
-		top: 0;
-		/** Specific to Morden **/
-		left: 0;
-		/** Specific to Morden **/
-	}
-	.mobile-nav-side .main-navigation .menu-main-menu-container {
-		background: transparent;
+		font-weight: normal;
 	}
 }
 
