@@ -4591,13 +4591,21 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 		margin: 0;
 		justify-self: end;
 	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button,
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
 		padding: 12px;
 		display: inline-block;
 		text-align: center;
+		justify-self: end;
 		font-size: 0.75614rem;
 	}
-	.mobile-nav-side .site-header #site-navigation.main-navigation .menu-main-menu-container {
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"] {
+		margin-top: 8px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button svg {
+		margin-top: -2px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .main-menu-container {
 		margin-top: 8px;
 		position: absolute;
 		z-index: 100;
@@ -4608,10 +4616,22 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 		padding: 0 16px 8px;
 		border-radius: 5px;
 	}
-	.mobile-nav-side .site-header #site-navigation.main-navigation .menu-main-menu-container a {
+	.mobile-nav-side .site-header #site-navigation.main-navigation .main-menu-container a {
 		padding: 8px 0;
 		line-height: 1;
 		font-weight: normal;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-cart-widget {
+		background: #101010;
+		border-radius: 5px;
+		padding: 8px 16px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container {
+		text-align: right;
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin-top: 48px;
 	}
 }
 

@@ -4497,14 +4497,23 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 		grid-row-end: 4;
 		margin: 0;
 		justify-self: end;
+		text-align: left;
 	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button,
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
 		padding: 12px;
 		display: inline-block;
 		text-align: center;
+		justify-self: end;
 		font-size: 0.75614rem;
 	}
-	.mobile-nav-side .site-header #site-navigation.main-navigation .menu-main-menu-container {
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"] {
+		margin-top: 8px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button svg {
+		margin-top: -2px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .main-menu-container {
 		margin-top: 8px;
 		position: absolute;
 		z-index: 100;
@@ -4514,10 +4523,20 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 		padding: 0 16px 8px;
 		border: 1px solid #C5C5C5;
 		border-radius: 5px;
+		text-align: right;
 	}
-	.mobile-nav-side .site-header #site-navigation.main-navigation .menu-main-menu-container a {
+	.mobile-nav-side .site-header #site-navigation.main-navigation .main-menu-container a {
 		padding: 8px 0;
 		line-height: 1;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container {
+		text-align: right;
+		position: absolute;
+		left: 16px;
+		right: 16px;
+		width: calc(100% - 32px);
+		margin-top: 48px;
+		border-radius: 5px;
 	}
 }
 
