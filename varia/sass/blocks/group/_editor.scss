@@ -1,12 +1,28 @@
 .wp-block-group {
 	&.has-background {
-		padding: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
-
+		padding: #{ map-deep-get($config-global, "spacing", "unit") };
 		@include media(mobile) {
-			padding: #{map-deep-get($config-global, "spacing", "vertical")};
+			padding: #{ map-deep-get($config-global, "spacing", "vertical") };
 		}
 	}
 }
+
+[data-align=full] .wp-block-group.has-background > .wp-block-group__inner-container > [data-align=full] {
+	margin-left: -#{ map-deep-get($config-global, "spacing", "unit") };
+	width: calc(100% + #{ 2 * map-deep-get($config-global, "spacing", "unit") });
+
+	@include media(mobile) {
+		margin-left: -#{ map-deep-get($config-global, "spacing", "vertical") };
+		width: calc(100% + #{ 2 * map-deep-get($config-global, "spacing", "vertical") });
+	}
+}
+
+
+.wp-block[data-type="core/group"] > .editor-block-list__block-edit > div > .wp-block-group.has-background > .wp-block-group__inner-container > .editor-inner-blocks > .editor-block-list__layout > .wp-block[data-align=full] {
+	margin: 0;
+	width: 100%;
+}
+
 
 .wp-block[data-type="core/group"] > .editor-block-list__block-edit > div > .wp-block-group.has-background > .wp-block-group__inner-container > .editor-inner-blocks > .editor-block-list__layout > .wp-block[data-align=full] {
 	margin: 0;
