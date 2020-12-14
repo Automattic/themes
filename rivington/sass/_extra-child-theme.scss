@@ -460,3 +460,20 @@ a {
 
 // Updates the Mobile Navigation to be next to the site title.
 @import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			&.has-logo .site-branding {
+				grid-area: site-logo;
+				justify-self: center;
+			}
+			&:not(.has-logo) .site-branding {
+				grid-area: site-title;
+			}
+			.site-logo {
+				grid-area: unset;
+			}
+		}
+	}
+}
