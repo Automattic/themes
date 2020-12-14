@@ -1,40 +1,74 @@
 // Updates the Mobile Navigation to be next to the site title.
 @include media(mobile-only) {
 	.mobile-nav-side {
-		.site-header.has-menu {
+		.has-menu {
+			&:before,
+			&:after {
+				content: none;
+			}
 			position: relative;
 			display: grid;
-			grid-template-columns: repeat(4, 1fr);
 			grid-gap: 2px;
+			grid-template-areas: 
+				"site-logo site-logo" 
+				"social-navigation main-navigation";
 
-			& > * {
-				grid-column-start: 1;
-				grid-column-end: span 3;
+			&.has-title-and-tagline {
+				grid-template-areas: 
+					"site-logo site-logo" 
+					"site-title main-navigation" 
+					"site-description main-navigation" 
+					"social-navigation social-navigation";
+
+				.site-title {
+					grid-area: site-title;
+					align-self: end;
+				}
+
+				.site-description {
+					grid-area: site-description;
+					align-self: start;
+				}
+			}
+
+			& > *:not(.site-logo) {
 				margin: 0;
 			}
 
-			.site-title {
-				align-self: end;
+			.site-logo {
+				grid-area: site-logo;
+				justify-self: center;
+				margin: $baseline-unit 0;
 			}
 
-			.site-description {
-				align-self: start;
+			.social-navigation {
+				grid-area: social-navigation;
+				align-self: center;
 			}
-		}
 
-		.site-header .main-navigation ~ * {
-			grid-column-start: 1;
-			grid-column-end: span col4-end;
+			.main-navigation {
+				grid-area: main-navigation;
+				//align-self: center;
+			}
 		}
 
 		.site-header #site-navigation.main-navigation {
-			grid-column-start: 4;
-			grid-column-end: col4-end;
-			grid-row-start: row1-start;
-			grid-row-end: 4;
+			display: grid;
+			grid-template-areas: 
+				"menu-toggle cart-toggle"
+				"dropdown-menu dropdown-menu";
+
 			margin: 0;
 			justify-self: end;
-			text-align: right;
+			//text-align: right;
+
+			#toggle-menu {
+				grid-area: menu-toggle;
+			}
+
+			#toggle-cart[for="woocommerce-toggle"] {
+				grid-area: cart-toggle;
+			}
 
 			#toggle-cart[for="woocommerce-toggle"].button,
 			#toggle-menu {
@@ -52,6 +86,7 @@
 			}
 
 			.main-menu-container {
+				grid-area: dropdown-menu;
 				margin-top: $baseline-unit;
 				position: absolute;
 				z-index: 100;

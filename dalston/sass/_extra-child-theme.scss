@@ -322,11 +322,22 @@ a {
 // Updates the Mobile Navigation to be next to the site title.
 @import "../../varia/sass/components/header/_site-mobile-nav-side";
 
-.mobile-nav-side .main-navigation {
-	@include media(mobile-only) {
-		.dropdown-icon {
-			/* This is fixed the issue when the button changes widths */
-			font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma;
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			.site-branding {
+				grid-area: site-logo;
+				justify-self: center;
+			}
+			.site-logo {
+				grid-area: unset;
+			}
+		}
+		.main-navigation {
+			.dropdown-icon {
+				/* This is fixed the issue when the button changes widths */
+				font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma;
+			}
 		}
 	}
 }

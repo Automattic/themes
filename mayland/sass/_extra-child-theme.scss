@@ -313,13 +313,21 @@ a {
 // Updates the Mobile Navigation to be next to the site title.
 @import "../../varia/sass/components/header/_site-mobile-nav-side";
 
-.mobile-nav-side .has-menu .site-title {
-	@include media(mobile-only) {
-		margin-bottom: 3 * $baseline-unit;
-	}
-}
-.mobile-nav-side .has-logo .site-title {
-	@include media(mobile-only) {
-		margin-bottom: 0;
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			.site-branding {
+				grid-area: site-logo;
+				justify-self: center;
+			}
+			.site-logo {
+				grid-area: unset;
+			}
+			&.has-title-and-tagline {
+				grid-template-areas: 
+					"site-logo site-logo" 
+					"social-navigation main-navigation";
+			}
+		}
 	}
 }
