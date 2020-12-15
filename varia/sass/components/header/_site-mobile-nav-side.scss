@@ -1,3 +1,6 @@
+$wpcom-marketing-bar--height: 45px;
+$wpadmin-bar--height: 46px;
+
 // Updates the Mobile Navigation to be next to the site title.
 @include media(mobile-only) {
 	.mobile-nav-side {
@@ -48,14 +51,21 @@
 
 			.main-navigation {
 				grid-area: main-navigation;
-				//align-self: center;
 			}
 		}
 
 		.site-header #site-navigation.main-navigation {
 			margin: 0;
 			justify-self: end;
-			//text-align: right;
+
+			#toggle {
+				&:checked + label{
+					position: fixed;
+					top: 2 * $baseline-unit;
+					right: 2 * $baseline-unit;
+					z-index: 20000;
+				}
+			}
 
 			#toggle-menu {
 				grid-area: menu-toggle;
@@ -74,9 +84,6 @@
 				justify-self: end;
 				font-size: #{map-deep-get($config-global, "font", "size", "xs" )};
 			}
-			#toggle-cart[for="woocommerce-toggle"] {
-				margin-top: $baseline-unit;
-			}
 			#toggle-cart[for="woocommerce-toggle"].button svg {
 				margin-top: -2px;
 			}
@@ -84,12 +91,14 @@
 			& > div {
 				grid-area: dropdown-menu;
 				margin-top: $baseline-unit;
-				position: absolute;
+				position: fixed;
 				z-index: 100;
+				top: 0;
+				bottom: 0;
 				right: 0;
 				left: 0;
 				background: #{map-deep-get($config-global, "color", "background", "default") };
-				padding: 0 (2 * $baseline-unit) $baseline-unit;
+				padding: (6 * $baseline-unit) (2 * $baseline-unit) $baseline-unit;
 			}
 
 			.woocommerce-menu-container {
@@ -100,6 +109,35 @@
 				width: calc(100% - 32px);
 				margin-top: 6 * $baseline-unit;
 				border-radius: #{map-deep-get($config-global, "border-radius", "xs" )};
+			}
+		}
+		&.has-marketing-bar {
+			//Consider marketing bar height
+			.site-header #site-navigation.main-navigation > div{
+				top: $wpcom-marketing-bar--height;
+			}
+			.site-header #site-navigation.main-navigation #toggle:checked + label {
+				top: (2 * $baseline-unit) + $wpcom-marketing-bar--height;
+			}
+		}
+
+		&.admin-bar {
+			//Consider admin bar height
+			.site-header #site-navigation.main-navigation > div{
+				top: $wpadmin-bar--height;
+			}
+			.site-header #site-navigation.main-navigation #toggle:checked + label {
+				top: (2 * $baseline-unit) + $wpadmin-bar--height;
+			}
+		}
+
+		&.admin-bar.has-marketing-bar {
+			//Consider admin bar height + marketing bar height
+			.site-header #site-navigation.main-navigation > div{
+				top: $wpadmin-bar--height + $wpcom-marketing-bar--height;
+			}
+			.site-header #site-navigation.main-navigation #toggle:checked + label {
+				top: (2 * $baseline-unit) + $wpadmin-bar--height + $wpcom-marketing-bar--height;
 			}
 		}
 	}

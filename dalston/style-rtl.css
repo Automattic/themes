@@ -4308,6 +4308,12 @@ a {
 		margin: 0;
 		justify-self: end;
 	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle:checked + label {
+		position: fixed;
+		top: 16px;
+		left: 16px;
+		z-index: 20000;
+	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
 		grid-area: menu-toggle;
 	}
@@ -4323,21 +4329,20 @@ a {
 		justify-self: end;
 		font-size: 0.75614rem;
 	}
-	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"] {
-		margin-top: 8px;
-	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button svg {
 		margin-top: -2px;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation > div {
 		grid-area: dropdown-menu;
 		margin-top: 8px;
-		position: absolute;
+		position: fixed;
 		z-index: 100;
+		top: 0;
+		bottom: 0;
 		left: 0;
 		right: 0;
 		background: #FFFFFF;
-		padding: 0 16px 8px;
+		padding: 48px 16px 8px;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container {
 		text-align: right;
@@ -4347,6 +4352,24 @@ a {
 		width: calc(100% - 32px);
 		margin-top: 48px;
 		border-radius: 4.75px;
+	}
+	.mobile-nav-side.has-marketing-bar .site-header #site-navigation.main-navigation > div {
+		top: 45px;
+	}
+	.mobile-nav-side.has-marketing-bar .site-header #site-navigation.main-navigation #toggle:checked + label {
+		top: 61px;
+	}
+	.mobile-nav-side.admin-bar .site-header #site-navigation.main-navigation > div {
+		top: 46px;
+	}
+	.mobile-nav-side.admin-bar .site-header #site-navigation.main-navigation #toggle:checked + label {
+		top: 62px;
+	}
+	.mobile-nav-side.admin-bar.has-marketing-bar .site-header #site-navigation.main-navigation > div {
+		top: 91px;
+	}
+	.mobile-nav-side.admin-bar.has-marketing-bar .site-header #site-navigation.main-navigation #toggle:checked + label {
+		top: 107px;
 	}
 }
 
