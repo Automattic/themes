@@ -57,6 +57,9 @@ $wpadmin-bar--height: 46px;
 		.site-header #site-navigation.main-navigation {
 			margin: 0;
 			justify-self: end;
+			display: flex;
+			align-items: center;
+			justify-content: end;
 
 			#toggle {
 				&:checked + label{
@@ -68,11 +71,14 @@ $wpadmin-bar--height: 46px;
 			}
 
 			#toggle-menu {
+				order: 2;
 				grid-area: menu-toggle;
 			}
 
 			#toggle-cart[for="woocommerce-toggle"] {
+				order: 1;
 				grid-area: cart-toggle;
+				margin-right: $baseline-unit;
 			}
 
 			#toggle-cart[for="woocommerce-toggle"].button,
@@ -99,6 +105,7 @@ $wpadmin-bar--height: 46px;
 				left: 0;
 				background: #{map-deep-get($config-global, "color", "background", "default") };
 				padding: (6 * $baseline-unit) (2 * $baseline-unit) $baseline-unit;
+				overflow-y: auto;
 			}
 
 			.woocommerce-menu-container {
