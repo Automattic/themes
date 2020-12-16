@@ -4307,6 +4307,10 @@ a {
 	.mobile-nav-side .site-header #site-navigation.main-navigation {
 		margin: 0;
 		justify-self: end;
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		white-space: nowrap;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle:checked + label {
 		position: fixed;
@@ -4315,10 +4319,13 @@ a {
 		z-index: 20000;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
+		order: 2;
 		grid-area: menu-toggle;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"] {
+		order: 1;
 		grid-area: cart-toggle;
+		margin-left: 8px;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button,
 	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
@@ -4343,6 +4350,8 @@ a {
 		right: 0;
 		background: #FFFFFF;
 		padding: 48px 16px 8px;
+		overflow-y: auto;
+		white-space: normal;
 	}
 	.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container {
 		text-align: right;
