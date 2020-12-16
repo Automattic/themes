@@ -248,11 +248,18 @@ function varia_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Main navigation scripts
-	wp_enqueue_script( 'varia-primary-navigation-script', get_template_directory_uri() . '/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'varia_scripts' );
 
+
+function varia_add_mobile_nav_on_side_scripts() {
+	if ( get_theme_mod( 'enable_side_menu' ) !== 1 ) {
+		return;
+	}
+
+	// Main navigation scripts
+	wp_enqueue_script( 'varia-primary-navigation-script', get_template_directory_uri() . '/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
+}
 /**
  * Fix skip link focus in IE11.
  *
@@ -345,6 +352,9 @@ function varia_mobile_nav_on_side_setup() {
 
 	// Enable the customizer control toggle for the mobile nav on the side.
 	add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
+
+	// Adds the script that help toggle the mobile nav.
+	add_action( 'wp_enqueue_scripts', 'varia_add_mobile_nav_on_side_scripts' );
 }
 
 /**
