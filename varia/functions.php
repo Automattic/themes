@@ -336,6 +336,17 @@ if ( ! function_exists( 'varia_register_mobile_nav_on_side_customizer_control' )
 	}
 }
 
+function varia_mobile_nav_on_side_setup() {
+	// Add .mobile-nav-side body class.
+	add_filter( 'body_class', 'varia_mobile_nav_on_side' );
+
+	// Enable the mobile nav on side on theme switch.
+	add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
+
+	// Enable the customizer control toggle for the mobile nav on the side.
+	add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
+}
+
 /**
  * SVG Icons class.
  */

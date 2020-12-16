@@ -103,19 +103,9 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 			)
 		);
 
-		// Add .mobile-nav-side body class.
-		if ( function_exists( 'varia_mobile_nav_on_side' ) ) {
-			add_filter( 'body_class', 'varia_mobile_nav_on_side' );
-		}
-
-		// Enable the mobile nav on side on theme switch.
-		if ( function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
-			add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
-		}
-
-		// Enable the customizer control toggle for the mobile nav on the side.
-		if ( function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
-			add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
 		}
 	}
 endif;
