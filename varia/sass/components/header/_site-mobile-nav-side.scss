@@ -62,12 +62,14 @@ $wpadmin-bar--height: 46px;
 			justify-content: end;
 			white-space: nowrap;
 
+			#woocommerce-toggle,
 			#toggle {
 				&:checked + label{
 					position: fixed;
-					top: 2 * $baseline-unit;
+					top: 2 * $baseline-unit + 2px;
 					right: 2 * $baseline-unit;
 					z-index: 20000;
+					margin-right: 0;
 				}
 			}
 
@@ -94,10 +96,10 @@ $wpadmin-bar--height: 46px;
 			#toggle-cart[for="woocommerce-toggle"].button svg {
 				margin-top: -2px;
 			}
-
+			.woocommerce-menu-container,
 			& > div {
 				grid-area: dropdown-menu;
-				margin-top: $baseline-unit;
+				margin-top: 2 * $baseline-unit;
 				position: fixed;
 				z-index: 100;
 				top: 0;
@@ -110,14 +112,6 @@ $wpadmin-bar--height: 46px;
 				white-space: normal;
 			}
 
-			.woocommerce-menu-container {
-				text-align: left;
-				position: absolute;
-				right: 2 * $baseline-unit;
-				left: 2 * $baseline-unit;
-				width: calc(100% - 32px);
-				margin-top: 6 * $baseline-unit;
-			}
 		}
 		&.has-marketing-bar {
 			//Consider marketing bar height

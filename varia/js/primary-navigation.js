@@ -1,7 +1,7 @@
 /**
  * File primary-navigation.js.
  *
- * Locks scroll when the menu is opened on mobile
+ * This files only gets added to themes that support the mobile nav on side
  */
 ( function() {
 
@@ -10,30 +10,27 @@
 	 *
 	 * @param {Element} element
 	 */
-	var navMenu = function ( id ){
-		var wrapper         = document.body; // this is the element to which a CSS class is added when a mobile nav menu is open
+	var navMenu = function ( buttonId, inputId ) {
+		var wrapper = document.body;
 
-			if (wrapper.classList.contains('mobile-nav-side')) {
+		var toggleButton = document.getElementById( buttonId );
+		var toggleInput  = document.getElementById( inputId );
 
-			var toggleButton    	= document.getElementById( 'toggle-menu' );
-			var toggleInput    	= document.getElementById( 'toggle' );
+		if ( toggleButton ) {
+			toggleButton.onclick = function() {
+				if ( true == toggleInput.checked ) {
+					wrapper.classList.remove( 'lock-scrolling' );
+				} else {
+					wrapper.classList.add( 'lock-scrolling' );
+				}
 
-			if ( toggleButton ){
-				toggleButton.onclick = function() {
-					if (toggleInput.checked == true){
-						wrapper.classList.remove( `${ id }-navigation-open` );
-						wrapper.classList.remove( 'lock-scrolling' );
-					} else {
-						wrapper.classList.add( `${ id }-navigation-open` );
-						wrapper.classList.add( 'lock-scrolling' );	
-					}
-					toggleButton.focus();
-				}		
+				toggleButton.focus();
 			}
 		}
 	}
 
 	window.addEventListener( 'load', function() {
-		new navMenu( 'primary' );
-	});
+		navMenu(  'toggle-menu', 'toggle' );
+		navMenu(  'toggle-cart', 'woocommerce-toggle' );
+	} );
 } )();
