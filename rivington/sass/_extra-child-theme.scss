@@ -464,15 +464,8 @@ a {
 @include media(mobile-only) {
 	.mobile-nav-side {
 		.site-header.has-menu {
-			&.has-logo .site-branding {
-				grid-area: site-logo;
-				justify-self: center;
-			}
-			&:not(.has-logo) .site-branding {
-				grid-area: site-title;
-			}
-			.site-logo {
-				grid-area: unset;
+			.site-branding {
+				display: contents;
 			}
 		}
 	}

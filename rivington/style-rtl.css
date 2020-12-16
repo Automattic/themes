@@ -4464,7 +4464,7 @@ p:not(.site-title) a:hover {
 		margin: 0;
 		justify-self: end;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: end;
 		white-space: nowrap;
 	}
@@ -4545,14 +4545,7 @@ p:not(.site-title) a:hover {
 }
 
 @media only screen and (max-width: 559px) {
-	.mobile-nav-side .site-header.has-menu.has-logo .site-branding {
-		grid-area: site-logo;
-		justify-self: center;
-	}
-	.mobile-nav-side .site-header.has-menu:not(.has-logo) .site-branding {
-		grid-area: site-title;
-	}
-	.mobile-nav-side .site-header.has-menu .site-logo {
-		grid-area: unset;
+	.mobile-nav-side .site-header.has-menu .site-branding {
+		display: contents;
 	}
 }
