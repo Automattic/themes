@@ -309,3 +309,17 @@ a {
 	font-family: inherit;
 	font-family: var( --font-base, inherit );
 }
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			.site-branding {
+				display: contents;
+			}
+
+		}
+	}
+}

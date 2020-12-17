@@ -61,13 +61,15 @@ if ( function_exists( 'wp_body_open' ) ) {
 					</label>
 
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_class'     => 'main-menu',
-							'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
-						)
+					$main_nav_args = array(
+						'theme_location'  => 'menu-1',
+						'menu_class'      => 'main-menu',
+						'items_wrap'      => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
 					);
+					if ( get_theme_mod( 'enable_side_menu' ) === 1 ) {
+						$main_nav_args['container_class'] = 'main-menu-container';
+					}
+					wp_nav_menu( $main_nav_args );
 					?>
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>

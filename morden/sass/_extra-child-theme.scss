@@ -609,3 +609,21 @@ article .entry-header .entry-title,
 		width: 100%;
 	}
 }
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		#masthead .site-header-wrap > *:not(.site-logo) {
+			margin: 0;
+		}
+
+		.site-header #site-navigation.main-navigation {
+			.woocommerce-menu-container,
+			.main-menu-container {
+				background: #{map-deep-get($config-global, "color", "foreground", "default")};
+			}
+		}
+	}
+}

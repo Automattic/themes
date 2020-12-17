@@ -102,6 +102,11 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 				),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'barnsbury_setup', 12 );
@@ -186,4 +191,3 @@ function barnsbury_editor_styles() {
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'barnsbury_editor_styles' );
-

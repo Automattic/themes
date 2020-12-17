@@ -111,6 +111,11 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'rivington_setup', 12 );

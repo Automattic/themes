@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Barnsbury is an earthy and friendly theme design with farming and agriculture businesses in mind.
 Requires at least: WordPress 4.9.6
-Version: 1.2.10
+Version: 1.2.11
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -4418,4 +4418,120 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	margin-top: 16px;
+}
+
+@media only screen and (max-width: 559px) {
+	.mobile-nav-side .has-menu {
+		position: relative;
+		display: grid;
+		grid-gap: 2px;
+		grid-template-areas: "site-logo site-logo"  "social-navigation main-navigation";
+	}
+	.mobile-nav-side .has-menu:before, .mobile-nav-side .has-menu:after {
+		content: none;
+	}
+	.mobile-nav-side .has-menu.has-title-and-tagline {
+		grid-template-areas: "site-logo site-logo"  "site-title main-navigation"  "site-description main-navigation"  "social-navigation social-navigation";
+	}
+	.mobile-nav-side .has-menu.has-title-and-tagline .site-title {
+		grid-area: site-title;
+		align-self: end;
+	}
+	.mobile-nav-side .has-menu.has-title-and-tagline .site-description {
+		grid-area: site-description;
+		align-self: start;
+	}
+	.mobile-nav-side .has-menu > *:not(.site-logo) {
+		margin: 0;
+	}
+	.mobile-nav-side .has-menu .site-logo {
+		grid-area: site-logo;
+		justify-self: center;
+		margin: 8px 0;
+	}
+	.mobile-nav-side .has-menu .social-navigation {
+		grid-area: social-navigation;
+		align-self: center;
+	}
+	.mobile-nav-side .has-menu .main-navigation {
+		grid-area: main-navigation;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation {
+		margin: 0;
+		justify-self: end;
+		display: flex;
+		align-items: flex-start;
+		justify-content: end;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #woocommerce-toggle:checked + label,
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle:checked + label {
+		position: fixed;
+		top: 18px;
+		right: 16px;
+		z-index: 20000;
+		margin-right: 0;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
+		order: 2;
+		grid-area: menu-toggle;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"] {
+		order: 1;
+		grid-area: cart-toggle;
+		margin-right: 8px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button,
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-menu {
+		line-height: 1.55;
+		padding: 12px;
+		display: inline-block;
+		text-align: center;
+		justify-self: end;
+		font-size: 0.71818rem;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation #toggle-cart[for="woocommerce-toggle"].button svg {
+		margin-top: -2px;
+	}
+	.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container,
+	.mobile-nav-side .site-header #site-navigation.main-navigation > div {
+		grid-area: dropdown-menu;
+		margin-top: 16px;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: #FFFDF6;
+		padding: 48px 16px 8px;
+		overflow-y: auto;
+		white-space: normal;
+	}
+	.mobile-nav-side.has-marketing-bar .site-header #site-navigation.main-navigation > div {
+		top: 45px;
+	}
+	.mobile-nav-side.has-marketing-bar .site-header #site-navigation.main-navigation #woocommerce-toggle:checked + label,
+	.mobile-nav-side.has-marketing-bar .site-header #site-navigation.main-navigation #toggle:checked + label {
+		top: 61px;
+	}
+	.mobile-nav-side.admin-bar .site-header #site-navigation.main-navigation > div {
+		top: 46px;
+	}
+	.mobile-nav-side.admin-bar .site-header #site-navigation.main-navigation #woocommerce-toggle:checked + label,
+	.mobile-nav-side.admin-bar .site-header #site-navigation.main-navigation #toggle:checked + label {
+		top: 64px;
+	}
+	.mobile-nav-side.admin-bar.has-marketing-bar .site-header #site-navigation.main-navigation > div {
+		top: 91px;
+	}
+	.mobile-nav-side.admin-bar.has-marketing-bar .site-header #site-navigation.main-navigation #woocommerce-toggle:checked + label,
+	.mobile-nav-side.admin-bar.has-marketing-bar .site-header #site-navigation.main-navigation #toggle:checked + label {
+		top: 107px;
+	}
+	.lock-scrolling .site {
+		left: 0;
+		max-width: 100%;
+		position: fixed;
+		right: 0;
+	}
 }

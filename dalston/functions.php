@@ -119,6 +119,11 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				'header-text' => array( 'site-title' ),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'dalston_setup', 12 );
@@ -256,4 +261,3 @@ add_action( 'enqueue_block_assets', 'dalston_block_extends' );
 function dalston_is_amp() {
 	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 }
-
