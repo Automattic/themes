@@ -10,7 +10,11 @@ add_color_rule( 'bg', '#ffffff', array(
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
-			.main-navigation > div > ul > li > .sub-menu', 'background-color' ),
+			.main-navigation > div > ul > li > .sub-menu,
+			.site-header .main-navigation > div > ul > li .sub-menu a,
+			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container, 
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -363,7 +367,12 @@ add_color_rule( 'fg1', '#1a1a1a', array(
 
 	// Background-color
 	array( '.has-secondary-background-color[class],
-			.has-secondary-background-color.has-background-dim[class]', 'background-color' ),
+			.has-secondary-background-color.has-background-dim[class],
+			input:hover[type="submit"],
+			.main-navigation .button:focus,
+			.main-navigation .button:hover,
+			.main-navigation #toggle:focus + #toggle-menu,
+			.has-secondary-background-color', 'background-color' ),
 
 ), __( 'Secondary Color' ) );
 
