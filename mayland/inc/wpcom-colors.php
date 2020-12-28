@@ -21,6 +21,7 @@ add_color_rule( 'bg', '#ffffff', array(
 			.sticky-post,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
+			.main-navigation .button,
 			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color)', 'color' ),
 
 	// Background-color Lightened
