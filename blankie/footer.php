@@ -16,8 +16,6 @@
 
 	<footer id="colophon" class="site-footer default-max-width" role="contentinfo" aria-label="<?php esc_attr_e( 'Footer', 'seedlet' ); ?>">
 
-		<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
-
 		<div class="site-info">
 			<?php $blog_info = get_bloginfo( 'name' ); ?>
 			<?php if ( ! empty( $blog_info ) ) : ?>

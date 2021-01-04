@@ -28,6 +28,23 @@ endif;
 add_action( 'after_setup_theme', 'blankie_setup', 11 );
 
 /**
+ * Remove Seedlet theme features.
+ */
+function blankie_remove_parent_theme_features() {
+
+	// Theme Support
+	remove_theme_support( 'custom-header' );
+	remove_theme_support( 'custom-logo' );
+	remove_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Navigation Areas
+	unregister_nav_menu( 'primary' );
+	unregister_nav_menu( 'footer' );
+	unregister_nav_menu( 'social' );
+}
+add_action( 'after_setup_theme', 'blankie_remove_parent_theme_features', 10 );
+
+/**
  * Enqueue scripts and styles.
  */
 function blankie_enqueue() {
