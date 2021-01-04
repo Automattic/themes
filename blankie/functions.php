@@ -45,6 +45,35 @@ function blankie_remove_parent_theme_features() {
 add_action( 'after_setup_theme', 'blankie_remove_parent_theme_features', 10 );
 
 /**
+ * Remove Meta Footer Items.
+ */
+if ( ! function_exists( 'seedlet_entry_meta_footer' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags and comments.
+	 */
+	function seedlet_entry_meta_footer() {
+
+		// Edit post link.
+		edit_post_link(
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers. */
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'seedlet' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			),
+			'<span class="edit-link">' . seedlet_get_icon_svg( 'edit', 16 ),
+			'</span>'
+		);
+	}
+endif;
+
+/**
  * Enqueue scripts and styles.
  */
 function blankie_enqueue() {
