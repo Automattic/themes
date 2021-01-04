@@ -13,7 +13,10 @@ add_color_rule( 'bg', '#ffffff', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			.main-navigation > div > ul > li > .sub-menu,
-			.site-header .main-navigation > div > ul > li .sub-menu a', 'background-color' ),
+			.site-header .main-navigation > div > ul > li .sub-menu a,
+			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container, 
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div', 'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -312,7 +315,11 @@ add_color_rule( 'fg1', '#9B6A36', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'background-color' ),
+			input:hover[type="submit"],
+			.main-navigation .button:focus,
+			.main-navigation .button:hover,
+			.main-navigation #toggle:focus + #toggle-menu,
+			.has-secondary-background-color', 'background-color' ),
 
 	// Border-color
 	array( 'input[type="color"]:focus,
