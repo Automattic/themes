@@ -44,6 +44,13 @@ function blankie_remove_parent_theme_features() {
 }
 add_action( 'after_setup_theme', 'blankie_remove_parent_theme_features', 10 );
 
+function blankie_dequeue_parent_scripts() {
+	// Naviation assets
+	wp_dequeue_script( 'seedlet-primary-navigation-script' );
+	wp_dequeue_style( 'seedlet-style-navigation' );
+}
+add_action( 'wp_enqueue_scripts', 'blankie_dequeue_parent_scripts', 11 );
+
 /**
  * Remove Meta Footer Items.
  */
