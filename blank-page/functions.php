@@ -23,6 +23,45 @@ if ( ! function_exists( 'blank_page_setup' ) ) :
 
 		// Enqueue editor styles.
 		add_editor_style( 'variables.css' );
+
+		// Editor color palette.
+		$colors_theme_mod = get_theme_mod( 'custom_colors_active' );
+		$primary          = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-primary' ) ) ) ? '#000000' : get_theme_mod( 'seedlet_--global--color-primary' );
+		$secondary        = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-secondary' ) ) ) ? '#007cba' : get_theme_mod( 'seedlet_--global--color-secondary' );
+		$foreground       = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-foreground' ) ) ) ? '#333333' : get_theme_mod( 'seedlet_--global--color-foreground' );
+		$tertiary         = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-tertiary' ) ) ) ? '#FAFAFA' : get_theme_mod( 'seedlet_--global--color-tertiary' );
+		$background       = ( ! empty( $colors_theme_mod ) && 'default' === $colors_theme_mod || empty( get_theme_mod( 'seedlet_--global--color-background' ) ) ) ? '#FFFFFF' : get_theme_mod( 'seedlet_--global--color-background' );
+
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'blank-page' ),
+					'slug'  => 'primary',
+					'color' => $primary,
+				),
+				array(
+					'name'  => __( 'Secondary', 'blank-page' ),
+					'slug'  => 'secondary',
+					'color' => $secondary,
+				),
+				array(
+					'name'  => __( 'Foreground', 'blank-page' ),
+					'slug'  => 'foreground',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Tertiary', 'blank-page' ),
+					'slug'  => 'tertiary',
+					'color' => $tertiary,
+				),
+				array(
+					'name'  => __( 'Background', 'blank-page' ),
+					'slug'  => 'background',
+					'color' => $background,
+				),
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'blank_page_setup', 11 );
