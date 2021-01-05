@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Blankie
+ * @package Blank Page
  * @since 1.0
  */
 
@@ -14,7 +14,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer default-max-width" role="contentinfo" aria-label="<?php esc_attr_e( 'Footer', 'seedlet' ); ?>">
+	<footer id="colophon" class="site-footer default-max-width" role="contentinfo" aria-label="<?php esc_attr_e( 'Footer', 'blank-page' ); ?>">
 
 		<div class="site-info">
 			<?php $blog_info = get_bloginfo( 'name' ); ?>

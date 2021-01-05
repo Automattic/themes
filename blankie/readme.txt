@@ -1,4 +1,4 @@
-=== Blankie ===
+=== Blank Page ===
 Contributors: Automattic
 Requires at least: 5.0
 Tested up to: 5.6
@@ -19,8 +19,8 @@ Seedlet is a blank starting point for building your site.
 
 == Copyright ==
 
-Blankie WordPress Theme, (C) 2020 Automattic, Inc.
-Blankie is distributed under the terms of the GNU GPL.
+Blank Page WordPress Theme, (C) 2020 Automattic, Inc.
+Blank Page is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
