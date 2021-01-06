@@ -28,7 +28,7 @@ $header_class = $show_title ? 'site-title' : 'screen-reader-text';
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'blank-canvas' ); ?></a>
 
-	<?php if ( ! is_singular() ) { ?>
+	<?php if ( ! is_singular() ) : ?>
 		<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 			<?php if ( has_custom_logo() && $show_title ) : ?>
 				<div class="site-logo"><?php the_custom_logo(); ?></div>
