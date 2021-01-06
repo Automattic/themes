@@ -20,7 +20,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'seedlet' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blank-page' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -33,7 +33,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'seedlet' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'blank-page' ),
 				'after'  => '</div>',
 			)
 		);
