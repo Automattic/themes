@@ -1,0 +1,84 @@
+/*
+Theme Name: Blank Page
+Theme URI: https://github.com/Automattic/themes/blankie
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A blank starting point for building your site.
+Requires at least: 4.9.6
+Tested up to: 5.6
+Requires PHP: 5.6.2
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: blank-page
+Tags: one-column, accessibility-ready, custom-colors, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready
+
+Blank Page WordPress Theme, (C) 2021 Automattic, Inc.
+Blank Page is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+*/
+
+@import "variables.css";
+
+/* Remove outside padding on single post pages. */
+
+.single .site-main,
+.page .site-main {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/* Remove extra margin from articles on single post pages. */
+
+.single .site-main > article,
+.page .site-main > article {
+	margin-bottom: 0;
+}
+
+/* Add some top padding if the first block on the page is not full-width or a spacer. */
+
+.single .entry-content > *:first-child:not(.alignfull):not(.wp-block-spacer),
+.page .entry-content > *:first-child:not(.alignfull):not(.wp-block-spacer) {
+	padding-top: var(--global--spacing-vertical);
+}
+
+/* Add some top padding for archive pages. */
+
+body:not(.single):not(.page),
+body:not(.single):not(.page) .site-content {
+	padding-top: var(--global--spacing-vertical);
+}
+
+@media screen and (min-width: 580px) {
+
+	body:not(.single):not(.page),
+	body:not(.single):not(.page) .site-content {
+		padding-top: calc(3 * var(--global--spacing-vertical));
+	}
+}
+
+
+/* Remove the top border from the entry-footer. */
+
+.site-main > article > .entry-footer {
+	border-top-width: 0
+}
+
+/* Center-align headers and footers. */
+
+.entry-header,
+.page-title,
+.entry-footer,
+.site-info {
+	text-align: center;
+}
