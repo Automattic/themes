@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Blank Page
+ * @package Blank Canvas
  * @since 1.0
  */
 
@@ -20,7 +20,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blank-page' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blank-canvas' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -33,7 +33,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'blank-page' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'blank-canvas' ),
 				'after'  => '</div>',
 			)
 		);

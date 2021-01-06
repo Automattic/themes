@@ -1,4 +1,4 @@
-=== Blank Page ===
+=== Blank Canvas ===
 Contributors: Automattic
 Requires at least: 5.0
 Tested up to: 5.6
@@ -10,7 +10,7 @@ A blank starting point for building your site.
 
 == Description ==
 
-Blank Page is a blank starting point for building your site. 
+Blank Canvas is a blank starting point for building your site. 
 
 == Changelog ==
 
@@ -19,8 +19,8 @@ Blank Page is a blank starting point for building your site.
 
 == Copyright ==
 
-Blank Page WordPress Theme, (C) 2020 Automattic, Inc.
-Blank Page is distributed under the terms of the GNU GPL.
+Blank Canvas WordPress Theme, (C) 2020 Automattic, Inc.
+Blank Canvas is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -1,15 +1,15 @@
 <?php
 /**
- * Blank Page functions and definitions
+ * Blank Canvas functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage Blank Page
+ * @subpackage Blank Canvas
  * @since 1.0
  */
 
-if ( ! function_exists( 'blank_page_setup' ) ) :
+if ( ! function_exists( 'blank_canvas_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -17,7 +17,7 @@ if ( ! function_exists( 'blank_page_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function blank_page_setup() {
+	function blank_canvas_setup() {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
@@ -36,27 +36,27 @@ if ( ! function_exists( 'blank_page_setup' ) ) :
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary', 'blank-page' ),
+					'name'  => __( 'Primary', 'blank-canvas' ),
 					'slug'  => 'primary',
 					'color' => $primary,
 				),
 				array(
-					'name'  => __( 'Secondary', 'blank-page' ),
+					'name'  => __( 'Secondary', 'blank-canvas' ),
 					'slug'  => 'secondary',
 					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Foreground', 'blank-page' ),
+					'name'  => __( 'Foreground', 'blank-canvas' ),
 					'slug'  => 'foreground',
 					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Tertiary', 'blank-page' ),
+					'name'  => __( 'Tertiary', 'blank-canvas' ),
 					'slug'  => 'tertiary',
 					'color' => $tertiary,
 				),
 				array(
-					'name'  => __( 'Background', 'blank-page' ),
+					'name'  => __( 'Background', 'blank-canvas' ),
 					'slug'  => 'background',
 					'color' => $background,
 				),
@@ -64,12 +64,12 @@ if ( ! function_exists( 'blank_page_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'blank_page_setup', 11 );
+add_action( 'after_setup_theme', 'blank_canvas_setup', 11 );
 
 /**
  * Remove Seedlet theme features.
  */
-function blank_page_remove_parent_theme_features() {
+function blank_canvas_remove_parent_theme_features() {
 
 	// Theme Support
 	remove_theme_support( 'custom-header' );
@@ -81,14 +81,14 @@ function blank_page_remove_parent_theme_features() {
 	unregister_nav_menu( 'footer' );
 	unregister_nav_menu( 'social' );
 }
-add_action( 'after_setup_theme', 'blank_page_remove_parent_theme_features', 10 );
+add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 10 );
 
-function blank_page_dequeue_parent_scripts() {
+function blank_canvas_dequeue_parent_scripts() {
 	// Naviation assets
 	wp_dequeue_script( 'seedlet-primary-navigation-script' );
 	wp_dequeue_style( 'seedlet-style-navigation' );
 }
-add_action( 'wp_enqueue_scripts', 'blank_page_dequeue_parent_scripts', 11 );
+add_action( 'wp_enqueue_scripts', 'blank_canvas_dequeue_parent_scripts', 11 );
 
 /**
  * Remove Meta Footer Items.
@@ -122,7 +122,7 @@ endif;
 /**
  * Enqueue scripts and styles.
  */
-function blank_page_enqueue() {
-	wp_enqueue_style( 'blank-page-styles', get_stylesheet_uri() );
+function blank_canvas_enqueue() {
+	wp_enqueue_style( 'blank-canvas-styles', get_stylesheet_uri() );
 }
-add_action( 'wp_enqueue_scripts', 'blank_page_enqueue', 11 );
+add_action( 'wp_enqueue_scripts', 'blank_canvas_enqueue', 11 );
