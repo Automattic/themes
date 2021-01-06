@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Blank Page
+ * @package Blank Canvas
  * @since 1.0
  */
 $blog_info    = get_bloginfo( 'name' );
@@ -26,7 +26,7 @@ $header_class = $show_title ? 'site-title' : 'screen-reader-text';
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'blank-page' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'blank-canvas' ); ?></a>
 
 	<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 		<?php if ( has_custom_logo() && $show_title && ! is_singular() ) : ?>
