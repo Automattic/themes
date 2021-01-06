@@ -10,7 +10,7 @@ A blank starting point for building your site.
 
 == Description ==
 
-Seedlet is a blank starting point for building your site. 
+Blank Page is a blank starting point for building your site. 
 
 == Changelog ==
 
