@@ -77,8 +77,8 @@ function varia_wpcom_customize_update( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'hide_site_footer', array(
-		'label'		  => esc_html__( 'Hide the Site Footer Menu', 'varia' ),
-		'description' => esc_html__( 'Check to hide the site menu in the footer, if your homepage is set to display a static page.', 'varia' ),
+		'label'		  => esc_html__( 'Hide the Site Footer Menu & Widgets', 'varia' ),
+		'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'varia' ),
 		'section'	  => 'static_front_page',
 		'priority'	  => 10,
 		'type'		  => 'checkbox',
