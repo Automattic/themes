@@ -71,20 +71,21 @@ add_action( 'after_setup_theme', 'blank_canvas_setup', 11 );
  */
 function blank_canvas_remove_parent_theme_features() {
 
-	// Theme Support
+	// Theme Support.
 	remove_theme_support( 'custom-header' );
 	remove_theme_support( 'custom-logo' );
 	remove_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Navigation Areas
+	// Navigation Areas.
 	unregister_nav_menu( 'primary' );
 	unregister_nav_menu( 'footer' );
 	unregister_nav_menu( 'social' );
 }
-add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 10 );
+add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 11 );
 
 function blank_canvas_dequeue_parent_scripts() {
-	// Naviation assets
+
+	// Naviation assets.
 	wp_dequeue_script( 'seedlet-primary-navigation-script' );
 	wp_dequeue_style( 'seedlet-style-navigation' );
 }
