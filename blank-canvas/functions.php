@@ -115,6 +115,9 @@ function blank_canvas_remove_customizer_settings( $wp_customize ) {
 		$wp_customize->remove_control( 'jetpack_content_author_bio_title' );
 		$wp_customize->remove_control( 'jetpack_content_author_bio' );
 	}
+
+	// Add a Customizer message about the site title & tagline options.
+	$wp_customize->get_section( 'title_tagline' )->description = 'This theme is designed to hide the site title and tagline on all single posts and pages.';
 }
 add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
 
