@@ -83,6 +83,9 @@ function blank_canvas_remove_parent_theme_features() {
 }
 add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 11 );
 
+/**
+ * Dequeue Seedlet scripts.
+ */
 function blank_canvas_dequeue_parent_scripts() {
 
 	// Naviation assets.
@@ -91,6 +94,17 @@ function blank_canvas_dequeue_parent_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_dequeue_parent_scripts', 11 );
 
+/**
+ * Remove Seedlet's widget area.
+ */
+function blank_canvas_remove_widgets_area() {
+	unregister_sidebar( 'sidebar-1' );
+}
+add_action( 'widgets_init', 'blank_canvas_remove_widgets_area', 11 );
+
+/**
+ * Remove unused custmizer settings.
+ */
 function blank_canvas_remove_customizer_settings( $wp_customize ) {
 
 	// Remove the navigation menus Customizer panel.
