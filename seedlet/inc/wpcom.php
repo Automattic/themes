@@ -146,11 +146,25 @@ function seedlet_wpcom_customize_update( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'hide_front_page_title', array(
+		'label'		  => esc_html__( 'Hide Homepage Title', 'seedlet' ),
 		'description' => esc_html__( 'Check to hide the page title, if your homepage is set to display a static page.', 'seedlet' ),
 		'section'	  => 'static_front_page',
 		'priority'	  => 10,
 		'type'		  => 'checkbox',
 		'settings'	  => 'hide_front_page_title',
+	) );
+
+	$wp_customize->add_setting( 'color_a11y_warning' );
+    $wp_customize->add_control( 'color_a11y_warning', array(
+        'id'          => 'id',
+        'label'       => esc_html__( 'Color Accessibility Warning', 'seedlet' ),
+		'description' => sprintf(
+							__( 'In order to ensure people can read your site, try to maintain a strong contrast ratio between the colors you choose here. <a href="%s" target="_blank">Learn more about color contrast</a>.', 'seedlet' ),
+							esc_url( 'https://a11yproject.com/posts/what-is-color-contrast/' )
+						 ),
+        'section'     => 'colors_manager_tool',
+		'priority'	  => 10,
+		'type'		  => 'hidden',
 	) );
 }
 add_action( 'customize_register', 'seedlet_wpcom_customize_update' );
