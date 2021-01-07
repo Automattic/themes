@@ -91,6 +91,19 @@ function blank_canvas_dequeue_parent_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_dequeue_parent_scripts', 11 );
 
+function blank_canvas_remove_customizer_settings( $wp_customize ) {
+
+	// Remove the navigation menus Customizer panel.
+	$wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
+
+	// Remove Jetpack's Author Bio setting.
+	if ( function_exists( 'jetpack_author_bio' ) ) {
+		$wp_customize->remove_control( 'jetpack_content_author_bio_title' );
+		$wp_customize->remove_control( 'jetpack_content_author_bio' );
+	}
+}
+add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
+
 /**
  * Remove Meta Footer Items.
  */
