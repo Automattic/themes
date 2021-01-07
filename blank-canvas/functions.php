@@ -73,7 +73,6 @@ function blank_canvas_remove_parent_theme_features() {
 
 	// Theme Support.
 	remove_theme_support( 'custom-header' );
-	remove_theme_support( 'custom-logo' );
 	remove_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Navigation Areas.
