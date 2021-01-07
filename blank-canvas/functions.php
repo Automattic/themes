@@ -116,7 +116,7 @@ function blank_canvas_remove_customizer_settings( $wp_customize ) {
 	}
 
 	// Add a Customizer message about the site title & tagline options.
-	$wp_customize->get_section( 'title_tagline' )->description = __( 'This theme is designed to hide the site title and tagline on all single posts and pages.', 'blank-canvas' );
+	$wp_customize->get_section( 'title_tagline' )->description = __( 'This theme is designed to hide the site logo, site title, and tagline on all single posts and pages.', 'blank-canvas' );
 }
 add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
 
