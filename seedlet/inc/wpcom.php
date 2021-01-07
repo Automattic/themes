@@ -166,6 +166,38 @@ function seedlet_wpcom_customize_update( $wp_customize ) {
 		'priority'	  => 10,
 		'type'		  => 'hidden',
 	) );
+
+	$wp_customize->add_setting( 'hide_site_header', array(
+		'default'              => false,
+		'type'                 => 'theme_mod',
+		'transport'            => 'postMessage',
+		'sanitize_callback'    => 'seedlet_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'hide_site_header', array(
+		'label'		  => esc_html__( 'Hide the Site Header', 'seedlet' ),
+		'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
+		'section'	  => 'static_front_page',
+		'priority'	  => 10,
+		'type'		  => 'checkbox',
+		'settings'	  => 'hide_site_header',
+	) );
+
+	$wp_customize->add_setting( 'hide_site_footer', array(
+		'default'              => false,
+		'type'                 => 'theme_mod',
+		'transport'            => 'postMessage',
+		'sanitize_callback'    => 'seedlet_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'hide_site_footer', array(
+		'label'		  => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
+		'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
+		'section'	  => 'static_front_page',
+		'priority'	  => 10,
+		'type'		  => 'checkbox',
+		'settings'	  => 'hide_site_footer',
+	) );
 }
 add_action( 'customize_register', 'seedlet_wpcom_customize_update' );
 
@@ -213,6 +245,18 @@ function seedlet_wpcom_body_classes( $classes ) {
 
 	if ( true === $hide ) {
 		$classes[] = 'hide-homepage-title';
+	}
+
+	$hide_site_header = get_theme_mod( 'hide_site_header', false );
+
+	if ( true === $hide_site_header ) {
+		$classes[] = 'hide-homepage-header';
+	}
+
+	$hide_site_footer = get_theme_mod( 'hide_site_footer', false );
+
+	if ( true === $hide_site_footer ) {
+		$classes[] = 'hide-homepage-footer';
 	}
 
 	$credit_option = get_option( 'footercredit' );
