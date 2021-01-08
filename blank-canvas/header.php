@@ -28,26 +28,28 @@ $header_class = $show_title ? 'site-title' : 'screen-reader-text';
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'blank-canvas' ); ?></a>
 
-	<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
-		<?php if ( has_custom_logo() && $show_title && ! is_singular() ) : ?>
-			<div class="site-logo"><?php the_custom_logo(); ?></div>
-		<?php endif; ?>
+	<?php if ( ! is_singular() ) : ?>
+		<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
+			<?php if ( has_custom_logo() && $show_title ) : ?>
+				<div class="site-logo"><?php the_custom_logo(); ?></div>
+			<?php endif; ?>
 
-		<div class="site-branding">
-			<?php if ( ! empty( $blog_info ) && $show_title && ! is_singular() ) : ?>
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $blog_info; ?></a></h1>
-				<?php else : ?>
-					<p class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $blog_info; ?></a></p>
+			<div class="site-branding">
+				<?php if ( ! empty( $blog_info ) && $show_title ) : ?>
+					<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $blog_info; ?></a></h1>
+					<?php else : ?>
+						<p class="<?php echo esc_attr( $header_class ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $blog_info; ?></a></p>
+					<?php endif; ?>
 				<?php endif; ?>
-			<?php endif; ?>
 
-			<?php if ( ( $description || is_customize_preview() ) && $show_title && ! is_singular() ) : ?>
-				<p class="site-description">
-					<?php echo $description; ?>
-				</p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-	</header><!-- #masthead -->
+				<?php if ( ( $description || is_customize_preview() ) && $show_title ) : ?>
+					<p class="site-description">
+						<?php echo $description; ?>
+					</p>
+				<?php endif; ?>
+			</div><!-- .site-branding -->
+		</header><!-- #masthead -->
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
