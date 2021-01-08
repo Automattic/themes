@@ -71,24 +71,54 @@ add_action( 'after_setup_theme', 'blank_canvas_setup', 11 );
  */
 function blank_canvas_remove_parent_theme_features() {
 
-	// Theme Support
+	// Theme Support.
 	remove_theme_support( 'custom-header' );
-	remove_theme_support( 'custom-logo' );
 	remove_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Navigation Areas
+	// Navigation Areas.
 	unregister_nav_menu( 'primary' );
 	unregister_nav_menu( 'footer' );
 	unregister_nav_menu( 'social' );
 }
-add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 10 );
+add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 11 );
 
+/**
+ * Dequeue Seedlet scripts.
+ */
 function blank_canvas_dequeue_parent_scripts() {
-	// Naviation assets
+
+	// Naviation assets.
 	wp_dequeue_script( 'seedlet-primary-navigation-script' );
 	wp_dequeue_style( 'seedlet-style-navigation' );
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_dequeue_parent_scripts', 11 );
+
+/**
+ * Remove Seedlet's widget area.
+ */
+function blank_canvas_remove_widgets_area() {
+	unregister_sidebar( 'sidebar-1' );
+}
+add_action( 'widgets_init', 'blank_canvas_remove_widgets_area', 11 );
+
+/**
+ * Remove unused custmizer settings.
+ */
+function blank_canvas_remove_customizer_settings( $wp_customize ) {
+
+	// Remove the navigation menus Customizer panel.
+	$wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
+
+	// Remove Jetpack's Author Bio setting.
+	if ( function_exists( 'jetpack_author_bio' ) ) {
+		$wp_customize->remove_control( 'jetpack_content_author_bio_title' );
+		$wp_customize->remove_control( 'jetpack_content_author_bio' );
+	}
+
+	// Add a Customizer message about the site title & tagline options.
+	$wp_customize->get_section( 'title_tagline' )->description = __( 'This theme is designed to hide the site logo, site title, and tagline on all single posts and pages.', 'blank-canvas' );
+}
+add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
 
 /**
  * Remove Meta Footer Items.
