@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Template: twentynineteen
 Description: Simple, approachable, with bold, handsome typography, Friendly Business conveys quality and sustainability, which makes it especially good fit for education, agriculture and family-run businesses.
 Requires at least: WordPress 4.9.6
-Version: 1.4.1
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: friendly-business
@@ -138,8 +138,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -632,18 +631,14 @@ h6 {
 .error-404 .page-title,
 .comments-title,
 blockquote {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   word-break: break-word;
 }
 
 /* Do not hyphenate entry title on tablet view and bigger. */
 @media only screen and (min-width: 768px) {
   .entry-title {
-    -webkit-hyphens: none;
-        -ms-hyphens: none;
-            hyphens: none;
+    hyphens: none;
   }
 }
 
@@ -793,6 +788,10 @@ html[lang="vi"] .site * {
 /* Elements */
 html {
   box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #c7d6c8;
 }
 
 ::selection {
@@ -1212,6 +1211,7 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
     width: auto;
+    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
   }
@@ -1316,6 +1316,7 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
+    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
@@ -1334,7 +1335,6 @@ body.page .main-navigation {
     left: 0;
     right: auto;
     display: block;
-    width: -webkit-max-content;
     width: max-content;
   }
 }
@@ -1398,6 +1398,7 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
+    min-width: -moz-max-content;
     min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
@@ -1420,7 +1421,6 @@ body.page .main-navigation {
     left: 0;
     right: auto;
     display: table;
-    width: -webkit-max-content;
     width: max-content;
   }
 }
@@ -1676,10 +1676,7 @@ body.page .main-navigation {
 
 .post-navigation .nav-links a .meta-nav {
   color: #0d1b24;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .post-navigation .nav-links a .meta-nav:before, .post-navigation .nav-links a .meta-nav:after {
@@ -1691,9 +1688,7 @@ body.page .main-navigation {
 }
 
 .post-navigation .nav-links a .post-title {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
 }
 
 .post-navigation .nav-links a:hover {
@@ -1819,8 +1814,7 @@ body.page .main-navigation {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -1836,8 +1830,7 @@ body.page .main-navigation {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -2134,6 +2127,7 @@ body.page .main-navigation {
 .site-header.featured-image .social-navigation svg,
 .site-header.featured-image .site-featured-image svg {
   /* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
 }
 
@@ -2155,12 +2149,11 @@ body.page .main-navigation {
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+@supports (object-fit: cover) {
   .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
     transform: none;
     width: 100%;
@@ -2328,6 +2321,10 @@ body.page .main-navigation {
   .image-filters-enabled .site-header.featured-image:after {
     opacity: 0.18;
   }
+}
+
+.site-header.featured-image ::-moz-selection {
+  background: rgba(255, 253, 246, 0.17);
 }
 
 .site-header.featured-image ::selection {
@@ -2564,7 +2561,7 @@ body.page .main-navigation {
 }
 
 .entry .entry-content .more-link:after {
-  content: "\02190";
+  content: 02190;
   display: inline-block;
   margin-right: 0.5em;
 }
