@@ -3191,6 +3191,17 @@ nav a {
 	}
 }
 
+.home.page.hide-homepage-header.hide-homepage-title .entry-content {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-image.alignfull:first-child,
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-cover.alignfull:first-child,
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-media-text.alignfull:first-child {
+	margin-top: calc(-1 * var(--global--spacing-vertical));
+}
+
 .entry-attachment {
 	text-align: center;
 }
@@ -3268,6 +3279,10 @@ nav a {
 	margin-top: calc( var(--global--spacing-vertical) * 3);
 	padding-top: var(--global--spacing-unit);
 	border-top: var(--separator--height) solid var(--separator--border-color);
+}
+
+.home.page.hide-homepage-footer .site-main > article > .entry-footer {
+	border-width: 0;
 }
 
 /**

@@ -16,20 +16,22 @@
 
 	<footer id="colophon" class="site-footer default-max-width" role="contentinfo" aria-label="<?php esc_attr_e( 'Footer', 'seedlet' ); ?>">
 
-		<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
+		<?php if ( false === get_theme_mod( 'hide_site_footer', false ) ) : ?>
+			<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 
-		<?php if ( has_nav_menu( 'footer' ) ) : ?>
-		<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'seedlet' ); ?>">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer',
-					'menu_class'     => 'footer-menu',
-					'depth'          => 1,
-				)
-			);
-			?>
-		</nav><!-- .footer-navigation -->
+			<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'seedlet' ); ?>">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'menu_class'     => 'footer-menu',
+						'depth'          => 1,
+					)
+				);
+				?>
+			</nav><!-- .footer-navigation -->
+			<?php endif; ?>
 		<?php endif; ?>
 
 		<div class="site-info">

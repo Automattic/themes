@@ -93,26 +93,4 @@ function changeColorLuminescence( hex, amount ) {
 			}
 		} );
 	} );
-
-	// Hide Site Header
-	wp.customize( 'hide_site_header', function( value ) {
-		value.bind( function( to ) {
-			if ( true === to ) {
-				$( 'body' ).addClass( 'hide-homepage-header' );
-			} else {
-				$( 'body' ).removeClass( 'hide-homepage-header' );
-			}
-		} );
-	} );
-
-	// Hide Site Footer Menu
-	wp.customize( 'hide_site_footer', function( value ) {
-		value.bind( function( to ) {
-			if ( true === to ) {
-				$( 'body' ).addClass( 'hide-homepage-footer' );
-			} else {
-				$( 'body' ).removeClass( 'hide-homepage-footer' );
-			}
-		} );
-	} );
 } )( jQuery );

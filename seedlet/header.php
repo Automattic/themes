@@ -28,6 +28,7 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'seedlet' ); ?></a>
 
+	<?php if ( false === get_theme_mod( 'hide_site_header', false ) ) : ?>
 		<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 			<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 
@@ -121,5 +122,6 @@ $header_classes .= $has_primary_nav ? ' has-menu' : '';
 			<?php endif; ?>
 
 		</header><!-- #masthead -->
+	<?php endif; ?>
 
 	<div id="content" class="site-content">
