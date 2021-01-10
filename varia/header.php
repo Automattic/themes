@@ -14,8 +14,8 @@ $has_primary_nav = has_nav_menu( 'menu-1' );
 $has_menu_items = wp_nav_menu(
 	array(
 		'theme_location' => 'menu-1',
-		'fallback_cb' => false,
-		'echo' => false 
+		'fallback_cb' 	 => false,
+		'echo' 			 => false 
 	));
 $header_classes  = 'site-header responsive-max-width';
 $header_classes .= has_custom_logo() ? ' has-logo' : '';
