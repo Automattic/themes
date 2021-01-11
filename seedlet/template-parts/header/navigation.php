@@ -1,7 +1,23 @@
 <?php
-	$has_primary_nav = has_nav_menu( 'primary' );
-?>
-<?php if ( $has_primary_nav ) : ?>
+	$has_primary_nav       = has_nav_menu( 'primary' );
+	$has_primary_nav_items = wp_nav_menu(
+		array(
+			'theme_location' => 'primary',
+			'fallback_cb'    => false,
+			'echo'           => false,
+		)
+	);
+	$has_social_nav        = has_nav_menu( 'social' );
+	$has_social_nav_items  = wp_nav_menu(
+		array(
+			'theme_location' => 'social',
+			'fallback_cb'    => false,
+			'echo'           => false,
+		)
+	);
+
+	?>
+<?php if ( $has_primary_nav && $has_primary_nav_items ) : ?>
 	<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'seedlet' ); ?>">
 		<button id="primary-close-menu" class="button close">
 			<span class="dropdown-icon close"><?php _e( 'Close', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'close' ); ?></span>
@@ -27,7 +43,7 @@
 <?php endif; ?>
 
 <div class="menu-button-container">
-	<?php if ( $has_primary_nav ) : ?>
+	<?php if ( $has_primary_nav && $has_primary_nav_items ) : ?>
 		<button id="primary-open-menu" class="button open">
 			<span class="dropdown-icon open"><?php _e( 'Menu', 'seedlet' ); ?> <?php echo seedlet_get_icon_svg( 'menu' ); ?></span>
 			<span class="hide-visually expanded-text"><?php _e( 'expanded', 'seedlet' ); ?></span>
@@ -75,7 +91,7 @@
 	<?php endif; ?>
 </div>
 
-<?php if ( has_nav_menu( 'social' ) ) : ?>
+<?php if ( $has_social_nav && $has_social_nav_items ) : ?>
 	<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'seedlet' ); ?>">
 		<?php
 		wp_nav_menu(
