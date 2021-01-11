@@ -12,7 +12,5 @@
  */
 function blank_canvas_wpcom_customize_update( $wp_customize ) {
 	$wp_customize->remove_control( 'hide_front_page_title');
-	$wp_customize->remove_control( 'hide_site_header' );
-	$wp_customize->remove_control( 'hide_site_footer' );
 }
 add_action( 'customize_register', 'blank_canvas_wpcom_customize_update', 11 );
