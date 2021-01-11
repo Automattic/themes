@@ -1,4 +1,6 @@
-<?php if ( false === get_theme_mod( 'hide_site_footer', false ) ) : ?>
+<?php if ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() ) : ?>
+	<?php return; ?>
+<?php else : ?>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 	<?php get_template_part( 'template-parts/footer/footer-menu' ); ?>
 <?php endif; ?>
