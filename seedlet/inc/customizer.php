@@ -138,6 +138,42 @@ if ( ! class_exists( 'Seedlet_Customize' ) ) {
 					'label'   => esc_html__( 'Display Site Title & Tagline', 'seedlet' ),
 				)
 			);
+
+			// Add setting to hide the site header on the homepage.
+			$wp_customize->add_setting( 'hide_site_header', array(
+				'default'              => false,
+				'type'                 => 'theme_mod',
+				'transport'            => 'refresh',
+				'sanitize_callback'    => array( __CLASS__, 'sanitize_checkbox' ),
+			) );
+
+			// Add control to hide the site header on the homepage.
+			$wp_customize->add_control( 'hide_site_header', array(
+				'label'		  => esc_html__( 'Hide the Site Header', 'seedlet' ),
+				'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
+				'section'	  => 'static_front_page',
+				'priority'	  => 10,
+				'type'		  => 'checkbox',
+				'settings'	  => 'hide_site_header',
+			) );
+
+			// Add setting to hide footer elements on the homepage.
+			$wp_customize->add_setting( 'hide_site_footer', array(
+				'default'              => false,
+				'type'                 => 'theme_mod',
+				'transport'            => 'refresh',
+				'sanitize_callback'    => array( __CLASS__, 'sanitize_checkbox' ),
+			) );
+
+			// Add control to hide footer elements on the homepage.
+			$wp_customize->add_control( 'hide_site_footer', array(
+				'label'		  => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
+				'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
+				'section'	  => 'static_front_page',
+				'priority'	  => 10,
+				'type'		  => 'checkbox',
+				'settings'	  => 'hide_site_footer',
+			) );
 		}
 
 		/**

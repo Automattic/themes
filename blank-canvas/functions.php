@@ -115,6 +115,12 @@ function blank_canvas_remove_customizer_settings( $wp_customize ) {
 		$wp_customize->remove_control( 'jetpack_content_author_bio' );
 	}
 
+	// Remove Seedlet's header and footer hide options,
+	// since they're already hidden by default.
+	$wp_customize->remove_control( 'hide_site_header' );
+	$wp_customize->remove_control( 'hide_site_footer' );
+
+
 	// Add a Customizer message about the site title & tagline options.
 	$wp_customize->get_section( 'title_tagline' )->description = __( 'This theme is designed to hide the site logo, site title, and tagline on all single posts and pages.', 'blank-canvas' );
 }
