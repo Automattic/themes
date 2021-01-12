@@ -53,38 +53,6 @@ function varia_wpcom_customize_update( $wp_customize ) {
 		'settings'	  => 'hide_front_page_title',
 	) );
 
-	$wp_customize->add_setting( 'hide_site_header', array(
-		'default'              => false,
-		'type'                 => 'theme_mod',
-		'transport'            => 'postMessage',
-		'sanitize_callback'    => 'varia_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'hide_site_header', array(
-		'label'		  => esc_html__( 'Hide the Site Header', 'varia' ),
-		'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'varia' ),
-		'section'	  => 'static_front_page',
-		'priority'	  => 10,
-		'type'		  => 'checkbox',
-		'settings'	  => 'hide_site_header',
-	) );
-
-	$wp_customize->add_setting( 'hide_site_footer', array(
-		'default'              => false,
-		'type'                 => 'theme_mod',
-		'transport'            => 'postMessage',
-		'sanitize_callback'    => 'varia_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( 'hide_site_footer', array(
-		'label'		  => esc_html__( 'Hide the Site Footer Menu & Widgets', 'varia' ),
-		'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'varia' ),
-		'section'	  => 'static_front_page',
-		'priority'	  => 10,
-		'type'		  => 'checkbox',
-		'settings'	  => 'hide_site_footer',
-	) );
-
     $wp_customize->add_setting( 'color_a11y_warning' );
     $wp_customize->add_control( 'color_a11y_warning', array(
         'id'          => 'id',

@@ -358,6 +358,54 @@ function varia_mobile_nav_on_side_setup() {
 }
 
 /**
+ * Add ability to show or hide header and footer elements on the homepage.
+ */
+function varia_customize_header_footer( $wp_customize ) {
+
+	// Add setting to hide the site header on the homepage.
+	$wp_customize->add_setting( 'hide_site_header', array(
+		'default'              => false,
+		'type'                 => 'theme_mod',
+		'transport'            => 'refresh',
+		'sanitize_callback'    => 'varia_sanitize_checkbox',
+	) );
+
+	// Add control to hide the site header on the homepage.
+	$wp_customize->add_control( 'hide_site_header', array(
+		'label'		  => esc_html__( 'Hide the Site Header', 'seedlet' ),
+		'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
+		'section'	  => 'static_front_page',
+		'priority'	  => 10,
+		'type'		  => 'checkbox',
+		'settings'	  => 'hide_site_header',
+	) );
+
+	// Add setting to hide footer elements on the homepage.
+	$wp_customize->add_setting( 'hide_site_footer', array(
+		'default'              => false,
+		'type'                 => 'theme_mod',
+		'transport'            => 'refresh',
+		'sanitize_callback'    => 'varia_sanitize_checkbox',
+	) );
+
+	// Add control to hide footer elements on the homepage.
+	$wp_customize->add_control( 'hide_site_footer', array(
+		'label'		  => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
+		'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
+		'section'	  => 'static_front_page',
+		'priority'	  => 10,
+		'type'		  => 'checkbox',
+		'settings'	  => 'hide_site_footer',
+	) );
+
+	// Sanitize checkboxes.
+	function varia_sanitize_checkbox( $checked = null ) {
+		return (bool) isset( $checked ) && true === $checked;
+	}
+}
+add_action( 'customize_register', 'varia_customize_header_footer' );
+
+/**
  * SVG Icons class.
  */
 require get_template_directory() . '/classes/class-varia-svg-icons.php';

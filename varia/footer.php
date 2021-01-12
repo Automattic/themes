@@ -21,24 +21,29 @@
 		$template = new A8C\FSE\WP_Template();
 		$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
 	else : // Otherwise we'll fallback to the default Varia footer below. ?>
-	<footer id="colophon" class="site-footer responsive-max-width">
-	<?php
-		get_template_part( 'template-parts/footer/footer', 'widgets' );
 
-		if ( has_nav_menu( 'menu-2' ) ) : ?>
-			<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'varia' ); ?>">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-2',
-						'menu_class'     => 'footer-menu',
-						'depth'          => 1,
-					)
-				);
-				?>
-			</nav><!-- .footer-navigation -->
-		<?php endif;
-	endif; ?>
+	<footer id="colophon" class="site-footer responsive-max-width">
+			<?php
+			if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
+
+				get_template_part( 'template-parts/footer/footer', 'widgets' );
+
+				if ( has_nav_menu( 'menu-2' ) ) : ?>
+					<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'varia' ); ?>">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-2',
+								'menu_class'     => 'footer-menu',
+								'depth'          => 1,
+							)
+						);
+						?>
+					</nav><!-- .footer-navigation -->
+				<?php endif;
+			endif; ?>
+
+		<?php endif; ?>
 
 		<div class="site-info">
 			<?php $blog_info = get_bloginfo( 'name' ); ?>

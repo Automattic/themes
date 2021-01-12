@@ -51,6 +51,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 			?>
 		</header>
 
+	<?php elseif ( ( true === get_theme_mod( 'hide_site_header', false ) && is_front_page() && is_page() ) ) : return; // Return if this is the homepage and the hide-header setting is active. ?>
+
 	<?php else : // Otherwise we'll fallback to the default Varia header below. ?>
 		<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
