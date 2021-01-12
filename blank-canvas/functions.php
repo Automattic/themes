@@ -162,3 +162,9 @@ function blank_canvas_enqueue() {
 	wp_enqueue_style( 'blank-canvas-styles', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_enqueue', 11 );
+
+/**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/inc/block-patterns.php';
+
