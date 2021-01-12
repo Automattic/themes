@@ -21,7 +21,6 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-		add_theme_support( 'dark-editor-style' );
 
 		// Enqueue editor styles.
 		add_editor_style(
