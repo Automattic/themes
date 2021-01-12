@@ -65,7 +65,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 									<!-- wp:image {"align":"center","id":20,"width":98,"height":95,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-hat.jpg" alt="' . __( 'A photo of a man wearing a hat.', 'blank-canvas' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-hat.jpg" alt="' . __( 'Photo of a man wearing a hat.', 'blank-canvas' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
 									<!-- /wp:image -->
 									<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"34px","lineHeight":"1"}}} -->
 									<p class="has-text-align-center" style="font-size:34px;line-height:1"><strong>' . __( 'Alex Fredrickson', 'blank-canvas' ) . '</strong></p>
@@ -104,7 +104,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'title'      => __( 'Invitation', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
 					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#fff9df"}}} -->
-									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#fff9df"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Two Drinks', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
+									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#fff9df"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Photo of two drinks.', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
 									<h2>' . __( 'You&rsquo;re Invited', 'blank-canvas' ) . '</h2>
 									<!-- /wp:heading -->
 									<!-- wp:columns -->
@@ -134,6 +134,35 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div></div>
 									<!-- /wp:media-text -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/card',
+				array(
+					'title'      => __( 'Card', 'blank-canvas' ),
+					'categories' => array( 'blank-canvas' ),
+					'content'    => '<!-- wp:group {"backgroundColor":"foreground"} -->
+									<div class="wp-block-group has-foreground-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"full","sizeSlug":"large","linkDestination":"none"} -->
+									<figure class="wp-block-image alignfull size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-field.jpg" alt="' . __( 'Photo of a woman standing in a field.', 'blank-canvas' ) . '"/></figure>
+									<!-- /wp:image -->
+									<!-- wp:heading {"level":1} -->
+									<h1>' . __( 'Kate Pollard', 'blank-canvas' ) . '</h1>
+									<!-- /wp:heading -->
+									<!-- wp:paragraph -->
+									<p>' . __( 'Hi! I’m a lead strategist for growing sustainable revenue streams for integrated fundraising.', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+									<!-- wp:buttons {"contentJustification":"center"} -->
+									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"backgroundColor":"background","textColor":"foreground"} -->
+									<div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background">' . __( 'Get in Touch', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons -->
+									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
+									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
+									<!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /-->
+									<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /--></ul>
+									<!-- /wp:social-links --></div></div>
+									<!-- /wp:group -->',
 				)
 			);
 		}
