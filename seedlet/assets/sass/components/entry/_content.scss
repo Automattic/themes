@@ -22,7 +22,7 @@
 		}
 
 		&:after {
-			content: "\02192";
+			content: "\02192" #{"/*rtl:\"\02190\"*/"};
 			display: inline-block;
 			margin-left: 0.5em;
 		}
@@ -55,6 +55,20 @@
 	// Classic editor audio embeds.
 	.wp-audio-shortcode {
 		@extend %responsive-aligndefault-width;
+	}
+
+	// If the homepage header and page title are both configured to be hidden.
+	.home.page.hide-homepage-header.hide-homepage-title & {
+		margin-top: 0;
+		padding-top: 0;
+
+		// Move some full-width blocks up to the top of the screen.
+		> .wp-block-image.alignfull:first-child,
+		> .wp-block-cover.alignfull:first-child,
+		> .wp-block-media-text.alignfull:first-child,
+		> .wp-block-group.has-background.alignfull:first-child {
+			margin-top: calc(-1 * var(--global--spacing-vertical));
+		}
 	}
 }
 
