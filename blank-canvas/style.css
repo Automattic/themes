@@ -47,14 +47,6 @@ Used as block pattern image.
 
 @import "variables.css";
 
-/* Remove outside padding on single post pages. */
-
-.single .site-main,
-.page .site-main {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
 /* Remove extra margin from articles on single post pages. */
 
 .single .site-main > article,
@@ -62,11 +54,17 @@ Used as block pattern image.
 	margin-bottom: 0;
 }
 
-/* Add some top padding if the first block on the page is not full-width or a spacer. */
+/* Add some top padding if the first block on the page is a full-width image, cover, media & text, or group block. */
 
-.single .entry-content > *:first-child:not(.alignfull):not(.wp-block-spacer),
-.page .entry-content > *:first-child:not(.alignfull):not(.wp-block-spacer) {
-	padding-top: var(--global--spacing-vertical);
+.single .entry-content > .wp-block-image.alignfull:first-child,
+.page .entry-content > .wp-block-image.alignfull:first-child,
+.single .entry-content > .wp-block-cover.alignfull:first-child,
+.page .entry-content > .wp-block-cover.alignfull:first-child,
+.single .entry-content > .wp-block-media-text.alignfull:first-child,
+.page .entry-content > .wp-block-media-text.alignfull:first-child
+.single .entry-content > .wp-block-group.has-background.alignfull:first-child,
+.page .entry-content > .wp-block-group.has-background.alignfull:first-child {
+	margin-top: calc(-1 * var(--global--spacing-vertical));
 }
 
 /* Add some top padding for archive pages. */

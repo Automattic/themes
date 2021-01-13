@@ -71,9 +71,9 @@
 			esc_html__( 'collapsed', 'spearhead' ),
 			is_cart() ? 'current-menu-item' : '',
 			esc_attr__( 'View your shopping cart', 'spearhead' ),
-			spearhead_cart_link(),
+			seedlet_cart_link(),
 			esc_attr__( 'View your shopping list', 'spearhead' ),
-			spearhead_cart_widget()
+			seedlet_cart_widget()
 		) );
 		?>
 	</nav><!-- .woo-navigation -->
