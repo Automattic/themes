@@ -43,8 +43,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<p>' . __( 'Specializing in fine line tattoos with a single needle. With over 10 years of experience, I can make your tattoo dreams come true.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons -->
-									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#d34f7e"}},"textColor":"background"} -->
-									<div class="wp-block-button"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#d34f7e">' . __( 'Get in touch', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#d35069"}},"textColor":"background"} -->
+									<div class="wp-block-button"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#d35069">' . __( 'Get in touch', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 									<!-- wp:social-links {"className":"is-style-default"} -->
@@ -79,20 +79,24 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<p class="has-text-align-center" style="font-size:20px;line-height:1.65">' . __( 'My latest and greatest tips, resources, and reads.<br>So much goodness all in one place!', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons {"contentJustification":"center"} -->
-									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"width":100,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-outline"><a class="wp-block-button__link">' . __( 'Must read: The Place That Made Me', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"borderRadius":"","width":100,"className":"is-style-fill"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link">' . __( 'Must read: The Place That Made Me', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
-									<!-- wp:button {"width":100,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-outline"><a class="wp-block-button__link">' . __( 'Rain Journal by Richard Johnson', 'blank-canvas' ) . '</a></div>
+
+									<!-- wp:button {"width":100,"className":"is-style-fill"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link">' . __( 'Rain Journal by Richard Johnson', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
-									<!-- wp:button {"width":100,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-outline"><a class="wp-block-button__link">' . __( '10th Day of Rain', 'blank-canvas' ) . '</a></div>
+
+									<!-- wp:button {"width":100,"className":"is-style-fill"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link">' . __( '10th Day of Rain', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
-									<!-- wp:button {"width":100,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-outline"><a class="wp-block-button__link">' . __( 'Blurring the Lines Between Architecture and Nature', 'blank-canvas' ) . '</a></div>
+
+									<!-- wp:button {"width":100,"className":"is-style-fill"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link">' . __( 'Blurring the Lines Between Architecture and Nature', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
-									<!-- wp:button {"width":100,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-outline"><a class="wp-block-button__link">' . __( 'Instant Classic: A story of Persistence', 'blank-canvas' ) . '</a></div>
+
+									<!-- wp:button {"width":100,"className":"is-style-fill"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link">' . __( 'Instant Classic: A story of Persistence', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->',
 				)
@@ -103,34 +107,31 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Invitation', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#fff9df"}}} -->
-									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#fff9df"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Photo of two drinks.', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading -->
-									<h2>' . __( 'You&rsquo;re Invited', 'blank-canvas' ) . '</h2>
+					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#f5fff4"}}} -->
+									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Photo of two drinks.', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#c61aa7"}}} -->
+									<h2 class="has-text-color" style="color:#c61aa7"><strong>' . __( 'You&rsquo;re Invited', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"fontSize":"small"} -->
-									<p class="has-small-font-size">' . __( '123 Demo Street<br>New York, NY', 'blank-canvas' ) . '</p>
+									<p class="has-small-font-size">' . __( 'Pier 38<br>San Francisco, CA', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column -->
 									<!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"fontSize":"small"} -->
-									<p class="has-small-font-size">' . __( '8pm–12am<br>February 24th', 'blank-canvas' ) . '</p>
+									<p class="has-small-font-size">' . __( '8pm–12am<br>April 16th', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
-									<!-- wp:separator {"customColor":"#eed99f","className":"is-style-wide"} -->
-									<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#eed99f;color:#eed99f"/>
+									<!-- wp:separator {"customColor":"#e343cd","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#e343cd;color:#e343cd"/>
 									<!-- /wp:separator -->
 									<!-- wp:paragraph -->
-									<p>' . __( 'We&rsqo;ll be mixing tiki classics and some new creations using top-shelf spirits and organic mixers.', 'blank-canvas' ) . '</p>
-									<!-- /wp:paragraph -->
-									<!-- wp:paragraph -->
-									<p>' . __( 'Not a drinker? Not to worry—we&rsquo;ll have a full menu of delicious mocktails on offer.', 'blank-canvas' ) . '</p>
+									<p>' . __( 'Join us for a celebratory party featuring creative cocktails and mocktails, seasonal chef-crafted snacks and appetizers, and a range of desserts and pastries from local bakeries.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons -->
-									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#357b00"}},"textColor":"background","className":"is-style-fill"} -->
-									<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#357b00">' . __( 'RSVP', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#c61aa7"}},"textColor":"background","className":"is-style-fill"} -->
+									<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#c61aa7">' . __( 'RSVP', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div></div>
 									<!-- /wp:media-text -->',
@@ -138,31 +139,35 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/card',
+				'blank-canvas/split-screen',
 				array(
-					'title'      => __( 'Card', 'blank-canvas' ),
+					'title'      => __( 'Split Screen', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:group {"backgroundColor":"foreground"} -->
-									<div class="wp-block-group has-foreground-background-color has-background"><div class="wp-block-group__inner-container"><!-- wp:image {"align":"full","sizeSlug":"large","linkDestination":"none"} -->
-									<figure class="wp-block-image alignfull size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-field.jpg" alt="' . __( 'Photo of a woman standing in a field.', 'blank-canvas' ) . '"/></figure>
+					'content'    => '<!-- wp:media-text {"align":"full","mediaId":598,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg","mediaType":"image","imageFill":true} -->
+									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg" alt="' . __( 'Photo of a vintage camera.', 'blank-canvas' ) . '" class="wp-image-598 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"overlayColor":"background","minHeight":95,"minHeightUnit":"vh"} -->
+									<div class="wp-block-cover has-background-background-color has-background-dim" style="min-height:95vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":624,"width":200,"height":200,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-woman.jpg" alt="' . __( 'Photo of a woman.', 'blank-canvas' ) . '" class="wp-image-624" width="200" height="200"/></figure></div>
 									<!-- /wp:image -->
-									<!-- wp:heading {"level":1} -->
-									<h1>' . __( 'Kate Pollard', 'blank-canvas' ) . '</h1>
+
+									<!-- wp:heading {"textAlign":"center","level":1} -->
+									<h1 class="has-text-align-center"><strong>' . __( 'Jasmine Baker', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
-									<!-- wp:paragraph -->
-									<p>' . __( 'Hi! I’m a lead strategist for growing sustainable revenue streams for integrated fundraising.', 'blank-canvas' ) . '</p>
+
+									<!-- wp:paragraph {"align":"center","backgroundColor":"background"} -->
+									<p class="has-text-align-center has-background-background-color has-background">' . __( 'Hello! I am a photographer and designer living near Portland, Maine. When I am not posting to Instagram, you can find me shooting weddings and portraits.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
-									<!-- wp:buttons {"contentJustification":"center"} -->
-									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"backgroundColor":"background","textColor":"foreground"} -->
-									<div class="wp-block-button"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background">' . __( 'Get in Touch', 'blank-canvas' ) . '</a></div>
-									<!-- /wp:button --></div>
-									<!-- /wp:buttons -->
+
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
-									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
-									<!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /-->
-									<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /--></ul>
+									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
+
+									<!-- wp:social-link {"url":"https://www.tiktok.com","service":"tiktok"} /-->
+
+									<!-- wp:social-link {"url":"https://twitter.com","service":"twitter"} /-->
+
+									<!-- wp:social-link {"url":"https://youtube.com","service":"youtube"} /--></ul>
 									<!-- /wp:social-links --></div></div>
-									<!-- /wp:group -->',
+									<!-- /wp:cover --></div></div>
+									<!-- /wp:media-text -->',
 				)
 			);
 		}
