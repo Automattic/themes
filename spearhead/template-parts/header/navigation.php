@@ -1,5 +1,5 @@
 <?php $has_primary_nav = has_nav_menu( 'primary' );
-	if ( $has_primary_nav || has_nav_menu( 'social' ) ) : ?>
+if ( $has_primary_nav || has_nav_menu( 'social' ) ) : ?>
 	<nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Main', 'spearhead' ); ?>">
 		<button id="primary-close-menu" class="button close">
 			<span class="dropdown-icon close"><?php _e( 'Close', 'spearhead' ); ?> <?php echo seedlet_get_icon_svg( 'close' ); ?></span>
@@ -79,7 +79,7 @@
 	</nav><!-- .woo-navigation -->
 <?php endif; ?>
 
-<div class="menu-button-container">
+<div class="menu-button-container is-cart">
 	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 		<button id="woo-open-menu" class="button open">
 			<span class="dropdown-icon open"><?php _e( 'Cart', 'spearhead' ); ?> <?php echo seedlet_get_icon_svg( 'shopping_cart' ); ?></span>

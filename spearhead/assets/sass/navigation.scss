@@ -11,6 +11,8 @@ $navigation-max-break-point: 'laptop-only';
 
 .primary-navigation,
 .woo-navigation {
+	grid-area: navigation;
+
 	// Top-level Menu Item
 	.primary-menu-container > ul > .menu-item {
 		padding: 0;
@@ -86,10 +88,30 @@ div.extra-navigation-wrapper {
 	}
 }
 
-.has-logo.has-title-and-tagline .menu-button-container {
+.menu-button-container {
+	grid-area: primary-navigation;
+	position: relative;
+	left: unset;
+	top: unset;
+
+	.admin-bar:not(.primary-navigation-open) & {
+		top: unset;
+	}
+
+	&.is-cart {
+		grid-area: cart;
+	}
+}
+
+/*.has-logo.has-title-and-tagline .menu-button-container {
 	top: calc( var(--branding--logo--max-height) + var(--global--spacing-vertical) );
 
 	.admin-bar & {
 		top: calc( var(--wpadmin-bar--height) + var(--branding--logo--max-height) + var(--global--spacing-vertical) );
 	}
+}
+*/
+
+.social-navigation {
+	grid-area: navigation;
 }

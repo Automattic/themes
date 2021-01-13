@@ -3,7 +3,8 @@ $site-branding-height: 68px;
 
 .has-main-navigation {
 	.site-header {
-		padding: var(--global--spacing-horizontal);
+		padding: 0;
+
 		a {
 			border-bottom: 1px solid transparent;
 		}
@@ -29,9 +30,6 @@ $site-branding-height: 68px;
 }
 
 .site-header {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
 	max-width: var(--responsive--alignfull-width);
 	padding: var(--global--spacing-horizontal);
 
@@ -39,13 +37,9 @@ $site-branding-height: 68px;
 		padding: 35px var(--global--spacing-horizontal);
 	}
 
-	@include media( laptop-only ){
-		flex-wrap: wrap;
-	}
-
 	.site-branding {
-		flex-basis: 30%;
-		flex-grow: 1;
+		grid-area: branding;
+		padding: var(--global--spacing-horizontal);
 		text-align: left;
 
 		.site-title {
@@ -58,6 +52,7 @@ $site-branding-height: 68px;
 		}
 
 		.site-logo {
+			grid-area: site-logo;
 			margin-left: 0;
 			margin-top: 0;
 			text-align: left;
@@ -65,14 +60,10 @@ $site-branding-height: 68px;
 	}
 
 	.primary-navigation-wrapper {
-		display: flex;
-		align-items: center;
 		margin-bottom: 6px;
 	}
 
 	.primary-navigation {
-		flex-basis: 70%;
-		flex-grow: 4;
 		margin-top: 0;
 
 		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
@@ -170,8 +161,7 @@ $site-branding-height: 68px;
 }
 
 .has-title-and-tagline .site-logo {
-	flex-basis: 100%;
-	margin-bottom: var(--global--spacing-vertical);
+	margin: 0;
 }
 
 .primary-navigation-open .has-title-and-tagline .site-logo {
@@ -197,4 +187,15 @@ $site-branding-height: 68px;
 	.primary-navigation-open & {
 		margin: 0;
 	}
+}
+
+.site-header {
+	display: grid;
+	grid-template-areas:
+		"site-logo site-logo site-logo"
+		"branding branding primary-navigation"
+		"branding branding cart";
+	grid-template-columns: 0.5fr 1fr 0.5fr;
+	grid-template-rows: auto;
+	grid-column-gap: 16px;
 }
