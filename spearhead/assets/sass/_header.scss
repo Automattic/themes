@@ -41,6 +41,13 @@ $site-branding-height: 68px;
 		grid-area: branding;
 		padding: var(--global--spacing-horizontal);
 		text-align: left;
+		justify-self: flex-start;
+		align-self: center;
+
+		.site-logo {
+			margin-left: 0;
+			margin-top: 0;
+		}
 
 		.site-title {
 			margin-bottom: 4px;
@@ -50,13 +57,11 @@ $site-branding-height: 68px;
 				text-shadow: none;
 			}
 		}
+	}
 
-		.site-logo {
-			grid-area: site-logo;
-			margin-left: 0;
-			margin-top: 0;
-			text-align: left;
-		}
+	.site-logo {
+		grid-area: site-logo;
+		margin: 0;
 	}
 
 	.primary-navigation-wrapper {
@@ -160,8 +165,15 @@ $site-branding-height: 68px;
 	}
 }
 
-.has-title-and-tagline .site-logo {
-	margin: 0;
+.has-title-and-tagline {
+	.site-logo {
+		padding-top: var(--global--spacing-horizontal);
+		margin: 0;
+	}
+	.site-branding {
+		padding: calc( var(--global--spacing-horizontal) / 2 ) var(--global--spacing-horizontal);
+		align-self: flex-start;
+	}
 }
 
 .primary-navigation-open .has-title-and-tagline .site-logo {
@@ -170,11 +182,13 @@ $site-branding-height: 68px;
 
 
 .site-header div.menu-button-container {
+	.menu-button-container {
+		padding: calc( var(--global--spacing-horizontal) / 2 );
+	}
+
 	button#primary-open-menu {
 		margin-top: 0;
 		margin-right: 0;
-		padding: var(--global--spacing-horizontal);
-
 		&:before {
 			margin: 0;
 		}
@@ -193,9 +207,13 @@ $site-branding-height: 68px;
 	display: grid;
 	grid-template-areas:
 		"site-logo site-logo site-logo"
-		"branding branding primary-navigation"
-		"branding branding cart";
+		"branding branding primary-navigation";
 	grid-template-columns: 0.5fr 1fr 0.5fr;
-	grid-template-rows: auto;
+	grid-template-rows: minmax(min-content, max-content);
 	grid-column-gap: 16px;
+}
+
+.navigation-wrapper {
+	grid-area: primary-navigation;
+	margin: 0;
 }

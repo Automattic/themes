@@ -255,6 +255,13 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	grid-area: branding;
 	padding: var(--global--spacing-horizontal);
 	text-align: right;
+	justify-self: flex-start;
+	align-self: center;
+}
+
+.site-header .site-branding .site-logo {
+	margin-right: 0;
+	margin-top: 0;
 }
 
 .site-header .site-branding .site-title {
@@ -266,11 +273,9 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-shadow: none;
 }
 
-.site-header .site-branding .site-logo {
+.site-header .site-logo {
 	grid-area: site-logo;
-	margin-right: 0;
-	margin-top: 0;
-	text-align: right;
+	margin: 0;
 }
 
 .site-header .primary-navigation-wrapper {
@@ -370,17 +375,26 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-title-and-tagline .site-logo {
+	padding-top: var(--global--spacing-horizontal);
 	margin: 0;
+}
+
+.has-title-and-tagline .site-branding {
+	padding: calc( var(--global--spacing-horizontal) / 2) var(--global--spacing-horizontal);
+	align-self: flex-start;
 }
 
 .primary-navigation-open .has-title-and-tagline .site-logo {
 	display: none;
 }
 
+.site-header div.menu-button-container .menu-button-container {
+	padding: calc( var(--global--spacing-horizontal) / 2);
+}
+
 .site-header div.menu-button-container button#primary-open-menu {
 	margin-top: 0;
 	margin-left: 0;
-	padding: var(--global--spacing-horizontal);
 }
 
 .site-header div.menu-button-container button#primary-open-menu:before {
@@ -397,10 +411,15 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .site-header {
 	display: grid;
-	grid-template-areas: "site-logo site-logo site-logo" "branding branding primary-navigation" "branding branding cart";
+	grid-template-areas: "site-logo site-logo site-logo" "branding branding primary-navigation";
 	grid-template-columns: 0.5fr 1fr 0.5fr;
-	grid-template-rows: auto;
+	grid-template-rows: minmax(min-content, max-content);
 	grid-column-gap: 16px;
+}
+
+.navigation-wrapper {
+	grid-area: primary-navigation;
+	margin: 0;
 }
 
 .site-footer > .site-info {
