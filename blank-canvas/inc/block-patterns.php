@@ -51,7 +51,10 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<ul class="wp-block-social-links is-style-default"><!-- wp:social-link {"url":"https://facebook.com/","service":"facebook"} /-->
 									<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /-->
 									<!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /--></ul>
-									<!-- /wp:social-links --></div></div>
+									<!-- /wp:social-links -->
+									<!-- wp:spacer -->
+									<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer --></div></div>
 									<!-- /wp:media-text -->',
 				)
 			);
