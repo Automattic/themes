@@ -13,6 +13,7 @@
 	@include media( $navigation-max-break-point ){
 		display: block;
 		margin: 0;
+		width: auto;
 	}
 
 	// Adjust button postion when scrolling is locked
@@ -41,6 +42,10 @@
 	.admin-bar.has-marketing-bar.lock-scrolling & > .button,
 	.admin-bar.has-marketing-bar:not(.primary-navigation-open) & {
 		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
+	}
+
+	#site-navigation + & {
+		right: 0;
 	}
 }
 
@@ -112,9 +117,6 @@
 	}
 
 	.primary-navigation-open & {
-		#primary-open-menu {
-			display: none;
-		}
 		#primary-close-menu {
 			display: flex;
 			padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
@@ -123,15 +125,26 @@
 		}
 	}
 	.woo-navigation-open & {
-		#woo-open-menu {
-			display: none;
-		}
 		#woo-close-menu {
 			display: flex;
 			padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
 			margin-top: calc(0.25 * var(--global--spacing-unit));
 			margin-right: calc(0.25 * var(--global--spacing-unit));
 		}
+	}
+}
+
+.woo-navigation-open,
+.primary-navigation-open {
+	.menu-button-container {
+		#primary-open-menu,
+		#woo-open-menu {
+			display: none;
+		}
+	}
+
+	.primary-navigation #primary-open-menu {
+		display: none;
 	}
 }
 
