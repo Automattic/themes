@@ -23,7 +23,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 		
 		if ( function_exists( 'register_block_pattern' ) ) {
 
-			/* This pattern is WP.com-Only Beacuse it relies on the Layout Grid block. */
+			/* This pattern is WP.com-only because it relies on the Layout Grid block. */
 			register_block_pattern(
 				'blank-canvas/card',
 				array(
@@ -60,6 +60,42 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- /wp:group --></div>
 									<!-- /wp:jetpack/layout-grid-column --></div>
 									<!-- /wp:jetpack/layout-grid -->',
+				)
+			);
+
+			/* This pattern is WP.com-only because it relies on the Contact Form block. */
+			register_block_pattern(
+				'blank-canvas/email-signup',
+				array(
+					'title'      => __( 'Email Signup', 'blank-canvas' ),
+					'categories' => array( 'blank-canvas' ),
+					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg","id":1934,"dimRatio":60,"overlayColor":"secondary","minHeight":100,"minHeightUnit":"vh","contentPosition":"top left","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim-60 has-secondary-background-color has-background-dim has-custom-content-position is-position-top-left" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns -->
+									<div class="wp-block-columns"><!-- wp:column {"width":"5%"} -->
+									<div class="wp-block-column" style="flex-basis:5%"></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"width":50} -->
+									<div class="wp-block-column" style="flex-basis:50%"><!-- wp:spacer {"height":10} -->
+									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:heading -->
+									<h2><strong>' . __( 'Virtual Art Classes', 'blank-canvas' ) . '</strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph -->
+									<p>' . __( 'Join instructor Jaime Adams for a series of virtual classes aimed at helping you hone your drawing skills. We will focus on composition, perspective, contour, representing volume, and more!', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:jetpack/contact-form -->
+									<!-- wp:jetpack/field-email {"required":true,"options":[]} /-->
+
+									<!-- wp:jetpack/button {"element":"button","text":"' . __( 'Sign Up', 'blank-canvas' ) . '","textColor":"secondary","backgroundColor":"background"} /-->
+									<!-- /wp:jetpack/contact-form --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns --></div></div>
+									<!-- /wp:cover -->',
 				)
 			);
 		}
