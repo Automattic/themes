@@ -1,9 +1,9 @@
 /*
  * Triggers resize event to make sure video widgets in the footer maintain the correct aspect ratio
  */
-( function( $ ) {
+( function() {
 
-    $( window ).on( 'load', function() {
+	function init() {
 		setTimeout( function(){
 			if ( typeof( Event ) === 'function' ) {
 				window.dispatchEvent( new Event( 'resize' ) );
@@ -13,6 +13,12 @@
 				window.dispatchEvent( event );
 			}
 		} );
-	});
+	}
 
-} )( jQuery );
+	if ( document.readyState === 'complete' ) {
+		init();
+	} else {
+		window.addEventListener( 'load', init );
+	}
+
+} )();
