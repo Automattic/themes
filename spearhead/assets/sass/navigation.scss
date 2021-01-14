@@ -9,9 +9,13 @@ $navigation-max-break-point: 'laptop-only';
 
 @import "../../../seedlet/assets/sass/components/navigation/style";
 
+.navigation-wrapper {
+	grid-area: primary-navigation;
+	margin: 0;
+}
+
 .primary-navigation,
 .woo-navigation {
-
 	// Top-level Menu Item
 	.primary-menu-container > ul > .menu-item {
 		padding: 0;
@@ -50,7 +54,6 @@ $navigation-max-break-point: 'laptop-only';
 		width: auto;
 	}
 }
-
 
 $header-height: 80px;
 div.extra-navigation-wrapper {
@@ -100,15 +103,6 @@ div.extra-navigation-wrapper {
 		top: unset;
 	}
 }
-
-/*.has-logo.has-title-and-tagline .menu-button-container {
-	top: calc( var(--branding--logo--max-height) + var(--global--spacing-vertical) );
-
-	.admin-bar & {
-		top: calc( var(--wpadmin-bar--height) + var(--branding--logo--max-height) + var(--global--spacing-vertical) );
-	}
-}
-*/
 
 .social-navigation {
 	grid-area: navigation;
