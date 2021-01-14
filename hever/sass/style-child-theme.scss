@@ -27,71 +27,81 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * Abstracts
  * - Mixins, variables and functions
  */
-@import "../../varia/sass/abstracts/imports";
+ @import "../../varia/sass/abstracts/imports";
 
-/**
- * Child Theme Deep
- */
-@import "config-child-theme-deep";
-
-/**
- * Base
- * - Reset the browser
- */
-@import "../../varia/sass/base/imports";
-
-/**
- * Layout
- * - Structral and responsive styles
- */
-@import "../../varia/sass/layout/imports";
-
-/**
- * Elements
- * - Styles for basic HTML elemants
- */
-@import "../../varia/sass/elements/imports";
-
-/**
- * Blocks
- * - These styles replace key Gutenberg Block styles for fonts, colors, and
- *   spacing with CSS-variables overrides
- * - In the future the Block styles may get compiled to individual .css
- *   files and conditionally loaded
- */
-@import "../../varia/sass/blocks/imports";
-
-/**
- * Components
- * - Similar to Blocks but exist outside of the "current" editor context
- */
-@import "../../varia/sass/components/imports";
-
-/**
- * Site Pages
- * - Page specific styles
- */
-@import "../../varia/sass/pages/imports";
-
-/**
- * Responsive Logic
- * - Loading this last to respect cascaing rules
- */
-@import "../../varia/sass/abstracts/responsive-logic";
-
-/**
- * Vendors
- * - Styles for 3rd party plugins and WP extensions
- */
-@import "../../varia/sass/vendors/imports";
-
-/**
- * Child Theme Extra Styles
- */
-@import "extra-child-theme";
-
-/**
- * Full Site Editing
- * - Full Site Editing overrides
- */
- @import "full-site-editing";
+ /**
+  * Global variables
+  */
+  @import "global-variables";
+ 
+ :root {
+	 @include global-variables();
+ }
+ 
+ /**
+  * Child Theme Deep
+  */
+ @import "config-child-theme-deep";
+ 
+ /**
+  * Base
+  * - Reset the browser
+  */
+ @import "../../varia/sass/base/imports";
+ 
+ /**
+  * Layout
+  * - Structral and responsive styles
+  */
+ @import "../../varia/sass/layout/imports";
+ 
+ /**
+  * Elements
+  * - Styles for basic HTML elemants
+  */
+ @import "../../varia/sass/elements/imports";
+ 
+ /**
+  * Blocks
+  * - These styles replace key Gutenberg Block styles for fonts, colors, and
+  *   spacing with CSS-variables overrides
+  * - In the future the Block styles may get compiled to individual .css
+  *   files and conditionally loaded
+  */
+ @import "../../varia/sass/blocks/imports";
+ 
+ /**
+  * Components
+  * - Similar to Blocks but exist outside of the "current" editor context
+  */
+ @import "../../varia/sass/components/imports";
+ 
+ /**
+  * Site Pages
+  * - Page specific styles
+  */
+ @import "../../varia/sass/pages/imports";
+ 
+ /**
+  * Responsive Logic
+  * - Loading this last to respect cascaing rules
+  */
+ @import "../../varia/sass/abstracts/responsive-logic";
+ 
+ /**
+  * Vendors
+  * - Styles for 3rd party plugins and WP extensions
+  */
+ @import "../../varia/sass/vendors/imports";
+ 
+ /**
+  * Child Theme Extra Styles
+  */
+ @import "extra-child-theme";
+ 
+ /**
+  * Full Site Editing
+  * - Full Site Editing overrides
+  */
+  @import "full-site-editing";
+ 
