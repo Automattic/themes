@@ -397,6 +397,17 @@ function seedlet_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'seedlet_scripts' );
 
+// Support for Dark Backgrounds in the Editor
+function seedlet_admin_scripts() {
+	wp_enqueue_script( 
+		'seedlet-editor-dark-support', 
+		get_template_directory_uri() . '/assets/js/editor-dark-support.js', 
+		array(), 
+		wp_get_theme()->get( 'Version' ) 
+	);
+}
+add_action( 'admin_enqueue_scripts', 'seedlet_admin_scripts' );
+
 /**
  * Fix skip link focus in IE11.
  *
