@@ -110,8 +110,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Invitation', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#f5fff4"}}} -->
-									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Photo of two drinks.', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#c61aa7"}}} -->
+					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","imageFill":true,"style":{"color":{"background":"#f5fff4"}}} -->
+									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Photo of two drinks.', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:spacer {"height":30} -->
+									<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+									<!-- wp:heading {"style":{"color":{"text":"#c61aa7"}}} -->
 									<h2 class="has-text-color" style="color:#c61aa7"><strong>' . __( 'You&rsquo;re Invited', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 									<!-- wp:columns -->
@@ -136,7 +139,10 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#c61aa7"}},"textColor":"background","className":"is-style-fill"} -->
 									<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#c61aa7">' . __( 'RSVP', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
-									<!-- /wp:buttons --></div></div>
+									<!-- /wp:buttons -->
+									<!-- wp:spacer {"height":30} -->
+									<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer --></div></div>
 									<!-- /wp:media-text -->',
 				)
 			);
