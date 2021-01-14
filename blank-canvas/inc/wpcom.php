@@ -91,7 +91,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- wp:jetpack/contact-form -->
 									<!-- wp:jetpack/field-email {"required":true,"options":[]} /-->
 
-									<!-- wp:jetpack/button {"element":"button","text":"' . __( 'Sign Up', 'blank-canvas' ) . '","textColor":"secondary","backgroundColor":"background"} /-->
+									<!-- wp:jetpack/button {"element":"button","text":"' . __( 'Learn More', 'blank-canvas' ) . '","textColor":"secondary","backgroundColor":"background"} /-->
 									<!-- /wp:jetpack/contact-form --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns --></div></div>
