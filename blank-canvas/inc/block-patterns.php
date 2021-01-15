@@ -111,7 +111,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'title'      => __( 'Invitation', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
 					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","imageFill":true,"style":{"color":{"background":"#f5fff4"}}} -->
-									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="' . __( 'Photo of two drinks.', 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:spacer {"height":30} -->
+									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="Photo of two drinks." class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:spacer {"height":30} -->
 									<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 									<!-- wp:heading {"style":{"color":{"text":"#c61aa7"}}} -->
