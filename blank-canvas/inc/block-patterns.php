@@ -182,7 +182,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 		}
 
 		/**
-		 * Unregister SeedletBlock Pattern Category.
+		 * Unregister Seedlet Block Pattern Category.
 		 */
 		if ( function_exists( 'unregister_block_pattern_category' ) ) {
 			unregister_block_pattern_category( 'seedlet' );
