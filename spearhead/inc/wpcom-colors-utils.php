@@ -25,6 +25,7 @@ function seedlet_define_color_annotations( $colors ) {
 
 			// This placeholder is needed to make the color annotations work
 			array( '.global--color-foreground', 'color' ),
+			array( '.site-header .primary-navigation .primary-menu-container a', 'color', '#2d3139' ),
 
 		),
 		__( 'Foreground Color' )
