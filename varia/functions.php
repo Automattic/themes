@@ -257,6 +257,19 @@ function varia_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
+		// If IE 11 or below, use a ponyfill to add CSS Variable support
+		wp_register_script( 'css-vars-ponyfill', get_stylesheet_directory_uri() . '/assets/js/css-vars-ponyfill2.js' );
+		wp_enqueue_script( 'ie11-fix',
+			get_stylesheet_directory_uri() . '/assets/js/ie11-fix.js',
+			array( 'css-vars-ponyfill' ),
+			'1.0'
+		);
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'varia_scripts' );
 
