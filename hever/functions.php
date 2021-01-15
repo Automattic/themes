@@ -93,12 +93,12 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				),
 				array(
 					'name'  => __( 'Foreground Low Contrast', 'hever' ),
-					'slug'  => 'foreground-light',
+					'slug'  => 'foreground-low-contrast',
 					'color' => $foreground_low_contrast,
 				),
 				array(
 					'name'  => __( 'Foreground High Contrast', 'hever' ),
-					'slug'  => 'foreground-dark',
+					'slug'  => 'foreground-high-contrast',
 					'color' => $foreground_high_contrast,
 				),
 				array(
@@ -108,12 +108,12 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				),
 				array(
 					'name'  => __( 'Background High Contrast', 'hever' ),
-					'slug'  => 'background-light',
+					'slug'  => 'background-high-contrast',
 					'color' => $background_high_contrast,
 				),
 				array(
 					'name'  => __( 'Background Low Contrast', 'hever' ),
-					'slug'  => 'background-light',
+					'slug'  => 'background-low-contrast',
 					'color' => $background_low_contrast,
 				),
 			)
