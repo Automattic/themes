@@ -85,7 +85,7 @@
 				// Use an IIFE to avoid scoping issues.
 				( function ( img, caption, newImg ) {
 					return function () {
-						var imgWidth = newImg.offsetWidth;
+						var imgWidth = newImg.width;
 
 						if ( imgWidth >= 1100 &&
 								! closest( img, '.tiled-gallery-item-large' ) &&
