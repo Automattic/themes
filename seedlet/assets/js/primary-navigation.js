@@ -12,18 +12,18 @@
 	 */
 	var navMenu = function ( id ){
 		var wrapper         = document.body; // this is the element to which a CSS class is added when a mobile nav menu is open
-		var openButton    	= document.getElementById( `${ id }-open-menu` );
-		var closeButton    	= document.getElementById( `${ id }-close-menu` );
+		var openButton    	= document.getElementById( id + '-open-menu' );
+		var closeButton    	= document.getElementById( id + '-close-menu' );
 
 		if ( openButton && closeButton ){
 			openButton.onclick = function() {
-				wrapper.classList.add( `${ id }-navigation-open` );
+				wrapper.classList.add( id + '-navigation-open' );
 				wrapper.classList.add( 'lock-scrolling' );
 				closeButton.focus();
 			}
 
 			closeButton.onclick = function() {
-				wrapper.classList.remove( `${ id }-navigation-open` );
+				wrapper.classList.remove( id + '-navigation-open' );
 				wrapper.classList.remove( 'lock-scrolling' );
 				openButton.focus();
 			}
@@ -34,12 +34,12 @@
 		 * Adapted from TwentyTwenty
 		 */
 		document.addEventListener( 'keydown', function( event ) {
-			if ( ! wrapper.classList.contains( `${ id }-navigation-open` ) ){
+			if ( ! wrapper.classList.contains( id + '-navigation-open' ) ){
 				return;
 			} 
 			var modal, elements, selectors, lastEl, firstEl, activeEl, tabKey, shiftKey, escKey;
 
-			modal = document.querySelector( `.${ id }-navigation` );
+			modal = document.querySelector( '.${ id }-navigation' );
 			selectors = "input, a, button";
 			elements = modal.querySelectorAll( selectors );
 			elements = Array.prototype.slice.call( elements );
@@ -55,7 +55,7 @@
 
 			if ( escKey ) {
 				event.preventDefault();
-				wrapper.classList.remove( `${ id }-navigation-open`, 'lock-scrolling' );
+				wrapper.classList.remove( id + '-navigation-open', 'lock-scrolling' );
 				openButton.focus();
 			}
 
