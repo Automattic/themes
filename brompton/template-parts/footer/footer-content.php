@@ -5,14 +5,14 @@
 			$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
 		else : // Otherwise we'll fallback to the default Varia footer below.
 			?>
-			
+
 	<footer id="colophon" class="site-footer">
-		<?php
-		if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
-			get_template_part( 'template-parts/footer/footer', 'widgets' );
-			get_template_part( 'template-parts/footer/footer', 'navigation' );
+			<?php
+			if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
+				get_template_part( 'template-parts/footer/footer', 'widgets' );
+				get_template_part( 'template-parts/footer/footer', 'navigation' );
 		endif;
-		?>
+			?>
 	<?php endif; ?>
 
 		<div class="site-info">
