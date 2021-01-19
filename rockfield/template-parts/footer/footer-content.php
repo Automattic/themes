@@ -11,8 +11,8 @@
 			if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
 				get_template_part( 'template-parts/footer/footer', 'widgets' );
 				get_template_part( 'template-parts/footer/privacy', 'policy' );
-				get_template_part( 'template-parts/header/social', 'navigation' );echo 'ee';
-				get_template_part( 'template-parts/footer/footer', 'navigation' );echo 'ee';
+				get_template_part( 'template-parts/header/social', 'navigation' );
+				get_template_part( 'template-parts/footer/footer', 'navigation' );
 			endif;
 			?>
 	<?php endif; ?>
