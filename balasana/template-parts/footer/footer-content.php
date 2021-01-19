@@ -49,10 +49,7 @@
 
 	<div class="site-info">
 		<?php get_template_part( 'template-parts/footer/privacy-policy', '' ); ?>
-		<?php $blog_info = get_bloginfo( 'name' ); ?>
-		<?php if ( ! empty( $blog_info ) ) : ?>
-			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="comma">,</span>
-		<?php endif; ?>
+		<?php get_template_part( 'template-parts/footer/site-name', '' ); ?>
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'balasana' ) ); ?>" class="imprint">
 			<?php
 			/* translators: %s: WordPress. */
