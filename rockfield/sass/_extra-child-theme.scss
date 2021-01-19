@@ -229,6 +229,9 @@ a {
 @include media(mobile) {
 	#main {
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		.hide-homepage-header & {
+			padding-top: 0;
+		}
 	}
 }
 
