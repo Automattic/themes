@@ -25,7 +25,6 @@ function seedlet_define_color_annotations( $colors ) {
 
 			// This placeholder is needed to make the color annotations work
 			array( '.global--color-foreground', 'color' ),
-			array( '.site-header .primary-navigation .primary-menu-container a', 'color', '#2d3139' ),
 
 		),
 		__( 'Foreground Color' )
@@ -132,6 +131,7 @@ function seedlet_custom_colors_extra_css() {
 	$secondary    = $colors_array['colors']['fg1'];
 	$tertiary     = $colors_array['colors']['fg2'];
 
+	$background_low_contrast  = change_color_luminescence( $background, -10 );
 	$foreground_low_contrast  = change_color_luminescence( $foreground, 10 );
 	$foreground_high_contrast = change_color_luminescence( $foreground, -10 );
 	$primary_hover            = change_color_luminescence( $primary, 10 );
@@ -149,6 +149,7 @@ function seedlet_custom_colors_extra_css() {
 		--global--color-secondary: <?php echo $secondary; ?>;
 		--global--color-secondary-hover: <?php echo $secondary_hover; ?>;
 		--global--color-tertiary: <?php echo $tertiary; ?>;
+		--primary-nav--color-background: <?php echo $background_low_contrast; ?>;
 	}
 
 	<?php
