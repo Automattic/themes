@@ -9,37 +9,9 @@
 			if ( has_nav_menu( 'menu-2' ) || has_nav_menu( 'social' ) ) : ?>
 				<div class="footer-menus">
 
-					<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
-						<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'balasana' ); ?>">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'menu-2',
-									'menu_class'     => 'footer-menu',
-									'depth'          => 1,
-								)
-							);
-							?>
-						</nav><!-- .footer-navigation -->
-						<?php
-					endif;
+					<?php get_template_part( 'template-parts/footer/footer', 'navigation' );
 
-					if ( has_nav_menu( 'social' ) ) :
-						?>
-						<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'balasana' ); ?>">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'social',
-									'menu_class'     => 'social-links-menu',
-									'link_before'    => '<span class="screen-reader-text">',
-									'link_after'     => '</span>' . varia_get_icon_svg( 'link' ),
-									'depth'          => 1,
-								)
-							);
-							?>
-						</nav><!-- .social-navigation -->
-					<?php endif; ?>
+					get_template_part( 'template-parts/header/social', 'navigation' ); ?>
 
 				</div><!-- .footer-menus -->
 				<?php
