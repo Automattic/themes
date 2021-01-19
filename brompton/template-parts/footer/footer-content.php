@@ -15,12 +15,6 @@
 	<?php endif; ?>
 	<div class="site-info">
 		<?php get_template_part( 'template-parts/footer/site-name', '' ); ?>
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'varia' ) ); ?>" class="imprint">
-			<?php
-			/* translators: %s: WordPress. */
-			printf( __( 'proudly powered by %s.', 'varia' ), 'WordPress' );
-			?>
-		</a>
 		<?php get_template_part( 'template-parts/footer/privacy-policy', '' ); ?>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
