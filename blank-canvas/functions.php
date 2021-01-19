@@ -168,3 +168,10 @@ add_action( 'wp_enqueue_scripts', 'blank_canvas_enqueue', 11 );
  */
 require get_stylesheet_directory() . '/inc/block-patterns.php';
 
+/**
+ * Enqueue CSS for Customizer message.
+ */
+function blank_canvas_customizer_enqueue() {
+	wp_enqueue_style( 'blank-canvas-customizer-style', get_stylesheet_directory_uri() . '/assets/customizer.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'blank_canvas_customizer_enqueue' );
