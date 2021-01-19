@@ -4,17 +4,19 @@
 		$template = new A8C\FSE\WP_Template();
 		$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
 		else : // Otherwise we'll fallback to the default Balasana footer below.
-			get_template_part( 'template-parts/footer/footer', 'widgets' );
 
-			if ( has_nav_menu( 'menu-2' ) || has_nav_menu( 'social' ) ) : ?>
-				<div class="footer-menus">
+			if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
 
-					<?php get_template_part( 'template-parts/footer/footer', 'navigation' );
+				get_template_part( 'template-parts/footer/footer', 'widgets' );
 
-					get_template_part( 'template-parts/header/social', 'navigation' ); ?>
-
-				</div><!-- .footer-menus -->
-				<?php
+				if ( has_nav_menu( 'menu-2' ) || has_nav_menu( 'social' ) ) : ?>
+					<div class="footer-menus">
+						<?php 
+						get_template_part( 'template-parts/footer/footer', 'navigation' );
+						get_template_part( 'template-parts/header/social', 'navigation' ); ?>
+					</div><!-- .footer-menus -->
+					<?php
+				endif;
 			endif;
 		endif;
 		?>
