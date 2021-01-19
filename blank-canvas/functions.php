@@ -164,6 +164,11 @@ function blank_canvas_enqueue() {
 add_action( 'wp_enqueue_scripts', 'blank_canvas_enqueue', 11 );
 
 /**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/inc/block-patterns.php';
+
+/**
  * Enqueue CSS for Customizer message.
  */
 function blank_canvas_customizer_enqueue() {
