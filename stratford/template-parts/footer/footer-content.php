@@ -16,15 +16,7 @@
 		</nav><!-- .social-navigation -->
 	<?php endif; ?>
 	<div class="site-info">
-		<?php
-		if ( function_exists( 'the_privacy_policy_link' ) ) {
-			?>
-			<div class="privacy-policy-container">
-			<?php the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' ); ?>
-			</div>
-			<?php
-		}
-		?>
+		<?php get_template_part( 'template-parts/footer/privacy-policy', '' ); ?>
 		<?php $blog_info = get_bloginfo( 'name' ); ?>
 		<?php if ( ! empty( $blog_info ) ) : ?>
 			<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="comma">,</span>

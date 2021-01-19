@@ -3,12 +3,13 @@
 	<?php if ( ! empty( $blog_info ) ) : ?>
 		<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="comma">,</span>
 	<?php endif; ?>
-	<?php /* translators: 1: WordPress link, 2: WordPress. */
-	printf( '<a href="%1$s" class="imprint">proudly powered by %2$s</a>.',
+	<?php
+	/* translators: 1: WordPress link, 2: WordPress. */
+	printf(
+		'<a href="%1$s" class="imprint">proudly powered by %2$s</a>.',
 		esc_url( __( 'https://wordpress.org/', 'varia' ) ),
 		'WordPress'
-	); ?>
-	<?php if ( function_exists( 'the_privacy_policy_link' ) ) {
-		the_privacy_policy_link();
-	} ?>
+	);
+	?>
+	<?php get_template_part( 'template-parts/footer/privacy-policy', '' ); ?>
 </div><!-- .site-info -->
