@@ -22,43 +22,24 @@
 		$template->output_template_content( A8C\FSE\WP_Template::FOOTER );
 	else : // Otherwise we'll fallback to the default Varia footer below. ?>
 	<footer id="colophon" class="site-footer">
-		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
+		<?php 
+		if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
+			get_template_part( 'template-parts/footer/footer', 'widgets' ); 
+		endif; ?>
 
 		<div id="footer-info-wrapper">
 
 		<?php
+		if ( ! ( true === get_theme_mod( 'hide_site_footer', false ) && is_front_page() && is_page() ) ) : // If this is the homepage and the footer elements are set to hide, don't load this part.
 			if ( function_exists( 'the_privacy_policy_link' ) ) {
 				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 			}
-		?>
-		<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
-			<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'alves' ); ?>">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-2',
-						'menu_class'     => 'footer-menu',
-						'depth'          => 1,
-					)
-				);
-				?>
-			</nav><!-- .footer-navigation -->
-			<?php endif;
-	endif; ?>
-
-		<div class="site-info">
-				<?php $blog_info = get_bloginfo( 'name' ); ?>
-				<?php if ( ! empty( $blog_info ) ) : ?>
-					<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="comma">,</span>
-				<?php endif; ?>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'alves' ) ); ?>" class="imprint">
-					<?php
-					/* translators: %s: WordPress. */
-					printf( __( 'proudly powered by %s.', 'alves' ), 'WordPress' );
-					?>
-				</a>
-			</div><!-- .site-info -->
+			get_template_part( 'template-parts/footer/footer', 'navigation' ); 
+		endif;
+		get_template_part( 'template-parts/footer/footer', 'info' ); ?>
 		</div>
+	<?php endif; ?>
+
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
