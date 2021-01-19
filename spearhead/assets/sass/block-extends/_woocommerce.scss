@@ -1,10 +1,22 @@
-#content {
-	.wc-block-grid{
-		.wc-block-grid__product {
-			.wc-block-grid__product-onsale {
-				top: -0.5em;
-				right: -0.5em;
-			}
+body.woocommerce #page .site-header {
+	.primary-navigation {
+		flex-basis: 50%;
+	}
+	.woo-navigation {
+		flex-direction: row;
+		padding: 0 1.2em;
+		.woocommerce-cart-link {
+			line-height: inherit;
+		}
+	}
+}
+
+
+#content .wc-block-grid{
+	.wc-block-grid__product {
+		.wc-block-grid__product-onsale {
+			top: -0.5em;
+			right: -0.5em;
 		}
 
 		.wc-block-grid__product-title{
@@ -30,4 +42,7 @@
 .wc-block-components-review-list-item__product + .wc-block-components-review-list-item__author,
 .wc-block-components-review-list-item__published-date {
 	font-size: var(--global--font-size-xs);
+}
+.single-product #page #woocommerce-wrapper div.product div.summary p.price {
+	color: var(--global--color-foreground);
 }
