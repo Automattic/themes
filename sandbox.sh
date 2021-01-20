@@ -125,6 +125,13 @@ How do you wish to proceed? [1]"
 
   fi
 
+  # Determine which files have been removed from the repository (as of this head, within the past month) according to git
+  files_to_delete=$(git log --format=format:"" --name-only --since="last month" --diff-filter=D HEAD)
+
+  # Remove all of those files from the destination.  (Note, if a file has since been re-added to the repo it will be uploaded in the next step)
+  rmcmd="ssh $SANDBOX_USER@$SANDBOX_LOCATION 'cd $SANDBOX_PUBLIC_THEMES_FOLDER && rm -f $files_to_delete'"
+  eval $rmcmd;
+
   cmd="rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude=$ignore_string ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/"
   eval $cmd
 
