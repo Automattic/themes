@@ -18,6 +18,7 @@
 	.menu-button-container {
 		display: block;
 		margin: 0;
+		width: auto;
 	}
 }
 
@@ -47,6 +48,10 @@
 .admin-bar.has-marketing-bar.lock-scrolling .menu-button-container > .button,
 .admin-bar.has-marketing-bar:not(.primary-navigation-open) .menu-button-container {
 	top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
+}
+
+#site-navigation + .menu-button-container {
+	right: 0;
 }
 
 .menu-button-container .button,
@@ -139,12 +144,6 @@
 	overflow: hidden;
 }
 
-.primary-navigation-open .menu-button-container #primary-open-menu, .primary-navigation-open
-.primary-navigation #primary-open-menu, .primary-navigation-open
-.woo-navigation #primary-open-menu {
-	display: none;
-}
-
 .primary-navigation-open .menu-button-container #primary-close-menu, .primary-navigation-open
 .primary-navigation #primary-close-menu, .primary-navigation-open
 .woo-navigation #primary-close-menu {
@@ -154,12 +153,6 @@
 	margin-right: calc(0.25 * var(--global--spacing-unit));
 }
 
-.woo-navigation-open .menu-button-container #woo-open-menu, .woo-navigation-open
-.primary-navigation #woo-open-menu, .woo-navigation-open
-.woo-navigation #woo-open-menu {
-	display: none;
-}
-
 .woo-navigation-open .menu-button-container #woo-close-menu, .woo-navigation-open
 .primary-navigation #woo-close-menu, .woo-navigation-open
 .woo-navigation #woo-close-menu {
@@ -167,6 +160,18 @@
 	padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
 	margin-top: calc(0.25 * var(--global--spacing-unit));
 	margin-right: calc(0.25 * var(--global--spacing-unit));
+}
+
+.woo-navigation-open .menu-button-container #primary-open-menu,
+.woo-navigation-open .menu-button-container #woo-open-menu,
+.primary-navigation-open .menu-button-container #primary-open-menu,
+.primary-navigation-open .menu-button-container #woo-open-menu {
+	display: none;
+}
+
+.woo-navigation-open .primary-navigation #primary-open-menu,
+.primary-navigation-open .primary-navigation #primary-open-menu {
+	display: none;
 }
 
 .primary-navigation,
