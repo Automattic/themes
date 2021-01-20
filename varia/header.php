@@ -30,6 +30,14 @@ if ( function_exists( 'wp_body_open' ) ) {
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'varia' ); ?></a>
 
-	<?php get_template_part( 'template-parts/header/header', 'content' ); ?>
+	<?php
+	if ( ( true === get_theme_mod( 'hide_site_header', false ) && is_front_page() && is_page() ) ) {
+		// Do nothing if this is the homepage and the hide-header setting is active.
+	} elseif ( class_exists( 'A8C\FSE\WP_Template' ) ) { // If not, check if the FSE plugin is active, use the Header template for content.
+		get_template_part( 'template-parts/header/fse', 'header' );
+	} else { // Otherwise we'll fallback to the default Varia header below.
+		get_template_part( 'template-parts/header/header', 'content' );
+	}
+	?>
 
 	<div id="content" class="site-content">

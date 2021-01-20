@@ -51,6 +51,7 @@
 
 	--entry-header--font-size: var(--heading--font-size-h1);
 	--entry-header--color: var(--global--color-foreground);
+	--entry-header--color-link: var(--entry-header--color);
 
 	--button--border-radius: 0px;
 	--button--color-text: var(--global--color-background);
@@ -102,7 +103,7 @@
 }
 
 @media ( prefers-color-scheme: dark ) {
-	:root {
+	:root :not(.custom-colors) {
 		--global--color-primary: #ff6a81;
 		--global--color-primary-hover: #ffffff;
 		--global--color-secondary: #b2b2b2;
