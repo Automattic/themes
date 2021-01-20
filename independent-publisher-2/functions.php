@@ -213,7 +213,7 @@ function independent_publisher_2_scripts() {
 	wp_enqueue_script( 'independent-publisher-2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170317', true );
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		wp_enqueue_script( 'independent-publisher-2-images', get_template_directory_uri() . '/js/independent-publisher-2.js', array(), '20210111', true );
+		wp_enqueue_script( 'independent-publisher-2-images', get_template_directory_uri() . '/js/independent-publisher-2.js', array(), '20210118', true );
 	}
 
 	// If there's an active Video widget, and it's (hopefully) in the footer widget area
