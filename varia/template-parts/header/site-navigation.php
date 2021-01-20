@@ -34,5 +34,3 @@
 		?>
 	</nav><!-- #site-navigation -->
 <?php endif; ?>
-
-<?php get_template_part( 'template-parts/header/social', 'navigation' ); ?>
