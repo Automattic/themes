@@ -115,6 +115,18 @@ function varia_wpcom_body_classes( $classes ) {
 		$classes[] = 'hide-homepage-title';
 	}
 
+	$hide_site_header = get_theme_mod( 'hide_site_header', false );
+
+	if ( true === $hide_site_header ) {
+		$classes[] = 'hide-homepage-header';
+	}
+
+	$hide_site_footer = get_theme_mod( 'hide_site_footer', false );
+
+	if ( true === $hide_site_footer ) {
+		$classes[] = 'hide-homepage-footer';
+	}
+
 	$credit_option = get_option( 'footercredit' );
 
 	if ( 'hidden' == $credit_option ) {

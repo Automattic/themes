@@ -3167,6 +3167,18 @@ body:not(.fse-enabled) .footer-menu a {
 	overflow: scroll;
 }
 
+.home.page.hide-homepage-header.hide-homepage-title .entry-content {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-image.alignfull:first-child,
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-cover.alignfull:first-child,
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-media-text.alignfull:first-child,
+.home.page.hide-homepage-header.hide-homepage-title .entry-content > .wp-block-group.has-background.alignfull:first-child {
+	margin-top: -32px;
+}
+
 .entry-attachment {
 	text-align: center;
 }
@@ -4274,6 +4286,9 @@ a.wp-block-file__button {
 		margin-top: 160px;
 		position: relative;
 		z-index: 2;
+	}
+	.hide-homepage-header .content-area {
+		margin-top: 0;
 	}
 	.nav-links {
 		display: block;

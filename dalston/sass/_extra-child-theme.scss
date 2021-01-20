@@ -216,11 +216,17 @@ a {
 .site-main > article > .entry-header {
 	margin: #{3 * $spacing_unit} 0 $spacing_unit;
 	position: relative;
+	.hide-homepage-header & {
+		margin: $spacing_unit 0 $spacing_unit;		
+	}
 }
 
 @include media(mobile) {
 	.site-main > article > .entry-header {
 		margin: #{3 * $spacing_vertical} auto #{2 * $spacing_unit};
+		.hide-homepage-header & {
+			margin: #{2 * $spacing_unit} auto #{2 * $spacing_unit};			
+		}
 	}
 }
 
