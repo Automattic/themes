@@ -54,6 +54,8 @@ function varia_body_classes( $classes ) {
 		$classes[] = 'hide-homepage-footer';
 	}
 
+	$classes[] = 'hide-homepage-title';
+
 	return $classes;
 }
 add_filter( 'body_class', 'varia_body_classes' );

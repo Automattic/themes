@@ -62,6 +62,11 @@
 		margin-top: 0;
 		padding-top: 0;
 
+		// First children should usually have top margin.
+		> *:first-child {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+		}
+
 		// Move some full-width blocks up to the top of the screen.
 		> .wp-block-image.alignfull:first-child,
 		> .wp-block-cover.alignfull:first-child,

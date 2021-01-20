@@ -237,6 +237,9 @@ function varia_scripts() {
 	// Theme styles
 	wp_enqueue_style( 'varia-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
+	// Theme styles
+	wp_enqueue_style( 'varia-wpcom-style', get_template_directory_uri() . '/inc/style-wpcom.css', array(), wp_get_theme()->get( 'Version' ) );
+
 	// RTL styles
 	wp_style_add_data( 'varia-style', 'rtl', 'replace' );
 

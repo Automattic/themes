@@ -308,6 +308,19 @@ a {
 	}
 }
 
+// Remove margin if alignfull is first element and header is hidden.
+@include media(mobile) {
+	.home.page.hide-homepage-header.hide-homepage-title .hentry .entry-content {
+
+			> .wp-block-image.alignfull:first-child,
+			> .wp-block-cover.alignfull:first-child,
+			> .wp-block-media-text.alignfull:first-child,
+			> .wp-block-group.has-background.alignfull:first-child {
+				margin-top: -#{2.75 * map-deep-get($config-global, "spacing", "unit")};
+			}
+	}
+}
+
 // Remove margin if alignfull is last element
 .page:not(.logged-in) {
 	.hentry .entry-content {
