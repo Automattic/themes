@@ -351,10 +351,25 @@ function varia_mobile_nav_on_side_setup() {
 	add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
 
 	// Enable the customizer control toggle for the mobile nav on the side.
-	add_action( 'customize_register' , 'varia_register_mobile_nav_on_side_customizer_control' );
+	add_action( 'customize_register', 'varia_register_mobile_nav_on_side_customizer_control' );
 
 	// Adds the script that help toggle the mobile nav.
 	add_action( 'wp_enqueue_scripts', 'varia_add_mobile_nav_on_side_scripts' );
+}
+
+/**
+* Sanitize the checkbox.
+*
+* @param boolean $input.
+*
+* @return boolean true if is 1 or '1', false if anything else
+*/
+function varia_sanitize_checkbox( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 /**
@@ -363,45 +378,52 @@ function varia_mobile_nav_on_side_setup() {
 function varia_customize_header_footer( $wp_customize ) {
 
 	// Add setting to hide the site header on the homepage.
-	$wp_customize->add_setting( 'hide_site_header', array(
-		'default'              => false,
-		'type'                 => 'theme_mod',
-		'transport'            => 'refresh',
-		'sanitize_callback'    => 'varia_sanitize_checkbox',
-	) );
+	$wp_customize->add_setting(
+		'hide_site_header',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
 
 	// Add control to hide the site header on the homepage.
-	$wp_customize->add_control( 'hide_site_header', array(
-		'label'		  => esc_html__( 'Hide the Site Header', 'seedlet' ),
-		'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
-		'section'	  => 'static_front_page',
-		'priority'	  => 10,
-		'type'		  => 'checkbox',
-		'settings'	  => 'hide_site_header',
-	) );
+	$wp_customize->add_control(
+		'hide_site_header',
+		array(
+			'label'       => esc_html__( 'Hide the Site Header', 'seedlet' ),
+			'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
+			'section'     => 'static_front_page',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'hide_site_header',
+		)
+	);
 
 	// Add setting to hide footer elements on the homepage.
-	$wp_customize->add_setting( 'hide_site_footer', array(
-		'default'              => false,
-		'type'                 => 'theme_mod',
-		'transport'            => 'refresh',
-		'sanitize_callback'    => 'varia_sanitize_checkbox',
-	) );
+	$wp_customize->add_setting(
+		'hide_site_footer',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
 
 	// Add control to hide footer elements on the homepage.
-	$wp_customize->add_control( 'hide_site_footer', array(
-		'label'		  => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
-		'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
-		'section'	  => 'static_front_page',
-		'priority'	  => 10,
-		'type'		  => 'checkbox',
-		'settings'	  => 'hide_site_footer',
-	) );
-
-	// Sanitize checkboxes.
-	function varia_sanitize_checkbox( $checked = null ) {
-		return (bool) isset( $checked ) && true === $checked;
-	}
+	$wp_customize->add_control(
+		'hide_site_footer',
+		array(
+			'label'       => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
+			'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
+			'section'     => 'static_front_page',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'hide_site_footer',
+		)
+	);
 }
 add_action( 'customize_register', 'varia_customize_header_footer' );
 
