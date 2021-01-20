@@ -22,6 +22,18 @@ body {
 	}
 }
 
+@include media(mobile) {
+	.home.page.hide-homepage-header.hide-homepage-title .hentry .entry-content {
+
+			> .wp-block-image.alignfull:first-child,
+			> .wp-block-cover.alignfull:first-child,
+			> .wp-block-media-text.alignfull:first-child,
+			> .wp-block-group.has-background.alignfull:first-child {
+				margin-top: -#{3 * map-deep-get($config-global, "spacing", "unit")};
+			}
+	}
+}
+
 a {
 	text-decoration: none;
 }
