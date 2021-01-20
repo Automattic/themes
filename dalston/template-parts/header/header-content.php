@@ -6,7 +6,7 @@ $header_classes .= 1 === get_theme_mod( 'header_text', 1 ) ? ' has-title-and-tag
 $header_classes .= $has_primary_nav ? ' has-menu' : '';
 ?>
 
-<header id="masthead" class="<?php echo $header_classes; ?>" role="banner" >
+<header id="masthead" class="<?php echo $header_classes; ?>" role="banner">
 	<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 	<?php get_template_part( 'template-parts/header/site', 'navigation' ); ?>
 	<?php get_template_part( 'template-parts/header/social', 'navigation' ); ?>
