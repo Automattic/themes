@@ -82,11 +82,11 @@ How do you wish to proceed? [1]"
 
       # These are the files changed in THIS branch since it diverged
       # EVEN IF they changed in trunk we STILL want to include them in our sync
-      comitted_files_to_include=$(git diff ${hash2} ${current_branch} --name-only)
-      comitted_files_to_include=($comitted_files_to_include)
+      committed_files_to_include=$(git diff ${hash2} ${current_branch} --name-only)
+      committed_files_to_include=($committed_files_to_include)
 
-      # Remove from the files_to_ignore collection anything found in comitted_files_to_include
-      for target in "${comitted_files_to_include[@]}"; do
+      # Remove from the files_to_ignore collection anything found in committed_files_to_include
+      for target in "${committed_files_to_include[@]}"; do
         for i in "${!files_to_ignore[@]}"; do
           if [[ ${files_to_ignore[i]} = $target ]]; then
             unset 'files_to_ignore[i]'
@@ -96,11 +96,11 @@ How do you wish to proceed? [1]"
 
       # These are the changes we have made but haven't committed yet
       # EVEN IF they changed in trunk we STILL want to include them in our sync
-      uncomitted_files_to_include=$(git diff HEAD --name-only)
-      uncomitted_files_to_include=($uncomitted_files_to_include)
+      uncommitted_files_to_include=$(git diff HEAD --name-only)
+      uncommitted_files_to_include=($uncommitted_files_to_include)
 
-      # Remove from the files_to_ignore collection anything found in the uncomitted_files_to_include
-      for target in "${uncomitted_files_to_include[@]}"; do
+      # Remove from the files_to_ignore collection anything found in the uncommitted_files_to_include
+      for target in "${uncommitted_files_to_include[@]}"; do
         for i in "${!files_to_ignore[@]}"; do
           if [[ ${files_to_ignore[i]} = $target ]]; then
             unset 'files_to_ignore[i]'
@@ -131,11 +131,11 @@ How do you wish to proceed? [1]"
   # Determine which files have been removed from the repository (or renamed) as of this head, within the past three months, according to git
   files_to_delete=$(git log --format=format:"" --name-only --since="last three months" -M100% --diff-filter=D HEAD)
 
-  # Determine which files have been removed locally but not comitted as a change
-  uncomitted_files_to_delete=$(git diff HEAD --name-only --diff-filter=D)
+  # Determine which files have been removed locally but not committed as a change
+  uncommitted_files_to_delete=$(git diff HEAD --name-only --diff-filter=D)
 
   # Remove all of those files from the destination.  (Note, if a file has since been re-added to the repo it will be uploaded in the next step)
-  remove_command="ssh $SANDBOX_USER@$SANDBOX_LOCATION 'cd $SANDBOX_PUBLIC_THEMES_FOLDER && rm -f $files_to_delete $uncomitted_files_to_delete'"
+  remove_command="ssh $SANDBOX_USER@$SANDBOX_LOCATION 'cd $SANDBOX_PUBLIC_THEMES_FOLDER && rm -f $files_to_delete $uncommitted_files_to_delete'"
   eval $remove_command;
 
   cmd="rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude=$ignore_string ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/"
