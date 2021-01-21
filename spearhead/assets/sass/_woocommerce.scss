@@ -20,6 +20,10 @@ body[class*="woocommerce"] #page {
 			}
 		}
 	}
+
+	.woo-navigation .woocommerce-cart-widget {
+		max-width: 100%;
+	}
 }
 
 #woocommerce-wrapper {
@@ -29,5 +33,11 @@ body[class*="woocommerce"] #page {
 				color: var(--global--color-foreground);
 			}
 		}
+	}
+}
+
+@include media( laptop ){
+	.woo-navigation {
+		padding-top: var(--global--spacing-vertical);
 	}
 }

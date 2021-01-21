@@ -529,6 +529,11 @@
 	}
 }
 
+.navigation-wrapper {
+	grid-area: primary-navigation;
+	margin: 0;
+}
+
 .primary-navigation .primary-menu-container > ul > .menu-item,
 .woo-navigation .primary-menu-container > ul > .menu-item {
 	padding: 0;
@@ -558,6 +563,10 @@
 	.woo-navigation div ul > li > .sub-menu > .menu-item.menu-item-has-children {
 		padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding)) 0 0;
 	}
+}
+
+.woo-navigation {
+	padding-left: calc(2 * var(--primary-nav--padding));
 }
 
 .social-navigation > div ul li {
@@ -595,12 +604,22 @@
 	bottom: calc( var(--branding--logo--max-height) + ( 2 * var(--global--spacing-vertical) ));
 }
 
-.has-logo.has-title-and-tagline .menu-button-container {
-	top: calc( var(--branding--logo--max-height) + var(--global--spacing-vertical));
+.menu-button-container {
+	position: relative;
+	left: unset;
+	top: unset;
 }
 
-.admin-bar .has-logo.has-title-and-tagline .menu-button-container {
-	top: calc( var(--wpadmin-bar--height) + var(--branding--logo--max-height) + var(--global--spacing-vertical));
+.menu-button-container .button#woo-open-menu {
+	margin-top: 0;
+}
+
+.admin-bar:not(.primary-navigation-open) .menu-button-container {
+	top: unset;
+}
+
+.social-navigation {
+	grid-area: navigation;
 }
 
 /*# sourceMappingURL=navigation.css.map */

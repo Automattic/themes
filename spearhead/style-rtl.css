@@ -214,17 +214,17 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-main-navigation .site-header {
-	padding: var(--global--spacing-horizontal);
-}
-
-.has-main-navigation .site-header a {
-	border-bottom: 1px solid transparent;
+	padding: var(--global--spacing-vertical) 0;
 }
 
 @media only screen and (min-width: 830px) {
 	.has-main-navigation .site-header {
-		padding: 35px var(--global--spacing-horizontal);
+		padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 	}
+}
+
+.has-main-navigation .site-header a {
+	border-bottom: 1px solid transparent;
 }
 
 @media only screen and (max-width: 829px) {
@@ -241,29 +241,39 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-header {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	display: grid;
+	grid-template-areas: "site-logo site-logo site-logo" "branding branding primary-navigation";
+	grid-template-columns: 0.5fr 1fr 0.5fr;
+	grid-template-rows: auto;
+	grid-column-gap: 16px;
 	max-width: var(--responsive--alignfull-width);
-	padding: var(--global--spacing-horizontal);
+	padding: var(--global--spacing-vertical) 0;
 }
 
 @media only screen and (min-width: 830px) {
 	.site-header {
-		padding: 35px var(--global--spacing-horizontal);
-	}
-}
-
-@media only screen and (max-width: 829px) {
-	.site-header {
-		flex-wrap: wrap;
+		grid-template-areas: "site-logo site-logo site-logo" "branding primary-navigation primary-navigation";
+		padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 	}
 }
 
 .site-header .site-branding {
-	flex-basis: 30%;
-	flex-grow: 1;
+	grid-area: branding;
+	padding: var(--global--spacing-horizontal);
 	text-align: right;
+	justify-self: flex-start;
+	align-self: center;
+}
+
+@media only screen and (min-width: 830px) {
+	.site-header .site-branding {
+		padding: 0;
+	}
+}
+
+.site-header .site-branding .site-logo {
+	margin-right: 0;
+	margin-top: 0;
 }
 
 .site-header .site-branding .site-title {
@@ -275,20 +285,25 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	text-shadow: none;
 }
 
-.site-header .site-branding .site-logo {
-	margin-right: 0;
-	margin-top: 0;
-	text-align: right;
+.site-header .site-logo {
+	grid-area: site-logo;
+	margin: 0;
+}
+
+.site-header .site-logo a {
+	display: block;
+}
+
+.site-header .site-logo a:hover {
+	border-color: transparent;
+}
+
+.site-header .primary-navigation-wrapper {
+	margin-bottom: 6px;
 }
 
 .site-header .primary-navigation {
-	flex-basis: 70%;
-	flex-grow: 4;
 	margin-top: 0;
-}
-
-.site-header .primary-navigation .primary-menu-container {
-	margin-bottom: 6px;
 }
 
 @media only screen and (max-width: 829px) {
@@ -380,8 +395,21 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-title-and-tagline .site-logo {
-	flex-basis: 100%;
-	margin-bottom: var(--global--spacing-vertical);
+	margin: 0;
+}
+
+@media only screen and (min-width: 830px) {
+	.has-title-and-tagline .site-logo {
+		padding-bottom: var(--global--spacing-vertical);
+	}
+}
+
+.has-title-and-tagline .site-branding {
+	align-self: flex-start;
+}
+
+.primary-navigation-open .site-header {
+	padding-top: 0;
 }
 
 .primary-navigation-open .has-title-and-tagline .site-logo {
@@ -389,13 +417,17 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-header div.menu-button-container button#primary-open-menu {
+	padding: var(--global--spacing-horizontal);
 	margin-top: 0;
 	margin-left: 0;
-	padding: var(--global--spacing-horizontal);
 }
 
 .site-header div.menu-button-container button#primary-open-menu:before {
 	margin: 0;
+}
+
+.site-header div.menu-button-container #woo-open-menu {
+	margin-right: auto;
 }
 
 .primary-navigation-open .site-header div.menu-button-container {
@@ -810,6 +842,16 @@ body[class*="woocommerce"] #page span.onsale {
 	}
 }
 
+body[class*="woocommerce"] #page .woo-navigation .woocommerce-cart-widget {
+	max-width: 100%;
+}
+
 #woocommerce-wrapper ul.products li.product .price {
 	color: var(--global--color-foreground);
+}
+
+@media only screen and (min-width: 830px) {
+	.woo-navigation {
+		padding-top: var(--global--spacing-vertical);
+	}
 }
