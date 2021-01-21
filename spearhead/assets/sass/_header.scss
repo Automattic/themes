@@ -38,11 +38,13 @@ $site-branding-height: 68px;
 	grid-template-rows: auto;
 	grid-column-gap: 16px;
 	max-width: var(--responsive--alignfull-width);
+	padding: var(--global--spacing-vertical) 0;
 
 	@include media( laptop ){
 		grid-template-areas:
 			"site-logo site-logo site-logo"
 			"branding primary-navigation primary-navigation";
+		padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 	}
 
 	.site-branding {
