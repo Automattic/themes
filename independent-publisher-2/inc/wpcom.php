@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', 'independent_publisher_2_wpcom_setup' );
  * WordPress.com specific styles
  */
 function independent_publisher_2_wpcom_styles() {
-	wp_enqueue_script( 'independent-publisher-2-wpcom-functions', get_template_directory_uri() . '/inc/script-wpcom.js', array( 'jquery' ), '20150806', true );
+	wp_enqueue_script( 'independent-publisher-2-wpcom-functions', get_template_directory_uri() . '/inc/script-wpcom.js', array(), '20210111', true );
 	wp_enqueue_style( 'independent-publisher-2-wpcom-style', get_template_directory_uri() . '/inc/style-wpcom.css', '20150827' );
 }
 add_action( 'wp_enqueue_scripts', 'independent_publisher_2_wpcom_styles' );
