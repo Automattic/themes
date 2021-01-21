@@ -128,8 +128,8 @@ How do you wish to proceed? [1]"
 
   fi
 
-  # Determine which files have been removed from the repository (as of this head, within the past three months) according to git
-  files_to_delete=$(git log --format=format:"" --name-only --since="last three months" --diff-filter=D HEAD)
+  # Determine which files have been removed from the repository (or renamed) as of this head, within the past three months, according to git
+  files_to_delete=$(git log --format=format:"" --name-only --since="last three months" -M100% --diff-filter=D HEAD)
 
   # Determine which files have been removed locally but not comitted as a change
   uncomitted_files_to_delete=$(git diff HEAD --name-only --diff-filter=D)
