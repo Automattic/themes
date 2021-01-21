@@ -114,8 +114,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="Photo of two drinks." class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:spacer {"height":30} -->
 									<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
-									<!-- wp:heading {"style":{"color":{"text":"#c61aa7"}}} -->
-									<h2 class="has-text-color" style="color:#c61aa7"><strong>' . __( 'You&rsquo;re Invited', 'blank-canvas' ) . '</strong></h2>
+									<!-- wp:heading {"level":1,"style":{"color":{"text":"#c61aa7"}}} -->
+									<h1 class="has-text-color" style="color:#c61aa7"><strong>' . __( 'You&rsquo;re Invited', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
