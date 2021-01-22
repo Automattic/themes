@@ -483,15 +483,3 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Adds crossorigin="anonymous" to all css scripts so that the IE11 ponyfill doesn't have CORS issues
- */
-function seedlet_css_crossorigin( $html, $handle ) {
-	global $is_IE;
-	if ( $is_IE ) {
-		return str_replace( "media='all'", "media='all' crossorigin='anonymous'", $html );
-	}
-	return $html;
-}
-add_filter( 'style_loader_tag', 'seedlet_css_crossorigin', 10, 2 );
