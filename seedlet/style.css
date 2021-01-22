@@ -1265,6 +1265,11 @@ object {
 	color: var(--button--color-background-hover);
 }
 
+.wp-block-button.is-style-outline.wp-block-button__link.has-text-color,
+.wp-block-button.is-style-outline .wp-block-button__link.has-text-color {
+	color: inherit;
+}
+
 .wp-block-button.is-style-squared .wp-block-button__link {
 	border-radius: 0;
 }
@@ -2615,7 +2620,7 @@ pre.wp-block-verse {
 	color: var(--global--color-black);
 }
 
-.has-background:not(.has-background-background-color) a:not(.has-text-color),
+.has-background:not(.has-background-background-color) a:not(.has-text-color):not(.wp-block-button__link),
 .has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
 	color: currentColor;
 }
