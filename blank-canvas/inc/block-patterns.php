@@ -36,8 +36,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 									<!-- wp:media-text {"mediaPosition":"right","mediaId":1752,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg","mediaType":"image","imageFill":true} -->
-									<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg" alt="' . __( 'A photo of a tattooed hand, giving the "I love you" sign.', 'blank-canvas' ) . '" class="wp-image-1752 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"align":"wide"} -->
-									<h2 class="alignwide"><strong>' . __( 'Hi! I’m a tattooist based in Florida City.', 'blank-canvas' ) . '</strong></h2>
+									<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg" alt="' . __( 'A photo of a tattooed hand, giving the "I love you" sign.', 'blank-canvas' ) . '" class="wp-image-1752 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"fontSize":"32px"}}} -->
+									<h1 class="alignwide" style="font-size:32px"><strong>' . __( 'Hi! I’m a tattooist based in Florida City.', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:paragraph -->
 									<p>' . __( 'Specializing in fine line tattoos with a single needle. With over 10 years of experience, I can make your tattoo dreams come true.', 'blank-canvas' ) . '</p>
@@ -70,9 +70,9 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:image {"align":"center","id":20,"width":98,"height":95,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-hat.jpg" alt="' . __( 'Photo of a man wearing a hat.', 'blank-canvas' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
 									<!-- /wp:image -->
-									<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"34px","lineHeight":"1"}}} -->
-									<p class="has-text-align-center" style="font-size:34px;line-height:1"><strong>' . __( 'Alex Fredrickson', 'blank-canvas' ) . '</strong></p>
-									<!-- /wp:paragraph -->
+									<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"32px"}}} -->
+									<h1 class="has-text-align-center" style="font-size:32px"><strong>' . __( 'Alex Fredrickson', 'blank-canvas' ) . '</strong></h1>
+									<!-- /wp:heading -->
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
 									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
 									<!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /-->

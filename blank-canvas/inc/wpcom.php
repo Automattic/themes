@@ -36,8 +36,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:group {"className":"margin-top-none","style":{"color":{"background":"#ebfbff"}}} -->
-									<div class="wp-block-group margin-top-none has-background" style="background-color:#ebfbff"><div class="wp-block-group__inner-container"><!-- wp:heading {"className":"margin-bottom-none","textColor":"primary"} -->
-									<h2 class="margin-bottom-none has-primary-color has-text-color"><strong>' . __( 'Kate Pollard', 'blank-canvas' ) . '</strong></h2>
+									<div class="wp-block-group margin-top-none has-background" style="background-color:#ebfbff"><div class="wp-block-group__inner-container"><!-- wp:heading {"level":1,"className":"margin-bottom-none","textColor":"primary","style":{"typography":{"fontSize":"32px"}}} -->
+									<h1 class="margin-bottom-none has-primary-color has-text-color" style="font-size:32px"><strong>' . __( 'Kate Pollard', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"className":"margin-top-half","textColor":"primary","style":{"typography":{"fontSize":"18px"}}} -->
@@ -80,8 +80,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:heading -->
-									<h2><strong>' . __( 'Virtual Art Classes', 'blank-canvas' ) . '</strong></h2>
+									<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"32px"}}} -->
+									<h1 style="font-size:32px"><strong>' . __( 'Virtual Art Classes', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph -->
