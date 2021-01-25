@@ -25,10 +25,13 @@ input[type="submit"],
 
 		&.wp-block-button__link,
 		.wp-block-button__link {
-			color: var(--button--color-background);
 			background: transparent;
 			border: var(--button--border-width) solid currentcolor;
 			padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+			&:not(.has-text-color) {
+				color: var(--button--color-background);
+			}
 
 			&:active {
 				color: var(--button--color-background);
