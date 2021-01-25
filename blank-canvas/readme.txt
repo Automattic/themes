@@ -10,11 +10,13 @@ A blank starting point for building your site.
 
 == Description ==
 
-Blank Canvas is a blank starting point for building your site. 
+Blank Canvas is a minimalist theme, designed for single-page websites. Its single post and page layouts have no header, navigation menus, or widgets, so the page you design in the WordPress editor is the same page you’ll see on the front end.
+
+The theme’s default styles are conservative, relying on simple sans-serif fonts and a subtle blue highlight color. Blank Canvas is ready for your customizations.
 
 == Changelog ==
 
-= 1.0 =
+= 1.1 =
 * Initial release 
 
 == Copyright ==
