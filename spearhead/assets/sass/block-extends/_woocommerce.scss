@@ -14,7 +14,16 @@ body[class*="woocommerce"] #page {
 	}
 	.woocommerce-tabs {
 		ul.tabs {
+			padding-left: calc( 0.3 * var(--global--spacing-horizontal));
+			margin-bottom: calc( 2 * var(--global--spacing-vertical));
 			li {
+				background-color: var(--global--color-foreground-low-contrast);
+				&:before {
+					box-shadow: 2px 2px 0 var(--global--color-foreground-low-contrast);
+				}
+				&:after {
+					box-shadow: -2px 2px 0 var(--global--color-foreground-low-contrast);
+				}
 				a {
 					color: var(--button--color-text);
 					padding: var(--button--padding-vertical) var(--button--padding-horizontal);
@@ -28,6 +37,7 @@ body[class*="woocommerce"] #page {
 			}
 		}
 		.panel {
+			margin-bottom: calc( 2 * var(--global--spacing-vertical));
 			h2 {
 				font-family: var(--global--font-secondary);
 			}
