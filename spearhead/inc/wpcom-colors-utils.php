@@ -140,6 +140,7 @@ function seedlet_custom_colors_extra_css() {
 	:root,
 	#editor .editor-styles-wrapper {
 		--global--color-background: <?php echo $background; ?>;
+		--global--color-background-high-contrast: <?php echo $background; ?>;
 		--global--color-foreground: <?php echo $foreground; ?>;
 		--global--color-foreground-low-contrast: <?php echo $foreground_low_contrast; ?>;
 		--global--color-foreground-high-contrast: <?php echo $foreground_high_contrast; ?>;
