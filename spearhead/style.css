@@ -193,13 +193,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-link-color a, a {
-	border-bottom: 1px solid transparent;
+	border-bottom: 1px solid;
+	border-color: transparent;
 	transition: all 0.1s ease;
 }
 
-.has-link-color a:hover:not(.wp-block-button__link):not(.wp-block-file__button), a:hover:not(.wp-block-button__link):not(.wp-block-file__button) {
+.has-link-color a:hover, a:hover {
 	color: var(--global--color-primary-hover);
-	border-bottom: 1px solid var(--global--color-primary-hover);
+	border-color: var(--global--color-primary-hover);
 }
 
 .wp-block a,
@@ -208,8 +209,8 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	border-color: var(--global--color-primary);
 }
 
-.wp-block a:hover:not(.wp-block-button__link),
-.entry-content a:hover:not(.wp-block-button__link) {
+.wp-block a:hover,
+.entry-content a:hover {
 	border-color: transparent;
 }
 

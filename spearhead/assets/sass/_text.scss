@@ -1,19 +1,19 @@
 .has-link-color a, a {
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid;
+    border-color: transparent;
     transition: all 0.1s ease;
 
-    &:hover:not(.wp-block-button__link):not(.wp-block-file__button) {
+    &:hover {
         color: var( --global--color-primary-hover );
-        border-bottom: 1px solid var( --global--color-primary-hover );
+        border-color: var( --global--color-primary-hover );
     }
 }
 
-.wp-block a, // Target the editor link styles also.
+.wp-block a,
 .entry-content a {
     font-weight: var(--global--link-font-weight);
-    border-color: var( --global--color-primary ); // Links inside the post content must be underlined.
-
-    &:hover:not(.wp-block-button__link) {
+    border-color: var( --global--color-primary );
+    &:hover {
         border-color: transparent;
     }
 }
