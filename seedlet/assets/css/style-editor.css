@@ -533,33 +533,33 @@ object {
 .wp-block-cover .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text,
-.wp-block-cover .block-editor-block-list__block,
+.wp-block-cover .block-editor-block-list__block:not(.wp-social-link),
 .wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image .wp-block-cover-text,
-.wp-block-cover-image .block-editor-block-list__block {
+.wp-block-cover-image .block-editor-block-list__block:not(.wp-social-link) {
 	color: currentColor;
 }
 
 .wp-block-cover .wp-block-cover__inner-container a:not(.has-text-color):not(.wp-block-button__link),
 .wp-block-cover .wp-block-cover-image-text a:not(.has-text-color):not(.wp-block-button__link),
 .wp-block-cover .wp-block-cover-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover .block-editor-block-list__block a:not(.has-text-color):not(.wp-block-button__link),
+.wp-block-cover .block-editor-block-list__block:not(.wp-social-link) a:not(.has-text-color):not(.wp-block-button__link),
 .wp-block-cover-image .wp-block-cover__inner-container a:not(.has-text-color):not(.wp-block-button__link),
 .wp-block-cover-image .wp-block-cover-image-text a:not(.has-text-color):not(.wp-block-button__link),
 .wp-block-cover-image .wp-block-cover-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .block-editor-block-list__block a:not(.has-text-color):not(.wp-block-button__link) {
+.wp-block-cover-image .block-editor-block-list__block:not(.wp-social-link) a:not(.has-text-color):not(.wp-block-button__link) {
 	color: currentColor;
 }
 
 .wp-block-cover .wp-block-cover__inner-container .has-link-color a,
 .wp-block-cover .wp-block-cover-image-text .has-link-color a,
 .wp-block-cover .wp-block-cover-text .has-link-color a,
-.wp-block-cover .block-editor-block-list__block .has-link-color a,
+.wp-block-cover .block-editor-block-list__block:not(.wp-social-link) .has-link-color a,
 .wp-block-cover-image .wp-block-cover__inner-container .has-link-color a,
 .wp-block-cover-image .wp-block-cover-image-text .has-link-color a,
 .wp-block-cover-image .wp-block-cover-text .has-link-color a,
-.wp-block-cover-image .block-editor-block-list__block .has-link-color a {
+.wp-block-cover-image .block-editor-block-list__block:not(.wp-social-link) .has-link-color a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
@@ -907,11 +907,6 @@ li > ol {
 dt {
 	font-family: var(--definition-term--font-family);
 	font-weight: bold;
-}
-
-.wp-block-media-text .block-editor-inner-blocks {
-	padding-right: var(--global--spacing-horizontal);
-	padding-left: var(--global--spacing-horizontal);
 }
 
 .wp-block-navigation .wp-block-navigation__container {
