@@ -18,6 +18,10 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.4 - 1.1.7 =
+* Allow header and footer to be hidden via customizer 
+* Bug fixes and improvements
+
 = 1.1.1-2 =
 * Bug fixes and improvements
 
