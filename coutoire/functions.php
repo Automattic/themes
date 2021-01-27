@@ -104,7 +104,7 @@ if ( ! function_exists( 'coutoire_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'coutoire_setup' );
+add_action( 'after_setup_theme', 'coutoire_setup', 12 );
 
 /**
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
@@ -169,7 +169,7 @@ function coutoire_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('coutoire-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'coutoire-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'coutoire-style', 'rtl', 'replace' );
