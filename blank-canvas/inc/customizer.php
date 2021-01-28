@@ -118,6 +118,30 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 					'settings'    => 'show_site_footer',
 				)
 			);
+			
+			// Add setting to show the comments
+			$wp_customize->add_setting(
+				'show_comments',
+				array(
+					'default'           => false,
+					'type'              => 'theme_mod',
+					'transport'         => 'refresh',
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			// Add control to show the comments.
+			$wp_customize->add_control(
+				'show_comments',
+				array(
+					'label'       => esc_html__( 'Enable comments', 'blank-canvas' ),
+					'description' => esc_html__( "Check to show comments underneath each post.", 'blank-canvas' ),
+					'section'     => 'jetpack_content_options',
+					'priority'    => 10,
+					'type'        => 'checkbox',
+					'settings'    => 'show_comments',
+				)
+			);
 		}
 
 		/**

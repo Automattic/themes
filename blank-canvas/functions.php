@@ -103,11 +103,18 @@ function blank_canvas_remove_customizer_settings( $wp_customize ) {
 	// since they're already hidden by default.
 	$wp_customize->remove_control( 'hide_site_header' );
 	$wp_customize->remove_control( 'hide_site_footer' );
+}
+add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
+
+/**
+ * Add custmizer settings.
+ */
+function blank_canvas_add_customizer_settings( $wp_customize ) {
 
 	// Add a Customizer message about the site title & tagline options.
 	$wp_customize->get_section( 'menu_locations' )->description = __( 'Menus will only be displayed on this theme if the header or footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
 }
-add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
+add_action( 'customize_register', 'blank_canvas_add_customizer_settings', 11 );
 
 /**
  * Remove Meta Footer Items.
