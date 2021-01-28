@@ -33,14 +33,17 @@ input[type="submit"] {
 
 		&.wp-block-button__link,
 		.wp-block-button__link {
-			background: transparent;
 			border: var(--button--border-width) solid currentcolor;
 			padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+			&:not(.has-background) {
+				background: transparent;
+			}
 
 			&:not(.has-text-color) {
 				color: var(--button--color-background);
 			}
-			
+
 			&:not(.has-text-color),
 			&.has-secondary-color{
 
