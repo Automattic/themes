@@ -75,26 +75,6 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 		);
 
 		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'spearhead' ),
-					'slug'  => 'primary',
-					'color' => '#DB0042',
-				),
-				array(
-					'name'  => __( 'Foreground', 'spearhead' ),
-					'slug'  => 'foreground',
-					'color' => '#000000',
-				),
-				array(
-					'name'  => __( 'Background', 'spearhead' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
 		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
 		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
 	}
