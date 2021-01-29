@@ -93,7 +93,6 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				),
 				array(
 					'name'  => __( 'Foreground Low Contrast', 'hever' ),
-<<<<<<< HEAD
 					'slug'  => 'foreground-low-contrast',
 					'color' => $foreground_low_contrast,
 				),
@@ -115,29 +114,6 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				array(
 					'name'  => __( 'Background Low Contrast', 'hever' ),
 					'slug'  => 'background-low-contrast',
-=======
-					'slug'  => 'foreground-light',
-					'color' => $foreground_low_contrast,
-				),
-				array(
-					'name'  => __( 'Foreground High Contrast', 'hever' ),
-					'slug'  => 'foreground-dark',
-					'color' => $foreground_high_contrast,
-				),
-				array(
-					'name'  => __( 'Background', 'hever' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Background High Contrast', 'hever' ),
-					'slug'  => 'background-light',
-					'color' => $background_high_contrast,
-				),
-				array(
-					'name'  => __( 'Background Low Contrast', 'hever' ),
-					'slug'  => 'background-light',
->>>>>>> css variable approach to color annotations
 					'color' => $background_low_contrast,
 				),
 			)
