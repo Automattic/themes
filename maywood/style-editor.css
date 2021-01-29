@@ -120,6 +120,12 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * Add font-family using CSS variables.
  * It also adds the proper fallback for browsers without support.
  */
+body {
+	display: none;
+	/* Legacy */
+	display: var(--skip, block);
+}
+
 /**
  * Child Theme Name
  */
@@ -821,18 +827,6 @@ ol.alignright {
 li > ul,
 li > ol {
 	margin: 0;
-}
-
-.wp-block-media-text .block-editor-inner-blocks {
-	padding-right: 16px;
-	padding-left: 16px;
-}
-
-@media only screen and (min-width: 640px) {
-	.wp-block-media-text .block-editor-inner-blocks {
-		padding-right: 32px;
-		padding-left: 32px;
-	}
 }
 
 .wp-block-media-text[style*="background-color"]:not(.has-background-background-color) a {
