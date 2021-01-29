@@ -17,7 +17,7 @@ The theme’s default styles are conservative, relying on simple sans-serif font
 == Changelog ==
 
 = 1.2 =
-* Adds Customizer options for showing a global header, menu, and widgets. 
+* Adds Customizer options for showing page titles, a global header, menu, and widgets. 
 
 = 1.1 =
 * Initial release 
