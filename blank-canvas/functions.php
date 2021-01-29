@@ -112,7 +112,9 @@ add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 
 function blank_canvas_add_customizer_settings( $wp_customize ) {
 
 	// Add a Customizer message about the site title & tagline options.
-	$wp_customize->get_section( 'menu_locations' )->description = __( 'Menus will only be displayed on this theme if the header or footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_section( 'menu_locations' )->description            = __( 'Menus will only be displayed on this theme if the header or footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_panel( 'nav_menus' )->description                   = __( 'Menus will only be displayed on this theme if the header or footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_section( 'sidebar-widgets-sidebar-1' )->description = __( 'Widgets will only be displayed on this theme if the footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
 }
 add_action( 'customize_register', 'blank_canvas_add_customizer_settings', 11 );
 
