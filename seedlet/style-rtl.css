@@ -577,8 +577,7 @@ body {
  */
 button,
 .button,
-input[type="submit"],
-.wp-block-button__link, .a8c-posts-list__view-all, button[data-load-more-btn] {
+input[type="submit"], .a8c-posts-list__view-all, button[data-load-more-btn] {
 	line-height: var(--button--line-height);
 	color: var(--button--color-text);
 	cursor: pointer;
@@ -594,11 +593,9 @@ input[type="submit"],
 
 button:before,
 .button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
+input[type="submit"]:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
 .button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+input[type="submit"]:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -607,36 +604,30 @@ input[type="submit"]:after,
 
 button:before,
 .button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
+input[type="submit"]:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
 	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
 }
 
 button:after,
 .button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+input[type="submit"]:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
 	margin-top: -calc(.5em * var(--button--line-height) + -.39);
 }
 
 button:not(.has-background):active,
 .button:not(.has-background):active,
-input:not(.has-background):active[type="submit"],
-.wp-block-button__link:not(.has-background):active, .a8c-posts-list__view-all:not(.has-background):active {
+input:not(.has-background):active[type="submit"], .a8c-posts-list__view-all:not(.has-background):active {
 	color: var(--button--color-text-active);
 	background-color: var(--button--color-background-active);
 }
 
 button:not(.has-background):hover,
 .button:not(.has-background):hover,
-input:not(.has-background):hover[type="submit"],
-.wp-block-button__link:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, button:not(.has-background):focus,
+input:not(.has-background):hover[type="submit"], .a8c-posts-list__view-all:not(.has-background):hover, button:not(.has-background):focus,
 .button:not(.has-background):focus,
-input:not(.has-background):focus[type="submit"],
-.wp-block-button__link:not(.has-background):focus, .a8c-posts-list__view-all:not(.has-background):focus, button:not(.has-background).has-focus,
+input:not(.has-background):focus[type="submit"], .a8c-posts-list__view-all:not(.has-background):focus, button:not(.has-background).has-focus,
 .button:not(.has-background).has-focus,
-input:not(.has-background).has-focus[type="submit"],
-.wp-block-button__link:not(.has-background).has-focus, .a8c-posts-list__view-all:not(.has-background).has-focus {
+input:not(.has-background).has-focus[type="submit"], .a8c-posts-list__view-all:not(.has-background).has-focus {
 	color: var(--button--color-text-hover);
 	background-color: var(--button--color-background-hover);
 }
@@ -1241,15 +1232,63 @@ object {
 	line-height: var(--button--line-height);
 }
 
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):active {
+	color: var(--button--color-text-active);
+	background-color: var(--button--color-background-active);
+}
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):hover, .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):focus, .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background).has-focus {
+	color: var(--button--color-text-hover);
+	background-color: var(--button--color-background-hover);
+}
+
+.wp-block-button.wp-block-button__link,
+.wp-block-button .wp-block-button__link {
+	line-height: var(--button--line-height);
+	color: var(--button--color-text);
+	cursor: pointer;
+	font-weight: var(--button--font-weight);
+	font-family: var(--button--font-family);
+	font-size: var(--button--font-size);
+	background-color: var(--button--color-background);
+	border-radius: var(--button--border-radius);
+	border-width: 0;
+	text-decoration: none;
+	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+}
+
+.wp-block-button.wp-block-button__link:before, .wp-block-button.wp-block-button__link:after,
+.wp-block-button .wp-block-button__link:before,
+.wp-block-button .wp-block-button__link:after {
+	content: '';
+	display: block;
+	height: 0;
+	width: 0;
+}
+
+.wp-block-button.wp-block-button__link:before,
+.wp-block-button .wp-block-button__link:before {
+	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
+}
+
+.wp-block-button.wp-block-button__link:after,
+.wp-block-button .wp-block-button__link:after {
+	margin-top: -calc(.5em * var(--button--line-height) + -.39);
+}
+
 .wp-block-button.is-style-outline {
 	border: none;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
-	background: transparent;
 	border: var(--button--border-width) solid currentcolor;
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background),
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
+	background: transparent;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
@@ -1257,15 +1296,19 @@ object {
 	color: var(--button--color-background);
 }
 
-.wp-block-button.is-style-outline.wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:active {
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active, .wp-block-button.is-style-outline.wp-block-button__link.has-secondary-color:active,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+.wp-block-button.is-style-outline .wp-block-button__link.has-secondary-color:active {
 	color: var(--button--color-background);
 }
 
-.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link.has-focus {
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color).has-focus, .wp-block-button.is-style-outline.wp-block-button__link.has-secondary-color:hover, .wp-block-button.is-style-outline.wp-block-button__link.has-secondary-color:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-secondary-color.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-secondary-color:hover,
+.wp-block-button.is-style-outline .wp-block-button__link.has-secondary-color:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-secondary-color.has-focus {
 	color: var(--button--color-background-hover);
 }
 
@@ -4116,8 +4159,7 @@ img#wpstats {
 
 button,
 .button,
-input[type="submit"],
-.wp-block-button__link, .a8c-posts-list__view-all, button[data-load-more-btn] {
+input[type="submit"], .a8c-posts-list__view-all, button[data-load-more-btn] {
 	line-height: var(--button--line-height);
 	color: var(--button--color-text);
 	cursor: pointer;
@@ -4133,11 +4175,9 @@ input[type="submit"],
 
 button:before,
 .button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
+input[type="submit"]:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before, button:after,
 .button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+input[type="submit"]:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -4146,36 +4186,30 @@ input[type="submit"]:after,
 
 button:before,
 .button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
+input[type="submit"]:before, .a8c-posts-list__view-all:before, button[data-load-more-btn]:before {
 	margin-bottom: -calc(.5em * var(--button--line-height) + -.38);
 }
 
 button:after,
 .button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
+input[type="submit"]:after, .a8c-posts-list__view-all:after, button[data-load-more-btn]:after {
 	margin-top: -calc(.5em * var(--button--line-height) + -.39);
 }
 
 button:not(.has-background):active,
 .button:not(.has-background):active,
-input:not(.has-background):active[type="submit"],
-.wp-block-button__link:not(.has-background):active, .a8c-posts-list__view-all:not(.has-background):active {
+input:not(.has-background):active[type="submit"], .a8c-posts-list__view-all:not(.has-background):active {
 	color: var(--button--color-text-active);
 	background-color: var(--button--color-background-active);
 }
 
 button:not(.has-background):hover,
 .button:not(.has-background):hover,
-input:not(.has-background):hover[type="submit"],
-.wp-block-button__link:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, button:not(.has-background):focus,
+input:not(.has-background):hover[type="submit"], .a8c-posts-list__view-all:not(.has-background):hover, button:not(.has-background):focus,
 .button:not(.has-background):focus,
-input:not(.has-background):focus[type="submit"],
-.wp-block-button__link:not(.has-background):focus, .a8c-posts-list__view-all:not(.has-background):focus, button:not(.has-background).has-focus,
+input:not(.has-background):focus[type="submit"], .a8c-posts-list__view-all:not(.has-background):focus, button:not(.has-background).has-focus,
 .button:not(.has-background).has-focus,
-input:not(.has-background).has-focus[type="submit"],
-.wp-block-button__link:not(.has-background).has-focus, .a8c-posts-list__view-all:not(.has-background).has-focus {
+input:not(.has-background).has-focus[type="submit"], .a8c-posts-list__view-all:not(.has-background).has-focus {
 	color: var(--button--color-text-hover);
 	background-color: var(--button--color-background-hover);
 }

@@ -3,8 +3,7 @@
  */
 button,
 .button,
-input[type="submit"],
-.wp-block-button__link {
+input[type="submit"] {
 	// Extend button style
 	@extend %button-style;
 }
@@ -19,28 +18,44 @@ input[type="submit"],
 	font-weight: var(--button--font-weight);
 	line-height: var(--button--line-height);
 
+	&:not(.is-style-outline) .wp-block-button__link {
+		@include button-hover-styles;
+	}
+
+	&.wp-block-button__link,
+	.wp-block-button__link {
+		@include button-main-styles;
+	}
+
 	// Outline Style
 	&.is-style-outline {
 		border: none;
 
 		&.wp-block-button__link,
 		.wp-block-button__link {
-			background: transparent;
 			border: var(--button--border-width) solid currentcolor;
 			padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+			&:not(.has-background) {
+				background: transparent;
+			}
 
 			&:not(.has-text-color) {
 				color: var(--button--color-background);
 			}
 
-			&:active {
-				color: var(--button--color-background);
-			}
+			&:not(.has-text-color),
+			&.has-secondary-color{
 
-			&:hover,
-			&:focus,
-			&.has-focus {
-				color: var(--button--color-background-hover);
+				&:active {
+					color: var(--button--color-background);
+				}
+
+				&:hover,
+				&:focus,
+				&.has-focus {
+					color: var(--button--color-background-hover);
+				}
 			}
 		}
 	}
