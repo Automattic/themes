@@ -70,15 +70,9 @@ add_action( 'after_setup_theme', 'blank_canvas_setup', 11 );
  * Remove Seedlet theme features.
  */
 function blank_canvas_remove_parent_theme_features() {
-
 	// Theme Support.
 	remove_theme_support( 'custom-header' );
 	remove_theme_support( 'customize-selective-refresh-widgets' );
-
-	// Navigation Areas.
-	unregister_nav_menu( 'primary' );
-	unregister_nav_menu( 'footer' );
-	unregister_nav_menu( 'social' );
 }
 add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 11 );
 
@@ -86,28 +80,18 @@ add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 11
  * Dequeue Seedlet scripts.
  */
 function blank_canvas_dequeue_parent_scripts() {
-
-	// Naviation assets.
-	wp_dequeue_script( 'seedlet-primary-navigation-script' );
-	wp_dequeue_style( 'seedlet-style-navigation' );
+	if ( false === get_theme_mod( 'show_site_header', false ) ) {
+		// Naviation assets.
+		wp_dequeue_script( 'seedlet-primary-navigation-script' );
+		wp_dequeue_style( 'seedlet-style-navigation' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_dequeue_parent_scripts', 11 );
-
-/**
- * Remove Seedlet's widget area.
- */
-function blank_canvas_remove_widgets_area() {
-	unregister_sidebar( 'sidebar-1' );
-}
-add_action( 'widgets_init', 'blank_canvas_remove_widgets_area', 11 );
 
 /**
  * Remove unused custmizer settings.
  */
 function blank_canvas_remove_customizer_settings( $wp_customize ) {
-
-	// Remove the navigation menus Customizer panel.
-	$wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false';
 
 	// Remove Jetpack's Author Bio setting.
 	if ( function_exists( 'jetpack_author_bio' ) ) {
@@ -119,12 +103,24 @@ function blank_canvas_remove_customizer_settings( $wp_customize ) {
 	// since they're already hidden by default.
 	$wp_customize->remove_control( 'hide_site_header' );
 	$wp_customize->remove_control( 'hide_site_footer' );
-
-
-	// Add a Customizer message about the site title & tagline options.
-	$wp_customize->get_section( 'title_tagline' )->description = __( 'This theme is designed to hide the site logo, site title, and tagline on all single posts and pages.', 'blank-canvas' );
 }
 add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 );
+
+/**
+ * Add custmizer settings.
+ */
+function blank_canvas_add_customizer_settings( $wp_customize ) {
+
+	// Cast the widgets panel as an object.
+	$customizer_widgets_panel = (object) $wp_customize->get_panel( 'widgets' );
+
+	// Add a Customizer message about the site title & tagline options.
+	$wp_customize->get_section( 'title_tagline' )->description  = __( 'The site logo, title, and tagline will only appear on single posts and pages if the “Site header and top menu" option is enabled in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_section( 'menu_locations' )->description = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_panel( 'nav_menus' )->description        = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'blank-canvas' );
+	$customizer_widgets_panel->description                      = __( 'This theme will only display Widgets if they are enabled in the Content Options section.', 'blank-canvas' );
+}
+add_action( 'customize_register', 'blank_canvas_add_customizer_settings', 11 );
 
 /**
  * Remove Meta Footer Items.
@@ -175,3 +171,8 @@ function blank_canvas_customizer_enqueue() {
 	wp_enqueue_style( 'blank-canvas-customizer-style', get_stylesheet_directory_uri() . '/assets/customizer.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'blank_canvas_customizer_enqueue' );
+
+/**
+ * Customizer additions.
+ */
+require get_stylesheet_directory() . '/inc/customizer.php';

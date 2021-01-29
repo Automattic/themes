@@ -58,36 +58,15 @@ Used as block pattern image.
 
 /* Remove some top padding if the first block on the page is a full-width image, cover, media & text, or group block. */
 
-.single .entry-content > .wp-block-image.alignfull:first-child,
-.page .entry-content > .wp-block-image.alignfull:first-child,
-.single .entry-content > .wp-block-cover.alignfull:first-child,
-.page .entry-content > .wp-block-cover.alignfull:first-child,
-.single .entry-content > .wp-block-media-text.alignfull:first-child,
-.page .entry-content > .wp-block-media-text.alignfull:first-child,
-.single .entry-content > .wp-block-group.has-background.alignfull:first-child,
-.page .entry-content > .wp-block-group.has-background.alignfull:first-child {
+.single .entry-content.hide-post-and-page-titles > .wp-block-image.alignfull:first-child,
+.page .entry-content.hide-post-and-page-titles > .wp-block-image.alignfull:first-child,
+.single .entry-content.hide-post-and-page-titles > .wp-block-cover.alignfull:first-child,
+.page .entry-content.hide-post-and-page-titles > .wp-block-cover.alignfull:first-child,
+.single .entry-content.hide-post-and-page-titles > .wp-block-media-text.alignfull:first-child,
+.page .entry-content.hide-post-and-page-titles > .wp-block-media-text.alignfull:first-child,
+.single .entry-content.hide-post-and-page-titles > .wp-block-group.has-background.alignfull:first-child,
+.page .entry-content.hide-post-and-page-titles > .wp-block-group.has-background.alignfull:first-child {
 	margin-top: calc(-1 * var(--global--spacing-vertical));
-}
-
-/* Add some top padding for archive pages. */
-
-body:not(.single):not(.page),
-body:not(.single):not(.page) .site-content {
-	padding-top: var(--global--spacing-vertical);
-}
-
-@media screen and (min-width: 580px) {
-
-	body:not(.single):not(.page),
-	body:not(.single):not(.page) .site-content {
-		padding-top: calc(3 * var(--global--spacing-vertical));
-	}
-}
-
-/* Remove the top border from the entry-footer. */
-
-.site-main > article > .entry-footer {
-	border-top-width: 0
 }
 
 /* Center-align headers and footers. */
@@ -95,6 +74,7 @@ body:not(.single):not(.page) .site-content {
 .entry-header,
 .page-title,
 .entry-footer,
-.site-info {
+.site-info,
+.footer-menu {
 	text-align: center;
 }
