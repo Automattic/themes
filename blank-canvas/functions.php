@@ -112,10 +112,10 @@ add_action( 'customize_register', 'blank_canvas_remove_customizer_settings', 11 
 function blank_canvas_add_customizer_settings( $wp_customize ) {
 
 	// Add a Customizer message about the site title & tagline options.
-	$wp_customize->get_section( 'title_tagline' )->description  = __( 'This theme will not show the site logo, site title, and tagline on all single posts and pages unless the site header is enabled in the the Content Options section.', 'blank-canvas' );
-	$wp_customize->get_section( 'menu_locations' )->description = __( 'Menus will only be displayed on this theme if the header or footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
-	$wp_customize->get_panel( 'nav_menus' )->description        = __( 'Menus will only be displayed on this theme if the header or footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
-	$wp_customize->get_panel( 'widgets' )->description          = __( 'Widgets will only be displayed on this theme if the footer is enabled. This can be done in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_section( 'title_tagline' )->description  = __( 'The site logo, title, and tagline will only appear on single posts and pages if the “Site header and top menu" option is enabled in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_section( 'menu_locations' )->description = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_panel( 'nav_menus' )->description        = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'blank-canvas' );
+	$wp_customize->get_panel( 'widgets' )->description          = __( 'This theme will only display Widgets if they are enabled in the Content Options section.', 'blank-canvas' );
 }
 add_action( 'customize_register', 'blank_canvas_add_customizer_settings', 11 );
 

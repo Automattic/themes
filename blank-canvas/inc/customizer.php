@@ -47,30 +47,6 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 				)
 			);
 
-			// Add setting to show post and page titles.
-			$wp_customize->add_setting(
-				'show_post_and_page_titles',
-				array(
-					'default'           => false,
-					'type'              => 'theme_mod',
-					'transport'         => 'refresh',
-					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
-				)
-			);
-
-			// Add control to show the site header on the homepage.
-			$wp_customize->add_control(
-				'show_post_and_page_titles',
-				array(
-					'label'       => esc_html__( 'Show post and page titles', 'blank-canvas' ),
-					'description' => esc_html__( 'Check to show titles at the top of single posts and pages.', 'blank-canvas' ),
-					'section'     => 'jetpack_content_options',
-					'priority'    => 10,
-					'type'        => 'checkbox',
-					'settings'    => 'show_post_and_page_titles',
-				)
-			);
-
 			// Add setting to show the site header.
 			$wp_customize->add_setting(
 				'show_site_header',
@@ -86,7 +62,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 			$wp_customize->add_control(
 				'show_site_header',
 				array(
-					'label'       => esc_html__( 'Enable site header and navigation', 'blank-canvas' ),
+					'label'       => esc_html__( 'Enable site header and top menu', 'blank-canvas' ),
 					'description' => esc_html__( 'Check to show a standard site header, navigation menu and social links menu on the top of every page.', 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
@@ -110,12 +86,36 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 			$wp_customize->add_control(
 				'show_site_footer',
 				array(
-					'label'       => esc_html__( 'Enable footer menu and widgets', 'blank-canvas' ),
+					'label'       => esc_html__( 'Enable widgets and footer menu', 'blank-canvas' ),
 					'description' => esc_html__( "Check to show a navigation menu and widgets in your site's footer area.", 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
 					'type'        => 'checkbox',
 					'settings'    => 'show_site_footer',
+				)
+			);
+
+			// Add setting to show post and page titles.
+			$wp_customize->add_setting(
+				'show_post_and_page_titles',
+				array(
+					'default'           => false,
+					'type'              => 'theme_mod',
+					'transport'         => 'refresh',
+					'sanitize_callback' => array( __CLASS__, 'sanitize_checkbox' ),
+				)
+			);
+
+			// Add control to show post and page titles.
+			$wp_customize->add_control(
+				'show_post_and_page_titles',
+				array(
+					'label'       => esc_html__( 'Show post and page titles', 'blank-canvas' ),
+					'description' => esc_html__( 'Check to show titles at the top of single posts and pages.', 'blank-canvas' ),
+					'section'     => 'jetpack_content_options',
+					'priority'    => 10,
+					'type'        => 'checkbox',
+					'settings'    => 'show_post_and_page_titles',
 				)
 			);
 			
