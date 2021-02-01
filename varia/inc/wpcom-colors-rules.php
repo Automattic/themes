@@ -151,27 +151,40 @@ function varia_custom_colors_extra_css() {
 }
 add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );
 
+//TODO: check how many colors we need to use!
 /**
- * Featured Varia Palettes
+ * Featured Palettes
  */
 // Light
-add_color_palette( array(
-	'#FFFFFF',
-	'#1D1E1E',
-	'#C8133E',
-	'#4E2F4B',
-), 'Light' );
+add_color_palette(
+	array(
+		'#FFFFFF',
+		'#1D1E1E',
+		'#C8133E',
+		'#4E2F4B',
+		//'#F9F9F9',
+	), /* translators: This is the name for a color scheme */
+	'Light'
+);
 // Medium
-add_color_palette( array(
-	'#EEF4F7',
-	'#242527',
-	'#35845D',
-	'#233252',
-), 'Medium' );
+add_color_palette(
+	array(
+		'#EEF4F7',
+		'#242527',
+		'#35845D',
+		'#233252',
+		//'#F9F9F9',
+	), /* translators: This is the name for a color scheme */
+	'Medium'
+);
 // Dark
-add_color_palette( array(
-	'#1F2527',
-	'#FFFFFF',
-	'#9FD3E8',
-	'#FBE6AA',
-), 'Dark' );
+add_color_palette(
+	array(
+		'#1F2527',
+		'#FFFFFF',
+		'#9FD3E8',
+		'#FBE6AA',
+		//'#364043',
+	), /* translators: This is the name for a color scheme */
+	'Dark'
+);
