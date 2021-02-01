@@ -188,7 +188,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			register_block_pattern(
 				'blank-canvas/links-emoji-buttons',
 				array(
-					'title'      => __( 'Links: Emoji Buttons', 'blank-canvas' ),
+					'title'      => __( 'Emoji Button Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"minHeight":100,"minHeightUnit":"vh","customGradient":"linear-gradient(153deg,rgb(24,183,125) 0%,rgb(26,156,211) 49%,rgb(46,78,209) 100%)","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-dim has-background-gradient" style="background:linear-gradient(153deg,rgb(24,183,125) 0%,rgb(26,156,211) 49%,rgb(46,78,209) 100%);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
@@ -239,7 +239,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			register_block_pattern(
 				'blank-canvas/links-gradient-buttons',
 				array(
-					'title'      => __( 'Links: Gradient Buttons', 'blank-canvas' ),
+					'title'      => __( 'Gradient Button Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":1090,"minHeightUnit":"px","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:1090px"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":130,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
@@ -278,7 +278,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			register_block_pattern(
 				'blank-canvas/links-new-single',
 				array(
-					'title'      => __( 'Links: New Single', 'blank-canvas' ),
+					'title'      => __( 'New Single Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
@@ -345,47 +345,164 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/links-podcast-episode',
+				'blank-canvas/links-product',
 				array(
-					'title'      => __( 'Links: Podcast Episode', 'blank-canvas' ),
+					'title'      => __( 'Product Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '',
-				)
-			);
+					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":57,"width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-sunglasses.jpg" alt="' . __( 'Woman wearing sunglasses', 'blank-canvas' ) . '" class="wp-image-57" width="150" height="150"/></figure></div>
+									<!-- /wp:image -->
 
-			register_block_pattern(
-				'blank-canvas/links-subscribe',
-				array(
-					'title'      => __( 'Links: Subscribe', 'blank-canvas' ),
-					'categories' => array( 'link-in-bio' ),
-					'content'    => '',
-				)
-			);
+									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"primary"} -->
+									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>@juliapaxton</strong></h1>
+									<!-- /wp:heading -->
 
-			register_block_pattern(
-				'blank-canvas/links-products',
-				array(
-					'title'      => __( 'Links: Products', 'blank-canvas' ),
-					'categories' => array( 'link-in-bio' ),
-					'content'    => '',
+									<!-- wp:spacer {"height":1} -->
+									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- /wp:separator -->
+
+									<!-- wp:columns {"verticalAlignment":"center"} -->
+									<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"70%"} -->
+									<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70%"><!-- wp:paragraph -->
+									<p>' . __( 'Rhinestone Earrings, ASOS', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"verticalAlignment":"center"} -->
+									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . __( '$36', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns -->
+
+									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- /wp:separator -->
+
+									<!-- wp:columns {"verticalAlignment":"center"} -->
+									<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"70%"} -->
+									<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70%"><!-- wp:paragraph -->
+									<p>' . __( 'Pink Long Sleeve Tea Dress, Topshop', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"verticalAlignment":"center"} -->
+									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . __( '$45', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns -->
+
+									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- /wp:separator -->
+
+									<!-- wp:columns {"verticalAlignment":"center"} -->
+									<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"70%"} -->
+									<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70%"><!-- wp:paragraph -->
+									<p>' . __( 'Chunky Platform Lace-Up Boots, H&amp;M', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"verticalAlignment":"center"} -->
+									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . __( '$60', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns -->
+
+									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- /wp:separator -->
+
+									<!-- wp:columns {"verticalAlignment":"center"} -->
+									<div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"70%"} -->
+									<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:70%"><!-- wp:paragraph -->
+									<p>' . __( 'Oversized Alpaca Crew, Everlane', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"verticalAlignment":"center"} -->
+									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . __( '$70', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns -->
+
+									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- /wp:separator -->
+
+									<!-- wp:social-links {"align":"center","className":"is-style-logos-only"} -->
+									<ul class="wp-block-social-links aligncenter is-style-logos-only"><!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
+
+									<!-- wp:social-link {"url":"https://snapchat.com","service":"snapchat"} /-->
+
+									<!-- wp:social-link {"url":"https://wordpress.com","service":"wordpress"} /--></ul>
+									<!-- /wp:social-links --></div></div>
+									<!-- /wp:cover -->',
 				)
 			);
 
 			register_block_pattern(
 				'blank-canvas/links-text',
 				array(
-					'title'      => __( 'Links: Text', 'blank-canvas' ),
+					'title'      => __( 'Text Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '',
-				)
-			);
+					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
+									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-logo.png" alt="' . __( 'A logo of a circle with a line through it.', 'blank-canvas' ) . '" class="wp-image-100" width="100" height="100"/></figure></div>
+									<!-- /wp:image -->
 
-			register_block_pattern(
-				'blank-canvas/links-paypal',
-				array(
-					'title'      => __( 'Links: PayPal Button', 'blank-canvas' ),
-					'categories' => array( 'link-in-bio' ),
-					'content'    => '',
+									<!-- wp:spacer {"height":1} -->
+									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:heading {"textAlign":"left","level":1} -->
+									<h1 class="has-text-align-left">' . __( 'Patricia Jones', 'blank-canvas' ) . '</h1>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph -->
+									<p><em>' . __( 'Published work and ephemera.', 'blank-canvas' ) . '</em></p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:separator {"customColor":"#959595","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#959595;color:#959595"/>
+									<!-- /wp:separator -->
+
+									<!-- wp:paragraph -->
+									<p><a href="#">' . __( '“The Lost Tricycle” Book', 'blank-canvas' ) . '</a></p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:paragraph -->
+									<p><a href="#">' . __( '"Why we must own our history"', 'blank-canvas' ) . '</a>' . __( ' in <em>The Atlantic</em>', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:paragraph -->
+									<p><a href="#">' . __( '"Identity and Ownership"', 'blank-canvas' ) . '</a>' . __( ' in <em>The New York Times</em>', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:paragraph -->
+									<p><a href="#">' . __( 'Sponsor: Crafty Cookies', 'blank-canvas' ) . '</a></p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:paragraph -->
+									<p><a href="#">' . __( 'Donate to help keep us posting!', 'blank-canvas' ) . '</a></p>
+									<!-- /wp:paragraph --></div></div>
+									<!-- /wp:cover -->',
 				)
 			);
 		}
