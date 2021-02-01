@@ -186,9 +186,9 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/links-emoji-buttons',
+				'blank-canvas/links-emoji',
 				array(
-					'title'      => __( 'Emoji Button Links', 'blank-canvas' ),
+					'title'      => __( 'Emoji Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"minHeight":100,"minHeightUnit":"vh","customGradient":"linear-gradient(153deg,rgb(24,183,125) 0%,rgb(26,156,211) 49%,rgb(46,78,209) 100%)","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-dim has-background-gradient" style="background:linear-gradient(153deg,rgb(24,183,125) 0%,rgb(26,156,211) 49%,rgb(46,78,209) 100%);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
@@ -237,9 +237,9 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/links-gradient-buttons',
+				'blank-canvas/links-gradient',
 				array(
-					'title'      => __( 'Gradient Button Links', 'blank-canvas' ),
+					'title'      => __( 'Gradient Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":1090,"minHeightUnit":"px","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:1090px"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":130,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
@@ -276,9 +276,9 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/links-new-single',
+				'blank-canvas/links-musician',
 				array(
-					'title'      => __( 'New Single Links', 'blank-canvas' ),
+					'title'      => __( 'Musician Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
