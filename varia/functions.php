@@ -257,6 +257,19 @@ function varia_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
+		// If IE 11 or below, use a ponyfill to add CSS Variable support
+		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/js/css-vars-ponyfill2.js' );
+		wp_enqueue_script( 'ie11-fix',
+			get_template_directory_uri() . '/js/ie11-fix.js',
+			array( 'css-vars-ponyfill' ),
+			'1.0'
+		);
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'varia_scripts' );
 
@@ -435,6 +448,11 @@ function varia_customize_header_footer( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'varia_customize_header_footer' );
+
+/*
+ * Color palette related utilities
+ */
+require get_template_directory() . '/inc/color-utils.php';
 
 /**
  * SVG Icons class.
