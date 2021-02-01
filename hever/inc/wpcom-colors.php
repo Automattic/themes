@@ -1,5 +1,5 @@
 <?php
-require get_template_directory() . '/inc/wpcomcolors-rules.php.php';
+require get_template_directory() . '/inc/wpcomcolors-rules.php';
 
 varia_define_color_annotations(
 	array(
