@@ -20,6 +20,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				'blank-canvas',
 				array( 'label' => __( 'Blank Canvas', 'blank-canvas' ) )
 			);
+
+			register_block_pattern_category(
+				'link-in-bio',
+				array( 'label' => __( 'Link in Bio', 'blank-canvas' ) )
+			);
 		}
 
 		/**
@@ -63,7 +68,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				'blank-canvas/links',
 				array(
 					'title'      => __( 'Links', 'blank-canvas' ),
-					'categories' => array( 'blank-canvas' ),
+					'categories' => array( 'blank-canvas', 'link-in-bio' ),
 					'content'    => '<!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
@@ -177,6 +182,210 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:social-links --></div></div>
 									<!-- /wp:cover --></div></div>
 									<!-- /wp:media-text -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-emoji-buttons',
+				array(
+					'title'      => __( 'Links: Emoji Buttons', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '<!-- wp:cover {"minHeight":100,"minHeightUnit":"vh","customGradient":"linear-gradient(153deg,rgb(24,183,125) 0%,rgb(26,156,211) 49%,rgb(46,78,209) 100%)","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim has-background-gradient" style="background:linear-gradient(153deg,rgb(24,183,125) 0%,rgb(26,156,211) 49%,rgb(46,78,209) 100%);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
+									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:image {"align":"center","id":36,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-hamburger.png" alt="' . __( 'Hamburger icon', 'blank-canvas' ) . '" class="wp-image-36" width="96" height="96"/></figure></div>
+									<!-- /wp:image -->
+
+									<!-- wp:heading {"textAlign":"center","level":1} -->
+									<h1 class="has-text-align-center"><strong>' . __( 'Hamburger', 'blank-canvas' ) . '</strong></h1>
+									<!-- /wp:heading -->
+
+									<!-- wp:spacer {"height":1} -->
+									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:buttons -->
+									<div class="wp-block-buttons"><!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">📺  ' . __( 'Subscribe on YouTube', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px"> 🎹  ' . __( 'Listen on SoundCloud', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">📸  ' . __( 'Follow my Instagram', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">🛍  ' . __( 'Shop my style picks', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">🙋‍♀️  ' . __( 'Ask me a question', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons -->
+
+									<!-- wp:spacer {"height":20} -->
+									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-gradient-buttons',
+				array(
+					'title'      => __( 'Links: Gradient Buttons', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":1090,"minHeightUnit":"px","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:1090px"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":130,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-pencils.jpg" alt="' . __( 'Colored pencils', 'blank-canvas' ) . '" class="wp-image-130" width="96" height="96"/></figure></div>
+									<!-- /wp:image -->
+
+									<!-- wp:heading {"textAlign":"center"} -->
+									<h2 class="has-text-align-center"><strong>' . __( 'Antonio Miller', 'blank-canvas' ) . '</strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:buttons -->
+									<div class="wp-block-buttons"><!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(11,192,224) 0%,rgb(128,208,199) 100%)"}},"width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(11,192,224) 0%,rgb(128,208,199) 100%)">' . __( 'Watch my tutorials', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(65,88,208) 0%,rgb(200,80,192) 100%)"}},"width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(65,88,208) 0%,rgb(200,80,192) 100%)">' . __( 'Buy prints of my work', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(174,61,255) 0%,rgb(226,39,86) 100%)"}},"width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(174,61,255) 0%,rgb(226,39,86) 100%)">' . __( 'My wish list', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(224,44,44) 0%,rgb(249,197,57) 100%)"}},"width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(224,44,44) 0%,rgb(249,197,57) 100%)">' . __( 'Instagram', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(0,173,121) 0%,rgb(41,182,229) 100%)"}},"width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(0,173,121) 0%,rgb(41,182,229) 100%)">' . __( 'Twitter', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-new-single',
+				array(
+					'title'      => __( 'Links: New Single', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
+									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:image {"align":"center","id":30,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none"} -->
+									<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-singer.png" alt="' . __( 'Image of a singer performing.', 'blank-canvas' ) . '" class="wp-image-30" width="120" height="120"/></figure></div>
+									<!-- /wp:image -->
+
+									<!-- wp:spacer {"height":1} -->
+									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge"} -->
+									<h1 class="has-text-align-center has-huge-font-size">' . __( '<strong>Alex Smith</strong>: <em>Your Own Way</em>', 'blank-canvas' ) . '</h1>
+									<!-- /wp:heading -->
+
+									<!-- wp:embed {"url":"https://www.youtube.com/watch?v=_qX8CYToBbQ","type":"rich","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+									<figure class="wp-block-embed is-type-rich is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+									https://www.youtube.com/watch?v=_qX8CYToBbQ
+									</div></figure>
+									<!-- /wp:embed -->
+
+									<!-- wp:buttons -->
+									<div class="wp-block-buttons"><!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . __( 'SoundCloud', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . __( 'Spotify', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . __( 'Bandcamp', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . __( 'Apple Music', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . __( 'YouTube', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . __( 'Tidal', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons -->
+
+									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
+									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
+
+									<!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /-->
+
+									<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /--></ul>
+									<!-- /wp:social-links -->
+
+									<!-- wp:spacer {"height":20} -->
+									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-podcast-episode',
+				array(
+					'title'      => __( 'Links: Podcast Episode', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-subscribe',
+				array(
+					'title'      => __( 'Links: Subscribe', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-products',
+				array(
+					'title'      => __( 'Links: Products', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-text',
+				array(
+					'title'      => __( 'Links: Text', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/links-paypal',
+				array(
+					'title'      => __( 'Links: PayPal Button', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '',
 				)
 			);
 		}
