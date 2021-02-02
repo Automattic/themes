@@ -438,9 +438,9 @@ require get_template_directory() . '/classes/class-seedlet-svg-icons.php';
 /**
  * Custom colors class.
  */
-if ( ! class_exists( 'Colors_Manager' ) ) { // Check for presence of wpcom color manager to avoid duplicate color customization functionality.
-	require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
-}
+//if ( ! class_exists( 'Colors_Manager' ) ) { // Check for presence of wpcom color manager to avoid duplicate color customization functionality.
+//	require get_template_directory() . '/classes/class-seedlet-custom-colors.php';
+//}
 
 /**
  * Enhance the theme by hooking into WordPress.
@@ -483,3 +483,5 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+require get_template_directory() . '/classes/class-seedlet-customizer-bridge.php';
