@@ -14,7 +14,7 @@ $typescale-root: 18px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
 $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
-$config-global: (
+$config-global-parent: (
 
 	// Fonts
 	"font": (
@@ -67,41 +67,42 @@ $config-global: (
 		),
 	),
 
-	// Colors
+	/* Colors */
 	"color": (
 		"primary": (
-			"default": blue,
-			"hover": indigo,
+			"default": var(--wp--preset--color--primary),
+			"hover": var(--wp--preset--color--primary-hover),
 		),
 		"secondary": (
-			"default": red,
-			"hover": darkred,
+			"default": var(--wp--preset--color--secondary),
+			"hover": var(--wp--preset--color--secondary-hover),
 		),
 		"foreground": (
-			"default": #444444,
-			"light": #767676, // must be accessible against background
-			"dark": #111111, // must be accessible against background
+			"default": var(--wp--preset--color--foreground),
+			"light": var(--wp--preset--color--foreground-low-contrast), // must be accessible against background
+			"dark": var(--wp--preset--color--foreground-high-contrast), // must be accessible against background
 		),
 		"background": (
-			"default": white,
-			"light": #FAFAFA, // must be accessible against foreground-default
-			"dark": #DDDDDD, // must be accessible against foreground-default
+			"default": var(--wp--preset--color--background),
+			"light": var(--wp--preset--color--background-high-contrast), // must be accessible against foreground-default
+			"dark": var(--wp--preset--color--background-low-contrast), // must be accessible against foreground-default
 		),
 		"border": (
-			"default": #DDDDDD,
-			"light": #FAFAFA,
-			"dark": #AAAAAA,
+			"default": var(--wp--preset--color--border),
+			"light": var(--wp--preset--color--border-low-contrast),
+			"dark": var(--wp--preset--color--border-high-contrast),
 		),
 		"alert": (
-			"success": yellowgreen,
-			"info": skyblue,
-			"warning": gold,
-			"error": salmon,
+			"success": var(--wp--preset--color--alert-success),
+			"info": var(--wp--preset--color--alert-info),
+			"warning": var(--wp--preset--color--alert-warning),
+			"error": var(--wp--preset--color--alert-error),
 		),
-		"text-selection": lightblue,
-		"black": black,
-		"white": white,
+		"text-selection": var(--wp--preset--color--text-selection),
+		"black": var(--wp--preset--color--black),
+		"white": var(--wp--preset--color--white),
 	),
+
 	// Spacing
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
@@ -134,6 +135,8 @@ $config-global: (
 		"pill": (10 * $typescale-root),
 	),
 );
+
+$config-global: $config-global-parent;
 
 /**
  * Elements
