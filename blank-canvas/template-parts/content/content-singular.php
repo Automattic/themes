@@ -26,11 +26,7 @@ $show_post_and_page_titles = get_theme_mod( 'show_post_and_page_titles', false )
 
 	<?php seedlet_post_thumbnail(); ?>
 
-	<div class="entry-content
-	<?php
-	if ( ! $show_post_and_page_titles ) :
-		?>
-		hide-post-and-page-titles<?php endif; ?>">
+	<div class="entry-content">
 		<?php
 		the_content(
 			sprintf(

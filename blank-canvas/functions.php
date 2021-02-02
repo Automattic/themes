@@ -176,3 +176,27 @@ add_action( 'customize_controls_enqueue_scripts', 'blank_canvas_customizer_enque
  * Customizer additions.
  */
 require get_stylesheet_directory() . '/inc/customizer.php';
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function blank_canvas_body_classes( $classes ) {
+
+	if ( false === get_theme_mod( 'show_post_and_page_titles', false ) ) {
+		$classes[] = 'hide-post-and-page-titles';
+	}
+
+	if ( false === get_theme_mod( 'show_site_footer', false ) ) {
+		$classes[] = 'hide-site-footer';
+	}
+
+	if ( false === get_theme_mod( 'show_comments', false ) ) {
+		$classes[] = 'hide-comments';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'blank_canvas_body_classes' );
