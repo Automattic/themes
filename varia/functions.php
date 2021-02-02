@@ -17,6 +17,18 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF', //bg
+			'foreground' => '#444444', //txt
+			'primary'    => '#0000ff', //link
+			'secondary'  => '#ff0000', //fg1
+			'tertiary'   => null, //fg2
+		);
+	}
+}
+
 if ( ! function_exists( 'varia_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -145,37 +157,49 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#0000FF'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FF0000';  // $config-global--color-secondary-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$colors_array   = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$default_colors = varia_default_colors();
+		$primary        = ! empty( $colors_array ) ? $colors_array['colors']['link'] : $default_colors['primary']; // $config-global--color-primary-default;
+		$secondary      = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : $default_colors['secondary'];  // $config-global--color-secondary-default;
+		$tertiary       = ! empty( $colors_array ) ? $colors_array['colors']['fg2'] : $default_colors['tertiary'];   // $config-global--color-tertiary-default;
+		$foreground     = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : $default_colors['foreground'];  // $config-global--color-foreground-default;
+		$background     = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : $default_colors['background'];   // $config-global--color-background-default;
+
+		$editor_colors_array = array(
+			array(
+				'name'  => __( 'Primary', 'varia' ),
+				'slug'  => 'primary',
+				'color' => $primary,
+			),
+			array(
+				'name'  => __( 'Secondary', 'varia' ),
+				'slug'  => 'secondary',
+				'color' => $secondary,
+			),
+			array(
+				'name'  => __( 'Foreground', 'varia' ),
+				'slug'  => 'foreground',
+				'color' => $foreground,
+			),
+			array(
+				'name'  => __( 'Background', 'varia' ),
+				'slug'  => 'background',
+				'color' => $background,
+			),
+		);
+
+		if ( $tertiary ) {
+			$editor_colors_array[] = array(
+				'name'  => __( 'Tertiary', 'varia' ),
+				'slug'  => 'tertiary',
+				'color' => $tertiary,
+			);
+		}
 
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'varia' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'varia' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Foreground', 'varia' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Background', 'varia' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-			)
+			$editor_colors_array,
 		);
 
 		// Add support for responsive embedded content.
@@ -263,7 +287,8 @@ function varia_scripts() {
 	if ( $is_IE ) {
 		// If IE 11 or below, use a ponyfill to add CSS Variable support
 		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/js/css-vars-ponyfill2.js' );
-		wp_enqueue_script( 'ie11-fix',
+		wp_enqueue_script(
+			'ie11-fix',
 			get_template_directory_uri() . '/js/ie11-fix.js',
 			array( 'css-vars-ponyfill' ),
 			wp_get_theme()->get( 'Version' )

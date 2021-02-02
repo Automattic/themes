@@ -26,66 +26,74 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * Abstracts
  * - Mixins, variables and functions
  */
-@import "sass/abstracts/imports";
+ @import "sass/abstracts/imports";
 
-/**
- * Extends
+ /**
+ * Global variables
  */
-@import "sass/base/extends";
+ @import "sass/child-theme/global-variables";
+ :root {
+	 @include global-variables();
+ }
 
-/**
- * Base
- * - Reset the browser
- */
-@import "sass/base/imports";
+ /**
+  * Extends
+  */
+ @import "sass/base/extends";
 
-/**
- * Layout
- * - Structral and responsive styles
- */
-@import "sass/layout/imports";
+ /**
+  * Base
+  * - Reset the browser
+  */
+ @import "sass/base/imports";
 
-/**
- * Elements
- * - Styles for basic HTML elemants
- */
-@import "sass/elements/imports";
+ /**
+  * Layout
+  * - Structral and responsive styles
+  */
+ @import "sass/layout/imports";
 
-/**
- * Blocks
- * - These styles replace key Gutenberg Block styles for fonts, colors, and
- *   spacing with CSS-variables overrides
- * - In the future the Block styles may get compiled to individual .css
- *   files and conditionally loaded
- */
-@import "sass/blocks/imports";
+ /**
+  * Elements
+  * - Styles for basic HTML elemants
+  */
+ @import "sass/elements/imports";
 
-/**
- * Components
- * - Similar to Blocks but exist outside of the "current" editor context
- */
-@import "sass/components/imports";
+ /**
+  * Blocks
+  * - These styles replace key Gutenberg Block styles for fonts, colors, and
+  *   spacing with CSS-variables overrides
+  * - In the future the Block styles may get compiled to individual .css
+  *   files and conditionally loaded
+  */
+ @import "sass/blocks/imports";
 
-/**
- * Site Pages
- * - Page specific styles
- */
-@import "sass/pages/imports";
+ /**
+  * Components
+  * - Similar to Blocks but exist outside of the "current" editor context
+  */
+ @import "sass/components/imports";
 
-/**
- * Responsive Logic
- * - Loading this last to respect cascaing rules
- */
-@import "sass/abstracts/responsive-logic";
+ /**
+  * Site Pages
+  * - Page specific styles
+  */
+ @import "sass/pages/imports";
 
-/**
- * Vendors
- * - Styles for 3rd party plugins and WP extensions
- */
-@import "sass/vendors/imports";
+ /**
+  * Responsive Logic
+  * - Loading this last to respect cascaing rules
+  */
+ @import "sass/abstracts/responsive-logic";
 
-/**
- * Full Site Editing
- * - Full Site Editing overrides
- */
- @import "sass/full-site-editing/imports";
+ /**
+  * Vendors
+  * - Styles for 3rd party plugins and WP extensions
+  */
+ @import "sass/vendors/imports";
+
+ /**
+  * Full Site Editing
+  * - Full Site Editing overrides
+  */
+  @import "sass/full-site-editing/imports";

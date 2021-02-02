@@ -6,42 +6,50 @@
  * Abstracts
  * - Mixins, variables and functions
  */
-@import "sass/abstracts/functions";
-@import "sass/abstracts/config-global";
-@import "sass/abstracts/mixins";
+ @import "sass/abstracts/functions";
+ @import "sass/abstracts/config-global";
+ @import "sass/abstracts/mixins";
 
-/**
- * Extends
+ /**
+ * Global variables
  */
-@import "sass/base/extends";
+ @import "sass/child-theme/global-variables";
+ :root, body {
+	 @include global-variables();
+ }
 
-/**
- * Base
- * - Reset the browser
- */
-@import "sass/base/editor";
+ /**
+  * Extends
+  */
+ @import "sass/base/extends";
 
-/**
- * Elements
- * - Styles for basic HTML elemants
- */
-@import "sass/elements/editor";
+ /**
+  * Base
+  * - Reset the browser
+  */
+ @import "sass/base/editor";
 
-/**
- * Blocks
- * - These styles replace key Gutenberg Block styles for fonts, colors, and
- *   spacing with CSS-variables overrides
- */
-@import "sass/blocks/editor";
+ /**
+  * Elements
+  * - Styles for basic HTML elemants
+  */
+ @import "sass/elements/editor";
 
-/**
- * Full Site Editing
- * - Full Site Editing overrides
- */
- @import "sass/full-site-editing/editor";
+ /**
+  * Blocks
+  * - These styles replace key Gutenberg Block styles for fonts, colors, and
+  *   spacing with CSS-variables overrides
+  */
+ @import "sass/blocks/editor";
 
-/**
- * Vendors
- * - Styles for 3rd party plugins and WP extensions
- */
-@import "sass/vendors/editor";
+ /**
+  * Full Site Editing
+  * - Full Site Editing overrides
+  */
+  @import "sass/full-site-editing/editor";
+
+ /**
+  * Vendors
+  * - Styles for 3rd party plugins and WP extensions
+  */
+ @import "sass/vendors/editor";

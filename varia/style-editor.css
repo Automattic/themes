@@ -117,8 +117,35 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * It also adds the proper fallback for browsers without support.
  */
 /**
- * Extends
+ * Global variables
  */
+:root, body {
+	/* Colors */
+	--wp--preset--color--primary: blue;
+	--wp--preset--color--primary-hover: indigo;
+	--wp--preset--color--secondary: red;
+	--wp--preset--color--secondary-hover: darkred;
+	--wp--preset--color--foreground: #444444;
+	--wp--preset--color--foreground-low-contrast: #767676;
+	--wp--preset--color--foreground-high-contrast: #111111;
+	--wp--preset--color--background: white;
+	--wp--preset--color--background-low-contrast: #FAFAFA;
+	--wp--preset--color--background-high-contrast: #DDDDDD;
+	--wp--preset--color--border: #DDDDDD;
+	--wp--preset--color--border-low-contrast: #FAFAFA;
+	--wp--preset--color--border-high-contrast: #AAAAAA;
+	--wp--preset--color--text-selection: lightblue;
+	--wp--preset--color--alert-success: yellowgreen;
+	--wp--preset--color--alert-info: skyblue;
+	--wp--preset--color--alert-warning: gold;
+	--wp--preset--color--alert-error: salmon;
+	--wp--preset--color--black: black;
+	--wp--preset--color--white: white;
+}
+
+/**
+  * Extends
+  */
 /**
  * Button Placeholder style
  * - Since buttons appear in various blocks,
@@ -167,9 +194,9 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  *   in-sync
  */
 /**
- * Base
- * - Reset the browser
- */
+  * Base
+  * - Reset the browser
+  */
 body {
 	color: var(--wp--preset--color--foreground);
 	background-color: var(--wp--preset--color--background);
@@ -205,9 +232,9 @@ a {
 }
 
 /**
- * Elements
- * - Styles for basic HTML elemants
- */
+  * Elements
+  * - Styles for basic HTML elemants
+  */
 /**
  * Elements
  * - Styles for basic HTML elemants
@@ -289,10 +316,10 @@ object {
 }
 
 /**
- * Blocks
- * - These styles replace key Gutenberg Block styles for fonts, colors, and
- *   spacing with CSS-variables overrides
- */
+  * Blocks
+  * - These styles replace key Gutenberg Block styles for fonts, colors, and
+  *   spacing with CSS-variables overrides
+  */
 /**
  * Block Styles for the Editor
  *
@@ -1277,9 +1304,9 @@ pre.wp-block-verse {
 }
 
 /**
- * Full Site Editing
- * - Full Site Editing overrides
- */
+  * Full Site Editing
+  * - Full Site Editing overrides
+  */
 @media (min-width: 600px) {
 	.a8c-template-editor .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] .block-editor-block-list__layout .block-editor-block-list__block[data-align="full"] {
 		margin-left: 0;
@@ -1659,9 +1686,9 @@ pre.wp-block-verse {
 }
 
 /**
- * Vendors
- * - Styles for 3rd party plugins and WP extensions
- */
+  * Vendors
+  * - Styles for 3rd party plugins and WP extensions
+  */
 /**
  * Vendors
  * - 3rd-party compatibility styles
