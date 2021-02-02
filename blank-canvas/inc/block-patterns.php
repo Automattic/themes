@@ -285,16 +285,12 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:image {"align":"center","id":30,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none"} -->
-									<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-singer.png" alt="' . __( 'Image of a singer performing.', 'blank-canvas' ) . '" class="wp-image-30" width="120" height="120"/></figure></div>
+									<!-- wp:image {"align":"center","id":30,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-singer.png" alt="' . __( 'Image of a singer performing.', 'blank-canvas' ) . '" class="wp-image-30" width="120" height="120"/></figure></div>
 									<!-- /wp:image -->
 
-									<!-- wp:spacer {"height":1} -->
-									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
-									<!-- /wp:spacer -->
-
 									<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge"} -->
-									<h1 class="has-text-align-center has-huge-font-size">' . __( '<strong>Alex Smith</strong>: <em>Your Own Way</em>', 'blank-canvas' ) . '</h1>
+									<h1 class="has-text-align-center has-huge-font-size"><strong>' . __( 'Alex Smith — Own Way', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:embed {"url":"https://www.youtube.com/watch?v=_qX8CYToBbQ","type":"rich","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
