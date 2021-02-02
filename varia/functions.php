@@ -262,13 +262,13 @@ function varia_scripts() {
 	global $is_IE;
 	if ( $is_IE ) {
 		// If IE 11 or below, use a ponyfill to add CSS Variable support
-		wp_register_script( 'css-vars-ponyfill', get_stylesheet_directory_uri() . '/js/css-vars-ponyfill2.js' );
+		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/js/css-vars-ponyfill2.js' );
 		wp_enqueue_script( 'ie11-fix',
-			get_stylesheet_directory_uri() . '/js/ie11-fix.js',
+			get_template_directory_uri() . '/js/ie11-fix.js',
 			array( 'css-vars-ponyfill' ),
 			wp_get_theme()->get( 'Version' )
 		);
-		wp_enqueue_style( 'varia-print-style', get_stylesheet_directory_uri() . '/ie.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+		wp_enqueue_style( 'varia-print-style', get_template_directory_uri() . '/ie.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
 	}
 
 }
