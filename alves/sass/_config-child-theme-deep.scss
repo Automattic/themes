@@ -3,403 +3,372 @@
  * - See: style-child-theme.scss
  */
 
-/**
- * Global
- */
+ @import "../../varia/sass/abstracts/config-global";
 
-// Vertical Rhythm Multiplier
-$baseline-unit: 8px;
-
-$typescale-root: 16px; // Set 16px/1em default on html
-$typescale-base: 1.25rem; // Set 1em default on body == $typescale-root;
-$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
-
-$config-global: (
-
-	/* Fonts */
-	"font": (
-		/* Font Family */
-		"family": (
-			"primary": (
-				"fallback": "\"Lora\"\, Georgia\, sans-serif",
-				"css-var": '--font-headings',
-			),
-			"secondary": (
-				"fallback": "\"Karla\"\, Arial\, sans-serif",
-				"css-var": '--font-base',
-			),
-			"code": "Monaco\, Consolas\, \"Andale Mono\"\, \"DejaVu Sans Mono\"\, monospace",
-			"ui": (
-				"fallback": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-				"css-var": '--font-base',
-			),
-		),
-		/* Font Size */
-		"size": (
-			"root": $typescale-root,
-			"ratio": $typescale-ratio,
-			"xs": ($typescale-base / $typescale-ratio / $typescale-ratio),
-			"sm": ($typescale-base / $typescale-ratio),
-			"base": $typescale-base,
-			"md": ($typescale-base * $typescale-ratio),
-			"lg": ($typescale-base * $typescale-ratio * $typescale-ratio),
-			"xl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio),
-			"xxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
-			"xxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
-			"xxxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
-		),
-		/* Letter Spacing */
-		"letter-spacing": (
-			"base": normal,
-			"xs": normal,
-			"sm": normal,
-			"md": normal,
-			"lg": normal,
-			"xl": normal,
-			"xxl": normal,
-			"xxxl": normal,
-		),
-		/* Line Height */
-		"line-height": (
-			"base": strip-unit($typescale-base),
-			"body": 1.6,
-			"heading": 1.125,
-		),
-	),
-
-	/* Colors */
-	"color": (
-		"primary": (
-			"default": #3E7D98,
-			"hover": #2f5f74,
-		),
-		"secondary": (
-			"default": #9B6A36,
-			"hover": #755029,
-		),
-		"foreground": (
-			"default": #394d55,
-			"light": #4d6974, // must be accessible against background (#fcfbf9,)
-			"dark": #253136, // must be accessible against background
-		),
-		"background": (
-			"default": #ffffff,
-			"light": #fafafa, // must be accessible against foreground-default
-			"dark": #d9d9d9, // must be accessible against foreground-default
-		),
-		"border": (
-			"default": #3E7D98,
-			"light": #fcfbf9,
-			"dark": #9B6A36,
-		),
-		"alert": (
-			"success": yellowgreen,
-			"info": skyblue,
-			"warning": gold,
-			"error": salmon,
-		),
-		"text-selection": lightblue,
-		"black": black,
-		"white": white,
-	),
-
-	/* Spacing */
-	"spacing": (
-		"unit": (2 * $baseline-unit), // 16px
-		"measure": unset, // Use ch units here. ie: 60ch = 60 character max-width
-		"horizontal": (2 * $baseline-unit), // 16px
-		"vertical": (4 * $baseline-unit), // 32px matches default spacing in the editor.
-	),
-
-	/* Breakpoints */
-	"breakpoint": (
-		"sm": 560px,
-		"md": 640px,
-		"lg": 782px,
-		"xl": 1024px,
-		"xxl": 1280px,
-	),
-
-	/* Elevation */
-	"elevation": (
-		"none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
-		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
-		"4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ),
-		"6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 ),
-		"8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ),
-		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
-	),
-
-	/* Border radius */
-	"border-radius": (
-		"sm": (0.5 * $typescale-root),
-		"md": (0.75 * $typescale-root),
-		"lg": $typescale-root,
-		"pill": (10 * $typescale-root),
-	),
-);
-
-/**
- * Elements
- */
-$config-elements: (
-
-	"form": (
-
-		// Colors
-		"color": (
-			"text": map-deep-get($config-global, "color", "black"),
-			"border": map-deep-get($config-global, "color", "border", "default"),
-			"border-focus": map-deep-get($config-global, "color", "primary", "hover"),
-		),
-
-		// Fonts
-		"font": (
-			"family": (
-				"fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
-				"css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
-			),
-			"line-height": map-deep-get($config-global, "font", "line-height", "md"),
-			"size": map-deep-get($config-global, "font", "size", "md"),
-			"weight": bold,
-		),
-
-		// Borders
-		"border": (
-			"width": 1px,
-			"radius": 3px,
-		),
-
-		"padding": #{map-deep-get($config-global, "spacing", "unit")},
-	),
-);
-
-/**
- * Button
- */
-$config-button: (
-	// Colors
-	"color": (
-		"text": map-deep-get($config-global, "color", "background", "default"),
-		"text-hover": map-deep-get($config-global, "color", "background", "default"),
-		"background": map-deep-get($config-global, "color", "primary", "default"),
-		"background-hover": map-deep-get($config-global, "color", "primary", "hover"),
-	),
-	// Fonts
-	"font": (
-		"family": (
-			"fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
-			"css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
-		),
-		"size": map-deep-get($config-global, "font", "size", "sm"),
-		"weight": bold,
-		"line-height": 1,
-	),
-	// Borders
-	"border-radius": map-deep-get($config-global, "border-radius", "pill"),
-	"border-width": 2px,
-	// Padding
-	"padding": (
-	"vertical": (2 * $baseline-unit),
-	"horizontal": (6 * $baseline-unit),
-	),
-);
-
-/**
- * Cover
- */
-$config-cover: (
-	"height": calc( 17 * #{map-deep-get($config-global, "spacing", "vertical")} ),
-	"color": (
-		"foreground": #{map-deep-get($config-global, "color", "white")},
-		"background": #{map-deep-get($config-global, "color", "black")},
-	)
-);
-
-/**
- * Heading
- */
-$config-heading: (
-	// Fonts & Typography
-	"font": (
-		// Family
-		"family": (
-			"fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
-			"css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
-		),
-		// Size
-		"size": (
-			"h6": map-deep-get($config-global, "font", "size", "base"),
-			"h5": map-deep-get($config-global, "font", "size", "md"),
-			"h4": map-deep-get($config-global, "font", "size", "lg"),
-			"h3": map-deep-get($config-global, "font", "size", "xl"),
-			"h2": map-deep-get($config-global, "font", "size", "xxl"),
-			"h1": map-deep-get($config-global, "font", "size", "xxxl"),
-		),
-		// Letter spacing
-		"line-height": (
-			"h6": map-deep-get($config-global, "font", "line-height", "heading"),
-			"h5": map-deep-get($config-global, "font", "line-height", "heading"),
-			"h4": map-deep-get($config-global, "font", "line-height", "heading"),
-			"h3": map-deep-get($config-global, "font", "line-height", "heading"),
-			"h2": map-deep-get($config-global, "font", "line-height", "heading"),
-			"h1": map-deep-get($config-global, "font", "line-height", "heading"),
-		),
-		// Letter spacing
-		"letter-spacing": (
-			"h6": map-deep-get($config-global, "font", "letter-spacing", "sm"),
-			"h5": map-deep-get($config-global, "font", "letter-spacing", "md"),
-			"h4": map-deep-get($config-global, "font", "letter-spacing", "lg"),
-			"h3": map-deep-get($config-global, "font", "letter-spacing", "xl"),
-			"h2": map-deep-get($config-global, "font", "letter-spacing", "xxl"),
-			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
-		),
-		// Font Weight
-		"weight": normal,
-	),
-);
-
-/**
- * List
- */
-$config-list: (
-	// Fonts
-	"font": (
-		"family": (
-			"fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
-			"css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
-		),
-	),
-);
-
-/**
- * Pullquote
- */
-$config-pullquote: (
-	// Font
-	"font": (
-		"family": (
-			"fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
-			"css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
-		),
-	),
-	// Border
-	"color": (
-		"border": #{map-deep-get($config-global, "color", "border", "default")},
-		"background": #{map-deep-get($config-global, "color", "primary", "default")},
-	),
-	// Border
-	"border": (
-		"width": #{0.5 * $baseline-unit},
-	),
-);
-
-/**
- * Quote
- */
-$config-quote: (
-	// Font
-	"font": (
-		"family": (
-			"fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
-			"css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
-		),
-	),
-);
-
-/**
- * Separator
- */
-
-$config-separator: (
-	"height": #{0.25 * $baseline-unit},
-	"width": #{6 * map-deep-get($config-global, "spacing", "horizontal")},
-);
-
-/**
- * Header
- */
-$config-header: (
-	"branding": (
-		// Colors
-		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "light"),
-			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
-		),
-		// Fonts & Typography
-		"title": (
-			// Fonts
-			"font": (
-				"family": (
-					"fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
-					"css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
-				),
-				"size": map-deep-get($config-global, "font", "size", "lg"),
-				"weight": bold,
-				"line-height": 1,
-			),
-		),
-		// Fonts & Typography
-		"description": (
-			// Fonts
-			"font": (
-				"family": (
-					"fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
-					"css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
-				),
-				"size": map-deep-get($config-global, "font", "size", "sm"),
-			),
-		),
-	),
-
-	"main-nav": (
-		// Colors
-		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "default"),
-			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
-		),
-		// Fonts
-		"font": (
-			"family": (
-				"fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
-				"css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
-			),
-			"size": map-deep-get($config-global, "font", "size", "sm"),
-			"weight": bold,
-			"line-height": 1,
-		),
-		"link-padding": map-deep-get($config-global, "spacing", "unit"),
-	),
-
-	"social-nav": (
-		// Colors
-		"color": (
-			"link": map-deep-get($config-global, "color", "foreground", "default"),
-			"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
-		),
-		"link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
-	),
-);
-
-/**
- * Footer
- */
-$config-footer: (
-	// Colors
-	"color": (
-		"text": map-deep-get($config-global, "color", "foreground", "light"),
-		"link": map-deep-get($config-global, "color", "primary", "default"),
-		"link-hover": map-deep-get($config-global, "color", "primary", "hover"),
-	),
-	// Fonts
-	"font": (
-		"family": (
-			"fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
-			"css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
-		),
-		"size": map-deep-get($config-global, "font", "size", "sm"),
-		"line-height": map-deep-get($config-global, "font", "line-height", "sm"),
-	),
-);
+ /**
+  * Global
+  */
+ 
+ // Vertical Rhythm Multiplier
+ $baseline-unit: 8px;
+ 
+ $typescale-root: 16px; // Set 16px/1em default on html
+ $typescale-base: 1.25rem; // Set 1em default on body == $typescale-root;
+ $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+ 
+ $config-global: (
+ 
+	 /* Fonts */
+	 "font": (
+		 /* Font Family */
+		 "family": (
+			 "primary": (
+				 "fallback": "\"Lora\"\, Georgia\, sans-serif",
+				 "css-var": '--font-headings',
+			 ),
+			 "secondary": (
+				 "fallback": "\"Karla\"\, Arial\, sans-serif",
+				 "css-var": '--font-base',
+			 ),
+			 "code": "Monaco\, Consolas\, \"Andale Mono\"\, \"DejaVu Sans Mono\"\, monospace",
+			 "ui": (
+				 "fallback": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
+				 "css-var": '--font-base',
+			 ),
+		 ),
+		 /* Font Size */
+		 "size": (
+			 "root": $typescale-root,
+			 "ratio": $typescale-ratio,
+			 "xs": ($typescale-base / $typescale-ratio / $typescale-ratio),
+			 "sm": ($typescale-base / $typescale-ratio),
+			 "base": $typescale-base,
+			 "md": ($typescale-base * $typescale-ratio),
+			 "lg": ($typescale-base * $typescale-ratio * $typescale-ratio),
+			 "xl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+			 "xxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+			 "xxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+			 "xxxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
+		 ),
+		 /* Letter Spacing */
+		 "letter-spacing": (
+			 "base": normal,
+			 "xs": normal,
+			 "sm": normal,
+			 "md": normal,
+			 "lg": normal,
+			 "xl": normal,
+			 "xxl": normal,
+			 "xxxl": normal,
+		 ),
+		 /* Line Height */
+		 "line-height": (
+			 "base": strip-unit($typescale-base),
+			 "body": 1.6,
+			 "heading": 1.125,
+		 ),
+	 ),
+ 
+	 /* Spacing */
+	 "spacing": (
+		 "unit": (2 * $baseline-unit), // 16px
+		 "measure": unset, // Use ch units here. ie: 60ch = 60 character max-width
+		 "horizontal": (2 * $baseline-unit), // 16px
+		 "vertical": (4 * $baseline-unit), // 32px matches default spacing in the editor.
+	 ),
+ 
+	 /* Breakpoints */
+	 "breakpoint": (
+		 "sm": 560px,
+		 "md": 640px,
+		 "lg": 782px,
+		 "xl": 1024px,
+		 "xxl": 1280px,
+	 ),
+ 
+	 /* Elevation */
+	 "elevation": (
+		 "none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
+		 "2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		 "4dp": 0px 0px 8px 2px rgba( 0, 0, 0, 0.2 ),
+		 "6dp": 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 ),
+		 "8dp": 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 ),
+		 "10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
+	 ),
+ 
+	 /* Border radius */
+	 "border-radius": (
+		 "sm": (0.5 * $typescale-root),
+		 "md": (0.75 * $typescale-root),
+		 "lg": $typescale-root,
+		 "pill": (10 * $typescale-root),
+	 ),
+ );
+ 
+ $config-global: map-merge($config-global-parent, $config-global);
+ 
+ /**
+  * Elements
+  */
+ $config-elements: (
+ 
+	 "form": (
+ 
+		 // Colors
+		 "color": (
+			 "text": map-deep-get($config-global, "color", "black"),
+			 "border": map-deep-get($config-global, "color", "border", "default"),
+			 "border-focus": map-deep-get($config-global, "color", "primary", "hover"),
+		 ),
+ 
+		 // Fonts
+		 "font": (
+			 "family": (
+				 "fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
+				 "css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
+			 ),
+			 "line-height": map-deep-get($config-global, "font", "line-height", "md"),
+			 "size": map-deep-get($config-global, "font", "size", "md"),
+			 "weight": bold,
+		 ),
+ 
+		 // Borders
+		 "border": (
+			 "width": 1px,
+			 "radius": 3px,
+		 ),
+ 
+		 "padding": #{map-deep-get($config-global, "spacing", "unit")},
+	 ),
+ );
+ 
+ /**
+  * Button
+  */
+ $config-button: (
+	 // Colors
+	 "color": (
+		 "text": map-deep-get($config-global, "color", "background", "default"),
+		 "text-hover": map-deep-get($config-global, "color", "background", "default"),
+		 "background": map-deep-get($config-global, "color", "primary", "default"),
+		 "background-hover": map-deep-get($config-global, "color", "primary", "hover"),
+	 ),
+	 // Fonts
+	 "font": (
+		 "family": (
+			 "fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
+			 "css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
+		 ),
+		 "size": map-deep-get($config-global, "font", "size", "sm"),
+		 "weight": bold,
+		 "line-height": 1,
+	 ),
+	 // Borders
+	 "border-radius": map-deep-get($config-global, "border-radius", "pill"),
+	 "border-width": 2px,
+	 // Padding
+	 "padding": (
+	 "vertical": (2 * $baseline-unit),
+	 "horizontal": (6 * $baseline-unit),
+	 ),
+ );
+ 
+ /**
+  * Cover
+  */
+ $config-cover: (
+	 "height": calc( 17 * #{map-deep-get($config-global, "spacing", "vertical")} ),
+	 "color": (
+		 "foreground": #{map-deep-get($config-global, "color", "white")},
+		 "background": #{map-deep-get($config-global, "color", "black")},
+	 )
+ );
+ 
+ /**
+  * Heading
+  */
+ $config-heading: (
+	 // Fonts & Typography
+	 "font": (
+		 // Family
+		 "family": (
+			 "fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
+			 "css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
+		 ),
+		 // Size
+		 "size": (
+			 "h6": map-deep-get($config-global, "font", "size", "base"),
+			 "h5": map-deep-get($config-global, "font", "size", "md"),
+			 "h4": map-deep-get($config-global, "font", "size", "lg"),
+			 "h3": map-deep-get($config-global, "font", "size", "xl"),
+			 "h2": map-deep-get($config-global, "font", "size", "xxl"),
+			 "h1": map-deep-get($config-global, "font", "size", "xxxl"),
+		 ),
+		 // Letter spacing
+		 "line-height": (
+			 "h6": map-deep-get($config-global, "font", "line-height", "heading"),
+			 "h5": map-deep-get($config-global, "font", "line-height", "heading"),
+			 "h4": map-deep-get($config-global, "font", "line-height", "heading"),
+			 "h3": map-deep-get($config-global, "font", "line-height", "heading"),
+			 "h2": map-deep-get($config-global, "font", "line-height", "heading"),
+			 "h1": map-deep-get($config-global, "font", "line-height", "heading"),
+		 ),
+		 // Letter spacing
+		 "letter-spacing": (
+			 "h6": map-deep-get($config-global, "font", "letter-spacing", "sm"),
+			 "h5": map-deep-get($config-global, "font", "letter-spacing", "md"),
+			 "h4": map-deep-get($config-global, "font", "letter-spacing", "lg"),
+			 "h3": map-deep-get($config-global, "font", "letter-spacing", "xl"),
+			 "h2": map-deep-get($config-global, "font", "letter-spacing", "xxl"),
+			 "h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
+		 ),
+		 // Font Weight
+		 "weight": normal,
+	 ),
+ );
+ 
+ /**
+  * List
+  */
+ $config-list: (
+	 // Fonts
+	 "font": (
+		 "family": (
+			 "fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
+			 "css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
+		 ),
+	 ),
+ );
+ 
+ /**
+  * Pullquote
+  */
+ $config-pullquote: (
+	 // Font
+	 "font": (
+		 "family": (
+			 "fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
+			 "css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
+		 ),
+	 ),
+	 // Border
+	 "color": (
+		 "border": #{map-deep-get($config-global, "color", "border", "default")},
+		 "background": #{map-deep-get($config-global, "color", "primary", "default")},
+	 ),
+	 // Border
+	 "border": (
+		 "width": #{0.5 * $baseline-unit},
+	 ),
+ );
+ 
+ /**
+  * Quote
+  */
+ $config-quote: (
+	 // Font
+	 "font": (
+		 "family": (
+			 "fallback": #{map-deep-get($config-heading, "font", "family", "fallback")},
+			 "css-var": #{map-deep-get($config-heading, "font", "family", "css-var")},
+		 ),
+	 ),
+ );
+ 
+ /**
+  * Separator
+  */
+ 
+ $config-separator: (
+	 "height": #{0.25 * $baseline-unit},
+	 "width": #{6 * map-deep-get($config-global, "spacing", "horizontal")},
+ );
+ 
+ /**
+  * Header
+  */
+ $config-header: (
+	 "branding": (
+		 // Colors
+		 "color": (
+			 "text": map-deep-get($config-global, "color", "foreground", "light"),
+			 "link": map-deep-get($config-global, "color", "foreground", "default"),
+			 "link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		 ),
+		 // Fonts & Typography
+		 "title": (
+			 // Fonts
+			 "font": (
+				 "family": (
+					 "fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
+					 "css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
+				 ),
+				 "size": map-deep-get($config-global, "font", "size", "lg"),
+				 "weight": bold,
+				 "line-height": 1,
+			 ),
+		 ),
+		 // Fonts & Typography
+		 "description": (
+			 // Fonts
+			 "font": (
+				 "family": (
+					 "fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
+					 "css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
+				 ),
+				 "size": map-deep-get($config-global, "font", "size", "sm"),
+			 ),
+		 ),
+	 ),
+ 
+	 "main-nav": (
+		 // Colors
+		 "color": (
+			 "text": map-deep-get($config-global, "color", "foreground", "default"),
+			 "link": map-deep-get($config-global, "color", "foreground", "default"),
+			 "link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		 ),
+		 // Fonts
+		 "font": (
+			 "family": (
+				 "fallback": map-deep-get($config-global, "font", "family", "secondary", "fallback"),
+				 "css-var": map-deep-get($config-global, "font", "family", "secondary", "css-var"),
+			 ),
+			 "size": map-deep-get($config-global, "font", "size", "sm"),
+			 "weight": bold,
+			 "line-height": 1,
+		 ),
+		 "link-padding": map-deep-get($config-global, "spacing", "unit"),
+	 ),
+ 
+	 "social-nav": (
+		 // Colors
+		 "color": (
+			 "link": map-deep-get($config-global, "color", "foreground", "default"),
+			 "link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+		 ),
+		 "link-padding": calc( 0.5 * calc(0.66 * #{map-deep-get($config-global, "spacing", "unit")} ) ),
+	 ),
+ );
+ 
+ /**
+  * Footer
+  */
+ $config-footer: (
+	 // Colors
+	 "color": (
+		 "text": map-deep-get($config-global, "color", "foreground", "light"),
+		 "link": map-deep-get($config-global, "color", "primary", "default"),
+		 "link-hover": map-deep-get($config-global, "color", "primary", "hover"),
+	 ),
+	 // Fonts
+	 "font": (
+		 "family": (
+			 "fallback": map-deep-get($config-global, "font", "family", "primary", "fallback"),
+			 "css-var": map-deep-get($config-global, "font", "family", "primary", "css-var"),
+		 ),
+		 "size": map-deep-get($config-global, "font", "size", "sm"),
+		 "line-height": map-deep-get($config-global, "font", "line-height", "sm"),
+	 ),
+ );
+ 

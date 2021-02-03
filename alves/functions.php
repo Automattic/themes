@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#ffffff',
+			'foreground' => '#394d55',
+			'primary'    => '#3E7D98',
+			'secondary'  => '#9B6A36',
+			'tertiary'   => '#3E7D98',
+		);
+	}
+}
+
 if ( ! function_exists( 'alves_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -49,56 +61,6 @@ if ( ! function_exists( 'alves_setup' ) ) :
 					'shortName' => __( 'XL', 'alves' ),
 					'size'      => 34.5667,
 					'slug'      => 'huge',
-				),
-			)
-		);
-
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#3E7D98'; // $config-global--color-primary-default;
-		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#9B6A36';  // $config-global--color-secondary-default;
-		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#394d55';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#4d6974';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#253136';  // $config-global--color-foreground-dark-default;
-
-		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'alves' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'alves' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Background', 'alves' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Foreground', 'alves' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Foreground Light', 'alves' ),
-					'slug'  => 'foreground-light',
-					'color' => $foreground_light,
-				),
-				array(
-					'name'  => __( 'Foreground Dark', 'alves' ),
-					'slug'  => 'foreground-dark',
-					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -225,14 +187,5 @@ function alves_editor_styles() {
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'alves-editor-fonts', alves_fonts_url(), array(), null );
 
-	// Hide duplicate palette colors
-	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
-	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) { // $config-global--color-foreground-light-default;
-		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
-			.components-circular-option-picker__option-wrapper:nth-child(6) {
-				display: none;
-			}';
-		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
-	}
 }
 add_action( 'enqueue_block_editor_assets', 'alves_editor_styles' );
