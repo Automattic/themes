@@ -196,6 +196,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 			);
 		}
 
+		$editor_colors_array = apply_filters( 'varia_editor_color_palette', $editor_colors_array );
 		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
