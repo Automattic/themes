@@ -2,6 +2,7 @@
  * Redefine Sass map values for child theme output.
  * - See: style-child-theme.scss
  */
+ @import "../../varia/sass/abstracts/config-global";
 
 /**
  * Global
@@ -67,42 +68,6 @@ $config-global: (
 		),
 	),
 
-	/* Colors */
-	"color": (
-		"primary": (
-			"default": #404040,
-			"hover": #f25f70,
-		),
-		"secondary": (
-			"default": #f25f70,
-			"hover": #4f4f4f,
-		),
-		"foreground": (
-			"default": #444444,
-			"light": #767676, // must be accesible!
-			"dark": #111111, // must be accesible!
-		),
-		"background": (
-			"default": white,
-			"light": #FFFFFF, // must be accessible against foreground-default
-			"dark": #DDDDDD, // must be accessible against foreground-default
-		),
-		"border": (
-			"default": #DDDDDD,
-			"light": #FAFAFA,
-			"dark": #AAAAAA,
-		),
-		"alert": (
-			"success": #8bc34a,
-			"info": #03a9f4,
-			"warning": #ffc107,
-			"error": #f25f70,
-		),
-		"text-selection": #ffdce0,
-		"black": black,
-		"white": white,
-	),
-
 	/* Spacing */
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
@@ -138,6 +103,8 @@ $config-global: (
 		"pill": (10 * $typescale-root),
 	),
 );
+
+$config-global: map-merge($config-global-parent, $config-global);
 
 /**
  * Elements
