@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#181818',
+			'primary'    => '#897248',
+			'secondary'  => '#c4493f',
+			'tertiary'   => '#CCCCCC',
+		);
+	}
+}
+
 if ( ! function_exists( 'maywood_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,58 +65,8 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 			)
 		);
 
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#897248'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#c4493f';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#181818';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#686868';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
-
-		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'maywood' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'maywood' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Background', 'maywood' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Foreground', 'maywood' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Foreground Light', 'maywood' ),
-					'slug'  => 'foreground-light',
-					'color' => $foreground_light,
-				),
-				array(
-					'name'  => __( 'Foreground Dark', 'maywood' ),
-					'slug'  => 'foreground-dark',
-					'color' => $foreground_dark,
-				),
-			)
-		);
-
 		// Enable Full Site Editing
-		add_theme_support( 'full-site-editing');
+		add_theme_support( 'full-site-editing' );
 
 	}
 endif;
@@ -161,7 +123,7 @@ function maywood_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('maywood-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'maywood-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'maywood-style', 'rtl', 'replace' );

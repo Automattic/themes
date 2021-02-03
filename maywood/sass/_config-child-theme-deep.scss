@@ -6,6 +6,7 @@
 /**
  * Global
  */
+ @import "../../varia/sass/abstracts/config-global";
 
 // Vertical Rhythm Multiplier
 $baseline-unit: 8px;
@@ -70,37 +71,37 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": #897248,
-			"hover": darken(#897248, 10%),
+			"default": var(--wp--preset--color--primary),
+			"hover": var(--wp--preset--color--primary-hover),
 		),
 		"secondary": (
-			"default": #c4493f,
-			"hover": darken(#c4493f, 10%),
+			"default": var(--wp--preset--color--secondary),
+			"hover": var(--wp--preset--color--secondary-hover),
 		),
 		"foreground": (
-			"default": #181818,
-			"light": #686868, // must be accessible against background
-			"dark": #020202, // must be accessible against background
+			"default": var(--wp--preset--color--foreground),
+			"light": var(--wp--preset--color--foreground-low-contrast), // must be accessible against background
+			"dark": var(--wp--preset--color--foreground-high-contrast), // must be accessible against background
 		),
 		"background": (
-			"default": #FFFFFF,
-			"light": #F7F7F7, // must be accessible against foreground-default
-			"dark": #CCCCCC, // must be accessible against foreground-default
+			"default": var(--wp--preset--color--background),
+			"light": var(--wp--preset--color--background-low-contrast), // must be accessible against background
+			"dark": var(--wp--preset--color--background-high-contrast), // must be accessible against background
 		),
 		"border": (
-			"default": #CCCCCC,
-			"light": #F7F7F7,
-			"dark": #AAAAAA,
+			"default": var(--wp--preset--color--border),
+			"light": var(--wp--preset--color--border-low-contrast), // must be accessible against background
+			"dark": var(--wp--preset--color--border-high-contrast), // must be accessible against background
 		),
 		"alert": (
-			"success": yellowgreen,
-			"info": skyblue,
-			"warning": gold,
-			"error": salmon,
+			"success": var(--wp--preset--color--alert-success), // must be accessible against background
+			"info": var(--wp--preset--color--alert-info), // must be accessible against background
+			"warning": var(--wp--preset--color--alert-warning), // must be accessible against background
+			"error": var(--wp--preset--color--alert-error), // must be accessible against background
 		),
-		"text-selection": lightblue,
-		"black": black,
-		"white": white,
+		"text-selection": var(--wp--preset--color--text-selection),
+		"black": var(--wp--preset--color--black),
+		"white": var(--wp--preset--color--white),
 	),
 
 	/* Spacing */
