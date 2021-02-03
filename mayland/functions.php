@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#010101',
+			'primary'    => '#000000',
+			'secondary'  => '#1a1a1a',
+			'tertiary'   => '#000000',
+		);
+	}
+}
+
 if ( ! function_exists( 'mayland_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -49,56 +61,6 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 					'shortName' => __( 'XL', 'mayland' ),
 					'size'      => 34.56,
 					'slug'      => 'huge',
-				),
-			)
-		);
-
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#000000'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#1a1a1a';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#010101';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#010101' ) ? $colors_array['colors']['txt'] : '#666666';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#010101' ) ? $colors_array['colors']['txt'] : '#333333';  // $config-global--color-foreground-dark-default;
-
-		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'mayland' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'mayland' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Background', 'mayland' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Foreground', 'mayland' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Foreground Light', 'mayland' ),
-					'slug'  => 'foreground-light',
-					'color' => $foreground_light,
-				),
-				array(
-					'name'  => __( 'Foreground Dark', 'mayland' ),
-					'slug'  => 'foreground-dark',
-					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -162,7 +124,7 @@ function mayland_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('mayland-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'mayland-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'mayland-style', 'rtl', 'replace' );
