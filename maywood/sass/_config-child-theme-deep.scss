@@ -68,42 +68,6 @@ $config-global: (
 		),
 	),
 
-	/* Colors */
-	"color": (
-		"primary": (
-			"default": var(--wp--preset--color--primary),
-			"hover": var(--wp--preset--color--primary-hover),
-		),
-		"secondary": (
-			"default": var(--wp--preset--color--secondary),
-			"hover": var(--wp--preset--color--secondary-hover),
-		),
-		"foreground": (
-			"default": var(--wp--preset--color--foreground),
-			"light": var(--wp--preset--color--foreground-low-contrast), // must be accessible against background
-			"dark": var(--wp--preset--color--foreground-high-contrast), // must be accessible against background
-		),
-		"background": (
-			"default": var(--wp--preset--color--background),
-			"light": var(--wp--preset--color--background-low-contrast), // must be accessible against background
-			"dark": var(--wp--preset--color--background-high-contrast), // must be accessible against background
-		),
-		"border": (
-			"default": var(--wp--preset--color--border),
-			"light": var(--wp--preset--color--border-low-contrast), // must be accessible against background
-			"dark": var(--wp--preset--color--border-high-contrast), // must be accessible against background
-		),
-		"alert": (
-			"success": var(--wp--preset--color--alert-success), // must be accessible against background
-			"info": var(--wp--preset--color--alert-info), // must be accessible against background
-			"warning": var(--wp--preset--color--alert-warning), // must be accessible against background
-			"error": var(--wp--preset--color--alert-error), // must be accessible against background
-		),
-		"text-selection": var(--wp--preset--color--text-selection),
-		"black": var(--wp--preset--color--black),
-		"white": var(--wp--preset--color--white),
-	),
-
 	/* Spacing */
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
@@ -139,6 +103,8 @@ $config-global: (
 		"pill": (10 * $typescale-root),
 	),
 );
+
+$config-global: map-merge($config-global-parent, $config-global);
 
 /**
  * Elements
