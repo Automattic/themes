@@ -58,12 +58,12 @@ a {
  * 2. Header
  */
 #masthead {
-	background-color: #{map-deep-get($config-global, "color", "white")};
+	background-color: #{map-deep-get($config-global, "color", "background", "default")};
 	padding: 0;
 
 	.site-branding {
 		text-align: center;
-		background: #fff;
+		background: #{map-deep-get($config-global, "color", "background", "default")};
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -94,7 +94,7 @@ body:not( .fse-enabled ) {
 	}
 
 	.site-description {
-		color: #333;
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	}
 }
 
