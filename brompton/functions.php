@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#E8E4DD',
+			'foreground' => '#252E36',
+			'primary'    => '#C04239',
+			'secondary'  => '#FFFFFF',
+			'tertiary'   => '#C04239',
+		);
+	}
+}
+
 if ( ! function_exists( 'brompton_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -61,56 +73,7 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 				),
 			)
 		);
-
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#C04239'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#E8E4DD';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#252E36';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#252E36' ) ? $colors_array['colors']['txt'] : '#666666';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#252E36' ) ? $colors_array['colors']['txt'] : '#474747';  // $config-global--color-foreground-dark-default;
-
-		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'brompton' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'brompton' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Background', 'barnsbury' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Foreground', 'barnsbury' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Foreground Light', 'barnsbury' ),
-					'slug'  => 'foreground-light',
-					'color' => $foreground_light,
-				),
-				array(
-					'name'  => __( 'Foreground Dark', 'barnsbury' ),
-					'slug'  => 'foreground-dark',
-					'color' => $foreground_dark,
-				),
-			)
-		);
+		
 	}
 endif;
 add_action( 'after_setup_theme', 'brompton_setup', 12 );
@@ -201,14 +164,5 @@ function brompton_editor_styles() {
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'brompton-editor-fonts', brompton_fonts_url(), array(), null );
 
-	// Hide duplicate palette colors
-	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
-	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#505050' ) { // $config-global--color-foreground-light-default;
-		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
-			.components-circular-option-picker__option-wrapper:nth-child(6) {
-				display: none;
-			}';
-		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
-	}
 }
 add_action( 'enqueue_block_editor_assets', 'brompton_editor_styles' );
