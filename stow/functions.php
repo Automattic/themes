@@ -12,7 +12,7 @@
 if ( ! function_exists( 'varia_default_colors' ) ) {
 	function varia_default_colors() {
 		return array(
-			'background' => '#f0f0f0',
+			'background' => '#ffffff',
 			'foreground' => '#444444',
 			'primary'    => '#404040',
 			'secondary'  => '#f25f70',
