@@ -147,12 +147,57 @@ body {
 	display: var(--skip, block);
 }
 
+:root {
+	/* Colors */
+	--wp--preset--color--primary: #19744c;
+	--wp--preset--color--primary-hover: #0c673f;
+	--wp--preset--color--secondary: #bc2213;
+	--wp--preset--color--secondary-hover: #af1506;
+	--wp--preset--color--foreground: #303030;
+	--wp--preset--color--foreground-low-contrast: #505050;
+	--wp--preset--color--foreground-high-contrast: #101010;
+	--wp--preset--color--background: #ffffff;
+	--wp--preset--color--background-low-contrast: #f0f0f0;
+	--wp--preset--color--background-high-contrast: #d0d0d0;
+	--wp--preset--color--border: #d0d0d0;
+	--wp--preset--color--border-low-contrast: #f0f0f0;
+	--wp--preset--color--border-high-contrast: #b0b0b0;
+	--wp--preset--color--text-selection: #b2ffe5;
+	--wp--preset--color--alert-success: #19744c;
+	--wp--preset--color--alert-info: #3e8bff;
+	--wp--preset--color--alert-warning: #e8a600;
+	--wp--preset--color--alert-error: #d20000;
+	--wp--preset--color--black: black;
+	--wp--preset--color--white: white;
+}
+
 /**
  * Child Theme Deep
  */
 /**
  * Redefine Sass map values for child theme output.
  * - See: style-child-theme.scss
+ */
+/**
+ * Button
+ */
+/**
+ * Cover
+ */
+/**
+ * Heading
+ */
+/**
+ * List
+ */
+/**
+ * Pullquote
+ */
+/**
+ * Quote
+ */
+/**
+ * Separator
  */
 /**
  * Global
@@ -206,14 +251,14 @@ input[type="submit"],
 .wp-block-button__link,
 .wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	line-height: 1;
-	color: #FFFFFF;
+	color: white;
 	cursor: pointer;
 	font-weight: 700;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
-	background-color: #19744C;
-	border-radius: 4px;
+	background-color: blue;
+	border-radius: 9px;
 	border-width: 0;
 	text-decoration: none;
 	padding: 16px 16px;
@@ -256,8 +301,8 @@ input:focus[type="submit"],
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
 .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
-	color: #FFFFFF;
-	background-color: #145f3e;
+	color: white;
+	background-color: indigo;
 }
 
 /**
@@ -661,35 +706,35 @@ html {
  * HTML resets
  */
 html {
-	font-size: 16.66667px;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	line-height: 1.6;
+	font-size: 15px;
+	font-family: serif;
+	font-family: var(--font-base, serif);
+	line-height: 1.78;
 }
 
 @media only screen and (min-width: 560px) {
 	html {
-		font-size: 20px;
+		font-size: 18px;
 	}
 }
 
 body {
 	font-size: 1rem;
 	font-weight: normal;
-	color: #303030;
+	color: #444444;
 	text-align: left;
-	background-color: #FFFFFF;
+	background-color: white;
 }
 
 /**
  * Links styles
  */
 a {
-	color: #19744C;
+	color: blue;
 }
 
 a:hover {
-	color: #145f3e;
+	color: indigo;
 }
 
 button,
@@ -713,12 +758,12 @@ a {
 }
 
 .screen-reader-text:focus {
-	background-color: #FFFFFF;
+	background-color: white;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #303030;
+	color: #444444;
 	display: block;
 	font-size: 1.2rem;
 	font-weight: bold;
@@ -789,11 +834,11 @@ footer {
 }
 
 ::selection {
-	background-color: #cbf4e2;
+	background-color: lightblue;
 }
 
 ::-moz-selection {
-	background-color: #cbf4e2;
+	background-color: lightblue;
 }
 
 /**
@@ -1077,8 +1122,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: black;
-	border: 1px solid #D0D0D0;
-	border-radius: 4px;
+	border: 1px solid #DDDDDD;
+	border-radius: 9px;
 	padding: 16px;
 }
 
@@ -1099,11 +1144,11 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: black;
-	border-color: #145f3e;
+	border-color: indigo;
 }
 
 select {
-	border: 1px solid #D0D0D0;
+	border: 1px solid #DDDDDD;
 }
 
 textarea {
@@ -1118,7 +1163,7 @@ input[type=checkbox] + label {
 }
 
 figcaption {
-	color: #505050;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -1246,7 +1291,7 @@ object {
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	color: #19744C;
+	color: blue;
 }
 
 .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
@@ -1256,7 +1301,7 @@ object {
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
-	color: #145f3e;
+	color: indigo;
 	text-decoration: underline;
 }
 
@@ -1274,7 +1319,7 @@ object {
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta,
 .wp-block-newspack-blocks-homepage-articles article .cat-links {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 }
 
@@ -1313,7 +1358,7 @@ object {
 .wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover, .wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
 .wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
 .wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
-	color: #145f3e;
+	color: indigo;
 	text-decoration: none;
 }
 
@@ -1346,14 +1391,14 @@ input[type="submit"],
 .wp-block-button__link,
 .wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	line-height: 1;
-	color: #FFFFFF;
+	color: white;
 	cursor: pointer;
 	font-weight: 700;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
-	background-color: #19744C;
-	border-radius: 4px;
+	background-color: blue;
+	border-radius: 9px;
 	border-width: 0;
 	text-decoration: none;
 	padding: 16px 16px;
@@ -1396,8 +1441,8 @@ input:focus[type="submit"],
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
 .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
-	color: #FFFFFF;
-	background-color: #145f3e;
+	color: white;
+	background-color: indigo;
 }
 
 /**
@@ -1440,19 +1485,19 @@ button[data-load-more-btn], .button {
 
 .wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
-	color: #19744C;
+	color: blue;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:active,
 .wp-block-button.is-style-outline .wp-block-button__link:active {
-	color: #19744C;
+	color: blue;
 }
 
 .wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
 .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
-	color: #145f3e;
+	color: indigo;
 }
 
 .wp-block-button.is-style-squared,
@@ -1461,14 +1506,14 @@ button[data-load-more-btn], .button {
 }
 
 .wp-block-code {
-	color: #303030;
+	color: #444444;
 	font-size: 0.83333rem;
 	padding: 16px;
-	border-color: #D0D0D0;
+	border-color: #DDDDDD;
 }
 
 .wp-block-code pre {
-	color: #303030;
+	color: #444444;
 }
 
 .wp-block-columns {
@@ -1652,8 +1697,8 @@ button[data-load-more-btn], .button {
 }
 
 .wp-block-file .wp-block-file__button {
-	background-color: #19744C;
-	color: #FFFFFF;
+	background-color: blue;
+	color: white;
 	font-size: 0.83333rem;
 	margin-left: 16px;
 	margin-right: 16px;
@@ -1667,7 +1712,7 @@ button[data-load-more-btn], .button {
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:visited {
-	color: #FFFFFF;
+	color: white;
 	opacity: .85;
 }
 
@@ -1727,8 +1772,8 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: 700;
 	clear: both;
 }
@@ -1774,7 +1819,7 @@ h6, .h6 {
 }
 
 .wp-block-image figcaption {
-	color: #505050;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -1804,7 +1849,7 @@ img {
 
 .wp-block-latest-comments .wp-block-latest-comments__comment {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	/* Vertical margins logic */
 	margin-top: 32px;
 	margin-bottom: 32px;
@@ -1819,18 +1864,18 @@ img {
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-date {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 }
 
 .wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	margin: 0;
 }
 
@@ -1854,17 +1899,17 @@ img {
 }
 
 .wp-block-latest-posts > li > a {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	font-weight: 700;
 	line-height: 1.125;
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
-	color: #505050;
+	color: #767676;
 	font-size: 0.69444rem;
-	line-height: 1.6;
+	line-height: 1.78;
 }
 
 .entry-content [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
@@ -1875,7 +1920,7 @@ img {
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	margin: 0;
 }
 
@@ -1939,8 +1984,8 @@ img {
 
 ul,
 ol {
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: serif;
+	font-family: var(--font-base, serif);
 	margin: 0;
 	padding-left: 32px;
 }
@@ -1967,8 +2012,8 @@ ol {
 }
 
 dt {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 }
 
@@ -2039,10 +2084,10 @@ p.has-background {
 }
 
 .a8c-posts-list-item__featured span {
-	color: #FFFFFF;
-	background-color: #19744C;
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	color: white;
+	background-color: blue;
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -2079,7 +2124,7 @@ p.has-background {
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__meta {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 }
 
@@ -2088,7 +2133,7 @@ p.has-background {
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__meta a:hover, .a8c-posts-list__item .a8c-posts-list-item__meta a:active {
-	color: #145f3e;
+	color: indigo;
 }
 
 .a8c-posts-list__item .a8c-posts-list-item__edit-link {
@@ -2100,16 +2145,16 @@ p.has-background {
 }
 
 .wp-block-pullquote {
-	border-top-color: #D0D0D0;
+	border-top-color: #DDDDDD;
 	border-top-width: 4px;
-	border-bottom-color: #D0D0D0;
+	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
-	color: #303030;
+	color: #444444;
 }
 
 .wp-block-pullquote blockquote p {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -2126,7 +2171,7 @@ p.has-background {
 .wp-block-pullquote .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
@@ -2136,7 +2181,7 @@ p.has-background {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	color: #FFFFFF;
+	color: white;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -2146,11 +2191,11 @@ p.has-background {
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background) {
-	background-color: #19744C;
+	background-color: blue;
 }
 
 .wp-block-quote {
-	border-left-color: #19744C;
+	border-left-color: blue;
 	margin: 32px 0;
 	padding-left: 16px;
 	/**
@@ -2172,8 +2217,8 @@ p.has-background {
 }
 
 .wp-block-quote p {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -2182,7 +2227,7 @@ p.has-background {
 .wp-block-quote .wp-block-quote__citation,
 .wp-block-quote cite,
 .wp-block-quote footer {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
@@ -2209,7 +2254,7 @@ p.has-background {
 }
 
 .wp-block-quote[style*="text-align:right"], .wp-block-quote[style*="text-align: right"] {
-	border-right-color: #19744C;
+	border-right-color: blue;
 }
 
 .wp-block-quote.is-style-large, .wp-block-quote.is-large {
@@ -2230,7 +2275,7 @@ p.has-background {
 .wp-block-quote.is-style-large footer, .wp-block-quote.is-large .wp-block-quote__citation,
 .wp-block-quote.is-large cite,
 .wp-block-quote.is-large footer {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
@@ -2243,14 +2288,14 @@ p.has-background {
 }
 
 hr {
-	border-bottom: 2px solid #D0D0D0;
+	border-bottom: 2px solid #DDDDDD;
 	clear: both;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 hr.wp-block-separator {
-	border-bottom: 2px solid #D0D0D0;
+	border-bottom: 2px solid #DDDDDD;
 	/**
 		 * Block Options
 		 */
@@ -2273,7 +2318,7 @@ hr.wp-block-separator.is-style-dots.has-background:before, hr.wp-block-separator
 }
 
 hr.wp-block-separator.is-style-dots:before {
-	color: #D0D0D0;
+	color: #DDDDDD;
 	font-size: 1.728rem;
 	letter-spacing: 0.83333rem;
 	padding-left: 0.83333rem;
@@ -2317,8 +2362,8 @@ table,
 
 table th,
 .wp-block-table th {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 table td,
@@ -2331,12 +2376,12 @@ table th,
 
 table.is-style-stripes tbody tr:nth-child(odd),
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-	background-color: #F0F0F0;
-	color: #303030;
+	background-color: #FAFAFA;
+	color: #444444;
 }
 
 .wp-block-video figcaption {
-	color: #505050;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -2433,36 +2478,36 @@ table.is-style-stripes tbody tr:nth-child(odd),
 }
 
 .has-primary-color {
-	color: #19744C;
+	color: blue;
 }
 
 .has-secondary-color {
-	color: #BC2213;
+	color: red;
 }
 
 .has-foreground-color {
-	color: #303030;
+	color: #444444;
 }
 
 .has-foreground-light-color {
-	color: #505050;
+	color: #767676;
 }
 
 .has-foreground-dark-color {
-	color: #101010;
+	color: #111111;
 }
 
 .has-background-light-color {
-	color: #F0F0F0;
+	color: #FAFAFA;
 }
 
 .has-background-dark-color {
-	color: #D0D0D0;
+	color: #DDDDDD;
 }
 
 .has-background-dim,
 .has-background-color {
-	color: #FFFFFF;
+	color: white;
 }
 
 .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
@@ -2478,51 +2523,51 @@ table.is-style-stripes tbody tr:nth-child(odd),
 
 .has-primary-background-color,
 .has-primary-background-color.has-background-dim {
-	background-color: #19744C;
-	color: #FFFFFF;
+	background-color: blue;
+	color: white;
 }
 
 .has-secondary-background-color,
 .has-secondary-background-color.has-background-dim {
-	background-color: #BC2213;
-	color: #FFFFFF;
+	background-color: red;
+	color: white;
 }
 
 .has-background-dim,
 .has-foreground-background-color,
 .has-foreground-background-color.has-background-dim {
-	background-color: #303030;
-	color: #FFFFFF;
+	background-color: #444444;
+	color: white;
 }
 
 .has-foreground-light-background-color,
 .has-foreground-light-background-color.has-background-dim {
-	background-color: #505050;
-	color: #FFFFFF;
+	background-color: #767676;
+	color: white;
 }
 
 .has-foreground-dark-background-color,
 .has-foreground-dark-background-color.has-background-dim {
-	background-color: #101010;
-	color: #FFFFFF;
+	background-color: #111111;
+	color: white;
 }
 
 .has-background-light-background-color,
 .has-background-light-background-color.has-background-dim {
-	background-color: #F0F0F0;
-	color: #303030;
+	background-color: #FAFAFA;
+	color: #444444;
 }
 
 .has-background-dark-background-color,
 .has-background-dark-background-color.has-background-dim {
-	background-color: #D0D0D0;
-	color: #303030;
+	background-color: #DDDDDD;
+	color: #444444;
 }
 
 .has-background-background-color,
 .has-background-background-color.has-background-dim {
-	background-color: #FFFFFF;
-	color: #303030;
+	background-color: white;
+	color: #444444;
 }
 
 .is-small-text,
@@ -2551,8 +2596,8 @@ table.is-style-stripes tbody tr:nth-child(odd),
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: calc(2 * 2.98598rem);
 	font-weight: 700;
 	line-height: 0.66;
@@ -2705,13 +2750,13 @@ table.is-style-stripes tbody tr:nth-child(odd),
  * - Similar to Blocks but exist outside of the "current" editor context
  */
 .site-branding {
-	color: #505050;
+	color: #767676;
 }
 
 .site-title {
-	color: #303030;
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	color: #444444;
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	letter-spacing: normal;
 	line-height: 1;
 }
@@ -2726,13 +2771,13 @@ table.is-style-stripes tbody tr:nth-child(odd),
 }
 
 .site-title a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 .site-description {
 	color: currentColor;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: serif;
+	font-family: var(--font-base, serif);
 }
 
 body:not(.fse-enabled) .site-title {
@@ -2744,7 +2789,7 @@ body:not(.fse-enabled) .site-description {
 }
 
 .main-navigation {
-	color: #303030;
+	color: #444444;
 }
 
 .main-navigation > div {
@@ -2761,7 +2806,7 @@ body:not(.fse-enabled) .site-description {
 }
 
 .main-navigation #toggle:focus + #toggle-menu {
-	background-color: #19744C;
+	background-color: blue;
 	outline: inherit;
 	text-decoration: underline;
 }
@@ -2877,7 +2922,7 @@ body:not(.fse-enabled) .site-description {
 
 @media only screen and (min-width: 560px) {
 	.main-navigation > div > ul > li > .sub-menu {
-		background: #FFFFFF;
+		background: white;
 		box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
 		left: 0;
 		top: 100%;
@@ -2894,10 +2939,10 @@ body:not(.fse-enabled) .site-description {
 }
 
 .main-navigation a {
-	color: #303030;
+	color: #444444;
 	display: block;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: serif;
+	font-family: var(--font-base, serif);
 	font-weight: 400;
 	padding: 8px 0;
 }
@@ -2909,11 +2954,11 @@ body:not(.fse-enabled) .site-description {
 }
 
 .main-navigation a:link, .main-navigation a:visited {
-	color: #303030;
+	color: #444444;
 }
 
 .main-navigation a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 .main-navigation .sub-menu {
@@ -2976,13 +3021,13 @@ body:not(.fse-enabled) .main-navigation a {
 }
 
 .social-navigation a {
-	color: #303030;
+	color: #444444;
 	display: inline-block;
 	padding: 0 8px;
 }
 
 .social-navigation a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 .social-navigation svg {
@@ -3004,9 +3049,9 @@ body:not(.fse-enabled) .main-navigation a {
 }
 
 .site-info {
-	color: #303030;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	color: #444444;
+	font-family: serif;
+	font-family: var(--font-base, serif);
 	font-size: 0.83333rem;
 }
 
@@ -3032,7 +3077,7 @@ body:not(.fse-enabled) .main-navigation a {
 }
 
 .site-info a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 .footer-navigation {
@@ -3054,7 +3099,7 @@ body:not(.fse-enabled) .main-navigation a {
 }
 
 .footer-navigation .footer-menu {
-	color: #303030;
+	color: #444444;
 	margin: 0;
 	padding-left: 0;
 }
@@ -3080,8 +3125,8 @@ body:not(.fse-enabled) .main-navigation a {
 }
 
 .footer-navigation .footer-menu a {
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: serif;
+	font-family: var(--font-base, serif);
 	font-weight: 400;
 	padding: 16px;
 	color: currentColor;
@@ -3092,7 +3137,7 @@ body:not(.fse-enabled) .main-navigation a {
 }
 
 .footer-navigation .footer-menu a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 body:not(.fse-enabled) .footer-menu a {
@@ -3107,7 +3152,7 @@ body:not(.fse-enabled) .footer-menu a {
 
 .entry-meta,
 .entry-footer {
-	color: #505050;
+	color: #767676;
 	clear: both;
 	float: none;
 	font-size: 0.83333rem;
@@ -3144,7 +3189,7 @@ body:not(.fse-enabled) .footer-menu a {
 .entry-meta a:hover, .entry-meta a:active,
 .entry-footer a:hover,
 .entry-footer a:active {
-	color: #145f3e;
+	color: indigo;
 }
 
 .entry-meta .svg-icon,
@@ -3243,8 +3288,8 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .post-navigation .post-title {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.44rem;
 	font-weight: 600;
 }
@@ -3271,8 +3316,8 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .pagination .nav-links > * {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 	padding-left: calc(0.66 * 16px);
@@ -3335,8 +3380,8 @@ body:not(.fse-enabled) .footer-menu a {
 
 .comment-reply-title small {
 	font-size: 1rem;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: serif;
+	font-family: var(--font-base, serif);
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -3345,13 +3390,13 @@ body:not(.fse-enabled) .footer-menu a {
  * Comment Lists
  */
 .comment-list {
-	border-bottom: 1px solid #D0D0D0;
+	border-bottom: 1px solid #DDDDDD;
 	padding-left: 0;
 	list-style: none;
 }
 
 .comment-list > li {
-	border-top: 1px solid #D0D0D0;
+	border-top: 1px solid #DDDDDD;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -3362,7 +3407,7 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .comment-list .children > li {
-	border-top: 1px solid #D0D0D0;
+	border-top: 1px solid #DDDDDD;
 	margin-top: 32px;
 	margin-bottom: 32px;
 }
@@ -3409,7 +3454,7 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .comment-meta .comment-metadata {
-	color: #303030;
+	color: #444444;
 	padding-right: 40px;
 }
 
@@ -3424,7 +3469,7 @@ body:not(.fse-enabled) .footer-menu a {
 }
 
 .comment-meta .comment-metadata a:hover, .comment-meta .comment-metadata a:active {
-	color: #145f3e;
+	color: indigo;
 }
 
 @media only screen and (min-width: 560px) {
@@ -3481,8 +3526,8 @@ body:not(.fse-enabled) .footer-menu a {
 .comment-author .fn,
 .pingback .url,
 .trackback .url {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 /**
@@ -3584,8 +3629,8 @@ body:not(.fse-enabled) .footer-menu a {
  * Comment Nav
  */
 .comment-navigation a {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 600;
 }
@@ -3614,10 +3659,10 @@ img#wpstats {
  * - Page specific styles
  */
 .sticky-post {
-	color: #FFFFFF;
-	background-color: #19744C;
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	color: white;
+	background-color: blue;
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: bold;
 	font-size: 0.83333rem;
 	line-height: 1;
@@ -3926,9 +3971,9 @@ body .widget_eu_cookie_law_widget.widget.top {
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law {
-	background: #FFFFFF;
-	border: 1px solid #D0D0D0;
-	color: #303030;
+	background: white;
+	border: 1px solid #DDDDDD;
+	color: #444444;
 	font-size: 0.83333rem;
 	line-height: inherit;
 	padding: 16px;
@@ -3941,18 +3986,18 @@ body .widget_eu_cookie_law_widget #eu-cookie-law {
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative {
-	background: #303030;
-	border-color: #101010;
-	color: #FFFFFF;
+	background: #444444;
+	border-color: #111111;
+	color: white;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept {
-	background: #FFFFFF;
-	color: #303030;
+	background: white;
+	color: #444444;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus {
-	background: #D0D0D0;
+	background: #DDDDDD;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
@@ -4151,9 +4196,9 @@ dt {
 }
 
 .main-navigation > div {
-	background: #FFFFFF;
-	border: 1px solid #D0D0D0;
-	border-radius: 4px;
+	background: white;
+	border: 1px solid #DDDDDD;
+	border-radius: 9px;
 	left: 16px;
 	margin-top: 8px;
 	padding: 0 8px;
@@ -4195,7 +4240,7 @@ dt {
 	.main-navigation > div > ul > .menu-item-has-children > a::after {
 		border-left: 4px solid transparent;
 		border-right: 4px solid transparent;
-		border-top: 4px solid #19744C;
+		border-top: 4px solid blue;
 		content: "";
 		margin: 0;
 		margin-left: 4px;
@@ -4204,8 +4249,8 @@ dt {
 	.main-navigation > div > ul > li:hover > ul,
 	.main-navigation > div > ul > li.focus > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
-		border: 1px solid #D0D0D0;
-		border-radius: 4px;
+		border: 1px solid #DDDDDD;
+		border-radius: 9px;
 		box-shadow: none;
 		overflow: hidden;
 	}
@@ -4343,7 +4388,7 @@ dt {
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 .entry-title,
@@ -4353,9 +4398,9 @@ dt {
 
 .sticky-post,
 .a8c-posts-list .a8c-posts-list-item__featured span {
-	background: #F0F0F0;
-	border-radius: 4px;
-	color: #303030;
+	background: #FAFAFA;
+	border-radius: 9px;
+	color: #444444;
 	font-family: inherit;
 	font-family: var(--font-base, inherit);
 	padding: 8px 16px;
@@ -4375,7 +4420,7 @@ dt {
  * Post Navigation
  */
 .post-navigation a .post-title {
-	color: #303030;
+	color: #444444;
 }
 
 .post-navigation a:active,
@@ -4387,12 +4432,12 @@ dt {
 .post-navigation a:active .post-title,
 .post-navigation a:focus .post-title,
 .post-navigation a:hover .post-title {
-	color: #19744C;
+	color: blue;
 	text-decoration: underline;
 }
 
 .post-navigation .meta-nav {
-	color: #303030;
+	color: #444444;
 }
 
 /**
@@ -4418,7 +4463,7 @@ dt {
 }
 
 .comment-meta .comment-author .fn a:active, .comment-meta .comment-author .fn a:focus, .comment-meta .comment-author .fn a:hover {
-	color: #19744C;
+	color: blue;
 }
 
 .comment-meta .comment-author .avatar {
@@ -4467,7 +4512,7 @@ table td,
 table th,
 .wp-block-table td,
 .wp-block-table th {
-	border-color: #D0D0D0;
+	border-color: #DDDDDD;
 }
 
 .a8c-posts-list {
@@ -4505,7 +4550,7 @@ body .widget_eu_cookie_law_widget.widget.top {
 body .widget_eu_cookie_law_widget #eu-cookie-law {
 	background: rgba(255, 255, 255, 0.9);
 	border: none;
-	color: #303030;
+	color: #444444;
 	font-size: 0.83333rem;
 	line-height: inherit;
 	padding: 16px;
@@ -4518,17 +4563,17 @@ body .widget_eu_cookie_law_widget #eu-cookie-law {
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative {
-	background: rgba(48, 48, 48, 0.9);
-	color: #FFFFFF;
+	background: rgba(68, 68, 68, 0.9);
+	color: white;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept {
-	background: #FFFFFF;
-	color: #303030;
+	background: white;
+	color: #444444;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:active, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus, body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover {
-	background: #F0F0F0;
+	background: #FAFAFA;
 }
 
 body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {

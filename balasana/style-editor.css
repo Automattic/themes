@@ -126,12 +126,57 @@ body {
 	display: var(--skip, block);
 }
 
+:root, body {
+	/* Colors */
+	--wp--preset--color--primary: #19744c;
+	--wp--preset--color--primary-hover: #0c673f;
+	--wp--preset--color--secondary: #bc2213;
+	--wp--preset--color--secondary-hover: #af1506;
+	--wp--preset--color--foreground: #303030;
+	--wp--preset--color--foreground-low-contrast: #505050;
+	--wp--preset--color--foreground-high-contrast: #101010;
+	--wp--preset--color--background: #ffffff;
+	--wp--preset--color--background-low-contrast: #f0f0f0;
+	--wp--preset--color--background-high-contrast: #d0d0d0;
+	--wp--preset--color--border: #d0d0d0;
+	--wp--preset--color--border-low-contrast: #f0f0f0;
+	--wp--preset--color--border-high-contrast: #b0b0b0;
+	--wp--preset--color--text-selection: #b2ffe5;
+	--wp--preset--color--alert-success: #19744c;
+	--wp--preset--color--alert-info: #3e8bff;
+	--wp--preset--color--alert-warning: #e8a600;
+	--wp--preset--color--alert-error: #d20000;
+	--wp--preset--color--black: black;
+	--wp--preset--color--white: white;
+}
+
 /**
  * Child Theme Name
  */
 /**
  * Redefine Sass map values for child theme output.
  * - See: style-child-theme.scss
+ */
+/**
+ * Button
+ */
+/**
+ * Cover
+ */
+/**
+ * Heading
+ */
+/**
+ * List
+ */
+/**
+ * Pullquote
+ */
+/**
+ * Quote
+ */
+/**
+ * Separator
  */
 /**
  * Global
@@ -171,32 +216,32 @@ body {
  * - Reset the browser
  */
 body {
-	color: #303030;
-	background-color: #FFFFFF;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 20px;
+	color: #444444;
+	background-color: white;
+	font-family: serif;
+	font-family: var(--font-base, serif);
+	font-size: 18px;
 	font-weight: normal;
-	line-height: 1.6;
+	line-height: 1.78;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 .editor-post-title__block {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 p {
 	font-size: 1em;
-	line-height: 1.6;
+	line-height: 1.78;
 }
 
 a {
-	color: #19744C;
+	color: blue;
 }
 
 a:hover {
-	color: #145f3e;
+	color: indigo;
 }
 
 button,
@@ -259,7 +304,7 @@ blockquote.alignright footer {
 }
 
 figcaption {
-	color: #505050;
+	color: #767676;
 	font-size: 0.69444rem;
 	margin-top: calc(0.5 * 16px);
 	margin-bottom: 16px;
@@ -361,7 +406,7 @@ object {
 }
 
 .wp-block-a8c-blog-posts .entry-title a {
-	color: #19744C;
+	color: blue;
 }
 
 .has-background:not(.has-background-background-color) .wp-block-a8c-blog-posts .entry-title a,
@@ -371,7 +416,7 @@ object {
 }
 
 .wp-block-a8c-blog-posts .entry-title a:hover {
-	color: #145f3e;
+	color: indigo;
 	text-decoration: underline;
 }
 
@@ -394,7 +439,7 @@ object {
 }
 
 .wp-block-a8c-blog-posts .more-link:hover, .wp-block-a8c-blog-posts .more-link:active {
-	color: #145f3e;
+	color: indigo;
 	text-decoration: none;
 }
 
@@ -408,7 +453,7 @@ object {
 
 .wp-block-a8c-blog-posts .entry-meta,
 .wp-block-a8c-blog-posts .cat-links {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333em;
 }
 
@@ -442,7 +487,7 @@ object {
 .wp-block-a8c-blog-posts .entry-meta a:hover, .wp-block-a8c-blog-posts .entry-meta a:active,
 .wp-block-a8c-blog-posts .cat-links a:hover,
 .wp-block-a8c-blog-posts .cat-links a:active {
-	color: #145f3e;
+	color: indigo;
 	text-decoration: none;
 }
 
@@ -472,14 +517,14 @@ object {
  */
 .wp-block-a8c-blog-posts + .button {
 	line-height: 1;
-	color: #FFFFFF;
+	color: white;
 	cursor: pointer;
 	font-weight: 700;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333rem;
-	background-color: #19744C;
-	border-radius: 4px;
+	background-color: blue;
+	border-radius: 9px;
 	border-width: 0;
 	text-decoration: none;
 	padding: 16px 16px;
@@ -501,8 +546,8 @@ object {
 }
 
 .wp-block-a8c-blog-posts + .button:hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts + .has-focus.button {
-	color: #FFFFFF;
-	background-color: #145f3e;
+	color: white;
+	background-color: indigo;
 }
 
 /**
@@ -530,22 +575,22 @@ object {
 
 /* Default Style */
 .wp-block-button__link {
-	color: #FFFFFF;
+	color: white;
 	font-weight: 700;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333em;
 	line-height: 1;
-	background-color: #19744C;
-	border-radius: 4px;
+	background-color: blue;
+	border-radius: 9px;
 	padding: 16px 16px;
 	/* Outline Style */
 	/* Squared Style */
 }
 
 .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link.has-focus {
-	color: #FFFFFF;
-	background-color: #145f3e;
+	color: white;
+	background-color: indigo;
 }
 
 .wp-block-button__link.is-style-outline,
@@ -558,7 +603,7 @@ object {
 .is-style-outline .wp-block-button__link:hover,
 .is-style-outline .wp-block-button__link:focus,
 .is-style-outline .wp-block-button__link.has-focus {
-	color: #145f3e;
+	color: indigo;
 	background: transparent;
 }
 
@@ -569,20 +614,20 @@ object {
 
 /* Default Style */
 .button {
-	color: #FFFFFF;
+	color: white;
 	font-weight: 700;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-size: 0.83333em;
 	line-height: 1;
-	background-color: #19744C;
-	border-radius: 4px;
+	background-color: blue;
+	border-radius: 9px;
 	padding: 16px 16px;
 }
 
 .button:hover, .button:focus, .button.has-focus {
-	color: #FFFFFF;
-	background-color: #145f3e;
+	color: white;
+	background-color: indigo;
 }
 
 .wp-block-columns .wp-block[data-align=full],
@@ -672,8 +717,8 @@ object {
 .wp-block-heading h4, h4, .h4,
 .wp-block-heading h5, h5, .h5,
 .wp-block-heading h6, h6, .h6 {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: 700;
 	clear: both;
 }
@@ -751,8 +796,8 @@ object {
 }
 
 .wp-block-latest-posts > li > a {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	font-weight: 700;
 	line-height: 1.125;
@@ -773,9 +818,9 @@ object {
 }
 
 .wp-block-latest-posts .wp-block-latest-posts__post-date {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 }
 
 [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
@@ -786,7 +831,7 @@ object {
 .wp-block-latest-posts .wp-block-latest-posts__post-excerpt,
 .wp-block-latest-posts .wp-block-latest-posts__post-full-content {
 	font-size: 0.83333rem;
-	line-height: 1.6;
+	line-height: 1.78;
 	margin: 0;
 }
 
@@ -831,16 +876,16 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote {
-	border-top-color: #D0D0D0;
+	border-top-color: #DDDDDD;
 	border-top-width: 4px;
-	border-bottom-color: #D0D0D0;
+	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
-	color: #303030;
+	color: #444444;
 }
 
 .wp-block-pullquote blockquote p {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -857,7 +902,7 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote .wp-block-pullquote__citation,
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
@@ -867,7 +912,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	color: #FFFFFF;
+	color: white;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -877,17 +922,17 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote.is-style-solid-color:not(.has-background) {
-	background-color: #19744C;
+	background-color: blue;
 }
 
 .wp-block-quote {
-	border-left-color: #19744C;
+	border-left-color: blue;
 	padding-left: 16px;
 }
 
 .wp-block-quote p {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 1.728em;
 	letter-spacing: normal;
 }
@@ -898,8 +943,8 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: 2.0736em;
 	letter-spacing: normal;
 	line-height: 1.125;
@@ -913,7 +958,7 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-quote .wp-block-quote__citation {
-	color: #505050;
+	color: #767676;
 	font-size: 0.83333em;
 	letter-spacing: normal;
 }
@@ -927,14 +972,14 @@ p.has-background:not(.has-background-background-color) a {
 
 .wp-block-separator,
 hr {
-	border-bottom: 2px solid #D0D0D0;
+	border-bottom: 2px solid #DDDDDD;
 	clear: both;
 }
 
 .wp-block-separator[style*="text-align:right"], .wp-block-separator[style*="text-align: right"],
 hr[style*="text-align:right"],
 hr[style*="text-align: right"] {
-	border-right-color: #D0D0D0;
+	border-right-color: #DDDDDD;
 }
 
 .wp-block-separator.is-style-wide,
@@ -961,7 +1006,7 @@ hr.is-style-dots.has-text-color:before {
 
 .wp-block-separator.is-style-dots:before,
 hr.is-style-dots:before {
-	color: #D0D0D0;
+	color: #DDDDDD;
 }
 
 .has-background:not(.has-background-background-color) .wp-block-separator,
@@ -980,8 +1025,8 @@ hr {
 
 table th,
 .wp-block-table th {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 }
 
 table td,
@@ -993,13 +1038,13 @@ table th,
 
 table.is-style-stripes tbody tr:nth-child(odd),
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-	background-color: #F0F0F0;
-	color: #303030;
+	background-color: #FAFAFA;
+	color: #444444;
 }
 
 pre.wp-block-verse {
 	font-family: monospace, monospace;
-	color: #303030;
+	color: #444444;
 }
 
 /**
@@ -1007,9 +1052,9 @@ pre.wp-block-verse {
  * - Needs a special styles
  */
 .editor-post-title__block .editor-post-title__input {
-	color: #303030;
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	color: #444444;
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-weight: 700;
 	font-size: 2.48832em;
 	letter-spacing: normal;
@@ -1018,42 +1063,42 @@ pre.wp-block-verse {
 
 .wp-block .has-primary-color,
 .has-primary-color {
-	color: #19744C;
+	color: blue;
 }
 
 .wp-block .has-secondary-color,
 .has-secondary-color {
-	color: #BC2213;
+	color: red;
 }
 
 .wp-block .has-foreground-color,
 .has-foreground-color {
-	color: #303030;
+	color: #444444;
 }
 
 .wp-block .has-foreground-light-color,
 .has-foreground-light-color {
-	color: #505050;
+	color: #767676;
 }
 
 .wp-block .has-foreground-dark-color,
 .has-foreground-dark-color {
-	color: #101010;
+	color: #111111;
 }
 
 .wp-block .has-background-light-color,
 .has-background-light-color {
-	color: #F0F0F0;
+	color: #FAFAFA;
 }
 
 .wp-block .has-background-dark-color,
 .has-background-dark-color {
-	color: #D0D0D0;
+	color: #DDDDDD;
 }
 
 .wp-block .has-background-color,
 .has-background-color {
-	color: #FFFFFF;
+	color: white;
 }
 
 .has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
@@ -1069,50 +1114,50 @@ pre.wp-block-verse {
 
 .wp-block .has-primary-background-color,
 .has-primary-background-color {
-	background-color: #19744C;
-	color: #FFFFFF;
+	background-color: blue;
+	color: white;
 }
 
 .wp-block .has-secondary-background-color,
 .has-secondary-background-color {
-	background-color: #BC2213;
-	color: #FFFFFF;
+	background-color: red;
+	color: white;
 }
 
 .wp-block .has-foreground-background-color,
 .has-foreground-background-color {
-	background-color: #303030;
-	color: #FFFFFF;
+	background-color: #444444;
+	color: white;
 }
 
 .wp-block .has-foreground-light-background-color,
 .has-foreground-light-background-color {
-	background-color: #505050;
-	color: #FFFFFF;
+	background-color: #767676;
+	color: white;
 }
 
 .wp-block .has-foreground-dark-background-color,
 .has-foreground-dark-background-color {
-	background-color: #101010;
-	color: #FFFFFF;
+	background-color: #111111;
+	color: white;
 }
 
 .wp-block .has-background-light-background-color,
 .has-background-light-background-color {
-	background-color: #F0F0F0;
-	color: #303030;
+	background-color: #FAFAFA;
+	color: #444444;
 }
 
 .wp-block .has-background-dark-background-color,
 .has-background-dark-background-color {
-	background-color: #D0D0D0;
-	color: #303030;
+	background-color: #DDDDDD;
+	color: #444444;
 }
 
 .wp-block .has-background-background-color,
 .has-background-background-color {
-	background-color: #FFFFFF;
-	color: #303030;
+	background-color: white;
+	color: #444444;
 }
 
 .is-small-text,
@@ -1141,8 +1186,8 @@ pre.wp-block-verse {
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-headings, "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
 	font-size: calc(2 * 2.98598em);
 	font-weight: 700;
 }

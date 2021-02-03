@@ -3,6 +3,8 @@
  * - See: style-child-theme.scss
  */
 
+ @import "../../varia/sass/abstracts/config-global";
+
 /**
  * Global
  */
@@ -14,7 +16,7 @@ $typescale-root: 20px; // Set 16px/1em default on html
 $typescale-base: 1rem; // Set 1em default on body == $typescale-root;
 $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
 
-$config-global: (
+$config-global-parent: (
 
 	/* Fonts */
 	"font": (
@@ -67,42 +69,6 @@ $config-global: (
 		),
 	),
 
-	/* Colors */
-	"color": (
-		"primary": (
-			"default": #19744C,
-			"hover": darken(#19744C, 5%),
-		),
-		"secondary": (
-			"default": #BC2213,
-			"hover": darken(#BC2213, 5%),
-		),
-		"foreground": (
-			"default": #303030,
-			"light": #505050, // must be accessible against background
-			"dark": #101010, // must be accessible against background
-		),
-		"background": (
-			"default": #FFFFFF,
-			"light": #F0F0F0, // must be accessible against foreground-default
-			"dark": #D0D0D0, // must be accessible against foreground-default
-		),
-		"border": (
-			"default": #D0D0D0,
-			"light": #F0F0F0,
-			"dark": #B0B0B0,
-		),
-		"alert": (
-			"success": #19744C,
-			"info": #3e8bff,
-			"warning": #e8a600,
-			"error": #d20000,
-		),
-		"text-selection": lighten(#19744C, 60%),
-		"black": black,
-		"white": white,
-	),
-
 	/* Spacing */
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
@@ -138,6 +104,8 @@ $config-global: (
 		"pill": (10 * $baseline-unit),
 	),
 );
+
+$config-global: map-merge($config-global-parent, $config-global);
 
 /**
  * Elements
