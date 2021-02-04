@@ -159,44 +159,54 @@ function varia_custom_colors_extra_css() {
 }
 add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );
 
-//TODO: check how many colors we need to use!
 /**
  * Featured Palettes
  */
-// Light
-add_color_palette(
-	array(
-		'#FFFFFF',
-		'#1D1E1E',
-		'#C8133E',
-		'#4E2F4B',
-		//'#F9F9F9',
-	), /* translators: This is the name for a color scheme */
-	'Light'
-);
-// Medium
-add_color_palette(
-	array(
-		'#EEF4F7',
-		'#242527',
-		'#35845D',
-		'#233252',
-		//'#F9F9F9',
-	), /* translators: This is the name for a color scheme */
-	'Medium'
-);
-// Dark
-add_color_palette(
-	array(
-		'#1F2527',
-		'#FFFFFF',
-		'#9FD3E8',
-		'#FBE6AA',
-		//'#364043',
-	), /* translators: This is the name for a color scheme */
-	'Dark'
-);
+$has_tertiary_color = false;
 
 if ( function_exists( 'varia_default_colors' ) ) {
-	varia_define_color_annotations( varia_default_colors() );
+	$default_colors =  varia_default_colors();
+	varia_define_color_annotations( $default_colors );
+	if( $default_colors['tertiary'] ) {
+		$has_tertiary_color = true;
+	}
 }
+
+$light = array(
+	'#FFFFFF',
+	'#1D1E1E',
+	'#C8133E',
+	'#4E2F4B',
+);
+$medium = array(
+	'#EEF4F7',
+	'#242527',
+	'#35845D',
+	'#233252',
+);
+$dark = array(
+	'#1F2527',
+	'#FFFFFF',
+	'#9FD3E8',
+	'#FBE6AA',
+);
+if($has_tertiary_color) {
+	$light[] = '#F9F9F9';
+	$medium[] = '#F9F9F9';
+	$dark[] = '#364043';
+}
+add_color_palette(
+	$light, 
+	/* translators: This is the name for a color scheme */
+	'Light'
+);
+add_color_palette(
+	$medium, 
+	/* translators: This is the name for a color scheme */
+	'Medium'
+);
+add_color_palette(
+	$dark, 
+	/* translators: This is the name for a color scheme */
+	'Dark'
+);

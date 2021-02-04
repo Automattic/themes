@@ -16,7 +16,7 @@ if ( ! function_exists( 'varia_default_colors' ) ) {
 			'foreground' => '#394d55',
 			'primary'    => '#3E7D98',
 			'secondary'  => '#9B6A36',
-			'tertiary'   => '#3E7D98',
+			'tertiary'   => null,
 		);
 	}
 }
