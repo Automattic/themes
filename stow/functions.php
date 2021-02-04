@@ -67,21 +67,6 @@ if ( ! function_exists( 'stow_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'stow_setup', 12 );
 
-function stow_editor_color_palette( $palette ) {
-	$palette[] = array(
-		'name'  => __( 'Dark Gray', 'stow' ),
-		'slug'  => 'foreground-dark',
-		'color' => '#111111',
-	);
-	$palette[] = array(
-		'name'  => __( 'Light Gray', 'stow' ),
-		'slug'  => 'foreground-light',
-		'color' => '#767676',
-	);
-	return $palette;
-}
-add_filter( 'varia_editor_color_palette', 'stow_editor_color_palette' );
-
 /**
  * Set the content width in pixels, based on the child-theme's design and stylesheet.
  *
