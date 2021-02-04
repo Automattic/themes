@@ -1,4 +1,4 @@
-<?php 
+<?php
 // These functions are borrowed from the colorline lib
 function hex_to_rgb( $hex ) {
 	return sscanf( $hex, '%02X%02X%02X' );
@@ -38,9 +38,11 @@ function rgb_to_hsvl( $rgb ) {
 	return array( $h, $s, $v, $l );
 }
 
-function change_color_luminescence( $hex, $amount ) {
-	$hex_without_hash = substr( $hex, 1, strlen( $hex ) );
-	$rgb              = hex_to_rgb( $hex_without_hash );
-	$hsvl             = rgb_to_hsvl( $rgb );
-	return 'hsl( ' . $hsvl[0] . ',' . $hsvl[1] . '%,' . ( $hsvl[2] + $amount ) . '%)';
+if ( ! function_exists( 'change_color_luminescence' ) ) {
+	function change_color_luminescence( $hex, $amount ) {
+		$hex_without_hash = substr( $hex, 1, strlen( $hex ) );
+		$rgb              = hex_to_rgb( $hex_without_hash );
+		$hsvl             = rgb_to_hsvl( $rgb );
+		return 'hsl( ' . $hsvl[0] . ',' . $hsvl[1] . '%,' . ( $hsvl[2] + $amount ) . '%)';
+	}
 }
