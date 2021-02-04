@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#f7f7f6',
+			'foreground' => '#444444',
+			'primary'    => '#ff302c',
+			'secondary'  => '#1285ce',
+			'tertiary'   => '#DDDDDD',
+		);
+	}
+}
+
 if ( ! function_exists( 'leven_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,56 +65,6 @@ if ( ! function_exists( 'leven_setup' ) ) :
 			)
 		);
 
-		/*
-		 * Get customizer colors and add them to the editor color palettes
-		 *
-		 * - if the customizer color is empty, use the default
-		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF302C'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#1285CE';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#F7F7F6';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
-
-
-		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'leven' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'leven' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Foreground', 'leven' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Background', 'leven' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Foreground Light', 'leven' ),
-					'slug'  => 'foreground-light',
-					'color' => $foreground_light,
-				),
-				array(
-					'name'  => __( 'Foreground Dark', 'leven' ),
-					'slug'  => 'foreground-dark',
-					'color' => $foreground_dark,
-				),
-			)
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'leven_setup', 12 );

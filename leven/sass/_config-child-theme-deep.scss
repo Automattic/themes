@@ -67,42 +67,6 @@ $config-global: (
 		),
 	),
 
-	/* Colors */
-	"color": (
-		"primary": (
-			"default": #ff302c,
-			"hover": #1285ce,
-		),
-		"secondary": (
-			"default": #1285ce,
-			"hover": #eea01a,
-		),
-		"foreground": (
-			"default": #444444,
-			"light": #767676, // must be accesible!
-			"dark": #111111, // must be accesible!
-		),
-		"background": (
-			"default": #f7f7f6,
-			"light": #FFFFFF, // must be accessible against foreground-default
-			"dark": #DDDDDD, // must be accessible against foreground-default
-		),
-		"border": (
-			"default": #DDDDDD,
-			"light": #FFFFFF,
-			"dark": #AAAAAA,
-		),
-		"alert": (
-			"success": #188304,
-			"info": #1285ce,
-			"warning": #eea01a,
-			"error": #ff302c,
-		),
-		"text-selection": #d2d2cf,
-		"black": black,
-		"white": white,
-	),
-
 	/* Spacing */
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
@@ -138,6 +102,8 @@ $config-global: (
 		"pill": (10 * $typescale-root),
 	),
 );
+
+$config-global: map-merge($config-global-parent, $config-global);
 
 /**
  * Elements
