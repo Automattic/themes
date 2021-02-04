@@ -3,9 +3,8 @@ $show_title = ( true === get_theme_mod( 'display_title_and_tagline', true ) );
 $has_primary_nav = has_nav_menu( 'primary' );
 $header_classes  = 'site-header header_classes';
 $header_classes .= has_custom_logo() ? ' has-logo' : '';
-$header_classes .= true === get_theme_mod( 'display_title_and_tagline', true ) ? ' has-title-and-tagline' : '';
+$header_classes .= $show_title ? ' has-title-and-tagline' : '';
 $header_classes .= $has_primary_nav ? ' has-menu' : '';
-$header_classes .= $show_title ? ' site-title' : ' screen-reader-text';
 ?>
 
 <?php if ( true === get_theme_mod( 'show_site_header', false ) ) : ?>
