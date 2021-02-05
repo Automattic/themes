@@ -3,10 +3,14 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', '#ffffff', array(
+add_color_rule(
+	'bg',
+	'#ffffff',
+	array(
 
-	// Background-color
-	array( '.screen-reader-text:focus,
+		// Background-color
+		array(
+			'.screen-reader-text:focus,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
@@ -14,29 +18,43 @@ add_color_rule( 'bg', '#ffffff', array(
 			.site-header .main-navigation > div > ul > li .sub-menu a,
 			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
 			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container, 
-			.mobile-nav-side .site-header #site-navigation.main-navigation > div', 'background-color' ),
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div',
+			'background-color',
+		),
 
-	// Text-color
-	array( '.a8c-posts-list-item__featured span,
+		// Text-color
+		array(
+			'.a8c-posts-list-item__featured span,
 			.sticky-post,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			.main-navigation .button,
-			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color)', 'color' ),
+			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color)',
+			'color',
+		),
 
-	// Background-color Lightened
-	array( '.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
-			table.is-style-stripes tbody tr:nth-child(odd)', 'background-color', '+1' ),
-			
-	// Text-color Darkened 
-	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
-	// Background-color Darkened 
-	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
+		// Background-color Lightened
+		array(
+			'.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			table.is-style-stripes tbody tr:nth-child(odd)',
+			'background-color',
+			'+1',
+		),
+
+		// Text-color Darkened
+		array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
+		// Background-color Darkened
+		array(
+			'body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept.has-focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:focus,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover', 'background-color', '-1' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept:hover',
+			'background-color',
+			'-1',
+		),
 
-	// Border-color darkened
-	array( '.wp-block-code,
+		// Border-color darkened
+		array(
+			'.wp-block-code,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			input[type="color"],
 			input[type="date"],
@@ -55,22 +73,34 @@ add_color_rule( 'bg', '#ffffff', array(
 			input[type="week"],
 			select,
 			textarea,
-			.site-header .main-navigation > div > ul > li > .sub-menu', 'border-color', '-1' ),
-	// Border-top-color darkened
-	array( '.comment-list .children > li,
+			.site-header .main-navigation > div > ul > li > .sub-menu',
+			'border-color',
+			'-1',
+		),
+		// Border-top-color darkened
+		array(
+			'.comment-list .children > li,
 			.comment-list > li,
-			.wp-block-pullquote', 'border-top-color', '-1' ),
-	// Border-bottom-color darkened
-	array( '.comment-list,
+			.wp-block-pullquote',
+			'border-top-color',
+			'-1',
+		),
+		// Border-bottom-color darkened
+		array(
+			'.comment-list,
 			.wp-block-pullquote,
 			hr,
-			hr.wp-block-separator', 'border-bottom-color', '-1' ),
+			hr.wp-block-separator',
+			'border-bottom-color',
+			'-1',
+		),
 
-	/**
-	 * Utility Classes
-	 */
-	// Text-color
-	array( '.has-background-color,
+		/**
+		 * Utility Classes
+		 */
+		// Text-color
+		array(
+			'.has-background-color,
 			.wp-block-button .has-background-color[class]
 			.has-background-dim,
 			.has-foreground-background-color,
@@ -82,35 +112,62 @@ add_color_rule( 'bg', '#ffffff', array(
 			.has-primary-background-color,
 			.has-primary-background-color.has-background-dim,
 			.has-secondary-background-color,
-			.has-secondary-background-color.has-background-dim', 'color' ),
-	// Background-color
-	array( '.has-background-background-color[class],
-			.has-background-background-color.has-background-dim[class]', 'background-color' ),
+			.has-secondary-background-color.has-background-dim',
+			'color',
+		),
+		// Background-color
+		array(
+			'.has-background-background-color[class],
+			.has-background-background-color.has-background-dim[class]',
+			'background-color',
+		),
 
-	// Text-color darkened
-	array( '.has-background-dark-color[class],
+		// Text-color darkened
+		array(
+			'.has-background-dark-color[class],
 			.wp-block-button .has-background-dark-color[class],
-			.has-background-dark-color.has-background-dim[class]', 'color', '-1' ),
-	// Background-color darkened
-	array( '.has-background-dark-background-color[class],
-			.has-background-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+			.has-background-dark-color.has-background-dim[class]',
+			'color',
+			'-1',
+		),
+		// Background-color darkened
+		array(
+			'.has-background-dark-background-color[class],
+			.has-background-dark-background-color.has-background-dim[class]',
+			'background-color',
+			'-1',
+		),
 
-	// Text-color lightened
-	array( '.has-background-light-color[class],
+		// Text-color lightened
+		array(
+			'.has-background-light-color[class],
 			.wp-block-button .has-background-light-color[class],
-			.has-background-light-color.has-background-dim[class]', 'color', '+1' ),
-	// Background-color lightened
-	array( '.has-background-light-background-color[class],
-			.has-background-light-background-color.has-background-dim[class]', 'background-color', '+1' ),
+			.has-background-light-color.has-background-dim[class]',
+			'color',
+			'+1',
+		),
+		// Background-color lightened
+		array(
+			'.has-background-light-background-color[class],
+			.has-background-light-background-color.has-background-dim[class]',
+			'background-color',
+			'+1',
+		),
 
-), __( 'Background Color' ) );
+	),
+	__( 'Background Color' )
+);
 
 // Link Color
 // $config-global--color-primary-default
-add_color_rule( 'link', '#000000', array(
+add_color_rule(
+	'link',
+	'#000000',
+	array(
 
-	// Background-color
-	array( '.a8c-posts-list-item__featured span,
+		// Background-color
+		array(
+			'.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.button,
 			.sticky-post,
@@ -121,10 +178,13 @@ add_color_rule( 'link', '#000000', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			input[type="submit"]',
+			'background-color',
+		),
 
-	// Text-color
-	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
+		// Text-color
+		array(
+			'.a8c-posts-list .a8c-posts-list-item__title a:active,
 			.a8c-posts-list .a8c-posts-list-item__title a:focus,
 			.a8c-posts-list .a8c-posts-list-item__title a:hover,
 			.entry-title a:active,
@@ -145,7 +205,7 @@ add_color_rule( 'link', '#000000', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			a:not(.has-text-color),
+			a,
 			.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
@@ -169,33 +229,50 @@ add_color_rule( 'link', '#000000', array(
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
-			figcaption', 'color' ),
+			figcaption',
+			'color',
+		),
 
-	// Border color left
-	array( '.wp-block-quote', 'border-left-color' ),
+		// Border color left
+		array( '.wp-block-quote', 'border-left-color' ),
 
-	// Border color right
-	array( '.wp-block-quote[style*="text-align: right"],
-			.wp-block-quote[style*="text-align:right"]', 'border-right-color' ),
+		// Border color right
+		array(
+			'.wp-block-quote[style*="text-align: right"],
+			.wp-block-quote[style*="text-align:right"]',
+			'border-right-color',
+		),
 
-	/**
-	 * Utility Classes
-	 */
-	// Text-color
-	array( '.has-primary-color[class],
-			.wp-block-button .has-primary-color[class]', 'color' ),
-	// Background-color
-	array( '.has-primary-background-color[class],
-			.has-primary-background-color.has-background-dim[class]', 'background-color' ),
+		/**
+		 * Utility Classes
+		 */
+		// Text-color
+		array(
+			'.has-primary-color[class],
+			.wp-block-button .has-primary-color[class]',
+			'color',
+		),
+		// Background-color
+		array(
+			'.has-primary-background-color[class],
+			.has-primary-background-color.has-background-dim[class]',
+			'background-color',
+		),
 
-), __( 'Link Color' ) );
+	),
+	__( 'Link Color' )
+);
 
 // Text Color
 // $config-global--color-foreground-default
-add_color_rule( 'txt', '#010101', array(
+add_color_rule(
+	'txt',
+	'#010101',
+	array(
 
-	// Text-color
-	array( 'body,
+		// Text-color
+		array(
+			'body,
 			.screen-reader-text:focus,
 			.wp-block-code,
 			.wp-block-code pre,
@@ -209,13 +286,16 @@ add_color_rule( 'txt', '#010101', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
-			table.is-style-stripes tbody tr:nth-child(odd)', 'color' ),
+			table.is-style-stripes tbody tr:nth-child(odd)',
+			'color',
+		),
 
-	// Background-color
-	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
+		// Background-color
+		array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
-	// Text-color brightened
-	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+		// Text-color brightened
+		array(
+			'.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
 			.comment-meta .comment-metadata a:active,
@@ -275,10 +355,14 @@ add_color_rule( 'txt', '#010101', array(
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
 			a:hover,
-			figcaption', 'color', '+2' ),
+			figcaption',
+			'color',
+			'+2',
+		),
 
-	// Background-color brightened
-	array( '.a8c-posts-list__view-all:hover,
+		// Background-color brightened
+		array(
+			'.a8c-posts-list__view-all:hover,
 			.button:focus,
 			.button:hover,
 			.has-focus.a8c-posts-list__view-all,
@@ -298,10 +382,14 @@ add_color_rule( 'txt', '#010101', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'background-color', '+2' ),
+			input:hover[type="submit"]',
+			'background-color',
+			'+2',
+		),
 
-	// Border-color
-	array( 'input[type="color"]:focus,
+		// Border-color
+		array(
+			'input[type="color"]:focus,
 			input[type="date"]:focus,
 			input[type="datetime"]:focus,
 			input[type="datetime-local"]:focus,
@@ -316,66 +404,104 @@ add_color_rule( 'txt', '#010101', array(
 			input[type="time"]:focus,
 			input[type="url"]:focus,
 			input[type="week"]:focus,
-			textarea:focus', 'border-color', '+2' ),
-			
-	// Border-color darkened
-	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color', '-1' ),
+			textarea:focus',
+			'border-color',
+			'+2',
+		),
 
-	/**
-	 * Utility Classes
-	 */
-	// Foreground
-	array( '.has-foreground-color[class],
+		// Border-color darkened
+		array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color', '-1' ),
+
+		/**
+		 * Utility Classes
+		 */
+		// Foreground
+		array(
+			'.has-foreground-color[class],
 			.wp-block-button .has-foreground-color[class],
 			.has-background-background-color[class],
 			.has-background-background-color.has-background-dim[class],
 			.has-background-dark-background-color[class],
 			.has-background-dark-background-color.has-background-dim[class],
 			.has-background-light-background-color[class],
-			.has-background-light-background-color.has-background-dim[class]', 'color' ),
-	// Background-color
-	array( '.has-background-dim[class],
+			.has-background-light-background-color.has-background-dim[class]',
+			'color',
+		),
+		// Background-color
+		array(
+			'.has-background-dim[class],
 			.has-foreground-background-color[class],
-			.has-foreground-background-color.has-background-dim[class]', 'background-color' ),
+			.has-foreground-background-color.has-background-dim[class]',
+			'background-color',
+		),
 
-	// Text-color darkened
-	array( '.has-foreground-dark-color[class],
-			.wp-block-button .has-foreground-dark-color[class]', 'color', '-1' ),
-	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class],
-			.has-foreground-dark-background-color.has-background-dim[class]', 'background-color', '-1' ),
+		// Text-color darkened
+		array(
+			'.has-foreground-dark-color[class],
+			.wp-block-button .has-foreground-dark-color[class]',
+			'color',
+			'-1',
+		),
+		// Background-color darkened
+		array(
+			'.has-foreground-dark-background-color[class],
+			.has-foreground-dark-background-color.has-background-dim[class]',
+			'background-color',
+			'-1',
+		),
 
-	// Text-color brightened
-	array( '.has-foreground-light-color[class],
-			.wp-block-button .has-foreground-light-color[class]', 'color', '+2' ),
-	// Background-color brightened
-	array( '.has-foreground-light-background-color[class],
-			.has-foreground-light-background-color.has-background-dim[class]', 'background-color', '+2' ),
+		// Text-color brightened
+		array(
+			'.has-foreground-light-color[class],
+			.wp-block-button .has-foreground-light-color[class]',
+			'color',
+			'+2',
+		),
+		// Background-color brightened
+		array(
+			'.has-foreground-light-background-color[class],
+			.has-foreground-light-background-color.has-background-dim[class]',
+			'background-color',
+			'+2',
+		),
 
 
-), __( 'Text Color' ) );
+	),
+	__( 'Text Color' )
+);
 
 // Accent Color
 // $config-global--color-secondary-default
-add_color_rule( 'fg1', '#1a1a1a', array(
+add_color_rule(
+	'fg1',
+	'#1a1a1a',
+	array(
 
-	/**
-	 * Utility Classes
-	 */
-	// Text-color
-	array( '.has-secondary-color[class],
-			.wp-block-button .has-secondary-color[class]', 'color' ),
+		/**
+		* Utility Classes
+		*/
+	   // Text-color
+	   array(
+		   '.has-secondary-color[class],
+			.wp-block-button .has-secondary-color[class]',
+		   'color',
+	   ),
 
-	// Background-color
-	array( '.has-secondary-background-color[class],
+		// Background-color
+		array(
+			'.has-secondary-background-color[class],
 			.has-secondary-background-color.has-background-dim[class],
 			input:hover[type="submit"],
 			.main-navigation .button:focus,
 			.main-navigation .button:hover,
 			.main-navigation #toggle:focus + #toggle-menu,
-			.has-secondary-background-color', 'background-color' ),
+			.has-secondary-background-color',
+			'background-color',
+		),
 
-), __( 'Secondary Color' ) );
+	),
+	__( 'Secondary Color' )
+);
 
 /**
  * Custom CSS
@@ -383,7 +509,7 @@ add_color_rule( 'fg1', '#1a1a1a', array(
 function mayland_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
-?>
+	?>
 
 	.wp-block-button.is-style-outline {
 		color: inherit;
@@ -395,30 +521,40 @@ function mayland_custom_colors_extra_css() {
 			background-color: <?php echo $bg; ?>;
 		}
 	}
-<?php }
+	<?php
+}
 add_theme_support( 'custom_colors_extra_css', 'mayland_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes
  */
 // Light
-add_color_palette( array(
-	'#FFFFFF',
-	'#1D1E1E',
-	'#C8133E',
-	'#4E2F4B',
-), 'Light' );
+add_color_palette(
+	array(
+		'#FFFFFF',
+		'#1D1E1E',
+		'#C8133E',
+		'#4E2F4B',
+	),
+	'Light'
+);
 // Medium
-add_color_palette( array(
-	'#EEF4F7',
-	'#242527',
-	'#35845D',
-	'#233252',
-), 'Medium' );
+add_color_palette(
+	array(
+		'#EEF4F7',
+		'#242527',
+		'#35845D',
+		'#233252',
+	),
+	'Medium'
+);
 // Dark
-add_color_palette( array(
-	'#1F2527',
-	'#FFFFFF',
-	'#9FD3E8',
-	'#FBE6AA',
-), 'Dark' );
+add_color_palette(
+	array(
+		'#1F2527',
+		'#FFFFFF',
+		'#9FD3E8',
+		'#FBE6AA',
+	),
+	'Dark'
+);
