@@ -55,12 +55,15 @@ if ( ! function_exists( 'hever_setup' ) ) :
 		);
 
 		// Editor color palette.
-		$color_annotations = get_theme_mod( 'colors_manager' )['colors'];
-		$primary          = ( empty( $color_annotations['link'] ) ) ? '#1279BE' : $color_annotations['link'];
-		$secondary        = ( empty( $color_annotations['fg1'] ) ) ? '#FFB302' : $color_annotations['fg1'];
-		$foreground       = ( empty( $color_annotations['txt'] ) ) ? '#303030' : $color_annotations['txt'];
-		$tertiary         = ( empty( $color_annotations['fg2'] ) ) ? '#C5C5C5' : $color_annotations['fg2'];
-		$background       = ( empty( $color_annotations['bg'] ) ) ? '#FFFFFF' : $color_annotations['bg'];
+		$colors_manager = get_theme_mod( 'colors_manager' );
+		if ( $colors_manager ) {
+			$color_annotations = $colors_manager['colors'];
+		}
+		$primary    = ( empty( $color_annotations['link'] ) ) ? '#1279BE' : $color_annotations['link'];
+		$secondary  = ( empty( $color_annotations['fg1'] ) ) ? '#FFB302' : $color_annotations['fg1'];
+		$foreground = ( empty( $color_annotations['txt'] ) ) ? '#303030' : $color_annotations['txt'];
+		$tertiary   = ( empty( $color_annotations['fg2'] ) ) ? '#C5C5C5' : $color_annotations['fg2'];
+		$background = ( empty( $color_annotations['bg'] ) ) ? '#FFFFFF' : $color_annotations['bg'];
 
 		$foreground_low_contrast  = change_color_luminescence( $foreground, 10 );
 		$foreground_high_contrast = change_color_luminescence( $foreground, -10 );
@@ -163,9 +166,9 @@ function hever_fonts_url() {
 		$font_families[] = 'PT Sans:400,400i,700,700i';
 
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-			'display' => 'swap'
+			'family'  => urlencode( implode( '|', $font_families ) ),
+			'subset'  => urlencode( 'latin,latin-ext' ),
+			'display' => 'swap',
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -186,7 +189,7 @@ function hever_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('hever-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'hever-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'hever-style', 'rtl', 'replace' );
