@@ -145,7 +145,7 @@ add_color_rule( 'link', '#000000', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
-			a:not(.has-text-color),
+			a,
 			.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.entry-footer,
 			.entry-meta,
