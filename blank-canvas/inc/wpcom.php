@@ -37,7 +37,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 
 									<!-- wp:group {"className":"margin-top-none","style":{"color":{"background":"#ebfbff"}}} -->
 									<div class="wp-block-group margin-top-none has-background" style="background-color:#ebfbff"><div class="wp-block-group__inner-container"><!-- wp:heading {"level":1,"className":"margin-bottom-none","textColor":"primary","style":{"typography":{"fontSize":"32px"}}} -->
-									<h1 class="margin-bottom-none has-primary-color has-text-color" style="font-size:32px"><strong>' . __( 'Kate Pollard', 'blank-canvas' ) . '</strong></h1>
+									<h1 class="margin-bottom-none has-primary-color has-text-color" style="font-size:32px"><strong>' . __( 'Kate Adams', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"className":"margin-top-half","textColor":"primary","style":{"typography":{"fontSize":"18px"}}} -->
