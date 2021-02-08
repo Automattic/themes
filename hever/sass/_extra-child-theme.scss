@@ -82,6 +82,12 @@ body:not(.fse-enabled) {
 			margin-bottom: 0;
 		}
 
+		&.has-logo:not(.has-title-and-tagline) {
+			grid-template-areas:
+				"site-logo main-navigation"
+				"site-logo social-navigation";
+		}
+
 		.site-logo {
 			grid-area: site-logo;
 			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
@@ -485,3 +491,6 @@ article .entry-header .entry-title,
 		width: 100%;
 	}
 }
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";

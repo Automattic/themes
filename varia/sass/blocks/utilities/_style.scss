@@ -149,7 +149,6 @@
 
 // Gutenberg background-color options
 .has-background {
-	&:not(.has-background-background-color) a:not(.wp-block-button__link),
 	p:not(.has-text-color),
 	h1:not(.has-text-color),
 	h2:not(.has-text-color),
@@ -164,49 +163,81 @@
 .has-primary-background-color,
 .has-primary-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "primary", "default")};
-	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
+.has-primary-background-color:not(.has-text-color),
+.has-primary-background-color.has-background-dim:not(.has-text-color) {
+	color: #{map-deep-get($config-global, "color", "background", "default")};
+}
 .has-secondary-background-color,
 .has-secondary-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
+}
+
+.has-secondary-background-color:not(.has-text-color),
+.has-secondary-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
+}
+
+.has-background-dim:not(.has-text-color),
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
+	background-color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
 .has-background-dim,
 .has-foreground-background-color,
 .has-foreground-background-color.has-background-dim {
-	background-color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
 .has-foreground-light-background-color,
 .has-foreground-light-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "light")};
+}
+
+.has-foreground-light-background-color:not(.has-text-color),
+.has-foreground-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
 .has-foreground-dark-background-color,
 .has-foreground-dark-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "foreground", "dark")};
+}
+
+.has-foreground-dark-background-color:not(.has-text-color),
+.has-foreground-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
 .has-background-light-background-color,
 .has-background-light-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "background", "light")};
+}
+
+.has-background-light-background-color:not(.has-text-color),
+.has-background-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
 .has-background-dark-background-color,
 .has-background-dark-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "background", "dark")};
+}
+
+.has-background-dark-background-color:not(.has-text-color),
+.has-background-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
 .has-background-background-color,
 .has-background-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "background", "default")};
+}
+
+.has-background-background-color:not(.has-text-color),
+.has-background-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 

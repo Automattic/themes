@@ -2,7 +2,7 @@
 Contributors: Automattic
 Requires at least: 5.0
 Tested up to: 5.4.1
-Requires PHP: 7.3
+Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -10,13 +10,47 @@ A simple, text-driven theme.
 
 == Description ==
 
-Seedlet is a free WordPress theme. A two-column layout and classically elegant typography creates a refined site that gives your works and images space to breathe - and shine. 
+Seedlet is a free WordPress theme. A two-column layout and classically elegant typography creates a refined site that gives your works and images space to breathe - and shine.
 
-Seedlet was built to be the perfect partner to the block editor, and supports all the latest blocks. Writing, audio, illustrations, photography, video - use Seedlet to engage and direct visitors' eyes, without your theme getting in the way. And the responsive design shifts naturally between desktop and mobile devices. 
+Seedlet was built to be the perfect partner to the block editor, and supports all the latest blocks. Writing, audio, illustrations, photography, video - use Seedlet to engage and direct visitors' eyes, without your theme getting in the way. And the responsive design shifts naturally between desktop and mobile devices.
 
 Seedlet is a great option for professionals and creatives looking for a sophisticated vibe. Whether you're looking to create a blog or a robust site promoting your business, do with simplicity, style, and Seedlet.
 
 == Changelog ==
+
+= 1.1.4 - 1.1.7 =
+* Allow header and footer to be hidden via customizer 
+* Bug fixes and improvements
+
+= 1.1.1-2 =
+* Bug fixes and improvements
+
+= 1.1.0 =
+* Refactor the menu styles so they can be loaded separately and dequeued in child themes
+* Use ponyfill for IE11 support
+* Add CSS sourcemaps
+* Simplify the responsive rules and alignments
+* Bug fixes and improvements
+
+= 1.0.8 =
+* Add block editor theme tags
+* Correct text color rules for nested blocks
+* Tidy up translation functions and comments
+* Update minimum PHP version requirement
+
+= 1.0.7 =
+* Fix is_IE global bug
+* Remove duplicate inclusion of editor CSS variables
+
+= 1.0.6 =
+* Add block patterns 
+* Add support for IE editor styles 
+
+= 1.0.5 =
+* Accessibility fixes: landmark roles and aria-labels
+
+= 1.0.4 =
+* Accessibility fixes: link hover styles, landmark roles, remove positive tabindex
 
 = 1.0.2-3 =
 * Fix mobile menu tab accessibility issues
@@ -85,4 +119,6 @@ License: CC0
 Source: https://www.si.edu/object/hymenoxys-odorata-dc:nmnhbotany_13045011
 		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_10752403
 		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_10672835
-Included in theme screenshot.
+		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_13757252
+		https://www.si.edu/object/nephroma-sp:nmnhbotany_13875654
+Included in theme screenshot and in block patterns. 

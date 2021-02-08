@@ -99,6 +99,11 @@ if ( ! function_exists( 'morden_setup' ) ) :
 				),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'morden_setup', 12 );

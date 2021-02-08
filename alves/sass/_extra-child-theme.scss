@@ -197,6 +197,12 @@ body:not(.fse-enabled) {
 			margin-bottom: 0;
 		}
 
+		&.has-logo:not(.has-title-and-tagline) {
+			grid-template-areas:
+				"site-logo main-navigation"
+				"site-logo social-navigation";
+		}
+
 		.site-logo {
 			grid-area: site-logo;
 			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
@@ -350,10 +356,6 @@ body:not(.fse-enabled) {
 	.site-main {
 		padding-top: 0;
 		padding-bottom: 0;
-	}
-
-	@include media(mobile-only) {
-		padding-top: $site_main_spacing_vertical;
 	}
 }
 
@@ -570,3 +572,6 @@ body:not(.fse-enabled) {
 		}
 	}
 }
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";

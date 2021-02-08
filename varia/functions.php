@@ -146,10 +146,10 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF0000'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
+		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#0000FF'; // $config-global--color-primary-default;
+		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FF0000';  // $config-global--color-secondary-default;
 		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#0000FF';   // $config-global--color-background-default;
+		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -181,12 +181,21 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for experimental cover block spacing.
+		add_theme_support( 'custom-spacing' );
+
+		// Add support for custom units.
+		add_theme_support( 'custom-units' );
+
 		// Add support for Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
-			[
+			array(
 				'enable_theme_default' => true,
-			]
+			)
 		);
 
 	}
@@ -247,9 +256,32 @@ function varia_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
+		// If IE 11 or below, use a ponyfill to add CSS Variable support
+		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/js/css-vars-ponyfill2.js' );
+		wp_enqueue_script( 'ie11-fix',
+			get_template_directory_uri() . '/js/ie11-fix.js',
+			array( 'css-vars-ponyfill' ),
+			'1.0'
+		);
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'varia_scripts' );
 
+
+function varia_add_mobile_nav_on_side_scripts() {
+	if ( get_theme_mod( 'enable_side_menu' ) !== 1 ) {
+		return;
+	}
+
+	// Main navigation scripts
+	wp_enqueue_script( 'varia-primary-navigation-script', get_template_directory_uri() . '/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
+}
 /**
  * Fix skip link focus in IE11.
  *
@@ -284,6 +316,143 @@ function varia_editor_content_width() {
 	wp_enqueue_style( 'varia-editor-content-width-style', get_theme_file_uri( '/style-editor-content-width.css' ), false, wp_get_theme()->get( 'Version' ), 'all' );
 }
 add_action( 'enqueue_block_editor_assets', 'varia_editor_content_width' );
+
+// This makes it possible to define the function in earlier to alter in one way or another.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		if ( get_theme_mod( 'enable_side_menu' ) === 1 ) {
+			return array_merge( $classes, array( 'mobile-nav-side' ) );
+		}
+		return $classes;
+	}
+}
+
+if ( ! function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
+	function varia_enable_mobile_nav_on_side() {
+		set_theme_mod( 'enable_side_menu', 1 );
+	}
+}
+
+if ( ! function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
+	function varia_register_mobile_nav_on_side_customizer_control( $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'enable_side_menu',
+			array(
+				'default'           => 1,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_section(
+			'nav_menus_mobile',
+			array(
+				'title' => __( 'Mobile Settings', 'varia' ),
+				'panel' => 'nav_menus',
+			)
+		);
+
+		$wp_customize->add_control(
+			'enable_side_menu',
+			array(
+				'label'    => __( 'Display mobile menu on the side', 'varia' ),
+				'section'  => 'nav_menus_mobile',
+				'settings' => 'enable_side_menu',
+				'type'     => 'checkbox',
+			)
+		);
+
+	}
+}
+
+function varia_mobile_nav_on_side_setup() {
+	// Add .mobile-nav-side body class.
+	add_filter( 'body_class', 'varia_mobile_nav_on_side' );
+
+	// Enable the mobile nav on side on theme switch.
+	add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
+
+	// Enable the customizer control toggle for the mobile nav on the side.
+	add_action( 'customize_register', 'varia_register_mobile_nav_on_side_customizer_control' );
+
+	// Adds the script that help toggle the mobile nav.
+	add_action( 'wp_enqueue_scripts', 'varia_add_mobile_nav_on_side_scripts' );
+}
+
+/**
+* Sanitize the checkbox.
+*
+* @param boolean $input.
+*
+* @return boolean true if is 1 or '1', false if anything else
+*/
+function varia_sanitize_checkbox( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Add ability to show or hide header and footer elements on the homepage.
+ */
+function varia_customize_header_footer( $wp_customize ) {
+
+	// Add setting to hide the site header on the homepage.
+	$wp_customize->add_setting(
+		'hide_site_header',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control to hide the site header on the homepage.
+	$wp_customize->add_control(
+		'hide_site_header',
+		array(
+			'label'       => esc_html__( 'Hide the Site Header', 'seedlet' ),
+			'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
+			'section'     => 'static_front_page',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'hide_site_header',
+		)
+	);
+
+	// Add setting to hide footer elements on the homepage.
+	$wp_customize->add_setting(
+		'hide_site_footer',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control to hide footer elements on the homepage.
+	$wp_customize->add_control(
+		'hide_site_footer',
+		array(
+			'label'       => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
+			'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
+			'section'     => 'static_front_page',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'hide_site_footer',
+		)
+	);
+}
+add_action( 'customize_register', 'varia_customize_header_footer' );
+
+/*
+ * Color palette related utilities
+ */
+require get_template_directory() . '/inc/color-utils.php';
 
 /**
  * SVG Icons class.

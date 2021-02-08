@@ -80,6 +80,9 @@ function independent_publisher_2_setup() {
 	// Load regular editor styles into the new block-based editor.
 	add_theme_support( 'editor-styles' );
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
 
@@ -210,12 +213,12 @@ function independent_publisher_2_scripts() {
 	wp_enqueue_script( 'independent-publisher-2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170317', true );
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		wp_enqueue_script( 'independent-publisher-2-images', get_template_directory_uri() . '/js/independent-publisher-2.js', array( 'jquery' ), '20170406', true );
+		wp_enqueue_script( 'independent-publisher-2-images', get_template_directory_uri() . '/js/independent-publisher-2.js', array(), '20210118', true );
 	}
 
 	// If there's an active Video widget, and it's (hopefully) in the footer widget area
 	if ( is_active_widget( '','', 'media_video' ) && ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) ) {
-		wp_enqueue_script( 'independent-publisher-2-video-widget', get_template_directory_uri() . '/js/video-widget.js', array( 'jquery' ), '20170608', true );
+		wp_enqueue_script( 'independent-publisher-2-video-widget', get_template_directory_uri() . '/js/video-widget.js', array(), '20210111', true );
 	}
 
 	wp_enqueue_script( 'independent-publisher-2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20170315', true );

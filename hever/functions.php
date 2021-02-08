@@ -10,6 +10,7 @@
  */
 
 if ( ! function_exists( 'hever_setup' ) ) :
+
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -53,6 +54,22 @@ if ( ! function_exists( 'hever_setup' ) ) :
 			)
 		);
 
+		// Editor color palette.
+		$colors_manager = get_theme_mod( 'colors_manager' );
+		if ( $colors_manager ) {
+			$color_annotations = $colors_manager['colors'];
+		}
+		$primary    = ( empty( $color_annotations['link'] ) ) ? '#1279BE' : $color_annotations['link'];
+		$secondary  = ( empty( $color_annotations['fg1'] ) ) ? '#FFB302' : $color_annotations['fg1'];
+		$foreground = ( empty( $color_annotations['txt'] ) ) ? '#303030' : $color_annotations['txt'];
+		$tertiary   = ( empty( $color_annotations['fg2'] ) ) ? '#C5C5C5' : $color_annotations['fg2'];
+		$background = ( empty( $color_annotations['bg'] ) ) ? '#FFFFFF' : $color_annotations['bg'];
+
+		$foreground_low_contrast  = change_color_luminescence( $foreground, 10 );
+		$foreground_high_contrast = change_color_luminescence( $foreground, -10 );
+		$background_low_contrast  = change_color_luminescence( $background, -10 );
+		$background_high_contrast = change_color_luminescence( $background, 10 );
+
 		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
 			'editor-color-palette',
@@ -60,45 +77,55 @@ if ( ! function_exists( 'hever_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'hever' ),
 					'slug'  => 'primary',
-					'color' => '#1279BE',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'hever' ),
 					'slug'  => 'secondary',
-					'color' => '#FFB302',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'hever' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#101010',
+					'name'  => __( 'Tertiary', 'hever' ),
+					'slug'  => 'tertiary',
+					'color' => $tertiary,
 				),
 				array(
-					'name'  => __( 'Gray', 'hever' ),
+					'name'  => __( 'Foreground', 'hever' ),
 					'slug'  => 'foreground',
-					'color' => '#303030',
+					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Light Gray', 'hever' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
+					'name'  => __( 'Foreground Low Contrast', 'hever' ),
+					'slug'  => 'foreground-low-contrast',
+					'color' => $foreground_low_contrast,
 				),
 				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#C5C5C5',
+					'name'  => __( 'Foreground High Contrast', 'hever' ),
+					'slug'  => 'foreground-high-contrast',
+					'color' => $foreground_high_contrast,
 				),
 				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#F8F8F8',
-				),
-				array(
-					'name'  => __( 'White', 'hever' ),
+					'name'  => __( 'Background', 'hever' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Background High Contrast', 'hever' ),
+					'slug'  => 'background-high-contrast',
+					'color' => $background_high_contrast,
+				),
+				array(
+					'name'  => __( 'Background Low Contrast', 'hever' ),
+					'slug'  => 'background-low-contrast',
+					'color' => $background_low_contrast,
 				),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'hever_setup', 12 );
@@ -139,9 +166,9 @@ function hever_fonts_url() {
 		$font_families[] = 'PT Sans:400,400i,700,700i';
 
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-			'display' => 'swap'
+			'family'  => urlencode( implode( '|', $font_families ) ),
+			'subset'  => urlencode( 'latin,latin-ext' ),
+			'display' => 'swap',
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -162,7 +189,7 @@ function hever_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('hever-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'hever-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'hever-style', 'rtl', 'replace' );

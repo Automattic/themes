@@ -37,7 +37,7 @@ get_header();
 							/**
 							 * Filter the default seedlet image attachment size.
 							 *
-							 * @since Twenty Sixteen 1.0
+							 * @since Seedlet 1.0
 							 *
 							 * @param string $image_size Image size. Default 'large'.
 							 */

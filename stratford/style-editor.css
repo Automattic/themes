@@ -120,6 +120,12 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * Add font-family using CSS variables.
  * It also adds the proper fallback for browsers without support.
  */
+body {
+	display: none;
+	/* Legacy */
+	display: var(--skip, block);
+}
+
 /**
  * Child Theme Name
  */
@@ -382,7 +388,7 @@ object {
 }
 
 .wp-block-a8c-blog-posts .more-link:after {
-	content: "\02192";
+	content: "→" /*rtl:"←"*/;
 	display: inline-block;
 	margin-left: 0.5em;
 }
@@ -494,7 +500,7 @@ object {
 	margin-top: -0.33em;
 }
 
-.wp-block-a8c-blog-posts + .button:hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts + .has-focus.button {
+.wp-block-a8c-blog-posts + .button:not(.has-background):hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts + .has-focus.button {
 	color: white;
 	background-color: #2c313f;
 }
@@ -544,7 +550,6 @@ object {
 
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
-	background: transparent;
 	border: 2px solid currentcolor;
 }
 
@@ -808,18 +813,6 @@ li > ol {
 	margin: 0;
 }
 
-.wp-block-media-text .block-editor-inner-blocks {
-	padding-right: 16px;
-	padding-left: 16px;
-}
-
-@media only screen and (min-width: 640px) {
-	.wp-block-media-text .block-editor-inner-blocks {
-		padding-right: 32px;
-		padding-left: 32px;
-	}
-}
-
 .wp-block-media-text[style*="background-color"]:not(.has-background-background-color) a {
 	color: currentColor;
 }
@@ -837,30 +830,23 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote {
-	padding: calc( 3 * 16px) 0;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
 	border-top-color: #DDDDDD;
 	border-top-width: 4px;
 	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
 	color: #74767e;
-	/**
-	 * Block Options
-	 */
 }
 
-.wp-block-pullquote blockquote {
-	padding-left: 0;
-}
-
-.wp-block-pullquote p {
+.wp-block-pullquote blockquote p {
 	font-family: "Poppins", sans-serif;
 	font-family: var(--font-headings, "Poppins", sans-serif);
-	font-size: 1.728em;
+	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1.125;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	font-size: 1.728rem;
 }
 
 .wp-block-pullquote a {
@@ -871,28 +857,16 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
 	color: #767676;
-	font-size: 0.83333em;
+	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
 
-.wp-block-pullquote:not(.is-style-solid-color) {
-	background: none;
+.wp-block-pullquote blockquote {
+	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #2c313f;
 	color: white;
-}
-
-.wp-block-pullquote.is-style-solid-color.alignleft blockquote,
-.wp-block-pullquote.is-style-solid-color.alignright blockquote {
-	padding-left: 16px;
-	padding-right: 16px;
-	max-width: inherit;
-}
-
-.wp-block-pullquote.is-style-solid-color blockquote {
-	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -901,17 +875,12 @@ p.has-background:not(.has-background-background-color) a {
 	color: currentColor;
 }
 
-.wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote {
-	margin-left: auto;
-	margin-right: auto;
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #2c313f;
 }
 
 .wp-block-quote {
 	border-left-color: #2c313f;
-	margin: 32px 0;
 	padding-left: 16px;
 }
 
@@ -1027,6 +996,11 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: #74767e;
 }
 
+pre.wp-block-verse {
+	font-family: monospace, monospace;
+	color: #74767e;
+}
+
 /**
  * Editor Post Title
  * - Needs a special styles
@@ -1081,7 +1055,6 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: white;
 }
 
-.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),
@@ -1092,51 +1065,85 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: currentColor;
 }
 
-.wp-block .has-primary-background-color,
-.has-primary-background-color {
+.has-primary-background-color,
+.has-primary-background-color.has-background-dim {
 	background-color: #2c313f;
+}
+
+.has-primary-background-color:not(.has-text-color),
+.has-primary-background-color.has-background-dim:not(.has-text-color) {
 	color: white;
 }
 
-.wp-block .has-secondary-background-color,
-.has-secondary-background-color {
+.has-secondary-background-color,
+.has-secondary-background-color.has-background-dim {
 	background-color: #3e69dc;
+}
+
+.has-secondary-background-color:not(.has-text-color),
+.has-secondary-background-color.has-background-dim:not(.has-text-color) {
 	color: white;
 }
 
-.wp-block .has-foreground-background-color,
-.has-foreground-background-color {
+.has-background-dim:not(.has-text-color),
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
 	background-color: #74767e;
+}
+
+.has-background-dim,
+.has-foreground-background-color,
+.has-foreground-background-color.has-background-dim {
 	color: white;
 }
 
-.wp-block .has-foreground-light-background-color,
-.has-foreground-light-background-color {
+.has-foreground-light-background-color,
+.has-foreground-light-background-color.has-background-dim {
 	background-color: #767676;
+}
+
+.has-foreground-light-background-color:not(.has-text-color),
+.has-foreground-light-background-color.has-background-dim:not(.has-text-color) {
 	color: white;
 }
 
-.wp-block .has-foreground-dark-background-color,
-.has-foreground-dark-background-color {
+.has-foreground-dark-background-color,
+.has-foreground-dark-background-color.has-background-dim {
 	background-color: #111111;
+}
+
+.has-foreground-dark-background-color:not(.has-text-color),
+.has-foreground-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: white;
 }
 
-.wp-block .has-background-light-background-color,
-.has-background-light-background-color {
+.has-background-light-background-color,
+.has-background-light-background-color.has-background-dim {
 	background-color: #f3f3f3;
+}
+
+.has-background-light-background-color:not(.has-text-color),
+.has-background-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #74767e;
 }
 
-.wp-block .has-background-dark-background-color,
-.has-background-dark-background-color {
+.has-background-dark-background-color,
+.has-background-dark-background-color.has-background-dim {
 	background-color: #DDDDDD;
+}
+
+.has-background-dark-background-color:not(.has-text-color),
+.has-background-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #74767e;
 }
 
-.wp-block .has-background-background-color,
-.has-background-background-color {
+.has-background-background-color,
+.has-background-background-color.has-background-dim {
 	background-color: white;
+}
+
+.has-background-background-color:not(.has-text-color),
+.has-background-background-color.has-background-dim:not(.has-text-color) {
 	color: #74767e;
 }
 
@@ -1344,10 +1351,6 @@ p:not(.site-title) a {
 p:not(.site-title) a.wp-block-button__link,
 p:not(.site-title) a:hover {
 	text-decoration: none;
-}
-
-.has-background a {
-	color: currentColor;
 }
 
 .editor-post-title__block .editor-post-title__input {

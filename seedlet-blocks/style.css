@@ -32,13 +32,11 @@ GNU General Public License for more details.
    Doubling up on the :root selector is weird, but it just ensures these have higher specificity than everything else) */
 :root:root {
 	/* Font Size */
-	--global--font-size-xs: var(--wp--preset--font-size--tiny);
-	--global--font-size-sm: var(--wp--preset--font-size--small);
-	--global--font-size-md: var(--wp--preset--font-size--medium);
-	--global--font-size-lg: var(--wp--preset--font-size--large);
-	--global--font-size-xl: var(--wp--preset--font-size--extra-large);
-	--global--font-size-xxl: var(--wp--preset--font-size--huge);
-	--global--font-size-xxxl: var(--wp--preset--font-size--gigantic);
+	--global--font-size-xs: calc( 1px * var(--wp--preset--font-size--tiny) );
+	--global--font-size-sm: calc( 1px * var(--wp--preset--font-size--small) );
+	--global--font-size-md: calc( 1px * var(--wp--preset--font-size--normal) );
+	--global--font-size-lg: calc( 1px * var(--wp--preset--font-size--large) );
+	--global--font-size-xl: calc( 1px * var(--wp--preset--font-size--huge) );
 
 	/* Colors */
 	--global--color-background: var(--wp--preset--color--background);

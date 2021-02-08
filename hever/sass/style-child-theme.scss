@@ -5,17 +5,18 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A fully responsive theme, ideal for creating a strong — yet beautiful — online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.4.2
+Version: 1.5.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
 Text Domain: hever
 Tags: full-site-editing, one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+AMP: true
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Hever is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
+Hever is a child theme of Varia which is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -26,71 +27,81 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * Abstracts
  * - Mixins, variables and functions
  */
-@import "../../varia/sass/abstracts/imports";
+ @import "../../varia/sass/abstracts/imports";
 
-/**
- * Child Theme Deep
- */
-@import "config-child-theme-deep";
-
-/**
- * Base
- * - Reset the browser
- */
-@import "../../varia/sass/base/imports";
-
-/**
- * Layout
- * - Structral and responsive styles
- */
-@import "../../varia/sass/layout/imports";
-
-/**
- * Elements
- * - Styles for basic HTML elemants
- */
-@import "../../varia/sass/elements/imports";
-
-/**
- * Blocks
- * - These styles replace key Gutenberg Block styles for fonts, colors, and
- *   spacing with CSS-variables overrides
- * - In the future the Block styles may get compiled to individual .css
- *   files and conditionally loaded
- */
-@import "../../varia/sass/blocks/imports";
-
-/**
- * Components
- * - Similar to Blocks but exist outside of the "current" editor context
- */
-@import "../../varia/sass/components/imports";
-
-/**
- * Site Pages
- * - Page specific styles
- */
-@import "../../varia/sass/pages/imports";
-
-/**
- * Responsive Logic
- * - Loading this last to respect cascaing rules
- */
-@import "../../varia/sass/abstracts/responsive-logic";
-
-/**
- * Vendors
- * - Styles for 3rd party plugins and WP extensions
- */
-@import "../../varia/sass/vendors/imports";
-
-/**
- * Child Theme Extra Styles
- */
-@import "extra-child-theme";
-
-/**
- * Full Site Editing
- * - Full Site Editing overrides
- */
- @import "full-site-editing";
+ /**
+  * Global variables
+  */
+  @import "global-variables";
+ 
+ :root {
+	 @include global-variables();
+ }
+ 
+ /**
+  * Child Theme Deep
+  */
+ @import "config-child-theme-deep";
+ 
+ /**
+  * Base
+  * - Reset the browser
+  */
+ @import "../../varia/sass/base/imports";
+ 
+ /**
+  * Layout
+  * - Structral and responsive styles
+  */
+ @import "../../varia/sass/layout/imports";
+ 
+ /**
+  * Elements
+  * - Styles for basic HTML elemants
+  */
+ @import "../../varia/sass/elements/imports";
+ 
+ /**
+  * Blocks
+  * - These styles replace key Gutenberg Block styles for fonts, colors, and
+  *   spacing with CSS-variables overrides
+  * - In the future the Block styles may get compiled to individual .css
+  *   files and conditionally loaded
+  */
+ @import "../../varia/sass/blocks/imports";
+ 
+ /**
+  * Components
+  * - Similar to Blocks but exist outside of the "current" editor context
+  */
+ @import "../../varia/sass/components/imports";
+ 
+ /**
+  * Site Pages
+  * - Page specific styles
+  */
+ @import "../../varia/sass/pages/imports";
+ 
+ /**
+  * Responsive Logic
+  * - Loading this last to respect cascaing rules
+  */
+ @import "../../varia/sass/abstracts/responsive-logic";
+ 
+ /**
+  * Vendors
+  * - Styles for 3rd party plugins and WP extensions
+  */
+ @import "../../varia/sass/vendors/imports";
+ 
+ /**
+  * Child Theme Extra Styles
+  */
+ @import "extra-child-theme";
+ 
+ /**
+  * Full Site Editing
+  * - Full Site Editing overrides
+  */
+  @import "full-site-editing";
+ 

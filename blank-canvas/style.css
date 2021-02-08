@@ -1,0 +1,100 @@
+/*
+Theme Name: Blank Canvas
+Theme URI: https://github.com/Automattic/themes/blank-canvas
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Blank Canvas is a minimalist theme, designed for single-page websites. Its single post and page layouts have no header, navigation menus, or widgets by default, so the page you design in the WordPress editor is the same page you’ll see on the front end. The theme’s default styles are conservative, relying on simple sans-serif fonts and a subtle blue highlight color. Blank Canvas is ready for your customizations.
+Requires at least: 4.9.6
+Tested up to: 5.6
+Requires PHP: 5.6.2
+Version: 1.2.2
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: blank-canvas
+Tags: one-column, accessibility-ready, custom-colors, editor-style, featured-images, rtl-language-support, sticky-post, translation-ready
+
+Blank Canvas WordPress Theme, (C) 2021 Automattic, Inc.
+Blank Canvas is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Blank Canvas is derived from Seedlet. 2020-2021 Automattic
+Seedlet is distributed under the terms of the GNU GPL v2 or later.
+
+Images from stocksnap.io
+License: CC0
+- Sarah Pflug: https://stocksnap.io/photo/hand-sign-BPQSX1BQTF
+- Clem Onojeghuo: https://stocksnap.io/photo/beanie-scarf-M2U9VL0ZWG
+- Brooke Cagle: https://stocksnap.io/photo/people-woman-MU7G67710S
+- Daria Shevtsova: https://stocksnap.io/photo/girl-camera-AZED07HITL
+- Benjamin Voros: https://stocksnap.io/photo/blue-denim-BWPRK5DEF0
+- Artsy Crafty: https://stocksnap.io/photo/office-supplies-BDVUKQ4BBF
+- Artsy Crafty: https://stocksnap.io/photo/colorful-pencils-NONEDF6REB
+- Austin Neill: https://stocksnap.io/photo/concert-singer-F66MXRQS1K
+- Bruce Mars: https://stocksnap.io/photo/woman-sunglasses-MO7PZ7AYIC
+Used as block pattern images.
+
+Image from foodiesfeed.com
+License: CC0
+https://www.foodiesfeed.com/free-food-photo/watermelon-juice-2/
+Used as block pattern image.
+
+Hamburger Icon from Noto Emoji
+License: Apache License 2.0
+https://github.com/googlefonts/noto-emoji/blob/master/svg/emoji_u1f354.svg
+Modified and used as a block pattern image.
+*/
+
+@import "variables.css";
+
+/* Remove extra margin from articles on single post pages. */
+
+.single .site-main > article,
+.page .site-main > article {
+	margin-bottom: 0;
+}
+
+/* Remove some top padding if the first block on the page is a full-width image, cover, media & text, or group block. */
+
+.single.hide-post-and-page-titles .entry-content > .wp-block-image.alignfull:first-child,
+.page.hide-post-and-page-titles .entry-content > .wp-block-image.alignfull:first-child,
+.single.hide-post-and-page-titles .entry-content > .wp-block-cover.alignfull:first-child,
+.page.hide-post-and-page-titles .entry-content > .wp-block-cover.alignfull:first-child,
+.single.hide-post-and-page-titles .entry-content > .wp-block-media-text.alignfull:first-child,
+.page.hide-post-and-page-titles .entry-content > .wp-block-media-text.alignfull:first-child,
+.single.hide-post-and-page-titles .entry-content > .wp-block-group.has-background.alignfull:first-child,
+.page.hide-post-and-page-titles .entry-content > .wp-block-group.has-background.alignfull:first-child {
+	margin-top: calc(-1 * var(--global--spacing-vertical));
+}
+
+/* Remove some bottom padding if the last block on the page is a full-width image, cover, media & text, or group block. */
+
+.page.hide-site-footer .entry-content > .wp-block-image.alignfull:last-child,
+.page.hide-site-footer .entry-content > .wp-block-cover.alignfull:last-child,
+.page.hide-site-footer .entry-content > .wp-block-media-text.alignfull:last-child,
+.single.hide-site-footer.hide-site-footer .entry-content > .wp-block-group.has-background.alignfull:last-child,
+.single.hide-site-footer.hide-comments .entry-content > .wp-block-image.alignfull:last-child,
+.single.hide-site-footer.hide-comments .entry-content > .wp-block-cover.alignfull:last-child,
+.single.hide-site-footer.hide-comments .entry-content > .wp-block-media-text.alignfull:last-child,
+.single.hide-site-footer.hide-comments .entry-content > .wp-block-group.has-background.alignfull:last-child {
+	margin-bottom: calc(-1 * var(--global--spacing-vertical));
+}
+
+/* Center-align headers and footers. */
+
+.entry-header,
+.page-title,
+.entry-footer,
+.site-info,
+.footer-menu {
+	text-align: center;
+}

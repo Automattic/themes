@@ -186,8 +186,8 @@ function leven_editor_styles() {
 	// Hide duplicate palette colors
 	$colors_array = get_theme_mod( 'colors_manager' );
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#767676' ) { // $config-global--color-foreground-light-default;
-		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
-			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
 				display: none;
 			}';
 		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );

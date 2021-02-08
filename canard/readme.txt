@@ -90,6 +90,12 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Changelog ==
 
+= 1.0.12 - Jun 10 2020 =
+* Add block editor styles and support to the theme.
+* Improve contact form styles
+* Clean up header elements
+* Support for Content Options - Featured Images
+
 = 1.0.6 - Sep 29 2015 =
 * Update screenshot.
 

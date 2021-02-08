@@ -120,6 +120,12 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  * Add font-family using CSS variables.
  * It also adds the proper fallback for browsers without support.
  */
+body {
+	display: none;
+	/* Legacy */
+	display: var(--skip, block);
+}
+
 /**
  * Child Theme Name
  */
@@ -382,7 +388,7 @@ object {
 }
 
 .wp-block-a8c-blog-posts .more-link:after {
-	content: "\02192";
+	content: "→" /*rtl:"←"*/;
 	display: inline-block;
 	margin-left: 0.5em;
 }
@@ -493,7 +499,7 @@ object {
 	margin-top: -0.11em;
 }
 
-.wp-block-a8c-blog-posts + .button:hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts + .has-focus.button {
+.wp-block-a8c-blog-posts + .button:not(.has-background):hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts + .has-focus.button {
 	color: #FFFFFF;
 	background-color: #FF7A5C;
 }
@@ -542,7 +548,6 @@ object {
 
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
-	background: transparent;
 	border: 2px solid currentcolor;
 }
 
@@ -665,7 +670,7 @@ object {
 .wp-block-heading h6, h6, .h6 {
 	font-family: "EB Garamond", serif;
 	font-family: var(--font-headings, "EB Garamond", serif);
-	font-weight: 200;
+	font-weight: 400;
 	clear: both;
 }
 
@@ -745,7 +750,7 @@ object {
 	font-family: "EB Garamond", serif;
 	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: 1.728rem;
-	font-weight: 200;
+	font-weight: 400;
 	line-height: 1;
 }
 
@@ -805,18 +810,6 @@ li > ol {
 	margin: 0;
 }
 
-.wp-block-media-text .block-editor-inner-blocks {
-	padding-right: 16px;
-	padding-left: 16px;
-}
-
-@media only screen and (min-width: 640px) {
-	.wp-block-media-text .block-editor-inner-blocks {
-		padding-right: 32px;
-		padding-left: 32px;
-	}
-}
-
 .wp-block-media-text[style*="background-color"]:not(.has-background-background-color) a {
 	color: currentColor;
 }
@@ -834,30 +827,23 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote {
-	padding: calc( 3 * 16px) 0;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
 	border-top-color: #DDDDDD;
 	border-top-width: 4px;
 	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
 	color: #444444;
-	/**
-	 * Block Options
-	 */
 }
 
-.wp-block-pullquote blockquote {
-	padding-left: 0;
-}
-
-.wp-block-pullquote p {
+.wp-block-pullquote blockquote p {
 	font-family: "EB Garamond", serif;
 	font-family: var(--font-headings, "EB Garamond", serif);
-	font-size: 1.728em;
+	font-size: 1.728rem;
 	letter-spacing: normal;
 	line-height: 1;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	font-size: 1.728rem;
 }
 
 .wp-block-pullquote a {
@@ -868,28 +854,16 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
 	color: #767676;
-	font-size: 0.83333em;
+	font-size: 0.83333rem;
 	letter-spacing: normal;
 }
 
-.wp-block-pullquote:not(.is-style-solid-color) {
-	background: none;
+.wp-block-pullquote blockquote {
+	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #000000;
 	color: #FFFFFF;
-}
-
-.wp-block-pullquote.is-style-solid-color.alignleft blockquote,
-.wp-block-pullquote.is-style-solid-color.alignright blockquote {
-	padding-left: 16px;
-	padding-right: 16px;
-	max-width: inherit;
-}
-
-.wp-block-pullquote.is-style-solid-color blockquote {
-	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -898,17 +872,12 @@ p.has-background:not(.has-background-background-color) a {
 	color: currentColor;
 }
 
-.wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote {
-	margin-left: auto;
-	margin-right: auto;
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #000000;
 }
 
 .wp-block-quote {
 	border-left-color: #000000;
-	margin: 32px 0;
 	padding-left: 16px;
 }
 
@@ -1024,6 +993,11 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: #444444;
 }
 
+pre.wp-block-verse {
+	font-family: monospace, monospace;
+	color: #444444;
+}
+
 /**
  * Editor Post Title
  * - Needs a special styles
@@ -1032,7 +1006,7 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: #444444;
 	font-family: "EB Garamond", serif;
 	font-family: var(--font-headings, "EB Garamond", serif);
-	font-weight: 200;
+	font-weight: 400;
 	font-size: 2.48832em;
 	letter-spacing: normal;
 	line-height: 1;
@@ -1078,7 +1052,6 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: #FFFFFF;
 }
 
-.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),
@@ -1089,51 +1062,85 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: currentColor;
 }
 
-.wp-block .has-primary-background-color,
-.has-primary-background-color {
+.has-primary-background-color,
+.has-primary-background-color.has-background-dim {
 	background-color: #000000;
+}
+
+.has-primary-background-color:not(.has-text-color),
+.has-primary-background-color.has-background-dim:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
-.wp-block .has-secondary-background-color,
-.has-secondary-background-color {
+.has-secondary-background-color,
+.has-secondary-background-color.has-background-dim {
 	background-color: #FF7A5C;
+}
+
+.has-secondary-background-color:not(.has-text-color),
+.has-secondary-background-color.has-background-dim:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
-.wp-block .has-foreground-background-color,
-.has-foreground-background-color {
+.has-background-dim:not(.has-text-color),
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
 	background-color: #444444;
+}
+
+.has-background-dim,
+.has-foreground-background-color,
+.has-foreground-background-color.has-background-dim {
 	color: #FFFFFF;
 }
 
-.wp-block .has-foreground-light-background-color,
-.has-foreground-light-background-color {
+.has-foreground-light-background-color,
+.has-foreground-light-background-color.has-background-dim {
 	background-color: #767676;
+}
+
+.has-foreground-light-background-color:not(.has-text-color),
+.has-foreground-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
-.wp-block .has-foreground-dark-background-color,
-.has-foreground-dark-background-color {
+.has-foreground-dark-background-color,
+.has-foreground-dark-background-color.has-background-dim {
 	background-color: #111111;
+}
+
+.has-foreground-dark-background-color:not(.has-text-color),
+.has-foreground-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #FFFFFF;
 }
 
-.wp-block .has-background-light-background-color,
-.has-background-light-background-color {
+.has-background-light-background-color,
+.has-background-light-background-color.has-background-dim {
 	background-color: #FAFAFA;
+}
+
+.has-background-light-background-color:not(.has-text-color),
+.has-background-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #444444;
 }
 
-.wp-block .has-background-dark-background-color,
-.has-background-dark-background-color {
+.has-background-dark-background-color,
+.has-background-dark-background-color.has-background-dim {
 	background-color: #DDDDDD;
+}
+
+.has-background-dark-background-color:not(.has-text-color),
+.has-background-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #444444;
 }
 
-.wp-block .has-background-background-color,
-.has-background-background-color {
+.has-background-background-color,
+.has-background-background-color.has-background-dim {
 	background-color: #FFFFFF;
+}
+
+.has-background-background-color:not(.has-text-color),
+.has-background-background-color.has-background-dim:not(.has-text-color) {
 	color: #444444;
 }
 
@@ -1166,7 +1173,7 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	font-family: "EB Garamond", serif;
 	font-family: var(--font-headings, "EB Garamond", serif);
 	font-size: calc(2 * 2.98598em);
-	font-weight: 200;
+	font-weight: 400;
 }
 
 /**

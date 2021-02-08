@@ -71,7 +71,7 @@ if ( post_password_required() ) {
 
 	comment_form( array(
 		'logged_in_as'	=> null,
-		'title_reply'	=> esc_html( 'Leave a Comment', 'seedlet')
+		'title_reply'	=> esc_html__( 'Leave a Comment', 'seedlet')
 	) );
 	?>
 

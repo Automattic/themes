@@ -119,6 +119,11 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				'header-text' => array( 'site-title' ),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'dalston_setup', 12 );
@@ -196,8 +201,8 @@ function dalston_editor_styles() {
 	// Hide duplicate palette colors
 	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) { // $config-global--color-foreground-light-default;
-		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
-			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
 				display: none;
 			}';
 		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
@@ -256,4 +261,3 @@ add_action( 'enqueue_block_assets', 'dalston_block_extends' );
 function dalston_is_amp() {
 	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 }
-
