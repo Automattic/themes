@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#303030',
+			'primary'    => '#1279BE',
+			'secondary'  => '#FFB302',
+			'tertiary'   => '#C5C5C5',
+		);
+	}
+}
+
 if ( ! function_exists( 'hever_setup' ) ) :
 
 	/**
@@ -50,74 +62,6 @@ if ( ! function_exists( 'hever_setup' ) ) :
 					'shortName' => __( 'XL', 'hever' ),
 					'size'      => 30.4174,
 					'slug'      => 'huge',
-				),
-			)
-		);
-
-		// Editor color palette.
-		$colors_manager = get_theme_mod( 'colors_manager' );
-		if ( $colors_manager ) {
-			$color_annotations = $colors_manager['colors'];
-		}
-		$primary    = ( empty( $color_annotations['link'] ) ) ? '#1279BE' : $color_annotations['link'];
-		$secondary  = ( empty( $color_annotations['fg1'] ) ) ? '#FFB302' : $color_annotations['fg1'];
-		$foreground = ( empty( $color_annotations['txt'] ) ) ? '#303030' : $color_annotations['txt'];
-		$tertiary   = ( empty( $color_annotations['fg2'] ) ) ? '#C5C5C5' : $color_annotations['fg2'];
-		$background = ( empty( $color_annotations['bg'] ) ) ? '#FFFFFF' : $color_annotations['bg'];
-
-		$foreground_low_contrast  = change_color_luminescence( $foreground, 10 );
-		$foreground_high_contrast = change_color_luminescence( $foreground, -10 );
-		$background_low_contrast  = change_color_luminescence( $background, -10 );
-		$background_high_contrast = change_color_luminescence( $background, 10 );
-
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'hever' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'hever' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Tertiary', 'hever' ),
-					'slug'  => 'tertiary',
-					'color' => $tertiary,
-				),
-				array(
-					'name'  => __( 'Foreground', 'hever' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Foreground Low Contrast', 'hever' ),
-					'slug'  => 'foreground-low-contrast',
-					'color' => $foreground_low_contrast,
-				),
-				array(
-					'name'  => __( 'Foreground High Contrast', 'hever' ),
-					'slug'  => 'foreground-high-contrast',
-					'color' => $foreground_high_contrast,
-				),
-				array(
-					'name'  => __( 'Background', 'hever' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-				array(
-					'name'  => __( 'Background High Contrast', 'hever' ),
-					'slug'  => 'background-high-contrast',
-					'color' => $background_high_contrast,
-				),
-				array(
-					'name'  => __( 'Background Low Contrast', 'hever' ),
-					'slug'  => 'background-low-contrast',
-					'color' => $background_low_contrast,
 				),
 			)
 		);
