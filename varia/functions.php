@@ -107,6 +107,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
+		// add_editor_style( 'child-theme-alt-style.css' ); // this will get loaded in a child theme
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -189,7 +190,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// Add support for custom units.
 		add_theme_support( 'custom-units' );
 
-		// Experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
 		add_theme_support( 'experimental-link-color' );
 
 		// Add support for Global Styles.
