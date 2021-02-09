@@ -263,7 +263,8 @@ function varia_scripts() {
 	if ( $is_IE ) {
 		// If IE 11 or below, use a ponyfill to add CSS Variable support
 		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/js/css-vars-ponyfill2.js' );
-		wp_enqueue_script( 'ie11-fix',
+		wp_enqueue_script(
+			'ie11-fix',
 			get_template_directory_uri() . '/js/ie11-fix.js',
 			array( 'css-vars-ponyfill' ),
 			'1.0'
@@ -414,8 +415,8 @@ function varia_customize_header_footer( $wp_customize ) {
 	$wp_customize->add_control(
 		'hide_site_header',
 		array(
-			'label'       => esc_html__( 'Hide the Site Header', 'seedlet' ),
-			'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'seedlet' ),
+			'label'       => esc_html__( 'Hide the Site Header', 'varia' ),
+			'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'varia' ),
 			'section'     => 'static_front_page',
 			'priority'    => 10,
 			'type'        => 'checkbox',
@@ -438,8 +439,8 @@ function varia_customize_header_footer( $wp_customize ) {
 	$wp_customize->add_control(
 		'hide_site_footer',
 		array(
-			'label'       => esc_html__( 'Hide the Site Footer Menu & Widgets', 'seedlet' ),
-			'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'seedlet' ),
+			'label'       => esc_html__( 'Hide the Site Footer Menu & Widgets', 'varia' ),
+			'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'varia' ),
 			'section'     => 'static_front_page',
 			'priority'    => 10,
 			'type'        => 'checkbox',
@@ -448,6 +449,47 @@ function varia_customize_header_footer( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'varia_customize_header_footer' );
+
+
+/**
+ * Add ability to show or hide featured images on pages
+ */
+function varia_customize_content_options( $wp_customize ) {
+
+	// Add Content section.
+	$wp_customize->add_section(
+		'jetpack_content_options',
+		array(
+			'title'    => esc_html__( 'Content Options', 'varia' ),
+			'priority' => 100,
+		)
+	);
+
+	// Add visibility setting for featured images on pages
+	$wp_customize->add_setting(
+		'show_featured_image_on_pages',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control for the visibility of featured images on pages
+	$wp_customize->add_control(
+		'show_featured_image_on_pages',
+		array(
+			'label'       => esc_html__( 'Show the featured image on pages', 'varia' ),
+			'description' => esc_html__( 'Check to display a featured image at the top of your pages when they have one.', 'varia' ),
+			'section'     => 'jetpack_content_options',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'show_featured_image_on_pages',
+		)
+	);
+}
+add_action( 'customize_register', 'varia_customize_content_options' );
 
 /*
  * Color palette related utilities
