@@ -143,6 +143,9 @@ add_color_rule( 'link', '#23883D', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			a', 'color' ),
+
+	// Hover colors
+	array( '.main-navigation a:hover', 'color' , '-1' ),
 			
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
@@ -307,7 +310,6 @@ add_color_rule( 'fg1', '#0963C4', array(
 			.entry-meta a:active,
 			.entry-meta a:hover,
 			.footer-navigation .footer-menu a:hover,
-			.main-navigation a:hover,
 			.site-info a:hover,
 			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
 			.wp-block-button.is-style-outline .wp-block-button__link:focus,
