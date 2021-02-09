@@ -245,6 +245,10 @@ class Seedlet_Custom_Colors {
 				if ( $theme_mod_variable_name === '--global--color-foreground' && $theme_mod_default_color !== $theme_mod_custom_color ) {
 					$theme_css .= '--global--color-foreground-low-contrast: ' . $adjusted_color . ';';
 				}
+
+				if ( $theme_mod_variable_name === '--global--color-background' && $theme_mod_default_color !== $theme_mod_custom_color ) {
+					$theme_css .= '--global--color-background-high-contrast:' . $theme_mod_custom_color . ';';
+				}
 			}
 		}
 
