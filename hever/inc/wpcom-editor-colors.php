@@ -1,2 +1,2 @@
 <?php
-require_once 'wpcom-colors-v2.php';
+require_once get_template_directory() . '/inc/wpcom-colors-v2.php';
