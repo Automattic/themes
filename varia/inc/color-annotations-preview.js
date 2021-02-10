@@ -53,7 +53,7 @@ function changeColorLuminescence( hex, amount ) {
 
 			var cssVariables = '';
 
-			if(background !== ''){
+			if( background !== '' ){
 				var backgroundLowContrast = changeColorLuminescence( background, -10 );
 				var backgroundHighContrast = changeColorLuminescence( background, 10 );
 				cssVariables += '--wp--preset--color--background: ' + background + ';' +
@@ -61,7 +61,7 @@ function changeColorLuminescence( hex, amount ) {
 				'--wp--preset--color--background-high-contrast: ' + backgroundHighContrast + ';';
 			}
 
-			if(foreground !== ''){
+			if( foreground !== '' ){
 				var foregroundLowContrast = changeColorLuminescence( foreground, 10 );
 				var foregroundHighContrast = changeColorLuminescence( foreground, -10 );
 				cssVariables += '--wp--preset--color--foreground: ' + foreground + ';' +
@@ -69,19 +69,19 @@ function changeColorLuminescence( hex, amount ) {
 				'--wp--preset--color--foreground-high-contrast: ' + foregroundHighContrast + ';';
 			}
 
-			if(primary !== ''){
+			if( primary !== '' ){
 				var primaryHover = changeColorLuminescence( primary, 10 );
 				cssVariables += '--wp--preset--color--primary: ' + primary + ';' +
 				'--wp--preset--color--primary-hover: ' + primaryHover + ';';
 			}
 
-			if(secondary !== ''){
+			if( secondary !== '' ){
 				var secondaryHover = changeColorLuminescence( secondary, 10 );
 				cssVariables += '--wp--preset--color--secondary: ' + secondary + ';' +
 				'--wp--preset--color--secondary-hover: ' + secondaryHover + ';';
 			}
 
-			if(border !== ''){
+			if( border !== '' ){
 				var borderLowContrast = changeColorLuminescence( border, 10 );
 				var borderHighContrast = changeColorLuminescence( border, -10 );
 				cssVariables += '--wp--preset--color--border: ' + border + ';' +
