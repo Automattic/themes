@@ -1,4 +1,9 @@
 <?php
+/*
+ * Color palette related utilities
+ */
+require_once get_template_directory() . '/inc/color-utils.php';
+
 // Custom Colors:
 function varia_define_color_annotations( $colors ) {
 	// Background Color

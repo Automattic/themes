@@ -518,11 +518,6 @@ function varia_customize_content_options( $wp_customize ) {
 }
 add_action( 'customize_register', 'varia_customize_content_options' );
 
-/*
- * Color palette related utilities
- */
-require get_template_directory() . '/inc/color-utils.php';
-
 /**
  * SVG Icons class.
  */
