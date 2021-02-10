@@ -190,9 +190,6 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// Add support for custom units.
 		add_theme_support( 'custom-units' );
 
-		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
-		add_theme_support( 'experimental-link-color' );
-
 		// Add support for Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
