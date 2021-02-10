@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#444444',
+			'primary'    => '#222222',
+			'secondary'  => '#116821',
+			'tertiary'   => '#E0E0E0',
+		);
+	}
+}
+
 if ( ! function_exists( 'rockfield_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,52 +65,6 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'rockfield' ),
-					'slug'  => 'primary',
-					'color' => '#222222',
-				),
-				array(
-					'name'  => __( 'Secondary', 'rockfield' ),
-					'slug'  => 'secondary',
-					'color' => '#116821',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'rockfield' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'rockfield' ),
-					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'rockfield' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'rockfield' ),
-					'slug'  => 'background-dark',
-					'color' => '#E0E0E0',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'rockfield' ),
-					'slug'  => 'background-light',
-					'color' => '#F0F0F0',
-				),
-				array(
-					'name'  => __( 'White', 'rockfield' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'rockfield_setup', 12 );
