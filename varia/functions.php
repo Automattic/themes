@@ -293,7 +293,7 @@ function varia_scripts() {
 			'ie11-fix',
 			get_template_directory_uri() . '/js/ie11-fix.js',
 			array( 'css-vars-ponyfill' ),
-			'1.0'
+			wp_get_theme()->get( 'Version' )
 		);
 		wp_enqueue_style( 'varia-ie-styles', get_template_directory_uri() . '/ie.css', array(), wp_get_theme()->get( 'Version' ) );
 	}

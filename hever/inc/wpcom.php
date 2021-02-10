@@ -11,6 +11,6 @@ require_once get_template_directory() . '/inc/wpcom-colors-css-variables.php';
  * Bind JS handlers to instantly live-preview changes.
  */
 function hever_wpcom_color_annotations_preview_js() {
-	wp_enqueue_script( 'hever_wpcom_color_annotations_preview', get_template_directory_uri() . '/inc/color-annotations-preview.js', array( 'customize-preview' ), '1.0', true );
+	wp_enqueue_script( 'hever_wpcom_color_annotations_preview', get_template_directory_uri() . '/inc/color-annotations-preview.js', array( 'customize-preview' ), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'customize_preview_init', 'hever_wpcom_color_annotations_preview_js' ); 
