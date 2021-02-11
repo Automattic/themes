@@ -21,7 +21,7 @@
 /**
  * 1. General Helper Styles
  */
-body {
+ body {
 	font-weight: 300;
 }
 
@@ -58,12 +58,12 @@ a {
  * 2. Header
  */
 #masthead {
-	background-color: #{map-deep-get($config-global, "color", "white")};
+	background-color: #{map-deep-get($config-global, "color", "background", "default")};
 	padding: 0;
 
 	.site-branding {
 		text-align: center;
-		background: #fff;
+		background: #{map-deep-get($config-global, "color", "background", "default")};
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -94,7 +94,7 @@ body:not( .fse-enabled ) {
 	}
 
 	.site-description {
-		color: #333;
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	}
 }
 
@@ -107,7 +107,7 @@ body:not( .fse-enabled ) {
 }
 
 .site-content {
-	background-color: #{map-deep-get($config-global, "color", "white")};
+	background-color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
 #page {
@@ -152,14 +152,14 @@ body:not( .fse-enabled ) {
 				li {
 					&.current-menu-item {
 						a {
-							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+							color: #{map-deep-get($config-global, "color", "primary", "default")};
 						}
 					}
 					a {
-						color: #{map-deep-get($config-global, "color", "white")};
+						color: #{map-deep-get($config-global, "color", "background", "default")};
 						text-decoration: none;
 						&:hover {
-							color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+							color: #{map-deep-get($config-global, "color", "primary", "default")};
 						}
 					}
 					@include media(mobile) {
@@ -168,21 +168,22 @@ body:not( .fse-enabled ) {
 						list-style-type: disc;
 						&.current-menu-item {
 							a {
-								color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+								color: #{map-deep-get($config-global, "color", "primary", "default")};
 							}
 						}
 						a {
-							color: #{map-deep-get($config-global, "color", "white")};
+							color: #{map-deep-get($config-global, "color", "background", "default")};
 							font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 							&:hover {
-								color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+								color: #{map-deep-get($config-global, "color", "primary", "default")};
 							}
 							&::after {
-								color: #ffa4ad;
+								color: #{map-deep-get($config-global, "color", "background", "default")};
 								content: " \2022";
 								margin-left: #{map-deep-get($config-global, "spacing", "unit")};
 								display: inline;
 								font-size: #{map-deep-get($config-global, "font", "size", "base")};
+								opacity: 0.58;
 							}
 						}
 						&:last-child {
@@ -197,7 +198,7 @@ body:not( .fse-enabled ) {
 				}
 				ul {
 					@include media(mobile) {
-						background-color: #{map-deep-get($config-global, "color", "white")};
+						background-color: #{map-deep-get($config-global, "color", "background", "default")};
 						li {
 							&.current-menu-item {
 								a {
@@ -205,7 +206,7 @@ body:not( .fse-enabled ) {
 								}
 							}
 							a {
-								color: #{map-deep-get($config-global, "color", "secondary", "hover")};
+								color: #{map-deep-get($config-global, "color", "primary", "default")};
 								&::after {
 									content: "";
 								}
@@ -214,7 +215,7 @@ body:not( .fse-enabled ) {
 								}
 							}
 							&:hover {
-								background: #f2f2f2;
+								background: #{map-deep-get($config-global, "color", "background", "light")};
 							}
 						}
 					}
