@@ -28,20 +28,20 @@ if ( ! function_exists( 'spearhead_wpcom_customize_update' ) ) :
 		);
 
 		if ( $default_palette === $wpcom_colors_array['colors'] ) :
-			$wp_customize->add_setting( 'color_darkmode_notice' );
+			$wp_customize->add_setting( 'color_darkmode_disable' );
 			$wp_customize->add_control(
-				'color_darkmode_notice',
+				'color_darkmode_disable',
 				array(
-					'id'          => 'darkmode_notice',
-					'label'       => esc_html__( 'Dark Mode', 'spearhead' ),
+					'label'       => esc_html__( 'Disable Dark Mode', 'spearhead' ),
 					'description' => sprintf(
 						/* translators: %s: link to how to support system display modes */
-						__( "This theme's default palette will display a dark color palette automatically for users who have dark mode enabled on their devices. <a href='%s' target='_blank'>Learn more about dark mode</a>.", 'spearhead' ),
+						__( "Unless checked, this theme's default palette will display a dark color palette automatically for users who have dark mode enabled on their devices. <a href='%s' target='_blank'>Learn more about dark mode</a>.", 'spearhead' ),
 						esc_url( 'https://www.a11yproject.com/posts/2020-01-23-operating-system-and-browser-accessibility-display-modes/' )
 					),
 					'section'     => 'colors_manager_tool',
 					'priority'    => 10, // Set to 10 so it appears near the top of the Colors & Backgrounds panel
-					'type'        => 'hidden',
+					'type'        => 'checkbox',
+					'settings'	  => 'color_darkmode_disable'
 				)
 			);
 		endif;
