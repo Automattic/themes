@@ -107,6 +107,9 @@ if ( ! function_exists( 'alves_setup' ) ) :
 		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
 			varia_mobile_nav_on_side_setup();
 		}
+
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'alves_setup', 12 );
