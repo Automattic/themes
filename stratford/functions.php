@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#74767e',
+			'primary'    => '#2c313f',
+			'secondary'  => '#3e69dc',
+			'tertiary'   => '#DDDDDD',
+		);
+	}
+}
+
 if ( ! function_exists( 'stratford_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,52 +65,6 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'stratford' ),
-					'slug'  => 'primary',
-					'color' => '#2c313f',
-				),
-				array(
-					'name'  => __( 'Secondary', 'stratford' ),
-					'slug'  => 'secondary',
-					'color' => '#3e69dc',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'stratford' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'stratford' ),
-					'slug'  => 'foreground',
-					'color' => '#74767e',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'stratford' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'stratford' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'stratford' ),
-					'slug'  => 'background-light',
-					'color' => '#f3f3f3',
-				),
-				array(
-					'name'  => __( 'White', 'stratford' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
 	}
@@ -178,7 +144,7 @@ function stratford_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('stratford-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'stratford-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'stratford-style', 'rtl', 'replace' );
