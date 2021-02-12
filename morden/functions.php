@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#303030',
+			'primary'    => '#CD2220',
+			'secondary'  => '#007AB7',
+			'tertiary'   => null,
+		);
+	}
+}
+
 if ( ! function_exists( 'morden_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -49,53 +61,6 @@ if ( ! function_exists( 'morden_setup' ) ) :
 					'shortName' => __( 'XL', 'morden' ),
 					'size'      => 30.4174,
 					'slug'      => 'huge',
-				),
-			)
-		);
-
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'morden' ),
-					'slug'  => 'primary',
-					'color' => '#CD2220',
-				),
-				array(
-					'name'  => __( 'Secondary', 'morden' ),
-					'slug'  => 'secondary',
-					'color' => '#007AB7',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'morden' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#101010',
-				),
-				array(
-					'name'  => __( 'Gray', 'morden' ),
-					'slug'  => 'foreground',
-					'color' => '#303030',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'morden' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'morden' ),
-					'slug'  => 'background-dark',
-					'color' => '#E1DFDF',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'morden' ),
-					'slug'  => 'background-light',
-					'color' => '#F8F8F8',
-				),
-				array(
-					'name'  => __( 'White', 'morden' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
 				),
 			)
 		);
@@ -166,7 +131,7 @@ function morden_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('morden-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'morden-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'morden-style', 'rtl', 'replace' );
