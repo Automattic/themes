@@ -3373,6 +3373,12 @@ body:not(.fse-enabled) .footer-menu a {
 	max-width: calc(100% - 48px);
 }
 
+.comment-meta .comment-author {
+	line-height: 1.125;
+	margin-bottom: 4px;
+	padding-left: 40px;
+}
+
 @media only screen and (min-width: 560px) {
 	.comment-meta .comment-author {
 		display: flex;
@@ -4095,6 +4101,7 @@ p:not(.site-title) a:hover {
 	-moz-transition: margin-top .25s ease-in-out;
 	transition: margin-top .25s ease-in-out;
 	margin-left: auto;
+	padding-left: 1.5em;
 }
 
 #masthead .site-header-wrapper .site-branding .site-description {
@@ -4157,15 +4164,63 @@ p:not(.site-title) a:hover {
 	border: none;
 }
 
+@media only screen and (max-width: 559px) {
+	#masthead .site-header-wrapper .main-navigation {
+		margin-top: .25em;
+	}
+	#masthead .site-header-wrapper .main-navigation ul > li {
+		border: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul > li a {
+		border-color: #f3f3f3;
+		border-style: solid;
+		border-width: 0 0 .125em;
+		width: auto;
+	}
+	#masthead .site-header-wrapper .main-navigation ul > li ul li a {
+		border-color: #f3f3f3;
+		border-style: solid;
+		border-width: 0 0 .125em;
+		padding-right: 0.75em;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li.current-menu-item a {
+		border-color: #f3f3f3;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li.current-menu-item > a {
+		border-color: #3e69dc;
+		border-style: solid;
+		border-width: 0 0 .125em;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li {
+		border-bottom: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li:first-child {
+		border-top: 0;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li:first-child a {
+		border-color: #f3f3f3;
+		border-style: solid;
+		border-width: 0 0 .125em;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li.current-menu-item a {
+		border-color: #f3f3f3;
+	}
+	#masthead .site-header-wrapper .main-navigation ul li ul li.current-menu-item > a {
+		border-color: #3e69dc;
+		border-style: solid;
+		border-width: 0 0 .125em;
+	}
+}
+
 @media only screen and (min-width: 560px) {
 	#masthead .site-header-wrapper .main-navigation > ul > li:first-child {
 		margin-right: 0;
 	}
 	#masthead .site-header-wrapper .main-navigation ul li {
-		margin: 0 .75em;
+		margin: .25em 0 .25em 1.5em;
 	}
-	#masthead .site-header-wrapper .main-navigation ul li:first-child {
-		margin-right: 0;
+	#masthead .site-header-wrapper .main-navigation ul li:last-child {
+		margin-left: 0;
 	}
 	#masthead .site-header-wrapper .main-navigation ul li:hover ul {
 		right: auto;
