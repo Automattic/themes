@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#444444',
+			'primary'    => '#0C80A1',
+			'secondary'  => '#D4401C',
+			'tertiary'   => null,
+		);
+	}
+}
+
 if ( ! function_exists( 'shawburn_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,53 +65,6 @@ if ( ! function_exists( 'shawburn_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'shawburn' ),
-					'slug'  => 'primary',
-					'color' => '#0C80A1',
-				),
-				array(
-					'name'  => __( 'Secondary', 'shawburn' ),
-					'slug'  => 'secondary',
-					'color' => '#D4401C',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'shawburn' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#222222',
-				),
-				array(
-					'name'  => __( 'Gray', 'shawburn' ),
-					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'shawburn' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'shawburn' ),
-					'slug'  => 'background-dark',
-					'color' => '#EAEAEA',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'shawburn' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
-				),
-				array(
-					'name'  => __( 'White', 'shawburn' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
-
 		// Enable Full Site Editing
 		add_theme_support( 'full-site-editing' );
 	}
@@ -126,7 +91,7 @@ function shawburn_fonts_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by PT Sans, translate this to 'off'. Do not translate into your own language.
 	 */
-	$pt_sans  = _x( 'on', 'PT Sans font: on or off',  'shawburn' );
+	$pt_sans = _x( 'on', 'PT Sans font: on or off', 'shawburn' );
 
 	/* translators: If there are characters in your language that are not supported
 	 * by PT Serif, translate this to 'off'. Do not translate into your own language.
@@ -149,7 +114,7 @@ function shawburn_fonts_url() {
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
 
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	return esc_url_raw( $fonts_url );
@@ -167,7 +132,7 @@ function shawburn_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('shawburn-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'shawburn-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'shawburn-style', 'rtl', 'replace' );
