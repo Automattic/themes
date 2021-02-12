@@ -58,14 +58,13 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#0073AA'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#0D1B24';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#1E1E1E';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) ? $colors_array['colors']['txt'] : '#000000';  // $config-global--color-foreground-dark-default;
-
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#0073AA'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#0D1B24';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#1E1E1E';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) ? $colors_array['colors']['txt'] : '#000000';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -182,7 +181,7 @@ function dalston_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('dalston-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'dalston-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'dalston-style', 'rtl', 'replace' );
@@ -199,7 +198,7 @@ function dalston_editor_styles() {
 	wp_enqueue_style( 'dalston-editor-fonts', dalston_fonts_url(), array(), null );
 
 	// Hide duplicate palette colors
-	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) { // $config-global--color-foreground-light-default;
 		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
 			.components-circular-option-picker__option-wrapper:nth-child(6) {
@@ -221,32 +220,38 @@ function dalston_block_extends() {
 	}
 
 	// Cover Block Tweaks
-	wp_enqueue_script( 'dalston-extend-cover-block',
+	wp_enqueue_script(
+		'dalston-extend-cover-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
 		array( 'wp-blocks' )
 	);
 
-	wp_enqueue_style( 'dalston-extend-cover-block-style',
+	wp_enqueue_style(
+		'dalston-extend-cover-block-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.css'
 	);
 
 	// Columns Block Tweaks
-	wp_enqueue_script( 'dalston-extend-columns-block',
+	wp_enqueue_script(
+		'dalston-extend-columns-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.js',
 		array( 'wp-blocks' )
 	);
 
-	wp_enqueue_style( 'dalston-extend-cover-columns-style',
+	wp_enqueue_style(
+		'dalston-extend-cover-columns-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.css'
 	);
 
 	// Columns Block Tweaks
-	wp_enqueue_script( 'dalston-extend-media-text-block',
+	wp_enqueue_script(
+		'dalston-extend-media-text-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.js',
 		array( 'wp-blocks' )
 	);
 
-	wp_enqueue_style( 'dalston-extend-cover-media-text-style',
+	wp_enqueue_style(
+		'dalston-extend-cover-media-text-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.css'
 	);
 }
