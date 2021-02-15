@@ -3,6 +3,8 @@
  * - See: style-child-theme.scss
  */
 
+@import "../../varia/sass/abstracts/color-variables";
+
 /**
  * Global
  */
@@ -67,42 +69,6 @@ $config-global: (
 		),
 	),
 
-	/* Colors */
-	"color": (
-		"primary": (
-			"default": #CD2220,
-			"hover": #303030,
-		),
-		"secondary": (
-			"default": #007AB7,
-			"hover": #303030,
-		),
-		"foreground": (
-			"default": #303030,
-			"light": #757575, // must be accessible against background
-			"dark": #101010, // must be accessible against background
-		),
-		"background": (
-			"default": white,
-			"light": #F8F8F8, // must be accessible against foreground-default
-			"dark": #E1DFDF, // must be accessible against foreground-default
-		),
-		"border": (
-			"default": #C5C5C5,
-			"light": #F8F8F8,
-			"dark": #A5A5A5,
-		),
-		"alert": (
-			"success": #4caf50,
-			"info": #2196f3,
-			"warning": #ffc107,
-			"error": #CD2220,
-		),
-		"text-selection": #FDE2D4,
-		"black": black,
-		"white": white,
-	),
-
 	/* Spacing */
 	"spacing": (
 		"unit": (2 * $baseline-unit), // 16px
@@ -138,6 +104,8 @@ $config-global: (
 		"pill": (10 * $typescale-root),
 	),
 );
+
+$config-global: map-merge($color-variables, $config-global);
 
 /**
  * Elements
