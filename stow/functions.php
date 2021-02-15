@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#444444',
+			'primary'    => '#404040',
+			'secondary'  => '#f25f70',
+			'tertiary'   => '#DDDDDD',
+		);
+	}
+}
+
 if ( ! function_exists( 'stow_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,42 +65,6 @@ if ( ! function_exists( 'stow_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'stow' ),
-					'slug'  => 'primary',
-					'color' => '#404040', 
-				),
-				array(
-					'name'  => __( 'Secondary', 'stow' ),
-					'slug'  => 'secondary',
-					'color' => '#f25f70', 
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'stow' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'stow' ),
-					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'stow' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'White Smoke', 'stow' ),
-					'slug'  => 'background',
-					'color' => '#f0f0f0',
-				),
-			)
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'stow_setup', 12 );
