@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/wpcom-colors-utils.php';
+require_once get_template_directory() . '/inc/wpcom-colors-utils.php';
 
 seedlet_define_color_annotations(
 	array(
