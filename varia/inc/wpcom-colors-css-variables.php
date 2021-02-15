@@ -109,6 +109,7 @@ function varia_custom_colors_extra_css() {
 	if ( isset( $colors_array['colors']['link'] ) ) {
 		$primary       = $colors_array['colors']['link'];
 		$primary_hover = change_color_luminescence( $primary, 10 );
+		$primary_dark  = change_color_luminescence( $primary, -10 );
 	}
 
 	if ( isset( $colors_array['colors']['fg1'] ) ) {
@@ -143,7 +144,7 @@ function varia_custom_colors_extra_css() {
 			?>
 			--wp--preset--color--primary: <?php echo $primary; ?>;
 			--wp--preset--color--primary-hover: <?php echo $primary_hover; ?>;
-
+			--wp--preset--color--primary-dark: <?php echo $primary_dark; ?>;
 			<?php
 		}
 		if ( isset( $colors_array['colors']['fg1'] ) ) {
@@ -170,14 +171,14 @@ add_theme_support( 'custom_colors_extra_css', 'varia_custom_colors_extra_css' );
 $has_tertiary_color = false;
 
 if ( function_exists( 'varia_default_colors' ) ) {
-	$default_colors =  varia_default_colors();
+	$default_colors = varia_default_colors();
 	varia_define_color_annotations( $default_colors );
-	if( $default_colors['tertiary'] ) {
+	if ( $default_colors['tertiary'] ) {
 		$has_tertiary_color = true;
 	}
 }
 
-$light = array(
+$light  = array(
 	'#FFFFFF',
 	'#1D1E1E',
 	'#C8133E',
@@ -189,29 +190,29 @@ $medium = array(
 	'#35845D',
 	'#233252',
 );
-$dark = array(
+$dark   = array(
 	'#1F2527',
 	'#FFFFFF',
 	'#9FD3E8',
 	'#FBE6AA',
 );
-if($has_tertiary_color) {
-	$light[] = '#F9F9F9';
+if ( $has_tertiary_color ) {
+	$light[]  = '#F9F9F9';
 	$medium[] = '#F9F9F9';
-	$dark[] = '#364043';
+	$dark[]   = '#364043';
 }
 add_color_palette(
-	$light, 
+	$light,
 	/* translators: This is the name for a color scheme */
 	'Light'
 );
 add_color_palette(
-	$medium, 
+	$medium,
 	/* translators: This is the name for a color scheme */
 	'Medium'
 );
 add_color_palette(
-	$dark, 
+	$dark,
 	/* translators: This is the name for a color scheme */
 	'Dark'
 );

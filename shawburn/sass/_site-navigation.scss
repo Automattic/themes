@@ -1,5 +1,6 @@
 $color_primary_default: #{map-deep-get($config-global, "color", "primary", "default")};
-$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover")};
+$color_primary_hover: #{map-deep-get($config-global, "color", "primary", "dark")};
+$color_background: #{map-deep-get($config-global, "color", "background", "default")};
 
 /**
  * Main Menu
@@ -14,6 +15,7 @@ $color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover"
 		ul > li:hover > a,
 		ul > li.focus > a,
 		ul > li.current-menu-item > a {
+			color: $color_background;
 			background-color: $color_primary_hover;
 		}
 
@@ -36,6 +38,7 @@ $color_primary_hover: #{map-deep-get($config-global, "color", "primary", "hover"
 				}
 
 				a {
+					color: $color_background;
 					padding: map-deep-get($config-global, "spacing", "unit");
 					text-decoration: none;
 
