@@ -58,14 +58,13 @@ if ( ! function_exists( 'leven_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF302C'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#1285CE';  // $config-global--color-secondary-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#F7F7F6';   // $config-global--color-background-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
-
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#FF302C'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#1285CE';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#F7F7F6';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -167,7 +166,7 @@ function leven_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('leven-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'leven-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'leven-style', 'rtl', 'replace' );
