@@ -73,7 +73,7 @@ function changeColorLuminescence( hex, amount ) {
 				var primaryHover = changeColorLuminescence( primary, 10 );
 				var primaryDark = changeColorLuminescence( primary, -10 );
 				cssVariables += '--wp--preset--color--primary: ' + primary + ';' +
-				'--wp--preset--color--primary-hover: ' + primaryHover + ';';
+				'--wp--preset--color--primary-hover: ' + primaryHover + ';' +
 				'--wp--preset--color--primary-dark: ' + primaryDark + ';';
 			}
 
