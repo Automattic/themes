@@ -20,7 +20,7 @@ class Seedlet_Custom_Colors {
 		/**
 		 * Define color variables
 		 */
-		$this->seedlet_custom_color_variables = array(
+		$seedlet_colors                       = array(
 			array( '--global--color-background', '#FFFFFF', __( 'Background Color', 'seedlet' ) ),
 			array( '--global--color-foreground', '#333333', __( 'Foreground Color', 'seedlet' ) ),
 			array( '--global--color-primary', '#000000', __( 'Primary Color', 'seedlet' ) ),
@@ -28,6 +28,7 @@ class Seedlet_Custom_Colors {
 			array( '--global--color-tertiary', '#FAFBF6', __( 'Tertiary Color', 'seedlet' ) ),
 			array( '--global--color-border', '#EFEFEF', __( 'Borders Color', 'seedlet' ) ),
 		);
+		$this->seedlet_custom_color_variables = apply_filters( 'seedlet_colors', $seedlet_colors );
 
 		/**
 		 * Register Customizer actions

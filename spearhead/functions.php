@@ -95,11 +95,24 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 				),
 			)
 		);
+
 		remove_filter( 'excerpt_more', 'seedlet_continue_reading_link' );
 		remove_filter( 'the_content_more_link', 'seedlet_continue_reading_link' );
 	}
 endif;
 add_action( 'after_setup_theme', 'spearhead_setup', 12 );
+
+/**
+ * Filter the colors for Speahead
+ */
+function spearhead_colors() {
+	return array(
+		array( '--global--color-background', '#FFFFFF', __( 'Background Color', 'seedlet' ) ),
+		array( '--global--color-foreground', '#000000', __( 'Foreground Color', 'seedlet' ) ),
+		array( '--global--color-primary', '#DB0042', __( 'Primary Color', 'seedlet' ) ),
+	);
+}
+add_filter( 'seedlet_colors', 'spearhead_colors' );
 
 /**
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
