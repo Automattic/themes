@@ -117,6 +117,12 @@ function altofocus_setup() {
 		),
 	) );
 
+	add_theme_support( 'editor-styles' );
+	add_editor_style( array(
+		altofocus_libre_baskerville_url(),
+		altofocus_karla_url(),
+		get_template_directory_uri() . '/assets/stylesheets/editor-blocks.css',
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'altofocus_setup' );
@@ -304,22 +310,6 @@ function altofocus_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'altofocus_scripts' );
-
-/**
- * Enqueue editor styles for Gutenberg
- */
-function altofocus_block_editor_styles() {
-	// Block styles.
-	wp_enqueue_style( 'altofocus-block-editor-style', get_template_directory_uri() . '/assets/stylesheets/editor-blocks.css' );
-
-	// Libre Franklin font
-	wp_enqueue_style( 'altofocus-libre-baskerville', altofocus_libre_baskerville_url(), array(), null );
-
-	// Karla font
-	wp_enqueue_style( 'altofocus-karla', altofocus_karla_url(), array(), null );
-
-}
-add_action( 'enqueue_block_editor_assets', 'altofocus_block_editor_styles' );
 
 /**
  * Check whether the browser supports JavaScript
