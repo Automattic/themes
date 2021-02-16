@@ -119,9 +119,9 @@ function altofocus_setup() {
 
 	add_theme_support( 'editor-styles' );
 	add_editor_style( array(
+		get_template_directory_uri() . '/assets/stylesheets/editor-blocks.css',
 		altofocus_libre_baskerville_url(),
 		altofocus_karla_url(),
-		get_template_directory_uri() . '/assets/stylesheets/editor-blocks.css',
 	) );
 }
 endif;
