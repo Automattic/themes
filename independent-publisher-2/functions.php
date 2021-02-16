@@ -134,6 +134,12 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 				),
 			)
 		);
+
+		add_theme_support( 'editor-styles' );
+		add_editor_style( array(
+			get_stylesheet_uri(),
+			'independent-pub-block-editor-style',
+		) );
 	}
 endif; // independent_publisher_2_setup
 add_action( 'after_setup_theme', 'independent_publisher_2_setup' );
@@ -289,15 +295,6 @@ function independent_publisher_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'independent_publisher_2_scripts' );
-
-/**
- * Enqueue editor styles for Gutenberg
- */
-function independent_publisher_2_block_editor_styles() {
-	// Block styles.
-	wp_enqueue_style( 'independent-pub-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
-}
-add_action( 'enqueue_block_editor_assets', 'independent_publisher_2_block_editor_styles' );
 
 /**
  * Returns true if a post Featured Image can be displayed.
