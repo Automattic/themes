@@ -22,7 +22,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			add_action( 'customize_register', array( $this, 'register' ) );
+			add_action( 'customize_register', array( $this, 'register' ), 11 );
 		}
 
 		/**
@@ -37,6 +37,25 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 		 * @return void
 		 */
 		public function register( $wp_customize ) {
+
+			// Remove Jetpack's Author Bio setting.
+			if ( function_exists( 'jetpack_author_bio' ) ) {
+				$wp_customize->remove_control( 'jetpack_content_author_bio_title' );
+				$wp_customize->remove_control( 'jetpack_content_author_bio' );
+			}
+
+			// Remove Seedlet's header and footer hide options,
+			// since they're already hidden by default.
+			$wp_customize->remove_control( 'hide_site_header' );
+			$wp_customize->remove_control( 'hide_site_footer' );
+
+			$customizer_widgets_panel = (object) $wp_customize->get_panel( 'widgets' );
+
+			// Add a Customizer message about the site title & tagline options.
+			$wp_customize->get_section( 'title_tagline' )->description  = __( 'The site logo, title, and tagline will only appear on single posts and pages if the “Site header and top menu" option is enabled in the Content Options section.', 'seedlet' );
+			$wp_customize->get_section( 'menu_locations' )->description = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'seedlet' );
+			$wp_customize->get_panel( 'nav_menus' )->description        = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'seedlet' );
+			$customizer_widgets_panel->description                      = __( 'This theme will only display Widgets if they are enabled in the Content Options section.', 'seedlet' );
 
 			// Add Content section.
 			$wp_customize->add_section(
@@ -118,7 +137,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 					'settings'    => 'show_post_and_page_titles',
 				)
 			);
-			
+
 			// Add setting to show the comments
 			$wp_customize->add_setting(
 				'show_comments',
@@ -135,7 +154,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 				'show_comments',
 				array(
 					'label'       => esc_html__( 'Enable comments', 'blank-canvas' ),
-					'description' => esc_html__( "Check to show comments underneath each post.", 'blank-canvas' ),
+					'description' => esc_html__( 'Check to show comments underneath each post.', 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
 					'type'        => 'checkbox',

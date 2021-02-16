@@ -23,40 +23,6 @@ function seedlet_dequeue_scripts() {
 add_action( 'wp_enqueue_scripts', 'seedlet_dequeue_scripts', 11 );
 
 /**
- * Remove redundant settings.
- */
-function seedlet_remove_customizer_settings( $wp_customize ) {
-
-	// Remove Jetpack's Author Bio setting.
-	if ( function_exists( 'jetpack_author_bio' ) ) {
-		$wp_customize->remove_control( 'jetpack_content_author_bio_title' );
-		$wp_customize->remove_control( 'jetpack_content_author_bio' );
-	}
-
-	// Remove Seedlet's header and footer hide options,
-	// since they're already hidden by default.
-	$wp_customize->remove_control( 'hide_site_header' );
-	$wp_customize->remove_control( 'hide_site_footer' );
-}
-add_action( 'customize_register', 'seedlet_remove_customizer_settings', 11 );
-
-/**
- * Add Blank Canvas customizer settings.
- */
-function seedlet_add_blank_canvas_customizer_settings( $wp_customize ) {
-
-	// Cast the widgets panel as an object.
-	$customizer_widgets_panel = (object) $wp_customize->get_panel( 'widgets' );
-
-	// Add a Customizer message about the site title & tagline options.
-	$wp_customize->get_section( 'title_tagline' )->description  = __( 'The site logo, title, and tagline will only appear on single posts and pages if the “Site header and top menu" option is enabled in the Content Options section.', 'seedlet' );
-	$wp_customize->get_section( 'menu_locations' )->description = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'seedlet' );
-	$wp_customize->get_panel( 'nav_menus' )->description        = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'seedlet' );
-	$customizer_widgets_panel->description                      = __( 'This theme will only display Widgets if they are enabled in the Content Options section.', 'seedlet' );
-}
-add_action( 'customize_register', 'seedlet_add_blank_canvas_customizer_settings', 11 );
-
-/**
  * Remove Meta Footer Items.
  */
 if ( ! function_exists( 'seedlet_entry_meta_footer' ) ) :
@@ -86,7 +52,7 @@ if ( ! function_exists( 'seedlet_entry_meta_footer' ) ) :
 endif;
 
 /**
- * Customizer additions.
+ * Add Blank Canvas customizer settings.
  */
 require get_template_directory() . '/classes/class-blank-canvas-customize.php';
 
