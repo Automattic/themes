@@ -1,0 +1,40 @@
+/*
+Theme Name: Link In Bio 
+Theme URI: https://github.com/Automattic/themes/seedlet-blocks
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A simple, text-driven, single-column block-based theme.
+Requires at least: 4.9.6
+Tested up to: 5.4.1
+Requires PHP: 7.3
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: linkinbio 
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Link in Bio WordPress Theme, (C) 2020 Automattic, Inc.
+Link in Bio is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+*/
+
+/* Override Seedlet variables with values from experimental-theme.json.
+   Doubling up on the :root selector is weird, but it just ensures these have higher specificity than everything else) */
+@import "variables.css";
+
+/* Remove extra margin from articles on single post pages. */
+
+.single .site-main > article,
+.page .site-main > article {
+	margin-bottom: 0;
+}
