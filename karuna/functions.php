@@ -146,6 +146,17 @@ if ( ! function_exists( 'karuna_setup' ) ) :
 				)
 			)
 		);
+
+		// Add support for Editor Styles
+		add_theme_support( 'editor-styles' );
+		add_editor_style(
+			array(
+				'style.css',
+				'blocks.css',
+				'/assets/fonts/genericons/genericons.css',
+				karuna_fonts_url(),
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'karuna_setup' );
@@ -335,15 +346,6 @@ function karuna_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'karuna_scripts' );
-
-/**
- * Gutenberg Editor Styles
- */
-function karuna_editor_styles() {
-	wp_enqueue_style( 'karuna-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
-	wp_enqueue_style( 'karuna-fonts', karuna_fonts_url(), array(), null );
-}
-add_action( 'enqueue_block_editor_assets', 'karuna_editor_styles' );
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and a 'Continue reading' link.
