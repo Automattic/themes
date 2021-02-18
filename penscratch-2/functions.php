@@ -216,6 +216,9 @@ function penscratch_2_scripts() {
 	wp_enqueue_style( 'penscratch-2-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'penscratch-2-fonts', penscratch_2_fonts_url(), array(), null );
 
+	// Theme reset stylesheet
+	wp_enqueue_style( 'penscratch-2-reset', get_theme_file_uri( '/css/reset.css' ), array( 'penscratch-2-style' ), '1.0' );
+
 	// Theme block stylesheet.
 	wp_enqueue_style( 'penscratch-2-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'penscratch-2-style' ), '1.0' );
 
