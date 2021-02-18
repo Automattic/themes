@@ -18,6 +18,7 @@ if ( ! function_exists( 'blank_canvas_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function blank_canvas_setup() {
+
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 

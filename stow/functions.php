@@ -30,7 +30,6 @@ if ( ! function_exists( 'stow_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function stow_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -96,7 +95,7 @@ function stow_fonts_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
 	 */
-	$source_sans_pro  = _x( 'on', 'Source Sans Pro font: on or off',  'stow' );
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'stow' );
 
 	/* translators: If there are characters in your language that are not supported
 	 * by Droid Serif, translate this to 'off'. Do not translate into your own language.
@@ -106,7 +105,7 @@ function stow_fonts_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Oswald, translate this to 'off'. Do not translate into your own language.
 	 */
-	$oswald  = _x( 'on', 'Oswald font: on or off',  'stow' );
+	$oswald = _x( 'on', 'Oswald font: on or off', 'stow' );
 
 	if ( 'off' !== $source_sans_pro || 'off' !== $droid_serif || 'off' !== $oswald ) {
 		$font_families = array();
@@ -124,7 +123,7 @@ function stow_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	return esc_url_raw( $fonts_url );
@@ -142,7 +141,7 @@ function stow_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('stow-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'stow-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'stow-style', 'rtl', 'replace' );

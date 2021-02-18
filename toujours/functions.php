@@ -8,143 +8,161 @@
  */
 
 if ( ! function_exists( 'toujours_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function toujours_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on toujours, use a find and replace
-	 * to change 'toujours' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'toujours', get_template_directory() . '/languages' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
-
- 	// Add custom colors to Gutenberg
-	add_theme_support(
-		'editor-color-palette', array(
-			array(
-				'name'  => esc_html__( 'Blue', 'toujours' ),
-				'slug' => 'blue',
-				'color' => '#2590ec',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'toujours' ),
-				'slug' => 'dark-gray',
-				'color' => '#404040',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'toujours' ),
-				'slug' => 'medium-gray',
-				'color' => '#666',
-			),
-			array(
-				'name'  => esc_html__( 'Light Gray', 'toujours' ),
-				'slug' => 'light-gray',
-				'color' => '#eee',
-			),
-			array(
-				'name'  => esc_html__( 'White', 'toujours' ),
-				'slug' => 'white',
-				'color' => '#fff',
-			),
-		)
-	);
-
-	/*
-	 * Editor styles
-	 */
-	add_editor_style( array( get_template_directory_uri() . '/editor-style.css', toujours_fonts_url() ) );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function toujours_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on toujours, use a find and replace
+		 * to change 'toujours' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'toujours', get_template_directory() . '/languages' );
 
-	/*
-	 * Custom image sizes
-	 */
-	add_image_size( 'toujours-banner', 1160, 600, true );
-	add_image_size( 'toujours-featured', 940, 9999 );
-	add_image_size( 'toujours-trio', 680, 383, true ); /* image size larger for mobile */
-
-	/*
-	 * Register menu locations
-	 *
-	 * Include check to see if jetpack_social_menu supported
-	 */
-	if ( ! function_exists( 'jetpack_social_menu' ) ) {
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'toujours' ),
-			'social' => esc_html__( 'Social Menu', 'toujours' ),
-		) );
-	} else {
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'toujours' ),
-		) );
-	}
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'audio',
-		'gallery',
-		'image',
-		'video',
-		'quote',
-		'link',
-		'status',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'toujours_custom_background_args', array(
-		'default-color' => 'eeeeee',
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
 		/*
-		 * We're using a unique filename for the background image
-		 * to avoid users uploading a file with the same filename
-		 * and avoiding conflict with the `user-background` body_class
-		 * in inc/extras.php and assets/js/customizer.js
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
 		 */
+		add_theme_support( 'title-tag' );
 
-	 	'default-image' => esc_url( get_template_directory_uri() ) . '/images/toujoursbackground20160105.png',
-	) ) );
-}
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => esc_html__( 'Blue', 'toujours' ),
+					'slug'  => 'blue',
+					'color' => '#2590ec',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'toujours' ),
+					'slug'  => 'dark-gray',
+					'color' => '#404040',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'toujours' ),
+					'slug'  => 'medium-gray',
+					'color' => '#666',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'toujours' ),
+					'slug'  => 'light-gray',
+					'color' => '#eee',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'toujours' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				),
+			)
+		);
+
+		/*
+		 * Editor styles
+		 */
+		add_editor_style( array( get_template_directory_uri() . '/editor-style.css', toujours_fonts_url() ) );
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		/*
+		 * Custom image sizes
+		 */
+		add_image_size( 'toujours-banner', 1160, 600, true );
+		add_image_size( 'toujours-featured', 940, 9999 );
+		add_image_size( 'toujours-trio', 680, 383, true ); /* image size larger for mobile */
+
+		/*
+		 * Register menu locations
+		 *
+		 * Include check to see if jetpack_social_menu supported
+		 */
+		if ( ! function_exists( 'jetpack_social_menu' ) ) {
+			register_nav_menus(
+				array(
+					'primary' => esc_html__( 'Primary Menu', 'toujours' ),
+					'social'  => esc_html__( 'Social Menu', 'toujours' ),
+				)
+			);
+		} else {
+			register_nav_menus(
+				array(
+					'primary' => esc_html__( 'Primary Menu', 'toujours' ),
+				)
+			);
+		}
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
+
+		/*
+		 * Enable support for Post Formats.
+		 * See https://developer.wordpress.org/themes/functionality/post-formats/
+		 */
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'audio',
+				'gallery',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'status',
+			)
+		);
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'toujours_custom_background_args',
+				array(
+					'default-color' => 'eeeeee',
+
+					/*
+					* We're using a unique filename for the background image
+					* to avoid users uploading a file with the same filename
+					* and avoiding conflict with the `user-background` body_class
+					* in inc/extras.php and assets/js/customizer.js
+					*/
+
+					'default-image' => esc_url( get_template_directory_uri() ) . '/images/toujoursbackground20160105.png',
+				)
+			)
+		);
+	}
 endif; // toujours_setup
 add_action( 'after_setup_theme', 'toujours_setup' );
 
@@ -195,19 +213,19 @@ function toujours_recent_three_posts() {
 		$exclude_tag = '';
 		if ( toujours_has_banner_posts( 1 ) ) {
 			$featured_options = get_option( 'featured-content' );
-			$featured_tag_id = $featured_options[ 'tag-id' ];
-			$featured_show = $featured_options[ 'show-all' ];
+			$featured_tag_id  = $featured_options['tag-id'];
+			$featured_show    = $featured_options['show-all'];
 
 			if ( 0 == $featured_show ) {
 				$exclude_tag = $featured_tag_id;
 			}
 		}
 
-		$args = array(
+		$args   = array(
 			'ignore_sticky_posts' => 1,
-			'post__not_in'   => get_option( 'sticky_posts' ),
-			'posts_per_page' => '3',
-			'tag__not_in' => array( $exclude_tag ),
+			'post__not_in'        => get_option( 'sticky_posts' ),
+			'posts_per_page'      => '3',
+			'tag__not_in'         => array( $exclude_tag ),
 		);
 		$latest = new WP_Query();
 		$latest->query( $args );
@@ -258,7 +276,7 @@ add_action( 'pre_get_posts', 'toujours_home_posts' );
  * Wrap avatars in HTML for easier styling
  */
 function toujours_get_avatar( $avatar ) {
-	if( ! is_admin() ) {
+	if ( ! is_admin() ) {
 		$avatar = '<span class="avatar-container"><span class="avatar-crop">' . $avatar . '</span></span>';
 	}
 	return $avatar;
@@ -311,25 +329,29 @@ function toujours_fonts_url() {
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function toujours_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'toujours' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'toujours' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'toujours' ),
-		'id'            => 'footer',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'toujours' ),
+			'id'            => 'footer',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'toujours_widgets_init' );
 
@@ -342,11 +364,11 @@ add_action( 'widgets_init', 'toujours_widgets_init' );
  * @return  integer number of widgets in the sidebar
  */
 function toujours_count_widgets( $id ) {
-	$count = 0;
+	$count            = 0;
 	$sidebars_widgets = wp_get_sidebars_widgets();
 
 	if ( array_key_exists( $id, $sidebars_widgets ) ) {
-		$count = (int) count( (array) $sidebars_widgets[$id] );
+		$count = (int) count( (array) $sidebars_widgets[ $id ] );
 	}
 	return $count;
 }
@@ -409,7 +431,7 @@ function toujours_scripts() {
 	wp_enqueue_script( 'toujours-global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'flexslider', 'masonry' ), '20151215', true );
 	// Localize 'Previous' and 'Next' links in slideshow
 	$translation_array = array(
-		'next_link' => esc_html__( 'Next Slide', 'toujours' ),
+		'next_link'     => esc_html__( 'Next Slide', 'toujours' ),
 		'previous_link' => esc_html__( 'Previous Slide', 'toujours' ),
 	);
 	wp_localize_script( 'toujours-global', 'toujours_script_strings', $translation_array );

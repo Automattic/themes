@@ -18,7 +18,6 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function maywood_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 

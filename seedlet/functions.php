@@ -24,6 +24,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
+
 	function seedlet_setup() {
 		/*
 		 * Make theme available for translation.

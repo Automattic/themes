@@ -14,6 +14,7 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function dyad_2_setup() {
+
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -36,22 +37,27 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		/**
 		 * Add custom logo support
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 300,
-			'width'       => 600,
-			'flex-width'  => true,
-   			'header-text' => array(
-				'site-title',
-				'site-description',
-			),
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 300,
+				'width'       => 600,
+				'flex-width'  => true,
+				'header-text' => array(
+					'site-title',
+					'site-description',
+				),
+			)
+		);
 
 		/*
 		 * Register menus
 		 */
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary Menu', 'dyad-2' ),
-		) );
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary Menu', 'dyad-2' ),
+			)
+		);
 
 		/*
 		 * Add Post Format support
@@ -76,12 +82,15 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Load default block styles.
 		add_theme_support( 'wp-block-styles' );
@@ -100,43 +109,46 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		add_editor_style( dyad_2_fonts_url() );
 
 		// Add support for custom color scheme.
-		add_theme_support( 'editor-color-palette', array(
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => esc_html__( 'Bright Blue', 'dyad-2' ),
-				'slug'  => 'bright-blue',
-				'color' => '#678db8',
-			),
-			array(
-				'name'  => esc_html__( 'Yellow', 'dyad-2' ),
-				'slug'  => 'yellow',
-				'color' => '#e7ae01',
-			),
-			array(
-				'name'  => esc_html__( 'Light Gray-Blue', 'dyad-2' ),
-				'slug'  => 'light-gray-blue',
-				'color' => '#abb7c3',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'dyad-2' ),
-				'slug'  => 'medium-gray',
-				'color' => '#6a6c6e',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'dyad-2' ),
-				'slug'  => 'dark-gray',
-				'color' => '#1a1c1e',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray-Blue', 'dyad-2' ),
-				'slug'  => 'dark-gray-blue',
-				'color' => '#292c2f',
-			),
-			array(
-				'name'  => esc_html__( 'White', 'dyad-2' ),
-				'slug'  => 'white',
-				'color' => '#fff',
-			),
-		) );
+				array(
+					'name'  => esc_html__( 'Bright Blue', 'dyad-2' ),
+					'slug'  => 'bright-blue',
+					'color' => '#678db8',
+				),
+				array(
+					'name'  => esc_html__( 'Yellow', 'dyad-2' ),
+					'slug'  => 'yellow',
+					'color' => '#e7ae01',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray-Blue', 'dyad-2' ),
+					'slug'  => 'light-gray-blue',
+					'color' => '#abb7c3',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'dyad-2' ),
+					'slug'  => 'medium-gray',
+					'color' => '#6a6c6e',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'dyad-2' ),
+					'slug'  => 'dark-gray',
+					'color' => '#1a1c1e',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray-Blue', 'dyad-2' ),
+					'slug'  => 'dark-gray-blue',
+					'color' => '#292c2f',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'dyad-2' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				),
+			)
+		);
 
 	}
 endif; // dyad_2_setup
@@ -174,15 +186,17 @@ add_filter( 'excerpt_more', 'dyad_2_excerpt_continue_reading' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function dyad_2_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'dyad-2' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Displays in footer area.', 'dyad-2' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'dyad-2' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Displays in footer area.', 'dyad-2' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'dyad_2_widgets_init' );
 
@@ -194,12 +208,12 @@ add_action( 'widgets_init', 'dyad_2_widgets_init' );
  * @return  integer number of widgets in the sidebar
  */
 function dyad_2_count_widgets( $id ) {
-	$count = 0;
+	$count            = 0;
 	$sidebars_widgets = wp_get_sidebars_widgets();
 
 	if ( array_key_exists( $id, $sidebars_widgets ) ) {
 
-		foreach ( ( array ) $sidebars_widgets[$id] as $value ) {
+		foreach ( (array) $sidebars_widgets[ $id ] as $value ) {
 			// Don't count the Cookies or Mailchimp widgets, since they're not visible in the widget area.
 			if ( strpos( $value, 'eu_cookie_law_widget' ) === false && strpos( $value, 'widget_mailchimp_subscriber_popup' ) === false ) {
 				$count++;
@@ -235,7 +249,7 @@ function dyad_2_widget_column_class( $widget_id ) {
  * Wrap avatars in div for easier styling
  */
 function dyad_2_get_avatar( $avatar ) {
-	if( ! is_admin() ) {
+	if ( ! is_admin() ) {
 		$avatar = '<span class="avatar-container">' . $avatar . '</span>';
 	}
 	return $avatar;

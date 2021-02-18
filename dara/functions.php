@@ -8,134 +8,148 @@
  */
 
 if ( ! function_exists( 'dara_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function dara_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on components, use a find and replace
-	 * to change 'dara' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'dara', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
+	function dara_setup() {
 
-	 add_theme_support( 'post-thumbnails' );
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on components, use a find and replace
+		 * to change 'dara' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'dara', get_template_directory() . '/languages' );
 
-	// Post thumbnails
-	add_image_size( 'dara-featured-image', 880, 312, true );
-	// Hero Image on the front page slider
-	add_image_size( 'dara-hero-thumbnail', 1180, 600, true );
-	// Full width and grid page template
-	add_image_size( 'dara-page-thumbnail', 1180, 435, true );
-	// Grid child page thumbnail
-	add_image_size( 'dara-grid-thumbnail', 360, 242, true );
-	// Testimonial thumbnail
-	add_image_size( 'dara-testimonial-thumbnail', 180, 180, true );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-	// Add custom colors to Gutenberg
-	add_theme_support(
-		'editor-color-palette', array(
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+
+		 add_theme_support( 'post-thumbnails' );
+
+		// Post thumbnails
+		add_image_size( 'dara-featured-image', 880, 312, true );
+		// Hero Image on the front page slider
+		add_image_size( 'dara-hero-thumbnail', 1180, 600, true );
+		// Full width and grid page template
+		add_image_size( 'dara-page-thumbnail', 1180, 435, true );
+		// Grid child page thumbnail
+		add_image_size( 'dara-grid-thumbnail', 360, 242, true );
+		// Testimonial thumbnail
+		add_image_size( 'dara-testimonial-thumbnail', 180, 180, true );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => esc_html__( 'Black', 'dara' ),
-				'slug' => 'black',
-				'color' => '#404040',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'dara' ),
-				'slug' => 'dark-gray',
-				'color' => '#444340',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'dara' ),
-				'slug' => 'medium-gray',
-				'color' => '#a8a6a1',
-			),
-			array(
-				'name'  => esc_html__( 'Light Gray', 'dara' ),
-				'slug' => 'light-gray',
-				'color' => '#e6e6e6',
-			),
-			array(
-				'name'  => esc_html__( 'White', 'dara' ),
-				'slug' => 'white',
-				'color' => '#ffffff',
-			),
-			array(
-				'name'  => esc_html__( 'Blue', 'dara' ),
-				'slug' => 'blue',
-				'color' => '#15b6b8',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Blue', 'dara' ),
-				'slug' => 'dark-blue',
-				'color' => '#0c8384',
+				array(
+					'name'  => esc_html__( 'Black', 'dara' ),
+					'slug'  => 'black',
+					'color' => '#404040',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'dara' ),
+					'slug'  => 'dark-gray',
+					'color' => '#444340',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'dara' ),
+					'slug'  => 'medium-gray',
+					'color' => '#a8a6a1',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'dara' ),
+					'slug'  => 'light-gray',
+					'color' => '#e6e6e6',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'dara' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Blue', 'dara' ),
+					'slug'  => 'blue',
+					'color' => '#15b6b8',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Blue', 'dara' ),
+					'slug'  => 'dark-blue',
+					'color' => '#0c8384',
+				),
 			)
-		)
-	);
+		);
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Header', 'dara' ),
-	) );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Header', 'dara' ),
+			)
+		);
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'dara_custom_background_args', array(
-		'default-color' => '444340',
-	) ) );
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'dara_custom_background_args',
+				array(
+					'default-color' => '444340',
+				)
+			)
+		);
 
-	// Add theme support for custom logos
-	add_theme_support( 'custom-logo',
-		array(
-			'width'       => 1200,
-			'height'      => 300,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
+		// Add theme support for custom logos
+		add_theme_support(
+			'custom-logo',
+			array(
+				'width'       => 1200,
+				'height'      => 300,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
-	// Add theme support for excerpts on pages
-	add_post_type_support( 'page', 'excerpt' );
-}
+		// Add theme support for excerpts on pages
+		add_post_type_support( 'page', 'excerpt' );
+	}
 endif;
 add_action( 'after_setup_theme', 'dara_setup' );
 
@@ -190,12 +204,12 @@ function dara_fonts_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
 	 */
-	$source_sans_pro = esc_html_x( 'on', 'Source Sans Pro font: on or off',	 'dara' );
+	$source_sans_pro = esc_html_x( 'on', 'Source Sans Pro font: on or off', 'dara' );
 
 	/* translators: If there are characters in your language that are not supported
 	 * by Yrsa, translate this to 'off'. Do not translate into your own language.
 	 */
-	$yrsa = esc_html_x( 'on', 'Yrsa font: on or off',  'dara' );
+	$yrsa = esc_html_x( 'on', 'Yrsa font: on or off', 'dara' );
 
 	if ( 'off' !== $source_sans_pro || 'off' !== $merriweather || 'off' !== $Yrsa ) {
 		$font_families = array();
@@ -210,7 +224,7 @@ function dara_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -222,38 +236,46 @@ function dara_fonts_url() {
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function dara_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'dara' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'dara' ),
-		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'dara' ),
-		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'dara' ),
-		'id'            => 'sidebar-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'dara' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 1', 'dara' ),
+			'id'            => 'sidebar-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'dara' ),
+			'id'            => 'sidebar-3',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 3', 'dara' ),
+			'id'            => 'sidebar-4',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'dara_widgets_init' );
 
@@ -279,7 +301,7 @@ function dara_scripts() {
 	}
 
 	// If there's an active Video widget, and it's (hopefully) in the footer widget area
-	if ( is_active_widget( '','', 'media_video' ) && ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) ) {
+	if ( is_active_widget( '', '', 'media_video' ) && ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) ) {
 		wp_enqueue_script( 'dara-video', get_template_directory_uri() . '/assets/js/video-widget.js', array( 'jquery' ), '20170608', true );
 	}
 
@@ -295,19 +317,19 @@ add_action( 'wp_enqueue_scripts', 'dara_scripts' );
  * Gutenberg Editor Styles
  */
 function dara_editor_styles() {
-	wp_enqueue_style( 'dara-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'dara-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'dara-fonts', dara_fonts_url() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
 }
 add_action( 'enqueue_block_editor_assets', 'dara_editor_styles' );
 
 if ( ! function_exists( 'dara_continue_reading_link' ) ) :
-/**
- * Returns an ellipsis and "Continue reading" plus off-screen title link for excerpts
- */
-function dara_continue_reading_link() {
-	return '&hellip; <a href="'. esc_url( get_permalink() ) . '" class="more-link">' . sprintf( __( 'Continue reading <span class="screen-reader-text">%1$s</span>', 'dara' ), esc_attr( strip_tags( get_the_title() ) ) ) . '</a>';
-}
+	/**
+	 * Returns an ellipsis and "Continue reading" plus off-screen title link for excerpts
+	 */
+	function dara_continue_reading_link() {
+		return '&hellip; <a href="' . esc_url( get_permalink() ) . '" class="more-link">' . sprintf( __( 'Continue reading <span class="screen-reader-text">%1$s</span>', 'dara' ), esc_attr( strip_tags( get_the_title() ) ) ) . '</a>';
+	}
 endif; // dara_continue_reading_link
 
 /**

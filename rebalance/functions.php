@@ -8,138 +8,157 @@
  */
 
 if ( ! function_exists( 'rebalance_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function rebalance_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on rebalance, use a find and replace
-	 * to change 'rebalance' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'rebalance', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
-
-	// Add custom colors to Gutenberg
-	add_theme_support(
-		'editor-color-palette', array(
-			array(
-				'name'  => esc_html__( 'Black', 'rebalance' ),
-				'slug' => 'black',
-				'color' => '#000000',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'rebalance' ),
-				'slug' => 'dark-gray',
-				'color' => '#666666',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'rebalance' ),
-				'slug' => 'medium-gray',
-				'color' => '#999999',
-			),
-			array(
-				'name'  => esc_html__( 'Light Gray', 'rebalance' ),
-				'slug' => 'light-gray',
-				'color' => '#cccccc',
-			),
-			array(
-				'name'  => esc_html__( 'White', 'rebalance' ),
-				'slug' => 'white',
-				'color' => '#ffffff',
-			),
-			array(
-				'name'  => esc_html__( 'Red', 'rebalance' ),
-				'slug' => 'red',
-				'color' => '#f35029',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Red', 'rebalance' ),
-				'slug' => 'dark-red',
-				'color' => '#aa2e11',
-			),
-		)
-	);
-
 	/**
-	 * Add support for core custom logo (replaces JetPack functionality)
-	 * - also see fallback in inc/jetpack.php
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 80,
-		'width'       => 80,
-		'flex-width'  => true,
-		'header-text' => array(
-			'site-title',
-			'site-description'
-		),
-	) );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 720, 1200 );
-	add_image_size( 'rebalance-archive', 560, 9999 );
 
-	/*
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus( array(
-		'header' => esc_html__( 'Header Menu', 'rebalance' ),
-		'social'  => esc_html__( 'Social Menu', 'rebalance' )
-	) );
+	function rebalance_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on rebalance, use a find and replace
+		 * to change 'rebalance' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'rebalance', get_template_directory() . '/languages' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'rebalance_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-}
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => esc_html__( 'Black', 'rebalance' ),
+					'slug'  => 'black',
+					'color' => '#000000',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'rebalance' ),
+					'slug'  => 'dark-gray',
+					'color' => '#666666',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'rebalance' ),
+					'slug'  => 'medium-gray',
+					'color' => '#999999',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'rebalance' ),
+					'slug'  => 'light-gray',
+					'color' => '#cccccc',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'rebalance' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Red', 'rebalance' ),
+					'slug'  => 'red',
+					'color' => '#f35029',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Red', 'rebalance' ),
+					'slug'  => 'dark-red',
+					'color' => '#aa2e11',
+				),
+			)
+		);
+
+		/**
+		 * Add support for core custom logo (replaces JetPack functionality)
+		 * - also see fallback in inc/jetpack.php
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 80,
+				'width'       => 80,
+				'flex-width'  => true,
+				'header-text' => array(
+					'site-title',
+					'site-description',
+				),
+			)
+		);
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 720, 1200 );
+		add_image_size( 'rebalance-archive', 560, 9999 );
+
+		/*
+		 * This theme uses wp_nav_menu() in one location.
+		 */
+		register_nav_menus(
+			array(
+				'header' => esc_html__( 'Header Menu', 'rebalance' ),
+				'social' => esc_html__( 'Social Menu', 'rebalance' ),
+			)
+		);
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
+
+		/*
+		 * Enable support for Post Formats.
+		 * See https://developer.wordpress.org/themes/functionality/post-formats/
+		 */
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+			)
+		);
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'rebalance_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+	}
 endif; // rebalance_setup
 add_action( 'after_setup_theme', 'rebalance_setup' );
 
@@ -161,15 +180,17 @@ add_action( 'after_setup_theme', 'rebalance_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function rebalance_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'rebalance' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'rebalance' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'rebalance_widgets_init' );
 
@@ -241,9 +262,13 @@ function rebalance_scripts() {
 	wp_enqueue_script( 'rebalance-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151112', true );
 
 	wp_enqueue_script( 'rebalance-theme-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery', 'columnlist', 'masonry' ), '20151130', true );
-	wp_localize_script( 'rebalance-theme-scripts', 'Rebalance', array(
-		'is_rtl' => ( 'rtl' == get_option( 'text_direction' ) ) ? 1 : 0,
-	) );
+	wp_localize_script(
+		'rebalance-theme-scripts',
+		'Rebalance',
+		array(
+			'is_rtl' => ( 'rtl' == get_option( 'text_direction' ) ) ? 1 : 0,
+		)
+	);
 
 	wp_enqueue_script( 'rebalance-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151112', true );
 
@@ -251,10 +276,14 @@ function rebalance_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_localize_script( 'rebalance-navigation', 'rebalanceScreenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'rebalance' ),
-		'collapse' => esc_html__( 'collapse child menu', 'rebalance' ),
-	) );
+	wp_localize_script(
+		'rebalance-navigation',
+		'rebalanceScreenReaderText',
+		array(
+			'expand'   => esc_html__( 'expand child menu', 'rebalance' ),
+			'collapse' => esc_html__( 'collapse child menu', 'rebalance' ),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'rebalance_scripts' );
 
@@ -262,7 +291,7 @@ add_action( 'wp_enqueue_scripts', 'rebalance_scripts' );
  * Gutenberg Editor Styles
  */
 function rebalance_editor_styles() {
-	wp_enqueue_style( 'rebalance-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'rebalance-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'rebalance-fonts', rebalance_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'rebalance_editor_styles' );
@@ -270,8 +299,8 @@ add_action( 'enqueue_block_editor_assets', 'rebalance_editor_styles' );
 /**
  * Check whether the browser supports JavaScript
  */
-function rebalance_html_js_class () {
-	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
+function rebalance_html_js_class() {
+	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>' . "\n";
 }
 add_action( 'wp_head', 'rebalance_html_js_class', 1 );
 

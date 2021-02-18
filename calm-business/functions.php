@@ -8,32 +8,31 @@
  */
 
 if ( ! function_exists( 'calm_business_setup' ) ) {
-    /**
-     * Sets up theme defaults and registers support for various WordPress features.
-     *
-     * Note that this function is hooked into the after_setup_theme hook, which
-     * runs before the init hook. The init hook is too late for some features, such
-     * as indicating support for post thumbnails.
-     */
-    function calm_business_setup() {
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function calm_business_setup() {
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 176,
+				'width'       => 176,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title' ),
+			)
+		);
 
-        /**
-         * Add support for core custom logo.
-         *
-         * @link https://codex.wordpress.org/Theme_Logo
-         */
-        add_theme_support(
-            'custom-logo',
-            array(
-                'height'      => 176,
-                'width'       => 176,
-                'flex-width'  => true,
-                'flex-height' => false,
-                'header-text' => array( 'site-title' ),
-            )
-        );
-
-        // Editor color palette.
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
@@ -64,7 +63,7 @@ if ( ! function_exists( 'calm_business_setup' ) ) {
 				),
 			)
 		);
-    }
+	}
 } // calm_business_setup
 add_action( 'after_setup_theme', 'calm_business_setup', 30 );
 
