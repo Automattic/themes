@@ -13,8 +13,7 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-
-	function independent_publisher_2_setup() {
+	 function independent_publisher_2_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -91,9 +90,6 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 			)
 		);
 
-		// Load regular editor styles into the new block-based editor.
-		add_theme_support( 'editor-styles' );
-
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
@@ -135,11 +131,15 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 			)
 		);
 
+		// Load regular editor styles into the new block-based editor.
 		add_theme_support( 'editor-styles' );
-		add_editor_style( array(
-			get_stylesheet_uri(),
-			'independent-pub-block-editor-style',
-		) );
+		add_editor_style(
+			array(
+				'style.css',
+				'/css/blocks.css',
+				'/css/editor-blocks.css',
+			)
+		);
 	}
 endif; // independent_publisher_2_setup
 add_action( 'after_setup_theme', 'independent_publisher_2_setup' );
