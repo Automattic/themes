@@ -8,65 +8,65 @@
  */
 
 if ( ! function_exists( 'sophisticated_business_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function sophisticated_business_setup() {
-	// Switches Gutenberg controls to work against a dark background.
-	add_theme_support( 'dark-editor-style' );
-
 	/**
-	 * Add support for core custom logo.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 120,
-			'width'       => 190,
-			'flex-width'  => true,
-			'flex-height' => false,
-			'header-text' => array( 'site-title' ),
-		)
-	);
+	function sophisticated_business_setup() {
+		// Switches Gutenberg controls to work against a dark background.
+		add_theme_support( 'dark-editor-style' );
 
-	// Editor color palette.
-	add_theme_support(
-		'editor-color-palette',
-		array(
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
 			array(
-				'name'  => __( 'Primary', 'sophisticated-business' ),
-				'slug'  => 'primary',
-				'color' => '#caab57', // $color__link
-			),
+				'height'      => 120,
+				'width'       => 190,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title' ),
+			)
+		);
+
+		// Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => __( 'Secondary', 'sophisticated-business' ),
-				'slug'  => 'secondary',
-				'color' => '#b59439', // $color__border-link-hover
-			),
-			array(
-				'name'  => __( 'Dark Gray', 'sophisticated-business' ),
-				'slug'  => 'dark-gray',
-				'color' => '#1c1c1c', // $color__text-screen
-			),
-			array(
-				'name'  => __( 'Light Gray', 'sophisticated-business' ),
-				'slug'  => 'light-gray',
-				'color' => '#cccccc', // $color__text-light
-			),
-			array(
-				'name'  => __( 'White', 'sophisticated-business' ),
-				'slug'  => 'white',
-				'color' => '#ffffff',
-			),
-		)
-	);
-}
+				array(
+					'name'  => __( 'Primary', 'sophisticated-business' ),
+					'slug'  => 'primary',
+					'color' => '#caab57', // $color__link
+				),
+				array(
+					'name'  => __( 'Secondary', 'sophisticated-business' ),
+					'slug'  => 'secondary',
+					'color' => '#b59439', // $color__border-link-hover
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'sophisticated-business' ),
+					'slug'  => 'dark-gray',
+					'color' => '#1c1c1c', // $color__text-screen
+				),
+				array(
+					'name'  => __( 'Light Gray', 'sophisticated-business' ),
+					'slug'  => 'light-gray',
+					'color' => '#cccccc', // $color__text-light
+				),
+				array(
+					'name'  => __( 'White', 'sophisticated-business' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+			)
+		);
+	}
 endif; // sophisticated_business_setup
 add_action( 'after_setup_theme', 'sophisticated_business_setup', 30 );
 
@@ -167,4 +167,3 @@ require get_stylesheet_directory() . '/inc/jetpack.php';
  * Customizer additions.
  */
 require get_stylesheet_directory() . '/inc/customizer.php';
-

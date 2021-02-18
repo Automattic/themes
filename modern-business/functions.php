@@ -22,14 +22,14 @@ if ( ! function_exists( 'modern_business_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
-				'custom-logo',
-				array(
-						'height'      => 128,
-						'width'       => 128,
-						'flex-width'  => true,
-						'flex-height' => false,
-						'header-text' => array( 'site-title' ),
-				)
+			'custom-logo',
+			array(
+				'height'      => 128,
+				'width'       => 128,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title' ),
+			)
 		);
 
 		// Editor color palette.
@@ -67,7 +67,6 @@ if ( ! function_exists( 'modern_business_setup' ) ) :
 endif; // modern_business_setup
 add_action( 'after_setup_theme', 'modern_business_setup', 30 );
 
-
 function modern_business_fonts_url() {
 	$fonts_url = '';
 	/* Translators: If there are characters in your language that are not
@@ -84,7 +83,7 @@ function modern_business_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 	return esc_url_raw( $fonts_url );
 }

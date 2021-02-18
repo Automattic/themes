@@ -8,64 +8,63 @@
  */
 
 if ( ! function_exists( 'friendly_business_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function friendly_business_setup() {
-
 	/**
-	 * Add support for core custom logo.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 180,
-			'width'       => 180,
-			'flex-width'  => true,
-			'flex-height' => false,
-			'header-text' => array( 'site-title' ),
-		)
-	);
+	function friendly_business_setup() {
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 180,
+				'width'       => 180,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title' ),
+			)
+		);
 
-	// Editor color palette.
-	add_theme_support(
-		'editor-color-palette',
-		array(
+		// Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => __( 'Primary', 'friendly-business' ),
-				'slug'  => 'primary',
-				'color' => '#20603c', // $color__link
-			),
-			array(
-				'name'  => __( 'Secondary', 'friendly-business' ),
-				'slug'  => 'secondary',
-				'color' => '#133a24', // $color__border-link-hover
-			),
-			array(
-				'name'  => __( 'Dark Gray', 'friendly-business' ),
-				'slug'  => 'dark-gray',
-				'color' => '#3c2323', // $color__text-main
-			),
-			array(
-				'name'  => __( 'Light Gray', 'friendly-business' ),
-				'slug'  => 'light-gray',
-				'color' => '#0d1b24', // $color__text-dark
-			),
+				array(
+					'name'  => __( 'Primary', 'friendly-business' ),
+					'slug'  => 'primary',
+					'color' => '#20603c', // $color__link
+				),
+				array(
+					'name'  => __( 'Secondary', 'friendly-business' ),
+					'slug'  => 'secondary',
+					'color' => '#133a24', // $color__border-link-hover
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'friendly-business' ),
+					'slug'  => 'dark-gray',
+					'color' => '#3c2323', // $color__text-main
+				),
+				array(
+					'name'  => __( 'Light Gray', 'friendly-business' ),
+					'slug'  => 'light-gray',
+					'color' => '#0d1b24', // $color__text-dark
+				),
 
-			array(
-				'name'  => __( 'White', 'friendly-business' ),
-				'slug'  => 'white',
-				'color' => '#ffffff',
-			),
-		)
-	);
-}
+				array(
+					'name'  => __( 'White', 'friendly-business' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+			)
+		);
+	}
 endif; // friendly_business_setup
 add_action( 'after_setup_theme', 'friendly_business_setup', 30 );
 

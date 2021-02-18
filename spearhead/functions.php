@@ -18,7 +18,6 @@ if ( ! function_exists( 'spearhead_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function spearhead_setup() {
-
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
@@ -136,7 +135,7 @@ function spearhead_scripts() {
 	wp_dequeue_style( 'seedlet-custom-color-overrides' );
 	wp_enqueue_style( 'spearhead-variables-style', get_stylesheet_directory_uri() . '/variables.css', array(), wp_get_theme()->get( 'Version' ) );
 
-	if( false === get_theme_mod( 'color_darkmode_disable', false ) ) {
+	if ( false === get_theme_mod( 'color_darkmode_disable', false ) ) {
 		wp_enqueue_style( 'spearhead-variables-dark-style', get_stylesheet_directory_uri() . '/variables-dark.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
 

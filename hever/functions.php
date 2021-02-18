@@ -22,7 +22,6 @@ if ( ! function_exists( 'varia_default_colors' ) ) {
 }
 
 if ( ! function_exists( 'hever_setup' ) ) :
-
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *

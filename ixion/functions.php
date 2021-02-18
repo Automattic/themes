@@ -8,6 +8,7 @@
  */
 
 if ( ! function_exists( 'ixion_setup' ) ) :
+
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -37,40 +38,41 @@ if ( ! function_exists( 'ixion_setup' ) ) :
 		add_theme_support( 'align-wide' );
 		// Add custom colors to Gutenberg
 		add_theme_support(
-			'editor-color-palette', array(
+			'editor-color-palette',
+			array(
 				array(
 					'name'  => esc_html__( 'Black', 'ixion' ),
-					'slug' => 'black',
+					'slug'  => 'black',
 					'color' => '#192930',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Gray', 'ixion' ),
-					'slug' => 'dark-gray',
+					'slug'  => 'dark-gray',
 					'color' => '#474f53',
 				),
 				array(
 					'name'  => esc_html__( 'Medium Gray', 'ixion' ),
-					'slug' => 'medium-gray',
+					'slug'  => 'medium-gray',
 					'color' => '#a5a29d',
 				),
 				array(
 					'name'  => esc_html__( 'Light Gray', 'ixion' ),
-					'slug' => 'light-gray',
+					'slug'  => 'light-gray',
 					'color' => '#eeece8',
 				),
 				array(
 					'name'  => esc_html__( 'White', 'ixion' ),
-					'slug' => 'white',
+					'slug'  => 'white',
 					'color' => '#ffffff',
 				),
 				array(
 					'name'  => esc_html__( 'Yellow', 'ixion' ),
-					'slug' => 'yellow',
+					'slug'  => 'yellow',
 					'color' => '#d7b221',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Yellow', 'ixion' ),
-					'slug' => 'dark-yellow',
+					'slug'  => 'dark-yellow',
 					'color' => '#9c8012',
 				),
 			)
@@ -96,36 +98,50 @@ if ( ! function_exists( 'ixion_setup' ) ) :
 		add_image_size( 'ixion-avatar', 75, 75, true );
 
 		// This theme uses wp_nav_menu() in three locations.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Header', 'ixion' ),
-		) );
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Header', 'ixion' ),
+			)
+		);
 
 		/**
 		 * Add support for core custom logo.
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 100,
-			'width'       => 500,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 100,
+				'width'       => 500,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'ixion_custom_background_args', array(
-			'default-color' => 'ffffff',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'ixion_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+				)
+			)
+		);
 
 	}
 endif;
@@ -175,55 +191,65 @@ function ixion_the_custom_logo() {
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function ixion_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'ixion' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'ixion' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'ixion' ),
-		'id'            => 'sidebar-2',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 1', 'ixion' ),
+			'id'            => 'sidebar-2',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'ixion' ),
-		'id'            => 'sidebar-3',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'ixion' ),
+			'id'            => 'sidebar-3',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'ixion' ),
-		'id'            => 'sidebar-4',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 3', 'ixion' ),
+			'id'            => 'sidebar-4',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 4', 'ixion' ),
-		'id'            => 'sidebar-5',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 4', 'ixion' ),
+			'id'            => 'sidebar-5',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'ixion_widgets_init' );
 
@@ -241,7 +267,7 @@ function ixion_fonts_url_archivo() {
 
 	if ( 'off' !== $archivo ) {
 
-		$font_families = array();
+		$font_families   = array();
 		$font_families[] = 'Archivo Narrow:400,400i,700,700i';
 
 		$query_args = array(
@@ -269,7 +295,7 @@ function ixion_fonts_url_cooper() {
 	$cooper = esc_html_x( 'on', 'Cooper Hewitt font: on or off', 'ixion' );
 
 	if ( 'off' !== $cooper ) {
-		$fonts_url = get_template_directory_uri() . "/assets/fonts/cooperhewitt.css";
+		$fonts_url = get_template_directory_uri() . '/assets/fonts/cooperhewitt.css';
 	}
 
 	return $fonts_url;
@@ -308,7 +334,7 @@ add_action( 'wp_enqueue_scripts', 'ixion_scripts' );
  * Gutenberg Editor Styles
  */
 function ixion_editor_styles() {
-	wp_enqueue_style( 'ixion-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'ixion-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'ixion-fonts-archivo', ixion_fonts_url_archivo(), array(), null );
 	wp_enqueue_style( 'ixion-fonts-cooper', ixion_fonts_url_cooper(), array(), null );
 }
@@ -320,11 +346,12 @@ add_action( 'enqueue_block_editor_assets', 'ixion_editor_styles' );
  */
 if ( ! function_exists( 'ixion_excerpt_more' ) ) :
 	function ixion_excerpt_more( $more ) {
-		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+		$link = sprintf(
+			'<a href="%1$s" class="more-link">%2$s</a>',
 			esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
 			sprintf( esc_html__( 'Continue reading %s', 'ixion' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
-			);
+		);
 		return ' &hellip; ' . $link;
 	}
 	add_filter( 'excerpt_more', 'ixion_excerpt_more' );

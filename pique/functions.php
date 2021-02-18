@@ -45,44 +45,58 @@ if ( ! function_exists( 'pique_setup' ) ) :
 		add_image_size( 'pique-thumbnail-avatar', 100, 100, true );
 
 		// This theme uses wp_nav_menu() in three locations.
-		register_nav_menus( array(
-			'primary'   => esc_html__( 'Primary Menu', 'pique' ),
-			'secondary' => esc_html__( 'Secondary Menu', 'pique' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary'   => esc_html__( 'Primary Menu', 'pique' ),
+				'secondary' => esc_html__( 'Secondary Menu', 'pique' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/*
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'chat',
-			'gallery',
-			'image',
-			'video',
-			'quote',
-			'link',
-			'status',
-			'audio',
-		) );
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'chat',
+				'gallery',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'status',
+				'audio',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'pique_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'pique_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
@@ -91,43 +105,46 @@ if ( ! function_exists( 'pique_setup' ) ) :
 		add_theme_support( 'align-wide' );
 
 		// Add support for custom color scheme.
-		add_theme_support( 'editor-color-palette', array(
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => esc_html__( 'Dark Blue', 'pique' ),
-				'slug'  => 'dark-blue',
-				'color' => '#293940',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Blue', 'pique' ),
-				'slug'  => 'medium-blue',
-				'color' => '#3c7993',
-			),
-			array(
-				'name'  => esc_html__( 'Light Blue', 'pique' ),
-				'slug'  => 'light-blue',
-				'color' => '#83b6cc',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Brown', 'pique' ),
-				'slug'  => 'dark-brown',
-				'color' => '#2d2a26',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'pique' ),
-				'slug'  => 'dark-gray',
-				'color' => '#5d5d5d',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'pique' ),
-				'slug'  => 'medium-gray',
-				'color' => '#a9a9a9',
-			),
-			array(
-				'name'  => esc_html__( 'White', 'pique' ),
-				'slug'  => 'white',
-				'color' => '#fff',
-			),
-		) );
+				array(
+					'name'  => esc_html__( 'Dark Blue', 'pique' ),
+					'slug'  => 'dark-blue',
+					'color' => '#293940',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Blue', 'pique' ),
+					'slug'  => 'medium-blue',
+					'color' => '#3c7993',
+				),
+				array(
+					'name'  => esc_html__( 'Light Blue', 'pique' ),
+					'slug'  => 'light-blue',
+					'color' => '#83b6cc',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Brown', 'pique' ),
+					'slug'  => 'dark-brown',
+					'color' => '#2d2a26',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'pique' ),
+					'slug'  => 'dark-gray',
+					'color' => '#5d5d5d',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'pique' ),
+					'slug'  => 'medium-gray',
+					'color' => '#a9a9a9',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'pique' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				),
+			)
+		);
 	}
 endif; // pique_setup
 add_action( 'after_setup_theme', 'pique_setup' );
@@ -163,45 +180,53 @@ add_action( 'template_redirect', 'pique_content_width_tweak' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function pique_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'pique' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here to appear in your sidebar', 'pique' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'pique' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here to appear in your sidebar', 'pique' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'First Footer Widget Area', 'pique' ),
-		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Add widgets here to appear in your footer', 'pique' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'First Footer Widget Area', 'pique' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here to appear in your footer', 'pique' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Second Footer Widget Area', 'pique' ),
-		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here to appear in your footer', 'pique' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Second Footer Widget Area', 'pique' ),
+			'id'            => 'sidebar-3',
+			'description'   => esc_html__( 'Add widgets here to appear in your footer', 'pique' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Third Footer Widget Area', 'pique' ),
-		'id'            => 'sidebar-4',
-		'description'   => esc_html__( 'Add widgets here to appear in your footer', 'pique' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Third Footer Widget Area', 'pique' ),
+			'id'            => 'sidebar-4',
+			'description'   => esc_html__( 'Add widgets here to appear in your footer', 'pique' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'pique_widgets_init' );
 
@@ -321,7 +346,7 @@ function pique_query_vars( $qvars ) {
 	$qvars[] = 'pique_panel';
 	return $qvars;
 }
-add_filter( 'query_vars', 'pique_query_vars' , 10, 1 );
+add_filter( 'query_vars', 'pique_query_vars', 10, 1 );
 
 /**
  * Get random posts; a simple, more efficient approach.
@@ -329,11 +354,13 @@ add_filter( 'query_vars', 'pique_query_vars' , 10, 1 );
  * Also it works better with heavy caching.
  */
 function pique_get_random_posts( $number = 1, $post_type = 'post' ) {
-	$query = new WP_Query( array(
-		'posts_per_page' => 100,
-		'fields'         => 'ids',
-		'post_type'      => $post_type
-	) );
+	$query = new WP_Query(
+		array(
+			'posts_per_page' => 100,
+			'fields'         => 'ids',
+			'post_type'      => $post_type,
+		)
+	);
 
 	$post_ids = $query->posts;
 
@@ -341,11 +368,13 @@ function pique_get_random_posts( $number = 1, $post_type = 'post' ) {
 
 	$post_ids = array_splice( $post_ids, 0, $number );
 
-	$random_posts = get_posts( array(
-		'post__in'    => $post_ids,
-		'numberposts' => count( $post_ids ),
-		'post_type'   => $post_type
-	) );
+	$random_posts = get_posts(
+		array(
+			'post__in'    => $post_ids,
+			'numberposts' => count( $post_ids ),
+			'post_type'   => $post_type,
+		)
+	);
 
 	return $random_posts;
 }
@@ -381,4 +410,3 @@ require get_template_directory() . '/inc/jetpack.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
-

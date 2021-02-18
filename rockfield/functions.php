@@ -30,7 +30,6 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function rockfield_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -132,7 +131,7 @@ function rockfield_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('rockfield-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'rockfield-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'rockfield-style', 'rtl', 'replace' );

@@ -8,116 +8,134 @@
  */
 
 if ( ! function_exists( 'altofocus_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the aftercomponentsetup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function altofocus_setup() {
-
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on components, use a find and replace
-	 * to change 'altofocus' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'altofocus', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	add_image_size( 'altofocus-thumb-image', 640, 9999, false );
-	add_image_size( 'altofocus-post-featured-image', 1200, 800, false );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Top', 'altofocus' ),
-	) );
-
 	/**
-	 * Add support for core custom logo.
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the aftercomponentsetup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 200,
-		'width'       => 200,
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+	function altofocus_setup() {
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'altofocus_custom_background_args', array(
-		'default-color'      => 'ffffff',
-		'default-image'      => '',
-		'default-position-x' => 'center',
-		'default-position-y' => 'center',
-		'default-repeat'     => 'no-repeat',
-		'default-attachment' => 'fixed',
-		'default-size'       => 'cover',
-		'wp-head-callback'   => 'altofocus_custom_background_cb'
-	) ) );
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on components, use a find and replace
+		 * to change 'altofocus' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'altofocus', get_template_directory() . '/languages' );
 
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Add support for custom color scheme.
-	add_theme_support( 'editor-color-palette', array(
-		array(
-			'name'  => esc_html__( 'Orange', 'altofocus' ),
-			'slug'  => 'orange',
-			'color' => '#e38900',
-		),
-		array(
-			'name'  => esc_html__( 'Dark Gray', 'altofocus' ),
-			'slug'  => 'dark-gray',
-			'color' => '#111',
-		),
-		array(
-			'name'  => esc_html__( 'Medium Gray', 'altofocus' ),
-			'slug'  => 'medium-gray',
-			'color' => '#888',
-		),
-		array(
-			'name'  => esc_html__( 'Light Gray', 'altofocus' ),
-			'slug'  => 'light-gray',
-			'color' => '#ccc',
-		),
-		array(
-			'name'  => esc_html__( 'White', 'altofocus' ),
-			'slug'  => 'white',
-			'color' => '#fff',
-		),
-	) );
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
 
-}
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		add_image_size( 'altofocus-thumb-image', 640, 9999, false );
+		add_image_size( 'altofocus-post-featured-image', 1200, 800, false );
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Top', 'altofocus' ),
+			)
+		);
+
+		/**
+		 * Add support for core custom logo.
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 200,
+				'width'       => 200,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'altofocus_custom_background_args',
+				array(
+					'default-color'      => 'ffffff',
+					'default-image'      => '',
+					'default-position-x' => 'center',
+					'default-position-y' => 'center',
+					'default-repeat'     => 'no-repeat',
+					'default-attachment' => 'fixed',
+					'default-size'       => 'cover',
+					'wp-head-callback'   => 'altofocus_custom_background_cb',
+				)
+			)
+		);
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for custom color scheme.
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => esc_html__( 'Orange', 'altofocus' ),
+					'slug'  => 'orange',
+					'color' => '#e38900',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'altofocus' ),
+					'slug'  => 'dark-gray',
+					'color' => '#111',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'altofocus' ),
+					'slug'  => 'medium-gray',
+					'color' => '#888',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'altofocus' ),
+					'slug'  => 'light-gray',
+					'color' => '#ccc',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'altofocus' ),
+					'slug'  => 'white',
+					'color' => '#fff',
+				),
+			)
+		);
+
+	}
 endif;
 add_action( 'after_setup_theme', 'altofocus_setup' );
 
@@ -130,7 +148,7 @@ add_action( 'after_setup_theme', 'altofocus_setup' );
  */
 function altofocus_content_width() {
 
-	$GLOBALS[ 'content_width' ] = apply_filters( 'altofocus_content_width', '770' );
+	$GLOBALS['content_width'] = apply_filters( 'altofocus_content_width', '770' );
 }
 add_action( 'after_setup_theme', 'altofocus_content_width', 0 );
 
@@ -141,15 +159,17 @@ add_action( 'after_setup_theme', 'altofocus_content_width', 0 );
  */
 function altofocus_widgets_init() {
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'altofocus' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'altofocus' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'altofocus_widgets_init' );
 
@@ -292,16 +312,24 @@ function altofocus_scripts() {
 	}
 
 	// Screenreader text
-	wp_localize_script( 'altofocus-navigation', 'altoFocusScreenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'altofocus' ),
-		'collapse' => esc_html__( 'collapse child menu', 'altofocus' ),
-	) );
+	wp_localize_script(
+		'altofocus-navigation',
+		'altoFocusScreenReaderText',
+		array(
+			'expand'   => esc_html__( 'expand child menu', 'altofocus' ),
+			'collapse' => esc_html__( 'collapse child menu', 'altofocus' ),
+		)
+	);
 
 	// Flexslider text
-	wp_localize_script( 'altofocus-flexslider', 'altoFocusFlexSliderText', array(
-		'next'     => esc_html__( 'Next', 'altofocus' ),
-		'previous' => esc_html__( 'Previous', 'altofocus' ),
-	) );
+	wp_localize_script(
+		'altofocus-flexslider',
+		'altoFocusFlexSliderText',
+		array(
+			'next'     => esc_html__( 'Next', 'altofocus' ),
+			'previous' => esc_html__( 'Previous', 'altofocus' ),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'altofocus_scripts' );
 
@@ -325,7 +353,7 @@ add_action( 'enqueue_block_editor_assets', 'altofocus_block_editor_styles' );
  * Check whether the browser supports JavaScript
  */
 function altofocus_html_js_class() {
-	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
+	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>' . "\n";
 }
 add_action( 'wp_head', 'altofocus_html_js_class', 1 );
 

@@ -17,7 +17,6 @@ if ( ! function_exists( 'redhill_theme_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function redhill_theme_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 

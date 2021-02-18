@@ -18,7 +18,6 @@ if ( ! function_exists( 'brompton_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function brompton_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
