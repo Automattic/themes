@@ -98,6 +98,74 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- /wp:cover -->',
 				)
 			);
+
+			/* This pattern is WP.com-only because it relies on the Jetpack Subscription block. */
+			register_block_pattern(
+				'blank-canvas/links-subscription-form',
+				array(
+					'title'      => __( 'Subscription Form and Links', 'blank-canvas' ),
+					'categories' => array( 'link-in-bio' ),
+					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif","id":84,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
+									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:image {"align":"center","id":71,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-guitar.jpg" alt="' . __( 'Image of a man with a guitar.', 'blank-canvas' ) . '" class="wp-image-71" width="120" height="120"/></figure></div>
+									<!-- /wp:image -->
+
+									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"background"} -->
+									<h1 class="has-text-align-center has-background-color has-text-color"><strong>' . __( 'Narrow Dog', 'blank-canvas' ) . '</strong></h1>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph {"align":"center","textColor":"background"} -->
+									<p class="has-text-align-center has-background-color has-text-color"><em>' . __( 'Noise Rock from Milwaukee, WI', 'blank-canvas' ) . '</em></p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:spacer {"height":1} -->
+									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"background","textColor":"primary"} -->
+									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="16" custom_border_radius="0" custom_border_weight="1" custom_padding="15" custom_spacing="10" submit_button_classes="has-text-color has-primary-color has-background has-background-background-color" email_field_classes="" show_only_email_and_button="true"]</div>
+									<!-- /wp:jetpack/subscriptions -->
+
+									<!-- wp:buttons {"contentJustification":"left"} -->
+									<div class="wp-block-buttons is-content-justification-left"><!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Spotify', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Bandcamp', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Merch', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button -->
+
+									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Website', 'blank-canvas' ) . '</a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons -->
+
+									<!-- wp:spacer {"height":1} -->
+									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
+									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://spotify.com","service":"spotify"} /-->
+
+									<!-- wp:social-link {"url":"https://soundcloud.com","service":"soundcloud"} /-->
+
+									<!-- wp:social-link {"url":"https://apple.com/itunes","service":"chain"} /--></ul>
+									<!-- /wp:social-links -->
+
+									<!-- wp:spacer {"height":20} -->
+									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
 		}
 	}
 endif;
