@@ -228,6 +228,17 @@ function penscratch_2_scripts() {
 add_action( 'wp_enqueue_scripts', 'penscratch_2_scripts' );
 
 /**
+ * Enqueue editor styles for Gutenberg
+ */
+function penscratch_2_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'penscratch-2-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
+	// Fonts.
+	wp_enqueue_style( 'penscratch-2-fonts-url', penscratch_2_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'penscratch_2_block_editor_styles' );
+
+/**
  * Register Google Fonts
  */
 function penscratch_2_fonts_url() {
