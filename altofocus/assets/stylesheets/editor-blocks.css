@@ -10,9 +10,8 @@ Description: Used to style Gutenberg Blocks in the editor.
 2.0 General Block Styles
 3.0 Blocks - Common Blocks
 4.0 Blocks - Formatting
-5.0 Blocks - Layout Elements
-6.0 Blocks - Widgets
-7.0 Blocks - Animations
+5.0 Blocks - Widgets
+6.0 Blocks - Layout Elements
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -446,7 +445,34 @@ li > ol,
 }
 
 /*--------------------------------------------------------------
-5.0 Blocks - Layout Elements
+5.0 Blocks - Widgets
+--------------------------------------------------------------*/
+
+.wp-block-archives ul,
+.wp-block-categories ul,
+.wp-block-categories ul ul,
+.wp-block-latest-posts ul {
+	list-style: disc;
+}
+
+[data-align="center"] .wp-block-categories__list,
+[data-align="center"] .wp-block-archives,
+[data-align="center"] .wp-block-lastest-posts {
+	list-style-position: inside;
+}
+
+.wp-block-archives li,
+.wp-block-categories li,
+.wp-block-latest-posts li {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts.is-grid {
+	list-style: none;
+}
+
+/*--------------------------------------------------------------
+6.0 Blocks - Layout Elements
 --------------------------------------------------------------*/
 
 /* Button */
@@ -487,96 +513,4 @@ li > ol,
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-}
-
-/*--------------------------------------------------------------
-6.0 Blocks - Widgets
---------------------------------------------------------------*/
-
-.editor-styles-wrapper .wp-block-archives ul,
-.editor-styles-wrapper .wp-block-categories ul,
-.editor-styles-wrapper .wp-block-categories ul ul,
-.editor-styles-wrapper .wp-block-latest-posts ul {
-	list-style: disc;
-}
-
-[data-align="center"] .wp-block-categories__list,
-[data-align="center"] .wp-block-archives,
-[data-align="center"] .wp-block-lastest-posts {
-	list-style-position: inside;
-}
-
-.editor-styles-wrapper .wp-block-archives li,
-.editor-styles-wrapper .wp-block-categories li,
-.editor-styles-wrapper .wp-block-latest-posts li {
-	margin-bottom: 0;
-}
-
-.editor-styles-wrapper .wp-block-latest-posts.is-grid {
-	list-style: none;
-}
-
-/*--------------------------------------------------------------
-7.0 Blocks - Animations
---------------------------------------------------------------*/
-
-@-webkit-keyframes bounce-reveal {
-	0%,
-	100% {
-		-webkit-transform: scale(1);
-		transform: scale(1);
-	}
-	33% {
-		-webkit-transform: scale(1.1);
-		transform: scale(1.1);
-	}
-	66% {
-		-webkit-transform: scale(0.9);
-		transform: scale(0.9);
-	}
-}
-
-@-moz-keyframes bounce-reveal {
-	0%,
-	100% {
-		-moz-transform: scale(1);
-		transform: scale(1);
-	}
-	33% {
-		-moz-transform: scale(1.1);
-		transform: scale(1.1);
-	}
-	66% {
-		-moz-transform: scale(0.9);
-		transform: scale(0.9);
-	}
-}
-
-@-o-keyframes bounce-reveal {
-	0%,
-	100% {
-		-o-transform: scale(1);
-		transform: scale(1);
-	}
-	33% {
-		-o-transform: scale(1.1);
-		transform: scale(1.1);
-	}
-	66% {
-		-o-transform: scale(0.9);
-		transform: scale(0.9);
-	}
-}
-
-@keyframes bounce-reveal {
-	0%,
-	100% {
-		transform: scale(1);
-	}
-	33% {
-		transform: scale(1.1);
-	}
-	66% {
-		transform: scale(0.9);
-	}
 }
