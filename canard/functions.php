@@ -139,6 +139,17 @@ if ( ! function_exists( 'canard_setup' ) ) :
 				'gallery',
 			)
 		);
+
+		add_theme_support( 'editor-styles' );
+		add_editor_style(
+			array(
+				'style.css',
+				'blocks.css',
+				canard_pt_serif_playfair_display_font_url(),
+				canard_lato_inconsolata_fonts_url(),
+				'/genericons/genericons.css',
+			)
+		);
 	}
 endif; // canard_setup
 add_action( 'after_setup_theme', 'canard_setup' );
@@ -300,17 +311,6 @@ function canard_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'canard_scripts' );
-
-/**
- * Gutenberg Editor Styles
- */
-function canard_editor_styles() {
-	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
-	wp_enqueue_style( 'canard-pt-serif-playfair-display', canard_pt_serif_playfair_display_font_url() );
-	wp_enqueue_style( 'canard-lato-inconsolata', canard_lato_inconsolata_fonts_url() );
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
-}
-add_action( 'enqueue_block_editor_assets', 'canard_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
