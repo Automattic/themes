@@ -149,6 +149,18 @@ if ( ! function_exists( 'dara_setup' ) ) :
 
 		// Add theme support for excerpts on pages
 		add_post_type_support( 'page', 'excerpt' );
+
+		// Add support for Editor Styles
+		add_theme_support( 'editor-styles' );
+		add_editor_style(
+			array(
+				'style.css',
+				'blocks.css',
+				'editor-blocks.css',
+				'/assets/genericons/genericons.css',
+				dara_fonts_url(),
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'dara_setup' );
@@ -312,16 +324,6 @@ function dara_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'dara_scripts' );
-
-/**
- * Gutenberg Editor Styles
- */
-function dara_editor_styles() {
-	wp_enqueue_style( 'dara-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
-	wp_enqueue_style( 'dara-fonts', dara_fonts_url() );
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
-}
-add_action( 'enqueue_block_editor_assets', 'dara_editor_styles' );
 
 if ( ! function_exists( 'dara_continue_reading_link' ) ) :
 	/**
