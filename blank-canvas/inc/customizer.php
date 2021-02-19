@@ -135,7 +135,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 				'show_comments',
 				array(
 					'label'       => esc_html__( 'Make comments visible', 'blank-canvas' ),
-					'description' => esc_html__( 'Check to show comments underneath posts. Comments can be configured in "Settings > Discussion".', 'blank-canvas' ),
+					'description' => esc_html__( 'Check to show comments underneath posts. Comments can be configured in your site’s Discussion settings screen.', 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
 					'type'        => 'checkbox',
