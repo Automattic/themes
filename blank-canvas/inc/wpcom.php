@@ -16,6 +16,14 @@ function blank_canvas_wpcom_customize_update( $wp_customize ) {
 add_action( 'customize_register', 'blank_canvas_wpcom_customize_update', 11 );
 
 /**
+ * Enqueue CSS for Customizer message.
+ */
+function blank_canvas_customizer_enqueue() {
+	wp_enqueue_style( 'blank-canvas-customizer-style', get_stylesheet_directory_uri() . '/inc/wpcom-customizer.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'blank_canvas_customizer_enqueue' );
+
+/**
  * Register WP.com-only block patterns.
  */
 if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
