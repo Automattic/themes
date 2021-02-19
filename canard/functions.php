@@ -145,6 +145,7 @@ if ( ! function_exists( 'canard_setup' ) ) :
 			array(
 				'style.css',
 				'blocks.css',
+				'editor-blocks.css',
 				canard_pt_serif_playfair_display_font_url(),
 				canard_lato_inconsolata_fonts_url(),
 				'/genericons/genericons.css',
