@@ -92,6 +92,7 @@ if ( ! function_exists( 'libre_2_setup' ) ) :
 			array(
 				'style.css',
 				'/css/blocks.css',
+				'/css/editor-blocks.css',
 				libre_2_fonts_url(),
 			)
 		);
