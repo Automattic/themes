@@ -63,7 +63,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 				'show_site_header',
 				array(
 					'label'       => esc_html__( 'Enable site header and top menu', 'blank-canvas' ),
-					'description' => esc_html__( 'Check to show a standard site header, navigation menu and social links menu on the top of every page.', 'blank-canvas' ),
+					'description' => esc_html__( 'Check to show a standard site header, navigation menu and social links menu on the top of every page. These can be configured in the "Site Identity" and "Menus" panels.', 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
 					'type'        => 'checkbox',
