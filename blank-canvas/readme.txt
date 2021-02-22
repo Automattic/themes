@@ -16,6 +16,9 @@ The theme’s default styles are conservative, relying on simple sans-serif font
 
 == Changelog ==
 
+= 1.2.5 =
+* Revise "Musician Links" block pattern.
+
 = 1.2.4 =
 * Add additional block patterns.
 * Tidy up footer spacing. 
