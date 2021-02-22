@@ -32,9 +32,6 @@ if ( ! function_exists( 'libre_2_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		/* Add support for editor styles */
-		add_editor_style( array( 'editor-style.css', libre_2_fonts_url() ) );
-
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
@@ -88,8 +85,17 @@ if ( ! function_exists( 'libre_2_setup' ) ) :
 			)
 		);
 
-		// Load regular editor styles into the new block-based editor.
+		/* Add support for editor styles */
 		add_theme_support( 'editor-styles' );
+		// Load regular editor styles into the new block-based editor.
+		add_editor_style(
+			array(
+				'style.css',
+				'/css/blocks.css',
+				'/css/editor-blocks.css',
+				libre_2_fonts_url(),
+			)
+		);
 
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
@@ -259,19 +265,6 @@ function libre_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'libre_2_scripts' );
-
-/**
- * Enqueue editor styles for Gutenberg
- */
-function libre_2_block_editor_styles() {
-	// Block styles.
-	wp_enqueue_style( 'libre-2-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
-
-	// Fonts.
-	wp_enqueue_style( 'libre-2-fonts', libre_2_fonts_url(), array(), null );
-}
-add_action( 'enqueue_block_editor_assets', 'libre_2_block_editor_styles' );
-
 
 /*
  * Filters the Categories archive widget to add a span around the post count
