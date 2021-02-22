@@ -66,6 +66,9 @@ if ( ! function_exists( 'stratford_setup' ) ) :
 
 		// Remove footer menu
 		unregister_nav_menu( 'menu-2' );
+
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'stratford_setup', 12 );
