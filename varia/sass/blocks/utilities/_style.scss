@@ -149,6 +149,7 @@
 
 // Gutenberg background-color options
 .has-background {
+	a:not(.has-text-color),
 	p:not(.has-text-color),
 	h1:not(.has-text-color),
 	h2:not(.has-text-color),
@@ -185,9 +186,9 @@
 	background-color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
-.has-background-dim,
-.has-foreground-background-color,
-.has-foreground-background-color.has-background-dim {
+.has-background-dim:not(.has-text-color),
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 

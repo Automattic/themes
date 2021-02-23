@@ -615,6 +615,24 @@ input.has-focus[type="submit"],
 	background-color: indigo;
 }
 
+.has-background .wp-block-button__link:not(.has-background) {
+	background: white;
+}
+
+.has-background .wp-block-button__link:not(.has-text-color) {
+	color: blue;
+}
+
+.has-background .wp-block-button__link.is-style-outline:not(.has-background),
+.has-background .is-style-outline .wp-block-button__link:not(.has-background) {
+	background: transparent;
+}
+
+.has-background .wp-block-button__link.is-style-outline:not(.has-text-color),
+.has-background .is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: white;
+}
+
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
 	border: 2px solid currentcolor;
@@ -1105,6 +1123,7 @@ pre.wp-block-verse {
 	color: white;
 }
 
+.has-background a:not(.has-text-color),
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),

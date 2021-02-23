@@ -27,6 +27,27 @@
 		color: #{map-deep-get($config-button, "color", "text-hover")};
 		background-color: #{map-deep-get($config-button, "color", "background-hover")};
 	}
+	
+	.has-background & {
+		&:not(.has-background) {
+			background: #{map-deep-get($config-button, "color", "text")};
+
+		}
+		&:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "background")};
+		}
+	}
+	
+	.has-background &.is-style-outline,	
+	.has-background .is-style-outline & {		
+		&:not(.has-background) {
+			background: transparent;
+		}
+		
+		&:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "text")};
+		}
+	}
 
 	/* Outline Style */
 	&.is-style-outline,

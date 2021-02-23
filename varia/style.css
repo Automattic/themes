@@ -1453,6 +1453,24 @@ button[data-load-more-btn], .button {
 /**
  * Block Options
  */
+.has-background .wp-block-button .wp-block-button__link:not(.has-background) {
+	background: white;
+}
+
+.has-background .wp-block-button .wp-block-button__link:not(.has-text-color) {
+	color: blue;
+}
+
+.has-background .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background),
+.has-background .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background) {
+	background: transparent;
+}
+
+.has-background .wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
+.has-background .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: white;
+}
+
 .wp-block-button.is-style-outline.wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
 	border: 2px solid currentcolor;
@@ -2471,6 +2489,7 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: white;
 }
 
+.has-background a:not(.has-text-color),
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),
@@ -2507,9 +2526,9 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	background-color: #444444;
 }
 
-.has-background-dim,
-.has-foreground-background-color,
-.has-foreground-background-color.has-background-dim {
+.has-background-dim:not(.has-text-color),
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
 	color: white;
 }
 

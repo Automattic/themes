@@ -14,7 +14,31 @@ input[type="submit"],
  * Block Options
  */
 .wp-block-button {
-
+	
+	.has-background & { 
+		.wp-block-button__link {
+			&:not(.has-background) {
+				background: #{map-deep-get($config-button, "color", "text")};
+			}
+			
+			&:not(.has-text-color) {
+				color: #{map-deep-get($config-button, "color", "background")};
+			}
+		}
+	}
+	
+	.has-background &.is-style-outline.wp-block-button__link,
+	.has-background &.is-style-outline .wp-block-button__link {	
+			
+		&:not(.has-background) {
+			background: transparent;
+		}
+		
+		&:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "text")};
+		}
+	}
+	
 	// Outline Style
 	&.is-style-outline.wp-block-button__link,
 	&.is-style-outline .wp-block-button__link {
@@ -24,7 +48,7 @@ input[type="submit"],
 		&:not(.has-background) {
 			background: transparent;
 		}
-
+		
 		&:not(.has-text-color) {
 			color: #{map-deep-get($config-button, "color", "background")};
 		}
@@ -39,7 +63,7 @@ input[type="submit"],
 			color: #{map-deep-get($config-button, "color", "background-hover")};
 		}
 	}
-
+	
 	// Squared Style
 	&.is-style-squared,
 	&.is-style-squared .wp-block-button__link {
