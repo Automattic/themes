@@ -88,6 +88,10 @@ a {
 	&:hover {
 		color: #{map-deep-get($config-global, "color", "primary", "hover")};
 	}
+
+	.has-primary-background-color & {
+		color: #{map-deep-get($config-global, "color", "background", "default")};
+	}
 }
 
 button,
