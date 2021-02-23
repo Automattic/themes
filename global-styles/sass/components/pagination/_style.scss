@@ -1,0 +1,116 @@
+/* Next/Previous navigation */
+
+// All navigation
+.navigation {
+
+	color: var(--wp--preset--color--foreground);
+
+	a {
+		color: var(--wp--preset--color--primary);
+
+		&:hover {
+			color: var(--wp--preset--color--secondary);
+			border-color: var(--wp--preset--color--tertiary);
+		}
+
+		&:focus {
+			color: var(--wp--preset--color--secondary);
+		}
+
+		&:active {
+			color: var(--wp--preset--color--primary);
+		}
+	}
+
+	.nav-links {
+
+		@include media(mobile) {
+
+			display: flex;
+			justify-content: space-between;
+
+			.nav-next,
+			.nav-previous {
+				flex: 0 1 auto;
+				margin-bottom: inherit;
+				margin-top: inherit;
+				max-width: calc(50% - (0.5 * var(--wp--custom--margin--horizontal)));
+			}
+
+			.nav-next {
+				text-align: right;
+			}
+		}
+	}
+
+	.svg-icon {
+		display: inline-block;
+		fill: currentColor;
+		vertical-align: middle;
+	}
+}
+
+// Singular navigation
+.post-navigation {
+
+	.meta-nav {
+		font-size: var(--wp--preset--font-size--x-small);
+		line-height: var(--wp--custom--line-height--body);
+		color: var(--wp--preset--color--foreground);
+	}
+
+	.post-title {
+		font-family: var(--wp--preset--font-family--headings);
+		font-size: var(--wp--preset--font-size--large);
+		line-height: var(--wp--custom--line-height--headings);
+	}
+
+	.nav-links {
+		@include media(mobile) {
+			justify-content: space-between;
+		}
+	}
+
+	.nav-next,
+	.nav-previous {
+		margin-top: var(--wp--custom--margin--vertical);
+		margin-bottom: var(--wp--custom--margin--vertical);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Index/archive navigation
+.pagination {
+
+	.nav-links > * {
+		margin-left: calc(0.66 * var(--wp--custom--margin--vertical));
+		margin-right: calc(0.66 * var(--wp--custom--margin--vertical));
+
+		&.current {
+			border-bottom: 1px solid var(--wp--preset--color--primary);
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.next {
+			margin-left: auto;
+		}
+
+		&.prev {
+			margin-right: auto;
+		}
+	}
+}

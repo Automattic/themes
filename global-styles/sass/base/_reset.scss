@@ -1,0 +1,85 @@
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+}
+/**
+ * Apply generic border-box to all elements.
+ * See:
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+/**
+ * Apply border-box across the entire page.
+ */
+html {
+	box-sizing: border-box;
+}
+
+/**
+ * Relax the definition a bit, to allow components to override it manually.
+ */
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+
+// HTML resets
+html {
+	font-family: var(--wp--preset--font-family--base);
+	line-height: var(--wp--custom--line-height--body);
+}
+
+// body resets
+body {
+	color: var(--wp--preset--color--foreground);
+	text-align: left;
+	background-color: var(--wp--preset--color--background);
+}
+
+// Focus styles
+.site *:focus {
+	outline-width: 1px;
+	outline-style: dotted;
+	outline-color: var(--wp--preset--color--secondary);
+}
