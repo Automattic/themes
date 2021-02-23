@@ -40,8 +40,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
-									<!-- wp:media-text {"mediaPosition":"right","mediaId":1752,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg","mediaType":"image","imageFill":true} -->
-									<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-tattoo.jpg" alt="' . __( 'A photo of a tattooed hand, giving the "I love you" sign.', 'blank-canvas' ) . '" class="wp-image-1752 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"fontSize":"32px"}}} -->
+									<!-- wp:media-text {"mediaPosition":"right","mediaId":1752,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-tattoo.jpg" ) . ',"mediaType":"image","imageFill":true} -->
+									<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-tattoo.jpg" ) . ');background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-tattoo.jpg" ) . '" alt="' . esc_attr__( 'A photo of a tattooed hand, giving the "I love you" sign.', 'blank-canvas' ) . '" class="wp-image-1752 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"fontSize":"32px"}}} -->
 									<h1 class="alignwide" style="font-size:32px"><strong>' . __( 'Hi! I’m a tattooist based in Florida City.', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:paragraph -->
@@ -73,7 +73,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 									<!-- wp:image {"align":"center","id":20,"width":98,"height":95,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-hat.jpg" alt="' . __( 'Photo of a man wearing a hat.', 'blank-canvas' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-hat.jpg" ) . '" alt="' . esc_attr__( 'Photo of a man wearing a hat.', 'blank-canvas' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
 									<!-- /wp:image -->
 									<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"32px"}}} -->
 									<h1 class="has-text-align-center" style="font-size:32px"><strong>' . __( 'Alex Fredrickson', 'blank-canvas' ) . '</strong></h1>
@@ -115,8 +115,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Invitation', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg","mediaType":"image","verticalAlignment":"center","imageFill":true,"style":{"color":{"background":"#f5fff4"}}} -->
-									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-drink.jpg" alt="Photo of two drinks." class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:spacer {"height":30} -->
+					'content'    => '<!-- wp:media-text {"mediaId":2207,"mediaLink":"' . esc_url ( get_stylesheet_directory_uri() . "/assets/pattern-drink.jpg" ) . ',"mediaType":"image","verticalAlignment":"center","imageFill":true,"style":{"color":{"background":"#f5fff4"}}} -->
+									<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-image-fill has-background" style="background-color:#f5fff4"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-drink.jpg" ) . ');background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-drink.jpg") . '" alt="' . esc_attr__( "Photo of two drinks.", 'blank-canvas' ) . '" class="wp-image-2207 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:spacer {"height":30} -->
 									<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 									<!-- wp:heading {"level":1,"style":{"color":{"text":"#c61aa7"}}} -->
@@ -157,10 +157,10 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Split Screen', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:media-text {"align":"full","mediaId":598,"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg","mediaType":"image","imageFill":true} -->
-									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg);background-position:50% 50%"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg" alt="' . __( 'Photo of a vintage camera.', 'blank-canvas' ) . '" class="wp-image-598 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"overlayColor":"background","minHeight":95,"minHeightUnit":"vh"} -->
+					'content'    => '<!-- wp:media-text {"align":"full","mediaId":598,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-camera.jpg" ) . ',"mediaType":"image","imageFill":true} -->
+									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-camera.jpg" ) . ';background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-camera.jpg" ) . '" alt="' . esc_attr__( 'Photo of a vintage camera.', 'blank-canvas' ) . '" class="wp-image-598 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"overlayColor":"background","minHeight":95,"minHeightUnit":"vh"} -->
 									<div class="wp-block-cover has-background-background-color has-background-dim" style="min-height:95vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":624,"width":200,"height":200,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-woman.jpg" alt="' . __( 'Photo of a woman.', 'blank-canvas' ) . '" class="wp-image-624" width="200" height="200"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-woman.jpg" ) . '" alt="' . esc_attr__( 'Photo of a woman.', 'blank-canvas' ) . '" class="wp-image-624" width="200" height="200"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1} -->
@@ -196,7 +196,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:spacer -->
 
 									<!-- wp:image {"align":"center","id":36,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-hamburger.png" alt="' . __( 'Hamburger icon', 'blank-canvas' ) . '" class="wp-image-36" width="96" height="96"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-hamburger.png" ) . '" alt="' . esc_attr__( 'Hamburger icon', 'blank-canvas' ) . '" class="wp-image-36" width="96" height="96"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1} -->
@@ -243,7 +243,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":1090,"minHeightUnit":"px","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:1090px"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":130,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-pencils.jpg" alt="' . __( 'Colored pencils', 'blank-canvas' ) . '" class="wp-image-130" width="96" height="96"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-pencils.jpg" ) . '" alt="' . esc_attr__( 'Colored pencils', 'blank-canvas' ) . '" class="wp-image-130" width="96" height="96"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center"} -->
@@ -280,13 +280,13 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Musician Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-gradient.jpg" ) . '","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-gradient.jpg" ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
 									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
 									<!-- wp:image {"align":"center","id":30,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-singer.png" alt="' . __( 'Image of a singer performing.', 'blank-canvas' ) . '" class="wp-image-30" width="120" height="120"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-singer.png" ) . '" alt="' . esc_attr__( 'Image of a singer performing.', 'blank-canvas' ) . '" class="wp-image-30" width="120" height="120"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge"} -->
@@ -347,11 +347,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":57,"width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-sunglasses.jpg" alt="' . __( 'Woman wearing sunglasses', 'blank-canvas' ) . '" class="wp-image-57" width="150" height="150"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-sunglasses.jpg" ) . '" alt="' . esc_attr__( 'Woman wearing sunglasses', 'blank-canvas' ) . '" class="wp-image-57" width="150" height="150"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"primary"} -->
-									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>@juliapaxton</strong></h1>
+									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>Julia Paxton</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:spacer {"height":1} -->
@@ -460,7 +460,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
-									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-links-logo.png" alt="' . __( 'A logo of a circle with a line through it.', 'blank-canvas' ) . '" class="wp-image-100" width="100" height="100"/></figure></div>
+									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . "/assets/pattern-links-logo.png" ) . '" alt="' . esc_attr__( 'A logo of a circle with a line through it.', 'blank-canvas' ) . '" class="wp-image-100" width="100" height="100"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:spacer {"height":1} -->
