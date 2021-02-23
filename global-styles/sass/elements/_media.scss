@@ -1,0 +1,33 @@
+/* Media captions */
+figcaption,
+.wp-caption,
+.wp-caption-text {
+	color: var(--wp--preset--color--foreground);
+	font-size: var(--wp--preset--font-size--x-small);
+	line-height: var(--wp--custom--line-height--body);
+	margin-top: calc(0.5 * var(--wp--custom--margin--vertical));
+	margin-bottom: var(--wp--custom--margin--vertical);
+	text-align: center;
+
+	.alignleft &,
+	.alignright & {
+		margin-bottom: 0;
+	}
+}
+
+/* WP Smiley */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
