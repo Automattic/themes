@@ -76,7 +76,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-hat.jpg' ) . '" alt="' . esc_attr__( 'Photo of a man wearing a hat.', 'blank-canvas' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
 									<!-- /wp:image -->
 									<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"32px"}}} -->
-									<h1 class="has-text-align-center" style="font-size:32px"><strong>Alex Fredrickson</strong></h1>
+									<h1 class="has-text-align-center" style="font-size:32px"><strong>'. esc_html__( 'Alex Fredrickson', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
 									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
@@ -164,7 +164,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1} -->
-									<h1 class="has-text-align-center"><strong>Jasmine Baker</strong></h1>
+									<h1 class="has-text-align-center"><strong>'. esc_html__( 'Jasmine Baker', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center","backgroundColor":"background"} -->
@@ -247,7 +247,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center"} -->
-									<h2 class="has-text-align-center"><strong>Antonio Miller</strong></h2>
+									<h2 class="has-text-align-center"><strong>' . esc_html__( 'Antonio Miller', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:buttons -->
@@ -290,7 +290,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge"} -->
-									<h1 class="has-text-align-center has-huge-font-size"><strong>Alex Smith — Own Way</strong></h1>
+									<h1 class="has-text-align-center has-huge-font-size"><strong>' . esc_html__( 'Alex Smith — Own Way', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:embed {"url":"https://www.youtube.com/watch?v=_qX8CYToBbQ","type":"rich","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
@@ -351,7 +351,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"primary"} -->
-									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>Julia Paxton</strong></h1>
+									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>' . esc_html__( 'Julia Paxton' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:spacer {"height":1} -->
