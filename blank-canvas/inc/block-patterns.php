@@ -468,7 +468,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:spacer -->
 
 									<!-- wp:heading {"textAlign":"left","level":1} -->
-									<h1 class="has-text-align-left">Patricia Jones</h1>
+									<h1 class="has-text-align-left">' . esc_html__( 'Patricia Jones', 'blank-canvas' ) . '</h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph -->
