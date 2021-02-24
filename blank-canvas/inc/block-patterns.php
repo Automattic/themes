@@ -84,7 +84,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /--></ul>
 									<!-- /wp:social-links -->
 									<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"20px","lineHeight":"1.65"}}} -->
-									<p class="has-text-align-center" style="font-size:20px;line-height:1.65">' . esc_html__( 'My latest and greatest tips, resources, and reads.<br>So much goodness all in one place!', 'blank-canvas' ) . '</p>
+									<p class="has-text-align-center" style="font-size:20px;line-height:1.65">' . esc_html__( 'My latest and greatest tips, resources, and reads.', 'blank-canvas' ) . '<br />' . esc_html__( 'So much goodness all in one place!', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons {"contentJustification":"center"} -->
 									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"borderRadius":"","width":100,"className":"is-style-fill"} -->
@@ -125,12 +125,12 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"fontSize":"small"} -->
-									<p class="has-small-font-size">' . esc_html__( 'Pier 38<br>San Francisco, CA', 'blank-canvas' ) . '</p>
+									<p class="has-small-font-size">' . esc_html__( 'Pier 38', 'blank-canvas' ) . '<br />' . esc_html__( 'San Francisco, CA', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column -->
 									<!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"fontSize":"small"} -->
-									<p class="has-small-font-size">' . esc_html__( '8pm–12am<br>April 16th', 'blank-canvas' ) . '</p>
+									<p class="has-small-font-size">' . esc_html__( '8pm–12am', 'blank-canvas' ) . '<br />' . esc_html__( 'April 16th', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
