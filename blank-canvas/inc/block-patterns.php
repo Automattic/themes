@@ -84,7 +84,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /--></ul>
 									<!-- /wp:social-links -->
 									<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"20px","lineHeight":"1.65"}}} -->
-									<p class="has-text-align-center" style="font-size:20px;line-height:1.65">' . esc_html__( 'My latest and greatest tips, resources, and reads.<br>So much goodness all in one place!', 'blank-canvas' ) . '</p>
+									<p class="has-text-align-center" style="font-size:20px;line-height:1.65">' . esc_html__( 'My latest and greatest tips, resources, and reads.', 'blank-canvas' ) . '<br />' . esc_html__( 'So much goodness all in one place!', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons {"contentJustification":"center"} -->
 									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"borderRadius":"","width":100,"className":"is-style-fill"} -->
@@ -125,12 +125,12 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"fontSize":"small"} -->
-									<p class="has-small-font-size">' . esc_html__( 'Pier 38<br>San Francisco, CA', 'blank-canvas' ) . '</p>
+									<p class="has-small-font-size">' . esc_html__( 'Pier 38', 'blank-canvas' ) . '<br />' . esc_html__( 'San Francisco, CA', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column -->
 									<!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"fontSize":"small"} -->
-									<p class="has-small-font-size">' . esc_html__( '8pm–12am<br>April 16th', 'blank-canvas' ) . '</p>
+									<p class="has-small-font-size">' . esc_html__( '8pm–12am', 'blank-canvas' ) . '<br />' . esc_html__( 'April 16th', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
@@ -158,7 +158,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'title'      => __( 'Split Screen', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
 					'content'    => '<!-- wp:media-text {"align":"full","mediaId":598,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg' ) . '","mediaType":"image","imageFill":true} -->
-									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg' ) . ';background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg' ) . '" alt="' . esc_attr__( 'Photo of a vintage camera.', 'blank-canvas' ) . '" class="wp-image-598 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"overlayColor":"background","minHeight":95,"minHeightUnit":"vh"} -->
+									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg' ) . ');background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-camera.jpg' ) . '" alt="' . esc_attr__( 'Photo of a vintage camera.', 'blank-canvas' ) . '" class="wp-image-598 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"overlayColor":"background","minHeight":95,"minHeightUnit":"vh"} -->
 									<div class="wp-block-cover has-background-background-color has-background-dim" style="min-height:95vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":624,"width":200,"height":200,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-woman.jpg' ) . '" alt="' . esc_attr__( 'Photo of a woman.', 'blank-canvas' ) . '" class="wp-image-624" width="200" height="200"/></figure></div>
 									<!-- /wp:image -->
