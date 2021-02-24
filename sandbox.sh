@@ -143,7 +143,7 @@ How do you wish to proceed? [1]"
 
 elif [[ $1 == "export" ]]; then
   # Export the site content from your sandbox to a local file
-  export_command='ssh $SANDBOX_USER@$SANDBOX_LOCATION "mkdir /home/wpcom/export ; /home/wpcom/public_html/bin/wp export --dir=/home/wpcom/export"'
+  export_command='ssh $SANDBOX_USER@$SANDBOX_LOCATION "mkdir /home/wpcom/export ; rm /home/wpcom/export/* ; /home/wpcom/public_html/bin/wp export --dir=/home/wpcom/export"'
   download_command='mkdir ./export ; scp $SANDBOX_USER@$SANDBOX_LOCATION:/home/wpcom/export/* ./export/sandbox.wordpress.xml'
   eval $export_command
   eval $download_command
@@ -155,7 +155,7 @@ elif [[ $1 == "export" ]]; then
 
 elif [[ $1 == "export-theam" ]]; then
   # Export the site content from theamdemo to a local file
-  export_command='ssh $SANDBOX_USER@$SANDBOX_LOCATION "mkdir /home/wpcom/export ; /home/wpcom/public_html/bin/wp export --dir=/home/wpcom/export --url=theamdemo.wordpress.com"'
+  export_command='ssh $SANDBOX_USER@$SANDBOX_LOCATION "mkdir /home/wpcom/export ; rm /home/wpcom/export/* ; /home/wpcom/public_html/bin/wp export --dir=/home/wpcom/export --url=theamdemo.wordpress.com"'
   download_command='mkdir ./export ; scp $SANDBOX_USER@$SANDBOX_LOCATION:/home/wpcom/export/* ./export/theamdemo.wordpress.xml'
   eval $export_command
   eval $download_command
