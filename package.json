@@ -11,18 +11,18 @@
 		"sandbox:push:force": "./sandbox.sh push --force",
 		"sandbox:watch": "chokidar '**/*' -i '*/node_modules' -i '.git' -c './sandbox.sh push --ignore' --initial",
 
-		"wp-env": "wp-env start",
+		"wp-env": "npx wp-env start",
 
 		"wp-env:cleanslate": "npm run wp-env:empty ; npm run wp-env:export:theam ; npm run wp-env:import:theam",
 
-		"wp-env:empty": "wp-env run cli 'wp site empty --uploads --yes'",
+		"wp-env:empty": "npx wp-env run cli 'wp site empty --uploads --yes'",
 
-		"wp-env:import:local": "wp-env run cli 'wp import ./theme-unit-test/local.wordpress.xml --authors=create'",
-		"wp-env:import:theam": "wp-env run cli 'wp import ./export/theamdemo.wordpress.xml --authors=create'",
-		"wp-env:import:sandbox": "wp-env run cli 'wp import ./export/sandbox.wordpress.xml --authors=create'",
-		"wp-env:import:unittest": "wp-env run cli 'wp import ./theme-unit-test/themeunittestdata.wordpress.xml --authors=create'",
+		"wp-env:import:local": "npx wp-env run cli 'wp import ./theme-unit-test/local.wordpress.xml --authors=create'",
+		"wp-env:import:theam": "npx wp-env run cli 'wp import ./export/theamdemo.wordpress.xml --authors=create'",
+		"wp-env:import:sandbox": "npx wp-env run cli 'wp import ./export/sandbox.wordpress.xml --authors=create'",
+		"wp-env:import:unittest": "npx wp-env run cli 'wp import ./theme-unit-test/themeunittestdata.wordpress.xml --authors=create'",
 
-		"wp-env:export:local": "wp-env run cli 'wp export --dir=./export/ --filename_format=local.wordpress.xml'",
+		"wp-env:export:local": "npx wp-env run cli 'wp export --dir=./export/ --filename_format=local.wordpress.xml'",
 		"wp-env:export:theam": "./sandbox.sh export-theam",
 		"wp-env:export:sandbox": "./sandbox.sh export"
 		
