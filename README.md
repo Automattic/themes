@@ -75,3 +75,29 @@ NOTE: When pushing changes if your local branch is not current with /trunk you w
 - In addition to pushing your local changes you can also WATCH for any local changes and trigger the sandbox sync by using the `npm run sandbox:watch` Any changes to your local files will trigger the rsync.  Make sure that you have executed `npm install` to ensure the needed dependencies for this are installed.
 
 Note: The first time you run the `sandbox.sh` shell script you will be prompted for details about your sandbox which will be stored in a `.sandbox-config` file. Edit (or delete and be re-prompted) if details about your sandbox change.  This file will not be comitted to version controll and will not sync to your sandbox.
+
+- Content can be exported from your sandbox to a local XML file using the command `./sandbox.sh export`.  The resulting XML file will be found in `./export/sandbox.wordpress.xml`.  Alternately you may use the command `./sandbox.sh export-theam` to export the content from the Theam Demo site `theamdemo.wordpress.com`.  That XML file will be found in `./export/theamdemo.wordpress.com`.
+
+## wp-env
+
+wp-env is a handy solution to spin up local WordPress environments.  Details can be found here: https://developer.wordpress.org/block-editor/packages/packages-env/
+
+A default `.wp-env.json` file is included in this project which can be used to spin up an instance of WordPress for development of the Theams.  The command `npx wp-env start` will spin this up based on those settings.  You can also add a `.wp-env.override.json` file to supply your own values (such as mapping to a local instance of Gutenberg) (Note: When supplying some values such as 'plugins' in the .wp-env.override.json the values are OVERRIDDEN and not MERGED thus all plugins need to be supplied.  See here.)
+
+The WordPress Importer plugin and Gutenberg (/master branch in the git repository) are supplied by default as well as the theam-unit-test data and a local mapping for importing/exporting content. 
+
+There are a number of npm scripts available to make working with this wp-env instance of WordPress easier.  Any of these commands are executed via `npm run [COMMAND]`
+
+- wp-env : A shortcut (not much of one) to the `wp-env start` command.
+
+Note: The rest of these commands must be executed with the instance of wp-env running (with the execption of those that leverage sandbox.sh script)
+
+- wp-env:empty : Remove all content from the local wp-env instance (via `wp site empty`)
+- wp-env:export:local : Export the content from your wp-env instance to `./export/local.wordpress.xml`
+- wp-env:export:theam : Export the content from theamdemo.wordpress.com to `./export/theamdemo.wordpress.xml` This command leverages the `sandbox.sh export-theam` command noted above
+- wp-env:export:sandbox : Export the content from your sandbox to `./export/sandbox.wordpress.xml` This command leverages the `sandbox.sh export` command noted above
+- wp-env:import:local : Import the content from `./export/local.wordpress.xml` to your local wp-env site
+- wp-env:import:theam : Import the content from `./export/theamdemo.wordpress.xml` to your local wp-env site
+- wp-env:import:sandbox : Import the content from `./export/sandbox.wordpress.xml` to your local wp-env site
+- wp-env:import:unittest : Import the content from the github repository `WPTT/theme-unit-test` to your local wp-env site
+- wp-env:cleanslate : A multi-command that cleans the local site, downloads the content from theamdemo.wordpress.com and imports it into your local instance

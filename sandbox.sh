@@ -141,7 +141,30 @@ How do you wish to proceed? [1]"
   cmd="rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude=$ignore_string ./ $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/"
   eval $cmd
 
+elif [[ $1 == "export" ]]; then
+  # Export the site content from your sandbox to a local file
+  export_command='ssh $SANDBOX_USER@$SANDBOX_LOCATION "mkdir /home/wpcom/export ; /home/wpcom/public_html/bin/wp export --dir=/home/wpcom/export"'
+  download_command='mkdir ./export ; scp $SANDBOX_USER@$SANDBOX_LOCATION:/home/wpcom/export/* ./export/sandbox.wordpress.xml'
+  eval $export_command
+  eval $download_command
+  echo "
+  
+  Export Complete!
+  
+  You can find the exported file in ./export/sandbox.wordpress.xml"
+
+elif [[ $1 == "export-theam" ]]; then
+  # Export the site content from theamdemo to a local file
+  export_command='ssh $SANDBOX_USER@$SANDBOX_LOCATION "mkdir /home/wpcom/export ; /home/wpcom/public_html/bin/wp export --dir=/home/wpcom/export --url=theamdemo.wordpress.com"'
+  download_command='mkdir ./export ; scp $SANDBOX_USER@$SANDBOX_LOCATION:/home/wpcom/export/* ./export/theamdemo.wordpress.xml'
+  eval $export_command
+  eval $download_command
+  echo "
+  
+  Export Complete!
+  
+  You can find the exported file in ./export/theamdemo.wordpress.xml"
 else 
-  echo 'No known command given. [clean, push]'
+  echo 'No known command given. [clean, push, export, export-theam]'
 
 fi
