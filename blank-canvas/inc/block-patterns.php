@@ -168,7 +168,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center","backgroundColor":"background"} -->
-									<p class="has-text-align-center has-background-background-color has-background">' . esc__html__( 'Hello! I am a photographer and designer living near Portland, Maine. When I am not posting to Instagram, you can find me shooting weddings and portraits.', 'blank-canvas' ) . '</p>
+									<p class="has-text-align-center has-background-background-color has-background">' . esc_html__( 'Hello! I am a photographer and designer living near Portland, Maine. When I am not posting to Instagram, you can find me shooting weddings and portraits.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
