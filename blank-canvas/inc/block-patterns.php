@@ -351,7 +351,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"primary"} -->
-									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>' . esc_html__( 'Julia Paxton' ) . '</strong></h1>
+									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>' . esc_html__( 'Julia Paxton', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:spacer {"height":1} -->
