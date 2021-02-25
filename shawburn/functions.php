@@ -66,6 +66,9 @@ if ( ! function_exists( 'shawburn_setup' ) ) :
 
 		// Enable Full Site Editing
 		add_theme_support( 'full-site-editing' );
+
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'shawburn_setup', 12 );

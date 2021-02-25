@@ -64,6 +64,8 @@ if ( ! function_exists( 'stow_setup' ) ) :
 			)
 		);
 
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'stow_setup', 12 );
