@@ -949,6 +949,10 @@ a:active {
 	border-bottom-color: transparent;
 }
 
+.has-primary-background-color a:not(.has-link-color):not(.has-text-color) {
+	color: var(--global--color-background);
+}
+
 .has-background:not(.has-background-background-color) .has-link-color a,
 .has-background:not(.has-background-background-color).has-link-color a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
@@ -1410,15 +1414,6 @@ object {
 	color: currentColor;
 	margin-top: var(--global--spacing-vertical);
 	margin-bottom: var(--global--spacing-vertical);
-}
-
-.wp-block-cover .wp-block-cover__inner-container a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover-image-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover__inner-container a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover-image-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover-text a:not(.has-text-color):not(.wp-block-button__link) {
-	color: var(--wp--style--color--link, currentColor);
 }
 
 .wp-block-cover .wp-block-cover__inner-container .has-link-color a,
