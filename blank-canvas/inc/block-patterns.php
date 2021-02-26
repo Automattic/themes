@@ -293,11 +293,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<h1 class="has-text-align-center has-huge-font-size"><strong>' . esc_html__( 'Alex Smith — Own Way', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
-									<!-- wp:embed {"url":"https://www.youtube.com/watch?v=_qX8CYToBbQ","type":"rich","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-									<figure class="wp-block-embed is-type-rich is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-									https://www.youtube.com/watch?v=_qX8CYToBbQ
-									</div></figure>
-									<!-- /wp:embed -->
+									<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->
 
 									<!-- wp:buttons -->
 									<div class="wp-block-buttons"><!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
