@@ -63,7 +63,7 @@ function mayland_blocks_fonts_url() {
  */
 function mayland_blocks_scripts() {
 	// Enqueue front-end styles.
-	wp_enqueue_style( 'mayland-blocks-styles', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'mayland-blocks-styles', get_stylesheet_uri() );
 
 	// Enqueue front-end styles.
 	wp_enqueue_style( 'mayland-blocks-block-styles', get_template_directory_uri() . '/assets/alignments.css' );
