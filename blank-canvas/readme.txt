@@ -16,7 +16,7 @@ The theme’s default styles are conservative, relying on simple sans-serif font
 
 == Changelog ==
 
-= 1.2.7 =
+= 1.2.8 =
 * Code cleanup.
 
 = 1.2.4 =
