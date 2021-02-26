@@ -13,7 +13,7 @@ function seedlet_define_color_annotations( $colors ) {
 			array( '.global--color-background', 'background-color' ),
 
 		),
-		__( 'Background Color' )
+		__( 'Background Color', 'seedlet' )
 	);
 
 	// Foreground Color
@@ -27,7 +27,7 @@ function seedlet_define_color_annotations( $colors ) {
 			array( '.global--color-foreground', 'color' ),
 
 		),
-		__( 'Foreground Color' )
+		__( 'Foreground Color', 'seedlet' )
 	);
 
 	// Primary Color
@@ -41,7 +41,7 @@ function seedlet_define_color_annotations( $colors ) {
 			array( '.global--color-primary', 'color' ),
 
 		),
-		__( 'Primary Color' )
+		__( 'Primary Color', 'seedlet' )
 	);
 
 	// Secondary Color
@@ -55,7 +55,7 @@ function seedlet_define_color_annotations( $colors ) {
 			array( '.global--color-secondary', 'color' ),
 
 		),
-		__( 'Secondary Color' )
+		__( 'Secondary Color', 'seedlet' )
 	);
 
 	// Tertiary Color
@@ -69,7 +69,7 @@ function seedlet_define_color_annotations( $colors ) {
 			array( '.global--color-tertiary', 'color' ),
 
 		),
-		__( 'Tertiary Color' )
+		__( 'Tertiary Color', 'seedlet' )
 	);
 }
 

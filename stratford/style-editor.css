@@ -220,6 +220,10 @@ a:hover {
 	color: var(--wp--preset--color--primary-hover);
 }
 
+.has-primary-background-color a:not(.has-text-color) {
+	color: var(--wp--preset--color--background);
+}
+
 button,
 a {
 	cursor: pointer;
@@ -596,6 +600,11 @@ object {
 .is-style-outline .wp-block-button__link.has-focus {
 	color: var(--wp--preset--color--primary-hover);
 	background: transparent;
+}
+
+.has-primary-background-color .wp-block-button__link.is-style-outline:not(.has-text-color), .has-primary-background-color
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: var(--wp--preset--color--background);
 }
 
 .wp-block-button__link.is-style-squared,
