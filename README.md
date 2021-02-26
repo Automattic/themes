@@ -46,7 +46,7 @@ By contributing code to our free themes, you grant its use under the [GNU Genera
 
 Themes code should adhere to the [WordPress coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/). This repo contains a pre-commit hook which enables you to detect and fix code that doesn't follow the standards.
 
-To set this uo follow these instructions:
+To set this up follow these instructions:
 1. Run `npm i` in the root of the repo.
 2. Run `composer install`
 
