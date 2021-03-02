@@ -18,7 +18,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 			register_block_pattern_category(
 				'blank-canvas',
-				array( 'label' => __( 'Blank Canvas', 'blank-canvas' ) )
+				array( 'label' => _x( 'Blank Canvas', 'theme name', 'blank-canvas' ) )
 			);
 
 			register_block_pattern_category(
