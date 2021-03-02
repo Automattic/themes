@@ -18,11 +18,23 @@ if ( ! function_exists( 'mayland_blocks_support' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
+		add_theme_support( 'block-nav-menus' );
+
 		// Enqueue editor styles.
-		add_editor_style( array( 
+		add_editor_style( array(
 			'style.css',
 			mayland_blocks_fonts_url()
 		) );
+
+		// This theme supports wp_nav_menu() in the naviation block
+		// Just add a `location` attribute to the block
+		register_nav_menus(
+			array(
+				'menu-1' => __( 'Primary', 'varia' ),
+				'menu-2' => __( 'Footer Menu', 'varia' ),
+				'social' => __( 'Social Links Menu', 'varia' ),
+			)
+		);
     }
     add_action( 'after_setup_theme', 'mayland_blocks_support' );
 endif;
@@ -72,3 +84,17 @@ function mayland_blocks_scripts() {
 	wp_enqueue_style( 'mayland-blocks-fonts', mayland_blocks_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts' );
+
+function render_dynamic_navigation_block( $block_content, $parsed_block) {
+	if ( $parsed_block['blockName'] === 'core/navigation' ) {
+		if ( array_key_exists( 'location', $parsed_block['attrs'] ) ) {
+			$args = new stdClass();
+			$args->menu = null;
+			$args->theme_location = $parsed_block['attrs']['location'];
+			return gutenberg_output_block_nav_menu( $block_content, $args );
+		}
+	}
+	return $block_content;
+}
+// It would be better to use render_block_core/navigation but it's not working
+add_filter( 'render_block', 'render_dynamic_navigation_block', 10, 2);
