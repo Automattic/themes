@@ -1,0 +1,35 @@
+{
+  "name": "blank-canvas-blocks",
+  "version": "0.1.0",
+  "description": "Blank Parent Theme",
+  "bugs": {
+    "url": "https://github.com/Automattic/themes/issues"
+  },
+  "homepage": "https://github.com/Automattic/themes#readme",
+  "devDependencies": {
+    "@wordpress/browserslist-config": "^2.2.2",
+    "chokidar-cli": "^2.1.0",
+    "node-sass": "^4.13.1",
+    "rtlcss": "^2.4.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "build": "node-sass sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
+  }
+}

@@ -1,0 +1,79 @@
+
+/*
+ * Alignments, loaded in the front-end only.
+ */
+
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// This puts some space between all the elements in the content and in any containers (such as group of column)
+.entry-content > *:not(:last-child):not(.wp-block-spacer),
+*[class*="__inner-container"] > *:not(:last-child):not(.wp-block-spacer),
+*[class*="__content"] > *:not(:last-child):not(.wp-block-spacer){
+	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+// Ensure horizontal padding on the page
+.wp-site-blocks {
+	padding: 0 var(--wp--custom--margin--horizontal);
+}
+
+// This is the default with of blocks on the page with not assign alignwide or alignfull
+.wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
+.wp-site-blocks .wp-block-post-content > * {
+	max-width: var(--wp--custom--width--default);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Align the block to be on the "wider" side of things
+.wp-site-blocks .alignwide {
+	width: var(--wp--custom--width--wide);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// The block or template part should span the full width of the page
+.wp-site-blocks .alignfull {
+	transform: translateX(calc(0px - var(--wp--custom--margin--horizontal)));
+	width: calc(100% + (2 * var(--wp--custom--margin--horizontal)));
+	max-width: calc(100% + (2 * var(--wp--custom--margin--horizontal)));
+	margin-left: 0;
+	margin-right: 0;
+	box-sizing: content-box;
+}
+
+.wp-site-blocks .wp-block-template-part.alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+.wp-site-blocks .wp-block-columns.alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+// Align Center
+.aligncenter {
+	text-align: center;
+}
+
+// Align Left
+.wp-site-blocks .alignleft {
+	float: left;
+	margin-right: 2em;
+	max-width: 360px;
+}
+
+// Align Right
+.wp-site-blocks .alignright {
+	float: right;
+	margin-left: 2em;
+	max-width: 360px;
+}
