@@ -1,0 +1,328 @@
+/**
+ * Base
+ * - Reset the browser
+ */
+body {
+	margin: 0;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+p {
+	margin: 0;
+}
+
+/**
+ * Required Variables
+ */
+.screen-reader-text {
+	/* Text meant only for screen readers. */
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: var(--wp--custom--color--background);
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: var(--wp--custom--color--background);
+	display: block;
+	font-size: var(--preset--font-size--normal);
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*
+ * Alignments, loaded in the front-end only.
+ */
+body {
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.entry-content > *:not(:last-child):not(.wp-block-spacer),
+*[class*="__inner-container"] > *:not(:last-child):not(.wp-block-spacer),
+*[class*="__content"] > *:not(:last-child):not(.wp-block-spacer) {
+	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.wp-site-blocks {
+	padding: 0 var(--wp--custom--margin--horizontal);
+}
+
+.wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
+.wp-site-blocks .wp-block-post-content > * {
+	max-width: var(--wp--custom--width--default);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-site-blocks .alignwide {
+	width: var(--wp--custom--width--wide);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-site-blocks .alignfull {
+	transform: translateX(calc(0px - var(--wp--custom--margin--horizontal)));
+	width: calc(100% + (2 * var(--wp--custom--margin--horizontal)));
+	max-width: calc(100% + (2 * var(--wp--custom--margin--horizontal)));
+	margin-left: 0;
+	margin-right: 0;
+	box-sizing: content-box;
+}
+
+.wp-site-blocks .wp-block-template-part.alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+.wp-site-blocks .wp-block-columns.alignfull {
+	width: 100%;
+	max-width: 100%;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.wp-site-blocks .alignleft {
+	float: left;
+	margin-right: 2em;
+	max-width: 360px;
+}
+
+.wp-site-blocks .alignright {
+	float: right;
+	margin-left: 2em;
+	max-width: 360px;
+}
+
+::selection {
+	background-color: var(--wp--custom--color--selection);
+}
+
+::-moz-selection {
+	background-color: var(--wp--custom--color--selection);
+}
+
+*[class*="-background-color"]:not(.has-text-color) {
+	color: var(--wp--custom--color--background);
+}
+
+*[class*="-background-color"]:not(.has-text-color) a {
+	color: var(--wp--custom--color--background);
+}
+
+/**
+ * Elements
+ * - Styles for basic HTML elemants
+ */
+a:not(.wp-block-button__link) {
+	cursor: pointer;
+	color: var(--wp--style--color--link, var(--wp--custom--color--foreground));
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+}
+
+a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus {
+	border-bottom-color: currentColor;
+}
+
+.entry-content a:not(.wp-block-button__link) {
+	border-bottom: 1px solid currentColor;
+	text-decoration: none;
+	transition: border-color 0.1s ease-out;
+}
+
+.entry-content a:not(.wp-block-button__link):hover, .entry-content a:not(.wp-block-button__link):focus {
+	border-bottom-color: transparent;
+}
+
+.entry-content a:not(.wp-block-button__link):active {
+	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+	border-radius: var(--wp--custom--form--border-radius);
+	color: var(--wp--custom--form--color--text);
+	line-height: var(--wp--custom--line-height--body);
+	padding: var(--wp--custom--form--padding);
+	background: var(--wp--custom--form--color--background);
+	box-shadow: var(--wp--custom--form--color--box-shadow);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: var(--wp--custom--form--color--text);
+	border-color: var(--custom--form--color--border);
+}
+
+select {
+	color: var(--wp--custom--colors--foreground);
+	border: var(--wp--custom--form--border--width) solid var(--wp--custom--form--border--color);
+	font-family: inherit;
+	font-size: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+input[type=checkbox] + label {
+	display: inline;
+	margin-left: 0.5em;
+	line-height: 1em;
+}
+
+/*
+ * I had REALLY thought that font-family was a theme.json supported thing for headers
+ * but it doesn't seem to be working at the moment so here's the ponyfill.
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--wp--preset--font-family--headings);
+}
+
+/**
+ * Button
+ */
+/**
+ * Block Options
+ */
+.wp-block-button.wp-block-button__link,
+.wp-block-button .wp-block-button__link {
+	font-weight: var(--wp--custom--button--font-weight);
+	font-family: var(--wp--custom--button--font-family);
+	font-size: var(--wp--custom--button--font-size);
+	line-height: var(--wp--custom--button--line-height);
+	border-radius: var(--wp--custom--button--border-radius);
+}
+
+.wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus {
+	color: var(--wp--custom--button--color--hover-text);
+	background-color: var(--wp--custom--button--color--hover-background);
+	border-color: var(--wp--custom--button--color--hover-background);
+}
+
+p.has-background {
+	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
+}
+
+p.has-text-color a {
+	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
+}
+
+.wp-block-navigation a {
+	border-bottom: none;
+}
+
+.wp-block-navigation .wp-block-navigation-link {
+	padding: 0;
+}
+
+.wp-block-navigation .wp-block-navigation-link .wp-block-navigation-link__content {
+	padding: var(--wp--custom--navigation--padding);
+}
+
+.wp-block-navigation .wp-block-navigation-link__submenu-icon {
+	padding: 0;
+}
+
+.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link {
+	color: var(--wp--custom--navigation--color--text);
+	background-color: var(--wp--custom--navigation--color--background);
+}
+
+.wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link :hover {
+	color: var(--wp--custom--navigation--color--hover-text);
+	background-color: var(--wp--custom--navigation--color--hover-background);
+}
+
+.wp-block-navigation .wp-block-navigation__container .has-child .wp-block-navigation-link__container {
+	padding: 0;
+	border-radius: var(--wp--custom--navigation--submenu--border--radius);
+	border-style: var(--wp--custom--navigation--submenu--border--style);
+	border-width: var(--wp--custom--navigation--submenu--border--width);
+	border-color: var(--wp--custom--navigation--submenu--border--color);
+	color: var(--wp--custom--navigation--submenu--color--text);
+	background-color: var(--wp--custom--navigation--submenu--color--background);
+}
+
+.wp-block-navigation .wp-block-navigation__container .has-child .wp-block-navigation-link__container :hover {
+	color: var(--wp--custom--navigation--submenu--color--hover-text);
+	background-color: var(--wp--custom--navigation--submenu--color--hover-background);
+}
+
+.wp-block-navigation .wp-block-navigation__container .has-child .wp-block-navigation-link__container .wp-block-navigation-link__content {
+	padding: var(--wp--custom--navigation--submenu--padding);
+}
+
+.wp-block-group.has-background .wp-block-group__inner-container {
+	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
+}
+
+/*# sourceMappingURL=ponyfill.css.map */
