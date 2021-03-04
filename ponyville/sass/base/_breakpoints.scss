@@ -1,0 +1,50 @@
+// Responsive breakpoints mixin
+// Because Media Queries aren't able to use CSS Variables those breakpoints need to be defined upon SCSS compilation.
+// Unfortunately that introduces unalterable opinion as to where those breakpoints should be.
+/**
+ * Required Variables
+ */
+ $breakpoint_mobile: 482px;
+ $breakpoint_laptop: 1020px;
+ $breakpoint_desktop: 1290px;
+
+ // Responsive breakpoints mixin
+ @mixin media( $res ) {
+
+	 @if mobile-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_mobile - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if mobile == $res {
+		 @media only screen and (min-width: #{$breakpoint_mobile}) {
+			 @content;
+		 }
+	 }
+
+	 @if laptop-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_laptop - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if laptop == $res {
+		 @media only screen and (min-width: #{$breakpoint_laptop}) {
+			 @content;
+		 }
+	 }
+
+	 @if desktop-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_desktop - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if desktop == $res {
+		 @media only screen and (min-width: #{$breakpoint_desktop}) {
+			 @content;
+		 }
+	 }
+
+ }

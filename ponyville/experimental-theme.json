@@ -1,0 +1,273 @@
+{
+	"settings": {
+		"root": {
+			"color": {
+				"note": "These are the 'Semantic' colors.  These colors should ALWAYS be provided.  They can have the same VALUES as the colors in the palette but can't currently use those variables and render correctly in the FSE GSE.  The variables generated for these values are what should be used throughout the theme to style things.  These WILL be provided as CSS variables in the page but will NOT be offered to the user for color customization options.",
+				"palette": [
+					{
+						"slug": "primary",
+						"color": "#69A458",
+						"name": "Primary"
+					},
+					{
+						"slug": "secondary",
+						"color": "#EAC4DF",
+						"name": "Secondary"
+					},
+					{
+						"slug": "tertiary",
+						"color": "#B62020",
+						"name": "Tertiary"
+					},
+					{
+						"slug": "foreground",
+						"color": "#294E5B",
+						"name": "Foreground"
+					},
+					{
+						"slug": "background",
+						"color": "#AFEBEB",
+						"name": "Background"
+					},
+					{
+						"slug": "link",
+						"color": "#294E5B",
+						"name": "Link"
+					},
+					{
+						"slug": "selection",
+						"color": "#CDC058",
+						"name": "Selection"
+					}
+				]
+			}
+		},
+		"defaults": {
+			"color": {
+				"note": "These are the 'descriptive' colors.  These are the colors provided to the user that will work well with the theme.  The resulting variables should NOT be used in the THEME but ONLY by the user.  These are the values that will be offerd to the user as color customization options.",
+				"gradients": [],
+				"palette": [
+					{
+						"slug": "green-road",
+						"color": "#94B7A4",
+						"name": "Green Road"
+					},
+					{
+						"slug": "yellow-rooftop",
+						"color": "#CDC058",
+						"name": "Yellow Rooftop"
+					},
+					{
+						"slug": "green-lawn",
+						"color": "#69A458",
+						"name": "Green Lawn"
+					},
+					{
+						"slug": "pink-windows",
+						"color": "#EAC4DF",
+						"name": "Pink Windows"
+					},
+					{
+						"slug": "red-door",
+						"color": "#B62020",
+						"name": "Red Door"
+					},
+					{
+						"slug": "blue-sky",
+						"color": "#AFEBEB",
+						"name": "Blue Sky"
+					},
+					{
+						"slug": "blue-bush",
+						"color": "#294E5B",
+						"name": "Blue Bush"
+					},
+					{
+						"slug": "tan-house",
+						"color": "#FFF6CC",
+						"name": "Tan House"
+					}
+				]
+			},
+			"typography": {
+				"customFontSize": true,
+				"customLineHeight": true,
+				"fontSizes": [
+					{
+						"name": "Extra Small",
+						"size": "9px",
+						"slug": "x-small"
+					},
+					{
+						"name": "Small",
+						"size": "16.6px",
+						"slug": "small"
+					},
+					{
+						"name": "Normal",
+						"size": "20px",
+						"slug": "normal"
+					},
+					{
+						"name": "Large",
+						"size": "28.8px",
+						"slug": "large"
+					},
+					{
+						"name": "Huge",
+						"size": "34.56px",
+						"slug": "huge"
+					}
+				],
+				"fontFamilies": [
+					{
+						"fontFamily": "Helvetica, Arial, sans-serif",
+						"slug": "headings",
+						"name": "Headings"
+					},
+					{
+						"fontFamily": "Georgia, Times, serif",
+						"slug": "base",
+						"name": "Base"
+					}
+				]
+			},
+			"spacing": {
+				"customPadding": true,
+				"units": [
+					"px",
+					"em",
+					"rem",
+					"vh",
+					"vw"
+				]
+			},
+			"custom": {
+				"line-height": {
+					"body": 1.6,
+					"headings": 1.125
+				},
+				"margin": {
+					"horizontal": "20px",
+					"vertical": "20px"
+				},
+				"width": {
+					"default": "750px",
+					"wide": "1200px"
+				},
+				"button": {
+					"font-weight": "600",
+					"font-family": "var(--wp--preset--font-family--headings)",
+					"font-size": "var(--wp--preset--font-size--small)",
+					"border-radius": "5px",
+					"color": {
+						"hover-text": "var(--wp--preset--color--background)",
+						"hover-background": "var(--wp--preset--color--secondary)"
+					}
+				},
+				"form": {
+					"padding": "5px",
+					"border": {
+						"radius": "0",
+						"color": "#cccccc",
+						"width": "2px",
+						"style": "solid"
+					},
+					"color": {
+						"text": "var(--wp--preset--color--foreground)",
+						"background": "transparent",
+						"box-shadow": "none"
+					}
+				}
+			}
+		}
+	},
+	"styles": {
+		"root": {
+			"color": {
+				"background": "var(--wp--preset--color--background)",
+				"text": "var(--wp--preset--color--foreground)",
+				"link": "var(--wp--preset--color--link)"
+			},
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--normal)",
+				"lineHeight": "var(--wp--custom--line-height--body)",
+				"fontFamily": "var(--wp--preset--font-family--base)"
+			}
+		},
+		"core/button": {
+			"color": {
+				"text": "var(--wp--preset--color--foreground)",
+				"background": "var(--wp--preset--color--primary)"
+			}
+		},
+		"core/heading/h1": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--huge)",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/heading/h2": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--huge)",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/heading/h3": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--large)",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/heading/h4": {
+			"typography": {
+				"fontSize": "24px",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/heading/h5": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--normal)",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/heading/h6": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--small)",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/post-title/h1": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--huge)",
+				"lineHeight": "var(--wp--custom--line-height--headings)",
+				"fontFamily": "var(--wp--preset--font-family--headings)"
+			}
+		},
+		"core/post-date": {
+			"color": {
+				"text": "var(--wp--preset--color--foreground-light)",
+				"link": "var(--wp--preset--color--foreground-light)"
+			},
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--small)"
+			}
+		},
+		"core/site-title": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--large)"
+			}
+		},
+		"core/navigation": {
+			"typography": {
+				"fontSize": "var(--wp--preset--font-size--small)"
+			}
+		}
+	}
+}
