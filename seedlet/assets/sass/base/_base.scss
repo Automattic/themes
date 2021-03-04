@@ -33,17 +33,8 @@ a {
 		}
 	}
 
-	.has-primary-background-color &:not(.has-link-color):not(.has-text-color) {
+	.has-primary-background-color &:not(.has-link-color):not(.has-text	-color) {
 		color: var(--global--color-background);
-	}
-}
-// Enforce the custom link color even if a custom background color has been set.
-// The extra specificity here is required to override the background color styles.
-.has-background:not(.has-background-background-color) {
-	// Target both current level and nested block.
-	.has-link-color a,
-	&.has-link-color a {
-		color: var( --wp--style--color--link, var(--global--color-primary) );
 	}
 }
 
