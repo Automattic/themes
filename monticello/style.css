@@ -1,0 +1,87 @@
+/*
+Theme Name: Monticello
+Theme URI: 
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A Block-based ponyfilled theme 
+Requires at least: 5.5
+Tested up to: 5.5
+Requires PHP: 5.6.2
+Template: ponyville
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: monticello
+Tags: will, go, here
+*/
+
+/*
+	Adjustments that couldn't be made with either Global Styles or Polyfill.
+	Everything here will eventually find another home.
+*/
+
+
+/*
+	TODO: Discern why fontWeight no longer appears to be working for headers in theme.json
+*/
+
+h1 {
+	font-weight: 300;
+}
+
+h2 {
+	font-weight: 300;
+}
+
+h3 {
+	font-weight: 400;
+}
+
+h4 {
+	font-weight: 300;
+}
+
+h5 {
+	font-weight: 400;
+}
+
+h6 {
+	font-weight: 400;
+} 
+
+
+
+/*
+	Why does Gutenberg care about the margin under a column?
+*/
+.wp-block-columns {
+	margin-bottom: unset;
+}
+
+/*
+   Hrm.  More opinion about padding and such in Gutenberg.  It kinda wrecks the design I'm building
+   but other designs probably depend on that being there.  Moar Gutenberg opinion!
+*/
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding-left: unset;
+}
+
+/*
+	This is a way to make a column "flexible" which is how the header is currently laid out
+*/
+.is-style-flexible-columns .wp-block-column {
+	flex-basis: auto;
+}
+.is-style-flexible-columns .wp-block-column.is-style-flexible-column-noshrink {
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+/*
+	I'm sure this is a poor way to do it but this is my hackin' spot after all.
+	The navigation block doesn't align it's contents to the left as (I thought) I requested of the block.
+	This will make it so.
+*/
+.wp-block-navigation__container{
+	justify-content: flex-end;
+}
