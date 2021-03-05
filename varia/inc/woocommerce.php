@@ -36,14 +36,66 @@ add_action( 'after_setup_theme', 'varia_woocommerce_setup' );
  * Add a custom wrapper for woocomerce content
  */
 function varia_wrapper_start() {
-	echo '<article id="woocommerce-wrapper" class="responsive-max-width">';
+	if( is_shop() ) {
+    	$shop_page = get_post( wc_get_page_id( 'shop' ) );
+
+    	if ( $shop_page ) {
+      		$post = $shop_page;
+    	}
+
+		$classes = get_post_class( '', $post->ID );
+
+		echo '<article id="woocommerce-wrapper post-' . $post->ID . '" class="' . esc_attr( implode( ' ', $classes ) ) . '">';
+	} else {
+		echo '<article id="woocommerce-wrapper" class="responsive-max-width">';
+	}
 }
-add_action('woocommerce_before_main_content', 'varia_wrapper_start', 10);
+add_action( 'woocommerce_before_main_content', 'varia_wrapper_start', 10 );
 
 function varia_wrapper_end() {
 	echo '</article>';
 }
-add_action('woocommerce_after_main_content', 'varia_wrapper_end', 10);
+add_action( 'woocommerce_after_main_content', 'varia_wrapper_end', 10 );
+
+/**
+ * Adjust page content wrapper to preserve styling
+ */
+function varia_product_archive_description() {
+	// Don't display the description on search results page 
+	if ( is_search() ) { 
+		return; 
+	} 
+
+	if ( is_post_type_archive( 'product' ) && 0 === absint( get_query_var( 'paged' ) ) ) { 
+		$shop_page = get_post( wc_get_page_id( 'shop' ) ); 
+	
+		if ( $shop_page ) { 
+			$description = wc_format_content( $shop_page->post_content ); 
+			if ( $description ) { 
+				echo '<div class="page-description entry-content">' . $description . '</div>'; 
+			} 
+		} 
+	}
+}
+remove_action( 'woocommerce_archive_description', 'woocommerce_product_archive_description' );
+add_action( 'woocommerce_archive_description', 'varia_product_archive_description', 10 );
+
+/**
+ * Wrap woocommerce loop
+ */
+function varia_shop_wrapper_start() {	
+	if ( is_shop() ) {
+		echo '<div class="woocommerce-shop-wrapper">';
+	}
+}
+add_action( 'woocommerce_before_shop_loop', 'varia_shop_wrapper_start');
+
+function varia_shop_wrapper_end() {
+	if ( is_shop() ) {
+		echo '</div>';
+	}
+}
+add_action( 'woocommerce_after_shop_loop', 'varia_shop_wrapper_end');
 
 /**
  * Display category image on category archive
