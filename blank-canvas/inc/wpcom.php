@@ -40,7 +40,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 					'content'    => '<!-- wp:jetpack/layout-grid {"column1DesktopSpan":4,"column1DesktopOffset":4,"column1TabletSpan":4,"column1TabletOffset":2,"column1MobileSpan":4,"column2DesktopOffset":8,"column2TabletOffset":13,"className":"column1-desktop-grid__span-4 column1-desktop-grid__start-5 column1-desktop-grid__row-1 column1-tablet-grid__span-4 column1-tablet-grid__start-3 column1-tablet-grid__row-1 column1-mobile-grid__span-4 column1-mobile-grid__row-1"} -->
 									<div class="wp-block-jetpack-layout-grid alignfull column1-desktop-grid__span-4 column1-desktop-grid__start-5 column1-desktop-grid__row-1 column1-tablet-grid__span-4 column1-tablet-grid__start-3 column1-tablet-grid__row-1 column1-mobile-grid__span-4 column1-mobile-grid__row-1"><!-- wp:jetpack/layout-grid-column -->
 									<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-none"><!-- wp:image {"id":16,"sizeSlug":"large","linkDestination":"none","className":"margin-bottom-none"} -->
-									<figure class="wp-block-image size-large margin-bottom-none"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-portrait.jpg" alt="' . __( 'Portrait of a woman against a pink and blue background.', 'blank-canvas' ) . '"/></figure>
+									<figure class="wp-block-image size-large margin-bottom-none"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-portrait.jpg' ) . '" alt="'. esc_attr__( 'Portrait of a woman against a pink and blue background.', 'blank-canvas' ) . '"/></figure>
 									<!-- /wp:image -->
 
 									<!-- wp:group {"className":"margin-top-none","style":{"color":{"background":"#ebfbff"}}} -->
@@ -49,12 +49,12 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"className":"margin-top-half","textColor":"primary","style":{"typography":{"fontSize":"18px"}}} -->
-									<p class="margin-top-half has-primary-color has-text-color" style="font-size:18px">' . __( 'Hi! I’m a lead strategist for growing sustainable revenue streams for integrated fundraising.', 'blank-canvas' ) . '</p>
+									<p class="margin-top-half has-primary-color has-text-color" style="font-size:18px">'. esc_html__( 'Hi! I’m a lead strategist for growing sustainable revenue streams for integrated fundraising.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:buttons {"contentJustification":"center"} -->
 									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"borderRadius":4,"style":{"color":{"text":"#ffffff","background":"#067eb1"}}} -->
-									<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background" style="border-radius:4px;background-color:#067eb1;color:#ffffff">' . __( 'Get in touch', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background" style="border-radius:4px;background-color:#067eb1;color:#ffffff">'. esc_html__( 'Get in touch', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 
@@ -77,8 +77,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Email Signup', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg","id":1934,"dimRatio":60,"overlayColor":"secondary","minHeight":100,"minHeightUnit":"vh","contentPosition":"top left","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-dim-60 has-secondary-background-color has-background-dim has-custom-content-position is-position-top-left" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns -->
+					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg' ) . '","id":1934,"dimRatio":60,"overlayColor":"secondary","minHeight":100,"minHeightUnit":"vh","contentPosition":"top left","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim-60 has-secondary-background-color has-background-dim has-custom-content-position is-position-top-left" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column {"width":"5%"} -->
 									<div class="wp-block-column" style="flex-basis:5%"></div>
 									<!-- /wp:column -->
@@ -89,17 +89,17 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- /wp:spacer -->
 
 									<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"32px"}}} -->
-									<h1 style="font-size:32px"><strong>' . __( 'Virtual Art Classes', 'blank-canvas' ) . '</strong></h1>
+									<h1 style="font-size:32px"><strong>'. esc_html__( 'Virtual Art Classes', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph -->
-									<p>' . __( 'Join instructor Jaime Adams for a series of virtual classes aimed at helping you hone your drawing skills. We will focus on composition, perspective, contour, representing volume, and more!', 'blank-canvas' ) . '</p>
+									<p>'. esc_html__( 'Join instructor Jaime Adams for a series of virtual classes aimed at helping you hone your drawing skills. We will focus on composition, perspective, contour, representing volume, and more!', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:jetpack/contact-form -->
 									<!-- wp:jetpack/field-email {"required":true,"options":[]} /-->
 
-									<!-- wp:jetpack/button {"element":"button","text":"' . __( 'Learn More', 'blank-canvas' ) . '","textColor":"secondary","backgroundColor":"background"} /-->
+									<!-- wp:jetpack/button {"element":"button","text":"'. esc_html__( 'Learn More', 'blank-canvas' ) . '","textColor":"secondary","backgroundColor":"background"} /-->
 									<!-- /wp:jetpack/contact-form --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns --></div></div>
@@ -113,21 +113,21 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Subscription Form and Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif","id":84,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
+					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . '","id":84,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
 									<!-- wp:image {"align":"center","id":71,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-guitar.jpg" alt="' . __( 'Image of a man with a guitar.', 'blank-canvas' ) . '" class="wp-image-71" width="120" height="120"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-guitar.jpg' ) . '" alt="'. esc_attr__( 'Image of a man with a guitar.', 'blank-canvas' ) . '" class="wp-image-71" width="120" height="120"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"background"} -->
-									<h1 class="has-text-align-center has-background-color has-text-color"><strong>' . __( 'Narrow Dog', 'blank-canvas' ) . '</strong></h1>
+									<h1 class="has-text-align-center has-background-color has-text-color"><strong>'. esc_html__( 'Narrow Dog', 'blank-canvas' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center","textColor":"background"} -->
-									<p class="has-text-align-center has-background-color has-text-color"><em>' . __( 'Noise Rock from Milwaukee, WI', 'blank-canvas' ) . '</em></p>
+									<p class="has-text-align-center has-background-color has-text-color"><em>'. esc_html__( 'Noise Rock from Milwaukee, WI', 'blank-canvas' ) . '</em></p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:spacer {"height":1} -->
@@ -140,19 +140,19 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 
 									<!-- wp:buttons {"contentJustification":"left"} -->
 									<div class="wp-block-buttons is-content-justification-left"><!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Spotify', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Spotify', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
 
 									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Bandcamp', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Bandcamp', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
 
 									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Merch', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Merch', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
 
 									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">' . __( 'Website', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Website', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 
