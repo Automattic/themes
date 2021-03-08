@@ -77,8 +77,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Email Signup', 'blank-canvas' ),
 					'categories' => array( 'blank-canvas' ),
-					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg' ) . '","id":1934,"dimRatio":60,"overlayColor":"secondary","minHeight":100,"minHeightUnit":"vh","contentPosition":"top left","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-dim-60 has-secondary-background-color has-background-dim has-custom-content-position is-position-top-left" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-art.jpg' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-art.jpg' ) . '","id":1934,"dimRatio":60,"overlayColor":"secondary","minHeight":100,"minHeightUnit":"vh","contentPosition":"top left","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim-60 has-secondary-background-color has-background-dim has-custom-content-position is-position-top-left" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-art.jpg' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column {"width":"5%"} -->
 									<div class="wp-block-column" style="flex-basis:5%"></div>
 									<!-- /wp:column -->
@@ -113,13 +113,13 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Subscription Form and Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . '","id":84,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . '","id":84,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
 									<!-- wp:image {"align":"center","id":71,"width":120,"height":120,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/pattern-guitar.jpg' ) . '" alt="'. esc_attr__( 'Image of a man with a guitar.', 'blank-canvas' ) . '" class="wp-image-71" width="120" height="120"/></figure></div>
+									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-guitar.jpg' ) . '" alt="'. esc_attr__( 'Image of a man with a guitar.', 'blank-canvas' ) . '" class="wp-image-71" width="120" height="120"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"background"} -->
