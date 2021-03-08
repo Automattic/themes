@@ -39,7 +39,7 @@
 			} 
 			var modal, elements, selectors, lastEl, firstEl, activeEl, tabKey, shiftKey, escKey;
 
-			modal = document.querySelector( '.${ id }-navigation' );
+			modal = document.querySelector( '.' + id + '-navigation' );
 			selectors = "input, a, button";
 			elements = modal.querySelectorAll( selectors );
 			elements = Array.prototype.slice.call( elements );

@@ -126,6 +126,15 @@ if ( ! function_exists( 'penscratch_2_setup' ) ) :
 			)
 		);
 
+		add_theme_support( 'editor-styles' );
+		add_editor_style(
+			array(
+				'style.css',
+				'/css/blocks.css',
+				'/css/editor-blocks.css',
+				penscratch_2_fonts_url(),
+			)
+		);
 	}
 endif; // penscratch_2_setup
 add_action( 'after_setup_theme', 'penscratch_2_setup' );
@@ -204,8 +213,14 @@ add_action( 'widgets_init', 'penscratch_2_widgets_init' );
  * Enqueue scripts and styles.
  */
 function penscratch_2_scripts() {
-	wp_enqueue_style( 'penscratch-2-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'penscratch-2-style', get_stylesheet_uri(), array( 'penscratch-2-reset' ) );
 	wp_enqueue_style( 'penscratch-2-fonts', penscratch_2_fonts_url(), array(), null );
+
+	// Theme reset stylesheet
+	wp_enqueue_style( 'penscratch-2-reset', get_theme_file_uri( '/css/reset.css' ), array(), '1.0' );
+
+	// Theme form styles
+	wp_enqueue_style( 'penscratch-2-reset', get_theme_file_uri( '/css/forms.css' ), array(), '1.0' );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'penscratch-2-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'penscratch-2-style' ), '1.0' );

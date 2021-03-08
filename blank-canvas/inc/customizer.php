@@ -63,7 +63,7 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 				'show_site_header',
 				array(
 					'label'       => esc_html__( 'Enable site header and top menu', 'blank-canvas' ),
-					'description' => esc_html__( 'Check to show a standard site header, navigation menu and social links menu on the top of every page.', 'blank-canvas' ),
+					'description' => esc_html__( 'Check to show a standard site header, navigation menu and social links menu on the top of every page. These can be configured in the "Site Identity" and "Menus" panels.', 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
 					'type'        => 'checkbox',
@@ -134,8 +134,8 @@ if ( ! class_exists( 'Blank_Canvas_Customize' ) ) {
 			$wp_customize->add_control(
 				'show_comments',
 				array(
-					'label'       => esc_html__( 'Enable comments', 'blank-canvas' ),
-					'description' => esc_html__( "Check to show comments underneath each post.", 'blank-canvas' ),
+					'label'       => esc_html__( 'Make comments visible', 'blank-canvas' ),
+					'description' => esc_html__( 'Check to show comments underneath posts and pages. Comments can be configured in your site’s Discussion settings screen.', 'blank-canvas' ),
 					'section'     => 'jetpack_content_options',
 					'priority'    => 10,
 					'type'        => 'checkbox',

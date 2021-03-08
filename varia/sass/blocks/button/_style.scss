@@ -38,6 +38,10 @@ input[type="submit"],
 		&.has-focus {
 			color: #{map-deep-get($config-button, "color", "background-hover")};
 		}
+
+		.has-primary-background-color &:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "text")};
+		}
 	}
 
 	// Squared Style

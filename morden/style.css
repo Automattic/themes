@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Morden is a functional and responsive multi-purpose theme that is the perfect solution for your business's online presence.
 Requires at least: WordPress 4.9.6
-Version: 1.6.5
+Version: 1.6.8
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -711,6 +711,10 @@ a {
 
 a:hover {
 	color: var(--wp--preset--color--primary-hover);
+}
+
+.has-primary-background-color a:not(.has-text-color) {
+	color: var(--wp--preset--color--background);
 }
 
 button,
@@ -1473,6 +1477,11 @@ button[data-load-more-btn], .button {
 .wp-block-button.is-style-outline .wp-block-button__link:focus,
 .wp-block-button.is-style-outline .wp-block-button__link.has-focus {
 	color: var(--wp--preset--color--primary-hover);
+}
+
+.has-primary-background-color .wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color), .has-primary-background-color
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: var(--wp--preset--color--background);
 }
 
 .wp-block-button.is-style-squared,

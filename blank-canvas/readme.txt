@@ -16,6 +16,13 @@ The theme’s default styles are conservative, relying on simple sans-serif font
 
 == Changelog ==
 
+= 1.2.9 =
+* Code cleanup.
+
+= 1.2.4 =
+* Add additional block patterns.
+* Tidy up footer spacing. 
+
 = 1.2 =
 * Adds Customizer options for showing page titles, a global header, menu, and widgets. 
 

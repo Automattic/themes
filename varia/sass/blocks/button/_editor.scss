@@ -1,14 +1,11 @@
 /**
  * Button
  */
- button,
- .button,
- input[type="submit"],
- .wp-block-button__link,
- .wp-block-file__button {
-	 // Extend button style
-	 @extend %button-style;
- }
+.wp-block-button__link,
+.wp-block-file__button {
+	// Extend button style
+	@extend %button-style;
+}
 
 /* Default Style */
 .wp-block-button__link {
@@ -43,6 +40,10 @@
 		&.has-focus {
 			color: #{map-deep-get($config-global, "color", "primary", "hover")};
 			background: transparent;
+		}
+
+		.has-primary-background-color &:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "text")};
 		}
 	}
 
