@@ -113,8 +113,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Subscription Form and Links', 'blank-canvas' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . '","id":84,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-noise.gif' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
+					'content'    => '<!-- wp:cover {"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
@@ -134,25 +134,25 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"background","textColor":"primary"} -->
-									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="16" custom_border_radius="0" custom_border_weight="1" custom_padding="15" custom_spacing="10" submit_button_classes="has-text-color has-primary-color has-background has-background-background-color" email_field_classes="" show_only_email_and_button="true"]</div>
+									<!-- wp:jetpack/subscriptions {"subscribePlaceholder":"Enter your email address","buttonBackgroundColor":"background","textColor":"primary","fontSize":"undefinedpx","customFontSize":"undefinedpx","padding":16} -->
+									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form subscribe_placeholder="Enter your email address" show_subscribers_total="false" button_on_newline="false" custom_font_size="undefinedpx" custom_border_radius="0" custom_border_weight="1" custom_padding="16" custom_spacing="10" submit_button_classes="has-undefinedpx-font-size has-text-color has-primary-color has-background has-background-background-color" email_field_classes="has-undefinedpx-font-size" show_only_email_and_button="true"]</div>
 									<!-- /wp:jetpack/subscriptions -->
 
 									<!-- wp:buttons {"contentJustification":"left"} -->
-									<div class="wp-block-buttons is-content-justification-left"><!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Spotify', 'blank-canvas' ) . '</a></div>
+									<div class="wp-block-buttons is-content-justification-left"><!-- wp:button {"borderRadius":0,"backgroundColor":"background","textColor":"primary","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background no-border-radius">'. esc_html__( 'Spotify', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Bandcamp', 'blank-canvas' ) . '</a></div>
+									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","textColor":"primary","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background no-border-radius">'. esc_html__( 'Bandcamp', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Merch', 'blank-canvas' ) . '</a></div>
+									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","textColor":"primary","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background no-border-radius">'. esc_html__( 'Merch', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","width":50} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-background-background-color has-background no-border-radius">'. esc_html__( 'Website', 'blank-canvas' ) . '</a></div>
+									<!-- wp:button {"borderRadius":0,"backgroundColor":"background","textColor":"primary","width":50} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background no-border-radius">'. esc_html__( 'Website', 'blank-canvas' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 
@@ -170,8 +170,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 
 									<!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-									<!-- /wp:spacer --></div></div>
-									<!-- /wp:cover -->',
+									<!-- /wp:spacer --></div></div>',
 				)
 			);
 		}
