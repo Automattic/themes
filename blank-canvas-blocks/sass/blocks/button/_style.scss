@@ -1,0 +1,36 @@
+/**
+ * Button
+ */
+
+@mixin button-main-styles {
+	font-weight: var(--wp--custom--button--font-weight);
+	font-family: var(--wp--custom--button--font-family);
+	font-size: var(--wp--custom--button--font-size);
+	line-height: var(--wp--custom--button--line-height);
+	border-radius: var(--wp--custom--button--border-radius);
+}
+
+@mixin button-hover-styles {
+	&:hover,
+	&:focus,
+	&.has-focus {
+		color: var(--wp--custom--button--color--hover-text);
+		background-color: var(--wp--custom--button--color--hover-background);
+		border-color: var(--wp--custom--button--color--hover-background);
+	}
+}
+
+/**
+ * Block Options
+ */
+.wp-block-button {
+
+	&.wp-block-button__link,
+	.wp-block-button__link {
+		@include button-main-styles;
+		@include button-hover-styles;
+	}
+
+}
+
+
