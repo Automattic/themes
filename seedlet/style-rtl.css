@@ -8,7 +8,7 @@ Description: Seedlet is a free WordPress theme. A two-column layout and classica
 Requires at least: 5.5
 Tested up to: 5.5
 Requires PHP: 5.6.2
-Version: 1.1.13-wpcom
+Version: 1.1.14-wpcom
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: seedlet
@@ -949,9 +949,8 @@ a:active {
 	border-bottom-color: transparent;
 }
 
-.has-background:not(.has-background-background-color) .has-link-color a,
-.has-background:not(.has-background-background-color).has-link-color a {
-	color: var(--wp--style--color--link, var(--global--color-primary));
+.has-primary-background-color a:not(.has-link-color):not(.has-text-color) {
+	color: var(--global--color-background);
 }
 
 button,
@@ -1410,15 +1409,6 @@ object {
 	color: currentColor;
 	margin-top: var(--global--spacing-vertical);
 	margin-bottom: var(--global--spacing-vertical);
-}
-
-.wp-block-cover .wp-block-cover__inner-container a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover-image-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover .wp-block-cover-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover__inner-container a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover-image-text a:not(.has-text-color):not(.wp-block-button__link),
-.wp-block-cover-image .wp-block-cover-text a:not(.has-text-color):not(.wp-block-button__link) {
-	color: currentColor;
 }
 
 .wp-block-cover .wp-block-cover__inner-container .has-link-color a,
@@ -2651,11 +2641,6 @@ pre.wp-block-verse {
 
 .has-black-color[class] {
 	color: var(--global--color-black);
-}
-
-.has-background:not(.has-background-background-color) a:not(.has-text-color):not(.wp-block-button__link),
-.has-background p, .has-background h1, .has-background h2, .has-background h3, .has-background h4, .has-background h5, .has-background h6 {
-	color: currentColor;
 }
 
 .has-primary-background-color[class] {
