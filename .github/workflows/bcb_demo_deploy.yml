@@ -20,9 +20,9 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          ftp-server: sftp.pressable.com
-          ftp-username: ${{ secrets.BCB_DEMO_USERNAME }}
-          ftp-password: ${{ secrets.BCB_DEMO_PASSWORD }}
+          server: sftp.pressable.com
+          username: ${{ secrets.BCB_DEMO_USERNAME }}
+          password: ${{ secrets.BCB_DEMO_PASSWORD }}
           port: 22
           local-dir: ./blank-canvas-blocks
           server-dir: /htdocs/wp-content/themes/blank-canvas-blocks
