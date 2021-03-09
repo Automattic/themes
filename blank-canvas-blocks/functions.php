@@ -8,6 +8,9 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 		// Add support for experimental link color control.
 		add_theme_support( 'experimental-link-color' );
 
+		// Add support for "reasonable default" block styles
+		add_theme_support( 'wp-block-styles');
+
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
