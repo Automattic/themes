@@ -8,6 +8,10 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 		// Add support for experimental link color control.
 		add_theme_support( 'experimental-link-color' );
 
+		// Add support for responsive embedded content.
+		// https://github.com/WordPress/gutenberg/issues/26901
+		add_theme_support( 'responsive-embeds' );
+
 		// Add support for "reasonable default" block styles
 		add_theme_support( 'wp-block-styles');
 
