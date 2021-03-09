@@ -117,16 +117,35 @@ body {
 	text-align: center;
 }
 
-.wp-site-blocks .alignleft {
-	float: left;
-	margin-right: 2em;
-	max-width: 360px;
+@media only screen and (min-width: 482px) {
+	.wp-site-blocks .alignleft,
+	.wp-site-blocks .alignright {
+		--content-width: min( 100vw - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
+		--alignment-margin: calc( ( 100vw - var(--content-width ) ) / 2 - var(--wp--custom--margin--horizontal) );
+		max-width: var(--wp--custom--width--default);
+	}
 }
 
-.wp-site-blocks .alignright {
-	float: right;
-	margin-left: 2em;
-	max-width: 360px;
+@media only screen and (min-width: 482px) {
+	.wp-site-blocks .alignleft {
+		/*rtl:ignore*/
+		float: left;
+		/*rtl:ignore*/
+		margin-left: var(--alignment-margin);
+		/*rtl:ignore*/
+		margin-right: var(--wp--custom--margin--horizontal);
+	}
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-site-blocks .alignright {
+		/*rtl:ignore*/
+		float: right;
+		/*rtl:ignore*/
+		margin-left: var(--wp--custom--margin--horizontal);
+		/*rtl:ignore*/
+		margin-right: var(--alignment-margin);
+	}
 }
 
 ::selection {
@@ -242,6 +261,10 @@ input[type=checkbox] + label {
  */
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--wp--preset--font-family--headings);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
 }
 
 p.has-background {

@@ -64,16 +64,41 @@ body {
 	text-align: center;
 }
 
+// Align Left and Right
+@include media(mobile) {
+	.wp-site-blocks .alignleft,
+	.wp-site-blocks .alignright {
+		// Content width is the lesser of the viewport width (subtracting margins)
+		// or the default site width.
+		// This variable is only used for this element.
+		--content-width: min( 100vw - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
+		// The alignment margin is the viewport, subtract the content and divide by two
+		// Then subtract the block padding
+		--alignment-margin: calc( ( 100vw - var(--content-width ) ) / 2 - var(--wp--custom--margin--horizontal) );
+		max-width: var(--wp--custom--width--default);
+	}
+}
+
 // Align Left
-.wp-site-blocks .alignleft {
-	float: left;
-	margin-right: 2em;
-	max-width: 360px;
+@include media(mobile) {
+	.wp-site-blocks .alignleft {
+		/*rtl:ignore*/
+		float: left;
+		/*rtl:ignore*/
+		margin-left: var(--alignment-margin);
+		/*rtl:ignore*/
+		margin-right: var(--wp--custom--margin--horizontal);
+	}
 }
 
 // Align Right
-.wp-site-blocks .alignright {
-	float: right;
-	margin-left: 2em;
-	max-width: 360px;
+@include media(mobile) {
+	.wp-site-blocks .alignright {
+		/*rtl:ignore*/
+		float: right;
+		/*rtl:ignore*/
+		margin-left: var(--wp--custom--margin--horizontal);
+		/*rtl:ignore*/
+		margin-right: var(--alignment-margin);
+	}
 }
