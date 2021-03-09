@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the trunk branch
+  push:
+    branches: [ make/blank-canvas-blocks ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: sftp.pressable.com
+          ftp-username: ${{ secrets.BCB_DEMO_USERNAME }}
+          ftp-password: ${{ secrets.BCB_DEMO_PASSWORD }}
+          port: 22
+          local-dir: ./blank-canvas-blocks
+          server-dir: /htdocs/wp-content/themes/blank-canvas-blocks
