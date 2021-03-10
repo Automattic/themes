@@ -60,7 +60,7 @@ p {
 }
 
 /*
- * Alignments, loaded in the front-end only.
+ * Alignments
  */
 body {
 	margin: 0;
@@ -78,6 +78,18 @@ body {
 
 .wp-site-blocks {
 	padding: 0 var(--wp--custom--margin--horizontal);
+}
+
+.wp-block {
+	max-width: var(--wp--custom--width--default);
+}
+
+.wp-block[data-align=wide] {
+	max-width: var(--wp--custom--width--wide);
+}
+
+.wp-block[data-align=full] {
+	max-width: none;
 }
 
 .wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
@@ -103,44 +115,41 @@ body {
 	box-sizing: content-box;
 }
 
-.wp-site-blocks .wp-block-template-part.alignfull {
-	width: 100%;
-	max-width: 100%;
-}
-
-.wp-site-blocks .wp-block-columns.alignfull {
-	width: 100%;
-	max-width: 100%;
-}
-
 .aligncenter {
 	text-align: center;
 }
 
 @media only screen and (min-width: 482px) {
+	.block-editor-block-list__layout .alignleft,
+	.block-editor-block-list__layout .alignright,
 	.wp-site-blocks .alignleft,
 	.wp-site-blocks .alignright {
-		--content-width: min( 100vw - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
-		--alignment-margin: calc( ( 100vw - var(--content-width ) ) / 2 - var(--wp--custom--margin--horizontal) );
-		max-width: var(--wp--custom--width--default);
+		max-width: calc(var(--wp--custom--width--default) / 2);
 	}
-}
-
-@media only screen and (min-width: 482px) {
 	.wp-site-blocks .alignleft {
 		/*rtl:ignore*/
 		float: left;
+	}
+	.wp-site-blocks .alignright {
+		/*rtl:ignore*/
+		float: right;
+	}
+	.block-editor-block-list__layout > .alignleft,
+	.block-editor-block-list__layout > .alignright,
+	.wp-site-blocks .wp-block-post-content > .alignleft,
+	.wp-site-blocks .wp-block-post-content > .alignright {
+		--content-width: min( 100% - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
+		--alignment-margin: calc( ( 100% - var(--content-width ) ) / 2 );
+	}
+	.block-editor-block-list__layout > .alignleft,
+	.wp-site-blocks .wp-block-post-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: var(--alignment-margin);
 		/*rtl:ignore*/
 		margin-right: var(--wp--custom--margin--horizontal);
 	}
-}
-
-@media only screen and (min-width: 482px) {
-	.wp-site-blocks .alignright {
-		/*rtl:ignore*/
-		float: right;
+	.block-editor-block-list__layout > .alignright,
+	.wp-site-blocks .wp-block-post-content > .alignright {
 		/*rtl:ignore*/
 		margin-left: var(--wp--custom--margin--horizontal);
 		/*rtl:ignore*/
@@ -369,6 +378,26 @@ p.has-text-color a {
 .wp-block-video figcaption {
 	margin: var(--wp--custom--video--caption--margin);
 	text-align: var(--wp--custom--video--caption--text-align);
+}
+
+.wp-block-image {
+	/* 
+	From what I can tell the below are styles regularly used by themes
+	to fix the image block.  I believe these should go into the block's
+	default styles.  It's difficult to say how this will land, however 
+	based on discussion found in (many) related issues here: 
+	https://github.com/WordPress/gutenberg/issues/28923
+	*/
+	text-align: center;
+}
+
+/*
+	Further gutenberg APPEARS to be defaulting the margin to the same as 
+	the below, however (for reason's that aren't clear to me now) this
+	isn't coming through.
+*/
+.wp-block-column .wp-block-image {
+	margin: 0 0 1em 0;
 }
 
 /*# sourceMappingURL=ponyfill.css.map */
