@@ -60,7 +60,7 @@ p {
 }
 
 /*
- * Alignments, loaded in the front-end only.
+ * Alignments
  */
 body {
 	margin: 0;
@@ -78,6 +78,10 @@ body {
 
 .wp-site-blocks {
 	padding: 0 var(--wp--custom--margin--horizontal);
+}
+
+.wp-block {
+	max-width: var(--wp--custom--width--default);
 }
 
 .wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
@@ -118,29 +122,36 @@ body {
 }
 
 @media only screen and (min-width: 482px) {
+	.block-editor-block-list__layout .alignleft,
+	.block-editor-block-list__layout .alignright,
 	.wp-site-blocks .alignleft,
 	.wp-site-blocks .alignright {
-		--content-width: min( 100vw - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
-		--alignment-margin: calc( ( 100vw - var(--content-width ) ) / 2 - var(--wp--custom--margin--horizontal) );
-		max-width: var(--wp--custom--width--default);
+		max-width: calc(var(--wp--custom--width--default) / 2);
 	}
-}
-
-@media only screen and (min-width: 482px) {
 	.wp-site-blocks .alignleft {
 		/*rtl:ignore*/
 		float: left;
+	}
+	.wp-site-blocks .alignright {
+		/*rtl:ignore*/
+		float: right;
+	}
+	.block-editor-block-list__layout > .alignleft,
+	.block-editor-block-list__layout > .alignright,
+	.wp-site-blocks .wp-block-post-content > .alignleft,
+	.wp-site-blocks .wp-block-post-content > .alignright {
+		--content-width: min( 100% - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
+		--alignment-margin: calc( ( 100% - var(--content-width ) ) / 2 );
+	}
+	.block-editor-block-list__layout > .alignleft,
+	.wp-site-blocks .wp-block-post-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: var(--alignment-margin);
 		/*rtl:ignore*/
 		margin-right: var(--wp--custom--margin--horizontal);
 	}
-}
-
-@media only screen and (min-width: 482px) {
-	.wp-site-blocks .alignright {
-		/*rtl:ignore*/
-		float: right;
+	.block-editor-block-list__layout > .alignright,
+	.wp-site-blocks .wp-block-post-content > .alignright {
 		/*rtl:ignore*/
 		margin-left: var(--wp--custom--margin--horizontal);
 		/*rtl:ignore*/
