@@ -36,6 +36,7 @@ body {
 }
 
 // This is the default with of blocks on the page with not assign alignwide or alignfull
+.wp-block-group .wp-block-group, // When a group is in a group return alignment to default
 .wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
 .wp-site-blocks .wp-block-post-content > * {
 	max-width: var(--wp--custom--width--default);
@@ -59,6 +60,14 @@ body {
 	margin-left: 0;
 	margin-right: 0;
 	box-sizing: content-box;
+}
+
+// If a block is inside of a container and set to alignfull
+// then it should be as wide as the container it's in, however wide that is.
+.wp-site-blocks *[class*="__inner-container"] .alignfull {
+	box-sizing: border-box;
+	transform: unset;
+	width: 100%;
 }
 
 // Align Center
