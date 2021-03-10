@@ -221,7 +221,6 @@ textarea {
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 	border-radius: var(--wp--custom--form--border-radius);
 	color: var(--wp--custom--form--color--text);
-	line-height: var(--wp--custom--line-height--body);
 	padding: var(--wp--custom--form--padding);
 	background: var(--wp--custom--form--color--background);
 	box-shadow: var(--wp--custom--form--color--box-shadow);
@@ -264,16 +263,10 @@ input[type=checkbox] + label {
 	line-height: 1em;
 }
 
-/*
- * I had REALLY thought that font-family was a theme.json supported thing for headers
- * but it doesn't seem to be working at the moment so here's the ponyfill.
- */
-h1, h2, h3, h4, h5, h6 {
-	font-family: var(--wp--preset--font-family--headings);
-}
-
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: var(--wp--custom--heading--typography--font-family);
+	font-weight: var(--wp--custom--heading--typography--font-weight);
 }
 
 /**
