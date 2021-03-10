@@ -263,10 +263,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--wp--preset--font-family--headings);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
-}
-
 /**
  * Button
  */
@@ -291,12 +287,28 @@ h1, h2, h3, h4, h5, h6 {
 	border-color: var(--wp--custom--button--color--hover-background);
 }
 
-p.has-background {
+.wp-block-group.has-background .wp-block-group__inner-container {
 	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
 }
 
-p.has-text-color a {
-	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+.wp-block-image {
+	/* 
+	From what I can tell the below are styles regularly used by themes
+	to fix the image block.  I believe these should go into the block's
+	default styles.  It's difficult to say how this will land, however 
+	based on discussion found in (many) related issues here: 
+	https://github.com/WordPress/gutenberg/issues/28923
+
+	Further gutenberg APPEARS to be defaulting the margin to the same as 
+	the below, however (for reason's that aren't clear to me now) this
+	isn't coming through.
+	*/
+	text-align: center;
+	margin: 0 0 1em 0;
 }
 
 .wp-block-navigation a {
@@ -344,6 +356,14 @@ p.has-text-color a {
 	padding: var(--wp--custom--navigation--submenu--padding);
 }
 
+p.has-background {
+	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
+}
+
+p.has-text-color a {
+	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
+}
+
 .wp-block-quote {
 	border-left: var(--wp--custom--quote--border--width) solid var(--wp--custom--quote--border--color);
 	padding-left: var(--wp--custom--padding--horizontal);
@@ -354,11 +374,6 @@ p.has-text-color a {
 	font-style: var(--wp--custom--quote--citation--typography--font-style);
 }
 
-.wp-block-group.has-background .wp-block-group__inner-container {
-	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
-}
-
-<<<<<<< HEAD
 .wp-block-separator:not(.is-style-dots) {
 	border-bottom: var(--wp--custom--separator--thickness) solid var(--wp--custom--separator--color);
 }
@@ -370,19 +385,6 @@ p.has-text-color a {
 .wp-block-video figcaption {
 	margin: var(--wp--custom--video--caption--margin);
 	text-align: var(--wp--custom--video--caption--text-align);
-=======
-.wp-block-image {
-	/* 
-	From what I can tell the below are styles regularly used by themes
-	to fix the image block.  I believe these should go into the block's
-	default styles.  It's difficult to say how this will land, however 
-	based on discussion found in (many) related issues here: 
-	https://github.com/WordPress/gutenberg/issues/28923
-	*/
-	text-align: center;
-	margin: 0;
-	margin-bottom: 1em;
->>>>>>> Added default styles for image blocks.
 }
 
 /*# sourceMappingURL=ponyfill.css.map */
