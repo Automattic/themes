@@ -107,7 +107,12 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 				)
 			);
 
-			/* This pattern is WP.com-only because it relies on the Jetpack Subscription block. */
+
+			/* 
+			 * @TODO: This is commented out until the following Jetpack issue is resolved: 
+			 * https://github.com/Automattic/jetpack/issues/19113
+			 * 
+			 * This pattern is WP.com-only because it relies on the Jetpack Subscription block.
 			register_block_pattern(
 				'blank-canvas/links-subscription-form',
 				array(
@@ -172,7 +177,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer --></div></div>',
 				)
-			);
+			); */
 		}
 	}
 endif;
