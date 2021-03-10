@@ -23,9 +23,16 @@ body {
 	padding: 0 var(--wp--custom--margin--horizontal);
 }
 
-// Set a width for the editor
-.wp-block {
+.wp-block { // For the editor.
 	max-width: var(--wp--custom--width--default);
+}
+
+.wp-block[data-align=wide] { // For the editor.
+	max-width: var(--wp--custom--width--wide);
+}
+
+.wp-block[data-align=full] { // For the editor.
+	max-width: none;
 }
 
 // This is the default with of blocks on the page with not assign alignwide or alignfull
@@ -52,16 +59,6 @@ body {
 	margin-left: 0;
 	margin-right: 0;
 	box-sizing: content-box;
-}
-
-.wp-site-blocks .wp-block-template-part.alignfull {
-	width: 100%;
-	max-width: 100%;
-}
-
-.wp-site-blocks .wp-block-columns.alignfull {
-	width: 100%;
-	max-width: 100%;
 }
 
 // Align Center
@@ -92,8 +89,8 @@ body {
 
 	// When alignments are applied to top level blocks
 	// we need to add more left/right margin as the block is full width.
-	.block-editor-block-list__layout > .alignleft,
-	.block-editor-block-list__layout > .alignright,
+	.block-editor-block-list__layout > .alignleft, // For the editor.
+	.block-editor-block-list__layout > .alignright, // For the editor.
 	.wp-site-blocks .wp-block-post-content > .alignleft,
 	.wp-site-blocks .wp-block-post-content > .alignright {
 		// Content width is the lesser of the viewport width (subtracting margins)
