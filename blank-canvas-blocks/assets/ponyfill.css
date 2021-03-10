@@ -363,8 +363,18 @@ p.has-drop-cap:not(:focus):first-letter {
 	font-style: var(--wp--custom--quote--citation--typography--font-style);
 }
 
+.wp-block-group.has-background {
+	padding: unset;
+}
+
 .wp-block-group.has-background .wp-block-group__inner-container {
 	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
+}
+
+.wp-block-group.has-background .wp-block-group__inner-container .wp-block-group:not(.alignfull):not(.alignwide) {
+	max-width: var(--wp--custom--width--default);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-block-separator:not(.is-style-dots) {

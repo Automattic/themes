@@ -1,7 +1,13 @@
 .wp-block-group {
 	&.has-background {
+		padding: unset; // Remove Gutenberg-supplied theme CSS
 		.wp-block-group__inner-container {
 			padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
+			.wp-block-group:not(.alignfull):not(.alignwide) {
+				max-width: var(--wp--custom--width--default);
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 }
