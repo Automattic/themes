@@ -1,6 +1,6 @@
 
 /*
- * Alignments, loaded in the front-end only.
+ * Alignments
  */
 
 body {
@@ -23,7 +23,20 @@ body {
 	padding: 0 var(--wp--custom--margin--horizontal);
 }
 
+.wp-block { // For the editor.
+	max-width: var(--wp--custom--width--default);
+}
+
+.wp-block[data-align=wide] { // For the editor.
+	max-width: var(--wp--custom--width--wide);
+}
+
+.wp-block[data-align=full] { // For the editor.
+	max-width: none;
+}
+
 // This is the default with of blocks on the page with not assign alignwide or alignfull
+.wp-block-group .wp-block-group, // When a group is in a group return alignment to default
 .wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
 .wp-site-blocks .wp-block-post-content > * {
 	max-width: var(--wp--custom--width--default);
@@ -49,14 +62,12 @@ body {
 	box-sizing: content-box;
 }
 
-.wp-site-blocks .wp-block-template-part.alignfull {
+// If a block is inside of a container and set to alignfull
+// then it should be as wide as the container it's in, however wide that is.
+.wp-site-blocks *[class*="__inner-container"] .alignfull {
+	box-sizing: border-box;
+	transform: unset;
 	width: 100%;
-	max-width: 100%;
-}
-
-.wp-site-blocks .wp-block-columns.alignfull {
-	width: 100%;
-	max-width: 100%;
 }
 
 // Align Center
@@ -66,36 +77,52 @@ body {
 
 // Align Left and Right
 @include media(mobile) {
+	.block-editor-block-list__layout .alignleft,
+	.block-editor-block-list__layout .alignright,
 	.wp-site-blocks .alignleft,
 	.wp-site-blocks .alignright {
-		// Content width is the lesser of the viewport width (subtracting margins)
-		// or the default site width.
-		// This variable is only used for this element.
-		--content-width: min( 100vw - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
-		// The alignment margin is the viewport, subtract the content and divide by two
-		// Then subtract the block padding
-		--alignment-margin: calc( ( 100vw - var(--content-width ) ) / 2 - var(--wp--custom--margin--horizontal) );
-		max-width: var(--wp--custom--width--default);
+		max-width: calc(var(--wp--custom--width--default) / 2);
 	}
-}
 
-// Align Left
-@include media(mobile) {
+	// Align Left
 	.wp-site-blocks .alignleft {
 		/*rtl:ignore*/
 		float: left;
+	}
+
+	// Align Right
+	.wp-site-blocks .alignright {
+		/*rtl:ignore*/
+		float: right;
+	}
+
+	// When alignments are applied to top level blocks
+	// we need to add more left/right margin as the block is full width.
+	.block-editor-block-list__layout > .alignleft, // For the editor.
+	.block-editor-block-list__layout > .alignright, // For the editor.
+	.wp-site-blocks .wp-block-post-content > .alignleft,
+	.wp-site-blocks .wp-block-post-content > .alignright {
+		// Content width is the lesser of the viewport width (subtracting margins)
+		// or the default site width.
+		// This variable is only used for this element.
+		--content-width: min( 100% - var(--wp--custom--margin--horizontal) * 2, var(--wp--custom--width--default) );
+		// The alignment margin is the viewport, subtract the content and divide by two
+		// Then subtract the block padding
+		--alignment-margin: calc( ( 100% - var(--content-width ) ) / 2 );
+	}
+
+	// Align Left
+	.block-editor-block-list__layout > .alignleft, // For the editor.
+	.wp-site-blocks .wp-block-post-content > .alignleft {
 		/*rtl:ignore*/
 		margin-left: var(--alignment-margin);
 		/*rtl:ignore*/
 		margin-right: var(--wp--custom--margin--horizontal);
 	}
-}
 
-// Align Right
-@include media(mobile) {
-	.wp-site-blocks .alignright {
-		/*rtl:ignore*/
-		float: right;
+	// Align Right
+	.block-editor-block-list__layout > .alignright, // For the editor.
+	.wp-site-blocks .wp-block-post-content > .alignright {
 		/*rtl:ignore*/
 		margin-left: var(--wp--custom--margin--horizontal);
 		/*rtl:ignore*/
