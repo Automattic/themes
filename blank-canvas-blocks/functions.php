@@ -49,30 +49,10 @@ add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 function blank_canvas_blocks_fonts_url() {
 	$fonts_url = '';
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Fira Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$fira_sans = esc_html_x( 'on', 'Fira Sans: on or off', 'blank-canvas-blocks' );
+	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
+	$font_families = $theme_data['defaults']['custom']['fontsToLoadFromGoogle'];
 
-	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$playfair_display = esc_html_x( 'on', 'Playfair Display: on or off', 'blank-canvas-blocks' );
-
-	if ( 'off' !== $fira_sans || 'off' !== $playfair_display ) {
-		$font_families = array();
-
-		if ( 'off' !== $fira_sans ) {
-			$font_families[] = 'family=Fira Sans:ital,wght@0,400;0,500;1,400';
-		}
-
-		if ( 'off' !== $playfair_display ) {
-			$font_families[] = 'family=Playfair Display:ital,wght@0,400;0,700;1,400';
-		}
-
-		$font_families = apply_filters( 'included_google_font_families', $font_families );
+	if ( $font_families ) {
 		$font_families[] = 'display=swap';
 
 		// Make a single request for the theme fonts.
