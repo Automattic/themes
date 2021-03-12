@@ -1,7 +1,4 @@
 <?php
-
-$theme_json = json_decode( file_get_contents( get_stylesheet_directory() . '/experimental-theme.json'), true );
-
 if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 	function blank_canvas_blocks_support()  {
 
