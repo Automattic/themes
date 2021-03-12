@@ -41,10 +41,11 @@ function blank_canvas_blocks_scripts() {
 add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 
 /**
- * Add Google webfonts, if necessary
+ * Add Google webfonts
  *
- * - See: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
+ * @return $fonts_url
  */
+
 function blank_canvas_blocks_fonts_url() {
 	$fonts_url = '';
 
@@ -71,19 +72,11 @@ function blank_canvas_blocks_fonts_url() {
 			$font_families[] = 'Playfair Display:ital,wght@0,400;0,700;1,400';
 		}
 
-		/**
-		 * A filter to enable child themes to add/change/omit font families.
-		 *
-		 * @param array $font_families An array of font families to be imploded for the Google Font API
-		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
+		$font_families[] = 'display=swap';
 
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		// Make a single request for the theme fonts.
+		$fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
 	}
 
 	return esc_url_raw( $fonts_url );
