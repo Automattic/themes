@@ -1,4 +1,7 @@
 <?php
+
+$theme_json = json_decode( file_get_contents( get_stylesheet_directory() . '/experimental-theme.json'), true );
+
 if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 	function blank_canvas_blocks_support()  {
 
@@ -65,11 +68,11 @@ function blank_canvas_blocks_fonts_url() {
 		$font_families = array();
 
 		if ( 'off' !== $fira_sans ) {
-			$font_families[] = 'Fira Sans:ital,wght@0,400;0,500;1,400';
+			$font_families[] = 'family=Fira Sans:ital,wght@0,400;0,500;1,400';
 		}
 
 		if ( 'off' !== $playfair_display ) {
-			$font_families[] = 'Playfair Display:ital,wght@0,400;0,700;1,400';
+			$font_families[] = 'family=Playfair Display:ital,wght@0,400;0,700;1,400';
 		}
 
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
