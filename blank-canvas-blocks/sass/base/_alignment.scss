@@ -11,63 +11,30 @@ body {
 	box-sizing: border-box;
 }
 
-// This puts some space between all the elements in the content and in any containers (such as group of column)
-.entry-content > *:not(:last-child):not(.wp-block-spacer),
-*[class*="__inner-container"] > *:not(:last-child):not(.wp-block-spacer),
-*[class*="__content"] > *:not(:last-child):not(.wp-block-spacer){
-	margin-bottom: var(--wp--custom--margin--vertical);
-}
-
-// Ensure horizontal padding on the page
-.wp-site-blocks {
-	padding: 0 var(--wp--custom--margin--horizontal);
-}
-
-.wp-block { // For the editor.
-	max-width: var(--wp--custom--width--default);
-}
-
-.wp-block[data-align=wide] { // For the editor.
-	max-width: var(--wp--custom--width--wide);
-}
-
-.wp-block[data-align=full] { // For the editor.
-	max-width: none;
-}
 
 // This is the default with of blocks on the page with not assign alignwide or alignfull
-.wp-block-group .wp-block-group, // When a group is in a group return alignment to default
+.wp-site-blocks *[class*="__inner-container"] > .wp-block-group,
 .wp-site-blocks > *:not(.wp-block-post-content):not(.wp-block-template-part),
 .wp-site-blocks .wp-block-post-content > * {
 	max-width: var(--wp--custom--width--default);
 	margin-left: auto;
 	margin-right: auto;
+ 	padding: 0 var(--wp--custom--margin--horizontal);
 }
 
 // Align the block to be on the "wider" side of things
+.wp-site-blocks *[class*="__inner-container"] > .alignwide,
 .wp-site-blocks .alignwide {
 	width: var(--wp--custom--width--wide);
 	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
 }
 
-// The block or template part should span the full width of the page
+// The block should span the full width of the page
+.wp-site-blocks *[class*="__inner-container"] > .alignfull,
 .wp-site-blocks .alignfull {
-	transform: translateX(calc(0px - var(--wp--custom--margin--horizontal)));
-	width: calc(100% + (2 * var(--wp--custom--margin--horizontal)));
-	max-width: calc(100% + (2 * var(--wp--custom--margin--horizontal)));
-	margin-left: 0;
-	margin-right: 0;
-	box-sizing: content-box;
-}
-
-// If a block is inside of a container and set to alignfull
-// then it should be as wide as the container it's in, however wide that is.
-.wp-site-blocks *[class*="__inner-container"] .alignfull {
-	box-sizing: border-box;
-	transform: unset;
-	width: 100%;
+	max-width: unset;
+	margin-left: unset;
+	margin-right: unset;
 }
 
 // Align Center

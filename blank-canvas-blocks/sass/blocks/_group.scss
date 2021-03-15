@@ -1,9 +1,6 @@
 // NOTE: Gutenberg sets a padding value by default for groups with a background.
-// However when this top level element has padding applied it mucks up the alignment
-// calculations, so it's removed and set instead (to a configurable value) on the inner-container instead.
-.wp-block-group.has-background {
-	padding: unset;
-	.wp-block-group__inner-container {
-		padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
-	}
+// However this isn't customizable so that's being overwritten here.
+// Unfortunately it borks up the editor padding so the :not() is for the editor.
+.wp-block-group.has-background:not([class*="block-editor-block"]) {
+	padding: var(--wp--custom--margin--vertical) var(--wp--custom--margin--horizontal);
 }
