@@ -50,9 +50,10 @@ function blank_canvas_blocks_fonts_url() {
 	$fonts_url = '';
 
 	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
-	$font_families = $theme_data['defaults']['custom']['fontsToLoadFromGoogle'];
+	$custom_data = $theme_data['defaults']['custom'];
+	if ( array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
+		$font_families = $theme_data['defaults']['custom']['fontsToLoadFromGoogle'];
 
-	if ( $font_families ) {
 		$font_families[] = 'display=swap';
 
 		// Make a single request for the theme fonts.
