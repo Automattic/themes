@@ -177,6 +177,166 @@ body {
 	background-color: var(--wp--custom--color--selection);
 }
 
+/**
+ * Site Structure
+ *
+ * - Set vertical margins and responsive widths on
+ *   top-level wrappers and content wrappers
+ * - `--global--width-content` is a responsive veriable
+ * - See: globals/_global-width-responsive.scss
+ */
+/**
+ * Site-main children wrappers
+ * - Add double vertical margins here for clearer heirarchy
+ */
+.site-main > * {
+	margin-top: calc(3 * var(--wp--custom--margin--vertical));
+	margin-bottom: calc(3 * var(--wp--custom--margin--vertical));
+}
+
+.site-main > *:first-child {
+	margin-top: 0;
+}
+
+.site-main > *:last-child {
+	margin-bottom: 0;
+}
+
+/*
+ * Block & non-gutenberg content wrappers
+ * - Set margins
+ */
+.entry-header,
+.post-thumbnail,
+.entry-content,
+.entry-footer,
+.entry-author,
+.widget-area {
+	margin-top: var(--wp--custom--margin--vertical);
+	margin-right: auto;
+	margin-bottom: var(--wp--custom--margin--vertical);
+	margin-left: auto;
+}
+
+/*
+ * Block & non-gutenberg content wrapper children
+ * - Sets spacing-vertical margin logic
+ */
+.site-footer > *,
+.site-main > article > *,
+.site-main > .not-found > *,
+.entry-content > *,
+[class*="inner-container"] > *,
+.wp-block-template-part > *,
+.widget-area > *,
+.widget-column > * {
+	margin-top: calc( 0.666 * var(--wp--custom--margin--vertical));
+	margin-bottom: calc( 0.666 * var(--wp--custom--margin--vertical));
+}
+
+@media only screen and (min-width: 482px) {
+	.site-footer > *,
+	.site-main > article > *,
+	.site-main > .not-found > *,
+	.entry-content > *,
+	[class*="inner-container"] > *,
+	.wp-block-template-part > *,
+	.widget-area > *,
+	.widget-column > * {
+		margin-top: var(--wp--custom--margin--vertical);
+		margin-bottom: var(--wp--custom--margin--vertical);
+	}
+}
+
+.site-footer > *:first-child,
+.site-main > article > *:first-child,
+.site-main > .not-found > *:first-child,
+.entry-content > *:first-child,
+[class*="inner-container"] > *:first-child,
+.wp-block-template-part > *:first-child,
+.widget-area > *:first-child,
+.widget-column > *:first-child {
+	margin-top: 0;
+}
+
+.site-footer > *:last-child,
+.site-main > article > *:last-child,
+.site-main > .not-found > *:last-child,
+.entry-content > *:last-child,
+[class*="inner-container"] > *:last-child,
+.wp-block-template-part > *:last-child,
+.widget-area > *:last-child,
+.widget-column > *:last-child {
+	margin-bottom: 0;
+}
+
+/*
+ * Block & non-gutenberg content wrapper children
+ * - Sets spacing-unit margins
+ */
+.site-header > *,
+.entry-header > *,
+.post-thumbnail > *,
+.page-content > *,
+.comment-content > *,
+.entry-author > *,
+.widget > * {
+	margin-top: var(--wp--custom--margin--vertical);
+	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.site-header > *:first-child,
+.entry-header > *:first-child,
+.post-thumbnail > *:first-child,
+.page-content > *:first-child,
+.comment-content > *:first-child,
+.entry-author > *:first-child,
+.widget > *:first-child {
+	margin-top: 0;
+}
+
+.site-header > *:last-child,
+.entry-header > *:last-child,
+.post-thumbnail > *:last-child,
+.page-content > *:last-child,
+.comment-content > *:last-child,
+.entry-author > *:last-child,
+.widget > *:last-child {
+	margin-bottom: 0;
+}
+
+/*
+ * .entry-content children specific controls
+ * - Adds special margin overrides for alignment utility classes
+ */
+.entry-content > * {
+	/* Reset alignleft and alignright margins after alignfull */
+}
+
+.entry-content > *.alignleft, .entry-content > *.alignright,
+.entry-content > *.alignleft:first-child + *,
+.entry-content > *.alignright:first-child + *, .entry-content > *.alignfull {
+	margin-top: 0;
+}
+
+.entry-content > *:last-child, .entry-content > *.alignfull {
+	margin-bottom: 0;
+}
+
+.entry-content > *.alignfull + .alignleft,
+.entry-content > *.alignfull + .alignright {
+	margin-top: var(--wp--custom--margin--vertical);
+}
+
+.block-editor-block-list__block {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.block-editor-block-list__block .block-library-spacer__resize-container {
+	margin-bottom: 0;
+}
+
 *[class*="-background-color"]:not(.has-text-color) {
 	color: var(--wp--custom--color--background);
 }
