@@ -161,27 +161,21 @@ body {
  */
 a:not(.wp-block-button__link) {
 	cursor: pointer;
-	color: var(--wp--style--color--link, var(--wp--custom--color--foreground));
+	text-underline-offset: 2px;
 	text-decoration: none;
-	border-bottom: 1px solid transparent;
 }
 
 a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus {
-	border-bottom-color: currentColor;
+	text-decoration: underline;
 }
 
 .entry-content a:not(.wp-block-button__link) {
-	border-bottom: 1px solid currentColor;
-	text-decoration: none;
+	text-decoration: underline;
 	transition: border-color 0.1s ease-out;
 }
 
 .entry-content a:not(.wp-block-button__link):hover, .entry-content a:not(.wp-block-button__link):focus {
-	border-bottom-color: transparent;
-}
-
-.entry-content a:not(.wp-block-button__link):active {
-	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
+	text-decoration: none;
 }
 
 input[type="text"],

@@ -37,6 +37,7 @@ function blank_canvas_blocks_scripts() {
 	wp_enqueue_style( 'blank-canvas-blocks-fonts', blank_canvas_blocks_fonts_url(), array(), null );
 
 	wp_enqueue_style( 'blank_canvas_blocks-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' )  );
+	wp_enqueue_style( 'blank_canvas_blocks', get_stylesheet_uri(), array('blank_canvas_blocks-ponyfill'), wp_get_theme()->get( 'Version' )  );
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 
