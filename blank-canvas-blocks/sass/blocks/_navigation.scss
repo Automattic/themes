@@ -46,7 +46,7 @@
 }
 
 @include media(mobile) {
-	.wp-block-navigation.is___experimental-mobile {
+	header .wp-block-navigation {
 		.wp-block-navigation__mobile-menu-open-button {
 			display:none;
 		}
@@ -54,18 +54,18 @@
 }
 
 @include media(mobile-only) {
-	.wp-block-navigation.is___experimental-mobile:not(.show) {
+	header .wp-block-navigation:not(.show) {
 		.wp-block-navigation__container {
 			display: none;
 		}
 	}
-	.wp-block-navigation.is___experimental-mobile:not(.show) {
+	header .wp-block-navigation:not(.show) {
 		font-size: var(--wp--custom--navigation--mobile--menu--typography--font-size);
 		font-weight: var(--wp--custom--navigation--mobile--menu--typography--font-weight);
 		font-family: var(--wp--custom--navigation--mobile--menu--typography--font-family);
 		text-align: right;
 	}
-	.wp-block-navigation.is___experimental-mobile.show {
+	header .wp-block-navigation.show {
 		opacity: 1;
 		position:absolute;
 		top: 0;

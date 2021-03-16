@@ -28,7 +28,7 @@
 	}
 
 	window.addEventListener( 'load', () => {
-		Array.from( document.querySelectorAll( '.wp-block-navigation.is___experimental-mobile' ) )
+		Array.from( document.querySelectorAll( 'header .wp-block-navigation' ) )
 			.forEach( addMobileMenuButton );
 	});
 
