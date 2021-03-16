@@ -335,6 +335,7 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .wp-block-navigation .wp-block-navigation-link__submenu-icon {
 	padding: 0;
+	text-indent: -8px;
 }
 
 .wp-block-navigation .wp-block-navigation__container .wp-block-navigation-link {
@@ -365,6 +366,54 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .wp-block-navigation .wp-block-navigation__container .has-child .wp-block-navigation-link__container .wp-block-navigation-link__content {
 	padding: var(--wp--custom--navigation--submenu--padding);
+}
+
+@media only screen and (min-width: 482px) {
+	.wp-block-navigation.is___experimental-mobile .wp-block-navigation__mobile-menu-open-button {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 481px) {
+	.wp-block-navigation.is___experimental-mobile:not(.show) .wp-block-navigation__container {
+		display: none;
+	}
+	.wp-block-navigation.is___experimental-mobile:not(.show) {
+		font-size: var(--wp--custom--navigation--mobile--menu--typography--font-size);
+		font-weight: var(--wp--custom--navigation--mobile--menu--typography--font-weight);
+		font-family: var(--wp--custom--navigation--mobile--menu--typography--font-family);
+		text-align: right;
+	}
+	.wp-block-navigation.is___experimental-mobile.show {
+		opacity: 1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+	}
+	.wp-block-navigation.is___experimental-mobile.show .wp-block-navigation__container {
+		background-color: var(--wp--custom--navigation--submenu--color--background);
+		flex-direction: column;
+		align-items: var(--wp--custom--navigation--mobile--horizontal-alignment);
+		justify-content: var(--wp--custom--navigation--mobile--vertical-alignment);
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		overflow-y: scroll;
+	}
+	.wp-block-navigation.is___experimental-mobile.show .wp-block-navigation-link {
+		padding: 0;
+	}
+	.wp-block-navigation.is___experimental-mobile.show .wp-block-navigation-link .wp-block-navigation-link__content {
+		padding: var(--wp--custom--navigation--mobile--padding);
+		font-family: var(--wp--custom--navigation--mobile--typography--font-family);
+		font-size: var(--wp--custom--navigation--mobile--typography--font-size);
+		font-weight: var(--wp--custom--navigation--mobile--typography--font-weight);
+	}
 }
 
 .wp-block-quote {
