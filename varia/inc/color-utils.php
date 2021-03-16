@@ -28,19 +28,20 @@ if ( ! function_exists( 'rgb_to_hsvl' ) ) {
 		$min_rgb           = min( $r, $g, $b );
 		$chroma            = $max_rgb - $min_rgb;
 		$v                 = 100 * $max_rgb;
-		if ( 0 === $chroma ) {
+		if ( $chroma > 0 ) {
+			$s = 100 * ( $chroma / $max_rgb );
+			if ( $r === $min_rgb ) {
+				$h = 3 - ( ( $g - $b ) / $chroma );
+			} elseif ( $b === $min_rgb ) {
+				$h = 1 - ( ( $r - $g ) / $chroma );
+			} else { // $g === $min_rgb
+				$h = 5 - ( ( $b - $r ) / $chroma );
+			}
+			$h = 60 * $h;
+			return array( $h, $s, $v, $l );
+		} else {
 			return array( 0, 0, $v, $l );
 		}
-		$s = 100 * ( $chroma / $max_rgb );
-		if ( $r === $min_rgb ) {
-			$h = 3 - ( ( $g - $b ) / $chroma );
-		} elseif ( $b === $min_rgb ) {
-			$h = 1 - ( ( $r - $g ) / $chroma );
-		} else { // $g === $min_rgb
-			$h = 5 - ( ( $b - $r ) / $chroma );
-		}
-		$h = 60 * $h;
-		return array( $h, $s, $v, $l );
 	}
 }
 
