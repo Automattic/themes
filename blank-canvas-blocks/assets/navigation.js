@@ -43,7 +43,7 @@
 	}
 
 	window.addEventListener( 'load', () => {
-		mobalizeNavigationBlock(document.querySelector( 'header .wp-block-navigation' ) );
+		mobilizeNavigationBlock( document.querySelector( 'header .wp-block-navigation' ) );
 	});
 
 })();
