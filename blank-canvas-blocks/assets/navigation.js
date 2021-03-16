@@ -5,31 +5,46 @@
  */
 (function () {
 
-	function addMobileMenuButton( navMenu ) {
+	function mobalizeNavigationBlock( navMenu ) {
+		if( !navMenu ){
+			return;
+		}
+		addMobileMenuOpenButton( navMenu );
+		addMobileMenuCloseButton( navMenu );
+	}
 
+	function addMobileMenuOpenButton( navMenu ) {
 		const menuContainer = navMenu.querySelector( '.wp-block-navigation__container' );
-		const openButton = document.createElement( 'a' );
-		const openButtonLabel = getComputedStyle(menuContainer).getPropertyValue( '--wp--custom--navigation--mobile--menu--label' );
-		openButton.setAttribute( 'href', '#' );
+		const openButton = document.createElement( 'button' );
+		const openButtonLabel = getComputedStyle(menuContainer).getPropertyValue( '--wp--custom--navigation--mobile--menu--open-label' );
 		openButton.classList.add( 'wp-block-navigation__mobile-menu-open-button' );
-		openButton.innerText = ( openButtonLabel );
-		openButton.addEventListener( 'click', () => {
+		openButton.innerText = openButtonLabel;
+		openButton.addEventListener( 'click', (clickEvent) => {
+			console.log('clickEvent', clickEvent);
 			navMenu.classList.add( 'show' );
 			menuContainer.scrollTop = 0;
-		});
-
-		menuContainer.addEventListener( 'click', (mouseEvent) => {
-			if ( mouseEvent.target === menuContainer ) {
-				navMenu.classList.remove( 'show' );
+			if( 0 === clickEvent.detail) {
+				// Menu was opened with keyboard, apply focus to close button.
+				menuContainer.querySelector('button:first-of-type')?.focus();
 			}
 		});
-
 		navMenu.appendChild( openButton );
 	}
 
+	function addMobileMenuCloseButton( navMenu ) {
+		const menuContainer = navMenu.querySelector( '.wp-block-navigation__container' );
+		const closeButton = document.createElement( 'button' );
+		const closeButtonLabel = getComputedStyle(menuContainer).getPropertyValue( '--wp--custom--navigation--mobile--menu--close-label' );
+		closeButton.classList.add( 'wp-block-navigation__mobile-menu-close-button' );
+		closeButton.innerText = closeButtonLabel;
+		closeButton.addEventListener( 'click', () => {
+			navMenu.classList.remove( 'show' );
+		});
+		menuContainer.prepend( closeButton );
+	}
+
 	window.addEventListener( 'load', () => {
-		Array.from( document.querySelectorAll( 'header .wp-block-navigation' ) )
-			.forEach( addMobileMenuButton );
+		mobalizeNavigationBlock(document.querySelector( 'header .wp-block-navigation' ) );
 	});
 
 })();

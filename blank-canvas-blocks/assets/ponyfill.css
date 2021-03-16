@@ -369,20 +369,30 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 @media only screen and (min-width: 482px) {
-	header .wp-block-navigation .wp-block-navigation__mobile-menu-open-button {
+	header .wp-block-navigation .wp-block-navigation__mobile-menu-open-button,
+	header .wp-block-navigation .wp-block-navigation__mobile-menu-close-button {
 		display: none;
 	}
 }
 
 @media only screen and (max-width: 481px) {
+	header .wp-block-navigation:not(.show) {
+		text-align: right;
+		padding-left: var(--wp--custom--margin--horizontal);
+		padding-right: var(--wp--custom--margin--horizontal);
+	}
 	header .wp-block-navigation:not(.show) .wp-block-navigation__container {
 		display: none;
 	}
-	header .wp-block-navigation:not(.show) {
+	header .wp-block-navigation:not(.show) .wp-block-navigation__mobile-menu-open-button {
 		font-size: var(--wp--custom--navigation--mobile--menu--typography--font-size);
 		font-weight: var(--wp--custom--navigation--mobile--menu--typography--font-weight);
 		font-family: var(--wp--custom--navigation--mobile--menu--typography--font-family);
-		text-align: right;
+		background-color: transparent;
+		border: none;
+	}
+	header .wp-block-navigation:not(.show) .wp-block-navigation__mobile-menu-close-button {
+		display: none;
 	}
 	header .wp-block-navigation.show {
 		opacity: 1;
@@ -391,6 +401,17 @@ p.has-drop-cap:not(:focus):first-letter {
 		bottom: 0;
 		right: 0;
 		width: 100%;
+	}
+	header .wp-block-navigation.show .wp-block-navigation__mobile-menu-close-button {
+		display: inline-block;
+		position: absolute;
+		top: var(--wp--custom--margin--vertical);
+		right: var(--wp--custom--margin--horizontal);
+		font-size: var(--wp--custom--navigation--mobile--menu--typography--font-size);
+		font-weight: var(--wp--custom--navigation--mobile--menu--typography--font-weight);
+		font-family: var(--wp--custom--navigation--mobile--menu--typography--font-family);
+		background-color: transparent;
+		border: none;
 	}
 	header .wp-block-navigation.show .wp-block-navigation__container {
 		background-color: var(--wp--custom--navigation--submenu--color--background);
@@ -402,7 +423,7 @@ p.has-drop-cap:not(:focus):first-letter {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		z-index: 9999;
+		z-index: 99999;
 		overflow-y: scroll;
 	}
 	header .wp-block-navigation.show .wp-block-navigation-link {
