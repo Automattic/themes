@@ -20,7 +20,6 @@
 		openButton.classList.add( 'wp-block-navigation__mobile-menu-open-button' );
 		openButton.innerText = openButtonLabel;
 		openButton.addEventListener( 'click', (clickEvent) => {
-			console.log('clickEvent', clickEvent);
 			navMenu.classList.add( 'show' );
 			menuContainer.scrollTop = 0;
 			if( 0 === clickEvent.detail) {
