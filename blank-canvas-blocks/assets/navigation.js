@@ -22,7 +22,7 @@
 		openButton.addEventListener( 'click', (clickEvent) => {
 			navMenu.classList.add( 'show' );
 			menuContainer.scrollTop = 0;
-			if( 0 === clickEvent.detail) {
+			if( 0 === clickEvent.detail ) {
 				// Menu was opened with keyboard, apply focus to close button.
 				menuContainer.querySelector('button:first-of-type')?.focus();
 			}
