@@ -5,7 +5,7 @@
  */
 (function () {
 
-	function mobalizeNavigationBlock( navMenu ) {
+	function mobilizeNavigationBlock( navMenu ) {
 		if( !navMenu ){
 			return;
 		}
