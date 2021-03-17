@@ -17,16 +17,22 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-
-		// Enqueue editor styles.
-		add_editor_style( array(
-			blank_canvas_blocks_fonts_url(),
-			'/assets/ponyfill.css'
-		) );
-
     }
     add_action( 'after_setup_theme', 'blank_canvas_blocks_support' );
 endif;
+
+/**
+ *
+ * Enqueue scripts and styles.
+ */
+function blank_canvas_editor_styles() {
+	// Enqueue editor styles.
+	add_editor_style( array(
+		blank_canvas_blocks_fonts_url(),
+		'/assets/ponyfill.css'
+	) );
+}
+add_action( 'admin_init', 'blank_canvas_editor_styles' );
 
 /**
  *
