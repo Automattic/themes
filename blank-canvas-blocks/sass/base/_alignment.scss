@@ -11,6 +11,10 @@ body {
 	box-sizing: border-box;
 }
 
+.wp-site-blocks {
+	margin-left: var(--wp--custom--margin--horizontal);
+	margin-right: var(--wp--custom--margin--horizontal);
+}
 
 // This is the default with of blocks on the page with not assign alignwide or alignfull
 .wp-site-blocks *[class*="__inner-container"] > .wp-block-group,
@@ -19,8 +23,6 @@ body {
 	max-width: var(--wp--custom--width--default);
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: var(--wp--custom--margin--horizontal);
-	padding-right: var(--wp--custom--margin--horizontal);
 }
 
 // Align the block to be on the "wider" side of things
@@ -34,10 +36,11 @@ body {
 .wp-site-blocks *[class*="__inner-container"] > .alignfull,
 .alignfull {
 	max-width: unset;
-	margin-left: unset;
-	margin-right: unset;
-	padding-left: unset;
-	padding-right: unset;
+}
+
+.alignfull {
+	margin-left: calc(var(--wp--custom--margin--horizontal) * -1);
+	margin-right: calc(var(--wp--custom--margin--horizontal) * -1);
 }
 
 // Align Center
