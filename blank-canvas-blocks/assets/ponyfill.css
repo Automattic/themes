@@ -168,29 +168,26 @@ body {
  * Elements
  * - Styles for basic HTML elemants
  */
-a:not(.wp-block-button__link) {
+a {
 	cursor: pointer;
-	color: var(--wp--style--color--link, var(--wp--custom--color--foreground));
+	text-underline-offset: 2px;
 	text-decoration: none;
-	border-bottom: 1px solid transparent;
 }
 
-a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus {
-	border-bottom-color: currentColor;
+a:hover, a:focus {
+	text-decoration: underline;
 }
 
-.entry-content a:not(.wp-block-button__link) {
-	border-bottom: 1px solid currentColor;
-	text-decoration: none;
+.block-editor-block-list__layout a,
+.wp-block-post-content a {
+	text-decoration: underline;
 	transition: border-color 0.1s ease-out;
 }
 
-.entry-content a:not(.wp-block-button__link):hover, .entry-content a:not(.wp-block-button__link):focus {
-	border-bottom-color: transparent;
-}
-
-.entry-content a:not(.wp-block-button__link):active {
-	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
+.block-editor-block-list__layout a:hover, .block-editor-block-list__layout a:focus,
+.wp-block-post-content a:hover,
+.wp-block-post-content a:focus {
+	text-decoration: none;
 }
 
 input[type="text"],
@@ -273,6 +270,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: var(--wp--custom--button--font-size);
 	line-height: var(--wp--custom--button--line-height);
 	border-radius: var(--wp--custom--button--border-radius);
+	text-decoration: none;
 }
 
 .wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,

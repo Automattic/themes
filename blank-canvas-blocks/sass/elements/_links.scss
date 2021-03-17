@@ -1,30 +1,22 @@
-// All Links styles
-
-a:not(.wp-block-button__link) {
+// Default link styles
+a {
 	cursor: pointer;
-	color: var( --wp--style--color--link, var(--wp--custom--color--foreground) );
+	text-underline-offset: 2px;
 	text-decoration: none;
-	border-bottom: 1px solid transparent;
 
 	&:hover,
 	&:focus {
-		border-bottom-color: currentColor;
+		text-decoration: underline;
 	}
 }
 
-// Links that are in the content
-.entry-content a:not(.wp-block-button__link) {
-	border-bottom: 1px solid currentColor;
-	text-decoration: none;
-	transition: border-color 0.1s ease-out;
+// Links that appear in the main content area
+.block-editor-block-list__layout a, // Needed for the post area
+.wp-block-post-content a {
+	text-decoration: underline;
 
 	&:hover,
 	&:focus {
-		border-bottom-color: transparent;
+		text-decoration: none;
 	}
-
-	&:active {
-		color: var( --wp--style--color--link, var(--wp--custom--color--primary) );
-	}
-
 }
