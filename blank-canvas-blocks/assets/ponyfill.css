@@ -168,22 +168,22 @@ body {
  * Elements
  * - Styles for basic HTML elemants
  */
-a:not(.wp-block-button__link) {
+a {
 	cursor: pointer;
 	text-underline-offset: 2px;
 	text-decoration: none;
 }
 
-a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus {
+a:hover, a:focus {
 	text-decoration: underline;
 }
 
-.entry-content a:not(.wp-block-button__link) {
+.entry-content a {
 	text-decoration: underline;
 	transition: border-color 0.1s ease-out;
 }
 
-.entry-content a:not(.wp-block-button__link):hover, .entry-content a:not(.wp-block-button__link):focus {
+.entry-content a:hover, .entry-content a:focus {
 	text-decoration: none;
 }
 
@@ -267,6 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: var(--wp--custom--button--font-size);
 	line-height: var(--wp--custom--button--line-height);
 	border-radius: var(--wp--custom--button--border-radius);
+	text-decoration: none;
 }
 
 .wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
