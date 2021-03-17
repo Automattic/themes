@@ -52,6 +52,8 @@ To set this up follow these instructions:
 
 Now when you commit changes to a file PHPCBF will attempt to fix any issues with the file.
 
+This will also install the [WordPress-standard Prettier Configuration](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-prettier-config/) which can (optionally) be used in your IDE or command-line to format your code via (Prettier)[https://prettier.io/docs/en/editors.html].
+
 ## Packaging for WordPress.org Themes Showcase
 
 The code in this repository mirrors the code needed for the theme to function correctly on _WordPress.com_. To prepare a theme.zip that passes the _WordPress.org_ theme review automated test, do the following:
