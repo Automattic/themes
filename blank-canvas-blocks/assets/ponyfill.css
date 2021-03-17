@@ -179,17 +179,17 @@ a:not(.wp-block-button__link):hover, a:not(.wp-block-button__link):focus {
 	border-bottom-color: currentColor;
 }
 
-.entry-content a:not(.wp-block-button__link) {
+.entry-content a:not(.wp-block-button__link):not(.wp-block-file__button) {
 	border-bottom: 1px solid currentColor;
 	text-decoration: none;
 	transition: border-color 0.1s ease-out;
 }
 
-.entry-content a:not(.wp-block-button__link):hover, .entry-content a:not(.wp-block-button__link):focus {
+.entry-content a:not(.wp-block-button__link):not(.wp-block-file__button):hover, .entry-content a:not(.wp-block-button__link):not(.wp-block-file__button):focus {
 	border-bottom-color: transparent;
 }
 
-.entry-content a:not(.wp-block-button__link):active {
+.entry-content a:not(.wp-block-button__link):not(.wp-block-file__button):active {
 	color: var(--wp--style--color--link, var(--wp--custom--color--primary));
 }
 
@@ -288,8 +288,8 @@ h1, h2, h3, h4, h5, h6 {
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:visited {
-	color: var(--wp--custom--color--background);
-	background: var(--wp--custom--color--secondary);
+	color: var(--wp--custom--button--color--hover-text);
+	background: var(--wp--custom--button--color--hover-background);
 }
 
 .wp-block-file .wp-block-file__button {
@@ -298,6 +298,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: var(--wp--custom--button--font-size);
 	line-height: var(--wp--custom--button--line-height);
 	border-radius: var(--wp--custom--button--border-radius);
+	color: var(--wp--custom--button--color--text);
+	background: var(--wp--custom--button--color--background);
 	padding: calc(0.667em + 2px) calc(1.333em + 2px);
 }
 
