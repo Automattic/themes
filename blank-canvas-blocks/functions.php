@@ -12,9 +12,6 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 		// https://github.com/WordPress/gutenberg/issues/26901
 		add_theme_support( 'responsive-embeds' );
 
-		// Add support for "reasonable default" block styles
-		add_theme_support( 'wp-block-styles');
-
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
     }
