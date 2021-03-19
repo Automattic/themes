@@ -1,6 +1,6 @@
 <?php
 if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
-	function blank_canvas_blocks_support()  {
+	function blank_canvas_blocks_support() {
 
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
@@ -14,8 +14,15 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-    }
-    add_action( 'after_setup_theme', 'blank_canvas_blocks_support' );
+
+		// Enqueue editor styles.
+		add_editor_style(
+			array(
+				'/assets/ponyfill.css',
+			)
+		);
+	}
+	add_action( 'after_setup_theme', 'blank_canvas_blocks_support' );
 endif;
 
 /**
@@ -24,10 +31,11 @@ endif;
  */
 function blank_canvas_editor_styles() {
 	// Enqueue editor styles.
-	add_editor_style( array(
-		blank_canvas_blocks_fonts_url(),
-		'/assets/ponyfill.css'
-	) );
+	add_editor_style(
+		array(
+			blank_canvas_blocks_fonts_url(),
+		)
+	);
 }
 add_action( 'admin_init', 'blank_canvas_editor_styles' );
 
@@ -38,9 +46,8 @@ add_action( 'admin_init', 'blank_canvas_editor_styles' );
 function blank_canvas_blocks_scripts() {
 	// Enqueue Google fonts
 	wp_enqueue_style( 'blank-canvas-blocks-fonts', blank_canvas_blocks_fonts_url(), array(), null );
-
 	wp_enqueue_script( 'blank-canvas-navigation-script', get_template_directory_uri() . '/assets/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_style( 'blank_canvas_blocks-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' )  );
+	wp_enqueue_style( 'blank_canvas_blocks-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 
@@ -53,7 +60,7 @@ add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 function blank_canvas_blocks_fonts_url() {
 	$fonts_url = '';
 
-	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
+	$theme_data  = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
 	$custom_data = $theme_data['defaults']['custom'];
 	if ( array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
 		$font_families = $theme_data['defaults']['custom']['fontsToLoadFromGoogle'];
