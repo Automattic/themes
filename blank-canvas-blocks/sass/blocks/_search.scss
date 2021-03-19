@@ -1,32 +1,30 @@
+@import 'button';
+
 .wp-block-search {
+
 	&.wp-block-search__button-inside {
 		.wp-block-search__inside-wrapper{
+			padding: var(--wp--custom--form--padding);
 			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
-			border-radius: var(--wp--custom--form--border-radius);
+			border-radius: var(--wp--custom--form--border--radius);
 			.wp-block-search__input {
-				padding: var(--wp--custom--form--padding);
-			}
-			.wp-block-search__button {
-				padding: var(--wp--custom--search--button--padding);
+				padding: 0;
 			}
 		}
 	}
 
 	.wp-block-search__input {
-		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
-		border-radius: var(--wp--custom--form--border--radius);
-		color: var(--wp--custom--form--color--text);
 		padding: var(--wp--custom--form--padding);
-		background: var(--wp--custom--form--color--background);	
-		font-size: var(--wp--custom--form--font-size);
-		line-height: var(--wp--custom--typography--line-height);
+		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 	}
 
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button,
 	.wp-block-search__button {
 		@include button-main-styles;
 		@include button-hover-styles;
-		padding: var(--wp--custom--search--button--padding);
-		margin: var(--wp--custom--search--button--margin);
-		line-height: var(--wp--custom--search--button--line-height);
+		&.has-icon {
+			line-height: 0;
+		}
 	}
+
 }

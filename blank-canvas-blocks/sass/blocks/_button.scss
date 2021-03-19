@@ -8,9 +8,14 @@
 	font-family: var(--wp--custom--button--typography--font-family);
 	font-size: var(--wp--custom--button--typography--font-size);
 	border-radius: var(--wp--custom--button--border--radius);
-	//border-width: var(--wp--custom--button--border--width); //TODO: <---- that
 	line-height: var(--wp--custom--button--border--line-height);
 	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
+	color: var(--wp--custom--button--color--text);
+	border-color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	svg {
+		fill: var(--wp--custom--button--color--text);
+	}
 }
 
 // NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
@@ -21,6 +26,9 @@
 		color: var(--wp--custom--button--color--hover-text);
 		background-color: var(--wp--custom--button--color--hover-background);
 		border-color: var(--wp--custom--button--color--hover-background);
+		svg {
+			fill: var(--wp--custom--button--color--hover-text);
+		}
 	}
 }
 
