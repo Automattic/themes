@@ -434,6 +434,59 @@ p.has-drop-cap:not(:focus):first-letter {
 	line-height: 0;
 }
 
+/**
+ * Button
+ */
+/**
+ * Block Options
+ */
+.wp-block-button.wp-block-button__link,
+.wp-block-button .wp-block-button__link {
+	text-decoration: none;
+}
+
+.wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus {
+	color: var(--wp--custom--button--color--hover-text);
+	background-color: var(--wp--custom--button--color--hover-background);
+	border-color: var(--wp--custom--button--color--hover-background);
+}
+
+.wp-block-button.wp-block-button__link:hover svg, .wp-block-button.wp-block-button__link:focus svg, .wp-block-button.wp-block-button__link.has-focus svg,
+.wp-block-button .wp-block-button__link:hover svg,
+.wp-block-button .wp-block-button__link:focus svg,
+.wp-block-button .wp-block-button__link.has-focus svg {
+	fill: var(--wp--custom--button--color--hover-text);
+}
+
+.wp-block-file *[class*="wp-block-file__button"] {
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	border-radius: var(--wp--custom--button--border--radius);
+	line-height: var(--wp--custom--button--border--line-height);
+	text-decoration: none;
+	color: var(--wp--custom--button--color--text);
+	border-color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-file *[class*="wp-block-file__button"] svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-file *[class*="wp-block-file__button"]:hover, .wp-block-file *[class*="wp-block-file__button"]:focus, .wp-block-file *[class*="wp-block-file__button"].has-focus {
+	color: var(--wp--custom--button--color--hover-text);
+	background-color: var(--wp--custom--button--color--hover-background);
+	border-color: var(--wp--custom--button--color--hover-background);
+}
+
+.wp-block-file *[class*="wp-block-file__button"]:hover svg, .wp-block-file *[class*="wp-block-file__button"]:focus svg, .wp-block-file *[class*="wp-block-file__button"].has-focus svg {
+	fill: var(--wp--custom--button--color--hover-text);
+}
+
 .wp-block-separator:not(.is-style-dots) {
 	border-bottom: var(--wp--custom--separator--thickness) solid var(--wp--custom--separator--color);
 }
