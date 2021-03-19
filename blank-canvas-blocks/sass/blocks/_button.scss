@@ -1,15 +1,18 @@
 /**
  * Button
  */
+
+// NOTE: These remain for the styling of buttons that are NOT blocks and is used elsewhere.  This can be removed when those no longer exist.
 @mixin button-main-styles {
-	font-weight: var(--wp--custom--button--font-weight);
-	font-family: var(--wp--custom--button--font-family);
-	font-size: var(--wp--custom--button--font-size);
-	line-height: var(--wp--custom--button--line-height);
-	border-radius: var(--wp--custom--button--border-radius);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	border-radius: var(--wp--custom--button--border--radius);
+	line-height: var(--wp--custom--button--border--line-height);
 	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
 }
 
+// NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
 @mixin button-hover-styles {
 	&:hover,
 	&:focus,
@@ -24,11 +27,9 @@
  * Block Options
  */
 .wp-block-button {
-
 	&.wp-block-button__link,
 	.wp-block-button__link {
-		@include button-main-styles;
 		@include button-hover-styles;
+		text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
 	}
-
 }
