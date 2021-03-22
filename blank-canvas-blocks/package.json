@@ -29,7 +29,9 @@
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-    "build": "node-sass sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
+    "start": "chokidar \"**/*.scss\" \"./experimental-theme.json\" -c \"npm run build\" --initial",
+    "build:defaultVariables": "node  --experimental-json-modules  ./utilities/renderDefaultCustomVariables.mjs",
+    "build:scss": "node-sass sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true",
+    "build": "npm run build:scss && npm run build:defaultVariables"
   }
 }

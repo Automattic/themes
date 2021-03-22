@@ -52,6 +52,14 @@ function blank_canvas_blocks_scripts() {
 add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 
 /**
+ * Enque default CSS variables generated from theme.json
+ * These are enqueued at priority:1 so that they occur BEFORE the ACTUAL generated css variables from Global Styles
+ */
+function blank_canvas_default_variables() {
+	wp_enqueue_style('blank_canvas_blocks-defaults', get_template_directory_uri() . '/assets/generatedDefaultVariables.css', array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'wp_enqueue_scripts', 'blank_canvas_default_variables', 1 );
+/**
  * Add Google webfonts
  *
  * @return $fonts_url
