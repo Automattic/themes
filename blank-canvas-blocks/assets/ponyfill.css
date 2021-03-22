@@ -349,7 +349,7 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .wp-block-pullquote.is-style-solid-color,
 .wp-block-pullquote {
-	text-align: var(--wp--custom--quote--typography--text-align);
+	text-align: var(--wp--custom--pullquote--typography--text-align);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote,
@@ -369,8 +369,8 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-pullquote.is-style-solid-color blockquote cite,
 .wp-block-pullquote blockquote .wp-block-pullquote__citation,
 .wp-block-pullquote blockquote cite {
-	font-size: var(--wp--custom--quote--citation--typography--font-size);
-	font-style: var(--wp--custom--quote--citation--typography--font-style);
+	font-size: var(--wp--custom--pullquote--citation--typography--font-size);
+	font-style: var(--wp--custom--pullquote--citation--typography--font-style);
 }
 
 .wp-block-pullquote.is-style-solid-color.is-style-solid-color,
@@ -379,7 +379,15 @@ p.has-drop-cap:not(:focus):first-letter {
 	color: var(--wp--custom--color--background);
 }
 
-.wp-block-quote cite, .wp-block-quote .wp-block-quote__citation {
+.wp-block-quote.is-style-large p,
+.wp-block-quote p {
+	font-style: unset;
+}
+
+.wp-block-quote.is-style-large .wp-block-quote__citation,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote .wp-block-quote__citation,
+.wp-block-quote cite {
 	font-size: var(--wp--custom--quote--citation--typography--font-size);
 	font-style: var(--wp--custom--quote--citation--typography--font-style);
 }
