@@ -3,3 +3,22 @@
 	margin-right: calc(-1 * var(--wp--custom--margin--horizontal));
 }
 
+@include media(mobile) {
+	// limit size of any element that is aligned left/right 
+	.wp-block[data-align="left"], // This is for the editor
+	.wp-block[data-align="right"], // This is for the editor
+	.wp-site-blocks .alignleft,
+	.wp-site-blocks .alignright {
+		max-width: var(--wp--custom--alignment--aligned-max-with);
+	}
+}
+// When content is aligned left/right (particularly inside of a container) it is floated left/right
+// and needs something to ensure that the content follows the block rather than nestling up beside the floated element.  
+// Perhaps this (or something like this) should be supplied by Gutenberg?
+.wp-block-group:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
