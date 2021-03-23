@@ -48,8 +48,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<p>' . esc_html__( 'Specializing in fine line tattoos with a single needle. With over 10 years of experience, I can make your tattoo dreams come true.', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons -->
-									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#d35069"}},"textColor":"background"} -->
-									<div class="wp-block-button"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#d35069">' . esc_html__( 'Get in touch', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#d35069"}},"textColor":"white"} -->
+									<div class="wp-block-button"><a class="wp-block-button__link has-white-color has-text-color has-background" style="background-color:#d35069">' . esc_html__( 'Get in touch', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 									<!-- wp:social-links {"className":"is-style-default"} -->
@@ -76,7 +76,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-hat.jpg' ) . '" alt="' . esc_attr__( 'Photo of a man wearing a hat.', 'blank-canvas-blocks' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
 									<!-- /wp:image -->
 									<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"32px"}}} -->
-									<h1 class="has-text-align-center" style="font-size:32px"><strong>'. esc_html__( 'Alex Fredrickson', 'blank-canvas-blocks' ) . '</strong></h1>
+									<h1 class="has-text-align-center" style="font-size:32px"><strong>' . esc_html__( 'Alex Fredrickson', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
 									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
@@ -141,8 +141,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<p>' . esc_html__( 'Join us for a celebratory party featuring creative cocktails and mocktails, seasonal chef-crafted snacks and appetizers, and a range of desserts and pastries from local bakeries.', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph -->
 									<!-- wp:buttons -->
-									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#c61aa7"}},"textColor":"background","className":"is-style-fill"} -->
-									<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-background-color has-text-color has-background" style="background-color:#c61aa7">' . esc_html__( 'RSVP', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons"><!-- wp:button {"style":{"color":{"background":"#c61aa7"}},"textColor":"white","className":"is-style-fill"} -->
+									<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-white-color has-text-color has-background" style="background-color:#c61aa7">' . esc_html__( 'RSVP', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 									<!-- wp:spacer {"height":30} -->
@@ -164,7 +164,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"almost-black"} -->
-									<h1 class="has-text-align-center has-almost-black-color has-text-color"><strong>'. esc_html__( 'Jasmine Baker', 'blank-canvas-blocks' ) . '</strong></h1>
+									<h1 class="has-text-align-center has-almost-black-color has-text-color"><strong>' . esc_html__( 'Jasmine Baker', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center","textColor":"almost-black"} -->
@@ -208,24 +208,24 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:spacer -->
 
 									<!-- wp:buttons -->
-									<div class="wp-block-buttons"><!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">📺  ' . esc_html__( 'Subscribe on YouTube', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons"><!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px">📺  ' . esc_html__( 'Subscribe on YouTube', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px"> 🎹  ' . esc_html__( 'Listen on SoundCloud', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px"> 🎹  ' . esc_html__( 'Listen on SoundCloud', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">📸  ' . esc_html__( 'Follow my Instagram', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px">📸  ' . esc_html__( 'Follow my Instagram', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">🛍  ' . esc_html__( 'Shop my style picks', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px">🛍  ' . esc_html__( 'Shop my style picks', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"borderRadius":50,"backgroundColor":"background","textColor":"foreground","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background" style="border-radius:50px">🙋‍♀️  ' . esc_html__( 'Ask me a question', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px">🙋‍♀️  ' . esc_html__( 'Ask me a question', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 
@@ -241,8 +241,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Gradient Links', 'blank-canvas-blocks' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":1090,"minHeightUnit":"px","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:1090px"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":130,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+					'content'    => '<!-- wp:cover {"overlayColor":"white","minHeight":1090,"minHeightUnit":"px","align":"full"} -->
+									<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:1090px"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":130,"width":96,"height":96,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-pencils.jpg' ) . '" alt="' . esc_attr__( 'Colored pencils', 'blank-canvas-blocks' ) . '" class="wp-image-130" width="96" height="96"/></figure></div>
 									<!-- /wp:image -->
 
@@ -280,8 +280,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Musician Links', 'blank-canvas-blocks' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-gradient.jpg' ) . '","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"primary","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color has-parallax" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-gradient.jpg' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-gradient.jpg' ) . '","id":181,"hasParallax":true,"dimRatio":0,"overlayColor":"black","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-black-background-color has-parallax" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-gradient.jpg' ) . ');min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":10} -->
 									<div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
@@ -296,28 +296,28 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->
 
 									<!-- wp:buttons -->
-									<div class="wp-block-buttons"><!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . esc_html__( 'SoundCloud', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons"><!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'SoundCloud', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . esc_html__( 'Spotify', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'Spotify', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . esc_html__( 'Bandcamp', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'Bandcamp', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . esc_html__( 'Apple Music', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'Apple Music', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . esc_html__( 'YouTube', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'YouTube', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
 
-									<!-- wp:button {"textColor":"background","width":50,"className":"is-style-outline"} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-background-color has-text-color">' . esc_html__( 'Tidal', 'blank-canvas-blocks' ) . '</a></div>
+									<!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'Tidal', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
 
@@ -341,21 +341,21 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Product Links', 'blank-canvas-blocks' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":57,"width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+					'content'    => '<!-- wp:cover {"overlayColor":"white","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":57,"width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-sunglasses.jpg' ) . '" alt="' . esc_attr__( 'Woman wearing sunglasses', 'blank-canvas-blocks' ) . '" class="wp-image-57" width="150" height="150"/></figure></div>
 									<!-- /wp:image -->
 
-									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"primary"} -->
-									<h1 class="has-text-align-center has-primary-color has-text-color"><strong>' . esc_html__( 'Julia Paxton', 'blank-canvas-blocks' ) . '</strong></h1>
+									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"black"} -->
+									<h1 class="has-text-align-center has-black-color has-text-color"><strong>' . esc_html__( 'Julia Paxton', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:spacer {"height":1} -->
 									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
-									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- wp:separator {"color":"black","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
 									<!-- /wp:separator -->
 
 									<!-- wp:columns {"verticalAlignment":"center"} -->
@@ -367,15 +367,15 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:column {"verticalAlignment":"center"} -->
 									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
-									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . esc_html__( '$36', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-black-background-color has-background">' . esc_html__( '$36', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
 
-									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
-									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- wp:separator {"color":"black","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
 									<!-- /wp:separator -->
 
 									<!-- wp:columns {"verticalAlignment":"center"} -->
@@ -387,15 +387,15 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:column {"verticalAlignment":"center"} -->
 									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
-									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . esc_html__( '$45', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-black-background-color has-background">' . esc_html__( '$45', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
 
-									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
-									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- wp:separator {"color":"black","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
 									<!-- /wp:separator -->
 
 									<!-- wp:columns {"verticalAlignment":"center"} -->
@@ -407,15 +407,15 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:column {"verticalAlignment":"center"} -->
 									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
-									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . esc_html__( '$60', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-black-background-color has-background">' . esc_html__( '$60', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
 
-									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
-									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- wp:separator {"color":"black","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
 									<!-- /wp:separator -->
 
 									<!-- wp:columns {"verticalAlignment":"center"} -->
@@ -427,15 +427,15 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:column {"verticalAlignment":"center"} -->
 									<div class="wp-block-column is-vertically-aligned-center"><!-- wp:buttons {"contentJustification":"right"} -->
-									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"primary","width":100} -->
-									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-primary-background-color has-background">' . esc_html__( '$70', 'blank-canvas-blocks' ) . '</a></div>
+									<div class="wp-block-buttons is-content-justification-right"><!-- wp:button {"backgroundColor":"black","width":100} -->
+									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-black-background-color has-background">' . esc_html__( '$70', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
 
-									<!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
-									<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
+									<!-- wp:separator {"color":"black","className":"is-style-wide"} -->
+									<hr class="wp-block-separator has-text-color has-background has-black-background-color has-black-color is-style-wide"/>
 									<!-- /wp:separator -->
 
 									<!-- wp:social-links {"align":"center","className":"is-style-logos-only"} -->
@@ -454,8 +454,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Text Links', 'blank-canvas-blocks' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
+					'content'    => '<!-- wp:cover {"overlayColor":"white","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
 									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-logo.png' ) . '" alt="' . esc_attr__( 'A logo of a circle with a line through it.', 'blank-canvas-blocks' ) . '" class="wp-image-100" width="100" height="100"/></figure></div>
 									<!-- /wp:image -->
 
