@@ -341,8 +341,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Product Links', 'blank-canvas-blocks' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"overlayColor":"white","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":57,"width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+					'content'    => '<!-- wp:image {"align":"center","id":57,"width":150,"height":150,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-sunglasses.jpg' ) . '" alt="' . esc_attr__( 'Woman wearing sunglasses', 'blank-canvas-blocks' ) . '" class="wp-image-57" width="150" height="150"/></figure></div>
 									<!-- /wp:image -->
 
@@ -444,8 +443,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:social-link {"url":"https://snapchat.com","service":"snapchat"} /-->
 
 									<!-- wp:social-link {"url":"https://wordpress.com","service":"wordpress"} /--></ul>
-									<!-- /wp:social-links --></div></div>
-									<!-- /wp:cover -->',
+									<!-- /wp:social-links -->',
 				)
 			);
 
