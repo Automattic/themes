@@ -74,16 +74,16 @@ img {
 	.wp-block[data-align="right"],
 	.wp-site-blocks .alignleft,
 	.wp-site-blocks .alignright {
-		max-width: var(--wp--custom--alignment--aligned-max-with);
+		max-width: var(--wp--custom--alignment--aligned-max-width);
 	}
 }
 
 .wp-block-group:after {
-	content: ".";
-	visibility: hidden;
-	display: block;
-	height: 0;
 	clear: both;
+	content: ".";
+	display: block;
+	position: unset;
+	visibility: hidden;
 }
 
 ::selection {
