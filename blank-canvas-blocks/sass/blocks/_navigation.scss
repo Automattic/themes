@@ -1,6 +1,3 @@
-@import '~@wordpress/base-styles/breakpoints';
-@import '~@wordpress/base-styles/mixins';
-
 .wp-block-navigation {
 	a {
 		border-bottom: none;
@@ -55,7 +52,7 @@
 	}
 }
 
-@media (max-width: #{ ($break-mobile) }) {
+@include break-mobile-only {
 	header .wp-block-navigation:not(.show) {
 		text-align: right;
 		padding-left: var(--wp--custom--margin--horizontal);
