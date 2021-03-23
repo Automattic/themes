@@ -7,9 +7,11 @@
   },
   "homepage": "https://github.com/Automattic/themes#readme",
   "devDependencies": {
+    "@wordpress/base-styles": "^3.3.0",
     "@wordpress/browserslist-config": "^2.2.2",
     "chokidar-cli": "^2.1.0",
     "node-sass": "^4.13.1",
+    "node-sass-package-importer": "^5.3.2",
     "rtlcss": "^2.4.0"
   },
   "rtlcssConfig": {
@@ -30,6 +32,6 @@
   ],
   "scripts": {
     "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-    "build": "node-sass sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
+    "build": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
   }
 }
