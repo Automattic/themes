@@ -452,10 +452,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Text Links', 'blank-canvas-blocks' ),
 					'categories' => array( 'link-in-bio' ),
-					'content'    => '<!-- wp:cover {"overlayColor":"white","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
-									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-links-logo.png' ) . '" alt="' . esc_attr__( 'A logo of a circle with a line through it.', 'blank-canvas-blocks' ) . '" class="wp-image-100" width="100" height="100"/></figure></div>
-									<!-- /wp:image -->
+					'content'    => '<!-- wp:group -->
+									<div class="wp-block-group"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
+									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="http://localhost:4759/wp-content/themes/blank-canvas-blocks/assets/images/pattern-links-logo.png" alt="A logo of a circle with a line through it." class="wp-image-100" width="100" height="100"/></figure></div>
+									<!-- /wp:image --></div>
+									<!-- /wp:group -->
 
 									<!-- wp:spacer {"height":1} -->
 									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -478,11 +479,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:paragraph -->
 
 									<!-- wp:paragraph -->
-									<p><a href="#">' . esc_html__( '"Why we must own our history"', 'blank-canvas-blocks' ) . '</a>' . esc_html__( ' in <em>The Atlantic</em>', 'blank-canvas-blocks' ) . '</p>
+									<p><a href="#">' . esc_html__( '"Why we must own our history"', 'blank-canvas-blocks' ) . '</a>' . wp_kses_post( ' in <em>The Atlantic</em>', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:paragraph -->
-									<p><a href="#">' . esc_html__( '"Identity and Ownership"', 'blank-canvas-blocks' ) . '</a>' . esc_html__( ' in <em>The New York Times</em>', 'blank-canvas-blocks' ) . '</p>
+									<p><a href="#">' . esc_html__( '"Identity and Ownership"', 'blank-canvas-blocks' ) . '</a>' . wp_kses_post( ' in <em>The New York Times</em>', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:paragraph -->
@@ -491,8 +492,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:paragraph -->
 									<p><a href="#">' . esc_html__( 'Donate to help keep us posting!', 'blank-canvas-blocks' ) . '</a></p>
-									<!-- /wp:paragraph --></div></div>
-									<!-- /wp:cover -->',
+									<!-- /wp:paragraph -->',
 				)
 			);
 		}
