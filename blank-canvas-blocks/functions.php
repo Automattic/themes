@@ -77,4 +77,4 @@ function blank_canvas_blocks_fonts_url() {
 /**
  * Block Patterns.
  */
-require get_stylesheet_directory() . '/inc/block-patterns.php';
+require get_template_directory() . '/inc/block-patterns.php';
