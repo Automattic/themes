@@ -100,6 +100,23 @@ img {
 	margin-right: calc(-1 * var(--wp--custom--margin--horizontal));
 }
 
+@media only screen and (min-width: 482px) {
+	.wp-block[data-align="left"],
+	.wp-block[data-align="right"],
+	.wp-site-blocks .alignleft,
+	.wp-site-blocks .alignright {
+		max-width: var(--wp--custom--alignment--aligned-max-width);
+	}
+}
+
+.wp-block-group:after {
+	clear: both;
+	content: ".";
+	display: block;
+	position: unset;
+	visibility: hidden;
+}
+
 ::selection {
 	background-color: var(--wp--custom--color--selection);
 }
