@@ -16,6 +16,10 @@ img {
 	max-width: 100%;
 }
 
+hr {
+	border: none;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -534,6 +538,14 @@ p.has-drop-cap:not(:focus):first-letter {
 	line-height: 0;
 }
 
+.wp-block-separator {
+	height: var(--wp--custom--separator--height);
+}
+
+.wp-block-separator:not(.is-style-wide) {
+	width: var(--wp--custom--separator--width);
+}
+
 /**
  * Button
  */
@@ -591,10 +603,6 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .wp-block-file .wp-block-file__button:hover svg, .wp-block-file .wp-block-file__button:focus svg, .wp-block-file .wp-block-file__button.has-focus svg {
 	fill: var(--wp--custom--button--color--hover-text);
-}
-
-.wp-block-separator {
-	border-color: currentColor;
 }
 
 .wp-block-table figcaption {
