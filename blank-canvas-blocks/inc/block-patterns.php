@@ -145,8 +145,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-white-color has-text-color has-background" style="background-color:#c61aa7">' . esc_html__( 'RSVP', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons -->
-									<!-- wp:spacer {"height":60} -->
-									<div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- wp:spacer {"height":100} -->
+									<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer --></div></div>
 									<!-- /wp:media-text -->',
 				)
@@ -207,7 +207,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:buttons -->
+									<!-- wp:group {"layout":{"inherit":true}} -->
+									<div class="wp-block-group"><!-- wp:buttons -->
 									<div class="wp-block-buttons"><!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
 									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px">📺  ' . esc_html__( 'Subscribe on YouTube', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
@@ -227,7 +228,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:button {"borderRadius":50,"backgroundColor":"white","textColor":"almost-black","width":100} -->
 									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-almost-black-color has-white-background-color has-text-color has-background" style="border-radius:50px">🙋‍♀️  ' . esc_html__( 'Ask me a question', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
-									<!-- /wp:buttons -->
+									<!-- /wp:buttons --></div>
+									<!-- /wp:group -->
 
 									<!-- wp:spacer {"height":20} -->
 									<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -247,10 +249,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center"} -->
-									<h2 class="has-text-align-center">' . esc_html__( 'Antonio Miller', 'blank-canvas-blocks' ) . '</h2>
+									<h2 class="has-text-align-center has-black-color has-text-color ">' . esc_html__( 'Antonio Miller', 'blank-canvas-blocks' ) . '</h2>
 									<!-- /wp:heading -->
 
-									<!-- wp:buttons -->
+									<!-- wp:group {"layout":{"inherit":true}} -->
+									<div class="wp-block-group"><!-- wp:buttons -->
 									<div class="wp-block-buttons"><!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(11,192,224) 0%,rgb(128,208,199) 100%)"}},"width":100} -->
 									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(11,192,224) 0%,rgb(128,208,199) 100%)">' . esc_html__( 'Watch my tutorials', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
@@ -270,7 +273,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:button {"borderRadius":10,"style":{"color":{"gradient":"linear-gradient(135deg,rgb(0,173,121) 0%,rgb(41,182,229) 100%)"}},"width":100} -->
 									<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link has-background" style="border-radius:10px;background:linear-gradient(135deg,rgb(0,173,121) 0%,rgb(41,182,229) 100%)">' . esc_html__( 'Twitter', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
-									<!-- /wp:buttons --></div></div>
+									<!-- /wp:buttons --></div>
+									<!-- /wp:group --></div></div>
 									<!-- /wp:cover -->',
 				)
 			);
@@ -295,7 +299,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->
 
-									<!-- wp:buttons -->
+									<!-- wp:group {"layout":{"inherit":true}} -->
+									<div class="wp-block-group"><!-- wp:buttons -->
 									<div class="wp-block-buttons"><!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
 									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'SoundCloud', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button -->
@@ -319,7 +324,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:button {"textColor":"white","width":50,"className":"is-style-outline"} -->
 									<div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-outline"><a class="wp-block-button__link has-white-color has-text-color">' . esc_html__( 'Tidal', 'blank-canvas-blocks' ) . '</a></div>
 									<!-- /wp:button --></div>
-									<!-- /wp:buttons -->
+									<!-- /wp:buttons --></div>
+									<!-- /wp:group -->
 
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
 									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
@@ -454,7 +460,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'categories' => array( 'link-in-bio' ),
 					'content'    => '<!-- wp:group -->
 									<div class="wp-block-group"><!-- wp:image {"align":"left","id":100,"width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
-									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="http://localhost:4759/wp-content/themes/blank-canvas-blocks/assets/images/pattern-links-logo.png" alt="A logo of a circle with a line through it." class="wp-image-100" width="100" height="100"/></figure></div>
+									<div class="wp-block-image"><figure class="alignleft size-large is-resized"><img src="https://s0.wp.com/wp-content/themes/pub/blank-canvas/assets/pattern-links-logo.png" alt="A logo of a circle with a line through it." class="wp-image-100" width="100" height="100"/></figure></div>
 									<!-- /wp:image --></div>
 									<!-- /wp:group -->
 
