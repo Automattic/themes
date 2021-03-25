@@ -42,7 +42,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:spacer -->
 									<!-- wp:media-text {"mediaPosition":"right","mediaId":1752,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-tattoo.jpg' ) . '","mediaType":"image","imageFill":true} -->
 									<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-image-fill"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-tattoo.jpg' ) . ');background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-tattoo.jpg' ) . '" alt="' . esc_attr__( 'A photo of a tattooed hand, giving the "I love you" sign.', 'blank-canvas-blocks' ) . '" class="wp-image-1752 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"fontSize":"32px"}}} -->
-									<h1 class="alignwide" style="font-size:32px">' . esc_html__( 'Hi! I’m a tattooist based in Florida City.', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="alignwide" style="font-size:32px"><strong>' . esc_html__( 'Hi! I’m a tattooist based in Florida City.', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:paragraph -->
 									<p>' . esc_html__( 'Specializing in fine line tattoos with a single needle. With over 10 years of experience, I can make your tattoo dreams come true.', 'blank-canvas-blocks' ) . '</p>
@@ -76,7 +76,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-image is-style-rounded"><figure class="aligncenter size-large is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-hat.jpg' ) . '" alt="' . esc_attr__( 'Photo of a man wearing a hat.', 'blank-canvas-blocks' ) . '" class="wp-image-20" width="98" height="95"/></figure></div>
 									<!-- /wp:image -->
 									<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"32px"}}} -->
-									<h1 class="has-text-align-center" style="font-size:32px">' . esc_html__( 'Alex Fredrickson', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="has-text-align-center" style="font-size:32px"><strong>' . esc_html__( 'Alex Fredrickson', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:social-links {"align":"center","className":"is-style-default"} -->
 									<ul class="wp-block-social-links aligncenter is-style-default"><!-- wp:social-link {"url":"https://linkedin.com/","service":"linkedin"} /-->
@@ -120,7 +120,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 									<!-- wp:heading {"level":1,"style":{"color":{"text":"#c61aa7"}}} -->
-									<h1 class="has-text-color" style="color:#c61aa7">' . esc_html__( 'You&rsquo;re Invited', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="has-text-color" style="color:#c61aa7"><strong>' . esc_html__( 'You&rsquo;re Invited', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
@@ -164,7 +164,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"almost-black"} -->
-									<h1 class="has-text-align-center has-almost-black-color has-text-color">' . esc_html__( 'Jasmine Baker', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="has-text-align-center has-almost-black-color has-text-color"><strong>' . esc_html__( 'Jasmine Baker', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center","textColor":"almost-black"} -->
@@ -200,7 +200,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1} -->
-									<h1 class="has-text-align-center">' . esc_html__( 'Hamburger', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="has-text-align-center"><strong>' . esc_html__( 'Hamburger', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:spacer {"height":1} -->
@@ -249,7 +249,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center"} -->
-									<h2 class="has-text-align-center has-black-color has-text-color ">' . esc_html__( 'Antonio Miller', 'blank-canvas-blocks' ) . '</h2>
+									<h2 class="has-text-align-center has-black-color has-text-color "><strong>' . esc_html__( 'Antonio Miller', 'blank-canvas-blocks' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:group {"layout":{"inherit":true}} -->
@@ -294,7 +294,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge"} -->
-									<h1 class="has-text-align-center has-huge-font-size">' . esc_html__( 'Alex Smith — Own Way', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="has-text-align-center has-huge-font-size"><strong>' . esc_html__( 'Alex Smith — Own Way', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:embed {"providerNameSlug":"youtube","responsive":true} /-->
@@ -352,7 +352,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:image -->
 
 									<!-- wp:heading {"textAlign":"center","level":1,"textColor":"black"} -->
-									<h1 class="has-text-align-center has-black-color has-text-color">' . esc_html__( 'Julia Paxton', 'blank-canvas-blocks' ) . '</h1>
+									<h1 class="has-text-align-center has-black-color has-text-color"><strong>' . esc_html__( 'Julia Paxton', 'blank-canvas-blocks' ) . '</strong></h1>
 									<!-- /wp:heading -->
 
 									<!-- wp:spacer {"height":1} -->
