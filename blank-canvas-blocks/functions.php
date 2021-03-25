@@ -73,3 +73,8 @@ function blank_canvas_blocks_fonts_url() {
 
 	return esc_url_raw( $fonts_url );
 }
+
+/**
+ * Block Patterns.
+ */
+require get_template_directory() . '/inc/block-patterns.php';
