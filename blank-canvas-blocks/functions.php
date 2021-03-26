@@ -18,7 +18,7 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
-				'/assets/styles.css',
+				'/assets/style.css',
 			)
 		);
 	}
@@ -47,7 +47,7 @@ function blank_canvas_blocks_scripts() {
 	// Enqueue Google fonts
 	wp_enqueue_style( 'blank-canvas-blocks-fonts', blank_canvas_blocks_fonts_url(), array(), null );
 	wp_enqueue_script( 'blank-canvas-navigation-script', get_template_directory_uri() . '/assets/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
-	wp_enqueue_style( 'blank_canvas_blocks-styles', get_template_directory_uri() . '/assets/styles.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'blank_canvas_blocks-styles', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts', 11 );
 
