@@ -178,6 +178,93 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<!-- /wp:spacer --></div></div>',
 				)
 			); */
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-simple-colorful',
+				array(
+					'title'      => __( 'Coming Soon: Simple Colorful', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:cover {"customOverlayColor":"#fab1a0","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim" style="background-color:#fab1a0;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":2742,"width":100,"height":100,"sizeSlug":"medium","linkDestination":"none"} -->
+									<div class="wp-block-image"><figure class="aligncenter size-medium is-resized"><img src="https://mywptesting.site/wp-content/uploads/2021/03/bullhorn-circle-300x300.png" alt="" class="wp-image-2742" width="100" height="100"/></figure></div>
+									<!-- /wp:image -->
+
+									<!-- wp:spacer {"height":5} -->
+									<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontSize":"100px","lineHeight":"1.2"}},"textColor":"primary"} -->
+									<h2 class="alignwide has-text-align-center has-primary-color has-text-color" style="font-size:100px;line-height:1.2"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph {"align":"center","textColor":"primary"} -->
+									<p class="has-text-align-center has-primary-color has-text-color">' . esc_html__( 'Sign up to hear when my journey begins.', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"primary","textColor":"background","borderRadius":6} -->
+									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="16px" custom_border_radius="6" custom_border_weight="1" custom_padding="15" custom_spacing="10" submit_button_classes="has-text-color has-background-color has-background has-primary-background-color" email_field_classes="" show_only_email_and_button="true"]</div>
+									<!-- /wp:jetpack/subscriptions -->
+
+									<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#000000","align":"center","className":"is-style-logos-only"} -->
+									<ul class="wp-block-social-links aligncenter has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"twitter"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"instagram"} /--></ul>
+									<!-- /wp:social-links --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-simple-white',
+				array(
+					'title'      => __( 'Coming Soon: Simple White', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":948,"minHeightUnit":"px","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:948px"><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+									<div class="wp-block-columns alignfull"><!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:heading {"style":{"typography":{"lineHeight":"0.9","fontSize":"120px"}},"textColor":"primary"} -->
+									<h2 class="has-primary-color has-text-color" style="font-size:120px;line-height:0.9"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph {"textColor":"primary"} -->
+									<p class="has-primary-color has-text-color">' . esc_html__( 'A new blog by MindStomp. Sign up to be notified when we launch.', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"background","textColor":"primary","borderRadius":0,"borderWeight":3,"borderColor":"#000000","customBorderColor":"#000000"} -->
+									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="16px" custom_border_radius="0" custom_border_weight="3" custom_border_color="#000000" custom_padding="15" custom_spacing="10" submit_button_classes="no-border-radius has-000000-border-color has-text-color has-primary-color has-background has-background-background-color" email_field_classes="no-border-radius has-000000-border-color" show_only_email_and_button="true"]</div>
+									<!-- /wp:jetpack/subscriptions -->
+									<!-- /wp:column -->
+
+									<!-- wp:column -->
+									<div class="wp-block-column"></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-startup',
+				array(
+					'title'      => __( 'Coming Soon: Startup', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":2679,"mediaLink":"https://mywptesting.site/coming-soon-curated/web-section-right-2/","mediaType":"image","mediaWidth":60,"imageFill":false,"backgroundColor":"tertiary"} -->
+									<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile has-tertiary-background-color has-background" style="grid-template-columns:auto 60%"><figure class="wp-block-media-text__media"><img src="https://mywptesting.site/wp-content/uploads/2021/03/Web—Section-Right-2-1024x896.png" alt="" class="wp-image-2679 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#2027a1"},"typography":{"fontSize":"50px","lineHeight":"1.2"}}} -->
+								<h2 class="has-text-color" style="color:#2027a1;font-size:50px;line-height:1.2"><strong>' . esc_html__( 'A new app for designers, powered entirely by AI', 'blank-canvas' ) . '</strong></h2>
+								<!-- /wp:heading -->
+
+								<!-- wp:paragraph {"textColor":"primary"} -->
+								<p class="has-primary-color has-text-color">' . esc_html__( 'We’re a small group of designers who learned AI so you didn’t have to. We’re launching soon. Be the first to sign up!', 'blank-canvas' ) . '</p>
+								<!-- /wp:paragraph -->
+
+								<!-- wp:jetpack/subscriptions {"customButtonBackgroundColor":"#2027a1"} -->
+								<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_background_button_color="#2027a1" custom_font_size="16px" custom_border_radius="0" custom_border_weight="1" custom_padding="15" custom_spacing="10" submit_button_classes="" email_field_classes="" show_only_email_and_button="true"]</div>
+								<!-- /wp:jetpack/subscriptions --></div>
+								<!-- /wp:media-text -->',
+				)
+			);
 		}
 	}
 endif;

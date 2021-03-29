@@ -25,6 +25,11 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				'link-in-bio',
 				array( 'label' => __( 'Link in Bio', 'blank-canvas' ) )
 			);
+
+			register_block_pattern_category(
+				'coming-soon',
+				array( 'label' => __( 'Coming Soon', 'blank-canvas' ) )
+			);
 		}
 
 		/**
@@ -495,6 +500,162 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<p><a href="#">' . esc_html__( 'Donate to help keep us posting!', 'blank-canvas' ) . '</a></p>
 									<!-- /wp:paragraph --></div></div>
 									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-restaurant',
+				array(
+					'title'      => __( 'Coming Soon: Restaurant', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-1-scaled.jpg","id":2580,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2580" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-1-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"65%"} -->
+									<div class="wp-block-column" style="flex-basis:65%"></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"width":"35%"} -->
+									<div class="wp-block-column" style="flex-basis:35%"><!-- wp:paragraph -->
+									<p><strong>' . esc_html__( 'OAK &amp; ANCHOR', 'blank-canvas' ) . '</strong></p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:spacer {"height":250} -->
+									<div style="height:250px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:heading {"style":{"typography":{"fontSize":"64px"}}} -->
+									<h2 style="font-size:64px">' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph -->
+									<p>' . esc_html__( 'A new restaurant featuring farm-to-table dining.', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:columns -->
+									<div class="wp-block-columns"><!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:paragraph -->
+									<p>' . esc_html__( '1234 S Main Street', 'blank-canvas' ) . '<br>' . esc_html__( 'Townsville, MA, 01010', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:paragraph -->
+									<p><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas' ) . '<br></a>' . esc_html__( '(123) 456-7890', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns -->
+
+									<!-- wp:social-links {"iconColor":"background","iconColorValue":"#FFFFFF","className":"is-style-logos-only"} -->
+									<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"yelp"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"instagram"} /--></ul>
+									<!-- /wp:social-links --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-band',
+				array(
+					'title'      => __( 'Coming Soon: Band', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_5PEZV88YAV-scaled.jpg","id":2587,"hasParallax":true,"dimRatio":70,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim-70 has-background-dim has-parallax" style="background-image:url(https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_5PEZV88YAV-scaled.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"fontSize":"20px","lineHeight":"1"},"color":{"text":"#ebc10a"}}} -->
+									<h2 class="alignfull has-text-align-center has-text-color" style="color:#ebc10a;font-size:20px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'COMING SOON', 'blank-canvas' ) . '</span></strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:heading {"textAlign":"center","level":3,"align":"full","style":{"typography":{"fontSize":"120px","lineHeight":"1"}}} -->
+									<h3 class="alignfull has-text-align-center" style="font-size:120px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'SIX FEET OVER', 'blank-canvas' ) . '</span></strong></h3>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph {"align":"center"} -->
+									<p class="has-text-align-center">' . esc_html__( 'A new album from Rage Slump is coming in April 2021. Check back soon for some sneak peeks of the album.', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:buttons {"contentJustification":"center"} -->
+									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"style":{"color":{"text":"#ebc10a"}},"className":"is-style-outline"} -->
+									<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color" style="color:#ebc10a"><strong>' . esc_html__( 'LEARN MORE', 'blank-canvas' ) . '</strong></a></div>
+									<!-- /wp:button --></div>
+									<!-- /wp:buttons --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-musician',
+				array(
+					'title'      => __( 'Coming Soon: Video Background', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/Rock-Band-Concert.mp4","id":2729,"overlayColor":"primary","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color has-background-dim" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="https://mywptesting.site/wp-content/uploads/2021/03/Rock-Band-Concert.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"75%"} -->
+									<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1","fontSize":"125px"}}} -->
+									<h2 style="font-size:125px;line-height:1"><strong>' . esc_html__( 'The High Fives', 'blank-canvas' ) . '</strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:social-links {"customIconColor":"#2c1d14","iconColorValue":"#2c1d14","iconBackgroundColor":"background","iconBackgroundColorValue":"#FFFFFF","align":"left"} -->
+									<ul class="wp-block-social-links alignleft has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"#","service":"soundcloud"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"bandcamp"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"youtube"} /--></ul>
+									<!-- /wp:social-links --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"width":"25%"} -->
+									<div class="wp-block-column" style="flex-basis:25%"></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns --></div></div>
+									<!-- /wp:cover -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-art-gallery',
+				array(
+					'title'      => __( 'Coming Soon: Art Gallery', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:media-text {"align":"full","mediaId":2719,"mediaLink":"https://mywptesting.site/coming-soon-curated/self-portrait-with-two-pupils-2/","mediaType":"image","imageFill":true,"style":{"color":{"background":"#f3efec"}}} -->
+									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill has-background" style="background-color:#f3efec"><figure class="wp-block-media-text__media" style="background-image:url(https://mywptesting.site/wp-content/uploads/2021/03/self-portrait-with-two-pupils-2-871x1024.jpg);background-position:50% 50%"><img src="https://mywptesting.site/wp-content/uploads/2021/03/self-portrait-with-two-pupils-2-871x1024.jpg" alt="" class="wp-image-2719 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"customOverlayColor":"#f3efec","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-background-dim" style="background-color:#f3efec;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"style":{"typography":{"fontSize":"64px","lineHeight":"1"}},"textColor":"foreground"} -->
+									<h2 class="has-foreground-color has-text-color" style="font-size:64px;line-height:1">' . esc_html__( 'Opening Soon', 'blank-canvas' ) . '</h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.5"}},"textColor":"foreground"} -->
+									<p class="has-foreground-color has-text-color" style="line-height:0.5">' . esc_html__( 'A new art gallery in downtown Boston.', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:spacer {"height":150} -->
+									<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:columns -->
+									<div class="wp-block-columns"><!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"foreground"} -->
+									<p class="has-foreground-color has-text-color">' . esc_html__( '1234 S Main Street', 'blank-canvas' ) . '<br>' . esc_html__( 'Boston, MA, 01010', 'blank-canvas' ) . '</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"foreground"} -->
+									<p class="has-foreground-color has-text-color"><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas' ) . '<br></a>(123) 456-7890</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns --></div></div>
+									<!-- /wp:cover --></div></div>
+									<!-- /wp:media-text -->
+
+									<!-- wp:spacer -->
+									<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->',
 				)
 			);
 		}
