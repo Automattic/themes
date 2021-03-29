@@ -3,11 +3,11 @@ const chokidar = require('chokidar');
 const merge = require('deepmerge');
 const childThemeName = process.argv[ 2 ];
 const watch = '--watch' === process.argv[ 3 ];
-const childThemeJsonFileName = '../' + childThemeName + '/child-experimental-theme.json';
+const childThemeJsonFileName = __dirname + '/../' + childThemeName + '/child-experimental-theme.json';
 
 const buildChildTheme = ()=>{
 	try {
-		const parentThemeJsonFile = fs.readFileSync( 'experimental-theme.json', 'utf8' );
+		const parentThemeJsonFile = fs.readFileSync( __dirname + '/experimental-theme.json', 'utf8' );
 		const childThemeJsonFile  = fs.readFileSync( childThemeJsonFileName, 'utf8' );
 		parentThemeJson          = JSON.parse( parentThemeJsonFile );
 		childThemeJson           = JSON.parse( childThemeJsonFile );
