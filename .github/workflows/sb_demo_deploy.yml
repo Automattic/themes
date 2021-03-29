@@ -25,3 +25,11 @@ jobs:
           ftp-password: ${{ secrets.SB_DEMO_PASSWORD }}
           git-ftp-args: --insecure
           local-dir: ./seedlet-blocks/
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
+          ftp-username: ${{ secrets.SB_DEMO_USERNAME }}
+          ftp-password: ${{ secrets.SB_DEMO_PASSWORD }}
+          git-ftp-args: --insecure
+          local-dir: ./blank-canvas-blocks/
