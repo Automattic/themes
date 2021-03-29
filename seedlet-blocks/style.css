@@ -27,12 +27,37 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 */
+.wp-block-site-title a {
+	background-image: linear-gradient(to right, var(--wp--custom--color--secondary) 100%, transparent 100%);
+	background-position: 0 1.22em;
+	background-repeat: repeat-x;
+	background-size: 8px 1.5px;
+	border-bottom: none;
+	color: currentColor;
+	text-shadow: 1px 0px var(--wp--custom--color--background), -1px 0px var(--wp--custom--color--background), -2px 0px var(--wp--custom--color--background), 2px 0px var(--wp--custom--color--background), -3px 0px var(--wp--custom--color--background), 3px 0px var(--wp--custom--color--background), -4px 0px var(--wp--custom--color--background), 4px 0px var(--wp--custom--color--background), -5px 0px var(--wp--custom--color--background), 5px 0px var(--wp--custom--color--background);
+	transition: background-size 0.1s ease-out;
+}
+
+.wp-block-site-title a:link, .wp-block-site-title a:visited, .wp-block-site-title a:active {
+	color: currentColor;
+}
+
+.wp-block-site-title a:hover, .wp-block-site-title a:focus {
+	text-decoration: none;
+	color: var(--wp--custom--color--secondary);
+	background-size: 8px 0px;
+}
+
+.wp-block-navigation-link a :hover {
+	text-decoration: underline;
+	text-underline-offset: 0.4rem;
+}
 
 /**
  * Author bio
  */
 .author-bio {
-	margin-top: calc(6 * var(--wp--custom--margin--baseline) );
+	margin-top: calc(6 * var(--wp--custom--margin--baseline));
 }
 
 .author-bio .wp-block-post-navigation-link,
@@ -67,3 +92,5 @@ GNU General Public License for more details.
 .footer-credit .wp-block-site-title > a {
 	font-size: var(--wp--preset--font-size--small);
 }
+
+/*# sourceMappingURL=style.css.map */
