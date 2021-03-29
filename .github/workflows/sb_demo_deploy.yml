@@ -16,8 +16,7 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v2
-
-      - name: FTP-Deploy-Action
+      - name: Deploy-Theme
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
@@ -25,7 +24,7 @@ jobs:
           ftp-password: ${{ secrets.SB_DEMO_PASSWORD }}
           git-ftp-args: --insecure
           local-dir: ./seedlet-blocks/
-      - name: FTP-Deploy-Action
+      - name: Deploy-Parent
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
