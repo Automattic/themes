@@ -2,9 +2,10 @@ const fs = require('fs');
 const chokidar = require('chokidar');
 const merge = require('deepmerge');
 const childThemeName = process.argv[ 2 ];
+const watch = '--watch' === process.argv[ 3 ];
 const childThemeJsonFileName = '../' + childThemeName + '/child-experimental-theme.json';
 
-chokidar.watch( childThemeJsonFileName ).on( 'all', ( event, path ) => {
+const buildChildTheme = ()=>{
 	try {
 		const parentThemeJsonFile = fs.readFileSync( 'experimental-theme.json', 'utf8' );
 		const childThemeJsonFile  = fs.readFileSync( childThemeJsonFileName, 'utf8' );
@@ -18,4 +19,12 @@ chokidar.watch( childThemeJsonFileName ).on( 'all', ( event, path ) => {
 	} catch ( error ) {
 		console.error( "\x1b[41m" + error );
 	}
-} );
+};
+
+if(watch) {
+	chokidar.watch( childThemeJsonFileName ).on( 'all', buildChildTheme);
+}
+
+else {
+	buildChildTheme();
+}
