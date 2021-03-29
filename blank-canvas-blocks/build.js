@@ -11,7 +11,7 @@ chokidar.watch( childThemeJsonFileName ).on( 'all', ( event, path ) => {
 		parentThemeJson          = JSON.parse( parentThemeJsonFile );
 		childThemeJson           = JSON.parse( childThemeJsonFile );
 		mergedThemeJson          = merge( parentThemeJson, childThemeJson );
-		fs.writeFile( '../' + childThemeName + '/experimental-theme.json', JSON.stringify( mergedThemeJson ), 'utf8', () => {
+		fs.writeFile( '../' + childThemeName + '/experimental-theme.json', JSON.stringify( mergedThemeJson, null, '\t' ), 'utf8', () => {
 			console.log( "\x1b[32m" + childThemeName + "/experimental-theme.json created successfully." );
 		} )
 
