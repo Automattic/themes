@@ -1,0 +1,23 @@
+@import 'button';
+
+.wp-block-post-comments {
+	.comment {
+		font-size: var(--wp--custom--form--typography--font-size);
+	}
+
+	label, .comment-meta {
+		font-size: var(--wp--custom--form--label--typography--font-size);
+	}
+
+	// More sensible default width for text inputs
+	*[class*="comment-form"] {
+		> input[type="text"] {
+			width: 100%;
+		}
+	}
+
+	input[type="submit"] {
+		@include button-main-styles;
+		@include button-hover-styles;
+	}
+}
