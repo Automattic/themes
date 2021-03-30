@@ -6,13 +6,15 @@ const watch = 'watch' === process.argv[ 3 ];
 const parentThemeJsonFileName = __dirname + '/experimental-theme.json';
 const childThemeJsonFileName = __dirname + '/../' + childThemeName + '/child-experimental-theme.json';
 
+const overwriteMerge = (destinationArray, sourceArray, options) => sourceArray;
+
 const buildChildTheme = () => {
 	try {
 		const parentThemeJsonFile = fs.readFileSync( parentThemeJsonFileName, 'utf8' ),
 			childThemeJsonFile    = fs.readFileSync( childThemeJsonFileName, 'utf8' ),
 			parentThemeJson       = JSON.parse( parentThemeJsonFile ),
 			childThemeJson        = JSON.parse( childThemeJsonFile ),
-			mergedThemeJson       = merge( parentThemeJson, childThemeJson );
+			mergedThemeJson       = merge( parentThemeJson, childThemeJson, { arrayMerge: overwriteMerge } );
 
 		fs.writeFile( '../' + childThemeName + '/experimental-theme.json', JSON.stringify( mergedThemeJson, null, '\t' ), 'utf8', () => {
 			console.log( "\x1b[32m" + childThemeName + "/experimental-theme.json created successfully." );
