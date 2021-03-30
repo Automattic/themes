@@ -1,0 +1,60 @@
+/**
+ * Button
+ */
+
+// NOTE: These remain for the styling of buttons that are NOT blocks and is used elsewhere.  This can be removed when those no longer exist.
+@mixin button-main-styles {
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	border-radius: var(--wp--custom--button--border--radius);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
+	color: var(--wp--custom--button--color--text);
+	border-color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	padding: calc(.667em + 2px) calc(1.333em + 2px); //The padding found on an unmodified Button Block 
+	svg {
+		fill: var(--wp--custom--button--color--text);
+	}
+}
+
+// NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
+@mixin button-hover-styles {
+	&:not(.has-background) {
+		&:active {
+			color: var(--button--color-text-active);
+			background-color: var(--button--color-background-active);
+		}
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			color: var(--button--color-text-hover);
+			background-color: var(--button--color-background-hover);
+			svg {
+				fill: var(--wp--custom--button--color--hover-text);
+			}
+		}
+	}
+}
+
+/**
+ * Block Options
+ */
+.wp-block-button {
+	&.wp-block-button__link,
+	.wp-block-button__link {
+		@include button-hover-styles;
+		text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
+	}
+}
+
+// TODO: I'm not sure what the end goal should be here, but since we are unable to use
+// a button block OUTSIDE of the context of the button collection block (grrrrrrrrr)
+// then there are undesired margins to be dealt with somehow.
+.wp-block-buttons {
+	.wp-block-button:last-child {
+		margin-bottom: 0;
+	}
+}
