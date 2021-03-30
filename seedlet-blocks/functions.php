@@ -7,7 +7,7 @@ function seedlet_blocks_editor_styles() {
 	// Enqueue editor styles.
 	add_editor_style(
 		array(
-			'/style.css',
+			'/assets/theme.css',
 		)
 	);
 }
