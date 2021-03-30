@@ -21,14 +21,20 @@
 
 // NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
 @mixin button-hover-styles {
-	&:hover,
-	&:focus,
-	&.has-focus {
-		color: var(--wp--custom--button--color--hover-text);
-		background-color: var(--wp--custom--button--color--hover-background);
-		border-color: var(--wp--custom--button--color--hover-background);
-		svg {
-			fill: var(--wp--custom--button--color--hover-text);
+	&:not(.has-background) {
+		&:active {
+			color: var(--button--color-text-active);
+			background-color: var(--button--color-background-active);
+		}
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			color: var(--button--color-text-hover);
+			background-color: var(--button--color-background-hover);
+			svg {
+				fill: var(--wp--custom--button--color--hover-text);
+			}
 		}
 	}
 }
