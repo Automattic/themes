@@ -24,54 +24,24 @@
 						"name": "Black"
 					},
 					{
-						"slug": "white",
-						"color": "#ffffff",
-						"name": "White"
-					},
-					{
-						"slug": "blue",
-						"color": "#007cba",
-						"name": "Blue"
-					},
-					{
 						"slug": "almost-black",
-						"color": "#333333",
+						"color": "#1a1a1a",
 						"name": "Almost Black"
 					},
 					{
-						"slug": "almost-white",
-						"color": "#FAFAFA",
-						"name": "Almost White"
-					},
-					{
-						"slug": "primary",
-						"color": "#000000",
-						"name": "Primary"
-					},
-					{
-						"slug": "secondary",
-						"color": "#1a1a1a",
-						"name": "Secondary"
-					},
-					{
-						"slug": "background",
+						"slug": "white",
 						"color": "#FFFFFF",
-						"name": "Background"
+						"name": "White"
 					},
 					{
-						"slug": "foreground",
-						"color": "#010101",
-						"name": "Foreground"
-					},
-					{
-						"slug": "foreground-light",
+						"slug": "gray",
 						"color": "#666666",
-						"name": "Foreground Light"
+						"name": "Gray"
 					},
 					{
-						"slug": "foreground-dark",
+						"slug": "dark-gray",
 						"color": "#333333",
-						"name": "Foreground Dark"
+						"name": "Dark Gray"
 					}
 				]
 			},
@@ -79,31 +49,6 @@
 				"customFontSize": true,
 				"customLineHeight": true,
 				"fontSizes": [
-					{
-						"name": "Tiny",
-						"size": "14px",
-						"slug": "tiny"
-					},
-					{
-						"name": "Small",
-						"size": "16px",
-						"slug": "small"
-					},
-					{
-						"name": "Normal",
-						"size": "18px",
-						"slug": "normal"
-					},
-					{
-						"name": "Large",
-						"size": "24px",
-						"slug": "large"
-					},
-					{
-						"name": "Huge",
-						"size": "28px",
-						"slug": "huge"
-					},
 					{
 						"name": "Small",
 						"size": "16.6px",
@@ -126,16 +71,6 @@
 					}
 				],
 				"fontFamilies": [
-					{
-						"fontFamily": "var(--font-base, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif)",
-						"slug": "base",
-						"name": "Base"
-					},
-					{
-						"fontFamily": "var(--font-headings, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif)",
-						"slug": "headings",
-						"name": "Headings"
-					},
 					{
 						"fontFamily": "\"Poppins\", sans-serif",
 						"slug": "base",
@@ -171,11 +106,6 @@
 					"em",
 					"rem",
 					"vh",
-					"vw",
-					"px",
-					"em",
-					"rem",
-					"vh",
 					"vw"
 				]
 			},
@@ -186,13 +116,14 @@
 			"custom": {
 				"color": {
 					"primary": "var(--wp--preset--color--black)",
-					"secondary": "var(--wp--preset--color--blue)",
-					"tertiary": "var(--wp--preset--color--almost-white)",
-					"foreground": "var(--wp--preset--color--almost-black)",
+					"secondary": "var(--wp--preset--color--almost-black)",
+					"tertiary": "var(--wp--preset--color--gray)",
+					"foreground": "var(--wp--preset--color--black)",
 					"background": "var(--wp--preset--color--white)",
-					"selection": "var(--wp--preset--color--almost-white)"
+					"selection": "lightblue"
 				},
 				"margin": {
+					"baseline": "10px",
 					"horizontal": "32px",
 					"vertical": "30px"
 				},
@@ -213,7 +144,7 @@
 						"text": "var(--wp--custom--color--background)",
 						"background": "var(--wp--custom--color--secondary)",
 						"hoverText": "var(--wp--custom--color--background)",
-						"hoverBackground": "#006ba1"
+						"hoverBackground": "var(--wp--custom--color--tertiary)"
 					}
 				},
 				"form": {
@@ -344,6 +275,11 @@
 						}
 					}
 				},
+				"post-author": {
+					"typography": {
+						"fontWeight": "normal"
+					}
+				},
 				"line-height": {
 					"body": 1.6,
 					"headings": 1.125
@@ -366,9 +302,9 @@
 		},
 		"root": {
 			"color": {
-				"background": "var(--wp--preset--color--background)",
-				"text": "var(--wp--preset--color--foreground)",
-				"link": "var(--wp--preset--color--foreground)"
+				"background": "var(--wp--custom--color--background)",
+				"text": "var(--wp--custom--color--foreground)",
+				"link": "var(--wp--custom--color--foreground)"
 			},
 			"typography": {
 				"fontSize": "var(--wp--preset--font-size--normal)",
@@ -379,7 +315,7 @@
 		"core/button": {
 			"color": {
 				"text": "var(--wp--custom--button--color--text)",
-				"background": "var(--wp--preset--color--primary)"
+				"background": "var(--wp--custom--color--primary)"
 			},
 			"typography": {
 				"fontWeight": "var(--wp--custom--button--typography--font-weight)",
@@ -447,8 +383,8 @@
 		},
 		"core/post-date": {
 			"color": {
-				"text": "var(--wp--preset--color--foreground-light)",
-				"link": "var(--wp--preset--color--foreground-light)"
+				"text": "var(--wp--custom--color--foreground-light)",
+				"link": "var(--wp--custom--color--foreground-light)"
 			},
 			"typography": {
 				"fontSize": "var(--wp--preset--font-size--small)"
