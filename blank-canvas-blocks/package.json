@@ -13,6 +13,7 @@
     "deepmerge": "^4.2.2",
     "node-sass": "^4.13.1",
     "node-sass-package-importer": "^5.3.2",
+    "npm-run-all": "^4.1.5",
     "rtlcss": "^2.4.0"
   },
   "rtlcssConfig": {
@@ -32,9 +33,9 @@
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-    "build": "npm run build:ponyfill",
-    "build:ponyfill": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true",
+    "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
+    "start:child": "run-p start \"build:child -- {@} watch\" --",
+    "build": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true",
     "build:child": "node build.js"
   }
 }
