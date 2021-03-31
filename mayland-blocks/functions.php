@@ -35,4 +35,4 @@ function mayland_blocks_scripts() {
 	// Enqueue front-end styles.
 	wp_enqueue_style( 'mayland-blocks-styles', get_stylesheet_uri() );
 }
-add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts' );
+add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts', 12 );
