@@ -33,6 +33,6 @@ endif;
  */
 function mayland_blocks_scripts() {
 	// Enqueue front-end styles.
-	wp_enqueue_style( 'mayland-blocks-styles', get_stylesheet_uri() );
+	wp_enqueue_style( 'mayland-blocks-styles', get_stylesheet_uri(), array( 'blank_canvas_blocks-ponyfill' ), wp_get_theme()->get( 'Version' ) );
 }
-add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts', 12 );
+add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts' );
