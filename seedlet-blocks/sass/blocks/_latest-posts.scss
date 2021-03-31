@@ -1,3 +1,6 @@
+@import '~@wordpress/base-styles/breakpoints';
+@import '~@wordpress/base-styles/mixins';
+
 .wp-block-latest-posts {
 	padding-left: 0;
 
@@ -84,7 +87,7 @@
 	}
 }
 
-// @include media(tablet) {
+@include break-medium {
 	.wp-block-latest-posts.is-style-seedlet-alternating-grid {
 
 		// Necessary so that the block boundaries are respected.
@@ -119,4 +122,4 @@
 			}
 		}
 	}
-// }
+}
