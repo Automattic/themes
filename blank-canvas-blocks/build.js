@@ -20,11 +20,12 @@ const buildChildTheme = () => {
 			console.log( "\x1b[32m" + childThemeName + "/experimental-theme.json created successfully." );
 		} );
 	} catch ( error ) {
-		console.error( "\x1b[41m" + error );
+		console.error( "\x1b[31m" + error );
 	}
 };
 
 if ( ! fs.existsSync( childThemeJsonFileName ) ) {
+	console.log( "\x1b[31m" + childThemeJsonFileName + ' not found :(' );
 	return;
 }
 
