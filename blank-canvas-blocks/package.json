@@ -33,8 +33,9 @@
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "start": "npm-run-all --parallel \"build:* -- {@}\" --",
-    "build:ponyfill": "chokidar \"**/*.scss\" -c \"node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true\" --initial",
+    "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
+    "start:child": "run-p start \"build:child -- {@} watch\" --",
+    "build": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true",
     "build:child": "node build.js"
   }
 }
