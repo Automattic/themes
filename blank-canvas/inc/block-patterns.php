@@ -510,20 +510,20 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'categories' => array( 'coming-soon' ),
 					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/pattern-links-gradient-scaled.jpg","id":2794,"dimRatio":0,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2794" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/pattern-links-gradient-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"fontSize":"20px","lineHeight":"1"}},"textColor":"background"} -->
-									<h2 class="alignfull has-text-align-center has-background-color has-text-color" style="font-size:20px;line-height:1"><strong><span class="uppercase">COMING SOON</span></strong></h2>
+									<h2 class="alignfull has-text-align-center has-background-color has-text-color" style="font-size:20px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'COMING SOON', 'blank-canvas' ) . '</span></strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:heading {"textAlign":"center","level":3,"align":"full","style":{"typography":{"fontSize":"120px","lineHeight":"1"}}} -->
-									<h3 class="alignfull has-text-align-center" style="font-size:120px;line-height:1"><strong><span class="uppercase">Six Feet Over</span></strong></h3>
+									<h3 class="alignfull has-text-align-center" style="font-size:120px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'Six Feet Over', 'blank-canvas' ) . '</span></strong></h3>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center"} -->
-									<p class="has-text-align-center">A new album from Rage Slump coming April 2021. Follow us on BandCamp now to be the first to hear some sneak peeks of the album.</p>
+									<p class="has-text-align-center">' . esc_html__( 'A new album from Rage Slump coming April 2021. Follow us on BandCamp now to be the first to hear some sneak peeks of the album.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:buttons {"contentJustification":"center"} -->
 									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"textColor":"background","className":"is-style-outline"} -->
-									<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-background-color has-text-color"><strong>FOLLOW US</strong></a></div>
+									<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-background-color has-text-color"><strong>' . esc_html__( 'FOLLOW US', 'blank-canvas' ) . '</strong></a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div></div>
 									<!-- /wp:cover -->',
@@ -539,7 +539,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div class="wp-block-cover alignfull has-primary-background-color" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="https://mywptesting.site/wp-content/uploads/2021/03/Gradient-bluegreen-slower_low.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"75%"} -->
 									<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1","fontSize":"125px"}}} -->
-									<h2 style="font-size:125px;line-height:1"><strong>The High Fives</strong></h2>
+									<h2 style="font-size:125px;line-height:1"><strong>' . esc_html__( 'The High Fives', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:social-links {"align":"left"} -->
@@ -617,7 +617,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:column {"width":"35%"} -->
 									<div class="wp-block-column" style="flex-basis:35%"><!-- wp:paragraph -->
-									<p><strong>OAK &amp; ANCHOR</strong></p>
+									<p><strong>' . esc_html__( 'OAK & ANCHOR', 'blank-canvas' ) . '</strong></p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:spacer {"height":250} -->
@@ -625,23 +625,23 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:spacer -->
 
 									<!-- wp:heading {"style":{"typography":{"fontSize":"64px"}}} -->
-									<h2 style="font-size:64px"><strong>Coming Soon</strong></h2>
+									<h2 style="font-size:64px"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph -->
-									<p>A new restaurant featuring farm-to-table dining.</p>
+									<p>' . esc_html__( 'A new restaurant featuring farm-to-table dining.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph -->
-									<p>1234 S Main Street<br>Townsville, MA, 01010</p>
+									<p>' . esc_html__( '1234 S Main Street', 'blank-canvas' ) . '<br>' . esc_html__( 'Townsville, MA, 01010', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column -->
 
 									<!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"style":{"color":{"text":"#ffffff","link":"#ffffff"}}} -->
-									<p class="has-text-color has-link-color" style="--wp--style--color--link:#ffffff;color:#ffffff"><a href="mailto:info@example.com">info@example.com<br></a>(123) 456-7890</p>
+									<p class="has-text-color has-link-color" style="--wp--style--color--link:#ffffff;color:#ffffff"><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas' ) . '<br></a>(123) 456-7890</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns -->
