@@ -504,81 +504,26 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/coming-soon-restaurant',
+				'blank-canvas/coming-soon-gradient',
 				array(
-					'title'      => __( 'Coming Soon: Restaurant', 'blank-canvas' ),
+					'title'      => __( 'Coming Soon: Gradient', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-1-scaled.jpg","id":2580,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-dim" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2580" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-1-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
-									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"65%"} -->
-									<div class="wp-block-column" style="flex-basis:65%"></div>
-									<!-- /wp:column -->
-
-									<!-- wp:column {"width":"35%"} -->
-									<div class="wp-block-column" style="flex-basis:35%"><!-- wp:paragraph -->
-									<p><strong>' . esc_html__( 'OAK &amp; ANCHOR', 'blank-canvas' ) . '</strong></p>
-									<!-- /wp:paragraph -->
-
-									<!-- wp:spacer {"height":250} -->
-									<div style="height:250px" aria-hidden="true" class="wp-block-spacer"></div>
-									<!-- /wp:spacer -->
-
-									<!-- wp:heading {"style":{"typography":{"fontSize":"64px"}}} -->
-									<h2 style="font-size:64px">' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</h2>
-									<!-- /wp:heading -->
-
-									<!-- wp:paragraph -->
-									<p>' . esc_html__( 'A new restaurant featuring farm-to-table dining.', 'blank-canvas' ) . '</p>
-									<!-- /wp:paragraph -->
-
-									<!-- wp:columns -->
-									<div class="wp-block-columns"><!-- wp:column -->
-									<div class="wp-block-column"><!-- wp:paragraph -->
-									<p>' . esc_html__( '1234 S Main Street', 'blank-canvas' ) . '<br>' . esc_html__( 'Townsville, MA, 01010', 'blank-canvas' ) . '</p>
-									<!-- /wp:paragraph --></div>
-									<!-- /wp:column -->
-
-									<!-- wp:column -->
-									<div class="wp-block-column"><!-- wp:paragraph -->
-									<p><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas' ) . '<br></a>' . esc_html__( '(123) 456-7890', 'blank-canvas' ) . '</p>
-									<!-- /wp:paragraph --></div>
-									<!-- /wp:column --></div>
-									<!-- /wp:columns -->
-
-									<!-- wp:social-links {"iconColor":"background","iconColorValue":"#FFFFFF","className":"is-style-logos-only"} -->
-									<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
-
-									<!-- wp:social-link {"url":"#","service":"yelp"} /-->
-
-									<!-- wp:social-link {"url":"#","service":"instagram"} /--></ul>
-									<!-- /wp:social-links --></div>
-									<!-- /wp:column --></div>
-									<!-- /wp:columns --></div></div>
-									<!-- /wp:cover -->',
-				)
-			);
-
-			register_block_pattern(
-				'blank-canvas/coming-soon-band',
-				array(
-					'title'      => __( 'Coming Soon: Band', 'blank-canvas' ),
-					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_5PEZV88YAV-scaled.jpg","id":2587,"hasParallax":true,"dimRatio":70,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-dim-70 has-background-dim has-parallax" style="background-image:url(https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_5PEZV88YAV-scaled.jpg);min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"fontSize":"20px","lineHeight":"1"},"color":{"text":"#ebc10a"}}} -->
-									<h2 class="alignfull has-text-align-center has-text-color" style="color:#ebc10a;font-size:20px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'COMING SOON', 'blank-canvas' ) . '</span></strong></h2>
+					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/pattern-links-gradient-scaled.jpg","id":2794,"dimRatio":0,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2794" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/pattern-links-gradient-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"fontSize":"20px","lineHeight":"1"}},"textColor":"background"} -->
+									<h2 class="alignfull has-text-align-center has-background-color has-text-color" style="font-size:20px;line-height:1"><strong><span class="uppercase">COMING SOON</span></strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:heading {"textAlign":"center","level":3,"align":"full","style":{"typography":{"fontSize":"120px","lineHeight":"1"}}} -->
-									<h3 class="alignfull has-text-align-center" style="font-size:120px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'SIX FEET OVER', 'blank-canvas' ) . '</span></strong></h3>
+									<h3 class="alignfull has-text-align-center" style="font-size:120px;line-height:1"><strong><span class="uppercase">Six Feet Over</span></strong></h3>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center"} -->
-									<p class="has-text-align-center">' . esc_html__( 'A new album from Rage Slump is coming in April 2021. Check back soon for some sneak peeks of the album.', 'blank-canvas' ) . '</p>
+									<p class="has-text-align-center">A new album from Rage Slump coming April 2021. Follow us on BandCamp now to be the first to hear some sneak peeks of the album.</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:buttons {"contentJustification":"center"} -->
-									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"style":{"color":{"text":"#ebc10a"}},"className":"is-style-outline"} -->
-									<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color" style="color:#ebc10a"><strong>' . esc_html__( 'LEARN MORE', 'blank-canvas' ) . '</strong></a></div>
+									<div class="wp-block-buttons is-content-justification-center"><!-- wp:button {"textColor":"background","className":"is-style-outline"} -->
+									<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-background-color has-text-color"><strong>FOLLOW US</strong></a></div>
 									<!-- /wp:button --></div>
 									<!-- /wp:buttons --></div></div>
 									<!-- /wp:cover -->',
@@ -586,19 +531,19 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'blank-canvas/coming-soon-musician',
+				'blank-canvas/coming-soon-animated',
 				array(
-					'title'      => __( 'Coming Soon: Video Background', 'blank-canvas' ),
+					'title'      => __( 'Coming Soon: Animated Gradient', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/Rock-Band-Concert.mp4","id":2729,"overlayColor":"primary","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color has-background-dim" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="https://mywptesting.site/wp-content/uploads/2021/03/Rock-Band-Concert.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/Gradient-bluegreen-slower_low.mp4","id":2808,"dimRatio":0,"overlayColor":"primary","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="https://mywptesting.site/wp-content/uploads/2021/03/Gradient-bluegreen-slower_low.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"75%"} -->
 									<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1","fontSize":"125px"}}} -->
-									<h2 style="font-size:125px;line-height:1"><strong>' . esc_html__( 'The High Fives', 'blank-canvas' ) . '</strong></h2>
+									<h2 style="font-size:125px;line-height:1"><strong>The High Fives</strong></h2>
 									<!-- /wp:heading -->
 
-									<!-- wp:social-links {"customIconColor":"#2c1d14","iconColorValue":"#2c1d14","iconBackgroundColor":"background","iconBackgroundColorValue":"#FFFFFF","align":"left"} -->
-									<ul class="wp-block-social-links alignleft has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"#","service":"soundcloud"} /-->
+									<!-- wp:social-links {"align":"left"} -->
+									<ul class="wp-block-social-links alignleft"><!-- wp:social-link {"url":"#","service":"soundcloud"} /-->
 
 									<!-- wp:social-link {"url":"#","service":"bandcamp"} /-->
 
@@ -656,6 +601,61 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:spacer -->
 									<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->',
+				)
+			);
+
+			register_block_pattern(
+				'blank-canvas/coming-soon-restaurant',
+				array(
+					'title'      => __( 'Coming Soon: Restaurant', 'blank-canvas' ),
+					'categories' => array( 'coming-soon' ),
+					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-scaled.jpg","id":2579,"dimRatio":0,"focalPoint":{"x":"1.00","y":"0.51"},"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2579" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-scaled.jpg" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"65%"} -->
+									<div class="wp-block-column" style="flex-basis:65%"></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column {"width":"35%"} -->
+									<div class="wp-block-column" style="flex-basis:35%"><!-- wp:paragraph -->
+									<p><strong>OAK &amp; ANCHOR</strong></p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:spacer {"height":250} -->
+									<div style="height:250px" aria-hidden="true" class="wp-block-spacer"></div>
+									<!-- /wp:spacer -->
+
+									<!-- wp:heading {"style":{"typography":{"fontSize":"64px"}}} -->
+									<h2 style="font-size:64px"><strong>Coming Soon</strong></h2>
+									<!-- /wp:heading -->
+
+									<!-- wp:paragraph -->
+									<p>A new restaurant featuring farm-to-table dining.</p>
+									<!-- /wp:paragraph -->
+
+									<!-- wp:columns -->
+									<div class="wp-block-columns"><!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:paragraph -->
+									<p>1234 S Main Street<br>Townsville, MA, 01010</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column -->
+
+									<!-- wp:column -->
+									<div class="wp-block-column"><!-- wp:paragraph {"style":{"color":{"text":"#ffffff","link":"#ffffff"}}} -->
+									<p class="has-text-color has-link-color" style="--wp--style--color--link:#ffffff;color:#ffffff"><a href="mailto:info@example.com">info@example.com<br></a>(123) 456-7890</p>
+									<!-- /wp:paragraph --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns -->
+
+									<!-- wp:social-links {"iconColor":"background","iconColorValue":"#FFFFFF","className":"is-style-logos-only"} -->
+									<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"yelp"} /-->
+
+									<!-- wp:social-link {"url":"#","service":"instagram"} /--></ul>
+									<!-- /wp:social-links --></div>
+									<!-- /wp:column --></div>
+									<!-- /wp:columns --></div></div>
+									<!-- /wp:cover -->',
 				)
 			);
 		}
