@@ -535,8 +535,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Coming Soon: Animated Gradient', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/Gradient-bluegreen-slower_low.mp4","id":2808,"dimRatio":0,"overlayColor":"primary","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-primary-background-color" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="https://mywptesting.site/wp-content/uploads/2021/03/Gradient-bluegreen-slower_low.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-gradient.mp4' ) . '","id":2808,"dimRatio":0,"overlayColor":"primary","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull has-primary-background-color" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-gradient.mp4' ) . '" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"75%"} -->
 									<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1","fontSize":"125px"}}} -->
 									<h2 style="font-size:125px;line-height:1"><strong>' . esc_html__( 'The High Fives', 'blank-canvas' ) . '</strong></h2>
