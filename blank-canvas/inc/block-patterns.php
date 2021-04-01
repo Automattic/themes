@@ -508,8 +508,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Coming Soon: Gradient', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/pattern-links-gradient-scaled.jpg","id":2794,"dimRatio":0,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2794" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/pattern-links-gradient-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"fontSize":"20px","lineHeight":"1"}},"textColor":"background"} -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg' ) . '","id":2794,"dimRatio":0,"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2794" alt="" src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-links-gradient.jpg' ) . '" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","align":"full","style":{"typography":{"fontSize":"20px","lineHeight":"1"}},"textColor":"background"} -->
 									<h2 class="alignfull has-text-align-center has-background-color has-text-color" style="font-size:20px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'COMING SOON', 'blank-canvas' ) . '</span></strong></h2>
 									<!-- /wp:heading -->
 
