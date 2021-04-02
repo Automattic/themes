@@ -10,9 +10,6 @@ const childThemeJsonFileName =
 const overwriteMerge = ( destinationArray, sourceArray, options ) =>
 	sourceArray;
 
-const overwriteMerge = ( destinationArray, sourceArray, options ) =>
-	sourceArray;
-
 const buildChildTheme = () => {
 	try {
 		const parentThemeJsonFile = fs.readFileSync(
