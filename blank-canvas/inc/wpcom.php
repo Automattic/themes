@@ -201,8 +201,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<p class="has-text-align-center has-primary-color has-text-color">' . esc_html__( 'Sign up to hear when my journey begins.', 'blank-canvas' ) . '</p>
 									<!-- /wp:paragraph -->
 
-									<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"primary","textColor":"background","borderRadius":6} -->
-									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="16px" custom_border_radius="6" custom_border_weight="1" custom_padding="15" custom_spacing="10" submit_button_classes="has-text-color has-background-color has-background has-primary-background-color" email_field_classes="" show_only_email_and_button="true"]</div>
+									<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"primary","textColor":"background","borderRadius":6,"borderColor":"#000000","customBorderColor":"#000000"} -->
+									<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="16px" custom_border_radius="6" custom_border_weight="1" custom_border_color="#000000" custom_padding="15" custom_spacing="10" submit_button_classes="has-000000-border-color has-text-color has-background-color has-background has-primary-background-color" email_field_classes="has-000000-border-color" show_only_email_and_button="true"]</div>
 									<!-- /wp:jetpack/subscriptions -->
 
 									<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#000000","align":"center","className":"is-style-logos-only"} -->
