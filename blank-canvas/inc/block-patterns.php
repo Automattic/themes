@@ -568,8 +568,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Coming Soon: Art Gallery', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:media-text {"align":"full","mediaId":2719,"mediaLink":"https://mywptesting.site/coming-soon-curated/self-portrait-with-two-pupils-2/","mediaType":"image","imageFill":true,"style":{"color":{"background":"#f3efec"}}} -->
-									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill has-background" style="background-color:#f3efec"><figure class="wp-block-media-text__media" style="background-image:url(https://mywptesting.site/wp-content/uploads/2021/03/self-portrait-with-two-pupils-2-871x1024.jpg);background-position:50% 50%"><img src="https://mywptesting.site/wp-content/uploads/2021/03/self-portrait-with-two-pupils-2-871x1024.jpg" alt="" class="wp-image-2719 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"customOverlayColor":"#f3efec","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+					'content'    => '<!-- wp:media-text {"align":"full","mediaId":2719,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-painting.jpg' ) . '","mediaType":"image","imageFill":true,"style":{"color":{"background":"#f3efec"}}} -->
+									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill has-background" style="background-color:#f3efec"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-painting.jpg' ) . ');background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-painting.jpg' ) . '" alt="" class="wp-image-2719 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"customOverlayColor":"#f3efec","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-dim" style="background-color:#f3efec;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"style":{"typography":{"fontSize":"64px","lineHeight":"1"}},"textColor":"foreground"} -->
 									<h2 class="has-foreground-color has-text-color" style="font-size:64px;line-height:1">' . esc_html__( 'Opening Soon', 'blank-canvas' ) . '</h2>
 									<!-- /wp:heading -->
@@ -609,8 +609,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Coming Soon: Restaurant', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
-					'content'    => '<!-- wp:cover {"url":"https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-scaled.jpg","id":2579,"dimRatio":0,"focalPoint":{"x":"1.00","y":"0.51"},"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2579" alt="" src="https://mywptesting.site/wp-content/uploads/2021/03/StockSnap_AUVLL0XR1V-scaled.jpg" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-food.jpg' ) . '","id":2579,"dimRatio":0,"focalPoint":{"x":"1.00","y":"0.51"},"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2579" alt="" src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-food.jpg' ) . '" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"65%"} -->
 									<div class="wp-block-column" style="flex-basis:65%"></div>
 									<!-- /wp:column -->
