@@ -610,7 +610,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'title'      => __( 'Coming Soon: Restaurant', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
 					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-food.jpg' ) . '","id":2579,"dimRatio":0,"focalPoint":{"x":"1.00","y":"0.51"},"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2579" alt="' . esc_html__( 'Physalis fruits in a white bowl against a dark background.', 'blank-canvas' ) . '" src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-food.jpg' ) . '" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+									<div class="wp-block-cover alignfull" style="min-height:100vh"><img class="wp-block-cover__image-background wp-image-2579" alt="" src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-food.jpg' ) . '" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"65%"} -->
 									<div class="wp-block-column" style="flex-basis:65%"></div>
 									<!-- /wp:column -->
