@@ -186,7 +186,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 					'categories' => array( 'coming-soon' ),
 					'content'    => '<!-- wp:cover {"customOverlayColor":"#e8ffe6","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-dim" style="background-color:#e8ffe6;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","id":2742,"width":100,"height":100,"sizeSlug":"medium","linkDestination":"none"} -->
-									<div class="wp-block-image"><figure class="aligncenter size-medium is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-notice.png' ) . '" alt="" class="wp-image-2742" width="100" height="100"/></figure></div>
+									<div class="wp-block-image"><figure class="aligncenter size-medium is-resized"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-notice.png' ) . '" alt="' . esc_html__( 'A megaphone icon with sharp angles.', 'blank-canvas' ) . '" class="wp-image-2742" width="100" height="100"/></figure></div>
 									<!-- /wp:image -->
 
 									<!-- wp:spacer {"height":5} -->
@@ -251,7 +251,7 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 					'title'      => __( 'Coming Soon: App', 'blank-canvas' ),
 					'categories' => array( 'coming-soon' ),
 					'content'    => '<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaId":2787,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-watch.jpg' ) . '","mediaType":"image","mediaWidth":54,"imageFill":false} -->
-									<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile" style="grid-template-columns:auto 54%"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-watch.jpg' ) . '" alt="" class="wp-image-2787 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#2b353a"},"typography":{"fontSize":"50px","lineHeight":"1.2"}}} -->
+									<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile" style="grid-template-columns:auto 54%"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-watch.jpg' ) . '" alt="' . esc_html__( 'A close-up of a black smart watch against a pink background.', 'blank-canvas' ) . '" class="wp-image-2787 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"style":{"color":{"text":"#2b353a"},"typography":{"fontSize":"50px","lineHeight":"1.2"}}} -->
 									<h2 class="has-text-color" style="color:#2b353a;font-size:50px;line-height:1.2"><strong>' . esc_html__( 'A new app for designers', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
