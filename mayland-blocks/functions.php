@@ -6,7 +6,7 @@ if ( ! function_exists( 'mayland_blocks_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
-				'style.css',
+				'theme.css',
 			)
 		);
 	}
