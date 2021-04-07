@@ -1,19 +1,10 @@
 .wp-block-group {
 	&.has-background {
-		padding: #{ map-deep-get($config-global, "spacing", "unit") };
+		padding: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
 		@include media(mobile) {
-			padding: #{ map-deep-get($config-global, "spacing", "vertical") };
+			padding: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
-	}
-}
-
-.wp-block-group.has-background > .wp-block-group__inner-container > .wp-block[data-align=full] {
-	margin-left: -#{ map-deep-get($config-global, "spacing", "unit") };
-	width: calc(100% + #{ 2 * map-deep-get($config-global, "spacing", "unit") });
-
-	@include media(mobile) {
-		margin-left: -#{ map-deep-get($config-global, "spacing", "vertical") };
-		width: calc(100% + #{ 2 * map-deep-get($config-global, "spacing", "vertical") });
 	}
 }
 
