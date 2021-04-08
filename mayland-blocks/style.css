@@ -8,6 +8,7 @@ Requires at least: WordPress 4.9.6
 Version: 1.2.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
+Template: blank-canvas-blocks
 Text Domain: mayland-blocks
 Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
 
@@ -21,20 +22,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-/* Set editor widths. */
-
-.wp-block {
-	max-width: var(--wp--custom--width--default);
-}
-
-.wp-block[data-align="wide"] {
-	max-width: var(--wp--custom--width--wide);
-}
-
-.wp-block[data-align="full"] {
-	max-width: inherit;
 }
 
 /* Adjust header spacing. */
@@ -74,3 +61,26 @@ img {
 	height: auto;
 	max-width: 100%;
 }
+
+/* Post Meta */
+
+.post-meta a {
+	color: currentColor;
+}
+
+.post-meta .wp-block-post-author:before {
+	background: url(assets/svg/post-author.svg) no-repeat;
+}
+
+.post-meta .wp-block-post-date:before {
+	background: url(assets/svg/post-date.svg) no-repeat;
+}
+
+.post-meta .wp-block-post-hierarchical-terms:before {
+	background: url(assets/svg/post-category.svg) no-repeat;
+}
+
+.post-meta .wp-block-post-tags:before {
+	background: url(assets/svg/post-tag.svg) no-repeat;
+}
+	
