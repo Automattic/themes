@@ -1,0 +1,226 @@
+.wp-block-site-title a {
+	background-image: linear-gradient(to right, var(--wp--custom--color--secondary) 100%, transparent 100%);
+	background-position: 0 1.22em;
+	background-repeat: repeat-x;
+	background-size: 8px 1.5px;
+	border-bottom: none;
+	color: currentColor;
+	text-shadow: 1px 0px var(--wp--custom--color--background), -1px 0px var(--wp--custom--color--background), -2px 0px var(--wp--custom--color--background), 2px 0px var(--wp--custom--color--background), -3px 0px var(--wp--custom--color--background), 3px 0px var(--wp--custom--color--background), -4px 0px var(--wp--custom--color--background), 4px 0px var(--wp--custom--color--background), -5px 0px var(--wp--custom--color--background), 5px 0px var(--wp--custom--color--background);
+	transition: background-size 0.1s ease-out;
+}
+
+.wp-block-site-title a:link, .wp-block-site-title a:visited, .wp-block-site-title a:active {
+	color: currentColor;
+}
+
+.wp-block-site-title a:hover, .wp-block-site-title a:focus {
+	text-decoration: none;
+	color: var(--wp--custom--color--secondary);
+	background-size: 8px 0px;
+}
+
+/**
+ * Links in navigation
+ */
+.wp-block-navigation-link a :hover {
+	text-decoration: underline;
+	text-underline-offset: 0.4rem;
+}
+
+/**
+ * Links in Content
+ */
+.is-root-container a,
+.wp-block-post-content a {
+	color: var(--wp--custom--color--primary);
+	text-decoration-color: var(--wp--style--color--link);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+}
+
+.is-root-container a:focus, .is-root-container a:hover,
+.wp-block-post-content a:focus,
+.wp-block-post-content a:hover {
+	color: var(--wp--style--color--link);
+}
+
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
+ * These are default block editor widths in case the theme doesn't provide them.
+ */
+.wp-block-latest-posts {
+	padding-left: 0;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li {
+	margin-top: var(--wp--custom--margin--vertical);
+	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:first-child {
+	margin-top: 0;
+}
+
+.wp-block-latest-posts:not(.is-grid) > li:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts.is-grid > li {
+	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.wp-block-latest-posts.is-grid > li:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts.is-grid.columns-2 > li:nth-last-child(-n + 2):nth-child(2n + 1),
+.wp-block-latest-posts.is-grid.columns-2 > li:nth-last-child(-n + 2):nth-child(2n + 1) ~ li,
+.wp-block-latest-posts.is-grid.columns-3 > li:nth-last-child(-n + 3):nth-child(3n + 1),
+.wp-block-latest-posts.is-grid.columns-3 > li:nth-last-child(-n + 3):nth-child(3n + 1) ~ li,
+.wp-block-latest-posts.is-grid.columns-4 > li:nth-last-child(-n + 4):nth-child(4n + 1),
+.wp-block-latest-posts.is-grid.columns-4 > li:nth-last-child(-n + 4):nth-child(4n + 1) ~ li,
+.wp-block-latest-posts.is-grid.columns-5 > li:nth-last-child(-n + 5):nth-child(5n + 1),
+.wp-block-latest-posts.is-grid.columns-5 > li:nth-last-child(-n + 5):nth-child(5n + 1) ~ li,
+.wp-block-latest-posts.is-grid.columns-6 > li:nth-last-child(-n + 6):nth-child(6n + 1),
+.wp-block-latest-posts.is-grid.columns-6 > li:nth-last-child(-n + 6):nth-child(6n + 1) ~ li {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts > li > * {
+	margin-top: calc(0.5 * var(--wp--custom--margin--vertical));
+	margin-bottom: calc(0.5 * var(--wp--custom--margin--vertical));
+}
+
+.wp-block-latest-posts > li > *:first-child {
+	margin-top: 0;
+}
+
+.wp-block-latest-posts > li > *:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-latest-posts > li > a {
+	font-family: var(--wp--preset--font-family--headings);
+	line-height: 1.3;
+	font-size: var(--wp--preset--font-size--huge);
+}
+
+.wp-block-latest-posts .wp-block-latest-posts__post-date {
+	font-size: var(--wp--preset--font-size--sm);
+}
+
+.entry-content [class*="inner-container"] .wp-block-latest-posts .wp-block-latest-posts__post-date,
+.entry-content .has-background .wp-block-latest-posts .wp-block-latest-posts__post-date {
+	color: currentColor;
+}
+
+.wp-block-latest-posts.alignfull {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.entry-content [class*="inner-container"] .wp-block-latest-posts.alignfull,
+.entry-content .has-background .wp-block-latest-posts.alignfull {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media (min-width: 782px) {
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid {
+		overflow: hidden;
+	}
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid > li {
+		width: calc(50% - (0.5 * var(--wp--custom--margin--horizontal)));
+		max-width: calc(50% - (0.5 * var(--wp--custom--margin--horizontal)));
+		text-align: right;
+	}
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid > li:nth-child(2n + 1) {
+		float: right;
+		text-align: left;
+	}
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid.is-grid {
+		display: inherit;
+	}
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid.is-grid > li {
+		margin-top: var(--wp--custom--margin--vertical);
+		margin-right: 0;
+	}
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid.is-grid > li:first-child {
+		margin-top: 0;
+	}
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid.is-grid > li:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Author bio
+ */
+.author-bio {
+	margin-top: calc(6 * var(--wp--custom--margin--baseline));
+}
+
+.author-bio .wp-block-post-navigation-link,
+.author-bio .wp-block-post-author__name {
+	font-family: var(--wp--preset--font-family--headings);
+}
+
+.author-bio .wp-block-post-navigation-link {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.wp-block-post-navigation-links {
+	margin-top: calc(9 * var(--wp--custom--margin--baseline));
+}
+
+.wp-block-post-navigation-links .wp-block-post-navigation-link-byline {
+	font-size: var(--wp--preset--font-size--tiny);
+	margin: 0;
+}
+
+.footer-credit {
+	display: flex;
+	font-family: var(--wp--preset--font-family--headings);
+	white-space: pre-wrap;
+}
+
+.footer-credit > * {
+	align-self: center;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.footer-credit .wp-block-site-title > a {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/*# sourceMappingURL=theme.css.map */
