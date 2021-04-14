@@ -31,3 +31,16 @@ require get_stylesheet_directory() . '/inc/block-patterns.php';
  * Block Styles.
  */
 require get_stylesheet_directory() . '/inc/block-styles.php';
+
+/**
+ * Override the Parent Theme index.html template and load the index.php template from the child instead
+ * This may not be needed once https://github.com/WordPress/gutenberg/issues/25612#issuecomment-819419024 is addressed
+ */
+function quadrat_override_index_template( $template ) {
+	if ( is_home() || is_front_page() ) :
+		$template = locate_template( array( 'index.php' ) );
+	endif;
+	return $template;
+}
+
+add_filter( 'template_include', 'quadrat_override_index_template' );

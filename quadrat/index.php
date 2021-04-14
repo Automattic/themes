@@ -12,11 +12,15 @@
  * @package Quadrat
  * @since 1.0.0
  */
+get_header();
+
 	// the header
-	echo do_blocks( file_get_contents( 'templates/header.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/header.html' ) );
 
 	// the query
-	echo do_blocks( file_get_contents( 'templates/query.html' ) );
+	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
 
 	// the footer
-	echo do_blocks( file_get_contents( 'templates/footer.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/footer.html' ) );
+	
+get_footer();
