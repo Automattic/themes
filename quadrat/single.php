@@ -17,8 +17,8 @@ get_header();
 	// the header
 	get_template_part( 'template-parts/header' );
 
-	// the query
-	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
+	// the content
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/post.html' ) );
 
 	// the footer
 	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/footer.html' ) );

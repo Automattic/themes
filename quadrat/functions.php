@@ -9,6 +9,24 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 				'/assets/theme.css',
 			)
 		);
+
+		// This theme uses wp_nav_menu() in the header only.
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Navigation', 'quadrat' )
+			)
+		);
+
+		// Add support for custom logo via the customizer.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 240,
+				'width'       => 240,
+				'flex-width'  => false,
+				'flex-height' => false,
+			)
+		);
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;
