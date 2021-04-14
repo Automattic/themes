@@ -13,10 +13,10 @@
  * @since 1.0.0
  */
 	// the header
-	echo do_blocks( file_get_contents( 'templates/header.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/header.html' ) );
 
 	// the query
-	echo do_blocks( file_get_contents( 'templates/query.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/query.html' ) );
 
 	// the footer
-	echo do_blocks( file_get_contents( 'templates/footer.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/footer.html' ) );
