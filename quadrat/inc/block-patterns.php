@@ -50,8 +50,8 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Media & Text', 'quadrat' ),
 					'categories' => array( 'quadrat' ),
-					'content'    => '<!-- wp:media-text {"mediaLink":"http://localhost:4759/?attachment_id=287","mediaType":"image"} -->
-					<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="http://localhost:4759/wp-content/uploads/2021/04/girls-illustration-921x1024.png" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+					'content'    => '<!-- wp:media-text {"mediaLink":"https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/girls-illustration.png","mediaType":"image"} -->
+					<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/girls-illustration.png" alt=""/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
 					<p>' . esc_html__( 'The Hosts', 'quadrat') . '</p>
 					<!-- /wp:paragraph -->
 					
