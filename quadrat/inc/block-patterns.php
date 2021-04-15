@@ -19,7 +19,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 		if ( function_exists( 'register_block_pattern' ) ) {
 
 			register_block_pattern(
-				'quadrat-blocks/the-hosts',
+				'quadrat/the-hosts',
 				array(
 					'title'      => __( 'The Hosts', 'quadrat' ),
 					'categories' => array( 'quadrat' ),
@@ -46,7 +46,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 			);
 
 			register_block_pattern(
-				'quadrat-blocks/media-text',
+				'quadrat/media-text',
 				array(
 					'title'      => __( 'Media & Text', 'quadrat' ),
 					'categories' => array( 'quadrat' ),
