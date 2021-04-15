@@ -88,23 +88,47 @@
 					"background": "var(--wp--preset--color--blue)",
 					"selection": "var(--wp--preset--color--darker-blue)"
 				},
+				"margin": {
+					"horizontal": "20px"
+				},
 				"line-height": {
 					"body": 1.6,
 					"headings": 1.2
 				},
 				"button": {
+					"typography": {
+						"fontSize": "20px"
+					},
+					"border": {
+						"radius": "0"
+					},
 					"color": {
+						"text": "var(--wp--preset--color--blue)",
 						"background": "var(--wp--preset--color--pink)",
 						"hoverText": "var(--wp--custom--color--pink)",
 						"hoverBackground": "var(--wp--preset--color--darker-blue)"
 					}
-				},
+				},			
 				"paragraph": {
 					"dropcap": {
-						"margin": "0.1em .2em .2em 0",
+						"margin": "0 .2em .2em 0",
 						"typography": {
 							"fontSize": "var(--wp--preset--font-size--huge)",
 							"fontWeight": "300"
+						}
+					}
+				},
+				"list": {
+					"padding": {
+						"left": "calc( 2 * var(--wp--custom--margin--horizontal) )"
+					}
+				},
+				"quote": {
+					"citation": {
+						"typography": {
+							"fontWeight": "300",
+							"fontSize": "var(--wp--preset--font-size--tiny)",
+							"fontStyle": "normal"
 						}
 					}
 				}
@@ -114,11 +138,24 @@
 	"styles": {
 		"root": {
 			"color": {
-				"link": "var(--wp--preset--color--pink)"
+				"link": "var(--wp--custom--color--foreground)"
 			},
 			"typography": {
+				"fontWeight": "300",
 				"fontSize": "20px",
 				"lineHeight": "var(--wp--custom--line-height--body)"
+			}
+		},
+		"core/button": {
+			"color": {
+				"text": "var(--wp--custom--button--color--text)",
+				"background": "var(--wp--custom--button--color--background)"
+			},
+			"typography": {
+				"fontSize": "var(--wp--custom--button--typography--font-size)"
+			},
+			"border": {
+				"radius": "var(--wp--custom--button--border--radius)"
 			}
 		},
 		"core/heading/h1": {
@@ -162,6 +199,17 @@
 			"typography": {
 				"fontSize": "var(--wp--preset--font-size--huge)",
 				"lineHeight": "var(--wp--custom--line-height--headings)"
+			}
+		},
+		"core/quote": {
+			"typography": {
+				"fontWeight": "normal",
+				"fontStyle": "normal"
+			},
+			"border": {
+				"color": "var(--wp--custom--color--primary)",
+				"style": "solid",
+				"width": "0 0 0 2px"
 			}
 		}
 	}
