@@ -1,12 +1,10 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Blank Canvas Blocks Demo Deploy
+name: Quadrat Demo Deploy
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the trunk branch
   push:
-    branches: [ make/blank-canvas-blocks ]
+    branches: [ make/quadrat ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,12 +16,19 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v2
-
-      - name: FTP-Deploy-Action
+      - name: Deploy-Theme
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
-          ftp-username: ${{ secrets.BCB_DEMO_USERNAME }}
-          ftp-password: ${{ secrets.BCB_DEMO_PASSWORD }}
+          ftp-username: ${{ secrets.QUADRAT_DEMO_USERNAME }}
+          ftp-password: ${{ secrets.QUADRAT_DEMO_PASSWORD }}
+          git-ftp-args: --insecure
+          local-dir: ./quadrat/
+      - name: Deploy-Parent
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
+          ftp-username: ${{ secrets.QUADRAT_DEMO_USERNAME }}
+          ftp-password: ${{ secrets.QUADRAT_DEMO_PASSWORD }}
           git-ftp-args: --insecure
           local-dir: ./blank-canvas-blocks/
