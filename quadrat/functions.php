@@ -10,6 +10,8 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
+		add_theme_support( 'block-nav-menus' );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
