@@ -1,0 +1,422 @@
+/**
+ * Extra Child Theme Styles
+ */
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+$spacing_horizontal: map-deep-get($config-global, "spacing", "horizontal");
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+
+
+html,
+body {
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+
+	.wp-block-cover &,
+	.wp-block-cover-image &,
+	.wp-block-media-text &,
+	p:not(.site-title) & {
+		text-decoration: underline;
+
+		&.wp-block-button__link,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+.site-branding,
+.main-navigation,
+.entry-header,
+.entry-footer,
+.page-title,
+.author-title,
+.comments-title,
+.comment-reply-title,
+.logged-in-as,
+.comment-notes {
+	text-align: center;
+}
+
+.comment-reply-title {
+	display: inherit;
+}
+
+.comment .comment-reply-title {
+	display: flex;
+}
+
+.main-navigation > div {
+	text-align: left;
+}
+
+.main-navigation > div > ul,
+.social-navigation > div > ul,
+.pagination .nav-links {
+	justify-content: center;
+}
+
+
+/**
+ * Header
+ */
+.site-header {
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: $spacing_vertical;
+	padding-bottom: $spacing_vertical;
+
+	@extend %responsive-alignwide;
+
+	@include media(mobile) {
+		padding-top: #{1.5 * $spacing_vertical};
+		padding-bottom: #{1.5 * $spacing_vertical};
+	}
+}
+
+.site-logo + .site-title {
+	margin-top: #{0.25 * $spacing_vertical};
+}
+
+.site-title + .site-description {
+	margin-top: #{0.5 * $spacing_unit};
+}
+
+/**
+ * Navigation
+ */
+.site-header > * {
+	&.main-navigation {
+		@include media(mobile) {
+			margin-bottom: 0;
+
+			> div > ul > li > .sub-menu {
+				border: 1px solid map-deep-get($config-global, "color", "border", "default");
+				box-shadow: none;
+				border-radius: map-deep-get($config-global, "border-radius", "sm");
+			}
+		}
+	}
+
+	&.social-navigation {
+		@include media(mobile) {
+			margin-top: 0;
+		}
+	}
+}
+
+/**
+ * Main
+ */
+.site-main {
+	padding-top: 0;
+}
+
+.site-main > article > .entry-header {
+	margin-top: #{0.666 * $spacing_vertical};
+	@include media(mobile) {
+		margin-top: $spacing_vertical;
+	}
+}
+
+// Entry Title
+.entry-title {
+	font-weight: 300;
+}
+
+.entry-title {
+	font-size: map-deep-get($config-global, "font", "size", "xxl");
+
+	@include media(laptop) {
+		font-size: map-deep-get($config-global, "font", "size", "xxxxl");
+	}
+}
+
+// Entry Title Link
+.entry-title,
+.page-title,
+.a8c-posts-list .a8c-posts-list-item__title,
+.wp-block-newspack-blocks-homepage-articles article .entry-title {
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: map-deep-get($config-global, "color", "primary", "default");
+		}
+	}
+}
+
+// Sticky tag
+.sticky-post,
+.a8c-posts-list .a8c-posts-list-item__featured span {
+	padding: #{0.5 * $baseline-unit} #{0.66 * $spacing_unit};
+}
+
+/**
+ * Next/Previous navigation
+ */
+.post-navigation {
+	.meta-nav {
+		color: map-deep-get($config-global, "color", "foreground", "light");
+	}
+
+	.post-title {
+		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
+		line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
+	}
+}
+
+/**
+ * Comments
+ */
+.logged-in-as,
+.comment-notes,
+.comment-form-cookies-consent {
+	font-size: map-deep-get($config-global, "font", "size", "sm");
+}
+
+.comment-form-cookies-consent input[type=checkbox] + label {
+	line-height: #{map-deep-get($config-global, "font", "line-height", "body")};
+}
+
+.comment-notes {
+	color: map-deep-get($config-global, "color", "foreground", "light");
+}
+
+.comment-form > p:not(.comment-form-cookies-consent) label {
+	font-weight: 700;
+}
+
+.comment-respond {
+	.form-submit {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+/**
+ * Blocks
+ */
+// Posts List
+.a8c-posts-list {
+	text-align: center;
+}
+
+.a8c-posts-list-item__title {
+	font-weight: 300;
+	font-size: map-deep-get($config-global, "font", "size", "xxl");
+}
+
+.a8c-posts-list-item__excerpt {
+	text-align: left;
+}
+
+// Cover
+.wp-block-cover,
+.wp-block-cover-image {
+
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 300;
+	}
+
+	// Only use a text shadow if there's a background image or video.
+	&[style*="background-image"],
+	video + .wp-block-cover__inner-container {
+		p {
+			text-shadow: 0 0 6px map-deep-get($config-global, "color", "black");
+		}
+		
+		h1,h2,h3,h4,h5,h6 {
+			text-shadow: 0 0 10px map-deep-get($config-global, "color", "black");
+		}
+	}
+
+	@include media(desktop) {
+		min-height: #{20 * map-deep-get($config-global, "spacing", "vertical")};
+
+		// Prevent overruling the user defined font size value set inside Gutenberg
+		// for Full Site Editing's Site Title block.
+		h1:not(.site-title) {
+			font-size: #{map-deep-get($config-global, "font", "size", "xxxxl")};
+		}
+
+		h2 {
+			font-size: #{map-deep-get($config-global, "font", "size", "xxxl")};
+		}
+
+		h3 {
+			font-size: #{map-deep-get($config-global, "font", "size", "xxl")};
+		}
+
+		h4 {
+			font-size: #{map-deep-get($config-global, "font", "size", "xl")};
+		}
+
+		h5 {
+			font-size: #{map-deep-get($config-global, "font", "size", "lg")};
+		}
+
+		h6 {
+			font-size: #{map-deep-get($config-global, "font", "size", "md")};
+		}
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a:hover {
+			text-decoration: none;
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.more-link:hover {
+			color: map-deep-get($config-global, "color", "primary", "hover");
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+
+		.more-link:hover {
+			color: inherit;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+/**
+ * Widgets
+ */
+.widget {
+	select {
+		max-width: 100%;
+	}
+}
+
+.widget-title {
+	font-size: #{map-deep-get($config-heading, "font", "size", "h3")};
+	margin-bottom: #{0.5 * $spacing_vertical};
+}
+
+.widget_archive,
+.widget_categories,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss {
+
+	ul {
+		margin-left: 0;
+		margin-right: 0;
+		list-style: none;
+
+		li {
+			color: map-deep-get($config-global, "color", "foreground", "light");
+			font-weight: 700;
+		}
+
+		ul {
+			counter-reset: submenu;
+		}
+
+		ul > li > a::before {
+			font-weight: normal;
+			content: "\2013\00a0" counters(submenu, "\2013\00a0", none);
+			counter-increment: submenu
+		}
+	}
+}
+
+.widget_tag_cloud {
+	.tagcloud {
+		font-weight: 700;
+	}
+}
+
+.widget_search {
+	.search-field {
+		width: 100%;
+
+		@include media(mobile) {
+			width: auto;
+		}
+	}
+
+	.search-submit {
+		display: block;
+		margin-top: $typescale-base;
+	}
+}
+
+.widget_calendar .calendar_wrap {
+	text-align: center;
+
+	table td,
+	table th {
+		border: none;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.widget_links li,
+.widget_jp_blogs_i_follow li,
+.widget_rss_links li {
+	font-family: inherit; // for browsers without CSS custom properties support
+	font-family: var( --font-base, inherit );
+}
+
+/**
+ * Footer
+ */
+#colophon {
+	@extend %responsive-alignwide;
+}
+
+/**
+ * Footer Navigation
+ */
+.footer-navigation {
+	.footer-menu {
+		a {
+			padding: 0 #{0.5 * $spacing_unit};
+		}
+
+		> li:last-of-type {
+			margin-right: -#{0.5 * $spacing_unit};
+		}
+	}
+}

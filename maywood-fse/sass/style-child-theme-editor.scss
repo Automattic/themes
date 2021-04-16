@@ -1,0 +1,162 @@
+/**
+ * These styles should be loaded by the Block Editor only
+ */
+
+/**
+ * Abstracts
+ * - Mixins, variables and functions
+ */
+@import "../../varia/sass/abstracts/imports";
+
+/**
+ * Child Theme Name
+ */
+@import "config-child-theme-deep";
+
+/**
+ * Base
+ * - Reset the browser
+ */
+@import "../../varia/sass/base/editor";
+
+/**
+ * Elements
+ * - Styles for basic HTML elemants
+ */
+@import "../../varia/sass/elements/editor";
+
+/**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
+ * Blocks
+ * - These styles replace key Gutenberg Block styles for fonts, colors, and
+ *   spacing with CSS-variables overrides
+ */
+@import "../../varia/sass/blocks/editor";
+
+/**
+ * Extras
+ */
+$font_size_xxxxl: map-deep-get($config-global, "font", "size", "xxxxl");
+$font_size_xxxl: map-deep-get($config-global, "font", "size", "xxxl");
+$font_size_xxl: map-deep-get($config-global, "font", "size", "xxl");
+$font_size_xl: map-deep-get($config-global, "font", "size", "xl");
+$font_size_lg: map-deep-get($config-global, "font", "size", "lg");
+$font_size_md: map-deep-get($config-global, "font", "size", "md");
+
+html,
+body {
+	font-weight: 300;
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+.editor-post-title__block .editor-post-title__input {
+	font-weight: 300;
+	text-align: center;
+	font-size: (strip-unit( $font_size_xxl ) + 0em);
+
+	@include media(laptop) {
+		font-size: (strip-unit( $font_size_xxxxl ) + 0em);
+	}
+}
+
+
+.wp-block-cover,
+.wp-block-cover-image {
+
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 300;
+	}
+
+	// Only use a text shadow if there's a background image or video.
+	&[style*="background-image"],
+	video + .wp-block-cover__inner-container { 
+		p {
+			text-shadow: 0 0 6px #000
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+			font-weight: 300;
+			text-shadow: 0 0 12px #000;
+		}
+	}
+
+	@include media(desktop) {
+		min-height: #{20 * map-deep-get($config-global, "spacing", "vertical")};
+
+		h1 {
+			font-size: (strip-unit( $font_size_xxxxl ) + 0em);
+		}
+
+		h2 {
+			font-size: (strip-unit( $font_size_xxxl ) + 0em);
+		}
+
+		h3 {
+			font-size: (strip-unit( $font_size_xxl ) + 0em);
+		}
+
+		h4 {
+			font-size: (strip-unit( $font_size_xl ) + 0em);
+		}
+
+		h5 {
+			font-size: (strip-unit( $font_size_lg ) + 0em);
+		}
+
+		h6 {
+			font-size: (strip-unit( $font_size_md ) + 0em);
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts {
+	.entry-title {
+		font-weight: 300;
+
+		a {
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.cat-links a,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+}
