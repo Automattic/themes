@@ -36,7 +36,7 @@ require get_stylesheet_directory() . '/inc/block-styles.php';
  * Override the Parent Theme index.html template and load the index.php template from the child instead
  * This may not be needed once https://github.com/WordPress/gutenberg/issues/25612#issuecomment-819419024 is addressed
  */
-function quadrat_override_index_template( $template ) {
+function quadrat_override_block_templates( $template ) {
 
 	switch ($template) {
 		case is_home() || is_front_page() :
@@ -53,4 +53,4 @@ function quadrat_override_index_template( $template ) {
 
 }
 
-add_filter( 'template_include', 'quadrat_override_index_template' );
+add_filter( 'template_include', 'quadrat_override_block_templates' );
