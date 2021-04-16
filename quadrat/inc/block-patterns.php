@@ -51,7 +51,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'title'      => __( 'Media and text with button', 'quadrat' ),
 					'categories' => array( 'quadrat' ),
 					'content'    => '<!-- wp:media-text {"mediaLink":"https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/girls-illustration.png","mediaType":"image"} -->
-					<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/girls-illustration.png" alt="' . esc_attr__( 'Illustration of two women.' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
+					<div class="wp-block-media-text alignwide is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/girls-illustration.png" alt="' . esc_attr__( 'Illustration of two women.', 'quadrat' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph -->
 					<p>' . esc_html__( 'The Hosts', 'quadrat') . '</p>
 					<!-- /wp:paragraph -->
 					
