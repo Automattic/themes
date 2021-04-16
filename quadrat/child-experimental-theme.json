@@ -42,12 +42,12 @@
 					},
 					{
 						"name": "Extra Large",
-						"size": "35px",
+						"size": "min(max(28px, 5vw), 35px)",
 						"slug": "extra-large"
 					},
 					{
 						"name": "Huge",
-						"size": "48px",
+						"size": "min(max(36px, 5vw), 48px)",
 						"slug": "huge"
 					}
 				],
@@ -84,7 +84,8 @@
 					"selection": "var(--wp--preset--color--darker-blue)"
 				},
 				"margin": {
-					"horizontal": "20px"
+					"horizontal": "20px",
+					"vertical": "30px"
 				},
 				"line-height": {
 					"body": 1.6,
@@ -206,6 +207,20 @@
 				"fontWeight": "500",
 				"fontSize": "min(max(36px, 5vw), 65px)",
 				"lineHeight": "var(--wp--custom--line-height--headings--h2)"
+			}
+		},
+		"core/code": {
+			"spacing": {
+				"padding": {
+					"left": "var(--wp--custom--margin--horizontal)",
+					"right": "var(--wp--custom--margin--horizontal)",
+					"top": "var(--wp--custom--margin--vertical)",
+					"bottom": "var(--wp--custom--margin--vertical)"
+				}
+			},
+			"border": {
+				"radius": "0px",
+				"width": "0px"
 			}
 		},
 		"core/quote": {
