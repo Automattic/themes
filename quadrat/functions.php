@@ -41,21 +41,16 @@ function quadrat_override_index_template( $template ) {
 	switch ($template) {
 		case is_home() || is_front_page() :
 			return locate_template( array( 'index.php' ) );
-			break;
 		case is_404() :
 			return locate_template( array( '404.php' ) );
-			break;
 		case is_search() :
 			return locate_template( array( 'search.php' ) );
-			break;
 		case is_singular() :
 			return locate_template( array( 'singular.php' ) );
-			break;
 		default:
 			return $template;
-			break;
 	}
-	
+
 }
 
 add_filter( 'template_include', 'quadrat_override_index_template' );
