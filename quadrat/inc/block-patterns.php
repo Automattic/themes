@@ -80,7 +80,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:columns {"align":"wide"} -->
 					<div class="wp-block-columns alignwide"><!-- wp:column -->
 					<div class="wp-block-column"><!-- wp:image {"id":1438,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
-					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg" alt="' . esc_html__( 'Screen usage', 'quadrat') . '" class="wp-image-1438"/></figure>
+					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg" alt="' . esc_html__( 'Screen usage', 'quadrat') . '" class="wp-image-1438"/></figure>
 					<!-- /wp:image -->
 					
 					<!-- wp:cover {"overlayColor":"darker-blue","minHeight":425,"className":"mt-0","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"}}}} -->
@@ -96,7 +96,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					
 					<!-- wp:column -->
 					<div class="wp-block-column"><!-- wp:image {"id":1439,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
-					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Leadership-1024x623.jpg" alt="' . esc_html__( 'Leadership', 'quadrat') . '" class="wp-image-1439"/></figure>
+					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Leadership-1024x623.jpg" alt="' . esc_html__( 'Leadership', 'quadrat') . '" class="wp-image-1439"/></figure>
 					<!-- /wp:image -->
 					
 					<!-- wp:cover {"overlayColor":"darker-blue","minHeight":425,"className":"mt-0","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"}}}} -->
