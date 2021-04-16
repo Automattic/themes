@@ -80,32 +80,32 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:columns {"align":"wide"} -->
 					<div class="wp-block-columns alignwide"><!-- wp:column -->
 					<div class="wp-block-column"><!-- wp:image {"id":1438,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
-					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg" alt="Screen usage" class="wp-image-1438"/></figure>
+					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg" alt="' . esc_html__( 'Screen usage', 'quadrat') . '" class="wp-image-1438"/></figure>
 					<!-- /wp:image -->
 					
 					<!-- wp:cover {"overlayColor":"darker-blue","minHeight":425,"className":"mt-0","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"}}}} -->
 					<div class="wp-block-cover has-darker-blue-background-color has-background-dim mt-0" style="padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px;min-height:425px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"pink"} -->
-					<h3 class="has-pink-color has-text-color">Episode 1: How Screens Affect Hormones</h3>
+					<h3 class="has-pink-color has-text-color">' . esc_html__( 'Episode 1: How Screens Affect Hormones', 'quadrat') . '</h3>
 					<!-- /wp:heading -->
 					
 					<!-- wp:paragraph {"textColor":"pink"} -->
-					<p class="has-pink-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed.</p>
+					<p class="has-pink-color has-text-color">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed.', 'quadrat') . '</p>
 					<!-- /wp:paragraph --></div></div>
 					<!-- /wp:cover --></div>
 					<!-- /wp:column -->
 					
 					<!-- wp:column -->
 					<div class="wp-block-column"><!-- wp:image {"id":1439,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
-					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Leadership-1024x623.jpg" alt="Leadership" class="wp-image-1439"/></figure>
+					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Leadership-1024x623.jpg" alt="' . esc_html__( 'Leadership', 'quadrat') . '" class="wp-image-1439"/></figure>
 					<!-- /wp:image -->
 					
 					<!-- wp:cover {"overlayColor":"darker-blue","minHeight":425,"className":"mt-0","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"}}}} -->
 					<div class="wp-block-cover has-darker-blue-background-color has-background-dim mt-0" style="padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px;min-height:425px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"pink"} -->
-					<h3 class="has-pink-color has-text-color">Episode 2: Female Leaders, Where Are They?</h3>
+					<h3 class="has-pink-color has-text-color">' . esc_html__( 'Episode 2: Female Leaders, Where Are They?', 'quadrat') . '</h3>
 					<!-- /wp:heading -->
 					
 					<!-- wp:paragraph {"textColor":"pink"} -->
-					<p class="has-pink-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p class="has-pink-color has-text-color">' . esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'quadrat') . '</p>
 					<!-- /wp:paragraph --></div></div>
 					<!-- /wp:cover --></div>
 					<!-- /wp:column --></div>
