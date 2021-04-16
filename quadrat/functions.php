@@ -37,9 +37,25 @@ require get_stylesheet_directory() . '/inc/block-styles.php';
  * This may not be needed once https://github.com/WordPress/gutenberg/issues/25612#issuecomment-819419024 is addressed
  */
 function quadrat_override_index_template( $template ) {
-	if ( is_home() || is_front_page() ) :
-		$template = locate_template( array( 'index.php' ) );
-	endif;
+
+	switch ($template) {
+		case is_home() || is_front_page() :
+			$template = locate_template( array( 'index.php' ) );
+			break;
+		case is_404() :
+			$template = locate_template( array( '404.php' ) );
+			break;
+		case is_search() :
+			$template = locate_template( array( 'search.php' ) );
+			break;
+		case is_singular() :
+			$template = locate_template( array( 'singular.php' ) );
+			break;
+		default:
+			$template = locate_template( array( 'index.php' ) );
+			break;
+	}
+
 	return $template;
 }
 
