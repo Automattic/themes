@@ -575,12 +575,12 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'categories' => array( 'coming-soon' ),
 					'content'    => '<!-- wp:media-text {"align":"full","mediaId":2719,"mediaLink":"' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-painting.jpg' ) . '","mediaType":"image","imageFill":true,"style":{"color":{"background":"#f3efec"}}} -->
 									<div class="wp-block-media-text alignfull is-stacked-on-mobile is-image-fill has-background" style="background-color:#f3efec"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-painting.jpg' ) . ');background-position:50% 50%"><img src="' . esc_url( get_stylesheet_directory_uri() . '/assets/images/pattern-painting.jpg' ) . '" alt="' . esc_html__( '"Self-Portrait with Two Pupils, Marie Gabrielle Capet and Marie Marguerite Carreaux de Rosemond" by Adélaïde Labille-Guiard, hung up on a gallery wall.', 'blank-canvas-blocks' ) . '" class="wp-image-2719 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:cover {"customOverlayColor":"#f3efec","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
-									<div class="wp-block-cover alignfull has-background-dim" style="background-color:#f3efec;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"style":{"typography":{"fontSize":"64px","lineHeight":"1"}},"textColor":"foreground"} -->
-									<h2 class="has-foreground-color has-text-color" style="font-size:64px;line-height:1">' . esc_html__( 'Opening Soon', 'blank-canvas-blocks' ) . '</h2>
+									<div class="wp-block-cover alignfull has-background-dim" style="background-color:#f3efec;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:heading {"style":{"typography":{"fontSize":"64px","lineHeight":"1"}},"textColor":"almost-black"} -->
+									<h2 class="has-almost-black-color has-text-color" style="font-size:64px;line-height:1">' . esc_html__( 'Opening Soon', 'blank-canvas-blocks' ) . '</h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.5"}},"textColor":"foreground"} -->
-									<p class="has-foreground-color has-text-color" style="line-height:0.5">' . esc_html__( 'A new art gallery in downtown Boston.', 'blank-canvas-blocks' ) . '</p>
+									<p class="has-almost-black-color has-text-color" style="line-height:0.5">' . esc_html__( 'A new art gallery in downtown Boston.', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:spacer {"height":150} -->
@@ -590,13 +590,13 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"foreground"} -->
-									<p class="has-foreground-color has-text-color">' . esc_html__( '1234 S Main Street', 'blank-canvas-blocks' ) . '<br>' . esc_html__( 'Boston, MA, 01010', 'blank-canvas-blocks' ) . '</p>
+									<p class="has-almost-black-color has-text-color">' . esc_html__( '1234 S Main Street', 'blank-canvas-blocks' ) . '<br>' . esc_html__( 'Boston, MA, 01010', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column -->
 
 									<!-- wp:column -->
 									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"foreground"} -->
-									<p class="has-foreground-color has-text-color"><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas-blocks' ) . '<br></a>(123) 456-7890</p>
+									<p class="has-almost-black-color has-text-color"><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas-blocks' ) . '<br></a>(123) 456-7890</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column --></div>
 									<!-- /wp:columns --></div></div>
