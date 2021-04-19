@@ -16,11 +16,11 @@ if ( ! function_exists( 'quadrat_register_block_styles' ) ) :
 			 * Register block styles
 			 */
 			register_block_style(
-				'core/media-text',
+				'core/cover',
 				array(
-					'name'         => 'quadrat-example',
-					'label'        => __( 'Example', 'quadrat' ),
-					'style_handle' => 'quadrat-example',
+					'name'         => 'quadrat-cover-diamond',
+					'label'        => __( 'Cover with diamond background', 'quadrat' ),
+					'style_handle' => 'quadrat-cover-diamond',
 				)
 			);
 		}
