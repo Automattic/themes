@@ -38,14 +38,14 @@ require get_stylesheet_directory() . '/inc/block-styles.php';
  */
 function quadrat_override_block_templates( $template ) {
 
-	switch ($template) {
-		case is_home() || is_front_page() :
+	switch ( $template ) {
+		case is_home() || is_front_page():
 			return locate_template( array( 'index.php' ) );
-		case is_404() :
+		case is_404():
 			return locate_template( array( '404.php' ) );
-		case is_search() :
+		case is_search():
 			return locate_template( array( 'search.php' ) );
-		case is_singular() :
+		case is_singular():
 			return locate_template( array( 'singular.php' ) );
 		default:
 			return $template;
@@ -54,3 +54,19 @@ function quadrat_override_block_templates( $template ) {
 }
 
 add_filter( 'template_include', 'quadrat_override_block_templates' );
+
+function quadrat_widgets_init() {
+
+	register_sidebar(
+		array(
+			'name'          => 'Navigation',
+			'id'            => 'custom-header-widget',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		)
+	);
+
+}
+add_action( 'widgets_init', 'quadrat_widgets_init' );

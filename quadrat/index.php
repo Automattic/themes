@@ -17,10 +17,17 @@ get_header();
 	// the header
 	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/header.html' ) );
 
+if ( is_active_sidebar( 'custom-header-widget' ) ) : ?>
+		<div id="header-widget-area" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'custom-header-widget' ); ?>
+		</div>
+	<?php
+	endif;
+
 	// the query
 	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
 
 	// the footer
 	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/footer.html' ) );
-	
+
 get_footer();
