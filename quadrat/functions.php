@@ -9,6 +9,9 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 				'/assets/theme.css',
 			)
 		);
+
+		// Remove theme support for block templates so that styles load correctly: 
+		remove_theme_support( 'block-templates' );
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;
