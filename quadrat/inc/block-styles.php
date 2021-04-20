@@ -19,7 +19,7 @@ if ( ! function_exists( 'quadrat_register_block_styles' ) ) :
 				'core/cover',
 				array(
 					'name'         => 'quadrat-cover-diamond',
-					'label'        => __( 'Cover with diamond background', 'quadrat' ),
+					'label'        => __( 'Diamond', 'quadrat' ),
 					'style_handle' => 'quadrat-cover-diamond',
 				)
 			);
