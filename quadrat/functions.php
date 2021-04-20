@@ -17,6 +17,8 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
+		add_theme_support( 'block-nav-menus' );
+
 		// Add support for custom logo via the customizer.
 		add_theme_support(
 			'custom-logo',
