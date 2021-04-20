@@ -29,11 +29,10 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-.is-style-quadrat-cover-diamond, .is-style-quadrat-cover-diamond.wp-block-cover-image.has-background-dim::before, .is-style-quadrat-cover-diamond.wp-block-cover.has-background-dim::before {
-	background-color: currentColor;
-}
-
-.is-style-quadrat-cover-diamond:before {
+.is-style-quadrat-cover-diamond:before, .is-style-quadrat-cover-diamond.wp-block-cover-image.has-background-dim:before, .is-style-quadrat-cover-diamond.wp-block-cover.has-background-dim:before {
+	opacity: 1;
+	z-index: 1;
+	background-color: inherit;
 	-webkit-mask-image: url(rotated.svg);
 	-webkit-mask-size: contain;
 	-webkit-mask-repeat: no-repeat;
@@ -43,6 +42,17 @@
 	mask-repeat: no-repeat;
 	mask-position: center;
 	margin: auto;
+}
+
+.is-style-quadrat-cover-diamond:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+	background-color: var(--wp--custom--color--background);
 }
 
 @media (max-width: 479px) {

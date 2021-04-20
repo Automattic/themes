@@ -1,20 +1,34 @@
 .is-style-quadrat-cover-diamond{
 
 	&,
-	&.wp-block-cover-image.has-background-dim::before, 
-	&.wp-block-cover.has-background-dim::before {
-		background-color: currentColor;
+	&.wp-block-cover-image.has-background-dim, 
+	&.wp-block-cover.has-background-dim {
+
+		&:before {
+			opacity: 1;
+			z-index: 1;
+			background-color: inherit;
+			-webkit-mask-image: url(rotated.svg);
+			-webkit-mask-size: contain;
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-image: url(rotated.svg);
+			mask-size: contain;
+			mask-repeat: no-repeat;
+			mask-position: center;
+			margin: auto;
+		}
+	
 	}
 
-	&:before {
-		-webkit-mask-image: url(rotated.svg);
-		-webkit-mask-size: contain;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-position: center;
-		mask-image: url(rotated.svg);
-		mask-size: contain;
-		mask-repeat: no-repeat;
-		mask-position: center;
-		margin: auto;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 0;
+		background-color: var(--wp--custom--color--background);
 	}
 }
