@@ -596,11 +596,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<!-- /wp:column --></div>
 									<!-- /wp:columns --></div></div>
 									<!-- /wp:cover --></div></div>
-									<!-- /wp:media-text -->
-
-									<!-- wp:spacer -->
-									<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-									<!-- /wp:spacer -->',
+									<!-- /wp:media-text -->',
 				)
 			);
 
