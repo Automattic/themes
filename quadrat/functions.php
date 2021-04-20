@@ -17,6 +17,7 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
+		// Render wp_nav_menu using the nav block
 		add_theme_support( 'block-nav-menus' );
 
 		// Add support for custom logo via the customizer.
