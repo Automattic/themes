@@ -18,9 +18,9 @@ get_header();
 	get_template_part( 'template-parts/header' );
 
 	// the query
-	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/query.html' ) );
 
 	// the footer
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/footer.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/template-parts/footer.html' ) );
 	
 get_footer();
