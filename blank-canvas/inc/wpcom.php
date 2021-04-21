@@ -193,8 +193,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 									<div style="height:5px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontSize":"100px","lineHeight":"1.2"}},"textColor":"primary"} -->
-									<h2 class="alignwide has-text-align-center has-primary-color has-text-color" style="font-size:100px;line-height:1.2"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
+									<!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontSize":"64px","lineHeight":"1.1"}},"textColor":"primary"} -->
+									<h2 class="alignwide has-text-align-center has-primary-color has-text-color" style="font-size:64px;line-height:1.1"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center","textColor":"primary"} -->
@@ -224,8 +224,8 @@ if ( ! function_exists( 'blank_canvas_register_wpcom_block_patterns' ) ) :
 					'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":948,"minHeightUnit":"px","align":"full"} -->
 									<div class="wp-block-cover alignfull has-background-background-color has-background-dim" style="min-height:948px"><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column -->
-									<div class="wp-block-column"><!-- wp:heading {"textColor":"primary","style":{"typography":{"lineHeight":"0.9","fontSize":"120px"}}} -->
-									<h2 class="has-primary-color has-text-color" style="font-size:120px;line-height:0.9"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
+									<div class="wp-block-column"><!-- wp:heading {"textColor":"primary","style":{"typography":{"lineHeight":"1","fontSize":"64px"}}} -->
+									<h2 class="has-primary-color has-text-color" style="font-size:64px;line-height:1"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"textColor":"primary"} -->

@@ -513,8 +513,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<h2 class="alignfull has-text-align-center has-background-color has-text-color" style="font-size:20px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'COMING SOON', 'blank-canvas' ) . '</span></strong></h2>
 									<!-- /wp:heading -->
 
-									<!-- wp:heading {"textAlign":"center","level":3,"align":"full","style":{"typography":{"fontSize":"120px","lineHeight":"1"}}} -->
-									<h3 class="alignfull has-text-align-center" style="font-size:120px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'Six Feet Over', 'blank-canvas' ) . '</span></strong></h3>
+									<!-- wp:heading {"textAlign":"center","level":3,"align":"full","style":{"typography":{"fontSize":"64px","lineHeight":"1"}}} -->
+									<h3 class="alignfull has-text-align-center" style="font-size:64px;line-height:1"><strong><span class="uppercase">' . esc_html__( 'Six Feet Over', 'blank-canvas' ) . '</span></strong></h3>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph {"align":"center"} -->
@@ -538,8 +538,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:cover {"url":"' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-gradient.mp4' ) . '","id":2808,"dimRatio":0,"overlayColor":"primary","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 									<div class="wp-block-cover alignfull has-primary-background-color" style="min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="' . esc_url( get_stylesheet_directory_uri() . '/assets/pattern-gradient.mp4' ) . '" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 									<div class="wp-block-columns alignfull"><!-- wp:column {"width":"75%"} -->
-									<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1","fontSize":"125px"}}} -->
-									<h2 style="font-size:125px;line-height:1"><strong>' . esc_html__( 'The High Fives', 'blank-canvas' ) . '</strong></h2>
+									<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"style":{"typography":{"lineHeight":"1","fontSize":"64px"}}} -->
+									<h2 style="font-size:64px;line-height:1"><strong>' . esc_html__( 'The High Fives', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:social-links {"align":"left"} -->
@@ -620,8 +620,8 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<div style="height:250px" aria-hidden="true" class="wp-block-spacer"></div>
 									<!-- /wp:spacer -->
 
-									<!-- wp:heading {"style":{"typography":{"fontSize":"64px"}}} -->
-									<h2 style="font-size:64px"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
+									<!-- wp:heading {"style":{"typography":{"fontSize":"64px","lineHeight":"1.1"}}} -->
+									<h2 style="font-size:64px;line-height:1.1"><strong>' . esc_html__( 'Coming Soon', 'blank-canvas' ) . '</strong></h2>
 									<!-- /wp:heading -->
 
 									<!-- wp:paragraph -->
