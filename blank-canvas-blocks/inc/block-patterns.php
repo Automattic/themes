@@ -579,7 +579,7 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 									<h2 class="has-almost-black-color has-text-color" style="font-size:64px;line-height:1">' . esc_html__( 'Opening Soon', 'blank-canvas-blocks' ) . '</h2>
 									<!-- /wp:heading -->
 
-									<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.5"}},"textColor":"foreground"} -->
+									<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.5"}},"textColor":"almost-black"} -->
 									<p class="has-almost-black-color has-text-color" style="line-height:0.5">' . esc_html__( 'A new art gallery in downtown Boston.', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph -->
 
@@ -589,13 +589,13 @@ if ( ! function_exists( 'blank_canvas_register_block_patterns' ) ) :
 
 									<!-- wp:columns -->
 									<div class="wp-block-columns"><!-- wp:column -->
-									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"foreground"} -->
+									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"almost-black"} -->
 									<p class="has-almost-black-color has-text-color">' . esc_html__( '1234 S Main Street', 'blank-canvas-blocks' ) . '<br>' . esc_html__( 'Boston, MA, 01010', 'blank-canvas-blocks' ) . '</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column -->
 
 									<!-- wp:column -->
-									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"foreground"} -->
+									<div class="wp-block-column"><!-- wp:paragraph {"textColor":"almost-black"} -->
 									<p class="has-almost-black-color has-text-color"><a href="mailto:info@example.com">' . esc_html__( 'info@example.com', 'blank-canvas-blocks' ) . '<br></a>(123) 456-7890</p>
 									<!-- /wp:paragraph --></div>
 									<!-- /wp:column --></div>
