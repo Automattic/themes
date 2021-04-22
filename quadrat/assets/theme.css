@@ -29,13 +29,19 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-.is-style-quadrat-cover-diamond:before, .is-style-quadrat-cover-diamond.wp-block-cover-image.has-background-dim:before, .is-style-quadrat-cover-diamond.wp-block-cover.has-background-dim:before {
-	background: #000;
-	width: 280px;
-	height: 280px;
-	margin: auto;
+.is-style-quadrat-cover-diamond:after {
+	background-image: url(rotated.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: "";
 	mix-blend-mode: soft-light;
-	transform: rotate(18deg);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 0 !important;
 }
 
 @media (max-width: 479px) {
