@@ -79,7 +79,8 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'categories' => array( 'quadrat' ),
 					'content'    => '<!-- wp:columns {"align":"wide"} -->
 					<div class="wp-block-columns alignwide"><!-- wp:column -->
-					<div class="wp-block-column"><!-- wp:image {"id":1438,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
+					<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"30px"}}}} -->
+					<div class="wp-block-group" style="padding-top:0px;padding-right:0px;padding-bottom:30px"><!-- wp:image {"id":1438,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
 					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg" alt="' . esc_attr__( 'Illustration of a woman working on a laptop.', 'quadrat') . '" class="wp-image-1438"/></figure>
 					<!-- /wp:image -->
 					
@@ -92,10 +93,12 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<p class="has-pink-color has-text-color has-small-font-size">' . esc_html__( 'In this episode, Sarah and Olivia talk with female hormone specialist Diana Roth about the impact that gadgets and technology have on hormone and fertility health.', 'quadrat') . '</p>
 					<!-- /wp:paragraph --></div></div>
 					<!-- /wp:cover --></div>
+					<!-- /wp:group --></div>
 					<!-- /wp:column -->
 					
 					<!-- wp:column -->
-					<div class="wp-block-column"><!-- wp:image {"id":1439,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
+					<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"30px"}}}} -->
+					<div class="wp-block-group" style="padding-top:0px;padding-right:0px;padding-bottom:30px"><!-- wp:image {"id":1439,"sizeSlug":"large","linkDestination":"none","className":"image-no-margin mb-0"} -->
 					<figure class="wp-block-image size-large image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Leadership-1024x623.jpg" alt="' . esc_attr__( 'Illustration of a woman climbing steps.', 'quadrat') . '" class="wp-image-1439"/></figure>
 					<!-- /wp:image -->
 					
@@ -109,6 +112,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<!-- /wp:paragraph --></div></div>
 					<!-- /wp:cover --></div>
 					<!-- /wp:column --></div>
+					<!-- /wp:group --></div>
 					<!-- /wp:columns -->',
 				)
 			);
