@@ -125,7 +125,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'content'    => '<!-- wp:columns {"verticalAlignment":"center","align":"wide","backgroundColor":"darker-blue","textColor":"pink","className":"has-bakground-no-padding"} -->
 					<div class="wp-block-columns alignwide are-vertically-aligned-center has-bakground-no-padding has-pink-color has-darker-blue-background-color has-text-color has-background"><!-- wp:column {"verticalAlignment":"center","width":"40%"} -->
 					<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:40%"><!-- wp:image {"id":1497,"sizeSlug":"full","className":"image-no-margin mb-0"} -->
-					<figure class="wp-block-image size-full image-no-margin mb-0"><img src="http://freethemes.local/wp-content/uploads/2021/04/Introspection-scaled.jpg" alt="' . esc_attr__( 'Illustration of an introspective woman.', 'quadrat') . '" class="wp-image-1497"/></figure>
+					<figure class="wp-block-image size-full image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg" alt="' . esc_attr__( 'Illustration of an introspective woman.', 'quadrat') . '" class="wp-image-1497"/></figure>
 					<!-- /wp:image --></div>
 					<!-- /wp:column -->
 					
