@@ -16,7 +16,6 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'quadrat' ),
-				'footer'  => __( 'Footer Navigation', 'quadrat' ),
 				'social'  => __( 'Social Links Navigation', 'quadrat' ),
 			)
 		);
@@ -49,14 +48,14 @@ require get_stylesheet_directory() . '/inc/block-styles.php';
  */
 function quadrat_override_block_templates( $template ) {
 
-	switch ($template) {
-		case is_home() || is_front_page() :
+	switch ( $template ) {
+		case is_home() || is_front_page():
 			return locate_template( array( 'index.php' ) );
-		case is_404() :
+		case is_404():
 			return locate_template( array( '404.php' ) );
-		case is_search() :
+		case is_search():
 			return locate_template( array( 'search.php' ) );
-		case is_singular() :
+		case is_singular():
 			return locate_template( array( 'singular.php' ) );
 		default:
 			return $template;
