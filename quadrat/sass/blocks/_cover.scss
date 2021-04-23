@@ -13,4 +13,23 @@
 		right: 0;
 		z-index: 0 !important; //this avoids weird interactions on the editor
 	}
+	&.has-white-background-color,
+	&.has-black-background-color {
+		&.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
+			opacity: 0;
+		}
+		&:after {
+			mix-blend-mode: normal;
+			mask-image: url(rotated.svg);
+			mask-repeat: no-repeat;
+			mask-size: contain;
+			mask-position: center;
+		}
+	}
+	&.has-white-background-color:after {
+		background: black;
+	}
+	&.has-black-background-color:after {
+		background: white;
+	}
 }

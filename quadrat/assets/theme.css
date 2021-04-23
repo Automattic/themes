@@ -44,6 +44,26 @@
 	z-index: 0 !important;
 }
 
+.is-style-quadrat-cover-diamond.has-white-background-color.wp-block-cover.has-background-dim:not(.has-background-gradient)::before, .is-style-quadrat-cover-diamond.has-black-background-color.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
+	opacity: 0;
+}
+
+.is-style-quadrat-cover-diamond.has-white-background-color:after, .is-style-quadrat-cover-diamond.has-black-background-color:after {
+	mix-blend-mode: normal;
+	mask-image: url(rotated.svg);
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position: center;
+}
+
+.is-style-quadrat-cover-diamond.has-white-background-color:after {
+	background: black;
+}
+
+.is-style-quadrat-cover-diamond.has-black-background-color:after {
+	background: white;
+}
+
 @media (max-width: 479px) {
 	.wp-block-media-text .wp-block-media-text__content {
 		padding: var(--wp--custom--margin--vertical) 0;
