@@ -130,13 +130,16 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<!-- /wp:column -->
 					
 					<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-					<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":3,"textColor":"pink"} -->
+					<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"}}}} -->
+					<div class="wp-block-group" style="padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px">
+					<!-- wp:heading {"level":3,"textColor":"pink"} -->
 					<h3 class="has-pink-color has-text-color">' . esc_html__( 'Episode 1: How Screens Affect Hormones', 'quadrat') . '</h3>
 					<!-- /wp:heading -->
 					
 					<!-- wp:paragraph {"textColor":"pink","fontSize":"small"} -->
 					<p class="has-pink-color has-text-color has-small-font-size">' . esc_html__( 'In this episode, Sarah and Olivia talk with female hormone specialist Diana Roth about the impact that gadgets and technology have on hormone and fertility health.', 'quadrat') . '</p>
 					<!-- /wp:paragraph --></div>
+					<!-- /wp:group --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->',
 					)
