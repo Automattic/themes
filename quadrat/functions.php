@@ -9,6 +9,17 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 				'/assets/theme.css',
 			)
 		);
+
+		add_theme_support( 'block-nav-menus' );
+
+		// This theme uses wp_nav_menu() in two locations.
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Navigation', 'quadrat' ),
+				'footer'  => __( 'Footer Navigation', 'quadrat' ),
+				'social'  => __( 'Social Links Navigation', 'quadrat' ),
+			)
+		);
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;
