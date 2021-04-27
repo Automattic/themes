@@ -68,7 +68,7 @@ function blank_canvas_blocks_fonts_url() {
 	}
 
 	$custom_data = $theme_data['defaults']['custom'];
-	if ( array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
+	if ( ! array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
 		return '';
 	}
 
