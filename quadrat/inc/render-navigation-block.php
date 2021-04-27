@@ -6,20 +6,7 @@ if ( ! function_exists( 'render_navigation_block' ) ) :
 			return;
 		}
 
-		$has_primary_nav_items = wp_nav_menu(
-			array(
-				'theme_location' => $menu_location,
-				'fallback_cb'    => false,
-				'echo'           => false,
-			)
-		);
-
-		if ( ! $has_primary_nav_items ) {
-			return;
-		}
-
-		$menu_markup  = '<!-- wp:html -->';
-		$menu_markup .= wp_nav_menu(
+		$nav_items = wp_nav_menu(
 			array(
 				'echo'           => false,
 				'theme_location' => $menu_location,
@@ -28,8 +15,11 @@ if ( ! function_exists( 'render_navigation_block' ) ) :
 				'fallback_cb'    => false,
 			)
 		);
-		$menu_markup .= '<!-- /wp:html -->';
 
-		return $menu_markup;
+		if ( ! $nav_items ) {
+			return;
+		}
+
+		return '<!-- wp:html -->' . $nav_items . '<!-- /wp:html -->';
 	}
 endif;
