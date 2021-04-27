@@ -15,7 +15,7 @@
 get_header();
 
 	// the header
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/header.html' ) );
+	get_template_part( 'template-parts/header' );
 
 	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
 
