@@ -58,7 +58,6 @@ add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts' );
  */
 
 function blank_canvas_blocks_fonts_url() {
-	$fonts_url = '';
 	if ( ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 		return '';
 	}
@@ -70,15 +69,14 @@ function blank_canvas_blocks_fonts_url() {
 
 	$custom_data = $theme_data['defaults']['custom'];
 	if ( array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
-		$font_families = $theme_data['defaults']['custom']['fontsToLoadFromGoogle'];
-
-		$font_families[] = 'display=swap';
-
-		// Make a single request for the theme fonts.
-		$fonts_url = 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families );
+		return '';
 	}
 
-	return esc_url_raw( $fonts_url );
+	$font_families   = $theme_data['defaults']['custom']['fontsToLoadFromGoogle'];
+	$font_families[] = 'display=swap';
+
+	// Make a single request for the theme fonts.
+	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families ) );
 }
 
 /**
