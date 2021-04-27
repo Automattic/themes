@@ -1,5 +1,6 @@
-.is-style-quadrat-cover-diamond{
-	&:after {
+.is-style-quadrat-cover-diamond {
+
+	&::after {
 		background-image: url(rotated.svg);
 		background-position: center;
 		background-repeat: no-repeat;
@@ -11,14 +12,16 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
-		z-index: 0 !important; //this avoids weird interactions on the editor
 	}
+
 	&.has-white-background-color,
 	&.has-black-background-color {
+
 		&.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
 			opacity: 0;
 		}
-		&:after {
+
+		&::after {
 			mix-blend-mode: normal;
 			mask-image: url(rotated.svg);
 			mask-repeat: no-repeat;
@@ -27,10 +30,12 @@
 			opacity: 0.25;
 		}
 	}
-	&.has-white-background-color:after {
-		background: black;
+
+	&.has-white-background-color::after {
+		background: #000;
 	}
-	&.has-black-background-color:after {
-		background: white;
+
+	&.has-black-background-color::after {
+		background: #fff;
 	}
 }
