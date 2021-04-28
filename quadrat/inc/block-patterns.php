@@ -123,8 +123,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'title'      => __( 'Episode', 'quadrat' ),
 					'categories' => array( 'quadrat' ),
 
-					'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"30px"}}}} -->
-					<div class="wp-block-group alignwide" style="padding-top:0px;padding-right:0px;padding-bottom:30px"><!-- wp:media-text {"mediaId":1497,"mediaLink":"http://freethemes.local/?attachment_id=1497","mediaType":"image","mediaWidth":40,"mediaSizeSlug":"large","imageFill":false,"className":"has-pink-color has-darker-blue-background-color has-text-color has-background is-style-default"} -->
+					'content'    => '<!-- wp:media-text {"mediaId":1497,"mediaLink":"https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg","mediaType":"image","mediaWidth":40,"mediaSizeSlug":"large","imageFill":false,"className":"has-pink-color has-darker-blue-background-color has-text-color has-background is-style-default"} -->
 					<div class="wp-block-media-text alignwide is-stacked-on-mobile has-pink-color has-darker-blue-background-color has-text-color has-background is-style-default" style="grid-template-columns:40% auto"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg" alt="' . esc_attr__( 'Illustration of an introspective woman.', 'quadrat') . '" class="wp-image-1497 size-large"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 					<h3>' . esc_html__( 'Episode 3: A Cycle of Emotions', 'quadrat' ) . '</h3>
 					<!-- /wp:heading -->
@@ -132,8 +131,10 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<!-- wp:paragraph {"fontSize":"small"} -->
 					<p class="has-small-font-size">' . wp_kses_post( __( '<em>“Do we need periods if they make us crazy?”</em>, Sarah asks. We reached out to our friend Diana Roth, an endocrinologist specialized in women’s hormonal health to know how menstrual cycles impact women’s brains and emotions. Hint: yes, we do.', 'quadrat' ) ) . '</p>
 					<!-- /wp:paragraph --></div></div>
-					<!-- /wp:media-text --></div>
-					<!-- /wp:group -->',
+					<!-- /wp:media-text -->
+					<!-- wp:spacer {"height":30} -->
+					<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+					<!-- /wp:spacer -->',
 				)
 			);
 		}
