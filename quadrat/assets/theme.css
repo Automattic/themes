@@ -29,14 +29,29 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
+ul ul {
+	list-style-type: disc;
+}
+
 @media (max-width: 479px) {
 	.wp-block-media-text .wp-block-media-text__content {
 		padding: var(--wp--custom--margin--vertical) 0;
 	}
 }
 
-ul ul {
-	list-style-type: disc;
+.wp-block-table th {
+	font-weight: 500;
+	text-align: left;
+}
+
+.wp-block-table td {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	vertical-align: top;
+}
+
+.wp-block-table tr:last-child td {
+	border-bottom-width: 1px;
 }
 
 .site-header .wp-block-group {
