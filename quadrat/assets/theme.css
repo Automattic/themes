@@ -29,6 +29,45 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
+.wp-block-cover.is-style-quadrat-cover-diamond::after {
+	background-image: url(rotated.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 70%;
+	content: "";
+	mix-blend-mode: soft-light;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-white-background-color.wp-block-cover.has-background-dim:not(.has-background-gradient)::before, .wp-block-cover.is-style-quadrat-cover-diamond.has-black-background-color.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
+	opacity: 0;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-white-background-color::after, .wp-block-cover.is-style-quadrat-cover-diamond.has-black-background-color::after {
+	mix-blend-mode: normal;
+	-webkit-mask-image: url(rotated.svg);
+	        mask-image: url(rotated.svg);
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-size: auto 70%;
+	        mask-size: auto 70%;
+	-webkit-mask-position: center;
+	        mask-position: center;
+	opacity: 0.25;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-white-background-color::after {
+	background: #000;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-black-background-color::after {
+	background: #fff;
+}
+
 @media (max-width: 479px) {
 	.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
 		padding: var(--wp--custom--margin--vertical) 0;
