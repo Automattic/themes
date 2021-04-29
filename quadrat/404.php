@@ -17,9 +17,9 @@ get_header();
 	// the header
 	get_template_part( 'template-parts/header' );
 
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/404.html' ) );
+	echo gutenberg_block_template_part( '404' );
 
 	// the footer
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/footer.html' ) );
+	echo gutenberg_block_template_part( 'footer' );
 
 get_footer();
