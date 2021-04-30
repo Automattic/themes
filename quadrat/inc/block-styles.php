@@ -23,6 +23,24 @@ if ( ! function_exists( 'quadrat_register_block_styles' ) ) :
 					'style_handle' => 'quadrat-cover-diamond',
 				)
 			);
+
+			register_block_style(
+				'core/query',
+				array(
+					'name'         => 'quadrat-staggered-posts',
+					'label'        => __( 'Staggered posts', 'quadrat' ),
+					'style_handle' => 'quadrat-staggered-posts',
+				)
+			);
+
+			register_block_style(
+				'core/latest-posts',
+				array(
+					'name'         => 'quadrat-staggered-posts',
+					'label'        => __( 'Staggered posts', 'quadrat' ),
+					'style_handle' => 'quadrat-staggered-posts',
+				)
+			);
 		}
 	}
 endif;

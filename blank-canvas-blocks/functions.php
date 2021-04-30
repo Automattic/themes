@@ -12,6 +12,10 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 		// https://github.com/WordPress/gutenberg/issues/26901
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for Post Thumbnails on posts and pages.
+		// https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		add_theme_support( 'post-thumbnails' );
+
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 

@@ -68,6 +68,64 @@
 	background: #fff;
 }
 
+.is-style-quadrat-staggered-posts li {
+	display: grid;
+	grid-column-gap: 20px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "post-image post-title" "post-image post-excerpt" "post-image post-author" "post-image post-date" "post-separator post-separator";
+}
+
+.is-style-quadrat-staggered-posts li:nth-child(even) {
+	grid-template-areas: "post-title post-image" "post-excerpt post-image" "post-author post-image" "post-date post-image" "post-separator post-separator";
+}
+
+.is-style-quadrat-staggered-posts li div {
+	display: contents;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-post-title,
+.is-style-quadrat-staggered-posts .wp-block-post-excerpt,
+.is-style-quadrat-staggered-posts .wp-block-post-featured-image,
+.is-style-quadrat-staggered-posts .wp-block-separator,
+.is-style-quadrat-staggered-posts .wp-block-post-date,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__post-author,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__post-date,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__featured-image,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__post-excerpt {
+	display: revert;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-post-title {
+	grid-area: post-title;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-post-excerpt,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__post-excerpt {
+	grid-area: post-excerpt;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-post-featured-image,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__featured-image {
+	grid-area: post-image;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-separator {
+	grid-area: post-separator;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-post-date,
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__post-date {
+	grid-area: post-date;
+}
+
+.is-style-quadrat-staggered-posts .wp-block-latest-posts__post-author {
+	grid-area: post-author;
+}
+
+.is-style-quadrat-staggered-posts.wp-block-latest-posts__list li > a {
+	grid-area: post-title;
+}
+
 @media (max-width: 479px) {
 	.wp-block-media-text .wp-block-media-text__content {
 		padding: var(--wp--custom--margin--vertical) 0;
