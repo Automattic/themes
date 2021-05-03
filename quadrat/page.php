@@ -17,7 +17,8 @@ get_header();
 	// the header
 	get_template_part( 'template-parts/header' );
 
-	echo gutenberg_block_template_part( 'singular' );
+	// Pages do not include the page title by default, so we just render the post content
+	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
 
 	// the footer
 	echo gutenberg_block_template_part( 'footer' );
