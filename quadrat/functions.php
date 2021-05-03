@@ -19,6 +19,8 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 				'social'  => __( 'Social Links Navigation', 'quadrat' ),
 			)
 		);
+
+		remove_theme_support( 'block-templates' );
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;

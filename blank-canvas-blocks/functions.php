@@ -15,6 +15,9 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
+		// Add support for post thumbnails.
+		add_theme_support( 'post-thumbnails' );
+
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
