@@ -18,9 +18,9 @@ get_header();
 	get_template_part( 'template-parts/header' );
 
 	// the query
-	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
+	echo gutenberg_block_template_part( 'query' );
 
 	// the footer
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/footer.html' ) );
+	echo gutenberg_block_template_part( 'footer' );
 
 get_footer();
