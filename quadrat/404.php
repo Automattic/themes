@@ -16,7 +16,7 @@ get_header();
 
 	// the header
 	get_template_part( 'template-parts/header' );
-
+echo 'quadrat';
 	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/404.html' ) );
 
 	// the footer
