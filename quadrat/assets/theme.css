@@ -69,14 +69,11 @@
 }
 
 .is-style-quadrat-staggered-posts li {
+	margin-bottom: 140px;
 	display: grid;
-	grid-column-gap: 20px;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas: "post-image post-title" "post-image post-excerpt" "post-image post-author" "post-image post-date" "post-separator post-separator";
-}
-
-.is-style-quadrat-staggered-posts li:nth-child(even) {
-	grid-template-areas: "post-title post-image" "post-excerpt post-image" "post-author post-image" "post-date post-image" "post-separator post-separator";
+	grid-column-gap: 5vw;
+	grid-template-columns: 1.1fr 0.9fr;
+	align-items: start;
 }
 
 .is-style-quadrat-staggered-posts li div {
@@ -97,6 +94,7 @@
 
 .is-style-quadrat-staggered-posts .wp-block-post-title {
 	grid-area: post-title;
+	align-self: end;
 }
 
 .is-style-quadrat-staggered-posts .wp-block-post-excerpt,
@@ -111,6 +109,7 @@
 
 .is-style-quadrat-staggered-posts .wp-block-separator {
 	grid-area: post-separator;
+	display: none;
 }
 
 .is-style-quadrat-staggered-posts .wp-block-post-date,
@@ -122,8 +121,33 @@
 	grid-area: post-author;
 }
 
-.is-style-quadrat-staggered-posts.wp-block-latest-posts__list li > a {
+.is-style-quadrat-staggered-posts.wp-block-query li {
+	grid-template-areas: "post-image post-title" "post-image post-excerpt" "post-image post-date" "post-separator post-separator";
+}
+
+.is-style-quadrat-staggered-posts.wp-block-query li:nth-child(even) {
+	grid-template-columns: 0.9fr 1.1fr;
+	grid-template-areas: "post-title post-image" "post-excerpt post-image" "post-date post-image" "post-separator post-separator";
+}
+
+.is-style-quadrat-staggered-posts .wp-block-post-title {
+	margin: 0;
+}
+
+.is-style-quadrat-staggered-posts.wp-block-latest-posts li {
+	grid-template-areas: "post-image post-title" "post-image post-excerpt" "post-image post-author" "post-image post-date";
+	grid-auto-rows: 0.5fr 1fr minmax(2ch, -webkit-max-content) 0.5fr;
+	grid-auto-rows: 0.5fr 1fr minmax(2ch, max-content) 0.5fr;
+}
+
+.is-style-quadrat-staggered-posts.wp-block-latest-posts li:nth-child(even) {
+	grid-template-columns: 0.9fr 1.1fr;
+	grid-template-areas: "post-title post-image" "post-excerpt post-image" "post-author post-image" "post-date post-image";
+}
+
+.is-style-quadrat-staggered-posts.wp-block-latest-posts li > a {
 	grid-area: post-title;
+	align-self: end;
 }
 
 @media (max-width: 479px) {
