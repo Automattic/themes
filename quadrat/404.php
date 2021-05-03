@@ -16,10 +16,10 @@ get_header();
 
 	// the header
 	get_template_part( 'template-parts/header' );
-echo 'quadrat';
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/404.html' ) );
+
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/404.html' ) );
 
 	// the footer
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/footer.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/footer.html' ) );
 
 get_footer();

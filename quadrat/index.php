@@ -21,6 +21,6 @@ get_header();
 	echo do_blocks( '<!-- wp:post-content {"layout":{"inherit":true}} /-->' );
 
 	// the footer
-	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/templates/footer.html' ) );
+	echo do_blocks( file_get_contents( get_stylesheet_directory() . '/block-template-parts/footer.html' ) );
 
 get_footer();
