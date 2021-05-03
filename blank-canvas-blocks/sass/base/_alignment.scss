@@ -1,6 +1,6 @@
 .wp-block-post-content > .alignfull {
-	margin-left: calc(-1 * var(--wp--custom--margin--horizontal));
-	margin-right: calc(-1 * var(--wp--custom--margin--horizontal));
+	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left));
+	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right));
 	width: unset;
 }
 
@@ -17,7 +17,7 @@
 // When content is aligned left/right (particularly inside of a container) it is floated left/right
 // and needs something to ensure that the content follows the block rather than nestling up beside the floated element.  
 // The issue should be resolved upstream: https://github.com/WordPress/gutenberg/issues/10299
-.wp-block-group { 
+.wp-block-group:not(.site-header) { 
 	overflow: auto;
 }
 
