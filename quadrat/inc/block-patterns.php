@@ -151,8 +151,6 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				)
 			);
 
-<<<<<<< HEAD
-=======
 			register_block_pattern(
 				'quadrat/headlines-and-buttons',
 				array(
@@ -224,7 +222,6 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				)
 			);
 
->>>>>>> make/quadrat
 		}
 	}
 endif;
