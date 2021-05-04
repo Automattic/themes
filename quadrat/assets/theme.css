@@ -29,6 +29,24 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
+.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	border: 2px solid var(--wp--custom--color--primary);
+	padding: 0.667em 1.333em;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	border: none;
+	color: var(--wp--custom--color--background);
+	background: var(--wp--custom--color--primary);
+	padding: calc(0.667em + 2px) calc(1.333em + 2px);
+}
+
 .wp-block-cover.is-style-quadrat-cover-diamond::after {
 	background-image: url(rotated.svg);
 	background-position: center;
