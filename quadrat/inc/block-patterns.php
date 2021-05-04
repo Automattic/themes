@@ -17,7 +17,6 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 		}
 
 		if ( function_exists( 'register_block_pattern' ) ) {
-
 			$block_patterns = array(
 				'headline-button',
 				'media-text-button',
@@ -28,15 +27,18 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				'listen-to-the-podcast',
 			);
 
+			if ( \WP_Block_Type_Registry::get_instance()->is_registered( 'jetpack/subscriptions' ) ) {
+				$block_patterns[] = 'join';
+			}
+
 			foreach ( $block_patterns as $block_pattern ) {
 				register_block_pattern(
 					'quadrat/' . $block_pattern,
 					require __DIR__ . '/patterns/' . $block_pattern . '.php'
 				);
 			}
-
 		}
 	}
 endif;
 
-add_action( 'after_setup_theme', 'quadrat_register_block_patterns', 12 );
+add_action( 'init', 'quadrat_register_block_patterns' );
