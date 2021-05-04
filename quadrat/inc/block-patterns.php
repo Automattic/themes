@@ -156,8 +156,8 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				array(
 					'title'      => __( 'Headlines and buttons', 'quadrat' ),
 					'categories' => array( 'quadrat' ),
-					'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"70px","top":"70px"}},"border":{"style":"none"}},"borderColor":"pink"} -->
-					<div class="wp-block-group alignwide has-border-color has-pink-border-color" style="border-style:none;padding-top:70px;padding-bottom:70px"><!-- wp:media-text {"mediaLink":"https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/05/Group-of-squares-displayed-diagonally._.png","mediaType":"image","mediaWidth":52,"verticalAlignment":"top"} -->
+					'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"70px","top":"70px"}}},"className":"headlines-pattern"} -->
+					<div class="wp-block-group alignwide headlines-pattern" style="padding-top:70px;padding-bottom:70px"><!-- wp:media-text {"mediaLink":"https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/05/Group-of-squares-displayed-diagonally._.png","mediaType":"image","mediaWidth":52,"verticalAlignment":"top"} -->
 					<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-top" style="grid-template-columns:52% auto"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/05/Group-of-squares-displayed-diagonally._.png" alt="' . esc_attr__( 'Group of squares displayed diagonally', 'quadrat' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"Content…","fontSize":"tiny"} -->
 					<p class="has-tiny-font-size">Coaching</p>
 					<!-- /wp:paragraph -->
