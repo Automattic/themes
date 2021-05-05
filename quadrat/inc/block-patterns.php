@@ -171,8 +171,8 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<!-- /wp:paragraph -->
 					
 					<!-- wp:buttons -->
-					<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"pink"} -->
-					<div class="wp-block-button"><a class="wp-block-button__link has-pink-background-color has-background">' . esc_html__( 'Learn more', 'quadrat' ) . '</a></div>
+					<div class="wp-block-buttons"><!-- wp:button -->
+					<div class="wp-block-button"><a class="wp-block-button__link">' . esc_html__( 'Learn more', 'quadrat' ) . '</a></div>
 					<!-- /wp:button --></div>
 					<!-- /wp:buttons --></div></div>
 					<!-- /wp:media-text --></div>
@@ -192,8 +192,8 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<!-- /wp:paragraph -->
 
 					<!-- wp:buttons -->
-					<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"pink"} -->
-					<div class="wp-block-button"><a class="wp-block-button__link has-pink-background-color has-background">' . esc_html__( 'Learn more', 'quadrat' ) . '</a></div>
+					<div class="wp-block-buttons"><!-- wp:button -->
+					<div class="wp-block-button"><a class="wp-block-button__link">' . esc_html__( 'Learn more', 'quadrat' ) . '</a></div>
 					<!-- /wp:button --></div>
 					<!-- /wp:buttons --></div></div>
 					<!-- /wp:media-text --></div>
@@ -213,8 +213,8 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					<!-- /wp:paragraph -->
 
 					<!-- wp:buttons -->
-					<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"pink"} -->
-					<div class="wp-block-button"><a class="wp-block-button__link has-pink-background-color has-background">' . esc_html__( 'Learn more', 'quadrat' ) . '</a></div>
+					<div class="wp-block-buttons"><!-- wp:button -->
+					<div class="wp-block-button"><a class="wp-block-button__link">' . esc_html__( 'Learn more', 'quadrat' ) . '</a></div>
 					<!-- /wp:button --></div>
 					<!-- /wp:buttons --></div></div>
 					<!-- /wp:media-text --></div>
