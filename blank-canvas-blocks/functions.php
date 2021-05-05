@@ -63,16 +63,16 @@ function blank_canvas_blocks_fonts_url() {
 	}
 
 	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
-	if ( empty( $theme_data ) || empty( $theme_data['settings'] ) || empty( $theme_data['settings']['custom'] ) ) {
+	if ( empty( $theme_data ) || empty( $theme_data['custom'] ) ) {
 		return '';
 	}
 
-	$custom_data = $theme_data['settings']['custom'];
+	$custom_data = $theme_data['custom'];
 	if ( ! array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
 		return '';
 	}
 
-	$font_families   = $theme_data['settings']['custom']['fontsToLoadFromGoogle'];
+	$font_families   = $theme_data['custom']['fontsToLoadFromGoogle'];
 	$font_families[] = 'display=swap';
 
 	// Make a single request for the theme fonts.
