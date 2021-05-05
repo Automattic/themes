@@ -10,7 +10,19 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
+		// Experimental support for adding blocks inside nav menus
 		add_theme_support( 'block-nav-menus' );
+
+		// Add support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 240,
+				'width'       => 240,
+				'flex-width'  => false,
+				'flex-height' => false,
+			)
+		);
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
