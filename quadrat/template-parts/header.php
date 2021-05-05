@@ -15,9 +15,12 @@ require get_stylesheet_directory() . '/inc/render-navigation-block.php';
 	<?php
 	echo do_blocks(
 		'<!-- wp:group {"style":{"spacing":{"padding":{"right":"35px","left":"35px"}}}} --><div class="wp-block-group" style="padding-right:35px;padding-left:35px">
-		<!-- wp:site-title /-->' .
+		<!-- wp:group --><div class="wp-block-group">
+		<!-- wp:site-title /-->
+		</div><!-- /wp:group -->' .
 		render_navigation_block( 'primary' ) .
-		'</div><!-- /wp:group -->'
+		'</div><!-- /wp:group -->
+		<!-- wp:site-logo {"width":100} /-->'
 	);
 	?>
 </header>
