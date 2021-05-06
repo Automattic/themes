@@ -15,10 +15,8 @@ require get_stylesheet_directory() . '/inc/render-navigation-block.php';
 	<?php
 	echo do_blocks(
 		'<!-- wp:group {"style":{"spacing":{"padding":{"top":"35px","right":"35px","left":"35px"}}}} --><div class="wp-block-group" style="padding-top:35px;padding-right:35px;padding-left:35px">
-		<!-- wp:group --><div class="wp-block-group">
-		<!-- wp:site-logo {"width":100} /-->
-		<!-- wp:site-title /-->
-		</div><!-- /wp:group -->' .
+		<!-- wp:site-logo {"width":150} /-->
+		<!-- wp:site-title /-->' .
 		render_navigation_block( 'primary' ) .
 		'</div><!-- /wp:group -->'
 	);
