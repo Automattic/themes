@@ -29,6 +29,24 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
+.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	border: 2px solid var(--wp--custom--color--primary);
+	padding: 0.667em 1.333em;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	border: none;
+	color: var(--wp--custom--color--background);
+	background: var(--wp--custom--color--primary);
+	padding: calc(0.667em + 2px) calc(1.333em + 2px);
+}
+
 .wp-block-cover.is-style-quadrat-cover-diamond::after {
 	background-image: url(rotated.svg);
 	background-position: center;
@@ -78,6 +96,15 @@ ul ul {
 	}
 }
 
+.wp-block-navigation-link a:hover {
+	background: transparent;
+}
+
+.wp-block-navigation .wp-block-pages-list__item .wp-block-pages-list__item__link:hover,
+.wp-block-navigation .wp-block-navigation-link__content:hover {
+	text-decoration: underline;
+}
+
 .wp-block-post-navigation-link {
 	border-top: 1px solid;
 	display: flex;
@@ -121,6 +148,16 @@ ul ul {
 		padding-top: 50px !important;
 		padding-bottom: 50px !important;
 	}
+}
+
+a:hover {
+	background: var(--wp--custom--color--primary);
+	color: var(--wp--custom--color--background);
+}
+
+a:active,
+a:focus {
+	background: var(--wp--custom--color--secondary);
 }
 
 .site-header .wp-block-group {
