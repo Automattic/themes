@@ -41,4 +41,4 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 	}
 endif;
 
-add_action( 'init', 'quadrat_register_block_patterns', 1 );
+add_action( 'init', 'quadrat_register_block_patterns' );
