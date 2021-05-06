@@ -27,7 +27,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				'listen-to-the-podcast',
 			);
 
-			if ( \WP_Block_Type_Registry::get_instance()->is_registered( 'jetpack/subscriptions' ) ) {
+			if ( class_exists( 'WP_Block_Type_Registry' ) && \WP_Block_Type_Registry::get_instance()->is_registered( 'jetpack/subscriptions' ) ) {
 				$block_patterns[] = 'join';
 			}
 
@@ -41,4 +41,4 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 	}
 endif;
 
-add_action( 'init', 'quadrat_register_block_patterns' );
+add_action( 'init', 'quadrat_register_block_patterns', 1 );
