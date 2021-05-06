@@ -85,4 +85,6 @@ function blank_canvas_blocks_fonts_url() {
 /**
  * Block Patterns.
  */
-require get_template_directory() . '/inc/block-patterns.php';
+if ( ! is_child_theme() ) {
+	require get_template_directory() . '/inc/block-patterns.php';
+}
