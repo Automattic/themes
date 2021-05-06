@@ -8,8 +8,9 @@
 return array(
 	'title'      => __( 'Join', 'quadrat' ),
 	'categories' => array( 'quadrat' ),
-	'content'    => '<!-- wp:columns -->
-		<div class="wp-block-columns"><!-- wp:column -->
+	'content'    => '<!-- wp:columns {"align":"wide"} -->
+		<div class="wp-block-columns alignwide">
+		<!-- wp:column -->
 		<div class="wp-block-column"><!-- wp:heading {"level":3} -->
 		<h3>' . esc_html( 'Join the Community' ) . '</h3>
 		<!-- /wp:heading -->
