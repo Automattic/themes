@@ -124,10 +124,10 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 					'categories' => array( 'quadrat' ),
 
 					'content'    => '<!-- wp:media-text {"mediaId":1497,"mediaLink":"https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg","mediaType":"image","mediaWidth":40,"mediaSizeSlug":"large","imageFill":false,"className":"has-pink-color has-darker-blue-background-color has-text-color has-background is-style-default"} -->
-					<div class="wp-block-media-text alignwide is-stacked-on-mobile has-pink-color has-darker-blue-background-color has-text-color has-background is-style-default" style="grid-template-columns:40% auto"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg" alt="' . esc_attr__( 'Illustration of an introspective woman.', 'quadrat') . '" class="wp-image-1497 size-large"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
+					<div class="wp-block-media-text alignwide is-stacked-on-mobile has-pink-color has-darker-blue-background-color has-text-color has-background is-style-default" style="grid-template-columns:40% auto"><figure class="wp-block-media-text__media"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg" alt="' . esc_attr__( 'Illustration of an introspective woman.', 'quadrat' ) . '" class="wp-image-1497 size-large"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->
 					<h3>' . esc_html__( 'Episode 3: A Cycle of Emotions', 'quadrat' ) . '</h3>
 					<!-- /wp:heading -->
-					
+
 					<!-- wp:paragraph {"fontSize":"small"} -->
 					<p class="has-small-font-size">' . wp_kses_post( __( '<em>“Do we need periods if they make us crazy?”</em>, Sarah asks. We reached out to our friend Diana Roth, an endocrinologist specialized in women’s hormonal health to know how menstrual cycles impact women’s brains and emotions. Hint: yes, we do.', 'quadrat' ) ) . '</p>
 					<!-- /wp:paragraph --></div></div>
@@ -222,6 +222,24 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				)
 			);
 
+			register_block_pattern(
+				'quadrat/listen-to-the-podcast',
+				array(
+					'title'      => __( 'Listen to the podcast', 'quadrat' ),
+					'categories' => array( 'quadrat' ),
+					'content'    => '<!-- wp:heading {"textAlign":"center","level":4} -->
+						<h4 class="has-text-align-center">' . esc_html__( 'Listen to the podcast' ) . '</h4>
+						<!-- /wp:heading -->
+
+						<!-- wp:audio {"id":102} -->
+						<figure class="wp-block-audio"><audio controls src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/05/quadrat.mp3"></audio></figure>
+						<!-- /wp:audio -->
+
+						<!-- wp:paragraph {"align":"center","fontSize":"tiny"} -->
+						<p class="has-text-align-center has-tiny-font-size">' . sprintf( wp_kses( __( 'Listen on <a href="%1$s">Apple Podcasts</a>, <a href="%2$s">Spotify</a>.' ), array( 'a' => array( 'href' => array() ) ) ), 'https://podcasts.apple.com', 'https://spotify.com' ) . '</p>
+						<!-- /wp:paragraph -->',
+				)
+			);
 		}
 	}
 endif;
