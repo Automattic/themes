@@ -1,0 +1,141 @@
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+@media (max-width: 479px) {
+	.headlines-pattern {
+		padding-top: 50px !important;
+		padding-bottom: 50px !important;
+	}
+}
+
+.subscription-column {
+	text-align: right;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond::after {
+	background-image: url(rotated.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 70%;
+	content: "";
+	mix-blend-mode: soft-light;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-white-background-color.wp-block-cover.has-background-dim:not(.has-background-gradient)::before, .wp-block-cover.is-style-quadrat-cover-diamond.has-black-background-color.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
+	opacity: 0;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-white-background-color::after, .wp-block-cover.is-style-quadrat-cover-diamond.has-black-background-color::after {
+	mix-blend-mode: normal;
+	-webkit-mask-image: url(rotated.svg);
+	        mask-image: url(rotated.svg);
+	-webkit-mask-repeat: no-repeat;
+	        mask-repeat: no-repeat;
+	-webkit-mask-size: auto 70%;
+	        mask-size: auto 70%;
+	-webkit-mask-position: center;
+	        mask-position: center;
+	opacity: 0.25;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-white-background-color::after {
+	background: #000;
+}
+
+.wp-block-cover.is-style-quadrat-cover-diamond.has-black-background-color::after {
+	background: #fff;
+}
+
+ul ul {
+	list-style-type: disc;
+}
+
+@media (max-width: 479px) {
+	.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
+		padding: 0;
+	}
+}
+
+.wp-block-post-navigation-link {
+	border-top: 1px solid;
+	display: flex;
+	padding-top: 1em;
+}
+
+.post-navigation-link-next {
+	flex-direction: row-reverse;
+}
+
+.next-prev-links .wp-block-column,
+.next-prev-links .wp-block-column:not(:only-child) {
+	flex-basis: 40% !important;
+}
+
+.next-prev-links .wp-block-column:not(:first-child),
+.next-prev-links .wp-block-column:not(:only-child):not(:first-child) {
+	margin-left: 20%;
+}
+
+.wp-block-table th {
+	font-weight: 500;
+}
+
+.wp-block-table tbody td {
+	border-bottom-width: 0;
+	border-top-width: 0;
+	vertical-align: top;
+}
+
+.wp-block-table tr:first-child td {
+	border-top-width: 1px;
+}
+
+.wp-block-table tr:last-child td {
+	border-bottom-width: 1px;
+}
+
+.site-header .wp-block-group {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: inherit;
+}
+
+.wp-block-post-featured-image {
+	margin-top: 0;
+}
+
+/*# sourceMappingURL=theme.css.map */

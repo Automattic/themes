@@ -1,0 +1,41 @@
+.wp-block-cover.is-style-quadrat-cover-diamond {
+
+	&::after {
+		background-image: url(rotated.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: auto 70%;
+		content: "";
+		mix-blend-mode: soft-light;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	&.has-white-background-color,
+	&.has-black-background-color {
+
+		&.wp-block-cover.has-background-dim:not(.has-background-gradient)::before {
+			opacity: 0;
+		}
+
+		&::after {
+			mix-blend-mode: normal;
+			mask-image: url(rotated.svg);
+			mask-repeat: no-repeat;
+			mask-size: auto 70%;
+			mask-position: center;
+			opacity: 0.25;
+		}
+	}
+
+	&.has-white-background-color::after {
+		background: #000;
+	}
+
+	&.has-black-background-color::after {
+		background: #fff;
+	}
+}

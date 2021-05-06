@@ -55,8 +55,8 @@ img {
  * These are default block editor widths in case the theme doesn't provide them.
  */
 .wp-block-post-content > .alignfull {
-	margin-left: calc(-1 * var(--wp--custom--margin--horizontal));
-	margin-right: calc(-1 * var(--wp--custom--margin--horizontal));
+	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left));
+	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right));
 	width: unset;
 }
 
@@ -69,7 +69,7 @@ img {
 	}
 }
 
-.wp-block-group {
+.wp-block-group:not(.site-header) {
 	overflow: auto;
 }
 
@@ -90,12 +90,16 @@ p, h1, h2, h3, h4, h5, h6 {
 	margin-bottom: var(--wp--custom--margin--vertical);
 }
 
-*[class*="-background-color"]:not(.has-text-color) {
-	color: var(--wp--custom--color--background);
+.image-no-margin {
+	margin: 0;
 }
 
-*[class*="-background-color"]:not(.has-text-color) a {
-	color: var(--wp--custom--color--background);
+.image-no-margin > * {
+	vertical-align: bottom;
+}
+
+.has-background-no-padding.wp-block-columns.has-background {
+	padding: 0;
 }
 
 /**
