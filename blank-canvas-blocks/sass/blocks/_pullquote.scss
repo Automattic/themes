@@ -2,8 +2,6 @@
 .wp-block-pullquote {
 	text-align: var(--wp--custom--pullquote--typography--text-align);
 	blockquote {
-		padding: 0;
-		margin: 0;
 		p {
 			font-size: 1em;
 			padding: 0;
@@ -25,5 +23,12 @@
 	&.is-style-solid-color {
 		background-color: var(--wp--custom--color--foreground);
 		color: var(--wp--custom--color--background);
+	}
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) {
+	blockquote {
+		padding: 0;
+		margin: 0;
 	}
 }
