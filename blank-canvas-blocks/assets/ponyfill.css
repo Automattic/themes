@@ -77,6 +77,22 @@ img {
 	text-align: center;
 }
 
+.wp-block-image.alignfull,
+.wp-block-cover.alignfull,
+.wp-block-video.alignfull {
+	margin: 0 calc(-1 * var(--wp--custom--margin--body-horizontal));
+	width: calc(100% + var(--wp--custom--margin--body-horizontal)*2);
+}
+
+@media (min-width: 480px) {
+	.wp-block-image.alignfull,
+	.wp-block-cover.alignfull,
+	.wp-block-video.alignfull {
+		margin: 0 calc(-1 * var(--wp--custom--margin--body-horizontal-desktop));
+		width: calc(100% + var(--wp--custom--margin--body-horizontal-desktop)*2);
+	}
+}
+
 ::selection {
 	background-color: var(--wp--custom--color--selection);
 }
@@ -100,92 +116,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .has-background-no-padding.wp-block-columns.has-background {
 	padding: 0;
-}
-
-/**
- * Elements
- * - Styles for basic HTML elemants
- */
-a {
-	cursor: pointer;
-	text-underline-offset: 0.15em;
-	text-decoration: none;
-}
-
-a:hover, a:focus {
-	text-decoration-line: underline;
-}
-
-.block-editor-block-list__layout a,
-.wp-block-post-content a {
-	text-decoration-line: underline;
-}
-
-.block-editor-block-list__layout a:hover, .block-editor-block-list__layout a:focus,
-.wp-block-post-content a:hover,
-.wp-block-post-content a:focus {
-	text-decoration: none;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
-	border-radius: var(--wp--custom--form--border--radius);
-	color: var(--wp--custom--form--color--text);
-	padding: var(--wp--custom--form--padding);
-	background: var(--wp--custom--form--color--background);
-	box-shadow: var(--wp--custom--form--color--box-shadow);
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: var(--wp--custom--form--color--text);
-	border-color: var(--custom--form--color--border);
-}
-
-select {
-	color: var(--wp--custom--colors--foreground);
-	border: var(--wp--custom--form--border--width) solid var(--wp--custom--form--border--color);
-	font-family: inherit;
-	font-size: 100%;
-}
-
-textarea {
-	width: 100%;
-}
-
-input[type=checkbox] + label {
-	display: inline;
-	margin-left: 0.5em;
-	line-height: 1em;
 }
 
 /**
@@ -675,6 +605,136 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .post-meta .wp-block-post-hierarchical-terms:before {
 	background: url(svg/post-category.svg) no-repeat;
+}
+
+/**
+ * Elements
+ * - Styles for basic HTML elemants
+ */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
+ * These are default block editor widths in case the theme doesn't provide them.
+ */
+body {
+	padding: var(--wp--custom--margin--body-vertical) var(--wp--custom--margin--body-horizontal);
+}
+
+@media (min-width: 480px) {
+	body {
+		padding: var(--wp--custom--margin--body-vertical-desktop) var(--wp--custom--margin--body-horizontal-desktop);
+	}
+}
+
+a {
+	cursor: pointer;
+	text-underline-offset: 0.15em;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	text-decoration-line: underline;
+}
+
+.block-editor-block-list__layout a,
+.wp-block-post-content a {
+	text-decoration-line: underline;
+}
+
+.block-editor-block-list__layout a:hover, .block-editor-block-list__layout a:focus,
+.wp-block-post-content a:hover,
+.wp-block-post-content a:focus {
+	text-decoration: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+	border-radius: var(--wp--custom--form--border--radius);
+	color: var(--wp--custom--form--color--text);
+	padding: var(--wp--custom--form--padding);
+	background: var(--wp--custom--form--color--background);
+	box-shadow: var(--wp--custom--form--color--box-shadow);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: var(--wp--custom--form--color--text);
+	border-color: var(--custom--form--color--border);
+}
+
+select {
+	color: var(--wp--custom--colors--foreground);
+	border: var(--wp--custom--form--border--width) solid var(--wp--custom--form--border--color);
+	font-family: inherit;
+	font-size: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+input[type=checkbox] + label {
+	display: inline;
+	margin-left: 0.5em;
+	line-height: 1em;
 }
 
 /*# sourceMappingURL=ponyfill.css.map */

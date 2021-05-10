@@ -5,7 +5,7 @@
 }
 
 @include break-mobile {
-	// limit size of any element that is aligned left/right 
+	// limit size of any element that is aligned left/right
 	.wp-block[data-align="left"], // This is for the editor
 	.wp-block[data-align="right"], // This is for the editor
 	.wp-site-blocks .alignleft,
@@ -15,9 +15,9 @@
 }
 
 // When content is aligned left/right (particularly inside of a container) it is floated left/right
-// and needs something to ensure that the content follows the block rather than nestling up beside the floated element.  
+// and needs something to ensure that the content follows the block rather than nestling up beside the floated element.
 // The issue should be resolved upstream: https://github.com/WordPress/gutenberg/issues/10299
-.wp-block-group:not(.site-header) { 
+.wp-block-group:not(.site-header) {
 	overflow: auto;
 }
 
@@ -26,4 +26,19 @@
 // class which would do this for us.  I'm not sure why but this centers things appropriately.
 .aligncenter {
 	text-align: center;
+}
+
+// These blocks go right to the edge of the viewport
+.wp-block-image,
+.wp-block-cover,
+.wp-block-video {
+	&.alignfull {
+		margin: 0 calc(-1 * var(--wp--custom--margin--body-horizontal));
+		width: calc(100% + var(--wp--custom--margin--body-horizontal)*2);
+
+		@include break-mobile {
+			margin: 0 calc(-1 * var(--wp--custom--margin--body-horizontal-desktop));
+			width: calc(100% + var(--wp--custom--margin--body-horizontal-desktop)*2);
+		}
+	}
 }
