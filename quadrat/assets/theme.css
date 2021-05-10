@@ -115,10 +115,57 @@ ul ul {
 	line-height: 1.2;
 }
 
-.wp-block-post-comments input:not([type=submit]),
+.wp-block-post-comments input:not([type=submit]):not([type=checkbox]) {
+	line-height: 2em;
+}
+
+.wp-block-post-comments input:not([type=submit]):not([type=checkbox]),
 .wp-block-post-comments textarea {
 	border: none;
 	background: var(--wp--custom--color--secondary);
+	font-size: 1em;
+	width: 100%;
+}
+
+.wp-block-post-comments form {
+	display: grid;
+	-moz-column-gap: 1em;
+	     column-gap: 1em;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto;
+	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+}
+
+.wp-block-post-comments form p {
+	margin-top: 0;
+}
+
+.wp-block-post-comments form .comment-notes {
+	grid-area: notes;
+}
+
+.wp-block-post-comments form .comment-form-author {
+	grid-area: author;
+}
+
+.wp-block-post-comments form .comment-form-email {
+	grid-area: email;
+}
+
+.wp-block-post-comments form .comment-form-url {
+	grid-area: url;
+}
+
+.wp-block-post-comments form .comment-form-comment {
+	grid-area: comment;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent {
+	grid-area: cookies-consent;
+}
+
+.wp-block-post-comments form .form-submit {
+	grid-area: form-submit;
 }
 
 .wp-block-post-navigation-link {
