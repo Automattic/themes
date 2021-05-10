@@ -17,10 +17,10 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 240,
-				'width'       => 240,
-				'flex-width'  => false,
-				'flex-height' => false,
+				'height'      => 35,
+				'width'       => 150,
+				'flex-width'  => true,
+				'flex-height' => true,
 			)
 		);
 

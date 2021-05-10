@@ -313,9 +313,16 @@ a:active, a:focus {
 .site-header > .wp-block-group {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-start;
 	overflow: inherit;
-	flex-wrap: wrap;
+	padding: 60px 20px;
+}
+
+@media (min-width: 480px) {
+	.site-header > .wp-block-group {
+		padding: 35px 35px;
+	}
 }
 
 .site-header > .wp-block-group .wp-block-site-logo {
@@ -324,9 +331,14 @@ a:active, a:focus {
 
 @media (max-width: 479px) {
 	.site-header > .wp-block-group .wp-block-site-logo {
-		margin: 0 0 var(--wp--custom--margin--vertical);
 		flex-basis: 100%;
+		margin-bottom: 20px;
 	}
+}
+
+.site-header > .wp-block-group .wp-block-site-logo a > img {
+	height: 35px;
+	width: auto;
 }
 
 .site-header > .wp-block-group .wp-block-site-title {

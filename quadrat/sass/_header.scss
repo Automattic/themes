@@ -4,15 +4,26 @@
 	> .wp-block-group {
 		align-items: center;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: flex-start;
 		overflow: inherit;
-		flex-wrap: wrap;
+		padding: 60px 20px;
+
+		@include break-mobile() {
+			padding: 35px 35px;
+		}
 
 		.wp-block-site-logo {
 			margin-right: var(--wp--custom--margin--horizontal);
+
 			@include break-mobile-only(){
-				margin: 0 0 var(--wp--custom--margin--vertical);
 				flex-basis: 100%;
+				margin-bottom: 20px;
+			}
+
+			a > img {
+				height: 35px;
+				width: auto;
 			}
 		}
 		
