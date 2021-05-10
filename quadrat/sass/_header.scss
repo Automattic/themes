@@ -1,5 +1,8 @@
 .site-header {
-	> .wp-block-group {
+	position: relative;
+	.wp-block-group {
+		display: flex;
+		justify-content: space-between;
 		align-items: center;
 		display: flex;
 		flex-wrap: wrap;
@@ -38,5 +41,17 @@
 
 	.wp-block-site-title a {
 		text-decoration: none;
+	}
+	
+	&:before {
+		content: "";
+		background-color: var(--wp--custom--color--secondary);
+		clip-path: polygon(13vw 0, 100vw 0, 100vw 28vw, 52vw 63vw, 9vw 3vw);
+		position: absolute;
+		height: 100vw;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
 	}
 } 
