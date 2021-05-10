@@ -49,4 +49,4 @@ require get_stylesheet_directory() . '/inc/block-styles.php';
 /**
  * Customizer Bridge
  */
-require get_template_directory() . '/inc/customization.php';
+require get_stylesheet_directory() . '/inc/customization.php';

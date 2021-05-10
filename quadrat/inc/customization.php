@@ -12,7 +12,7 @@ class CustomizerBridge {
 	function get_theme_customizations() {
 		$string  = file_get_contents( get_stylesheet_directory() . '/experimental-theme.json' );
 		$decoded = json_decode( $string );
-		return $decoded->settings->defaults->custom_meta;
+		return $decoded->settings->custom_meta;
 	}
 
 	/**
@@ -27,7 +27,7 @@ class CustomizerBridge {
 	 */
 	function customizer_bridge_generate_custom_color_variables( $context = null ) {
 
-		$css_variables = ':root {';
+		$css_variables = 'body {';
 		foreach ( $this->theme_customizations as $custom_section ) {
 			foreach ( $custom_section->controls as $custom_option ) {
 				$css_variables = $css_variables . '--wp--custom--' . $custom_option->slug . ':' . get_theme_mod( 'customizer-bridge-' . $custom_option->slug ) . ';';
@@ -44,69 +44,59 @@ class CustomizerBridge {
 	 */
 	function customizer_bridge_register( $wp_customize ) {
 
-		// Add Color Controls
 		foreach ( $this->theme_customizations as $custom_section ) {
-
-			if ( 'section' === $custom_section->type ) {
-
-				$section_key = 'customizer-bridge-' . $custom_section->slug;
-
-				//Add a Section to the Customizer for these bits
-				$wp_customize->add_section(
-					$section_key,
-					array(
-						'capability' => 'edit_theme_options',
-						'title'      => esc_html__( $custom_section->name, 'customizer-bridge' ),
-					)
-				);
-
-				$wp_customize->get_section( $section_key )->description = __( $custom_section->description );
-
-				// Add Controls
-				foreach ( $custom_section->controls as $custom_option ) {
-
-					$setting_key = 'customizer-bridge-' . $custom_option->slug;
-
-					if ( 'color' === $custom_option->type ) {
-
-						$wp_customize->add_setting(
-							$setting_key,
-							array(
-								'default'           => esc_html( $custom_option->default ),
-								'sanitize_callback' => 'sanitize_hex_color',
-							)
-						);
-
-						$wp_customize->add_control(
-							new WP_Customize_Color_Control(
-								$wp_customize,
-								$setting_key,
-								array(
-									'section' => $section_key,
-									'label'   => $custom_option->name,
-								)
-							)
-						);
-					} elseif ( 'boolean' === $custom_option->type ) {
-
-						$wp_customize->add_setting( $setting_key );
-						$wp_customize->add_control(
-							$setting_key,
-							array(
-								'label'       => esc_html__( $custom_option->name ),
-								'description' => $custom_option->description,
-								'section'     => $section_key,
-								'type'        => 'checkbox',
-								'settings'    => $setting_key,
-							)
-						);
-
-					}
-				}
-			}
+			$this->register_section( $custom_section, $wp_customize );
 		}
 
 	}
 
+	function register_section( $custom_section, $wp_customize ) {
+		if ( 'section' !== $custom_section->type ) {
+			return;
+		}
+
+		$section_key = 'customizer-bridge-' . $custom_section->slug;
+
+		//Add a Section to the Customizer for these bits
+		$wp_customize->add_section(
+			$section_key,
+			array(
+				'capability' => 'edit_theme_options',
+				'title'      => esc_html__( $custom_section->name, 'customizer-bridge' ),
+			)
+		);
+
+		$wp_customize->get_section( $section_key )->description = __( $custom_section->description );
+
+		// Add Controls
+		foreach ( $custom_section->controls as $custom_option ) {
+			if ( 'color' === $custom_option->type ) {
+				$this->register_color_control( $custom_option, $section_key, $wp_customize );
+			}
+		}
+	}
+
+	function register_color_control( $custom_option, $section_key, $wp_customize ) {
+		$setting_key = 'customizer-bridge-' . $custom_option->slug;
+
+		$wp_customize->add_setting(
+			$setting_key,
+			array(
+				'default'           => esc_html( $custom_option->default ),
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$setting_key,
+				array(
+					'section' => $section_key,
+					'label'   => $custom_option->name,
+				)
+			)
+		);
+	}
 }
 new CustomizerBridge;
