@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Breakpoints & Media Queries
  */
@@ -177,6 +178,35 @@ a:focus {
 	justify-content: space-between;
 	align-items: center;
 	overflow: inherit;
+}
+
+.post-meta {
+	align-items: center;
+	justify-content: center;
+}
+
+.post-meta .wp-block-post-date::before {
+	display: none;
+}
+
+.post-meta > *,
+.post-meta .wp-block-post-date {
+	margin: 0 8px;
+}
+
+.post-meta .wp-block-post-terms {
+	margin-left: 0;
+	color: transparent;
+}
+
+.post-meta .wp-block-post-terms::before {
+	color: var(--wp--custom--color--foreground);
+	content: "·";
+	margin-right: 8px;
+}
+
+.post-meta .wp-block-post-terms a {
+	color: var(--wp--custom--color--foreground);
 }
 
 .wp-block-post-featured-image {
