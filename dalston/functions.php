@@ -253,11 +253,6 @@ add_action( 'enqueue_block_editor_assets', 'dalston_block_extends' );
  */
 function dalston_block_extends_styles() {
 
-	// Bail out early while in AMP endpoint.
-	if ( dalston_is_amp() ) {
-		return;
-	}
-
 	wp_enqueue_style(
 		'dalston-extend-cover-block-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.css'
