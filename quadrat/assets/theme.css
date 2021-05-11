@@ -166,16 +166,34 @@ ul ul {
 
 .wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] + label {
 	margin-left: 0;
+	padding-left: 2em;
+	position: relative;
 }
 
-.wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] + *::before {
+.wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] + ::before,
+.wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] + ::after {
+	box-sizing: border-box;
+}
+
+.wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] + ::before {
 	content: "";
-	display: inline-block;
-	vertical-align: middle;
-	width: 1em;
-	height: 1em;
-	margin-right: 0.5em;
+	position: absolute;
+	top: 0.2em;
+	left: 0;
+	width: 16px;
+	height: 16px;
 	border: 1px solid var(--wp--custom--color--foreground);
+}
+
+.wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"]:checked + ::after {
+	content: "";
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	margin-top: 0.2em;
+	top: 2px;
+	left: 2px;
+	background-color: var(--wp--custom--color--foreground);
 }
 
 .wp-block-post-comments .comment-form .form-submit {
