@@ -119,14 +119,6 @@ ul ul {
 	line-height: 2em;
 }
 
-.wp-block-post-comments input:not([type=submit]):not([type=checkbox]),
-.wp-block-post-comments textarea {
-	border: none;
-	background: var(--wp--custom--color--secondary);
-	font-size: 1em;
-	width: 100%;
-}
-
 .wp-block-post-comments form {
 	display: grid;
 	-moz-column-gap: 1em;
@@ -134,6 +126,14 @@ ul ul {
 	grid-template-columns: 50% 50%;
 	grid-template-rows: auto;
 	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+}
+
+.wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments form textarea {
+	border: none;
+	background: var(--wp--custom--color--secondary);
+	font-size: 1em;
+	width: 100%;
 }
 
 .wp-block-post-comments form p {
