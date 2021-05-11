@@ -31,8 +31,6 @@ endif;
 function quadrat_scripts() {
 	// Enqueue front-end styles.
 	wp_enqueue_style( 'quadrat-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blank_canvas_blocks-ponyfill' ), wp_get_theme()->get( 'Version' ) );
-	// Enqueue customizer bridge styles
-	wp_enqueue_style( 'customizer-style', get_template_directory_uri() . '/assets/css/noop.css', array( 'quadrat-styles' ), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'quadrat_scripts' );
 

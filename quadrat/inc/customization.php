@@ -5,7 +5,13 @@ class CustomizerBridge {
 
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'customizer_bridge_register' ) );
+
+		//this is for the view
 		add_action( 'wp_enqueue_scripts', array( $this, 'customizer_bridge_output_variables' ) );
+
+		//this is for the editor
+		add_action( 'enqueue_block_editor_assets', array( $this, 'customizer_bridge_output_variables' ) );
+
 		$this->theme_customizations = $this->get_theme_customizations();
 	}
 
@@ -19,15 +25,20 @@ class CustomizerBridge {
 	 * Enqueue color variables for customizer & frontend.
 	 */
 	function customizer_bridge_output_variables() {
+		wp_register_style( 'customizer-style', false, array(), true, true );
+		wp_enqueue_style( 'customizer-style' );
 		wp_add_inline_style( 'customizer-style', $this->customizer_bridge_generate_custom_color_variables() );
 	}
 
 	/**
 	 * Render the customized variables.
+	 *
+	 * NOTE: Ideally this wouldn't happen at all and instead the theme.json would be filtered
+	 * and modified to reflect the users's choice.
 	 */
 	function customizer_bridge_generate_custom_color_variables( $context = null ) {
 
-		$css_variables = 'body {';
+		$css_variables = 'body, #editor {';
 		foreach ( $this->theme_customizations as $custom_section ) {
 			foreach ( $custom_section->controls as $custom_option ) {
 				$css_variables = $css_variables . '--wp--custom--' . $custom_option->slug . ':' . get_theme_mod( 'customizer-bridge-' . $custom_option->slug ) . ';';
