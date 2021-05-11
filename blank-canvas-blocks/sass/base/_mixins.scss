@@ -1,0 +1,11 @@
+// Hide an element accesibly instead of using display: none;
+// Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+@mixin hide-accesibly {
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap; 
+	width: 1px;
+}

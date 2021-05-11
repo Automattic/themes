@@ -161,7 +161,14 @@ ul ul {
 }
 
 .wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] {
-	display: none;
+	clip: rect(0 0 0 0);
+	-webkit-clip-path: inset(100%);
+	        clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 .wp-block-post-comments .comment-form .comment-form-cookies-consent input[type="checkbox"] + label {
