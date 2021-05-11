@@ -4,7 +4,7 @@
 		line-height: 1.2;
 	}
 
-	form {
+	.comment-form {
 		display: grid;
 		column-gap: 1em;
 		grid-template-columns: 50% 50%;
@@ -51,6 +51,23 @@
 
 		.comment-form-cookies-consent {
 			grid-area: cookies-consent;
+
+			input[type="checkbox"] {
+				display: none; 
+				& + label {
+					margin-left: 0;
+				}
+				& + *::before {
+					content: "";
+					display: inline-block;
+					vertical-align: middle;
+					width: 1em;
+					height: 1em;
+					margin-right: 0.5em;
+					border: 1px solid var(--wp--custom--color--foreground);
+				  }
+			}
+
 		}
 
 		.form-submit {
