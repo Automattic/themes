@@ -41,7 +41,11 @@ class CustomizerBridge {
 		$css_variables = 'body, #editor {';
 		foreach ( $this->theme_customizations as $custom_section ) {
 			foreach ( $custom_section->controls as $custom_option ) {
-				$css_variables = $css_variables . '--wp--custom--' . $custom_option->slug . ':' . get_theme_mod( 'customizer-bridge-' . $custom_option->slug ) . ';';
+				$slug_value = get_theme_mod( 'customizer-bridge-' . $custom_option->slug );
+				if ( $slug_value ) {
+					var_dump( $slug_value );
+					$css_variables = $css_variables . '--wp--custom--' . $custom_option->slug . ':' . $slug_value . ';';
+				}
 			}
 		}
 		$css_variables = $css_variables . '}';
