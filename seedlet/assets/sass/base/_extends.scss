@@ -1,0 +1,67 @@
+@mixin button-style {
+	@include button-main-styles;
+	@include button-hover-styles;
+}
+
+@mixin button-main-styles {
+	@include crop-text(var(--button--line-height));
+	color: var(--button--color-text);
+	cursor: pointer;
+	font-weight: var(--button--font-weight);
+	font-family: var(--button--font-family);
+	font-size: var(--button--font-size);
+	background-color: var(--button--color-background);
+	border-radius: var(--button--border-radius);
+	border-width: 0;
+	text-decoration: none;
+	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+}
+
+@mixin button-hover-styles {
+	&:not(.has-background) {
+		&:active {
+			color: var(--button--color-text-active);
+			background-color: var(--button--color-background-active);
+		}
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			color: var(--button--color-text-hover);
+			background-color: var(--button--color-background-hover);
+		}
+	}
+}
+
+// Button Placeholder style
+// - Since buttons appear in various blocks,
+//   let’s use a placeholder to keep them all
+//   in-sync
+%button-style {
+	@include button-style;
+}
+
+// Onsale Placeholder style
+// - Since buttons appear in various blocks,
+//   let’s use a placeholder to keep them all
+//   in-sync
+%onsale-style {
+	border-radius: 100%;
+	background-color: var(--global--color-alert-warning);
+	color: var(--global--color-foreground-high-contrast);
+	font-size: var(--global--font-size-sm);
+	font-weight: 700;
+	font-family: var(--global--font-primary);
+	min-height: 3.236rem;
+	min-width: 3.236rem;
+	padding: 0.202rem;
+	position: absolute;
+	text-align: center;
+	text-transform: none;
+	line-height: 3.236;
+	top: -0.5em;
+	right: -0.5em;
+	left: auto;
+	margin: 0;
+	z-index: 9;
+}

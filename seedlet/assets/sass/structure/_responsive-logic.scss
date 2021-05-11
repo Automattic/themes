@@ -1,0 +1,83 @@
+/**
+ * Repsonsive Styles
+ */
+
+@import '../abstracts/mixins';
+
+/**
+ * Root Media Query Variables
+ */
+:root {
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal));
+	--responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignfull-width: 100%;
+	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
+	--responsive--alignrightleft-width: var(--global--spacing-horizontal);
+}
+
+@include media(mobile) {
+	:root {
+		--responsive--alignrightleft-width: calc( 50% - ( 0.5 * (100vw - var(--responsive--aligndefault-width))) ); //calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@include media(laptop) {
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), #{$default_width});
+		--responsive--alignwide-width: min(calc(100vw - 2 * var(--global--spacing-horizontal)), #{$alignwide_width});
+	}
+}
+
+/**
+ * Extends
+ */
+%responsive-aligndefault-width {
+	max-width: var(--responsive--aligndefault-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+%responsive-alignwide-width {
+	max-width: var(--responsive--alignwide-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include media(mobile) {
+	%responsive-alignfull-width {
+		max-width: var(--responsive--alignfull-width);
+		width: auto;
+		margin-left: auto;
+		margin-right: auto;
+ 	}
+ }
+
+%responsive-alignwide-width-nested {
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--responsive--alignwide-width);
+	max-width: var(--responsive--alignfull-width);
+}
+
+%responsive-alignfull-width-nested {
+	margin-left: auto;
+	margin-right: auto;
+	width: calc(var(--responsive--alignfull-width) - calc(2 * var(--responsive--spacing-horizontal)));
+	max-width: var(--responsive--alignfull-width);
+}
+
+/**
+ * Output
+ */
+.default-max-width {
+	@extend %responsive-aligndefault-width;
+}
+
+.wide-max-width {
+	@extend %responsive-alignwide-width;
+}
+
+.full-max-width {
+	@extend %responsive-alignfull-width;
+}

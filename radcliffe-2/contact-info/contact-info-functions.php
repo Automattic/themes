@@ -8,6 +8,7 @@ function radcliffe_2_contact_info( $section ) {
 	$address  = get_option( 'site_contact_info' )['address'] ?: get_theme_mod( 'radcliffe_2_contact_info_address', '' );
 	$phone    = get_option( 'site_contact_info' )['phone'] ?: get_theme_mod( 'radcliffe_2_contact_info_phone',   '' );
 	$email    = get_option( 'site_contact_info' )['email'] ?: get_theme_mod( 'radcliffe_2_contact_info_email',   '' );
+	$email    = $email ? antispambot( $email ) : '';
 	$hours    = get_theme_mod( 'radcliffe_2_contact_info_hours',   '' );
 
 	// If Address, Phone, Email and Hours are empty, return.
@@ -75,9 +76,9 @@ function radcliffe_2_contact_info( $section ) {
 
 			<?php if ( $email || is_customize_preview() ) : ?>
 			<span class="contact-info-email">
-				<a href="mailto:<?php echo sanitize_email( $email ); ?>">
+				<a href="mailto:<?php echo esc_html( $email ); ?>">
 					<?php echo radcliffe_2_get_svg( array( 'icon' => 'mail', 'title' => esc_html__( 'E-mail', 'radcliffe-2' ) ) ); ?>
-					<span class="contact-info-label"><?php echo sanitize_email( $email ); ?></span>
+					<span class="contact-info-label"><?php echo esc_html( $email ); ?></span>
 				</a>
 			</span>
 			<?php endif; ?>

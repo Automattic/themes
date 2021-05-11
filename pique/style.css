@@ -4,7 +4,7 @@ Theme URI: https://wordpress.com/themes/pique/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: A one-page scrolling theme for small businesses.
-Version: 1.4.7-wpcom
+Version: 1.4.10-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pique
@@ -877,11 +877,6 @@ a:active {
 		max-height: 100px;
 	}
 }
-.site-branding .site-logo-link:hover {
-	-webkit-transform: scale(5%);
-	    -ms-transform: scale(5%);
-	        transform: scale(5%);
-}
 .site-branding .site-title {
 	font-style: normal;
 	margin: 40px 0 0;
@@ -1152,15 +1147,26 @@ a:active {
 }
 
 /* Account for the admin bar */
+
 @media screen and (min-width: 600px) and (max-width: 782px) {
-	.admin-bar .main-navigation.sticky {
+	.admin-bar .main-navigation.sticky,
+	.has-marketing-bar .main-navigation.sticky {
 		top: 46px;
+	}
+	.admin-bar.has-marketing-bar .main-navigation.sticky {
+		top: calc(46px + 46px);
 	}
 }
 
 @media screen and (min-width: 782px) {
 	.admin-bar .main-navigation.sticky {
 		top: 32px;
+	}
+	.has-marketing-bar .main-navigation.sticky {
+		top: 49px;
+	}
+	.admin-bar.has-marketing-bar .main-navigation.sticky {
+		top: calc(32px + 49px);
 	}
 }
 
@@ -1241,7 +1247,7 @@ a:active {
 .comment-navigation .nav-previous span::before,
 .posts-navigation .nav-previous span::before,
 .post-navigation .nav-previous span::before {
-	content: '\2190';
+	content: "\2190" /*rtl:"\2192"*/;
 	display: inline-block;
 	display: inline-block;
 	font-family: FontAwesome;
@@ -1265,7 +1271,7 @@ a:active {
 .comment-navigation .nav-next span::after,
 .posts-navigation .nav-next span::after,
 .post-navigation .nav-next span::after {
-	content: '\2192';
+	content: "\2192" /*rtl:"\2190"*/;
 	display: inline-block;
 	display: inline-block;
 	font-family: FontAwesome;
@@ -1959,8 +1965,6 @@ blockquote
 
 .content-area {
 	content: '';
-	display: table;
-	table-layout: fixed;
 	/* Prevent stuff from getting spilly on mobile */
 	width: 100%;
 
@@ -2958,9 +2962,21 @@ blockquote .overlay cite,
 .admin-bar.pique-frontpage #masthead {
 	top: 32px;
 }
+.has-marketing-bar.pique-frontpage #masthead {
+	top: 49px;
+}
+.admin-bar.has-marketing-bar.pique-frontpage #masthead {
+	top: calc(32px + 49px);
+}
 @media screen and (max-width: 782px) {
 	.admin-bar.pique-frontpage #masthead {
 		top: 46px;
+	}
+	.has-marketing-bar.pique-frontpage #masthead {
+		top: 49px;
+	}
+	.admin-bar.has-marketing-bar.pique-frontpage #masthead {
+		top: calc(32px + 49px);
 	}
 }
 
@@ -3723,7 +3739,7 @@ div.sharedaddy .sd-title.widget-title {
 .infinite-scroll #infinite-handle
     .search-results .read-more a::before,
 .search-results .read-more .infinite-scroll #infinite-handle a::before {
-	content: '\2190';
+	content: "\2190" /*rtl:"\2192"*/;
 	display: inline-block;
 	display: inline-block;
 	font-family: FontAwesome;

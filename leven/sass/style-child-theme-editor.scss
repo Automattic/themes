@@ -34,9 +34,51 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Extras
  */
 
 .has-small-font-size {
 	@include font-family( map-deep-get($config-global, "font", "family", "primary") );
+}
+
+.wp-block-a8c-blog-posts {
+	.cat-links a,
+	.entry-title a:hover,
+	.entry-meta a {
+		text-decoration: none;
+	}
+
+	&.image-alignbehind {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.more-link:hover {
+		color: inherit;
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0em);
 }

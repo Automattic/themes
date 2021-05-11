@@ -1,0 +1,124 @@
+/* Next/Previous navigation */
+
+// All navigation
+.navigation {
+
+	@extend %responsive-aligndefault-width;
+
+	color: var(--global--color-foreground);
+
+	a {
+		color: var(--global--color-primary);
+
+		&:hover {
+			color: var(--global--color-primary-hover);
+			border-color: var(--global--color-secondary);
+		}
+
+		&:focus {
+			color: var(--global--color-secondary);
+		}
+
+		&:active {
+			color: var(--global--color-primary);
+		}
+	}
+
+	.nav-links {
+		@include media(mobile) {
+			display: flex;
+			justify-content: space-between;
+
+			.nav-next,
+			.nav-previous {
+				flex: 0 1 auto;
+				margin-bottom: inherit;
+				margin-top: inherit;
+				max-width: calc(50% - (0.5 * var(--global--spacing-unit)));
+			}
+
+			.nav-next {
+				text-align: right;
+			}
+		}
+	}
+
+	.svg-icon {
+		display: inline-block;
+		fill: currentColor;
+		vertical-align: middle;
+	}
+}
+
+// Singular navigation
+.post-navigation {
+
+	.meta-nav {
+		font-size: var(--global--font-size-xs);
+		line-height: var(--global--line-height-body);
+		color: var(--global--color-foreground);
+	}
+
+	.post-title {
+		font-family: var(--global--font-primary);
+		font-size: var(--global--font-size-lg);
+		line-height: var(--heading--line-height);
+	}
+
+	.nav-links {
+		@include media(mobile) {
+			justify-content: space-between;
+		}
+	}
+
+	.nav-next,
+	.nav-previous {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Index/archive navigation
+.pagination {
+
+	.nav-links > * {
+		color: var(--pagination--color-text);
+		font-family: var(--pagination--font-family);
+		font-size: var(--pagination--font-size);
+		font-weight: var(--pagination--font-weight);
+		margin-left: calc(0.66 * var(--global--spacing-unit));
+		margin-right: calc(0.66 * var(--global--spacing-unit));
+
+		&.current {
+			border-bottom: 1px solid var(--pagination--color-text);
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&a:hover {
+			color: var(--pagination--color-link-hover);
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.next {
+			margin-left: auto;
+		}
+
+		&.prev {
+			margin-right: auto;
+		}
+	}
+}

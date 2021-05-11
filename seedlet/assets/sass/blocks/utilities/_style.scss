@@ -1,0 +1,365 @@
+/* Block Alignments */
+
+/**
+ * These selectors set the default max width for content appearing inside a post or page.
+ */
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
+*[class*="inner-container"] > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce),
+.wp-block-template-part > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.entry-attachment):not(.woocommerce) {
+	@extend %responsive-aligndefault-width;
+}
+
+/**
+ * .alignleft
+ */
+.alignleft {
+	/*rtl:ignore*/
+	text-align: left;
+	margin-top: 0;
+}
+
+// Targeting the .entry-content class is necessary to ensure these styles
+// only apply when the block isn't nested.
+.entry-content > .alignleft {
+	max-width: var(--responsive--aligndefault-width);
+}
+
+@include media(mobile) {
+
+	.alignleft {
+
+		/*rtl:ignore*/
+		float: left;
+
+		/*rtl:ignore*/
+		margin-right: var(--global--spacing-horizontal);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+
+	.entry-content > .alignleft {
+		max-width: var(--responsive--alignrightleft-width);
+		/*rtl:ignore*/
+		margin-left:  calc( 50% - var(--responsive--alignrightleft-width));
+		/*rtl:ignore*/
+		margin-right: var(--global--spacing-horizontal);
+	}
+}
+
+/**
+ * .aligncenter
+ */
+.aligncenter {
+	clear: both;
+	display: block;
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+/**
+ * .alignright
+ */
+.alignright {
+	margin-top: 0;
+	margin-bottom: var(--global--spacing-vertical);
+}
+
+// Targeting the .entry-content class is necessary to ensure these styles
+// only apply when the block isn't nested.
+.entry-content > .alignright {
+	max-width: var(--responsive--aligndefault-width);
+}
+
+@include media(mobile) {
+
+	.alignright {
+
+		/*rtl:ignore*/
+		float: right;
+
+		/*rtl:ignore*/
+		margin-left: var(--global--spacing-horizontal);
+	}
+
+	.entry-content > .alignright {
+		max-width: var(--responsive--alignrightleft-width);
+		/*rtl:ignore*/
+		margin-left: var(--global--spacing-horizontal);
+		/*rtl:ignore*/
+		margin-right: calc( 50% - var(--responsive--alignrightleft-width));
+	}
+}
+
+// Make sure siblings of floated elements are top-aligned when nested
+[class*="inner-container"] > .alignleft + *,
+[class*="inner-container"] > .alignright + * {
+	margin-top: 0;
+}
+
+/**
+ * .alignwide
+ */
+.alignwide {
+	clear: both;
+	@extend %responsive-alignwide-width;
+}
+
+.alignwide [class*="inner-container"] > .alignwide {
+	@extend %responsive-alignwide-width-nested;
+}
+
+/**
+ * .alignfull
+ */
+.alignfull {
+	clear: both;
+	@extend %responsive-alignfull-width;
+}
+
+.alignfull [class*="inner-container"] > .alignwide {
+	@extend %responsive-alignwide-width-nested;
+}
+
+// Content alignment
+.has-left-content {
+	justify-content: flex-start;
+}
+
+.has-right-content {
+	justify-content: flex-end;
+}
+
+// Parallax
+.has-parallax {
+	background-attachment: fixed;
+}
+
+// Gutenberg text color options
+.has-text-color {}
+
+.has-primary-color[class] {
+	color: var(--global--color-primary);
+}
+
+.has-secondary-color[class] {
+	color: var(--global--color-secondary);
+}
+
+.has-foreground-color[class] {
+	color: var(--global--color-foreground);
+}
+
+.has-foreground-light-color[class] {
+	color: var(--global--color-foreground-low-contrast);
+}
+
+.has-foreground-high-contrast-color[class] {
+	color: var(--global--color-foreground-high-contrast);
+}
+
+.has-tertiary-color[class] {
+	color: var(--global--color-tertiary);
+}
+
+.has-background-dark-color[class] {
+	color: var(--global--color-background-dark);
+}
+
+.has-background-color[class] {
+	color: var(--global--color-background);
+}
+
+.has-white-color[class] {
+	color: var(--global--color-white);
+}
+
+.has-black-color[class] {
+	color: var(--global--color-black);
+}
+
+.has-primary-background-color[class] {
+	background-color: var(--global--color-primary);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-background);
+	}
+}
+
+.has-secondary-background-color[class] {
+	background-color: var(--global--color-secondary);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-background);
+	}
+}
+
+.has-foreground-background-color[class] {
+	background-color: var(--global--color-foreground);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-background);
+	}
+}
+
+.has-foreground-light-background-color[class] {
+	background-color: var(--global--color-foreground-low-contrast);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-background);
+	}
+}
+
+
+.has-foreground-high-contrast-background-color[class] {
+	background-color: var(--global--color-foreground-high-contrast);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-background);
+	}
+}
+
+.has-tertiary-background-color[class] {
+	background-color: var(--global--color-tertiary);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-foreground);
+	}
+}
+
+.has-background-dark-background-color[class] {
+	background-color: var(--global--color-background-dark);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-foreground);
+	}
+}
+
+.has-background-background-color[class] {
+	background-color: var(--global--color-background);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-foreground);
+	}
+}
+
+.has-white-background-color[class] {
+	background-color: var(--global--color-white);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-secondary);
+	}
+}
+
+.has-black-background-color[class] {
+	background-color: var(--global--color-black);
+
+	&:not(.has-text-color) {
+		color: var(--global--color-primary);
+	}
+}
+
+// Gutenberg Font-size options
+:root {
+	.is-tiny-text,
+	.has-tiny-font-size {
+		font-size: var(--global--font-size-xs);
+	}
+
+	.is-small-text,
+	.has-small-font-size {
+		font-size: var(--global--font-size-sm);
+	}
+
+	.is-regular-text,
+	.has-regular-font-size,
+	.has-normal-font-size,
+	.has-medium-font-size {
+		font-size: var(--global--font-size-base);
+	}
+
+	.is-large-text,
+	.has-large-font-size {
+		font-size: var(--global--font-size-lg);
+		line-height: var(--global--line-height-heading);
+	}
+
+	.is-larger-text,
+	.has-larger-font-size,
+	.has-huge-font-size {
+		font-size: var(--global--font-size-xl);
+		line-height: var(--global--line-height-heading);
+	}
+}
+
+// Drop caps
+.has-drop-cap:not(:focus)::first-letter {
+	font-family: var(--heading--font-family);
+	font-size: calc(2 * var(--heading--font-size-h1));
+	font-weight: var(--heading--font-weight);
+	line-height: 0.66;
+	text-transform: uppercase;
+	font-style: normal;
+	float: left;
+	margin: 0.1em 0.1em 0 0;
+}
+
+.has-drop-cap:not(:focus)::after {
+	content: "";
+	display: table;
+	clear: both;
+	padding-top: 14px;
+}
+
+.desktop-only {
+	display: none;
+
+	@include media(mobile) {
+		display: block;
+	}
+}
+
+/**
+ * Spacing Overrides
+ */
+
+@import "spacing-overrides";
+
+/*
+ * Custom gradients
+*/
+.has-hard-diagonal-gradient-background {
+	background: linear-gradient(to bottom right, var(--global--color-secondary) 49.9%, var(--global--color-tertiary) 50%);
+}
+
+.has-hard-diagonal-inverted-gradient-background {
+	background: linear-gradient(to top left, var(--global--color-secondary) 49.9%, var(--global--color-tertiary) 50%);
+}
+
+.has-diagonal-gradient-background {
+	background: linear-gradient(to bottom right, var(--global--color-secondary), var(--global--color-tertiary));
+}
+
+.has-diagonal-inverted-gradient-background {
+	background: linear-gradient(to top left, var(--global--color-secondary), var(--global--color-tertiary));
+}
+
+.has-hard-horizontal-gradient-background {
+	background: linear-gradient(to bottom, var(--global--color-secondary) 50%, var(--global--color-tertiary) 50%);
+}
+
+.has-hard-horizontal-inverted-gradient-background {
+	background: linear-gradient(to top, var(--global--color-secondary) 50%, var(--global--color-tertiary) 50%);
+}
+
+.has-horizontal-gradient-background {
+	background: linear-gradient(to bottom, var(--global--color-secondary), var(--global--color-tertiary));
+}
+
+.has-horizontal-inverted-gradient-background {
+	background: linear-gradient(to top, var(--global--color-secondary), var(--global--color-tertiary));
+}
+
+.has-stripe-gradient-background {
+	background: linear-gradient(to bottom, transparent 20%, var(--global--color-secondary) 20%, var(--global--color-secondary) 80%, transparent 80%);
+}

@@ -26,7 +26,8 @@ Description: Used to style Gutenberg Blocks.
 
 /* Full Width */
 
-.no-sidebar .alignfull {
+.no-sidebar .alignfull,
+.no-sidebar .wp-block-group .alignfull {
 	position: relative;
 	min-width: 100vw;
 	margin-left: 50%;
@@ -57,7 +58,8 @@ Description: Used to style Gutenberg Blocks.
 /* Wide Width */
 
 @media (min-width: 1024px) {
-	.no-sidebar .alignwide {
+	.no-sidebar .alignwide,
+	.no-sidebar .wp-block-group .alignwide {
 		width: 120%;
 		max-width: 120%;
 		margin-left: -10%;
@@ -69,6 +71,18 @@ Description: Used to style Gutenberg Blocks.
 		width: 100% !important;
 		height: 100% !important;
 	}
+}
+
+/* Nested Blocks */
+
+.no-sidebar *[class^="wp-block"] .alignwide,
+.no-sidebar *[class^="wp-block"] .alignfull {
+	min-width: inherit;
+	max-width: inherit;
+	margin-left: inherit;
+	margin-right: inherit;
+	left: initial;
+	transform: none;
 }
 
 /* Captions */
@@ -173,6 +187,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-cover.alignright,
 .wp-block-cover.aligncenter {
 	display: flex;
+}
+
+.wp-block-cover.alignfull .wp-block-cover__inner-container {
+	max-width: 712px;
+	margin: 0 auto;
 }
 
 /* File */
@@ -357,6 +376,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: #fff;
 }
 
+/* Group */
+
+.wp-block-group.alignfull .wp-block-group__inner-container {
+	max-width: 712px;
+	margin: 0 auto;
+}
+
 /* Seperator */
 
 hr.wp-block-separator {
@@ -452,7 +478,7 @@ hr.wp-block-separator {
 .has-medium-gray-background-color,
 .has-medium-gray-background-color:hover,
 .has-medium-gray-background-color:focus,
-.has-medium-gray-background-color:active.
+.has-medium-gray-background-color:active,
 .has-medium-gray-background-color:visited {
 	background-color: #a5a29d;
 }

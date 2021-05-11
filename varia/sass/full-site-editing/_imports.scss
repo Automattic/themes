@@ -3,6 +3,10 @@
 	margin-top: 0;
 
 	.main-navigation {
+		.alignwide, .alignfull {
+			width: 100%;
+		}
+
 		.has-text-color > .main-menu.footer-menu > li > a {
 			color: inherit;
 		}
@@ -26,6 +30,13 @@
 			vertical-align: middle;
 		}
 	}
+
+	// Remove large margins on column children when used in a template part.
+	.wp-block-columns .wp-block-column {
+		& > * {
+			margin: 0 0 5px 0;
+		}
+	}
 }
 
 .fse-header > *:first-child:not(.alignfull) {
@@ -38,7 +49,7 @@
 
 .fse-footer {
 	display: block;
-	
+
 	.site-info {
 		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };

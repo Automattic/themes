@@ -2,9 +2,9 @@
 
 	$( window ).load( function() {
 
-		$( '.entry-meta, .entry-title' ).wrapAll( '<div class="entry-header-inner" />' );
+		$( '.page .hentry.has-post-thumbnail .entry-header .entry-meta, .single .hentry.has-post-thumbnail .entry-header .entry-meta, .page .hentry.has-post-thumbnail .entry-header .entry-title, .single .hentry.has-post-thumbnail .entry-header .entry-title' ).wrapAll( '<div class="entry-header-inner" />' );
 		$( '.entry-header-inner' ).wrap( '<div class="entry-header-wrapper" />' );
-		$( '.entry-header' ).insertBefore( '.site-content-inner' )
+		$( '.page .hentry.has-post-thumbnail .entry-header, .single .hentry.has-post-thumbnail .entry-header' ).insertBefore( '.site-content-inner' )
 		                    .addClass( 'entry-hero' );
 
 	} );

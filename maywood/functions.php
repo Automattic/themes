@@ -18,7 +18,6 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function maywood_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,55 +52,58 @@ if ( ! function_exists( 'maywood_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#897248'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#c4493f';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#181818';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#686868';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#181818' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'maywood' ),
 					'slug'  => 'primary',
-					'color' => '#897248',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'maywood' ),
 					'slug'  => 'secondary',
-					'color' => '#c4493f',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Black', 'maywood' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#020202',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'maywood' ),
-					'slug'  => 'foreground',
-					'color' => '#181818',
-				),
-				array(
-					'name'  => __( 'Gray', 'maywood' ),
-					'slug'  => 'foreground-light',
-					'color' => '#686868',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'maywood' ),
-					'slug'  => 'background-dark',
-					'color' => '#CCCCCC',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'maywood' ),
-					'slug'  => 'background-light',
-					'color' => '#F7F7F7',
-				),
-				array(
-					'name'  => __( 'White', 'maywood' ),
+					'name'  => __( 'Background', 'maywood' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground', 'maywood' ),
+					'slug'  => 'foreground',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'maywood' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'maywood' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
 
 		// Enable Full Site Editing
-		add_theme_support( 'full-site-editing');
+		add_theme_support( 'full-site-editing' );
 
 	}
 endif;
@@ -133,7 +135,14 @@ function maywood_fonts_url() {
 	if ( 'off' !== $ibm_plex_sans ) {
 		$font_families = array();
 
-		$font_families[] = 'IBM Plex Sans:300,300i,500,700';
+		$font_families[] = 'IBM Plex Sans:300,300i,500,500i,700';
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -158,7 +167,7 @@ function maywood_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('maywood-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'maywood-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'maywood-style', 'rtl', 'replace' );
@@ -173,5 +182,15 @@ function maywood_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'maywood-editor-fonts', maywood_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager' );
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#686868' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'maywood_editor_styles' );

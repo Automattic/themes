@@ -18,7 +18,6 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function dalston_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,49 +52,52 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#0073AA'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#0D1B24';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#1E1E1E';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) ? $colors_array['colors']['txt'] : '#000000';  // $config-global--color-foreground-dark-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'dalston' ),
 					'slug'  => 'primary',
-					'color' => '#0073AA',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'dalston' ),
 					'slug'  => 'secondary',
-					'color' => '#0D1B24',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Blue', 'dalston' ),
-					'slug'  => 'foreground-light',
-					'color' => '#005177',
-				),
-				array(
-					'name'  => __( 'Black', 'dalston' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#000000',
-				),
-				array(
-					'name'  => __( 'Gray', 'dalston' ),
+					'name'  => __( 'Foreground', 'dalston' ),
 					'slug'  => 'foreground',
-					'color' => '#1E1E1E',
+					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Lighter Gray', 'dalston' ),
-					'slug'  => 'background-dark',
-					'color' => '#DDDDDD',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'dalston' ),
-					'slug'  => 'background-light',
-					'color' => '#FAFAFA',
-				),
-				array(
-					'name'  => __( 'White', 'dalston' ),
+					'name'  => __( 'Background', 'dalston' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'dalston' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'dalston' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
@@ -111,10 +113,15 @@ if ( ! function_exists( 'dalston_setup' ) ) :
 				'height'      => 96,
 				'width'       => 100,
 				'flex-width'  => true,
-				'flex-height' => false,
+				'flex-height' => true,
 				'header-text' => array( 'site-title' ),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'dalston_setup', 12 );
@@ -150,6 +157,13 @@ function dalston_fonts_url() {
 			$font_families[] = 'Crimson Text:400,600,700,400italic,600italic';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -173,7 +187,7 @@ function dalston_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('dalston-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'dalston-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'dalston-style', 'rtl', 'replace' );
@@ -188,6 +202,16 @@ function dalston_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'dalston-editor-fonts', dalston_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#1E1E1E' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'dalston_editor_styles' );
 
@@ -196,34 +220,56 @@ add_action( 'enqueue_block_editor_assets', 'dalston_editor_styles' );
  */
 function dalston_block_extends() {
 
+	// Bail out early while in AMP endpoint.
+	if ( dalston_is_amp() ) {
+		return;
+	}
+
 	// Cover Block Tweaks
-	wp_enqueue_script( 'dalston-extend-cover-block',
+	wp_enqueue_script(
+		'dalston-extend-cover-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.js',
 		array( 'wp-blocks' )
 	);
 
-	wp_enqueue_style( 'dalston-extend-cover-block-style',
+	wp_enqueue_style(
+		'dalston-extend-cover-block-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-cover-block.css'
 	);
 
 	// Columns Block Tweaks
-	wp_enqueue_script( 'dalston-extend-columns-block',
+	wp_enqueue_script(
+		'dalston-extend-columns-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.js',
 		array( 'wp-blocks' )
 	);
 
-	wp_enqueue_style( 'dalston-extend-cover-columns-style',
+	wp_enqueue_style(
+		'dalston-extend-cover-columns-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-columns-block.css'
 	);
 
 	// Columns Block Tweaks
-	wp_enqueue_script( 'dalston-extend-media-text-block',
+	wp_enqueue_script(
+		'dalston-extend-media-text-block',
 		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.js',
 		array( 'wp-blocks' )
 	);
 
-	wp_enqueue_style( 'dalston-extend-cover-media-text-style',
+	wp_enqueue_style(
+		'dalston-extend-cover-media-text-style',
 		get_stylesheet_directory_uri() . '/block-extends/extend-media-text-block.css'
 	);
 }
+
 add_action( 'enqueue_block_editor_assets', 'dalston_block_extends' );
+
+/**
+ * Whether this is an AMP endpoint.
+ *
+ * @see https://github.com/Automattic/amp-wp/blob/e4472bfa5c304b6c1b968e533819e3fa96579ad4/includes/amp-helper-functions.php#L248
+ * @return bool
+ */
+function dalston_is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}

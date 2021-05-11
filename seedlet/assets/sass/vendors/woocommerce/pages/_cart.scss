@@ -1,0 +1,59 @@
+/**
+ * Cart page
+ */
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+	table.shop_table th,
+	table.shop_table td {
+		word-break: unset;
+	}
+
+	table.shop_table td.product-remove {
+		border-width: 0;
+
+		@include media(desktop) {
+			height: var(--global--font-size-sm);
+			width: var(--global--font-size-sm);
+		}
+	}
+
+	td.product-thumbnail {
+		width: calc(6 * var(--global--spacing-horizontal));
+
+		img {
+			width: inherit;
+		}
+	}
+
+	td.product-name {
+
+		font-family: var(--global--font-primary);
+		font-weight: 700;
+
+		a {
+			max-width: 50%;
+		}
+
+		dl.variation,
+		.wc-item-meta {
+
+			dt,
+			.wc-item-meta-label {
+				margin-right: calc(0.5 * var(--global--spacing-unit));
+			}
+		}
+
+		p.backorder_notification {
+			font-size: var(--global--font-size-sm);
+		}
+	}
+
+	td.product-quantity {
+		min-width: calc(5 * var(--global--spacing-unit));
+	}
+
+	table.cart td.actions .input-text {
+		width: inherit;
+		float: inherit;
+		padding: var(--global--spacing-unit);
+	}
+}

@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#444444',
+			'primary'    => '#404040',
+			'secondary'  => '#f25f70',
+			'tertiary'   => '#DDDDDD',
+		);
+	}
+}
+
 if ( ! function_exists( 'stow_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -18,7 +30,6 @@ if ( ! function_exists( 'stow_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function stow_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,42 +64,8 @@ if ( ! function_exists( 'stow_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'stow' ),
-					'slug'  => 'primary',
-					'color' => '#404040', 
-				),
-				array(
-					'name'  => __( 'Secondary', 'stow' ),
-					'slug'  => 'secondary',
-					'color' => '#f25f70', 
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'stow' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'stow' ),
-					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'stow' ),
-					'slug'  => 'foreground-light',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'White Smoke', 'stow' ),
-					'slug'  => 'background',
-					'color' => '#f0f0f0',
-				),
-			)
-		);
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'stow_setup', 12 );
@@ -120,7 +97,7 @@ function stow_fonts_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
 	 */
-	$source_sans_pro  = _x( 'on', 'Source Sans Pro font: on or off',  'stow' );
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'stow' );
 
 	/* translators: If there are characters in your language that are not supported
 	 * by Droid Serif, translate this to 'off'. Do not translate into your own language.
@@ -130,7 +107,7 @@ function stow_fonts_url() {
 	/* translators: If there are characters in your language that are not supported
 	 * by Oswald, translate this to 'off'. Do not translate into your own language.
 	 */
-	$oswald  = _x( 'on', 'Oswald font: on or off',  'stow' );
+	$oswald = _x( 'on', 'Oswald font: on or off', 'stow' );
 
 	if ( 'off' !== $source_sans_pro || 'off' !== $droid_serif || 'off' !== $oswald ) {
 		$font_families = array();
@@ -144,11 +121,19 @@ function stow_fonts_url() {
 		if ( 'off' !== $oswald ) {
 			$font_families[] = 'Oswald:300,400';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	return esc_url_raw( $fonts_url );
@@ -166,7 +151,7 @@ function stow_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('stow-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'stow-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'stow-style', 'rtl', 'replace' );

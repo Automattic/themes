@@ -9,6 +9,15 @@
 @import "../../varia/sass/abstracts/imports";
 
 /**
+* Global variables
+*/
+@import "global-variables";
+
+:root, body {
+	@include global-variables();
+}
+
+/**
  * Child Theme Name
  */
 @import "config-child-theme-deep";
@@ -31,6 +40,12 @@
  *   spacing with CSS-variables overrides
  */
 @import "../../varia/sass/blocks/editor";
+
+/**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
 
 /**
  * Extra Editor Styles
@@ -69,11 +84,11 @@ a {
  * 2.1. Column Block
  */
  .wp-block-coblocks-column {
-	h1, 
-	h2, 
-	h3, 
-	h4, 
-	h5, 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
 	h6 {
 		margin-bottom: .857em;
 	}
@@ -88,8 +103,8 @@ a {
 /**
  * 2.2. Quote Block
  */
- .wp-block-quote, 
- .wp-block-quote[style*="text-align:center"], 
+ .wp-block-quote,
+ .wp-block-quote[style*="text-align:center"],
  .wp-block-quote[style*="text-align:right"] {
 	 border: 1px solid #f2f2f2;
 	 padding: #{map-deep-get($config-global, "spacing", "horizontal")};;
@@ -119,8 +134,8 @@ a {
 			border-width: #{map-deep-get($config-button, "border-width")};
 			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
 			display: inline-block;
-			&:focus, 
-			&:hover, 
+			&:focus,
+			&:hover,
 			&:visited {
 				color: #{map-deep-get($config-button, "color", "text-hover")};
 				background-color: #{map-deep-get($config-button, "color", "background-hover")};
@@ -168,8 +183,8 @@ a {
 		border-width: #{map-deep-get($config-button, "border-width")};
 		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
 		display: inline-block;
-		&:focus, 
-		&:hover, 
+		&:focus,
+		&:hover,
 		&:visited {
 			color: #{map-deep-get($config-button, "color", "text-hover")};
 			background-color: #{map-deep-get($config-button, "color", "background-hover")};
@@ -179,3 +194,59 @@ a {
 		box-shadow: none;
 	}
 }
+
+.wp-block-a8c-blog-posts {
+	.entry-title a {
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.cat-links a,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "xs")) + 0em);
+}
+
+/**
+ * Full Site Editing
+ * - Full Site Editing overrides
+ */
+ @import "full-site-editing-editor";

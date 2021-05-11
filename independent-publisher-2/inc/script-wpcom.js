@@ -4,25 +4,30 @@
  * Handles toggling of body class name to help WordPress.com custom colors target color changes at different window sizes.
  * The Custom Colors plugin does not support media queries.
  */
-
- ( function( $ ) {
+( function() {
 	function checkWidth( init ) {
 		// If browser is resized, check width again
-		if ( $( window ).width() > 992 ) {
-			$( 'body' ).addClass( 'tablet-desktop' );
+		if ( window.innerWidth > 992 ) {
+			document.body.classList.add( 'tablet-desktop' );
 		}
 		else {
 			if ( ! init ) {
-				$( 'body' ).removeClass( 'tablet-desktop' );
+				document.body.classList.remove( 'tablet-desktop' );
 			}
 		}
 	}
 
-	$( document ).ready( function() {
+	function init() {
 		checkWidth( true );
+		window.addEventListener( 'resize', function() {
+			checkWidth( false);
+		} );
+	}
 
-		$( window ).resize( function() {
-			checkWidth( false );
-		});
-	});
-} )( jQuery );
+	// After DOM is ready.
+	if ( document.readyState !== 'loading' ) {
+		init();
+	} else {
+		document.addEventListener( 'DOMContentLoaded', init );
+	}
+} )();

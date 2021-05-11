@@ -1,0 +1,175 @@
+.entry-content > .alignwide {
+
+	&.wp-block-jetpack-gif,
+	&.wp-block-jetpack-tiled-gallery {
+		@extend %responsive-alignwide;
+	}
+}
+
+.entry-content > .alignfull {
+
+	&.wp-block-jetpack-gif,
+	&.wp-block-jetpack-tiled-gallery {
+		@extend %responsive-alignfull;
+	}
+}
+
+/**
+ * Subscription Form
+ */
+.wp-block-jetpack-subscriptions form > * {
+	margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+	margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+	@include media(mobile) {
+		margin-top: map-deep-get($config-global, "spacing", "vertical");
+		margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * Cookies & Consents Banner
+ */
+body {
+	.widget_eu_cookie_law_widget {
+		background: transparent;
+		bottom: 0;
+		left: 0;
+		padding: #{0.5 * map-deep-get($config-global, "spacing", "unit")};
+		right: 0;
+
+		&.widget.top {
+			bottom: auto;
+			top: 0;
+		}
+
+		#eu-cookie-law {
+			background: map-deep-get($config-global, "color", "background", "default");
+			border: 1px solid map-deep-get($config-global, "color", "border", "default");
+			color: map-deep-get($config-global, "color", "foreground", "default");
+			font-size: map-deep-get($config-global, "font", "size", "sm");
+			line-height: inherit;
+			padding: map-deep-get($config-global, "spacing", "unit");
+
+			@media (max-width: 600px) {
+				padding-bottom: #{4 * map-deep-get($config-global, "spacing", "horizontal") + map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			&.negative {
+				background: map-deep-get($config-global, "color", "foreground", "default");
+				border-color: map-deep-get($config-global, "color", "foreground", "dark");
+				color: map-deep-get($config-global, "color", "background", "default");
+
+				input.accept {
+					background: map-deep-get($config-global, "color", "background", "default");
+					color: map-deep-get($config-global, "color", "foreground", "default");
+
+					&:hover,
+					&:focus,
+					&.has-focus {
+						background: map-deep-get($config-global, "color", "background", "dark");
+					}
+				}
+			}
+
+			input.accept {
+				margin: 0;
+				margin-left: #{2 * map-deep-get($config-global, "spacing", "horizontal")};
+
+				@extend %button-style;
+
+				@media (max-width: 600px) {
+					bottom: map-deep-get($config-global, "spacing", "unit");
+					left: map-deep-get($config-global, "spacing", "unit");
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	// Position of the widget when Admin Bar is present
+	&.admin-bar .widget_eu_cookie_law_widget {
+		&.widget.top {
+			top: 32px;
+
+			@media (max-width: 782px) {
+				top: 46px;
+			}
+		}
+	}
+}
+
+/**
+ * Mailchimp Subscription Form
+ */
+.wp-block-jetpack-mailchimp {
+	p {
+		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+		@include media(mobile) {
+			margin-top: map-deep-get($config-global, "spacing", "vertical");
+			margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	input[type=email] {
+		width: 100%;
+	}
+}
+
+#wp-block-jetpack-mailchimp_consent-text {
+	font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+}
+
+/**
+ * Business Hours
+ */
+.jetpack-business-hours {
+	dd {
+		padding-left: 0;
+	}
+}
+
+/**
+ * Layout Grid
+ */
+.wp-block-jetpack-layout-grid {
+
+	.wp-block-jetpack-layout-grid-column {
+
+		& > * {
+			margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+			margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+
+			@include media(mobile) {
+				margin-top: map-deep-get($config-global, "spacing", "vertical");
+				margin-bottom: map-deep-get($config-global, "spacing", "vertical");
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

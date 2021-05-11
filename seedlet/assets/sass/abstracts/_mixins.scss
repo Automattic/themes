@@ -1,0 +1,115 @@
+// Responsive breakpoints mixin
+@mixin add_variables( $view: frontend ) {
+
+	@if frontend == $view {
+		:root {
+			@content;
+		}
+	}
+
+	@if editor == $view {
+		:root, body {
+			@content;
+		}
+	}
+}
+
+// Crop Text Boundry
+// - Sets a fixed-width on content within alignwide and alignfull blocks
+@mixin crop-text($inset-line-height: 1) {
+
+	line-height: $inset-line-height;
+	$offset-top: calc(.5em * #{$inset-line-height} + -.38);
+	$offset-bottom: calc(.5em * #{$inset-line-height} + -.39);
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		height: 0;
+		width: 0;
+	}
+
+	&:before {
+		margin-bottom: -($offset-top);
+	}
+
+	&:after {
+		margin-top: -($offset-bottom);
+	}
+}
+
+/**
+ * Required Variables
+ */
+ $default_width: 620px;
+ $alignwide_width: 790px;
+ $breakpoint_sm: 482px;
+ $breakpoint_md: 592px;
+ $breakpoint_lg: 652px;
+ $breakpoint_xl: 822px;
+ $breakpoint_xxl: 1024px;
+
+ // Responsive breakpoints mixin
+ @mixin media( $res ) {
+
+	 @if mobile-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_sm - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if mobile == $res {
+		 @media only screen and (min-width: #{$breakpoint_sm}) {
+			 @content;
+		 }
+	 }
+
+	 @if tablet-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_md - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if tablet == $res {
+		 @media only screen and (min-width: #{$breakpoint_md}) {
+			 @content;
+		 }
+	 }
+
+	 @if laptop-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_lg - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if laptop == $res {
+		 @media only screen and (min-width: #{$breakpoint_lg}) {
+			 @content;
+		 }
+	 }
+
+	 @if desktop-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_xl - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if desktop == $res {
+		 @media only screen and (min-width: #{$breakpoint_xl}) {
+			 @content;
+		 }
+	 }
+
+	 @if wide-only == $res {
+		 @media only screen and (max-width: #{$breakpoint_xxl - 1}) {
+			 @content;
+		 }
+	 }
+
+	 @if wide == $res {
+		 @media only screen and (min-width: #{$breakpoint_xxl}) {
+			 @content;
+		 }
+	 }
+ }

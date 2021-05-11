@@ -33,6 +33,12 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Extras
  */
 
@@ -76,4 +82,57 @@ $font_size_md: map-deep-get($config-global, "font", "size", "md");
 			font-size: (strip-unit( $font_size_md ) + 0em);
 		}
 	}
+}
+
+.wp-block-a8c-blog-posts {
+	.entry-title a {
+		color: inherit;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: none;
+			color: #{map-deep-get($config-global, "color", "primary", "default")};
+		}
+	}
+
+	.cat-links a,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
 }

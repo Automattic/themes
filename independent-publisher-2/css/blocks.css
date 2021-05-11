@@ -30,7 +30,8 @@ Description: Used to style Gutenberg Blocks.
 }
 
 @media (min-width: 1140px) {
-	body:not(.has-sidebar) .alignwide {
+	body:not(.has-sidebar) .alignwide,
+	body:not(.has-sidebar) .wp-block-group.alignfull .alignwide {
 		margin-left: -25%;
 		margin-right: -25%;
 		max-width: 1000%;
@@ -38,7 +39,8 @@ Description: Used to style Gutenberg Blocks.
 	}
 }
 
-body:not(.has-sidebar) .alignfull {
+body:not(.has-sidebar) .alignfull,
+body:not(.has-sidebar) .wp-block-group.alignfull .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
@@ -65,6 +67,13 @@ body:not(.has-sidebar) .wp-block-latest-posts.alignfull {
 	height: 100% !important;
 }
 
+body:not(.has-sidebar) *[class^="wp-block"] .alignwide,
+body:not(.has-sidebar) *[class^="wp-block"] .alignfull {
+	max-width: inherit;
+	margin-left: inherit;
+	margin-right: inherit;
+}
+
 /*--------------------------------------------------------------
 2.0 General Block Styles
 --------------------------------------------------------------*/
@@ -88,6 +97,16 @@ body:not(.has-sidebar) .wp-block-latest-posts.alignfull {
 p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 5em;
 	margin-top: 0.15em;
+}
+
+/* Image */
+
+.wp-block-image.is-style-default img[class*="wp-image-"] {
+	border-radius: 3px;
+}
+
+.wp-block-image.is-style-rounded img[class*="wp-image-"] {
+	border-radius: 9999px;
 }
 
 /* Gallery */
@@ -140,13 +159,18 @@ p.has-drop-cap:not(:focus)::first-letter {
 	width: 100%;
 }
 
+/* Image */
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	margin-top: 30px;
+}
+
 /* Cover */
 
 .wp-block-cover.aligncenter,
 .wp-block-cover-image.aligncenter,
 .wp-block-cover.alignleft,
 .wp-block-cover-image.alignleft,
-.wp-block-cover.alignright,
 .wp-block-cover-image.alignright {
 	display: flex;
 }
@@ -158,6 +182,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-cover .wp-block-cover-text, .wp-block-cover h2 {
 	font-size: 1.5em;
 	margin-bottom: inherit;
+}
+
+.wp-block-cover.alignfull .wp-block-cover__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
 }
 
 /* File */
@@ -304,6 +333,13 @@ body:not(.has-sidebar) .wp-block-table.alignfull {
 	text-decoration: none;
 	color: #fff;
 	background: #767676;
+}
+
+/* Group */
+
+.wp-block-group.alignfull .wp-block-group__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
 }
 
 /* Separator */

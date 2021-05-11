@@ -193,7 +193,7 @@ add_color_rule( 'bg', '#ffffff', array(
 
 ), __( 'Background' ) );
 
-add_color_rule( 'txt', '#7a7c84', array(
+add_color_rule( 'txt', '#73757D', array(
 
 	array(
 		'.author-title,
@@ -650,7 +650,7 @@ add_color_rule( 'fg2', '#3e69dc', array(
 /* Additional color palettes */
 add_color_palette( array(
     '#ffffff',
-    '#7a7c84',
+    '#73757D',
     '#2c313f',
     '#d82620',
     '#d82620',
@@ -658,7 +658,7 @@ add_color_palette( array(
 
 add_color_palette( array(
     '#ffffff',
-    '#7a7c84',
+    '#73757D',
     '#2c313f',
     '#0e853b',
     '#0e853b',
@@ -666,7 +666,7 @@ add_color_palette( array(
 
 add_color_palette( array(
     '#ffffff',
-    '#7a7c84',
+    '#73757D',
     '#2c313f',
     '#fdb000',
     '#2c313f',

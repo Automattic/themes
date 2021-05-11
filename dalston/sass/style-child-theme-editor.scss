@@ -33,6 +33,12 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Extras
  */
 .editor-post-title__block .editor-post-title__input {
@@ -46,4 +52,39 @@
 	&.is-style-inset-borders:before {
 		border-color: #{map-deep-get($config-global, "color", "background", "default")};
 	}
+}
+
+.wp-block-a8c-blog-posts {
+	.cat-links a,
+	.entry-title a:hover,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+	}
+
+	&.image-alignbehind {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.more-link:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.more-link:hover,
+		.emtry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
 }

@@ -1,0 +1,67 @@
+/**
+ * WooCommerce Block Grid
+ * - Used by:
+ *   .wp-block-product-new
+ *   .wp-block-product-best-sellers
+ *   .wp-block-product-on-sale
+ *   .wp-block-product-top-rated
+ *   .wp-block-product-categroy
+ *   .wp-block-products-by-attribute
+ */
+
+#content .wc-block-grid {
+
+	.wc-block-grid__product,
+	.wc-block-grid__product-link {
+
+		& > *:not(:first-child) {
+			margin-top: var(--global--spacing-unit);
+		}
+
+		& > *:not(:last-child) {
+			margin-bottom: var(--global--spacing-unit);
+		}
+
+		& > *:not(img):empty + * {
+			margin-top: 0;
+		}
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+
+		& > *:empty {
+			margin: 0;
+		}
+	}
+
+	.wc-block-grid__product-onsale {
+		@extend %onsale-style;
+	}
+
+	.wc-block-grid__product-title {
+		font-family: var(--global--font-primary);
+		font-size: var(--global--font-size-base);
+	}
+
+	.wc-block-grid__product-rating .star-rating span:before {
+		color: var(--global--color-secondary);
+	}
+
+	.wc-block-grid__product-price {
+		color: var(--global--color-foreground-high-contrast);
+		font-size: var(--global--font-size-md);
+		line-height: var(--global--line-height-heading);
+
+		ins {
+			color: var(--global--color-alert-success);
+			font-weight: bold;
+			text-decoration: none;
+		}
+	}
+
+	.wc-block-grid__product .wc-block-grid__product-onsale {
+		right: calc(-0.5em + var(--global--spacing-unit));
+		margin: 0
+	}
+}

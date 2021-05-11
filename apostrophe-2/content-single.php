@@ -4,7 +4,7 @@
  *
  */
 ?>
-<article id="post-<?php the_ID(); ?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( apostrophe_2_has_post_thumbnail() ) { ?>
 		<figure class="entry-thumbnail apostrophe-2-thumb">
 			<?php the_post_thumbnail( 'apostrophe-2-featured' ); ?>

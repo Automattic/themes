@@ -1,0 +1,32 @@
+.wp-block-button__link {
+
+	color: var(--button--color-text);
+	font-weight: var(--button--font-weight);
+	font-family: var(--button--font-family);
+	font-size: var(--button--font-size);
+	line-height: var(--button--line-height);
+	background-color: var(--button--color-background);
+	border-radius: var(--button--border-radius);
+	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+	&:hover,
+	&:focus,
+	&.has-focus {
+		color: var(--button--color-text-hover);
+		background-color: var(--button--color-background-hover);
+	}
+
+	// Outline Style
+	&.is-style-outline,
+	.is-style-outline & {
+		color: var(--button--color-background);
+		background: transparent;
+		border: 2px solid currentcolor;
+	}
+
+	// Squared Style
+	&.is-style-squared,
+	.is-style-squared & {
+		border-radius: 0;
+	}
+}

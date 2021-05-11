@@ -1,0 +1,77 @@
+/**
+ * Entry Content
+ */
+
+.entry-content,
+.entry-summary {
+	font-family: var(--entry-content--font-family);
+}
+
+.entry-content {
+
+	p {
+		word-wrap: break-word;
+	}
+
+	.more-link {
+		display: table;
+		margin-top: var(--global--spacing-unit);
+
+		@include media(mobile) {
+			margin-top: var(--global--spacing-vertical);
+		}
+
+		&:after {
+			content: "\02192" #{"/*rtl:\"\02190\"*/"};
+			display: inline-block;
+			margin-left: 0.5em;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	a {
+
+	}
+
+	// Overwrite iframe embeds that have inline styles.
+	> iframe[style] {
+
+		margin: var(--global--spacing-vertical) 0 !important;
+		max-width: 100% !important;
+
+		@include media(mobile) {
+			max-width: var(--global--spacing-vertical) !important;
+		}
+	}
+
+	// Page links
+	.page-links a {
+
+	}
+
+	// Classic editor audio embeds.
+	.wp-audio-shortcode {
+		@extend %responsive-aligndefault-width;
+	}
+
+	// If the homepage header and page title are both configured to be hidden.
+	.home.page.hide-homepage-header.hide-homepage-title & {
+		margin-top: 0;
+		padding-top: 0;
+
+		// Move some full-width blocks up to the top of the screen.
+		> .wp-block-image.alignfull:first-child,
+		> .wp-block-cover.alignfull:first-child,
+		> .wp-block-media-text.alignfull:first-child,
+		> .wp-block-group.has-background.alignfull:first-child {
+			margin-top: calc(-1 * var(--global--spacing-vertical));
+		}
+	}
+}
+
+.entry-attachment {
+	text-align: center;
+}

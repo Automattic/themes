@@ -1,0 +1,34 @@
+name: Quadrat Demo Deploy
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the trunk branch
+  push:
+    branches: [ trunk ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+      - name: Deploy-Theme
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
+          ftp-username: ${{ secrets.QUADRAT_DEMO_USERNAME }}
+          ftp-password: ${{ secrets.QUADRAT_DEMO_PASSWORD }}
+          git-ftp-args: --insecure
+          local-dir: ./quadrat/
+      - name: Deploy-Parent
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: sftp://sftp.pressable.com:22/htdocs/wp-content/themes/
+          ftp-username: ${{ secrets.QUADRAT_DEMO_USERNAME }}
+          ftp-password: ${{ secrets.QUADRAT_DEMO_PASSWORD }}
+          git-ftp-args: --insecure
+          local-dir: ./blank-canvas-blocks/

@@ -12,6 +12,10 @@ table,
 	th {
 		padding: calc( 0.5 * #{map-deep-get($config-global, "spacing", "unit")} );
 		border: 1px solid;
-		word-break: break-all;
+	}
+
+	&.is-style-stripes tbody tr:nth-child(odd) {
+		background-color: #{map-deep-get($config-global, "color", "border", "light")};
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
 	}
 }

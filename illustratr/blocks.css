@@ -36,13 +36,12 @@ Description: Used to style Gutenberg Blocks.
 /* Full Width */
 
 .alignfull {
-	width: calc(100vw - 52px); /* subtract 52px for body padding */
-	max-width: calc(100vw - 52px);
-	margin-left: 0;
-	margin-right: 0;
+	margin-left: calc(50% - 50vw + 26px);
+	margin-right: calc(50% - 50vw + 26px);
+	max-width: 100vw;
 	position: relative;
-	left: 50%;
-	transform: translateX( -50% );
+	width: calc(100vw - 52px); /* subtract 52px for body padding */
+
 }
 
 @media (min-width: 768px) {
@@ -224,6 +223,21 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-cover.alignright,
 .wp-block-cover.aligncenter {
 	display: flex;
+}
+
+/* Blog Posts */
+
+.wp-block-newspack-blocks-homepage-articles.is-grid .entry-meta {
+	width: initial;
+}
+
+.wp-block-newspack-blocks-homepage-articles.is-grid .entry-title,
+.wp-block-newspack-blocks-homepage-articles.is-grid .cat-links {
+	text-align: left;
+}
+
+.wp-block-newspack-blocks-homepage-articles.is-grid .entry-meta:before {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -554,4 +568,3 @@ hr.wp-block-separator {
 .has-black-background-color:active {
 	background-color: #24282d;
 }
-

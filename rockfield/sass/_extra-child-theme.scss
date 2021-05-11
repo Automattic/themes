@@ -108,7 +108,7 @@ a {
 	margin: 0;
 	text-align: right;
 
- 	> div {
+	> div {
 		background: #{map-deep-get($config-global, "color", "foreground", "dark")};
 		border-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} solid #{map-deep-get($config-global, "color", "foreground", "dark")};
 		box-shadow: inset 0 1px 0 0 #{map-deep-get($config-global, "color", "primary", "default")};
@@ -132,7 +132,7 @@ a {
 			justify-content: flex-end;
 
 			& > .menu-item-has-children > a::after {
-					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 			}
 
 			.sub-menu .menu-item a {
@@ -229,6 +229,9 @@ a {
 @include media(mobile) {
 	#main {
 		padding-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		.hide-homepage-header & {
+			padding-top: 0;
+		}
 	}
 }
 
@@ -302,6 +305,19 @@ a {
 				}
 			}
 		}
+	}
+}
+
+// Remove margin if alignfull is first element and header is hidden.
+@include media(mobile) {
+	.home.page.hide-homepage-header.hide-homepage-title .hentry .entry-content {
+
+			> .wp-block-image.alignfull:first-child,
+			> .wp-block-cover.alignfull:first-child,
+			> .wp-block-media-text.alignfull:first-child,
+			> .wp-block-group.has-background.alignfull:first-child {
+				margin-top: -#{2.75 * map-deep-get($config-global, "spacing", "unit")};
+			}
 	}
 }
 
@@ -405,6 +421,57 @@ table,
 }
 
 /**
+ * Blog Posts (Newspack)
+ */
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/**
  * Comments
  */
 .comments-title {
@@ -419,9 +486,9 @@ table,
 
 .comment-body {
 	content: "";
-  display: table;
-  table-layout: fixed;
-  width: 100%;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
 }
 
 .comment-meta .comment-metadata {
@@ -465,7 +532,7 @@ table,
 
 			.avatar,
 			.fn {
-		    display: block;
+				display: block;
 				margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
 			}
 		}
@@ -504,43 +571,43 @@ table,
 		@extend %responsive-alignfull;
 	}
 
-  .widget-title,
-  .widgettitle {
-    font-size: #{map-deep-get($config-global, "font", "size", "base")};
-    @include font-family( map-deep-get($config-global, "font", "family", "ui") );
-    margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+	.widget-title,
+	.widgettitle {
+		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		@include font-family( map-deep-get($config-global, "font", "family", "ui") );
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 
-    &:empty {
-      display: none;
-    }
-  }
+		&:empty {
+			display: none;
+		}
+	}
 
-  @include media(laptop) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+	@include media(laptop) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 
-    & > *:nth-child(2) {
-      margin-top: 0;
-    }
+		& > *:nth-child(2) {
+			margin-top: 0;
+		}
 
-    .widget {
-      width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
-    }
-  }
+		.widget {
+			width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
+		}
+	}
 }
 
 // Widgets
 .widget_calendar,
 .widget_calendar {
-  caption {
-    font-weight: bold;
-  }
+	caption {
+		font-weight: bold;
+	}
 
-  td,
-  th {
-	   text-align: center;
-  }
+	td,
+	th {
+		text-align: center;
+	}
 }
 
 .widget_archive,
@@ -558,45 +625,45 @@ table,
 .widget_jp_blogs_i_follow,
 .widget_top-click,
 .widget_upcoming_events_widget {
-  ul {
-    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
-    list-style: none;
-    padding-left: 0;
-  }
+	ul {
+		border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+		list-style: none;
+		padding-left: 0;
+	}
 
-  li {
-    border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
-  }
+	li {
+		border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+		padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+	}
 }
 
 .widget_categories .children,
 .widget_nav_menu .sub-menu,
 .widget_pages .children {
-  border-bottom: 0;
-  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+	border-bottom: 0;
+	margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-left: map-deep-get($config-global, "spacing", "horizontal");
 }
 
 .widget_recent_entries .post-date {
-  display: block;
+	display: block;
 }
 
 .widget_rss {
-  cite,
-  .rssSummary,
-  .rss-date {
-    display: block;
-  }
+	cite,
+	.rssSummary,
+	.rss-date {
+		display: block;
+	}
 }
 
 .widget_search {
-  input[type="search"] {
-    display: block;
-    margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-    width: 100%;
-  }
+	input[type="search"] {
+		display: block;
+		margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+		width: 100%;
+	}
 }
 
 /**
@@ -702,5 +769,27 @@ input[type="submit"] {
 .is-style-circular .wp-block-button__link {
 	&:before {
 		border-radius: 100px;
+	}
+}
+
+/**
+ * AMP Support
+ */
+html[amp] {
+
+	@include media( tablet ) {
+		#masthead {
+			position: sticky;
+			top: 0;
+		}
+
+		.logged-in #masthead {
+			top: 32px;
+		}
+	}
+	@media screen and ( max-width: 782px ) {
+		.logged-in #masthead {
+			top: 46px;
+		}
 	}
 }

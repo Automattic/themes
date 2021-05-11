@@ -1,0 +1,103 @@
+.wp-block-latest-posts {
+	padding-left: 0;
+
+	// Vertical margins logic
+	&:not(.is-grid) > li {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.is-grid > li {
+		margin-bottom: var(--global--spacing-vertical);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	& > li > * {
+		margin-top: calc(0.5 * var(--global--spacing-vertical));
+		margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Post title
+	& > li > a {
+		font-family: var(--latest-posts--title-font-family);
+		font-size: var(--latest-posts--title-font-size);
+		font-weight: var(--heading--font-weight);
+		line-height: var(--global--line-height-heading);
+	}
+
+	// Post date
+	.wp-block-latest-posts__post-date {
+		color: var(--global--color-foreground-low-contrast);
+		font-size: var(--global--font-size-xs);
+		line-height: var(--global--line-height-body);
+
+		[class*="inner-container"] &,
+		.has-background & {
+			color: currentColor;
+		}
+	}
+
+	// Post content
+	.wp-block-latest-posts__post-excerpt,
+	.wp-block-latest-posts__post-full-content {
+		font-family: var(--latest-posts--description-font-family);
+		font-size: var(--latest-posts--description-font-size);
+		line-height: var(--global--line-height-body);
+	}
+}
+
+@include media(tablet) {
+	.wp-block-latest-posts.is-style-seedlet-alternating-grid {
+
+		// Necessary so that the block boundaries are respected.
+		overflow: hidden;
+
+		> li {
+			width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			max-width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			text-align: right;
+
+			&:nth-child(2n + 1) {
+				float: right;
+				text-align: left;
+			}
+		}
+
+
+		&.is-grid {
+			display: inherit;
+
+			> li {
+				margin-top: var(--global--spacing-vertical);
+				margin-right: 0;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

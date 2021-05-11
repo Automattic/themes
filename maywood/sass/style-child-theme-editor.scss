@@ -26,6 +26,12 @@
 @import "../../varia/sass/elements/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Blocks
  * - These styles replace key Gutenberg Block styles for fonts, colors, and
  *   spacing with CSS-variables overrides
@@ -48,7 +54,7 @@ body {
 }
 
 b, strong {
-	font-weight: 500;
+	font-weight: 700;
 }
 
 .editor-post-title__block .editor-post-title__input {
@@ -64,13 +70,22 @@ b, strong {
 
 .wp-block-cover,
 .wp-block-cover-image {
-	p {
-		text-shadow: 0 0 6px #000;
-	}
 
 	h1,h2,h3,h4,h5,h6 {
 		font-weight: 300;
-		text-shadow: 0 0 12px #000;
+	}
+
+	// Only use a text shadow if there's a background image or video.
+	&[style*="background-image"],
+	video + .wp-block-cover__inner-container { 
+		p {
+			text-shadow: 0 0 6px #000
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+			font-weight: 300;
+			text-shadow: 0 0 12px #000;
+		}
 	}
 
 	@include media(desktop) {
@@ -100,6 +115,50 @@ b, strong {
 			font-size: (strip-unit( $font_size_md ) + 0em);
 		}
 	}
+}
+
+.wp-block-a8c-blog-posts {
+	.entry-title {
+		font-weight: 300;
+
+		a {
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.cat-links a,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
 }
 
 /**

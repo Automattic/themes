@@ -146,16 +146,18 @@ blockquote p {
 /**
  * Wide Header & Footer
  */
-#masthead {
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-bottom: $spacing_vertical;
-	position: relative;
-	@extend %responsive-alignwide-nested;
+body:not(.fse-enabled) {
+	#masthead {
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-bottom: $spacing_vertical;
+		position: relative;
+		@extend %responsive-alignwide-nested;
 
-	@include media(desktop) {
-		padding-left: 0;
-		padding-right: 0;
+		@include media(desktop) {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
 
@@ -180,9 +182,9 @@ blockquote p {
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
-			"site-logo site-logo"
-			"site-title main-navigation"
-			"site-description social-navigation";
+				"site-logo site-logo"
+				"site-title main-navigation"
+				"site-description social-navigation";
 
 		&:before,
 		&:after {
@@ -193,6 +195,12 @@ blockquote p {
 		& > * {
 			margin-top: 0;
 			margin-bottom: 0;
+		}
+
+		&.has-logo:not(.has-title-and-tagline) {
+			grid-template-areas:
+				"site-logo main-navigation"
+				"site-logo social-navigation";
 		}
 
 		.site-logo {
@@ -253,7 +261,7 @@ blockquote p {
 				}
 
 				& > .menu-item-has-children > a::after {
-						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 				}
 			}
 
@@ -333,7 +341,7 @@ blockquote p {
  * 3. Main Wrapper and Content
  */
 
- .home.page.hide-homepage-title {
+.home.page.hide-homepage-title {
 	.site-content {
 		.site-main {
 			padding-top: 0;
@@ -348,10 +356,6 @@ blockquote p {
 	.site-main {
 		padding-top: 0;
 		padding-bottom: 0;
-	}
-
-	@include media(mobile-only) {
-		padding-top: $site_main_spacing_vertical;
 	}
 }
 
@@ -515,3 +519,59 @@ blockquote p {
 		margin-top: $spacing_vertical;
 	}
 }
+
+.wp-block-newspack-blocks-homepage-articles article .entry-title a {
+	text-decoration: none;
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";

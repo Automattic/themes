@@ -1,0 +1,37 @@
+{
+	"name": "themes",
+	"version": "1.0.0",
+	"description": "Automattic public themes",
+	"author": "automattic",
+	"license": "GPL-2.0",
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"sandbox:clean": "./sandbox.sh clean",
+		"sandbox:push": "./sandbox.sh push",
+		"sandbox:push:ignore": "./sandbox.sh push --ignore",
+		"sandbox:push:force": "./sandbox.sh push --force",
+		"sandbox:watch": "chokidar '**/*' -i '*/node_modules' -i '.git' -c './sandbox.sh push --ignore' --initial"
+	},
+	"devDependencies": {
+		"@wordpress/prettier-config": "^1.0.1",
+		"@wordpress/scripts": "^14.0.1",
+		"@wordpress/stylelint-config": "^19.0.1",
+		"chokidar-cli": "^2.1.0",
+		"husky": "^4.3.0",
+		"lint-staged": "^10.5.4",
+		"lodash": "^4.17.20"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged && node pre-commit-hook.js"
+		}
+	},
+	"lint-staged": {
+		"*.{scss}": [
+			"wp-scripts lint-style --fix="
+		]
+	},
+	"dependencies": {
+		"wp-prettier": "^2.0.5"
+	}
+}

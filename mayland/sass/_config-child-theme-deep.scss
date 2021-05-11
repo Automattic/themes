@@ -70,7 +70,7 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": black,
+			"default": #000000,
 			"hover": #666666,
 		),
 		"secondary": (
@@ -78,12 +78,12 @@ $config-global: (
 			"hover": #666666,
 		),
 		"foreground": (
-			"default": black,
+			"default": #010101,
 			"light": #666666, // must be accessible against background
 			"dark": #333333, // must be accessible against background
 		),
 		"background": (
-			"default": white,
+			"default": #ffffff,
 			"light": #f2f2f2, // must be accessible against foreground-default
 			"dark": #d9d9d9, // must be accessible against foreground-default
 		),
@@ -148,7 +148,7 @@ $config-elements: (
 
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"text": map-deep-get($config-global, "color", "black"),
 			"border": map-deep-get($config-global, "color", "border", "default"),
 			"border-focus": map-deep-get($config-global, "color", "primary", "hover"),
 		),

@@ -16,6 +16,7 @@
  * 6.7. Posts List Block
  * 6.8. Search Block
  * 7. Widgets
+ * 8. AMP Support
  */
 
 $color_background: #{map-deep-get($config-global, "color", "background", "default")};
@@ -68,12 +69,6 @@ a {
 		&:hover {
 			text-decoration: none;
 		}
-	}
-}
-
-.has-background {
-	a {
-		color: currentColor;
 	}
 }
 
@@ -217,7 +212,7 @@ a {
 	}
 }
 
- @include media(mobile-only) {
+@include media(mobile-only) {
 	.site-title,
 	.site-description {
 		font-size: $font_size_xl;
@@ -252,6 +247,13 @@ a {
 @include media(mobile-only) {
 	.social-links-menu {
 		justify-content: center;
+	}
+}
+
+.site-footer {
+	> .social-navigation {
+		order: 2;
+		margin-bottom: 0;
 	}
 }
 
@@ -349,7 +351,8 @@ button,
 input[type="submit"],
 .wp-block-button__link,
 .wp-block-file__button,
-.a8c-posts-list__view-all {
+.a8c-posts-list__view-all,
+button[data-load-more-btn] {
 	border: 0;
 	border-radius: 5em;
 	text-transform: uppercase;
@@ -381,8 +384,81 @@ input[type="submit"],
 			}
 			> time {
 				&.wp-block-latest-posts__post-date {
-				 font-size: $font_size_base;
+					font-size: $font_size_base;
 				}
+			}
+		}
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.more-link {
+			&:active,
+			&:focus,
+			&:hover {
+				color: #{map-deep-get($config-global, "color", "primary", "hover")};
+			}
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+
+		.more-link {
+			&:active,
+			&:focus,
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.more-link {
+			&:active,
+			&:focus,
+			&:hover {
+				color: inherit;
 			}
 		}
 	}
@@ -415,4 +491,25 @@ input[type="submit"],
 .wp-block-verse {
 	font-family: $font_family_code;
 	font-size: $font_size_base;
+}
+
+/**
+ * 8. AMP Support
+ */
+html[amp] {
+	@include media( mobile ) {
+		.site-header {
+			position: sticky;
+			top: 0;
+		}
+
+		.logged-in .site-header {
+			top: 32px;
+		}
+	}
+	@media screen and ( max-width: 782px ) {
+		.logged-in .site-header {
+			top: 46px;
+		}
+	}
 }

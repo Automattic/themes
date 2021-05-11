@@ -1,0 +1,39 @@
+// Footer
+
+.site-footer {
+	overflow: hidden;
+}
+
+// Footer Branding
+
+.site-footer > .site-info {
+
+	color: var(--footer--color-text);
+	font-family: var(--footer--font-family);
+	font-size: var(--footer--font-size);
+	line-height: var(--global--line-height-body);
+
+	@include media(desktop) {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.site-name {
+		font-weight: bold;
+	}
+
+	a {
+		color: currentColor;
+
+		&:link,
+		&:visited,
+		&:active {
+			color: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--footer--color-link);
+		}
+	}
+}

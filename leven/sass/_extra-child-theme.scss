@@ -67,9 +67,9 @@ a {
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
-			"site-logo site-logo"
-			"site-branding main-navigation"
-			"site-branding social-navigation";
+				"site-logo site-logo"
+				"site-branding main-navigation"
+				"site-branding social-navigation";
 
 		&:before,
 		&:after {
@@ -110,6 +110,37 @@ a {
 			& > div > ul {
 				justify-content: flex-end;
 			}
+		}
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.cat-links a,
+		.entry-title a,
+		.entry-title a:hover,
+		.entry-meta a {
+			text-decoration: none;
+		}
+	}
+
+	&.image-alignbehind article {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
 		}
 	}
 }

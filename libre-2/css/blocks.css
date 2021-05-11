@@ -29,7 +29,8 @@ Description: Used to style Gutenberg Blocks.
 }
 
 @media (min-width: 1140px) {
-	.singular.no-sidebar .alignwide {
+	.singular.no-sidebar .alignwide,
+	.singular.no-sidebar .wp-block-group .alignwide {
 		margin-left: -25%;
 		margin-right: -25%;
 		max-width: 1000%;
@@ -42,7 +43,8 @@ Description: Used to style Gutenberg Blocks.
 	}
 }
 
-.singular.no-sidebar .alignfull {
+.singular.no-sidebar .alignfull,
+.singular.no-sidebar .wp-block-group .alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
@@ -69,40 +71,11 @@ Description: Used to style Gutenberg Blocks.
 	height: 100% !important;
 }
 
-/*--------------------------------------------------------------
-2.0 General Block Styles
---------------------------------------------------------------*/
-
-/* Captions */
-
-[class^="wp-block-"] figcaption {
-	color: inherit;
-	font-size: 14px;
-	font-style: italic;
-	position: relative;
-}
-
-[class^="wp-block-"]:not(.wp-block-gallery) figcaption {
-	text-align: left;
-}
-
-[class^="wp-block-"]:not(.wp-block-gallery) figcaption::after {
-	border-top: 1px solid;
-	clear: both;
-	content: "";
-	display: block;
-	margin-top: .875em;
-	padding-top: .875em;
-	width: 25%;
-}
-
-[class^="wp-block-"].alignfull:not(.wp-block-gallery) figcaption {
-	padding-left: 2vw;
-	padding-right: 2vw;
-}
-
-.rtl [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
-	text-align: right;
+.singular.no-sidebar *[class^="wp-block"] .alignwide,
+.singular.no-sidebar *[class^="wp-block"] .alignfull {
+	max-width: inherit;
+	margin-left: inherit;
+	margin-right: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -114,12 +87,6 @@ Description: Used to style Gutenberg Blocks.
 p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 5em;
 	margin-top: 0.15em;
-}
-
-/* Gallery */
-
-.wp-block-gallery {
-	margin: 0 0 1.75em;
 }
 
 /* Quote */
@@ -214,6 +181,11 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-cover .wp-block-cover-text,
 .wp-block-cover h2 {
 	font-size: 1.5em;
+}
+
+.wp-block-cover.alignfull .wp-block-cover__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
 }
 
 /* File */
@@ -359,7 +331,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 	box-shadow: none;
 }
 
-/* Columns */
+/* Group */
+
+.wp-block-group.alignfull .wp-block-group__inner-container {
+	max-width: 740px;
+	margin: 0 auto;
+}
 
 /* Separator */
 
@@ -399,14 +376,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 /* Latest Comments */
-
-.wp-block-latest-comments {
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 0;
-}
-
 .wp-block-latest-comments__comment a {
 	box-shadow: 0 1px 0 0 rgba(0,0,0,0);
 }

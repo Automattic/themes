@@ -22,14 +22,14 @@ if ( ! function_exists( 'modern_business_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
-				'custom-logo',
-				array(
-						'height'      => 128,
-						'width'       => 128,
-						'flex-width'  => true,
-						'flex-height' => false,
-						'header-text' => array( 'site-title' ),
-				)
+			'custom-logo',
+			array(
+				'height'      => 128,
+				'width'       => 128,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title' ),
+			)
 		);
 
 		// Editor color palette.
@@ -67,7 +67,6 @@ if ( ! function_exists( 'modern_business_setup' ) ) :
 endif; // modern_business_setup
 add_action( 'after_setup_theme', 'modern_business_setup', 30 );
 
-
 function modern_business_fonts_url() {
 	$fonts_url = '';
 	/* Translators: If there are characters in your language that are not
@@ -80,11 +79,19 @@ function modern_business_fonts_url() {
 		if ( 'off' !== $font ) {
 			$font_families[] = 'IBM Plex Sans:300,300i,500,700';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 	return esc_url_raw( $fonts_url );
 }

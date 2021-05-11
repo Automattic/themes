@@ -1,0 +1,47 @@
+@import "../../varia/sass/full-site-editing/imports";
+
+$spacing_vertical: map-deep-get($config-global, "spacing", "vertical");
+$spacing_unit: map-deep-get($config-global, "spacing", "unit");
+
+.fse-enabled.home.page.hide-homepage-title .fse-header.entry-content {
+	padding-bottom: $spacing_vertical;
+	@include media(mobile) {
+		padding-bottom: #{1.5 * $spacing_vertical};
+	}
+}
+
+.fse-template-part {
+	.site-title + .site-description {
+		margin-top: #{0.5 * $spacing_unit};
+	}
+	
+	.main-navigation {
+		@extend #site-navigation;
+
+		.has-background > .main-menu.footer-menu {
+			padding: 0;
+		}
+		.has-text-color ul.main-menu > li:after {
+			color: inherit;
+		}
+	}
+	
+	@include media(mobile-only) {
+		max-width: calc( 100% - #{ $spacing_vertical } );
+
+		.main-navigation > div {
+			padding: 0 32px;
+		}
+	}
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+		.site-title a {
+			text-decoration: none;
+		}
+
+		.has-background {
+			text-shadow: none;
+		}
+	}
+}

@@ -1,0 +1,48 @@
+blockquote {
+	margin: 0;
+	padding: 0;
+
+	p {
+		font-size: var(--heading--font-size-h4);
+		letter-spacing: var(--heading--letter-spacing-h4);
+		line-height: var(--heading--line-height);
+	}
+
+	cite,
+	footer {
+		color: var(--global--color-foreground-low-contrast);
+		font-size: var(--global--font-size-xs);
+		letter-spacing: var(--global--letter-spacing);
+	}
+
+	& > * {
+		margin-top: var(--global--spacing-unit);
+		margin-bottom: var(--global--spacing-unit);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.alignleft,
+	&.alignright {
+
+		padding-left: inherit;
+
+		p {
+			font-size: var(--heading--font-size-h5);
+			max-width: inherit;
+			width: inherit;
+		}
+
+		cite,
+		footer {
+			font-size: var(--global--font-size-xs);
+			letter-spacing: var(--global--letter-spacing);
+		}
+	}
+}

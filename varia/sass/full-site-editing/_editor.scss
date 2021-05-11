@@ -5,6 +5,13 @@
 			margin-right: 0;
 		}
 	}
+
+	// Match margins for template parts rendered in the page and template part editor view.
+	.block-editor-block-list__block-edit {
+		[data-block] {
+			margin: 12px 0 0 0;
+		}
+	}
 }
 
 .template-block {
@@ -17,6 +24,16 @@
 
 		figure.fse-site-logo {
 			width: auto;
+		}
+
+		// Hide the (+) icons when rendering the Template Part block inside the Page editor.
+		.block-list-appender {
+			display: none;
+		}
+
+		// Remove the top margin if the Site Title block is the first in a column block
+		.wp-block-column .block-editor-block-list__layout [data-type='a8c/site-title']:first-child .site-title {
+			margin-top: 0;
 		}
 	}
 }
@@ -31,14 +48,30 @@
 		}
 	}
 
-	.block-editor-block-list__layout .block-editor-block-list__block[data-align=full] > .block-editor-block-list__block-edit figure.fse-site-logo {
+	.block-editor-block-list__layout .block-editor-block-list__block[data-align='full'] > .block-editor-block-list__block-edit figure.fse-site-logo {
 		width: auto;
+	}
+
+	// Make sure each column in a Columns block is max width, so that nested FSE blocks can behave as expected.
+	.wp-block-column {
+		width: 100%;
+	}
+
+	// Remove large margins on column children when used in a template part.
+	.wp-block-columns .wp-block-column {
+		& > * {
+			margin: 0 0 5px 0;
+		}
 	}
 
 	@import '../components/header/site-main-navigation';
 
 	.main-navigation {
 		text-align: center;
+
+		.alignwide, .alignfull {
+			width: 100%;
+		}
 
 		@import "../base/extends";
 		.button {

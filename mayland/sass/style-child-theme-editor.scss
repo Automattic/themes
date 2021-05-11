@@ -31,3 +31,33 @@
  *   spacing with CSS-variables overrides
  */
 @import "../../varia/sass/blocks/editor";
+
+/**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
+ * Extras
+ */
+.wp-block-a8c-blog-posts {
+	.cat-links a,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.entry-title a:hover,
+	.more-link:hover {
+		color: inherit;
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+}

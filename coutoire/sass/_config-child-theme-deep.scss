@@ -70,12 +70,12 @@ $config-global: (
 	/* Colors */
 	"color": (
 		"primary": (
-			"default": black,
+			"default": #000000,
 			"hover": #FF7A5C,
 		),
 		"secondary": (
 			"default": #FF7A5C,
-			"hover": darkred,
+			"hover": #8B0000,
 		),
 		"foreground": (
 			"default": #444444,
@@ -83,7 +83,7 @@ $config-global: (
 			"dark": #111111, // must be accessible against background
 		),
 		"background": (
-			"default": white,
+			"default": #FFFFFF,
 			"light": #FAFAFA, // must be accessible against foreground-default
 			"dark": #DDDDDD, // must be accessible against foreground-default
 		),
@@ -98,9 +98,9 @@ $config-global: (
 			"warning": #ffcf49,
 			"error": #FF7A5C,
 		),
-		"text-selection": lightblue,
-		"black": black,
-		"white": white,
+		"text-selection": #add8e6,
+		"black": #000000,
+		"white": #FFFFFF,
 	),
 
 	/* Spacing */
@@ -148,7 +148,7 @@ $config-elements: (
 
 		// Colors
 		"color": (
-			"text": map-deep-get($config-global, "color", "foreground", "default"),
+			"text": map-deep-get($config-global, "color", "black"),
 			"border": map-deep-get($config-global, "color", "border", "default"),
 			"border-focus": map-deep-get($config-global, "color", "primary", "hover"),
 		),
@@ -255,7 +255,7 @@ $config-heading: (
 			"h1": map-deep-get($config-global, "font", "letter-spacing", "xxxl"),
 		),
 		// Font Weight
-		"weight": 200,
+		"weight": 400,
 	),
 );
 

@@ -18,7 +18,6 @@ if ( ! function_exists( 'exford_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function exford_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,52 +52,58 @@ if ( ! function_exists( 'exford_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#23883D'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#0963C4';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#111111' ) ? $colors_array['colors']['txt'] : '#6E6E6E';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#111111' ) ? $colors_array['colors']['txt'] : '#020202';  // $config-global--color-foreground-dark-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'exford' ),
 					'slug'  => 'primary',
-					'color' => '#23883D',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'exford' ),
 					'slug'  => 'secondary',
-					'color' => '#0963C4',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Black', 'exford' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#020202',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'exford' ),
+					'name'  => __( 'Foreground', 'exford' ),
 					'slug'  => 'foreground',
-					'color' => '#111111',
+					'color' => $foreground,
 				),
 				array(
-					'name'  => __( 'Gray', 'exford' ),
-					'slug'  => 'foreground-light',
-					'color' => '#6E6E6E',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'exford' ),
-					'slug'  => 'background-dark',
-					'color' => '#CCCCCC',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'exford' ),
-					'slug'  => 'background-light',
-					'color' => '#F7F7F7',
-				),
-				array(
-					'name'  => __( 'White', 'exford' ),
+					'name'  => __( 'Background', 'exford' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'exford' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'exford' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
+
+		// Enable Full Site Editing
+		add_theme_support( 'full-site-editing' );
 	}
 endif;
 add_action( 'after_setup_theme', 'exford_setup', 12 );
@@ -143,6 +148,13 @@ function exford_fonts_url() {
 			$font_families[] = 'Source Sans Pro:400,700,400i,700i';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -166,7 +178,7 @@ function exford_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('exford-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'exford-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'exford-style', 'rtl', 'replace' );
@@ -181,5 +193,15 @@ function exford_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'exford-editor-fonts', exford_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager' );
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#6E6E6E' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'exford_editor_styles' );

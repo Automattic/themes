@@ -1,0 +1,246 @@
+/**
+ * These styles should be loaded on the frontend-only
+ */
+/**
+ * Variable Configuration
+ * - Import all config files for display in
+ *   the editor, customizer, and front end.
+ */
+/* Blocks */
+/*
+ * Configure Components
+ * - Similar to Blocks but exist outside of the "current" editor context
+ */
+/**
+ * Variable configuration
+ * - import all vendor config files
+ */
+/**
+ * WooCommerce Variables
+ */
+/**
+ * Jetpack Variables
+ */
+:root {
+	/* Globals */
+	/* Font Family */
+	--global--font-primary: 'Playfair Display', Georgia, Times, serif;
+	--global--font-secondary: 'Fira Sans', Helvetica, Arial, sans-serif;
+	--global--font-code: monospace, monospace;
+	--global--font-ui: var(--global--font-secondary);
+	/* Font Weight */
+	--global--font-weight: normal;
+	/* Font Size */
+	--global--font-size-root: 18px;
+	--global--font-size-ratio: 1.2;
+	--global--font-size-base: 1em;
+	--global--font-size-xs: 14px;
+	--global--font-size-sm: 16px;
+	--global--font-size-md: 18px;
+	--global--font-size-lg: 24px;
+	--global--font-size-xl: 28px;
+	--global--font-size-xxl: 32px;
+	--global--font-size-xxxl: 48px;
+	/* Line Height */
+	--global--line-height-base: 1;
+	--global--line-height-body: 1.7;
+	--global--line-height-heading: 1.3;
+	/* Colors */
+	--global--color-primary: #000000;
+	--global--color-secondary: #3C8067;
+	--global--color-primary-hover: var( --global--color-secondary );
+	--global--color-secondary-hover: #336D58;
+	--global--color-black: black;
+	--global--color-white: white;
+	--global--color-foreground: #333333;
+	--global--color-foreground-low-contrast: #444444;
+	--global--color-foreground-high-contrast: #000000;
+	--global--color-background: #FFFFFF;
+	--global--color-tertiary: #FAFBF6;
+	--global--color-background-dark: #DDDDDD;
+	--global--color-border: #EFEFEF;
+	--global--color-text-selection: #EBF2F0;
+	--global--color-alert-success: yellowgreen;
+	--global--color-alert-info: skyblue;
+	--global--color-alert-warning: gold;
+	--global--color-alert-error: salmon;
+	/* Spacing */
+	--global--spacing-unit: 20px;
+	--global--spacing-measure: unset;
+	--global--spacing-horizontal: 25px;
+	--global--spacing-vertical: 30px;
+	/* Elevation */
+	--global--elevation: 1px 1px 3px 0px rgba( 0, 0, 0, 0.2 );
+	/* Other */
+	--global--border-radius-sm: 9px;
+	--global--border-radius-md: 13.5px;
+	--global--border-radius-lg: 18px;
+	--global--border-radius-pill: 180px;
+	--global--border-radius-none: 0;
+	/* Elements */
+	--form--font-family: var(--global--font-secondary);
+	--form--font-size: var(--global--font-size-md);
+	--form--line-height: var(--global-line-height-body);
+	--form--color-text: var(--global--color-foreground);
+	--form--border-color: var(--global--color-border);
+	--form--border-width: 2px;
+	--form--border-radius: 0;
+	--form--spacing-unit: calc(0.5 * var(--global--spacing-unit));
+	--form--background-color: transparent;
+	--form--box-shadow: none;
+	/* Blocks */
+	--button--color-text: var(--global--color-background);
+	--button--color-text-hover: var(--button--color-text);
+	--button--color-text-active: var(--button--color-text);
+	--button--color-background: var(--global--color-secondary);
+	--button--color-background-hover: var(--global--color-secondary-hover);
+	--button--color-background-active: var(--global--color-primary);
+	--button--font-family: var(--global--font-ui);
+	--button--font-size: var(--global--font-size-base);
+	--button--font-weight: normal;
+	--button--line-height: 1;
+	--button--border-width: 2px;
+	--button--border-radius: 4px;
+	--button--padding-vertical: calc(var(--global--spacing-horizontal) - var(--button--border-width));
+	--button--padding-horizontal: var(--global--spacing-horizontal);
+	--cover--height: calc( 15 * var(--global--spacing-vertical) );
+	--cover--color-foreground: var(--global--color-foreground-high-contrast);
+	--cover--color-background: var(--global--color-tertiary);
+	--heading--font-family: var(--global--font-primary);
+	--heading--line-height: 1.3;
+	--heading--font-size-h6: var(--global--font-size-base);
+	--heading--font-size-h5: var(--global--font-size-md);
+	--heading--font-size-h4: var(--global--font-size-lg);
+	--heading--font-size-h3: var(--global--font-size-xl);
+	--heading--font-size-h2: var(--global--font-size-xxl);
+	--heading--font-size-h1: var(--global--font-size-xxxl);
+	--heading--letter-spacing-h6: var(--global--letter-spacing-md);
+	--heading--letter-spacing-h5: var(--global--letter-spacing-md);
+	--heading--letter-spacing-h4: var(--global--letter-spacing-lg);
+	--heading--letter-spacing-h3: var(--global--letter-spacing-xl);
+	--heading--letter-spacing-h2: var(--global--letter-spacing-xxl);
+	--heading--letter-spacing-h1: var(--global--letter-spacing-xxxl);
+	--heading--line-height-h6: 1.3;
+	--heading--line-height-h5: 1.3;
+	--heading--line-height-h4: 1.3;
+	--heading--line-height-h3: var(--heading--line-height);
+	--heading--line-height-h2: var(--heading--line-height);
+	--heading--line-height-h1: var(--heading--line-height);
+	--heading--font-weight: normal;
+	--heading--font-weight-strong: 600;
+	--latest-posts--title-font-family: var(--heading--font-family);
+	--latest-posts--title-font-size: var(--heading--font-size-h3);
+	--latest-posts--description-font-family: var(--global--font-secondary);
+	--latest-posts--description-font-size: var(--global--font-size-sm);
+	--layout-grid--gutter-none: 0px;
+	--layout-grid--gutter-small: calc( var(--global--spacing-unit) / 2);
+	--layout-grid--gutter-medium: var(--global--spacing-unit);
+	--layout-grid--gutter-large: calc( var(--global--spacing-unit) * 2);
+	--layout-grid--gutter-huge: calc( var(--global--spacing-unit) * 3);
+	--layout-grid--background-offset: calc( var(--global--spacing-unit));
+	--list--font-family: var(--global--font-secondary);
+	--definition-term--font-family: var(--global--font-primary);
+	--pullquote--font-family: var(--global--font-primary);
+	--pullquote--font-size: var(--heading--font-size-h2);
+	--pullquote--font-style: italic;
+	--pullquote--letter-spacing: var(--heading--letter-spacing-h4);
+	--pullquote--line-height: var(--global--line-height-heading);
+	--pullquote--border-width: 0;
+	--pullquote--border-color: transparent;
+	--pullquote--color-foreground: var(--global--color-foreground);
+	--pullquote--color-background: var(--global--color-background);
+	--quote--border-color: var(--global--color-secondary);
+	--quote--border-width: 1px;
+	--quote--font-family: var(--global--font-secondary);
+	--quote--font-size: var(--global--font-size-md);
+	--quote--font-size-large: var(--global--font-size-lg);
+	--quote--font-style: normal;
+	--quote--font-style-large: normal;
+	--quote--line-height: var(--global--line-height-body);
+	--quote--line-height-large: 1.5;
+	--separator--border-color: var(--global--color-border);
+	--separator--height: 2px;
+	--separator--width: calc(6 * var(--global--spacing-horizontal));
+	--utilities--font-size-xs: var(--global--font-size-xs);
+	--utilities--font-size-sm: var(--global--font-size-sm);
+	--utilities--font-size-md: var(--global--font-size-md);
+	--utilities--font-size-lg: var(--global--font-size-lg);
+	--utilities--font-size-xl: var(--global--font-size-xl);
+	--utilities--font-size-xxl: var(--global--font-size-xxl);
+	--utilities--font-size-xxxl: var(--global--font-size-xxxl);
+	/* Components */
+	--branding--color-text: var(--global--color-foreground);
+	--branding--color-link: var(--global--color-primary);
+	--branding--color-link-hover: var(--global--color-primary-hover);
+	--branding--title--font-family: var(--global--font-primary);
+	--branding--title--font-size: calc( 1.25 * var(--heading--font-size-h1) );
+	--branding--title--font-size-mobile: var(--heading--font-size-h1);
+	--branding--title--font-weight: 700;
+	--branding--description--font-family: var(--global--font-secondary);
+	--branding--description--font-size: var(--global--font-size-sm);
+	--branding--description--font-family: var(--global--font-secondary);
+	--branding--logo--max-width: 120px;
+	--branding--logo--max-height: 120px;
+	--branding--logo--max-width-mobile: 96px;
+	--branding--logo--max-height-mobile: 96px;
+	--primary-nav--font-family: var(--global--font-secondary);
+	--primary-nav--font-family-mobile: var(--global--font-primary);
+	--primary-nav--font-size: var(--global--font-size-sm);
+	--primary-nav--font-size-mobile: var(--global--font-size-xxl);
+	--primary-nav--font-size-sub-menu-mobile: var(--global--font-size-lg);
+	--primary-nav--font-style: normal;
+	--primary-nav--font-style-sub-menu-mobile: italic;
+	--primary-nav--font-weight: normal;
+	--primary-nav--color-link: var(--global--color-primary);
+	--primary-nav--color-link-hover: var(--global--color-primary-hover);
+	--primary-nav--color-text: var(--global--color-foreground);
+	--primary-nav--padding: calc(0.66 * var(--global--spacing-unit) );
+	--primary-nav--justify-content: center;
+	--social-nav--color-link: var(--global--color-foreground);
+	--social-nav--color-link-hover: var(--global--color-primary-hover);
+	--social-nav--padding: calc( 0.5 * var(--primary-nav--padding) );
+	--entry-header--color: var(--global--color-primary);
+	--entry-header--color-link: currentColor;
+	--entry-header--color-hover: var(--global--color-primary-hover);
+	--entry-header--font-family: var(--heading--font-family);
+	--entry-header--font-size: var(--heading--font-size-h2);
+	--entry-content--font-family: var(--heading--font-size-h2);
+	--entry-meta--color: var(--global--color-foreground);
+	--entry-meta--color-link: currentColor;
+	--entry-meta--color-hover: var(--global--color-primary-hover);
+	--entry-meta--font-family: var(--global--font-primary);
+	--entry-meta--font-size: var(--global--font-size-xs);
+	--entry-author-bio--font-family: var(--heading--font-family);
+	--entry-author-bio--font-size: var(--heading--font-size-h3);
+	--comments--border-color: var(--global--color-border);
+	--footer--color-text: var(--global--color-foreground);
+	--footer--color-link: var(--global--color-primary);
+	--footer--color-link-hover: var(--global--color-primary-hover);
+	--footer--font-family: var(--global--font-primary);
+	--footer--font-size: var(--global--font-size-sm);
+	--pagination--color-text: var(--global--color-foreground);
+	--pagination--color-link: var(--global--color-primary);
+	--pagination--color-link-hover: var(--global--color-primary-hover);
+	--pagination--font-family: var(--global--font-secondary);
+	--pagination--font-size: var(--global--font-size-sm);
+	--pagination--font-weight: normal;
+	/* Vendors */
+	--wc--wrapper-width: default;
+	--wc--table--border-color: var(--global--color-border);
+	--wc--table--border-radius: 0;
+	--wc--table--border-width: 1px;
+	--wc--table--padding: var(--global--spacing-unit);
+	--wc--tabs--border-color: var(--global--color-border);
+	--wc--tabs--border-radius: 10px;
+	--wc--tabs--border-width: 1px;
+	--wc--tabs--padding: var(--global--spacing-horizontal);
+	--wc--mini-cart--color-background: var(--global--color-background);
+	--wc--mini-cart--color-text: var(--global--color-foreground);
+	--wc--mini-cart--color-subtotal: var(--global--color-foreground);
+	--wc--mini-cart--color-count: var(--global--color-foreground-low-contrast);
+	--wc--mini-cart--color-border: var(--global--color-border);
+	--wc--mini-cart--button-text-color: var(--button--color-text);
+	--wc--mini-cart--button-background-color: var(--button--color-background);
+	--wc--mini-cart--width: calc(25 * var(--global--spacing-unit));
+	--wc--star-rating--color: var(--global--color-alert-warning);
+}

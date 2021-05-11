@@ -9,6 +9,15 @@
 @import "../../varia/sass/abstracts/imports";
 
 /**
+* Global variables
+*/
+@import "global-variables";
+
+:root, body {
+	@include global-variables();
+}
+
+/**
  * Child Theme Name
  */
 @import "config-child-theme-deep";
@@ -33,6 +42,12 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Extras
  */
 $color_background: #{map-deep-get($config-global, "color", "background", "default")};
@@ -52,14 +67,14 @@ $font_line_height_body: #{map-deep-get($config-global, "font", "line-height", "b
 $button_line_height: #{map-deep-get($config-button, "font", "line-height")};
 $button_font_weight: #{map-deep-get($config-button, "font", "weight")};
 $button_font_size: #{map-deep-get($config-button, "font", "size")};
-$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")}; 
+$button_spacing_vertical: #{map-deep-get($config-button, "padding", "vertical")};
 $button_spacing_horizontal: #{map-deep-get($config-button, "padding", "horizontal")};
 $button_color: #{map-deep-get($config-button, "color", "text")};
 $button_color_hover: #{map-deep-get($config-button, "color", "text-hover")};
 $button_background: #{map-deep-get($config-button, "color", "background")};
 $button_background_hover: #{map-deep-get($config-button, "color", "background-hover")};
 $font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
-  
+
 /**
  * 1. General Styles
  */
@@ -77,12 +92,6 @@ $font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
 		&:hover {
 			text-decoration: none;
 		}
-	}
-}
-
-.has-background {
-	a {
-		color: currentColor;
 	}
 }
 
@@ -134,8 +143,8 @@ h6 {
 /**
  * 2.2. Quote Block
  */
- .wp-block-quote, 
- .wp-block-quote[style*="text-align:center"], 
+ .wp-block-quote,
+ .wp-block-quote[style*="text-align:center"],
  .wp-block-quote[style*="text-align:right"] {
 	border: 1px solid $color_background_light;
 	padding: $spacing_horizontal;
@@ -237,8 +246,8 @@ h6 {
 		border-width: 0;
 		padding: $button_spacing_vertical $button_spacing_horizontal;
 		display: inline-block;
-		&:focus, 
-		&:hover, 
+		&:focus,
+		&:hover,
 		&:visited {
 			color: $button_color_hover;
 			background-color: $button_background_hover;
@@ -247,4 +256,57 @@ h6 {
 		border: none;
 		box-shadow: none;
 	}
+}
+
+.wp-block-a8c-blog-posts {
+	.entry-title a {
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.cat-links a,
+	.more-link,
+	.entry-meta a {
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-a8c-blog-posts {
+		.entry-title a{
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
 }

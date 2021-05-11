@@ -1,0 +1,88 @@
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Apply generic border-box to all elements.
+ * See:
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+/**
+ * Apply border-box across the entire page.
+ */
+html {
+	box-sizing: border-box;
+}
+
+/**
+ * Relax the definition a bit, to allow components to override it manually.
+ */
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+
+// HTML resets
+html {
+	// Set mobile font-size to one step lower for mobile
+	font-size: calc(var(--global--font-size-root) / var(--global--font-size-ratio)); /* #{$typescale-root / $typescale-ratio}; */
+	font-family: var(--global--font-secondary);
+	line-height: var(--global--line-height-body);
+
+	// Set mobile and ^ font-size to normal root
+	@include media(mobile) {
+		font-size: var(--global--font-size-root);
+	}
+}
+
+// body resets
+body {
+	font-size: var(--global--font-size-base); /* #{$typescale-base}; */
+	font-weight: var(--global--font-weight);
+	color: var(--global--color-foreground);
+	text-align: left;
+	background-color: var(--global--color-background);
+}
+
+@import '../base/base';
+
+// Focus styles
+.site *:focus {
+	outline-width: 1px;
+	outline-style: dotted;
+	outline-color: var(--global--color-secondary);
+}

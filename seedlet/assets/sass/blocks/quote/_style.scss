@@ -1,0 +1,90 @@
+.wp-block-quote {
+	border-left: var(--quote--border-width) solid var(--quote--border-color);
+	margin: var(--global--spacing-vertical) 0;
+	padding-left: var(--global--spacing-horizontal);
+
+	& > * {
+		margin-top: var(--global--spacing-unit);
+		margin-bottom: var(--global--spacing-unit);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	p {
+		font-family: var(--quote--font-family);
+		font-size: var(--quote--font-size);
+		font-style: var(--quote--font-style);
+		line-height: var(--quote--line-height);
+	}
+
+	.wp-block-quote__citation,
+	cite,
+	footer {
+		color: var(--global--color-foreground-low-contrast);
+		font-size: var(--global--font-size-xs);
+
+		.has-background:not(.has-background-background-color) &,
+		[class*="background-color"]:not(.has-background-background-color) &,
+		[style*="background-color"] &,
+		.wp-block-cover[style*="background-image"] & {
+			color: currentColor;
+		}
+	}
+
+	/**
+	 * Block Options
+	 */
+	&.has-text-align-right {
+		border-left: none;
+		border-right: var(--quote--border-width) solid var(--quote--border-color);
+		padding-left: 0;
+		padding-right: var(--global--spacing-horizontal);
+	}
+
+	&.has-text-align-center {
+		border: none;
+	}
+
+	&.is-style-large,
+	&.is-large {
+		/* Resetting margins to match _block-container.scss */
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+		padding-left: var(--global--spacing-horizontal);
+
+		&.has-text-align-right {
+			padding-left: 0;
+			padding-right: var(--global--spacing-horizontal);
+		}
+
+		&.has-text-align-center {
+			padding: 0 var(--global--spacing-horizontal);
+		}
+
+		p {
+			font-size: var(--quote--font-size-large);
+			font-style: var(--quote--font-style-large);
+			line-height: var(--quote--line-height-large);
+		}
+
+		.wp-block-quote__citation,
+		cite,
+		footer {
+			color: var(--global--color-foreground-low-contrast);
+			font-size: var(--global--font-size-xs);
+		}
+	}
+
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"] &,
+	.wp-block-cover[style*="background-image"] & {
+		border-color: currentColor;
+	}
+}

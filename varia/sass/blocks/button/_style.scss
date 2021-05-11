@@ -16,25 +16,47 @@ input[type="submit"],
 .wp-block-button {
 
 	// Outline Style
-	&.is-style-outline {
+	&.is-style-outline.wp-block-button__link,
+	&.is-style-outline .wp-block-button__link {
+		border: #{map-deep-get($config-button, "border-width")} solid currentcolor;
+		padding: #{map-deep-get($config-button, "padding", "vertical") - map-deep-get($config-button, "border-width")} #{map-deep-get($config-button, "padding", "horizontal")};
 
-		.wp-block-button__link {
-			color: #{map-deep-get($config-button, "color", "background")};
+		&:not(.has-background) {
 			background: transparent;
-			border: #{map-deep-get($config-button, "border-width")} solid currentcolor;
-			padding: #{map-deep-get($config-button, "padding", "vertical") - map-deep-get($config-button, "border-width")} #{map-deep-get($config-button, "padding", "horizontal")};
+		}
 
+		&:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "background")};
+		}
 
-			&:hover,
-			&:focus,
-			&.has-focus {
-				color: #{map-deep-get($config-button, "color", "background-hover")};
-			}
+		&:active {
+			color: #{map-deep-get($config-button, "color", "background")};
+		}
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			color: #{map-deep-get($config-button, "color", "background-hover")};
+		}
+
+		.has-primary-background-color &:not(.has-text-color) {
+			color: #{map-deep-get($config-button, "color", "text")};
 		}
 	}
 
 	// Squared Style
+	&.is-style-squared,
 	&.is-style-squared .wp-block-button__link {
 		border-radius: 0;
+	}
+
+	// Set alignleft as default floating behavior
+	.entry-content > &:not(.alignleft):not(.alignright) {
+		@extend %responsive-alignleft;
+	}
+
+	// Set aligndefault as center floating behavior
+	.entry-content > &.aligncenter {
+		@extend %responsive-aligndefault;
 	}
 }

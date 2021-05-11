@@ -1,0 +1,44 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	border: var(--form--border-width) solid var(--form--border-color);
+	border-radius: var(--form--border-radius);
+	color: var(--form--color-text);
+	line-height: var(--global--line-height-body);
+	padding: var(--form--spacing-unit);
+	background: var(--form--background-color);
+	box-shadow: var(--form--box-shadow);
+
+	&:focus {
+		color: var(--form--color-text);
+		border-color: var(--form--border-color);
+	}
+}
+
+select {
+	border: var(--form--border-width) solid var(--form--border-color);
+}
+
+textarea {
+	width: 100%;
+}
+
+// Vertically align checkbox + label relationship
+input[type=checkbox] + label {
+	display: inline;
+	margin-left: 0.5em;
+	line-height: 1em;
+}

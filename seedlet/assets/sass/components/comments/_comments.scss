@@ -1,0 +1,218 @@
+/**
+ * Comments Wrapper
+ */
+.comments-area {
+
+	& > * {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/**
+ * Comment Title
+ */
+
+.comments-title,
+.comment-reply-title {
+	font-size: var(--heading--font-size-h3);
+	font-style: italic;
+	letter-spacing: var(--heading--letter-spacing-h3);
+}
+
+.comment-reply-title {
+	display: flex;
+	justify-content: space-between;
+
+	small {
+		a {
+			border-bottom: none;
+			color: currentColor;
+			font-family: var(--global--font-secondary);
+			font-size: var(--global--font-size-xs);
+			font-style: normal;
+			font-weight: normal;
+			letter-spacing: normal;
+		}
+	}
+}
+
+/**
+ * Comment Lists
+ */
+
+.comment-list {
+	padding-left: 0;
+	list-style: none;
+
+	> li {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+
+	> li:not(first-child) {
+		border-bottom: 1px solid var(--comments--border-color);
+	}
+}
+
+.comment-list .children {
+	list-style: none;
+	padding-left: var(--global--spacing-horizontal);
+
+	> li {
+		border-top: 1px solid var(--comments--border-color);
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+
+	@include media(mobile) {
+		padding-left: calc(2 * var(--global--spacing-horizontal));
+	}
+}
+
+/**
+ * Comment Meta
+ */
+
+.comment-meta {
+	$avatar-size: var(--global--spacing-vertical);
+
+	.comment-author {
+		line-height: var(--global--line-height-heading);
+		margin-bottom: calc(0.25 * var(--global--spacing-unit));
+		padding-right: calc(2.5 * var(--global--spacing-horizontal));
+		max-width: calc(100% - (3 * var(--global--spacing-horizontal)));
+
+		@include media(mobile) {
+			margin-bottom: 0;
+			padding-right: 0;
+		}
+
+		.fn {
+			font-family: var(--global--font-secondary);
+			font-weight: normal;
+			font-size: var(--global--font-size-xs);
+			hyphens: auto;
+			padding-left: 60px;
+			word-wrap: break-word;
+			word-break: break-word;
+		}
+
+		.avatar {
+			border: 2px solid var(--global--color-border);
+			border-radius: 50%;
+			position: absolute;
+			top: 5px;
+		}
+	}
+
+	.comment-metadata {
+		color: var(--global--color-foreground);
+		font-size: var(--global--font-size-xs);
+		padding-left: 60px;
+
+		a {
+			border-bottom: none;
+			color: currentColor;
+
+			&:hover,
+			&:focus {
+				border-bottom: 1px solid var(--global--color-secondary);
+				color: var(--global--color-primary-hover);
+			}
+
+			&:active {
+				color: currentColor;
+			}
+		}
+
+		.edit-link {
+			float: right;
+		}
+	}
+
+	@include media(mobile) {
+		margin-right: inherit;
+
+		.comment-author {
+			max-width: inherit;
+		}
+	}
+}
+
+.reply {
+	font-size: var(--global--font-size-sm);
+	line-height: var(--global--line-height-heading);
+
+	a {
+		background-color: var(--button--color-background);
+		border-radius: var(--button--border-radius);
+		border-bottom: none;
+		color: var(--button--color-text);
+		font-weight: var(--button--font-weight);
+		font-family: var(--button--font-family);
+		font-size: var(--button--font-size);
+		line-height: var(--button--line-height);
+		padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+		&:hover,
+		&:focus,
+		&.has-focus {
+			color: var(--button--color-text-hover);
+			background-color: var(--button--color-background-hover);
+		}
+	}
+}
+
+.reply {
+	text-align: right;
+	@include media(mobile) {
+		text-align: left;
+	}
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.says {
+	display: none;
+}
+
+.pingback .url,
+.trackback .url {
+	font-family: var(--global--font-primary);
+}
+
+// Comment body
+.comment-body {
+	position: relative;
+
+	& > * {
+		margin-top: var(--global--spacing-vertical);
+		margin-bottom: var(--global--spacing-vertical);
+	}
+
+	.reply {
+		margin: calc(1.5 * var(--global--spacing-vertical)) 0;
+	}
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+// Pingbacks & Trackbacks
+.pingback .comment-body,
+.trackback .comment-body {
+	margin-top: var(--global--spacing-vertical);
+	margin-bottom: var(--global--spacing-vertical);
+}

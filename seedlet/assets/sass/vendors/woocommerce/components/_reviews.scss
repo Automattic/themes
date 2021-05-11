@@ -1,0 +1,99 @@
+/**
+ * Reviews
+ */
+
+body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Reviews
+	 */
+	#reviews {
+
+		h2 small {
+			color: var(--global--color-foreground-low-contrast);
+			font-size: var(--global--font-size-sm);
+			margin: inherit;
+
+			a {
+				color: currentColor;
+			}
+		}
+
+		.woocommerce-Reviews-title {
+
+		}
+
+		.comment-form {
+
+			.stars a {
+				border-bottom: none;
+			}
+		}
+
+		#comments {
+
+			ol.commentlist {
+
+				padding-left: 0;
+
+				li {
+					margin-bottom: var(--global--spacing-unit);
+
+					.meta {
+						color: var(--global--color-foreground-low-contrast);
+						font-size: var(--global--font-size-sm);
+					}
+
+					img.avatar {
+						padding: 0;
+						width: calc(1.5 * var(--global--spacing-vertical));
+						height: auto;
+						background: transparent;
+						border-color: var(--global--color-border-default);
+						margin: 0;
+						box-shadow: none;
+					}
+
+					.woocommerce-review__author {
+						font-family: var(--global--font-primary);
+					}
+
+					.comment-text {
+						margin-left: calc(4 * var(--global--spacing-unit));
+						border: 1px solid var(--global--color-border);
+						border-radius: 4px;
+						padding: 1em 1em 0;
+
+						p {
+							margin: 0 0 1em;
+						}
+
+						p.meta {
+							font-size: 0.83em;
+						}
+					}
+				}
+
+				ul.children {
+					list-style: none outside;
+					margin: 20px 0 0 50px;
+
+					.star-rating {
+						display: none;
+					}
+				}
+
+				#respond {
+					border: 1px solid var(--global--color-border);
+					border-radius: 4px;
+					padding: 1em 1em 0;
+					margin: 20px 0 0 50px;
+				}
+			}
+
+			.commentlist > li::before {
+				content: "";
+			}
+		}
+	}
+}

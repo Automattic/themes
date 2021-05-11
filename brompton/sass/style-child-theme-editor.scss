@@ -34,8 +34,26 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Extras
  */
 .editor-post-title__input {
 	text-align: center;
+}
+
+.wp-block-a8c-blog-posts .entry-title a {
+	color: inherit;
+
+	&:hover {
+		color: #{map-deep-get($config-global, "color", "primary", "default")};
+	}
+}
+
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
 }

@@ -55,19 +55,28 @@ if ( ! function_exists( 'photos_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'photos_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'photos_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -77,16 +86,19 @@ if ( ! function_exists( 'photos_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 360,
-			'width'       => 720,
-			'flex-width'  => true,
-			'flex-height' => true,
-			'header-text' => array(
-				'site-title',
-				'site-description',
-			),
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 360,
+				'width'       => 720,
+				'flex-width'  => true,
+				'flex-height' => true,
+				'header-text' => array(
+					'site-title',
+					'site-description',
+				),
+			)
+		);
 
 		/* Gutenberg! */
 		add_theme_support( 'align-wide' );
@@ -94,33 +106,36 @@ if ( ! function_exists( 'photos_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
-	    add_theme_support( 'editor-color-palette', array(
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name' => esc_html__( 'red', 'photos' ),
-				'slug' => 'red',
-				'color' => '#d63031',
-			),
-			array(
-				'name' => esc_html__( 'charcoal', 'photos' ),
-				'slug' => 'charcoal',
-				'color' => '#111',
-			),
-			array(
-				'name' => esc_html__( 'very light gray', 'photos' ),
-				'slug' => 'very-light-gray',
-				'color' => '#f0f0f0',
-			),
-			array(
-				'name' => esc_html__( 'very dark gray', 'photos' ),
-				'slug' => 'very-dark-gray',
-				'color' => '#404040',
-			),
-			array(
-				'name' => esc_html__( 'medium gray', 'photos' ),
-				'slug' => 'medium-gray',
-				'color' => '#606060',
+				array(
+					'name'  => esc_html__( 'red', 'photos' ),
+					'slug'  => 'red',
+					'color' => '#d63031',
+				),
+				array(
+					'name'  => esc_html__( 'charcoal', 'photos' ),
+					'slug'  => 'charcoal',
+					'color' => '#111',
+				),
+				array(
+					'name'  => esc_html__( 'very light gray', 'photos' ),
+					'slug'  => 'very-light-gray',
+					'color' => '#f0f0f0',
+				),
+				array(
+					'name'  => esc_html__( 'very dark gray', 'photos' ),
+					'slug'  => 'very-dark-gray',
+					'color' => '#404040',
+				),
+				array(
+					'name'  => esc_html__( 'medium gray', 'photos' ),
+					'slug'  => 'medium-gray',
+					'color' => '#606060',
+				),
 			)
-		) );
+		);
 
 	}
 endif;
@@ -156,15 +171,17 @@ add_action( 'after_setup_theme', 'photos_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function photos_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'photos' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'These widgets will be displayed at the bottom of each page.', 'photos' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'photos' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'These widgets will be displayed at the bottom of each page.', 'photos' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'photos_widgets_init' );
 
@@ -191,7 +208,12 @@ function photos_scripts() {
 	wp_enqueue_script( 'photos-navigation', get_theme_file_uri( '/js/navigation.js' ), array( 'jquery' ), '1.0', true );
 	$photos_l10n['expand']   = esc_attr__( 'Expand child menu', 'photos' );
 	$photos_l10n['collapse'] = esc_attr__( 'Collapse child menu', 'photos' );
-	$photos_l10n['icon']     = photos_get_svg( array( 'icon' => 'expand', 'fallback' => true ) );
+	$photos_l10n['icon']     = photos_get_svg(
+		array(
+			'icon'     => 'expand',
+			'fallback' => true,
+		)
+	);
 
 	wp_localize_script( 'photos-navigation', 'photosScreenReaderText', $photos_l10n );
 
@@ -240,4 +262,3 @@ require get_template_directory() . '/inc/custom-header.php';
  * SVG icons functions and filters.
  */
 require get_template_directory() . '/inc/icon-functions.php';
-

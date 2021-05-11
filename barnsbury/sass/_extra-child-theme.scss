@@ -58,9 +58,9 @@ a {
 		grid-template-rows: auto;
 		grid-column-gap: $spacing_unit;
 		grid-template-areas:
-			"site-logo site-logo"
-			"site-title social-navigation"
-			"site-description main-navigation";
+				"site-logo site-logo"
+				"site-title social-navigation"
+				"site-description main-navigation";
 
 		&:before,
 		&:after {
@@ -72,6 +72,13 @@ a {
 			margin-top: 0;
 			margin-bottom: 0;
 		}
+
+		&.has-logo:not(.has-title-and-tagline) {
+			grid-template-areas:
+				"site-logo main-navigation"
+				"site-logo social-navigation";
+		}
+
 	}
 
 	.site-logo {
@@ -112,7 +119,7 @@ a {
 			}
 
 			& > .menu-item-has-children > a::after {
-					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+				font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 			}
 		}
 
@@ -172,9 +179,9 @@ a {
 .site-main > .page-header,
 .site-main > .not-found > .page-header {
 	margin-top: #{0.666 * $spacing_vertical};
-		@include media(mobile) {
-			margin-top: #{2 * $spacing_vertical};
-		}
+	@include media(mobile) {
+		margin-top: #{2 * $spacing_vertical};
+	}
 }
 
 .site-main > {
@@ -199,7 +206,8 @@ a {
 
 .entry-title,
 .page-title,
-.a8c-posts-list .a8c-posts-list-item__title {
+.a8c-posts-list .a8c-posts-list-item__title,
+.wp-block-newspack-blocks-homepage-articles article .entry-title {
 	a {
 		color: inherit;
 		text-decoration: none;
@@ -385,3 +393,5 @@ a {
 		margin-top: $spacing_unit;
 	}
 }
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";

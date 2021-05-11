@@ -1,0 +1,70 @@
+.entry-meta,
+.entry-footer {
+
+	color: var(--entry-meta--color);
+	clear: both;
+	float: none;
+	font-size: var(--entry-meta--font-size);
+	display: block;
+
+	> span {
+		display: inline-block;
+		margin-right: var(--global--spacing-unit);
+
+		& > *,
+		span .fn {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.published + .updated {
+			display: none; // Hide updated date?
+		}
+	}
+
+	a {
+		border-color: transparent;
+		color: var(--entry-meta--color-link);
+
+		&:hover,
+		&:focus {
+			color: var(--entry-meta--color-hover);
+		}
+
+		&:hover {
+			border-color: var(--global--color-secondary);
+		}
+
+		&:focus {
+			color: var(--global--color-secondary);
+		}
+
+		&:active {
+			color: var(--entry-meta--color-link);
+		}
+	}
+
+	.svg-icon {
+		fill: currentColor;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: calc(0.25 * var(--global--spacing-unit));
+	}
+}
+
+// Extra specificity to override rules in _vertical-margins.scss
+.site-main > article > .entry-footer {
+	margin-top: calc( var(--global--spacing-vertical) * 3 );
+	padding-top: var(--global--spacing-unit);
+	border-top: var(--separator--height) solid var(--separator--border-color);
+
+	// Remove the border if the homepage's main footer is also hidden.
+	.home.page.hide-homepage-footer & {
+		border-width: 0;
+	}
+}

@@ -1,0 +1,102 @@
+@import 'config';
+
+.wp-block-jetpack-layout-grid {
+	/* Grid gutter size options */
+	grid-gap: var(--layout-grid--gutter-large) !important;
+	padding-left: var(--layout-grid--gutter-large) !important;
+	padding-right: var(--layout-grid--gutter-large) !important;
+
+	&.wp-block-jetpack-layout-gutter__small {
+		grid-gap: var(--layout-grid--gutter-small) !important;
+		padding-left: var(--layout-grid--gutter-small) !important;
+		padding-right: var(--layout-grid--gutter-small) !important;
+	}
+
+	&.wp-block-jetpack-layout-gutter__medium {
+		grid-gap: var(--layout-grid--gutter-medium) !important;
+		padding-left: var(--layout-grid--gutter-medium) !important;
+		padding-right: var(--layout-grid--gutter-medium) !important;
+	}
+
+	&.wp-block-jetpack-layout-gutter__large {
+		grid-gap: var(--layout-grid--gutter-large) !important;
+		padding-left: var(--layout-grid--gutter-large) !important;
+		padding-right: var(--layout-grid--gutter-large) !important;
+	}
+
+	&.wp-block-jetpack-layout-gutter__huge {
+		grid-gap: var(--layout-grid--gutter-huge) !important;
+		padding-left: var(--layout-grid--gutter-huge) !important;
+		padding-right: var(--layout-grid--gutter-huge) !important;
+	}
+
+	/* Individual Column Options */
+	.wp-block-jetpack-layout-grid-column {
+		// Background Offset
+		// When a column has a background color, we add negative margins to enable
+		// some of the gutter to work as default padding.
+		&.has-background,
+		&[style^="background-color"] {
+			margin-left: calc(var(--layout-grid--background-offset) * -1) !important;
+			margin-right: calc(var(--layout-grid--background-offset) * -1) !important;
+			padding-left: var(--layout-grid--background-offset) !important;
+			padding-right: var(--layout-grid--background-offset) !important;
+		}
+
+		> * {
+			margin-top: calc( 0.666 * var(--global--spacing-vertical) );
+			margin-bottom: calc( 0.666 * var(--global--spacing-vertical) );
+
+			@include media(mobile) {
+				margin-top: var(--global--spacing-vertical);
+				margin-bottom: var(--global--spacing-vertical);
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+/* Gutter Options */
+@each $size in $layout-gutter-sizes {
+	.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-gutter__#{$size} {
+		grid-gap: var(--layout-grid--gutter-#{$size}) !important;
+	}
+}
+
+/* Padding Options */
+@each $size in $layout-gutter-sizes {
+.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-gutter__#{$size} {
+		// This padding adds end gutters.
+		padding-left: var(--layout-grid--gutter-#{$size}) !important;
+		padding-right: var(--layout-grid--gutter-#{$size}) !important;
+
+		// This padding removes end gutters.
+		&.wp-block-jetpack-layout-gutter__nowrap {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+}
+
+// Additional, user-set paddings.
+// Apply both gutter padding and user-set padding, when a background is also set.
+@each $size in $layout-gutter-sizes {
+	.wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column.wp-block-jetpack-layout-grid__padding-#{$size} {
+		padding: var(--layout-grid--gutter-#{$size}) !important;
+
+		&.has-background,
+		&[style^="background-color"] {
+			padding-top: var(--layout-grid--gutter-#{$size}) !important;
+			padding-right: calc(var(--layout-grid--gutter-#{$size}) + var(--layout-grid--background-offset)) !important;
+			padding-bottom: var(--layout-grid--gutter-#{$size}) !important;
+			padding-left: calc(var(--layout-grid--gutter-#{$size}) + var(--layout-grid--background-offset)) !important;
+		}
+	}
+}

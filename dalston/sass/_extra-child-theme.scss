@@ -52,9 +52,9 @@ a {
 		grid-auto-flow: row;
 		grid-column-gap: $spacing_unit;
 		grid-template-areas:
-			"site-branding site-branding"
-			"site-description site-description"
-			"main-navigation social-navigation";
+				"site-branding site-branding"
+				"site-description site-description"
+				"main-navigation social-navigation";
 
 		&:before,
 		&:after {
@@ -107,7 +107,7 @@ a {
 				}
 
 				& > .menu-item-has-children > a::after {
-						font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
+					font-size: #{0.5 * map-deep-get($config-global, "font", "size", "base")};
 				}
 			}
 
@@ -179,8 +179,8 @@ a {
 		grid-auto-flow: row;
 		grid-column-gap: #{2 * $spacing_unit};
 		grid-template-areas:
-			". main-navigation social-navigation"
-			"site-branding site-description social-navigation";
+				". main-navigation social-navigation"
+				"site-branding site-description social-navigation";
 
 	}
 }
@@ -216,11 +216,17 @@ a {
 .site-main > article > .entry-header {
 	margin: #{3 * $spacing_unit} 0 $spacing_unit;
 	position: relative;
+	.hide-homepage-header & {
+		margin: $spacing_unit 0 $spacing_unit;		
+	}
 }
 
 @include media(mobile) {
 	.site-main > article > .entry-header {
 		margin: #{3 * $spacing_vertical} auto #{2 * $spacing_unit};
+		.hide-homepage-header & {
+			margin: #{2 * $spacing_unit} auto #{2 * $spacing_unit};			
+		}
 	}
 }
 
@@ -248,6 +254,7 @@ a {
 	font-weight: 600;
 }
 
+
 /**
  * Blocks
  */
@@ -262,11 +269,47 @@ a {
 	}
 }
 
-.entry-content [class*="__inner-container"] a {
+.entry-content [class*="__inner-container"] a:not(.wp-block-button__link) {
 	text-decoration: underline;
 
 	&:hover {
 		text-decoration: none;
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.cat-links a,
+		.entry-title a:hover,
+		.entry-meta a {
+			text-decoration: none;
+		}
+	}
+
+	&.image-alignbehind article {
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.more-link:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a,
+		.more-link {
+			text-decoration: none;
+		}
+
+		.cat-links a:hover,
+		.entry-title a:hover,
+		.entry-meta a:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -279,4 +322,28 @@ a {
 
 .footer-navigation .footer-menu a {
 	font-size: map-deep-get($config-global, "font", "size", "xs");
+}
+
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			.site-branding {
+				display: contents;
+			}
+		}
+		.main-navigation {
+			.dropdown-icon {
+				/* This is fixed the issue when the button changes widths */
+				font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma;
+			}
+		}
+		.site-description.site-description {
+			font-size: map-deep-get($config-global, "font", "size", "root" );
+		}
+	}
+
 }

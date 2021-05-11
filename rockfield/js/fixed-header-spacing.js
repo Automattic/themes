@@ -49,10 +49,14 @@
 		} else {
 			var header  = document.getElementById( 'masthead' );
 			var content = document.getElementById( 'primary' );
+			var headerOffsetHeight = 0;
 
-			content.style.marginTop = header.offsetHeight + "px";
+			if ( header ) {
+				headerOffsetHeight = header.offsetHeight;
+				content.style.marginTop = headerOffsetHeight + "px";
+			}
 
-			if ( document.documentElement.clientHeight / 5 - header.offsetHeight >= 0 ) {
+			if ( document.documentElement.clientHeight / 5 - headerOffsetHeight >= 0 ) {
 				body.classList.add( 'wp-sticky-header' );
 			} else {
 				body.classList.remove( 'wp-sticky-header' );
@@ -81,5 +85,6 @@
 	/**
 	 * Run our page header height function
 	 */
+	window.addEventListener( 'load', pageHeaderHeight );
 	pageHeaderHeight();
 })();

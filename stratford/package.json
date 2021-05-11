@@ -1,6 +1,6 @@
 {
   "name": "stratford",
-  "version": "1.3.0",
+  "version": "1.4.8",
   "description": "Stratford",
   "bugs": {
     "url": "https://github.com/Automattic/themes/issues"
@@ -10,7 +10,7 @@
     "@wordpress/browserslist-config": "^2.6.0",
     "autoprefixer": "^9.6.1",
     "chokidar-cli": "^2.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.3",
     "postcss-focus-within": "^3.0.0",
@@ -40,7 +40,7 @@
     "build:woocommerce": "node-sass sass/style-child-theme-woocommerce.scss style-woocommerce.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-woocommerce.css",
     "build:woocommerce-rtl": "rtlcss style-woocommerce.css style-woocommerce-rtl.css",
     "build:print": "node-sass sass/print.scss print.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r print.css",
-    "build": "run-p \"build:*\"",
+    "build": "run-s \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   }
 }

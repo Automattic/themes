@@ -60,7 +60,7 @@ a {
 		grid-template-rows: auto;
 		grid-column-gap: #{map-deep-get($config-global, "spacing", "unit")};
 		grid-template-areas:
-			"site-branding main-navigation";
+				"site-branding main-navigation";
 
 		&:before,
 		&:after {
@@ -166,9 +166,9 @@ a {
 .site-main > .page-header,
 .site-main > .not-found > .page-header {
 	margin-top: #{0.666 * $spacing_vertical};
-		@include media(mobile) {
-			margin-top: #{2 * $spacing_vertical};
-		}
+	@include media(mobile) {
+		margin-top: #{2 * $spacing_vertical};
+	}
 }
 
 /**
@@ -178,7 +178,8 @@ a {
 // Entry Title Link
 .entry-title,
 .page-title,
-.a8c-posts-list .a8c-posts-list-item__title {
+.a8c-posts-list .a8c-posts-list-item__title,
+.wp-block-newspack-blocks-homepage-articles article .entry-title {
 	a {
 		color: inherit;
 		text-decoration: none;
@@ -284,6 +285,63 @@ a {
 .jetpack-business-hours {
 	dd {
 		padding-left: 0;
+	}
+}
+
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		.more-link {
+
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: $color_primary_hover;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.more-link {
+			&:active,
+			&:focus,
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -397,5 +455,18 @@ a {
 @include media(mobile-only) {
 	.social-links-menu {
 		justify-content: center;
+	}
+}
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			.site-branding {
+				display: contents;
+			}
+		}
 	}
 }

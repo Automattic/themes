@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/ixion/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: A theme for non-profits, organizations, and schools.
-Version: 1.1.5-wpcom
+Version: 1.1.6-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ixion
@@ -609,7 +609,7 @@ input[type="submit"]:focus,
 }
 #infinite-handle span:after {
 	display: inline;
-	content: '\2192';
+	content: "\2192" /*rtl:"\2190"*/;
 	margin-left: 6px;
 }
 
@@ -846,7 +846,7 @@ table {
 .comment-navigation .nav-previous a:before,
 .posts-navigation .nav-previous a:before,
 .post-navigation .nav-previous a:before {
-	content: '\2190';
+	content: "\2190" /*rtl:"\2192"*/;
 	margin-right: 6px;
 }
 .comment-navigation .nav-next a,
@@ -857,7 +857,7 @@ table {
 .comment-navigation .nav-next a:after,
 .posts-navigation .nav-next a:after,
 .post-navigation .nav-next a:after {
-	content: '\2192';
+	content: "\2192" /*rtl:"\2190"*/;
 	margin-left: 6px;
 }
 
@@ -1449,7 +1449,7 @@ body {
 	padding: 3.2em 1.4em;
 }
 .footer-widgets .widget {
-	background: #fff;
+	background: transparent;
 	font-size: 16px;
 	padding: 0;
 }

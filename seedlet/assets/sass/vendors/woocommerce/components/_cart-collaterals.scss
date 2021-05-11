@@ -1,0 +1,52 @@
+/**
+ * Cart Collaterals
+ */
+body[class*="woocommerce"] #page { // adding #page here to override default wc styles without !important
+
+	.cart-collaterals,
+	#add_payment_method .cart-collaterals {
+
+		.cart_totals,
+		.cross-sells {
+
+			tr td,
+			tr th {
+				border-top-color: var(--wc--table--border-color);
+			}
+
+			& > h2 {
+				font-size: var(--global--font-size-lg);
+			}
+		}
+
+		.cart_totals {
+
+			p small {
+				color: var(--global--color-foreground-low-contrast);
+				font-size: var(--global--font-size-sm);
+			}
+
+			table {
+				margin: 0 0 calc(0.5 * var(--wc--table--padding));
+
+				td,
+				th {
+					line-height: var(--global--line-height-body);
+				}
+
+				small {
+					color: var(--wc--mini-cart--color-count);
+				}
+			}
+
+			.discount td {
+				color: var(--wc--star-rating--color);
+			}
+		}
+
+		.shipping-calculator-button,
+		.shipping-calculator-form {
+			margin-top: var(--wc--tabs--padding);
+		}
+	}
+}

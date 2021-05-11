@@ -1,0 +1,165 @@
+.wp-block-newspack-blocks-homepage-articles {
+	&.image-aligntop {
+		.post-thumbnail {
+			margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+	}
+
+	&.image-alignleft {
+		.post-thumbnail {
+			margin-right: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+	}
+
+	&.image-alignright {
+		.post-thumbnail {
+			margin-left: #{map-deep-get($config-global, "spacing", "vertical")};
+		}
+	}
+
+	&.image-alignbehind .post-has-image .entry-wrapper {
+		padding: #{map-deep-get($config-global, "spacing", "vertical")};
+	}
+
+	&.is-grid article {
+		margin-top: 0;
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+
+		@include media(mobile) {
+			margin-bottom: #{3 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+	}
+
+	.article-section-title {
+		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
+
+		& + article {
+			margin-top: 0;
+		}
+	}
+
+	article {
+		display: block;
+
+		/* Vertical margins logic between posts */
+		margin-top: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+		margin-bottom: #{2 * map-deep-get($config-global, "spacing", "vertical")};
+
+		@include media(mobile) {
+			margin-top: #{3 * map-deep-get($config-global, "spacing", "vertical")};
+			margin-bottom: #{3 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: #{3 * map-deep-get($config-global, "spacing", "vertical")};
+		}
+
+		.post-thumbnail img {
+			width: auto;
+		}
+
+		.entry-wrapper > * {
+			/* Vertical margins logic between post details */
+			margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.entry-title {
+			a {
+				color: #{map-deep-get($config-global, "color", "primary", "default")};
+
+				.has-background:not(.has-background-background-color) &,
+				[class*="background-color"]:not(.has-background-background-color) &,
+				[style*="background-color"] & {
+					color: currentColor;
+				}
+
+				&:hover {
+					color: #{map-deep-get($config-global, "color", "primary", "hover")};
+					text-decoration: underline;
+
+					.has-background:not(.has-background-background-color) &,
+					[class*="background-color"]:not(.has-background-background-color) &,
+					[style*="background-color"] & {
+						color: currentColor;
+					}
+				}
+			}
+		}
+
+		.more-link {
+			@include media(mobile) {
+				margin-top: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+		}
+
+		.entry-meta,
+		.cat-links {
+			color: #{map-deep-get($config-global, "color", "foreground", "light")};
+			font-size: #{map-deep-get($config-global, "font", "size", "sm")};
+
+			.has-background:not(.has-background-background-color) &,
+			[class*="background-color"]:not(.has-background-background-color) &,
+			[style*="background-color"] & {
+				color: currentColor;
+			}
+
+			> span > * {
+				vertical-align: top;
+			}
+
+			.byline:not(:last-child) {
+				margin-right: #{map-deep-get($config-global, "spacing", "unit")};
+			}
+
+			.published + .updated {
+				display: none;
+			}
+
+			a {
+				color: currentColor;
+				text-decoration: underline;
+
+				&:hover,
+				&:active {
+					color: #{map-deep-get($config-global, "color", "primary", "hover")};
+					text-decoration: none;
+
+					.has-background:not(.has-background-background-color) &,
+					[class*="background-color"]:not(.has-background-background-color) &,
+					[style*="background-color"] & {
+						color: currentColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+@import "../../base/extends";
+button[data-load-more-btn], .button {
+	// Extend button style
+	@extend %button-style;
+	display: inline-block;
+
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"] & {
+		background-color: transparent;
+		border: 2px solid currentColor;
+		color: currentColor;
+	}
+}

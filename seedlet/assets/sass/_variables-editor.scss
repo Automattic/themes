@@ -1,0 +1,29 @@
+@import "abstracts/mixins";
+@import "abstracts/config";
+@import "elements/config";
+@import "blocks/config";
+@import "components/config";
+@import "vendors/config";
+
+@include add_variables( editor ) {
+	/* Globals */
+	@include global-variables();
+	/* Elements */
+	@include form-variables();
+	/* Blocks */
+	@include button-variables();
+	@include cover-variables();
+	@include heading-variables();
+	@include latest-posts-variables();
+	@include layout-grid-variables();
+	@include list-variables();
+	@include pullquote-variables();
+	@include quote-variables();
+	@include separator-variables();
+	@include utilities-variables();
+	/* Components */
+	@include header-variables();
+	@include entry-variables();
+	/* Vendors */
+	@include woocommerce-variables();
+}

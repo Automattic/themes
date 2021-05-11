@@ -18,7 +18,6 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function mayland_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,52 +52,60 @@ if ( ! function_exists( 'mayland_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
+		/*
+		 * Get customizer colors and add them to the editor color palettes
+		 *
+		 * - if the customizer color is empty, use the default
+		 */
+		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#000000'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#1a1a1a';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#010101';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#010101' ) ? $colors_array['colors']['txt'] : '#666666';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#010101' ) ? $colors_array['colors']['txt'] : '#333333';  // $config-global--color-foreground-dark-default;
+
+		// Editor color palette.
 		add_theme_support(
 			'editor-color-palette',
 			array(
 				array(
 					'name'  => __( 'Primary', 'mayland' ),
 					'slug'  => 'primary',
-					'color' => '#000000',
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'mayland' ),
 					'slug'  => 'secondary',
-					'color' => '#1a1a1a',
+					'color' => $secondary,
 				),
 				array(
-					'name'  => __( 'Dark Gray', 'mayland' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#333333',
-				),
-				array(
-					'name'  => __( 'Black', 'mayland' ),
-					'slug'  => 'foreground',
-					'color' => '#000000',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'mayland' ),
-					'slug'  => 'foreground-light',
-					'color' => '#666666',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'mayland' ),
-					'slug'  => 'background-dark',
-					'color' => '#d9d9d9',
-				),
-				array(
-					'name'  => __( 'Off White', 'mayland' ),
-					'slug'  => 'background-light',
-					'color' => '#F2F2F2',
-				),
-				array(
-					'name'  => __( 'White', 'mayland' ),
+					'name'  => __( 'Background', 'mayland' ),
 					'slug'  => 'background',
-					'color' => '#FFFFFF',
+					'color' => $background,
+				),
+				array(
+					'name'  => __( 'Foreground', 'mayland' ),
+					'slug'  => 'foreground',
+					'color' => $foreground,
+				),
+				array(
+					'name'  => __( 'Foreground Light', 'mayland' ),
+					'slug'  => 'foreground-light',
+					'color' => $foreground_light,
+				),
+				array(
+					'name'  => __( 'Foreground Dark', 'mayland' ),
+					'slug'  => 'foreground-dark',
+					'color' => $foreground_dark,
 				),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'mayland_setup', 12 );
@@ -131,6 +138,13 @@ function mayland_fonts_url() {
 
 		$font_families[] = 'Poppins:400,400i,600,600i';
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -154,7 +168,7 @@ function mayland_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('mayland-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'mayland-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'mayland-style', 'rtl', 'replace' );
@@ -169,5 +183,15 @@ function mayland_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'mayland-editor-fonts', mayland_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager' );
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#666666' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'mayland_editor_styles' );

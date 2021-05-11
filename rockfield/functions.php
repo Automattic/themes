@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#444444',
+			'primary'    => '#222222',
+			'secondary'  => '#116821',
+			'tertiary'   => '#E0E0E0',
+		);
+	}
+}
+
 if ( ! function_exists( 'rockfield_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -18,7 +30,6 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function rockfield_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,52 +64,8 @@ if ( ! function_exists( 'rockfield_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'rockfield' ),
-					'slug'  => 'primary',
-					'color' => '#222222',
-				),
-				array(
-					'name'  => __( 'Secondary', 'rockfield' ),
-					'slug'  => 'secondary',
-					'color' => '#116821',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'rockfield' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#111111',
-				),
-				array(
-					'name'  => __( 'Gray', 'rockfield' ),
-					'slug'  => 'foreground',
-					'color' => '#444444',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'rockfield' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'rockfield' ),
-					'slug'  => 'background-dark',
-					'color' => '#E0E0E0',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'rockfield' ),
-					'slug'  => 'background-light',
-					'color' => '#F0F0F0',
-				),
-				array(
-					'name'  => __( 'White', 'rockfield' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'rockfield_setup', 12 );
@@ -143,6 +110,13 @@ function rockfield_fonts_url() {
 			$font_families[] = 'Lora:400,400i,700,700i';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -166,13 +140,15 @@ function rockfield_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('rockfield-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'rockfield-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'rockfield-style', 'rtl', 'replace' );
 
-	// enqueue header spacing JS
-	wp_enqueue_script('rockfield-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	if ( ! rockfield_is_amp() ) {
+		// enqueue header spacing JS.
+		wp_enqueue_script( 'rockfield-fixed-header-spacing', get_stylesheet_directory_uri() . '/js/fixed-header-spacing.js', array(), wp_get_theme()->get( 'Version' ), true );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'rockfield_scripts', 99 );
@@ -186,3 +162,10 @@ function rockfield_editor_styles() {
 	wp_enqueue_style( 'rockfield-editor-fonts', rockfield_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'rockfield_editor_styles' );
+
+/**
+ * Checks whether the endpoint is AMP.
+ */
+function rockfield_is_amp() {
+	return ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() );
+}

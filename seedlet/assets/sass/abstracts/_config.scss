@@ -1,0 +1,72 @@
+// Vertical Rhythm Multiplier
+$baseline-unit: 10px;
+
+// Typescale Multipliers
+$typescale-root: 18px; // Set 16px/1em default on html
+$typescale-base: 1em; // Set 1em default on body == $typescale-root;
+$typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-root;
+
+@mixin global-variables() {
+	/* Font Family */
+	--global--font-primary: var(--font-headings, 'Playfair Display', Georgia, Times, serif);
+	--global--font-secondary: var(--font-base, 'Fira Sans', Helvetica, Arial, sans-serif);
+	--global--font-code: monospace, monospace;
+	--global--font-ui: var(--font-base, var(--global--font-secondary));
+
+	/* Font Size */
+	--global--font-size-root: #{$typescale-root};
+	--global--font-size-ratio: #{$typescale-ratio};
+	--global--font-size-base: #{$typescale-base};
+	--global--font-size-xs: 14px;
+	--global--font-size-sm: 16px;
+	--global--font-size-md: 18px;
+	--global--font-size-lg: 24px;
+	--global--font-size-xl: 28px;
+	--global--font-size-xxl: 32px;
+	--global--font-size-xxxl: 48px;
+	--global--letter-spacing: normal;
+
+	/* Font Weight */
+	--global--font-weight: normal;
+
+	/* Line Height */
+	--global--line-height-base: #{$typescale-base / ( $typescale-base * 0 + 1 )};
+	--global--line-height-body: 1.7;
+	--global--line-height-heading: 1.3;
+
+	/* Colors */
+	--global--color-primary: #000000;
+	--global--color-secondary: #3C8067;
+	--global--color-primary-hover: var( --global--color-secondary );
+	--global--color-secondary-hover: #336D58;
+	--global--color-black: black;
+	--global--color-white: white;
+	--global--color-foreground: #333333;
+	--global--color-foreground-low-contrast: #444444;
+	--global--color-foreground-high-contrast: #000000;
+	--global--color-background: #FFFFFF;
+	--global--color-tertiary: #FAFBF6;
+	--global--color-background-dark: #DDDDDD;
+	--global--color-border: #EFEFEF;
+	--global--color-text-selection: #EBF2F0;
+	--global--color-alert-success: yellowgreen;
+	--global--color-alert-info: skyblue;
+	--global--color-alert-warning: gold;
+	--global--color-alert-error: salmon;
+
+	/* Spacing */
+	--global--spacing-unit: #{2 * $baseline-unit}; // 20px
+	--global--spacing-measure: unset; // Use ch units here. ie: 60ch = 60 character max-width
+	--global--spacing-horizontal: #{2.5 * $baseline-unit}; // 25px
+	--global--spacing-vertical: #{3 * $baseline-unit}; // 30px.
+
+	/* Elevation */
+	--global--elevation: 1px 1px 3px 0px rgba( 0, 0, 0, 0.2 );
+
+	/* Other */
+	--global--border-radius-sm: #{0.5 * $typescale-root};
+	--global--border-radius-md: #{0.75 * $typescale-root};
+	--global--border-radius-lg: #{$typescale-root};
+	--global--border-radius-pill: #{10 * $typescale-root};
+	--global--border-radius-none: 0;
+}

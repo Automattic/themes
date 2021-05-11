@@ -33,9 +33,36 @@
 @import "../../varia/sass/blocks/editor";
 
 /**
+ * Vendors
+ * - Styles for 3rd party plugins and WP extensions
+ */
+@import "../../varia/sass/vendors/editor";
+
+/**
  * Extras
  */
 .editor-post-title__block .editor-post-title__input {
 	text-align: center;
 	font-size: (strip-unit( map-deep-get($config-heading, "font", "size", "h1") ) + 0em);
+}
+
+.wp-block-a8c-blog-posts {
+	.entry-title a {
+		color: inherit;
+	}
+
+	.cat-links a,
+	.more-link,
+	.byline a {
+		text-decoration: none;
+
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.wp-block-a8c-blog-posts + .button {
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
 }

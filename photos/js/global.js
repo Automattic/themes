@@ -3,7 +3,7 @@
 	var body, header, content, hero, adminBar, adminHeight = 0, headerHeight = 0, extraSpacing = 0, resizeTimer;
 
 	function contentPadding() {
-		if ( window.innerWidth >= 768 ) {
+		if ( window.innerWidth >= 658 ) {
 			content.css( 'padding-top', header.outerHeight() );
 		} else {
 			content.css( 'padding-top', '' );

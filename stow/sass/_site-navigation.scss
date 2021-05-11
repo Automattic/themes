@@ -1,0 +1,33 @@
+.main-navigation {
+    .alignwide, .alignfull {
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .has-background > .main-menu.footer-menu {
+        padding: 0;
+    }
+}
+
+.fse-header .main-navigation {
+    border-bottom: 2px solid rgba(0,0,0,.15);
+
+    div ul li {
+        @include media(mobile) {
+            a::after {
+                color: #ffa4ad;
+                content: " \2022";
+                margin-left: #{map-deep-get($config-global, "spacing", "unit")};
+                display: inline;
+            }
+            &:last-child a::after {
+                content: "";
+                margin-left: 0;
+            }
+        }
+    }
+}

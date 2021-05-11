@@ -1,0 +1,88 @@
+/**
+ * Tabs
+ */
+
+body[class*="woocommerce"] #page { // adding #content here to override default wc styles without !important
+
+	/**
+	 * Tabs
+	 */
+	.woocommerce-tabs {
+
+		ul.tabs {
+
+			padding-left: var(--global--spacing-horizontal);
+			margin-bottom: var(--global--spacing-vertical);
+
+			li {
+				background-color: var(--global--color-tertiary);
+				border-color: var(--wc--tabs--border-color);
+				border-top-left-radius: var(--wc--tabs--border-radius);
+				border-top-right-radius: var(--wc--tabs--border-radius);
+				padding-left: 0;
+				padding-right: 0;
+
+				a {
+					color: var(--global--color-foreground-low-contrast);
+					padding-left: var(--wc--tabs--padding);
+					padding-right: var(--wc--tabs--padding);
+					padding-top: calc(0.5 * var(--wc--tabs--padding));
+					padding-bottom: calc(0.5 * var(--wc--tabs--padding));
+					font-weight: normal;
+					border-bottom: none;
+
+					&:hover {
+						color: var(--global--color-primary-hover);
+					}
+				}
+
+				&.active {
+					background-color: var(--global--color-background);
+					border-color: var(--wc--tabs--border-color);
+					border-bottom-color: var(--global--color-background);
+
+					a {
+						color: var(--global--color-foreground-high-contrast);
+						text-shadow: inherit;
+					}
+
+					&::before {
+						box-shadow: 2px 2px 0 var(--global--color-background);
+					}
+
+					&::after {
+						box-shadow: -2px 2px 0 var(--global--color-background);
+					}
+				}
+
+				&::before,
+				&::after {
+					border-color: var(--wc--tabs--border-color);
+				}
+
+				&::before {
+					box-shadow: 2px 2px 0 var(--global--color-tertiary);
+				}
+
+				&::after {
+					box-shadow: -2px 2px 0 var(--global--color-tertiary);
+				}
+			}
+
+			&::before {
+				border-bottom-color: var(--wc--tabs--border-color);
+			}
+		}
+
+		.panel {
+
+			margin-bottom: var(--global--spacing-vertical);
+
+			h2,
+			.comment-reply-title {
+				font-family: var(--global--font-primary);
+				font-size: var(--global--font-size-lg);
+			}
+		}
+	}
+}

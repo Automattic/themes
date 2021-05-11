@@ -1,0 +1,223 @@
+.wp-block-newspack-blocks-homepage-articles,
+.wp-block-a8c-blog-posts {
+
+	&.image-aligntop {
+		.post-thumbnail {
+			margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+		}
+	}
+
+	&.image-alignleft {
+		.post-thumbnail {
+			margin-right: var(--global--spacing-vertical);
+		}
+	}
+
+	&.image-alignright {
+		.post-thumbnail {
+			margin-left: var(--global--spacing-vertical);
+		}
+	}
+
+	&.image-alignbehind .post-has-image .entry-wrapper {
+		padding: var(--global--spacing-vertical);
+	}
+
+	&.is-grid article {
+		margin-top: 0;
+		margin-bottom: var(--global--spacing-vertical);
+
+		@include media(mobile) {
+			margin-bottom: calc(3 * var(--global--spacing-vertical));
+		}
+	}
+
+	h2.article-section-title {
+		font-size: var(--heading--font-size-h4);
+		letter-spacing: var(--heading--letter-spacing-h4);
+		line-height: var(--heading--line-height-h4);
+		margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+
+		& + article {
+			margin-top: 0;
+		}
+	}
+
+	article {
+		display: block;
+
+		/* Vertical margins logic between posts */
+		margin-top: calc(2 * var(--global--spacing-vertical));
+		margin-bottom: calc(2 * var(--global--spacing-vertical));
+
+		@include media(mobile) {
+			margin-top: calc(3 * var(--global--spacing-vertical));
+			margin-bottom: calc(3 * var(--global--spacing-vertical));
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: calc(3 * var(--global--spacing-vertical));
+		}
+
+		.post-thumbnail img {
+			width: auto;
+		}
+
+		.entry-wrapper > * {
+			/* Vertical margins logic between post details */
+			margin-top: var(--global--spacing-unit);
+			margin-bottom: var(--global--spacing-unit);
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.entry-title {
+			a {
+				color: var(--global--color-primary);
+
+				.has-background:not(.has-background-background-color) &,
+				[class*="background-color"]:not(.has-background-background-color) &,
+				[style*="background-color"] & {
+					color: currentColor;
+				}
+
+				&:hover,
+				&:focus {
+					color: var(--global--color-primary-hover);
+
+					.has-background:not(.has-background-background-color) &,
+					[class*="background-color"]:not(.has-background-background-color) &,
+					[style*="background-color"] & {
+						color: currentColor;
+					}
+				}
+
+				&:active {
+					color: var(--global--color-primary);
+				}
+			}
+		}
+
+		.more-link {
+			@include media(mobile) {
+				margin-top: var(--global--spacing-unit);
+			}
+		}
+
+		.entry-meta,
+		.cat-links {
+			color: var(--global--color-foreground-low-contrast);
+			font-size: var(--global--font-size-sm);
+
+			.has-background:not(.has-background-background-color) &,
+			[class*="background-color"]:not(.has-background-background-color) &,
+			[style*="background-color"] & {
+				color: currentColor;
+			}
+
+			> span > * {
+				vertical-align: top;
+			}
+
+			.byline:not(:last-child) {
+				margin-right: var(--global--spacing-unit);
+			}
+
+			.published + .updated {
+				display: none;
+			}
+
+			a {
+				color: currentColor;
+
+				&:hover,
+				&:active {
+					color: var(--global--color-primary-hover);
+					text-decoration: none;
+
+					.has-background:not(.has-background-background-color) &,
+					[class*="background-color"]:not(.has-background-background-color) &,
+					[style*="background-color"] & {
+						color: currentColor;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Block Style
+
+@include media(tablet) {
+	.wp-block-newspack-blocks-homepage-articles.is-style-seedlet-alternating-grid,
+	.wp-block-a8c-blog-posts.is-style-seedlet-alternating-grid {
+
+		.article-section-title {
+			margin-left: calc(50% + (0.5 * var(--global--spacing-horizontal)));
+		}
+
+		article {
+			width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			max-width: calc(50% - (0.5 * var(--global--spacing-horizontal)));
+			margin-top: 0;
+			margin-bottom: var(--global--spacing-vertical);
+			text-align: right;
+			clear: both;
+
+			.entry-meta {
+				justify-content: flex-end;
+			}
+
+			&:nth-of-type(2n + 1) {
+				float: right;
+				text-align: left;
+
+				.entry-meta {
+					justify-content: flex-start;
+				}
+			}
+		}
+
+		.more-link {
+			display: inline-block;
+		}
+
+		// Remove the styles that enforce the grid setting.
+		&.wpnbha.is-grid > div {
+			display: inherit;
+		}
+
+		button {
+			clear: both;
+			margin: var(--global--spacing-vertical) auto;
+		}
+	}
+}
+
+// Add theme style to load-more button
+
+@import "../../../../base/extends";
+button[data-load-more-btn],
+.button {
+	// Extend button style
+	@extend %button-style;
+	display: inline-block;
+
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"] & {
+		background-color: transparent;
+		border: var(--button--border-width, 2px) solid currentColor;
+		color: currentColor;
+	}
+}

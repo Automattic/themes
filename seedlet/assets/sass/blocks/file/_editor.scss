@@ -1,0 +1,23 @@
+.wp-block-file {
+	.wp-block-file__textlink {
+		color: var(--global--color-primary);
+		text-decoration: underline; 
+		text-decoration-thickness: 1px; // Not yet supported in Chrome
+		text-underline-offset: 3px;  // Not yet supported in Chrome
+		text-decoration-color: var(--global--color-secondary);
+	}
+
+	.wp-block-file__button-richtext-wrapper {
+		display: block;
+		margin-left: 0;
+	}
+
+	.wp-block-file__button {
+		// Extend button style
+		@include button-style;
+
+		display: inline-block;
+		margin: calc( 0.5 * var(--global--spacing-unit) ) 0 0 0;
+		padding: calc(0.5 * var(--button--padding-vertical)) calc(0.5 * var(--button--padding-horizontal));
+	}
+}

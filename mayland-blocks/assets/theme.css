@@ -1,0 +1,64 @@
+/* Smooth out the fonts. */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Adjust header spacing. */
+.site-header .wp-block-site-title a {
+	text-decoration: none;
+}
+
+.site-header .wp-block-navigation {
+	margin-bottom: 0;
+}
+
+.site-header .wp-block-social-links.alignright {
+	margin: 0 0 0 1em;
+	transform: translateY(-0.3rem);
+}
+
+@media screen and (min-width: 1290px) {
+	.site-header .wp-block-column,
+	.site-footer .wp-block-column {
+		padding-left: var(--wp--custom--margin--horizontal);
+		padding-right: var(--wp--custom--margin--horizontal);
+	}
+}
+
+/* Adjust heading letter spacing. */
+h1, h2, h3 {
+	letter-spacing: -0.015em;
+}
+
+/* 
+ * Preserve image ratios.
+ * Needed until https://github.com/WordPress/gutenberg/pull/27518/ is merged. 
+ */
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+/* Post Meta */
+.post-meta a {
+	color: currentColor;
+}
+
+.post-meta .wp-block-post-author:before {
+	background: url(assets/svg/post-author.svg) no-repeat;
+}
+
+.post-meta .wp-block-post-date:before {
+	background: url(assets/svg/post-date.svg) no-repeat;
+}
+
+.post-meta .wp-block-post-hierarchical-terms:before {
+	background: url(assets/svg/post-category.svg) no-repeat;
+}
+
+.post-meta .wp-block-post-tags:before {
+	background: url(assets/svg/post-tag.svg) no-repeat;
+}
+
+/*# sourceMappingURL=theme.css.map */

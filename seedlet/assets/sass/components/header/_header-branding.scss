@@ -1,0 +1,113 @@
+// Site branding
+
+.site-branding {
+	color: var(--branding--color-text);
+	text-align: center;
+}
+
+// Site title
+
+.site-title {
+
+	color: var(--branding--color-link);
+	font-family: var(--branding--title--font-family);
+	font-size: var(--branding--title--font-size-mobile);
+	letter-spacing: normal;
+	line-height: var(--global--line-height-heading);
+	margin-bottom: calc( var(--global--spacing-vertical) / 2 );
+
+	a {
+		background-image: linear-gradient(to right, var(--global--color-secondary) 100%, transparent 100%);
+		background-position: 0 1.22em;
+		background-repeat: repeat-x;
+		background-size: 8px 1.5px;
+		border-bottom: none;
+		color: currentColor;
+		font-weight: var(--branding--title--font-weight);
+		text-shadow:
+			1px 0px var(--global--color-background),
+			-1px 0px var(--global--color-background),
+			-2px 0px var(--global--color-background),
+			2px 0px var(--global--color-background),
+			-3px 0px var(--global--color-background),
+			3px 0px var(--global--color-background),
+			-4px 0px var(--global--color-background),
+			4px 0px var(--global--color-background),
+			-5px 0px var(--global--color-background),
+			5px 0px var(--global--color-background);
+		transition: background-size 0.1s ease-out;
+
+		&:link,
+		&:visited,
+		&:active {
+			color: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--global--color-secondary);
+			background-size: 8px 0px;
+		}
+
+		&::selection {
+			text-shadow:
+				1px 0px var(--global--color-text-selection),
+				-1px 0px var(--global--color-text-selection),
+				-2px 0px var(--global--color-text-selection),
+				2px 0px var(--global--color-text-selection),
+				-3px 0px var(--global--color-text-selection),
+				3px 0px var(--global--color-text-selection),
+				-4px 0px var(--global--color-text-selection),
+				4px 0px var(--global--color-text-selection),
+				-5px 0px var(--global--color-text-selection),
+				5px 0px var(--global--color-text-selection);
+		}
+	}
+
+	@include media(mobile) {
+		font-size: var(--branding--title--font-size);
+
+		a {
+			background-size: 8px 2px;
+		}
+	}
+}
+
+// Site description
+.site-description {
+	color: currentColor;
+	font-family: var(--branding--description--font-family);
+	font-size: var(--branding--description--font-size);
+}
+
+a.custom-logo-link,
+nav a {
+	border-bottom: 1px solid transparent;
+	text-decoration: none;
+}
+
+.site-title > a {
+	text-underline-width: .125em;
+	text-decoration-color: var(--global--color-secondary);
+}
+
+// Site logo
+
+.site-logo {
+	margin: calc( var(--global--spacing-vertical) / 2 ) var(--global--spacing-horizontal);
+	text-align: center;
+
+	.custom-logo {
+		max-width: var(--branding--logo--max-width);
+		max-height: var(--branding--logo--max-height);
+		height: auto;
+	}
+}
+
+// TODO - this should probably go in the variables declartion but we need the mixin...
+@include media(mobile-only) {
+	:root {
+		--branding--logo--max-width: var(--branding--logo--max-width-mobile);
+		--branding--logo--max-height: var(--branding--logo--max-height-mobile);
+	}
+}

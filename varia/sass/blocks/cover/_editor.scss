@@ -4,16 +4,12 @@
 	background-color: #{map-deep-get($config-cover, "color", "background")};
 	color: #{map-deep-get($config-cover, "color", "foreground")};
 	min-height: #{map-deep-get($config-cover, "height")};
+	margin-top: inherit;
+	margin-bottom: inherit;
 
-	.wp-block-cover__inner-container,
-	.wp-block-cover-image-text,
-	.wp-block-cover-text,
-	.block-editor-block-list__block {
-		color: currentColor; // uses text color specified with background-color options in /blocks/utilities/_style.scss
-
-		a {
-			color: currentColor;
-		}
+	&.has-background-dim {
+		background-color: #{map-deep-get($config-cover, "color", "background")};
+		color: #{map-deep-get($config-cover, "color", "foreground")};
 	}
 
 	/* default & custom background-color */

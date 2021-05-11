@@ -132,6 +132,7 @@ function libre_2_woocommerce_related_products_args( $args ) {
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	) );
+
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'libre_2_woocommerce_related_products_args' );

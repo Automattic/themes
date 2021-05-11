@@ -22,6 +22,18 @@ body {
 	}
 }
 
+@include media(mobile) {
+	.home.page.hide-homepage-header.hide-homepage-title .hentry .entry-content {
+
+			> .wp-block-image.alignfull:first-child,
+			> .wp-block-cover.alignfull:first-child,
+			> .wp-block-media-text.alignfull:first-child,
+			> .wp-block-group.has-background.alignfull:first-child {
+				margin-top: -#{3 * map-deep-get($config-global, "spacing", "unit")};
+			}
+	}
+}
+
 a {
 	text-decoration: none;
 }
@@ -158,111 +170,6 @@ hr.wp-block-separator.is-style-wide,
 }
 
 /**
- * Main Menu
- */
-#site-navigation {
-	background-color: $color_primary_default;
-	order: 2;
-	text-align: center;
-	width: 100%;
-
-	&.main-navigation {
-		ul > li:hover > a,
-		ul > li.focus > a,
-		ul > li.current-menu-item > a {
-			background-color: $color_primary_hover;
-		}
-
-		ul {
-			text-align: inherit;
-
-			li {
-				text-align: left;
-
-				&:first-of-type {
-					> a {
-						padding-left: map-deep-get($config-global, "spacing", "unit");
-					}
-				}
-
-				&:last-of-type {
-					> a {
-						padding-right: map-deep-get($config-global, "spacing", "unit");
-					}
-				}
-
-				a {
-					padding: map-deep-get($config-global, "spacing", "unit");
-					text-decoration: none;
-
-					&:before,
-					&:after {
-						margin: 0;
-					}
-				}
-			}
-
-			@include media(mobile) {
-				li {
-					padding: 0;
-				}
-
-				&.main-menu > li:after {
-					color: $color_primary_hover;
-					content: "\2022";
-					display: inline;
-					font-size: map-deep-get($config-global, "font", "size", "sm");
-					line-height: 1;
-					padding: #{map-deep-get($config-global, "spacing", "unit")} #{0.5 * map-deep-get($config-global, "spacing", "unit")};
-				}
-
-				&.main-menu > li:last-child:after {
-					display: none;
-				}
-			}
-
-			ul {
-				background-color: $color_primary_default;
-				box-shadow: none;
-			}
-		}
-
-		.main-menu {
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-}
-
-/**
- * Mobile Menu
- */
-.main-navigation #toggle:focus + #toggle-menu,
-#toggle-menu {
-	background: map-deep-get($config-global, "color", "primary", "default");
-	color: map-deep-get($config-global, "color", "background", "default");
-	border-radius: 0;
-	text-align: center;
-	text-decoration: none;
-	width: 100%;
-
-	&:active,
-	&:focus,
-	&:hover {
-		background: map-deep-get($config-global, "color", "primary", "hover");
-		color: map-deep-get($config-global, "color", "background", "default");
-	}
-}
-
-.main-navigation #toggle:checked ~ div {
-	border-top: 2px solid map-deep-get($config-global, "color", "background", "default");
-
-	@include media(mobile) {
-		border-top: 0;
-	}
-}
-
-/**
  * Footer Menu
  */
 .footer-navigation {
@@ -344,6 +251,14 @@ hr.wp-block-separator.is-style-wide,
 /**
  * Blocks
  */
+
+// Button
+.entry-content > .wp-block-button:not(.alignleft):not(.alignright) {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
 // Business Hours
 .jetpack-business-hours {
 	dt {
@@ -387,18 +302,70 @@ table,
 	}
 }
 
+.wp-block-newspack-blocks-homepage-articles {
+	article {
+		.entry-title a {
+			color: inherit;
+
+			&:active,
+			&:focus,
+			&:hover {
+				color: map-deep-get($config-global, "color", "primary", "default");
+				text-decoration: none;
+			}
+		}
+
+		.cat-links a,
+		.more-link,
+		.entry-meta a {
+			text-decoration: none;
+
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&.image-alignbehind article {
+		.entry-title a {
+			&:active,
+			&:focus,
+			&:hover {
+				color: inherit;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.has-background:not(.has-background-background-color),
+[class*="background-color"]:not(.has-background-background-color),
+[style*="background-color"] {
+	.wp-block-newspack-blocks-homepage-articles article {
+		.entry-title a{
+			&:active,
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 /**
  * Widgets
  */
 .widget_calendar {
-  caption {
-    font-weight: bold;
-  }
+	caption {
+		font-weight: bold;
+	}
 
-  td,
-  th {
-	   text-align: center;
-  }
+	td,
+	th {
+		text-align: center;
+	}
 }
 
 .widget_archive,
@@ -416,35 +383,35 @@ table,
 .widget_jp_blogs_i_follow,
 .widget_top-click,
 .widget_upcoming_events_widget {
-  ul {
-    border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
-    list-style: none;
-    padding-left: 0;
-  }
+	ul {
+		border-bottom: 1px solid map-deep-get($config-global, "color", "border", "default");
+		list-style: none;
+		padding-left: 0;
+	}
 
-  li {
-    border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
-    padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
-  }
+	li {
+		border-top: 1px solid map-deep-get($config-global, "color", "border", "default");
+		padding: #{0.25 * map-deep-get($config-global, "spacing", "vertical")} 0;
+	}
 }
 
 .widget_categories .children,
 .widget_nav_menu .sub-menu,
 .widget_pages .children {
-  border-bottom: 0;
-  margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
-  padding-left: map-deep-get($config-global, "spacing", "horizontal");
+	border-bottom: 0;
+	margin-bottom: #{-0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	margin-top: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
+	padding-left: map-deep-get($config-global, "spacing", "horizontal");
 }
 
 .widget_recent_entries .post-date {
-  display: block;
+	display: block;
 }
 
 .widget_rss {
-  cite,
-  .rssSummary,
-  .rss-date {
-    display: block;
-  }
+	cite,
+	.rssSummary,
+	.rss-date {
+		display: block;
+	}
 }

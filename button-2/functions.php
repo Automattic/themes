@@ -6,89 +6,104 @@
  */
 
 if ( ! function_exists( 'button_2_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function button_2_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on button, use a find and replace
-	 * to change 'button-2' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'button-2', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'button-2-featured', '982', '9999' );
 
-	// This theme uses wp_nav_menu() in two locations.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Header', 'button-2' ),
-	) );
+	function button_2_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on button, use a find and replace
+		 * to change 'button-2' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain( 'button-2', get_template_directory() . '/languages' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	// Enable support for custom logo.
-	add_theme_support( 'custom-logo', array(
-		'height'      => 300,
-		'width'       => 1200,
-		'flex-height' => true,
-		'flex-width'  => true
-	) );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'button_2_custom_background_args', array(
-		'default-color' => 'f8f8f8',
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
 		/*
-		 * We're using a unique filename for the background image
-		 * to avoid users uploading a file with the same filename
-		 * and avoiding conflict with the `user-background` body_class
-		 * in inc/extras.php and assets/js/customizer.js
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
 		 */
+		add_theme_support( 'title-tag' );
 
-		'default-image' => esc_url( get_template_directory_uri() ) . '/img/buttonbg20170303.png',
-	) ) );
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'button-2-featured', '982', '9999' );
 
-	// Add support for wide images in Gutenberg
-	add_theme_support( 'align-wide' );
+		// This theme uses wp_nav_menu() in two locations.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Header', 'button-2' ),
+			)
+		);
 
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
-}
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
+
+		// Enable support for custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 300,
+				'width'       => 1200,
+				'flex-height' => true,
+				'flex-width'  => true,
+			)
+		);
+
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'button_2_custom_background_args',
+				array(
+					'default-color' => 'f8f8f8',
+
+					/*
+					* We're using a unique filename for the background image
+					* to avoid users uploading a file with the same filename
+					* and avoiding conflict with the `user-background` body_class
+					* in inc/extras.php and assets/js/customizer.js
+					*/
+
+					'default-image' => esc_url( get_template_directory_uri() ) . '/img/buttonbg20170303.png',
+				)
+			)
+		);
+
+		// Add support for wide images in Gutenberg
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+	}
 endif; // button_2_setup
 add_action( 'after_setup_theme', 'button_2_setup' );
 
@@ -122,39 +137,47 @@ add_action( 'template_redirect', 'button_2_adjusted_content_width', 0 );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function button_2_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'button-2' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'button-2' ),
-		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'button-2' ),
-		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'button-2' ),
-		'id'            => 'sidebar-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'button-2' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 1', 'button-2' ),
+			'id'            => 'sidebar-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'button-2' ),
+			'id'            => 'sidebar-3',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 3', 'button-2' ),
+			'id'            => 'sidebar-4',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
 }
 add_action( 'widgets_init', 'button_2_widgets_init' );
 
@@ -184,9 +207,9 @@ add_action( 'wp_enqueue_scripts', 'button_2_scripts' );
  * Register Google Fonts
  */
 function button_2_fonts_url() {
-    $fonts_url = '';
+	$fonts_url = '';
 
-    /* Translators: If there are characters in your language that are not
+	/* Translators: If there are characters in your language that are not
 	 * supported by Lato, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
@@ -208,6 +231,13 @@ function button_2_fonts_url() {
 		if ( 'off' !== $lora ) {
 			$font_families[] = 'Lora:400italic,700italic';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
