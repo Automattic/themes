@@ -28,8 +28,8 @@ function apostrophe_2_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( 'apostrophe_2_mobile_social', array(
   			'type' => 'checkbox',
-  			'section' => 'nav_menu[2]',
-  			'label' => __( 'Display social menu on mobile devices' ),
+  			'section' => 'jetpack_content_options',
+  			'label' => __( 'Display social menu on mobile devices', 'apostrophe-2' ),
 		) );
 	}	
 }
