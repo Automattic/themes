@@ -293,6 +293,10 @@ function apostrophe_2_body_class( $classes ) {
 		$classes[] = 'apostrophe-2-no-sidebar';
 	}
 
+	if ( function_exists( 'jetpack_social_menu' ) && get_theme_mod( 'apostrophe_2_mobile_social' ) == 1 ) {
+		$classes[] = 'show-mobile-social-menu';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'apostrophe_2_body_class' );
