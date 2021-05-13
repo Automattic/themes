@@ -14,6 +14,24 @@ function apostrophe_2_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	function apostrophe_2_sanitize_checkbox( $checked ){ 
+            return ( ( isset( $checked ) && true == $checked ) ? true : false );
+        }
+	
+	if ( function_exists( 'jetpack_social_menu' ) ) {
+		$wp_customize->add_setting( 'apostrophe_2_mobile_social', array(
+  			'capability' => 'edit_theme_options',
+			'transport' => 'refresh',
+			'sanitize_callback'  => 'apostrophe_2_sanitize_checkbox',
+		) );
+
+		$wp_customize->add_control( 'apostrophe_2_mobile_social', array(
+  			'type' => 'checkbox',
+  			'section' => 'jetpack_content_options',
+  			'label' => __( 'Display social menu on mobile devices', 'apostrophe-2' ),
+		) );
+	}	
 }
 add_action( 'customize_register', 'apostrophe_2_customize_register' );
 
