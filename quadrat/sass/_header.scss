@@ -46,16 +46,20 @@
 	&:before {
 		content: "";
 		background-color: var(--wp--custom--color--secondary);
-		clip-path: polygon(13vw 0, 100vw 0, 100vw 28vw, 52vw 63vw, 9vw 3vw);
 		position: absolute;
 		height: 100vw;
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: -1;
-
 		@include break-mobile-only() {
 			clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
+		}
+		@include break-mobile() {
+			clip-path: polygon(0 0, 100vw 0, 100vw 37vw, 52vw 70vw, 0 5vw);
+		}
+		@include break-large() {
+			clip-path: polygon(13vw 0, 100vw 0, 100vw 28vw, 52vw 63vw, 9vw 3vw);
 		}
 	}
 } 
