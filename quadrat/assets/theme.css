@@ -431,9 +431,22 @@ a:active, a:focus {
 	z-index: -1;
 }
 
+@media (max-width: 479px) {
+	.site-header:before {
+		-webkit-clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
+		        clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
+	}
+}
+
 .post-meta {
 	align-items: center;
 	justify-content: center;
+}
+
+@media (max-width: 479px) {
+	.post-meta {
+		padding-top: 120px !important;
+	}
 }
 
 .post-meta .wp-block-post-date::before {
