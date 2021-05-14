@@ -12,7 +12,47 @@ class CustomizerBridge {
 		//this is for the editor
 		add_action( 'enqueue_block_editor_assets', array( $this, 'customizer_bridge_output_variables' ) );
 
+		add_action( 'customize_save_after', array( $this, 'save_to_global_styles' ) );
+
+		add_action( 'save_post_wp_global_styles', array( $this, 'update_from_global_styles' ), 3, 3 );
+
 		$this->theme_customizations = $this->get_theme_customizations();
+	}
+
+	function update_from_global_styles( $post_ID, $post, $update ) {
+		//var_dump( $post );
+	}
+
+	function save_to_global_styles( $manager ) {
+		//      var_dump( WP_Theme_JSON_Resolver::get_user_data() );
+		$user_custom_post_type_id     = WP_Theme_JSON_Resolver::get_user_custom_post_type_id();
+		$user_theme_json_post         = get_post( $user_custom_post_type_id );
+		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
+		//var_dump( $user_theme_json_post_content );
+		$customizer_json = json_decode(
+			'{
+			"settings": {
+				"custom": {
+					"color": {
+
+					}
+				}
+			}
+		}'
+		);
+		foreach ( $this->theme_customizations as $custom_section ) {
+			foreach ( $custom_section->controls as $custom_option ) {
+				$slug_value = get_theme_mod( 'customizer-bridge-' . $custom_option->slug );
+				if ( $slug_value ) {
+					$customizer_json->settings->custom->color->{ $custom_option->slug } = $slug_value;
+				}
+			}
+		}
+		//var_dump( json_encode( $customizer_json ) );
+
+		$merged_settings                    = array_replace_recursive( (array) $user_theme_json_post_content, (array) $customizer_json );
+		$user_theme_json_post->post_content = json_encode( $merged_settings );
+		$result                             = wp_update_post( $user_theme_json_post );
 	}
 
 	function get_theme_customizations() {
@@ -43,7 +83,6 @@ class CustomizerBridge {
 			foreach ( $custom_section->controls as $custom_option ) {
 				$slug_value = get_theme_mod( 'customizer-bridge-' . $custom_option->slug );
 				if ( $slug_value ) {
-					var_dump( $slug_value );
 					$css_variables = $css_variables . '--wp--custom--' . $custom_option->slug . ':' . $slug_value . ';';
 				}
 			}
