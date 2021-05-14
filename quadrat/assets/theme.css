@@ -41,14 +41,6 @@
 	text-align: right;
 }
 
-.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
-	border: 2px solid var(--wp--custom--color--primary);
-	padding: 0.667em 1.333em;
-}
-
 .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
 .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
@@ -118,6 +110,104 @@ ul ul {
 	text-decoration: underline;
 }
 
+.wp-block-post-comments .reply a {
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+.wp-block-post-comments form {
+	display: grid;
+	-moz-column-gap: 1em;
+	     column-gap: 1em;
+	grid-template-rows: auto;
+	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+}
+
+.wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments form textarea {
+	border: none;
+	background: var(--wp--custom--color--secondary);
+	font-size: 1em;
+	width: 100%;
+}
+
+.wp-block-post-comments form p {
+	margin-top: 0;
+}
+
+.wp-block-post-comments form .comment-notes {
+	grid-area: notes;
+}
+
+.wp-block-post-comments form .comment-form-author {
+	grid-area: author;
+}
+
+.wp-block-post-comments form .comment-form-email {
+	grid-area: email;
+}
+
+.wp-block-post-comments form .comment-form-url {
+	grid-area: url;
+}
+
+.wp-block-post-comments form .comment-form-comment {
+	grid-area: comment;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent {
+	grid-area: cookies-consent;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + label {
+	margin-left: 0;
+	padding-left: 2em;
+	position: relative;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::before,
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::after {
+	box-sizing: border-box;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::before {
+	content: "";
+	position: absolute;
+	top: 0.2em;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	border: 1px solid var(--wp--custom--color--foreground);
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"]:checked + ::after {
+	content: "\2715";
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	font-size: 14px;
+}
+
+.wp-block-post-comments form .form-submit {
+	grid-area: form-submit;
+}
+
 .wp-block-post-navigation-link {
 	border-top: 1px solid;
 	display: flex;
@@ -154,6 +244,10 @@ ul ul {
 	text-align: unset;
 }
 
+.wp-block-search .wp-block-search__button {
+	border: none;
+}
+
 .wp-block-table th {
 	font-weight: 500;
 }
@@ -179,14 +273,17 @@ ul ul {
 	}
 }
 
+a {
+	-webkit-text-decoration-line: underline;
+	        text-decoration-line: underline;
+}
+
 a:hover {
 	background: var(--wp--custom--color--primary);
 	color: var(--wp--custom--color--background);
-	text-decoration: none;
 }
 
-a:active,
-a:focus {
+a:active, a:focus {
 	background: var(--wp--custom--color--secondary);
 }
 
