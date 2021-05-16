@@ -12,24 +12,29 @@
 
 <section class="no-results not-found">
 	<header class="page-header default-max-width">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'seedlet' ); ?></h1>
+		<h1 class="page-title"><?php _e( 'No posts published yet!', 'seedlet' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content default-max-width">
 		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			printf(
+			<p><?php _e( 'Your site is set to show the the most recent posts on your homepage - but you don\'t have any Posts published.', 'seedlet' ); ?></p>
+
+			<?php printf(
 				'<p>' . wp_kses(
-					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'seedlet' ),
+					/* translators: 1: link to WP admin new post page. 2: class for anchor */
+					__( '<a href="%1$s" class="%2$s">Add or publish Posts</a>', 'seedlet' ),
 					array(
 						'a' => array(
 							'href' => array(),
+							'class' => 'button',
 						),
 					)
 				) . '</p>',
-				esc_url( admin_url( 'post-new.php' ) )
+				esc_url( admin_url( 'edit.php' ) ),
+				'button',
+
 			);
 
 		elseif ( is_search() ) :
