@@ -306,22 +306,18 @@ a:active, a:focus {
 	background: var(--wp--custom--color--secondary);
 }
 
-.site-header {
-	margin-bottom: var(--wp--custom--margin--vertical);
-}
-
 .site-header > .wp-block-group {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	overflow: inherit;
-	padding: 60px 20px;
+	padding: 20px 20px 60px;
 }
 
 @media (min-width: 480px) {
 	.site-header > .wp-block-group {
-		padding: 35px 35px;
+		padding: var(--wp--custom--margin--vertical);
 	}
 }
 
@@ -332,7 +328,8 @@ a:active, a:focus {
 @media (max-width: 479px) {
 	.site-header > .wp-block-group .wp-block-site-logo {
 		flex-basis: 100%;
-		margin-bottom: 20px;
+		margin: 0 0 10px;
+		text-align: center;
 	}
 }
 
