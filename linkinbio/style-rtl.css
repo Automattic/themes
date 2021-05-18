@@ -1,0 +1,294 @@
+/*
+Theme Name: Link in Bio
+Theme URI: https://github.com/Automattic/themes/root-child
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A quick theme to share links.
+Requires at least: WordPress 5.4 
+Version: 1.2.1
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: seedlet
+Text Domain: linkinbio 
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready, auto-loading-homepage, jetpack-global-styles
+
+Link in Bio WordPress Theme, (C) 2020 Automattic, Inc.
+Seedlet is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Link in Bio bundles the following third-party resources:
+
+Image byAustin Neill on StockSnap.io
+License: CC0
+Source: https://stocksnap.io/photo/concert-stage-GC3VTMX89N
+Included as the default background image.
+*/
+/**
+ * Repsonsive Styles
+ */
+/**
+ * Required Variables
+ */
+/**
+ * Root Media Query Variables
+ */
+:root {
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal));
+	--responsive--aligndefault-width: 100%;
+	--responsive--alignwide-width: 100%;
+	--responsive--alignfull-width: 100%;
+	--responsive--alignwide-width-multiplier: calc(16 * var(--global--spacing-horizontal));
+	--responsive--alignright-margin: var(--global--spacing-horizontal);
+	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+}
+
+@media only screen and (min-width: 482px) {
+	:root {
+		--responsive--aligndefault-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 592px) {
+	:root {
+		--responsive--aligndefault-width: calc(482px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(592px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 652px) {
+	:root {
+		--responsive--aligndefault-width: calc(592px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(652px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 822px) {
+	:root {
+		--responsive--aligndefault-width: calc(652px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(822px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	:root {
+		--responsive--aligndefault-width: calc(652px - var(--responsive--spacing-horizontal));
+		--responsive--alignwide-width: calc(822px - var(--responsive--spacing-horizontal));
+		--responsive--alignright-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc( 0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+}
+
+/**
+ * Extends
+ */
+.default-max-width {
+	max-width: var(--responsive--aligndefault-width);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.wide-max-width {
+	max-width: var(--responsive--alignwide-width);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media only screen and (min-width: 482px) {
+	.full-max-width {
+		max-width: var(--responsive--alignfull-width);
+		width: auto;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/**
+ * Output
+ */
+.site-header {
+	padding-top: calc(2 * var(--global--spacing-vertical));
+	padding-bottom: var(--global--spacing-vertical);
+}
+
+.has-main-navigation .site-header {
+	padding-top: calc(2 * var(--global--spacing-vertical));
+}
+
+@media only screen and (min-width: 482px) {
+	.site-header {
+		padding-top: calc(2 * var(--global--spacing-vertical));
+		padding-bottom: var(--global--spacing-vertical);
+	}
+	.has-main-navigation .site-header {
+		padding-top: var(--global--spacing-vertical);
+	}
+}
+
+.site-title {
+	margin-bottom: calc( var(--global--spacing-vertical) / 4);
+}
+
+.site-title a {
+	background-image: none;
+	text-shadow: none;
+	border-bottom: 1px solid transparent;
+	transition: 0.15s color ease-in-out, 0.15s border-bottom-color ease-in-out;
+}
+
+.site-title a:hover {
+	border-bottom-color: var(--global--color-primary-hover);
+}
+
+/* Temporarily hide the page title on the homepage.
+ * (On WP.com, this will just be handled via Jetpack)
+ */
+.home .entry-header {
+	display: none;
+}
+
+.site-footer {
+	text-align: center;
+	margin-top: calc(2 * var(--global--spacing-vertical));
+}
+
+/**
+ * Block Styles
+ */
+/* Media & Text */
+.wp-block-media-text.is-image-fill figure.wp-block-media-text__media {
+	min-height: calc(1em + (2 * var(--global--spacing-vertical)));
+}
+
+.wp-block-media-text.is-image-fill .wp-block-media-text__content {
+	padding-top: var(--global--spacing-vertical);
+	padding-bottom: var(--global--spacing-vertical);
+}
+
+/* Columns */
+@media only screen and (max-width: 591px) {
+	.wp-block-columns .wp-block-column:not(:last-child) {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (min-width: 592px) {
+	.wp-block-columns .wp-block-column:not(:first-child) {
+		margin-right: calc(0.5 * var(--global--spacing-vertical));
+	}
+}
+
+/* Social Links Block Styles */
+.wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link {
+	background-color: rgba(255, 255, 255, 0.15);
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link:hover, .wp-block-social-links.is-style-linkinbio-transparent-white-buttons .wp-social-link:focus {
+	color: var(--global--color-background);
+	background-color: #FFFFFF;
+}
+
+.wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link {
+	color: var(--global--color-background);
+	background-color: var(--global--color-foreground);
+}
+
+.wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link:hover, .wp-block-social-links.is-style-linkinbio-foreground-color-buttons .wp-social-link:focus {
+	color: var(--global--color-background);
+	background-color: var(--global--color-primary);
+}
+
+/* Buttons Block Styles */
+.wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-buttons .wp-block-button__link {
+	width: 100%;
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+	font-size: var(--global--font-size-md);
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 0;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link {
+	width: 100%;
+	margin-bottom: calc(0.5 * var(--global--spacing-vertical));
+	font-size: var(--global--font-size-md);
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-text-color) {
+	color: #FFFFFF;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-text-color):hover, .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-text-color):focus {
+	color: var(--global--color-background);
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background) {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background):hover, .wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button__link:not(.has-background):focus {
+	background-color: #FFFFFF;
+}
+
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background),
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):hover,
+.wp-block-buttons.is-style-linkinbio-large-transparent-white-buttons .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):focus {
+	background-color: inherit;
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	backdrop-filter: blur(100px);
+	-webkit-backdrop-filter: blur(100px);
+	position: fixed;
+	z-index: -1;
+}
+
+body.unblurred-background-image::after {
+	display: none;
+}
+
+#page {
+	z-index: 1;
+}
+
+.site-main > article > .entry-footer {
+	border-top: none;
+}
