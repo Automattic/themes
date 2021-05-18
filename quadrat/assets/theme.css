@@ -259,6 +259,62 @@ ul ul {
 	font-size: var(--wp--custom--heading--h3--font-size);
 }
 
+.wp-block-query-pagination {
+	border-top: 1px solid var(--wp--custom--color--primary);
+	padding-top: 1.5em;
+	justify-content: space-between;
+	display: grid;
+	grid-template-areas: "prev numbers next";
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+@media (max-width: 479px) {
+	.wp-block-query-pagination {
+		grid-template-areas: "prev next";
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous {
+	grid-area: prev;
+	justify-self: start;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous::before {
+	content: "←";
+	margin-right: 0.5em;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-next {
+	grid-area: next;
+	justify-self: end;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-next::after {
+	content: "→";
+	margin-left: 0.5em;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous::before,
+.wp-block-query-pagination .wp-block-query-pagination-next::after {
+	display: inline-block;
+}
+
+.wp-block-query-pagination .page-numbers {
+	padding: 0 0.1em;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-numbers {
+	grid-area: numbers;
+	justify-self: center;
+}
+
+@media (max-width: 479px) {
+	.wp-block-query-pagination .wp-block-query-pagination-numbers {
+		display: none;
+	}
+}
+
 .wp-block-quote.is-style-large p {
 	line-height: 1.4;
 }
