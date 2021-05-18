@@ -1,9 +1,39 @@
 .site-header {
-	.wp-block-group {
-		display: flex;
-		justify-content: space-between;
+	> .wp-block-group {
 		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 		overflow: inherit;
+		padding: 10px 20px 60px; // TODO: Maybe replace with a responsive custom variable?
+
+		@include break-mobile() {
+			padding: var(--wp--custom--margin--vertical);
+		}
+
+		.wp-block-site-logo {
+			margin-right: var(--wp--custom--margin--horizontal);
+
+			@include break-mobile-only(){
+				flex-basis: 100%;
+				margin: 20px 0;
+				text-align: center;
+			}
+
+			a > img {
+				height: 64px;
+				width: auto;
+			}
+		}
+		
+		.wp-block-site-title {
+			margin: 0;
+		}
+
+		.wp-block-navigation {
+			margin-left: auto;
+			padding-right: 0;
+		}
 	}
 
 	.wp-block-site-title a {

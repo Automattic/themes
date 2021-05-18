@@ -14,7 +14,8 @@ require get_stylesheet_directory() . '/inc/render-navigation-block.php';
 <header class="site-header" role="banner">
 	<?php
 	echo do_blocks(
-		'<!-- wp:group {"style":{"spacing":{"padding":{"right":"35px","left":"35px"}}}} --><div class="wp-block-group" style="padding-right:35px;padding-left:35px">
+		'<!-- wp:group --><div class="wp-block-group">
+		<!-- wp:site-logo /-->
 		<!-- wp:site-title /-->' .
 		render_navigation_block( 'primary' ) .
 		'</div><!-- /wp:group -->'
