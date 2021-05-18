@@ -82,6 +82,14 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 				return $this->default;
 			}
 
+			if ( ! property_exists( $post_json->styles, 'color' ) ) {
+				return $this->default;
+			}
+
+			if ( ! property_exists( $post_json->styles->color, $this->slug ) ) {
+				return $this->default;
+			}
+
 			return $post_json->styles->color->{$this->slug};
 		}
 

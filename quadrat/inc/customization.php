@@ -7,6 +7,41 @@ class GlobalStylesCustomizer {
 	private $custom_colors;
 
 	function __construct() {
+		$this->set_customizations();
+
+		add_action( 'customize_register', array( $this, 'register_section' ) );
+
+		/* Customizer Preview JS */
+		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
+	}
+
+	/**
+	 * Gets the color from a CSS variable.
+	 *
+	 * This might already be in Gutenberg.
+	 */
+	function get_color( $color, $palette ) {
+		// Is this a HEX?
+		if ( 0 === strpos( $color, '#' ) ) {
+			// If so just return.
+			return $color;
+		}
+
+		// Is this a preset?
+		if ( 0 === strpos( $color, 'var(--wp--preset--color--' ) ) {
+			// If so just return the palette
+			$color_slug = preg_replace( '/var\(--wp--preset--color--(.*)\)/', '$1', $color );
+			$key        = array_search( $color_slug, array_column( $palette, 'slug' ), true );
+			return $palette[ $key ]->color;
+		}
+
+	}
+
+	function set_customizations() {
+		$default_theme_json = file_get_contents( get_stylesheet_directory() . '/experimental-theme.json' );
+		$decoded_theme_json = json_decode( $default_theme_json );
+		$color_palette      = $decoded_theme_json->settings->color->palette;
+
 		$this->custom_colors = array(
 			'name'        => __( 'Colors' ),
 			'type'        => 'section',
@@ -16,7 +51,7 @@ class GlobalStylesCustomizer {
 				array(
 					'name'     => __( 'Foreground Color' ),
 					'type'     => 'color',
-					'default'  => '#FFD1D1', // TODO
+					'default'  => $this->get_color( $decoded_theme_json->styles->color->text, $color_palette ),
 					'selector' => 'body',
 					'property' => 'color',
 					'slug'     => 'text',
@@ -24,18 +59,13 @@ class GlobalStylesCustomizer {
 				array(
 					'name'     => __( 'Background Color' ),
 					'type'     => 'color',
-					'default'  => '#292C6D', //TOOD
+					'default'  => $this->get_color( $decoded_theme_json->styles->color->background, $color_palette ),
 					'selector' => 'body',
 					'property' => 'background',
 					'slug'     => 'background',
 				),
 			),
 		);
-
-		add_action( 'customize_register', array( $this, 'register_section' ) );
-
-		/* Customizer Preview JS */
-		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 	}
 
 	/* Preview JS */
