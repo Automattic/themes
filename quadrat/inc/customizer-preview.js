@@ -11,6 +11,7 @@ if ( global_styles_settings ) {
 			value.bind( function ( to ) {
 				// Build the CSS based on the settings
 				styleElement.innerHTML =
+					// Build the variable.
 					control.selector +
 					'{' +
 					'--wp--style--color--' +
@@ -18,6 +19,7 @@ if ( global_styles_settings ) {
 					': ' +
 					to +
 					';' +
+					// Build the selector.
 					control.property +
 					':' +
 					to +
