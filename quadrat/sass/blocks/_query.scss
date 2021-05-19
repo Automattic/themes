@@ -3,3 +3,10 @@
 		font-size: var(--wp--custom--heading--h3--font-size);
 	}
 }
+
+// If a query block is a direct child of a container, it some padding on mobile
+div[class^="wp-container-"] > .wp-block-query-loop {
+	@media screen and ( max-width: 704px ){ // This is the default content width + padding
+		padding: 0 var(--wp--custom--margin--horizontal);
+	}
+}
