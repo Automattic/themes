@@ -1,15 +1,33 @@
-.wp-block-button.is-style-outline {
-	&.wp-block-button__link,
-	.wp-block-button__link {
-		border: 2px solid currentColor; // The priority of global styles in the post editor overrides the outline style variation, so this line is needed.
+.wp-block-button {
+ 	&.wp-block-button__link,
+ 	.wp-block-button__link {
 		&:not(.has-background):not(.has-text-color) {
 			&:hover,
 			&:focus,
 			&.has-focus {
-				border: none;
-				color: var(--wp--custom--color--background);
-				background: var(--wp--custom--color--primary);
-				padding: calc(0.667em + 2px) calc(1.333em + 2px);
+				border-style: var(--wp--custom--button--border--style);
+				border-color: currentColor;
+				border-width: var(--wp--custom--button--border--width);
+				padding-top: var(--wp--custom--button--spacing--padding--top);
+				padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+				padding-left: var(--wp--custom--button--spacing--padding--left);
+				padding-right: var(--wp--custom--button--spacing--padding--right);
+			}
+		}
+	}
+}
+
+//NOTE: Double-classed to raise specificity above parent theme's outline hover styles
+//as an alternative to !important.  Only needed for the editor.
+.wp-block-button.wp-block-button.is-style-outline {
+ 	&.wp-block-button__link,
+ 	.wp-block-button__link {
+		&:not(.has-background):not(.has-text-color) {
+			&:hover,
+			&:focus,
+			&.has-focus {
+				color: var(--wp--custom--button--color--background);
+				background-color: var(--wp--custom--button--color--text);
 			}
 		}
 	}
