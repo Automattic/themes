@@ -45,6 +45,6 @@ require get_stylesheet_directory() . '/inc/block-patterns.php';
 require get_stylesheet_directory() . '/inc/block-styles.php';
 
 /**
- * Customizer Bridge
+ * Customize Global Styles
  */
 require get_stylesheet_directory() . '/inc/customization.php';

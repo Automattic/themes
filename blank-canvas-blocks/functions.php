@@ -88,3 +88,8 @@ function blank_canvas_blocks_fonts_url() {
 if ( ! is_child_theme() ) {
 	require get_template_directory() . '/inc/block-patterns.php';
 }
+
+/**
+ * Add Global Styles Variables
+ */
+require get_template_directory() . '/inc/global-styles-variables.php';

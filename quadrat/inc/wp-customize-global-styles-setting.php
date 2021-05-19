@@ -54,7 +54,7 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 		 * This is used to update the preview
 		 */
 		public function print_empty_style_elements( $id ) {
-			wp_register_style( $id, false, array( 'global-styles' ), true, true ); // This needs to load after global_styles, hence the dependency
+			wp_register_style( $id, false, array( 'global-styles-variables' ), true, true ); // This needs to load after global_styles, hence the dependency
 			wp_enqueue_style( $id );
 			wp_add_inline_style( $id, ' ' ); // This has to have content otherwise nothing is output
 		}

@@ -11,7 +11,17 @@ if ( global_styles_settings ) {
 			value.bind( function ( to ) {
 				// Build the CSS based on the settings
 				styleElement.innerHTML =
-					control.selector + '{' + control.property + ':' + to + '}';
+					control.selector +
+					'{' +
+					'--wp--style--color--' +
+					control.slug +
+					': ' +
+					to +
+					';' +
+					control.property +
+					':' +
+					to +
+					'}';
 			} );
 		} );
 	} );
