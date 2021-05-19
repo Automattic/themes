@@ -73,6 +73,7 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 			if ( $user_theme_json_post ) {
 				$post_content = $user_theme_json_post->post_content;
 			}
+
 			if ( empty( $post_content ) ) {
 				return $this->default;
 			}
@@ -90,7 +91,29 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 				return $this->default;
 			}
 
-			return $post_json->styles->color->{$this->slug};
+			$color_string = $post_json->styles->color->{$this->slug};
+			return $this->get_color( $color_string );
+		}
+
+		// There is a similar but different version of this in customization.php
+		function get_color( $color ) {
+			$all        = WP_Theme_JSON_Resolver::get_merged_data();
+			$theme_json = $all->get_raw_data();
+			$palette    = $theme_json['settings']['color']['palette'];
+
+			// Is this a HEX?
+			if ( 0 === strpos( $color, '#' ) ) {
+				// If so just return.
+				return $color;
+			}
+
+			// Is this a variable?
+			if ( 0 === strpos( $color, 'var:preset|color|' ) ) {
+				// If so just return the palette
+				$color_slug = preg_replace( '/var:preset\|color\|(.*)/', '$1', $color );
+				$key        = array_search( $color_slug, array_column( $palette, 'slug' ), true );
+				return $palette[ $key ]['color'];
+			}
 		}
 
 		/**

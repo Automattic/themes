@@ -27,20 +27,20 @@ class GlobalStylesCustomizer {
 			return $color;
 		}
 
-		// Is this a preset?
+		// Is this a variable?
 		if ( 0 === strpos( $color, 'var(--wp--preset--color--' ) ) {
 			// If so just return the palette
 			$color_slug = preg_replace( '/var\(--wp--preset--color--(.*)\)/', '$1', $color );
 			$key        = array_search( $color_slug, array_column( $palette, 'slug' ), true );
-			return $palette[ $key ]->color;
+			return $palette[ $key ]['color'];
 		}
-
 	}
 
 	function set_customizations() {
-		$default_theme_json = file_get_contents( get_stylesheet_directory() . '/experimental-theme.json' );
-		$decoded_theme_json = json_decode( $default_theme_json );
-		$color_palette      = $decoded_theme_json->settings->color->palette;
+		$settings      = gutenberg_get_default_block_editor_settings();
+		$all           = WP_Theme_JSON_Resolver::get_merged_data( $settings, 'theme' );
+		$theme_json    = $all->get_raw_data();
+		$color_palette = $theme_json['settings']['color']['palette'];
 
 		$this->custom_colors = array(
 			'name'        => __( 'Colors' ),
@@ -51,7 +51,7 @@ class GlobalStylesCustomizer {
 				array(
 					'name'     => __( 'Foreground Color' ),
 					'type'     => 'color',
-					'default'  => $this->get_color( $decoded_theme_json->styles->color->text, $color_palette ),
+					'default'  => $this->get_color( $theme_json['styles']['color']['text'], $color_palette ),
 					'selector' => 'body',
 					'property' => 'color',
 					'slug'     => 'text',
@@ -59,7 +59,7 @@ class GlobalStylesCustomizer {
 				array(
 					'name'     => __( 'Background Color' ),
 					'type'     => 'color',
-					'default'  => $this->get_color( $decoded_theme_json->styles->color->background, $color_palette ),
+					'default'  => $this->get_color( $theme_json['styles']['color']['background'], $color_palette ),
 					'selector' => 'body',
 					'property' => 'background',
 					'slug'     => 'background',
@@ -111,7 +111,6 @@ class GlobalStylesCustomizer {
 				'slug'              => $custom_option['slug'],
 			)
 		);
-
 		$wp_customize->add_setting( $global_styles_setting );
 
 		$wp_customize->add_control(
