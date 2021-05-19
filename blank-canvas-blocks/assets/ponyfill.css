@@ -195,34 +195,119 @@ input[type=checkbox] + label {
  */
 .wp-block-button.wp-block-button__link,
 .wp-block-button .wp-block-button__link {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
 	text-decoration: none;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	border-radius: var(--wp--custom--button--border--radius);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.wp-block-button__link svg,
+.wp-block-button .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link,
+.wp-block-button.is-style-outline .wp-block-button__link {
+	--wp--custom--button--color--text: var(--wp--custom--button--border--color);
+	--wp--custom--button--color--background: transparent;
+	border-style: var(--wp--custom--button--border--style);
+	border-color: currentColor;
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--padding--left);
+	padding-right: var(--wp--custom--button--spacing--padding--right);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link svg,
+.wp-block-button.is-style-outline .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
 }
 
 .wp-block-buttons .wp-block-button:last-child {
@@ -377,34 +462,119 @@ p.has-drop-cap:not(:focus):first-letter {
  */
 .wp-block-button.wp-block-button__link,
 .wp-block-button .wp-block-button__link {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
 	text-decoration: none;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	border-radius: var(--wp--custom--button--border--radius);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.wp-block-button__link svg,
+.wp-block-button .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link,
+.wp-block-button.is-style-outline .wp-block-button__link {
+	--wp--custom--button--color--text: var(--wp--custom--button--border--color);
+	--wp--custom--button--color--background: transparent;
+	border-style: var(--wp--custom--button--border--style);
+	border-color: currentColor;
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--padding--left);
+	padding-right: var(--wp--custom--button--spacing--padding--right);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link svg,
+.wp-block-button.is-style-outline .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
 }
 
 .wp-block-buttons .wp-block-button:last-child {
@@ -420,6 +590,10 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 .wp-block-post-comments input[type="submit"], .wp-block-post-comments .reply a {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
 	font-weight: var(--wp--custom--button--typography--font-weight);
 	font-family: var(--wp--custom--button--typography--font-family);
 	font-size: var(--wp--custom--button--typography--font-size);
@@ -427,14 +601,7 @@ p.has-drop-cap:not(:focus):first-letter {
 	text-decoration: none;
 	color: var(--wp--custom--button--color--text);
 	background-color: var(--wp--custom--button--color--background);
-	padding-top: var(--wp--custom--button--spacing--padding--top);
-	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
-	padding-left: var(--wp--custom--button--spacing--padding--left);
-	padding-right: var(--wp--custom--button--spacing--padding--right);
-	border-color: var(--wp--custom--button--border--color);
-	border-width: var(--wp--custom--button--border--width);
 	border-radius: var(--wp--custom--button--border--radius);
-	border-style: var(--wp--custom--button--border--style);
 }
 
 .wp-block-post-comments input[type="submit"] svg, .wp-block-post-comments .reply a svg {
@@ -442,24 +609,32 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color).has-focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 }
 
 .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):hover svg, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):focus svg, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color).has-focus svg, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover svg, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus svg, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-post-comments input[type="submit"]:hover, .wp-block-post-comments input[type="submit"]:focus, .wp-block-post-comments input[type="submit"].has-focus, .wp-block-post-comments .reply a:hover, .wp-block-post-comments .reply a:focus, .wp-block-post-comments .reply a.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
 }
 
 .wp-block-post-comments input[type="submit"] {
@@ -530,34 +705,119 @@ p.has-drop-cap:not(:focus):first-letter {
  */
 .wp-block-button.wp-block-button__link,
 .wp-block-button .wp-block-button__link {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
 	text-decoration: none;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	border-radius: var(--wp--custom--button--border--radius);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.wp-block-button__link svg,
+.wp-block-button .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link,
+.wp-block-button.is-style-outline .wp-block-button__link {
+	--wp--custom--button--color--text: var(--wp--custom--button--border--color);
+	--wp--custom--button--color--background: transparent;
+	border-style: var(--wp--custom--button--border--style);
+	border-color: currentColor;
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--padding--left);
+	padding-right: var(--wp--custom--button--spacing--padding--right);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link svg,
+.wp-block-button.is-style-outline .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
 }
 
 .wp-block-buttons .wp-block-button:last-child {
@@ -581,6 +841,10 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button,
 .wp-block-search .wp-block-search__button {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
 	font-weight: var(--wp--custom--button--typography--font-weight);
 	font-family: var(--wp--custom--button--typography--font-family);
 	font-size: var(--wp--custom--button--typography--font-size);
@@ -588,14 +852,7 @@ p.has-drop-cap:not(:focus):first-letter {
 	text-decoration: none;
 	color: var(--wp--custom--button--color--text);
 	background-color: var(--wp--custom--button--color--background);
-	padding-top: var(--wp--custom--button--spacing--padding--top);
-	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
-	padding-left: var(--wp--custom--button--spacing--padding--left);
-	padding-right: var(--wp--custom--button--spacing--padding--right);
-	border-color: var(--wp--custom--button--border--color);
-	border-width: var(--wp--custom--button--border--width);
 	border-radius: var(--wp--custom--button--border--radius);
-	border-style: var(--wp--custom--button--border--style);
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button svg,
@@ -607,27 +864,38 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-search .wp-block-search__button:not(.has-background):not(.has-text-color):hover,
 .wp-block-search .wp-block-search__button:not(.has-background):not(.has-text-color):focus,
 .wp-block-search .wp-block-search__button:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-background):not(.has-text-color):hover svg, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-background):not(.has-text-color):focus svg, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:not(.has-background):not(.has-text-color).has-focus svg,
 .wp-block-search .wp-block-search__button:not(.has-background):not(.has-text-color):hover svg,
 .wp-block-search .wp-block-search__button:not(.has-background):not(.has-text-color):focus svg,
 .wp-block-search .wp-block-search__button:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:hover, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button:focus, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button.has-focus,
+.wp-block-search .wp-block-search__button:hover,
+.wp-block-search .wp-block-search__button:focus,
+.wp-block-search .wp-block-search__button.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button.has-icon,
@@ -652,41 +920,10 @@ p.has-drop-cap:not(:focus):first-letter {
  */
 .wp-block-button.wp-block-button__link,
 .wp-block-button .wp-block-button__link {
-	text-decoration: none;
-}
-
-.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
-}
-
-.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
-.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-}
-
-.wp-block-buttons .wp-block-button:last-child {
-	margin-bottom: 0;
-}
-
-.wp-block-file .wp-block-file__button {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
 	font-weight: var(--wp--custom--button--typography--font-weight);
 	font-family: var(--wp--custom--button--typography--font-family);
 	font-size: var(--wp--custom--button--typography--font-size);
@@ -694,14 +931,127 @@ p.has-drop-cap:not(:focus):first-letter {
 	text-decoration: none;
 	color: var(--wp--custom--button--color--text);
 	background-color: var(--wp--custom--button--color--background);
+	border-radius: var(--wp--custom--button--border--radius);
+}
+
+.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
+.wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.wp-block-button__link:hover, .wp-block-button.wp-block-button__link:focus, .wp-block-button.wp-block-button__link.has-focus,
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.wp-block-button__link svg,
+.wp-block-button .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link,
+.wp-block-button.is-style-outline .wp-block-button__link {
+	--wp--custom--button--color--text: var(--wp--custom--button--border--color);
+	--wp--custom--button--color--background: transparent;
+	border-style: var(--wp--custom--button--border--style);
+	border-color: currentColor;
+	border-width: var(--wp--custom--button--border--width);
 	padding-top: var(--wp--custom--button--spacing--padding--top);
 	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
 	padding-left: var(--wp--custom--button--spacing--padding--left);
 	padding-right: var(--wp--custom--button--spacing--padding--right);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
 	border-color: var(--wp--custom--button--border--color);
-	border-width: var(--wp--custom--button--border--width);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):hover svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color):focus svg, .wp-block-button.is-style-outline.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link:hover, .wp-block-button.is-style-outline.wp-block-button__link:focus, .wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus,
+.wp-block-button.is-style-outline .wp-block-button__link.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+}
+
+.wp-block-button.is-style-outline.wp-block-button__link svg,
+.wp-block-button.is-style-outline .wp-block-button__link svg {
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-buttons .wp-block-button:last-child {
+	margin-bottom: 0;
+}
+
+.wp-block-file .wp-block-file__button {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 	border-radius: var(--wp--custom--button--border--radius);
-	border-style: var(--wp--custom--button--border--style);
 	display: inline-block;
 }
 
@@ -710,24 +1060,32 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):hover, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):focus, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color).has-focus {
-	font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-	font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-	font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-	line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-	color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-	background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-	padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-	padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-	padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-	padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-	border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-	border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-	border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-	border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+	border-color: var(--wp--custom--button--border--color);
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
 }
 
 .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):hover svg, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color):focus svg, .wp-block-file .wp-block-file__button:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
+	fill: var(--wp--custom--button--color--text);
+}
+
+.wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button.has-focus {
+	--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+	--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+	--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+	--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+	--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+	--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+	--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+	--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none;
 }
 
 .wp-block-table figcaption {

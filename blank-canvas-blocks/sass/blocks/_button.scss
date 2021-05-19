@@ -4,25 +4,45 @@
 
 // NOTE: These remain for the styling of buttons that are NOT blocks and is used elsewhere.  This can be removed when those no longer exist.
 @mixin button-main-styles {
+	@include button-padding-styles;
+	@include button-typography-styles;
+	@include button-color-styles;
+	border-radius: var(--wp--custom--button--border--radius);
+}
+
+@mixin button-color-styles {
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	svg {
+		fill: var(--wp--custom--button--color--text);
+	}
+}
+
+@mixin button-padding-styles {
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width) );
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width) );
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width) );
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width) );
+}
+
+@mixin button-typography-styles {
  	font-weight: var(--wp--custom--button--typography--font-weight);
 	font-family: var(--wp--custom--button--typography--font-family);
 	font-size: var(--wp--custom--button--typography--font-size);
 	line-height: var(--wp--custom--button--typography--line-height);
 	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
-	color: var(--wp--custom--button--color--text);
-	background-color: var(--wp--custom--button--color--background);
+}
+
+@mixin button-border-styles {
+	border-style: var(--wp--custom--button--border--style);
+	border-color: currentColor;
+	border-width: var(--wp--custom--button--border--width);
 	padding-top: var(--wp--custom--button--spacing--padding--top);
 	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
 	padding-left: var(--wp--custom--button--spacing--padding--left);
 	padding-right: var(--wp--custom--button--spacing--padding--right);
-	border-color: var(--wp--custom--button--border--color);
-	border-width: var(--wp--custom--button--border--width);
-	border-radius: var(--wp--custom--button--border--radius);
-	border-style: var(--wp--custom--button--border--style);
-	svg {
-		fill: var(--wp--custom--button--color--text);
-	}
 }
+
 
 // NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
 @mixin button-hover-styles {
@@ -30,25 +50,26 @@
 		&:hover,
 		&:focus,
 		&.has-focus {
- 			font-weight: var(--wp--custom--button--hover--typography--font-weight, var(--wp--custom--button--typography--font-weight));
-			font-family: var(--wp--custom--button--hover--typography--font-family, var(--wp--custom--button--typography--font-family));
-			font-size: var(--wp--custom--button--hover--typography--font-size, var(--wp--custom--button--typography--font-size));
-			line-height: var(--wp--custom--button--hover--typography--line-height, var(--wp--custom--button--typography--line-height));
-			color: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-			background-color: var(--wp--custom--button--hover--color--background, var(--wp--custom--button--color--background));
-			padding-top: var(--wp--custom--button--hover--spacing--padding--top, var(--wp--custom--button--spacing--padding--top));
-			padding-bottom: var(--wp--custom--button--hover--spacing--padding--bottom, var(--wp--custom--button--spacing--padding--bottom));
-			padding-left: var(--wp--custom--button--hover--spacing--padding--left, var(--wp--custom--button--spacing--padding--left));
-			padding-right: var(--wp--custom--button--hover--spacing--padding--right, var(--wp--custom--button--spacing--padding--right));
-			border-color: var(--wp--custom--button--hover--border--color, var(--wp--custom--button--border--color));
-			border-width: var(--wp--custom--button--hover--border--width, var(--wp--custom--button--border--width));
-			border-radius: var(--wp--custom--button--hover--border--radius, var(--wp--custom--button--border--radius));
-			border-style: var(--wp--custom--button--hover--border--style, var(--wp--custom--button--border--style));
-			svg {
-				fill: var(--wp--custom--button--hover--color--text, var(--wp--custom--button--color--text));
-			}
+			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+			--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+			border-color: var(--wp--custom--button--border--color);
+			@include button-color-styles;
 		}
 	}
+		&:hover,
+		&:focus,
+		&.has-focus {
+			--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
+			--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
+			--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
+			--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
+			--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
+ 			--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
+			--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
+			--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
+			--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
+			@include button-typography-styles;
+		}
 }
 
 /**
@@ -58,7 +79,17 @@
 	&.wp-block-button__link,
 	.wp-block-button__link {
 		@include button-hover-styles;
-		text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
+		@include button-main-styles;
+	}
+	&.is-style-outline {
+		&.wp-block-button__link,
+		.wp-block-button__link {
+			--wp--custom--button--color--text: var(--wp--custom--button--border--color);
+			--wp--custom--button--color--background : transparent;
+			@include button-border-styles;
+			@include button-hover-styles;
+			@include button-color-styles;
+		}
 	}
 }
 
