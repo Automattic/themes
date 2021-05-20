@@ -1,13 +1,19 @@
 a {
 	text-decoration-line: underline;
+}
 
-	&:hover {
-		background: var(--wp--custom--color--primary);
-		color: var(--wp--custom--color--background);
-	}
 
-	&:active,
-	&:focus {
-		background: var(--wp--custom--color--secondary);
+p {
+	a {	
+		&:hover {
+			text-decoration: none;
+			background: var(--wp--custom--color--primary);
+			color: var(--wp--custom--color--background);
+		}
+	
+		&:active,
+		&:focus {
+			background: var(--wp--custom--color--secondary);
+		}
 	}
 }
