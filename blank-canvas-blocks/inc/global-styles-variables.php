@@ -1,10 +1,8 @@
 <?php
 
-if ( function_exists( 'gutenberg_get_default_block_editor_settings' ) && class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+if ( class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 	function global_styles_variables() {
-		$settings   = gutenberg_get_default_block_editor_settings();
-		$all        = WP_Theme_JSON_Resolver::get_merged_data( $settings );
-		$theme_json = $all->get_raw_data();
+		$theme_json = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
 		$stylesheet = 'body{';
 		foreach ( $theme_json['styles']['color'] as $key => $value ) {
 			$stylesheet .= '--wp--style--color--' . $key . ': ' . $value . ';';

@@ -7,7 +7,7 @@ class GlobalStylesCustomizer {
 	private $custom_colors;
 
 	function __construct() {
-		$this->set_customizations();
+		add_action( 'customize_register', array( $this, 'set_customizations' ) );
 
 		add_action( 'customize_register', array( $this, 'register_section' ) );
 
@@ -37,9 +37,7 @@ class GlobalStylesCustomizer {
 	}
 
 	function set_customizations() {
-		$settings      = gutenberg_get_default_block_editor_settings();
-		$all           = WP_Theme_JSON_Resolver::get_merged_data( $settings, 'theme' );
-		$theme_json    = $all->get_raw_data();
+		$theme_json    = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
 		$color_palette = $theme_json['settings']['color']['palette'];
 
 		$this->custom_colors = array(
@@ -125,4 +123,5 @@ class GlobalStylesCustomizer {
 		);
 	}
 }
+
 new GlobalStylesCustomizer;
