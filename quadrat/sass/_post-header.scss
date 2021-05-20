@@ -1,0 +1,41 @@
+.post-header {
+	@include break-mobile-only() {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&::after {
+			content: "";
+			height: 10px;
+			width: 23px;
+			mask-image: url(arrow.svg);
+			mask-repeat: no-repeat;
+			background-color: var(--wp--custom--color--foreground);
+			transform: translateX(-50%);
+			position: absolute;
+			bottom: 1.5rem;
+			left: 50%;
+		}
+	}
+}
+
+@include break-mobile-only() {
+	.single {
+		&.admin-bar {
+			.post-header {
+				min-height: calc( 100vh - 46px );
+			}
+			.site-header{
+				top: 46px;
+			}
+		}
+
+		.site-header{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+}

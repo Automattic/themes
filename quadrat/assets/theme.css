@@ -485,6 +485,44 @@ a:active, a:focus {
 	color: var(--wp--custom--color--foreground);
 }
 
+@media (max-width: 479px) {
+	.post-header {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.post-header::after {
+		content: "";
+		height: 10px;
+		width: 23px;
+		-webkit-mask-image: url(arrow.svg);
+		        mask-image: url(arrow.svg);
+		-webkit-mask-repeat: no-repeat;
+		        mask-repeat: no-repeat;
+		background-color: var(--wp--custom--color--foreground);
+		transform: translateX(-50%);
+		position: absolute;
+		bottom: 1.5rem;
+		left: 50%;
+	}
+}
+
+@media (max-width: 479px) {
+	.single.admin-bar .post-header {
+		min-height: calc( 100vh - 46px);
+	}
+	.single.admin-bar .site-header {
+		top: 46px;
+	}
+	.single .site-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
 .site-footer.wp-block-group {
 	position: relative;
 	overflow: visible;
