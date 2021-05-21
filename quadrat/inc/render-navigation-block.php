@@ -6,13 +6,17 @@ if ( ! function_exists( 'render_navigation_block' ) ) :
 			return;
 		}
 
+		$block_attributes                 = array();
+		$block_attributes['isResponsive'] = true;
+
 		$nav_items = wp_nav_menu(
 			array(
-				'echo'           => false,
-				'theme_location' => $menu_location,
-				'container'      => '',
-				'items_wrap'     => '%3$s',
-				'fallback_cb'    => false,
+				'echo'             => false,
+				'block_attributes' => $block_attributes,
+				'theme_location'   => $menu_location,
+				'container'        => '',
+				'items_wrap'       => '%3$s',
+				'fallback_cb'      => false,
 			)
 		);
 
