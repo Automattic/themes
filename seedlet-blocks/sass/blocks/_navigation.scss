@@ -1,0 +1,19 @@
+.wp-block-navigation__responsive-container {
+	&.has-modal-open {
+		.wp-block-navigation-link {
+			//NOTE: For reasons I cannot explain... if I set this to use the --wp--preset--font-family--headings
+			//these values (which are what are set) are not respected in the modal.
+			font-family: var(--font-headings, 'Playfair Display', Georgia, Times, serif);
+			font-size: 32px;
+			font-weight: 400;
+			line-height: 60px;
+			&.has-child {
+				.wp-block-navigation-link{
+					font-style: italic;
+					font-size: 24px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+}
