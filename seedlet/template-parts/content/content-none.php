@@ -20,7 +20,7 @@
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p>
-			<?php _e( 'Your site is set to show the the most recent posts on your homepage - but you don\'t have any Posts published.', 'seedlet' ); ?></p>
+			<?php _e( "Your site is set to show the the most recent posts on your homepage - but you don't have any Posts published.", 'seedlet' ); ?></p>
 
 			<?php printf(
 				'<p>' 
