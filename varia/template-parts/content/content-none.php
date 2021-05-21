@@ -18,19 +18,22 @@
 
 	<div class="page-content responsive-max-width">
 		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
-			<p>
-			<?php _e( "Your site is set to show the the most recent posts on your homepage - but you don't have any Posts published.", 'seedlet' ); ?></p>
+			printf(
+				'<p>' . wp_kses(
+					/* translators: 1: link to WP admin new post page. */
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'varia' ),
+					array(
+						'a' => array(
+							'href' => array(),
+						),
+					)
+				) . '</p>',
+				esc_url( admin_url( 'post-new.php' ) )
+			);
 
-			<p>
-				<a href="<?php  echo esc_url( admin_url( 'edit.php' ) ); ?>" class="button">
-			<?php /* translators: 1: link to WP admin new post page. */
-			 _e( 'Add or publish Posts', 'seedlet' ); ?>
-				</a>
-			</p>
-
-		<?php elseif ( is_search() ) :
+		elseif ( is_search() ) :
 			?>
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'varia' ); ?></p>
