@@ -1,4 +1,8 @@
 .wp-block-post-comments {
+	
+	font-size: var(--wp--preset--font-size--normal);
+	line-height: var(--wp--custom--line-height--body);
+
 	.reply a {
 		& ,
 		&:hover,
@@ -25,7 +29,7 @@
 		textarea {
 			border: none;
 			background: var(--wp--custom--color--secondary);
-			font-size: 1em;
+			font-size: var(--wp--preset--font-size--normal);
 			width: 100%;
 		}
 
@@ -91,6 +95,24 @@
 
 		.form-submit {
 			grid-area: form-submit;
+		}
+	}
+
+	.reply {
+		margin-bottom: 30px;
+	}
+
+	.commentmetadata {
+		margin-bottom: 20px;
+	}
+
+	.commentlist {
+		margin-bottom: 60px;
+		.comment {
+			p {
+				font-size: var(--wp--preset--font-size--normal);
+				line-height: var(--wp--custom--line-height--body);
+			}
 		}
 	}
 
