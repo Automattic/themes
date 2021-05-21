@@ -81,10 +81,3 @@ function blank_canvas_blocks_fonts_url() {
 	// Make a single request for the theme fonts.
 	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families ) );
 }
-
-/**
- * Block Patterns.
- */
-if ( ! is_child_theme() ) {
-	require get_template_directory() . '/inc/block-patterns.php';
-}
