@@ -13,7 +13,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header responsive-max-width">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'varia' ); ?></h1>
+		<h1 class="page-title"><?php _e( 'No Posts Found', 'varia' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content responsive-max-width">
