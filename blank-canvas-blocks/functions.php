@@ -60,11 +60,11 @@ add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts' );
  */
 
 function blank_canvas_blocks_fonts_url() {
-	if ( ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+	if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 		return '';
 	}
 
-	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
+	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
 	if ( empty( $theme_data ) || empty( $theme_data['custom'] ) ) {
 		return '';
 	}
