@@ -17,117 +17,21 @@
 	color: var(--wp--custom--color--primary);
 }
 
-// Ponyfill for mobile navigation.  Can be removed when this is resolved: https://github.com/WordPress/gutenberg/pull/31911
-.wp-block-navigation {
-	a {
-		border-bottom: none;
-	}
-	.wp-block-navigation-link {
-		padding: 0;
-		.wp-block-navigation-link__content {
-			padding: var(--wp--custom--navigation--padding);
-		}
-	}
-	.wp-block-navigation-link__submenu-icon {
-		padding: 0;
-		text-indent: -8px;
-	}
-	.wp-block-navigation__container {
-		padding: 20px;
-		.has-child {
-			.wp-block-navigation-link__container {
-				padding: 0;
-				border-radius: var(--wp--custom--navigation--submenu--border--radius);
-				border-style: var(--wp--custom--navigation--submenu--border--style);
-				border-width: var(--wp--custom--navigation--submenu--border--width);
-				border-color: var(--wp--custom--navigation--submenu--border--color);
-				box-shadow: var(--wp--custom--navigation--submenu--shadow);
-
-				.wp-block-navigation-link__content {
-					padding: var(--wp--custom--navigation--submenu--padding);
-				}
-			}
-		}
-	}
-}
-
-@include break-mobile {
-	header .wp-block-navigation {
-		.wp-block-navigation__mobile-menu-open-button,
-		.wp-block-navigation__mobile-menu-close-button {
-			display:none;
-		}
-	}
-}
-
-@include break-mobile-only {
-	header .wp-block-navigation:not(.show) {
-		text-align: right;
-		padding-left: var(--wp--custom--margin--horizontal);
-		padding-right: var(--wp--custom--margin--horizontal);
-
-		.wp-block-navigation__container {
-			display: none;
-		}
-
-		.wp-block-navigation__mobile-menu-open-button {
-			font-size: var(--wp--custom--navigation--mobile--menu--typography--font-size);
-			font-weight: var(--wp--custom--navigation--mobile--menu--typography--font-weight);
-			font-family: var(--wp--custom--navigation--mobile--menu--typography--font-family);
-			background-color: transparent;
-			border: none;
-		}
-
-		.wp-block-navigation__mobile-menu-close-button {
-			display: none;
-		}
-	}
-
-	header .wp-block-navigation.show {
-		opacity: 1;
-		position:absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-
-		.wp-block-navigation__mobile-menu-close-button {
-			display: inline-block;
-			position: absolute;
-			top: var(--wp--custom--margin--vertical);
-			right: var(--wp--custom--margin--horizontal);
-			color: var(--wp--custom--navigation--mobile--menu--color--text);
-			font-size: var(--wp--custom--navigation--mobile--menu--typography--font-size);
-			font-weight: var(--wp--custom--navigation--mobile--menu--typography--font-weight);
-			font-family: var(--wp--custom--navigation--mobile--menu--typography--font-family);
-			background-color: transparent;
-			border: none;
-		}
-
-		.wp-block-navigation__container {
-			background-color: var(--wp--custom--navigation--submenu--color--background);
-			flex-direction: column;
-			align-items: var(--wp--custom--navigation--mobile--horizontal-alignment);
-			justify-content: var(--wp--custom--navigation--mobile--vertical-alignment);
-			position:fixed;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			z-index: 99999;
-			overflow-y: scroll;
-		}
+.wp-block-navigation__responsive-container {
+	&.has-modal-open {
 		.wp-block-navigation-link {
-			padding: 0;
-			.wp-block-navigation-link__content {
-				padding: var(--wp--custom--navigation--mobile--padding);
-				font-family: var(--wp--custom--navigation--mobile--typography--font-family);
-				font-size: var(--wp--custom--navigation--mobile--typography--font-size);
-				font-weight: var(--wp--custom--navigation--mobile--typography--font-weight);
-				line-height: var(--wp--custom--navigation--mobile--typography--line-height);
-			}
+			font-size: 20px;
+			line-height: 40px;
+			margin: 0;
 		}
+	.wp-block-navigation__container{
+		padding-top: 50px;
+		align-items: flex-end;
 	}
-}
+	}
+} 
 
-//end mobile navigation
+//TODO: That's kinda a nasty way to override a Gutenberg style...
+.wp-block-navigation.wp-block-navigation .wp-block-navigation__container>.wp-block-navigation-link{
+	margin: 0;
+}
