@@ -1,71 +1,53 @@
-.wp-block-navigation-link a:hover {
-	background: transparent;
-}
-
-.wp-block-navigation.is-responsive {
-	position: static;
-	.wp-block-navigation__responsive-container-open {
-		position: revert;
+.wp-block-navigation {
+	.wp-block-navigation-link a:hover {
+		background: transparent;
 	}
-}
-	
-.wp-block-navigation .wp-block-pages-list__item .wp-block-pages-list__item__link,
-.wp-block-navigation .wp-block-navigation-link__content {
-	&:hover {
-		text-decoration: underline;
+	.wp-block-pages-list__item .wp-block-pages-list__item__link,
+	.wp-block-navigation-link__content {
+		&:hover {
+			text-decoration: underline;
+		}
 	}
-}
-.wp-block-navigation:not(.has-background) .wp-block-navigation__container .wp-block-navigation-link__container {
-	background-color: var(--wp--custom--color--background);
-	border-color: var(--wp--custom--color--foreground);
-}
-
-.wp-block-navigation__mobile-menu-open-button {
-	color: var(--wp--custom--color--primary);
-}
-
-.wp-block-navigation__responsive-container {
-	&.has-modal-open {
-		.wp-block-navigation-link {
-			font-size: 20px;
-			line-height: 50px;
-			margin: 0;
-			&.has-child {
-				.wp-block-navigation-link{
-					font-size: 15px;
-					line-height: 40px;
-				}
+	&:not(.has-background) { 
+		.wp-block-navigation__container { 
+			.wp-block-navigation-link__container {
+				background-color: var(--wp--custom--color--background);
+				border-color: var(--wp--custom--color--foreground);
 			}
 		}
-	.wp-block-navigation__container{
-		padding-top: 50px;
-		align-items: flex-end;
 	}
+
+	.wp-block-navigation__mobile-menu-open-button {
+		color: var(--wp--custom--color--primary);
 	}
-} 
 
-//TODO: That's kinda a nasty way to override a Gutenberg style...
-.wp-block-navigation.wp-block-navigation .wp-block-navigation__container>.wp-block-navigation-link{
-	margin: 0;
-}
-.wp-block-navigation .has-child .wp-block-navigation-link__container {
-	display: revert;
-}
-
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link {
-	align-items: flex-end;
-}
-
-.wp-block-navigation.wp-block-navigation .has-child .wp-block-navigation-link__container .wp-block-navigation-link__content {
-	padding: 0;
-}
-
-.wp-block-navigation .has-child>.wp-block-navigation-link__content {
-	margin-right: 0;
-}
-
-.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .has-child .wp-block-navigation-link__container {
-	margin-right: -19px;
-	padding: 0 19px 0 0;
-	border-right: 1px solid var(--wp--custom--color--foreground);
+	.wp-block-navigation__responsive-container {
+		&.has-modal-open {
+			.wp-block-navigation-link {
+				font-size: 20px;
+				line-height: 50px;
+				margin: 0;
+				align-items: flex-end;
+				&.has-child {
+					.wp-block-navigation-link__content {
+						margin-right: 0;
+					}
+					.wp-block-navigation-link__container{
+						margin-right: -19px;
+						padding: 0 19px 0 0;
+						border-right: 1px solid var(--wp--custom--color--foreground);
+						.wp-block-navigation-link__content {
+							padding: 0;
+							font-size: 15px;
+							line-height: 40px;
+						}
+					}
+				}
+			}
+			.wp-block-navigation__container{
+				padding-top: 50px;
+				align-items: flex-end;
+			}
+		}
+	}
 }
