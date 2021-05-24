@@ -11,14 +11,11 @@
 require get_stylesheet_directory() . '/inc/render-navigation-block.php';
 ?>
 
-<header class="site-header" role="banner">
-	<?php
+<?php
 	echo do_blocks(
-		'<!-- wp:group --><div class="wp-block-group">
-		<!-- wp:site-logo /-->
-		<!-- wp:site-title /-->' .
+		'<!-- wp:group {"tagName":"header","className":"site-header"} -->
+		<header class="wp-block-group site-header"><!-- wp:site-logo /--><!-- wp:site-title /-->' .
 		render_navigation_block( 'primary' ) .
-		'</div><!-- /wp:group -->'
+		'</header><!-- /wp:group -->'
 	);
-	?>
-</header>
+?>
