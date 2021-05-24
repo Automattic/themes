@@ -1,11 +1,31 @@
+@import "../../../blank-canvas-blocks/sass/blocks/button";
+
 .wp-block-post-comments {
+	
+	font-size: var(--wp--preset--font-size--normal);
+	line-height: var(--wp--custom--line-height--body);
+
 	.reply a {
+		--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+		@include button-border-styles;
+		--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+		--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+		--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
+
 		& ,
 		&:hover,
 		&:focus,
 		&:active {
-			font-size: 1em;
-			line-height: 1.2;
+			line-height: 1;
+		}
+		&:not(.has-background):not(.has-text-color) {
+			&:hover,
+			&:focus,
+			&.has-focus {
+				--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+				--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
+				--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+			}
 		}
 	}
 
@@ -25,7 +45,7 @@
 		textarea {
 			border: none;
 			background: var(--wp--custom--color--secondary);
-			font-size: 1em;
+			font-size: var(--wp--preset--font-size--normal);
 			width: 100%;
 		}
 
@@ -91,6 +111,24 @@
 
 		.form-submit {
 			grid-area: form-submit;
+		}
+	}
+
+	.reply {
+		margin-bottom: 30px;
+	}
+
+	.commentmetadata {
+		margin-bottom: 20px;
+	}
+
+	.commentlist {
+		margin-bottom: 60px;
+		.comment {
+			p {
+				font-size: var(--wp--preset--font-size--normal);
+				line-height: var(--wp--custom--line-height--body);
+			}
 		}
 	}
 
