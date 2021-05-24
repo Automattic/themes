@@ -21,8 +21,14 @@
 	&.has-modal-open {
 		.wp-block-navigation-link {
 			font-size: 20px;
-			line-height: 40px;
+			line-height: 50px;
 			margin: 0;
+			&.has-child {
+				.wp-block-navigation-link{
+					font-size: 15px;
+					line-height: 40px;
+				}
+			}
 		}
 	.wp-block-navigation__container{
 		padding-top: 50px;
@@ -34,4 +40,25 @@
 //TODO: That's kinda a nasty way to override a Gutenberg style...
 .wp-block-navigation.wp-block-navigation .wp-block-navigation__container>.wp-block-navigation-link{
 	margin: 0;
+}
+.wp-block-navigation .has-child .wp-block-navigation-link__container {
+	display: revert;
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link {
+	align-items: flex-end;
+}
+
+.wp-block-navigation.wp-block-navigation .has-child .wp-block-navigation-link__container .wp-block-navigation-link__content {
+	padding: 0;
+}
+
+.wp-block-navigation .has-child>.wp-block-navigation-link__content {
+	margin-right: 0;
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .has-child .wp-block-navigation-link__container {
+	margin-right: -19px;
+	padding: 0 19px 0 0;
+	border-right: 1px solid var(--wp--custom--color--foreground);
 }
