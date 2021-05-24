@@ -47,20 +47,48 @@ class GlobalStylesCustomizer {
 			'description' => __( 'Color Customization for Quadrat' ),
 			'controls'    => array(
 				array(
-					'name'     => __( 'Foreground Color' ),
-					'type'     => 'color',
-					'default'  => $this->get_color( $theme_json['styles']['color']['text'], $color_palette ),
-					'selector' => 'body',
-					'property' => 'color',
-					'slug'     => 'text',
+					'name'           => __( 'Foreground Color' ),
+					'type'           => 'color',
+					'default'        => $this->get_color( $theme_json['styles']['color']['text'], $color_palette ),
+					'selector'       => 'body',
+					'property'       => 'color',
+					'declaration'    => 'color',
+					'slug'           => 'text',
+					'json_structure' => array( 'styles', 'color', 'text' ),
+					'variable'       => '--wp--style--color--text',
 				),
 				array(
-					'name'     => __( 'Background Color' ),
-					'type'     => 'color',
-					'default'  => $this->get_color( $theme_json['styles']['color']['background'], $color_palette ),
-					'selector' => 'body',
-					'property' => 'background',
-					'slug'     => 'background',
+					'name'           => __( 'Background Color' ),
+					'type'           => 'color',
+					'default'        => $this->get_color( $theme_json['styles']['color']['background'], $color_palette ),
+					'selector'       => 'body',
+					'property'       => 'color',
+					'declaration'    => 'background-color',
+					'slug'           => 'background',
+					'json_structure' => array( 'styles', 'color', 'background' ),
+					'variable'       => '--wp--style--color--background',
+				),
+				array(
+					'name'           => __( 'Link Color' ),
+					'type'           => 'color',
+					'default'        => $this->get_color( $theme_json['styles']['elements']['link']['color']['text'], $color_palette ),
+					'selector'       => 'a',
+					'declaration'    => 'color',
+					'property'       => 'text',
+					'slug'           => 'color',
+					'json_structure' => array( 'styles', 'elements', 'link', 'color', 'text' ),
+					'variable'       => '--wp--style--link--color',
+				),
+				array(
+					'name'           => __( 'Border Color' ),
+					'type'           => 'color',
+					'default'        => $this->get_color( $theme_json['styles']['border']['color'], $color_palette ),
+					'selector'       => 'body',
+					'declaration'    => 'border-color',
+					'property'       => 'border',
+					'slug'           => 'color',
+					'json_structure' => array( 'styles', 'border', 'color' ),
+					'variable'       => '--wp--style--border--color',
 				),
 			),
 		);
@@ -98,15 +126,15 @@ class GlobalStylesCustomizer {
 	}
 
 	function register_color_control( $wp_customize, $custom_option, $section_key ) {
-		$setting_key = $section_key . $custom_option['slug'];
+		$setting_key = $section_key . $custom_option['variable'];
 
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_key,
 			array(
 				'default'           => esc_html( $custom_option['default'] ),
+				'json_structure'    => $custom_option['json_structure'],
 				'sanitize_callback' => 'sanitize_hex_color',
-				'slug'              => $custom_option['slug'],
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );

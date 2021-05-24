@@ -30,11 +30,11 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 		public $transport = 'postMessage';
 
 		/**
-		 * Slug
+		 * JSON Structure
 		 *
 		 * @var string
 		 */
-		public $slug = '';
+		public $json_structure = '';
 
 		/**
 		 * WP_Customize_Global_Styles_Setting constructor.
@@ -79,20 +79,18 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 			}
 
 			$post_json = json_decode( $post_content );
-			if ( ! property_exists( $post_json, 'styles' ) ) {
-				return $this->default;
-			}
 
-			if ( ! property_exists( $post_json->styles, 'color' ) ) {
-				return $this->default;
-			}
+			// This is really horrible
+			// There must be a better way to do this.
+			$child_array = $post_json;
+			foreach ( $this->json_structure as $property ) {
+				if ( ! property_exists( $post_json, $property ) ) {
+					return $this->default;
+				}
 
-			if ( ! property_exists( $post_json->styles->color, $this->slug ) ) {
-				return $this->default;
+				$child_array = $child_array->{ $property };
 			}
-
-			$color_string = $post_json->styles->color->{$this->slug};
-			return $this->get_color( $color_string );
+			return $this->get_color( $child_array );
 		}
 
 		// There is a similar but different version of this in customization.php
@@ -133,9 +131,36 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 			$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
 			// Upate the theme.json with the new color
-			$user_theme_json_post_content->styles->color->{$this->slug} = $color;
-			$user_theme_json_post->post_content                         = json_encode( $user_theme_json_post_content );
+			// There MUST be a better way to do this!
+			switch ( count( $this->json_structure ) ) {
+				case 1:
+					$user_theme_json_post_content->{ $this->json_structure[0] } = $color;
+					return;
 
+				case 2:
+					$user_theme_json_post_content->{ $this->json_structure[0] }->{ $this->json_structure[1] } = $color;
+					return;
+
+				case 3:
+					$user_theme_json_post_content->{ $this->json_structure[0] }->{ $this->json_structure[1] }->{ $this->json_structure[2] } = $color;
+					return;
+
+				case 4:
+					$user_theme_json_post_content->{ $this->json_structure[0] }->{ $this->json_structure[1] }->{ $this->json_structure[2] }->{ $this->json_structure[3] } = $color;
+					return;
+
+				case 5:
+					$user_theme_json_post_content->{ $this->json_structure[0] }->{ $this->json_structure[1] }->{ $this->json_structure[2] }->{ $this->json_structure[3] }->{ $this->json_structure[4] } = $color;
+					return;
+
+				case 6:
+					$user_theme_json_post_content->{ $this->json_structure[0] }->{ $this->json_structure[1] }->{ $this->json_structure[2] }->{ $this->json_structure[3] }->{ $this->json_structure[4] }->{ $this->json_structure[5] } = $color;
+					return;
+
+				default:
+					return;
+			}
+			$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 			return wp_update_post( $user_theme_json_post );
 		}
 	}
