@@ -1,5 +1,7 @@
-.post-header {
-	@include break-mobile-only() {
+$admin-bar: 46px;
+
+@include break-mobile-only() {
+	.post-header {
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
@@ -21,23 +23,38 @@
 		.wp-block-spacer {
 			display: none;
 		}
-	}
-}
 
-@include break-mobile-only() {
+		.wp-block-post-featured-image {
+			order: -1;
+			height: 100vh;
+			img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+	}
+
 	.single {
 		&.admin-bar {
 			.post-header {
-				min-height: calc( 100vh - 46px );
+				min-height: calc( 100vh - #{$admin-bar} );
+			}
+			.wp-block-post-featured-image {
+				height: calc( 100vh - #{$admin-bar} );
 			}
 			.site-header{
-				top: 46px;
+				top: $admin-bar;
 			}
 		}
 
 		&.wp-custom-logo {
 			.post-header {
 				padding-top: 150px !important;
+			}
+			.wp-block-post-featured-image {
+				margin-top: -150px !important;
 			}
 		}
 
