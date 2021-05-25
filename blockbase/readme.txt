@@ -10,7 +10,7 @@ A starting point for building your block-based site.
 
 == Description ==
 
-Blockbase is a simple starting point for themes that work with Full Site Editing. It comes with a set of minimal templates and a system of design customizations expressed through theme.json. Use it to build something beautiful.
+Blockbase is a simple theme that supports full-site editing. It comes with a set of minimal templates and design settings that can be manipulated through Global Styles. Use it to build something beautiful.
 
 == Changelog ==
 
