@@ -1,6 +1,6 @@
 <?php
-if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
-	function blank_canvas_blocks_support() {
+if ( ! function_exists( 'blockbase_support' ) ) :
+	function blockbase_support() {
 
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
@@ -25,33 +25,33 @@ if ( ! function_exists( 'blank_canvas_blocks_support' ) ) :
 			)
 		);
 	}
-	add_action( 'after_setup_theme', 'blank_canvas_blocks_support' );
+	add_action( 'after_setup_theme', 'blockbase_support' );
 endif;
 
 /**
  *
  * Enqueue scripts and styles.
  */
-function blank_canvas_editor_styles() {
+function blockbase_editor_styles() {
 	// Enqueue editor styles.
 	add_editor_style(
 		array(
-			blank_canvas_blocks_fonts_url(),
+			blockbase_fonts_url(),
 		)
 	);
 }
-add_action( 'admin_init', 'blank_canvas_editor_styles' );
+add_action( 'admin_init', 'blockbase_editor_styles' );
 
 /**
  *
  * Enqueue scripts and styles.
  */
-function blank_canvas_blocks_scripts() {
+function blockbase_scripts() {
 	// Enqueue Google fonts
-	wp_enqueue_style( 'blockbase-fonts', blank_canvas_blocks_fonts_url(), array(), null );
-	wp_enqueue_style( 'blank_canvas_blocks-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url(), array(), null );
+	wp_enqueue_style( 'blockbase-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
 }
-add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts' );
+add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
 
 /**
  * Add Google webfonts
@@ -59,7 +59,7 @@ add_action( 'wp_enqueue_scripts', 'blank_canvas_blocks_scripts' );
  * @return $fonts_url
  */
 
-function blank_canvas_blocks_fonts_url() {
+function blockbase_fonts_url() {
 	if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 		return '';
 	}

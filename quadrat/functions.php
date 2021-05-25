@@ -42,7 +42,7 @@ endif;
  */
 function quadrat_scripts() {
 	// Enqueue front-end styles.
-	wp_enqueue_style( 'quadrat-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blank_canvas_blocks-ponyfill' ), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'quadrat-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_script( 'quadrat-navigation-script', get_stylesheet_directory_uri() . '/assets/navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'quadrat_scripts' );
