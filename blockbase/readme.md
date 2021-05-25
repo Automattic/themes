@@ -1,8 +1,8 @@
 # === Blank Canvas Blocks ===
 Contributors: Automattic
-Requires at least: ? 
+Requires at least: ?
 Tested up to: ?
-Requires PHP: ? 
+Requires PHP: ?
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,13 +18,13 @@ The goal is for the ponyfill styling to reflect what Gutenberg will style, from 
 
 ## == Building a Block Child Theme ==
 
-To build a BCB child theme follow these instructions:
+To build a Blockbase child theme follow these instructions:
 
 - Add a [package.json](https://github.com/Automattic/themes/blob/make/quadrat/seedlet-blocks/package.json), [style.css](https://github.com/Automattic/themes/blob/make/quadrat/seedlet-blocks/style.css) and empty index.php files to your theme
-- Your child theme's theme.json file will be built by combining BCB's original theme.json file and your child's `child-experimental-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there). To generate the combined file, run `npm run build` from inside your theme's folder or run `npm run build:child child-theme-slug` from inside BCB's folder.
+- Your child theme's theme.json file will be built by combining Blockbase's original theme.json file and your child's `child-experimental-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there). To generate the combined file, run `npm run build` from inside your theme's folder or run `npm run build:child child-theme-slug` from inside Blockbase's folder.
 - Extend the parent's templates that you want to customize or add new ones where needed following the [template hierarchy](https://themeshaper.com/2020/12/18/getting-started-with-block-themes-templates/).
 - Using `npm run start` will both watch changes inside the `sass` and `assets` folder and changes to the `child-experimental-theme.json` file.
-- Additionally, your child theme may want to unregister the block patterns and block styles defined by BCB.
+- Additionally, your child theme may want to unregister the block patterns and block styles defined by Blockbase.
 
 ## == Building a Universal Child Theme ==
 
