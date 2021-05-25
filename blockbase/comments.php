@@ -7,4 +7,6 @@
  * 
  */
 
- return;
+if ( is_singular() ) wp_enqueue_script( "comment-reply" );
+
+return;
