@@ -33,7 +33,6 @@ To build a Blockbase child theme follow these instructions:
 
 A Universal theme is a theme that works in Full Site Editing and in the Customizer. This is a concept that's still being explored so we don't have instructions to provide yet. If you are curious, you can visit [the branch](https://github.com/Automattic/themes/tree/make/quadrat) where we are developing Quadrat as a Universal Theme.
 
-
 == Changelog ==
 
 = 1.0 =
