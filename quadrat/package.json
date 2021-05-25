@@ -14,9 +14,9 @@
     "postcss-cli": "^8.3.1"
   },
   "scripts": {
-    "start": "chokidar \"**/*.scss\" child-experimental-theme.json ../blank-canvas-blocks/experimental-theme.json -c \"npm run build\" --initial",
+    "start": "chokidar \"**/*.scss\" child-experimental-theme.json ../blockbase/experimental-theme.json -c \"npm run build\" --initial",
     "build": "npm run build:theme && npm run build:scss",
-    "build:theme": "node ../blank-canvas-blocks/build.js quadrat",
+    "build:theme": "node ../blockbase/build.js quadrat",
     "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/theme.scss --output-style expanded --indent-type tab --indent-width 1 | postcss --use autoprefixer --output assets/theme.css --map"
   },
   "author": "",
