@@ -1,16 +1,16 @@
-# === Blockbase ===
+# === Blank Canvas Blocks ===
 Contributors: Automattic
-Requires at least: 5.7
-Tested up to: 5.7.2
-Requires PHP: 5.6.2
+Requires at least: ? 
+Tested up to: ?
+Requires PHP: ? 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-An unopinionated theme to fill the gaps between where Gutenberg IS and where Gutenberg is GOING.
+An unopinionated 'Ponyfill' to fill the gaps between where Gutenberg IS and where Gutenberg is GOING.
 
 ## == Description ==
 
-The purpose of Blockbase is to provide a "ponyfill" that allows for 100% "configuration expression" of design.  Any aspect of configurable design that Gutenberg does not yet take into account is expressed in theme.json 'custom' properties.
+The purpose of Blank Canvas Blocks is to provide a "ponyfill" that allows for 100% "configuration expression" of design.  Any aspect of configurable design that Gutenberg does not yet take into account is expressed in theme.json 'custom' properties.
 
 To use this theme assign it as the parent theme and then copy from this them to the child theme the theme.json file and fill out the details.
 
