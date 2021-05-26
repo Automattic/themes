@@ -34,10 +34,6 @@
   ],
   "scripts": {
     "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
-    "start:child": "run-p start \"build:child -- {@} watch\" --",
-    "start:all": "chokidar \"sass/**/*.scss\" \"experimental-theme.json\" -c \"npm run build:all\" --initial",
-    "build": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true",
-    "build:child": "node build.js",
-    "build:all": "npm run build && sh ./rebuild-child-themes.sh"
+    "build": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
   }
 }
