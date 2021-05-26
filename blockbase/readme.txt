@@ -28,7 +28,6 @@ To build a Blockbase child theme follow these instructions:
 - Your child theme's theme.json file will be built by combining Blockbase's original theme.json file and your child's `child-experimental-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there). To generate the combined file, run `npm run build` from inside your theme's folder or run `npm run build:child child-theme-slug` from inside Blockbase's folder.
 - Extend the parent's templates that you want to customize or add new ones where needed following the [template hierarchy](https://themeshaper.com/2020/12/18/getting-started-with-block-themes-templates/).
 - Using `npm run start` will both watch changes inside the `sass` and `assets` folder and changes to the `child-experimental-theme.json` file.
-- Additionally, your child theme may want to unregister the block patterns and block styles defined by Blockbase.
 
 == Building a Universal Child Theme ==
 
