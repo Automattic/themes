@@ -6,7 +6,7 @@ if [[ "$1" != "" ]]; then
 	find $THEME/assets/sass/*.scss -type f -exec sed -i '' 's/, jetpack-global-styles//g' {} \; 
 	cd $THEME && npm run build;
 	mkdir $THEME;
-	rsync -avz --exclude $THEME --exclude-from '../dotorg-exclude.txt' ./ $THEME
+	rsync -avz --include='theme.json' --exclude $THEME --exclude-from '../dotorg-exclude.txt' ./ $THEME
 	find $THEME -type f -name '*.map' -delete # for some reason rsync won't exclude map files
 	rm -rf $THEME/$THEME
 	zip -r -X $THEME.zip $THEME
