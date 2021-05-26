@@ -1,6 +1,6 @@
 <?php
 /**
- * Empty comments file to pass theme check
+ * Empty footer file to pass theme check
  *
  * @package Blockbase
  * @since 1.0
