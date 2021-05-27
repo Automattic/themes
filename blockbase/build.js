@@ -3,9 +3,9 @@ const chokidar = require( 'chokidar' );
 const merge = require( 'deepmerge' );
 const childThemeName = process.argv[ 2 ];
 const watch = 'watch' === process.argv[ 3 ];
-const parentThemeJsonFileName = __dirname + '/experimental-theme.json';
+const parentThemeJsonFileName = __dirname + '/theme.json';
 const childThemeJsonFileName =
-	__dirname + '/../' + childThemeName + '/child-experimental-theme.json';
+	__dirname + '/../' + childThemeName + '/child-theme.json';
 
 const overwriteMerge = ( destinationArray, sourceArray, options ) =>
 	sourceArray;
@@ -27,14 +27,14 @@ const buildChildTheme = () => {
 			} );
 
 		fs.writeFile(
-			'../' + childThemeName + '/experimental-theme.json',
+			'../' + childThemeName + '/theme.json',
 			JSON.stringify( mergedThemeJson, null, '\t' ),
 			'utf8',
 			() => {
 				console.log(
 					'\x1b[32m' +
 						childThemeName +
-						'/experimental-theme.json created successfully.'
+						'/theme.json created successfully.'
 				);
 			}
 		);
