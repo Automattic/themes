@@ -528,22 +528,9 @@ ul ul {
 
 .wp-block-query-pagination {
 	border-top: 1px solid var(--wp--custom--color--primary);
-	padding-top: 1.5em;
-	justify-content: space-between;
-	display: grid;
-	grid-template-areas: "prev numbers next";
-	grid-template-columns: 1fr 2fr 1fr;
-}
-
-@media (max-width: 479px) {
-	.wp-block-query-pagination {
-		grid-template-areas: "prev next";
-		grid-template-columns: 1fr 1fr;
-	}
 }
 
 .wp-block-query-pagination .wp-block-query-pagination-previous {
-	grid-area: prev;
 	justify-self: start;
 }
 
@@ -553,7 +540,6 @@ ul ul {
 }
 
 .wp-block-query-pagination .wp-block-query-pagination-next {
-	grid-area: next;
 	justify-self: end;
 }
 
@@ -569,21 +555,6 @@ ul ul {
 
 .wp-block-query-pagination .page-numbers {
 	padding: 0 0.1em;
-}
-
-.wp-block-query-pagination .wp-block-query-pagination-numbers {
-	grid-area: numbers;
-	justify-self: center;
-}
-
-.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
-	text-decoration: underline;
-}
-
-@media (max-width: 479px) {
-	.wp-block-query-pagination .wp-block-query-pagination-numbers {
-		display: none;
-	}
 }
 
 .wp-block-quote.is-style-large p {

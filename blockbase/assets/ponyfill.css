@@ -632,6 +632,44 @@ p.has-drop-cap:not(:focus):first-letter {
 	color: var(--wp--custom--color--background);
 }
 
+.wp-block-query-pagination {
+	padding-top: 1.5em;
+	justify-content: space-between;
+	display: grid;
+	grid-template-areas: "prev numbers next";
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+@media (max-width: 479px) {
+	.wp-block-query-pagination {
+		grid-template-areas: "prev next";
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous {
+	grid-area: prev;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-next {
+	grid-area: next;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-numbers {
+	grid-area: numbers;
+	justify-self: center;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
+	text-decoration: underline;
+}
+
+@media (max-width: 479px) {
+	.wp-block-query-pagination .wp-block-query-pagination-numbers {
+		display: none;
+	}
+}
+
 .wp-block-quote.is-style-large p,
 .wp-block-quote p {
 	font-style: unset;
