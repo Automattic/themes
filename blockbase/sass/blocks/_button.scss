@@ -14,7 +14,7 @@
 	opacity: 1;
 	color: var(--wp--custom--button--color--text);
 	background-color: var(--wp--custom--button--color--background);
-	border-color: var(--wp--custom--button--border--color);
+	border-color: currentColor;
 	svg {
 		fill: var(--wp--custom--button--color--text);
 	}
@@ -41,7 +41,6 @@
 //apply outline styles. apply padding that does NOT account for border width (as the border width is applied here).
 @mixin button-border-styles {
 	border-style: var(--wp--custom--button--border--style);
-	border-color: currentColor;
 	border-width: var(--wp--custom--button--border--width);
 	padding-top: var(--wp--custom--button--spacing--padding--top);
 	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
@@ -63,6 +62,7 @@
 			--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
 			--wp--custom--button--border--color: var(--wp--custom--button--hover--border--color);
 			@include button-color-styles;
+			border-color: var(--wp--custom--button--border--color);
 		}
 	}
 	//The following styles can ALWAYS be changed, even if the user has set a custom color.
