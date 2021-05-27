@@ -1,10 +1,10 @@
 .site-header {
 	position: relative;
 	overflow: inherit;
-	padding: 10px 20px 60px; // TODO: Maybe replace with a responsive custom variable?
+	padding: 10px var(--wp--custom--post-content--padding--left) 60px; // TODO: Maybe replace with a responsive custom variable?
 
 	@include break-mobile() {
-		padding: var(--wp--custom--margin--vertical);
+		padding: var(--wp--custom--post-content--padding--left);
 	}
 
 	.wp-block-site-logo {
@@ -21,7 +21,7 @@
 			width: auto;
 		}
 	}
-	
+
 	.wp-block-site-title {
 		margin: 0;
 	}
@@ -30,7 +30,7 @@
 		margin-left: auto;
 		padding-right: 0;
 	}
-	
+
 	&:before {
 		content: "";
 		background-color: var(--wp--custom--color--secondary);
@@ -50,4 +50,4 @@
 			clip-path: polygon(13vw 0, 100vw 0, 100vw 16vw, 50vw 51vw);
 		}
 	}
-} 
+}
