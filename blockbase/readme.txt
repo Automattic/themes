@@ -52,3 +52,10 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Blockbase uses the following third-party resources:
+
+The Water Fan, by Winslow Homer
+License: CC0
+Source: https://www.artic.edu/artworks/38666/the-water-fan
+Included in theme screenshot.
