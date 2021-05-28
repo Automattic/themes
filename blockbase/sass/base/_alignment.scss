@@ -1,12 +1,21 @@
+// This targets the editor. It is the closest equivalent to .wp-block-post-content,
+// since the editor does not output that class. 
+.is-root-container {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+.block-editor-block-list__layout.is-root-container>.wp-block[data-align=full],
 .wp-block-post-content > .alignfull {
-	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left));
-	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right));
-	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) )
+	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
 }
 
 .site-header,
 .post-header,
 .page-content,
+[data-align="full"] p,
 .alignfull p {
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
