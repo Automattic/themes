@@ -29,6 +29,7 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .block-editor-block-list__block,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .wp-block-cover-text,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .wp-block-cover__inner-container,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
@@ -88,6 +89,7 @@ add_editor_color_rule( 'link', '#19744C', array(
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Border-left-color
@@ -98,8 +100,13 @@ add_editor_color_rule( 'link', '#19744C', array(
 	 */
 
 	// Background-color
-	array( '#editor .editor-styles-wrapper .has-primary-background-color,
+	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
+			#editor .editor-styles-wrapper .has-primary-background-color,
 			#editor .editor-styles-wrapper .wp-block .has-primary-background-color', 'background-color' ),
+	
+
+	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus', 'border-color' ),
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .has-primary-color', 'color' ),
@@ -113,6 +120,8 @@ add_editor_color_rule( 'txt', '#303030', array(
 	// Text-color
 	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus,
 			#editor .editor-styles-wrapper ', 'color' ),
 
 	// Background-color
@@ -152,6 +161,9 @@ add_editor_color_rule( 'txt', '#303030', array(
 	// Background-color brightened
 	array( '#editor .editor-styles-wrapper .has-foreground-light-background-color,
 			#editor .editor-styles-wrapper .wp-block .has-foreground-light-background-color', 'background-color', '+2' ),
+
+	// Border-color with less opacity (dim)
+	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
 ), __( 'Text Color' ) );
 
