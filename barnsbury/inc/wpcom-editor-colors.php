@@ -16,6 +16,7 @@ add_editor_color_rule( 'bg', '#FFFDF6', array(
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-button__link.has-focus:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color):focus,
@@ -82,10 +83,19 @@ add_editor_color_rule( 'link', '#20603C', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			#editor .editor-styles-wrapper .wp-block-button__link.is-style-outline,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
+
+	
+	// Border-color (forms)
+	// Needs contrast against `bg` with less contrast
+	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus,
+			textarea:focus', 'border-color' ),
 
 	// Border-left-color
 	array( '#editor .editor-styles-wrapper .wp-block-quote', 'border-left-color' ),
