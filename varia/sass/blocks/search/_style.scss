@@ -40,14 +40,16 @@
 	}
 	.wp-block-search__button {
 		@extend %button-style;
-		padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")} !important;
 		border: none;
 		box-shadow: none;
+		&.wp-block-search__button.wp-block-search__button { //editor specificity :S
+			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+		}
 		&.has-icon {
 			transform: scaleX(-1);	
 			padding: 0;		
-			min-width: calc(2* #{map-deep-get($config-button, "padding", "horizontal")} + 16px);
-			min-height: calc(2* #{map-deep-get($config-button, "padding", "horizontal")} + 16px);
+			min-width: calc(2* #{map-deep-get($config-button, "padding", "horizontal")} + #{map-deep-get($config-global, "font", "size", "base")});
+			min-height: calc(2* #{map-deep-get($config-button, "padding", "horizontal")} + #{map-deep-get($config-global, "font", "size", "base")});
 			svg {
 				fill: currentColor;
 				width: 29px;
@@ -55,11 +57,4 @@
 			}
 		}
 	}
-
-	::-webkit-input-placeholder,
-	:-moz-placeholder,
-	:-ms-input-placeholder {
-		color: #{map-deep-get($config-elements, "form", "color", "text")};
-	}
-
 }
