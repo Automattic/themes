@@ -2,7 +2,7 @@
 	flex-wrap: wrap;
 	&.wp-block-search__button-inside {
 		.wp-block-search__inside-wrapper{
-			background: transparent;
+			background: #{map-deep-get($config-global, "color", "white")};
 			color: #{map-deep-get($config-elements, "form", "color", "text")};
 			border: #{map-deep-get($config-elements, "form", "border", "width")} solid #{map-deep-get($config-elements, "form", "color", "border")};
 			border-radius: #{map-deep-get($config-elements, "form", "border", "radius")};
@@ -32,7 +32,7 @@
 		@include font-family( map-deep-get($config-button, "font", "family") );
 		max-width: inherit;
 		margin-right: calc( .66 * #{map-deep-get($config-button, "padding", "horizontal")} );
-		background: transparent;
+		background: #{map-deep-get($config-global, "color", "white")};
 		&:focus {
 			color: #{map-deep-get($config-elements, "form", "color", "text")};
 			border-color: #{map-deep-get($config-elements, "form", "color", "border")};
