@@ -88,26 +88,16 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );
  * Attach extra styles to multiple blocks.
  */
 function blockbase_enqueue_block_styles() {
-	// An array of styled blocks.
-	$styled_blocks = array(
-		'button',
-		'code',
-		'columns',
-		'file',
-		'gallery',
-		'image',
-		'navigation',
-		'paragraph',
-		'post-author',
-		'post-comments',
-		'pullquote',
-		'query-pagination',
-		'quote',
-		'search',
-		'separator',
-		'table',
-		'video'
-	);
+	$files = glob( get_template_directory() . '/assets/blocks/*.css' );
+
+	$styled_blocks = array();
+	foreach ( $files as $filename ) {
+		$styled_blocks[] = str_replace(
+			[ get_template_directory() . '/assets/blocks/', '.min.css', '.css' ],
+			'',
+			$filename
+		);
+	}
 
 	foreach ( $styled_blocks as $block_name ) {
 		// Get the stylesheet handle. This is backwards-compatible and checks the
