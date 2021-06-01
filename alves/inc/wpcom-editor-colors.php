@@ -37,6 +37,7 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
 			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim a,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
@@ -94,6 +95,9 @@ add_editor_color_rule( 'link', '#3E7D98', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
 	// Text-color
@@ -103,6 +107,11 @@ add_editor_color_rule( 'link', '#3E7D98', array(
 			#editor .editor-styles-wrapper .wp-block-separator.is-style-dots:before,
 			#editor .editor-styles-wrapper a,
 			#editor .editor-styles-wrapper hr.is-style-dots:before', 'color' ),
+
+	
+	// Border-color (forms)
+	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus,
+			textarea:focus', 'border-color' ),
 
 	// Border color top
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color' ),
@@ -154,6 +163,10 @@ add_editor_color_rule( 'txt', '#394d55', array(
 			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .is-style-outline .wp-block-button__link.has-focus', 'color' ),
+
+	// Border-color with less opacity (dim)
+	array( '#editor .editor-styles-wrapper .wp-block-code,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
