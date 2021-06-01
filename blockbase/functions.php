@@ -87,7 +87,7 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 /**
  * Attach extra styles to multiple blocks.
  */
-function my_theme_enqueue_block_styles() {
+function blockbase_enqueue_block_styles() {
 	// An array of styled blocks.
 	$styled_blocks = array(
 		'button',
@@ -132,6 +132,6 @@ function my_theme_enqueue_block_styles() {
 	}
 }
 // Add frontend styles.
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_block_styles' );
+add_action( 'wp_enqueue_scripts', 'blockbase_enqueue_block_styles' );
 // Add editor styles.
-add_action( 'admin_init', 'my_theme_enqueue_block_styles' );
+add_action( 'admin_init', 'blockbase_enqueue_block_styles' );
