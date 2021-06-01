@@ -202,6 +202,17 @@ a {
 	cursor: pointer;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
 /**
  * Elements
  * - Styles for basic HTML elemants
@@ -469,7 +480,7 @@ object {
  *   in-sync
  */
 .wp-block-a8c-blog-posts + .button, .wp-block-button__link,
-.wp-block-file__button {
+.wp-block-file__button, .wp-block-search .wp-block-search__button {
 	line-height: 1;
 	color: #FFFDF6;
 	cursor: pointer;
@@ -485,8 +496,8 @@ object {
 }
 
 .wp-block-a8c-blog-posts + .button:before, .wp-block-button__link:before,
-.wp-block-file__button:before, .wp-block-a8c-blog-posts + .button:after, .wp-block-button__link:after,
-.wp-block-file__button:after {
+.wp-block-file__button:before, .wp-block-search .wp-block-search__button:before, .wp-block-a8c-blog-posts + .button:after, .wp-block-button__link:after,
+.wp-block-file__button:after, .wp-block-search .wp-block-search__button:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -494,19 +505,19 @@ object {
 }
 
 .wp-block-a8c-blog-posts + .button:before, .wp-block-button__link:before,
-.wp-block-file__button:before {
+.wp-block-file__button:before, .wp-block-search .wp-block-search__button:before {
 	margin-bottom: -0.12em;
 }
 
 .wp-block-a8c-blog-posts + .button:after, .wp-block-button__link:after,
-.wp-block-file__button:after {
+.wp-block-file__button:after, .wp-block-search .wp-block-search__button:after {
 	margin-top: -0.11em;
 }
 
 .wp-block-a8c-blog-posts + .button:not(.has-background):hover, .wp-block-button__link:not(.has-background):hover,
-.wp-block-file__button:not(.has-background):hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-button__link:focus,
-.wp-block-file__button:focus, .wp-block-a8c-blog-posts + .has-focus.button, .has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button {
+.wp-block-file__button:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-button__link:focus,
+.wp-block-file__button:focus, .wp-block-search .wp-block-search__button:focus, .wp-block-a8c-blog-posts + .has-focus.button, .has-focus.wp-block-button__link,
+.has-focus.wp-block-file__button, .wp-block-search .has-focus.wp-block-search__button {
 	color: ("default": #FFFDF6, "light": #FDF9EC, "dark": #DDDDDD);
 	background-color: #133a24;
 }
@@ -919,6 +930,74 @@ p.has-background:not(.has-background-background-color) a {
 [style*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
 .wp-block-cover[style*="background-image"] .wp-block-quote .wp-block-quote__citation {
 	color: currentColor;
+}
+
+.wp-block-search {
+	flex-wrap: wrap;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	background: white;
+	color: black;
+	border: 1px solid #AAAAAA;
+	border-radius: 3px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+	padding: 16px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+	padding: 18px 18px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button.has-icon {
+	padding: 0;
+}
+
+.wp-block-search .wp-block-search__label {
+	font-weight: normal;
+}
+
+.wp-block-search .wp-block-search__input {
+	color: black;
+	border: 1px solid #AAAAAA;
+	border-radius: 3px;
+	padding: 16px;
+	font-size: 1rem;
+	line-height: 1;
+	font-family: "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+	font-family: var(--font-headings, "Rubik", Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif);
+	max-width: inherit;
+	margin-right: calc( .66 * 18px);
+	background: white;
+}
+
+.wp-block-search .wp-block-search__input:focus {
+	color: black;
+	border-color: #AAAAAA;
+}
+
+.wp-block-search .wp-block-search__button {
+	border: none;
+	box-shadow: none;
+}
+
+.wp-block-search .wp-block-search__button.wp-block-search__button.wp-block-search__button {
+	padding: 18px 18px;
+}
+
+.wp-block-search .wp-block-search__button.has-icon {
+	transform: scaleX(-1);
+	padding: 0;
+	min-width: calc(2* 18px + 1rem);
+	min-height: calc(2* 18px + 1rem);
+}
+
+.wp-block-search .wp-block-search__button.has-icon svg {
+	fill: currentColor;
+	width: 29px;
+	height: 29px;
 }
 
 .wp-block-separator,
