@@ -10,7 +10,7 @@
 				padding: #{map-deep-get($config-elements, "form", "padding")};
 			}
 			.wp-block-search__button {
-				padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "vertical")};
+				padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
 				&.has-icon {
 					padding: 0;
 				}
@@ -28,7 +28,7 @@
 		border-radius: #{map-deep-get($config-elements, "form", "border", "radius")};
 		padding: #{map-deep-get($config-elements, "form", "padding")};
 		font-size: #{map-deep-get($config-global, "font", "size", "base")};
-		line-height: #{map-deep-get($config-global, "font", "line-height", "base")};
+		line-height: #{map-deep-get($config-global, "font", "size", "base")};
 		@include font-family( map-deep-get($config-button, "font", "family") );
 		max-width: inherit;
 		margin-right: calc( .66 * #{map-deep-get($config-button, "padding", "horizontal")} );
@@ -42,14 +42,11 @@
 		@extend %button-style;
 		border: none;
 		box-shadow: none;
-		&.wp-block-search__button.wp-block-search__button { //editor specificity :S
-			padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
-		}
 		&.has-icon {
 			transform: scaleX(-1);	
 			padding: 0;		
-			min-width: calc(2* #{map-deep-get($config-button, "padding", "vertical")} + #{map-deep-get($config-global, "font", "size", "base")});
-			min-height: calc(2* #{map-deep-get($config-button, "padding", "vertical")} + #{map-deep-get($config-global, "font", "size", "base")});
+			min-width: calc(2* #{map-deep-get($config-button, "padding", "vertical")} + #{map-deep-get($config-global, "font", "size", "base")} + 4px);
+			min-height: calc(2* #{map-deep-get($config-button, "padding", "vertical")} + #{map-deep-get($config-global, "font", "size", "base")} + 4px);
 			svg {
 				fill: currentColor;
 				width: 29px;
