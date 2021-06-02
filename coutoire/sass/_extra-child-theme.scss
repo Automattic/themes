@@ -360,3 +360,29 @@ a.wp-block-file__button {
 		}
 	}
 }
+
+/**
+ * Search block
+ */
+
+ .wp-block-search {
+	&.wp-block-search__button-inside {
+		.wp-block-search__inside-wrapper{
+			border-radius: 9999px;
+		}
+		.wp-block-search__input {
+			background: transparent;
+		}
+	}
+	.wp-block-search__button{
+		border-radius: 9999px;
+		&.has-icon {
+			min-width: calc(2* #{map-deep-get($config-elements, "form", "padding")} + #{map-deep-get($config-global, "font", "size", "base")} + 4px);
+			min-height: calc(2* #{map-deep-get($config-elements, "form", "padding")} + #{map-deep-get($config-global, "font", "size", "base")} + 4px);
+		}
+	}
+	.wp-block-search__input {
+		margin-right: calc( .1 * #{map-deep-get($config-button, "padding", "horizontal")} );
+		border-radius: 9999px;
+	}
+} 
