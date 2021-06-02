@@ -35,6 +35,10 @@ A Universal theme is a theme that works in Full Site Editing and in the Customiz
 
 == Changelog ==
 
+= 1.0.1 =
+* Add skiplinks to post content
+* Remove unneeded functions to pass theme check
+
 = 1.0 =
 * Initial release 
 
