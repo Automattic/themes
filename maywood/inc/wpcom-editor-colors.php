@@ -127,6 +127,10 @@ add_editor_color_rule(
 		// Background-color
 		array(
 			'#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:not(.has-background):hover,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation #toggle:focus + #toggle-menu,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
