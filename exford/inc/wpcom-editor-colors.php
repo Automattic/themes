@@ -82,6 +82,9 @@ add_editor_color_rule( 'link', '#23883D', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,
@@ -123,6 +126,7 @@ add_editor_color_rule( 'txt', '#111111', array(
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation,
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-code,
