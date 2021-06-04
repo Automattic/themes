@@ -1,0 +1,225 @@
+/*
+Theme Name: Glitchy
+Theme URI: https://github.com/Automattic/themes/glitchy
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A simple, text-driven, single-column block-based theme.
+Requires at least: 4.9.6
+Tested up to: 5.4.1
+Requires PHP: 7.3
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Template: blockbase
+Text Domain: glitchy
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+Glitchy WordPress Theme, (C) 2021 Automattic, Inc.
+
+Glitchy is distributed under the terms of the GNU GPL.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+*/
+
+/* Annoying cursor thing. */
+
+.site-header-complicated,
+.wp-block-post-featured-image {
+  cursor: url("assets/circle.svg"), auto;
+}
+
+/* Post Headers & Featured Images */
+
+.single .wp-block-post-featured-image.alignfull {
+	margin-top: 0;
+}
+
+.single .wp-block-post-title {
+	padding-right: var(--wp--custom--post-content--padding--right);
+	padding-left: var(--wp--custom--post-content--padding--left);
+}
+
+.wp-block-post-featured-image {
+	margin-bottom: 0;
+}
+
+/* Archive Pages */
+
+.home .site-header-complicated .wp-block-cover__inner-container,
+.blog .site-header-complicated .wp-block-cover__inner-container,
+.archive .site-header-complicated .wp-block-cover__inner-container {
+	position: absolute;
+	top: 0; 
+}
+
+.wp-block-navigation-link {
+	background-color: initial;
+}
+
+.home .wp-block-post-title,
+.blog .wp-block-post-title,
+.archive .wp-block-post-title {
+	text-transform: uppercase;
+	font-weight:  500;
+}
+
+.home .wp-block-post-excerpt__excerpt,
+.blog .wp-block-post-excerpt__excerpt,
+.archive .wp-block-post-excerpt__excerpt {
+	padding: 0;
+}
+
+/* Hover Cleanup */
+
+.home .wp-block-post-title a,
+.blog .wp-block-post-title a,
+.archive .wp-block-post-title a,
+.wp-block-site-title:hover,
+.wp-block-navigation-link__content:hover .wp-block-navigation-link__label {
+	text-decoration: underline;
+}
+
+.home .wp-block-post-title a:hover,
+.blog .wp-block-post-title a:hover,
+.archive .wp-block-post-title a:hover {
+	text-decoration: none;
+}
+
+/**
+ * Photocopy Block Styles
+ * 
+ * - Image Block
+ * - Gallery Block
+ * - Media & Text Block
+ */
+
+/**
+ * Shared Styles.
+ */
+.wp-block-image.is-style-photocopy,
+.wp-block-gallery.is-style-photocopy .blocks-gallery-item figure,
+.wp-block-media-text.is-style-photocopy figure,
+.wp-block-image.is-style-photocopy-warped,
+.wp-block-gallery.is-style-photocopy-warped .blocks-gallery-item figure,
+.wp-block-media-text.is-style-photocopy-warped figure {
+	position: relative;
+}
+
+.wp-block-image.is-style-photocopy:before,
+.wp-block-gallery.is-style-photocopy .blocks-gallery-item figure:before,
+.wp-block-media-text.is-style-photocopy figure:before,
+.wp-block-image.is-style-photocopy-warped:before,
+.wp-block-gallery.is-style-photocopy-warped .blocks-gallery-item figure:before,
+.wp-block-media-text.is-style-photocopy-warped figure:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 500;
+	mix-blend-mode: exclusion;
+	filter: grayscale(100%) contrast(200%);
+}
+
+svg.photocopier-svg-filter {
+	position: absolute;
+	height: 0;
+	width: 0;
+}
+
+/**
+ * Individual Styles
+ */
+.wp-block-image.is-style-photocopy img,
+.wp-block-gallery.is-style-photocopy .blocks-gallery-item img,
+.wp-block-media-text.is-style-photocopy figure img,
+.wp-block-post-featured-image.is-style-photocopy img {
+	filter: grayscale(100%) contrast(800%);
+}
+
+/* Try not to overlap the caption in the editor ¯\_(ツ)_/¯ */
+.wp-block-image.is-selected.is-style-photocopy:before,
+.wp-block-image.is-selected.is-style-photocopy-warped:before,
+.wp-block-image.is-focused.is-style-photocopy:before,
+.wp-block-image.is-focused.is-style-photocopy-warped:before {
+	bottom: calc( 1.5em + 13px );
+}
+
+/* Warped */
+.wp-block-image.is-style-photocopy-warped img,
+.wp-block-gallery.is-style-photocopy-warped .blocks-gallery-item img,
+.wp-block-media-text.is-style-photocopy-warped figure img,
+.wp-block-post-featured-image.is-style-photocopy-warped img {
+	filter: url(#photocopy-filter-warp) grayscale(100%) contrast(800%);
+}
+
+.wp-block-image.is-style-photocopy-warped,
+.wp-block-image.is-style-photocopy-warped .components-resizable-box__container,
+.wp-block-gallery.is-style-photocopy-warped .blocks-gallery-item,
+.wp-block-media-text.is-style-photocopy-warped figure,
+.wp-block-post-featured-image.is-style-photocopy-warped {
+	overflow: hidden;
+}
+
+/**
+ * Text Warping.
+ */
+.is-style-photocopy-warped:not(.is-selected),
+h1.is-style-photocopy-warped:not(.is-selected),
+h2.is-style-photocopy-warped:not(.is-selected),
+h3.is-style-photocopy-warped:not(.is-selected),
+h4.is-style-photocopy-warped:not(.is-selected),
+h5.is-style-photocopy-warped:not(.is-selected),
+h6.is-style-photocopy-warped:not(.is-selected),
+p.is-style-photocopy-warped:not(.is-selected) {
+	filter: url(#photocopy-filter-warp-text);
+	transform: scale(1,1);
+}
+
+.is-style-photocopy-warped-stretched:not(.is-selected),
+h1.is-style-photocopy-warped-stretched:not(.is-selected),
+h2.is-style-photocopy-warped-stretched:not(.is-selected),
+h3.is-style-photocopy-warped-stretched:not(.is-selected),
+h4.is-style-photocopy-warped-stretched:not(.is-selected),
+h5.is-style-photocopy-warped-stretched:not(.is-selected),
+h6.is-style-photocopy-warped-stretched:not(.is-selected),
+p.is-style-photocopy-warped-stretched:not(.is-selected) {
+	filter: url(#photocopy-filter-warp-text);
+	transform: scale(1,2) translateY(-15%);
+}
+
+/**
+ * Hover effects.
+ */
+
+.is-style-photocopy-warped-stretched,
+.is-style-photocopy-warped,
+.wp-block-post-featured-image.is-style-photocopy {
+	transition: all 0.05s ease-in-out;
+}
+
+.is-style-photocopy-warped:not(.is-selected):hover,
+.is-style-photocopy-warped:not(.is-selected):hover img {
+	filter: grayscale(100%) contrast(800%);
+}
+
+.is-style-photocopy-warped-stretched:not(.is-selected):hover {
+	filter: none;
+	transform: scale(1) translateY(0%);
+}
+
+.wp-block-post-featured-image.is-style-photocopy:hover {
+	overflow: hidden;
+}
+
+.wp-block-post-featured-image.is-style-photocopy:hover img {
+	filter: url(#photocopy-filter-warp) grayscale(100%) contrast(800%);
+}
