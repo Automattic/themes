@@ -1,69 +1,136 @@
-( function( $ ) {
+( function () {
+	// Helper matches function (not a polyfill), compatible with IE 11.
+	function matches( el, sel ) {
+		if ( Element.prototype.matches ) {
+			return el.matches( sel );
+		}
 
-    /*
-     * Wrap tiled galleries so we can outdent them
-     */
-    function galleryWrapper() {
-        var gallery = $( '.entry-content' ).find( '.tiled-gallery' );
+		if ( Element.prototype.msMatchesSelector ) {
+			return el.msMatchesSelector( sel );
+		}
+	}
 
-        //If this tiled gallery has not yet been wrapped, add a wrapper
-        if ( ! gallery.parent().hasClass( 'tiled-gallery-wrapper' ) ) {
-            gallery.wrap( '<div class="tiled-gallery-wrapper"></div>' );
-            gallery.resize();
-        }
-    }
+	// Helper closest parent node function (not a polyfill) based on
+	// https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+	function closest( el, sel ) {
+		if ( el.closest ) {
+			return el.closest( sel );
+		}
 
-    /*
-     * Add an extra class to large images and videos to outdent them
-     */
-    function outdentMedia() {
+		var current = el;
 
-        $( '.entry-content img, .post-image-link img' ).each( function() {
+		do {
+			if ( matches( el, sel ) ) {
+				return current;
+			}
+			current = current.parentElement || current.parentNode;
+		} while ( current !== null && current.nodeType === 1 );
 
-            var img = $( this ),
-                caption = $( this ).closest( 'figure' ),
-                new_img = new Image();
+		return null;
+	}
 
-                new_img.src = img.attr( 'src' );
+	function emitResizeEvent() {
+		if ( typeof( Event ) === 'function' ) {
+			window.dispatchEvent( new Event( 'resize' ) );
+		} else {
+			var event = window.document.createEvent( 'UIEvents' );
+			event.initUIEvent( 'resize', true, false, window, 0 );
+			window.dispatchEvent( event );
+		}
+	}
 
-                $( new_img ).load( function() {
+	function updatePage() {
+		galleryWrapper();
+		outdentMedia();
+	}
 
-                    var img_width = new_img.width;
+	// Wrap tiled galleries so we can outdent them
+	function galleryWrapper() {
+		var galleries = document.querySelectorAll( '.entry-content .tiled-gallery' );
+		var shouldOutdent = false;
 
-                    if ( img_width >= 1100
-                        && img.parents( '.tiled-gallery-item-large' ).length === 0
-                        && img.parents( '[class^="wp-block-"]' ).length === 0 ) {
-                            $( img ).addClass( 'size-big' );
-                     }
+		for( var i = 0; i < galleries.length; i++ ) {
+			var gallery = galleries[ i ];
+			var parent = gallery.parentNode;
 
-                    if ( caption.hasClass( 'wp-caption' ) && img_width >= 1100 ) {
-                        caption.addClass( 'size-big' );
-                    }
-                } );
-        } );
+			// If this tiled gallery has not yet been wrapped, add a wrapper.
+			if ( parent && ! parent.classList.contains( 'tiled-gallery-wrapper' ) ) {
+				var div = document.createElement( 'div' );
+				parent.insertBefore( div, gallery );
+				parent.removeChild( gallery );
+				div.appendChild( gallery );
+				div.classList.add( 'tiled-gallery-wrapper' );
 
-        $( '.entry-content .jetpack-video-wrapper' ).each( function() {
-            if ( $( this ).find( ':first-child' ).width >= 1100 ) {
-                $( this ).addClass( 'caption-big' );
-            }
-        } );
-    }
+				// Outdent in the next event loop.
+				shouldOutdent = true;
+			}
+		}
 
-    // After DOM is ready
-    $( document ).ready( function() {
-        galleryWrapper();
-        outdentMedia();
-    } );
+		if ( shouldOutdent ) {
+			emitResizeEvent();
+		}
+	}
 
-    // After window loads
-    $( window ).load( function() {
-        outdentMedia();
-    } );
+	// Add an extra class to large images and videos to outdent them.
+	function outdentMedia() {
+		var images = document.querySelectorAll( '.entry-content img, .post-image-link img' );
 
-    // After window is resized or infinite scroll loads new posts
-    $( window ).on( 'resize post-load', function() {
-        galleryWrapper();
-        outdentMedia();
-    } );
+		for ( var i = 0; i < images.length; i++ ) {
+			var img = images[ i ];
+			var caption = closest( img, 'figure' );
+			var newImg = new Image();
 
-} )( jQuery );
+			newImg.addEventListener(
+				'load',
+				// Use an IIFE to avoid scoping issues.
+				( function ( img, caption, newImg ) {
+					return function () {
+						var imgWidth = newImg.width;
+
+						if ( imgWidth >= 1100 &&
+								! closest( img, '.tiled-gallery-item-large' ) &&
+								! closest( img, '[class^="wp-block-"]' ) ) {
+							img.classList.add( 'size-big' );
+						}
+
+						if ( caption && caption.classList.contains( 'wp-caption' ) && imgWidth >= 1100 ) {
+							caption.classList.add( 'size-big' );
+						}
+					}
+				} )( img, caption, newImg )
+			);
+
+			newImg.src = img.getAttribute( 'src' );
+		}
+
+		var wrappers = document.querySelectorAll( '.entry-content .jetpack-video-wrapper' );
+
+		for ( var j = 0; j < wrappers.length; j++ ) {
+			var wrapper = wrappers[ j ];
+			var firstChild = wrapper.querySelector( ':first-child' );
+
+			if ( firstChild && firstChild.offsetWidth >= 1100 ) {
+				wrapper.classList.add( 'caption-big' );
+			}
+		}
+	}
+
+	// After DOM is ready.
+	if ( document.readyState !== 'loading' ) {
+		updatePage();
+	} else {
+		document.addEventListener( 'DOMContentLoaded', updatePage );
+	}
+
+	// After window loads.
+	if ( document.readyState === 'complete' ) {
+		outdentMedia();
+	} else {
+		window.addEventListener( 'load', outdentMedia );
+	}
+
+	// After window is resized or infinite scroll loads new posts
+	window.addEventListener( 'resize', updatePage );
+	document.body.addEventListener( 'is.post-load', updatePage );
+
+} )();

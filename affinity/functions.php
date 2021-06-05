@@ -8,85 +8,100 @@
  */
 
 if ( ! function_exists( 'affinity_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the aftercomponentsetup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function affinity_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on components, use a find and replace
-	 * to change 'affinity' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'affinity', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Add editor styles
-	 */
-	add_editor_style();
-
-	/*
-	 * Add support for responsive embeds.
-	 */
-	add_theme_support( 'responsive-embeds' );
-
 	/**
-	 * Add support for core custom logo
-	 * - also see fallback in inc/jetpack.php
-	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      => 800,
-		'width'       => 250,
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the aftercomponentsetup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'affinity-featured', 1500, 9999 );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'top' => esc_html__( 'Top', 'affinity' ),
-	) );
+	function affinity_setup() {
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on components, use a find and replace
+		 * to change 'affinity' to the name of your theme in all the template files.
+		 */
+		load_theme_textdomain( 'affinity', get_template_directory() . '/languages' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'affinity_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-}
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
+
+		/*
+		 * Add editor styles
+		 */
+		add_editor_style();
+
+		/*
+		 * Add support for responsive embeds.
+		 */
+		add_theme_support( 'responsive-embeds' );
+
+		/**
+		 * Add support for core custom logo
+		 * - also see fallback in inc/jetpack.php
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 800,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'affinity-featured', 1500, 9999 );
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'top' => esc_html__( 'Top', 'affinity' ),
+			)
+		);
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'affinity_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
+	}
 endif;
 add_action( 'after_setup_theme', 'affinity_setup' );
 
@@ -130,19 +145,19 @@ add_action( 'after_setup_theme', 'affinity_content_width', 0 );
 
 if ( ! function_exists( 'affinity_content_width' ) ) :
 
-function affinity_content_width() {
-	global $content_width;
+	function affinity_content_width() {
+		global $content_width;
 
-	if ( is_page_template( 'fullwidth-page.php' ) ) {
-	  $content_width = 1004;
+		if ( is_page_template( 'fullwidth-page.php' ) ) {
+			$content_width = 1004;
+		}
+
+		if ( is_page_template( 'front-page.php' ) || ! is_active_sidebar( 'sidebar-1' ) ) {
+			$content_width = 716;
+		}
+
 	}
-
-	if ( is_page_template( 'front-page.php' ) || ! is_active_sidebar( 'sidebar-1' ) ) {
-		$content_width = 716;
-	}
-
-}
-add_action( 'template_redirect', 'affinity_content_width' );
+	add_action( 'template_redirect', 'affinity_content_width' );
 
 endif; // if ! function_exists( 'affinity_content_width' )
 
@@ -153,45 +168,53 @@ endif; // if ! function_exists( 'affinity_content_width' )
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function affinity_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'affinity' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'affinity' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widgets 1', 'affinity' ),
-		'id'            => 'footer-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widgets 1', 'affinity' ),
+			'id'            => 'footer-1',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widgets 2', 'affinity' ),
-		'id'            => 'footer-2',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widgets 2', 'affinity' ),
+			'id'            => 'footer-2',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widgets 3', 'affinity' ),
-		'id'            => 'footer-3',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widgets 3', 'affinity' ),
+			'id'            => 'footer-3',
+			'description'   => '',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'affinity_widgets_init' );
 
@@ -224,6 +247,13 @@ function affinity_fonts_url() {
 		if ( 'off' !== $lora ) {
 			$font_families[] = 'Lora:400,400italic,700,700italic';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -270,7 +300,7 @@ add_action( 'wp_enqueue_scripts', 'affinity_scripts' );
  * Gutenberg Editor Styles
  */
 function affinity_editor_styles() {
-	wp_enqueue_style( 'affinity-blocks-editor-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'affinity-blocks-editor-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'affinity-fonts', affinity_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'affinity_editor_styles' );
@@ -304,9 +334,11 @@ function affinity_style_options() {
 
 		</style>
 
-	<?php }
+		<?php
+	}
 
-	if ( true == $backgroundscroll ) { ?>
+	if ( true == $backgroundscroll ) {
+		?>
 		<style type="text/css" id="affinity-scrolling-background-images">
 			@media screen and (min-width: 65em) {
 					.custom-header-image {
@@ -323,7 +355,8 @@ function affinity_style_options() {
 					}
 			}
 		</style>
-	<?php }
+		<?php
+	}
 }
 
 add_action( 'wp_head', 'affinity_style_options' );

@@ -40,6 +40,20 @@ function varia_body_classes( $classes ) {
 		$classes[] = 'image-filters-enabled';
 	}
 
+	// Add a body class if the site header is hidden on the homepage.
+	$hide_site_header = get_theme_mod( 'hide_site_header', false );
+
+	if ( true === $hide_site_header && is_front_page() && is_page() ) {
+		$classes[] = 'hide-homepage-header';
+	}
+
+	// Add a body class if the footer elements are hidden on the homepage.
+	$hide_site_footer = get_theme_mod( 'hide_site_footer', false );
+
+	if ( true === $hide_site_footer && is_front_page() && is_page() ) {
+		$classes[] = 'hide-homepage-footer';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'varia_body_classes' );

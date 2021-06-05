@@ -14,6 +14,7 @@ function dyad_2_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_control( 'display_header_text' )->label = __( 'Display Site Title', 'dyad-2' );
 }
 add_action( 'customize_register', 'dyad_2_customize_register' );
 

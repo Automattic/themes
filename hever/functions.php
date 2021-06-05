@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#303030',
+			'primary'    => '#1279BE',
+			'secondary'  => '#FFB302',
+			'tertiary'   => '#C5C5C5',
+		);
+	}
+}
+
 if ( ! function_exists( 'hever_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -53,52 +65,13 @@ if ( ! function_exists( 'hever_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'hever' ),
-					'slug'  => 'primary',
-					'color' => '#1279BE',
-				),
-				array(
-					'name'  => __( 'Secondary', 'hever' ),
-					'slug'  => 'secondary',
-					'color' => '#FFB302',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'hever' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#101010',
-				),
-				array(
-					'name'  => __( 'Gray', 'hever' ),
-					'slug'  => 'foreground',
-					'color' => '#303030',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'hever' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'varia' ),
-					'slug'  => 'background-dark',
-					'color' => '#C5C5C5',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'varia' ),
-					'slug'  => 'background-light',
-					'color' => '#F8F8F8',
-				),
-				array(
-					'name'  => __( 'White', 'hever' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
+
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'hever_setup', 12 );
@@ -138,10 +111,17 @@ function hever_fonts_url() {
 
 		$font_families[] = 'PT Sans:400,400i,700,700i';
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-			'display' => 'swap'
+			'family'  => urlencode( implode( '|', $font_families ) ),
+			'subset'  => urlencode( 'latin,latin-ext' ),
+			'display' => 'swap',
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -162,7 +142,7 @@ function hever_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('hever-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'hever-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'hever-style', 'rtl', 'replace' );

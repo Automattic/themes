@@ -62,4 +62,9 @@
 	margin-top: calc( var(--global--spacing-vertical) * 3 );
 	padding-top: var(--global--spacing-unit);
 	border-top: var(--separator--height) solid var(--separator--border-color);
+
+	// Remove the border if the homepage's main footer is also hidden.
+	.home.page.hide-homepage-footer & {
+		border-width: 0;
+	}
 }

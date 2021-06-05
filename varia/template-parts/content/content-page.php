@@ -17,6 +17,10 @@
 		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
 
+	<?php if ( true === get_theme_mod( 'show_featured_image_on_pages', false ) ) : ?>
+		<?php varia_post_thumbnail(); ?>
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 		the_content();

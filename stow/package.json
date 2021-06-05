@@ -1,6 +1,6 @@
 {
   "name": "stow",
-  "version": "1.4.1",
+  "version": "1.5.7",
   "description": "Stow",
   "bugs": {
     "url": "https://github.com/Automattic/themes/issues"
@@ -40,7 +40,7 @@
     "build:woocommerce": "node-sass sass/style-child-theme-woocommerce.scss style-woocommerce.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r style-woocommerce.css",
     "build:woocommerce-rtl": "rtlcss style-woocommerce.css style-woocommerce-rtl.css",
     "build:print": "node-sass sass/print.scss print.css --output-style expanded --indent-type tab --indent-width 1 && postcss -r print.css",
-    "build": "run-p \"build:*\"",
+    "build": "run-s \"build:*\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   }
 }

@@ -3,26 +3,6 @@
  */
 // @import "";
 
-// Pgae
-#page {
-	position: relative;
-
-	&:before {
-		background: #{map-deep-get($config-global, "color", "foreground", "default")};
-		border-top-left-radius: 200px;
-		border-top-right-radius: 200px;
-		content: "";
-		display: block;
-		height: 100px;
-		left: 50%;
-		margin-left: -100px;
-		position: absolute;
-		top: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
-		width: 200px;
-		z-index: 1;
-	}
-}
-
 // Header
 #masthead {
 	align-content: center;
@@ -38,8 +18,9 @@
 	min-height: #{100 - map-deep-get($config-global, "spacing", "vertical")};
 	padding-top: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	position: relative;
+	z-index: 2;
 
-	&:before {
+	&:after {
 		background: #{map-deep-get($config-global, "color", "foreground", "default")};
 		border-bottom-left-radius: 200px;
 		border-bottom-right-radius: 200px;
@@ -50,6 +31,20 @@
 		margin-left: -100px;
 		position: absolute;
 		bottom: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
+		width: 200px;
+	}
+
+	&:before {
+		background: #{map-deep-get($config-global, "color", "foreground", "default")};
+		border-top-left-radius: 200px;
+		border-top-right-radius: 200px;
+		content: "";
+		display: block;
+		height: 100px;
+		left: 50%;
+		margin-left: -100px;
+		position: absolute;
+		top: -#{map-deep-get($config-global, "spacing", "vertical") + 5px};
 		width: 200px;
 	}
 
@@ -650,7 +645,7 @@ table,
 		padding-left: 0;
 
 		li > ul {
-			padding-left: inherit;			
+			padding-left: inherit;
 		}
 	}
 

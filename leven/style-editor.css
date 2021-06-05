@@ -193,6 +193,10 @@ a:hover {
 	color: #1285ce;
 }
 
+.has-primary-background-color a:not(.has-text-color) {
+	color: #f7f7f6;
+}
+
 button,
 a {
 	cursor: pointer;
@@ -382,7 +386,7 @@ object {
 }
 
 .wp-block-a8c-blog-posts .more-link:after {
-	content: "\02192";
+	content: "→" /*rtl:"←"*/;
 	display: inline-block;
 	margin-left: 0.5em;
 }
@@ -464,7 +468,8 @@ object {
  *   let’s use a placeholder to keep them all
  *   in-sync
  */
-.wp-block-a8c-blog-posts + .button {
+.wp-block-a8c-blog-posts + .button, .wp-block-button__link,
+.wp-block-file__button {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -479,22 +484,29 @@ object {
 	padding: 16px 16px;
 }
 
-.wp-block-a8c-blog-posts + .button:before, .wp-block-a8c-blog-posts + .button:after {
+.wp-block-a8c-blog-posts + .button:before, .wp-block-button__link:before,
+.wp-block-file__button:before, .wp-block-a8c-blog-posts + .button:after, .wp-block-button__link:after,
+.wp-block-file__button:after {
 	content: '';
 	display: block;
 	height: 0;
 	width: 0;
 }
 
-.wp-block-a8c-blog-posts + .button:before {
+.wp-block-a8c-blog-posts + .button:before, .wp-block-button__link:before,
+.wp-block-file__button:before {
 	margin-bottom: -0.12em;
 }
 
-.wp-block-a8c-blog-posts + .button:after {
+.wp-block-a8c-blog-posts + .button:after, .wp-block-button__link:after,
+.wp-block-file__button:after {
 	margin-top: -0.11em;
 }
 
-.wp-block-a8c-blog-posts + .button:hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-a8c-blog-posts + .has-focus.button {
+.wp-block-a8c-blog-posts + .button:not(.has-background):hover, .wp-block-button__link:not(.has-background):hover,
+.wp-block-file__button:not(.has-background):hover, .wp-block-a8c-blog-posts + .button:focus, .wp-block-button__link:focus,
+.wp-block-file__button:focus, .wp-block-a8c-blog-posts + .has-focus.button, .has-focus.wp-block-button__link,
+.has-focus.wp-block-file__button {
 	color: white;
 	background-color: #1285ce;
 }
@@ -522,6 +534,9 @@ object {
 	color: currentColor;
 }
 
+/**
+ * Button
+ */
 /* Default Style */
 .wp-block-button__link {
 	color: white;
@@ -544,8 +559,12 @@ object {
 
 .wp-block-button__link.is-style-outline,
 .is-style-outline .wp-block-button__link {
-	background: transparent;
 	border: 2px solid currentcolor;
+}
+
+.wp-block-button__link.is-style-outline:not(.has-text-color),
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #ff302c;
 }
 
 .wp-block-button__link.is-style-outline:hover, .wp-block-button__link.is-style-outline:focus, .wp-block-button__link.is-style-outline.has-focus,
@@ -554,6 +573,11 @@ object {
 .is-style-outline .wp-block-button__link.has-focus {
 	color: #1285ce;
 	background: transparent;
+}
+
+.has-primary-background-color .wp-block-button__link.is-style-outline:not(.has-text-color), .has-primary-background-color
+.is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: white;
 }
 
 .wp-block-button__link.is-style-squared,
@@ -600,28 +624,6 @@ object {
 .wp-block-cover-image.has-background-dim {
 	background-color: #444444;
 	color: #f7f7f6;
-}
-
-.wp-block-cover .wp-block-cover__inner-container,
-.wp-block-cover .wp-block-cover-image-text,
-.wp-block-cover .wp-block-cover-text,
-.wp-block-cover .block-editor-block-list__block,
-.wp-block-cover-image .wp-block-cover__inner-container,
-.wp-block-cover-image .wp-block-cover-image-text,
-.wp-block-cover-image .wp-block-cover-text,
-.wp-block-cover-image .block-editor-block-list__block {
-	color: currentColor;
-}
-
-.wp-block-cover .wp-block-cover__inner-container a,
-.wp-block-cover .wp-block-cover-image-text a,
-.wp-block-cover .wp-block-cover-text a,
-.wp-block-cover .block-editor-block-list__block a,
-.wp-block-cover-image .wp-block-cover__inner-container a,
-.wp-block-cover-image .wp-block-cover-image-text a,
-.wp-block-cover-image .wp-block-cover-text a,
-.wp-block-cover-image .block-editor-block-list__block a {
-	color: currentColor;
 }
 
 .wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
@@ -808,18 +810,6 @@ li > ol {
 	margin: 0;
 }
 
-.wp-block-media-text .block-editor-inner-blocks {
-	padding-right: 16px;
-	padding-left: 16px;
-}
-
-@media only screen and (min-width: 640px) {
-	.wp-block-media-text .block-editor-inner-blocks {
-		padding-right: 32px;
-		padding-left: 32px;
-	}
-}
-
 .wp-block-media-text[style*="background-color"]:not(.has-background-background-color) a {
 	color: currentColor;
 }
@@ -837,30 +827,23 @@ p.has-background:not(.has-background-background-color) a {
 }
 
 .wp-block-pullquote {
-	padding: calc( 3 * 16px) 0;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
 	border-top-color: #DDDDDD;
 	border-top-width: 4px;
 	border-bottom-color: #DDDDDD;
 	border-bottom-width: 4px;
 	color: #444444;
-	/**
-	 * Block Options
-	 */
 }
 
-.wp-block-pullquote blockquote {
-	padding-left: 0;
-}
-
-.wp-block-pullquote p {
+.wp-block-pullquote blockquote p {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-family: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 1.78256em;
+	font-size: 1.78256rem;
 	letter-spacing: -0.02em;
 	line-height: 1.125;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	font-size: 1.78256rem;
 }
 
 .wp-block-pullquote a {
@@ -871,28 +854,16 @@ p.has-background:not(.has-background-background-color) a {
 .wp-block-pullquote cite,
 .wp-block-pullquote footer {
 	color: #767676;
-	font-size: 0.82474em;
+	font-size: 0.82474rem;
 	letter-spacing: normal;
 }
 
-.wp-block-pullquote:not(.is-style-solid-color) {
-	background: none;
+.wp-block-pullquote blockquote {
+	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	background-color: #ff302c;
 	color: #f7f7f6;
-}
-
-.wp-block-pullquote.is-style-solid-color.alignleft blockquote,
-.wp-block-pullquote.is-style-solid-color.alignright blockquote {
-	padding-left: 16px;
-	padding-right: 16px;
-	max-width: inherit;
-}
-
-.wp-block-pullquote.is-style-solid-color blockquote {
-	padding-left: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color .wp-block-pullquote__citation,
@@ -901,17 +872,12 @@ p.has-background:not(.has-background-background-color) a {
 	color: currentColor;
 }
 
-.wp-block-pullquote.alignwide > p,
-.wp-block-pullquote.alignfull > p,
-.wp-block-pullquote.alignwide blockquote,
-.wp-block-pullquote.alignfull blockquote {
-	margin-left: auto;
-	margin-right: auto;
+.wp-block-pullquote.is-style-solid-color:not(.has-background) {
+	background-color: #ff302c;
 }
 
 .wp-block-quote {
 	border-left-color: #ff302c;
-	margin: 32px 0;
 	padding-left: 16px;
 }
 
@@ -1027,6 +993,11 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: #444444;
 }
 
+pre.wp-block-verse {
+	font-family: monospace, monospace;
+	color: #444444;
+}
+
 /**
  * Editor Post Title
  * - Needs a special styles
@@ -1081,7 +1052,6 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: #f7f7f6;
 }
 
-.has-background:not(.has-background-background-color) a:not(.wp-block-button__link),
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),
@@ -1092,51 +1062,85 @@ table.is-style-stripes tbody tr:nth-child(odd),
 	color: currentColor;
 }
 
-.wp-block .has-primary-background-color,
-.has-primary-background-color {
+.has-primary-background-color,
+.has-primary-background-color.has-background-dim {
 	background-color: #ff302c;
+}
+
+.has-primary-background-color:not(.has-text-color),
+.has-primary-background-color.has-background-dim:not(.has-text-color) {
 	color: #f7f7f6;
 }
 
-.wp-block .has-secondary-background-color,
-.has-secondary-background-color {
+.has-secondary-background-color,
+.has-secondary-background-color.has-background-dim {
 	background-color: #1285ce;
+}
+
+.has-secondary-background-color:not(.has-text-color),
+.has-secondary-background-color.has-background-dim:not(.has-text-color) {
 	color: #f7f7f6;
 }
 
-.wp-block .has-foreground-background-color,
-.has-foreground-background-color {
+.has-background-dim,
+.has-foreground-background-color,
+.has-foreground-background-color.has-background-dim {
 	background-color: #444444;
+}
+
+.has-background-dim,
+.has-foreground-background-color,
+.has-foreground-background-color.has-background-dim {
 	color: #f7f7f6;
 }
 
-.wp-block .has-foreground-light-background-color,
-.has-foreground-light-background-color {
+.has-foreground-light-background-color,
+.has-foreground-light-background-color.has-background-dim {
 	background-color: #767676;
+}
+
+.has-foreground-light-background-color:not(.has-text-color),
+.has-foreground-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #f7f7f6;
 }
 
-.wp-block .has-foreground-dark-background-color,
-.has-foreground-dark-background-color {
+.has-foreground-dark-background-color,
+.has-foreground-dark-background-color.has-background-dim {
 	background-color: #111111;
+}
+
+.has-foreground-dark-background-color:not(.has-text-color),
+.has-foreground-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #f7f7f6;
 }
 
-.wp-block .has-background-light-background-color,
-.has-background-light-background-color {
+.has-background-light-background-color,
+.has-background-light-background-color.has-background-dim {
 	background-color: #FFFFFF;
+}
+
+.has-background-light-background-color:not(.has-text-color),
+.has-background-light-background-color.has-background-dim:not(.has-text-color) {
 	color: #444444;
 }
 
-.wp-block .has-background-dark-background-color,
-.has-background-dark-background-color {
+.has-background-dark-background-color,
+.has-background-dark-background-color.has-background-dim {
 	background-color: #DDDDDD;
+}
+
+.has-background-dark-background-color:not(.has-text-color),
+.has-background-dark-background-color.has-background-dim:not(.has-text-color) {
 	color: #444444;
 }
 
-.wp-block .has-background-background-color,
-.has-background-background-color {
+.has-background-background-color,
+.has-background-background-color.has-background-dim {
 	background-color: #f7f7f6;
+}
+
+.has-background-background-color:not(.has-text-color),
+.has-background-background-color.has-background-dim:not(.has-text-color) {
 	color: #444444;
 }
 

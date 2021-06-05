@@ -1,0 +1,46 @@
+// This targets the editor. It is the closest equivalent to .wp-block-post-content,
+// since the editor does not output that class. 
+.is-root-container {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+.block-editor-block-list__layout.is-root-container>.wp-block[data-align=full],
+.wp-block-post-content > .alignfull {
+	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+}
+
+.site-header,
+.post-header,
+.page-content,
+[data-align="full"] p,
+.alignfull p {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+@include break-mobile {
+	// limit size of any element that is aligned left/right
+	.wp-block[data-align="left"], // This is for the editor
+	.wp-block[data-align="right"], // This is for the editor
+	.wp-site-blocks .alignleft,
+	.wp-site-blocks .alignright {
+		max-width: var(--wp--custom--alignment--aligned-max-width);
+	}
+}
+
+// When content is aligned left/right (particularly inside of a container) it is floated left/right
+// and needs something to ensure that the content follows the block rather than nestling up beside the floated element.
+// The issue should be resolved upstream: https://github.com/WordPress/gutenberg/issues/10299
+.wp-block-group:not(.site-header) {
+	overflow: auto;
+}
+
+// This was added for the 'site-logo' block which centers with an 'align:center' attribute
+// instead of 'textAlign' center which sets an .aligncenter class instead of a has-text-align-center
+// class which would do this for us.  I'm not sure why but this centers things appropriately.
+.aligncenter {
+	text-align: center;
+}

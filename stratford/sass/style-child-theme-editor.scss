@@ -9,6 +9,15 @@
 @import "../../varia/sass/abstracts/imports";
 
 /**
+* Global variables
+*/
+@import "global-variables";
+
+:root, body {
+	@include global-variables();
+}
+
+/**
  * Child Theme Name
  */
 @import "config-child-theme-deep";
@@ -83,12 +92,6 @@ $font_size_widget_title: #{map-deep-get($config-heading, "font", "size", "h3")};
 		&:hover {
 			text-decoration: none;
 		}
-	}
-}
-
-.has-background {
-	a {
-		color: currentColor;
 	}
 }
 

@@ -8,63 +8,62 @@
  */
 
 if ( ! function_exists( 'professional_business_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function professional_business_setup() {
-
 	/**
-	 * Add support for core custom logo.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 120,
-			'width'       => 190,
-			'flex-width'  => true,
-			'flex-height' => false,
-			'header-text' => array( 'site-title' ),
-		)
-	);
+	function professional_business_setup() {
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 120,
+				'width'       => 190,
+				'flex-width'  => true,
+				'flex-height' => false,
+				'header-text' => array( 'site-title' ),
+			)
+		);
 
-	// Editor color palette.
-	add_theme_support(
-		'editor-color-palette',
-		array(
+		// Editor color palette.
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => __( 'Primary', 'professional-business' ),
-				'slug'  => 'primary',
-				'color' => '#0073aa', // $color__link
-			),
-			array(
-				'name'  => __( 'Secondary', 'professional-business' ),
-				'slug'  => 'secondary',
-				'color' => '#005077', // $color__border-link-hover
-			),
-			array(
-				'name'  => __( 'Dark Gray', 'professional-business' ),
-				'slug'  => 'dark-gray',
-				'color' => '#1e1e1e', // $color__text-main
-			),
-			array(
-				'name'  => __( 'Light Gray', 'professional-business' ),
-				'slug'  => 'light-gray',
-				'color' => '#767676', // $color__text-light
-			),
-			array(
-				'name'  => __( 'White', 'professional-business' ),
-				'slug'  => 'white',
-				'color' => '#ffffff',
-			),
-		)
-	);
-}
+				array(
+					'name'  => __( 'Primary', 'professional-business' ),
+					'slug'  => 'primary',
+					'color' => '#0073aa', // $color__link
+				),
+				array(
+					'name'  => __( 'Secondary', 'professional-business' ),
+					'slug'  => 'secondary',
+					'color' => '#005077', // $color__border-link-hover
+				),
+				array(
+					'name'  => __( 'Dark Gray', 'professional-business' ),
+					'slug'  => 'dark-gray',
+					'color' => '#1e1e1e', // $color__text-main
+				),
+				array(
+					'name'  => __( 'Light Gray', 'professional-business' ),
+					'slug'  => 'light-gray',
+					'color' => '#767676', // $color__text-light
+				),
+				array(
+					'name'  => __( 'White', 'professional-business' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+			)
+		);
+	}
 endif; // professional_business_setup
 add_action( 'after_setup_theme', 'professional_business_setup', 30 );
 
@@ -84,6 +83,13 @@ function professional_business_fonts_url() {
 		if ( 'off' !== $crimson_text ) {
 			$font_families[] = 'Crimson Text:400,600,700,400italic,600italic';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),

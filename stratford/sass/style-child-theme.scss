@@ -5,7 +5,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Stratford is the perfect design for your business or educational institutes online presence. Highlight your products and services, Stratford is versatile enough to be your personal blog too.
 Requires at least: WordPress 4.9.6
-Version: 1.3.1
+Version: 1.4.8
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -15,7 +15,7 @@ Tags: one-column, fixed-header, accessibility-ready, custom-colors, custom-menu,
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Varia is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
+Stratford is a child theme of Varia which is based on Underscores https://underscores.me/, (C) 2012-2019 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -27,6 +27,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * - Mixins, variables and functions
  */
 @import "../../varia/sass/abstracts/imports";
+
+/**
+* Global variables
+*/
+@import "global-variables";
+
+:root {
+	@include global-variables();
+}
 
 /**
  * Child Theme Deep

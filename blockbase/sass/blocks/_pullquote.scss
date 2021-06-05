@@ -1,0 +1,30 @@
+.wp-block-pullquote.is-style-solid-color,
+.wp-block-pullquote {
+	text-align: var(--wp--custom--pullquote--typography--text-align);
+	blockquote {
+		padding: 0;
+		margin: 0;
+		p {
+			font-size: 1em;
+			padding: 0;
+			margin: 0;
+			line-height: inherit;
+		}
+
+		.wp-block-pullquote__citation, // For the editor
+		cite {
+			display: block;
+			font-size: var(--wp--custom--pullquote--citation--typography--font-size);
+			font-family: var(--wp--custom--pullquote--citation--typography--font-family);
+			font-style: var(--wp--custom--pullquote--citation--typography--font-style);
+			font-weight: var(--wp--custom--pullquote--citation--typography--font-weight);
+			margin-top: var(--wp--custom--pullquote--citation--spacing--margin--top);
+		}
+	}
+
+	&.is-style-solid-color {
+		background-color: var(--wp--custom--color--foreground);
+		color: var(--wp--custom--color--background);
+	}
+}
+

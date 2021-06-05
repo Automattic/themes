@@ -59,12 +59,12 @@ if ( ! function_exists( 'alves_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#3E7D98'; // $config-global--color-primary-default;
-		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#9B6A36';  // $config-global--color-secondary-default;
-		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#394d55';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#4d6974';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#253136';  // $config-global--color-foreground-dark-default;
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#3E7D98'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#9B6A36';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#394d55';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#4d6974';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) ? $colors_array['colors']['txt'] : '#253136';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -102,6 +102,11 @@ if ( ! function_exists( 'alves_setup' ) ) :
 				),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'alves_setup', 12 );
@@ -181,6 +186,13 @@ function alves_fonts_url() {
 			$font_families[] = 'Karla:400,700,400italic,700italic';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -204,7 +216,7 @@ function alves_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('alves-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'alves-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'alves-style', 'rtl', 'replace' );
@@ -221,10 +233,10 @@ function alves_editor_styles() {
 	wp_enqueue_style( 'alves-editor-fonts', alves_fonts_url(), array(), null );
 
 	// Hide duplicate palette colors
-	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#394d55' ) { // $config-global--color-foreground-light-default;
-		$inline_palette_css = '.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(5),
-			.block-editor-color-gradient-control .components-circular-option-picker__option-wrapper:nth-child(6) {
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
 				display: none;
 			}';
 		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );

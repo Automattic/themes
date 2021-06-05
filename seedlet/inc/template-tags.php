@@ -154,15 +154,15 @@ if ( ! function_exists( 'seedlet_post_thumbnail' ) ) :
 		}
 
 		if ( is_singular() ) :
-		?>
+			?>
 
 			<figure class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
-		<?php
+			<?php
 		else :
-		?>
+			?>
 
 			<figure class="post-thumbnail">
 				<a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
@@ -170,7 +170,7 @@ if ( ! function_exists( 'seedlet_post_thumbnail' ) ) :
 				</a>
 			</figure>
 
-		<?php
+			<?php
 		endif; // End is_singular().
 	}
 endif;
@@ -189,11 +189,40 @@ if ( ! function_exists( 'seedlet_comment_avatar' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'seedlet_the_posts_navigation' ) ) :
+if ( ! function_exists( 'seedlet_the_post_navigation' ) ) :
 	/**
 	 * Documentation for function.
 	 */
-	function seedlet_the_posts_navigation() {
+	function seedlet_the_post_navigation() {
+		if ( is_singular( 'attachment' ) ) {
+			// Parent post navigation.
+			the_post_navigation(
+				array(
+					/* translators: %s: parent post link */
+					'prev_text' => sprintf( __( '<span class="meta-nav">Published in</span><span class="post-title">%s</span>', 'seedlet' ), '%title' ),
+				)
+			);
+		} elseif ( is_singular( 'post' ) ) {
+			// Previous/next post navigation.
+			the_post_navigation(
+				array(
+					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post', 'seedlet' ) . '</span> ' .
+						'<span class="screen-reader-text">' . __( 'Next post:', 'seedlet' ) . '</span> <br/>' .
+						'<span class="post-title">%title</span>',
+					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous Post', 'seedlet' ) . '</span> ' .
+						'<span class="screen-reader-text">' . __( 'Previous post:', 'seedlet' ) . '</span> <br/>' .
+						'<span class="post-title">%title</span>',
+				)
+			);
+		}
+	}
+endif;
+
+if ( ! function_exists( 'seedlet_the_posts_pagination' ) ) :
+	/**
+	 * Documentation for function.
+	 */
+	function seedlet_the_posts_pagination() {
 		the_posts_pagination(
 			array(
 				'mid_size'  => 2,

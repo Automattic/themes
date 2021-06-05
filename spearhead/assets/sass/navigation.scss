@@ -1,0 +1,109 @@
+// Abstracts
+// - Mixins, variables and functions
+@import "../../../seedlet/assets/sass/abstracts/mixins";
+@import "breakpoints";
+
+// Variables
+$navigation-min-break-point: 'laptop';
+$navigation-max-break-point: 'laptop-only';
+
+@import "../../../seedlet/assets/sass/components/navigation/style";
+
+.navigation-wrapper {
+	grid-area: primary-navigation;
+	margin: 0;
+}
+
+.primary-navigation,
+.woo-navigation {
+	// Top-level Menu Item
+	.primary-menu-container > ul > .menu-item {
+		padding: 0;
+
+		@include media( $navigation-min-break-point ) {
+			padding: 0 var(--primary-nav--padding);
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+		}
+	}
+
+	& div ul > li > .sub-menu {
+		@include media( $navigation-min-break-point ) {
+			padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
+			transition: all 0.15s ease;
+			text-align: right;
+			left: unset;
+			right: 0;
+
+			> .menu-item.menu-item-has-children {
+				padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) ) 0 0;
+			}
+		}
+	}
+}
+
+.woo-navigation {
+	padding-left: calc(2 * var(--primary-nav--padding));
+}
+
+.social-navigation > div {
+	ul li {
+		width: auto;
+	}
+}
+
+$header-height: 80px;
+div.extra-navigation-wrapper {
+	@include media( $navigation-max-break-point ) {
+		background: var(--primary-nav--color-background);
+		padding: var(--global--spacing-unit) var(--global--spacing-horizontal);
+		top: 0;
+		right: 0;
+		bottom: $header-height;
+		left: 0;
+		transform: translateY( 90px ); // This can be any value > $header-height
+	}
+
+	.primary-navigation-open & {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY( $header-height );
+
+		.menu-item > a {
+			&:hover, &:focus {
+				color: #ff6a81; // Use the dark mode styles so that the focus styles are accessible.
+			}
+
+			&:active {
+				color: #b2b2b2; // Use the dark mode styles so that the focus styles are accessible.
+			}
+		}
+	}
+
+	$menu-offset-with-logo: calc( var(--branding--logo--max-height) + ( 2 * var(--global--spacing-vertical) ) );
+	.primary-navigation-open .has-logo:not(.has-title-and-tagline) & {
+		transform: translateY( $menu-offset-with-logo );
+		bottom: $menu-offset-with-logo;
+	}
+}
+
+.menu-button-container {
+	position: relative;
+	left: unset;
+	top: unset;
+
+	.button#woo-open-menu {
+		margin-top: 0;
+	}
+
+	.admin-bar:not(.primary-navigation-open) & {
+		top: unset;
+	}
+}
+
+.social-navigation {
+	grid-area: navigation;
+}

@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF', //bg
+			'foreground' => '#444444', //txt
+			'primary'    => '#0000ff', //link
+			'secondary'  => '#ff0000', //fg1
+			'tertiary'   => null, //fg2
+		);
+	}
+}
+
 /**
  * Varia only works in WordPress 4.7 or later.
  */
@@ -18,6 +30,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 }
 
 if ( ! function_exists( 'varia_setup' ) ) :
+
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -145,48 +158,69 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		 *
 		 * - if the customizer color is empty, use the default
 		 */
-		$colors_array = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary      = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#FF0000'; // $config-global--color-primary-default;
-		$secondary    = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FFFFFF';  // $config-global--color-secondary-default;
-		$foreground   = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$background   = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#0000FF';   // $config-global--color-background-default;
+		$colors_array   = get_theme_mod( 'colors_manager' ); // color annotations array()
+		$default_colors = varia_default_colors();
+
+		$primary    = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : $default_colors['primary']; // $config-global--color-primary-default;
+		$secondary  = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : $default_colors['secondary'];  // $config-global--color-secondary-default;
+		$tertiary   = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg2'] : $default_colors['tertiary'];   // $config-global--color-tertiary-default;
+		$foreground = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : $default_colors['foreground'];  // $config-global--color-foreground-default;
+		$background = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : $default_colors['background'];   // $config-global--color-background-default;
+
+		$editor_colors_array = array(
+			array(
+				'name'  => __( 'Primary', 'varia' ),
+				'slug'  => 'primary',
+				'color' => $primary,
+			),
+			array(
+				'name'  => __( 'Secondary', 'varia' ),
+				'slug'  => 'secondary',
+				'color' => $secondary,
+			),
+			array(
+				'name'  => __( 'Foreground', 'varia' ),
+				'slug'  => 'foreground',
+				'color' => $foreground,
+			),
+			array(
+				'name'  => __( 'Background', 'varia' ),
+				'slug'  => 'background',
+				'color' => $background,
+			),
+		);
+
+		if ( $tertiary ) {
+			$editor_colors_array[] = array(
+				'name'  => __( 'Tertiary', 'varia' ),
+				'slug'  => 'tertiary',
+				'color' => $tertiary,
+			);
+		}
+
+		$editor_colors_array = apply_filters( 'varia_editor_color_palette', $editor_colors_array );
 
 		// Editor color palette.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'varia' ),
-					'slug'  => 'primary',
-					'color' => $primary,
-				),
-				array(
-					'name'  => __( 'Secondary', 'varia' ),
-					'slug'  => 'secondary',
-					'color' => $secondary,
-				),
-				array(
-					'name'  => __( 'Foreground', 'varia' ),
-					'slug'  => 'foreground',
-					'color' => $foreground,
-				),
-				array(
-					'name'  => __( 'Background', 'varia' ),
-					'slug'  => 'background',
-					'color' => $background,
-				),
-			)
-		);
+		add_theme_support( 'editor-color-palette', $editor_colors_array );
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for experimental cover block spacing.
+		add_theme_support( 'custom-spacing' );
+
+		// Add support for custom units.
+		add_theme_support( 'custom-units' );
+
 		// Add support for Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
-			[
+			array(
 				'enable_theme_default' => true,
-			]
+			)
 		);
 
 	}
@@ -247,9 +281,34 @@ function varia_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
+		// If IE 11 or below, use a ponyfill to add CSS Variable support
+		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/js/css-vars-ponyfill2.js' );
+		wp_enqueue_script(
+			'ie11-fix',
+			get_template_directory_uri() . '/js/ie11-fix.js',
+			array( 'css-vars-ponyfill' ),
+			wp_get_theme()->get( 'Version' )
+		);
+		wp_enqueue_style( 'varia-ie-styles', get_template_directory_uri() . '/ie.css', array(), wp_get_theme()->get( 'Version' ) );
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'varia_scripts' );
 
+
+function varia_add_mobile_nav_on_side_scripts() {
+	if ( get_theme_mod( 'enable_side_menu' ) !== 1 ) {
+		return;
+	}
+
+	// Main navigation scripts
+	wp_enqueue_script( 'varia-primary-navigation-script', get_template_directory_uri() . '/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
+}
 /**
  * Fix skip link focus in IE11.
  *
@@ -285,15 +344,183 @@ function varia_editor_content_width() {
 }
 add_action( 'enqueue_block_editor_assets', 'varia_editor_content_width' );
 
+// This makes it possible to define the function in earlier to alter in one way or another.
+if ( ! function_exists( 'varia_mobile_nav_on_side' ) ) {
+	function varia_mobile_nav_on_side( $classes ) {
+		if ( get_theme_mod( 'enable_side_menu' ) === 1 ) {
+			return array_merge( $classes, array( 'mobile-nav-side' ) );
+		}
+		return $classes;
+	}
+}
+
+if ( ! function_exists( 'varia_enable_mobile_nav_on_side' ) ) {
+	function varia_enable_mobile_nav_on_side() {
+		set_theme_mod( 'enable_side_menu', 1 );
+	}
+}
+
+if ( ! function_exists( 'varia_register_mobile_nav_on_side_customizer_control' ) ) {
+	function varia_register_mobile_nav_on_side_customizer_control( $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'enable_side_menu',
+			array(
+				'default'           => 1,
+				'sanitize_callback' => 'absint',
+			)
+		);
+
+		$wp_customize->add_section(
+			'nav_menus_mobile',
+			array(
+				'title' => __( 'Mobile Settings', 'varia' ),
+				'panel' => 'nav_menus',
+			)
+		);
+
+		$wp_customize->add_control(
+			'enable_side_menu',
+			array(
+				'label'    => __( 'Display mobile menu on the side', 'varia' ),
+				'section'  => 'nav_menus_mobile',
+				'settings' => 'enable_side_menu',
+				'type'     => 'checkbox',
+			)
+		);
+
+	}
+}
+
+function varia_mobile_nav_on_side_setup() {
+	// Add .mobile-nav-side body class.
+	add_filter( 'body_class', 'varia_mobile_nav_on_side' );
+
+	// Enable the mobile nav on side on theme switch.
+	add_action( 'after_switch_theme', 'varia_enable_mobile_nav_on_side' );
+
+	// Enable the customizer control toggle for the mobile nav on the side.
+	add_action( 'customize_register', 'varia_register_mobile_nav_on_side_customizer_control' );
+
+	// Adds the script that help toggle the mobile nav.
+	add_action( 'wp_enqueue_scripts', 'varia_add_mobile_nav_on_side_scripts' );
+}
+
+/**
+* Sanitize the checkbox.
+*
+* @param boolean $input.
+*
+* @return boolean true if is 1 or '1', false if anything else
+*/
+function varia_sanitize_checkbox( $input ) {
+	if ( 1 == $input ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Add ability to show or hide header and footer elements on the homepage.
+ */
+function varia_customize_header_footer( $wp_customize ) {
+
+	// Add setting to hide the site header on the homepage.
+	$wp_customize->add_setting(
+		'hide_site_header',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control to hide the site header on the homepage.
+	$wp_customize->add_control(
+		'hide_site_header',
+		array(
+			'label'       => esc_html__( 'Hide the Site Header', 'varia' ),
+			'description' => esc_html__( 'Check to hide the site header, if your homepage is set to display a static page.', 'varia' ),
+			'section'     => 'static_front_page',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'hide_site_header',
+		)
+	);
+
+	// Add setting to hide footer elements on the homepage.
+	$wp_customize->add_setting(
+		'hide_site_footer',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control to hide footer elements on the homepage.
+	$wp_customize->add_control(
+		'hide_site_footer',
+		array(
+			'label'       => esc_html__( 'Hide the Site Footer Menu & Widgets', 'varia' ),
+			'description' => esc_html__( 'Check to hide the site menu & widgets in the footer, if your homepage is set to display a static page.', 'varia' ),
+			'section'     => 'static_front_page',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'hide_site_footer',
+		)
+	);
+}
+add_action( 'customize_register', 'varia_customize_header_footer' );
+
+
+/**
+ * Add ability to show or hide featured images on pages
+ */
+function varia_customize_content_options( $wp_customize ) {
+
+	// Add Content section.
+	$wp_customize->add_section(
+		'jetpack_content_options',
+		array(
+			'title'    => esc_html__( 'Content Options', 'varia' ),
+			'priority' => 100,
+		)
+	);
+
+	// Add visibility setting for featured images on pages
+	$wp_customize->add_setting(
+		'show_featured_image_on_pages',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control for the visibility of featured images on pages
+	$wp_customize->add_control(
+		'show_featured_image_on_pages',
+		array(
+			'label'       => esc_html__( 'Show the featured image on pages', 'varia' ),
+			'description' => esc_html__( 'Check to display a featured image at the top of your pages when they have one.', 'varia' ),
+			'section'     => 'jetpack_content_options',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'show_featured_image_on_pages',
+		)
+	);
+}
+add_action( 'customize_register', 'varia_customize_content_options' );
+
 /**
  * SVG Icons class.
  */
 require get_template_directory() . '/classes/class-varia-svg-icons.php';
-
-/**
- * Custom Comment Walker template.
- */
-require get_template_directory() . '/classes/class-varia-walker-comment.php';
 
 /**
  * Enhance the theme by hooking into WordPress.

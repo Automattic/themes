@@ -1,0 +1,135 @@
+.archive .post .entry-title,
+.home .post .entry-title {
+	font-size: var(--global--font-size-lg);
+	line-height: var(--global--line-height-heading);
+	margin-bottom: 0;
+}
+
+.archive .post-excerpt:not(.sticky),
+.home .post-excerpt:not(.sticky) {
+	color: var(--global--color-secondary);
+
+	.more-link {
+		color: var(--global--color-secondary);
+
+		&:hover {
+			color: var(--global--color-primary-hover);
+		}
+	}
+}
+
+.post .entry-header {
+	display: flex;
+	flex-direction: column;
+	.entry-title {
+		margin-bottom: 0;
+	}
+	.entry-meta {
+		margin-bottom: var(--global--spacing-vertical);
+		order: -1;
+
+		.posted-on {
+			svg {
+				display: none;
+			}
+			a {
+				color: var(--global--color-foreground-low-contrast);
+				font-family: var(--global--font-primary);
+				font-size: var(--global--font-size-md);
+			}
+		}
+	}
+}
+
+.site-main {
+	& > * {
+		margin: 0 auto;
+		padding: var(--global--spacing-vertical) 0;
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+	article > * {
+		margin-top: calc( 0.48 * var(--global--spacing-vertical) );
+		margin-bottom: calc( 0.48 * var(--global--spacing-vertical) );
+
+		/* This overrides Seedlet's style for this breakpoint */
+	 	@include media(mobile) {
+			margin-top: calc( 0.48 * var(--global--spacing-vertical) );
+			margin-bottom: calc( 0.48 * var(--global--spacing-vertical) );
+	 	}
+	}
+}
+
+// Sticky posts
+.has-sticky-post .site-main {
+	background: var(--sticky-posts--alt-color-background);
+
+	> *:first-child {
+		margin-top: calc( 0px - var(--global--spacing-vertical) );
+		padding-top: var(--global--spacing-vertical);
+	}
+}
+
+.post.sticky { // .post class needed to make this stronger
+	background: var(--sticky-posts--color-background);
+	padding-bottom: calc(2 * var(--global--spacing-vertical));
+
+	.entry-title {
+		font-size: var(--sticky-posts--entry-title-font-size);
+	}
+
+	.entry-content {
+		font-size: var(--sticky-posts--entry-content-font-size);
+	}
+
+	// Subsequent sticky posts do not need extra top padding.
+	+ .post.sticky {
+		padding-top: 0;
+	}
+
+	// The first non-sticky post does need extra top padding.
+	+ article:not(.sticky) {
+		padding-top: calc(2 * var(--global--spacing-vertical));
+	}
+}
+
+.sticky-post {
+	display: none;
+}
+
+.entry-content {
+	.more-link {
+		color: var(--global--color-foreground);
+		display: inline-block;
+		font-size: var(--entry-meta--font-size);
+		margin-top: 0;
+
+		&:hover {
+			color: var(--global--color-primary-hover);
+		}
+
+		&:after {
+			content: none;
+		}
+
+		svg {
+			height: var(--global--font-size-base);
+			width: var(--global--font-size-base);
+			margin-left: -0.25em;
+			display: inline-block;
+			vertical-align: middle;
+			transform: rotate(-90deg);
+		}
+	}
+
+	.excerpt-more-link {
+		.more-link {
+			margin-left: 1rem;
+		}
+	}
+}
+
+.single {
+	color: var(--global--color-foreground);
+}

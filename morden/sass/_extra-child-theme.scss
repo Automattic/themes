@@ -116,6 +116,12 @@ body {
 			margin-bottom: 0;
 		}
 
+		&.has-logo:not(.has-title-and-tagline) {
+			grid-template-areas:
+				"site-logo main-navigation"
+				"site-logo social-navigation";
+		}
+
 		.site-logo {
 			grid-area: site-logo;
 			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
@@ -474,6 +480,18 @@ article .entry-header .entry-title,
 	}
 }
 
+@include media(mobile) {
+	.home.page.hide-homepage-header.hide-homepage-title .hentry .entry-content {
+
+			> .wp-block-image.alignfull:first-child,
+			> .wp-block-cover.alignfull:first-child,
+			> .wp-block-media-text.alignfull:first-child,
+			> .wp-block-group.has-background.alignfull:first-child {
+				margin-top: -#{4 * map-deep-get($config-global, "spacing", "unit")};
+			}
+	}
+}
+
 /**
  * Comments
  */
@@ -601,5 +619,23 @@ article .entry-header .entry-title,
 		display: block;
 		margin-bottom: #{0.25 * map-deep-get($config-global, "spacing", "vertical")};
 		width: 100%;
+	}
+}
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		#masthead .site-header-wrap > *:not(.site-logo) {
+			margin: 0;
+		}
+
+		.site-header #site-navigation.main-navigation {
+			.woocommerce-menu-container,
+			.main-menu-container {
+				background: #{map-deep-get($config-global, "color", "foreground", "default")};
+			}
+		}
 	}
 }

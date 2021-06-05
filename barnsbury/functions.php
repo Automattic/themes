@@ -18,7 +18,6 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function barnsbury_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -59,12 +58,12 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#20603C'; // $config-global--color-primary-default;
-		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#655441';  // $config-global--color-secondary-default;
-		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFDF6';   // $config-global--color-background-default;
-		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#3C2323';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) ? $colors_array['colors']['txt'] : '#844d4d';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) ? $colors_array['colors']['txt'] : '#0D1B24';  // $config-global--color-foreground-dark-default;
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#20603C'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#655441';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFDF6';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#3C2323';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) ? $colors_array['colors']['txt'] : '#844d4d';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) ? $colors_array['colors']['txt'] : '#0D1B24';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -102,6 +101,11 @@ if ( ! function_exists( 'barnsbury_setup' ) ) :
 				),
 			)
 		);
+
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'barnsbury_setup', 12 );
@@ -136,6 +140,13 @@ function barnsbury_fonts_url() {
 			$font_families[] = 'Rubik:400,700,400italic,700italic';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -159,7 +170,7 @@ function barnsbury_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('barnsbury-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'barnsbury-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'barnsbury-style', 'rtl', 'replace' );
@@ -176,7 +187,7 @@ function barnsbury_editor_styles() {
 	wp_enqueue_style( 'barnsbury-editor-fonts', barnsbury_fonts_url(), array(), null );
 
 	// Hide duplicate palette colors
-	$colors_array = get_theme_mod('colors_manager', array( 'colors' => true )); // color annotations array()
+	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
 	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#3C2323' ) { // $config-global--color-foreground-light-default;
 		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
 			.components-circular-option-picker__option-wrapper:nth-child(6) {
@@ -186,4 +197,3 @@ function barnsbury_editor_styles() {
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'barnsbury_editor_styles' );
-

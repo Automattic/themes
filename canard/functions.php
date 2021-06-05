@@ -13,7 +13,6 @@ if ( ! isset( $content_width ) ) {
 }
 
 if ( ! function_exists( 'canard_content_width' ) ) {
-
 	function canard_content_width() {
 		global $content_width;
 
@@ -21,112 +20,126 @@ if ( ! function_exists( 'canard_content_width' ) ) {
 			$content_width = 869;
 		}
 	}
-
 }
 add_action( 'template_redirect', 'canard_content_width' );
 
 if ( ! function_exists( 'canard_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function canard_setup() {
-
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Canard, use a find and replace
-	 * to change 'canard' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'canard', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'canard-post-thumbnail', 870, 773, true );
-	add_image_size( 'canard-featured-content-thumbnail', 915, 500, true );
-	add_image_size( 'canard-single-thumbnail', 1920, 768, true );
+	function canard_setup() {
 
-	// Add support for responsive embeds.
-	add_theme_support( 'responsive-embeds' );
+		/*
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Canard, use a find and replace
+		 * to change 'canard' to the name of your theme in all the template files
+		 */
+		load_theme_textdomain( 'canard', get_template_directory() . '/languages' );
 
-	// Add custom colors to Gutenberg
-	add_theme_support(
-		'editor-color-palette', array(
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
+
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'canard-post-thumbnail', 870, 773, true );
+		add_image_size( 'canard-featured-content-thumbnail', 915, 500, true );
+		add_image_size( 'canard-single-thumbnail', 1920, 768, true );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom colors to Gutenberg
+		add_theme_support(
+			'editor-color-palette',
 			array(
-				'name'  => esc_html__( 'Black', 'canard' ),
-				'slug' => 'black',
-				'color' => '#222222',
-			),
-			array(
-				'name'  => esc_html__( 'Dark Gray', 'canard' ),
-				'slug' => 'dark-gray',
-				'color' => '#555555',
-			),
-			array(
-				'name'  => esc_html__( 'Medium Gray', 'canard' ),
-				'slug' => 'medium-gray',
-				'color' => '#777777',
-			),
-			array(
-				'name'  => esc_html__( 'Light Gray', 'canard' ),
-				'slug' => 'light-gray',
-				'color' => '#dddddd',
-			),
-			array(
-				'name'  => esc_html__( 'White', 'canard' ),
-				'slug' => 'white',
-				'color' => '#ffffff',
-			),
-			array(
-				'name'  => esc_html__( 'Red', 'canard' ),
-				'slug' => 'red',
-				'color' => '#d11415',
+				array(
+					'name'  => esc_html__( 'Black', 'canard' ),
+					'slug'  => 'black',
+					'color' => '#222222',
+				),
+				array(
+					'name'  => esc_html__( 'Dark Gray', 'canard' ),
+					'slug'  => 'dark-gray',
+					'color' => '#555555',
+				),
+				array(
+					'name'  => esc_html__( 'Medium Gray', 'canard' ),
+					'slug'  => 'medium-gray',
+					'color' => '#777777',
+				),
+				array(
+					'name'  => esc_html__( 'Light Gray', 'canard' ),
+					'slug'  => 'light-gray',
+					'color' => '#dddddd',
+				),
+				array(
+					'name'  => esc_html__( 'White', 'canard' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => esc_html__( 'Red', 'canard' ),
+					'slug'  => 'red',
+					'color' => '#d11415',
+				),
 			)
-		)
-	);
+		);
 
-	// This theme uses wp_nav_menu() in four locations.
-	register_nav_menus( array(
-		'primary'   => __( 'Primary Location', 'canard' ),
-		'secondary' => __( 'Secondary Location', 'canard' ),
-		'footer'    => __( 'Footer Location', 'canard' ),
-		'social'    => __( 'Social Location', 'canard' ),
-	) );
+		// This theme uses wp_nav_menu() in four locations.
+		register_nav_menus(
+			array(
+				'primary'   => __( 'Primary Location', 'canard' ),
+				'secondary' => __( 'Secondary Location', 'canard' ),
+				'footer'    => __( 'Footer Location', 'canard' ),
+				'social'    => __( 'Social Location', 'canard' ),
+			)
+		);
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'image', 'link', 'gallery',
-	) );
-}
+		/*
+		 * Enable support for Post Formats.
+		 * See http://codex.wordpress.org/Post_Formats
+		 */
+		add_theme_support(
+			'post-formats',
+			array(
+				'image',
+				'link',
+				'gallery',
+			)
+		);
+	}
 endif; // canard_setup
 add_action( 'after_setup_theme', 'canard_setup' );
 
@@ -136,25 +149,29 @@ add_action( 'after_setup_theme', 'canard_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function canard_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'canard' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar', 'canard' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => __( 'Footer', 'canard' ),
-		'id'            => 'sidebar-2',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer', 'canard' ),
+			'id'            => 'sidebar-2',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'canard_widgets_init' );
 
@@ -191,7 +208,7 @@ function canard_lato_inconsolata_fonts_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -230,7 +247,7 @@ function canard_pt_serif_playfair_display_font_url() {
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'cyrillic,latin,latin-ext' ),
 		);
-		$fonts_url = add_query_arg( $query_args, "https://fonts.googleapis.com/css" );
+		$fonts_url  = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -288,7 +305,7 @@ add_action( 'wp_enqueue_scripts', 'canard_scripts' );
  * Gutenberg Editor Styles
  */
 function canard_editor_styles() {
-	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css');
+	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'canard-pt-serif-playfair-display', canard_pt_serif_playfair_display_font_url() );
 	wp_enqueue_style( 'canard-lato-inconsolata', canard_lato_inconsolata_fonts_url() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );

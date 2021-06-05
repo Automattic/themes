@@ -1,13 +1,40 @@
-<!-- wp:group {"align":"full","tagName":"header"} -->
-<div class="wp-block-group alignfull"><div class="wp-block-group__inner-container"><!-- wp:template-part {"slug":"header","theme":"seedlet-blocks","align":"full"} /--></div></div>
+<!-- wp:template-part {"slug":"header","tagName":"header","align":"full"} /-->
+
+<!-- wp:group {"layout":{"inherit":true}} -->
+<div class="wp-block-group"><!-- wp:post-title /--></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","className":"site-content","tagName":"main"} -->
-<div class="wp-block-group alignfull site-content"><div class="wp-block-group__inner-container">
-<!-- wp:post-title /-->
-<!-- wp:post-content {"align":"full"} /--></div></div>
+<!-- wp:post-content {"layout":{"inherit":true}} /-->
+
+<!-- wp:template-part {"slug":"post-meta","layout":{"inherit":true}} /-->
+
+<!-- wp:group {"className":"author-bio","layout":{"inherit":true}} -->
+<div class="wp-block-group author-bio"><!-- wp:post-author {"showAvatar":false,"showBio":true,"byline":"Published by","fontSize":"huge"} /-->
+
+<!-- wp:columns {"className":"wp-block-post-navigation-links"} -->
+<div class="wp-block-columns wp-block-post-navigation-links"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"className":"wp-block-post-navigation-link-byline"} -->
+<p class="wp-block-post-navigation-link-byline">Previous Post</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-navigation-link {"type":"previous","showTitle":true} /--></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"align":"right","className":"wp-block-post-navigation-link-byline"} -->
+<p class="has-text-align-right wp-block-post-navigation-link-byline">Next Post</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-navigation-link {"textAlign":"right","showTitle":true} /--></div>
+<!-- /wp:column --></div>
+<!-- wp:spacer {"height":50} -->
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+<!-- wp:post-comments /-->
+<!-- wp:spacer {"height":25} -->
+<div style="height:25px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+<!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","tagName":"footer"} -->
-<div class="wp-block-group alignfull"><div class="wp-block-group__inner-container"><!-- wp:template-part {"slug":"footer","theme":"seedlet-blocks","align":"full"} /--></div></div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer","layout":{"inherit":true}} /-->

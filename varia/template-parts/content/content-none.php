@@ -13,26 +13,27 @@
 
 <section class="no-results not-found">
 	<header class="page-header responsive-max-width">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'varia' ); ?></h1>
+		<h1 class="page-title"><?php _e( 'No Posts Found', 'varia' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content responsive-max-width">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+			?>
 
-			printf(
-				'<p>' . wp_kses(
+			<p>
+			<?php _e( "Your site is set to show the the most recent posts on your homepage - but you don't have any Posts published.", 'varia' ); ?></p>
+
+			<p>
+				<a href="<?php echo esc_url( admin_url( 'edit.php' ) ); ?>" class="button">
+					<?php
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'varia' ),
-					array(
-						'a' => array(
-							'href' => array(),
-						),
-					)
-				) . '</p>',
-				esc_url( admin_url( 'post-new.php' ) )
-			);
-
+					_e( 'Add or publish Posts', 'varia' );
+					?>
+				</a>
+			</p>	
+			
+			<?php
 		elseif ( is_search() ) :
 			?>
 
