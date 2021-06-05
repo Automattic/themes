@@ -2,7 +2,7 @@
 Contributors: Automattic
 Requires at least: 5.0
 Tested up to: 5.4.1
-Requires PHP: 7.3
+Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,34 @@ Seedlet was built to be the perfect partner to the block editor, and supports al
 Seedlet is a great option for professionals and creatives looking for a sophisticated vibe. Whether you're looking to create a blog or a robust site promoting your business, do with simplicity, style, and Seedlet.
 
 == Changelog ==
+
+= 1.1.13 =
+* Responsive menu fix 
+* Customizer 5.7 fix
+
+= 1.1.4 - 1.1.7 =
+* Allow header and footer to be hidden via customizer 
+* Bug fixes and improvements
+
+= 1.1.1-2 =
+* Bug fixes and improvements
+
+= 1.1.0 =
+* Refactor the menu styles so they can be loaded separately and dequeued in child themes
+* Use ponyfill for IE11 support
+* Add CSS sourcemaps
+* Simplify the responsive rules and alignments
+* Bug fixes and improvements
+
+= 1.0.8 =
+* Add block editor theme tags
+* Correct text color rules for nested blocks
+* Tidy up translation functions and comments
+* Update minimum PHP version requirement
+
+= 1.0.7 =
+* Fix is_IE global bug
+* Remove duplicate inclusion of editor CSS variables
 
 = 1.0.6 =
 * Add block patterns 
@@ -95,4 +123,6 @@ License: CC0
 Source: https://www.si.edu/object/hymenoxys-odorata-dc:nmnhbotany_13045011
 		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_10752403
 		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_10672835
-Included in theme screenshot.
+		https://www.si.edu/object/coccocypselum-guianense-aubl-k-schum:nmnhbotany_13757252
+		https://www.si.edu/object/nephroma-sp:nmnhbotany_13875654
+Included in theme screenshot and in block patterns. 

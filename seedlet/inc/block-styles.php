@@ -16,7 +16,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			'core/latest-posts',
 			array(
 				'name'         => 'seedlet-alternating-grid',
-				'label'        => 'Alternating Grid',
+				'label'        => __( 'Alternating Grid', 'seedlet' ),
 				'style_handle' => 'seedlet-alternating-grid',
 			)
 		);
@@ -24,7 +24,7 @@ if ( function_exists( 'register_block_style' ) ) {
 			'a8c/blog-posts',
 			array(
 				'name'         => 'seedlet-alternating-grid',
-				'label'        => 'Alternating Grid',
+				'label'        => __( 'Alternating Grid', 'seedlet' ),
 				'style_handle' => 'seedlet-alternating-grid',
 			)
 		);

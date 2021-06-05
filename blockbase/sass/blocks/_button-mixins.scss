@@ -1,0 +1,64 @@
+// NOTE: These remain for the styling of buttons that are NOT blocks and is used elsewhere.  This can be removed when those no longer exist.
+@mixin button-main-styles {
+	@include button-padding-styles;
+	@include button-typography-styles;
+	@include button-color-styles;
+	border-radius: var(--wp--custom--button--border--radius);
+}
+
+@mixin button-color-styles {
+	opacity: 1;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	border-color: currentColor;
+	svg {
+		fill: var(--wp--custom--button--color--text);
+	}
+}
+
+//standard Button padding.  Account for desired padding size and the size of the border width (so that the total height of
+//standard and outline buttons are equal.
+@mixin button-padding-styles {
+	border-width: 0;
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width) );
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width) );
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width) );
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width) );
+}
+
+@mixin button-typography-styles {
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: var(--wp--custom--button--typography--font-family);
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
+}
+
+//apply outline styles. apply padding that does NOT account for border width (as the border width is applied here).
+@mixin button-border-styles {
+	border-style: var(--wp--custom--button--border--style);
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--padding--left);
+	padding-right: var(--wp--custom--button--spacing--padding--right);
+}
+
+
+// NOTE: These remain for the hover styling of blocks.  This can be removed when the button block has configurable hover states.
+// The mechanism below ONLY CHANGES CSS VARIABLES that are already applied to properties (above)
+@mixin button-hover-styles {
+	//The following changes should ONLY be changed if the user has NOT set a custom color
+	&:not(.has-background):not(.has-text-color) {
+		&:hover,
+		&:focus,
+		&.has-focus {
+			//change the color variables to the hover equivalent
+			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+			--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+			--wp--custom--button--border--color: var(--wp--custom--button--hover--border--color);
+			@include button-color-styles;
+			border-color: var(--wp--custom--button--border--color);
+		}
+	}
+}

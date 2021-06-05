@@ -1,5 +1,7 @@
-/* Text meant only for screen readers. */
-.screen-reader-text {
+@mixin screen-reader-text() {
+
+	/* Text meant only for screen readers. */
+
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	clip-path: inset(50%);
@@ -30,6 +32,10 @@
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
 	}
+}
+
+.screen-reader-text {
+	@include screen-reader-text();
 }
 
 /* Do not show the outline on the skip link target. */

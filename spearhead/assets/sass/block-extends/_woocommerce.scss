@@ -1,0 +1,94 @@
+body[class*="woocommerce"] #page {
+	.site-header {
+		.primary-navigation {
+			flex-basis: 50%;
+		}
+	}
+
+	.woocommerce-tabs {
+		ul.tabs {
+			padding-left: calc( 0.3 * var(--global--spacing-horizontal));
+			margin-bottom: calc( 2 * var(--global--spacing-vertical));
+			li {
+				background-color: var(--global--color-foreground-low-contrast);
+				&:before {
+					box-shadow: 2px 2px 0 var(--global--color-foreground-low-contrast);
+				}
+				&:after {
+					box-shadow: -2px 2px 0 var(--global--color-foreground-low-contrast);
+				}
+
+				a {
+					color: var(--button--color-text);
+					padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+					&:hover {
+						color: var(--button--color-text-hover);
+					}
+				}
+				&.active a {
+					color: var(--global--color-foreground);
+				}
+			}
+		}
+		.panel {
+			margin-bottom: calc( 2 * var(--global--spacing-vertical));
+
+			h2 {
+				font-family: var(--global--font-secondary);
+			}
+		}
+	}
+}
+
+#content {
+	.wc-block-grid{
+		.wc-block-grid__product {
+			.wc-block-grid__product-onsale {
+				top: -0.5em;
+				right: -0.5em;
+			}
+
+			.wc-block-grid__product-title{
+				font-family: var(--global--font-secondary);
+			}
+
+			.wc-block-grid__product-price {
+				color: var(--global--color-foreground);
+			}
+		}
+	}
+	.wc-block-featured-product {
+		.wc-block-featured-product__price {
+			font-size: var(--global--font-size-sm);
+		}
+	}
+}
+
+.wc-block-components-review-list-item__author + .wc-block-components-review-list-item__published-date::before {
+	content: none;
+}
+
+.wc-block-components-review-list-item__product + .wc-block-components-review-list-item__author,
+.wc-block-components-review-list-item__published-date {
+	font-size: var(--global--font-size-xs);
+}
+
+.single-product #page #woocommerce-wrapper div.product {
+	div.summary p.price {
+		color: var(--global--color-foreground);
+		font-size: var(--global--font-size-lg);
+	}
+
+	form.cart div.quantity input[type=number] {
+		line-height: var(--global--font-size-xl);
+		padding: calc(0.5 * var(--button--padding-vertical)) var(--form--spacing-unit);
+	}
+	form.cart button {
+		line-height: var(--global--font-size-xl);
+		padding: calc(0.5 * var(--button--padding-vertical) + 1px) var(--button--padding-horizontal);
+	}
+}
+
+.product_meta {
+	color: var(--global--color-foreground-low-contrast);
+}

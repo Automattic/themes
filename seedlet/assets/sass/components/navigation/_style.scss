@@ -1,0 +1,455 @@
+// Navigation
+
+// Mobile menu toggles
+.menu-button-container {
+	display: none;
+	justify-content: space-between;
+	margin: 0;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	@include media( $navigation-max-break-point ){
+		display: block;
+		margin: 0;
+		width: auto;
+	}
+
+	// Adjust button postion when scrolling is locked
+	.lock-scrolling & > .button {
+		position: fixed;
+		top: 0;
+		right: 0;
+	}
+
+	#primary-open-menu {
+		margin-left: auto;
+		padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
+		margin-top: calc(0.25 * var(--global--spacing-unit));
+		margin-right: calc(0.25 * var(--global--spacing-unit));
+	}
+
+	.admin-bar.lock-scrolling & > .button,
+	.admin-bar:not(.primary-navigation-open) & {
+		top: var(--wpadmin-bar--height);
+	}
+
+	.has-marketing-bar.lock-scrolling & > .button,
+	.has-marketing-bar:not(.primary-navigation-open) & {
+		top: var(--wpcom-marketing-bar--height);
+	}
+	.admin-bar.has-marketing-bar.lock-scrolling & > .button,
+	.admin-bar.has-marketing-bar:not(.primary-navigation-open) & {
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
+	}
+
+	#site-navigation + & {
+		right: 0;
+	}
+}
+
+.menu-button-container,
+.primary-navigation,
+.woo-navigation {
+	.button {
+		font-size: var(--primary-nav--font-size);
+		background-color: transparent;
+		color: var(--primary-nav--color-link);
+		z-index: 500;
+
+		&.open {
+			display: flex;
+		}
+		&.close {
+			display: none;
+			position: absolute;
+			right: 0;
+			z-index: 501;
+			.has-marketing-bar & {
+				top: calc(-1 * var(--wpcom-marketing-bar--height));
+			}
+			.admin-bar & {
+				top: calc(-1 * var(--wpadmin-bar--height));
+			}
+			.admin-bar.has-marketing-bar & {
+				top: calc(-1 * (var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height)));
+			}
+		}
+
+		&#woo-open-menu {
+			padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
+			margin-top: calc(0.25 * var(--global--spacing-unit));
+			margin-left: calc(0.25 * var(--global--spacing-unit));
+
+			.svg-icon {
+				margin-left: 0;
+				margin-right: calc(0.25 * var(--global--spacing-unit));
+				vertical-align: middle;
+			}
+		}
+
+		.dropdown-icon {
+			display: flex;
+			align-items: center;
+
+			.svg-icon {
+				margin-left: calc(0.25 * var(--global--spacing-unit));
+			}
+
+
+			// Menu icon is off-center vertically to prevent blurry pixels.
+			&.open .svg-icon {
+				position: relative;
+				top: -1px;
+			}
+		}
+
+		.hide-visually {
+			position: absolute !important;
+			clip: rect(1px, 1px, 1px, 1px);
+			padding:0 !important;
+			border:0 !important;
+			height: 1px !important;
+			width: 1px !important;
+			overflow: hidden;
+		}
+	}
+
+	.primary-navigation-open & {
+		#primary-close-menu {
+			display: flex;
+			padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
+			margin-top: calc(0.25 * var(--global--spacing-unit));
+			margin-right: calc(0.25 * var(--global--spacing-unit));
+		}
+	}
+	.woo-navigation-open & {
+		#woo-close-menu {
+			display: flex;
+			padding: calc(var(--button--padding-vertical) - (0.25 * var(--global--spacing-unit))) calc(var(--button--padding-horizontal) - (0.25 * var(--global--spacing-unit)));
+			margin-top: calc(0.25 * var(--global--spacing-unit));
+			margin-right: calc(0.25 * var(--global--spacing-unit));
+		}
+	}
+}
+
+.woo-navigation-open,
+.primary-navigation-open {
+	.menu-button-container {
+		#primary-open-menu,
+		#woo-open-menu {
+			display: none;
+		}
+	}
+
+	.primary-navigation #primary-open-menu {
+		display: none;
+	}
+}
+
+.primary-navigation,
+.woo-navigation {
+	position: absolute;
+ 	top: 0;
+ 	right: 0;
+	color: var(--primary-nav--color-text);
+	font-size: var(--primary-nav--font-size);
+	margin-top: 0;
+	margin-bottom: 0;
+
+	@include media( $navigation-max-break-point ) {
+		width: 100%;
+	}
+
+	// Mobile menu closed
+	& > div {
+		visibility: hidden;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: calc(4* var(--global--spacing-unit)) var(--global--spacing-unit) var(--global--spacing-horizontal);
+		background-color: var(--global--color-background);
+		overflow-x: hidden;
+		overflow-y: scroll;
+		transition: all .15s ease-in-out;
+		transform: translateY(var(--global--spacing-vertical));
+
+		@include media( $navigation-max-break-point ) {
+			z-index: 499;
+		}
+	}
+
+
+	// Mobile menu open
+	.primary-navigation-open & {
+
+		> .primary-menu-container {
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+	}
+
+	// Adjust positions when logged-in
+	.has-marketing-bar &,
+	.has-marketing-bar & > div {
+		top: var(--wpcom-marketing-bar--height);
+	}
+
+	.admin-bar &,
+	.admin-bar & > div {
+		top: var(--wpadmin-bar--height);
+	}
+
+	.admin-bar.has-marketing-bar &,
+	.admin-bar.has-marketing-bar & > div {
+		top: calc(var(--wpadmin-bar--height) + var(--wpcom-marketing-bar--height));
+	}
+
+	@include media( $navigation-min-break-point ) {
+		position: relative;
+		display: flex;
+		justify-content: var(--primary-nav--justify-content);
+		margin-top: calc( var(--global--spacing-vertical) * 1.5 );
+
+		// Mobile menu on desktop
+		& > div {
+			visibility: visible;
+			opacity: 1;
+			position: relative;
+			padding: 0;
+			background-color: transparent;
+			overflow: initial;
+			transform: none;
+		}
+
+		// Hide mobile menu toggle
+		#toggle-menu {
+			display: none;
+		}
+
+		// Hide sub-sub-menus
+		& > div > ul > li > ul {
+			display: none;
+		}
+
+		// Don't adjust position when logged-in
+
+		.admin-bar.has-marketing-bar &,
+		.has-marketing-bar &,
+		.admin-bar & {
+			top: initial;
+
+			& > div {
+				top: initial;
+			}
+		}
+	}
+
+	// Menu list wrapper
+	& div > ul {
+		display: flex;
+		justify-content: var(--primary-nav--justify-content);
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		max-width: none;
+		padding-left: 0;
+		position: relative;
+
+		ul {
+			padding-left: 0;
+		}
+
+		li {
+			display: block;
+			position: relative;
+			width: 100%;
+			z-index: 1;
+
+			&:hover,
+			&:focus-within {
+				cursor: pointer;
+				z-index: 99999;
+			}
+
+			@include media( $navigation-min-break-point ) {
+				display: inherit;
+				width: inherit;
+
+				/* Submenu display */
+				&:hover > ul,
+				&:focus-within > ul,
+				& ul:hover,
+				& ul:focus {
+					visibility: visible;
+					opacity: 1;
+					display: block;
+				}
+			}
+		}
+
+		/* Sub-menus Flyout */
+		& > li > .sub-menu {
+
+			position: relative;
+
+			@include media( $navigation-min-break-point ) {
+				margin: 0;
+				background: var(--global--color-background);
+				box-shadow: var(--global--elevation);
+				left: 0;
+				top: calc(100% - (0.5 * var(--primary-nav--padding)));
+				min-width: max-content;
+				opacity: 0;
+				position: absolute;
+				transition: all 0.5s ease;
+				visibility: hidden;
+			}
+
+			.sub-menu {
+				width: 100%;
+			}
+		}
+	}
+
+	// Top-level Item Link Colors
+	.primary-menu > .menu-item:hover > a {
+		color: var(--primary-nav--color-link-hover);
+	}
+
+	// Top-level Menu Item
+	.primary-menu-container > ul > .menu-item {
+		padding: calc(0.5 * var(--primary-nav--padding)) 0;
+
+		@include media( $navigation-min-break-point ) {
+			display: flex;
+			align-items: center;
+			padding: var(--primary-nav--padding);
+		}
+	}
+
+	// Menu Item Link Colors
+	.menu-item > a {
+		color: var(--primary-nav--color-link);
+
+		&:hover {
+			color: var(--primary-nav--color-link-hover);
+			border-color: var(--primary-nav--color-border);
+		}
+
+		&:focus {
+			color: var(--global--color-secondary);
+		}
+
+		&:active {
+			color: var(--primary-nav--color-link);
+		}
+	}
+
+	// Menu Item Link
+	a {
+		color: currentColor;
+		display: inline;
+		font-family: var(--primary-nav--font-family-mobile);
+		font-size: var(--primary-nav--font-size-mobile);
+		font-weight: var(--primary-nav--font-weight);
+
+		@include media( $navigation-min-break-point ) {
+			display: block;
+			font-family: var(--primary-nav--font-family);
+			font-size: var(--primary-nav--font-size);
+			font-weight: var(--primary-nav--font-weight);
+		}
+
+		& + svg {
+			fill: currentColor;
+		}
+
+		&:hover,
+		&:link,
+		&:visited {
+			color: currentColor;
+		}
+	}
+
+	// Sub-menu depth indicators + text styles
+	.sub-menu {
+		list-style: none;
+		margin-left: var(--primary-nav--padding);
+
+		@include media( $navigation-min-break-point ) {
+			padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding);
+
+			> .menu-item > .sub-menu {
+				padding: 0;
+			}
+
+			> .menu-item.menu-item-has-children {
+				padding: calc(0.5 * var(--primary-nav--padding)) var(--primary-nav--padding) 0 0;
+			}
+		}
+
+		.menu-item {
+			padding-top: calc(0.5 * var(--primary-nav--padding));
+			padding-bottom: calc(0.5 * var(--primary-nav--padding));
+
+			@include media( $navigation-min-break-point ) {
+				padding-top: calc(0.5 * var(--primary-nav--padding));
+				padding-bottom: calc(0.5 * var(--primary-nav--padding));
+			}
+
+			a {
+				display: inline;
+				font-size: var(--primary-nav--font-size-sub-menu-mobile);
+				font-style: var(--primary-nav--font-style-sub-menu-mobile);
+
+				@include media( $navigation-min-break-point ) {
+					font-size: var(--primary-nav--font-size);
+					font-style: var(--primary-nav--font-style);
+				}
+			}
+		}
+	}
+
+	// Show top-level sub-menu indicators above mobile-breakpoint-only
+	.menu-item-has-children {
+
+		> .svg-icon {
+ 			display: none;
+ 		}
+
+		@include media( $navigation-min-break-point ) {
+
+			> .svg-icon {
+				display: inline-block;
+				height: 100%;
+			}
+		}
+	}
+
+	.hide-visually {
+		position: absolute !important;
+		clip: rect(1px, 1px, 1px, 1px);
+		padding:0 !important;
+		border:0 !important;
+		height: 1px !important;
+		width: 1px !important;
+		overflow: hidden;
+	}
+}
+
+// Keep the menu pinned to the top when the menu is open.
+@include media( $navigation-max-break-point ) {
+	.lock-scrolling .site {
+		left: 0;
+		max-width: 100%;
+		position: fixed;
+		right: 0;
+	}
+}

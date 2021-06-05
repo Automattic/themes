@@ -9,6 +9,18 @@
  * @since 1.0.0
  */
 
+if ( ! function_exists( 'varia_default_colors' ) ) {
+	function varia_default_colors() {
+		return array(
+			'background' => '#FFFFFF',
+			'foreground' => '#303030',
+			'primary'    => '#CD2220',
+			'secondary'  => '#007AB7',
+			'tertiary'   => null,
+		);
+	}
+}
+
 if ( ! function_exists( 'morden_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -18,7 +30,6 @@ if ( ! function_exists( 'morden_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function morden_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -53,52 +64,13 @@ if ( ! function_exists( 'morden_setup' ) ) :
 			)
 		);
 
-		// Add child theme editor color pallete to match Sass-map variables in `_config-child-theme-deep.scss`.
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array(
-					'name'  => __( 'Primary', 'morden' ),
-					'slug'  => 'primary',
-					'color' => '#CD2220',
-				),
-				array(
-					'name'  => __( 'Secondary', 'morden' ),
-					'slug'  => 'secondary',
-					'color' => '#007AB7',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'morden' ),
-					'slug'  => 'foreground-dark',
-					'color' => '#101010',
-				),
-				array(
-					'name'  => __( 'Gray', 'morden' ),
-					'slug'  => 'foreground',
-					'color' => '#303030',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'morden' ),
-					'slug'  => 'foreground-light',
-					'color' => '#757575',
-				),
-				array(
-					'name'  => __( 'Lighter Gray', 'morden' ),
-					'slug'  => 'background-dark',
-					'color' => '#E1DFDF',
-				),
-				array(
-					'name'  => __( 'Subtle Gray', 'morden' ),
-					'slug'  => 'background-light',
-					'color' => '#F8F8F8',
-				),
-				array(
-					'name'  => __( 'White', 'morden' ),
-					'slug'  => 'background',
-					'color' => '#FFFFFF',
-				),
-			)
-		);
+		// Setup nav on side toggle support.
+		if ( function_exists( 'varia_mobile_nav_on_side_setup' ) ) {
+			varia_mobile_nav_on_side_setup();
+		}
+
+		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
+		add_theme_support( 'experimental-link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'morden_setup', 12 );
@@ -138,6 +110,13 @@ function morden_fonts_url() {
 
 		$font_families[] = 'Noto Sans:400,400i,700,700i';
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -161,7 +140,7 @@ function morden_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('morden-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'morden-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'morden-style', 'rtl', 'replace' );

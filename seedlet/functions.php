@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package Seedlet
- * @since 1.0.0
+ * @since 1.1.0
  */
 
 /**
@@ -24,6 +24,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
+
 	function seedlet_setup() {
 		/*
 		 * Make theme available for translation.
@@ -56,8 +57,8 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'seedlet' ),
-				'footer' => __( 'Footer Navigation', 'seedlet' ),
-				'social' => __( 'Social Links Navigation', 'seedlet' ),
+				'footer'  => __( 'Footer Navigation', 'seedlet' ),
+				'social'  => __( 'Social Links Navigation', 'seedlet' ),
 			)
 		);
 
@@ -75,6 +76,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 				'caption',
 				'style',
 				'script',
+				'navigation-widgets',
 			)
 		);
 
@@ -107,26 +109,20 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 
 		$editor_stylesheet_path = './assets/css/style-editor.css';
 
-		// Note, the is_IE global variable is defined by WordPress and is used
-		// to detect if the current browser is internet explorer.
-		global $is_IE;
-		if ( $is_IE ) {
-			$editor_stylesheet_path = './assets/css/ie-editor.css';
-		}
-
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
 				seedlet_fonts_url(),
-				$editor_stylesheet_path,
-		) );
+				'./assets/css/style-editor.css',
+			)
+		);
 
 		// Add custom editor font sizes.
 		add_theme_support(
 			'editor-font-sizes',
 			array(
 				array(
-				'name'      => __( 'Tiny', 'seedlet' ),
+					'name'      => __( 'Tiny', 'seedlet' ),
 					'shortName' => __( 'XS', 'seedlet' ),
 					'size'      => 14,
 					'slug'      => 'tiny',
@@ -172,27 +168,27 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 				array(
 					'name'  => __( 'Primary', 'seedlet' ),
 					'slug'  => 'primary',
-					'color' => $primary
+					'color' => $primary,
 				),
 				array(
 					'name'  => __( 'Secondary', 'seedlet' ),
 					'slug'  => 'secondary',
-					'color' => $secondary
+					'color' => $secondary,
 				),
 				array(
 					'name'  => __( 'Foreground', 'seedlet' ),
 					'slug'  => 'foreground',
-					'color' => $foreground
+					'color' => $foreground,
 				),
 				array(
 					'name'  => __( 'Tertiary', 'seedlet' ),
 					'slug'  => 'tertiary',
-					'color' => $tertiary
+					'color' => $tertiary,
 				),
 				array(
 					'name'  => __( 'Background', 'seedlet' ),
 					'slug'  => 'background',
-					'color' => $background
+					'color' => $background,
 				),
 			)
 		);
@@ -205,7 +201,7 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 			array(
 				array(
 					'name'     => __( 'Diagonal', 'seedlet' ),
-					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b  . ' 50%)',
+					'gradient' => 'linear-gradient(to bottom right, ' . $gradient_color_a . ' 49.9%, ' . $gradient_color_b . ' 50%)',
 					'slug'     => 'hard-diagonal',
 				),
 				array(
@@ -261,17 +257,17 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 		add_theme_support( 'experimental-link-color' );
 
 		// Add support for experimental cover block spacing.
-		add_theme_support( 'experimental-custom-spacing' );
+		add_theme_support( 'custom-spacing' );
 
 		// Add support for custom units.
 		add_theme_support( 'custom-units' );
-    
+
 		// Add support for WordPress.com Global Styles.
 		add_theme_support(
 			'jetpack-global-styles',
-			[
+			array(
 				'enable_theme_default' => true,
-			]
+			)
 		);
 	}
 endif;
@@ -287,13 +283,13 @@ function seedlet_fonts_url() {
 	$fonts_url = '';
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Playfair Display, translate this to 'off'. Do not translate
+	* supported by Fira Sans, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$fira_sans = esc_html_x( 'on', 'Fira Sans: on or off', 'seedlet' );
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Roboto Sans, translate this to 'off'. Do not translate
+	* supported by Playfair Display, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
 	$playfair_display = esc_html_x( 'on', 'Playfair Display: on or off', 'seedlet' );
@@ -308,6 +304,13 @@ function seedlet_fonts_url() {
 		if ( 'off' !== $playfair_display ) {
 			$font_families[] = 'Playfair Display:ital,wght@0,400;0,700;1,400';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -353,7 +356,7 @@ function seedlet_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'seedlet_content_width', 750 );
+	$GLOBALS['content_width'] = apply_filters( 'seedlet_content_width', 620 );
 }
 add_action( 'after_setup_theme', 'seedlet_content_width', 0 );
 
@@ -365,20 +368,14 @@ function seedlet_scripts() {
 	wp_enqueue_style( 'seedlet-fonts', seedlet_fonts_url(), array(), null );
 
 	// Theme styles
+	wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
-	// Note, the is_IE global variable is defined by WordPress and is used
-	// to detect if the current browser is internet explorer.
-	global $is_IE;
-	if ( $is_IE ) {
-		// If IE 11 or below, use a flattened stylesheet with static values replacing CSS Variables
-		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/assets/css/ie.css', array(), wp_get_theme()->get( 'Version' ) );
-	} else {
-		// If not IE, use the standard stylesheet
-		wp_enqueue_style( 'seedlet-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
-	}
+	// Navigation styles
+	wp_enqueue_style( 'seedlet-style-navigation', get_template_directory_uri() . '/assets/css/style-navigation.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// RTL styles
 	wp_style_add_data( 'seedlet-style', 'rtl', 'replace' );
+	wp_style_add_data( 'seedlet-style-navigation', 'rtl', 'replace' );
 
 	// Print styles
 	wp_enqueue_style( 'seedlet-print-style', get_template_directory_uri() . '/assets/css/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
@@ -390,6 +387,21 @@ function seedlet_scripts() {
 
 	// Main navigation scripts
 	wp_enqueue_script( 'seedlet-primary-navigation-script', get_template_directory_uri() . '/assets/js/primary-navigation.js', array(), wp_get_theme()->get( 'Version' ), true );
+
+	// Note, the is_IE global variable is defined by WordPress and is used
+	// to detect if the current browser is internet explorer.
+	global $is_IE;
+	if ( $is_IE ) {
+		// If IE 11 or below, use a ponyfill to add CSS Variable support
+		wp_register_script( 'css-vars-ponyfill', get_template_directory_uri() . '/assets/js/css-vars-ponyfill2.js' );
+		wp_enqueue_script(
+			'ie11-fix',
+			get_template_directory_uri() . '/assets/js/ie11-fix.js',
+			array( 'css-vars-ponyfill' ),
+			'1.0'
+		);
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'seedlet_scripts' );
 
@@ -410,6 +422,21 @@ function seedlet_skip_link_focus_fix() {
 	<?php
 }
 add_action( 'wp_print_footer_scripts', 'seedlet_skip_link_focus_fix' );
+
+if ( ! function_exists( 'seedlet_author_bio' ) ) {
+	/**
+	 * Implements the Jetpack Author bio
+	 */
+	function seedlet_author_bio() {
+		if ( ! function_exists( 'jetpack_author_bio' ) ) {
+			if ( ! is_singular( 'attachment' ) ) {
+				get_template_part( 'template-parts/post/author-bio' );
+			}
+		} else {
+			jetpack_author_bio();
+		}
+	}
+}
 
 /**
  * SVG Icons class.
@@ -459,3 +486,8 @@ require get_template_directory() . '/inc/block-styles.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';

@@ -4,10 +4,10 @@ Theme URI: http://wordpress.com/themes/dyad-2/
 Author: Automattic
 Author URI: http://wordpress.com/themes
 Description: Dyad pairs your written content and images together in perfect balance. The theme is geared towards photographers, foodies, artists, and anyone who is looking for a strong photographic presence on their website.
-Version: 2.0.8-wpcom
+Version: 2.0.9-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: art, artwork, blog, blue, classic-menu, custom-colors, custom-header, custom-menu, dark, design, editor-style, featured-images, food, grid-layout, infinite-scroll, photoblogging, photography, post-slider, responsive-layout, rtl-language-support, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, yellow
+Tags: art, artwork, blog, blog-homepage, blue, classic-menu, custom-colors, custom-header, custom-menu, dark, design, editor-style, featured-images, food, grid-layout, infinite-scroll, photoblogging, photography, post-slider, responsive-layout, rtl-language-support, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, yellow
 Text Domain: dyad-2
 
 This theme, like WordPress, is licensed under the GPL.
@@ -892,9 +892,19 @@ footer.comment-footer:after,
 	background-color: rgba(36,38,41,0.4);
 }
 
+.has-marketing-bar .site-header,
+.has-marketing-bar.is-singular .site-header {
+	top: 49px;
+}
+
 .admin-bar .site-header,
 .admin-bar.is-singular .site-header {
 	top: 32px;
+}
+
+.admin-bar.has-marketing-bar .site-header,
+.admin-bar.has-marketing-bar.is-singular .site-header {
+	top: 78px;
 }
 
 /**
@@ -3584,6 +3594,10 @@ object {
 	 * Site Header
 	 */
 	.site-header,
+	.has-marketing-bar .site-header,
+	.has-marketing-bar.is-singular .site-header,
+	.admin-bar.has-marketing-bar .site-header, 
+	.admin-bar.has-marketing-bar.is-singular .site-header,
 	.admin-bar .site-header,
 	.admin-bar.is-singular .site-header {
 		position: absolute;
@@ -3928,6 +3942,8 @@ object {
 
 	.site-header,
 	.is-singular .site .site-header,
+	.admin-bar.has-marketing-bar .site-header,
+	.admin-bar.has-marketing-bar.is-singular .site-header,
 	.admin-bar .site-header,
 	.admin-bar.is-singular .site-header {
 		display: block;

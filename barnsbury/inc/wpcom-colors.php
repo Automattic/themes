@@ -24,7 +24,10 @@ add_color_rule( 'bg', '#FFFDF6', array(
 			.main-navigation > div > ul > li.focus li.current-menu-item > a,
 			.main-navigation > div > ul > li.current-menu-item li:hover > a,
 			.main-navigation > div > ul > li.current-menu-item li.focus > a,
-			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a', 'background-color' ),
+			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
+			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container, 
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div', 
+			'background-color' ),
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
@@ -165,6 +168,33 @@ add_color_rule( 'link', '#20603C', array(
 			.main-navigation > div > ul > li.current-menu-item li:hover > a,
 			.main-navigation > div > ul > li.current-menu-item li.focus > a,
 			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a', 'color' ),
+	
+	// Text-color with less opacity (dim)
+	array( '.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
+			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
+			.comment-meta .comment-metadata a:active,
+			.comment-meta .comment-metadata a:hover,
+			.entry-footer a:active,
+			.entry-footer a:hover,
+			.entry-meta a:active,
+			.entry-meta a:hover,
+			.footer-navigation .footer-menu a:hover,
+			.main-navigation a:hover,
+			.site-info a:hover,
+			.site-title a:hover,
+			.social-navigation a:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
+			.wp-block-newspack-blocks-homepage-articles article .cat-links a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
+			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
+			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+			a:hover', 'color', 0.8 ),
 
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
@@ -294,7 +324,11 @@ add_color_rule( 'fg1', '#655441', array(
 	array( '.has-secondary-color', 'color' ),
 
 	// Background-color
-	array( '.has-secondary-background-color,
+	array( '	
+			.main-navigation .button:focus,
+			.main-navigation .button:hover,
+			.main-navigation #toggle:focus + #toggle-menu,
+			.has-secondary-background-color,
 			.has-secondary-background-color.has-background-dim', 'background-color' ),
 
 ), __( 'Secondary Color' ) );

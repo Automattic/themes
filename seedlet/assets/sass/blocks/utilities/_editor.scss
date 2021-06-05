@@ -1,18 +1,3 @@
-/**
-* Editor Post Title
-* - Needs a special styles
-*/
-
-// Post title style
-.editor-post-title__block .editor-post-title__input {
-	color: var(--global--color-foreground);
-	font-family: var(--heading--font-family);
-	font-weight: var(--heading--font-weight);
-	font-size: var(--heading--font-size-h2);
-	letter-spacing: var(--heading--letter-spacing-h2);
-	line-height: var(--heading--line-height);
-}
-
 // Editor UI font styles
 .wp-block.block-editor-default-block-appender > textarea {
 	font-family: var(--global--font-secondary);
@@ -34,12 +19,12 @@
 	color: var(--global--color-foreground);
 }
 
-.has-foreground-light-color[class] {
-	color: var(--global--color-foreground-light);
+.has-foreground-low-contrast-color[class] {
+	color: var(--global--color-foreground-low-contrast);
 }
 
-.has-foreground-dark-color[class] {
-	color: var(--global--color-foreground-dark);
+.has-foreground-high-contrast-color[class] {
+	color: var(--global--color-foreground-high-contrast);
 }
 
 .has-tertiary-color[class] {
@@ -52,14 +37,6 @@
 
 .has-background-color[class] {
 	color: var(--global--color-background);
-}
-
-// Gutenberg background-color options
-.has-background {
-	&:not(.has-background-background-color) a,
-	p, h1, h2, h3, h4, h5, h6 {
-		color: currentColor;
-	}
 }
 
 .has-primary-background-color[class] {
@@ -83,12 +60,12 @@
 }
 
 .has-foreground-light-background-color[class] {
-	background-color: var(--global--color-foreground-light);
+	background-color: var(--global--color-foreground-low-contrast);
 	color: var(--global--color-background);
 }
 
-.has-foreground-dark-background-color[class] {
-	background-color: var(--global--color-foreground-dark);
+.has-foreground-high-contrast-background-color[class] {
+	background-color: var(--global--color-foreground-high-contrast);
 	color: var(--global--color-background);
 }
 
@@ -164,19 +141,10 @@
 [data-block] {
 	margin-top: var(--global--spacing-vertical);
 	margin-bottom: var(--global--spacing-vertical);
-
-	[data-block]:first-child {
-		margin-top: 0;
-	}
-
-	// Needs to be the second-last child to avoid applying this to the appender. 
-	[data-block]:nth-last-child(2) {
-		margin-bottom: 0;
-	}
 }
 
-/* 
- * Custom gradients 
+/*
+ * Custom gradients
 */
 .has-hard-diagonal-gradient-background {
 	background: linear-gradient(to bottom right, var(--global--color-secondary) 49.9%, var(--global--color-tertiary) 50%);

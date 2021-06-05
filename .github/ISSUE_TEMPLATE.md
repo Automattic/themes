@@ -10,5 +10,5 @@
 
 [What you expected to happen.]
 
-* User report: [shortlink to chat/forum thread/ticket, ie #12345-hc]
-* Follow-up ticket: [shortlink to ticket, ie #12345-zd]
+* User report: [shortlink to chat/forum thread/ticket, ie 12345-hc]
+* Follow-up ticket: [shortlink to ticket, ie 12345-zen]

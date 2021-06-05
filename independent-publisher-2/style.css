@@ -1,14 +1,14 @@
 /*
 Theme Name: Independent Publisher 2
 Theme URI: http://wordpress.com/themes/independent-publisher-2
-Version: 2.1.7-wpcom
+Version: 2.1.10-wpcom
 Description: Independent Publisher 2 is a clean and polished theme with a light color scheme, bold typography, and full-width images.
 Author: Raam Dev
 Author URI: http://raamdev.com/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: independent-publisher-2
-Tags: accessibility-ready, author-bio, classic-menu, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, blue, right-sidebar, light, one-column, responsive-layout, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, white, minimal, modern, conservative, blog, journal
+Tags: accessibility-ready, author-bio, auto-loading-homepage, classic-menu, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, blue, right-sidebar, light, one-column, responsive-layout, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, white, minimal, modern, conservative, blog, journal, blog-homepage
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -80,9 +80,12 @@ hgroup,
 main,
 menu,
 nav,
-section,
-summary {
+section {
 	display: block;
+}
+
+summary {
+	display: list-item;
 }
 
 audio,
@@ -835,8 +838,7 @@ input::-moz-focus-inner {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 17px;
 	font-weight: bold;
-	line-height: 1;
-	color: #a4a4a4;
+	line-height: 1;	
 	border: solid 2px currentColor;
 	border-radius: 4px;
 	background: none;
@@ -897,12 +899,12 @@ input::-moz-focus-inner {
 
 .posts-navigation .nav-links .nav-previous a:before {
 	margin-right: .4375em;
-	content: "\2190";
+	content: "\2190" /*rtl:"\2192"*/;
 }
 
 .posts-navigation .nav-links .nav-next a:after {
 	margin-left: .4375em;
-	content: "\2192";
+	content: "\2192" /*rtl:"\2190"*/;
 }
 
 /*--------------------------------------------------------------

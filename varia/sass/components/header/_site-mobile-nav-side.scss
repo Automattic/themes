@@ -1,0 +1,164 @@
+$wpcom-marketing-bar--height: 45px;
+$wpadmin-bar--height: 46px;
+
+// Updates the Mobile Navigation to be next to the site title.
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.has-menu {
+			&:before,
+			&:after {
+				content: none;
+			}
+			position: relative;
+			display: grid;
+			grid-gap: 2px;
+			grid-template-areas: 
+				"site-logo site-logo" 
+				"social-navigation main-navigation";
+
+			&.has-title-and-tagline {
+				grid-template-areas: 
+					"site-logo site-logo" 
+					"site-title main-navigation" 
+					"site-description main-navigation" 
+					"social-navigation social-navigation";
+
+				.site-title {
+					grid-area: site-title;
+					align-self: end;
+				}
+
+				.site-description {
+					grid-area: site-description;
+					align-self: start;
+				}
+			}
+
+			& > *:not(.site-logo) {
+				margin: 0;
+			}
+
+			.site-logo {
+				grid-area: site-logo;
+				justify-self: center;
+				margin: $baseline-unit 0;
+			}
+
+			.social-navigation {
+				grid-area: social-navigation;
+				align-self: center;
+			}
+
+			.main-navigation {
+				grid-area: main-navigation;
+			}
+		}
+
+		.site-header #site-navigation.main-navigation {
+			margin: 0;
+			justify-self: end;
+			display: flex;
+			align-items: flex-start;
+			justify-content: end;
+
+			#woocommerce-toggle,
+			#toggle {
+				&:checked + label{
+					position: fixed;
+					top: 2 * $baseline-unit + 2px;
+					right: 2 * $baseline-unit;
+					z-index: 20000;
+					margin-right: 0;
+				}
+			}
+
+			#toggle-menu {
+				order: 2;
+				grid-area: menu-toggle;
+			}
+
+			#toggle-cart[for="woocommerce-toggle"] {
+				order: 1;
+				grid-area: cart-toggle;
+				margin-right: $baseline-unit;
+			}
+
+			#toggle-cart[for="woocommerce-toggle"].button,
+			#toggle-menu {
+				line-height: 1.55;
+				padding: (1.5 * $baseline-unit);
+				display: inline-block;
+				text-align: center;
+				justify-self: end;
+				font-size: #{map-deep-get($config-global, "font", "size", "xs" )};
+			}
+			#toggle-cart[for="woocommerce-toggle"].button svg {
+				margin-top: -2px;
+			}
+			.woocommerce-menu-container,
+			& > div {
+				grid-area: dropdown-menu;
+				margin-top: 2 * $baseline-unit;
+				position: fixed;
+				z-index: 100;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background: #{map-deep-get($config-global, "color", "background", "default") };
+				padding: (6 * $baseline-unit) (2 * $baseline-unit) $baseline-unit;
+				overflow-y: auto;
+				white-space: normal;
+			}
+
+		}
+		&.has-marketing-bar {
+			//Consider marketing bar height
+			.site-header #site-navigation.main-navigation > div{
+				top: $wpcom-marketing-bar--height;
+			}
+			.site-header #site-navigation.main-navigation {
+				#woocommerce-toggle:checked + label,
+				#toggle:checked + label {
+					top: (2 * $baseline-unit) + $wpcom-marketing-bar--height;
+				}
+			}
+		}
+
+		&.admin-bar {
+			//Consider admin bar height
+			.site-header #site-navigation.main-navigation > div{
+				top: $wpadmin-bar--height;
+			}
+			.site-header #site-navigation.main-navigation {
+				#woocommerce-toggle:checked + label,
+				#toggle:checked + label {
+					top: (2 * $baseline-unit) + $wpadmin-bar--height + 2;
+				}
+			}
+		}
+
+		&.admin-bar.has-marketing-bar {
+			// Consider admin bar height + marketing bar height
+			.site-header #site-navigation.main-navigation > div {
+				top: $wpadmin-bar--height + $wpcom-marketing-bar--height;
+			}
+			.site-header #site-navigation.main-navigation {
+				#woocommerce-toggle:checked + label,
+				#toggle:checked + label {
+					top: (2 * $baseline-unit) + $wpadmin-bar--height + $wpcom-marketing-bar--height;
+				}
+			}
+		}
+	}
+
+	// Keep the menu pinned to the top when the menu is open.
+	.lock-scrolling .site {
+		left: 0;
+		max-width: 100%;
+		position: fixed;
+		right: 0;
+	}
+
+}
+

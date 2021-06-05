@@ -21,14 +21,13 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 	 * support post thumbnails.
 	 */
 	function libretto_setup() {
-
 		/**
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
 		 * If you're building a theme based on Libretto, use a find and replace
 		 * to change 'libretto' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'libretto', get_template_directory().'/languages' );
+		load_theme_textdomain( 'libretto', get_template_directory() . '/languages' );
 
 		/**
 		 * Add default posts and comments RSS feed links to head
@@ -53,42 +52,43 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
-	 	// Add custom colors to Gutenberg
+		// Add custom colors to Gutenberg
 		add_theme_support(
-			'editor-color-palette', array(
+			'editor-color-palette',
+			array(
 				array(
 					'name'  => esc_html__( 'Black', 'libretto' ),
-					'slug' => 'black',
+					'slug'  => 'black',
 					'color' => '#26231e',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Gray', 'libretto' ),
-					'slug' => 'dark-gray',
+					'slug'  => 'dark-gray',
 					'color' => '#787065',
 				),
 				array(
 					'name'  => esc_html__( 'Medium Gray', 'libretto' ),
-					'slug' => 'medium-gray',
+					'slug'  => 'medium-gray',
 					'color' => '#a09a92',
 				),
 				array(
 					'name'  => esc_html__( 'Light Gray', 'libretto' ),
-					'slug' => 'light-gray',
+					'slug'  => 'light-gray',
 					'color' => '#d9d6d0',
 				),
 				array(
 					'name'  => esc_html__( 'White', 'libretto' ),
-					'slug' => 'white',
+					'slug'  => 'white',
 					'color' => '#ffffff',
 				),
 				array(
 					'name'  => esc_html__( 'Red', 'libretto' ),
-					'slug' => 'red',
+					'slug'  => 'red',
 					'color' => '#932817',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Red', 'libretto' ),
-					'slug' => 'dark-red',
+					'slug'  => 'dark-red',
 					'color' => '#712012',
 				),
 			)
@@ -98,24 +98,40 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 		 * This theme uses wp_nav_menu() in two locations:
 		 * one at the top of the page, and one for social media links in the footer
 		 */
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'libretto' ),
-			'social'  => __( 'Social Media Menu', 'libretto' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'libretto' ),
+				'social'  => __( 'Social Media Menu', 'libretto' ),
+			)
+		);
 
 		/**
 		 * Enable support for Post Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside', 'image', 'video', 'quote', 'link', 'audio', 'chat', 'gallery', 'status',
-		) );
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'audio',
+				'chat',
+				'gallery',
+				'status',
+			)
+		);
 
 		/**
 		 * Enable support for custom background
 		 */
-		add_theme_support( 'custom-background', array(
-			'default-color' => '#f2f1ed',
-		) );
+		add_theme_support(
+			'custom-background',
+			array(
+				'default-color' => '#f2f1ed',
+			)
+		);
 
 		/**
 		 * Enable support for proper titles
@@ -131,9 +147,16 @@ if ( ! function_exists( 'libretto_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 	} // libretto_setup()
 endif;
@@ -143,38 +166,46 @@ add_action( 'after_setup_theme', 'libretto_setup' );
  * Register widgetized area and update sidebar with default widgets
  */
 function libretto_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'First Footer Sidebar', 'libretto' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Second Footer Sidebar', 'libretto' ),
-		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Third Footer Sidebar', 'libretto' ),
-		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Fourth Footer Sidebar', 'libretto' ),
-		'id'            => 'sidebar-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => __( 'First Footer Sidebar', 'libretto' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Second Footer Sidebar', 'libretto' ),
+			'id'            => 'sidebar-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Third Footer Sidebar', 'libretto' ),
+			'id'            => 'sidebar-3',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Fourth Footer Sidebar', 'libretto' ),
+			'id'            => 'sidebar-4',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'libretto_widgets_init' );
 
@@ -228,6 +259,13 @@ function libretto_fonts_url() {
 			$font_families[] = 'Droid Sans Mono:400';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
@@ -247,19 +285,19 @@ function libretto_scripts() {
 
 	// General site stylesheet & JS
 	wp_enqueue_style( 'libretto-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'libretto-script', get_template_directory_uri().'/js/libretto.js', array( 'jquery' ), '20140331' );
+	wp_enqueue_script( 'libretto-script', get_template_directory_uri() . '/js/libretto.js', array( 'jquery' ), '20140331' );
 
 	// Gutenberg styles
 	wp_enqueue_style( 'libretto-blocks', get_template_directory_uri() . '/css/blocks.css' );
 
 	// Fonts
 	wp_enqueue_style( 'libretto-fonts', libretto_fonts_url(), array(), null );
-	wp_enqueue_style( 'libretto-custom-icons', get_template_directory_uri().'/icons/icons.css', array(), null );
+	wp_enqueue_style( 'libretto-custom-icons', get_template_directory_uri() . '/icons/icons.css', array(), null );
 
 	// Navigation
-	wp_enqueue_script( 'libretto-touche', get_template_directory_uri().'/js/touche.js', '20150604', true );
-	wp_enqueue_script( 'libretto-navigation', get_template_directory_uri().'/js/navigation.js', array( 'jquery' ), '20150115', true );
-	wp_enqueue_script( 'libretto-skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'libretto-touche', get_template_directory_uri() . '/js/touche.js', '20150604', true );
+	wp_enqueue_script( 'libretto-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20150115', true );
+	wp_enqueue_script( 'libretto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	// Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -285,7 +323,7 @@ add_action( 'enqueue_block_editor_assets', 'libretto_editor_styles' );
 function libretto_get_active_sidebars() {
 	// Loop through all possible sidebar areas to determine if they're active or not
 	$available_sidebars = array( 'sidebar-1', 'sidebar-2', 'sidebar-3', 'sidebar-4' );
-	$active_sidebars = array();
+	$active_sidebars    = array();
 
 	foreach ( $available_sidebars as $sidebar_name ) :
 		if ( is_active_sidebar( $sidebar_name ) ) {
@@ -306,29 +344,29 @@ function libretto_get_active_sidebars() {
  * You can pass a variable to request a particular type of information. Default is URL.
  */
 function libretto_get_header_image( $request = '' ) {
-  // If there's a featured image set for the post/page, use that
-  if ( libretto_has_post_thumbnail() && is_single() && libretto_jetpack_featured_image_display() ) :
-    $libretto_featured_image = libretto_get_attachment_image_src( get_the_ID(), get_post_thumbnail_id( get_the_ID() ), 'libretto-fullpage' );
-    $libretto_header_image = $libretto_featured_image;
-    $libretto_header_image_height = 1000;
+	// If there's a featured image set for the post/page, use that
+	if ( libretto_has_post_thumbnail() && is_single() && libretto_jetpack_featured_image_display() ) :
+		$libretto_featured_image      = libretto_get_attachment_image_src( get_the_ID(), get_post_thumbnail_id( get_the_ID() ), 'libretto-fullpage' );
+		$libretto_header_image        = $libretto_featured_image;
+		$libretto_header_image_height = 1000;
   elseif ( has_post_thumbnail() && is_singular() && libretto_jetpack_featured_image_display() ) :
-    $libretto_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'libretto-fullpage' );
-    $libretto_header_image = $libretto_featured_image[0];
-    $libretto_header_image_height = $libretto_featured_image[2];
-  // Otherwise, use the header image
+	  $libretto_featured_image      = wp_get_attachment_image_src( get_post_thumbnail_id(), 'libretto-fullpage' );
+	  $libretto_header_image        = $libretto_featured_image[0];
+	  $libretto_header_image_height = $libretto_featured_image[2];
+	  // Otherwise, use the header image
   elseif ( get_header_image() ) :
-    $libretto_header_image = get_header_image();
-    $libretto_header_image_height = get_custom_header()->height;
+	  $libretto_header_image        = get_header_image();
+	  $libretto_header_image_height = get_custom_header()->height;
   endif;
 
   // We'll return different information depending on the parameter passed
   // This allows us to use the same function for two things
   if ( isset( $libretto_header_image ) ) :
-    if ( 'height' === $request ) {
-  		return $libretto_header_image_height;
-    }	else {
-  		return $libretto_header_image;
-  	}
+	  if ( 'height' === $request ) {
+		  return $libretto_header_image_height;
+	  } else {
+		  return $libretto_header_image;
+	  }
   endif;
 }
 

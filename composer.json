@@ -1,0 +1,15 @@
+{
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+		"phpcompatibility/phpcompatibility-wp": "2.1.0",
+		"sirbrillig/phpcs-changed": "^2.5.1",
+		"sirbrillig/phpcs-variable-analysis": "^2.7.0",
+		"wp-coding-standards/wpcs": "^2.1.1"
+	},
+	"scripts": {
+		"php:lint": "vendor/bin/phpcs -p -s",
+		"php:lint:errors": "vendor/bin/phpcs -p -s --runtime-set ignore_warnings_on_exit 1",
+		"php:lint:autofix": "vendor/bin/phpcbf",
+		"php:lint:changed": "vendor/bin/phpcs-changed --git --git-unstaged"
+	}
+}

@@ -1,0 +1,53 @@
+.site-header {
+	position: relative;
+	overflow: inherit;
+	padding: 10px var(--wp--custom--post-content--padding--left) 60px; // TODO: Maybe replace with a responsive custom variable?
+
+	@include break-mobile() {
+		padding: var(--wp--custom--post-content--padding--left);
+	}
+
+	.wp-block-site-logo {
+		margin-right: var(--wp--custom--margin--horizontal);
+
+		@include break-mobile-only(){
+			flex-basis: 100%;
+			margin: 20px 0;
+			text-align: center;
+		}
+
+		a > img {
+			height: 64px;
+			width: auto;
+		}
+	}
+
+	.wp-block-site-title {
+		margin: 0;
+	}
+
+	.wp-block-navigation {
+		margin-left: auto;
+		padding-right: 0;
+	}
+
+	&:before {
+		content: "";
+		background-color: var(--wp--custom--color--secondary);
+		position: absolute;
+		height: 100vw;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+		@include break-mobile-only() {
+			clip-path: polygon(0 0, 100vw 0, 100vw 50vw, 52vw 83vw, 0 20vw);
+		}
+		@include break-mobile() {
+			clip-path: polygon(0 0, 100vw 0, 100vw 37vw, 52vw 70vw, 0 5vw);
+		}
+		@include break-large() {
+			clip-path: polygon(13vw 0, 100vw 0, 100vw 16vw, 50vw 51vw);
+		}
+	}
+}

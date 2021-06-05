@@ -1,0 +1,230 @@
+$admin-bar-height: 46px;
+$site-branding-height: 68px;
+
+.has-main-navigation { // to override seedlet
+	.site-header {
+		padding: var(--global--spacing-vertical) 0;
+
+		@include media( laptop ){
+			padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
+		}
+
+		a {
+			border-bottom: 1px solid transparent;
+		}
+
+		@include media( laptop-only ){
+			.site-title {
+				margin: 0;
+			}
+
+			.site-description {
+				display: none;
+			}
+		}
+	}
+}
+
+.has-sticky-post .site-header {
+	background: var(--sticky-posts--color-background);
+}
+
+.site-header {
+	display: grid;
+	grid-template-areas:
+		"site-logo site-logo site-logo"
+		"branding branding primary-navigation";
+	grid-template-columns: 0.5fr 1fr 0.5fr;
+	grid-template-rows: auto;
+	grid-column-gap: 16px;
+	max-width: var(--responsive--alignfull-width);
+	padding: var(--global--spacing-vertical) 0;
+
+	@include media( laptop ){
+		grid-template-areas:
+			"site-logo site-logo site-logo"
+			"branding primary-navigation primary-navigation";
+		padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
+	}
+
+	.site-branding {
+		grid-area: branding;
+		padding: var(--global--spacing-horizontal);
+		text-align: left;
+		justify-self: flex-start;
+		align-self: center;
+
+		@include media( laptop ){
+			padding: 0;
+		}
+
+		.site-logo {
+			margin-left: 0;
+			margin-top: 0;
+		}
+
+		.site-title {
+			margin-bottom: 4px;
+
+			> a {
+				background: inherit;
+				text-shadow: none;
+			}
+		}
+	}
+
+	.site-logo {
+		grid-area: site-logo;
+		margin: 0;
+
+		a {
+			display: block;
+
+			&:hover {
+				border-color: transparent;
+			}
+		}
+	}
+
+	.primary-navigation-wrapper {
+		margin-bottom: 6px;
+	}
+
+	.primary-navigation {
+		margin-top: 0;
+
+		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
+			.primary-menu-container {
+				.admin-bar & {
+					top: $site-branding-height + $admin-bar-height;
+				}
+
+				a {
+					color: var(--primary-nav--dropdown-color-link);
+				}
+			}
+
+			.social-navigation a {
+				color: var(--primary-nav--dropdown-color-link);
+			}
+		}
+
+		button#primary-close-menu {
+			color: var(--global--color-secondary);
+			margin: 0;
+			padding: var(--global--spacing-horizontal);
+			position: fixed;
+			top: 0;
+			right: 0;
+
+			.admin-bar & {
+				top: $admin-bar-height;
+			}
+
+			&:hover {
+				color: var(--global--color-primary);
+			}
+		}
+	}
+
+	.primary-navigation .menu-item-has-children > .svg-icon {
+		margin-top: -2px;
+		margin-left: -2px;
+	}
+
+
+	.primary-navigation > div > ul li, .woo-navigation > div > ul li {
+		color: var(--global--color-secondary);
+
+		a:hover {
+			border-color: transparent;
+			color: var(--global--color-primary);
+		}
+	}
+
+	> .site-branding, > nav {
+		margin: 0;
+	}
+
+	.social-navigation {
+		flex-basis: 100%;
+
+		ul {
+			justify-content: flex-start;
+			flex-wrap: nowrap;
+			margin-top: var(--social-nav--padding);
+
+			li {
+				margin: 0;
+				padding: 0 var(--social-nav--padding) 0 0;
+			}
+
+		}
+		@include media( laptop ){
+			flex-basis: auto;
+			ul {
+				justify-content: flex-end;
+				margin-top: 0;
+
+				li {
+					padding: 0 0 0 var(--social-nav--padding);
+				}
+			}
+		}
+
+		.menu-item {
+			width: auto;
+
+			> a {
+				padding: 0;
+
+				&:hover {
+					border-color: var(--primary-nav--color-border);
+					color: var(--primary-nav--color-link-hover);
+				}
+			}
+		}
+	}
+}
+
+.has-title-and-tagline {
+	.site-logo {
+		margin: 0;
+
+		@include media( laptop ){
+			padding-bottom: var(--global--spacing-vertical);
+		}
+	}
+	.site-branding {
+		align-self: flex-start;
+	}
+}
+
+.primary-navigation-open {
+	.site-header {
+		padding-top: 0;
+	}
+
+	.has-title-and-tagline .site-logo {
+		display: none;
+	}
+}
+
+.site-header div.menu-button-container {
+	button#primary-open-menu {
+		padding: var(--global--spacing-horizontal);
+		margin-top: 0;
+		margin-right: 0;
+		&:before {
+			margin: 0;
+		}
+	}
+
+	#woo-open-menu {
+		margin-left: auto;
+	}
+
+	.primary-navigation-open & {
+		margin: 0;
+	}
+}

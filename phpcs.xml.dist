@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<ruleset name="themes">
+	<description>Apply WordPress Coding Standards to all files</description>
+
+	<!-- Only scan PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+	<arg name="cache"/>
+
+	<!-- Set the memory limit to 256M.
+		 For most standard PHP configurations, this means the memory limit will temporarily be raised.
+		 Ref: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#specifying-phpini-settings
+	-->
+	<ini name="memory_limit" value="256M"/>
+
+	<!-- Strip the filepaths down to the relevant bit. -->
+	<arg name="basepath" value="./"/>
+
+	<!-- Check up to 20 files simultaneously. -->
+	<arg name="parallel" value="20"/>
+
+	<!-- Show sniff codes in all reports. -->
+	<arg value="ps"/>
+
+	<file>.</file>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress.CodeAnalysis.EmptyStatement"/>
+
+	<!-- These rules are being set as warnings instead of errors, so we can error check the entire codebase. -->
+	<rule ref="WordPress.PHP.YodaConditions.NotYoda">
+		<type>warning</type>
+	</rule>
+	<rule ref="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase">
+		<type>warning</type>
+	</rule>
+	<rule ref="WordPress.DB.PreparedSQL.InterpolatedNotPrepared">
+		<type>warning</type>
+	</rule>
+	<rule ref="WordPress.DB.PreparedSQL.NotPrepared">
+		<type>warning</type>
+	</rule>
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<type>warning</type>
+	</rule>
+
+	<!-- Directories and third party library exclusions. -->
+	<exclude-pattern>/vendor/*</exclude-pattern>
+
+	<!-- Assignments in while conditions are a valid method of looping over iterables. -->
+	<rule ref="WordPress.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition">
+		<exclude-pattern>*</exclude-pattern>
+	</rule>
+
+	<!-- We're not going to rename files. -->
+	<rule ref="WordPress.Files.FileName">
+		<exclude-pattern>*</exclude-pattern>
+	</rule>
+</ruleset>

@@ -1,0 +1,34 @@
+@import 'button-mixins';
+/**
+ * Button
+ */
+
+/**
+ * Block Options
+ */
+.wp-block-button {
+	&.wp-block-button__link,
+	.wp-block-button__link {
+		@include button-hover-styles;
+		@include button-main-styles;
+	}
+	&.is-style-outline {
+		&.wp-block-button__link,
+		.wp-block-button__link {
+			--wp--custom--button--color--text: var(--wp--custom--button--border--color);
+			--wp--custom--button--color--background: transparent;
+			@include button-border-styles;
+			@include button-hover-styles;
+			@include button-color-styles;
+		}
+	}
+}
+
+// TODO: I'm not sure what the end goal should be here, but since we are unable to use
+// a button block OUTSIDE of the context of the button collection block (grrrrrrrrr)
+// then there are undesired margins to be dealt with somehow.
+.wp-block-buttons {
+	.wp-block-button:last-child {
+		margin-bottom: 0;
+	}
+}

@@ -104,7 +104,7 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 function seedlet_woocommerce_scripts() {
 
 	// WooCommerce styles
-	wp_enqueue_style( 'seedlet-woocommerce-style', get_stylesheet_directory_uri() . '/assets/css/style-woocommerce.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'seedlet-woocommerce-style', get_template_directory_uri() . '/assets/css/style-woocommerce.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// WooCommerce RTL styles
 	wp_style_add_data( 'seedlet-woocommerce-style', 'rtl', 'replace' );

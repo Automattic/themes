@@ -26,7 +26,6 @@ add_action( 'after_setup_theme', 'apostrophe_2_content_width', 0 );
  */
 if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 	function apostrophe_2_setup() {
-
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -44,42 +43,43 @@ if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 
 		// Add custom colors to Gutenberg
 		add_theme_support(
-			'editor-color-palette', array(
+			'editor-color-palette',
+			array(
 				array(
 					'name'  => esc_html__( 'Black', 'apostrophe-2' ),
-					'slug' => 'black',
+					'slug'  => 'black',
 					'color' => '#404040',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Gray', 'apostrophe-2' ),
-					'slug' => 'dark-gray',
+					'slug'  => 'dark-gray',
 					'color' => '#686868',
 				),
 				array(
 					'name'  => esc_html__( 'Medium Gray', 'apostrophe-2' ),
-					'slug' => 'medium-gray',
+					'slug'  => 'medium-gray',
 					'color' => '#999999',
 				),
 				array(
 					'name'  => esc_html__( 'Light Gray', 'apostrophe-2' ),
-					'slug' => 'light-gray',
+					'slug'  => 'light-gray',
 					'color' => '#d9d9d9',
 				),
 				array(
 					'name'  => esc_html__( 'White', 'apostrophe-2' ),
-					'slug' => 'white',
+					'slug'  => 'white',
 					'color' => '#ffffff',
 				),
 				array(
 					'name'  => esc_html__( 'Blue', 'apostrophe-2' ),
-					'slug' => 'blue',
+					'slug'  => 'blue',
 					'color' => '#159ae7',
 				),
 				array(
 					'name'  => esc_html__( 'Dark Blue', 'apostrophe-2' ),
-					'slug' => 'dark-blue',
+					'slug'  => 'dark-blue',
 					'color' => '#362e77',
-				)
+				),
 			)
 		);
 
@@ -102,34 +102,52 @@ if ( ! function_exists( 'apostrophe_2_setup' ) ) :
 		add_image_size( 'apostrophe-2-mini', 60, 60, true );
 		add_image_size( 'apostrophe-2-gallery', 550, 550, true );
 
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Header Menu', 'apostrophe-2' ),
-		) );
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Header Menu', 'apostrophe-2' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'comment-list', 'comment-form', 'search-form', 'gallery', 'caption',
-		) );
+		add_theme_support(
+			'html5',
+			array(
+				'comment-list',
+				'comment-form',
+				'search-form',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'apostrophe_2_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'apostrophe_2_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Enable support for custom logo.
-		add_theme_support( 'custom-logo', array(
-			'height'      => 300,
-			'width'       => 1030,
-			'flex-height' => true,
-			'flex-width'  => true
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 300,
+				'width'       => 1030,
+				'flex-height' => true,
+				'flex-width'  => true,
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
-    	add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'customize-selective-refresh-widgets' );
 	}
 endif; // apostrophe_2_setup
 add_action( 'after_setup_theme', 'apostrophe_2_setup' );
@@ -153,41 +171,49 @@ add_action( 'template_redirect', 'apostrophe_2_adjusted_content_width', 0 );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function apostrophe_2_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Primary', 'apostrophe-2' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Primary', 'apostrophe-2' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Secondary', 'apostrophe-2' ),
-		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Secondary', 'apostrophe-2' ),
+			'id'            => 'sidebar-2',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Tertiary', 'apostrophe-2' ),
-		'id'            => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Tertiary', 'apostrophe-2' ),
+			'id'            => 'sidebar-3',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar', 'apostrophe-2' ),
-		'id'            => 'sidebar-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar', 'apostrophe-2' ),
+			'id'            => 'sidebar-4',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'apostrophe_2_widgets_init' );
 
@@ -220,6 +246,13 @@ function apostrophe_2_fonts_url() {
 			$font_families[] = 'Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic';
 		}
 
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
+
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext,cyrillic' ),
@@ -251,10 +284,14 @@ function apostrophe_2_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_localize_script( 'apostrophe-2-navigation', 'screenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'apostrophe-2' ),
-		'collapse' => esc_html__( 'collapse child menu', 'apostrophe-2' ),
-	) );
+	wp_localize_script(
+		'apostrophe-2-navigation',
+		'screenReaderText',
+		array(
+			'expand'   => esc_html__( 'expand child menu', 'apostrophe-2' ),
+			'collapse' => esc_html__( 'collapse child menu', 'apostrophe-2' ),
+		)
+	);
 }
 add_action( 'wp_enqueue_scripts', 'apostrophe_2_scripts' );
 
@@ -262,7 +299,7 @@ add_action( 'wp_enqueue_scripts', 'apostrophe_2_scripts' );
  * Gutenberg Editor Styles
  */
 function apostrophe_2_editor_styles() {
-	wp_enqueue_style( 'apostrophe-2-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css');
+	wp_enqueue_style( 'apostrophe-2-editor-block-style', get_template_directory_uri() . '/css/editor-blocks.css' );
 	wp_enqueue_style( 'apostrophe-2-fonts', apostrophe_2_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'apostrophe_2_editor_styles' );
@@ -291,6 +328,10 @@ function apostrophe_2_body_class( $classes ) {
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) ) {
 		$classes[] = 'apostrophe-2-no-sidebar';
+	}
+
+	if ( function_exists( 'jetpack_social_menu' ) && get_theme_mod( 'apostrophe_2_mobile_social' ) == 1 ) {
+		$classes[] = 'show-mobile-social-menu';
 	}
 
 	return $classes;

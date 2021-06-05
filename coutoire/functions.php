@@ -18,7 +18,6 @@ if ( ! function_exists( 'coutoire_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function coutoire_setup() {
-
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
@@ -59,12 +58,12 @@ if ( ! function_exists( 'coutoire_setup' ) ) :
 		 * - if the customizer color is empty, use the default
 		 */
 		$colors_array     = get_theme_mod( 'colors_manager' ); // color annotations array()
-		$primary          = ! empty( $colors_array ) ? $colors_array['colors']['link'] : '#000000'; // $config-global--color-primary-default;
-		$secondary        = ! empty( $colors_array ) ? $colors_array['colors']['fg1'] : '#FF7A5C';  // $config-global--color-secondary-default;
-		$background       = ! empty( $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
-		$foreground       = ! empty( $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
-		$foreground_light = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
-		$foreground_dark  = ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
+		$primary          = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : '#000000'; // $config-global--color-primary-default;
+		$secondary        = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : '#FF7A5C';  // $config-global--color-secondary-default;
+		$background       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : '#FFFFFF';   // $config-global--color-background-default;
+		$foreground       = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : '#444444';  // $config-global--color-foreground-default;
+		$foreground_light = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#767676';  // $config-global--color-foreground-light-default;
+		$foreground_dark  = ( is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) && $colors_array['colors']['txt'] != '#444444' ) ? $colors_array['colors']['txt'] : '#111111';  // $config-global--color-foreground-dark-default;
 
 		// Editor color palette.
 		add_theme_support(
@@ -104,7 +103,7 @@ if ( ! function_exists( 'coutoire_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'coutoire_setup' );
+add_action( 'after_setup_theme', 'coutoire_setup', 12 );
 
 /**
  * Filter the content_width in pixels, based on the child-theme's design and stylesheet.
@@ -143,8 +142,15 @@ function coutoire_fonts_url() {
 		}
 
 		if ( 'off' !== $eb_garamond ) {
-			$font_families[] = 'EB Garamond:400,400i';
+			$font_families[] = 'EB Garamond:400,400i,600';
 		}
+
+		/**
+		 * A filter to enable child themes to add/change/omit font families.
+		 * 
+		 * @param array $font_families An array of font families to be imploded for the Google Font API
+		 */
+		$font_families = apply_filters( 'included_google_font_families', $font_families );
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
@@ -169,7 +175,7 @@ function coutoire_scripts() {
 	wp_dequeue_style( 'varia-style' );
 
 	// enqueue child styles
-	wp_enqueue_style('coutoire-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ));
+	wp_enqueue_style( 'coutoire-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 	// enqueue child RTL styles
 	wp_style_add_data( 'coutoire-style', 'rtl', 'replace' );
@@ -189,6 +195,16 @@ function coutoire_editor_styles() {
 
 	// Enqueue Google fonts in the editor, if necessary
 	wp_enqueue_style( 'coutoire-editor-fonts', coutoire_fonts_url(), array(), null );
+
+	// Hide duplicate palette colors
+	$colors_array = get_theme_mod( 'colors_manager', array( 'colors' => true ) ); // color annotations array()
+	if ( ! empty( $colors_array ) && $colors_array['colors']['txt'] != '#767676' ) { // $config-global--color-foreground-light-default;
+		$inline_palette_css = '.components-circular-option-picker__option-wrapper:nth-child(5),
+			.components-circular-option-picker__option-wrapper:nth-child(6) {
+				display: none;
+			}';
+		wp_add_inline_style( 'wp-edit-blocks', $inline_palette_css );
+	}
 }
 add_action( 'enqueue_block_editor_assets', 'coutoire_editor_styles' );
 

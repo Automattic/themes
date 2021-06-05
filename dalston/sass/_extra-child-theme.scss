@@ -216,11 +216,17 @@ a {
 .site-main > article > .entry-header {
 	margin: #{3 * $spacing_unit} 0 $spacing_unit;
 	position: relative;
+	.hide-homepage-header & {
+		margin: $spacing_unit 0 $spacing_unit;		
+	}
 }
 
 @include media(mobile) {
 	.site-main > article > .entry-header {
 		margin: #{3 * $spacing_vertical} auto #{2 * $spacing_unit};
+		.hide-homepage-header & {
+			margin: #{2 * $spacing_unit} auto #{2 * $spacing_unit};			
+		}
 	}
 }
 
@@ -316,4 +322,28 @@ a {
 
 .footer-navigation .footer-menu a {
 	font-size: map-deep-get($config-global, "font", "size", "xs");
+}
+
+
+// Updates the Mobile Navigation to be next to the site title.
+@import "../../varia/sass/components/header/_site-mobile-nav-side";
+
+@include media(mobile-only) {
+	.mobile-nav-side {
+		.site-header.has-menu {
+			.site-branding {
+				display: contents;
+			}
+		}
+		.main-navigation {
+			.dropdown-icon {
+				/* This is fixed the issue when the button changes widths */
+				font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma;
+			}
+		}
+		.site-description.site-description {
+			font-size: map-deep-get($config-global, "font", "size", "root" );
+		}
+	}
+
 }
