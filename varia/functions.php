@@ -523,11 +523,6 @@ add_action( 'customize_register', 'varia_customize_content_options' );
 require get_template_directory() . '/classes/class-varia-svg-icons.php';
 
 /**
- * Custom Comment Walker template.
- */
-require get_template_directory() . '/classes/class-varia-walker-comment.php';
-
-/**
  * Enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
