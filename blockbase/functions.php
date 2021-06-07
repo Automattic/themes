@@ -93,7 +93,7 @@ function blockbase_enqueue_block_styles() {
 	$styled_blocks = array();
 	foreach ( $files as $filename ) {
 		$styled_blocks[] = str_replace(
-			[ get_template_directory() . '/assets/blocks/', '.min.css', '.css' ],
+			[ get_template_directory() . '/assets/blocks/', '.css', '.css' ],
 			'',
 			$filename
 		);
@@ -109,15 +109,15 @@ function blockbase_enqueue_block_styles() {
 		) ? "wp-block-$block_name" : 'wp-block-library';
 
 		// Get the styles.
-		$styles = file_get_contents( get_theme_file_path( "assets/blocks/$block_name.min.css" ) );
+		$styles = file_get_contents( get_theme_file_path( "assets/blocks/$block_name.css" ) );
 
 		// Add frontend styles.
 		wp_add_inline_style( $handle, $styles );
 
 		// Add editor styles.
-		add_editor_style( "styles/blocks/$block_name.min.css" );
-		if ( file_exists( get_theme_file_path( "assets/blocks/$block_name-editor.min.css" ) ) ) {
-			add_editor_style( "styles/blocks/$block_name-editor.min.css" );
+		add_editor_style( "styles/blocks/$block_name.css" );
+		if ( file_exists( get_theme_file_path( "assets/blocks/$block_name-editor.css" ) ) ) {
+			add_editor_style( "styles/blocks/$block_name-editor.css" );
 		}
 	}
 }

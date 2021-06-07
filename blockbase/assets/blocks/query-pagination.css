@@ -1,0 +1,73 @@
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
+ * These are default block editor widths in case the theme doesn't provide them.
+ */
+.wp-block-query-pagination {
+  padding-top: 1.5em;
+  justify-content: space-between;
+  display: grid;
+  grid-template-areas: "prev numbers next";
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+@media (max-width: 479px) {
+  .wp-block-query-pagination {
+    grid-template-areas: "prev next";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-previous {
+  justify-self: start;
+  grid-area: prev;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-next {
+  justify-self: end;
+  grid-area: next;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-numbers {
+  grid-area: numbers;
+  justify-self: center;
+}
+
+.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
+  text-decoration: underline;
+}
+
+@media (max-width: 479px) {
+  .wp-block-query-pagination .wp-block-query-pagination-numbers {
+    display: none;
+  }
+}
