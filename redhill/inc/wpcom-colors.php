@@ -281,6 +281,7 @@ add_color_rule(
 			.wp-block-search .wp-block-search__button,
 			.wp-block-search .wp-block-search__button:focus,
 			.wp-block-search .wp-block-search__button:hover,
+			.wp-block-search .wp-block-search__button:not(.has-background-color):hover,
 			input[type="submit"],
 			.main-navigation > div > ul > li.current-menu-item > a,
 			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
