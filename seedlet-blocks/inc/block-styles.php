@@ -19,7 +19,7 @@ if ( ! function_exists( 'seedlet_blocks_register_block_styles' ) ) :
 				'core/latest-posts',
 				array(
 					'name'         => 'seedlet-alternating-grid',
-					'label'        => __( 'Alternating Grid', 'seedlet' ),
+					'label'        => __( 'Alternating Grid', 'seedlet-blocks' ),
 					'style_handle' => 'seedlet-alternating-grid',
 				)
 			);
@@ -27,7 +27,7 @@ if ( ! function_exists( 'seedlet_blocks_register_block_styles' ) ) :
 				'a8c/blog-posts',
 				array(
 					'name'         => 'seedlet-alternating-grid',
-					'label'        => __( 'Alternating Grid', 'seedlet' ),
+					'label'        => __( 'Alternating Grid', 'seedlet-blocks' ),
 					'style_handle' => 'seedlet-alternating-grid',
 				)
 			);
