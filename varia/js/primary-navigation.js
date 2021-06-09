@@ -27,6 +27,21 @@
 				toggleButton.focus();
 			}
 		}
+
+		document.addEventListener( 'click', function( event ) {
+			// If target onclick is <a> with # within the href attribute
+			if ( event.target.hash && event.target.hash.includes( '#' ) ) {
+				wrapper.classList.remove( 'lock-scrolling' );
+				if (toggleInput) {
+					toggleInput.checked = false;
+				}
+				// Wait 550 and scroll to the anchor.
+				setTimeout(function () {
+					var anchor = document.getElementById(event.target.hash.slice(1));
+					anchor.scrollIntoView();
+				}, 550);
+			}
+		} );
 	}
 
 	window.addEventListener( 'load', function() {

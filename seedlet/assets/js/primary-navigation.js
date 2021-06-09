@@ -28,6 +28,19 @@
 			};
 		}
 
+		document.addEventListener( 'click', function( event ) {
+			// If target onclick is <a> with # within the href attribute
+			if ( event.target.hash && event.target.hash.includes( '#' ) ) {
+				wrapper.classList.remove( id + '-navigation-open' );
+				wrapper.classList.remove( 'lock-scrolling' );
+				// Wait 550 and scroll to the anchor.
+				setTimeout(function () {
+					var anchor = document.getElementById(event.target.hash.slice(1));
+					anchor.scrollIntoView();
+				}, 550);
+			}
+		} );
+
 		/**
 		 * Trap keyboard navigation in the menu modal.
 		 * Adapted from TwentyTwenty
