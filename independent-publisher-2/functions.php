@@ -103,6 +103,12 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for experimental cover block spacing.
+		add_theme_support( 'custom-spacing' );
+
 		// Add support for custom color scheme.
 		add_theme_support(
 			'editor-color-palette',

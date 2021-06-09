@@ -1,7 +1,3 @@
-/**
- * Button
- */
-
 // NOTE: These remain for the styling of buttons that are NOT blocks and is used elsewhere.  This can be removed when those no longer exist.
 @mixin button-main-styles {
 	@include button-padding-styles;
@@ -14,7 +10,7 @@
 	opacity: 1;
 	color: var(--wp--custom--button--color--text);
 	background-color: var(--wp--custom--button--color--background);
-	border-color: var(--wp--custom--button--border--color);
+	border-color: currentColor;
 	svg {
 		fill: var(--wp--custom--button--color--text);
 	}
@@ -41,7 +37,6 @@
 //apply outline styles. apply padding that does NOT account for border width (as the border width is applied here).
 @mixin button-border-styles {
 	border-style: var(--wp--custom--button--border--style);
-	border-color: currentColor;
 	border-width: var(--wp--custom--button--border--width);
 	padding-top: var(--wp--custom--button--spacing--padding--top);
 	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
@@ -63,51 +58,7 @@
 			--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
 			--wp--custom--button--border--color: var(--wp--custom--button--hover--border--color);
 			@include button-color-styles;
+			border-color: var(--wp--custom--button--border--color);
 		}
-	}
-	//The following styles can ALWAYS be changed, even if the user has set a custom color.
-	&:hover,
-	&:focus,
-	&.has-focus {
-		--wp--custom--button--border--radius: var(--wp--custom--button--hover--border--radius);
-		--wp--custom--button--spacing--padding--top: var(--wp--custom--button--hover--spacing--padding--top);
-		--wp--custom--button--spacing--padding--bottom: var(--wp--custom--button--hover--spacing--padding--bottom);
-		--wp--custom--button--spacing--padding--left: var(--wp--custom--button--hover--spacing--padding--left);
-		--wp--custom--button--spacing--padding--right: var(--wp--custom--button--hover--spacing--padding--right);
- 		--wp--custom--button--typography--font-weight: var(--wp--custom--button--hover--typography--font-weight)
-		--wp--custom--button--typography--font-family: var(--wp--custom--button--hover--typography--font-family);
-		--wp--custom--button--typography--font-size: var(--wp--custom--button--hover--typography--font-size);
-		--wp--custom--button--typography--line-height: var(--wp--custom--button--hover--typography--line-height);
-		@include button-typography-styles;
-	}
-}
-
-/**
- * Block Options
- */
-.wp-block-button {
-	&.wp-block-button__link,
-	.wp-block-button__link {
-		@include button-hover-styles;
-		@include button-main-styles;
-	}
-	&.is-style-outline {
-		&.wp-block-button__link,
-		.wp-block-button__link {
-			--wp--custom--button--color--text: var(--wp--custom--button--border--color);
-			--wp--custom--button--color--background: transparent;
-			@include button-border-styles;
-			@include button-hover-styles;
-			@include button-color-styles;
-		}
-	}
-}
-
-// TODO: I'm not sure what the end goal should be here, but since we are unable to use
-// a button block OUTSIDE of the context of the button collection block (grrrrrrrrr)
-// then there are undesired margins to be dealt with somehow.
-.wp-block-buttons {
-	.wp-block-button:last-child {
-		margin-bottom: 0;
 	}
 }
