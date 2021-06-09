@@ -21,10 +21,7 @@ if ( ! function_exists( 'rivington_setup' ) ) :
 		// Add child theme editor styles, compiled from `style-child-theme-editor.scss`.
 		add_editor_style( 'style-editor.css' );
 
-		// Dark backgrounds
-		// - See: https://developer.wordpress.org/block-editor/developers/themes/theme-support/#dark-backgrounds
 		add_theme_support( 'editor-styles' );
-		add_theme_support( 'dark-editor-style' );
 
 		// Add child theme editor font sizes to match Sass-map variables in `_config-child-theme-deep.scss`.
 		add_theme_support(
@@ -148,7 +145,7 @@ function rivington_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
