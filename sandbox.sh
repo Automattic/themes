@@ -38,6 +38,11 @@ ssh -T $SANDBOX_USER@$SANDBOX_LOCATION << EOF
   svn up;
 EOF
 
+elif [[ $1 == "pull" ]]; then
+
+  cmd="rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude=$ignore_string $SANDBOX_USER@$SANDBOX_LOCATION:$SANDBOX_PUBLIC_THEMES_FOLDER/ ./ "
+  eval $cmd
+
 elif [[ $1 == "push" ]]; then
 
   git remote update
