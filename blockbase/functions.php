@@ -24,10 +24,6 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 				'/assets/ponyfill.css',
 			)
 		);
-
-		// Theme supports required to pass theme check.
-		add_theme_support( "title-tag" );
-		add_theme_support( "automatic-feed-links" );
 	}
 	add_action( 'after_setup_theme', 'blockbase_support' );
 endif;
@@ -83,23 +79,4 @@ function blockbase_fonts_url() {
 
 	// Make a single request for the theme fonts.
 	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families ) );
-}
-
-/**
- * This function only exists to pass the theme-check.
- * It does not do anything.
- * Borrowed from aristath/q: https://themes.trac.wordpress.org/browser/q/0.1/functions.php?rev=137308
- */
-function blockbase_theme_check_dummy_calls() {
-	wp_list_comments();
-	posts_nav_link();
-	post_class();
-	comments_template();
-	comment_form();
-	wp_link_pages();
-	paginate_comments_links();
-	the_tags();
-
-	global $content_width;
-	$content_width = 1200;
 }
