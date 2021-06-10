@@ -164,6 +164,50 @@ function coutoire_fonts_url() {
 }
 
 /**
+ * Set the default option for sticky menu as true.
+ * - Needed to be separate in order to ensure this only impacts sites after the change was introduced.
+ */
+function coutoire_setup_sticky_menu() {
+	update_option( 'coutoire_default_sticky_menu', true );
+}
+add_action('after_switch_theme', 'coutoire_setup_sticky_menu');
+
+/**
+ * Add option in Customizer for users to stick menu to top of site.
+ */
+function coutoire_customizer_register( $wp_customize ) {
+	function coutoire_sanitize_checkbox( $checked ) { 
+            return ( ( isset( $checked ) && true == $checked ) ? true : false );
+        }
+
+	$wp_customize->add_setting( 'coutoire_sticky_menu', array(
+  		'capability' => 'edit_theme_options',
+		'transport' => 'refresh',
+		'sanitize_callback'  => 'coutoire_sanitize_checkbox',
+		'default' => get_option( 'coutoire_default_sticky_menu' ),
+	) );
+
+	$wp_customize->add_control( 'coutoire_sticky_menu', array(
+  		'type' => 'checkbox',
+  		'section' => 'title_tagline',
+  		'label' => __( 'Stick main menu to top of site', 'coutoire' ),
+	) );
+}
+add_action( 'customize_register', 'coutoire_customizer_register' );
+
+/**
+ * Add body classes.
+ */
+function coutoire_body_class( $classes ) {
+	if ( get_theme_mod( 'coutoire_sticky_menu' ) == 1 ) {
+		$classes[] = 'sticky-menu-enabled';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'coutoire_body_class' );
+
+/**
  * Enqueue scripts and styles.
  */
 function coutoire_scripts() {
