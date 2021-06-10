@@ -32,7 +32,7 @@ add_action( 'wp_enqueue_scripts', 'mayland_blocks_scripts' );
  * It does not do anything.
  * Borrowed from aristath/q: https://themes.trac.wordpress.org/browser/q/0.1/functions.php?rev=137308
  */
-function mayland_blocks_theme_check_dummy_calls() {
+function seedlet_blocks_theme_check_dummy_calls() {
 	post_class();
 	wp_link_pages();
 }
