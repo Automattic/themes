@@ -56,7 +56,7 @@
 				},
 				"color": {
 					"text": "var(--wp--custom--color--background)",
-					"background": "var(--wp--custom--color--foreground)"
+					"background": "var(--wp--custom--color--primary)"
 				},
 				"spacing": {
 					"padding": {
@@ -81,14 +81,16 @@
 			"fontsToLoadFromGoogle": [
 				"family=Poppins:ital,wght@0,400;0,600;1,400"
 			],
-			"heading": {
+			"body": {
 				"typography": {
-					"fontWeight": 600
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
 				}
 			},
-			"line-height": {
-				"body": 1.6,
-				"headings": 1.125
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)",
+					"fontWeight": 600
+				}
 			},
 			"margin": {
 				"horizontal": "32px"
@@ -112,7 +114,7 @@
 			"fontFamilies": [
 				{
 					"fontFamily": "\"Poppins\", sans-serif",
-					"slug": "base",
+					"slug": "poppins",
 					"name": "Poppins"
 				},
 				{
@@ -163,23 +165,16 @@
 	},
 	"styles": {
 		"blocks": {
-			"core/button": {
-				"color": {
-					"background": "var(--wp--custom--color--primary)"
-				}
-			},
-			"core/heading": {
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--base)",
-					"lineHeight": "var(--wp--custom--line-height--headings)"
-				}
-			},
 			"core/navigation": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/post-date": {
+				"color": {
+					"link": null,
+					"text": null 
+				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
@@ -187,7 +182,7 @@
 			"core/post-title": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--huge)",
-					"lineHeight": "var(--wp--custom--line-height--headings)"
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
 				}
 			},
 			"core/site-title": {
@@ -236,11 +231,6 @@
 					"text": "var(--wp--custom--color--foreground)"
 				}
 			}
-		},
-		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--base)",
-			"fontSize": "var(--wp--preset--font-size--normal)",
-			"lineHeight": "var(--wp--custom--line-height--body)"
 		}
 	}
 }
