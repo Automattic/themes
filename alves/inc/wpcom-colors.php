@@ -47,6 +47,7 @@ add_color_rule( 'bg', '#ffffff', array(
 			.wp-block-file__button,
 			.wp-block-file__button:focus,
 			.wp-block-file__button:hover,
+			.wp-block-search .wp-block-search__button,
 			.wp-block-gallery .blocks-gallery-image figcaption,
 			.wp-block-gallery .blocks-gallery-item figcaption,
 			.wp-block-pullquote.is-style-solid-color,
@@ -116,6 +117,9 @@ add_color_rule( 'link', '#3E7D98', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
 			input[type="submit"]', 'background-color' ),
 
 	// Text-color
@@ -147,6 +151,7 @@ add_color_rule( 'link', '#3E7D98', array(
 			input[type="time"],
 			input[type="url"],
 			input[type="week"],
+			.wp-block-search .wp-block-search__input:focus,
 			select,
 			textarea', 'border-color' ),
 
@@ -232,6 +237,9 @@ add_color_rule( 'txt', '#394d55', array(
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
 			figcaption', 'color' ),
+
+	// Border-color with less opacity (dim)
+	array( '.wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
 	// Background-color
 	array( '.wp-block-cover.has-background-dim,

@@ -3,10 +3,14 @@
 
 // Background Color
 // $config-global--color-background-default
-add_color_rule( 'bg', '#060f29', array(
+add_color_rule(
+	'bg',
+	'#060f29',
+	array(
 
-	// Background-color
-	array( '.screen-reader-text:focus,
+		// Background-color
+		array(
+			'.screen-reader-text:focus,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
@@ -25,11 +29,14 @@ add_color_rule( 'bg', '#060f29', array(
 			.site-header .main-navigation > div > ul > li:hover li:hover > a,
 			.site-header .main-navigation > div > ul > li .sub-menu a,
 			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
-			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container, 
-			.mobile-nav-side .site-header #site-navigation.main-navigation > div', 'background-color' ),
+			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container,
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div',
+			'background-color',
+		),
 
-	// Text-color
-	array( '.a8c-posts-list-item__featured span,
+		// Text-color
+		array(
+			'.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.a8c-posts-list__view-all:focus,
 			.a8c-posts-list__view-all:hover,
@@ -54,6 +61,7 @@ add_color_rule( 'bg', '#060f29', array(
 			.wp-block-file__button,
 			.wp-block-file__button:focus,
 			.wp-block-file__button:hover,
+			.wp-block-search .wp-block-search__button,
 			.wp-block-pullquote.is-style-solid-color,
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
@@ -77,34 +85,40 @@ add_color_rule( 'bg', '#060f29', array(
 			button[data-load-more-btn],
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'color' ),
+			input:hover[type="submit"]',
+			'color',
+		),
 
-	/**
-	 * Utility Classes
-	 */
-	// Text-color
-	// Needs contrast against `link` (primary)
-	array( '.has-primary-background-color[class],
+		/**
+		 * Utility Classes
+		 */
+		// Text-color
+		// Needs contrast against `link` (primary)
+		array(
+			'.has-primary-background-color[class],
 			.has-secondary-background-color[class],
 			.has-foreground-background-color[class],
 			.has-foreground-dark-background-color[class],
 			.has-foreground-light-background-color[class],
 			.has-background-color[class],
 			.has-background-dark-color[class],
-			.has-background-light-color[class]', 'color' ),
-	// Background-color
-	array( '.has-background-background-color[class]', 'background-color' ),
-	// Background-color darkened
-	array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
-	// Background-color lightened
-	array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
+			.has-background-light-color[class]',
+			'color',
+		),
+		// Background-color
+		array( '.has-background-background-color[class]', 'background-color' ),
+		// Background-color darkened
+		array( '.has-background-dark-background-color[class]', 'background-color', '-1' ),
+		// Background-color lightened
+		array( '.has-background-light-background-color[class]', 'background-color', '+1' ),
 
-	/**
-	 * Grays
-	 * Uses a slightly darker color
-	 */
-	// Border-color
-	array( '.wp-block-code,
+		/**
+		 * Grays
+		 * Uses a slightly darker color
+		 */
+		// Border-color
+		array(
+			'.wp-block-code,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			input[type="color"],
 			input[type="date"],
@@ -125,27 +139,44 @@ add_color_rule( 'bg', '#060f29', array(
 			textarea,
 			.main-navigation > div > ul > li > .sub-menu > li > a,
 			.main-navigation > div > ul > li > .sub-menu > li:first-child > a,
-			.main-navigation > div > ul > li > .sub-menu > li:last-child > a', 'border-color', '-1' ),
-	// Border-top-color
-	array( '.comment-list .children > li,
+			.main-navigation > div > ul > li > .sub-menu > li:last-child > a',
+			'border-color',
+			'-1',
+		),
+		// Border-top-color
+		array(
+			'.comment-list .children > li,
 			.comment-list > li,
-			.wp-block-pullquote', 'border-top-color', '-1' ),
-	// Border-bottom-color
-	array( '.comment-list,
+			.wp-block-pullquote',
+			'border-top-color',
+			'-1',
+		),
+		// Border-bottom-color
+		array(
+			'.comment-list,
 			.wp-block-pullquote,
 			hr,
-			hr.wp-block-separator', 'border-bottom-color', '-1' ),
-	// Color
-	array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
+			hr.wp-block-separator',
+			'border-bottom-color',
+			'-1',
+		),
+		// Color
+		array( 'hr.wp-block-separator.is-style-dots:before', 'color', '-1' ),
 
-), __( 'Background Color' ) );
+	),
+	__( 'Background Color' )
+);
 
 // Link Color
 // $config-global--color-primary-default
-add_color_rule( 'link', '#CAAB57', array(
+add_color_rule(
+	'link',
+	'#CAAB57',
+	array(
 
-	// Background-color
-	array( '.a8c-posts-list-item__featured span,
+		// Background-color
+		array(
+			'.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
 			.button,
 			.main-navigation #toggle:focus + #toggle-menu,
@@ -157,10 +188,17 @@ add_color_rule( 'link', '#CAAB57', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
-			input[type="submit"]', 'background-color' ),
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
+			.wp-block-search .wp-block-search__button:not(.has-background):hover,
+			input[type="submit"]',
+			'background-color',
+		),
 
-	// Text-color
-	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
+		// Text-color
+		array(
+			'.a8c-posts-list .a8c-posts-list-item__title a:active,
 			.a8c-posts-list .a8c-posts-list-item__title a:focus,
 			.a8c-posts-list .a8c-posts-list-item__title a:hover,
 			.entry-title a:active,
@@ -186,36 +224,54 @@ add_color_rule( 'link', '#CAAB57', array(
 			.site-header .main-navigation > div > ul > li:hover > a,
 			.site-header .main-navigation > div > ul > li.focus > a,
 			.site-header .main-navigation > div > ul > li.current-menu-item > a,
-			.site-header .main-navigation > div > ul > li > .sub-menu > li:hover > a', 'color' ),
+			.site-header .main-navigation > div > ul > li > .sub-menu > li:hover > a',
+			'color',
+		),
 
-	// Border color left
-	array( '.wp-block-quote', 'border-left-color' ),
 
-	// Border color right
-	array( '.wp-block-quote[style*="text-align: right"],
-			.wp-block-quote[style*="text-align:right"]', 'border-right-color' ),
+		// Border color
+		array( '.wp-block-search .wp-block-search__input:focus,', 'border-color' ),
 
-	// Border color bottom
-	array( '.site-header .main-navigation > div > ul > li.current-menu-item > ul:before,
+		// Border color left
+		array( '.wp-block-quote', 'border-left-color' ),
+
+		// Border color right
+		array(
+			'.wp-block-quote[style*="text-align: right"],
+			.wp-block-quote[style*="text-align:right"]',
+			'border-right-color',
+		),
+
+		// Border color bottom
+		array(
+			'.site-header .main-navigation > div > ul > li.current-menu-item > ul:before,
 			.site-header .main-navigation > div > ul > li.focus > ul:before,
-			.site-header .main-navigation > div > ul > li:hover > ul:before', 'border-bottom-color' ),
+			.site-header .main-navigation > div > ul > li:hover > ul:before',
+			'border-bottom-color',
+		),
 
-	/**
-	 * Utility Classes
-	 */
-	// Background-color
-	array( '.has-primary-background-color[class]', 'background-color' ),
-	// Text-color
-	array( '.has-primary-color[class]', 'color' ),
+		/**
+		 * Utility Classes
+		 */
+		// Background-color
+		array( '.has-primary-background-color[class]', 'background-color' ),
+		// Text-color
+		array( '.has-primary-color[class]', 'color' ),
 
-), __( 'Link Color' ) );
+	),
+	__( 'Link Color' )
+);
 
 // Text Color
 // $config-global--color-foreground-default
-add_color_rule( 'txt', '#f2f2f2', array(
+add_color_rule(
+	'txt',
+	'#f2f2f2',
+	array(
 
-	// Text-color
-	array( '.comment-meta .comment-metadata,
+		// Text-color
+		array(
+			'.comment-meta .comment-metadata,
 			.main-navigation,
 			.main-navigation a,
 			.main-navigation a:link,
@@ -232,43 +288,55 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,
 			.site-header .main-navigation > div > ul > li.current-menu-item li > a,
 			.site-header .main-navigation > div > ul > li.focus li > a,
-			.site-header .main-navigation > div > ul > li:hover li > a', 'color' ),
+			.site-header .main-navigation > div > ul > li:hover li > a',
+			'color',
+		),
 
-	// Background-color
-	array( '.wp-block-cover.has-background-dim:not([class*="background-color"]),
+		// Background-color
+		array(
+			'.wp-block-cover.has-background-dim:not([class*="background-color"]),
 			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
 			.has-foreground-background-color[class],
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
+			body .widget_eu_cookie_law_widget #eu-cookie-law.negative',
+			'background-color',
+		),
 
-	/**
-	 * Utility Classes
-	 */
-	// Foreground
-	array( '.has-foreground-color[class]', 'color' ),
-	array( '.has-foreground-background-color[class]', 'background-color' ),
+		// Border-color with less opacity (dim)
+		array( '.wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
-	// Text color
-	array( '.has-background-background-color[class],
+		/**
+		 * Utility Classes
+		 */
+		// Foreground
+		array( '.has-foreground-color[class]', 'color' ),
+		array( '.has-foreground-background-color[class]', 'background-color' ),
+
+		// Text color
+		array(
+			'.has-background-background-color[class],
 			.has-background-light-background-color[class],
-			.has-background-dark-background-color[class]', 'color' ),
+			.has-background-dark-background-color[class]',
+			'color',
+		),
 
-	// Text-color darkened
-	array( '.has-foreground-dark-color[class]', 'color', '-1' ),
-	// Background-color darkened
-	array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
+		// Text-color darkened
+		array( '.has-foreground-dark-color[class]', 'color', '-1' ),
+		// Background-color darkened
+		array( '.has-foreground-dark-background-color[class]', 'background-color', '-1' ),
 
-	// Text-color brightened
-	array( '.has-foreground-light-color[class]', 'color', '+2' ),
-	// Background-color brightened
-	array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
+		// Text-color brightened
+		array( '.has-foreground-light-color[class]', 'color', '+2' ),
+		// Background-color brightened
+		array( '.has-foreground-light-background-color[class]', 'background-color', '+2' ),
 
-	/**
-	 * Gray (Same as text color)
-	 */
-	// Text-color
-	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
+		/**
+		 * Gray (Same as text color)
+		 */
+		// Text-color
+		array(
+			'.a8c-posts-list__item .a8c-posts-list-item__meta,
 			.comment-notes,
 			.entry-footer,
 			.entry-meta,
@@ -302,13 +370,16 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			.wp-block-quote.is-style-large cite,
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
-			figcaption', 'color' ),
+			figcaption',
+			'color',
+		),
 
-	/**
-	 * Hover States
-	 */
-	// Background-color
-	array( '.a8c-posts-list__view-all:focus,
+		/**
+		 * Hover States
+		 */
+		// Background-color
+		array(
+			'.a8c-posts-list__view-all:focus,
 			.a8c-posts-list__view-all:hover,
 			.button:focus,
 			.button:hover,
@@ -328,9 +399,13 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
-			input:hover[type="submit"]', 'background-color', 0.7 ),
-	// Text-color
-	array( '.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
+			input:hover[type="submit"]',
+			'background-color',
+			0.7,
+		),
+		// Text-color
+		array(
+			'.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
 			.comment-meta .comment-metadata a:active,
 			.comment-meta .comment-metadata a:hover,
@@ -357,9 +432,13 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			.wp-block-newspack-blocks-homepage-articles article .more-link:active,
 			.wp-block-newspack-blocks-homepage-articles article .more-link:focus,
 			.wp-block-newspack-blocks-homepage-articles article .more-link:hover,
-			a:hover', 'color', 0.7 ),
-	// Border-color
-	array( 'input[type="color"]:focus,
+			a:hover',
+			'color',
+			0.7,
+		),
+		// Border-color
+		array(
+			'input[type="color"]:focus,
 			input[type="date"]:focus,
 			input[type="datetime"]:focus,
 			input[type="datetime-local"]:focus,
@@ -374,29 +453,42 @@ add_color_rule( 'txt', '#f2f2f2', array(
 			input[type="time"]:focus,
 			input[type="url"]:focus,
 			input[type="week"]:focus,
-			textarea:focus', 'border-color', 0.7 ),
+			textarea:focus',
+			'border-color',
+			0.7,
+		),
 
-), __( 'Text Color' ) );
+	),
+	__( 'Text Color' )
+);
 
 // Accent Color
 // $config-global--color-secondary-default
-add_color_rule( 'fg1', '#EE4266', array(
+add_color_rule(
+	'fg1',
+	'#EE4266',
+	array(
 
-	/**
-	 * Utility Classes
-	 */
-	// Text-color
-	array( '.has-secondary-color[class]', 'color' ),
+		/**
+		 * Utility Classes
+		 */
+		// Text-color
+		array( '.has-secondary-color[class]', 'color' ),
 
-	// Background-color
-	array( '.has-secondary-background-color[class],
+		// Background-color
+		array(
+			'.has-secondary-background-color[class],
 			input:hover[type="submit"],
 			.main-navigation .button:focus,
 			.main-navigation .button:hover,
 			.main-navigation #toggle:focus + #toggle-menu,
-			.has-secondary-background-color', 'background-color' ),
+			.has-secondary-background-color',
+			'background-color',
+		),
 
-), __( 'Secondary Color' ) );
+	),
+	__( 'Secondary Color' )
+);
 
 /**
  * Custom CSS
@@ -438,30 +530,40 @@ function rivington_custom_colors_extra_css() { ?>
 			opacity: 0;
 		}
 	}
-<?php }
+	<?php
+}
 add_theme_support( 'custom_colors_extra_css', 'rivington_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes
  */
 // Light
-add_color_palette( array(
-	'#FFFFFF',
-	'#1D1E1E',
-	'#C8133E',
-	'#4E2F4B',
-), 'Light' );
+add_color_palette(
+	array(
+		'#FFFFFF',
+		'#1D1E1E',
+		'#C8133E',
+		'#4E2F4B',
+	),
+	'Light'
+);
 // Medium
-add_color_palette( array(
-	'#EEF4F7',
-	'#242527',
-	'#35845D',
-	'#233252',
-), 'Medium' );
+add_color_palette(
+	array(
+		'#EEF4F7',
+		'#242527',
+		'#35845D',
+		'#233252',
+	),
+	'Medium'
+);
 // Dark
-add_color_palette( array(
-	'#1F2527',
-	'#FFFFFF',
-	'#9FD3E8',
-	'#FBE6AA',
-), 'Dark' );
+add_color_palette(
+	array(
+		'#1F2527',
+		'#FFFFFF',
+		'#9FD3E8',
+		'#FBE6AA',
+	),
+	'Dark'
+);
