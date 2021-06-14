@@ -32,6 +32,14 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
+		// Add support for WordPress.com Global Styles.
+		add_theme_support(
+			'jetpack-global-styles',
+			array(
+				'enable_theme_default' => true,
+			)
+		);
+
 		remove_theme_support( 'block-templates' );
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
