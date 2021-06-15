@@ -13,8 +13,7 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-
-	function independent_publisher_2_setup() {
+	 function independent_publisher_2_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -91,9 +90,6 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 			)
 		);
 
-		// Load regular editor styles into the new block-based editor.
-		add_theme_support( 'editor-styles' );
-
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
@@ -138,6 +134,16 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 					'slug'  => 'white',
 					'color' => '#fff',
 				),
+			)
+		);
+
+		// Load regular editor styles into the new block-based editor.
+		add_theme_support( 'editor-styles' );
+		add_editor_style(
+			array(
+				'style.css',
+				'/css/blocks.css',
+				'/css/editor-blocks.css',
 			)
 		);
 	}
@@ -295,15 +301,6 @@ function independent_publisher_2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'independent_publisher_2_scripts' );
-
-/**
- * Enqueue editor styles for Gutenberg
- */
-function independent_publisher_2_block_editor_styles() {
-	// Block styles.
-	wp_enqueue_style( 'independent-pub-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
-}
-add_action( 'enqueue_block_editor_assets', 'independent_publisher_2_block_editor_styles' );
 
 /**
  * Returns true if a post Featured Image can be displayed.
