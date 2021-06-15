@@ -12,7 +12,7 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
-= 2.0 =
+= 2.0.1 =
 * Initial release
 
 == Copyright ==
