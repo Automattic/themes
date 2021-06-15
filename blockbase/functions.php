@@ -65,16 +65,17 @@ function blockbase_fonts_url() {
 	}
 
 	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
-	if ( empty( $theme_data ) || empty( $theme_data['custom'] ) ) {
+	if ( empty( $theme_data ) || empty( $theme_data['typography'] ) || empty( $theme_data['typography']['fontFamilies'] ) || empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
 		return '';
 	}
 
-	$custom_data = $theme_data['custom'];
-	if ( ! array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
-		return '';
+	$font_list = $theme_data['typography']['fontFamilies']['theme'];
+	$font_families = [];
+	foreach( $font_list as $font ) {
+		if ( 'system-font' !== $font['slug'] ) {
+			$font_families[] = 'family=' . str_replace( ' ', '+', $font['name'] ) . ':ital,wght@0,400;0,500;0,700;1,400;1,500;1,700';
+		}
 	}
-
-	$font_families   = $theme_data['custom']['fontsToLoadFromGoogle'];
 	$font_families[] = 'display=swap';
 
 	// Make a single request for the theme fonts.
