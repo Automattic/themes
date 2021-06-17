@@ -14,12 +14,6 @@
  */
 get_header();
 
-	// the header
-	get_template_part( 'template-parts/header' );
-
 	echo gutenberg_block_template_part( '404' );
-
-	// the footer
-	echo gutenberg_block_template_part( 'footer' );
 
 get_footer();

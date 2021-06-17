@@ -14,13 +14,7 @@
  */
 get_header();
 
-	// the header
-	get_template_part( 'template-parts/header' );
-
-	// the query
-	echo gutenberg_block_template_part( 'query' );
-
-	// the footer
-	echo gutenberg_block_template_part( 'footer' );
+// the query
+echo gutenberg_block_template_part( 'index' );
 
 get_footer();

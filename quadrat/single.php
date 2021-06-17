@@ -9,12 +9,6 @@
  */
 get_header();
 
-	// the header
-	get_template_part( 'template-parts/header' );
-
-	echo gutenberg_block_template_part( 'single' );
-
-	// the footer
-	echo gutenberg_block_template_part( 'footer' );
+echo gutenberg_block_template_part( 'single' );
 
 get_footer();
