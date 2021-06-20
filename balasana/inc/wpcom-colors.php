@@ -60,6 +60,7 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
+			.wp-block-search .wp-block-search__button,
 			button,
 			button.has-focus,
 			button:focus,
@@ -177,6 +178,9 @@ add_color_rule( 'link', '#19744C', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
 			button.has-focus,
 			button:focus,
 			button:hover,
@@ -259,6 +263,7 @@ add_color_rule( 'link', '#19744C', array(
 			input[type="time"]:focus,
 			input[type="url"]:focus,
 			input[type="week"]:focus,
+			.wp-block-search .wp-block-search__input:focus,
 			textarea:focus', 'border-color' ),
 
 	/**
@@ -328,7 +333,9 @@ add_color_rule( 'txt', '#303030', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus', 'color' ),
+			textarea:focus
+			.wp-block-search .wp-block-search__input,
+			.wp-block-search .wp-block-search__input:focus', 'color' ),
 
 	// Background-color
 	array( '.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
@@ -389,6 +396,8 @@ add_color_rule( 'txt', '#303030', array(
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
 			figcaption', 'color' ),
+
+	array( '.wp-block-search .wp-block-search__input', 'border-color'),
 
 ), __( 'Text Color' ) );
 

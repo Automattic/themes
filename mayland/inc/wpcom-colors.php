@@ -19,6 +19,10 @@ add_color_rule( 'bg', '#ffffff', array(
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
 			.sticky-post,
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:hover,
+			.wp-block-search .wp-block-search__button:not(.has-background):hover,
+			.wp-block-search .wp-block-search__button:focus,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			.main-navigation .button,
@@ -112,6 +116,10 @@ add_color_rule( 'link', '#000000', array(
 	// Background-color
 	array( '.a8c-posts-list-item__featured span,
 			.a8c-posts-list__view-all,
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:hover,
+			.wp-block-search .wp-block-search__button:not(.has-background):hover,
+			.wp-block-search .wp-block-search__button:focus,
 			.button,
 			.sticky-post,
 			.wp-block-button__link,

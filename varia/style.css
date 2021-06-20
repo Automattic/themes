@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A variable-based design system for WordPress sites built with Gutenberg.
 Requires at least: WordPress 4.9.6
-Version: 1.6.6
+Version: 1.6.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: varia
@@ -152,7 +152,7 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 button[data-load-more-btn], .button, button,
 input[type="submit"],
 .wp-block-button__link,
-.wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
+.wp-block-file__button, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -170,10 +170,10 @@ input[type="submit"],
 button[data-load-more-btn]:before, .button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -183,27 +183,27 @@ input[type="submit"]:after,
 button[data-load-more-btn]:before, .button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
 	margin-bottom: -0.12em;
 }
 
 button[data-load-more-btn]:after, .button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	margin-top: -0.11em;
 }
 
 .button:not(.has-background):hover, button:not(.has-background):hover,
 input:not(.has-background):hover[type="submit"],
 .wp-block-button__link:not(.has-background):hover,
-.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
+.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
 input:focus[type="submit"],
 .wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
+.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
+.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
 	color: white;
 	background-color: indigo;
 }
@@ -231,7 +231,7 @@ input.has-focus[type="submit"],
 button[data-load-more-btn], .button, button,
 input[type="submit"],
 .wp-block-button__link,
-.wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
+.wp-block-file__button, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -249,10 +249,10 @@ input[type="submit"],
 button[data-load-more-btn]:before, .button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -262,27 +262,27 @@ input[type="submit"]:after,
 button[data-load-more-btn]:before, .button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
 	margin-bottom: -0.12em;
 }
 
 button[data-load-more-btn]:after, .button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	margin-top: -0.11em;
 }
 
 .button:not(.has-background):hover, button:not(.has-background):hover,
 input:not(.has-background):hover[type="submit"],
 .wp-block-button__link:not(.has-background):hover,
-.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
+.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
 input:focus[type="submit"],
 .wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
+.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
+.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
 	color: white;
 	background-color: indigo;
 }
@@ -1375,7 +1375,7 @@ object {
 button[data-load-more-btn], .button, button,
 input[type="submit"],
 .wp-block-button__link,
-.wp-block-file__button, .a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
+.wp-block-file__button, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
 	line-height: 1;
 	color: white;
 	cursor: pointer;
@@ -1393,10 +1393,10 @@ input[type="submit"],
 button[data-load-more-btn]:before, .button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -1406,27 +1406,27 @@ input[type="submit"]:after,
 button[data-load-more-btn]:before, .button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
 	margin-bottom: -0.12em;
 }
 
 button[data-load-more-btn]:after, .button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
+.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	margin-top: -0.11em;
 }
 
 .button:not(.has-background):hover, button:not(.has-background):hover,
 input:not(.has-background):hover[type="submit"],
 .wp-block-button__link:not(.has-background):hover,
-.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
+.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
 input:focus[type="submit"],
 .wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
+.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
+.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
 	color: white;
 	background-color: indigo;
 }
@@ -1738,6 +1738,11 @@ button[data-load-more-btn], .button {
 	.wp-block-group.has-background {
 		padding: 32px;
 	}
+}
+
+.wp-block-group.alignfull {
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 h1, .h1,
@@ -2255,6 +2260,70 @@ p.has-background {
 [style*="background-color"] .wp-block-quote,
 .wp-block-cover[style*="background-image"] .wp-block-quote {
 	border-color: currentColor;
+}
+
+.wp-block-search {
+	flex-wrap: wrap;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	background: white;
+	color: black;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+	padding: 16px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+	padding: 16px 16px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button.has-icon {
+	padding: 0;
+}
+
+.wp-block-search .wp-block-search__label {
+	font-weight: normal;
+}
+
+.wp-block-search .wp-block-search__input {
+	color: black;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	padding: 16px;
+	font-size: 1rem;
+	line-height: 1rem;
+	font-family: sans-serif;
+	font-family: var(--font-headings, sans-serif);
+	max-width: inherit;
+	margin-right: calc( .66 * 16px);
+	background: white;
+}
+
+.wp-block-search .wp-block-search__input:focus {
+	color: black;
+	border-color: #DDDDDD;
+}
+
+.wp-block-search .wp-block-search__button {
+	border: none;
+	box-shadow: none;
+}
+
+.wp-block-search .wp-block-search__button.has-icon {
+	transform: scaleX(-1);
+	padding: 0;
+	min-width: calc(2* 16px + 1rem + 4px);
+	min-height: calc(2* 16px + 1rem + 4px);
+}
+
+.wp-block-search .wp-block-search__button.has-icon svg {
+	fill: currentColor;
+	width: 29px;
+	height: 29px;
 }
 
 hr {

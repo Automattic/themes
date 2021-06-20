@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Description: A minimalist theme for those with an eye for style. Modern Business is a perfect choice for stores offering high-end products and services, or the fashion and beauty industries -- any site where elegance and polish is key.
 Requires at least: WordPress 4.9.6
 Template: twentynineteen
-Version: 1.7.2
+Version: 1.7.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
@@ -3054,15 +3054,15 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .comment-form .comment-form-author,
-  .comment-form .comment-form-email {
+  .comment-form .comment-form-author:not(.comment-form-field),
+  .comment-form .comment-form-email:not(.comment-form-field) {
     width: calc(50% - 0.5rem);
     float: left;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .comment-form .comment-form-email {
+  .comment-form .comment-form-email:not(.comment-form-field) {
     margin-left: 1rem;
   }
 }
