@@ -1,0 +1,127 @@
+/*
+Theme Name: Monticello 
+Theme URI: https://github.com/wordpress/theme-experiments/
+Author: a8c
+Description: The base for a block-based theme.
+Requires at least: 5.3
+Tested up to: 5.5
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: monticello
+
+Empty Theme is distributed under the terms of the GNU GPL.
+*/
+
+
+img {
+	height: auto;
+}
+
+.wp-block-site-title {
+	font-family: var(--wp--custom--font-family--primary); /* We should be able to configure this via theme.json as of 9.4 */
+}
+
+.post-title,
+.editor-post-title {
+	font-family: var(--wp--custom--font-family--primary); /* We should be able to configure this via theme.json as of 9.4 */
+}
+
+body, p {
+	font-family: var(--wp--custom--font-family--secondary); /* We should be able to configure this via theme.json as of 9.4 */
+}
+
+.has-background-color-beige {
+	background-color: var(--wp--preset--color--beige);
+}
+
+/* These BUTTON styles should be representable in theme.json
+
+styles: {
+	button: {
+		font-family: var(--wp--custom--font-family--primary);
+		background-color: var(--wp--preset--color--beige);
+		...
+		visited: {
+			color: var(--wp--preset--color--dark-beige-4);
+		},
+		hover {
+			opacity: .75;
+		}
+	}
+}
+*/
+.wp-block-button__link {
+	font-family: var(--wp--custom--font-family--primary);
+	background-color: var(--wp--preset--color--beige);
+	color: var(--wp--preset--color--dark-beige-4);
+	border-radius: 0 0 6px;
+}
+
+.wp-block-button__link:visited {
+	color: var(--wp--preset--color--dark-beige-4);
+}
+
+.wp-block-button__link:hover {
+	opacity: .75;
+}
+
+.wp-block-post-featured-image > img {
+	width: 100%;	
+}
+
+h1, h2, h3 {
+	font-family: var(--wp--custom--font-family--primary);
+}
+
+p.wp-block-post-featured-image {
+	margin: 0;
+}
+
+.wp-block-group .site-info {
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	z-index: 1;
+}
+
+/*
+I'm not sure that something like this would be able to be easily
+represented in .json
+*/
+.is-style-outline .wp-block-button__link:hover:not(.has-background) {
+	/* NOTE: This background color should have a .25 opacity value.
+	I'm unsure how to achieve that leveraging a preset color value.
+
+	Something like this below would be great but doesn't work.
+	background-color: var(--wp--preset--color--beige)33; 
+
+	If the color value were available as RGB values then we could do:
+	background-color: rgb(var(--wp--preset--color--rgb--beige), .25); 
+	*/
+	background-color: var(--wp--preset--color--beige); 
+	opacity: 1;
+}
+
+/* END BUTTON STYLES */
+
+/*
+These are styles for the 'menu-list-item' block pattern.
+I'm not sure that these style should live here but I don't have a better place for them yet.
+*/
+.menu-list-item {
+	font-family: var(--wp--custom--font-family--secondary);
+	font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.menu-list-item p,
+.menu-list-item .wp-block-columns {
+	margin: 0;
+}
+
+.menu-list-item .menu-list-item-description,
+.menu-list-item .menu-list-item-price {
+	font-weight: 400;
+}
