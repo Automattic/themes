@@ -651,7 +651,6 @@ object {
 	min-height: 90vh;
 	margin-top: inherit;
 	margin-bottom: inherit;
-	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
@@ -661,15 +660,15 @@ object {
 	color: var(--wp--preset--color--background);
 }
 
-.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover:not([class*='background-color']) .block-editor-block-list__block,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover-image:not([class*='background-color']) .block-editor-block-list__block {
-	color: var(--wp--preset--color--background);
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover .block-editor-block-list__block,
+.wp-block-cover-image .wp-block-cover__inner-container,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image .block-editor-block-list__block {
+	color: currentColor;
 }
 
 .wp-block-cover h2,
@@ -1159,6 +1158,16 @@ pre.wp-block-verse {
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
 	color: currentColor;
+}
+
+.has-primary-background-color[class] {
+	background-color: var(--global--color-primary);
+	color: var(--global--color-background);
+}
+
+.has-background-background-color[class] {
+	background-color: var(--global--color-background);
+	color: var(--global--color-foreground);
 }
 
 .has-primary-background-color,
