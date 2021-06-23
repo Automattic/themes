@@ -39,29 +39,40 @@
 			"gradients": [],
 			"palette": [
 				{
-					"slug": "black",
+					"slug": "primary",
 					"color": "#000000",
-					"name": "Black"
+					"color-value-i-would-like-to-use": "var(--wp--custom--color--black)",
+					"name": "Primary"
 				},
 				{
-					"slug": "white",
-					"color": "#ffffff",
-					"name": "White"
-				},
-				{
-					"slug": "blue",
+					"slug": "secondary",
 					"color": "#007cba",
-					"name": "Blue"
+					"color-value-i-would-like-to-use": "var(--wp--custom--color--blue)",
+					"name": "Secondary"
 				},
 				{
-					"slug": "almost-black",
+					"slug": "tertiary",
+					"color": "#FFFFFF",
+					"color-value-i-would-like-to-use": "var(--wp--custom--color--white)",
+					"name": "Tertiary"
+				},
+				{
+					"slug": "foreground",
 					"color": "#333333",
-					"name": "Almost Black"
+					"color-value-i-would-like-to-use": "var(--wp--custom--color--almost-black)",
+					"name": "Foreground"
 				},
 				{
-					"slug": "almost-white",
-					"color": "#FAFAFA",
-					"name": "Almost White"
+					"slug": "background",
+					"color": "#ffffff",
+					"color-value-i-would-like-to-use": "var(--wp--custom--color--white)",
+					"name": "Background"
+				},
+				{
+					"slug": "selection",
+					"color": "#c2c2c2",
+					"color-value-i-would-like-to-use": "var(--wp--custom--color--gray)",
+					"name": "Selection"
 				}
 			]
 		},
@@ -71,18 +82,18 @@
 			},
 			"button": {
 				"border": {
-					"color": "var(--wp--custom--color--secondary)",
+					"color": "var(--wp--preset--color--secondary)",
 					"radius": "4px",
 					"style": "solid",
 					"width": "2px"
 				},
 				"color": {
-					"background": "var(--wp--custom--color--secondary)",
-					"text": "var(--wp--custom--color--background)"
+					"background": "var(--wp--preset--color--secondary)",
+					"text": "var(--wp--preset--color--background)"
 				},
 				"hover": {
 					"color": {
-						"text": "var(--wp--custom--color--background)",
+						"text": "var(--wp--preset--color--background)",
 						"background": "#006ba1"
 					},
 					"border": {
@@ -110,12 +121,12 @@
 				}
 			},
 			"color": {
-				"primary": "var(--wp--preset--color--black)",
-				"secondary": "var(--wp--preset--color--blue)",
-				"tertiary": "var(--wp--preset--color--almost-white)",
-				"foreground": "var(--wp--preset--color--almost-black)",
-				"background": "var(--wp--preset--color--white)",
-				"selection": "var(--wp--preset--color--almost-white)"
+				"black": "#000000",
+				"white": "#FFFFFF",
+				"gray": "#C2C2C2",
+				"blue": "#007cba",
+				"almost-black": "#333333",
+				"almost-white": "#FAFAFA"
 			},
 			"form": {
 				"padding": "calc( 0.5 * var(--wp--custom--margin--horizontal) )",
@@ -128,7 +139,7 @@
 				"color": {
 					"background": "transparent",
 					"boxShadow": "none",
-					"text": "var(--wp--custom--color--foreground)"
+					"text": "var(--wp--preset--color--foreground)"
 				},
 				"label": {
 					"typography": {
@@ -335,7 +346,7 @@
 			},
 			"core/navigation-link": {
 				"color": {
-					"background": "var(--wp--custom--color--background)"
+					"background": "var(--wp--preset--color--background)"
 				}
 			},
 			"core/post-content": {
@@ -354,8 +365,8 @@
 			},
 			"core/post-date": {
 				"color": {
-					"link": "var(--wp--custom--color--foreground)",
-					"text": "var(--wp--custom--color--foreground)"
+					"link": "var(--wp--preset--color--foreground)",
+					"text": "var(--wp--preset--color--foreground)"
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
@@ -381,7 +392,7 @@
 			},
 			"core/separator": {
 				"color": {
-					"text": "var(--wp--custom--color--foreground)"
+					"text": "var(--wp--preset--color--foreground)"
 				},
 				"border": {
 					"color": "currentColor",
@@ -397,7 +408,7 @@
 			},
 			"core/quote": {
 				"border": {
-					"color": "var(--wp--custom--color--secondary)",
+					"color": "var(--wp--preset--color--secondary)",
 					"style": "solid",
 					"width": "0 0 0 1px"
 				},
@@ -413,8 +424,8 @@
 			}
 		},
 		"color": {
-			"background": "var(--wp--custom--color--background)",
-			"text": "var(--wp--custom--color--foreground)"
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--foreground)"
 		},
 		"elements": {
 			"h1": {
@@ -449,7 +460,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--custom--color--secondary)"
+					"text": "var(--wp--preset--color--secondary)"
 				}
 			}
 		},
