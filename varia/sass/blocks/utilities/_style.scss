@@ -234,12 +234,12 @@
 .has-background-background-color,
 .has-background-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "background", "default")};
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
 .has-background-background-color:not(.has-text-color),
 .has-background-background-color.has-background-dim:not(.has-text-color) {
-	//color: #{map-deep-get($config-global, "color", "foreground", "default")};
-	color: var-(--global-color-foreground);
+	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
 // Gutenberg Font-size options
