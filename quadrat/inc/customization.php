@@ -5,16 +5,18 @@ require_once 'wp-customize-global-styles-setting.php';
 class GlobalStylesCustomizer {
 
 	private $section_settings;
-
-	private $merged_color_palette;
+	private $user_color_palette;
 
 	function __construct() {
-		add_action( 'customize_register', array( $this, 'set_section_settings' ) );
-		add_action( 'customize_register', array( $this, 'register_section' ) );
-
-		/* Customizer Preview JS */
+		add_action( 'customize_register', array( $this, 'initialize' ) );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'create_customization_style_element' ) );
+		add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
+	}
+
+	function customize_preview_js() {
+		wp_enqueue_script( 'customizer-preview-color', get_stylesheet_directory_uri() . '/inc/customizer-preview.js', array( 'customize-preview' ) );
+		wp_localize_script( 'customizer-preview-color', 'user_color_palette', $this->user_color_palette );
 	}
 
 	function create_customization_style_element() {
@@ -24,107 +26,57 @@ class GlobalStylesCustomizer {
 		wp_add_inline_style( 'global-styles-customizations', '{}' );
 	}
 
-	/**
-	 * Gets the color from a CSS variable.
-	 *
-	 * This might already be in Gutenberg.
-	 */
-	function get_color( $color, $palette ) {
-		// Is this a HEX?
-		if ( 0 === strpos( $color, '#' ) ) {
-			// If so just return.
-			return $color;
-		}
-
-		// Is this a variable?
-		if ( 0 === strpos( $color, 'var(--wp--preset--color--' ) ) {
-			// If so just return the palette
-			$color_slug = preg_replace( '/var\(--wp--preset--color--(.*)\)/', '$1', $color );
-			$key        = array_search( $color_slug, array_column( $palette, 'slug' ), true );
-			return $palette[ $key ]['color'];
-		}
+	function initialize( $wp_customize ) {
+		$this->user_color_palette = $this->build_user_color_palette();
+		$this->register_color_controls( $wp_customize, $this->user_color_palette );
 	}
 
-	function set_section_settings() {
-		$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-		$this->section_settings = array(
-			'name'        => __( 'Colors' ),
-			'type'        => 'section',
-			'slug'        => 'customize-global-styles',
-			'description' => __( 'Color Customization for Quadrat' ),
-			'controls'    => $theme_json['settings']['color']['palette']['theme'],
-			'user'        => $theme_json['settings']['color']['palette']['user'],
-		);
+	function build_user_color_palette() {
 
-		$this->get_merged_colors();
-	}
+		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 
-	/* Preview JS */
-	function customize_preview_js() {
-		wp_enqueue_script( 'customizer-preview-color', get_stylesheet_directory_uri() . '/inc/customizer-preview.js', array( 'customize-preview' ) );
-		wp_localize_script( 'customizer-preview-color', 'global_styles_settings', $this->section_settings );
-	}
+		$theme_color_palette = $theme_json['settings']['color']['palette']['theme'];
+		$user_color_palette  = $theme_json['settings']['color']['palette']['theme'];
 
-	function register_section( $wp_customize ) {
-		$section_settings = $this->section_settings;
-		if ( 'section' !== $section_settings['type'] ) {
-			return;
+		if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
+			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
 		}
 
-		$section_key = $section_settings['slug'];
+		foreach ( $user_color_palette as $key => $palette_item ) {
+			$user_color_palette[ $key ]['default'] = $this->get_theme_default_color_value( $palette_item['slug'], $theme_color_palette );
+		}
+
+		return $user_color_palette;
+	}
+
+	function get_theme_default_color_value( $slug, $palette ) {
+		foreach ( $palette as $palette_item ) {
+			if ( $palette_item['slug'] === $slug ) {
+				return $palette_item['color'];
+			}
+		}
+		return null;
+	}
+
+	function register_color_controls( $wp_customize, $palette ) {
+
+		$section_key = 'customize-global-styles';
+		$description = __( 'Color Customization for Quadrat' );
+		$title       = __( 'Colors' );
 
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
 			$section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => $section_settings['description'],
-				'title'       => $section_settings['name'],
+				'description' => $description,
+				'title'       => $title,
 			)
 		);
 
-		// Add Controls
-		foreach ( $section_settings['controls'] as $custom_option ) {
-			$this->register_color_control( $wp_customize, $custom_option, $section_key );
+		foreach ( $palette as $palette_item ) {
+			$this->register_color_control( $wp_customize, $palette_item, $section_key );
 		}
-	}
-
-	function find_position_of_slug_in_array( $slug, $array ) {
-		foreach( $array as $key => $element ) {
-			if ( $element['slug'] === $slug ) {
-				return $key;
-			}
-		}
-
-		return false;
-	}
-
-	function get_current_color_setting( $slug, $default_color ) {
-		// Find slug in user colors
-		$position_of_slug = $this->find_position_of_slug_in_array( $slug, $this->section_settings['user'] );
-
-		// If it exists return it
-		if ( false !== $position_of_slug ) {
-			return $this->section_settings['user'][ $position_of_slug ]['color'];
-		}
-
-		// If not return then theme color
-		return $default_color;
-	}
-
-	function get_merged_colors() {
-		$theme_color_palette = $this->section_settings['controls'];
-		$user_color_palette = $this->section_settings['user'];
-		$this->merged_color_palette = [];
-		foreach( $theme_color_palette as $key => $theme_color ) {
-			$this->merged_color_palette[ $key ] = $theme_color;
-			$position_in_user_array = $this->find_position_of_slug_in_array( $theme_color['slug'], $user_color_palette );
-			if ( false !== $position_in_user_array ) {
-				$this->merged_color_palette[ $key ]['color'] = $user_color_palette[ $position_in_user_array ]['color'];
-			}
-		}
-
-		return $this->merged_color_palette;
 	}
 
 	function register_color_control( $wp_customize, $custom_option, $section_key ) {
@@ -134,11 +86,10 @@ class GlobalStylesCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'           => esc_html( $custom_option['color'] ),
+				'default'           => $custom_option['default'],
 				'sanitize_callback' => 'sanitize_hex_color',
 				'slug'              => $custom_option['slug'],
-				'user_value'        => $this->get_current_color_setting( $custom_option['slug'], $custom_option['color'] ),
-				'merged_color_palette' => $this->merged_color_palette,
+				'user_value'        => $custom_option['color'],
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );
@@ -153,6 +104,27 @@ class GlobalStylesCustomizer {
 				)
 			)
 		);
+	}
+
+	function handle_customize_save_after( $manager ) {
+
+		//update the palette based on the controls
+		foreach ( $this->user_color_palette as $key => $palette_item ) {
+			$setting = $manager->get_setting( 'customize-global-styles' . $palette_item['slug'] );
+			if ( isset( $setting->new_value ) ) {
+				$this->user_color_palette[ $key ]['color'] = $setting->new_value;
+			}
+		}
+
+		// Get the user's theme.json from the CPT
+		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
+		$user_theme_json_post         = get_post( $user_custom_post_type_id );
+		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
+
+		$user_theme_json_post_content->settings->color->palette = $this->user_color_palette;
+		$user_theme_json_post->post_content                     = json_encode( $user_theme_json_post_content );
+
+		return wp_update_post( $user_theme_json_post );
 	}
 }
 
