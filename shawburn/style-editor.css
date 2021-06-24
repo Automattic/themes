@@ -655,7 +655,6 @@ object {
 	min-height: 576px;
 	margin-top: inherit;
 	margin-bottom: inherit;
-	/* default & custom background-color */
 	/* Treating H2 separately to account for legacy /core styles */
 }
 
@@ -665,15 +664,15 @@ object {
 	color: var(--wp--preset--color--white);
 }
 
-.wp-block-cover:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover:not([class*='background-color']) .block-editor-block-list__block,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover__inner-container,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-image-text,
-.wp-block-cover-image:not([class*='background-color']) .wp-block-cover-text,
-.wp-block-cover-image:not([class*='background-color']) .block-editor-block-list__block {
-	color: var(--wp--preset--color--white);
+.wp-block-cover .wp-block-cover__inner-container,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover .block-editor-block-list__block,
+.wp-block-cover-image .wp-block-cover__inner-container,
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image .block-editor-block-list__block {
+	color: currentColor;
 }
 
 .wp-block-cover h2,
@@ -1168,6 +1167,7 @@ pre.wp-block-verse {
 .has-primary-background-color,
 .has-primary-background-color.has-background-dim {
 	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
 }
 
 .has-primary-background-color:not(.has-text-color),
@@ -1240,6 +1240,7 @@ pre.wp-block-verse {
 .has-background-background-color,
 .has-background-background-color.has-background-dim {
 	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
 }
 
 .has-background-background-color:not(.has-text-color),
