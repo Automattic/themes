@@ -133,7 +133,19 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 			$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
 			// Upate the theme.json with the new color
-			$user_theme_json_post_content->styles->color->{$this->slug} = $color;
+			//$palette = $user_theme_json_post_content->settings->color->palette;
+			// TODO - this won't preserve user's settings
+			$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
+			$palette_colors = $theme_json['settings']['color']['palette']['theme'];
+			$position_of_color = null;
+			foreach( $palette_colors as $key => $palette_color ) {
+				if ( $palette_color['slug'] === $this->slug ) {
+					$position_of_color = $key;
+				}
+			}
+			$palette_colors[ $position_of_color ]['color'] = $color;
+
+			$user_theme_json_post_content->settings->color->palette = $palette_colors;
 			$user_theme_json_post->post_content                         = json_encode( $user_theme_json_post_content );
 
 			return wp_update_post( $user_theme_json_post );

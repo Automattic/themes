@@ -46,31 +46,13 @@ class GlobalStylesCustomizer {
 
 	function parse_theme_palette_colors() {
 		$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
-		$color_palette = $theme_json['settings']['color']['palette'];
-
-		$color_options = array();
-
-		foreach ( $color_palette as $palette_item ) {
-
-			array_push(
-				$color_options,
-				array(
-					'name'     => $palette_item['name'],
-					'type'     => 'color',
-					'default'  => $this->get_color( $palette_item['color'], $color_palette ),
-					'selector' => 'body',
-					'property' => 'color',
-					'slug'     => $palette_item['slug'],
-				)
-			);
-		}
-
+//var_dump( $theme_json['settings']['color']['palette']['theme'] );
 		$this->palette_colors = array(
 			'name'        => __( 'Colors' ),
 			'type'        => 'section',
 			'slug'        => 'customize-global-styles',
 			'description' => __( 'Color Customization for Quadrat' ),
-			'controls'    => $color_options,
+			'controls'    => $theme_json['settings']['color']['palette']['theme'],
 		);
 	}
 
@@ -99,9 +81,7 @@ class GlobalStylesCustomizer {
 
 		// Add Controls
 		foreach ( $this->palette_colors['controls'] as $custom_option ) {
-			if ( 'color' === $custom_option['type'] ) {
-				$this->register_color_control( $wp_customize, $custom_option, $section_key );
-			}
+			$this->register_color_control( $wp_customize, $custom_option, $section_key );
 		}
 	}
 
@@ -112,7 +92,7 @@ class GlobalStylesCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'           => esc_html( $custom_option['default'] ),
+				'default'           => esc_html( $custom_option['color'] ),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'slug'              => $custom_option['slug'],
 			)
