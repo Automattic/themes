@@ -4,11 +4,7 @@ require_once 'wp-customize-global-styles-setting.php';
 
 class GlobalStylesCustomizer {
 
-	private $palette_colors;
-
 	function __construct() {
-		add_action( 'customize_register', array( $this, 'parse_theme_palette_colors' ) );
-
 		add_action( 'customize_register', array( $this, 'register_section' ) );
 
 		/* Customizer Preview JS */
@@ -44,43 +40,45 @@ class GlobalStylesCustomizer {
 		}
 	}
 
-	function parse_theme_palette_colors() {
-		$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
-//var_dump( $theme_json['settings']['color']['palette']['theme'] );
-		$this->palette_colors = array(
+	function get_section_settings() {
+		$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+
+		return array(
 			'name'        => __( 'Colors' ),
 			'type'        => 'section',
 			'slug'        => 'customize-global-styles',
 			'description' => __( 'Color Customization for Quadrat' ),
 			'controls'    => $theme_json['settings']['color']['palette']['theme'],
+			'user'        => $theme_json['settings']['color']['palette']['user'],
 		);
 	}
 
 	/* Preview JS */
 	function customize_preview_js() {
 		wp_enqueue_script( 'customizer-preview-color', get_stylesheet_directory_uri() . '/inc/customizer-preview.js', array( 'customize-preview' ) );
-		wp_localize_script( 'customizer-preview-color', 'global_styles_settings', $this->palette_colors );
+		wp_localize_script( 'customizer-preview-color', 'global_styles_settings', $this->get_section_settings() );
 	}
 
 	function register_section( $wp_customize ) {
-		if ( 'section' !== $this->palette_colors['type'] ) {
+		$section_settings = $this->get_section_settings();
+		if ( 'section' !== $section_settings['type'] ) {
 			return;
 		}
 
-		$section_key = $this->palette_colors['slug'];
+		$section_key = $section_settings['slug'];
 
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
 			$section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => $this->palette_colors['description'],
-				'title'       => $this->palette_colors['name'],
+				'description' => $section_settings['description'],
+				'title'       => $section_settings['name'],
 			)
 		);
 
 		// Add Controls
-		foreach ( $this->palette_colors['controls'] as $custom_option ) {
+		foreach ( $section_settings['controls'] as $custom_option ) {
 			$this->register_color_control( $wp_customize, $custom_option, $section_key );
 		}
 	}
