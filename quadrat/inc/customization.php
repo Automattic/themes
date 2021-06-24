@@ -4,7 +4,10 @@ require_once 'wp-customize-global-styles-setting.php';
 
 class GlobalStylesCustomizer {
 
+	private $section_settings;
+
 	function __construct() {
+		add_action( 'customize_register', array( $this, 'set_section_settings' ) );
 		add_action( 'customize_register', array( $this, 'register_section' ) );
 
 		/* Customizer Preview JS */
@@ -40,10 +43,9 @@ class GlobalStylesCustomizer {
 		}
 	}
 
-	function get_section_settings() {
+	function set_section_settings() {
 		$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-
-		return array(
+		$this->section_settings = array(
 			'name'        => __( 'Colors' ),
 			'type'        => 'section',
 			'slug'        => 'customize-global-styles',
@@ -56,11 +58,11 @@ class GlobalStylesCustomizer {
 	/* Preview JS */
 	function customize_preview_js() {
 		wp_enqueue_script( 'customizer-preview-color', get_stylesheet_directory_uri() . '/inc/customizer-preview.js', array( 'customize-preview' ) );
-		wp_localize_script( 'customizer-preview-color', 'global_styles_settings', $this->get_section_settings() );
+		wp_localize_script( 'customizer-preview-color', 'global_styles_settings', $this->section_settings );
 	}
 
 	function register_section( $wp_customize ) {
-		$section_settings = $this->get_section_settings();
+		$section_settings = $this->section_settings;
 		if ( 'section' !== $section_settings['type'] ) {
 			return;
 		}
@@ -83,6 +85,42 @@ class GlobalStylesCustomizer {
 		}
 	}
 
+	function find_position_of_slug_in_array( $slug, $array ) {
+		foreach( $array as $key => $element ) {
+			if ( $element['slug'] === $slug ) {
+				return $key;
+			}
+		}
+
+		return false;
+	}
+
+	function get_current_color_setting( $slug, $default_color ) {
+		// Find slug in user colors
+		$position_of_slug = $this->find_position_of_slug_in_array( $slug, $this->section_settings['user'] );
+
+		// If it exists return it
+		if ( false !== $position_of_slug ) {
+			return $this->section_settings['user'][ $position_of_slug ]['color'];
+		}
+
+		// If not return then theme color
+		return $default_color;
+	}
+
+	function get_merged_colors() {
+		$theme_color_palette = $this->section_settings['controls'];
+		$user_color_palette = $this->section_settings['user'];
+		foreach( $theme_color_palette as $key => $theme_color ) {
+			$position_in_user_array = $this->find_position_of_slug_in_array( $theme_color['slug'], $user_color_palette );
+			if ( false !== $position_in_user_array ) {
+				$theme_color_palette[ $key ]['color'] = $user_color_palette[ $position_in_user_array ]['color'];
+			}
+		}
+
+		return $theme_color_palette;
+	}
+
 	function register_color_control( $wp_customize, $custom_option, $section_key ) {
 		$setting_key = $section_key . $custom_option['slug'];
 
@@ -93,6 +131,8 @@ class GlobalStylesCustomizer {
 				'default'           => esc_html( $custom_option['color'] ),
 				'sanitize_callback' => 'sanitize_hex_color',
 				'slug'              => $custom_option['slug'],
+				'user_value'        => $this->get_current_color_setting( $custom_option['slug'], $custom_option['color'] ),
+				'merged_color_palette' => $this->get_merged_colors(),
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );

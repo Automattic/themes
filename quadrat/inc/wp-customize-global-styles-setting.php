@@ -37,6 +37,20 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 		public $slug = '';
 
 		/**
+		 * User value
+		 *
+		 * @var string
+		 */
+		public $user_value = '';
+
+		/**
+		 * Merged color palette
+		 *
+		 * @var array
+		 */
+		public $merged_color_palette = [];
+
+		/**
 		 * WP_Customize_Global_Styles_Setting constructor.
 		 *
 		 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
@@ -67,32 +81,7 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 		 * @return string
 		 */
 		public function value() {
-			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
-			$user_theme_json_post     = get_post( $user_custom_post_type_id );
-
-			if ( $user_theme_json_post ) {
-				$post_content = $user_theme_json_post->post_content;
-			}
-
-			if ( empty( $post_content ) ) {
-				return $this->default;
-			}
-
-			$post_json = json_decode( $post_content );
-			if ( ! property_exists( $post_json, 'styles' ) ) {
-				return $this->default;
-			}
-
-			if ( ! property_exists( $post_json->styles, 'color' ) ) {
-				return $this->default;
-			}
-
-			if ( ! property_exists( $post_json->styles->color, $this->slug ) ) {
-				return $this->default;
-			}
-
-			$color_string = $post_json->styles->color->{$this->slug};
-			return $this->get_color( $color_string );
+			return $this->user_value;
 		}
 
 		// There is a similar but different version of this in customization.php
@@ -133,19 +122,14 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 			$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
 			// Upate the theme.json with the new color
-			//$palette = $user_theme_json_post_content->settings->color->palette;
-			// TODO - this won't preserve user's settings
-			$theme_json    = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
-			$palette_colors = $theme_json['settings']['color']['palette']['theme'];
 			$position_of_color = null;
-			foreach( $palette_colors as $key => $palette_color ) {
+			foreach( $this->merged_color_palette as $key => $palette_color ) {
 				if ( $palette_color['slug'] === $this->slug ) {
 					$position_of_color = $key;
 				}
 			}
-			$palette_colors[ $position_of_color ]['color'] = $color;
-
-			$user_theme_json_post_content->settings->color->palette = $palette_colors;
+			$this->merged_color_palette[ $position_of_color ]['color'] = $color;
+			$user_theme_json_post_content->settings->color->palette = $this->merged_color_palette;
 			$user_theme_json_post->post_content                         = json_encode( $user_theme_json_post_content );
 
 			return wp_update_post( $user_theme_json_post );
