@@ -6,6 +6,8 @@ class GlobalStylesCustomizer {
 
 	private $section_settings;
 
+	private $merged_color_palette;
+
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'set_section_settings' ) );
 		add_action( 'customize_register', array( $this, 'register_section' ) );
@@ -53,6 +55,8 @@ class GlobalStylesCustomizer {
 			'controls'    => $theme_json['settings']['color']['palette']['theme'],
 			'user'        => $theme_json['settings']['color']['palette']['user'],
 		);
+
+		$this->get_merged_colors();
 	}
 
 	/* Preview JS */
@@ -111,14 +115,16 @@ class GlobalStylesCustomizer {
 	function get_merged_colors() {
 		$theme_color_palette = $this->section_settings['controls'];
 		$user_color_palette = $this->section_settings['user'];
+		$this->merged_color_palette = [];
 		foreach( $theme_color_palette as $key => $theme_color ) {
+			$this->merged_color_palette[ $key ] = $theme_color;
 			$position_in_user_array = $this->find_position_of_slug_in_array( $theme_color['slug'], $user_color_palette );
 			if ( false !== $position_in_user_array ) {
-				$theme_color_palette[ $key ]['color'] = $user_color_palette[ $position_in_user_array ]['color'];
+				$this->merged_color_palette[ $key ]['color'] = $user_color_palette[ $position_in_user_array ]['color'];
 			}
 		}
 
-		return $theme_color_palette;
+		return $this->merged_color_palette;
 	}
 
 	function register_color_control( $wp_customize, $custom_option, $section_key ) {
@@ -132,7 +138,7 @@ class GlobalStylesCustomizer {
 				'sanitize_callback' => 'sanitize_hex_color',
 				'slug'              => $custom_option['slug'],
 				'user_value'        => $this->get_current_color_setting( $custom_option['slug'], $custom_option['color'] ),
-				'merged_color_palette' => $this->get_merged_colors(),
+				'merged_color_palette' => $this->merged_color_palette,
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );

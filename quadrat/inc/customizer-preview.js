@@ -18,21 +18,17 @@ if ( global_styles_settings ) {
 
 			value.bind( function ( to ) {
 				console.log( 'to', to );
+
+				console.log( global_styles_settings.controls );
 				// Build the CSS based on the settings
 				styleElement.innerHTML =
 					// Build the variable.
-					control.selector +
-					'{' +
+					':root,body{' +
 					'--wp--preset--color--' +
 					control.slug +
 					': ' +
 					to +
-					';' +
-					// Build the selector.
-					control.property +
-					':' +
-					to +
-					'}';
+					';}';
 				console.log( 'innerHTML', styleElement.innerHTML );
 			} );
 		} );
