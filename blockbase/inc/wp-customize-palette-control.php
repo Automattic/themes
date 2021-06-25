@@ -28,14 +28,13 @@ function color_palette_control( $wp_customize ) {
 				<?php foreach ( $this->choices as $value => $label ) : ?>
 					<input name="color_palette_<?php echo esc_attr( $this->id ); ?>" id="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" type="radio" value="<?php echo esc_attr( $value ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> >
 						<label for="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" class="color-option">
-							<span><?php echo esc_attr( $label['label'] ); ?></span>
-							<table class="color-palette">
-								<tr>
+							<div class="custom-color-palette">
+								<span class="color-palette-label"><?php echo esc_attr( $label['label'] ); ?></span>
 								<?php foreach ( $label['colors'] as $color ) : ?>
-									<td style="background-color: <?php echo esc_attr( $color['color'] ); ?>">&nbsp;</td>
+									<div class="color-stripe" style="background-color: <?php echo esc_attr( $color['color'] ); ?>">&nbsp;</div>
 								<?php endforeach; ?>
 								</tr>
-							</table>
+							</div>
 						</label>
 					</input>		
 				<?php endforeach; ?>
@@ -56,7 +55,7 @@ function color_palette_control( $wp_customize ) {
 		'section' => 'customize-global-styles',
 		'choices' => array (
 			'default-palette' => array(
-				'label' => 'Default Palette',
+				'label' => 'Default',
 				'colors' => array( 
 					array(
 						"slug" => "primary",
