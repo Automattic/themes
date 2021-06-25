@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'wp-customize-palette-control.php';
 
 class GlobalStylesColorPalettes {
