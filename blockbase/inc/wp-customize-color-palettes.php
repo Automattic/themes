@@ -27,7 +27,7 @@ class GlobalStylesColorPalettes {
 		}
 
 		$this->palettes['default-palette'] = array(
-			'label' => 'Default Palette',
+			'label' => 'Default',
 			'colors' => $default_palette_setting,
 		);
 

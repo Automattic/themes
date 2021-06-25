@@ -61,13 +61,15 @@ class GlobalStylesColorCustomizer {
 
 		$section_key = 'customize-global-styles';
 
+		$theme = wp_get_theme();
+
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
 			$section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => __( 'Color Customization for Quadrat' ),
-				'title'       => __( 'Colors' ),
+				'description' => sprintf( __( 'Color Customization for %1$s', 'blockbase' ), $theme->name ),
+				'title'       => __( 'Colors', 'blockbase' ),
 			)
 		);
 
