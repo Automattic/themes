@@ -112,13 +112,23 @@ class GlobalStylesCustomizer {
 			}
 		}
 
-		// Get the user's theme.json from the CPT
+		// Get the user's theme.json from the CPT.
 		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
-		// Update the theme.json with the new settings
-		$user_theme_json_post_content->settings->color->palette = $this->user_color_palette;
+		// Create the color palette inside settings if it doesn't exist.
+		if ( property_exists( $user_theme_json_post_content, 'settings' ) ) {
+			if ( property_exists( $user_theme_json_post_content->settings, 'color' ) ) {
+				$user_theme_json_post_content->settings->color->palette = $this->user_color_palette;
+			} else {
+				$user_theme_json_post_content->settings->color = (object) array( 'palette' => $this->user_color_palette );
+			}
+		} else {
+			$user_theme_json_post_content->settings = (object) array( 'color' => (object) array( 'palette' => $this->user_color_palette ) );
+		}
+
+		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content                     = json_encode( $user_theme_json_post_content );
 		return wp_update_post( $user_theme_json_post );
 	}
