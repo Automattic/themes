@@ -30,13 +30,6 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 		public $transport = 'postMessage';
 
 		/**
-		 * Slug
-		 *
-		 * @var string
-		 */
-		public $slug = '';
-
-		/**
 		 * User value
 		 *
 		 * @var string
