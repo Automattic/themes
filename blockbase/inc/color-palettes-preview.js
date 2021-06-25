@@ -1,10 +1,11 @@
 wp.customize( 'color_palette', ( value ) => {
 	value.bind( ( newValue ) => {
 		const newPalette = colorPalettes[ newValue ].colors;
-		newPalette.forEach( function ( paletteColor ) {
+		Object.keys( newPalette ).forEach( function ( slug ) {
+			const color = newPalette[ slug ];
 			wp.customize
-				.control( 'customize-global-styles' + paletteColor.slug )
-				.setting.set( paletteColor.color );
+				.control( 'customize-global-styles' + slug )
+				.setting.set( color );
 		} );
 	} );
 } );

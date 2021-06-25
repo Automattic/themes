@@ -5,100 +5,107 @@
  * Props to https://github.com/HardeepAsrani/o2 go here
  */
 
-class Color_Palette_Control extends WP_Customize_Control {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Color_Palette_Control' ) ) {
+	class Color_Palette_Control extends WP_Customize_Control {
 
-	public $type = 'color-palette';
+		public $type = 'color-palette';
 
-	public function enqueue() {
-		wp_enqueue_style( 'color-customization', get_template_directory_uri() . '/inc/color-customization.css' );
+		public function enqueue() {
+			wp_enqueue_style( 'color-customization', get_template_directory_uri() . '/inc/color-customization.css' );
+		}
+
+		public function render_content() {
+			var_dump( $this->palettes);
+			?>
+				<label>
+					<?php if ( ! empty( $this->label ) ) : ?>
+						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<?php endif;
+					if ( ! empty( $this->description ) ) : ?>
+						<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<?php endif; ?>
+					<div class="color-palette-group">
+					<?php foreach ( $this->choices as $value => $label ) : ?>
+						<input name="color_palette_<?php echo esc_attr( $this->id ); ?>" id="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" type="radio" value="<?php echo esc_attr( $value ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> >
+							<label for="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" class="color-option">
+								<div class="custom-color-palette">
+									<span class="color-palette-label"><?php echo esc_attr( $label['label'] ); ?></span>
+									<?php foreach ( $label['colors'] as $slug => $color ) : ?>
+										<div class="color-stripe" style="background-color: <?php echo esc_attr( $color ); ?>">&nbsp;</div>
+									<?php endforeach; ?>
+									</tr>
+								</div>
+							</label>
+						</input>
+					<?php endforeach; ?>
+					</div>
+				</label>
+		<?php }
 	}
-
-	public function render_content() {
-		?>
-			<label>
-				<?php if ( ! empty( $this->label ) ) : ?>
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php endif;
-				if ( ! empty( $this->description ) ) : ?>
-					<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-				<?php endif; ?>
-				<div class="color-palette-group">
-				<?php foreach ( $this->choices as $value => $label ) : ?>
-					<input name="color_palette_<?php echo esc_attr( $this->id ); ?>" id="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" type="radio" value="<?php echo esc_attr( $value ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> >
-						<label for="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" class="color-option">
-							<div class="custom-color-palette">
-								<span class="color-palette-label"><?php echo esc_attr( $label['label'] ); ?></span>
-								<?php foreach ( $label['colors'] as $color ) : ?>
-									<div class="color-stripe" style="background-color: <?php echo esc_attr( $color['color'] ); ?>">&nbsp;</div>
-								<?php endforeach; ?>
-								</tr>
-							</div>
-						</label>
-					</input>
-				<?php endforeach; ?>
-				</div>
-			</label>
-	<?php }
 }
 
 class GlobalStylesColorPalettes {
-	private $choices = array (
-		'default-palette' => array(
-			'label' => 'Default Palette',
-			'colors' => array(
-				array(
-					"slug" => "primary",
-					"color" => "#112233"
-				),
-				array(
-					"slug" => "secondary",
-					"color" => "#cccccc"
-				),
-				array(
-					"slug" => "background",
-					"color" => "#ff0000"
-				)
-			)
-		),
-		'palette-1' => array(
-			'label' => 'Palette 1',
-			'colors' => array(
-				array(
-					"slug" => "primary",
-					"color" => "#ff0000"
-				),
-				array(
-					"slug" => "secondary",
-					"color" => "#cccccc"
-				)
-			)
-		),
-	);
+	private $palettes = array ();
 
 	function __construct() {
+		add_action( 'customize_register', array( $this, 'build_palettes' ) );
 		add_action( 'customize_register', array( $this, 'color_palette_control' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_preview_js' ) );
 	}
 
 	function customize_preview_js() {
 		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/color-palettes-preview.js', array( 'customize-controls' ) );
-		wp_localize_script( 'customizer-color-palettes', 'colorPalettes', $this->choices );
+		wp_localize_script( 'customizer-color-palettes', 'colorPalettes', $this->palettes );
+	}
+
+	function build_palettes() {
+		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
+		$default_palette = $theme_json['settings']['color']['palette']['theme'];
+
+		$default_palette_setting = [];
+		foreach( $default_palette as $default_color ) {
+			$default_palette_setting[ $default_color['slug'] ] = $default_color['color'];
+		}
+
+		$this->palettes['default-palette'] = array(
+			'label' => 'Default Palette',
+			'colors' => $default_palette_setting,
+		);
+
+		$custom_palettes = $theme_json['settings']['custom']['colorPalettes'];
+		foreach( $custom_palettes as $palette_slug => $custom_palette ) {
+			$custom_palette_setting = [];
+			foreach( $custom_palette['colors'] as $color_slug => $color ) {
+				$custom_palette_setting[ $color_slug ] = $color;
+			}
+
+			$this->palettes[ $palette_slug ] = array(
+				'label' => $custom_palette['label'],
+				'colors' => $custom_palette_setting,
+			);
+		}
 	}
 
 	function color_palette_control( $wp_customize ) {
 		$wp_customize->add_setting( 'color_palette', array(
 			'default' => 'default-palette',
 			'capability' => 'edit_theme_options',
-			'transport' => 'postMessage',// Not sure we need this
+			'transport' => 'postMessage', // We need this to stop the page refreshing.
 		) );
 
-		$wp_customize->add_control(new Color_Palette_Control($wp_customize, 'color_palette', array(
-			'label' => __('Color Scheme', 'blockbase'),
-			'description' => __('Choose a color scheme for your website.', 'blockbase'),
-			'section' => 'customize-global-styles',
-			'choices' => $this->choices,
-			'settings' => 'color_palette'
-		)));
+		$wp_customize->add_control(
+			new Color_Palette_Control(
+				$wp_customize,
+				'color_palette',
+				array(
+					'label' => __('Color Scheme', 'blockbase'),
+					'description' => __('Choose a color scheme for your website.', 'blockbase'),
+					'section' => 'customize-global-styles',
+					'choices' => $this->palettes,
+					'settings' => 'color_palette'
+				)
+			)
+		);
 	}
 }
 
