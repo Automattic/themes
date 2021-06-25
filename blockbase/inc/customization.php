@@ -4,7 +4,6 @@ require_once 'wp-customize-global-styles-setting.php';
 
 class GlobalStylesCustomizer {
 
-	private $section_settings;
 	private $user_color_palette;
 
 	function __construct() {
@@ -32,16 +31,18 @@ class GlobalStylesCustomizer {
 	}
 
 	function build_user_color_palette() {
-
+		// Get the merged theme.json.
 		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 
 		$theme_color_palette = $theme_json['settings']['color']['palette']['theme'];
 		$user_color_palette  = $theme_json['settings']['color']['palette']['theme'];
 
+		// Create a user color palette from user settings, if there are any.
 		if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
 		}
 
+		// Combine theme settings with user settings.
 		foreach ( $user_color_palette as $key => $palette_item ) {
 			$user_color_palette[ $key ]['default'] = $this->get_theme_default_color_value( $palette_item['slug'], $theme_color_palette );
 		}
@@ -61,16 +62,14 @@ class GlobalStylesCustomizer {
 	function register_color_controls( $wp_customize, $palette ) {
 
 		$section_key = 'customize-global-styles';
-		$description = __( 'Color Customization for Quadrat' );
-		$title       = __( 'Colors' );
 
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
 			$section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => $description,
-				'title'       => $title,
+				'description' => __( 'Color Customization for Quadrat' ),
+				'title'       => __( 'Colors' ),
 			)
 		);
 
@@ -79,17 +78,17 @@ class GlobalStylesCustomizer {
 		}
 	}
 
-	function register_color_control( $wp_customize, $custom_option, $section_key ) {
-		$setting_key = $section_key . $custom_option['slug'];
+	function register_color_control( $wp_customize, $palette_item, $section_key ) {
+		$setting_key = $section_key . $palette_item['slug'];
 
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'           => $custom_option['default'],
+				'default'           => $palette_item['default'],
 				'sanitize_callback' => 'sanitize_hex_color',
-				'slug'              => $custom_option['slug'],
-				'user_value'        => $custom_option['color'],
+				'slug'              => $palette_item['slug'],
+				'user_value'        => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );
@@ -100,14 +99,13 @@ class GlobalStylesCustomizer {
 				$setting_key,
 				array(
 					'section' => $section_key,
-					'label'   => $custom_option['name'],
+					'label'   => $palette_item['name'],
 				)
 			)
 		);
 	}
 
 	function handle_customize_save_after( $manager ) {
-
 		//update the palette based on the controls
 		foreach ( $this->user_color_palette as $key => $palette_item ) {
 			$setting = $manager->get_setting( 'customize-global-styles' . $palette_item['slug'] );
@@ -121,9 +119,9 @@ class GlobalStylesCustomizer {
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
+		// Update the theme.json with the new settings
 		$user_theme_json_post_content->settings->color->palette = $this->user_color_palette;
 		$user_theme_json_post->post_content                     = json_encode( $user_theme_json_post_content );
-
 		return wp_update_post( $user_theme_json_post );
 	}
 }
