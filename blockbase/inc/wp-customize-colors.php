@@ -1,8 +1,8 @@
 <?php
 
-require_once 'wp-customize-global-styles-setting.php';
+require_once 'wp-customize-global-styles-color-setting.php';
 
-class GlobalStylesCustomizer {
+class GlobalStylesColorCustomizer {
 
 	private $user_color_palette;
 
@@ -134,4 +134,4 @@ class GlobalStylesCustomizer {
 	}
 }
 
-new GlobalStylesCustomizer;
+new GlobalStylesColorCustomizer;
