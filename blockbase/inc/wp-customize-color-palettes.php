@@ -53,6 +53,8 @@ class GlobalStylesColorPalettes {
 			return;
 		}
 
+		$this->build_palettes( $theme_json );
+
 		$wp_customize->add_setting(
 			'color_palette',
 			array(
@@ -76,7 +78,6 @@ class GlobalStylesColorPalettes {
 			)
 		);
 
-		$this->build_palettes( $theme_json );
 	}
 }
 
