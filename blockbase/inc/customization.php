@@ -19,9 +19,7 @@ class GlobalStylesCustomizer {
 	}
 
 	function create_customization_style_element() {
-		//NOTE: The original implementation wasn't quite this convelouted (there was no noop.css file, etc) but I couldn't get it to work otherwise.
-		//I'm sure this doesn't need to be this complicated.  But in the end the <style> element for the preview tool to work on is what this is for.
-		wp_enqueue_style( 'global-styles-customizations', get_template_directory_uri() . '/assets/noop.css', array(), true, true ); // This needs to load after global_styles, hence the dependency
+		wp_enqueue_style( 'global-styles-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
 		wp_add_inline_style( 'global-styles-customizations', '{}' );
 	}
 
