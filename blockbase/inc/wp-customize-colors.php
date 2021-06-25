@@ -1,6 +1,6 @@
 <?php
 
-require_once 'wp-customize-global-styles-color-setting.php';
+//require_once 'wp-customize-global-styles-color-setting.php';
 
 class GlobalStylesColorCustomizer {
 
@@ -79,17 +79,12 @@ class GlobalStylesColorCustomizer {
 	function register_color_control( $wp_customize, $palette_item, $section_key ) {
 		$setting_key = $section_key . $palette_item['slug'];
 
-		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
-			$wp_customize,
-			$setting_key,
-			array(
-				'default'           => $palette_item['default'],
-				'sanitize_callback' => 'sanitize_hex_color',
-				'slug'              => $palette_item['slug'],
-				'user_value'        => $palette_item['color'],
-			)
-		);
-		$wp_customize->add_setting( $global_styles_setting );
+		$wp_customize->add_setting( $setting_key, array(
+			'default' => $palette_item['default'],
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport' => 'postMessage', // We need this to stop the page refreshing.
+			'value'        => $palette_item['color'],
+		) );
 
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
@@ -107,8 +102,8 @@ class GlobalStylesColorCustomizer {
 		//update the palette based on the controls
 		foreach ( $this->user_color_palette as $key => $palette_item ) {
 			$setting = $manager->get_setting( 'customize-global-styles' . $palette_item['slug'] );
-			if ( isset( $setting->new_value ) ) {
-				$this->user_color_palette[ $key ]['color'] = $setting->new_value;
+			if ( null !== $setting->post_value() ) {
+				$this->user_color_palette[ $key ]['color'] = $setting->post_value();
 			}
 		}
 
