@@ -31,16 +31,18 @@ class GlobalStylesColorPalettes {
 		);
 
 		$custom_palettes = $theme_json['settings']['custom']['colorPalettes'];
-		foreach( $custom_palettes as $palette_slug => $custom_palette ) {
-			$custom_palette_setting = [];
-			foreach( $custom_palette['colors'] as $color_slug => $color ) {
-				$custom_palette_setting[ $color_slug ] = $color;
-			}
+		if( !empty( $custom_palettes ) ) {
+			foreach( $custom_palettes as $palette_slug => $custom_palette ) {
+				$custom_palette_setting = [];
+				foreach( $custom_palette['colors'] as $color_slug => $color ) {
+					$custom_palette_setting[ $color_slug ] = $color;
+				}
 
-			$this->palettes[ $palette_slug ] = array(
-				'label' => $custom_palette['label'],
-				'colors' => $custom_palette_setting,
-			);
+				$this->palettes[ $palette_slug ] = array(
+					'label' => $custom_palette['label'],
+					'colors' => $custom_palette_setting,
+				);
+			}
 		}
 	}
 
