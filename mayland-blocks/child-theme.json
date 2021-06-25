@@ -22,48 +22,41 @@
 			"gradients": [ ],
 			"palette": [
 				{
-					"slug": "black",
-					"color": "#000000",
-					"name": "Black"
-				},
-				{
-					"slug": "almost-black",
+					"slug": "foreground",
 					"color": "#1a1a1a",
-					"name": "Almost Black"
+					"name": "Foreground"
 				},
 				{
-					"slug": "white",
-					"color": "#FFFFFF",
-					"name": "White"
+					"slug": "background",
+					"color": "#ffffff",
+					"name": "Background"
 				},
 				{
-					"slug": "gray",
+					"slug": "primary",
+					"color": "#000000",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
 					"color": "#666666",
-					"name": "Gray"
+					"name": "Secondary"
 				},
 				{
-					"slug": "dark-gray",
-					"color": "#333333",
-					"name": "Dark Gray"
+					"slug": "selection",
+					"color": "#add8e6",
+					"name": "Selection"
 				}
 			]
 		},
 		"custom": {
 			"button": {
 				"border": {
-					"radius": "5px"
+					"radius": "5px",
+					"color": "var(--wp--custom--color--foreground)"
 				},
 				"color": {
 					"text": "var(--wp--custom--color--background)",
 					"background": "var(--wp--custom--color--foreground)"
-				},
-				"hover": {
-					"color": {
-						"background": "var(--wp--custom--color--tertiary)"
-					},
-					"border": {
-						"color": "var(--wp--custom--color--tertiary)"
-					}
 				},
 				"spacing": {
 					"padding": {
@@ -79,12 +72,11 @@
 				}
 			},
 			"color": {
-				"primary": "var(--wp--preset--color--black)",
-				"secondary": "var(--wp--preset--color--almost-black)",
-				"tertiary": "var(--wp--preset--color--gray)",
-				"foreground": "var(--wp--preset--color--black)",
-				"background": "var(--wp--preset--color--white)",
-				"selection": "lightblue"
+				"primary": "var(--wp--preset--color--primary)",
+				"secondary": "var(--wp--preset--color--secondary)",
+				"foreground": "var(--wp--preset--color--foreground)",
+				"background": "var(--wp--preset--color--background)",
+				"selection": "var(--wp--preset--color--selection)"
 			},
 			"fontsToLoadFromGoogle": [
 				"family=Poppins:ital,wght@0,400;0,600;1,400"
@@ -188,10 +180,6 @@
 				}
 			},
 			"core/post-date": {
-				"color": {
-					"link": "var(--wp--custom--color--foreground-light)",
-					"text": "var(--wp--custom--color--foreground-light)"
-				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}

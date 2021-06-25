@@ -10,6 +10,24 @@
 			"area": "footer"
 		}
 	],
+	"customTemplates": [
+		{
+			"name": "blank",
+			"title": "Blank",
+			"postTypes": [
+				"page",
+				"post"
+			]
+		},
+		{
+			"name": "header-footer-only",
+			"title": "Header and Footer Only",
+			"postTypes": [
+				"page",
+				"post"
+			]
+		}
+	],
 	"settings": {
 		"border": {
 			"customColor": true,
@@ -21,29 +39,19 @@
 			"gradients": [],
 			"palette": [
 				{
-					"slug": "black",
-					"color": "#000000",
-					"name": "Black"
-				},
-				{
-					"slug": "white",
-					"color": "#ffffff",
-					"name": "White"
-				},
-				{
-					"slug": "pink",
+					"slug": "primary",
 					"color": "#FFD1D1",
-					"name": "Pink"
+					"name": "Primary"
 				},
 				{
-					"slug": "blue",
-					"color": "#292C6D",
-					"name": "Blue"
-				},
-				{
-					"slug": "darker-blue",
+					"slug": "secondary",
 					"color": "#151853",
-					"name": "Darker Blue"
+					"name": "Secondary"
+				},
+				{
+					"slug": "background",
+					"color": "#292C6D",
+					"name": "Background"
 				}
 			]
 		},
@@ -92,12 +100,11 @@
 				}
 			},
 			"color": {
-				"primary": "var(--wp--preset--color--pink)",
-				"secondary": "var(--wp--preset--color--darker-blue)",
-				"tertiary": "var(--wp--preset--color--almost-white)",
-				"foreground": "var(--wp--preset--color--pink)",
-				"background": "var(--wp--preset--color--blue)",
-				"selection": "var(--wp--preset--color--darker-blue)"
+				"foreground": "var(--wp--preset--color--primary)",
+				"background": "var(--wp--preset--color--background)",
+				"primary": "var(--wp--preset--color--primary)",
+				"secondary": "var(--wp--preset--color--secondary)",
+				"selection": "var(--wp--preset--color--secondary)"
 			},
 			"form": {
 				"padding": "20px",
@@ -420,7 +427,7 @@
 			},
 			"core/quote": {
 				"border": {
-					"color": "var(--wp--custom--color--secondary)",
+					"color": "var(--wp--custom--color--primary)",
 					"style": "solid",
 					"width": "0px"
 				},

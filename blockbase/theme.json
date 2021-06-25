@@ -39,29 +39,29 @@
 			"gradients": [],
 			"palette": [
 				{
-					"slug": "black",
-					"color": "#000000",
-					"name": "Black"
-				},
-				{
-					"slug": "white",
-					"color": "#ffffff",
-					"name": "White"
-				},
-				{
-					"slug": "blue",
+					"slug": "primary",
 					"color": "#007cba",
-					"name": "Blue"
+					"name": "Primary"
 				},
 				{
-					"slug": "almost-black",
+					"slug": "secondary",
+					"color": "#006ba1",
+					"name": "Secondary"
+				},
+				{
+					"slug": "foreground",
 					"color": "#333333",
-					"name": "Almost Black"
+					"name": "Foreground"
 				},
 				{
-					"slug": "almost-white",
-					"color": "#FAFAFA",
-					"name": "Almost White"
+					"slug": "background",
+					"color": "#ffffff",
+					"name": "Background"
+				},
+				{
+					"slug": "selection",
+					"color": "#c2c2c2",
+					"name": "Selection"
 				}
 			]
 		},
@@ -71,22 +71,22 @@
 			},
 			"button": {
 				"border": {
-					"color": "var(--wp--custom--color--secondary)",
+					"color": "var(--wp--custom--color--primary)",
 					"radius": "4px",
 					"style": "solid",
 					"width": "2px"
 				},
 				"color": {
-					"background": "var(--wp--custom--color--secondary)",
+					"background": "var(--wp--custom--color--primary)",
 					"text": "var(--wp--custom--color--background)"
 				},
 				"hover": {
 					"color": {
 						"text": "var(--wp--custom--color--background)",
-						"background": "#006ba1"
+						"background": "var(--wp--custom--color--secondary)"
 					},
 					"border": {
-						"color": "#006ba1"
+						"color": "var(--wp--custom--color--secondary)"
 					}
 				},
 				"spacing": {
@@ -110,12 +110,11 @@
 				}
 			},
 			"color": {
-				"primary": "var(--wp--preset--color--black)",
-				"secondary": "var(--wp--preset--color--blue)",
-				"tertiary": "var(--wp--preset--color--almost-white)",
-				"foreground": "var(--wp--preset--color--almost-black)",
-				"background": "var(--wp--preset--color--white)",
-				"selection": "var(--wp--preset--color--almost-white)"
+				"foreground": "var(--wp--preset--color--foreground)",
+				"background": "var(--wp--preset--color--background)",
+				"primary": "var(--wp--preset--color--primary)",
+				"secondary": "var(--wp--preset--color--secondary)",
+				"selection": "var(--wp--preset--color--selection)"
 			},
 			"form": {
 				"padding": "calc( 0.5 * var(--wp--custom--margin--horizontal) )",
@@ -397,7 +396,7 @@
 			},
 			"core/quote": {
 				"border": {
-					"color": "var(--wp--custom--color--secondary)",
+					"color": "var(--wp--custom--color--primary)",
 					"style": "solid",
 					"width": "0 0 0 1px"
 				},
@@ -449,7 +448,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--custom--color--secondary)"
+					"text": "var(--wp--custom--color--primary)"
 				}
 			}
 		},
