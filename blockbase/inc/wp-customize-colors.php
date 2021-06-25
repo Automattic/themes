@@ -1,7 +1,5 @@
 <?php
 
-//require_once 'wp-customize-global-styles-color-setting.php';
-
 class GlobalStylesColorCustomizer {
 
 	private $user_color_palette;
@@ -81,12 +79,15 @@ class GlobalStylesColorCustomizer {
 	function register_color_control( $wp_customize, $palette_item, $section_key ) {
 		$setting_key = $section_key . $palette_item['slug'];
 
-		$wp_customize->add_setting( $setting_key, array(
-			'default' => $palette_item['default'],
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport' => 'postMessage', // We need this to stop the page refreshing.
-			'value'        => $palette_item['color'],
-		) );
+		$wp_customize->add_setting(
+			$setting_key,
+			array(
+				'default'           => $palette_item['default'],
+				'sanitize_callback' => 'sanitize_hex_color',
+				'transport'         => 'postMessage', // We need this to stop the page refreshing.
+				'value'             => $palette_item['color'],
+			)
+		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
@@ -126,7 +127,7 @@ class GlobalStylesColorCustomizer {
 		}
 
 		// Update the theme.json with the new settings.
-		$user_theme_json_post->post_content                     = json_encode( $user_theme_json_post_content );
+		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		return wp_update_post( $user_theme_json_post );
 	}
 }
