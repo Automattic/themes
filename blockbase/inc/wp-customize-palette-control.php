@@ -1,21 +1,19 @@
 <?php
 /**
- * Color Palette Customizer Control 
- * 
+ * Color Palette Customizer Control
+ *
  * Props to https://github.com/HardeepAsrani/o2 go here
  */
 
-function color_palette_control( $wp_customize ) {
+class Color_Palette_Control extends WP_Customize_Control {
 
-	class Color_Palette_Control extends WP_Customize_Control {
+	public $type = 'color-palette';
 
-		public $type = 'color-palette';
+	public function enqueue() {
+		wp_enqueue_style( 'color-customization', get_template_directory_uri() . '/inc/color-customization.css' );
+	}
 
-		public function enqueue() {
-			wp_enqueue_style( 'color-customization', get_template_directory_uri() . '/inc/color-customization.css' );
-		}
-
-		public function render_content() {
+	public function render_content() {
 		?>
 			<label>
 				<?php if ( ! empty( $this->label ) ) : ?>
@@ -36,56 +34,72 @@ function color_palette_control( $wp_customize ) {
 								</tr>
 							</div>
 						</label>
-					</input>		
+					</input>
 				<?php endforeach; ?>
 				</div>
 			</label>
-		<?php }
+	<?php }
+}
 
+class GlobalStylesColorPalettes {
+	private $choices = array (
+		'default-palette' => array(
+			'label' => 'Default Palette',
+			'colors' => array(
+				array(
+					"slug" => "primary",
+					"color" => "#112233"
+				),
+				array(
+					"slug" => "secondary",
+					"color" => "#cccccc"
+				),
+				array(
+					"slug" => "background",
+					"color" => "#ff0000"
+				)
+			)
+		),
+		'palette-1' => array(
+			'label' => 'Palette 1',
+			'colors' => array(
+				array(
+					"slug" => "primary",
+					"color" => "#ff0000"
+				),
+				array(
+					"slug" => "secondary",
+					"color" => "#cccccc"
+				)
+			)
+		),
+	);
+
+	function __construct() {
+		add_action( 'customize_register', array( $this, 'color_palette_control' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_preview_js' ) );
 	}
 
-	$wp_customize->add_setting( 'color_palette', array(
-		'default' => 'default-palette',
-		'capability' => 'edit_theme_options'
-	));
-	
-	$wp_customize->add_control(new Color_Palette_Control($wp_customize, 'color_palette', array(
-		'label' => __('Color Scheme', 'textdomain'),
-		'description' => __('Choose a color scheme for your website.', 'textdomain'),
-		'section' => 'customize-global-styles',
-		'choices' => array (
-			'default-palette' => array(
-				'label' => 'Default',
-				'colors' => array( 
-					array(
-						"slug" => "primary",
-						"color" => "#112233"
-					),
-					array(
-						"slug" => "secondary",
-						"color" => "#cccccc"
-					),
-					array(
-						"slug" => "background",
-						"color" => "#ff0000"
-					)
-				)
-			),
-			'palette-1' => array(
-				'label' => 'Palette 1',
-				'colors' => array( 
-					array(
-						"slug" => "primary",
-						"color" => "#ff0000"
-					),
-					array(
-						"slug" => "secondary",
-						"color" => "#cccccc"
-					)
-				)
-			),
-		),
-		'settings' => 'color_palette'
-	)));
+	function customize_preview_js() {
+		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/color-palettes-preview.js', array( 'customize-controls' ) );
+		wp_localize_script( 'customizer-color-palettes', 'colorPalettes', $this->choices );
+	}
+
+	function color_palette_control( $wp_customize ) {
+		$wp_customize->add_setting( 'color_palette', array(
+			'default' => 'default-palette',
+			'capability' => 'edit_theme_options',
+			'transport' => 'postMessage',// Not sure we need this
+		) );
+
+		$wp_customize->add_control(new Color_Palette_Control($wp_customize, 'color_palette', array(
+			'label' => __('Color Scheme', 'blockbase'),
+			'description' => __('Choose a color scheme for your website.', 'blockbase'),
+			'section' => 'customize-global-styles',
+			'choices' => $this->choices,
+			'settings' => 'color_palette'
+		)));
+	}
 }
-add_action( 'customize_register', 'color_palette_control' );
+
+new GlobalStylesColorPalettes;
