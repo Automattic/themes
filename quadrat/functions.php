@@ -10,9 +10,6 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
-		// Experimental support for adding blocks inside nav menus
-		add_theme_support( 'block-nav-menus' );
-
 		// Add support for core custom logo.
 		add_theme_support(
 			'custom-logo',
