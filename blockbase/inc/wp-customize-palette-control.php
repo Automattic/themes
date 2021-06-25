@@ -54,7 +54,7 @@ class GlobalStylesColorPalettes {
 	}
 
 	function customize_preview_js() {
-		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/color-palettes-preview.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/color-palettes-controls.js', array( 'customize-controls' ) );
 		wp_localize_script( 'customizer-color-palettes', 'colorPalettes', $this->palettes );
 	}
 
