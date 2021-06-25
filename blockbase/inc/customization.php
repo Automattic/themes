@@ -135,3 +135,6 @@ class GlobalStylesCustomizer {
 }
 
 new GlobalStylesCustomizer;
+
+//this is temporary so it shows after the color customizations:
+require_once 'wp-customize-palette-control.php';
