@@ -1,11 +1,11 @@
-if ( user_color_palette ) {
+if ( userColorPalette ) {
 	// For each of the palette items add a listener
-	user_color_palette.forEach( ( palette_item ) => {
-		let setting_name = 'customize-global-styles' + palette_item.slug;
-		wp.customize( setting_name, ( value ) => {
+	userColorPalette.forEach( ( paletteItem ) => {
+		const settingName = 'customize-global-styles' + paletteItem.slug;
+		wp.customize( settingName, ( value ) => {
 			value.bind( ( newValue ) => {
-				palette_item.color = newValue;
-				updatePreview( user_color_palette );
+				paletteItem.color = newValue;
+				updatePreview( userColorPalette );
 			} );
 		} );
 	} );
@@ -14,13 +14,13 @@ if ( user_color_palette ) {
 function updatePreview( palette ) {
 	// build the CSS variables to inject
 	let innerHTML = ':root,body{';
-	palette.forEach( ( palette_item ) => {
-		innerHTML += `--wp--preset--color--${ palette_item.slug }:${ palette_item.color };`;
+	palette.forEach( ( paletteItem ) => {
+		innerHTML += `--wp--preset--color--${ paletteItem.slug }:${ paletteItem.color };`;
 	} );
 	innerHTML += ';}';
 
 	// inject them into the body
-	let styleElement = document.getElementById(
+	const styleElement = document.getElementById(
 		'global-styles-customizations-inline-css'
 	);
 	styleElement.innerHTML = innerHTML;
