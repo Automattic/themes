@@ -2,7 +2,7 @@
 /**
  * Color Palette Customizer Control
  *
- * Props to https://github.com/HardeepAsrani/o2 go here
+ * Based on https://github.com/HardeepAsrani/o2
  */
 
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Color_Palette_Control' ) ) {
