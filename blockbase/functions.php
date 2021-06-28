@@ -18,12 +18,23 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Add support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
+		// Experimental support for adding blocks inside nav menus
+		add_theme_support( 'block-nav-menus' );
+
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
 				'/assets/ponyfill.css',
 			)
 		);
+
+		// This theme has one menu location.
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Navigation', 'blockbase' ),
+			)
+		);
+
 	}
 	add_action( 'after_setup_theme', 'blockbase_support' );
 endif;
