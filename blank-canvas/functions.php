@@ -129,8 +129,11 @@ function blank_canvas_add_customizer_settings( $wp_customize ) {
 	// Cast the widgets panel as an object.
 	$customizer_widgets_panel = (object) $wp_customize->get_panel( 'widgets' );
 
+	$content_options_link = "wp.customize.control('show_site_header').focus(); return false;";
+
 	// Add a Customizer message about the site title & tagline options.
-	$wp_customize->get_section( 'title_tagline' )->description  = __( 'The site logo, title, and tagline will only appear on single posts and pages if the “Site header and top menu" option is enabled in the Content Options section.', 'blank-canvas' );
+	// translators: %s is an action which opens the "Content Options" section of customizer
+	$wp_customize->get_section( 'title_tagline' )->description  = sprintf( __( 'The site logo, title, and tagline will only appear on all posts and pages if the "Site header and top menu" option is enabled in the <a href="#" onClick="%s">Content Options</a> section.', 'blank-canvas' ), $content_options_link );
 	$wp_customize->get_section( 'menu_locations' )->description = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'blank-canvas' );
 	$wp_customize->get_panel( 'nav_menus' )->description        = __( 'This theme will only display Menus if they are enabled in the Content Options section.', 'blank-canvas' );
 	$customizer_widgets_panel->description                      = __( 'This theme will only display Widgets if they are enabled in the Content Options section.', 'blank-canvas' );
