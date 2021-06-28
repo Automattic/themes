@@ -365,15 +365,12 @@ p.has-drop-cap:not(:focus):first-letter {
 	font-weight: var(--wp--custom--post-author--font-weight);
 }
 
-.wp-block-post-comments .comment {
-	font-size: var(--wp--custom--form--typography--font-size);
-}
-
 .wp-block-post-comments label, .wp-block-post-comments .comment-meta {
 	font-size: var(--wp--custom--form--label--typography--font-size);
 }
 
-.wp-block-post-comments input[type="submit"], .wp-block-post-comments .reply a {
+.wp-block-post-comments input[type="submit"],
+.wp-block-post-comments .reply a {
 	border-width: 0;
 	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
 	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
@@ -391,11 +388,15 @@ p.has-drop-cap:not(:focus):first-letter {
 	border-radius: var(--wp--custom--button--border--radius);
 }
 
-.wp-block-post-comments input[type="submit"] svg, .wp-block-post-comments .reply a svg {
+.wp-block-post-comments input[type="submit"] svg,
+.wp-block-post-comments .reply a svg {
 	fill: var(--wp--custom--button--color--text);
 }
 
-.wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color).has-focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
+.wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color).has-focus,
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover,
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus,
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
 	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
 	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
 	--wp--custom--button--border--color: var(--wp--custom--button--hover--border--color);
@@ -406,12 +407,33 @@ p.has-drop-cap:not(:focus):first-letter {
 	border-color: var(--wp--custom--button--border--color);
 }
 
-.wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):hover svg, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):focus svg, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color).has-focus svg, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover svg, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus svg, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus svg {
+.wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):hover svg, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color):focus svg, .wp-block-post-comments input[type="submit"]:not(.has-background):not(.has-text-color).has-focus svg,
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover svg,
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus svg,
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus svg {
 	fill: var(--wp--custom--button--color--text);
 }
 
 .wp-block-post-comments .reply a {
 	display: inline-block;
+}
+
+.wp-block-post-comments .comment-form input[type="text"] {
+	width: 100%;
+}
+
+.wp-block-post-comments .comment-reply-title small {
+	float: right;
+	font-size: 14px;
+}
+
+.wp-block-post-comments .comment-form-cookies-consent input[type="checkbox"] {
+	margin-left: 0;
+}
+
+.wp-block-post-comments .commentlist .comment p {
+	font-size: var(--wp--custom--post-comment--typography--font-size);
+	line-height: var(--wp--custom--post-comment--typography--line-height);
 }
 
 .wp-block-pullquote.is-style-solid-color,

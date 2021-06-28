@@ -1,15 +1,13 @@
 @import 'button-mixins';
 
 .wp-block-post-comments {
-	.comment {
-		font-size: var(--wp--custom--form--typography--font-size);
-	}
 
 	label, .comment-meta {
 		font-size: var(--wp--custom--form--label--typography--font-size);
 	}
 
-	input[type="submit"], .reply a {
+	input[type="submit"], 
+	.reply a {
 		@include button-main-styles;
 		@include button-hover-styles;
 	}
@@ -17,4 +15,33 @@
 	.reply a {
 		display: inline-block;
 	}
+
+	.comment-form {
+		input[type="text"] {
+			width: 100%;
+		}
+	}
+
+	.comment-reply-title {
+		small {
+			float: right;
+			font-size: 14px;
+		}
+	}
+
+	.comment-form-cookies-consent {
+		input[type="checkbox"]{
+			margin-left: 0;
+		}
+	}
+
+	.commentlist {
+		.comment {
+			p {
+				font-size: var(--wp--custom--post-comment--typography--font-size);
+				line-height: var(--wp--custom--post-comment--typography--line-height);
+			}
+		}
+	}
+
 }
