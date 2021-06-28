@@ -31,13 +31,13 @@ class GlobalStylesColorPalettes {
 
 		$custom_palettes = $theme_json['settings']['custom']['colorPalettes'];
 		if ( ! empty( $custom_palettes ) ) {
-			foreach ( $custom_palettes as $palette_slug => $custom_palette ) {
+			foreach ( $custom_palettes as $custom_palette ) {
 				$custom_palette_setting = array();
 				foreach ( $custom_palette['colors'] as $color_slug => $color ) {
 					$custom_palette_setting[ $color_slug ] = $color;
 				}
 
-				$this->palettes[ $palette_slug ] = array(
+				$this->palettes[ $custom_palette['slug'] ] = array(
 					'label'  => $custom_palette['label'],
 					'colors' => $custom_palette_setting,
 				);
