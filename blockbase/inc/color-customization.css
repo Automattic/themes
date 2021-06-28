@@ -1,0 +1,48 @@
+.customize-control-color-palette .color-palette-group {
+	display: grid;
+	flex-wrap: wrap;
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 15px;
+	row-gap: 15px;
+}
+
+.customize-control-color-palette .color-palette-group input {
+    display: none;    
+}
+
+.customize-control-color-palette .color-palette-group .color-option {
+	padding: 0;
+}
+
+.customize-control-color-palette input:checked + .color-option .custom-color-palette {
+    border-color: #2271b1;
+}
+
+.custom-color-palette {
+	position: relative;
+	display: flex;
+	border-radius: 2px;
+	border: 1px solid rgba(0,0,0,0.1);
+	height: 50px;
+	width: 72px;
+	overflow: hidden;
+}
+
+.color-palette-label {
+	background: #000;
+	color: #fff;
+	font-size: 10px;
+	opacity: 0.7;
+	position: absolute;
+	bottom: 5px;
+	right: 0;
+	left: 0;
+	text-indent: 5px;
+	line-height: 1.5;
+	padding-bottom: 1px;
+}
+
+.color-stripe {
+	flex: 1 1 auto;
+	border: 1px solid rgba(0,0,0,0.1);
+}

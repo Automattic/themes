@@ -1,8 +1,8 @@
 <?php
 
-require_once 'wp-customize-global-styles-setting.php';
+require_once 'wp-customize-color-settings.php';
 
-class GlobalStylesCustomizer {
+class GlobalStylesColorCustomizer {
 
 	private $user_color_palette;
 
@@ -14,7 +14,7 @@ class GlobalStylesCustomizer {
 	}
 
 	function customize_preview_js() {
-		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customizer-preview.js', array( 'customize-preview' ) );
+		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
 	}
 
@@ -61,13 +61,15 @@ class GlobalStylesCustomizer {
 
 		$section_key = 'customize-global-styles';
 
+		$theme = wp_get_theme();
+
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
 			$section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => __( 'Color Customization for Quadrat' ),
-				'title'       => __( 'Colors' ),
+				'description' => sprintf( __( 'Color Customization for %1$s', 'blockbase' ), $theme->name ),
+				'title'       => __( 'Colors', 'blockbase' ),
 			)
 		);
 
@@ -85,7 +87,6 @@ class GlobalStylesCustomizer {
 			array(
 				'default'           => $palette_item['default'],
 				'sanitize_callback' => 'sanitize_hex_color',
-				'slug'              => $palette_item['slug'],
 				'user_value'        => $palette_item['color'],
 			)
 		);
@@ -107,8 +108,8 @@ class GlobalStylesCustomizer {
 		//update the palette based on the controls
 		foreach ( $this->user_color_palette as $key => $palette_item ) {
 			$setting = $manager->get_setting( 'customize-global-styles' . $palette_item['slug'] );
-			if ( isset( $setting->new_value ) ) {
-				$this->user_color_palette[ $key ]['color'] = $setting->new_value;
+			if ( null !== $setting->post_value() ) {
+				$this->user_color_palette[ $key ]['color'] = $setting->post_value();
 			}
 		}
 
@@ -129,9 +130,9 @@ class GlobalStylesCustomizer {
 		}
 
 		// Update the theme.json with the new settings.
-		$user_theme_json_post->post_content                     = json_encode( $user_theme_json_post_content );
+		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		return wp_update_post( $user_theme_json_post );
 	}
 }
 
-new GlobalStylesCustomizer;
+new GlobalStylesColorCustomizer;

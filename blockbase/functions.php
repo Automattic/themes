@@ -95,4 +95,5 @@ function blockbase_fonts_url() {
 /**
  * Customize Global Styles
  */
-require get_template_directory() . '/inc/customization.php';
+require get_template_directory() . '/inc/wp-customize-colors.php';
+require get_template_directory() . '/inc/wp-customize-color-palettes.php';
