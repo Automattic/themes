@@ -210,7 +210,6 @@ ul ul {
 }
 
 .wp-block-post-comments {
-	font-size: var(--wp--preset--font-size--normal);
 	line-height: var(--wp--custom--body--typography--line-height);
 }
 
@@ -342,11 +341,6 @@ ul ul {
 	margin-bottom: 60px;
 }
 
-.wp-block-post-comments .commentlist .comment p {
-	font-size: var(--wp--preset--font-size--normal);
-	line-height: var(--wp--custom--body--typography--line-height);
-}
-
 .wp-block-post-comments .comment-body > p > a,
 .wp-block-post-comments .comment-edit-link {
 	text-decoration: underline;
@@ -355,6 +349,10 @@ ul ul {
 .wp-block-post-comments .comment-body > p > a:hover,
 .wp-block-post-comments .comment-edit-link:hover {
 	text-decoration: none;
+}
+
+body.highlander-enabled .wp-block-post-comments form {
+	display: revert;
 }
 
 .wp-block-post-navigation-link {

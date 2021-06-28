@@ -2,7 +2,6 @@
 
 .wp-block-post-comments {
 
-	font-size: var(--wp--preset--font-size--normal);
 	line-height: var(--wp--custom--body--typography--line-height);
 
 	.reply a {
@@ -124,12 +123,6 @@
 
 	.commentlist {
 		margin-bottom: 60px;
-		.comment {
-			p {
-				font-size: var(--wp--preset--font-size--normal);
-				line-height: var(--wp--custom--body--typography--line-height);
-			}
-		}
 	}
 
 	// Target certain links within post comments to use the underline treatment.
@@ -139,6 +132,16 @@
 
 		&:hover {
 			text-decoration: none;
+		}
+	}
+}
+
+// NOTE: This is a wp.com-specific fix so that the comment form presented there (highlander)
+// is NOT displayed as a GRID.
+body.highlander-enabled {
+	.wp-block-post-comments {
+		form {
+			display: revert;
 		}
 	}
 }
