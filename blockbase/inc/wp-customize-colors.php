@@ -4,6 +4,8 @@ require_once 'wp-customize-color-settings.php';
 
 class GlobalStylesColorCustomizer {
 
+	private $section_key = 'customize-global-styles-colors';
+
 	private $user_color_palette;
 
 	function __construct() {
@@ -58,14 +60,11 @@ class GlobalStylesColorCustomizer {
 	}
 
 	function register_color_controls( $wp_customize, $palette ) {
-
-		$section_key = 'customize-global-styles';
-
 		$theme = wp_get_theme();
 
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
-			$section_key,
+			$this->section_key,
 			array(
 				'capability'  => 'edit_theme_options',
 				'description' => sprintf( __( 'Color Customization for %1$s', 'blockbase' ), $theme->name ),
@@ -74,12 +73,12 @@ class GlobalStylesColorCustomizer {
 		);
 
 		foreach ( $palette as $palette_item ) {
-			$this->register_color_control( $wp_customize, $palette_item, $section_key );
+			$this->register_color_control( $wp_customize, $palette_item );
 		}
 	}
 
-	function register_color_control( $wp_customize, $palette_item, $section_key ) {
-		$setting_key = $section_key . $palette_item['slug'];
+	function register_color_control( $wp_customize, $palette_item ) {
+		$setting_key = $this->section_key . $palette_item['slug'];
 
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
@@ -97,7 +96,7 @@ class GlobalStylesColorCustomizer {
 				$wp_customize,
 				$setting_key,
 				array(
-					'section' => $section_key,
+					'section' => $this->section_key,
 					'label'   => $palette_item['name'],
 				)
 			)
@@ -107,7 +106,7 @@ class GlobalStylesColorCustomizer {
 	function handle_customize_save_after( $manager ) {
 		//update the palette based on the controls
 		foreach ( $this->user_color_palette as $key => $palette_item ) {
-			$setting = $manager->get_setting( 'customize-global-styles' . $palette_item['slug'] );
+			$setting = $manager->get_setting( $this->section_key . $palette_item['slug'] );
 			if ( null !== $setting->post_value() ) {
 				$this->user_color_palette[ $key ]['color'] = $setting->post_value();
 			}
