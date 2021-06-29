@@ -5,13 +5,13 @@ if ( userColorPalette && userColorSectionKey ) {
 		wp.customize( settingName, ( value ) => {
 			value.bind( ( newValue ) => {
 				paletteItem.color = newValue;
-				updatePreview( userColorPalette );
+				blockBaseUpdateColorsPreview( userColorPalette );
 			} );
 		} );
 	} );
 }
 
-function updatePreview( palette ) {
+function blockBaseUpdateColorsPreview( palette ) {
 	// build the CSS variables to inject
 	let innerHTML = ':root,body{';
 	palette.forEach( ( paletteItem ) => {

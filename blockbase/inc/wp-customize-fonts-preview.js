@@ -6,13 +6,13 @@ if ( fontSettings ) {
 			control.bind( ( newFont ) => {
 				fontFamily = googleFonts[ newFont ][ 'fontFamily' ];
 				fontSettings[ selector ] = fontFamily;
-				updatePreview();
+				blockBaseUpdateFontPreview();
 			} );
 		} );
 	} );
 }
 
-function updatePreview() {
+function blockBaseUpdateFontPreview() {
 	// Build the new CSS variables.
 	let innerHTML = ':root,body{';
 	innerHTML += `--wp--custom--body--typography--font-family:${ fontSettings[ 'body' ] };`;
