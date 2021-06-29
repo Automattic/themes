@@ -18,6 +18,9 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Add support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
+		// Declare that there are no <title> tags and allow WordPress to provide them
+		add_theme_support( 'title-tag' );
+
 		// Experimental support for adding blocks inside nav menus
 		add_theme_support( 'block-nav-menus' );
 
