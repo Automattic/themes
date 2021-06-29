@@ -11,18 +11,19 @@ class GlobalStylesColorCustomizer {
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'initialize' ) );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'create_customization_style_element' ) );
+		add_action( 'customize_register', array( $this, 'create_customization_style_element' ) );
 		add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
 	}
 
 	function customize_preview_js() {
-		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customize-colors-preview.js', array( 'customize-preview' ) );
+		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/wp-customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
+		wp_localize_script( 'customizer-preview-color', 'userColorSectionKey', $this->section_key );
 	}
 
 	function create_customization_style_element() {
-		wp_enqueue_style( 'global-styles-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
-		wp_add_inline_style( 'global-styles-customizations', '{}' );
+		wp_enqueue_style( 'global-styles-colors-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
+		wp_add_inline_style( 'global-styles-colors-customizations', '{}' );
 	}
 
 	function initialize( $wp_customize ) {

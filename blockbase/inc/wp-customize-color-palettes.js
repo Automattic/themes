@@ -4,7 +4,7 @@ wp.customize( 'color_palette', ( value ) => {
 		Object.keys( newPalette ).forEach( function ( slug ) {
 			const color = newPalette[ slug ];
 			wp.customize
-				.control( 'customize-global-styles' + slug )
+				.control( userColorSectionKey + slug )
 				.setting.set( color );
 		} );
 	} );

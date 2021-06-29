@@ -4,6 +4,8 @@ class GlobalStylesFontsCustomizer {
 
 	private $section_key = 'customize-global-styles-fonts';
 
+	private $fontSettings;
+
 	private $fonts = array(
 		"system-font" => array(
 			"fontFamily" => "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
@@ -188,9 +190,38 @@ class GlobalStylesFontsCustomizer {
 
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'initialize' ) );
-//		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
-//		add_action( 'wp_enqueue_scripts', array( $this, 'create_customization_style_element' ) );
+		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
+		add_action( 'customize_preview_init', array( $this, 'create_customization_style_element' ) );
+		add_action( 'customize_register', array( $this, 'enqueue_google_fonts' ) );
 		add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
+	}
+
+	function customize_preview_js() {
+		wp_enqueue_script( 'customizer-preview-fonts', get_template_directory_uri() . '/inc/wp-customize-fonts-preview.js', array( 'customize-preview' ) );
+		wp_localize_script( 'customizer-preview-fonts', 'googleFonts', $this->fonts );
+		wp_localize_script( 'customizer-preview-fonts', 'fontSettings', $this->fontSettings );
+	}
+
+	function enqueue_google_fonts() {
+		wp_enqueue_style( 'blockbase-google-fonts', $this->google_fonts_url(), array(), null );
+	}
+
+	function create_customization_style_element() {
+		wp_enqueue_style( 'global-styles-fonts-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
+		wp_add_inline_style( 'global-styles-fonts-customizations', '{}' );
+	}
+
+	function google_fonts_url() {
+		$font_families = [];
+		foreach( $this->fonts as $font ) {
+			if ( ! empty( $font['google'] ) ) {
+				$font_families[] = $font['google'];
+			}
+		}
+		$font_families[] = 'display=swap';
+
+		// Make a single request for the theme fonts.
+		return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families ) );
 	}
 
 	function initialize( $wp_customize ) {
@@ -199,8 +230,12 @@ class GlobalStylesFontsCustomizer {
 		$heading_font_variable = $theme_json['settings']['custom']['heading']['typography']['fontFamily'];
 		$body_font_slug = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $body_font_variable );
 		$heading_font_slug = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $heading_font_variable );
-		//$body_font_setting = $this->fonts[ $body_font_slug ];
-		//$heading_font_setting = $this->fonts[ $heading_font_slug ];
+		$body_font_setting = $this->fonts[ $body_font_slug ];
+		$heading_font_setting = $this->fonts[ $heading_font_slug ];
+		$this->fontSettings = array(
+			'body' => $body_font_setting['fontFamily'],
+			'heading' => $heading_font_setting['fontFamily'],
+		);
 
 		$theme = wp_get_theme();
 
@@ -244,7 +279,6 @@ class GlobalStylesFontsCustomizer {
 				'choices' => $choices,
 			)
 		);
-
 	}
 
 	function handle_customize_save_after( $wp_customize ) {
@@ -275,7 +309,6 @@ class GlobalStylesFontsCustomizer {
 		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
-
 
 		// Create the typography settings.
 		if ( property_exists( $user_theme_json_post_content, 'settings' ) ) {
