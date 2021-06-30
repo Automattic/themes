@@ -15,13 +15,13 @@ return array(
 	<figure class="wp-block-image size-large image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg" alt="' . esc_attr__( 'Illustration of a woman working on a laptop.', 'quadrat' ) . '" class="wp-image-1438"/></figure>
 	<!-- /wp:image -->
 
-	<!-- wp:cover {"overlayColor":"darker-blue","minHeight":360,"className":"mt-0","style":{"spacing":{"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
-	<div class="wp-block-cover has-darker-blue-background-color has-background-dim mt-0" style="padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"pink"} -->
-	<h3 class="has-pink-color has-text-color">' . esc_html__( 'Episode 1: How Screens Affect Hormones', 'quadrat' ) . '</h3>
+	<!-- wp:cover {"overlayColor":"secondary","minHeight":360,"className":"mt-0","style":{"spacing":{"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
+	<div class="wp-block-cover has-secondary-background-color has-background-dim mt-0" style="padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"primary"} -->
+	<h3 class="has-primary-color has-text-color">' . esc_html__( 'Episode 1: How Screens Affect Hormones', 'quadrat' ) . '</h3>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"textColor":"pink","fontSize":"small"} -->
-	<p class="has-pink-color has-text-color has-small-font-size">' . esc_html__( 'In this episode, Sarah and Olivia talk with female hormone specialist Diana Roth about the impact that gadgets and technology have on hormone and fertility health.', 'quadrat' ) . '</p>
+	<!-- wp:paragraph {"textColor":"primary","fontSize":"small"} -->
+	<p class="has-primary-color has-text-color has-small-font-size">' . esc_html__( 'In this episode, Sarah and Olivia talk with female hormone specialist Diana Roth about the impact that gadgets and technology have on hormone and fertility health.', 'quadrat' ) . '</p>
 	<!-- /wp:paragraph --></div></div>
 	<!-- /wp:cover --></div>
 	<!-- /wp:group --></div>
@@ -33,13 +33,13 @@ return array(
 	<figure class="wp-block-image size-large image-no-margin mb-0"><img src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Leadership-1024x623.jpg" alt="' . esc_attr__( 'Illustration of a woman climbing steps.', 'quadrat' ) . '" class="wp-image-1439"/></figure>
 	<!-- /wp:image -->
 
-	<!-- wp:cover {"overlayColor":"darker-blue","minHeight":360,"className":"mt-0","style":{"spacing":{"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
-	<div class="wp-block-cover has-darker-blue-background-color has-background-dim mt-0" style="padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"pink"} -->
-	<h3 class="has-pink-color has-text-color">' . esc_html__( 'Episode 2: Female Leaders, Where Are They?', 'quadrat' ) . '</h3>
+	<!-- wp:cover {"overlayColor":"secondary","minHeight":360,"className":"mt-0","style":{"spacing":{"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
+	<div class="wp-block-cover has-secondary-background-color has-background-dim mt-0" style="padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"primary"} -->
+	<h3 class="has-primary-color has-text-color">' . esc_html__( 'Episode 2: Female Leaders, Where Are They?', 'quadrat' ) . '</h3>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"textColor":"pink","fontSize":"small"} -->
-	<p class="has-pink-color has-text-color has-small-font-size">' . esc_html__( 'After years of revolution, the big question remains: why aren’t there more women in leadership? Sarah and Olivia get deep into the subject.', 'quadrat' ) . '</p>
+	<!-- wp:paragraph {"textColor":"primary","fontSize":"small"} -->
+	<p class="has-primary-color has-text-color has-small-font-size">' . esc_html__( 'After years of revolution, the big question remains: why aren’t there more women in leadership? Sarah and Olivia get deep into the subject.', 'quadrat' ) . '</p>
 	<!-- /wp:paragraph --></div></div>
 	<!-- /wp:cover --></div>
 	<!-- /wp:column --></div>
