@@ -96,7 +96,12 @@ function blockbase_fonts_url() {
 }
 
 /**
- * Customize Global Styles
+ * Customize Global Styles.
  */
-require get_template_directory() . '/inc/wp-customize-colors.php';
-require get_template_directory() . '/inc/wp-customize-color-palettes.php';
+require_once get_template_directory() . '/inc/wp-customize-colors.php';
+require_once get_template_directory() . '/inc/wp-customize-color-palettes.php';
+
+/**
+ * Load a block for i18n.
+ */
+require_once get_template_directory() . '/i18n-strings/index.php';
