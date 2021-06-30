@@ -104,4 +104,4 @@ require_once get_template_directory() . '/inc/wp-customize-color-palettes.php';
 /**
  * Load a block for i18n.
  */
-require_once get_template_directory() . '/i18n-strings/index.php';
+require_once get_template_directory() . '/i18n-strings-block/index.php';
