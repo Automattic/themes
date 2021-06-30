@@ -24,6 +24,9 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Experimental support for adding blocks inside nav menus
 		add_theme_support( 'block-nav-menus' );
 
+		// Add support for block templates, so that user Global Styles settings load in the editor.
+		add_theme_support( 'block-templates' );
+
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
