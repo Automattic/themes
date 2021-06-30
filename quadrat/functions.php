@@ -25,7 +25,6 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'quadrat' ),
-				'social'  => __( 'Social Links Navigation', 'quadrat' ),
 			)
 		);
 
