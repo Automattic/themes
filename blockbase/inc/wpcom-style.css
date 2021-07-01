@@ -12,3 +12,8 @@ img#wpstats {
 	width: 0 !important;
 	overflow: hidden;
 }
+
+/* NOTE: This is a wp.com-specific fix so that the comment form presented there (highlander) is NOT displayed as a GRID. */
+body.highlander-enabled .wp-block-post-comments form {
+	display: revert;
+}
