@@ -4,15 +4,17 @@
 	}
 	.wp-block-pages-list__item .wp-block-pages-list__item__link,
 	.wp-block-navigation-link__content {
+		color: var(--wp--custom--color--foreground);
 		&:hover {
 			text-decoration: underline;
 		}
 	}
 	&:not(.has-background) { 
 		.wp-block-navigation__container { 
+			.submenu-container,
 			.wp-block-navigation-link__container {
 				background-color: var(--wp--custom--color--background);
-				border-color: var(--wp--custom--color--foreground);
+				border-color: var(--wp--custom--color--secondary);
 			}
 		}
 	}
@@ -24,19 +26,23 @@
 	&.is-responsive .wp-block-navigation__responsive-container.is-menu-open {
 		background-color: var(--wp--custom--color--secondary);
 		&.has-modal-open {
+			.wp-block-pages-list__item,
 			.wp-block-navigation-link {
 				font-size: 20px;
 				line-height: 50px;
 				margin: 0;
 				align-items: flex-end;
 				&.has-child {
+					.wp-block-pages-list__item__link,
 					.wp-block-navigation-link__content {
 						margin-right: 0;
 					}
+					.submenu-container,
 					.wp-block-navigation-link__container{
 						margin-right: -19px;
 						padding: 0 19px 0 0;
 						border-right: 1px solid var(--wp--custom--color--foreground);
+						.wp-block-pages-list__item__link,
 						.wp-block-navigation-link__content {
 							padding: 0;
 							font-size: 15px;
