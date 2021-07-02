@@ -4,6 +4,11 @@
  * Adds a setting to the Gutenberg experiments page to disable the Site Editor.
  */
 function add_disable_site_editor_setting() {
+
+	if ( ! is_readable( get_stylesheet_directory() . '/block-templates/index.html' ) ) {
+		return;
+	}
+
 	add_settings_field(
 		'universal-theme-disable-site-editor',
 		__( 'Site Editor', 'gutenberg' ),
