@@ -12,7 +12,7 @@ Mayland Blocks is a block theme based on the Mayland theme.
 
 == Changelog ==
 
-= 2.1.3 =
+= 2.1.0 =
 * Added color customization from the customizer
 
 = 2.0.3 =

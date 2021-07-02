@@ -35,7 +35,7 @@ A Universal theme is a theme that works in Full Site Editing and in the Customiz
 
 == Changelog ==
 
-= 1.1.2 =
+= 1.1.0 =
 * Added color customization from the customizer
 
 = 1.0.1 =
