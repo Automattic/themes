@@ -644,12 +644,21 @@ p.has-drop-cap:not(:focus):first-letter {
 	fill: var(--wp--custom--button--color--text);
 }
 
+.wp-block-table.is-style-stripes,
+.wp-block-table {
+	margin-bottom: 1em;
+	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes figcaption,
 .wp-block-table figcaption {
 	font-size: var(--wp--custom--table--figcaption--typography--font-size);
 	text-align: center;
 }
 
-.wp-block-table td, .wp-block-table th {
+.wp-block-table.is-style-stripes td, .wp-block-table.is-style-stripes th,
+.wp-block-table td,
+.wp-block-table th {
 	border: 1px solid;
 	padding: calc(0.5*var(--wp--custom--margin--vertical)) calc(0.5*var(--wp--custom--margin--horizontal));
 }
