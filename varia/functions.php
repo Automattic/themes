@@ -212,6 +212,9 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		// Add support for experimental cover block spacing.
 		add_theme_support( 'custom-spacing' );
 
+		// Add support for experimental custom spacing controls.
+		add_theme_support( 'experimental-custom-spacing' );
+
 		// Add support for custom units.
 		add_theme_support( 'custom-units' );
 
