@@ -101,4 +101,5 @@ function blockbase_fonts_url() {
 require get_template_directory() . '/inc/wp-customize-colors.php';
 require get_template_directory() . '/inc/wp-customize-color-palettes.php';
 
+/** Add a checkbox to hide the Site Editor */
 require get_template_directory() . '/inc/disable-site-editor.php';
