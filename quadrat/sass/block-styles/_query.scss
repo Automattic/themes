@@ -1,6 +1,21 @@
 .is-style-quadrat-diamond-posts {
 	.wp-block-column {
 		flex-basis: auto;
+		&:last-child {
+			max-width: 400px;
+			flex-shrink: 0;
+		}
+	}
+	.wp-block-post-featured-image {
+		width: 400px;
+		@media (max-width: #{ ($break-small - 1) }) {
+			width: 100%;
+		}
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 400px;
+		}
 	}
 	.wp-block-post-template {
 		li {
@@ -8,6 +23,9 @@
 			align-items: center;
 			min-height: 400px;
 			position: relative;
+			& > * {
+				flex-basis: 100%;
+			}
 			&:before {
 				content: "";
 				background: var(--wp--preset--color--secondary);
