@@ -1,0 +1,40 @@
+.is-style-quadrat-diamond-posts {
+	.wp-block-column {
+		flex-basis: auto;
+	}
+	.wp-block-post-template {
+		li {
+			display: flex;
+			align-items: center;
+			min-height: 400px;
+			position: relative;
+			&:before {
+				content: "";
+				background: var(--wp--preset--color--secondary);
+				width: 375px;
+				height: 375px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				opacity:0;
+				transition: all 0.4s ease-in; 
+			}
+			&:hover:before {
+				opacity:1;
+			}
+			&:nth-child(2n+1):before {
+				transform: rotate(16deg) translate(-130px, -20px);
+			}
+			&:nth-child(2n+1):hover:before {
+				transform: rotate(-8deg) translate(-110px, 0);
+			}
+			&:nth-child(2n+2):before {
+				transform: rotate(24deg) translate(-130px, 20px);
+			}
+			&:nth-child(2n+2):hover:before {
+				transform: rotate(16deg) translate(-110px, 40px);
+			}
+		}
+	}
+}

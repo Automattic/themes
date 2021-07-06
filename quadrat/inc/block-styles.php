@@ -23,6 +23,15 @@ if ( ! function_exists( 'quadrat_register_block_styles' ) ) :
 					'style_handle' => 'quadrat-cover-diamond',
 				)
 			);
+
+			register_block_style(
+				'core/query',
+				array(
+					'name'         => 'quadrat-diamond-posts',
+					'label'        => __( 'Diamond Posts', 'quadrat' ),
+					'style_handle' => 'quadrat-diamond-posts',
+				)
+			);
 		}
 	}
 endif;
