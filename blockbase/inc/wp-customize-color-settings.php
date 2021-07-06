@@ -36,6 +36,10 @@ if ( class_exists( 'WP_Customize_Setting' ) && ! class_exists( 'WP_Customize_Glo
 		 */
 		public $user_value = '';
 
+		public function preview() {
+			$this->is_previewed = true;
+			return true;
+		}
 		/**
 		 * Fetch the value of the setting.
 		 *

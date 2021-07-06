@@ -21,9 +21,28 @@ class GlobalStylesColorCustomizer {
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
 	}
 
-	function create_customization_style_element() {
+	function update_user_color_palette( $wp_customize ) {
+		foreach ( $this->user_color_palette as $key => $palette_item ) {
+			$setting = $wp_customize->get_setting( $this->section_key . $palette_item['slug'] );
+			if ( null !== $setting->post_value() ) {
+				$this->user_color_palette[ $key ]['color'] = $setting->post_value();
+			}
+		}
+	}
+
+	function create_customization_style_element( $wp_customize ) {
 		wp_enqueue_style( 'global-styles-colors-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
-		wp_add_inline_style( 'global-styles-colors-customizations', '{}' );
+
+		$this->update_user_color_palette( $wp_customize );
+
+		$css = ':root,body{';
+		foreach ( $this->user_color_palette as $key => $palette_item ) {
+			$setting = $wp_customize->get_setting( $this->section_key . $palette_item['slug'] );
+			$css .= '--wp--preset--color--' . $palette_item['slug'] . ':' . $palette_item['color'] .';';
+		}
+		$css .= '}';
+
+		wp_add_inline_style( 'global-styles-colors-customizations', $css );
 	}
 
 	function initialize( $wp_customize ) {
@@ -104,14 +123,9 @@ class GlobalStylesColorCustomizer {
 		);
 	}
 
-	function handle_customize_save_after( $manager ) {
+	function handle_customize_save_after( $wp_customize ) {
 		//update the palette based on the controls
-		foreach ( $this->user_color_palette as $key => $palette_item ) {
-			$setting = $manager->get_setting( $this->section_key . $palette_item['slug'] );
-			if ( null !== $setting->post_value() ) {
-				$this->user_color_palette[ $key ]['color'] = $setting->post_value();
-			}
-		}
+		$this->update_user_color_palette( $wp_customize );
 
 		// Get the user's theme.json from the CPT.
 		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
