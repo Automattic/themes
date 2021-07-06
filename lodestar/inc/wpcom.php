@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', 'lodestar_wpcom_setup' );
  * Enqueue wp.com-specific styles
  */
 function lodestar_wpcom_styles() {
- wp_enqueue_style( 'lodestar-wpcom', get_template_directory_uri() . '/inc/wpcom-style.css', '20160708' );
+	wp_enqueue_style( 'lodestar-wpcom', get_template_directory_uri() . '/inc/wpcom-style.css', '20160708' );
 }
 add_action( 'wp_enqueue_scripts', 'lodestar_wpcom_styles' );
 
@@ -44,8 +44,7 @@ add_action( 'wp_enqueue_scripts', 'lodestar_wpcom_styles' );
  */
 function lodestar_move_logo() {
 	if ( current_theme_supports( 'custom-logo' ) && ! get_theme_mod( 'custom_logo' ) && $jp_logo = get_option( 'site_logo' ) ) {
-		set_theme_mod( 'custom_logo', $jp_logo['id'] );
-		delete_option( 'site_logo' );
+		set_theme_mod( 'custom_logo', $jp_logo );
 	}
 }
 add_action( 'init', 'lodestar_move_logo' );
