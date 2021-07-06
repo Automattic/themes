@@ -26,6 +26,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				'latest-episodes',
 				'listen-to-the-podcast',
 				'media-text-button',
+				'search-results',
 			);
 
 			if ( class_exists( 'WP_Block_Type_Registry' ) && \WP_Block_Type_Registry::get_instance()->is_registered( 'jetpack/subscriptions' ) ) {
