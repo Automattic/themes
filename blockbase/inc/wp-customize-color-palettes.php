@@ -15,7 +15,7 @@ class GlobalStylesColorPalettes {
 	function customize_preview_js() {
 		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/wp-customize-color-palettes.js', array( 'customize-controls' ) );
 		wp_localize_script( 'customizer-color-palettes', 'colorPalettes', $this->palettes );
-		wp_localize_script( 'customizer-color-palettes', 'userColorSectionKey', $this->section_key );
+		wp_add_inline_script( 'customizer-color-palettes', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 	}
 
 	function build_palettes( $theme_json ) {

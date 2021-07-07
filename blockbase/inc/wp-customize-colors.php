@@ -17,8 +17,8 @@ class GlobalStylesColorCustomizer {
 
 	function customize_preview_js() {
 		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/wp-customize-colors-preview.js', array( 'customize-preview' ) );
+		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
-		wp_localize_script( 'customizer-preview-color', 'userColorSectionKey', $this->section_key );
 	}
 
 	function create_customization_style_element() {
