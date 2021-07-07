@@ -1,9 +1,11 @@
 <?php
 
-require_once 'wp-customize-palette-control.php';
+require_once 'wp-customize-color-palette-control.php';
 
 class GlobalStylesColorPalettes {
 	private $palettes = array();
+
+	private $section_key = 'customize-global-styles-colors';
 
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'color_palette_control' ) );
@@ -11,8 +13,9 @@ class GlobalStylesColorPalettes {
 	}
 
 	function customize_preview_js() {
-		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/color-palettes-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'customizer-color-palettes', get_template_directory_uri() . '/inc/wp-customize-color-palettes.js', array( 'customize-controls' ) );
 		wp_localize_script( 'customizer-color-palettes', 'colorPalettes', $this->palettes );
+		wp_add_inline_script( 'customizer-color-palettes', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 	}
 
 	function build_palettes( $theme_json ) {
@@ -71,13 +74,12 @@ class GlobalStylesColorPalettes {
 				array(
 					'label'       => __( 'Color Scheme', 'blockbase' ),
 					'description' => __( 'Choose a color scheme for your website.', 'blockbase' ),
-					'section'     => 'customize-global-styles',
+					'section'     => $this->section_key,
 					'choices'     => $this->palettes,
 					'settings'    => 'color_palette',
 				)
 			)
 		);
-
 	}
 }
 
