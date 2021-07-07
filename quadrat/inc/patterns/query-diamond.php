@@ -8,6 +8,7 @@
 return array(
 	'title'      => __( 'List of blog posts', 'quadrat' ),
 	'categories' => array( 'quadrat' ),
+	'blockTypes' => array( 'core/query' ),
 	'content'    => '<!-- wp:query {"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"list","columns":3},"align":"wide","className":"is-style-quadrat-diamond-posts"} -->
 	<div class="wp-block-query alignwide is-style-quadrat-diamond-posts"><!-- wp:post-template -->
 	<!-- wp:columns -->
