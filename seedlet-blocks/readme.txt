@@ -12,6 +12,9 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.0 =
+* Added color customization from the customizer
+
 = 2.0.1 =
 * Initial release
 
