@@ -273,11 +273,11 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_slug, $user_body_value );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_slug, $user_heading_value );
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_slug );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_slug );
 	}
 
-	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value ) {
+	function add_setting_and_control( $wp_customize, $name, $label, $default ) {
 		$setting_name = $this->section_key . $name;
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
