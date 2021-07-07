@@ -13,6 +13,9 @@
 	> *,
 	.wp-block-post-date {
 		margin: 0 8px;
+		&::before {
+			content: "";
+		}
 	}
 
 	.wp-block-post-terms {
@@ -27,6 +30,10 @@
 		color: transparent;
 		a {
 			color: var(--wp--custom--color--foreground);
+			&:not(:last-child):after {
+				// to be removed after https://github.com/WordPress/gutenberg/pull/32812 lands
+				content: ",";
+			}
 		}
 	}
 }
