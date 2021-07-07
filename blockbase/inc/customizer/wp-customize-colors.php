@@ -146,7 +146,8 @@ class GlobalStylesColorCustomizer {
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
-		return wp_update_post( $user_theme_json_post );
+		wp_update_post( $user_theme_json_post );
+		delete_transient( 'global_styles' );
 	}
 
 	function check_if_colors_are_default() {
