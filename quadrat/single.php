@@ -2,7 +2,7 @@
 /**
  * Template file for rendering a single post
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package Quadrat
  * @since 1.0.0
