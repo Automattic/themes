@@ -49,7 +49,6 @@
 			var body          = document.body;
 			var header        = document.getElementById("masthead");
 			var content       = document.getElementById("primary");
-			var archiveHeader = body.querySelector('.page-header');
 
 			if ( body.classList.contains("archive") ) {
 
@@ -59,8 +58,25 @@
 
 				content.style.marginTop = header.offsetHeight + "px";
 			}
+
+			logoHeight();
 		}
 	};
+	
+	function logoHeight() {
+		var firstTitle    = document.body.querySelector( '.entry-title' );
+		var content       = document.getElementById( 'primary' );
+		var siteLogo      = document.body.querySelector( '.site-logo' );
+		
+		if ( 
+			! document.body.classList.contains( 'sticky-menu-enabled' ) &&
+			siteLogo &&
+			siteLogo.offsetHeight + 64 > content.getBoundingClientRect().top 
+		)	{
+				// Subtract 64px based on the fact that the padding is already 32px, plus to give some extra space. 
+				siteLogo.style.maxWidth = firstTitle.getBoundingClientRect().left - 64 + 'px';
+			}
+		}
 
 	/**
 	 * Run our function every time the window resizes
@@ -79,6 +95,8 @@
 			}, 150 );
 		} )
 	);
+	
+	window.addEventListener( 'scroll', logoHeight );
 
 	/**
 	 * Run our page header height function
