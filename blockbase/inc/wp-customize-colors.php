@@ -1,6 +1,7 @@
 <?php
 
-require_once get_template_directory() . '/inc/wp-customize-utils.php';
+require_once 'wp-customize-global-styles-setting.php';
+require_once 'wp-customize-utils.php';
 
 class GlobalStylesColorCustomizer {
 
@@ -100,15 +101,13 @@ class GlobalStylesColorCustomizer {
 	function register_color_control( $wp_customize, $palette_item ) {
 		$setting_key = $this->section_key . $palette_item['slug'];
 
-		$global_styles_setting = new WP_Customize_Setting(
+		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_key,
 			array(
 				'default'           => $palette_item['default'],
-				'type'              => 'global_styles',
-				'transport'         => 'postMessage',
 				'sanitize_callback' => 'sanitize_hex_color',
-				'value'             => $palette_item['color'],
+				'user_value'        => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );

@@ -1,6 +1,7 @@
 <?php
 
-require_once get_template_directory() . '/inc/wp-customize-utils.php';
+require_once 'wp-customize-global-styles-setting.php';
+require_once 'wp-customize-utils.php';
 
 class GlobalStylesFontsCustomizer {
 
@@ -281,14 +282,12 @@ class GlobalStylesFontsCustomizer {
 
 	function add_setting_and_control( $wp_customize, $name, $label, $default ) {
 		$setting_name          = $this->section_key . $name;
-		$global_styles_setting = new WP_Customize_Setting(
+		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_name,
 			array(
-				'type'      => 'global_styles',
-				'transport' => 'postMessage',
-				'default'   => $default,
-				'value'     => $default,
+				'default'    => $default,
+				'user_value' => $default,
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );
