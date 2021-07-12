@@ -1,5 +1,6 @@
 <?php
 
+
 if ( ! function_exists( 'quadrat_support' ) ) :
 	function quadrat_support() {
 
@@ -19,6 +20,13 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
+		);
+
+		// Add support for starter content
+		include get_stylesheet_directory() . '/inc/starter-content.php';
+		add_theme_support(
+			'starter-content',
+			$quadrat_starter_content
 		);
 
 		// This theme uses wp_nav_menu() in two locations.
