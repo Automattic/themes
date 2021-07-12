@@ -140,9 +140,23 @@ class GlobalStylesColorCustomizer {
 			$this->user_color_palette
 		);
 
+		//If the color palette is === the default then we remove it instead
+		if ( $this->check_if_colors_are_default( $wp_customize ) ) {
+			unset( $user_theme_json_post_content->settings->color->palette );
+		}
+
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		return wp_update_post( $user_theme_json_post );
+	}
+
+	function check_if_colors_are_default() {
+		foreach ( $this->user_color_palette as $palette_color ) {
+			if ( $palette_color['color'] !== $palette_color['default'] ) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
 
