@@ -1,7 +1,5 @@
 <?php
 
-require_once 'wp-customize-color-settings.php';
-
 class GlobalStylesColorCustomizer {
 
 	private $section_key = 'customize-global-styles-colors';
@@ -38,7 +36,7 @@ class GlobalStylesColorCustomizer {
 		$css = ':root,body{';
 		foreach ( $this->user_color_palette as $key => $palette_item ) {
 			$setting = $wp_customize->get_setting( $this->section_key . $palette_item['slug'] );
-			$css .= '--wp--preset--color--' . $palette_item['slug'] . ':' . $palette_item['color'] .';';
+			$css    .= '--wp--preset--color--' . $palette_item['slug'] . ':' . $palette_item['color'] . ';';
 		}
 		$css .= '}';
 
@@ -100,13 +98,15 @@ class GlobalStylesColorCustomizer {
 	function register_color_control( $wp_customize, $palette_item ) {
 		$setting_key = $this->section_key . $palette_item['slug'];
 
-		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
+		$global_styles_setting = new WP_Customize_Setting(
 			$wp_customize,
 			$setting_key,
 			array(
 				'default'           => $palette_item['default'],
+				'type'              => 'global_styles',
+				'transport'         => 'postMessage',
 				'sanitize_callback' => 'sanitize_hex_color',
-				'user_value'        => $palette_item['color'],
+				'value'             => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );

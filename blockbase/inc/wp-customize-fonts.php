@@ -279,12 +279,14 @@ class GlobalStylesFontsCustomizer {
 
 	function add_setting_and_control( $wp_customize, $name, $label, $default ) {
 		$setting_name          = $this->section_key . $name;
-		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
+		$global_styles_setting = new WP_Customize_Setting(
 			$wp_customize,
 			$setting_name,
 			array(
-				'default'    => $default,
-				'user_value' => $default,
+				'type'      => 'global_styles',
+				'transport' => 'postMessage',
+				'default'   => $default,
+				'value'     => $default,
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );
@@ -308,7 +310,7 @@ class GlobalStylesFontsCustomizer {
 		// This is needed to preserve the settings when other Customizer settings change.
 		$dirty_value = $wp_customize->get_setting( $setting_name )->post_value();
 		if ( ! empty( $dirty_value ) ) {
-			$wp_customize->get_setting( $setting_name )->user_value = $dirty_value;
+			$wp_customize->get_setting( $setting_name )->value = $dirty_value;
 		}
 	}
 
