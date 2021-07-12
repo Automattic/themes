@@ -1,5 +1,7 @@
 <?php
 
+require_once get_template_directory() . '/inc/wp-customize-utils.php';
+
 class GlobalStylesFontsCustomizer {
 
 	private $section_key = 'customize-global-styles-fonts';
@@ -352,28 +354,28 @@ class GlobalStylesFontsCustomizer {
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
 		// Set the typography settings.
-		$user_theme_json_post_content = $this->set_settings_array(
+		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
 			array( 'settings', 'typography', 'fontFamilies' ),
 			$font_families
 		);
 
 		// Set the custom body settings.
-		$user_theme_json_post_content = $this->set_settings_array(
+		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
 			array( 'settings', 'custom', 'body', 'typography', 'fontFamily' ),
 			$body_font_family_variable
 		);
 
 		// Set the custom heading settings.
-		$user_theme_json_post_content = $this->set_settings_array(
+		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
 			array( 'settings', 'custom', 'heading', 'typography', 'fontFamily' ),
 			$heading_font_family_variable
 		);
 
 		// Set the custom google fonts settings.
-		$user_theme_json_post_content = $this->set_settings_array(
+		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
 			array( 'settings', 'custom', 'fontsToLoadFromGoogle' ),
 			$google_font_array
@@ -384,19 +386,6 @@ class GlobalStylesFontsCustomizer {
 		return wp_update_post( $user_theme_json_post );
 	}
 
-	function set_settings_array( $target, $array, $value ) {
-		$key     = array_shift( $array );
-		$current =& $target;
-		while ( 0 < sizeof( $array ) ) {
-			if ( ! array_key_exists( $key, $current ) ) {
-				$current->{ $key } = (object) array();
-			}
-			$current =& $current->{ $key };
-			$key     = array_shift( $array );
-		}
-		$current->{ $key } = $value;
-		return $target;
-	}
 }
 
 new GlobalStylesFontsCustomizer;

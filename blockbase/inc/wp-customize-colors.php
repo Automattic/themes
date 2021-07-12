@@ -1,5 +1,7 @@
 <?php
 
+require_once get_template_directory() . '/inc/wp-customize-utils.php';
+
 class GlobalStylesColorCustomizer {
 
 	private $section_key = 'customize-global-styles-colors';
@@ -132,16 +134,11 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
-		// Create the color palette inside settings if it doesn't exist.
-		if ( property_exists( $user_theme_json_post_content, 'settings' ) ) {
-			if ( property_exists( $user_theme_json_post_content->settings, 'color' ) ) {
-				$user_theme_json_post_content->settings->color->palette = $this->user_color_palette;
-			} else {
-				$user_theme_json_post_content->settings->color = (object) array( 'palette' => $this->user_color_palette );
-			}
-		} else {
-			$user_theme_json_post_content->settings = (object) array( 'color' => (object) array( 'palette' => $this->user_color_palette ) );
-		}
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'settings', 'color', 'palette' ),
+			$this->user_color_palette
+		);
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
