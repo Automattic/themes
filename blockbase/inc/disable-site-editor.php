@@ -3,7 +3,7 @@
 /**
  * Adds a setting to the Gutenberg experiments page to disable the Site Editor.
  */
-function add_disable_site_editor_setting() {
+function blockbase_add_disable_site_editor_setting() {
 	if ( ! is_readable( get_stylesheet_directory() . '/block-templates/index.html' ) ) {
 		return;
 	}
@@ -20,10 +20,10 @@ function add_disable_site_editor_setting() {
 		)
 	);
 
-	readd_legacy_admin_links();
+	blockbase_readd_legacy_admin_links();
 
 	if ( ! site_editor_enabled() ) {
-		remove_site_editor_admin_link();
+		blockbase_remove_site_editor_admin_link();
 	}
 }
 
@@ -34,12 +34,16 @@ function site_editor_enabled() {
 /**
  * Adds the Customizer and Widgets menu links back to the Dashboard under themes.
  */
-function readd_legacy_admin_links() {
+function blockbase_readd_legacy_admin_links() {
 	global $submenu;
 	if ( isset( $submenu['themes.php'] ) ) {
 		// Add Customize back to the admin menu.
 		$customize_url            = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
-		$submenu['themes.php'][6] = array( __( 'Customize', 'blockbase' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
+		$customizer_key = 6;
+		if ( defined( 'IS_WPCOM' ) ) {
+			$customizer_key = 1;
+		}
+		$submenu['themes.php'][ $customizer_key ] = array( __( 'Customize' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
 
 		if (
 			function_exists( 'gutenberg_use_widgets_block_editor' ) &&
@@ -51,9 +55,9 @@ function readd_legacy_admin_links() {
 			$has_widgets_menu = false;
 			foreach ( $submenu['themes.php'] as $index => $menu_item ) {
 				if (
-					! empty( $menu_item[2] ) &&
-					( false !== strpos( $menu_item[2], 'gutenberg-widgets' ) ||
-					false !== strpos( $menu_item[2], 'widgets.php' ) )
+					! empty( $menu_item[ 2 ] ) &&
+					( false !== strpos( $menu_item[ 2 ], 'gutenberg-widgets' ) ||
+					false !== strpos( $menu_item[ 2 ], 'widgets.php' ) )
 				) {
 					$has_widgets_menu = true;
 				}
@@ -79,11 +83,12 @@ function readd_legacy_admin_links() {
 /**
  * Removes the Site Editor link from the admin.
  */
-function remove_site_editor_admin_link() {
+function blockbase_remove_site_editor_admin_link() {
 	global $menu;
+
 	// Remove Site Editor.
 	foreach ( $menu as $index => $menu_item ) {
-		if ( ! empty( $menu_item[5] ) && false !== strpos( $menu_item[5], 'toplevel_page_gutenberg-edit-site' ) ) {
+		if ( ! empty( $menu_item[ 2 ] ) && in_array( $menu_item[ 2 ], array( 'gutenberg-edit-site', 'site-editor' ) ) ) {
 			$site_editor_index = $index;
 		}
 	}
@@ -91,4 +96,4 @@ function remove_site_editor_admin_link() {
 	unset( $menu[ $site_editor_index ] );
 }
 
-add_action( 'admin_init', 'add_disable_site_editor_setting' );
+add_action( 'admin_init', 'blockbase_add_disable_site_editor_setting' );
