@@ -151,7 +151,7 @@ class GlobalStylesColorCustomizer {
 
 	function check_if_colors_are_default() {
 		foreach ( $this->user_color_palette as $palette_color ) {
-			if ( $palette_color['color'] !== $palette_color['default'] ) {
+			if ( strtoupper( $palette_color['color'] ) !== strtoupper( $palette_color['default'] ) ) {
 				return false;
 			}
 		}
