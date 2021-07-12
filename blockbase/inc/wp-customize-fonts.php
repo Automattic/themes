@@ -251,20 +251,21 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function initialize( $wp_customize ) {
-		$theme_json            = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-		$body_font_variable    = $theme_json['settings']['custom']['body']['typography']['fontFamily'];
-		$heading_font_variable = $theme_json['settings']['custom']['heading']['typography']['fontFamily'];
-		$body_font_slug        = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $body_font_variable );
-		$heading_font_slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $heading_font_variable );
 
-		$body_font_setting    = $this->fonts[ $body_font_slug ];
-		$heading_font_setting = $this->fonts[ $heading_font_slug ];
-		$this->font_settings  = array(
-			'body'    => $body_font_setting['fontFamily'],
-			'heading' => $heading_font_setting['fontFamily'],
+		$theme       = wp_get_theme();
+		$merged_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+		$theme_json  = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
+
+		$body_font_default    = $this->get_font_family( 'body', $theme_json );
+		$heading_font_default = $this->get_font_family( 'heading', $theme_json );
+
+		$body_font_selected    = $this->get_font_family( 'body', $merged_json );
+		$heading_font_selected = $this->get_font_family( 'heading', $merged_json );
+
+		$this->font_settings = array(
+			'body'    => $body_font_selected['fontFamily'],
+			'heading' => $heading_font_selected['fontFamily'],
 		);
-
-		$theme = wp_get_theme();
 
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
@@ -276,18 +277,24 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_slug );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_slug );
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['slug'], $body_font_selected['slug'] );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'] );
 	}
 
-	function add_setting_and_control( $wp_customize, $name, $label, $default ) {
+	function get_font_family( $location, $configuration ) {
+		$variable = $configuration['settings']['custom'][ $location ]['typography']['fontFamily'];
+		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
+		return $this->fonts[ $slug ];
+	}
+
+	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value ) {
 		$setting_name          = $this->section_key . $name;
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_name,
 			array(
 				'default'    => $default,
-				'user_value' => $default,
+				'user_value' => $user_value,
 			)
 		);
 		$wp_customize->add_setting( $global_styles_setting );
@@ -319,12 +326,15 @@ class GlobalStylesFontsCustomizer {
 		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->post_value();
 		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->post_value();
 
+		$body_default    = $wp_customize->get_setting( $this->section_key . 'body' )->default;
+		$heading_default = $wp_customize->get_setting( $this->section_key . 'heading' )->default;
+
 		if ( ! isset( $body_value ) ) {
-			$body_value = $wp_customize->get_setting( $this->section_key . 'body' )->default;
+			$body_value = $body_default;
 		}
 
 		if ( ! isset( $heading_value ) ) {
-			$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->default;
+			$heading_value = $heading_default;
 		}
 
 		$body_setting    = $this->fonts[ $body_value ];
@@ -379,6 +389,14 @@ class GlobalStylesFontsCustomizer {
 			array( 'settings', 'custom', 'fontsToLoadFromGoogle' ),
 			$google_font_array
 		);
+
+		//If the typeface choices === the default then we remove it instead
+		if ( $body_value === $body_default && $heading_value === $heading_default ) {
+			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
+			unset( $user_theme_json_post_content->settings->custom->body->typography->fontFamily );
+			unset( $user_theme_json_post_content->settings->custom->heading->typography->fontFamily );
+			unset( $user_theme_json_post_content->settings->custom->fontsToLoadFromGoogle );
+		}
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );

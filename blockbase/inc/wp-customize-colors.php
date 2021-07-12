@@ -140,7 +140,7 @@ class GlobalStylesColorCustomizer {
 		);
 
 		//If the color palette is === the default then we remove it instead
-		if ( $this->check_if_colors_are_default( $wp_customize ) ) {
+		if ( $this->check_if_colors_are_default() ) {
 			unset( $user_theme_json_post_content->settings->color->palette );
 		}
 
