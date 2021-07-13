@@ -96,7 +96,29 @@ img {
 }
 
 h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background {
-	padding: var(--wp--custom--padding--vertical) var(--wp--custom--padding--vertical);
+	padding: var(--wp--custom--padding--vertical) var(--wp--custom--padding--horizontal);
+}
+
+/**
+ * This file pushes the footer to the bottom of the page.
+ * The 32px is for the admin bar, if it exsits.
+ */
+html {
+	height: calc( 100% - 32px);
+}
+
+body {
+	height: calc( 100% + 32px);
+}
+
+body.admin-bar {
+	height: calc( 100%);
+}
+
+.wp-site-blocks {
+	display: grid;
+	height: 100%;
+	grid-template-rows: auto 1fr;
 }
 
 ::selection {
@@ -366,7 +388,7 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 p.has-background {
-	padding: var(--wp--custom--padding--vertical) var(--wp--custom--padding--vertical);
+	padding: var(--wp--custom--padding--vertical) var(--wp--custom--padding--horizontal);
 }
 
 .wp-block-post-author__name {
