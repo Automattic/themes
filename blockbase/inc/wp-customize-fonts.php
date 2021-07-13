@@ -298,7 +298,7 @@ class GlobalStylesFontsCustomizer {
 				'section'     => $this->section_key,
 				'input_attrs' => array(
 					'value' => __( 'Reset to Default', 'blockbase' ),
-					'class' => 'button button-primary',
+					'class' => 'button button-secondary',
 				),
 			)
 		);
