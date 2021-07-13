@@ -209,13 +209,13 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function customize_preview_js( $wp_customize ) {
-		wp_enqueue_script( 'customizer-preview-fonts', get_template_directory_uri() . '/inc/wp-customize-fonts-preview.js', array( 'customize-preview' ) );
+		wp_enqueue_script( 'customizer-preview-fonts', get_template_directory_uri() . '/inc/customizer/wp-customize-fonts-preview.js', array( 'customize-preview' ) );
 		wp_localize_script( 'customizer-preview-fonts', 'googleFonts', $this->fonts );
 		wp_localize_script( 'customizer-preview-fonts', 'fontSettings', $this->font_settings );
 	}
 
 	function customize_control_js() {
-		wp_enqueue_script( 'customizer-font-control', get_template_directory_uri() . '/inc/wp-customize-fonts-control.js', array( 'customize-controls' ), null, true );
+		wp_enqueue_script( 'customizer-font-control', get_template_directory_uri() . '/inc/customizer/wp-customize-fonts-control.js', array( 'customize-controls' ), null, true );
 		wp_localize_script( 'customizer-font-control', 'fontControlDefaultBody', array( $this->font_control_default_body ) );
 		wp_localize_script( 'customizer-font-control', 'fontControlDefaultHeading', array( $this->font_control_default_heading ) );
 	}
