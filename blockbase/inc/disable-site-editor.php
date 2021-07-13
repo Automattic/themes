@@ -80,6 +80,12 @@ function blockbase_readd_legacy_admin_links() {
 	}
 }
 
+function is_site_editor_menu_item( $menu_item ) {
+	if ( ! empty( $menu_item[ 2 ] ) ) {
+		return false !== strpos( $menu_item[ 2 ], 'gutenberg-edit-site' ) || false !== strpos( $menu_item[ 2 ], 'site-editor' );
+	}
+}
+
 /**
  * Removes the Site Editor link from the admin.
  */
@@ -88,7 +94,7 @@ function blockbase_remove_site_editor_admin_link() {
 
 	// Remove Site Editor.
 	foreach ( $menu as $index => $menu_item ) {
-		if ( ! empty( $menu_item[ 2 ] ) && in_array( $menu_item[ 2 ], array( 'gutenberg-edit-site', 'site-editor' ) ) ) {
+		if ( is_site_editor_menu_item( $menu_item ) ) {
 			$site_editor_index = $index;
 		}
 	}
