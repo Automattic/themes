@@ -20,8 +20,9 @@ function add_disable_site_editor_setting() {
 		)
 	);
 
+	readd_legacy_admin_links();
+
 	if ( ! site_editor_enabled() ) {
-		readd_legacy_admin_links();
 		remove_site_editor_admin_link();
 	}
 }
@@ -41,7 +42,7 @@ function readd_legacy_admin_links() {
 		$submenu['themes.php'][6] = array( __( 'Customize' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
 
 		if (
-			function_exists( 'gutenberg_use_widgets_block_editor') &&
+			function_exists( 'gutenberg_use_widgets_block_editor' ) &&
 			gutenberg_use_widgets_block_editor() &&
 			! function_exists( 'wp_use_widgets_block_editor' ) &&
 			current_theme_supports( 'widgets' )
