@@ -9,6 +9,9 @@ class GlobalStylesFontsCustomizer {
 
 	private $font_settings;
 
+	private $font_control_default_body;
+	private $font_control_default_heading;
+
 	private $fonts = array(
 		'system-font'       => array(
 			'fontFamily' => '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
@@ -196,6 +199,7 @@ class GlobalStylesFontsCustomizer {
 		add_action( 'customize_preview_init', array( $this, 'handle_customize_preview_init' ) );
 		add_action( 'customize_register', array( $this, 'enqueue_google_fonts' ) );
 		add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_control_js' ) );
 	}
 
 	function handle_customize_preview_init( $wp_customize ) {
@@ -208,6 +212,12 @@ class GlobalStylesFontsCustomizer {
 		wp_enqueue_script( 'customizer-preview-fonts', get_template_directory_uri() . '/inc/wp-customize-fonts-preview.js', array( 'customize-preview' ) );
 		wp_localize_script( 'customizer-preview-fonts', 'googleFonts', $this->fonts );
 		wp_localize_script( 'customizer-preview-fonts', 'fontSettings', $this->font_settings );
+	}
+
+	function customize_control_js() {
+			wp_enqueue_script( 'customizer-font-control', get_template_directory_uri() . '/inc/wp-customize-fonts-control.js', array( 'customize-controls' ), null, true );
+		wp_localize_script( 'customizer-font-control', 'fontControlDefaultBody', array( $this->font_control_default_body ) );
+		wp_localize_script( 'customizer-font-control', 'fontControlDefaultHeading', array( $this->font_control_default_heading ) );
 	}
 
 	function enqueue_google_fonts() {
@@ -274,6 +284,22 @@ class GlobalStylesFontsCustomizer {
 				'capability'  => 'edit_theme_options',
 				'description' => sprintf( __( 'Font Customization for %1$s', 'blockbase' ), $theme->name ),
 				'title'       => __( 'Fonts', 'blockbase' ),
+			)
+		);
+
+		// Add a reset button
+		$this->font_control_default_body    = $body_font_default['slug'];
+		$this->font_control_default_heading = $heading_font_default['slug'];
+		$wp_customize->add_control(
+			$this->section_key . '-reset-button',
+			array(
+				'type'        => 'button',
+				'settings'    => array(),
+				'section'     => $this->section_key,
+				'input_attrs' => array(
+					'value' => __( 'Reset to Default', 'blockbase' ),
+					'class' => 'button button-primary',
+				),
 			)
 		);
 
