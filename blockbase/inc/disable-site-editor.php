@@ -15,17 +15,19 @@ function add_disable_site_editor_setting() {
 		'gutenberg-experiments',
 		'gutenberg_experiments_section',
 		array(
-			'label' => __( 'Disable Site Editor', 'gutenberg' ),
+			'label' => __( 'Enable Site Editor', 'gutenberg' ),
 			'id'    => 'universal-theme-disable-site-editor',
 		)
 	);
 
-	if ( get_option( 'gutenberg-experiments' ) ) {
-		if ( array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) ) ) {
-			readd_legacy_admin_links();
-			remove_site_editor_admin_link();
-		}
+	if ( ! site_editor_enabled() ) {
+		readd_legacy_admin_links();
+		remove_site_editor_admin_link();
 	}
+}
+
+function site_editor_enabled() {
+	return get_option( 'gutenberg-experiments' ) && array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) );
 }
 
 /**
