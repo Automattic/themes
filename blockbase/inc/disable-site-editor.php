@@ -3,11 +3,25 @@
 /**
  * Adds a setting to the Gutenberg experiments page to disable the Site Editor.
  */
-function blockbase_add_disable_site_editor_setting() {
+function blockbase_disable_site_editor() {
 	if ( ! is_readable( get_stylesheet_directory() . '/block-templates/index.html' ) ) {
 		return;
 	}
 
+	if ( is_admin() ) {
+		add_action( 'admin_init', 'blockbase_add_settings_field' );
+	}
+
+	if ( get_option( 'gutenberg-experiments' ) ) {
+		if ( array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) ) ) {
+			add_action( 'admin_init', 'blockbase_readd_legacy_admin_links' );
+			add_action( 'admin_init', 'blockbase_remove_site_editor_admin_link' );
+			add_action( 'admin_bar_menu', 'blockbase_remove_site_editor_link', 50 );
+		}
+	}
+}
+
+function blockbase_add_settings_field() {
 	add_settings_field(
 		'universal-theme-disable-site-editor',
 		__( 'Site Editor', 'gutenberg' ),
@@ -86,6 +100,10 @@ function is_site_editor_menu_item( $menu_item ) {
 	}
 }
 
+function site_editor_enabled() {
+	return get_option( 'gutenberg-experiments' ) && array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) );
+}
+
 /**
  * Removes the Site Editor link from the admin.
  */
@@ -102,4 +120,13 @@ function blockbase_remove_site_editor_admin_link() {
 	unset( $menu[ $site_editor_index ] );
 }
 
-add_action( 'admin_init', 'blockbase_add_disable_site_editor_setting' );
+/**
+ * Removes Site Editor adminbar item.
+ *
+ * @param WP_Admin_Bar $wp_admin_bar The admin-bar instance.
+ */
+function blockbase_remove_site_editor_link( $wp_admin_bar ) {
+	$wp_admin_bar->remove_node( 'site-editor' );
+}
+
+add_action( 'init', 'blockbase_disable_site_editor' );
