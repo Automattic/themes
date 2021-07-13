@@ -10,10 +10,10 @@
 				text-decoration: underline;
 			}
 		}
-	} 
+	}
 	.wp-block-column {
 		flex-basis: auto;
-		@media (min-width: #{ $break-small }) {
+		@include break-small() {
 			&:last-child {
 				max-width: 300px;
 				flex-shrink: 0;
@@ -25,7 +25,7 @@
 	}
 	.wp-block-post-featured-image {
 		width: 300px;
-		@media (max-width: #{ ($break-small - 1) }) {
+		@include break-small-only() {
 			width: 100%;
 		}
 		img {
@@ -53,7 +53,7 @@
 				left: 0;
 				z-index: -1;
 				opacity:0;
-				transition: all 0.4s ease-in; 
+				transition: all 0.4s ease-in;
 			}
 			&:hover:before {
 				opacity:1;
