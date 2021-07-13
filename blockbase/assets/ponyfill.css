@@ -101,24 +101,25 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 
 /**
  * This file pushes the footer to the bottom of the page.
- * The 32px is for the admin bar, if it exsits.
  */
-html {
-	height: calc( 100% - 32px);
-}
-
-body {
-	height: calc( 100% + 32px);
-}
-
-body.admin-bar {
-	height: calc( 100%);
+:root {
+	--wpadmin-bar--height: 46px;
 }
 
 .wp-site-blocks {
+	min-height: 100vh;
 	display: grid;
-	height: 100%;
 	grid-template-rows: auto 1fr;
+}
+
+@media (min-width: 600px) {
+	body.admin-bar {
+		--wpadmin-bar--height: 32px;
+	}
+}
+
+body.admin-bar .wp-site-blocks {
+	min-height: calc( 100vh - var(--wpadmin-bar--height));
 }
 
 ::selection {
