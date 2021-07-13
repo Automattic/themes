@@ -99,17 +99,18 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 	padding: var(--wp--custom--padding--vertical) var(--wp--custom--padding--horizontal);
 }
 
-/**
- * This file pushes the footer to the bottom of the page.
- */
 :root {
 	--wpadmin-bar--height: 46px;
 }
 
 .wp-site-blocks {
 	min-height: 100vh;
-	display: grid;
-	grid-template-rows: auto 1fr;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-footer-container {
+	margin-top: auto;
 }
 
 @media (min-width: 600px) {
