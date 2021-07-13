@@ -318,13 +318,17 @@ class GlobalStylesFontsCustomizer {
 		// This is needed to preserve the settings when other Customizer settings change.
 		$dirty_value = $wp_customize->get_setting( $setting_name )->post_value();
 		if ( ! empty( $dirty_value ) ) {
-			$wp_customize->get_setting( $setting_name )->value = $dirty_value;
+			$wp_customize->get_setting( $setting_name )->user_value = $dirty_value;
 		}
 	}
 
 	function handle_customize_save_after( $wp_customize ) {
 		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->post_value();
 		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->post_value();
+
+		if ( ! isset( $body_value ) && ! isset( $heading_value ) ) {
+			return;
+		}
 
 		$body_default    = $wp_customize->get_setting( $this->section_key . 'body' )->default;
 		$heading_default = $wp_customize->get_setting( $this->section_key . 'heading' )->default;
