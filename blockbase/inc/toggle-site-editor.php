@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Adds a setting to the Gutenberg experiments page to disable the Site Editor.
+ * Adds a setting to the Gutenberg experiments page to enable the Site Editor.
  */
-function blockbase_disable_site_editor() {
+function blockbase_toggle_site_editor() {
 	if ( ! is_readable( get_stylesheet_directory() . '/block-templates/index.html' ) ) {
 		return;
 	}
@@ -19,14 +19,14 @@ function blockbase_disable_site_editor() {
 
 function blockbase_add_settings_field() {
 	add_settings_field(
-		'universal-theme-disable-site-editor',
+		'universal-theme-enable-site-editor',
 		__( 'Site Editor', 'gutenberg' ),
 		'gutenberg_display_experiment_field',
 		'gutenberg-experiments',
 		'gutenberg_experiments_section',
 		array(
 			'label' => __( 'Enable Site Editor', 'gutenberg' ),
-			'id'    => 'universal-theme-disable-site-editor',
+			'id'    => 'universal-theme-enable-site-editor',
 		)
 	);
 }
@@ -87,7 +87,7 @@ function is_site_editor_menu_item( $menu_item ) {
 }
 
 function site_editor_enabled() {
-	return get_option( 'gutenberg-experiments' ) && array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) );
+	return get_option( 'gutenberg-experiments' ) && array_key_exists( 'universal-theme-enable-site-editor', get_option( 'gutenberg-experiments' ) );
 }
 
 /**
@@ -117,4 +117,4 @@ function blockbase_remove_site_editor_link( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node( 'site-editor' );
 }
 
-add_action( 'init', 'blockbase_disable_site_editor' );
+add_action( 'init', 'blockbase_toggle_site_editor' );
