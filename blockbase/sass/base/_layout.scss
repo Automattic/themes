@@ -1,0 +1,23 @@
+:root {
+	--wpadmin-bar--height: 46px;
+}
+
+.wp-site-blocks {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-footer-container {
+	margin-top: auto;
+}
+
+body.admin-bar {
+	@include break-small() {
+		--wpadmin-bar--height: 32px;
+	}
+
+	.wp-site-blocks {
+		min-height: calc( 100vh - var(--wpadmin-bar--height) );
+	}
+}

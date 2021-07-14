@@ -1,5 +1,8 @@
+.wp-site-blocks {
+	position: relative; // This is needed so that the polygon is stretched across the whole site.
+}
+
 .site-header {
-	position: relative;
 	overflow: inherit;
 	padding: 10px var(--wp--custom--post-content--padding--left) 60px; // TODO: Maybe replace with a responsive custom variable?
 
@@ -44,7 +47,7 @@
 		content: "";
 		background-color: var(--wp--custom--color--secondary);
 		position: absolute;
-		height: 100vw;
+		bottom: 0;
 		top: 0;
 		left: 0;
 		right: 0;
