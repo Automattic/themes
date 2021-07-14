@@ -39,7 +39,7 @@ function readd_legacy_admin_links() {
 	if ( isset( $submenu['themes.php'] ) ) {
 		// Add Customize back to the admin menu.
 		$customize_url            = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
-		$submenu['themes.php'][6] = array( __( 'Customize' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
+		$submenu['themes.php'][6] = array( __( 'Customize', 'blockbase' ), 'customize', esc_url( $customize_url ), '', 'hide-if-no-customize' );
 
 		if (
 			function_exists( 'gutenberg_use_widgets_block_editor' ) &&
