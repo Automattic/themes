@@ -380,10 +380,10 @@ class GlobalStylesFontsCustomizer {
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
 
 		$google_font_array = array();
-		if ( $body_setting['google'] ) {
+		if ( isset( $body_setting['google'] ) ) {
 			$google_font_array[] = $body_setting['google'];
 		}
-		if ( $heading_setting['google'] ) {
+		if ( isset( $heading_setting['google'] ) ) {
 			$google_font_array[] = $heading_setting['google'];
 		}
 
