@@ -8,16 +8,12 @@ function blockbase_disable_site_editor() {
 		return;
 	}
 
-	if ( is_admin() ) {
-		add_action( 'admin_init', 'blockbase_add_settings_field' );
-	}
+	add_action( 'admin_init', 'blockbase_add_settings_field' );
+	add_action( 'admin_init', 'blockbase_readd_legacy_admin_links' );
 
-	if ( get_option( 'gutenberg-experiments' ) ) {
-		if ( array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) ) ) {
-			add_action( 'admin_init', 'blockbase_readd_legacy_admin_links' );
-			add_action( 'admin_init', 'blockbase_remove_site_editor_admin_link' );
-			add_action( 'admin_bar_menu', 'blockbase_remove_site_editor_link', 50 );
-		}
+	if ( ! site_editor_enabled() ) {
+		add_action( 'admin_init', 'blockbase_remove_site_editor_admin_link' );
+		add_action( 'admin_bar_menu', 'blockbase_remove_site_editor_link', 50 );
 	}
 }
 
@@ -33,16 +29,6 @@ function blockbase_add_settings_field() {
 			'id'    => 'universal-theme-disable-site-editor',
 		)
 	);
-
-	blockbase_readd_legacy_admin_links();
-
-	if ( ! site_editor_enabled() ) {
-		blockbase_remove_site_editor_admin_link();
-	}
-}
-
-function site_editor_enabled() {
-	return get_option( 'gutenberg-experiments' ) && array_key_exists( 'universal-theme-disable-site-editor', get_option( 'gutenberg-experiments' ) );
 }
 
 /**
@@ -117,7 +103,9 @@ function blockbase_remove_site_editor_admin_link() {
 		}
 	}
 
-	unset( $menu[ $site_editor_index ] );
+	if ( ! empty( $site_editor_index ) ) {
+		unset( $menu[ $site_editor_index ] );
+	}
 }
 
 /**
