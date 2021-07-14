@@ -1,0 +1,63 @@
+/*
+Theme Name: Sk8prk
+Theme URI: https://github.com/wordpress/theme-experiments/
+Author: Kjell Reigstad
+Description: The base for a block-based theme.
+Requires at least: 5.3
+Tested up to: 5.5
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sk8prk
+
+Sk8prk is distributed under the terms of the GNU GPL.
+*/
+
+/* CSS RESET */
+
+figure {
+	margin: 0;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+/* */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--wp--preset--font-family--red-hat-display);
+}
+
+@media screen and (max-width: 600px) {
+	:root {
+		--wp--preset--font-size--normal: 18px;
+		--wp--preset--font-size--big: 20px;
+		--wp--preset--font-size--medium: 30px;
+		--wp--preset--font-size--large: 36px;
+		--wp--preset--font-size--huge: 48px;
+	}
+}
+
+.wp-block-columns.has-border-style {
+	border: solid 3px var(--wp--preset--color--primary);
+	padding: 1.35em;
+}
+
+h1.has-heading-top-border,
+h2.has-heading-top-border,
+h3.has-heading-top-border,
+h4.has-heading-top-border,
+h5.has-heading-top-border,
+h6.has-heading-top-border {
+	border-top: solid 3px var(--wp--preset--color--primary);
+	display: inline-block;
+	padding-top: 0.5em;
+}
