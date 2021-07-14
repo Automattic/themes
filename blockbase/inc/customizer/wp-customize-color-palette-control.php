@@ -28,7 +28,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Color_Palette_Co
 						<input name="color_palette_<?php echo esc_attr( $this->id ); ?>" id="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" type="radio" value="<?php echo esc_attr( $value ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> >
 							<label for="color_palette_<?php echo esc_attr( $this->id ); ?>_<?php echo esc_attr( $value ); ?>" class="color-option">
 								<div class="custom-color-palette">
-									<span class="color-palette-label"><?php echo esc_attr( $label['label'] ); ?></span>
+									<span class="color-palette-label"><?php echo esc_html( $label['label'] ); ?></span>
 									<?php foreach ( $label['colors'] as $slug => $color ) : ?>
 										<div class="color-stripe" style="background-color: <?php echo esc_attr( $color ); ?>">&nbsp;</div>
 									<?php endforeach; ?>
