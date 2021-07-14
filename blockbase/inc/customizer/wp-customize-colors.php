@@ -1,6 +1,7 @@
 <?php
 
-require_once 'wp-customize-color-settings.php';
+require_once 'wp-customize-global-styles-setting.php';
+require_once 'wp-customize-utils.php';
 
 class GlobalStylesColorCustomizer {
 
@@ -16,7 +17,7 @@ class GlobalStylesColorCustomizer {
 	}
 
 	function customize_preview_js() {
-		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/wp-customize-colors-preview.js', array( 'customize-preview' ) );
+		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customizer/wp-customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
 	}
@@ -38,7 +39,7 @@ class GlobalStylesColorCustomizer {
 		$css = ':root,body{';
 		foreach ( $this->user_color_palette as $key => $palette_item ) {
 			$setting = $wp_customize->get_setting( $this->section_key . $palette_item['slug'] );
-			$css .= '--wp--preset--color--' . $palette_item['slug'] . ':' . $palette_item['color'] .';';
+			$css    .= '--wp--preset--color--' . $palette_item['slug'] . ':' . $palette_item['color'] . ';';
 		}
 		$css .= '}';
 
@@ -132,20 +133,29 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
-		// Create the color palette inside settings if it doesn't exist.
-		if ( property_exists( $user_theme_json_post_content, 'settings' ) ) {
-			if ( property_exists( $user_theme_json_post_content->settings, 'color' ) ) {
-				$user_theme_json_post_content->settings->color->palette = $this->user_color_palette;
-			} else {
-				$user_theme_json_post_content->settings->color = (object) array( 'palette' => $this->user_color_palette );
-			}
-		} else {
-			$user_theme_json_post_content->settings = (object) array( 'color' => (object) array( 'palette' => $this->user_color_palette ) );
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'settings', 'color', 'palette' ),
+			$this->user_color_palette
+		);
+
+		//If the color palette is === the default then we remove it instead
+		if ( $this->check_if_colors_are_default() ) {
+			unset( $user_theme_json_post_content->settings->color->palette );
 		}
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		return wp_update_post( $user_theme_json_post );
+	}
+
+	function check_if_colors_are_default() {
+		foreach ( $this->user_color_palette as $palette_color ) {
+			if ( strtoupper( $palette_color['color'] ) !== strtoupper( $palette_color['default'] ) ) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
 

@@ -11,7 +11,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Color_Palette_Co
 		public $type = 'color-palette';
 
 		public function enqueue() {
-			wp_enqueue_style( 'color-customization', get_template_directory_uri() . '/inc/wp-customize-color-palette-control.css' );
+			wp_enqueue_style( 'color-customization', get_template_directory_uri() . '/inc/customizer/wp-customize-color-palette-control.css' );
 		}
 
 		public function render_content() {
