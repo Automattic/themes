@@ -68,7 +68,7 @@ function changeColorLuminescence( hex, amount ) {
 			var foregroundHighContrast = changeColorLuminescence( foreground, -10 );
 			var primaryHover = changeColorLuminescence( primary, 10 );
 			var secondaryHover = changeColorLuminescence( secondary, 10 );
-			const extraCSS = ':root {' +
+			const extraCSS = ':root, body {' +
 					'--global--color-background: ' + background + ';' +
 					'--global--color-background-high-contrast: ' + background + ';' +
 					'--global--color-foreground: ' + foreground + ';' +
