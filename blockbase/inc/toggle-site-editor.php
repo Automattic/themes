@@ -91,7 +91,7 @@ function is_site_editor_menu_item( $menu_item ) {
 
 function site_editor_enabled() {
 	// For WPCOM
-	if ( has_blog_sticker( 'core-site-editor-enabled', get_current_blog_id() ) ) {
+	if ( function_exists('has_blog_sticker') && has_blog_sticker( 'core-site-editor-enabled', get_current_blog_id() ) ) {
 		return true;
 	}
 
