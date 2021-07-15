@@ -102,5 +102,5 @@ require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 
-/** Add a checkbox to hide the Site Editor */
-require get_template_directory() . '/inc/disable-site-editor.php';
+/** Add a checkbox to show/hide the Site Editor */
+require get_template_directory() . '/inc/toggle-site-editor.php';
