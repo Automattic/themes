@@ -87,6 +87,11 @@ function is_site_editor_menu_item( $menu_item ) {
 }
 
 function site_editor_enabled() {
+	// For WPCOM
+	if ( has_blog_sticker( 'core-site-editor-enabled', get_current_blog_id() ) ) {
+		return true;
+	}
+
 	return get_option( 'gutenberg-experiments' ) && array_key_exists( 'universal-theme-enable-site-editor', get_option( 'gutenberg-experiments' ) );
 }
 
