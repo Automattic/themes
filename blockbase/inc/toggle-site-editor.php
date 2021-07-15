@@ -10,10 +10,13 @@ function blockbase_toggle_site_editor() {
 
 	add_action( 'admin_init', 'blockbase_add_settings_field' );
 	add_action( 'admin_init', 'blockbase_readd_legacy_admin_links' );
-
+	// For WPCOM
+	add_action( 'admin_menu_rest_api', 'blockbase_readd_legacy_admin_links' );
 	if ( ! site_editor_enabled() ) {
 		add_action( 'admin_init', 'blockbase_remove_site_editor_admin_link' );
 		add_action( 'admin_bar_menu', 'blockbase_remove_site_editor_link', 50 );
+		// For WPCOM
+		add_action( 'admin_menu_rest_api', 'blockbase_remove_site_editor_admin_link' );
 	}
 }
 
@@ -38,7 +41,7 @@ function blockbase_readd_legacy_admin_links() {
 	global $submenu;
 	if ( isset( $submenu['themes.php'] ) ) {
 		// Add Customize back to the admin menu.
-		$customize_url            = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
+		$customize_url = add_query_arg( 'return', urlencode( remove_query_arg( wp_removable_query_args(), wp_unslash( $_SERVER['REQUEST_URI'] ) ) ), 'customize.php' );
 		$customizer_key = 6;
 		if ( defined( 'IS_WPCOM' ) ) {
 			$customizer_key = 1;
