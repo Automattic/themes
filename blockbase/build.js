@@ -7,6 +7,8 @@ const parentThemeJsonFileName = __dirname + '/theme.json';
 const childThemeJsonFileName =
 	__dirname + '/../' + childThemeName + '/child-theme.json';
 
+const keysToMerge = [ 'customTemplates' ];
+
 const overwriteMerge = ( destinationArray, sourceArray, options ) => {
 	return sourceArray;
 };
@@ -15,7 +17,7 @@ const combineMerge = ( destinationArray, sourceArray, options ) =>
 	destinationArray.concat( sourceArray );
 
 const combineCustomTemplates = ( key ) => {
-	if ( key === 'customTemplates' ) {
+	if ( keysToMerge.indexOf( key ) > -1 ) {
 		return combineMerge;
 	}
 };
