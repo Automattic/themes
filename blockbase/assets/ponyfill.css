@@ -55,16 +55,12 @@ img {
 /**
  * These are default block editor widths in case the theme doesn't provide them.
  */
-.wp-block-group.alignfull,
-*[class*="wp-container-"] {
+.wp-block-group.alignfull {
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
 }
 
-.wp-block-group.alignfull *[class*="wp-container-"],
-.wp-block-group.alignfull > .alignfull,
-*[class*="wp-container-"] *[class*="wp-container-"],
-*[class*="wp-container-"] > .alignfull {
+.wp-block-group.alignfull > .alignfull {
 	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
 	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right)) !important;
