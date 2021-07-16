@@ -13,10 +13,10 @@ return array(
 		<!-- /wp:heading -->
 
 		<!-- wp:audio {"id":102} -->
-		<figure class="wp-block-audio"><audio controls src="https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/05/quadrat.mp3"></audio></figure>
+		<figure class="wp-block-audio"><audio controls src="' . get_stylesheet_directory_uri() . '/assets/quadrat.mp3"></audio></figure>
 		<!-- /wp:audio -->
 
 		<!-- wp:paragraph {"align":"center","fontSize":"tiny"} -->
-		<p class="has-text-align-center has-tiny-font-size">' . sprintf( wp_kses( __( 'Listen on <a href="%1$s">Apple Podcasts</a>, <a href="%2$s">Spotify</a>.', 'quadrat' ), array( 'a' => array( 'href' => array() ) ) ), 'https://podcasts.apple.com', 'https://spotify.com' ) . '</p>
+		<p class="has-text-align-center has-tiny-font-size">' . sprintf( wp_kses( __( 'Listen on <a href="%1$s">Apple Podcasts</a>, <a href="%2$s">Spotify</a>.', 'quadrat' ), array( 'a' => array( 'href' => array() ) ) ), '/', '/' ) . '</p>
 		<!-- /wp:paragraph -->',
 );
