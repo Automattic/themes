@@ -7,8 +7,18 @@ const parentThemeJsonFileName = __dirname + '/theme.json';
 const childThemeJsonFileName =
 	__dirname + '/../' + childThemeName + '/child-theme.json';
 
-const overwriteMerge = ( destinationArray, sourceArray, options ) =>
-	sourceArray;
+const overwriteMerge = ( destinationArray, sourceArray, options ) => {
+	return sourceArray;
+};
+
+const combineMerge = ( destinationArray, sourceArray, options ) =>
+	destinationArray.concat( sourceArray );
+
+const combineCustomTemplates = ( key ) => {
+	if ( key === 'customTemplates' ) {
+		return combineMerge;
+	}
+};
 
 const buildChildTheme = () => {
 	try {
@@ -23,6 +33,7 @@ const buildChildTheme = () => {
 			parentThemeJson = JSON.parse( parentThemeJsonFile ),
 			childThemeJson = JSON.parse( childThemeJsonFile ),
 			mergedThemeJson = merge( parentThemeJson, childThemeJson, {
+				customMerge: combineCustomTemplates,
 				arrayMerge: overwriteMerge,
 			} );
 
