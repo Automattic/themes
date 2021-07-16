@@ -14,6 +14,11 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				'quadrat',
 				array( 'label' => __( 'Quadrat', 'quadrat' ) )
 			);
+
+			register_block_pattern_category(
+				'theme-images',
+				array( 'label' => __( 'Theme Images', 'quadrat' ) )
+			);
 		}
 
 		if ( function_exists( 'register_block_pattern' ) ) {
@@ -32,12 +37,32 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				$block_patterns[] = 'join';
 			}
 
-			foreach ( $block_patterns as $block_pattern ) {
-				register_block_pattern(
-					'quadrat/' . $block_pattern,
-					require __DIR__ . '/patterns/' . $block_pattern . '.php'
-				);
-			}
+			$image_patterns = array(
+				'circle-rolling-over-a-triangle',
+				'combination-of-purple-triangles',
+				'combination-of-white-orange-and-pink-triangles',
+				'complex-shape-combination-and-two-pink-squares',
+				'group-of-squares-displayed-diagonally',
+				'group-of-white-pink-and-orange-circles',
+				'many-pink-squares-overlapped',
+				'orange-and-pink-shapes',
+				'orange-triangle-in-purple-background',
+				'pink-square-and-dark-purple-triangle',
+				'pink-square-with-dark-shadow-on-orange-background',
+				'pink-squared-shapes-combination',
+				'solid-shapes-in-purple-pink-and-white',
+				'squares-changing-opacity',
+				'three-circles-decreasing',
+				'two-circles-and-a-squared-shape',
+				'white-and-orange-squares',
+			);
+
+			// foreach ( $image_patterns as $image_pattern ) {
+			// 	register_block_pattern(
+			// 		'theme-images/' . $image_pattern,
+			// 		require __DIR__ . '/patterns/' . $image_pattern . '.php'
+			// 	);
+			// }
 		}
 	}
 endif;
