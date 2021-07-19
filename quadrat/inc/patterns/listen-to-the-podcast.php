@@ -13,7 +13,7 @@ return array(
 		<!-- /wp:heading -->
 
 		<!-- wp:audio {"id":102} -->
-		<figure class="wp-block-audio"><audio controls src="' . get_stylesheet_directory_uri() . '/assets/quadrat-episode-1.wav"></audio></figure>
+		<figure class="wp-block-audio"><audio controls src="' . get_stylesheet_directory_uri() . '/assets/quadrat-episode-1.mp3"></audio></figure>
 		<!-- /wp:audio -->
 
 		<!-- wp:paragraph {"align":"center","fontSize":"tiny"} -->
