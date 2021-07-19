@@ -24,10 +24,13 @@ The goal is for the ponyfill styling to reflect what Gutenberg will style, from 
 
 To build a Blockbase child theme follow these instructions:
 
-- Add a [package.json](https://github.com/Automattic/themes/blob/trunk/seedlet-blocks/package.json), [style.css](https://github.com/Automattic/themes/blob/trunk/seedlet-blocks/style.css) and empty index.php files to your theme.
-- Your child theme's theme.json file will be built by combining Blockbase's original theme.json file and your child's `child-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there). To generate the combined file, run `npm run build` from inside your theme's folder or run `npm run build:child child-theme-slug` from inside Blockbase's folder.
+- Ensure node/npm are installed on your system.
+- From the /blockbase folder run the command `npm run create:child CHILDSLUG`
+- A directory with the necessary files will be created to match CHILDSLUG.  This folder will be a sibling of /blockbase.
+- From the /CHILDSLUG folder (whatever you decided it would be) run the command `npm run build` any time you make changes to the child-theme.json or any of the files in the /sass folder.
+- Your child theme's theme.json file will be built by combining Blockbase's original theme.json file and your child's `child-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there). 
+- Use the command `npm run start` to enter watch mode to rebuild the assets any time you change child-theme.json or any of the files in /scss.
 - Extend the parent's templates that you want to customize or add new ones where needed following the [template hierarchy](https://themeshaper.com/2020/12/18/getting-started-with-block-themes-templates/).
-- Using `npm run start` will both watch changes inside the `sass` and `assets` folder and changes to the `child-theme.json` file.
 
 == Building a Universal Child Theme ==
 
