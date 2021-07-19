@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.1 =
+* Replace images with locally bundled ones
+
 = 1.1.0 =
 * Added color customization from the customizer
 
@@ -37,10 +40,10 @@ Quadrat uses the following resources created by Bea Fialho / Automattic.
 
 License: CC0
 Source:
-https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Introspection-scaled.jpg
-https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Leadership-1024x623.jpg
-https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/Screen-usage-1024x623.jpg
-https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/04/girls-illustration.png
-https://quadrat.mystagingwebsite.com/wp-content/uploads/2021/05/Group-of-squares-displayed-diagonally._.png
+/assets/illustrations/introspection-scaled.jpg
+/assets/illustrations/leadership.jpg
+/assets/illustrations/screen-usage.jpg
+/assets/illustrations/girls-illustration.png
+/assets/illustrations/group-of-squares-displayed-diagonally.png
 
 Used in block patterns.
