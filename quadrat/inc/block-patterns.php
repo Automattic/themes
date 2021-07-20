@@ -8,6 +8,7 @@
 if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 
 	function quadrat_register_block_patterns() {
+
 		if ( function_exists( 'register_block_pattern_category' ) ) {
 			register_block_pattern_category(
 				'quadrat',
