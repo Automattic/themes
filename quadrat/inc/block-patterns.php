@@ -49,8 +49,8 @@ if ( ! function_exists( 'quadrat_register_illustration_patterns' ) ) :
 	function quadrat_register_illustration_patterns() {
 		if ( function_exists( 'register_block_pattern_category' ) ) {
 			register_block_pattern_category(
-				'quadrat-images',
-				array( 'label' => __( 'Quadrat Images', 'quadrat' ) )
+				'quadrat-illustrations',
+				array( 'label' => __( 'Quadrat Illustrations', 'quadrat' ) )
 			);
 		}
 
@@ -85,7 +85,7 @@ if ( ! function_exists( 'quadrat_register_illustration_patterns' ) ) :
 					'quadrat/' . $illustration_pattern_key,
 					array(
 						'title'      => $illustration_pattern_name,
-						'categories' => array( 'quadrat-images' ),
+						'categories' => array( 'quadrat-illustrations' ),
 						'content'    => '<!-- wp:image {"sizeSlug":"large"} -->
 						<figure class="wp-block-image size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/illustrations/' . $illustration_pattern_key . '.png" alt=""/></figure>
 						<!-- /wp:image -->',
