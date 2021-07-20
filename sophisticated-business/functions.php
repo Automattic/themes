@@ -16,9 +16,6 @@ if ( ! function_exists( 'sophisticated_business_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function sophisticated_business_setup() {
-		// Switches Gutenberg controls to work against a dark background.
-		add_theme_support( 'dark-editor-style' );
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -89,7 +86,7 @@ function sophisticated_business_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
