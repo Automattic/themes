@@ -269,16 +269,6 @@ if ( ! function_exists( 'seedlet_setup' ) ) :
 				'enable_theme_default' => true,
 			)
 		);
-
-		// Add support for block templates (default template is content-only)
-		add_theme_support( 'block-templates' );
-		add_filter(
-			'block_editor_settings_all',
-			function( $settings ) {
-				$settings['defaultBlockTemplate'] = '<!-- wp:post-content /-->';
-				return $settings;
-			}
-		);
 	}
 endif;
 add_action( 'after_setup_theme', 'seedlet_setup' );
@@ -317,7 +307,7 @@ function seedlet_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 *
+		 * 
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
