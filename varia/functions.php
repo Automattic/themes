@@ -223,16 +223,6 @@ if ( ! function_exists( 'varia_setup' ) ) :
 			)
 		);
 
-		// Add support for block templates (default template is content-only)
-		add_theme_support( 'block-templates' );
-		add_filter(
-			'block_editor_settings_all',
-			function( $settings ) {
-				$settings['defaultBlockTemplate'] = '<!-- wp:post-content /-->';
-				return $settings;
-			}
-		);
-
 	}
 endif;
 add_action( 'after_setup_theme', 'varia_setup' );
