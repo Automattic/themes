@@ -12,6 +12,10 @@
 	margin-top: auto;
 }
 
+.scroll-to-element, .entry-content > *[id] {
+	scroll-margin-top: var(--wp--custom--scroll--margin-top);
+}
+
 body.admin-bar {
 	@include break-small() {
 		--wpadmin-bar--height: 32px;
@@ -19,5 +23,9 @@ body.admin-bar {
 
 	.wp-site-blocks {
 		min-height: calc( 100vh - var(--wpadmin-bar--height) );
+	}
+
+	.scroll-to-element, .entry-content > *[id] {
+		scroll-margin-top: calc(var(--wp--custom--scroll--margin-top) + ( var(--wpadmin-bar--height) * 0.9 ) );
 	}
 }

@@ -113,6 +113,10 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 	margin-top: auto;
 }
 
+.scroll-to-element, .entry-content > *[id] {
+	scroll-margin-top: var(--wp--custom--scroll--margin-top);
+}
+
 @media (min-width: 600px) {
 	body.admin-bar {
 		--wpadmin-bar--height: 32px;
@@ -121,6 +125,10 @@ h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.h
 
 body.admin-bar .wp-site-blocks {
 	min-height: calc( 100vh - var(--wpadmin-bar--height));
+}
+
+body.admin-bar .scroll-to-element, body.admin-bar .entry-content > *[id] {
+	scroll-margin-top: calc(var(--wp--custom--scroll--margin-top) + ( var(--wpadmin-bar--height) * 0.9 ));
 }
 
 ::selection {
