@@ -38,20 +38,23 @@ async function createMilestone() {
 async function createIssues( milestoneNumber ) {
 	const issues = [
 		'Create base theme from boilerplate',
-		/*'Create a demo site on dotcom',
+		'Create a demo site on dotcom',
 		'theme.json: Typography settings',
 		'theme.json: Color palette',
 		'theme.json: Alternative color palettes',
 		'theme.json: Margin/spacing settings',
-		'Templates:Page templates (one task per template, search, 404 etc.)',
-		'Templates:Header template part (including mobile)',
-		'Templates:Footer template part (including mobile)',
+		'Templates: Page templates: index',
+		'Templates: Page templates: search',
+		'Templates: Page templates: 404',
+		'Templates: Page templates: archive',
+		'Templates: Header template part (including mobile)',
+		'Templates: Footer template part (including mobile)',
 		'Block patterns (if needed)',
 		'Block styles (if needed)',
 		'Comment form styles (dotcom and dotorg) (if needed)',
 		'Navigation (if needed)',
 		'Core block settings (if needed)',
-		'Third party block settings (Jetpack, Woo, etc.) (if needed)',*/
+		'Third party block settings (Jetpack, Woo, etc.) (if needed)',
 	];
 	issues.forEach( async ( issue ) => {
 		try {
@@ -62,8 +65,7 @@ async function createIssues( milestoneNumber ) {
 					milestone: milestoneNumber,
 				} )
 				.then( ( issueData ) => {
-					const issueUrl = issueData.data.html_url;
-					addIssueToProject( issueUrl );
+					addIssueToProject( issueData );
 				} );
 		} catch ( error ) {
 			console.log( error );
@@ -71,10 +73,13 @@ async function createIssues( milestoneNumber ) {
 	} );
 }
 
-async function addIssueToProject( issueUrl ) {
+async function addIssueToProject( issueData ) {
 	try {
 		return await octokit.request( 'POST /projects/columns/11021541/cards', {
-			note: issueUrl,
+			note: null,
+			content_id: issueData.data.id,
+			content_url: issueData.data.url,
+			content_type: 'Issue',
 			mediaType: {
 				previews: [ 'inertia' ],
 			},
