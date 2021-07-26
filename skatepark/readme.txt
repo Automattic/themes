@@ -29,15 +29,3 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
-Skatepark uses the following resources created by Bea Fialho / Automattic.
-
-License: CC0
-Source:
-/assets/illustrations/introspection-scaled.jpg
-/assets/illustrations/leadership.jpg
-/assets/illustrations/screen-usage.jpg
-/assets/illustrations/girls-illustration.png
-/assets/illustrations/group-of-squares-displayed-diagonally.png
-
-Used in block patterns.
