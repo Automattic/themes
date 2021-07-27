@@ -42,7 +42,7 @@ async function createIssues( milestoneNumber ) {
 		'theme.json: Typography settings',
 		'theme.json: Color palette',
 		'theme.json: Alternative color palettes',
-		'theme.json: Margin/spacing settings',
+		'theme.json: Margin/spacing settings + content layout',
 		'Templates: Page templates - Index',
 		'Templates: Page templates - Search',
 		'Templates: Page templates - 404',
@@ -55,6 +55,9 @@ async function createIssues( milestoneNumber ) {
 		'Navigation (if needed)',
 		'Core block settings (if needed)',
 		'Third party block settings (Jetpack, Woo, etc.) (if needed)',
+		'Pre-launch: readme.txt',
+		'Pre-launch: screenshot.png',
+		'Pre-launch: style.css tags',
 	];
 	issues.forEach( async ( issue ) => {
 		try {
