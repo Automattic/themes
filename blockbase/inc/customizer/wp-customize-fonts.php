@@ -310,7 +310,30 @@ class GlobalStylesFontsCustomizer {
 	function get_font_family( $location, $configuration ) {
 		$variable = $configuration['settings']['custom'][ $location ]['typography']['fontFamily'];
 		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
+		if ( ! isset( $this->fonts[ $slug ] ) ) {
+			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $location, $configuration );
+		}
 		return $this->fonts[ $slug ];
+	}
+
+	function build_font_from_theme_data( $slug, $location, $configuration ) {
+		$new_font      = array();
+		$google_fonts  = $configuration['settings']['custom']['fontsToLoadFromGoogle'];
+		$font_families = $configuration['settings']['typography']['fontFamilies']['theme'];
+		foreach ( $font_families as $font_family ) {
+			if ( $font_family['slug'] === $slug ) {
+				$new_font['fontFamily'] = $font_family['fontFamily'];
+				$new_font['name']       = $font_family['name'];
+			}
+		}
+		foreach ( $google_fonts as $google_font ) {
+			$aux = str_replace( '+', '-', $google_font );
+			if ( strripos( $aux, $slug ) !== false ) {
+				$new_font['google'] = $google_font;
+			}
+		}
+		$new_font['slug'] = $slug;
+		return $new_font;
 	}
 
 	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value ) {
