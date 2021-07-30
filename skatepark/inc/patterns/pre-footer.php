@@ -17,7 +17,7 @@ return array(
 		<p class="has-small-font-size">' . esc_html__( 'Skate ipsum dolor sit amet, poseur nollie casper pop shove-it. Kickturn noseblunt tailslide.', 'skatepark' ) . '</p>
 		<!-- /wp:paragraph -->
 		
-		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#000000","className":"is-style-logos-only"} -->
+		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--foreground)","className":"is-style-logos-only"} -->
 		<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"http://twitter.com","service":"twitter"} /-->
 		
 		<!-- wp:social-link {"url":"http://facebook.com","service":"facebook"} /-->
