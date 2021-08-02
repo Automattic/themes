@@ -37,7 +37,10 @@ class GlobalStylesColorPalettes {
 			foreach ( $custom_palettes as $custom_palette ) {
 				$custom_palette_setting = array();
 				foreach ( $custom_palette['colors'] as $color_slug => $color ) {
-					$custom_palette_setting[ $color_slug ] = $color;
+					//the alternative palettes need to have the same color mapping as the default one
+					if(isset($default_palette_setting[$color_slug])){
+						$custom_palette_setting[ $color_slug ] = $color;
+					}
 				}
 
 				$this->palettes[ $custom_palette['slug'] ] = array(
