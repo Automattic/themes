@@ -102,8 +102,6 @@ function blockbase_restore_customizer() {
 	remove_action( 'admin_menu', 'gutenberg_remove_legacy_pages' );
 }
 add_action( 'init', 'blockbase_restore_customizer' );
-// For WPcom REST API requests to work properly.
-add_action( 'restapi_theme_init', 'blockbase_restore_customizer', 11 );
 
 /**
  * Customize Global Styles
