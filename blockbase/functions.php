@@ -96,11 +96,16 @@ function blockbase_fonts_url() {
 }
 
 /**
+ * Restores the Customizer since we still rely on it.
+ */
+function blockbase_restore_customizer() {
+	remove_action( 'admin_menu', 'gutenberg_remove_legacy_pages' );
+}
+add_action( 'init', 'blockbase_restore_customizer' );
+
+/**
  * Customize Global Styles
  */
 require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
-
-/** Add a checkbox to show/hide the Site Editor */
-require get_template_directory() . '/inc/toggle-site-editor.php';
