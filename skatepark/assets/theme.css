@@ -244,7 +244,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	padding-right: var(--wp--custom--post-content--padding--right);
 	padding-left: var(--wp--custom--post-content--padding--left);
 }
@@ -259,20 +259,17 @@ header > * > * {
 }
 
 @media (max-width: 599px) {
-	header {
-		flex-flow: wrap-reverse;
-	}
-	header .nav-links {
+	.nav-links {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 		border-bottom: 2px solid var(--wp--custom--color--primary);
 	}
-	header .nav-links .wp-block-navigation__responsive-container-open {
+	.nav-links .wp-block-navigation__responsive-container-open {
 		display: flex;
 		align-items: center;
 	}
-	header .nav-links .wp-block-navigation__responsive-container-open::after {
+	.nav-links .wp-block-navigation__responsive-container-open::after {
 		content: "Menu";
 		font-family: var(--wp--custom--body--typography--font-family);
 		font-weight: 900;
