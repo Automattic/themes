@@ -368,9 +368,15 @@ is passed all of the block attributes on the block definition in the template. *
 }
 
 .footer-credit {
-	display: flex;
 	font-family: var(--wp--preset--font-family--headings);
 	white-space: pre-wrap;
+}
+
+.footer-credit[class*="wp-container-"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding: 0;
+	column-gap: 0;
 }
 
 .footer-credit > * {
