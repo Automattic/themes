@@ -21,10 +21,6 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'pre-footer',
 			);
 
-			if ( class_exists( 'WP_Block_Type_Registry' ) && \WP_Block_Type_Registry::get_instance()->is_registered( 'jetpack/subscriptions' ) ) {
-				$block_patterns[] = 'pre-footer';
-			}
-
 			foreach ( $block_patterns as $block_pattern ) {
 				register_block_pattern(
 					'skatepark/' . $block_pattern,
