@@ -1,21 +1,40 @@
 header {
-	nav {
-		margin-top: var(--wp--custom--margin--vertical);
-	}
-
-	.wp-block-social-links {
-		margin-top: 16px;
-
-		.wp-social-link:last-child {
-			margin-right: -.25em !important; // Flush the links to the right
+	display: flex; // Apply a box layout
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-right: var(--wp--custom--post-content--padding--right);
+	padding-left: var(--wp--custom--post-content--padding--left);
+	> * { 
+		flex-grow: 1;
+		> * { // Apply a stack layout
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 	}
+}
 
-	.wp-block-site-title {
-		margin-bottom: 20px;
-	}
+@include break-small-only(){
+	header {
+		flex-flow: wrap-reverse; // Reverse the order of the site title and links containers
+		.nav-links {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			border-bottom: 2px solid var(--wp--custom--color--primary);
+			.wp-block-navigation__responsive-container-open { 
+				display: flex;
+				align-items: center;
 
-	.wp-block-site-tagline {
-		margin-top: 20px;
+				&::after {
+					content: "Menu";
+					font-family: var(--wp--custom--body--typography--font-family);
+					font-weight: 900;
+					letter-spacing: 1px;
+					margin-left: 8px;
+					text-transform: uppercase;
+				}
+			}
+		}
 	}
 }
