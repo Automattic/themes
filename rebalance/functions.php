@@ -299,6 +299,7 @@ add_action( 'wp_enqueue_scripts', 'rebalance_scripts' );
  */
 function rebalance_editor_styles() {
 	wp_enqueue_style( 'rebalance-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
+	wp_enqueue_style( 'rebalance-editor-block-additional-style', get_template_directory_uri() . '/blocks.css', 8 );
 	wp_enqueue_style( 'rebalance-fonts', rebalance_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'rebalance_editor_styles' );
