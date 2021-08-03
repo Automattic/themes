@@ -79,14 +79,14 @@ add_color_rule( 'link', '#0087be', array(
 __( 'Links' ) );
 
 add_color_rule( 'fg1', '#0087be', array(
-    array( 'button:not(.menu-toggle),
+    array( 'button,
             input[type="button"],
             input[type="reset"],
             input[type="submit"],
             .button,
             #content #infinite-handle span button,
             .more-link', 'background-color' ),
-    array( 'button:not(.menu-toggle):hover,
+    array( 'button:hover,
             input[type="button"]:hover,
             input[type="reset"]:hover,
             input[type="submit"]:hover,
@@ -116,9 +116,7 @@ add_color_rule( 'extra', '#ffffff', array(
             .main-navigation > div > ul > li.current-menu-item > ul > li a,
             .main-navigation > div > ul > li.current_page_item > ul > li a', 'color', 'link' ),
 
-    array( 'button:not(.menu-toggle),
-            button:not(.menu-toggle):hover,
-            input[type="button"],
+    array( 'input[type="button"],
             input[type="button"]:hover,
             input[type="reset"],
             input[type="reset"]:hover,
