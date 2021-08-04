@@ -1,0 +1,52 @@
+a {
+	text-decoration-thickness: 0.07em;
+	text-underline-offset: 0.46ex;
+}
+
+.wp-block-post-content p a {
+	text-decoration-line: underline;
+	&:hover {
+		text-decoration: none;
+		background-color: var(--wp--custom--color--primary);
+		color: var(--wp--custom--color--background);
+	}
+}
+
+.wp-block-post-comments .comment-body > p > a,
+.wp-block-post-comments .comment-edit-link {
+	text-decoration-line: underline;
+	&:hover {
+		text-decoration-line: none;
+	}
+}
+
+//Exceptions for the general underline rule
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+.wp-block-site-title a,
+.wp-block-post-title a{
+	text-underline-offset: 0.1ex;
+}
+.wp-block-site-title a,
+.wp-block-post-title a,
+.wp-block-query-pagination a,
+.post-meta a {
+	text-decoration-line: none;
+	&:hover {
+		text-decoration-line: underline;
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+a:not(.ab-item):not(.screen-reader-shortcut) {
+	&:active,
+	&:focus {
+		outline: 1px dotted var(--wp--custom--color--primary);
+		outline-offset: 0.1em;
+		text-decoration: none;
+	}
+}
