@@ -86,6 +86,7 @@ add_color_rule( 'fg1', '#0087be', array(
             .button,
             #content #infinite-handle span button,
             .more-link', 'background-color' ),
+    //:not(".components-button") avoids targeting button styles in the Gutenberg editor
     array( 'button:not(".components-button"):hover,
             input[type="button"]:hover,
             input[type="reset"]:hover,
@@ -101,10 +102,10 @@ add_color_rule( 'extra', '#383838', array(
     array( '.widget_recent_comments a,
             .widget_recent_entries a,
             body,
-            button,
             input,
             select,
-            textarea', 'color', 'bg' ),
+            textarea,
+            .menu-toggle', 'color', 'bg' ),
 
     array( '#infinite-footer .blog-info a:hover,
             #infinite-footer .blog-credits a:hover', 'color', 'bg' ),
@@ -122,6 +123,7 @@ add_color_rule( 'extra', '#ffffff', array(
             input[type="reset"]:hover,
             input[type="submit"],
             input[type="submit"]:hover,
+            button,
             .button,
             .button:hover,
             #content #infinite-handle span button,
