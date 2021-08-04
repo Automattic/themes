@@ -86,7 +86,7 @@ add_color_rule( 'fg1', '#0087be', array(
             .button,
             #content #infinite-handle span button,
             .more-link', 'background-color' ),
-    array( 'button:hover,
+    array( 'button:not(".components-button"):hover,
             input[type="button"]:hover,
             input[type="reset"]:hover,
             input[type="submit"]:hover,
