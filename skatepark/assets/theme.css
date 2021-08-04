@@ -42,4 +42,152 @@
 	color: var(--wp--preset--color--background);
 }
 
+.wp-block-post-comments {
+	line-height: var(--wp--custom--body--typography--line-height);
+}
+
+.wp-block-post-comments .reply a {
+	--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+	border-style: var(--wp--custom--button--border--style);
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--padding--left);
+	padding-right: var(--wp--custom--button--spacing--padding--right);
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--color--background);
+	--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
+}
+
+.wp-block-post-comments .reply a, .wp-block-post-comments .reply a:hover, .wp-block-post-comments .reply a:focus, .wp-block-post-comments .reply a:active {
+	line-height: 1;
+}
+
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+}
+
+.wp-block-post-comments form {
+	display: grid;
+	-moz-column-gap: 1em;
+	     column-gap: 1em;
+	grid-template-rows: auto;
+	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+}
+
+.wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments form textarea {
+	border: 3px solid var(--wp--custom--color--primary);
+	background: var(--wp--custom--color--background);
+	font-size: var(--wp--preset--font-size--normal);
+	width: 100%;
+}
+
+.wp-block-post-comments form label:not([for=wp-comment-cookies-consent]) {
+	text-transform: uppercase;
+	font-size: var(--wp--preset--font-size--tiny);
+	font-weight: 900;
+}
+
+.wp-block-post-comments form p {
+	margin-top: 0;
+}
+
+.wp-block-post-comments form .comment-notes {
+	grid-area: notes;
+}
+
+.wp-block-post-comments form .comment-form-author {
+	grid-area: author;
+}
+
+.wp-block-post-comments form .comment-form-email {
+	grid-area: email;
+}
+
+.wp-block-post-comments form .comment-form-url {
+	grid-area: url;
+}
+
+.wp-block-post-comments form .comment-form-comment {
+	grid-area: comment;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent {
+	grid-area: cookies-consent;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + label {
+	margin-left: 0;
+	padding-left: 3em;
+	position: relative;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::before,
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::after {
+	box-sizing: border-box;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::before {
+	content: "";
+	position: absolute;
+	top: 0.2em;
+	left: 0;
+	width: 30px;
+	height: 30px;
+	border: 3px solid var(--wp--custom--color--primary);
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"]:checked + ::after {
+	content: "\2715";
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	top: 4px;
+	left: 3px;
+	font-size: 14px;
+}
+
+.wp-block-post-comments form .form-submit {
+	grid-area: form-submit;
+}
+
+.wp-block-post-comments .reply {
+	margin-bottom: 30px;
+}
+
+.wp-block-post-comments .commentmetadata {
+	margin-bottom: 20px;
+}
+
+.wp-block-post-comments .commentlist {
+	margin-bottom: 60px;
+}
+
+.wp-block-post-comments .comment-body > p > a,
+.wp-block-post-comments .comment-edit-link {
+	text-decoration: underline;
+}
+
+.wp-block-post-comments .comment-body > p > a:hover,
+.wp-block-post-comments .comment-edit-link:hover {
+	text-decoration: none;
+}
+
 /*# sourceMappingURL=theme.css.map */
