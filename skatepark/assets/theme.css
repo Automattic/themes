@@ -113,14 +113,6 @@
 	line-height: var(--wp--custom--body--typography--line-height);
 }
 
-.wp-block-post-comments .comment-author {
-	margin-bottom: var(--wp--custom--margin--baseline);
-}
-
-.wp-block-post-comments .comment-author cite {
-	font-weight: bold;
-}
-
 .wp-block-post-comments .reply {
 	margin-bottom: var(--wp--custom--margin--vertical);
 }
@@ -153,7 +145,7 @@
 	-moz-column-gap: 1em;
 	     column-gap: 1em;
 	grid-template-rows: auto;
-	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+	grid-template-areas: "notes notes" "comment comment" "author email" "url url" "cookies-consent cookies-consent" "form-submit form-submit";
 }
 
 .wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
@@ -173,6 +165,7 @@
 
 .wp-block-post-comments form p {
 	margin-top: 0;
+	margin-bottom: 30px;
 }
 
 .wp-block-post-comments form .comment-notes {
@@ -248,12 +241,24 @@
 	grid-area: form-submit;
 }
 
+.wp-block-post-comments .comment-author {
+	margin-bottom: var(--wp--custom--margin--baseline);
+}
+
+.wp-block-post-comments .comment-author cite {
+	font-weight: bold;
+}
+
 .wp-block-post-comments .commentmetadata {
-	margin-bottom: 20px;
+	margin-bottom: 36px;
 }
 
 .wp-block-post-comments .commentlist {
 	margin-bottom: 60px;
+}
+
+.wp-block-post-comments .commentlist .comment p {
+	margin-bottom: var(--wp--custom--margin--vertical);
 }
 
 .wp-block-post-comments .comment-body > p > a,
