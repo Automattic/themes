@@ -4,26 +4,38 @@
 
 	line-height: var(--wp--custom--body--typography--line-height);
 
-	.reply a {
-		--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
-		@include button-border-styles;
-		--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
-		--wp--custom--button--color--background: var(--wp--custom--button--color--background);
-		--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
+	.comment-author {
+		margin-bottom: var(--wp--custom--margin--baseline);
 
-		& ,
-		&:hover,
-		&:focus,
-		&:active {
-			line-height: 1;
+		cite {
+			font-weight: bold;
 		}
-		&:not(.has-background):not(.has-text-color) {
+	}
+
+	.reply {
+		margin-bottom: var(--wp--custom--margin--vertical);
+
+		a {
+			--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+			@include button-border-styles;
+			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+			--wp--custom--button--color--background: var(--wp--custom--button--color--background);
+			--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
+
+			& ,
 			&:hover,
 			&:focus,
-			&.has-focus {
-				--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
-				--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
-				--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+			&:active {
+				line-height: 1;
+			}
+			&:not(.has-background):not(.has-text-color) {
+				&:hover,
+				&:focus,
+				&.has-focus {
+					--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+					--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
+					--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+				}
 			}
 		}
 	}
@@ -49,9 +61,10 @@
 		}
 
 		label:not([for=wp-comment-cookies-consent]) {
-			text-transform: uppercase;
 			font-size: var(--wp--preset--font-size--tiny);
 			font-weight: 900;
+			margin-bottom: var(--wp--custom--margin--baseline);
+			text-transform: uppercase;
 		}
 
 		p {
@@ -117,10 +130,6 @@
 		.form-submit {
 			grid-area: form-submit;
 		}
-	}
-
-	.reply {
-		margin-bottom: 30px;
 	}
 
 	.commentmetadata {
