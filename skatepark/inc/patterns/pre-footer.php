@@ -31,14 +31,12 @@ return array(
 		<h3 class="has-tiny-font-size"><strong>' . esc_html__( 'More info', 'skatepark' ) . '</strong></h3>
 		<!-- /wp:heading -->
 		
-		<!-- wp:navigation {"orientation":"vertical","__unstableLocation":"secondary","style":{"typography":{"textDecoration":"underline"}},"fontSize":"small"} /--></div>
+		<!-- wp:navigation {"orientation":"vertical","__unstableLocation":"primary","style":{"typography":{"textDecoration":"underline"}},"fontSize":"small"} /--></div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
 		<div class="wp-block-column"><!-- wp:heading {"level":3,"fontSize":"tiny"} -->
-		<h3 class="has-tiny-font-size"><strong>' . esc_html__( 'Search', 'skatepark' ) . '</strong></h3><!-- /wp:heading --><!-- wp:heading {"level":3,"fontSize":"tiny"} -->
-		<h3 class="has-tiny-font-size"><strong>Search</strong></h3>
-		<!-- /wp:heading --></div>
+		<h3 class="has-tiny-font-size"><strong>' . esc_html__( 'Search', 'skatepark' ) . '</strong></h3><!-- /wp:heading --><!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search","buttonPosition":"button-inside"} /--></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns --></div>
 		<!-- /wp:group -->',

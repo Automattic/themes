@@ -22,11 +22,10 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 			)
 		);
 
-		// This theme uses wp_nav_menu() in two locations.
+		//Primary navigation is used on the header and the footer pattern
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary Navigation', 'skatepark' ),
-				'secondary' => __( 'Secondary Navigation', 'skatepark' ),
+				'primary' => __( 'Primary Navigation', 'skatepark' )
 			)
 		);
 
