@@ -36,7 +36,7 @@ return array(
 
 		<!-- wp:column -->
 		<div class="wp-block-column"><!-- wp:heading {"level":3,"fontSize":"tiny"} -->
-		<h3 class="has-tiny-font-size"><strong>' . esc_html__( 'Search', 'skatepark' ) . '</strong></h3><!-- /wp:heading --><!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search","buttonPosition":"button-inside"} /--></div>
+		<h3 class="has-tiny-font-size"><strong>' . esc_html__( 'Search', 'skatepark' ) . '</strong></h3><!-- /wp:heading --><!-- wp:search {"label":"' . esc_html__( 'Search', 'skatepark' ) . '","showLabel":false,"buttonText":"' . esc_html__( 'Search', 'skatepark' ) . '","buttonPosition":"button-inside"} /--></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns --></div>
 		<!-- /wp:group -->',
