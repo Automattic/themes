@@ -148,6 +148,7 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		wp_update_post( $user_theme_json_post );
 		delete_transient( 'global_styles' );
+		delete_transient( 'gutenberg_global_styles' );
 	}
 
 	function check_if_colors_are_default() {
