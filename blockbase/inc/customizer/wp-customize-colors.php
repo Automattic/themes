@@ -133,6 +133,11 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
+		// Set meta settings.
+		$user_theme_json_post_content->version                     = 1;
+		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
+
+		// Set palette settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
 			array( 'settings', 'color', 'palette' ),

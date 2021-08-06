@@ -79,14 +79,15 @@ add_color_rule( 'link', '#0087be', array(
 __( 'Links' ) );
 
 add_color_rule( 'fg1', '#0087be', array(
-    array( 'button:not(.menu-toggle),
+    array( 'button,
             input[type="button"],
             input[type="reset"],
             input[type="submit"],
             .button,
             #content #infinite-handle span button,
             .more-link', 'background-color' ),
-    array( 'button:not(.menu-toggle):hover,
+    //:not(".components-button") avoids targeting button styles in the Gutenberg editor
+    array( 'button:not(".components-button"):hover,
             input[type="button"]:hover,
             input[type="reset"]:hover,
             input[type="submit"]:hover,
@@ -101,10 +102,10 @@ add_color_rule( 'extra', '#383838', array(
     array( '.widget_recent_comments a,
             .widget_recent_entries a,
             body,
-            button,
             input,
             select,
-            textarea', 'color', 'bg' ),
+            textarea,
+            .menu-toggle', 'color', 'bg' ),
 
     array( '#infinite-footer .blog-info a:hover,
             #infinite-footer .blog-credits a:hover', 'color', 'bg' ),
@@ -116,14 +117,13 @@ add_color_rule( 'extra', '#ffffff', array(
             .main-navigation > div > ul > li.current-menu-item > ul > li a,
             .main-navigation > div > ul > li.current_page_item > ul > li a', 'color', 'link' ),
 
-    array( 'button:not(.menu-toggle),
-            button:not(.menu-toggle):hover,
-            input[type="button"],
+    array( 'input[type="button"],
             input[type="button"]:hover,
             input[type="reset"],
             input[type="reset"]:hover,
             input[type="submit"],
             input[type="submit"]:hover,
+            button,
             .button,
             .button:hover,
             #content #infinite-handle span button,
