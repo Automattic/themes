@@ -12,8 +12,12 @@
 		@include button-hover-styles;
 	}
 
-	.reply a {
-		display: inline-block;
+	.reply {
+		margin-block: var(--wp--custom--margin--vertical);
+		
+		a {
+			display: inline-block;
+		}
 	}
 
 	.comment-form {
@@ -42,6 +46,16 @@
 				line-height: var(--wp--custom--post-comment--typography--line-height);
 			}
 		}
+	}
+
+	.commentmetadata {
+		margin-left: 0;
+	}
+
+	.comment-awaiting-moderation {
+		display: inline-block;
+		font-size: var(--wp--preset--font-size--small);
+		margin-bottom: var(--wp--custom--margin--baseline);
 	}
 
 }
