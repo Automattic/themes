@@ -460,22 +460,47 @@ p.has-background {
 	display: inline-block;
 }
 
-.wp-block-post-comments .comment-form input[type="text"] {
+.wp-block-post-comments form input[type="text"] {
 	width: 100%;
 }
 
-.wp-block-post-comments .comment-form input:not([type=submit]):not([type=checkbox]),
-.wp-block-post-comments .comment-form textarea {
+.wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments form textarea {
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] {
+	margin-left: 0;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::before,
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::after {
+	box-sizing: border-box;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] + ::before {
+	content: var(--wp--custom--form--checkbox--unchecked--content);
+	position: absolute;
+	top: var(--wp--custom--form--checkbox--unchecked--position--top);
+	left: var(--wp--custom--form--checkbox--unchecked--position--left);
+	width: var(--wp--custom--form--checkbox--unchecked--sizing--width);
+	height: var(--wp--custom--form--checkbox--unchecked--sizing--height);
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"]:checked + ::after {
+	content: var(--wp--custom--form--checkbox--checked--content);
+	position: absolute;
+	top: var(--wp--custom--form--checkbox--checked--position--top);
+	left: var(--wp--custom--form--checkbox--checked--position--left);
+	width: var(--wp--custom--form--checkbox--checked--sizing--width);
+	height: var(--wp--custom--form--checkbox--checked--sizing--height);
+	font-size: var(--wp--custom--form--checkbox--checked--font-size);
 }
 
 .wp-block-post-comments .comment-reply-title small {
 	float: right;
 	font-size: 14px;
-}
-
-.wp-block-post-comments .comment-form-cookies-consent input[type="checkbox"] {
-	margin-left: 0;
 }
 
 .wp-block-post-comments .commentlist .comment p {
