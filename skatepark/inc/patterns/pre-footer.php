@@ -14,7 +14,7 @@ return array(
 		<div class="wp-block-column"><!-- wp:site-title {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"large"} /-->
 		
 		<!-- wp:paragraph {"fontSize":"small"} -->
-		<p class="has-small-font-size">' . esc_html__( 'Skate ipsum dolor sit amet, poseur nollie casper pop shove-it. Kickturn noseblunt tailslide.', 'skatepark' ) . '</p>
+		<p class="has-small-font-size">' . esc_html__( "Skatepark's coaches will work with you to develop and improve your skating abilities.", 'skatepark' ) . '</p>
 		<!-- /wp:paragraph -->
 		
 		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--foreground)","className":"is-style-logos-only"} -->
