@@ -150,6 +150,12 @@ class GlobalStylesFontsCustomizer {
 			'name'       => 'Raleway',
 			'google'     => 'family=Raleway:ital,wght@0,100..900;1,100..900',
 		),
+		'red-hat-display'=> array(
+			'fontFamily' => '"Red Hat Display", sans-serif',
+			'slug'       => 'red-hat-display',
+			'name'       => 'Red Hat Display',
+			'google'     => 'family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900',
+		),
 		'roboto'            => array(
 			'fontFamily' => '"Roboto", sans-serif',
 			'slug'       => 'roboto',
