@@ -179,6 +179,7 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+input.wp-block-search__input,
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -204,6 +205,7 @@ textarea {
 	padding: var(--wp--custom--form--padding);
 }
 
+input.wp-block-search__input:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -609,17 +611,22 @@ p.has-background {
 	font-style: var(--wp--custom--quote--citation--typography--font-style);
 }
 
+.wp-block-search {
+	margin-top: var(--wp--custom--margin--baseline);
+}
+
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
-	padding: var(--wp--custom--form--padding);
+	padding: var(--wp--custom--form--border--width);
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 	border-radius: var(--wp--custom--form--border--radius);
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
-	padding: 0;
+	padding: 0 var(--wp--custom--form--padding);
 }
 
 .wp-block-search .wp-block-search__input {
+	line-height: var(--wp--custom--button--typography--line-height);
 	padding: var(--wp--custom--form--padding);
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 }

@@ -3,7 +3,6 @@
 
 if ( ! function_exists( 'skatepark_support' ) ) :
 	function skatepark_support() {
-
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
@@ -22,10 +21,10 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 			)
 		);
 
-		// This theme uses wp_nav_menu() in two locations.
+		//Primary navigation is used on the header and the footer pattern
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary Navigation', 'skatepark' ),
+				'primary' => __( 'Primary Navigation', 'skatepark' )
 			)
 		);
 
@@ -42,3 +41,8 @@ function skatepark_scripts() {
 	wp_enqueue_style( 'skatepark-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'skatepark_scripts' );
+
+/**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/inc/block-patterns.php';
