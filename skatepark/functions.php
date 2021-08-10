@@ -3,7 +3,7 @@
 
 if ( ! function_exists( 'skatepark_support' ) ) :
 	function skatepark_support() {
-
+		var_dump('skatepark_support');
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
