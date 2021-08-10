@@ -19,6 +19,7 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
 				'pre-footer',
+				'testimonial'
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {

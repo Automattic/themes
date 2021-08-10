@@ -177,6 +177,42 @@
 	--wp--custom--button--spacing--padding--bottom: 0.5em;
 }
 
+.testimonial .wp-block-quote {
+	border: 0;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: calc( var(--wp--custom--margin--horizontal) * 1.6);
+	margin: 0;
+	padding-left: 0;
+}
+
+@media (max-width: 599px) {
+	.testimonial .wp-block-quote {
+		display: block;
+	}
+}
+
+.testimonial .wp-block-quote > * {
+	margin-right: 0.65em;
+}
+
+.testimonial .wp-block-quote cite {
+	box-shadow: inset 0px 3px 0px 0px #000000;
+	flex: 1 0 0;
+	font-size: var(--wp--preset--font-size--normal);
+	font-style: normal;
+	font-weight: 500;
+	padding-top: calc( var(--wp--custom--margin--baseline) * 1.35);
+	text-align: right;
+}
+
+.testimonial .wp-block-quote p {
+	flex: 0 0 66.66%;
+	font-size: calc( var(--wp--preset--font-size--huge) * 1.34);
+	font-weight: bold;
+	line-height: 115%;
+}
+
 a {
 	text-decoration-thickness: 0.07em;
 	text-underline-offset: 0.46ex;
