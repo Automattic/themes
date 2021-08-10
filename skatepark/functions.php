@@ -39,14 +39,6 @@ endif;
 function skatepark_scripts() {
 	// Enqueue front-end styles.
 	wp_enqueue_style( 'skatepark-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
-
-	// Allow the responsive menu label to be translated.
-	$menu_label_css = '
-		@media (max-width: 599px) { 
-		.nav-links .wp-block-navigation__responsive-container-open::after {
-			content: "' . __( 'Menu', 'skatepark'). '";
-		}';
-	wp_add_inline_style( 'skatepark-styles', $menu_label_css );
 }
 add_action( 'wp_enqueue_scripts', 'skatepark_scripts' );
 
