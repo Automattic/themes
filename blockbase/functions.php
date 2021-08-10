@@ -1,7 +1,6 @@
 <?php
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
-		var_dump( 'blockbase support' );
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
 
