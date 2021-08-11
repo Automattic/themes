@@ -235,7 +235,7 @@ class GlobalStylesFontsCustomizer {
 		$css  = 'body{';
 		$css .= 'font-family:' . $this->font_settings['body'] . ';';
 		$css .= '}';
-		$css .= 'h1,h2,h3,h4,h5,h6,.wp-block-post-title{';
+		$css .= 'h1,h2,h3,h4,h5,h6,.wp-block-post-title,.wp-block-pullquote{';
 		$css .= 'font-family:' . $this->font_settings['heading'] . ';';
 		$css .= '}';
 		wp_add_inline_style( 'global-styles-fonts-customizations', $css );
@@ -486,6 +486,12 @@ class GlobalStylesFontsCustomizer {
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
 			array( 'styles', 'blocks', 'core/post-title', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'blocks', 'core/pullquote', 'typography', 'fontFamily' ),
 			$heading_font_family_variable
 		);
 
