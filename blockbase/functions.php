@@ -85,7 +85,7 @@ function blockbase_fonts_url() {
 	$font_families = [];
 	if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
 		foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
-			if ( $font['google'] ) {
+			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
@@ -93,7 +93,7 @@ function blockbase_fonts_url() {
 
 	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
 		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
-			if ( $font['google'] ) {
+			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
