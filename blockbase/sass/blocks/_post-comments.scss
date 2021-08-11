@@ -1,4 +1,5 @@
 @import 'button-mixins';
+@import '../base/mixins';
 
 .wp-block-post-comments {
 
@@ -32,8 +33,11 @@
 
 		.comment-form-cookies-consent {
 			input[type="checkbox"] {
+				@include hide-accesibly;
 				margin-left: 0;
 				& + label {
+					margin-left: 0;
+					padding-left: 3em;
 					position: relative;
 				}
 				& + label::before,
