@@ -232,9 +232,11 @@ class GlobalStylesFontsCustomizer {
 
 	function create_customization_style_element( $wp_customize ) {
 		wp_enqueue_style( 'global-styles-fonts-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
-		$css  = ':root,body{';
-		$css .= '--wp--custom--body--typography--font-family:' . $this->font_settings['body'] . ';';
-		$css .= '--wp--custom--heading--typography--font-family: ' . $this->font_settings['heading'] . '}';
+		$css  = 'body{';
+		$css .= 'font-family:' . $this->font_settings['body'] . ';';
+		$css .= '}';
+		$css .= 'h1,h2,h3,h4,h5,h6,.wp-block-post-title{';
+		$css .= 'font-family:' . $this->font_settings['heading'] . ';';
 		$css .= '}';
 		wp_add_inline_style( 'global-styles-fonts-customizations', $css );
 	}
@@ -490,10 +492,15 @@ class GlobalStylesFontsCustomizer {
 
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
-			unset( $user_theme_json_post_content->settings->custom->body->typography->fontFamily );
-			unset( $user_theme_json_post_content->settings->custom->heading->typography->fontFamily );
-			unset( $user_theme_json_post_content->settings->custom->fontsToLoadFromGoogle );
+			unset( $user_theme_json_post_content->styles->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elemenets->h1->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elemenets->h2->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elemenets->h3->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elemenets->h4->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elemenets->h5->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elemenets->h6->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamilies );
 		}
 
 		// Update the theme.json with the new settings.

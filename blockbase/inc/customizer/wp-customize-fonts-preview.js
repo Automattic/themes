@@ -18,7 +18,7 @@ function blockBaseUpdateFontPreview() {
 	innerHTML += `font-family:${ fontSettings[ 'body' ] };`;
 	innerHTML += '}';
 	// Build the new heading CSS
-	innerHTML += 'h1,h2,h3,h4,h5,h6{';
+	innerHTML += 'h1,h2,h3,h4,h5,h6,.wp-block-post-title{';
 	innerHTML += `font-family:${ fontSettings[ 'heading' ] };`;
 	innerHTML += '}';
 
