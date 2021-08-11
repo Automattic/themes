@@ -192,18 +192,22 @@
 	}
 }
 
-.testimonial .wp-block-quote > * {
-	margin-right: 0.65em;
-}
-
 .testimonial .wp-block-quote cite {
 	box-shadow: inset 0px 3px 0px 0px #000000;
+	display: inline-block;
 	flex: 1 0 0;
 	font-size: var(--wp--preset--font-size--normal);
 	font-style: normal;
 	font-weight: 500;
+	margin-right: 0.65em;
 	padding-top: calc( var(--wp--custom--margin--baseline) * 1.35);
 	text-align: right;
+}
+
+@media (max-width: 599px) {
+	.testimonial .wp-block-quote cite {
+		margin-top: var(--wp--custom--margin--baseline);
+	}
 }
 
 .testimonial .wp-block-quote p, .testimonial .wp-block-quote div.block-editor-rich-text__editable {
@@ -211,6 +215,7 @@
 	font-size: calc( var(--wp--preset--font-size--huge) * 1.34);
 	font-weight: bold;
 	line-height: 115%;
+	margin-bottom: 0;
 }
 
 a {
