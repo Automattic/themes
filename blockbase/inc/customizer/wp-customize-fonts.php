@@ -272,11 +272,11 @@ class GlobalStylesFontsCustomizer {
 		$merged_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 		$theme_json  = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
 
-		$body_font_default    = $this->get_font_family( 'body', $theme_json );
-		$heading_font_default = $this->get_font_family( 'heading', $theme_json );
+		$body_font_default    = $this->get_font_family( array( 'styles', 'typography', 'fontFamily' ), $theme_json );
+		$heading_font_default = $this->get_font_family( array( 'styles', 'elements', 'h1', 'typography', 'fontFamily' ), $theme_json );
 
-		$body_font_selected    = $this->get_font_family( 'body', $merged_json );
-		$heading_font_selected = $this->get_font_family( 'heading', $merged_json );
+		$body_font_selected    = $this->get_font_family( array( 'styles', 'typography', 'fontFamily' ), $merged_json );
+		$heading_font_selected = $this->get_font_family( array( 'styles', 'elements', 'h1', 'typography', 'fontFamily' ), $merged_json );
 
 		$this->font_settings = array(
 			'body'    => $body_font_selected['fontFamily'],
@@ -313,8 +313,8 @@ class GlobalStylesFontsCustomizer {
 		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'] );
 	}
 
-	function get_font_family( $location, $configuration ) {
-		$variable = $configuration['settings']['custom'][ $location ]['typography']['fontFamily'];
+	function get_font_family( $array, $configuration ) {
+		$variable = get_settings_array( $array, $configuration );
 		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
 		if ( ! isset( $this->fonts[ $slug ] ) ) {
 			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $location, $configuration );
@@ -432,25 +432,60 @@ class GlobalStylesFontsCustomizer {
 			$font_families
 		);
 
-		// Set the custom body settings.
+		// Set the body typography settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
-			array( 'settings', 'custom', 'body', 'typography', 'fontFamily' ),
+			array( 'styles', 'typography', 'fontFamily' ),
 			$body_font_family_variable
 		);
 
-		// Set the custom heading settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
-			array( 'settings', 'custom', 'heading', 'typography', 'fontFamily' ),
+			array( 'styles', 'blocks', 'core/button', 'typography', 'fontFamily' ),
 			$heading_font_family_variable
 		);
 
-		// Set the custom google fonts settings.
+		// Set the heading typography settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
-			array( 'settings', 'custom', 'fontsToLoadFromGoogle' ),
-			$google_font_array
+			array( 'styles', 'elements', 'h1', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'elements', 'h2', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'elements', 'h3', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'elements', 'h4', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'elements', 'h5', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'elements', 'h6', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
+		);
+
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'styles', 'blocks', 'core/post-title', 'typography', 'fontFamily' ),
+			$heading_font_family_variable
 		);
 
 		//If the typeface choices === the default then we remove it instead

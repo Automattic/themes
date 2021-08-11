@@ -13,10 +13,13 @@ if ( fontSettings ) {
 }
 
 function blockBaseUpdateFontPreview() {
-	// Build the new CSS variables.
-	let innerHTML = ':root,body{';
-	innerHTML += `--wp--custom--body--typography--font-family:${ fontSettings[ 'body' ] };`;
-	innerHTML += `--wp--custom--heading--typography--font-family:${ fontSettings[ 'heading' ] };`;
+	// Build the new body CSS
+	let innerHTML = 'body{';
+	innerHTML += `font-family:${ fontSettings[ 'body' ] };`;
+	innerHTML += '}';
+	// Build the new heading CSS
+	innerHTML += 'h1,h2,h3,h4,h5,h6{';
+	innerHTML += `font-family:${ fontSettings[ 'heading' ] };`;
 	innerHTML += '}';
 
 	// Inject them into the body.
