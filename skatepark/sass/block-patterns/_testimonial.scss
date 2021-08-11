@@ -8,7 +8,8 @@
 		padding-left: 0;
 
 		@include break-small-only() {
-			display: block;
+			flex-direction: column;
+			gap: calc( var(--wp--custom--margin--vertical) * 0.75);
 		}
 
 		cite {
@@ -18,12 +19,11 @@
 			font-size: var(--wp--preset--font-size--normal);
 			font-style: normal;
 			font-weight: 500;
-			margin-right: 0.65em;
 			padding-top: calc( var(--wp--custom--margin--baseline) * 1.35);
 			text-align: right;
 
 			@include break-small-only() {
-				margin-top: var(--wp--custom--margin--baseline);
+				text-align: left;
 			}
 		}
 
