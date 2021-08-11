@@ -240,4 +240,36 @@ a:not(.ab-item):not(.screen-reader-shortcut):focus {
 	text-decoration: none;
 }
 
+header.wp-block-template-part > .wp-block-group {
+	align-items: flex-end;
+	justify-content: space-between;
+	flex-wrap: wrap-reverse;
+}
+
+header.wp-block-template-part > .wp-block-group > * {
+	flex-grow: 1;
+}
+
+header.wp-block-template-part > .wp-block-group > * > * {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only {
+	margin-right: calc( -1 * ( 8px + 0.25em ));
+}
+
+header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only > .wp-social-link {
+	padding: 0;
+}
+
+@media (max-width: 599px) {
+	.nav-links {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		border-bottom: 2px solid var(--wp--custom--color--primary);
+	}
+}
+
 /*# sourceMappingURL=theme.css.map */
