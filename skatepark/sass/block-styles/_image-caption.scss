@@ -1,18 +1,25 @@
 .is-style-skatepark-aside-caption {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+
+	img {
+		justify-self: center;
+	}
+
 	figcaption {
-		display: flex;
-		justify-content: flex-end;
-		margin: 20px auto 0;
-		padding-left: var(--wp--custom--post-content--padding--left);
-		padding-right: var(--wp--custom--post-content--padding--right);
-		max-width: calc( var(--wp--custom--layout--wide-size) + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right));
-		strong {
-			padding-top: 20px;
-			max-width: 455px;
-			text-align: left;
-			border-top: 3px solid var(--wp--preset--color--primary);
-			font-size: var(--wp--preset--font-size--small);
-			font-weight: normal;
-		}
+		align-self: flex-end;
+		border-top: 3px solid var(--wp--preset--color--primary);
+		font-size: var(--wp--preset--font-size--small);
+		margin-bottom: 0;
+		margin-top: 20px;
+		padding-top: 20px;
+		max-width: 455px;
+		text-align: left;
+	}
+
+	&.alignfull figcaption {
+		margin-left: var(--wp--custom--post-content--padding--left);
+		margin-right: var(--wp--custom--post-content--padding--right);
 	}
 }
