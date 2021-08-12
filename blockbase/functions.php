@@ -1,7 +1,6 @@
 <?php
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
-
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
 
@@ -39,7 +38,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		);
 
 	}
-	add_action( 'after_setup_theme', 'blockbase_support' );
+	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;
 
 /**
@@ -79,16 +78,27 @@ function blockbase_fonts_url() {
 	}
 
 	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
-	if ( empty( $theme_data ) || empty( $theme_data['custom'] ) ) {
+	if ( empty( $theme_data ) || empty( $theme_data['typography'] ) || empty( $theme_data['typography']['fontFamilies'] ) ) {
 		return '';
 	}
 
-	$custom_data = $theme_data['custom'];
-	if ( ! array_key_exists( 'fontsToLoadFromGoogle', $custom_data ) ) {
-		return '';
+	$font_families = [];
+	if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+			if ( ! empty( $font['google'] ) ) {
+				$font_families[] = $font['google'];
+			}
+		}
 	}
 
-	$font_families   = $theme_data['custom']['fontsToLoadFromGoogle'];
+	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+			if ( ! empty( $font['google'] ) ) {
+				$font_families[] = $font['google'];
+			}
+		}
+	}
+
 	$font_families[] = 'display=swap';
 
 	// Make a single request for the theme fonts.
