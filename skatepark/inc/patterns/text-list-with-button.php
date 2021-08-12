@@ -11,8 +11,8 @@ return array(
 	'title'      => __( 'Text List with Button', 'skatepark' ),
 	'categories' => array( 'skatepark' ),
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
-		<div class="wp-block-columns alignwide"><!-- wp:column {"width":"75vw"} -->
-		<div class="wp-block-column" style="flex-basis:75vw"><!-- wp:heading {"level":4,"className":"is-style-skatepark-heading-border"} -->
+		<div class="wp-block-columns alignwide"><!-- wp:column {"width":"75%"} -->
+		<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"level":4,"className":"is-style-skatepark-heading-border"} -->
 		<h4 class="is-style-skatepark-heading-border">' . esc_html__( 'Visiting Coaches', 'skatepark' ) . '</h4>
 		<!-- /wp:heading -->
 		<!-- wp:heading --><h2>' . esc_html__( 'Rodney Mullen. Paul Rodriguez. Bucky Lasek. Bob Burnquist. Tony Hawk. Ryan Sheckler. Eric Koston. Bam Margera. Chris Cole. Andrew Reynolds.', 'skatepark' ) . '</h2>
@@ -23,8 +23,8 @@ return array(
 		<!-- /wp:button --></div>
 		<!-- /wp:buttons --></div>
 		<!-- /wp:column -->
-		<!-- wp:column {"width":"25vw"} -->
-		<div class="wp-block-column" style="flex-basis:25vw"></div>
+		<!-- wp:column {"width":"25%"} -->
+		<div class="wp-block-column" style="flex-basis:25%"></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns -->'
 );
