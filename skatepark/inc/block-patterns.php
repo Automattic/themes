@@ -21,6 +21,7 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'pre-footer',
 				'text-list-with-button',
 				'full-width-image-with-aside-caption',
+				'two-columns-of-text',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {

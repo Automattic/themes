@@ -30,10 +30,23 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 					'name'         => 'skatepark-aside-caption',
 					'label'        => __( 'Aside caption', 'skatepark' ),
 					'style_handle' => 'skatepark-aside-caption',
+					)
+				);
+	
+			register_block_style(
+				'core/paragraph',
+				array(
+					'name'         => 'indented-paragraph',
+					'label'        => __( 'Indented paragraph', 'skatepark' ),
+					'style_handle' => 'indented-paragraph',
 				)
 			);
 		}
 	}
 endif;
 
+<<<<<<< HEAD
 add_action( 'after_setup_theme', 'skatepark_register_block_styles' );
+=======
+add_action( 'after_setup_theme', 'skatepark_register_block_styles' );
+>>>>>>> d5bb84db (two columns pattern and indented paragraph block style)
