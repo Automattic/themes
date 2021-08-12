@@ -1,37 +1,35 @@
 @import "../../../blockbase/sass/blocks/button-mixins";
 
 .wp-block-post-comments {
+	.reply {
+		margin-bottom: 30px;
 
-	line-height: var(--wp--custom--body--typography--line-height);
+		a {
+			--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+			@include button-border-styles;
+			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+			--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
+			--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
 
-	.reply a {
-		--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
-		@include button-border-styles;
-		--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
-		--wp--custom--button--color--background: var(--wp--custom--button--hover--color--background);
-		--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
-
-		& ,
-		&:hover,
-		&:focus,
-		&:active {
-			line-height: 1;
-		}
-		&:not(.has-background):not(.has-text-color) {
+			& ,
 			&:hover,
 			&:focus,
-			&.has-focus {
-				--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
-				--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
-				--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+			&:active {
+				line-height: 1;
+			}
+			&:not(.has-background):not(.has-text-color) {
+				&:hover,
+				&:focus,
+				&.has-focus {
+					--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+					--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
+					--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+				}
 			}
 		}
 	}
 
 	form {
-		display: grid;
-		column-gap: 1em;
-		grid-template-rows: auto;
 		grid-template-areas:
 			"notes notes"
 			"author author"
@@ -47,42 +45,6 @@
 			font-size: var(--wp--preset--font-size--normal);
 			width: 100%;
 		}
-
-		p {
-			margin-top: 0;
-		}
-
-		.comment-notes {
-			grid-area: notes;
-		}
-
-		.comment-form-author {
-			grid-area: author;
-		}
-
-		.comment-form-email {
-			grid-area: email;
-		}
-
-		.comment-form-url {
-			grid-area: url;
-		}
-
-		.comment-form-comment {
-			grid-area: comment;
-		}
-
-		.comment-form-cookies-consent {
-			grid-area: cookies-consent;
-		}
-
-		.form-submit {
-			grid-area: form-submit;
-		}
-	}
-
-	.reply {
-		margin-bottom: 30px;
 	}
 
 	.commentmetadata {
