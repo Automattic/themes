@@ -112,6 +112,100 @@
 	background-color: var(--wp--custom--button--color--text);
 }
 
+.wp-block-post-comments .reply a {
+	--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+	border-style: var(--wp--custom--button--border--style);
+	border-width: var(--wp--custom--button--border--width);
+	padding-top: var(--wp--custom--button--spacing--padding--top);
+	padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+	padding-left: var(--wp--custom--button--spacing--padding--left);
+	padding-right: var(--wp--custom--button--spacing--padding--right);
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
+	--wp--custom--button--color--background: var(--wp--custom--button--color--background);
+	--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
+}
+
+.wp-block-post-comments .reply a, .wp-block-post-comments .reply a:hover, .wp-block-post-comments .reply a:focus, .wp-block-post-comments .reply a:active {
+	line-height: 1;
+}
+
+.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
+	--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
+	--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
+	--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
+}
+
+.wp-block-post-comments form {
+	-moz-column-gap: 1.2em;
+	     column-gap: 1.2em;
+	grid-template-areas: "notes notes" "comment comment" "author email" "url url" "cookies-consent cookies-consent" "form-submit form-submit";
+}
+
+.wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments form textarea {
+	font-size: var(--wp--preset--font-size--normal);
+	width: 100%;
+}
+
+.wp-block-post-comments form label:not([for=wp-comment-cookies-consent]) {
+	font-size: var(--wp--custom--form--label--typography--font-size);
+	font-weight: var(--wp--custom--form--label--typography--font-weight);
+	letter-spacing: var(--wp--custom--form--label--typography--letter-spacing);
+	margin-bottom: var(--wp--custom--form--label--spacing--margin--bottom);
+	text-transform: var(--wp--custom--form--label--typography--text-transform);
+}
+
+.wp-block-post-comments form p {
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+.wp-block-post-comments form .comment-form-comment textarea {
+	vertical-align: top;
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent {
+	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.wp-block-post-comments .comment-reply-title {
+	margin-bottom: 30px;
+}
+
+.wp-block-post-comments .comment-author {
+	margin-bottom: var(--wp--custom--margin--baseline);
+}
+
+.wp-block-post-comments .comment-author cite {
+	font-weight: bold;
+}
+
+.wp-block-post-comments .comment-author .says {
+	display: none;
+}
+
+.wp-block-post-comments .commentmetadata {
+	margin-bottom: 36px;
+}
+
+.wp-block-post-comments .commentmetadata a {
+	font-weight: 500;
+}
+
+.wp-block-post-comments .commentlist {
+	margin-bottom: calc( 4 * var(--wp--custom--margin--baseline));
+}
+
+.wp-block-post-comments .comment-body > p > a,
+.wp-block-post-comments .comment-edit-link {
+	text-decoration: underline;
+}
+
+.wp-block-post-comments .comment-body > p > a:hover,
+.wp-block-post-comments .comment-edit-link:hover {
+	text-decoration: none;
+}
+
 .wp-block-search .wp-block-search__button:active, .wp-block-search .wp-block-search__button:focus {
 	outline-offset: -0.25em;
 }
@@ -226,12 +320,14 @@ a {
 	color: var(--wp--custom--color--background);
 }
 
+.wp-block-post-comments .comment-meta > a,
 .wp-block-post-comments .comment-body > p > a,
 .wp-block-post-comments .comment-edit-link {
 	-webkit-text-decoration-line: underline;
 	        text-decoration-line: underline;
 }
 
+.wp-block-post-comments .comment-meta > a:hover,
 .wp-block-post-comments .comment-body > p > a:hover,
 .wp-block-post-comments .comment-edit-link:hover {
 	-webkit-text-decoration-line: none;
