@@ -23,6 +23,15 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 					'style_handle' => 'skatepark-heading-border',
 				)
 			);
+
+			register_block_style(
+				'core/image',
+				array(
+					'name'         => 'skatepark-aside-caption',
+					'label'        => __( 'Aside caption', 'skatepark' ),
+					'style_handle' => 'skatepark-aside-caption',
+				)
+			);
 		}
 	}
 endif;
