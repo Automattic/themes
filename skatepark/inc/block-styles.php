@@ -41,6 +41,15 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 					'style_handle' => 'indented-paragraph',
 				)
 			);
+	
+			register_block_style(
+				'core/post-excerpt',
+				array(
+					'name'         => 'indented-post-excerpt',
+					'label'        => __( 'Indented post excerpt', 'skatepark' ),
+					'style_handle' => 'indented-post-excerpt',
+				)
+			);
 		}
 	}
 endif;
