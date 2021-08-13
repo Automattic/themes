@@ -43,6 +43,16 @@ function skatepark_scripts() {
 add_action( 'wp_enqueue_scripts', 'skatepark_scripts' );
 
 /**
+ * Block Styles.
+ */
+require get_stylesheet_directory() . '/inc/block-styles.php';
+
+/**
  * Block Patterns.
  */
 require get_stylesheet_directory() . '/inc/block-patterns.php';
+
+/**
+ * Block Styles.
+ */
+require get_stylesheet_directory() . '/inc/block-styles.php';
