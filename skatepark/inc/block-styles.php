@@ -45,8 +45,4 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 	}
 endif;
 
-<<<<<<< HEAD
 add_action( 'after_setup_theme', 'skatepark_register_block_styles' );
-=======
-add_action( 'after_setup_theme', 'skatepark_register_block_styles' );
->>>>>>> d5bb84db (two columns pattern and indented paragraph block style)

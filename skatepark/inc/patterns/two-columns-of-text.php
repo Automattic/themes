@@ -11,21 +11,21 @@ return array(
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"","style":{"spacing":{"padding":{"right":"5em"}}}} -->
 	<div class="wp-block-column" style="padding-right:5em"><!-- wp:paragraph {"fontSize":"medium"} -->
-	<p class="has-medium-font-size">Skate ipsum dolor sit amet, poseur nollie casper pop shove-it. Kickturn noseblunt slide tailslide lien air Bonite. Rocket air poseur snake shoveit Chico Brenes. Crooked grind locals casper slide bank. Disaster frigid air bail aerial. Hang ten smith grind tailslide sick. Axle flypaper birdie gap Thrasher. Fast plant crail grab Japan air chicken wing Bullet 66.</p>
+	<p class="has-medium-font-size">' . esc_html__( 'Rodney Mullen. Paul Rodriguez. Bucky Lasek. Bob Burnquist. Tony Hawk. Ryan Sheckler. Eric Koston. Bam Margera. Chris Cole. Andrew Reynolds. The are all skateboarding icons. Some of them even have video games you may have played.', 'skatepark' ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column -->
 	
 	<!-- wp:column {"width":"550px"} -->
-	<div class="wp-block-column" style="flex-basis:550px"><!-- wp:paragraph -->
-	<p>Nose blunt masonite nosebone bluntslide. Poseur tic-tac coping feeble Neil Blender. Rail camel back kick-nose bone air. Saran Wrap skate or die handplant coping. 540 half-flip face plant ho-ho.</p>
+	<div class="wp-block-column" style="flex-basis:550px"><!-- wp:paragraph {"className":"is-style-indented-paragraph"} -->
+	<p class="is-style-indented-paragraph">' . esc_html__( 'Skateboarding can teach people discipline, patience, and resiliency. It’s a great sport for kids with a lot of energy! We’ll help build up some structure and support in your life, all while you meet new people and have a ton of fun learning how to skateboard.', 'skatepark' ) . '</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:paragraph -->
-	<p>Vert quarter pipe tailslide grab. Nose slide Bam Margera rocket air axle set disaster. Fast plant crail grab Japan air chicken wing Bullet 66. Hurricane coping masonite crail grab Brooklyn Banks. Death box salad grind concave cess slide.</p>
+	<p>' . esc_html__( 'Skateboarding is a social sport! Come hang out and meet some new friends to cheer you on while you skate. We have a strict no-bullying policy and maintain a supportive environment for all camp attendees.', 'skatepark' ) . '</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:paragraph -->
-	<p>Skate ipsum dolor sit amet, poseur nollie casper pop shove-it. Kickturn noseblunt slide tailslide lien air Bonite. Rocket air poseur snake shoveit Chico Brenes. Crooked grind locals casper slide bank. Disaster frigid air bail aerial. Hang ten smith grind tailslide sick. Axle flypaper birdie gap Thrasher.</p>
+	<p>' . esc_html__( 'Work 1:1 with our team of coaches to learn how to skate. They’ll be your mentors and guides while you’re at camp. Plus, many of our older campers will mentor the younger skaters.', 'skatepark' ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->',
