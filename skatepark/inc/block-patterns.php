@@ -21,7 +21,6 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'pre-footer',
 				'text-list-with-button',
 				'full-width-image-with-aside-caption',
-				'testimonial',
 				'two-columns-of-text',
 			);
 
