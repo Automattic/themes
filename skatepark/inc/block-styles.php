@@ -41,6 +41,15 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 					'style_handle' => 'indented-paragraph',
 				)
 			);
+
+			register_block_style(
+				'core/quote',
+				array(
+					'name'         => 'testimonial-quote',
+					'label'        => __( 'Testimonial', 'skatepark' ),
+					'style_handle' => 'testimonial-quote',
+				)
+			);
 		}
 	}
 endif;
