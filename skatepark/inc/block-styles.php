@@ -50,6 +50,15 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 					'style_handle' => 'indented-post-excerpt',
 				)
 			);
+
+			register_block_style(
+				'core/quote',
+				array(
+					'name'         => 'side-quote',
+					'label'        => __( 'Side quote', 'skatepark' ),
+					'style_handle' => 'side-quote',
+				)
+			);
 		}
 	}
 endif;
