@@ -12,6 +12,10 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.1 =
+* Better comments styles
+* Bug fixes and Gutenberg + Blockbase compatibility improvements
+
 = 2.1.0 =
 * Added color customization from the customizer
 

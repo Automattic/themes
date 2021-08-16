@@ -35,6 +35,12 @@ A Universal theme is a theme that works in Full Site Editing and in the Customiz
 
 == Changelog ==
 
+= 1.2.0 =
+* Remove site editor toggle 
+* PHP 404 template
+* Revise font customization approach
+* Bug fixes and child-theme compability improvements 
+
 = 1.1.0 =
 * Added color customization from the customizer
 
