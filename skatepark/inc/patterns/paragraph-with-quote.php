@@ -8,12 +8,12 @@
 return array(
 	'title'      => __( 'Paragraph with quote', 'skatepark' ),
 	'categories' => array( 'skatepark' ),
-	'content'    => '<!-- wp:columns {"align":"wide"} -->
+	'content'    => '<!-- wp:columns {"align":"wide","className":"paragraph-with-quote"} -->
 	<div class="wp-block-columns"><!-- wp:column {"width":"25%"} -->
 	<div class="wp-block-column" style="flex-basis:25%"></div>
 	<!-- /wp:column -->
 	
-	<!-- wp:column {"width":"50%"} -->
+	<!-- wp:column {"width":"50%","className":"paragraph-column"} -->
 	<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"level":4} -->
 	<h4>' . esc_html__( 'Another Heading', 'skatepark' ) . '</h4>
 	<!-- /wp:heading -->
