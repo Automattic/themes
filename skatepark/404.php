@@ -8,7 +8,7 @@
 get_header();
 ?>
 	<main class="container-404">
-		<h2 class="wp-block-post-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'skatepark' ); ?></h1>
+		<h2 class="wp-block-post-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'skatepark' ); ?></h2>
 
 		<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'skatepark' ); ?></p>
 
