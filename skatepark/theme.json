@@ -45,7 +45,7 @@
 				},
 				{
 					"slug": "background",
-					"color": "#BFF5A5",
+					"color": "#B9FB9C",
 					"name": "Background"
 				}
 			],
@@ -53,7 +53,7 @@
 				{
 					"colors": [
 						"#000",
-						"#BFF5A5"
+						"#B9FB9C"
 					],
 					"slug": "default-filter",
 					"name": "Default filter"
@@ -200,6 +200,31 @@
 					"style": "solid",
 					"width": "3px"
 				},
+				"checkbox": {
+					"checked": {
+						"content": "\"\\2715\"",
+						"fontSize": "var(--wp--preset--font-size--normal)",
+						"position": {
+							"left": "7px",
+							"top": "3px"
+						},
+						"sizing": {
+							"height": "25px",
+							"width": "25px"
+						}
+					},
+					"unchecked": {
+						"content": "\"\"",
+						"position": {
+							"left": "0",
+							"top": "-0.4em"
+						},
+						"sizing": {
+							"height": "30px",
+							"width": "30px"
+						}
+					}
+				},
 				"color": {
 					"background": "transparent",
 					"boxShadow": "none",
@@ -207,7 +232,15 @@
 				},
 				"label": {
 					"typography": {
-						"fontSize": "var(--wp--preset--font-size--tiny)"
+						"fontSize": "var(--wp--preset--font-size--tiny)",
+						"fontWeight": "900",
+						"letterSpacing": ".1em",
+						"textTransform": "uppercase"
+					},
+					"spacing": {
+						"margin": {
+							"bottom": "var(--wp--custom--margin--baseline)"
+						}
 					}
 				},
 				"typography": {
@@ -238,7 +271,8 @@
 				}
 			},
 			"layout": {
-				"contentSize": "684px"
+				"contentSize": "684px",
+				"wideSize": "1194px"
 			},
 			"list": {
 				"spacing": {
@@ -309,7 +343,7 @@
 			},
 			"separator": {
 				"opacity": 1,
-				"margin": "var(--wp--custom--margin--vertical) auto",
+				"margin": "calc( 0.5 * var(--wp--custom--margin--vertical) ) auto",
 				"width": "150px"
 			},
 			"table": {
@@ -325,6 +359,9 @@
 					"margin": "var(--wp--custom--margin--vertical) auto"
 				}
 			},
+			"fontsToLoadFromGoogle": [
+				"family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900"
+			],
 			"line-height": {
 				"body": 1.6
 			}
@@ -471,7 +508,7 @@
 				"border": {
 					"color": "currentColor",
 					"style": "solid",
-					"width": "0 0 1px 0"
+					"width": "0 0 3px 0"
 				}
 			},
 			"core/site-title": {

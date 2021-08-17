@@ -4,7 +4,7 @@
 			"gradients": [],
 			"duotone": [
                 {
-                    "colors": [ "#000", "#BFF5A5" ],
+                    "colors": [ "#000", "#B9FB9C" ],
                     "slug": "default-filter",
                     "name": "Default filter"
                 },
@@ -42,7 +42,7 @@
 				},
 				{
 					"slug": "background",
-					"color": "#BFF5A5",
+					"color": "#B9FB9C",
 					"name": "Background"
 				}
 			]
@@ -132,15 +132,55 @@
 					}
 				}
 			],
+			"fontsToLoadFromGoogle": [
+				"family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900"
+			],
 			"form": {
-				"padding": "calc( 0.5 * var(--wp--custom--margin--horizontal) )",
 				"border": {
 					"color": "var(--wp--custom--color--primary)",
+					"radius": "0",
+					"style": "solid",
 					"width": "3px"
+				},
+				"checkbox": {
+					"checked": {
+						"fontSize": "var(--wp--preset--font-size--normal)",
+						"position": {
+							"left": "7px",
+							"top": "3px"
+						},
+						"sizing": {
+							"height": "25px",
+							"width": "25px"
+						}
+					},
+					"unchecked": {
+						"position": {
+							"top": "-0.4em"
+						},
+						"sizing": {
+							"height": "30px",
+							"width": "30px"
+						}
+					}
 				},
 				"color": {
 					"background": "transparent"
 				},
+				"label": {
+					"spacing": {
+						"margin": {
+							"bottom": "var(--wp--custom--margin--baseline)"
+						}
+					},
+					"typography": {
+						"fontSize": "var(--wp--preset--font-size--tiny)",
+						"fontWeight": "900",
+						"letterSpacing": ".1em",
+						"textTransform": "uppercase"
+					}
+				},
+				"padding": "calc( 0.5 * var(--wp--custom--margin--horizontal) )",
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
@@ -151,7 +191,8 @@
 				}
 			},
 			"layout": {
-				"contentSize": "684px"
+				"contentSize": "684px",
+				"wideSize": "1194px"
 			},
 			"line-height": {
 				"body": 1.6
@@ -160,6 +201,9 @@
 				"baseline": "15px",
 				"horizontal": "30px",
 				"vertical": "45px"
+			},
+			"separator": {
+				"margin": "calc( 0.5 * var(--wp--custom--margin--vertical) ) auto"
 			}
 		},
 		"layout": {
@@ -229,6 +273,11 @@
 			"core/post-title": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--red-hat-display)"
+				}
+			},
+			"core/separator": {
+				"border": {
+					"width": "0 0 3px 0"
 				}
 			},
 			"core/site-title": {

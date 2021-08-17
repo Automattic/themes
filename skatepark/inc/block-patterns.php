@@ -19,7 +19,9 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
 				'pre-footer',
-				'text-list-with-button'
+				'text-list-with-button',
+				'full-width-image-with-aside-caption',
+				'two-columns-of-text',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
