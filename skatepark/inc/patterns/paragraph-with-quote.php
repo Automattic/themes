@@ -9,12 +9,12 @@ return array(
 	'title'      => __( 'Paragraph with quote', 'skatepark' ),
 	'categories' => array( 'skatepark' ),
 	'content'    => '<!-- wp:columns {"align":"wide","className":"paragraph-with-quote"} -->
-	<div class="wp-block-columns alignwide paragraph-with-quote"><!-- wp:column -->
-	<div class="wp-block-column"></div>
+	<div class="wp-block-columns alignwide paragraph-with-quote"><!-- wp:column {"width":"25%"} -->
+	<div class="wp-block-column" style="flex-basis:25%"></div>
 	<!-- /wp:column -->
 	
-	<!-- wp:column {"className":"paragraph-column"} -->
-	<div class="wp-block-column paragraph-column"><!-- wp:heading {"level":4} -->
+	<!-- wp:column {"width":"50%"} -->
+	<div class="wp-block-column" style="flex-basis:50%"><!-- wp:heading {"level":4} -->
 	<h4>' . esc_html__( 'Another Heading', 'skatepark' ) . '</h4>
 	<!-- /wp:heading -->
 	
@@ -27,8 +27,8 @@ return array(
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column -->
 	
-	<!-- wp:column -->
-	<div class="wp-block-column"><!-- wp:quote {"className":"is-style-side-quote"} -->
+	<!-- wp:column {"width":"25%"} -->
+	<div class="wp-block-column" style="flex-basis:25%"><!-- wp:quote {"className":"is-style-side-quote"} -->
 	<blockquote class="wp-block-quote is-style-side-quote"><p>' . esc_html__( 'A quote that is aligned right next to some normal paragraphs and headings', 'skatepark' ) . '</p><cite>' . esc_html__( '– Jane Doe', 'skatepark' ) . '</cite></blockquote>
 	<!-- /wp:quote --></div>
 	<!-- /wp:column --></div>
