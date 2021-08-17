@@ -11,7 +11,7 @@ return array(
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"","style":{"spacing":{"padding":{"right":"5em"}}}} -->
 	<div class="wp-block-column" style="padding-right:5em"><!-- wp:paragraph {"fontSize":"medium"} -->
-	<p class="has-medium-font-size">' . esc_html__( 'Steph Harper. Buddy Sellers. Mehmet Farrow. Bob Lopez. Tammy Habich. Tye Barclay. Kaden Price. Lily Rivera. Chris Wright. Sammy Sanchez.', 'skatepark' ) . '</p>
+	<p class="has-medium-font-size">' . esc_html__( 'Steph Harper. Buddy Sellers. Mehmet Farrow. Bob Lopez. Tammy Habich. Tye Barclay. Kaden Price. Lily Rivera. Chris Wright. Sammy Sanchez. They are all skateboarding icons. Some of them even have video games you may have played.', 'skatepark' ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column -->
 	
