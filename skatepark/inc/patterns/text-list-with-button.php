@@ -15,7 +15,7 @@ return array(
 		<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"level":4,"className":"is-style-skatepark-heading-border"} -->
 		<h4 class="is-style-skatepark-heading-border">' . esc_html__( 'Visiting Coaches', 'skatepark' ) . '</h4>
 		<!-- /wp:heading -->
-		<!-- wp:heading --><h2>' . esc_html__( 'Rodney Mullen. Paul Rodriguez. Bucky Lasek. Bob Burnquist. Tony Hawk. Ryan Sheckler. Eric Koston. Bam Margera. Chris Cole. Andrew Reynolds.', 'skatepark' ) . '</h2>
+		<!-- wp:heading --><h2>' . esc_html__( 'Steph Harper. Buddy Sellers. Mehmet Farrow. Bob Lopez. Tammy Habich. Tye Barclay. Kaden Price. Lily Rivera. Chris Wright. Sammy Sanchez.', 'skatepark' ) . '</h2>
 		<!-- /wp:heading -->
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
