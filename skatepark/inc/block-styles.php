@@ -54,6 +54,15 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 			register_block_style(
 				'core/quote',
 				array(
+					'name'         => 'side-quote',
+					'label'        => __( 'Side quote', 'skatepark' ),
+					'style_handle' => 'side-quote',
+				)
+			);
+
+			register_block_style(
+				'core/quote',
+				array(
 					'name'         => 'testimonial-quote',
 					'label'        => __( 'Testimonial', 'skatepark' ),
 					'style_handle' => 'testimonial-quote',
