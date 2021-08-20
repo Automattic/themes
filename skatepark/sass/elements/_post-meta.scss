@@ -1,17 +1,14 @@
 .post-meta {
-	// TODO - needed until https://github.com/WordPress/gutenberg/issues/24473
-	display: flex;
+	flex-direction: column;
 
-	.wp-block-post-author,
 	.wp-block-post-date,
-	.taxonomy-post_tag,
-	.taxonomy-category {
-		@include post-meta-icon;
-	}
-
-	.wp-block-post-author:before {
-		-webkit-mask-image: url(svg/post-author.svg);
-		mask-image: url(svg/post-author.svg);
+	.taxonomy-category,
+	.taxonomy-post_tag {
+		margin-bottom: 0.5em;
+		&:before {
+			height: 18px;
+			width: 18px;
+		}
 	}
 
 	.wp-block-post-date:before {
