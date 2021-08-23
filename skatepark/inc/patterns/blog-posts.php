@@ -19,7 +19,7 @@ return array(
 	
 	<!-- wp:post-title {"isLink":true,"fontSize":"normal"} /-->
 	
-	<!-- wp:post-excerpt {"moreText":"Continue reading","className":"is-style-indented-post-excerpt"} /-->
+	<!-- wp:post-excerpt {"moreText":"' . esc_html__( 'Continue reading', 'skatepark' ) . '","className":"is-style-indented-post-excerpt"} /-->
 	
 	<!-- wp:post-date {"style":{"typography":{"fontWeight":"500"}},"fontSize":"tiny"} /--></div>
 	<!-- /wp:group -->
