@@ -29,3 +29,10 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Skatepark uses the following images:
+
+License: CC0
+https://stocksnap.io/photo/skateboard-sideways-USRYO9E14Y by Messala Ciulla (https://stocksnap.io/author/messala)
+
+Used in block patterns.
