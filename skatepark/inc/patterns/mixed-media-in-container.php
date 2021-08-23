@@ -12,8 +12,8 @@ return array(
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:group {"align":"wide","style":{"border":{"style":"solid"},"spacing":{"padding":{"top":"1%","right":"2.5%","bottom":"2.5%","left":"2.5%"}}},"className":"skatepark-mixed-media-in-container"} -->
-	<div class="wp-block-group alignwide skatepark-mixed-media-in-container" style="border-style:solid;padding-top:1%;padding-right:2.5%;padding-bottom:2.5%;padding-left:2.5%"><!-- wp:columns {"align":"wide"} -->
+	<!-- wp:group {"align":"wide","style":{"border":{"style":"solid"},"spacing":{"padding":{"top":"3%","right":"4%","bottom":"4%","left":"4%"}}},"className":"skatepark-mixed-media-in-container"} -->
+	<div class="wp-block-group alignwide skatepark-mixed-media-in-container" style="border-style:solid;padding-top:3%;padding-right:4%;padding-bottom:4%;padding-left:4%"><!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.33%"} -->
 	<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:heading {"level":3} -->
 	<h3>' . esc_html__( 'Why Camp?', 'skatepark' ) . '</h3>
