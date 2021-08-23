@@ -1,17 +1,32 @@
-.wp-block-group.alignfull,
-*[class*="wp-container-"] //Anything that inherits layout (container)
-{
-	//give it some padding
-	padding-left: var(--wp--custom--post-content--padding--left);
-	padding-right: var(--wp--custom--post-content--padding--right);
-
-	//Any nested containers, and anything that is alignfull
-	*[class*="wp-container-"], // Any nested containers
-	> .alignfull { // Any direct descendant that is alignfull
-		// bust out of the container's padding
+//FRONTEND
+.do-the-special,
+.wp-block-post>.wp-block-group,
+.wp-block-post-content {
+	margin-left: var(--wp--custom--post-content--padding--left);
+	margin-right: var(--wp--custom--post-content--padding--right);
+	.alignfull {
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-		width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+		width: unset;
+		&.wp-block-group {
+	 		padding-left: var(--wp--custom--post-content--padding--left);
+	 		padding-right: var(--wp--custom--post-content--padding--right);
+		}
+	}
+}
+
+// EDITOR
+.is-root-container {
+	margin-left: var(--wp--custom--post-content--padding--left);
+	margin-right: var(--wp--custom--post-content--padding--right);
+	.wp-block[data-align="full"] {
+		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+		width: unset;
+		>.wp-block-group {
+	 		padding-left: var(--wp--custom--post-content--padding--left);
+	 		padding-right: var(--wp--custom--post-content--padding--right);
+		}
 	}
 }
 
