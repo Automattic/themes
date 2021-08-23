@@ -12,7 +12,7 @@ return array(
 	<div style="height:120px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
  
-	<!-- wp:group {"align":"wide","style":{"border":{"width":"3px","style":"solid"},"spacing":{"padding":{"top":"60px","right":"60px","bottom":"60px","left":"60px"}}},"borderColor":"primary","className":"columns-in-container"} -->
+	<!-- wp:group {"align":"wide","style":{"border":{"width":"3px","style":"solid"},"spacing":{"padding":{"top":"60px","right":"60px","bottom":"60px","left":"60px"}}},"borderColor":"primary","className":"columns-in-container","layout":{"inherit":true}} -->
 	<div class="wp-block-group alignwide columns-in-container has-border-color has-primary-border-color" style="border-style:solid;border-width:3px;padding-top:60px;padding-right:60px;padding-bottom:60px;padding-left:60px"><!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:heading {"level":4} -->
@@ -35,7 +35,7 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 
-    <!-- wp:image {"align":"wide","id":26,"sizeSlug":"large","linkDestination":"none","style":{"color":{"duotone":["#000","#B9FB9C"]}}} -->
+	<!-- wp:image {"align":"wide","id":26,"sizeSlug":"large","linkDestination":"none","style":{"color":{"duotone":["#000","#B9FB9C"]}}} -->
 	<figure class="wp-block-image alignwide size-large"><img src="https://skateparkdemo.files.wordpress.com/2021/08/693372530767c766f2db45bbfb132770-2048x1365-1.jpeg?w=1024" alt="Close-up of a person riding a skateboard, focusing on their feet and the board. One foot is on the board, while the other foot is up, in motion. A skatepark is blurred in the background." class="wp-image-26"/></figure>
 	<!-- /wp:image -->
 
