@@ -318,7 +318,7 @@ class GlobalStylesFontsCustomizer {
 		$variable = get_settings_array( $array, $configuration );
 		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
 		if ( ! isset( $this->fonts[ $slug ] ) ) {
-			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $location, $configuration );
+			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, '', $configuration );
 		}
 		return $this->fonts[ $slug ];
 	}
