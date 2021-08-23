@@ -55,19 +55,11 @@ img {
 /**
  * These are default block editor widths in case the theme doesn't provide them.
  */
-.wp-block-group.alignfull,
-*[class*="wp-container-"] {
-	padding-left: var(--wp--custom--post-content--padding--left);
-	padding-right: var(--wp--custom--post-content--padding--right);
-}
-
-.wp-block-group.alignfull *[class*="wp-container-"],
-.wp-block-group.alignfull > .alignfull,
-*[class*="wp-container-"] *[class*="wp-container-"],
-*[class*="wp-container-"] > .alignfull {
-	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
-	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right)) !important;
+[data-align="full"] > p,
+.alignfull > p {
+	margin-left: auto;
+	margin-right: auto;
+	width: calc( 100vw - var(--wp--custom--post-content--padding--left) - var(--wp--custom--post-content--padding--right));
 }
 
 @media (min-width: 480px) {

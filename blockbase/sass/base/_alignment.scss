@@ -1,17 +1,10 @@
-.wp-block-group.alignfull,
-*[class*="wp-container-"] //Anything that inherits layout (container)
-{
-	//give it some padding
-	padding-left: var(--wp--custom--post-content--padding--left);
-	padding-right: var(--wp--custom--post-content--padding--right);
-
-	//Any nested containers, and anything that is alignfull
-	*[class*="wp-container-"], // Any nested containers
-	> .alignfull { // Any direct descendant that is alignfull
-		// bust out of the container's padding
-		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
-		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-		width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+[data-align="full"],
+.alignfull {
+	> p {
+		//give it some padding
+		margin-left: auto;
+		margin-right: auto;
+		width: calc( 100vw - var(--wp--custom--post-content--padding--left) - var(--wp--custom--post-content--padding--right) );
 	}
 }
 
