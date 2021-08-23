@@ -5,6 +5,12 @@
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
 
+	//nested containers don't need the extra padding
+	[class*="wp-container-"] {
+		padding-left: unset;
+		padding-right: unset;
+	}
+
 	> .alignfull { // Any direct descendant that is alignfull
 		// bust out of the container's padding
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
