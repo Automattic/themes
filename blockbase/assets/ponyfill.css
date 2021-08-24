@@ -55,23 +55,41 @@ img {
 /**
  * These are default block editor widths in case the theme doesn't provide them.
  */
-.wp-block-group.alignfull,
-*[class*="wp-container-"] {
+/*.wp-block-group.alignfull,
+*[class*="wp-container-"] //Anything that inherits layout (container)
+{
+	//give it some padding
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+
+	//nested containers don't need the extra padding
+	[class*="wp-container-"] {
+		padding-left: unset;
+		padding-right: unset;
+	}
+
+	> .alignfull { // Any direct descendant that is alignfull
+		// bust out of the container's padding
+		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+		width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+	}
+}*/
+.wp-site-blocks {
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
 }
 
-.wp-block-group.alignfull [class*="wp-container-"],
-*[class*="wp-container-"] [class*="wp-container-"] {
-	padding-left: unset;
-	padding-right: unset;
-}
-
-.wp-block-group.alignfull > .alignfull,
-*[class*="wp-container-"] > .alignfull {
+.wp-site-blocks .alignfull {
+	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right)) !important;
 	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right)) !important;
+}
+
+.wp-site-blocks .alignfull .alignfull {
+	width: auto !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 @media (min-width: 480px) {

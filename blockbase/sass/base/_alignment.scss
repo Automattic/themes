@@ -1,4 +1,4 @@
-.wp-block-group.alignfull,
+/*.wp-block-group.alignfull,
 *[class*="wp-container-"] //Anything that inherits layout (container)
 {
 	//give it some padding
@@ -16,6 +16,21 @@
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
 		width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+	}
+}*/
+
+.wp-site-blocks {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+	.alignfull {
+		width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+		.alignfull {
+			width: auto !important;
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
 	}
 }
 
