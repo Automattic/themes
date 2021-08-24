@@ -1,13 +1,16 @@
 //FRONTEND
-.blockbase-alignment-rules,
-.wp-block-post>.wp-block-group,
-.wp-block-post-content {
+.blockbase-alignment-rules, //for argeted elements
+.wp-block-post>.wp-block-group, //for group blocks in the query loop
+.wp-block-post-content { //for the post content (NOTE: margins for this block cannot be configured via theme.json at this time.)
+	//In this situation we want to introduce a standardized gap between content and the edge of the screen.
 	margin-left: var(--wp--custom--post-content--padding--left);
 	margin-right: var(--wp--custom--post-content--padding--right);
 	.alignfull {
+		// these elements we want to "bust out" of the gap created above 
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
 		width: unset;
+		// however any groups that "bust out" should re-apply that gap but this time using padding instead of margins.
 		&.wp-block-group {
 	 		padding-left: var(--wp--custom--post-content--padding--left);
 	 		padding-right: var(--wp--custom--post-content--padding--right);
@@ -17,10 +20,10 @@
 
 // EDITOR (NOTE: It PROBABLY would be OK to bring these together to "simplify" the stylesheet.  However the selectors are quite different
 // and it's a lot easier to understand and ensure intent separated in this way.
-.is-root-container {
+.is-root-container { //top level of the editor
 	margin-left: var(--wp--custom--post-content--padding--left);
 	margin-right: var(--wp--custom--post-content--padding--right);
-	.wp-block[data-align="full"] {
+	.wp-block[data-align="full"] { //blocks configured to be "align full" in "editorspeak"
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
 		width: unset;
