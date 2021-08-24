@@ -1,8 +1,8 @@
 //FRONTEND
 .wp-site-blocks { // top level of the view
 	//In this situation we want to introduce a standardized gap between content and the edge of the screen.
-	margin-left: var(--wp--custom--post-content--padding--left);
-	margin-right: var(--wp--custom--post-content--padding--right);
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
 	.alignfull {
 		// these elements we want to "bust out" of the gap created above 
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
@@ -21,8 +21,8 @@
 // EDITOR (NOTE: It PROBABLY would be OK to bring these together to "simplify" the stylesheet.  However the selectors are quite different
 // and it's a lot easier to understand and ensure intent separated in this way.
 .is-root-container { //top level of the editor
-	margin-left: var(--wp--custom--post-content--padding--left);
-	margin-right: var(--wp--custom--post-content--padding--right);
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
 	.wp-block[data-align="full"] { //blocks configured to be "align full" in "editorspeak"
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
