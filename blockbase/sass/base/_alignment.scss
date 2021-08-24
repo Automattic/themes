@@ -1,17 +1,36 @@
-.wp-block-group.alignfull,
-*[class*="wp-container-"] //Anything that inherits layout (container)
-{
-	//give it some padding
+//FRONTEND
+.wp-site-blocks { // top level of the view
+	//In this situation we want to introduce a standardized gap between content and the edge of the screen.
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
-
-	//Any nested containers, and anything that is alignfull
-	*[class*="wp-container-"], // Any nested containers
-	> .alignfull { // Any direct descendant that is alignfull
-		// bust out of the container's padding
+	.alignfull {
+		// these elements we want to "bust out" of the gap created above 
 		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-		width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right) ) !important;
+		width: unset;
+		// however any containers that "bust out" should re-apply that gap but this time using padding instead of margins.
+		&.wp-block-template-part,
+		&.wp-block-columns,
+		&.wp-block-group {
+	 		padding-left: var(--wp--custom--post-content--padding--left);
+	 		padding-right: var(--wp--custom--post-content--padding--right);
+		}
+	}
+}
+
+// EDITOR (NOTE: It PROBABLY would be OK to bring these together to "simplify" the stylesheet.  However the selectors are quite different
+// and it's a lot easier to understand and ensure intent separated in this way.
+.is-root-container { //top level of the editor
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+	.wp-block[data-align="full"] { //blocks configured to be "align full" in "editorspeak"
+		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+		width: unset;
+		>.wp-block-group {
+	 		padding-left: var(--wp--custom--post-content--padding--left);
+	 		padding-right: var(--wp--custom--post-content--padding--right);
+		}
 	}
 }
 
