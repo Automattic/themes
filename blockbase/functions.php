@@ -126,17 +126,36 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
  *
  */
 add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
-function blockbase_social_menu_render( $block_content, $block ) {
-	if ( 'core/social-links' !== $block['blockName'] ) {
-		return $block_content;
+// We should only change the render of the navigtion block
+// to social links in the following conditions.
+function blockbase_condition_to_render_social_menu( $block ) {
+	// The block should be a navigation block.
+	if ( 'core/navigation' !== $block['blockName'] ) {
+		return false;
 	}
 
-	if ( ! has_nav_menu( 'social' ) ) :
-		return $block_content;
-	else:
+	// The theme should define a social menu.
+	if ( ! has_nav_menu( 'social' ) ) {
+		return false;
+	}
 
-		$return  = '<ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
-		
+	// The block should have a loction defined.
+	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
+		return false;
+	}
+
+	// The block's location should be 'social'.
+	if ( $block['attrs']['__unstableLocation'] !== 'social' ) {
+		return false;
+	}
+
+	return true;
+}
+
+function blockbase_social_menu_render( $block_content, $block ) {
+	if ( blockbase_condition_to_render_social_menu( $block ) ) {
+		$block_content  = '<ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
+
 		$menu = wp_get_nav_menu_items('social');
 
 		foreach ($menu as $menu_item) {
@@ -144,9 +163,10 @@ function blockbase_social_menu_render( $block_content, $block ) {
 			$return .= str_replace('<li class', '<li style="color: var(--wp--custom--color--primary); " class', do_blocks($link) );
 		}
 
-		$return .= '</ul>';
-		
-		return $return;
-	endif; 
+		$block_content .= '</ul>';
 
+		return $block_content;
+	}
+
+	return $block_content;
 }
