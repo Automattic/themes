@@ -34,6 +34,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
 			)
 		);
 
@@ -119,3 +120,32 @@ add_action( 'init', 'blockbase_restore_customizer' );
 require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+
+/**
+ * Populate the social links block with the social menu content if it exists
+ *
+ */
+add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
+function blockbase_social_menu_render( $block_content, $block ) {
+	if ( 'core/social-links' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	$return = $block_content;
+
+	if ( has_nav_menu( 'social' ) ) :
+
+		$return  = '<ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
+		
+		$menu = wp_get_nav_menu_items('social');
+
+		foreach ($menu as $menu_item) {
+			$link = '<!-- wp:social-link {"url":"'.$menu_item->url.'","service":"'.$menu_item->post_name.'"} /-->';
+			$return .= str_replace('<li class', '<li style="color: var(--wp--custom--color--primary); " class', do_blocks($link) );
+		}
+
+		$return .= '</ul>';
+	endif; 
+
+	return $return;
+}
