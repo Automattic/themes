@@ -131,9 +131,9 @@ function blockbase_social_menu_render( $block_content, $block ) {
 		return $block_content;
 	}
 
-	$return = $block_content;
-
-	if ( has_nav_menu( 'social' ) ) :
+	if ( ! has_nav_menu( 'social' ) ) :
+		return $block_content;
+	else:
 
 		$return  = '<ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
 		
@@ -145,7 +145,8 @@ function blockbase_social_menu_render( $block_content, $block ) {
 		}
 
 		$return .= '</ul>';
+		
+		return $return;
 	endif; 
 
-	return $return;
 }
