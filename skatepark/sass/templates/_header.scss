@@ -12,6 +12,10 @@ header.wp-block-template-part {
 			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
 				margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
 				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				@include break-small-only(){
+					margin-top: calc( 0.125 * var(--wp--custom--margin--vertical) );
+					margin-bottom: calc( 0.125 * var(--wp--custom--margin--vertical) );
+				}
 			}
 		}
 
