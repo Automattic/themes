@@ -4,7 +4,7 @@ git remote update > /dev/null
 current_branch=$(git branch --show-current)
 hash_at_divergence=$(git merge-base origin/trunk ${current_branch})
 
-# version bump (patch) any project that has any *comitted* changes
+# version bump (patch) any theme that has any *comitted* changes since it was branched from /trunk or any *uncomitted* changes
 version-bump() {
 	has_uncomitted_changes=$(git diff-index --name-only HEAD -- .)
 	has_comitted_changes=$(git diff --name-only ${hash_at_divergence} HEAD -- .)
@@ -17,7 +17,7 @@ version-bump() {
 	fi
 }
 
-# copy the version from package.json (the source of truth) to other standard locations.
+# copy the version from package.json (the source of truth) to other standard locations (including style.css, style.scss and style-child-theme.scss).
 apply-version() {
 
  	current_version=$(node -p "require('./package.json').version")
