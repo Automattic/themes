@@ -12,8 +12,8 @@ return array(
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
  
-	<!-- wp:group {"align":"wide","style":{"border":{"width":"3px","style":"solid"},"spacing":{"padding":{"top":"3%","right":"4%","bottom":"4%","left":"4%"}}},"borderColor":"primary","className":"columns-in-container","layout":{"inherit":true}} -->
-	<div class="wp-block-group alignwide columns-in-container has-border-color has-primary-border-color" style="border-style:solid;border-width:3px;padding-top:3%;padding-right:4%;padding-bottom:4%;padding-left:4%"><!-- wp:columns {"align":"wide"} -->
+	<!-- wp:group {"align":"wide","style":{"border":{"width":"3px","style":"solid"},"spacing":{"padding":{"top":"3.5%","right":"4%","bottom":"4%","left":"4%"}}},"borderColor":"primary","className":"columns-in-container","layout":{"inherit":true}} -->
+	<div class="wp-block-group alignwide columns-in-container has-border-color has-primary-border-color" style="border-style:solid;border-width:3px;padding-top:3.5%;padding-right:4%;padding-bottom:4%;padding-left:4%"><!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:heading {"level":4} -->
 	<h4>' . esc_html__( 'Learn to skate', 'skatepark' ) . '</h4>
