@@ -48,6 +48,17 @@ apply-version() {
 
 }
 
+# only build the project if is has changed since it diverged from trunk
+build-if-changed() {
+	# Only version bump things that have changes
+	uncomitted_changes=$(git diff-index --name-only HEAD -- .)
+	comitted_changes=$(git diff --name-only ${hash_at_divergence} HEAD -- .)
+	if [ -z "$comitted_changes" ] && [ -z "$uncomitted_changes" ]; then
+		return
+	fi
+	npm run build
+}
+
 command=$1
 echo
 
@@ -67,6 +78,9 @@ for theme in */ ; do
 				echo
 				;;
 			"build")
+				build-if-changed ${theme}
+				;;
+			"build-all")
 				echo 'Building '${theme}
 				npm run build
 				echo
