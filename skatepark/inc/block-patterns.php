@@ -26,6 +26,7 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'testimonial',
 				'two-columns-of-text',
 				'paragraph-with-quote',
+				'columns-in-container',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
