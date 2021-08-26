@@ -4,9 +4,9 @@ header.wp-block-template-part {
 	width: 100%;
 	
 	> .wp-block-group {
-		align-items: flex-end; // Needed until theme.json layout lets me specify
+		gap: 0;
 		justify-content: space-between; // Apply a cluster (flex?) layout
-		flex-wrap: wrap-reverse;
+		align-items: flex-start;
 		> * {
 			flex-grow: 1; // Needed to maintain alignment when the containers stack
 			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
@@ -20,6 +20,33 @@ header.wp-block-template-part {
 			> .wp-social-link {
 				padding: 0; // Needed to override Gutenberg default padding on this block style variation
 			}
+		}
+	}
+
+	.site-brand {
+		margin-top: 20px;
+		display: grid;
+		grid-column-gap: 30px;
+		grid-template-columns: auto 1fr;
+		.wp-block-site-logo {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 1;
+			grid-row-end: 3;
+			margin: 0;
+			max-width: 120px;
+			align-self: center;
+			justify-self: flex-end;
+		}
+		.wp-block-site-title {
+			grid-row-start: 1;
+			grid-row-end: 2;
+			margin: 0 0 0.5em;
+		}
+		.wp-block-site-tagline {
+			grid-row-start: 2;
+			grid-row-end: 3;
+			margin: 0;
 		}
 	}
 }
