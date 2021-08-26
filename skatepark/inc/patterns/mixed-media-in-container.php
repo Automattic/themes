@@ -47,7 +47,9 @@ return array(
 	
 	<!-- wp:paragraph -->
 	<p>' . esc_html__( 'Skateboarding can teach people discipline, patience, and resiliency. It’s a great sport for kids with a lot of energy! We’ll help build up some structure and support in your life, and you’ll have fun.', 'skatepark' ) . '</p>
-	<!-- /wp:paragraph --></div>
+	<!-- /wp:paragraph --><!-- wp:spacer {"height":40} -->
+	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer --></div>
 	<!-- /wp:column -->
 	
 	<!-- wp:column -->
