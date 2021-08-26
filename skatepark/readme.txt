@@ -7,8 +7,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-
-
+Skatepark is a bold and exciting WordPress theme designed for modern events and organizations. With its simple but vivid color default scheme, duotone support, and playful grid, sk8park is a theme designed for work and play. Customize its colors or try out different font pairings to create your own unique look and feel.
 
 == Changelog ==
 
