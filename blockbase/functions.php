@@ -134,7 +134,7 @@ function blockbase_condition_to_render_social_menu( $block ) {
 		return false;
 	}
 
-	// The theme should define a social menu.
+	// The theme should have a menu defined at the social location.
 	if ( ! has_nav_menu( 'social' ) ) {
 		return false;
 	}
@@ -154,9 +154,11 @@ function blockbase_condition_to_render_social_menu( $block ) {
 
 function blockbase_social_menu_render( $block_content, $block ) {
 	if ( blockbase_condition_to_render_social_menu( $block ) ) {
-		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"items-justified-right is-style-logos-only"} --><ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
+		$nav_menu_locations = get_nav_menu_locations();
+		$social_menu_id = $nav_menu_locations['social'];
 
-		$menu = wp_get_nav_menu_items('social');
+		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"items-justified-right is-style-logos-only"} --><ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
+		$menu = wp_get_nav_menu_items( $social_menu_id );
 		foreach ($menu as $menu_item) {
 			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $menu_item->post_name . '"} /-->';
 		}
