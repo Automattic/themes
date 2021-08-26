@@ -6,15 +6,31 @@ hash_at_divergence=$(git merge-base origin/trunk ${current_branch})
 
 # version bump (patch) any theme that has any *comitted* changes since it was branched from /trunk or any *uncomitted* changes
 version-bump() {
-	has_uncomitted_changes=$(git diff-index --name-only HEAD -- .)
-	has_comitted_changes=$(git diff --name-only ${hash_at_divergence} HEAD -- .)
-	#TODO: Determine if version has changed since divergence and skip if so.  Otherwise we might version-bump something that has already version bumped.
-	if [ -n "$has_comitted_changes" ] || [ -n "$has_uncomitted_changes" ]; then
-		echo "Version bumping $1"
-		npm version patch --no-git-tag-version
-		apply-version $1
-		echo
+	# Only version bump things that haven't already had their version changed
+	if [[ $1 = 'ROOT' ]]; then
+		package_string=$(git show ${hash_at_divergence}:package.json)
+	else
+		package_string=$(git show ${hash_at_divergence}:$1package.json)
 	fi
+ 	current_version=$(node -p "require('./package.json').version")
+	previous_version=$(node -pe "JSON.parse(process.argv[1]).version" "${package_string}")
+	if [[ $current_version != $previous_version ]]; then
+		return
+	fi
+
+	# Only version bump things that have changes
+	uncomitted_changes=$(git diff-index --name-only HEAD -- .)
+	comitted_changes=$(git diff --name-only ${hash_at_divergence} HEAD -- .)
+	if [ -z "$comitted_changes" ] && [ -z "$uncomitted_changes" ]; then
+		return
+	fi
+
+	echo "Version bumping $1"
+	npm version patch --no-git-tag-version
+	if [[ $1 != 'ROOT' ]]; then
+		apply-version $1
+	fi
+	echo
 }
 
 # copy the version from package.json (the source of truth) to other standard locations (including style.css, style.scss and style-child-theme.scss).
@@ -77,6 +93,6 @@ case $command in
 		npm audit fix
 		;;
 	"version-bump")
-		version-bump "root project"
+		version-bump "ROOT"
 		;;
 esac
