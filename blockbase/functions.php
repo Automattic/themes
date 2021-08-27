@@ -30,10 +30,11 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
-		// This theme has one menu location.
+		// Register two nav menus
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
 			)
 		);
 
@@ -193,8 +194,8 @@ function blockbase_social_menu_render( $block_content, $block ) {
 		$nav_menu_locations = get_nav_menu_locations();
 		$social_menu_id = $nav_menu_locations['social'];
 		$class_name = 'is-style-logos-only';
-		if( !empty( $block['attrs']['itemsJustification'] ) && $block['attrs']['itemsJustification'] === 'right' ) {
-			$class_name .= ' items-justified-right';
+		if( !empty( $block['attrs']['itemsJustification'] ) ) {
+			$class_name .= ' items-justified-' . $block['attrs']['itemsJustification'];
 		}
 		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
 		$menu = wp_get_nav_menu_items( $social_menu_id );
