@@ -48,6 +48,16 @@ p {
 	margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical));
 }
 
+.wp-block-post-content p:first-of-type {
+	text-indent: 15%;
+}
+
+.wp-block-post-author__content p:first-of-type,
+.wp-block-post-comments p:first-of-type,
+.wp-block-quote p:first-of-type {
+	text-indent: 0;
+}
+
 .wp-block-post-author__content {
 	display: flex;
 	flex-direction: column;
@@ -335,14 +345,6 @@ p {
 .is-style-skatepark-aside-caption.alignfull figcaption {
 	margin-left: var(--wp--custom--post-content--padding--left);
 	margin-right: calc( max( 0.5 * ( 100% - var(--wp--custom--layout--wide-size) ), var(--wp--custom--post-content--padding--left) ));
-}
-
-.is-style-indented-paragraph {
-	text-indent: 10em;
-}
-
-.is-style-indented-post-excerpt p:first-of-type:not(.wp-block-post-excerpt__more-text) {
-	text-indent: 5em;
 }
 
 .wp-block-quote.is-style-side-quote {
