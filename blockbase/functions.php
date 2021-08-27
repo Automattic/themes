@@ -156,8 +156,11 @@ function blockbase_social_menu_render( $block_content, $block ) {
 	if ( blockbase_condition_to_render_social_menu( $block ) ) {
 		$nav_menu_locations = get_nav_menu_locations();
 		$social_menu_id = $nav_menu_locations['social'];
-
-		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"items-justified-right is-style-logos-only"} --><ul class="wp-block-social-links has-icon-color items-justified-right is-style-logos-only">';
+		$class_name = 'is-style-logos-only';
+		if( !empty( $block['attrs']['itemsJustification'] ) && $block['attrs']['itemsJustification'] === 'right' ) {
+			$class_name .= ' items-justified-right';
+		}
+		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
 		$menu = wp_get_nav_menu_items( $social_menu_id );
 		foreach ($menu as $menu_item) {
 			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $menu_item->post_name . '"} /-->';
