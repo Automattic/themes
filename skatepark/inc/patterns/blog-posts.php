@@ -1,9 +1,14 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<?php
+/**
+ * Blog posts.
+ *
+ * @package Skatepark
+ */
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"2.5em","bottom":"2.5em"}}},"layout":{"inherit":true}} -->
-<main class="wp-block-group" style="padding-top:2.5em;padding-bottom:2.5em">
-	<!-- wp:query-title {"type":"archive","align":"wide"} /-->
-	<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"displayLayout":{"type":"flex","columns":3},"align":"wide"} -->
+return array(
+	'title'      => __( 'Blog posts', 'skatepark' ),
+	'categories' => array( 'skatepark' ),
+	'content'    => '<!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"displayLayout":{"type":"flex","columns":3},"align":"wide"} -->
 	<div class="wp-block-query alignwide"><!-- wp:post-template -->
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","left":"30px"}}},"layout":{"inherit":false}} -->
 	<div class="wp-block-group" style="padding-top:30px;padding-right:30px;padding-left:30px"><!-- wp:separator {"className":"is-style-wide"} -->
@@ -14,7 +19,7 @@
 
 	<!-- wp:post-title {"isLink":true,"fontSize":"normal"} /-->
 
-	<!-- wp:post-excerpt {"className":"is-style-indented-post-excerpt"} /-->
+	<!-- wp:post-excerpt {"moreText":"' . esc_html__( 'Continue reading', 'skatepark' ) . '","className":"is-style-indented-post-excerpt"} /-->
 
 	<!-- wp:post-date {"style":{"typography":{"fontWeight":"500"}},"fontSize":"tiny","isLink":true} /--></div>
 	<!-- /wp:group -->
@@ -27,9 +32,5 @@
 
 	<!-- wp:query-pagination-next /--></div>
 	<!-- /wp:query-pagination --></div>
-	<!-- /wp:query -->
-
-</main>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","tagName":"footer","layout":{"inherit":true},"className":"site-footer-container"} /-->
+	<!-- /wp:query -->',
+);

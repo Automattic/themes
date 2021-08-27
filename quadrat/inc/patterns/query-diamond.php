@@ -14,7 +14,7 @@ return array(
 	<!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
 	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"post-meta"} -->
-	<div class="wp-block-group post-meta"><!-- wp:post-date {"fontSize":"tiny"} /-->
+	<div class="wp-block-group post-meta"><!-- wp:post-date {"fontSize":"tiny","isLink":true} /-->
 
 	<!-- wp:post-terms {"term":"category","fontSize":"tiny"} /--></div>
 	<!-- /wp:group -->

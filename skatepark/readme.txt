@@ -7,8 +7,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-
-
+Skatepark is a bold and exciting WordPress theme designed for modern events and organizations. With its simple but vivid color default scheme, duotone support, and playful grid, Skatepark is a theme designed for work and play. Customize its colors or try out different font pairings to create your own unique look and feel.
 
 == Changelog ==
 
@@ -29,3 +28,10 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Skatepark uses the following images:
+
+License: CC0
+https://stocksnap.io/photo/skateboard-sideways-USRYO9E14Y by Messala Ciulla (https://stocksnap.io/author/messala)
+
+Used in block patterns.

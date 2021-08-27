@@ -55,19 +55,36 @@ img {
 /**
  * These are default block editor widths in case the theme doesn't provide them.
  */
-.wp-block-group.alignfull,
-*[class*="wp-container-"] {
+.wp-site-blocks {
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
 }
 
-.wp-block-group.alignfull *[class*="wp-container-"],
-.wp-block-group.alignfull > .alignfull,
-*[class*="wp-container-"] *[class*="wp-container-"],
-*[class*="wp-container-"] > .alignfull {
+.wp-site-blocks .alignfull {
 	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right)) !important;
+	width: unset;
+}
+
+.wp-site-blocks .alignfull.wp-block-template-part, .wp-site-blocks .alignfull.wp-block-columns, .wp-site-blocks .alignfull.wp-block-group {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+.is-root-container {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+.is-root-container .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+	width: unset;
+}
+
+.is-root-container .wp-block[data-align="full"] > .wp-block-group {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
 }
 
 @media (min-width: 480px) {
@@ -140,6 +157,10 @@ body.admin-bar .wp-site-blocks {
 p {
 	margin-top: var(--wp--custom--margin--vertical);
 	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.wp-block-column :first-child, .wp-block-group :first-child {
+	margin-top: 0;
 }
 
 .image-no-margin {
@@ -254,16 +275,7 @@ input[type=checkbox] + label {
 	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
 	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
 	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
-	font-weight: var(--wp--custom--button--typography--font-weight);
-	font-family: inherit;
-	font-size: var(--wp--custom--button--typography--font-size);
-	line-height: var(--wp--custom--button--typography--line-height);
 	text-decoration: none;
-	opacity: 1;
-	color: var(--wp--custom--button--color--text);
-	background-color: var(--wp--custom--button--color--background);
-	border-color: currentColor;
-	border-radius: var(--wp--custom--button--border--radius);
 }
 
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
@@ -284,11 +296,6 @@ input[type=checkbox] + label {
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus svg,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color).has-focus svg {
-	fill: var(--wp--custom--button--color--text);
-}
-
-.wp-block-button.wp-block-button__link svg,
-.wp-block-button .wp-block-button__link svg {
 	fill: var(--wp--custom--button--color--text);
 }
 

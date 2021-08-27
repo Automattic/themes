@@ -140,26 +140,21 @@
 /**
  * Links in navigation
  */
+.wp-block-navigation-link a {
+	text-underline-offset: 0.4rem;
+}
+
 .wp-block-navigation-link a :hover {
 	text-decoration: underline;
-	text-underline-offset: 0.4rem;
 }
 
 /**
  * Links in Content
  */
-.is-root-container a:not(.wp-block-button__link):not([download]),
-.wp-block-post-content a:not(.wp-block-button__link):not([download]) {
-	color: var(--wp--custom--color--primary);
-	text-decoration-color: var(--wp--style--color--link);
+.is-root-container a,
+.wp-block-post-content a {
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.2em;
-}
-
-.is-root-container a:not(.wp-block-button__link):not([download]):focus, .is-root-container a:not(.wp-block-button__link):not([download]):hover,
-.wp-block-post-content a:not(.wp-block-button__link):not([download]):focus,
-.wp-block-post-content a:not(.wp-block-button__link):not([download]):hover {
-	color: var(--wp--style--color--link);
 }
 
 .wp-block-navigation__responsive-container.has-modal-open .wp-block-navigation-link {
@@ -291,14 +286,11 @@ is passed all of the block attributes on the block definition in the template. *
 .wp-block-site-title a {
 	text-decoration: underline;
 	text-decoration-thickness: 2px;
-	text-decoration-color: var(--wp--custom--color--secondary);
 	text-underline-offset: 0.13em;
-	transition: background-size 0.1s ease-out;
 }
 
 .wp-block-site-title a:hover, .wp-block-site-title a:focus {
 	text-decoration: none;
-	color: var(--wp--custom--color--secondary);
 	background-size: 8px 0px;
 }
 
