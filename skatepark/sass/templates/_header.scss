@@ -10,8 +10,8 @@ header.wp-block-template-part {
 		> * {
 			flex-grow: 1; // Needed to maintain alignment when the containers stack
 			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
-				margin-top: 20px;
-				margin-bottom: 20px;
+				margin-top: calc( 0.5 * var(--wp--custom--margin--vertical));
+				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical));
 			}
 		}
 
@@ -29,6 +29,6 @@ header.wp-block-template-part {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		border-bottom: 2px solid var(--wp--custom--color--primary);
+		border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
 	}
 }
