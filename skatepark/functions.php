@@ -24,7 +24,8 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 		//Primary navigation is used on the header and the footer pattern
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary Navigation', 'skatepark' )
+				'primary' => __( 'Primary Navigation', 'skatepark' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
 			)
 		);
 
