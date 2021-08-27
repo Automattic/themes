@@ -162,7 +162,8 @@ function blockbase_social_menu_render( $block_content, $block ) {
 		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
 		$menu = wp_get_nav_menu_items( $social_menu_id );
 		foreach ($menu as $menu_item) {
-			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $menu_item->post_name . '"} /-->';
+			$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
+			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
 		}
 
 		$block_content .= '</ul>';
