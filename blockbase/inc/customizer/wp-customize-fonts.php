@@ -386,15 +386,18 @@ class GlobalStylesFontsCustomizer {
 			return;
 		}
 
+		$body_current    = $wp_customize->get_setting( $this->section_key . 'body' )->value();
+		$heading_current = $wp_customize->get_setting( $this->section_key . 'heading' )->value();
+
 		$body_default    = $wp_customize->get_setting( $this->section_key . 'body' )->default;
 		$heading_default = $wp_customize->get_setting( $this->section_key . 'heading' )->default;
 
 		if ( ! isset( $body_value ) ) {
-			$body_value = $body_default;
+			$body_value = $body_current;
 		}
 
 		if ( ! isset( $heading_value ) ) {
-			$heading_value = $heading_default;
+			$heading_value = $heading_current;
 		}
 
 		$body_setting    = $this->fonts[ $body_value ];
@@ -408,14 +411,6 @@ class GlobalStylesFontsCustomizer {
 
 		$body_font_family_variable    = 'var(--wp--preset--font-family--' . $body_setting['slug'] . ')';
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
-
-		$google_font_array = array();
-		if ( isset( $body_setting['google'] ) ) {
-			$google_font_array[] = $body_setting['google'];
-		}
-		if ( isset( $heading_setting['google'] ) ) {
-			$google_font_array[] = $heading_setting['google'];
-		}
 
 		// Get the user's theme.json from the CPT.
 		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
@@ -499,12 +494,12 @@ class GlobalStylesFontsCustomizer {
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
 			unset( $user_theme_json_post_content->styles->typography->fontFamilies );
 			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h1->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h2->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h3->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h4->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h5->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h6->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elements->h1->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elements->h2->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elements->h3->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elements->h4->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elements->h5->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->elements->h6->typography->fontFamilies );
 			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamilies );
 		}
 
