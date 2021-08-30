@@ -2,7 +2,7 @@
 Contributors: Automattic
 Requires at least: 5.7
 Tested up to: 5.7.2
-Requires PHP: 5.6.2
+Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,5 +33,7 @@ Skatepark uses the following images:
 
 License: CC0
 https://stocksnap.io/photo/skateboard-sideways-USRYO9E14Y by Messala Ciulla (https://stocksnap.io/author/messala)
+https://stocksnap.io/photo/skateboarder-shoes-BTZE6FHZIV by Burst (https://stocksnap.io/author/burstshopify)
+https://stocksnap.io/photo/skateboard-skater-5OTFJYVYSE by Joe Cooke (https://stocksnap.io/author/14659)
 
 Used in block patterns.
