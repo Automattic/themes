@@ -3,11 +3,18 @@
 git remote update > /dev/null
 current_branch=$(git branch --show-current)
 hash_at_divergence=$(git merge-base origin/trunk ${current_branch})
+version_bump_count=0
 
 # version bump (patch) any theme that has any *comitted* changes since it was branched from /trunk or any *uncomitted* changes
 version-bump() {
 	# Only version bump things that haven't already had their version changed
 	if [[ $1 = 'ROOT' ]]; then
+		# Only version bump ROOT if another project has been version bumped
+		if [[ $version_bump_count = 0 ]]; then
+			echo "No projects have changed.  Nothing version bumped."
+			echo
+			return
+		fi
 		package_string=$(git show ${hash_at_divergence}:package.json)
 	else
 		package_string=$(git show ${hash_at_divergence}:$1package.json 2>/dev/null)
@@ -15,8 +22,6 @@ version-bump() {
 
 	# If the last command exited poorly ($? = last command exit code) the package.json didn't exist at the point of divergence and we can stop here.
 	if [[ $? -ne 0 ]]; then
-		echo "Skipping version bump for $1; No packages.json file at divergence."
-		echo
 		return
 	fi
 
@@ -32,6 +37,8 @@ version-bump() {
 	if [ -z "$comitted_changes" ] && [ -z "$uncomitted_changes" ]; then
 		return
 	fi
+
+	((version_bump_count+=1))
 
 	echo "Version bumping $1"
 	npm version patch --no-git-tag-version
