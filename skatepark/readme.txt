@@ -1,6 +1,6 @@
 === Skatepark ===
 Contributors: Automattic
-Requires at least: 5.7
+Requires at least: 5.7.2
 Tested up to: 5.7.2
 Requires PHP: 5.7
 License: GPLv2 or later
