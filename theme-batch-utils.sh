@@ -52,7 +52,7 @@ version-bump() {
 apply-version() {
 
  	current_version=$(node -p "require('./package.json').version")
-	files_to_update=( $(find . -name style.css -o -name style.scss -o -name style-child-theme.scss) )
+	files_to_update=( $(find . -name style.css -o -name style.scss -o -name style-child-theme.scss -maxdepth 2) )
 
 	for file_to_update in "${files_to_update[@]}"; do
 		if test -f "$file_to_update"; then
