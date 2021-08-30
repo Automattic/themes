@@ -15,7 +15,7 @@ return array(
 	<hr class="wp-block-separator is-style-wide"/>
 	<!-- /wp:separator -->
 
-	<!-- wp:post-featured-image {"isLink":true,"style":{"color":{"duotone":["#000","#B9FB9C"]}}} /-->
+	<!-- wp:post-featured-image {"isLink":true,"style":{"color":{"duotone":["#000","rgba(0, 0, 0, 0)"]}}} /-->
 
 	<!-- wp:post-title {"isLink":true,"fontSize":"normal"} /-->
 
