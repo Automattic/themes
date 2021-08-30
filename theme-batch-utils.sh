@@ -10,8 +10,16 @@ version-bump() {
 	if [[ $1 = 'ROOT' ]]; then
 		package_string=$(git show ${hash_at_divergence}:package.json)
 	else
-		package_string=$(git show ${hash_at_divergence}:$1package.json)
+		package_string=$(git show ${hash_at_divergence}:$1package.json 2>/dev/null)
 	fi
+
+	# If the last command exited poorly ($? = last command exit code) the package.json didn't exist at the point of divergence and we can stop here.
+	if [[ $? -ne 0 ]]; then
+		echo "Skipping version bump for $1; No packages.json file at divergence."
+		echo
+		return
+	fi
+
  	current_version=$(node -p "require('./package.json').version")
 	previous_version=$(node -pe "JSON.parse(process.argv[1]).version" "${package_string}")
 	if [[ $current_version != $previous_version ]]; then
