@@ -4,14 +4,18 @@ header.wp-block-template-part {
 	width: 100%;
 	
 	> .wp-block-group {
-		align-items: flex-end; // Needed until theme.json layout lets me specify
+		gap: 0;
 		justify-content: space-between; // Apply a cluster (flex?) layout
-		flex-wrap: wrap-reverse;
+		align-items: flex-start;
 		> * {
 			flex-grow: 1; // Needed to maintain alignment when the containers stack
 			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
-				margin-top: calc( 0.5 * var(--wp--custom--margin--vertical));
-				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical));
+				margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				@include break-small-only(){
+					margin-top: calc( 0.125 * var(--wp--custom--margin--vertical) );
+					margin-bottom: calc( 0.125 * var(--wp--custom--margin--vertical) );
+				}
 			}
 		}
 
@@ -20,6 +24,40 @@ header.wp-block-template-part {
 			> .wp-social-link {
 				padding: 0; // Needed to override Gutenberg default padding on this block style variation
 			}
+		}
+	}
+
+	.site-brand {
+		margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
+		display: grid;
+		grid-column-gap: var(--wp--custom--margin--horizontal);
+		grid-template-areas: 
+			"logo title"
+			"logo tagline";
+		grid-template-columns: auto 1fr;
+		@include break-small-only(){
+			grid-template-areas: 
+				"logo"
+				"title"
+				"tagline";
+		}
+		.wp-block-site-logo {
+			grid-area: logo;
+			margin: 0;
+			max-width: 120px;
+			align-self: center;
+			justify-self: flex-end;
+			@include break-small-only(){
+				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+			}
+		}
+		.wp-block-site-title {
+			grid-area: title;
+			margin: 0 0 0.5em;
+		}
+		.wp-block-site-tagline {
+			grid-area: tagline;
+			margin: 0;
 		}
 	}
 }
