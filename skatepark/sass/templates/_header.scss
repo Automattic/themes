@@ -7,6 +7,15 @@ header.wp-block-template-part {
 		gap: 0;
 		justify-content: space-between; // Apply a cluster (flex?) layout
 		align-items: flex-start;
+
+		@include break-small-only(){
+			grid-row-gap: calc( 0.25 * var(--wp--custom--margin--vertical) );
+			display: grid;
+			grid-template-areas: 
+				"brand menu"
+				"social social";
+			border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
+		}
 		> * {
 			flex-grow: 1; // Needed to maintain alignment when the containers stack
 			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
@@ -40,13 +49,13 @@ header.wp-block-template-part {
 				"logo"
 				"title"
 				"tagline";
+			grid-area: brand;
 		}
 		.wp-block-site-logo {
 			grid-area: logo;
 			margin: 0;
 			max-width: 120px;
 			align-self: center;
-			justify-self: flex-end;
 			@include break-small-only(){
 				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
 			}
@@ -64,9 +73,16 @@ header.wp-block-template-part {
 
 @include break-small-only(){
 	.nav-links {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
+		display: contents;
+		.wp-block-navigation__responsive-container-open {
+			margin-top: calc( 0.5 * var(--wp--custom--margin--vertical));
+		}
+		.wp-block-navigation {
+			grid-area: menu;
+		}
+		.wp-block-social-links {
+			justify-content: flex-start;
+			grid-area: social;
+		}
 	}
 }
