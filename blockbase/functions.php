@@ -83,26 +83,28 @@ function blockbase_fonts_url() {
 	}
 
 	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
-			if ( ! empty( $font['google'] ) ) {
-				$font_families[] = $font['google'];
-			}
-		}
-	}
-
 	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
 		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
+	} else {
+		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
+			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+				if ( ! empty( $font['google'] ) ) {
+					$font_families[] = $font['google'];
+				}
+			}
+		}
+	}
+	
+	if ( empty( $font_families ) ) {
+		return '';
 	}
 
-	$font_families[] = 'display=swap';
-
-	// Make a single request for the theme fonts.
-	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families ) );
+	// Make a single request for the theme or user fonts.
+	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
 }
 
 /**
@@ -119,3 +121,57 @@ add_action( 'init', 'blockbase_restore_customizer' );
 require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+
+/**
+ * Populate the social links block with the social menu content if it exists
+ *
+ */
+add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
+// We should only change the render of the navigtion block
+// to social links in the following conditions.
+function blockbase_condition_to_render_social_menu( $block ) {
+	// The block should be a navigation block.
+	if ( 'core/navigation' !== $block['blockName'] ) {
+		return false;
+	}
+
+	// The theme should have a menu defined at the social location.
+	if ( ! has_nav_menu( 'social' ) ) {
+		return false;
+	}
+
+	// The block should have a loction defined.
+	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
+		return false;
+	}
+
+	// The block's location should be 'social'.
+	if ( $block['attrs']['__unstableLocation'] !== 'social' ) {
+		return false;
+	}
+
+	return true;
+}
+
+function blockbase_social_menu_render( $block_content, $block ) {
+	if ( blockbase_condition_to_render_social_menu( $block ) ) {
+		$nav_menu_locations = get_nav_menu_locations();
+		$social_menu_id = $nav_menu_locations['social'];
+		$class_name = 'is-style-logos-only';
+		if( !empty( $block['attrs']['itemsJustification'] ) && $block['attrs']['itemsJustification'] === 'right' ) {
+			$class_name .= ' items-justified-right';
+		}
+		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
+		$menu = wp_get_nav_menu_items( $social_menu_id );
+		foreach ($menu as $menu_item) {
+			$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
+			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
+		}
+
+		$block_content .= '</ul>';
+
+		return do_blocks( $block_content );
+	}
+
+	return $block_content;
+}

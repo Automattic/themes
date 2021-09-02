@@ -55,19 +55,36 @@ img {
 /**
  * These are default block editor widths in case the theme doesn't provide them.
  */
-.wp-block-group.alignfull,
-*[class*="wp-container-"] {
+.wp-site-blocks {
 	padding-left: var(--wp--custom--post-content--padding--left);
 	padding-right: var(--wp--custom--post-content--padding--right);
 }
 
-.wp-block-group.alignfull *[class*="wp-container-"],
-.wp-block-group.alignfull > .alignfull,
-*[class*="wp-container-"] *[class*="wp-container-"],
-*[class*="wp-container-"] > .alignfull {
+.wp-site-blocks .alignfull {
 	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
 	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
-	width: calc( 100% + var(--wp--custom--post-content--padding--left) + var(--wp--custom--post-content--padding--right)) !important;
+	width: unset;
+}
+
+.wp-site-blocks .alignfull.wp-block-template-part, .wp-site-blocks .alignfull.wp-block-columns, .wp-site-blocks .alignfull.wp-block-group {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+.is-root-container {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
+}
+
+.is-root-container .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
+	margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+	width: unset;
+}
+
+.is-root-container .wp-block[data-align="full"] > .wp-block-group {
+	padding-left: var(--wp--custom--post-content--padding--left);
+	padding-right: var(--wp--custom--post-content--padding--right);
 }
 
 @media (min-width: 480px) {
@@ -90,10 +107,7 @@ img {
 }
 
 .site-header {
-	align-items: center;
-	flex-wrap: wrap;
 	justify-content: space-between;
-	display: flex;
 	overflow: inherit;
 }
 
@@ -140,6 +154,10 @@ body.admin-bar .wp-site-blocks {
 p {
 	margin-top: var(--wp--custom--margin--vertical);
 	margin-bottom: var(--wp--custom--margin--vertical);
+}
+
+.wp-block-column :first-child, .wp-block-group :first-child {
+	margin-top: 0;
 }
 
 .image-no-margin {
@@ -793,16 +811,11 @@ p.has-background {
 	margin-bottom: unset;
 }
 
-.post-meta {
-	display: flex;
-}
-
 .post-meta .wp-block-post-author,
 .post-meta .wp-block-post-date,
 .post-meta .taxonomy-post_tag,
 .post-meta .taxonomy-category {
 	display: flex;
-	margin-right: calc(2 * var(--wp--custom--margin--baseline));
 }
 
 .post-meta .wp-block-post-author:before,

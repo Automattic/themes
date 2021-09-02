@@ -1,19 +1,63 @@
-header.wp-block-template-part > .wp-block-group {
-	align-items: flex-end; // Needed until theme.json layout lets me specify
-	justify-content: space-between; // Apply a cluster (flex?) layout
-	flex-wrap: wrap-reverse;
-	> * {
-		flex-grow: 1; // Needed to maintain alignment when the containers stack
-		> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
-			margin-top: 20px;
-			margin-bottom: 20px;
+header.wp-block-template-part {
+	max-width: var(--wp--custom--layout--wide-size); // Layouts can be flex OR flow/default (inherit), not both. So we need to mimick the wide width alignment supplied by Gutenberg here.
+	margin: 0 auto;
+	width: 100%;
+	
+	> .wp-block-group {
+		gap: 0;
+		justify-content: space-between; // Apply a cluster (flex?) layout
+		align-items: flex-start;
+		> * {
+			flex-grow: 1; // Needed to maintain alignment when the containers stack
+			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
+				margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				@include break-small-only(){
+					margin-top: calc( 0.125 * var(--wp--custom--margin--vertical) );
+					margin-bottom: calc( 0.125 * var(--wp--custom--margin--vertical) );
+				}
+			}
+		}
+
+		.wp-block-social-links.is-style-logos-only {
+			margin-right: calc( -1 * ( 8px + 0.25em ) ); // Visually align social links to the right
+			> .wp-social-link {
+				padding: 0; // Needed to override Gutenberg default padding on this block style variation
+			}
 		}
 	}
 
-	.wp-block-social-links.is-style-logos-only {
-		margin-right: calc( -1 * ( 8px + 0.25em ) ); // Visually align social links to the right
-		> .wp-social-link {
-			padding: 0; // Needed to override Gutenberg default padding on this block style variation
+	.site-brand {
+		margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
+		display: grid;
+		grid-column-gap: var(--wp--custom--margin--horizontal);
+		grid-template-areas: 
+			"logo title"
+			"logo tagline";
+		grid-template-columns: auto 1fr;
+		@include break-small-only(){
+			grid-template-areas: 
+				"logo"
+				"title"
+				"tagline";
+		}
+		.wp-block-site-logo {
+			grid-area: logo;
+			margin: 0;
+			max-width: 120px;
+			align-self: center;
+			justify-self: flex-end;
+			@include break-small-only(){
+				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+			}
+		}
+		.wp-block-site-title {
+			grid-area: title;
+			margin: 0 0 0.5em;
+		}
+		.wp-block-site-tagline {
+			grid-area: tagline;
+			margin: 0;
 		}
 	}
 }
@@ -23,6 +67,6 @@ header.wp-block-template-part > .wp-block-group {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		border-bottom: 2px solid var(--wp--custom--color--primary);
+		border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
 	}
 }
