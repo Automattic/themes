@@ -57,7 +57,7 @@ header.wp-block-template-part {
 			max-width: 120px;
 			align-self: center;
 			@include break-small-only(){
-				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				margin-bottom: calc( 0.75 * var(--wp--custom--margin--vertical) );
 			}
 		}
 		.wp-block-site-title {
@@ -67,6 +67,9 @@ header.wp-block-template-part {
 		.wp-block-site-tagline {
 			grid-area: tagline;
 			margin: 0;
+			@include break-small-only(){
+				margin-bottom: calc( 0.25 * var(--wp--custom--margin--vertical) );
+			}
 		}
 	}
 }
@@ -75,7 +78,7 @@ header.wp-block-template-part {
 	.nav-links {
 		display: contents;
 		.wp-block-navigation__responsive-container-open {
-			margin-top: calc( 0.5 * var(--wp--custom--margin--vertical));
+			margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) - 3px );
 		}
 		.wp-block-navigation {
 			grid-area: menu;
