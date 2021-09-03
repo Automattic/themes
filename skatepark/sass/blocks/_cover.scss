@@ -1,17 +1,10 @@
 .wp-block-cover {
-	.wp-block-cover__inner-container {
-		width: auto;
-	}
-
-	&.has-custom-content-position {
-		&.is-position-top-left, &.is-position-top-center, &.is-position-top-right {
-			padding-top: 5.75%;
-			padding-bottom: 17.25%;
-		}
-
-		&.is-position-bottom-left, &.is-position-bottom-center, &.is-position-bottom-right {
-			padding-top: 17.25%;
-			padding-bottom: 5.75%;
+	&.alignfull {
+		padding-left: 0;
+		padding-right: 0;
+		.wp-block-cover__inner-container {
+			padding-left: calc( max( 0.5 * ( 100% - var(--wp--custom--layout--wide-size) ), var(--wp--custom--post-content--padding--left) ));
+			padding-right: calc( max( 0.5 * ( 100% - var(--wp--custom--layout--wide-size) ), var(--wp--custom--post-content--padding--left) ));
 		}
 	}
 }

@@ -139,18 +139,14 @@ p {
 	letter-spacing: 0.1em;
 }
 
-.wp-block-cover .wp-block-cover__inner-container {
-	width: auto;
+.wp-block-cover.alignfull {
+	padding-left: 0;
+	padding-right: 0;
 }
 
-.wp-block-cover.has-custom-content-position.is-position-top-left, .wp-block-cover.has-custom-content-position.is-position-top-center, .wp-block-cover.has-custom-content-position.is-position-top-right {
-	padding-top: 5.75%;
-	padding-bottom: 17.25%;
-}
-
-.wp-block-cover.has-custom-content-position.is-position-bottom-left, .wp-block-cover.has-custom-content-position.is-position-bottom-center, .wp-block-cover.has-custom-content-position.is-position-bottom-right {
-	padding-top: 17.25%;
-	padding-bottom: 5.75%;
+.wp-block-cover.alignfull .wp-block-cover__inner-container {
+	padding-left: calc( max( 0.5 * ( 100% - var(--wp--custom--layout--wide-size) ), var(--wp--custom--post-content--padding--left) ));
+	padding-right: calc( max( 0.5 * ( 100% - var(--wp--custom--layout--wide-size) ), var(--wp--custom--post-content--padding--left) ));
 }
 
 .wp-block-post-comments .reply a {
