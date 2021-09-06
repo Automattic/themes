@@ -34,7 +34,7 @@ if ( ! function_exists( 'independent_publisher_2_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		add_theme_support( 'customize_selective_refresh_widgets' );
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
