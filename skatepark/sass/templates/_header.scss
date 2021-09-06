@@ -30,6 +30,9 @@ header.wp-block-template-part {
 
 		.wp-block-social-links.is-style-logos-only {
 			margin-right: calc( -1 * ( 8px + 0.25em ) ); // Visually align social links to the right
+			@include break-small(){
+				margin-top: calc( -1 * ( 8px + 0.25em ) ); // Visually align social links to the tagline
+			}
 			@include break-small-only(){
 				margin-left: -0.25em;
 				margin-right: 0;
@@ -67,6 +70,9 @@ header.wp-block-template-part {
 		.wp-block-site-title {
 			grid-area: title;
 			margin: 0 0 0.5em;
+			@include break-small-only(){
+				margin: 0 0 0.25em;
+			}
 		}
 		.wp-block-site-tagline {
 			grid-area: tagline;
