@@ -8,7 +8,6 @@
 	.comment-meta,
 	.comment-author {
 		font-size: var(--wp--preset--font-size--tiny);
-		margin-left: 0;
 
 		a {
 			text-decoration: none;
@@ -23,16 +22,20 @@
 	}
 
 	.commentlist {
-		.comment {
-			padding-left: 0;
-		}
 
 		> li {
 			margin-bottom: var(--wp--custom--margin--vertical);
-
 			&:not(first-child) {
 				border-bottom: 1px solid var(--wp--custom--form--border--color);
 			}
+		}
+
+		.children {
+			> li {
+				padding-top: var(--wp--custom--margin--vertical);
+				border-top: 1px solid var(--wp--custom--form--border--color);
+			}
+
 		}
 	}
 

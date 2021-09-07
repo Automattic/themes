@@ -184,7 +184,6 @@ is passed all of the block attributes on the block definition in the template. *
 .wp-block-post-comments .comment-meta,
 .wp-block-post-comments .comment-author {
 	font-size: var(--wp--preset--font-size--tiny);
-	margin-left: 0;
 }
 
 .wp-block-post-comments .comment-meta a,
@@ -197,16 +196,17 @@ is passed all of the block attributes on the block definition in the template. *
 	--wp--custom--form--label--spacing--margin--bottom: 0;
 }
 
-.wp-block-post-comments .commentlist .comment {
-	padding-left: 0;
-}
-
 .wp-block-post-comments .commentlist > li {
 	margin-bottom: var(--wp--custom--margin--vertical);
 }
 
 .wp-block-post-comments .commentlist > li:not(first-child) {
 	border-bottom: 1px solid var(--wp--custom--form--border--color);
+}
+
+.wp-block-post-comments .commentlist .children > li {
+	padding-top: var(--wp--custom--margin--vertical);
+	border-top: 1px solid var(--wp--custom--form--border--color);
 }
 
 .wp-block-post-comments .comment .comment-author .avatar {
