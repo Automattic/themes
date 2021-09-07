@@ -1,17 +1,18 @@
-@import 'button-mixins';
-
 .wp-block-post-comments {
 	label, .comment-meta {
 		font-size: var(--wp--custom--form--label--typography--font-size);
 	}
 
 	.reply {
-		font-size: var(--wp--preset--font-size--normal);
 		margin-top: var(--wp--custom--margin--vertical);
 		margin-bottom: 0;
 
 		a {
 			display: inline-block;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 
