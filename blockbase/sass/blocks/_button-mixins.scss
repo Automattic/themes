@@ -62,3 +62,18 @@
 		}
 	}
 }
+
+//Mixins for the alternative outline style
+@mixin button-outline-hover-styles {
+	&:hover,
+	&:focus,
+	&.has-focus {
+		border-style: var(--wp--custom--button--border--style);
+		border-color: currentColor;
+		border-width: var(--wp--custom--button--border--width);
+		padding-top: var(--wp--custom--button--spacing--padding--top);
+		padding-bottom: var(--wp--custom--button--spacing--padding--bottom);
+		padding-left: var(--wp--custom--button--spacing--padding--left);
+		padding-right: var(--wp--custom--button--spacing--padding--right);
+	}
+}
