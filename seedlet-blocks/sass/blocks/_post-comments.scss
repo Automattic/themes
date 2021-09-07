@@ -48,12 +48,10 @@
 	form {
 		p {
 			--wp--custom--margin--vertical: var(--wp--custom--margin--baseline);
+			margin-top: var(--wp--custom--margin--baseline);
 		}
 
 		input[type="submit"] {
-			border-radius: var(--wp--custom--button--border--radius);
-			cursor: pointer;
-			font-size: var(--wp--preset--font-size--normal);
 			line-height: 1.5;
 			padding: 23px 25px;
 
@@ -73,8 +71,7 @@
 
 		input:not([type=submit]):not([type=checkbox]),
 		textarea {
-			font-size: var(--wp--preset--font-size--small);
-			width: 100%;
+			--wp--preset--font-size--normal: var(--wp--preset--font-size--small);
 
 			&:focus {
 				color: var(--wp--custom--form--color--text);
