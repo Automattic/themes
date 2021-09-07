@@ -176,22 +176,9 @@ is passed all of the block attributes on the block definition in the template. *
 	justify-content: center;
 }
 
-.wp-block-post-comments .reply a {
-	border-radius: var(--wp--custom--button--border--radius);
-	font-size: var(--wp--preset--font-size--small);
-	line-height: 1.5;
-	padding: 23px 25px;
-}
-
-.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
-	padding: 23px 25px;
-}
-
 .wp-block-post-comments #comments,
 .wp-block-post-comments #reply-title {
-	font-size: var(--wp--preset--font-size--huge);
 	font-style: italic;
-	margin-bottom: var(--wp--custom--margin--vertical);
 }
 
 .wp-block-post-comments .comment-meta,
@@ -205,23 +192,16 @@ is passed all of the block attributes on the block definition in the template. *
 	text-decoration: none;
 }
 
-.wp-block-post-comments label {
-	font-size: var(--wp--preset--font-size--small);
-	margin-bottom: var(--wp--custom--margin--baseline);
+.wp-block-post-comments form label:not([for=wp-comment-cookies-consent]) {
+	--wp--custom--form--label--typography--font-size: var(--wp--preset--font-size--small);
+	--wp--custom--form--label--spacing--margin--bottom: 0;
 }
 
 .wp-block-post-comments .commentlist .comment {
 	padding-left: 0;
 }
 
-.wp-block-post-comments .commentlist .comment p {
-	font-size: var(--wp--preset--font-size--normal);
-	margin-bottom: var(--wp--custom--margin--vertical);
-	margin-top: var(--wp--custom--margin--vertical);
-}
-
 .wp-block-post-comments .commentlist > li {
-	margin-top: var(--wp--custom--margin--vertical);
 	margin-bottom: var(--wp--custom--margin--vertical);
 }
 
@@ -230,22 +210,14 @@ is passed all of the block attributes on the block definition in the template. *
 }
 
 .wp-block-post-comments .comment .comment-author .avatar {
-	border-radius: 1.5em;
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
-	display: block;
-	float: left;
 	height: 42px;
 	margin-right: 18px;
 	width: 42px;
 }
 
-.wp-block-post-comments .comment .comment-author .fn {
-	font-size: var(--global--font-size-xs);
-}
-
 .wp-block-post-comments form p {
-	margin-top: var(--wp--custom--margin--baseline);
-	margin-bottom: var(--wp--custom--margin--baseline);
+	--wp--custom--margin--vertical: var(--wp--custom--margin--baseline);
 }
 
 .wp-block-post-comments form input[type="submit"] {

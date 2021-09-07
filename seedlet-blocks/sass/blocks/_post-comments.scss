@@ -1,26 +1,8 @@
 .wp-block-post-comments {
-	.reply {
-		a {
-			border-radius: var(--wp--custom--button--border--radius);
-			font-size: var(--wp--preset--font-size--small);
-			line-height: 1.5;
-			padding: 23px 25px;
-
-			&:not(.has-background):not(.has-text-color) {
-				&:hover,
-				&:focus,
-				&.has-focus {
-					padding: 23px 25px;
-				}
-			}
-		}
-	}
 
 	#comments,
 	#reply-title {
-		font-size: var(--wp--preset--font-size--huge);
 		font-style: italic;
-		margin-bottom: var(--wp--custom--margin--vertical)
 	}
 
 	.comment-meta,
@@ -33,24 +15,19 @@
 		}
 	}
 
-	label {
-		font-size: var(--wp--preset--font-size--small);
-		margin-bottom: var(--wp--custom--margin--baseline);
+	form {
+		label:not([for=wp-comment-cookies-consent]) {
+			--wp--custom--form--label--typography--font-size: var(--wp--preset--font-size--small);
+			--wp--custom--form--label--spacing--margin--bottom: 0;
+		}
 	}
 
 	.commentlist {
 		.comment {
 			padding-left: 0;
-
-			p {
-				font-size: var(--wp--preset--font-size--normal);
-				margin-bottom: var(--wp--custom--margin--vertical);
-				margin-top: var(--wp--custom--margin--vertical);
-			}
 		}
 
 		> li {
-			margin-top: var(--wp--custom--margin--vertical);
 			margin-bottom: var(--wp--custom--margin--vertical);
 
 			&:not(first-child) {
@@ -61,24 +38,16 @@
 
 	.comment .comment-author {
 		.avatar {
-			border-radius: 1.5em;
 			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
-			display: block;
-			float: left;
 			height: 42px;
 			margin-right: 18px;
 			width: 42px;
-		}
-
-		.fn {
-			font-size: var(--global--font-size-xs);
 		}
 	}
 
 	form {
 		p {
-			margin-top: var(--wp--custom--margin--baseline);
-			margin-bottom: var(--wp--custom--margin--baseline);
+			--wp--custom--margin--vertical: var(--wp--custom--margin--baseline);
 		}
 
 		input[type="submit"] {
