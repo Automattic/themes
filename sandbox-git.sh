@@ -34,6 +34,17 @@ ssh -TA wpcom-sandbox << EOF
   echo
 EOF
 
+# Add the sandbox as a remote to your local
+# This doesn't seem to actually work right now...
+# This allows you to refer to the github as "origin" and your sandbox as "sandbox"
+# Note that for this to work your ~/.ssh/config must have 
+# Host wpcom-sandbox
+#     User wpdev
+#     HostName SANDBOXURL.wordpress.com
+#     ForwardAgent yes
+elif [[ $1 == "add-sandbox-remote" ]]; then
+git remote add sandbox wpdev@wpcom-sandbox:/home/wpdev/public_html/wp-content/themes/pub/.git
+
 # Switch the sandbox to a given branch.
 # Defaults to current branch if not provided.
 elif [[ $1 == "checkout-branch" ]]; then
@@ -65,6 +76,13 @@ ssh -TA wpcom-sandbox << EOF
   echo '#TODO: Alas, until histories align this is not possible';
 EOF
 
+# Clone the sandbox here.
+# I don't think you would ever actually do this one... if you have this script then you've already cloned the repo from SOMEWHERE.
+# It's mostly here as a reference.
+# (helpful hint, if that's the only repository in play [premium] this here line might be helpful)
+elif [[ $1 == "clone" ]]; then
+git clone wpdev@wpcom-sandbox:/home/wpdev/public_html/wp-content/themes/pub/.git .
 
 
+# All Done
 fi
