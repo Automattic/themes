@@ -1,79 +1,20 @@
-@import "../../../blockbase/sass/blocks/button-mixins";
-
 .wp-block-post-comments {
+
 	.reply {
 		a {
-			--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
-			@include button-border-styles;
-			--wp--custom--button--color--text: var(--wp--custom--button--hover--color--text);
-			--wp--custom--button--color--background: var(--wp--custom--button--color--background);
-			--wp--custom--button--border--color: var(--wp--custom--button--hover--color--text);
-
-			& ,
-			&:hover,
-			&:focus,
-			&:active {
-				line-height: 1;
-			}
-			&:not(.has-background):not(.has-text-color) {
-				&:hover,
-				&:focus,
-				&.has-focus {
-					--wp--custom--button--typography--font-size: var(--wp--preset--font-size--normal);
-					--wp--custom--button--color--text: var(--wp--custom--button--hover--color--background);
-					--wp--custom--button--color--background: var(--wp--custom--button--hover--color--text);
-				}
-			}
+			@include text-decoration;
 		}
 	}
 
 	form {
 		column-gap: 1.2em;
-		grid-template-areas:
-			"notes notes"
-			"comment comment"
-			"author email"
-			"url url"
-			"cookies-consent cookies-consent"
-			"form-submit form-submit";
-
-		input:not([type=submit]):not([type=checkbox]),
-		textarea {
-			font-size: var(--wp--preset--font-size--normal);
-			width: 100%;
-		}
-
-		label:not([for=wp-comment-cookies-consent]) {
-			font-size: var(--wp--custom--form--label--typography--font-size);
-			font-weight: var(--wp--custom--form--label--typography--font-weight);
-			letter-spacing: var(--wp--custom--form--label--typography--letter-spacing);
-			margin-bottom: var(--wp--custom--form--label--spacing--margin--bottom);
-			text-transform: var(--wp--custom--form--label--typography--text-transform);
-		}
-
-		p {
-			margin-top: 0;
-			margin-bottom: 30px;
-		}
-
-		.comment-form-comment {
-			textarea {
-				vertical-align: top;
-			}
-		}
-
-		.comment-form-cookies-consent {
-			margin-bottom: var(--wp--custom--margin--vertical);
-		}
 	}
 
 	.comment-reply-title {
-		margin-bottom: 30px;
+		margin-bottom: calc( 2 * var(--wp--custom--margin--baseline));
 	}
 
 	.comment-author {
-		margin-bottom: var(--wp--custom--margin--baseline);
-
 		cite {
 			font-weight: bold;
 		}
@@ -84,7 +25,7 @@
 	}
 
 	.commentmetadata {
-		margin-bottom: 36px;
+		--wp--style--block-gap: 48px;
 
 		a {
 			font-weight: 500;
@@ -92,12 +33,13 @@
 	}
 
 	.commentlist {
-		margin-bottom: calc( 8 * var(--wp--custom--margin--baseline) );
+		--wp--style--block-gap: 60px;
 	}
 
 	// Target certain links within post comments to use the underline treatment.
 	.comment-body > p > a,
 	.comment-edit-link {
+		@include text-decoration;
 		text-decoration: underline;
 
 		&:hover {

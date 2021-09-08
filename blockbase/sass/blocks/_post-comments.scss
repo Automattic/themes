@@ -1,21 +1,18 @@
-@import 'button-mixins';
-
 .wp-block-post-comments {
 	label, .comment-meta {
 		font-size: var(--wp--custom--form--label--typography--font-size);
 	}
 
-	input[type="submit"], 
-	.reply a {
-		@include button-main-styles;
-		@include button-hover-styles;
-	}
-
 	.reply {
-		margin-block: var(--wp--custom--margin--vertical);
+		margin-top: var(--wp--custom--margin--vertical);
+		margin-bottom: 0;
 
 		a {
 			display: inline-block;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -25,22 +22,35 @@
 		grid-template-rows: auto;
 		grid-template-areas:
 			"notes notes"
-			"comment comment"
 			"author author"
-			"email email"
-			"url url"
+			"email url"
+			"comment comment"
 			"cookies-consent cookies-consent"
 			"form-submit form-submit";
 
 		input:not([type=submit]):not([type=checkbox]),
 		textarea {
+			font-size: var(--wp--preset--font-size--normal);
 			background: var(--wp--custom--color--background);
 			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 			width: 100%;
 		}
 
+		textarea {
+			vertical-align: top;
+		}
+
+		label:not([for=wp-comment-cookies-consent]) {
+			font-size: var(--wp--custom--form--label--typography--font-size);
+			font-weight: var(--wp--custom--form--label--typography--font-weight);
+			letter-spacing: var(--wp--custom--form--label--typography--letter-spacing);
+			margin-bottom: var(--wp--custom--form--label--spacing--margin--bottom);
+			text-transform: var(--wp--custom--form--label--typography--text-transform);
+		}
+
 		p {
 			margin-top: 0;
+			margin-bottom: var(--wp--custom--margin--vertical);
 		}
 
 		.comment-notes {
@@ -76,6 +86,8 @@
 				@include hide-accesibly;
 				margin-left: 0;
 				& + label {
+					display: inline-block;
+					line-height: calc( var(--wp--custom--form--checkbox--unchecked--sizing--height) + 2 * var(--wp--custom--form--border--width));
 					margin-left: 0;
 					padding-left: 3em;
 					position: relative;
@@ -114,16 +126,24 @@
 	}
 
 	.commentlist {
+		margin-bottom: calc(2 * var(--wp--style--block-gap));
 		.comment {
 			p {
 				font-size: var(--wp--custom--post-comment--typography--font-size);
 				line-height: var(--wp--custom--post-comment--typography--line-height);
+				margin-bottom: var(--wp--custom--margin--vertical);
+				margin-top: var(--wp--custom--margin--vertical);	
 			}
 		}
 	}
 
+	.comment-body {
+		margin-bottom: calc(1.5 * var( --wp--style--block-gap ));
+	}
+
 	.commentmetadata {
 		margin-left: 0;
+		margin-bottom: calc(0.75 * var( --wp--style--block-gap ));
 	}
 
 	.comment-awaiting-moderation {
