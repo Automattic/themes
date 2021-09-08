@@ -4,7 +4,6 @@ declare -a ChildThemes=("alves" "balasana" "barnsbury" "brompton" "coutoire" "da
 
 for child in ${ChildThemes[@]}; do
 	cd '../'${child}
-	rm -rf node_modules
 	echo 'Rebulding '${child}
 	npm install
 	npm run build
