@@ -487,6 +487,15 @@ header.wp-block-template-part > .wp-block-group {
 	align-items: flex-start;
 }
 
+@media (max-width: 599px) {
+	header.wp-block-template-part > .wp-block-group {
+		grid-row-gap: calc( 0.25 * var(--wp--custom--margin--vertical));
+		display: grid;
+		grid-template-areas: "brand menu" "social social";
+		border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
+	}
+}
+
 header.wp-block-template-part > .wp-block-group > * {
 	flex-grow: 1;
 }
@@ -507,6 +516,19 @@ header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-
 	margin-right: calc( -1 * ( 8px + 0.25em ));
 }
 
+@media (min-width: 600px) {
+	header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only {
+		margin-top: calc( -1 * ( 8px + 0.25em ));
+	}
+}
+
+@media (max-width: 599px) {
+	header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only {
+		margin-left: -0.25em;
+		margin-right: 0;
+	}
+}
+
 header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only > .wp-social-link {
 	padding: 0;
 }
@@ -522,6 +544,7 @@ header.wp-block-template-part .site-brand {
 @media (max-width: 599px) {
 	header.wp-block-template-part .site-brand {
 		grid-template-areas: "logo" "title" "tagline";
+		grid-area: brand;
 	}
 }
 
@@ -530,12 +553,11 @@ header.wp-block-template-part .site-brand .wp-block-site-logo {
 	margin: 0;
 	max-width: 120px;
 	align-self: center;
-	justify-self: flex-end;
 }
 
 @media (max-width: 599px) {
 	header.wp-block-template-part .site-brand .wp-block-site-logo {
-		margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical));
+		margin-bottom: calc( 0.75 * var(--wp--custom--margin--vertical));
 	}
 }
 
@@ -544,17 +566,36 @@ header.wp-block-template-part .site-brand .wp-block-site-title {
 	margin: 0 0 0.5em;
 }
 
+@media (max-width: 599px) {
+	header.wp-block-template-part .site-brand .wp-block-site-title {
+		margin: 0 0 0.25em;
+	}
+}
+
 header.wp-block-template-part .site-brand .wp-block-site-tagline {
 	grid-area: tagline;
 	margin: 0;
 }
 
 @media (max-width: 599px) {
+	header.wp-block-template-part .site-brand .wp-block-site-tagline {
+		margin-bottom: calc( 0.25 * var(--wp--custom--margin--vertical));
+	}
+}
+
+@media (max-width: 599px) {
 	.nav-links {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
+		display: contents;
+	}
+	.nav-links .wp-block-navigation__responsive-container-open {
+		margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) - 3px);
+	}
+	.nav-links .wp-block-navigation {
+		grid-area: menu;
+	}
+	.nav-links .wp-block-social-links {
+		justify-content: flex-start;
+		grid-area: social;
 	}
 }
 
