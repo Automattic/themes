@@ -1,19 +1,19 @@
 //FRONTEND
 .wp-site-blocks { // top level of the view
 	//In this situation we want to introduce a standardized gap between content and the edge of the screen.
-	padding-left: var(--wp--custom--post-content--padding--left);
-	padding-right: var(--wp--custom--post-content--padding--right);
+	padding-left: var(--wp--custom--margin--horizontal);
+	padding-right: var(--wp--custom--margin--horizontal);
 	.alignfull {
 		// these elements we want to "bust out" of the gap created above 
-		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
-		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+		margin-left: calc(-1 * var(--wp--custom--margin--horizontal)) !important;
+		margin-right: calc(-1 * var(--wp--custom--margin--horizontal)) !important;
 		width: unset;
 		// however any containers that "bust out" should re-apply that gap but this time using padding instead of margins.
 		&.wp-block-template-part,
 		&.wp-block-columns,
 		&.wp-block-group {
-	 		padding-left: var(--wp--custom--post-content--padding--left);
-	 		padding-right: var(--wp--custom--post-content--padding--right);
+	 		padding-left: var(--wp--custom--margin--horizontal);
+	 		padding-right: var(--wp--custom--margin--horizontal);
 		}
 	}
 }
@@ -21,15 +21,15 @@
 // EDITOR (NOTE: It PROBABLY would be OK to bring these together to "simplify" the stylesheet.  However the selectors are quite different
 // and it's a lot easier to understand and ensure intent separated in this way.
 .is-root-container { //top level of the editor
-	padding-left: var(--wp--custom--post-content--padding--left);
-	padding-right: var(--wp--custom--post-content--padding--right);
+	padding-left: var(--wp--custom--margin--horizontal);
+	padding-right: var(--wp--custom--margin--horizontal);
 	.wp-block[data-align="full"] { //blocks configured to be "align full" in "editorspeak"
-		margin-left: calc(-1 * var(--wp--custom--post-content--padding--left)) !important;
-		margin-right: calc(-1 * var(--wp--custom--post-content--padding--right)) !important;
+		margin-left: calc(-1 * var(--wp--custom--margin--horizontal)) !important;
+		margin-right: calc(-1 * var(--wp--custom--margin--horizontal)) !important;
 		width: unset;
 		>.wp-block-group {
-	 		padding-left: var(--wp--custom--post-content--padding--left);
-	 		padding-right: var(--wp--custom--post-content--padding--right);
+	 		padding-left: var(--wp--custom--margin--horizontal);
+	 		padding-right: var(--wp--custom--margin--horizontal);
 		}
 	}
 }
