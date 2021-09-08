@@ -46,7 +46,6 @@ header.wp-block-template-part {
 	.site-brand {
 		margin-top: calc( 0.5 * var(--wp--custom--gap--vertical) );
 		display: grid;
-		grid-column-gap: var(--wp--custom--gap--horizontal);
 		grid-template-areas: 
 			"logo title"
 			"logo tagline";
@@ -60,7 +59,7 @@ header.wp-block-template-part {
 		}
 		.wp-block-site-logo {
 			grid-area: logo;
-			margin: 0;
+			margin: 0 var(--wp--custom--gap--horizontal) 0 0;
 			max-width: 120px;
 			align-self: center;
 			@include break-small-only(){
