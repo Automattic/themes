@@ -1,48 +1,3 @@
-body:not(.highlander-enabled) {
-	.wp-block-post-comments {
-		form {
-			display: grid;
-			column-gap: 1em;
-			grid-template-rows: auto;
-			grid-template-areas:
-				"notes notes"
-				"author author"
-				"email url"
-				"comment comment"
-				"cookies-consent cookies-consent"
-				"form-submit form-submit";
-
-			.comment-notes {
-				grid-area: notes;
-			}
-
-			.comment-form-author {
-				grid-area: author;
-			}
-
-			.comment-form-email {
-				grid-area: email;
-			}
-
-			.comment-form-url {
-				grid-area: url;
-			}
-
-			.comment-form-comment {
-				grid-area: comment;
-			}
-
-			.comment-form-cookies-consent {
-				grid-area: cookies-consent;
-			}
-
-			.form-submit {
-				grid-area: form-submit;
-			}
-		}
-	}
-}
-
 .wp-block-post-comments {
 	label, .comment-meta {
 		font-size: var(--wp--custom--form--label--typography--font-size);
@@ -62,6 +17,17 @@ body:not(.highlander-enabled) {
 	}
 
 	form {
+		display: grid;
+		column-gap: 1em;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"notes notes"
+			"author author"
+			"email url"
+			"comment comment"
+			"cookies-consent cookies-consent"
+			"form-submit form-submit";
+
 		input:not([type=submit]):not([type=checkbox]),
 		textarea {
 			font-size: var(--wp--preset--font-size--normal);
@@ -85,6 +51,34 @@ body:not(.highlander-enabled) {
 		p {
 			margin-top: 0;
 			margin-bottom: var(--wp--custom--margin--vertical);
+		}
+
+		.comment-notes {
+			grid-area: notes;
+		}
+
+		.comment-form-author {
+			grid-area: author;
+		}
+
+		.comment-form-email {
+			grid-area: email;
+		}
+
+		.comment-form-url {
+			grid-area: url;
+		}
+
+		.comment-form-comment {
+			grid-area: comment;
+		}
+
+		.comment-form-cookies-consent {
+			grid-area: cookies-consent;
+		}
+
+		.form-submit {
+			grid-area: form-submit;
 		}
 
 		.comment-form-cookies-consent {
@@ -138,7 +132,7 @@ body:not(.highlander-enabled) {
 				font-size: var(--wp--custom--post-comment--typography--font-size);
 				line-height: var(--wp--custom--post-comment--typography--line-height);
 				margin-bottom: var(--wp--custom--margin--vertical);
-				margin-top: var(--wp--custom--margin--vertical);
+				margin-top: var(--wp--custom--margin--vertical);	
 			}
 		}
 	}
