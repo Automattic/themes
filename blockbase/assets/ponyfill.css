@@ -408,6 +408,41 @@ p.has-background {
 	font-weight: var(--wp--custom--post-author--font-weight);
 }
 
+body:not(.highlander-enabled) .wp-block-post-comments form {
+	display: grid;
+	column-gap: 1em;
+	grid-template-rows: auto;
+	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .comment-notes {
+	grid-area: notes;
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .comment-form-author {
+	grid-area: author;
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .comment-form-email {
+	grid-area: email;
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .comment-form-url {
+	grid-area: url;
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .comment-form-comment {
+	grid-area: comment;
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .comment-form-cookies-consent {
+	grid-area: cookies-consent;
+}
+
+body:not(.highlander-enabled) .wp-block-post-comments form .form-submit {
+	grid-area: form-submit;
+}
+
 .wp-block-post-comments label, .wp-block-post-comments .comment-meta {
 	font-size: var(--wp--custom--form--label--typography--font-size);
 }
@@ -424,13 +459,6 @@ p.has-background {
 
 .wp-block-post-comments .reply a:hover {
 	text-decoration: none;
-}
-
-.wp-block-post-comments form {
-	display: grid;
-	column-gap: 1em;
-	grid-template-rows: auto;
-	grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
 }
 
 .wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
@@ -456,34 +484,6 @@ p.has-background {
 .wp-block-post-comments form p {
 	margin-top: 0;
 	margin-bottom: var(--wp--custom--margin--vertical);
-}
-
-.wp-block-post-comments form .comment-notes {
-	grid-area: notes;
-}
-
-.wp-block-post-comments form .comment-form-author {
-	grid-area: author;
-}
-
-.wp-block-post-comments form .comment-form-email {
-	grid-area: email;
-}
-
-.wp-block-post-comments form .comment-form-url {
-	grid-area: url;
-}
-
-.wp-block-post-comments form .comment-form-comment {
-	grid-area: comment;
-}
-
-.wp-block-post-comments form .comment-form-cookies-consent {
-	grid-area: cookies-consent;
-}
-
-.wp-block-post-comments form .form-submit {
-	grid-area: form-submit;
 }
 
 .wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] {
