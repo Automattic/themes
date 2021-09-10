@@ -98,7 +98,7 @@ function blockbase_fonts_url() {
 			}
 		}
 	}
-	
+
 	if ( empty( $font_families ) ) {
 		return '';
 	}
@@ -175,3 +175,41 @@ function blockbase_social_menu_render( $block_content, $block ) {
 
 	return $block_content;
 }
+
+function blockbase_wp_update_nav_menu_item( $menu_id, $menu_item_db_id, $args ) {
+	// Get nav from $menu_id.
+	$nav = wp_get_nav_menu_object( $menu_id );
+
+	// Should we use the _experimentalLocation???
+	if( "primary" !== $nav->slug ) {
+		return;
+	}
+
+	// Render nav as a block.
+	$nav_items = wp_get_nav_menu_items( $nav );
+	$nav_block_markup = '<!-- wp:navigation {"isResponsive":true} -->';
+	foreach( $nav_items as $nav_item ) {
+		$is_top_level_link = $nav_item->menu_item_parent == 0 ? 'true' : 'false';
+		// TODO: If a block is a submenu, the markup needs to be nested.
+		$nav_block_markup .= '<!-- wp:navigation-link {"label":"'. $nav_item->title .'","type":"' . $nav_item->type . '","url":"' . $nav_item->url . '","kind":"' . $nav_item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} /-->';
+	}
+	$nav_block_markup .= '<!-- /wp:navigation -->';
+
+	// Save nav in template part.
+	$template = gutenberg_get_block_template( get_stylesheet() . '//navigation', 'wp_template_part' );
+
+	// This should be created using prepare_item_for_database.
+	$navigation_template_object = array(
+		'post_name' => 'navigation',
+		'ID' => $template->wp_id,
+		'post_status' => 'publish',
+		'post_content' => $nav_block_markup,
+	);
+
+	if ( 'custom' === $template->source ) {
+		return wp_update_post( wp_slash( $navigation_template_object ), true );
+	} else {
+		return wp_insert_post( wp_slash( $navigation_template_object ), true );
+	}
+}
+add_action( 'wp_update_nav_menu_item', 'blockbase_wp_update_nav_menu_item', 10, 3 );
