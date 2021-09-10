@@ -55,23 +55,30 @@ class GlobalStylesColorCustomizer {
 		// Get the merged theme.json.
 		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 
-		$theme_color_palette = $theme_json['settings']['color']['palette']['theme'];
-		$user_color_palette  = $theme_json['settings']['color']['palette']['theme'];
-
-		// Create a user color palette from user settings, if there are any.
+		$combined_color_palette = $theme_json['settings']['color']['palette']['theme'];
+		$user_color_palette     = null;
 		if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
 		}
 
 		// Combine theme settings with user settings.
-		foreach ( $user_color_palette as $key => $palette_item ) {
-			$user_color_palette[ $key ]['default'] = $this->get_theme_default_color_value( $palette_item['slug'], $theme_color_palette );
+		foreach ( $combined_color_palette as $key => $palette_item ) {
+			//make theme color value the default
+			$combined_color_palette[ $key ]['default'] = $combined_color_palette[ $key ]['color'];
+			//use user color value if there is one
+			$user_color_value = $this->get_user_color_value( $palette_item['slug'], $user_color_palette );
+			if ( isset( $user_color_value ) ) {
+				$combined_color_palette[ $key ]['color'] = $user_color_value;
+			}
 		}
 
-		return $user_color_palette;
+		return $combined_color_palette;
 	}
 
-	function get_theme_default_color_value( $slug, $palette ) {
+	function get_user_color_value( $slug, $palette ) {
+		if ( ! isset( $palette ) ) {
+			return null;
+		}
 		foreach ( $palette as $palette_item ) {
 			if ( $palette_item['slug'] === $slug ) {
 				return $palette_item['color'];
@@ -137,16 +144,16 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post_content->version                     = 1;
 		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
 
-		// Set palette settings.
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'settings', 'color', 'palette' ),
-			$this->user_color_palette
-		);
+		// Start with reset palette settings.
+		unset( $user_theme_json_post_content->settings->color->palette );
 
-		//If the color palette is === the default then we remove it instead
-		if ( $this->check_if_colors_are_default() ) {
-			unset( $user_theme_json_post_content->settings->color->palette );
+		//Set the color palette if it is !== the default
+		if ( ! $this->check_if_colors_are_default() ) {
+			$user_theme_json_post_content = set_settings_array(
+				$user_theme_json_post_content,
+				array( 'settings', 'color', 'palette' ),
+				$this->user_color_palette
+			);
 		}
 
 		// Update the theme.json with the new settings.
