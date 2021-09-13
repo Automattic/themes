@@ -9,7 +9,7 @@ header.wp-block-template-part {
 		align-items: flex-start;
 
 		@include break-small-only(){
-			grid-row-gap: calc( 0.25 * var(--wp--custom--margin--vertical) );
+			grid-row-gap: calc( 0.25 * var(--wp--custom--gap--vertical) );
 			display: grid;
 			grid-template-areas: 
 				"brand menu"
@@ -19,11 +19,11 @@ header.wp-block-template-part {
 		> * {
 			flex-grow: 1; // Needed to maintain alignment when the containers stack
 			> * { // Apply a stack layout (page 69 of the every-layout.dev PDF) 
-				margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
-				margin-bottom: calc( 0.5 * var(--wp--custom--margin--vertical) );
+				margin-top: calc( 0.5 * var(--wp--custom--gap--vertical) );
+				margin-bottom: calc( 0.5 * var(--wp--custom--gap--vertical) );
 				@include break-small-only(){
-					margin-top: calc( 0.125 * var(--wp--custom--margin--vertical) );
-					margin-bottom: calc( 0.125 * var(--wp--custom--margin--vertical) );
+					margin-top: calc( 0.125 * var(--wp--custom--gap--vertical) );
+					margin-bottom: calc( 0.125 * var(--wp--custom--gap--vertical) );
 				}
 			}
 		}
@@ -44,9 +44,9 @@ header.wp-block-template-part {
 	}
 
 	.site-brand {
-		margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) );
+		margin-top: calc( 0.5 * var(--wp--custom--gap--vertical) );
 		display: grid;
-		grid-column-gap: var(--wp--custom--margin--horizontal);
+		grid-column-gap: var(--wp--custom--gap--horizontal);
 		grid-template-areas: 
 			"logo title"
 			"logo tagline";
@@ -64,7 +64,7 @@ header.wp-block-template-part {
 			max-width: 120px;
 			align-self: center;
 			@include break-small-only(){
-				margin-bottom: calc( 0.75 * var(--wp--custom--margin--vertical) );
+				margin-bottom: calc( 0.75 * var(--wp--custom--gap--vertical) );
 			}
 		}
 		.wp-block-site-title {
@@ -78,7 +78,7 @@ header.wp-block-template-part {
 			grid-area: tagline;
 			margin: 0;
 			@include break-small-only(){
-				margin-bottom: calc( 0.25 * var(--wp--custom--margin--vertical) );
+				margin-bottom: calc( 0.25 * var(--wp--custom--gap--vertical) );
 			}
 		}
 	}
@@ -88,7 +88,7 @@ header.wp-block-template-part {
 	.nav-links {
 		display: contents;
 		.wp-block-navigation__responsive-container-open {
-			margin-top: calc( 0.5 * var(--wp--custom--margin--vertical) - 3px );
+			margin-top: calc( 0.5 * var(--wp--custom--gap--vertical) - 3px );
 		}
 		.wp-block-navigation {
 			grid-area: menu;
