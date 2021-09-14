@@ -125,3 +125,4 @@ add_action( 'init', 'blockbase_restore_customizer' );
 require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+require get_template_directory() . '/inc/navigation.php';
