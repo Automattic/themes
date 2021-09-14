@@ -2,16 +2,17 @@
 	position: relative; // This is needed so that the polygon is stretched across the whole site.
 }
 
-.site-header {
+.wp-site-blocks .site-header {
 	overflow: inherit;
-	padding: 10px 0 60px; // TODO: Maybe replace with a responsive custom variable?
+	padding-top: var(--wp--custom--gap--vertical);
 
-	@include break-medium() {
-		padding: var(--wp--custom--post-content--padding--left);
+	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate) 
+	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY 
+	@include break-small-only() {
+		gap: 2px;
 	}
-
 	.wp-block-site-logo {
-		margin-right: var(--wp--custom--margin--horizontal);
+		margin-right: var(--wp--custom--gap--horizontal);
 
 		@include break-small-only(){
 			flex-basis: 100%;
@@ -45,7 +46,7 @@
 
 	&:before {
 		content: "";
-		background-color: var(--wp--custom--color--secondary);
+		background-color: var(--wp--custom--color--tertiary);
 		position: absolute;
 		bottom: 0;
 		top: 0;
