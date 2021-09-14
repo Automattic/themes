@@ -65,7 +65,7 @@ apply-version() {
 
 # only build the project if is has changed since it diverged from trunk
 build-if-changed() {
-	# Only version bump things that have changes
+	# Only build things that have changes
 	uncomitted_changes=$(git diff-index --name-only HEAD -- .)
 	comitted_changes=$(git diff --name-only ${hash_at_divergence} HEAD -- .)
 	if [ -z "$comitted_changes" ] && [ -z "$uncomitted_changes" ]; then
@@ -74,9 +74,56 @@ build-if-changed() {
 	npm run build
 }
 
+build-org-zip-if-changed() {
+	# Only build things that have changes
+	uncomitted_changes=$(git diff-index --name-only HEAD -- .)
+	comitted_changes=$(git diff --name-only ${hash_at_divergence} HEAD -- .)
+	if [ -z "$comitted_changes" ] && [ -z "$uncomitted_changes" ]; then
+		return
+	fi
+	build-org-zip $1
+	echo $uncomitted_changes
+}
+
+build-org-zip() {
+	THEME=${1//\/}
+	echo "Building .zip file for $THEME"
+
+ 	current_version=$(node -p "require('./package.json').version")
+	
+	# Copy the theme into a subfolder (excluding the excludables) to be packaged up in a zip
+	mkdir $THEME;
+	rsync -avzq --include='theme.json' --exclude $THEME --exclude-from '../dotorg-exclude.txt' ./ $THEME
+
+	# Make sure the -wpcom version naming and tags aren't shipped 
+	#NOTE: (can we be rid of that -wpcom 'versioning')
+	find ./$THEME/style.css -type f -exec sed -i '' 's/-wpcom//g' {} \;  
+	find ./$THEME/style.css -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
+	find ./$THEME/style.css -type f -exec sed -i '' 's/, jetpack-global-styles//g' {} \; 
+
+	mkdir ../build/"$THEME"_"$current_version"/
+	zip -q -r -X ../build/"$THEME"_"$current_version"/$THEME.zip $THEME
+	rm -rf $THEME
+
+	echo
+}
+
 command=$1
 echo
 
+# Do these things for a command, but before running the command on each theme
+case $command in
+	"build-org-zip-all")
+		;&
+	"build-org-zip-if-changed")
+		# Get the /build folder ready to recieve zips
+		if [ ! -d "./build" ]; then
+			mkdir build
+		fi
+		rm -rf ./build/*	
+		;;
+esac
+	
 # Do things for all of the themes
 for theme in */ ; do
 	if test -f "./${theme}/package.json"; then
@@ -99,6 +146,12 @@ for theme in */ ; do
 				echo 'Building '${theme}
 				npm run build
 				echo
+				;;
+			"build-org-zip-if-changed")
+				build-org-zip-if-changed ${theme}
+				;;
+			"build-org-zip-all")
+				build-org-zip ${theme}
 				;;
 			"version-bump")
 				version-bump ${theme}
