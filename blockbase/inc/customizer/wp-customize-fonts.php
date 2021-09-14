@@ -352,11 +352,14 @@ class GlobalStylesFontsCustomizer {
 			$setting_name,
 			array(
 				'default'           => $default,
-				'sanitize_callback' => $sanitize_callback,
-				'user_value'        => $user_value,
+				'user_value'        => $user_value
 			)
 		);
-		$wp_customize->add_setting( $global_styles_setting );
+		$wp_customize->add_setting( $global_styles_setting,
+			array(
+				'sanitize_callback' => $sanitize_callback
+			)
+		);
 
 		$choices = array();
 		foreach ( $this->fonts as $font_slug => $font_setting ) {
