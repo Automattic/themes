@@ -30,12 +30,16 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
-		// This theme has one menu location.
+		// This theme has two menu locations.
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' ),
 			)
 		);
+
+		// Create navigation template from saved menus
+		blockbase_update_navigation_template();
 
 	}
 	add_action( 'after_setup_theme', 'blockbase_support', 9 );
@@ -126,7 +130,7 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
  * Populate the social links block with the social menu content if it exists
  *
  */
-add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
+/*add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
 // We should only change the render of the navigtion block
 // to social links in the following conditions.
 function blockbase_condition_to_render_social_menu( $block ) {
@@ -174,37 +178,85 @@ function blockbase_social_menu_render( $block_content, $block ) {
 	}
 
 	return $block_content;
+}*/
+
+class Nav_Menu_To_Nav_Block_Walker extends Walker_Nav_Menu {
+	function start_lvl( &$output, $depth = 0, $args = null ) {
+		$output .= '';
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = null ) {
+		$output .= '<!-- /wp:navigation-link -->';
+	}
+
+	function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		$is_top_level_link = $item->menu_item_parent == 0 ? 'true' : 'false';
+		if ( $args->walker->has_children ) {
+			$output .= '<!-- wp:navigation-link {"label":"'. $item->title .'","type":"' . $item->type . '","url":"' . $item->url . '","kind":"' . $item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} -->';
+		} else {
+			$output .= '<!-- wp:navigation-link {"label":"'. $item->title .'","type":"' . $item->type . '","url":"' . $item->url . '","kind":"' . $item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} /-->';
+		}
+	}
+
+	function end_el( &$output, $item, $depth = 0, $args = null ) {
+		$output .= '';
+	}
 }
 
-function blockbase_wp_update_nav_menu_item( $menu_id, $menu_item_db_id, $args ) {
-	// Get nav from $menu_id.
-	$nav = wp_get_nav_menu_object( $menu_id );
-
-	// Should we use the _experimentalLocation???
-	if( "primary" !== $nav->slug ) {
-		return;
+class Nav_Menu_To_Social_Links_Block_Walker extends Walker_Nav_Menu {
+	function start_lvl( &$output, $depth = 0, $args = null ) {
+		$output .= '';
 	}
 
-	// Render nav as a block.
-	$nav_items = wp_get_nav_menu_items( $nav );
-	$nav_block_markup = '<!-- wp:navigation {"isResponsive":true} -->';
-	foreach( $nav_items as $nav_item ) {
-		$is_top_level_link = $nav_item->menu_item_parent == 0 ? 'true' : 'false';
-		// TODO: If a block is a submenu, the markup needs to be nested.
-		$nav_block_markup .= '<!-- wp:navigation-link {"label":"'. $nav_item->title .'","type":"' . $nav_item->type . '","url":"' . $nav_item->url . '","kind":"' . $nav_item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} /-->';
+	function end_lvl( &$output, $depth = 0, $args = null ) {
+		$output .= '';
 	}
-	$nav_block_markup .= '<!-- /wp:navigation -->';
+
+	function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		$service_name = preg_replace( '/(-[0-9]+)/', '', $item->post_name );
+		$output .= '<!-- wp:social-link {"url":"' . $item->url . '","service":"' . $service_name . '"} /-->';
+	}
+
+	function end_el( &$output, $item, $depth = 0, $args = null ) {
+		$output .= '';
+	}
+}
+
+function blockbase_update_navigation_template() {
+	$primary_nav_block_markup = wp_nav_menu( [
+		'container'=> false,
+		'echo' => false,
+		'items_wrap' => '%3$s',
+		'theme_location' => 'primary',
+		'walker' => new Nav_Menu_To_Nav_Block_Walker(),
+	] );
+
+	$social_nav_block_markup = wp_nav_menu( [
+		'container'=> false,
+		'echo' => false,
+		'items_wrap' => '<!-- wp:social-links --><ul class="wp-block-social-links">%3$s</ul><!-- /wp:social-links -->',
+		'theme_location' => 'social',
+		'walker' => new Nav_Menu_To_Social_Links_Block_Walker(),
+	] );
 
 	// Save nav in template part.
 	$template = gutenberg_get_block_template( get_stylesheet() . '//navigation', 'wp_template_part' );
 
 	// This should be created using prepare_item_for_database.
 	$navigation_template_object = array(
+		'post_title' => 'navigation',
 		'post_name' => 'navigation',
-		'ID' => $template->wp_id,
 		'post_status' => 'publish',
-		'post_content' => $nav_block_markup,
+		'post_content' => '<!-- wp:navigation {"isResponsive":true} -->' . $primary_nav_block_markup . $social_nav_block_markup . '<!-- /wp:navigation -->',
+		'post_type' => 'wp_template_part',
+		'tax_input' => array(
+			'wp_theme' => isset( $template->theme ) ? $template->theme : wp_get_theme()->get_stylesheet(),
+		),
 	);
+
+	if ( $template->wp_id ) {
+		$navigation_template_object['ID'] = $template->wp_id;
+	}
 
 	if ( 'custom' === $template->source ) {
 		return wp_update_post( wp_slash( $navigation_template_object ), true );
@@ -212,4 +264,11 @@ function blockbase_wp_update_nav_menu_item( $menu_id, $menu_item_db_id, $args ) 
 		return wp_insert_post( wp_slash( $navigation_template_object ), true );
 	}
 }
-add_action( 'wp_update_nav_menu_item', 'blockbase_wp_update_nav_menu_item', 10, 3 );
+add_action( 'wp_update_nav_menu_item', 'blockbase_update_navigation_template' );
+
+function blockbase_wp_update_nav( $post_id, $post ) {
+	if ( $post->post_type === "nav_menu_item" ) {
+		blockbase_update_navigation_template();
+	}
+}
+add_action( 'deleted_post', 'blockbase_wp_update_nav', 10, 2 );
