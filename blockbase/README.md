@@ -75,7 +75,8 @@ You should replace CHILD_THEME_NAME with the name of your theme. This package.js
 
 ## `npm run build:theme`
 To use this command you will need to create a file called `child-theme.json`:
-```{
+```
+{
 	"settings": {
 		"custom": {}
 	},
@@ -94,9 +95,9 @@ Like `theme.json` this file also defines the styles for the theme. The build too
 Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. This build command compiles the theme.scss file to a theme.css file. This is a good place to put additional CSS for your theme.
 
 ## `functions.php`
-```
 To add the theme.css file to your theme you will need to add a functions.php file with the following lines:
-`<?php
+```
+<?php
 /**
  * Add Editor Styles
  */
