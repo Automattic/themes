@@ -18,11 +18,16 @@ if ( ! function_exists( 'geologist_register_block_patterns' ) ) :
 
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
+				'authors',
+				'image-feature',
+				'introduction',
+				'quote',
 				'two-featured-posts',
 			);
 
 			if ( class_exists( 'WP_Block_Type_Registry' ) && \WP_Block_Type_Registry::get_instance()->is_registered( 'jetpack/subscriptions' ) ) {
-				$block_patterns[] = 'join';
+				$block_patterns[] = 'email-updates-large';
+				$block_patterns[] = 'email-updates-small';
 			}
 
 			foreach ( $block_patterns as $block_pattern ) {

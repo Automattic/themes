@@ -1,8 +1,8 @@
 <?php
 /**
- * Blog posts with hover effect.
+ * Two posts with features images in a query block.
  *
- * @package Quadrat
+ * @package Geologist
  */
 
 return array(
