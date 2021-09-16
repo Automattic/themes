@@ -312,8 +312,8 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['slug'], $body_font_selected['slug'] );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'] );
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['slug'], $body_font_selected['slug'], 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'], 'sanitize_title' );
 	}
 
 	function get_font_family( $array, $configuration ) {
@@ -345,17 +345,21 @@ class GlobalStylesFontsCustomizer {
 		return $new_font;
 	}
 
-	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value ) {
+	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value, $sanitize_callback ) {
 		$setting_name          = $this->section_key . $name;
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_name,
 			array(
-				'default'    => $default,
-				'user_value' => $user_value,
+				'default'           => $default,
+				'user_value'        => $user_value
 			)
 		);
-		$wp_customize->add_setting( $global_styles_setting );
+		$wp_customize->add_setting( $global_styles_setting,
+			array(
+				'sanitize_callback' => $sanitize_callback
+			)
+		);
 
 		$choices = array();
 		foreach ( $this->fonts as $font_slug => $font_setting ) {

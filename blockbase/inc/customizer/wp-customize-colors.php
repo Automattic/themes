@@ -113,11 +113,15 @@ class GlobalStylesColorCustomizer {
 			$setting_key,
 			array(
 				'default'           => $palette_item['default'],
-				'sanitize_callback' => 'sanitize_hex_color',
 				'user_value'        => $palette_item['color'],
 			)
 		);
-		$wp_customize->add_setting( $global_styles_setting );
+		$wp_customize->add_setting(
+			$global_styles_setting,
+			array(
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
