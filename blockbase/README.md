@@ -91,7 +91,7 @@ Like `theme.json` this file also defines the styles for the theme. The build too
 - It is only necessary to define those properties you wish to change, which keeps your code DRY
 - As more features are added to block themes, Blockbase will be updated to support them. By using the Blockbase theme.json build tool, the child theme will be able to migrate these properties to the child's theme.json file, making more FSE tools available to users.
 
-## `npm run build:css`
+## `npm run build:scss`
 Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. This build command compiles the theme.scss file to a theme.css file. This is a good place to put additional CSS for your theme.
 
 ## `functions.php`
