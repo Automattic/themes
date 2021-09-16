@@ -82,7 +82,6 @@ build-org-zip-if-changed() {
 		return
 	fi
 	build-org-zip $1
-	echo $uncomitted_changes
 }
 
 build-org-zip() {
