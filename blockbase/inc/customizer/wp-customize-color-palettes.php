@@ -64,9 +64,10 @@ class GlobalStylesColorPalettes {
 		$wp_customize->add_setting(
 			'color_palette',
 			array(
-				'default'    => 'default-palette',
-				'capability' => 'edit_theme_options',
-				'transport'  => 'postMessage', // We need this to stop the page refreshing.
+				'default'           => 'default-palette',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => array( __CLASS__, 'sanitize_color_palette' ),
+				'transport'         => 'postMessage', // We need this to stop the page refreshing.
 			)
 		);
 
@@ -83,6 +84,14 @@ class GlobalStylesColorPalettes {
 				)
 			)
 		);
+	}
+
+	function sanitize_color_palette( $palette ) {
+		$palette['slug']  = sanitize_title( $palette['slug'] );
+		$palette['color'] = sanitize_hex_color( $palette['color'] );
+		$palette['name']  = sanitize_title( $palette['name'] );
+
+		return $palette;
 	}
 }
 
