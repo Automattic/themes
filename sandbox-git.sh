@@ -72,12 +72,46 @@ EOF
 elif [[ $1 == "push" ]]; then
 rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./ wpcom-sandbox:$SANDBOX_PUBLIC_THEMES_FOLDER/
 
-# Deploy to the sandbox the target branch
-# Create a Phabricator diff of the change to be deployed and display the URL.
-# Bonus points: Do this any time a branch is opened to merge to /trunk in github
-elif [[ $1 == "deploy-branch" ]]; then
+elif [[ $1 == "create-diff" ]]; then
+
+#TODO: Do some fancy git stuff to build the commit message
+commit_message="Deploy Themes [THEME UMBRELLA PROJECT VERSION] to wpcom
+   
+Summary:
+This is a test.  Please ignore this diff
+This should reflect all of the Pull Requests between THIS BRANCH and TRUNK (stating at the point of diversion)
+
+Test Plan: Execute Smoke Test
+   
+Reviewers:
+   
+Subscribers:
+"
+
 ssh -TA wpcom-sandbox << EOF 
-  echo '#TODO: Alas, until histories align this is not possible';
+  cd $SANDBOX_PUBLIC_THEMES_FOLDER
+  git branch -D deploy
+  git checkout -b deploy
+  git add --all
+  git commit -m "$commit_message"
+  arc diff --create --verbatim
+EOF
+#TODO: Pull the Phabricator URL from the output above
+# Open phabricator URL in my browser
+# Add Phabricator URL to the PR I'm working with (as a comment) ???
+
+elif [[ $1 == "checkout-diff" ]]; then
+diff_id=$2
+ssh -TA wpcom-sandbox << EOF 
+  cd $SANDBOX_PUBLIC_THEMES_FOLDER
+  arc patch $diff_id
+EOF
+
+
+elif [[ $1 == "deploy-diff" ]]; then
+ssh -TA wpcom-sandbox << EOF 
+  cd $SANDBOX_PUBLIC_THEMES_FOLDER
+  arc land --onto trunk --preview
 EOF
 
 # Clone the sandbox here.
