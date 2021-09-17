@@ -98,7 +98,7 @@ function blockbase_fonts_url() {
 			}
 		}
 	}
-	
+
 	if ( empty( $font_families ) ) {
 		return '';
 	}
