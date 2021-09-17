@@ -2,9 +2,7 @@
 
 SANDBOX_PUBLIC_THEMES_FOLDER='/home/wpdev/public_html/wp-content/themes/pub';
 
-# Clean the sandbox.
-# checkout trunk and ensure it's up-to-date.
-# Remove any other changes.
+# Display the status of the repo on sandbox
 if [[ $1 == "status" ]]; then
 ssh -TA wpcom-sandbox << EOF 
   cd '$SANDBOX_PUBLIC_THEMES_FOLDER'; 
@@ -26,6 +24,7 @@ ssh -TA wpcom-sandbox << EOF
 EOF
 
 # Add the public github as a remote to your sandbox
+# This is useful to checkout branches from github directly to your sandbox
 elif [[ $1 == "add-github-remote" ]]; then
 ssh -TA wpcom-sandbox << EOF 
   cd '$SANDBOX_PUBLIC_THEMES_FOLDER'; 
@@ -45,7 +44,7 @@ EOF
 elif [[ $1 == "add-sandbox-remote" ]]; then
 git remote add sandbox wpdev@wpcom-sandbox:/home/wpdev/public_html/wp-content/themes/pub/.git
 
-# Switch the sandbox to a given branch.
+# Switch the sandbox to a given github branch.
 # Defaults to current branch if not provided.
 elif [[ $1 == "checkout-branch" ]]; then
   if [[ -z $2 ]]; then
@@ -63,10 +62,15 @@ EOF
 
 # First ensure that the local and sandbox are on the same branch.
 # Then push whatever has changed in the local branch to the sandbox via rsync.
+# This isn't going to work because the public repo (github) and private repo (a8c)
+# don't have common ancestry
 elif [[ $1 == "push-local-diff" ]]; then
 ssh -TA wpcom-sandbox << EOF 
   echo '#TODO: Everything';
 EOF
+
+elif [[ $1 == "push" ]]; then
+rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./ wpcom-sandbox:$SANDBOX_PUBLIC_THEMES_FOLDER/
 
 # Deploy to the sandbox the target branch
 # Create a Phabricator diff of the change to be deployed and display the URL.
@@ -79,7 +83,6 @@ EOF
 # Clone the sandbox here.
 # I don't think you would ever actually do this one... if you have this script then you've already cloned the repo from SOMEWHERE.
 # It's mostly here as a reference.
-# (helpful hint, if that's the only repository in play [premium] this here line might be helpful)
 elif [[ $1 == "clone" ]]; then
 git clone wpdev@wpcom-sandbox:/home/wpdev/public_html/wp-content/themes/pub/.git .
 
