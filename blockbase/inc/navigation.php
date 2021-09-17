@@ -11,10 +11,12 @@ class Nav_Menu_To_Nav_Block_Walker extends Walker_Nav_Menu {
 
 	function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
 		$is_top_level_link = $item->menu_item_parent == 0 ? 'true' : 'false';
-		if ( $args->walker->has_children ) {
-			$output .= '<!-- wp:navigation-link {"label":"'. $item->title .'","type":"' . $item->type . '","url":"' . $item->url . '","kind":"' . $item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} -->';
-		} else {
-			$output .= '<!-- wp:navigation-link {"label":"'. $item->title .'","type":"' . $item->type . '","url":"' . $item->url . '","kind":"' . $item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} /-->';
+		if ( ! empty( $args ) && property_exists( $args, 'walker' ) && property_exists( $args->walker, 'has_children' ) ) {
+			if ( $args->walker->has_children ) {
+				$output .= '<!-- wp:navigation-link {"label":"'. $item->title .'","type":"' . $item->type . '","url":"' . $item->url . '","kind":"' . $item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} -->';
+			} else {
+				$output .= '<!-- wp:navigation-link {"label":"'. $item->title .'","type":"' . $item->type . '","url":"' . $item->url . '","kind":"' . $item->object . '","isTopLevelLink":"' . $is_top_level_link . '"} /-->';
+			}
 		}
 	}
 
