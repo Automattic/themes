@@ -1,0 +1,20 @@
+.wp-block-post-comments {
+
+	form {
+		input:not([type=submit]):not([type=checkbox]),
+		textarea {
+			font-size: var(--wp--preset--font-size--normal);
+			width: 100%;
+		}
+	}
+
+	// Target certain links within post comments to use the underline treatment.
+	.comment-body > p > a,
+	.comment-edit-link {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

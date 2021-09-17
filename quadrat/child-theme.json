@@ -19,9 +19,9 @@
 					"name": "Primary"
 				},
 				{
-					"slug": "secondary",
+					"slug": "tertiary",
 					"color": "#151853",
-					"name": "Secondary"
+					"name": "Tertiary"
 				},
 				{
 					"slug": "background",
@@ -60,8 +60,8 @@
 				"foreground": "var(--wp--preset--color--primary)",
 				"background": "var(--wp--preset--color--background)",
 				"primary": "var(--wp--preset--color--primary)",
-				"secondary": "var(--wp--preset--color--secondary)",
-				"selection": "var(--wp--preset--color--secondary)"
+				"secondary": "var(--wp--preset--color--primary)",
+				"tertiary": "var(--wp--preset--color--tertiary)"
 			},
 			"colorPalettes": [
 				{
@@ -69,7 +69,7 @@
 					"slug": "blue",
 					"colors": {
 						"primary": "#FDF5E2",
-						"secondary": "#123B62",
+						"tertiary": "#123B62",
 						"background": "#204A72"
 					}
 				},
@@ -78,7 +78,7 @@
 					"slug": "dark-blue",
 					"colors": {
 						"primary": "#F9DAAD",
-						"secondary": "#071F2C",
+						"tertiary": "#071F2C",
 						"background": "#0E2B3B"
 					}
 				},
@@ -87,7 +87,7 @@
 					"slug": "green",
 					"colors": {
 						"primary": "#F5D5CA",
-						"secondary": "#0A2C25",
+						"tertiary": "#0A2C25",
 						"background": "#103931"
 					}
 				},
@@ -96,7 +96,7 @@
 					"slug": "red",
 					"colors": {
 						"primary": "#CEEDFF",
-						"secondary": "#721A18",
+						"tertiary": "#721A18",
 						"background": "#822726"
 					}
 				},
@@ -105,7 +105,7 @@
 					"slug": "light-green",
 					"colors": {
 						"primary": "#0C1946",
-						"secondary": "#DBE9DD",
+						"tertiary": "#DBE9DD",
 						"background": "#EBF3EC"
 					}
 				},
@@ -114,7 +114,7 @@
 					"slug": "white",
 					"colors": {
 						"primary": "#2B2B2B",
-						"secondary": "#F8F8F8",
+						"tertiary": "#F8F8F8",
 						"background": "#FFFFFF"
 					}
 				},
@@ -123,7 +123,7 @@
 					"slug": "light-pink",
 					"colors": {
 						"primary": "#151853",
-						"secondary": "#FCD0D0",
+						"tertiary": "#FCD0D0",
 						"background": "#FFE2E2"
 					}
 				},
@@ -132,7 +132,7 @@
 					"slug": "light-yellow",
 					"colors": {
 						"primary": "#0E2B3B",
-						"secondary": "#FBEAD2",
+						"tertiary": "#FBEAD2",
 						"background": "#FFF4E3"
 					}
 				},
@@ -141,7 +141,7 @@
 					"slug": "light-blue",
 					"colors": {
 						"primary": "#460707",
-						"secondary": "#DEE9F1",
+						"tertiary": "#DEE9F1",
 						"background": "#EDF4F9"
 					}
 				}
@@ -170,9 +170,9 @@
 			"line-height": {
 				"body": 1.7
 			},
-			"margin": {
-				"horizontal": "20px",
-				"vertical": "30px"
+			"gap": {
+				"horizontal": "min(34px, 5vw)",
+				"vertical": "min(34px, 5vw)"
 			},
 			"paragraph": {
 				"dropcap": {
@@ -181,12 +181,6 @@
 						"fontSize": "var(--wp--preset--font-size--huge)",
 						"fontWeight": "400"
 					}
-				}
-			},
-			"post-content": {
-				"padding": {
-					"left": "min( var(--wp--custom--margin--horizontal), 5vw)",
-					"right": "min( var(--wp--custom--margin--horizontal), 5vw)"
 				}
 			},
 			"quote": {
@@ -274,7 +268,7 @@
 					"width": "0px"
 				},
 				"color": {
-					"background": "var(--wp--custom--color--secondary)"
+					"background": "var(--wp--custom--color--tertiary)"
 				},
 				"typography": {
 					"fontSize": "20px",
@@ -303,7 +297,7 @@
 			},
 			"list": {
 				"padding": {
-					"left": "calc( 2 * var(--wp--custom--margin--horizontal) )"
+					"left": "calc( 2 * var(--wp--custom--gap--horizontal) )"
 				}
 			},
 			"core/quote": {
@@ -318,7 +312,7 @@
 				},
 				"spacing": {
 					"padding": {
-						"left": "calc( var(--wp--custom--margin--horizontal) * 3 )"
+						"left": "calc( var(--wp--custom--gap--horizontal) * 3 )"
 					}
 				},
 				"typography": {

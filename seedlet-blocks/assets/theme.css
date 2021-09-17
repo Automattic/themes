@@ -37,8 +37,8 @@
 }
 
 .wp-block-latest-posts:not(.is-grid) > li {
-	margin-top: var(--wp--custom--margin--vertical);
-	margin-bottom: var(--wp--custom--margin--vertical);
+	margin-top: var(--wp--custom--gap--vertical);
+	margin-bottom: var(--wp--custom--gap--vertical);
 }
 
 .wp-block-latest-posts:not(.is-grid) > li:first-child {
@@ -50,7 +50,7 @@
 }
 
 .wp-block-latest-posts.is-grid > li {
-	margin-bottom: var(--wp--custom--margin--vertical);
+	margin-bottom: var(--wp--custom--gap--vertical);
 }
 
 .wp-block-latest-posts.is-grid > li:last-child {
@@ -71,8 +71,8 @@
 }
 
 .wp-block-latest-posts > li > * {
-	margin-top: calc(0.5 * var(--wp--custom--margin--vertical));
-	margin-bottom: calc(0.5 * var(--wp--custom--margin--vertical));
+	margin-top: calc(0.5 * var(--wp--custom--gap--vertical));
+	margin-bottom: calc(0.5 * var(--wp--custom--gap--vertical));
 }
 
 .wp-block-latest-posts > li > *:first-child {
@@ -114,8 +114,8 @@
 		overflow: hidden;
 	}
 	.wp-block-latest-posts.is-style-seedlet-alternating-grid > li {
-		width: calc(50% - (0.5 * var(--wp--custom--margin--horizontal)));
-		max-width: calc(50% - (0.5 * var(--wp--custom--margin--horizontal)));
+		width: calc(50% - (0.5 * var(--wp--custom--gap--horizontal)));
+		max-width: calc(50% - (0.5 * var(--wp--custom--gap--horizontal)));
 		text-align: right;
 	}
 	.wp-block-latest-posts.is-style-seedlet-alternating-grid > li:nth-child(2n + 1) {
@@ -126,7 +126,7 @@
 		display: inherit;
 	}
 	.wp-block-latest-posts.is-style-seedlet-alternating-grid.is-grid > li {
-		margin-top: var(--wp--custom--margin--vertical);
+		margin-top: var(--wp--custom--gap--vertical);
 		margin-right: 0;
 	}
 	.wp-block-latest-posts.is-style-seedlet-alternating-grid.is-grid > li:first-child {
@@ -176,28 +176,14 @@ is passed all of the block attributes on the block definition in the template. *
 	justify-content: center;
 }
 
-.wp-block-post-comments .reply a {
-	border-radius: var(--wp--custom--button--border--radius);
-	font-size: var(--wp--preset--font-size--small);
-	line-height: 1.5;
-	padding: 23px 25px;
-}
-
-.wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):hover, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color):focus, .wp-block-post-comments .reply a:not(.has-background):not(.has-text-color).has-focus {
-	padding: 23px 25px;
-}
-
 .wp-block-post-comments #comments,
 .wp-block-post-comments #reply-title {
-	font-size: var(--wp--preset--font-size--huge);
 	font-style: italic;
-	margin-bottom: var(--wp--custom--margin--vertical);
 }
 
 .wp-block-post-comments .comment-meta,
 .wp-block-post-comments .comment-author {
 	font-size: var(--wp--preset--font-size--tiny);
-	margin-left: 0;
 }
 
 .wp-block-post-comments .comment-meta a,
@@ -205,53 +191,37 @@ is passed all of the block attributes on the block definition in the template. *
 	text-decoration: none;
 }
 
-.wp-block-post-comments label {
-	font-size: var(--wp--preset--font-size--small);
-	margin-bottom: var(--wp--custom--margin--baseline);
-}
-
-.wp-block-post-comments .commentlist .comment {
-	padding-left: 0;
-}
-
-.wp-block-post-comments .commentlist .comment p {
-	font-size: var(--wp--preset--font-size--normal);
-	margin-bottom: var(--wp--custom--margin--vertical);
-	margin-top: var(--wp--custom--margin--vertical);
+.wp-block-post-comments form label:not([for=wp-comment-cookies-consent]) {
+	--wp--custom--form--label--typography--font-size: var(--wp--preset--font-size--small);
+	--wp--custom--form--label--spacing--margin--bottom: 0;
 }
 
 .wp-block-post-comments .commentlist > li {
-	margin-top: var(--wp--custom--margin--vertical);
-	margin-bottom: var(--wp--custom--margin--vertical);
+	margin-bottom: calc(1.5 * var( --wp--style--block-gap ));
 }
 
 .wp-block-post-comments .commentlist > li:not(first-child) {
 	border-bottom: 1px solid var(--wp--custom--form--border--color);
 }
 
+.wp-block-post-comments .commentlist .children > li {
+	padding-top: var(--wp--custom--gap--vertical);
+	border-top: 1px solid var(--wp--custom--form--border--color);
+}
+
 .wp-block-post-comments .comment .comment-author .avatar {
-	border-radius: 1.5em;
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
-	display: block;
-	float: left;
 	height: 42px;
 	margin-right: 18px;
 	width: 42px;
 }
 
-.wp-block-post-comments .comment .comment-author .fn {
-	font-size: var(--global--font-size-xs);
-}
-
 .wp-block-post-comments form p {
-	margin-top: var(--wp--custom--margin--baseline);
-	margin-bottom: var(--wp--custom--margin--baseline);
+	--wp--custom--gap--vertical: var(--wp--custom--gap--baseline);
+	margin-top: var(--wp--custom--gap--baseline);
 }
 
 .wp-block-post-comments form input[type="submit"] {
-	border-radius: var(--wp--custom--button--border--radius);
-	cursor: pointer;
-	font-size: var(--wp--preset--font-size--normal);
 	line-height: 1.5;
 	padding: 23px 25px;
 }
@@ -267,8 +237,7 @@ is passed all of the block attributes on the block definition in the template. *
 
 .wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
 .wp-block-post-comments form textarea {
-	font-size: var(--wp--preset--font-size--small);
-	width: 100%;
+	--wp--preset--font-size--normal: var(--wp--preset--font-size--small);
 }
 
 .wp-block-post-comments form input:not([type=submit]):not([type=checkbox]):focus,
@@ -280,7 +249,7 @@ is passed all of the block attributes on the block definition in the template. *
 }
 
 .wp-block-pullquote.is-style-solid-color {
-	padding: var(--wp--custom--margin--horizontal);
+	padding: var(--wp--custom--gap--horizontal);
 }
 
 .wp-block-site-title a {
@@ -298,7 +267,7 @@ is passed all of the block attributes on the block definition in the template. *
  * Author bio
  */
 .author-bio {
-	margin-top: calc(6 * var(--wp--custom--margin--baseline));
+	margin-top: calc(6 * var(--wp--custom--gap--baseline));
 }
 
 .author-bio .wp-block-post-navigation-link,
@@ -311,7 +280,7 @@ is passed all of the block attributes on the block definition in the template. *
 }
 
 .wp-block-post-navigation-links {
-	margin-top: calc(9 * var(--wp--custom--margin--baseline));
+	margin-top: calc(9 * var(--wp--custom--gap--baseline));
 }
 
 .wp-block-post-navigation-links .wp-block-post-navigation-link-byline {

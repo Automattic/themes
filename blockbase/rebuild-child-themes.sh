@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a ChildThemes=( "mayland-blocks" "seedlet-blocks" "quadrat" "skatepark" )
+declare -a ChildThemes=( "mayland-blocks" "seedlet-blocks" "quadrat" "skatepark" "geologist" )
 
 for child in ${ChildThemes[@]}; do
 	cd '../'${child}
