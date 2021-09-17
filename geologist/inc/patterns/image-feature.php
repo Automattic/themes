@@ -16,13 +16,13 @@ return array(
 	<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:heading {"level":3} -->
-	<h3>' . esc_html__( 'Geologist' ) . '</h3>
+	<h3>' . esc_html__( 'Geologist', 'geologist' ) . '</h3>
 	<!-- /wp:heading --></div>
 	<!-- /wp:column -->
 
 	<!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:paragraph -->
-	<p>' . esc_html__( "Geologist is a blog dedicated to everything buried under the earth's surface." ) . '</p>
+	<p>' . esc_html__( "Geologist is a blog dedicated to everything buried under the earth's surface.", 'geologist' ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->',
