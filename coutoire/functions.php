@@ -189,8 +189,9 @@ function coutoire_customizer_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'coutoire_sticky_menu', array(
   		'type' => 'checkbox',
-  		'section' => 'title_tagline',
+  		'section' => 'jetpack_content_options',
   		'label' => __( 'Stick main menu to top of site', 'coutoire' ),
+		'settings' => 'coutoire_sticky_menu',
 	) );
 }
 add_action( 'customize_register', 'coutoire_customizer_register' );
