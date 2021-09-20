@@ -37,6 +37,14 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
+		add_filter(
+			'block_editor_settings_all',
+			function( $settings ) {
+				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
+				return $settings;
+			}
+		);
+
 	}
 	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;
