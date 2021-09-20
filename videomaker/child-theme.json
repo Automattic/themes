@@ -4,22 +4,36 @@
 			"palette": [
 				{
 					"slug": "foreground",
-					"color": "#ffffff",
+					"color": "#FFFFFF",
 					"name": "Foreground"
 				},
 				{
 					"slug": "background",
 					"color": "#000000",
 					"name": "Background"
+				},
+				{
+					"slug": "primary",
+					"color": "#FFFFFF",
+					"name": "Primary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#282828",
+					"name": "Tertiary"
 				}
-
 			]
 		},
 		"custom": {
 			"button": {
 				"border": {
+					"color": "var(--wp--custom--color--foreground)",
 					"radius": "0",
 					"width": "1.5px"
+				},
+				"color": {
+					"background": "var(--wp--custom--color--foreground)",
+					"text": "var(--wp--custom--color--background)"
 				},
 				"hover": {
 					"color": {
@@ -30,7 +44,56 @@
 						"color": "var(--wp--custom--color--foreground)"
 					}
 				}
-			}
+			},
+			"color": {
+				"foreground": "var(--wp--preset--color--foreground)",
+				"background": "var(--wp--preset--color--background)",
+				"primary": "var(--wp--preset--color--foreground)",
+				"secondary": "var(--wp--preset--color--foreground)",
+				"tertiary": "var(--wp--preset--color--background)"
+			},
+			"colorPalettes": [
+				{
+					"label": "Blue/Yellow",
+					"slug": "blue/yellow",
+					"colors": {
+						"foreground": "#FFFFFF",
+						"background": "#0C1525",
+						"primary": "#FFEBD9",
+						"tertiary": "#1D283D"
+					}
+				},
+				{
+					"label": "Olive Green/Light Pink",
+					"slug": "olive-green/light-pink",
+					"colors": {
+						"foreground": "#FFFFFF",
+						"background": "#283226",
+						"primary": "#FFF1EE",
+						"tertiary": "#3B453A"
+					}
+				},
+				{
+					"label": "Grey/Mint Green",
+					"slug": "grey/mint-green",
+					"colors": {
+						"foreground": "#FFFFFF",
+						"background": "#3D3D3D",
+						"primary": "#E7FFDE",
+						"tertiary": "#4F4F4F"
+					}
+				},
+				{
+					"label": "Light Grey/Bordeaux",
+					"slug": "light-grey/bordeaux",
+					"colors": {
+						"foreground": "#000000",
+						"background": "#E3E4E8",
+						"primary": "#4E1509",
+						"tertiary": "#FAFAFA"
+					}
+				}
+			]
 		},
 		"typography": {
 			"fontSizes": [
