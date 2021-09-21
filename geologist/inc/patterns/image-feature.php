@@ -10,7 +10,7 @@ return array(
 	'categories' => array( 'geologist' ),
 	'blockTypes' => array( 'core/image', 'core/columns' ),
 	'content'    => '<!-- wp:image {"align":"wide","sizeSlug":"large"} -->
-	<figure class="wp-block-image alignwide size-large"><img src="https://geologistdemo.files.wordpress.com/2021/09/gem-02.jpg?w=2048" alt=""/></figure>
+	<figure class="wp-block-image alignwide size-large"><img src="/assets/images/gem.jpeg" alt=""/></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:columns {"align":"wide"} -->
