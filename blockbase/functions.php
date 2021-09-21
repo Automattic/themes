@@ -83,26 +83,28 @@ function blockbase_fonts_url() {
 	}
 
 	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
-			if ( ! empty( $font['google'] ) ) {
-				$font_families[] = $font['google'];
-			}
-		}
-	}
-
 	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
 		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
+	} else {
+		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
+			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+				if ( ! empty( $font['google'] ) ) {
+					$font_families[] = $font['google'];
+				}
+			}
+		}
+	}
+	
+	if ( empty( $font_families ) ) {
+		return '';
 	}
 
-	$font_families[] = 'display=swap';
-
-	// Make a single request for the theme fonts.
-	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', $font_families ) );
+	// Make a single request for the theme or user fonts.
+	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
 }
 
 /**

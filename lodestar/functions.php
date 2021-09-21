@@ -90,7 +90,7 @@ if ( ! function_exists( 'lodestar_setup' ) ) :
 		);
 
 		// Add support to selectively refresh widgets in Customizer
-		add_theme_support( 'customize_selective_refresh_widgets' );
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		// Add theme support for Custom Logo.
 		add_theme_support(

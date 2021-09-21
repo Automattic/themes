@@ -87,7 +87,6 @@ add_filter( 'seedlet_colors', 'blank_canvas_colors' );
 function blank_canvas_remove_parent_theme_features() {
 	// Theme Support.
 	remove_theme_support( 'custom-header' );
-	remove_theme_support( 'customize-selective-refresh-widgets' );
 }
 add_action( 'after_setup_theme', 'blank_canvas_remove_parent_theme_features', 11 );
 

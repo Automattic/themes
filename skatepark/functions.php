@@ -25,7 +25,7 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'skatepark' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
+				'social' => __( 'Social Navigation', 'skatepark' )
 			)
 		);
 

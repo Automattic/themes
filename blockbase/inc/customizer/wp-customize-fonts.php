@@ -12,6 +12,8 @@ class GlobalStylesFontsCustomizer {
 	private $font_control_default_body;
 	private $font_control_default_heading;
 
+	//Not all fonts support v2 of the API that allows for the shorter URls
+	//list of supported fonts: https://fonts.google.com/variablefonts
 	private $fonts = array(
 		'system-font'       => array(
 			'fontFamily' => '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
@@ -70,7 +72,7 @@ class GlobalStylesFontsCustomizer {
 			'fontFamily' => '"Fira Sans", sans-serif',
 			'slug'       => 'fira-sans',
 			'name'       => 'Fira Sans',
-			'google'     => 'family=Fira+Sans:ital,wght@0,100..900;1,100..900',
+			'google'     => 'family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900',
 		),
 		'inter'             => array(
 			'fontFamily' => '"Inter", sans-serif',
@@ -150,7 +152,7 @@ class GlobalStylesFontsCustomizer {
 			'name'       => 'Raleway',
 			'google'     => 'family=Raleway:ital,wght@0,100..900;1,100..900',
 		),
-		'red-hat-display'=> array(
+		'red-hat-display'   => array(
 			'fontFamily' => '"Red Hat Display", sans-serif',
 			'slug'       => 'red-hat-display',
 			'name'       => 'Red Hat Display',
@@ -310,8 +312,8 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['slug'], $body_font_selected['slug'] );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'] );
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['slug'], $body_font_selected['slug'], 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'], 'sanitize_title' );
 	}
 
 	function get_font_family( $array, $configuration ) {
@@ -343,17 +345,21 @@ class GlobalStylesFontsCustomizer {
 		return $new_font;
 	}
 
-	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value ) {
+	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value, $sanitize_callback ) {
 		$setting_name          = $this->section_key . $name;
 		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
 			$wp_customize,
 			$setting_name,
 			array(
-				'default'    => $default,
-				'user_value' => $user_value,
+				'default'           => $default,
+				'user_value'        => $user_value
 			)
 		);
-		$wp_customize->add_setting( $global_styles_setting );
+		$wp_customize->add_setting( $global_styles_setting,
+			array(
+				'sanitize_callback' => $sanitize_callback
+			)
+		);
 
 		$choices = array();
 		foreach ( $this->fonts as $font_slug => $font_setting ) {
@@ -379,8 +385,8 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function handle_customize_save_after( $wp_customize ) {
-		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->post_value();
-		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->post_value();
+		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->value();
+		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->value();
 
 		if ( ! isset( $body_value ) && ! isset( $heading_value ) ) {
 			return;
@@ -408,14 +414,6 @@ class GlobalStylesFontsCustomizer {
 
 		$body_font_family_variable    = 'var(--wp--preset--font-family--' . $body_setting['slug'] . ')';
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
-
-		$google_font_array = array();
-		if ( isset( $body_setting['google'] ) ) {
-			$google_font_array[] = $body_setting['google'];
-		}
-		if ( isset( $heading_setting['google'] ) ) {
-			$google_font_array[] = $heading_setting['google'];
-		}
 
 		// Get the user's theme.json from the CPT.
 		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
@@ -497,15 +495,17 @@ class GlobalStylesFontsCustomizer {
 
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			unset( $user_theme_json_post_content->styles->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h1->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h2->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h3->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h4->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h5->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->elemenets->h6->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamilies );
+			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
+			unset( $user_theme_json_post_content->styles->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
+			unset( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
 		}
 
 		// Update the theme.json with the new settings.

@@ -1,6 +1,6 @@
 {
 	"name": "themes",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
@@ -11,7 +11,15 @@
 		"sandbox:push": "./sandbox.sh push",
 		"sandbox:push:ignore": "./sandbox.sh push --ignore",
 		"sandbox:push:force": "./sandbox.sh push --force",
-		"sandbox:watch": "chokidar '**/*' -i '*/node_modules' -i '.git' -c './sandbox.sh push --ignore' --initial"
+		"sandbox:watch": "chokidar '**/*' -i '*/node_modules' -i '.git' -c './sandbox.sh push --ignore' --initial",
+		"local:clean": "git reset --hard HEAD; git clean -fd",
+		"batch:build:changed": "./theme-batch-utils.sh build",
+		"batch:build:all": "./theme-batch-utils.sh build-all",
+		"batch:build:zip:all": "./theme-batch-utils.sh build-org-zip-all",
+		"batch:build:zip:changed": "./theme-batch-utils.sh build-org-zip-if-changed",
+		"batch:install": "./theme-batch-utils.sh install-dependencies",
+		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
+		"batch:version-bump": "./theme-batch-utils.sh version-bump"
 	},
 	"devDependencies": {
 		"@wordpress/prettier-config": "^1.0.1",
@@ -20,7 +28,7 @@
 		"chokidar-cli": "^2.1.0",
 		"husky": "^4.3.0",
 		"lint-staged": "^10.5.4",
-		"lodash": "^4.17.20"
+		"lodash": "^4.17.21"
 	},
 	"husky": {
 		"hooks": {
