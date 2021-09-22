@@ -1,6 +1,7 @@
-.post-meta {
+.wp-block-group.post-meta {
 	align-items: center;
 	justify-content: center;
+	gap: 0;
 	@include break-small-only() {
 		padding-top: 0 !important;
 		margin-bottom: -20px;
@@ -17,11 +18,15 @@
 		}
 	}
 
-	.wp-block-post-terms {
+	.wp-block-post-terms,
+	.taxonomy-category {
 		&::before {
+			align-self: auto;
+			background-color: transparent;
 			color: var(--wp--custom--color--foreground);
 			content: "·";
-			margin-right: 8px;
+			margin-right: 0;
+			mask-image: none;
 		}
 
 		// Needed while https://github.com/WordPress/gutenberg/issues/31710 is sorted.
