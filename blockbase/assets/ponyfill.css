@@ -233,6 +233,11 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+a:not(.ab-item):not(.screen-reader-shortcut):active, a:not(.ab-item):not(.screen-reader-shortcut):focus {
+	outline: 1px dotted currentColor;
+	text-decoration: none;
+}
+
 input.wp-block-search__input,
 input[type="text"],
 input[type="email"],
@@ -276,8 +281,17 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: var(--wp--custom--form--color--text);
 	border-color: var(--custom--form--color--border);
+	color: var(--wp--custom--form--color--text);
+	outline: 1px dotted currentColor;
+	outline-offset: 2px;
+}
+
+input[type="checkbox"]:focus,
+input[type="submit"]:focus,
+button:focus {
+	outline: 1px dotted currentColor;
+	outline-offset: 2px;
 }
 
 select {
@@ -560,6 +574,11 @@ p.has-drop-cap:not(:focus):first-letter {
 	width: var(--wp--custom--form--checkbox--checked--sizing--width);
 	height: var(--wp--custom--form--checkbox--checked--sizing--height);
 	font-size: var(--wp--custom--form--checkbox--checked--font-size);
+}
+
+.wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"]:focus + ::before {
+	outline: 1px dotted currentColor;
+	outline-offset: 2px;
 }
 
 .wp-block-post-comments .comment-reply-title small {
