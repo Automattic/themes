@@ -2,3 +2,11 @@
 .is-vertical.items-justified-right ul.wp-block-navigation__container {
 	align-items: flex-end;
 }
+
+// See https://github.com/WordPress/gutenberg/issues/34648
+.wp-block-navigation.is-responsive {
+	.has-child .wp-block-navigation-link__container {
+		background-color: var(--wp--custom--color--background);
+		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
+	}
+}
