@@ -10,17 +10,6 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 			)
 		);
 
-		// Add support for core custom logo.
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 35,
-				'width'       => 150,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-
 		//Primary navigation is used on the header and the footer pattern
 		register_nav_menus(
 			array(
