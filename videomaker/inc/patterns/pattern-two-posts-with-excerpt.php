@@ -11,8 +11,8 @@ return array(
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"80%"} -->
 	<div class="wp-block-column" style="flex-basis:80%">
-	<!-- wp:video {"autoplay":false,"loop":false,"muted":false,"src":"' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"} -->
-	<figure class="wp-block-video"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
+	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"} -->
+	<figure class="wp-block-video"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:columns -->

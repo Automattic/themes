@@ -20,6 +20,6 @@ return array(
 	<!-- /wp:columns -->
 
 	<!-- wp:video {"align":"wide","className":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video alignwide wp-block-embed is-type-video is-provider-videopress"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
+	<figure class="wp-block-video alignwide wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
 	<!-- /wp:video -->',
 );

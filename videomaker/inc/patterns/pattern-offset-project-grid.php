@@ -13,7 +13,7 @@ return array(
 	<div class="wp-block-column" style="flex-basis:60%">
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:group -->
@@ -34,7 +34,7 @@ return array(
 	<!-- /wp:spacer -->
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:group -->
@@ -69,7 +69,7 @@ return array(
 	<div class="wp-block-column" style="flex-basis:66.66%">
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/cocktails.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/cocktails.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/cocktails.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:group -->
@@ -102,7 +102,7 @@ return array(
 	<!-- /wp:spacer -->
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/pacific.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/pacific.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/pacific.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:group --><div class="wp-block-group">
@@ -119,7 +119,7 @@ return array(
 	<!-- wp:column {"width":"60%"} -->
 	<div class="wp-block-column" style="flex-basis:60%">
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video autoplay loop muted src="' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4"></video></figure>
 	<!-- /wp:video -->
 
 
