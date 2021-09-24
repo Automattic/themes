@@ -49,8 +49,8 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 35,
-				'width'       => 150,
+				'height'      => 64,
+				'width'       => 64,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
