@@ -6,8 +6,12 @@
 	overflow: inherit;
 	padding-top: var(--wp--custom--gap--vertical);
 
-	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate) 
-	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY 
+	@include break-small-only(){
+		padding-top: 0;
+	}
+
+	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate)
+	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY
 	@include break-small-only() {
 		gap: 2px;
 	}
@@ -16,7 +20,7 @@
 
 		@include break-small-only(){
 			flex-basis: 100%;
-			margin: 20px 0;
+			margin: 45px 0;
 			text-align: center;
 		}
 
