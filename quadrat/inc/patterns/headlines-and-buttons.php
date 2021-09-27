@@ -12,11 +12,6 @@ return array(
 	<div class="wp-block-group alignwide headlines-pattern" style="padding-top:70px;padding-bottom:70px"><!-- wp:media-text {"mediaLink":"' . get_stylesheet_directory_uri() . '/assets/illustrations/group-of-squares-displayed-diagonally.png","mediaType":"image","mediaWidth":52,"verticalAlignment":"top"} -->
 	<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-top" style="grid-template-columns:52% auto"><figure class="wp-block-media-text__media"><img src="' . get_stylesheet_directory_uri() . '/assets/illustrations/group-of-squares-displayed-diagonally.png" alt="' . esc_attr__( 'Group of squares displayed diagonally', 'quadrat' ) . '"/></figure><div class="wp-block-media-text__content">
 
-
-	<!-- wp:paragraph {"style":{"typography":{"fontSize":"15px"}}} -->
-	<p style="font-size:15px">this is a custom font size</p>
-	<!-- /wp:paragraph -->
-
 	<!-- wp:paragraph {"placeholder":"Content…","style":{"typography":{"fontSize":"16px"}}} -->
 	<p style="font-size:16px">' . esc_html__( 'Coaching', 'quadrat' ) . '</p>
 	<!-- /wp:paragraph -->
