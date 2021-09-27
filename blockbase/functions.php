@@ -130,6 +130,20 @@ require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 
+// Force menus to reload
+add_action(
+	'customize_controls_enqueue_scripts',
+	static function () {
+		wp_enqueue_script(
+			'wp-customize-nav-menu-refresh',
+			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
+			[ 'customize-nav-menus' ],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+	}
+);
+
 /**
  * Populate the social links block with the social menu content if it exists
  *
