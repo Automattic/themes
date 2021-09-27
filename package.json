@@ -20,11 +20,11 @@
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
 		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
 		"batch:version-bump": "./theme-batch-utils.sh version-bump",
-		"sandbox:clean": "./sandbox-git.sh clean",
-		"sandbox:status": "./sandbox-git.sh status",
-		"sandbox:checkout-branch": "./sandbox-git.sh checkout-branch"
+		"deploy:version-bump": "node ./theme-utils.mjs version-bump-themes",
+		"deploy:git": "node ./theme-utils.mjs push-button-deploy-git"
 	},
 	"devDependencies": {
+		"@octokit/rest": "^18.11.1",
 		"@wordpress/prettier-config": "^1.0.1",
 		"@wordpress/scripts": "^14.0.1",
 		"@wordpress/stylelint-config": "^19.0.1",
