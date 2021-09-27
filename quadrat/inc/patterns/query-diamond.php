@@ -19,7 +19,7 @@ return array(
 	<!-- wp:post-terms {"term":"category","fontSize":"16px"} /--></div>
 	<!-- /wp:group -->
 
-	<!-- wp:post-title {"textAlign":"left","isLink":true,"fontSize":"extra-large"} /-->
+	<!-- wp:post-title {"textAlign":"left","isLink":true,"fontSize":"large"} /-->
 
 	<!-- wp:post-excerpt {"moreText":"Read more","fontSize":"normal"} /--></div>
 	<!-- /wp:column -->
