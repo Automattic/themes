@@ -16,7 +16,7 @@ return array(
 		<figure class="wp-block-audio"><audio controls src="' . get_stylesheet_directory_uri() . '/assets/quadrat-episode-1.mp3"></audio></figure>
 		<!-- /wp:audio -->
 
-		<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} -->
-		<p class="has-text-align-center" style="font-size:var(--wp--custom--font-sizes--tiny)">' . sprintf( wp_kses( __( 'Listen on <a href="%1$s">Apple Podcasts</a>, <a href="%2$s">Spotify</a>.', 'quadrat' ), array( 'a' => array( 'href' => array() ) ) ), '/', '/' ) . '</p>
+		<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"16px"}}} -->
+		<p class="has-text-align-center" style="font-size:16px">' . sprintf( wp_kses( __( 'Listen on <a href="%1$s">Apple Podcasts</a>, <a href="%2$s">Spotify</a>.', 'quadrat' ), array( 'a' => array( 'href' => array() ) ) ), '/', '/' ) . '</p>
 		<!-- /wp:paragraph -->',
 );
