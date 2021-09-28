@@ -21,7 +21,7 @@ return array(
 
 	<!-- wp:post-excerpt {"moreText":"' . esc_html__( 'Continue reading', 'skatepark' ) . '"} /-->
 
-	<!-- wp:post-date {"style":{"typography":{"fontWeight":"500"}},"fontSize":"14px","isLink":true} /--></div>
+	<!-- wp:post-date {"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)","fontWeight":"500"}},"isLink":true} /--></div>
 	<!-- /wp:group -->
 	<!-- /wp:post-template -->
 

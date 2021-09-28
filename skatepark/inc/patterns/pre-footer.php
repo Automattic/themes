@@ -27,16 +27,16 @@ return array(
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
-		<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"14px"}}} -->
-		<h3 style="font-size:14px"><strong>' . esc_html__( 'More info', 'skatepark' ) . '</strong></h3>
+		<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} -->
+		<h3 style="font-size:var(--wp--custom--font-sizes--tiny)"><strong>' . esc_html__( 'More info', 'skatepark' ) . '</strong></h3>
 		<!-- /wp:heading -->
 
 		<!-- wp:navigation {"orientation":"vertical","__unstableLocation":"primary","style":{"typography":{"textDecoration":"underline"}},"fontSize":"small"} /--></div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
-		<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"14px"}}} -->
-		<h3 style="font-size:14px"><strong>' . esc_html__( 'Search', 'skatepark' ) . '</strong></h3><!-- /wp:heading --><!-- wp:search {"label":"' . esc_html__( 'Search', 'skatepark' ) . '","showLabel":false,"buttonText":"' . esc_html__( 'Search', 'skatepark' ) . '","buttonPosition":"button-inside"} /--></div>
+		<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} -->
+		<h3 style="font-size:var(--wp--custom--font-sizes--tiny)"><strong>' . esc_html__( 'Search', 'skatepark' ) . '</strong></h3><!-- /wp:heading --><!-- wp:search {"label":"' . esc_html__( 'Search', 'skatepark' ) . '","showLabel":false,"buttonText":"' . esc_html__( 'Search', 'skatepark' ) . '","buttonPosition":"button-inside"} /--></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns --></div>
 		<!-- /wp:group -->',
