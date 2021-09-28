@@ -19,6 +19,7 @@ if ( ! function_exists( 'geologist_register_block_patterns' ) ) :
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
 				'authors',
+				'header-with-rounded-site-logo',
 				'image-feature',
 				'introduction',
 				'quote',
