@@ -45,6 +45,17 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			}
 		);
 
+		// Add support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 192,
+				'width'       => 192,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+
 	}
 	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;

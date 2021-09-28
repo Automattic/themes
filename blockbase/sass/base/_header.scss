@@ -1,8 +1,39 @@
-.site-header {
-	justify-content: space-between;
+.wp-site-blocks .site-header {
+	justify-content: start;
 	overflow: inherit;
+	padding-top: var(--wp--custom--gap--vertical);
 
 	.wp-block-site-title a {
 		text-decoration: none;
+	}
+	.wp-block-navigation {
+		flex-grow: 1;
+		justify-content: end;
+	}
+	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate)
+	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY
+	@include break-small-only() {
+		gap: 2px;
+	}
+	.wp-block-site-logo {
+
+		@include break-small-only(){
+			flex-basis: 100%;
+			margin-bottom: calc( 2 * var(--wp--custom--gap--vertical));
+			margin-top: var(--wp--custom--gap--vertical);
+			text-align: center;
+		}
+
+		a > img {
+			height: 64px;
+			width: auto;
+		}
+	}
+
+	.wp-block-site-tagline {
+		@include break-small-only() {
+			flex-basis: 100%;
+			order: 10;
+		}
 	}
 }

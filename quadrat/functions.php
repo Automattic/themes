@@ -11,17 +11,6 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
-		// Add support for core custom logo.
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 35,
-				'width'       => 150,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-
 		// Add support for starter content
 		include get_stylesheet_directory() . '/inc/starter-content.php';
 		add_theme_support(

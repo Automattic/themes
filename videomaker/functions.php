@@ -10,6 +10,15 @@ function newtheme_editor_styles() {
 			'/assets/theme.css',
 		)
 	);
+	
+	// Primary navigation is used on the header and the footer pattern
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Navigation', 'videomaker' ),
+			'social' => __( 'Social Navigation', 'videomaker' ),
+			'footer' => __( 'Footer Navigation', 'videomaker' )
+		)
+	);
 }
 add_action( 'after_setup_theme', 'newtheme_editor_styles' );
 
