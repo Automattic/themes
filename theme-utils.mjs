@@ -13,7 +13,7 @@ const isWin = process.platform === 'win32';
 		case "push-button-deploy-git": return pushButtonDeployGit();
 		case "push-button-deploy-svn": return pushButtonDeploySvn();
 		case "clean-sandbox-git": return cleanSandboxGit();
-		case "status-sandbox-git": return statusSandboxGit();
+		case "clean-sandbox-svn": return cleanSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
@@ -41,7 +41,9 @@ function showHelp(){
 */
 async function pushButtonDeployGit() {
 
-	//TODO: If this branch isn't current with trunk exit and require a rebase
+	//TODO: If this branch isn't trunk exit
+	//TODO: If this branch isn't current with origin exit and require a pull
+	//TODO: If the sandbox isn't in 'git' mode exit
 
 	let hash = await getLastDeployedHash();
 
@@ -56,6 +58,45 @@ async function pushButtonDeployGit() {
 	await pushChangesToSandbox();
 	await updateLastDeployedHash();
 	let diffUrl = await createGitPhabricatorDiff(hash);
+
+	await tagDeployment({
+		hash: hash,
+		diffUrl: diffUrl
+	});
+}
+
+/*
+ Execute the first phase of a deployment.
+ Leverages subversion on the sandbox.
+	* Gets the last deployed hash from the sandbox
+	* Version bump all themes have have changes since the last deployment
+	* Commit the version bump change to github
+	* Clean the sandbox and ensure it is up-to-date
+	* Push all changed files (including removal of deleted files) since the last deployment
+	* Update the 'last deployed' hash on the sandbox
+	* Create a phabricator diff based on the changes since the last deployment.  The description including the commit messages since the last deployment.
+	* Open the Phabricator Diff in your browser
+	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
+*/
+async function pushButtonDeploySvn(){
+
+	//TODO: If this branch isn't trunk exit
+	//TODO: If this branch isn't current with origin exit and require a pull
+	//TODO: If the sandbox isn't in 'svn' mode exit
+
+	let hash = await getLastDeployedHash();
+
+	await versionBumpThemes({
+		commit: true
+	});
+
+	//TODO: Can these be automagically uploaded?
+	//await buildChangedOrgZips();
+
+	await cleanSandboxSvn();
+	await pushChangesToSandbox();
+	await updateLastDeployedHash();
+	let diffUrl = await createSvnPhabricatorDiff(hash);
 
 	await tagDeployment({
 		hash: hash,
@@ -192,7 +233,8 @@ async function buildChangedOrgZips() {
 
 /*
  Clean the sandbox.
- checkout origin/trunk and ensure it's up-to-date.
+ Assumes sandbox is in 'git' mode
+ checkout origin/develop and ensure it's up-to-date.
  Remove any other changes.
 */
 async function cleanSandboxGit() {
@@ -203,18 +245,26 @@ async function cleanSandboxGit() {
 		git clean -fd;
 		git checkout develop;
 		git pull;
-		echo
+		echo;
+		git status
 	`)
 	console.log('All done cleaning.');
-	return statusSandbox();
 }
 
-async function statusSandbox() {
-	let status = await executeOnSandbox(`
+/*
+ Clean the sandbox.
+ Assumes sandbox is in 'svn' mode
+ ensure trunk is up-to-date
+ Remove any other changes
+*/
+async function cleanSandboxSvn() {
+	let response = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
-		git status;
+  		svn revert -R .;
+  		svn cleanup --remove-unversioned;
+  		svn up;
 	`);
-	console.log(status);
+	console.log(response);
 }
 
 /*
@@ -339,6 +389,32 @@ async function createGitPhabricatorDiff(hash) {
 		git add --all
 		git commit -m "${commitMessage}"
 		arc diff --create --verbatim
+	`);
+
+	let phabricatorUrl = getPhabricatorUrlFromResponse(result);
+
+	console.log('Diff Created at: ', phabricatorUrl);
+
+	if(phabricatorUrl) {
+		open(phabricatorUrl);
+	}
+
+	return phabricatorUrl;
+}
+
+/*
+ Create a (svn) Phabricator diff from a given hash.
+ Open the phabricator diff in your browser.
+ Provide the URL of the phabricator diff.
+*/
+async function createSvnPhabricatorDiff(hash) {
+	console.log('creating Phabricator Diff');
+
+	let commitMessage = await buildPhabricatorCommitMessageSince(hash);
+
+	let result = await executeOnSandbox(`
+		cd ${sandboxPublicThemesFolder};
+		arc diff --create --message ${commitMessage}
 	`);
 
 	let phabricatorUrl = getPhabricatorUrlFromResponse(result);
