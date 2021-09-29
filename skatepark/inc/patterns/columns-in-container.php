@@ -39,8 +39,8 @@ return array(
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 
-	<!-- wp:image {"align":"wide","id":26,"sizeSlug":"large","linkDestination":"none","style":{"color":{"duotone":["#000","#B9FB9C"]}}} -->
-	<figure class="wp-block-image alignwide size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/images/riding-skateboard.jpeg" alt="' . esc_html__( 'Close-up of a person riding a skateboard, focusing on their feet and the board. One foot is on the board, while the other foot is up, in motion. A skatepark is blurred in the background.', 'skatepark' ) . '" class="wp-image-26"/></figure>
+	<!-- wp:image {"align":"wide","sizeSlug":"large","linkDestination":"none"} -->
+	<figure class="wp-block-image alignwide size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/images/riding-skateboard.jpeg" alt="' . esc_html__( 'Close-up of a person riding a skateboard, focusing on their feet and the board. One foot is on the board, while the other foot is up, in motion. A skatepark is blurred in the background.', 'skatepark' ) . '"/></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:spacer {"height":5} -->
