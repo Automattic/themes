@@ -1,4 +1,3 @@
-import { Octokit } from "@octokit/rest";
 import { spawn } from 'child_process';
 import fs from 'fs';
 import open from 'open';
@@ -6,8 +5,6 @@ import open from 'open';
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const isWin = process.platform === 'win32';
-
-let octokit;
 
 (async function start() {
 	let args = process.argv.slice(2);
@@ -20,8 +17,6 @@ let octokit;
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
-		case "create-git-phabricator-diff": return createGitPhabricatorDiff();
-		case "create-github-pr": return createGithubPR(args?.[1]);
 	}
 	return showHelp();
 })();
@@ -32,18 +27,22 @@ function showHelp(){
 }
 
 /*
- This is where the party's at!
- Version Bump anything that has changed.
- Build .zip files to upload to .org
- Clean the sandbox.
- Push up changes to the sandbox (only what changed between whatever branch you're on since it diverged from trunk)
- Create a phabricator diff (which gets opened in your browser)
+ Execute the first phase of a deployment.
+ Leverages git on the sandbox.
+	* Gets the last deployed hash from the sandbox
+	* Version bump all themes have have changes since the last deployment
+	* Commit the version bump change to github
+	* Clean the sandbox and ensure it is up-to-date
+	* Push all changed files (including removal of deleted files) since the last deployment
+	* Update the 'last deployed' hash on the sandbox
+	* Create a phabricator diff based on the changes since the last deployment.  The description including the commit messages since the last deployment.
+	* Open the Phabricator Diff in your browser
+	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
 */
 async function pushButtonDeployGit() {
 
 	//TODO: If this branch isn't current with trunk exit and require a rebase
 
-	//Getting the hash now, to use later, because it will change and we need the old one later, not the new one
 	let hash = await getLastDeployedHash();
 
 	await versionBumpThemes({
@@ -53,31 +52,21 @@ async function pushButtonDeployGit() {
 	//TODO: Can these be automagically uploaded?
 	//await buildChangedOrgZips();
 
-	//await cleanSandbox();
+	await cleanSandboxGit();
 	await pushChangesToSandbox();
 	await updateLastDeployedHash();
-	let diffURL = await createGitPhabricatorDiff({
-		hash: hash
-	});
+	let diffUrl = await createGitPhabricatorDiff(hash);
 
 	await tagDeployment({
 		hash: hash,
-		diffURL: diffURL
+		diffUrl: diffUrl
 	});
 }
 
-function initGithubApi() {
-	try {
-		const githubToken = fs.readFileSync('.github_token').toString();
-		octokit = new Octokit({ auth: githubToken });
-		return octokit;
-	} catch (err) {
-		console.log('Octokit (Github API) not initialized: ', err);
-		console.log('Make sure your github token is stored in the file: .github_token');
-		return null;
-	}
-}
-
+/*
+ Provide the hash of the last managed deployment.
+ This hash is used to determine all the changes that have happened between that point and the current point.
+*/
 async function getLastDeployedHash() {
 	let result = await executeOnSandbox(`
 		cat ${sandboxPublicThemesFolder}/.pub-git-hash
@@ -85,6 +74,9 @@ async function getLastDeployedHash() {
 	return result;
 }
 
+/*
+ Update the 'last deployed hash' on the server with the current hash.
+*/
 async function updateLastDeployedHash() {
 	let hash = await executeCommand(`git rev-parse HEAD`);
 	await executeOnSandbox(`
@@ -92,6 +84,12 @@ async function updateLastDeployedHash() {
 	`);
 }
 
+/*
+ Version bump (increment version patch) any theme project that has had changes since the last deployment.
+ If a theme's version has already been changed since that last deployment then do not version bump it. 
+ If any theme projects have had a version bump also version bump the parent project.
+ Optionally commit and push the version bump to git.
+*/
 async function versionBumpThemes(options) {
 	console.log("Version Bumping");
 
@@ -110,16 +108,16 @@ async function versionBumpThemes(options) {
 
 		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
 		if( hasVersionBump ){
-			// console.log(`${theme} has already been version bumpped`);
+			// console.log(`${theme} has already been version bumped`);
 			continue;
 		}
 
 		await versionBumpTheme(theme);
 	}
 
+	//version bump the root project if there were changes to any of the themes
 	let rootHasVersionBump = await checkThemeForVersionBump('.', hash);
 	if ( versionBumpCount > 0 && ! rootHasVersionBump ) {
-		//version bump the root project if there were changes to any of the themes
 		await executeCommand(`npm version patch --no-git-tag-version`);
 	}
 
@@ -133,6 +131,12 @@ async function versionBumpThemes(options) {
 	}
 }
 
+/*
+ Version Bump a Theme.
+ Used by versionBumpThemes to do the work of version bumping.
+ First increment the patch version in package.json (the source of truth for versioning)
+ Then update any of these files with the new version: [style.css, style.scss, style-child-theme.scss]
+*/
 async function versionBumpTheme(theme){
 	console.log(`${theme} needs a version bump`);
 	await executeCommand(`npm --prefix ${theme} version patch --no-git-tag-version`);
@@ -147,6 +151,11 @@ async function versionBumpTheme(theme){
 	}
 }
 
+/*
+ Determine if a theme has had a version bump since a given hash.
+ Used by versionBumpThemes
+ Compares the value of 'version' in package.json between the hash and current value
+*/
 async function checkThemeForVersionBump(theme, hash){
 	let previousPackageString = await executeCommand(`
 		git show ${hash}:${theme}/package.json 2>/dev/null
@@ -156,14 +165,21 @@ async function checkThemeForVersionBump(theme, hash){
 	return previousPackage.version != currentPackage.version;	
 }
 
+/*
+ Determine if a theme has had changes since a given hash.
+ Used by versionBumpThemes
+*/ 
 async function checkThemeForChanges(theme, hash){
 	let uncomittedChanges = await executeCommand(`git diff-index --name-only HEAD -- ${theme}`);
 	let comittedChanges = await executeCommand(`git diff --name-only ${hash} HEAD -- ${theme}`);
 	return uncomittedChanges != '' || comittedChanges != '';
 }
 
+/*
+ Provide a list of 'actionable' themes (those themes that have package.json files)
+*/
 async function getActionableThemes() {
-	//TODO: This could probably be done more effeciently
+	//TODO: This could be done more effeciently.  It's very slow running.
 	let result = await executeCommand(`find . -depth 2 -name package.json -print0 | xargs -0 -n1 dirname | sort --unique`);
 	return result.split('\n');
 }
@@ -179,7 +195,7 @@ async function buildChangedOrgZips() {
  checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
-async function cleanSandbox() {
+async function cleanSandboxGit() {
 	console.log('Cleaning the Sandbox');
 	await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
@@ -202,7 +218,7 @@ async function statusSandbox() {
 }
 
 /*
-  Push exactly what is here up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
+  Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
 */
 function pushToSandbox() {
 	executeCommand(`
@@ -212,17 +228,16 @@ function pushToSandbox() {
 
 /*
   Push only (and every) change since the point-of-diversion from /trunk
+  Remove files from the sandbox that have been removed since the last deployed hash
 */
 async function pushChangesToSandbox() {
 
 	console.log("Pushing Changes to Sandbox.");
 
-	updateRemote();
-	let branchName = await getBranchName();
 	let hash = await getLastDeployedHash();
 
 	let deletedFiles = await getDeletedFilesSince(hash);
-	let changedFiles = await getComittedChangesSinceHash(hash, branchName);
+	let changedFiles = await getComittedChangesSinceHash(hash);
 
 	//remove deleted files from changed files
 	changedFiles = changedFiles.filter( item => {
@@ -248,9 +263,13 @@ async function pushChangesToSandbox() {
 	}
 }
 
-async function getComittedChangesSinceHash(hash, branch) {
+/*
+ Provide a collection of all files that have changed since the given hash.
+ Used by pushChangesToSandbox
+*/
+async function getComittedChangesSinceHash(hash) {
 
-	let comittedChanges = await executeCommand(`git diff ${hash} ${branch} --name-only`);
+	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only`);
 	comittedChanges = comittedChanges.replace(/\r?\n|\r/g, " ").split(" "); 
 
 	let uncomittedChanges = await executeCommand(`git diff HEAD --name-only`);
@@ -259,6 +278,10 @@ async function getComittedChangesSinceHash(hash, branch) {
 	return comittedChanges.concat(uncomittedChanges);
 }
 
+/*
+ Provide a collection of all files that have been deleted since the given hash.
+ Used by pushChangesToSandbox
+*/
 async function getDeletedFilesSince(hash){
 
 	let deletedSinceHash = await executeCommand(`
@@ -276,14 +299,11 @@ async function getDeletedFilesSince(hash){
 	});
 }
 
-function getBranchName() {
-	return executeCommand(`git branch --show-current`);
-}
-
-function updateRemote() {
-	executeCommand(`git remote update > /dev/null`);
-}
-
+/*
+ Build the Phabricator commit message.
+ This message contains the logs from all of the commits since the given hash.
+ Used by create*PhabricatorDiff
+*/
 async function buildPhabricatorCommitMessageSince(hash){
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
@@ -301,13 +321,14 @@ Subscribers:
 `;
 }
 
-async function createGitPhabricatorDiff(options={}) {
+/*
+ Create a (git) Phabricator diff from a given hash.
+ Open the phabricator diff in your browser.
+ Provide the URL of the phabricator diff.
+*/
+async function createGitPhabricatorDiff(hash) {
 
 	console.log('creating Phabricator Diff');
-
-	updateRemote();
-
-	let hash = options.hash || await getLastDeployedHash();
 
 	let commitMessage = await buildPhabricatorCommitMessageSince(hash);
 
@@ -331,6 +352,10 @@ async function createGitPhabricatorDiff(options={}) {
 	return phabricatorUrl;
 }
 
+/*
+ Utility to pull the Phabricator URL from the diff creation command.
+ Used by createGitPhabricatorDiff
+*/
 function getPhabricatorUrlFromResponse(response){
 	return response 
 		?.split('\n')
@@ -340,6 +365,12 @@ function getPhabricatorUrlFromResponse(response){
 		?.split("Revision URI: ")[1];
 }
 
+
+/*
+ Create a git tag at the current hash.
+ In the description include the commit logs since the given hash.
+ Include the (cleansed) Phabricator link.
+*/
 async function tagDeployment(options={}) {
 
 	let hash = options.hash || await getLastDeployedHash();
@@ -359,51 +390,24 @@ async function tagDeployment(options={}) {
 	`);
 }
 
-async function createGithubPR(phabricatorUrl) {
+/*
+ Execute a command on the sandbox.
+ Expects the following to be configured in your ~/.ssh/config file:
 
-	console.log("Creating Github PR");
-
-	if ( ! initGithubApi() ) {
-		return;
-	}
-
-	updateRemote();
-
-	let branchName = await getBranchName();
-	let hash = await getLastDeployedHash();
-	let workInTheOpenPhabricatorUrl = '';
-	if (phabricatorUrl) {
-		workInTheOpenPhabricatorUrl = `\n\n Phabricator: ${phabricatorUrl.split('a8c.com/')[1]}-code`;
-	}
-	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	let options = {
-  		owner: 'Automattic',
-  		repo: 'themes',
-  		head: branchName,
-  		base: 'prod',
-		title: `Deploy Themes ${projectVersion} to wpcom`,
-		body: logs + workInTheOpenPhabricatorUrl
-	};
-
-	try {
-		let response = await octokit.request('POST /repos/Automattic/themes/pulls', options);
-		console.log("Github PR opened: ", response.html_url);
-		open(response.html_url);
-		return response.html_url;
-	} 
-	catch (err) {
-		console.log(err);
-	}
-
-}
-
+Host wpcom-sandbox
+	User wpdev
+	HostName SANDBOXURL.wordpress.com
+	ForwardAgent yes
+*/
 function executeOnSandbox(command){
 	return executeCommand(`ssh -TA ${remoteSSH} << EOF 
 ${command} 
 EOF`);
 }
 
+/*
+ Execute a command locally.
+*/
 async function executeCommand(command) {
 	return new Promise((resolove, reject) => {
 

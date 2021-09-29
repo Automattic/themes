@@ -4,7 +4,6 @@
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
-	"type": "module",
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
 		"sandbox:pull": "./sandbox.sh pull",
@@ -13,14 +12,12 @@
 		"sandbox:push:force": "./sandbox.sh push --force",
 		"sandbox:watch": "chokidar '**/*' -i '*/node_modules' -i '.git' -c './sandbox.sh push --ignore' --initial",
 		"local:clean": "git reset --hard HEAD; git clean -fd",
-		"batch:build:changed": "./theme-batch-utils.sh build",
-		"batch:build:all": "./theme-batch-utils.sh build-all",
-		"batch:build:zip:all": "./theme-batch-utils.sh build-org-zip-all",
-		"batch:build:zip:changed": "./theme-batch-utils.sh build-org-zip-if-changed",
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
 		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
-		"batch:version-bump": "./theme-batch-utils.sh version-bump",
+		"deploy:clean:git": "node ./theme-utils.mjs clean-sandbox-git",
 		"deploy:version-bump": "node ./theme-utils.mjs version-bump-themes",
+		"deploy:push:all": "node ./theme-utils.mjs push-to-sandbox",
+		"deploy:push:changes": "node ./theme-utils.mjs push-changes-to-sandbox",
 		"deploy:git": "node ./theme-utils.mjs push-button-deploy-git"
 	},
 	"devDependencies": {
