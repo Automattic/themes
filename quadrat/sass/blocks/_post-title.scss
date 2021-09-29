@@ -1,6 +1,8 @@
 .wp-block-post-title {
 	margin-bottom: calc( var(--wp--custom--gap--vertical) * 3.8 );
 
+	// Needed as Gutenberg still renders the block even if the title is empty
+	// Related issue: https://github.com/WordPress/gutenberg/issues/35224
 	&:empty {
 		margin-bottom: 0;
 	}
