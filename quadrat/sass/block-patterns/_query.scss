@@ -16,17 +16,30 @@
 }
 
 div.horizontal-query-pattern {
-	align-items: stretch;
-	flex-wrap: nowrap;
 	gap: 0;
+
+	@include break-small() {
+		flex-wrap: nowrap;
+	}
 
 	.wp-block-cover,
 	figure.wp-block-post-featured-image {
 		margin-top: 0;
 	}
 
-	img {
-		aspect-ratio: 1.12;
-		object-fit: cover;
+	figure.wp-block-post-featured-image {
+		@include break-small() {
+			width: 57%; // I'm not sure why this number works but it does seem to!
+		}
+
+
+		img {
+			aspect-ratio: 1.12;
+			object-fit: cover;
+
+			@include break-small() {
+				min-height: 360px;
+			}
+		}
 	}
 }
