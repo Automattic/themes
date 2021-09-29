@@ -56,27 +56,21 @@
 	   object-fit: cover;
 }
 
-.horizontal-query-pattern {
+div.horizontal-query-pattern {
 	align-items: stretch;
+	flex-wrap: nowrap;
+	gap: 0;
 }
 
-.horizontal-query-pattern figure.wp-block-post-featured-image {
+div.horizontal-query-pattern .wp-block-cover,
+div.horizontal-query-pattern figure.wp-block-post-featured-image {
 	margin-top: 0;
-	height: 100%;
 }
 
-.horizontal-query-pattern img {
-	height: 100%;
+div.horizontal-query-pattern img {
+	aspect-ratio: 1.12;
 	-o-object-fit: cover;
 	   object-fit: cover;
-}
-
-.horizontal-query-pattern .wp-block-column {
-	margin-top: 0;
-}
-
-.horizontal-query-pattern.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
-	margin-left: 0;
 }
 
 .wp-block-cover.is-style-quadrat-cover-diamond::after {
