@@ -148,8 +148,11 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post_content->version                     = 1;
 		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
 
-		// Start with reset palette settings.
-		unset( $user_theme_json_post_content->settings->color->palette );
+		// Only reset the palette if the setting exists, otherwise the whole settings array gets destroyed.
+		if ( property_exists( $user_theme_json_post_content, 'settings' ) && property_exists( $user_theme_json_post_content->settings, 'color' ) && property_exists( $user_theme_json_post_content->settings->color, 'palette' ) ) {
+			// Start with reset palette settings.
+			unset( $user_theme_json_post_content->settings->color->palette );
+		}
 
 		//Set the color palette if it is !== the default
 		if ( ! $this->check_if_colors_are_default() ) {

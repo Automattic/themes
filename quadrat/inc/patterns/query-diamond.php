@@ -14,12 +14,12 @@ return array(
 	<!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
 	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"post-meta","layout":{"type":"flex"}} -->
-	<div class="wp-block-group post-meta"><!-- wp:post-date {"fontSize":"tiny","isLink":true} /-->
+	<div class="wp-block-group post-meta"><!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"16px"}}} /-->
 
-	<!-- wp:post-terms {"term":"category","fontSize":"tiny"} /--></div>
+	<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"16px"}}} /--></div>
 	<!-- /wp:group -->
 
-	<!-- wp:post-title {"textAlign":"left","isLink":true,"fontSize":"extra-large"} /-->
+	<!-- wp:post-title {"textAlign":"left","isLink":true,"fontSize":"large"} /-->
 
 	<!-- wp:post-excerpt {"moreText":"Read more","fontSize":"normal"} /--></div>
 	<!-- /wp:column -->
