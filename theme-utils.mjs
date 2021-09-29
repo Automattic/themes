@@ -4,6 +4,7 @@ import open from 'open';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
+const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
 
 (async function start() {
@@ -14,6 +15,8 @@ const isWin = process.platform === 'win32';
 		case "push-button-deploy-svn": return pushButtonDeploySvn();
 		case "clean-sandbox-git": return cleanSandboxGit();
 		case "clean-sandbox-svn": return cleanSandboxSvn();
+		case "clean-all-sandbox-git": return cleanAllSandboxGit();
+		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
@@ -232,14 +235,14 @@ async function buildChangedOrgZips() {
 }
 
 /*
- Clean the sandbox.
+ Clean the theme sandbox.
  Assumes sandbox is in 'git' mode
  checkout origin/develop and ensure it's up-to-date.
  Remove any other changes.
 */
 async function cleanSandboxGit() {
-	console.log('Cleaning the Sandbox');
-	await executeOnSandbox(`
+	console.log('Cleaning the Themes Sandbox');
+	let response = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
 		git reset --hard HEAD;
 		git clean -fd;
@@ -248,16 +251,39 @@ async function cleanSandboxGit() {
 		echo;
 		git status
 	`)
+	console.log(response);
 	console.log('All done cleaning.');
 }
 
 /*
- Clean the sandbox.
+ Clean the entire sandbox.
+ Assumes sandbox is in 'git' mode
+ checkout origin/develop and ensure it's up-to-date.
+ Remove any other changes.
+*/
+async function cleanAllSandboxGit() {
+	console.log('Cleaning the Entire Sandbox');
+	let response = await executeOnSandbox(`
+		cd ${sandboxRootFolder};
+		git reset --hard HEAD;
+		git clean -fd;
+		git checkout develop;
+		git pull;
+		echo;
+		git status
+	`)
+	console.log(response);
+	console.log('All done cleaning.');
+}
+
+/*
+ Clean the theme sandbox.
  Assumes sandbox is in 'svn' mode
  ensure trunk is up-to-date
  Remove any other changes
 */
 async function cleanSandboxSvn() {
+	console.log('Cleaning the theme sandbox');
 	let response = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
   		svn revert -R .;
@@ -265,6 +291,25 @@ async function cleanSandboxSvn() {
   		svn up;
 	`);
 	console.log(response);
+	console.log('All done cleaning.');
+}
+
+/*
+ Clean the entire sandbox.
+ Assumes sandbox is in 'svn' mode
+ ensure trunk is up-to-date
+ Remove any other changes
+*/
+async function cleanAllSandboxSvn() {
+	console.log('Cleaning the entire sandbox');
+	let response = await executeOnSandbox(`
+		cd ${sandboxPublicThemesFolder};
+  		svn revert -R .;
+  		svn cleanup --remove-unversioned;
+  		svn up .;
+	`);
+	console.log(response);
+	console.log('All done cleaning.');
 }
 
 /*
