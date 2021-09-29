@@ -1,0 +1,34 @@
+.horizontal-query-pattern,
+.vertical-query-pattern {
+	.wp-block-post-title a {
+		text-decoration: none;
+	}
+}
+
+.vertical-query-pattern {
+	.wp-block-cover {
+		margin-top: 0;
+	}
+	img {
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+}
+
+.horizontal-query-pattern {
+	align-items: stretch;
+	figure.wp-block-post-featured-image {
+		margin-top: 0;
+		height: 100%;
+	}
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+	.wp-block-column {
+		margin-top: 0;
+	}
+	&.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+		margin-left: 0;
+	}
+}
