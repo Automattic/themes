@@ -303,7 +303,7 @@ async function cleanSandboxSvn() {
 async function cleanAllSandboxSvn() {
 	console.log('Cleaning the entire sandbox');
 	let response = await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
+		cd ${sandboxRootFolder};
   		svn revert -R .;
   		svn cleanup --remove-unversioned;
   		svn up .;
