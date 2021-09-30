@@ -481,6 +481,7 @@ async function createSvnPhabricatorDiff(hash) {
 	const result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
 		echo '${commitMessage}' > ${commitTempFileLocation}
+		svn add --force * --auto-props --parents --depth infinity -q
 		arc diff --create --message-file ${commitTempFileLocation}
 	`);
 
