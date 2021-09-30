@@ -13,13 +13,7 @@
 	padding: 0;
 }
 
-// Needed until we have a solution for https://github.com/WordPress/gutenberg/issues/34588.
-.has-background {
-	&:not(.wp-block-separator){
-		padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
-	}
-
-	:last-child {
-		margin-bottom: 0;
-	}
+// For when we do not want the vertical block gap. Needed until we have per-block margin controls.
+.mt-0 {
+	margin-top: 0 !important;
 }
