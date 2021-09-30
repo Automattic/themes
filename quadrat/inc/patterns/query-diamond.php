@@ -14,7 +14,7 @@ return array(
 	<!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
 	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"post-meta","layout":{"type":"flex"}} -->
-	<div class="wp-block-group post-meta"><!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"16px"}}} /-->
+	<div class="wp-block-group post-meta"><!-- wp:post-date {"isLink":false,"style":{"typography":{"fontSize":"16px"}}} /-->
 
 	<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"16px"}}} /--></div>
 	<!-- /wp:group -->
