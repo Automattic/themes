@@ -205,10 +205,6 @@ pre {
 	flex-direction: column;
 }
 
-.wp-site-blocks > main {
-	margin-top: 0;
-}
-
 .site-footer-container {
 	margin-top: auto;
 }
@@ -223,9 +219,11 @@ body.admin-bar .wp-site-blocks {
 	min-height: calc( 100vh - var(--wpadmin-bar--height));
 }
 
+p.wp-block.wp-block-paragraph,
+*[class^="wp-container"] > * + p,
 p {
-	margin-top: var(--wp--custom--gap--vertical);
-	margin-bottom: var(--wp--custom--gap--vertical);
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .wp-block-column :first-child, .wp-block-group :first-child {
@@ -659,6 +657,10 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-post-template {
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+.wp-block-post-template .wp-block-post-featured-image {
+	line-height: 0;
 }
 
 .wp-block-pullquote.is-style-solid-color,
