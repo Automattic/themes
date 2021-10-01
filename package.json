@@ -22,7 +22,9 @@
 		"deploy:push:all": "node ./theme-utils.mjs push-to-sandbox",
 		"deploy:push:changes": "node ./theme-utils.mjs push-changes-to-sandbox",
 		"deploy:git": "node ./theme-utils.mjs push-button-deploy-git",
-		"deploy:svn": "node ./theme-utils.mjs push-button-deploy-svn"
+		"deploy:svn": "node ./theme-utils.mjs push-button-deploy-svn",
+		"deploy:preview": "node ./theme-utils.mjs deploy-preview"
+
 	},
 	"devDependencies": {
 		"@octokit/rest": "^18.11.1",
@@ -31,6 +33,7 @@
 		"@wordpress/stylelint-config": "^19.0.1",
 		"chokidar-cli": "^2.1.0",
 		"husky": "^4.3.0",
+		"inquirer": "^8.1.5",
 		"lint-staged": "^10.5.4",
 		"lodash": "^4.17.21",
 		"open": "^8.2.1"

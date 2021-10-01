@@ -1,6 +1,7 @@
 import { spawn } from 'child_process';
 import fs from 'fs';
 import open from 'open';
+import inquirer from 'inquirer';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -20,6 +21,9 @@ const isWin = process.platform === 'win32';
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
+		case "land-diff-git": return landChangesGit(args?.[1]);
+		case "land-diff-svn": return landChangesSvn(args?.[1]);
+		case "deploy-preview": return deployPreview();
 	}
 	return showHelp();
 })();
@@ -27,6 +31,29 @@ const isWin = process.platform === 'win32';
 function showHelp(){
 	// TODO: make this helpful
 	console.log('Help info can go here');
+}
+
+/* 
+ Determine what changes would be deployed
+*/
+async function deployPreview() {
+	console.clear();
+	console.log('To ensure accuracy clean your sandbox before previewing. (It is not automatically done).');
+	console.log('npm run sandbox:clean:git OR npm run sandbox:clean:svn')
+
+	let message = await checkForDeployability();
+	if (message) {
+		console.log(`\n${message}\n\n`);
+	}
+
+	let hash = await getLastDeployedHash();
+	console.log(`Last deployed hash: ${hash}`);
+
+	let changedThemes = await getChangedThemes(hash);
+	console.log(`The following themes have changes:\n${changedThemes}`);
+	
+	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
 /*
@@ -54,13 +81,24 @@ async function pushButtonDeploy(repoType) {
 	}
 
 	try {
+		console.clear();
+		let prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'You are about to deploy /trunk.  Are you ready to continue?',
+			name: "continue",
+			default: false
+		}]);
+
+		if(!prompt.continue){
+			return;
+		}
 
 		let hash = await getLastDeployedHash();
 		let diffUrl;
 
-		await versionBumpThemes({
-			commit: true
-		});
+		await versionBumpThemes();
+
+		let changedThemes = await getChangedThemes(hash);
 
 		//TODO: Can these be automagically uploaded?
 		//await buildChangedOrgZips();
@@ -74,27 +112,69 @@ async function pushButtonDeploy(repoType) {
 		await pushChangesToSandbox();
 		await updateLastDeployedHash();
 
-
 		if (repoType === 'git' ) {
 			diffUrl = await createGitPhabricatorDiff(hash);
 		}
 		else {
 			diffUrl = await createSvnPhabricatorDiff(hash);
 		}
+		let diffId = diffUrl.split('a8c.com/')[1];
 
 		//push changes (from version bump)
 		await executeCommand('git push');
 
 		await tagDeployment({
 			hash: hash,
-			diffUrl: diffUrl
+			diffId: diffId
 		});
+
+		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the diff is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes}\n\n\n`);
+
+		prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'Are you ready to land these changes?',
+			name: "continue",
+			default: false
+		}]);
+
+		if(!prompt.continue){
+			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}` );
+			return;
+		}
+
+		if (repoType === 'git' ) {
+			landChangesGit(diffId);
+		}
+		else {
+			landChangesSvn(diffId);
+		}
+
+		prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'The changes have landed.  Do you wish to deploy the changed themes now?',
+			name: "continue",
+			default: false
+		}]);
+
+		if(!prompt.continue){
+			console.log(`Aborted Automated Deploy Process Deploy Phase.  Please deploy the following themes manually:\n${changedThemes}` );
+			return;
+		}
+
+		await deployThemes(changedThemes);
+
+		console.log('\n\nAll Done!!\n\n');
 	}
 	catch (err) {
 		console.log("ERROR with deply script: ", err);
 	}
 }
 
+/*
+ Check to ensure that:
+  * The current branch is /trunk
+  * That trunk is up-to-date with origin/trunk
+*/
 async function checkForDeployability(){
 	let branchName = await executeCommand('git symbolic-ref --short HEAD');
 	if(branchName !== 'trunk' ) {
@@ -109,6 +189,51 @@ async function checkForDeployability(){
 	}
 	return null;
 }
+
+/*
+ Land the changes from the given diff ID.  This is the "production merge".
+ This is the git version of that action.
+*/
+async function landChangesGit(diffId){
+	return await executeOnSandbox(`
+		cd ${sandboxPublicThemesFolder};
+		arc patch ${diffId}
+		arc land
+	`, true);
+}
+
+/*
+ Land the changes from the given diff ID.  This is the "production merge".
+ This is the svn version of that action.
+*/
+async function landChangesSvn(diffId){
+	return await executeOnSandbox(`
+		cd ${sandboxPublicThemesFolder};
+		svn ci -m ${diffId} 
+	`, true); 
+}
+
+async function getChangedThemes(hash) {
+	console.log('Determining all changed themes')
+	let themes = await getActionableThemes();
+	let changedThemes = [];
+	for (let theme of themes) {
+		let hasChanges = await checkThemeForChanges(theme, hash);
+		if(hasChanges){
+			changedThemes.push(theme.replace('./', ''));
+		}
+	}
+	return changedThemes;
+}
+
+async function deployThemes(themes) {
+	let response;
+	for (let theme of themes ) {
+		response = await executeOnSandbox(`deploy pub ${theme}`, true);
+		//TODO: if the response wasn't happy then prompt to try again.
+	}
+}
+
 /*
  Provide the hash of the last managed deployment.
  This hash is used to determine all the changes that have happened between that point and the current point.
@@ -134,9 +259,9 @@ async function updateLastDeployedHash() {
  Version bump (increment version patch) any theme project that has had changes since the last deployment.
  If a theme's version has already been changed since that last deployment then do not version bump it.
  If any theme projects have had a version bump also version bump the parent project.
- Optionally commit and push the version bump to git.
+ Commit the change.
 */
-async function versionBumpThemes(options) {
+async function versionBumpThemes() {
 	console.log("Version Bumping");
 
 	let themes = await getActionableThemes();
@@ -167,7 +292,7 @@ async function versionBumpThemes(options) {
 		await executeCommand(`npm version patch --no-git-tag-version`);
 	}
 
-	if (options?.commit && versionBumpCount > 0 && !rootHasVersionBump) {
+	if (versionBumpCount > 0 && !rootHasVersionBump) {
 		console.log('commiting version-bump');
 		await executeCommand(`
 			git commit -a -m "Version Bump";
@@ -492,8 +617,8 @@ async function tagDeployment(options={}) {
 	let hash = options.hash || await getLastDeployedHash();
 
 	let workInTheOpenPhabricatorUrl = '';
-	if (options.diffUrl) {
-		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffUrl.split('a8c.com/')[1]}-code`;
+	if (options.diffId) {
+		workInTheOpenPhabricatorUrl = `Phabricator: ${diffId}-code`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
