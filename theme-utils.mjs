@@ -11,8 +11,8 @@ const isWin = process.platform === 'win32';
 	let args = process.argv.slice(2);
 	let command = args?.[0];
 	switch (command) {
-		case "push-button-deploy-git": return pushButtonDeployGit();
-		case "push-button-deploy-svn": return pushButtonDeploySvn();
+		case "push-button-deploy-git": return pushButtonDeploy('git');
+		case "push-button-deploy-svn": return pushButtonDeploy('svn');
 		case "clean-sandbox-git": return cleanSandboxGit();
 		case "clean-sandbox-svn": return cleanSandboxSvn();
 		case "clean-all-sandbox-git": return cleanAllSandboxGit();
@@ -42,16 +42,21 @@ function showHelp(){
 	* Open the Phabricator Diff in your browser
 	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
 */
-async function pushButtonDeployGit() {
+async function pushButtonDeploy(repoType) {
 
-	//TODO: If this branch isn't trunk exit
-	//TODO: If this branch isn't current with origin exit and require a pull
-	//TODO: If the sandbox isn't in 'git' mode exit
+	if (repoType != 'svn' && repoType != 'git' ) {
+		return console.log('Specify a repo type to use push-button deploy');
+	}
+
+	let message = await checkForDeployability();
+	if (message) {
+		return console.log(`\n\n${message}\n\n`);
+	}
 
 	try {
 
-
 		let hash = await getLastDeployedHash();
+		let diffUrl;
 
 		await versionBumpThemes({
 			commit: true
@@ -60,10 +65,22 @@ async function pushButtonDeployGit() {
 		//TODO: Can these be automagically uploaded?
 		//await buildChangedOrgZips();
 
-		await cleanSandboxGit();
+		if (repoType === 'git' ) {
+			await cleanSandboxGit();
+		}
+		else {
+			await cleanSandboxSvn();
+		}
 		await pushChangesToSandbox();
 		await updateLastDeployedHash();
-		let diffUrl = await createGitPhabricatorDiff(hash);
+
+
+		if (repoType === 'git' ) {
+			diffUrl = await createGitPhabricatorDiff(hash);
+		}
+		else {
+			diffUrl = await createSvnPhabricatorDiff(hash);
+		}
 
 		//push changes (from version bump)
 		await executeCommand('git push');
@@ -72,62 +89,26 @@ async function pushButtonDeployGit() {
 			hash: hash,
 			diffUrl: diffUrl
 		});
-
 	}
 	catch (err) {
 		console.log("ERROR with deply script: ", err);
 	}
 }
 
-/*
- Execute the first phase of a deployment.
- Leverages subversion on the sandbox.
-	* Gets the last deployed hash from the sandbox
-	* Version bump all themes have have changes since the last deployment
-	* Commit the version bump change to github
-	* Clean the sandbox and ensure it is up-to-date
-	* Push all changed files (including removal of deleted files) since the last deployment
-	* Update the 'last deployed' hash on the sandbox
-	* Create a phabricator diff based on the changes since the last deployment.  The description including the commit messages since the last deployment.
-	* Open the Phabricator Diff in your browser
-	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
-*/
-async function pushButtonDeploySvn(){
-
-	//TODO: If this branch isn't trunk exit
-	//TODO: If this branch isn't current with origin exit and require a pull
-	//TODO: If the sandbox isn't in 'svn' mode exit
-
-	try {
-
-		let hash = await getLastDeployedHash();
-
-		await versionBumpThemes({
-			commit: true
-		});
-
-		//TODO: Can these be automagically uploaded?
-		//await buildChangedOrgZips();
-
-		await cleanSandboxSvn();
-		await pushChangesToSandbox();
-		await updateLastDeployedHash();
-		let diffUrl = await createSvnPhabricatorDiff(hash);
-
-		//push changes (from version bump)
-		await executeCommand('git push');
-
-		await tagDeployment({
-			hash: hash,
-			diffUrl: diffUrl
-		});
-
+async function checkForDeployability(){
+	let branchName = await executeCommand('git symbolic-ref --short HEAD');
+	if(branchName !== 'trunk' ) {
+		return 'Only the /trunk branch can be deployed.';
 	}
-	catch (err) {
-		console.log("ERROR with deply script: ", err);
+
+	await executeCommand('git remote update', true);
+	let localMasterHash = await executeCommand('git rev-parse trunk')
+	let remoteMasterHash = await executeCommand('git rev-parse origin/trunk')
+	if(localMasterHash !== remoteMasterHash) {
+		return 'Local /trunk is out-of-date.  Pull changes to continue.'
 	}
+	return null;
 }
-
 /*
  Provide the hash of the last managed deployment.
  This hash is used to determine all the changes that have happened between that point and the current point.
@@ -188,10 +169,9 @@ async function versionBumpThemes(options) {
 
 	if (options?.commit && versionBumpCount > 0 && !rootHasVersionBump) {
 		console.log('commiting version-bump');
-		let commitResult = await executeCommand(`
+		await executeCommand(`
 			git commit -a -m "Version Bump";
-		`);
-		console.log(commitResult);
+		`, true);
 	}
 }
 
@@ -250,8 +230,7 @@ async function getActionableThemes() {
 
 async function buildChangedOrgZips() {
 	console.log("Building .org Zip files");
-	let result = await executeCommand(`./theme-batch-utils.sh build-org-zip-if-changed`);
-	console.log(result);
+	await executeCommand(`./theme-batch-utils.sh build-org-zip-if-changed`, true);
 }
 
 /*
@@ -262,7 +241,7 @@ async function buildChangedOrgZips() {
 */
 async function cleanSandboxGit() {
 	console.log('Cleaning the Themes Sandbox');
-	let response = await executeOnSandbox(`
+	await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
 		git reset --hard HEAD;
 		git clean -fd;
@@ -270,8 +249,7 @@ async function cleanSandboxGit() {
 		git pull;
 		echo;
 		git status
-	`)
-	console.log(response);
+	`, true);
 	console.log('All done cleaning.');
 }
 
@@ -291,8 +269,7 @@ async function cleanAllSandboxGit() {
 		git pull;
 		echo;
 		git status
-	`)
-	console.log(response);
+	`, true);
 	console.log('All done cleaning.');
 }
 
@@ -304,13 +281,12 @@ async function cleanAllSandboxGit() {
 */
 async function cleanSandboxSvn() {
 	console.log('Cleaning the theme sandbox');
-	let response = await executeOnSandbox(`
+	await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
   		svn revert -R .;
   		svn cleanup --remove-unversioned;
   		svn up;
-	`);
-	console.log(response);
+	`, true);
 	console.log('All done cleaning.');
 }
 
@@ -322,13 +298,12 @@ async function cleanSandboxSvn() {
 */
 async function cleanAllSandboxSvn() {
 	console.log('Cleaning the entire sandbox');
-	let response = await executeOnSandbox(`
+	await executeOnSandbox(`
 		cd ${sandboxRootFolder};
   		svn revert -R .;
   		svn cleanup --remove-unversioned;
   		svn up .;
-	`);
-	console.log(response);
+	`, true);
 	console.log('All done cleaning.');
 }
 
@@ -362,19 +337,17 @@ async function pushChangesToSandbox() {
 
 	if(deletedFiles.length > 0) {
 		console.log('deleting from sandbox: ', deletedFiles);
-		let deleteResponse = await executeOnSandbox(`
+		await executeOnSandbox(`
 			cd ${sandboxPublicThemesFolder};
 			rm -f ${deletedFiles.join(' ')}
-		`);
-		console.log(deleteResponse);
+		`, true);
 	}
 
 	if(changedFiles.length > 0) {
 		console.log('pushing changed files to sandbox:', changedFiles);
-		let pushResponse = await executeCommand(`
+		await executeCommand(`
 			rsync -avR --no-p --no-times --exclude-from='.sandbox-ignore' ${changedFiles.join(' ')} wpcom-sandbox:${sandboxPublicThemesFolder}/
-		`);
-		console.log(pushResponse);
+		`, true);
 	}
 }
 
@@ -454,7 +427,7 @@ async function createGitPhabricatorDiff(hash) {
 		git add --all
 		git commit -m "${commitMessage}"
 		arc diff --create --verbatim
-	`);
+	`, true);
 
 	let phabricatorUrl = getPhabricatorUrlFromResponse(result);
 
@@ -483,7 +456,7 @@ async function createSvnPhabricatorDiff(hash) {
 		echo '${commitMessage}' > ${commitTempFileLocation}
 		svn add --force * --auto-props --parents --depth infinity -q
 		arc diff --create --message-file ${commitTempFileLocation}
-	`);
+	`, true);
 
 	const phabricatorUrl = getPhabricatorUrlFromResponse(result);
 
@@ -542,16 +515,16 @@ Host wpcom-sandbox
 	HostName SANDBOXURL.wordpress.com
 	ForwardAgent yes
 */
-function executeOnSandbox(command){
+function executeOnSandbox(command, logResponse){
 	return executeCommand(`ssh -TA ${remoteSSH} << EOF
 ${command}
-EOF`);
+EOF`, logResponse);
 }
 
 /*
  Execute a command locally.
 */
-async function executeCommand(command) {
+async function executeCommand(command, logResponse) {
 	return new Promise((resolove, reject) => {
 
 		let child;
@@ -569,10 +542,16 @@ async function executeCommand(command) {
 
 		child.stdout.on('data', (data) => {
 			response += data;
+			if(logResponse){
+				console.log(data.toString());
+			}
 		});
 
 		child.stderr.on('data', (data) => {
 			errResponse += data;
+			if(logResponse){
+				console.log(data.toString());
+			}
 		});
 
 		child.on('exit', (code) => {
