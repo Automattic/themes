@@ -163,6 +163,10 @@ async function pushButtonDeploy(repoType) {
 
 		await deployThemes(changedThemes);
 
+		//TODO: Can this be automated?
+		open('https://mc.a8c.com/themes/downloads/');
+		console.log('Please build the .zip files for the themes manually');
+
 		console.log('\n\nAll Done!!\n\n');
 	}
 	catch (err) {
