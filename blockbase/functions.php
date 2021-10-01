@@ -181,32 +181,47 @@ function blockbase_condition_to_render_social_menu( $block ) {
 		return false;
 	}
 
-	// The block's location should be 'social'.
-	if ( $block['attrs']['__unstableLocation'] !== 'social' ) {
+	// The block's location should be 'primary'.
+	if ( $block['attrs']['__unstableLocation'] !== 'primary' ) {
 		return false;
 	}
 
 	return true;
 }
 
+function get_social_menu_as_social_links_block() {
+	$nav_menu_locations = get_nav_menu_locations();
+	$social_menu_id = $nav_menu_locations['social'];
+	$class_name = 'is-style-logos-only';
+	if( ! empty( $block['attrs']['itemsJustification'] ) ) {
+		$class_name .= ' items-justified-' . $block['attrs']['itemsJustification'];
+	}
+	$social_links_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
+	$menu = wp_get_nav_menu_items( $social_menu_id );
+	foreach ($menu as $menu_item) {
+		$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
+		$social_links_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
+	}
+	$social_links_content .= '</ul><!-- /wp:social-links -->';
+	return do_blocks( $social_links_content );
+}
+
+function append_social_links_block_to_primary_navigation( $primary_navigation, $social_links_block ) {
+	$dom = new domDocument;
+	$dom->loadHTML( $primary_navigation );
+	$wp_block_navigation__container = $dom->getElementsByTagName('ul')->item( 0 );
+	$social_links_node = $dom->createDocumentFragment();
+	$social_links_node->appendXML( $social_links_block );
+	$wp_block_navigation__container->appendChild( $social_links_node );
+	$navigation_block = $dom->getElementsByTagName('nav')->item( 0 );
+	return $dom->saveXML( $navigation_block );
+}
+
 function blockbase_social_menu_render( $block_content, $block ) {
 	if ( blockbase_condition_to_render_social_menu( $block ) ) {
-		$nav_menu_locations = get_nav_menu_locations();
-		$social_menu_id = $nav_menu_locations['social'];
-		$class_name = 'is-style-logos-only';
-		if( !empty( $block['attrs']['itemsJustification'] ) ) {
-			$class_name .= ' items-justified-' . $block['attrs']['itemsJustification'];
-		}
-		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
-		$menu = wp_get_nav_menu_items( $social_menu_id );
-		foreach ($menu as $menu_item) {
-			$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
-			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
-		}
+		$social_links_block = get_social_menu_as_social_links_block();
 
-		$block_content .= '</ul>';
-
-		return do_blocks( $block_content );
+		return append_social_links_block_to_primary_navigation( $block_content, $social_links_block );
 	}
 
 	return $block_content;
