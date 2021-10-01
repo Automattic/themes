@@ -71,6 +71,18 @@ async function deployPreview() {
 */
 async function pushButtonDeploy(repoType) {
 
+	console.clear();
+	let prompt = await inquirer.prompt([{
+		type: 'confirm',
+		message: 'You are about to deploy /trunk.  Are you ready to continue?',
+		name: "continue",
+		default: false
+	}]);
+
+	if(!prompt.continue){
+		return;
+	}
+
 	if (repoType != 'svn' && repoType != 'git' ) {
 		return console.log('Specify a repo type to use push-button deploy');
 	}
@@ -81,16 +93,11 @@ async function pushButtonDeploy(repoType) {
 	}
 
 	try {
-		console.clear();
-		let prompt = await inquirer.prompt([{
-			type: 'confirm',
-			message: 'You are about to deploy /trunk.  Are you ready to continue?',
-			name: "continue",
-			default: false
-		}]);
-
-		if(!prompt.continue){
-			return;
+		if (repoType === 'git' ) {
+			await cleanSandboxGit();
+		}
+		else {
+			await cleanSandboxSvn();
 		}
 
 		let hash = await getLastDeployedHash();
@@ -103,12 +110,6 @@ async function pushButtonDeploy(repoType) {
 		//TODO: Can these be automagically uploaded?
 		//await buildChangedOrgZips();
 
-		if (repoType === 'git' ) {
-			await cleanSandboxGit();
-		}
-		else {
-			await cleanSandboxSvn();
-		}
 		await pushChangesToSandbox();
 		await updateLastDeployedHash();
 
@@ -143,30 +144,15 @@ async function pushButtonDeploy(repoType) {
 		}
 
 		if (repoType === 'git' ) {
-			landChangesGit(diffId);
+			await landChangesGit(diffId);
 		}
 		else {
-			landChangesSvn(diffId);
+			await landChangesSvn(diffId);
 		}
 
-		prompt = await inquirer.prompt([{
-			type: 'confirm',
-			message: 'The changes have landed.  Do you wish to deploy the changed themes now?',
-			name: "continue",
-			default: false
-		}]);
-
-		if(!prompt.continue){
-			console.log(`Aborted Automated Deploy Process Deploy Phase.  Please deploy the following themes manually:\n${changedThemes}` );
-			return;
-		}
-
-		await deployThemes(changedThemes);
-
-		//TODO: Can this be automated?
 		open('https://mc.a8c.com/themes/downloads/');
+		console.log(`Please deploy the following themes manually:\n${changedThemes}` );
 		console.log('Please build the .zip files for the themes manually');
-
 		console.log('\n\nAll Done!!\n\n');
 	}
 	catch (err) {
@@ -218,7 +204,7 @@ async function landChangesSvn(diffId){
 }
 
 async function getChangedThemes(hash) {
-	console.log('Determining all changed themes')
+	console.log('Determining all changed themes');
 	let themes = await getActionableThemes();
 	let changedThemes = [];
 	for (let theme of themes) {
@@ -230,10 +216,20 @@ async function getChangedThemes(hash) {
 	return changedThemes;
 }
 
+/*
+ Work-in-progress
+ For reasons I don't understand this command is not working when ran this way.
+ "-bash: line 3: dploy: command not found"
+*/
 async function deployThemes(themes) {
 	let response;
 	for (let theme of themes ) {
-		response = await executeOnSandbox(`deploy pub ${theme}`, true);
+		console.log(theme);
+		response = await executeOnSandbox(`
+			cd ${sandboxPublicThemesFolder};
+			deploy pub ${theme}
+		`, true);
+
 		//TODO: if the response wasn't happy then prompt to try again.
 	}
 }
@@ -622,7 +618,7 @@ async function tagDeployment(options={}) {
 
 	let workInTheOpenPhabricatorUrl = '';
 	if (options.diffId) {
-		workInTheOpenPhabricatorUrl = `Phabricator: ${diffId}-code`;
+		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffId}-code`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
