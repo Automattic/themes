@@ -24,8 +24,19 @@ textarea {
 	padding: var(--wp--custom--form--padding);
 
 	&:focus {
-		color: var(--wp--custom--form--color--text);
 		border-color: var(--custom--form--color--border);
+		color: var(--wp--custom--form--color--text);
+		outline: 1px dotted currentColor;
+		outline-offset: 2px;
+	}
+}
+
+input[type="checkbox"],
+input[type="submit"],
+button {
+	&:focus {
+		outline: 1px dotted currentColor;
+		outline-offset: 2px;
 	}
 }
 

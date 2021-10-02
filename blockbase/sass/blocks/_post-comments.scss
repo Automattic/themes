@@ -114,6 +114,11 @@
 					height: var(--wp--custom--form--checkbox--checked--sizing--height);
 					font-size: var(--wp--custom--form--checkbox--checked--font-size);
 				}
+
+				&:focus + ::before {
+					outline: 1px dotted currentColor;
+					outline-offset: 2px;
+				}
 			}
 		}
 	}
@@ -132,7 +137,7 @@
 				font-size: var(--wp--custom--post-comment--typography--font-size);
 				line-height: var(--wp--custom--post-comment--typography--line-height);
 				margin-bottom: var(--wp--custom--gap--vertical);
-				margin-top: var(--wp--custom--gap--vertical);	
+				margin-top: var(--wp--custom--gap--vertical);
 			}
 		}
 	}
@@ -152,4 +157,8 @@
 		margin-bottom: var(--wp--custom--gap--baseline);
 	}
 
+	// Needed until we have the option to hide this message via the block.
+	.nocomments {
+		display: none;
+	}
 }

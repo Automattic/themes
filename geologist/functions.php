@@ -22,3 +22,7 @@ function newtheme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'newtheme_scripts' );
 
+/**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/inc/block-patterns.php';

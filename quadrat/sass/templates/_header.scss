@@ -1,50 +1,6 @@
 .wp-site-blocks {
 	position: relative; // This is needed so that the polygon is stretched across the whole site.
-}
-
-.wp-site-blocks .site-header {
-	overflow: inherit;
-	padding-top: var(--wp--custom--gap--vertical);
-
-	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate) 
-	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY 
-	@include break-small-only() {
-		gap: 2px;
-	}
-	.wp-block-site-logo {
-		margin-right: var(--wp--custom--gap--horizontal);
-
-		@include break-small-only(){
-			flex-basis: 100%;
-			margin: 20px 0;
-			text-align: center;
-		}
-
-		a > img {
-			height: 64px;
-			width: auto;
-		}
-	}
-
-	.wp-block-site-title {
-		margin: 0;
-	}
-
-	.wp-block-navigation {
-		margin-left: auto;
-		padding-right: 0;
-	}
-
-	.wp-block-site-tagline {
-		margin: 0;
-		@include break-small-only() {
-			padding-left: 0 !important;
-			flex-basis: 100%;
-			order: 10;
-		}
-	}
-
-	&:before {
+	 .site-header:before {
 		content: "";
 		background-color: var(--wp--custom--color--tertiary);
 		position: absolute;

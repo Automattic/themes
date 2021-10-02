@@ -37,6 +37,25 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
+		add_filter(
+			'block_editor_settings_all',
+			function( $settings ) {
+				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
+				return $settings;
+			}
+		);
+
+		// Add support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 192,
+				'width'       => 192,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+
 	}
 	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;
@@ -98,7 +117,7 @@ function blockbase_fonts_url() {
 			}
 		}
 	}
-	
+
 	if ( empty( $font_families ) ) {
 		return '';
 	}
@@ -121,6 +140,20 @@ add_action( 'init', 'blockbase_restore_customizer' );
 require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+
+// Force menus to reload
+add_action(
+	'customize_controls_enqueue_scripts',
+	static function () {
+		wp_enqueue_script(
+			'wp-customize-nav-menu-refresh',
+			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
+			[ 'customize-nav-menus' ],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+	}
+);
 
 /**
  * Populate the social links block with the social menu content if it exists

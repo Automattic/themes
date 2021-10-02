@@ -126,6 +126,11 @@
 	padding-left: calc( max( 0.5 * ( 100% - var(--wp--custom--layout--wide-size) ) + var(--wp--custom--gap--horizontal), var(--wp--custom--gap--horizontal) ));
 }
 
+.wp-block-navigation.is-responsive .has-child .wp-block-navigation-link__container {
+	background-color: var(--wp--custom--color--background);
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
+}
+
 .wp-block-post-comments .reply a {
 	text-decoration-thickness: 0.07em;
 	text-underline-offset: 0.46ex;
@@ -172,10 +177,19 @@
 	text-decoration: none;
 }
 
+.wp-block-post-featured-image {
+	margin-bottom: 0;
+}
+
 h1.wp-block-post-title:not(.has-featured-image .wp-block-post-title) {
 	border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
-	padding-bottom: calc( var(--wp--custom--gap--vertical) * 2);
+	padding-bottom: calc(var(--wp--custom--gap--vertical) * 3);
 	margin-bottom: 0;
+}
+
+.is-root-container,
+.wp-block-post-content {
+	margin-top: calc(var(--wp--custom--gap--vertical) * 3);
 }
 
 .wp-block-query-pagination .wp-block-query-pagination-numbers .current {
@@ -442,7 +456,6 @@ a:not(.ab-item):not(.screen-reader-shortcut):focus {
 .post-meta.wp-block-group {
 	flex-direction: column;
 	align-items: start;
-	gap: .5em;
 }
 
 .post-meta .wp-block-post-date,
@@ -477,6 +490,7 @@ header.wp-block-template-part {
 	max-width: var(--wp--custom--layout--wide-size);
 	margin: 0 auto;
 	width: 100%;
+	margin-top: calc( 0.5 * var(--wp--custom--gap--vertical));
 }
 
 header.wp-block-template-part > .wp-block-group {
@@ -511,7 +525,7 @@ header.wp-block-template-part > .wp-block-group > * > * {
 }
 
 header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only {
-	margin-right: calc( -1 * ( 8px + 0.25em ));
+	margin-right: -2px;
 }
 
 @media (min-width: 600px) {
@@ -529,6 +543,10 @@ header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-
 
 header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only > .wp-social-link {
 	padding: 0;
+}
+
+header.wp-block-template-part > .wp-block-group .wp-block-social-links.is-style-logos-only > .wp-social-link:last-child a {
+	padding-right: 0;
 }
 
 header.wp-block-template-part .site-brand {

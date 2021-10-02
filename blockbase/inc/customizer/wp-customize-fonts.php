@@ -320,25 +320,21 @@ class GlobalStylesFontsCustomizer {
 		$variable = get_settings_array( $array, $configuration );
 		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
 		if ( ! isset( $this->fonts[ $slug ] ) ) {
-			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, '', $configuration );
+			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $configuration );
 		}
 		return $this->fonts[ $slug ];
 	}
 
-	function build_font_from_theme_data( $slug, $location, $configuration ) {
+	function build_font_from_theme_data( $slug, $configuration ) {
 		$new_font      = array();
-		$google_fonts  = $configuration['settings']['custom']['fontsToLoadFromGoogle'];
 		$font_families = $configuration['settings']['typography']['fontFamilies']['theme'];
 		foreach ( $font_families as $font_family ) {
 			if ( $font_family['slug'] === $slug ) {
 				$new_font['fontFamily'] = $font_family['fontFamily'];
 				$new_font['name']       = $font_family['name'];
-			}
-		}
-		foreach ( $google_fonts as $google_font ) {
-			$aux = str_replace( '+', '-', $google_font );
-			if ( strripos( $aux, $slug ) !== false ) {
-				$new_font['google'] = $google_font;
+				if ( ! empty( $font_family['google'] ) ) {
+					$new_font['google'] = $font_family['google'];
+				}
 			}
 		}
 		$new_font['slug'] = $slug;

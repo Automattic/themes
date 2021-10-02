@@ -1,37 +1,60 @@
 .post-meta {
 	align-items: center;
 	justify-content: center;
+
+	.wp-block-group & {
+		// 1px needed to account for the separator
+		gap: calc( var(--wp--custom--gap--baseline) + 1px);
+	}
+
 	@include break-small-only() {
 		padding-top: 0 !important;
 		margin-bottom: -20px;
 	}
 
-	.wp-block-post-date::before {
-		display: none;
-	}
-
-	> *,
-	.wp-block-post-date {
-		&::before {
-			content: "";
-		}
-	}
-
-	.wp-block-post-terms {
-		&::before {
+	> * {
+		&:not(:first-child):before {
+			align-items: center;
+			background: transparent;
 			color: var(--wp--custom--color--foreground);
 			content: "·";
-			margin-right: 8px;
+			display: flex;
+			margin-right: 0;
+			-webkit-mask-image: none;
+			mask-image: none;
 		}
 
-		// Needed while https://github.com/WordPress/gutenberg/issues/31710 is sorted.
-		color: transparent;
-		a {
+		&:first-child:before {
+			// Hide the date icon. This should be configurable in Blockbase:
+			// https://github.com/Automattic/themes/issues/4704
+			content: none;
+		}
+
+		> * {
 			color: var(--wp--custom--color--foreground);
-			&:not(:last-child):after {
-				// to be removed after https://github.com/WordPress/gutenberg/pull/32812 lands
-				content: ",";
-			}
+			font-size: var(--wp--custom--font-sizes--tiny);
+		}
+	}
+
+	.wp-block-post-author__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.wp-block-post-author__name {
+		line-height: 1;
+	}
+
+	.wp-block-post-author__avatar {
+		margin-right: 0.5em;
+		align-items: center;
+		display: flex;
+
+		.avatar {
+			border-radius: 50%;
+			height: 1.25em;
+			width: 1.25em;
 		}
 	}
 }

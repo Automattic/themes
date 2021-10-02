@@ -4,7 +4,7 @@ const child_theme_json = `{
 	},
 	"styles": {
 		"blocks": {}
-	}	
+	}
 }`;
 
 const child_package_json = `{
@@ -31,28 +31,27 @@ const child_package_json = `{
 
 const style_css = `/*
 Theme Name: {newtheme}
-Theme URI: 
-Author: 
-Author URI: 
-Description: 
+Theme URI:
+Author:
+Author URI:
+Description:
 Requires at least: 5.7
 Tested up to: 5.7
 Requires PHP: 5.7
 Version: 0.0.1
 License: GNU General Public License v2 or later
-License URI: 
+License URI:
 Template: blockbase
 Text Domain: {newtheme}
-Tags: 
+Tags:
 
 */`;
 
-const theme_scss = `	
+const theme_scss = `
 // Custom CSS should be added here.  It will be compiled to /assets/theme.css.
 `;
 
-const functions_php = `
-<?php
+const functions_php = `<?php
 
 /**
  * Add Editor Styles

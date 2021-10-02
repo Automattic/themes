@@ -10,17 +10,6 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 			)
 		);
 
-		// Add support for core custom logo.
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 35,
-				'width'       => 150,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
-
 		//Primary navigation is used on the header and the footer pattern
 		register_nav_menus(
 			array(
@@ -28,8 +17,6 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 				'social' => __( 'Social Navigation', 'skatepark' )
 			)
 		);
-
-		remove_theme_support( 'block-templates' );
 	}
 	add_action( 'after_setup_theme', 'skatepark_support' );
 endif;
@@ -61,7 +48,7 @@ require get_stylesheet_directory() . '/inc/block-styles.php';
 /**
  * Add class to body if post/page has a featured image.
  */
-function add_featured_image_class( $classes ) {    
+function add_featured_image_class( $classes ) {
 	global $post;
 	if ( isset ( $post->ID ) && get_the_post_thumbnail( $post->ID ) ) {
 		$classes[] = 'has-featured-image';
