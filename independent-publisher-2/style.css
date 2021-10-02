@@ -628,6 +628,10 @@ td {
 	word-break: break-word;
 }
 
+.wp-block-cover.has-white-background-color .wp-block-cover__inner-container {
+	color: #383838;
+}
+
 /*--------------------------------------------------------------
 3.0 - Forms
 --------------------------------------------------------------*/
@@ -651,7 +655,7 @@ input:active {
 
 .button,
 .more-link,
-button:not(.menu-toggle),
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
@@ -681,13 +685,13 @@ input[type="submit"],
 .button:active,
 .more-link:focus,
 .more-link:active,
-button:not(.menu-toggle):focus,
+button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 .posts-navigation .nav-links a:focus,
 #content #infinite-handle span button:focus,
-button:not(.menu-toggle):active,
+button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active,
@@ -700,7 +704,7 @@ input[type="submit"]:active,
 
 .button:hover,
 .more-link:hover,
-button:not(.menu-toggle):hover,
+button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
@@ -724,13 +728,13 @@ input[type="submit"]:hover,
 	text-align: center;
 }
 
-input + button:not(.menu-toggle),
+input + button,
 input + input[type="button"],
 input + input[type="reset"],
 input + input[type="submit"],
 input + .posts-navigation .nav-links a,
 input + #content #infinite-handle span button,
-label + button:not(.menu-toggle),
+label + button,
 label + input[type="button"],
 label + input[type="reset"],
 label + input[type="submit"],
@@ -842,6 +846,7 @@ input::-moz-focus-inner {
 	border: solid 2px currentColor;
 	border-radius: 4px;
 	background: none;
+	color: #383838;
 
 	-webkit-font-smoothing: antialiased;
 }

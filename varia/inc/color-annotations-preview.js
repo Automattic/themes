@@ -91,7 +91,7 @@ function changeColorLuminescence( hex, amount ) {
 				'--wp--preset--color--border-high-contrast: ' + borderHighContrast + ';';
 			}
 
-			const extraCSS = ':root {' + cssVariables + '}';
+			const extraCSS = ':root body {' + cssVariables + '}';
 
 			// Append an extra style element that overrides the previous extra CSS
 			if ( $('#custom-colors-extra-css').length ) {

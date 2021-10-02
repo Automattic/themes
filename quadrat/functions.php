@@ -1,5 +1,6 @@
 <?php
 
+
 if ( ! function_exists( 'quadrat_support' ) ) :
 	function quadrat_support() {
 
@@ -10,29 +11,19 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			)
 		);
 
-		// Experimental support for adding blocks inside nav menus
-		add_theme_support( 'block-nav-menus' );
-
-		// Add support for core custom logo.
+		// Add support for starter content
+		include get_stylesheet_directory() . '/inc/starter-content.php';
 		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 35,
-				'width'       => 150,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
+			'starter-content',
+			$quadrat_starter_content
 		);
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'quadrat' ),
-				'social'  => __( 'Social Links Navigation', 'quadrat' ),
 			)
 		);
-
-		remove_theme_support( 'block-templates' );
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;

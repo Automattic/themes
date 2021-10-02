@@ -1,0 +1,57 @@
+.wp-block-search {
+	flex-wrap: wrap;
+	&.wp-block-search__button-inside {
+		.wp-block-search__inside-wrapper{
+			background: #{map-deep-get($config-global, "color", "white")};
+			color: #{map-deep-get($config-elements, "form", "color", "text")};
+			border: #{map-deep-get($config-elements, "form", "border", "width")} solid #{map-deep-get($config-elements, "form", "color", "border")};
+			border-radius: #{map-deep-get($config-elements, "form", "border", "radius")};
+			.wp-block-search__input {
+				padding: #{map-deep-get($config-elements, "form", "padding")};
+			}
+			.wp-block-search__button {
+				padding: #{map-deep-get($config-button, "padding", "vertical")} #{map-deep-get($config-button, "padding", "horizontal")};
+				&.has-icon {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.wp-block-search__label {
+		font-weight: normal;
+	}
+
+	.wp-block-search__input {
+		color: #{map-deep-get($config-elements, "form", "color", "text")};
+		border: #{map-deep-get($config-elements, "form", "border", "width")} solid #{map-deep-get($config-elements, "form", "color", "border")};
+		border-radius: #{map-deep-get($config-elements, "form", "border", "radius")};
+		padding: #{map-deep-get($config-elements, "form", "padding")};
+		font-size: #{map-deep-get($config-global, "font", "size", "base")};
+		line-height: #{map-deep-get($config-global, "font", "size", "base")};
+		@include font-family( map-deep-get($config-button, "font", "family") );
+		max-width: inherit;
+		margin-right: calc( .66 * #{map-deep-get($config-button, "padding", "horizontal")} );
+		background: #{map-deep-get($config-global, "color", "white")};
+		&:focus {
+			color: #{map-deep-get($config-elements, "form", "color", "text")};
+			border-color: #{map-deep-get($config-elements, "form", "color", "border")};
+		}
+	}
+	.wp-block-search__button {
+		@extend %button-style;
+		border: none;
+		box-shadow: none;
+		&.has-icon {
+			transform: scaleX(-1);
+			padding: 0;
+			min-width: calc(2* #{map-deep-get($config-button, "padding", "vertical")} + #{map-deep-get($config-global, "font", "size", "base")} + 4px);
+			min-height: calc(2* #{map-deep-get($config-button, "padding", "vertical")} + #{map-deep-get($config-global, "font", "size", "base")} + 4px);
+			svg {
+				fill: currentColor;
+				width: 29px;
+				height: 29px;
+			}
+		}
+	}
+}

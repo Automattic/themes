@@ -117,6 +117,10 @@ add_color_rule( 'link', '#23883D', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:not(.has-background):hover,
+			.wp-block-search .wp-block-search__button:hover,
+			.wp-block-search .wp-block-search__button:focus,
 			input[type="submit"]', 'background-color' ),
 			
 	// Text-color
@@ -175,6 +179,7 @@ add_color_rule( 'txt', '#111111', array(
 			.wp-block-code,
 			.wp-block-code pre,
 			.wp-block-pullquote,
+			.wp-block-search .wp-block-search__button,
 			body,
 			body .widget_eu_cookie_law_widget #eu-cookie-law,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative input.accept,

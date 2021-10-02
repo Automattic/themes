@@ -13,6 +13,7 @@ add_editor_color_rule( 'bg', '#f7f7f6', array(
 	// Text-color
 	array( '#editor .editor-styles-wrapper .wp-block-button__link:not(.has-text-color),
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color),
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
@@ -96,6 +97,10 @@ add_editor_color_rule( 'link', '#ff302c', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:not(.has-background):hover,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link,

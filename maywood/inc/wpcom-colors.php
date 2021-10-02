@@ -139,6 +139,10 @@ add_color_rule( 'link', '#897248', array(
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
+			.wp-block-search .wp-block-search__button,
+			.wp-block-search .wp-block-search__button:hover,
+			.wp-block-search .wp-block-search__button:not(.has-background):hover,
+			.wp-block-search .wp-block-search__button:focus,
 			button[data-load-more-btn],
 			input[type="submit"]', 'background-color' ),
 

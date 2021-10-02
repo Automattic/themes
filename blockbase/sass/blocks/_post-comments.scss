@@ -1,20 +1,164 @@
-@import 'button-mixins';
-
 .wp-block-post-comments {
-	.comment {
-		font-size: var(--wp--custom--form--typography--font-size);
-	}
-
 	label, .comment-meta {
 		font-size: var(--wp--custom--form--label--typography--font-size);
 	}
 
-	input[type="submit"], .reply a {
-		@include button-main-styles;
-		@include button-hover-styles;
+	.reply {
+		margin-top: var(--wp--custom--gap--vertical);
+		margin-bottom: 0;
+
+		a {
+			display: inline-block;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
-	.reply a {
+	form {
+		display: grid;
+		column-gap: 1em;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"notes notes"
+			"author author"
+			"email url"
+			"comment comment"
+			"cookies-consent cookies-consent"
+			"form-submit form-submit";
+
+		input:not([type=submit]):not([type=checkbox]),
+		textarea {
+			font-size: var(--wp--preset--font-size--normal);
+			background: var(--wp--custom--color--background);
+			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+			width: 100%;
+		}
+
+		textarea {
+			vertical-align: top;
+		}
+
+		label:not([for=wp-comment-cookies-consent]) {
+			font-size: var(--wp--custom--form--label--typography--font-size);
+			font-weight: var(--wp--custom--form--label--typography--font-weight);
+			letter-spacing: var(--wp--custom--form--label--typography--letter-spacing);
+			margin-bottom: var(--wp--custom--form--label--spacing--margin--bottom);
+			text-transform: var(--wp--custom--form--label--typography--text-transform);
+		}
+
+		p {
+			margin-top: 0;
+			margin-bottom: var(--wp--custom--gap--vertical);
+		}
+
+		.comment-notes {
+			grid-area: notes;
+		}
+
+		.comment-form-author {
+			grid-area: author;
+		}
+
+		.comment-form-email {
+			grid-area: email;
+		}
+
+		.comment-form-url {
+			grid-area: url;
+		}
+
+		.comment-form-comment {
+			grid-area: comment;
+		}
+
+		.comment-form-cookies-consent {
+			grid-area: cookies-consent;
+		}
+
+		.form-submit {
+			grid-area: form-submit;
+		}
+
+		.comment-form-cookies-consent {
+			input[type="checkbox"] {
+				@include hide-accesibly;
+				margin-left: 0;
+				& + label {
+					display: inline-block;
+					line-height: calc( var(--wp--custom--form--checkbox--unchecked--sizing--height) + 2 * var(--wp--custom--form--border--width));
+					margin-left: 0;
+					padding-left: 3em;
+					position: relative;
+				}
+				& + label::before,
+				& + label::after {
+					box-sizing: border-box;
+				}
+				& + ::before {
+					content: var(--wp--custom--form--checkbox--unchecked--content);
+					position: absolute;
+					top: var(--wp--custom--form--checkbox--unchecked--position--top);
+					left: var(--wp--custom--form--checkbox--unchecked--position--left);
+					width: var(--wp--custom--form--checkbox--unchecked--sizing--width);
+					height: var(--wp--custom--form--checkbox--unchecked--sizing--height);
+					border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+				}
+				&:checked + ::after {
+					content: var(--wp--custom--form--checkbox--checked--content);;
+					position: absolute;
+					top: var(--wp--custom--form--checkbox--checked--position--top);
+					left: var(--wp--custom--form--checkbox--checked--position--left);
+					width: var(--wp--custom--form--checkbox--checked--sizing--width);
+					height: var(--wp--custom--form--checkbox--checked--sizing--height);
+					font-size: var(--wp--custom--form--checkbox--checked--font-size);
+				}
+
+				&:focus + ::before {
+					outline: 1px dotted currentColor;
+					outline-offset: 2px;
+				}
+			}
+		}
+	}
+
+	.comment-reply-title {
+		small {
+			float: right;
+			font-size: 14px;
+		}
+	}
+
+	.commentlist {
+		margin-bottom: calc(2 * var(--wp--style--block-gap));
+		.comment {
+			p {
+				font-size: var(--wp--custom--post-comment--typography--font-size);
+				line-height: var(--wp--custom--post-comment--typography--line-height);
+				margin-bottom: var(--wp--custom--gap--vertical);
+				margin-top: var(--wp--custom--gap--vertical);
+			}
+		}
+	}
+
+	.comment-body {
+		margin-bottom: calc(1.5 * var( --wp--style--block-gap ));
+	}
+
+	.commentmetadata {
+		margin-left: 0;
+		margin-bottom: calc(0.75 * var( --wp--style--block-gap ));
+	}
+
+	.comment-awaiting-moderation {
 		display: inline-block;
+		font-size: var(--wp--preset--font-size--small);
+		margin-bottom: var(--wp--custom--gap--baseline);
+	}
+
+	// Needed until we have the option to hide this message via the block.
+	.nocomments {
+		display: none;
 	}
 }

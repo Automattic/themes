@@ -25,6 +25,7 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper .wp-block-button__link:hover,
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-cover,
 			#editor .editor-styles-wrapper .wp-block-cover-image,
 			#editor .editor-styles-wrapper .wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-image-text,
@@ -102,6 +103,7 @@ add_editor_color_rule( 'link', '#000000', array(
 
 	// Background-color
 	array( '#editor .editor-styles-wrapper .button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
 			#editor .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),

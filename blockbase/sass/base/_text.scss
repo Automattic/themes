@@ -1,13 +1,13 @@
-// Text selection background color
-
-::selection {
-	background-color: var(--wp--custom--color--selection);
+// Needed until https://github.com/WordPress/gutenberg/issues/35267 is resolved.
+p.wp-block.wp-block-paragraph, // This selector has been made extra specific to override the block gap being set in the editor.
+*[class^="wp-container"] > * + p,
+p {
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
-::-moz-selection {
-	background-color: var(--wp--custom--color--selection);
-}
 
-p, h1, h2, h3, h4, h5, h6 {
-	margin-top: var(--wp--custom--margin--vertical);
-	margin-bottom: var(--wp--custom--margin--vertical);
+.wp-block-column, .wp-block-group {
+	:first-child {
+		margin-top: 0;
+	}
 }

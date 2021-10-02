@@ -1,0 +1,49 @@
+.wp-block-post-comments {
+
+	.reply {
+		a {
+			@include text-decoration;
+		}
+	}
+
+	form {
+		column-gap: 1.2em;
+	}
+
+	.comment-reply-title {
+		margin-bottom: calc( 2 * var(--wp--custom--gap--baseline));
+	}
+
+	.comment-author {
+		cite {
+			font-weight: bold;
+		}
+
+		.says {
+			display: none;
+		}
+	}
+
+	.commentmetadata {
+		--wp--style--block-gap: 48px;
+
+		a {
+			font-weight: 500;
+		}
+	}
+
+	.commentlist {
+		--wp--style--block-gap: 60px;
+	}
+
+	// Target certain links within post comments to use the underline treatment.
+	.comment-body > p > a,
+	.comment-edit-link {
+		@include text-decoration;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

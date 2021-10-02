@@ -3,7 +3,7 @@
 //Apply to Image block when we don't want margin bottom before caption
 .image-no-margin {
 	margin: 0;
-	& > * { //the first sibling is a div on the editor and an image on the frontend
+	& * { //Removes any whitespace created by child elements (a div on the editor, and an image or link on the frontend)
 		vertical-align: bottom;
 	}
 }
@@ -11,4 +11,9 @@
 //Removes padding on Column block when it has a background color
 .has-background-no-padding.wp-block-columns.has-background {
 	padding: 0;
+}
+
+// For when we do not want the vertical block gap. Needed until we have per-block margin controls.
+.mt-0 {
+	margin-top: 0 !important;
 }

@@ -61,6 +61,7 @@ add_color_rule( 'bg', '#FFFDF6', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
+			.wp-block-search .wp-block-search__button,
 			button,
 			button.has-focus,
 			button:focus,
@@ -115,6 +116,7 @@ add_color_rule( 'link', '#20603C', array(
 			.wp-block-file__button,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
+			.wp-block-search .wp-block-search__button,
 			button,
 			button[data-load-more-btn],
 			input[type="submit"]', 'background-color' ),
@@ -194,6 +196,8 @@ add_color_rule( 'link', '#20603C', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-meta a:hover,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
 			a:hover', 'color', 0.8 ),
 
 	// Border color left
@@ -267,6 +271,9 @@ add_color_rule( 'txt', '#3C2323', array(
 			.wp-block-pullquote,
 			hr,
 			hr.wp-block-separator', 'border-bottom-color' ),
+
+	// Border-color with less opacity (dim)
+	array( '.wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
 	/**
 	 * Utility Classes

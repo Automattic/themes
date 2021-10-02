@@ -56,6 +56,7 @@ add_color_rule( 'bg', '#ffffff', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
+			.wp-block-search .wp-block-search__button,
 			button,
 			button.has-focus,
 			button:focus,
@@ -111,6 +112,7 @@ add_color_rule( 'link', '#0000ff', array(
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			button,
 			button[data-load-more-btn],
+			.wp-block-search .wp-block-search__button,
 			input[type="submit"]', 'background-color' ),
 
 	// Text-color
@@ -153,6 +155,8 @@ add_color_rule( 'link', '#0000ff', array(
 			button.has-focus,
 			button:focus,
 			button:hover,
+			.wp-block-search .wp-block-search__button:focus,
+			.wp-block-search .wp-block-search__button:hover,
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"]', 'background-color', 0.8 ),
@@ -201,6 +205,7 @@ add_color_rule( 'link', '#0000ff', array(
 			input[type="time"]:focus,
 			input[type="url"]:focus,
 			input[type="week"]:focus,
+			.wp-block-search .wp-block-search__input:focus,
 			textarea:focus', 'border-color' ),
 
 	/**
@@ -265,7 +270,9 @@ add_color_rule( 'txt', '#444444', array(
 			input[type="week"],
 			input[type="week"]:focus,
 			textarea,
-			textarea:focus', 'color', '#ffffff', 8 ),
+			textarea:focus,
+			.wp-block-search .wp-block-search__input,
+			.wp-block-search .wp-block-search__input:focus', 'color', '#ffffff', 8 ),
 
 	// Text-color with less opacity (dim)
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta,
@@ -312,7 +319,8 @@ add_color_rule( 'txt', '#444444', array(
 			input[type="url"],
 			input[type="week"],
 			select,
-			textarea', 'border-color', 0.8 ),
+			textarea,
+			.wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
 	// Border-top-color with less opacity (dim)
 	array( '.comment-list .children > li,

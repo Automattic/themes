@@ -12,11 +12,11 @@ return array(
 		<div class="wp-block-columns alignwide">
 		<!-- wp:column -->
 		<div class="wp-block-column"><!-- wp:heading {"level":3} -->
-		<h3>' . esc_html( 'Join the Community' ) . '</h3>
+		<h3>' . esc_html__( 'Join the Community', 'quadrat' ) . '</h3>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->
-		<p>' . esc_html__( 'We’re thrilled to have you here! Now, if you don’t want to miss an article or an episode, you can subscribe to our newsletter.' ) . '</p>
+		<p>' . esc_html__( 'We’re thrilled to have you here! Now, if you don’t want to miss an article or an episode, you can subscribe to our newsletter.', 'quadrat' ) . '</p>
 		<!-- /wp:paragraph --></div>
 		<!-- /wp:column -->
 

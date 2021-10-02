@@ -1,6 +1,6 @@
 {
   "name": "blockbase",
-  "version": "1.0.1",
+  "version": "1.2.4",
   "description": "Blank Parent Theme",
   "bugs": {
     "url": "https://github.com/Automattic/themes/issues"
@@ -33,6 +33,7 @@
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
+    "create:child": "node create-child.js",
     "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
     "start:child": "run-p start \"build:child -- {@} watch\" --",
     "start:all": "chokidar \"sass/**/*.scss\" \"experimental-theme.json\" -c \"npm run build:all\" --initial",

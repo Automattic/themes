@@ -1,11 +1,11 @@
-.wp-block-query-pagination {
+div.wp-block-query-pagination { // This CSS needs to be stronger than Gutenberg's until https://github.com/WordPress/gutenberg/issues/34997 is merged.
 	padding-top: 1.5em;
 	justify-content: space-between;
 	display: grid;
 	grid-template-areas: "prev numbers next";
 	grid-template-columns: 1fr 2fr 1fr;
 
-	@include break-mobile-only(){
+	@include break-small-only(){
 		grid-template-areas: "prev next";
 		grid-template-columns: 1fr 1fr;
 	}
@@ -16,17 +16,17 @@
 	}
 
 	.wp-block-query-pagination-next {
-		justify-self: end;
+		justify-self: flex-end;
 		grid-area: next;
 	}
-	
+
 	.wp-block-query-pagination-numbers{
 		grid-area: numbers;
 		justify-self: center;
 		.current {
 			text-decoration: underline;
 		}
-		@include break-mobile-only(){
+		@include break-small-only(){
 			display: none;
 		}
 	}

@@ -43,6 +43,7 @@ add_editor_color_rule( 'bg', '#ffffff', array(
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
 			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
@@ -89,6 +90,7 @@ add_editor_color_rule( 'link', '#0000ff', array(
 	array( '#editor .editor-styles-wrapper .button,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
 			#editor .editor-styles-wrapper .wp-block-button__link,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'background-color' ),
 
@@ -116,12 +118,18 @@ add_editor_color_rule( 'link', '#0000ff', array(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:focus,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .button:hover,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation .has-focus.button,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:focus,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:focus,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .button:hover,
 			#editor .editor-styles-wrapper .wp-block-a8c-blog-posts + .has-focus.button,
 			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:hover', 'background-color', 0.8 ),
+	// Border-color (forms)
+	// Needs contrast against `bg` with less contrast
+	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus,
+			textarea:focus', 'border-color' ),
 
 	// Text-color
 	array( '#editor .editor-styles-wrapper .fse-template-part .main-navigation a:hover,
@@ -173,6 +181,8 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper .wp-block-pullquote .wp-block-pullquote__citation,
 			#editor .editor-styles-wrapper .wp-block-pullquote cite,
 			#editor .editor-styles-wrapper .wp-block-pullquote footer,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus,
 			#editor .editor-styles-wrapper .wp-block-quote .wp-block-quote__citation,
 			#editor .editor-styles-wrapper .wp-block-quote cite,
 			#editor .editor-styles-wrapper .wp-block-quote footer,
@@ -186,7 +196,8 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper figcaption', 'color', 0.8 ),
 
 	// Border-color with less opacity (dim)
-	array( '#editor .editor-styles-wrapper .wp-block-code', 'border-color', 0.8 ),
+	array( '#editor .editor-styles-wrapper .wp-block-code,
+			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input', 'border-color', 0.8 ),
 
 	// Border-top-color with less opacity (dim)
 	array( '#editor .editor-styles-wrapper .wp-block-pullquote', 'border-top-color', 0.8 ),

@@ -386,15 +386,15 @@
 		color: $color__text-main;
 	}
 
-	.comment-form-author,
-	.comment-form-email {
+	.comment-form-author:not(.comment-form-field),
+	.comment-form-email:not(.comment-form-field) {
 		@include media(tablet) {
 			width: calc(50% - #{$size__spacing-unit / 2});
 			float: left;
 		}
 	}
 
-	.comment-form-email {
+	.comment-form-email:not(.comment-form-field) {
 		@include media(tablet) {
 			margin-left: $size__spacing-unit;
 		}

@@ -7,7 +7,7 @@ Author URI: https://automattic.com/
 Template: twentynineteen
 Description: Your classy establishment needs an equally classy website to showcase your delicious food and special concoctions! With its bold typography and chic color scheme, Sophisticated Business exudes the same cool, intimate atmosphere as an upscale bar, lounge, or pub.
 Requires at least: WordPress 4.9.6
-Version: 1.5.3
+Version: 1.5.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: sophisticated-business
@@ -3002,15 +3002,15 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .comment-form .comment-form-author,
-  .comment-form .comment-form-email {
+  .comment-form .comment-form-author:not(.comment-form-field),
+  .comment-form .comment-form-email:not(.comment-form-field) {
     width: calc(50% - 0.5rem);
     float: left;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .comment-form .comment-form-email {
+  .comment-form .comment-form-email:not(.comment-form-field) {
     margin-left: 1rem;
   }
 }
