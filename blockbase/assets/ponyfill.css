@@ -332,6 +332,27 @@ button:focus {
 	outline-offset: 2px;
 }
 
+input.wp-block-search__input::placeholder,
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="url"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="number"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="range"]::placeholder,
+input[type="date"]::placeholder,
+input[type="month"]::placeholder,
+input[type="week"]::placeholder,
+input[type="time"]::placeholder,
+input[type="datetime"]::placeholder,
+input[type="datetime-local"]::placeholder,
+input[type="color"]::placeholder,
+textarea::placeholder {
+	color: var(--wp--custom--form--color--text);
+	opacity: 0.66;
+}
+
 select {
 	font-family: inherit;
 	font-size: 100%;
@@ -821,6 +842,11 @@ div.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button.has-icon,
 .wp-block-search .wp-block-search__button.has-icon {
 	line-height: 0;
+}
+
+.wp-block-search .wp-block-search__input::placeholder {
+	color: var(--wp--custom--form--color--text);
+	opacity: 0.66;
 }
 
 .wp-block-separator {
