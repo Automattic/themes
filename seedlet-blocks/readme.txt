@@ -12,7 +12,7 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
-= 2.1.4 =
+= 2.1.2 - 2.1.4 =
 * Bug fixes and improvements
 * Gutenberg + Blockbase compatibility improvements
 * Added site logo support

@@ -12,7 +12,7 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
-= 1.1.7 =
+= 1.1.3 - 1.1.7 =
 * Bug fixes and improvements
 * Gutenberg + Blockbase compatibility improvements
 * Added site logo support
