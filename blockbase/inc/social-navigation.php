@@ -23,12 +23,22 @@ function blockbase_condition_to_render_social_menu( $block ) {
 		return false;
 	}
 
+	// The block should have a social links attribute.
+	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
+		return false;
+	}
+
 	return true;
 }
 
-function get_social_menu_as_social_links_block() {
+function get_social_menu_as_social_links_block( $block ) {
+	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
+		return false;
+	}
+
+	$social_links_location = $block['attrs']['__unstableSocialLinks'];
 	$nav_menu_locations = get_nav_menu_locations();
-	$social_menu_id = $nav_menu_locations['social'];
+	$social_menu_id = $nav_menu_locations[ $social_links_location ];
 	$class_name = 'is-style-logos-only';
 	if( ! empty( $block['attrs']['itemsJustification'] ) ) {
 		$class_name .= ' items-justified-' . $block['attrs']['itemsJustification'];
@@ -58,7 +68,7 @@ function append_social_links_block_to_primary_navigation( $primary_navigation, $
 
 function blockbase_social_menu_render( $block_content, $block ) {
 	if ( blockbase_condition_to_render_social_menu( $block ) ) {
-		$social_links_block = get_social_menu_as_social_links_block();
+		$social_links_block = get_social_menu_as_social_links_block( $block );
 
 		return append_social_links_block_to_primary_navigation( $block_content, $social_links_block );
 	}
