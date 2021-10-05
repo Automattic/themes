@@ -45,6 +45,8 @@ function get_social_menu_as_social_links_block() {
 
 function append_social_links_block_to_primary_navigation( $primary_navigation, $social_links_block ) {
 	$dom = new domDocument;
+	// Since the nav block uses HTML5 element names, we need to suppress the warnings it sends when we loadHTML with HTML5 elements.
+	libxml_use_internal_errors( true );
 	$dom->loadHTML( $primary_navigation );
 	$wp_block_navigation__container = $dom->getElementsByTagName('ul')->item( 0 );
 	$social_links_node = $dom->createDocumentFragment();
