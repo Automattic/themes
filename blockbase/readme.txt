@@ -18,6 +18,11 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.2.1 - 1.2.5 =
+* Bug fixes and child-theme compability improvements
+* Refactored font sizes to better align with Gutenberg defaults
+* Added theme.json schema
+
 = 1.2.0 =
 * Remove site editor toggle
 * PHP 404 template
