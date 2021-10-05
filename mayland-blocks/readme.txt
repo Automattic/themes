@@ -15,6 +15,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 = 2.1.4 =
 * Bug fixes and improvements
 * Gutenberg + Blockbase compatibility improvements
+* Added site logo support
+* Improved palette color changes when changing themes
+* Added theme.json schema
 
 = 2.1.1 =
 * Better comments styles
