@@ -622,7 +622,7 @@ async function tagDeployment(options={}) {
 
 	let workInTheOpenPhabricatorUrl = '';
 	if (options.diffId) {
-		workInTheOpenPhabricatorUrl = `Phabricator: ${diffId}-code`;
+		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffId}-code`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
