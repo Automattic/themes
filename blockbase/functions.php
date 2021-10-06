@@ -57,8 +57,8 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		);
 
 	}
-	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;
+add_action( 'after_setup_theme', 'blockbase_support', 9 );
 
 /**
  *
@@ -137,9 +137,11 @@ add_action( 'init', 'blockbase_restore_customizer' );
 /**
  * Customize Global Styles
  */
-require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+}
 
 // Force menus to reload
 add_action(
