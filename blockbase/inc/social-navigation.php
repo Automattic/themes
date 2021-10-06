@@ -2,7 +2,7 @@
 
 // We should only change the render of the navigtion block
 // to social links in the following conditions.
-function blockbase_condition_to_render_social_menu( $block ) {
+function blockbase_condition_to_render_social_menu( $block_content, $block ) {
 	// The block should be a navigation block.
 	if ( 'core/navigation' !== $block['blockName'] ) {
 		return false;
@@ -25,6 +25,10 @@ function blockbase_condition_to_render_social_menu( $block ) {
 
 	// The block should have a social links attribute.
 	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
+		return false;
+	}
+
+	if ( empty( $block_content ) ) {
 		return false;
 	}
 
@@ -67,7 +71,7 @@ function append_social_links_block_to_primary_navigation( $primary_navigation, $
 }
 
 function blockbase_social_menu_render( $block_content, $block ) {
-	if ( blockbase_condition_to_render_social_menu( $block ) ) {
+	if ( blockbase_condition_to_render_social_menu( $block_content, $block ) ) {
 		$social_links_block = get_social_menu_as_social_links_block( $block );
 
 		return append_social_links_block_to_primary_navigation( $block_content, $social_links_block );
