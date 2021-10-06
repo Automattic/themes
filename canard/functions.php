@@ -305,8 +305,8 @@ add_action( 'wp_enqueue_scripts', 'canard_scripts' );
  * Gutenberg Editor Styles
  */
 function canard_editor_styles() {
-	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'canard-block-style', get_template_directory_uri() . '/blocks.css' );
+	wp_enqueue_style( 'canard-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'canard-pt-serif-playfair-display', canard_pt_serif_playfair_display_font_url() );
 	wp_enqueue_style( 'canard-lato-inconsolata', canard_lato_inconsolata_fonts_url() );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
