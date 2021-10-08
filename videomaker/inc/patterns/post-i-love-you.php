@@ -9,7 +9,7 @@ return array(
 	'title'      => __( 'Post: I Love You', 'videomaker' ),
 	'categories' => array( 'videomaker' ),
 	'content'    => '<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/i-love-you.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/i-love-you.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/i-love-you.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:post-terms {"term":"post_tag"} /-->

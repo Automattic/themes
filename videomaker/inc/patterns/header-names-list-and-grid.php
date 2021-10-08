@@ -32,7 +32,7 @@ return array(
 	<div class="wp-block-column" style="flex-basis:60%">
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video src="' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"></video></figure>
+	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"></video></figure>
 	<!-- /wp:video -->
 
 	<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"normal"} -->
