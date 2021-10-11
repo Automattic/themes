@@ -151,8 +151,9 @@ async function pushButtonDeploy(repoType) {
 		}
 
 		open('https://mc.a8c.com/themes/downloads/');
-		console.log(`Please deploy the following themes manually:\n${changedThemes}` );
-		console.log('Please build the .zip files for the themes manually');
+		console.log(`The following themes have changed:\n${changedThemes.join('\n')}`)
+		console.log('Please deploy the following themes manually.' );
+		console.log('Please build the .zip files for the themes manually.');
 		console.log('\n\nAll Done!!\n\n');
 	}
 	catch (err) {
@@ -576,10 +577,13 @@ async function createSvnPhabricatorDiff(hash) {
 	const commitTempFileLocation = '/tmp/theme-deploy-comment.txt';
 	const commitMessage = await buildPhabricatorCommitMessageSince(hash);
 
+	console.log(commitMessage);
+
 	const result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
-		echo '${commitMessage}' > ${commitTempFileLocation}
-		svn add --force * --auto-props --parents --depth infinity -q
+		echo "${commitMessage}" > ${commitTempFileLocation};
+		svn add --force * --auto-props --parents --depth infinity -q;
+		svn status | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
 		arc diff --create --message-file ${commitTempFileLocation}
 	`, true);
 
