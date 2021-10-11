@@ -13,22 +13,8 @@ function blockbase_condition_to_render_social_menu( $block_content, $block ) {
 		return false;
 	}
 
-	// The block should have a loction defined.
-	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
-		return false;
-	}
-
-	// The block's location should be 'primary'.
-	if ( $block['attrs']['__unstableLocation'] !== 'primary' ) {
-		return false;
-	}
-
 	// The block should have a social links attribute.
 	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
-		return false;
-	}
-
-	if ( empty( $block_content ) ) {
 		return false;
 	}
 
@@ -57,11 +43,14 @@ function get_social_menu_as_social_links_block( $block ) {
 	return do_blocks( $social_links_content );
 }
 
-function append_social_links_block_to_primary_navigation( $primary_navigation, $social_links_block ) {
+function append_social_links_block( $parent_content, $social_links_block ) {
+	if ( empty( $parent_content ) ) {
+		return $social_links_block;
+	}
 	$dom = new domDocument;
 	// Since the nav block uses HTML5 element names, we need to suppress the warnings it sends when we loadHTML with HTML5 elements.
 	libxml_use_internal_errors( true );
-	$dom->loadHTML( $primary_navigation );
+	$dom->loadHTML( $parent_content );
 	$wp_block_navigation__container = $dom->getElementsByTagName('ul')->item( 0 );
 	$social_links_node = $dom->createDocumentFragment();
 	$social_links_node->appendXML( $social_links_block );
@@ -74,13 +63,13 @@ function blockbase_social_menu_render( $block_content, $block ) {
 	if ( blockbase_condition_to_render_social_menu( $block_content, $block ) ) {
 		$social_links_block = get_social_menu_as_social_links_block( $block );
 
-		return append_social_links_block_to_primary_navigation( $block_content, $social_links_block );
+		return append_social_links_block( $block_content, $social_links_block );
 	}
 
 	return $block_content;
 }
 
 /**
- * Hijack the render of the primary menu to inject a social menu.
+ * Hijack the render of the menu block to inject a social menu.
  */
 add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
