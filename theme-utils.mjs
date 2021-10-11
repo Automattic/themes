@@ -583,7 +583,7 @@ async function createSvnPhabricatorDiff(hash) {
 		cd ${sandboxPublicThemesFolder};
 		echo "${commitMessage}" > ${commitTempFileLocation};
 		svn add --force * --auto-props --parents --depth infinity -q;
-		svn status | grep "^\!" | sed 's/^\! *//g' | xargs svn rm
+		svn status | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
 		arc diff --create --message-file ${commitTempFileLocation}
 	`, true);
 
