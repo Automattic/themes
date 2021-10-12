@@ -12,13 +12,6 @@ function seedlet_blocks_support() {
 		)
 	);
 
-	// This theme has one menu location.
-	register_nav_menus(
-		array(
-			'primary' => __( 'Primary Navigation', 'seedlet-blocks' ),
-		)
-	);
-
 }
 add_action( 'after_setup_theme', 'seedlet_blocks_support' );
 
