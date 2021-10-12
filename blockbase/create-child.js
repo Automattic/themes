@@ -1,4 +1,6 @@
 const child_theme_json = `{
+	"$schema": "https://json.schemastore.org/theme-v1.json",
+	"version": 1,
 	"settings": {
 		"custom": {}
 	},
