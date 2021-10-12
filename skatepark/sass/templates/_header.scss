@@ -30,17 +30,9 @@ header.wp-block-template-part {
 		}
 
 		.wp-block-social-links {
-			@include break-small(){
-				flex-basis: 100%;
-			}
+			margin: 0;
 
 			&.is-style-logos-only {
-				margin-right: -2px; // Visually align social links to the right
-
-				@include break-small-only(){
-					margin-left: -0.25em;
-					margin-right: 0;
-				}
 				> .wp-social-link {
 					padding: 0; // Needed to override Gutenberg default padding on this block style variation
 
@@ -108,7 +100,6 @@ header.wp-block-template-part {
 		}
 		.wp-block-social-links {
 			justify-content: flex-start;
-			grid-area: social;
 		}
 	}
 }
