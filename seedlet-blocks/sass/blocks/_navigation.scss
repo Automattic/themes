@@ -1,8 +1,8 @@
 .wp-block-navigation__responsive-container {
 	&.has-modal-open {
 		.wp-block-navigation-link {
-			//NOTE: For reasons I cannot explain... if I set this to use the --wp--preset--font-family--headings
-			//these values (which are what are set) are not respected in the modal.
+			//NOTE: We lost the ability to tap into "heading font family" when we "inverted" the mechanism of customizing fonts in universal themes.
+			//I'm unsure how to make this work as designed...
 			font-family: var(--wp--preset--font-family--headings);
 			font-size: 32px;
 			font-weight: 400;
@@ -26,4 +26,8 @@
 is passed all of the block attributes on the block definition in the template. */
 .wp-block-navigation__container {
 	justify-content: center;
+}
+
+.wp-block-navigation.is-responsive .has-child .wp-block-navigation__submenu-container {
+	padding-left: 0 !important;
 }
