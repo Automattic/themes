@@ -1,9 +1,19 @@
 .wp-block-navigation__responsive-container {
 	&.has-modal-open {
+		.wp-block-navigation__container {
+			gap: 0 !important;
+			align-items: start !important;
+		}
+		.wp-block-navigation-item {
+			align-items: start !important;
+		}
+		.wp-block-navigation__submenu-container {
+			padding-top: 0 !important;
+		}
 		.wp-block-navigation-link {
 			//NOTE: We lost the ability to tap into "heading font family" when we "inverted" the mechanism of customizing fonts in universal themes.
 			//I'm unsure how to make this work as designed...
-			font-family: var(--wp--preset--font-family--headings);
+			font-family: var(--wp--preset--font-family--playfair-display);
 			font-size: 32px;
 			font-weight: 400;
 			line-height: 60px;
@@ -25,9 +35,5 @@
 /* NOTE: This can be removed when the rendering of the Navigation block, rendered with a Classic data source (by way of __unstableLocation),
 is passed all of the block attributes on the block definition in the template. */
 .wp-block-navigation__container {
-	justify-content: center;
-}
-
-.wp-block-navigation.is-responsive .has-child .wp-block-navigation__submenu-container {
-	padding-left: 0 !important;
+	justify-content: left;
 }
