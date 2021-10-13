@@ -1,7 +1,5 @@
-// See https://github.com/WordPress/gutenberg/issues/34648
-.wp-block-navigation.is-responsive {
-	.has-child .wp-block-navigation__submenu-container {
-		background-color: var(--wp--custom--color--background);
-		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
-	}
+//NOTE: Setting the font size as a block attributes forces ALL elements to have that font size
+//preventing mobile menu items (and sub-menu items) from having a different size value
+.wp-block-navigation {
+	font-size: var(--wp--preset--font-size--small);
 }
