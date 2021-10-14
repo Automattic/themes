@@ -102,18 +102,17 @@ async function pushButtonDeploy(repoType) {
 
 		let hash = await getLastDeployedHash();
 		let diffUrl;
-		console.log('minus three');
+
 		await versionBumpThemes();
-		console.log('minus two');
+
 		let changedThemes = await getChangedThemes(hash);
-		console.log('minus one');
+
 		//TODO: Can these be automagically uploaded?
 		//await buildChangedOrgZips();
-		console.log('one');
+
 		await pushChangesToSandbox();
-		console.log('two');
+
 		await updateLastDeployedHash();
-		console.log('tree');
 
 		if (repoType === 'git' ) {
 			diffUrl = await createGitPhabricatorDiff(hash);
@@ -122,7 +121,7 @@ async function pushButtonDeploy(repoType) {
 			diffUrl = await createSvnPhabricatorDiff(hash);
 		}
 		let diffId = diffUrl.split('a8c.com/')[1];
-		console.log('four');
+
 		//push changes (from version bump)
 		await executeCommand('git push');
 
@@ -284,7 +283,7 @@ async function versionBumpThemes() {
 			console.log(`${theme} has already been version bumped`);
 			continue;
 		}
-		console.log( theme );
+
 		await versionBumpTheme(theme);
 	}
 
@@ -328,17 +327,12 @@ async function versionBumpTheme(theme){
  Compares the value of 'version' in package.json between the hash and current value
 */
 async function checkThemeForVersionBump(theme, hash){
-	console.log( 'checkThemeForVersionBump' );
-	console.log( theme );
-	console.log( hash );
 	executeCommand(`
 		git show ${hash}:${theme}/package.json 2>/dev/null
 	`).catch( ( error ) => {
-		console.log( 'this is an error' );
-		console.log( error );
+		console.log( 'This is a new theme, no need to bump versions' );
 		return false;
 	} ).then( ( previousPackageString ) => {
-		console.log( previousPackageString );
 		let previousPackage = JSON.parse(previousPackageString);
 		let currentPackage = JSON.parse(fs.readFileSync(`${theme}/package.json`))
 		return previousPackage.version != currentPackage.version;
