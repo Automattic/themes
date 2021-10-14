@@ -18,9 +18,9 @@ if ( ! function_exists( 'blockbase_register_block_styles' ) ) :
 			register_block_style(
 				'core/navigation',
 				array(
-					'name'         => 'blockbase-navigation-clean',
-					'label'        => __( 'Clean', 'blockbase' ),
-					'style_handle' => 'blockbase-navigation-clean',
+					'name'         => 'blockbase-navigation-improved-responsive',
+					'label'        => __( 'Improved Responsive Navigation', 'blockbase' ),
+					'style_handle' => 'blockbase-navigation-improved-responsive',
 				)
 			);
 
