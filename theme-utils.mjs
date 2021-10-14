@@ -328,14 +328,10 @@ async function versionBumpTheme(theme){
  Compares the value of 'version' in package.json between the hash and current value
 */
 async function checkThemeForVersionBump(theme, hash){
-	console.log( 'checkThemeForVersionBump' );
-	console.log( theme );
-	console.log( hash );
 	executeCommand(`
 		git show ${hash}:${theme}/package.json 2>/dev/null
 	`).catch( ( error ) => {
-		console.log( 'this is an error' );
-		console.log( error );
+		console.log( 'This is a new theme, no need to bump versions' );
 		return false;
 	} ).then( ( previousPackageString ) => {
 		console.log( previousPackageString );
