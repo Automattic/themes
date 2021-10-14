@@ -48,7 +48,19 @@ class GlobalStylesColorCustomizer {
 
 	function initialize( $wp_customize ) {
 		$this->user_color_palette = $this->build_user_color_palette();
+		$this->theme_duotone_settings = $this->get_theme_duotone_settings();
 		$this->register_color_controls( $wp_customize, $this->user_color_palette );
+	}
+
+	function get_theme_duotone_settings() {
+		// Get the merged theme.json.
+		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+
+		if ( $theme_json['settings'] && $theme_json['settings']['color'] && $theme_json['settings']['color']['duotone'] && $theme_json['settings']['color']['duotone']['theme'] ) {
+			return $theme_json['settings']['color']['duotone']['theme'];
+		}
+
+		return false;
 	}
 
 	function build_user_color_palette() {
@@ -161,6 +173,16 @@ class GlobalStylesColorCustomizer {
 				array( 'settings', 'color', 'palette' ),
 				$this->user_color_palette
 			);
+
+			if ( $this->theme_duotone_settings ) {
+				$default_duotone_filter = json_decode( '[ {
+					"colors": [ "' . $wp_customize->get_setting( $this->section_key . 'background' )->post_value() . '", "' . $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() . '" ],
+					"slug": "default-filter",
+					"name": "Default filter"
+				} ]' );
+				var_dump( $default_duotone_filter );
+				$user_theme_json_post_content->settings->color->duotone = $default_duotone_filter;
+			}
 		}
 
 		// Update the theme.json with the new settings.
