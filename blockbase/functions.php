@@ -159,3 +159,8 @@ add_action(
 		);
 	}
 );
+
+/**
+ * Block Styles.
+ */
+require get_template_directory() . '/inc/block-styles.php';
