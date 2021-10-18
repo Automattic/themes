@@ -164,3 +164,8 @@ add_action(
  * Block Styles.
  */
 require get_template_directory() . '/inc/block-styles.php';
+
+/**
+ * Create a child theme.
+ */
+require get_template_directory() . '/inc/create-theme.php';
