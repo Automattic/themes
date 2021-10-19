@@ -33,7 +33,7 @@ function showHelp(){
 	console.log('Help info can go here');
 }
 
-/* 
+/*
  Determine what changes would be deployed
 */
 async function deployPreview() {
@@ -51,7 +51,7 @@ async function deployPreview() {
 
 	let changedThemes = await getChangedThemes(hash);
 	console.log(`The following themes have changes:\n${changedThemes}`);
-	
+
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
@@ -111,6 +111,7 @@ async function pushButtonDeploy(repoType) {
 		//await buildChangedOrgZips();
 
 		await pushChangesToSandbox();
+
 		await updateLastDeployedHash();
 
 		if (repoType === 'git' ) {
@@ -200,8 +201,8 @@ async function landChangesGit(diffId){
 async function landChangesSvn(diffId){
 	return await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
-		svn ci -m ${diffId} 
-	`, true); 
+		svn ci -m ${diffId}
+	`, true);
 }
 
 async function getChangedThemes(hash) {
@@ -277,10 +278,9 @@ async function versionBumpThemes() {
 		}
 
 		versionBumpCount++;
-
 		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
 		if( hasVersionBump ){
-			// console.log(`${theme} has already been version bumped`);
+			console.log(`${theme} has already been version bumped`);
 			continue;
 		}
 
@@ -327,12 +327,16 @@ async function versionBumpTheme(theme){
  Compares the value of 'version' in package.json between the hash and current value
 */
 async function checkThemeForVersionBump(theme, hash){
-	let previousPackageString = await executeCommand(`
+	executeCommand(`
 		git show ${hash}:${theme}/package.json 2>/dev/null
-	`);
-	let previousPackage = JSON.parse(previousPackageString);
-	let currentPackage = JSON.parse(fs.readFileSync(`${theme}/package.json`))
-	return previousPackage.version != currentPackage.version;
+	`).catch( ( error ) => {
+		console.log( 'This is a new theme, no need to bump versions' );
+		return false;
+	} ).then( ( previousPackageString ) => {
+		let previousPackage = JSON.parse(previousPackageString);
+		let currentPackage = JSON.parse(fs.readFileSync(`${theme}/package.json`))
+		return previousPackage.version != currentPackage.version;
+	});
 }
 
 /*
