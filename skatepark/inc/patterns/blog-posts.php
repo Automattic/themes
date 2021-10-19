@@ -12,7 +12,7 @@ return array(
 	<div class="wp-block-query alignwide"><!-- wp:post-template -->
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px"}}},"layout":{"inherit":false}} -->
 	<div class="wp-block-group" style="padding-top:30px"><!-- wp:separator {"className":"is-style-wide"} -->
-	<hr class="wp-block-separator is-style-wide" style="margin-bottom:20px"/>
+	<hr class="wp-block-separator is-style-wide"/>
 	<!-- /wp:separator -->
 
 	<!-- wp:post-featured-image {"isLink":true,"style":{"color":{"duotone":["#000","#B9FB9C"]}}} /-->
