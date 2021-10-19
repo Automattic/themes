@@ -31,7 +31,7 @@ return array(
 	<div class="wp-block-column" style="flex-basis:90%">
 	<!-- wp:post-title /-->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_template() . '"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:column -->

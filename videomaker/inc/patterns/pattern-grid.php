@@ -18,7 +18,7 @@ return array(
 	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_template() . '"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/cocktails.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
 	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/cocktails.mp4"></video></figure>
@@ -28,7 +28,7 @@ return array(
 	<h4>' . esc_html__( 'The Tale of The Three Cocktails', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_template() . '"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:column -->
@@ -42,7 +42,7 @@ return array(
 	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_template() . '"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
 	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4"></video></figure>
@@ -52,7 +52,7 @@ return array(
 	<h4>' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_template() . '"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:column --></div>

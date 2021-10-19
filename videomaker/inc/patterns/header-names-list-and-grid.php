@@ -39,7 +39,7 @@ return array(
 	<h3 class="has-normal-font-size" style="font-weight:700">' . esc_html__( 'Boats', 'videomaker' ) . '</h3>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:column --></div>
