@@ -23,7 +23,7 @@ return array(
 	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:column -->
@@ -69,7 +69,7 @@ return array(
 	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:column -->

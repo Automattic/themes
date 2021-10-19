@@ -22,7 +22,7 @@ return array(
 	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -43,7 +43,7 @@ return array(
 	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -74,7 +74,7 @@ return array(
 	<h4>' . esc_html__( 'The Tale Of Three Cocktails', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -106,7 +106,7 @@ return array(
 	<h4>' . esc_html__( 'Is This The Pacific?', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -125,7 +125,7 @@ return array(
 	<h4>' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"themes/videomaker"} /-->
+	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
 
 	</div>
 	<!-- /wp:group --></div>
