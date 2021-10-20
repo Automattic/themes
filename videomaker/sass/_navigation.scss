@@ -13,6 +13,15 @@
 			align-items: center !important;
 			row-gap: 0.8rem;
 
+			&.current-menu-item > a {
+				text-decoration: underline;
+			}
+			&.has-child:not(.current-menu-item) {
+				.wp-block-navigation__submenu-container {
+					display: none;
+				}
+			}
+		}
 		.wp-block-navigation__responsive-container-content {
 			justify-content: space-between;
 		}
