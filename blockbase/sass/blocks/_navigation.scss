@@ -20,22 +20,27 @@
 .wp-block-navigation.is-style-blockbase-navigation-improved-responsive {
 	&.is-responsive .is-menu-open {
 		font-size: var(--wp--preset--font-size--medium) !important;
+
 		.wp-block-navigation__container {
-			row-gap: 0.5rem !important;
-			align-items: flex-start !important;
+			row-gap: 0.5rem;
+			align-items: flex-start;
 			flex: unset;
 			padding-bottom: 0;
 		}
+
 		.wp-block-navigation-item {
-			align-items: flex-start !important;
+			align-items: flex-start;
 		}
-		.wp-block-navigation__submenu-container {
-			font-size: var(--wp--preset--font-size--normal) !important;
-			padding-bottom: 0;
-			padding-left: var(--wp--custom--gap--horizontal) !important;
-			padding-top: 0.5rem;
-			row-gap: 0.5rem !important;
+		.wp-block-navigation__responsive-container-content .has-child { // Needed for specificity to beat the navigation block CSS
+			.wp-block-navigation__submenu-container {
+				font-size: var(--wp--preset--font-size--normal);
+				padding-bottom: 0;
+				padding-left: var(--wp--custom--gap--horizontal);
+				padding-top: 0.5rem;
+				row-gap: 0.5rem;
+			}
 		}
+
 		ul.wp-block-social-links {
 			justify-content: flex-start;
 		}

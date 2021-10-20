@@ -4,27 +4,31 @@
 }
 
 .wp-block-navigation.is-style-blockbase-navigation-improved-responsive {
-	&.is-responsive .is-menu-open {
+	&.is-responsive .is-menu-open.wp-block-navigation__responsive-container {
 		.wp-block-navigation__container {
-			align-items: center !important;
-			row-gap: 1rem !important;
+			align-items: center;
+			row-gap: 1rem;
 		}
-		.wp-block-navigation-item {
-			align-items: center !important;
-			row-gap: 0.8rem;
 
-			&.current-menu-item > a {
-				text-decoration: underline;
-			}
-			&.has-child {
-				.wp-block-navigation__submenu-container {
-					padding-left: 0 !important;
-					padding-right: 0;
+		.wp-block-navigation__responsive-container-content { // Needed for specificity to beat the navigation block CSS
+			.wp-block-navigation-item {
+				align-items: center;
+				row-gap: 0.8rem;
+
+				&.current-menu-item > a {
+					text-decoration: underline;
 				}
-			}
-			&.has-child:not(.current-menu-item) {
-				.wp-block-navigation__submenu-container {
-					display: none;
+
+				&.has-child {
+					.wp-block-navigation__submenu-container {
+						padding-left: 0;
+						padding-right: 0;
+					}
+				}
+				&.has-child:not(.current-menu-item) {
+					.wp-block-navigation__submenu-container {
+						display: none;
+					}
 				}
 			}
 		}
