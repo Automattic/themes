@@ -6,24 +6,15 @@
 .wp-block-navigation.is-style-blockbase-navigation-improved-responsive {
 	&.is-responsive .is-menu-open.wp-block-navigation__responsive-container {
 		.wp-block-navigation__container {
-			align-items: center;
 			row-gap: 1rem;
 		}
 
 		.wp-block-navigation__responsive-container-content { // Needed for specificity to beat the navigation block CSS
 			.wp-block-navigation-item {
-				align-items: center;
-				row-gap: 0.8rem;
+				row-gap: 0rem;
 
 				&.current-menu-item > a {
 					text-decoration: underline;
-				}
-
-				&.has-child {
-					.wp-block-navigation__submenu-container {
-						padding-left: 0;
-						padding-right: 0;
-					}
 				}
 			}
 		}
@@ -31,7 +22,6 @@
 			justify-content: space-between;
 		}
 		ul.wp-block-social-links {
-			justify-content: center;
 			padding-bottom: calc( var(--wp--custom--gap--vertical) * 2 );
 		}
 	}
