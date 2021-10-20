@@ -19,7 +19,7 @@ return array(
 		<h3 style="font-weight:300">' . esc_html__( 'Jonah is Creative Director of Hano, a production studio that specializes in combining storytelling with visual design.', 'videomaker' ) . '</h3>
 		<!-- /wp:heading -->
 
-		<!-- wp:navigation {"orientation":"vertical","__unstableLocation":"primary"} /-->
+		<!-- wp:navigation {"orientation":"vertical","__unstableLocation":"primary","style":{"typography":{"textTransform":"uppercase"}}} /-->
 
 		</div>
 		<!-- /wp:column -->
