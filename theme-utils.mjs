@@ -151,6 +151,8 @@ async function pushButtonDeploy(repoType) {
 			await landChangesSvn(diffId);
 		}
 
+		await deployThemes( changedThemes );
+
 		open('https://mc.a8c.com/themes/downloads/');
 		console.log(`The following themes have changed:\n${changedThemes.join('\n')}`)
 		console.log('Please deploy the following themes manually.' );
