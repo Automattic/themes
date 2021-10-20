@@ -15,7 +15,7 @@ return array(
 	<!-- /wp:column -->
 
 	<!-- wp:column {"verticalAlignment":"center"} -->
-	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:navigation {"itemsJustification":"right","isResponsive":true,"__unstableLocation":"primary"} /--></div>
+	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:navigation {"itemsJustification":"right","isResponsive":true,"__unstableLocation":"primary","style":{"typography":{"textTransform":"uppercase"}}} /--></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 
