@@ -20,6 +20,9 @@ class GlobalStylesColorCustomizer {
 		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customizer/wp-customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
+		if ( $this->theme_duotone_settings ) {
+			wp_localize_script( 'customizer-preview-color', 'userColorDuotone', $this->theme_duotone_settings );
+		}
 	}
 
 	function update_user_color_palette( $wp_customize ) {
@@ -175,13 +178,27 @@ class GlobalStylesColorCustomizer {
 			);
 
 			if ( $this->theme_duotone_settings ) {
-				$default_duotone_filter = json_decode( '[ {
+				//TODO:
+				//- background and primary may not always exist!
+				//- do we want to replace all the filters? Only one will show on the editor for the users
+				//- Preview doesn't work
+				$custom_duotone_filter = json_decode( '[ {
 					"colors": [ "' . $wp_customize->get_setting( $this->section_key . 'background' )->post_value() . '", "' . $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() . '" ],
-					"slug": "default-filter",
-					"name": "Default filter"
+					"slug": "custom-filter",
+					"name": "Custom filter"
 				} ]' );
-				var_dump( $default_duotone_filter );
-				$user_theme_json_post_content->settings->color->duotone = $default_duotone_filter;
+				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
+				$user_theme_json_post_content->settings->color->duotone = $custom_duotone_filter;
+
+				//replace the new filter in all blocks using duotone
+				$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+				if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
+					foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
+						if($block['filter']) {
+							$user_theme_json_post_content->styles->blocks->{$key}->filter->duotone = $custom_duotone_filter_variable;//$block->filter->duotone;
+						}
+					}
+				}	
 			}
 		}
 
@@ -191,6 +208,7 @@ class GlobalStylesColorCustomizer {
 		delete_transient( 'global_styles' );
 		delete_transient( 'gutenberg_global_styles' );
 	}
+
 
 	function check_if_colors_are_default() {
 		foreach ( $this->user_color_palette as $palette_color ) {
