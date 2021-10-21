@@ -5,28 +5,11 @@ div.post-meta {
 		text-decoration: none;
 	}
 
-	// TODO - this should be the default, and child themes should opt in to the icons.
-	:first-of-type {
-		&::before {
-			display: none !important;
-		}
-	}
-
-	.wp-block-post-author,
-	.wp-block-post-date,
-	.taxonomy-post_tag,
-	.taxonomy-category {
-		align-items: center;
-
-		&::before {
-			background-color: transparent;
-			content: '/';
-			font-size: var(--wp--preset--font-size--normal);
+	> * {
+		&:not(:first-child):before {
+			color: var(--wp--custom--color--foreground);
+			content: "/";
 			margin-right: var(--wp--custom--gap--baseline);
-			-webkit-mask-image: none;
-			mask-image: none;
-			width: auto;
-			height: auto;
 		}
 	}
 }

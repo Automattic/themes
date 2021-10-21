@@ -55,29 +55,10 @@ div.post-meta a {
 	text-decoration: none;
 }
 
-div.post-meta :first-of-type::before {
-	display: none !important;
-}
-
-div.post-meta .wp-block-post-author,
-div.post-meta .wp-block-post-date,
-div.post-meta .taxonomy-post_tag,
-div.post-meta .taxonomy-category {
-	align-items: center;
-}
-
-div.post-meta .wp-block-post-author::before,
-div.post-meta .wp-block-post-date::before,
-div.post-meta .taxonomy-post_tag::before,
-div.post-meta .taxonomy-category::before {
-	background-color: transparent;
-	content: '/';
-	font-size: var(--wp--preset--font-size--normal);
+div.post-meta > *:not(:first-child):before {
+	color: var(--wp--custom--color--foreground);
+	content: "/";
 	margin-right: var(--wp--custom--gap--baseline);
-	-webkit-mask-image: none;
-	mask-image: none;
-	width: auto;
-	height: auto;
 }
 
 .is-vertical.items-justified-right ul.wp-block-navigation__container {
