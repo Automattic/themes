@@ -3,7 +3,7 @@ header.wp-block-template-part {
 	margin: 0 auto;
 	width: 100%;
 	margin-top: calc( 0.5 * var(--wp--custom--gap--vertical) );
-	
+
 	> .wp-block-group {
 		gap: 0;
 		justify-content: space-between; // Apply a cluster (flex?) layout
@@ -30,15 +30,9 @@ header.wp-block-template-part {
 		}
 
 		.wp-block-social-links {
+			margin: 0;
+
 			&.is-style-logos-only {
-				margin-right: -2px; // Visually align social links to the right
-				@include break-small(){
-					margin-top: calc( -1 * ( 8px + 0.25em ) ); // Visually align social links to the tagline
-				}
-				@include break-small-only(){
-					margin-left: -0.25em;
-					margin-right: 0;
-				}
 				> .wp-social-link {
 					padding: 0; // Needed to override Gutenberg default padding on this block style variation
 
@@ -57,6 +51,11 @@ header.wp-block-template-part {
 			"logo title"
 			"logo tagline";
 		grid-template-columns: auto 1fr;
+
+		@include break-small(){
+			grid-template-rows: 35px auto;
+		}
+
 		@include break-small-only(){
 			grid-template-areas:
 				"logo"
@@ -101,7 +100,6 @@ header.wp-block-template-part {
 		}
 		.wp-block-social-links {
 			justify-content: flex-start;
-			grid-area: social;
 		}
 	}
 }

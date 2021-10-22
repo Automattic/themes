@@ -10,13 +10,6 @@ if ( ! function_exists( 'mayland_blocks_support' ) ) :
 			)
 		);
 
-		// This theme has one menu location.
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Navigation', 'mayland-blocks' ),
-			)
-		);
-
 	}
 	add_action( 'after_setup_theme', 'mayland_blocks_support' );
 endif;

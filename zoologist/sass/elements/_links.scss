@@ -1,0 +1,17 @@
+.wp-block-post-content p a {
+	text-decoration-line: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+// Select the focus states of all non-wpadmin and screen reader links
+a:not(.ab-item):not(.screen-reader-shortcut) {
+	&:active,
+	&:focus {
+		outline: 1px dotted currentColor;
+		text-decoration: none;
+	}
+}

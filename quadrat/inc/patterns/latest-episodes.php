@@ -15,8 +15,8 @@ return array(
 	<figure class="wp-block-image size-large image-no-margin mb-0"><img src="' . get_stylesheet_directory_uri() . '/assets/illustrations/screen-usage.jpeg" alt="' . esc_attr__( 'Illustration of a woman working on a laptop.', 'quadrat' ) . '" class="wp-image-1438"/></figure>
 	<!-- /wp:image -->
 
-	<!-- wp:cover {"overlayColor":"tertiary","minHeight":360,"className":"mt-0","style":{"spacing":{"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
-	<div class="wp-block-cover has-tertiary-background-color has-background-dim mt-0" style="padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"primary"} -->
+	<!-- wp:cover {"overlayColor":"tertiary","minHeight":360,"style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
+	<div class="wp-block-cover has-tertiary-background-color has-background-dim" style="margin-top:0;padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"primary"} -->
 	<h3 class="has-primary-color has-text-color">' . esc_html__( 'Episode 1: How Screens Affect Hormones', 'quadrat' ) . '</h3>
 	<!-- /wp:heading -->
 
@@ -33,8 +33,8 @@ return array(
 	<figure class="wp-block-image size-large image-no-margin mb-0"><img src="' . get_stylesheet_directory_uri() . '/assets/illustrations/leadership.jpeg" alt="' . esc_attr__( 'Illustration of a woman climbing steps.', 'quadrat' ) . '" class="wp-image-1439"/></figure>
 	<!-- /wp:image -->
 
-	<!-- wp:cover {"overlayColor":"tertiary","minHeight":360,"className":"mt-0","style":{"spacing":{"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
-	<div class="wp-block-cover has-tertiary-background-color has-background-dim mt-0" style="padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"primary"} -->
+	<!-- wp:cover {"overlayColor":"tertiary","minHeight":360,"style":{"spacing":{"margin":{"top":"0"},"padding":{"top":"30px","right":"40px","bottom":"20px","left":"40px"}}}} -->
+	<div class="wp-block-cover has-tertiary-background-color has-background-dim" style="margin-top:0;padding-top:30px;padding-right:40px;padding-bottom:20px;padding-left:40px;min-height:360px"><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"textColor":"primary"} -->
 	<h3 class="has-primary-color has-text-color">' . esc_html__( 'Episode 2: Female Leaders, Where Are They?', 'quadrat' ) . '</h3>
 	<!-- /wp:heading -->
 

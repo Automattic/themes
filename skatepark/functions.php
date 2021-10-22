@@ -9,14 +9,6 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 				'/assets/theme.css',
 			)
 		);
-
-		//Primary navigation is used on the header and the footer pattern
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Navigation', 'skatepark' ),
-				'social' => __( 'Social Navigation', 'skatepark' )
-			)
-		);
 	}
 	add_action( 'after_setup_theme', 'skatepark_support' );
 endif;

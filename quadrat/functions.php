@@ -17,13 +17,6 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 			'starter-content',
 			$quadrat_starter_content
 		);
-
-		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Navigation', 'quadrat' ),
-			)
-		);
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;

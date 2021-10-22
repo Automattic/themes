@@ -3,10 +3,26 @@
 	align-items: flex-end;
 }
 
-// See https://github.com/WordPress/gutenberg/issues/34648
-.wp-block-navigation.is-responsive {
-	.has-child .wp-block-navigation-link__container {
-		background-color: var(--wp--custom--color--background);
-		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
+.wp-block-navigation.is-style-blockbase-navigation-improved-responsive {
+	&.is-responsive .is-menu-open.wp-block-navigation__responsive-container {
+		.wp-block-navigation__container {
+			row-gap: 1rem;
+		}
+
+		.wp-block-navigation__responsive-container-content { // Needed for specificity to beat the navigation block CSS
+			.wp-block-navigation-item {
+				row-gap: 0rem;
+
+				&.current-menu-item > a {
+					text-decoration: underline;
+				}
+			}
+		}
+		.wp-block-navigation__responsive-container-content {
+			justify-content: space-between;
+		}
+		ul.wp-block-social-links {
+			padding-bottom: calc( var(--wp--custom--gap--vertical) * 2 );
+		}
 	}
 }

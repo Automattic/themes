@@ -30,10 +30,11 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
-		// This theme has one menu location.
+		// Register two nav menus
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
 			)
 		);
 
@@ -57,8 +58,8 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		);
 
 	}
-	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;
+add_action( 'after_setup_theme', 'blockbase_support', 9 );
 
 /**
  *
@@ -137,9 +138,13 @@ add_action( 'init', 'blockbase_restore_customizer' );
 /**
  * Customize Global Styles
  */
-require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+}
+
+require get_template_directory() . '/inc/social-navigation.php';
 
 // Force menus to reload
 add_action(
@@ -156,55 +161,6 @@ add_action(
 );
 
 /**
- * Populate the social links block with the social menu content if it exists
- *
+ * Block Styles.
  */
-add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
-// We should only change the render of the navigtion block
-// to social links in the following conditions.
-function blockbase_condition_to_render_social_menu( $block ) {
-	// The block should be a navigation block.
-	if ( 'core/navigation' !== $block['blockName'] ) {
-		return false;
-	}
-
-	// The theme should have a menu defined at the social location.
-	if ( ! has_nav_menu( 'social' ) ) {
-		return false;
-	}
-
-	// The block should have a loction defined.
-	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
-		return false;
-	}
-
-	// The block's location should be 'social'.
-	if ( $block['attrs']['__unstableLocation'] !== 'social' ) {
-		return false;
-	}
-
-	return true;
-}
-
-function blockbase_social_menu_render( $block_content, $block ) {
-	if ( blockbase_condition_to_render_social_menu( $block ) ) {
-		$nav_menu_locations = get_nav_menu_locations();
-		$social_menu_id = $nav_menu_locations['social'];
-		$class_name = 'is-style-logos-only';
-		if( !empty( $block['attrs']['itemsJustification'] ) && $block['attrs']['itemsJustification'] === 'right' ) {
-			$class_name .= ' items-justified-right';
-		}
-		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
-		$menu = wp_get_nav_menu_items( $social_menu_id );
-		foreach ($menu as $menu_item) {
-			$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
-			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
-		}
-
-		$block_content .= '</ul>';
-
-		return do_blocks( $block_content );
-	}
-
-	return $block_content;
-}
+require get_template_directory() . '/inc/block-styles.php';

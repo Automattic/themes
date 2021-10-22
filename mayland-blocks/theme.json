@@ -45,7 +45,6 @@
 			"customWidth": true
 		},
 		"color": {
-			"gradients": [],
 			"palette": [
 				{
 					"slug": "foreground",
@@ -193,7 +192,7 @@
 				"color": {
 					"background": "transparent",
 					"boxShadow": "none",
-					"text": "var(--wp--custom--color--foreground)"
+					"text": "inherit"
 				},
 				"label": {
 					"spacing": {
@@ -301,7 +300,6 @@
 			},
 			"separator": {
 				"opacity": 1,
-				"margin": "var(--wp--custom--gap--vertical) auto",
 				"width": "150px"
 			},
 			"table": {
@@ -443,6 +441,11 @@
 				}
 			},
 			"core/post-title": {
+				"spacing": {
+					"margin": {
+						"bottom": "0"
+					}
+				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--poppins)",
 					"fontSize": "var(--wp--preset--font-size--huge)",
@@ -451,8 +454,8 @@
 			},
 			"core/post-date": {
 				"color": {
-					"link": null,
-					"text": null
+					"link": "var(--wp--custom--color--foreground)",
+					"text": "var(--wp--custom--color--foreground)"
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)"
@@ -476,6 +479,12 @@
 					}
 				}
 			},
+			"core/search": {
+				"typography": {
+					"fontSize": "var(--wp--custom--button--typography--font-size)",
+					"lineHeight": "var(--wp--custom--body--typography--line-height)"
+				}
+			},
 			"core/separator": {
 				"color": {
 					"text": "var(--wp--custom--color--foreground)"
@@ -486,23 +495,11 @@
 					"width": "0 0 1px 0"
 				}
 			},
-			"core/site-title": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--large)",
-					"fontWeight": 700
-				}
-			},
 			"core/quote": {
 				"border": {
 					"color": "var(--wp--custom--color--primary)",
 					"style": "solid",
 					"width": "0 0 0 1px"
-				},
-				"citation": {
-					"typography": {
-						"fontSize": "var(--wp--custom--font-sizes--tiny)",
-						"fontWeight": "400"
-					}
 				},
 				"spacing": {
 					"padding": {
@@ -512,6 +509,13 @@
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--normal)",
 					"fontStyle": "normal"
+				}
+			},
+			"core/site-title": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontWeight": "700",
+					"textDecoration": "none"
 				}
 			}
 		},

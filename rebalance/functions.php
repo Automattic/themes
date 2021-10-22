@@ -228,7 +228,7 @@ function rebalance_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
@@ -298,6 +298,7 @@ add_action( 'wp_enqueue_scripts', 'rebalance_scripts' );
  * Gutenberg Editor Styles
  */
 function rebalance_editor_styles() {
+	wp_enqueue_style( 'rebalance-block-style', get_template_directory_uri() . '/blocks.css' );
 	wp_enqueue_style( 'rebalance-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'rebalance-fonts', rebalance_fonts_url(), array(), null );
 }
