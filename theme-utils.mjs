@@ -24,6 +24,7 @@ const isWin = process.platform === 'win32';
 		case "land-diff-git": return landChangesGit(args?.[1]);
 		case "land-diff-svn": return landChangesSvn(args?.[1]);
 		case "deploy-preview": return deployPreview();
+		case "deploy-theme": return deployThemes([args?.[1]]);
 	}
 	return showHelp();
 })();
@@ -151,15 +152,19 @@ async function pushButtonDeploy(repoType) {
 			await landChangesSvn(diffId);
 		}
 
-		open('https://mc.a8c.com/themes/downloads/');
+		await deployThemes(changedThemes);
+		await buildComZips(changedThemes);
 		console.log(`The following themes have changed:\n${changedThemes.join('\n')}`)
-		console.log('Please deploy the following themes manually.' );
-		console.log('Please build the .zip files for the themes manually.');
 		console.log('\n\nAll Done!!\n\n');
 	}
 	catch (err) {
 		console.log("ERROR with deply script: ", err);
 	}
+}
+async function buildComZips(themes) {
+	//TODO: Figure out how to create these zip files automatically.
+	console.log('Please build the .zip files for the themes manually.', themes);
+	open('https://mc.a8c.com/themes/downloads/');
 }
 
 /*
@@ -219,20 +224,38 @@ async function getChangedThemes(hash) {
 }
 
 /*
- Work-in-progress
- For reasons I don't understand this command is not working when ran this way.
- "-bash: line 3: dploy: command not found"
+ Deploy a collection of themes.
+ Part of the push-button-deploy process.
+ Can also be triggered to deploy a single theme with the command:
+ node ./theme-utils.mjs deploy-theme THEMENAME
 */
 async function deployThemes(themes) {
-	let response;
-	for (let theme of themes ) {
-		console.log(theme);
-		response = await executeOnSandbox(`
-			cd ${sandboxPublicThemesFolder};
-			deploy pub ${theme}
-		`, true);
 
-		//TODO: if the response wasn't happy then prompt to try again.
+	let response;
+
+	for (let theme of themes ) {
+
+		console.log(`Deploying ${theme}`);
+
+		let deploySuccess = false;
+
+		while ( ! deploySuccess) {
+
+			response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
+
+			deploySuccess = response.includes('successfully deployed to');
+
+			if( ! deploySuccess ) {
+				console.log('Deploy was not successful.  Trying again in 10 seconds...');
+				await new Promise(resolve => setTimeout(resolve, 10000));
+			} 
+			else {
+				console.log("Deploy successful.");
+			}
+
+		}
+		console.log(response);
+
 	}
 }
 
@@ -648,7 +671,15 @@ Host wpcom-sandbox
 	HostName SANDBOXURL.wordpress.com
 	ForwardAgent yes
 */
-function executeOnSandbox(command, logResponse){
+function executeOnSandbox(command, logResponse, enablePsudoterminal){
+
+	if(enablePsudoterminal){
+		return executeCommand(`ssh -tt -A ${remoteSSH} << EOF
+${command}
+EOF`, logResponse);
+
+	}
+
 	return executeCommand(`ssh -TA ${remoteSSH} << EOF
 ${command}
 EOF`, logResponse);
