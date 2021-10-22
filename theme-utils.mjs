@@ -229,32 +229,35 @@ async function getChangedThemes(hash) {
  Can also be triggered to deploy a single theme with the command:
  node ./theme-utils.mjs deploy-theme THEMENAME
 */
-async function deployThemes(themes) {
+async function deployThemes( themes ) {
 
 	let response;
 
-	for (let theme of themes ) {
+	for ( let theme of themes ) {
 
-		console.log(`Deploying ${theme}`);
+		console.log( `Deploying ${theme}` );
 
 		let deploySuccess = false;
+		let attempt = 0;
 
 		while ( ! deploySuccess) {
 
-			response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
+			attempt++;
+			console.log(`\nattempt #${attempt}\n\n`);
 
-			deploySuccess = response.includes('successfully deployed to');
+			response = await executeOnSandbox( `deploy pub ${theme};exit;`, true, true );
+
+			deploySuccess = response.includes( 'successfully deployed to' );
 
 			if( ! deploySuccess ) {
-				console.log('Deploy was not successful.  Trying again in 10 seconds...');
+				console.log( 'Deploy was not successful.  Trying again in 10 seconds...' );
 				await new Promise(resolve => setTimeout(resolve, 10000));
 			} 
 			else {
-				console.log("Deploy successful.");
+				console.log( "Deploy successful." );
 			}
 
 		}
-		console.log(response);
 
 	}
 }
