@@ -1,55 +1,11 @@
 .post-meta {
+	@include post-meta-with-separator('·');
+
 	align-items: center;
 	justify-content: center;
 
-	.wp-block-group & {
-		// 1px needed to account for the separator
-		gap: calc( var(--wp--custom--gap--baseline) + 1px);
-	}
-
-	> * {
-		&:not(:first-child):before {
-			align-items: center;
-			background: transparent;
-			color: var(--wp--custom--color--foreground);
-			content: "·";
-			display: flex;
-			margin-right: 0;
-			-webkit-mask-image: none;
-			mask-image: none;
-		}
-
-		&:first-child:before {
-			// Hide the date icon. This should be configurable in Blockbase:
-			// https://github.com/Automattic/themes/issues/4704
-			content: none;
-		}
-
-		> * {
-			color: var(--wp--custom--color--foreground);
-			font-size: var(--wp--custom--font-sizes--tiny);
-		}
-	}
-
-	.wp-block-post-author__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	.wp-block-post-author__name {
-		line-height: 1;
-	}
-
-	.wp-block-post-author__avatar {
-		margin-right: 0.5em;
-		align-items: center;
-		display: flex;
-
-		.avatar {
-			border-radius: 50%;
-			height: 1.25em;
-			width: 1.25em;
-		}
+	@include break-small-only() {
+		padding-top: 0 !important;
+		margin-bottom: -20px;
 	}
 }
