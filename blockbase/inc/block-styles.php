@@ -2,7 +2,7 @@
 /**
  * Blockbase Theme: Block Styles
  *
- * @package Blockbase 
+ * @package Blockbase
  * @since 1.2.8
  */
 
@@ -57,7 +57,6 @@ if ( ! function_exists( 'blockbase_register_block_styles' ) ) :
 					'style_handle' => 'post-category-icon',
 				)
 			);
-
 		}
 	}
 endif;

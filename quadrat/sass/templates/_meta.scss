@@ -1,22 +1,11 @@
 .post-meta {
+	@include post-meta-with-separator('·');
+
 	align-items: center;
 	justify-content: center;
-
-	.wp-block-group & {
-		// 1px needed to account for the separator
-		gap: calc( var(--wp--custom--gap--baseline) + 1px);
-	}
 
 	@include break-small-only() {
 		padding-top: 0 !important;
 		margin-bottom: -20px;
-	}
-
-	> * {
-		&:not(:first-child):before {
-			color: var(--wp--custom--color--foreground);
-			content: "·";
-			margin-right: 1ch;
-		}
 	}
 }
