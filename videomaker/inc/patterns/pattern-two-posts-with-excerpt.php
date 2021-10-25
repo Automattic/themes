@@ -26,7 +26,18 @@ return array(
 	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"top":"var(--wp--style--block-gap,1em)","bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"post-tags-container"} -->
+	<div class="wp-block-group post-tags-container">
+		<!-- wp:post-terms {"term": "post_tag","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:column -->
@@ -74,7 +85,12 @@ return array(
 	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"top":"var(--wp--style--block-gap,1em)","bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:column -->
