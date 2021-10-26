@@ -1,17 +1,15 @@
-( function () {
-	if ( userColorPalette && userColorSectionKey ) {
-		// For each of the palette items add a listener
-		userColorPalette.forEach( ( paletteItem ) => {
-			const settingName = userColorSectionKey + paletteItem.slug;
-			wp.customize( settingName, ( value ) => {
-				value.bind( ( newValue ) => {
-					paletteItem.color = newValue;
-					blockBaseUpdateColorsPreview( userColorPalette );
-				} );
+if ( userColorPalette && userColorSectionKey ) {
+	// For each of the palette items add a listener
+	userColorPalette.forEach( ( paletteItem ) => {
+		const settingName = userColorSectionKey + paletteItem.slug;
+		wp.customize( settingName, ( value ) => {
+			value.bind( ( newValue ) => {
+				paletteItem.color = newValue;
+				blockBaseUpdateColorsPreview( userColorPalette );
 			} );
 		} );
-	}
-} )();
+	} );
+}
 
 function blockBaseUpdateColorsPreview( palette ) {
 	// build the CSS variables to inject
