@@ -178,13 +178,19 @@ class GlobalStylesColorCustomizer {
 				$this->user_color_palette
 			);
 
-			if ( $this->theme_duotone_settings && ( $wp_customize->get_setting( $this->section_key . 'background' )->post_value() !== '' && $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() !== '' ) ) {
-				//TODO:
-				//- background and primary may not always exist!
-				//- do we want to replace all the filters? Only one will show on the editor for the users
-				//- Preview doesn't work
+			if (  $this->theme_duotone_settings && $wp_customize->get_setting( $this->section_key . 'primary' ) !== null &&$wp_customize->get_setting( $this->section_key . 'background' ) !== null ) {
+
+				$primary = $wp_customize->get_setting( $this->section_key . 'primary' )->post_value();
+				$background = $wp_customize->get_setting( $this->section_key . 'background' )->post_value();
+
+				//we invert the colors when the background is darker than the primary color
+				if( colorLuminescence($primary) > colorLuminescence($background) ) {
+					$primary = $wp_customize->get_setting( $this->section_key . 'background' )->post_value();
+					$background = $wp_customize->get_setting( $this->section_key . 'primary' )->post_value();
+				}
+
 				$custom_duotone_filter = json_decode( '[ {
-					"colors": [ "' . $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() . '", "' . $wp_customize->get_setting( $this->section_key . 'background' )->post_value() . '" ],
+					"colors": [ "' . $primary . '", "' . $background . '" ],
 					"slug": "custom-filter",
 					"name": "Custom filter"
 				} ]' );
