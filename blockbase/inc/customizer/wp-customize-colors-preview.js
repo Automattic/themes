@@ -28,11 +28,15 @@ function blockBaseUpdateColorsPreview( palette ) {
 	if ( userColorDuotone ) {
 		const colors = palette.map( ( paletteItem ) => paletteItem.color );
 		//we are inverting the order when we have a darker background so that duotone looks good.
-		colors.sort( ( first, second ) =>
-			colord( first ).brightness() > colord( second ).brightness()
-				? 1
-				: -1
-		);
+		colors.sort( ( first, second ) => {
+			if (
+				colord( first ).brightness() > colord( second ).brightness()
+			) {
+				return 1;
+			}
+
+			return -1;
+		} );
 
 		const colorValues = getValuesFromColors( colors );
 
