@@ -11,9 +11,12 @@ return array(
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"80%"} -->
 	<div class="wp-block-column" style="flex-basis:80%">
-	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"} -->
-	<figure class="wp-block-video"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
-	<!-- /wp:video -->
+
+	<!-- wp:embed {"url":"https://videopress.com/v/bjvmxiQS","type":"video","providerNameSlug":"videopress","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+	<figure class="wp-block-embed is-type-video is-provider-videopress wp-block-embed-videopress wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+	https://videopress.com/v/bjvmxiQS
+	</div></figure>
+	<!-- /wp:embed -->
 
 	<!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column -->
@@ -57,9 +60,11 @@ return array(
 	<!-- wp:column {"width":"80%"} -->
 	<div class="wp-block-column" style="flex-basis:80%">
 
-	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"} -->
-	<figure class="wp-block-video"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"></video></figure>
-	<!-- /wp:video -->
+	<!-- wp:embed {"url":"https://videopress.com/v/z4N1oaIj","type":"video","providerNameSlug":"videopress","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+	<figure class="wp-block-embed is-type-video is-provider-videopress wp-block-embed-videopress wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+	https://videopress.com/v/z4N1oaIj
+	</div></figure>
+	<!-- /wp:embed -->
 
 	<!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column -->

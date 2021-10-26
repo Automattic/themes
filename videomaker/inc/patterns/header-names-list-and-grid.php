@@ -31,9 +31,11 @@ return array(
 	<!-- wp:column {"width":"60%"} -->
 	<div class="wp-block-column" style="flex-basis:60%">
 
-	<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/boats.mp4"></video></figure>
-	<!-- /wp:video -->
+	<!-- wp:embed {"url":"https://videopress.com/v/z4N1oaIj","type":"video","providerNameSlug":"videopress","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+	<figure class="wp-block-embed is-type-video is-provider-videopress wp-block-embed-videopress wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+	https://videopress.com/v/z4N1oaIj
+	</div></figure>
+	<!-- /wp:embed -->
 
 	<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"700"}},"fontSize":"normal"} -->
 	<h3 class="has-normal-font-size" style="font-weight:700">' . esc_html__( 'Boats', 'videomaker' ) . '</h3>

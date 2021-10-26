@@ -19,7 +19,9 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 
-	<!-- wp:video {"align":"wide","className":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video alignwide wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/digging.mp4"></video></figure>
-	<!-- /wp:video -->',
+	<!-- wp:embed {"url":"https://videopress.com/v/bjvmxiQS","type":"video","providerNameSlug":"videopress","responsive":true,"align":"wide","className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+	<figure class="wp-block-embed alignwide is-type-video is-provider-videopress wp-block-embed-videopress wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+	https://videopress.com/v/bjvmxiQS
+	</div></figure>
+	<!-- /wp:embed -->',
 );
