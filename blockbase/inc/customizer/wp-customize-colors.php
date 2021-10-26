@@ -21,6 +21,7 @@ class GlobalStylesColorCustomizer {
 		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
 		if ( $this->theme_duotone_settings ) {
+			wp_enqueue_script( 'colord', get_template_directory_uri() . '/inc/customizer/vendors/colord.js' );
 			wp_localize_script( 'customizer-preview-color', 'userColorDuotone', $this->theme_duotone_settings );
 		}
 	}
@@ -58,10 +59,6 @@ class GlobalStylesColorCustomizer {
 	function get_theme_duotone_settings() {
 		// Get the merged theme.json.
 		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-
-
-		//var_dump($theme_json['settings']['color']['duotone']);
-		//var_dump($theme_json['styles']['blocks']['core/image']);
 
 		if ( $theme_json['settings'] && $theme_json['settings']['color'] && $theme_json['settings']['color']['duotone'] && $theme_json['settings']['color']['duotone']['theme'] ) {
 			return $theme_json['settings']['color']['duotone']['theme'];
@@ -192,14 +189,23 @@ class GlobalStylesColorCustomizer {
 					"name": "Custom filter"
 				} ]' );
 				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
-				$user_theme_json_post_content->settings->color->duotone = $custom_duotone_filter;
+
+				$user_theme_json_post_content = set_settings_array(
+					$user_theme_json_post_content,
+					array( 'settings', 'color', 'duotone' ),
+					$custom_duotone_filter
+				);
 
 				//replace the new filter in all blocks using duotone
 				$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 				if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
 					foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
 						if($block['filter']) {
-							$user_theme_json_post_content->styles->blocks->{$key}->filter->duotone = $custom_duotone_filter_variable;//$block->filter->duotone;
+							$user_theme_json_post_content = set_settings_array(
+								$user_theme_json_post_content,
+								array( 'styles', 'blocks', $key, 'filter', 'duotone' ),
+								$custom_duotone_filter_variable
+							);
 						}
 					}
 				}	
