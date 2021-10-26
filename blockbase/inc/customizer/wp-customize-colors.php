@@ -59,6 +59,10 @@ class GlobalStylesColorCustomizer {
 		// Get the merged theme.json.
 		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 
+
+		//var_dump($theme_json['settings']['color']['duotone']);
+		//var_dump($theme_json['styles']['blocks']['core/image']);
+
 		if ( $theme_json['settings'] && $theme_json['settings']['color'] && $theme_json['settings']['color']['duotone'] && $theme_json['settings']['color']['duotone']['theme'] ) {
 			return $theme_json['settings']['color']['duotone']['theme'];
 		}
@@ -177,13 +181,13 @@ class GlobalStylesColorCustomizer {
 				$this->user_color_palette
 			);
 
-			if ( $this->theme_duotone_settings ) {
+			if ( $this->theme_duotone_settings && ( $wp_customize->get_setting( $this->section_key . 'background' )->post_value() !== '' && $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() !== '' ) ) {
 				//TODO:
 				//- background and primary may not always exist!
 				//- do we want to replace all the filters? Only one will show on the editor for the users
 				//- Preview doesn't work
 				$custom_duotone_filter = json_decode( '[ {
-					"colors": [ "' . $wp_customize->get_setting( $this->section_key . 'background' )->post_value() . '", "' . $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() . '" ],
+					"colors": [ "' . $wp_customize->get_setting( $this->section_key . 'primary' )->post_value() . '", "' . $wp_customize->get_setting( $this->section_key . 'background' )->post_value() . '" ],
 					"slug": "custom-filter",
 					"name": "Custom filter"
 				} ]' );
@@ -207,6 +211,7 @@ class GlobalStylesColorCustomizer {
 		wp_update_post( $user_theme_json_post );
 		delete_transient( 'global_styles' );
 		delete_transient( 'gutenberg_global_styles' );
+		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
 
 
