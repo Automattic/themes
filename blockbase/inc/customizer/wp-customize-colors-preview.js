@@ -28,34 +28,36 @@ function blockBaseUpdateColorsPreview( palette ) {
 	styleElement.innerHTML = innerHTML;
 
 	if ( userColorDuotone ) {
-		let colors = palette.map( ( paletteItem ) => paletteItem.color );
+		const colors = palette.map( ( paletteItem ) => paletteItem.color );
 		//we are inverting the order when we have a darker background so that duotone looks good.
-		colors = colors.sort( ( first, second ) => {
-			return colord( first ).brightness() > colord( second ).brightness();
-		} );
+		colors.sort( ( first, second ) =>
+			colord( first ).brightness() > colord( second ).brightness()
+				? 1
+				: -1
+		);
+
 		const colorValues = getValuesFromColors( colors );
 
-		if ( document.querySelector( '#wp-duotone-default-filter' ) ) {
-			updateDuotoneFilter( 'wp-duotone-default-filter', colorValues );
-		}
-		if ( document.querySelector( '#wp-duotone-custom-filter' ) ) {
-			updateDuotoneFilter( 'wp-duotone-custom-filter', colorValues );
-		}
+		updateDuotoneFilter( '#wp-duotone-default-filter', colorValues );
+		updateDuotoneFilter( '#wp-duotone-custom-filter', colorValues );
 	}
 }
 
 function updateDuotoneFilter( filterID, colors ) {
-	document
-		.querySelector( '#' + filterID + ' feFuncR' )
-		.setAttribute( 'tableValues', colors.r.join( ' ' ) );
-	document
-		.querySelector( '#' + filterID + ' feFuncG' )
-		.setAttribute( 'tableValues', colors.g.join( ' ' ) );
-	document
-		.querySelector( '#' + filterID + ' feFuncB' )
-		.setAttribute( 'tableValues', colors.b.join( ' ' ) );
+	if ( document.querySelector( filterID ) ) {
+		document
+			.querySelector( filterID + ' feFuncR' )
+			.setAttribute( 'tableValues', colors.r.join( ' ' ) );
+		document
+			.querySelector( filterID + ' feFuncG' )
+			.setAttribute( 'tableValues', colors.g.join( ' ' ) );
+		document
+			.querySelector( filterID + ' feFuncB' )
+			.setAttribute( 'tableValues', colors.b.join( ' ' ) );
+	}
 }
 
+// This function is from Gutenberg.
 function getValuesFromColors( colors = [] ) {
 	const values = { r: [], g: [], b: [] };
 
