@@ -1,5 +1,9 @@
 .post-tags-container {
 	.taxonomy-post_tag.wp-block-post-terms {
+		display: flex;
+		flex-wrap: wrap;
+		gap: calc( var( --wp--style--block-gap, 1em ) * .6 );
+
 		a {
 			background: var(--wp--custom--color--tertiary);
 			border-radius: 20px;
@@ -8,7 +12,7 @@
 		}
 
 		.wp-block-post-terms__separator {
-			visibility: hidden;
+			display: none;
 		}
 	}
 }
