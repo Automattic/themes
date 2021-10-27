@@ -18,6 +18,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.2.21 =
+* Refactor Paragraph margin rules for consistent, non block-gap values #4908
+
 = 1.2.20 =
 * Fix fatal error with social navigation (#4895)
 
