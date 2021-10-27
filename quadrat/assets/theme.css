@@ -406,10 +406,6 @@ ul ul {
 	margin-left: 20%;
 }
 
-.wp-block-post-title + .wp-block-post-featured-image {
-	margin-top: calc( -100px + var(--wp--style--block-gap ));
-}
-
 .wp-block-post-template .wp-block-post-excerpt__more-text,
 .wp-block-query .wp-block-post-excerpt__more-text {
 	font-size: var(--wp--custom--font-sizes--tiny) !important;
@@ -582,6 +578,12 @@ textarea:focus {
 
 .wp-block-post-featured-image {
 	margin-top: 0;
+}
+
+/* Add some extra space if there's no post title present. */
+.wp-block-post-date + .wp-block-group > .wp-block-post-featured-image,
+.wp-block-post-date + .wp-block-group > .wp-block-post-excerpt {
+	margin-top: calc(2 * var( --wp--style--block-gap ));
 }
 
 .post-meta {
