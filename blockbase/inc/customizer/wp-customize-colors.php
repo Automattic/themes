@@ -189,8 +189,8 @@ class GlobalStylesColorCustomizer {
 					$background = $wp_customize->get_setting( $this->section_key . 'primary' )->post_value();
 				}
 
-				$custom_duotone_filter = array( 
-					array( 
+				$custom_duotone_filter = array(
+					array(
 						"colors" => array( $primary, $background ),
 						"slug" => "custom-filter",
 						"name" => "Custom filter"
@@ -209,7 +209,7 @@ class GlobalStylesColorCustomizer {
 				$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 				if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
 					foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
-						if($block['filter']) {
+						if( $block['filter'] ) {
 							$user_theme_json_post_content = set_settings_array(
 								$user_theme_json_post_content,
 								array( 'styles', 'blocks', $key, 'filter', 'duotone' ),
@@ -217,7 +217,7 @@ class GlobalStylesColorCustomizer {
 							);
 						}
 					}
-				}	
+				}
 			}
 		}
 
