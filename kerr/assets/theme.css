@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+*  Converts a hex value into the rgb equivalent.
+*
+* @param {string} hex - the hexadecimal value to convert
+* @return {string} comma separated rgb values
+*/
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+.post-meta {
+	align-items: center;
+	justify-content: center;
+}
+
+.post-meta.wp-block-group {
+	gap: 0;
+}
+
+.post-meta > *:not(:first-child):before {
+	color: var(--wp--custom--color--foreground);
+	content: "·";
+	margin-left: var(--wp--custom--gap--baseline);
+	margin-right: var(--wp--custom--gap--baseline);
+}
+
+@media (max-width: 599px) {
+	.post-meta {
+		padding-top: 0 !important;
+		margin-bottom: -20px;
+	}
+}
+
+/*# sourceMappingURL=theme.css.map */
