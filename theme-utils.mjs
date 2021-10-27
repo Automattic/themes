@@ -36,7 +36,11 @@ function showHelp(){
 }
 
 async function buildZip( themeSlug ) {
-	const response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=0.0.22 --wpversioncompat=5.8`, true);
+	const currentPackage = JSON.parse(fs.readFileSync(`${themeSlug}/package.json`))
+	const themeVersion = currentPackage.version;
+	const wpVersionCompat = currentPackage.wpversioncompat;
+
+	const response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
 	try {
 		console.log( response );
 	} catch( error ) {
