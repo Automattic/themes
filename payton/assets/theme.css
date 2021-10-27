@@ -1,4 +1,41 @@
 @charset "UTF-8";
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+*  Converts a hex value into the rgb equivalent.
+*
+* @param {string} hex - the hexadecimal value to convert
+* @return {string} comma separated rgb values
+*/
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
 .wp-block-separator {
 	border-width: 0 0 2px 0;
 }
@@ -42,49 +79,21 @@
 }
 
 .wp-block-group .post-meta {
-	gap: calc( var(--wp--custom--gap--baseline) + 1px);
+	gap: 0;
+}
+
+@media (max-width: 599px) {
+	.post-meta {
+		padding-top: 0 !important;
+		margin-bottom: -20px;
+	}
 }
 
 .post-meta > *:not(:first-child):before {
-	align-items: center;
-	background: transparent;
 	color: var(--wp--custom--color--foreground);
 	content: "·";
-	display: flex;
-	margin-right: 0;
-	-webkit-mask-image: none;
-	mask-image: none;
-}
-
-.post-meta > *:first-child:before {
-	content: none;
-}
-
-.post-meta > * > * {
-	color: var(--wp--custom--color--foreground);
-	font-size: var(--wp--custom--font-sizes--tiny);
-}
-
-.post-meta .wp-block-post-author__content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.post-meta .wp-block-post-author__name {
-	line-height: 1;
-}
-
-.post-meta .wp-block-post-author__avatar {
-	margin-right: 0.5em;
-	align-items: center;
-	display: flex;
-}
-
-.post-meta .wp-block-post-author__avatar .avatar {
-	border-radius: 50%;
-	height: 1.25em;
-	width: 1.25em;
+	margin-left: var(--wp--custom--gap--baseline);
+	margin-right: var(--wp--custom--gap--baseline);
 }
 
 /*# sourceMappingURL=theme.css.map */

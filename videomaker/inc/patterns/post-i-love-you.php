@@ -8,9 +8,11 @@
 return array(
 	'title'      => __( 'Post: I Love You', 'videomaker' ),
 	'categories' => array( 'videomaker' ),
-	'content'    => '<!-- wp:video {"src":"' . get_stylesheet_directory_uri() . '/assets/videos/i-love-you.mp4","videoPressClassNames":"wp-block-embed is-type-video is-provider-videopress"} -->
-	<figure class="wp-block-video wp-block-embed is-type-video is-provider-videopress"><video controls src="' . get_stylesheet_directory_uri() . '/assets/videos/i-love-you.mp4"></video></figure>
-	<!-- /wp:video -->
+	'content'    => '<!-- wp:embed {"url":"https://videopress.com/v/e7QDnuzH","type":"video","providerNameSlug":"videopress","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
+	<figure class="wp-block-embed is-type-video is-provider-videopress wp-block-embed-videopress wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+	https://videopress.com/v/e7QDnuzH
+	</div></figure>
+	<!-- /wp:embed -->
 
 	<!-- wp:post-terms {"term":"post_tag"} /-->
 

@@ -1,3 +1,40 @@
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+*  Converts a hex value into the rgb equivalent.
+*
+* @param {string} hex - the hexadecimal value to convert
+* @return {string} comma separated rgb values
+*/
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):focus,
@@ -47,12 +84,8 @@ a:active {
 	color: var(--wp--custom--color--background);
 }
 
-div.post-meta {
+div.post-meta.wp-block-group {
 	gap: 0;
-}
-
-div.post-meta a {
-	text-decoration: none;
 }
 
 div.post-meta > *:not(:first-child):before {
@@ -60,6 +93,10 @@ div.post-meta > *:not(:first-child):before {
 	content: "/";
 	margin-left: var(--wp--custom--gap--baseline);
 	margin-right: var(--wp--custom--gap--baseline);
+}
+
+div.post-meta a {
+	text-decoration: none;
 }
 
 .is-vertical.items-justified-right ul.wp-block-navigation__container {
@@ -95,6 +132,12 @@ footer > .wp-block-group p {
 	margin-bottom: 0;
 }
 
+.post-tags-container .taxonomy-post_tag.wp-block-post-terms {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--custom--gap--baseline, 1em);
+}
+
 .post-tags-container .taxonomy-post_tag.wp-block-post-terms a {
 	background: var(--wp--custom--color--tertiary);
 	border-radius: 20px;
@@ -103,7 +146,7 @@ footer > .wp-block-group p {
 }
 
 .post-tags-container .taxonomy-post_tag.wp-block-post-terms .wp-block-post-terms__separator {
-	visibility: hidden;
+	display: none;
 }
 
 .wp-block-post-navigation-link {

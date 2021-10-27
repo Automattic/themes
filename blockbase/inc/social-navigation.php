@@ -55,7 +55,9 @@ function append_social_links_block( $parent_content, $social_links_block ) {
 	$wp_block_navigation__container = $dom->getElementsByTagName('ul')->item( 0 )->parentNode;
 	$social_links_node = $dom->createDocumentFragment();
 	$social_links_node->appendXML( $social_links_block );
-	$wp_block_navigation__container->appendChild( $social_links_node );
+	if ( ! empty( $wp_block_navigation__container ) ) {
+		$wp_block_navigation__container->appendChild( $social_links_node );
+	}
 	$navigation_block = $dom->getElementsByTagName('nav')->item( 0 );
 	return $dom->saveXML( $navigation_block );
 }
