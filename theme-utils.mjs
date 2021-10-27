@@ -25,6 +25,7 @@ const isWin = process.platform === 'win32';
 		case "land-diff-svn": return landChangesSvn(args?.[1]);
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
+		case "build-zip": return buildZip([args?.[1]]);
 	}
 	return showHelp();
 })();
@@ -33,6 +34,16 @@ function showHelp(){
 	// TODO: make this helpful
 	console.log('Help info can go here');
 }
+
+async function buildZip( themeSlug ) {
+	const response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=0.0.22 --wpversioncompat=5.8`, true);
+	try {
+		console.log( response );
+	} catch( error ) {
+		console.log( error );
+	}
+}
+
 
 /*
  Determine what changes would be deployed
@@ -252,7 +263,7 @@ async function deployThemes( themes ) {
 			if( ! deploySuccess ) {
 				console.log( 'Deploy was not successful.  Trying again in 10 seconds...' );
 				await new Promise(resolve => setTimeout(resolve, 10000));
-			} 
+			}
 			else {
 				console.log( "Deploy successful." );
 			}
