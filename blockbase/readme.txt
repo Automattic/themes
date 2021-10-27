@@ -18,6 +18,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.2.23 =
+* Added dynamic duotone support to the customizer #4740
+
 = 1.2.22 =
 * Add Kerr as a child theme
 
@@ -125,3 +128,7 @@ The Water Fan, by Winslow Homer
 License: CC0
 Source: https://www.artic.edu/artworks/38666/the-water-fan
 Included in theme screenshot.
+
+Colord library
+License: MIT
+Source: https://github.com/omgovich/colord
