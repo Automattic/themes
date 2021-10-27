@@ -60,7 +60,7 @@ class GlobalStylesColorCustomizer {
 		// Get the merged theme.json.
 		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 
-		if ( $theme_json['settings'] && $theme_json['settings']['color'] && $theme_json['settings']['color']['duotone'] && $theme_json['settings']['color']['duotone']['theme'] ) {
+		if ( array_key_exists( 'settings', $theme_json ) && array_key_exists( 'color', $theme_json['settings'] ) && array_key_exists( 'duotone', $theme_json['settings']['color'] ) && array_key_exists( 'theme', $theme_json['settings']['color']['duotone'] ) ) {
 			return $theme_json['settings']['color']['duotone']['theme'];
 		}
 
@@ -198,7 +198,9 @@ class GlobalStylesColorCustomizer {
 				);
 
 				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
-
+var_dump( $this->theme_duotone_settings );
+var_dump( $custom_duotone_filter );
+var_dump( array_merge( $custom_duotone_filter, $this->theme_duotone_settings ) );
 				$user_theme_json_post_content = set_settings_array(
 					$user_theme_json_post_content,
 					array( 'settings', 'color', 'duotone' ),
