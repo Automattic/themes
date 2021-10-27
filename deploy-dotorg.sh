@@ -50,7 +50,7 @@ for THEME_SLUG in */ ; do
 		fi
 
 		echo "➤ Copying theme '${THEME_SLUG}' version '${THEME_VERSION}' to svn repository... "
-		rsync -rc --include='./$THEME_SLUG/theme.json' --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
+		rsync -rc --include=theme.json --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
 		# Remove -wpcom from versoning
 		find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/-wpcom//g' {} \; 
