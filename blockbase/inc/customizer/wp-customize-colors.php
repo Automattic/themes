@@ -178,20 +178,23 @@ class GlobalStylesColorCustomizer {
 				$this->user_color_palette
 			);
 
-			if (  $this->theme_duotone_settings && $wp_customize->get_setting( $this->section_key . 'primary' ) !== null &&$wp_customize->get_setting( $this->section_key . 'background' ) !== null ) {
+			$primary_key = array_search('primary', array_column($this->user_color_palette, 'slug'));
+			$background_key = array_search('background', array_column($this->user_color_palette, 'slug'));
 
-				$primary = $wp_customize->get_setting( $this->section_key . 'primary' )->post_value();
-				$background = $wp_customize->get_setting( $this->section_key . 'background' )->post_value();
+			if (  $this->theme_duotone_settings && $primary_key !== null && $background_key !== null ) {
+
+				$primary = $this->user_color_palette[$primary_key];
+				$background = $this->user_color_palette[$background_key];
 
 				//we invert the colors when the background is darker than the primary color
-				if( colorLuminescence($primary) > colorLuminescence($background) ) {
-					$primary = $wp_customize->get_setting( $this->section_key . 'background' )->post_value();
-					$background = $wp_customize->get_setting( $this->section_key . 'primary' )->post_value();
+				if( colorLuminescence($primary['color']) > colorLuminescence($background['color']) ) {
+					$primary = $this->user_color_palette[$background_key];
+					$background = $this->user_color_palette[$primary_key];
 				}
 
 				$custom_duotone_filter = array(
 					array(
-						"colors" => array( $primary, $background ),
+						"colors" => array( $primary['color'], $background['color'] ),
 						"slug" => "custom-filter",
 						"name" => "Custom filter"
 					)
