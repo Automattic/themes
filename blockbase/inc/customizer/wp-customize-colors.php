@@ -198,9 +198,6 @@ class GlobalStylesColorCustomizer {
 				);
 
 				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
-var_dump( $this->theme_duotone_settings );
-var_dump( $custom_duotone_filter );
-var_dump( array_merge( $custom_duotone_filter, $this->theme_duotone_settings ) );
 				$user_theme_json_post_content = set_settings_array(
 					$user_theme_json_post_content,
 					array( 'settings', 'color', 'duotone' ),
