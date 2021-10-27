@@ -16,11 +16,11 @@ rm -rf ./deploy
 # Look into all the subfolders
 for THEME_SLUG in */ ; do
 
-	# And for those that have a package.json file...
-	if test -f "./${THEME_SLUG}/package.json"; then
+	# And for those that have a style.css file...
+	if test -f "./${THEME_SLUG}/style.css"; then
 
-		THEME_VERSION=$(cat ./${THEME_SLUG}/package.json \
-		  | grep version \
+		THEME_VERSION=$(cat ./${THEME_SLUG}/style.css \
+		  | grep Version \
 		  | head -1 \
 		  | awk -F: '{ print $2 }' \
 		  | sed 's/[",]//g' \
