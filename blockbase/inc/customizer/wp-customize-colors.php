@@ -189,17 +189,20 @@ class GlobalStylesColorCustomizer {
 					$background = $wp_customize->get_setting( $this->section_key . 'primary' )->post_value();
 				}
 
-				$custom_duotone_filter = json_decode( '[ {
-					"colors": [ "' . $primary . '", "' . $background . '" ],
-					"slug": "custom-filter",
-					"name": "Custom filter"
-				} ]' );
+				$custom_duotone_filter = array( 
+					array( 
+						"colors" => array( $primary, $background ),
+						"slug" => "custom-filter",
+						"name" => "Custom filter"
+					)
+				);
+
 				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
 
 				$user_theme_json_post_content = set_settings_array(
 					$user_theme_json_post_content,
 					array( 'settings', 'color', 'duotone' ),
-					$custom_duotone_filter
+					array_merge( $custom_duotone_filter, $this->theme_duotone_settings )
 				);
 
 				//replace the new filter in all blocks using duotone
