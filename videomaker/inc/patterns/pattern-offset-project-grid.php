@@ -31,12 +31,6 @@ return array(
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"post-tags-container"} -->
-	<div class="wp-block-group post-tags-container">
-		<!-- wp:post-terms {"term": "post_tag","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
-
 	</div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column -->
