@@ -109,9 +109,6 @@ async function pushButtonDeploy(repoType) {
 
 		let changedThemes = await getChangedThemes(hash);
 
-		//TODO: Can these be automagically uploaded?
-		//await buildChangedOrgZips();
-
 		await pushChangesToSandbox();
 
 		await updateLastDeployedHash();
@@ -253,7 +250,7 @@ async function getChangedThemes(hash) {
 	for (let theme of themes) {
 		let hasChanges = await checkThemeForChanges(theme, hash);
 		if(hasChanges){
-			changedThemes.push(theme.replace('./', ''));
+			changedThemes.push(theme);
 		}
 	}
 	return changedThemes;
@@ -342,7 +339,6 @@ async function versionBumpThemes() {
 		versionBumpCount++;
 		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
 		if( hasVersionBump ){
-			console.log(`${theme} has already been version bumped`);
 			continue;
 		}
 
@@ -363,41 +359,65 @@ async function versionBumpThemes() {
 	}
 }
 
+function getThemeMetadata(styleCss, attribute) {
+	if ( !styleCss || !attribute ) {
+		return null;
+	}
+	switch ( attribute ) {
+		case 'Version':
+			return styleCss
+				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
+				.trim()
+				.replace('-wpcom', '');
+	}
+}
+
+
 /*
  Version Bump a Theme.
  Used by versionBumpThemes to do the work of version bumping.
- First increment the patch version in package.json (the source of truth for versioning)
- Then update any of these files with the new version: [style.css, style.scss, style-child-theme.scss]
+ First increment the patch version in style.css
+ Then update any of these files with the new version: [package.json, style.scss, style-child-theme.scss]
 */
 async function versionBumpTheme(theme){
+
 	console.log(`${theme} needs a version bump`);
-	await executeCommand(`npm --prefix ${theme} version patch --no-git-tag-version`);
-	let currentPackage = JSON.parse(fs.readFileSync(`${theme}/package.json`))
-	let currentVersion = currentPackage.version;
-	let filesToUpdate = await executeCommand(`find ${theme} -name style.css -o -name style.scss -o -name style-child-theme.scss -maxdepth 2`);
-	filesToUpdate = filesToUpdate.split('\n');
+
+	await executeCommand(`perl -pi -e 's/Version: ((\\d+\\.)*)(\\d+)(.*)$/"Version: ".$1.($3+1).$4/ge' ${theme}/style.css`, true);
+
+	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+	let currentVersion = getThemeMetadata(styleCss, 'Version');
+
+	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 2`);
+	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
+
 	for ( let file of filesToUpdate ) {
-		console.log('updating file', file, currentVersion);
-		//TODO: I'm sure we can use something other than perl for this but this was prior art...
 		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
+		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
 	}
 }
 
 /*
  Determine if a theme has had a version bump since a given hash.
  Used by versionBumpThemes
- Compares the value of 'version' in package.json between the hash and current value
+ Compares the value of 'version' in style.css between the hash and current value
 */
 async function checkThemeForVersionBump(theme, hash){
-	executeCommand(`
-		git show ${hash}:${theme}/package.json 2>/dev/null
-	`).catch( ( error ) => {
-		console.log( 'This is a new theme, no need to bump versions' );
-		return false;
-	} ).then( ( previousPackageString ) => {
-		let previousPackage = JSON.parse(previousPackageString);
-		let currentPackage = JSON.parse(fs.readFileSync(`${theme}/package.json`))
-		return previousPackage.version != currentPackage.version;
+	return executeCommand(`
+		git show ${hash}:${theme}/style.css 2>/dev/null
+	`)
+	.catch( ( error ) => {
+		//This is a new theme, no need to bump versions so we'll just say we've already done it
+		return true;
+	} )
+	.then( ( previousStyleString ) => {
+		if( previousStyleString === true) {
+			return previousStyleString;
+		}
+		let previousVersion = getThemeMetadata(previousStyleString, 'Version');
+		let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+		let currentVersion = getThemeMetadata(styleCss, 'Version');
+		return previousVersion != currentVersion;
 	});
 }
 
@@ -412,17 +432,17 @@ async function checkThemeForChanges(theme, hash){
 }
 
 /*
- Provide a list of 'actionable' themes (those themes that have package.json files)
+ Provide a list of 'actionable' themes (those themes that have style.css files)
 */
 async function getActionableThemes() {
-	//TODO: This could be done more effeciently.  It's very slow running.
-	let result = await executeCommand(`find . -depth 2 -name package.json -print0 | xargs -0 -n1 dirname | sort --unique`);
-	return result.split('\n');
-}
-
-async function buildChangedOrgZips() {
-	console.log("Building .org Zip files");
-	await executeCommand(`./theme-batch-utils.sh build-org-zip-if-changed`, true);
+	let result = await executeCommand(`for d in */; do 
+		if test -f "./$d/style.css"; then
+			echo $d; 
+		fi
+	done`);
+	return result
+		.split('\n')
+		.map(item=>item.replace('/', ''));
 }
 
 /*
@@ -765,3 +785,5 @@ async function executeCommand(command, logResponse) {
 		});
 	});
 }
+
+
