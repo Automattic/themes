@@ -70,9 +70,8 @@
 				'file'       => 'assets/illustrations/two-circles-and-a-squared-shape-on-pink-background.png',
 			),
 			'white-orange-squares'              => array(
-				'post_title' => __( 'White and orange squares on light purple background.png', 'quadrat' ),
+				'post_title' => __( 'White and orange squares on light purple background', 'quadrat' ),
 				'file'       => 'assets/illustrations/white-and-orange-squares-on-light-purple-background.png',
 			),
 		),
 	);
-
