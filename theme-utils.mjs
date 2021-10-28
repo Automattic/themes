@@ -43,10 +43,10 @@ async function buildZip( themeSlug ) {
 	let wpVersionCompat;
 	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
 
-	// Gets the theme version (Version:) and minimum WP version (Requires at least:) from the theme's style.css
+	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
 	if (styleCss) {
 		themeVersion = styleCss.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs);
-		wpVersionCompat = styleCss.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
+		wpVersionCompat = styleCss.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
 	}
 
 	const response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
