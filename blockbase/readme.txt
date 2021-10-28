@@ -18,6 +18,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.2.22 =
+* Add Kerr as a child theme
+
 = 1.2.21 =
 * Refactor Paragraph margin rules for consistent, non block-gap values #4908
 
