@@ -183,13 +183,7 @@ async function buildComZip(themeSlug) {
 	}
 
 	if (themeVersion && wpVersionCompat) {
-		response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
-		
-		try {
-			console.log( response );
-		} catch( error ) {
-			console.log( error );
-		}
+		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
 	} else {
 		console.log('Unable to build theme .zip.');
 		if (!themeVersion) console.log('Could not find theme version (Version:) in the theme style.css.');
