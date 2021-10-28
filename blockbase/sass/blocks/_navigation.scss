@@ -2,8 +2,12 @@
 .wp-block-navigation {
 	// See https://github.com/WordPress/gutenberg/issues/34648
 	.has-child .wp-block-navigation__submenu-container {
-		background-color: var(--wp--custom--color--background);
-		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
+		background-color: var(--wp--custom--navigation--submenu--color--background);
+		border: var(--wp--custom--navigation--submenu--border--width) var(--wp--custom--navigation--submenu--border--style) var(--wp--custom--navigation--submenu--border--color);
+
+		a {
+			color: var(--wp--custom--navigation--submenu--color--text);
+		}
 	}
 	&.is-responsive {
 		&:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {

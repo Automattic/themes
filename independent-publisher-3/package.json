@@ -12,9 +12,8 @@
   },
   "scripts": {
     "start": "chokidar \"**/*.scss\" child-theme.json ../blockbase/theme.json -c \"npm run build\" --initial",
-    "build": "npm run build:theme && npm run build:scss",
-    "build:theme": "node ../blockbase/build.js independent-publisher-3",
-    "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/theme.scss assets/theme.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
+    "build": "npm run build:theme",
+    "build:theme": "node ../blockbase/build.js independent-publisher-3"
   },
   "author": "",
   "license": "GPLv2"
