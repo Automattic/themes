@@ -186,8 +186,12 @@ async function buildComZip(themeSlug) {
 		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
 	} else {
 		console.log('Unable to build theme .zip.');
-		if (!themeVersion) console.log('Could not find theme version (Version:) in the theme style.css.');
-		if (!wpVersionCompat) console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
+		if (!themeVersion) {
+			console.log('Could not find theme version (Version:) in the theme style.css.');
+		}
+		if (!wpVersionCompat) {
+			console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
+		}
 		console.log('Please build the .zip file for the theme manually.', themeSlug);
 		open('https://mc.a8c.com/themes/downloads/');
 	}
