@@ -8,7 +8,6 @@
 return array(
 	'title'      => __( 'Email Updates (Large)', 'geologist' ),
 	'categories' => array( 'geologist' ),
-	'blockTypes' => array( 'core/query' ),
 	'content'    => '<!-- wp:heading {"level":3} -->
 	<h3>' . esc_html__( 'Our newsletter rocks! Sign up here to receive every post in your inbox.', 'geologist' ) . '</h3>
 	<!-- /wp:heading -->
