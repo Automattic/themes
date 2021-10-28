@@ -25,7 +25,7 @@ const isWin = process.platform === 'win32';
 		case "land-diff-svn": return landChangesSvn(args?.[1]);
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
-		case "build-zip": return buildZip([args?.[1]]);
+		case "build-com-zip": return buildComZip([args?.[1]]);
 	}
 	return showHelp();
 })();
@@ -33,28 +33,6 @@ const isWin = process.platform === 'win32';
 function showHelp(){
 	// TODO: make this helpful
 	console.log('Help info can go here');
-}
-
-/*
- Build .zip files for .com
-*/
-async function buildZip( themeSlug ) {
-	let themeVersion;
-	let wpVersionCompat;
-	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
-
-	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
-	if (styleCss) {
-		themeVersion = styleCss.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs);
-		wpVersionCompat = styleCss.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
-	}
-
-	const response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
-	try {
-		console.log( response );
-	} catch( error ) {
-		console.log( error );
-	}
 }
 
 /*
@@ -184,10 +162,47 @@ async function pushButtonDeploy(repoType) {
 		console.log("ERROR with deply script: ", err);
 	}
 }
+
+/*
+ Build .zip file for .com
+*/
+async function buildComZip(themeSlug) {
+	let response;
+
+	console.log( `Building ${themeSlug} .zip` );
+
+	let themeVersion;
+	let wpVersionCompat;
+	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
+
+	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
+	if (styleCss) {
+		const themeVersionFromCss = styleCss.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs);
+		themeVersion = themeVersionFromCss[0].trim().replace('-wpcom', '');
+		wpVersionCompat = styleCss.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
+	}
+
+	if (themeVersion && wpVersionCompat) {
+		response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
+		
+		try {
+			console.log( response );
+		} catch( error ) {
+			console.log( error );
+		}
+	} else {
+		console.log('Unable to build theme .zip.');
+		if (!themeVersion) console.log('Could not find theme version (Version:) in the theme style.css.');
+		if (!wpVersionCompat) console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
+		console.log('Please build the .zip file for the theme manually.', themeSlug);
+		open('https://mc.a8c.com/themes/downloads/');
+	}
+}
+
 async function buildComZips(themes) {
-	//TODO: Figure out how to create these zip files automatically.
-	console.log('Please build the .zip files for the themes manually.', themes);
-	open('https://mc.a8c.com/themes/downloads/');
+	for ( let theme of themes ) {
+		buildComZip(theme);
+	}
 }
 
 /*
