@@ -35,10 +35,19 @@ function showHelp(){
 	console.log('Help info can go here');
 }
 
+/*
+ Build .zip files for .com
+*/
 async function buildZip( themeSlug ) {
-	const currentPackage = JSON.parse(fs.readFileSync(`${themeSlug}/package.json`))
-	const themeVersion = currentPackage.version;
-	const wpVersionCompat = currentPackage.wpversioncompat;
+	let themeVersion;
+	let wpVersionCompat;
+	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
+
+	// Gets the theme version (Version:) and minimum WP version (Requires at least:) from the theme's style.css
+	if (styleCss) {
+		themeVersion = styleCss.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs);
+		wpVersionCompat = styleCss.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
+	}
 
 	const response = await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
 	try {
@@ -47,7 +56,6 @@ async function buildZip( themeSlug ) {
 		console.log( error );
 	}
 }
-
 
 /*
  Determine what changes would be deployed
