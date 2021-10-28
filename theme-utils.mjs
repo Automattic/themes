@@ -199,7 +199,7 @@ async function buildComZip(themeSlug) {
 
 async function buildComZips(themes) {
 	for ( let theme of themes ) {
-		buildComZip(theme);
+		await buildComZip(theme);
 	}
 }
 
