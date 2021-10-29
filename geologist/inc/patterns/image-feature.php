@@ -8,7 +8,6 @@
 return array(
 	'title'      => __( 'Image feature', 'geologist' ),
 	'categories' => array( 'geologist' ),
-	'blockTypes' => array( 'core/image', 'core/columns' ),
 	'content'    => '<!-- wp:image {"align":"wide","sizeSlug":"large"} -->
 	<figure class="wp-block-image alignwide size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/images/gem.jpeg" alt=""/></figure>
 	<!-- /wp:image -->

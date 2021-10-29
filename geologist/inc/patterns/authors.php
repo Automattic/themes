@@ -8,7 +8,6 @@
 return array(
 	'title'      => __( 'Authors', 'geologist' ),
 	'categories' => array( 'geologist' ),
-	'blockTypes' => array( 'core/post-author' ),
 	'content'    => '<!-- wp:paragraph -->
 	<p>' . esc_html__( 'About the Authors:', 'geologist' ) . '</p>
 	<!-- /wp:paragraph -->
