@@ -11,7 +11,7 @@ return array(
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"}}},"backgroundColor":"background"} -->
 		<div class="wp-block-group alignwide has-background-background-color has-background" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px"><!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/images/working_at_dawn.jpg","dimRatio":0,"overlayColor":"background","minHeight":1410,"minHeightUnit":"px","contentPosition":"center center","align":"wide","style":{"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"}}}} -->
 		<div class="wp-block-cover alignwide has-background-background-color" style="padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px;min-height:1410px"><img class="wp-block-cover__image-background" alt="" src="' . get_stylesheet_directory_uri() . '/assets/images/working_at_dawn.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:image {"align":"center","width":206,"height":105,"sizeSlug":"full","linkDestination":"none"} -->
-		<div class="wp-block-image"><figure class="aligncenter size-full is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/images/new_film.png" alt="' . esc_attr__( 'Photo of a man digging at dawn', 'videomaker' ) . '" width="206" height="105"/></figure></div>
+		<div class="wp-block-image"><figure class="aligncenter size-full is-resized"><img src="' . get_stylesheet_directory_uri() . '/assets/images/new_film.png" alt="' . esc_attr__( 'Photo of a man working at dawn', 'videomaker' ) . '" width="206" height="105"/></figure></div>
 		<!-- /wp:image -->
 
 		<!-- wp:paragraph {"align":"center","textColor":"foreground","fontSize":"normal"} -->
@@ -26,8 +26,8 @@ return array(
 		<div style="height:500px" aria-hidden="true" class="wp-block-spacer"></div>
 		<!-- /wp:spacer -->
 
-		<!-- wp:paragraph {"align":"center","textColor":"foreground","placeholder":"Write title…","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"huge"} -->
-		<p class="has-text-align-center has-huge-font-size has-foreground-color has-text-color" style="line-height:1.3">' . wp_kses_post( __( '<strong>MAN WORKING</strong><br><strong>AT DAWN</strong>', 'videomaker' ) ) . '</p>
+		<!-- wp:paragraph {"align":"center","textColor":"foreground","placeholder":"Write title…","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"large"} -->
+		<p class="has-text-align-center has-large-font-size has-foreground-color has-text-color" style="line-height:1.3">' . wp_kses_post( __( '<strong>MAN WORKING AT DAWN</strong>', 'videomaker' ) ) . '</p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph {"align":"center","textColor":"foreground","style":{"typography":{"lineHeight":"1"}}} -->
