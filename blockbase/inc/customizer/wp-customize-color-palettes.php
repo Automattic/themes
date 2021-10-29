@@ -87,11 +87,7 @@ class GlobalStylesColorPalettes {
 	}
 
 	function sanitize_color_palette( $palette ) {
-		$palette['slug']  = sanitize_title( $palette['slug'] );
-		$palette['color'] = sanitize_hex_color( $palette['color'] );
-		$palette['name']  = sanitize_title( $palette['name'] );
-
-		return $palette;
+		return sanitize_title($palette);
 	}
 }
 
