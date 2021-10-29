@@ -24,7 +24,12 @@ return array(
 	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -47,7 +52,12 @@ return array(
 	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -80,7 +90,12 @@ return array(
 	<h4>' . esc_html__( 'The Tale Of Three Cocktails', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -114,7 +129,12 @@ return array(
 	<h4>' . esc_html__( 'Is This The Pacific?', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -135,7 +155,12 @@ return array(
 	<h4>' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:group --></div>
