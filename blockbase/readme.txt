@@ -20,6 +20,7 @@ For more information see our README.md file.
 
 = 1.2.23 =
 * Added dynamic duotone support to the customizer #4740
+* Handle posts without titles #4920
 
 = 1.2.22 =
 * Add Kerr as a child theme
