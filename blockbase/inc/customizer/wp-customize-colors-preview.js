@@ -52,20 +52,23 @@ function updateDuotoneFilter( filterID, colors ) {
 			document
 				.querySelector( filterID + ' feColorMatrix' )
 				.setAttribute( 'values', '0' );
-			document
-				.querySelector( filterID + ' feComponentTransfer' )
-				.remove();
-		}
 
-		document
-			.querySelector( filterID + ' feFuncR' )
-			.setAttribute( 'tableValues', colors.r.join( ' ' ) );
-		document
-			.querySelector( filterID + ' feFuncG' )
-			.setAttribute( 'tableValues', colors.g.join( ' ' ) );
-		document
-			.querySelector( filterID + ' feFuncB' )
-			.setAttribute( 'tableValues', colors.b.join( ' ' ) );
+			if ( document.querySelector( filterID + ' feComponentTransfer' ) ) {
+				document
+					.querySelector( filterID + ' feComponentTransfer' )
+					.remove();
+			}
+		} else {
+			document
+				.querySelector( filterID + ' feFuncR' )
+				.setAttribute( 'tableValues', colors.r.join( ' ' ) );
+			document
+				.querySelector( filterID + ' feFuncG' )
+				.setAttribute( 'tableValues', colors.g.join( ' ' ) );
+			document
+				.querySelector( filterID + ' feFuncB' )
+				.setAttribute( 'tableValues', colors.b.join( ' ' ) );
+		}
 	}
 }
 
