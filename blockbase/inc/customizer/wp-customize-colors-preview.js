@@ -25,7 +25,7 @@ function blockBaseUpdateColorsPreview( palette ) {
 	);
 	styleElement.innerHTML = innerHTML;
 
-	if ( window.userColorDuotone ) {
+	if ( duotoneVars[ 'userColorDuotone' ] ) {
 		const colors = palette.map( ( paletteItem ) => paletteItem.color );
 		//we are inverting the order when we have a darker background so that duotone looks good.
 		colors.sort( ( first, second ) => {
@@ -47,6 +47,16 @@ function blockBaseUpdateColorsPreview( palette ) {
 
 function updateDuotoneFilter( filterID, colors ) {
 	if ( document.querySelector( filterID ) ) {
+		if ( duotoneVars[ 'duotoneControl' ] !== 1 ) {
+			//This effectively disables the duotone filter
+			document
+				.querySelector( filterID + ' feColorMatrix' )
+				.setAttribute( 'values', '0' );
+			document
+				.querySelector( filterID + ' feComponentTransfer' )
+				.remove();
+		}
+
 		document
 			.querySelector( filterID + ' feFuncR' )
 			.setAttribute( 'tableValues', colors.r.join( ' ' ) );

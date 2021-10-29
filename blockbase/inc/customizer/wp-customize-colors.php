@@ -22,7 +22,14 @@ class GlobalStylesColorCustomizer {
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
 		if ( $this->theme_duotone_settings ) {
 			wp_enqueue_script( 'colord', get_template_directory_uri() . '/inc/customizer/vendors/colord.min.js' );
-			wp_localize_script( 'customizer-preview-color', 'userColorDuotone', $this->theme_duotone_settings );
+			wp_localize_script(
+				'customizer-preview-color',
+				'duotoneVars',
+				array(
+					'userColorDuotone' => $this->theme_duotone_settings,
+					'duotoneControl'   => get_theme_mod( 'duotone_control' ),
+				)
+			);
 		}
 	}
 
@@ -137,6 +144,7 @@ class GlobalStylesColorCustomizer {
 			array(
 				'default'    => true,
 				'capability' => 'edit_theme_options',
+				'transport'  => 'postMessage', // We need this to stop the page refreshing.
 			)
 		);
 
