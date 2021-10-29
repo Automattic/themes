@@ -15,7 +15,7 @@ return array(
 		<!-- wp:columns {"align":"wide"} -->
 		<div class="wp-block-columns alignwide"><!-- wp:column -->
 		<div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"300"}},"fontSize":"large"} -->
-		<h3 class="has-large-font-size" style="font-weight:300">' . esc_html__( 'Gary Han is a award-winning creative director, designer, photographer and visual artist based in Singapore.'. 'videomaker' ) . '</h3>
+		<h3 class="has-large-font-size" style="font-weight:300">' . esc_html__( 'Gary Han is a award-winning creative director, designer, photographer and visual artist based in Singapore.', 'videomaker' ) . '</h3>
 		<!-- /wp:heading --></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns -->
