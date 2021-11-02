@@ -1,18 +1,25 @@
-/*
-Theme Name: Kerr
-Theme URI:  https://github.com/automattic/themes/tree/trunk/kerr
-Author: Automattic
-Author URI: https://automattic.com/
-Description: Kerr is a simple blogging theme that supports full-site editing. It comes with a set of minimal templates and design settings that can be manipulated through Global Styles.
-Requires at least: 5.7
-Tested up to: 5.7
-Requires PHP: 5.7
-Version: 0.0.3
-License: GNU General Public License v2 or later
-License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
-Template: blockbase
-Text Domain: kerr
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage
+=== Kerr ===
+Contributors: Automattic
+Requires at least: 5.8
+Tested up to: 5.8
+Requires PHP: 5.6.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Description ==
+
+Kerr is a simple blogging theme that supports full-site editing. It comes with a set of minimal templates and design settings that can be manipulated through Global Styles.
+
+== About Kerr ==
+
+For more information see our README.md file.
+
+== Changelog ==
+
+= 1.0 =
+* Initial release
+
+== Copyright ==
 
 Kerr WordPress Theme, (C) 2021 Automattic, Inc.
 Kerr is distributed under the terms of the GNU GPL.
@@ -29,7 +36,7 @@ GNU General Public License for more details.
 
 Kerr uses the following third-party resources:
 
-Meringue Tart by Alex Lvrs
+Merengue Tart by Alex Lvrs
 Source: https://unsplash.com/photos/aX_ljOOyWJY
 Included in theme screenshot.
 
@@ -60,4 +67,3 @@ Included in theme demo site.
 Woman Holding Lemons by Alesia Kozik
 Source: https://www.pexels.com/photo/smiling-woman-in-gray-coat-holding-yellow-fruit-7342195/
 Included in theme demo site.
-*/
