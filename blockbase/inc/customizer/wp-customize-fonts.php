@@ -509,6 +509,7 @@ class GlobalStylesFontsCustomizer {
 		wp_update_post( $user_theme_json_post );
 		delete_transient( 'global_styles' );
 		delete_transient( 'gutenberg_global_styles' );
+		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
 
 }

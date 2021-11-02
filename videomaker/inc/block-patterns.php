@@ -18,7 +18,12 @@ if ( ! function_exists( 'videomaker_register_block_patterns' ) ) :
 
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
+				'about',
+				'awards',
 				'background-video',
+				'description',
+				'film-credits',
+				'film-poster',
 				'full-width-homepage',
 				'footer',
 				'description',
@@ -28,6 +33,7 @@ if ( ! function_exists( 'videomaker_register_block_patterns' ) ) :
 				'pattern-offset-project-grid',
 				'pattern-two-posts-with-excerpt',
 				'post-i-love-you',
+				'reviews',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {

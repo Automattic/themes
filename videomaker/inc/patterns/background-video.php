@@ -31,7 +31,12 @@ return array(
 	<div class="wp-block-column" style="flex-basis:90%">
 	<!-- wp:post-title /-->
 
-	<!-- wp:template-part {"slug":"post-meta","theme":"' . get_stylesheet() . '"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"top":"var(--wp--style--block-gap,1em)","bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	</div>
 	<!-- /wp:column -->
