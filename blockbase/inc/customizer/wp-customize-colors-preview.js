@@ -16,7 +16,6 @@ if ( userColorPalette && userColorSectionKey ) {
 			value.bind( ( newValue ) => {
 				paletteItem.color = newValue;
 				blockBaseUpdateColorsPreview( userColorPalette );
-				console.log( userColorPalette );
 			} );
 		} );
 	} );
@@ -72,15 +71,19 @@ function updateDuotoneFilter( filterID, colors ) {
 }
 
 function toggleDuotoneFilter( filterID, enable ) {
-	console.log( enable );
 	//This effectively disables the duotone filter
 	if ( document.querySelector( filterID ) ) {
 		let colorMatrix = document.querySelector( filterID + ' feColorMatrix' );
 		let matrixValues = '';
 		if ( enable ) {
 			matrixValues = colorMatrix.getAttribute( 'oldValues' );
-			colorMatrix.setAttribute( 'values', matrixValues );
-			colorMatrix.setAttribute( 'oldValues', '' );
+			if (
+				colorMatrix.hasAttribute( 'oldValues' ) &&
+				matrixValues !== ''
+			) {
+				colorMatrix.setAttribute( 'values', matrixValues );
+				colorMatrix.setAttribute( 'oldValues', '' );
+			}
 			document
 				.querySelector( filterID + ' feFuncR' )
 				.setAttribute( 'type', 'table' );
@@ -92,8 +95,10 @@ function toggleDuotoneFilter( filterID, enable ) {
 				.setAttribute( 'type', 'table' );
 		} else {
 			matrixValues = colorMatrix.getAttribute( 'values' );
-			colorMatrix.setAttribute( 'oldValues', matrixValues );
-			colorMatrix.setAttribute( 'values', '' );
+			if ( colorMatrix.hasAttribute( 'values' ) && matrixValues !== '' ) {
+				colorMatrix.setAttribute( 'oldValues', matrixValues );
+				colorMatrix.setAttribute( 'values', '' );
+			}
 			document
 				.querySelector( filterID + ' feFuncR' )
 				.setAttribute( 'type', 'identity' );
