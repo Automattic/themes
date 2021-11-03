@@ -243,7 +243,7 @@ async function landChangesSvn(diffId){
 	return await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
 		svn ci -m ${diffId}
-	`, true, true );
+	`, true );
 }
 
 async function getChangedThemes(hash) {
