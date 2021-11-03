@@ -50,7 +50,7 @@
 				},
 				{
 					"slug": "foreground",
-					"color": "#323232",
+					"color": "#686868",
 					"name": "Foreground"
 				},
 				{
@@ -184,7 +184,7 @@
 				"color": {
 					"background": "transparent",
 					"boxShadow": "none",
-					"text": "inherit"
+					"text": "var(--wp--custom--color--foreground)"
 				},
 				"label": {
 					"spacing": {
@@ -428,9 +428,8 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
-					"fontSize": "36px",
-					"lineHeight": 1.2,
-					"fontWeight": "700"
+					"fontSize": "var(--wp--preset--font-size--huge)",
+					"lineHeight": 1.2
 				},
 				"color": {
 					"text": "var(--wp--custom--color--primary)"
@@ -463,12 +462,6 @@
 					}
 				}
 			},
-			"core/search": {
-				"typography": {
-					"fontSize": "var(--wp--custom--button--typography--font-size)",
-					"lineHeight": "var(--wp--custom--body--typography--line-height)"
-				}
-			},
 			"core/separator": {
 				"color": {
 					"text": "var(--wp--custom--color--foreground)"
@@ -479,11 +472,28 @@
 					"width": "0 0 1px 0"
 				}
 			},
+			"core/site-title": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)",
+					"fontWeight": 700
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "0"
+					}
+				}
+			},
 			"core/quote": {
 				"border": {
 					"color": "var(--wp--custom--color--primary)",
 					"style": "solid",
 					"width": "0 0 0 1px"
+				},
+				"citation": {
+					"typography": {
+						"fontSize": "var(--wp--custom--font-sizes--tiny)",
+						"fontWeight": "400"
+					}
 				},
 				"spacing": {
 					"padding": {
@@ -493,13 +503,6 @@
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--normal)",
 					"fontStyle": "normal"
-				}
-			},
-			"core/site-title": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--normal)",
-					"fontWeight": "700",
-					"textDecoration": "none"
 				}
 			}
 		},
@@ -513,7 +516,7 @@
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
-					"fontSize": "36px"
+					"fontSize": "var(--wp--preset--font-size--huge)"
 				},
 				"spacing": {
 					"margin": {
@@ -527,7 +530,7 @@
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
-					"fontSize": "30px"
+					"fontSize": "var(--wp--preset--font-size--large)"
 				},
 				"spacing": {
 					"margin": {
@@ -541,7 +544,7 @@
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
-					"fontSize": "24px"
+					"fontSize": "var(--wp--preset--font-size--medium)"
 				},
 				"spacing": {
 					"margin": {
@@ -555,7 +558,7 @@
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
-					"fontSize": "18px"
+					"fontSize": "var(--wp--preset--font-size--normal)"
 				},
 				"spacing": {
 					"margin": {
@@ -569,7 +572,7 @@
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
-					"fontSize": "16px"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				},
 				"spacing": {
 					"margin": {
@@ -583,7 +586,7 @@
 					"fontFamily": "var(--wp--preset--font-family--overpass)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
-					"fontSize": "16px"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				},
 				"spacing": {
 					"margin": {
@@ -599,7 +602,7 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "1em"
+			"blockGap": "calc(2 * var(--wp--custom--gap--baseline))"
 		},
 		"typography": {
 			"lineHeight": "var(--wp--custom--body--typography--line-height)",
