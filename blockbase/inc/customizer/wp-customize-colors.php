@@ -27,7 +27,7 @@ class GlobalStylesColorCustomizer {
 				'duotoneVars',
 				array(
 					'userColorDuotone' => $this->theme_duotone_settings,
-					'duotoneControl'   => get_theme_mod( 'duotone_control' ),
+					'duotoneControl'   => $this->enable_duotone,
 				)
 			);
 		}
@@ -142,9 +142,10 @@ class GlobalStylesColorCustomizer {
 		$wp_customize->add_setting(
 			'duotone_control',
 			array(
-				'default'    => true,
-				'capability' => 'edit_theme_options',
-				'transport'  => 'postMessage', // We need this to stop the page refreshing.
+				'default'           => true,
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => array( __CLASS__, 'sanitize_boolean' ),
+				'transport'         => 'postMessage', // We need this to stop the page refreshing.
 			)
 		);
 
@@ -156,6 +157,8 @@ class GlobalStylesColorCustomizer {
 				'label'   => __( 'Apply these colors to the theme\'s images', 'blockbase' ),
 			)
 		);
+
+		$this->enable_duotone = $wp_customize->get_setting( 'duotone_control' )->value();
 
 	}
 
@@ -192,6 +195,8 @@ class GlobalStylesColorCustomizer {
 	function handle_customize_save_after( $wp_customize ) {
 		//update the palette based on the controls
 		$this->update_user_color_palette( $wp_customize );
+		//save the user selection for duotone control
+		$this->enable_duotone = $wp_customize->get_setting( 'duotone_control' )->value();
 
 		// Get the user's theme.json from the CPT.
 		if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_global_styles_post_id' ) ) { // This is the new name.
@@ -224,11 +229,12 @@ class GlobalStylesColorCustomizer {
 			$primary_key    = array_search( 'primary', array_column( $this->user_color_palette, 'slug' ), true );
 			$background_key = array_search( 'background', array_column( $this->user_color_palette, 'slug' ), true );
 
-			if ( ! get_theme_mod( 'duotone_control' ) ) {
-				$this->update_blocks_duotone_filter( 'none', $user_theme_json_post_content );
+			//we set all blocks to use no duotone filter when the checkbox is unchecked
+			if ( ! $this->enable_duotone ) {
+				//$this->update_blocks_duotone_filter( 'none', $user_theme_json_post_content );
 			}
 
-			if ( $this->theme_duotone_settings && null !== $primary_key && null !== $background_key && get_theme_mod( 'duotone_control' ) ) {
+			if ( $this->theme_duotone_settings && null !== $primary_key && null !== $background_key && 1 === $this->enable_duotone ) {
 
 				$primary    = $this->user_color_palette[ $primary_key ];
 				$background = $this->user_color_palette[ $background_key ];
@@ -306,6 +312,18 @@ class GlobalStylesColorCustomizer {
 		}
 		return true;
 	}
+
+	/*
+	* Sanitize a boolean value
+	*/
+	function sanitize_boolean( $input ) {
+		if ( is_bool( $input ) ) {
+			return $input;
+		} else {
+			return true;
+		}
+	}
+
 }
 
 new GlobalStylesColorCustomizer;

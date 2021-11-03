@@ -1,3 +1,13 @@
+var enabledDuotone = duotoneVars[ 'duotoneControl' ] === '1' ? true : false;
+
+wp.customize( 'duotone_control', ( value ) => {
+	value.bind( ( newValue ) => {
+		enabledDuotone = newValue;
+		toggleDuotoneFilter( '#wp-duotone-default-filter', enabledDuotone );
+		toggleDuotoneFilter( '#wp-duotone-custom-filter', enabledDuotone );
+	} );
+} );
+
 if ( userColorPalette && userColorSectionKey ) {
 	// For each of the palette items add a listener
 	userColorPalette.forEach( ( paletteItem ) => {
@@ -6,6 +16,7 @@ if ( userColorPalette && userColorSectionKey ) {
 			value.bind( ( newValue ) => {
 				paletteItem.color = newValue;
 				blockBaseUpdateColorsPreview( userColorPalette );
+				console.log( userColorPalette );
 			} );
 		} );
 	} );
@@ -47,27 +58,51 @@ function blockBaseUpdateColorsPreview( palette ) {
 
 function updateDuotoneFilter( filterID, colors ) {
 	if ( document.querySelector( filterID ) ) {
-		if ( duotoneVars[ 'duotoneControl' ] !== 1 ) {
-			//This effectively disables the duotone filter
-			document
-				.querySelector( filterID + ' feColorMatrix' )
-				.setAttribute( 'values', '0' );
+		toggleDuotoneFilter( filterID, enabledDuotone );
+		document
+			.querySelector( filterID + ' feFuncR' )
+			.setAttribute( 'tableValues', colors.r.join( ' ' ) );
+		document
+			.querySelector( filterID + ' feFuncG' )
+			.setAttribute( 'tableValues', colors.g.join( ' ' ) );
+		document
+			.querySelector( filterID + ' feFuncB' )
+			.setAttribute( 'tableValues', colors.b.join( ' ' ) );
+	}
+}
 
-			if ( document.querySelector( filterID + ' feComponentTransfer' ) ) {
-				document
-					.querySelector( filterID + ' feComponentTransfer' )
-					.remove();
-			}
-		} else {
+function toggleDuotoneFilter( filterID, enable ) {
+	console.log( enable );
+	//This effectively disables the duotone filter
+	if ( document.querySelector( filterID ) ) {
+		let colorMatrix = document.querySelector( filterID + ' feColorMatrix' );
+		let matrixValues = '';
+		if ( enable ) {
+			matrixValues = colorMatrix.getAttribute( 'oldValues' );
+			colorMatrix.setAttribute( 'values', matrixValues );
+			colorMatrix.setAttribute( 'oldValues', '' );
 			document
 				.querySelector( filterID + ' feFuncR' )
-				.setAttribute( 'tableValues', colors.r.join( ' ' ) );
+				.setAttribute( 'type', 'table' );
 			document
 				.querySelector( filterID + ' feFuncG' )
-				.setAttribute( 'tableValues', colors.g.join( ' ' ) );
+				.setAttribute( 'type', 'table' );
 			document
 				.querySelector( filterID + ' feFuncB' )
-				.setAttribute( 'tableValues', colors.b.join( ' ' ) );
+				.setAttribute( 'type', 'table' );
+		} else {
+			matrixValues = colorMatrix.getAttribute( 'values' );
+			colorMatrix.setAttribute( 'oldValues', matrixValues );
+			colorMatrix.setAttribute( 'values', '' );
+			document
+				.querySelector( filterID + ' feFuncR' )
+				.setAttribute( 'type', 'identity' );
+			document
+				.querySelector( filterID + ' feFuncG' )
+				.setAttribute( 'type', 'identity' );
+			document
+				.querySelector( filterID + ' feFuncB' )
+				.setAttribute( 'type', 'identity' );
 		}
 	}
 }
