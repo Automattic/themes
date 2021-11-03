@@ -13,13 +13,9 @@ if ( fontSettings ) {
 }
 
 function blockBaseUpdateFontPreview() {
-	// Build the new body CSS
-	let innerHTML = 'body{';
-	innerHTML += `font-family:${ fontSettings[ 'body' ] };`;
-	innerHTML += '}';
-	// Build the new heading CSS
-	innerHTML += 'h1,h2,h3,h4,h5,h6,.wp-block-post-title,.wp-block-pullquote{';
-	innerHTML += `font-family:${ fontSettings[ 'heading' ] };`;
+	let innerHTML = 'body {';
+	innerHTML += `--wp--preset--font-family--body-font:${ fontSettings[ 'body' ] };`;
+	innerHTML += `--wp--preset--font-family--heading-font:${ fontSettings[ 'heading' ] };`;
 	innerHTML += '}';
 
 	// Inject them into the body.
