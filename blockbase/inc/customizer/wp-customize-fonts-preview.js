@@ -13,13 +13,12 @@ if ( fontSettings ) {
 }
 
 function blockBaseUpdateFontPreview() {
+	// TODO, this only works the first time.
+
 	// Build the new body CSS
-	let innerHTML = 'body{';
-	innerHTML += `font-family:${ fontSettings[ 'body' ] };`;
-	innerHTML += '}';
-	// Build the new heading CSS
-	innerHTML += 'h1,h2,h3,h4,h5,h6,.wp-block-post-title,.wp-block-pullquote{';
-	innerHTML += `font-family:${ fontSettings[ 'heading' ] };`;
+	let innerHTML = ':root, body{';
+	innerHTML += `--wp--custom--body--typography--font-family:${ fontSettings[ 'body' ] };`;
+	innerHTML += `--wp--custom--heading--typography--font-family:${ fontSettings[ 'heading' ] };`;
 	innerHTML += '}';
 
 	// Inject them into the body.

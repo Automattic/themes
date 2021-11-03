@@ -316,9 +316,25 @@ class GlobalStylesFontsCustomizer {
 		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['slug'], $heading_font_selected['slug'], 'sanitize_title' );
 	}
 
+	/**
+	 * Get the value from the custom part of the theme.json
+	 */
+	function convert_variable_to_preset( $variable, $configuration ) {
+		$custom_variable = preg_replace( '/var\(--wp--(.*)\)/', '$1', $variable );
+		$custom_variable = str_replace( 'font-family', 'fontFamily', $custom_variable );
+		$custom_variable_array = explode( '--', $custom_variable );
+		return get_settings_array( $custom_variable_array, $configuration['settings'] );
+	}
+
 	function get_font_family( $array, $configuration ) {
 		$variable = get_settings_array( $array, $configuration );
-		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
+
+		// Convert custom variables to prests
+		if ( strpos( $variable, 'var(--wp--custom' ) > -1 ) {
+			$variable = $this->convert_variable_to_preset( $variable, $configuration );
+		}
+
+		$slug = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
 		if ( ! isset( $this->fonts[ $slug ] ) ) {
 			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $configuration );
 		}
@@ -380,6 +396,22 @@ class GlobalStylesFontsCustomizer {
 		}
 	}
 
+	/**
+	 * Loops through all the theme.json settings and returns those with the value we are searching for.
+	 */
+	function get_position_of_value_in_theme_json_recursive( $array, $position, &$result, $font_setting ) {
+		if ( is_array( $array ) ) {
+			foreach( $array as $key => $value ) {
+				$new_position = array_merge( $position, array( $key ) );
+				if ( $value === $font_setting ) {
+					$result[] = $new_position;
+				}
+
+				$this->get_position_of_value_in_theme_json_recursive( $value, $new_position, $result, $font_setting );
+			}
+		}
+	}
+
 	function handle_customize_save_after( $wp_customize ) {
 		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->value();
 		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->value();
@@ -427,82 +459,54 @@ class GlobalStylesFontsCustomizer {
 			$font_families
 		);
 
-		// Set the body typography settings.
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'typography', 'fontFamily' ),
-			$body_font_family_variable
-		);
+		// Get the position of the heading and body fonts in the theme.json file.
+		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_theme_data()->get_raw_data();
+		// It would be nicer to do this by returning the variable rather than doing this pass by reference thing.
+		$body_font_settings = array();
+		$heading_font_settings = array();
+		$this->get_position_of_value_in_theme_json_recursive( $theme_json, array(), $body_font_settings, 'var(--wp--custom--body--typography--font-family)' );
+		$this->get_position_of_value_in_theme_json_recursive( $theme_json, array(), $heading_font_settings, 'var(--wp--custom--heading--typography--font-family)' );
 
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'blocks', 'core/button', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
+		// Set the body typography settings.
+		foreach( $body_font_settings as $body_font_setting ) {
+			$user_theme_json_post_content = set_settings_array(
+				$user_theme_json_post_content,
+				$body_font_setting,
+				$body_font_family_variable
+			);
+		}
 
 		// Set the heading typography settings.
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'elements', 'h1', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'elements', 'h2', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'elements', 'h3', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'elements', 'h4', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'elements', 'h5', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'elements', 'h6', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'blocks', 'core/post-title', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
-			array( 'styles', 'blocks', 'core/pullquote', 'typography', 'fontFamily' ),
-			$heading_font_family_variable
-		);
+		foreach( $heading_font_settings as $heading_font_setting ) {
+			$user_theme_json_post_content = set_settings_array(
+				$user_theme_json_post_content,
+				$heading_font_setting,
+				$heading_font_family_variable
+			);
+		}
 
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
 			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
-			unset( $user_theme_json_post_content->styles->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
+
+			// TODO - this isn't working
+			// Unset the body typography settings.
+			foreach( $body_font_settings as $body_font_setting ) {
+				unset_settings_array(
+					$user_theme_json_post_content,
+					$body_font_setting
+				);
+			}
+
+			// Unset the heading typography settings.
+			foreach( $heading_font_settings as $heading_font_setting ) {
+				unset_settings_array(
+					$user_theme_json_post_content,
+					$heading_font_setting
+				);
+			}
 		}
+		var_dump( $user_theme_json_post_content );
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );

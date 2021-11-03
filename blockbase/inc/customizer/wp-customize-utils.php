@@ -17,7 +17,13 @@ function set_settings_array( $target, $array, $value ) {
 		if ( ! property_exists( $current, $key ) ) {
 			$current->{ $key } = (object) array();
 		}
+
 		$current =& $current->{ $key };
+
+		// Cast to an object in case it's an array
+		// which seems to happen when you reset to defaults.
+		$current = (object) $current;
+
 		$key     = array_shift( $array );
 	}
 	$current->{ $key } = $value;
@@ -39,6 +45,22 @@ function get_settings_array( $array, $object ) {
 	}
 
 	return $object;
+}
+
+/**
+ *
+ * Unset a property on an object at the given location.
+ *
+ * @param   object  $target The object.
+ * @param   array   $array  The array describing the location of the property to unset.
+ *
+ */
+function unset_settings_array( $target, $array ) {
+	foreach( $array as $property ) {
+		$object = $object->{ $property };
+	}
+
+	unset( $object );
 }
 
 // These functions are borrowed from the colorline lib
