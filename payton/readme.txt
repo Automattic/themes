@@ -1,18 +1,14 @@
 === Payton ===
 Contributors: Automattic
-Requires at least: 5.7
-Tested up to: 5.7.2
-Requires PHP: 5.6.2
+Requires at least: 5.8
+Tested up to: 5.8
+Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
 Payton is a simple blogging theme that supports full-site editing. It comes with a set of minimal templates and design settings that can be manipulated through Global Styles.
-
-== About Payton ==
-
-For more information see our README.md file.
 
 == Changelog ==
 
@@ -35,3 +31,23 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Payton uses the following third-party resources:
+
+Assorted Color Leaves by Evie Schaffer
+Source: https://www.pexels.com/photo/assorted-color-leaves-2652346/
+Included in theme screenshot.
+
+Book, Coffee, and Hand Cream Flatlay by Vanesa Conunaese
+Source: https://unsplash.com/photos/HoYkFpI8yd4
+Included in theme screenshot.
+
+Bath Accessories by Diana Akhmetianova
+Source: https://unsplash.com/photos/pBBxMUCgwuU
+Included in theme demo.
+
+Green Goddess Pita by Alexandra Golovac
+Source: https://unsplash.com/photos/MAbhhj3QCXQ
+Included in theme demo.
+
+Soap Product Photography by Visual Stories || Micheile
+Source: https://unsplash.com/photos/2Cp7Tdu9t9U
+Included in theme demo.
