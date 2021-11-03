@@ -18,6 +18,10 @@ function set_settings_array( $target, $array, $value ) {
 			$current->{ $key } = (object) array();
 		}
 		$current =& $current->{ $key };
+
+		// Cast to an object in the case where it's been set as an array.
+		$current = (object) $current;
+
 		$key     = array_shift( $array );
 	}
 	$current->{ $key } = $value;
