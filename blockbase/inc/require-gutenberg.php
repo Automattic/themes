@@ -171,7 +171,7 @@ if ( ! class_exists( 'WPThemes_Require_Gutenberg' ) ) {
 							// Remove previous errors.
 							jQuery( '.require-gutenberg-install .error' ).remove();
 							jQuery( '.require-gutenberg-install' )
-								.append( '<div class="error"><p><?php esc_html_e( 'An error occured:', 'textdomain' ); ?></p><p>' + e.message + '</p><p><?php esc_html_e( 'Please check your browser console for more details', 'textdomain' ); ?></p></div>' );
+								.append( '<div class="error"><p><?php esc_html_e( 'An error occured:', 'blockbase' ); ?></p><p>' + e.message + '</p><p><?php esc_html_e( 'Please check your browser console for more details', 'blockbase' ); ?></p></div>' );
 
 							console.log( e );
 						}
