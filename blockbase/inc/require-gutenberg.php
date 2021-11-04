@@ -203,7 +203,7 @@ if ( ! class_exists( 'WPThemes_Require_Gutenberg' ) ) {
 
 							// There was an error.
 							jQuery( '.require-gutenberg-activate' )
-								.append( '<div class="error"><p><?php esc_html_e( 'An error occured', 'textdomain' ); ?>:</p><p><?php esc_html_e( 'Could not activate the plugin. Please go to the plugins page on your dashboard and manually activate the plugin.', 'textdomain' ); ?></p></div>' );
+								.append( '<div class="error"><p><?php esc_html_e( 'An error occured', 'blockbase' ); ?>:</p><p><?php esc_html_e( 'Could not activate the plugin. Please go to the plugins page on your dashboard and manually activate the plugin.', 'blockbase' ); ?></p></div>' );
 						}
 					} );
 				},
