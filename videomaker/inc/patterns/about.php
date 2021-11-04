@@ -50,9 +50,5 @@ return array(
 		<p class="has-medium-font-size"><a href="#">' . esc_html__( 'Blog', 'videomaker' ) . '</a></p>
 		<!-- /wp:paragraph --></div>
 		<!-- /wp:column --></div>
-		<!-- /wp:columns -->
-
-		<!-- wp:spacer -->
-		<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-		<!-- /wp:spacer -->',
+		<!-- /wp:columns -->',
 );
