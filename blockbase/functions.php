@@ -34,7 +34,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
+				'social'  => __( 'Social Navigation', 'blockbase' ),
 			)
 		);
 
@@ -102,16 +102,16 @@ function blockbase_fonts_url() {
 		return '';
 	}
 
-	$font_families = [];
+	$font_families = array();
 	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+		foreach ( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+			foreach ( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
 				if ( ! empty( $font['google'] ) ) {
 					$font_families[] = $font['google'];
 				}
@@ -153,7 +153,7 @@ add_action(
 		wp_enqueue_script(
 			'wp-customize-nav-menu-refresh',
 			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
-			[ 'customize-nav-menus' ],
+			array( 'customize-nav-menus' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
@@ -164,3 +164,5 @@ add_action(
  * Block Styles.
  */
 require get_template_directory() . '/inc/block-styles.php';
+
+require get_template_directory() . '/inc/require-gutenberg.php';
