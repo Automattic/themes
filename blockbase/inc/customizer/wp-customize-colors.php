@@ -213,7 +213,7 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
 
 		// Only reset the palette if the setting exists, otherwise the whole settings array gets destroyed.
-		if ( property_exists( $user_theme_json_post_content, 'settings' ) && property_exists( $user_theme_json_post_content->settings, 'color' ) && property_exists( $user_theme_json_post_content->settings->color, 'palette' ) ) {
+		if ( property_exists( $user_theme_json_post_content, 'settings' ) && is_object( $user_theme_json_post_content->settings ) && property_exists( $user_theme_json_post_content->settings, 'color' ) && property_exists( $user_theme_json_post_content->settings->color, 'palette' ) ) {
 			// Start with reset palette settings.
 			unset( $user_theme_json_post_content->settings->color->palette );
 		}
@@ -231,10 +231,10 @@ class GlobalStylesColorCustomizer {
 
 			//we set all blocks to use no duotone filter when the checkbox is unchecked
 			if ( ! $this->enable_duotone ) {
-				//$this->update_blocks_duotone_filter( 'none', $user_theme_json_post_content );
+				$this->update_blocks_duotone_filter( 'none', $user_theme_json_post_content );
 			}
 
-			if ( $this->theme_duotone_settings && null !== $primary_key && null !== $background_key && 1 === $this->enable_duotone ) {
+			if ( $this->theme_duotone_settings && -1 < $primary_key && -1 < $background_key && $this->enable_duotone ) {
 
 				$primary    = $this->user_color_palette[ $primary_key ];
 				$background = $this->user_color_palette[ $background_key ];
