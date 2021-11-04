@@ -75,7 +75,7 @@ if ( ! class_exists( 'WPThemes_Require_Gutenberg' ) ) {
 				<p><?php esc_html_e( 'This is an experimental theme and requires the Gutenberg plugin to be installed.', 'textdomain' ); ?></p>
 				<div class="require-gutenberg require-gutenberg-install">
 					<p><?php esc_html_e( 'The Gutenberg plugin is not installed. Click the button below to install it.', 'textdomain' ); ?></p>
-					<p><button class="button" onclick="wpThemesRequireGutenberg.installPlugin();" aria-label="<?php esc_attr_e( 'Install Gutenberg', 'textdomain' ); ?>"><?php esc_html_e( 'Install Gutenberg', 'textdomain' ); ?></button></p>
+					<p><button class="button" onclick="wpThemesRequireGutenberg.installPlugin();" aria-label="<?php esc_attr_e( 'Install Gutenberg', 'blockbase' ); ?>"><?php esc_html_e( 'Install Gutenberg', 'textdomain' ); ?></button></p>
 				</div>
 				<div class="require-gutenberg require-gutenberg-activate">
 					<p><?php esc_html_e( 'The Gutenberg plugin is installed but not activated. Click the button below to enable the plugin.', 'blockbase' ); ?></p>
