@@ -149,7 +149,7 @@ if ( ! class_exists( 'WPThemes_Require_Gutenberg' ) ) {
 
 					// Tweak the button.
 					jQuery( '.notice .require-gutenberg-install .button' )
-						.html( '<?php esc_html_e( 'Installing Gutenberg...', 'textdomain' ); ?>' )
+						.html( '<?php esc_html_e( 'Installing Gutenberg...', 'blockbase' ); ?>' )
 						.addClass( 'updating-message' )
 						.attr( 'aria-label', '<?php esc_attr_e( 'Installing Gutenberg...', 'textdomain' ); ?>' );
 
