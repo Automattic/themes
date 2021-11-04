@@ -33,7 +33,18 @@ function get_social_menu_as_social_links_block( $block ) {
 	if( ! empty( $block['attrs']['itemsJustification'] ) ) {
 		$class_name .= ' items-justified-' . $block['attrs']['itemsJustification'];
 	}
-	$social_links_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
+
+	// Get color for social icons.
+	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+	$social_links_icon_color_value = "var(--wp--custom--color--primary)";
+	$social_links_icon_color = 'primary';
+	if ( array_key_exists( 'settings', $theme_data ) && array_key_exists( 'custom', $theme_data['settings'] ) && array_key_exists( 'social-links', $theme_data['settings']['custom'] ) && array_key_exists( 'color', $theme_data['settings']['custom']['social-links'] ) && array_key_exists( 'text', $theme_data['settings']['custom']['social-links']['color'] ) ) {
+		$social_links_icon_color_value = $theme_data['settings']['custom']['social-links']['color']['text'];
+		$social_links_icon_color = preg_replace( '/var\(--wp--custom--color--(.+)\)/', '$0 --> $2 $1', $social_links_icon_color_value );
+	}
+
+	$social_links_content = '<!-- wp:social-links {"iconColor":"' . $social_links_icon_color . '","iconColorValue":"' . $social_links_icon_color_value . '","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
+
 	$menu = wp_get_nav_menu_items( $social_menu_id );
 	foreach ($menu as $menu_item) {
 		$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
