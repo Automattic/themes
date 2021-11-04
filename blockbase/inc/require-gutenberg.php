@@ -82,7 +82,7 @@ if ( ! class_exists( 'WPThemes_Require_Gutenberg' ) ) {
 					<p><button class="button" onclick="wpThemesRequireGutenberg.activatePlugin();"><?php esc_html_e( 'Activate Plugin.', 'textdomain' ); ?></button></p>
 				</div>
 				<div class="require-gutenberg require-gutenberg-success">
-					<p><?php esc_html_e( 'Congratulations! All steps required were completed. Enjoy your Full Site Editing experience.', 'textdomain' ); ?></p>
+					<p><?php esc_html_e( 'Congratulations! All steps required were completed. Enjoy your Full Site Editing experience.', 'blockbase' ); ?></p>
 				</div>
 			</div>
 			<?php
