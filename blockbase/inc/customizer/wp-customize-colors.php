@@ -143,7 +143,7 @@ class GlobalStylesColorCustomizer {
 			array(
 				'default'           => true,
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => array( __CLASS__, 'sanitize_boolean' ),
+				'sanitize_callback' => 'rest_sanitize_boolean',
 				'transport'         => 'postMessage', // We need this to stop the page refreshing.
 			)
 		);
@@ -153,7 +153,7 @@ class GlobalStylesColorCustomizer {
 			array(
 				'type'    => 'checkbox',
 				'section' => $this->section_key,
-				'label'   => __( 'Apply these colors to the theme\'s images', 'blockbase' ),
+				'label'   => __( 'Enable duotone', 'blockbase' ),
 			)
 		);
 
@@ -310,17 +310,6 @@ class GlobalStylesColorCustomizer {
 			}
 		}
 		return true;
-	}
-
-	/*
-	* Sanitize a boolean value
-	*/
-	function sanitize_boolean( $input ) {
-		if ( is_bool( $input ) ) {
-			return $input;
-		} else {
-			return true;
-		}
 	}
 
 }
