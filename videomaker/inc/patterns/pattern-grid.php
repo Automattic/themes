@@ -59,7 +59,7 @@ return array(
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>' . esc_html__( 'A documentary about how the climate crises affects the Pacific ocean.', 'videomaker' ) . '</p>
+	<p>' . esc_html__( 'A documentary about how the climate crisis affects the Pacific ocean.', 'videomaker' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:spacer {"height":20} -->
@@ -101,7 +101,7 @@ return array(
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p>' . esc_html__( 'A film about finding what you’re looking for&hellip;', 'videomaker' ) . '</p>
+	<p>' . esc_html__( 'A film about finding what you’re looking for.', 'videomaker' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:spacer {"height":20} -->
