@@ -18,7 +18,10 @@ For more information see our README.md file.
 
 == Changelog ==
 
-= 1.3.0 =
+= 1.4.1 =
+* Remove child-theme.json #4861
+
+= 1.3.1 =
 * Added dynamic duotone support to the customizer #4740
 * Handle posts without titles #4920
 * Update the stacking of site title and tagline #4928
