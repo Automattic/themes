@@ -18,8 +18,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"calc(0.5 * var(--wp--style--block-gap))"}}}} -->
+	<h4 style="margin-bottom:calc(0.5 * var(--wp--style--block-gap))">' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
@@ -39,8 +39,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'The Tale of The Three Cocktails', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"calc(0.5 * var(--wp--style--block-gap))"}}}} -->
+	<h4 style="margin-bottom:calc(0.5 * var(--wp--style--block-gap))">' . esc_html__( 'The Tale of The Three Cocktails', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
@@ -66,8 +66,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"calc(0.5 * var(--wp--style--block-gap))"}}}} -->
+	<h4 style="margin-bottom:calc(0.5 * var(--wp--style--block-gap))">' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
@@ -87,8 +87,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"calc(0.5 * var(--wp--style--block-gap))"}}}} -->
+	<h4 style="margin-bottom:calc(0.5 * var(--wp--style--block-gap))">' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
