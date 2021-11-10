@@ -71,5 +71,5 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 	svn add $SVN_DIR --force > /dev/null
 
 	echo "➤ Committing files..."
-	# svn commit -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD}
+	svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD}
 done
