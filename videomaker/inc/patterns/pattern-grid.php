@@ -8,8 +8,8 @@
 return array(
 	'title'      => __( 'Pattern: Grid', 'videomaker' ),
 	'categories' => array( 'videomaker' ),
-	'content'    => '<!-- wp:columns {"align":"wide","className":"pattern-grid"} -->
-	<div class="wp-block-columns alignwide pattern-grid"><!-- wp:column -->
+	'content'    => '<!-- wp:columns {"align":"wide"} -->
+	<div class="wp-block-columns alignwide"><!-- wp:column -->
 	<div class="wp-block-column">
 
 	<!-- wp:embed {"url":"https://videopress.com/v/bjvmxiQS","type":"video","providerNameSlug":"videopress","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
