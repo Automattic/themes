@@ -129,7 +129,7 @@ async function pushButtonDeploy(repoType) {
 			diffId: diffId
 		});
 
-		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the diff is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes}\n\n\n`);
+		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the diff is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes.join(' ')}\n\n\n`);
 
 		prompt = await inquirer.prompt([{
 			type: 'confirm',
@@ -164,24 +164,19 @@ async function pushButtonDeploy(repoType) {
  Build .zip file for .com
 */
 async function buildComZip(themeSlug) {
-	let response;
 
 	console.log( `Building ${themeSlug} .zip` );
 
-	let themeVersion;
-	let wpVersionCompat;
 	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
 
 	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
-	if (styleCss) {
-		const themeVersionFromCss = styleCss.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs);
-		themeVersion = themeVersionFromCss[0].trim().replace('-wpcom', '');
-		wpVersionCompat = styleCss.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
-	}
+	let themeVersion = getThemeMetadata(styleCss, 'Version');
+	let wpVersionCompat = getThemeMetadata(styleCss, 'Tested up to');
 
 	if (themeVersion && wpVersionCompat) {
 		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
-	} else {
+	} 
+	else {
 		console.log('Unable to build theme .zip.');
 		if (!themeVersion) {
 			console.log('Could not find theme version (Version:) in the theme style.css.');
@@ -369,6 +364,9 @@ function getThemeMetadata(styleCss, attribute) {
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
 				.trim()
 				.replace('-wpcom', '');
+		case 'Tested up to':
+			return styleCss
+				.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
 	}
 }
 
