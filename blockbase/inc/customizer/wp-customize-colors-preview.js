@@ -25,7 +25,7 @@ function blockBaseUpdateColorsPreview( palette ) {
 	);
 	styleElement.innerHTML = innerHTML;
 
-	if ( userColorDuotone ) {
+	if ( window.userColorDuotone ) {
 		const colors = palette.map( ( paletteItem ) => paletteItem.color );
 		//we are inverting the order when we have a darker background so that duotone looks good.
 		colors.sort( ( first, second ) => {
