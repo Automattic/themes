@@ -8,7 +8,7 @@ Blockbase uses SCSS to compile the CSS used to ponyfill Gutenberg.  Building Blo
 The easist way to do so is to use `node` to install and run the necessary dependencies via `npm install`. 
 Then after making changes to the *.scss files run `npm run build` to compile.
 You can use `npm start` and it will be in 'watch mode' recompiling the .scss files any time any changes are made.
-## Bulding a Blockbase child theme the easy way
+## Creating a Blockbase child theme the easy way
 
 Use the [Create Blockbase Theme](https://github.com/Automattic/create-blockbase-theme) utility.
 
@@ -17,7 +17,7 @@ Use the Customizer and/or Full Site Editor to tweak the design to your liking.
 Install the Create Blockbase Theme utility 
 Use it to export a new child theme of Blockbase.
 
-## Bulding a Blockbase child theme manually
+## Creating a Blockbase child theme manually
 
 Blockbase is a [parent theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#what-is-a-parent-theme). The best way to use it is to create a child theme with Blockbase as a parent.
 
