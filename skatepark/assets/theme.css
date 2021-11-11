@@ -470,7 +470,12 @@ a:not(.ab-item):not(.screen-reader-shortcut):focus {
 .post-meta .is-style-post-date-icon,
 .post-meta .is-style-post-category-icon,
 .post-meta .is-style-post-tag-icon {
+	flex-wrap: wrap;
 	margin-bottom: 0.5em;
+	overflow-wrap: normal;
+	padding-left: calc( 18px + var(--wp--custom--gap--baseline));
+	position: relative;
+	word-break: normal;
 }
 
 .is-style-post-date-icon:before,
@@ -478,6 +483,9 @@ a:not(.ab-item):not(.screen-reader-shortcut):focus {
 .is-style-post-tag-icon:before {
 	height: 18px;
 	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .is-style-post-date-icon:before {

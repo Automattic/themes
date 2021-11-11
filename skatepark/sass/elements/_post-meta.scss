@@ -7,9 +7,13 @@
 	.is-style-post-date-icon,
 	.is-style-post-category-icon,
 	.is-style-post-tag-icon {
+		flex-wrap: wrap;
 		margin-bottom: 0.5em;
+		overflow-wrap: normal;
+		padding-left: calc( 18px + var(--wp--custom--gap--baseline));
+		position: relative;
+		word-break: normal;
 	}
-
 }
 
 .is-style-post-date-icon,
@@ -18,6 +22,9 @@
 	&:before {
 		height: 18px;
 		width: 18px;
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 }
 
