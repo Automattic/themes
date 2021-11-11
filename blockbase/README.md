@@ -1,23 +1,23 @@
 # About Blockbase
 The purpose of Blockbase is to provide a "ponyfill" that allows for 100% "configuration expression" of design.  Any aspect of configurable design that Gutenberg does not yet take into account is expressed in theme.json 'custom' properties.
 
-To use this theme assign it as the parent theme and then copy from this them to the child theme the theme.json file and fill out the details.
+The goal is for the ponyfill styling to reflect what Gutenberg will style, from a given configuration, once that work is complete.
 
-The goal is for the ponyfill styling to reflect what Gutenberg will style, from a given configuration, once that work is complete.  But to offer that today, using simpler techniques that Gutenberg will use upon completion.
+## Building
+Blockbase uses SCSS to compile the CSS used to ponyfill Gutenberg.  Building Blockbase isn't necessary to use it - either as a theme or as a parent theme - but making changes does require the .scss file to be recompiled.
+The easist way to do so is to use `node` to install and run the necessary dependencies via `npm install`. 
+Then after making changes to the *.scss files run `npm run build` to compile.
+You can use `npm start` and it will be in 'watch mode' recompiling the .scss files any time any changes are made.
+## Bulding a Blockbase child theme the easy way
 
-## Bulding a Blockbase theme the easy way
+Use the [Create Blockbase Theme](https://github.com/Automattic/create-blockbase-theme) utility.
 
-To build a Blockbase child theme follow these instructions:
+Install Blockbase (or any Blockbase child)
+Use the Customizer and/or Full Site Editor to tweak the design to your liking.
+Install the Create Blockbase Theme utility 
+Use it to export a new child theme of Blockbase.
 
-- Ensure node/npm are installed on your system.
-- From the /blockbase folder run the command `npm run create:child CHILDSLUG`
-- A directory with the necessary files will be created to match CHILDSLUG.  This folder will be a sibling of /blockbase.
-- From the /CHILDSLUG folder (whatever you decided it would be) run the command `npm run build` any time you make changes to the child-theme.json or any of the files in the /sass folder.
-- Your child theme's theme.json file will be built by combining Blockbase's original theme.json file and your child's `child-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there).
-- Use the command `npm run start` to enter watch mode to rebuild the assets any time you change child-theme.json or any of the files in /scss.
-- Extend the parent's templates that you want to customize or add new ones where needed following the [template hierarchy](https://themeshaper.com/2020/12/18/getting-started-with-block-themes-templates/).
-
-## Bulding a Blockbase theme manually
+## Bulding a Blockbase child theme manually
 
 Blockbase is a [parent theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#what-is-a-parent-theme). The best way to use it is to create a child theme with Blockbase as a parent.
 
@@ -40,7 +40,7 @@ Author:
 Author URI:
 Description:
 Requires at least: 5.7
-Tested up to: 5.7
+Tested up to: 5.8
 Requires PHP: 5.7
 Version: 0.0.1
 License: GNU General Public License v2 or later
@@ -53,68 +53,15 @@ Tags:
 
 Block Templates and Block template parts are used to display the content on your site. You can simply copy these directories from the Blockbase theme to get started. You can modify them in the Template Editor and then use the code view to copy the updated template back into your theme.
 
-The theme.json file defines the look and feel of your theme; colors, fonts, spacing, etc are all set in this file. Blockbase also defines many custom properties in theme.json which are used to plug the gaps in block themes. To get started you can copy the Blockbase theme.json file to your child theme, although it is preferable to use a child-theme.json file (more on this later).
-
-These files are optional, but can also be useful:
-- `functions.php`
-- `child-theme.json`
-- `theme.scss`
-- `package.json`
-- `child-theme.json`
-
-Blockbase child themes can be built without using any build tools, but using a build tool enables you to take full advantage of the theme. Blockbase uses node as a build tool, so first you'll need to create a package.json file:
-
-```
-{
-  "name": "CHILD_THEME_NAME",
-  "version": "0.0.1",
-  "description": "",
-  "main": "style.css",
-  "dependencies": {},
-  "devDependencies": {
-    "@wordpress/base-styles": "^3.4.0",
-    "chokidar-cli": "^2.1.0",
-    "node-sass": "^5.0.0",
-    "node-sass-package-importer": "^5.3.2"
-  },
-  "scripts": {
-    "start": "chokidar \\"**/*.scss\\" child-theme.json ../blockbase/theme.json -c \\"npm run build\\" --initial",
-    "build": "npm run build:theme && npm run build:scss",
-    "build:theme": "node ../blockbase/build.js CHILD_THEME_NAME",
-    "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/theme.scss assets/theme.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
-  },
-  "author": "",
-  "license": "GPLv2"
-}
-```
-
-You should replace CHILD_THEME_NAME with the name of your theme. This package.json contains two helpful commands:
-
-`npm run build:theme` and `npm run build:css`
-
-## `npm run build:theme`
-To use this command you will need to create a file called `child-theme.json`:
-```
-{
-	"settings": {
-		"custom": {}
-	},
-	"styles": {
-		"blocks": {}
-	}
-}
-```
-
-Like `theme.json` this file also defines the styles for the theme. The build tool takes the child-theme.json file and merges it with the Blockbase theme.json file. This has several advantages:
+The `theme.json` file defines the look and feel of your theme; colors, fonts, spacing, etc are all set in this file. Blockbase also defines many custom properties in theme.json which are used to plug the gaps in block themes. Override any values (including the custom values) found in Blockbase's theme.json in the child theme's theme.json.
 
 - It is only necessary to define those properties you wish to change, which keeps your code DRY
-- As more features are added to block themes, Blockbase will be updated to support them. By using the Blockbase theme.json build tool, the child theme will be able to migrate these properties to the child's theme.json file, making more FSE tools available to users.
+- As more features are added to block themes, Blockbase will be updated to support them. By using the Blockbase as a parent, the child theme will inherit all these changes.
 
-## `npm run build:scss`
-Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. This build command compiles the theme.scss file to a theme.css file. This is a good place to put additional CSS for your theme.
+Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. Blockbase uses node to compile SCSS files.  You may want your child theme to take advantage of the same utilities, but child themes do not need to be built with using any build tools.
 
 ## `functions.php`
-To add the theme.css file to your theme you will need to add a functions.php file with the following lines:
+You will also likely want to add a `functions.php` file.  To use that to load the theme.css file you will need to add the following lines:
 ```
 <?php
 /**
@@ -142,4 +89,4 @@ add_action( 'wp_enqueue_scripts', 'newtheme_scripts' );
 Together these files should give you a strong foundation for a Blockbase child theme.
 
 ## Keeping up to date
-Blockbase child themes are in a strong position to keep in step with Full Site Editing changes, while being usable in production now. However they do come with a maintenance burden. As Full Site Editing matures, Blockbase will continue to change with it; Blockbase child themes will need to be kept up to date with these developments so that they can take advantage of the new features. Mostly this is just a case of running the build tools whenever changes are made to Blockbase, but sometimes it might also be necessary to update the format of the child-theme.json file.
+Blockbase child themes are in a strong position to keep in step with Full Site Editing changes, while being usable in production now. However they do come with a maintenance burden. As Full Site Editing matures, Blockbase will continue to change with it; Blockbase child themes will need to be kept up to date with these developments so that they can take advantage of the new features.
