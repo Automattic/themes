@@ -346,7 +346,7 @@ async function versionBumpThemes() {
 		await executeCommand(`npm version patch --no-git-tag-version`);
 	}
 
-	if (versionBumpCount > 0 && !rootHasVersionBump) {
+	if (versionBumpCount > 0 || !rootHasVersionBump) {
 		console.log('commiting version-bump');
 		await executeCommand(`
 			git commit -a -m "Version Bump";
@@ -635,7 +635,7 @@ async function createGitPhabricatorDiff(hash) {
 		git branch -D deploy
 		git checkout -b deploy
 		git add --all
-		git commit -m "${commitMessage}"
+		git commit -m "${commitMessage}" --no-verify
 		arc diff --create --verbatim
 	`, true);
 
