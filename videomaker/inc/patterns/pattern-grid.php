@@ -18,8 +18,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
+	<h4 style="margin-bottom:10px">' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
@@ -36,8 +36,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'The Tale of The Three Cocktails', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
+	<h4 style="margin-bottom:10px">' . esc_html__( 'The Tale of The Three Cocktails', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
@@ -78,8 +78,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
+	<h4 style="margin-bottom:10px">' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
@@ -96,8 +96,8 @@ return array(
 	</div></figure>
 	<!-- /wp:embed -->
 
-	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
+	<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
+	<h4 style="margin-bottom:10px">' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
