@@ -346,7 +346,7 @@ async function versionBumpThemes() {
 		await executeCommand(`npm version patch --no-git-tag-version`);
 	}
 
-	if (versionBumpCount > 0 || !rootHasVersionBump) {
+	if (versionBumpCount > 0) {
 		console.log('commiting version-bump');
 		await executeCommand(`
 			git commit -a -m "Version Bump";
