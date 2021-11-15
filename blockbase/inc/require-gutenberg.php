@@ -224,7 +224,7 @@ if ( ! class_exists( 'WPThemes_Require_Gutenberg' ) ) {
 		public function is_plugin_installed() {
 			$plugins             = get_plugins();
 			$gutenberg_installed = ( false !== array_search( 'gutenberg', array_column( $plugins, 'TextDomain' ), true ) ) ? true : false;
-			return gutenberg_installed );
+			return $gutenberg_installed;
 		}
 
 		/**
