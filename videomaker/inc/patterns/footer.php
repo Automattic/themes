@@ -11,7 +11,7 @@ return array(
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column -->
 	<div class="wp-block-column">
-	<!-- wp:navigation {"orientation":"vertical","__unstableLocation":"footer","style":{"typography":{"lineHeight":"1"}}} /-->
+	<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"footer","layout":{"type":"flex","justifyContent":"left","orientation":"vertical"},"style":{"typography":{"lineHeight":"1"}}} /-->
 	</div>
 	<!-- /wp:column -->
 
