@@ -176,3 +176,9 @@ add_action(
  * Block Styles.
  */
 require get_template_directory() . '/inc/block-styles.php';
+
+/**
+ * Block Patterns.
+ */
+require get_stylesheet_directory() . '/inc/block-patterns.php';
+
