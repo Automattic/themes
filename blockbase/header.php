@@ -13,6 +13,10 @@
 	<div class="wp-site-blocks">
 		<header class="wp-block-template-part">
 			<?php
-				echo block_template_part( 'header' );
+				if ( function_exists( 'block_template_part' ) ) {
+					echo block_template_part( 'header' );
+				} else {
+					echo gutenberg_block_template_part( 'header' );
+				}
 			?>
 		</header>
