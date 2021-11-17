@@ -220,11 +220,7 @@ async function checkForDeployability(){
  This is the git version of that action.
 */
 async function landChangesGit(diffId){
-	return await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		arc patch ${diffId}
-		arc land
-	`, true);
+	return await executeOnSandbox(`cd ${sandboxPublicThemesFolder};arc patch ${diffId};arc land;exit;`, true, true);
 }
 
 /*
