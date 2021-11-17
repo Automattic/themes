@@ -1,32 +1,5 @@
 <?php
 
-
-if ( ! function_exists( 'skatepark_support' ) ) :
-	function skatepark_support() {
-		// Enqueue editor styles.
-		add_editor_style(
-			array(
-				'/assets/theme.css',
-			)
-		);
-	}
-	add_action( 'after_setup_theme', 'skatepark_support' );
-endif;
-
-/**
- * Enqueue scripts and styles.
- */
-function skatepark_scripts() {
-	// Enqueue front-end styles.
-	wp_enqueue_style( 'skatepark-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
-}
-add_action( 'wp_enqueue_scripts', 'skatepark_scripts' );
-
-/**
- * Block Styles.
- */
-require get_stylesheet_directory() . '/inc/block-styles.php';
-
 /**
  * Block Patterns.
  */
