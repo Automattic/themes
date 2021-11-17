@@ -1,1 +1,2 @@
-# This page intentionally left blank
+<?php
+	# This page intentionally left blank
