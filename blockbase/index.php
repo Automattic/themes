@@ -15,6 +15,10 @@
 get_header();
 
 // the query
-echo gutenberg_block_template_part( 'index' );
+if ( function_exists( 'block_template_part' ) ) {
+	echo block_template_part( 'index' );
+} else {
+	echo gutenberg_block_template_part( 'index' );
+}
 
 get_footer();
