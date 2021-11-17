@@ -72,6 +72,11 @@ function blockbase_editor_styles() {
 			blockbase_fonts_url(),
 		)
 	);
+	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
+		add_editor_style(
+			'/assets/theme.css'
+		);
+	}
 }
 add_action( 'admin_init', 'blockbase_editor_styles' );
 
@@ -83,6 +88,10 @@ function blockbase_scripts() {
 	// Enqueue Google fonts
 	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url(), array(), null );
 	wp_enqueue_style( 'blockbase-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
+
+	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
+		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
 
