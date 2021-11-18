@@ -2,12 +2,13 @@
 /**
  * A 404 page
  *
- * @package Blockbase 
+ * @package Blockbase
  */
 
 return array(
 	'title'      => __( '404-prompt', 'blockbase' ),
 	'categories' => array( 'blockbase' ),
+	'inserter'   => false,
 	'content'    => '<!-- wp:group {"tagName":"main","className":"container-404","layout":{"inherit":true}} -->
 <main class="wp-block-group container-404"><!-- wp:heading {"textAlign":"center","level":1,"fontSize":"medium"} -->
 <h1 class="has-text-align-center has-medium-font-size" id="oops-that-page-can-t-be-found">' . esc_html__( "Oops! That page can&rsquo;t be found.", "blockbase" ) . '</h1>
