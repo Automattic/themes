@@ -38,8 +38,8 @@ function get_social_menu_as_social_links_block( $block ) {
 	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 	$social_links_icon_color_value = "var(--wp--custom--color--primary)";
 	$social_links_icon_color = 'primary';
-	if ( array_key_exists( 'settings', $theme_data ) && array_key_exists( 'custom', $theme_data['settings'] ) && array_key_exists( 'social-links', $theme_data['settings']['custom'] ) && array_key_exists( 'color', $theme_data['settings']['custom']['social-links'] ) && array_key_exists( 'text', $theme_data['settings']['custom']['social-links']['color'] ) ) {
-		$social_links_icon_color_value = $theme_data['settings']['custom']['social-links']['color']['text'];
+	if ( array_key_exists( 'settings', $theme_data ) && array_key_exists( 'custom', $theme_data['settings'] ) && array_key_exists( 'navigation/social-links', $theme_data['settings']['custom'] ) && array_key_exists( 'color', $theme_data['settings']['custom']['navigation/social-links'] ) && array_key_exists( 'text', $theme_data['settings']['custom']['navigation/social-links']['color'] ) ) {
+		$social_links_icon_color_value = $theme_data['settings']['custom']['navigation/social-links']['color']['text'];
 		$social_links_icon_color = preg_replace( '/var\(--wp--custom--color--(.+)\)/', '$0 --> $2 $1', $social_links_icon_color_value );
 	}
 
