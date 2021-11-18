@@ -24,12 +24,9 @@ return array(
 	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
-	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:paragraph -->
+	<p>' . esc_html__( 'Trailer for a film about people working along a river.', 'videomaker' ) . '</p>
+	<!-- /wp:paragraph -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -52,12 +49,9 @@ return array(
 	<h4>' . esc_html__( 'Boats', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
-	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:paragraph -->
+	<p>' . esc_html__( 'A brief, ambient film of boats rising and lowering in the waves.', 'videomaker' ) . '</p>
+	<!-- /wp:paragraph -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -90,12 +84,9 @@ return array(
 	<h4>' . esc_html__( 'The Tale Of Three Cocktails', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
-	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:paragraph -->
+	<p>' . esc_html__( 'A music video for the band “Generous Penguin”.', 'videomaker' ) . '</p>
+	<!-- /wp:paragraph -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -129,12 +120,9 @@ return array(
 	<h4>' . esc_html__( 'Is This The Pacific?', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
-	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:paragraph -->
+	<p>' . esc_html__( 'A documentary about how the climate crisis affects the Pacific ocean.', 'videomaker' ) . '</p>
+	<!-- /wp:paragraph -->
 
 	</div>
 	<!-- /wp:group --></div>
@@ -155,12 +143,9 @@ return array(
 	<h4>' . esc_html__( 'Plenty of Fish In The Sea', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
-	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
-	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
+	<!-- wp:paragraph -->
+	<p>' . esc_html__( 'A film about finding what you’re looking for.', 'videomaker' ) . '</p>
+	<!-- /wp:paragraph -->
 
 	</div>
 	<!-- /wp:group --></div>
