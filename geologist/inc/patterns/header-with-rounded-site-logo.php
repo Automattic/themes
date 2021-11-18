@@ -13,7 +13,7 @@ return array(
 <header class="wp-block-group site-header" style="padding-bottom:90px">
 	<!-- wp:site-logo {"className":"is-style-rounded"} /-->
 	<!-- wp:site-title /-->
-	<!-- wp:navigation {"itemsJustification":"right","__unstableLocation":"primary"} /-->
+	<!-- wp:navigation {"__unstableLocation":"primary","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
 </header>
 <!-- /wp:group -->',
 );
