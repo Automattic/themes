@@ -6,7 +6,7 @@
  */
 
 return array(
-	'title'      => __( 'Pattern: Offset Project Grid', 'videomaker' ),
+	'title'      => __( 'Offset Project Grid', 'videomaker' ),
 	'categories' => array( 'videomaker' ),
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"60%"} -->
