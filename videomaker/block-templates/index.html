@@ -11,11 +11,16 @@
 <!-- wp:post-template -->
 <!-- wp:group -->
 <div class="wp-block-group">
-	<!-- wp:post-title {"isLink":true} /-->
+	<!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"bottom":"45px"}}}} /-->
 	<!-- wp:post-featured-image {"isLink":true} /-->
 	<!-- wp:post-excerpt /-->
 
-	<!-- wp:template-part {"slug":"post-meta"} /-->
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"top":"var(--wp--style--block-gap,1em)","bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
 
 	<!-- wp:spacer {"height":40} -->
 	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
