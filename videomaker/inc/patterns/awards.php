@@ -9,7 +9,7 @@ return array(
 	'title'      => __( 'Awards', 'videomaker' ),
 	'categories' => array( 'videomaker' ),
 	'content'    => '<!-- wp:cover {"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","align":"wide","style":{"spacing":{"padding":{"top":"50px","right":"50px","bottom":"50px","left":"50px"}}}} -->
-	<div class="wp-block-cover alignwide has-background-background-color has-background-dim" style="padding-top:50px;padding-right:50px;padding-bottom:50px;padding-left:50px;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":"70px"}}} -->
+	<div class="wp-block-cover alignwide has-background-background-color has-background-dim" style="padding-top:50px;padding-right:50px;padding-bottom:50px;padding-left:50px;min-height:100vh"><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center"} -->
 		<div class="wp-block-columns are-vertically-aligned-center">
 		
 		<!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"20px","right":"0px","bottom":"20px","left":"0px"}}}} -->
