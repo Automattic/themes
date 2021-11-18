@@ -3,14 +3,6 @@
 
 if ( ! function_exists( 'quadrat_support' ) ) :
 	function quadrat_support() {
-
-		// Enqueue editor styles.
-		add_editor_style(
-			array(
-				'/assets/theme.css',
-			)
-		);
-
 		// Add support for starter content
 		include get_stylesheet_directory() . '/inc/starter-content.php';
 		add_theme_support(
@@ -20,15 +12,6 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;
-
-/**
- * Enqueue scripts and styles.
- */
-function quadrat_scripts() {
-	// Enqueue front-end styles.
-	wp_enqueue_style( 'quadrat-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
-}
-add_action( 'wp_enqueue_scripts', 'quadrat_scripts' );
 
 /**
  * Block Patterns.
