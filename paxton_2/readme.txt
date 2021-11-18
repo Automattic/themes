@@ -29,3 +29,9 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Paxton 2 uses the following third-party resources:
+
+Female Profile Free Stock Image by Matt Moloney.
+Source: https://stocksnap.io/photo/female-profile-LFKUHOHQJN
+Included in theme screenshot and demo site.
