@@ -6,7 +6,7 @@
  */
 
 return array(
-	'title'      => __( '404-prompt', 'blockbase' ),
+	'title'      => __( '404', 'blockbase' ),
 	'categories' => array( 'blockbase' ),
 	'inserter'   => false,
 	'content'    => '<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"medium"} -->
