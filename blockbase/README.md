@@ -60,31 +60,8 @@ The `theme.json` file defines the look and feel of your theme; colors, fonts, sp
 
 Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. Blockbase uses node to compile SCSS files.  You may want your child theme to take advantage of the same utilities, but child themes do not need to be built with using any build tools.
 
-## `functions.php`
-You will also likely want to add a `functions.php` file.  To use that to load the theme.css file you will need to add the following lines:
-```
-<?php
-/**
- * Add Editor Styles
- */
-function newtheme_editor_styles() {
-	// Enqueue editor styles.
-	add_editor_style(
-		array(
-			'/assets/theme.css',
-		)
-	);
-}
-add_action( 'after_setup_theme', 'newtheme_editor_styles' );
-/**
- *
- * Enqueue scripts and styles.
- */
-function newtheme_scripts() {
-	wp_enqueue_style( 'newtheme-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
-}
-add_action( 'wp_enqueue_scripts', 'newtheme_scripts' );
-```
+## `functions.php` and `theme.css`
+Blockbase will load a theme.css file for each of its children. This file lives at childtheme/assets/theme.css. You may wish to add a functions.php file to add block styles or patterns to your theme, but it's not necessary.
 
 Together these files should give you a strong foundation for a Blockbase child theme.
 
