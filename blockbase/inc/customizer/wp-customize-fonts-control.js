@@ -14,11 +14,13 @@ wp.customize.bind( 'ready', () => {
 		}
 	);
 
+	// If the body and heading controls are null then the font customization is using
+	// the old format. We need to hide these controls so that the user is forced to
+	// reset to defaults before making other changes.
 	wp.customize.control( 'customize-global-styles-fontsbody', ( control ) => {
 		fontBodyControl = control.container[ 0 ];
 		fontBodyControl.hidden = determineIfNull();
 	} );
-
 	wp.customize.control(
 		'customize-global-styles-fontsheading',
 		( control ) => {
@@ -77,6 +79,10 @@ wp.customize.bind( 'ready', () => {
 			item.set( fontControlDefaultHeading[ 0 ] );
 		} );
 		resetButton.hidden = true;
+
+		// If the body and heading controls are null then the font customization is using
+		// the old format. We need to get the user to reset to default and then reload
+		// before they make other customizations.
 		if ( shouldWeReload ) {
 			wp.customize.previewer.save();
 			wp.customize.previewer.refresh();
