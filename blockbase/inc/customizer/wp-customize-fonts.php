@@ -287,6 +287,7 @@ class GlobalStylesFontsCustomizer {
 				return $font_family['slug'] === "body-font";
 			} );
 			$body_font_selected = array_shift( $body_font_selected_array );
+
 			$heading_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
 				return $font_family['slug'] === "heading-font";
 			} );
@@ -296,9 +297,22 @@ class GlobalStylesFontsCustomizer {
 			$heading_font_selected = $heading_font_default;
 		}
 
+		// If there's no selected font then the user is probably using the old format for font customization
+		if ( $body_font_selected && $heading_font_selected ) {
+			$body_font_selected_font_family = $body_font_selected['fontFamily'];
+			$body_font_selected_font_slug = $body_font_selected['fontSlug'];
+			$heading_font_selected_font_family = $heading_font_selected['fontFamily'];
+			$heading_font_selected_font_slug = $heading_font_selected['fontSlug'];
+		} else {
+			$body_font_selected_font_family = null;
+			$body_font_selected_font_slug = null;
+			$heading_font_selected_font_family = null;
+			$heading_font_selected_font_slug = null;
+		}
+
 		$this->font_settings = array(
-			'body'    => $body_font_selected['fontFamily'],
-			'heading' => $heading_font_selected['fontFamily'],
+			'body'    => $body_font_selected_font_family,
+			'heading' => $heading_font_selected_font_family,
 		);
 
 		//Add a Section to the Customizer for these bits
@@ -327,8 +341,8 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected['fontSlug'], 'sanitize_title' );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected['fontSlug'], 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
 	}
 
 	function get_font_family( $array, $configuration ) {
