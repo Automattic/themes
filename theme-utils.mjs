@@ -99,15 +99,15 @@ async function pushButtonDeploy(repoType) {
 	}
 
 	try {
-		await deployThemesByRepo( 'pub' );
-		await deployThemesByRepo( 'premium' );
+		await deployThemesByRepo( repoType, 'pub' );
+		await deployThemesByRepo( repoType, 'premium' );
 	}
 	catch (err) {
 		console.log("ERROR with deply script: ", err);
 	}
 }
 
-async function deployThemesByRepo( repo ) {
+async function deployThemesByRepo( repoType, repo ) {
 	if (repoType === 'git' ) {
 		await cleanSandboxGit( repo );
 	}
