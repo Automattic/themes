@@ -217,15 +217,19 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function customize_preview_js( $wp_customize ) {
-		wp_enqueue_script( 'customizer-preview-fonts', get_template_directory_uri() . '/inc/customizer/wp-customize-fonts-preview.js', array( 'customize-preview' ) );
-		wp_localize_script( 'customizer-preview-fonts', 'googleFonts', $this->fonts );
-		wp_localize_script( 'customizer-preview-fonts', 'fontSettings', $this->font_settings );
+		if ( $this->fonts && $this->font_settings ) {
+			wp_enqueue_script( 'customizer-preview-fonts', get_template_directory_uri() . '/inc/customizer/wp-customize-fonts-preview.js', array( 'customize-preview' ) );
+			wp_localize_script( 'customizer-preview-fonts', 'googleFonts', $this->fonts );
+			wp_localize_script( 'customizer-preview-fonts', 'fontSettings', $this->font_settings );
+		}
 	}
 
 	function customize_control_js() {
-		wp_enqueue_script( 'customizer-font-control', get_template_directory_uri() . '/inc/customizer/wp-customize-fonts-control.js', array( 'customize-controls' ), null, true );
-		wp_localize_script( 'customizer-font-control', 'fontControlDefaultBody', array( $this->font_control_default_body ) );
-		wp_localize_script( 'customizer-font-control', 'fontControlDefaultHeading', array( $this->font_control_default_heading ) );
+		if ( $this->font_control_default_body && $this->font_control_default_heading ) {
+			wp_enqueue_script( 'customizer-font-control', get_template_directory_uri() . '/inc/customizer/wp-customize-fonts-control.js', array( 'customize-controls' ), null, true );
+			wp_localize_script( 'customizer-font-control', 'fontControlDefaultBody', array( $this->font_control_default_body ) );
+			wp_localize_script( 'customizer-font-control', 'fontControlDefaultHeading', array( $this->font_control_default_heading ) );
+		}
 	}
 
 	function enqueue_google_fonts() {
@@ -233,25 +237,31 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function create_customization_style_element( $wp_customize ) {
-		wp_enqueue_style( 'global-styles-fonts-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
-		$css  = 'body {';
-		$css .= '--wp--preset--font-family--body-font:' . $this->font_settings['body'] . ';';
-		$css .= '--wp--preset--font-family--heading-font:' . $this->font_settings['heading'] . ';';
-		$css .= '}';
-		wp_add_inline_style( 'global-styles-fonts-customizations', $css );
+		if ( $this->font_settings ) {
+			wp_enqueue_style( 'global-styles-fonts-customizations', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
+			$css  = 'body {';
+			$css .= '--wp--preset--font-family--body-font:' . $this->font_settings['body'] . ';';
+			$css .= '--wp--preset--font-family--heading-font:' . $this->font_settings['heading'] . ';';
+			$css .= '}';
+			wp_add_inline_style( 'global-styles-fonts-customizations', $css );
+		}
 	}
 
 	function update_font_settings( $wp_customize ) {
-		$body_value = $wp_customize->get_setting( $this->section_key . 'body' )->post_value();
-		if ( $body_value ) {
-			$body_font_setting           = $this->fonts[ $body_value ];
-			$this->font_settings['body'] = $body_font_setting['fontFamily'];
-		}
+		$body_setting = $wp_customize->get_setting( $this->section_key . 'body' );
+		$heading_setting = $wp_customize->get_setting( $this->section_key . 'heading' );
+		if ( $body_setting && $heading_setting ) {
+			$body_value = $body_setting->post_value();
+			if ( $body_value ) {
+				$body_font_setting           = $this->fonts[ $body_value ];
+				$this->font_settings['body'] = $body_font_setting['fontFamily'];
+			}
 
-		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->post_value();
-		if ( $heading_value ) {
-			$heading_font_setting           = $this->fonts[ $heading_value ];
-			$this->font_settings['heading'] = $heading_font_setting['fontFamily'];
+			$heading_value = $heading_setting->post_value();
+			if ( $heading_value ) {
+				$heading_font_setting           = $this->fonts[ $heading_value ];
+				$this->font_settings['heading'] = $heading_font_setting['fontFamily'];
+			}
 		}
 	}
 
@@ -270,6 +280,17 @@ class GlobalStylesFontsCustomizer {
 
 	function initialize( $wp_customize ) {
 		$theme       = wp_get_theme();
+
+		//Add a Section to the Customizer for these bits
+		$wp_customize->add_section(
+			$this->section_key,
+			array(
+				'capability'  => 'edit_theme_options',
+				'description' => sprintf( __( 'Font Customization for %1$s', 'blockbase' ), $theme->name ),
+				'title'       => __( 'Fonts', 'blockbase' ),
+			)
+		);
+
 		$merged_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 		$theme_font_families = $merged_json['settings']['typography']['fontFamilies']['theme'];
 		$body_font_default_array = array_filter( $theme_font_families, function( $font_family ) {
@@ -280,6 +301,23 @@ class GlobalStylesFontsCustomizer {
 			return $font_family['slug'] === "heading-font";
 		} );
 		$heading_font_default = array_shift( $heading_font_default_array );
+
+		// See if the child theme has been updated. If not then show a notice.
+		if ( ! $body_font_default && ! $heading_font_default ) {
+			$wp_customize->add_control(
+				$this->section_key . '-v1-blockbase-format-notice',
+				array(
+					'type'        => 'hidden',
+					'description' => '<div class="notice notice-warning">
+					<p>' . __( "Your theme needs to be updated before you can customize fonts", 'blockbase' ) . '</p>
+					</div>',
+					'settings'    => array(),
+					'section'     => $this->section_key,
+				)
+			);
+
+			return;
+		}
 
 		if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
 			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
@@ -313,16 +351,6 @@ class GlobalStylesFontsCustomizer {
 		$this->font_settings = array(
 			'body'    => $body_font_selected_font_family,
 			'heading' => $heading_font_selected_font_family,
-		);
-
-		//Add a Section to the Customizer for these bits
-		$wp_customize->add_section(
-			$this->section_key,
-			array(
-				'capability'  => 'edit_theme_options',
-				'description' => sprintf( __( 'Font Customization for %1$s', 'blockbase' ), $theme->name ),
-				'title'       => __( 'Fonts', 'blockbase' ),
-			)
 		);
 
 		// Add a reset button
