@@ -4,8 +4,6 @@ import open from 'open';
 import inquirer from 'inquirer';
 
 const remoteSSH = 'wpcom-sandbox';
-const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
-const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxThemesRootFolder = '/home/wpdev/public_html/wp-content/themes/';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
@@ -16,6 +14,7 @@ const premiumThemes = [
 (async function start() {
 	let args = process.argv.slice(2);
 	let command = args?.[0];
+
 	switch (command) {
 		case "push-button-deploy-git": return pushButtonDeploy('git');
 		case "push-button-deploy-svn": return pushButtonDeploy('svn');
@@ -335,7 +334,7 @@ async function versionBumpThemes( repo ) {
 	console.log("Version Bumping");
 
 	let themes = await getActionableThemes();
-	let hash = await getLastDeployedHash( sandboxThemesFolder );
+	let hash = await getLastDeployedHash( repo );
 	let versionBumpCount = 0;
 
 	for (let theme of themes) {
@@ -551,7 +550,7 @@ async function pushChangesToSandbox( repo ) {
 	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	console.log("Pushing Changes to Sandbox.");
 
-	let hash = await getLastDeployedHash( sandboxThemesFolder );
+	let hash = await getLastDeployedHash( repo );
 
 	let deletedFiles = await getDeletedFilesSince(hash);
 	let changedFiles = await getComittedChangesSinceHash(hash);
@@ -719,7 +718,7 @@ function getPhabricatorUrlFromResponse(response){
 */
 async function tagDeployment(options={}) {
 
-	let hash = options.hash || await getLastDeployedHash( options.sandboxThemesFolder );
+	let hash = options.hash || await getLastDeployedHash( options.repo );
 
 	let workInTheOpenPhabricatorUrl = '';
 	if (options.diffId) {
