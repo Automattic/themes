@@ -9,43 +9,13 @@ return array(
 	'title'      => __( 'Background video', 'videomaker' ),
 	'categories' => array( 'videomaker' ),
 	'blockTypes' => array( 'core/template-part/header' ),
-	'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4","dimRatio":40,"backgroundType":"video","minHeight":100,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"60px","right":"60px","bottom":"60px","left":"60px"}}}} -->
-	<div class="wp-block-cover alignfull has-background-dim-40 has-background-dim" style="padding-top:60px;padding-right:60px;padding-bottom:60px;padding-left:60px;min-height:100vh"><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
-	<div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
-	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:site-title /--></div>
-	<!-- /wp:column -->
+	'content'    => '<!-- wp:cover {"url":"' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4","dimRatio":40,"overlayColor":"background","backgroundType":"video","minHeight":100,"minHeightUnit":"vh","contentPosition":"bottom left","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"60px","right":"60px","bottom":"60px","left":"60px"}}}} -->
+					<div class="wp-block-cover alignfull is-light has-custom-content-position is-position-bottom-left" style="padding-top:60px;padding-right:60px;padding-bottom:60px;padding-left:60px;min-height:100vh"><span aria-hidden="true" class="has-background-background-color has-background-dim-40 wp-block-cover__gradient-background has-background-dim"></span><video class="wp-block-cover__video-background intrinsic-ignore" autoplay muted loop playsinline src="' . get_stylesheet_directory_uri() . '/assets/videos/fish.mp4" data-object-fit="cover"></video><div class="wp-block-cover__inner-container"><!-- wp:heading {"textColor":"foreground","fontSize":"large"} -->
+					<h2 class="has-foreground-color has-text-color has-large-font-size">' . esc_html__( 'Plenty of fish in the sea', 'videomaker' ) . '</h2>
+					<!-- /wp:heading -->
 
-	<!-- wp:column {"verticalAlignment":"center"} -->
-	<div class="wp-block-column is-vertically-aligned-center">
-	<!-- wp:navigation {"__unstableLocation":"primary","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"typography":{"textTransform":"uppercase"}}} /-->
-	</div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-
-	<!-- wp:spacer -->
-	<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-
-	<!-- wp:columns {"align":"wide"} -->
-	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"90%"} -->
-	<div class="wp-block-column" style="flex-basis:90%">
-	<!-- wp:post-title /-->
-
-	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"top":"var(--wp--style--block-gap,1em)","bottom":"var(--wp--style--block-gap,1em)"}}}} -->
-	<div class="wp-block-group post-meta" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-	</div>
-	<!-- /wp:group -->
-
-	</div>
-	<!-- /wp:column -->
-
-	<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:spacer -->
-	<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer --></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns --></div></div>
-	<!-- /wp:cover -->',
+					<!-- wp:paragraph {"textColor":"foreground"} -->
+					<p class="has-foreground-color has-text-color">' . esc_html__( 'A film about finding what you’re looking for.', 'videomaker' ) . '</p>
+					<!-- /wp:paragraph --></div></div>
+					<!-- /wp:cover -->',
 );
