@@ -6,6 +6,7 @@ import inquirer from 'inquirer';
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
+const sandboxThemesRootFolder = '/home/wpdev/public_html/wp-content/themes/';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
 const premiumThemes = [
@@ -24,7 +25,7 @@ const premiumThemes = [
 		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox(args?.[1]);
 		case "push-changes-to-sandbox": return pushChangesToSandbox(args?.[1]);
-		case "version-bump-themes": return versionBumpThemes();
+		case "version-bump-themes": return versionBumpThemes(args?.[1]);
 		case "land-diff-git": return landChangesGit(args?.[1], args?.[2]);
 		case "land-diff-svn": return landChangesSvn(args?.[1], args?.[2]);
 		case "deploy-preview": return deployPreview(args?.[1]);
@@ -42,7 +43,7 @@ function showHelp(){
 /*
  Determine what changes would be deployed
 */
-async function deployPreview( sandboxThemesFolder ) {
+async function deployPreview( repo ) {
 	console.clear();
 	console.log('To ensure accuracy clean your sandbox before previewing. (It is not automatically done).');
 	console.log('npm run sandbox:clean:git OR npm run sandbox:clean:svn')
@@ -52,7 +53,7 @@ async function deployPreview( sandboxThemesFolder ) {
 		console.log(`\n${message}\n\n`);
 	}
 
-	let hash = await getLastDeployedHash( sandboxThemesFolder );
+	let hash = await getLastDeployedHash( repo );
 	console.log(`Last deployed hash: ${hash}`);
 
 	let changedThemes = await getChangedThemes(hash);
@@ -99,38 +100,38 @@ async function pushButtonDeploy(repoType) {
 	}
 
 	try {
-		await deployThemesByFolder( sandboxPublicThemesFolder );
-		await deployThemesByFolder( sandboxPremiumThemesFolder );
+		await deployThemesByRepo( 'pub' );
+		await deployThemesByRepo( 'premium' );
 	}
 	catch (err) {
 		console.log("ERROR with deply script: ", err);
 	}
 }
 
-async function deployThemesByFolder( sandboxThemesFolder ) {
+async function deployThemesByRepo( repo ) {
 	if (repoType === 'git' ) {
-		await cleanSandboxGit( sandboxThemesFolder );
+		await cleanSandboxGit( repo );
 	}
 	else {
-		await cleanSandboxSvn( sandboxThemesFolder );
+		await cleanSandboxSvn( repo );
 	}
 
-	let hash = await getLastDeployedHash( sandboxThemesFolder );
+	let hash = await getLastDeployedHash( repo );
 	let diffUrl;
 
-	await versionBumpThemes( sandboxThemesFolder );
+	await versionBumpThemes( repo );
 
 	let changedThemes = await getChangedThemes(hash);
 
-	await pushChangesToSandbox( sandboxThemesFolder );
+	await pushChangesToSandbox( repo );
 
-	await updateLastDeployedHash( sandboxThemesFolder );
+	await updateLastDeployedHash( repo );
 
 	if (repoType === 'git' ) {
-		diffUrl = await createGitPhabricatorDiff(hash, sandboxThemesFolder);
+		diffUrl = await createGitPhabricatorDiff(hash, repo);
 	}
 	else {
-		diffUrl = await createSvnPhabricatorDiff(hash, sandboxThemesFolder);
+		diffUrl = await createSvnPhabricatorDiff(hash, repo);
 	}
 	let diffId = diffUrl.split('a8c.com/')[1];
 
@@ -140,7 +141,7 @@ async function deployThemesByFolder( sandboxThemesFolder ) {
 	await tagDeployment({
 		hash: hash,
 		diffId: diffId,
-		sandboxThemesFolder: sandboxThemesFolder,
+		repo: repo,
 	});
 
 	console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the diff is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes.join(' ')}\n\n\n`);
@@ -158,10 +159,10 @@ async function deployThemesByFolder( sandboxThemesFolder ) {
 	}
 
 	if (repoType === 'git' ) {
-		await landChangesGit(diffId, sandboxThemesFolder);
+		await landChangesGit(diffId, repo);
 	}
 	else {
-		await landChangesSvn(diffId, sandboxThemesFolder);
+		await landChangesSvn(diffId, repo);
 	}
 
 	await deployThemes(changedThemes);
@@ -230,7 +231,8 @@ async function checkForDeployability(){
  Land the changes from the given diff ID.  This is the "production merge".
  This is the git version of that action.
 */
-async function landChangesGit(diffId, sandboxThemesFolder){
+async function landChangesGit(diffId, repo){
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	return await executeOnSandbox(`cd ${sandboxThemesFolder};arc patch ${diffId};arc land;exit;`, true, true);
 }
 
@@ -238,7 +240,8 @@ async function landChangesGit(diffId, sandboxThemesFolder){
  Land the changes from the given diff ID.  This is the "production merge".
  This is the svn version of that action.
 */
-async function landChangesSvn(diffId, sandboxThemesFolder){
+async function landChangesSvn(diffId, repo){
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	return await executeOnSandbox(`
 		cd ${sandboxThemesFolder};
 		svn ci -m ${diffId}
@@ -302,7 +305,8 @@ async function deployThemes( themes ) {
  Provide the hash of the last managed deployment.
  This hash is used to determine all the changes that have happened between that point and the current point.
 */
-async function getLastDeployedHash( sandboxThemesFolder ) {
+async function getLastDeployedHash( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	let result = await executeOnSandbox(`
 		cat ${sandboxThemesFolder}/.pub-git-hash
 	`);
@@ -312,7 +316,8 @@ async function getLastDeployedHash( sandboxThemesFolder ) {
 /*
  Update the 'last deployed hash' on the server with the current hash.
 */
-async function updateLastDeployedHash( sandboxThemesFolder ) {
+async function updateLastDeployedHash( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	let hash = await executeCommand(`git rev-parse HEAD`);
 	await executeOnSandbox(`
 		echo '${hash}' > ${sandboxThemesFolder}/.pub-git-hash
@@ -325,7 +330,8 @@ async function updateLastDeployedHash( sandboxThemesFolder ) {
  If any theme projects have had a version bump also version bump the parent project.
  Commit the change.
 */
-async function versionBumpThemes( sandboxThemesFolder ) {
+async function versionBumpThemes( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	console.log("Version Bumping");
 
 	let themes = await getActionableThemes();
@@ -457,7 +463,8 @@ async function getActionableThemes() {
  checkout origin/develop and ensure it's up-to-date.
  Remove any other changes.
 */
-async function cleanSandboxGit( sandboxThemesFolder ) {
+async function cleanSandboxGit( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	console.log('Cleaning the Themes Sandbox');
 	await executeOnSandbox(`
 		cd ${sandboxThemesFolder};
@@ -497,7 +504,8 @@ async function cleanAllSandboxGit() {
  ensure trunk is up-to-date
  Remove any other changes
 */
-async function cleanSandboxSvn( sandboxThemesFolder ) {
+async function cleanSandboxSvn( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	console.log('Cleaning the theme sandbox');
 	await executeOnSandbox(`
 		cd ${sandboxThemesFolder};
@@ -528,7 +536,8 @@ async function cleanAllSandboxSvn() {
 /*
   Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
 */
-function pushToSandbox( sandboxThemesFolder ) {
+function pushToSandbox( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	executeCommand(`
 		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./ wpcom-sandbox:${sandboxThemesFolder}/
 	`);
@@ -538,8 +547,8 @@ function pushToSandbox( sandboxThemesFolder ) {
   Push only (and every) change since the point-of-diversion from /trunk
   Remove files from the sandbox that have been removed since the last deployed hash
 */
-async function pushChangesToSandbox( sandboxThemesFolder ) {
-
+async function pushChangesToSandbox( repo ) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	console.log("Pushing Changes to Sandbox.");
 
 	let hash = await getLastDeployedHash( sandboxThemesFolder );
@@ -632,8 +641,8 @@ Subscribers:
  Open the phabricator diff in your browser.
  Provide the URL of the phabricator diff.
 */
-async function createGitPhabricatorDiff(hash, sandboxThemesFolder) {
-
+async function createGitPhabricatorDiff(hash, repo) {
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	console.log('creating Phabricator Diff');
 
 	let commitMessage = await buildPhabricatorCommitMessageSince(hash);
@@ -663,9 +672,9 @@ async function createGitPhabricatorDiff(hash, sandboxThemesFolder) {
  Open the phabricator diff in your browser.
  Provide the URL of the phabricator diff.
 */
-async function createSvnPhabricatorDiff(hash, sandboxThemesFolder) {
+async function createSvnPhabricatorDiff(hash, repo) {
 	console.log('creating Phabricator Diff');
-
+	const sandboxThemesFolder = getThemesFolderFromRepo( repo );
 	const commitTempFileLocation = '/tmp/theme-deploy-comment.txt';
 	const commitMessage = await buildPhabricatorCommitMessageSince(hash);
 
@@ -794,4 +803,8 @@ async function executeCommand(command, logResponse) {
 
 function getRepo( themeSlug ) {
 	return premiumThemes.indexOf( themeSlug ) > -1 ? 'premium' : 'pub';
+}
+
+function getThemesFolderFromRepo( repo ) {
+	return sandboxThemesRootFolder + repo;
 }
