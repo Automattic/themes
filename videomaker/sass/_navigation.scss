@@ -5,12 +5,17 @@
 
 .wp-block-navigation.is-style-blockbase-navigation-improved-responsive {
 	&.is-responsive .is-menu-open.wp-block-navigation__responsive-container {
+		font-size: var(--wp--preset--font-size--large);
+		font-weight: 200;
+
 		.wp-block-navigation__container {
 			row-gap: 1rem;
 		}
 
 		.wp-block-navigation__responsive-container-content { // Needed for specificity to beat the navigation block CSS
 			align-items: flex-start;
+			margin: 0 auto;
+			max-width: 800px; // This should match the content width
 
 			.wp-block-navigation-item {
 				row-gap: 0rem;
@@ -25,10 +30,17 @@
 			}
 		}
 		.wp-block-navigation__responsive-container-content {
-			justify-content: space-between;
+			flex-wrap: nowrap;
+			justify-content: center;
 		}
 		ul.wp-block-social-links {
 			padding-bottom: calc( var(--wp--custom--gap--vertical) * 2 );
+		}
+
+		.wp-block-navigation__responsive-container-content .has-child { // Needed for specificity to beat the navigation block CSS
+			.wp-block-navigation__submenu-container {
+				font-size: var(--wp--preset--font-size--medium);
+			}
 		}
 	}
 }
