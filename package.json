@@ -44,7 +44,9 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged && node pre-commit-hook.js"
+			"pre-commit": "lint-staged && node pre-commit-hook.js",
+			"prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+			"commit-msg": "npx --no -- commitlint --edit '$1'"
 		}
 	},
 	"lint-staged": {
