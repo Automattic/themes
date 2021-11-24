@@ -12,10 +12,10 @@ You can use `npm start` and it will be in 'watch mode' recompiling the .scss fil
 
 Use the [Create Blockbase Theme](https://github.com/Automattic/create-blockbase-theme) utility.
 
-Install Blockbase (or any Blockbase child)
-Use the Customizer and/or Full Site Editor to tweak the design to your liking.
-Install the Create Blockbase Theme utility 
-Use it to export a new child theme of Blockbase.
+1. Install Blockbase (or any Blockbase child)
+2. Use the Customizer and/or Full Site Editor to tweak the design to your liking.
+3. Install the Create Blockbase Theme utility 
+4. Use it to export a new child theme of Blockbase.
 
 ## Creating a Blockbase child theme manually
 
