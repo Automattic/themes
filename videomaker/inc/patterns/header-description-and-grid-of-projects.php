@@ -13,8 +13,6 @@ return array(
 	<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"30%"} -->
 	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:30%"><!-- wp:site-title /-->
 
-		<!-- wp:site-title /-->
-
 		<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"300"}}} -->
 		<h3 style="font-weight:300">' . esc_html__( 'Jonah is Creative Director of Hano, a production studio that specializes in combining storytelling with visual design.', 'videomaker' ) . '</h3>
 		<!-- /wp:heading -->
