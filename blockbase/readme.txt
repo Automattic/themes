@@ -18,6 +18,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 2.0.0 =
+* BREAKING CHANGE: Simplify the approach to font customization #4980
+
 = 1.4.1 =
 * Remove child-theme.json #4861
 
