@@ -24,7 +24,9 @@
 		"deploy:git": "node ./theme-utils.mjs push-button-deploy-git",
 		"deploy:svn": "node ./theme-utils.mjs push-button-deploy-svn",
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
-		"build:zip": "node ./theme-utils.mjs build-com-zip"
+		"build:zip": "node ./theme-utils.mjs build-com-zip",
+		"commit": "npx cz",
+		"update-packages": "npx lerna version --conventional-commits --no-commit-hooks --yes"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^15.0.0",
