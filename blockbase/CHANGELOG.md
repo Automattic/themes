@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/Automattic/themes/compare/blockbase@2.0.3...blockbase@2.1.0) (2021-11-25)
+
+
+### Features
+
+* **try:** initial attempt at updating style.css ([58a2ec9](https://github.com/Automattic/themes/commit/58a2ec94a9a4eaeb3996f8c3e9f4d4d2bfe1fbcc))
+
+
+
+
+
 ## [2.0.3](https://github.com/Automattic/themes/compare/blockbase@2.0.2...blockbase@2.0.3) (2021-11-25)
 
 **Note:** Version bump only for package blockbase
