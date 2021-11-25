@@ -47,8 +47,6 @@ async function versionBumpStyleCss() {
 	let styleChildThemeCss = fs.existsSync('./style-child-theme.css') ? './style-child-theme.css' : '';
 	let files = [styleCss, styleChildThemeCss].filter(Boolean);
 
-	console.log({files})
-
 	await replace({
 		files,
 		from: /(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs,
