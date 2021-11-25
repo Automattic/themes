@@ -2,6 +2,7 @@ import { spawn } from 'child_process';
 import fs from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
+import replace from 'replace-in-file';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -36,14 +37,18 @@ function showHelp(){
 	console.log('Help info can go here');
 }
 
-async function lernaUpdateStyleCss(theme, newVersion) {
-	console.log('Update style.css versions');
-	if (!theme || !newVersion) {
-		return;
-	}
+/*
+ Update version number in style.css for each theme
+ after version bump from conventional commits (via Lerna)
+*/
+async function lernaUpdateStyleCss() {
+	let newVersion = await executeCommand(`node -p "require('./package.json').version"`);
 
-	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
-	await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${newVersion}'"/ge' ${styleCss}`);
+	await replace({
+		files: './style.css',
+		from: /(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs,
+		to: ` ${newVersion}`,
+	});
 }
 
 /*
