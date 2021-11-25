@@ -26,6 +26,7 @@ const isWin = process.platform === 'win32';
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
 		case "build-com-zip": return buildComZip([args?.[1]]);
+		case "lerna-update-stylecss": return lernaUpdateStyleCss();
 	}
 	return showHelp();
 })();
@@ -33,6 +34,16 @@ const isWin = process.platform === 'win32';
 function showHelp(){
 	// TODO: make this helpful
 	console.log('Help info can go here');
+}
+
+async function lernaUpdateStyleCss(theme, newVersion) {
+	console.log('Update style.css versions');
+	if (!theme || !newVersion) {
+		return;
+	}
+
+	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+	await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${newVersion}'"/ge' ${styleCss}`);
 }
 
 /*

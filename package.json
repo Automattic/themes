@@ -26,7 +26,9 @@
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
 		"build:zip": "node ./theme-utils.mjs build-com-zip",
 		"commit": "npx cz",
-		"update-themes": "npx lerna version --conventional-commits --no-commit-hooks --yes"
+		"prep-updates": "npx lerna version --conventional-commits --no-commit-hooks --no-push --yes",
+		"update-stylecss": "npx lerna run stylecss-version --since",
+		"update-themes": "npm run prep-updates && npm run prep-css"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^15.0.0",
