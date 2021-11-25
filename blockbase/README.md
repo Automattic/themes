@@ -1,20 +1,25 @@
 # About Blockbase
+
 The purpose of Blockbase is to provide a "ponyfill" that allows for 100% "configuration expression" of design.  Any aspect of configurable design that Gutenberg does not yet take into account is expressed in theme.json 'custom' properties.
 
 The goal is for the ponyfill styling to reflect what Gutenberg will style, from a given configuration, once that work is complete.
 
+Follow Blockbase development over at [https://blockbasetheme.com/blog/](https://blockbasetheme.com/blog/)
+
 ## Building
+
 Blockbase uses SCSS to compile the CSS used to ponyfill Gutenberg.  Building Blockbase isn't necessary to use it - either as a theme or as a parent theme - but making changes does require the .scss file to be recompiled.
 The easist way to do so is to use `node` to install and run the necessary dependencies via `npm install`. 
 Then after making changes to the *.scss files run `npm run build` to compile.
 You can use `npm start` and it will be in 'watch mode' recompiling the .scss files any time any changes are made.
+
 ## Creating a Blockbase child theme the easy way
 
-Use the [Create Blockbase Theme](https://github.com/Automattic/create-blockbase-theme) utility.
+Use the [Create Blockbase Theme](https://github.com/Automattic/create-blockbase-theme) plugin.
 
 Install Blockbase (or any Blockbase child)
 Use the Customizer and/or Full Site Editor to tweak the design to your liking.
-Install the Create Blockbase Theme utility 
+Install the Create Blockbase Theme plugin 
 Use it to export a new child theme of Blockbase.
 
 ## Creating a Blockbase child theme manually
@@ -61,9 +66,11 @@ The `theme.json` file defines the look and feel of your theme; colors, fonts, sp
 Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. Blockbase uses node to compile SCSS files.  You may want your child theme to take advantage of the same utilities, but child themes do not need to be built with using any build tools.
 
 ## `functions.php` and `theme.css`
+
 Blockbase will load a theme.css file for each of its children. This file lives at childtheme/assets/theme.css. You may wish to add a functions.php file to add block styles or patterns to your theme, but it's not necessary.
 
 Together these files should give you a strong foundation for a Blockbase child theme.
 
 ## Keeping up to date
+
 Blockbase child themes are in a strong position to keep in step with Full Site Editing changes, while being usable in production now. However they do come with a maintenance burden. As Full Site Editing matures, Blockbase will continue to change with it; Blockbase child themes will need to be kept up to date with these developments so that they can take advantage of the new features.
