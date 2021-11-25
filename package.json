@@ -26,7 +26,7 @@
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
 		"build:zip": "node ./theme-utils.mjs build-com-zip",
 		"commit": "npx cz",
-		"update-versions": "npx lerna version --conventional-commits --no-commit-hooks --no-push --yes --no-git-tag-version",
+		"update-versions": "npx lerna version --conventional-commits --no-commit-hooks --yes --no-git-tag-version",
 		"update-stylecss": "npx lerna exec --since -- node \\$LERNA_ROOT_PATH/theme-utils.mjs version-bump-stylecss",
 		"update-themes": "npm run update-versions && npm run update-stylecss"
 	},
