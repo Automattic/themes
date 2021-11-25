@@ -26,9 +26,9 @@
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
 		"build:zip": "node ./theme-utils.mjs build-com-zip",
 		"commit": "npx cz",
-		"prep-updates": "npx lerna version --conventional-commits --no-commit-hooks --no-push --yes --no-git-tag-version",
-		"update-stylecss": "npx lerna run stylecss-version --since",
-		"update-themes": "npm run prep-updates && npm run prep-css"
+		"update-versions": "npx lerna version --conventional-commits --no-commit-hooks --no-push --yes --no-git-tag-version",
+		"update-stylecss": "npx lerna exec --since -- node \\$LERNA_ROOT_PATH/theme-utils.mjs lerna-update-stylecss",
+		"update-themes": "npm run update-versions && npm run update-stylecss"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^15.0.0",
