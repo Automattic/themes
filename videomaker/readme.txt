@@ -36,9 +36,24 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Videomaker uses the following resources created by XXX:
+Videomaker uses the following resources:
 
+Videos
 License: CC0
-Source: ???
+Source: https://www.pexels.com/video/video-of-school-of-fish-854012/
+		https://www.pexels.com/video/watercrafts-docked-853917/
+		https://www.pexels.com/video/boats-floating-at-the-sea-853856/
+		https://www.pexels.com/video/man-working-during-dawn-854069/
+		https://www.pexels.com/video/mixing-cocktail-drinks-854128/
+		https://www.pexels.com/video/black-and-white-video-of-busy-street-854141/
 
-Used in block patterns.
+Images
+License: CC0
+Source: https://pxhere.com/en/photo/559804
+		https://stocksnap.io/photo/people-hands-91UQMKOMCW
+		https://stocksnap.io/photo/camera-lens-0RG77S4ZNE
+		https://stocksnap.io/photo/people-man-NSV3ZCAJXT
+		https://stocksnap.io/photo/people-man-6O7JXC5DC5
+		https://stocksnap.io/photo/camera-gopro-IOO3SM5ZEH
+
+Included in theme screenshot and in block patterns.
