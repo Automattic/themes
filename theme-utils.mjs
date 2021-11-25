@@ -27,7 +27,7 @@ const isWin = process.platform === 'win32';
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
 		case "build-com-zip": return buildComZip([args?.[1]]);
-		case "lerna-update-stylecss": return lernaUpdateStyleCss();
+		case "version-bump-stylecss": return versionBumpStyleCss();
 	}
 	return showHelp();
 })();
@@ -40,8 +40,9 @@ function showHelp(){
 /*
  Update version number in style.css and style-child-theme.css for each theme
  after version bump from conventional commits (via Lerna)
+ Used by Lerna via update-stylecss command
 */
-async function lernaUpdateStyleCss() {
+async function versionBumpStyleCss() {
 	let newVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let styleCss = fs.existsSync('./style.css') ? './style.css' : '';
 	let styleChildThemeCss = fs.existsSync('./style-child-theme.css') ? './style-child-theme.css' : '';
