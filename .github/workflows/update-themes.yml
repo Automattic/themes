@@ -3,6 +3,8 @@ name: "Update Themes"
 on:
   pull_request_target:
     types: [ closed ]
+    branches:
+      - trunk
 
 jobs:
   main:
@@ -26,5 +28,5 @@ jobs:
       - run: npm ci
       - run: npm run update-themes
       - run: git add . 
-      - run: git commit -a -m "chore: auto-update package info"
-      #- run: git push
+      - run: git commit -m "chore:"" auto-update package info"
+      - run: git push
