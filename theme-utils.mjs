@@ -38,14 +38,19 @@ function showHelp(){
 }
 
 /*
- Update version number in style.css for each theme
+ Update version number in style.css and style-child-theme.css for each theme
  after version bump from conventional commits (via Lerna)
 */
 async function lernaUpdateStyleCss() {
 	let newVersion = await executeCommand(`node -p "require('./package.json').version"`);
+	let styleCss = fs.existsSync('./style.css') ? './style.css' : '';
+	let styleChildThemeCss = fs.existsSync('./style-child-theme.css') ? './style-child-theme.css' : '';
+	let files = [styleCss, styleChildThemeCss].filter(Boolean);
+
+	console.log({files})
 
 	await replace({
-		files: './style.css',
+		files,
 		from: /(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs,
 		to: ` ${newVersion}`,
 	});
