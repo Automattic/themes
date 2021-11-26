@@ -15,6 +15,7 @@ Blockbase is a simple theme that supports full-site editing. It comes with a set
 == About Blockbase ==
 
 For more information see our README.md file.
+Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
