@@ -213,9 +213,9 @@ async function buildComZips(themes) {
 */
 async function checkForDeployability(){
 	let branchName = await executeCommand('git symbolic-ref --short HEAD');
-	if(branchName !== 'trunk' ) {
-		return 'Only the /trunk branch can be deployed.';
-	}
+	//if(branchName !== 'trunk' ) {
+	//	return 'Only the /trunk branch can be deployed.';
+	//}
 
 	await executeCommand('git remote update', true);
 	let localMasterHash = await executeCommand('git rev-parse trunk')
