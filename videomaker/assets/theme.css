@@ -79,7 +79,7 @@
 	background-color: var(--wp--custom--button--color--text);
 }
 
-a:active {
+a:not(.wp-block-query-pagination-next):active {
 	background: var(--wp--custom--color--foreground) !important;
 	color: var(--wp--custom--color--background) !important;
 }
@@ -177,10 +177,13 @@ footer > .wp-block-group .footer-credit {
 	flex-grow: 1;
 }
 
-.wp-block-post-navigation-link a {
+.wp-block-post-navigation-link:not(:empty) {
 	border-top: 1px solid var(--wp--custom--color--primary);
-	display: block;
-	padding-top: 10px;
+}
+
+.wp-block-post-navigation-link a {
+	display: inline-block;
+	margin-top: 10px;
 }
 
 .post-navigation-link-next {
