@@ -12,21 +12,27 @@ jobs:
     name: Update changelogs and versions
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
           # pulls all commits (needed for lerna to correctly version)
           fetch-depth: "0"
           all_commits: true
           all_tags: true
-
-      - uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: 12
-      
-      - run: git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - run: git config --global user.name "github-actions[bot]"
-      - run: npm ci
-      - run: npm run update-themes
-      - run: git add . 
-      - run: git commit -m "chore:"" auto-update theme info"
-      - run: git push
+      - name: Git Identity
+        run: |
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions[bot]'
+      - name: Update Themes
+        run: |
+          npm ci
+          npm run update-themes
+      - name: Commit Changes
+        run: |
+          git add . 
+          git commit -m "chore:"" auto-update theme info"
+          git push
