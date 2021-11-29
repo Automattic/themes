@@ -204,13 +204,6 @@ body.admin-bar .wp-site-blocks {
 	min-height: calc( 100vh - var(--wpadmin-bar--height));
 }
 
-p.wp-block.wp-block-paragraph,
-*[class^="wp-container"] > * + p,
-*[class^="wp-container"] > p + *,
-p {
-	margin-top: 1em;
-}
-
 .image-no-margin {
 	margin: 0;
 }
@@ -676,6 +669,13 @@ p.has-drop-cap:not(:focus):first-letter {
 	display: inline-block;
 	font-size: var(--wp--preset--font-size--small);
 	margin-bottom: var(--wp--custom--gap--baseline);
+}
+
+.wp-block-post-content p.wp-block.wp-block-paragraph,
+.wp-block-post-content *[class^="wp-container"] > * + p,
+.wp-block-post-content *[class^="wp-container"] > p + *,
+.wp-block-post-content p {
+	margin-top: 1em;
 }
 
 .wp-block-post-template {
