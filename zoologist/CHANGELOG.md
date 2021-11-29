@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/Automattic/themes/compare/zoologist@1.0.18...zoologist@2.0.0) (2021-11-29)
+
+
+### Features
+
+* add readme to zoologist ([e0f53c7](https://github.com/Automattic/themes/commit/e0f53c7befbcc5df4ea66536d56f187827c006a5))
+
+
+### BREAKING CHANGES
+
+* This isn't really a breaking change.
+
+
+
+
+
 ## 1.0.18 (2021-11-24)
 
 

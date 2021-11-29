@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/Automattic/themes/compare/blockbase@2.0.3...blockbase@2.2.0) (2021-11-29)
+
+
+### Features
+
+* refactor update-stylecss & update-versions ([cc19d95](https://github.com/Automattic/themes/commit/cc19d95a4f3f2fa5511a7d4c049da94af01f5b30))
+* **try:** initial attempt at updating style.css ([58a2ec9](https://github.com/Automattic/themes/commit/58a2ec94a9a4eaeb3996f8c3e9f4d4d2bfe1fbcc))
+
+
+
+
+
 # [2.1.0](https://github.com/Automattic/themes/compare/blockbase@2.0.3...blockbase@2.1.0) (2021-11-25)
 
 
