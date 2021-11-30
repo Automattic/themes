@@ -30,9 +30,10 @@ jobs:
       - name: Update Themes
         run: |
           npm ci
-          npm run update-themes
-      - name: Commit Changes
+          npm run update-versions
+          npm run update-stylecss
+      - name: Commit style.css Changes
         run: |
           git add . 
-          git commit -m "chore:"" auto-update theme info"
+          git commit -m "chore:"" auto-update style.css files"
           git push
