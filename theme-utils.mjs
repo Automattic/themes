@@ -2,6 +2,7 @@ import { spawn } from 'child_process';
 import fs from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
+import replace from 'replace-in-file';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -20,12 +21,12 @@ const isWin = process.platform === 'win32';
 		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
-		case "version-bump-themes": return versionBumpThemes();
 		case "land-diff-git": return landChangesGit(args?.[1]);
 		case "land-diff-svn": return landChangesSvn(args?.[1]);
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
 		case "build-com-zip": return buildComZip([args?.[1]]);
+		case "version-bump-stylecss": return versionBumpStyleCss();
 	}
 	return showHelp();
 })();
@@ -33,6 +34,25 @@ const isWin = process.platform === 'win32';
 function showHelp(){
 	// TODO: make this helpful
 	console.log('Help info can go here');
+}
+
+/*
+ Update version number in style.css and style-child-theme.css for each theme
+ after version bump from conventional commits (via Lerna)
+ Used by Lerna via update-stylecss command
+*/
+async function versionBumpStyleCss() {
+	let packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+	let newVersion = packageJson.version;
+	let styleCss = fs.existsSync('./style.css') ? './style.css' : '';
+	let styleChildThemeCss = fs.existsSync('./style-child-theme.css') ? './style-child-theme.css' : '';
+	let files = [styleCss, styleChildThemeCss].filter(Boolean);
+
+	await replace({
+		files,
+		from: /(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs,
+		to: ` ${newVersion}`,
+	});
 }
 
 /*
@@ -105,8 +125,6 @@ async function pushButtonDeploy(repoType) {
 		let hash = await getLastDeployedHash();
 		let diffUrl;
 
-		await versionBumpThemes();
-
 		let changedThemes = await getChangedThemes(hash);
 
 		await pushChangesToSandbox();
@@ -120,9 +138,6 @@ async function pushButtonDeploy(repoType) {
 			diffUrl = await createSvnPhabricatorDiff(hash);
 		}
 		let diffId = diffUrl.split('a8c.com/')[1];
-
-		//push changes (from version bump)
-		await executeCommand('git push');
 
 		await tagDeployment({
 			hash: hash,
@@ -307,49 +322,6 @@ async function updateLastDeployedHash() {
 	`);
 }
 
-/*
- Version bump (increment version patch) any theme project that has had changes since the last deployment.
- If a theme's version has already been changed since that last deployment then do not version bump it.
- If any theme projects have had a version bump also version bump the parent project.
- Commit the change.
-*/
-async function versionBumpThemes() {
-	console.log("Version Bumping");
-
-	let themes = await getActionableThemes();
-	let hash = await getLastDeployedHash();
-	let versionBumpCount = 0;
-
-	for (let theme of themes) {
-		let hasChanges = await checkThemeForChanges(theme, hash);
-		if( ! hasChanges){
-			// console.log(`${theme} has no changes`);
-			continue;
-		}
-
-		versionBumpCount++;
-		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
-		if( hasVersionBump ){
-			continue;
-		}
-
-		await versionBumpTheme(theme);
-	}
-
-	//version bump the root project if there were changes to any of the themes
-	let rootHasVersionBump = await checkThemeForVersionBump('.', hash);
-	if ( versionBumpCount > 0 && ! rootHasVersionBump ) {
-		await executeCommand(`npm version patch --no-git-tag-version`);
-	}
-
-	if (versionBumpCount > 0) {
-		console.log('commiting version-bump');
-		await executeCommand(`
-			git commit -a -m "Version Bump";
-		`, true);
-	}
-}
-
 function getThemeMetadata(styleCss, attribute) {
 	if ( !styleCss || !attribute ) {
 		return null;
@@ -364,65 +336,6 @@ function getThemeMetadata(styleCss, attribute) {
 			return styleCss
 				.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
 	}
-}
-
-
-/*
- Version Bump a Theme.
- Used by versionBumpThemes to do the work of version bumping.
- First increment the patch version in style.css
- Then update any of these files with the new version: [package.json, style.scss, style-child-theme.scss]
-*/
-async function versionBumpTheme(theme){
-
-	console.log(`${theme} needs a version bump`);
-
-	await executeCommand(`perl -pi -e 's/Version: ((\\d+\\.)*)(\\d+)(.*)$/"Version: ".$1.($3+1).$4/ge' ${theme}/style.css`, true);
-
-	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
-	let currentVersion = getThemeMetadata(styleCss, 'Version');
-
-	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 2`);
-	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
-
-	for ( let file of filesToUpdate ) {
-		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
-		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
-	}
-}
-
-/*
- Determine if a theme has had a version bump since a given hash.
- Used by versionBumpThemes
- Compares the value of 'version' in style.css between the hash and current value
-*/
-async function checkThemeForVersionBump(theme, hash){
-	return executeCommand(`
-		git show ${hash}:${theme}/style.css 2>/dev/null
-	`)
-	.catch( ( error ) => {
-		//This is a new theme, no need to bump versions so we'll just say we've already done it
-		return true;
-	} )
-	.then( ( previousStyleString ) => {
-		if( previousStyleString === true) {
-			return previousStyleString;
-		}
-		let previousVersion = getThemeMetadata(previousStyleString, 'Version');
-		let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
-		let currentVersion = getThemeMetadata(styleCss, 'Version');
-		return previousVersion != currentVersion;
-	});
-}
-
-/*
- Determine if a theme has had changes since a given hash.
- Used by versionBumpThemes
-*/
-async function checkThemeForChanges(theme, hash){
-	let uncomittedChanges = await executeCommand(`git diff-index --name-only HEAD -- ${theme}`);
-	let comittedChanges = await executeCommand(`git diff --name-only ${hash} HEAD -- ${theme}`);
-	return uncomittedChanges != '' || comittedChanges != '';
 }
 
 /*

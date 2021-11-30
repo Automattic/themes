@@ -24,6 +24,10 @@ Found a bug you can fix? Fantastic! Patches are always welcome. Here are a coupl
 
 By contributing code to our free themes, you grant its use under the [GNU General Public License v2 (or later)](LICENSE).
 
+### Commit Format
+
+We use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) to automatically generate our themes' changelogs and version numbers. Please follow the conventional commit format when commiting code, or use the `npm run commit` command when commiting changes.
+
 ## Testing pull requests
 
 ### Using GitHub
