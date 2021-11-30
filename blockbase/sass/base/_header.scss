@@ -1,12 +1,12 @@
 .wp-site-blocks .site-header {
-	justify-content: start;
 	overflow: inherit;
-	padding-top: var(--wp--custom--gap--vertical);
 
-	.wp-block-navigation {
-		flex-grow: 1;
-		margin-top: 0;
+	.site-brand {
+		@include break-small-only() {
+			display: contents;
+		}
 	}
+
 	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate)
 	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY
 	@include break-small-only() {
@@ -27,16 +27,7 @@
 		}
 	}
 
-	.wp-block-site-tagline {
-		@include break-small-only() {
-			flex-basis: 100%;
-			order: 10;
-		}
-	}
-
 	.wp-block-navigation__responsive-container-content {
-		// Needed until https://github.com/WordPress/gutenberg/issues/35549 is fixed.
-		display: flex;
 		gap: var( --wp--style--block-gap, 2em );
 	}
 }
