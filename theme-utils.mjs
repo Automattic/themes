@@ -42,7 +42,8 @@ function showHelp(){
  Used by Lerna via update-stylecss command
 */
 async function versionBumpStyleCss() {
-	let newVersion = await executeCommand(`node -p "require('./package.json').version"`);
+	let packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+	let newVersion = packageJson.version;
 	let styleCss = fs.existsSync('./style.css') ? './style.css' : '';
 	let styleChildThemeCss = fs.existsSync('./style-child-theme.css') ? './style-child-theme.css' : '';
 	let files = [styleCss, styleChildThemeCss].filter(Boolean);
