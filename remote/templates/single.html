@@ -11,7 +11,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":""} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}},"typography":{"fontSize":"clamp(3rem, 6vw, 4rem)"}}} /--></div>
+<div class="wp-block-column is-vertically-aligned-center"><!-- wp:post-title {"isLink":false,"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}},"typography":{"fontSize":"clamp(3rem, 6vw, 4rem)"}}} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
@@ -24,14 +24,21 @@
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:10%"></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center","width":"80%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:80%"><!-- wp:post-content {"layout":{"inherit":false}} /-->
+<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
+<!-- wp:post-content {"layout":{"inherit":false}} /-->
 
 <!-- wp:spacer {"height":60} -->
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:template-part {"slug":"post-meta-icons","layout":{"inherit":false}} /-->
+
+
+<!-- wp:group {"layout":{"type":"flex"},"className":"post-meta"} --><div class="wp-block-group"><!-- wp:paragraph --><p>By:</p><!-- /wp:paragraph --><!-- wp:post-author {"showAvatar":false,"showBio":false} /--></div><!-- /wp:group -->
+<!-- wp:group {"layout":{"type":"flex"},"className":"post-meta"} --><div class="wp-block-group"><!-- wp:paragraph --><p>Posted on:</p><!-- /wp:paragraph --> <!-- wp:post-date {"isLink":true} /--></div><!-- /wp:group -->
+<!-- wp:group {"layout":{"type":"flex"},"className":"post-meta"} --><div class="wp-block-group"><!-- wp:paragraph --><p>Posted in:</p><!-- /wp:paragraph --><!-- wp:post-terms {"term": "category"} /--></div><!-- /wp:group -->
+<!-- wp:group {"layout":{"type":"flex"},"className":"post-meta"} --><div class="wp-block-group"><!-- wp:paragraph --><p>Tags:</p><!-- /wp:paragraph --><!-- wp:post-terms {"term": "post_tag"} /--></div><!-- /wp:group -->
+
 
 <!-- wp:spacer {"height":60} -->
 <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
