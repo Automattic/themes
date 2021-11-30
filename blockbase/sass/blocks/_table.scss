@@ -1,6 +1,7 @@
 .wp-block-table.is-style-stripes,
 .wp-block-table {
 	figcaption { // See https://github.com/WordPress/gutenberg/issues/34650
+		color: var(--wp--preset--color--primary);
 		font-size: var(--wp--custom--table--figcaption--typography--font-size);
 		text-align: center;
 	}
@@ -12,4 +13,12 @@
 	}
 
 	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes {
+	tbody {
+		tr:nth-child(odd) {
+			background-color: var(--wp--preset--color--tertiary);
+		}
+	}
 }
