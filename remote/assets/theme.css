@@ -17,3 +17,11 @@
 .wp-block-group.post-meta p {
 	word-break: normal;
 }
+
+@media (min-width: 600px) and (max-width: 781px) {
+	/* We need to duplicate selectors to make this stronger than that Gutenberg CSS*/
+	.wp-block-columns.remote-layout.remote-layout > .wp-block-column.wp-block-column {
+		flex-basis: 100% !important;
+		margin-left: 0;
+	}
+}
