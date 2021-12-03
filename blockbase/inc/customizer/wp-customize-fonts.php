@@ -319,8 +319,8 @@ class GlobalStylesFontsCustomizer {
 			return;
 		}
 
-		if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
-			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
+		if ( array_key_exists( 'custom', $merged_json['settings']['typography']['fontFamilies'] ) ) {
+			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['custom'];
 			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
 				return $font_family['slug'] === "body-font";
 			} );

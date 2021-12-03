@@ -73,8 +73,8 @@ class GlobalStylesColorCustomizer {
 
 		$combined_color_palette = $theme_json['settings']['color']['palette']['theme'];
 		$user_color_palette     = null;
-		if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
-			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
+		if ( isset( $theme_json['settings']['color']['palette']['custom'] ) ) {
+			$user_color_palette = $theme_json['settings']['color']['palette']['custom'];
 		}
 
 		// Combine theme settings with user settings.
