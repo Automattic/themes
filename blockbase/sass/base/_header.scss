@@ -1,29 +1,17 @@
 .wp-site-blocks .site-header {
-	overflow: inherit;
 
-	.site-brand {
-		@include break-small-only() {
+	@include break-small-only(){
+		.site-brand {
 			display: contents;
 		}
-	}
-
-	// The blockGap is used HORIZONTALLY when the viewport is LARGE (in which case the value defined in theme.json is appropriate)
-	// It needs to be a different value then when the viewport is SMALL and the gap is used VERTICALLY
-	@include break-small-only() {
-		gap: 2px;
-	}
-	.wp-block-site-logo {
-
-		@include break-small-only(){
+		.wp-block-site-logo {
 			flex-basis: 100%;
 			margin-bottom: calc( 2 * var(--wp--custom--gap--vertical));
 			margin-top: var(--wp--custom--gap--vertical);
 			text-align: center;
 		}
-
-		a > img {
-			height: 64px;
-			width: auto;
+		.site-words-stack-small {
+			display:block;
 		}
 	}
 
