@@ -491,23 +491,6 @@ class GlobalStylesFontsCustomizer {
 			$font_families
 		);
 
-		//If the typeface choices === the default then we remove it instead
-		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
-
-			// These lines need to stay for backwards compatibility.
-			unset( $user_theme_json_post_content->styles->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
-		}
-
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		wp_update_post( $user_theme_json_post );
