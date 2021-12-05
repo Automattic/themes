@@ -437,6 +437,13 @@ class GlobalStylesFontsCustomizer {
 		}
 	}
 
+	function unset_property_if_it_exists( $property ) {
+		if ( isset( $property ) ) {
+			unset( $property );
+		}
+
+	}
+
 	function handle_customize_save_after( $wp_customize ) {
 		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->value();
 		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->value();
@@ -493,19 +500,19 @@ class GlobalStylesFontsCustomizer {
 
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->settings->typography->fontFamilies );
 
 			// These lines need to stay for backwards compatibility.
-			unset( $user_theme_json_post_content->styles->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
 		}
 
 		// Update the theme.json with the new settings.
