@@ -1,32 +1,33 @@
 <?php
 
 /**
- * Add Editor Styles
+ * Sets up theme defaults and registers support for various WordPress features.
  */
 function stewart_support() {
 
-	// Enqueue editor styles.
-	add_editor_style(
-		array(
-			'/assets/theme.css',
-		)
-	);
+	// Add support for block styles.
+	add_theme_support( 'wp-block-styles' );
 
-	// This theme has one menu location.
-	register_nav_menus(
-		array(
-			'primary' => __( 'Primary Navigation', 'stewart' ),
-		)
-	);
+	// Enqueue editor styles.
+	add_editor_style( 'style.css' );
 
 }
 add_action( 'after_setup_theme', 'stewart_support' );
 
 /**
- *
- * Enqueue scripts and styles.
+ * Enqueue styles.
  */
-function stewart_scripts() {
-	wp_enqueue_style( 'stewart-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
+function stewart_styles() {
+
+	// Register theme stylesheet.
+	wp_register_style(
+		'stewart-style',
+		get_stylesheet_directory_uri() . '/style.css',
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
+
+	// Enqueue theme stylesheet.
+	wp_enqueue_style( 'stewart-style' );
 }
-add_action( 'wp_enqueue_scripts', 'stewart_scripts' );
+add_action( 'wp_enqueue_scripts', 'stewart_styles' );
