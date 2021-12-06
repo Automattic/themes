@@ -115,8 +115,8 @@ function blockbase_fonts_url() {
 	}
 
 	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
@@ -181,4 +181,3 @@ require get_template_directory() . '/inc/block-styles.php';
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
-
