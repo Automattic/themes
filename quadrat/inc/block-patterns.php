@@ -23,6 +23,7 @@ if ( ! function_exists( 'quadrat_register_block_patterns' ) ) :
 				'headline-button',
 				'headlines-and-buttons',
 				'query-diamond',
+				'query-episodes',
 				'latest-episodes',
 				'listen-to-the-podcast',
 				'media-text-button',

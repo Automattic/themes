@@ -12,3 +12,36 @@
 	width: 1px;
 	word-wrap: normal !important;
 }
+
+@mixin post-meta-icon {
+	display: flex;
+	flex-wrap: wrap;
+	&:before {
+		align-self: center;
+		content: '';
+		display: inline-block;
+		margin-right: calc(0.5 * var(--wp--custom--gap--baseline) );
+		height: 16px;
+		width: 16px;
+		mask-size: contain;
+		-webkit-mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		background-color: currentColor;
+	}
+}
+
+@mixin post-meta-with-separator( $content ) {
+	&.wp-block-group {
+		gap: 0;
+	}
+
+	> * {
+		&:not(:first-child):before {
+			color: var(--wp--custom--color--foreground);
+			content: $content;
+			margin-left: var(--wp--custom--gap--baseline);
+			margin-right: var(--wp--custom--gap--baseline);
+		}
+	}
+}

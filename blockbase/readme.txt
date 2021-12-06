@@ -14,32 +14,97 @@ Blockbase is a simple theme that supports full-site editing. It comes with a set
 
 == About Blockbase ==
 
-The purpose of Blockbase is to provide a "ponyfill" that allows for 100% "configuration expression" of design.  Any aspect of configurable design that Gutenberg does not yet take into account is expressed in theme.json 'custom' properties.
-
-To use this theme assign it as the parent theme and then copy from this them to the child theme the theme.json file and fill out the details.
-
-The goal is for the ponyfill styling to reflect what Gutenberg will style, from a given configuration, once that work is complete.  But to offer that today, using simpler techniques that Gutenberg will use upon completion.
-
-== Building a Block Child Theme ==
-
-To build a Blockbase child theme follow these instructions:
-
-- Add a [package.json](https://github.com/Automattic/themes/blob/trunk/seedlet-blocks/package.json), [style.css](https://github.com/Automattic/themes/blob/trunk/seedlet-blocks/style.css) and empty index.php files to your theme.
-- Your child theme's theme.json file will be built by combining Blockbase's original theme.json file and your child's `child-theme.json`. That is the file where your configuration values live (you only want the values for variables that are different from the parent there). To generate the combined file, run `npm run build` from inside your theme's folder or run `npm run build:child child-theme-slug` from inside Blockbase's folder.
-- Extend the parent's templates that you want to customize or add new ones where needed following the [template hierarchy](https://themeshaper.com/2020/12/18/getting-started-with-block-themes-templates/).
-- Using `npm run start` will both watch changes inside the `sass` and `assets` folder and changes to the `child-theme.json` file.
-
-== Building a Universal Child Theme ==
-
-A Universal theme is a theme that works in Full Site Editing and in the Customizer. This is a concept that's still being explored so we don't have instructions to provide yet. If you are curious, you can visit [the project](https://github.com/Automattic/themes/tree/trunk/quadrat) where we are developing Quadrat as a Universal Theme.
+For more information see our README.md file.
+Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 2.0.0 =
+* BREAKING CHANGE: Simplify the approach to font customization #4980
+
+= 1.4.1 =
+* Remove child-theme.json #4861
+
+= 1.3.1 =
+* Added dynamic duotone support to the customizer #4740
+* Handle posts without titles #4920
+* Update the stacking of site title and tagline #4928
+
+= 1.2.22 =
+* Add Kerr as a child theme
+
+= 1.2.21 =
+* Refactor Paragraph margin rules for consistent, non block-gap values #4908
+
+= 1.2.20 =
+* Fix fatal error with social navigation (#4895)
+
+= 1.2.19 =
+* Add query title block (#4878)
+
+= 1.2.18 =
+* Add a mixin for post meta (#4897)
+
+= 1.2.17 =
+* Fix form background color contrast (#4824)
+* Search block font size (#4865)
+* Make post meta icons optional (#4891)
+* Update the query pagination block markup (#4805)
+
+= 1.2.16 =
+* Navigation styles (#4876)
+
+= 1.2.15 =
+* Update style.css tags (#4874)
+
+= 1.2.14 =
+* Cleanup errors on theme.json files and rebuild themes (#4857)
+
+= 1.2.13 =
+* Add an index.php file (#4841)
+
+= 1.2.12 =
+* Updated tested version of wordpress for all blockbase themes (#4839)
+* Adjusted menu CSS to match recent changes in the block (#4822)
+* Removed unnecessary top padding for seach block. (#4846)
+* Update the child theme script to rename functions from 'newtheme' to the theme slug (#4840)
+* Removed paragraph margin gap styles. (#4845)
+
+= 1.2.11 =
+* Move site title block settings to theme.json (#4701)
+* Remove CSS for HTML block (#4572)
+
+= 1.2.9 =
+* Allow themes to inherit core gradients unless they define their own (#4818)
+* Add theme.json meta data (#4819)
+* Add social navigation to blockbase themes (#4482)
+
+= 1.2.8 =
+* Fix custom link color. (#4814)
+* Remove unneeded margin rules (#4808)
+* Rebuild all blockbase children (#4804)
+
+= 1.2.7 =
+* Added font color and size styles to form input placeholder (#4667)
+* Fix navigation alignment (#4795)
+
+= 1.2.6 =
+* Update the space around the cookie consent label (#4788)
+* Fix WP_Theme_JSON_Resolver_Gutenberg not found (#4769)
+* Update header spacing (#4773)
+
+= 1.2.1 - 1.2.5 =
+* Bug fixes and child-theme compability improvements
+* Refactored font sizes to better align with Gutenberg defaults
+* Added site logo support
+* Improved palette color changes when changing themes
+* Added theme.json schema
+
 = 1.2.0 =
-* Remove site editor toggle 
+* Remove site editor toggle
 * PHP 404 template
 * Revise font customization approach
-* Bug fixes and child-theme compability improvements 
+* Bug fixes and child-theme compability improvements
 
 = 1.1.0 =
 * Added color customization from the customizer
@@ -49,7 +114,7 @@ A Universal theme is a theme that works in Full Site Editing and in the Customiz
 * Remove unneeded functions to pass theme check
 
 = 1.0 =
-* Initial release 
+* Initial release
 
 == Copyright ==
 
@@ -72,3 +137,7 @@ The Water Fan, by Winslow Homer
 License: CC0
 Source: https://www.artic.edu/artworks/38666/the-water-fan
 Included in theme screenshot.
+
+Colord library
+License: MIT
+Source: https://github.com/omgovich/colord

@@ -13,13 +13,13 @@ return array(
 	<div class="wp-block-query alignwide is-style-quadrat-diamond-posts"><!-- wp:post-template -->
 	<!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
-	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"post-meta"} -->
-	<div class="wp-block-group post-meta"><!-- wp:post-date {"fontSize":"tiny"} /-->
+	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"post-meta","layout":{"type":"flex"}} -->
+	<div class="wp-block-group post-meta"><!-- wp:post-date {"isLink":false,"style":{"typography":{"fontSize":"16px"}}} /-->
 
-	<!-- wp:post-terms {"term":"category","fontSize":"tiny"} /--></div>
+	<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"16px"}}} /--></div>
 	<!-- /wp:group -->
 
-	<!-- wp:post-title {"textAlign":"left","isLink":true,"fontSize":"extra-large"} /-->
+	<!-- wp:post-title {"textAlign":"left","isLink":true,"fontSize":"large"} /-->
 
 	<!-- wp:post-excerpt {"moreText":"Read more","fontSize":"normal"} /--></div>
 	<!-- /wp:column -->
@@ -30,12 +30,12 @@ return array(
 	<!-- /wp:columns -->
 	<!-- /wp:post-template -->
 
-	<!-- wp:query-pagination -->
-	<div class="wp-block-query-pagination"><!-- wp:query-pagination-previous /-->
-
+	<!-- wp:query-pagination {"align":"wide","paginationArrow":"arrow"} -->
+	<!-- wp:query-pagination-previous /-->
 	<!-- wp:query-pagination-numbers /-->
+	<!-- wp:query-pagination-next /-->
+	<!-- /wp:query-pagination -->
 
-	<!-- wp:query-pagination-next /--></div>
-	<!-- /wp:query-pagination --></div>
+	</div>
 	<!-- /wp:query -->',
 );

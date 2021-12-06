@@ -1,12 +1,57 @@
-.wp-block-navigation.is-responsive {
-	.wp-block-navigation__responsive-container.is-menu-open {
-		background-color: var(--wp--custom--color--background);
-		color: var(--wp--custom--color--foreground);
+// See https://github.com/WordPress/gutenberg/issues/34648
+.wp-block-navigation {
+	// See https://github.com/WordPress/gutenberg/issues/34648
+	.has-child .wp-block-navigation__submenu-container {
+		background-color: var(--wp--custom--navigation--submenu--color--background);
+		border: var(--wp--custom--navigation--submenu--border--width) var(--wp--custom--navigation--submenu--border--style) var(--wp--custom--navigation--submenu--border--color);
+
+		a {
+			color: var(--wp--custom--navigation--submenu--color--text);
+		}
 	}
-	.wp-block-navigation-link__content {
-		color: var(--wp--custom--color--foreground) !important;
+	&.is-responsive {
+		&:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+			background-color: var(--wp--custom--color--background);
+			color: var(--wp--custom--color--foreground);
+		}
+		ul.wp-block-social-links {
+			margin: 0;
+			gap: var(--wp--custom--gap--baseline);
+		}
 	}
-	.has-child .wp-block-navigation-link__container{
-		display: revert;
+}
+
+.wp-block-navigation.is-style-blockbase-navigation-improved-responsive {
+	&.is-responsive .is-menu-open {
+		font-size: var(--wp--preset--font-size--medium);
+
+		.wp-block-navigation__responsive-container-content {
+			align-items: flex-start;
+		}
+
+		.wp-block-navigation__container {
+			row-gap: 0.5rem;
+			align-items: flex-start;
+			flex: unset;
+			padding-bottom: 0;
+		}
+
+		.wp-block-navigation-item {
+			align-items: flex-start;
+		}
+
+		.wp-block-navigation__responsive-container-content .has-child { // Needed for specificity to beat the navigation block CSS
+			.wp-block-navigation__submenu-container {
+				font-size: var(--wp--preset--font-size--normal);
+				padding-bottom: 0;
+				padding-left: var(--wp--custom--gap--horizontal);
+				padding-top: 0.5rem;
+				row-gap: 0.5rem;
+			}
+		}
+
+		ul.wp-block-social-links {
+			justify-content: flex-start;
+		}
 	}
 }

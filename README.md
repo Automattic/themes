@@ -74,6 +74,8 @@ NOTE: When pushing changes if your local branch is not current with /trunk you w
     - FORCE where all changes you have locally will be pushed to the sandbox.  This is helpful if you are doing regression testing and want to make sure that every change is pushed to the sandbox. This option is used if --force is passed to the script.
     - IGNORE where all of the files that were changed on the trunk since your current branch diverged will be ignored (with the exception of any files that you changed in your branch).  This is helpful during development, though it is advised that you bring your branch current with /trunk before pushing any builds. This option is used if --ignore is passed to the script.
 
+- You can automatically ignore changes on trunk adding the `--ignore` flag or by running `npm run sandbox:push:ignore`
+
 - In addition to pushing your local changes you can also WATCH for any local changes and trigger the sandbox sync by using the `npm run sandbox:watch` Any changes to your local files will trigger the rsync.  Make sure that you have executed `npm install` to ensure the needed dependencies for this are installed.
 
 Note: The first time you run the `sandbox.sh` shell script you will be prompted for details about your sandbox which will be stored in a `.sandbox-config` file. Edit (or delete and be re-prompted) if details about your sandbox change.  This file will not be comitted to version controll and will not sync to your sandbox.

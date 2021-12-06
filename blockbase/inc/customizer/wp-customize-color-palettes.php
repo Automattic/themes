@@ -38,7 +38,7 @@ class GlobalStylesColorPalettes {
 				$custom_palette_setting = array();
 				foreach ( $custom_palette['colors'] as $color_slug => $color ) {
 					//the alternative palettes need to have the same color mapping as the default one
-					if(isset($default_palette_setting[$color_slug])){
+					if ( isset( $default_palette_setting[ $color_slug ] ) ) {
 						$custom_palette_setting[ $color_slug ] = $color;
 					}
 				}
@@ -64,9 +64,10 @@ class GlobalStylesColorPalettes {
 		$wp_customize->add_setting(
 			'color_palette',
 			array(
-				'default'    => 'default-palette',
-				'capability' => 'edit_theme_options',
-				'transport'  => 'postMessage', // We need this to stop the page refreshing.
+				'default'           => 'default-palette',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => array( __CLASS__, 'sanitize_color_palette' ),
+				'transport'         => 'postMessage', // We need this to stop the page refreshing.
 			)
 		);
 
@@ -83,6 +84,10 @@ class GlobalStylesColorPalettes {
 				)
 			)
 		);
+	}
+
+	static function sanitize_color_palette( $palette ) {
+		return sanitize_title( $palette );
 	}
 }
 

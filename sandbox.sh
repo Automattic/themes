@@ -44,8 +44,9 @@ elif [[ $1 == "pull" ]]; then
   eval $cmd
 
 elif [[ $1 == "push" ]]; then
-
-  git remote update
+  if [[ $2 != '--ignore' ]]; then
+    git remote update
+  fi
   current_branch=$(git branch --show-current)
   hash1=$(git rev-parse origin/trunk)
   hash2=$(git merge-base origin/trunk ${current_branch})

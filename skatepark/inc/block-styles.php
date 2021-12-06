@@ -30,24 +30,24 @@ if ( ! function_exists( 'skatepark_register_block_styles' ) ) :
 					'name'         => 'skatepark-aside-caption',
 					'label'        => __( 'Aside caption', 'skatepark' ),
 					'style_handle' => 'skatepark-aside-caption',
-					)
-				);
-	
-			register_block_style(
-				'core/paragraph',
-				array(
-					'name'         => 'indented-paragraph',
-					'label'        => __( 'Indented paragraph', 'skatepark' ),
-					'style_handle' => 'indented-paragraph',
 				)
 			);
-	
+
 			register_block_style(
-				'core/post-excerpt',
+				'core/quote',
 				array(
-					'name'         => 'indented-post-excerpt',
-					'label'        => __( 'Indented post excerpt', 'skatepark' ),
-					'style_handle' => 'indented-post-excerpt',
+					'name'         => 'side-quote',
+					'label'        => __( 'Side quote', 'skatepark' ),
+					'style_handle' => 'side-quote',
+				)
+			);
+
+			register_block_style(
+				'core/quote',
+				array(
+					'name'         => 'testimonial-quote',
+					'label'        => __( 'Testimonial', 'skatepark' ),
+					'style_handle' => 'testimonial-quote',
 				)
 			);
 		}

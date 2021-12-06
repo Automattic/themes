@@ -3,9 +3,9 @@
  */
 .wp-block-navigation-link {
 	a {
+		text-underline-offset: 0.4rem;
 		:hover{
 			text-decoration: underline;
-			text-underline-offset: 0.4rem;
 		}
 	}
 } 
@@ -15,15 +15,8 @@
  */
 .is-root-container, // Editor class hack.
 .wp-block-post-content {
-	a:not(.wp-block-button__link):not([download]) {
-		color: var(--wp--custom--color--primary);
-		text-decoration-color: var(--wp--style--color--link);
+	a {
 		text-decoration-thickness: 1px;
 		text-underline-offset: 0.2em;
-
-		&:focus,
-		&:hover {
-			color: var(--wp--style--color--link);
-		}
 	}
 }

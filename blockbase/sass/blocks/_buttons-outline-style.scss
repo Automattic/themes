@@ -1,0 +1,35 @@
+@import 'button-mixins';
+.wp-block-button {
+	&.wp-block-button__link,
+	.wp-block-button__link {
+	   	&:not(.has-background):not(.has-text-color) {
+		   @include button-outline-hover-styles;
+	   	}
+   	}
+}
+.wp-block-file .wp-block-file__button {
+   @include button-outline-hover-styles;
+}	
+
+.wp-block-search {
+   	&.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button,
+   	.wp-block-search__button {
+	   @include button-outline-hover-styles;
+   	}
+}
+
+//NOTE: Double-classed to raise specificity above parent theme's outline hover styles
+//as an alternative to !important.  Only needed for the editor.
+.wp-block-button.wp-block-button.is-style-outline {
+	&.wp-block-button__link,
+	.wp-block-button__link {
+	   &:not(.has-background):not(.has-text-color) {
+		   &:hover,
+		   &:focus,
+		   &.has-focus {
+			   color: var(--wp--custom--button--color--background);
+			   background-color: var(--wp--custom--button--color--text);
+		   	}
+	   	}
+   	}
+}
