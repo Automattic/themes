@@ -77,6 +77,12 @@ class GlobalStylesColorCustomizer {
 			$user_color_palette = $theme_json['settings']['color']['palette']['custom'];
 		}
 
+		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+		else if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
+			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
+		}
+		// End Gutenberg < 12.1 compatibility patch
+	
 		// Combine theme settings with user settings.
 		foreach ( $combined_color_palette as $key => $palette_item ) {
 			//make theme color value the default

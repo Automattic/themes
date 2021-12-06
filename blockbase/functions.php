@@ -121,6 +121,16 @@ function blockbase_fonts_url() {
 				$font_families[] = $font['google'];
 			}
 		}
+
+	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+			if ( ! empty( $font['google'] ) ) {
+				$font_families[] = $font['google'];
+			}
+		}
+	// End Gutenberg < 12.1 compatibility patch
+
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
 			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
