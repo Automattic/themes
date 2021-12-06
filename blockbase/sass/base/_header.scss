@@ -1,0 +1,32 @@
+.wp-site-blocks .site-header {
+
+	// Needed until Gutenberg offers responsive design options
+	// TODO: Ref to responsive design options issue
+	@include break-small-only(){
+		.site-brand {
+			display: contents;
+		}
+		.wp-block-site-logo {
+			flex-basis: 100%;
+			margin-bottom: calc( 2 * var(--wp--custom--gap--vertical));
+			margin-top: var(--wp--custom--gap--vertical);
+			text-align: center;
+		}
+	}
+
+	// User for Social Navigation ?
+	// TODO: Ref to issue
+	.wp-block-navigation__responsive-container-content {
+		gap: var( --wp--style--block-gap, 2em );
+	}
+}
+
+// Needed until Gutenberg offers responsive design options
+// Used by 'header-linear' template part
+.wp-site-blocks .site-header-linear {
+	@include break-small-only(){
+		.site-words-stack-small {
+			display:block;
+		}
+	}
+}
