@@ -91,3 +91,17 @@ a:hover,
 	font-size: var(--wp--preset--typography--font-size--normal);
 	padding: calc(.667em + 2px) calc(1.333em + 2px);
 }
+
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
+
+.wp-block-post-comments input:not([type=submit]),
+.wp-block-post-comments textarea,
+textarea {
+	background-color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+}
