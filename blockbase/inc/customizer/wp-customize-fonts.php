@@ -319,8 +319,8 @@ class GlobalStylesFontsCustomizer {
 			return;
 		}
 
-		if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
-			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
+		if ( array_key_exists( 'custom', $merged_json['settings']['typography']['fontFamilies'] ) ) {
+			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['custom'];
 			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
 				return $font_family['slug'] === "body-font";
 			} );
@@ -330,6 +330,22 @@ class GlobalStylesFontsCustomizer {
 				return $font_family['slug'] === "heading-font";
 			} );
 			$heading_font_selected = array_shift( $heading_font_selected_array );
+
+		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+		} else if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
+			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
+
+			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "body-font";
+			} );
+			$body_font_selected = array_shift( $body_font_selected_array );
+
+			$heading_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "heading-font";
+			} );
+			$heading_font_selected = array_shift( $heading_font_selected_array );
+		// End Gutenberg < 12.1 compatibility patch
+	
 		} else {
 			$body_font_selected = $body_font_default;
 			$heading_font_selected = $heading_font_default;
