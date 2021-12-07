@@ -191,7 +191,7 @@ function button_2_scripts() {
 
 	wp_enqueue_style( 'button-2-blocks', get_template_directory_uri() . '/blocks.css' );
 
-	wp_enqueue_script( 'button-2-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), '20170303', true );
+	wp_enqueue_script( 'button-2-scripts', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '20211207', true );
 
 	wp_enqueue_script( 'button-2-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
