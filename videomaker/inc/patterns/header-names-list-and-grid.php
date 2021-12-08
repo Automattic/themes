@@ -18,7 +18,7 @@ return array(
 	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:46.67%"><!-- wp:site-title /-->
 
 	<!-- wp:heading {"level":3,"style":{"typography":{"fontWeight":"300"}}} -->
-	<h3 style="font-weight:300">' . esc_html__( 'Augusta Smith', 'videomaker' ) . '<br>' . esc_html__( 'Dan Andrews', 'videomaker' ) . '<br>' . esc_html__( 'Syd Wyatt', 'videomaker' ) . '<br>' . esc_html__( 'Philip Mizrahi', 'videomaker' ) . '<br>' . esc_html__( 'Tony Sánchez', 'videomaker' ) . '<br>' . esc_html__( 'Romana Arak', 'videomaker' ) . '</h3>
+	<h3 style="font-weight:300">' . esc_html__( 'Augusta Smith', 'videomaker' ) . '<br>' . esc_html__( 'Amber Andrews', 'videomaker' ) . '<br>' . esc_html__( 'Syd Wyatt', 'videomaker' ) . '<br>' . esc_html__( 'Philip Mizrahi', 'videomaker' ) . '<br>' . esc_html__( 'Tony Sánchez', 'videomaker' ) . '<br>' . esc_html__( 'Romana Arak', 'videomaker' ) . '</h3>
 	<!-- /wp:heading --></div>
 	<!-- /wp:column -->
 
