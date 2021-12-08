@@ -38,7 +38,7 @@ return array(
 		<!-- /wp:embed -->
 
 		<!-- wp:heading {"level":4,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-		<h4 class="wp-embed-aspect-16-9 wp-has-aspect-ratio">' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
+		<h4 class="wp-embed-aspect-16-9 wp-has-aspect-ratio">' . esc_html__( 'Working at Dawn', 'videomaker' ) . '</h4>
 		<!-- /wp:heading --></div>
 		<!-- /wp:column -->
 

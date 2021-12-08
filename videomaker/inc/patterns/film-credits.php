@@ -13,7 +13,7 @@ return array(
 	<!-- /wp:spacer -->
 
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"medium"} -->
-	<p class="has-text-align-center has-medium-font-size" style="line-height:1.3">' . esc_html__( 'Based on the novel “Man Working at Dawn” by', 'videomaker' ) . '</p>
+	<p class="has-text-align-center has-medium-font-size" style="line-height:1.3">' . esc_html__( 'Based on the novel “Working at Dawn” by', 'videomaker' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"large"} -->

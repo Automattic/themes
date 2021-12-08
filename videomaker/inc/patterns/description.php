@@ -13,7 +13,7 @@ return array(
 	<!-- /wp:spacer -->
 
 	<!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-	<p class="has-text-align-center has-large-font-size">' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</p>
+	<p class="has-text-align-center has-large-font-size">' . esc_html__( 'Working at Dawn', 'videomaker' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:columns {"isStackedOnMobile":false} -->
