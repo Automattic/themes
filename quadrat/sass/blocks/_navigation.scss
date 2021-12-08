@@ -24,7 +24,7 @@
 		background-color: var(--wp--custom--color--tertiary);
 		&.has-modal-open {
 			.wp-block-pages-list__item,
-			.wp-block-navigation-link {
+			.wp-block-navigation-item {
 				font-size: var(--wp--preset--font-size--normal);
 				line-height: 50px;
 				margin: 0;
@@ -48,20 +48,19 @@
 				}
 			}
 
-			.wp-block-navigation__responsive-container-content,
 			.wp-block-navigation__container {
 				align-items: flex-end;
-				gap: 0;
+			}
+			.wp-block-navigation__responsive-container-content {
+				flex-direction: row-reverse;
 			}
 
 			.wp-block-navigation-item {
-				align-items: flex-end;
+				//align-items: flex-end;
 			}
 		}
 		.wp-block-social-links {
-			position: absolute;
-			flex-direction: column;
-			padding-top: 36px;
+			flex-direction:column;
 		}
 	}
 }
