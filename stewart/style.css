@@ -123,3 +123,17 @@ a:hover,
 	background-color: var(--wp--preset--color--background);
 	border-color: var(--wp--preset--color--foreground);
 }
+
+/*
+ * Remove 50/50 columns enforcement on tablet-size screens.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/37252
+ */
+
+@media (min-width: 600px) and (max-width: 781px) {
+	.site-columns.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:only-child) {
+		flex-basis: 100% !important;
+		flex-grow: 1;
+		margin-left: 0;
+	}
+}
