@@ -1,5 +1,9 @@
 import fs from 'fs-extra';
 import deepmerge from 'deepmerge';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const localpath = dirname( fileURLToPath( import.meta.url ) );
 
 (async function start() {
 	let args = process.argv.slice(2);
@@ -20,9 +24,9 @@ async function buildAllVariations(){
 }
 
 async function buildVariation(source, variation) {
-	const srcDir = '../' + source;
-	const srcVariationDir = source + '/' + variation;
-	const destDir = '../' + variation;
+	const srcDir = localpath + '/../' + source;
+	const srcVariationDir = localpath + '/' + source + '/' + variation;
+	const destDir = localpath + '/../' + variation;
 
 	console.log( `Copying the source ${source} to the variation ${variation}` );
 
@@ -41,6 +45,9 @@ async function buildVariation(source, variation) {
 		// copy the variation directory.
 		await fs.copy( srcVariationDir, destDir );
 
+		// copy the readme
+		await fs.copy( localpath + '/variation-readme.md', destDir + '/variation-readme.md' );
+
 		// merge the theme.json files
 		const srcJsonFile = await fs.readFile( srcDir + '/theme.json', 'utf8' );
 		const srcVariationJsonFile = await fs.readFile( srcVariationDir + '/theme.json', 'utf8' );
@@ -50,6 +57,7 @@ async function buildVariation(source, variation) {
 			arrayMerge: ( dest, source ) => source
 		});
 		await fs.writeFile ( destDir + '/theme.json', JSON.stringify( mergedJson, null, '\t' ), 'utf8' );
+
 		console.log('Finished sucessfully.\n\n');
 	}
 	catch (err){
