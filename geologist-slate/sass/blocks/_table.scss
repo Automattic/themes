@@ -1,0 +1,21 @@
+.wp-block-table.is-style-stripes,
+.wp-block-table {
+	th {
+		font-weight: 400;
+	}
+
+	tbody td { // tbody adds the specificity needed to override the default Gutenberg styles
+		border-bottom-width: 0;
+		border-top-width: 0;
+		vertical-align: top;
+		border-color: var(--wp--preset--color--primary);
+	}
+
+	tr:first-child td {
+		border-top-width: 1px;
+	}
+
+	tr:last-child td {
+		border-bottom-width: 1px;
+	}
+}

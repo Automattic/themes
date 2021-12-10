@@ -14,6 +14,8 @@ function buildAllVariations(){
 	//TODO: Make this smart
 	buildVariation('geologist', 'geologist-blue');
 	buildVariation('geologist', 'geologist-yellow');
+	buildVariation('geologist', 'geologist-cream');
+	buildVariation('geologist', 'geologist-slate');
 }
 
 function buildVariation(source, variation) {
