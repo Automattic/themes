@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import fsorig from 'fs';
 import deepmerge from 'deepmerge';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -16,11 +17,11 @@ const localpath = dirname( fileURLToPath( import.meta.url ) );
 })();
 
 async function buildAllVariations(){
-	//TODO: Make this smart
-	await buildVariation('geologist', 'geologist-blue');
-	await buildVariation('geologist', 'geologist-yellow');
-	await buildVariation('geologist', 'geologist-cream');
-	await buildVariation('geologist', 'geologist-slate');
+	for (let source of getDirectories( localpath )){
+		for (let variation of getDirectories( `${localpath}/${source}` )){
+			await buildVariation(source, variation);
+		}
+	}
 }
 
 async function buildVariation(source, variation) {
@@ -64,6 +65,9 @@ async function buildVariation(source, variation) {
 		console.log('ERROR: ', err, '\n\n');
 	}
 }
-const overwriteMerge = ( destinationArray, sourceArray, options ) => {
-	return sourceArray;
-};
+
+function getDirectories ( path ) {
+	return fsorig.readdirSync( path, { withFileTypes: true } )
+		.filter( item => item.isDirectory() )
+		.map ( item => item.name )
+}
