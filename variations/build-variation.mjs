@@ -1,48 +1,61 @@
 import fs from 'fs-extra';
+import deepmerge from 'deepmerge';
 
 (async function start() {
 	let args = process.argv.slice(2);
 	let source = args?.[0];
 	let variation = args?.[1];
 	if ( source && variation ) {
-		return buildVariation(source, variation);
+		return await buildVariation(source, variation);
 	}
-	return buildAllVariations();
+	return await buildAllVariations();
 })();
 
-function buildAllVariations(){
+async function buildAllVariations(){
 	//TODO: Make this smart
-	buildVariation('geologist', 'geologist-blue');
-	buildVariation('geologist', 'geologist-yellow');
-	buildVariation('geologist', 'geologist-cream');
-	buildVariation('geologist', 'geologist-slate');
+	await buildVariation('geologist', 'geologist-blue');
+	await buildVariation('geologist', 'geologist-yellow');
+	await buildVariation('geologist', 'geologist-cream');
+	await buildVariation('geologist', 'geologist-slate');
 }
 
-function buildVariation(source, variation) {
+async function buildVariation(source, variation) {
 	const srcDir = '../' + source;
+	const srcVariationDir = source + '/' + variation;
 	const destDir = '../' + variation;
 
-	// First empty the old directory.
-	fs.emptyDir( destDir )
-		.then( () => {
-			// Then copy the source directory.
-			fs.copy( srcDir, destDir )
-				.then( () => {
-					console.log( 'Copied the source.' );
+	console.log( `Copying the source ${source} to the variation ${variation}` );
 
-					fs.readdir( source + '/' + variation, ( err, files ) => {
-						files.forEach( file => {
-							console.log( file );
-							const fileToCopy = source + '/' + variation + '/' + file;
-							fs.copy( fileToCopy, destDir + '/' + file )
-								.then(() => console.log( 'Copied ' + fileToCopy ) )
-								.catch(err => console.error(err) );
-						});
-					});
-				 } )
-				.catch( err => console.error( err ) );
-	  	} )
-		.catch( err => {
-			console.error( err )
-		} );
+	try {
+
+		// First empty the old directory.
+		await fs.emptyDir( destDir );
+
+		// Then copy the source directory.
+		await fs.copy( srcDir, destDir );
+
+		// remove unneeded resources
+		await fs.remove( destDir + '/sass');
+		await fs.remove( destDir + '/node_modules' );
+
+		// copy the variation directory.
+		await fs.copy( srcVariationDir, destDir );
+
+		// merge the theme.json files
+		const srcJsonFile = await fs.readFile( srcDir + '/theme.json', 'utf8' );
+		const srcVariationJsonFile = await fs.readFile( srcVariationDir + '/theme.json', 'utf8' );
+		const srcJson = JSON.parse( srcJsonFile );
+		const srcVariationJson = JSON.parse( srcVariationJsonFile );
+		const mergedJson = deepmerge(srcJson, srcVariationJson, {
+			arrayMerge: ( dest, source ) => source
+		});
+		await fs.writeFile ( destDir + '/theme.json', JSON.stringify( mergedJson, null, '\t' ), 'utf8' );
+		console.log('Finished sucessfully.\n\n');
+	}
+	catch (err){
+		console.log('ERROR: ', err, '\n\n');
+	}
 }
+const overwriteMerge = ( destinationArray, sourceArray, options ) => {
+	return sourceArray;
+};
