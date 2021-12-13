@@ -42,6 +42,7 @@ async function buildVariation(source, variation) {
 		// remove unneeded resources
 		await fs.remove( destDir + '/sass');
 		await fs.remove( destDir + '/node_modules' );
+		await fs.remove( destDir + '/template-mods.json');
 
 		// copy the variation directory.
 		await fs.copy( srcVariationDir, destDir );
@@ -49,9 +50,19 @@ async function buildVariation(source, variation) {
 		// copy the readme
 		await fs.copy( localpath + '/variation-readme.md', destDir + '/variation-readme.md' );
 
+		// make template modifications
+		const hasMods = fs.existsSync( `${srcVariationDir}/template-mods.json`);
+		if(hasMods) {
+			const srcModsFile = await fs.readFile( `${srcVariationDir}/template-mods.json`, 'utf8' );
+			const modsJson = JSON.parse( srcModsFile );
+			modsJson.forEach(mod => {
+				modifyTemplates(mod.from, mod.to, destDir + '/block-templates');
+			});
+		}
+	
 		// merge the theme.json files
 		const srcJsonFile = await fs.readFile( srcDir + '/theme.json', 'utf8' );
-		const srcVariationJsonFile = await fs.readFile( srcVariationDir + '/theme.json', 'utf8' );
+		const srcVariationJsonFile = await fs.readFile( srcVariationDir + '/theme.json', 'utf8' )
 		const srcJson = JSON.parse( srcJsonFile );
 		const srcVariationJson = JSON.parse( srcVariationJsonFile );
 		const mergedJson = deepmerge(srcJson, srcVariationJson, {
@@ -70,4 +81,20 @@ function getDirectories ( path ) {
 	return fsorig.readdirSync( path, { withFileTypes: true } )
 		.filter( item => item.isDirectory() )
 		.map ( item => item.name )
+}
+
+function getTemplates ( path ) {
+	return fsorig.readdirSync( path, { withFileTypes: true } )
+		.map ( item => item.name )
+}
+
+function modifyTemplates ( from, to, basePath ) {
+	console.log('modifying templates changing ', from, 'to', to);
+	const templates = getTemplates(basePath);
+	for ( let template of templates ) {
+		let templatePath = basePath + '/' + template;
+		let srcTemplate = fs.readFileSync( templatePath, 'utf8' );
+		let resultTemplate = srcTemplate.replace(from, to);
+		fs.writeFileSync ( templatePath, resultTemplate, 'utf8' );
+	}
 }
