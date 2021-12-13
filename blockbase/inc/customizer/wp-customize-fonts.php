@@ -74,6 +74,12 @@ class GlobalStylesFontsCustomizer {
 			'name'       => 'Fira Sans',
 			'google'     => 'family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900',
 		),
+		'ibm-plex-mono'  => array(
+			'fontFamily' => '"IBM Plex Mono", monospace',
+			'slug'       => 'ibm-plex-mono',
+			'name'       => 'IBM Plex Mono',
+			'google'     => 'family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700',
+		),
 		'inter'             => array(
 			'fontFamily' => '"Inter", sans-serif',
 			'slug'       => 'inter',
@@ -345,7 +351,7 @@ class GlobalStylesFontsCustomizer {
 			} );
 			$heading_font_selected = array_shift( $heading_font_selected_array );
 		// End Gutenberg < 12.1 compatibility patch
-	
+
 		} else {
 			$body_font_selected = $body_font_default;
 			$heading_font_selected = $heading_font_default;
