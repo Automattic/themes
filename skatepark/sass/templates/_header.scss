@@ -1,4 +1,22 @@
 .wp-site-blocks .site-header-ollie {
+	align-items: flex-start;
+
+	.site-brand {
+		align-items: flex-start;
+	}
+
+	.wp-block-navigation__responsive-container-content {
+		flex-direction: column !important;
+		align-items: flex-end;
+	}
+
+	@include break-small-only(){
+		border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--color--primary);
+	}
+}
+
+
+/*.wp-site-blocks .site-header-ollie {
 
 	max-width: var(--wp--custom--layout--wide-size); // Layouts can be flex OR flow/default (inherit), not both. So we need to mimick the wide width alignment supplied by Gutenberg here.
 	margin: 0 auto;
@@ -101,3 +119,4 @@
 		}
 	}
 }
+*/
