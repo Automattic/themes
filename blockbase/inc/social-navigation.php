@@ -62,7 +62,7 @@ function append_social_links_block( $parent_content, $social_links_block ) {
 	$domXPath = new DomXPath( $dom );
 	// Since the nav block uses HTML5 element names, we need to suppress the warnings it sends when we loadHTML with HTML5 elements.
 	libxml_use_internal_errors( true );
-	$dom->loadHTML( $parent_content );
+	$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $parent_content );
 	$wp_block_navigation__container = $dom->getElementsByTagName('ul')->item( 0 )->parentNode;
 	$social_links_node = $dom->createDocumentFragment();
 	$social_links_node->appendXML( $social_links_block );
