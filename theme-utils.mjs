@@ -7,6 +7,7 @@ const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
+const directoriesToIgnore = [ 'variations', 'videomaker', 'videomaker-white' ];
 
 (async function start() {
 	let args = process.argv.slice(2);
@@ -175,7 +176,7 @@ async function buildComZip(themeSlug) {
 
 	if (themeVersion && wpVersionCompat) {
 		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
-	} 
+	}
 	else {
 		console.log('Unable to build theme .zip.');
 		if (!themeVersion) {
@@ -429,9 +430,9 @@ async function checkThemeForChanges(theme, hash){
  Provide a list of 'actionable' themes (those themes that have style.css files)
 */
 async function getActionableThemes() {
-	let result = await executeCommand(`for d in */; do 
+	let result = await executeCommand(`for d in */; do
 		if test -f "./$d/style.css"; then
-			echo $d; 
+			echo $d;
 		fi
 	done`);
 	return result
@@ -562,11 +563,11 @@ async function pushChangesToSandbox() {
  Used by pushChangesToSandbox
 */
 async function getComittedChangesSinceHash(hash) {
-
-	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only`);
+	const directoriesToIgnoreString = directoriesToIgnore.map( directory => ':^' + directory ).join(' ');
+	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only -- . ${directoriesToIgnoreString}`);
 	comittedChanges = comittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
 
-	let uncomittedChanges = await executeCommand(`git diff HEAD --name-only`);
+	let uncomittedChanges = await executeCommand(`git diff HEAD --name-only -- . ${directoriesToIgnoreString}`);
 	uncomittedChanges = uncomittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
 
 	return comittedChanges.concat(uncomittedChanges);
@@ -779,5 +780,3 @@ async function executeCommand(command, logResponse) {
 		});
 	});
 }
-
-
