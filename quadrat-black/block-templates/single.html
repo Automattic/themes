@@ -1,0 +1,53 @@
+
+<!-- wp:template-part {"slug":"header-linear"} /-->
+
+<!-- wp:group {"tagName":"main"} -->
+<main class="wp-block-group">
+
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"}} -->
+	<div class="wp-block-group post-meta">
+		<!-- wp:post-date {"textAlign":"center","isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-terms {"term":"category","textAlign":"center","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"style":{"spacing":{"margin":{"bottom":"calc(2 * var(--wp--style--block-gap))"}}},"layout":{"inherit":true}} -->
+	<div class="wp-block-group" style="margin-bottom:calc(2 * var(--wp--style--block-gap))">
+		<!-- wp:post-title {"textAlign":"center","level":1,"align":"wide"} /-->
+		<!-- wp:post-featured-image {"align":"wide","style":{"spacing":{"margin":{"top":"calc(2 * var(--wp--style--block-gap))"}}}} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:post-content {"layout":{"inherit":true}} /-->
+
+	<!-- wp:spacer {"height":150} -->
+	<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:group {"layout":{"inherit":true}} -->
+	<div class="wp-block-group">
+		<!-- wp:columns {"align":"wide","className":"next-prev-links"} -->
+		<div class="wp-block-columns alignwide next-prev-links">
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:post-navigation-link {"type":"previous","label":"←","showTitle":true} /-->
+			</div>
+			<!-- /wp:column -->
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:post-navigation-link {"textAlign":"right","label":"→","showTitle":true} /-->
+			</div>
+			<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
+		<!-- wp:spacer {"height":150} -->
+		<div style="height:150px" aria-hidden="true" class="wp-block-spacer"></div>
+		<!-- /wp:spacer -->
+		<!-- wp:post-comments /-->
+	</div>
+	<!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","className":"site-footer-container"} /-->
