@@ -21,7 +21,7 @@ return array(
 	<!-- wp:group -->
 	<div class="wp-block-group">
 	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
+	<h4>' . esc_html__( 'Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
