@@ -285,14 +285,14 @@
  * Output
  */
 a {
-	border-bottom: 1px solid var(--global--color-secondary);
+	text-decoration: underline 1px var(--global--color-secondary);
+	text-underline-offset: 0.3em;
 	color: var(--wp--style--color--link, var(--global--color-primary));
-	text-decoration: none;
-	transition: border-color 0.1s ease-out;
+	transition: text-decoration 0.1s ease-out;
 }
 
 a:hover, a:focus {
-	border-bottom-color: transparent;
+	text-decoration: none;
 }
 
 a:hover {
@@ -308,11 +308,11 @@ a:active {
 }
 
 .has-link-color a {
-	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
+	text-decoration-color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .has-link-color a:hover, .has-link-color a:focus {
-	border-bottom-color: transparent;
+	text-decoration: none;
 }
 
 .has-primary-background-color a:not(.has-link-color):not(.has-text-color) {

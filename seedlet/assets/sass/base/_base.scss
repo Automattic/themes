@@ -1,13 +1,13 @@
 // Links styles
 a {
-	border-bottom: 1px solid var(--global--color-secondary);
+	text-decoration: underline 1px var(--global--color-secondary);
+    text-underline-offset: 0.3em;
 	color: var( --wp--style--color--link, var(--global--color-primary) );
-	text-decoration: none;
-	transition: border-color 0.1s ease-out;
+	transition: text-decoration 0.1s ease-out;
 
 	&:hover,
 	&:focus {
-		border-bottom-color: transparent;
+		text-decoration: none;
 	}
 
 	&:hover {
@@ -25,11 +25,11 @@ a {
 	// If a custom link color has been assigned,
 	// switch the color of the bottom border too.
 	.has-link-color & {
-		border-bottom: 1px solid var( --wp--style--color--link, var(--global--color-primary) );
+		text-decoration-color: var( --wp--style--color--link, var(--global--color-primary) );
 
 		&:hover,
 		&:focus {
-			border-bottom-color: transparent;
+			text-decoration: none;
 		}
 	}
 
