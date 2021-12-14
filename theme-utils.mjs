@@ -21,6 +21,7 @@ const directoriesToIgnore = [ 'variations', 'videomaker', 'videomaker-white' ];
 		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
+		case "push-premium-to-sandbox": return pushPremiumToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
 		case "land-diff-git": return landChangesGit(args?.[1]);
 		case "land-diff-svn": return landChangesSvn(args?.[1]);
@@ -521,6 +522,26 @@ function pushToSandbox() {
 	executeCommand(`
 		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./ wpcom-sandbox:${sandboxPublicThemesFolder}/
 	`);
+}
+
+/*
+  Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
+  This pushes only the folders noted as "premiumThemes" into the premium themes directory.
+
+  This is the only part of the deploy process that is automated; the rest must be done manually including:
+   * Creating a Phabricator Diff
+   * Landing (comitting) the change
+   * Deploying the theme
+   * Triggering the .zip builds
+*/
+function pushPremiumToSandbox() {
+	const premiumThemes = [
+		'videomaker',
+		'videomaker-white'
+	]
+	executeCommand(`
+		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxRootFolder}/wp-content/themes/premium/
+	`, true);
 }
 
 /*
