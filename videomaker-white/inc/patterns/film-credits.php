@@ -13,7 +13,7 @@ return array(
 	<!-- /wp:spacer -->
 
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"medium"} -->
-	<p class="has-text-align-center has-medium-font-size" style="line-height:1.3">' . esc_html__( 'Based on the novel “Man Working at Dawn” by', 'videomaker' ) . '</p>
+	<p class="has-text-align-center has-medium-font-size" style="line-height:1.3">' . esc_html__( 'Based on the novel “Working at Dawn” by', 'videomaker' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"large"} -->
@@ -29,7 +29,7 @@ return array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"large"} -->
-	<p class="has-text-align-center has-large-font-size" style="line-height:1.3">' . wp_kses_post( __( 'AUGUSTA SMITH<br>DAN ANDREWS<br>GARY HAN', 'videomaker' ) ) . '</p>
+	<p class="has-text-align-center has-large-font-size" style="line-height:1.3">' . wp_kses_post( __( 'AUGUSTA SMITH<br>AMBER ANDREWS<br>MARY HAN', 'videomaker' ) ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:spacer {"height":20} -->
@@ -41,7 +41,7 @@ return array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1.3"}},"fontSize":"large"} -->
-	<p class="has-text-align-center has-large-font-size" style="line-height:1.3">' . esc_html__( 'GARY HAN', 'videomaker' ) . '</p>
+	<p class="has-text-align-center has-large-font-size" style="line-height:1.3">' . esc_html__( 'MARY HAN', 'videomaker' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:spacer {"height":50} -->

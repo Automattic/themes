@@ -31,7 +31,7 @@ return array(
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph {"align":"center","textColor":"foreground","style":{"typography":{"lineHeight":"1"}}} -->
-		<p class="has-text-align-center has-foreground-color has-text-color" style="line-height:1">' . wp_kses_post( __( 'A Film by <strong>Gary Han</strong>', 'videomaker' ) ) . '</p>
+		<p class="has-text-align-center has-foreground-color has-text-color" style="line-height:1">' . wp_kses_post( __( 'A Film by <strong>Mary Han</strong>', 'videomaker' ) ) . '</p>
 		<!-- /wp:paragraph --></div></div>
 		<!-- /wp:cover -->
 
@@ -64,7 +64,7 @@ return array(
 		<!-- wp:columns {"align":"wide"} -->
 		<div class="wp-block-columns alignwide"><!-- wp:column {"width":"100%"} -->
 		<div class="wp-block-column" style="flex-basis:100%"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"12px"}}} -->
-		<p class="has-text-align-center" style="font-size:12px">' . esc_html__( 'Videomaker Collective Presents In Association with HANO Direction by Dan Andrews Screenplay by Augusta Smith Camera Diego Cruz, Helen Smith-Andrews and Dan Andrews Art Philip Mizrahi Production Romana Arakelyan Operators Syd Wyatt and Cameron Madeira Behind the Camera Diego Cruz Color Editing and Post-Production Philip Mizrahi and Tony Sánchez Videomaker Collective Presents In Association with HANO Direction by Dan Andrews Screenplay by Augusta Smith Camera Diego Cruz, Helen Smith-Andrews and Dan Andrews Art Philip Mizrahi Production Romana Arakelyan Operators Syd Wyatt and Cameron Madeira Behind the Camera Diego Cruz Color Editing and Post-Production Philip Mizrahi and Tony Sánchez', 'videomaker' ) . '</p>
+		<p class="has-text-align-center" style="font-size:12px">' . esc_html__( 'Videomaker Collective Presents In Association with HANO Direction by Amber Andrews Screenplay by Augusta Smith Camera Diego Cruz, Helen Smith-Andrews and Amber Andrews Art Philip Mizrahi Production Romana Arakelyan Operators Syd Wyatt and Cameron Madeira Behind the Camera Diego Cruz Color Editing and Post-Production Philip Mizrahi and Tony Sánchez Videomaker Collective Presents In Association with HANO Direction by Amber Andrews Screenplay by Augusta Smith Camera Diego Cruz, Helen Smith-Andrews and Amber Andrews Art Philip Mizrahi Production Romana Arakelyan Operators Syd Wyatt and Cameron Madeira Behind the Camera Diego Cruz Color Editing and Post-Production Philip Mizrahi and Tony Sánchez', 'videomaker' ) . '</p>
 		<!-- /wp:paragraph --></div>
 		<!-- /wp:column --></div>
 		<!-- /wp:columns --></div>

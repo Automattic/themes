@@ -23,7 +23,7 @@ return array(
 	<div class="wp-block-column">
 
 	<!-- wp:heading {"level":4} -->
-	<h4>' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
+	<h4>' . esc_html__( 'Working at Dawn', 'videomaker' ) . '</h4>
 	<!-- /wp:heading -->
 
 	</div>

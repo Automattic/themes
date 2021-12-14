@@ -17,7 +17,7 @@ return array(
 					<!-- /wp:embed -->
 
 					<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"bottom":"10px"}}}} -->
-					<h4 style="margin-bottom:10px">' . esc_html__( 'Man Working at Dawn', 'videomaker' ) . '</h4>
+					<h4 style="margin-bottom:10px">' . esc_html__( 'Working at Dawn', 'videomaker' ) . '</h4>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
