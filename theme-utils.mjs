@@ -129,7 +129,7 @@ async function pushButtonDeploy(repoType) {
 			}
 
 			await executeCommand(`
-				git commit -a -m "Version Bump";
+				git commit -m "Version Bump";
 				git push
 			`, true);
 		}
