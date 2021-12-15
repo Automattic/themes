@@ -18,6 +18,12 @@
             font-size: var(--primary-nav--font-size);
             font-weight: var(--primary-nav--font-weight);
         }
+
+        > a {
+            &:hover, &:focus {
+                color: currentColor;
+            }
+        }
     }
 
     .has-child {
@@ -27,14 +33,6 @@
     }
     
     &:not(.has-text-color){
-        .wp-block-navigation-link {
-            > a {
-                &:hover, &:focus {
-                    color: var(--primary-nav--color-link-hover);
-                }
-            }
-        }
-
         .wp-block-navigation-link__content {
             color: currentColor;
         }
