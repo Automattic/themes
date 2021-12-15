@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A simple theme for blogging.
+Stewart is a modern blogging theme with a left sidebar. Its default color scheme is a striking combination of orange and light gray, to give your blog a sophisticated appearance from day one. 
 
 == Changelog ==
 
