@@ -159,6 +159,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 	display: inline-block;
 	font-size: var(--entry-meta--font-size);
 	margin-top: 0;
+	text-decoration: 1px solid underline var(--global--color-primary);
 }
 
 .entry-content .more-link:hover {
@@ -187,14 +188,14 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-link-color a, a {
-	border-bottom: 1px solid;
 	border-color: transparent;
 	transition: all 0.1s ease;
+	text-decoration: none;
 }
 
 .has-link-color a:hover, a:hover {
 	color: var(--global--color-primary-hover);
-	border-color: var(--global--color-primary-hover);
+	text-decoration: 1px solid underline;
 }
 
 .wp-block a,
@@ -219,7 +220,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .has-main-navigation .site-header a {
-	border-bottom: 1px solid transparent;
+	text-decoration: none;
 }
 
 @media only screen and (max-width: 829px) {
@@ -276,6 +277,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 .site-header .site-branding .site-title > a {
+	text-decoration: none;
 	background: inherit;
 	text-shadow: none;
 }
@@ -427,6 +429,10 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 
 .primary-navigation-open .site-header div.menu-button-container {
 	margin: 0;
+}
+
+.site-footer .menu-item a {
+	border-bottom: none;
 }
 
 .site-footer > .site-info {
