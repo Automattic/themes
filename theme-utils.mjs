@@ -114,6 +114,26 @@ async function pushButtonDeploy(repoType) {
 
 		await updateLastDeployedHash();
 
+		//push changes (from version bump)
+		if( thingsWentBump ){
+			prompt = await inquirer.prompt([{
+				type: 'confirm',
+				message: 'Are you ready to push this version bump change to the source repository (Github)?',
+				name: "continue",
+				default: false
+			}]);
+
+			if(!prompt.continue){
+				console.log(`Aborted Automated Deploy Process at version bump push change.` );
+				return;
+			}
+
+			await executeCommand(`
+				git commit -a -m "Version Bump";
+				git push
+			`, true);
+		}
+
 		if (repoType === 'git' ) {
 			diffUrl = await createGitPhabricatorDiff(hash);
 		}
@@ -122,10 +142,6 @@ async function pushButtonDeploy(repoType) {
 		}
 		let diffId = diffUrl.split('a8c.com/')[1];
 
-		//push changes (from version bump)
-		if( thingsWentBump ){
-			await executeCommand('git push');
-		}
 
 		await tagDeployment({
 			hash: hash,
@@ -321,6 +337,7 @@ async function versionBumpThemes() {
 
 	let themes = await getActionableThemes();
 	let hash = await getLastDeployedHash();
+	let changesWereMade = false;
 	let versionBumpCount = 0;
 
 	for (let theme of themes) {
@@ -336,24 +353,19 @@ async function versionBumpThemes() {
 			continue;
 		}
 
-		await versionBumpTheme(theme);
+		await versionBumpTheme(theme, true);
+		changesWereMade = true;
 	}
 
 	//version bump the root project if there were changes to any of the themes
-	let rootHasVersionBump = await checkThemeForVersionBump('.', hash);
+	let rootHasVersionBump = await checkProjectForVersionBump(hash);
+	console.log('root check', rootHasVersionBump, versionBumpCount, changesWereMade);
 	if ( versionBumpCount > 0 && ! rootHasVersionBump ) {
-		await executeCommand(`npm version patch --no-git-tag-version`);
+		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
+		changesWereMade = true;
 	}
 
-	if (versionBumpCount = 0 ) {
-		return false;
-	}
-
-	console.log('commiting version-bump');
-	await executeCommand(`
-		git commit -a -m "Version Bump";
-	`, true);
-	return true;
+	return changesWereMade;
 }
 
 function getThemeMetadata(styleCss, attribute) {
@@ -379,7 +391,7 @@ function getThemeMetadata(styleCss, attribute) {
  First increment the patch version in style.css
  Then update any of these files with the new version: [package.json, style.scss, style-child-theme.scss]
 */
-async function versionBumpTheme(theme){
+async function versionBumpTheme(theme, addChanges){
 
 	console.log(`${theme} needs a version bump`);
 
@@ -394,6 +406,9 @@ async function versionBumpTheme(theme){
 	for ( let file of filesToUpdate ) {
 		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
 		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
+		if (addChanges){
+			await executeCommand(`git add ${file}`);
+		}
 	}
 }
 
@@ -419,6 +434,20 @@ async function checkThemeForVersionBump(theme, hash){
 		let currentVersion = getThemeMetadata(styleCss, 'Version');
 		return previousVersion != currentVersion;
 	});
+}
+
+/*
+ Determine if the project has had a version bump since a given hash.
+ Used by versionBumpThemes
+ Compares the value of 'version' in package.json between the hash and current value
+*/
+async function checkProjectForVersionBump(hash){
+	let previousPackageString = await executeCommand(`
+		git show ${hash}:./package.json 2>/dev/null
+	`);
+	let previousPackage = JSON.parse(previousPackageString);
+	let currentPackage = JSON.parse(fs.readFileSync(`./package.json`))
+	return previousPackage.version != currentPackage.version;
 }
 
 /*
@@ -704,6 +733,8 @@ function getPhabricatorUrlFromResponse(response){
 */
 async function tagDeployment(options={}) {
 
+	console.log('tagging deployment');
+
 	let hash = options.hash || await getLastDeployedHash();
 
 	let workInTheOpenPhabricatorUrl = '';
@@ -718,7 +749,7 @@ async function tagDeployment(options={}) {
 	await executeCommand(`
 		git tag -a ${tag} -m "${message}"
 		git push origin ${tag}
-	`);
+	`, true);
 }
 
 /*
@@ -785,3 +816,4 @@ async function executeCommand(command, logResponse) {
 		});
 	});
 }
+
