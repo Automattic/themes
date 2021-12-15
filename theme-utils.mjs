@@ -106,7 +106,7 @@ async function pushButtonDeploy(repoType) {
 		let hash = await getLastDeployedHash();
 		let diffUrl;
 
-		await versionBumpThemes();
+		let thingsWentBump = await versionBumpThemes();
 
 		let changedThemes = await getChangedThemes(hash);
 
@@ -123,7 +123,9 @@ async function pushButtonDeploy(repoType) {
 		let diffId = diffUrl.split('a8c.com/')[1];
 
 		//push changes (from version bump)
-		await executeCommand('git push');
+		if( thingsWentBump ){
+			await executeCommand('git push');
+		}
 
 		await tagDeployment({
 			hash: hash,
@@ -343,12 +345,15 @@ async function versionBumpThemes() {
 		await executeCommand(`npm version patch --no-git-tag-version`);
 	}
 
-	if (versionBumpCount > 0) {
-		console.log('commiting version-bump');
-		await executeCommand(`
-			git commit -a -m "Version Bump";
-		`, true);
+	if (versionBumpCount = 0 ) {
+		return false;
 	}
+
+	console.log('commiting version-bump');
+	await executeCommand(`
+		git commit -a -m "Version Bump";
+	`, true);
+	return true;
 }
 
 function getThemeMetadata(styleCss, attribute) {
