@@ -47,12 +47,13 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ol class="comment-list commentlist">
 			<?php
 			wp_list_comments( array(
 				'avatar_size'=> 42,
 				'style'      => 'ol',
 				'short_ping' => true,
+				'format'     => 'html'
 			) );
 			?>
 		</ol><!-- .comment-list -->
