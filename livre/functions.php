@@ -1,25 +1,25 @@
 <?php
 /**
- * Booklet functions and definitions
+ * Livre functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage Booklet
- * @since Booklet 1.0
+ * @subpackage Livre
+ * @since Livre 1.0
  */
 
 
-if ( ! function_exists( 'booklet_support' ) ) :
+if ( ! function_exists( 'livre_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Booklet 1.0
+	 * @since Livre 1.0
 	 *
 	 * @return void
 	 */
-	function booklet_support() {
+	function livre_support() {
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
@@ -31,71 +31,71 @@ if ( ! function_exists( 'booklet_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'booklet_support' );
+add_action( 'after_setup_theme', 'livre_support' );
 
-if ( ! function_exists( 'booklet_styles' ) ) :
+if ( ! function_exists( 'livre_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Booklet 1.0
+	 * @since Livre 1.0
 	 *
 	 * @return void
 	 */
-	function booklet_styles() {
+	function livre_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'booklet-style',
+			'livre-style',
 			get_template_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Add styles inline.
-		wp_add_inline_style( 'booklet-style', booklet_get_font_face_styles() );
+		wp_add_inline_style( 'livre-style', livre_get_font_face_styles() );
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'booklet-style' );
+		wp_enqueue_style( 'livre-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'booklet_styles' );
+add_action( 'wp_enqueue_scripts', 'livre_styles' );
 
-if ( ! function_exists( 'booklet_editor_styles' ) ) :
+if ( ! function_exists( 'livre_editor_styles' ) ) :
 
 	/**
 	 * Enqueue editor styles.
 	 *
-	 * @since Booklet 1.0
+	 * @since Livre 1.0
 	 *
 	 * @return void
 	 */
-	function booklet_editor_styles() {
+	function livre_editor_styles() {
 
 		// Add styles inline.
-		wp_add_inline_style( 'wp-block-library', booklet_get_font_face_styles() );
+		wp_add_inline_style( 'wp-block-library', livre_get_font_face_styles() );
 
 	}
 
 endif;
 
-add_action( 'admin_init', 'booklet_editor_styles' );
+add_action( 'admin_init', 'livre_editor_styles' );
 
 
-if ( ! function_exists( 'booklet_get_font_face_styles' ) ) :
+if ( ! function_exists( 'livre_get_font_face_styles' ) ) :
 
 	/**
 	 * Get font face styles.
-	 * Called by functions booklet_styles() and booklet_editor_styles() above.
+	 * Called by functions livre_styles() and livre_editor_styles() above.
 	 *
-	 * @since Booklet 1.0
+	 * @since Livre 1.0
 	 *
 	 * @return string
 	 */
-	function booklet_get_font_face_styles() {
+	function livre_get_font_face_styles() {
 
 		return "
 		@font-face{
@@ -121,7 +121,7 @@ if ( ! function_exists( 'booklet_get_font_face_styles' ) ) :
 
 endif;
 
-if ( ! function_exists( 'booklet_preload_webfonts' ) ) :
+if ( ! function_exists( 'livre_preload_webfonts' ) ) :
 
 	/**
 	 * Preloads the main web font to improve performance.
@@ -131,11 +131,11 @@ if ( ! function_exists( 'booklet_preload_webfonts' ) ) :
 	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
 	 * at all.
 	 *
-	 * @since Booklet 1.0
+	 * @since Livre 1.0
 	 *
 	 * @return void
 	 */
-	function booklet_preload_webfonts() {
+	function livre_preload_webfonts() {
 		?>
 		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/assets/fonts/Newsreader.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
 		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/assets/fonts/Newsreader-italic.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
@@ -144,4 +144,4 @@ if ( ! function_exists( 'booklet_preload_webfonts' ) ) :
 
 endif;
 
-add_action( 'wp_head', 'booklet_preload_webfonts' );
+add_action( 'wp_head', 'livre_preload_webfonts' );

@@ -1,4 +1,4 @@
-=== Booklet ===
+=== Livre ===
 Contributors: automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -20,8 +20,8 @@ https://wordpress.org/support/article/twenty-twenty-two-changelog#Version_1.0
 
 == Copyright ==
 
-Booklet WordPress Theme, 2021 WordPress.org
-Booklet is distributed under the terms of the GNU GPL.
+Livre WordPress Theme, 2021 WordPress.org
+Livre is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
