@@ -397,6 +397,7 @@ async function versionBumpTheme(theme, addChanges){
 	console.log(`${theme} needs a version bump`);
 
 	await executeCommand(`perl -pi -e 's/Version: ((\\d+\\.)*)(\\d+)(.*)$/"Version: ".$1.($3+1).$4/ge' ${theme}/style.css`, true);
+	await executeCommand(`git add ${file}`);
 
 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
 	let currentVersion = getThemeMetadata(styleCss, 'Version');
