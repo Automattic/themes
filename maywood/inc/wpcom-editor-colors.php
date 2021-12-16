@@ -12,10 +12,7 @@ add_editor_color_rule(
 
 		// Text-color
 		array(
-			'#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .block-editor-block-list__block',
+			'#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color',
 			'color',
 		),
 		// Background-color
@@ -249,13 +246,6 @@ add_editor_color_rule(
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:link,
 			#editor .editor-styles-wrapper .fse-template-part .main-navigation a:visited',
 			'color',
-		),
-
-		// Background-color
-		array(
-			'#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim',
-			'background-color',
 		),
 
 		/**

@@ -30,14 +30,6 @@ add_color_rule( 'bg', '#ffffff', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -334,9 +326,7 @@ add_color_rule( 'txt', '#444444', array(
 			hr.wp-block-separator', 'border-bottom-color', 0.8 ),
 
 	// Background-color
-	array( '.wp-block-cover.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
-			table.is-style-stripes tbody tr:nth-child(odd),
+	array( 'table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 

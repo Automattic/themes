@@ -12,19 +12,7 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper', 'background-color' ),
 
 	// Text-color
-	array( '#editor .editor-styles-wrapper .wp-block-cover,
-			#editor .editor-styles-wrapper .wp-block-cover-image,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .block-editor-block-list__block,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .block-editor-block-list__block,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
+	array( '#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	/**
 	 * Utility Classes
@@ -131,10 +119,6 @@ add_editor_color_rule( 'txt', '#111111', array(
 			#editor .editor-styles-wrapper .wp-block-pullquote,
 			#editor .editor-styles-wrapper .wp-block-code,
 			#editor .editor-styles-wrapper', 'color' ),
-
-	// Background-color
-	array( '#editor .editor-styles-wrapper .wp-block-cover,
-			#editor .editor-styles-wrapper .wp-block-cover-image', 'background-color' ),
 
 	/**
 	 * Utility Classes

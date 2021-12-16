@@ -38,12 +38,6 @@ add_color_rule(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -195,8 +189,8 @@ add_color_rule(
 
 		// Background-color
 		array(
-			'.main-navigation #toggle-menu:active, 
-			.main-navigation #toggle-menu:focus, 
+			'.main-navigation #toggle-menu:active,
+			.main-navigation #toggle-menu:focus,
 			.main-navigation #toggle-menu:hover',
 			'background-color',
 			0.8,
@@ -384,10 +378,6 @@ add_color_rule(
 			.button,
 			.wp-block-search .wp-block-search__button,
 			.wp-block-button__link,
-			.wp-block-cover,
-			.wp-block-cover-image,
-			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
-			.wp-block-cover.has-background-dim:not([class*="background-color"]),
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file__button,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
@@ -396,8 +386,8 @@ add_color_rule(
 			button[data-load-more-btn],
 			input[type="submit"],
 			.main-navigation > div > ul > li > .sub-menu,
-			.main-navigation > div > ul > li:hover li > a, 
-			.main-navigation > div > ul > li.focus li > a, 
+			.main-navigation > div > ul > li:hover li > a,
+			.main-navigation > div > ul > li.focus li > a,
 			.main-navigation > div > ul > li.current-menu-item li > a',
 			'background-color',
 		),
@@ -575,8 +565,8 @@ function brompton_custom_colors_extra_css() {
 	}
 
 	@media screen and (min-width: 560px) {
-		.main-navigation > div > ul > li:hover li > a, 
-		.main-navigation > div > ul > li.focus li > a, 
+		.main-navigation > div > ul > li:hover li > a,
+		.main-navigation > div > ul > li.focus li > a,
 		.main-navigation > div > ul > li.current-menu-item li > a {
 			border-top-color: currentColor;
 		}
