@@ -574,7 +574,7 @@ function pushPremiumToSandbox() {
 		'videomaker-white'
 	]
 	executeCommand(`
-		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxRootFolder}/wp-content/themes/premium/
+		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude='sass/' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxRootFolder}/wp-content/themes/premium/
 	`, true);
 }
 
