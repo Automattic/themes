@@ -4205,13 +4205,30 @@ a {
 		font-size: 0.5rem;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul,
-	.site-header .main-navigation > div > ul > li.focus > ul,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul,
+	.site-header .main-navigation > div > ul > li:focus-within > ul,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
-	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid #0073AA;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-left: 16px;
+		width: 16px;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li:focus-within > ul:before,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
 		border-bottom: 8px solid #0073AA;
 		border-left: 8px solid transparent;
@@ -4222,7 +4239,13 @@ a {
 		width: 16px;
 	}
 	.site-header .main-navigation > div > ul > li:hover li > a,
-	.site-header .main-navigation > div > ul > li.focus li > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
+		background: #0073AA;
+		color: #FFFFFF;
+	}
+	.site-header .main-navigation > div > ul > li:hover li > a,
+	.site-header .main-navigation > div > ul > li:focus-within li > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
 		background: #0073AA;
 		color: #FFFFFF;
@@ -4230,9 +4253,20 @@ a {
 	.site-header .main-navigation > div > ul > li:hover li:hover > a,
 	.site-header .main-navigation > div > ul > li:hover li.focus > a,
 	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-	.site-header .main-navigation > div > ul > li.focus li:hover > a,
-	.site-header .main-navigation > div > ul > li.focus li.focus > a,
-	.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li:hover > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li.focus > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
+		background: #005177;
+	}
+	.site-header .main-navigation > div > ul > li:hover li:hover > a,
+	.site-header .main-navigation > div > ul > li:hover li.focus > a,
+	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li:focus-within li:hover > a,
+	.site-header .main-navigation > div > ul > li:focus-within li.focus > a,
+	.site-header .main-navigation > div > ul > li:focus-within li.current-menu-item > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {

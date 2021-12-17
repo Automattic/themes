@@ -4257,12 +4257,25 @@ p:not(.site-title) a:hover {
 		font-size: 0.5rem;
 	}
 	.site-header-wrap .main-navigation > div > ul > li:hover > a,
-	.site-header-wrap .main-navigation > div > ul > li.focus > a,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] > a,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item > a {
+		color: rgba(var(--wp--preset--color--background), 0.8);
+	}
+	.site-header-wrap .main-navigation > div > ul > li:hover > a,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within > a,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item > a {
 		color: rgba(var(--wp--preset--color--background), 0.8);
 	}
 	.site-header-wrap .main-navigation > div > ul > li:hover > ul,
-	.site-header-wrap .main-navigation > div > ul > li.focus > ul,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] > ul,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item > ul {
+		background: var(--wp--preset--color--foreground);
+		border: 1px solid var(--wp--preset--color--foreground-high-contrast);
+		border-radius: 5px;
+		overflow: hidden;
+	}
+	.site-header-wrap .main-navigation > div > ul > li:hover > ul,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within > ul,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item > ul {
 		background: var(--wp--preset--color--foreground);
 		border: 1px solid var(--wp--preset--color--foreground-high-contrast);
@@ -4270,17 +4283,34 @@ p:not(.site-title) a:hover {
 		overflow: hidden;
 	}
 	.site-header-wrap .main-navigation > div > ul > li:hover li,
-	.site-header-wrap .main-navigation > div > ul > li.focus li,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] li,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li {
+		border-top: 1px solid var(--wp--preset--color--foreground-high-contrast);
+	}
+	.site-header-wrap .main-navigation > div > ul > li:hover li,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within li,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li {
 		border-top: 1px solid var(--wp--preset--color--foreground-high-contrast);
 	}
 	.site-header-wrap .main-navigation > div > ul > li:hover li:first-child,
-	.site-header-wrap .main-navigation > div > ul > li.focus li:first-child,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] li:first-child,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li:first-child {
+		border-top: 0;
+	}
+	.site-header-wrap .main-navigation > div > ul > li:hover li:first-child,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within li:first-child,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li:first-child {
 		border-top: 0;
 	}
 	.site-header-wrap .main-navigation > div > ul > li:hover li > a,
-	.site-header-wrap .main-navigation > div > ul > li.focus li > a,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] li > a,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li > a {
+		background: var(--wp--preset--color--foreground);
+		color: var(--wp--preset--color--background);
+		padding: 8px 24px;
+	}
+	.site-header-wrap .main-navigation > div > ul > li:hover li > a,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within li > a,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li > a {
 		background: var(--wp--preset--color--foreground);
 		color: var(--wp--preset--color--background);
@@ -4289,9 +4319,20 @@ p:not(.site-title) a:hover {
 	.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a,
 	.site-header-wrap .main-navigation > div > ul > li:hover li.focus > a,
 	.site-header-wrap .main-navigation > div > ul > li:hover li.current-menu-item > a,
-	.site-header-wrap .main-navigation > div > ul > li.focus li:hover > a,
-	.site-header-wrap .main-navigation > div > ul > li.focus li.focus > a,
-	.site-header-wrap .main-navigation > div > ul > li.focus li.current-menu-item > a,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] li:hover > a,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] li.focus > a,
+	.site-header-wrap .main-navigation > div > ul > li[focus-within] li.current-menu-item > a,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li:hover > a,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li.focus > a,
+	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
+		background: var(--wp--preset--color--primary);
+	}
+	.site-header-wrap .main-navigation > div > ul > li:hover li:hover > a,
+	.site-header-wrap .main-navigation > div > ul > li:hover li.focus > a,
+	.site-header-wrap .main-navigation > div > ul > li:hover li.current-menu-item > a,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within li:hover > a,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within li.focus > a,
+	.site-header-wrap .main-navigation > div > ul > li:focus-within li.current-menu-item > a,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li:hover > a,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li.focus > a,
 	.site-header-wrap .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {

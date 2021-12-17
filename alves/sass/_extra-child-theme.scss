@@ -266,11 +266,8 @@ body:not(.fse-enabled) {
 			}
 
 			& > div > ul > li:hover,
-			& > div > ul > li.focus,
+			& > div > ul > li:focus-within,
 			& > div > ul > li.current-menu-item {
-
-				& > a {
-				}
 
 				& > ul {
 					box-shadow: none;
@@ -284,17 +281,6 @@ body:not(.fse-enabled) {
 						display: block;
 						margin-left: #{map-deep-get($config-global, "spacing", "unit")};
 						width: #{map-deep-get($config-global, "spacing", "unit")};
-					}
-				}
-
-				& li {
-
-					& > a {
-					}
-
-					&:hover > a,
-					&.focus > a,
-					&.current-menu-item > a {
 					}
 				}
 			}

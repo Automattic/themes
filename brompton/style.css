@@ -4264,13 +4264,25 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 		background: #252E36;
 	}
 	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li.focus > ul,
+	.main-navigation > div > ul > li[focus-within] > ul,
+	.main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.main-navigation > div > ul > li:hover > ul,
+	.main-navigation > div > ul > li:focus-within > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.main-navigation > div > ul > li:hover li > a,
-	.main-navigation > div > ul > li.focus li > a,
+	.main-navigation > div > ul > li[focus-within] li > a,
+	.main-navigation > div > ul > li.current-menu-item li > a {
+		background: #252E36;
+		border-top: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	.main-navigation > div > ul > li:hover li > a,
+	.main-navigation > div > ul > li:focus-within li > a,
 	.main-navigation > div > ul > li.current-menu-item li > a {
 		background: #252E36;
 		border-top: 1px solid rgba(255, 255, 255, 0.5);
