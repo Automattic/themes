@@ -7,7 +7,7 @@
 
 return array(
 	'title'      => __( 'Header rounded logo', 'blockbase' ),
-	'categories' => array( 'blockbase' ),
+	'categories' => array( 'header' ),
 	'blockTypes' => array( 'core/template-part/header' ),
 	'content'    => '<!-- wp:group {"className":"gapless-group","layout":{"inherit":"true"}} -->
 	<div class="wp-block-group gapless-group">
