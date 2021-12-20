@@ -1,4 +1,4 @@
-=== Blank Canvas Blocks ===
+=== Blank Canvas ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.8
@@ -17,8 +17,8 @@ Blank Canvas is a minimalist theme, designed for single-page websites. Its singl
 
 == Copyright ==
 
-Blank Canvas Blocks WordPress Theme, (C) 2021 Automattic
-Blank Canvas Blocks is distributed under the terms of the GNU GPL.
+Blank Canvas WordPress Theme, (C) 2021 Automattic
+Blank Canvas is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
