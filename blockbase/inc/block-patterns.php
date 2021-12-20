@@ -17,7 +17,13 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
-				'404'
+				'404',
+				'header',
+				'header-centered',
+				'header-linear',
+				'header-minimal',
+				'header-rounded-logo',
+				'header-wide',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {

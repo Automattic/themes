@@ -1,5 +1,16 @@
-<!-- wp:group {"className":"gapless-group","layout":{"inherit":"true"}} -->
-<div class="wp-block-group gapless-group">
+<?php
+/**
+ * Header wide
+ *
+ * @package Blockbase
+ */
+
+return array(
+	'title'      => __( 'Header wide', 'blockbase' ),
+	'categories' => array( 'blockbase' ),
+	'blockTypes' => array( 'core/template-part/header' ),
+	'content'    => '<!-- wp:group {"className":"gapless-group","layout":{"inherit":"true"}} -->
+	<div class="wp-block-group gapless-group">
 	<!-- wp:group {"align":"wide","className":"site-header","layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"padding":{"bottom":"var(--wp--custom--gap--vertical)","top":"var(--wp--custom--gap--vertical)"}}}} -->
 	<div class="wp-block-group site-header alignwide" style="padding-bottom:var(--wp--custom--gap--vertical);padding-top:var(--wp--custom--gap--vertical)">
 
@@ -21,7 +32,9 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:template-part {"slug":"header-spacer"} /-->
-
 	</div>
 	<!-- /wp:group -->
+	',
+);
+
+
