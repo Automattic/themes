@@ -191,7 +191,7 @@ async function buildComZip(themeSlug) {
 
 	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
 	let themeVersion = getThemeMetadata(styleCss, 'Version');
-	let wpVersionCompat = getThemeMetadata(styleCss, 'Tested up to');
+	let wpVersionCompat = getThemeMetadata(styleCss, 'Requires at least');
 
 	if (themeVersion && wpVersionCompat) {
 		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
@@ -379,9 +379,9 @@ function getThemeMetadata(styleCss, attribute) {
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
 				.trim()
 				.replace('-wpcom', '');
-		case 'Tested up to':
+		case 'Requires at least':
 			return styleCss
-				.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
+				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
 	}
 }
 
@@ -838,4 +838,3 @@ async function executeCommand(command, logResponse) {
 		});
 	});
 }
-
