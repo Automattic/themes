@@ -16,17 +16,17 @@ add_color_rule( 'bg', '#FFFDF6', array(
 			.main-navigation > div > ul > li.current-menu-item li > a,
 			.main-navigation > div > ul > li.focus li > a,
 			.main-navigation > div > ul > li:hover li > a,
-			.main-navigation > div > ul > li:hover li:hover > a, 
-			.main-navigation > div > ul > li:hover li.focus > a, 
+			.main-navigation > div > ul > li:hover li:hover > a,
+			.main-navigation > div > ul > li:hover li.focus > a,
 			.main-navigation > div > ul > li:hover li.current-menu-item > a,
-			.main-navigation > div > ul > li.focus li:hover > a, 
-			.main-navigation > div > ul > li.focus li.focus > a, 
+			.main-navigation > div > ul > li.focus li:hover > a,
+			.main-navigation > div > ul > li.focus li.focus > a,
 			.main-navigation > div > ul > li.focus li.current-menu-item > a,
 			.main-navigation > div > ul > li.current-menu-item li:hover > a,
 			.main-navigation > div > ul > li.current-menu-item li.focus > a,
 			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a,
-			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container, 
-			.mobile-nav-side .site-header #site-navigation.main-navigation > div', 
+			.mobile-nav-side .site-header #site-navigation.main-navigation .woocommerce-menu-container,
+			.mobile-nav-side .site-header #site-navigation.main-navigation > div',
 			'background-color' ),
 
 	// Text-color
@@ -55,7 +55,7 @@ add_color_rule( 'bg', '#FFFDF6', array(
 			.wp-block-file__button,
 			.wp-block-file__button:focus,
 			.wp-block-file__button:hover,
-			.wp-block-pullquote.is-style-solid-color,			
+			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
@@ -141,15 +141,15 @@ add_color_rule( 'link', '#20603C', array(
 			.wp-block-button.is-style-outline .wp-block-button__link,
 			.wp-block-button.is-style-outline .wp-block-button__link:active,
 			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-			.wp-block-button.is-style-outline .wp-block-button__link:hover, 
-			.wp-block-button.is-style-outline .wp-block-button__link:focus, 
+			.wp-block-button.is-style-outline .wp-block-button__link:hover,
+			.wp-block-button.is-style-outline .wp-block-button__link:focus,
 			.wp-block-button.is-style-outline .wp-block-button__link.has-focus,
 			.wp-block-button.is-style-outline.wp-block-button__link,
 			.wp-block-button.is-style-outline.wp-block-button__link:active,
 			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
-			.wp-block-button.is-style-outline.wp-block-button__link:hover, 
-			.wp-block-button.is-style-outline.wp-block-button__link:focus, 
-			.wp-block-button.is-style-outline.wp-block-button__link.has-focus, 			
+			.wp-block-button.is-style-outline.wp-block-button__link:hover,
+			.wp-block-button.is-style-outline.wp-block-button__link:focus,
+			.wp-block-button.is-style-outline.wp-block-button__link.has-focus,
 			.wp-block-latest-posts > li > a:active,
 			.wp-block-latest-posts > li > a:focus,
 			.wp-block-latest-posts > li > a:hover,
@@ -161,16 +161,16 @@ add_color_rule( 'link', '#20603C', array(
 			.main-navigation > div > ul > li.current-menu-item > a,
 			.main-navigation > div > ul > li.focus > a,
 			.main-navigation > div > ul > li:hover > a,
-			.main-navigation > div > ul > li:hover li:hover > a, 
-			.main-navigation > div > ul > li:hover li.focus > a, 
+			.main-navigation > div > ul > li:hover li:hover > a,
+			.main-navigation > div > ul > li:hover li.focus > a,
 			.main-navigation > div > ul > li:hover li.current-menu-item > a,
-			.main-navigation > div > ul > li.focus li:hover > a, 
-			.main-navigation > div > ul > li.focus li.focus > a, 
+			.main-navigation > div > ul > li.focus li:hover > a,
+			.main-navigation > div > ul > li.focus li.focus > a,
 			.main-navigation > div > ul > li.focus li.current-menu-item > a,
 			.main-navigation > div > ul > li.current-menu-item li:hover > a,
 			.main-navigation > div > ul > li.current-menu-item li.focus > a,
 			.main-navigation > div > ul > li.current-menu-item li.current-menu-item > a', 'color' ),
-	
+
 	// Text-color with less opacity (dim)
 	array( '.a8c-posts-list__item .a8c-posts-list-item__meta a:active,
 			.a8c-posts-list__item .a8c-posts-list-item__meta a:hover,
@@ -252,9 +252,7 @@ add_color_rule( 'txt', '#3C2323', array(
 			.main-navigation > div > ul > li:hover li > a', 'color' ),
 
 	// Background-color
-	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
-			.wp-block-cover,
-			.wp-block-cover-image', 'background-color' ),
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	// Border-color
 	array( '.wp-block-code,
@@ -331,7 +329,7 @@ add_color_rule( 'fg1', '#655441', array(
 	array( '.has-secondary-color', 'color' ),
 
 	// Background-color
-	array( '	
+	array( '
 			.main-navigation .button:focus,
 			.main-navigation .button:hover,
 			.main-navigation #toggle:focus + #toggle-menu,
@@ -344,12 +342,12 @@ add_color_rule( 'fg1', '#655441', array(
  * Custom CSS
  */
 
-function barnsbury_custom_colors_extra_css() { 
+function barnsbury_custom_colors_extra_css() {
 	$colors_array = get_theme_mod( 'colors_manager' );
 	$bg           = $colors_array['colors']['bg'];
 ?>
 	@media screen and (min-width: 560px) {
-		
+
 		.main-navigation > div > ul > li > .sub-menu {
 			background-color: <?php echo $bg; ?>;
 			border: 1px solid;
@@ -366,7 +364,7 @@ function barnsbury_custom_colors_extra_css() {
 		}
 	}
 <?php }
-add_theme_support( 'custom_colors_extra_css', 'barnsbury_custom_colors_extra_css' ); 
+add_theme_support( 'custom_colors_extra_css', 'barnsbury_custom_colors_extra_css' );
 
 /**
  * Featured Varia Palettes

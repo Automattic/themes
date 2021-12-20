@@ -34,12 +34,6 @@ add_color_rule( 'bg', '#f7f7f6', array(
 			.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-text-color):visited,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			.wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	/**
@@ -138,7 +132,7 @@ add_color_rule( 'link', '#ff302c', array(
 			.social-navigation a,
 			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):active,
-			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color), 
+			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color),
 			.wp-block-button.is-style-outline.wp-block-button__link:not(.has-text-color):active,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a,
 			a', 'color' ),
@@ -181,13 +175,9 @@ add_color_rule( 'txt', '#444444', array(
 			table.is-style-stripes tbody tr:nth-child(odd)', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover,
-			.wp-block-cover.has-background-dim,
-			.wp-block-cover-image,
-			.wp-block-cover-image.has-background-dim,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative,
 			.main-navigation #toggle:focus + #toggle-menu', 'background-color' ),
-			
+
 	// Border-color darkened
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color', '-1' ),
 
