@@ -1,4 +1,8 @@
-var enabledDuotone = duotoneVars[ 'duotoneControl' ] === '1' ? true : false;
+var enabledDuotone = false;
+
+if ( window.duotoneVars ) {
+	enabledDuotone = duotoneVars[ 'duotoneControl' ] === '1' ? true : false;
+}
 
 wp.customize( 'duotone_control', ( value ) => {
 	value.bind( ( newValue ) => {
