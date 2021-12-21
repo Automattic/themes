@@ -4245,7 +4245,15 @@ dt {
 		vertical-align: middle;
 	}
 	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li.focus > ul,
+	.main-navigation > div > ul > li[focus-within] > ul,
+	.main-navigation > div > ul > li.current-menu-item > ul {
+		border: 1px solid #D0D0D0;
+		border-radius: 4px;
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.main-navigation > div > ul > li:hover > ul,
+	.main-navigation > div > ul > li:focus-within > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
 		border: 1px solid #D0D0D0;
 		border-radius: 4px;

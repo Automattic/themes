@@ -4319,13 +4319,30 @@ body:not(.fse-enabled) #masthead {
 		font-size: 0.625rem;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul,
-	.site-header .main-navigation > div > ul > li.focus > ul,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul,
+	.site-header .main-navigation > div > ul > li:focus-within > ul,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
-	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid #3E7D98;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-left: 16px;
+		width: 16px;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li:focus-within > ul:before,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
 		border-bottom: 8px solid #3E7D98;
 		border-left: 8px solid transparent;

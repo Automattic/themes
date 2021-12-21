@@ -4203,18 +4203,40 @@ p:not(.site-title) a:hover {
 		font-size: 0.5rem;
 	}
 	.site-header .main-navigation > div > ul > li:hover > a,
-	.site-header .main-navigation > div > ul > li.focus > a,
+	.site-header .main-navigation > div > ul > li[focus-within] > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item > a {
+		color: #CAAB57;
+	}
+	.site-header .main-navigation > div > ul > li:hover > a,
+	.site-header .main-navigation > div > ul > li:focus-within > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item > a {
 		color: #CAAB57;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul,
-	.site-header .main-navigation > div > ul > li.focus > ul,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul,
+	.site-header .main-navigation > div > ul > li:focus-within > ul,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
-	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid #CAAB57;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-left: 16px;
+		width: 16px;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li:focus-within > ul:before,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
 		border-bottom: 8px solid #CAAB57;
 		border-left: 8px solid transparent;
@@ -4225,7 +4247,13 @@ p:not(.site-title) a:hover {
 		width: 16px;
 	}
 	.site-header .main-navigation > div > ul > li:hover li > a,
-	.site-header .main-navigation > div > ul > li.focus li > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
+		background: #CAAB57;
+		color: #060f29;
+	}
+	.site-header .main-navigation > div > ul > li:hover li > a,
+	.site-header .main-navigation > div > ul > li:focus-within li > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
 		background: #CAAB57;
 		color: #060f29;
@@ -4233,9 +4261,20 @@ p:not(.site-title) a:hover {
 	.site-header .main-navigation > div > ul > li:hover li:hover > a,
 	.site-header .main-navigation > div > ul > li:hover li.focus > a,
 	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-	.site-header .main-navigation > div > ul > li.focus li:hover > a,
-	.site-header .main-navigation > div > ul > li.focus li.focus > a,
-	.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li:hover > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li.focus > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
+		background: #b59439;
+	}
+	.site-header .main-navigation > div > ul > li:hover li:hover > a,
+	.site-header .main-navigation > div > ul > li:hover li.focus > a,
+	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li:focus-within li:hover > a,
+	.site-header .main-navigation > div > ul > li:focus-within li.focus > a,
+	.site-header .main-navigation > div > ul > li:focus-within li.current-menu-item > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
