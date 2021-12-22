@@ -1,39 +1,3 @@
-//FRONTEND
-.wp-site-blocks { // top level of the view
-	//In this situation we want to introduce a standardized gap between content and the edge of the screen.
-	padding-left: var(--wp--custom--gap--horizontal);
-	padding-right: var(--wp--custom--gap--horizontal);
-	.alignfull {
-		// these elements we want to "bust out" of the gap created above 
-		margin-left: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
-		margin-right: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
-		width: unset;
-		// however any containers that "bust out" should re-apply that gap but this time using padding instead of margins.
-		&.wp-block-template-part,
-		&.wp-block-columns,
-		&.wp-block-group {
-	 		padding-left: var(--wp--custom--gap--horizontal);
-	 		padding-right: var(--wp--custom--gap--horizontal);
-		}
-	}
-}
-
-// EDITOR (NOTE: It PROBABLY would be OK to bring these together to "simplify" the stylesheet.  However the selectors are quite different
-// and it's a lot easier to understand and ensure intent separated in this way.
-.is-root-container { //top level of the editor
-	padding-left: var(--wp--custom--gap--horizontal);
-	padding-right: var(--wp--custom--gap--horizontal);
-	.wp-block[data-align="full"] { //blocks configured to be "align full" in "editorspeak"
-		margin-left: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
-		margin-right: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
-		width: unset;
-		>.wp-block-group {
-	 		padding-left: var(--wp--custom--gap--horizontal);
-	 		padding-right: var(--wp--custom--gap--horizontal);
-		}
-	}
-}
-
 @include break-mobile {
 	// limit size of any element that is aligned left/right
 	.wp-block[data-align="left"], // This is for the editor
@@ -54,3 +18,43 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+
+
+/*
+ * Alignment styles - from TT2
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+
+ .wp-site-blocks,
+ body > .is-root-container,
+ .edit-post-visual-editor__post-title-wrapper,
+ .wp-block-group.alignfull,
+ .is-root-container .wp-block[data-align="full"] > .wp-block-group {
+	padding-left: var(--wp--custom--gap--horizontal);
+	padding-right: var(--wp--custom--gap--horizontal);
+ }
+
+ .wp-site-blocks .alignfull,
+ .is-root-container .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
+	margin-right: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
+	width: unset;
+ }
+
+ /* Blocks inside columns don't have negative margins. */
+ .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+ .is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+ /* We also want to avoid stacking negative margins. */
+ .wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+ .is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+ }
