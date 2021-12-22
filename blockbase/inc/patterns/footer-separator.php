@@ -1,12 +1,12 @@
 <?php
 /**
- * Underlined footer
+ * Footer with menu and separator
  *
  * @package Blockbase
  */
 
 return array(
-	'title'      => __( 'Underlined footer', 'blockbase' ),
+	'title'      => __( 'Footer with menu and separator', 'blockbase' ),
 	'categories' => array( 'blockbase' ),
 	'blockTypes' => array( 'core/template-part/footer' ),
 	'content'    => '<!-- wp:group {"style":{"spacing":{"padding":{"top":"60px"}}},"layout":{"inherit":false}} -->
