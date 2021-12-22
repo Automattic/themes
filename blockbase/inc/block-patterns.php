@@ -19,6 +19,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 			$block_patterns = array(
 				'404',
 				'footer-columns',
+				'footer-left',
 				'footer-primary',
 				'footer-separator',
 				'footer-simple',
