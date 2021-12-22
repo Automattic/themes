@@ -20,14 +20,13 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 			$block_patterns = array(
 				'blog-posts',
 				'mixed-media-in-container',
-				'pre-footer',
 				'text-list-with-button',
 				'full-width-image-with-aside-caption',
 				'testimonial',
 				'two-columns-of-text',
 				'paragraph-with-quote',
 				'columns-in-container',
-				'post-navigation-labeled'
+				'post-navigation-labeled',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
