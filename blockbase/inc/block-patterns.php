@@ -21,6 +21,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 				'footer-columns',
 				'footer-left',
 				'footer-primary',
+				'footer-search',
 				'footer-separator',
 				'footer-simple',
 				'footer-small',
