@@ -20,6 +20,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 				'404',
 				'footer-simple',
 				'footer-columns',
+				'footer-vertical-menu',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
