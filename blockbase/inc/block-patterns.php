@@ -21,6 +21,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 				'footer-simple',
 				'footer-columns',
 				'footer-vertical-menu',
+				'footer-underlined',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
