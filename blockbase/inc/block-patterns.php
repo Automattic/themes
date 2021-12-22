@@ -18,10 +18,12 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 		if ( function_exists( 'register_block_pattern' ) ) {
 			$block_patterns = array(
 				'404',
-				'footer-simple',
 				'footer-columns',
-				'footer-vertical-menu',
+				'footer-primary',
 				'footer-separator',
+				'footer-simple',
+				'footer-small',
+				'footer-vertical-menu',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
