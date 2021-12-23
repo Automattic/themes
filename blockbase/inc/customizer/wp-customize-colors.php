@@ -162,7 +162,12 @@ class GlobalStylesColorCustomizer {
 		$this->update_user_color_palette( $wp_customize );
 
 		// Get the user's theme.json from the CPT.
-		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+		if ( method_exists( WP_Theme_JSON_Resolver_Gutenberg, 'get_user_global_styles_post_id' ) ) { // This is the new name.
+			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+		} else if ( method_exists( WP_Theme_JSON_Resolver_Gutenberg, 'get_user_custom_post_type_id' ) ) { // This is the old name.
+			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
+		}
+
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
