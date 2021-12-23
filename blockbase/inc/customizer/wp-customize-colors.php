@@ -185,7 +185,7 @@ class GlobalStylesColorCustomizer {
 		if ( ! $this->check_if_colors_are_default() ) {
 			$user_theme_json_post_content = set_settings_array(
 				$user_theme_json_post_content,
-				array( 'settings', 'color', 'palette' ),
+				array( 'settings', 'color', 'palette', 'custom' ),
 				$this->user_color_palette
 			);
 
@@ -214,7 +214,7 @@ class GlobalStylesColorCustomizer {
 				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
 				$user_theme_json_post_content = set_settings_array(
 					$user_theme_json_post_content,
-					array( 'settings', 'color', 'duotone' ),
+					array( 'settings', 'color', 'duotone', 'custom' ),
 					array_merge( $custom_duotone_filter, $this->theme_duotone_settings )
 				);
 
@@ -225,7 +225,7 @@ class GlobalStylesColorCustomizer {
 						if( $block['filter'] ) {
 							$user_theme_json_post_content = set_settings_array(
 								$user_theme_json_post_content,
-								array( 'styles', 'blocks', $key, 'filter', 'duotone' ),
+								array( 'styles', 'blocks', $key, 'filter', 'duotone', 'custom' ),
 								$custom_duotone_filter_variable
 							);
 						}
@@ -238,6 +238,7 @@ class GlobalStylesColorCustomizer {
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		wp_update_post( $user_theme_json_post );
 		delete_transient( 'global_styles' );
+		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
 		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}

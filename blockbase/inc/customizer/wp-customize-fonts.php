@@ -505,9 +505,9 @@ class GlobalStylesFontsCustomizer {
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
 
 		// Get the user's theme.json from the CPT.
-		if ( method_exists( WP_Theme_JSON_Resolver_Gutenberg, 'get_user_global_styles_post_id' ) ) { // This is the new name.
+		if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_global_styles_post_id' ) ) { // This is the new name.
 			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
-		} else if ( method_exists( WP_Theme_JSON_Resolver_Gutenberg, 'get_user_custom_post_type_id' ) ) { // This is the old name.
+		} else if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_custom_post_type_id' ) ) { // This is the old name.
 			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
 		}
 
@@ -521,7 +521,7 @@ class GlobalStylesFontsCustomizer {
 		// Set the typography settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
-			array( 'settings', 'typography', 'fontFamilies' ),
+			array( 'settings', 'typography', 'fontFamilies', 'custom' ),
 			$font_families
 		);
 
@@ -546,6 +546,7 @@ class GlobalStylesFontsCustomizer {
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		wp_update_post( $user_theme_json_post );
 		delete_transient( 'global_styles' );
+		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
 		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
