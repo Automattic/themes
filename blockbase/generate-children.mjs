@@ -16,11 +16,43 @@ async function getPackageJson( directory ) {
 }
 
 async function generateChildren() {
-	const children = [ {
-		"name": 'Skatepark',
-		"description": "Skatepark is a bold and exciting WordPress theme designed for modern events and organizations. With its simple but vivid color default scheme, duotone support, and playful grid, Skatepark is a theme designed for work and play. Customize its colors or try out different font pairings to create your own unique look and feel.",
-		"slug": 'skatepark'
-	} ];
+	const children = [
+		{
+			"name": 'Geologist',
+			"description": "Geologist is a streamlined theme for modern bloggers. It consists of a simple single column of posts, paired with a sophisticated color palette and beautiful sans-serif typography.",
+			"slug": 'geologist'
+		},
+		{
+			"name": 'Mayland (Blocks)',
+			"description": "Make your online portfolio wonderfully uncluttered with Mayland. Gracefully highlight your photography and other projects. Mayland is versatile enough to be your personal site too.",
+			"slug": 'mayland-blocks'
+		},
+		{
+			"name": 'Quadrat',
+			"description": "Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts. Inspired by squared shapes and colourful, minimalist flat illustrations, Quadrat bundles a set of images you can use on your site with the theme’s default color palette. Quadrat’s default styles are bold and playful, relying on a simple sans-serif font and a strong color scheme that you can customize.",
+			"slug": 'quadrat'
+		},
+		{
+			"name": 'Seedlet (Blocks)',
+			"description": "A simple, text-driven, single-column block-based theme.",
+			"slug": 'seedlet-blocks'
+		},
+		{
+			"name": 'Skatepark',
+			"description": "Skatepark is a bold and exciting WordPress theme designed for modern events and organizations. With its simple but vivid color default scheme, duotone support, and playful grid, Skatepark is a theme designed for work and play. Customize its colors or try out different font pairings to create your own unique look and feel.",
+			"slug": 'skatepark'
+		},
+		{
+			"name": 'Videomaker',
+			"description": "Videomaker is a free, minimalistic WordPress theme ideal for film directors and video creators.",
+			"slug": 'videomaker'
+		},
+		{
+			"name": 'Zoologist',
+			"description": "Zoologist is a simple blogging theme that supports full-site editing.",
+			"slug": 'zoologist'
+		}
+	];
 
 	const packageJson = await getPackageJson( '.' );
 	children.forEach( async childTheme => {
@@ -35,6 +67,7 @@ async function generateChildren() {
 		newPackageJson.version = themePackageJson.version;
 		const combinedPackageJson = Object.assign( {}, packageJson, newPackageJson );
 
-		fs.writeFile( themeDir + '/package.json', JSON.stringify( combinedPackageJson, null, 2 ) );
+		const result = await fs.writeFile( themeDir + '/package.json', JSON.stringify( combinedPackageJson, null, 2 ) )
+		console.log( childTheme.name + ' updated' );
 	} );
 }
