@@ -294,6 +294,11 @@ button:focus {
 	outline-offset: 2px;
 }
 
+input[type="checkbox"]:-ms-input-placeholder, input[type="submit"]:-ms-input-placeholder, button:-ms-input-placeholder {
+	color: var(--wp--custom--form--color--text);
+	opacity: 0.66;
+}
+
 input[type="checkbox"]::placeholder,
 input[type="submit"]::placeholder,
 button::placeholder {
@@ -719,7 +724,8 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-post-comments form .comment-form-cookies-consent input[type="checkbox"] {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -966,6 +972,11 @@ div.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
 	line-height: 0;
 }
 
+.wp-block-search .wp-block-search__input:-ms-input-placeholder {
+	color: var(--wp--custom--form--color--text);
+	opacity: 0.66;
+}
+
 .wp-block-search .wp-block-search__input::placeholder {
 	color: var(--wp--custom--form--color--text);
 	opacity: 0.66;
@@ -1097,5 +1108,4 @@ p.wp-block-site-tagline {
 	-webkit-mask-image: url(svg/post-tag.svg);
 	mask-image: url(svg/post-tag.svg);
 }
-
 /*# sourceMappingURL=ponyfill.css.map */
