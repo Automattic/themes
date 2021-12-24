@@ -24,14 +24,17 @@ async function generateChildren() {
 
 	const packageJson = await getPackageJson( '.' );
 	children.forEach( async childTheme => {
-		const themePackageJson = await getPackageJson( '../' + childTheme.slug );
+		const themeDir = '../' + childTheme.slug;
 		const newPackageJson = {};
 		newPackageJson.name = childTheme.slug;
 		newPackageJson.description = childTheme.description;
-		newPackageJson.version = themePackageJson.version;
 		newPackageJson.bugs = packageJson.bugs;
 		newPackageJson.bugs.url = packageJson.bugs.url.replace( 'Blockbase', childTheme.name );
 		newPackageJson.homepage = packageJson.homepage.replace( packageJson.name, childTheme.slug );
-		console.log( Object.assign( {}, packageJson, newPackageJson ) );
+		const themePackageJson = await getPackageJson( themeDir );
+		newPackageJson.version = themePackageJson.version;
+		const combinedPackageJson = Object.assign( {}, packageJson, newPackageJson );
+
+		fs.writeFile( themeDir + '/package.json', JSON.stringify( combinedPackageJson, null, 2 ) );
 	} );
 }

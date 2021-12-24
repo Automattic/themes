@@ -1,23 +1,28 @@
 {
   "name": "skatepark",
   "version": "1.0.26",
-  "description": "",
-  "main": "index.php",
-  "dependencies": {},
+  "description": "Skatepark is a bold and exciting WordPress theme designed for modern events and organizations. With its simple but vivid color default scheme, duotone support, and playful grid, Skatepark is a theme designed for work and play. Customize its colors or try out different font pairings to create your own unique look and feel.",
+  "bugs": {
+    "url": "https://github.com/Automattic/themes/issues/new?label=[Theme]%20Skatepark"
+  },
+  "homepage": "https://github.com/Automattic/themes/blob/trunk/skatepark/README.md",
   "devDependencies": {
-    "@wordpress/base-styles": "^3.4.0",
-    "autoprefixer": "^10.2.5",
+    "@wordpress/base-styles": "^3.3.0",
+    "@wordpress/browserslist-config": "^2.2.2",
     "chokidar-cli": "^2.1.0",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.13.1",
     "node-sass-package-importer": "^5.3.2",
     "postcss": "^8.2.12",
     "postcss-cli": "^8.3.1"
   },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
   "scripts": {
-    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-    "build": "npm run build:scss",
-    "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/theme.scss --output-style expanded --indent-type tab --indent-width 1 | postcss --use autoprefixer --output assets/theme.css --map"
+    "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
+    "build": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss assets/ponyfill.css --output-style expanded --indent-type tab --indent-width 1 --source-map true && postcss assets/ponyfill.css --use autoprefixer --output assets/ponyfill.css --map",
+    "build:scss": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js sass/ponyfill.scss --output-style expanded --indent-type tab --indent-width 1 | postcss --use autoprefixer --output assets/ponyfill.css --map"
   },
-  "author": "",
+  "author": "Automattic",
   "license": "GPLv2"
 }
