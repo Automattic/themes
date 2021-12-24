@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import deepmerge from 'deepmerge';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -10,6 +10,11 @@ const localpath = dirname( fileURLToPath( import.meta.url ) );
 	return await generateChildren();
 })();
 
+async function getPackageJson( directory ) {
+    const packageJsonString = await fs.readFile( directory + '/package.json', 'utf8' );
+    return JSON.parse( packageJsonString );
+}
+
 async function generateChildren() {
 	const children = [ {
 		"name": 'Skatepark',
@@ -18,20 +23,12 @@ async function generateChildren() {
 		"version": '1.0.26'
 	} ];
 
-	fs.readFile( 'package.json', 'utf8' , ( error, packageJsonString ) => {
-		if ( error ) {
-		  console.error(err);
-		  return;
-		}
-
-		const packageJson = JSON.parse( packageJsonString )
-		children.forEach( childTheme => {
-			childTheme.bugs = packageJson.bugs;
-			childTheme.bugs.url = packageJson.bugs.url.replace( 'Blockbase', childTheme.name );
-			childTheme.homepage = packageJson.homepage.replace( packageJson.name, childTheme.slug );
-			const newPackageJson = Object.assign( {}, packageJson, childTheme );
-			console.log( newPackageJson );
-		} );
-
+	const packageJson = await getPackageJson( '.' );
+	children.forEach( childTheme => {
+		childTheme.bugs = packageJson.bugs;
+		childTheme.bugs.url = packageJson.bugs.url.replace( 'Blockbase', childTheme.name );
+		childTheme.homepage = packageJson.homepage.replace( packageJson.name, childTheme.slug );
+		const newPackageJson = Object.assign( {}, packageJson, childTheme );
+		console.log( newPackageJson );
 	} );
 }
