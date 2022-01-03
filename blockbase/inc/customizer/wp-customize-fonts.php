@@ -459,9 +459,9 @@ class GlobalStylesFontsCustomizer {
 		}
 	}
 
-	function unset_property_if_it_exists( $property ) {
-		if ( isset( $property ) ) {
-			unset( $property );
+	function unset_property_if_it_exists( $object, $property ) {
+		if ( isset( $object->{$property} ) ) {
+			unset( $object->{$property} );
 		}
 
 	}
@@ -518,6 +518,8 @@ class GlobalStylesFontsCustomizer {
 		$user_theme_json_post_content->version                     = 1;
 		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
 
+		$this->unset_property_if_it_exists( $user_theme_json_post_content->settings->typography, 'fontFamilies' );
+
 		// Set the typography settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
@@ -527,19 +529,17 @@ class GlobalStylesFontsCustomizer {
 
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->settings->typography->fontFamilies );
-
 			// These lines need to stay for backwards compatibility.
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h1->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h2->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h3->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h4->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h5->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h6->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography, 'fontFamily' );
 		}
 
 		// Update the theme.json with the new settings.
