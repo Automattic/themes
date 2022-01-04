@@ -84,6 +84,11 @@ a:active {
 	opacity: 0.90;
 } 
 
+.wp-block-button__link:hover, .wp-block-button__link:focus, 
+.wp-block-button__link:active, .wp-block-button__link:visited {
+	color: initial;
+}
+
 /*
  * Alignment styles.
  * These rules are temporary, and should not be relied on or 
@@ -139,6 +144,33 @@ body > .is-root-container,
 	text-decoration: underline;
 }
 
+/*
+ * Comment form cleanup.
+ */
+
+input {
+	font-family: inherit;
+}
+
+textarea,
+input:not([type="submit"]) {
+	color: var(--wp--preset--color--foreground);
+	background: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+}
+
+textarea:focus,
+input:not([type="submit"]):focus {
+	border-color: var(--wp--preset--color--secondary);
+}
+
+.comment-form label {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-form-cookies-consent #wp-comment-cookies-consent {
+	margin-top: 0.2em;
+}
 /*
  * Drop cap refinements.
  */
