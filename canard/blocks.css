@@ -245,11 +245,17 @@ p.has-drop-cap:not(:focus)::first-letter {
 	color: #d11415;
 }
 
-.entry-content .wp-block-button .wp-block-button__link:active,
-.entry-content .wp-block-button .wp-block-button__link:focus,
-.entry-content .wp-block-button .wp-block-button__link:hover {
-	color: #d11415;
-	background: #fff;
+.wp-block-button .wp-block-button__link:active,
+.wp-block-button .wp-block-button__link:focus,
+.wp-block-button .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:not(.has-background):active,
+.is-style-outline .wp-block-button__link:not(.has-background):hover,
+.is-style-outline .wp-block-button__link:not(.has-background):focus,
+.is-style-outline .wp-block-button__link:not(.has-text-color):active,
+.is-style-outline .wp-block-button__link:not(.has-text-color):hover,
+.is-style-outline .wp-block-button__link:not(.has-text-color):focus {
+	color: #d11415 !important;
+	background: #fff !important;
 	border-color: #d11415;
 }
 
