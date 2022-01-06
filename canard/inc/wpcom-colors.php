@@ -341,7 +341,10 @@ add_color_rule( 'fg1', '#222222', array(
 	array(
 		'.toggled .menu-toggle,
 		.sidebar-toggle.toggled,
-		.toggled .search-toggle', 'border-color'
+		.toggled .search-toggle,
+		.wp-block-button .wp-block-button__link:active,
+		.wp-block-button .wp-block-button__link:focus,
+		.wp-block-button .wp-block-button__link:hover', 'border-color'
 	),
 	array(
 		'.main-navigation.toggled > div:before,
@@ -383,7 +386,13 @@ add_color_rule( 'fg1', '#222222', array(
 		'.rtl .secondary-navigation li + li', 'border-right-color', 'fg1', 2
 	),
 	array(
-		'.site-info .sep', 'color', 'fg1', 2
+		'.site-info .sep,
+		.wp-block-button .wp-block-button__link:active,
+		.wp-block-button .wp-block-button__link:focus,
+		.wp-block-button .wp-block-button__link:hover,
+		.is-style-outline>.wp-block-button__link:not(.has-text-color):active,
+		.is-style-outline>.wp-block-button__link:not(.has-text-color):focus,
+		.is-style-outline>.wp-block-button__link:not(.has-text-color):hover', 'color', 'fg1', 2
 	),
 
 	// #555555
@@ -456,7 +465,8 @@ add_color_rule( 'link', '#d11415', array(
 		#infinite-handle span button:focus,
 		#infinite-handle span button:hover,
 		.widget_akismet_widget .a-stats a,
-		.milestone-widget .milestone-header', 'background-color', 'bg', 2
+		.milestone-widget .milestone-header,
+		.wp-block-button .wp-block-button__link', 'background-color', 'bg', 2
 	),
 	array(
 		'button,
@@ -472,7 +482,8 @@ add_color_rule( 'link', '#d11415', array(
 		#infinite-handle span button:active,
 		#infinite-handle span button:focus,
 		#infinite-handle span button:hover,
-		.widget_akismet_widget .a-stats a', 'border-color', 'bg', 2
+		.widget_akismet_widget .a-stats a,
+		.wp-block-button .wp-block-button__link', 'border-color', 'bg', 2
 	),
 	array(
 		'pre', 'border-left-color', 'bg', 2
@@ -542,7 +553,8 @@ add_color_rule( 'link', '#d11415', array(
 		.widget_akismet_widget .a-stats a:hover .count,
 		.widget_authors > ul > li > a:active,
 		.widget_authors > ul > li > a:focus,
-		.widget_authors > ul > li > a:hover', 'color', 'bg', 2
+		.widget_authors > ul > li > a:hover,
+		.is-style-outline>.wp-block-button__link:not(.has-text-color)', 'color', 'bg', 2
 	),
 
 ), __( 'Accent' ) );
