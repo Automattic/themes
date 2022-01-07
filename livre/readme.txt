@@ -39,3 +39,14 @@ Newsreader Font
 Copyright 2020 The Newsreader Project Authors
 License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
 Source: https://github.com/productiontype/Newsreader
+
+Excerpts from "The Picture of Dorian Gray" by Oscar Wilde
+License: Public Domain
+Source: https://www.gutenberg.org/ebooks/174
+Used in the screenshot, and for block pattern placeholder text. 
+
+Photographs by Alfred Stieglitz. 
+License: CC0
+Source: https://www.rawpixel.com/image/3809197/photo-image-frame-art-house
+        https://www.rawpixel.com/image/3809180/photo-image-art-people-vintage
+Used in block patterns. 
