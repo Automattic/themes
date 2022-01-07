@@ -9,18 +9,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A simple theme. 
+Livre is a simple theme designed to evoke the calm feeling you get when you settle in with a classic book. 
 
 == Changelog ==
 
 = 1.0 =
-* Released: December
-
-https://wordpress.org/support/article/twenty-twenty-two-changelog#Version_1.0
+* Released: January 7, 2022
 
 == Copyright ==
 
-Livre WordPress Theme, 2021 WordPress.org
+Livre WordPress Theme, (C) 2022 Automattic, Inc.
 Livre is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -39,3 +37,8 @@ Newsreader Font
 Copyright 2020 The Newsreader Project Authors
 License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
 Source: https://github.com/productiontype/Newsreader
+
+Alignment code, used in style.css.
+Copyright 2021-2022 WordPress.org
+License: GPLv2 or later
+Source: http://github.com/wordpress/twentytwentytwo
