@@ -56,6 +56,8 @@ function livre_register_block_patterns() {
 		'header-left-right-logo',
 		'header-left-right-logo-title',
 		'header-title-tagline-social',
+		'page-about',
+		'page-contact',
 	);
 
 	/**
