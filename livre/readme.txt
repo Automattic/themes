@@ -31,14 +31,11 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+Livre is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
+
 This theme bundles the following third-party resources:
 
 Newsreader Font
 Copyright 2020 The Newsreader Project Authors
 License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
 Source: https://github.com/productiontype/Newsreader
-
-Alignment code, used in style.css.
-Copyright 2021-2022 WordPress.org
-License: GPLv2 or later
-Source: http://github.com/wordpress/twentytwentytwo
