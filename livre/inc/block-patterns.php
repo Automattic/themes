@@ -44,6 +44,10 @@ function livre_register_block_patterns() {
 
 	$block_patterns = array(
 		'footer-default',
+		'footer-right',
+		'footer-centered',
+		'footer-nav-left',
+		'footer-nav-right',
 		'header-default',
 		'header-right',
 		'header-centered',
