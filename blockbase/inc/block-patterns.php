@@ -37,7 +37,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 			$header_patterns = array(
 				'centered',
 				'default',
-				'lineaer',
+				'linear',
 				'minimal',
 				'rounded-logo',
 				'wide'
