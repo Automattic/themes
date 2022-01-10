@@ -17,9 +17,7 @@ return array(
 		<div class="wp-block-columns"><!-- wp:column -->
 		<div class="wp-block-column"><!-- wp:site-title {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"large"} /-->
 
-		<!-- wp:paragraph {"fontSize":"small"} -->
-		<p class="has-small-font-size">' . esc_html__( "Skatepark's coaches will work with you to develop and improve your skating abilities.", 'blockbase' ) . '</p>
-		<!-- /wp:paragraph -->
+		<!-- wp:site-tagline {"fontSize":"small"} /-->
 
 		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--foreground)","className":"is-style-logos-only"} -->
 		<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"http://twitter.com","service":"twitter"} /-->
