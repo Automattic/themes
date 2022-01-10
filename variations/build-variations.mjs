@@ -43,6 +43,8 @@ async function buildVariation(source, variation) {
 		await fs.remove( destDir + '/sass');
 		await fs.remove( destDir + '/node_modules' );
 		await fs.remove( destDir + '/template-mods.json');
+		await fs.remove( destDir + '/package.json');
+		await fs.remove( destDir + '/package-lock.json');
 
 		// copy the variation directory.
 		await fs.copy( srcVariationDir, destDir );
