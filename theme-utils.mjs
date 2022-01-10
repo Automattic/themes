@@ -659,6 +659,8 @@ async function buildPhabricatorCommitMessageSince(hash){
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs.replace(/"/g, '');
 	return `Deploy Themes ${projectVersion} to wpcom
 
 Summary:
@@ -682,9 +684,6 @@ async function createGitPhabricatorDiff(hash) {
 	console.log('creating Phabricator Diff');
 
 	let commitMessage = await buildPhabricatorCommitMessageSince(hash);
-	
-	// Remove any double quotes from commit message
-	commitMessage = commitMessage.replace(/"/g, '');
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
@@ -715,10 +714,7 @@ async function createSvnPhabricatorDiff(hash) {
 	console.log('creating Phabricator Diff');
 
 	const commitTempFileLocation = '/tmp/theme-deploy-comment.txt';
-	let commitMessage = await buildPhabricatorCommitMessageSince(hash);
-
-	// Remove any double quotes from commit message
-	commitMessage = commitMessage.replace(/"/g, '');
+	const commitMessage = await buildPhabricatorCommitMessageSince(hash);
 
 	console.log(commitMessage);
 
