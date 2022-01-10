@@ -659,6 +659,8 @@ async function buildPhabricatorCommitMessageSince(hash){
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs.replace(/"/g, '');
 	return `Deploy Themes ${projectVersion} to wpcom
 
 Summary:
@@ -765,6 +767,8 @@ async function tagDeployment(options={}) {
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs.replace(/"/g, '');
 	let tag = `v${projectVersion}`;
 	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
 
