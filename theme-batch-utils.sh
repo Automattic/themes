@@ -138,11 +138,6 @@ for theme in */ ; do
 				npm audit fix
 				echo
 				;;
-			"update-dependencies")
-				echo 'Updating Dependencies for '${theme}
-				npx npm-check -y --skip-unused
-				echo
-				;;
 			"build")
 				build-if-changed ${theme}
 				;;
