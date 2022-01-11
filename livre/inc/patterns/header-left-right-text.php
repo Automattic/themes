@@ -3,7 +3,7 @@
  * Header with site title on left and navigation on right block pattern
  */
 return array(
-	'title'      => __( 'Header with site title on left and navigation on right', 'livre' ),
+	'title'      => __( 'Header with site title on left and navigation on right', 'livro' ),
 	'categories' => array( 'header' ),
 	'blockTypes' => array( 'core/template-part/header' ),
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--large, 10rem)","top":"var(--wp--custom--spacing--small, 1.25rem)"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
