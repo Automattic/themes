@@ -145,3 +145,7 @@ if ( ! function_exists( 'livre_preload_webfonts' ) ) :
 endif;
 
 add_action( 'wp_head', 'livre_preload_webfonts' );
+
+// Add block patterns
+require get_template_directory() . '/inc/block-patterns.php';
+
