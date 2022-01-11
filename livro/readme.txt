@@ -1,4 +1,4 @@
-=== Livre ===
+=== Livro ===
 Contributors: automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Livre is a simple theme designed to evoke the calm feeling you get when you settle in with a classic book. 
+Livro is a simple theme designed to evoke the calm feeling you get when you settle in with a classic book. 
 
 == Changelog ==
 
@@ -18,8 +18,8 @@ Livre is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Copyright ==
 
-Livre WordPress Theme, (C) 2022 Automattic, Inc.
-Livre is distributed under the terms of the GNU GPL.
+Livro WordPress Theme, (C) 2022 Automattic, Inc.
+Livro is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Livre is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
+Livro is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
 
 This theme bundles the following third-party resources:
 

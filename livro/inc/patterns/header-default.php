@@ -3,7 +3,7 @@
  * Default header block pattern
  */
 return array(
-	'title'      => __( 'Default header', 'livre' ),
+	'title'      => __( 'Default header', 'livro' ),
 	'categories' => array( 'header' ),
 	'blockTypes' => array( 'core/template-part/header' ),
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--large, 10rem)","top":"var(--wp--custom--spacing--small, 1.25rem)"}}},"layout":{"type":"flex","justifyContent":"left"}} -->

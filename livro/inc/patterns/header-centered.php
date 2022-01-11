@@ -3,7 +3,7 @@
  * Centered header block pattern
  */
 return array(
-	'title'      => __( 'Centered header', 'livre' ),
+	'title'      => __( 'Centered header', 'livro' ),
 	'categories' => array( 'header' ),
 	'blockTypes' => array( 'core/template-part/header' ),
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--large, 10rem)","top":"var(--wp--custom--spacing--medium, clamp(2rem, 8vw, calc(4 * var(--wp--style--block-gap))))"}}}} -->
