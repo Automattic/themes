@@ -150,14 +150,6 @@ function blockbase_fonts_url() {
 }
 
 /**
- * Restores the Customizer since we still rely on it.
- */
-// function blockbase_restore_customizer() {
-// 	remove_action( 'admin_menu', 'gutenberg_remove_legacy_pages' );
-// }
-// add_action( 'init', 'blockbase_restore_customizer' );
-
-/**
  * Customize Global Styles
  */
 if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
