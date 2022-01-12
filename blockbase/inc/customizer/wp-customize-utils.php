@@ -14,17 +14,15 @@ function set_settings_array( $target, $array, $value ) {
 	$key     = array_shift( $array );
 	$current =& $target;
 	while ( 0 < sizeof( $array ) ) {
-		if ( ! property_exists( $current, $key ) ) {
-			$current->{ $key } = (object) array();
+		$current = (array) $current; // Old data might be an object, so convert it.
+		if ( ! array_key_exists( $current, $key ) ) {
+			$current[ $key ] = array();
 		}
-		$current =& $current->{ $key };
-
-		// Cast to an object in the case where it's been set as an array.
-		$current = (object) $current;
+		$current =& $current[ $key ];
 
 		$key     = array_shift( $array );
 	}
-	$current->{ $key } = $value;
+	$current[ $key ] = $value;
 	return $target;
 }
 
