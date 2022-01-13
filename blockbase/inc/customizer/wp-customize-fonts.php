@@ -460,8 +460,8 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function unset_property_if_it_exists( $object, $property ) {
-		if ( isset( $object[ $property ] ) ) {
-			unset( $object[ $property ] );
+		if ( isset( $object->{$property} ) ) {
+			unset( $object->{$property} );
 		}
 
 	}
@@ -504,12 +504,21 @@ class GlobalStylesFontsCustomizer {
 		$body_font_family_variable    = 'var(--wp--preset--font-family--' . $body_setting['slug'] . ')';
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
 
-		// Get the user's theme.json.
-		$user_theme_json_post_content = WP_Theme_JSON_Resolver_Gutenberg::get_user_data()->get_raw_data();
+		// Get the user's theme.json from the CPT.
+		if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_global_styles_post_id' ) ) { // This is the new name.
+			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+		} else if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_custom_post_type_id' ) ) { // This is the old name.
+			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
+		}
 
-		$user_theme_json_post_content['isGlobalStylesUserThemeJSON'] = true;
+		$user_theme_json_post         = get_post( $user_custom_post_type_id );
+		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
-		$this->unset_property_if_it_exists( $user_theme_json_post_content['settings']['typography'], 'fontFamilies' );
+		// Set meta settings.
+		$user_theme_json_post_content->version                     = 1;
+		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
+
+		$this->unset_property_if_it_exists( $user_theme_json_post_content->settings->typography, 'fontFamilies' );
 
 		// Set the typography settings.
 		$user_theme_json_post_content = set_settings_array(
@@ -521,25 +530,17 @@ class GlobalStylesFontsCustomizer {
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
 			// These lines need to stay for backwards compatibility.
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['elements']['h1']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['elements']['h2']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['elements']['h3']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['elements']['h4']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['elements']['h5']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['elements']['h6']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['blocks']['core/button']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['blocks']['core/post-title']['typography'], 'fontFamily' );
-			$this->unset_property_if_it_exists( $user_theme_json_post_content['styles']['blocks']['core/pullquote']['typography'], 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h1->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h2->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h3->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h4->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h5->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h6->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography, 'fontFamily' );
 		}
-
-		// Get the user's theme.json from the CPT.
-		if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_global_styles_post_id' ) ) { // This is the new name.
-			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
-		} else if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_custom_post_type_id' ) ) { // This is the old name.
-			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
-		}
-		$user_theme_json_post = get_post( $user_custom_post_type_id );
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
