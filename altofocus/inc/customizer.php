@@ -124,6 +124,6 @@ add_action( 'featured_content_default_settings', 'altofocus_featured_content_def
  */
 function altofocus_change_featured_content_default_settings() {
 	set_theme_mod( 'featured-content[show-all]', 1 );
-	update_option( 'featured-content[show-all]', 1 );
+	update_option( 'featured-content[show-all]', '1' );
 }
 add_action( 'after_setup_theme', 'altofocus_change_featured_content_default_settings' );
