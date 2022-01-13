@@ -606,12 +606,12 @@ async function pushChangesToSandbox() {
 		`, true);
 	}
 
-	// if(changedFiles.length > 0) {
-	// 	console.log('pushing changed files to sandbox:', changedFiles);
-	// 	await executeCommand(`
-	// 		rsync -avR --no-p --no-times --exclude-from='.sandbox-ignore' ${changedFiles.join(' ')} wpcom-sandbox:${sandboxPublicThemesFolder}/
-	// 	`, true);
-	// }
+	if(changedFiles.length > 0) {
+		console.log('pushing changed files to sandbox:', changedFiles);
+		await executeCommand(`
+			rsync -avR --no-p --no-times --exclude-from='.sandbox-ignore' ${changedFiles.join(' ')} wpcom-sandbox:${sandboxPublicThemesFolder}/
+		`, true);
+	}
 }
 
 /*
@@ -620,7 +620,7 @@ async function pushChangesToSandbox() {
 */
 async function getComittedChangesSinceHash(hash) {
 	const directoriesToIgnoreString = directoriesToIgnore.map( directory => ':^' + directory ).join(' ');
-	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only --diff-filter=AM -- . ${directoriesToIgnoreString}`);
+	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only -- . ${directoriesToIgnoreString}`);
 	comittedChanges = comittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
 
 	let uncomittedChanges = await executeCommand(`git diff HEAD --name-only -- . ${directoriesToIgnoreString}`);
@@ -636,7 +636,7 @@ async function getComittedChangesSinceHash(hash) {
 async function getDeletedFilesSince(hash){
 
 	let deletedSinceHash = await executeCommand(`
-		git log --format=format:"" --name-only -M100% --diff-filter=DR ${hash}..HEAD
+		git log --format=format:"" --name-only -M100% --diff-filter=D ${hash}..HEAD
 	`);
 	deletedSinceHash = deletedSinceHash.replace(/\r?\n|\r/g, " ").trim().split(" ");
 
