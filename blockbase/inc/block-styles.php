@@ -49,6 +49,14 @@ if ( ! function_exists( 'blockbase_register_block_styles' ) ) :
 					'style_handle' => 'post-category-icon',
 				)
 			);
+			register_block_style(
+				'core/search',
+				array(
+					'name'         => 'small-search',
+					'label'        => __( 'Small', 'blockbase' ),
+					'style_handle' => 'small-search',
+				)
+			);
 		}
 	}
 endif;
