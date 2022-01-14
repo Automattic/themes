@@ -43,8 +43,8 @@ return array(
 
 	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"bottom":"var(--wp--style--block-gap,1em)"}}}} -->
 	<div class="wp-block-group post-meta" style="padding-bottom:var(--wp--style--block-gap,1em)">
-		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
-		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--tiny)"}}} /-->
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--x-small)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--x-small)"}}} /-->
 	</div>
 	<!-- /wp:group -->
 
