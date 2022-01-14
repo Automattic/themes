@@ -3,7 +3,7 @@ Contributors: automattic
 Requires at least: 5.8
 Tested up to: 5.8.3
 Requires PHP: 5.6
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Livro is a simple theme designed to evoke the calm feeling you get when you settle in with a classic book. 
 
 == Changelog ==
+
+= 1.0.1 =
+* Alignment fixes, code cleanup.
 
 = 1.0 =
 * Released: January 7, 2022
