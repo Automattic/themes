@@ -586,68 +586,17 @@ function pushPremiumToSandbox() {
 async function pushChangesToSandbox() {
 
 	console.log("Pushing Changes to Sandbox.");
-
 	let hash = await getLastDeployedHash();
+	let changedThemes = await getChangedThemes(hash);
+	changedThemes = changedThemes.filter( item=> ! directoriesToIgnore.includes( item ) );
+	console.log(`Syncing ${changedThemes.length} themes`);
 
-	let deletedFiles = await getDeletedFilesSince(hash);
-	let changedFiles = await getComittedChangesSinceHash(hash);
-
-	//remove deleted files from changed files
-	changedFiles = changedFiles.filter( item => {
-		return false === deletedFiles.includes(item);
-	});
-
-
-	if(deletedFiles.length > 0) {
-		console.log('deleting from sandbox: ', deletedFiles);
-		await executeOnSandbox(`
-			cd ${sandboxPublicThemesFolder};
-			rm -f ${deletedFiles.join(' ')}
-		`, true);
-	}
-
-	if(changedFiles.length > 0) {
-		console.log('pushing changed files to sandbox:', changedFiles);
+	for ( let theme of changedThemes ) {
+		console.log( `Syncing ${theme}` );
 		await executeCommand(`
-			rsync -avR --no-p --no-times --exclude-from='.sandbox-ignore' ${changedFiles.join(' ')} wpcom-sandbox:${sandboxPublicThemesFolder}/
+			rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/
 		`, true);
 	}
-}
-
-/*
- Provide a collection of all files that have changed since the given hash.
- Used by pushChangesToSandbox
-*/
-async function getComittedChangesSinceHash(hash) {
-	const directoriesToIgnoreString = directoriesToIgnore.map( directory => ':^' + directory ).join(' ');
-	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only -- . ${directoriesToIgnoreString}`);
-	comittedChanges = comittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
-
-	let uncomittedChanges = await executeCommand(`git diff HEAD --name-only -- . ${directoriesToIgnoreString}`);
-	uncomittedChanges = uncomittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
-
-	return comittedChanges.concat(uncomittedChanges);
-}
-
-/*
- Provide a collection of all files that have been deleted since the given hash.
- Used by pushChangesToSandbox
-*/
-async function getDeletedFilesSince(hash){
-
-	let deletedSinceHash = await executeCommand(`
-		git log --format=format:"" --name-only -M100% --diff-filter=D ${hash}..HEAD
-	`);
-	deletedSinceHash = deletedSinceHash.replace(/\r?\n|\r/g, " ").trim().split(" ");
-
-	let deletedAndUncomitted = await executeCommand(`
-		git diff HEAD --name-only --diff-filter=D
-	`);
-	deletedAndUncomitted = deletedAndUncomitted.replace(/\r?\n|\r/g, " ").trim().split(" ");
-
-	return deletedSinceHash.concat(deletedAndUncomitted).filter( item => {
-		return item != '';
-	});
 }
 
 /*
