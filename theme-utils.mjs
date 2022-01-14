@@ -588,6 +588,7 @@ async function pushChangesToSandbox() {
 	console.log("Pushing Changes to Sandbox.");
 	let hash = await getLastDeployedHash();
 	let changedThemes = await getChangedThemes(hash);
+	changedThemes = changedThemes.filter(item=>directoriesToIgnore.includes(item));
 	console.log(`Syncing ${changedThemes.length} themes`);
 
 	for ( let theme of changedThemes ) {
