@@ -4,8 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage Livro
+ * @package Livro
  * @since Livro 1.0
  */
 
