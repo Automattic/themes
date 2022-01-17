@@ -26,6 +26,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 				'footer-simple',
 				'footer-small',
 				'footer-vertical-menu',
+				'footer-with-site-title',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
