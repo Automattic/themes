@@ -109,11 +109,24 @@ async function pushButtonDeploy(repoType) {
 
 		let thingsWentBump = await versionBumpThemes();
 
+		if( thingsWentBump ){
+			prompt = await inquirer.prompt([{
+				type: 'confirm',
+				message: 'Are you good with the version bump changes? Make any manual adjustments now if necessary.',
+				name: "continue",
+				default: false
+			}]);
+
+			if(!prompt.continue){
+				console.log(`Aborted Automated Deploy Process at version bump changes.` );
+				return;
+			}
+		}
+
 		let changedThemes = await getChangedThemes(hash);
 
 		await pushChangesToSandbox();
 
-		await updateLastDeployedHash();
 
 		//push changes (from version bump)
 		if( thingsWentBump ){
@@ -134,6 +147,8 @@ async function pushButtonDeploy(repoType) {
 				git push
 			`, true);
 		}
+
+		await updateLastDeployedHash();
 
 		if (repoType === 'git' ) {
 			diffUrl = await createGitPhabricatorDiff(hash);
