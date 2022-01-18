@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Make sure SVN credentials and project slug are set
-if [[ -z "$SVN_USERNAME" ]]; then
+if [[ -z "$SVN_USERNAME" ]] && [[ $1 != "preview" ]]; then
 	echo "Set the SVN_USERNAME secret"
 	exit 1
 fi
 
-if [[ -z "$SVN_PASSWORD" ]]; then
+if [[ -z "$SVN_PASSWORD" ]] && [[ $1 != "preview" ]]; then
 	echo "Set the SVN_PASSWORD secret"
 	exit 1
 fi
@@ -22,7 +22,9 @@ declare -a THEMES_TO_DEPLOY=(
 	"mayland-blocks"
 	"quadrat"
 	"skatepark"
-	"seedlet-blocks"
+	"seedlet-blocks",
+	"livro",
+	"videomaker"
 )
 
 for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
@@ -57,8 +59,15 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 		continue;
 	fi
 
+	directories=($SVN_DIR/*)
+	last_directory=${directories[${#directories[@]}-1]}
+
+	echo "➤ Copying previous version of theme '${THEME_SLUG}' to svn repository... "
+	svn update --set-depth infinity ${last_directory} --non-interactive 
+	svn cp ${last_directory} $SVN_DIR/$THEME_VERSION
+
 	echo "➤ Copying theme '${THEME_SLUG}' version '${THEME_VERSION}' to svn repository... "
-	rsync -rc --include=theme.json --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
+	rsync -rc --delete --include=theme.json --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
 	# Remove -wpcom from versoning
 	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/-wpcom//g' {} \; 
@@ -67,9 +76,16 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
 	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, jetpack-global-styles//g' {} \; 
 
-	# Add the version to SVN
-	svn add $SVN_DIR --force > /dev/null
+	# Remove files from the previous version	
+	svn status $SVN_DIR/$THEME_VERSION | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
 
-	echo "➤ Committing files..."
-	svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD}
+	# Add the version to SVN
+	svn add $SVN_DIR/$THEME_VERSION --force --depth infinity -q > /dev/null
+
+ 	if [[ $1 == "preview" ]]; then
+		svn status $SVN_DIR
+	else
+		echo "➤ Committing files..."
+		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD}
+	fi
 done
