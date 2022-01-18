@@ -131,7 +131,7 @@ body:not(.fse-enabled) {
 			}
 
 			& > div > ul > li:hover,
-			& > div > ul > li.focus,
+			& > div > ul > li:focus-within,
 			& > div > ul > li.current-menu-item {
 
 				& > a {
@@ -334,19 +334,6 @@ article .entry-header .entry-title,
 }
 
 // Remove margin if alignfull is first element
-.singular {
-	.hentry .entry-content {
-		& > *:first-child {
-			&.alignfull {
-				margin-top: -#{0.666 * map-deep-get($config-global, "spacing", "vertical")};
-
-				@include media(mobile) {
-					margin-top: -#{2 * map-deep-get($config-global, "spacing", "vertical")};
-				}
-			}
-		}
-	}
-}
 
 .home.hide-homepage-title {
 	.hentry .entry-content {

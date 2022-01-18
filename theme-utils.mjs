@@ -7,6 +7,7 @@ const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
+const directoriesToIgnore = [ 'variations', 'videomaker', 'videomaker-white' ];
 
 (async function start() {
 	let args = process.argv.slice(2);
@@ -20,6 +21,7 @@ const isWin = process.platform === 'win32';
 		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
+		case "push-premium-to-sandbox": return pushPremiumToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
 		case "land-diff-git": return landChangesGit(args?.[1]);
 		case "land-diff-svn": return landChangesSvn(args?.[1]);
@@ -105,11 +107,46 @@ async function pushButtonDeploy(repoType) {
 		let hash = await getLastDeployedHash();
 		let diffUrl;
 
-		await versionBumpThemes();
+		let thingsWentBump = await versionBumpThemes();
+
+		if( thingsWentBump ){
+			prompt = await inquirer.prompt([{
+				type: 'confirm',
+				message: 'Are you good with the version bump changes? Make any manual adjustments now if necessary.',
+				name: "continue",
+				default: false
+			}]);
+
+			if(!prompt.continue){
+				console.log(`Aborted Automated Deploy Process at version bump changes.` );
+				return;
+			}
+		}
 
 		let changedThemes = await getChangedThemes(hash);
 
 		await pushChangesToSandbox();
+
+
+		//push changes (from version bump)
+		if( thingsWentBump ){
+			prompt = await inquirer.prompt([{
+				type: 'confirm',
+				message: 'Are you ready to push this version bump change to the source repository (Github)?',
+				name: "continue",
+				default: false
+			}]);
+
+			if(!prompt.continue){
+				console.log(`Aborted Automated Deploy Process at version bump push change.` );
+				return;
+			}
+
+			await executeCommand(`
+				git commit -m "Version Bump";
+				git push
+			`, true);
+		}
 
 		await updateLastDeployedHash();
 
@@ -121,8 +158,6 @@ async function pushButtonDeploy(repoType) {
 		}
 		let diffId = diffUrl.split('a8c.com/')[1];
 
-		//push changes (from version bump)
-		await executeCommand('git push');
 
 		await tagDeployment({
 			hash: hash,
@@ -171,11 +206,11 @@ async function buildComZip(themeSlug) {
 
 	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
 	let themeVersion = getThemeMetadata(styleCss, 'Version');
-	let wpVersionCompat = getThemeMetadata(styleCss, 'Tested up to');
+	let wpVersionCompat = getThemeMetadata(styleCss, 'Requires at least');
 
 	if (themeVersion && wpVersionCompat) {
 		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
-	} 
+	}
 	else {
 		console.log('Unable to build theme .zip.');
 		if (!themeVersion) {
@@ -318,6 +353,7 @@ async function versionBumpThemes() {
 
 	let themes = await getActionableThemes();
 	let hash = await getLastDeployedHash();
+	let changesWereMade = false;
 	let versionBumpCount = 0;
 
 	for (let theme of themes) {
@@ -333,21 +369,19 @@ async function versionBumpThemes() {
 			continue;
 		}
 
-		await versionBumpTheme(theme);
+		await versionBumpTheme(theme, true);
+		changesWereMade = true;
 	}
 
 	//version bump the root project if there were changes to any of the themes
-	let rootHasVersionBump = await checkThemeForVersionBump('.', hash);
+	let rootHasVersionBump = await checkProjectForVersionBump(hash);
+	console.log('root check', rootHasVersionBump, versionBumpCount, changesWereMade);
 	if ( versionBumpCount > 0 && ! rootHasVersionBump ) {
-		await executeCommand(`npm version patch --no-git-tag-version`);
+		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
+		changesWereMade = true;
 	}
 
-	if (versionBumpCount > 0) {
-		console.log('commiting version-bump');
-		await executeCommand(`
-			git commit -a -m "Version Bump";
-		`, true);
-	}
+	return changesWereMade;
 }
 
 function getThemeMetadata(styleCss, attribute) {
@@ -360,9 +394,9 @@ function getThemeMetadata(styleCss, attribute) {
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
 				.trim()
 				.replace('-wpcom', '');
-		case 'Tested up to':
+		case 'Requires at least':
 			return styleCss
-				.match(/(?<=Tested up to:\s*).*?(?=\s*\r?\n|\rg)/gs);
+				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
 	}
 }
 
@@ -373,11 +407,12 @@ function getThemeMetadata(styleCss, attribute) {
  First increment the patch version in style.css
  Then update any of these files with the new version: [package.json, style.scss, style-child-theme.scss]
 */
-async function versionBumpTheme(theme){
+async function versionBumpTheme(theme, addChanges){
 
 	console.log(`${theme} needs a version bump`);
 
 	await executeCommand(`perl -pi -e 's/Version: ((\\d+\\.)*)(\\d+)(.*)$/"Version: ".$1.($3+1).$4/ge' ${theme}/style.css`, true);
+	await executeCommand(`git add ${theme}/style.css`);
 
 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
 	let currentVersion = getThemeMetadata(styleCss, 'Version');
@@ -388,6 +423,9 @@ async function versionBumpTheme(theme){
 	for ( let file of filesToUpdate ) {
 		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
 		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
+		if (addChanges){
+			await executeCommand(`git add ${file}`);
+		}
 	}
 }
 
@@ -416,6 +454,20 @@ async function checkThemeForVersionBump(theme, hash){
 }
 
 /*
+ Determine if the project has had a version bump since a given hash.
+ Used by versionBumpThemes
+ Compares the value of 'version' in package.json between the hash and current value
+*/
+async function checkProjectForVersionBump(hash){
+	let previousPackageString = await executeCommand(`
+		git show ${hash}:./package.json 2>/dev/null
+	`);
+	let previousPackage = JSON.parse(previousPackageString);
+	let currentPackage = JSON.parse(fs.readFileSync(`./package.json`))
+	return previousPackage.version != currentPackage.version;
+}
+
+/*
  Determine if a theme has had changes since a given hash.
  Used by versionBumpThemes
 */
@@ -429,9 +481,9 @@ async function checkThemeForChanges(theme, hash){
  Provide a list of 'actionable' themes (those themes that have style.css files)
 */
 async function getActionableThemes() {
-	let result = await executeCommand(`for d in */; do 
+	let result = await executeCommand(`for d in */; do
 		if test -f "./$d/style.css"; then
-			echo $d; 
+			echo $d;
 		fi
 	done`);
 	return result
@@ -523,74 +575,43 @@ function pushToSandbox() {
 }
 
 /*
+  Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
+  This pushes only the folders noted as "premiumThemes" into the premium themes directory.
+
+  This is the only part of the deploy process that is automated; the rest must be done manually including:
+   * Creating a Phabricator Diff
+   * Landing (comitting) the change
+   * Deploying the theme
+   * Triggering the .zip builds
+*/
+function pushPremiumToSandbox() {
+	const premiumThemes = [
+		'videomaker',
+		'videomaker-white'
+	]
+	executeCommand(`
+		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude='sass/' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxRootFolder}/wp-content/themes/premium/
+	`, true);
+}
+
+/*
   Push only (and every) change since the point-of-diversion from /trunk
   Remove files from the sandbox that have been removed since the last deployed hash
 */
 async function pushChangesToSandbox() {
 
 	console.log("Pushing Changes to Sandbox.");
-
 	let hash = await getLastDeployedHash();
+	let changedThemes = await getChangedThemes(hash);
+	changedThemes = changedThemes.filter( item=> ! directoriesToIgnore.includes( item ) );
+	console.log(`Syncing ${changedThemes.length} themes`);
 
-	let deletedFiles = await getDeletedFilesSince(hash);
-	let changedFiles = await getComittedChangesSinceHash(hash);
-
-	//remove deleted files from changed files
-	changedFiles = changedFiles.filter( item => {
-		return false === deletedFiles.includes(item);
-	});
-
-
-	if(deletedFiles.length > 0) {
-		console.log('deleting from sandbox: ', deletedFiles);
-		await executeOnSandbox(`
-			cd ${sandboxPublicThemesFolder};
-			rm -f ${deletedFiles.join(' ')}
-		`, true);
-	}
-
-	if(changedFiles.length > 0) {
-		console.log('pushing changed files to sandbox:', changedFiles);
+	for ( let theme of changedThemes ) {
+		console.log( `Syncing ${theme}` );
 		await executeCommand(`
-			rsync -avR --no-p --no-times --exclude-from='.sandbox-ignore' ${changedFiles.join(' ')} wpcom-sandbox:${sandboxPublicThemesFolder}/
+			rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/
 		`, true);
 	}
-}
-
-/*
- Provide a collection of all files that have changed since the given hash.
- Used by pushChangesToSandbox
-*/
-async function getComittedChangesSinceHash(hash) {
-
-	let comittedChanges = await executeCommand(`git diff ${hash} HEAD --name-only`);
-	comittedChanges = comittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
-
-	let uncomittedChanges = await executeCommand(`git diff HEAD --name-only`);
-	uncomittedChanges = uncomittedChanges.replace(/\r?\n|\r/g, " ").split(" ");
-
-	return comittedChanges.concat(uncomittedChanges);
-}
-
-/*
- Provide a collection of all files that have been deleted since the given hash.
- Used by pushChangesToSandbox
-*/
-async function getDeletedFilesSince(hash){
-
-	let deletedSinceHash = await executeCommand(`
-		git log --format=format:"" --name-only -M100% --diff-filter=D ${hash}..HEAD
-	`);
-	deletedSinceHash = deletedSinceHash.replace(/\r?\n|\r/g, " ").trim().split(" ");
-
-	let deletedAndUncomitted = await executeCommand(`
-		git diff HEAD --name-only --diff-filter=D
-	`);
-	deletedAndUncomitted = deletedAndUncomitted.replace(/\r?\n|\r/g, " ").trim().split(" ");
-
-	return deletedSinceHash.concat(deletedAndUncomitted).filter( item => {
-		return item != '';
-	});
 }
 
 /*
@@ -602,6 +623,8 @@ async function buildPhabricatorCommitMessageSince(hash){
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs.replace(/"/g, '');
 	return `Deploy Themes ${projectVersion} to wpcom
 
 Summary:
@@ -698,6 +721,8 @@ function getPhabricatorUrlFromResponse(response){
 */
 async function tagDeployment(options={}) {
 
+	console.log('tagging deployment');
+
 	let hash = options.hash || await getLastDeployedHash();
 
 	let workInTheOpenPhabricatorUrl = '';
@@ -706,13 +731,15 @@ async function tagDeployment(options={}) {
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs.replace(/"/g, '');
 	let tag = `v${projectVersion}`;
 	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
 
 	await executeCommand(`
 		git tag -a ${tag} -m "${message}"
 		git push origin ${tag}
-	`);
+	`, true);
 }
 
 /*
@@ -779,5 +806,3 @@ async function executeCommand(command, logResponse) {
 		});
 	});
 }
-
-

@@ -285,14 +285,14 @@
  * Output
  */
 a {
-	border-bottom: 1px solid var(--global--color-secondary);
 	color: var(--wp--style--color--link, var(--global--color-primary));
-	text-decoration: none;
-	transition: border-color 0.1s ease-out;
+	text-decoration: underline 1px var(--global--color-secondary);
+	text-underline-offset: 0.3em;
+	transition: text-decoration 0.1s ease-out;
 }
 
 a:hover, a:focus {
-	border-bottom-color: transparent;
+	text-decoration: none;
 }
 
 a:hover {
@@ -308,11 +308,11 @@ a:active {
 }
 
 .has-link-color a {
-	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
+	text-decoration-color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .has-link-color a:hover, .has-link-color a:focus {
-	border-bottom-color: transparent;
+	text-decoration: none;
 }
 
 .has-primary-background-color a:not(.has-link-color):not(.has-text-color) {
@@ -895,33 +895,6 @@ li > ol {
 dt {
 	font-family: var(--definition-term--font-family);
 	font-weight: bold;
-}
-
-.wp-block-navigation .wp-block-navigation__container {
-	background: var(--global--color-background);
-	padding: 0;
-}
-
-.wp-block-navigation .wp-block-navigation-link .wp-block-navigation-link__content {
-	padding: var(--primary-nav--padding);
-}
-
-.wp-block-navigation .wp-block-navigation-link .wp-block-navigation-link__label {
-	font-family: var(--primary-nav--font-family);
-	font-size: var(--primary-nav--font-size);
-	font-weight: var(--primary-nav--font-weight);
-}
-
-.wp-block-navigation .has-child .wp-block-navigation__container {
-	box-shadow: var(--global--elevation);
-}
-
-.wp-block-navigation:not(.has-text-color) .wp-block-navigation-link > a:hover, .wp-block-navigation:not(.has-text-color) .wp-block-navigation-link > a:focus {
-	color: var(--primary-nav--color-link-hover);
-}
-
-.wp-block-navigation:not(.has-text-color) .wp-block-navigation-link__content {
-	color: currentColor;
 }
 
 p {

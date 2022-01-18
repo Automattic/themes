@@ -15,14 +15,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
 			.sticky-post,
-			.wp-block-cover-image.has-background-dim,
-			.wp-block-cover.has-background-dim,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'color' ),
 
@@ -122,7 +114,7 @@ add_color_rule( 'link', '#23883D', array(
 			.wp-block-search .wp-block-search__button:hover,
 			.wp-block-search .wp-block-search__button:focus,
 			input[type="submit"]', 'background-color' ),
-			
+
 	// Text-color
 	array( '.a8c-posts-list .a8c-posts-list-item__title a:active,
 			.a8c-posts-list .a8c-posts-list-item__title a:focus,
@@ -147,14 +139,14 @@ add_color_rule( 'link', '#23883D', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			a', 'color' ),
-			
+
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
 
 	// Border color right
 	array( '.wp-block-quote[style*="text-align: right"],
 			.wp-block-quote[style*="text-align:right"]', 'border-right-color' ),
-			
+
 	/**
 	 * Utility Classes
 	 */
@@ -187,11 +179,7 @@ add_color_rule( 'txt', '#111111', array(
 			table.is-style-stripes tbody tr:nth-child(odd)', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover,
-			.wp-block-cover-image,
-			.wp-block-cover-image.has-background-dim,
-			.wp-block-cover.has-background-dim,
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
 	 * Utility Classes
@@ -268,7 +256,7 @@ add_color_rule( 'txt', '#111111', array(
 			.wp-block-quote.is-style-large footer,
 			.wp-block-video figcaption,
 			figcaption', 'color', '+2' ),
-			
+
 	// Text color
 	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'border-color', '-1' ),
 

@@ -21,6 +21,15 @@ function blockbase_condition_to_render_social_menu( $block_content, $block ) {
 	return true;
 }
 
+function blockbase_theme_has_navigation_social_links_settings( $theme_data ) {
+	return $theme_data
+		&& array_key_exists( 'settings', $theme_data )
+		&& array_key_exists( 'custom', $theme_data['settings'] )
+		&& array_key_exists( 'navigation/social-links', $theme_data['settings']['custom'] )
+		&& array_key_exists( 'color', $theme_data['settings']['custom']['navigation/social-links'] )
+		&& array_key_exists( 'text', $theme_data['settings']['custom']['navigation/social-links']['color'] );
+}
+
 function get_social_menu_as_social_links_block( $block ) {
 	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
 		return false;
@@ -38,7 +47,8 @@ function get_social_menu_as_social_links_block( $block ) {
 	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 	$social_links_icon_color_value = "var(--wp--custom--color--primary)";
 	$social_links_icon_color = 'primary';
-	if ( array_key_exists( 'settings', $theme_data ) && array_key_exists( 'custom', $theme_data['settings'] ) && array_key_exists( 'navigation/social-links', $theme_data['settings']['custom'] ) && array_key_exists( 'color', $theme_data['settings']['custom']['navigation/social-links'] ) && array_key_exists( 'text', $theme_data['settings']['custom']['navigation/social-links']['color'] ) ) {
+
+	if ( blockbase_theme_has_navigation_social_links_settings( $theme_data ) ) {
 		$social_links_icon_color_value = $theme_data['settings']['custom']['navigation/social-links']['color']['text'];
 		$social_links_icon_color = preg_replace( '/var\(--wp--custom--color--(.+)\)/', '$0 --> $2 $1', $social_links_icon_color_value );
 	}
@@ -62,7 +72,7 @@ function append_social_links_block( $parent_content, $social_links_block ) {
 	$domXPath = new DomXPath( $dom );
 	// Since the nav block uses HTML5 element names, we need to suppress the warnings it sends when we loadHTML with HTML5 elements.
 	libxml_use_internal_errors( true );
-	$dom->loadHTML( $parent_content );
+	$dom->loadHTML( '<?xml encoding="utf-8" ?>' . $parent_content );
 	$wp_block_navigation__container = $dom->getElementsByTagName('ul')->item( 0 )->parentNode;
 	$social_links_node = $dom->createDocumentFragment();
 	$social_links_node->appendXML( $social_links_block );

@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Balasana is a clean and minimalist business theme designed with health and wellness-focused sites in mind.
 Requires at least: WordPress 4.9.6
-Version: 1.3.11
+Version: 1.3.12
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1548,7 +1548,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover.has-background-dim,
 .wp-block-cover-image.has-background-dim {
 	background-color: black;
-	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1559,7 +1558,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover-text {
 	margin-top: 32px;
 	margin-bottom: 32px;
-	color: currentColor;
 }
 
 .wp-block-cover h2,
@@ -4247,7 +4245,15 @@ dt {
 		vertical-align: middle;
 	}
 	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li.focus > ul,
+	.main-navigation > div > ul > li[focus-within] > ul,
+	.main-navigation > div > ul > li.current-menu-item > ul {
+		border: 1px solid #D0D0D0;
+		border-radius: 4px;
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.main-navigation > div > ul > li:hover > ul,
+	.main-navigation > div > ul > li:focus-within > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
 		border: 1px solid #D0D0D0;
 		border-radius: 4px;

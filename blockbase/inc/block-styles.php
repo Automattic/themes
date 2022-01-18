@@ -15,14 +15,6 @@ if ( ! function_exists( 'blockbase_register_block_styles' ) ) :
 			/**
 			 * Register block styles
 			 */
-			register_block_style(
-				'core/navigation',
-				array(
-					'name'         => 'blockbase-navigation-improved-responsive',
-					'label'        => __( 'Improved Responsive Navigation', 'blockbase' ),
-					'style_handle' => 'blockbase-navigation-improved-responsive',
-				)
-			);
 
 			//Post meta styles with icons
 			register_block_style(
@@ -55,6 +47,14 @@ if ( ! function_exists( 'blockbase_register_block_styles' ) ) :
 					'name'         => 'post-category-icon',
 					'label'        => __( 'With category icon', 'blockbase' ),
 					'style_handle' => 'post-category-icon',
+				)
+			);
+			register_block_style(
+				'core/search',
+				array(
+					'name'         => 'small-search',
+					'label'        => __( 'Small', 'blockbase' ),
+					'style_handle' => 'small-search',
 				)
 			);
 		}

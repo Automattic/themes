@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Running a business is no small task. But with the right tools and support, creating a website doesn’t have to be another chore on your to-do list: enter Brompton, a simple yet powerful theme for small-business owners and entrepreneurs.
 Requires at least: WordPress 4.9.6
-Version: 1.4.11
+Version: 1.4.13
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Status: inactive
@@ -1549,7 +1549,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover.has-background-dim,
 .wp-block-cover-image.has-background-dim {
 	background-color: #252E36;
-	color: #E8E4DD;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1560,7 +1559,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover-text {
 	margin-top: 32px;
 	margin-bottom: 32px;
-	color: currentColor;
 }
 
 .wp-block-cover h2,
@@ -4264,13 +4262,25 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 		background: #252E36;
 	}
 	.main-navigation > div > ul > li:hover > ul,
-	.main-navigation > div > ul > li.focus > ul,
+	.main-navigation > div > ul > li[focus-within] > ul,
+	.main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.main-navigation > div > ul > li:hover > ul,
+	.main-navigation > div > ul > li:focus-within > ul,
 	.main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.main-navigation > div > ul > li:hover li > a,
-	.main-navigation > div > ul > li.focus li > a,
+	.main-navigation > div > ul > li[focus-within] li > a,
+	.main-navigation > div > ul > li.current-menu-item li > a {
+		background: #252E36;
+		border-top: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	.main-navigation > div > ul > li:hover li > a,
+	.main-navigation > div > ul > li:focus-within li > a,
 	.main-navigation > div > ul > li.current-menu-item li > a {
 		background: #252E36;
 		border-top: 1px solid rgba(255, 255, 255, 0.5);

@@ -1,6 +1,6 @@
 {
 	"name": "themes",
-	"version": "1.0.41",
+	"version": "1.0.52",
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
@@ -17,26 +17,31 @@
 		"sandbox:clean-all:svn": "node ./theme-utils.mjs clean-all-sandbox-svn",
 		"local:clean": "git reset --hard HEAD; git clean -fd",
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
+		"batch:build": "./theme-batch-utils.sh build-all",
 		"batch:audit:fix": "./theme-batch-utils.sh audit-dependencies",
+		"batch:update": "./theme-batch-utils.sh update-dependencies",
 		"deploy:version-bump": "node ./theme-utils.mjs version-bump-themes",
 		"deploy:push:all": "node ./theme-utils.mjs push-to-sandbox",
 		"deploy:push:changes": "node ./theme-utils.mjs push-changes-to-sandbox",
+		"deploy:push:premium": "node ./theme-utils.mjs push-premium-to-sandbox",
 		"deploy:git": "node ./theme-utils.mjs push-button-deploy-git",
 		"deploy:svn": "node ./theme-utils.mjs push-button-deploy-svn",
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
-		"build:zip": "node ./theme-utils.mjs build-com-zip"
+		"build:zip": "node ./theme-utils.mjs build-com-zip",
+		"build:variations": "node ./variations/build-variations.mjs"
 	},
 	"devDependencies": {
-		"@octokit/rest": "^18.11.1",
-		"@wordpress/prettier-config": "^1.0.1",
-		"@wordpress/scripts": "^14.0.1",
-		"@wordpress/stylelint-config": "^19.0.1",
-		"chokidar-cli": "^2.1.0",
-		"husky": "^4.3.0",
-		"inquirer": "^8.1.5",
-		"lint-staged": "^10.5.4",
+		"@octokit/rest": "^18.12.0",
+		"@wordpress/prettier-config": "^1.1.1",
+		"@wordpress/scripts": "^19.2.2",
+		"@wordpress/stylelint-config": "^19.1.0",
+		"chokidar-cli": "^3.0.0",
+		"fs-extra": "^10.0.0",
+		"husky": "^7.0.4",
+		"inquirer": "^8.2.0",
+		"lint-staged": "^12.1.7",
 		"lodash": "^4.17.21",
-		"open": "^8.2.1"
+		"open": "^8.4.0"
 	},
 	"husky": {
 		"hooks": {
@@ -50,5 +55,8 @@
 	},
 	"dependencies": {
 		"wp-prettier": "^2.0.5"
+	},
+	"engines": {
+		"node": ">=16"
 	}
 }

@@ -34,16 +34,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 			.wp-block-button__link,
 			.wp-block-button__link:focus,
 			.wp-block-button__link:hover,
-			.wp-block-cover.has-background-dim,
-			.wp-block-cover.has-background-dim .block-editor-block-list__block,
-			.wp-block-cover.has-background-dim .wp-block-cover-image-text,
-			.wp-block-cover.has-background-dim .wp-block-cover-text,
-			.wp-block-cover.has-background-dim .wp-block-cover__inner-container,
-			.wp-block-cover-image.has-background-dim,
-			.wp-block-cover-image.has-background-dim .block-editor-block-list__block,
-			.wp-block-cover-image.has-background-dim .wp-block-cover-image-text,
-			.wp-block-cover-image.has-background-dim .wp-block-cover-text,
-			.wp-block-cover-image.has-background-dim .wp-block-cover__inner-container,
 			.wp-block-file .wp-block-file__button,
 			.wp-block-file a.wp-block-file__button:active,
 			.wp-block-file a.wp-block-file__button:focus,
@@ -246,7 +236,7 @@ add_color_rule( 'link', '#19744C', array(
 
 	// Border color left
 	array( '.wp-block-quote', 'border-left-color' ),
-	
+
 	// Border color
 	array( 'input[type="color"]:focus,
 			input[type="date"]:focus,
@@ -338,9 +328,7 @@ add_color_rule( 'txt', '#303030', array(
 			.wp-block-search .wp-block-search__input:focus', 'color' ),
 
 	// Background-color
-	array( '.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
-			.wp-block-cover.has-background-dim:not([class*="background-color"]),
-			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
+	array( 'body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'background-color' ),
 
 	/**
 	 * Utility Classes

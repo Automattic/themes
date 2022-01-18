@@ -65,14 +65,6 @@ add_color_rule(
 			.wp-block-pullquote.is-style-solid-color,
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
-			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-text,
-			.wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-image-text,
-			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-text,
-			.wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
-			.wp-block-cover.has-background-dim,
-			.wp-block-cover-image.has-background-dim,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
 			body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:hover,
@@ -294,9 +286,7 @@ add_color_rule(
 
 		// Background-color
 		array(
-			'.wp-block-cover.has-background-dim:not([class*="background-color"]),
-			.wp-block-cover-image.has-background-dim:not([class*="background-color"]),
-			.has-foreground-background-color[class],
+			'.has-foreground-background-color[class],
 			table.is-style-stripes tbody tr:nth-child(odd),
 			.wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative',

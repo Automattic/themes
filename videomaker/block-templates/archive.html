@@ -1,0 +1,43 @@
+<!-- wp:template-part {"area":"header","slug":"header-minimal","tagName":"header","layout":{"inherit":true}} /-->
+
+<!-- wp:spacer {"height":110} -->
+<div style="height:110px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:query {"tagName":"main","layout":{"inherit":true}} -->
+<main class="wp-block-query">
+<!-- wp:query-title {"type":"archive","style":{"spacing":{"margin":{"bottom":"100px"}}}} /-->
+
+<!-- wp:post-template -->
+<!-- wp:group -->
+<div class="wp-block-group">
+	<!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"bottom":"45px"}}}} /-->
+	<!-- wp:post-featured-image {"isLink":"true","style":{"spacing":{"margin":{"top":"var(--wp--style--block-gap,1em)","bottom":"calc(2.5 * var(--wp--style--block-gap,1em))"}}}} /-->
+	<!-- wp:post-excerpt /-->
+
+	<!-- wp:group {"className":"post-meta","layout":{"type":"flex"},"style":{"spacing":{"padding":{"top":"var(--wp--style--block-gap,1em)","bottom":"var(--wp--style--block-gap,1em)"}}}} -->
+	<div class="wp-block-group post-meta" style="padding-top:var(--wp--style--block-gap,1em);padding-bottom:var(--wp--style--block-gap,1em)">
+		<!-- wp:post-date {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--x-small)"}}} /-->
+		<!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--x-small)"}}} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:spacer {"height":60} -->
+	<div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+</div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+<!-- wp:group {"layout":{"inherit":true}} -->
+
+	<div class="wp-block-group">
+	<!-- wp:query-pagination {"paginationArrow":"arrow"} -->
+		<!-- wp:query-pagination-previous /-->
+		<!-- wp:query-pagination-next /-->
+	<!-- /wp:query-pagination -->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:query -->
+
+<!-- wp:template-part {"area":"footer","slug":"footer","tagName":"footer","layout":{"inherit":true},"className":"site-footer-container"} /-->

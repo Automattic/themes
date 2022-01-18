@@ -115,12 +115,22 @@ function blockbase_fonts_url() {
 	}
 
 	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
+			if ( ! empty( $font['google'] ) ) {
+				$font_families[] = $font['google'];
+			}
+		}
+
+	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
 		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
+	// End Gutenberg < 12.1 compatibility patch
+
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
 			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
@@ -138,14 +148,6 @@ function blockbase_fonts_url() {
 	// Make a single request for the theme or user fonts.
 	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
 }
-
-/**
- * Restores the Customizer since we still rely on it.
- */
-function blockbase_restore_customizer() {
-	remove_action( 'admin_menu', 'gutenberg_remove_legacy_pages' );
-}
-add_action( 'init', 'blockbase_restore_customizer' );
 
 /**
  * Customize Global Styles
@@ -181,4 +183,3 @@ require get_template_directory() . '/inc/block-styles.php';
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
-

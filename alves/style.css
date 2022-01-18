@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Convincing design for your charity or organization’s online presence. Highlight your actions, causes and projects, Alves is versatile enough to be your personal site too.
 Requires at least: WordPress 4.9.6
-Version: 1.5.12
+Version: 1.5.14
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1548,7 +1548,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover.has-background-dim,
 .wp-block-cover-image.has-background-dim {
 	background-color: black;
-	color: white;
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1559,7 +1558,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover-text {
 	margin-top: 32px;
 	margin-bottom: 32px;
-	color: currentColor;
 }
 
 .wp-block-cover h2,
@@ -4321,13 +4319,30 @@ body:not(.fse-enabled) #masthead {
 		font-size: 0.625rem;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul,
-	.site-header .main-navigation > div > ul > li.focus > ul,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul,
+	.site-header .main-navigation > div > ul > li:focus-within > ul,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
-	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid #3E7D98;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-left: 16px;
+		width: 16px;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li:focus-within > ul:before,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
 		border-bottom: 8px solid #3E7D98;
 		border-left: 8px solid transparent;

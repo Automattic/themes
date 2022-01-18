@@ -74,6 +74,12 @@ class GlobalStylesFontsCustomizer {
 			'name'       => 'Fira Sans',
 			'google'     => 'family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900',
 		),
+		'ibm-plex-mono'  => array(
+			'fontFamily' => '"IBM Plex Mono", monospace',
+			'slug'       => 'ibm-plex-mono',
+			'name'       => 'IBM Plex Mono',
+			'google'     => 'family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700',
+		),
 		'inter'             => array(
 			'fontFamily' => '"Inter", sans-serif',
 			'slug'       => 'inter',
@@ -319,8 +325,8 @@ class GlobalStylesFontsCustomizer {
 			return;
 		}
 
-		if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
-			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
+		if ( array_key_exists( 'custom', $merged_json['settings']['typography']['fontFamilies'] ) ) {
+			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['custom'];
 			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
 				return $font_family['slug'] === "body-font";
 			} );
@@ -330,6 +336,22 @@ class GlobalStylesFontsCustomizer {
 				return $font_family['slug'] === "heading-font";
 			} );
 			$heading_font_selected = array_shift( $heading_font_selected_array );
+
+		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+		} else if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
+			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
+
+			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "body-font";
+			} );
+			$body_font_selected = array_shift( $body_font_selected_array );
+
+			$heading_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "heading-font";
+			} );
+			$heading_font_selected = array_shift( $heading_font_selected_array );
+		// End Gutenberg < 12.1 compatibility patch
+
 		} else {
 			$body_font_selected = $body_font_default;
 			$heading_font_selected = $heading_font_default;
@@ -437,6 +459,13 @@ class GlobalStylesFontsCustomizer {
 		}
 	}
 
+	function unset_property_if_it_exists( $object, $property ) {
+		if ( isset( $object->{$property} ) ) {
+			unset( $object->{$property} );
+		}
+
+	}
+
 	function handle_customize_save_after( $wp_customize ) {
 		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->value();
 		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->value();
@@ -476,7 +505,12 @@ class GlobalStylesFontsCustomizer {
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
 
 		// Get the user's theme.json from the CPT.
-		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
+		if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_global_styles_post_id' ) ) { // This is the new name.
+			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+		} else if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_custom_post_type_id' ) ) { // This is the old name.
+			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
+		}
+
 		$user_theme_json_post         = get_post( $user_custom_post_type_id );
 		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
 
@@ -484,34 +518,35 @@ class GlobalStylesFontsCustomizer {
 		$user_theme_json_post_content->version                     = 1;
 		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
 
+		$this->unset_property_if_it_exists( $user_theme_json_post_content->settings->typography, 'fontFamilies' );
+
 		// Set the typography settings.
 		$user_theme_json_post_content = set_settings_array(
 			$user_theme_json_post_content,
-			array( 'settings', 'typography', 'fontFamilies' ),
+			array( 'settings', 'typography', 'fontFamilies', 'custom' ),
 			$font_families
 		);
 
 		//If the typeface choices === the default then we remove it instead
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			unset( $user_theme_json_post_content->settings->typography->fontFamilies );
-
 			// These lines need to stay for backwards compatibility.
-			unset( $user_theme_json_post_content->styles->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h1->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h2->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h3->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h4->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h5->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->elements->h6->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography->fontFamily );
-			unset( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography->fontFamily );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h1->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h2->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h3->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h4->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h5->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->elements->h6->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/button'}->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/post-title'}->typography, 'fontFamily' );
+			$this->unset_property_if_it_exists( $user_theme_json_post_content->styles->blocks->{'core/pullquote'}->typography, 'fontFamily' );
 		}
 
 		// Update the theme.json with the new settings.
 		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
 		wp_update_post( $user_theme_json_post );
 		delete_transient( 'global_styles' );
+		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
 		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}

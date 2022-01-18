@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A fully responsive theme, ideal for creating a strong — yet beautiful — online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.5.12
+Version: 1.5.14
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1575,7 +1575,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover.has-background-dim,
 .wp-block-cover-image.has-background-dim {
 	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
 }
 
 .wp-block-cover .wp-block-cover__inner-container,
@@ -1586,7 +1585,6 @@ button[data-load-more-btn], .button {
 .wp-block-cover-image .wp-block-cover-text {
 	margin-top: 32px;
 	margin-bottom: 32px;
-	color: currentColor;
 }
 
 .wp-block-cover h2,
@@ -4266,18 +4264,40 @@ body:not(.fse-enabled) #colophon {
 		font-size: 0.5rem;
 	}
 	.site-header .main-navigation > div > ul > li:hover > a,
-	.site-header .main-navigation > div > ul > li.focus > a,
+	.site-header .main-navigation > div > ul > li[focus-within] > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item > a {
+		color: var(--wp--preset--color--primary);
+	}
+	.site-header .main-navigation > div > ul > li:hover > a,
+	.site-header .main-navigation > div > ul > li:focus-within > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item > a {
 		color: var(--wp--preset--color--primary);
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul,
-	.site-header .main-navigation > div > ul > li.focus > ul,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
+		box-shadow: none;
+		overflow: hidden;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul,
+	.site-header .main-navigation > div > ul > li:focus-within > ul,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul {
 		box-shadow: none;
 		overflow: hidden;
 	}
 	.site-header .main-navigation > div > ul > li:hover > ul:before,
-	.site-header .main-navigation > div > ul > li.focus > ul:before,
+	.site-header .main-navigation > div > ul > li[focus-within] > ul:before,
+	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
+		border-bottom: 8px solid var(--wp--preset--color--primary);
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		content: "";
+		display: block;
+		margin-left: 16px;
+		width: 16px;
+	}
+	.site-header .main-navigation > div > ul > li:hover > ul:before,
+	.site-header .main-navigation > div > ul > li:focus-within > ul:before,
 	.site-header .main-navigation > div > ul > li.current-menu-item > ul:before {
 		border-bottom: 8px solid var(--wp--preset--color--primary);
 		border-left: 8px solid transparent;
@@ -4288,7 +4308,13 @@ body:not(.fse-enabled) #colophon {
 		width: 16px;
 	}
 	.site-header .main-navigation > div > ul > li:hover li > a,
-	.site-header .main-navigation > div > ul > li.focus li > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
+		background: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--background);
+	}
+	.site-header .main-navigation > div > ul > li:hover li > a,
+	.site-header .main-navigation > div > ul > li:focus-within li > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li > a {
 		background: var(--wp--preset--color--primary);
 		color: var(--wp--preset--color--background);
@@ -4296,9 +4322,20 @@ body:not(.fse-enabled) #colophon {
 	.site-header .main-navigation > div > ul > li:hover li:hover > a,
 	.site-header .main-navigation > div > ul > li:hover li.focus > a,
 	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
-	.site-header .main-navigation > div > ul > li.focus li:hover > a,
-	.site-header .main-navigation > div > ul > li.focus li.focus > a,
-	.site-header .main-navigation > div > ul > li.focus li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li:hover > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li.focus > a,
+	.site-header .main-navigation > div > ul > li[focus-within] li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
+	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
+		background: var(--wp--preset--color--primary-hover);
+	}
+	.site-header .main-navigation > div > ul > li:hover li:hover > a,
+	.site-header .main-navigation > div > ul > li:hover li.focus > a,
+	.site-header .main-navigation > div > ul > li:hover li.current-menu-item > a,
+	.site-header .main-navigation > div > ul > li:focus-within li:hover > a,
+	.site-header .main-navigation > div > ul > li:focus-within li.focus > a,
+	.site-header .main-navigation > div > ul > li:focus-within li.current-menu-item > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li:hover > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li.focus > a,
 	.site-header .main-navigation > div > ul > li.current-menu-item li.current-menu-item > a {
@@ -4462,16 +4499,6 @@ article .entry-header .entry-title a:active, article .entry-header .entry-title 
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:focus,
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
 	color: var(--wp--preset--color--primary);
-}
-
-.singular .hentry .entry-content > *:first-child.alignfull {
-	margin-top: -21.312px;
-}
-
-@media only screen and (min-width: 560px) {
-	.singular .hentry .entry-content > *:first-child.alignfull {
-		margin-top: -64px;
-	}
 }
 
 .home.hide-homepage-title .hentry .entry-content > *:first-child.alignfull {
