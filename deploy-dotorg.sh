@@ -19,9 +19,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"blockbase" 
 	"zoologist"
 	"geologist"
-	"mayland-blocks"
 	"quadrat"
-	"skatepark"
 	"seedlet-blocks",
 	"livro",
 	"videomaker"
