@@ -8,8 +8,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy 
+      - name: Checkout
         uses: actions/checkout@v2
+      - name: Deploy
         shell: bash
         run: deploy-dotorg.sh preview
         with:
