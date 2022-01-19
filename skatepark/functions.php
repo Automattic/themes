@@ -1,11 +1,6 @@
 <?php
 
 /**
- * Block Styles.
- */
-require get_stylesheet_directory() . '/inc/block-styles.php';
-
-/**
  * Add class to body if post/page has a featured image.
  */
 function add_featured_image_class( $classes ) {
