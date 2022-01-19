@@ -44,8 +44,22 @@ function stewart_register_block_patterns() {
 	}
 
 	$block_patterns = array(
+		'footer-default',
+		'footer-left',
+		'footer-right',
+		'footer-nav-left',
+		'footer-nav-right',
+		'header-image',
+		'header-traditional-background',
+		'header-traditional',
 		'page-about',
 		'page-contact',
+		'sidebar-default',
+		'sidebar-border',
+		'sidebar-background',
+		'sidebar-introduction',
+		'sidebar-blogging',
+		'sidebar-categories-tags',
 	);
 
 	/**
