@@ -10,4 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: ./deploy-dotorg.sh preview
+      - run: ./deploy-dotorg.sh
+        env: 
+         SVN_USERNAME: ${{ secrets.SVN_USERNAME }} 
+         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }} 
