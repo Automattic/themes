@@ -30,11 +30,12 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
-		// Register two nav menus
+		// Register three nav menus
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
+				'social' => __( 'Social Navigation', 'blockbase' ),
+				'footer' => __( 'Footer Navigation', 'blockbase' )
 			)
 		);
 
