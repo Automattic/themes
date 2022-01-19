@@ -2,6 +2,10 @@
 /**
  * Pattern: Two posts with excerpt
  *
+ * Sources:
+ * https://www.pexels.com/video/boats-floating-at-the-sea-853856/
+ * https://www.pexels.com/video/man-working-during-dawn-854069/
+ *
  * @package Videomaker
  */
 

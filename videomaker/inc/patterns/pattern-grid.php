@@ -2,6 +2,14 @@
 /**
  * Pattern: Grid
  *
+ * Sources:
+ * https://www.pexels.com/video/video-of-school-of-fish-854012/
+ * https://www.pexels.com/video/watercrafts-docked-853917/
+ * https://www.pexels.com/video/boats-floating-at-the-sea-853856/
+ * https://www.pexels.com/video/man-working-during-dawn-854069/
+ * https://www.pexels.com/video/mixing-cocktail-drinks-854128/
+ * https://www.pexels.com/video/black-and-white-video-of-busy-street-854141/
+ *
  * @package Videomaker
  */
 

@@ -2,6 +2,9 @@
 /**
  * Full-width Homepage
  *
+ * Sources:
+ * https://www.pexels.com/video/man-working-during-dawn-854069/
+ *
  * @package Videomaker
  */
 

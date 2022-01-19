@@ -2,6 +2,11 @@
 /**
  * About.
  *
+ * Sources:
+ * https://stocksnap.io/photo/people-man-6O7JXC5DC5
+ * https://stocksnap.io/photo/people-man-NSV3ZCAJXT
+ * https://stocksnap.io/photo/camera-gopro-IOO3SM5ZEH
+ *
  * @package Videomaker
  */
 
