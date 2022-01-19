@@ -1,24 +1,32 @@
 <?php
 /**
- * Footer
+ * Footer with a vertical menu
  *
  * @package Videomaker
  */
 
 return array(
-	'title'      => __( 'Footer', 'videomaker' ),
+	'title'      => __( 'Footer with a vertical menu', 'blockbase' ),
 	'categories' => array( 'videomaker' ),
-	'content'    => '<!-- wp:columns {"align":"wide"} -->
-	<div class="wp-block-columns alignwide"><!-- wp:column -->
-	<div class="wp-block-column">
-	<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"footer","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"lineHeight":"1"}}} /-->
+	'blockTypes' => array( 'core/template-part/footer' ),
+	'content'    => '<!-- wp:group {"layout":{"inherit":"true"}} -->
+	<div class="wp-block-group">
+		<!-- wp:group {"align":"wide","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"space-between"},"style":{"spacing":{"padding":{"top":"30px","bottom":"min(30px, 5vw)"}}}} -->
+		<div class="wp-block-group alignwide" style="padding-top: 30px;padding-bottom: min(30px, 5vw)">	<!-- wp:group -->
+			<div class="wp-block-group">
+				<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"footer","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"textTransform":"uppercase"},"spacing":{"blockGap":"0px"}}} /-->
+			</div>
+			<!-- /wp:group -->
+			<!-- wp:group {"className":"footer-credit"} -->
+			<div class="wp-block-group footer-credit">
+				<!-- wp:paragraph {"fontSize":"small"} -->
+				<p class="has-small-font-size">Proudly Powered by <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
 	</div>
-	<!-- /wp:column -->
-
-	<!-- wp:column -->
-	<div class="wp-block-column"><!-- wp:paragraph {"align":"right","style":{"typography":{"lineHeight":1.4}},"fontSize":"extra-small"} -->
-	<p class="has-text-align-right has-extra-small-font-size" style="line-height:1.4">'. esc_html__( '© Mary Han 2021', 'videomaker' ) . '<br>' . esc_html__( 'Creative Director', 'videomaker' ) . '</p>
-	<!-- /wp:paragraph --></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->',
+	<!-- /wp:group -->
+	',
 );
