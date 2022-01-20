@@ -21,13 +21,29 @@ return array(
 
 					<!-- wp:columns -->
 					<div class="wp-block-columns"><!-- wp:column -->
-					<div class="wp-block-column"></div>
+					<div class="wp-block-column"><!-- wp:heading {"level":2,"fontSize":"extra-large"} -->
+					<h2 class="has-extra-large-font-size">' . esc_html__( 'Experience', 'stewart' ) . '</h3>
+					<!-- /wp:heading --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column -->
-					<div class="wp-block-column"><!-- wp:paragraph -->
-					<p>' . esc_html__( 'Between them it was more the intimacy of sisters. Even before Miss Taylor had ceased to hold the nominal office of governess, the mildness of her temper had hardly allowed her to impose any restraint; and the shadow of authority being now long passed away.', 'stewart' ) . '</p>
-					<!-- /wp:paragraph --></div>
+					<div class="wp-block-column"><!-- wp:list -->
+					<ul><li>' . esc_html__( 'The mildness of her temper had hardly allowed her to impose any restraint.', 'stewart' ) . '</li></ul>
+					<!-- /wp:list --></div>
+					<!-- /wp:column --></div>
+					<!-- /wp:columns -->
+
+					<!-- wp:columns -->
+					<div class="wp-block-columns"><!-- wp:column -->
+					<div class="wp-block-column"><!-- wp:heading {"level":2,"fontSize":"extra-large"} -->
+					<h2 class="has-extra-large-font-size">' . esc_html__( 'Awards', 'stewart' ) . '</h3>
+					<!-- /wp:heading --></div>
+					<!-- /wp:column -->
+
+					<!-- wp:column -->
+					<div class="wp-block-column"><!-- wp:list -->
+					<ul><li>' . esc_html__( 'Seems to unite some of the best blessings of existence.', 'stewart' ) . '</li><li>' . esc_html__( 'Nearly twenty-one years in the world with very little to distress or vex her.', 'stewart' ) . '</li></ul>
+					<!-- /wp:list --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->',
 );
