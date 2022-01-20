@@ -1,0 +1,16 @@
+name: Deploy Themes to Dotorg
+
+on:
+  push:
+    branches: [ trunk, automate/dotorgdeploy ]
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: ./deploy-dotorg.sh
+        env: 
+         SVN_USERNAME: ${{ secrets.SVN_USERNAME }} 
+         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }} 
