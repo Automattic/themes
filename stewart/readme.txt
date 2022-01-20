@@ -31,7 +31,20 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-This theme uses the following third-party resource in its theme screenshot:
+This theme bundles the following third-party resources:
 
-"Swedish Windows / Fönster no. 1" by Fons Heijnsbroek
-https://www.flickr.com/photos/abstract-art-fons/28822761186/
+Paintings by Fons Heijnsbroek
+License: CC0
+Source: https://www.flickr.com/photos/abstract-art-fons/28822761186/
+		https://www.flickr.com/photos/abstract-art-fons/28822761186/
+Used in the screenshot, and in block patterns. 
+
+"Girl Arranging Her Hair" by Abbott Handerson Thayer
+License: CC0
+Source: https://www.rawpixel.com/image/3235928/free-illustration-image-portrait-vintage-women-painting
+Used in block patterns. 
+
+Excerpts from "Emma" by Jane Austen
+License: Public Domain
+Source: https://www.gutenberg.org/ebooks/158
+Used in the screenshot, and for block pattern placeholder text. 
