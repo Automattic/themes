@@ -1,7 +1,7 @@
 === Stewart ===
 Contributors: automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 5.8
 Requires PHP: 5.6
 Stable tag: 1.0
 License: GPLv2 or later
@@ -14,11 +14,11 @@ Stewart is a modern blogging theme with a left sidebar. Its default color scheme
 == Changelog ==
 
 = 1.0 =
-* Released: December
+* Released: January 22, 2022
 
 == Copyright ==
 
-Stewart WordPress Theme, (C) 2021 Automattic, Inc.
+Stewart WordPress Theme, (C) 2022 Automattic, Inc.
 Stewart is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
