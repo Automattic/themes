@@ -25,7 +25,6 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 				'footer-separator',
 				'footer-simple',
 				'footer-small',
-				'footer-vertical-menu',
 				'footer-with-site-title',
 			);
 
