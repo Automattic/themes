@@ -20,8 +20,8 @@ return array(
 					<!-- /wp:image -->
 
 					<!-- wp:columns -->
-					<div class="wp-block-columns"><!-- wp:column -->
-					<div class="wp-block-column"><!-- wp:heading {"level":2,"fontSize":"extra-large"} -->
+					<div class="wp-block-columns"><!-- wp:column {"width":"33%"} -->
+					<div class="wp-block-column" style="flex-basis:33%"><!-- wp:heading {"level":2,"fontSize":"extra-large"} -->
 					<h2 class="has-extra-large-font-size">' . esc_html__( 'Experience', 'stewart' ) . '</h3>
 					<!-- /wp:heading --></div>
 					<!-- /wp:column -->
@@ -34,8 +34,8 @@ return array(
 					<!-- /wp:columns -->
 
 					<!-- wp:columns -->
-					<div class="wp-block-columns"><!-- wp:column -->
-					<div class="wp-block-column"><!-- wp:heading {"level":2,"fontSize":"extra-large"} -->
+					<div class="wp-block-columns"><!-- wp:column {"width":"33%"} -->
+					<div class="wp-block-column" style="flex-basis:33%"><!-- wp:heading {"level":2,"fontSize":"extra-large"} -->
 					<h2 class="has-extra-large-font-size">' . esc_html__( 'Awards', 'stewart' ) . '</h3>
 					<!-- /wp:heading --></div>
 					<!-- /wp:column -->
