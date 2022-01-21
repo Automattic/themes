@@ -56,6 +56,7 @@ function livro_register_block_patterns() {
 		'header-left-right-logo',
 		'header-left-right-logo-title',
 		'header-title-tagline-social',
+		'hidden-404',
 		'page-about',
 		'page-contact',
 	);
