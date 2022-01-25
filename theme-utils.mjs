@@ -584,14 +584,26 @@ function pushToSandbox() {
    * Deploying the theme
    * Triggering the .zip builds
 */
-function pushPremiumToSandbox() {
+async function pushPremiumToSandbox() {
+	await executeCommand( `git reset --hard HEAD`, true );
 	const premiumThemes = [
 		'videomaker',
 		'videomaker-white'
-	]
+	];
+
+	for ( let theme of premiumThemes ) {
+		console.log( theme );
+		await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/style.css`, true);
+		await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/block-templates/404.html`, true);
+		await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/block-template-parts/header.html`, true);
+		await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/block-template-parts/footer.html`, true);
+	}
+
 	executeCommand(`
 		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude='sass/' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxRootFolder}/wp-content/themes/premium/
 	`, true);
+
+	await executeCommand( `git reset --hard HEAD`, true );
 }
 
 /*
