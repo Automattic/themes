@@ -560,7 +560,7 @@ async function cleanAllSandboxGit() {
  Remove any other changes
 */
 async function cleanSandboxSvn() {
-	console.log('Cleaning the premium theme sandbox');
+	console.log('Cleaning the theme sandbox');
 	await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
   		svn revert -R .;
