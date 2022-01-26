@@ -641,8 +641,7 @@ async function pushPremiumToSandbox() {
 
 	// Push the changes in the premium themes to the sandbox
 	await executeCommand(`
-		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxPremiumThemesFolder}/
-	
+		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' --exclude='sass' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxPremiumThemesFolder}/
 	`, true);
 
 	// revert the local blockbase-premium changes
