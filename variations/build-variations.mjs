@@ -6,9 +6,9 @@ import { fileURLToPath } from 'url';
 import { executeCommand, getThemeMetadata } from '../theme-utils.mjs';
 
 const localpath = dirname( fileURLToPath( import.meta.url ) );
+const args = process.argv.slice(2);
 
 async function start() {
-	let args = process.argv.slice(2);
 	let source = args?.[0];
 	let variation = args?.[1];
 	if ( source && variation ) {
@@ -75,6 +75,10 @@ async function buildVariation(source, variation) {
 		// replace the with current version
 		if ( currentVersion != null ) {
 			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${destDir}/style.css`);
+		}
+
+		if ( args[0] == 'git-add-changes') {
+			await executeCommand(`git add ${destDir}`, true);
 		}
 	
 		console.log('Finished sucessfully.\n\n');
