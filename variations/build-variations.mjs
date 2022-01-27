@@ -3,6 +3,7 @@ import fsorig from 'fs';
 import deepmerge from 'deepmerge';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { executeCommand, getThemeMetadata } from '../theme-utils.mjs';
 
 const localpath = dirname( fileURLToPath( import.meta.url ) );
 
@@ -32,8 +33,16 @@ async function buildVariation(source, variation) {
 	console.log( `Copying the source ${source} to the variation ${variation}` );
 
 	try {
+		// First grab the existing version if the variation exists already
+		let variationExists = true; //TODO
+		let currentVersion = null;
 
-		// First empty the old directory.
+		if( variationExists ) {
+			let styleCss = fs.readFileSync(`${destDir}/style.css`, 'utf8');
+			currentVersion = getThemeMetadata(styleCss, 'Version');
+		}
+
+		// then empty the old directory.
 		await fs.emptyDir( destDir );
 
 		// Then copy the source directory.
@@ -72,6 +81,11 @@ async function buildVariation(source, variation) {
 		});
 		await fs.writeFile ( destDir + '/theme.json', JSON.stringify( mergedJson, null, '\t' ), 'utf8' );
 
+		// replace the with current version
+		if ( currentVersion != null ) {
+			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${destDir}/style.css`);
+		}
+	
 		console.log('Finished sucessfully.\n\n');
 	}
 	catch (err){

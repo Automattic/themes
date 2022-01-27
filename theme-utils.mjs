@@ -387,7 +387,7 @@ async function versionBumpThemes() {
 	return changesWereMade;
 }
 
-function getThemeMetadata(styleCss, attribute) {
+export function getThemeMetadata(styleCss, attribute) {
 	if ( !styleCss || !attribute ) {
 		return null;
 	}
@@ -829,7 +829,7 @@ EOF`, logResponse);
 /*
  Execute a command locally.
 */
-async function executeCommand(command, logResponse) {
+export async function executeCommand(command, logResponse) {
 	return new Promise((resolove, reject) => {
 
 		let child;
