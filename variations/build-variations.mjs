@@ -7,7 +7,7 @@ import { executeCommand, getThemeMetadata } from '../theme-utils.mjs';
 
 const localpath = dirname( fileURLToPath( import.meta.url ) );
 
-(async function start() {
+async function start() {
 	let args = process.argv.slice(2);
 	let source = args?.[0];
 	let variation = args?.[1];
@@ -15,7 +15,9 @@ const localpath = dirname( fileURLToPath( import.meta.url ) );
 		return await buildVariation(source, variation);
 	}
 	return await buildAllVariations();
-})();
+}
+
+start();
 
 async function buildAllVariations(){
 	for (let source of getDirectories( localpath )){
@@ -34,7 +36,7 @@ async function buildVariation(source, variation) {
 
 	try {
 		// First grab the existing version if the variation exists already
-		let variationExists = true; //TODO
+		let variationExists = fs.existsSync(`${destDir}/style.css`);
 		let currentVersion = null;
 
 		if( variationExists ) {
@@ -51,7 +53,6 @@ async function buildVariation(source, variation) {
 		// remove unneeded resources
 		await fs.remove( destDir + '/sass');
 		await fs.remove( destDir + '/node_modules' );
-		await fs.remove( destDir + '/template-mods.json');
 		await fs.remove( destDir + '/package.json');
 		await fs.remove( destDir + '/package-lock.json');
 
@@ -61,16 +62,6 @@ async function buildVariation(source, variation) {
 		// copy the readme
 		await fs.copy( localpath + '/variation-readme.md', destDir + '/variation-readme.md' );
 
-		// make template modifications
-		const hasMods = fs.existsSync( `${srcVariationDir}/template-mods.json`);
-		if(hasMods) {
-			const srcModsFile = await fs.readFile( `${srcVariationDir}/template-mods.json`, 'utf8' );
-			const modsJson = JSON.parse( srcModsFile );
-			modsJson.forEach(mod => {
-				modifyTemplates(mod.from, mod.to, destDir + '/block-templates');
-			});
-		}
-	
 		// merge the theme.json files
 		const srcJsonFile = await fs.readFile( srcDir + '/theme.json', 'utf8' );
 		const srcVariationJsonFile = await fs.readFile( srcVariationDir + '/theme.json', 'utf8' )
