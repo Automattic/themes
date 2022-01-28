@@ -69,3 +69,7 @@ function stewart_fonts_url() {
 
 	return esc_url_raw( $fonts_url );
 }
+
+// Add block patterns
+require get_template_directory() . '/inc/block-patterns.php';
+

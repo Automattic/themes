@@ -5,9 +5,10 @@ import inquirer from 'inquirer';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
+const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
-const directoriesToIgnore = [ 'variations', 'videomaker', 'videomaker-white' ];
+const premiumThemes = [ 'videomaker', 'videomaker-white' ];
 
 (async function start() {
 	let args = process.argv.slice(2);
@@ -17,6 +18,8 @@ const directoriesToIgnore = [ 'variations', 'videomaker', 'videomaker-white' ];
 		case "push-button-deploy-svn": return pushButtonDeploy('svn');
 		case "clean-sandbox-git": return cleanSandboxGit();
 		case "clean-sandbox-svn": return cleanSandboxSvn();
+		case "clean-premium-sandbox-git": return cleanPremiumSandboxGit();
+		case "clean-premium-sandbox-svn": return cleanPremiumSandboxSvn();
 		case "clean-all-sandbox-git": return cleanAllSandboxGit();
 		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
@@ -512,6 +515,25 @@ async function cleanSandboxGit() {
 }
 
 /*
+ Clean the premium theme sandbox.
+ Assumes sandbox is in 'git' mode
+ checkout origin/develop and ensure it's up-to-date.
+ Remove any other changes.
+*/
+async function cleanPremiumSandboxGit() {
+	console.log('Cleaning the Themes Sandbox');
+	await executeOnSandbox(`
+		cd ${sandboxPremiumThemesFolder};
+		git reset --hard HEAD;
+		git clean -fd;
+		git checkout develop;
+		git pull;
+		echo;
+		git status
+	`, true);
+	console.log('All done cleaning.');
+}
+/*
  Clean the entire sandbox.
  Assumes sandbox is in 'git' mode
  checkout origin/develop and ensure it's up-to-date.
@@ -549,6 +571,22 @@ async function cleanSandboxSvn() {
 }
 
 /*
+ Clean the premium theme sandbox.
+ Assumes sandbox is in 'svn' mode
+ ensure trunk is up-to-date
+ Remove any other changes
+*/
+async function cleanPremiumSandboxSvn() {
+	console.log('Cleaning the premium theme sandbox');
+	await executeOnSandbox(`
+		cd ${sandboxPremiumThemesFolder};
+  		svn revert -R .;
+  		svn cleanup --remove-unversioned;
+  		svn up;
+	`, true);
+	console.log('All done cleaning.');
+}
+/*
  Clean the entire sandbox.
  Assumes sandbox is in 'svn' mode
  ensure trunk is up-to-date
@@ -584,14 +622,37 @@ function pushToSandbox() {
    * Deploying the theme
    * Triggering the .zip builds
 */
-function pushPremiumToSandbox() {
-	const premiumThemes = [
-		'videomaker',
-		'videomaker-white'
-	]
-	executeCommand(`
-		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' --exclude='sass/' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxRootFolder}/wp-content/themes/premium/
+async function pushPremiumToSandbox() {
+
+	//TODO: It would be nice to determine this list programatically
+	const filesToModify = [
+		'style.css',
+		'block-templates/404.html',
+		'block-template-parts/header.html',
+		'block-template-parts/footer.html'
+	];
+
+	// Change 'blockbase' to 'blockbase-premium' in the files noted
+	for ( let theme of premiumThemes ) {
+		for ( let file of filesToModify ) {
+			await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/${file}`, true);
+		}
+	}
+
+	// Push the changes in the premium themes to the sandbox
+	await executeCommand(`
+		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' --exclude='sass' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxPremiumThemesFolder}/
 	`, true);
+
+	// revert the local blockbase-premium changes
+	for ( let theme of premiumThemes ) {
+		for ( let file of filesToModify ) {
+			await executeCommand(`
+				git restore --source=HEAD --staged --worktree ./${theme}/${file}
+			`);
+		}
+	}
+
 }
 
 /*
@@ -603,7 +664,7 @@ async function pushChangesToSandbox() {
 	console.log("Pushing Changes to Sandbox.");
 	let hash = await getLastDeployedHash();
 	let changedThemes = await getChangedThemes(hash);
-	changedThemes = changedThemes.filter( item=> ! directoriesToIgnore.includes( item ) );
+	changedThemes = changedThemes.filter( item=> ! premiumThemes.includes( item ) );
 	console.log(`Syncing ${changedThemes.length} themes`);
 
 	for ( let theme of changedThemes ) {

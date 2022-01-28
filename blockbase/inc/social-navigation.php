@@ -56,9 +56,11 @@ function get_social_menu_as_social_links_block( $block ) {
 	$social_links_content = '<!-- wp:social-links {"iconColor":"' . $social_links_icon_color . '","iconColorValue":"' . $social_links_icon_color_value . '","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
 
 	$menu = wp_get_nav_menu_items( $social_menu_id );
-	foreach ($menu as $menu_item) {
-		$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
-		$social_links_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
+	if ( $menu ) {
+		foreach ($menu as $menu_item) {
+			$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
+			$social_links_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
+		}
 	}
 	$social_links_content .= '</ul><!-- /wp:social-links -->';
 	return do_blocks( $social_links_content );

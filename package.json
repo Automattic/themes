@@ -1,6 +1,6 @@
 {
 	"name": "themes",
-	"version": "1.0.52",
+	"version": "1.0.60",
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
@@ -13,6 +13,8 @@
 		"sandbox:watch": "chokidar '**/*' -i '*/node_modules' -i '.git' -c './sandbox.sh push --ignore' --initial",
 		"sandbox:clean:git": "node ./theme-utils.mjs clean-sandbox-git",
 		"sandbox:clean:svn": "node ./theme-utils.mjs clean-sandbox-svn",
+		"sandbox:clean-premium:git": "node ./theme-utils.mjs clean-premium-sandbox-git",
+		"sandbox:clean-premium:svn": "node ./theme-utils.mjs clean-premium-sandbox-svn",
 		"sandbox:clean-all:git": "node ./theme-utils.mjs clean-all-sandbox-git",
 		"sandbox:clean-all:svn": "node ./theme-utils.mjs clean-all-sandbox-svn",
 		"local:clean": "git reset --hard HEAD; git clean -fd",
