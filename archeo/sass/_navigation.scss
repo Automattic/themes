@@ -1,12 +1,28 @@
 .site-header {
-	// Add numbers to navigation in header
-	.wp-block-navigation__container:not(.wp-block-navigation-placeholder__preview) {
-		counter-reset: item;
+	.nav-with-numbers {
+		// Add numbers to navigation in header
+		.wp-block-navigation__container:not(.wp-block-navigation-placeholder__preview) {
+			counter-reset: item;
 
-		> li::before {
-			content: counters(item, "") ". ";
-			counter-increment: item;
-			margin-right: calc(0.3 * var( --wp--style--block-gap ));
+			> li::before {
+				content: counters(item, "") ". ";
+				counter-increment: item;
+				margin-right: calc(0.3 * var( --wp--style--block-gap ));
+			}
+		}
+
+		.wp-block-navigation-item__content {
+			display: inline-block;
+		}
+
+		.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+			.wp-block-navigation-item {
+				display: block;
+			}
+
+			.has-child .wp-block-navigation__submenu-container {
+				padding-left: calc( 2 * var(--wp--custom--gap--horizontal) );
+			}
 		}
 	}
 }
