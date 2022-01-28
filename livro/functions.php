@@ -144,7 +144,3 @@ if ( ! function_exists( 'livro_preload_webfonts' ) ) :
 endif;
 
 add_action( 'wp_head', 'livro_preload_webfonts' );
-
-// Add block patterns
-require get_template_directory() . '/inc/block-patterns.php';
-
