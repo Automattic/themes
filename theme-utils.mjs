@@ -15,19 +15,14 @@ const premiumThemes = [ 'videomaker', 'videomaker-white' ];
 	let command = args?.[0];
 	switch (command) {
 		case "push-button-deploy-git": return pushButtonDeploy('git');
-		case "push-button-deploy-svn": return pushButtonDeploy('svn');
 		case "clean-sandbox-git": return cleanSandboxGit();
-		case "clean-sandbox-svn": return cleanSandboxSvn();
 		case "clean-premium-sandbox-git": return cleanPremiumSandboxGit();
-		case "clean-premium-sandbox-svn": return cleanPremiumSandboxSvn();
 		case "clean-all-sandbox-git": return cleanAllSandboxGit();
-		case "clean-all-sandbox-svn": return cleanAllSandboxSvn();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
 		case "push-premium-to-sandbox": return pushPremiumToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
 		case "land-diff-git": return landChangesGit(args?.[1]);
-		case "land-diff-svn": return landChangesSvn(args?.[1]);
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
 		case "build-com-zip": return buildComZip([args?.[1]]);
@@ -46,7 +41,6 @@ function showHelp(){
 async function deployPreview() {
 	console.clear();
 	console.log('To ensure accuracy clean your sandbox before previewing. (It is not automatically done).');
-	console.log('npm run sandbox:clean:git OR npm run sandbox:clean:svn')
 
 	let message = await checkForDeployability();
 	if (message) {
@@ -212,13 +206,32 @@ async function pushButtonDeploy(repoType) {
 			await landChangesSvn(diffId);
 		}
 
-		await deployThemes(changedThemes);
-		await buildComZips(changedThemes);
+		let changedPublicThemes = changedThemes.filter( item=> ! premiumThemes.includes( item ) );
+
+		try {
+			await deployThemes(changedPublicThemes);
+		} 
+		catch (err) {
+			prompt = await inquirer.prompt([{
+				type: 'confirm',
+				message: `There was an error deploying themes.  ${err}  Do you wish to continue to the next step?`,
+				name: "continue",
+				default: false
+			}]);
+
+			if(!prompt.continue){
+				console.log(`Aborted Automated Deploy during deploy phase.` );
+				return;
+			}
+		}
+
+		await buildComZips(changedPublicThemes);
+
 		console.log(`The following themes have changed:\n${changedThemes.join('\n')}`)
 		console.log('\n\nAll Done!!\n\n');
 	}
 	catch (err) {
-		console.log("ERROR with deply script: ", err);
+		console.log("ERROR with deploy script: ", err);
 	}
 }
 
@@ -236,7 +249,7 @@ async function buildComZip(themeSlug) {
 	let wpVersionCompat = getThemeMetadata(styleCss, 'Requires at least');
 
 	if (themeVersion && wpVersionCompat) {
-		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat}`, true);
+		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat};`, true);
 	}
 	else {
 		console.log('Unable to build theme .zip.');
@@ -253,7 +266,11 @@ async function buildComZip(themeSlug) {
 
 async function buildComZips(themes) {
 	for ( let theme of themes ) {
-		await buildComZip(theme);
+		try {
+			await buildComZip(theme);
+		} catch (err) {
+			console.log(`There was an error building dotcom zip for ${theme}. ${err}`);
+		}
 	}
 }
 
@@ -282,7 +299,7 @@ async function checkForDeployability(){
  This is the git version of that action.
 */
 async function landChangesGit(diffId){
-	return await executeOnSandbox(`cd ${sandboxPublicThemesFolder};arc patch ${diffId};arc land;exit;`, true, true);
+	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; ~/.arcanist-wpcom-git/bin/arc patch ${diffId}; ~/.arcanist-wpcom-git/bin/arc land; exit;"`, true);
 }
 
 /*
@@ -326,7 +343,7 @@ async function deployThemes( themes ) {
 		let deploySuccess = false;
 		let attempt = 0;
 
-		while ( ! deploySuccess) {
+		while ( ! deploySuccess && attempt <= 2 ) {
 
 			attempt++;
 			console.log(`\nattempt #${attempt}\n\n`);
@@ -343,6 +360,16 @@ async function deployThemes( themes ) {
 				console.log( "Deploy successful." );
 			}
 
+		}
+
+		if ( ! deploySuccess ) {
+
+			await inquirer.prompt([{
+				type: 'confirm',
+				message: `${theme} was not sucessfully deployed and should be deployed manually.`,
+				name: "continue",
+				default: false
+			}]);
 		}
 
 	}
@@ -519,8 +546,7 @@ async function getActionableThemes() {
 
 /*
  Clean the theme sandbox.
- Assumes sandbox is in 'git' mode
- checkout origin/develop and ensure it's up-to-date.
+ checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
 async function cleanSandboxGit() {
@@ -529,7 +555,7 @@ async function cleanSandboxGit() {
 		cd ${sandboxPublicThemesFolder};
 		git reset --hard HEAD;
 		git clean -fd;
-		git checkout develop;
+		git checkout trunk;
 		git pull;
 		echo;
 		git status
@@ -539,8 +565,7 @@ async function cleanSandboxGit() {
 
 /*
  Clean the premium theme sandbox.
- Assumes sandbox is in 'git' mode
- checkout origin/develop and ensure it's up-to-date.
+ checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
 async function cleanPremiumSandboxGit() {
@@ -549,7 +574,7 @@ async function cleanPremiumSandboxGit() {
 		cd ${sandboxPremiumThemesFolder};
 		git reset --hard HEAD;
 		git clean -fd;
-		git checkout develop;
+		git checkout trunk;
 		git pull;
 		echo;
 		git status
@@ -559,7 +584,7 @@ async function cleanPremiumSandboxGit() {
 /*
  Clean the entire sandbox.
  Assumes sandbox is in 'git' mode
- checkout origin/develop and ensure it's up-to-date.
+ checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
 async function cleanAllSandboxGit() {
@@ -568,7 +593,7 @@ async function cleanAllSandboxGit() {
 		cd ${sandboxRootFolder};
 		git reset --hard HEAD;
 		git clean -fd;
-		git checkout develop;
+		git checkout trunk;
 		git pull;
 		echo;
 		git status
@@ -841,7 +866,6 @@ function executeOnSandbox(command, logResponse, enablePsudoterminal){
 		return executeCommand(`ssh -tt -A ${remoteSSH} << EOF
 ${command}
 EOF`, logResponse);
-
 	}
 
 	return executeCommand(`ssh -TA ${remoteSSH} << EOF
@@ -865,7 +889,9 @@ export async function executeCommand(command, logResponse) {
 				stdio: [process.stdin, 'pipe', 'pipe'],
 			})
 		} else {
-			child = spawn(process.env.SHELL, ['-c', command]);
+			child = spawn(process.env.SHELL, ['-c', command], {
+				stdio: [process.stdin, 'pipe', 'pipe'],
+			});
 		}
 
 		child.stdout.on('data', (data) => {
