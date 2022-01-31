@@ -24,20 +24,3 @@ For a variation in that folder `/variations/geologist/geologist-banana`
 * Lastly the theme.json files in `/geologist` and `/variations/geologist/geologist-banana` will be merged.
 
 Any resource in the /variations folder will replace the resources in the source theme (with the exception of theme.json);
-
-### Template Mods
-
-A variation can have a `template-mods.json` file that lists strings in the templates to replace.  The use-case this mechanism was build
-for was so that the variation theme could have a different header by defining that in one place.  There are plenty of gaps in this
-implementation but should cover the basic use-cases we need.
-
-The format for this file is:
-
-```
-[
-	{
-		"from": "STRING TO REPLACE",
-		"to": "STRING TO BE USED AS REPLACEMENT"
-	}
-]
-```
