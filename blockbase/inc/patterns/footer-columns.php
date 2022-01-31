@@ -15,7 +15,7 @@ return array(
 		<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"60px","bottom":"60px"}}},"className":"pre-footer"} -->
 		<div class="wp-block-group alignwide pre-footer" style="padding-top:60px;padding-bottom:60px"><!-- wp:columns -->
 		<div class="wp-block-columns"><!-- wp:column -->
-		<div class="wp-block-column"><!-- wp:site-title {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"large"} /-->
+		<div class="wp-block-column"><!-- wp:site-title {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"medium"} /-->
 
 		<!-- wp:site-tagline {"fontSize":"small"} /-->
 
