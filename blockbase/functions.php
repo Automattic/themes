@@ -153,8 +153,14 @@ function blockbase_fonts_url() {
  * Customize Global Styles
  */
 if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+
+	$customize_colors = apply_filters( 'blockbase_customize_colors', true );
+
+	if ( $customize_colors ) {
+		require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+		require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+	}
+
 	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 }
 
