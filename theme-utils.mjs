@@ -107,6 +107,30 @@ async function pushButtonDeploy(repoType) {
 			await cleanSandboxSvn();
 		}
 
+		//build variations
+		console.log('Building Variations');
+		await executeCommand(`node ./variations/build-variations.mjs git-add-changes`)
+		prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'Are you good with any staged theme variations changes? Make any manual adjustments now if necessary.',
+			name: "continue",
+			default: false
+		}]);
+	
+		if(!prompt.continue){
+			console.log(`Aborted Automated Deploy Process at variations building.` );
+			return;
+		}
+
+		try {
+			await executeCommand(`
+				git commit -m "Building Variations"
+			`);
+		} catch (err) {
+			// Most likely the error is that there are no variation changes to commit.
+			// Just swallowing that error for now
+		}
+
 		let hash = await getLastDeployedHash();
 		let diffUrl;
 
@@ -378,7 +402,6 @@ async function versionBumpThemes() {
 
 	//version bump the root project if there were changes to any of the themes
 	let rootHasVersionBump = await checkProjectForVersionBump(hash);
-	console.log('root check', rootHasVersionBump, versionBumpCount, changesWereMade);
 	if ( versionBumpCount > 0 && ! rootHasVersionBump ) {
 		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
 		changesWereMade = true;
@@ -387,7 +410,7 @@ async function versionBumpThemes() {
 	return changesWereMade;
 }
 
-function getThemeMetadata(styleCss, attribute) {
+export function getThemeMetadata(styleCss, attribute) {
 	if ( !styleCss || !attribute ) {
 		return null;
 	}
@@ -829,7 +852,7 @@ EOF`, logResponse);
 /*
  Execute a command locally.
 */
-async function executeCommand(command, logResponse) {
+export async function executeCommand(command, logResponse) {
 	return new Promise((resolove, reject) => {
 
 		let child;
