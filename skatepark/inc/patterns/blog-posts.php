@@ -17,7 +17,7 @@ return array(
 
 	<!-- wp:post-featured-image {"isLink":true} /-->
 
-	<!-- wp:post-title {"isLink":true,"fontSize":"normal"} /-->
+	<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--normal)"}}} /-->
 
 	<!-- wp:post-excerpt {"moreText":"' . esc_html__( 'Continue reading', 'skatepark' ) . '"} /-->
 
