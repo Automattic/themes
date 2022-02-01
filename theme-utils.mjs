@@ -14,15 +14,15 @@ const premiumThemes = [ 'videomaker', 'videomaker-white' ];
 	let args = process.argv.slice(2);
 	let command = args?.[0];
 	switch (command) {
-		case "push-button-deploy-git": return pushButtonDeploy('git');
-		case "clean-sandbox-git": return cleanSandboxGit();
-		case "clean-premium-sandbox-git": return cleanPremiumSandboxGit();
-		case "clean-all-sandbox-git": return cleanAllSandboxGit();
+		case "push-button-deploy": return pushButtonDeploy();
+		case "clean-sandbox": return cleanSandbox();
+		case "clean-premium-sandbox": return cleanPremiumSandbox();
+		case "clean-all-sandbox": return cleanAllSandbox();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
 		case "push-premium-to-sandbox": return pushPremiumToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
-		case "land-diff-git": return landChangesGit(args?.[1]);
+		case "land-diff": return landChanges(args?.[1]);
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
 		case "build-com-zip": return buildComZip([args?.[1]]);
@@ -59,7 +59,6 @@ async function deployPreview() {
 
 /*
  Execute the first phase of a deployment.
- Leverages git on the sandbox.
 	* Gets the last deployed hash from the sandbox
 	* Version bump all themes have have changes since the last deployment
 	* Commit the version bump change to github
@@ -70,7 +69,7 @@ async function deployPreview() {
 	* Open the Phabricator Diff in your browser
 	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
 */
-async function pushButtonDeploy(repoType) {
+async function pushButtonDeploy() {
 
 	console.clear();
 	let prompt = await inquirer.prompt([{
@@ -84,9 +83,6 @@ async function pushButtonDeploy(repoType) {
 		return;
 	}
 
-	if (repoType != 'svn' && repoType != 'git' ) {
-		return console.log('Specify a repo type to use push-button deploy');
-	}
 
 	let message = await checkForDeployability();
 	if (message) {
@@ -94,12 +90,7 @@ async function pushButtonDeploy(repoType) {
 	}
 
 	try {
-		if (repoType === 'git' ) {
-			await cleanSandboxGit();
-		}
-		else {
-			await cleanSandboxSvn();
-		}
+		await cleanSandbox();
 
 		//build variations
 		console.log('Building Variations');
@@ -126,8 +117,6 @@ async function pushButtonDeploy(repoType) {
 		}
 
 		let hash = await getLastDeployedHash();
-		let diffUrl;
-
 		let thingsWentBump = await versionBumpThemes();
 
 		if( thingsWentBump ){
@@ -171,12 +160,7 @@ async function pushButtonDeploy(repoType) {
 
 		await updateLastDeployedHash();
 
-		if (repoType === 'git' ) {
-			diffUrl = await createGitPhabricatorDiff(hash);
-		}
-		else {
-			diffUrl = await createSvnPhabricatorDiff(hash);
-		}
+		let diffUrl = await createPhabricatorDiff(hash);
 		let diffId = diffUrl.split('a8c.com/')[1];
 
 
@@ -199,12 +183,7 @@ async function pushButtonDeploy(repoType) {
 			return;
 		}
 
-		if (repoType === 'git' ) {
-			await landChangesGit(diffId);
-		}
-		else {
-			await landChangesSvn(diffId);
-		}
+		await landChanges(diffId);
 
 		let changedPublicThemes = changedThemes.filter( item=> ! premiumThemes.includes( item ) );
 
@@ -296,21 +275,9 @@ async function checkForDeployability(){
 
 /*
  Land the changes from the given diff ID.  This is the "production merge".
- This is the git version of that action.
 */
-async function landChangesGit(diffId){
+async function landChanges(diffId){
 	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; /usr/local/bin/arc patch ${diffId}; /usr/local/bin/arc land; exit;"`, true);
-}
-
-/*
- Land the changes from the given diff ID.  This is the "production merge".
- This is the svn version of that action.
-*/
-async function landChangesSvn(diffId){
-	return await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		svn ci -m ${diffId}
-	`, true );
 }
 
 async function getChangedThemes(hash) {
@@ -548,7 +515,7 @@ async function getActionableThemes() {
  checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
-async function cleanSandboxGit() {
+async function cleanSandbox() {
 	console.log('Cleaning the Themes Sandbox');
 	await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
@@ -567,7 +534,7 @@ async function cleanSandboxGit() {
  checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
-async function cleanPremiumSandboxGit() {
+async function cleanPremiumSandbox() {
 	console.log('Cleaning the Themes Sandbox');
 	await executeOnSandbox(`
 		cd ${sandboxPremiumThemesFolder};
@@ -582,11 +549,10 @@ async function cleanPremiumSandboxGit() {
 }
 /*
  Clean the entire sandbox.
- Assumes sandbox is in 'git' mode
  checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
-async function cleanAllSandboxGit() {
+async function cleanAllSandbox() {
 	console.log('Cleaning the Entire Sandbox');
 	let response = await executeOnSandbox(`
 		cd ${sandboxRootFolder};
@@ -596,56 +562,6 @@ async function cleanAllSandboxGit() {
 		git pull;
 		echo;
 		git status
-	`, true);
-	console.log('All done cleaning.');
-}
-
-/*
- Clean the theme sandbox.
- Assumes sandbox is in 'svn' mode
- ensure trunk is up-to-date
- Remove any other changes
-*/
-async function cleanSandboxSvn() {
-	console.log('Cleaning the theme sandbox');
-	await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-  		svn revert -R .;
-  		svn cleanup --remove-unversioned;
-  		svn up;
-	`, true);
-	console.log('All done cleaning.');
-}
-
-/*
- Clean the premium theme sandbox.
- Assumes sandbox is in 'svn' mode
- ensure trunk is up-to-date
- Remove any other changes
-*/
-async function cleanPremiumSandboxSvn() {
-	console.log('Cleaning the premium theme sandbox');
-	await executeOnSandbox(`
-		cd ${sandboxPremiumThemesFolder};
-  		svn revert -R .;
-  		svn cleanup --remove-unversioned;
-  		svn up;
-	`, true);
-	console.log('All done cleaning.');
-}
-/*
- Clean the entire sandbox.
- Assumes sandbox is in 'svn' mode
- ensure trunk is up-to-date
- Remove any other changes
-*/
-async function cleanAllSandboxSvn() {
-	console.log('Cleaning the entire sandbox');
-	await executeOnSandbox(`
-		cd ${sandboxRootFolder};
-  		svn revert -R .;
-  		svn cleanup --remove-unversioned;
-  		svn up .;
 	`, true);
 	console.log('All done cleaning.');
 }
@@ -747,11 +663,11 @@ Subscribers:
 }
 
 /*
- Create a (git) Phabricator diff from a given hash.
+ Create a Phabricator diff from a given hash.
  Open the phabricator diff in your browser.
  Provide the URL of the phabricator diff.
 */
-async function createGitPhabricatorDiff(hash) {
+async function createPhabricatorDiff(hash) {
 
 	console.log('creating Phabricator Diff');
 
@@ -778,40 +694,8 @@ async function createGitPhabricatorDiff(hash) {
 }
 
 /*
- Create a (svn) Phabricator diff from a given hash.
- Open the phabricator diff in your browser.
- Provide the URL of the phabricator diff.
-*/
-async function createSvnPhabricatorDiff(hash) {
-	console.log('creating Phabricator Diff');
-
-	const commitTempFileLocation = '/tmp/theme-deploy-comment.txt';
-	const commitMessage = await buildPhabricatorCommitMessageSince(hash);
-
-	console.log(commitMessage);
-
-	const result = await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		echo "${commitMessage}" > ${commitTempFileLocation};
-		svn add --force * --auto-props --parents --depth infinity -q;
-		svn status | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
-		arc diff --create --message-file ${commitTempFileLocation}
-	`, true);
-
-	const phabricatorUrl = getPhabricatorUrlFromResponse(result);
-
-	console.log('Diff Created at: ', phabricatorUrl);
-
-	if(phabricatorUrl) {
-		open(phabricatorUrl);
-	}
-
-	return phabricatorUrl;
-}
-
-/*
  Utility to pull the Phabricator URL from the diff creation command.
- Used by createGitPhabricatorDiff
+ Used by createPhabricatorDiff
 */
 function getPhabricatorUrlFromResponse(response){
 	return response
