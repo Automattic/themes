@@ -299,7 +299,7 @@ async function checkForDeployability(){
  This is the git version of that action.
 */
 async function landChangesGit(diffId){
-	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; ~/.arcanist-wpcom-git/bin/arc patch ${diffId}; ~/.arcanist-wpcom-git/bin/arc land; exit;"`, true);
+	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; /usr/local/bin/arc patch ${diffId}; /usr/local/bin/arc land; exit;"`, true);
 }
 
 /*
