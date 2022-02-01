@@ -525,9 +525,8 @@ async function checkProjectForVersionBump(hash){
  Used by versionBumpThemes
 */
 async function checkThemeForChanges(theme, hash){
-	let uncomittedChanges = await executeCommand(`git diff-index --name-only HEAD -- ${theme}`);
 	let comittedChanges = await executeCommand(`git diff --name-only ${hash} HEAD -- ${theme}`);
-	return uncomittedChanges != '' || comittedChanges != '';
+	return comittedChanges != '';
 }
 
 /*
