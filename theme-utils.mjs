@@ -679,20 +679,34 @@ async function pushPremiumToSandbox() {
 		'block-template-parts/footer.html'
 	];
 
+	// Include blockbase in the themes we make changes to
+	const actionableThemes = premiumThemes.concat(['blockbase']);
+
 	// Change 'blockbase' to 'blockbase-premium' in the files noted
-	for ( let theme of premiumThemes ) {
+	for ( let theme of actionableThemes ) {
 		for ( let file of filesToModify ) {
 			await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/${file}`, true);
 		}
 	}
 
-	// Push the changes in the premium themes to the sandbox
+	// Revert any changes made above and JUST change the name of Blockbase to Blockbase-premium
 	await executeCommand(`
-		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' --exclude='sass' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxPremiumThemesFolder}/
+		git restore --source=HEAD --staged --worktree ./blockbase/style.css
+	`);
+	await executeCommand(`perl -pi -e 's/Theme Name: Blockbase/Theme Name: Blockbase (Premium)/' blockbase/style.css`, true);
+
+	// Push the changes in the premium themes to the sandbox (but not blockbase, it's special)
+	await executeCommand(`
+		rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' --exclude='sass' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxPremiumThemesFolder}/
+	`, true);
+
+	// Push the changes in Blockbase to the blockbase-premium folder
+	await executeCommand(`
+		rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' --exclude='sass' ./blockbase/ wpcom-sandbox:${sandboxPremiumThemesFolder}/blockbase-premium
 	`, true);
 
 	// revert the local blockbase-premium changes
-	for ( let theme of premiumThemes ) {
+	for ( let theme of actionableThemes ) {
 		for ( let file of filesToModify ) {
 			await executeCommand(`
 				git restore --source=HEAD --staged --worktree ./${theme}/${file}
