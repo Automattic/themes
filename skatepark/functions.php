@@ -16,3 +16,12 @@ function add_featured_image_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'add_featured_image_class' );
+
+/**
+ * Disable customizer options coming from Blockbase.
+ */
+function disable_blockbase_customizer( ) {
+	return false;
+}
+add_filter( 'blockbase_customize_colors', 'disable_blockbase_customizer', 10, 3 );
+add_filter( 'blockbase_customize_fonts', 'disable_blockbase_customizer', 10, 3 );
