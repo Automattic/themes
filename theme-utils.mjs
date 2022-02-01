@@ -569,10 +569,21 @@ async function cleanAllSandbox() {
 /*
   Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
 */
-function pushToSandbox() {
-	executeCommand(`
-		rsync -av --no-p --no-times --exclude-from='.sandbox-ignore' ./ wpcom-sandbox:${sandboxPublicThemesFolder}/
-	`);
+async function pushToSandbox() {
+	console.log("Pushing All Themes to Sandbox.");
+	let allThemes = await getActionableThemes();
+	allThemes = allThemes.filter( item=> ! premiumThemes.includes( item ) );
+	console.log(`Syncing ${allThemes.length} themes`);
+	for ( let theme of allThemes ) {
+		await pushThemeToSandbox(theme);
+	}
+}
+
+async function pushThemeToSandbox(theme) {
+	console.log( `Syncing ${theme}` );
+	return executeCommand(`
+		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/
+	`, true);
 }
 
 /*
@@ -624,17 +635,14 @@ async function pushPremiumToSandbox() {
 */
 async function pushChangesToSandbox() {
 
-	console.log("Pushing Changes to Sandbox.");
+	console.log("Pushing Changed Themes to Sandbox.");
 	let hash = await getLastDeployedHash();
 	let changedThemes = await getChangedThemes(hash);
 	changedThemes = changedThemes.filter( item=> ! premiumThemes.includes( item ) );
 	console.log(`Syncing ${changedThemes.length} themes`);
 
 	for ( let theme of changedThemes ) {
-		console.log( `Syncing ${theme}` );
-		await executeCommand(`
-			rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/
-		`, true);
+		pushThemeToSandbox(theme);
 	}
 }
 
