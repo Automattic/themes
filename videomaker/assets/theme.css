@@ -2,12 +2,6 @@
  * Breakpoints & Media Queries
  */
 /**
-*  Converts a hex value into the rgb equivalent.
-*
-* @param {string} hex - the hexadecimal value to convert
-* @return {string} comma separated rgb values
-*/
-/**
  * Breakpoint mixins
  */
 /**
@@ -34,6 +28,9 @@
  */
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
+ * These are default block editor widths in case the theme doesn't provide them.
  */
 .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):hover, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color):focus, .wp-block-button.wp-block-button__link:not(.has-background):not(.has-text-color).has-focus,
 .wp-block-button .wp-block-button__link:not(.has-background):not(.has-text-color):hover,
@@ -79,6 +76,22 @@
   background-color: var(--wp--custom--button--color--text);
 }
 
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("/assets/fonts/Inter-roman.var.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("/assets/fonts/Inter-italic.var.woff2") format("woff2");
+}
 a:not(.wp-block-query-pagination-next):active {
   background: var(--wp--custom--color--foreground) !important;
   color: var(--wp--custom--color--background) !important;
