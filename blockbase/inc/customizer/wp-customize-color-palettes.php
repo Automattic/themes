@@ -1,6 +1,6 @@
 <?php
 
-require_once 'wp-customize-color-palette-control.php';
+require_once ( __DIR__ . '/wp-customize-color-palette-control.php' );
 
 class GlobalStylesColorPalettes {
 	private $palettes = array();

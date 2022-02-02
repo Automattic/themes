@@ -1,7 +1,7 @@
 <?php
 
-require_once 'wp-customize-global-styles-setting.php';
-require_once 'wp-customize-utils.php';
+require_once ( __DIR__ . '/wp-customize-global-styles-setting.php' );
+require_once ( __DIR__ . '/wp-customize-utils.php' );
 
 class GlobalStylesFontsCustomizer {
 
