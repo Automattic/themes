@@ -1,0 +1,192 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"customTemplates": [
+		{
+			"name": "blank",
+			"title": "Blank",
+			"postTypes": [
+				"page",
+				"post"
+			]
+		}
+	],
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"slug": "foreground",
+					"color": "#242321",
+					"name": "Foreground"
+				},
+				{
+					"slug": "background",
+					"color": "#FCFBF8",
+					"name": "Background"
+				},
+				{
+					"slug": "primary",
+					"color": "#71706E",
+					"name": "Primary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#CFCFCF",
+					"name": "Tertiary"
+				}
+			]
+		},
+		"custom": {
+			"body": {
+				"typography": {
+					"lineHeight": 1.5
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontWeight": "400",
+					"lineHeight": 1.1
+				}
+			},
+			"spacing": {
+				"small": "clamp(20px, 4vw, 90px)",
+				"medium": "clamp(30px, 8vw, 100px)",
+				"large": "clamp(100px, 12vw, 460px)",
+				"outer": "min(4vw, 90px)"
+			}
+		},
+		"layout": {
+			"contentSize": "620px",
+			"wideSize": "835px"
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "\"Chivo\", sans-serif",
+					"name": "Chivo",
+					"slug": "chivo"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Small",
+					"size": "16px",
+					"slug": "small"
+				},
+				{
+					"name": "Normal",
+					"size": "18px",
+					"slug": "normal"
+				},
+				{
+					"name": "Medium",
+					"size": "min(max(24px, 5vw), 32px)",
+					"slug": "medium"
+				},
+				{
+					"name": "Large",
+					"size": "min(max(36px, 5vw), 48px)",
+					"slug": "large"
+				},
+				{
+					"name": "Huge",
+					"size": "min(max(48px, 5vw), 72px)",
+					"slug": "huge"
+				}
+			]
+		}
+	},
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "0"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--foreground)",
+					"text": "var(--wp--preset--color--background)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--typography--font-size--normal)",
+					"textTransform": "uppercase"
+				}
+			},
+			"core/site-title": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)",
+					"fontWeight": "400",
+					"textTransform": "uppercase"
+				}
+			}
+		},
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--foreground)"
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontSize": "min(max(64px, 5vw), 100px)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--huge)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "1.25rem"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--chivo)",
+			"lineHeight": "var(--wp--custom--body--typography--line-height)",
+			"fontSize": "var(--wp--preset--font-size--normal)"
+		}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	]
+}
