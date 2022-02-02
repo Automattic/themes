@@ -642,7 +642,7 @@ async function pushChangesToSandbox() {
 	console.log(`Syncing ${changedThemes.length} themes`);
 
 	for ( let theme of changedThemes ) {
-		pushThemeToSandbox(theme);
+		await pushThemeToSandbox(theme);
 	}
 }
 
