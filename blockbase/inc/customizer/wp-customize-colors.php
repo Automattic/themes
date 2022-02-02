@@ -181,54 +181,51 @@ class GlobalStylesColorCustomizer {
 			unset( $user_theme_json_post_content->settings->color->palette );
 		}
 
-		//Set the color palette if it is !== the default
-		if ( ! $this->check_if_colors_are_default() ) {
-			$user_theme_json_post_content = set_settings_array(
-				$user_theme_json_post_content,
-				array( 'settings', 'color', 'palette', 'custom' ),
-				$this->user_color_palette
+		$user_theme_json_post_content = set_settings_array(
+			$user_theme_json_post_content,
+			array( 'settings', 'color', 'palette', 'custom' ),
+			$this->user_color_palette
+		);
+
+		$primary_key = array_search('primary', array_column($this->user_color_palette, 'slug'));
+		$background_key = array_search('background', array_column($this->user_color_palette, 'slug'));
+
+		if (  $this->theme_duotone_settings && $primary_key !== null && $background_key !== null ) {
+
+			$primary = $this->user_color_palette[$primary_key];
+			$background = $this->user_color_palette[$background_key];
+
+			//we invert the colors when the background is darker than the primary color
+			if( colorLuminescence($primary['color']) > colorLuminescence($background['color']) ) {
+				$primary = $this->user_color_palette[$background_key];
+				$background = $this->user_color_palette[$primary_key];
+			}
+
+			$custom_duotone_filter = array(
+				array(
+					"colors" => array( $primary['color'], $background['color'] ),
+					"slug" => "custom-filter",
+					"name" => "Custom filter"
+				)
 			);
 
-			$primary_key = array_search('primary', array_column($this->user_color_palette, 'slug'));
-			$background_key = array_search('background', array_column($this->user_color_palette, 'slug'));
+			$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
+			$user_theme_json_post_content = set_settings_array(
+				$user_theme_json_post_content,
+				array( 'settings', 'color', 'duotone', 'custom' ),
+				array_merge( $custom_duotone_filter, $this->theme_duotone_settings )
+			);
 
-			if (  $this->theme_duotone_settings && $primary_key !== null && $background_key !== null ) {
-
-				$primary = $this->user_color_palette[$primary_key];
-				$background = $this->user_color_palette[$background_key];
-
-				//we invert the colors when the background is darker than the primary color
-				if( colorLuminescence($primary['color']) > colorLuminescence($background['color']) ) {
-					$primary = $this->user_color_palette[$background_key];
-					$background = $this->user_color_palette[$primary_key];
-				}
-
-				$custom_duotone_filter = array(
-					array(
-						"colors" => array( $primary['color'], $background['color'] ),
-						"slug" => "custom-filter",
-						"name" => "Custom filter"
-					)
-				);
-
-				$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
-				$user_theme_json_post_content = set_settings_array(
-					$user_theme_json_post_content,
-					array( 'settings', 'color', 'duotone', 'custom' ),
-					array_merge( $custom_duotone_filter, $this->theme_duotone_settings )
-				);
-
-				//replace the new filter in all blocks using duotone
-				$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-				if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
-					foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
-						if( $block['filter'] ) {
-							$user_theme_json_post_content = set_settings_array(
-								$user_theme_json_post_content,
-								array( 'styles', 'blocks', $key, 'filter', 'duotone', 'custom' ),
-								$custom_duotone_filter_variable
-							);
-						}
+			//replace the new filter in all blocks using duotone
+			$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+			if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
+				foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
+					if( $block['filter'] ) {
+						$user_theme_json_post_content = set_settings_array(
+							$user_theme_json_post_content,
+							array( 'styles', 'blocks', $key, 'filter', 'duotone', 'custom' ),
+							$custom_duotone_filter_variable
+						);
 					}
 				}
 			}
