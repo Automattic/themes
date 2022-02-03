@@ -99,6 +99,14 @@ if ( ! function_exists( 'archeo_get_font_face_styles' ) ) :
 		return "
 		@font-face{
 			font-family: 'Chivo';
+			font-weight: 300;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Light.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
 			font-weight: 400;
 			font-style: normal;
 			font-stretch: normal;
@@ -107,11 +115,19 @@ if ( ! function_exists( 'archeo_get_font_face_styles' ) ) :
 		}
 		@font-face{
 			font-family: 'Chivo';
-			font-weight: 300;
+			font-weight: 700;
 			font-style: normal;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Light.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Bold.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
+			font-weight: 300;
+			font-style: italic;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-LightItalic.woff2' ) . "') format('woff2');
 		}
 		@font-face{
 			font-family: 'Chivo';
@@ -123,11 +139,11 @@ if ( ! function_exists( 'archeo_get_font_face_styles' ) ) :
 		}
 		@font-face{
 			font-family: 'Chivo';
-			font-weight: 300;
+			font-weight: 700;
 			font-style: italic;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-LightItalic.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-BoldItalic.woff2' ) . "') format('woff2');
 		}
 		";
 
