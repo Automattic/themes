@@ -148,3 +148,26 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	margin-right: auto !important;
 	width: inherit;
 }
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--spacing--outer);
+	padding-bottom: var(--wp--custom--spacing--large);
+	padding-right: var(--wp--custom--spacing--outer);
+	padding-left: var(--wp--custom--spacing--outer);
+}
+
+/*
+ * We need this until https://github.com/WordPress/gutenberg/issues/37035 is fixed.
+ */
+.wp-block-navigation__responsive-container.is-menu-open ul {
+	font-size: var(--wp--preset--font-size--large) !important;
+	font-weight: 300;
+	gap: var(--wp--style--block-gap);
+}
