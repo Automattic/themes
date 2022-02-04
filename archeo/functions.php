@@ -99,11 +99,51 @@ if ( ! function_exists( 'archeo_get_font_face_styles' ) ) :
 		return "
 		@font-face{
 			font-family: 'Chivo';
-			font-weight: 300 400 700 900;
+			font-weight: 300;
 			font-style: normal;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Light.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
+			font-weight: 400;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Regular.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
+			font-weight: 700;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Bold.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
+			font-weight: 300;
+			font-style: italic;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-LightItalic.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
+			font-weight: 400;
+			font-style: italic;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Italic.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Chivo';
+			font-weight: 700;
+			font-style: italic;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-BoldItalic.woff2' ) . "') format('woff2');
 		}
 		";
 
@@ -116,13 +156,19 @@ if ( ! function_exists( 'archeo_preload_webfonts' ) ) :
 	/**
 	 * Preloads the main web font to improve performance.
 	 *
+	 * Only the main web font (font-weight: 300,400, font-style: normal) is preloaded here since that font is always relevant. 
+	 * The other fonts are only needed if the user changed style or weight of the fonts,
+	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
+	 * at all.
+	 *
 	 * @since Archeo 1.0
 	 *
 	 * @return void
 	 */
 	function archeo_preload_webfonts() {
 		?>
-		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo-Light.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo-Regular.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
 		<?php
 	}
 
