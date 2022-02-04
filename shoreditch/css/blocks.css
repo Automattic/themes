@@ -30,7 +30,7 @@ Description: Used to style Gutenberg Blocks.
 	margin-right: 0;
 }
 
-.can-align-wide .alignfull,
+.can-align-wide :not(.wp-block-jetpack-layout-grid-column) > .alignfull,
 .page-template-full-width-page .alignfull,
 .page-template-panel-page .alignfull {
 	margin-left: calc(50% - 50vw);
@@ -66,7 +66,7 @@ Description: Used to style Gutenberg Blocks.
 }
 
 @media (min-width: 900px) {
-	.can-align-wide .alignfull {
+	.can-align-wide :not(.wp-block-jetpack-layout-grid-column) > .alignfull {
 		margin-left: calc(50% - 50vw + 150px + 0.5em );
 		margin-right: calc(50% - 50vw - 150px - 0.5em );
 	}
