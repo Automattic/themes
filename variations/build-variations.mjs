@@ -47,14 +47,17 @@ async function buildVariation(source, variation) {
 		// then empty the old directory.
 		await fs.emptyDir( destDir );
 
-		// Then copy the source directory.
-		await fs.copy( srcDir, destDir );
+		const exclude = [ 'node_modules', 'sass', 'package.json', 'package-lock.json' ];
 
-		// remove unneeded resources
-		await fs.remove( destDir + '/sass');
-		await fs.remove( destDir + '/node_modules' );
-		await fs.remove( destDir + '/package.json');
-		await fs.remove( destDir + '/package-lock.json');
+		// Then copy the source directory.
+		await fs.copy( srcDir, destDir, {
+			filter: (fileName) => {
+				if (exclude.some( ignore => fileName.includes( ignore ) )){
+					return false;
+				}
+				return true;
+			}
+		});
 
 		// copy the variation directory.
 		await fs.copy( srcVariationDir, destDir );
