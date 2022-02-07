@@ -42,7 +42,8 @@ function archeo_register_block_patterns() {
 
 	$block_patterns = array(
 		'headline-over-dark-image',
-		'image-with-headline-on-dark-background'
+		'image-with-headline-on-dark-background',
+		'image-with-headline-description',
 	);
 
 	/**
