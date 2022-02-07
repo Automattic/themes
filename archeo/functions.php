@@ -177,5 +177,5 @@ endif;
 add_action( 'wp_head', 'archeo_preload_webfonts' );
 
 // Add block patterns
-// require get_template_directory() . '/inc/block-patterns.php';
+require get_template_directory() . '/inc/block-patterns.php';
 
