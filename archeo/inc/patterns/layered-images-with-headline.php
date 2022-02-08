@@ -12,8 +12,8 @@ return array(
 	<div style="height:14vw" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	
-	<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"300"}},"fontSize":"huge"} -->
-	<p class="has-huge-font-size" style="font-style:normal;font-weight:300;text-transform:uppercase">' . wp_kses_post( __( 'Palais Du <br>Cirque, à Chichen-Itza, bas-relief<br>des tigres.', 'archeo' ) ) . '</p>
+	<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"300","lineHeight":"1","fontSize":"100px"}}} -->
+	<p style="font-size:100px;font-style:normal;font-weight:300;line-height:1;text-transform:uppercase">' . wp_kses_post( __( 'Palais Du <br>Cirque, à Chichen-Itza, bas-relief<br>des tigres.', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column -->
 	
