@@ -97,7 +97,7 @@ if ( ! function_exists( 'archeo_get_font_face_styles' ) ) :
 	function archeo_get_font_face_styles() {
 
 		return "
-		@font-face {
+		@font-face{
 			font-family: 'Chivo';
 			font-weight: 100;
 			font-style: normal;
