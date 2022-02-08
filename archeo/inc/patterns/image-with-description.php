@@ -16,15 +16,15 @@ return array(
 	<!-- /wp:separator -->
 	
 	<!-- wp:paragraph -->
-	<p>Ancien Temple, à Chichen-Itza, applé le chateau</p>
+	<p>' . __( 'Ancien Temple, à Chichen-Itza, applé le chateau', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"400"}},"fontSize":"small"} -->
-	<p class="has-small-font-size" style="font-style:italic;font-weight:400">From “Cités et Ruines Americaines: Mitla, Palenqué, Izamal, Chichen-Itza, Uxmal, Atlas” housed at the New York Public Library.</p>
+	<p class="has-small-font-size" style="font-style:italic;font-weight:400">' . __( 'From “Cités et Ruines Americaines: Mitla, Palenqué, Izamal, Chichen-Itza, Uxmal, Atlas” housed at the New York Public Library.', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:image {"id":840,"sizeSlug":"full","linkDestination":"none"} -->
-	<figure class="wp-block-image size-full"><img src="http://localhost:4759/wp-content/uploads/2022/02/ancien-temple.jpg" alt="" class="wp-image-840"/></figure>
+	<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/ancien-temple.jpg" alt="' . __( 'Photo of ancient temple', 'archeo' ) ) . '"/></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->',
