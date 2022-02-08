@@ -26,5 +26,25 @@ return array(
 		<!-- wp:column {"width":"25%"} -->
 		<div class="wp-block-column" style="flex-basis:25%"></div>
 		<!-- /wp:column --></div>
+		<!-- /wp:columns -->
+		
+		
+		
+		<!-- wp:columns {"align":"wide"} -->
+		<div class="wp-block-columns alignwide"><!-- wp:column {"width":"75%"} -->
+		<div class="wp-block-column" style="flex-basis:75%"><!-- wp:heading {"level":4} -->
+		<h4>' . esc_html__( 'Visiting Coaches', 'skatepark' ) . '</h4>
+		<!-- /wp:heading -->
+		<!-- wp:heading --><h2>' . esc_html__( 'Steph Harper. Buddy Sellers. Mehmet Farrow. Bob Lopez. Tammy Habich. Tye Barclay. Kaden Price. Lily Rivera. Chris Wright. Sammy Sanchez.', 'skatepark' ) . '</h2>
+		<!-- /wp:heading -->
+		<!-- wp:buttons -->
+		<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link">' . esc_html__( 'See All Faculty', 'skatepark' ) . '</a></div>
+		<!-- /wp:button --></div>
+		<!-- /wp:buttons --></div>
+		<!-- /wp:column -->
+		<!-- wp:column {"width":"25%"} -->
+		<div class="wp-block-column" style="flex-basis:25%"></div>
+		<!-- /wp:column --></div>
 		<!-- /wp:columns -->'
 );
