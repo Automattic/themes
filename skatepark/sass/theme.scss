@@ -1,8 +1,118 @@
 @import "../../blockbase/sass/base/breakpoints"; // Get the mobile-only media query and make it available to this theme's styles
 @import "../../blockbase/sass/base/mixins";
 @import "../../blockbase/sass/blocks/_buttons-outline-style";
-@import "base/text";
-@import "blocks/post-title";
-//@import "blocks/separator";
-@import "elements/headings";
-@import "elements/links";
+
+
+/* Text selection text color */
+::selection {
+	color: var(--wp--custom--color--background);
+	background-color: var(--wp--custom--color--foreground);
+}
+
+/* Post title when featured image is present */
+h1.wp-block-post-title {
+	body:not(.has-featured-image) &{
+		border-bottom: var(--wp--custom--form--border--width)
+			var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
+		padding-bottom: calc(var(--wp--custom--gap--vertical) * 3);
+	}
+}
+
+/* Separator width */
+/* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
+.wp-block-separator {
+	&.is-style-wide {
+		border-width: 0 0 3px 0;
+	}
+}
+
+/* Headings with border */
+h1, h2, h3, h4, h5, h6 {
+	&.is-style-skatepark-heading-border{
+		display: inline-block;
+		border-top: 2px solid var(--wp--custom--color--primary);
+		margin-bottom: 0;
+		padding-top: 1em;
+	}
+}
+
+/* Links and underlines */
+@mixin text-decoration() {
+	text-decoration-thickness: 0.07em;
+	text-underline-offset: 0.46ex;
+}
+
+a {
+	@include text-decoration;
+}
+
+.wp-block-post-content p a:not(.wp-block-post-excerpt__more-link) {
+	text-decoration-line: underline;
+	&:hover {
+		text-decoration: none;
+		background-color: var(--wp--custom--color--primary);
+		color: var(--wp--custom--color--background);
+	}
+}
+
+.wp-block-post-comments .comment-meta > a,
+.wp-block-post-comments .comment-body > p > a,
+.wp-block-post-comments .comment-edit-link,
+.post-meta a {
+	text-decoration-line: underline;
+	&:hover {
+		text-decoration-line: none;
+	}
+}
+
+//Exceptions for the general underline rule
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+.wp-block-site-title a,
+.wp-block-post-title a{
+	text-underline-offset: 0.1ex;
+}
+.wp-block-site-title a,
+.wp-block-post-title a,
+.wp-block-query-pagination a {
+	text-decoration-line: none;
+	&:hover {
+		text-decoration-line: underline;
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+.wp-block-search__button,
+a:not(.ab-item):not(.screen-reader-shortcut) {
+	&:active,
+	&:focus {
+		outline: 1px dotted var(--wp--custom--color--primary);
+		outline-offset: 0.1em;
+		text-decoration: none;
+	}
+}
+
+.archive,
+.blog,
+.home {
+	.wp-block-post-date {
+		text-decoration: underline;
+		@include text-decoration;
+	}
+}
+
+.wp-block-query-pagination{
+	.wp-block-query-pagination-numbers {
+		.current {
+			@include text-decoration;
+		}
+	}
+}
+
+.wp-block-post-excerpt__more-link {
+	font-weight: 500;
+}

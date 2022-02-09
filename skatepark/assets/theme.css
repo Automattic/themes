@@ -79,16 +79,25 @@
   background-color: var(--wp--custom--button--color--text);
 }
 
+/* Text selection text color */
 ::selection {
   color: var(--wp--custom--color--background);
   background-color: var(--wp--custom--color--foreground);
 }
 
+/* Post title when featured image is present */
 body:not(.has-featured-image) h1.wp-block-post-title {
   border-bottom: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
   padding-bottom: calc(var(--wp--custom--gap--vertical) * 3);
 }
 
+/* Separator width */
+/* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
+.wp-block-separator.is-style-wide {
+  border-width: 0 0 3px 0;
+}
+
+/* Headings with border */
 h1.is-style-skatepark-heading-border, h2.is-style-skatepark-heading-border, h3.is-style-skatepark-heading-border, h4.is-style-skatepark-heading-border, h5.is-style-skatepark-heading-border, h6.is-style-skatepark-heading-border {
   display: inline-block;
   border-top: 2px solid var(--wp--custom--color--primary);
@@ -96,6 +105,7 @@ h1.is-style-skatepark-heading-border, h2.is-style-skatepark-heading-border, h3.i
   padding-top: 1em;
 }
 
+/* Links and underlines */
 a {
   text-decoration-thickness: 0.07em;
   text-underline-offset: 0.46ex;
