@@ -1,7 +1,7 @@
 <?php
 
-require_once ( __DIR__ . '/wp-customize-global-styles-setting.php' );
-require_once ( __DIR__ . '/wp-customize-utils.php' );
+require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
+require_once( __DIR__ . '/wp-customize-utils.php' );
 
 class GlobalStylesColorCustomizer {
 
@@ -51,7 +51,7 @@ class GlobalStylesColorCustomizer {
 	}
 
 	function initialize( $wp_customize ) {
-		$this->user_color_palette = $this->build_user_color_palette();
+		$this->user_color_palette     = $this->build_user_color_palette();
 		$this->theme_duotone_settings = $this->get_theme_duotone_settings();
 		$this->register_color_controls( $wp_customize, $this->user_color_palette );
 	}
@@ -78,7 +78,7 @@ class GlobalStylesColorCustomizer {
 		}
 
 		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-		else if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
+		elseif ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
 		}
 		// End Gutenberg < 12.1 compatibility patch
@@ -134,14 +134,14 @@ class GlobalStylesColorCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'           => $palette_item['default'],
-				'user_value'        => $palette_item['color'],
+				'default'    => $palette_item['default'],
+				'user_value' => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting(
 			$global_styles_setting,
 			array(
-				'sanitize_callback' => 'sanitize_hex_color'
+				'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 
@@ -162,55 +162,57 @@ class GlobalStylesColorCustomizer {
 		$this->update_user_color_palette( $wp_customize );
 
 		// Get the user's theme.json from the CPT.
-		if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_global_styles_post_id' ) ) { // This is the new name.
-			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
-		} else if ( method_exists( 'WP_Theme_JSON_Resolver_Gutenberg', 'get_user_custom_post_type_id' ) ) { // This is the old name.
-			$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
-		}
+		$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
 
-		$user_theme_json_post         = get_post( $user_custom_post_type_id );
-		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
+		$global_styles_controller = new Gutenberg_REST_Global_Styles_Controller();
+		$get_request              = new WP_REST_Request( 'GET', '/wp/v2/global-styles/' . $user_custom_post_type_id );
+		$response                 = rest_get_server()->dispatch( $get_request );
+		$global_styles            = $global_styles_controller->get_item( $get_request );
 
-		// Set meta settings.
-		$user_theme_json_post_content->version                     = 1;
-		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
+		// Merge stored settings in the update request
+		$update_request = set_settings_array(
+			$get_request,
+			array( 'settings' ),
+			$global_styles->data['settings']
+		);
+		$update_request = set_settings_array(
+			$update_request,
+			array( 'styles' ),
+			$global_styles->data['styles']
+		);
 
-		// Only reset the palette if the setting exists, otherwise the whole settings array gets destroyed.
-		if ( property_exists( $user_theme_json_post_content, 'settings' ) && property_exists( $user_theme_json_post_content->settings, 'color' ) && property_exists( $user_theme_json_post_content->settings->color, 'palette' ) ) {
-			// Start with reset palette settings.
-			unset( $user_theme_json_post_content->settings->color->palette );
-		}
-
-		$user_theme_json_post_content = set_settings_array(
-			$user_theme_json_post_content,
+		// Set the pallete settings
+		$update_request = set_settings_array(
+			$update_request,
 			array( 'settings', 'color', 'palette', 'custom' ),
 			$this->user_color_palette
 		);
 
-		$primary_key = array_search('primary', array_column($this->user_color_palette, 'slug'));
-		$background_key = array_search('background', array_column($this->user_color_palette, 'slug'));
+		// Duotone
+		$primary_key    = array_search( 'primary', array_column( $this->user_color_palette, 'slug' ) );
+		$background_key = array_search( 'background', array_column( $this->user_color_palette, 'slug' ) );
 
-		if (  $this->theme_duotone_settings && $primary_key !== null && $background_key !== null ) {
+		if ( $this->theme_duotone_settings && $primary_key !== null && $background_key !== null ) {
 
-			$primary = $this->user_color_palette[$primary_key];
-			$background = $this->user_color_palette[$background_key];
+			$primary    = $this->user_color_palette[ $primary_key ];
+			$background = $this->user_color_palette[ $background_key ];
 
 			//we invert the colors when the background is darker than the primary color
-			if( colorLuminescence($primary['color']) > colorLuminescence($background['color']) ) {
-				$primary = $this->user_color_palette[$background_key];
-				$background = $this->user_color_palette[$primary_key];
+			if ( colorLuminescence( $primary['color'] ) > colorLuminescence( $background['color'] ) ) {
+				$primary    = $this->user_color_palette[ $background_key ];
+				$background = $this->user_color_palette[ $primary_key ];
 			}
 
 			$custom_duotone_filter = array(
 				array(
-					"colors" => array( $primary['color'], $background['color'] ),
-					"slug" => "custom-filter",
-					"name" => "Custom filter"
-				)
+					'colors' => array( $primary['color'], $background['color'] ),
+					'slug'   => 'custom-filter',
+					'name'   => 'Custom filter',
+				),
 			);
 
-			$custom_duotone_filter_variable = "var(--wp--preset--duotone--custom-filter)";
-			$user_theme_json_post_content = set_settings_array(
+			$custom_duotone_filter_variable = 'var(--wp--preset--duotone--custom-filter)';
+			$user_theme_json_post_content   = set_settings_array(
 				$user_theme_json_post_content,
 				array( 'settings', 'color', 'duotone', 'custom' ),
 				array_merge( $custom_duotone_filter, $this->theme_duotone_settings )
@@ -220,9 +222,10 @@ class GlobalStylesColorCustomizer {
 			$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 			if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
 				foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
-					if( $block['filter'] ) {
-						$user_theme_json_post_content = set_settings_array(
-							$user_theme_json_post_content,
+					if ( $block['filter'] ) {
+						// Set the duotone settings
+						$update_request = set_settings_array(
+							$update_request,
 							array( 'styles', 'blocks', $key, 'filter', 'duotone', 'custom' ),
 							$custom_duotone_filter_variable
 						);
@@ -232,8 +235,7 @@ class GlobalStylesColorCustomizer {
 		}
 
 		// Update the theme.json with the new settings.
-		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
-		wp_update_post( $user_theme_json_post );
+		$new_styles = $global_styles_controller->update_item( $update_request );
 		delete_transient( 'global_styles' );
 		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
