@@ -46,6 +46,7 @@ function archeo_register_block_patterns() {
 		'image-with-headline-description',
 		'image-with-headline-and-description',
 		'layered-images-with-headline',
+		'layout-with-two-images-and-text',
 	);
 
 	/**
