@@ -147,4 +147,3 @@ if ( jsFiles.length ) {
 	);
 	execSync( `git add ${ jsFiles.join( ' ' ) }` );
 }
-undefined
