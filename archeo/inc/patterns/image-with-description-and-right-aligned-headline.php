@@ -5,12 +5,14 @@
 return array(
 	'title'      => __( 'Image with description and right-aligned headline', 'archeo' ),
 	'categories' => array( 'pages' ),
-	'content'    => '<!-- wp:columns {"align":"full"} -->
-	<div class="wp-block-columns alignfull"><!-- wp:column {"width":"33.33%"} -->
+	'content'    => '<!-- wp:columns {"align":"full","backgroundColor":"background"} -->
+	<div class="wp-block-columns alignfull has-background-background-color has-background"><!-- wp:column {"width":"33.33%"} -->
 	<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:cover {"overlayColor":"background","minHeight":670,"contentPosition":"bottom center","isDark":false} -->
-	<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center" style="min-height:670px"><span aria-hidden="true" class="wp-block-cover__background has-background-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:heading {"level":3,"fontSize":"large"} -->
-	<h3 class="has-large-font-size" id="palais-du-gouverneur-a-uxmal-detail-de-la-porte-principale-1">' . esc_html__( 'Palais Du Gouverneur, à Uxmal, detail de la Porte Principale', 'archeo' ). '</h3>
-	<!-- /wp:heading --></div></div>
+	<div class="wp-block-cover is-light has-custom-content-position is-position-bottom-center" style="min-height:670px"><span aria-hidden="true" class="wp-block-cover__background has-background-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container">
+	<!-- wp:heading {"textAlign":"right","level":3,"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"large"} -->
+	<h3 class="has-text-align-right has-large-font-size" id="palais-du-gouverneur-a-uxmal-detail-de-la-porte-principale-1" style="text-transform:uppercase">' . esc_html__( 'Palais Du Gouverneur, à Uxmal, detail de la Porte Principale', 'archeo' ). '</h3>
+	<!-- /wp:heading -->
+	</div></div>
 	<!-- /wp:cover --></div>
 	<!-- /wp:column -->
 
