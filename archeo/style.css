@@ -7,7 +7,7 @@ Description: A clean portfolio theme
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.3
+Version: 0.0.4
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Text Domain: archeo
@@ -125,16 +125,13 @@ body > .is-root-container,
 .wp-site-blocks > .wp-block-cover,
 .wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
 .wp-site-blocks > .wp-block-template-part > .wp-block-cover,
-body > .is-root-container > .wp-block-group.has-background,
 body > .is-root-container > .wp-block-cover,
-body
-	> .is-root-container
-	> .wp-block-template-part
-	> .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
 body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 .is-root-container .wp-block[data-align='full'] {
 	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	max-width: unset;
 	width: unset;
 }
 
@@ -168,7 +165,7 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
  */
 .wp-block-navigation__responsive-container.is-menu-open ul {
 	font-size: var(--wp--preset--font-size--large) !important;
-	font-weight: 300;
+	font-weight: 100;
 	gap: var(--wp--style--block-gap);
 }
 
