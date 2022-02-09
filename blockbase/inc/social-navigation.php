@@ -7,10 +7,7 @@ function blockbase_condition_to_render_social_menu( $block_content, $block ) {
 	if ( 'core/navigation' !== $block['blockName']){
 
 
-		return false;
-
-
-	}
+		return false;}
 
 	// The theme should have a menu defined at the social location.
 	if ( ! has_nav_menu( 'social' ) ) {
