@@ -1,7 +1,7 @@
 <?php
 
-require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
-require_once( __DIR__ . '/wp-customize-utils.php' );
+require_once ( __DIR__ . '/wp-customize-global-styles-setting.php' );
+require_once ( __DIR__ . '/wp-customize-utils.php' );
 
 class GlobalStylesColorCustomizer {
 
@@ -51,7 +51,7 @@ class GlobalStylesColorCustomizer {
 	}
 
 	function initialize( $wp_customize ) {
-		$this->user_color_palette     = $this->build_user_color_palette();
+		$this->user_color_palette = $this->build_user_color_palette();
 		$this->theme_duotone_settings = $this->get_theme_duotone_settings();
 		$this->register_color_controls( $wp_customize, $this->user_color_palette );
 	}
@@ -78,7 +78,7 @@ class GlobalStylesColorCustomizer {
 		}
 
 		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-		elseif ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
+		else if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
 		}
 		// End Gutenberg < 12.1 compatibility patch
@@ -134,14 +134,14 @@ class GlobalStylesColorCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'    => $palette_item['default'],
-				'user_value' => $palette_item['color'],
+				'default'           => $palette_item['default'],
+				'user_value'        => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting(
 			$global_styles_setting,
 			array(
-				'sanitize_callback' => 'sanitize_hex_color',
+				'sanitize_callback' => 'sanitize_hex_color'
 			)
 		);
 
