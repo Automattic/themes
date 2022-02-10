@@ -476,14 +476,6 @@ class GlobalStylesFontsCustomizer {
 		}
 	}
 
-	function unset_property_if_it_exists( $object, $property ) {
-		$prop_exists = isset( $object->{$property} );
-		if ( $prop_exists ) {
-			unset( $object->{$property} );
-		}
-
-	}
-
 	function handle_customize_save_after( $wp_customize ) {
 		$body_value    = $wp_customize->get_setting( $this->section_key . 'body' )->value();
 		$heading_value = $wp_customize->get_setting( $this->section_key . 'heading' )->value();
@@ -522,49 +514,28 @@ class GlobalStylesFontsCustomizer {
 		$body_font_family_variable    = 'var(--wp--preset--font-family--' . $body_setting['slug'] . ')';
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
 
-		// Get the user's theme.json from the CPT.
+		// Get the user's global styles CPT id
 		$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
 
-		$global_styles_controller = new Gutenberg_REST_Global_Styles_Controller();
+		// API request to get global styles
 		$get_request              = new WP_REST_Request( 'GET', '/wp/v2/global-styles/' . $user_custom_post_type_id );
 		$response                 = rest_get_server()->dispatch( $get_request );
+		$global_styles_controller = new Gutenberg_REST_Global_Styles_Controller();
 		$global_styles            = $global_styles_controller->get_item( $get_request );
 
-		// Merge stored settings in the update request
-		$update_request = set_settings_array(
-			$get_request,
-			array( 'settings' ),
-			$global_styles->data['settings']
-		);
-		$update_request = set_settings_array(
-			$update_request,
-			array( 'styles' ),
-			$global_styles->data['styles']
-		);
+		// Set the new typography settings
+		$global_styles->data['settings']['typography']['fontFamilies']['custom'] = $font_families;
 
-		$update_request = $this->unset_property_if_it_exists( $update_request->settings['typography'], 'fontFamilies' );
-
-		// Set the typography settings
-		$update_request = set_settings_array(
-			$get_request,
-			array( 'settings', 'typography', 'fontFamilies', 'custom' ),
-			$font_families
-		);
-
-		//If the typeface choices === the default then we remove it instead
+		// Removes typography settings if the default are selected
 		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			// These lines need to stay for backwards compatibility.
-			$this->unset_property_if_it_exists( $update_request->styles->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->elements->h1->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->elements->h2->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->elements->h3->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->elements->h4->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->elements->h5->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->elements->h6->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->blocks->{'core/button'}->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->blocks->{'core/post-title'}->typography, 'fontFamily' );
-			$this->unset_property_if_it_exists( $update_request->styles->blocks->{'core/pullquote'}->typography, 'fontFamily' );
+			unset( $global_styles->data['settings']['typography']['fontFamilies']['custom'] );
 		}
+
+		// Add the updated global styles to the update request
+		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' . $user_custom_post_type_id );
+		$update_request->set_param( 'id', $user_custom_post_type_id );
+		$update_request->set_param( 'settings', $global_styles->data['settings'] );
+		$update_request->set_param( 'styles', $global_styles->data['styles'] );
 
 		// Update the theme.json with the new settings.
 		$new_styles = $global_styles_controller->update_item( $update_request );
