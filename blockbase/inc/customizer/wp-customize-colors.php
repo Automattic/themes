@@ -169,70 +169,14 @@ class GlobalStylesColorCustomizer {
 		$response                 = rest_get_server()->dispatch( $get_request );
 		$global_styles            = $global_styles_controller->get_item( $get_request );
 
-		// Merge stored settings in the update request
-		$update_request = set_settings_array(
-			$get_request,
-			array( 'settings' ),
-			$global_styles->data['settings']
-		);
-		$update_request = set_settings_array(
-			$update_request,
-			array( 'styles' ),
-			$global_styles->data['styles']
-		);
+		// Set the new color settings
+		$global_styles->data['settings']['color']['palette']['custom'] = $this->user_color_palette;
 
-		// Set the pallete settings
-		$update_request = set_settings_array(
-			$update_request,
-			array( 'settings', 'color', 'palette', 'custom' ),
-			$this->user_color_palette
-		);
-
-		// Duotone
-		$primary_key    = array_search( 'primary', array_column( $this->user_color_palette, 'slug' ) );
-		$background_key = array_search( 'background', array_column( $this->user_color_palette, 'slug' ) );
-
-		if ( $this->theme_duotone_settings && $primary_key !== null && $background_key !== null ) {
-
-			$primary    = $this->user_color_palette[ $primary_key ];
-			$background = $this->user_color_palette[ $background_key ];
-
-			//we invert the colors when the background is darker than the primary color
-			if ( colorLuminescence( $primary['color'] ) > colorLuminescence( $background['color'] ) ) {
-				$primary    = $this->user_color_palette[ $background_key ];
-				$background = $this->user_color_palette[ $primary_key ];
-			}
-
-			$custom_duotone_filter = array(
-				array(
-					'colors' => array( $primary['color'], $background['color'] ),
-					'slug'   => 'custom-filter',
-					'name'   => 'Custom filter',
-				),
-			);
-
-			$custom_duotone_filter_variable = 'var(--wp--preset--duotone--custom-filter)';
-			$user_theme_json_post_content   = set_settings_array(
-				$user_theme_json_post_content,
-				array( 'settings', 'color', 'duotone', 'custom' ),
-				array_merge( $custom_duotone_filter, $this->theme_duotone_settings )
-			);
-
-			//replace the new filter in all blocks using duotone
-			$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-			if ( $theme_json['styles'] && $theme_json['styles']['blocks'] ) {
-				foreach ( $theme_json['styles']['blocks'] as $key => $block ) {
-					if ( $block['filter'] ) {
-						// Set the duotone settings
-						$update_request = set_settings_array(
-							$update_request,
-							array( 'styles', 'blocks', $key, 'filter', 'duotone', 'custom' ),
-							$custom_duotone_filter_variable
-						);
-					}
-				}
-			}
-		}
+		// Add the updated global styles to the update request
+		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' . $user_custom_post_type_id );
+		$update_request->set_param( 'id', $user_custom_post_type_id );
+		$update_request->set_param( 'settings', $global_styles->data['settings'] );
+		$update_request->set_param( 'styles', $global_styles->data['styles'] );
 
 		// Update the theme.json with the new settings.
 		$new_styles = $global_styles_controller->update_item( $update_request );
