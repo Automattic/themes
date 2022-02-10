@@ -1,7 +1,7 @@
 <?php
 
-require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
-require_once( __DIR__ . '/wp-customize-utils.php' );
+require_once ( __DIR__ . '/wp-customize-global-styles-setting.php' );
+require_once ( __DIR__ . '/wp-customize-utils.php' );
 
 class GlobalStylesFontsCustomizer {
 
@@ -74,7 +74,7 @@ class GlobalStylesFontsCustomizer {
 			'name'       => 'Fira Sans',
 			'google'     => 'family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900',
 		),
-		'ibm-plex-mono'     => array(
+		'ibm-plex-mono'  => array(
 			'fontFamily' => '"IBM Plex Mono", monospace',
 			'slug'       => 'ibm-plex-mono',
 			'name'       => 'IBM Plex Mono',
@@ -254,7 +254,7 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function update_font_settings( $wp_customize ) {
-		$body_setting    = $wp_customize->get_setting( $this->section_key . 'body' );
+		$body_setting = $wp_customize->get_setting( $this->section_key . 'body' );
 		$heading_setting = $wp_customize->get_setting( $this->section_key . 'heading' );
 		if ( $body_setting && $heading_setting ) {
 			$body_value = $body_setting->post_value();
@@ -285,7 +285,7 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function initialize( $wp_customize ) {
-		$theme = wp_get_theme();
+		$theme       = wp_get_theme();
 
 		//Add a Section to the Customizer for these bits
 		$wp_customize->add_section(
@@ -297,22 +297,16 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$merged_json                = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-		$theme_font_families        = $merged_json['settings']['typography']['fontFamilies']['theme'];
-		$body_font_default_array    = array_filter(
-			$theme_font_families,
-			function( $font_family ) {
-				return $font_family['slug'] === 'body-font';
-			}
-		);
-		$body_font_default          = array_shift( $body_font_default_array );
-		$heading_font_default_array = array_filter(
-			$theme_font_families,
-			function( $font_family ) {
-				return $font_family['slug'] === 'heading-font';
-			}
-		);
-		$heading_font_default       = array_shift( $heading_font_default_array );
+		$merged_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
+		$theme_font_families = $merged_json['settings']['typography']['fontFamilies']['theme'];
+		$body_font_default_array = array_filter( $theme_font_families, function( $font_family ) {
+			return $font_family['slug'] === "body-font";
+		} );
+		$body_font_default = array_shift( $body_font_default_array );
+		$heading_font_default_array = array_filter( $theme_font_families, function( $font_family ) {
+			return $font_family['slug'] === "heading-font";
+		} );
+		$heading_font_default = array_shift( $heading_font_default_array );
 
 		// See if the child theme has been updated. If not then show a notice.
 		if ( ! $body_font_default && ! $heading_font_default ) {
@@ -321,7 +315,7 @@ class GlobalStylesFontsCustomizer {
 				array(
 					'type'        => 'hidden',
 					'description' => '<div class="notice notice-warning">
-					<p>' . __( 'Your theme needs to be updated before you can customize fonts', 'blockbase' ) . '</p>
+					<p>' . __( "Your theme needs to be updated before you can customize fonts", 'blockbase' ) . '</p>
 					</div>',
 					'settings'    => array(),
 					'section'     => $this->section_key,
@@ -332,60 +326,48 @@ class GlobalStylesFontsCustomizer {
 		}
 
 		if ( array_key_exists( 'custom', $merged_json['settings']['typography']['fontFamilies'] ) ) {
-			$merged_font_families     = $merged_json['settings']['typography']['fontFamilies']['custom'];
-			$body_font_selected_array = array_filter(
-				$merged_font_families,
-				function( $font_family ) {
-					return $font_family['slug'] === 'body-font';
-				}
-			);
-			$body_font_selected       = array_shift( $body_font_selected_array );
+			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['custom'];
+			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "body-font";
+			} );
+			$body_font_selected = array_shift( $body_font_selected_array );
 
-			$heading_font_selected_array = array_filter(
-				$merged_font_families,
-				function( $font_family ) {
-					return $font_family['slug'] === 'heading-font';
-				}
-			);
-			$heading_font_selected       = array_shift( $heading_font_selected_array );
+			$heading_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "heading-font";
+			} );
+			$heading_font_selected = array_shift( $heading_font_selected_array );
 
-			// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-		} elseif ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
+		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+		} else if ( array_key_exists( 'user', $merged_json['settings']['typography']['fontFamilies'] ) ) {
 			$merged_font_families = $merged_json['settings']['typography']['fontFamilies']['user'];
 
-			$body_font_selected_array = array_filter(
-				$merged_font_families,
-				function( $font_family ) {
-					return $font_family['slug'] === 'body-font';
-				}
-			);
-			$body_font_selected       = array_shift( $body_font_selected_array );
+			$body_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "body-font";
+			} );
+			$body_font_selected = array_shift( $body_font_selected_array );
 
-			$heading_font_selected_array = array_filter(
-				$merged_font_families,
-				function( $font_family ) {
-					return $font_family['slug'] === 'heading-font';
-				}
-			);
-			$heading_font_selected       = array_shift( $heading_font_selected_array );
-			// End Gutenberg < 12.1 compatibility patch
+			$heading_font_selected_array = array_filter( $merged_font_families, function( $font_family ) {
+				return $font_family['slug'] === "heading-font";
+			} );
+			$heading_font_selected = array_shift( $heading_font_selected_array );
+		// End Gutenberg < 12.1 compatibility patch
 
 		} else {
-			$body_font_selected    = $body_font_default;
+			$body_font_selected = $body_font_default;
 			$heading_font_selected = $heading_font_default;
 		}
 
 		// If there's no selected font then the user is probably using the old format for font customization
 		if ( $body_font_selected && $heading_font_selected ) {
-			$body_font_selected_font_family    = $body_font_selected['fontFamily'];
-			$body_font_selected_font_slug      = $body_font_selected['fontSlug'];
+			$body_font_selected_font_family = $body_font_selected['fontFamily'];
+			$body_font_selected_font_slug = $body_font_selected['fontSlug'];
 			$heading_font_selected_font_family = $heading_font_selected['fontFamily'];
-			$heading_font_selected_font_slug   = $heading_font_selected['fontSlug'];
+			$heading_font_selected_font_slug = $heading_font_selected['fontSlug'];
 		} else {
-			$body_font_selected_font_family    = null;
-			$body_font_selected_font_slug      = null;
+			$body_font_selected_font_family = null;
+			$body_font_selected_font_slug = null;
 			$heading_font_selected_font_family = null;
-			$heading_font_selected_font_slug   = null;
+			$heading_font_selected_font_slug = null;
 		}
 
 		$this->font_settings = array(
@@ -444,14 +426,13 @@ class GlobalStylesFontsCustomizer {
 			$wp_customize,
 			$setting_name,
 			array(
-				'default'    => $default,
-				'user_value' => $user_value,
+				'default'           => $default,
+				'user_value'        => $user_value
 			)
 		);
-		$wp_customize->add_setting(
-			$global_styles_setting,
+		$wp_customize->add_setting( $global_styles_setting,
 			array(
-				'sanitize_callback' => $sanitize_callback,
+				'sanitize_callback' => $sanitize_callback
 			)
 		);
 
@@ -497,15 +478,15 @@ class GlobalStylesFontsCustomizer {
 			$heading_value = $heading_default;
 		}
 
-		$body_setting             = $this->fonts[ $body_value ];
-		$body_setting['name']     = 'Body (' . $body_setting['name'] . ')';
+		$body_setting = $this->fonts[ $body_value ];
+		$body_setting['name'] = "Body (" . $body_setting['name'] . ")";
 		$body_setting['fontSlug'] = $body_setting['slug'];
-		$body_setting['slug']     = 'body-font';
+		$body_setting['slug'] = "body-font";
 
-		$heading_setting             = $this->fonts[ $heading_value ];
-		$heading_setting['name']     = 'Heading (' . $heading_setting['name'] . ')';
+		$heading_setting = $this->fonts[ $heading_value ];
+		$heading_setting['name'] = "Heading (" . $heading_setting['name'] . ")";
 		$heading_setting['fontSlug'] = $heading_setting['slug'];
-		$heading_setting['slug']     = 'heading-font';
+		$heading_setting['slug'] = "heading-font";
 
 		// Set up variables for the theme.json.
 		$font_families = array(
