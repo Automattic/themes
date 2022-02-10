@@ -42,6 +42,7 @@ function archeo_register_block_patterns() {
 
 	$block_patterns = array(
 		'headline-over-dark-image',
+		'hidden-404',
 		'image-with-headline-on-dark-background',
 		'image-with-headline-description',
 		'image-with-headline-and-description',
