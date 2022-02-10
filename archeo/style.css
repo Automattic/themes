@@ -170,6 +170,14 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 }
 
 /*
+ * Needed until https://github.com/WordPress/gutenberg/issues/29167 is addressed.
+ */
+.wp-block-post-comments input[type=submit].wp-block-button__link {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
+/*
  * Pullquote styles
  */
  .wp-block-pullquote blockquote {
@@ -196,4 +204,8 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 .wp-block-pullquote__citation {
 	font-size: var(--wp--preset--font-size--normal);
 	text-transform: none;
+}
+
+.wp-block-post-navigation-link > a {
+	text-decoration: none;
 }
