@@ -11,5 +11,14 @@ return array(
 	<!-- wp:paragraph {"align":"center"} -->
 	<p class="has-text-align-center">' . esc_html__( 'This page could not be found. Maybe try a search?', 'archeo' ) . '</p>
 	<!-- /wp:paragraph -->
-	<!-- wp:search {"label":"' . esc_html__( 'Search', 'archeo' ) . '","showLabel":false,"width":100,"widthUnit":"%","buttonText":"' . esc_html__( 'Search', 'archeo' ) . '","buttonUseIcon":true,"align":"center"} /-->',
+
+	<!-- wp:spacer {"height":"1em"} -->
+	<div style="height:1em" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:search {"label":"' . esc_html__( 'Search', 'archeo' ) . '","showLabel":false,"width":100,"widthUnit":"%","buttonText":"' . esc_html__( 'Search', 'archeo' ) . '","buttonUseIcon":true,"align":"center"} /-->
+	
+	<!-- wp:spacer {"height":"2em"} -->
+	<div style="height:2em" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->',
 );
