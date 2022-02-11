@@ -194,7 +194,7 @@ if ( ! function_exists( 'skatepark_preload_webfonts' ) ) :
 	 */
 	function skatepark_preload_webfonts() {
 		?>
-		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/red-hat-display-400.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/red-hat-display-regular.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
 		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/red-hat-display-700.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
 		<?php
 	}
