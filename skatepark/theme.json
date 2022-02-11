@@ -1,7 +1,18 @@
 {
 	"$schema": "https://json.schemastore.org/theme-v1.json",
 	"version": 1,
+	"templateParts": [
+		{
+			"name": "header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"area": "footer"
+		}
+	],
 	"settings": {
+		"appearanceTools": true,
 		"color": {
 			"duotone": [
                 {
@@ -146,7 +157,9 @@
 				"normal": "20px"
 			},
 			"gap": {
-				"baseline": "10px"
+				"baseline": "10px",
+				"horizontal": "min(30px, 5vw)",
+				"vertical": "min(30px, 5vw)"
 			},
 			"heading": {
 				"typography": {
@@ -171,13 +184,8 @@
 			"fontFamilies": [
 				{
 					"fontFamily": "\"Red Hat Display\", sans-serif",
-					"slug": "body-font",
-					"name": "Body (Red Hat Display)"
-				},
-				{
-					"fontFamily": "\"Red Hat Display\", sans-serif",
-					"slug": "heading-font",
-					"name": "Heading (Red Hat Display)"
+					"slug": "red-hat-display",
+					"name": "Red Hat Display"
 				}
 			],
 			"fontSizes": [
@@ -207,6 +215,9 @@
 	"styles": {
 		"blocks": {
 			"core/button": {
+				"border": {
+					"radius": "var(--wp--custom--button--border--radius)"
+				},
 				"color": {
 					"background": "var(--wp--custom--button--color--background)",
 					"text": "var(--wp--custom--button--color--text)"
@@ -216,6 +227,25 @@
 					"fontWeight": "var(--wp--custom--button--typography--font-weight)",
 					"letterSpacing": "0.1em",
 					"textTransform": "uppercase"
+				}
+			},
+			"core/code": {
+				"border": {
+					"color": "#CCCCCC",
+					"radius": "0px",
+					"style": "solid",
+					"width": "2px"
+				},
+				"spacing": {
+					"padding": {
+						"left": "var(--wp--custom--gap--horizontal)",
+						"right": "var(--wp--custom--gap--horizontal)",
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
+				},
+				"typography": {
+					"fontFamily": "monospace"
 				}
 			},
 			"core/cover": {
@@ -232,6 +262,13 @@
 					"textTransform": "uppercase"
 				}
 			},
+			"core/gallery": {
+				"spacing": {
+					"margin": {
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
+				}
+			},
 			"core/image": {
 				"filter": {
 					"duotone": "var(--wp--preset--duotone--default-filter)"
@@ -240,6 +277,7 @@
 			"core/navigation": {
 				"typography": {
 					"letterSpacing": "0.05em",
+					"fontSize": "var(--wp--custom--font-sizes--normal)",
 					"fontWeight": "900",
 					"textTransform": "uppercase"
 				},
@@ -253,7 +291,12 @@
 				}
 			},
 			"core/post-date": {
+				"color": {
+					"link": "var(--wp--custom--color--foreground)",
+					"text": "var(--wp--custom--color--foreground)"
+				},
 				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontWeight": "500"
 				}
 			},
@@ -285,19 +328,59 @@
 				}
 			},
 			"core/pullquote": {
+				"border": {
+					"style": "solid",
+					"width": "1px 0"
+				},
 				"typography": {
+					"fontStyle": "italic",
 					"fontSize": "var(--wp--preset--font-size--x-large)"
+				},
+				"spacing": {
+					"padding": {
+						"left": "var(--wp--custom--gap--horizontal)",
+						"right": "var(--wp--custom--gap--horizontal)",
+						"top": "var(--wp--custom--gap--horizontal)",
+						"bottom": "var(--wp--custom--gap--horizontal)"
+					}
+				}
+			},
+			"core/quote": {
+				"border": {
+					"color": "var(--wp--custom--color--primary)",
+					"style": "solid",
+					"width": "0 0 0 1px"
+				},
+				"spacing": {
+					"padding": {
+						"left": "var(--wp--custom--gap--horizontal)"
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--custom--font-sizes--normal)",
+					"fontStyle": "normal"
 				}
 			},
 			"core/search": {
 				"typography": {
+					"fontSize": "var(--wp--custom--button--typography--font-size)",
 					"letterSpacing": "0.1em",
 					"textTransform": "uppercase"
 				}
 			},
 			"core/separator": {
+				"color": {
+					"text": "var(--wp--custom--color--foreground)"
+				},
 				"border": {
+					"color": "currentColor",
+					"style": "solid",
 					"width": "0 0 3px 0"
+				}
+			},
+			"core/site-tagline": {
+				"typography": {
+					"fontSize": "var(--wp--custom--font-sizes--x-small)"
 				}
 			},
 			"core/site-title": {
@@ -308,6 +391,10 @@
 					"textTransform": "uppercase"
 				}
 			}
+		},
+		"color": {
+			"background": "var(--wp--custom--color--background)",
+			"text": "var(--wp--custom--color--foreground)"
 		},
 		"elements": {
 			"h1": {
@@ -328,6 +415,12 @@
 					"fontSize": "min(max(36px, 5vw), 64px)",
 					"fontWeight": "900",
 					"lineHeight": "1.2"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
 				}
 			},
 			"h3": {
@@ -335,6 +428,12 @@
 					"fontSize": "min(max(30px, 5vw), 48px)",
 					"fontWeight": "900",
 					"lineHeight": "1.3"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
 				}
 			},
 			"h4": {
@@ -344,6 +443,12 @@
 					"letterSpacing": "0.1em",
 					"lineHeight": "1.3",
 					"textTransform": "uppercase"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
 				}
 			},
 			"h5": {
@@ -353,6 +458,12 @@
 					"letterSpacing": "0.1em",
 					"lineHeight": "1.3",
 					"textTransform": "uppercase"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
 				}
 			},
 			"h6": {
@@ -362,6 +473,17 @@
 					"letterSpacing": "0.1em",
 					"lineHeight": "1.3",
 					"textTransform": "uppercase"
+				},
+				"spacing": {
+					"margin": {
+						"top": "var(--wp--custom--gap--vertical)",
+						"bottom": "var(--wp--custom--gap--vertical)"
+					}
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--custom--color--primary)"
 				}
 			}
 		},
@@ -369,6 +491,9 @@
 			"blockGap": "0.5em"
 		},
 		"typography": {
+			"lineHeight": "var(--wp--custom--body--typography--line-height)",
+			"fontFamily": "var(--wp--preset--font-family--red-hat-display)",
+			"fontSize": "var(--wp--custom--font-sizes--normal)",
 			"fontWeight": "400"
 		}
 	}

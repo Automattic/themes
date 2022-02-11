@@ -1,4 +1,4 @@
-@import "../../blockbase/sass/blocks/_buttons-outline-style";
+//@import "../../blockbase/sass/blocks/_buttons-outline-style";
 
 /* Text selection text color */
 ::selection {
@@ -16,9 +16,11 @@ h1.wp-block-post-title {
 }
 
 /* Separator width */
-/* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
 .wp-block-separator {
+	/* https://github.com/WordPress/gutenberg/pull/38428 */
+	opacity: 1;
 	&.is-style-wide {
+		/* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
 		border-width: 0 0 3px 0;
 	}
 }

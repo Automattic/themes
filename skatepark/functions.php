@@ -57,7 +57,7 @@ if ( ! function_exists( 'skatepark_styles' ) ) :
 		// Register theme stylesheet.
 		wp_register_style(
 			'skatepark-style',
-			get_template_directory_uri() . '/style.css',
+			get_template_directory_uri() . '/assets/theme.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
@@ -109,52 +109,68 @@ if ( ! function_exists( 'skatepark_get_font_face_styles' ) ) :
 
 		return "
 		@font-face{
-			font-family: 'Chivo';
-			font-weight: 100;
-			font-style: normal;
-			font-stretch: normal;
-			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Thin.woff2' ) . "') format('woff2');
-		}
-		@font-face{
-			font-family: 'Chivo';
+			font-family: 'Red Hat Display';
 			font-weight: 400;
 			font-style: normal;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Regular.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-regular.woff2' ) . "') format('woff2');
 		}
 		@font-face{
-			font-family: 'Chivo';
+			font-family: 'Red Hat Display';
+			font-weight: 500;
+			font-style: normal;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-500.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Red Hat Display';
 			font-weight: 700;
 			font-style: normal;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Bold.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-700.woff2' ) . "') format('woff2');
 		}
 		@font-face{
-			font-family: 'Chivo';
-			font-weight: 100;
-			font-style: italic;
+			font-family: 'Red Hat Display';
+			font-weight: 900;
+			font-style: normal;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-ThinItalic.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-900.woff2' ) . "') format('woff2');
 		}
 		@font-face{
-			font-family: 'Chivo';
+			font-family: 'Red Hat Display';
 			font-weight: 400;
 			font-style: italic;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-Italic.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-italic.woff2' ) . "') format('woff2');
 		}
 		@font-face{
-			font-family: 'Chivo';
+			font-family: 'Red Hat Display';
+			font-weight: 500;
+			font-style: italic;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-500italic.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Red Hat Display';
 			font-weight: 700;
 			font-style: italic;
 			font-stretch: normal;
 			font-display: swap;
-			src: url('" . get_theme_file_uri( 'assets/fonts/Chivo-BoldItalic.woff2' ) . "') format('woff2');
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-700italic.woff2' ) . "') format('woff2');
+		}
+		@font-face{
+			font-family: 'Red Hat Display';
+			font-weight: 900;
+			font-style: italic;
+			font-stretch: normal;
+			font-display: swap;
+			src: url('" . get_theme_file_uri( 'assets/fonts/red-hat-display-900italic.woff2' ) . "') format('woff2');
 		}
 		";
 
@@ -167,7 +183,7 @@ if ( ! function_exists( 'skatepark_preload_webfonts' ) ) :
 	/**
 	 * Preloads the main web font to improve performance.
 	 *
-	 * Only the main web font (font-weight: 100,400, font-style: normal) is preloaded here since that font is always relevant. 
+	 * Only the main web font (font-weight: 400,700, font-style: normal) is preloaded here since that font is always relevant. 
 	 * The other fonts are only needed if the user changed style or weight of the fonts,
 	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
 	 * at all.
@@ -178,8 +194,8 @@ if ( ! function_exists( 'skatepark_preload_webfonts' ) ) :
 	 */
 	function skatepark_preload_webfonts() {
 		?>
-		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo-Thin.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo-Regular.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/red-hat-display-400.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/red-hat-display-700.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
 		<?php
 	}
 
