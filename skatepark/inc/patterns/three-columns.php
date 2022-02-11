@@ -15,8 +15,8 @@ return array(
 
 		<!-- wp:site-tagline {"fontSize":"small"} /-->
 
-		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--foreground)"} -->
-		<ul class="wp-block-social-links has-icon-color"><!-- wp:social-link {"url":"http://twitter.com","service":"twitter"} /-->
+		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#000000","className":"is-style-logos-only"} -->
+		<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"http://twitter.com","service":"twitter"} /-->
 
 		<!-- wp:social-link {"url":"http://facebook.com","service":"facebook"} /-->
 
@@ -29,7 +29,11 @@ return array(
 		<h3 style="font-size:14px;"><strong>' . esc_html__( 'More info', 'skatepark' ) . '</strong></h3>
 		<!-- /wp:heading -->
 
-		<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"primary","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"textDecoration":"underline"}},"fontSize":"small"} /--></div>
+		<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"overlayBackgroundColor":"foreground","overlayTextColor":"background","fontSize":"small"} -->
+			<!-- wp:page-list {"isNavigationChild":true,"showSubmenuIcon":true,"openSubmenusOnClick":false} /-->
+		<!-- /wp:navigation -->
+		
+		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
