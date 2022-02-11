@@ -20,10 +20,6 @@ class GlobalStylesColorCustomizer {
 		wp_enqueue_script( 'customizer-preview-color', get_template_directory_uri() . '/inc/customizer/wp-customize-colors-preview.js', array( 'customize-preview' ) );
 		wp_add_inline_script( 'customizer-preview-color', 'var userColorSectionKey="' . $this->section_key . '";', 'before' );
 		wp_localize_script( 'customizer-preview-color', 'userColorPalette', $this->user_color_palette );
-		if ( $this->theme_duotone_settings ) {
-			wp_enqueue_script( 'colord', get_template_directory_uri() . '/inc/customizer/vendors/colord.min.js' );
-			wp_localize_script( 'customizer-preview-color', 'userColorDuotone', $this->theme_duotone_settings );
-		}
 	}
 
 	function update_user_color_palette( $wp_customize ) {
@@ -52,19 +48,7 @@ class GlobalStylesColorCustomizer {
 
 	function initialize( $wp_customize ) {
 		$this->user_color_palette = $this->build_user_color_palette();
-		$this->theme_duotone_settings = $this->get_theme_duotone_settings();
 		$this->register_color_controls( $wp_customize, $this->user_color_palette );
-	}
-
-	function get_theme_duotone_settings() {
-		// Get the merged theme.json.
-		$theme_json = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-
-		if ( array_key_exists( 'settings', $theme_json ) && array_key_exists( 'color', $theme_json['settings'] ) && array_key_exists( 'duotone', $theme_json['settings']['color'] ) && array_key_exists( 'theme', $theme_json['settings']['color']['duotone'] ) ) {
-			return $theme_json['settings']['color']['duotone']['theme'];
-		}
-
-		return false;
 	}
 
 	function build_user_color_palette() {
@@ -187,9 +171,7 @@ class GlobalStylesColorCustomizer {
 		delete_transient( 'global_styles' );
 		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
-		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
-
 
 	function check_if_colors_are_default() {
 		foreach ( $this->user_color_palette as $palette_color ) {
