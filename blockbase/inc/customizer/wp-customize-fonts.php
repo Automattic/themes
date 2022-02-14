@@ -532,7 +532,7 @@ class GlobalStylesFontsCustomizer {
 
 		// Set new typography settings
 		if ( $font_families ) {
-			$new_settings['typography']['fontFamilies']['theme'] = $font_families;
+			$new_settings['typography']['fontFamilies']['custom'] = $font_families;
 		}
 
 		// Removes typography settings if the default are selected

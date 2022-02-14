@@ -158,7 +158,7 @@ class GlobalStylesColorCustomizer {
 		$new_styles   = (array) $global_styles->data['styles'];
 
 		// Set the new color settings
-		$new_settings['color']['palette']['theme'] = $this->user_color_palette;
+		$new_settings['color']['palette']['custom'] = $this->user_color_palette;
 
 		// Add the updated global styles to the update request
 		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
