@@ -45,7 +45,7 @@ function get_social_menu_as_social_links_block( $block ) {
 
 	// Get color for social icons.
 	$theme_data                    = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
-	$social_links_icon_color_value = "var(--wp--custom--color--primary)";
+	$social_links_icon_color_value = 'var(--wp--custom--color--primary)';
 	$social_links_icon_color       = 'primary';
 
 	if ( blockbase_theme_has_navigation_social_links_settings( $theme_data ) ) {
