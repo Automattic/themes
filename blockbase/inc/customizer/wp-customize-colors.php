@@ -167,7 +167,7 @@ class GlobalStylesColorCustomizer {
 		$update_request->set_param( 'styles', $new_styles );
 
 		// Update the theme.json with the new settings.
-		$result = $global_styles_controller->update_item( $update_request );
+		$updated_global_styles = $global_styles_controller->update_item( $update_request );
 		delete_transient( 'global_styles' );
 		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
