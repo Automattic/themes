@@ -7,7 +7,7 @@ Description: A clean portfolio theme
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.4
+Version: 0.0.5
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Text Domain: archeo
@@ -92,8 +92,9 @@ a:active,
 
 .wp-block-post-comments input:not([type='submit']),
 .wp-block-post-comments textarea {
-	background-color: var(--wp--preset--color--background);
-	border-color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--foreground);
+	border-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--background);
 }
 
 /*
@@ -167,4 +168,23 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	font-size: var(--wp--preset--font-size--large) !important;
 	font-weight: 100;
 	gap: var(--wp--style--block-gap);
+}
+
+.wp-block-post-navigation-link > a {
+	text-decoration: none;
+}
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/29167 is addressed.
+ */
+.wp-block-post-comments input[type=submit].wp-block-button__link {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * We need this until https://github.com/WordPress/gutenberg/issues/38498 is fixed.
+ */
+.wp-block-group.simple-list-of-posts {
+	align-items: baseline;
 }

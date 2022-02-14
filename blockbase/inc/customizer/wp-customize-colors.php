@@ -1,7 +1,7 @@
 <?php
 
-require_once ( __DIR__ . '/wp-customize-global-styles-setting.php' );
-require_once ( __DIR__ . '/wp-customize-utils.php' );
+require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
+require_once( __DIR__ . '/wp-customize-utils.php' );
 
 class GlobalStylesColorCustomizer {
 
@@ -62,7 +62,7 @@ class GlobalStylesColorCustomizer {
 		}
 
 		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-		else if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
+		elseif ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
 			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
 		}
 		// End Gutenberg < 12.1 compatibility patch
@@ -118,14 +118,14 @@ class GlobalStylesColorCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'           => $palette_item['default'],
-				'user_value'        => $palette_item['color'],
+				'default'    => $palette_item['default'],
+				'user_value' => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting(
 			$global_styles_setting,
 			array(
-				'sanitize_callback' => 'sanitize_hex_color'
+				'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 
@@ -154,11 +154,11 @@ class GlobalStylesColorCustomizer {
 		$global_styles = $global_styles_controller->get_item( $get_request );
 
 		// converts data to array (in some cases settings and styles are objects insted of arrays)
-		$new_settings =  (array) $global_styles->data['settings'];
-		$new_styles   =  (array) $global_styles->data['styles'];
+		$new_settings = (array) $global_styles->data['settings'];
+		$new_styles   = (array) $global_styles->data['styles'];
 
 		// Set the new color settings
-		$new_settings['color']['palette']['custom'] = $this->user_color_palette;
+		$new_settings['color']['palette']['theme'] = $this->user_color_palette;
 
 		// Add the updated global styles to the update request
 		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );

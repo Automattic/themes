@@ -22,6 +22,7 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'mixed-media-in-container',
 				'text-list-with-button',
 				'full-width-image-with-aside-caption',
+				'home-patterns',
 				'testimonial',
 				'two-columns-of-text',
 				'paragraph-with-quote',
