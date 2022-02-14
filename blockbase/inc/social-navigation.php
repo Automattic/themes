@@ -37,8 +37,8 @@ function get_social_menu_as_social_links_block( $block ) {
 
 	$social_links_location = $block['attrs']['__unstableSocialLinks'];
 	$nav_menu_locations    = get_nav_menu_locations();
-	$social_menu_id   = $nav_menu_locations[ $social_links_location ];
-	$class_name       = 'is-style-logos-only';
+	$social_menu_id        = $nav_menu_locations[ $social_links_location ];
+	$class_name          = 'is-style-logos-only';
 	if ( ! empty( $block['attrs']['itemsJustification'] ) ) {
 		$class_name .= ' items-justified-' . $block['attrs']['itemsJustification'];
 	}
