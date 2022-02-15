@@ -8,8 +8,8 @@ function videomaker_editor_styles() {
 	register_nav_menus(
 		array(
 			'primary' => __( 'Primary Navigation', 'videomaker' ),
-			'social' => __( 'Social Navigation', 'videomaker' ),
-			'footer' => __( 'Footer Navigation', 'videomaker' )
+			'social'  => __( 'Social Navigation', 'videomaker' ),
+			'footer'  => __( 'Footer Navigation', 'videomaker' ),
 		)
 	);
 }

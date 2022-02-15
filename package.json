@@ -22,7 +22,8 @@
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
 		"deploy:theme": "node ./theme-utils.mjs deploy-theme",
 		"deploy:zip": "node ./theme-utils.mjs build-com-zip",
-		"build:variations": "node ./variations/build-variations.mjs"
+		"build:variations": "node ./variations/build-variations.mjs",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@octokit/rest": "^18.12.0",
@@ -37,13 +38,8 @@
 		"lodash": "^4.17.21",
 		"open": "^8.4.0"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged && node pre-commit-hook.js"
-		}
-	},
 	"lint-staged": {
-		"*.{scss}": [
+		"*.scss": [
 			"wp-scripts lint-style --fix="
 		]
 	},
