@@ -135,7 +135,7 @@ if ( ! function_exists( 'remote_get_font_face_styles' ) ) :
 
 endif;
 
-if (!function_exists( 'remote_preload_webfonts' ) ) :
+if ( ! function_exists( 'remote_preload_webfonts' ) ) :
 
 	/**
 	 * Preloads the main web font to improve performance.
