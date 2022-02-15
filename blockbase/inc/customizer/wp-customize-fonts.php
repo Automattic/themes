@@ -535,11 +535,6 @@ class GlobalStylesFontsCustomizer {
 			$new_settings['typography']['fontFamilies']['custom'] = $font_families;
 		}
 
-		// Removes typography settings if the default are selected
-		if ( $body_value === $body_default && $heading_value === $heading_default ) {
-			unset( $new_settings['typography'] );
-		}
-
 		// Add the updated global styles to the update request
 		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
 		$update_request->set_param( 'id', $user_custom_post_type_id );
