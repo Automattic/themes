@@ -3,7 +3,7 @@ Theme Name: Remote
 Theme URI: https://github.com/Automattic/themes/tree/trunk/archeo
 Author: Automattic
 Author URI: https://automattic.com
-Description: 
+Description:
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
@@ -35,18 +35,20 @@ body {
  * https://github.com/WordPress/gutenberg/issues/35884
  */
 
- .wp-site-blocks,
- body > .is-root-container,
- .edit-post-visual-editor__post-title-wrapper,
- .wp-block-group.alignfull,
- .wp-block-group.has-background,
- .wp-block-cover.alignfull,
- .is-root-container .wp-block[data-align='full'] > .wp-block-group,
- .is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-columns.alignfull.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align='full'] > .wp-block-group,
+.is-root-container .wp-block[data-align='full'] > .wp-block-columns.has-background,
+.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
 	 padding-left: var(--wp--custom--spacing--outer);
 	 padding-right: var(--wp--custom--spacing--outer);
  }
- 
+
  .wp-site-blocks .alignfull,
  .wp-site-blocks > .wp-block-group.has-background,
  .wp-site-blocks > .wp-block-cover,
@@ -61,7 +63,7 @@ body {
 	 max-width: unset;
 	 width: unset;
  }
- 
+
  /* Blocks inside columns don't have negative margins. */
  .wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
  .is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
@@ -72,14 +74,14 @@ body {
 	 margin-right: auto !important;
 	 width: inherit;
  }
- 
+
  /*
   * Responsive menu container padding.
   * This ensures the responsive container inherits the same
   * spacing defined above. This behavior may be built into
   * the Block Editor in the future.
   */
- 
+
  .wp-block-navigation__responsive-container.is-menu-open {
 	 padding-top: var(--wp--custom--spacing--outer);
 	 padding-bottom: var(--wp--custom--spacing--large);
