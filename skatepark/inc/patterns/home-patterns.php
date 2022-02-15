@@ -4,7 +4,7 @@
  *
  * @package Skatepark
  * @since 1.0.0
- * 
+ *
  */
 
 return array(
@@ -16,7 +16,7 @@ return array(
 	<!-- /wp:heading -->
 
 	<!-- wp:image {"align":"full","className":"alignfull size-large"} -->
-	<figure class="wp-block-image alignfull size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/images/skatepark.jpg" alt="' . esc_attr__( "A skateboarder does a grab trick in a bowl-shaped skate park. In the background is a watching crowd, palm trees, and the ocean.", 'skatepark' ) . '"/></figure>
+	<figure class="wp-block-image alignfull size-large"><img src="' . get_stylesheet_directory_uri() . '/assets/images/skatepark.jpg" alt="' . esc_attr__( 'A skateboarder does a grab trick in a bowl-shaped skate park. In the background is a watching crowd, palm trees, and the ocean.', 'skatepark' ) . '"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:heading {"level":5,"align":"wide","style":{"spacing":{"margin":{"top":"calc(var(--wp--custom--gap--vertical) * 3)","bottom":"var(--wp--custom--gap--vertical)"}}}} -->
@@ -44,5 +44,5 @@ return array(
 	<!-- wp:query-pagination-previous /-->
 	<!-- wp:query-pagination-next /-->
 	<!-- /wp:query-pagination --></div>
-	<!-- /wp:query -->'
+	<!-- /wp:query -->',
 );

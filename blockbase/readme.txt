@@ -137,7 +137,3 @@ The Water Fan, by Winslow Homer
 License: CC0
 Source: https://www.artic.edu/artworks/38666/the-water-fan
 Included in theme screenshot.
-
-Colord library
-License: MIT
-Source: https://github.com/omgovich/colord

@@ -14,7 +14,7 @@
  */
 function remote_register_block_patterns() {
 	$block_pattern_categories = array(
-		'pages'    => array( 'label' => __( 'Pages', 'remote' ) ),
+		'pages' => array( 'label' => __( 'Pages', 'remote' ) ),
 	);
 
 	/**
@@ -40,9 +40,7 @@ function remote_register_block_patterns() {
 		}
 	}
 
-	$block_patterns = array(
-
-	);
+	$block_patterns = array();
 
 	/**
 	 * Filters the theme block patterns.

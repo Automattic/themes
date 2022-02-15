@@ -4,7 +4,7 @@
  *
  * @package Skatepark
  * @since 1.0.0
- * 
+ *
  */
 
 return array(
@@ -35,5 +35,5 @@ return array(
 		<!-- wp:column {"width":"25%"} -->
 		<div class="wp-block-column" style="flex-basis:25%"></div>
 		<!-- /wp:column --></div>
-		<!-- /wp:columns -->'
+		<!-- /wp:columns -->',
 );
