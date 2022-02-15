@@ -68,3 +68,4 @@ function remote_register_block_patterns() {
 }
 add_action( 'init', 'remote_register_block_patterns', 9 );
 
+
