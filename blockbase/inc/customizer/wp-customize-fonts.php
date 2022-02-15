@@ -551,6 +551,7 @@ class GlobalStylesFontsCustomizer {
 		delete_transient( 'global_styles' );
 		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
+		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
 
 }

@@ -171,6 +171,7 @@ class GlobalStylesColorCustomizer {
 		delete_transient( 'global_styles' );
 		delete_transient( 'global_styles_' . get_stylesheet() );
 		delete_transient( 'gutenberg_global_styles' );
+		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
 
 	function check_if_colors_are_default() {
