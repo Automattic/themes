@@ -40,7 +40,9 @@ function remote_register_block_patterns() {
 		}
 	}
 
-	$block_patterns = array();
+	$block_patterns = array(
+		'hero-text',
+	);
 
 	/**
 	 * Filters the theme block patterns.

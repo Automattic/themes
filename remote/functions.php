@@ -159,6 +159,14 @@ endif;
 
 add_action( 'wp_head', 'remote_preload_webfonts' );
 
-// Add block patterns
-//require get_template_directory() . '/inc/block-patterns.php';
+/**
+ * Block Patterns.
+ */
+require get_template_directory() . '/inc/block-patterns.php';
+
+// Add the child theme patterns if they exist.
+if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
+}
+
 
