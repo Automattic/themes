@@ -29,3 +29,11 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Block Pattern Photographs. 
+License: Public Domain
+Source: https://digitalcollections.nypl.org/items/510d47db-11ef-a3d9-e040-e00a18064a99
+        
+Used in block patterns. 
