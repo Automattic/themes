@@ -302,14 +302,14 @@ class GlobalStylesFontsCustomizer {
 		$body_font_default_array    = array_filter(
 			$theme_font_families,
 			function( $font_family ) {
-				return $font_family['slug'] === 'body-font';
+				return 'body-font' === $font_family['slug'];
 			}
 		);
 		$body_font_default          = array_shift( $body_font_default_array );
 		$heading_font_default_array = array_filter(
 			$theme_font_families,
 			function( $font_family ) {
-				return $font_family['slug'] === 'heading-font';
+				return 'heading-font' === $font_family['slug'];
 			}
 		);
 		$heading_font_default       = array_shift( $heading_font_default_array );
@@ -336,7 +336,7 @@ class GlobalStylesFontsCustomizer {
 			$body_font_selected_array = array_filter(
 				$merged_font_families,
 				function( $font_family ) {
-					return $font_family['slug'] === 'body-font';
+					return 'body-font' === $font_family['slug'];
 				}
 			);
 			$body_font_selected       = array_shift( $body_font_selected_array );
@@ -344,7 +344,7 @@ class GlobalStylesFontsCustomizer {
 			$heading_font_selected_array = array_filter(
 				$merged_font_families,
 				function( $font_family ) {
-					return $font_family['slug'] === 'heading-font';
+					return 'heading-font' === $font_family['slug'];
 				}
 			);
 			$heading_font_selected       = array_shift( $heading_font_selected_array );
@@ -356,7 +356,7 @@ class GlobalStylesFontsCustomizer {
 			$body_font_selected_array = array_filter(
 				$merged_font_families,
 				function( $font_family ) {
-					return $font_family['slug'] === 'body-font';
+					return 'body-font' === $font_family['slug'];
 				}
 			);
 			$body_font_selected       = array_shift( $body_font_selected_array );
@@ -364,7 +364,7 @@ class GlobalStylesFontsCustomizer {
 			$heading_font_selected_array = array_filter(
 				$merged_font_families,
 				function( $font_family ) {
-					return $font_family['slug'] === 'heading-font';
+					return 'heading-font' === $font_family['slug'];
 				}
 			);
 			$heading_font_selected       = array_shift( $heading_font_selected_array );
