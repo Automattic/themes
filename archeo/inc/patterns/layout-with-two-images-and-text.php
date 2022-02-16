@@ -5,8 +5,8 @@
 return array(
 	'title'      => __( 'Layout with two images and text', 'archeo' ),
 	'categories' => array( 'pages' ),
-	'content'    => '<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal2.jpg","mediaType":"image","imageFill":true,"focalPoint":{"x":"0.50","y":"0.90"},"backgroundColor":"foreground","textColor":"background"} -->
-	<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-image-fill has-background-color has-foreground-background-color has-text-color has-background"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal2.jpg);background-position:50% 90%"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal2.jpg" alt="' . __( 'Photo of the Governors Palace at Uxmal', 'archeo' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:columns -->
+	'content'    => '<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg","mediaType":"image","imageFill":true,"focalPoint":{"x":"0.50","y":"0.90"},"backgroundColor":"foreground","textColor":"background"} -->
+	<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-image-fill has-background-color has-foreground-background-color has-text-color has-background"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg);background-position:50% 90%"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg" alt="' . __( 'Photo of the Governors Palace at Uxmal', 'archeo' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:spacer {"height":"min(10rem, 10vw)"} -->
 	<div style="height:min(10rem, 10vw)" aria-hidden="true" class="wp-block-spacer"></div>
