@@ -32,7 +32,12 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-Block Pattern Photographs. 
+"Monumenal Figure, 9th Century", Metropolitan Museum of Art.
+License: Public Domain
+Source: https://www.metmuseum.org/art/collection/search/309404
+Used in theme screenshot and block patterns. 
+
+New York Public Library Scans. 
 License: Public Domain
 Source: https://digitalcollections.nypl.org/items/510d47db-11ef-a3d9-e040-e00a18064a99
 		https://digitalcollections.nypl.org/items/510d47db-1287-a3d9-e040-e00a18064a99
@@ -40,5 +45,4 @@ Source: https://digitalcollections.nypl.org/items/510d47db-11ef-a3d9-e040-e00a18
 		https://digitalcollections.nypl.org/items/510d47db-11f7-a3d9-e040-e00a18064a99
 		https://digitalcollections.nypl.org/items/510d47db-11eb-a3d9-e040-e00a18064a99
 		https://digitalcollections.nypl.org/items/510d47db-11e9-a3d9-e040-e00a18064a99
-		https://www.metmuseum.org/art/collection/search/309404
 Used in block patterns. 
