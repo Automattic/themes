@@ -12,7 +12,7 @@ return array(
     
     <!-- wp:group {"align":"wide"} -->
     <div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.17"}},"fontSize":"huge"} -->
-    <p class="has-huge-font-size" style="line-height:1.17">Hi, I’m Tiffany! After years of long commutes and crowded offices, I’m now a happy advocate for remote work.</p>
+    <p class="has-huge-font-size" style="line-height:1.17">' . esc_attr__( 'Hi, I’m Tiffany! After years of long commutes and crowded offices, I’m now a happy advocate for remote work.', 'remote' ) . '</p>
     <!-- /wp:paragraph --></div>
     <!-- /wp:group -->
     
