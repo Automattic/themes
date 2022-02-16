@@ -88,6 +88,10 @@ if ( ! function_exists( 'skatepark_editor_styles' ) ) :
 		// Add styles inline.
 		wp_add_inline_style( 'wp-block-library', skatepark_get_font_face_styles() );
 
+		add_editor_style(
+			get_template_directory_uri() . '/assets/theme.css'
+		);
+
 	}
 
 endif;
