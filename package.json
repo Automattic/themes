@@ -38,9 +38,13 @@
 		"lodash": "^4.17.21",
 		"open": "^8.4.0"
 	},
+	"stylelint": {
+		"extends": "@wordpress/stylelint-config",
+		"defaultSeverity": "warning"
+	},
 	"lint-staged": {
 		"*.scss": [
-			"wp-scripts lint-style --fix"
+			"wp-scripts lint-style --fix --custom-syntax postcss-scss"
 		]
 	},
 	"dependencies": {
