@@ -9,7 +9,7 @@ Follow Blockbase development over at [https://blockbasetheme.com/blog/](https://
 ## Building
 
 Blockbase uses SCSS to compile the CSS used to ponyfill Gutenberg.  Building Blockbase isn't necessary to use it - either as a theme or as a parent theme - but making changes does require the .scss file to be recompiled.
-The easist way to do so is to use `node` to install and run the necessary dependencies via `npm install`. 
+The easiest way to do so is to use `node` to install and run the necessary dependencies via `npm install`. 
 Then after making changes to the *.scss files run `npm run build` to compile.
 You can use `npm start` and it will be in 'watch mode' recompiling the .scss files any time any changes are made.
 
@@ -26,7 +26,7 @@ Use it to export a new child theme of Blockbase.
 
 Blockbase is a [parent theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#what-is-a-parent-theme). The best way to use it is to create a child theme with Blockbase as a parent.
 
-To begin with you will need a copy of Blockbase, which you can get by cloning this repo.
+To begin you will need a copy of Blockbase, which you can get by cloning this repo.
 
 Next you need to create a child theme. A Blockbase child theme needs to contain the following files:
 - `style.css`
@@ -60,10 +60,10 @@ Block Templates and Block template parts are used to display the content on your
 
 The `theme.json` file defines the look and feel of your theme; colors, fonts, spacing, etc are all set in this file. Blockbase also defines many custom properties in theme.json which are used to plug the gaps in block themes. Override any values (including the custom values) found in Blockbase's theme.json in the child theme's theme.json.
 
-- It is only necessary to define those properties you wish to change, which keeps your code DRY
+- It is only necessary to define those properties you wish to change, which keeps your code [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 - As more features are added to block themes, Blockbase will be updated to support them. By using the Blockbase as a parent, the child theme will inherit all these changes.
 
-Simple themes will be able to define everything they need using only a theme.json file, but for more complex themes, an additional CSS file can be useful. Blockbase uses node to compile SCSS files.  You may want your child theme to take advantage of the same utilities, but child themes do not need to be built with using any build tools.
+Simple themes will be able to define everything they need using only a `theme.json` file, but for more complex themes, an additional CSS file can be useful. Blockbase uses node to compile SCSS files.  You may want your child theme to take advantage of the same utilities, but child themes do not need to be built with any build tools.
 
 ## `functions.php` and `theme.css`
 
