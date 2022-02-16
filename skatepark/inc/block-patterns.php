@@ -23,7 +23,7 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'text-list-with-button',
 				'full-width-image-with-aside-caption',
 				'hidden-404',
-				'home-patterns',
+				'hidden-home-patterns',
 				'testimonial',
 				'two-columns-of-text',
 				'three-columns',

@@ -40,7 +40,11 @@ return array(
 	<!-- /wp:group -->
 	<!-- /wp:post-template -->
 
-	<!-- wp:query-pagination -->
+	<!-- wp:spacer {"height":"70px"} -->
+	<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
 	<!-- wp:query-pagination-previous /-->
 	<!-- wp:query-pagination-next /-->
 	<!-- /wp:query-pagination --></div>
