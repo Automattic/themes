@@ -195,3 +195,23 @@ a:not(
 	outline: 1.5px dotted var(--wp--preset--color--primary);
 	outline-offset: 3px;
 }
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/30472
+ */
+.wp-block-post-terms .wp-block-post-terms__separator {
+	display: none;
+}
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/34196 or something like it.
+ */
+.wp-block-post-terms > a {
+	border: 1px solid var(--wp--preset--color--foreground);
+	border-radius: 6px;
+	display: inline-block;
+	padding: .8rem 1.25rem;
+	margin-right: var(--wp--style--block-gap);
+	margin-bottom: var(--wp--style--block-gap);
+	text-decoration: none;
+}
