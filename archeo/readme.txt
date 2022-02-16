@@ -38,5 +38,6 @@ Source: https://digitalcollections.nypl.org/items/510d47db-11ef-a3d9-e040-e00a18
 		https://digitalcollections.nypl.org/items/510d47db-1287-a3d9-e040-e00a18064a99
 		https://digitalcollections.nypl.org/items/510d47db-11ec-a3d9-e040-e00a18064a99
 		https://digitalcollections.nypl.org/items/510d47db-11f7-a3d9-e040-e00a18064a99
+		https://digitalcollections.nypl.org/items/510d47db-11eb-a3d9-e040-e00a18064a99
 		https://www.metmuseum.org/art/collection/search/309404
 Used in block patterns. 
