@@ -25,7 +25,6 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'hidden-404',
 				'hidden-home-patterns',
 				'testimonial',
-				'two-columns-of-text',
 				'three-columns',
 				'paragraph-with-quote',
 				'columns-in-container',
