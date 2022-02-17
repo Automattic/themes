@@ -12,8 +12,3 @@ if ( ! function_exists( 'quadrat_support' ) ) :
 	}
 	add_action( 'after_setup_theme', 'quadrat_support' );
 endif;
-
-/**
- * Block Styles.
- */
-require get_stylesheet_directory() . '/inc/block-styles.php';

@@ -21,8 +21,8 @@ declare -a THEMES_TO_DEPLOY=(
 	"geologist"
 	"mayland-blocks"
 	"quadrat"
-	"seedlet-blocks",
-	"livro",
+	"seedlet-blocks"
+	"livro"
 	"videomaker"
 )
 

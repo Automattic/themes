@@ -3,18 +3,21 @@ import fsorig from 'fs';
 import deepmerge from 'deepmerge';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { executeCommand, getThemeMetadata } from '../theme-utils.mjs';
 
 const localpath = dirname( fileURLToPath( import.meta.url ) );
+const args = process.argv.slice(2);
 
-(async function start() {
-	let args = process.argv.slice(2);
+async function start() {
 	let source = args?.[0];
 	let variation = args?.[1];
 	if ( source && variation ) {
 		return await buildVariation(source, variation);
 	}
 	return await buildAllVariations();
-})();
+}
+
+start();
 
 async function buildAllVariations(){
 	for (let source of getDirectories( localpath )){
@@ -32,19 +35,29 @@ async function buildVariation(source, variation) {
 	console.log( `Copying the source ${source} to the variation ${variation}` );
 
 	try {
+		// First grab the existing version if the variation exists already
+		let variationExists = fs.existsSync(`${destDir}/style.css`);
+		let currentVersion = null;
 
-		// First empty the old directory.
+		if( variationExists ) {
+			let styleCss = fs.readFileSync(`${destDir}/style.css`, 'utf8');
+			currentVersion = getThemeMetadata(styleCss, 'Version');
+		}
+
+		// then empty the old directory.
 		await fs.emptyDir( destDir );
 
-		// Then copy the source directory.
-		await fs.copy( srcDir, destDir );
+		const exclude = [ 'node_modules', 'sass', 'package.json', 'package-lock.json' ];
 
-		// remove unneeded resources
-		await fs.remove( destDir + '/sass');
-		await fs.remove( destDir + '/node_modules' );
-		await fs.remove( destDir + '/template-mods.json');
-		await fs.remove( destDir + '/package.json');
-		await fs.remove( destDir + '/package-lock.json');
+		// Then copy the source directory.
+		await fs.copy( srcDir, destDir, {
+			filter: (fileName) => {
+				if (exclude.some( ignore => fileName.includes( ignore ) )){
+					return false;
+				}
+				return true;
+			}
+		});
 
 		// copy the variation directory.
 		await fs.copy( srcVariationDir, destDir );
@@ -52,16 +65,6 @@ async function buildVariation(source, variation) {
 		// copy the readme
 		await fs.copy( localpath + '/variation-readme.md', destDir + '/variation-readme.md' );
 
-		// make template modifications
-		const hasMods = fs.existsSync( `${srcVariationDir}/template-mods.json`);
-		if(hasMods) {
-			const srcModsFile = await fs.readFile( `${srcVariationDir}/template-mods.json`, 'utf8' );
-			const modsJson = JSON.parse( srcModsFile );
-			modsJson.forEach(mod => {
-				modifyTemplates(mod.from, mod.to, destDir + '/block-templates');
-			});
-		}
-	
 		// merge the theme.json files
 		const srcJsonFile = await fs.readFile( srcDir + '/theme.json', 'utf8' );
 		const srcVariationJsonFile = await fs.readFile( srcVariationDir + '/theme.json', 'utf8' )
@@ -72,6 +75,15 @@ async function buildVariation(source, variation) {
 		});
 		await fs.writeFile ( destDir + '/theme.json', JSON.stringify( mergedJson, null, '\t' ), 'utf8' );
 
+		// replace the with current version
+		if ( currentVersion != null ) {
+			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${destDir}/style.css`);
+		}
+
+		if ( args[0] == 'git-add-changes') {
+			await executeCommand(`git add ${destDir}`, true);
+		}
+	
 		console.log('Finished sucessfully.\n\n');
 	}
 	catch (err){

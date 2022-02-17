@@ -1,25 +1,237 @@
-@import "../../blockbase/sass/base/breakpoints"; // Get the mobile-only media query and make it available to this theme's styles
-@import "../../blockbase/sass/base/mixins";
-@import "base/text";
-@import "base/mixins";
-@import "blocks/author";
-@import "../../blockbase/sass/blocks/_buttons-outline-style";
-@import "blocks/buttons";
-@import "blocks/cover";
-@import "blocks/navigation";
-@import "blocks/post-comments";
-@import "blocks/post-featured-image";
-@import "blocks/post-title";
-@import "blocks/query";
-@import "blocks/search";
-@import "blocks/separator";
-@import "block-patterns/pre-footer";
-@import "block-styles/image-caption";
-@import "block-styles/side-quote";
-@import "block-styles/testimonial-quote";
-@import "block-patterns/pre-footer";
-@import "block-patterns/paragraph-with-quote";
-@import "elements/headings";
-@import "elements/links";
-@import "elements/post-meta";
-@import "templates/index";
+/* Text selection text color */
+::selection {
+	color: var(--wp--custom--color--background);
+	background-color: var(--wp--custom--color--foreground);
+}
+
+/* Post title when featured image is present */
+h1.wp-block-post-title {
+	body:not(.has-featured-image) &{
+		border-bottom: var(--wp--custom--form--border--width)
+			var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
+		padding-bottom: calc(var(--wp--custom--gap--vertical) * 3);
+	}
+}
+
+/* Separator width */
+.wp-block-separator {
+	/* https://github.com/WordPress/gutenberg/pull/38428 */
+	opacity: 1;
+	&.is-style-wide {
+		/* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
+		border-width: 0 0 3px 0;
+	}
+	&.has-background {
+		height: 3px;
+	}
+}
+
+/* Links and underlines */
+@mixin text-decoration() {
+	text-decoration-thickness: 0.07em;
+	text-underline-offset: 0.46ex;
+}
+
+a {
+	@include text-decoration;
+}
+
+.wp-block-post-content p a:not(.wp-block-post-excerpt__more-link) {
+	text-decoration-line: underline;
+	&:hover {
+		text-decoration: none;
+		background-color: var(--wp--custom--color--primary);
+		color: var(--wp--custom--color--background);
+	}
+}
+
+.wp-block-post-comments .comment-meta > a,
+.wp-block-post-comments .comment-body > p > a,
+.wp-block-post-comments .comment-edit-link,
+.post-meta a {
+	text-decoration-line: underline;
+	&:hover {
+		text-decoration-line: none;
+	}
+}
+
+//Exceptions for the general underline rule
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+.wp-block-site-title a,
+.wp-block-post-title a{
+	text-underline-offset: 0.1ex;
+}
+.wp-block-site-title a,
+.wp-block-post-title a,
+.wp-block-query-pagination a,
+.wp-block-navigation a {
+	text-decoration-line: none;
+	&:hover {
+		text-decoration-line: underline;
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+.wp-block-search__button,
+a:not(.ab-item):not(.screen-reader-shortcut) {
+	&:active,
+	&:focus {
+		outline: 1px dotted var(--wp--custom--color--primary);
+		outline-offset: 0.1em;
+		text-decoration: none;
+	}
+}
+
+.archive,
+.blog,
+.home {
+	.wp-block-post-date {
+		text-decoration: underline;
+		@include text-decoration;
+	}
+}
+
+.wp-block-query-pagination{
+	.wp-block-query-pagination-numbers {
+		.current {
+			@include text-decoration;
+		}
+	}
+}
+
+.wp-block-post-excerpt__more-link {
+	font-weight: 500;
+}
+
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	border-style: var(--wp--custom--button--border--style);
+	border-width: var(--wp--custom--button--border--width);
+	border-color: var(--wp--custom--color--foreground);	
+}
+
+.wp-block-search__input {
+	background-color: transparent;
+	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
+}
+
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+	border-width: 0;
+	border-radius: 0;
+	background-color: var(--wp--custom--color--foreground);
+	color: var(--wp--custom--color--background);
+	font-size: var(--wp--preset--font-size--normal);
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	padding: calc(.667em + 2px) calc(1.333em + 2px);
+	line-height: var(--wp--custom--button--typography--line-height);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+	border-width: 0;
+	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width) );
+	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width) );
+	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width) );
+	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width) );
+}
+ 
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	opacity: 0.90;
+}
+
+/* Comments */
+.wp-block-post-comments input[type="submit"] {
+	font-family: var(--wp--preset--font-family--red-hat-display);
+	color: var(--wp--custom--color--background);
+}
+
+.wp-block-post-comments textarea, .wp-block-post-comments input:not([type="submit"]) {
+	background-color: var(--wp--custom--color--background);
+	color: var(--wp--custom--color--foreground);
+	border-style: var(--wp--custom--button--border--style);
+	border-width: var(--wp--custom--button--border--width);
+	border-color: var(--wp--custom--color--foreground);	
+}
+
+/*
+* Alignment styles, borrowed from Twenty Twenty-Two.
+* These rules are temporary, and should not be relied on or
+* modified too heavily by themes or plugins that build on
+* Twenty Twenty-Two. These are meant to be a precursor to
+* a global solution provided by the Block Editor.
+*
+* Relevant issues:
+* https://github.com/WordPress/gutenberg/issues/35607
+* https://github.com/WordPress/gutenberg/issues/35884
+*/
+
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align='full'] > .wp-block-group,
+.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+	padding-left: var(--wp--custom--spacing--outer);
+	padding-right: var(--wp--custom--spacing--outer);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align='full'] {
+	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	max-width: unset;
+	width: unset;
+}
+
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+}
+
+/*
+* Responsive menu container padding.
+* This ensures the responsive container inherits the same
+* spacing defined above. This behavior may be built into
+* the Block Editor in the future.
+*/
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--spacing--outer);
+	padding-bottom: var(--wp--custom--spacing--large);
+	padding-right: var(--wp--custom--spacing--outer);
+	padding-left: var(--wp--custom--spacing--outer);
+}

@@ -22,11 +22,12 @@ if ( ! function_exists( 'skatepark_register_block_patterns' ) ) :
 				'mixed-media-in-container',
 				'text-list-with-button',
 				'full-width-image-with-aside-caption',
+				'hidden-404',
+				'hidden-home-patterns',
 				'testimonial',
-				'two-columns-of-text',
+				'three-columns',
 				'paragraph-with-quote',
 				'columns-in-container',
-				'post-navigation-labeled',
 			);
 
 			foreach ( $block_patterns as $block_pattern ) {
