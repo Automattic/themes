@@ -6,14 +6,14 @@ return array(
 	'title'      => __( 'Layout with two images and text', 'archeo' ),
 	'categories' => array( 'pages' ),
 	'content'    => '<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg","mediaType":"image","imageFill":true,"focalPoint":{"x":"0.50","y":"0.90"},"backgroundColor":"foreground","textColor":"background"} -->
-	<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-image-fill has-background-color has-foreground-background-color has-text-color has-background"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg);background-position:50% 90%"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg" alt="' . __( 'Photo of the Governors Palace at Uxmal', 'archeo' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:columns -->
+	<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-image-fill has-background-color has-foreground-background-color has-text-color has-background"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg);background-position:50% 90%"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/uxmal.jpg" alt="' . __( 'Photo of the Pyramid of the Magician, at Uxmal', 'archeo' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:spacer {"height":"min(10rem, 10vw)"} -->
 	<div style="height:min(10rem, 10vw)" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer --><
 	
 	<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"100","lineHeight":"1.2"}},"fontSize":"medium"} -->
-	<p class="has-medium-font-size" style="font-style:normal;font-weight:100;line-height:1.2">' . wp_kses_post( __( 'Palais Du Gouverneur, <br>à Uxmal', 'archeo' ) ) . '</p>
+	<p class="has-medium-font-size" style="font-style:normal;font-weight:100;line-height:1.2">' . wp_kses_post( __( 'The Pyramid of the <br>Magician, at Uxmal', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none"} -->
