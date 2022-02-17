@@ -15,8 +15,8 @@ return array(
 	<!-- /wp:column -->
 	
 	<!-- wp:column {"width":"66.66%"} -->
-	<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-gouverneur.png","dimRatio":0,"minHeight":600,"isDark":false} -->
-	<div class="wp-block-cover is-light" style="min-height:600px"><span aria-hidden="true" class="has-background-dim-0 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="' . esc_attr__( 'Palais Du Gouverneur, à Uxmal, detail de la Porte Principale', 'archeo' ). '" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-gouverneur.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+	<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-gouverneur.jpg","dimRatio":0,"minHeight":600,"isDark":false} -->
+	<div class="wp-block-cover is-light" style="min-height:600px"><span aria-hidden="true" class="has-background-dim-0 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="' . esc_attr__( 'Palais Du Gouverneur, à Uxmal, detail de la Porte Principale', 'archeo' ). '" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-gouverneur.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 	<p class="has-text-align-center has-large-font-size"></p>
 	<!-- /wp:paragraph --></div></div>
 	<!-- /wp:cover -->

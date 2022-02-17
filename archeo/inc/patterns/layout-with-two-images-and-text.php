@@ -17,7 +17,7 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none"} -->
-	<div class="wp-block-image"><figure class="alignleft size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/desire-charnay.jpg" alt="' . __( 'Photograph by Désiré Charnay, 1862 to 1863', 'archeo' ) . '"/><figcaption><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-background-color"><em>' . __( 'Photograph by Désiré Charnay, 1862 – 1863', 'archeo' ) . '</em></mark></figcaption></figure></div>
+	<div class="wp-block-image"><figure class="alignleft size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/pyramid.jpg" alt="' . __( 'Photograph by Désiré Charnay, 1862 to 1863', 'archeo' ) . '"/><figcaption><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-background-color"><em>' . __( 'Photograph by Désiré Charnay, 1862 – 1863', 'archeo' ) . '</em></mark></figcaption></figure></div>
 	<!-- /wp:image --></div>
 	<!-- /wp:column -->
 	
