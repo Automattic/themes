@@ -9,6 +9,7 @@ const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/pr
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
 const premiumThemes = [ 'videomaker', 'videomaker-white' ];
+const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo'];
 
 (async function start() {
 	let args = process.argv.slice(2);
@@ -26,6 +27,10 @@ const premiumThemes = [ 'videomaker', 'videomaker-white' ];
 		case "deploy-preview": return deployPreview();
 		case "deploy-theme": return deployThemes([args?.[1]]);
 		case "build-com-zip": return buildComZip([args?.[1]]);
+		case "pull-core-themes": return pullCoreThemes();
+		case "push-core-themes": return pushCoreThemes();
+		case "sync-core-theme": return syncCoreTheme(args?.[1], args?.[2]);
+		case "deploy-sync-core-theme": return deploySyncCoreTheme(args?.[1], args?.[2]);
 	}
 	return showHelp();
 })();
@@ -160,7 +165,8 @@ async function pushButtonDeploy() {
 
 		await updateLastDeployedHash();
 
-		let diffUrl = await createPhabricatorDiff(hash);
+		let commitMessage = await buildPhabricatorCommitMessageSince(hash);
+		let diffUrl = await createPhabricatorDiff(commitMessage);
 		let diffId = diffUrl.split('a8c.com/')[1];
 
 
@@ -212,6 +218,60 @@ async function pushButtonDeploy() {
 	catch (err) {
 		console.log("ERROR with deploy script: ", err);
 	}
+}
+
+async function deploySyncCoreTheme(theme, sinceRevision) {
+
+	await cleanSandbox();
+
+	let latestRevision = await syncCoreTheme(theme, sinceRevision);
+
+	let prompt = await inquirer.prompt([{
+		type: 'confirm',
+		message: `Changes have been synced to your sandbox.  Please resolve any conflicts (noted in .rej files).  Are you ready to continue?`,
+		name: "continue",
+		default: false
+	}]);
+
+	if(!prompt.continue){
+		console.log(`Aborted Core Sync Deploy.` );
+		return;
+	}
+
+	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
+	let commitMessage = `${theme}: Merge latest core changes up to [wp${latestRevision}]
+
+Summary:
+${logs}
+
+Test Plan: Activate ${theme} and ensure nothing is broken
+
+Reviewers:
+#themes_team
+
+Subscribers:
+`;
+
+	let diffUrl = await createPhabricatorDiff (commitMessage);
+	let diffId = diffUrl.split('a8c.com/')[1];
+
+	prompt = await inquirer.prompt([{
+		type: 'confirm',
+		message: 'Are you ready to land these changes?',
+		name: "continue",
+		default: false
+	}]);
+
+	if(!prompt.continue){
+		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}` );
+		return;
+	}
+
+	return;
+	// await landChanges(diffId);
+	// await deployThemes([theme]);
+	// await buildComZips([theme]);
+
 }
 
 /*
@@ -646,6 +706,50 @@ async function pushChangesToSandbox() {
 	}
 }
 
+async function pullCoreThemes() {
+	console.log("Pulling CORE themes from sandbox.");
+	for (let theme of coreThemes ) {
+		await executeCommand(`
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ ./${theme}/ 
+		`, true);
+	}
+}
+
+async function pushCoreThemes() {
+	console.log("Pushing CORE themes to sandbox.");
+	for (let theme of coreThemes ) {
+		await executeCommand(`
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ 
+		`, true);
+	}
+}
+
+async function syncCoreTheme(theme, sinceRevision) {
+	if(!theme){
+		console.log('Must supply theme to sync and revision to start from');
+		return;
+	}
+	if(!sinceRevision) {
+		sinceRevision = await executeOnSandbox(`cat ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision`);
+	}
+	let latestRevision = await executeCommand(`svn info -r HEAD https://core.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
+	console.log(`syncing core theme ${theme} from ${sinceRevision} to ${latestRevision} on your sandbox`);
+	try {
+		await executeOnSandbox(`
+			cd ${sandboxPublicThemesFolder};
+			/usr/bin/svn diff --git -r ${sinceRevision}:HEAD https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} | git apply --reject --ignore-space-change --ignore-whitespace -p4 --directory=${theme} -
+		`, true);
+	}
+	catch (err) {
+		console.log('Error merging:', err);
+	}
+	await executeOnSandbox(`
+		echo '${latestRevision}' > ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision
+	`);
+	return latestRevision;
+}
+
+
 /*
  Build the Phabricator commit message.
  This message contains the logs from all of the commits since the given hash.
@@ -671,15 +775,13 @@ Subscribers:
 }
 
 /*
- Create a Phabricator diff from a given hash.
+ Create a Phabricator diff with the given message based on the contents currently in the sandbox.
  Open the phabricator diff in your browser.
  Provide the URL of the phabricator diff.
 */
-async function createPhabricatorDiff(hash) {
+async function createPhabricatorDiff(commitMessage) {
 
 	console.log('creating Phabricator Diff');
-
-	let commitMessage = await buildPhabricatorCommitMessageSince(hash);
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
