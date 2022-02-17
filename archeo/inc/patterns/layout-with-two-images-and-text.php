@@ -30,6 +30,10 @@ return array(
 	<p class="has-small-font-size" style="line-height:1.5">' . __( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important archaeological sites of Maya culture.', 'archeo' ) . '</p>
 	<!-- /wp:paragraph -->
 
+	<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->
+	<p class="has-small-font-size" style="line-height:1.5"><em>' . __( 'On the right: Governor\'s Palace, detail of the main gate', 'archeo' ) . '</em></p>
+	<!-- /wp:paragraph -->
+
 	<!-- wp:spacer {"height":"min(10rem, 10vw)"} -->
 	<div style="height:min(10rem, 10vw)" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer --></div>
