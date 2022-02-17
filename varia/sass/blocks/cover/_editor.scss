@@ -12,16 +12,15 @@
 		color: #{map-deep-get($config-cover, "color", "foreground")};
 	}
 
-    .wp-block-cover__inner-container,
-    .wp-block-cover-image-text,
-    .wp-block-cover-text,
-    .block-editor-block-list__block {
-        color: currentColor;
-    }
+	.wp-block-cover-image-text,
+	.wp-block-cover-text,
+	.block-editor-block-list__block {
+		color: currentColor;
+	}
 
 	/* Treating H2 separately to account for legacy /core styles */
 	h2 {
-		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0em);
+		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
 		line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
 		padding: 0;
