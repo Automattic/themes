@@ -51,6 +51,7 @@ function archeo_register_block_patterns() {
 		'layered-images-with-headline',
 		'image-with-description-and-right-aligned-headline',
 		'simple-list-of-posts',
+		'simple-list-of-posts-with-background',
 		'layout-with-two-images-and-text',
 	);
 
