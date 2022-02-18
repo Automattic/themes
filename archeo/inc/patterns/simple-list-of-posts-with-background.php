@@ -5,8 +5,8 @@
 return array(
 	'title'      => __( 'Simple list of posts with title and background', 'archeo' ),
 	'categories' => array( 'pages' ),
-	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var(--wp--custom--spacing--medium)","bottom":"var(--wp--custom--spacing--medium)"}}},"backgroundColor":"foreground","textColor":"background","className":"no-vertical-margin"} -->
-	<div class="wp-block-group alignwide no-vertical-margin has-background-color has-foreground-background-color has-text-color has-background" style="padding-top:var(--wp--custom--spacing--medium);padding-bottom:var(--wp--custom--spacing--medium)">
+	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var(--wp--custom--spacing--medium)","bottom":"var(--wp--custom--spacing--medium)"},"margin":{"top":"0px"}}},"backgroundColor":"foreground","textColor":"background"} -->
+	<div class="wp-block-group alignwide has-background-color has-foreground-background-color has-text-color has-background" style="padding-top:var(--wp--custom--spacing--medium);padding-bottom:var(--wp--custom--spacing--medium);margin-top:0px">
 		<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"60px"}}},"fontSize":"medium"} -->
 		<h3 class="has-medium-font-size" style="margin-bottom:60px">' . __( 'Selected Writings', 'archeo' ) . '</h3>
 		<!-- /wp:heading -->
