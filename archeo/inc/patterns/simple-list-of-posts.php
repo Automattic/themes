@@ -13,7 +13,14 @@ return array(
 	
 	<!-- wp:post-author-name {"style":{"typography":{"fontStyle":"normal","fontWeight":"100","lineHeight":"1.2"}},"fontSize":"medium"} /--></div>
 	<!-- /wp:group -->
-	<!-- /wp:post-template --></div>
+	<!-- /wp:post-template -->
+	<!-- wp:spacer {"height":"40px"} -->
+	<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- /wp:spacer -->
+	<!-- wp:query-pagination {"paginationArrow":"chevron","layout":{"type":"flex","justifyContent":"space-between"}} -->
+	<!-- wp:query-pagination-previous /-->
+	<!-- wp:query-pagination-next /-->
+	<!-- /wp:query-pagination --></div>
 	<!-- /wp:query --></div>
 	<!-- /wp:group -->',
 );
