@@ -47,6 +47,7 @@ function remote_register_block_patterns() {
 		'posts-grid',
 		'posts-list',
 		'tags',
+		'categories',
 	);
 
 	/**
