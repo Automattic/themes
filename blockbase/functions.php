@@ -34,7 +34,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
+				'social'  => __( 'Social Navigation', 'blockbase' ),
 			)
 		);
 
@@ -93,7 +93,7 @@ function blockbase_scripts() {
 
 	// Add the child theme CSS if it exists.
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
-		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
@@ -105,35 +105,35 @@ add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
  */
 
 function blockbase_fonts_url() {
-	if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	if ( ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
 		return '';
 	}
 
-	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
+	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
 	if ( empty( $theme_data ) || empty( $theme_data['typography'] ) || empty( $theme_data['typography']['fontFamilies'] ) ) {
 		return '';
 	}
 
-	$font_families = [];
+	$font_families = array();
 	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
+		foreach ( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
 
-	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+	} elseif ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+		foreach ( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
-	// End Gutenberg < 12.1 compatibility patch
+		// End Gutenberg < 12.1 compatibility patch
 
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+			foreach ( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
 				if ( ! empty( $font['google'] ) ) {
 					$font_families[] = $font['google'];
 				}
@@ -152,11 +152,9 @@ function blockbase_fonts_url() {
 /**
  * Customize Global Styles
  */
-if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
-}
+require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 
 require get_template_directory() . '/inc/social-navigation.php';
 
@@ -167,7 +165,7 @@ add_action(
 		wp_enqueue_script(
 			'wp-customize-nav-menu-refresh',
 			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
-			[ 'customize-nav-menus' ],
+			array( 'customize-nav-menus' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
