@@ -105,11 +105,12 @@ add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
  */
 
 function blockbase_fonts_url() {
-	if ( ! class_exists( 'WP_Theme_JSON_Resolver' ) ) {
-		return '';
+	if ( class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+		$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
+	} elseif ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+		$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
 	}
 
-	$theme_data = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
 	if ( empty( $theme_data ) || empty( $theme_data['typography'] ) || empty( $theme_data['typography']['fontFamilies'] ) ) {
 		return '';
 	}
@@ -152,9 +153,11 @@ function blockbase_fonts_url() {
 /**
  * Customize Global Styles
  */
-require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+if ( class_exists( 'WP_Theme_JSON_Resolver' ) || class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+}
 
 require get_template_directory() . '/inc/social-navigation.php';
 
