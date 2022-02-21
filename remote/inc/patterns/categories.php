@@ -1,6 +1,6 @@
 <?php
 /**
- * Tags & Categories
+ * Categories Pattern
  */
 return array(
 	'title'      => __( 'Categories', 'remote' ),
