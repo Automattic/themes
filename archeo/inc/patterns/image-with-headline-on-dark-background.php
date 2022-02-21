@@ -10,7 +10,7 @@ return array(
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"clamp(30px, 4vw, 80px)","right":"clamp(30px, 4vw, 80px)","bottom":"clamp(30px, 4vw, 80px)","left":"clamp(30px, 4vw, 80px)"}}}} -->
 	<div class="wp-block-group" style="padding-top:clamp(30px, 4vw, 80px);padding-right:clamp(30px, 4vw, 80px);padding-bottom:clamp(30px, 4vw, 80px);padding-left:clamp(30px, 4vw, 80px)">
 	<!-- wp:paragraph {"placeholder":"Content…","style":{"typography":{"fontStyle":"italic","fontWeight":"100","lineHeight":"1.4"}},"fontSize":"large"} -->
-	<p class="has-large-font-size" style="font-style:italic;font-weight:100;line-height:1.4">' . wp_kses_post( __( 'Figure gigantesque, <br>à Izamal; au bas de la seconde pyramide', 'archeo' ) ) . '</p>
+	<p class="has-large-font-size" style="font-style:italic;font-weight:100;line-height:1.4">' . wp_kses_post( __( 'Gigantic figure at <br>Izamal; at the <br>bottom of the <br>second pyramid.', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div></div>
 	<!-- /wp:media-text -->',
