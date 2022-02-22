@@ -87,6 +87,11 @@ a:not(.ab-item):not(.screen-reader-shortcut):focus {
   outline-offset: 0.1em;
   text-decoration: none;
 }
+.wp-block-navigation .wp-block-search__button:active, .wp-block-navigation .wp-block-search__button:focus,
+.wp-block-navigation a:not(.ab-item):not(.screen-reader-shortcut):active,
+.wp-block-navigation a:not(.ab-item):not(.screen-reader-shortcut):focus {
+  outline-color: currentcolor;
+}
 
 .archive .wp-block-post-date,
 .blog .wp-block-post-date,
@@ -159,7 +164,8 @@ a:not(.ab-item):not(.screen-reader-shortcut):focus {
   color: var(--wp--custom--color--background);
 }
 
-.wp-block-post-comments textarea, .wp-block-post-comments input:not([type=submit]) {
+.wp-block-post-comments textarea,
+.wp-block-post-comments input:not([type=submit]) {
   background-color: var(--wp--custom--color--background);
   color: var(--wp--custom--color--foreground);
   border-style: var(--wp--custom--button--border--style);

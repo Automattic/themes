@@ -11,14 +11,14 @@
  /**
  * Add class to body if post/page has a featured image.
  */
-function add_featured_image_class( $classes ) {
+function skatepark_add_featured_image_class( $classes ) {
 	global $post;
-	if ( isset ( $post->ID ) && get_the_post_thumbnail( $post->ID ) ) {
+	if ( isset( $post->ID ) && get_the_post_thumbnail( $post->ID ) ) {
 		$classes[] = 'has-featured-image';
 	}
 	return $classes;
 }
-add_filter( 'body_class', 'add_featured_image_class' );
+add_filter( 'body_class', 'skatepark_add_featured_image_class' );
 
 if ( ! function_exists( 'skatepark_support' ) ) :
 
@@ -187,7 +187,7 @@ if ( ! function_exists( 'skatepark_preload_webfonts' ) ) :
 	/**
 	 * Preloads the main web font to improve performance.
 	 *
-	 * Only the main web font (font-weight: 400,700, font-style: normal) is preloaded here since that font is always relevant. 
+	 * Only the main web font (font-weight: 400,700, font-style: normal) is preloaded here since that font is always relevant.
 	 * The other fonts are only needed if the user changed style or weight of the fonts,
 	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
 	 * at all.

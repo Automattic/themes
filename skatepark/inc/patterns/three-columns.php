@@ -16,11 +16,11 @@ return array(
 		<!-- wp:site-tagline {"fontSize":"small"} /-->
 
 		<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#000000","className":"is-style-logos-only"} -->
-		<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"http://twitter.com","service":"twitter"} /-->
+		<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://twitter.com/","service":"twitter"} /-->
 
-		<!-- wp:social-link {"url":"http://facebook.com","service":"facebook"} /-->
+		<!-- wp:social-link {"url":"https://facebook.com/","service":"facebook"} /-->
 
-		<!-- wp:social-link {"url":"http://instagram.com","service":"instagram"} /--></ul>
+		<!-- wp:social-link {"url":"https://instagram.com/","service":"instagram"} /--></ul>
 		<!-- /wp:social-links --></div>
 		<!-- /wp:column -->
 

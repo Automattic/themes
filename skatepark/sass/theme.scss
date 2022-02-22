@@ -6,8 +6,10 @@
 
 /* Post title when featured image is present */
 h1.wp-block-post-title {
-	body:not(.has-featured-image) &{
-		border-bottom: var(--wp--custom--form--border--width)
+
+	body:not(.has-featured-image) & {
+		border-bottom:
+			var(--wp--custom--form--border--width)
 			var(--wp--custom--form--border--style) var(--wp--preset--color--primary);
 		padding-bottom: calc(var(--wp--custom--gap--vertical) * 3);
 	}
@@ -15,12 +17,16 @@ h1.wp-block-post-title {
 
 /* Separator width */
 .wp-block-separator {
+
 	/* https://github.com/WordPress/gutenberg/pull/38428 */
 	opacity: 1;
+
 	&.is-style-wide {
+
 		/* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
 		border-width: 0 0 3px 0;
 	}
+
 	&.has-background {
 		height: 3px;
 	}
@@ -33,11 +39,13 @@ h1.wp-block-post-title {
 }
 
 a {
+
 	@include text-decoration;
 }
 
 .wp-block-post-content p a:not(.wp-block-post-excerpt__more-link) {
 	text-decoration-line: underline;
+
 	&:hover {
 		text-decoration: none;
 		background-color: var(--wp--custom--color--primary);
@@ -50,6 +58,7 @@ a {
 .wp-block-post-comments .comment-edit-link,
 .post-meta a {
 	text-decoration-line: underline;
+
 	&:hover {
 		text-decoration-line: none;
 	}
@@ -63,14 +72,16 @@ h4 a,
 h5 a,
 h6 a,
 .wp-block-site-title a,
-.wp-block-post-title a{
+.wp-block-post-title a {
 	text-underline-offset: 0.1ex;
 }
+
 .wp-block-site-title a,
 .wp-block-post-title a,
 .wp-block-query-pagination a,
 .wp-block-navigation a {
 	text-decoration-line: none;
+
 	&:hover {
 		text-decoration-line: underline;
 	}
@@ -79,26 +90,40 @@ h6 a,
 // Select the focus states of all non-wpadmin and screen reader links
 .wp-block-search__button,
 a:not(.ab-item):not(.screen-reader-shortcut) {
+
 	&:active,
 	&:focus {
 		outline: 1px dotted var(--wp--custom--color--primary);
 		outline-offset: 0.1em;
 		text-decoration: none;
 	}
+
+	.wp-block-navigation & {
+
+		&:active,
+		&:focus {
+			outline-color: currentcolor;
+		}
+	}
 }
 
 .archive,
 .blog,
 .home {
+
 	.wp-block-post-date {
 		text-decoration: underline;
+
 		@include text-decoration;
 	}
 }
 
-.wp-block-query-pagination{
+.wp-block-query-pagination {
+
 	.wp-block-query-pagination-numbers {
+
 		.current {
+
 			@include text-decoration;
 		}
 	}
@@ -118,7 +143,7 @@ a:not(.ab-item):not(.screen-reader-shortcut) {
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
 	border-style: var(--wp--custom--button--border--style);
 	border-width: var(--wp--custom--button--border--width);
-	border-color: var(--wp--custom--color--foreground);	
+	border-color: var(--wp--custom--color--foreground);
 }
 
 .wp-block-search__input {
@@ -134,18 +159,18 @@ a:not(.ab-item):not(.screen-reader-shortcut) {
 	color: var(--wp--custom--color--background);
 	font-size: var(--wp--preset--font-size--normal);
 	font-weight: var(--wp--custom--button--typography--font-weight);
-	padding: calc(.667em + 2px) calc(1.333em + 2px);
+	padding: calc(0.667em + 2px) calc(1.333em + 2px);
 	line-height: var(--wp--custom--button--typography--line-height);
 }
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
 	border-width: 0;
-	padding-top: calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width) );
-	padding-bottom: calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width) );
-	padding-left: calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width) );
-	padding-right: calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width) );
+	padding-top: calc(var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width));
+	padding-bottom: calc(var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
+	padding-left: calc(var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
+	padding-right: calc(var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
 }
- 
+
 /*
  * Button hover styles.
  * Necessary until the following issue is resolved in Gutenberg:
@@ -155,7 +180,7 @@ a:not(.ab-item):not(.screen-reader-shortcut) {
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
-	opacity: 0.90;
+	opacity: 0.9;
 }
 
 /* Comments */
@@ -164,12 +189,13 @@ a:not(.ab-item):not(.screen-reader-shortcut) {
 	color: var(--wp--custom--color--background);
 }
 
-.wp-block-post-comments textarea, .wp-block-post-comments input:not([type="submit"]) {
+.wp-block-post-comments textarea,
+.wp-block-post-comments input:not([type="submit"]) {
 	background-color: var(--wp--custom--color--background);
 	color: var(--wp--custom--color--foreground);
 	border-style: var(--wp--custom--button--border--style);
 	border-width: var(--wp--custom--button--border--width);
-	border-color: var(--wp--custom--color--foreground);	
+	border-color: var(--wp--custom--color--foreground);
 }
 
 /*
@@ -190,8 +216,8 @@ body > .is-root-container,
 .wp-block-group.alignfull,
 .wp-block-group.has-background,
 .wp-block-cover.alignfull,
-.is-root-container .wp-block[data-align='full'] > .wp-block-group,
-.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+.is-root-container .wp-block[data-align="full"] > .wp-block-group,
+.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
 	padding-left: var(--wp--custom--spacing--outer);
 	padding-right: var(--wp--custom--spacing--outer);
 }
@@ -204,7 +230,7 @@ body > .is-root-container,
 body > .is-root-container > .wp-block-cover,
 body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
 body > .is-root-container > .wp-block-template-part > .wp-block-cover,
-.is-root-container .wp-block[data-align='full'] {
+.is-root-container .wp-block[data-align="full"] {
 	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
 	max-width: unset;
