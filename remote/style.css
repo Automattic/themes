@@ -123,6 +123,20 @@ body > .is-root-container,
  * https://github.com/WordPress/gutenberg/issues/27075
  */
 
+ :is(
+	 .wp-block-search__button,
+	 .wp-block-button__link,
+	 .wp-block-search__button
+):is(
+	:hover,
+	:active,
+	:focus
+) {
+	 background-color: var(--wp--preset--color--foreground);
+	 color: var(--wp--preset--color--background);
+	 cursor: pointer;
+}
+
 :is(
 	 .wp-block-search__button,
 	 .wp-block-button__link,
@@ -142,6 +156,52 @@ body > .is-root-container,
 	 .wp-block-button__link,
 	 .wp-block-search__button
 ):focus {
-	 outline: 2px dotted var(--wp--preset--color--foreground);
+	 outline: 1.5px dotted var(--wp--preset--color--foreground);
 	 outline-offset: 3px;
+}
+
+/*
+ * Link Details
+ */
+
+a {
+	color: var(--wp--preset--color--foreground);
+	text-decoration-thickness: 0.075ex;
+	text-underline-offset: 0.125em;
+	text-decoration: underline;
+}
+
+.wp-block-site-title a {
+	text-decoration: none;
+}
+
+:is(
+	a,
+	.wp-block-site-title,
+	.wp-block-post-title,
+	.wp-block-post-date
+):hover {
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+}
+
+:is(
+	a,
+	.wp-block-site-title,
+	.wp-block-post-title,
+	.wp-block-post-date
+):active {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+
+:is(
+	a,
+	.wp-block-site-title,
+	.wp-block-post-title,
+	.wp-block-post-date
+):focus {
+	color: var(--wp--preset--color--primary);
+	outline: 1.5px dotted var(--wp--preset--color--primary);
+	outline-offset: 3px;
 }
