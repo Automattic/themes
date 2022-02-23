@@ -106,4 +106,89 @@ body > .is-root-container,
 	border: 1px solid var(--wp--preset--color--foreground);
 	background-color: transparent;
 	color: var(--wp--preset--color--foreground);
+	text-decoration-thickness: 0.075ex;
+	text-underline-offset: 0.125em;
+	text-decoration: underline;
 }
+
+.wp-block-site-title a {
+	text-decoration: none;
+}
+
+:is(
+	a,
+	.wp-block-site-title,
+	.wp-block-post-title,
+	.wp-block-post-date
+):hover {
+	color: var(--wp--preset--color--primary);
+	text-decoration: none;
+}
+
+:is(
+	a,
+	.wp-block-site-title,
+	.wp-block-post-title,
+	.wp-block-post-date
+):active {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+
+:is(
+	a,
+	.wp-block-site-title,
+	.wp-block-post-title,
+	.wp-block-post-date
+):focus {
+	color: var(--wp--preset--color--primary);
+	outline: 1.5px dotted var(--wp--preset--color--primary);
+	outline-offset: 3px;
+}
+
+/*
+ * Comment form styles
+ */
+ 
+ .wp-block-post-comments input:not([type=submit]):not([type=checkbox]),
+ .wp-block-post-comments textarea,
+ .wp-block-post-comments select {
+	 border-radius: var(--wp--custom--button--border--radius);
+	 background-color: var(--wp--preset--color--background);
+	 color: var(--wp--preset--color--foreground);
+	 border: 1px solid var(--wp--preset--color--foreground);
+ }
+
+ .wp-block-post-comments .comment-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: var(--wp--custom--spacing--small);
+ }
+
+ .wp-block-post-comments .comment-form p{
+	order: 9;
+ }
+
+ .wp-block-post-comments .comment-form .logged-in-as,
+ .wp-block-post-comments .comment-form .comment-notes,
+ .wp-block-post-comments .comment-form .comment-form-author {
+	order: 1;
+}
+
+.wp-block-post-comments .comment-form .comment-form-email{
+	order: 2;
+}
+
+.wp-block-post-comments .comment-form .comment-form-url {
+	order: 3;
+}
+
+.wp-block-post-comments .comment-form .comment-form-comment {
+	order: 4;
+}
+
+.wp-block-post-comments .comment-form p:not( .comment-form-email, .comment-form-url ){
+	grid-column: span 2;
+}
+
+ 
