@@ -7,7 +7,7 @@
 
 return array(
 	'title'      => __( 'Posts grid', 'remote' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'query' ),
 	'blockTypes' => array( 'core/query' ),
 	'content'    => '<!-- wp:group {"align":"full","layout":{"inherit":true}} -->
 	<div class="wp-block-group alignfull"><!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null},"tagName":"main","displayLayout":{"type":"flex","columns":2},"align":"wide"} -->
