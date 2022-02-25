@@ -44,7 +44,7 @@ function remote_register_block_patterns() {
 		'hero-text',
 		'hidden-404-content',
 		'hidden-search-form',
-		'posts-grid'
+		'posts-grid',
 		'posts-list',
 	);
 

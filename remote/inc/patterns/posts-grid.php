@@ -16,7 +16,7 @@ return array(
 	<hr class="wp-block-separator is-style-wide"/>
 	<!-- /wp:separator -->
 	
-	<!-- wp:post-featured-image {"style":{"spacing":{"margin":{"top":"60px","bottom":"30px"}}}} /-->
+	<!-- wp:post-featured-image {"width":"100%","height":"220px","style":{"spacing":{"margin":{"top":"60px","bottom":"30px"}}}} /-->
 	
 	<!-- wp:post-date {"format":"M j","style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} /-->
 	
