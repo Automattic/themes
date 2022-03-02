@@ -37,3 +37,7 @@ Still life photography by Karolina Grabowska.
 * https://www.pexels.com/photo/wood-light-art-winter-6958760/
 * https://www.pexels.com/photo/love-coffee-internet-technology-6958766/
 Used in theme screenshot and demo site.
+
+Woman with bouquet of flowers in floral shop by Anna Shvets.
+* https://www.pexels.com/photo/woman-with-bouquet-of-flowers-in-floral-shop-5750131/
+Used in the theme demo.

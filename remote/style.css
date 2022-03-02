@@ -7,7 +7,7 @@ Description:
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.6
+Version: 0.0.7
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Text Domain: archeo
@@ -241,4 +241,10 @@ a:not(
 	grid-column: span 2;
 }
 
- 
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/34196 or something like it.
+ */
+.wp-block-tag-cloud.is-style-outline a {
+	border-radius: 10px;
+	padding: .5rem 1.25rem;
+}
