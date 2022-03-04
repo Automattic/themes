@@ -29,7 +29,7 @@ return array(
 		<div class="wp-block-image"><figure class="alignright size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-cirque.jpg" alt="' . esc_attr__( 'Photo of Palace of the Circus', 'archeo' ) . '"/></figure></div>
 		<!-- /wp:image --></div>
 		<!-- /wp:column --></div>
-		<!-- /wp:columns --></div></div>
-	<!-- /wp:group --></div>
+		<!-- /wp:columns --></div>
+	<!-- /wp:group --></div></div>
 	<!-- /wp:cover -->',
 );
