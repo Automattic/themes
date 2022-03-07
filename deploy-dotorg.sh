@@ -22,6 +22,8 @@ declare -a THEMES_TO_DEPLOY=(
 	"mayland-blocks"
 	"quadrat"
 	"seedlet-blocks"
+	"skatepark"
+	"stewart"
 	"livro"
 	"videomaker"
 )
