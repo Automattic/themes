@@ -13,7 +13,7 @@ return array(
 	<!-- /wp:spacer --><
 	
 	<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"100","lineHeight":"1.2"}},"fontSize":"medium"} -->
-	<p class="has-medium-font-size" style="font-style:normal;font-weight:100;line-height:1.2">' . wp_kses_post( __( 'The Pyramid of the <br>Magician, at Uxmal', 'archeo' ) ) . '</p>
+	<p class="has-medium-font-size" style="font-style:normal;font-weight:100;line-height:1.2">' . wp_kses_post( __( 'The Pyramid of the <br>Magician at Uxmal', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none"} -->
@@ -27,7 +27,7 @@ return array(
 	<!-- /wp:spacer -->
 	
 	<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->
-	<p class="has-small-font-size" style="line-height:1.5">' . __( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important archaeological sites of Maya culture.', 'archeo' ) . '</p>
+	<p class="has-small-font-size" style="line-height:1.5">' . __( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important archaeological sites of Mayan culture.', 'archeo' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"}},"fontSize":"small"} -->

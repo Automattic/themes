@@ -26,7 +26,7 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:paragraph -->
-	<p>' . esc_html__( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important sites of Maya culture.', 'archeo' ) . '</p>
+	<p>' . esc_html__( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important sites of Mayan culture.', 'archeo' ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->',
