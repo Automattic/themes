@@ -27,16 +27,14 @@ return array(
 	<div class="wp-block-query alignwide"><!-- wp:post-template -->
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px"}}},"layout":{"inherit":false}} -->
 	<div class="wp-block-group" style="padding-top:30px">
-		
-		<!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var( --wp--style--block-gap )"}}}} -->
-		<div class="wp-block-group" style="padding-bottom:var( --wp--style--block-gap )"><!-- wp:separator {"className":"is-style-wide"} -->
-			<hr class="wp-block-separator is-style-wide"/>
-			<!-- /wp:separator --></div>
-		<!-- /wp:group -->
 
-	<!-- wp:post-featured-image {"isLink":true} /-->
+	<!-- wp:separator {"className":"is-style-wide"} -->
+	<hr class="wp-block-separator is-style-wide"/>
+	<!-- /wp:separator -->
+	
+	<!-- wp:post-featured-image {"style":{"spacing":{"margin":{"top":"calc(2 * var( --wp--style--block-gap ))"}}},"isLink":true} /-->
 
-	<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--normal)"}}} /-->
+	<!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"calc(2 * var( --wp--style--block-gap ))"}},"typography":{"fontSize":"var(--wp--custom--font-sizes--normal)"}}} /-->
 
 	<!-- wp:post-excerpt {"moreText":"' . esc_html__( 'Continue reading', 'skatepark' ) . '"} /-->
 
