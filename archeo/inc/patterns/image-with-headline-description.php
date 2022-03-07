@@ -11,9 +11,17 @@ return array(
 	<h2 class="has-text-align-right" id="chahk-raindeity" style="font-size:clamp(64px, 6vw, 100px);line-height:1;margin-bottom:48px;text-transform:uppercase">' . wp_kses_post( __( 'Chahk:<br>Rain<br>deity', 'archeo' ) ) . '</h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:paragraph {"align":"right","fontSize":"small"} -->
-	<p class="has-text-align-right has-small-font-size">' . wp_kses_post( __( 'Chaahk is shown here clutching <br>his axe, ready to strike rain <br>thunder and rain from the <br>clouds. This sculpture was <br>likely created in the Puuc hills<br>of Yucatan and Campeche.', 'archeo' ) ) . '</p>
-	<!-- /wp:paragraph --></div></div>
+	<!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"width":"15%"} -->
+	<div class="wp-block-column" style="flex-basis:15%"></div>
+	<!-- /wp:column -->
+
+	<!-- wp:column {"width":""} -->
+	<div class="wp-block-column"><!-- wp:paragraph {"align":"right","fontSize":"small"} -->
+	<p class="has-text-align-right has-small-font-size">' . esc_html__( 'Chaahk is shown here clutching his axe, ready to strike rain and thunder from the clouds. This sculpture was likely created in the Puuc hills of Yucatan and Campeche.', 'archeo' ) . '</p>
+	<!-- /wp:paragraph --></div>
+	<!-- /wp:column --></div>
+	<!-- /wp:columns --></div></div>
 	<!-- /wp:media-text --></div>
 	<!-- /wp:group -->',
 );
