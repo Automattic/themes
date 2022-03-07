@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image with description', 'archeo' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'images' ),
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.33%"} -->
 	<div class="wp-block-column" style="flex-basis:33.33%"></div>

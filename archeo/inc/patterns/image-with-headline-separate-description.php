@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image with headline and separate description', 'archeo' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'images' ),
 	'content'    => '<!-- wp:media-text {"align":"full","mediaPosition":"right","mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/pyramid.jpg","mediaType":"image","mediaWidth":56,"imageFill":true,"focalPoint":{"x":"0.50","y":"0.28"}} -->
 	<div class="wp-block-media-text alignfull has-media-on-the-right is-stacked-on-mobile is-image-fill" style="grid-template-columns:auto 56%"><figure class="wp-block-media-text__media" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/pyramid.jpg);background-position:50% 28.000000000000004%"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/pyramid.jpg" alt="' . esc_attr__( 'Photo of House of the dwarf, in Uxmal', 'archeo' ) . '"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"style":{"typography":{"letterSpacing":"-0.02em","lineHeight":"1","textTransform":"uppercase","fontStyle":"normal","fontWeight":"100"}},"fontSize":"huge"} -->
 	<p class="has-huge-font-size" style="font-style:normal;font-weight:100;line-height:1;text-transform:uppercase;letter-spacing:-0.02em">' . wp_kses_post( __( 'House of <br>the dwarf <br>in Uxmal', 'archeo' ) ) . '</p>
