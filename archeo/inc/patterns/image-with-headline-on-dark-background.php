@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image with headline on dark background', 'archeo' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'images' ),
 	'content'    => '<!-- wp:media-text {"mediaPosition":"right","mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/figure-gigantesque.jpg","mediaType":"image","imageFill":false,"backgroundColor":"foreground","textColor":"background"} -->
 	<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile has-background-color has-foreground-background-color has-text-color has-background"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/figure-gigantesque.jpg" alt="' . esc_attr__( 'Photo of gigantic figure at Izamal', 'archeo' ) . '" /></figure><div class="wp-block-media-text__content">
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"clamp(30px, 4vw, 80px)","right":"clamp(30px, 4vw, 80px)","bottom":"clamp(30px, 4vw, 80px)","left":"clamp(30px, 4vw, 80px)"}}}} -->

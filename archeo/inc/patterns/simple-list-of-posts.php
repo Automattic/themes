@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Simple list of posts', 'archeo' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'images' ),
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var(--wp--custom--spacing--medium)","bottom":"var(--wp--custom--spacing--medium)"},"margin":{"top":"0px"}}}} -->
 	<div class="wp-block-group alignwide" style="padding-top:var(--wp--custom--spacing--medium);padding-bottom:var(--wp--custom--spacing--medium);margin-top:0px"><!-- wp:query {"queryId":3,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"perPage":3}} -->
 	<div class="wp-block-query"><!-- wp:post-template -->
