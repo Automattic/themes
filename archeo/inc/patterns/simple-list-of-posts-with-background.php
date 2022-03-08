@@ -7,8 +7,8 @@ return array(
 	'categories' => array( 'featured', 'query' ),
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var(--wp--custom--spacing--medium)","bottom":"var(--wp--custom--spacing--medium)"},"margin":{"top":"0px"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background"} -->
 	<div class="wp-block-group alignwide has-background-color has-foreground-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--custom--spacing--medium);padding-bottom:var(--wp--custom--spacing--medium);margin-top:0px">
-		<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"60px"}}},"fontSize":"medium"} -->
-		<h3 class="has-medium-font-size" style="margin-bottom:60px">' . __( 'Selected Writings', 'archeo' ) . '</h3>
+		<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"40px"}}},"fontSize":"medium"} -->
+		<h3 class="has-medium-font-size" style="margin-bottom:40px">' . __( 'Selected Writings', 'archeo' ) . '</h3>
 		<!-- /wp:heading -->
 		
 		<!-- wp:query {"queryId":3,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"perPage":3}} -->
