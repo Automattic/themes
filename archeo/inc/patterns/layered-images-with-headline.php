@@ -22,8 +22,8 @@ return array(
 	<div style="height:8vw" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 
-	<!-- wp:image {"align":"right","sizeSlug":"full","linkDestination":"none"} -->
-	<div class="wp-block-image"><figure class="alignright size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-cirque.jpg" alt="' . esc_attr__( 'Photo of Palace of the Circus', 'archeo' ) . '"/></figure></div>
+	<!-- wp:image {"align":"right","id":775,"sizeSlug":"full","linkDestination":"none"} -->
+	<div class="wp-block-image"><figure class="alignright size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-cirque.jpg" alt="' . esc_attr__( 'Photo of Palace of the Circus', 'archeo' ) . '" class="wp-image-775"/></figure></div>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div></div>
