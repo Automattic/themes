@@ -26,13 +26,15 @@ return array(
 	<!-- wp:query {"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","categoryIds":[],"tagIds":[],"order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"displayLayout":{"type":"flex","columns":3},"align":"wide"} -->
 	<div class="wp-block-query alignwide"><!-- wp:post-template -->
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px"}}},"layout":{"inherit":false}} -->
-	<div class="wp-block-group" style="padding-top:30px"><!-- wp:separator {"className":"is-style-wide"} -->
+	<div class="wp-block-group" style="padding-top:30px">
+
+	<!-- wp:separator {"className":"is-style-wide"} -->
 	<hr class="wp-block-separator is-style-wide"/>
 	<!-- /wp:separator -->
+	
+	<!-- wp:post-featured-image {"style":{"spacing":{"margin":{"top":"calc(2 * var( --wp--style--block-gap ))"}}},"isLink":true} /-->
 
-	<!-- wp:post-featured-image {"isLink":true} /-->
-
-	<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--normal)"}}} /-->
+	<!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"calc(2 * var( --wp--style--block-gap ))"}},"typography":{"fontSize":"var(--wp--custom--font-sizes--normal)"}}} /-->
 
 	<!-- wp:post-excerpt {"moreText":"' . esc_html__( 'Continue reading', 'skatepark' ) . '"} /-->
 
