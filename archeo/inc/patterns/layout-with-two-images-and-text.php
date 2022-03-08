@@ -16,8 +16,8 @@ return array(
 	<p class="has-medium-font-size" style="font-style:normal;font-weight:100;line-height:1.2">' . wp_kses_post( __( 'The Pyramid of the <br>Magician at Uxmal', 'archeo' ) ) . '</p>
 	<!-- /wp:paragraph -->
 	
-	<!-- wp:image {"align":"left","sizeSlug":"full","linkDestination":"none"} -->
-	<div class="wp-block-image"><figure class="alignleft size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/pyramid.jpg" alt="' . __( 'Photograph by Désiré Charnay, 1862 to 1863', 'archeo' ) . '"/><figcaption><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-background-color"><em>' . __( 'Photograph by Désiré Charnay, 1862 – 1863', 'archeo' ) . '</em></mark></figcaption></figure></div>
+	<!-- wp:image {"align":"left","id":869,"sizeSlug":"full","linkDestination":"none"} -->
+	<figure class="wp-block-image alignleft size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/pyramid.jpg" alt="' . __( 'Photograph by Désiré Charnay, 1862 to 1863', 'archeo' ) . '" class="wp-image-869"/><figcaption><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-background-color"><em>' . __( 'Photograph by Désiré Charnay, 1862 – 1863', 'archeo' ) . '</em></mark></figcaption></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column -->
 	
