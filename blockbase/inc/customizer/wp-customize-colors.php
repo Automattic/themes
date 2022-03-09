@@ -61,16 +61,8 @@ class GlobalStylesColorCustomizer {
 			$user_color_palette = $theme_json['settings']['color']['palette']['custom'];
 		}
 
-		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-		elseif ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
-			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
-		}
-		// End Gutenberg < 12.1 compatibility patch
-
 		// Combine theme settings with user settings.
 		foreach ( $combined_color_palette as $key => $palette_item ) {
-			//make theme color value the default
-			$combined_color_palette[ $key ]['default'] = $combined_color_palette[ $key ]['color'];
 			//use user color value if there is one
 			$user_color_value = $this->get_user_color_value( $palette_item['slug'], $user_color_palette );
 			if ( isset( $user_color_value ) ) {
@@ -118,7 +110,6 @@ class GlobalStylesColorCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'    => $palette_item['default'],
 				'user_value' => $palette_item['color'],
 			)
 		);
@@ -158,7 +149,10 @@ class GlobalStylesColorCustomizer {
 		$new_styles   = (array) $global_styles->data['styles'];
 
 		// Set the new color settings
-		$new_settings['color']['palette']['custom'] = $this->user_color_palette;
+		$new_settings['color']['palette']['theme'] = $this->user_color_palette;
+		// We used to set the values in 'custom' but moved to 'theme' to mirror GS functionality.
+		// This ensures that new saves don't store the customizations in both places.
+		unset($new_settings['color']['palette']['custom']);
 
 		// Add the updated global styles to the update request
 		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
@@ -174,14 +168,6 @@ class GlobalStylesColorCustomizer {
 		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
 
-	function check_if_colors_are_default() {
-		foreach ( $this->user_color_palette as $palette_color ) {
-			if ( strtoupper( $palette_color['color'] ) !== strtoupper( $palette_color['default'] ) ) {
-				return false;
-			}
-		}
-		return true;
-	}
 }
 
 new GlobalStylesColorCustomizer;
