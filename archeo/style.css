@@ -224,3 +224,13 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	height: auto;
 	max-width: 100%;
 }
+
+/*
+ * Custom font size at small screens for navigation.
+ * Possible future fix: https://github.com/WordPress/gutenberg/pull/33543
+ */
+@media (max-width: 599px) {
+	.wp-block-navigation__responsive-container-content li {
+		font-size: var(--wp--preset--font-size--large) !important;
+	}
+}
