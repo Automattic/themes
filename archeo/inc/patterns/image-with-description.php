@@ -23,7 +23,7 @@ return array(
 	<p class="has-small-font-size" style="font-style:italic;font-weight:400">' . __( 'From "American Cities and Ruins: Mitla, Palenqué, Izamal, Chichen-Itza, Uxmal, Atlas" housed at the New York Public Library.', 'archeo' ) . '</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:image {"id":840,"sizeSlug":"full","linkDestination":"none"} -->
+	<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 	<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/ancien-temple.jpg" alt="' . __( 'Photo of ancient temple, at Chichen-Itza', 'archeo' ) . '"/></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
