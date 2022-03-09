@@ -11,8 +11,8 @@ return array(
 	<h2 class="has-text-align-right" id="chahk-raindeity" style="font-size:clamp(64px, 6vw, 100px);line-height:1;margin-bottom:48px;text-transform:uppercase">' . wp_kses_post( __( 'Chahk:<br>Rain<br>deity', 'archeo' ) ) . '</h2>
 	<!-- /wp:heading -->
 
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"width":"15%"} -->
+	<!-- wp:columns {"style":{"spacing":{"margin":{"bottom":"0px"}}}} -->
+	<div class="wp-block-columns" style="margin-bottom:0px"><!-- wp:column {"width":"15%"} -->
 	<div class="wp-block-column" style="flex-basis:15%"></div>
 	<!-- /wp:column -->
 
