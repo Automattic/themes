@@ -50,10 +50,11 @@ a {
 	text-decoration: none;
 }
 
-a:hover,
+a:hover:not(.wp-block-button__link),
 .wp-block-site-title a:hover,
 .wp-block-post-title a:hover,
 .wp-block-post-date a:hover {
+	text-decoration-line: underline;
 	text-decoration-style: dotted;
 }
 
@@ -67,7 +68,7 @@ a:active,
 .wp-block-navigation .wp-block-navigation-link a:hover,
 .wp-block-navigation .wp-block-page-list a:hover,
 .wp-block-navigation .wp-block-pages-list__item a:hover {
-	text-decoration: underline;
+	text-decoration-line: underline;
 }
 
 /*
@@ -177,7 +178,7 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 }
 
 /*
- * We need this until https://github.com/WordPress/gutenberg/issues/37035 is fixed.
+ * Needed until https://github.com/WordPress/gutenberg/issues/37035 is fixed.
  */
 .wp-block-navigation__responsive-container.is-menu-open ul {
 	font-size: var(--wp--preset--font-size--large) !important;
@@ -198,17 +199,28 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 }
 
 /*
- * We need this until https://github.com/WordPress/gutenberg/issues/38498 is fixed.
+ * Needed until https://github.com/WordPress/gutenberg/issues/38498 is fixed.
  */
 .wp-block-group.simple-list-of-posts {
 	align-items: baseline;
 }
 
 /*
+ * Needed until https://github.com/WordPress/gutenberg/pull/38986 is merged.
+ */
+.wp-block-post-title a {
+	text-decoration-line: none;
+}
+
+.wp-block-post-title a:hover {
+	text-decoration-line: underline;
+}
+
+/*
  * Needed until there's a fix in GB.
  * Related: https://github.com/WordPress/gutenberg/pull/39045
  */
- .wp-block-image img {
+.wp-block-image img {
 	height: auto;
 	max-width: 100%;
 }
