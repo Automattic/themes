@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Posts list', 'stewart' ),
-	'categories' => array( 'posts-list' ),
+	'categories' => array( 'query' ),
 	'content'    => '<!-- wp:query {"queryId":3,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"displayLayout":{"type":"list","columns":2},"layout":{"inherit":false}} -->
     <div class="wp-block-query"><!-- wp:post-template -->
     <!-- wp:post-title {"isLink":true,"style":{"typography":{"lineHeight":"1.2"}},"fontSize":"huge"} /-->

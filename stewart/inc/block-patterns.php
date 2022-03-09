@@ -18,7 +18,7 @@ function stewart_register_block_patterns() {
 		'header'     => array( 'label' => __( 'Headers', 'stewart' ) ),
 		'pages'      => array( 'label' => __( 'Pages', 'stewart' ) ),
 		'sidebar'    => array( 'label' => __( 'Sidebars', 'stewart' ) ),
-		'posts-list' => array( 'label' => __( 'Posts lists', 'stewart' ) ),
+		'query'      => array( 'label' => __( 'Query', 'stewart' ) ),
 	);
 
 	/**
