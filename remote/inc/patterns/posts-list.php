@@ -11,22 +11,22 @@ return array(
     <!-- wp:separator {"className":"is-style-wide"} -->
     <hr class="wp-block-separator is-style-wide"/>
     <!-- /wp:separator -->
-    
+
     <!-- wp:columns {"style":{"spacing":{"padding":{"top":"1em"}}}} -->
     <div class="wp-block-columns" style="padding-top:1em"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-    <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:post-date {"format":"M j","style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} /--></div>
+    <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:post-date {"format":"M j","fontSize":"small"} /--></div>
     <!-- /wp:column -->
-    
+
     <!-- wp:column {"verticalAlignment":"center","width":""} -->
     <div class="wp-block-column is-vertically-aligned-center"><!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}},"typography":{"fontSize":"clamp(3rem, 6vw, 4rem)"}}} /--></div>
     <!-- /wp:column --></div>
     <!-- /wp:columns -->
     <!-- /wp:post-template -->
-    
+
     <!-- wp:spacer {"height":"32px"} -->
     <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
     <!-- /wp:spacer -->
-    
+
     <!-- wp:query-pagination -->
     <!-- wp:query-pagination-previous /-->
     <!-- wp:query-pagination-next /-->

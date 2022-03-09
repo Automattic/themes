@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image with description and right-aligned headline', 'archeo' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'images' ),
 	'content'    => '<!-- wp:columns {"align":"full","backgroundColor":"background"} -->
 	<div class="wp-block-columns alignfull has-background-background-color has-background"><!-- wp:column {"width":"33.33%"} -->
 	<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:cover {"overlayColor":"background","minHeight":670,"contentPosition":"bottom center","isDark":false} -->
@@ -26,7 +26,7 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:paragraph -->
-	<p>' . esc_html__( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important sites of Maya culture.', 'archeo' ) . '</p>
+	<p>' . esc_html__( 'Uxmal is an ancient Maya city located in present-day Mexico. It is considered one of the most important sites of Mayan culture.', 'archeo' ) . '</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->',

@@ -20,7 +20,7 @@
 			"palette": [
 				{
 					"slug": "background",
-					"color": "#222222",
+					"color": "#000000",
 					"name": "Background"
 				},
 				{
@@ -90,7 +90,14 @@
 		"blocks": {
 			"core/button": {
 				"border": {
-					"radius": "var(--wp--custom--button--border--radius)"
+					"radius": "var(--wp--custom--button--border--radius)",
+					"color": "var(--wp--preset--color--primary)",
+					"width": "1px",
+					"style": "solid"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--background)"
 				}
 			},
 			"core/heading": {
@@ -98,9 +105,23 @@
 					"fontWeight": "400"
 				}
 			},
+			"core/post-date": {
+				"typography": {
+					"textTransform": "uppercase"
+				}
+			},
 			"core/separator": {
 				"border": {
 					"color": "var(--wp--preset--color--primary)"
+				}
+			},
+			"core/post-comments": {
+				"elements": {
+					"h3": {
+						"typography": {
+							"fontSize": "var(--wp--preset--font-size--large)"
+						}
+					}
 				}
 			}
 		},

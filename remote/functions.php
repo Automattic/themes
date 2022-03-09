@@ -163,6 +163,3 @@ add_action( 'wp_head', 'remote_preload_webfonts' );
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
-
-
-

@@ -14,10 +14,11 @@
  */
 function stewart_register_block_patterns() {
 	$block_pattern_categories = array(
-		'footer'   => array( 'label' => __( 'Footers', 'stewart' ) ),
-		'header'   => array( 'label' => __( 'Headers', 'stewart' ) ),
-		'pages'    => array( 'label' => __( 'Pages', 'stewart' ) ),
-		'sidebar'   => array( 'label' => __( 'Sidebars', 'stewart' ) ),
+		'footer'     => array( 'label' => __( 'Footers', 'stewart' ) ),
+		'header'     => array( 'label' => __( 'Headers', 'stewart' ) ),
+		'pages'      => array( 'label' => __( 'Pages', 'stewart' ) ),
+		'sidebar'    => array( 'label' => __( 'Sidebars', 'stewart' ) ),
+		'query'      => array( 'label' => __( 'Query', 'stewart' ) ),
 	);
 
 	/**
@@ -60,6 +61,7 @@ function stewart_register_block_patterns() {
 		'sidebar-introduction',
 		'sidebar-blogging',
 		'sidebar-categories-tags',
+		'posts-list',
 	);
 
 	/**

@@ -14,7 +14,10 @@
  */
 function archeo_register_block_patterns() {
 	$block_pattern_categories = array(
-		'pages' => array( 'label' => __( 'Pages', 'archeo' ) ),
+		'images' => array( 'label' => __( 'Images', 'archeo' ) ),
+		'featured' => array( 'label' => __( 'Featured', 'archeo' ) ),
+		'footer' => array( 'label' => __( 'Footers', 'archeo' ) ),
+		'query' => array( 'label' => __( 'Query', 'archeo' ) ),
 	);
 
 	/**
