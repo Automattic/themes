@@ -10,7 +10,7 @@ return array(
 		<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"40px"}}},"fontSize":"medium"} -->
 		<h3 class="has-medium-font-size" style="margin-bottom:40px">' . __( 'Selected Writings', 'archeo' ) . '</h3>
 		<!-- /wp:heading -->
-		
+
 		<!-- wp:query {"queryId":3,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"perPage":3}} -->
 		<div class="wp-block-query"><!-- wp:post-template -->
 		<!-- wp:group {"className":"simple-list-of-posts","layout":{"type":"flex","allowOrientation":false}} -->
