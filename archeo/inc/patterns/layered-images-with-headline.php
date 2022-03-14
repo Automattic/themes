@@ -9,8 +9,8 @@ return array(
 	<div class="wp-block-cover alignfull is-light" style="padding-top:0px;padding-right:0px;padding-bottom:0vw;padding-left:0;margin-top:0px;min-height:100vh"><span aria-hidden="true" class="has-background-background-color has-background-dim-80 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="' . esc_attr__( 'Photo of Palace of the Circus', 'archeo' ) . '" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/palais-du-cirque.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
 	<!-- wp:group {"layout":{"inherit":"true"}} -->
 	<div class="wp-block-group">
-		<!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-		<div class="wp-block-columns alignwide are-vertically-aligned-top" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"verticalAlignment":"top"} -->
+		<!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"min(4vw, 90px)"}}}} -->
+		<div class="wp-block-columns alignwide are-vertically-aligned-top" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:min(4vw, 90px)"><!-- wp:column {"verticalAlignment":"top"} -->
 		<div class="wp-block-column is-vertically-aligned-top"><!-- wp:spacer {"height":"14vw"} -->
 		<div style="height:14vw" aria-hidden="true" class="wp-block-spacer"></div>
 		<!-- /wp:spacer -->
