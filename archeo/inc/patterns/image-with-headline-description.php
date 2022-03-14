@@ -7,9 +7,11 @@ return array(
 	'categories' => array( 'featured', 'images' ),
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"64%"} -->
-	<div class="wp-block-column" style="flex-basis:64%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+	<div class="wp-block-column" style="flex-basis:64%"><!-- wp:group -->
+	<div class="wp-block-group"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
 	<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/chahk.gif" alt="' . esc_attr__( 'Chahk: rain deity', 'archeo' ) . '"/></figure>
 	<!-- /wp:image --></div>
+	<!-- /wp:group --></div>
 	<!-- /wp:column -->
 
 	<!-- wp:column -->
