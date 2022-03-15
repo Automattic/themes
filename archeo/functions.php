@@ -60,30 +60,5 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'archeo_styles' );
 
-if ( ! function_exists( 'archeo_preload_webfonts' ) ) :
-
-	/**
-	 * Preloads the main web font to improve performance.
-	 *
-	 * Only the main web font (font-weight: 100,400, font-style: normal) is preloaded here since that font is always relevant. 
-	 * The other fonts are only needed if the user changed style or weight of the fonts,
-	 * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
-	 * at all.
-	 *
-	 * @since Archeo 1.0
-	 *
-	 * @return void
-	 */
-	function archeo_preload_webfonts() {
-		?>
-		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo-Thin.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/Chivo-Regular.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
-		<?php
-	}
-
-endif;
-
-add_action( 'wp_head', 'archeo_preload_webfonts' );
-
 // Add block patterns
 require get_template_directory() . '/inc/block-patterns.php';
