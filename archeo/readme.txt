@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A clean portfolio theme
+A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
