@@ -20,9 +20,6 @@ if ( ! function_exists( 'block_canvas_support' ) ) :
 	 */
 	function block_canvas_support() {
 
-		// Add support for block styles.
-		add_theme_support( 'wp-block-styles' );
-
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
