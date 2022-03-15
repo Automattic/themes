@@ -18,25 +18,25 @@ $typescale-ratio: 1.2; // Run ratio math on 1em == $typescale-base * $typescale-
 
 $config-global: (
 
-	/* Fonts */
+	
 	"font": (
-		/* Font Family */
+		
 		"family": (
 			"primary": (
 				"fallback": "\"Oswald\"\, sans-serif",
-				"css-var": '--font-headings',
+				"css-var": "--font-headings",
 			),
 			"secondary": (
 				"fallback": "\"Source Sans Pro\"\, Arial\, sans-serif",
-				"css-var": '--font-base',
+				"css-var": "--font-base",
 			),
 			"code": "\"Courier 10 Pitch\"\, Courier\, monospace",
 			"ui": (
 				"fallback": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-				"css-var": '--font-base',
+				"css-var": "--font-base",
 			),
 		),
-		/* Font Size */
+		
 		"size": (
 			"root": $typescale-root,
 			"ratio": $typescale-ratio,
@@ -50,7 +50,7 @@ $config-global: (
 			"xxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
 			"xxxxl": ($typescale-base * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio * $typescale-ratio),
 		),
-		/* Letter Spacing */
+		
 		"letter-spacing": (
 			"base": normal,
 			"xs": normal,
@@ -61,7 +61,7 @@ $config-global: (
 			"xxl": normal,
 			"xxxl": normal,
 		),
-		/* Line Height */
+		
 		"line-height": (
 			"base": strip-unit($typescale-base),
 			"body": 1.78,
@@ -69,15 +69,15 @@ $config-global: (
 		),
 	),
 
-	/* Spacing */
+	
 	"spacing": (
-		"unit": (2 * $baseline-unit), // 16px
-		"measure": unset, // Use ch units here. ie: 60ch = 60 character max-width
-		"horizontal": (2 * $baseline-unit), // 16px
-		"vertical": (4 * $baseline-unit), // 32px matches default spacing in the editor.
+		"unit": (2 * $baseline-unit), 
+		"measure": unset, 
+		"horizontal": (2 * $baseline-unit), 
+		"vertical": (4 * $baseline-unit), 
 	),
 
-	/* Breakpoints */
+	
 	"breakpoint": (
 		"sm": 560px,
 		"md": 640px,
@@ -86,7 +86,7 @@ $config-global: (
 		"xxl": 1280px,
 	),
 
-	/* Elevation */
+	
 	"elevation": (
 		"none": 0px 0px 0px 0px rgba( 0, 0, 0, 0 ),
 		"2dp": 0px 0px 4px 2px rgba( 0, 0, 0, 0.2 ),
@@ -96,7 +96,7 @@ $config-global: (
 		"10dp": 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 ),
 	),
 
-	/* Border radius */
+	
 	"border-radius": (
 		"sm": (0.5 * $typescale-root),
 		"md": (0.75 * $typescale-root),
@@ -105,7 +105,15 @@ $config-global: (
 	),
 );
 
-$config-global: map-merge($color-variables, $config-global);
+$child-theme-colors: map-extend($color-variables, (
+	"color": (
+		"tertiary": (
+			"default": "var(--wp--preset--color--tertiary)"
+		)
+	)
+), true);
+
+$config-global: map-merge($child-theme-colors, $config-global);
 
 /**
  * Elements
