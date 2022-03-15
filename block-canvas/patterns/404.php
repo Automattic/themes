@@ -1,7 +1,7 @@
 <?php
 /**
  * Pattern Name: A 404 page
- * Categories: block-canvas
+ * Inserter: no
  */
 
 ?>
