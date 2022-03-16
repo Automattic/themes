@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Block Canvas
+ * @package Pendant
  * @since Block Canvas 1.0
  */
 
