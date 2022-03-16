@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Tags', 'remote' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'text', 'featured' ),
 	'content'    => '<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} -->
 		<p class="has-small-font-size" style="text-transform:uppercase">' . esc_html__( 'Tags', 'remote' ) . '</p>
 		<!-- /wp:paragraph -->

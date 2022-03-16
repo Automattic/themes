@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image with text', 'remote' ),
-	'categories' => array( 'text', 'columns' ),
+	'categories' => array( 'text', 'columns', 'featured' ),
 	'content'    => '<!-- wp:image {"align":"wide","sizeSlug":"large","linkDestination":"none"} -->
 	<figure class="wp-block-image alignwide size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/laptop.jpg" alt="' . esc_attr__( 'Picture of a laptop', 'remote' ) . '"/></figure>
 	<!-- /wp:image -->

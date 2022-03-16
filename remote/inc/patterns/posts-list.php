@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Posts list', 'remote' ),
-	'categories' => array( 'query' ),
+	'categories' => array( 'query', 'featured' ),
 	'content'    => '<!-- wp:group {"align":"full","layout":{"inherit":true}} -->
     <div class="wp-block-group alignfull"><!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null},"tagName":"main","align":"wide"} -->
     <main class="wp-block-query alignwide"><!-- wp:post-template -->
