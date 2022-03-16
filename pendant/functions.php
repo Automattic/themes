@@ -1,6 +1,6 @@
 <?php
 /**
- * Block Canvas functions and definitions
+ * Pendant functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
