@@ -14,6 +14,7 @@
  */
 function remote_register_block_patterns() {
 
+	//Needed until https://github.com/WordPress/gutenberg/issues/39500 is fixed.
 	$block_pattern_categories = array(
 		'featured' => array( 'label' => __( 'Featured', 'remote' ) ),
 		'columns'  => array( 'label' => __( 'Columns', 'remote' ) ),
