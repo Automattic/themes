@@ -29,3 +29,10 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Remote is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
+
+This theme bundles the following third-party resources:
+
+Laptop Photo from Piqsels, CC0
+https://www.piqsels.com/en/public-domain-photo-svvhe
