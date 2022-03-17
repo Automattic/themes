@@ -53,7 +53,7 @@ async function createIssues(milestoneNumber) {
 		'Block patterns',
 		'Comment form styles (dotcom and dotorg)',
 		'Navigation',
-		'Core block settings',
+		'theme.json: Core block settings',
 		'Pre-launch: readme.txt',
 		'Pre-launch: screenshot.png',
 		'Pre-launch: style.css tags',
