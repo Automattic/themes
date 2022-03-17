@@ -52,7 +52,6 @@ async function createIssues(milestoneNumber) {
 		'Templates: Footer template part',
 		'Block patterns',
 		'Comment form styles (dotcom and dotorg)',
-		'Navigation',
 		'theme.json: Core block settings',
 		'Pre-launch: readme.txt',
 		'Pre-launch: screenshot.png',
