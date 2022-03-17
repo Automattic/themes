@@ -41,7 +41,6 @@ async function createIssues(milestoneNumber) {
 		'Create a demo site on dotcom',
 		'theme.json: Typography settings',
 		'theme.json: Color palette',
-		'theme.json: Alternative color palettes',
 		'theme.json: Margin/spacing settings + content layout',
 		'Templates: Page templates - Index',
 		'Templates: Page templates - Default',
