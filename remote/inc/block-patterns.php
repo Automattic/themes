@@ -42,6 +42,7 @@ function remote_register_block_patterns() {
 
 	$block_patterns = array(
 		'hero-text',
+		'large-quote',
 		'hidden-404-content',
 		'hidden-search-form',
 		'image-with-text',
