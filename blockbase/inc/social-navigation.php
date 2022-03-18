@@ -59,7 +59,7 @@ function get_social_menu_as_social_links_block( $block ) {
 	if ( $menu ) {
 		foreach ( $menu as $menu_item ) {
 			$service_name          = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
-			$service_name          = preg_replace( '/(-profile/', '', $service_name );
+			$service_name          = preg_replace( '/(-profile)/', '', $service_name );
 			$social_links_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
 		}
 	}
