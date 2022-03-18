@@ -36,3 +36,6 @@ This theme bundles the following third-party resources:
 
 Laptop Photo from Piqsels, CC0
 https://www.piqsels.com/en/public-domain-photo-svvhe
+
+Tattooed woman from Wikimedia, CC0
+https://commons.wikimedia.org/wiki/File:Tattooed_woman_with_laptop_(Unsplash).jpg
