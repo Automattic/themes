@@ -59,8 +59,5 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'livro_styles' );
 
-
-add_action( 'admin_init', 'livro_editor_styles' );
-
 // Add block patterns
 require get_template_directory() . '/inc/block-patterns.php';
