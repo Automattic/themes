@@ -1,8 +1,8 @@
 <?php
 
-add_action( 'admin_notices', 'showAdminMessages' );
+add_action( 'admin_notices', 'show_admin_messages' );
 
-function showAdminMessages() {
+function show_admin_messages() {
 	$metadata = file_get_contents( get_stylesheet_directory() . '/style.css' );
 	preg_match( '/(?<=Requires Gutenberg:).+/', $metadata, $match );
 	if ( 0 === sizeof( $match ) ) {
