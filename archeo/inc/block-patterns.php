@@ -14,10 +14,10 @@
  */
 function archeo_register_block_patterns() {
 	$block_pattern_categories = array(
-		'images' => array( 'label' => __( 'Images', 'archeo' ) ),
+		'images'   => array( 'label' => __( 'Images', 'archeo' ) ),
 		'featured' => array( 'label' => __( 'Featured', 'archeo' ) ),
-		'footer' => array( 'label' => __( 'Footers', 'archeo' ) ),
-		'query' => array( 'label' => __( 'Query', 'archeo' ) ),
+		'footer'   => array( 'label' => __( 'Footers', 'archeo' ) ),
+		'query'    => array( 'label' => __( 'Query', 'archeo' ) ),
 	);
 
 	/**
@@ -43,37 +43,5 @@ function archeo_register_block_patterns() {
 		}
 	}
 
-	$block_patterns = array(
-		'footer',
-		'headline-over-dark-image',
-		'hidden-404',
-		'image-with-headline-on-dark-background',
-		'image-with-headline-description',
-		'image-with-headline-separate-description',
-		'image-with-description',
-		'layered-images-with-headline',
-		'image-with-description-and-right-aligned-headline',
-		'simple-list-of-posts',
-		'simple-list-of-posts-with-background',
-		'layout-with-two-images-and-text',
-	);
-
-	/**
-	 * Filters the theme block patterns.
-	 *
-	 * @since archeo 1.0
-	 *
-	 * @param array $block_patterns List of block patterns by name.
-	 */
-	$block_patterns = apply_filters( 'archeo_block_patterns', $block_patterns );
-
-	foreach ( $block_patterns as $block_pattern ) {
-		$pattern_file = get_theme_file_path( '/inc/patterns/' . $block_pattern . '.php' );
-
-		register_block_pattern(
-			'archeo/' . $block_pattern,
-			require $pattern_file
-		);
-	}
 }
 add_action( 'init', 'archeo_register_block_patterns', 9 );
