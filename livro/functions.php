@@ -61,3 +61,5 @@ add_action( 'wp_enqueue_scripts', 'livro_styles' );
 
 // Add block patterns
 require get_template_directory() . '/inc/block-patterns.php';
+
+require get_template_directory() . '/inc/gutenberg-dependency-check.php';
