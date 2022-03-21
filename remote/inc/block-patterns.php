@@ -52,6 +52,7 @@ function remote_register_block_patterns() {
 		'image-with-text',
 		'posts-grid',
 		'posts-list',
+		'subscribe',
 		'tags',
 		'categories',
 	);
