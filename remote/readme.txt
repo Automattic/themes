@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-
+Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a sans-serif font and dark background - contribute for a comfortable, immersive reading experience. It features a set of bold block patterns such as a large posts list and bordered categories and tags.
 
 == Changelog ==
 
