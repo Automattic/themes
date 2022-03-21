@@ -6,7 +6,7 @@ The development repository for themes maintained by the [Automattic Theme Team](
 
 We're committed to imagining and creating the future of themes. Our latest themes are [block themes](https://developer.wordpress.org/block-editor/how-to-guides/themes/block-theme-overview/) — they depend on the latest features available in the [Gutenberg plugin](https://wordpress.org/plugins/gutenberg/). Read about our latest themes built to support full-site editing [here](https://wordpress.com/blog/2022/03/09/customize-your-entire-site-with-new-block-themes/).
 
-<img width="1399" alt="Screen Shot 2022-03-21 at 1 31 48 PM" src="https://user-images.githubusercontent.com/5375500/159330814-8f8883f3-1cd4-44a6-a404-05c8f800ac93.png">
+<img width="1399" alt="A gallery of block themes with a variety of styles" src="https://user-images.githubusercontent.com/5375500/159330814-8f8883f3-1cd4-44a6-a404-05c8f800ac93.png">
 
 ## Contributing
 
