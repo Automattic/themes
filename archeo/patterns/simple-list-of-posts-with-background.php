@@ -3,6 +3,7 @@
  * Title: Simple list of posts with title and background
  * Slug: archeo/simple-list-of-posts-with-background
  * Categories: featured, query
+ * Block Types: query
  */
 ?>
 

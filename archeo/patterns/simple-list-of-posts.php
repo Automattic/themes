@@ -3,6 +3,7 @@
  * Title: Simple list of posts
  * Slug: archeo/simple-list-of-posts
  * Categories: featured, query
+ * Block Types: query
  */
 ?>
 
