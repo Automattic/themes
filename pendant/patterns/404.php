@@ -1,6 +1,7 @@
 <?php
 /**
- * Pattern Name: A 404 page
+ * Title: A 404 page
+ * slug: pendant/404
  * Inserter: no
  */
 

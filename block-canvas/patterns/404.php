@@ -1,7 +1,7 @@
 <?php
 /**
- * Pattern Name: A 404 page
- * Namespace: block-canvas
+ * Title: A 404 page
+ * Slug: block-canvas/404
  * Inserter: no
  */
 
