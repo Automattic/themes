@@ -15,14 +15,14 @@ function show_admin_messages() {
 		return; // Gutenberg is not required
 	}
 	$version = trim( $match[0] );
-	if( ! defined( 'IS_GUTENBERG_PLUGIN' ) ) {
+	if ( ! defined( 'IS_GUTENBERG_PLUGIN' ) ) {
 		print_admin_message( $version ); // Gutenberg is not activated
 		return;
 	}
 
 	// Determine Gutenberg version from defined constant
 	if ( defined( 'GUTENBERG_VERSION' ) ) {
-		if( version_compare( GUTENBERG_VERSION, $version ) < 0 ) {
+		if ( version_compare( GUTENBERG_VERSION, $version ) < 0 ) {
 			print_admin_message( $version );
 		}
 		return;
