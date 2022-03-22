@@ -5,8 +5,8 @@
 return array(
 	'title'      => __( 'Subscription form', 'remote' ),
 	'categories' => array( 'text', 'featured' ),
-	'content'    => '<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
-	<p style="text-transform:uppercase">' . esc_html__( 'Follow this blog', 'remote' ) . '</p>
+	'content'    => '<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} -->
+	<p class="has-small-font-size" style="text-transform:uppercase">' . esc_html__( 'Follow this blog', 'remote' ) . '</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph -->
