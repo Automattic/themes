@@ -9,7 +9,11 @@ function show_admin_messages() {
 		return;
 	}
 	$version = $match[0];
-	if( defined( 'IS_GUTENBERG_PLUGIN' ) ) {
+	if( defined( 'IS_GUTENBERG_PLUGIN' ) && defined( 'GUTENBERG_VERSION' ) ) {
+		if ( version_compare( GUTENBERG_VERSION, trim( $version ) ) >= 0 ) {
+			return;
+		}
+	}
 		$plugins = get_plugins();
 		foreach ( $plugins as $plugin ) {
 			if ( 'Gutenberg' === $plugin['Name'] ) {
