@@ -9,7 +9,7 @@ function show_admin_messages() {
 		return;
 	}
 	$version = $match[0];
-	if ( is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
+	if( defined( 'IS_GUTENBERG_PLUGIN' ) ) {
 		$plugins = get_plugins();
 		foreach ( $plugins as $plugin ) {
 			if ( 'Gutenberg' === $plugin['Name'] ) {
