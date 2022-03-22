@@ -28,16 +28,9 @@ function show_admin_messages() {
 		return;
 	}
 
-	if ( ! function_exists('get_plugins') ) {
-		// We can't check the version of Gutenberg that is installed, but have confirmed that it is installed and activated.
-		// We'll just hope for the best!
-		return;
-	}
-
 	// We have confirmed that Gutenberg is installed and activated, however we cannot use the GUTENBERG_VERSION constant
 	// (probably because we are in development mode)
-	// We have confirmed that get_plugins() is something we can call, so we'll use the metadata reported there to determine
-	// the version of Gutenberg
+	// we'll use the metadata from get_plugins() to determine the version of Gutenberg
 	$plugins = get_plugins();
 	foreach ( $plugins as $plugin ) {
 		if ( 'Gutenberg' === $plugin['Name'] ) {
@@ -47,4 +40,6 @@ function show_admin_messages() {
 			return;
 		}
 	}
+
+	// We weren't able to confirm the version, however we do know that it's installed and activated so we'll just hope for the best!
 }
