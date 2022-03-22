@@ -32,6 +32,8 @@ GNU General Public License for more details.
 
 Archeo is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
 
+Thank you to Neyma del Socorro Méndez Mex, Magdalena Mex Llanos, and Aida Mulato Salinas for providing the Mayan Translations that appear in the theme screenshot. 
+
 This theme bundles the following third-party resources:
 
 "Monumenal Figure, 9th Century", Metropolitan Museum of Art.
