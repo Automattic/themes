@@ -13,7 +13,9 @@ License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
 Text Domain: pendant
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
-*//*
+*/
+
+/*
  * Font smoothing
  */
 
@@ -104,20 +106,6 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 }
 
 /*
- * Responsive menu container padding.
- * This ensures the responsive container inherits the same
- * spacing defined above. This behavior may be built into
- * the Block Editor in the future.
- */
-
-.wp-block-navigation__responsive-container.is-menu-open {
-	padding-top: var(--wp--custom--gap--horizontal);
-	padding-bottom: var(--wp--custom--gap--vertical);
-	padding-right: var(--wp--custom--gap--horizontal);
-	padding-left: var(--wp--custom--gap--horizontal);
-}
-
-/*
  * Theme-specific adjustments to the default header. 
  * Since these adjustments can only be guaranteed if the theme is active they are
  * only used in the default header which is not provided as a pattern.
@@ -131,9 +119,11 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	flex-grow:0;
 }
 
+/* Wrapped menu rows shouldn't have much space between them */
 .pendant-header .wp-block-column ul {
 	row-gap: 0;
 }
+
 /* For mobile version of the header */
 @media (max-width: 599px) {
 	/* hide the 'search' column */
