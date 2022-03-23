@@ -67,7 +67,7 @@ add_action( 'wp_enqueue_scripts', 'archeo_styles' );
  *
  * @return void
  */
-function archeo_register_block_patterns() {
+function archeo_register_block_pattern_categories() {
 	$block_pattern_categories = array(
 		'images'   => array( 'label' => __( 'Images', 'archeo' ) ),
 		'featured' => array( 'label' => __( 'Featured', 'archeo' ) ),
