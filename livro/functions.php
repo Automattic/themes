@@ -23,6 +23,9 @@ if ( ! function_exists( 'livro_support' ) ) :
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
 
+		// Support the "Aside" post format.
+		add_theme_support( 'post-formats', array( 'aside' ) );
+
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
