@@ -27,8 +27,9 @@ return array(
     <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
     <!-- /wp:spacer -->
 
-    <!-- wp:query-pagination -->
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap","orientation":"horizontal"}} -->
     <!-- wp:query-pagination-previous /-->
+
     <!-- wp:query-pagination-next /-->
     <!-- /wp:query-pagination --></main>
     <!-- /wp:query --></div>
