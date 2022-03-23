@@ -194,7 +194,8 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  *   let’s use a placeholder to keep them all
  *   in-sync
  */
-button[data-load-more-btn], .button, button,
+button[data-load-more-btn],
+.button, button,
 input[type="submit"],
 .wp-block-button__link,
 .wp-block-file__button, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
@@ -211,10 +212,12 @@ input[type="submit"],
 	padding: 11.6px 11.6px;
 }
 
-button[data-load-more-btn]:before, .button:before, button:before,
+button[data-load-more-btn]:before,
+.button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
+.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after,
+.button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
 .wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
@@ -224,27 +227,32 @@ input[type="submit"]:after,
 	width: 0;
 }
 
-button[data-load-more-btn]:before, .button:before, button:before,
+button[data-load-more-btn]:before,
+.button:before, button:before,
 input[type="submit"]:before,
 .wp-block-button__link:before,
 .wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
 	margin-bottom: -0.12em;
 }
 
-button[data-load-more-btn]:after, .button:after, button:after,
+button[data-load-more-btn]:after,
+.button:after, button:after,
 input[type="submit"]:after,
 .wp-block-button__link:after,
 .wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
 	margin-top: -0.11em;
 }
 
+
 .button:not(.has-background):hover, button:not(.has-background):hover,
 input:not(.has-background):hover[type="submit"],
 .wp-block-button__link:not(.has-background):hover,
-.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
+.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover,
+.button:focus, button:focus,
 input:focus[type="submit"],
 .wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
+.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus,
+.has-focus.button, button.has-focus,
 input.has-focus[type="submit"],
 .has-focus.wp-block-button__link,
 .has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
@@ -1248,7 +1256,7 @@ object {
 .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
 [class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a,
 [style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
@@ -1259,7 +1267,7 @@ object {
 .has-background:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 [class*="background-color"]:not(.has-background-background-color) .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 [style*="background-color"] .wp-block-newspack-blocks-homepage-articles article .entry-title a:hover {
-	color: currentColor;
+	color: currentcolor;
 }
 
 @media only screen and (min-width: 560px) {
@@ -1282,7 +1290,7 @@ object {
 .wp-block-newspack-blocks-homepage-articles article .cat-links,
 [style*="background-color"]
 .wp-block-newspack-blocks-homepage-articles article .cat-links {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta > span > *,
@@ -1302,7 +1310,7 @@ object {
 
 .wp-block-newspack-blocks-homepage-articles article .entry-meta a,
 .wp-block-newspack-blocks-homepage-articles article .cat-links a {
-	color: currentColor;
+	color: currentcolor;
 	text-decoration: underline;
 }
 
@@ -1328,91 +1336,25 @@ object {
 .wp-block-newspack-blocks-homepage-articles article .cat-links a:active,
 [style*="background-color"]
 .wp-block-newspack-blocks-homepage-articles article .cat-links a:active {
-	color: currentColor;
+	color: currentcolor;
 }
 
-/**
- * Button Placeholder style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-button[data-load-more-btn], .button, button,
-input[type="submit"],
-.wp-block-button__link,
-.wp-block-file__button, .a8c-posts-list__view-all, .wp-block-search .wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept {
-	line-height: 1;
-	color: #FFFFFF;
-	cursor: pointer;
-	font-weight: 600;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-	font-family: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
-	font-size: 0.83333rem;
-	background-color: #000000;
-	border-width: 0;
-	text-decoration: none;
-	padding: 11.6px 11.6px;
-}
-
-button[data-load-more-btn]:before, .button:before, button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before, button[data-load-more-btn]:after, .button:after, button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
-	content: '';
-	display: block;
-	height: 0;
-	width: 0;
-}
-
-button[data-load-more-btn]:before, .button:before, button:before,
-input[type="submit"]:before,
-.wp-block-button__link:before,
-.wp-block-file__button:before, .a8c-posts-list__view-all:before, .wp-block-search .wp-block-search__button:before, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:before {
-	margin-bottom: -0.12em;
-}
-
-button[data-load-more-btn]:after, .button:after, button:after,
-input[type="submit"]:after,
-.wp-block-button__link:after,
-.wp-block-file__button:after, .a8c-posts-list__view-all:after, .wp-block-search .wp-block-search__button:after, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:after {
-	margin-top: -0.11em;
-}
-
-.button:not(.has-background):hover, button:not(.has-background):hover,
-input:not(.has-background):hover[type="submit"],
-.wp-block-button__link:not(.has-background):hover,
-.wp-block-file__button:not(.has-background):hover, .a8c-posts-list__view-all:not(.has-background):hover, .wp-block-search .wp-block-search__button:not(.has-background):hover, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:not(.has-background):hover, .button:focus, button:focus,
-input:focus[type="submit"],
-.wp-block-button__link:focus,
-.wp-block-file__button:focus, .a8c-posts-list__view-all:focus, .wp-block-search .wp-block-search__button:focus, body .widget_eu_cookie_law_widget #eu-cookie-law input.accept:focus, .has-focus.button, button.has-focus,
-input.has-focus[type="submit"],
-.has-focus.wp-block-button__link,
-.has-focus.wp-block-file__button, .has-focus.a8c-posts-list__view-all, .wp-block-search .has-focus.wp-block-search__button, body .widget_eu_cookie_law_widget #eu-cookie-law input.has-focus.accept {
-	color: #FFFFFF;
-	background-color: #FF7A5C;
-}
-
-/**
- * Onsale Placeholder style
- * - Since buttons appear in various blocks,
- *   let’s use a placeholder to keep them all
- *   in-sync
- */
-button[data-load-more-btn], .button {
+button[data-load-more-btn],
+.button {
 	display: inline-block;
 }
 
 .has-background:not(.has-background-background-color) button[data-load-more-btn],
 [class*="background-color"]:not(.has-background-background-color) button[data-load-more-btn],
-[style*="background-color"] button[data-load-more-btn], .has-background:not(.has-background-background-color) .button,
-[class*="background-color"]:not(.has-background-background-color) .button,
-[style*="background-color"] .button {
+[style*="background-color"] button[data-load-more-btn], .has-background:not(.has-background-background-color)
+.button,
+[class*="background-color"]:not(.has-background-background-color)
+.button,
+[style*="background-color"]
+.button {
 	background-color: transparent;
-	border: 2px solid currentColor;
-	color: currentColor;
+	border: 2px solid currentcolor;
+	color: currentcolor;
 }
 
 /**
@@ -2519,7 +2461,7 @@ table.is-style-stripes tbody tr:nth-child(odd),
 .has-background h4:not(.has-text-color),
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .has-primary-background-color,
