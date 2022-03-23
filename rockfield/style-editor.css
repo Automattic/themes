@@ -135,6 +135,7 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 	--wp--preset--color--background: white;
 	--wp--preset--color--background-low-contrast: #F0F0F0;
 	--wp--preset--color--background-high-contrast: #E0E0E0;
+	--wp--preset--color--tertiary: #E0E0E0;
 	--wp--preset--color--border: #E0E0E0;
 	--wp--preset--color--border-low-contrast: #D0D0D0;
 	--wp--preset--color--border-high-contrast: #F0F0F0;
@@ -671,7 +672,7 @@ object {
 
 .wp-block-cover h2,
 .wp-block-cover-image h2 {
-	font-size: 2.48832em;
+	font-size: 2.48832;
 	letter-spacing: normal;
 	line-height: 1.125;
 	padding: 0;
@@ -1103,7 +1104,7 @@ pre.wp-block-verse {
 	font-family: Lora, Baskerville, Georgia, Times, serif;
 	font-family: var(--font-headings, Lora, Baskerville, Georgia, Times, serif);
 	font-weight: bold;
-	font-size: 2.48832em;
+	font-size: 2.48832;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -1148,6 +1149,11 @@ pre.wp-block-verse {
 	color: var(--wp--preset--color--background);
 }
 
+.wp-block .has-tertiary-color,
+.has-tertiary-color {
+	color: var(--wp--preset--color--tertiary);
+}
+
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),
@@ -1155,7 +1161,7 @@ pre.wp-block-verse {
 .has-background h4:not(.has-text-color),
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .has-primary-background-color,
@@ -1242,28 +1248,38 @@ pre.wp-block-verse {
 	color: var(--wp--preset--color--foreground);
 }
 
+.has-tertiary-background-color,
+.has-tertiary-background-color.has-background-dim {
+	background-color: var(--wp--preset--color--tertiary);
+}
+
+.has-tertiary-background-color:not(.has-text-color),
+.has-tertiary-background-color.has-background-dim:not(.has-text-color) {
+	color: var(--wp--preset--color--foreground);
+}
+
 .is-small-text,
 .has-small-font-size {
-	font-size: 0.83333em;
+	font-size: 0.83333;
 }
 
 .is-regular-text,
 .has-regular-font-size,
 .has-normal-font-size,
 .has-medium-font-size {
-	font-size: 1.2em;
+	font-size: 1.2;
 }
 
 .is-large-text,
 .has-large-font-size {
-	font-size: 1.44em;
+	font-size: 1.44;
 	line-height: 1.125;
 }
 
 .is-larger-text,
 .has-larger-font-size,
 .has-huge-font-size {
-	font-size: 1.728em;
+	font-size: 1.728;
 	line-height: 1.125;
 }
 
