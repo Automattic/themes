@@ -135,6 +135,7 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 	--wp--preset--color--background: white;
 	--wp--preset--color--background-low-contrast: #C5C5C5;
 	--wp--preset--color--background-high-contrast: #F8F8F8;
+	--wp--preset--color--tertiary: #C5C5C5;
 	--wp--preset--color--border: #C5C5C5;
 	--wp--preset--color--border-low-contrast: #A5A5A5;
 	--wp--preset--color--border-high-contrast: #F8F8F8;
@@ -674,7 +675,7 @@ object {
 
 .wp-block-cover h2,
 .wp-block-cover-image h2 {
-	font-size: 2.01136em;
+	font-size: 2.01136;
 	letter-spacing: normal;
 	line-height: 1.125;
 	padding: 0;
@@ -1106,7 +1107,7 @@ pre.wp-block-verse {
 	font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-family: var(--font-headings, "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
-	font-size: 2.01136em;
+	font-size: 2.01136;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -1151,6 +1152,11 @@ pre.wp-block-verse {
 	color: var(--wp--preset--color--background);
 }
 
+.wp-block .has-tertiary-color,
+.has-tertiary-color {
+	color: var(--wp--preset--color--tertiary);
+}
+
 .has-background p:not(.has-text-color),
 .has-background h1:not(.has-text-color),
 .has-background h2:not(.has-text-color),
@@ -1158,7 +1164,7 @@ pre.wp-block-verse {
 .has-background h4:not(.has-text-color),
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .has-primary-background-color,
@@ -1245,28 +1251,38 @@ pre.wp-block-verse {
 	color: var(--wp--preset--color--foreground);
 }
 
+.has-tertiary-background-color,
+.has-tertiary-background-color.has-background-dim {
+	background-color: var(--wp--preset--color--tertiary);
+}
+
+.has-tertiary-background-color:not(.has-text-color),
+.has-tertiary-background-color.has-background-dim:not(.has-text-color) {
+	color: var(--wp--preset--color--foreground);
+}
+
 .is-small-text,
 .has-small-font-size {
-	font-size: 0.86957em;
+	font-size: 0.86957;
 }
 
 .is-regular-text,
 .has-regular-font-size,
 .has-normal-font-size,
 .has-medium-font-size {
-	font-size: 1.15em;
+	font-size: 1.15;
 }
 
 .is-large-text,
 .has-large-font-size {
-	font-size: 1.3225em;
+	font-size: 1.3225;
 	line-height: 1.125;
 }
 
 .is-larger-text,
 .has-larger-font-size,
 .has-huge-font-size {
-	font-size: 1.52087em;
+	font-size: 1.52087;
 	line-height: 1.125;
 }
 
