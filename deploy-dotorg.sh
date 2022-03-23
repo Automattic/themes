@@ -16,6 +16,7 @@ rm -rf ./deploy
 # Look into all the themes we expect to deploy
 
 declare -a THEMES_TO_DEPLOY=(
+	"archeo"
 	"blockbase" 
 	"zoologist"
 	"geologist"
