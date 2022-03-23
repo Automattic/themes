@@ -13,8 +13,8 @@ return array(
     <!-- /wp:separator -->
 
     <!-- wp:columns {"style":{"spacing":{"padding":{"top":"1em"}}}} -->
-    <div class="wp-block-columns" style="padding-top:1em"><!-- wp:column {"verticalAlignment":"top","width":"10%"} -->
-    <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:10%"><!-- wp:post-date {"format":"M j","fontSize":"small"} /--></div>
+    <div class="wp-block-columns" style="padding-top:1em"><!-- wp:column {"verticalAlignment":"top","width":"10%","style":{"spacing":{"padding":{"top":"1em"}}}} -->
+    <div class="wp-block-column is-vertically-aligned-top" style="padding-top:1em;flex-basis:10%"><!-- wp:post-date {"format":"M j","fontSize":"small"} /--></div>
     <!-- /wp:column -->
 
     <!-- wp:column {"verticalAlignment":"center","width":""} -->
