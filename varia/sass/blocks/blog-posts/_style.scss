@@ -1,17 +1,21 @@
 .wp-block-newspack-blocks-homepage-articles {
+
 	&.image-aligntop {
+
 		.post-thumbnail {
 			margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 
 	&.image-alignleft {
+
 		.post-thumbnail {
 			margin-right: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 
 	&.image-alignright {
+
 		.post-thumbnail {
 			margin-left: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
@@ -64,6 +68,7 @@
 		}
 
 		.entry-wrapper > * {
+
 			/* Vertical margins logic between post details */
 			margin-top: #{map-deep-get($config-global, "spacing", "unit")};
 			margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
@@ -78,6 +83,7 @@
 		}
 
 		.entry-title {
+
 			a {
 				color: #{map-deep-get($config-global, "color", "primary", "default")};
 
@@ -101,6 +107,7 @@
 		}
 
 		.more-link {
+
 			@include media(mobile) {
 				margin-top: #{map-deep-get($config-global, "spacing", "unit")};
 			}
@@ -149,8 +156,8 @@
 	}
 }
 
-@import "../../base/extends";
-button[data-load-more-btn], .button {
+button[data-load-more-btn],
+.button {
 	// Extend button style
 	@extend %button-style;
 	display: inline-block;
