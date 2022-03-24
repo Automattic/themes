@@ -13,10 +13,10 @@ function show_admin_messages() {
 	if ( is_child_theme() ) {
 		$metadata = file_get_contents( get_template_directory() . '/style.css' );
 		preg_match( '/(?<=Requires Gutenberg:).+/', $metadata, $match );
-	}
 
-	if ( sizeof( $match ) > 0 ) {
-		$version = trim( $match[0] );
+		if ( sizeof( $match ) > 0 ) {
+			$version = trim( $match[0] );
+		}
 	}
 
 	$metadata = file_get_contents( get_stylesheet_directory() . '/style.css' );
