@@ -25,6 +25,42 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 }
 
 /*
+ * Opinionated Style for Anchors.
+ * Anchors get a thin underline offset more than default.
+ * Headings get slightly different dimensions.
+ * Any anchors IN the content are underlined by default, then none on hover.
+ * Any anchors OUT of the content behave the opposite.
+ * Buttons have no underlines.
+ */
+a {
+	cursor: pointer;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 0.05em;
+	text-decoration-line: none;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-underline-offset: 0.15em;
+	text-decoration-thickness: 0.02em;
+}
+a:hover,
+a:focus {
+	text-decoration-line: underline;
+}
+.block-editor-block-list__layout a,
+.wp-block-post-content a {
+	text-decoration-line: underline;
+}
+.block-editor-block-list__layout a:hover,
+.block-editor-block-list__layout a:focus,
+.wp-block-post-content a:focus,
+.wp-block-post-content a:hover {
+	text-decoration: none;
+}
+ .wp-block-post-content .wp-block-button a {
+	text-decoration: none;
+}
+
+/*
  * Button hover styles.
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
@@ -33,7 +69,16 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
-	background-color: var(--wp--preset--color--primary);
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+	border: 2px solid var(--wp--preset--color--foreground);
+    	padding: 0.667em 1.333em;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--foreground);
 }
 
 /*
