@@ -263,7 +263,8 @@ input[type=time],
 input[type=datetime],
 input[type=datetime-local],
 input[type=color],
-textarea {
+textarea,
+select {
   background: var(--wp--custom--form--color--background);
   border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
   border-radius: var(--wp--custom--form--border--radius);
@@ -288,17 +289,18 @@ input[type=time]:focus,
 input[type=datetime]:focus,
 input[type=datetime-local]:focus,
 input[type=color]:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   border-color: var(--custom--form--color--border);
   color: var(--wp--custom--form--color--text);
-  outline: 1px dotted currentColor;
+  outline: 1px dotted currentcolor;
   outline-offset: 2px;
 }
 
 input[type=checkbox]:focus,
 input[type=submit]:focus,
 button:focus {
-  outline: 1px dotted currentColor;
+  outline: 1px dotted currentcolor;
   outline-offset: 2px;
 }
 input[type=checkbox]::placeholder,
@@ -309,7 +311,6 @@ button::placeholder {
 }
 
 select {
-  font-family: inherit;
   font-size: 100%;
 }
 
@@ -514,7 +515,7 @@ input[type=checkbox] + label {
   flex-wrap: nowrap;
 }
 .wp-block-navigation.blockbase-responsive-navigation-minimal.is-responsive .is-menu-open.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content .wp-block-navigation-item {
-  row-gap: 0rem;
+  row-gap: 0;
 }
 .wp-block-navigation.blockbase-responsive-navigation-minimal.is-responsive .is-menu-open.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content .wp-block-navigation-item > a:hover {
   -webkit-text-decoration-line: underline;
@@ -593,7 +594,7 @@ input[type=checkbox] + label {
   flex-direction: column;
 }
 
-p.has-drop-cap:not(:focus):first-letter {
+p.has-drop-cap:not(:focus)::first-letter {
   font-size: var(--wp--custom--paragraph--dropcap--typography--font-size);
   font-weight: var(--wp--custom--paragraph--dropcap--typography--font-weight);
   margin: var(--wp--custom--paragraph--dropcap--margin);
