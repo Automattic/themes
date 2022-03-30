@@ -23,6 +23,9 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Experimental support for adding blocks inside nav menus
 		add_theme_support( 'block-nav-menus' );
 
+		// Add support for block styles.
+		add_theme_support( 'wp-block-styles' );
+
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
