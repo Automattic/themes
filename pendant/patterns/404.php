@@ -7,8 +7,8 @@
 
 ?>
 
-<!-- wp:heading {"textAlign":"left","level":2,"align":"wide","style":{"typography":{"fontSize":"clamp(2rem, 12vw, 8rem)"}}} -->
-<h2 class="alignwide has-text-align-left" id="oops-that-page-can-t-be-found" style="font-size:clamp(2rem, 12vw, 8rem)"><?php echo esc_html__( 'There\'s nothing here.', 'pendant' ); ?></h2>
+<!-- wp:heading {"textAlign":"left","level":1,"align":"wide"} -->
+<h1 class="alignwide has-text-align-left" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'There\'s nothing here.', 'pendant' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"0.8em"} -->
