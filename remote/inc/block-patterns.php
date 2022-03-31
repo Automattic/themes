@@ -13,8 +13,13 @@
  * @return void
  */
 function remote_register_block_patterns() {
+
+	//Needed until https://github.com/WordPress/gutenberg/issues/39500 is fixed.
 	$block_pattern_categories = array(
-		'pages' => array( 'label' => __( 'Pages', 'remote' ) ),
+		'featured' => array( 'label' => __( 'Featured', 'remote' ) ),
+		'columns'  => array( 'label' => __( 'Columns', 'remote' ) ),
+		'text'     => array( 'label' => __( 'Text', 'remote' ) ),
+		'query'    => array( 'label' => __( 'Query', 'remote' ) ),
 	);
 
 	/**
@@ -42,10 +47,14 @@ function remote_register_block_patterns() {
 
 	$block_patterns = array(
 		'hero-text',
+		'large-quote',
+		'small-quote',
 		'hidden-404-content',
 		'hidden-search-form',
+		'image-with-text',
 		'posts-grid',
 		'posts-list',
+		'subscribe',
 		'tags',
 		'categories',
 	);

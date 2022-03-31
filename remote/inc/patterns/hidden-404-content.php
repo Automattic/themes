@@ -5,8 +5,8 @@
 return array(
 	'title'    => __( '404 content', 'remote' ),
 	'inserter' => false,
-	'content'  => '<!-- wp:heading {"style":{"typography":{"fontSize":"clamp(4rem, 40vw, 20rem)","fontWeight":"100","lineHeight":"1"}},"className":"has-text-align-center"} -->
-	<h2 class="has-text-align-center" style="font-size:clamp(4rem, 40vw, 20rem);font-weight:100;line-height:1">' . esc_html( _x( '404', 'Error code for a webpage that is not found.', 'remote' ) ) . '</h2>
+	'content'  => '<!-- wp:heading {"style":{"typography":{"fontSize":"min(max(42px, 5vw), 72px)","fontWeight":"100","lineHeight":"1"}},"className":"has-text-align-center"} -->
+	<h2 class="has-text-align-center" style="font-size:min(max(42px, 5vw), 72px);font-weight:100;line-height:1">' . esc_html( _x( '404', 'Error code for a webpage that is not found.', 'remote' ) ) . '</h2>
 	<!-- /wp:heading -->
 	<!-- wp:paragraph {"align":"center"} -->
 	<p class="has-text-align-center">' . esc_html__( 'This page could not be found. Maybe try a search?', 'remote' ) . '</p>

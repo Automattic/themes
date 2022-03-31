@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-
+Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a sans-serif font and dark background - contribute for a comfortable, immersive reading experience. It features a set of bold block patterns such as a large posts list and bordered categories and tags.
 
 == Changelog ==
 
@@ -29,3 +29,13 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Remote is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
+
+This theme bundles the following third-party resources:
+
+Laptop Photo from Piqsels, CC0
+https://www.piqsels.com/en/public-domain-photo-svvhe
+
+Tattooed woman from Wikimedia, CC0
+https://commons.wikimedia.org/wiki/File:Tattooed_woman_with_laptop_(Unsplash).jpg

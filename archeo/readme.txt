@@ -3,13 +3,12 @@ Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A clean portfolio theme
+A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
@@ -32,6 +31,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Archeo is derived from Twenty Twenty-Two, (C) 2021-2022 WordPress.org.
+
+Thank you to Neyma del Socorro Méndez Mex and Magdalena Mex Llanos from the Yokdzonot, Yaxkaba (Yucatán) community for providing the Mayan Translations that appear in the theme screenshot, and to Aida Mulato Salinas for helping connect us. 
 
 This theme bundles the following third-party resources:
 

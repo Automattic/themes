@@ -4,17 +4,21 @@
  * .alignleft
  */
 .alignleft {
+
 	/*rtl:ignore*/
 	text-align: left;
+
 	/*rtl:ignore*/
 	float: left;
 	margin-top: 0;
+
 	/*rtl:ignore*/
 	margin-right: #{map-deep-get($config-global, "spacing", "horizontal")};
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
 }
 
 .entry-content > .alignleft {
+
 	/*rtl:ignore*/
 	float: left;
 
@@ -37,15 +41,18 @@
  * .alignright
  */
 .alignright {
+
 	/*rtl:ignore*/
 	float: right;
 	margin-top: 0;
 	margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
+
 	/*rtl:ignore*/
 	margin-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 }
 
 .entry-content > .alignright {
+
 	/*rtl:ignore*/
 	float: right;
 
@@ -64,6 +71,7 @@
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.wp-block-button):not(.entry-attachment),
 .entry-content > *:not(.wp-block-button),
 .entry-content [class*="inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator) {
+
 	@extend %responsive-aligndefault;
 }
 
@@ -75,10 +83,12 @@
 }
 
 .entry-content > .alignwide {
+
 	@extend %responsive-alignwide;
 }
 
 .entry-content > .alignwide [class*="inner-container"] > .alignwide {
+
 	@extend %responsive-alignwide-nested;
 }
 
@@ -90,10 +100,12 @@
 }
 
 .entry-content > .alignfull {
+
 	@extend %responsive-alignfull;
 }
 
 .entry-content > .alignfull [class*="inner-container"] > .alignwide {
+
 	@extend %responsive-alignwide-nested;
 }
 
@@ -147,8 +159,16 @@
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
+@if map-has-key(map-deep-get($config-global, "color"), "tertiary") {
+
+	.has-tertiary-color {
+		color: #{map-deep-get($config-global, "color", "tertiary", "default")};
+	}
+}
+
 // Gutenberg background-color options
 .has-background {
+
 	p:not(.has-text-color),
 	h1:not(.has-text-color),
 	h2:not(.has-text-color),
@@ -169,6 +189,7 @@
 .has-primary-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
+
 .has-secondary-background-color,
 .has-secondary-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -242,6 +263,19 @@
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
+@if map-has-key(map-deep-get($config-global, "color"), "tertiary") {
+
+	.has-tertiary-background-color,
+	.has-tertiary-background-color.has-background-dim {
+		background-color: #{map-deep-get($config-global, "color", "tertiary", "default")};
+	}
+
+	.has-tertiary-background-color:not(.has-text-color),
+	.has-tertiary-background-color.has-background-dim:not(.has-text-color) {
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	}
+}
+
 // Gutenberg Font-size options
 .is-small-text,
 .has-small-font-size {
@@ -270,8 +304,9 @@
 
 // Drop caps
 .has-drop-cap:not(:focus)::first-letter {
+
 	@include font-family( map-deep-get($config-heading, "font", "family") );
-	font-size: calc(2 * #{map-deep-get($config-heading, "font", "size", "h1")} );
+	font-size: calc(2 * #{map-deep-get($config-heading, "font", "size", "h1")});
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
 	line-height: 0.66;
 	text-transform: uppercase;

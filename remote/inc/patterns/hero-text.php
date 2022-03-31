@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Hero text', 'remote' ),
-	'categories' => array( 'pages' ),
+	'categories' => array( 'text', 'featured' ),
 	'content'    => '<!-- wp:group {"align":"wide"} -->
     <div class="wp-block-group alignwide"><!-- wp:spacer {"height":"32px"} -->
     <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
