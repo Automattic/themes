@@ -23,7 +23,8 @@
 </p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo  esc_html__( 'Search', 'pendant' ); ?>","width":100,"widthUnit":"%","buttonText":"<?php echo  esc_html__( 'Search', 'pendant' ); ?>","style":{"border":{"radius":"0px"}},"className":"custom-404-wp-search"} /-->
+<!-- wp:search {"showLabel":false,"placeholder":"<?php echo  esc_html__( 'Search…', 'pendant' ); ?>","width":500,"widthUnit":"px","buttonText":"<?php echo  esc_html__( 'Search', 'pendant' ); ?>","buttonPosition":"button-inside"} /-->
+
 </div>
 <!-- /wp:group -->
 
