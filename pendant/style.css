@@ -72,7 +72,7 @@ a:focus {
 	background-color: var(--wp--preset--color--background);
 	color: var(--wp--preset--color--foreground);
 	border: 2px solid var(--wp--preset--color--foreground);
-    	padding: 0.667em 1.333em;
+    	padding: 0.667em 1.333em !important;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
@@ -87,15 +87,25 @@ a:focus {
  * https://github.com/WordPress/gutenberg/issues/36444
  * https://github.com/WordPress/gutenberg/issues/27760
  */
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	padding: 0;
+	border-color: var(--wp--preset--color--foreground);
+}
 
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+	padding-left: 1em;
+}
 .wp-block-search__button,
 .wp-block-file .wp-block-file__button {
 	background-color: var(--wp--preset--color--foreground);
-	border-radius: 0;
-	border: none;
 	color: var(--wp--preset--color--background);
-	font-size: var(--wp--preset--typography--font-size--normal);
-	padding: calc(0.667em + 2px) calc(1.333em + 2px);
+	font-size: var(--wp--preset--typography--font-size--medium);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1.7;
+	border:none;
+	padding: calc(0.667em + 2px) calc(1.333em + 2px) !important;
 }
 
 /*
@@ -156,4 +166,8 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	margin-left: auto !important;
 	margin-right: auto !important;
 	width: inherit;
+}
+
+.custom-404-wp-search {
+	max-width: 500px;
 }
