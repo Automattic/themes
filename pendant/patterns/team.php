@@ -1,45 +1,12 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<?php
+/**
+ * Title: Team
+ * slug: pendant/team
+ */
+?>
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px"},"padding":{"top":"6vw","bottom":"6vw"}}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true}} -->
-<div class="wp-block-group has-background-color has-foreground-background-color has-text-color has-background" style="margin-top:0px;padding-top:6vw;padding-bottom:6vw"><!-- wp:columns {"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"width":"40%"} -->
-<div class="wp-block-column" style="flex-basis:40%"><!-- wp:heading {"level":1,"align":"wide"} -->
-<h1 class="alignwide">About</h1>
-<!-- /wp:heading --></div>
-<!-- /wp:column -->
-
-<!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"id":1713,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://localhost:4759/wp-content/uploads/2022/04/person-in-dress-at-shore.jpg" alt="" class="wp-image-1713"/></figure>
-<!-- /wp:image -->
-
-<!-- wp:heading {"level":4} -->
-<h4>Mia Moore, Jewelry lover</h4>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-<p><em>“The more I learn about jewelry and dive into its history, the more I love it. Getting to know the meanings behind objects in particular moments in time, how they translated into status, wealth or power. Jewelry has always been a way to communicate and distinguish and with the evolution of society, it turned into another way of expression, like clothing. I’m passionate about how we use it to express who we really are.”</em></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"10vw","bottom":"10vw"}}},"layout":{"inherit":true}} -->
-<div class="wp-block-group" style="padding-top:10vw;padding-bottom:10vw"><!-- wp:heading {"level":3} -->
-<h3>Mia founded the blog with a group of people that shared the same passion for jewelry, its history and handcraft.</h3>
-<!-- /wp:heading --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"layout":{"inherit":true}} -->
-<div class="wp-block-group"><!-- wp:media-text {"align":"full","mediaId":1717,"mediaLink":"http://localhost:4759/?attachment_id=1717","mediaType":"image","mediaWidth":40,"mediaSizeSlug":"full","backgroundColor":"secondary"} -->
-<div class="wp-block-media-text alignfull is-stacked-on-mobile has-secondary-background-color has-background" style="grid-template-columns:40% auto"><figure class="wp-block-media-text__media"><img src="http://localhost:4759/wp-content/uploads/2022/04/person_and_shadow_on_wall.jpeg" alt="" class="wp-image-1717 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:quote {"className":"is-style-plain"} -->
-<blockquote class="wp-block-quote is-style-plain"><p>"We're very lucky to be able to write about our passion and interview those whose work we admire."</p><cite>Marie, editor for PNDNT</cite></blockquote>
-<!-- /wp:quote --></div></div>
-<!-- /wp:media-text --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"5vw","bottom":"5vw"}}},"layout":{"inherit":true}} -->
-<div class="wp-block-group" style="padding-top:5vw;padding-bottom:5vw"><!-- wp:columns {"align":"wide"} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"5vw","bottom":"5vw"}}},"layout":{"inherit":true}} -->
+<div class="wp-block-group alignwide" style="padding-top:5vw;padding-bottom:5vw"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%","style":{"spacing":{"padding":{"top":"7vw"}}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="padding-top:7vw;flex-basis:25%"><!-- wp:heading {"level":3} -->
 <h3>The Team</h3>
@@ -115,5 +82,3 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer-container"} /-->
