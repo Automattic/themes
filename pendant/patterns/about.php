@@ -9,7 +9,7 @@
 <div class="wp-block-group alignfull has-background-color has-foreground-background-color has-text-color has-background" style="margin-top:0px;padding-top:6vw;padding-bottom:6vw"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"42%"} -->
 <div class="wp-block-column" style="flex-basis:42%"><!-- wp:heading {"level":1,"align":"wide"} -->
-<h1 class="alignwide">About</h1>
+<h1 class="alignwide"><?php echo  esc_html__( 'About', 'pendant' ); ?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -23,7 +23,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><em>“The more I learn about jewelry and dive into its history, the more I love it. Getting to know the meanings behind objects in particular moments in time, how they translated into status, wealth or power. Jewelry has always been a way to communicate and distinguish and with the evolution of society, it turned into another way of expression, like clothing. I’m passionate about how we use it to express who we really are.”</em></p>
+<p><em><?php echo  esc_html__( '“The more I learn about jewelry and dive into its history, the more I love it. Getting to know the meanings behind objects in particular moments in time, how they translated into status, wealth or power. Jewelry has always been a way to communicate and distinguish and with the evolution of society, it turned into another way of expression, like clothing. I’m passionate about how we use it to express who we really are.”', 'pendant' ); ?></em></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

@@ -9,7 +9,7 @@
 <div class="wp-block-group alignwide" style="padding-top:5vw;padding-bottom:5vw"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%","style":{"spacing":{"padding":{"top":"7vw"}}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="padding-top:7vw;flex-basis:25%"><!-- wp:heading {"level":3} -->
-<h3>The Team</h3>
+<h3><?php echo  esc_html__( 'The Team', 'pendant' ); ?></h3>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
