@@ -4,7 +4,7 @@ add_action( 'admin_notices', 'show_admin_messages' );
 
 function print_admin_message( $version ) {
 	echo '<div id="message" class="error"><p><strong>';
-	printf( __( 'The installed theme requires <a href="https://wordpress.org/plugins/gutenberg/">Gutenberg</a> version %s or higher.', 'livro' ), $version );
+	printf( __( 'The installed theme requires <a href="https://wordpress.org/plugins/gutenberg/">Gutenberg</a> version %s or higher.', 'blockbase' ), $version );
 	echo '</strong></p></div>';
 }
 
