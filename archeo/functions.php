@@ -99,4 +99,4 @@ function archeo_register_block_pattern_categories() {
 	}
 
 }
-add_action( 'init', 'archeo_register_block_patterns', 9 );
+add_action( 'init', 'archeo_register_block_pattern_categories', 9 );
