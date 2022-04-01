@@ -19,10 +19,11 @@ if ( ! function_exists( 'pendant_support' ) ) :
 	 * @return void
 	 */
 	function pendant_support() {
+		// Add support for block styles.
+		add_theme_support( 'wp-block-styles' );
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
-
 	}
 
 endif;
