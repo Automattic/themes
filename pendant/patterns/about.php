@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: An About Pattern
+ * Title: About
  * slug: pendant/about
  */
 ?>
