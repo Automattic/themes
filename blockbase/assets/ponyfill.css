@@ -217,6 +217,17 @@ body.admin-bar .wp-site-blocks {
   margin-top: 0 !important;
 }
 
+/* 
+Remove the normalized box-sizing: border-box when used with Woo's quantity field,
+because Woo limits the field's width to 50px, 
+which leaves no space for the context between 50px and 20px padding and the spinner arrows (that come from type=number)
+
+See: https://github.com/Automattic/wp-calypso/issues/58958#issuecomment-1015263777
+*/
+.quantity .qty {
+  box-sizing: content-box;
+}
+
 /**
  * Elements
  * - Styles for basic HTML elemants
