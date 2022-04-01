@@ -24,16 +24,16 @@ $config-global: (
 		"family": (
 			"primary": (
 				"fallback": "\"Poppins\"\, sans-serif",
-				"css-var": '--font-headings',
+				"css-var": "--font-headings",
 			),
 			"secondary": (
 				"fallback": "\"Lato\"\, sans-serif",
-				"css-var": '--font-base',
+				"css-var": "--font-base",
 			),
 			"code": "\"Inconsolata\"\, monospace",
 			"ui": (
 				"fallback": "-apple-system\, BlinkMacSystemFont\, \"Segoe UI\"\, \"Roboto\"\, \"Oxygen\"\, \"Ubuntu\"\, \"Cantarell\"\, \"Fira Sans\"\, \"Droid Sans\"\, \"Helvetica Neue\"\, sans-serif",
-				"css-var": '--font-base'
+				"css-var": "--font-base"
 			),
 		),
 		/* Font Size */
@@ -105,7 +105,15 @@ $config-global: (
 	),
 );
 
-$config-global: map-merge($color-variables, $config-global);
+$child-theme-colors: map-extend($color-variables, (
+	"color": (
+		"tertiary": (
+			"default": "var(--wp--preset--color--tertiary)"
+		)
+	)
+), true);
+
+$config-global: map-merge($child-theme-colors, $config-global);
 
 /**
  * Elements
