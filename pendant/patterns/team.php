@@ -15,8 +15,8 @@
 
 <!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5vw","bottom":"3vw"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"id":1745,"sizeSlug":"full","linkDestination":"none","className":"is-resized is-style-default"} -->
-<figure class="wp-block-image size-full is-resized is-style-default"><img src="http://localhost:4759/wp-content/uploads/2022/04/smiling-woman-1.jpeg" alt="" class="wp-image-1745"/></figure>
+<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/smiling-woman-1.jpeg'; ?>" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -31,8 +31,8 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5vw","bottom":"3vw"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"id":1747,"sizeSlug":"full","linkDestination":"none","className":"is-resized"} -->
-<figure class="wp-block-image size-full is-resized"><img src="http://localhost:4759/wp-content/uploads/2022/04/smiling-woman-3.jpeg" alt="" class="wp-image-1747"/></figure>
+<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/smiling-woman-3.jpeg'; ?>" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -49,8 +49,8 @@
 
 <!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5vw","bottom":"3vw"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"id":1746,"sizeSlug":"full","linkDestination":"none","className":"is-resized"} -->
-<figure class="wp-block-image size-full is-resized"><img src="http://localhost:4759/wp-content/uploads/2022/04/smiling-woman-2.jpeg" alt="" class="wp-image-1746"/></figure>
+<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/smiling-woman-2.jpeg'; ?>" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -65,8 +65,8 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1.5vw","bottom":"3vw"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"id":1748,"sizeSlug":"full","linkDestination":"none","className":"is-resized"} -->
-<figure class="wp-block-image size-full is-resized"><img src="http://localhost:4759/wp-content/uploads/2022/04/man-with-backward-cap.jpeg" alt="" class="wp-image-1748"/></figure>
+<div class="wp-block-group" style="padding-top:1.5vw;padding-bottom:3vw"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized is-style-default"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/man-with-backward-cap.jpeg'; ?>" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->

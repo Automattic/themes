@@ -14,8 +14,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"id":1713,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://localhost:4759/wp-content/uploads/2022/04/person-in-dress-at-shore.jpg" alt="" class="wp-image-1713"/></figure>
+<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/person-in-dress-at-shore.jpg'; ?>" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":4} -->
