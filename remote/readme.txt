@@ -39,3 +39,6 @@ https://www.piqsels.com/en/public-domain-photo-svvhe
 
 Tattooed woman from Wikimedia, CC0
 https://commons.wikimedia.org/wiki/File:Tattooed_woman_with_laptop_(Unsplash).jpg
+
+Desk photo from Rawpixel, CC0
+https://www.rawpixel.com/image/5966102/macbook-modern-desk
