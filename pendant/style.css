@@ -7,7 +7,7 @@ Description: An elegant product-focused theme
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.5
+Version: 0.0.7
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
@@ -175,13 +175,18 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	width: inherit;
 }
 
-.custom-404-wp-search {
-	max-width: 500px;
-}
-
 /* We are unable to style the "cite" element in the quote block */
 .wp-block-quote cite {
 	font-family: var(--wp--preset--font-family--body-font);
 	font-style: italic;
 	font-size: var(--wp--preset--font-size--x-small);
+}
+
+/** Navigation sub-menu items **/
+.wp-block-navigation .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: 2.6;
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: 0.1em;
 }

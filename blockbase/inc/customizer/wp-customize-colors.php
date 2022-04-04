@@ -152,7 +152,18 @@ class GlobalStylesColorCustomizer {
 		$new_settings['color']['palette']['theme'] = $this->user_color_palette;
 		// We used to set the values in 'custom' but moved to 'theme' to mirror GS functionality.
 		// This ensures that new saves don't store the customizations in both places.
-		unset($new_settings['color']['palette']['custom']);
+		if($new_settings['color']['palette']['custom']) {
+			foreach ( $new_settings['color']['palette']['theme'] as $theme_color ) {
+				foreach ( $new_settings['color']['palette']['custom'] as $key => $custom_color ) {
+					if( $theme_color['slug'] === $custom_color['slug'] ) {
+						unset( $new_settings['color']['palette']['custom'][$key] );
+					}
+				}
+			}
+			if ( ! $new_settings['color']['palette']['custom'] ) {
+				unset ( $new_settings['color']['palette']['custom'] );
+			}
+		}
 
 		// Add the updated global styles to the update request
 		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );

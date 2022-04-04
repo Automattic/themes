@@ -217,6 +217,17 @@ body.admin-bar .wp-site-blocks {
   margin-top: 0 !important;
 }
 
+/* 
+Remove the normalized box-sizing: border-box when used with Woo's quantity field,
+because Woo limits the field's width to 50px, 
+which leaves no space for the context between 50px and 20px padding and the spinner arrows (that come from type=number)
+
+See: https://github.com/Automattic/wp-calypso/issues/58958#issuecomment-1015263777
+*/
+.quantity .qty {
+  box-sizing: content-box;
+}
+
 /**
  * Elements
  * - Styles for basic HTML elemants
@@ -266,7 +277,8 @@ input[type=time],
 input[type=datetime],
 input[type=datetime-local],
 input[type=color],
-textarea {
+textarea,
+select {
   background: var(--wp--custom--form--color--background);
   border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
   border-radius: var(--wp--custom--form--border--radius);
@@ -291,17 +303,18 @@ input[type=time]:focus,
 input[type=datetime]:focus,
 input[type=datetime-local]:focus,
 input[type=color]:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   border-color: var(--custom--form--color--border);
   color: var(--wp--custom--form--color--text);
-  outline: 1px dotted currentColor;
+  outline: 1px dotted currentcolor;
   outline-offset: 2px;
 }
 
 input[type=checkbox]:focus,
 input[type=submit]:focus,
 button:focus {
-  outline: 1px dotted currentColor;
+  outline: 1px dotted currentcolor;
   outline-offset: 2px;
 }
 input[type=checkbox]::placeholder,
@@ -312,7 +325,6 @@ button::placeholder {
 }
 
 select {
-  font-family: inherit;
   font-size: 100%;
 }
 
