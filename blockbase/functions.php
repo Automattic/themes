@@ -34,7 +34,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
+				'social'  => __( 'Social Navigation', 'blockbase' ),
 			)
 		);
 
@@ -93,7 +93,7 @@ function blockbase_scripts() {
 
 	// Add the child theme CSS if it exists.
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
-		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
@@ -114,26 +114,26 @@ function blockbase_fonts_url() {
 		return '';
 	}
 
-	$font_families = [];
+	$font_families = array();
 	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
+		foreach ( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
 
-	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+	} elseif ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+		foreach ( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
-	// End Gutenberg < 12.1 compatibility patch
+		// End Gutenberg < 12.1 compatibility patch
 
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+			foreach ( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
 				if ( ! empty( $font['google'] ) ) {
 					$font_families[] = $font['google'];
 				}
@@ -159,6 +159,25 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/social-navigation.php';
 }
 
+/**
+ * Determine if site has access to the Full Site Editor and presents nav menu editing links accordingly.
+ * First check is Gutenberg, second is in core as of 5.9.
+ * If either of those exists, the site editor is shown since Blockbase passes those checks.
+ */
+if ( function_exists( 'gutenberg_is_fse_theme' ) || function_exists( 'wp_is_block_theme' ) ) {
+	function remove_customizer_menus( $wp_customize ) {
+		$wp_customize->remove_panel( 'nav_menus' );
+	}
+
+	// Remove from wp-admin
+	function remove_nav_subpage() {
+		remove_submenu_page( 'themes.php', 'nav-menus.php' );
+	}
+
+	add_action( 'customize_register', 'remove_customizer_menus', 99 );
+	add_action( 'admin_init', 'remove_nav_subpage' );
+}
+
 // Force menus to reload
 add_action(
 	'customize_controls_enqueue_scripts',
@@ -166,7 +185,7 @@ add_action(
 		wp_enqueue_script(
 			'wp-customize-nav-menu-refresh',
 			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
-			[ 'customize-nav-menus' ],
+			array( 'customize-nav-menus' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
