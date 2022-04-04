@@ -39,3 +39,9 @@ https://www.piqsels.com/en/public-domain-photo-svvhe
 
 Tattooed woman from Wikimedia, CC0
 https://commons.wikimedia.org/wiki/File:Tattooed_woman_with_laptop_(Unsplash).jpg
+
+Desk photo from Rawpixel, CC0
+https://www.rawpixel.com/image/5966102/macbook-modern-desk
+
+DM Sans from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/DM+Sans
