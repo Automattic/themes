@@ -42,3 +42,6 @@ https://commons.wikimedia.org/wiki/File:Tattooed_woman_with_laptop_(Unsplash).jp
 
 Desk photo from Rawpixel, CC0
 https://www.rawpixel.com/image/5966102/macbook-modern-desk
+
+DM Sans from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/DM+Sans
