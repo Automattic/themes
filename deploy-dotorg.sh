@@ -22,6 +22,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"geologist"
 	"mayland-blocks"
 	"quadrat"
+	"remote"
 	"seedlet-blocks"
 	"skatepark"
 	"stewart"
