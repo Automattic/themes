@@ -2,6 +2,7 @@
 /**
  * Title: About
  * slug: pendant/about
+ * categories: pendant
  */
 ?>
 

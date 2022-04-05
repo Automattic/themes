@@ -2,7 +2,7 @@
 /**
  * Title: A 404 page
  * slug: pendant/404
- * Inserter: no
+ * inserter: no
  */
 
 ?>
