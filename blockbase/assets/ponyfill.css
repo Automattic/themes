@@ -117,6 +117,11 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
   width: inherit;
 }
 
+/* Spacing for group blocks with a background color. */
+.wp-block-group.has-background {
+  padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
+}
+
 .has-primary-background-color {
   background-color: var(--wp--custom--color--primary) !important;
 }
@@ -750,13 +755,6 @@ p.has-drop-cap:not(:focus)::first-letter {
   display: inline-block;
   font-size: var(--wp--preset--font-size--small);
   margin-bottom: var(--wp--custom--gap--baseline);
-}
-
-.wp-block-post-content p.wp-block.wp-block-paragraph,
-.wp-block-post-content *[class^=wp-container] > * + p,
-.wp-block-post-content *[class^=wp-container] > p + *,
-.wp-block-post-content p {
-  margin-top: 1em;
 }
 
 .wp-block-post-template {

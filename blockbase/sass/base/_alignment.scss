@@ -39,9 +39,9 @@ body > .is-root-container,
 .wp-block-group.has-background,
 .wp-block-columns.alignfull.has-background,
 .wp-block-cover.alignfull,
-.is-root-container .wp-block[data-align='full'] > .wp-block-group,
-.is-root-container .wp-block[data-align='full'] > .wp-block-columns.has-background,
-.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+.is-root-container .wp-block[data-align="full"] > .wp-block-group,
+.is-root-container .wp-block[data-align="full"] > .wp-block-columns.has-background,
+.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
 	padding-left: var(--wp--custom--gap--horizontal);
 	padding-right: var(--wp--custom--gap--horizontal);
 }
@@ -69,4 +69,9 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	margin-left: auto !important;
 	margin-right: auto !important;
 	width: inherit;
+}
+
+/* Spacing for group blocks with a background color. */
+.wp-block-group.has-background {
+	padding: var(--wp--custom--gap--vertical) var(--wp--custom--gap--horizontal);
 }
