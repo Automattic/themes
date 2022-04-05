@@ -19,10 +19,11 @@ if ( ! function_exists( 'pendant_support' ) ) :
 	 * @return void
 	 */
 	function pendant_support() {
+		// Add support for block styles.
+		add_theme_support( 'wp-block-styles' );
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
-
 	}
 
 endif;
@@ -56,3 +57,9 @@ if ( ! function_exists( 'pendant_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'pendant_styles' );
+
+function pendant_register_block_pattern_categories() {
+	register_block_pattern_category( 'pendant', array( 'label' => __( 'Pendant', 'pendant' ) ) );
+}
+	
+add_action( 'init', 'pendant_register_block_pattern_categories', 9 );

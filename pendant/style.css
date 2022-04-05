@@ -117,6 +117,13 @@ a:focus {
 }
 
 /*
+ * We don't wish for the top-level elements to leverage the block-gap
+ */
+.wp-site-blocks > * {
+	margin-block-start: 0;
+}
+
+/*
  * Alignment styles, borrowed from Twenty Twenty-Two.
  * These rules are temporary, and should not be relied on or
  * modified too heavily by themes or plugins that build on
@@ -166,6 +173,18 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	margin-left: auto !important;
 	margin-right: auto !important;
 	width: inherit;
+}
+
+/* We are unable to style the "cite" element in the quote block */
+.wp-block-quote cite {
+	font-family: var(--wp--preset--font-family--body-font);
+	font-style: italic;
+	font-size: var(--wp--preset--font-size--x-small);
+}
+
+/* The plain quote block has a left-padding that doesn't work well with our design */
+.wp-block-quote.is-style-plain {
+	padding-left: 0;
 }
 
 /** Navigation sub-menu items **/
