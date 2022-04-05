@@ -9,7 +9,7 @@
 <div class="wp-block-group alignwide" style="padding-top:5vw;padding-bottom:5vw"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"top","width":"25%","style":{"spacing":{"padding":{"top":"7vw"}}}} -->
 <div class="wp-block-column is-vertically-aligned-top" style="padding-top:7vw;flex-basis:25%"><!-- wp:heading {"level":3} -->
-<h3><?php echo  esc_html__( 'The Team', 'pendant' ); ?></h3>
+<h3><?php echo esc_html__( 'The Team', 'pendant' ); ?></h3>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -21,11 +21,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong>Marie</strong></p>
+<p><strong><?php echo esc_html__( 'Marie', 'pendant' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><em>Editor &amp; Jeweler</em></p>
+<p><em><?php echo esc_html__( 'Editor &amp; Jeweler', 'pendant' ); ?></em></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -37,11 +37,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong>Sandra</strong></p>
+<p><strong><?php echo esc_html( 'Sandra', 'pendant' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><em>Writer, Editor &amp; Jewelry Designer</em></p>
+<p><em><?php echo esc_html__( 'Writer, Editor &amp; Jewelry Designer' ); ?></em></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -55,11 +55,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong>Tanya</strong></p>
+<p><strong><?php echo esc_html__( 'Tanya', 'pendant' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><em>Editor &amp; Public Relations</em></p>
+<p><em><?php echo esc_html__( 'Editor &amp; Public Relations', 'pendant' ); ?></em></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -71,11 +71,11 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><strong>Ryan</strong></p>
+<p><strong><?php echo esc_html__( 'Ryan', 'pendant' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><em>Marketing &amp; Social Media</em></p>
+<p><em><?php echo esc_html__( 'Marketing &amp; Social Media', 'pendant' ); ?></em></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

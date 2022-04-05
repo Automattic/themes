@@ -19,7 +19,7 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":4} -->
-<h4>Mia Moore, Jewelry lover</h4>
+<h4><?php echo  esc_html__( 'Mia Moore, Jewelry lover', 'pendant' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
