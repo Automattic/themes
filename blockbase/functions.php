@@ -190,5 +190,3 @@ require get_template_directory() . '/inc/block-patterns.php';
 if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }
-
-require get_template_directory() . '/inc/gutenberg-dependency-check.php';
