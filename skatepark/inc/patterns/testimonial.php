@@ -11,8 +11,10 @@ return array(
 	'content'    => '<!-- wp:columns {"align":"wide"} -->
     <div class="wp-block-columns alignwide"><!-- wp:column {"width":"25%","style":{"spacing":{"padding":{"top":"3em","right":"2em"}}}} -->
 
-    <div class="wp-block-column" style="padding-top:3em;padding-right:2em;flex-basis:25%"><!-- wp:separator {"className":"is-style-wide"} -->
-    <hr class="wp-block-separator is-style-wide"/>
+    <div class="wp-block-column" style="padding-top:3em;padding-right:2em;flex-basis:25%">
+    
+    <!-- wp:separator {"backgroundColor":"primary","className":"is-style-wide"} -->
+    <hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background is-style-wide"/>
     <!-- /wp:separator -->
 
     <!-- wp:paragraph {"align":"right","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}}} -->

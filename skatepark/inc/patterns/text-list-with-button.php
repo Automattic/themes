@@ -15,8 +15,10 @@ return array(
 		<div class="wp-block-column" style="flex-basis:75%">
 		<!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
 		<div class="wp-block-group"><!-- wp:group -->
-		<div class="wp-block-group"><!-- wp:separator {"className":"is-style-wide"} -->
-		<hr class="wp-block-separator is-style-wide"/>
+		<div class="wp-block-group">
+		
+		<!-- wp:separator {"backgroundColor":"primary","className":"is-style-wide"} -->
+		<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background is-style-wide"/>
 		<!-- /wp:separator -->
 		
 		<!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"1em"}}}} -->

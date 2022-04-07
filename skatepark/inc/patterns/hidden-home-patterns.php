@@ -28,8 +28,8 @@ return array(
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px"}}},"layout":{"inherit":false}} -->
 	<div class="wp-block-group" style="padding-top:30px">
 
-	<!-- wp:separator {"className":"is-style-wide"} -->
-	<hr class="wp-block-separator is-style-wide"/>
+	<!-- wp:separator {"backgroundColor":"primary","className":"is-style-wide"} -->
+	<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background is-style-wide"/>
 	<!-- /wp:separator -->
 	
 	<!-- wp:post-featured-image {"style":{"spacing":{"margin":{"top":"calc(2 * var( --wp--style--block-gap ))"}}},"isLink":true} /-->

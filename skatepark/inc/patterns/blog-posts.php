@@ -13,9 +13,10 @@ return array(
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px"}}},"layout":{"inherit":false}} -->
 	<div class="wp-block-group" style="padding-top:30px">
 		<!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var( --wp--style--block-gap )"}}}} -->
-		<div class="wp-block-group" style="padding-bottom:var( --wp--style--block-gap )"><!-- wp:separator {"className":"is-style-wide"} -->
-			<hr class="wp-block-separator is-style-wide"/>
-			<!-- /wp:separator --></div>
+		<div class="wp-block-group" style="padding-bottom:var( --wp--style--block-gap )">
+			<!-- wp:separator {"backgroundColor":"primary","className":"is-style-wide"} -->
+			<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background is-style-wide"/>
+			<!-- /wp:separator -->
 		<!-- /wp:group -->
 
 	<!-- wp:post-featured-image {"isLink":true,"style":{"color":{"duotone":["#000","#B9FB9C"]}}} /-->

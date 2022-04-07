@@ -17,8 +17,10 @@ return array(
 	<!-- /wp:column -->
 
 	<!-- wp:column {"width":"40%"} -->
-	<div class="wp-block-column" style="flex-basis:40%"><!-- wp:separator {"className":"is-style-wide"} -->
-	<hr class="wp-block-separator is-style-wide"/>
+	<div class="wp-block-column" style="flex-basis:40%">
+	
+	<!-- wp:separator {"backgroundColor":"primary","className":"is-style-wide"} -->
+	<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background is-style-wide"/>
 	<!-- /wp:separator -->
 
 	<!-- wp:paragraph {"fontSize":"small"} -->

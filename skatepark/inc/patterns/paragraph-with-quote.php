@@ -30,8 +30,8 @@ return array(
 	<!-- wp:column {"width":"22%","style":{"spacing":{"padding":{"top":"4.1em"}}}} -->
 	<div class="wp-block-column" style="padding-top:4.1em;flex-basis:22%">
 
-	<!-- wp:separator {"className":"is-style-wide"} -->
-	<hr class="wp-block-separator is-style-wide"/>
+	<!-- wp:separator {"backgroundColor":"primary","className":"is-style-wide"} -->
+	<hr class="wp-block-separator has-text-color has-primary-color has-alpha-channel-opacity has-primary-background-color has-background is-style-wide"/>
 	<!-- /wp:separator -->
 	
 	<!-- wp:paragraph {"style":{"typography":{"lineHeight":1.4}},"fontSize":"medium"} -->
