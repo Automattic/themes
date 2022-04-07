@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Subscription form
- * Slug: remote/subscription-form
+ * Slug: remote/subscribe
  * Categories: featured, text
  */
 ?>
