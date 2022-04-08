@@ -1,0 +1,39 @@
+.wp-block-separator,
+hr {
+	border-bottom: var(--separator--height) solid var(--separator--border-color);
+	clear: both;
+
+	&[style*="text-align:right"],
+	&[style*="text-align: right"] {
+		border-right-color: var(--separator--border-color);
+	}
+
+	&.is-style-wide {
+		border-bottom-width: var(--separator--height);
+	}
+
+	&.is-style-dots {
+
+		border-bottom: none;
+
+		&.has-background,
+		&.has-text-color {
+			background-color: transparent !important;
+
+			&:before {
+				color: currentColor !important;
+			}
+		}
+
+		&:before {
+			color: var(--separator--border-color);
+		}
+	}
+
+	.has-background:not(.has-background-background-color) &,
+	[class*="background-color"]:not(.has-background-background-color) &,
+	[style*="background-color"]:not(.has-background-background-color) &,
+	.wp-block-cover[style*="background-image"] & {
+		border-color: currentColor;
+	}
+}
