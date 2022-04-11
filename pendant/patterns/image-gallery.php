@@ -5,8 +5,11 @@
  */
 ?>
 
-<!-- wp:group {"layout":{"inherit":false}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":4} -->
+<!-- wp:group {"layout":{"inherit":true}} -->
+<div class="wp-block-group">
+<!-- wp:group {"align":"wide"} -->
+<div class="wp-block-group alignwide">
+<!-- wp:heading {"level":4} -->
 <h4><?php echo esc_html__( 'What We\'re Loving', 'pendant' ); ?></h4>
 <!-- /wp:heading -->
 
@@ -41,4 +44,6 @@
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
+
