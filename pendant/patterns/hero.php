@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Front page hero
- * slug: pendant/front-hero
+ * Title: Home page hero
+ * slug: pendant/home-hero
  */
 ?>
 
