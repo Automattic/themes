@@ -21,6 +21,7 @@
 		column-gap: 1em;
 		grid-template-rows: auto;
 		grid-template-areas:
+			"misc misc"
 			"notes notes"
 			"author author"
 			"email url"
@@ -51,6 +52,9 @@
 		p {
 			margin-top: 0;
 			margin-bottom: var(--wp--custom--gap--vertical);
+		}
+		& > * {
+			grid-area: misc;
 		}
 
 		.comment-notes {
