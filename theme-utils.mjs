@@ -59,6 +59,8 @@ async function deployPreview() {
 	console.log(`The following themes have changes:\n${changedThemes}`);
 
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs = logs.replace(/"/g, '');
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
@@ -760,7 +762,7 @@ async function buildPhabricatorCommitMessageSince(hash){
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
 	// Remove any double quotes from commit messages
-	logs.replace(/"/g, '');
+	logs = logs.replace(/"/g, '');
 	return `Deploy Themes ${projectVersion} to wpcom
 
 Summary:
@@ -834,7 +836,7 @@ async function tagDeployment(options={}) {
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
 	// Remove any double quotes from commit messages
-	logs.replace(/"/g, '');
+	logs = logs.replace(/"/g, '');
 	let tag = `v${projectVersion}`;
 	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
 
