@@ -1,0 +1,41 @@
+# This workflow checks if a readme.txt file has been updated whenever any theme files have been updated. 
+# This is to prevent updating theme files without also updating the corresponding changelog in the readme.txt.
+# It ignores any changes made to root files (e.g. theme-utils.mjs) and any files in excluded sub-directories.
+
+name: "Changelog Check"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+jobs:
+  main:
+    name: Ensure a readme.txt file has been updated if a theme has been changed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify any readme files
+        uses: dorny/paths-filter@v2.2.1
+        id: filter
+        with:
+          filters: |
+            theme_change:
+              - '**/*/**'
+            theme_readme:
+              - '**/readme.txt'
+            root_files:
+              - '*'
+              - '!**/*/**'
+            excluded_subdirectories:
+              - 'variations/**'
+              - '.github/**'
+              - '.husky/**'
+              - '.phab/**'
+      - name: Reminder to update changelog
+        if: ${{ (steps.filter.outputs.excluded_subdirectories == 'false' && steps.filter.outputs.root_files == 'false') && steps.filter.outputs.theme_change == 'true' && steps.filter.outputs.theme_readme == 'false' }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('Please update the changelog in the readme.txt of any updated themes.')
