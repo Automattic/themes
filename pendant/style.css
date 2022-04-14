@@ -65,14 +65,20 @@ a:focus {
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
-
+.wp-block-button__link {
+    	padding: calc(1.2em + 2px) calc(2em + 2px);
+}
+.wp-block-button.is-style-outline .wp-block-button__link {
+    	padding: 1.2em 2em;
+}
+	
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--background);
 	color: var(--wp--preset--color--foreground);
 	border: 2px solid var(--wp--preset--color--foreground);
-    	padding: 0.667em 1.333em !important;
+    	padding: 1.2em 2em;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
