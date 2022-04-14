@@ -81,6 +81,25 @@ a:focus {
 	border: 2px solid var(--wp--preset--color--foreground);
 }
 
+/* Special Condition for buttons inside of groups where the background color is set to the foreground palette color */
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
 /*
  * Search and File Block button styles.
  * Necessary until the following issues are resolved in Gutenberg:
