@@ -28,3 +28,9 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Meraki uses the following images:
+
+License: CC0
+https://www.pexels.com/photo/contemporary-stylish-building-and-arch-bridge-against-pink-sundown-sky-5707603/
+Used in theme screenshot and demo site.
