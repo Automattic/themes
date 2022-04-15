@@ -56,7 +56,7 @@ a:focus {
 .wp-block-post-content a:hover {
 	text-decoration: none;
 }
- .wp-block-post-content .wp-block-button a {
+.wp-block-button a {
 	text-decoration: none;
 }
 
@@ -65,20 +65,46 @@ a:focus {
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
-
+.wp-block-button__link {
+    	padding: calc(1.2em + 2px) calc(2em + 2px);
+}
+.wp-block-button.is-style-outline .wp-block-button__link {
+    	padding: 1.2em 2em;
+}
+	
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
+.wp-block-post-comments input[type=submit]:hover,
 .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--background);
 	color: var(--wp--preset--color--foreground);
 	border: 2px solid var(--wp--preset--color--foreground);
-    	padding: 0.667em 1.333em !important;
+    	padding: 1.2em 2em;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--foreground);
 	color: var(--wp--preset--color--background);
 	border: 2px solid var(--wp--preset--color--foreground);
+}
+
+/* Special Condition for buttons inside of groups where the background color is set to the foreground palette color */
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
 }
 
 /*
