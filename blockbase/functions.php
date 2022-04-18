@@ -30,16 +30,36 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
-		// This theme has one menu location.
+		// Register two nav menus
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
+			)
+		);
+
+		add_filter(
+			'block_editor_settings_all',
+			function( $settings ) {
+				$settings['defaultBlockTemplate'] = '<!-- wp:group {"layout":{"inherit":true}} --><div class="wp-block-group"><!-- wp:post-content /--></div><!-- /wp:group -->';
+				return $settings;
+			}
+		);
+
+		// Add support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 192,
+				'width'       => 192,
+				'flex-width'  => true,
+				'flex-height' => true,
 			)
 		);
 
 	}
-	add_action( 'after_setup_theme', 'blockbase_support', 9 );
 endif;
+add_action( 'after_setup_theme', 'blockbase_support', 9 );
 
 /**
  *
@@ -52,6 +72,13 @@ function blockbase_editor_styles() {
 			blockbase_fonts_url(),
 		)
 	);
+
+	// Add the child theme CSS if it exists.
+	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
+		add_editor_style(
+			'/assets/theme.css'
+		);
+	}
 }
 add_action( 'admin_init', 'blockbase_editor_styles' );
 
@@ -63,6 +90,11 @@ function blockbase_scripts() {
 	// Enqueue Google fonts
 	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url(), array(), null );
 	wp_enqueue_style( 'blockbase-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
+
+	// Add the child theme CSS if it exists.
+	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
+		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
 
@@ -83,12 +115,22 @@ function blockbase_fonts_url() {
 	}
 
 	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
+			if ( ! empty( $font['google'] ) ) {
+				$font_families[] = $font['google'];
+			}
+		}
+
+	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
 		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
+	// End Gutenberg < 12.1 compatibility patch
+
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
 			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
@@ -98,7 +140,7 @@ function blockbase_fonts_url() {
 			}
 		}
 	}
-	
+
 	if ( empty( $font_families ) ) {
 		return '';
 	}
@@ -108,70 +150,43 @@ function blockbase_fonts_url() {
 }
 
 /**
- * Restores the Customizer since we still rely on it.
- */
-function blockbase_restore_customizer() {
-	remove_action( 'admin_menu', 'gutenberg_remove_legacy_pages' );
-}
-add_action( 'init', 'blockbase_restore_customizer' );
-
-/**
  * Customize Global Styles
  */
-require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
-
-/**
- * Populate the social links block with the social menu content if it exists
- *
- */
-add_filter( 'render_block', 'blockbase_social_menu_render', 10, 2 );
-// We should only change the render of the navigtion block
-// to social links in the following conditions.
-function blockbase_condition_to_render_social_menu( $block ) {
-	// The block should be a navigation block.
-	if ( 'core/navigation' !== $block['blockName'] ) {
-		return false;
-	}
-
-	// The theme should have a menu defined at the social location.
-	if ( ! has_nav_menu( 'social' ) ) {
-		return false;
-	}
-
-	// The block should have a loction defined.
-	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
-		return false;
-	}
-
-	// The block's location should be 'social'.
-	if ( $block['attrs']['__unstableLocation'] !== 'social' ) {
-		return false;
-	}
-
-	return true;
+if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
+	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+	require get_template_directory() . '/inc/social-navigation.php';
 }
 
-function blockbase_social_menu_render( $block_content, $block ) {
-	if ( blockbase_condition_to_render_social_menu( $block ) ) {
-		$nav_menu_locations = get_nav_menu_locations();
-		$social_menu_id = $nav_menu_locations['social'];
-		$class_name = 'is-style-logos-only';
-		if( !empty( $block['attrs']['itemsJustification'] ) && $block['attrs']['itemsJustification'] === 'right' ) {
-			$class_name .= ' items-justified-right';
-		}
-		$block_content = '<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--custom--color--primary)","className":"' . $class_name . '"} --><ul class="wp-block-social-links has-icon-color ' . $class_name . '">';
-		$menu = wp_get_nav_menu_items( $social_menu_id );
-		foreach ($menu as $menu_item) {
-			$service_name = preg_replace( '/(-[0-9]+)/', '', $menu_item->post_name );
-			$block_content .= '<!-- wp:social-link {"url":"' . $menu_item->url . '","service":"' . $service_name . '"} /-->';
-		}
-
-		$block_content .= '</ul>';
-
-		return do_blocks( $block_content );
+// Force menus to reload
+add_action(
+	'customize_controls_enqueue_scripts',
+	static function () {
+		wp_enqueue_script(
+			'wp-customize-nav-menu-refresh',
+			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
+			[ 'customize-nav-menus' ],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
 	}
+);
 
-	return $block_content;
+/**
+ * Disable the fallback for the core/navigation block.
+ */
+function blockbase_core_navigation_render_fallback() {
+	return null;
+}
+add_filter( 'block_core_navigation_render_fallback', 'blockbase_core_navigation_render_fallback' );
+
+/**
+ * Block Patterns.
+ */
+require get_template_directory() . '/inc/block-patterns.php';
+
+// Add the child theme patterns if they exist.
+if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
+	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }

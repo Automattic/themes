@@ -1,7 +1,6 @@
 @import 'button-mixins';
 
 .wp-block-search {
-	margin-top: var(--wp--custom--gap--baseline);
 
 	&.wp-block-search__button-inside {
 		.wp-block-search__inside-wrapper{
@@ -15,7 +14,6 @@
 	}
 
 	.wp-block-search__input {
-		line-height: var(--wp--custom--button--typography--line-height);
 		padding: var(--wp--custom--form--padding);
 		border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 	}
@@ -29,4 +27,18 @@
 		}
 	}
 
+	.wp-block-search__input {
+		&::placeholder {
+			color: var(--wp--custom--form--color--text);
+			opacity: 0.66;
+		}
+	}
+
+	/* Block Styles */
+	&.is-style-small-search{
+		--wp--custom--button--typography--font-size: calc( 0.8 * var(--wp--preset--font-size--small));
+		.wp-block-search__input {
+			padding: calc( 0.5 * var(--wp--custom--form--padding) );
+		}
+	}
 }

@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Description: A minimalist theme for those with an eye for style. Modern Business is a perfect choice for stores offering high-end products and services, or the fashion and beauty industries -- any site where elegance and polish is key.
 Requires at least: WordPress 4.9.6
 Template: twentynineteen
-Version: 1.7.2
+Version: 1.7.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: twentynineteen
@@ -561,7 +561,6 @@ h6 {
 .comments-title,
 blockquote {
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
   word-break: break-word;
 }
@@ -570,7 +569,6 @@ blockquote {
 @media only screen and (min-width: 768px) {
   .entry-title {
     -webkit-hyphens: none;
-        -ms-hyphens: none;
             hyphens: none;
   }
 }
@@ -1162,7 +1160,6 @@ body.page .main-navigation {
 @media only screen and (min-width: 768px) {
   .main-navigation .sub-menu {
     width: auto;
-    min-width: -webkit-max-content;
     min-width: max-content;
   }
 }
@@ -1267,7 +1264,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
   }
@@ -1285,7 +1281,6 @@ body.page .main-navigation {
     left: 0;
     right: auto;
     display: block;
-    width: -webkit-max-content;
     width: max-content;
   }
 }
@@ -1349,7 +1344,6 @@ body.page .main-navigation {
     top: auto;
     bottom: auto;
     height: auto;
-    min-width: -webkit-max-content;
     min-width: max-content;
     transform: none;
   }
@@ -1371,7 +1365,6 @@ body.page .main-navigation {
     left: 0;
     right: auto;
     display: table;
-    width: -webkit-max-content;
     width: max-content;
   }
 }
@@ -1638,8 +1631,6 @@ body.page .main-navigation {
 .post-navigation .nav-links a .meta-nav {
   color: #686868;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -1653,7 +1644,6 @@ body.page .main-navigation {
 
 .post-navigation .nav-links a .post-title {
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
 }
 
@@ -3048,15 +3038,15 @@ body.page .main-navigation {
 }
 
 @media only screen and (min-width: 768px) {
-  .comment-form .comment-form-author,
-  .comment-form .comment-form-email {
+  .comment-form .comment-form-author:not(.comment-form-field),
+  .comment-form .comment-form-email:not(.comment-form-field) {
     width: calc(50% - 0.5rem);
     float: right;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .comment-form .comment-form-email {
+  .comment-form .comment-form-email:not(.comment-form-field) {
     margin-right: 1rem;
   }
 }

@@ -125,22 +125,23 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
  */
 :root, body {
 	/* Colors */
-	--wp--preset--color--primary: #1279BE;
+	--wp--preset--color--primary: #1279be;
 	--wp--preset--color--primary-hover: #303030;
-	--wp--preset--color--secondary: #FFB302;
+	--wp--preset--color--secondary: #ffb302;
 	--wp--preset--color--secondary-hover: #303030;
 	--wp--preset--color--foreground: #303030;
 	--wp--preset--color--foreground-low-contrast: #757575;
 	--wp--preset--color--foreground-high-contrast: #101010;
 	--wp--preset--color--background: white;
-	--wp--preset--color--background-low-contrast: #C5C5C5;
-	--wp--preset--color--background-high-contrast: #F8F8F8;
-	--wp--preset--color--border: #C5C5C5;
-	--wp--preset--color--border-low-contrast: #A5A5A5;
-	--wp--preset--color--border-high-contrast: #F8F8F8;
-	--wp--preset--color--text-selection: #A9D9F9;
+	--wp--preset--color--background-low-contrast: #c5c5c5;
+	--wp--preset--color--background-high-contrast: #f8f8f8;
+	--wp--preset--color--tertiary: #c5c5c5;
+	--wp--preset--color--border: #c5c5c5;
+	--wp--preset--color--border-low-contrast: #a5a5a5;
+	--wp--preset--color--border-high-contrast: #f8f8f8;
+	--wp--preset--color--text-selection: #a9d9f9;
 	--wp--preset--color--alert-success: #33b756;
-	--wp--preset--color--alert-info: #1279BE;
+	--wp--preset--color--alert-info: #1279be;
 	--wp--preset--color--alert-warning: #ecc700;
 	--wp--preset--color--alert-error: #de3e33;
 	--wp--preset--color--black: black;
@@ -663,11 +664,9 @@ object {
 	color: var(--wp--preset--color--background);
 }
 
-.wp-block-cover .wp-block-cover__inner-container,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text,
 .wp-block-cover .block-editor-block-list__block,
-.wp-block-cover-image .wp-block-cover__inner-container,
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image .wp-block-cover-text,
 .wp-block-cover-image .block-editor-block-list__block {
@@ -676,7 +675,7 @@ object {
 
 .wp-block-cover h2,
 .wp-block-cover-image h2 {
-	font-size: 2.01136em;
+	font-size: 2.01136;
 	letter-spacing: normal;
 	line-height: 1.125;
 	padding: 0;
@@ -1108,7 +1107,7 @@ pre.wp-block-verse {
 	font-family: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-family: var(--font-headings, "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
 	font-weight: bold;
-	font-size: 2.01136em;
+	font-size: 2.01136;
 	letter-spacing: normal;
 	line-height: 1.125;
 }
@@ -1151,6 +1150,11 @@ pre.wp-block-verse {
 .wp-block .has-background-color,
 .has-background-color {
 	color: var(--wp--preset--color--background);
+}
+
+.wp-block .has-tertiary-color,
+.has-tertiary-color {
+	color: var(--wp--preset--color--tertiary);
 }
 
 .has-background p:not(.has-text-color),
@@ -1247,28 +1251,38 @@ pre.wp-block-verse {
 	color: var(--wp--preset--color--foreground);
 }
 
+.has-tertiary-background-color,
+.has-tertiary-background-color.has-background-dim {
+	background-color: var(--wp--preset--color--tertiary);
+}
+
+.has-tertiary-background-color:not(.has-text-color),
+.has-tertiary-background-color.has-background-dim:not(.has-text-color) {
+	color: var(--wp--preset--color--foreground);
+}
+
 .is-small-text,
 .has-small-font-size {
-	font-size: 0.86957em;
+	font-size: 0.86957;
 }
 
 .is-regular-text,
 .has-regular-font-size,
 .has-normal-font-size,
 .has-medium-font-size {
-	font-size: 1.15em;
+	font-size: 1.15;
 }
 
 .is-large-text,
 .has-large-font-size {
-	font-size: 1.3225em;
+	font-size: 1.3225;
 	line-height: 1.125;
 }
 
 .is-larger-text,
 .has-larger-font-size,
 .has-huge-font-size {
-	font-size: 1.52087em;
+	font-size: 1.52087;
 	line-height: 1.125;
 }
 

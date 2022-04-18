@@ -14,7 +14,8 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea {
+textarea,
+select {
 	background: var(--wp--custom--form--color--background);
 	border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 	border-radius: var(--wp--custom--form--border--radius);
@@ -24,13 +25,29 @@ textarea {
 	padding: var(--wp--custom--form--padding);
 
 	&:focus {
-		color: var(--wp--custom--form--color--text);
 		border-color: var(--custom--form--color--border);
+		color: var(--wp--custom--form--color--text);
+		outline: 1px dotted currentcolor;
+		outline-offset: 2px;
+	}
+}
+
+input[type="checkbox"],
+input[type="submit"],
+button {
+
+	&:focus {
+		outline: 1px dotted currentcolor;
+		outline-offset: 2px;
+	}
+
+	&::placeholder {
+		color: var(--wp--custom--form--color--text);
+		opacity: 0.66;
 	}
 }
 
 select {
-	font-family: inherit;
 	font-size: 100%;
 }
 
@@ -39,7 +56,7 @@ textarea {
 }
 
 // Vertically align checkbox + label relationship
-input[type=checkbox] + label {
+input[type="checkbox"] + label {
 	display: inline;
 	margin-left: 0.5em;
 	line-height: 1em;

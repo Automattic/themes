@@ -14,8 +14,6 @@ add_color_rule( 'bg', '#FFFFFF', array(
 
 	// Text-color
 	array( '.a8c-posts-list-item__featured span,
-			.wp-block-cover.has-background-dim, 
-			.wp-block-cover-image.has-background-dim,
 			.sticky-post,
 			.wp-block-pullquote.is-style-solid-color,
 			body .widget_eu_cookie_law_widget #eu-cookie-law.negative', 'color' ),
@@ -177,7 +175,7 @@ add_color_rule( 'link', '#897248', array(
 			.wp-block-newspack-blocks-homepage-articles article .entry-title a:hover,
 			.wp-block-newspack-blocks-homepage-articles article .more-link:hover,
 			a:hover', 'color', '-1' ),
-			
+
 	// Background-color darkened
 	array( '.a8c-posts-list__view-all:focus,
 			.a8c-posts-list__view-all:hover,
@@ -200,7 +198,7 @@ add_color_rule( 'link', '#897248', array(
 			input.has-focus[type="submit"],
 			input:focus[type="submit"],
 			input:hover[type="submit"]', 'background-color', '-1' ),
-			
+
 	// Background-color darkened
 	array( 'input[type="color"]:focus,
 			input[type="date"]:focus,
@@ -349,36 +347,36 @@ function maywood_custom_colors_extra_css() {
 	$txt          = $colors_array['colors']['txt'];
 ?>
 
-	.wp-block-cover[style*="background-image"] h1, 
-	.wp-block-cover[style*="background-image"] h2, 
-	.wp-block-cover[style*="background-image"] h3, 
-	.wp-block-cover[style*="background-image"] h4, 
-	.wp-block-cover[style*="background-image"] h5, 
-	.wp-block-cover[style*="background-image"] h6, 
-	.wp-block-cover video + .wp-block-cover__inner-container h1, 
-	.wp-block-cover video + .wp-block-cover__inner-container h2, 
-	.wp-block-cover video + .wp-block-cover__inner-container h3, 
-	.wp-block-cover video + .wp-block-cover__inner-container h4, 
-	.wp-block-cover video + .wp-block-cover__inner-container h5, 
-	.wp-block-cover video + .wp-block-cover__inner-container h6, 
-	.wp-block-cover-image[style*="background-image"] h1, 
-	.wp-block-cover-image[style*="background-image"] h2, 
-	.wp-block-cover-image[style*="background-image"] h3, 
-	.wp-block-cover-image[style*="background-image"] h4, 
-	.wp-block-cover-image[style*="background-image"] h5, 
-	.wp-block-cover-image[style*="background-image"] h6, 
-	.wp-block-cover-image video + .wp-block-cover__inner-container h1, 
-	.wp-block-cover-image video + .wp-block-cover__inner-container h2, 
-	.wp-block-cover-image video + .wp-block-cover__inner-container h3, 
-	.wp-block-cover-image video + .wp-block-cover__inner-container h4, 
-	.wp-block-cover-image video + .wp-block-cover__inner-container h5, 
+	.wp-block-cover[style*="background-image"] h1,
+	.wp-block-cover[style*="background-image"] h2,
+	.wp-block-cover[style*="background-image"] h3,
+	.wp-block-cover[style*="background-image"] h4,
+	.wp-block-cover[style*="background-image"] h5,
+	.wp-block-cover[style*="background-image"] h6,
+	.wp-block-cover video + .wp-block-cover__inner-container h1,
+	.wp-block-cover video + .wp-block-cover__inner-container h2,
+	.wp-block-cover video + .wp-block-cover__inner-container h3,
+	.wp-block-cover video + .wp-block-cover__inner-container h4,
+	.wp-block-cover video + .wp-block-cover__inner-container h5,
+	.wp-block-cover video + .wp-block-cover__inner-container h6,
+	.wp-block-cover-image[style*="background-image"] h1,
+	.wp-block-cover-image[style*="background-image"] h2,
+	.wp-block-cover-image[style*="background-image"] h3,
+	.wp-block-cover-image[style*="background-image"] h4,
+	.wp-block-cover-image[style*="background-image"] h5,
+	.wp-block-cover-image[style*="background-image"] h6,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h1,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h2,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h3,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h4,
+	.wp-block-cover-image video + .wp-block-cover__inner-container h5,
 	.wp-block-cover-image video + .wp-block-cover__inner-container h6 {
 		text-shadow: none;
 	}
-	
-	.wp-block-cover[style*="background-image"] p, 
-	.wp-block-cover video + .wp-block-cover__inner-container p, 
-	.wp-block-cover-image[style*="background-image"] p, 
+
+	.wp-block-cover[style*="background-image"] p,
+	.wp-block-cover video + .wp-block-cover__inner-container p,
+	.wp-block-cover-image[style*="background-image"] p,
 	.wp-block-cover-image video + .wp-block-cover__inner-container p {
 		text-shadow: none;
 	}

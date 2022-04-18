@@ -8,7 +8,7 @@ Description: Seedlet is a free WordPress theme. A two-column layout and classica
 Requires at least: 5.5
 Tested up to: 5.5
 Requires PHP: 5.6.2
-Version: 1.1.16-wpcom
+Version: 1.1.20-wpcom
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: seedlet
@@ -927,14 +927,14 @@ body {
 }
 
 a {
-	border-bottom: 1px solid var(--global--color-secondary);
 	color: var(--wp--style--color--link, var(--global--color-primary));
-	text-decoration: none;
-	transition: border-color 0.1s ease-out;
+	text-decoration: underline 1px var(--global--color-secondary);
+	text-underline-offset: 0.3em;
+	transition: text-decoration 0.1s ease-out;
 }
 
 a:hover, a:focus {
-	border-bottom-color: transparent;
+	text-decoration: none;
 }
 
 a:hover {
@@ -950,11 +950,11 @@ a:active {
 }
 
 .has-link-color a {
-	border-bottom: 1px solid var(--wp--style--color--link, var(--global--color-primary));
+	text-decoration-color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 .has-link-color a:hover, .has-link-color a:focus {
-	border-bottom-color: transparent;
+	text-decoration: none;
 }
 
 .has-primary-background-color a:not(.has-link-color):not(.has-text-color) {
@@ -2980,6 +2980,7 @@ pre.wp-block-verse {
 	border-bottom: none;
 	color: currentColor;
 	font-weight: var(--branding--title--font-weight);
+	text-decoration: none;
 	text-shadow: 1px 0px var(--global--color-background), -1px 0px var(--global--color-background), -2px 0px var(--global--color-background), 2px 0px var(--global--color-background), -3px 0px var(--global--color-background), 3px 0px var(--global--color-background), -4px 0px var(--global--color-background), 4px 0px var(--global--color-background), -5px 0px var(--global--color-background), 5px 0px var(--global--color-background);
 	transition: background-size 0.1s ease-out;
 }

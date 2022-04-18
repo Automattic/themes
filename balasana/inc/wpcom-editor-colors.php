@@ -20,17 +20,7 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper .wp-block-button__link.has-focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:focus,
 			#editor .editor-styles-wrapper .wp-block-button__link:hover,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim .block-editor-block-list__block,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .block-editor-block-list__block,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .wp-block-cover-text,
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim .wp-block-cover__inner-container,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
 	// Background-color
@@ -104,7 +94,7 @@ add_editor_color_rule( 'link', '#19744C', array(
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button:hover,
 			#editor .editor-styles-wrapper .has-primary-background-color,
 			#editor .editor-styles-wrapper .wp-block .has-primary-background-color', 'background-color' ),
-	
+
 
 	array( '#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus', 'border-color' ),
 
@@ -123,10 +113,6 @@ add_editor_color_rule( 'txt', '#303030', array(
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input,
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__input:focus,
 			#editor .editor-styles-wrapper ', 'color' ),
-
-	// Background-color
-	array( '#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim', 'background-color' ),
 
 	/**
 	 * Utility Classes

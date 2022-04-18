@@ -21,6 +21,7 @@
 		column-gap: 1em;
 		grid-template-rows: auto;
 		grid-template-areas:
+			"misc misc"
 			"notes notes"
 			"author author"
 			"email url"
@@ -30,7 +31,7 @@
 
 		input:not([type=submit]):not([type=checkbox]),
 		textarea {
-			font-size: var(--wp--preset--font-size--normal);
+			font-size: var(--wp--custom--font-sizes--normal);
 			background: var(--wp--custom--color--background);
 			border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 			width: 100%;
@@ -51,6 +52,9 @@
 		p {
 			margin-top: 0;
 			margin-bottom: var(--wp--custom--gap--vertical);
+		}
+		& > * {
+			grid-area: misc;
 		}
 
 		.comment-notes {
@@ -89,7 +93,7 @@
 					display: inline-block;
 					line-height: calc( var(--wp--custom--form--checkbox--unchecked--sizing--height) + 2 * var(--wp--custom--form--border--width));
 					margin-left: 0;
-					padding-left: 3em;
+					padding-left: calc( var(--wp--custom--form--checkbox--unchecked--sizing--width) + ( var(--wp--custom--gap--baseline) / 1.5 ) );
 					position: relative;
 				}
 				& + label::before,
@@ -114,6 +118,11 @@
 					height: var(--wp--custom--form--checkbox--checked--sizing--height);
 					font-size: var(--wp--custom--form--checkbox--checked--font-size);
 				}
+
+				&:focus + ::before {
+					outline: 1px dotted currentColor;
+					outline-offset: 2px;
+				}
 			}
 		}
 	}
@@ -132,7 +141,7 @@
 				font-size: var(--wp--custom--post-comment--typography--font-size);
 				line-height: var(--wp--custom--post-comment--typography--line-height);
 				margin-bottom: var(--wp--custom--gap--vertical);
-				margin-top: var(--wp--custom--gap--vertical);	
+				margin-top: var(--wp--custom--gap--vertical);
 			}
 		}
 	}
@@ -151,5 +160,4 @@
 		font-size: var(--wp--preset--font-size--small);
 		margin-bottom: var(--wp--custom--gap--baseline);
 	}
-
 }

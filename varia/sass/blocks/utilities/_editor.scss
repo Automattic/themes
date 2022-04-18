@@ -5,15 +5,16 @@
 
 .editor-post-title__block .editor-post-title__input {
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
+
 	@include font-family( map-deep-get($config-heading, "font", "family") );
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
-	font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0em);
+	font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h2")) + 0);
 	letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h2")};
 	line-height: #{map-deep-get($config-heading, "font", "line-height", "h2")};
 }
 
 // Gutenberg text color options
-.has-text-color {}
+// .has-text-color {}
 
 .wp-block .has-primary-color,
 .has-primary-color {
@@ -55,8 +56,17 @@
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
 
+@if map-has-key(map-deep-get($config-global, "color"), "tertiary") {
+
+	.wp-block .has-tertiary-color,
+	.has-tertiary-color {
+		color: #{map-deep-get($config-global, "color", "tertiary", "default")};
+	}
+}
+
 // Gutenberg background-color options
 .has-background {
+
 	p:not(.has-text-color),
 	h1:not(.has-text-color),
 	h2:not(.has-text-color),
@@ -78,6 +88,7 @@
 .has-primary-background-color.has-background-dim:not(.has-text-color) {
 	color: #{map-deep-get($config-global, "color", "background", "default")};
 }
+
 .has-secondary-background-color,
 .has-secondary-background-color.has-background-dim {
 	background-color: #{map-deep-get($config-global, "color", "secondary", "default")};
@@ -151,35 +162,48 @@
 	color: #{map-deep-get($config-global, "color", "foreground", "default")};
 }
 
+@if map-has-key(map-deep-get($config-global, "color"), "tertiary") {
+
+	.has-tertiary-background-color,
+	.has-tertiary-background-color.has-background-dim {
+		background-color: #{map-deep-get($config-global, "color", "tertiary", "default")};
+	}
+
+	.has-tertiary-background-color:not(.has-text-color),
+	.has-tertiary-background-color.has-background-dim:not(.has-text-color) {
+		color: #{map-deep-get($config-global, "color", "foreground", "default")};
+	}
+}
 
 // Gutenberg Font-size utility classes
 .is-small-text,
 .has-small-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0);
 }
 
 .is-regular-text,
 .has-regular-font-size,
 .has-normal-font-size,
 .has-medium-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0em);
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0);
 }
 
 .is-large-text,
 .has-large-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "lg")) + 0em);
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "lg")) + 0);
 	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
 }
 
 .is-larger-text,
 .has-larger-font-size,
 .has-huge-font-size {
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "xl")) + 0em);
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "xl")) + 0);
 	line-height: #{map-deep-get($config-global, "font", "line-height", "heading")};
 }
 
 // Drop cap
 .has-drop-cap:not(:focus)::first-letter {
+
 	@include font-family( map-deep-get($config-heading, "font", "family") );
 	font-size: calc(2 * #{strip-unit(map-deep-get($config-heading, "font", "size", "h1")) + 0em});
 	font-weight: #{map-deep-get($config-heading, "font", "weight")};
@@ -190,7 +214,7 @@
  */
 
 [data-block] {
-	margin-top:#{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
+	margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 	margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 
 	@include media(mobile) {

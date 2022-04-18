@@ -1,0 +1,25 @@
+{
+  "name": "zoologist",
+  "version": "1.0.29",
+  "description": "",
+  "main": "style.css",
+  "devDependencies": {
+    "@wordpress/base-styles": "^4.0.4",
+    "@wordpress/browserslist-config": "^4.1.0",
+    "autoprefixer": "^10.4.2",
+    "chokidar-cli": "^3.0.0",
+    "postcss": "^8.2.12",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.47.0"
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
+    "build": "npm run build:scss",
+    "build:scss": "sass sass/theme.scss assets/theme.css --style=expanded && postcss assets/theme.css --use autoprefixer --output assets/theme.css --map"
+  },
+  "author": "",
+  "license": "GPLv2"
+}

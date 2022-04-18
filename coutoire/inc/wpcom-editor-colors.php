@@ -26,17 +26,6 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-search .wp-block-search__button,
-			#editor .editor-styles-wrapper .wp-block-cover,
-			#editor .editor-styles-wrapper .wp-block-cover-image,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover-image:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-image-text,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover-text,
-			#editor .editor-styles-wrapper .wp-block-cover:not([class="has-background-background-color"]) .wp-block-cover__inner-container,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover.has-background-dim a,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
 			#editor .editor-styles-wrapper .has-background a,
 			#editor .editor-styles-wrapper .wp-block-pullquote.is-style-solid-color', 'color' ),
 
@@ -82,13 +71,8 @@ add_editor_color_rule( 'bg', '#FFFFFF', array(
 	array( '#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
 			#editor .editor-styles-wrapper [class*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
 			#editor .editor-styles-wrapper [style*="background-color"]:not(.has-background-background-color) .wp-block-quote .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] .wp-block-quote .wp-block-quote__citation,
-			#editor .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container a,
-			#editor .editor-styles-wrapper .wp-block-cover .wp-block-cover-image-text a,
-			#editor .editor-styles-wrapper .wp-block-cover .wp-block-cover-text a,
-			#editor .editor-styles-wrapper .wp-block-cover-image .wp-block-cover__inner-container a,
-			#editor .editor-styles-wrapper .wp-block-cover-image .wp-block-cover-image-text a,
-			#editor .editor-styles-wrapper .wp-block-cover-image .wp-block-cover-text a', 'color' ),
+			#editor .editor-styles-wrapper .wp-block-cover[style*="background-image"] .wp-block-quote .wp-block-quote__citation', 'color' ),
+
 	// Border-color
 	array( '#editor .editor-styles-wrapper .has-background:not(.has-background-background-color) .wp-block-quote,
 			#editor .editor-styles-wrapper [class*="background-color"]:not(.has-background-background-color) .wp-block-quote,
@@ -140,9 +124,7 @@ add_editor_color_rule( 'txt', '#444444', array(
 			#editor .editor-styles-wrapper', 'color' ),
 
 	// Background-color
-	array( '#editor .editor-styles-wrapper .wp-block-cover.has-background-dim,
-			#editor .editor-styles-wrapper .wp-block-cover-image.has-background-dim,
-			#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
+	array( '#editor .editor-styles-wrapper table.is-style-stripes tbody tr:nth-child(odd),
 			#editor .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd)', 'background-color' ),
 
 	/**

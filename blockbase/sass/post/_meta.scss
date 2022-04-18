@@ -2,29 +2,34 @@
 	// We're setting row-gap here as currently, we can't specify separate vertical and horizontal block gaps.
 	// Tracking in Gutenberg here: https://github.com/WordPress/gutenberg/issues/34529
 	row-gap: var(--wp--custom--gap--baseline) !important; // !important is needed to override the unique .wp-container-ID classes
-	.wp-block-post-author,
-	.wp-block-post-date,
-	.taxonomy-post_tag,
-	.taxonomy-category {
-		@include post-meta-icon;
-	}
+}
 
-	.wp-block-post-author:before {
+.is-style-post-author-icon,
+.is-style-post-date-icon,
+.is-style-post-category-icon,
+.is-style-post-tag-icon {
+	@include post-meta-icon;
+}
+.is-style-post-author-icon {
+	&:before {
 		-webkit-mask-image: url(svg/post-author.svg);
 		mask-image: url(svg/post-author.svg);
 	}
-
-	.wp-block-post-date:before {
+}
+.is-style-post-date-icon {
+	&:before {
 		-webkit-mask-image: url(svg/post-date.svg);
 		mask-image: url(svg/post-date.svg);
 	}
-
-	.taxonomy-category:before  {
+}
+.is-style-post-category-icon {
+	&:before {
 		-webkit-mask-image: url(svg/post-category.svg);
 		mask-image: url(svg/post-category.svg);
 	}
-
-	.taxonomy-post_tag:before {
+}
+.is-style-post-tag-icon {
+	&:before {
 		-webkit-mask-image: url(svg/post-tag.svg);
 		mask-image: url(svg/post-tag.svg);
 	}

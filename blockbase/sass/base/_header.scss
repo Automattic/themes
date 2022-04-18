@@ -1,14 +1,27 @@
-.site-header {
-	justify-content: space-between;
-	overflow: inherit;
+.wp-site-blocks .site-header {
 
-	.wp-block-site-title a {
-		text-decoration: none;
+	// Needed until Gutenberg offers responsive design options
+	// TODO: Ref to responsive design options issue
+	@include break-small-only(){
+		.site-brand {
+			display: contents;
+		}
+		.wp-block-site-logo {
+			flex-basis: 100%;
+			margin-bottom: calc( 2 * var(--wp--custom--gap--vertical));
+			margin-top: var(--wp--custom--gap--vertical);
+			text-align: center;
+		}
 	}
+	
 }
 
-h1, h2, h3, h4, h5, h6 {
-	&.has-background {
-		padding: var(--wp--custom--padding--vertical) var(--wp--custom--padding--horizontal);
+// Needed until Gutenberg offers responsive design options
+// Used by 'header-linear' template part
+.wp-site-blocks .site-header-linear {
+	@include break-small-only(){
+		.site-words-stack-small {
+			display:block;
+		}
 	}
 }

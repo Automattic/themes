@@ -1,0 +1,239 @@
+/*
+Theme Name: Pendant
+Theme URI: https://github.com/Automattic/themes/tree/trunk/pendant
+Author: Automattic
+Author URI: https://automattic.com
+Description: An elegant product-focused theme
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.7
+Version: 0.0.12
+License: GNU General Public License v2 or later
+License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
+Template: 
+Text Domain: pendant
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+*/
+
+/*
+ * Font smoothing
+ */
+
+ body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Opinionated Style for Anchors.
+ * Anchors get a thin underline offset more than default.
+ * Headings get slightly different dimensions.
+ * Any anchors IN the content are underlined by default, then none on hover.
+ * Any anchors OUT of the content behave the opposite.
+ * Buttons have no underlines.
+ */
+a {
+	cursor: pointer;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 0.05em;
+	text-decoration-line: none;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	text-underline-offset: 0.15em;
+	text-decoration-thickness: 0.02em;
+}
+a:hover,
+a:focus {
+	text-decoration-line: underline;
+}
+.block-editor-block-list__layout a,
+.wp-block-post-content a {
+	text-decoration-line: underline;
+}
+.block-editor-block-list__layout a:hover,
+.block-editor-block-list__layout a:focus,
+.wp-block-post-content a:focus,
+.wp-block-post-content a:hover {
+	text-decoration: none;
+}
+.wp-block-button a {
+	text-decoration: none;
+}
+
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+.wp-block-button__link {
+    	padding: calc(1.2em + 2px) calc(2em + 2px);
+}
+.wp-block-button.is-style-outline .wp-block-button__link {
+    	padding: 1.2em 2em;
+}
+	
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-post-comments input[type=submit]:hover,
+.wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+	border: 2px solid var(--wp--preset--color--foreground);
+    	padding: 1.2em 2em;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--foreground);
+}
+
+/* Special Condition for buttons inside of groups where the background color is set to the foreground palette color */
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	padding: 0;
+	border-color: var(--wp--preset--color--foreground);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+	padding-left: 1em;
+}
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	font-size: var(--wp--preset--typography--font-size--medium);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	font-weight: 600;
+	line-height: 1.7;
+	border:none;
+	padding: calc(0.667em + 2px) calc(1.333em + 2px) !important;
+}
+
+/*
+ * Decrease the size of social icons
+ */
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+	height: 1em;
+	width: 1em;
+}
+
+/*
+ * Alignment styles, borrowed from Twenty Twenty-Two.
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-columns.alignfull.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align='full'] > .wp-block-group,
+.is-root-container .wp-block[data-align='full'] > .wp-block-columns.has-background,
+.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+	padding-left: var(--wp--custom--gap--horizontal);
+	padding-right: var(--wp--custom--gap--horizontal);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align='full'] {
+	margin-left: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
+	margin-right: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
+	max-width: unset;
+	width: unset;
+}
+
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+}
+
+/* We are unable to style the "cite" element in the quote block */
+.wp-block-quote cite {
+	font-family: var(--wp--preset--font-family--body-font);
+	font-style: italic;
+	font-size: var(--wp--preset--font-size--x-small);
+}
+
+/* The plain quote block has a left-padding that doesn't work well with our design */
+.wp-block-quote.is-style-plain {
+	padding-left: 0;
+}
+
+/** Navigation sub-menu items **/
+.wp-block-navigation .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: 2.6;
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: 0.1em;
+}
+
+/* Desktop responsive navigation layout */
+.wp-block-navigation.is-responsive .is-menu-open.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
+    margin: 0 auto;
+    max-width: 820px;
+}
+
+.wp-block-navigation:where(:not([class*=has-text-decoration])) a {
+	text-decoration-thickness: 1px;
+}
+
+.wp-block-categories {
+	list-style-type: none;
+}
+
+.wp-block-post-navigation-link .post-navigation-link__label {
+	font-family: var(--wp--preset--font-family--body-font);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	line-height: 3;
+}

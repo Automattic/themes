@@ -1,7 +1,7 @@
 <?php
 
-require_once 'wp-customize-global-styles-setting.php';
-require_once 'wp-customize-utils.php';
+require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
+require_once( __DIR__ . '/wp-customize-utils.php' );
 
 class GlobalStylesColorCustomizer {
 
@@ -57,14 +57,12 @@ class GlobalStylesColorCustomizer {
 
 		$combined_color_palette = $theme_json['settings']['color']['palette']['theme'];
 		$user_color_palette     = null;
-		if ( isset( $theme_json['settings']['color']['palette']['user'] ) ) {
-			$user_color_palette = $theme_json['settings']['color']['palette']['user'];
+		if ( isset( $theme_json['settings']['color']['palette']['custom'] ) ) {
+			$user_color_palette = $theme_json['settings']['color']['palette']['custom'];
 		}
 
 		// Combine theme settings with user settings.
 		foreach ( $combined_color_palette as $key => $palette_item ) {
-			//make theme color value the default
-			$combined_color_palette[ $key ]['default'] = $combined_color_palette[ $key ]['color'];
 			//use user color value if there is one
 			$user_color_value = $this->get_user_color_value( $palette_item['slug'], $user_color_palette );
 			if ( isset( $user_color_value ) ) {
@@ -112,14 +110,13 @@ class GlobalStylesColorCustomizer {
 			$wp_customize,
 			$setting_key,
 			array(
-				'default'           => $palette_item['default'],
-				'user_value'        => $palette_item['color'],
+				'user_value' => $palette_item['color'],
 			)
 		);
 		$wp_customize->add_setting(
 			$global_styles_setting,
 			array(
-				'sanitize_callback' => 'sanitize_hex_color'
+				'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 
@@ -140,41 +137,48 @@ class GlobalStylesColorCustomizer {
 		$this->update_user_color_palette( $wp_customize );
 
 		// Get the user's theme.json from the CPT.
-		$user_custom_post_type_id     = WP_Theme_JSON_Resolver_Gutenberg::get_user_custom_post_type_id();
-		$user_theme_json_post         = get_post( $user_custom_post_type_id );
-		$user_theme_json_post_content = json_decode( $user_theme_json_post->post_content );
+		$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+		$global_styles_controller = new Gutenberg_REST_Global_Styles_Controller();
+		$get_request              = new WP_REST_Request( 'GET', '/wp/v2/global-styles/' );
 
-		// Set meta settings.
-		$user_theme_json_post_content->version                     = 1;
-		$user_theme_json_post_content->isGlobalStylesUserThemeJSON = true;
+		$get_request->set_param( 'id', $user_custom_post_type_id );
+		$global_styles = $global_styles_controller->get_item( $get_request );
 
-		// Start with reset palette settings.
-		unset( $user_theme_json_post_content->settings->color->palette );
+		// converts data to array (in some cases settings and styles are objects insted of arrays)
+		$new_settings = (array) $global_styles->data['settings'];
+		$new_styles   = (array) $global_styles->data['styles'];
 
-		//Set the color palette if it is !== the default
-		if ( ! $this->check_if_colors_are_default() ) {
-			$user_theme_json_post_content = set_settings_array(
-				$user_theme_json_post_content,
-				array( 'settings', 'color', 'palette' ),
-				$this->user_color_palette
-			);
-		}
-
-		// Update the theme.json with the new settings.
-		$user_theme_json_post->post_content = json_encode( $user_theme_json_post_content );
-		wp_update_post( $user_theme_json_post );
-		delete_transient( 'global_styles' );
-		delete_transient( 'gutenberg_global_styles' );
-	}
-
-	function check_if_colors_are_default() {
-		foreach ( $this->user_color_palette as $palette_color ) {
-			if ( strtoupper( $palette_color['color'] ) !== strtoupper( $palette_color['default'] ) ) {
-				return false;
+		// Set the new color settings
+		$new_settings['color']['palette']['theme'] = $this->user_color_palette;
+		// We used to set the values in 'custom' but moved to 'theme' to mirror GS functionality.
+		// This ensures that new saves don't store the customizations in both places.
+		if($new_settings['color']['palette']['custom']) {
+			foreach ( $new_settings['color']['palette']['theme'] as $theme_color ) {
+				foreach ( $new_settings['color']['palette']['custom'] as $key => $custom_color ) {
+					if( $theme_color['slug'] === $custom_color['slug'] ) {
+						unset( $new_settings['color']['palette']['custom'][$key] );
+					}
+				}
+			}
+			if ( ! $new_settings['color']['palette']['custom'] ) {
+				unset ( $new_settings['color']['palette']['custom'] );
 			}
 		}
-		return true;
+
+		// Add the updated global styles to the update request
+		$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
+		$update_request->set_param( 'id', $user_custom_post_type_id );
+		$update_request->set_param( 'settings', $new_settings );
+		$update_request->set_param( 'styles', $new_styles );
+
+		// Update the theme.json with the new settings.
+		$updated_global_styles = $global_styles_controller->update_item( $update_request );
+		delete_transient( 'global_styles' );
+		delete_transient( 'global_styles_' . get_stylesheet() );
+		delete_transient( 'gutenberg_global_styles' );
+		delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 	}
+
 }
 
 new GlobalStylesColorCustomizer;

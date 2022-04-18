@@ -1,0 +1,47 @@
+.horizontal-query-pattern,
+.vertical-query-pattern {
+	.wp-block-post-title a {
+		text-decoration: none;
+	}
+}
+
+.vertical-query-pattern {
+	.wp-block-cover {
+		margin-top: 0;
+	}
+	img {
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+}
+
+div.horizontal-query-pattern {
+	gap: 0;
+
+	@include break-small() {
+		flex-wrap: nowrap;
+	}
+
+	.wp-block-cover,
+	figure.wp-block-post-featured-image {
+		margin-top: 0;
+	}
+
+	figure.wp-block-post-featured-image {
+		align-self: stretch;
+		@include break-small() {
+			width: 57%; // I'm not sure why this number works but it does seem to!
+		}
+
+
+		img {
+			aspect-ratio: 1.12;
+			object-fit: cover;
+			height: 100%;
+
+			@include break-small() {
+				min-height: 360px;
+			}
+		}
+	}
+}

@@ -1,5 +1,6 @@
 // Default link styles
-a {
+a,
+.wp-block-navigation a {
 	cursor: pointer;
 	text-underline-offset: 0.15em;
 	text-decoration: none;
@@ -11,12 +12,22 @@ a {
 }
 
 //Links that appear in the main content area
-.block-editor-block-list__layout a, // Needed for the post area
-.wp-block-post-content a {
+main.block-editor-block-list__layout a, // Needed for the post area
+.wp-block-post a {
 	text-decoration-line: underline;
 
 	&:hover,
 	&:focus {
+		text-decoration: none;
+	}
+}
+
+// Select the focus states of all non-wpadmin and screen reader links
+a:not(.ab-item):not(.screen-reader-shortcut) {
+
+	&:active,
+	&:focus {
+		outline: 1px dotted currentColor;
 		text-decoration: none;
 	}
 }
