@@ -14,9 +14,6 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
-		// Enqueue the Gutenberg plugin theme.css file
-		add_theme_support( 'wp-block-styles' );
-
 		// Add support for post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
@@ -37,7 +34,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social'  => __( 'Social Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
 			)
 		);
 
@@ -96,7 +93,7 @@ function blockbase_scripts() {
 
 	// Add the child theme CSS if it exists.
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
-		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
@@ -117,26 +114,26 @@ function blockbase_fonts_url() {
 		return '';
 	}
 
-	$font_families = array();
+	$font_families = [];
 	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
-		foreach ( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
+		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
 
-		// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-	} elseif ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach ( $theme_data['typography']['fontFamilies']['user'] as $font ) {
+	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
+	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
+		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
 			if ( ! empty( $font['google'] ) ) {
 				$font_families[] = $font['google'];
 			}
 		}
-		// End Gutenberg < 12.1 compatibility patch
+	// End Gutenberg < 12.1 compatibility patch
 
 	} else {
 		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-			foreach ( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
+			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
 				if ( ! empty( $font['google'] ) ) {
 					$font_families[] = $font['google'];
 				}
@@ -169,7 +166,7 @@ add_action(
 		wp_enqueue_script(
 			'wp-customize-nav-menu-refresh',
 			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
-			array( 'customize-nav-menus' ),
+			[ 'customize-nav-menus' ],
 			wp_get_theme()->get( 'Version' ),
 			true
 		);
