@@ -141,7 +141,7 @@ async function pushButtonDeploy() {
 		if( thingsWentBump ){
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
-				message: 'Are you good with the version bump changes? Make any manual adjustments now if necessary.',
+				message: 'Are you good with the version bump and changelog updates? Make any manual adjustments now if necessary.',
 				name: "continue",
 				default: false
 			}]);
@@ -441,6 +441,7 @@ async function updateLastDeployedHash() {
  Version bump (increment version patch) any theme project that has had changes since the last deployment.
  If a theme's version has already been changed since that last deployment then do not version bump it.
  If any theme projects have had a version bump also version bump the parent project.
+ If a theme has changes also update its changelog.
  Commit the change.
 */
 async function versionBumpThemes() {
@@ -465,6 +466,7 @@ async function versionBumpThemes() {
 		}
 
 		await versionBumpTheme(theme, true);
+		await updateThemeChangelog(theme);
 		changesWereMade = true;
 	}
 
@@ -494,6 +496,37 @@ export function getThemeMetadata(styleCss, attribute) {
 	}
 }
 
+/*
+ Update theme changelog using current commit logs.
+ Used by versionBumpThemes to update each theme changelog.
+*/
+async function updateThemeChangelog(theme) {
+	console.log(`Updating ${theme} changelog`);
+
+	// Get theme version
+ 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+ 	let version = getThemeMetadata(styleCss, 'Version');
+
+	// Get list of updates
+ 	let logs = await getCommitLogs();
+
+	// Build changelog entry
+	let newChangelogEntry = `== Changelog ==
+
+= ${version} =
+${logs}`;
+
+	// Update readme.txt
+	fs.readFile(`${theme}/readme.txt`, 'utf8', function(err, data) {
+		let changelogSection = '== Changelog ==';
+		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
+		let formattedChangelog = data.replace(regex, newChangelogEntry);
+
+		fs.writeFile(`${theme}/readme.txt`, formattedChangelog, 'utf8', function(err) {
+			if (err) return console.log(err);
+		});
+	});
+}
 
 /*
  Version Bump a Theme.
