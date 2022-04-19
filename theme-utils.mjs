@@ -41,6 +41,20 @@ function showHelp(){
 }
 
 /*
+ Create list of changes from git logs
+ Optionally pass in a deployed hash or default to calling getLastDeployedHash()
+*/
+async function getCommitLogs(hash) {
+	if (!hash) {
+		hash = await getLastDeployedHash();
+	}
+	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	// Remove any double quotes from commit messages
+	logs = logs.replace(/"/g, '');
+	return logs;
+}
+
+/*
  Determine what changes would be deployed
 */
 async function deployPreview() {
@@ -58,9 +72,7 @@ async function deployPreview() {
 	let changedThemes = await getChangedThemes(hash);
 	console.log(`The following themes have changes:\n${changedThemes}`);
 
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	// Remove any double quotes from commit messages
-	logs = logs.replace(/"/g, '');
+	let logs = await getCommitLogs(hash);
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
@@ -760,9 +772,7 @@ async function syncCoreTheme(theme, sinceRevision) {
 async function buildPhabricatorCommitMessageSince(hash){
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	// Remove any double quotes from commit messages
-	logs = logs.replace(/"/g, '');
+	let logs = await getCommitLogs(hash);
 	return `Deploy Themes ${projectVersion} to wpcom
 
 Summary:
@@ -834,9 +844,7 @@ async function tagDeployment(options={}) {
 		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffId}-code`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	// Remove any double quotes from commit messages
-	logs = logs.replace(/"/g, '');
+	let logs = await getCommitLogs(hash);
 	let tag = `v${projectVersion}`;
 	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
 
