@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Simple list of posts
+ * Title: Post list
  * Slug: stewart/posts-list
  * Categories: query
  * Block Types: query
