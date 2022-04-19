@@ -7,7 +7,7 @@ Description: An elegant product-focused theme
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.8
+Version: 0.0.12
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
@@ -56,7 +56,7 @@ a:focus {
 .wp-block-post-content a:hover {
 	text-decoration: none;
 }
- .wp-block-post-content .wp-block-button a {
+.wp-block-button a {
 	text-decoration: none;
 }
 
@@ -65,20 +65,46 @@ a:focus {
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
-
+.wp-block-button__link {
+    	padding: calc(1.2em + 2px) calc(2em + 2px);
+}
+.wp-block-button.is-style-outline .wp-block-button__link {
+    	padding: 1.2em 2em;
+}
+	
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
+.wp-block-post-comments input[type=submit]:hover,
 .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--background);
 	color: var(--wp--preset--color--foreground);
 	border: 2px solid var(--wp--preset--color--foreground);
-    	padding: 0.667em 1.333em !important;
+    	padding: 1.2em 2em;
 }
 
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--foreground);
 	color: var(--wp--preset--color--background);
 	border: 2px solid var(--wp--preset--color--foreground);
+}
+
+/* Special Condition for buttons inside of groups where the background color is set to the foreground palette color */
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color) {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+}
+.wp-block-group.has-foreground-background-color .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background-color):hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
 }
 
 /*
@@ -114,13 +140,6 @@ a:focus {
 .wp-block-social-links.is-style-logos-only .wp-social-link svg {
 	height: 1em;
 	width: 1em;
-}
-
-/*
- * We don't wish for the top-level elements to leverage the block-gap
- */
-.wp-site-blocks > * {
-	margin-block-start: 0;
 }
 
 /*
@@ -194,4 +213,27 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	line-height: 2.6;
 	font-size: var(--wp--preset--font-size--x-small);
 	letter-spacing: 0.1em;
+}
+
+/* Desktop responsive navigation layout */
+.wp-block-navigation.is-responsive .is-menu-open.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
+    margin: 0 auto;
+    max-width: 820px;
+}
+
+.wp-block-navigation:where(:not([class*=has-text-decoration])) a {
+	text-decoration-thickness: 1px;
+}
+
+.wp-block-categories {
+	list-style-type: none;
+}
+
+.wp-block-post-navigation-link .post-navigation-link__label {
+	font-family: var(--wp--preset--font-family--body-font);
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	line-height: 3;
 }

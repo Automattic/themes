@@ -641,7 +641,7 @@ p.has-drop-cap:not(:focus)::first-letter {
   display: grid;
   column-gap: 1em;
   grid-template-rows: auto;
-  grid-template-areas: "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
+  grid-template-areas: "misc misc" "notes notes" "author author" "email url" "comment comment" "cookies-consent cookies-consent" "form-submit form-submit";
 }
 .wp-block-post-comments form input:not([type=submit]):not([type=checkbox]),
 .wp-block-post-comments form textarea {
@@ -663,6 +663,9 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-post-comments form p {
   margin-top: 0;
   margin-bottom: var(--wp--custom--gap--vertical);
+}
+.wp-block-post-comments form > * {
+  grid-area: misc;
 }
 .wp-block-post-comments form .comment-notes {
   grid-area: notes;
