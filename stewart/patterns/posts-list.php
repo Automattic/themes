@@ -2,7 +2,7 @@
 /**
  * Title: Simple list of posts
  * Slug: stewart/posts-list
- * Categories: featured, query
+ * Categories: query
  * Block Types: query
  */
 ?>
