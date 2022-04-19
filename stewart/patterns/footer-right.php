@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Right-aligned footer block pattern
+ * Title: Right-aligned footer
  * Slug: stewart/footer-right
  * Categories: footer
  * Block Types: core/template-part/footer

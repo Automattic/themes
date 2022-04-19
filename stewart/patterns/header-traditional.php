@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Traditional header block pattern
+ * Title: Traditional header
  * Slug: stewart/header-traditional
  * Categories: header
  */

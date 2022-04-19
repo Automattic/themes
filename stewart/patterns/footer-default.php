@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Default footer block pattern
+ * Title: Default footer
  * Slug: stewart/footer-default
  * Categories: footer
  * Block Types: core/template-part/footer

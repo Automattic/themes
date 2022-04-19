@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: About page block pattern
+ * Title: About page
  * Slug: stewart/page-about
  * Categories: pages
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Default sidebar block pattern
+ * Title: Default sidebar
  * Slug: stewart/sidebar-default
  * Categories: sidebar
  */

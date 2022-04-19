@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Sidebar with background color block pattern
+ * Title: Sidebar with background color
  * Slug: stewart/sidebar-background
  * Categories: sidebar
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Footer with right navigation block pattern
+ * Title: Footer with right navigation
  * Slug: stewart/footer-nav-right
  * Categories: footer
  * Block Types: core/template-part/footer

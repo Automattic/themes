@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Contact page block pattern
+ * Title: Contact page
  * Slug: stewart/page-contact
  * Categories: pages
  */

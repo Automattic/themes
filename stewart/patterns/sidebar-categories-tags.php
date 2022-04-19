@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Sidebar with categories and tags block pattern
+ * Title: Sidebar with categories and tags
  * Slug: stewart/sidebar-categories-tag
  * Categories: sidebar
  */

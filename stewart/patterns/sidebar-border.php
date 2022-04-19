@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Sidebar with border block pattern
+ * Title: Sidebar with border
  * Slug: stewart/sidebar-border
  * Categories: sidebar
  */

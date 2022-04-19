@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Header image block pattern
+ * Title: Header image
  * Slug: stewart/header-image
  * Categories: header
  */

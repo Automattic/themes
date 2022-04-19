@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Blogging sidebar block pattern
+ * Title: Blogging sidebar
  * Slug: stewart/sidebar-blogging
  * Categories: sidebar
  */
