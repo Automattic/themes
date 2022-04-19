@@ -3,6 +3,7 @@
  * Title: Traditional header
  * Slug: stewart/header-traditional
  * Categories: header
+ * Block Types: core/template-part/header
  */
 ?>
 

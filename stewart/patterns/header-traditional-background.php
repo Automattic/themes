@@ -3,6 +3,7 @@
  * Title: Traditional header with color background
  * Slug: stewart/header-traditional-background
  * Categories: header
+ * Block Types: core/template-part/header
  */
 ?>
 

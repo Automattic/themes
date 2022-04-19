@@ -3,6 +3,7 @@
  * Title: Header image
  * Slug: stewart/header-image
  * Categories: header
+ * Block Types: core/template-part/header
  */
 ?>
 
