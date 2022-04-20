@@ -475,7 +475,7 @@ async function versionBumpThemes() {
 		}
 
 		await versionBumpTheme(theme, true);
-		await updateThemeChangelog(theme);
+		await updateThemeChangelog(theme, true);
 		changesWereMade = true;
 	}
 
@@ -509,7 +509,7 @@ export function getThemeMetadata(styleCss, attribute) {
  Update theme changelog using current commit logs.
  Used by versionBumpThemes to update each theme changelog.
 */
-async function updateThemeChangelog(theme) {
+async function updateThemeChangelog(theme, addChanges) {
 	console.log(`Updating ${theme} changelog`);
 
 	// Get theme version
@@ -519,6 +519,9 @@ async function updateThemeChangelog(theme) {
 	// Get list of updates
  	let logs = await getCommitLogs('', true);
 
+	// Find theme readme.txt
+	let readmeFile = `${theme}/readme.txt`;
+
 	// Build changelog entry
 	let newChangelogEntry = `== Changelog ==
 
@@ -526,15 +529,20 @@ async function updateThemeChangelog(theme) {
 ${logs}`;
 
 	// Update readme.txt
-	fs.readFile(`${theme}/readme.txt`, 'utf8', function(err, data) {
+	fs.readFile(readmeFile, 'utf8', function(err, data) {
 		let changelogSection = '== Changelog ==';
 		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
 		let formattedChangelog = data.replace(regex, newChangelogEntry);
 
-		fs.writeFile(`${theme}/readme.txt`, formattedChangelog, 'utf8', function(err) {
+		fs.writeFile(readmeFile, formattedChangelog, 'utf8', function(err) {
 			if (err) return console.log(err);
 		});
 	});
+
+	// Stage readme.txt
+	if (addChanges) {
+		await executeCommand(`git add ${readmeFile}`);
+	}
 }
 
 /*
