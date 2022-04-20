@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 0.0.13 =
+* Add variations (#5877)
+
 = 0.0.1 =
 * Initial release
 
