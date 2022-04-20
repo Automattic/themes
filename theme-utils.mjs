@@ -518,10 +518,10 @@ async function updateThemeChangelog(theme, addChanges) {
  	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
  	let version = getThemeMetadata(styleCss, 'Version');
 
-	// Get list of updates
+	// Get list of updates with bullet points
  	let logs = await getCommitLogs('', true);
 
-	// Find theme readme.txt
+	// Get theme readme.txt
 	let readmeFile = `${theme}/readme.txt`;
 
 	// Build changelog entry
@@ -529,6 +529,11 @@ async function updateThemeChangelog(theme, addChanges) {
 
 = ${version} =
 ${logs}`;
+
+	if (!readmeFile) {
+		console.log(`Unable to find a readme.txt for ${theme}. Aborted Automated Deploy Process at changelog step.`);
+		return;
+	}
 
 	// Update readme.txt
 	fs.readFile(readmeFile, 'utf8', function(err, data) {
