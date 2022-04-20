@@ -43,14 +43,23 @@ function showHelp(){
 /*
  Create list of changes from git logs
  Optionally pass in a deployed hash or default to calling getLastDeployedHash()
+ Optionally pass in boolean bulletPoints to add bullet points to each commit log
 */
-async function getCommitLogs(hash) {
+async function getCommitLogs(hash, bulletPoints) {
 	if (!hash) {
 		hash = await getLastDeployedHash();
 	}
+
 	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+
+	if (bulletPoints) {
+		// Add * to the start of each log (used in changelogs)
+		logs = await executeCommand(`git log --reverse --pretty=format:"* %s" ${hash}..HEAD`);
+	}
+
 	// Remove any double quotes from commit messages
 	logs = logs.replace(/"/g, '');
+
 	return logs;
 }
 
@@ -508,7 +517,7 @@ async function updateThemeChangelog(theme) {
  	let version = getThemeMetadata(styleCss, 'Version');
 
 	// Get list of updates
- 	let logs = await getCommitLogs();
+ 	let logs = await getCommitLogs('', true);
 
 	// Build changelog entry
 	let newChangelogEntry = `== Changelog ==
