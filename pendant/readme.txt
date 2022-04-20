@@ -12,6 +12,11 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 0.0.14 =
+* Pendant: Adjusted post navigation blocks and added theme-specific css to achieve design target (#5887)
+* Pendant: Added white link color to hero pattern (#5888)
+* Pendant: post page spacing (#5886)
+
 = 0.0.13 =
 * Add variations (#5877)
 
