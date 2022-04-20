@@ -46,18 +46,16 @@ function showHelp(){
  Optionally pass in boolean bulletPoints to add bullet points to each commit log
 */
 async function getCommitLogs(hash, bulletPoints) {
-	let logs;
-
 	if (!hash) {
 		hash = await getLastDeployedHash();
 	}
+
+	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
 
 	if (bulletPoints) {
 		// Add a '*' to the start of each log (used in changelogs)
 		logs = await executeCommand(`git log --reverse --pretty=format:"* %s" ${hash}..HEAD`);
 	}
-
-	logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
 
 	// Remove any double quotes from commit messages
 	logs = logs.replace(/"/g, '');
