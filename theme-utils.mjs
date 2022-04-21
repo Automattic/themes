@@ -516,9 +516,15 @@ export function getThemeMetadata(styleCss, attribute) {
 /* Rebuild theme changelog from a given starting hash */
 async function rebuildThemeChangelog(theme, since) {
 
-	console.log(`Rebuilding ${theme} changelog since ${since}`);
+	console.log(`Rebuilding ${theme} changelog since ${since || 'forever'}`);
 
-	let hashes = await executeCommand(`git rev-list ${since}..HEAD -- ./${theme}`);
+	if (since) {
+		since = `${since}..HEAD`;
+	} else {
+		since = 'HEAD';
+	}
+
+	let hashes = await executeCommand(`git rev-list ${since} -- ./${theme}`);
 	hashes = hashes.split('\n');
 
 	let logs = '== Changelog ==\n';
