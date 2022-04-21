@@ -12,6 +12,29 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.6 =
+* multiple themes: update font sizes from px to rem for better a11y (#5801)
+
+= 1.0.5 =
+* Update register block pattern categories function name (#5804)
+
+= 1.0.4 =
+* Archeo: Load patterns automatically (#5715)
+* Remove responsive image fix (#5648)
+
+= 1.0.3 =
+* Reintroduce previous spacing fix (#5731)
+* [Archeo] Update the theme screenshot with Mayan translation (#5721)
+
+= 1.0.2 =
+* Add Page (No Title) template. (#5719)
+
+= 1.0.1 =
+* Tidy up the main homepage pattern. (#5716)
+* Change blockgap from variable to 2.5rem (#5671)
+* Archeo: Add fonts to theme.json (#5609)
+* Archeo: bump version (#5668)
+
 = 1.0.0 =
 * Initial release
 
