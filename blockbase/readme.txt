@@ -50,7 +50,6 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 = 2.0.25 =
 * Blockbase: Remove list ponyfill (#5586)
-* Winkel: Initial commit. (#5571)
 * Blockbase: Add more issues that need to be resolved to remove CSS (#5587)
 
 = 2.0.24 =
@@ -63,7 +62,6 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 * Try fixing the husky actions. (#5493)
 
 = 2.0.22 =
-* Skatepark: refactor CSS into block markup (#5473)
 * fixed spacing for header (#5472)
 
 = 2.0.21 =
@@ -84,7 +82,6 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 = 2.0.17 =
 * Blockbase search template update (#5418)
-* Skatepark: updated font sizes (#5416)
 
 = 2.0.16 =
 * Blockbase: Fix social navigation warning (#5389)
@@ -131,9 +128,6 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 * Blockbase: Update alignment rules (#5220)
 * Blockbase: fix variables for 2 colored themes (#5241)
 
-= 2.0.7 =
-* Skatepark: simplify nav (#5190)
-
 = 2.0.6 =
 * Blockbase: Force DOMXPath to use utf-8 encoding (#5193)
 
@@ -164,7 +158,6 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 * updated readme with blog links (#5099)
 * Videomaker: Update Videomaker navigation (#5059)
 * Quadrat: fixing hover styles for buttons inside the subscribe form (#5033)
-
 
 = 2.0.0 =
 * BREAKING CHANGE: Simplify the approach to font customization #4980
