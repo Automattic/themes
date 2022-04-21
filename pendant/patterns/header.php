@@ -13,7 +13,7 @@
 
 <!-- wp:site-title {"textAlign":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}}} /-->
 
-<!-- wp:social-links {"iconColor":"background","iconColorValue":"#ffffff","className":"is-style-logos-only"} -->
+<!-- wp:social-links {"iconColor":"background","iconColorValue":"currentColor","className":"is-style-logos-only"} -->
 <ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:group --></div>
