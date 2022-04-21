@@ -12,6 +12,111 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.27 =
+* multiple themes: update font sizes from px to rem for better a11y (#5801)
+
+= 1.0.26 =
+* Changed source of pagination arrows from CSS to block attributes. (#5532)
+
+= 1.0.25 =
+* Update dependencies (#5476)
+
+= 1.0.24 =
+* Geologist and Zoologist: Add blog-homepage tag' (#5460)
+
+= 1.0.23 =
+* Blockbase: Load Block Patterns for children automatically (#5363)
+
+= 1.0.22 =
+* Blockbase children: Remove search templates (#5334)
+
+= 1.0.21 =
+* Blockbase: update dependencies & change node-sass to dart sass (#5290)
+* Font size names update (#5300)
+* Update all dependencies and add update script (#5304)
+
+= 1.0.20 =
+* Reverting the mess caused renaming template folders (#5317)
+
+= 1.0.20 =
+* Remove templates improperly nested in a folder due to script error in #5105 (#5314)
+* Refix/5105 script refactor template folders (#5312)
+* Ran script moving template resources
+* Blockbase: refactor footers to patterns (#5245)
+* Blockbase: converted headers to patterns (#5238)
+
+= 1.0.19 =
+* Geologist Variations + Variation Creation Script (#5179)
+
+= 1.0.18 =
+* Try/consolidate headers (#5145)
+
+= 1.0.17 =
+* Blockbase: refactor template part blocks (#5129)
+* Blockbase: Add an archive template (#5127)
+* Add default layout to Geologist single posts (#5144)
+* Geologist: Remove unused template (#5143)
+
+= 1.0.16 =
+* Move calendar styles to blockbase (#5114)
+* Remove unused search block code (#5116)
+* Blockbase: Move table stripes to Blockbase (#5115)
+
+= 1.0.15 =
+* Blockbase: Simplify the approach to font customization (#4980)
+
+= 1.0.14 =
+* Quadrat: Fix post title spacing (#4720)
+* Update all navigation blocks to new markup (#5038)
+
+= 1.0.13 =
+* Blockbase: Add child CSS if it exists (#5047)
+
+= 1.0.12 =
+* Blockbase: Use new attributes for navigation block (#4832)
+
+= 1.0.11 =
+* Remove/child theme (#4861)
+
+= 1.0.10 =
+* Revert the header change for Quadrat, Geologist and Zoologist (#4955)
+
+= 1.0.9 =
+* Geologist: Remove blockTypes from Geologist patterns (#4937)
+* Blockbase: Update the stacking of site title and tagline in Blockbase and co (#4928)
+
+= 1.0.8 =
+* Blockbase: Add query title (#4878)
+
+= 1.0.7 =
+* Blockbase: Fix form background color contrast (#4824)
+* Blockbase: search block font size (#4865)
+* Blockbase: make post meta icons optional (#4891)
+* Blockbase: Update the query pagination block markup (#4805)
+
+= 1.0.6 =
+* Update style.css (#4874)
+
+= 1.0.5 =
+* cleanup errors on themejson files and rebuild themes (#4857)
+
+= 1.0.4 =
+* Updated tested version of wordpress for all blockbase themes (#4839)
+* Adjusted menu CSS to match recent changes in the block (#4822)
+* renamed a couple of functions from 'newtheme' to 'geologist' (#4840)
+
+= 1.0.3 =
+* Blockbase: Allow themes to inherit core gradients unless they define their own (#4818)
+* Blockbase: Add theme.json meta data (#4819)
+* Blockbase: Add social navigation to blockbase themes (#4482)
+
+= 1.0.2 =
+* Blockbase:  remove unneeded margin rules (#4808)
+* Quadrat + Geologist: Remove invalid site-logo rule (#4803)
+
+= 1.0.1 =
+* remove unnecesary queryId attribute (#4806)
+
 = 1.0.0 =
 * Initial release
 
