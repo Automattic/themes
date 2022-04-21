@@ -19,6 +19,153 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 2.0.33 =
+* Blockbase: Account for additional content via css grid configuration (#5816)
+
+= 2.0.32 =
+* Blockbase: add padding for group blocks with a background (#5811)
+* Remove the Gutenberg Dependency Check from Blockbase and bump required version to 5.9 (#5823)
+
+= 2.0.31 =
+* Add select boxes to form styles (#5793)
+* Change how 'old custom theme colors' are cleaned out to be more specific (#5754)
+* Fix Woo number input in Blockbase (#5354)
+* Added Gutenberg check to Blockbase themes (#5735)
+
+= 2.0.30 =
+* Blockbase: add style overrides for navigation block links (#5741)
+
+= 2.0.29 =
+* Blockbase: update font sizes to rem instead of px for a11y (#5752)
+
+= 2.0.28 =
+* Add missing paren. (#5710)
+
+= 2.0.27 =
+* Blockbase: move require social-navigation.php inside a check for WP_Theme_JSON_Resolver_Gutenberg to avoid errors. (#5654)
+
+= 2.0.26 =
+* Moved color customizations from custom to theme (#5629)
+* Blockbase: Fix social icons (#5592)
+
+= 2.0.25 =
+* Blockbase: Remove list ponyfill (#5586)
+* Winkel: Initial commit. (#5571)
+* Blockbase: Add more issues that need to be resolved to remove CSS (#5587)
+
+= 2.0.24 =
+* Update README.md (#5528)
+* avoid linter warnings about yoda conditions (#5538)
+* Blockbase: Use the Global Styles rest API in the customizer (#5492)
+* Update alignment rules (#5526)
+
+= 2.0.23 =
+* Try fixing the husky actions. (#5493)
+
+= 2.0.22 =
+* Skatepark: refactor CSS into block markup (#5473)
+* fixed spacing for header (#5472)
+
+= 2.0.21 =
+* Update alignment styles (#5475)
+* Update dependencies (#5476)
+
+= 2.0.20 =
+* Blockbase: Add comments to a page (#5461)
+* Fixed import to include __DIR__ instead of assuming relative path (#5449)
+
+= 2.0.19 =
+* remove the default color check during color customizations save (#5446)
+* Remove block style registration (#5368)
+* register header and footer in theme json (#5441)
+
+= 2.0.18 =
+* Blockbase: Remove the fallback for the navigation block (#5419)
+
+= 2.0.17 =
+* Blockbase search template update (#5418)
+* Skatepark: updated font sizes (#5416)
+
+= 2.0.16 =
+* Blockbase: Fix social navigation warning (#5389)
+
+= 2.0.15 =
+* Videomaker: Consolidate footer patterns in Videomaker (#5374)
+
+= 2.0.14 =
+* Blockbase: Load Block Patterns for children automatically (#5363)
+* Update Blank Canvas Blocks footer (#5346)
+
+= 2.0.13 =
+* Blockbase: Update style.css (#5330)
+
+= 2.0.12 =
+* Blockbase: update dependencies & change node-sass to dart sass (#5290)
+* Font size names update (#5300)
+* Update all dependencies and add update script (#5304)
+* Update alignment rules. (#5316)
+* Reverting the mess caused renaming template folders (#5317)
+* Remove templates improperly nested in a folder due to script error in #5105 (#5314)
+* Refix/5105 script refactor template folders (#5312)
+* Ran script moving template resources
+* Blockbase: refactor footers to patterns (#5245)
+* Blockbase: converted headers to patterns (#5238)
+* Remove customizer restoration as it is no longer being removed by Gutenberg. (#5303)
+
+= 2.0.11 =
+* Revert Change the way we fetch users CPT to use the Gutenberg function directly (#5307)
+* Revert Revert Fix Customizer Font Editing causing Site Editor WSOD (#5295)
+* Revert Fix Customizer Font Editing causing Site Editor WSOD (#5262) (#5284)
+
+= 2.0.10 =
+* Fix Customizer Font Editing causing Site Editor WSOD (#5262)
+* Add appearanceTools: true setting (#5072)
+* Blockbase: Update the package.json (#5253)
+* Blockbase: Update customizer PHP library to work with latest version of Gutenberg (#5251)
+
+= 2.0.9 =
+* Fallback to the old function name in case users are still on the old version of Gutenberg (#5250)
+* Blockbase: Rename Gutenberg functions (#5248)
+
+= 2.0.8 =
+* Blockbase: Update alignment rules (#5220)
+* Blockbase: fix variables for 2 colored themes (#5241)
+
+= 2.0.7 =
+* Skatepark: simplify nav (#5190)
+
+= 2.0.6 =
+* Blockbase: Force DOMXPath to use utf-8 encoding (#5193)
+
+= 2.0.5 =
+* Geologist Variations + Variation Creation Script (#5179)
+* Fixed the header spacer element in header-center template (#5175)
+
+= 2.0.4 =
+* Try/consolidate headers (#5145)
+
+= 2.0.3 =
+* Blockbase: replace user key with custom (#5147)
+
+= 2.0.2 =
+* Blockbase Fonts: Only unset properties that are set (#5149)
+* Blockbase: refactor template part blocks (#5129)
+* Blockbase: Add an archive template (#5127)
+
+= 2.0.1 =
+* Blockbase: Fix navigation (#5128)
+* Add padding to footer (#5122)
+* Move calendar styles to blockbase (#5114)
+* Blockbase: Move table stripes to Blockbase (#5115)
+* Blockbase: Update paragraph gap (#5104)
+* created a footer only template (#5103)
+* Blockbase: Use variable for heading font size (#5101)
+* Blockbase: Remove layout inheritance from the footer template (#5100)
+* updated readme with blog links (#5099)
+* Videomaker: Update Videomaker navigation (#5059)
+* Quadrat: fixing hover styles for buttons inside the subscribe form (#5033)
+
+
 = 2.0.0 =
 * BREAKING CHANGE: Simplify the approach to font customization #4980
 
