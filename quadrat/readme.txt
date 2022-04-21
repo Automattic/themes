@@ -12,6 +12,126 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.39 =
+* multiple themes: update font sizes from px to rem for better a11y (#5801)
+
+= 1.1.38 =
+* Update dependencies (#5476)
+
+= 1.1.37 =
+* Add the triangle back to the Quadrat footer (#5469)
+
+= 1.1.36 =
+* Remove block style registration (#5368)
+
+= 1.1.35 =
+* Blockbase: Load Block Patterns for children automatically (#5363)
+
+= 1.1.34 =
+* Blockbase children: Remove search templates (#5334)
+
+= 1.1.33 =
+* Blockbase: update dependencies & change node-sass to dart sass (#5290)
+* Font size names update (#5300)
+* Update all dependencies and add update script (#5304)
+
+= 1.1.32 =
+* Reverting the mess caused renaming template folders (#5317)
+
+= 1.1.32 =
+* Remove templates improperly nested in a folder due to script error in #5105 (#5314)
+* Refix/5105 script refactor template folders (#5312)
+* Ran script moving template resources
+* Blockbase: refactor footers to patterns (#5245)
+* Blockbase: converted headers to patterns (#5238)
+
+= 1.1.31 =
+* Try/consolidate headers (#5145)
+
+= 1.1.30 =
+* Blockbase: Add an archive template (#5127)
+
+= 1.1.29 =
+* Move calendar styles to blockbase (#5114)
+* Remove unused search block code (#5116)
+* Blockbase: Move table stripes to Blockbase (#5115)
+
+= 1.1.28 =
+* Blockbase: Simplify the approach to font customization (#4980)
+
+= 1.1.27 =
+* Quadrat: Fix post title spacing (#4720)
+* Update all navigation blocks to new markup (#5038)
+
+= 1.1.26 =
+* Blockbase: Add child CSS if it exists (#5047)
+
+= 1.1.25 =
+* Blockbase: Use new attributes for navigation block (#4832)
+
+= 1.1.24 =
+* Remove/child theme (#4861)
+
+= 1.1.23 =
+* Revert the header change for Quadrat, Geologist and Zoologist (#4955)
+
+= 1.1.22 =
+* Blockbase: Handle posts without titles (#4920)
+* Blockbase: Update the stacking of site title and tagline in Blockbase and co (#4928)
+
+= 1.1.21 =
+* Quadrat: Remove unnecessary .png (#4927)
+
+= 1.1.20 =
+* Blockbase: Add query title (#4878)
+
+= 1.1.19 =
+* Blockbase: Add a mixin for post meta (#4897)
+
+= 1.1.18 =
+* Blockbase: Fix form background color contrast (#4824)
+* Blockbase: search block font size (#4865)
+* Blockbase: make post meta icons optional (#4891)
+* Blockbase: Update the query pagination block markup (#4805)
+
+= 1.1.17 =
+* Update style.css (#4874)
+
+= 1.1.16 =
+* cleanup errors on themejson files and rebuild themes (#4857)
+
+= 1.1.15 =
+* Add copy of Quadrat's index.php to Geologist (#4841)
+
+= 1.1.14 =
+* removed the utility class from block patterns and instead used margin (#4847)
+
+= 1.1.13 =
+* Updated tested version of wordpress for all blockbase themes (#4839)
+* Adjusted menu CSS to match recent changes in the block (#4822)
+
+= 1.1.12 =
+* Blockbase: Allow themes to inherit core gradients unless they define their own (#4818)
+* Blockbase: Add theme.json meta data (#4819)
+* Blockbase: Add social navigation to blockbase themes (#4482)
+
+= 1.1.11 =
+* Quadrat: Allow long titles to wrap the same way on post pages and on the index (#4796)
+* Blockbase:  remove unneeded margin rules (#4808)
+* Quadrat + Geologist: Remove invalid site-logo rule (#4803)
+* Blockbase: Rebuild all blockbase children (#4804)
+
+= 1.1.10 =
+* remove unnecesary queryId attribute (#4806)
+
+= 1.1.9 =
+* Added font color and size styles to form input placeholder (#4667)
+* Blockbase + co: Fix navigation alignment (#4795)
+
+= 1.1.8 =
+* Quadrat: Ensure that the position of the post title is the same on all pages (#4783)
+* Blockbase, Quadrat, Seedlet, Mayland Blocks: updated changelogs for .org (#4785)
+
 = 1.1.3 - 1.1.7 =
 * Bug fixes and improvements
 * Gutenberg + Blockbase compatibility improvements

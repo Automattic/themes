@@ -12,6 +12,16 @@ Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a
 
 == Changelog ==
 
+= 1.0.3 =
+* Remote: refactor patterns to load directly from the editor (#5829)
+
+= 1.0.2 =
+* multiple themes: update font sizes from px to rem for better a11y (#5801)
+
+= 1.0.1 =
+* Update screenshot.png (#5817)
+* Remote: added missing credits (#5808)
+
 = 1.0.0 =
 * Initial release
 

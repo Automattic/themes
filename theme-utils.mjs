@@ -31,6 +31,8 @@ const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen
 		case "push-core-themes": return pushCoreThemes();
 		case "sync-core-theme": return syncCoreTheme(args?.[1], args?.[2]);
 		case "deploy-sync-core-theme": return deploySyncCoreTheme(args?.[1], args?.[2]);
+		case "update-theme-changelog": return updateThemeChangelog(args?.[1], false, args?.[2]);
+		case "rebuild-theme-changelog": return rebuildThemeChangelog(args?.[1], args?.[2]);
 	}
 	return showHelp();
 })();
@@ -45,17 +47,23 @@ function showHelp(){
  Optionally pass in a deployed hash or default to calling getLastDeployedHash()
  Optionally pass in boolean bulletPoints to add bullet points to each commit log
 */
-async function getCommitLogs(hash, bulletPoints) {
+async function getCommitLogs(hash, bulletPoints, theme) {
 	if (!hash) {
 		hash = await getLastDeployedHash();
 	}
 
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
+	let format = 'format:%s';
+	let themeDir = '';
 
 	if (bulletPoints) {
-		// Add a '*' to the start of each log (used in changelogs)
-		logs = await executeCommand(`git log --reverse --pretty=format:"* %s" ${hash}..HEAD`);
+		format = 'format:"* %s"';
 	}
+
+	if (theme) {
+		themeDir = `-- ./${theme}`;
+	}
+
+	let logs = await executeCommand(`git log --reverse --pretty=${format} ${hash}..HEAD ${themeDir}`);
 
 	// Remove any double quotes from commit messages
 	logs = logs.replace(/"/g, '');
@@ -505,6 +513,51 @@ export function getThemeMetadata(styleCss, attribute) {
 	}
 }
 
+/* Rebuild theme changelog from a given starting hash */
+async function rebuildThemeChangelog(theme, since) {
+
+	console.log(`Rebuilding ${theme} changelog since ${since || 'forever'}`);
+
+	if (since) {
+		since = `${since}..HEAD`;
+	} else {
+		since = 'HEAD';
+	}
+
+	let hashes = await executeCommand(`git rev-list ${since} -- ./${theme}`);
+	hashes = hashes.split('\n');
+
+	let logs = '== Changelog ==\n';
+
+	for ( let hash of hashes ) {
+		let log = await executeCommand(`git log -n 1 --pretty=format:"* %s" ${hash}`);
+		if ( log.includes('Version Bump') ) {
+			let previousStyleString = await executeCommand(`git show ${hash}:${theme}/style.css 2>/dev/null`);
+			let version = getThemeMetadata(previousStyleString, 'Version');
+			logs += `\n= ${version} =\n`;
+		} else {
+			// Remove any double quotes from commit messages
+			log = log.replace(/"/g, '');
+			logs += log + '\n';
+		}
+	}
+
+	// Get theme readme.txt
+	let readmeFile = `${theme}/readme.txt`;
+
+	// Update readme.txt
+	fs.readFile(readmeFile, 'utf8', function(err, data) {
+		let changelogSection = '== Changelog ==';
+		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
+		let formattedChangelog = data.replace(regex, logs);
+
+		fs.writeFile(readmeFile, formattedChangelog, 'utf8', function(err) {
+			if (err) return console.log(err);
+		});
+	});
+
+}
+
 /*
  Update theme changelog using current commit logs.
  Used by versionBumpThemes to update each theme changelog.
@@ -517,7 +570,7 @@ async function updateThemeChangelog(theme, addChanges) {
  	let version = getThemeMetadata(styleCss, 'Version');
 
 	// Get list of updates with bullet points
- 	let logs = await getCommitLogs('', true);
+ 	let logs = await getCommitLogs('', true, theme);
 
 	// Get theme readme.txt
 	let readmeFile = `${theme}/readme.txt`;
