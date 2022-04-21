@@ -1,4 +1,5 @@
-@import 'button-mixins';
+@import "button-mixins";
+
 /**
  * Button
  */
@@ -6,19 +7,23 @@
 /**
  * Block Options
  */
- .wp-block-button, .wp-block-button__link {
+.wp-block-button,
+.wp-block-button__link {
+
 	&.wp-block-button__link,
 	.wp-block-button__link {
+
 		@include button-hover-styles;
-		@include button-padding-styles;
 		text-decoration: none;
-		font-weight: var(--wp--custom--button--typography--font-weight);
 	}
+
 	&.is-style-outline {
+
 		&.wp-block-button__link,
 		.wp-block-button__link {
 			--wp--custom--button--color--text: var(--wp--custom--button--border--color);
 			--wp--custom--button--color--background: transparent;
+
 			@include button-border-styles;
 			@include button-hover-styles;
 			@include button-color-styles;
@@ -30,6 +35,7 @@
 // a button block OUTSIDE of the context of the button collection block (grrrrrrrrr)
 // then there are undesired margins to be dealt with somehow.
 .wp-block-buttons {
+
 	.wp-block-button:last-child {
 		margin-bottom: 0;
 	}

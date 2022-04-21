@@ -401,7 +401,8 @@
 		"blocks": {
 			"core/button": {
 				"border": {
-					"radius": "var(--wp--custom--button--border--radius)"
+					"radius": "var(--wp--custom--button--border--radius)",
+					"width": "0"
 				},
 				"color": {
 					"background": "var(--wp--custom--button--color--background)",
@@ -412,6 +413,14 @@
 					"fontSize": "var(--wp--custom--button--typography--font-size)",
 					"fontWeight": "var(--wp--custom--button--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--button--typography--line-height)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width) )",
+						"bottom": "calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width) )",
+						"left": "calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width) )",
+						"right": "calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width) )"
+					}
 				}
 			},
 			"core/code": {
