@@ -18,6 +18,7 @@ function sleep( ms ) {
 
 async function createLabel() {
 	try {
+		await sleep( 1000 );
 		return await octokit.request( 'POST /repos/Automattic/themes/labels', {
 			name: '[Theme] ' + theme,
 			color: 'c1f4a1',
@@ -30,6 +31,7 @@ async function createLabel() {
 
 async function createMilestone() {
 	try {
+		await sleep( 1000 );
 		return await octokit.request(
 			'POST /repos/Automattic/themes/milestones',
 			{
@@ -71,15 +73,19 @@ async function createIssues( milestoneNumber ) {
 	];
 	issues.forEach( async ( issue ) => {
 		try {
-			return await octokit
-				.request( 'POST /repos/Automattic/themes/issues', {
+			await sleep( 1000 );
+			return await octokit.request(
+				'POST /repos/Automattic/themes/issues',
+				{
 					title: theme + ': ' + issue,
 					labels: [ '[Theme] ' + theme ],
 					milestone: milestoneNumber,
-				} )
-				.then( ( issueData ) => {
-					addIssueToProject( issueData );
-				} );
+				}
+			);
+			// If you want to automatically add this to the Theme Dev Board, uncomment this.
+			// .then( ( issueData ) => {
+			// 	addIssueToProject( issueData );
+			// } );
 		} catch ( error ) {
 			console.log( error );
 		}
@@ -88,6 +94,7 @@ async function createIssues( milestoneNumber ) {
 
 async function addIssueToProject( issueData ) {
 	try {
+		await sleep( 1000 );
 		return await octokit.request( 'POST /projects/columns/11021541/cards', {
 			note: null,
 			content_id: issueData.data.id,
