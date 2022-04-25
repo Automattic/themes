@@ -5,8 +5,8 @@
  */
 ?>
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"padding":{"top":"0px","bottom":"0px"}}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true}} -->
-<div class="wp-block-group has-background-color has-foreground-background-color has-text-color has-background" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-bottom:0px"><!-- wp:columns {"align":"full","style":{"spacing":{"blockGap":"0px"}}} -->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"padding":{"top":"0px","bottom":"0px"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true}} -->
+<div class="wp-block-group has-background-color has-foreground-background-color has-text-color has-background has-link-color" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-bottom:0px"><!-- wp:columns {"align":"full","style":{"spacing":{"blockGap":"0px"}}} -->
 <div class="wp-block-columns alignfull"><!-- wp:column -->
 <div class="wp-block-column"></div>
 <!-- /wp:column -->

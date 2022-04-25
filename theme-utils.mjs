@@ -31,6 +31,8 @@ const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen
 		case "push-core-themes": return pushCoreThemes();
 		case "sync-core-theme": return syncCoreTheme(args?.[1], args?.[2]);
 		case "deploy-sync-core-theme": return deploySyncCoreTheme(args?.[1], args?.[2]);
+		case "update-theme-changelog": return updateThemeChangelog(args?.[1], false, args?.[2]);
+		case "rebuild-theme-changelog": return rebuildThemeChangelog(args?.[1], args?.[2]);
 	}
 	return showHelp();
 })();
@@ -38,6 +40,35 @@ const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen
 function showHelp(){
 	// TODO: make this helpful
 	console.log('Help info can go here');
+}
+
+/*
+ Create list of changes from git logs
+ Optionally pass in a deployed hash or default to calling getLastDeployedHash()
+ Optionally pass in boolean bulletPoints to add bullet points to each commit log
+*/
+async function getCommitLogs(hash, bulletPoints, theme) {
+	if (!hash) {
+		hash = await getLastDeployedHash();
+	}
+
+	let format = 'format:%s';
+	let themeDir = '';
+
+	if (bulletPoints) {
+		format = 'format:"* %s"';
+	}
+
+	if (theme) {
+		themeDir = `-- ./${theme}`;
+	}
+
+	let logs = await executeCommand(`git log --reverse --pretty=${format} ${hash}..HEAD ${themeDir}`);
+
+	// Remove any double quotes from commit messages
+	logs = logs.replace(/"/g, '');
+
+	return logs;
 }
 
 /*
@@ -58,9 +89,7 @@ async function deployPreview() {
 	let changedThemes = await getChangedThemes(hash);
 	console.log(`The following themes have changes:\n${changedThemes}`);
 
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	// Remove any double quotes from commit messages
-	logs = logs.replace(/"/g, '');
+	let logs = await getCommitLogs(hash);
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
@@ -129,7 +158,7 @@ async function pushButtonDeploy() {
 		if( thingsWentBump ){
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
-				message: 'Are you good with the version bump changes? Make any manual adjustments now if necessary.',
+				message: 'Are you good with the version bump and changelog updates? Make any manual adjustments now if necessary.',
 				name: "continue",
 				default: false
 			}]);
@@ -429,6 +458,7 @@ async function updateLastDeployedHash() {
  Version bump (increment version patch) any theme project that has had changes since the last deployment.
  If a theme's version has already been changed since that last deployment then do not version bump it.
  If any theme projects have had a version bump also version bump the parent project.
+ If a theme has changes also update its changelog.
  Commit the change.
 */
 async function versionBumpThemes() {
@@ -453,6 +483,7 @@ async function versionBumpThemes() {
 		}
 
 		await versionBumpTheme(theme, true);
+		await updateThemeChangelog(theme, true);
 		changesWereMade = true;
 	}
 
@@ -482,6 +513,95 @@ export function getThemeMetadata(styleCss, attribute) {
 	}
 }
 
+/* Rebuild theme changelog from a given starting hash */
+async function rebuildThemeChangelog(theme, since) {
+
+	console.log(`Rebuilding ${theme} changelog since ${since || 'forever'}`);
+
+	if (since) {
+		since = `${since}..HEAD`;
+	} else {
+		since = 'HEAD';
+	}
+
+	let hashes = await executeCommand(`git rev-list ${since} -- ./${theme}`);
+	hashes = hashes.split('\n');
+
+	let logs = '== Changelog ==\n';
+
+	for ( let hash of hashes ) {
+		let log = await executeCommand(`git log -n 1 --pretty=format:"* %s" ${hash}`);
+		if ( log.includes('Version Bump') ) {
+			let previousStyleString = await executeCommand(`git show ${hash}:${theme}/style.css 2>/dev/null`);
+			let version = getThemeMetadata(previousStyleString, 'Version');
+			logs += `\n= ${version} =\n`;
+		} else {
+			// Remove any double quotes from commit messages
+			log = log.replace(/"/g, '');
+			logs += log + '\n';
+		}
+	}
+
+	// Get theme readme.txt
+	let readmeFile = `${theme}/readme.txt`;
+
+	// Update readme.txt
+	fs.readFile(readmeFile, 'utf8', function(err, data) {
+		let changelogSection = '== Changelog ==';
+		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
+		let formattedChangelog = data.replace(regex, logs);
+
+		fs.writeFile(readmeFile, formattedChangelog, 'utf8', function(err) {
+			if (err) return console.log(err);
+		});
+	});
+
+}
+
+/*
+ Update theme changelog using current commit logs.
+ Used by versionBumpThemes to update each theme changelog.
+*/
+async function updateThemeChangelog(theme, addChanges) {
+	console.log(`Updating ${theme} changelog`);
+
+	// Get theme version
+ 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+ 	let version = getThemeMetadata(styleCss, 'Version');
+
+	// Get list of updates with bullet points
+ 	let logs = await getCommitLogs('', true, theme);
+
+	// Get theme readme.txt
+	let readmeFile = `${theme}/readme.txt`;
+
+	// Build changelog entry
+	let newChangelogEntry = `== Changelog ==
+
+= ${version} =
+${logs}`;
+
+	if (!readmeFile) {
+		console.log(`Unable to find a readme.txt for ${theme}. Aborted Automated Deploy Process at changelog step.`);
+		return;
+	}
+
+	// Update readme.txt
+	fs.readFile(readmeFile, 'utf8', function(err, data) {
+		let changelogSection = '== Changelog ==';
+		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
+		let formattedChangelog = data.replace(regex, newChangelogEntry);
+
+		fs.writeFile(readmeFile, formattedChangelog, 'utf8', function(err) {
+			if (err) return console.log(err);
+		});
+	});
+
+	// Stage readme.txt
+	if (addChanges) {
+		await executeCommand(`git add ${readmeFile}`);
+	}
+}
 
 /*
  Version Bump a Theme.
@@ -760,9 +880,7 @@ async function syncCoreTheme(theme, sinceRevision) {
 async function buildPhabricatorCommitMessageSince(hash){
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	// Remove any double quotes from commit messages
-	logs = logs.replace(/"/g, '');
+	let logs = await getCommitLogs(hash);
 	return `Deploy Themes ${projectVersion} to wpcom
 
 Summary:
@@ -834,9 +952,7 @@ async function tagDeployment(options={}) {
 		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffId}-code`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
-	let logs = await executeCommand(`git log --reverse --pretty=format:%s ${hash}..HEAD`);
-	// Remove any double quotes from commit messages
-	logs = logs.replace(/"/g, '');
+	let logs = await getCommitLogs(hash);
 	let tag = `v${projectVersion}`;
 	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
 

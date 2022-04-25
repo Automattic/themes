@@ -18,6 +18,68 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.16 =
+* multiple themes: update font sizes from px to rem for better a11y (#5801)
+
+= 1.0.15 =
+* Archeo: Load patterns automatically (#5715)
+* Build videomaker variations and version bumpped
+* Videomaker: fixing fonts path (#5711)
+
+= 1.0.13 =
+* Update dependencies (#5476)
+
+= 1.0.12 =
+* Videomaker: use locally-hosted version of Inter instead of Google Fonts (#5442)
+
+= 1.0.11 =
+* Videomaker: Add images from WPCOM (#5395)
+
+= 1.0.10 =
+* Videomaker: Consolidate footer patterns in Videomaker (#5374)
+
+= 1.0.9 =
+* Blockbase: Load Block Patterns for children automatically (#5363)
+
+= 1.0.8 =
+* Blockbase: update dependencies & change node-sass to dart sass (#5290)
+* Font size names update (#5300)
+* Update all dependencies and add update script (#5304)
+
+= 1.0.7 =
+* Reverting the mess caused renaming template folders (#5317)
+* Remove templates improperly nested in a folder due to script error in #5105 (#5314)
+* Refix/5105 script refactor template folders (#5312)
+* Ran script moving template resources
+* Blockbase: refactor footers to patterns (#5245)
+* Blockbase: converted headers to patterns (#5238)
+* Videomaker: Remove the redundant template (#5297)
+
+= 1.0.6 =
+* Update title and names in Videomaker screenshot + patterns (#5164)
+
+= 1.0.5 =
+* Defaulting videomaker header fonts to Inter (#5185)
+
+= 1.0.4 =
+* Fix/videomaker heading spacing (#5178)
+
+= 1.0.3 =
+* Try/consolidate headers (#5145)
+* Videomaker: Add a group to apply layout the header and footer (#5165)
+
+= 1.0.2 =
+* Blockbase: refactor template part blocks (#5129)
+* Blockbase: Add an archive template (#5127)
+* Videomaker: Make the footer wide not full (#5139)
+
+= 1.0.1 =
+* Videomaker: adjusting active states (#5091)
+* Videomaker: Add resource sources (#5098)
+* Videomaker: Update Videomaker navigation (#5059)
+* Videomaker: Fix vertical spacing in and around posts (#5068)
+* Videomaker: Cleanup grid patterns, replace I Love You video (#5090)
+
 = 1.0.0 =
 * Initial release
 

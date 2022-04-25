@@ -13,6 +13,43 @@ Stewart is a modern blogging theme with a left sidebar. Its default color scheme
 
 == Changelog ==
 
+= 1.7 =
+* Stewart: refactor patterns (#5854)
+
+= 1.6 =
+* multiple themes: update font sizes from px to rem for better a11y (#5801)
+
+= 1.5 =
+* Add fonts to theme.json (#5609)
+
+= 1.4 =
+* Stewart: fix font sizes in theme.json (#5614)
+* Stewart: fixes on index, archive and search templates (#5613)
+
+= 1.3 =
+* Update alignment rules (#5526)
+
+= 1.2 =
+* Update alignment styles (#5475)
+
+= 1.1 =
+* Fix template markup (#5383)
+* Adjust about page pattern. (#5382)
+* [Stewart] Add block patterns (#5375)
+* [Stewart] Readme Cleanup (#5381)
+
+= 1.4 =
+* Update screenshots from wpcom (#5357)
+
+= 1.3 =
+* Rename template parts. (#5319)
+
+= 1.2 =
+* [Stewart] Add alignment rules (#5318)
+
+= 1.1 =
+* Stewart: Tidy up navigation (#5265)
+
 = 1.0 =
 * Released: January 22, 2022
 

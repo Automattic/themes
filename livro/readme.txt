@@ -13,6 +13,37 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.11 =
+* Livro: refactor patterns (#5879)
+
+= 1.0.10 =
+* Added a dependency check for Gutenberg  (#5718)
+* Try adding support for the aside post format. (#5732)
+
+= 1.0.9 =
+* Removed reference to absent function that was previously removed. (#5707)
+
+= 1.0.8 =
+* Add fonts to theme.json (#5609)
+
+= 1.0.7 =
+* Update alignment rules (#5526)
+
+= 1.0.6 =
+* Update alignment styles (#5475)
+
+= 1.0.5 =
+* [Livro] Fix wide and full width content in index/archive/home templates (#5385)
+
+= 1.0.4 =
+* Correct livro_preload_webfonts() (#5412)
+
+= 1.0.2 =
+* Livro: Add 404 pattern (#5391)
+* Update alignment rules (#5315)
+* [Livro] Minor theme review fixes (#5323)
+* Try updating Livre theme name to Livro (#5298)
+
 = 1.0.1 =
 * Alignment fixes, code cleanup.
 
