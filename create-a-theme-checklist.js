@@ -6,7 +6,15 @@ if ( ! theme ) {
 }
 
 const { Octokit } = require( 'octokit' );
-const octokit = new Octokit( { auth: `PUT YOUR TOKEN HERE` } );
+const octokit = new Octokit( {
+	auth: `PUT YOUR ACCESS TOKEN HERE`,
+} );
+
+function sleep( ms ) {
+	return new Promise( ( resolve ) => {
+		setTimeout( resolve, ms );
+	} );
+}
 
 async function createLabel() {
 	try {
