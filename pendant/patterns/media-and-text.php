@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: About
- * slug: pendant/about
+ * Title: Media & Text 
+ * slug: pendant/media-and-text
  * categories: pendant
  */
 ?>
