@@ -12,6 +12,11 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 0.0.15 =
+* Fix/pendant variation navy (#5905)
+* Updated pendant image-series pattern to be centered always (#5909)
+* Update/pendant page template (#5906)
+
 = 0.0.14 =
 * Pendant: Adjusted post navigation blocks and added theme-specific css to achieve design target (#5887)
 * Pendant: Added white link color to hero pattern (#5888)
