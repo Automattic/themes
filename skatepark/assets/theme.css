@@ -11,15 +11,11 @@ body:not(.has-featured-image) h1.wp-block-post-title {
 }
 
 /* Separator width */
-.wp-block-separator {
-  /* https://github.com/WordPress/gutenberg/pull/38428 */
-  opacity: 1;
+/* This ccan be removed when this issue gets fixed: https://github.com/WordPress/gutenberg/issues/40624 */
+.wp-block-separator.has-background:not(.is-style-dots) {
+  height: 3px;
 }
-.wp-block-separator.is-style-wide {
-  /* We can remove after https://github.com/WordPress/gutenberg/pull/38635 gets deployed */
-  border-width: 0 0 3px 0;
-}
-.wp-block-separator.has-background {
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
   height: 3px;
 }
 
