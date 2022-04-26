@@ -2,8 +2,8 @@
 /**
  * Title: Default footer
  * Slug: pendant/footer
- * Categories: pendant footer
  * Block Types: core/template-part/footer
+ * inserter: no
  */
 ?>
 
