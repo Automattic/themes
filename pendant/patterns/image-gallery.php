@@ -1,7 +1,8 @@
 <?php
 /**
- * Title: Image Gallery
+ * Title: Gallery
  * slug: pendant/image-gallery
+ * categories: pendant
  */
 ?>
 
