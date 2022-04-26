@@ -11,8 +11,9 @@
 <div class="wp-block-column" style="flex-basis:75%">
 <!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
 <div class="wp-block-group"><!-- wp:group -->
-<div class="wp-block-group"><!-- wp:separator {"className":"is-style-wide"} -->
-<hr class="wp-block-separator is-style-wide"/>
+<div class="wp-block-group">
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
 <!-- /wp:separator -->
 
 <!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"1em"}}}} -->

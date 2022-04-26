@@ -24,7 +24,7 @@
 <div class="wp-block-group" style="padding-top:30px">
 
 <!-- wp:separator {"className":"is-style-wide"} -->
-<hr class="wp-block-separator is-style-wide"/>
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
 <!-- /wp:separator -->
 
 <!-- wp:post-featured-image {"style":{"spacing":{"margin":{"top":"calc(2 * var( --wp--style--block-gap ))"}}},"isLink":true} /-->
