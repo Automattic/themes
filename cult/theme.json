@@ -61,14 +61,58 @@
 			"customFontSize": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+					"fontFamily": "Petrona, serif",
 					"name": "Body (System Font)",
-					"slug": "body-font"
+					"slug": "body-font",
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Petrona",
+							"fontWeight": "300 700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/Petrona.ttf"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Petrona",
+							"fontWeight": "300 700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/Petrona-Italic.ttf"
+							]
+						}
+					]
 				},
 				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+					"fontFamily": "'Work Sans', sans-serif",
 					"name": "Headings (System Font)",
-					"slug": "heading-font"
+					"slug": "heading-font",
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "'Work Sans'",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/WorkSans.ttf"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "'Work Sans'",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/WorkSans-Italic.ttf"
+							]
+						}
+					]
 				}
 			],
 			"fontSizes": [
@@ -79,12 +123,12 @@
 				},
 				{
 					"name": "Medium",
-					"size": "1.5rem",
+					"size": "1.125rem",
 					"slug": "medium"
 				},
 				{
 					"name": "Large",
-					"size": "1.75rem",
+					"size": "1.25rem",
 					"slug": "large"
 				},
 				{
@@ -108,7 +152,7 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--body-font)",
-					"fontSize": "var(--wp--preset--font-size-medium)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontWeight": "normal",
 					"lineHeight": "2"
 				}
@@ -141,8 +185,6 @@
 			},
 			"core/heading": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
-					"fontWeight": "400",
 					"lineHeight": "1.125"
 				}
 			},
@@ -155,7 +197,7 @@
 			},
 			"core/navigation": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size-medium)"
+					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
 			},
 			"core/post-date": {
@@ -174,7 +216,6 @@
 				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--heading-font)",
-					"fontSize": "var(--wp--preset--font-size--large)",
 					"lineHeight": "1.125"
 				}
 			},
@@ -208,13 +249,13 @@
 					}
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size-medium)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontStyle": "normal"
 				}
 			},
 			"core/search": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size-medium)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
 					"lineHeight": "1.6"
 				}
 			},
@@ -235,8 +276,8 @@
 			},
 			"core/site-title": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size-medium)",
-					"fontWeight": "700",
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "900",
 					"textDecoration": "none"
 				}
 			}
@@ -248,32 +289,45 @@
 		"elements": {
 			"h1": {
 				"typography": {
-					"fontSize": "3rem"
+					"fontFamily": "var(--wp--preset--font-family--heading-font)",
+					"fontWeight": "900",
+					"fontSize": "clamp(5.875rem, 10vw, 3.375rem)"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--x-large)"
+					"fontFamily": "var(--wp--preset--font-family--heading-font)",
+					"fontWeight": "900",
+					"fontSize": "clamp(2.75rem, 10vw, 2rem)"
 				}
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--large)"
+					"fontFamily": "var(--wp--preset--font-family--body-font)",
+					"fontWeight": "300",
+					"fontSize": "clamp(2rem, 10vw, 1.5rem)"
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)"
+					"fontFamily": "var(--wp--preset--font-family--body-font)",
+					"fontWeight": "700",
+					"fontSize": "clamp(1.75rem, 10vw, 1.375rem)"
 				}
 			},
 			"h5": {
 				"typography": {
-					"fontSize": "1.125rem"
+					"fontFamily": "var(--wp--preset--font-family--heading-font)",
+					"fontWeight": "900",
+					"fontSize": "1.375rem",
+					"textTransform": "uppercase"
 				}
 			},
 			"h6": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
+					"fontFamily": "var(--wp--preset--font-family--body-font)",
+					"fontWeight": "700",
+					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
 			},
 			"link": {
@@ -287,7 +341,7 @@
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--body-font)",
-			"fontSize": "var(--wp--preset--font-size-medium)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
 			"lineHeight": "1.6"
 		}
 	},
