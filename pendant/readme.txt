@@ -12,6 +12,10 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 0.0.16 =
+* Fix/pendant variation blue (#5904)
+* Fix the 'grid-of-posts' pattern so that it can be dropped in and used (#5942)
+
 = 0.0.15 =
 * Fix/pendant variation navy (#5905)
 * Updated pendant image-series pattern to be centered always (#5909)
