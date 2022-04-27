@@ -80,3 +80,5 @@ Source  : https://stocksnap.io/photo/people-girl-O6MBP1UB5X
 	  https://stocksnap.io/photo/hand-jewelry-VHIX76K7EH
 	  https://stocksnap.io/photo/blonde-woman-S6JWBGXSUM
 	  https://stocksnap.io/photo/wall-white-3TA5332IJ4
+
+Used in Theme Screenshot & block patterns.
