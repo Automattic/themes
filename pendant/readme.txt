@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 0.0.17 =
+* Added 'block-patterns' to tags (#5944)
+
 = 0.0.16 =
 * Fix/pendant variation blue (#5904)
 * Fix the 'grid-of-posts' pattern so that it can be dropped in and used (#5942)
