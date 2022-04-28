@@ -21,6 +21,7 @@ const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen
 		case "clean-all-sandbox": return cleanAllSandbox();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
+		case "push-theme-to-sandbox": return pushThemeToSandbox(args?.[1]);
 		case "push-premium-to-sandbox": return pushPremiumToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
 		case "land-diff": return landChanges(args?.[1]);
