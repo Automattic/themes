@@ -53,6 +53,11 @@ MET Museum
 License : Public Domain
 Source  : https://www.metmuseum.org/art/collection/search/243039
           https://www.metmuseum.org/art/collection/search/452273
+	  https://www.metmuseum.org/art/collection/search/248813
+
+PxHere
+License : Creative Commons CC0
+Source  : https://pxhere.com/en/photo/1629996
 
 StockSnap
 License : Creative Commons CC0
@@ -66,5 +71,7 @@ Source  : https://stocksnap.io/photo/people-girl-O6MBP1UB5X
 	  https://stocksnap.io/photo/hand-jewelry-VHIX76K7EH
 	  https://stocksnap.io/photo/blonde-woman-S6JWBGXSUM
 	  https://stocksnap.io/photo/wall-white-3TA5332IJ4
+	  https://stocksnap.io/photo/sketch-designer-4PMI1YMWDY
+	  https://stocksnap.io/photo/people-girl-O6MBP1UB5X
 
 Used in Theme Screenshot & block patterns.
