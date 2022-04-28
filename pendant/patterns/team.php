@@ -2,7 +2,7 @@
 /**
  * Title: Team
  * slug: pendant/team
- * categories: pendant
+ * categories: pendant, list
  */
 ?>
 

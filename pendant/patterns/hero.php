@@ -1,7 +1,8 @@
 <?php
 /**
- * Title: Home page hero
+ * Title: Home Page Hero
  * slug: pendant/home-hero
+ * categories: featured, call-to-action 
  */
 ?>
 

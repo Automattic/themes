@@ -2,7 +2,7 @@
 /**
  * Title: Latest Articles
  * slug: pendant/latest-articles
- * categories: pendant
+ * categories: featured, query
  */
 ?>
 

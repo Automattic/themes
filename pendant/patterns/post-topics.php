@@ -2,6 +2,7 @@
 /**
  * Title: Posts and Topics
  * slug: pendant/posts-topics
+ * categories: featured, list, text
  */
 ?>
 

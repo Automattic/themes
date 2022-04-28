@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: About
- * slug: pendant/about
- * categories: pendant
+ * Title: Media & Text 
+ * slug: pendant/media-and-text
+ * categories: featured, media, text
  */
 ?>
 

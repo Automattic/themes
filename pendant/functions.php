@@ -59,7 +59,14 @@ endif;
 add_action( 'wp_enqueue_scripts', 'pendant_styles' );
 
 function pendant_register_block_pattern_categories() {
-	register_block_pattern_category( 'pendant', array( 'label' => __( 'Pendant', 'pendant' ) ) );
+	register_block_pattern_category( 'featured', array( 'label' => __( 'Featured', 'pendant' ) ) );
+	register_block_pattern_category( 'query', array( 'label' => __( 'Query', 'pendant' ) ) );
+	register_block_pattern_category( 'call-to-action', array( 'label' => __( 'Call to Action', 'pendant' ) ) );
+	register_block_pattern_category( 'media', array( 'label' => __( 'Media', 'pendant' ) ) );
+	register_block_pattern_category( 'quotes', array( 'label' => __( 'Quotes', 'pendant' ) ) );
+	register_block_pattern_category( 'list', array( 'label' => __( 'List', 'pendant' ) ) );
+	register_block_pattern_category( 'images', array( 'label' => __( 'Images', 'pendant' ) ) );
+	register_block_pattern_category( 'gallery', array( 'label' => __( 'Gallery', 'pendant' ) ) );
 }
 	
 add_action( 'init', 'pendant_register_block_pattern_categories', 9 );

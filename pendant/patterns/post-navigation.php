@@ -2,7 +2,7 @@
 /**
  * Title: Post Navigation
  * Slug: pendant/post-navigation
- * Categories: pendant
+ * inserter: no
  */
 ?>
 
