@@ -2,7 +2,7 @@
 /**
  * Title: Grid of Posts
  * slug: pendant/grid-of-posts
- * categories: pendant
+ * categories: featured, query
  */
 ?>
 

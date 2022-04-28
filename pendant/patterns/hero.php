@@ -2,7 +2,7 @@
 /**
  * Title: Home Page Hero
  * slug: pendant/home-hero
- * categories: pendant
+ * categories: featured, call-to-action 
  */
 ?>
 

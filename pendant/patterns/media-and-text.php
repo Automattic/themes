@@ -2,7 +2,7 @@
 /**
  * Title: Media & Text 
  * slug: pendant/media-and-text
- * categories: pendant
+ * categories: featured, media, text
  */
 ?>
 

@@ -2,7 +2,7 @@
 /**
  * Title: Gallery
  * slug: pendant/image-gallery
- * categories: pendant
+ * categories: featured, images, gallery
  */
 ?>
 

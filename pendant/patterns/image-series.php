@@ -2,7 +2,7 @@
 /**
  * Title: Our Picks
  * slug: pendant/image-series
- * categories: pendant
+ * categories: featured, images
  */
 ?>
 

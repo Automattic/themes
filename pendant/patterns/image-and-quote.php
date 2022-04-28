@@ -2,7 +2,7 @@
 /**
  * Title: Image & Quote
  * slug: pendant/image-and-quote
- * categories: pendant
+ * categories: featured, quotes, text
  */
 ?>
 
