@@ -52,27 +52,13 @@ This theme bundles the following third-party resources:
 MET Museum
 License : Public Domain
 Source  : https://www.metmuseum.org/art/collection/search/243039
-          https://www.metmuseum.org/art/collection/search/248813
           https://www.metmuseum.org/art/collection/search/452273
-	  https://www.metmuseum.org/art/collection/search/256970
-	  https://www.metmuseum.org/art/collection/search/236772
-	  https://www.metmuseum.org/art/collection/search/242952
-
-Smithsonian
-License : Creative Commons CC0
-Source  : https://www.si.edu/object/wristwatch-hour-angle-lindbergh-king-collection:nasm_A20040287020
-
-PxHere
-License : Creative Commons CC0
-Source  : https://pxhere.com/en/photo/775017
-          https://pxhere.com/pt/photo/41666
 
 StockSnap
 License : Creative Commons CC0
 Source  : https://stocksnap.io/photo/people-girl-O6MBP1UB5X
           https://stocksnap.io/photo/hand-wrist-I08C8XDJ6J
           https://stocksnap.io/photo/mystery-woman-5G7JGBR9E0
-          https://stocksnap.io/photo/people-girl-TDP31WN0WB
 	  https://stocksnap.io/photo/smiling-woman-W6GFOSFAXA
 	  https://stocksnap.io/photo/smiling-woman-OQWE4BR8SP
 	  https://stocksnap.io/photo/man-smiling-MKVSGM8TO9
