@@ -67,9 +67,10 @@
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:separator {"color":"primary","className":"is-style-wide"} -->
-<hr class="wp-block-separator has-text-color has-background has-primary-background-color has-primary-color is-style-wide"/>
-<!-- /wp:separator --></div>
+<div class="wp-block-column">
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
+<!-- /wp:separator -->
 <!-- /wp:column -->
 
 <!-- wp:column -->
