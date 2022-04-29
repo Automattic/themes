@@ -4,15 +4,16 @@ Theme URI: https://github.com/Automattic/themes/tree/trunk/pendant
 Author: Automattic
 Author URI: https://automattic.com
 Description: An elegant product-focused theme
-Requires at least: 5.8
+Requires at least: 5.9
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.14
+Requires Gutenberg: 13.1
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
 Text Domain: pendant
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
 */
 
 /*
@@ -198,7 +199,7 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 .wp-block-quote cite {
 	font-family: var(--wp--preset--font-family--body-font);
 	font-style: italic;
-	font-size: var(--wp--preset--font-size--x-small);
+	font-size: 0.9rem;
 }
 
 /* The plain quote block has a left-padding that doesn't work well with our design */
@@ -206,39 +207,59 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	padding-left: 0;
 }
 
+/** Navigation text-decoration correction **/
+.wp-block-navigation:where(:not([class*=has-text-decoration])) a {
+	text-decoration-thickness: 1px;
+}
+
 /** Navigation sub-menu items **/
 .wp-block-navigation .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
 	text-transform: uppercase;
 	font-weight: 500;
 	line-height: 2.6;
-	font-size: var(--wp--preset--font-size--x-small);
+	font-size: 0.9rem;
 	letter-spacing: 0.1em;
 }
 
-/* Desktop responsive navigation layout */
+/** Desktop responsive navigation layout **/
 .wp-block-navigation.is-responsive .is-menu-open.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
-    margin: 0 auto;
-    max-width: 820px;
+	margin: 0 auto;
+	max-width: 820px;
+	height: 100%;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 
-.wp-block-navigation:where(:not([class*=has-text-decoration])) a {
-	text-decoration-thickness: 1px;
+.wp-block-navigation .wp-block-navigation__responsive-dialog,
+.wp-block-navigation .wp-block-navigation__responsive-close {
+	height: 100%;
+}
+.wp-block-navigation.is-responsive .is-menu-open.wp-block-navigation__responsive-container .wp-block-navigation__container {
+	justify-content: center;
+}
+.wp-block-navigation .wp-block-navigation__responsive-container-close {
+	left: 0;
+}
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open {
+	padding-left: var(--wp--custom--gap--horizontal);
+	padding-right: var(--wp--custom--gap--horizontal);
+	padding-top: 3vw;
 }
 
+/** Categories list block: remove list decoration **/
 .wp-block-categories {
 	list-style-type: none;
 }
 
-
- .pendant-post-navigation .wp-block-post-navigation-link .post-navigation-link__label {
+/** Post Navigation Styles **/
+.pendant-post-navigation .wp-block-post-navigation-link .post-navigation-link__label {
 	font-family: var(--wp--preset--font-family--body-font);
-	font-size: var(--wp--preset--font-size--x-small);
+	font-size: 0.9rem;
 	font-weight: 600;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	line-height: 3;
 }
-
 @media (max-width: 599px) {
 	.pendant-post-navigation .post-navigation-link__title {
 		display: none;

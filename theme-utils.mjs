@@ -1,5 +1,5 @@
 import { spawn } from 'child_process';
-import fs from 'fs';
+import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
 
@@ -21,6 +21,7 @@ const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen
 		case "clean-all-sandbox": return cleanAllSandbox();
 		case "push-to-sandbox": return pushToSandbox();
 		case "push-changes-to-sandbox": return pushChangesToSandbox();
+		case "push-theme-to-sandbox": return pushThemeToSandbox(args?.[1]);
 		case "push-premium-to-sandbox": return pushPremiumToSandbox();
 		case "version-bump-themes": return versionBumpThemes();
 		case "land-diff": return landChanges(args?.[1]);
@@ -543,15 +544,15 @@ async function rebuildThemeChangelog(theme, since) {
 	}
 
 	// Get theme readme.txt
-	let readmeFile = `${theme}/readme.txt`;
+	let readmeFilePath = `${theme}/readme.txt`;
 
 	// Update readme.txt
-	fs.readFile(readmeFile, 'utf8', function(err, data) {
+	fs.readFile(readmeFilePath, 'utf8', function(err, data) {
 		let changelogSection = '== Changelog ==';
 		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
 		let formattedChangelog = data.replace(regex, logs);
 
-		fs.writeFile(readmeFile, formattedChangelog, 'utf8', function(err) {
+		fs.writeFile(readmeFilePath, formattedChangelog, 'utf8', function(err) {
 			if (err) return console.log(err);
 		});
 	});
@@ -573,7 +574,12 @@ async function updateThemeChangelog(theme, addChanges) {
  	let logs = await getCommitLogs('', true, theme);
 
 	// Get theme readme.txt
-	let readmeFile = `${theme}/readme.txt`;
+	let readmeFilePath = `${theme}/readme.txt`;
+
+	if (!existsSync(readmeFilePath)) {
+		console.log(`Unable to find a readme.txt for ${theme}.`);
+		return;
+	}
 
 	// Build changelog entry
 	let newChangelogEntry = `== Changelog ==
@@ -581,25 +587,20 @@ async function updateThemeChangelog(theme, addChanges) {
 = ${version} =
 ${logs}`;
 
-	if (!readmeFile) {
-		console.log(`Unable to find a readme.txt for ${theme}. Aborted Automated Deploy Process at changelog step.`);
-		return;
-	}
-
 	// Update readme.txt
-	fs.readFile(readmeFile, 'utf8', function(err, data) {
+	fs.readFile(readmeFilePath, 'utf8', function(err, data) {
 		let changelogSection = '== Changelog ==';
 		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
 		let formattedChangelog = data.replace(regex, newChangelogEntry);
 
-		fs.writeFile(readmeFile, formattedChangelog, 'utf8', function(err) {
+		fs.writeFile(readmeFilePath, formattedChangelog, 'utf8', function(err) {
 			if (err) return console.log(err);
 		});
 	});
 
 	// Stage readme.txt
 	if (addChanges) {
-		await executeCommand(`git add ${readmeFile}`);
+		await executeCommand(`git add ${readmeFilePath}`);
 	}
 }
 
