@@ -203,7 +203,7 @@ a:not(
  .wp-block-post-comments input:not([type=submit]):not([type=checkbox]),
  .wp-block-post-comments textarea,
  .wp-block-post-comments select {
-	 border-radius: var(--wp--custom--button--border--radius);
+	 border-radius: min(var(--wp--custom--button--border--radius), 10px);
 	 background-color: var(--wp--preset--color--background);
 	 color: var(--wp--preset--color--foreground);
 	 border: 1px solid var(--wp--preset--color--foreground);
@@ -213,6 +213,6 @@ a:not(
  * Needed until https://github.com/WordPress/gutenberg/issues/34196 or something like it.
  */
 .wp-block-tag-cloud.is-style-outline a {
-	border-radius: 10px;
+	border-radius: var(--wp--custom--button--border--radius);
 	padding: .5rem 1.25rem;
 }
