@@ -2,6 +2,13 @@
 	"version": 2,
 	"title": "Timid Pink",
 	"settings": {
+		"custom": {
+			"button": {
+				"border": {
+					"radius": "56px"
+				}
+			}
+		},
 		"color": {
 			"palette": [
 				{
@@ -23,11 +30,77 @@
 			"duotone": [
 				{
 					"colors": [
-						"#000000",
-						"#B7127F"
+						"#B7127F",
+						"#FFFFFF"
 					],
 					"slug": "default-filter",
 					"name": "Default filter"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "Newsreader, sans-serif",
+					"slug": "newsreader",
+					"name": "Headings (Newsreader)",
+					"fontFace": [
+						{
+							"fontFamily": "Newsreader",
+							"fontDisplay": "block",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Newsreader-Light.ttf" ]
+						},
+						{
+							"fontFamily": "Newsreader",
+							"fontDisplay": "block",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Newsreader-LightItalic.ttf" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "\"Source Sans Pro\", sans-serif",
+					"slug": "source-sans-pro",
+					"name": "Body (Source Sans Pro)",
+					"fontFace": [
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontDisplay": "block",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/SourceSansPro-Regular.ttf" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontDisplay": "block",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/SourceSansPro-Bold.ttf" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontDisplay": "block",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/SourceSansPro-Italic.ttf" ]
+						},
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontDisplay": "block",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/SourceSansPro-BoldItalic.ttf" ]
+						}
+					]
 				}
 			]
 		}
@@ -48,7 +121,28 @@
 				"filter": {
 					"duotone": "var(--wp--preset--duotone--default-filter)"
 				}
+			},
+			"core/heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--newsreader)",
+					"fontWeight": "300"
+				}
 			}
+		},
+		"elements": {
+			"h6": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--source-sans-pro)",
+					"fontWeight": "400",
+					"textTransform": "uppercase"
+				}
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--source-sans-pro)",
+			"fontSize": "var(--wp--preset--font-size--normal)",
+			"fontWeight": "400",
+			"lineHeight": "1.5"
 		}
 	}
 }
