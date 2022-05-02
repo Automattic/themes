@@ -1,24 +1,24 @@
 <?php
 /**
- * Cult functions and definitions
+ * Curator functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Cult
- * @since Cult 1.0
+ * @package Curator
+ * @since Curator 1.0
  */
 
 
-if ( ! function_exists( 'cult_support' ) ) :
+if ( ! function_exists( 'curator_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Cult 1.0
+	 * @since Curator 1.0
 	 *
 	 * @return void
 	 */
-	function cult_support() {
+	function curator_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -27,32 +27,32 @@ if ( ! function_exists( 'cult_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'cult_support' );
+add_action( 'after_setup_theme', 'curator_support' );
 
-if ( ! function_exists( 'cult_styles' ) ) :
+if ( ! function_exists( 'curator_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Cult 1.0
+	 * @since Curator 1.0
 	 *
 	 * @return void
 	 */
-	function cult_styles() {
+	function curator_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'cult-style',
+			'curator-style',
 			get_template_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'cult-style' );
+		wp_enqueue_style( 'curator-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'cult_styles' );
+add_action( 'wp_enqueue_scripts', 'curator_styles' );
