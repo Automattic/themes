@@ -108,6 +108,8 @@ body > .is-root-container,
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--background);
 	border: 1px solid var(--wp--preset--color--primary);
+	letter-spacing: .05rem;
+	font-weight: var(--wp--custom--button--typography--font-weight, 400);
 }
 
 /*
@@ -124,23 +126,9 @@ body > .is-root-container,
 	:active,
 	:focus
 ) {
-	border: 1px solid var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
-	cursor: pointer;
-}
-
-:is(
-	.wp-block-search__button,
-	.wp-block-button__link
-):is(
-	:hover,
-	:active,
-	:focus
-) {
-	border: 1px solid var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--foreground);
-	color: var(--wp--preset--color--background);
+	border: 1px solid var(--wp--custom--button--hover--border--color);
+	background-color: var(--wp--custom--button--hover--color--background);
+	color: var(--wp--custom--button--hover--color--text);
 	cursor: pointer;
 }
 
@@ -150,6 +138,21 @@ body > .is-root-container,
 ):focus {
 	outline: 1.5px dotted var(--wp--preset--color--foreground);
 	outline-offset: 3px;
+}
+
+:is(
+  .is-style-outline.wp-block-button,
+  .is-style-outline.wp-block-button__link
+) {
+  color: var(--wp--preset--color--primary)
+}
+
+:is(
+  .is-style-outline>.wp-block-button__link,
+  .is-style-outline.wp-block-button__link
+):not(.has-background):hover {
+  color: var(--wp--custom--button--hover--color--background);
+	background-color: var(--wp--custom--button--hover--color--text);
 }
 
 /*
@@ -200,14 +203,22 @@ a:not(
  * Comment form styles
  */
  
- .wp-block-post-comments input:not([type=submit]):not([type=checkbox]),
- .wp-block-post-comments textarea,
- .wp-block-post-comments select {
-	 border-radius: min(var(--wp--custom--button--border--radius), 10px);
-	 background-color: var(--wp--preset--color--background);
-	 color: var(--wp--preset--color--foreground);
-	 border: 1px solid var(--wp--preset--color--foreground);
- }
+.wp-block-post-comments input:not([type=submit],[type=checkbox]),
+.wp-block-post-comments textarea,
+.wp-block-post-comments select {
+	border-radius: min(var(--wp--custom--button--border--radius), 10px);
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+.wp-block-post-comments input[type=submit] {
+	border: 1px solid var(--wp--preset--color--primary)
+}
+
+.wp-block-post-comments input[type=submit]:hover {
+	border-color: var(--wp--custom--button--hover--border--color);
+}
 
 /*
  * Needed until https://github.com/WordPress/gutenberg/issues/34196 or something like it.
@@ -215,4 +226,8 @@ a:not(
 .wp-block-tag-cloud.is-style-outline a {
 	border-radius: var(--wp--custom--button--border--radius);
 	padding: .5rem 1.25rem;
+}
+.wp-block-tag-cloud.is-style-outline a:hover {
+	color: var(--wp--preset--color--background);
+	background-color: var(--wp--preset--color--primary);
 }

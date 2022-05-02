@@ -2,6 +2,22 @@
 	"version": 2,
 	"title": "Forest Green",
 	"settings": {
+		"custom": {
+			"button": {
+				"typography": {
+					"fontWeight": "700"
+				},
+				"hover": {
+					"color": {
+						"text": "var(--wp--preset--color--foreground)",
+						"background": "var(--wp--preset--color--background)"
+					},
+					"border": {
+						"color": "var(--wp--preset--color--foreground)"
+					}
+				}
+			}
+		},
 		"color": {
 			"palette": [
 				{
@@ -24,7 +40,7 @@
 				{
 					"colors": [
 						"#064E49",
-						"#FFFFFF"
+						"#FFF9F2"
 					],
 					"slug": "default-filter",
 					"name": "Default filter"
@@ -49,18 +65,18 @@
 						{
 							"fontFamily": "Crimson Pro",
 							"fontDisplay": "block",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/CrimsonPro-Bold.ttf" ]
-						},
-						{
-							"fontFamily": "Crimson Pro",
-							"fontDisplay": "block",
 							"fontWeight": "300",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/CrimsonPro-Italic.ttf" ]
+						},
+						{
+							"fontFamily": "Crimson Pro",
+							"fontDisplay": "block",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/CrimsonPro-Bold.ttf" ]
 						},
 						{
 							"fontFamily": "Crimson Pro",
@@ -77,6 +93,11 @@
 	},
 	"styles": {
 		"blocks": {
+			"core/button": {
+				"typography": {
+					"fontWeight": "var(--wp--custom--button--typography--font-weight)"
+				}
+			},
 			"core/cover": {
 				"filter": {
 					"duotone": "var(--wp--preset--duotone--default-filter)"

@@ -6,6 +6,18 @@
 			"button": {
 				"border": {
 					"radius": "0"
+				},
+				"typography": {
+					"fontWeight": "700"
+				},
+				"hover": {
+					"color": {
+						"text": "var(--wp--preset--color--primary)",
+						"background": "var(--wp--preset--color--background)"
+					},
+					"border": {
+						"color": "var(--wp--preset--color--primary)"
+					}
 				}
 			}
 		},
@@ -30,7 +42,7 @@
 			"duotone": [
 				{
 					"colors": [
-						"#000000",
+						"#363F47",
 						"#FBFF4A"
 					],
 					"slug": "default-filter",
@@ -60,6 +72,22 @@
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/IBMPlexSans-ExtraLightItalic.ttf" ]
+						},
+						{
+							"fontFamily": "IBM Plex Sans",
+							"fontDisplay": "block",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/IBMPlexSans-Light.ttf" ]
+						},
+						{
+							"fontFamily": "IBM Plex Sans",
+							"fontDisplay": "block",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/IBMPlexSans-LightItalic.ttf" ]
 						}
 					]
 				},
@@ -79,18 +107,18 @@
 						{
 							"fontFamily": "IBM Plex Mono",
 							"fontDisplay": "block",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/IBMPlexMono-SemiBold.ttf" ]
-						},
-						{
-							"fontFamily": "IBM Plex Mono",
-							"fontDisplay": "block",
 							"fontWeight": "300",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/IBMPlexMono-LightItalic.ttf" ]
+						},
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontDisplay": "block",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/IBMPlexMono-SemiBold.ttf" ]
 						},
 						{
 							"fontFamily": "IBM Plex Mono",
@@ -107,6 +135,11 @@
 	},
 	"styles": {
 		"blocks": {
+			"core/button": {
+				"typography": {
+					"fontWeight": "var(--wp--custom--button--typography--font-weight)"
+				}
+			},
 			"core/cover": {
 				"filter": {
 					"duotone": "var(--wp--preset--duotone--default-filter)"
@@ -125,13 +158,44 @@
 			"core/heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--ibm-plex-sans)",
-					"fontWeight": "200"
+					"fontWeight": "0"
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"lineHeight": "1.7"
 				}
 			}
 		},
 		"elements": {
+			"h1": {
+				"typography": {
+					"fontWeight": "200"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontWeight": "200"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontWeight": "200"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontWeight": "300"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontWeight": "300"
+				}
+			},
 			"h6": {
 				"typography": {
+					"fontWeight": "300",
 					"textTransform": "uppercase"
 				}
 			}
