@@ -2,6 +2,7 @@
 /**
  * Title: Posts and Topics
  * slug: pendant/latest-interviews
+ * inserter: no
  */
 ?>
 

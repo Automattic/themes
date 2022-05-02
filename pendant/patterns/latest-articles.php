@@ -2,7 +2,7 @@
 /**
  * Title: Latest Articles
  * slug: pendant/latest-articles
- * categories: pendant
+ * categories: featured, query
  */
 ?>
 
@@ -28,7 +28,7 @@
 
 <!-- wp:post-excerpt /-->
 
-<!-- wp:read-more {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"medium"} /--></div>
+<!-- wp:read-more {"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"medium"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
 <!-- /wp:group --></div>

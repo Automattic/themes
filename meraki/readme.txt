@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.2 =
+* Meraki: Work in progress (#5862)
+
 = 0.0.1 =
 * Initial release
 
@@ -28,3 +31,9 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Meraki uses the following images:
+
+License: CC0
+https://www.pexels.com/photo/contemporary-stylish-building-and-arch-bridge-against-pink-sundown-sky-5707603/
+Used in theme screenshot and demo site.
