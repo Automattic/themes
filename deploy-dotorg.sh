@@ -17,17 +17,18 @@ rm -rf ./deploy
 
 declare -a THEMES_TO_DEPLOY=(
 	"archeo"
-	"blockbase" 
-	"zoologist"
+	"blockbase"
 	"geologist"
+	"livro"
 	"mayland-blocks"
+	"pendant"
 	"quadrat"
 	"remote"
 	"seedlet-blocks"
 	"skatepark"
 	"stewart"
-	"livro"
 	"videomaker"
+	"zoologist"
 )
 
 for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
