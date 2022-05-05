@@ -42,7 +42,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><em><?php echo esc_html__( 'Writer, Editor &amp; Jewelry Designer' ); ?></em></p>
+<p><em><?php echo esc_html__( 'Writer, Editor &amp; Jewelry Designer', 'pendant' ); ?></em></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
