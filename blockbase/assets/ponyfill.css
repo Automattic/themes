@@ -921,6 +921,13 @@ div.wp-block-query-pagination .wp-block-query-pagination-numbers .current {
 .wp-block-separator:not(.is-style-wide) {
   width: var(--wp--custom--separator--width);
 }
+.wp-block-separator.is-style-dots {
+  /*
+  	We can solve this using including the Gutenberg block styles with: add_theme_support( 'wp-block-styles' )
+  	but we decided not to add those styles to blockbase because of potential broad impact of those styles.
+  */
+  width: 100%;
+}
 
 p.wp-block-site-tagline {
   margin: 0;

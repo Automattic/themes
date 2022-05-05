@@ -1,6 +1,15 @@
 .wp-block-separator {
 	opacity: var(--wp--custom--separator--opacity); // Mirror controls that Gutenberg theme.css offers: https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/separator/theme.scss - See: https://github.com/WordPress/gutenberg/issues/34637
-	&:not(.is-style-wide){
+	&:not(.is-style-wide) {
 		width: var(--wp--custom--separator--width); // See https://github.com/WordPress/gutenberg/issues/34638
+	}
+
+	&.is-style-dots {
+
+		/*
+			We can solve this using including the Gutenberg block styles with: add_theme_support( 'wp-block-styles' )
+			but we decided not to add those styles to blockbase because of potential broad impact of those styles.
+		*/
+		width: 100%;
 	}
 }
