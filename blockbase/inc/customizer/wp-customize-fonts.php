@@ -444,7 +444,6 @@ class GlobalStylesFontsCustomizer {
 		// Add a reset button
 		$this->font_control_default_body    = $body_font_default['fontSlug'];
 		$this->font_control_default_heading = $heading_font_default['fontSlug'];
-
 		$wp_customize->add_control(
 			$this->section_key . '-reset-button',
 			array(
