@@ -210,10 +210,28 @@ class GlobalStylesFontsCustomizer {
 
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'initialize' ) );
-		add_action( 'customize_preview_init', array( $this, 'handle_customize_preview_init' ) );
-		add_action( 'customize_register', array( $this, 'enqueue_google_fonts' ) );
-		add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_control_js' ) );
+
+		if ( !$this->site_editor_is_implementing_google_fonts() ) {
+			add_action( 'customize_preview_init', array( $this, 'handle_customize_preview_init' ) );
+			add_action( 'customize_register', array( $this, 'enqueue_google_fonts' ) );
+			add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
+			add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_control_js' ) );
+		}
+	}
+	
+	function site_editor_is_implementing_google_fonts() {
+		$jetpack_has_google_fonts_module = false;
+		$gutenberg_webfonts_api_supports_enqueueing = false;
+
+		if ( defined( 'JETPACK__VERSION' ) ) {
+			$jetpack_has_google_fonts_module = JETPACK__VERSION === 'wpcom' || version_compare( JETPACK__VERSION, '10.8', '>' );
+		}
+
+		if ( defined( 'GUTENBERG_VERSION' ) ) {
+			$gutenberg_webfonts_api_supports_enqueueing = version_compare( GUTENBERG_VERSION, '13.0', '>=' );
+		}
+
+		return $jetpack_has_google_fonts_module && $gutenberg_webfonts_api_supports_enqueueing && Jetpack::is_module_active( 'google-fonts' );
 	}
 
 	function handle_customize_preview_init( $wp_customize ) {
@@ -396,21 +414,26 @@ class GlobalStylesFontsCustomizer {
 		// Add a reset button
 		$this->font_control_default_body    = $body_font_default['fontSlug'];
 		$this->font_control_default_heading = $heading_font_default['fontSlug'];
-		$wp_customize->add_control(
-			$this->section_key . '-reset-button',
-			array(
-				'type'        => 'button',
-				'settings'    => array(),
-				'section'     => $this->section_key,
-				'input_attrs' => array(
-					'value' => __( 'Reset to Default', 'blockbase' ),
-					'class' => 'button button-link',
-				),
-			)
-		);
 
-		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
-		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
+		if ( $this->site_editor_is_implementing_google_fonts() ) {
+			// TODO: Render HTML notification to user to use google fonts in the site editor instead of the customizer
+		} else {
+			$wp_customize->add_control(
+				$this->section_key . '-reset-button',
+				array(
+					'type'        => 'button',
+					'settings'    => array(),
+					'section'     => $this->section_key,
+					'input_attrs' => array(
+						'value' => __( 'Reset to Default', 'blockbase' ),
+						'class' => 'button button-link',
+					),
+				)
+			);
+	
+			$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
+			$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
+		}
 	}
 
 	function get_font_family( $array, $configuration ) {
