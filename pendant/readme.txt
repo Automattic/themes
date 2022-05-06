@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.1 =
+* Added missing domain to localization call (#5965)
+
 = 1.0.0 =
 * Initial release
 

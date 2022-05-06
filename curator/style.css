@@ -1,17 +1,17 @@
 /*
-Theme Name: Cult
-Theme URI: https://wordpress.com/theme/cult
+Theme Name: Curator
+Theme URI: https://wordpress.com/theme/curator
 Author: Automattic
 Author URI: https://automattic.com/
 Description: 
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.1
+Version: 0.0.2
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
-Text Domain: cult
+Text Domain: curator
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
 *//*
  * Font smoothing
@@ -28,10 +28,51 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  * https://github.com/WordPress/gutenberg/issues/27075
  */
 
-.wp-block-search__button:hover,
-.wp-block-file .wp-block-file__button:hover,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link {
+	padding: 0;
+}
 .wp-block-button__link:hover {
-	background-color: var(--wp--preset--color--secondary);
+	text-decoration: underline;
+	color: var(--wp--preset--color--foreground);
+}
+.wp-block-button__link.wp-block-button__link:active {
+	color: var(--wp--preset--color--background);
+	background-color: var(--wp--preset--color--primary);
+}
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus {
+	color: var(--wp--preset--color--foreground);
+	border-bottom: 1px dashed var(--wp--preset--color--foreground);
+}
+.wp-block-button:is(.is-style-outline) .wp-block-button__link:focus {
+	outline: 1px dashed var(--wp--preset--color--foreground);
+}
+
+.wp-block-search__button.wp-block-search__button,
+.wp-block-file .wp-block-file__button.wp-block-file__button {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+	font-family: var(--wp--preset--font-family--heading-font);
+	font-size: var(--wp--custom--button--typography--font-size);
+	font-weight: 900;
+}
+
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button
+):is(
+	:hover,
+	:focus
+) {
+	background-color: var(--wp--preset--color--foreground);
+}
+
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button
+):is(
+	:focus
+) {
+	outline: 1px dashed var(--wp--preset--color--foreground);
 }
 
 /*

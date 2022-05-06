@@ -12,6 +12,11 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.7 =
+* Archeo: Sort theme.json alphabetically
+* Revert Archeo: Sort theme.json alphabetically
+* Archeo: Sort properties alphabetically (#5970)
+
 = 1.0.6 =
 * multiple themes: update font sizes from px to rem for better a11y (#5801)
 

@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 2.0.34 =
+* Blockbase: fixing separator block dots option (#5964)
+
 = 2.0.33 =
 * Blockbase: Account for additional content via css grid configuration (#5816)
 

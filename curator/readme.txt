@@ -1,4 +1,4 @@
-=== Cult ===
+=== Curator ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -12,13 +12,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.2 =
+* Add button styles (#5973)
+
 = 0.0.1 =
 * Initial release
 
 == Copyright ==
 
-Cult WordPress Theme, (C) 2022 Automattic
-Cult is distributed under the terms of the GNU GPL.
+Curator WordPress Theme, (C) 2022 Automattic
+Curator is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

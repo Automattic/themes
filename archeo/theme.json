@@ -1,21 +1,20 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
 	"customTemplates": [
 		{
 			"name": "blank",
-			"title": "Blank",
 			"postTypes": [
 				"page",
 				"post"
-			]
+			],
+			"title": "Blank"
 		},
 		{
 			"name": "page-no-title",
-			"title": "Page (No Title)",
 			"postTypes": [
 				"page"
-			]
+			],
+			"title": "Page (No Title)"
 		}
 	],
 	"settings": {
@@ -23,33 +22,33 @@
 		"color": {
 			"palette": [
 				{
-					"slug": "foreground",
 					"color": "#242321",
-					"name": "Foreground"
+					"name": "Foreground",
+					"slug": "foreground"
 				},
 				{
-					"slug": "background",
 					"color": "#FCFBF8",
-					"name": "Background"
+					"name": "Background",
+					"slug": "background"
 				},
 				{
-					"slug": "primary",
 					"color": "#71706E",
-					"name": "Primary"
+					"name": "Primary",
+					"slug": "primary"
 				},
 				{
-					"slug": "tertiary",
 					"color": "#CFCFCF",
-					"name": "Tertiary"
+					"name": "Tertiary",
+					"slug": "tertiary"
 				}
 			]
 		},
 		"custom": {
 			"spacing": {
-				"small": "clamp(20px, 4vw, 40px)",
-				"medium": "clamp(48px, 8vw, 100px)",
 				"large": "clamp(100px, 12vw, 460px)",
-				"outer": "min(4vw, 90px)"
+				"medium": "clamp(48px, 8vw, 100px)",
+				"outer": "min(4vw, 90px)",
+				"small": "clamp(20px, 4vw, 40px)"
 			}
 		},
 		"layout": {
@@ -69,59 +68,71 @@
 		"typography": {
 			"fontFamilies": [
 				{
-					"fontFamily": "\"Chivo\", sans-serif",
-					"name": "Chivo",
-					"slug": "chivo",
 					"fontFace": [
 						{
-							"fontFamily": "Chivo",
 							"fontDisplay": "block",
+							"fontFamily": "Chivo",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
 							"fontWeight": "100",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Chivo-Thin.woff2" ]
+							"src": [
+								"file:./assets/fonts/Chivo-Thin.woff2"
+							]
 						},
 						{
-							"fontFamily": "Chivo",
 							"fontDisplay": "block",
+							"fontFamily": "Chivo",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
 							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Chivo-Regular.woff2" ]
+							"src": [
+								"file:./assets/fonts/Chivo-Regular.woff2"
+							]
 						},
 						{
-							"fontFamily": "Chivo",
 							"fontDisplay": "block",
+							"fontFamily": "Chivo",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
 							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Chivo-Bold.woff2" ]
+							"src": [
+								"file:./assets/fonts/Chivo-Bold.woff2"
+							]
 						},
 						{
-							"fontFamily": "Chivo",
 							"fontDisplay": "block",
+							"fontFamily": "Chivo",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
 							"fontWeight": "100",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Chivo-ThinItalic.woff2" ]
+							"src": [
+								"file:./assets/fonts/Chivo-ThinItalic.woff2"
+							]
 						},
 						{
-							"fontFamily": "Chivo",
 							"fontDisplay": "block",
+							"fontFamily": "Chivo",
+							"fontStretch": "normal",
+							"fontStyle": "italic",
 							"fontWeight": "400",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Chivo-Italic.woff2" ]
+							"src": [
+								"file:./assets/fonts/Chivo-Italic.woff2"
+							]
 						},
 						{
-							"fontFamily": "Chivo",
 							"fontDisplay": "block",
-							"fontWeight": "700",
-							"fontStyle": "italic",
+							"fontFamily": "Chivo",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/fonts/Chivo-BoldItalic.woff2" ]
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/Chivo-BoldItalic.woff2"
+							]
 						}
-					]
+					],
+					"fontFamily": "\"Chivo\", sans-serif",
+					"name": "Chivo",
+					"slug": "chivo"
 				}
 			],
 			"fontSizes": [
@@ -188,13 +199,13 @@
 						}
 					}
 				},
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
-				},
 				"spacing": {
 					"padding": {
 						"top": "var(--wp--custom--spacing--small)"
 					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/post-navigation-link": {
@@ -204,24 +215,24 @@
 					"textTransform": "uppercase"
 				}
 			},
-			"core/query-pagination": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
-				}
-			},
 			"core/pullquote": {
 				"border": {
 					"width": "0"
 				},
 				"spacing": {
 					"padding": {
-						"top": "var(--wp--custom--spacing--medium)",
-						"bottom": "var(--wp--custom--spacing--medium)"
+						"bottom": "var(--wp--custom--spacing--medium)",
+						"top": "var(--wp--custom--spacing--medium)"
 					}
 				},
 				"typography": {
 					"fontWeight": "100",
 					"lineHeight": "1.2"
+				}
+			},
+			"core/query-pagination": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/quote": {
@@ -285,19 +296,20 @@
 			"fontFamily": "var(--wp--preset--font-family--chivo)",
 			"fontSize": "var(--wp--preset--font-size--normal)",
 			"fontWeight": "400",
- 			"lineHeight": "1.6"
+			"lineHeight": "1.6"
 		}
 	},
 	"templateParts": [
 		{
+			"area": "header",
 			"name": "header",
-			"title": "Header",
-			"area": "header"
+			"title": "Header"
 		},
 		{
+			"area": "footer",
 			"name": "footer",
-			"title": "Footer",
-			"area": "footer"
+			"title": "Footer"
 		}
-	]
+	],
+	"version": 2
 }

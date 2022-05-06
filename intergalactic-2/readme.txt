@@ -59,6 +59,9 @@ You can add links to a multitude of social services in the slide-out menu using 
 
 == Changelog ==
 
+= 2.0.6 =
+* Intergalactic 2: Image captions are left aligned in published posts, but centered in the editor (#5953)
+
 = 1.3 - June 10, 2015 =
 * Fixed Header Text Color not being applied correctly
 

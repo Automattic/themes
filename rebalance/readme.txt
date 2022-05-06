@@ -24,6 +24,11 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+== Changelog ==
+
+= 1.1.13 =
+* Rebalance: Fix author display in post carousel block (#5974)
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
