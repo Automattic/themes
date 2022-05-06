@@ -67,10 +67,9 @@
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column">
-<!-- wp:separator {"className":"is-style-wide"} -->
+<div class="wp-block-column"><!-- wp:separator {"className":"is-style-wide"} -->
 <hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
-<!-- /wp:separator -->
+<!-- /wp:separator --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
@@ -79,7 +78,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html( 'Work 1:1 with our team of coaches to learn how to skate. They’ll be your mentors and guides while you’re at camp. Plus, many of our older campers will mentor the younger skaters.', 'skatepark' ); ?></p>
+<p><?php echo esc_html( 'Work 1:1 with our team of coaches to learn how to skate. They\'ll be your mentors and guides while you\'re at camp. Plus, many of our older campers will mentor the younger skaters.', 'skatepark' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
