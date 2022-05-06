@@ -22,7 +22,7 @@
 				<!-- wp:group {"style":{"spacing":{"blockGap":{"top":"0px","left":"0px"}}}} -->
 				<div class="wp-block-group">
 
-					<!-- wp:site-title {"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"8px","left":"0px"}},"typography":{"fontSize":"1.375rem","lineHeight":"1.272"}}} /-->
+					<!-- wp:site-title {"style":{"typography":{"fontSize":"1.375rem","lineHeight":"1.272"}}} /-->
 
 					<!-- wp:paragraph -->
 						<p>
