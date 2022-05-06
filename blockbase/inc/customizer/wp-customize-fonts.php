@@ -209,16 +209,18 @@ class GlobalStylesFontsCustomizer {
 	);
 
 	function __construct() {
-		add_action( 'customize_register', array( $this, 'initialize' ) );
-
-		if ( !$this->site_editor_is_implementing_google_fonts() ) {
-			add_action( 'customize_preview_init', array( $this, 'handle_customize_preview_init' ) );
-			add_action( 'customize_register', array( $this, 'enqueue_google_fonts' ) );
-			add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
-			add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_control_js' ) );
+		if ( $this->site_editor_is_implementing_google_fonts() ) {
+			add_action( 'customize_register', array( $this, 'display_section_redirecting_users_to_site_editor' ) );
+			return;
 		}
+
+		add_action( 'customize_register', array( $this, 'initialize' ) );
+		add_action( 'customize_preview_init', array( $this, 'handle_customize_preview_init' ) );
+		add_action( 'customize_register', array( $this, 'enqueue_google_fonts' ) );
+		add_action( 'customize_save_after', array( $this, 'handle_customize_save_after' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_control_js' ) );
 	}
-	
+
 	function site_editor_is_implementing_google_fonts() {
 		$jetpack_has_google_fonts_module = false;
 		$gutenberg_webfonts_api_supports_enqueueing = false;
@@ -233,6 +235,34 @@ class GlobalStylesFontsCustomizer {
 
 		return $jetpack_has_google_fonts_module && $gutenberg_webfonts_api_supports_enqueueing && Jetpack::is_module_active( 'google-fonts' );
 	}
+
+	function display_section_redirecting_users_to_site_editor( $wp_customize ) {
+		$wp_customize->add_section(
+			$this->section_key,
+			array(
+				'capability'  => 'edit_theme_options',
+				'description' => 'Updating fonts for this theme is now even easier! Please use the site editor to select and preview different font families.',
+				'title'       => __( 'Fonts', 'blockbase' ),
+			)
+		);
+
+		$wp_customize->add_control(
+			$this->section_key . '-site-editor-button',
+			array(
+				'type'        => 'button',
+				'settings'    => array(),
+				'section'     => $this->section_key,
+				'input_attrs' => array(
+					'value' => __( 'Use Site Editor', 'blockbase' ),
+					'class' => 'button button-link',
+					'data-action' => sprintf("%s", esc_url( admin_url( 'site-editor.php' ) ) ),
+				),
+			)
+		);
+
+		$wp_customize->get_section( $this->section_key );
+	}
+
 
 	function handle_customize_preview_init( $wp_customize ) {
 		$this->update_font_settings( $wp_customize );
