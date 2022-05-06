@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.2 =
+* Add button styles (#5973)
+
 = 0.0.1 =
 * Initial release
 
