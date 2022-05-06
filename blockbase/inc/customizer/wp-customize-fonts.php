@@ -445,25 +445,21 @@ class GlobalStylesFontsCustomizer {
 		$this->font_control_default_body    = $body_font_default['fontSlug'];
 		$this->font_control_default_heading = $heading_font_default['fontSlug'];
 
-		if ( $this->site_editor_is_implementing_google_fonts() ) {
-			// TODO: Render HTML notification to user to use google fonts in the site editor instead of the customizer
-		} else {
-			$wp_customize->add_control(
-				$this->section_key . '-reset-button',
-				array(
-					'type'        => 'button',
-					'settings'    => array(),
-					'section'     => $this->section_key,
-					'input_attrs' => array(
-						'value' => __( 'Reset to Default', 'blockbase' ),
-						'class' => 'button button-link',
-					),
-				)
-			);
-	
-			$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
-			$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
-		}
+		$wp_customize->add_control(
+			$this->section_key . '-reset-button',
+			array(
+				'type'        => 'button',
+				'settings'    => array(),
+				'section'     => $this->section_key,
+				'input_attrs' => array(
+					'value' => __( 'Reset to Default', 'blockbase' ),
+					'class' => 'button button-link',
+				),
+			)
+		);
+
+		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
+		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
 	}
 
 	function get_font_family( $array, $configuration ) {
