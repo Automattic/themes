@@ -209,8 +209,8 @@ class GlobalStylesFontsCustomizer {
 	);
 
 	function __construct() {
-		if ( $this->site_editor_is_implementing_google_fonts() ) {
-			add_action( 'customize_register', array( $this, 'display_section_redirecting_users_to_site_editor' ) );
+		if ( $this->site_editor_is_implementing_google_fonts()  ) {
+			add_action( 'customize_register', array( $this, 'init_deprecation_notice' ) );
 			return;
 		}
 
@@ -236,31 +236,36 @@ class GlobalStylesFontsCustomizer {
 		return $jetpack_has_google_fonts_module && $gutenberg_webfonts_api_supports_enqueueing && Jetpack::is_module_active( 'google-fonts' );
 	}
 
-	function display_section_redirecting_users_to_site_editor( $wp_customize ) {
+	function init_deprecation_notice( $wp_customize ) {
 		$wp_customize->add_section(
 			$this->section_key,
 			array(
 				'capability'  => 'edit_theme_options',
-				'description' => 'Updating fonts for this theme is now even easier! Please use the site editor to select and preview different font families.',
 				'title'       => __( 'Fonts', 'blockbase' ),
+			)
+		);
+
+		$wp_customize->add_control(
+			$this->section_key . '-v1-blockbase-font-deprecation-notice',
+			array(
+				'type'        => 'hidden',
+				'description' => '<div class="notice notice-info">
+				<p>' . __( 'Updating fonts for this theme is now even easier! Use the site editor to select and preview different font families.', 'blockbase' ) . '</p>
+				</div>',
+				'settings'    => array(),
+				'section'     => $this->section_key,
 			)
 		);
 
 		$wp_customize->add_control(
 			$this->section_key . '-site-editor-button',
 			array(
-				'type'        => 'button',
+				'type'        => 'hidden',
+				'description' => sprintf( '<a class="button button-primary" href=%s style="font-style: normal;" >Use Site Editor</a>', esc_url( admin_url( 'site-editor.php' ) ) ),
 				'settings'    => array(),
 				'section'     => $this->section_key,
-				'input_attrs' => array(
-					'value' => __( 'Use Site Editor', 'blockbase' ),
-					'class' => 'button button-link',
-					'data-action' => sprintf("%s", esc_url( admin_url( 'site-editor.php' ) ) ),
-				),
 			)
 		);
-
-		$wp_customize->get_section( $this->section_key );
 	}
 
 
