@@ -11,8 +11,9 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"30px"}}},"layout":{"inherit":false}} -->
 <div class="wp-block-group" style="padding-top:30px">
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var( --wp--style--block-gap )"}}}} -->
-<div class="wp-block-group" style="padding-bottom:var( --wp--style--block-gap )"><!-- wp:separator {"className":"is-style-wide"} -->
-<hr class="wp-block-separator is-style-wide"/>
+<div class="wp-block-group" style="padding-bottom:var( --wp--style--block-gap )">
+<!-- wp:separator {"className":"is-style-wide"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide"/>
 <!-- /wp:separator --></div>
 <!-- /wp:group -->
 
