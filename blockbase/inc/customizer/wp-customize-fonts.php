@@ -409,45 +409,63 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
+		$body_font_selected_font_variable = $merged_json['styles']['typography']['fontFamily'];
+		preg_match( '/font-family\|(?P<slug>.+)$/', $body_font_selected_font_variable, $matches );
+		$body_font_selected_font_slug = $matches['slug'] ?? '';
+
 		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
 		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
 	}
 
-	function get_font_family( $array, $configuration ) {
-		$variable = get_settings_array( $array, $configuration );
-		$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
-		if ( ! isset( $this->fonts[ $slug ] ) ) {
-			$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $configuration );
-		}
-		return $this->fonts[ $slug ];
-	}
+	// Not used, yo!!!
+	// function get_font_family( $array, $configuration ) {
+	// 	$variable = get_settings_array( $array, $configuration );
+	// 	$slug     = preg_replace( '/var\(--wp--preset--font-family--(.*)\)/', '$1', $variable );
+	// 	if ( ! isset( $this->fonts[ $slug ] ) ) {
+	// 		$this->fonts[ $slug ] = $this->build_font_from_theme_data( $slug, $configuration );
+	// 	}
+	// 	return $this->fonts[ $slug ];
+	// }
 
-	function build_font_from_theme_data( $slug, $configuration ) {
-		$new_font      = array();
-		$font_families = $configuration['settings']['typography']['fontFamilies']['theme'];
-		foreach ( $font_families as $font_family ) {
-			if ( $font_family['slug'] === $slug ) {
-				$new_font['fontFamily'] = $font_family['fontFamily'];
-				$new_font['name']       = $font_family['name'];
-				if ( ! empty( $font_family['google'] ) ) {
-					$new_font['google'] = $font_family['google'];
-				}
-			}
-		}
-		$new_font['slug'] = $slug;
-		return $new_font;
-	}
+	// function build_font_from_theme_data( $slug, $configuration ) {
+	// 	$new_font      = array();
+	// 	$font_families = $configuration['settings']['typography']['fontFamilies']['theme'];
+	// 	foreach ( $font_families as $font_family ) {
+	// 		if ( $font_family['slug'] === $slug ) {
+	// 			$new_font['fontFamily'] = $font_family['fontFamily'];
+	// 			$new_font['name']       = $font_family['name'];
+	// 			if ( ! empty( $font_family['google'] ) ) {
+	// 				$new_font['google'] = $font_family['google'];
+	// 			}
+	// 		}
+	// 	}
+	// 	$new_font['slug'] = $slug;
+	// 	return $new_font;
+	// }
 
 	function add_setting_and_control( $wp_customize, $name, $label, $default, $user_value, $sanitize_callback ) {
 		$setting_name          = $this->section_key . $name;
-		$global_styles_setting = new WP_Customize_Global_Styles_Setting(
-			$wp_customize,
-			$setting_name,
-			array(
-				'default'    => $default,
-				'user_value' => $user_value,
-			)
-		);
+
+		if ( $name === 'body' ) {
+			$global_styles_setting = new WP_Customize_Global_Styles_Setting(
+				$wp_customize,
+				$setting_name,
+				array(
+					'default'    => $default,
+					'user_value' => $user_value,
+				)
+			);
+		} else {
+			$global_styles_setting = new WP_Customize_Setting(
+				$wp_customize,
+				$setting_name,
+				array(
+					'default'    => $default,
+					'user_value' => $user_value,
+				)
+			);
+		}
+
 		$wp_customize->add_setting(
 			$global_styles_setting,
 			array(
@@ -513,7 +531,8 @@ class GlobalStylesFontsCustomizer {
 			$heading_setting,
 		);
 
-		$body_font_family_variable    = 'var(--wp--preset--font-family--' . $body_setting['slug'] . ')';
+		// $body_font_family_variable    = 'var(--wp--preset--font-family--' . $body_setting['slug'] . ')';
+		$body_font_family_variable    = 'var:preset|font-family|' . $body_setting['fontSlug'];
 		$heading_font_family_variable = 'var(--wp--preset--font-family--' . $heading_setting['slug'] . ')';
 
 		// Get the user's global styles CPT id
@@ -532,7 +551,8 @@ class GlobalStylesFontsCustomizer {
 
 		// Set new typography settings
 		if ( $font_families ) {
-			$new_settings['typography']['fontFamilies']['custom'] = $font_families;
+			// $new_settings['typography']['fontFamilies']['custom'] = $font_families;
+			$new_styles['typography']['fontFamily'] = $body_font_family_variable;
 		}
 
 		// Add the updated global styles to the update request
