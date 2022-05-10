@@ -7,10 +7,12 @@
 
 ?>
 
-<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"medium"} -->
-<h1 class="has-text-align-center has-medium-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'curator' ); ?></h1>
+<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"5.875rem"}}} -->
+<h1 class="has-text-align-center" id="oops-that-page-can-t-be-found" style="font-size:5.875rem"><?php echo esc_html__( 'Uh-oh.', 'curator' ); ?></h1>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'curator' ); ?></p>
+<!-- wp:paragraph {"align":"center"} -->
+<p class="has-text-align-center"><?php echo esc_html__( 'This page could not be found. Try searching posts using the field below.', 'curator' ); ?></p>
 <!-- /wp:paragraph -->
+
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_html__( 'Search', 'curator' ); ?>","buttonUseIcon":true,"borderColor":"foreground"} /-->
