@@ -115,7 +115,8 @@ body {
 a:not(
 	.wp-block-search__button,
 	.wp-block-button__link
-) {
+),
+.wp-block-site-title a {
 	padding: .4rem 0;
 	text-decoration: inherit; /* Needed so the link styles will be inherited correctly from theme.json */
 	text-underline-offset: .1rem;
@@ -124,8 +125,13 @@ a:not(
 a:not(
 	.wp-block-search__button,
 	.wp-block-button__link
-):hover {
+):hover,
+.wp-block-site-title a {
 	text-decoration: none;
+}
+
+.wp-block-site-title a:hover {
+	text-decoration: underline;
 }
 
 a:not(
@@ -140,7 +146,8 @@ a:not(
 	.wp-block-button__link,
 	.wp-block-navigation-link__content,
 	.wp-block-navigation-item__content
-):active {
+):active,
+.wp-block-site-title a:active {
 	text-decoration: none;
 	background-color: var(--wp--preset--color--tertiary);
 }
