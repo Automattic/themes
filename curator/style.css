@@ -134,7 +134,7 @@ a:not(
 }
 
 /*
- * Navigation Link Styles
+ * Navigation Styles
  */
 
 :is(
@@ -159,6 +159,18 @@ a:not(
 	background-color: var(--wp--preset--color--tertiary);
 }
 
+.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	align-items: center;
+	font-size: var(--wp--preset--font-size--large);
+	height: 100%;
+	justify-content: center;
+	padding-top: 0;
+}
 
 /*
  * Alignment styles, borrowed from Twenty Twenty-Two.
