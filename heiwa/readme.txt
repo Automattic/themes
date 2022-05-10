@@ -12,6 +12,9 @@ Heiwa is a theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.2 =
+* Heiwa: Minor adjustments to header and footer patterns. (#5979)
+
 = 1.0.0 =
 * Initial release
 
