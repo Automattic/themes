@@ -99,7 +99,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 a:not(
 	.wp-block-search__button,
 	.wp-block-button__link
-) {
+),
+.wp-block-site-title a {
 	padding: .4rem 0;
 	text-underline-offset: .1rem;
 }
@@ -107,8 +108,13 @@ a:not(
 a:not(
 	.wp-block-search__button,
 	.wp-block-button__link
-):hover {
+):hover,
+.wp-block-site-title a {
 	text-decoration: none;
+}
+
+.wp-block-site-title a:hover {
+	text-decoration: underline;
 }
 
 a:not(
@@ -121,7 +127,8 @@ a:not(
 a:not(
 	.wp-block-search__button,
 	.wp-block-button__link
-):active {
+):active,
+.wp-block-site-title a:active {
 	text-decoration: none;
 	background-color: var(--wp--preset--color--tertiary);
 }
