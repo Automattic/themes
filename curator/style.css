@@ -96,8 +96,12 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  * Link Styles
  */
 
-a {
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+) {
 	padding: .4rem 0;
+	text-underline-offset: .1rem;
 }
 
 a:not(
@@ -119,7 +123,7 @@ a:not(
 	.wp-block-button__link
 ):active {
 	text-decoration: none;
-	background-color: var(--wp--custom--color--link-background);
+	background-color: var(--wp--preset--color--tertiary);
 }
 
 /*
