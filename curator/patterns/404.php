@@ -15,4 +15,4 @@
 <p class="has-text-align-center"><?php echo esc_html__( 'This page could not be found. Try searching posts using the field below.', 'curator' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_html__( 'Search', 'curator' ); ?>","buttonUseIcon":true} /-->
+<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_html__( 'Search', 'curator' ); ?>","buttonUseIcon":true,"borderColor":"foreground"} /-->
