@@ -411,7 +411,7 @@ class GlobalStylesFontsCustomizer {
 
 		$body_font_selected_font_variable = $merged_json['styles']['typography']['fontFamily'];
 		preg_match( '/font-family\|(?P<slug>.+)$/', $body_font_selected_font_variable, $matches );
-		$body_font_selected_font_slug = $matches['slug'] ?? 'system-font';
+		$body_font_selected_font_slug = $matches['slug'] ?? '';
 
 		$this->add_setting_and_control( $wp_customize, 'body', __( 'Body font', 'blockbase' ), $body_font_default['fontSlug'], $body_font_selected_font_slug, 'sanitize_title' );
 		$this->add_setting_and_control( $wp_customize, 'heading', __( 'Heading font', 'blockbase' ), $heading_font_default['fontSlug'], $heading_font_selected_font_slug, 'sanitize_title' );
