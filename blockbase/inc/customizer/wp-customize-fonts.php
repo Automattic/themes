@@ -4,13 +4,14 @@ require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
 add_action( 'init', function() {
+	// TODO: Ensure this is only run once
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
-
 
 	if ( ! isset( $font_settings['theme'] ) || ! is_array( $font_settings['theme'] ) ) {
 		return;
 	}
 
+	// Extract font slugs from legacy data structure
 	$heading_font_slug = '';
 	$body_font_slug = '';
 	foreach ( $font_settings['theme'] as $font_setting ) {
@@ -23,6 +24,57 @@ add_action( 'init', function() {
 		}
 	}
 
+	// Get the user's global styles CPT id
+	$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+
+	// API request to get global styles
+	$get_request = new WP_REST_Request( 'GET', '/wp/v2/global-styles/' );
+	$get_request->set_param( 'id', $user_custom_post_type_id );
+
+	$global_styles_controller = new Gutenberg_REST_Global_Styles_Controller();
+	$global_styles            = $global_styles_controller->get_item( $get_request );
+
+	// converts data to array (in some cases settings and styles are objects insted of arrays)
+	$new_settings = (array) $global_styles->data['settings'];
+	$new_styles   = (array) $global_styles->data['styles'];
+
+	// Set new typography settings
+	if ( isset( $new_settings['typography']['fontFamilies'] ) ) {
+		unset( $new_settings['typography']['fontFamilies'] ); // TODO: Reconsider the depth of property we're unsetting
+	}
+
+	$new_styles['typography']['fontFamily'] = "var:preset|font-family|$body_font_slug";
+	$new_styles = array_merge(
+		$new_styles,
+		array(
+			'blocks' => array(
+				'core/post-title' => array(
+					'typography' => array(
+						'font-family' => "var:preset|font-family|$heading_font_slug"
+					)
+				),
+				'core/heading' => array(
+					'typography' => array(
+						'font-family' => "var:preset|font-family|$heading_font_slug"
+					)
+				),
+			)
+		),
+	);
+
+			
+	// // Add the updated global styles to the update request
+	$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
+	$update_request->set_param( 'id', $user_custom_post_type_id );
+	$update_request->set_param( 'settings', $new_settings );
+	$update_request->set_param( 'styles', $new_styles );
+
+	// // Update the theme.json with the new settings.
+	$updated_global_styles = $global_styles_controller->update_item( $update_request );
+	delete_transient( 'global_styles' );
+	delete_transient( 'global_styles_' . get_stylesheet() );
+	delete_transient( 'gutenberg_global_styles' );
+	delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
 } );
 
 class GlobalStylesFontsCustomizer {
