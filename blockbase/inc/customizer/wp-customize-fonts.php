@@ -4,7 +4,11 @@ require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
 add_action( 'init', function() {
-	// TODO: Ensure this is only run once
+	if ( get_option( 'blockbase_custom_fonts_data_migrated' ) ) {
+		return;
+	}
+	add_option( 'blockbase_custom_fonts_data_migrated', 1 );
+	
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
 	if ( ! isset( $font_settings['custom'] ) || ! is_array( $font_settings['custom'] ) ) {
