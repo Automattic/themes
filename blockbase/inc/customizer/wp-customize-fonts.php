@@ -3,6 +3,28 @@
 require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
+add_action( 'init', function() {
+	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+
+
+	if ( ! isset( $font_settings['theme'] ) || ! is_array( $font_settings['theme'] ) ) {
+		return;
+	}
+
+	$heading_font_slug = '';
+	$body_font_slug = '';
+	foreach ( $font_settings['theme'] as $font_setting ) {
+		if ( strpos( $font_setting['slug'], 'heading' ) ) {
+			$heading_font_slug = $font_setting['fontSlug'];
+		}
+
+		if ( strpos( $font_setting['slug'], 'body' ) ) {
+			$body_font_slug = $font_setting['fontSlug'];
+		}
+	}
+
+} );
+
 class GlobalStylesFontsCustomizer {
 
 	private $section_key = 'customize-global-styles-fonts';
