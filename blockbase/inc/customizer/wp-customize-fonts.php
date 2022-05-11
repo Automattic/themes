@@ -4,7 +4,6 @@ require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
 add_action( 'init', function() {
-	// return;
 	// TODO: Ensure this is only run once
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
@@ -49,7 +48,7 @@ add_action( 'init', function() {
 			$new_styles,
 			array(
 				'typography' => array(
-					'font-family' => "var:preset|font-family|$body_font_slug"
+					'fontFamily' => "var:preset|font-family|$body_font_slug"
 				)
 			)
 		);
@@ -62,12 +61,12 @@ add_action( 'init', function() {
 				'blocks' => array(
 					'core/post-title' => array(
 						'typography' => array(
-							'font-family' => "var:preset|font-family|$heading_font_slug"
+							'fontFamily' => "var:preset|font-family|$heading_font_slug"
 						)
 					),
 					'core/heading' => array(
 						'typography' => array(
-							'font-family' => "var:preset|font-family|$heading_font_slug"
+							'fontFamily' => "var:preset|font-family|$heading_font_slug"
 						)
 					),
 				)
