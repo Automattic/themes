@@ -4,22 +4,23 @@ require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
 add_action( 'init', function() {
+	// return;
 	// TODO: Ensure this is only run once
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
-	if ( ! isset( $font_settings['theme'] ) || ! is_array( $font_settings['theme'] ) ) {
+	if ( ! isset( $font_settings['custom'] ) || ! is_array( $font_settings['custom'] ) ) {
 		return;
 	}
 
 	// Extract font slugs from legacy data structure
 	$heading_font_slug = '';
 	$body_font_slug = '';
-	foreach ( $font_settings['theme'] as $font_setting ) {
-		if ( strpos( $font_setting['slug'], 'heading' ) ) {
+	foreach ( $font_settings['custom'] as $font_setting ) {
+		if ( strpos( $font_setting['slug'], 'heading' ) !== false ) {
 			$heading_font_slug = $font_setting['fontSlug'];
 		}
 
-		if ( strpos( $font_setting['slug'], 'body' ) ) {
+		if ( strpos( $font_setting['slug'], 'body' ) !== false ) {
 			$body_font_slug = $font_setting['fontSlug'];
 		}
 	}
@@ -43,26 +44,37 @@ add_action( 'init', function() {
 		unset( $new_settings['typography']['fontFamilies'] ); // TODO: Reconsider the depth of property we're unsetting
 	}
 
-	$new_styles['typography']['fontFamily'] = "var:preset|font-family|$body_font_slug";
-	$new_styles = array_merge(
-		$new_styles,
-		array(
-			'blocks' => array(
-				'core/post-title' => array(
-					'typography' => array(
-						'font-family' => "var:preset|font-family|$heading_font_slug"
-					)
-				),
-				'core/heading' => array(
-					'typography' => array(
-						'font-family' => "var:preset|font-family|$heading_font_slug"
-					)
-				),
+	if ( $body_font_slug ) {
+		$new_styles = array_merge(
+			$new_styles,
+			array(
+				'typography' => array(
+					'font-family' => "var:preset|font-family|$body_font_slug"
+				)
 			)
-		),
-	);
+		);
+	}
 
-			
+	if ( $heading_font_slug ) {
+		$new_styles = array_merge(
+			$new_styles,
+			array(
+				'blocks' => array(
+					'core/post-title' => array(
+						'typography' => array(
+							'font-family' => "var:preset|font-family|$heading_font_slug"
+						)
+					),
+					'core/heading' => array(
+						'typography' => array(
+							'font-family' => "var:preset|font-family|$heading_font_slug"
+						)
+					),
+				)
+			),
+		);
+	}
+
 	// // Add the updated global styles to the update request
 	$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
 	$update_request->set_param( 'id', $user_custom_post_type_id );
