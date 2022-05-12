@@ -4,16 +4,21 @@ require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
 add_action( 'init', function() {
+  return;
+	// We've already transformed the data, no need to run this
 	if ( get_option( 'blockbase_custom_fonts_data_migrated' ) ) {
 		return;
 	}
-	add_option( 'blockbase_custom_fonts_data_migrated', 1 );
-	
+
+
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
+	// No Customizer font settings found. Mark as transformed and hide the Customizer UI for fonts.
 	if ( ! isset( $font_settings['custom'] ) || ! is_array( $font_settings['custom'] ) ) {
+		add_option( 'blockbase_legacy_font_settings', '{}' );
 		return;
 	}
+
 
 	// Extract font slugs from legacy data structure
 	$heading_font_slug = '';
@@ -90,7 +95,20 @@ add_action( 'init', function() {
 	delete_transient( 'global_styles_' . get_stylesheet() );
 	delete_transient( 'gutenberg_global_styles' );
 	delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
+	add_option( 'blockbase_legacy_font_settings', 'TODO' );
 } );
+
+function blockbase_supports_jetpack_google_fonts() {
+	if ( defined( 'JETPACK__VERSION' ) ) {
+		$jetpack_has_google_fonts_module = JETPACK__VERSION === 'wpcom' || version_compare( JETPACK__VERSION, '10.9', '>=' );
+	}
+
+	if ( defined( 'GUTENBERG_VERSION' ) ) {
+		$gutenberg_webfonts_api_supports_enqueueing = version_compare( GUTENBERG_VERSION, '13.3', '>=' );
+	}
+
+	return $jetpack_has_google_fonts_module && $gutenberg_webfonts_api_supports_enqueueing && Jetpack::is_module_active( 'google-fonts' );
+}
 
 class GlobalStylesFontsCustomizer {
 
