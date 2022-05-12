@@ -22,7 +22,7 @@ Here are some tips to consider for writing a useful report:
 
 ### Code
 
-Patches and ideas in the form of code are always welcome! A great way to get started is to work on a CSS fix or a [Good First Issue](https://github.com/Automattic/themes/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Please read our [full guide to contributing](https://github.com/Automattic/themes/blob/trunk/CONTRIBUTING.md).
+Patches and ideas in the form of code are always welcome! A great way to get started is to work on a [CSS fix](https://github.com/Automattic/themes/blob/trunk/CONTRIBUTING.md#contributing-css) or a [Good First Issue](https://github.com/Automattic/themes/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Please read our [full guide to contributing](https://github.com/Automattic/themes/blob/trunk/CONTRIBUTING.md) for more information.
 
 #### Pull Request Tips
 
