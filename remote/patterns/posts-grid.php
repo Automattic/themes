@@ -20,7 +20,7 @@
 
 <!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"220px","style":{"spacing":{"margin":{"top":"0px","bottom":"30px"}}}} /-->
 
-<!-- wp:post-date {"format":"M j","fontSize":"small"} /-->
+<!-- wp:post-date {"format":"M j"} /-->
 
 <!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"0.3em","bottom":"20px"}},"typography":{"lineHeight":"1.17"}},"fontSize":"medium"} /-->
 <!-- /wp:post-template -->
