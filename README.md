@@ -24,15 +24,6 @@ Here are some tips to consider for writing a useful report:
 
 Patches and ideas in the form of code are always welcome! A great way to get started is to work on a [CSS fix](https://github.com/Automattic/themes/blob/trunk/CONTRIBUTING.md#contributing-css) or a [Good First Issue](https://github.com/Automattic/themes/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Please read our [full guide to contributing](https://github.com/Automattic/themes/blob/trunk/CONTRIBUTING.md) for more information.
 
-#### Pull Request Tips
-
-Here are a couple tips for crafting a great pull request:
-
-* Include the purpose of your PR. Be explicit about the idea or issue your PR solves.
-* Reference any existing issues that relate to your PR. This allows everyone to easily see all related discussions.
-
-By contributing code to our free themes, you grant its use under the [GNU General Public License v2 (or later)](LICENSE).
-
 ### Testing pull requests
 
 #### Using GitHub
