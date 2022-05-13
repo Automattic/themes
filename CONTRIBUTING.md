@@ -58,7 +58,7 @@ In order to change the styles in these themes, you need to edit the SASS file fi
 4. Run the build command using `npm run build`
 5. You should see your updates in the newly built `.css` file/s
 
-Please refer to either the themes readme or the themes `package.json` file for theme specific instructions.
+If you are unsure what to do, leave us a comment so that we can improve documentation for other themes that may work differently.
 
 ### Best Practices
 
