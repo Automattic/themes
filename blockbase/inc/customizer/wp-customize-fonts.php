@@ -3,26 +3,25 @@
 require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
-add_action( 'init', function() {
-  return;
-	// We've already transformed the data, no need to run this
-	if ( get_option( 'blockbase_custom_fonts_data_migrated' ) ) {
+add_action( 'init', 'migrate_blockbase_custom_fonts' );
+
+function migrate_blockbase_custom_fonts() {
+	// The data has already been transformed
+	if ( get_option( 'blockbase_legacy_font_settings' ) ) {
 		return;
 	}
-
 
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
 	// No Customizer font settings found. Mark as transformed and hide the Customizer UI for fonts.
 	if ( ! isset( $font_settings['custom'] ) || ! is_array( $font_settings['custom'] ) ) {
-		add_option( 'blockbase_legacy_font_settings', '{}' );
+		add_option( 'blockbase_legacy_font_settings', '[]' );
 		return;
 	}
 
-
 	// Extract font slugs from legacy data structure
 	$heading_font_slug = '';
-	$body_font_slug = '';
+	$body_font_slug    = '';
 	foreach ( $font_settings['custom'] as $font_setting ) {
 		if ( strpos( $font_setting['slug'], 'heading' ) !== false ) {
 			$heading_font_slug = $font_setting['fontSlug'];
@@ -34,14 +33,10 @@ add_action( 'init', function() {
 	}
 
 	// Get the user's global styles CPT id
-	$user_custom_post_type_id = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
-
-	// API request to get global styles
-	$get_request = new WP_REST_Request( 'GET', '/wp/v2/global-styles/' );
-	$get_request->set_param( 'id', $user_custom_post_type_id );
-
-	$global_styles_controller = new Gutenberg_REST_Global_Styles_Controller();
-	$global_styles            = $global_styles_controller->get_item( $get_request );
+	$user_custom_post_type_id       = WP_Theme_JSON_Resolver_Gutenberg::get_user_global_styles_post_id();
+	$global_styles_controller       = new Gutenberg_REST_Global_Styles_Controller();
+	$global_styles                  = fetch_global_styles( $user_custom_post_type_id, $global_styles_controller );
+	$blockbase_legacy_font_settings = $global_styles->data['settings']['typography']['fontFamilies']['custom'];
 
 	// converts data to array (in some cases settings and styles are objects insted of arrays)
 	$new_settings = (array) $global_styles->data['settings'];
@@ -57,8 +52,8 @@ add_action( 'init', function() {
 			$new_styles,
 			array(
 				'typography' => array(
-					'fontFamily' => "var:preset|font-family|$body_font_slug"
-				)
+					'fontFamily' => "var:preset|font-family|$body_font_slug",
+				),
 			)
 		);
 	}
@@ -70,45 +65,65 @@ add_action( 'init', function() {
 				'blocks' => array(
 					'core/post-title' => array(
 						'typography' => array(
-							'fontFamily' => "var:preset|font-family|$heading_font_slug"
-						)
+							'fontFamily' => "var:preset|font-family|$heading_font_slug",
+						),
 					),
-					'core/heading' => array(
+					'core/heading'    => array(
 						'typography' => array(
-							'fontFamily' => "var:preset|font-family|$heading_font_slug"
-						)
+							'fontFamily' => "var:preset|font-family|$heading_font_slug",
+						),
 					),
-				)
-			),
+				),
+			)
 		);
 	}
 
-	// // Add the updated global styles to the update request
+	update_global_styles( $new_settings, $new_styles, $user_custom_post_type_id, $global_styles_controller );
+
+	// TODO: Verify that we want to store an array
+	update_option( 'blockbase_legacy_font_settings', json_encode( $blockbase_legacy_font_settings ) );
+}
+
+/**
+ * Updates the global styles CPT.
+ *
+ * @param array  $new_settings New global styles to update.
+ * @param array  $new_styles New global styles settings to update.
+ * @param int    $user_custom_post_type_id ID of global styles CPT.
+ * @param object $global_styles_controller Controller that handles REST requests for global styles.
+ *
+ * @return void
+ */
+function update_global_styles( $new_settings, $new_styles, $user_custom_post_type_id, $global_styles_controller ) {
 	$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
 	$update_request->set_param( 'id', $user_custom_post_type_id );
 	$update_request->set_param( 'settings', $new_settings );
 	$update_request->set_param( 'styles', $new_styles );
 
-	// // Update the theme.json with the new settings.
-	$updated_global_styles = $global_styles_controller->update_item( $update_request );
+	$global_styles_controller->update_item( $update_request );
 	delete_transient( 'global_styles' );
 	delete_transient( 'global_styles_' . get_stylesheet() );
 	delete_transient( 'gutenberg_global_styles' );
 	delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
-	add_option( 'blockbase_legacy_font_settings', 'TODO' );
-} );
-
-function blockbase_supports_jetpack_google_fonts() {
-	if ( defined( 'JETPACK__VERSION' ) ) {
-		$jetpack_has_google_fonts_module = JETPACK__VERSION === 'wpcom' || version_compare( JETPACK__VERSION, '10.9', '>=' );
-	}
-
-	if ( defined( 'GUTENBERG_VERSION' ) ) {
-		$gutenberg_webfonts_api_supports_enqueueing = version_compare( GUTENBERG_VERSION, '13.3', '>=' );
-	}
-
-	return $jetpack_has_google_fonts_module && $gutenberg_webfonts_api_supports_enqueueing && Jetpack::is_module_active( 'google-fonts' );
 }
+
+/**
+ * Retrieves the global styles cpt.
+ *
+ * @param int    $user_custom_post_type_id ID of global styles CPT.
+ * @param object $global_styles_controller Controller that handles REST requests for global styles.
+ *
+ * @return array
+ */
+function fetch_global_styles( $user_custom_post_type_id, $global_styles_controller ) {
+	$get_request = new WP_REST_Request( 'GET', '/wp/v2/global-styles/' );
+	$get_request->set_param( 'id', $user_custom_post_type_id );
+	$global_styles = $global_styles_controller->get_item( $get_request );
+
+	return $global_styles;
+}
+
+// ---------
 
 class GlobalStylesFontsCustomizer {
 
