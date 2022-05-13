@@ -69,8 +69,8 @@
 			</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","submitButtonText":"SUBSCRIBE","buttonBackgroundColor":"background","textColor":"black","fontSize":"14px","customFontSize":"14px","borderRadius":50,"borderColor":"background","spacing":10,"className":"is-style-split"} -->
-			<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline wp-block-jetpack-subscriptions__use-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="true" submit_button_text="SUBSCRIBE" custom_font_size="14px" custom_border_radius="50" custom_border_weight="1" custom_button_width="100%" custom_padding="15" custom_spacing="10" submit_button_classes="has-14-px-font-size has-background-border-color has-text-color has-black-color has-background has-background-background-color" email_field_classes="has-14-px-font-size has-background-border-color" show_only_email_and_button="true" success_message="Success! An email was just sent to confirm your subscription. Please find the email now and click 'Confirm Follow' to start subscribing."]</div>
+			<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","buttonBackgroundColor":"background","textColor":"black","fontSize":"14px","customFontSize":"14px","borderRadius":50,"borderColor":"background","spacing":10,"className":"is-style-split"} -->
+			<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline wp-block-jetpack-subscriptions__use-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="true" custom_font_size="14px" custom_border_radius="50" custom_border_weight="1" custom_button_width="100%" custom_padding="15" custom_spacing="10" submit_button_classes="has-14-px-font-size has-background-border-color has-text-color has-black-color has-background has-background-background-color" email_field_classes="has-14-px-font-size has-background-border-color" show_only_email_and_button="true"]</div>
 			<!-- /wp:jetpack/subscriptions -->
 
 		</div>
