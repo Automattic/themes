@@ -92,49 +92,93 @@ function blockbase_scripts() {
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
 	}
+
+	$legacy_fonts = blockbase_get_legacy_fonts();
+	wp_enqueue_style( 'global-styles-legacy-fonts', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
+	$css  = 'body {';
+
+	// TODO: escape font data
+	if ( isset( $legacy_fonts['body'] ) && is_legacy_font_used( 'body' ) ) {
+		$css .= "--wp--preset--font-family--{$legacy_fonts['body']['fontSlug']}:{$legacy_fonts['body']['fontFamily']};";
+	}
+
+	// TODO: escape font data
+	if ( isset( $legacy_fonts['heading'] ) && is_legacy_font_used( 'heading' ) ) {
+		$css .= "--wp--preset--font-family--{$legacy_fonts['heading']['fontSlug']}:{$legacy_fonts['heading']['fontFamily']};";
+	}
+	$css .= '}';
+	wp_add_inline_style( 'global-styles-legacy-fonts', $css );
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
+
+/**
+ * Retrieve blockbase legacy fonts data
+ *
+ * @return array
+ */
+function blockbase_get_legacy_fonts() {
+	$legacy_settings_array = json_decode( get_option('blockbase_legacy_font_settings', '[]' ), true );
+
+	$fonts = array();
+
+	// Group by heading and body fonts
+	foreach( $legacy_settings_array as $setting ) {
+		if ( $setting['slug'] === 'body-font' ) {
+			$fonts['body'] = $setting;
+		}
+
+		if ( $setting['slug'] === 'heading-font' ) {
+			$fonts['heading'] = $setting;
+		}
+	}
+
+	return $fonts;
+}
+
+/**
+ * Compares legacy fonts and global styles fonts to determine if legacy fonts are still being used
+ *
+ * @return bool
+ */
+function is_legacy_font_used( $type = 'body' ) {
+	$legacy_fonts = blockbase_get_legacy_fonts();
+
+	$body_font = wp_get_global_styles( array( 'typography', 'fontFamily' ) );
+	preg_match( '/font-family\|(?P<slug>.+)$/', $body_font, $matches );
+	$body_font_slug = $matches['slug'] ?? '';
+
+	if (
+		isset( $legacy_fonts['body'] ) &&
+		$body_font_slug &&
+		$legacy_fonts['body']['fontSlug'] === $body_font_slug
+	) {
+		return true;
+	}
+
+	return false;
+}
 
 /**
  * Add Google webfonts
  *
  * @return $fonts_url
  */
-
 function blockbase_fonts_url() {
 	if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 		return '';
 	}
 
-	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
-	if ( empty( $theme_data ) || empty( $theme_data['typography'] ) || empty( $theme_data['typography']['fontFamilies'] ) ) {
+	$legacy_font_settings = blockbase_get_legacy_fonts();
+	if ( empty( $legacy_font_settings ) ) {
 		return '';
 	}
 
 	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
-			if ( ! empty( $font['google'] ) ) {
-				$font_families[] = $font['google'];
-			}
-		}
 
-	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
-			if ( ! empty( $font['google'] ) ) {
-				$font_families[] = $font['google'];
-			}
-		}
-	// End Gutenberg < 12.1 compatibility patch
-
-	} else {
-		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
-				if ( ! empty( $font['google'] ) ) {
-					$font_families[] = $font['google'];
-				}
-			}
+	foreach( $legacy_font_settings as $font_type => $font ) {
+		// $font_type = array_slice( $font['slug'], 0, strpos( $font['slug'], '-' ) + 1 );
+		if ( ! empty( $font['google'] ) && is_legacy_font_used( $font_type ) ) {
+			$font_families[] = $font['google'];
 		}
 	}
 
