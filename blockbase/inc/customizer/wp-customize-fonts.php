@@ -14,7 +14,7 @@ class GlobalStylesFontsCustomizer {
 
 	//Not all fonts support v2 of the API that allows for the shorter URls
 	//list of supported fonts: https://fonts.google.com/variablefonts
-	private $fonts = array(
+	private $default_fonts = array(
 		'system-font'       => array(
 			'fontFamily' => '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
 			'slug'       => 'system-font',
@@ -207,6 +207,8 @@ class GlobalStylesFontsCustomizer {
 			'google'     => 'family=Work+Sans:ital,wght@0,100..900;1,100..900',
 		),
 	);
+	
+	private $fonts = array();
 
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'initialize' ) );
@@ -299,7 +301,19 @@ class GlobalStylesFontsCustomizer {
 
 		$merged_json                = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_raw_data();
 		$theme_font_families        = $merged_json['settings']['typography']['fontFamilies']['theme'];
-		$body_font_default_array    = array_filter(
+
+    // If theme.json has fonts then use those
+		if ( ! empty( $theme_font_families ) ) {
+		  foreach ( $theme_font_families as $font ) {
+			  $this->fonts[$font['slug']] = $font;
+			}
+		
+		// Otherwise, use the default fonts 
+		} else {
+			$this->fonts = $this->default_fonts;
+		}
+    
+    $body_font_default_array    = array_filter(
 			$theme_font_families,
 			function( $font_family ) {
 				return 'body-font' === $font_family['slug'];
