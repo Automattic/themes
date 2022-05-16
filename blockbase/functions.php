@@ -1,4 +1,7 @@
 <?php
+
+require_once 'vendor/autoload.php';
+
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
 		// Alignwide and alignfull classes in the block editor.
@@ -92,71 +95,8 @@ function blockbase_scripts() {
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
 	}
-
-	$legacy_fonts = blockbase_get_legacy_fonts();
-	wp_enqueue_style( 'global-styles-legacy-fonts', ' ', array( 'global-styles' ) ); // This needs to load after global_styles, hence the dependency
-	$css  = 'body {';
-
-	// TODO: escape font data
-	if ( isset( $legacy_fonts['body'] ) && is_legacy_font_used( 'body' ) ) {
-		$css .= "--wp--preset--font-family--{$legacy_fonts['body']['fontSlug']}:{$legacy_fonts['body']['fontFamily']};";
-	}
-
-	// TODO: escape font data
-	if ( isset( $legacy_fonts['heading'] ) && is_legacy_font_used( 'heading' ) ) {
-		$css .= "--wp--preset--font-family--{$legacy_fonts['heading']['fontSlug']}:{$legacy_fonts['heading']['fontFamily']};";
-	}
-	$css .= '}';
-	wp_add_inline_style( 'global-styles-legacy-fonts', $css );
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
-
-/**
- * Retrieve blockbase legacy fonts data
- *
- * @return array
- */
-function blockbase_get_legacy_fonts() {
-	$legacy_settings_array = json_decode( get_option('blockbase_legacy_font_settings', '[]' ), true );
-
-	$fonts = array();
-
-	// Group by heading and body fonts
-	foreach( $legacy_settings_array as $setting ) {
-		if ( $setting['slug'] === 'body-font' ) {
-			$fonts['body'] = $setting;
-		}
-
-		if ( $setting['slug'] === 'heading-font' ) {
-			$fonts['heading'] = $setting;
-		}
-	}
-
-	return $fonts;
-}
-
-/**
- * Compares legacy fonts and global styles fonts to determine if legacy fonts are still being used
- *
- * @return bool
- */
-function is_legacy_font_used( $type = 'body' ) {
-	$legacy_fonts = blockbase_get_legacy_fonts();
-
-	$body_font = wp_get_global_styles( array( 'typography', 'fontFamily' ) );
-	preg_match( '/font-family\|(?P<slug>.+)$/', $body_font, $matches );
-	$body_font_slug = $matches['slug'] ?? '';
-
-	if (
-		isset( $legacy_fonts['body'] ) &&
-		$body_font_slug &&
-		$legacy_fonts['body']['fontSlug'] === $body_font_slug
-	) {
-		return true;
-	}
-
-	return false;
-}
 
 /**
  * Add Google webfonts
@@ -164,21 +104,13 @@ function is_legacy_font_used( $type = 'body' ) {
  * @return $fonts_url
  */
 function blockbase_fonts_url() {
-	if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-		return '';
-	}
-
-	$legacy_font_settings = blockbase_get_legacy_fonts();
-	if ( empty( $legacy_font_settings ) ) {
-		return '';
-	}
-
 	$font_families = [];
+	$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
+	$font_settings = blockbase_get_font_settings();
 
-	foreach( $legacy_font_settings as $font_type => $font ) {
-		// $font_type = array_slice( $font['slug'], 0, strpos( $font['slug'], '-' ) + 1 );
-		if ( ! empty( $font['google'] ) && is_legacy_font_used( $font_type ) ) {
-			$font_families[] = $font['google'];
+	foreach( $global_styles_fonts as $font_slug ) {
+		if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
+			$font_families[] = $font_settings[ $font_slug ]['google'];
 		}
 	}
 
@@ -188,6 +120,17 @@ function blockbase_fonts_url() {
 
 	// Make a single request for the theme or user fonts.
 	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
+}
+
+function blockbase_get_font_settings() {
+	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	$remapped_font_settings = array();
+
+	foreach( $font_settings['theme'] as $font ) {
+		$remapped_font_settings[ $font['slug'] ] = $font;
+	}
+
+	return $remapped_font_settings;
 }
 
 /**
