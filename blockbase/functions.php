@@ -174,3 +174,10 @@ require get_template_directory() . '/inc/block-patterns.php';
 if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }
+
+function blockbase_disable_jetpack_google_fonts() {
+	if ( method_exists( 'Jetpack', 'is_module_active' ) && Jetpack::is_module_active( 'google-fonts' ) ) {
+		Jetpack::deactivate_module( 'google-fonts' );
+	}
+}
+add_action( 'setup_theme', 'blockbase_disable_jetpack_google_fonts', 0 );
