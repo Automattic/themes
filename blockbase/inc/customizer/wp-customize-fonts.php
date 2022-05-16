@@ -343,6 +343,22 @@ class GlobalStylesFontsCustomizer {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_control_js' ) );
 	}
 
+	function generate_deprecation_message() {
+		if ( ! defined( 'JETPACK__VERSION' ) || version_compare( JETPACK__VERSION, '10.8', '<=' ) ) {
+			return __( 'Please activate or update Jetpack to use the custom fonts feature.', 'blockbase' );
+		}
+
+		if ( ! defined( 'GUTENBERG_VERSION' ) || version_compare( GUTENBERG_VERSION, '13.2', '<=' ) ) {
+			return __( 'Please activate or update Gutenberg to use the custom fonts feature.', 'blockbase' );
+		}
+
+		if ( ! Jetpack::is_module_active( 'google-fonts' ) ) {
+			return __( 'Please activate the google fonts Jetpack module to use the custom fonts feature.', 'blockbase' );
+		}
+
+		return __( 'Updating fonts for this theme is now even easier! Use the site editor to select and preview different font families.', 'blockbase' );
+	}
+
 	function init_deprecation_notice( $wp_customize ) {
 		$wp_customize->add_section(
 			$this->section_key,
@@ -357,13 +373,14 @@ class GlobalStylesFontsCustomizer {
 			array(
 				'type'        => 'hidden',
 				'description' => '<div class="notice notice-info">
-				<p>' . __( 'Updating fonts for this theme is now even easier! Use the site editor to select and preview different font families.', 'blockbase' ) . '</p>
+				<p>' . $this->generate_deprecation_message() . '</p>
 				</div>',
 				'settings'    => array(),
 				'section'     => $this->section_key,
 			)
 		);
 
+		// TODO: Hide if custom google fonts is enabled for site editor
 		$wp_customize->add_control(
 			$this->section_key . '-site-editor-button',
 			array(
