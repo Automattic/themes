@@ -164,25 +164,15 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		$home_template = array_merge( _resolve_home_block_template(), array( 'styles' => 'open' ) );
-		$site_editor_url = add_query_arg(
-			$home_template,
-			admin_url( 'site-editor.php' )
-		);
-
-		// TODO: Can this link directly to Global Styles panel?
 		$wp_customize->add_control(
 			$this->section_key . '-site-editor-button',
 			array(
 				'type'        => 'hidden',
-				'description' => sprintf( '<a class="button button-primary" href=%s style="font-style: normal;" >Use Site Editor</a>', esc_url( $site_editor_url ) ),
+				'description' => sprintf( '<a class="button button-primary" href=%s style="font-style: normal;" >Use Site Editor</a>', esc_url( admin_url( 'site-editor.php' ) ) ),
 				'settings'    => array(),
 				'section'     => $this->section_key,
 			)
 		);
-
-		// TODO: add link to support doc
-		// https://wordpress.com/support/using-styles/
 	}
 }
 
