@@ -1,8 +1,7 @@
 <?php
 
+// Load Jetpack packages included with theme (Jetpack plugin is not required).
 require_once 'vendor/autoload.php';
-
-$blockbase_block_font_families = array();
 
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
@@ -101,53 +100,16 @@ function blockbase_scripts() {
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
 
 /**
- * Add Google webfonts
- *
- * @return $fonts_url
- */
-function blockbase_fonts_url() {
-	global $blockbase_block_font_families;
-
-	$font_families = [];
-	$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
-	$fonts_to_load = array_merge( $blockbase_block_font_families, $global_styles_fonts );
-	$fonts_to_load = array_unique( $fonts_to_load );
-	$font_settings = blockbase_get_font_settings();
-
-	foreach( $fonts_to_load as $font_slug ) {
-		if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
-			$font_families[] = $font_settings[ $font_slug ]['google'];
-		}
-	}
-
-	if ( empty( $font_families ) ) {
-		return '';
-	}
-
-	// Make a single request for the theme or user fonts.
-	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
-}
-
-function blockbase_get_font_settings() {
-	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
-	$remapped_font_settings = array();
-
-	foreach( $font_settings['theme'] as $font ) {
-		$remapped_font_settings[ $font['slug'] ] = $font;
-	}
-
-	return $remapped_font_settings;
-}
-
-/**
  * Customize Global Styles
  */
 if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 	require get_template_directory() . '/inc/social-navigation.php';
 }
+
+// Font settings migration and deprecation message. Fonts now set in Global Styles.
+require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 
 // Force menus to reload
 add_action(
@@ -181,13 +143,69 @@ if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }
 
-function blockbase_disable_jetpack_google_fonts() {
-	if ( method_exists( 'Jetpack', 'is_module_active' ) && Jetpack::is_module_active( 'google-fonts' ) ) {
-		Jetpack::deactivate_module( 'google-fonts' );
-	}
-}
-add_action( 'init', 'blockbase_disable_jetpack_google_fonts', 0 );
 
+// ----------	Custom Fonts ---------- //
+
+/**
+ * Font families used in block settings.
+ *
+ * @var array
+ */
+$blockbase_block_font_families = array();
+
+/**
+ * Generate url used to load font-face css from Google.
+ *
+ * @return string
+ */
+function blockbase_fonts_url() {
+	global $blockbase_block_font_families;
+
+	$font_families = [];
+	$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
+	$fonts_to_load = array_merge( $blockbase_block_font_families, $global_styles_fonts );
+	$fonts_to_load = array_unique( $fonts_to_load );
+	$font_settings = blockbase_get_font_settings();
+
+	foreach( $fonts_to_load as $font_slug ) {
+		if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
+			$font_families[] = $font_settings[ $font_slug ]['google'];
+		}
+	}
+
+	if ( empty( $font_families ) ) {
+		return '';
+	}
+
+	// Make a single request for the theme or user fonts.
+	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
+}
+
+/**
+ * Get an array of the fonts from theme.json, with font slug as the key.
+ *
+ * @return array
+ */
+function blockbase_get_font_settings() {
+	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	$remapped_font_settings = array();
+
+	foreach( $font_settings['theme'] as $font ) {
+		$remapped_font_settings[ $font['slug'] ] = $font;
+	}
+
+	return $remapped_font_settings;
+}
+
+/**
+ * Gather fonts set in block settings.
+ *
+ * @filter pre_render_block
+ *
+ * @param string|null $content The pre-rendered content. Default null.
+ * @param array       $parsed_block The block being rendered.
+ * @return string|null
+ */
 function blockbase_enqueue_block_fonts( $content, $parsed_block ) {
 	global $blockbase_block_font_families;
 
@@ -199,3 +217,17 @@ function blockbase_enqueue_block_fonts( $content, $parsed_block ) {
 	return $content;
 }
 add_filter( 'pre_render_block', 'blockbase_enqueue_block_fonts', 20, 2 );
+
+/**
+ * Disable the Jetpack Google Fonts module, since Blockbase provids it's own font loading.
+ *
+ * Prevents duplicate fonts in font family settings.
+ *
+ * @return void
+ */
+function blockbase_disable_jetpack_google_fonts() {
+	if ( method_exists( 'Jetpack', 'is_module_active' ) && Jetpack::is_module_active( 'google-fonts' ) ) {
+		Jetpack::deactivate_module( 'google-fonts' );
+	}
+}
+add_action( 'init', 'blockbase_disable_jetpack_google_fonts', 0 );
