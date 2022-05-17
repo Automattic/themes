@@ -2,6 +2,8 @@
 
 require_once 'vendor/autoload.php';
 
+$blockbase_block_font_families = array();
+
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
 		// Alignwide and alignfull classes in the block editor.
@@ -104,11 +106,15 @@ add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
  * @return $fonts_url
  */
 function blockbase_fonts_url() {
+	global $blockbase_block_font_families;
+
 	$font_families = [];
 	$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
+	$fonts_to_load = array_merge( $blockbase_block_font_families, $global_styles_fonts );
+	$fonts_to_load = array_unique( $fonts_to_load );
 	$font_settings = blockbase_get_font_settings();
 
-	foreach( $global_styles_fonts as $font_slug ) {
+	foreach( $fonts_to_load as $font_slug ) {
 		if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
 			$font_families[] = $font_settings[ $font_slug ]['google'];
 		}
@@ -180,4 +186,16 @@ function blockbase_disable_jetpack_google_fonts() {
 		Jetpack::deactivate_module( 'google-fonts' );
 	}
 }
-add_action( 'setup_theme', 'blockbase_disable_jetpack_google_fonts', 0 );
+add_action( 'init', 'blockbase_disable_jetpack_google_fonts', 0 );
+
+function blockbase_enqueue_block_fonts( $content, $parsed_block ) {
+	global $blockbase_block_font_families;
+
+	if ( ! is_admin() && isset( $parsed_block['attrs']['fontFamily'] ) ) {
+		$block_font_family  = $parsed_block['attrs']['fontFamily'];
+		$blockbase_block_font_families[] = $block_font_family;
+	}
+
+	return $content;
+}
+add_filter( 'pre_render_block', 'blockbase_enqueue_block_fonts', 20, 2 );
