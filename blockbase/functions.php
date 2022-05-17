@@ -1,6 +1,7 @@
 <?php
 
 // Load Jetpack packages included with theme (Jetpack plugin is not required).
+// Run `composer update --no-dev` to update packages and commit the changes.
 require_once 'vendor/autoload.php';
 
 if ( ! function_exists( 'blockbase_support' ) ) :
