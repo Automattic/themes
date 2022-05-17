@@ -136,7 +136,7 @@ class GlobalStylesFontsCustomizer {
 		if ( ! defined( 'GUTENBERG_VERSION' ) || version_compare( GUTENBERG_VERSION, '13.2', '<=' ) ) {
 			return __( 'Please activate or update Gutenberg to use the custom fonts feature.', 'blockbase' );
 		}
-		
+
 		return sprintf(
 			__( 'Updating fonts for this theme is now even easier! Use the site editor to select and preview different font families. <a href="%s">More information.</a>', 'blockbase' ),
 			__('https://wordpress.com/support/custom-fonts/')
@@ -168,7 +168,7 @@ class GlobalStylesFontsCustomizer {
 			$this->section_key . '-site-editor-button',
 			array(
 				'type'        => 'hidden',
-				'description' => sprintf( '<a class="button button-primary" href=%s style="font-style: normal;" >Use Site Editor</a>', esc_url( admin_url( 'site-editor.php' ) ) ),
+				'description' => sprintf( '<a class="button button-primary" href=%s style="font-style: normal;" >Use Site Editor</a>', esc_url( admin_url( 'site-editor.php?styles=open' ) ) ),
 				'settings'    => array(),
 				'section'     => $this->section_key,
 			)
