@@ -15,74 +15,93 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<?php
-			/*
-			 * Include the Featured Project loop.
-			 * - if featured posts exist, collect their IDs and exclude them from the main loop
-			 */
-			if ( rebalance_has_featured_projects( 1 ) ) {
-				$featured_ids = rebalance_get_featured_project_ids();
-				get_template_part( 'template-parts/section', 'featured' );
-			} else {
-				$featured_ids = null;
-			} ?>
+		if ( post_password_required() ) :
+				the_content();
 
-		<main id="main" class="site-main" role="main">
+			else :
 
-			<?php // Set Up New Query
+				/*
+				 * Include the Featured Project loop.
+				 * - if featured posts exist, collect their IDs and exclude them from the main loop
+				 */
+				if ( rebalance_has_featured_projects( 1 ) ) {
+					$featured_ids = rebalance_get_featured_project_ids();
+					get_template_part( 'template-parts/section', 'featured' );
+				} else {
+					$featured_ids = null;
+				}
+				?>
+
+				<main id="main" class="site-main" role="main">
+
+				<?php
+				// Set Up New Query
 				if ( get_query_var( 'paged' ) ) :
 					$paged = get_query_var( 'paged' );
-				elseif ( get_query_var( 'page' ) ) :
-					$paged = get_query_var( 'page' );
-				else :
-					$paged = 1;
-				endif;
+					elseif ( get_query_var( 'page' ) ) :
+						$paged = get_query_var( 'page' );
+					else :
+						$paged = 1;
+					endif;
 
-				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '10' );
+					$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '10' );
 
-				$temp = null;
-				$project_query = $temp;
-				$project_query = new WP_Query();
-				$project_query->query( array(
-					'post_type'    => 'jetpack-portfolio',
-					'paged'        => $paged,
-					'posts_per_page' => $posts_per_page,
-					'post__not_in' => $featured_ids
-				) ); ?>
+					$temp          = null;
+					$project_query = $temp;
+					$project_query = new WP_Query();
+					$project_query->query(
+						array(
+							'post_type'      => 'jetpack-portfolio',
+							'paged'          => $paged,
+							'posts_per_page' => $posts_per_page,
+							'post__not_in'   => $featured_ids,
+						)
+					);
+				?>
 
-			<?php if ( $project_query->have_posts() ) : ?>
+				<?php if ( $project_query->have_posts() ) : ?>
 
-				<div id="infinite-wrap">
+					<div id="infinite-wrap">
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( $project_query->have_posts() ) : $project_query->the_post(); ?>
-
+						<?php /* Start the Loop */ ?>
 						<?php
-							/*
-							 * Include the Card template for the project content.
-							 */
-							get_template_part( 'template-parts/content', 'card' );
-						?>
+						while ( $project_query->have_posts() ) :
+							$project_query->the_post();
+							?>
 
-					<?php endwhile; ?>
+							<?php
+								/*
+								 * Include the Card template for the project content.
+								 */
+								get_template_part( 'template-parts/content', 'card' );
+							?>
 
-				</div>
+						<?php endwhile; ?>
 
-				<?php rebalance_paging_nav( $project_query->max_num_pages ); ?>
+					</div>
 
-			<?php else : ?>
+					<?php rebalance_paging_nav( $project_query->max_num_pages ); ?>
 
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php else : ?>
 
-			<?php endif; ?>
+					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			<?php // Empty queries
-				$project_query = $temp;
-				$temp = null; ?>
+				<?php endif; ?>
 
-			<?php // Reset posts so our normal loop isn't affected
-				wp_reset_postdata(); ?>
+				<?php
+				// Empty queries
+					$project_query = $temp;
+					$temp          = null;
+				?>
 
-		</main><!-- #main -->
+				<?php
+				// Reset posts so our normal loop isn't affected
+					wp_reset_postdata();
+				?>
+
+			</main><!-- #main -->
+
+		<?php endif; // end post_password_required() ?>
 
 	</div><!-- #primary -->
 
