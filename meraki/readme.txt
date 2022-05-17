@@ -11,6 +11,10 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.3 =
+* Meraki: Style updates. (#5999)
+* Meraki: Update the footer pattern. (#5998)
+
 = 0.0.2 =
 * Meraki: Work in progress (#5862)
 
