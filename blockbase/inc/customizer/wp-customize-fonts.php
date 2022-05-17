@@ -344,16 +344,8 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function generate_deprecation_message() {
-		if ( ! defined( 'JETPACK__VERSION' ) || version_compare( JETPACK__VERSION, '10.8', '<=' ) ) {
-			return __( 'Please activate or update Jetpack to use the custom fonts feature.', 'blockbase' );
-		}
-
 		if ( ! defined( 'GUTENBERG_VERSION' ) || version_compare( GUTENBERG_VERSION, '13.2', '<=' ) ) {
 			return __( 'Please activate or update Gutenberg to use the custom fonts feature.', 'blockbase' );
-		}
-
-		if ( ! Jetpack::is_module_active( 'google-fonts' ) ) {
-			return __( 'Please activate the google fonts Jetpack module to use the custom fonts feature.', 'blockbase' );
 		}
 
 		return __( 'Updating fonts for this theme is now even easier! Use the site editor to select and preview different font families.', 'blockbase' );
@@ -380,7 +372,7 @@ class GlobalStylesFontsCustomizer {
 			)
 		);
 
-		// TODO: Hide if custom google fonts is enabled for site editor
+		// TODO: Can this link directly to Global Styles panel?
 		$wp_customize->add_control(
 			$this->section_key . '-site-editor-button',
 			array(
@@ -390,6 +382,9 @@ class GlobalStylesFontsCustomizer {
 				'section'     => $this->section_key,
 			)
 		);
+
+		// TODO: add link to support doc
+		// https://wordpress.com/support/using-styles/
 	}
 
 	function handle_customize_preview_init( $wp_customize ) {
