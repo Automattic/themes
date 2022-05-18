@@ -11,36 +11,48 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( sketch_has_featured_posts( 1 ) ) : ?>
-		    <div class="featured-content">
-		        <?php get_template_part( 'content-featured' ); ?>
-		    </div>
+			<div class="featured-content">
+				<?php get_template_part( 'content-featured' ); ?>
+			</div>
 		<?php endif; ?>
 
-		<?php if ( ! get_theme_mod( 'sketch_hide_portfolio_page_content' ) ) : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+		<?php if ( post_password_required() ) : ?>
 
-				<?php the_title( '<header class="page-header"><h1 class="page-title">', '</h1></header>' ); ?>
+			<?php the_title( '<header class="page-header"><h1 class="page-title">', '</h1></header>' ); ?>
+			<?php the_content(); ?>
 
-				<div class="page-content">
-					<?php
-						the_content();
-						wp_link_pages( array(
-							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'sketch' ) . '</span>',
-							'after'       => '</div>',
-							'link_before' => '<span>',
-							'link_after'  => '</span>',
-						) );
+		<?php else : ?>
+
+			<?php if ( ! get_theme_mod( 'sketch_hide_portfolio_page_content' ) ) : ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
 					?>
-					<?php edit_post_link( __( 'Edit', 'sketch' ), '<div class="entry-meta"><span class="edit-link">', '</span></div>' ); ?>
 
-				</div><!-- .page-content -->
+					<?php the_title( '<header class="page-header"><h1 class="page-title">', '</h1></header>' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
-		<?php endif; ?>
+					<div class="page-content">
+						<?php
+							the_content();
+							wp_link_pages(
+								array(
+									'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'sketch' ) . '</span>',
+									'after'       => '</div>',
+									'link_before' => '<span>',
+									'link_after'  => '</span>',
+								)
+							);
+						?>
+						<?php edit_post_link( __( 'Edit', 'sketch' ), '<div class="entry-meta"><span class="edit-link">', '</span></div>' ); ?>
+
+					</div><!-- .page-content -->
+
+				<?php endwhile; // end of the loop. ?>
+			<?php endif; ?>
 
 			<?php
-				if ( get_query_var( 'paged' ) ) :
-					$paged = get_query_var( 'paged' );
+			if ( get_query_var( 'paged' ) ) :
+				$paged = get_query_var( 'paged' );
 				elseif ( get_query_var( 'page' ) ) :
 					$paged = get_query_var( 'page' );
 				else :
@@ -55,27 +67,28 @@ get_header(); ?>
 					'posts_per_page' => $posts_per_page,
 				);
 
-				$project_query = new WP_Query ( $args );
+				$project_query = new WP_Query( $args );
 
-				if ( $project_query -> have_posts() ) :
-			?>
+				if ( $project_query->have_posts() ) :
+					?>
 
 			<div class="projects clear">
 
-			<?php
-				while ( $project_query -> have_posts() ) : $project_query -> the_post();
+					<?php
+					while ( $project_query->have_posts() ) :
+						$project_query->the_post();
 
-					get_template_part( 'content', 'portfolio' );
+						get_template_part( 'content', 'portfolio' );
 
 				endwhile;
-			?>
+					?>
 
 			</div><!-- .projects -->
 
-			<?php
-				sketch_paging_nav( $project_query->max_num_pages );
-				wp_reset_postdata();
-			?>
+					<?php
+					sketch_paging_nav( $project_query->max_num_pages );
+					wp_reset_postdata();
+					?>
 
 			<?php else : ?>
 
@@ -98,6 +111,7 @@ get_header(); ?>
 				</section><!-- .no-results -->
 
 			<?php endif; ?>
+		<?php endif; // end post_password_required() ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
