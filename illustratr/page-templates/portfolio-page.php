@@ -11,7 +11,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( ! get_theme_mod( 'illustratr_hide_portfolio_page_content' ) ) : ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php if ( '' != get_the_post_thumbnail() ) : ?>
 					<div class="entry-thumbnail">
@@ -24,12 +27,14 @@ get_header(); ?>
 				<div class="page-content">
 					<?php
 						the_content();
-						wp_link_pages( array(
-							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'illustratr' ) . '</span>',
-							'after'       => '</div>',
-							'link_before' => '<span>',
-							'link_after'  => '</span>',
-						) );
+						wp_link_pages(
+							array(
+								'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'illustratr' ) . '</span>',
+								'after'       => '</div>',
+								'link_before' => '<span>',
+								'link_after'  => '</span>',
+							)
+						);
 					?>
 				</div><!-- .page-content -->
 
@@ -39,8 +44,8 @@ get_header(); ?>
 		<?php endif; ?>
 
 			<?php
-				if ( get_query_var( 'paged' ) ) :
-					$paged = get_query_var( 'paged' );
+			if ( get_query_var( 'paged' ) ) :
+				$paged = get_query_var( 'paged' );
 				elseif ( get_query_var( 'page' ) ) :
 					$paged = get_query_var( 'page' );
 				else :
@@ -48,19 +53,22 @@ get_header(); ?>
 				endif;
 
 				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', '10' );
-				$args = array(
+				$args           = array(
 					'post_type'      => 'jetpack-portfolio',
 					'posts_per_page' => $posts_per_page,
 					'paged'          => $paged,
 				);
-				$project_query = new WP_Query ( $args );
-				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query -> have_posts() ) :
-			?>
+				$project_query  = new WP_Query( $args );
+				if ( post_type_exists( 'jetpack-portfolio' ) && $project_query->have_posts() ) :
+					?>
 
 				<div class="portfolio-wrapper">
 
 					<?php /* Start the Loop */ ?>
-					<?php while ( $project_query -> have_posts() ) : $project_query -> the_post(); ?>
+					<?php
+					while ( $project_query->have_posts() ) :
+						$project_query->the_post();
+						?>
 
 						<?php get_template_part( 'content', 'portfolio' ); ?>
 
@@ -68,10 +76,10 @@ get_header(); ?>
 
 				</div><!-- .portfolio-wrapper -->
 
-				<?php
+					<?php
 					illustratr_paging_nav( $project_query->max_num_pages );
 					wp_reset_postdata();
-				?>
+					?>
 
 			<?php else : ?>
 
