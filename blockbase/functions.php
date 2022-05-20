@@ -232,3 +232,4 @@ function blockbase_disable_jetpack_google_fonts() {
 	}
 }
 add_action( 'init', 'blockbase_disable_jetpack_google_fonts', 0 );
+remove_action( 'init', 'wpcomsh_activate_google_fonts_module', 0 );
