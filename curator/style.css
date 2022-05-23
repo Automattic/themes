@@ -31,9 +31,14 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .wp-block-button:not(.is-style-outline) .wp-block-button__link {
 	padding: 0;
 }
-.wp-block-button__link:hover {
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
 	text-decoration: underline;
 	color: var(--wp--preset--color--primary);
+}
+.wp-block-button:is(.is-style-outline) .wp-block-button__link:hover {
+	background: var(--wp--preset--color--foreground);
+	border-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
 }
 .wp-block-button__link.wp-block-button__link:active {
 	color: var(--wp--preset--color--primary);
@@ -43,7 +48,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	border-bottom: .15rem dotted var(--wp--preset--color--primary);
 }
 .wp-block-button:is(.is-style-outline) .wp-block-button__link:focus {
-	outline: 1px dotted var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+	outline: 1px dotted var(--wp--preset--color--primary);
 }
 
 .wp-block-search__button.wp-block-search__button,
