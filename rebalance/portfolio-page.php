@@ -15,6 +15,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 
 		<?php
+		// if password is required for this page, let's use the_content() to display the password form.
 		if ( post_password_required() ) :
 				the_content();
 
