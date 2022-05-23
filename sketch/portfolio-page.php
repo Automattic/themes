@@ -19,7 +19,10 @@ get_header(); ?>
 		<?php if ( post_password_required() ) : ?>
 
 			<?php the_title( '<header class="page-header"><h1 class="page-title">', '</h1></header>' ); ?>
-			<?php the_content(); ?>
+
+			<div class="page-content">
+				<?php the_content(); ?>
+			</div><!-- .page-content -->
 
 		<?php else : ?>
 
