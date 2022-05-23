@@ -71,7 +71,7 @@ function blockbase_editor_styles() {
 	// Enqueue editor styles.
 	add_editor_style(
 		array(
-			blockbase_fonts_url(),
+			blockbase_fonts_url( true ),
 		)
 	);
 
@@ -90,7 +90,7 @@ add_action( 'admin_init', 'blockbase_editor_styles' );
  */
 function blockbase_scripts() {
 	// Enqueue Google fonts
-	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url(), array(), null );
+	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url( false ), array(), null );
 	wp_enqueue_style( 'blockbase-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// Add the child theme CSS if it exists.
@@ -159,18 +159,26 @@ $blockbase_block_font_families = array();
  *
  * @return string
  */
-function blockbase_fonts_url() {
+function blockbase_fonts_url( $load_all_font_options ) {
 	global $blockbase_block_font_families;
 
 	$font_families = [];
-	$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
-	$fonts_to_load = array_merge( $blockbase_block_font_families, $global_styles_fonts );
-	$fonts_to_load = array_unique( $fonts_to_load );
 	$font_settings = blockbase_get_font_settings();
+	
+	if ( $load_all_font_options ) {
+		foreach( $font_settings as $font_slug ) {
+			$font_families[] = $font_slug ['google'];
+		}
+	} else {
+		// Only load fonts that appear in the site's frontend
+		$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
+		$fonts_to_load = array_merge( $blockbase_block_font_families, $global_styles_fonts );
+		$fonts_to_load = array_unique( $fonts_to_load );
 
-	foreach( $fonts_to_load as $font_slug ) {
-		if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
-			$font_families[] = $font_settings[ $font_slug ]['google'];
+		foreach( $fonts_to_load as $font_slug ) {
+			if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
+				$font_families[] = $font_settings[ $font_slug ]['google'];
+			}
 		}
 	}
 
