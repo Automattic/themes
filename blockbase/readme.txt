@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 2.0.35 =
+* Fix issue with duplicate title tags in blockbase (#6019)
+
 = 2.0.34 =
 * Blockbase: fixing separator block dots option (#5964)
 

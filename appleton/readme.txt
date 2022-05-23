@@ -12,6 +12,9 @@ Appleton is a theme for creative professionals, such as photographers, designers
 
 == Changelog ==
 
+= 0.0.2 =
+* Typography & Width updates
+
 = 0.0.1 =
 * Initial release
 
