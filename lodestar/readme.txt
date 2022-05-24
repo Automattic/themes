@@ -113,6 +113,9 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.17 =
+* Lodestar: Add page password protection for portfolio items on the portfolio page (#6011)
+
 = 1.0 - February 20, 2017 =
 * Initial release
 

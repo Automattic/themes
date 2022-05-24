@@ -1,4 +1,4 @@
-=== Curator ===
+=== Appleton ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -8,25 +8,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-
+Appleton is a theme for creative professionals, such as photographers, designers and artists.
 
 == Changelog ==
 
-= 0.0.3 =
-* Curator: style 404 page (#5983)
-* Curator: update link and navigation styles (#5982)
-* Curator: adjust font styles (#5984)
-
 = 0.0.2 =
-* Add button styles (#5973)
+* Typography & Width updates
 
 = 0.0.1 =
 * Initial release
 
 == Copyright ==
 
-Curator WordPress Theme, (C) 2022 Automattic
-Curator is distributed under the terms of the GNU GPL.
+Appleton WordPress Theme, (C) 2022 Automattic
+Appleton is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

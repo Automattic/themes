@@ -26,6 +26,9 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Changelog ==
 
+= 1.1.14 =
+* Rebalance: Add page password protection for portfolio page (#6008)
+
 = 1.1.13 =
 * Rebalance: Fix author display in post carousel block (#5974)
 

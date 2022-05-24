@@ -4,7 +4,7 @@ Theme URI: https://wordpress.com/themes/canard/
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 Description: A flexible and versatile theme perfect for magazines, news sites, and blogs. It lets you highlight specific articles on the homepage and balances readability with a powerful use of photography — all in a layout that works on any device.
-Version: 1.0.14-wpcom
+Version: 1.0.17-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: canard
@@ -423,7 +423,7 @@ acronym {
 	border-bottom: 1px dotted #222;
 	cursor: help;
 }
-mark,
+mark:not(.has-inline-color),
 ins {
 	background: #d11415;
 	color: #fff;
@@ -2147,6 +2147,7 @@ body:not(.group-blog) .sticky .entry-summary + .entry-meta > span:nth-of-type(3)
 .post-thumbnail img {
 	display: block;
 }
+
 a.post-thumbnail:active,
 a.post-thumbnail:focus,
 a.post-thumbnail:hover {
@@ -2172,6 +2173,11 @@ a.post-thumbnail:hover img {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+
+.wpnbha .post-thumbnail { 
+	background: none;
+	height: unset;
 }
 
 /* Page Links */

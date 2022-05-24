@@ -90,6 +90,15 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Changelog ==
 
+= 1.0.17 =
+* #6005: Canard: Fix regression in featured content (#6006)
+
+= 1.0.16 =
+* #4934: Canard: Fix highlight padding (#5997)
+
+= 1.0.15 =
+* #4730: Canard: Fix Blog Post block thumbnail background (#5986)
+
 = 1.0.14 =
 * #3080: Canard: Fix byline in blog post block (#5981)
 

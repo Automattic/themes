@@ -7,7 +7,7 @@ Description:
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.2
+Version: 0.0.3
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
@@ -91,6 +91,67 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	font-size: var(--wp--preset--typography--font-size--normal);
 	padding: calc(0.667em + 2px) calc(1.333em + 2px);
 }
+
+/*
+ * Link Styles
+ */
+
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+) {
+	padding: .4rem 0;
+	text-underline-offset: .1rem;
+}
+
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+):hover {
+	text-decoration: none;
+}
+
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+):focus {
+	text-decoration-style: dotted;
+}
+
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+):active {
+	text-decoration: none;
+	background-color: var(--wp--preset--color--tertiary);
+}
+
+/*
+ * Navigation Link Styles
+ */
+
+:is(
+	.wp-block-pages-list__item .wp-block-pages-list__item__link,
+	.wp-block-navigation-link__content
+):hover {
+	text-decoration: underline;
+}
+
+:is(
+	.wp-block-pages-list__item .wp-block-pages-list__item__link,
+	.wp-block-navigation-link__content
+):focus {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+:is(
+	.wp-block-pages-list__item .wp-block-pages-list__item__link,
+	.wp-block-navigation-link__content
+):active {
+	background-color: var(--wp--preset--color--tertiary);
+}
+
 
 /*
  * Alignment styles, borrowed from Twenty Twenty-Two.
