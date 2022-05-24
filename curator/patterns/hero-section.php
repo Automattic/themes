@@ -7,26 +7,10 @@
 
 ?>
 
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"100px","bottom":"100px"}}}} -->
-<div class="wp-block-group alignfull" style="padding-top:100px;padding-bottom:100px"><!-- wp:post-terms {"term":"category","textAlign":"center"} /-->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"4rem","bottom":"1rem"},"margin":{"top":"3rem","bottom":"3rem"}},"border":{"top":{"width":"1px"},"bottom":{"width":"1px"}}}} -->
+<div class="wp-block-group alignfull" style="border-top-width:1px;border-bottom-width:1px;margin-top:3rem;margin-bottom:3rem;padding-top:4rem;padding-bottom:1rem"><!-- wp:post-terms {"term":"category","textAlign":"center"} /-->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"170px"}}} -->
-<h2 class="has-text-align-center" style="font-size:170px">Cult Objects</h2>
-<!-- /wp:heading -->
+<!-- wp:post-title {"textAlign":"center","level":1} /-->
 
-<!-- wp:spacer {"height":"16px"} -->
-<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"center","fontSize":"x-large"} -->
-<p class="has-text-align-center has-x-large-font-size">The Cult Collection by Joan Wilson. A classic collection by the traditional Swedish manufacturer in collaboration with contemporary designer Marianne Lewis.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:spacer {"height":"16px"} -->
-<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-<p class="has-text-align-center has-large-font-size"><strong>Read more</strong></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:post-excerpt {"textAlign":"center","moreText":"<?php echo esc_html__( 'Read more', 'curator' ); ?>","fontSize":"x-large"} /--></div>
 <!-- /wp:group -->
