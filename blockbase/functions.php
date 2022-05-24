@@ -68,13 +68,6 @@ add_action( 'after_setup_theme', 'blockbase_support', 9 );
  * Enqueue scripts and styles.
  */
 function blockbase_editor_styles() {
-	// Enqueue editor styles.
-	add_editor_style(
-		array(
-			blockbase_fonts_url( true ),
-		)
-	);
-
 	// Add the child theme CSS if it exists.
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 		add_editor_style(
@@ -89,8 +82,6 @@ add_action( 'admin_init', 'blockbase_editor_styles' );
  * Enqueue scripts and styles.
  */
 function blockbase_scripts() {
-	// Enqueue Google fonts
-	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url( false ), array(), null );
 	wp_enqueue_style( 'blockbase-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// Add the child theme CSS if it exists.
@@ -146,98 +137,96 @@ if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 
 
 // ----------	Custom Fonts ---------- //
+const BLOCKBASE_GOOGLE_FONTS_LIST = array(
+	'Arvo',
+	'Bodoni Moda',
+	'Cabin',
+	'Chivo',
+	'Courier Prime',
+	'DM Sans',
+	'Domine',
+	'EB Garamond',
+	'Fira Sans',
+	'IBM Plex Sans',
+	'IBM Plex Mono',
+	'Inter',
+	'Josefin Sans',
+	'Jost',
+	'Libre Baskerville',
+	'Libre Franklin',
+	'Literata',
+	'Lora',
+	'Merriweather',
+	'Montserrat',
+	'Newsreader',
+	'Nunito',
+	'Open Sans',
+	'Overpass',
+	'Playfair Display',
+	'Poppins',
+	'Raleway',
+	'Red Hat Display',
+	'Roboto',
+	'Roboto Slab',
+	'Rubik',
+	'Source Sans Pro',
+	'Source Serif Pro',
+	'Space Mono',
+	'Texturina',
+	'Work Sans',
+);
 
 /**
- * Font families used in block settings.
- *
- * @var array
- */
-$blockbase_block_font_families = array();
-
-/**
- * Generate url used to load font-face css from Google.
- *
- * @return string
- */
-function blockbase_fonts_url( $load_all_font_options ) {
-	global $blockbase_block_font_families;
-
-	$font_families = [];
-	$font_settings = blockbase_get_font_settings();
-	
-	if ( $load_all_font_options ) {
-		foreach( $font_settings as $font_slug ) {
-			$font_families[] = $font_slug ['google'];
-		}
-	} else {
-		// Only load fonts that appear in the site's frontend
-		$global_styles_fonts = \Automattic\Jetpack\Fonts\Introspectors\Global_Styles::collect_fonts_from_global_styles();
-		$fonts_to_load = array_merge( $blockbase_block_font_families, $global_styles_fonts );
-		$fonts_to_load = array_unique( $fonts_to_load );
-
-		foreach( $fonts_to_load as $font_slug ) {
-			if ( isset( $font_settings[ $font_slug ]['google'] ) ) {
-				$font_families[] = $font_settings[ $font_slug ]['google'];
-			}
-		}
-	}
-
-	if ( empty( $font_families ) ) {
-		return '';
-	}
-
-	// Make a single request for the theme or user fonts.
-	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
-}
-
-/**
- * Get an array of the fonts from theme.json, with font slug as the key.
- *
- * @return array
- */
-function blockbase_get_font_settings() {
-	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
-	$remapped_font_settings = array();
-
-	foreach( $font_settings['theme'] as $font ) {
-		$remapped_font_settings[ $font['slug'] ] = $font;
-	}
-
-	return $remapped_font_settings;
-}
-
-/**
- * Gather fonts set in block settings.
- *
- * @filter pre_render_block
- *
- * @param string|null $content The pre-rendered content. Default null.
- * @param array       $parsed_block The block being rendered.
- * @return string|null
- */
-function blockbase_enqueue_block_fonts( $content, $parsed_block ) {
-	global $blockbase_block_font_families;
-
-	if ( ! is_admin() && isset( $parsed_block['attrs']['fontFamily'] ) ) {
-		$block_font_family  = $parsed_block['attrs']['fontFamily'];
-		$blockbase_block_font_families[] = $block_font_family;
-	}
-
-	return $content;
-}
-add_filter( 'pre_render_block', 'blockbase_enqueue_block_fonts', 20, 2 );
-
-/**
- * Disable the Jetpack Google Fonts module, since Blockbase provids it's own font loading.
- *
- * Prevents duplicate fonts in font family settings.
+ * Register a curated selection of Google Fonts.
  *
  * @return void
  */
-function blockbase_disable_jetpack_google_fonts() {
+function blockbase_register_google_fonts() {
+	// Use jetpack's implementation of custom google fonts if it is already active
 	if ( method_exists( 'Jetpack', 'is_module_active' ) && Jetpack::is_module_active( 'google-fonts' ) ) {
-		Jetpack::deactivate_module( 'google-fonts' );
+		return;
+	} 
+
+	if ( ! function_exists( 'wp_register_webfont_provider' ) || ! function_exists( 'wp_register_webfonts' ) ) {
+		return;
 	}
+
+	wp_register_webfont_provider( 'blockbase-google-fonts', '\Automattic\Jetpack\Fonts\Google_Fonts_Provider' );
+
+	/**
+	 * Curated list of Google Fonts.
+	 *
+	 * @module google-fonts
+	 *
+	 * @since 10.8
+	 *
+	 * @param array $fonts_to_register Array of Google Font names to register.
+	 */
+	$fonts_to_register = apply_filters( 'blockbase_google_fonts_list', BLOCKBASE_GOOGLE_FONTS_LIST );
+
+	foreach ( $fonts_to_register as $font_family ) {
+		wp_register_webfonts(
+			array(
+				array(
+					'font-family'  => $font_family,
+					'font-weight'  => '100 900',
+					'font-style'   => 'normal',
+					'font-display' => 'fallback',
+					'provider'     => 'blockbase-google-fonts',
+				),
+				array(
+					'font-family'  => $font_family,
+					'font-weight'  => '100 900',
+					'font-style'   => 'italic',
+					'font-display' => 'fallback',
+					'provider'     => 'blockbase-google-fonts',
+				),
+			)
+		);
+	}
+
+	add_filter( 'wp_resource_hints', '\Automattic\Jetpack\Fonts\Utils::font_source_resource_hint', 10, 2 );
+	add_filter( 'pre_render_block', '\Automattic\Jetpack\Fonts\Introspectors\Blocks::enqueue_block_fonts', 10, 2 );
+	add_action( 'init', '\Automattic\Jetpack\Fonts\Introspectors\Global_Styles::enqueue_global_styles_fonts' );
 }
-add_action( 'init', 'blockbase_disable_jetpack_google_fonts', 0 );
-remove_action( 'init', 'wpcomsh_activate_google_fonts_module', 0 );
+add_action( 'after_setup_theme', 'blockbase_register_google_fonts' );
