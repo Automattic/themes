@@ -6,8 +6,8 @@
  * Block Types: core/template-part/footer
  */
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}},"border":{"width":"0px","style":"none"}},"backgroundColor":"black","textColor":"background","layout":{"inherit":true},"fontSize":"14px"} -->
-<div class="wp-block-group alignfull has-background-color has-black-background-color has-text-color has-background has-link-color has-14-px-font-size" style="border-style:none;border-width:0px;padding-top:80px;padding-bottom:80px">
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}},"border":{"width":"0px","style":"none"}},"backgroundColor":"foreground","textColor":"background","layout":{"inherit":true},"fontSize":"14px"} -->
+<div class="wp-block-group alignfull has-background-color has-foreground-background-color has-text-color has-background has-link-color has-14-px-font-size" style="border-style:none;border-width:0px;padding-top:80px;padding-bottom:80px">
 	
 	<!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide">
@@ -82,10 +82,14 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}},"spacing":{"padding":{"top":"20px","bottom":"20px"}}},"backgroundColor":"black","textColor":"background"} -->
-<div class="wp-block-group has-background-color has-black-background-color has-text-color has-background has-link-color" style="padding-top:20px;padding-bottom:20px">
-	<!-- wp:paragraph {"align":"center","fontSize":"tiny"} -->
-	<p class="has-text-align-center has-tiny-font-size">
+<!-- wp:group -->
+<div class="wp-block-group">
+
+	<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}},"spacing":{"padding":{"top":"20px","bottom":"20px"}}},"backgroundColor":"foreground","textColor":"background"} -->
+	<div class="wp-block-group has-background-color has-foreground-background-color has-text-color has-background has-link-color" style="padding-top:20px;padding-bottom:20px">
+
+		<!-- wp:paragraph {"align":"center","fontSize":"tiny"} -->
+		<p class="has-text-align-center has-tiny-font-size">
 		<?php
 			printf(
 				/* Translators: WordPress link. */
@@ -93,7 +97,11 @@
 				'<a href="' . esc_url( __( 'https://wordpress.org', 'meraki' ) ) . '" rel="nofollow">WordPress</a>'
 			)
 			?>
-	</p>
-	<!-- /wp:paragraph -->
+		</p>
+		<!-- /wp:paragraph -->
+	
+	</div>
+	<!-- /wp:group -->
+
 </div>
 <!-- /wp:group -->
