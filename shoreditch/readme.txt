@@ -17,6 +17,11 @@ Shoreditch is a functional and responsive theme perfect for your business’s on
 * Jetpack.me compatibility for Infinite Scroll, Social Menu and Testimonial Custom Post Type.
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
+== Changelog ==
+
+= 1.2.8 =
+* Fix editor text highlight colors (#6003)
+
 == Installation ==
 	
 1. In your admin panel, go to Appearance > Themes and click the Add New button.

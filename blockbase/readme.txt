@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 2.0.36 =
+* Update header pattern loading (#5955)
+
 = 2.0.35 =
 * Fix issue with duplicate title tags in blockbase (#6019)
 

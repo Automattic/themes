@@ -27,6 +27,9 @@ Radcliffe 2 includes support for Jetpack's Infinite Scroll as well as other feat
 
 == Changelog ==
 
+= 2.0.11 =
+* #2073: Radcliffe 2: Fix Blog Posts block text overlay (#5992)
+
 = 2.0.10 =
 * Radcliffe 2: Fix Blog Posts block display list w/images (#5993)
 
