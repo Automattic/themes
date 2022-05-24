@@ -52,7 +52,7 @@ if ( ! function_exists( 'blockbase_register_block_patterns' ) ) :
 						'title'      => __( 'Blockbase Header (' . $header_pattern . ')', 'blockbase' ),
 						'categories' => array( 'header' ),
 						'blockTypes' => array( 'core/template-part/header' ),
-						'content'    => file_get_contents (get_template_directory() . '/block-template-parts/header-' . $header_pattern . '.html'),
+						'content'    => file_get_contents (get_theme_file_path( '/block-template-parts/header-' . $header_pattern . '.html' )),
 					)
 				);
 			}
