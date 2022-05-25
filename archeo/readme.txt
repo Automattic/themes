@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.8 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.7 =
 * Archeo: Sort theme.json alphabetically
 * Revert Archeo: Sort theme.json alphabetically

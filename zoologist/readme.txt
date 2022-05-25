@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.30 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.29 =
 * multiple themes: update font sizes from px to rem for better a11y (#5801)
 

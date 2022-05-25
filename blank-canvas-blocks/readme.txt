@@ -12,6 +12,9 @@ Blank Canvas is a minimalist theme, designed for single-page websites. Its singl
 
 == Changelog ==
 
+= 0.0.5 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.0 =
 * Initial release
 

@@ -11,6 +11,9 @@ Skatepark is a bold and exciting WordPress theme designed for modern events and 
 
 == Changelog ==
 
+= 1.0.43 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.42 =
 * Skatepark: update separator block (#5940)
 

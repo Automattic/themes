@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.16 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.1.1 =
 * Fix: Fix typos in spacing override utility classes.
 * Released: August 29, 2019

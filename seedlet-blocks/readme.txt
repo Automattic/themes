@@ -12,6 +12,9 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.27 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 2.1.2 - 2.1.4 =
 * Bug fixes and improvements
 * Gutenberg + Blockbase compatibility improvements

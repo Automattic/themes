@@ -13,6 +13,9 @@ Stewart is a modern blogging theme with a left sidebar. Its default color scheme
 
 == Changelog ==
 
+= 1.9 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.8 =
 * Stewart: removing no needed definitions in theme.json (#5938)
 

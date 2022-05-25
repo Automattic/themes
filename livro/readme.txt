@@ -13,6 +13,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.12 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.11 =
 * Livro: refactor patterns (#5879)
 
