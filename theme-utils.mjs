@@ -34,13 +34,166 @@ const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen
 		case "deploy-sync-core-theme": return deploySyncCoreTheme(args?.[1], args?.[2]);
 		case "update-theme-changelog": return updateThemeChangelog(args?.[1], false, args?.[2]);
 		case "rebuild-theme-changelog": return rebuildThemeChangelog(args?.[1], args?.[2]);
+		case "help": return showHelp(args?.[1]);
 	}
 	return showHelp();
 })();
 
-function showHelp(){
-	// TODO: make this helpful
-	console.log('Help info can go here');
+function showHelp(command = '') {
+	if (!command) {
+		console.log(`
+node theme-utils.mjs [command]
+
+Available commands:
+_(theme-utils.mjs help [command] for more details)_
+
+* push-button-deploy (This is the command you probably want)
+* clean-sandbox
+* clean-premium-sandbox
+* clean-all-sandbox
+* push-to-sandbox
+* push-changes-to-sandbox
+* push-theme-to-sandbox
+* push-premium-to-sandbox
+* version-bump-themes
+* land-diff
+* deploy-preview
+* deploy-theme
+* build-com-zip
+* pull-core-themes
+* push-core-themes
+* sync-core-theme
+* deploy-sync-core-theme
+* update-theme-changelog
+* rebuild-theme-changelog
+		`);
+		return;
+	}
+
+	let helpText = '';
+	let additionalArgs = '';
+	switch (command) {
+		case "push-button-deploy":
+			{
+				helpText = `
+* Gets the last deployed hash from the sandbox
+* Version bump all themes have have changes since the last deployment
+* Commit the version bump change to github
+* Clean the sandbox and ensure it is up-to-date
+* Push all changed files (including removal of deleted files) since the last deployment
+* Update the 'last deployed' hash on the sandbox
+* Create a phabricator diff based on the changes since the last deployment.  The description including the commit messages since the last deployment.
+* Open the Phabricator Diff in your browser
+* Create a tag in the github repository at this point of change which includes the phabricator link in the description
+* After pausing to allow testing, land and deploy the changes 
+				`;
+				break;
+			}
+		case "clean-sandbox":
+			{
+				helpText = 'Perform a hard reset, checkout trunk, and pull on the public themes working copy on your sandbox.';
+				break;
+			}
+		case "clean-premium-sandbox":
+			{
+				helpText = 'Perform a hard reset, checkout trunk, and pull on the premium themes working copy on your sandbox.';
+				break;
+			}
+		case "clean-all-sandbox":
+			{
+				helpText = 'Perform a hard reset, checkout trunk, and pull on both the public and premium themes working copies on your sandbox.';
+				break;
+			}
+		case "push-to-sandbox":
+			{
+				helpText = 'Uses rsync to copy all modified files for all themes from the local machine to your sandbox.';
+				break;
+			}
+		case "push-changes-to-sandbox":
+			{
+				helpText = 'Uses rsync to copy all modified files for any modified themes from the local machine to your sandbox.';
+				break;
+			}
+		case "push-theme-to-sandbox":
+			{
+				additionalArgs = '<theme-slug>';
+				helpText = 'Uses rsync to copy all modified files for the specified theme from the local machine to your sandbox.';
+				break;
+			}
+		case "push-premium-to-sandbox":
+			{
+				helpText = 'Uses rsync to copy all modified files for all premium themes from the local machine to your sandbox. For the blockbase theme, all instances of the string "blockbase" are replaced with "blockbase-premium".';
+				break;
+			}
+		case "version-bump-themes":
+			{
+				helpText = 'Bump the version of any theme that has had changes since the last deployment. This includes bumping the version of any parent themes and updating the changelog for the theme.';
+				break;
+			}
+		case "land-diff":
+			{
+				helpText = '';
+				break;
+			}
+		case "deploy-preview":
+			{
+				additionalArgs = '<arc diff id>';
+				helpText = 'Run arc land to merge in the specified diff id.';
+				break;
+			}
+		case "deploy-theme":
+			{
+				additionalArgs = '<array of theme slugs>';
+				helpText = 'This runs "deploy pub <theme>" on the provided list of themes.';
+				break;
+			}
+		case "build-com-zip":
+			{
+				additionalArgs = '<theme-slug>';
+				helpText = 'Build the production zip file for the specified theme.';
+				break;
+			}
+		case "pull-core-themes":
+			{
+				helpText = 'Use rsync to copy any changed public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.';
+				break;
+			}
+		case "push-core-themes":
+			{
+				helpText = 'Use rsync to copy any changed public CORE theme files from your local machine to your sandbox. CORE themes are any of the Twenty<whatever> themes.';
+				break;
+			}
+		case "sync-core-theme":
+			{
+				additionalArgs = '<theme-slug> <since-revision>';
+				helpText = 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command is generally run by deploy-sync-core-theme and not by itself.';
+				break;
+			}
+		case "deploy-sync-core-theme":
+			{
+				additionalArgs = '<theme-slug> <since-revision>';
+				helpText = 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command contains additional prompts and error checking not provided by sync-core-theme.';
+				break;
+			}
+		case "update-theme-changelog":
+			{
+				additionalArgs = '<theme-slug> <add-changes, true/false>'
+				helpText = 'Use the commit log to build a list of recent changes and add them as a new changelog entry. If add-changes is true, the updated readme.txt will be staged.';
+				break;
+			}
+		case "rebuild-theme-changelog":
+			{
+				additionalArgs = '<theme-slug> <since>';
+				helpText = 'Rebuild the entire change long from the given starting hash.';
+				break;
+			}
+	}
+
+	console.log(`
+${command} ${additionalArgs}
+
+${helpText}
+	`);
 }
 
 /*
