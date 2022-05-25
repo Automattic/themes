@@ -211,14 +211,14 @@ function blockbase_register_google_fonts() {
 					'font-family'  => $font_family,
 					'font-weight'  => '100 900',
 					'font-style'   => 'normal',
-					'font-display' => 'fallback',
+					'font-display' => 'swap',
 					'provider'     => 'blockbase-google-fonts',
 				),
 				array(
 					'font-family'  => $font_family,
 					'font-weight'  => '100 900',
 					'font-style'   => 'italic',
-					'font-display' => 'fallback',
+					'font-display' => 'swap',
 					'provider'     => 'blockbase-google-fonts',
 				),
 			)
