@@ -18,6 +18,9 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.17 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.16 =
 * multiple themes: update font sizes from px to rem for better a11y (#5801)
 

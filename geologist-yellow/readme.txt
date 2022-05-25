@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.28 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.0.27 =
 * multiple themes: update font sizes from px to rem for better a11y (#5801)
 

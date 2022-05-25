@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.40 =
+* Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
+
 = 1.1.39 =
 * multiple themes: update font sizes from px to rem for better a11y (#5801)
 
