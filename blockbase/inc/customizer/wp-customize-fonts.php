@@ -7,7 +7,7 @@ add_action( 'init', 'migrate_blockbase_custom_fonts' );
 
 function migrate_blockbase_custom_fonts() {
 	// The data has already been transformed
-	if ( get_option( 'blockbase_legacy_font_settings' ) ) {
+	if ( get_theme_mod( 'blockbase_legacy_font_settings' ) ) {
 		return;
 	}
 
@@ -15,7 +15,7 @@ function migrate_blockbase_custom_fonts() {
 
 	// No Customizer font settings found. Mark as transformed and hide the Customizer UI for fonts.
 	if ( ! isset( $font_settings['custom'] ) || ! is_array( $font_settings['custom'] ) ) {
-		add_option( 'blockbase_legacy_font_settings', '[]' );
+		set_theme_mod( 'blockbase_legacy_font_settings', '[]' );
 		return;
 	}
 
@@ -80,7 +80,7 @@ function migrate_blockbase_custom_fonts() {
 
 	update_global_styles( $new_settings, $new_styles, $user_custom_post_type_id, $global_styles_controller );
 
-	update_option( 'blockbase_legacy_font_settings', json_encode( $blockbase_legacy_font_settings ) );
+	set_theme_mod( 'blockbase_legacy_font_settings', json_encode( $blockbase_legacy_font_settings ) );
 }
 
 /**
