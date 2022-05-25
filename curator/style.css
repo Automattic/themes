@@ -23,13 +23,16 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 }
 
 /*
- * Button hover styles.
+ * Button pseudo-class styles.
  * Necessary until the following issue is resolved in Gutenberg:
  * https://github.com/WordPress/gutenberg/issues/27075
  */
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link {
 	padding: 0;
+}
+.wp-block-button__link:visited {
+	color: currentColor;
 }
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover {
 	text-decoration: underline;
