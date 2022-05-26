@@ -239,36 +239,10 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 }
 
 /*
- * For Posts with featured image
- * This ensures the post tags have var|preset|color|background
- * And removes the underlining
+ * Allows comment count to be displayed in line.
+ * i.e. "Comments (0)"
  */
-.curator-post-tags a {
-  color: var(--wp--preset--color--background) !important;
-  text-decoration: none;
-}
 
-/*
- * For Posts without featured image
- * This ensures the post tags have var|preset|color|foreground
- * And removes the underlining
- */
-.curator-post-tags-noimage a {
-  color: var(--wp--preset--color--foreground) !important;
-  text-decoration: none;
-}
-
-/* Post Navigation Styles */
-.curator-post-navigation .wp-block-post-navigation-link {
-  font-family: var(--wp--preset--font-family--heading-font) !important;
-}
-
-.curator-post-navigation .wp-block-post-navigation-link a {
-  color: var(--wp--preset--color--foreground) !important;
-  text-decoration: none;
-}
-@media (max-width: 599px) {
-	.curator-post-navigation .curator-post-navigation-icon {
-		display: none;
-	}
+.wp-block-post-comments-count {
+	display: inline;
 }

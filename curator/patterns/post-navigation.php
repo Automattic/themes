@@ -12,21 +12,15 @@
 <div class="wp-block-group"><!-- wp:columns {"isStackedOnMobile":false} -->
 <div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column {"width":"50%","layout":{"inherit":true}} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"className":"curator-post-navigation","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group curator-post-navigation"><!-- wp:paragraph {"className":"curator-post-navigation-icon","fontSize":"large"} -->
-<p class="curator-post-navigation-icon has-large-font-size">←</p>
-<!-- /wp:paragraph -->
+<div class="wp-block-group curator-post-navigation">
 
-<!-- wp:post-navigation-link {"type":"previous","label":"<?php echo esc_html__( 'Previous Post', 'curator' ); ?>","style":{"typography":{"lineHeight":"1.5","textTransform":"uppercase"}},"fontSize":"large"} /--></div>
+<!-- wp:post-navigation-link {"type":"previous","label":"<?php echo esc_html__( 'Previous Post', 'curator' ); ?>","style":{"typography":{"textTransform":"uppercase","textDecoration":"none"},"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"fontSize":"large","fontFamily":"heading-font"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"blockGap":"2px"}},"className":"curator-post-navigation","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
-<div class="wp-block-group curator-post-navigation"><!-- wp:post-navigation-link {"label":"<?php echo esc_html__( 'Next Post', 'curator' ); ?>","style":{"typography":{"textTransform":"uppercase"}},"fontSize":"large"} /-->
-
-<!-- wp:paragraph {"className":"curator-post-navigation-icon","fontSize":"large"} -->
-<p class="curator-post-navigation-icon has-large-font-size">→</p>
-<!-- /wp:paragraph --></div>
+<div class="wp-block-group curator-post-navigation"><!-- wp:post-navigation-link {"label":"<?php echo esc_html__( 'Next Post', 'curator' ); ?>","style":{"typography":{"textTransform":"uppercase","textDecoration":"none"},"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"fontSize":"large","fontFamily":"heading-font"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
