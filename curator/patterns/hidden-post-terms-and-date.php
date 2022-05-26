@@ -7,7 +7,7 @@
 
 ?>
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:post-terms {"term":"category"} /-->
 <!-- wp:post-date {"isLink":true,"style":{"typography":{"fontStyle":"italic","fontWeight":"400","fontSize":"14px"}}} /--></div>
 <!-- /wp:group -->
