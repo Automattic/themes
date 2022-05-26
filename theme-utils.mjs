@@ -8,7 +8,7 @@ const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub
 const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
-const premiumThemes = [ 'videomaker', 'videomaker-white' ];
+const premiumThemes = ['videomaker', 'videomaker-white'];
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo'];
 
 (async function start() {
@@ -269,7 +269,7 @@ async function pushButtonDeploy() {
 		default: false
 	}]);
 
-	if(!prompt.continue){
+	if (!prompt.continue) {
 		return;
 	}
 
@@ -291,9 +291,9 @@ async function pushButtonDeploy() {
 			name: "continue",
 			default: false
 		}]);
-	
-		if(!prompt.continue){
-			console.log(`Aborted Automated Deploy Process at variations building.` );
+
+		if (!prompt.continue) {
+			console.log(`Aborted Automated Deploy Process at variations building.`);
 			return;
 		}
 
@@ -309,7 +309,7 @@ async function pushButtonDeploy() {
 		let hash = await getLastDeployedHash();
 		let thingsWentBump = await versionBumpThemes();
 
-		if( thingsWentBump ){
+		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
 				message: 'Are you good with the version bump and changelog updates? Make any manual adjustments now if necessary.',
@@ -317,8 +317,8 @@ async function pushButtonDeploy() {
 				default: false
 			}]);
 
-			if(!prompt.continue){
-				console.log(`Aborted Automated Deploy Process at version bump changes.` );
+			if (!prompt.continue) {
+				console.log(`Aborted Automated Deploy Process at version bump changes.`);
 				return;
 			}
 		}
@@ -329,7 +329,7 @@ async function pushButtonDeploy() {
 
 
 		//push changes (from version bump)
-		if( thingsWentBump ){
+		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
 				message: 'Are you ready to push this version bump change to the source repository (Github)?',
@@ -337,8 +337,8 @@ async function pushButtonDeploy() {
 				default: false
 			}]);
 
-			if(!prompt.continue){
-				console.log(`Aborted Automated Deploy Process at version bump push change.` );
+			if (!prompt.continue) {
+				console.log(`Aborted Automated Deploy Process at version bump push change.`);
 				return;
 			}
 
@@ -369,18 +369,18 @@ async function pushButtonDeploy() {
 			default: false
 		}]);
 
-		if(!prompt.continue){
-			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}` );
+		if (!prompt.continue) {
+			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}`);
 			return;
 		}
 
 		await landChanges(diffId);
 
-		let changedPublicThemes = changedThemes.filter( item=> ! premiumThemes.includes( item ) );
+		let changedPublicThemes = changedThemes.filter(item => !premiumThemes.includes(item));
 
 		try {
 			await deployThemes(changedPublicThemes);
-		} 
+		}
 		catch (err) {
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
@@ -389,8 +389,8 @@ async function pushButtonDeploy() {
 				default: false
 			}]);
 
-			if(!prompt.continue){
-				console.log(`Aborted Automated Deploy during deploy phase.` );
+			if (!prompt.continue) {
+				console.log(`Aborted Automated Deploy during deploy phase.`);
 				return;
 			}
 		}
@@ -418,8 +418,8 @@ async function deploySyncCoreTheme(theme, sinceRevision) {
 		default: false
 	}]);
 
-	if(!prompt.continue){
-		console.log(`Aborted Core Sync Deploy.` );
+	if (!prompt.continue) {
+		console.log(`Aborted Core Sync Deploy.`);
 		return;
 	}
 
@@ -437,7 +437,7 @@ Reviewers:
 Subscribers:
 `;
 
-	let diffUrl = await createPhabricatorDiff (commitMessage);
+	let diffUrl = await createPhabricatorDiff(commitMessage);
 	let diffId = diffUrl.split('a8c.com/')[1];
 
 	prompt = await inquirer.prompt([{
@@ -447,8 +447,8 @@ Subscribers:
 		default: false
 	}]);
 
-	if(!prompt.continue){
-		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}` );
+	if (!prompt.continue) {
+		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}`);
 		return;
 	}
 
@@ -464,7 +464,7 @@ Subscribers:
 */
 async function buildComZip(themeSlug) {
 
-	console.log( `Building ${themeSlug} .zip` );
+	console.log(`Building ${themeSlug} .zip`);
 
 	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
 
@@ -489,7 +489,7 @@ async function buildComZip(themeSlug) {
 }
 
 async function buildComZips(themes) {
-	for ( let theme of themes ) {
+	for (let theme of themes) {
 		try {
 			await buildComZip(theme);
 		} catch (err) {
@@ -503,16 +503,16 @@ async function buildComZips(themes) {
   * The current branch is /trunk
   * That trunk is up-to-date with origin/trunk
 */
-async function checkForDeployability(){
+async function checkForDeployability() {
 	let branchName = await executeCommand('git symbolic-ref --short HEAD');
-	if(branchName !== 'trunk' ) {
+	if (branchName !== 'trunk') {
 		return 'Only the /trunk branch can be deployed.';
 	}
 
 	await executeCommand('git remote update', true);
 	let localMasterHash = await executeCommand('git rev-parse trunk')
 	let remoteMasterHash = await executeCommand('git rev-parse origin/trunk')
-	if(localMasterHash !== remoteMasterHash) {
+	if (localMasterHash !== remoteMasterHash) {
 		return 'Local /trunk is out-of-date.  Pull changes to continue.'
 	}
 	return null;
@@ -521,7 +521,7 @@ async function checkForDeployability(){
 /*
  Land the changes from the given diff ID.  This is the "production merge".
 */
-async function landChanges(diffId){
+async function landChanges(diffId) {
 	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; /usr/local/bin/arc patch ${diffId}; /usr/local/bin/arc land; exit;"`, true);
 }
 
@@ -531,7 +531,7 @@ async function getChangedThemes(hash) {
 	let changedThemes = [];
 	for (let theme of themes) {
 		let hasChanges = await checkThemeForChanges(theme, hash);
-		if(hasChanges){
+		if (hasChanges) {
 			changedThemes.push(theme);
 		}
 	}
@@ -544,37 +544,37 @@ async function getChangedThemes(hash) {
  Can also be triggered to deploy a single theme with the command:
  node ./theme-utils.mjs deploy-theme THEMENAME
 */
-async function deployThemes( themes ) {
+async function deployThemes(themes) {
 
 	let response;
 
-	for ( let theme of themes ) {
+	for (let theme of themes) {
 
-		console.log( `Deploying ${theme}` );
+		console.log(`Deploying ${theme}`);
 
 		let deploySuccess = false;
 		let attempt = 0;
 
-		while ( ! deploySuccess && attempt <= 2 ) {
+		while (!deploySuccess && attempt <= 2) {
 
 			attempt++;
 			console.log(`\nattempt #${attempt}\n\n`);
 
-			response = await executeOnSandbox( `deploy pub ${theme};exit;`, true, true );
+			response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
 
-			deploySuccess = response.includes( 'successfully deployed to' );
+			deploySuccess = response.includes('successfully deployed to');
 
-			if( ! deploySuccess ) {
-				console.log( 'Deploy was not successful.  Trying again in 10 seconds...' );
+			if (!deploySuccess) {
+				console.log('Deploy was not successful.  Trying again in 10 seconds...');
 				await new Promise(resolve => setTimeout(resolve, 10000));
 			}
 			else {
-				console.log( "Deploy successful." );
+				console.log("Deploy successful.");
 			}
 
 		}
 
-		if ( ! deploySuccess ) {
+		if (!deploySuccess) {
 
 			await inquirer.prompt([{
 				type: 'confirm',
@@ -625,14 +625,14 @@ async function versionBumpThemes() {
 
 	for (let theme of themes) {
 		let hasChanges = await checkThemeForChanges(theme, hash);
-		if( ! hasChanges){
+		if (!hasChanges) {
 			// console.log(`${theme} has no changes`);
 			continue;
 		}
 
 		versionBumpCount++;
 		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
-		if( hasVersionBump ){
+		if (hasVersionBump) {
 			continue;
 		}
 
@@ -643,7 +643,7 @@ async function versionBumpThemes() {
 
 	//version bump the root project if there were changes to any of the themes
 	let rootHasVersionBump = await checkProjectForVersionBump(hash);
-	if ( versionBumpCount > 0 && ! rootHasVersionBump ) {
+	if (versionBumpCount > 0 && !rootHasVersionBump) {
 		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
 		changesWereMade = true;
 	}
@@ -652,10 +652,10 @@ async function versionBumpThemes() {
 }
 
 export function getThemeMetadata(styleCss, attribute) {
-	if ( !styleCss || !attribute ) {
+	if (!styleCss || !attribute) {
 		return null;
 	}
-	switch ( attribute ) {
+	switch (attribute) {
 		case 'Version':
 			return styleCss
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
@@ -683,9 +683,9 @@ async function rebuildThemeChangelog(theme, since) {
 
 	let logs = '== Changelog ==\n';
 
-	for ( let hash of hashes ) {
+	for (let hash of hashes) {
 		let log = await executeCommand(`git log -n 1 --pretty=format:"* %s" ${hash}`);
-		if ( log.includes('Version Bump') ) {
+		if (log.includes('Version Bump')) {
 			let previousStyleString = await executeCommand(`git show ${hash}:${theme}/style.css 2>/dev/null`);
 			let version = getThemeMetadata(previousStyleString, 'Version');
 			logs += `\n= ${version} =\n`;
@@ -700,12 +700,12 @@ async function rebuildThemeChangelog(theme, since) {
 	let readmeFilePath = `${theme}/readme.txt`;
 
 	// Update readme.txt
-	fs.readFile(readmeFilePath, 'utf8', function(err, data) {
+	fs.readFile(readmeFilePath, 'utf8', function (err, data) {
 		let changelogSection = '== Changelog ==';
 		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
 		let formattedChangelog = data.replace(regex, logs);
 
-		fs.writeFile(readmeFilePath, formattedChangelog, 'utf8', function(err) {
+		fs.writeFile(readmeFilePath, formattedChangelog, 'utf8', function (err) {
 			if (err) return console.log(err);
 		});
 	});
@@ -720,11 +720,11 @@ async function updateThemeChangelog(theme, addChanges) {
 	console.log(`Updating ${theme} changelog`);
 
 	// Get theme version
- 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
- 	let version = getThemeMetadata(styleCss, 'Version');
+	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+	let version = getThemeMetadata(styleCss, 'Version');
 
 	// Get list of updates with bullet points
- 	let logs = await getCommitLogs('', true, theme);
+	let logs = await getCommitLogs('', true, theme);
 
 	// Get theme readme.txt
 	let readmeFilePath = `${theme}/readme.txt`;
@@ -741,12 +741,12 @@ async function updateThemeChangelog(theme, addChanges) {
 ${logs}`;
 
 	// Update readme.txt
-	fs.readFile(readmeFilePath, 'utf8', function(err, data) {
+	fs.readFile(readmeFilePath, 'utf8', function (err, data) {
 		let changelogSection = '== Changelog ==';
 		let regex = new RegExp('^.*' + changelogSection + '.*$', 'gm');
 		let formattedChangelog = data.replace(regex, newChangelogEntry);
 
-		fs.writeFile(readmeFilePath, formattedChangelog, 'utf8', function(err) {
+		fs.writeFile(readmeFilePath, formattedChangelog, 'utf8', function (err) {
 			if (err) return console.log(err);
 		});
 	});
@@ -763,7 +763,7 @@ ${logs}`;
  First increment the patch version in style.css
  Then update any of these files with the new version: [package.json, style.scss, style-child-theme.scss]
 */
-async function versionBumpTheme(theme, addChanges){
+async function versionBumpTheme(theme, addChanges) {
 
 	console.log(`${theme} needs a version bump`);
 
@@ -776,10 +776,10 @@ async function versionBumpTheme(theme, addChanges){
 	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 2`);
 	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
 
-	for ( let file of filesToUpdate ) {
+	for (let file of filesToUpdate) {
 		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
 		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
-		if (addChanges){
+		if (addChanges) {
 			await executeCommand(`git add ${file}`);
 		}
 	}
@@ -790,23 +790,23 @@ async function versionBumpTheme(theme, addChanges){
  Used by versionBumpThemes
  Compares the value of 'version' in style.css between the hash and current value
 */
-async function checkThemeForVersionBump(theme, hash){
+async function checkThemeForVersionBump(theme, hash) {
 	return executeCommand(`
 		git show ${hash}:${theme}/style.css 2>/dev/null
 	`)
-	.catch( ( error ) => {
-		//This is a new theme, no need to bump versions so we'll just say we've already done it
-		return true;
-	} )
-	.then( ( previousStyleString ) => {
-		if( previousStyleString === true) {
-			return previousStyleString;
-		}
-		let previousVersion = getThemeMetadata(previousStyleString, 'Version');
-		let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
-		let currentVersion = getThemeMetadata(styleCss, 'Version');
-		return previousVersion != currentVersion;
-	});
+		.catch((error) => {
+			//This is a new theme, no need to bump versions so we'll just say we've already done it
+			return true;
+		})
+		.then((previousStyleString) => {
+			if (previousStyleString === true) {
+				return previousStyleString;
+			}
+			let previousVersion = getThemeMetadata(previousStyleString, 'Version');
+			let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
+			let currentVersion = getThemeMetadata(styleCss, 'Version');
+			return previousVersion != currentVersion;
+		});
 }
 
 /*
@@ -814,7 +814,7 @@ async function checkThemeForVersionBump(theme, hash){
  Used by versionBumpThemes
  Compares the value of 'version' in package.json between the hash and current value
 */
-async function checkProjectForVersionBump(hash){
+async function checkProjectForVersionBump(hash) {
 	let previousPackageString = await executeCommand(`
 		git show ${hash}:./package.json 2>/dev/null
 	`);
@@ -827,7 +827,7 @@ async function checkProjectForVersionBump(hash){
  Determine if a theme has had changes since a given hash.
  Used by versionBumpThemes
 */
-async function checkThemeForChanges(theme, hash){
+async function checkThemeForChanges(theme, hash) {
 	let comittedChanges = await executeCommand(`git diff --name-only ${hash} HEAD -- ${theme}`);
 	return comittedChanges != '';
 }
@@ -843,7 +843,7 @@ async function getActionableThemes() {
 	done`);
 	return result
 		.split('\n')
-		.map(item=>item.replace('/', ''));
+		.map(item => item.replace('/', ''));
 }
 
 /*
@@ -908,15 +908,15 @@ async function cleanAllSandbox() {
 async function pushToSandbox() {
 	console.log("Pushing All Themes to Sandbox.");
 	let allThemes = await getActionableThemes();
-	allThemes = allThemes.filter( item=> ! premiumThemes.includes( item ) );
+	allThemes = allThemes.filter(item => !premiumThemes.includes(item));
 	console.log(`Syncing ${allThemes.length} themes`);
-	for ( let theme of allThemes ) {
+	for (let theme of allThemes) {
 		await pushThemeToSandbox(theme);
 	}
 }
 
 async function pushThemeToSandbox(theme) {
-	console.log( `Syncing ${theme}` );
+	console.log(`Syncing ${theme}`);
 	return executeCommand(`
 		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/
 	`, true);
@@ -943,8 +943,8 @@ async function pushPremiumToSandbox() {
 	];
 
 	// Change 'blockbase' to 'blockbase-premium' in the files noted
-	for ( let theme of premiumThemes ) {
-		for ( let file of filesToModify ) {
+	for (let theme of premiumThemes) {
+		for (let file of filesToModify) {
 			await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/${file}`, true);
 		}
 	}
@@ -955,8 +955,8 @@ async function pushPremiumToSandbox() {
 	`, true);
 
 	// revert the local blockbase-premium changes
-	for ( let theme of premiumThemes ) {
-		for ( let file of filesToModify ) {
+	for (let theme of premiumThemes) {
+		for (let file of filesToModify) {
 			await executeCommand(`
 				git restore --source=HEAD --staged --worktree ./${theme}/${file}
 			`);
@@ -974,17 +974,17 @@ async function pushChangesToSandbox() {
 	console.log("Pushing Changed Themes to Sandbox.");
 	let hash = await getLastDeployedHash();
 	let changedThemes = await getChangedThemes(hash);
-	changedThemes = changedThemes.filter( item=> ! premiumThemes.includes( item ) );
+	changedThemes = changedThemes.filter(item => !premiumThemes.includes(item));
 	console.log(`Syncing ${changedThemes.length} themes`);
 
-	for ( let theme of changedThemes ) {
+	for (let theme of changedThemes) {
 		await pushThemeToSandbox(theme);
 	}
 }
 
 async function pullCoreThemes() {
 	console.log("Pulling CORE themes from sandbox.");
-	for (let theme of coreThemes ) {
+	for (let theme of coreThemes) {
 		await executeCommand(`
 			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ ./${theme}/ 
 		`, true);
@@ -993,7 +993,7 @@ async function pullCoreThemes() {
 
 async function pushCoreThemes() {
 	console.log("Pushing CORE themes to sandbox.");
-	for (let theme of coreThemes ) {
+	for (let theme of coreThemes) {
 		await executeCommand(`
 			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' ./${theme}/ wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ 
 		`, true);
@@ -1001,11 +1001,11 @@ async function pushCoreThemes() {
 }
 
 async function syncCoreTheme(theme, sinceRevision) {
-	if(!theme){
+	if (!theme) {
 		console.log('Must supply theme to sync and revision to start from');
 		return;
 	}
-	if(!sinceRevision) {
+	if (!sinceRevision) {
 		sinceRevision = await executeOnSandbox(`cat ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision`);
 	}
 	let latestRevision = await executeCommand(`svn info -r HEAD https://core.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
@@ -1031,7 +1031,7 @@ async function syncCoreTheme(theme, sinceRevision) {
  This message contains the logs from all of the commits since the given hash.
  Used by create*PhabricatorDiff
 */
-async function buildPhabricatorCommitMessageSince(hash){
+async function buildPhabricatorCommitMessageSince(hash) {
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await getCommitLogs(hash);
@@ -1070,7 +1070,7 @@ async function createPhabricatorDiff(commitMessage) {
 
 	console.log('Diff Created at: ', phabricatorUrl);
 
-	if(phabricatorUrl) {
+	if (phabricatorUrl) {
 		open(phabricatorUrl);
 	}
 
@@ -1081,10 +1081,10 @@ async function createPhabricatorDiff(commitMessage) {
  Utility to pull the Phabricator URL from the diff creation command.
  Used by createPhabricatorDiff
 */
-function getPhabricatorUrlFromResponse(response){
+function getPhabricatorUrlFromResponse(response) {
 	return response
 		?.split('\n')
-		?.find( item => {
+		?.find(item => {
 			return item.includes('Revision URI: ');
 		})
 		?.split("Revision URI: ")[1];
@@ -1095,7 +1095,7 @@ function getPhabricatorUrlFromResponse(response){
  In the description include the commit logs since the given hash.
  Include the (cleansed) Phabricator link.
 */
-async function tagDeployment(options={}) {
+async function tagDeployment(options = {}) {
 
 	console.log('tagging deployment');
 
@@ -1125,9 +1125,9 @@ Host wpcom-sandbox
 	HostName SANDBOXURL.wordpress.com
 	ForwardAgent yes
 */
-function executeOnSandbox(command, logResponse, enablePsudoterminal){
+function executeOnSandbox(command, logResponse, enablePsudoterminal) {
 
-	if(enablePsudoterminal){
+	if (enablePsudoterminal) {
 		return executeCommand(`ssh -tt -A ${remoteSSH} << EOF
 ${command}
 EOF`, logResponse);
@@ -1161,14 +1161,14 @@ export async function executeCommand(command, logResponse) {
 
 		child.stdout.on('data', (data) => {
 			response += data;
-			if(logResponse){
+			if (logResponse) {
 				console.log(data.toString());
 			}
 		});
 
 		child.stderr.on('data', (data) => {
 			errResponse += data;
-			if(logResponse){
+			if (logResponse) {
 				console.log(data.toString());
 			}
 		});
