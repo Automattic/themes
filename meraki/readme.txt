@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.4 =
+* Meraki: Update footer pattern background color; update footer pattern structure to avoid horizontal scrollbars. (#6030)
+
 = 0.0.3 =
 * Meraki: Style updates. (#5999)
 * Meraki: Update the footer pattern. (#5998)
