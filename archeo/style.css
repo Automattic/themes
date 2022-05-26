@@ -83,9 +83,8 @@ a:active,
 }
 
 /*
- * Search and File Block button styles.
+ * File Block button styles.
  * Necessary until the following issues are resolved in Gutenberg:
- * https://github.com/WordPress/gutenberg/issues/36444
  * https://github.com/WordPress/gutenberg/issues/27760
  */
 
@@ -94,9 +93,19 @@ a:active,
 	border-radius: 0;
 	border: none;
 	color: var(--wp--preset--color--background);
-	font-size: var(--wp--preset--typography--font-size--normal);
+	font-size: var(--wp--preset--font-size--normal);
 	padding: calc(0.667em + 2px) calc(1.333em + 2px);
 }
+
+/*
+ * Outline block button needs a padding tweak so it's the same size of normal buttons
+ */
+.is-style-outline > :where(.wp-block-button__link), 
+:where(.wp-block-button__link).is-style-outline {
+	padding-top: 0.667em;
+	padding-bottom: 0.667em;
+}
+
 
 /*
  * Comment Form Fields
