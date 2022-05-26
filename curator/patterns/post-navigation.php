@@ -16,7 +16,7 @@
 <p class="curator-post-navigation-icon has-large-font-size">←</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:post-navigation-link {"type":"previous","label":"<?php echo esc_html__( 'PREVIOUS POST', 'curator' ); ?>","style":{"typography":{"lineHeight":"1.5","textTransform":"uppercase"}},"fontSize":"large"} /--></div>
+<!-- wp:post-navigation-link {"type":"previous","label":"<?php echo esc_html__( 'Previous Post', 'curator' ); ?>","style":{"typography":{"lineHeight":"1.5","textTransform":"uppercase"}},"fontSize":"large"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
