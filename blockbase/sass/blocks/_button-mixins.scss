@@ -3,11 +3,16 @@
 @mixin button-main-styles {
 
 	@include button-padding-styles;
+	@include button-typography-styles;
 	@include button-color-styles;
+	border-radius: var(--wp--custom--button--border--radius);
 }
 
 @mixin button-color-styles {
 	opacity: 1;
+	color: var(--wp--custom--button--color--text);
+	background-color: var(--wp--custom--button--color--background);
+	border-color: currentcolor;
 	border-color: currentcolor;
 
 	svg {
@@ -23,6 +28,15 @@
 	padding-bottom: calc(var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width));
 	padding-left: calc(var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width));
 	padding-right: calc(var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width));
+}
+
+//We are keeping the mixin in case it's used by any child themes, but this isn't used by Blockbase any more
+@mixin button-typography-styles {
+	font-weight: var(--wp--custom--button--typography--font-weight);
+	font-family: inherit;
+	font-size: var(--wp--custom--button--typography--font-size);
+	line-height: var(--wp--custom--button--typography--line-height);
+	text-decoration: none; // Needed because link styles inside .entry-content add a text decoration
 }
 
 //apply outline styles. apply padding that does NOT account for border width (as the border width is applied here).
