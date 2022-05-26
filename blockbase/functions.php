@@ -136,7 +136,9 @@ if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 }
 
 
-// ----------	Custom Fonts ---------- //
+// ---------- Custom Fonts ---------- //
+// This code is adapted directly from Jetpack's Google Fonts module, which depends on the Webfonts API from Gutenberg (and eventually Core)
+// https://github.com/Automattic/jetpack/blob/master/projects/plugins/jetpack/modules/google-fonts.php
 const BLOCKBASE_GOOGLE_FONTS_LIST = array(
 	'Arvo',
 	'Bodoni Moda',
@@ -185,7 +187,7 @@ function blockbase_register_google_fonts() {
 	// Use jetpack's implementation of custom google fonts if it is already active
 	if ( method_exists( 'Jetpack', 'is_module_active' ) && Jetpack::is_module_active( 'google-fonts' ) ) {
 		return;
-	} 
+	}
 
 	if ( ! function_exists( 'wp_register_webfont_provider' ) || ! function_exists( 'wp_register_webfonts' ) ) {
 		return;

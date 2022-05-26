@@ -133,7 +133,7 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function generate_deprecation_message() {
-		if ( ! defined( 'GUTENBERG_VERSION' ) || version_compare( GUTENBERG_VERSION, '13.2', '<=' ) ) {
+		if ( ! defined( 'GUTENBERG_VERSION' ) || version_compare( GUTENBERG_VERSION, '13.3', '<=' ) ) {
 			return __( 'Please activate or update Gutenberg to use the custom fonts feature.', 'blockbase' );
 		}
 
