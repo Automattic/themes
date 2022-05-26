@@ -146,12 +146,12 @@ function blockbase_fonts_url() {
 	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
 }
 
+require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
+
 /**
  * Customize Global Styles
  */
 if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 	require get_template_directory() . '/inc/social-navigation.php';
 }
