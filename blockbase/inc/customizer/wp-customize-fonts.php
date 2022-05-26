@@ -44,7 +44,7 @@ function migrate_blockbase_custom_fonts() {
 
 	// Set new typography settings
 	if ( isset( $new_settings['typography']['fontFamilies'] ) ) {
-		unset( $new_settings['typography']['fontFamilies'] ); // TODO: Reconsider the depth of property we're unsetting
+		unset( $new_settings['typography']['fontFamilies'] );
 	}
 
 	if ( $body_font_slug ) {
