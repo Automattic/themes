@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.5 =
+* Meraki: Re-add the 'auto-loading-homepage' tag to style.css (#6039)
+
 = 0.0.4 =
 * Meraki: Update footer pattern background color; update footer pattern structure to avoid horizontal scrollbars. (#6030)
 
