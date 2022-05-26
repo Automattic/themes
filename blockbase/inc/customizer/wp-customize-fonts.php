@@ -3,7 +3,8 @@
 require_once( __DIR__ . '/wp-customize-global-styles-setting.php' );
 require_once( __DIR__ . '/wp-customize-utils.php' );
 
-add_action( 'init', 'migrate_blockbase_custom_fonts' );
+// Use an early priority to migrate legacy font settings before registering Google Fonts in `blockbase_register_google_fonts`.
+add_action( 'after_setup_theme', 'migrate_blockbase_custom_fonts', 0 );
 
 function migrate_blockbase_custom_fonts() {
 	// The data has already been transformed
