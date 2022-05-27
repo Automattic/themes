@@ -135,6 +135,10 @@
 					"slug": "chivo"
 				}
 			],
+			"fluid": {
+				"min": "768px",
+				"max": "1600px"
+			},
 			"fontSizes": [
 				{
 					"name": "Small",
@@ -148,18 +152,39 @@
 				},
 				{
 					"name": "Medium",
-					"size": "clamp(1.5rem, 5vw, 2rem)",
+					"size": "1.5rem",
+					"fluidSize": {
+						"min": "1.5rem",
+						"max": "2rem"
+					},
 					"slug": "medium"
 				},
 				{
 					"name": "Large",
-					"size": "clamp(2.25rem, 6vw, 3rem)",
+					"size": "2.25rem",
+					"fluidSize": {
+						"min": "2.25rem",
+						"max": "3rem"
+					},
 					"slug": "large"
 				},
 				{
 					"name": "Huge",
-					"size": "clamp(2.625rem, 7vw, 4rem)",
+					"size": "2.625rem",
+					"fluidSize": {
+						"min": "2.625rem",
+						"max": "4em"
+					},
 					"slug": "huge"
+				},
+				{
+					"name": "Extra Huge",
+					"size": "3rem",
+					"fluidSize": {
+						"min": "3rem",
+						"max": "4.5rem"
+					},
+					"slug": "extra-huge"
 				}
 			]
 		}
@@ -260,7 +285,7 @@
 		"elements": {
 			"h1": {
 				"typography": {
-					"fontSize": "clamp(3rem, 8vw, 4.5rem)"
+					"fontSize": "var(--wp--preset--font-size--extra-huge)"
 				}
 			},
 			"h2": {
