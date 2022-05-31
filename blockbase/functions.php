@@ -88,6 +88,8 @@ function blockbase_scripts() {
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
 	}
+
+	blockbase_enqueue_default_fonts();
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
 
@@ -135,47 +137,46 @@ if ( file_exists( get_stylesheet_directory() . '/inc/block-patterns.php' ) ) {
 	require_once get_stylesheet_directory() . '/inc/block-patterns.php';
 }
 
-
 // ---------- Custom Fonts ---------- //
 // This code is adapted directly from Jetpack's Google Fonts module, which depends on the Webfonts API from Gutenberg (and eventually Core)
 // https://github.com/Automattic/jetpack/blob/master/projects/plugins/jetpack/modules/google-fonts.php
 const BLOCKBASE_GOOGLE_FONTS_LIST = array(
-	'Arvo',
-	'Bodoni Moda',
-	'Cabin',
-	'Chivo',
-	'Courier Prime',
-	'DM Sans',
-	'Domine',
-	'EB Garamond',
-	'Fira Sans',
-	'IBM Plex Sans',
-	'IBM Plex Mono',
-	'Inter',
-	'Josefin Sans',
-	'Jost',
-	'Libre Baskerville',
-	'Libre Franklin',
-	'Literata',
-	'Lora',
-	'Merriweather',
-	'Montserrat',
-	'Newsreader',
-	'Nunito',
-	'Open Sans',
-	'Overpass',
-	'Playfair Display',
-	'Poppins',
-	'Raleway',
-	'Red Hat Display',
-	'Roboto',
-	'Roboto Slab',
-	'Rubik',
-	'Source Sans Pro',
-	'Source Serif Pro',
-	'Space Mono',
-	'Texturina',
-	'Work Sans',
+	'arvo' => array( 'font_family' => 'Arvo'),
+	'bodoni-moda' => array( 'font_family' => 'Bodoni Moda'),
+	'cabin' => array( 'font_family' => 'Cabin'),
+	'chivo' => array( 'font_family' => 'Chivo'),
+	'courier-prime' => array( 'font_family' => 'Courier Prime'),
+	'dm-sans' => array( 'font_family' => 'DM Sans' ),
+	'domine' => array( 'font_family' => 'Domine'),
+	'eb-garamond' => array( 'font_family' => 'EB Garamond'),
+	'fira-sans' => array( 'font_family' => 'Fira Sans'),
+	'ibm-plex-sans' => array( 'font_family' => 'IBM Plex Sans'),
+	'ibm-plex-mono' => array( 'font_family' => 'IBM Plex Mono'),
+	'inter' => array( 'font_family' => 'Inter'),
+	'josefin-sans' => array( 'font_family' => 'Josefin Sans'),
+	'jost' => array( 'font_family' => 'Jost'),
+	'libre-baskerville' => array( 'font_family' => 'Libre Baskerville'),
+	'libre-franklin' => array( 'font_family' => 'Libre Franklin'),
+	'literata' => array( 'font_family' => 'Literata'),
+	'lora' => array( 'font_family' => 'Lora'),
+	'merriweather' => array( 'font_family' => 'Merriweather'),
+	'montserrat' => array( 'font_family' => 'Montserrat'),
+	'newsreader' => array( 'font_family' => 'Newsreader'),
+	'nunito' => array( 'font_family' => 'Nunito'),
+	'open-sans' => array( 'font_family' => 'Open Sans'),
+	'overpass' => array( 'font_family' => 'Overpass'),
+	'playfair-display' => array( 'font_family' => 'Playfair Display'),
+	'poppins' => array( 'font_family' => 'Poppins'),
+	'raleway' => array( 'font_family' => 'Raleway'),
+	'red-hat-display' => array( 'font_family' => 'Red Hat Display'),
+	'roboto' => array( 'font_family' => 'Roboto'),
+	'roboto-slab' => array( 'font_family' => 'Roboto Slab'),
+	'rubik' => array( 'font_family' => 'Rubik'),
+	'source-sans-pro' => array( 'font_family' => 'Source Sans Pro'),
+	'source-serif-pro' => array( 'font_family' => 'Source Serif Pro'),
+	'space-mono' => array( 'font_family' => 'Space Mono'),
+	'texturina' => array( 'font_family' => 'Texturina'),
+	'work-sans' => array( 'font_family' => 'Work Sans'),
 );
 
 /**
@@ -206,7 +207,9 @@ function blockbase_register_google_fonts() {
 	 */
 	$fonts_to_register = apply_filters( 'blockbase_google_fonts_list', BLOCKBASE_GOOGLE_FONTS_LIST );
 
-	foreach ( $fonts_to_register as $font_family ) {
+	foreach ( $fonts_to_register as $font_settings ) {
+		$font_family = $font_settings['font_family'];
+
 		wp_register_webfonts(
 			array(
 				array(
@@ -232,3 +235,33 @@ function blockbase_register_google_fonts() {
 	add_action( 'init', '\Automattic\Jetpack\Fonts\Introspectors\Global_Styles::enqueue_global_styles_fonts' );
 }
 add_action( 'after_setup_theme', 'blockbase_register_google_fonts' );
+
+/**
+ * Automatically enqueues default blockbase theme google fonts
+ *
+ * @return void
+ */
+function blockbase_enqueue_default_fonts() {
+	if ( ! function_exists( 'wp_enqueue_webfont' ) ) {
+		return;
+	}
+
+	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ), 'base' );
+
+	if ( ! isset( $font_settings['theme'] ) ) {
+		return;
+	}
+
+	foreach( $font_settings['theme'] as $font_setting ) {
+		if ( ! isset( $font_setting['fontSlug'] ) ) {
+			continue;
+		}
+
+		$font_slug = $font_setting['fontSlug'];
+
+		if ( $font_slug && isset( BLOCKBASE_GOOGLE_FONTS_LIST[$font_slug] ) ) {
+			$font_family = BLOCKBASE_GOOGLE_FONTS_LIST[$font_slug]['font_family'];
+			wp_enqueue_webfont( $font_family );
+		}
+	}
+}
