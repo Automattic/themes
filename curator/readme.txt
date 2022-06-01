@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.4 =
+* Curator: update link and button styles (#6028)
+
 = 0.0.3 =
 * Curator: style 404 page (#5983)
 * Curator: update link and navigation styles (#5982)
