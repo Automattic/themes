@@ -249,3 +249,10 @@ a:not(
 	color: var(--wp--preset--color--background);
 	background-color: var(--wp--preset--color--primary);
 }
+
+/*
+ * Need this because gutenberg sets default color to 555
+ */
+:is(.wp-block-image, .wp-block-audio, .wp-block-video) figcaption {
+	color: var(--wp--preset--color--foreground)
+}
