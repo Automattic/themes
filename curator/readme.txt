@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.5 =
+* add archive template and posts-grid pattern (#5994)
+
 = 0.0.4 =
 * Curator: update link and button styles (#6028)
 
