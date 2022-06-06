@@ -79,6 +79,9 @@ If you'd like to apply the styling to a different paragraph, you can do so by wr
 
 == Changelog ==
 
+= 1.0.13 =
+* #2906: Libretto: Search bar overlaps menu items (#6055)
+
 = 1.0.1 - July 27, 2015
 * Improve display of menu across devices and platforms.
 * Clean up header display for better UX.
