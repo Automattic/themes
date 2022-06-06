@@ -21,7 +21,7 @@
 			?>
 
 			<p>
-			<?php _e( "Your site is set to show the the most recent posts on your homepage - but you don't have any Posts published.", 'seedlet' ); ?></p>
+			<?php _e( "Your site is set to show the the most recent posts on this page - but you don't have any Posts published.", 'seedlet' ); ?></p>
 			<p>
 				<a href="<?php echo esc_url( admin_url( 'edit.php' ) ); ?>" class="button">
 					<?php
