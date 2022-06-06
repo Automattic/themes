@@ -18,6 +18,9 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.21 =
+* #6047: Seedlet: Fix no post message (#6064)
+
 = 1.1.13 =
 * Responsive menu fix 
 * Customizer 5.7 fix
