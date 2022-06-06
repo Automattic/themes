@@ -125,6 +125,16 @@
 					"slug": "heading-font",
 					"fontFace": [
 						{
+							"fontDisplay": "regular",
+							"fontFamily": "'Work Sans'",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/WorkSans.ttf"
+							]
+						},
+						{
 							"fontDisplay": "block",
 							"fontFamily": "'Work Sans'",
 							"fontWeight": "900",
@@ -132,6 +142,16 @@
 							"fontStretch": "normal",
 							"src": [
 								"file:./assets/fonts/WorkSans.ttf"
+							]
+						},
+						{
+							"fontDisplay": "regular",
+							"fontFamily": "'Work Sans'",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/WorkSans-Italic.ttf"
 							]
 						},
 						{
@@ -297,16 +317,37 @@
 				}
 			},
 			"core/query-pagination": {
-				"spacing": {
-					"padding": {
-						"left": "20px",
-						"right": "20px"
-					}
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading-font)",
+					"fontSize": "clamp(1.125rem, 4vw, 1.375rem)",
+					"fontWeight": "900",
+					"letterSpacing": "-0.02rem"
 				},
 				"elements": {
 					"link": {
 						"color": {
 							"text": "var(--wp--preset--color--foreground)"
+						}
+					}
+				}
+			},
+			"core/query-pagination-previous": {
+				"typography": {
+					"textTransform": "uppercase",
+					"textDecoration": "none"
+				}
+			},
+			"core/query-pagination-next": {
+				"typography": {
+					"textTransform": "uppercase",
+					"textDecoration": "none"
+				}
+			},
+			"core/query-pagination-numbers": {
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
 						}
 					}
 				}
