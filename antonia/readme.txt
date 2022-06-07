@@ -12,6 +12,9 @@ Antonia is a theme for selling products with the help of payments block.
 
 == Changelog ==
 
+= 0.0.2 =
+* Update theme url (#6076)
+
 = 0.0.1 =
 * Initial release
 
