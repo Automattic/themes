@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.6 =
+* Remove the 'unstableSocialLinks' from themes that shouldn't have it (it's a Blockbase exclusive) (#6078)
+
 = 0.0.5 =
 * add archive template and posts-grid pattern (#5994)
 
