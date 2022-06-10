@@ -12,6 +12,9 @@ Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a
 
 == Changelog ==
 
+= 1.0.5 =
+* Remote: add style variations (#5908)
+
 = 1.0.4 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 
