@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.7 =
+* Curator: revise single template (#5987)
+
 = 0.0.6 =
 * Remove the 'unstableSocialLinks' from themes that shouldn't have it (it's a Blockbase exclusive) (#6078)
 
