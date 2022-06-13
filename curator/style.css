@@ -3,21 +3,23 @@ Theme Name: Curator
 Theme URI: https://wordpress.com/theme/curator
 Author: Automattic
 Author URI: https://automattic.com/
-Description: 
+Description:
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
 Version: 0.0.6
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
-Template: 
+Template:
 Text Domain: curator
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
-*//*
+*/
+
+/*
  * Font smoothing
  */
 
- body {
+body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
@@ -28,7 +30,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  * https://github.com/WordPress/gutenberg/issues/27075
  */
 
- .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background) {
 	padding: 0;
 }
 .wp-block-button__link:visited {
@@ -115,6 +117,7 @@ a:not(
 	.wp-block-button__link
 ) {
 	padding: .4rem 0;
+	text-decoration: inherit; /* Needed so the link styles will be inherited correctly from theme.json */
 	text-underline-offset: .1rem;
 }
 
@@ -143,13 +146,16 @@ a:not(
 }
 
 /*
- * Navigation Link Styles
+ * Navigation and Other Link Styles
  */
 
 :is(
 	.wp-block-pages-list__item .wp-block-pages-list__item__link,
 	.wp-block-navigation-link__content,
-	.wp-block-navigation-item__content
+	.wp-block-navigation-item__content,
+	.wp-block-site-title a,
+	.wp-block-post-navigation-link a,
+	.wp-block-post-terms a
 ):hover {
 	text-decoration: underline;
 }
@@ -157,7 +163,10 @@ a:not(
 :is(
 	.wp-block-pages-list__item .wp-block-pages-list__item__link,
 	.wp-block-navigation-link__content,
-	.wp-block-navigation-item__content
+	.wp-block-navigation-item__content,
+	.wp-block-site-title a,
+	.wp-block-post-navigation-link a,
+	.wp-block-post-terms a
 ):focus {
 	text-decoration-line: underline;
 	text-decoration-style: dotted;
@@ -166,11 +175,13 @@ a:not(
 :is(
 	.wp-block-pages-list__item .wp-block-pages-list__item__link,
 	.wp-block-navigation-link__content,
-	.wp-block-navigation-item__content
+	.wp-block-navigation-item__content,
+	.wp-block-site-title a,
+	.wp-block-post-navigation-link a,
+	.wp-block-post-terms a
 ):active {
 	text-decoration: underline;
 }
-
 
 /*
  * Alignment styles, borrowed from Twenty Twenty-Two.
@@ -236,4 +247,13 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	padding-bottom: var(--wp--custom--gap--vertical);
 	padding-right: var(--wp--custom--gap--horizontal);
 	padding-left: var(--wp--custom--gap--horizontal);
+}
+
+/*
+ * Allows comment count to be displayed in line.
+ * i.e. "Comments (0)"
+ */
+
+.wp-block-post-comments-count {
+	display: inline;
 }
