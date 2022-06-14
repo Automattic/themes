@@ -5,7 +5,7 @@ $site-branding-height: 68px;
 	.site-header {
 		padding: var(--global--spacing-vertical) 0;
 
-		@include media( laptop ){
+		@include media( laptop ) {
 			padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 		}
 
@@ -13,7 +13,8 @@ $site-branding-height: 68px;
 			text-decoration: none;
 		}
 
-		@include media( laptop-only ){
+		@include media( laptop-only ) {
+
 			.site-title {
 				margin: 0;
 			}
@@ -40,7 +41,7 @@ $site-branding-height: 68px;
 	max-width: var(--responsive--alignfull-width);
 	padding: var(--global--spacing-vertical) 0;
 
-	@include media( laptop ){
+	@include media( laptop ) {
 		grid-template-areas:
 			"site-logo site-logo site-logo"
 			"branding primary-navigation primary-navigation";
@@ -54,7 +55,7 @@ $site-branding-height: 68px;
 		justify-self: flex-start;
 		align-self: center;
 
-		@include media( laptop ){
+		@include media( laptop ) {
 			padding: 0;
 		}
 
@@ -93,9 +94,11 @@ $site-branding-height: 68px;
 
 	.primary-navigation {
 		margin-top: 0;
+		position: relative;
 
-		@include media( laptop-only ){ // TODO - use $navigation-max-break-point variable
+		@include media( laptop-only ) { // TODO - use $navigation-max-break-point variable
 			.primary-menu-container {
+
 				.admin-bar & {
 					top: $site-branding-height + $admin-bar-height;
 				}
@@ -113,13 +116,23 @@ $site-branding-height: 68px;
 		button#primary-close-menu {
 			color: var(--global--color-secondary);
 			margin: 0;
+			margin-top: 0.25rem;
 			padding: var(--global--spacing-horizontal);
-			position: fixed;
+			position: relative;
 			top: 0;
 			right: 0;
+			float: right;
+
+			.has-marketing-bar & {
+				top: calc(-1 * var(--wpcom-marketing-bar--height));
+			}
 
 			.admin-bar & {
-				top: $admin-bar-height;
+				top: calc(-1 * var(--wpadmin-bar--height));
+			}
+
+			.admin-bar.has-marketing-bar & {
+				top: calc(calc(-1 * var(--wpadmin-bar--height)) + calc(-1 * var(--wpcom-marketing-bar--height)));
 			}
 
 			&:hover {
@@ -134,7 +147,8 @@ $site-branding-height: 68px;
 	}
 
 
-	.primary-navigation > div > ul li, .woo-navigation > div > ul li {
+	.primary-navigation > div > ul li,
+	.woo-navigation > div > ul li {
 		color: var(--global--color-secondary);
 
 		a:hover {
@@ -143,7 +157,8 @@ $site-branding-height: 68px;
 		}
 	}
 
-	> .site-branding, > nav {
+	> .site-branding,
+	> nav {
 		margin: 0;
 	}
 
@@ -161,8 +176,10 @@ $site-branding-height: 68px;
 			}
 
 		}
-		@include media( laptop ){
+
+		@include media( laptop ) {
 			flex-basis: auto;
+
 			ul {
 				justify-content: flex-end;
 				margin-top: 0;
@@ -189,19 +206,22 @@ $site-branding-height: 68px;
 }
 
 .has-title-and-tagline {
+
 	.site-logo {
 		margin: 0;
 
-		@include media( laptop ){
+		@include media( laptop ) {
 			padding-bottom: var(--global--spacing-vertical);
 		}
 	}
+
 	.site-branding {
 		align-self: flex-start;
 	}
 }
 
 .primary-navigation-open {
+
 	.site-header {
 		padding-top: 0;
 	}
@@ -212,11 +232,13 @@ $site-branding-height: 68px;
 }
 
 .site-header div.menu-button-container {
+
 	button#primary-open-menu {
 		padding: var(--global--spacing-horizontal);
 		margin-top: 0;
 		margin-right: 0;
-		&:before {
+
+		&::before {
 			margin: 0;
 		}
 	}

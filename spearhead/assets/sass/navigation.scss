@@ -4,8 +4,8 @@
 @import "breakpoints";
 
 // Variables
-$navigation-min-break-point: 'laptop';
-$navigation-max-break-point: 'laptop-only';
+$navigation-min-break-point: "laptop";
+$navigation-max-break-point: "laptop-only";
 
 @import "../../../seedlet/assets/sass/components/navigation/style";
 
@@ -31,15 +31,16 @@ $navigation-max-break-point: 'laptop-only';
 	}
 
 	& div ul > li > .sub-menu {
+
 		@include media( $navigation-min-break-point ) {
-			padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) );
+			padding: calc(0.5 * var(--primary-nav--padding)) calc(2 * var(--primary-nav--padding));
 			transition: all 0.15s ease;
 			text-align: right;
 			left: unset;
 			right: 0;
 
 			> .menu-item.menu-item-has-children {
-				padding: calc(0.5 * var(--primary-nav--padding)) calc( 2 * var(--primary-nav--padding) ) 0 0;
+				padding: calc(0.5 * var(--primary-nav--padding)) calc(2 * var(--primary-nav--padding)) 0 0;
 			}
 		}
 	}
@@ -50,13 +51,16 @@ $navigation-max-break-point: 'laptop-only';
 }
 
 .social-navigation > div {
+
 	ul li {
 		width: auto;
 	}
 }
 
 $header-height: 80px;
+
 div.extra-navigation-wrapper {
+
 	@include media( $navigation-max-break-point ) {
 		background: var(--primary-nav--color-background);
 		padding: var(--global--spacing-unit) var(--global--spacing-horizontal);
@@ -64,16 +68,18 @@ div.extra-navigation-wrapper {
 		right: 0;
 		bottom: $header-height;
 		left: 0;
-		transform: translateY( 90px ); // This can be any value > $header-height
+		transform: translateY(90px); // This can be any value > $header-height
 	}
 
 	.primary-navigation-open & {
 		visibility: visible;
 		opacity: 1;
-		transform: translateY( $header-height );
+		transform: translateY($header-height);
 
 		.menu-item > a {
-			&:hover, &:focus {
+
+			&:hover,
+			&:focus {
 				color: #ff6a81; // Use the dark mode styles so that the focus styles are accessible.
 			}
 
@@ -83,9 +89,10 @@ div.extra-navigation-wrapper {
 		}
 	}
 
-	$menu-offset-with-logo: calc( var(--branding--logo--max-height) + ( 2 * var(--global--spacing-vertical) ) );
+	$menu-offset-with-logo: calc(var(--branding--logo--max-height) + ( 2 * var(--global--spacing-vertical) ));
+
 	.primary-navigation-open .has-logo:not(.has-title-and-tagline) & {
-		transform: translateY( $menu-offset-with-logo );
+		transform: translateY($menu-offset-with-logo);
 		bottom: $menu-offset-with-logo;
 	}
 }
@@ -93,7 +100,14 @@ div.extra-navigation-wrapper {
 .menu-button-container {
 	position: relative;
 	left: unset;
-	top: unset;
+	top: 0;
+	margin-top: 0.25rem;
+
+	.admin-bar .site-header &,
+	.has-marketing-bar .site-header &,
+	.admin-bar.has-marketing-bar .site-header & {
+		top: 0;
+	}
 
 	.button#woo-open-menu {
 		margin-top: 0;
