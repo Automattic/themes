@@ -2,6 +2,8 @@ import { spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
+import { RewritingStream } from 'parse5-html-rewriting-stream';
+import { table } from 'table';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -106,6 +108,10 @@ const commands = {
 		helpText: 'Rebuild the entire change long from the given starting hash.',
 		additionalArgs: '<theme-slug> <since>',
 		run: (args) => rebuildThemeChangelog(args?.[1], args?.[2])
+	},
+	"escape-patterns": {
+		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
+		run: () => escapePatterns()
 	},
 	"help": {
 		helpText: 'Displays the main help message.',
@@ -1129,4 +1135,113 @@ export async function executeCommand(command, logResponse) {
 			resolove(response.trim());
 		});
 	});
+}
+
+async function escapePatterns() {
+	// get staged files
+	const staged = (await executeCommand(`git diff --cached --name-only`)).split('\n');
+	// get unstaged, untracked files
+	const unstaged = (await executeCommand(`git ls-files -m -o --exclude-standard`)).split('\n');
+	
+	// avoid duplicates and filter pattern files
+	const patterns = [...new Set([...staged, ...unstaged])].filter(file => file.match(/.*\/patterns\/.*.php/g));
+
+	// arrange patterns by theme
+	const themePatterns = patterns.reduce((acc, file) => {
+		const themeSlug = file.split('/').shift();
+		return {
+			...acc,
+			[themeSlug]: (acc[themeSlug] || []).concat(file)
+		};
+	}, {});
+
+	Object.entries(themePatterns).forEach(async ([themeSlug, patterns]) => {
+		console.log(getPatternTable(themeSlug, patterns));
+	
+		const prompt = await inquirer.prompt([{
+			type: 'input',
+			message: 'Verify the theme slug',
+			name: "themeSlug",
+			default: themeSlug
+		}]);
+
+		if (!prompt.themeSlug) {
+			return;
+		}
+
+		const rewriter = getReWriter(prompt.themeSlug);
+		patterns.forEach(file => {
+			const tmpFile = `${file}-tmp`;
+			const rstream = fs.createReadStream( file, { encoding: 'UTF-8' } );
+			const wstream = fs.createWriteStream( tmpFile, { encoding: 'UTF-8' } );
+			wstream.on('finish', () => {
+				fs.renameSync(tmpFile, file);
+			});
+
+			rstream.pipe(rewriter).pipe(wstream);
+		});
+	});
+
+
+	// Helper functions
+	function getReWriter(themeSlug) {
+		const rewriter = new RewritingStream();
+
+		rewriter.on('text', (_, raw) => {
+			rewriter.emitRaw(escapeText(raw, themeSlug));
+		});
+
+		rewriter.on('startTag', (startTag, rawHtml) => {
+			if (startTag.tagName === 'img') {
+				const attrs = startTag.attrs.filter(attr => ['src', 'alt'].includes(attr.name));
+				attrs.forEach(attr => {
+					if (attr.name === 'src') {
+						attr.value = escapeImagePath(attr.value);
+					} else if (attr.name === 'alt') {
+						attr.value = escapeText(attr.value, themeSlug, true);
+					}
+				});
+			}
+
+			if (startTag.tagName === 'p') {
+				console.log({tag: startTag, rawHtml})
+			}
+
+			rewriter.emitStartTag(startTag);
+		});
+
+		return rewriter;
+	}
+
+	function escapeText(text, themeSlug, isAttr = false) {
+		const trimmedText = text && text.trim();
+		if (!themeSlug || !trimmedText || trimmedText.startsWith(`<?php`)) return text;
+		const escFunction = isAttr ? 'esc_attr__' : 'esc_html__';
+		const spaceChar = text.startsWith(' ') ? '&nbsp;' : ''
+		const resultText = text.replace('\'', '\\\'').trim();
+		return `${spaceChar}<?php echo ${escFunction}( '${resultText}', '${themeSlug}' ); ?>`;
+	}
+
+	function escapeImagePath(src) {
+		if (!src || src.trim().startsWith('<?php')) return src;
+		
+		const assetsDir = 'assets';
+		const parts = src.split('/');
+		const resultSrc = parts.slice(parts.indexOf(assetsDir)).join('/');
+		return `<?php echo esc_url( get_template_directory_uri() ); ?>/${resultSrc}`;
+	}
+
+	function getPatternTable(themeSlug, patterns) {
+		const tableConfig = {
+			columnDefault: {
+				width: 80,
+			},
+			header: {
+				alignment: 'center',
+				content: `THEME: ${themeSlug}\n\n Following patterns may get updated with escaped strings and/or image paths`,
+			}
+		};
+
+		return table([patterns], tableConfig);
+	}
 }
