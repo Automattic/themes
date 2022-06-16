@@ -1144,7 +1144,7 @@ async function escapePatterns() {
 	const unstaged = (await executeCommand(`git ls-files -m -o --exclude-standard`)).split('\n');
 	
 	// avoid duplicates and filter pattern files
-	const patterns = [...new Set([...staged, ...unstaged])].filter(file => file.match(/.*\/patterns\/(\w+).php/g));
+	const patterns = [...new Set([...staged, ...unstaged])].filter(file => file.match(/.*\/patterns\/.*.php/g));
 
 	// arrange patterns by theme
 	const themePatterns = patterns.reduce((acc, file) => {
@@ -1191,7 +1191,7 @@ async function escapePatterns() {
 			rewriter.emitRaw(escapeText(raw, themeSlug));
 		});
 
-		rewriter.on('startTag', (startTag) => {
+		rewriter.on('startTag', (startTag, rawHtml) => {
 			if (startTag.tagName === 'img') {
 				const attrs = startTag.attrs.filter(attr => ['src', 'alt'].includes(attr.name));
 				attrs.forEach(attr => {
@@ -1203,8 +1203,22 @@ async function escapePatterns() {
 				});
 			}
 
+			if (startTag.tagName === 'p') {
+				console.log({tag: startTag, rawHtml})
+			}
+
 			rewriter.emitStartTag(startTag);
 		});
+
+		rewriter.on('endTag', (endTag, rawHtml) => {
+			if (endTag.tagName === 'p') {
+				console.log({tag: endTag, rawHtml})
+			}
+		})
+
+		// rewriter.on('comment', (comment, rawHtml) => {
+		// 	console.log({tagName: comment})
+		// })
 
 		return rewriter;
 	}
