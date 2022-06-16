@@ -1210,16 +1210,6 @@ async function escapePatterns() {
 			rewriter.emitStartTag(startTag);
 		});
 
-		rewriter.on('endTag', (endTag, rawHtml) => {
-			if (endTag.tagName === 'p') {
-				console.log({tag: endTag, rawHtml})
-			}
-		})
-
-		// rewriter.on('comment', (comment, rawHtml) => {
-		// 	console.log({tagName: comment})
-		// })
-
 		return rewriter;
 	}
 
@@ -1227,7 +1217,9 @@ async function escapePatterns() {
 		const trimmedText = text && text.trim();
 		if (!themeSlug || !trimmedText || trimmedText.startsWith(`<?php`)) return text;
 		const escFunction = isAttr ? 'esc_attr__' : 'esc_html__';
-		return `<?php echo ${escFunction}( '${text.replace('\'', '\\\'')}', '${themeSlug}' ); ?>`;
+		const spaceChar = text.startsWith(' ') ? '&nbsp;' : ''
+		const resultText = text.replace('\'', '\\\'').trim();
+		return `${spaceChar}<?php echo ${escFunction}( '${resultText}', '${themeSlug}' ); ?>`;
 	}
 
 	function escapeImagePath(src) {
