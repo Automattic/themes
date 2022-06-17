@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.8 =
+* Curator: revise header template part (#5980)
+
 = 0.0.7 =
 * Curator: revise single template (#5987)
 
