@@ -71,12 +71,12 @@ Description: Used to style Gutenberg Blocks.
 
 /* Wide Width */
 
-.wp-block-cover .wp-block-columns {
+:is(.wp-block-cover, .wp-block-group) .wp-block-columns {
 	margin: 0 auto;
 	width: 100%;
 }
 
-.wp-block-cover .wp-block-columns:not(.alignwide, .alignfull) {
+:is(.wp-block-cover, .wp-block-group) .wp-block-columns:not(.alignwide, .alignfull) {
 	max-width: 840px;
 }
 
@@ -89,7 +89,7 @@ Description: Used to style Gutenberg Blocks.
 		position: relative;
 	}
 
-	.wp-block-cover:is(.alignfull) .wp-block-columns.alignwide {
+	:is(.wp-block-cover:is(.alignfull), .wp-block-group:is(.alignfull)) .wp-block-columns.alignwide {
 		width: calc(840px + 10%);
 		max-width: 100%;
 		margin: 0 auto;
