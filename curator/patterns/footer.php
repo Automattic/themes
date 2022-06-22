@@ -21,13 +21,14 @@
 </p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group -->
-<div class="wp-block-group"><!-- wp:social-links {"iconColor":"foreground","iconColorValue":"var(--wp--preset--color--foreground)","iconBackgroundColor":"background","iconBackgroundColorValue":"var(--wp--preset--color--background)","openInNewTab":true,"showLabels":true,"layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":{"top":"0px","left":"0px"}}}} -->
-<ul class="wp-block-social-links has-visible-labels has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"https://instagram.com","service":"instagram"} /-->
+<!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}}} -->
+<p class="has-link-color"><a href="https://instagram.com">Instagram</a></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:social-link {"url":"https://twitter.com","service":"twitter"} /--></ul>
-<!-- /wp:social-links --></div>
+<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}}} -->
+<p class="has-link-color"><a href="https://twitter.com">Twitter</a></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
