@@ -12,23 +12,36 @@
 <div class="wp-block-group" style="padding-top:1.5rem;padding-bottom:1.5rem"><!-- wp:paragraph {"align":"left"} -->
 <p class="has-text-align-left">
   <?php
-  printf(
-    /* Translators: WordPress link. */
-    esc_html__( 'Proudly powered by %s', 'curator' ),
-    '<a href="' . esc_url( __( 'https://wordpress.org', 'curator' ) ) . '" rel="nofollow">WordPress</a>'
-  );
-  ?>
+	printf(
+		/* Translators: WordPress link. */
+		esc_html__( 'Proudly powered by %s', 'curator' ),
+		'<a href="' . esc_url( __( 'https://wordpress.org', 'curator' ) ) . '" rel="nofollow">WordPress</a>'
+	);
+	?>
 </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}}} -->
-<p class="has-link-color"><a href="https://instagram.com">Instagram</a></p>
+<p class="has-link-color">
+	<?php
+		echo(
+			'<a href="' . esc_url( __( 'https://instagram.com', 'curator' ) ) . '" rel="nofollow">' . esc_html__( 'Instagram', 'curator' ) . '</a>'
+		);
+		?>
+</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}}} -->
-<p class="has-link-color"><a href="https://twitter.com">Twitter</a></p>
+<p class="has-link-color">
+	<?php
+		echo(
+			'<a href="' . esc_url( __( 'https://twitter.com', 'curator' ) ) . '" rel="nofollow">' . esc_html__( 'Twitter', 'curator' ) . '</a>'
+		);
+		?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
+
