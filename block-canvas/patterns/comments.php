@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: blockbase/comments
+ * slug: block-canvas/comments
  * inserter: no
  */
 
