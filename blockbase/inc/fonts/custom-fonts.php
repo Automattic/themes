@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Get the CSS containing font_face values for a given slug
+ * 
+ * @return string String of CSS
+ */
 function get_style_css( $slug ) {
 	$font_face_file = get_template_directory() . '/assets/fonts/' . $slug . '/font-face.css';
 	if( ! file_exists( $font_face_file ) ) {
@@ -86,22 +91,19 @@ function extract_font_slug_from_setting( $setting ) {
 }
 
 /**
- * Provide fonts used in global styles settings.
+ * Enqeue all of the fonts used in global styles settings.
  *
  * @return void
  */
 function enqueue_global_styles_fonts() {
+	$fonts;
+	$font_css = '';
 
 	if ( is_admin() ) {
 		$fonts = collect_fonts_from_blockbase();
 	} else {
 		$fonts = collect_fonts_from_global_styles();
 	}
-	enqueue_font_styles( $fonts );
-}
-
-function enqueue_font_styles( $fonts ) {
-	$font_css = '';
 
 	foreach ( $fonts as $font ) {
 		$font_css .= get_style_css($font);
@@ -118,11 +120,41 @@ function enqueue_font_styles( $fonts ) {
 
 	// Add the styles to the stylesheet.
 	wp_add_inline_style( 'blockbase_font_faces', $font_css );
+
 }
 
+/**
+ * Enqueue all of the fonts provided by Blockbase for FSE use
+ */
+function enqueue_fse_font_styles( $fonts ) {
+	$fonts = collect_fonts_from_blockbase();
+	$font_css = '';
+
+	foreach ( $fonts as $font ) {
+		$font_css .= get_style_css($font);
+	}
+
+	wp_enqueue_style( 'wp-block-library' );
+	wp_add_inline_style( 'wp-block-library', $font_css );
+}
+
+/**
+ * Build a list of all font slugs provided by theme from theme.json
+ * 
+ * @return array Collection of all font slugs defined in the theme.json file
+ */
 function collect_fonts_from_blockbase() {
-	return ['arvo', 'cabin'];
+	$font_family_slugs = Array();
+	$global_styles = wp_get_global_styles();
+	$data = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
+	$font_families = $data['settings']['typography']['fontFamilies']['theme'];
+
+	foreach( $font_families as $font_family ) {
+		$font_family_slugs[] = $font_family['slug'];
+	}
+
+	return $font_family_slugs;
 }
 
 add_action( 'init', 'enqueue_global_styles_fonts' );
-add_action( 'admin_init', 'enqueue_editor_global_styles_fonts' );
+add_action( 'admin_init', 'enqueue_fse_font_styles' );
