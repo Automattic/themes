@@ -1,124 +1,128 @@
 <?php
 
-if ( ! class_exists( '\WP_Webfonts_Provider' ) ) {
-	return;
+function get_style_css( $slug ) {
+	$font_face_file = get_template_directory() . '/assets/fonts/' . $slug . '/font-face.css';
+	if( ! file_exists( $font_face_file ) ) {
+		return '';
+	}
+	$contents = file_get_contents( $font_face_file );
+	return str_replace( 'src: url(./', 'src: url(' . get_template_directory_uri() . '/assets/fonts/' . $slug . '/', $contents );
 }
 
 /**
- * Blockbase Font Provider
+ * Collect fonts set in Global Styles settings.
+ *
+ * @return array Font faces from Global Styles settings.
  */
-class Blockbase_Fonts_Provider extends \WP_Webfonts_Provider {
+function collect_fonts_from_global_styles() {
 
-	/**
-	 * Font provider ID.
-	 *
-	 * @var string
-	 */
-	protected $id = 'blockbase-fonts';
+	$global_styles = wp_get_global_styles();
 
-	protected function get_style_css( $family ) {
-		$contents = file_get_contents( get_template_directory() . '/assets/fonts/' . $family . '/font-face.css' );
-		return str_replace( 'src: url(./', 'src: url(' . get_template_directory_uri() . '/assets/fonts/' . $family . '/', $contents );
-	}
+	$found_webfonts = array();
 
-	/**
-	 * Gets the `@font-face` CSS styles for Blockbase Fonts.
-	 *
-	 * @return string The `@font-face` CSS.
-	 */
-	public function get_css() {
-		$css  = '';
+	// Look for fonts in block presets...
+	if ( isset( $global_styles['blocks'] ) ) {
+		foreach ( $global_styles['blocks'] as $setting ) {
+			$font_slug = extract_font_slug_from_setting( $setting );
 
-		foreach ( $this->webfonts as $webfont ) {
-			$css .= $this->get_style_css( $webfont['font-family'] );
+			if ( $font_slug ) {
+				$found_webfonts[] = $font_slug;
+			}
 		}
-
-		return $css;
 	}
 
+	// Look for fonts in HTML element presets...
+	if ( isset( $global_styles['elements'] ) ) {
+		foreach ( $global_styles['elements'] as $setting ) {
+			$font_slug = extract_font_slug_from_setting( $setting );
+
+			if ( $font_slug ) {
+				$found_webfonts[] = $font_slug;
+			}
+		}
+	}
+
+	// Check if a global typography setting was defined.
+	$font_slug = extract_font_slug_from_setting( $global_styles );
+
+	if ( $font_slug ) {
+		$found_webfonts[] = $font_slug;
+	}
+
+	return $found_webfonts;
 }
 
-// ---------- Custom Fonts ---------- //
-const BLOCKBASE_FONTS_LIST = array(
-	'arvo' => array( 'font_family' => 'Arvo'),
-	'cabin' => array( 'font_family' => 'Cabin'),
-);
+/**
+ * Extract the font family slug from a settings array.
+ *
+ * @param array $setting The settings object.
+ *
+ * @return string|null
+ */
+function extract_font_slug_from_setting( $setting ) {
+	if ( ! isset( $setting['typography']['fontFamily'] ) ) {
+		return null;
+	}
+
+	$font_family = $setting['typography']['fontFamily'];
+
+	// Full string: var(--wp--preset--font-family--slug).
+	// We do not care about the origin of the font, only its slug.
+	preg_match( '/font-family--(?P<slug>.+)\)$/', $font_family, $matches );
+
+	if ( isset( $matches['slug'] ) ) {
+		return $matches['slug'];
+	}
+
+	// Full string: var:preset|font-family|slug
+	// We do not care about the origin of the font, only its slug.
+	preg_match( '/font-family\|(?P<slug>.+)$/', $font_family, $matches );
+
+	if ( isset( $matches['slug'] ) ) {
+		return $matches['slug'];
+	}
+
+	return $font_family;
+}
 
 /**
- * Register a curated selection of Fonts.
+ * Provide fonts used in global styles settings.
  *
  * @return void
  */
-function blockbase_register_fonts() {
+function enqueue_global_styles_fonts() {
 
-	if ( ! function_exists( 'wp_register_webfont_provider' ) || ! function_exists( 'wp_register_webfonts' ) ) {
-		return;
+	if ( is_admin() ) {
+		$fonts = collect_fonts_from_blockbase();
+	} else {
+		$fonts = collect_fonts_from_global_styles();
 	}
-
-	$result = wp_register_webfont_provider( 'blockbase-fonts', 'Blockbase_Fonts_Provider' );
-
-	/**
-	 * Curated list of Fonts.
-	 */
-	$fonts_to_register = apply_filters( 'blockbase_fonts_list', BLOCKBASE_FONTS_LIST );
-
-	foreach ( $fonts_to_register as $font_settings ) {
-		$font_family = $font_settings['font_family'];
-
-		wp_register_webfonts(
-			array(
-				array(
-					'font-family'  => $font_family,
-					'font-weight'  => '100 900',
-					'font-style'   => 'normal',
-					'font-display' => 'swap',
-					'provider'     => 'blockbase-fonts',
-				),
-				array(
-					'font-family'  => $font_family,
-					'font-weight'  => '100 900',
-					'font-style'   => 'italic',
-					'font-display' => 'swap',
-					'provider'     => 'blockbase-fonts',
-				),
-			)
-		);
-	}
-
-	//TODO: Could/should this be moved out to here?
-	add_filter( 'pre_render_block', '\Automattic\Jetpack\Fonts\Introspectors\Blocks::enqueue_block_fonts', 10, 2 );
-	add_action( 'init', '\Automattic\Jetpack\Fonts\Introspectors\Global_Styles::enqueue_global_styles_fonts' );
-
+	enqueue_font_styles( $fonts );
 }
-add_action( 'after_setup_theme', 'blockbase_register_fonts' );
 
-/**
- * Automatically enqueues default blockbase theme fonts
- * TODO: Shouldn't these font resources be handled in Introspectors\Global_Styles::enqueue_global_styles_fonts? 
- *
- * @return void
- */
-function blockbase_enqueue_default_fonts() {
-	if ( ! function_exists( 'wp_enqueue_webfont' ) ) {
+function enqueue_font_styles( $fonts ) {
+	$font_css = '';
+
+	foreach ( $fonts as $font ) {
+		$font_css .= get_style_css($font);
+	}
+
+	// Bail out if there are no styles to enqueue.
+	if ( '' === $font_css ) {
 		return;
 	}
 
-	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ), 'base' );
+	// Enqueue the stylesheet.
+	wp_register_style( 'blockbase_font_faces', '' );
+	wp_enqueue_style( 'blockbase_font_faces' );
 
-	if ( ! isset( $font_settings['theme'] ) ) {
-		return;
-	}
-
-	foreach( $font_settings['theme'] as $font_setting ) {
-		if ( ! isset( $font_setting['fontSlug'] ) ) {
-			continue;
-		}
-
-		$font_slug = $font_setting['fontSlug'];
-
-		if ( $font_slug && isset( BLOCKBASE_FONTS_LIST[$font_slug] ) ) {
-			$font_family = BLOCKBASE_FONTS_LIST[$font_slug]['font_family'];
-			wp_enqueue_webfont( $font_family );
-		}
-	}
+	// Add the styles to the stylesheet.
+	wp_add_inline_style( 'blockbase_font_faces', $font_css );
 }
+
+function collect_fonts_from_blockbase() {
+	return ['arvo', 'cabin'];
+}
+
+add_action( 'init', 'enqueue_global_styles_fonts' );
+add_action( 'admin_init', 'enqueue_editor_global_styles_fonts' );

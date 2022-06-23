@@ -102,8 +102,10 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 	require get_template_directory() . '/inc/social-navigation.php';
-	require get_template_directory() . '/inc/fonts/custom-fonts.php';
 }
+
+// Font Management
+require get_template_directory() . '/inc/fonts/custom-fonts.php';
 
 // Font settings migration and deprecation message. Fonts now set in Global Styles.
 require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
