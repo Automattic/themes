@@ -84,10 +84,6 @@ function blockbase_scripts() {
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
 	}
-
-	if ( function_exists( 'blockbase_enqueue_default_fonts' ) ) {
-		blockbase_enqueue_default_fonts();
-	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
 
