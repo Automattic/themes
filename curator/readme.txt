@@ -12,6 +12,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+= 0.0.9 =
+* Curator: update footer styles (#6070)
+* Curator: update page template (#6058)
+* Themes: Remove site title text decoration from theme.json (#6122)
+* Curator: design fixes (#6125)
+* Curator: index template and styles (#6071)
+
 = 0.0.8 =
 * Curator: revise header template part (#5980)
 
