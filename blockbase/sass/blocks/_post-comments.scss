@@ -1,5 +1,7 @@
 .wp-block-post-comments {
-	label, .comment-meta {
+
+	label,
+	.comment-meta {
 		font-size: var(--wp--custom--form--label--typography--font-size);
 	}
 
@@ -10,6 +12,7 @@
 		a {
 			display: inline-block;
 			text-decoration: underline;
+
 			&:hover {
 				text-decoration: none;
 			}
@@ -21,7 +24,8 @@
 		column-gap: 1em;
 		grid-template-rows: auto;
 		grid-template-areas:
-			"misc misc"
+			"loggedin loggedin"
+			"misc1 misc2"
 			"notes notes"
 			"author author"
 			"email url"
@@ -29,7 +33,7 @@
 			"cookies-consent cookies-consent"
 			"form-submit form-submit";
 
-		input:not([type=submit]):not([type=checkbox]),
+		input:not([type="submit"]):not([type="checkbox"]),
 		textarea {
 			font-size: var(--wp--custom--font-sizes--normal);
 			background: var(--wp--custom--color--background);
@@ -41,7 +45,7 @@
 			vertical-align: top;
 		}
 
-		label:not([for=wp-comment-cookies-consent]) {
+		label:not([for="wp-comment-cookies-consent"]) {
 			font-size: var(--wp--custom--form--label--typography--font-size);
 			font-weight: var(--wp--custom--form--label--typography--font-weight);
 			letter-spacing: var(--wp--custom--form--label--typography--letter-spacing);
@@ -53,8 +57,21 @@
 			margin-top: 0;
 			margin-bottom: var(--wp--custom--gap--vertical);
 		}
+
 		& > * {
-			grid-area: misc;
+			grid-area: unset;
+		}
+
+		.logged-in-as {
+			grid-area: loggedin;
+		}
+
+		.comment-subscription-form {
+			grid-area: misc1;
+		}
+
+		.comment-subscription-form ~ p.comment-subscription-form {
+			grid-area: misc2;
 		}
 
 		.comment-notes {
@@ -86,20 +103,25 @@
 		}
 
 		.comment-form-cookies-consent {
+
 			input[type="checkbox"] {
+
 				@include hide-accesibly;
 				margin-left: 0;
+
 				& + label {
 					display: inline-block;
-					line-height: calc( var(--wp--custom--form--checkbox--unchecked--sizing--height) + 2 * var(--wp--custom--form--border--width));
+					line-height: calc(var(--wp--custom--form--checkbox--unchecked--sizing--height) + 2 * var(--wp--custom--form--border--width));
 					margin-left: 0;
-					padding-left: calc( var(--wp--custom--form--checkbox--unchecked--sizing--width) + ( var(--wp--custom--gap--baseline) / 1.5 ) );
+					padding-left: calc(var(--wp--custom--form--checkbox--unchecked--sizing--width) + ( var(--wp--custom--gap--baseline) / 1.5 ));
 					position: relative;
 				}
+
 				& + label::before,
 				& + label::after {
 					box-sizing: border-box;
 				}
+
 				& + ::before {
 					content: var(--wp--custom--form--checkbox--unchecked--content);
 					position: absolute;
@@ -109,8 +131,9 @@
 					height: var(--wp--custom--form--checkbox--unchecked--sizing--height);
 					border: var(--wp--custom--form--border--width) var(--wp--custom--form--border--style) var(--wp--custom--form--border--color);
 				}
+
 				&:checked + ::after {
-					content: var(--wp--custom--form--checkbox--checked--content);;
+					content: var(--wp--custom--form--checkbox--checked--content);
 					position: absolute;
 					top: var(--wp--custom--form--checkbox--checked--position--top);
 					left: var(--wp--custom--form--checkbox--checked--position--left);
@@ -120,7 +143,7 @@
 				}
 
 				&:focus + ::before {
-					outline: 1px dotted currentColor;
+					outline: 1px dotted currentcolor;
 					outline-offset: 2px;
 				}
 			}
@@ -128,6 +151,7 @@
 	}
 
 	.comment-reply-title {
+
 		small {
 			float: right;
 			font-size: 14px;
@@ -136,7 +160,9 @@
 
 	.commentlist {
 		margin-bottom: calc(2 * var(--wp--style--block-gap));
+
 		.comment {
+
 			p {
 				font-size: var(--wp--custom--post-comment--typography--font-size);
 				line-height: var(--wp--custom--post-comment--typography--line-height);
@@ -147,12 +173,12 @@
 	}
 
 	.comment-body {
-		margin-bottom: calc(1.5 * var( --wp--style--block-gap ));
+		margin-bottom: calc(1.5 * var(--wp--style--block-gap));
 	}
 
 	.commentmetadata {
 		margin-left: 0;
-		margin-bottom: calc(0.75 * var( --wp--style--block-gap ));
+		margin-bottom: calc(0.75 * var(--wp--style--block-gap));
 	}
 
 	.comment-awaiting-moderation {
