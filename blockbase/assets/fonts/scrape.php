@@ -40,7 +40,11 @@ foreach( $matches[0] as $match ) {
 
 	$url = $url[0];
 
-	$weight = '-' . $weight_conversion[$weight[0]];
+	if ( array_key_exists( $weight[0], $weight_conversion ) ) {
+		$weight = '-' . $weight_conversion[$weight[0]];
+	} else {
+		$weight = '-' . str_replace( ' ', '-', $weight[0] );
+	}
 
 	if($style[0] == 'normal' ) {
 		$style = '';
