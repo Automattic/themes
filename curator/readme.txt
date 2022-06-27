@@ -8,7 +8,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-
+Curator is a bold, opinionated blogging theme, heavily inspired by fashion and lifestyle magazines and websites.
+With large heavy sans-serif paired with a light elegant serif font, it sets the tone to a refined reading experience.
 
 == Changelog ==
 
