@@ -13,6 +13,14 @@ With large heavy sans-serif paired with a light elegant serif font, it sets the 
 
 == Changelog ==
 
+= 0.0.10 =
+* Add closing group. (#6126)
+* curator: home page template (#6061)
+* Add recipe pattern. (#6094)
+* Curator: add reviews pattern (#6091)
+* Curator: add paragraph with quote block pattern (#6090)
+* Curator: update screenshot and description (#6143)
+
 = 0.0.9 =
 * Curator: update footer styles (#6070)
 * Curator: update page template (#6058)
