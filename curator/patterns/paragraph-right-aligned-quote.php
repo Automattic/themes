@@ -37,7 +37,11 @@
 
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size"><?php echo esc_html( 'Unknown', 'curator' ); ?></p>
-<!-- /wp:paragraph --></div>
+<!-- /wp:paragraph -->
+
+<!-- wp:spacer {"height":"20px"} -->
+<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
