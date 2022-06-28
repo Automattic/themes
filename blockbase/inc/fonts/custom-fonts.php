@@ -54,7 +54,7 @@ function collect_fonts_from_global_styles() {
 		$found_webfonts[] = $font_slug;
 	}
 
-	return $found_webfonts;
+	return array_unique($found_webfonts);
 }
 
 /**
@@ -88,6 +88,24 @@ function extract_font_slug_from_setting( $setting ) {
 	}
 
 	return $font_family;
+}
+
+/**
+ * Build a list of all font slugs provided by theme from theme.json
+ * 
+ * @return array Collection of all font slugs defined in the theme.json file
+ */
+function collect_fonts_from_blockbase() {
+	$font_family_slugs = Array();
+	$global_styles = wp_get_global_styles();
+	$data = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
+	$font_families = $data['settings']['typography']['fontFamilies']['theme'];
+
+	foreach( $font_families as $font_family ) {
+		$font_family_slugs[] = $font_family['slug'];
+	}
+
+	return $font_family_slugs;
 }
 
 /**
@@ -136,24 +154,6 @@ function enqueue_fse_font_styles( $fonts ) {
 
 	wp_enqueue_style( 'wp-block-library' );
 	wp_add_inline_style( 'wp-block-library', $font_css );
-}
-
-/**
- * Build a list of all font slugs provided by theme from theme.json
- * 
- * @return array Collection of all font slugs defined in the theme.json file
- */
-function collect_fonts_from_blockbase() {
-	$font_family_slugs = Array();
-	$global_styles = wp_get_global_styles();
-	$data = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
-	$font_families = $data['settings']['typography']['fontFamilies']['theme'];
-
-	foreach( $font_families as $font_family ) {
-		$font_family_slugs[] = $font_family['slug'];
-	}
-
-	return $font_family_slugs;
 }
 
 add_action( 'init', 'enqueue_global_styles_fonts' );
