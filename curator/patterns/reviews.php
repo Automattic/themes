@@ -18,9 +18,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:paragraph {"fontSize":"x-large"} -->
-<p class="has-x-large-font-size"><?php echo esc_html__( 'The Fisherman', 'curator' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:heading {"level":3} -->
+<h3><?php echo esc_html__( 'The Fisherman', 'curator' ); ?></h3>
+<!-- /wp:heading -->
 
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( 'Nearly all the province of Gallura, washed by the Mediterranean on three sides, consists of mountainous tracts, with valleys intervening, similar to this of the Liscia.', 'curator' ); ?></p>
@@ -31,8 +31,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase"}}} -->
-<div class="wp-block-button" style="text-transform:uppercase"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Get Directions →', 'curator' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"medium"} -->
+<div class="wp-block-button" style="text-transform:uppercase"><a class="wp-block-button__link wp-element-button has-custom-font-size has-medium-font-size"><?php echo esc_html__( 'Get Directions →', 'curator' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -43,10 +43,10 @@
 <!-- /wp:spacer -->
 
 <!-- wp:columns {"verticalAlignment":null,"align":"wide"} -->
-<div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":""} -->
-<div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph {"fontSize":"x-large"} -->
-<p class="has-x-large-font-size"><?php echo esc_html__( 'Ramen Bar', 'curator' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-columns alignwide"><!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:heading {"level":3} -->
+<h3><?php echo esc_html__( 'Ramen Bar', 'curator' ); ?></h3>
+<!-- /wp:heading -->
 
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( 'Nearly all the province of Gallura, washed by the Mediterranean on three sides, consists of mountainous tracts, with valleys intervening, similar to this of the Liscia.', 'curator' ); ?></p>
@@ -57,8 +57,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase"}}} -->
-<div class="wp-block-button" style="text-transform:uppercase"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Get Directions →', 'curator' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"medium"} -->
+<div class="wp-block-button" style="text-transform:uppercase"><a class="wp-block-button__link wp-element-button has-custom-font-size has-medium-font-size"><?php echo esc_html__( 'Get Directions →', 'curator' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
@@ -89,9 +89,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:paragraph {"fontSize":"x-large"} -->
-<p class="has-x-large-font-size"><?php echo esc_html__( 'Home Sweet Bistro', 'curator' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%"><!-- wp:heading {"level":3} -->
+<h3><?php echo esc_html__( 'Home Sweet Bistro', 'curator' ); ?></h3>
+<!-- /wp:heading -->
 
 <!-- wp:paragraph -->
 <p><?php echo esc_html__( 'Nearly all the province of Gallura, washed by the Mediterranean on three sides, consists of mountainous tracts, with valleys intervening, similar to this of the Liscia.', 'curator' ); ?></p>
@@ -102,8 +102,8 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase"}}} -->
-<div class="wp-block-button" style="text-transform:uppercase"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Get Directions →', 'curator' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase"}},"fontSize":"medium"} -->
+<div class="wp-block-button" style="text-transform:uppercase"><a class="wp-block-button__link wp-element-button has-custom-font-size has-medium-font-size"><?php echo esc_html__( 'Get Directions →', 'curator' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
