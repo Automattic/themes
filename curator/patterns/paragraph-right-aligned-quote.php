@@ -30,8 +30,9 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":""} -->
-<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2"}},"fontSize":"x-large"} -->
-<p class="has-x-large-font-size" style="line-height:1.2"><em><?php echo esc_html__( 'Any portraits or other figures may be formed on the plate, with due proportion of light and shade.', 'curator' ); ?></em></p>
+<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2","fontStyle":"normal","fontWeight":"500"}},"fontSize":"x-large"} -->
+<p class="has-x-large-font-size" style="font-style:normal;font-weight:500;line-height:1.2">
+<em><?php echo esc_html__( 'Any portraits or other figures may be formed on the plate, with due proportion of light and shade.', 'curator' ); ?></em></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
