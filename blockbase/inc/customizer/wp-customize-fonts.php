@@ -8,13 +8,9 @@ class GlobalStylesFontsCustomizer {
 	}
 
 	function generate_deprecation_message() {
-		if ( ! defined( 'GUTENBERG_VERSION' ) || version_compare( GUTENBERG_VERSION, '13.3', '<=' ) ) {
-			return __( 'Please activate or update Gutenberg to use the custom fonts feature.', 'blockbase' );
-		}
-
 		return sprintf(
 			__( 'Updating fonts for this theme is now even easier! Use the site editor to select and preview different font families. <a href="%s">More information.</a>', 'blockbase' ),
-			__('https://wordpress.com/support/custom-fonts/')
+			__( 'https://wordpress.com/support/custom-fonts/' )
 		);
 	}
 
@@ -22,8 +18,8 @@ class GlobalStylesFontsCustomizer {
 		$wp_customize->add_section(
 			$this->section_key,
 			array(
-				'capability'  => 'edit_theme_options',
-				'title'       => __( 'Fonts', 'blockbase' ),
+				'capability' => 'edit_theme_options',
+				'title'      => __( 'Fonts', 'blockbase' ),
 			)
 		);
 
