@@ -19,10 +19,16 @@
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 
-<!-- wp:query-pagination -->
-<!-- wp:query-pagination-previous /-->
-
-<!-- wp:query-pagination-next /-->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem"}}}} -->
+<div class="wp-block-group" style="padding-top:1rem"><!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}} -->
+<!-- wp:query-pagination-numbers /-->
+<!-- wp:group {"style":{"spacing":{"blockGap":"2rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:query-pagination-previous /-->
+<!-- wp:query-pagination-next /--></div>
+<!-- /wp:group -->
 <!-- /wp:query-pagination --></div>
+<!-- /wp:group --></div>
+
+
 <!-- /wp:query --></div>
 <!-- /wp:group -->
