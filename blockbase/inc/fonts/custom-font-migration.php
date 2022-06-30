@@ -10,8 +10,6 @@ function migrate_blockbase_custom_fonts() {
 
 	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
-	die( var_dump( $font_settings ) );
-
 	// Extract font slugs from legacy data structure.
 	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
 	if ( isset( $font_settings['custom'] ) && is_array( $font_settings['custom'] ) ) {
@@ -29,8 +27,6 @@ function migrate_blockbase_custom_fonts() {
 			$body_font_slug = $font_setting['fontSlug'];
 		}
 	}
-
-	die( ':' . $body_font_slug . ':' . $heading_font_slug );
 
 	if ( ! $body_font_slug && ! $heading_font_slug ) {
 		//nothing to convert

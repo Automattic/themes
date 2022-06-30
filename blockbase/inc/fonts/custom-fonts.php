@@ -2,12 +2,12 @@
 
 /**
  * Get the CSS containing font_face values for a given slug
- * 
+ *
  * @return string String of CSS
  */
 function get_style_css( $slug ) {
 	$font_face_file = get_template_directory() . '/assets/fonts/' . $slug . '/font-face.css';
-	if( ! file_exists( $font_face_file ) ) {
+	if ( ! file_exists( $font_face_file ) ) {
 		return '';
 	}
 	$contents = file_get_contents( $font_face_file );
@@ -54,7 +54,7 @@ function collect_fonts_from_global_styles() {
 		$found_webfonts[] = $font_slug;
 	}
 
-	return array_unique($found_webfonts);
+	return array_unique( $found_webfonts );
 }
 
 /**
@@ -92,16 +92,16 @@ function extract_font_slug_from_setting( $setting ) {
 
 /**
  * Build a list of all font slugs provided by theme from theme.json
- * 
+ *
  * @return array Collection of all font slugs defined in the theme.json file
  */
 function collect_fonts_from_blockbase() {
-	$font_family_slugs = Array();
-	$global_styles = wp_get_global_styles();
-	$data = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
-	$font_families = $data['settings']['typography']['fontFamilies']['theme'];
+	$font_family_slugs = array();
+	$global_styles     = wp_get_global_styles();
+	$data              = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
+	$font_families     = $data['settings']['typography']['fontFamilies']['theme'];
 
-	foreach( $font_families as $font_family ) {
+	foreach ( $font_families as $font_family ) {
 		$font_family_slugs[] = $font_family['slug'];
 	}
 
@@ -124,7 +124,7 @@ function enqueue_global_styles_fonts() {
 	}
 
 	foreach ( $fonts as $font ) {
-		$font_css .= get_style_css($font);
+		$font_css .= get_style_css( $font );
 	}
 
 	// Bail out if there are no styles to enqueue.
@@ -145,16 +145,20 @@ function enqueue_global_styles_fonts() {
  * Enqueue all of the fonts provided by Blockbase for FSE use
  */
 function enqueue_fse_font_styles( $fonts ) {
-	$fonts = collect_fonts_from_blockbase();
+	$fonts    = collect_fonts_from_blockbase();
 	$font_css = '';
 
 	foreach ( $fonts as $font ) {
-		$font_css .= get_style_css($font);
+		$font_css .= get_style_css( $font );
 	}
 
 	wp_enqueue_style( 'wp-block-library' );
 	wp_add_inline_style( 'wp-block-library', $font_css );
 }
 
-add_action( 'init', 'enqueue_global_styles_fonts' );
-add_action( 'admin_init', 'enqueue_fse_font_styles' );
+if ( ! class_exists( '\WP_Webfonts_Provider' ) ) {
+	add_action( 'init', 'enqueue_global_styles_fonts' );
+	add_action( 'admin_init', 'enqueue_fse_font_styles' );
+} else {
+	require get_template_directory() . '/inc/fonts/blockbase-fonts-provider.php';
+}
