@@ -26,7 +26,8 @@ class Blockbase_Fonts_Provider extends \WP_Webfonts_Provider {
 		$css = '';
 
 		foreach ( $this->webfonts as $webfont ) {
-			$css .= $this->get_style_css( $webfont['font-family'] );
+			$font_slug = \WP_Webfonts::get_font_slug( $webfont['font-family'] );
+			$css      .= $this->get_style_css( $font_slug );
 		}
 
 		return $css;
@@ -75,16 +76,14 @@ function provider_enqueue_block_fonts( $content, $parsed_block ) {
  * @param string $font_family_name Name of font family.
  * @return boolean|void Whether the font family is registered, or void if WP_Webfonts is not available.
  */
-function is_font_family_registered( $font_family_name ) {
-	if ( ! function_exists( 'wp_webfonts' ) || ! method_exists( 'WP_Webfonts', 'get_font_slug' ) ) {
+function is_font_family_registered( $font_slug ) {
+	if ( ! function_exists( 'wp_webfonts' ) ) {
 		return;
 	}
 
 	$wp_webfonts = wp_webfonts();
 
-	$slug = \WP_Webfonts::get_font_slug( $font_family_name );
-
-	return isset( $wp_webfonts->get_registered_webfonts()[ $slug ] );
+	return isset( $wp_webfonts->get_registered_webfonts()[ $font_slug ] );
 }
 
 function register_blockbase_fonts_provider() {
@@ -95,7 +94,10 @@ function register_blockbase_fonts_provider() {
 
 	$result = wp_register_webfont_provider( 'blockbase-fonts', 'Blockbase_Fonts_Provider' );
 
-	add_filter( 'pre_render_block', 'provider_enqueue_block_fonts', 10, 2 );
+	// NOTE: As far as I can tell you can't assign a font-family at the individual block level
+	// which is what this logic is for.  This may someday be necessary but I don't believe it is now.
+	// add_filter( 'pre_render_block', 'provider_enqueue_block_fonts', 10, 2 );
+
 	add_action( 'init', 'provider_enqueue_global_styles_fonts' );
 }
 add_action( 'after_setup_theme', 'register_blockbase_fonts_provider' );
