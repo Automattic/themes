@@ -1,7 +1,6 @@
 <?php
 
-// Use an early priority to migrate legacy font settings before registering fonts
-add_action( 'init', 'migrate_blockbase_custom_fonts' );
+add_action( 'init', 'migrate_blockbase_custom_fonts', 99 );
 
 function migrate_blockbase_custom_fonts() {
 

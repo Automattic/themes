@@ -130,8 +130,8 @@ function register_blockbase_fonts_provider() {
 	}
 
 }
-add_action( 'init', 'register_blockbase_fonts_provider' );
-add_action( 'init', 'provider_enqueue_global_styles_fonts' );
+add_action( 'init', 'register_blockbase_fonts_provider', 100 );
+add_action( 'init', 'provider_enqueue_global_styles_fonts', 101 );
 
 // NOTE: As far as I can tell you can't assign a font-family at the individual block level
 // which is what this logic is for.  This may someday be necessary but I don't believe it is now.
