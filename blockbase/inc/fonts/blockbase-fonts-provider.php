@@ -101,32 +101,31 @@ function register_blockbase_fonts_provider() {
 	wp_register_webfont_provider( 'blockbase-fonts', 'Blockbase_Fonts_Provider' );
 
 	foreach ( $settings['typography']['fontFamilies'] as $font_families ) {
-		foreach ( $font_families as $font_family ) {
+		foreach ( $font_families as $font ) {
 
-			// Skip if fontFace is not defined.
-			if ( empty( $font_family['fontFace'] ) ) {
+			// NOTE: Implemented correctly this would then operate on a `fontFace` collection.
+			// The format of the fontface in Blockbase's theme.json is abnormal so that CORE doesn't try to process
+			// them as local files (and allowing Blockbase to manage that itself).  Therefore 'provider' is defined
+			// incorrectly.  This should be fixable in WP 6.1
+
+			// Skip if the provider isn't blockbase-fonts
+			if ( ! array_key_exists( 'provider', $font ) || ! 'blockbase-fonts' === $font['provider'] ) {
 				continue;
 			}
 
-			$font_family['fontFace'] = (array) $font_family['fontFace'];
+			$font['fontFamily'] = $font['name'];
+			unset( $font['name'] );
 
-			foreach ( $font_family['fontFace'] as $font_face ) {
-				// Skip if the provider isn't blockbase-fonts
-				if ( ! 'blockbase-fonts' === $font_face['provider'] ) {
-					continue;
+			// Convert keys to kebab-case.
+			foreach ( $font as $property => $value ) {
+				$kebab_case          = _wp_to_kebab_case( $property );
+				$font[ $kebab_case ] = $value;
+				if ( $kebab_case !== $property ) {
+					unset( $font[ $property ] );
 				}
-
-				// Convert keys to kebab-case.
-				foreach ( $font_face as $property => $value ) {
-					$kebab_case               = _wp_to_kebab_case( $property );
-					$font_face[ $kebab_case ] = $value;
-					if ( $kebab_case !== $property ) {
-						unset( $font_face[ $property ] );
-					}
-				}
-
-				wp_webfonts()->register_webfont( $font_face );
 			}
+
+			wp_webfonts()->register_webfont( $font );
 		}
 	}
 

@@ -161,9 +161,9 @@ function enqueue_fse_font_styles( $fonts ) {
 	wp_add_inline_style( 'wp-block-library', $font_css );
 }
 
-if ( ! class_exists( '\WP_Webfonts_Provider' ) ) {
+if ( class_exists( '\WP_Webfonts_Provider' ) ) {
+	require get_template_directory() . '/inc/fonts/blockbase-fonts-provider.php';
+} else {
 	add_action( 'init', 'enqueue_global_styles_fonts' );
 	add_action( 'admin_init', 'enqueue_fse_font_styles' );
-} else {
-	require get_template_directory() . '/inc/fonts/blockbase-fonts-provider.php';
 }
