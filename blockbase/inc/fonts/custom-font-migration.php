@@ -14,7 +14,7 @@ function migrate_blockbase_custom_fonts() {
 
 	// Extract font slugs from legacy data structure.
 	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
-	if ( isset( $font_settings['custom'] ) && is_array( $font_settings['custom'] ) ) {
+	if ( isset( $font_['custom'] ) && is_array( $font_settings['custom'] ) ) {
 		$font_stuff = $font_settings['custom'];
 	} else {
 		$font_stuff = $font_settings['theme'];
@@ -75,11 +75,7 @@ function migrate_blockbase_custom_fonts() {
 		);
 	}
 
-	// Set new typography settings (copy from Blockbase theme.json file)
-	$parent_theme_json_data                     = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
-	$parent_theme                               = new WP_Theme_JSON( $parent_theme_json_data );
-	$parent_font_families                       = $parent_theme->get_data()['settings']['typography']['fontFamilies'];
-	$new_settings['typography']['fontFamilies'] = $parent_font_families;
+	unset( $new_settings['typography']['fontFamilies'] );
 
 	update_global_styles( $new_settings, $new_styles, $user_custom_post_type_id, $global_styles_controller );
 }

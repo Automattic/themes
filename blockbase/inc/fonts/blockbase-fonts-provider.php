@@ -91,7 +91,7 @@ function register_blockbase_fonts_provider() {
 		return;
 	}
 
-	$settings = wp_get_global_settings();
+	$settings = gutenberg_get_global_settings();
 
 	// Bail out early if there are no settings for webfonts.
 	if ( empty( $settings['typography'] ) || empty( $settings['typography']['fontFamilies'] ) ) {

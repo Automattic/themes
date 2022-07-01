@@ -1,10 +1,13 @@
 <?php
 
-// Font Migration
-require get_template_directory() . '/inc/fonts/custom-font-migration.php';
-
-// Font settings deprecation message
-require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+// If Gutenberg is enabled there was the potential to customize fonts via the Customizer.
+// Migrate those settings (semantic fonts) to explicit font values in Global Styles
+if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+	// Font Migration
+	require get_template_directory() . '/inc/fonts/custom-font-migration.php';
+	// Font settings deprecation message
+	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+}
 
 /**
  * Get the CSS containing font_face values for a given slug
@@ -28,7 +31,12 @@ function get_style_css( $slug ) {
 function collect_fonts_from_global_styles() {
 
 	// NOTE: We have to use gutenberg_get_global_styles() here due to the potential changes to Global Styles on page load happening in font migration.
-	$global_styles = gutenberg_get_global_styles();
+	// Since core users don't have anything to migrate we can use core get_styles
+	if ( function_exists( 'gutenberg_get_global_styles' ) ) {
+		$global_styles = gutenberg_get_global_styles();
+	} else {
+		$global_styles = wp_get_global_styles();
+	}
 
 	$found_webfonts = array();
 
@@ -46,6 +54,10 @@ function collect_fonts_from_global_styles() {
 	// Look for fonts in HTML element presets...
 	if ( isset( $global_styles['elements'] ) ) {
 		foreach ( $global_styles['elements'] as $setting ) {
+
+			// die(json_encode($global_styles));
+			// NOTE: It seems that the Global Styles assignment of fonts writes the font family string rather than the
+			// global styles shorthand that is assigned to the body.  This should be confirmed and reported if it isn't already.
 			$font_slug = extract_font_slug_from_setting( $setting );
 
 			if ( $font_slug ) {
@@ -98,16 +110,32 @@ function extract_font_slug_from_setting( $setting ) {
 }
 
 /**
- * Build a list of all font slugs provided by theme from theme.json
+ * Build a list of all font slugs provided by Blockbase from theme.json
  *
  * @return array Collection of all font slugs defined in the theme.json file
  */
 function collect_fonts_from_blockbase() {
 	$font_family_slugs = array();
-	$font_families     = gutenberg_get_global_settings( array( 'typography' )['fontFamilies'] );
 
-	foreach ( $font_families as $font_family ) {
-		$font_family_slugs[] = $font_family['slug'];
+	// It would be nice to be able to get the global settings of the PARENT theme.
+	// As it stands we can only get the values of the THEME but those are parent/child combined
+	// The only sure way to get the values is directly from the file.
+	if ( function_exists( 'gutenberg_get_global_settings' ) ) {
+		$font_families = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	} else {
+		$font_families = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	}
+	if ( isset( $font_families['custom'] ) && is_array( $font_families['custom'] ) ) {
+		$font_families = $font_families['custom'];
+	} else {
+		$font_families = $font_families['theme'];
+	}
+
+	foreach ( $font_families as $font ) {
+		// Only pick it up if we're claiming it as ours to manage
+		if ( array_key_exists( 'provider', $font ) && 'blockbase-fonts' === $font['provider'] ) {
+			$font_family_slugs[] = $font['slug'];
+		}
 	}
 
 	return $font_family_slugs;
@@ -161,6 +189,8 @@ function enqueue_fse_font_styles( $fonts ) {
 	wp_add_inline_style( 'wp-block-library', $font_css );
 }
 
+// If we have a Webfonts Provider then leverage a Custom Fonts Provider
+// Otherwise we'll enqueu the necessary font faces manually.
 if ( class_exists( '\WP_Webfonts_Provider' ) ) {
 	require get_template_directory() . '/inc/fonts/blockbase-fonts-provider.php';
 } else {
