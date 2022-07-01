@@ -8,7 +8,9 @@ function migrate_blockbase_custom_fonts() {
 	$heading_font_slug = null;
 	$body_font_slug    = null;
 
-	$font_settings = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	// Here we must use gutenberg_get_global_* because it introduces clean_cached_data() which we
+	// need to leverage as we are modifying the values of global styles settings and styles on page load.
+	$font_settings = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
 
 	// Extract font slugs from legacy data structure.
 	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
@@ -99,10 +101,13 @@ function update_global_styles( $new_settings, $new_styles, $user_custom_post_typ
 	$update_request->set_param( 'styles', $new_styles );
 
 	$global_styles_controller->update_item( $update_request );
+
+	// Ideally the call to update_item would delete all of the appropriate transients and caches
 	delete_transient( 'global_styles' );
 	delete_transient( 'global_styles_' . get_stylesheet() );
 	delete_transient( 'gutenberg_global_styles' );
 	delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
+	WP_Theme_JSON_Resolver_Gutenberg::clean_cached_data();
 }
 
 /**

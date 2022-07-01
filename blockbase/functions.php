@@ -94,14 +94,9 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
 	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
 	require get_template_directory() . '/inc/social-navigation.php';
+	require get_template_directory() . '/inc/fonts/custom-fonts.php';
 }
 
-// Font Migration
-require get_template_directory() . '/inc/fonts/custom-font-migration.php';
-// Font settings deprecation message
-require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
-// Font Management
-require get_template_directory() . '/inc/fonts/custom-fonts.php';
 
 
 // Force menus to reload

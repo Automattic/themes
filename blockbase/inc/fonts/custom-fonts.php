@@ -1,5 +1,11 @@
 <?php
 
+// Font Migration
+require get_template_directory() . '/inc/fonts/custom-font-migration.php';
+
+// Font settings deprecation message
+require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+
 /**
  * Get the CSS containing font_face values for a given slug
  *
@@ -21,7 +27,8 @@ function get_style_css( $slug ) {
  */
 function collect_fonts_from_global_styles() {
 
-	$global_styles = wp_get_global_styles();
+	// NOTE: We have to use gutenberg_get_global_styles() here due to the potential changes to Global Styles on page load happening in font migration.
+	$global_styles = gutenberg_get_global_styles();
 
 	$found_webfonts = array();
 
@@ -97,9 +104,7 @@ function extract_font_slug_from_setting( $setting ) {
  */
 function collect_fonts_from_blockbase() {
 	$font_family_slugs = array();
-	$global_styles     = wp_get_global_styles();
-	$data              = WP_Theme_JSON_Resolver::get_merged_data()->get_raw_data();
-	$font_families     = $data['settings']['typography']['fontFamilies']['theme'];
+	$font_families     = gutenberg_get_global_settings( array( 'typography' )['fontFamilies'] );
 
 	foreach ( $font_families as $font_family ) {
 		$font_family_slugs[] = $font_family['slug'];
