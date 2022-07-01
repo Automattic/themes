@@ -18,7 +18,7 @@ class Blockbase_Fonts_Provider extends \WP_Webfonts_Provider {
 	}
 
 	/**
-	 * Gets the `@font-face` CSS styles for Blockbase Fonts.
+	 * Gets the `@font-face` CSS styles for enqueued Blockbase Fonts.
 	 *
 	 * @return string The `@font-face` CSS.
 	 */
@@ -44,7 +44,6 @@ function provider_enqueue_global_styles_fonts() {
 
 	foreach ( $global_styles_fonts as $font ) {
 		$font_is_registered = is_font_family_registered( $font );
-
 		if ( $font_is_registered ) {
 			wp_enqueue_webfont( $font );
 		}
@@ -92,7 +91,44 @@ function register_blockbase_fonts_provider() {
 		return;
 	}
 
-	$result = wp_register_webfont_provider( 'blockbase-fonts', 'Blockbase_Fonts_Provider' );
+	$settings = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
+
+	// Bail out early if there are no settings for webfonts.
+	if ( empty( $settings['typography'] ) || empty( $settings['typography']['fontFamilies'] ) ) {
+		return;
+	}
+
+	wp_register_webfont_provider( 'blockbase-fonts', 'Blockbase_Fonts_Provider' );
+
+	foreach ( $settings['typography']['fontFamilies'] as $font_families ) {
+		foreach ( $font_families as $font_family ) {
+
+			// Skip if fontFace is not defined.
+			if ( empty( $font_family['fontFace'] ) ) {
+				continue;
+			}
+
+			$font_family['fontFace'] = (array) $font_family['fontFace'];
+
+			foreach ( $font_family['fontFace'] as $font_face ) {
+				// Skip if the provider isn't blockbase-fonts
+				if ( ! 'blockbase-fonts' === $font_face['provider'] ) {
+					continue;
+				}
+
+				// Convert keys to kebab-case.
+				foreach ( $font_face as $property => $value ) {
+					$kebab_case               = _wp_to_kebab_case( $property );
+					$font_face[ $kebab_case ] = $value;
+					if ( $kebab_case !== $property ) {
+						unset( $font_face[ $property ] );
+					}
+				}
+
+				wp_webfonts()->register_webfont( $font_face );
+			}
+		}
+	}
 
 	// NOTE: As far as I can tell you can't assign a font-family at the individual block level
 	// which is what this logic is for.  This may someday be necessary but I don't believe it is now.
