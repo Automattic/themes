@@ -91,7 +91,7 @@ function register_blockbase_fonts_provider() {
 		return;
 	}
 
-	$settings = WP_Theme_JSON_Resolver::get_merged_data()->get_settings();
+	$settings = wp_get_global_settings();
 
 	// Bail out early if there are no settings for webfonts.
 	if ( empty( $settings['typography'] ) || empty( $settings['typography']['fontFamilies'] ) ) {
@@ -130,10 +130,10 @@ function register_blockbase_fonts_provider() {
 		}
 	}
 
-	// NOTE: As far as I can tell you can't assign a font-family at the individual block level
-	// which is what this logic is for.  This may someday be necessary but I don't believe it is now.
-	// add_filter( 'pre_render_block', 'provider_enqueue_block_fonts', 10, 2 );
-
-	add_action( 'init', 'provider_enqueue_global_styles_fonts' );
 }
-add_action( 'after_setup_theme', 'register_blockbase_fonts_provider' );
+add_action( 'init', 'register_blockbase_fonts_provider' );
+add_action( 'init', 'provider_enqueue_global_styles_fonts' );
+
+// NOTE: As far as I can tell you can't assign a font-family at the individual block level
+// which is what this logic is for.  This may someday be necessary but I don't believe it is now.
+// add_filter( 'pre_render_block', 'provider_enqueue_block_fonts', 10, 2 );
