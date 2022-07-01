@@ -14,7 +14,7 @@ function migrate_blockbase_custom_fonts() {
 
 	// Extract font slugs from legacy data structure.
 	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
-	if ( isset( $font_['custom'] ) && is_array( $font_settings['custom'] ) ) {
+	if ( isset( $font_settings['custom'] ) && is_array( $font_settings['custom'] ) ) {
 		$font_stuff = $font_settings['custom'];
 	} else {
 		$font_stuff = $font_settings['theme'];
