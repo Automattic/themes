@@ -1,13 +1,10 @@
 <?php
 
-// If Gutenberg is enabled there was the potential to customize fonts via the Customizer.
-// Migrate those settings (semantic fonts) to explicit font values in Global Styles
-if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-	// Font Migration
-	require get_template_directory() . '/inc/fonts/custom-font-migration.php';
-	// Font settings deprecation message
-	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
-}
+// Font settings deprecation message
+require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
+
+// Font Migration
+require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
 /**
  * Get the CSS containing font_face values for a given slug

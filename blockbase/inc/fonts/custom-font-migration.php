@@ -10,7 +10,12 @@ function migrate_blockbase_custom_fonts() {
 
 	// Here we must use gutenberg_get_global_* because it introduces clean_cached_data() which we
 	// need to leverage as we are modifying the values of global styles settings and styles on page load.
-	$font_families = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	if ( function_exists( 'gutenberg_get_global_settings' ) ) {
+		$font_families = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	} else {
+		$font_families = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	}
+
 	if ( isset( $font_families['custom'] ) && is_array( $font_families['custom'] ) ) {
 		$font_families = $font_families['custom'];
 	} else {
@@ -117,7 +122,10 @@ function update_global_styles( $new_settings, $new_styles ) {
 	delete_transient( 'global_styles_' . get_stylesheet() );
 	delete_transient( 'gutenberg_global_styles' );
 	delete_transient( 'gutenberg_global_styles_' . get_stylesheet() );
-	WP_Theme_JSON_Resolver_Gutenberg::clean_cached_data();
+
+	if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
+		WP_Theme_JSON_Resolver_Gutenberg::clean_cached_data();
+	}
 }
 
 /**
