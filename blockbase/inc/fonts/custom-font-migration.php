@@ -4,44 +4,49 @@ add_action( 'init', 'migrate_blockbase_custom_fonts', 99 );
 
 function migrate_blockbase_custom_fonts() {
 
-	$heading_font_slug = null;
-	$body_font_slug    = null;
+	$heading_font_slug              = null;
+	$body_font_slug                 = null;
+	$blockbase_provider_fonts_count = 0;
 
 	// Here we must use gutenberg_get_global_* because it introduces clean_cached_data() which we
 	// need to leverage as we are modifying the values of global styles settings and styles on page load.
-	$font_settings = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
-
-	// Extract font slugs from legacy data structure.
-	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
-	if ( isset( $font_settings['custom'] ) && is_array( $font_settings['custom'] ) ) {
-		$font_stuff = $font_settings['custom'];
+	$font_families = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
+	if ( isset( $font_families['custom'] ) && is_array( $font_families['custom'] ) ) {
+		$font_families = $font_families['custom'];
 	} else {
-		$font_stuff = $font_settings['theme'];
+		$font_families = $font_families['theme'];
 	}
 
-	foreach ( $font_stuff as $font_setting ) {
-		if ( strpos( $font_setting['slug'], 'heading' ) !== false && array_key_exists( 'fontSlug', $font_setting ) ) {
-			$heading_font_slug = $font_setting['fontSlug'];
+	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
+	// Also count fonts registerd to the blockbase font provider
+	foreach ( $font_families as $font_family ) {
+		if ( strpos( $font_family['slug'], 'heading' ) !== false && array_key_exists( 'fontSlug', $font_family ) ) {
+			$heading_font_slug = $font_family['fontSlug'];
 		}
-
-		if ( strpos( $font_setting['slug'], 'body' ) !== false && array_key_exists( 'fontSlug', $font_setting ) ) {
-			$body_font_slug = $font_setting['fontSlug'];
+		if ( strpos( $font_family['slug'], 'body' ) !== false && array_key_exists( 'fontSlug', $font_family ) ) {
+			$body_font_slug = $font_family['fontSlug'];
+		}
+		if ( array_key_exists( 'provider', $font_family ) && 'blockbase-fonts' === $font_family['provider'] ) {
+			$blockbase_provider_fonts_count++;
 		}
 	}
 
-	if ( ! $body_font_slug && ! $heading_font_slug ) {
+	if ( ! $body_font_slug && ! $heading_font_slug && $blockbase_provider_fonts_count > 0 ) {
 		//nothing to convert
 		return;
 	}
 
-	// Get the user's global styles CPT id
-	$user_custom_post_type_id = WP_Theme_JSON_Resolver::get_user_global_styles_post_id();
-	$global_styles_controller = new WP_REST_Global_Styles_Controller();
-	$global_styles            = fetch_global_styles( $user_custom_post_type_id, $global_styles_controller );
+	$theme_user_data = WP_Theme_JSON_Resolver::get_user_data()->get_raw_data();
 
-	// converts data to array (in some cases settings and styles are objects insted of arrays)
-	$new_settings = (array) $global_styles->data['settings'];
-	$new_styles   = (array) $global_styles->data['styles'];
+	$new_settings = array();
+	$new_styles   = array();
+
+	if ( array_key_exists( 'settings', $theme_user_data ) ) {
+		$new_settings = $theme_user_data['settings'];
+	}
+	if ( array_key_exists( 'styles', $theme_user_data ) ) {
+		$new_styles = $theme_user_data['styles'];
+	}
 
 	if ( $body_font_slug ) {
 		$new_styles = array_merge(
@@ -74,9 +79,15 @@ function migrate_blockbase_custom_fonts() {
 		);
 	}
 
-	unset( $new_settings['typography']['fontFamilies'] );
+	if ( 0 === $blockbase_provider_fonts_count ) {
+		// Set new typography settings (copy from Blockbase theme.json file)
+		$parent_theme_json_data                     = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
+		$parent_theme                               = new WP_Theme_JSON( $parent_theme_json_data );
+		$parent_font_families                       = $parent_theme->get_data()['settings']['typography']['fontFamilies'];
+		$new_settings['typography']['fontFamilies'] = $parent_font_families;
+	}
 
-	update_global_styles( $new_settings, $new_styles, $user_custom_post_type_id, $global_styles_controller );
+	update_global_styles( $new_settings, $new_styles );
 }
 
 /**
@@ -89,7 +100,11 @@ function migrate_blockbase_custom_fonts() {
  *
  * @return void
  */
-function update_global_styles( $new_settings, $new_styles, $user_custom_post_type_id, $global_styles_controller ) {
+function update_global_styles( $new_settings, $new_styles ) {
+	// Get the user's global styles CPT id
+	$user_custom_post_type_id = WP_Theme_JSON_Resolver::get_user_global_styles_post_id();
+	$global_styles_controller = new WP_REST_Global_Styles_Controller();
+
 	$update_request = new WP_REST_Request( 'PUT', '/wp/v2/global-styles/' );
 	$update_request->set_param( 'id', $user_custom_post_type_id );
 	$update_request->set_param( 'settings', $new_settings );
