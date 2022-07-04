@@ -13,6 +13,10 @@ With large heavy sans-serif paired with a light elegant serif font, it sets the 
 
 == Changelog ==
 
+= 0.0.11 =
+* Adding query pagination to post-grid pattern (#6144)
+* Compress images. (#6145)
+
 = 0.0.10 =
 * Add closing group. (#6126)
 * curator: home page template (#6061)

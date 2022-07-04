@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.10 =
+* Further compress palais du gouverneur image (#6148)
+
 = 1.0.9 =
 * Themes: Remove site title text decoration from theme.json (#6122)
 
