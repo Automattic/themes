@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.11 =
+* Archeo: Try using button as an element (#5849)
+
 = 1.0.10 =
 * Further compress palais du gouverneur image (#6148)
 
