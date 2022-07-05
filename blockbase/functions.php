@@ -27,13 +27,15 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 			)
 		);
 
-		// Register two nav menus
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
-			)
-		);
+		// Register two nav menus if Gutenberg is activated (otherwise the __experimentalMenuLocation attribute isn't available)
+		if ( defined( 'IS_GUTENBERG_PLUGIN' ) ) {
+			register_nav_menus(
+				array(
+					'primary' => __( 'Primary Navigation', 'blockbase' ),
+					'social' => __( 'Social Navigation', 'blockbase' )
+				)
+			);
+		}
 
 		add_filter(
 			'block_editor_settings_all',

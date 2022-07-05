@@ -13,8 +13,21 @@ function blockbase_condition_to_render_social_menu( $block_content, $block ) {
 		return false;
 	}
 
-	// The block should have a social links attribute.
-	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
+	// The block should have an unstable location attribute.
+	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
+		return false;
+	}
+
+	// The block should be empty (no custom menu assigned)
+	if ( ! empty($block['attrs']['navigationMenuId']) || ! empty($block['attrs']['ref']) ) {
+		return false;
+	}
+	
+	// The block should have the class 'social-links'.
+	if ( empty( $block['attrs']['className'] ) ) {
+		return false;
+	}
+	if ( ! str_contains( $block['attrs']['className'], 'social-links' ) ) {
 		return false;
 	}
 
@@ -31,11 +44,8 @@ function blockbase_theme_has_navigation_social_links_settings( $theme_data ) {
 }
 
 function get_social_menu_as_social_links_block( $block ) {
-	if ( empty( $block['attrs']['__unstableSocialLinks'] ) ) {
-		return false;
-	}
 
-	$social_links_location = $block['attrs']['__unstableSocialLinks'];
+	$social_links_location = 'social';
 	$nav_menu_locations    = get_nav_menu_locations();
 	$social_menu_id        = $nav_menu_locations[ $social_links_location ];
 	$class_name            = 'is-style-logos-only';
