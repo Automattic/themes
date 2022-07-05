@@ -13,6 +13,9 @@ With large heavy sans-serif paired with a light elegant serif font, it sets the 
 
 == Changelog ==
 
+= 0.0.13 =
+* Curator: add mobile menu styling (#6146)
+
 = 0.0.12 =
 * Curator: fix issue with link focus state (#6151)
 
