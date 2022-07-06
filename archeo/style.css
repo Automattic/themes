@@ -7,7 +7,7 @@ Description: A theme inspired by Mayan history and culture
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 1.0.10
+Version: 1.0.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: archeo
@@ -41,7 +41,6 @@ body {
  */
 
 a {
-	color: var(--wp--preset--color--foreground);
 	text-decoration-thickness: 0.075ex;
 	text-underline-offset: 0.125em;
 }
@@ -77,6 +76,16 @@ a:active,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Outline block button needs a padding tweak so it's the same size of normal buttons
+ * https://github.com/WordPress/gutenberg/issues/27476
+ */
+.is-style-outline > :where(.wp-block-button__link), 
+:where(.wp-block-button__link).is-style-outline {
+	padding-top: 0.667em;
+	padding-bottom: 0.667em;
 }
 
 /*
