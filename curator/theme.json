@@ -194,21 +194,6 @@
 	},
 	"styles": {
 		"blocks": {
-			"core/button": {
-				"border": {
-					"radius": "0"
-				},
-				"color": {
-					"background": "transparent",
-					"text": "var(--wp--preset--color--foreground)"
-				},
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
-					"fontSize": "var(--wp--custom--button--typography--font-size)",
-					"fontWeight": "900",
-					"lineHeight": "1"
-				}
-			},
 			"core/code": {
 				"border": {
 					"color": "#CCCCCC",
@@ -420,6 +405,16 @@
 						"border": {
 							"color": "var(--wp--preset--color--primary)",
 							"width": "1px"
+						},
+						"color": {
+							"background": "var(--wp--preset--color--primary)",
+							"text": "var(--wp--preset--color--background)"
+						},
+						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--heading-font)",
+							"fontSize": "var(--wp--custom--button--typography--font-size)",
+							"fontWeight": "900",
+							"lineHeight": "1"
 						}
 					}
 				}
@@ -451,6 +446,34 @@
 						}
 					}
 				}
+			},
+			"core/file": {
+				"elements": {
+					"button": {
+						"border": {
+							"width": "0"
+						},
+						"color": {
+							"text": "var(--wp--preset--color--background)",
+							"background": "var(--wp--preset--color--primary)"
+						}
+					}
+				}
+			},
+			"core/post-comments-form": {
+				"elements": {
+					"button": {
+						"border": {
+							"width": 0
+						},
+						"spacing": {
+							"padding": {
+								"left": 0,
+								"right": 0
+							}
+						}
+					}
+				}
 			}
 		},
 		"color": {
@@ -458,6 +481,27 @@
 			"text": "var(--wp--preset--color--foreground)"
 		},
 		"elements": {
+			"button": {
+				"border": {
+					"color": "var(--wp--preset--color--foreground)",
+					"style": "solid",
+					"width": "1px",
+					"radius": 0
+				},
+				"color": {
+					"background": "var(--wp--preset--color--background)",
+					"text": "var(--wp--preset--color--foreground)"
+				},
+				"spacing": {
+					"padding": "calc(0.667em + 2px) calc(1.333em + 2px)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading-font)",
+					"fontSize": "var(--wp--custom--button--typography--font-size)",
+					"fontWeight": "900",
+					"lineHeight": "1"
+				}
+			},
 			"h1": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--heading-font)",
