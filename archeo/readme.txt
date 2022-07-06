@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.12 =
+* [Test] Archeo link interactivity states (#6101)
+
 = 1.0.11 =
 * Archeo: Try using button as an element (#5849)
 

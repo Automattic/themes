@@ -13,6 +13,9 @@ With large heavy sans-serif paired with a light elegant serif font, it sets the 
 
 == Changelog ==
 
+= 0.0.14 =
+* Curator: revise search template (#6160)
+
 = 0.0.13 =
 * Curator: add mobile menu styling (#6146)
 
