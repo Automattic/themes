@@ -13,6 +13,9 @@ With large heavy sans-serif paired with a light elegant serif font, it sets the 
 
 == Changelog ==
 
+= 0.0.15 =
+* Use search block instead of pattern. (#6165)
+
 = 0.0.14 =
 * Curator: revise search template (#6160)
 
