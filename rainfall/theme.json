@@ -107,6 +107,10 @@
 				}
 			}
 		},
+		"color": {
+			"text": "var(--wp--preset--color--black)",
+			"background": "var(--wp--preset--color--white)"
+		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--helvetica-neue)",
 			"lineHeight": "1.6"
@@ -117,7 +121,12 @@
 					"radius": "0"
 				},
 				"color": {
-					"background": "black"
+					"text": {
+						"ref": "styles.color.background"
+					},
+					"background": {
+						"ref": "styles.color.text"
+					}
 				},
 				"spacing": {
 					"padding": {
@@ -125,6 +134,27 @@
 						"right": "33",
 						"bottom": "18",
 						"top": "18"
+					}
+				},
+				"//": "Pseudo-classes need to be implemented for buttons",
+				":hover": {
+					"color": {
+						"background": {
+							"ref": "styles.elements.link.:hover.color.text"
+						},
+						"text": {
+							"ref": "styles.color.background"
+						}
+					}
+				},
+				":active": {
+					"color": {
+						"background": {
+							"ref": "styles.elements.link.:active.color.text"
+						},
+						"text": {
+							"ref": "styles.color.background"
+						}
 					}
 				}
 			},
@@ -177,7 +207,9 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--black)"
+					"text": {
+						"ref": "styles.color.text"
+					}
 				},
 				"typography": {
 					"textDecoration": "underline"
