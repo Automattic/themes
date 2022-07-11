@@ -18,16 +18,16 @@
 <p class="has-small-font-size"><?php echo esc_html__( 'Prep Time: 11 mins · Servings: 2', 'curator' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"2"}},"fontSize":"x-large","fontFamily":"body-font"} -->
-<h2 class="has-body-font-font-family has-x-large-font-size" style="font-style:normal;font-weight:300;line-height:2"><?php echo esc_html__( 'Ingredients', 'curator' ); ?></h2>
+<!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"2"}},"fontSize":"x-large","fontFamily":"petrona"} -->
+<h2 class="has-petrona-font-family has-x-large-font-size" style="font-style:normal;font-weight:300;line-height:2"><?php echo esc_html__( 'Ingredients', 'curator' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
 <p><em><?php echo esc_html__( '1/4 cup old-fashioned oats or quick oats', 'curator' ); ?><br><?php echo esc_html__( '1 banana chopped into chunks and frozen', 'curator' ); ?><br><?php echo esc_html__( '1/2 cup unsweetened almond milk', 'curator' ); ?><br><?php echo esc_html__( '1 tablespoon creamy peanut butter', 'curator' ); ?><br><?php echo esc_html__( '1/2 tablespoon pure maple syrup plus additional to taste', 'curator' ); ?><br><?php echo esc_html__( '1/2 teaspoon pure vanilla extract', 'curator' ); ?><br><?php echo esc_html__( '1/2 teaspoon ground cinnamon', 'curator' ); ?><br><?php echo esc_html__( '1/8 teaspoon kosher salt', 'curator' ); ?><br><?php echo esc_html__( 'Ice (optional)', 'curator' ); ?></em></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"2"}},"fontSize":"x-large","fontFamily":"body-font"} -->
-<h2 class="has-body-font-font-family has-x-large-font-size" style="font-style:normal;font-weight:300;line-height:2"><?php echo esc_html__( 'Preparation', 'curator' ); ?></h2>
+<!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"2"}},"fontSize":"x-large","fontFamily":"petrona"} -->
+<h2 class="has-petrona-font-family has-x-large-font-size" style="font-style:normal;font-weight:300;line-height:2"><?php echo esc_html__( 'Preparation', 'curator' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
