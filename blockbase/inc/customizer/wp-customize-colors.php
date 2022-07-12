@@ -23,9 +23,19 @@ class GlobalStylesColorCustomizer {
 			$this->section_key . '-migration-notice',
 			array(
 				'type'        => 'hidden',
-				'description' => '<div class="notice notice-warning">
-				<p>' . __( 'Color customization is now available exclusively in the Full Site Editor Global Styles panel.  (Colors>Palette>⋮>Edit Colors) <br><br>Featured Palettes can now be found in the Full Site Editor as Theme Variations. (Browse Styles)', 'blockbase' ) . '</p>
+				'description' => '<div class="notice notice-info">
+				<p>' . __( 'Color customization for this theme is now available exclusively in the Full Site Editor Global Styles panel.<br><br>Featured Palettes can now be found in the Full Site Editor as Theme Variations.', 'blockbase' ) . '</p>
 				</div>',
+				'settings'    => array(),
+				'section'     => $this->section_key,
+			)
+		);
+
+		$wp_customize->add_control(
+			$this->section_key . '-site-editor-button',
+			array(
+				'type'        => 'hidden',
+				'description' => sprintf( '<a class="button button-primary" href=%s style="font-style: normal;" >Use Site Editor</a>', esc_url( admin_url( 'site-editor.php?styles=open' ) ) ),
 				'settings'    => array(),
 				'section'     => $this->section_key,
 			)
