@@ -8,7 +8,7 @@ Description: Seedlet is a free WordPress theme. A two-column layout and classica
 Requires at least: 5.5
 Tested up to: 5.5
 Requires PHP: 5.6.2
-Version: 1.1.19-wpcom
+Version: 1.1.16-wpcom
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: seedlet
@@ -928,7 +928,9 @@ body {
 
 a {
 	color: var(--wp--style--color--link, var(--global--color-primary));
-	text-decoration: underline 1px var(--global--color-secondary);
+	text-decoration-color: var(--global--color-secondary);
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
 	text-underline-offset: 0.3em;
 	transition: text-decoration 0.1s ease-out;
 }
