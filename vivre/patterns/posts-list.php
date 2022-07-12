@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts list
- * Slug: curator/posts-list
+ * Slug: vivre/posts-list
  * Inserter: no
  */
 

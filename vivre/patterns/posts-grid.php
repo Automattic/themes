@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts grid
- * Slug: curator/posts-grid
+ * Slug: vivre/posts-grid
  * Categories: featured, query
  */
 ?>

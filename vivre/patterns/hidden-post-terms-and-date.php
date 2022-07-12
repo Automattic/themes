@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Tags and date
- * Slug: curator/post-terms-and-date
+ * Slug: vivre/post-terms-and-date
  * Inserter: no
  */
 
