@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.4 =
+* Pendant: Removing default text decoration for link elements (#6178)
+
 = 1.0.3 =
 * fix site-title alignment with multiple social icons (#6040)
 
