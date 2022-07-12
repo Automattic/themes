@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Recent posts
- * Slug: curator/recent-posts
+ * Slug: vivre/recent-posts
  * Categories: query
  */
 
@@ -10,7 +10,7 @@
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"2rem","bottom":"3rem"}}}} -->
 <div class="wp-block-group alignwide" style="padding-top:2rem;padding-bottom:3rem">
 <!-- wp:heading {"level":6} -->
-<h6><?php echo esc_html__( 'Recent posts', 'curator' ); ?></h6>
+<h6><?php echo esc_html__( 'Recent posts', 'vivre' ); ?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"perPage":3}} -->

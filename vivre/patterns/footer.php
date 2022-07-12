@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: curator/footer
+ * Slug: vivre/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -14,8 +14,8 @@
   <?php
 	printf(
 		/* Translators: WordPress link. */
-		esc_html__( 'Proudly powered by %s', 'curator' ),
-		'<a href="' . esc_url( __( 'https://wordpress.org', 'curator' ) ) . '" rel="nofollow">WordPress</a>'
+		esc_html__( 'Proudly powered by %s', 'vivre' ),
+		'<a href="' . esc_url( __( 'https://wordpress.org', 'vivre' ) ) . '" rel="nofollow">WordPress</a>'
 	);
 	?>
 </p>
@@ -26,7 +26,7 @@
 <p class="has-link-color">
 	<?php
 		echo(
-			'<a href="' . esc_url( __( 'https://instagram.com', 'curator' ) ) . '" rel="nofollow">' . esc_html__( 'Instagram', 'curator' ) . '</a>'
+			'<a href="' . esc_url( __( 'https://instagram.com', 'vivre' ) ) . '" rel="nofollow">' . esc_html__( 'Instagram', 'vivre' ) . '</a>'
 		);
 		?>
 </p>
@@ -36,7 +36,7 @@
 <p class="has-link-color">
 	<?php
 		echo(
-			'<a href="' . esc_url( __( 'https://twitter.com', 'curator' ) ) . '" rel="nofollow">' . esc_html__( 'Twitter', 'curator' ) . '</a>'
+			'<a href="' . esc_url( __( 'https://twitter.com', 'vivre' ) ) . '" rel="nofollow">' . esc_html__( 'Twitter', 'vivre' ) . '</a>'
 		);
 		?>
 </p>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Post Comments
- * Slug: curator/post-comments
+ * Slug: vivre/post-comments
  * Inserter: no
  */
 

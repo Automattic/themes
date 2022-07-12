@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Single Post Hero
- * Slug: curator/post-hero
+ * Slug: vivre/post-hero
  * Inserter: no
  */
 

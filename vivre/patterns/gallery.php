@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Gallery
- * Slug: curator/gallery
+ * Slug: vivre/gallery
  * Categories: gallery
  */
 
@@ -10,7 +10,7 @@
 <!-- wp:group -->
 <div class="wp-block-group">
 <!-- wp:heading {"level":6} -->
-<h6><?php echo esc_html__( 'Recent photos', 'curator' ); ?></h6>
+<h6><?php echo esc_html__( 'Recent photos', 'vivre' ); ?></h6>
 <!-- /wp:heading -->
 
 <!-- wp:query {"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"perPage":2},"displayLayout":{"type":"flex","columns":2}} -->

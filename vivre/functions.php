@@ -1,24 +1,24 @@
 <?php
 /**
- * Curator functions and definitions
+ * Vivre functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Curator
- * @since Curator 1.0
+ * @package Vivre
+ * @since Vivre 1.0
  */
 
 
-if ( ! function_exists( 'curator_support' ) ) :
+if ( ! function_exists( 'vivre_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Curator 1.0
+	 * @since Vivre 1.0
 	 *
 	 * @return void
 	 */
-	function curator_support() {
+	function vivre_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -27,32 +27,32 @@ if ( ! function_exists( 'curator_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'curator_support' );
+add_action( 'after_setup_theme', 'vivre_support' );
 
-if ( ! function_exists( 'curator_styles' ) ) :
+if ( ! function_exists( 'vivre_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Curator 1.0
+	 * @since Vivre 1.0
 	 *
 	 * @return void
 	 */
-	function curator_styles() {
+	function vivre_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'curator-style',
+			'vivre-style',
 			get_template_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'curator-style' );
+		wp_enqueue_style( 'vivre-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'curator_styles' );
+add_action( 'wp_enqueue_scripts', 'vivre_styles' );
