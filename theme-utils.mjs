@@ -970,7 +970,27 @@ async function syncPremiumTheme(theme) {
 	}
 }
 
+async function repositoryExists(repository) {
+	try {
+		await executeOnSandbox(`
+			git ls-remote ${repository}
+		`, true);
+		return true;
+	} catch(e) {
+		if (e.indexOf('ERROR: Repository not found') === -1) {
+			throw new Error('Unknow error verifing if the repository exists!');
+		}
+
+		return false;
+	}
+}
+
 async function pullPremiumTheme(theme) {
+	const repoExists = await repositoryExists(`git@github.com:Automattic/theme-${theme}.git`);
+	if (!repoExists) {
+		console.error(`Repository git@github.com:Automattic/theme-${theme}.git could not be found.`);
+		return;
+	}
 	if (!theme) {
 		console.error('Invalid theme!')
 		return null;
