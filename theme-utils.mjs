@@ -85,6 +85,11 @@ const commands = {
 		helpText: 'Use rsync to copy any changed public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
 		run: pullCoreThemes
 	},
+	"pull-premium-theme": {
+		helpText: 'Given a theme slug, sync it on the premium folder.',
+		additionalArgs: '<theme-slug>',
+		run: (args) => pullPremiumTheme(args?.[1])
+	},
 	"push-core-themes": {
 		helpText: 'Use rsync to copy any changed public CORE theme files from your local machine to your sandbox. CORE themes are any of the Twenty<whatever> themes.',
 		run: pushCoreThemes
@@ -935,6 +940,43 @@ async function pushChangesToSandbox() {
 	for (let theme of changedThemes) {
 		await pushThemeToSandbox(theme);
 	}
+}
+
+async function syncPremiumTheme(theme) {
+	let themeExists = await executeOnSandbox(`
+		cd ${sandboxPremiumThemesFolder};
+		[ -d "${theme}" ] && echo "1" || echo "0";
+	`, true);
+
+	if (themeExists === '1') {
+		return await executeOnSandbox(`
+			cd ${sandboxPremiumThemesFolder};
+			cd ${theme};
+			git reset --hard HEAD;
+			git clean -fd;
+			git checkout trunk;
+			git pull;
+			echo;
+			git status
+		`, true);
+	} else {
+		console.log(`Cloning private theme from git@github.com:Automattic/theme-${theme}.git`)
+		return  await executeOnSandbox(`
+			cd ${sandboxPremiumThemesFolder};
+			git clone git@github.com:Automattic/theme-${theme}.git ${theme};
+			cd ${theme};
+			git status
+		`, true);
+	}
+}
+
+async function pullPremiumTheme(theme) {
+	if (!theme) {
+		console.error('Invalid theme!')
+		return null;
+	}
+	console.log(`Pushing Premium theme "${theme}" to sandbox.`);
+	syncPremiumTheme(theme);
 }
 
 async function pullCoreThemes() {
