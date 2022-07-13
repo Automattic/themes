@@ -86,7 +86,7 @@ const commands = {
 		run: pullCoreThemes
 	},
 	"pull-premium-theme": {
-		helpText: 'Given a theme slug, sync it on the premium folder.',
+		helpText: 'Given a theme slug, sync it to the premium folder.',
 		additionalArgs: '<theme-slug>',
 		run: (args) => pullPremiumTheme(args?.[1])
 	},
@@ -978,7 +978,7 @@ async function repositoryExists(repository) {
 		return true;
 	} catch(e) {
 		if (e.indexOf('ERROR: Repository not found') === -1) {
-			throw new Error('Unknow error verifing if the repository exists!');
+			throw new Error('Unknown error verifying if the repository exists!');
 		}
 
 		return false;
