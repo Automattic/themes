@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.17 =
+* #5379: Varia/Seedlet: Fix no posts found message (#6185)
+
 = 1.6.16 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 

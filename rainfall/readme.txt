@@ -13,6 +13,11 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.2 =
+* Rainfall: Add screenshot and description
+* Rainfall: Add testimonials pattern
+* fix the no sidebar template
+
 = 0.0.1 =
 * Initial release
 
