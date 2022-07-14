@@ -34,3 +34,14 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Foodiesfeed, Stocksnap
+License: Creative Commons Zero (CCO: https://creativecommons.org/publicdomain/zero/1.0/)
+Source: 
+	Smoothie: https://www.foodiesfeed.com/free-food-photo/peanut-butter-and-banana-smoothie/
+	Sundae: https://www.foodiesfeed.com/free-food-photo/coconut-and-dark-chocolate-treat/
+	Vermicelli: https://www.foodiesfeed.com/free-food-photo/plain-rice-noodles-in-a-black-bowl/
+	Wine tasting: https://stocksnap.io/photo/pouring-wine-6JMD0WXXTG
+Used in block patterns. 
