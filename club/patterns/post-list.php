@@ -33,7 +33,7 @@
 <!-- /wp:query-pagination -->
 
 <!-- wp:query-no-results -->
-<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results."} -->
+<!-- wp:paragraph {"placeholder":"<?php echo esc_html__( 'Add text or blocks that will display when the query returns no results.', 'club' ); ?>"} -->
 <p></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
