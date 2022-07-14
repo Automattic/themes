@@ -5,10 +5,19 @@ if ( ! theme ) {
 	return;
 }
 
-const { Octokit } = require( 'octokit' );
-const octokit = new Octokit( {
-	auth: `PUT YOUR ACCESS TOKEN HERE`,
-} );
+/**
+ * We need a Github personal access token to continue.
+ *
+ * The most robust way is to add an environment variable to your ~/.bashrc or ~/.zshrc depending on the shell you're using. To check which shell you're using, run `echo $SHELL` in a terminal.
+ *
+ * The environment variable in your shell rc should look like this:
+ * export THEME_GITHUB_TOKEN=<insert your token>
+ *
+ * Alternatively, you can replace `PUT YOUR ACCESS TOKEN HERE` with the actual access token value.
+ */
+const octokit = new Octokit({
+	auth: process.env.THEME_GITHUB_TOKEN || `PUT YOUR ACCESS TOKEN HERE`,
+});
 
 function sleep( ms ) {
 	return new Promise( ( resolve ) => {
