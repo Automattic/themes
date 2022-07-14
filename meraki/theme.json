@@ -51,6 +51,40 @@
 			}
 		},
 		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "\"Nunito\", sans-serif",
+					"slug": "nunito",
+					"name": "Nunito"
+				},
+				{
+					"fontFamily": "Jost, sans-serif",
+					"slug": "jost",
+					"name": "Jost",
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Jost",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/Jost-Regular.ttf"
+							]
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Jost",
+							"fontWeight": "500 600",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./assets/fonts/Jost-Medium.ttf"
+							]
+						}
+					]
+				}
+			],
 			"fontSizes": [
 				{
 					"name": "Tiny",
@@ -102,6 +136,11 @@
 					"lineHeight": "1.2"
 				}
 			},
+            		"core/heading": {
+             	   		"typography": {
+			        	"fontFamily": "var:preset|font-family|jost"
+                		}
+			},
 			"core/navigation-link": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--jost)",
@@ -112,6 +151,7 @@
 			},
 			"core/post-title": {
 				"typography": {
+			        	"fontFamily": "var:preset|font-family|jost",
 					"fontSize": "var(--wp--preset--font-size--large)",
 					"fontWeight": "500",
 					"lineHeight": "1.2"
