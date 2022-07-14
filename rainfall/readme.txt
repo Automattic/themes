@@ -8,7 +8,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-TBD
+Rainfall is a clean, objective blogging theme strongly inspired by Swiss Design.
+Its minimalist functionality is balanced by a strong accent color, beautiful photography and post templates with sidebars.
 
 == Changelog ==
 
