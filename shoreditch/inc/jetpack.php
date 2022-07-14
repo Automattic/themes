@@ -150,6 +150,7 @@ function shoreditch_testimonials_image() {
 	$jetpack_options = get_theme_mod( 'jetpack_testimonials' );
 	if ( isset( $jetpack_options['featured-image'] ) && '' != $jetpack_options['featured-image'] ) {
 		$image = wp_get_attachment_image_src( (int)$jetpack_options['featured-image'], 'post-thumbnail' );
+		$image = ( ! empty( $image[0] ) ) ? $image[0] : null;
 		printf( ' style="background-image: url(\'%s\');"', esc_url( $image[0] ) );
 	}
 }
@@ -232,7 +233,7 @@ function shoreditch_get_attachment_image_src( $post_id, $post_thumbnail_id, $siz
 		return jetpack_featured_images_fallback_get_image_src( $post_id, $post_thumbnail_id, $size );
 	} else {
 		$attachment = wp_get_attachment_image_src( $post_thumbnail_id, $size ); // Attachment array
-		$url = $attachment[0]; // Attachment URL
+		$url = ( ! empty( $attachment[0] ) ) ? $attachment[0] : null; // Attachment URL
 		return $url;
 	}
 }
