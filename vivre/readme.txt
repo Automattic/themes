@@ -42,9 +42,9 @@ License : Creative Commons CCO
 Source  : https://www.foodiesfeed.com/free-food-photo/peanut-butter-and-banana-smoothie/
 	  https://www.foodiesfeed.com/free-food-photo/coconut-and-dark-chocolate-treat/
 	  https://www.foodiesfeed.com/free-food-photo/plain-rice-noodles-in-a-black-bowl/
-		  
 
 Stocksnap
 License : Creative Commons CCO
 Source  : https://stocksnap.io/photo/pouring-wine-6JMD0WXXTG
+
 Used in block patterns. 
