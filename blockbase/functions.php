@@ -24,7 +24,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
-				'/assets/ponyfill.css',
+				'/assets/ponyfill.css'
 			)
 		);
 
