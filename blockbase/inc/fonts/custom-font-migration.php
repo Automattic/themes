@@ -31,9 +31,6 @@ function migrate_blockbase_custom_fonts() {
 		if ( strpos( $font_family['slug'], 'body' ) !== false && array_key_exists( 'fontSlug', $font_family ) ) {
 			$body_font_slug = $font_family['fontSlug'];
 		}
-		if ( array_key_exists( 'provider', $font_family ) && 'blockbase-fonts' === $font_family['provider'] ) {
-			$blockbase_provider_fonts_count++;
-		}
 	}
 
 	if ( ! $body_font_slug && ! $heading_font_slug && $blockbase_provider_fonts_count > 0 ) {
@@ -84,12 +81,8 @@ function migrate_blockbase_custom_fonts() {
 		);
 	}
 
-	if ( 0 === $blockbase_provider_fonts_count ) {
-		// Set new typography settings (copy from Blockbase theme.json file)
-		$parent_theme_json_data                     = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
-		$parent_theme                               = new WP_Theme_JSON( $parent_theme_json_data );
-		$parent_font_families                       = $parent_theme->get_data()['settings']['typography']['fontFamilies'];
-		$new_settings['typography']['fontFamilies'] = $parent_font_families;
+	if ( $heading_font_slug || $body_font_slug ) {
+		unset( $new_settings['typography']['fontFamilies'] );
 	}
 
 	update_global_styles( $new_settings, $new_styles );
