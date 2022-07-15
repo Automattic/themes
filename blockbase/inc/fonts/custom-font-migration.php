@@ -4,9 +4,8 @@ add_action( 'init', 'migrate_blockbase_custom_fonts', 99 );
 
 function migrate_blockbase_custom_fonts() {
 
-	$heading_font_slug              = null;
-	$body_font_slug                 = null;
-	$blockbase_provider_fonts_count = 0;
+	$heading_font_slug = null;
+	$body_font_slug    = null;
 
 	// Here we must use gutenberg_get_global_* because it introduces clean_cached_data() which we
 	// need to leverage as we are modifying the values of global styles settings and styles on page load.
@@ -33,7 +32,7 @@ function migrate_blockbase_custom_fonts() {
 		}
 	}
 
-	if ( ! $body_font_slug && ! $heading_font_slug && $blockbase_provider_fonts_count > 0 ) {
+	if ( ! $body_font_slug && ! $heading_font_slug ) {
 		//nothing to convert
 		return;
 	}
