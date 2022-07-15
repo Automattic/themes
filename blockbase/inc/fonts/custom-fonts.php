@@ -6,6 +6,10 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 // Font Migration
 require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
+add_action( 'init', 'enqueue_global_styles_fonts', 100 );
+add_action( 'admin_init', 'enqueue_fse_font_styles' );
+add_filter( 'jetpack_google_fonts_list', 'blockbase_filter_jetpack_google_fonts_list' );
+
 /**
  * Get the CSS containing font_face values for a given slug
  *
@@ -112,30 +116,19 @@ function extract_font_slug_from_setting( $setting ) {
  * @return array Collection of all font slugs defined in the theme.json file
  */
 function collect_fonts_from_blockbase() {
-	$font_family_slugs = array();
-
-	// It would be nice to be able to get the global settings of the PARENT theme.
-	// As it stands we can only get the values of the THEME but those are parent/child combined
-	// The only sure way to get the values is directly from the file.
-	if ( function_exists( 'gutenberg_get_global_settings' ) ) {
-		$font_families = gutenberg_get_global_settings( array( 'typography', 'fontFamilies' ) );
-	} else {
-		$font_families = wp_get_global_settings( array( 'typography', 'fontFamilies' ) );
-	}
-	if ( isset( $font_families['custom'] ) && is_array( $font_families['custom'] ) ) {
-		$font_families = $font_families['custom'];
-	} else {
-		$font_families = $font_families['theme'];
-	}
+	$fonts                  = array();
+	$parent_theme_json_data = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
+	$parent_theme           = new WP_Theme_JSON( $parent_theme_json_data );
+	$font_families          = $parent_theme->get_data()['settings']['typography']['fontFamilies'];
 
 	foreach ( $font_families as $font ) {
 		// Only pick it up if we're claiming it as ours to manage
 		if ( array_key_exists( 'provider', $font ) && 'blockbase-fonts' === $font['provider'] ) {
-			$font_family_slugs[] = $font['slug'];
+			$fonts[] = $font;
 		}
 	}
 
-	return $font_family_slugs;
+	return $fonts;
 }
 
 /**
@@ -144,17 +137,20 @@ function collect_fonts_from_blockbase() {
  * @return void
  */
 function enqueue_global_styles_fonts() {
-	$fonts;
-	$font_css = '';
+	$font_slugs = array();
+	$font_css   = '';
 
 	if ( is_admin() ) {
-		$fonts = collect_fonts_from_blockbase();
+		$font_families = collect_fonts_from_blockbase();
+		foreach ( $font_families as $font_family ) {
+			$font_slugs[] = $font_family['slug'];
+		}
 	} else {
-		$fonts = collect_fonts_from_global_styles();
+		$font_slugs = collect_fonts_from_global_styles();
 	}
 
-	foreach ( $fonts as $font ) {
-		$font_css .= get_style_css( $font );
+	foreach ( $font_slugs as $font_slug ) {
+		$font_css .= get_style_css( $font_slug );
 	}
 
 	// Bail out if there are no styles to enqueue.
@@ -168,7 +164,6 @@ function enqueue_global_styles_fonts() {
 
 	// Add the styles to the stylesheet.
 	wp_add_inline_style( 'blockbase_font_faces', $font_css );
-
 }
 
 /**
@@ -179,18 +174,28 @@ function enqueue_fse_font_styles( $fonts ) {
 	$font_css = '';
 
 	foreach ( $fonts as $font ) {
-		$font_css .= get_style_css( $font );
+		$font_css .= get_style_css( $font['slug'] );
 	}
 
 	wp_enqueue_style( 'wp-block-library' );
 	wp_add_inline_style( 'wp-block-library', $font_css );
 }
 
-// If we have a Webfonts Provider then leverage a Custom Fonts Provider
-// Otherwise we'll enqueu the necessary font faces manually.
-if ( class_exists( '\WP_Webfonts_Provider' ) ) {
-	require get_template_directory() . '/inc/fonts/blockbase-fonts-provider.php';
-} else {
-	add_action( 'init', 'enqueue_global_styles_fonts' );
-	add_action( 'admin_init', 'enqueue_fse_font_styles' );
+/**
+ * Jetpack may attempt to register fonts for the Google Font Provider.
+ * Filter out any fonts that Blockbase is already handling.
+ */
+function blockbase_filter_jetpack_google_fonts_list( $list_to_filter ) {
+	$filtered_list           = array();
+	$blockbase_fonts         = collect_fonts_from_blockbase();
+	$blockbase_font_families = array();
+	foreach ( $blockbase_fonts as $font ) {
+		$blockbase_font_families[] = $font['name'];
+	}
+	foreach ( $list_to_filter as $font_family ) {
+		if ( ! in_array( $font_family, $blockbase_font_families, true ) ) {
+			$filtered_list[] = $font_family;
+		}
+	}
+	return $filtered_list;
 }

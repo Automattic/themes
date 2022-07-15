@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
 		// Alignwide and alignfull classes in the block editor.
