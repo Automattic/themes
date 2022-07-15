@@ -18,6 +18,12 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.23 =
+* migrate to npm workspaces (#6200)
+
+= 1.1.22 =
+* #5379: Varia/Seedlet: Fix no posts found message (#6185)
+
 = 1.1.21 =
 * #6047: Seedlet: Fix no post message (#6064)
 

@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 2.0.39 =
+* migrate to npm workspaces (#6200)
+
 = 2.0.38 =
 * Remove close button styles (#6082)
 
