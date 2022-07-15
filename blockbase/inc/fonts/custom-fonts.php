@@ -8,7 +8,10 @@ require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
 add_action( 'init', 'enqueue_global_styles_fonts', 100 );
 add_action( 'admin_init', 'enqueue_fse_font_styles' );
+add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
 add_filter( 'jetpack_google_fonts_list', 'blockbase_filter_jetpack_google_fonts_list' );
+
+$blockbase_enqueued_font_slugs = array();
 
 /**
  * Get the CSS containing font_face values for a given slug
@@ -30,7 +33,6 @@ function get_style_css( $slug ) {
  * @return array Font faces from Global Styles settings.
  */
 function collect_fonts_from_global_styles() {
-
 	// NOTE: We have to use gutenberg_get_global_styles() here due to the potential changes to Global Styles on page load happening in font migration.
 	// Since core users don't have anything to migrate we can use core get_styles
 	if ( function_exists( 'gutenberg_get_global_styles' ) ) {
@@ -137,6 +139,9 @@ function collect_fonts_from_blockbase() {
  * @return void
  */
 function enqueue_global_styles_fonts() {
+
+	global $blockbase_enqueued_font_slugs;
+
 	$font_slugs = array();
 	$font_css   = '';
 
@@ -148,6 +153,8 @@ function enqueue_global_styles_fonts() {
 	} else {
 		$font_slugs = collect_fonts_from_global_styles();
 	}
+
+	$blockbase_enqueued_font_slugs = $font_slugs;
 
 	foreach ( $font_slugs as $font_slug ) {
 		$font_css .= get_style_css( $font_slug );
@@ -179,6 +186,24 @@ function enqueue_fse_font_styles( $fonts ) {
 
 	wp_enqueue_style( 'wp-block-library' );
 	wp_add_inline_style( 'wp-block-library', $font_css );
+}
+
+/**
+ * Add fonts that have been assigned via CSS
+ */
+function enqueue_block_fonts( $content, $parsed_block ) {
+	global $blockbase_enqueued_font_slugs;
+	if ( ! is_admin() && isset( $parsed_block['attrs']['fontFamily'] ) ) {
+		$font_slug = $parsed_block['attrs']['fontFamily'];
+		if ( ! in_array( $font_slug, $blockbase_enqueued_font_slugs, true ) ) {
+			$font_css = get_style_css( $font_slug );
+			if ( $font_css ) {
+				$blockbase_enqueued_font_slugs[] = $font_slug;
+				wp_add_inline_style( 'blockbase_font_faces', $font_css );
+			}
+		}
+	}
+	return $content;
 }
 
 /**
