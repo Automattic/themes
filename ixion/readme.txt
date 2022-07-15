@@ -152,6 +152,9 @@ Ixion also supports the following features:
 
 == Changelog ==
 
+= 1.1.7 =
+* #3851: Ixion: Fix pullquote custom border colors (#6189)
+
 = 1.0 - [Date] =
 * Initial release
 

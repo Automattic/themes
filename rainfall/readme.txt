@@ -13,6 +13,11 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.3 =
+* Rainfall: Add images for media pattern
+* Rainfall: Add alignment styles
+* Rainfall: Update search template
+
 = 0.0.2 =
 * Rainfall: Add screenshot and description
 * Rainfall: Add testimonials pattern
