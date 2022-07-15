@@ -96,6 +96,15 @@ GNU General Public License for more details.
 	border-style: dotted;
 }
 
+/* This is necesary to fix the outline style for the button in the editor */
+:where(.is-style-outline)
+:is(
+	.wp-block-button__link,
+	.wp-element-button
+) {
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
 /*
  * Alignment styles, borrowed from Twenty Twenty-Two.
  * These rules are temporary, and should not be relied on or
