@@ -43,10 +43,66 @@ GNU General Public License for more details.
  * https://github.com/WordPress/gutenberg/issues/27075
  */
 
-.wp-block-search__button:hover,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-button__link:hover {
-	background-color: var(--wp--preset--color--secondary);
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button,
+	.wp-block-button__link,
+	.wp-elements-button,
+):where(:hover, :focus, :active) {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+	border: 1.5px solid var(--wp--preset--color--foreground);
+}
+
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button,
+	.wp-block-button__link,
+	.wp-elements-button,
+):where(:active) {
+	border-style: dotted;
+}
+
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button,
+	.wp-block-button__link,
+	.wp-elements-button,
+):where(:active) {
+	border-style: dotted;
+}
+
+:is(
+	.is-style-outline .wp-block-button__link,
+	.is-style-outline .wp-element-button,
+	.wp-block-post-comments-form input[type=submit],
+):is(
+	:hover,
+	:focus
+) {
+	background: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+}
+
+:is(
+	.is-style-outline .wp-block-button__link,
+	.is-style-outline .wp-element-button,
+	.wp-block-post-comments-form input[type=submit],
+):is(
+	:active
+) {
+	background: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+	border-style: dotted;
+}
+
+/* This is necesary to fix the outline style for the button in the editor */
+:where(.is-style-outline)
+:is(
+	.wp-block-button__link,
+	.wp-element-button
+) {
+	border: 1px solid var(--wp--preset--color--foreground);
 }
 
 /*
