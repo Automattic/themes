@@ -105,6 +105,14 @@ GNU General Public License for more details.
 	border: 1px solid var(--wp--preset--color--foreground);
 }
 
+/* This is necesary to make the post list item the same height when the post has or lacks a featured image */
+.club-post-list-pattern .wp-block-post-title {
+	min-height: 60px; /* 60px is the height of the featured image used */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 /*
  * Alignment styles, borrowed from Twenty Twenty-Two.
  * These rules are temporary, and should not be relied on or
