@@ -147,8 +147,18 @@
         "blocks": {
             "core/button": {
                 "border": {
-                    "radius": "4px"
-                }
+					"radius": "999px",
+                    "width": "1.5px",
+                    "style": "solid"
+				},
+                "spacing": {
+					"padding": {
+						"top": "calc(0.05em + 2px)",
+						"bottom": "calc(0.05em + 2px)",
+						"left": "calc(1.333em + 2px)",
+						"right": "calc(1.333em + 2px)"
+					}
+				}
             },
             "core/code": {
                 "border": {
@@ -204,6 +214,19 @@
 					"lineHeight": "1.6"
 				}
 			},
+            "core/post-comments-form": {
+                "elements": {
+                    "button": {
+                        "color":{
+                            "background": "var(--wp--preset--color--background)",
+                            "text": "var(--wp--preset--color--foreground)"
+                        },
+                        "border": {
+                            "color": "var(--wp--preset--color--foreground)"
+                        }
+                    }
+                }
+            },
             "core/gallery": {
                 "spacing": {
                     "margin": {
@@ -356,8 +379,13 @@
                     "radius": "999px"
                 },
                 "spacing": {
-                    "padding": "0.5em"
-                }
+					"padding": {
+						"top": "calc(0.05em + 2px)",
+						"bottom": "calc(0.05em + 2px)",
+						"left": "calc(1.333em + 2px)",
+						"right": "calc(1.333em + 2px)"
+					}
+				}
             }
         },
         "color": {
@@ -367,10 +395,13 @@
         "elements": {
             "button": {
 				"border": {
-					"radius": "0"
+					"radius": "999px",
+                    "width": "1.5px",
+                    "color": "transparent",
+                    "style": "solid"
 				},
 				"color": {
-                    "background": "var(--wp--preset--color--primary)",
+                    "background": "var(--wp--preset--color--foreground)",
                     "text": "var(--wp--preset--color--background)"
 				},
 				"typography": {
@@ -378,12 +409,13 @@
                     "fontSize": "var(--wp--preset--font-size--medium)",
                     "fontWeight": "normal",
 					"lineHeight": "2",
-					"textDecoration": "none"
+					"textDecoration": "none",
+                    "textTransform": "uppercase"
 				},
 				"spacing": {
 					"padding": {
-						"top": "calc(0.667em + 2px)",
-						"bottom": "calc(0.667em + 2px)",
+						"top": "calc(0.05em + 2px)",
+						"bottom": "calc(0.05em + 2px)",
 						"left": "calc(1.333em + 2px)",
 						"right": "calc(1.333em + 2px)"
 					}

@@ -17,6 +17,9 @@ This theme was developed using the Gutenberg plugin v13.6.0. Some elements may n
 
 == Changelog ==
 
+= 1.0.1 =
+* Vivre: add attribution to images and fonts (#6202)
+
 = 1.0.0 =
 * Initial release
 
@@ -34,3 +37,17 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Foodiesfeed
+License : Creative Commons CCO
+Source  : https://www.foodiesfeed.com/free-food-photo/peanut-butter-and-banana-smoothie/
+	  https://www.foodiesfeed.com/free-food-photo/coconut-and-dark-chocolate-treat/
+	  https://www.foodiesfeed.com/free-food-photo/plain-rice-noodles-in-a-black-bowl/
+
+Stocksnap
+License : Creative Commons CCO
+Source  : https://stocksnap.io/photo/pouring-wine-6JMD0WXXTG
+
+Used in block patterns. 
