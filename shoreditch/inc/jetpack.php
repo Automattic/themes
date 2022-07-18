@@ -150,8 +150,8 @@ function shoreditch_testimonials_image() {
 	$jetpack_options = get_theme_mod( 'jetpack_testimonials' );
 	if ( isset( $jetpack_options['featured-image'] ) && '' != $jetpack_options['featured-image'] ) {
 		$image = wp_get_attachment_image_src( (int)$jetpack_options['featured-image'], 'post-thumbnail' );
-		$image = ( ! empty( $image[0] ) ) ? $image[0] : null;
-		printf( ' style="background-image: url(\'%s\');"', esc_url( $image[0] ) );
+		$url = ( ! empty( $image[0] ) ) ? $image[0] : null;
+		printf( ' style="background-image: url(\'%s\');"', esc_url( $url ) );
 	}
 }
 
