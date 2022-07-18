@@ -28,6 +28,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"skatepark"
 	"stewart"
 	"videomaker"
+	"vivre"
 	"zoologist"
 )
 
