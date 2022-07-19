@@ -120,8 +120,7 @@ function extract_font_slug_from_setting( $setting ) {
 function collect_fonts_from_blockbase() {
 	$fonts                  = array();
 	$parent_theme_json_data = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
-	$parent_theme           = new WP_Theme_JSON( $parent_theme_json_data );
-	$font_families          = $parent_theme->get_data()['settings']['typography']['fontFamilies'];
+	$font_families          = $parent_theme_json_data['settings']['typography']['fontFamilies'];
 
 	foreach ( $font_families as $font ) {
 		// Only pick it up if we're claiming it as ours to manage
