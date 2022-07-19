@@ -25,26 +25,18 @@
 
 <!-- wp:column {"width":""} -->
 <div class="wp-block-column"><!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"width":""} -->
-<div class="wp-block-column"><!-- wp:post-date {"format":"M j","isLink":true} /--></div>
+<div class="wp-block-columns"><!-- wp:column {"width":"","className":"post-date-container"} -->
+<div class="wp-block-column post-date-container"><!-- wp:post-date {"format":"M j","isLink":true} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"","className":"read-more-container"} -->
-<div class="wp-block-column read-more-container"><!-- wp:read-more {"content":<?php echo esc_html__( 'Read It', 'club' ); ?>"} /--></div>
+<div class="wp-block-column read-more-container"><!-- wp:read-more {"content":"<?php echo esc_html__( 'Read It', 'club' ); ?>"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->
-
-<!-- wp:paragraph {"placeholder":"<?php echo esc_html__( 'Add text or blocks that will display when the query returns no results.', 'club' ); ?>"} -->
-<p></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:spacer -->
-<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
 
 <!-- wp:paragraph {"placeholder":"<?php echo esc_html__( 'Add text or blocks that will display when the query returns no results.', 'club' ); ?>"} -->
 <p></p>
