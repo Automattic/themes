@@ -15,9 +15,9 @@ if ( ! theme ) {
  *
  * Alternatively, you can replace `PUT YOUR ACCESS TOKEN HERE` with the actual access token value.
  */
-const octokit = new Octokit({
+const octokit = new Octokit( {
 	auth: process.env.THEME_GITHUB_TOKEN || `PUT YOUR ACCESS TOKEN HERE`,
-});
+} );
 
 function sleep( ms ) {
 	return new Promise( ( resolve ) => {
