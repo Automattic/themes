@@ -46,6 +46,14 @@
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
+<!-- wp:paragraph {"placeholder":"<?php echo esc_html__( 'Add text or blocks that will display when the query returns no results.', 'club' ); ?>"} -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
 <!-- wp:query-pagination -->
 <!-- wp:query-pagination-previous /-->
 
