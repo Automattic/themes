@@ -128,6 +128,24 @@
 					"fontSize": "var(--wp--custom--font-sizes--normal)",
 					"fontWeight": "normal",
 					"lineHeight": 2
+				},
+				"outline":{
+					"color": {
+						"text": "var(--wp--custom--color--primary)",
+						"background": "var(--wp--custom--color--background)"
+					},
+					"border": {
+						"color": "var(--wp--custom--color--primary)"
+					},
+					"hover": {
+						"color": {
+							"text": "var(--wp--custom--color--background)",
+							"background": "var(--wp--custom--color--secondary)"
+						},
+						"border": {
+							"color": "var(--wp--custom--color--primary)"
+						}
+					}
 				}
 			},
 			"color": {
@@ -137,41 +155,6 @@
 				"secondary": "var(--wp--preset--color--secondary)",
 				"tertiary": "var(--wp--preset--color--tertiary)"
 			},
-			"colorPalettes": [
-				{
-					"label": "Featured",
-					"slug": "palette-1",
-					"colors": {
-						"primary": "#C8133E",
-						"secondary": "#4E2F4B",
-						"foreground": "#1D1E1E",
-						"background": "#FFFFFF",
-						"tertiary": "#F9F9F9"
-					}
-				},
-				{
-					"label": "Featured",
-					"slug": "palette-2",
-					"colors": {
-						"primary": "#35845D",
-						"secondary": "#233252",
-						"foreground": "#242527",
-						"background": "#EEF4F7",
-						"tertiary": "#F9F9F9"
-					}
-				},
-				{
-					"label": "Featured",
-					"slug": "palette-3",
-					"colors": {
-						"primary": "#9FD3E8",
-						"secondary": "#FBE6AA",
-						"foreground": "#FFFFFF",
-						"background": "#1F2527",
-						"tertiary": "#364043"
-					}
-				}
-			],
 			"fontSizes": {
 				"x-small": "0.875rem",
 				"normal": "1.125rem",
@@ -362,15 +345,199 @@
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-					"fontSlug": "system-font",
-					"slug": "body-font",
-					"name": "Body (System Font)"
+					"slug": "system-font",
+					"name": "System Font"
 				},
 				{
-					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-					"fontSlug": "system-font",
-					"slug": "heading-font",
-					"name": "Headings (System Font)"
+					"fontFamily": "Arvo, serif",
+					"slug": "arvo",
+					"name": "Arvo",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Bodoni Moda', serif",
+					"slug": "bodoni-moda",
+					"name": "Bodoni Moda",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Cabin, sans-serif",
+					"slug": "cabin",
+					"name": "Cabin",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Chivo, sans-serif",
+					"slug": "chivo",
+					"name": "Chivo",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Courier Prime', serif",
+					"slug": "courier-prime",
+					"name": "Courier Prime",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'DM Sans', sans-serif",
+					"slug": "dm-sans",
+					"name": "DM Sans",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Domine, serif",
+					"slug": "domine",
+					"name": "Domine",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'EB Garamond', serif",
+					"slug": "eb-garamond",
+					"name": "EB Garamond",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Fira Sans', sans-serif",
+					"slug": "fira-sans",
+					"name": "Fira Sans",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Helvetica Neue','Helvetica', 'Arial', sans-serif",
+					"slug": "helvetica-neue",
+					"name": "Helvetica Neue"
+				},
+				{
+					"fontFamily": "'IBM Plex Mono', monospace",
+					"slug": "ibm-plex-mono",
+					"name": "IBM Plex Mono",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Inter, sans-serif",
+					"slug": "inter",
+					"name": "Inter",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Josefin Sans', sans-serif",
+					"slug": "josefin-sans",
+					"name": "Josefin Sans",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Libre Baskerville', serif",
+					"slug": "libre-baskerville",
+					"name": "Libre Baskerville",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Libre Franklin', sans-serif",
+					"slug": "libre-franklin",
+					"name": "Libre Franklin",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Lora, serif",
+					"slug": "lora",
+					"name": "Lora",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Merriweather, serif",
+					"slug": "merriweather",
+					"name": "Merriweather",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Montserrat, sans-serif",
+					"slug": "montserrat",
+					"name": "Montserrat",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Nunito, sans-serif",
+					"slug": "nunito",
+					"name": "Nunito",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Open Sans', sans-serif",
+					"slug": "open-sans",
+					"name": "Open Sans",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Overpass, sans-serif",
+					"slug": "overpass",
+					"name": "Overpass",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Playfair Display', serif",
+					"slug": "playfair-display",
+					"name": "Playfair Display",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Poppins, sans-serif",
+					"slug": "poppins",
+					"name": "Poppins",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Raleway, sans-serif",
+					"slug": "raleway",
+					"name": "Raleway",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Red Hat Display', sans-serif",
+					"slug": "red-hat-display",
+					"name": "Red Hat Display",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Roboto, sans-serif",
+					"slug": "roboto",
+					"name": "Roboto",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Roboto Slab', sans-serif",
+					"slug": "roboto-slab",
+					"name": "Roboto Slab",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "Rubik, sans-serif",
+					"slug": "rubik",
+					"name": "Rubik",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Source Sans Pro', sans-serif",
+					"slug": "source-sans-pro",
+					"name": "Source Sans Pro",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Source Serif Pro', sans-serif",
+					"slug": "source-serif-pro",
+					"name": "Source Serif Pro",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Space Mono', sans-serif",
+					"slug": "space-mono",
+					"name": "Space Mono",
+					"provider": "blockbase-fonts"
+				},
+				{
+					"fontFamily": "'Work Sans', sans-serif",
+					"slug": "work-sans",
+					"name": "Work Sans",
+					"provider": "blockbase-fonts"
 				}
 			],
 			"fontSizes": [
@@ -401,17 +568,27 @@
 		"blocks": {
 			"core/button": {
 				"border": {
-					"radius": "var(--wp--custom--button--border--radius)"
+					"radius": "var(--wp--custom--button--border--radius)",
+					"color": "var(--wp--custom--button--border--color)",
+					"style": "var(--wp--custom--button--border--style)",
+					"width": "var(--wp--custom--button--border--width)"
 				},
 				"color": {
 					"background": "var(--wp--custom--button--color--background)",
 					"text": "var(--wp--custom--button--color--text)"
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--body-font)",
 					"fontSize": "var(--wp--custom--button--typography--font-size)",
 					"fontWeight": "var(--wp--custom--button--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--button--typography--line-height)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var(--wp--custom--button--spacing--padding--top)",
+						"bottom": "var(--wp--custom--button--spacing--padding--bottom)",
+						"left": "var(--wp--custom--button--spacing--padding--left)",
+						"right": "var(--wp--custom--button--spacing--padding--right)"
+					}
 				}
 			},
 			"core/code": {
@@ -431,6 +608,41 @@
 				},
 				"typography": {
 					"fontFamily": "monospace"
+				}
+			},
+			"core/comment-author-name": {
+				"typography": {
+					"fontSize": "var(--wp--custom--font-sizes--x-small)"
+				}
+			},
+			"core/comment-date": {
+				"typography": {
+					"fontSize": "var(--wp--custom--font-sizes--x-small)"
+				}
+			},
+			"core/comment-edit-link": {
+				"typography": {
+					"fontSize": "var(--wp--custom--font-sizes--x-small)"
+				}
+			},
+			"core/comment-reply-link": {
+				"color": {
+					"text": "var(--wp--custom--color--primary)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--custom--font-sizes--x-small)",
+					"textDecoration": "underline"
+				}
+			},
+			"core/comments-title": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
+				}
+			},
+			"core/comment-content": {
+				"typography": {
+					"fontSize": "var(--wp--custom--post-comment--typography--font-size)",
+					"lineHeight": "var(--wp--custom--post-comment--typography--line-height)"
 				}
 			},
 			"core/gallery": {
@@ -459,7 +671,6 @@
 					}
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontSize": "var(--wp--preset--font-size--large)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)"
 				}
@@ -541,9 +752,32 @@
 			"text": "var(--wp--custom--color--foreground)"
 		},
 		"elements": {
+			"button": {
+				"border": {
+					"radius": "var(--wp--custom--button--border--radius)"
+				},
+				"color": {
+					"background": "var(--wp--custom--button--color--background)",
+					"text": "var(--wp--custom--button--color--text)"
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body-font)",
+					"fontSize": "var(--wp--custom--button--typography--font-size)",
+					"fontWeight": "var(--wp--custom--button--typography--font-weight)",
+					"lineHeight": "var(--wp--custom--button--typography--line-height)",
+					"textDecoration": "none"
+				},
+				"spacing": {
+					"padding": {
+						"top": "calc( var(--wp--custom--button--spacing--padding--top) + var(--wp--custom--button--border--width) )",
+						"bottom": "calc( var(--wp--custom--button--spacing--padding--bottom) + var(--wp--custom--button--border--width) )",
+						"left": "calc( var(--wp--custom--button--spacing--padding--left) + var(--wp--custom--button--border--width) )",
+						"right": "calc( var(--wp--custom--button--spacing--padding--right) + var(--wp--custom--button--border--width) )"
+					}
+				}
+			},
 			"h1": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
 					"fontSize": "var(--wp--custom--font-sizes--huge)"
@@ -557,7 +791,6 @@
 			},
 			"h2": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
 					"fontSize": "var(--wp--preset--font-size--x-large)"
@@ -571,7 +804,6 @@
 			},
 			"h3": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
 					"fontSize": "var(--wp--preset--font-size--large)"
@@ -585,7 +817,6 @@
 			},
 			"h4": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
 					"fontSize": "var(--wp--preset--font-size--medium)"
@@ -599,7 +830,6 @@
 			},
 			"h5": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
 					"fontSize": "var(--wp--custom--font-sizes--normal)"
@@ -613,7 +843,6 @@
 			},
 			"h6": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--heading-font)",
 					"fontWeight": "var(--wp--custom--heading--typography--font-weight)",
 					"lineHeight": "var(--wp--custom--heading--typography--line-height)",
 					"fontSize": "var(--wp--preset--font-size--small)"
@@ -636,7 +865,7 @@
 		},
 		"typography": {
 			"lineHeight": "var(--wp--custom--body--typography--line-height)",
-			"fontFamily": "var(--wp--preset--font-family--body-font)",
+			"fontFamily": "var(--wp--preset--font-family--system-font)",
 			"fontSize": "var(--wp--custom--font-sizes--normal)"
 		}
 	}
