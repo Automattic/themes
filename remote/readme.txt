@@ -12,6 +12,9 @@ Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a
 
 == Changelog ==
 
+= 1.0.7 =
+Including Style Variations
+
 = 1.0.6 =
 * Themes: Remove site title text decoration from theme.json (#6122)
 

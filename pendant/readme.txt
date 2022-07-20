@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.5 =
+Including Style Variations
+
 = 1.0.4 =
 * Pendant: Removing default text decoration for link elements (#6178)
 
