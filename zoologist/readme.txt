@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.32 =
+* Blockbase 3 (#6167)
+
 = 1.0.31 =
 * migrate to npm workspaces (#6200)
 

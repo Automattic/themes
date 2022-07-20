@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 0.0.23 =
+* Blockbase 3 (#6167)
+
 = 0.0.22 =
 * migrate to npm workspaces (#6200)
 

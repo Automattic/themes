@@ -18,6 +18,9 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.19 =
+* Blockbase 3 (#6167)
+
 = 1.0.18 =
 * migrate to npm workspaces (#6200)
 

@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.30 =
+* Blockbase 3 (#6167)
+
 = 1.0.29 =
 * migrate to npm workspaces (#6200)
 

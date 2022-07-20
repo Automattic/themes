@@ -12,6 +12,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 
 == Changelog ==
 
+= 2.1.29 =
+* Blockbase 3 (#6167)
+
 = 2.1.28 =
 * migrate to npm workspaces (#6200)
 
