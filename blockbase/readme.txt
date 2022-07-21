@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.1 =
+* Filter out Jetpack fonts when Blockbase is activated (#6269)
+
 = 3.0.0 =
 * Refactor/blockbase color admin (#6043)
 * Moved templates from old folder location to new (#6073)
