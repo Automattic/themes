@@ -6,14 +6,10 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 // Font Migration
 require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
-// If Jetpack is already providing these fonts we aren't going to fight it.
-// Just drop out of the running of trying to manage them. It provides all of the
-// fonts that we provide here, though it doesn't host them locally.
-if ( ! function_exists( 'jetpack_add_google_fonts_provider' ) ) {
-	add_action( 'init', 'enqueue_global_styles_fonts', 100 );
-	add_action( 'admin_init', 'enqueue_fse_font_styles' );
-	add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
-}
+add_action( 'init', 'enqueue_global_styles_fonts', 100 );
+add_action( 'admin_init', 'enqueue_fse_font_styles' );
+add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
+add_filter( 'jetpack_google_fonts_list', 'blockbase_filter_jetpack_google_fonts_list' );
 
 $blockbase_enqueued_font_slugs = array();
 
@@ -207,4 +203,14 @@ function enqueue_block_fonts( $content, $parsed_block ) {
 		}
 	}
 	return $content;
+}
+
+/**
+ * Jetpack may attempt to register fonts for the Google Font Provider.
+ * If that happens on a child theme then ONLY Jetpack fonts are registered.
+ * This 'filter' filters out all of the fonts Jetpack should register
+ * so that we depend exclusively on those provided by Blockbase.
+ */
+function blockbase_filter_jetpack_google_fonts_list( $list_to_filter ) {
+	return array();
 }
