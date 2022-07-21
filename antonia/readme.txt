@@ -12,6 +12,9 @@ Antonia is a theme for selling products with the help of payments block.
 
 == Changelog ==
 
+= 0.0.3 =
+* Migrate antonia fonts to new Blockbase format (#6268)
+
 = 0.0.2 =
 * Update theme url (#6076)
 
