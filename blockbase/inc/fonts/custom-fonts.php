@@ -6,10 +6,14 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 // Font Migration
 require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
-add_action( 'init', 'enqueue_global_styles_fonts', 100 );
-add_action( 'admin_init', 'enqueue_fse_font_styles' );
-add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
-add_filter( 'jetpack_google_fonts_list', 'blockbase_filter_jetpack_google_fonts_list' );
+// If Jetpack is already providing these fonts we aren't going to fight it.
+// Just drop out of the running of trying to manage them. It provides all of the
+// fonts that we provide here, though it doesn't host them locally.
+if ( ! function_exists( 'jetpack_add_google_fonts_provider' ) ) {
+	add_action( 'init', 'enqueue_global_styles_fonts', 100 );
+	add_action( 'admin_init', 'enqueue_fse_font_styles' );
+	add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
+}
 
 $blockbase_enqueued_font_slugs = array();
 
@@ -203,23 +207,4 @@ function enqueue_block_fonts( $content, $parsed_block ) {
 		}
 	}
 	return $content;
-}
-
-/**
- * Jetpack may attempt to register fonts for the Google Font Provider.
- * Filter out any fonts that Blockbase is already handling.
- */
-function blockbase_filter_jetpack_google_fonts_list( $list_to_filter ) {
-	$filtered_list           = array();
-	$blockbase_fonts         = collect_fonts_from_blockbase();
-	$blockbase_font_families = array();
-	foreach ( $blockbase_fonts as $font ) {
-		$blockbase_font_families[] = $font['name'];
-	}
-	foreach ( $list_to_filter as $font_family ) {
-		if ( ! in_array( $font_family, $blockbase_font_families, true ) ) {
-			$filtered_list[] = $font_family;
-		}
-	}
-	return $filtered_list;
 }
