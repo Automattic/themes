@@ -29,8 +29,8 @@
 <div class="wp-block-column post-date-container"><!-- wp:post-date {"format":"M j","isLink":true} /--></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"width":"","className":"read-more-container"} -->
-<div class="wp-block-column read-more-container"><!-- wp:read-more {"content":"<?php echo esc_html__( 'Read It', 'club' ); ?>"} /--></div>
+<!-- wp:column {"width":""} -->
+<div class="wp-block-column"><!-- wp:read-more {"content":"<?php echo esc_html__( 'Read It', 'club' ); ?>"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
