@@ -18,6 +18,9 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.24 =
+* #6004: Seedlet: Fix link underline colors in Safari (#6199)
+
 = 1.1.23 =
 * migrate to npm workspaces (#6200)
 
