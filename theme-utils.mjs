@@ -704,7 +704,7 @@ async function versionBumpTheme(theme, addChanges) {
 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
 	let currentVersion = getThemeMetadata(styleCss, 'Version');
 
-	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 3`);
+	let filesToUpdate = await executeCommand(`find ${theme} -path "*/node_modules/*" -prune -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 3 -print`);
 	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
 
 	for (let file of filesToUpdate) {
