@@ -1188,7 +1188,8 @@ async function escapePatterns() {
 				rewriter.emitRaw(rawHtml);
 				return;
 			}
-			// escape the strings in blocks without a html such as wp:search
+			// escape the strings in block config (blocks that are represented as comments)
+			// ex: <!-- wp:search {label: "Search"} /-->
 			const block = escapeBlockAttrs(comment.text, themeSlug)
 			rewriter.emitComment({...comment, text: block})
 		});
@@ -1197,8 +1198,14 @@ async function escapePatterns() {
 	}
 
 	function escapeBlockAttrs(block, themeSlug) {
-		const allowedBlocks = ['wp:search', 'wp:read-more'];
-		const allowedAttrs=['label', 'placeholder', 'buttonText', 'content'];
+		// Set isAttr to true if it is an attribute in the result HTML
+		// If set to true, it generates esc_attr_, otherwise it generates esc_html_
+		const allowedAttrs=[
+			{ name: 'label' },
+			{ name: 'placeholder', isAttr: true },
+			{ name: 'buttonText' },
+			{ name: 'content' }
+		];
 		const start = block.indexOf('{');
 		const end = block.lastIndexOf('}');
 		
@@ -1206,15 +1213,11 @@ async function escapePatterns() {
 		const config = block.slice(start, end+1);
 		const configSuffix = block.slice(end+1);
 
-		if (!allowedBlocks.includes(configPrefix.trim())) {
-			return block
-		}
-
 		try {
 			const configJson = JSON.parse(config);
 			allowedAttrs.forEach((attr) => {
-				if (!configJson[attr]) return;
-				configJson[attr] = escapeText(configJson[attr], themeSlug)
+				if (!configJson[attr.name]) return;
+				configJson[attr.name] = escapeText(configJson[attr.name], themeSlug, attr.isAttr)
 			})
 			return configPrefix + JSON.stringify(configJson) + configSuffix;
 		} catch (error) {
