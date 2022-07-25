@@ -19,7 +19,7 @@ return array(
 	<p class="has-small-font-size"><meta charset="utf-8"><strong>Proudly Powered by <a rel="nofollow" href="https://wordpress.org">WordPress</a></strong></p>
 	<!-- /wp:paragraph -->
 	
-	<!-- wp:navigation {"itemsJustification":"center","overlayMenu":"never","__unstableSocialLinks":"social"} /--></div>
+	<!-- wp:navigation {"itemsJustification":"center","overlayMenu":"never","className":"social-links"} /--></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->',
 );

@@ -12,6 +12,9 @@ Hari is a minimalist, product-oriented theme.
 
 == Changelog ==
 
+= 0.0.3 =
+* Blockbase 3 (#6167)
+
 = 1.0.0 =
 * Initial release
 

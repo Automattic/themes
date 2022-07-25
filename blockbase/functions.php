@@ -23,17 +23,19 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
-				'/assets/ponyfill.css',
+				'/assets/ponyfill.css'
 			)
 		);
 
-		// Register two nav menus
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Navigation', 'blockbase' ),
-				'social' => __( 'Social Navigation', 'blockbase' )
-			)
-		);
+		// Register two nav menus if Gutenberg is activated (otherwise the __experimentalMenuLocation attribute isn't available)
+		if ( defined( 'IS_GUTENBERG_PLUGIN' ) ) {
+			register_nav_menus(
+				array(
+					'primary' => __( 'Primary Navigation', 'blockbase' ),
+					'social'  => __( 'Social Navigation', 'blockbase' ),
+				)
+			);
+		}
 
 		add_filter(
 			'block_editor_settings_all',
@@ -63,13 +65,6 @@ add_action( 'after_setup_theme', 'blockbase_support', 9 );
  * Enqueue scripts and styles.
  */
 function blockbase_editor_styles() {
-	// Enqueue editor styles.
-	add_editor_style(
-		array(
-			blockbase_fonts_url(),
-		)
-	);
-
 	// Add the child theme CSS if it exists.
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
 		add_editor_style(
@@ -84,77 +79,25 @@ add_action( 'admin_init', 'blockbase_editor_styles' );
  * Enqueue scripts and styles.
  */
 function blockbase_scripts() {
-	// Enqueue Google fonts
-	wp_enqueue_style( 'blockbase-fonts', blockbase_fonts_url(), array(), null );
 	wp_enqueue_style( 'blockbase-ponyfill', get_template_directory_uri() . '/assets/ponyfill.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// Add the child theme CSS if it exists.
 	if ( file_exists( get_stylesheet_directory() . '/assets/theme.css' ) ) {
-		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array('blockbase-ponyfill'), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'blockbase-child-styles', get_stylesheet_directory_uri() . '/assets/theme.css', array( 'blockbase-ponyfill' ), wp_get_theme()->get( 'Version' ) );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blockbase_scripts' );
-
-/**
- * Add Google webfonts
- *
- * @return $fonts_url
- */
-
-function blockbase_fonts_url() {
-	if ( ! class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
-		return '';
-	}
-
-	$theme_data = WP_Theme_JSON_Resolver_Gutenberg::get_merged_data()->get_settings();
-	if ( empty( $theme_data ) || empty( $theme_data['typography'] ) || empty( $theme_data['typography']['fontFamilies'] ) ) {
-		return '';
-	}
-
-	$font_families = [];
-	if ( ! empty( $theme_data['typography']['fontFamilies']['custom'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['custom'] as $font ) {
-			if ( ! empty( $font['google'] ) ) {
-				$font_families[] = $font['google'];
-			}
-		}
-
-	// NOTE: This should be removed once Gutenberg 12.1 lands stably in all environments
-	} else if ( ! empty( $theme_data['typography']['fontFamilies']['user'] ) ) {
-		foreach( $theme_data['typography']['fontFamilies']['user'] as $font ) {
-			if ( ! empty( $font['google'] ) ) {
-				$font_families[] = $font['google'];
-			}
-		}
-	// End Gutenberg < 12.1 compatibility patch
-
-	} else {
-		if ( ! empty( $theme_data['typography']['fontFamilies']['theme'] ) ) {
-			foreach( $theme_data['typography']['fontFamilies']['theme'] as $font ) {
-				if ( ! empty( $font['google'] ) ) {
-					$font_families[] = $font['google'];
-				}
-			}
-		}
-	}
-
-	if ( empty( $font_families ) ) {
-		return '';
-	}
-
-	// Make a single request for the theme or user fonts.
-	return esc_url_raw( 'https://fonts.googleapis.com/css2?' . implode( '&', array_unique( $font_families ) ) . '&display=swap' );
-}
 
 /**
  * Customize Global Styles
  */
 if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/customizer/wp-customize-colors.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-color-palettes.php';
-	require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 	require get_template_directory() . '/inc/social-navigation.php';
 }
+
+require get_template_directory() . '/inc/fonts/custom-fonts.php';
+
 
 // Force menus to reload
 add_action(
@@ -163,7 +106,7 @@ add_action(
 		wp_enqueue_script(
 			'wp-customize-nav-menu-refresh',
 			get_template_directory_uri() . '/inc/customizer/wp-customize-nav-menu-refresh.js',
-			[ 'customize-nav-menus' ],
+			array( 'customize-nav-menus' ),
 			wp_get_theme()->get( 'Version' ),
 			true
 		);

@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.6 =
+* Blockbase 3 (#6167)
+
 = 0.0.5 =
 * Meraki: Re-add the 'auto-loading-homepage' tag to style.css (#6039)
 

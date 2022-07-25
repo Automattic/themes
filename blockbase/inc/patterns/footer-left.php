@@ -16,8 +16,8 @@ return array(
 	<!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
 	<div class="wp-block-group"><!-- wp:site-title {"fontSize":"small"} /-->
 	
-	<!-- wp:paragraph {"fontSize":"small","fontFamily":"heading-font"} -->
-	<p class="has-text-align-left has-small-font-size has-heading-font-font-family">Proudly Powered by <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
+	<!-- wp:paragraph {"fontSize":"small"} -->
+	<p class="has-text-align-left has-small-font-size">Proudly Powered by <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->',

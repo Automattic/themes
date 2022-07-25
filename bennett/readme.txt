@@ -12,6 +12,9 @@ Bennett is a minimalist theme, designed for single-page websites.
 
 == Changelog ==
 
+= 1.0.3 =
+* Blockbase 3 (#6167)
+
 = 1.0.0 =
 * Initial release
 

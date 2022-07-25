@@ -268,16 +268,35 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-pullquote {
 	margin: 0;
 	padding: 0;
+}
+
+.wp-block-pullquote:not(.has-border-color) {
 	border: 0;
 }
 
 .wp-block-pullquote blockquote {
-	border-top: 2px solid #d7b221;
-	border-bottom: 2px solid #d7b221;
 	font-style: italic;
 	font-size: 24px;
 	margin: 0 0 1.5em;
 	padding: .8em 0;
+}
+
+.wp-block-pullquote:not(.has-border-color) blockquote {
+	border-top: 2px solid #d7b221;
+	border-bottom: 2px solid #d7b221;
+}
+
+.wp-block-pullquote.has-border-color[style] {
+	border-bottom-width: 2px;
+	border-left: unset !important;
+	border-right: unset !important;
+	border-top-width: 2px;
+	padding: 0;
+	margin-bottom: 1.5em;
+}
+
+.wp-block-pullquote.has-border-color blockquote {
+	margin-bottom: 0;
 }
 
 .wp-block-pullquote cite {

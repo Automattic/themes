@@ -39,22 +39,6 @@
         "typography": {
             "customFontSize": true,
             "customLineHeight": true,
-            "fontFamilies": [
-                {
-                    "fontFamily": "\"DM Sans\", sans-serif",
-                    "fontSlug": "dm-sans",
-                    "slug": "body-font",
-                    "name": "Body (DM Sans)",
-                    "google": "family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700"
-                },
-                {
-                    "fontFamily": "\"Libre Baskerville\", serif",
-                    "fontSlug": "libre-baskerville",
-                    "slug": "heading-font",
-                    "name": "Headings (Libre Baskerville)",
-                    "google": "family=Libre+Baskerville:ital,wght@0,400;0,700;1,400"
-                }
-            ],
             "fontSizes": [
                 {
                     "name": "Small",
@@ -81,11 +65,20 @@
     },
     "styles": {
         "blocks": {
+            "core/heading": {
+                "typography": {
+			        "fontFamily": "var:preset|font-family|libre-baskerville"
+                }
+            },
             "core/post-title": {
                 "typography": {
+			        "fontFamily": "var:preset|font-family|libre-baskerville",
                     "fontSize": "var(--wp--preset--font-size--x-large)"
                 }
             }
+        },
+        "typography": {
+			"fontFamily": "var:preset|font-family|dm-sans"
         }
     }
 }

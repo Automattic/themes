@@ -237,30 +237,6 @@ async function pushButtonDeploy() {
 	try {
 		await cleanSandbox();
 
-		//build variations
-		console.log('Building Variations');
-		await executeCommand(`node ./variations/build-variations.mjs git-add-changes`)
-		prompt = await inquirer.prompt([{
-			type: 'confirm',
-			message: 'Are you good with any staged theme variations changes? Make any manual adjustments now if necessary.',
-			name: "continue",
-			default: false
-		}]);
-
-		if (!prompt.continue) {
-			console.log(`Aborted Automated Deploy Process at variations building.`);
-			return;
-		}
-
-		try {
-			await executeCommand(`
-				git commit -m "Building Variations"
-			`);
-		} catch (err) {
-			// Most likely the error is that there are no variation changes to commit.
-			// Just swallowing that error for now
-		}
-
 		let hash = await getLastDeployedHash();
 		let thingsWentBump = await versionBumpThemes();
 
@@ -728,7 +704,7 @@ async function versionBumpTheme(theme, addChanges) {
 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
 	let currentVersion = getThemeMetadata(styleCss, 'Version');
 
-	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 2`);
+	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 3`);
 	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
 
 	for (let file of filesToUpdate) {

@@ -12,6 +12,12 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.29 =
+* Blockbase 3 (#6167)
+
+= 2.1.28 =
+* migrate to npm workspaces (#6200)
+
 = 2.1.27 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 

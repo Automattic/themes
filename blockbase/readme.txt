@@ -19,6 +19,22 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.1 =
+* Filter out Jetpack fonts when Blockbase is activated (#6269)
+
+= 3.0.0 =
+* Refactor/blockbase color admin (#6043)
+* Moved templates from old folder location to new (#6073)
+* Blockbase: Implement the Button elements API (#6041)
+* Blockbase: Implement Comment Block and removed CSS (#6080)
+* Fix/migrate blockbase font self hosted (#6123)
+* Blockbase children: update comments block (#6153)
+* Blockbase: Changed the trigger to render social icons (#6079)
+* Blockbase: move button padding styles from ponyfill to theme.json (#5901)
+
+= 2.0.39 =
+* migrate to npm workspaces (#6200)
+
 = 2.0.38 =
 * Remove close button styles (#6082)
 
