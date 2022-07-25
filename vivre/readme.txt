@@ -17,6 +17,9 @@ This theme was developed using the Gutenberg plugin v13.6.0. Some elements may n
 
 == Changelog ==
 
+= 1.0.2 =
+* Exclude sticky posts. (#6275)
+
 = 1.0.1 =
 * Vivre: add attribution to images and fonts (#6202)
 

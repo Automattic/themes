@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.6 =
+* add missing tags to Pendant (#6283)
+
 = 1.0.5 =
 Including Style Variations
 
