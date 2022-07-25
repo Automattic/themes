@@ -1179,14 +1179,48 @@ async function escapePatterns() {
 				});
 			}
 
-			if (startTag.tagName === 'p') {
-				console.log({tag: startTag, rawHtml})
-			}
 
 			rewriter.emitStartTag(startTag);
 		});
 
+		rewriter.on('comment', (comment, rawHtml) => {
+			if (comment.text.startsWith('?php')) {
+				rewriter.emitRaw(rawHtml);
+				return;
+			}
+			// escape the strings in blocks without a html such as wp:search
+			const block = escapeBlockAttrs(comment.text, themeSlug)
+			rewriter.emitComment({...comment, text: block})
+		});
+
 		return rewriter;
+	}
+
+	function escapeBlockAttrs(block, themeSlug) {
+		const allowedBlocks = ['wp:search', 'wp:read-more'];
+		const allowedAttrs=['label', 'placeholder', 'buttonText', 'content'];
+		const start = block.indexOf('{');
+		const end = block.lastIndexOf('}');
+		
+		const configPrefix = block.slice(0, start);
+		const config = block.slice(start, end+1);
+		const configSuffix = block.slice(end+1);
+
+		if (!allowedBlocks.includes(configPrefix.trim())) {
+			return block
+		}
+
+		try {
+			const configJson = JSON.parse(config);
+			allowedAttrs.forEach((attr) => {
+				if (!configJson[attr]) return;
+				configJson[attr] = escapeText(configJson[attr], themeSlug)
+			})
+			return configPrefix + JSON.stringify(configJson) + configSuffix;
+		} catch (error) {
+			// do nothing
+			return block
+		}
 	}
 
 	function escapeText(text, themeSlug, isAttr = false) {
