@@ -74,12 +74,12 @@ const commands = {
 	"deploy-theme": {
 		helpText: 'This runs "deploy pub <theme>" on the provided list of themes.',
 		additionalArgs: '<array of theme slugs>',
-		run: (args) => deployThemes([args?.[1]])
+		run: (args) => deployThemes(args?.[1].split(','))
 	},
 	"build-com-zip": {
 		helpText: 'Build the production zip file for the specified theme.',
 		additionalArgs: '<theme-slug>',
-		run: (args) => buildComZip([args?.[1]])
+		run: (args) => buildComZips(args?.[1].split(','))
 	},
 	"pull-core-themes": {
 		helpText: 'Use rsync to copy any changed public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
