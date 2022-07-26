@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.19 =
+* Varia - center Getty image embeds (#6286)
+
 = 1.6.18 =
 * migrate to npm workspaces (#6200)
 
