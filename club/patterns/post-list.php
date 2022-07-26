@@ -18,7 +18,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:post-title {"level":3,"isLink":true} /--></div>
+<div class="wp-block-column"><!-- wp:post-title {"isLink":true} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column -->
@@ -30,7 +30,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":""} -->
-<div class="wp-block-column"><!-- wp:read-more {"content":"<?php echo esc_html__( 'Read It', 'club' ); ?>"} /--></div>
+<div class="wp-block-column"><!-- wp:read-more {"content":"custom text button"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
@@ -38,7 +38,7 @@
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 
-<!-- wp:paragraph {"placeholder":"<?php echo esc_html__( 'Add text or blocks that will display when the query returns no results.', 'club' ); ?>"} -->
+<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results."} -->
 <p></p>
 <!-- /wp:paragraph -->
 
