@@ -420,7 +420,7 @@ Subscribers:
  */
 async function createCorePhabriactorDiff(theme, sinceRevision) {
 
-	let commitMessage = buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
+	let commitMessage = await buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
 
 	let diffUrl = await createPhabricatorDiff(commitMessage);
 	let diffId = diffUrl.split('a8c.com/')[1];
