@@ -377,6 +377,11 @@ async function deployCoreTheme(theme, sinceRevision) {
 	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
 	
 	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
+
+	// Remove any double or back quotes from commit messages
+	logs = logs.replace(/"/g, '');
+	logs = logs.replace(/`/g, "'");
+
 	let commitMessage = `${theme}: Merge latest core changes up to [wp${latestRevision}]
 
 Summary:
