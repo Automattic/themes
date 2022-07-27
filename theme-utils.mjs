@@ -1179,14 +1179,51 @@ async function escapePatterns() {
 				});
 			}
 
-			if (startTag.tagName === 'p') {
-				console.log({tag: startTag, rawHtml})
-			}
 
 			rewriter.emitStartTag(startTag);
 		});
 
+		rewriter.on('comment', (comment, rawHtml) => {
+			if (comment.text.startsWith('?php')) {
+				rewriter.emitRaw(rawHtml);
+				return;
+			}
+			// escape the strings in block config (blocks that are represented as comments)
+			// ex: <!-- wp:search {label: "Search"} /-->
+			const block = escapeBlockAttrs(comment.text, themeSlug)
+			rewriter.emitComment({...comment, text: block})
+		});
+
 		return rewriter;
+	}
+
+	function escapeBlockAttrs(block, themeSlug) {
+		// Set isAttr to true if it is an attribute in the result HTML
+		// If set to true, it generates esc_attr_, otherwise it generates esc_html_
+		const allowedAttrs=[
+			{ name: 'label' },
+			{ name: 'placeholder', isAttr: true },
+			{ name: 'buttonText' },
+			{ name: 'content' }
+		];
+		const start = block.indexOf('{');
+		const end = block.lastIndexOf('}');
+		
+		const configPrefix = block.slice(0, start);
+		const config = block.slice(start, end+1);
+		const configSuffix = block.slice(end+1);
+
+		try {
+			const configJson = JSON.parse(config);
+			allowedAttrs.forEach((attr) => {
+				if (!configJson[attr.name]) return;
+				configJson[attr.name] = escapeText(configJson[attr.name], themeSlug, attr.isAttr)
+			})
+			return configPrefix + JSON.stringify(configJson) + configSuffix;
+		} catch (error) {
+			// do nothing
+			return block
+		}
 	}
 
 	function escapeText(text, themeSlug, isAttr = false) {
