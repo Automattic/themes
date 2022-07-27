@@ -109,6 +109,11 @@ const commands = {
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => deploySyncCoreTheme(args?.[1], args?.[2])
 	},
+	"create-core-phabricator-diff": {
+		helpText: 'Given a theme slug and specific revision create a Phabricator diff from the resources currently on the sandbox.',
+		additionalArgs: '<theme-slug> <since-revision>',
+		run: (args) => createCorePhabriactorDiff(args?.[1], args?.[2])
+	},
 	"update-theme-changelog": {
 		helpText: 'Use the commit log to build a list of recent changes and add them as a new changelog entry. If add-changes is true, the updated readme.txt will be staged.',
 		additionalArgs: '<theme-slug> <add-changes, true/false>',
@@ -366,39 +371,9 @@ async function deploySyncCoreTheme(theme, sinceRevision) {
 	}
 
 	await pushThemeToSandbox(theme);
-	return deployCoreTheme(theme, sinceRevision);
-}
+	let diffId = await createCorePhabriactorDiff(theme, sinceRevision);
 
-/**
- * Deploys the localy copy of a core theme to wpcom.
- */
-async function deployCoreTheme(theme, sinceRevision) {
-
-	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
-	
-	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
-
-	// Remove any double or back quotes from commit messages
-	logs = logs.replace(/"/g, '');
-	logs = logs.replace(/`/g, "'");
-
-	let commitMessage = `${theme}: Merge latest core changes up to [wp${latestRevision}]
-
-Summary:
-${logs}
-
-Test Plan: Activate ${theme} and ensure nothing is broken
-
-Reviewers:
-#themes_team
-
-Subscribers:
-`;
-
-	let diffUrl = await createPhabricatorDiff(commitMessage);
-	let diffId = diffUrl.split('a8c.com/')[1];
-
-	let prompt = await inquirer.prompt([{
+	prompt = await inquirer.prompt([{
 		type: 'confirm',
 		message: 'Are you ready to land these changes?',
 		name: "continue",
@@ -414,7 +389,42 @@ Subscribers:
 	// await landChanges(diffId);
 	// await deployThemes([theme]);
 	// await buildComZips([theme]);
+}
 
+
+async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
+
+	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
+	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
+
+	// Remove any double or back quotes from commit messages
+	logs = logs.replace(/"/g, '');
+	logs = logs.replace(/`/g, "'");
+
+	return `${theme}: Merge latest core changes up to [wp${latestRevision}]
+
+Summary:
+${logs}
+
+Test Plan: Activate ${theme} and ensure nothing is broken
+
+Reviewers:
+#themes_team
+
+Subscribers:
+`;
+}
+
+/**
+ * Deploys the localy copy of a core theme to wpcom.
+ */
+async function createCorePhabriactorDiff(theme, sinceRevision) {
+
+	let commitMessage = buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
+
+	let diffUrl = await createPhabricatorDiff(commitMessage);
+	let diffId = diffUrl.split('a8c.com/')[1];
+	return diffId;
 }
 
 /*
