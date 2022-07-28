@@ -99,11 +99,6 @@ const commands = {
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => syncCoreTheme(args?.[1], args?.[2])
 	},
-	"deploy-core-theme": {
-		helpText: 'Given a theme slug and SVN revision, deploy local changes to wpcom via Phabriactor',
-		additionalArgs: '<theme-slug> <since-revision>',
-		run: (args) => deployCoreTheme(args?.[1], args?.[2])
-	},
 	"deploy-sync-core-theme": {
 		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command contains additional prompts and error checking not provided by sync-core-theme.',
 		additionalArgs: '<theme-slug> <since-revision>',
