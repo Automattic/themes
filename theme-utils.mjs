@@ -74,12 +74,12 @@ const commands = {
 	"deploy-theme": {
 		helpText: 'This runs "deploy pub <theme>" on the provided list of themes.',
 		additionalArgs: '<array of theme slugs>',
-		run: (args) => deployThemes(args?.[1].split(','))
+		run: (args) => deployThemes(args?.[1].split(/[ ,]+/))
 	},
 	"build-com-zip": {
 		helpText: 'Build the production zip file for the specified theme.',
 		additionalArgs: '<theme-slug>',
-		run: (args) => buildComZips(args?.[1].split(','))
+		run: (args) => buildComZips(args?.[1].split(/[ ,]+/))
 	},
 	"checkout-core-theme": {
 		helpText: 'Use SVN to checkout the given core themes from the wpcom SVN repository.',
