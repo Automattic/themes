@@ -18,6 +18,9 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.20 =
+* Update: Quadrat, Geologist & Zoologist quote block line height (#6290)
+
 = 1.0.19 =
 * Blockbase 3 (#6167)
 

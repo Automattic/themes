@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.43 =
+* Update: Quadrat, Geologist & Zoologist quote block line height (#6290)
+
 = 1.1.42 =
 * Blockbase 3 (#6167)
 

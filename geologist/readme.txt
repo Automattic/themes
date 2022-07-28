@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.31 =
+* Update: Quadrat, Geologist & Zoologist quote block line height (#6290)
+
 = 1.0.30 =
 * Blockbase 3 (#6167)
 
