@@ -81,16 +81,21 @@ const commands = {
 		additionalArgs: '<theme-slug>',
 		run: (args) => buildComZip([args?.[1]])
 	},
+	"checkout-core-theme": {
+		helpText: 'Use SVN to checkout the given core themes from the wpcom SVN repository.',
+		additionalArgs: '<theme-slug>',
+		run: (args) => checkoutCoreTheme(args?.[1])
+	},
 	"pull-core-themes": {
-		helpText: 'Use rsync to copy any changed public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
+		helpText: 'Use rsync to copy all public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
 		run: pullCoreThemes
 	},
 	"push-core-themes": {
-		helpText: 'Use rsync to copy any changed public CORE theme files from your local machine to your sandbox. CORE themes are any of the Twenty<whatever> themes.',
+		helpText: 'Use rsync to copy all public CORE theme files from your local machine to your sandbox. CORE themes are any of the Twenty<whatever> themes.',
 		run: pushCoreThemes
 	},
 	"sync-core-theme": {
-		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command is generally run by deploy-sync-core-theme and not by itself.',
+		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This requires the core theme to be currently checked out from the wpcom svn repository.',
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => syncCoreTheme(args?.[1], args?.[2])
 	},
@@ -98,6 +103,11 @@ const commands = {
 		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command contains additional prompts and error checking not provided by sync-core-theme.',
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => deploySyncCoreTheme(args?.[1], args?.[2])
+	},
+	"create-core-phabricator-diff": {
+		helpText: 'Given a theme slug and specific revision create a Phabricator diff from the resources currently on the sandbox.',
+		additionalArgs: '<theme-slug> <since-revision>',
+		run: (args) => createCorePhabriactorDiff(args?.[1], args?.[2])
 	},
 	"update-theme-changelog": {
 		helpText: 'Use the commit log to build a list of recent changes and add them as a new changelog entry. If add-changes is true, the updated readme.txt will be staged.',
@@ -337,14 +347,18 @@ async function pushButtonDeploy() {
 }
 
 async function deploySyncCoreTheme(theme, sinceRevision) {
-
+if (!theme) {
+console.log('Must supply theme to sync and revision to start from');
+return;
+}
 	await cleanSandbox();
 
-	let latestRevision = await syncCoreTheme(theme, sinceRevision);
+	await checkoutCoreTheme(theme);
+	await syncCoreTheme(theme, sinceRevision);
 
 	let prompt = await inquirer.prompt([{
 		type: 'confirm',
-		message: `Changes have been synced to your sandbox.  Please resolve any conflicts (noted in .rej files).  Are you ready to continue?`,
+		message: `Changes have been synced locally.  Please resolve any conflicts now.  Are you ready to continue?`,
 		name: "continue",
 		default: false
 	}]);
@@ -354,22 +368,8 @@ async function deploySyncCoreTheme(theme, sinceRevision) {
 		return;
 	}
 
-	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
-	let commitMessage = `${theme}: Merge latest core changes up to [wp${latestRevision}]
-
-Summary:
-${logs}
-
-Test Plan: Activate ${theme} and ensure nothing is broken
-
-Reviewers:
-#themes_team
-
-Subscribers:
-`;
-
-	let diffUrl = await createPhabricatorDiff(commitMessage);
-	let diffId = diffUrl.split('a8c.com/')[1];
+	await pushThemeToSandbox(theme);
+	let diffId = await createCorePhabriactorDiff(theme, sinceRevision);
 
 	prompt = await inquirer.prompt([{
 		type: 'confirm',
@@ -387,7 +387,42 @@ Subscribers:
 	// await landChanges(diffId);
 	// await deployThemes([theme]);
 	// await buildComZips([theme]);
+}
 
+
+async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
+
+	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
+	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
+
+	// Remove any double or back quotes from commit messages
+	logs = logs.replace(/"/g, '');
+	logs = logs.replace(/`/g, "'");
+
+	return `${theme}: Merge latest core changes up to [wp${latestRevision}]
+
+Summary:
+${logs}
+
+Test Plan: Activate ${theme} and ensure nothing is broken
+
+Reviewers:
+#themes_team
+
+Subscribers:
+`;
+}
+
+/**
+ * Deploys the localy copy of a core theme to wpcom.
+ */
+async function createCorePhabriactorDiff(theme, sinceRevision) {
+
+	let commitMessage = await buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
+
+	let diffUrl = await createPhabricatorDiff(commitMessage);
+	let diffId = diffUrl.split('a8c.com/')[1];
+	return diffId;
 }
 
 /*
@@ -913,6 +948,17 @@ async function pushChangesToSandbox() {
 	}
 }
 
+async function checkoutCoreTheme(theme) {
+	if (!theme) {
+		console.log('Must supply theme to sync and revision to start from');
+		return;
+	}
+	return executeCommand(`
+		rm -rf ./${theme}
+		svn checkout https://wpcom-themes.svn.automattic.com/${theme} ./${theme}
+	`);
+}
+
 async function pullCoreThemes() {
 	console.log("Pulling CORE themes from sandbox.");
 	for (let theme of coreThemes) {
@@ -937,22 +983,19 @@ async function syncCoreTheme(theme, sinceRevision) {
 		return;
 	}
 	if (!sinceRevision) {
-		sinceRevision = await executeOnSandbox(`cat ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision`);
+		sinceRevision = await executeCommand(`cat ./${theme}/.pub-svn-revision`);
 	}
-	let latestRevision = await executeCommand(`svn info -r HEAD https://core.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
-	console.log(`syncing core theme ${theme} from ${sinceRevision} to ${latestRevision} on your sandbox`);
+	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
+	console.log(`syncing core theme ${theme} from ${sinceRevision} to ${latestRevision}`);
 	try {
-		await executeOnSandbox(`
-			cd ${sandboxPublicThemesFolder};
-			/usr/bin/svn diff --git -r ${sinceRevision}:HEAD https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} | git apply --reject --ignore-space-change --ignore-whitespace -p4 --directory=${theme} -
+		await executeCommand(`
+			svn merge --accept postpone http://develop.svn.wordpress.org/trunk/src/wp-content/themes/${theme} ./${theme} -r${sinceRevision}:HEAD
+			echo '${latestRevision}' > ./${theme}/.pub-svn-revision
 		`, true);
 	}
 	catch (err) {
 		console.log('Error merging:', err);
 	}
-	await executeOnSandbox(`
-		echo '${latestRevision}' > ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision
-	`);
 	return latestRevision;
 }
 
