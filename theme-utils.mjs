@@ -352,7 +352,10 @@ async function pushButtonDeploy() {
 }
 
 async function deploySyncCoreTheme(theme, sinceRevision) {
-
+if (!theme) {
+console.log('Must supply theme to sync and revision to start from');
+return;
+}
 	await cleanSandbox();
 
 	await checkoutCoreTheme(theme);
