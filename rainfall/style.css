@@ -102,7 +102,16 @@ footer .wp-block-navigation__container {
 	row-gap: 1rem;
 }
 
-/* Navigation Overlay */
+/** Navigation Current Menu Item
+ * Needed until this is addressed: https://github.com/WordPress/gutenberg/issues/42299
+ */
+.wp-block-navigation-item.current-menu-item > a {
+	font-weight: 700;
+}
+
+/** Navigation Overlay
+ * Needed until this is addressed: https://github.com/WordPress/gutenberg/issues/39142
+ */
 .wp-block-navigation__responsive-container.is-menu-open ul {
 	font-size: var(--wp--preset--font-size--x-large) !important;
 	gap: 0 !important;
@@ -112,7 +121,6 @@ footer .wp-block-navigation__container {
 	padding-top: 0;
 }
 
-/* Navigation Overlay Trigger */
 .wp-block-navigation__responsive-container-open {
 	text-transform: uppercase;
 }
