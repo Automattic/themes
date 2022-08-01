@@ -5,8 +5,8 @@
  * Categories: featured
  */
 ?>
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}}},"backgroundColor":"orange"} -->
-<div class="wp-block-group alignwide has-orange-background-color has-background" style="padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:heading {"level":1} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--70)","right":"var(--wp--preset--spacing--70)","bottom":"var(--wp--preset--spacing--70)","left":"var(--wp--preset--spacing--70)"}}},"backgroundColor":"orange"} -->
+<div class="wp-block-group alignwide has-orange-background-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:heading {"level":1} -->
 <h1><?php echo esc_html__( 'Contacts', 'rainfall' ); ?></h1>
 <!-- /wp:heading -->
 
@@ -15,8 +15,8 @@
 <div class="wp-block-column"></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"padding":{"top":"1rem"}},"border":{"top":{"color":"var:preset|color|black","width":"1px"}}}} -->
-<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:1rem"><!-- wp:heading -->
+<!-- wp:column {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)"}},"border":{"top":{"color":"var:preset|color|black","width":"1px"}}}} -->
+<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:var(--wp--preset--spacing--30)"><!-- wp:heading -->
 <h2><?php echo esc_html__( 'EDITORIAL &amp; SUBMISSIONS', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->
 
@@ -25,8 +25,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"border":{"top":{"color":"var:preset|color|black","width":"1px"}},"spacing":{"padding":{"top":"1rem"}}}} -->
-<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:1rem"><!-- wp:heading -->
+<!-- wp:column {"style":{"border":{"top":{"color":"var:preset|color|black","width":"1px"}},"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)"}}}} -->
+<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:var(--wp--preset--spacing--30)"><!-- wp:heading -->
 <h2><?php echo esc_html__( 'Advertising', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->
 
@@ -41,8 +41,8 @@
 <div class="wp-block-column"></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"spacing":{"padding":{"top":"1rem"}},"border":{"top":{"color":"var:preset|color|black","width":"1px"}}}} -->
-<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:1rem"><!-- wp:heading -->
+<!-- wp:column {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)"}},"border":{"top":{"color":"var:preset|color|black","width":"1px"}}}} -->
+<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:var(--wp--preset--spacing--30)"><!-- wp:heading -->
 <h2><?php echo esc_html__( 'Mailing Address', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->
 
@@ -51,8 +51,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"style":{"border":{"top":{"color":"var:preset|color|black","width":"1px"}},"spacing":{"padding":{"top":"1rem"}}}} -->
-<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:1rem"><!-- wp:heading -->
+<!-- wp:column {"style":{"border":{"top":{"color":"var:preset|color|black","width":"1px"}},"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)"}}}} -->
+<div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:var(--wp--preset--spacing--30)"><!-- wp:heading -->
 <h2><?php echo esc_html__( 'Social Media', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->
 

@@ -18,8 +18,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
-<!-- wp:column {"verticalAlignment":"center","width":"2rem"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:2rem"></div>
+<!-- wp:column {"verticalAlignment":"center","width":"var(--wp--preset--spacing--70)"} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:var(--wp--preset--spacing--70)"></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center"} -->
