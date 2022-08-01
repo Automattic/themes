@@ -13,6 +13,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.14 =
+* Fix/missing tags (#6303)
+
 = 1.0.13 =
 * Themes: Remove site title text decoration from theme.json (#6122)
 
