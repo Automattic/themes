@@ -1032,10 +1032,6 @@ async function createPhabricatorDiff(commitMessage) {
 
 	console.log('creating Phabricator Diff');
 
-	console.log('======================');
-	console.log(commitMessage);
-	console.log('======================');
-
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
 		git branch -D deploy
