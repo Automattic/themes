@@ -398,6 +398,7 @@ async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
 	// Remove any double or back quotes from commit messages
 	logs = logs.replace(/"/g, '');
 	logs = logs.replace(/`/g, "'");
+	logs = logs.replace(/\$/g, "%24");
 
 	return `${theme}: Merge latest core changes up to [wp${latestRevision}]
 
@@ -1030,6 +1031,10 @@ Subscribers:
 async function createPhabricatorDiff(commitMessage) {
 
 	console.log('creating Phabricator Diff');
+
+	console.log('======================');
+	console.log(commitMessage);
+	console.log('======================');
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
