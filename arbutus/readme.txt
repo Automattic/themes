@@ -12,6 +12,9 @@ Arbutus is a simple blogging theme that supports full-site editing. It comes wit
 
 == Changelog ==
 
+= 0.0.15 =
+* Blockbase: Locked post content blocks  (#6299)
+
 = 0.0.14 =
 * Blockbase 3 (#6167)
 

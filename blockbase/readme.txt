@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.2 =
+* Blockbase: Locked post content blocks  (#6299)
+
 = 3.0.1 =
 * Filter out Jetpack fonts when Blockbase is activated (#6269)
 
