@@ -28,6 +28,9 @@ Scratchpad includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.10 =
+* Fix PHP formatting errors (#6196)
+
 = 1.0 - Apr 6 2016 = 
 * Initial release
 
