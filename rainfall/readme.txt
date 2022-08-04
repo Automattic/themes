@@ -13,6 +13,10 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.5 =
+* Rainfall: Fix spacing issues (#6284)
+* Rainfall: address header and footer improvements (#6305)
+
 = 0.0.4 =
 * Rainfall: Try spacing presets (#6293)
 
