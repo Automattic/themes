@@ -63,6 +63,9 @@
             "gap": {
                 "horizontal": "min(30px, 5vw)",
                 "vertical": "min(30px, 5vw)"
+            },
+            "fontSizes":{
+                "default-title": "clamp(1.25rem, calc(1.25rem + ((1vw - 0.48rem) * 2.4038)), 2.5rem)"
             }
         },
         "layout": {
@@ -141,15 +144,6 @@
                     "name": "Small"
                 },
                 {
-                    "size": "1rem",
-                    "fluid": {
-                        "min": "0.875rem",
-                        "max": "1.25rem"
-                    },
-                    "slug": "default",
-                    "name": "Default"
-                },
-                {
                     "size": "1.25rem",
                     "fluid": {
                         "min": "1.25rem",
@@ -169,48 +163,6 @@
                     "fluid": false,
                     "slug": "x-large",
                     "name": "Extra Large"
-                },
-                {
-                    "size": "3.75rem",
-                    "fluid": {
-                        "min": "3.75rem",
-                        "max": "8.125rem"
-                    },
-                    "slug": "header-one",
-                    "name": "Header 1"
-                },
-                {
-                    "size": "3rem",
-                    "fluid": {
-                        "min": "2.51rem",
-                        "max": "6.875rem"
-                    },
-                    "slug": "header-two",
-                    "name": "Header 2"
-                },
-                {
-                    "size": "1.75rem",
-                    "fluid": {
-                        "min": "1.75rem",
-                        "max": "2rem"
-                    },
-                    "slug": "header-four",
-                    "name": "Header 4"
-                },
-                {
-                    "size": "1.25rem",
-                    "fluid": false,
-                    "slug": "header-five",
-                    "name": "Header 5"
-                },
-                {
-                    "size": "1.25rem",
-                    "fluid": {
-                        "min": "1.25rem",
-                        "max": "2.5rem"
-                    },
-                    "slug": "default-title",
-                    "name": "Default Title"
                 }
             ]
         }
@@ -340,7 +292,7 @@
             },
             "core/navigation": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--default-title)"
+                    "fontSize": "var(--wp--custom--font-sizes--default-title)"
                 }
             },
             "core/post-date": {
@@ -348,7 +300,7 @@
                     "text": "var(--wp--preset--color--foreground)"
                 },
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--default-title)",
+                    "fontSize": "var(--wp--custom--font-sizes--default-title)",
                     "textTransform": "uppercase",
                     "letterSpacing": "-0.04em"
                     
@@ -370,7 +322,7 @@
                 "typography": {
                     "lineHeight": "1.125",
                     "fontWeight": "400",
-                    "fontSize": "var(--wp--preset--font-size--default-title)"
+                    "fontSize": "var(--wp--custom--font-sizes--default-title)"
                 }
             },
             "core/pullquote": {
@@ -436,12 +388,12 @@
             "core/site-title": {
                 "typography": {
                     "lineHeight": ".8",
-                    "fontSize": "var(--wp--preset--font-size--default-title)"
+                    "fontSize": "var(--wp--custom--font-sizes--default-title)"
                 },
                 "elements": {
                     "link": {
                         "typography": {
-                            "fontSize": "var(--wp--preset--font-size--default-title)",
+                            "fontSize": "var(--wp--custom--font-sizes--default-title)",
                             "fontWeight": "700",
                             "textDecoration": "underline solid 1.5px",
                             "fontStyle": "italic",
@@ -458,7 +410,7 @@
             "core/read-more": {
                 "typography": {
                     "textTransform": "uppercase",
-                    "fontSize": "var(--wp--preset--font-size--default-title)",
+                    "fontSize": "var(--wp--custom--font-sizes--default-title)",
                     "letterSpacing": "-0.04em"
                 },
                 "border": {
@@ -512,35 +464,35 @@
 			},
             "h1": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--header-one)",
+                    "fontSize": "clamp(3.75rem, calc(3.75rem + ((1vw - 0.48rem) * 8.4135)), 8.125rem)",
                     "letterSpacing": "-0.04em",
                     "fontWeight": "400"
                 }
             },
             "h2": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--header-two)",
+                    "fontSize": "clamp(2.5rem, calc(2.5rem + ((1vw - 0.48rem) * 8.4135)), 6.875rem)",
                     "letterSpacing": "-0.04em",
                     "fontWeight": "400"
                 }
             },
             "h3": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--default-title)",
+                    "fontSize": "clamp(1.875rem, calc(1.875rem + ((1vw - 0.48rem) * 1.2019)), 2.5rem)",
                     "letterSpacing": "-0.04em",
                     "fontWeight": "700"
                 }
             },
             "h4": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--header-four)",
+                    "fontSize": "clamp(1.75rem, calc(1.75rem + ((1vw - 0.48rem) * 0.4808)), 2rem)",
                     "letterSpacing": "-0.04em",
                     "fontWeight": "700"
                 }
             },
             "h5": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--header-five)",
+                    "fontSize": "1.25rem",
                     "letterSpacing": "-0.04em",
                     "fontWeight": "700"
                 }
@@ -576,7 +528,7 @@
         },
         "typography": {
             "fontFamily": "var(--wp--preset--font-family--spacemono)",
-            "fontSize": "var(--wp--preset--font-size--default)",
+            "fontSize": "clamp(0.875rem, calc(0.875rem + ((1vw - 0.48rem) * 0.7212)), 1.25rem)",
             "lineHeight": "1.6"
         }
     },
