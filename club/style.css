@@ -169,6 +169,27 @@ GNU General Public License for more details.
  }
 
 /*
+ * Comments
+ */
+
+.wp-block-post-comments-form :is(textarea, input:not([type="submit"]) ) {
+	background-color: var(--wp--preset--color--background);
+	border: 1px solid var(--wp--preset--color--foreground);
+	color: 1px solid var(--wp--preset--color--foreground);
+	border-radius: 50px;
+	padding: 2em;
+}
+
+.wp-block-post-comments-form :is(textarea, input:not([type="submit"]) ):focus-visible {
+	outline: 1.5px solid var(--wp--preset--color--foreground);
+}
+
+.wp-block-comments-query-loop .depth-1 .wp-block-column:empty {
+	display: none;
+}
+
+
+/*
  * Alignment styles, borrowed from Twenty Twenty-Two.
  * These rules are temporary, and should not be relied on or
  * modified too heavily by themes or plugins that build on
