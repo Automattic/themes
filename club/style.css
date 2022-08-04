@@ -7,7 +7,7 @@ Description: Club is a funky, bright theme with vibrant colors and a quirky aest
 Requires at least: 5.8
 Tested up to: 6.0
 Requires PHP: 5.7
-Version: 0.0.13
+Version: 0.0.16
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: club
@@ -105,12 +105,54 @@ GNU General Public License for more details.
 	border: 1px solid var(--wp--preset--color--foreground);
 }
 
-/* This is necesary to make the post list item the same height when the post has or lacks a featured image */
+/* 
+ * Styles for the post list pattern
+ */
+
 .club-post-list-pattern .wp-block-post-title {
+	/* This is necesary to make the post list item the same height when the post has or lacks a featured image */
 	min-height: 60px; /* 60px is the height of the featured image used */
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.club-post-list-pattern .wp-block-post-date {
+	white-space: nowrap;
+}
+
+.club-post-list-pattern .wp-block-read-more {
+	text-align: center;
+	word-break: keep-all;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.club-post-list-pattern .wp-block-post  .post-date-container {
+	flex-basis: min-content;
+	flex-grow: unset;
+}
+
+.club-post-list-pattern .wp-block-columns {
+	height: 100%;
+}
+
+.club-post-list-pattern .wp-block-column {
+	align-items: center;
+	display: flex;
+	min-width: unset;
+}
+
+.club-post-list-pattern .wp-block-post > .wp-block-group > .wp-block-columns > .wp-block-column:first-child {
+	flex-grow: 2;
+}
+
+.club-post-list-pattern .wp-block-post > .wp-block-group > .wp-block-columns > .wp-block-column:last-child > .wp-block-columns {
+	width: 100%;
+}
+
+.club-post-list-pattern .wp-block-column:empty {
+	display: none;
 }
 
 /*
@@ -177,4 +219,25 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	padding-bottom: var(--wp--custom--gap--vertical);
 	padding-right: var(--wp--custom--gap--horizontal);
 	padding-left: var(--wp--custom--gap--horizontal);
+}
+
+/*
+ * style seach input
+ */
+.wp-block-search__input {
+	border-radius: 999px;
+	padding: .5rem 2rem;
+	background-color: transparent;
+	border-color: var(--wp--preset--color--primary);
+	border-width: 1.5px;
+}
+@media screen and (max-width: 768px) {
+	.wp-block-search__inside-wrapper {
+		flex-wrap: wrap
+	}
+	.wp-block-search__button {
+		flex-grow: 1;
+		margin-left: 0;
+		margin-top: .625rem;
+	}
 }

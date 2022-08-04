@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.4 =
+* Rainfall: Try spacing presets (#6293)
+
 = 0.0.3 =
 * Rainfall: Add images for media pattern
 * Rainfall: Add alignment styles

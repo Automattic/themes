@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 0.0.24 =
+* Blockbase: Locked post content blocks  (#6299)
+
 = 0.0.23 =
 * Blockbase 3 (#6167)
 

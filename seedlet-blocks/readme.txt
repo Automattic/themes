@@ -12,6 +12,9 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.30 =
+* Blockbase: Locked post content blocks  (#6299)
+
 = 2.1.29 =
 * Blockbase 3 (#6167)
 
