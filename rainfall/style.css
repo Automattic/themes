@@ -96,3 +96,31 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	margin-right: auto !important;
 	width: inherit;
 }
+
+/* Footer Navigation */
+footer .wp-block-navigation__container {
+	row-gap: 1rem;
+}
+
+/** Navigation Current Menu Item
+ * Needed until this is addressed: https://github.com/WordPress/gutenberg/issues/42299
+ */
+.wp-block-navigation-item.current-menu-item > a {
+	font-weight: 700;
+}
+
+/** Navigation Overlay
+ * Needed until this is addressed: https://github.com/WordPress/gutenberg/issues/39142
+ */
+.wp-block-navigation__responsive-container.is-menu-open ul {
+	font-size: var(--wp--preset--font-size--x-large) !important;
+	gap: 0 !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .has-child .wp-block-navigation__submenu-container {
+	padding-top: 0;
+}
+
+.wp-block-navigation__responsive-container-open {
+	text-transform: uppercase;
+}
