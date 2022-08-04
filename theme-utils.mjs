@@ -398,6 +398,7 @@ async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
 	// Remove any double or back quotes from commit messages
 	logs = logs.replace(/"/g, '');
 	logs = logs.replace(/`/g, "'");
+	logs = logs.replace(/\$/g, "%24");
 
 	return `${theme}: Merge latest core changes up to [wp${latestRevision}]
 
