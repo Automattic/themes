@@ -12,6 +12,10 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.16 =
+* Archeo: Update theme.json to conform to standards (#5708)
+* Archeo: Try new root padding alignments (#6312)
+
 = 1.0.15 =
 * Remove page-list blocks (#6313)
 
