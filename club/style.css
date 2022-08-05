@@ -173,6 +173,32 @@ a {
  }
 
 /*
+ * Navigation
+ */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	gap: 1rem;
+}
+.wp-block-navigation .wp-block-navigation__container .has-child .wp-block-navigation__submenu-container {
+	font-size: var(--wp--preset--font-size--medium);
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item li {
+	align-items: flex-start;
+	width: 100%;
+ }
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
+	padding: 0.5rem 1rem 0 1rem;
+	gap: 0.5rem;
+}
+
+/*
  * Alignment styles, borrowed from Twenty Twenty-Two.
  * These rules are temporary, and should not be relied on or
  * modified too heavily by themes or plugins that build on
