@@ -10,8 +10,8 @@
 <!-- wp:group {"layout":{"inherit":"true"},"align":"full","style":{"spacing":{"padding":{"top":"var(--wp--custom--spacing--medium)","bottom":"var(--wp--custom--spacing--medium)"},"margin":{"top":"0px"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"foreground","textColor":"background"} -->
 <div class="wp-block-group alignfull has-background-color has-foreground-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--custom--spacing--medium);padding-bottom:var(--wp--custom--spacing--medium);margin-top:0px">
 
-	<!-- wp:group {"align":"wide"} -->
-	<div class="wp-block-group alignwide">
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"left":"0px","right":"0px"}}}} -->
+	<div class="wp-block-group alignwide" style="padding-left:0px;padding-right:0px;">
 		<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"40px"}}},"fontSize":"medium"} -->
 		<h3 class="has-medium-font-size" style="margin-bottom:40px"><?php _e( 'Selected Writings', 'archeo' ); ?></h3>
 		<!-- /wp:heading -->

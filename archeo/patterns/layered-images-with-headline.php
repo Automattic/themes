@@ -6,8 +6,8 @@
  */
 ?>
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg","dimRatio":80,"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"0px","right":"min(4vw, 90px)","bottom":"0vw","left":"min(4vw, 90px)"},"margin":{"top":"0px"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:0px;padding-right:min(4vw, 90px);padding-bottom:0vw;padding-left:min(4vw, 90px);margin-top:0px;min-height:100vh"><span aria-hidden="true" class="has-background-background-color has-background-dim-80 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Photo of Palace of the Circus', 'archeo' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg","dimRatio":80,"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"0px","bottom":"0vw"},"margin":{"top":"0px"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="padding-top:0px;padding-bottom:0vw;margin-top:0px;min-height:100vh"><span aria-hidden="true" class="has-background-background-color has-background-dim-80 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Photo of Palace of the Circus', 'archeo' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
 	<!-- wp:group {"layout":{"inherit":"true"}} -->
 	<div class="wp-block-group">
 		<!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0"}}}} -->
