@@ -4,6 +4,7 @@ import open from 'open';
 import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
+import progressbar from 'string-progressbar';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -456,12 +457,29 @@ async function buildComZip(themeSlug) {
 }
 
 async function buildComZips(themes) {
+	const progress = startProgress(themes.length);
+	const failedThemes = []
 	for (let theme of themes) {
 		try {
 			await buildComZip(theme);
 		} catch (err) {
 			console.log(`There was an error building dotcom zip for ${theme}. ${err}`);
+			failedThemes.push(theme);
 		}
+		progress.increment();
+	}
+
+	if (failedThemes.length) {
+		const tableConfig = {
+			columnDefault: {
+				width: 40,
+			},
+			header: {
+				alignment: 'center',
+				content: `There was an error building dotcom zip for following themes.`,
+			}
+		};
+		console.log(table(failedThemes.map(t => [t]), tableConfig));
 	}
 }
 
@@ -514,6 +532,8 @@ async function getChangedThemes(hash) {
 async function deployThemes(themes) {
 
 	let response;
+	const failedThemes = [];
+	const progress = startProgress(themes.length);
 
 	for (let theme of themes) {
 
@@ -527,9 +547,12 @@ async function deployThemes(themes) {
 			attempt++;
 			console.log(`\nattempt #${attempt}\n\n`);
 
-			response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
-
-			deploySuccess = response.includes('successfully deployed to');
+			try {
+				response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
+				deploySuccess = response.includes('successfully deployed to');
+			} catch (error) {
+				deploySuccess = false
+			}
 
 			if (!deploySuccess) {
 				console.log('Deploy was not successful.  Trying again in 10 seconds...');
@@ -542,15 +565,24 @@ async function deployThemes(themes) {
 		}
 
 		if (!deploySuccess) {
-
-			await inquirer.prompt([{
-				type: 'confirm',
-				message: `${theme} was not sucessfully deployed and should be deployed manually.`,
-				name: "continue",
-				default: false
-			}]);
+			console.log(`${theme} was not sucessfully deployed and should be deployed manually.`);
+			failedThemes.push(theme);
 		}
 
+		progress.increment();
+	}
+
+	if (failedThemes.length) {
+		const tableConfig = {
+			columnDefault: {
+				width: 40,
+			},
+			header: {
+				alignment: 'center',
+				content: `Following themes are not deployed.`,
+			}
+		};
+		console.log(table(failedThemes.map(t => [t]), tableConfig));
 	}
 }
 
@@ -1117,8 +1149,9 @@ EOF`, logResponse);
  Execute a command locally.
 */
 export async function executeCommand(command, logResponse) {
-	return new Promise((resolove, reject) => {
+	const timeout = 2*60*1000; // 2 min
 
+	return new Promise((resolove, reject) => {
 		let child;
 		let response = '';
 		let errResponse = '';
@@ -1127,12 +1160,22 @@ export async function executeCommand(command, logResponse) {
 			child = spawn('cmd.exe', ['/s', '/c', '"' + command + '"'], {
 				windowsVerbatimArguments: true,
 				stdio: [process.stdin, 'pipe', 'pipe'],
+				detached: true,
 			})
 		} else {
 			child = spawn(process.env.SHELL, ['-c', command], {
 				stdio: [process.stdin, 'pipe', 'pipe'],
+				detached: true,
 			});
 		}
+
+		var timer = setTimeout(() => {
+			try {
+				process.kill(-child.pid, 'SIGKILL');
+			} catch (e) {
+				console.log('Cannot kill process');
+			}
+		}, timeout);
 
 		child.stdout.on('data', (data) => {
 			response += data;
@@ -1149,6 +1192,7 @@ export async function executeCommand(command, logResponse) {
 		});
 
 		child.on('exit', (code) => {
+			clearTimeout(timer)
 			if (code !== 0) {
 				reject(errResponse.trim());
 			}
@@ -1301,4 +1345,20 @@ async function escapePatterns() {
 
 		return table([patterns], tableConfig);
 	}
+}
+
+function startProgress(length) {
+	let current = 0;
+	function render() {
+		const [progress, percentage] = progressbar.filledBar(length, current);
+		console.log('\nProgress:', [progress, Math.round(percentage*100)/100], `${current}/${length}\n`);
+	}
+
+	render();
+	return {
+		increment() {
+			current++;
+			render();
+		}
+	};
 }
