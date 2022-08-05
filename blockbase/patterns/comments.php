@@ -8,7 +8,7 @@
 ?>
 <!-- wp:comments-query-loop -->
 <div class="wp-block-comments-query-loop">
-	<!-- wp:comments-title /-->
+	<!-- wp:comments-title {"level":3} /-->
 
 	<!-- wp:comment-template -->
 	<!-- wp:columns -->
