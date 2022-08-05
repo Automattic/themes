@@ -1,5 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"customTemplates": [
 		{
 			"name": "blank",
@@ -237,17 +236,17 @@
 				}
 			},
 			"core/site-title": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--normal)",
-					"fontWeight": "400",
-					"textTransform": "uppercase"
-				},
 				"elements": {
 					"link": {
 						"typography": {
 							"textDecoration": "none"
 						}
 					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--normal)",
+					"fontWeight": "400",
+					"textTransform": "uppercase"
 				}
 			}
 		},
@@ -256,6 +255,27 @@
 			"text": "var(--wp--preset--color--foreground)"
 		},
 		"elements": {
+			"button": {
+				"border": {
+					"radius": "0"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--foreground)",
+					"text": "var(--wp--preset--color--background)"
+				},
+				"spacing": {
+					"padding": {
+						"bottom": "calc(0.667em + 2px)",
+						"left": "calc(1.333em + 2px)",
+						"right": "calc(1.333em + 2px)",
+						"top": "calc(0.667em + 2px)"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--chivo)",
+					"fontSize": "var(--wp--preset--font-size--normal)"
+				}
+			},
 			"h1": {
 				"typography": {
 					"fontSize": "clamp(3rem, 8vw, 4.5rem)"
@@ -286,27 +306,6 @@
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
-			"button": {
-				"border": {
-					"radius": "0"
-				},
-				"color": {
-					"background": "var(--wp--preset--color--foreground)",
-					"text": "var(--wp--preset--color--background)"
-				},
-				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--chivo)",
-					"fontSize": "var(--wp--preset--font-size--normal)"
-				},
-				"spacing": {
-					"padding": {
-						"top": "calc(0.667em + 2px)",
-						"bottom": "calc(0.667em + 2px)",
-						"left": "calc(1.333em + 2px)",
-						"right": "calc(1.333em + 2px)"
-					}
-				}
-			},
 			"link": {
 				"color": {
 					"text": "var(--wp--preset--color--foreground)"
@@ -335,5 +334,6 @@
 			"title": "Footer"
 		}
 	],
-	"version": 2
+	"version": 2,
+	"$schema": "https://schemas.wp.org/trunk/theme.json"
 }
