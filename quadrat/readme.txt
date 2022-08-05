@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.45 =
+* lock post-content block by default (#6314)
+
 = 1.1.44 =
 * Blockbase: Locked post content blocks  (#6299)
 

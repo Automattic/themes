@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 0.0.25 =
+* lock post-content block by default (#6314)
+
 = 0.0.24 =
 * Blockbase: Locked post content blocks  (#6299)
 

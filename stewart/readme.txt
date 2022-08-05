@@ -13,6 +13,9 @@ Stewart is a modern blogging theme with a left sidebar. Its default color scheme
 
 == Changelog ==
 
+= 1.11 =
+* lock post-content block by default (#6314)
+
 = 1.10 =
 * Fix/missing tags (#6303)
 

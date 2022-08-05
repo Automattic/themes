@@ -17,6 +17,9 @@ This theme was developed using the Gutenberg plugin v13.6.0. Some elements may n
 
 == Changelog ==
 
+= 1.0.4 =
+* lock post-content block by default (#6314)
+
 = 1.0.3 =
 * Fix/missing tags (#6303)
 

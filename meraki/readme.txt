@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.7 =
+* lock post-content block by default (#6314)
+
 = 0.0.6 =
 * Blockbase 3 (#6167)
 

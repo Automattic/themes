@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.33 =
+* lock post-content block by default (#6314)
+
 = 1.0.32 =
 * Blockbase: Locked post content blocks  (#6299)
 

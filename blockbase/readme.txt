@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.3 =
+* lock post-content block by default (#6314)
+
 = 3.0.2 =
 * Blockbase: Locked post content blocks  (#6299)
 

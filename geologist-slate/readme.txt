@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.32 =
+* lock post-content block by default (#6314)
+
 = 1.0.31 =
 * Update: Quadrat, Geologist & Zoologist quote block line height (#6290)
 

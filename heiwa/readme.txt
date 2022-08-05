@@ -12,6 +12,9 @@ Heiwa is a theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.2 =
+* lock post-content block by default (#6314)
+
 = 1.0.1 =
 * Blockbase 3 (#6167)
 

@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.7 =
+* lock post-content block by default (#6314)
+
 = 1.0.6 =
 * add missing tags to Pendant (#6283)
 

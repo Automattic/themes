@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.35 =
+* lock post-content block by default (#6314)
+
 = 1.0.34 =
 * Blockbase: Locked post content blocks  (#6299)
 
