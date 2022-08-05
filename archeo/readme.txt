@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.15 =
+* Remove page-list blocks (#6313)
+
 = 1.0.14 =
 * lock post-content block by default (#6314)
 

@@ -12,6 +12,9 @@ Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a
 
 == Changelog ==
 
+= 1.0.10 =
+* Remove page-list blocks (#6313)
+
 = 1.0.9 =
 * Blockbase: Locked post content blocks  (#6299)
 
