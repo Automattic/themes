@@ -617,7 +617,7 @@ table,
 	}
 
 	@include media(laptop) {
-		column-gap: 16px;
+		column-gap: #{map-deep-get($config-global, "spacing", "horizontal")};
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -627,7 +627,7 @@ table,
 		}
 
 		.widget {
-			flex: calc(50% - 16px});
+			flex: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
 		}
 	}
 }
