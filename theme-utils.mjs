@@ -457,6 +457,7 @@ async function buildComZip(themeSlug) {
 }
 
 async function buildComZips(themes) {
+	console.log(`Building dotcom .zip files`);
 	const progress = startProgress(themes.length);
 	const failedThemes = []
 	for (let theme of themes) {
@@ -776,10 +777,18 @@ async function versionBumpTheme(theme, addChanges) {
 	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
 
 	for (let file of filesToUpdate) {
-		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
-		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
+		const isPackageJson = file === `${theme}/package.json`;
+		if (isPackageJson) {
+			// update theme/package.json and package-lock.json
+			await executeCommand(`npm version ${currentVersion} --workspace=${theme} --silent`);
+		} else {
+			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
+		}
 		if (addChanges) {
 			await executeCommand(`git add ${file}`);
+			if (isPackageJson) {
+				await executeCommand(`git add package-lock.json`);
+			}
 		}
 	}
 }
