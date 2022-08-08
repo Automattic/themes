@@ -94,6 +94,12 @@ if ( ! function_exists( 'penscratch_2_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for custom padding.
+		add_theme_support( 'custom-spacing' );
+
 		// Add custom colors to Gutenberg
 		add_theme_support(
 			'editor-color-palette',
