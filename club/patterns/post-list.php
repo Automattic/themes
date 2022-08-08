@@ -7,7 +7,7 @@
 
 ?>
 
-<!-- wp:query {"queryId":27,"query":{"perPage":"10","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"tagName":"main","displayLayout":{"type":"list","columns":3},"className":"club-post-list-pattern","layout":{"inherit":false}} -->
+<!-- wp:query {"query":{"perPage":"10","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"tagName":"main","displayLayout":{"type":"list","columns":3},"className":"club-post-list-pattern","layout":{"inherit":false}} -->
 <main class="wp-block-query club-post-list-pattern"><!-- wp:post-template -->
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"1em","bottom":"1em"}}}} -->
 <div class="wp-block-group" style="padding-top:1em;padding-bottom:1em"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
