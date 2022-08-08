@@ -47,10 +47,6 @@
 <p></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:spacer -->
-<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
 <!-- wp:query-pagination -->
 <!-- wp:query-pagination-previous /-->
 
@@ -58,4 +54,9 @@
 
 <!-- wp:query-pagination-next /-->
 <!-- /wp:query-pagination --></main>
+
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
 <!-- /wp:query -->
