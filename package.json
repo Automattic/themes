@@ -1,6 +1,6 @@
 {
 	"name": "themes",
-	"version": "1.0.165",
+	"version": "1.0.186",
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
@@ -24,6 +24,7 @@
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
 		"deploy:theme": "node ./theme-utils.mjs deploy-theme",
 		"deploy:zip": "node ./theme-utils.mjs build-com-zip",
+		"deploy:land": "node ./theme-utils.mjs land-diff",
 		"core:pull": "node ./theme-utils.mjs pull-core-themes",
 		"core:push": "node ./theme-utils.mjs push-core-themes",
 		"core:sync": "node ./theme-utils.mjs sync-core-theme",
@@ -42,6 +43,7 @@
 		"inquirer": "^8.2.0",
 		"lint-staged": "^12.3.4",
 		"lodash": "^4.17.21",
+		"octokit": "^2.0.3",
 		"open": "^8.4.0",
 		"parse5-html-rewriting-stream": "^7.0.0",
 		"table": "^6.8.0"
@@ -59,6 +61,10 @@
 		"wp-prettier": "^2.0.5"
 	},
 	"engines": {
-		"node": ">=16"
-	}
+		"node": ">=16.0.0",
+		"npm": ">=7.0.0"
+	},
+	"workspaces": [
+		"*"
+	]
 }

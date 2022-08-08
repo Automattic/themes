@@ -27,9 +27,7 @@
 <h3 style="font-size:14px;"><strong><?php echo esc_html__( 'More info', 'skatepark' ); ?></strong></h3>
 <!-- /wp:heading -->
 
-<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"overlayBackgroundColor":"foreground","overlayTextColor":"background","fontSize":"small"} -->
-	<!-- wp:page-list {"isNavigationChild":true,"showSubmenuIcon":true,"openSubmenusOnClick":false} /-->
-<!-- /wp:navigation -->
+<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"overlayBackgroundColor":"foreground","overlayTextColor":"background","fontSize":"small"} /-->
 
 </div>
 <!-- /wp:column -->

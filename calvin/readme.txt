@@ -12,6 +12,9 @@ Calvin is a minimalist theme, designed for single-page websites.
 
 == Changelog ==
 
+= 1.0.2 =
+* Blockbase 3 (#6167)
+
 = 1.0.0 =
 * Initial release
 

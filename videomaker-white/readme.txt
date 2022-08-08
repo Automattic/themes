@@ -18,6 +18,18 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.21 =
+* lock post-content block by default (#6314)
+
+= 1.0.20 =
+* Update: Quadrat, Geologist & Zoologist quote block line height (#6290)
+
+= 1.0.19 =
+* Blockbase 3 (#6167)
+
+= 1.0.18 =
+* migrate to npm workspaces (#6200)
+
 = 1.0.17 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 

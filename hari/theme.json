@@ -29,24 +29,6 @@
                 }
             ]
         },
-        "typography": {
-            "fontFamilies": [
-                {
-                    "fontFamily": "\"Source Sans Pro\", sans-serif",
-                    "slug": "body-font",
-                    "name": "Body (Source Sans Pro)",
-                    "google": "family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900",
-                    "fontSlug": "source-sans-pro"
-                },
-                {
-                    "fontFamily": "\"Bodoni Moda\", serif",
-                    "slug": "heading-font",
-                    "name": "Heading (Bodoni Moda)",
-                    "google": "family=Bodoni+Moda:ital,wght@0,400..900;1,400..900",
-                    "fontSlug": "bodoni-moda"
-                }
-            ]
-        },
         "custom": {
             "color": {
                 "foreground": "var(--wp--preset--color--foreground)",
@@ -55,6 +37,23 @@
                 "secondary": "var(--wp--preset--color--primary)",
                 "tertiary": "var(--wp--preset--color--tertiary)"
             }
+        }
+    },
+    "styles": {
+        "blocks": {
+            "core/heading": {
+                "typography": {
+			        "fontFamily": "var:preset|font-family|bodoni-moda"
+                }
+            },
+            "core/post-title": {
+                "typography": {
+			        "fontFamily": "var:preset|font-family|bodoni-moda"
+                }
+            }
+        },
+        "typography": {
+			"fontFamily": "var:preset|font-family|source-sans-pro"
         }
     }
 }

@@ -12,6 +12,21 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.35 =
+* lock post-content block by default (#6314)
+
+= 1.0.34 =
+* Blockbase: Locked post content blocks  (#6299)
+
+= 1.0.33 =
+* Update: Quadrat, Geologist & Zoologist quote block line height (#6290)
+
+= 1.0.32 =
+* Blockbase 3 (#6167)
+
+= 1.0.31 =
+* migrate to npm workspaces (#6200)
+
 = 1.0.30 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 

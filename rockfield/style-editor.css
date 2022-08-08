@@ -123,7 +123,8 @@ $grid-configuration: map-extend($grid-configuration-default, $grid-configuration
 /**
 * Global variables
 */
-:root, body {
+:root,
+body {
 	/* Colors */
 	--wp--preset--color--primary: #222;
 	--wp--preset--color--primary-hover: #444;
@@ -320,6 +321,11 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* Center-align getty image embeds */
+.getty.embed.image {
+	display: block !important;
 }
 
 /**
@@ -1449,20 +1455,17 @@ pre.wp-block-verse {
 	position: relative;
 }
 
-.wp-block-button__link:before {
+.wp-block-button__link::before {
 	border: 2px solid;
+	border-radius: inherit;
 	content: "";
 	display: block;
 	left: 3px;
 	margin: 0;
 	position: absolute;
 	top: 3px;
-	height: calc(100% - 6px);
-	width: calc(100% - 6px);
-}
-
-.is-style-circular .wp-block-button__link:before {
-	border-radius: 100px;
+	height: calc(100% - 10px);
+	width: calc(100% - 10px);
 }
 
 .wp-block-a8c-blog-posts .entry-title a:active, .wp-block-a8c-blog-posts .entry-title a:focus, .wp-block-a8c-blog-posts .entry-title a:hover {
@@ -1500,7 +1503,7 @@ pre.wp-block-verse {
 }
 
 .wp-block-a8c-blog-posts + .button {
-	font-size: 0.83333em;
+	font-size: 0.83333;
 	outline: 2px solid;
 	outline-offset: -5px;
 }

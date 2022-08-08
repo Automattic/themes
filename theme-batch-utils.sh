@@ -107,6 +107,14 @@ build-org-zip() {
 	echo
 }
 
+build-blockbase-child() {
+	THEME=${1//\/}
+	if grep -q "Template: blockbase" ./style.css; then
+		echo "building" $THEME;
+		npm run build
+	fi
+}
+
 command=$1
 echo
 
@@ -156,6 +164,9 @@ for theme in */ ; do
 				;;
 			"build-org-zip-all")
 				build-org-zip ${theme}
+				;;
+			"build-blockbase-children")
+				build-blockbase-child ${theme}
 				;;
 			"version-bump")
 				version-bump ${theme}

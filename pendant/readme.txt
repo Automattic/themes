@@ -12,6 +12,18 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.7 =
+* lock post-content block by default (#6314)
+
+= 1.0.6 =
+* add missing tags to Pendant (#6283)
+
+= 1.0.5 =
+Including Style Variations
+
+= 1.0.4 =
+* Pendant: Removing default text decoration for link elements (#6178)
+
 = 1.0.3 =
 * fix site-title alignment with multiple social icons (#6040)
 

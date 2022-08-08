@@ -22,7 +22,7 @@
 			?>
 
 			<p>
-			<?php _e( "Your site is set to show the the most recent posts on your homepage - but you don't have any Posts published.", 'varia' ); ?></p>
+			<?php _e( "Your site is set to show the most recent posts on this page - but you don't have any Posts published.", 'varia' ); ?></p>
 
 			<p>
 				<a href="<?php echo esc_url( admin_url( 'edit.php' ) ); ?>" class="button">

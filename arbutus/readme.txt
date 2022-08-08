@@ -12,6 +12,15 @@ Arbutus is a simple blogging theme that supports full-site editing. It comes wit
 
 == Changelog ==
 
+= 0.0.16 =
+* lock post-content block by default (#6314)
+
+= 0.0.15 =
+* Blockbase: Locked post content blocks  (#6299)
+
+= 0.0.14 =
+* Blockbase 3 (#6167)
+
 = 0.0.13 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 
