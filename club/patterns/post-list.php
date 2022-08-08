@@ -9,8 +9,8 @@
 
 <!-- wp:query {"queryId":27,"query":{"perPage":"10","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"tagName":"main","displayLayout":{"type":"list","columns":3},"className":"club-post-list-pattern","layout":{"inherit":false}} -->
 <main class="wp-block-query club-post-list-pattern"><!-- wp:post-template -->
-<!-- wp:group {"style":{"border":{"bottom":{"color":"var:preset|color|foreground"}},"spacing":{"padding":{"top":"1em","bottom":"1em"}}}} -->
-<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--foreground);padding-top:1em;padding-bottom:1em"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"1em","bottom":"1em"}}}} -->
+<div class="wp-block-group" style="padding-top:1em;padding-bottom:1em"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-columns" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"width":"","layout":{"inherit":false}} -->
 <div class="wp-block-column"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"90px"} -->
@@ -36,6 +36,11 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
+
+<!-- wp:separator {"className":"alignfull"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity alignfull"/>
+<!-- /wp:separator -->
+
 <!-- /wp:post-template -->
 
 <!-- wp:paragraph {"placeholder":"<?php echo esc_html__( 'Add text or blocks that will display when the query returns no results.', 'club' ); ?>"} -->
