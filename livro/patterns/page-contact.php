@@ -39,7 +39,7 @@
 <p class="has-text-align-right has-small-font-size"><em><?php echo esc_html__( 'Follow us:', 'livro' ); ?></em></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:social-links {"iconColor":"secondary","iconColorValue":"var(--wp--preset--color--secondary)","className":"is-style-logos-only","layout":{"type":"flex","justifyContent":"right"}} -->
+<!-- wp:social-links {"iconColor":"secondary","iconColorValue":"var(--wp--custom--color--secondary)","className":"is-style-logos-only","layout":{"type":"flex","justifyContent":"right"}} -->
 <ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"twitter"} /-->
 
 <!-- wp:social-link {"url":"#","service":"facebook"} /-->

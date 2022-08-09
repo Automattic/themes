@@ -24,32 +24,42 @@
 			"palette": [
 				{
 					"slug": "foreground",
-					"color": "#DBDBDB",
+					"color": "#1E1E1E",
 					"name": "Foreground"
 				},
 				{
 					"slug": "background",
-					"color": "#1E1E1E",
-					"name": "Background"
-				},
-				{
-					"slug": "primary",
-					"color": "#DDDCDA",
+					"color": "#fbf9f2",
 					"name": "Background"
 				},
 				{
 					"slug": "secondary",
-					"color": "#FFFFFF",
-					"name": "Background"
+					"color": "#000000",
+					"name": "Secondary"
 				},
 				{
-					"slug": "tertiary",
-					"color": "#333232",
-					"name": "Background"
-				}
+					"slug": "foreground-dark",
+					"color": "#DBDBDB",
+					"name": "Foreground (dark)"
+				},
+				{
+					"slug": "background-dark",
+					"color": "#1E1E1E",
+					"name": "Background (dark)"
+				},
+				{
+					"slug": "secondary-dark",
+					"color": "#FFFFFF",
+					"name": "Secondary (dark)"
+				}	
 			]
 		},
 		"custom": {
+			"color": {
+				"foreground": "var(--wp--preset--color--foreground)",
+				"background": "var(--wp--preset--color--background)",
+				"secondary": "var(--wp--preset--color--secondary)"
+			},
 			"spacing": {
 				"small": "max(1.25rem, 2vw)",
 				"medium": "clamp(2rem, 8vw, calc(4 * var(--wp--style--block-gap)))",
@@ -136,8 +146,8 @@
 					"radius": "0"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--secondary)",
-					"text": "var(--wp--preset--color--background)"
+					"background": "var(--wp--custom--color--secondary)",
+					"text": "var(--wp--custom--color--background)"
 				},
 				"spacing": {
 					"padding": "1.25em 1.15em 1.15em 1.15em"
@@ -195,8 +205,8 @@
 			}
 		},
 		"color": {
-			"background": "var(--wp--preset--color--background)",
-			"text": "var(--wp--preset--color--foreground)"
+			"background": "var(--wp--custom--color--background)",
+			"text": "var(--wp--custom--color--foreground)"
 		},
 		"elements": {
 			"h1": {
@@ -247,7 +257,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--custom--color--foreground)"
 				}
 			}
 		},

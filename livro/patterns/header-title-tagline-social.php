@@ -16,7 +16,7 @@
 <!-- wp:site-tagline {"textAlign":"center","fontSize":"x-small"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"var(--wp--preset--color--foreground)","iconBackgroundColor":"background","iconBackgroundColorValue":"var(--wp--preset--color--background)","layout":{"type":"flex","justifyContent":"right"}} -->
+<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"var(--wp--custom--color--foreground)","iconBackgroundColor":"background","iconBackgroundColorValue":"var(--wp--custom--color--background)","layout":{"type":"flex","justifyContent":"right"}} -->
 <ul class="wp-block-social-links has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"#","service":"twitter"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:group -->
