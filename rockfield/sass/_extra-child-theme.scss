@@ -617,16 +617,17 @@ table,
 	}
 
 	@include media(laptop) {
+		column-gap: #{map-deep-get($config-global, "spacing", "horizontal")};
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 
-		& > *:nth-child(2) {
+		& > *:nth-child(n + 2) {
 			margin-top: 0;
 		}
 
 		.widget {
-			width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
+			flex: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
 		}
 	}
 }

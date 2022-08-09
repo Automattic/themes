@@ -4658,15 +4658,16 @@ table th,
 
 @media only screen and (min-width: 782px) {
 	.widget-area {
+		column-gap: 16px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	.widget-area > *:nth-child(2) {
+	.widget-area > *:nth-child(n + 2) {
 		margin-top: 0;
 	}
 	.widget-area .widget {
-		width: calc(50% - 16px);
+		flex: calc(50% - 16px);
 	}
 }
 
