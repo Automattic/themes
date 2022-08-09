@@ -47,6 +47,11 @@ a {
  * https://github.com/WordPress/gutenberg/issues/27075
  */
 
+ .wp-block-read-more:is(:hover, :focus) {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+ }
+
 :is(
 	.wp-block-search__button,
 	.wp-block-file .wp-block-file__button,
@@ -63,15 +68,7 @@ a {
 	.wp-block-file .wp-block-file__button,
 	.wp-block-button__link,
 	.wp-elements-button,
-):where(:active) {
-	border-style: dotted;
-}
-
-:is(
-	.wp-block-search__button,
-	.wp-block-file .wp-block-file__button,
-	.wp-block-button__link,
-	.wp-elements-button,
+	.wp-block-read-more,
 ):where(:active) {
 	border-style: dotted;
 }
@@ -97,7 +94,7 @@ a {
 ) {
 	background: var(--wp--preset--color--background);
 	color: var(--wp--preset--color--foreground);
-	border-style: dotted;
+	border-style: dashed;
 }
 
 /* This is necesary to fix the outline style for the button in the editor */
