@@ -7,7 +7,7 @@ Description: Club is a funky, bright theme with vibrant colors and a quirky aest
 Requires at least: 5.8
 Tested up to: 6.0
 Requires PHP: 5.7
-Version: 0.0.19
+Version: 0.0.20
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: club
@@ -197,9 +197,30 @@ a {
 }
 
 /*
- * Code
+ * Navigation
  */
-.wp-block-search__input {
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	gap: 1rem;
+}
+
+.wp-block-navigation .wp-block-navigation__container .has-child .wp-block-navigation__submenu-container {
+	font-size: var(--wp--preset--font-size--medium);
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
+	padding: 0.5rem 1rem 0 1rem;
+	gap: 0.5rem;
+}
+
+/*
+ * Block search
+ */
+ .wp-block-search__input {
 	color: var(--wp--preset--color--foreground);
 }
 

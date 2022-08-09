@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.7 =
+* Rainfall: style buttons and links (#6317)
+
 = 0.0.6 =
 * Version Bump
 * lock post-content block by default (#6314)
