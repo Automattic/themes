@@ -113,6 +113,9 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.18 =
+* #6323: Lodestar: Fix list alignment on homepage (#6327)
+
 = 1.0.17 =
 * Lodestar: Add page password protection for portfolio items on the portfolio page (#6011)
 
