@@ -20,7 +20,7 @@
 <p class="has-large-font-size"><?php echo esc_html__( 'This page could not be found. Try searching posts using the search field.', 'club' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"placeholder":"<?php echo esc_html__( 'Search...', 'club' ); ?>","buttonText":"<?php echo esc_html__( 'WHAT R U WAITING FOR?', 'club' ); ?>"} /-->
+<!-- wp:pattern {"slug":"club/search"} /-->
 
 <!-- wp:spacer {"height":"4rem"} -->
 <div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
