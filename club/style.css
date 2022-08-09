@@ -229,6 +229,50 @@ a {
 }
 
 /*
+ * Comments
+ */
+
+.wp-block-post-comments-form :is(textarea, input:not([type="submit"]) ) {
+	background-color: var(--wp--preset--color--background);
+	border: 1px solid var(--wp--preset--color--foreground);
+	color: 1px solid var(--wp--preset--color--foreground);
+	border-radius: 50px;
+	padding: 2em;
+}
+
+.wp-block-post-comments-form :is(textarea, input:not([type="submit"]) ):focus-visible {
+	outline: 1.5px solid var(--wp--preset--color--foreground);
+}
+
+.wp-block-comments-query-loop .depth-1 .wp-block-column:empty {
+	display: none;
+}
+
+.wp-block-post-comments-form input[type="checkbox"]	{
+	appearance: none;
+	height: 1.5rem;
+    min-width: 1.5rem;
+	padding: 0;
+	border-radius: 1rem;
+	position: relative;
+}
+
+.wp-block-post-comments-form input[type="checkbox"]:checked::after	{
+	background-color: var(--wp--preset--color--foreground);
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 1rem;
+    top: 0;
+    left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto; 
+}
+
+
+/*
  * Alignment styles, borrowed from Twenty Twenty-Two.
  * These rules are temporary, and should not be relied on or
  * modified too heavily by themes or plugins that build on
