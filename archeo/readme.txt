@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.17 =
+* Archeo: move CSS styles to theme.json (#6159)
+
 = 1.0.16 =
 * Archeo: Update theme.json to conform to standards (#5708)
 * Archeo: Try new root padding alignments (#6312)
