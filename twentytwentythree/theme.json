@@ -113,7 +113,7 @@
 							]
 						}
 					],
-					"fontFamily": "\"DM Sans\", serif",
+					"fontFamily": "\"DM Sans\", sans-serif",
 					"name": "DM Sans",
 					"slug": "dm-sans"
 				},
@@ -175,6 +175,22 @@
 	},
 	"styles": {
 		"blocks": {
+			"core/navigation-link": {
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						":focus": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						}
+					}
+				}
+			},
 			"core/post-comments": {
 				"spacing": {
 					"padding": {
@@ -311,6 +327,16 @@
 			"link": {
 				"color": {
 					"text": "var(--wp--preset--color--secondary)"
+				},
+				":hover": {
+					"typography": {
+						"textDecoration": "underline dashed"
+					}
+				},
+				":active": {
+					"typography": {
+						"textDecoration": "none"
+					}
 				}
 			}
 		},
