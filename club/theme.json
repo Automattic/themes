@@ -223,8 +223,7 @@
 					"text": "var(--wp--preset--color--primary)"
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)",
-					"textDecoration": "underline"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/comments-title": {
@@ -234,13 +233,15 @@
 			},
 			"core/comment-content": {
 				"typography": {
-					"fontSize": "1.125rem",
-					"lineHeight": "1.6"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
             "core/post-comments-form": {
                 "elements": {
                     "button": {
+                        "typography": {
+                            "fontSize": "var(--wp--preset--font-size--large)"
+                        },
                         "color":{
                             "background": "var(--wp--preset--color--background)",
                             "text": "var(--wp--preset--color--foreground)"
@@ -375,6 +376,28 @@
                     "textTransform": "uppercase"
                 }
             },
+            "core/query-pagination": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)"
+                },
+                "elements": {
+                    "link": {
+                        "typography": {
+                            "textDecoration": "none"
+                        },
+                        ":hover": {
+                            "typography": {
+                                "textDecoration": "underline"
+                            }
+                        },
+                        ":active": {
+                            "typography": {
+                                "textDecoration": "underline dashed"
+                            }
+                        }
+                    }
+                }
+            },
             "core/search": {
                 "typography": {
                     "fontSize": "var(--wp--preset--font-size--large)",
@@ -428,6 +451,29 @@
                         ":hover": {
                             "typography": {
                                 "textDecoration": "none"
+                            }
+                        }
+                    }
+                }
+            },
+            "core/post-navigation-link": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)",
+                    "textDecoration": "none"
+                },
+                "elements": {
+                    "link": {
+                        "typography": {
+                            "textDecoration": "none"
+                        },
+                        ":hover": {
+                            "typography": {
+                                "textDecoration": "underline"
+                            }
+                        },
+                        ":active": {
+                            "typography": {
+                                "textDecoration": "underline dashed"
                             }
                         }
                     }
@@ -506,13 +552,15 @@
             "h1": {
                 "typography": {
                     "fontSize": "clamp(3.75rem, calc(3.75rem + ((1vw - 0.48rem) * 8.4135)), 8.125rem)",
-                    "fontWeight": "400"
+                    "fontWeight": "400",
+                    "lineHeight": "1em"
                 }
             },
             "h2": {
                 "typography": {
                     "fontSize": "clamp(2.5rem, calc(2.5rem + ((1vw - 0.48rem) * 8.4135)), 6.875rem)",
-                    "fontWeight": "400"
+                    "fontWeight": "400",
+                    "lineHeight": "1em"
                 }
             },
             "h3": {
