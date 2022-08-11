@@ -19,6 +19,10 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.5 =
+* Update sass build scripts to import from node_modules (#6371)
+* Removed group block wrapping query pagination which was causing problems. (#6354)
+
 = 3.0.4 =
 * Blockbase: fix font-size in Comments Title Block (#6321)
 
