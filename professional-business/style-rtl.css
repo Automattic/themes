@@ -7,7 +7,7 @@ Author URI: https://wordpress.com/
 Template: twentynineteen
 Description: Simple, yet sophisticated, with subtle, elegant typography, Professional Business conveys quality and integrity, which makes it especially good fit for accounting, law, and consultancy firms.
 Requires at least: WordPress 4.9.6
-Version: 1.5.3
+Version: 1.5.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: professional-business
@@ -2151,12 +2151,11 @@ body.page .main-navigation {
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+@supports (object-fit: cover) {
   .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
     transform: none;
     width: 100%;

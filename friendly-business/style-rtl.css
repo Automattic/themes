@@ -7,7 +7,7 @@ Author URI: https://wordpress.org/
 Template: twentynineteen
 Description: Simple, approachable, with bold, handsome typography, Friendly Business conveys quality and sustainability, which makes it especially good fit for education, agriculture and family-run businesses.
 Requires at least: WordPress 4.9.6
-Version: 1.4.3
+Version: 1.4.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: friendly-business
@@ -2145,12 +2145,11 @@ body.page .main-navigation {
   /* When image filters are active, make it grayscale to colorize it blue. */
 }
 
-@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+@supports (object-fit: cover) {
   .site-header.featured-image .site-featured-image .post-thumbnail img {
     height: 100%;
     right: 0;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
     transform: none;
     width: 100%;
