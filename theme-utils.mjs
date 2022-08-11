@@ -651,16 +651,16 @@ async function versionBumpThemes() {
 	return changesWereMade;
 }
 
-export function getThemeMetadata(styleCss, attribute) {
+export function getThemeMetadata(styleCss, attribute, trimWPCom = true) {
 	if (!styleCss || !attribute) {
 		return null;
 	}
 	switch (attribute) {
 		case 'Version':
-			return styleCss
+			const version = styleCss
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
-				.trim()
-				.replace('-wpcom', '');
+				.trim();
+			return trimWPCom ? version.replace('-wpcom', '') : version;
 		case 'Requires at least':
 			return styleCss
 				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
@@ -771,16 +771,16 @@ async function versionBumpTheme(theme, addChanges) {
 	await executeCommand(`git add ${theme}/style.css`);
 
 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
-	let currentVersion = getThemeMetadata(styleCss, 'Version');
+	let currentVersion = getThemeMetadata(styleCss, 'Version', false);
 
-	let filesToUpdate = await executeCommand(`find ${theme} -not \\( -path "*/node_modules/*" -prune \\) -and \\( -name package.json -or -name style.scss -or -name style-child-theme.scss \\) -maxdepth 3`);
+	let filesToUpdate = await executeCommand(`find ${theme} -not \\( -path "*/node_modules/*" -prune \\) -and \\( -name package.json -or -name style.scss -or -name style-rtl.css -or -name style-child-theme.scss \\) -maxdepth 3`);
 	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
 
 	for (let file of filesToUpdate) {
 		const isPackageJson = file === `${theme}/package.json`;
 		if (isPackageJson) {
 			// update theme/package.json and package-lock.json
-			await executeCommand(`npm version ${currentVersion} --workspace=${theme} --silent`);
+			await executeCommand(`npm version ${currentVersion.replace('-wpcom', '')} --workspace=${theme} --silent`);
 		} else {
 			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
 		}

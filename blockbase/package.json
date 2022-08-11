@@ -21,7 +21,7 @@
   "scripts": {
     "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
     "build": "npm run build:scss",
-    "build:scss": "sass sass/ponyfill.scss assets/ponyfill.css --style=expanded && postcss assets/ponyfill.css --use autoprefixer --output assets/ponyfill.css --map"
+    "build:scss": "sass sass/ponyfill.scss assets/ponyfill.css --style=expanded --load-path ../node_modules && postcss assets/ponyfill.css --use autoprefixer --output assets/ponyfill.css --map"
   },
   "author": "Automattic",
   "license": "GPLv2"
