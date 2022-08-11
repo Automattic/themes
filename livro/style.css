@@ -65,10 +65,10 @@ a:active {
 
 .wp-block-search__button,
 .wp-block-file .wp-block-file__button {
-	background-color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--custom--color--foreground);
 	border-radius: 0;
 	border: none;
-	color: var(--wp--preset--color--background);
+	color: var(--wp--custom--color--background);
 	font-size: var(--wp--preset--font-size--medium);
 	padding: calc(.667em + 2px) calc(1.333em + 2px);
 }
@@ -170,14 +170,14 @@ input {
 
 textarea,
 input:not([type="submit"]):not([type="button"]) {
-	color: var(--wp--preset--color--foreground);
-	background: var(--wp--preset--color--background);
-	border-color: var(--wp--preset--color--foreground);
+	color: var(--wp--custom--color--foreground);
+	background: var(--wp--custom--color--background);
+	border-color: var(--wp--custom--color--foreground);
 }
 
 textarea:focus,
 input:not([type="submit"]):not([type="button"]):focus {
-	border-color: var(--wp--preset--color--secondary);
+	border-color: var(--wp--custom--color--secondary);
 }
 
 .comment-form label {
@@ -216,4 +216,13 @@ input:not([type="submit"]):not([type="button"]):focus {
 .archive .post_format-post-format-aside .wp-block-post-title,
 .blog .post_format-post-format-aside .wp-block-post-title {
 	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.editor-styles-wrapper,
+  body {
+    --wp--custom--color--foreground: var(--wp--preset--color--foreground-dark);
+    --wp--custom--color--background: var(--wp--preset--color--background-dark);
+    --wp--custom--color--secondary: var(--wp--preset--color--secondary-dark);
+  }
 }
