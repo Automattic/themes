@@ -19,6 +19,9 @@ Shoreditch is a functional and responsive theme perfect for your business’s on
 
 == Changelog ==
 
+= 1.2.9 =
+* #6232: Publication: Fix padding on inline text color (#6350)
+
 = 1.2.8 =
 * Fix editor text highlight colors (#6003)
 
