@@ -228,11 +228,20 @@ a {
 	gap: 0.5rem;
 }
 
-.wp-block-navigation__submenu-icon {
-	background-image: url(assets/icons/arrow.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
+.wp-block-navigation__submenu-icon::after {
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-color: currentColor;
+    -webkit-mask-image: url(assets/icons/arrow.svg);
+    mask-image: url(assets/icons/arrow.svg);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	display: block;
+	-webkit-mask-size: 0.5em;
+	mask-size: 0.5em;
+	mask-position: left 30%;
+    -webkit-mask-position: left 30%;
 }
 
 .wp-block-navigation__submenu-icon svg {
