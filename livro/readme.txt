@@ -13,6 +13,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.17 =
+* Livro: add white and cream variations (#6359)
+
 = 1.0.16 =
 * Remove page-list blocks (#6313)
 
