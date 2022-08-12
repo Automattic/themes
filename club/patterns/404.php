@@ -8,8 +8,8 @@
 ?>
 
 <!-- wp:group {"tagName":"main"} -->
-<main class="wp-block-group"><!-- wp:spacer {"height":"4rem"} -->
-<div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+<main class="wp-block-group"><!-- wp:spacer {"height":"clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 5.7692)), 4rem)"} -->
+<div style="height:clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 5.7692)), 4rem)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"left","level":1,"style":{"typography":{"textTransform":"uppercase"}}} -->
@@ -22,7 +22,4 @@
 
 <!-- wp:pattern {"slug":"club/search"} /-->
 
-<!-- wp:spacer {"height":"4rem"} -->
-<div style="height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></main>
 <!-- /wp:group -->

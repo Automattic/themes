@@ -366,11 +366,6 @@
                     "style": "solid",
                     "width": "0"
                 },
-                "spacing": {
-                    "padding": {
-                        "left": "var(--wp--custom--gap--horizontal)"
-                    }
-                },
                 "typography": {
                     "fontSize": "var(--wp--preset--font-size--large)",
                     "fontStyle": "normal"
@@ -411,8 +406,15 @@
                 },
                 "elements": {
                     "button": {
+                        "spacing": {
+                            "padding": {
+                                "top": "1rem",
+                                "bottom": "1rem"
+                            }
+                        },
                         "typography": {
-                            "fontSize": "var(--wp--preset--font-size--large)"
+                            "fontSize": "var(--wp--preset--font-size--large)",
+                            "lineHeight": "1.25"
                         }
                     }
                 }
@@ -442,8 +444,9 @@
                         "typography": {
                             "fontSize": "var(--wp--preset--font-size--large)",
                             "fontWeight": "700",
-                            "textDecoration": "underline solid 1.5px",
-                            "fontStyle": "italic"
+                            "textDecoration": "underline solid",
+                            "fontStyle": "italic",
+                            "letterSpacing": "-0.04em"
                         },
                         ":hover": {
                             "typography": {
@@ -583,7 +586,7 @@
                     "text": "var(--wp--preset--color--primary)"
                 },
                 "typography": {
-                    "textDecoration": "underline solid 1px"
+                    "textDecoration": "underline solid"
                 },
                 ":hover": {
                     "typography": {
@@ -592,13 +595,13 @@
                 },
                 ":active": {
                     "typography": {
-                        "textDecoration": "underline dotted 1px"
+                        "textDecoration": "underline dotted"
                     }
                 }
             }
         },
         "spacing": {
-            "blockGap": "30px"
+            "blockGap": "clamp(1rem, calc(1rem + ((1vw - 0.48rem) * 5.7692)), 2rem)"
         },
         "typography": {
             "fontFamily": "var(--wp--preset--font-family--spacemono)",
