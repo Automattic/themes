@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: A Link in Bio pattern with link cloud.
+ * Title: A Link in Bio pattern with link cloud
  * Slug: lynx/link-in-bio-cloud
  * Inserter: yes
  * Categories: featured, link-in-bio
@@ -8,8 +8,8 @@
 
 ?>
 
-<!-- wp:cover {"dimRatio":0,"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-background-color has-background-dim-0 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"inherit":false,"contentSize":"640px"}} -->
+<!-- wp:cover {"overlayColor":"white","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full"} -->
+<div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-white-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"inherit":false,"contentSize":"640px"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"align":"left","placeholder":"Write title…","style":{"color":{"text":"#00000099"}},"fontSize":"small"} -->
 <p class="has-text-align-left has-text-color has-small-font-size" style="color:#00000099"><?php echo  esc_html__( 'I’m Matt, an artist living in New York City.', 'lynx' ); ?></p>
 <!-- /wp:paragraph -->
