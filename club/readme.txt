@@ -10,6 +10,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Club is a funky, vibrant, opinionated theme with a monospaced font. Both its styles and spacing form an edgy aesthetic perfect for those looking to build a quirky website.
 
+== Changelog ==
+
+= 1.0.0 =
+* Initial release
+
 == Copyright ==
 
 Club WordPress Theme, (C) 2022 Automattic, Inc.
