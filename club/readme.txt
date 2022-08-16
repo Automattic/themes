@@ -6,8 +6,6 @@ Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A blank starting point for building your site.
-
 == Description ==
 
 Club is a funky, vibrant, opinionated theme with a monospaced font. Both its styles and spacing form an edgy aesthetic perfect for those looking to build a quirky website.
