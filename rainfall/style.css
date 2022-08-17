@@ -14,11 +14,25 @@ Text Domain: rainfall
 Tags: two-columns, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, theme-options, threaded-comments, translation-ready, auto-loading-homepage, blog-homepage
 */
 
+/*
+ * Font smoothing
+ */
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Post title indent
+ */
 .wp-block-post-title:not(.editor-post-title) {
 	margin-left: 1ch;
 	text-indent: -1ch;
 }
 
+/**
+ * Comment form elements
+ */
 .wp-block-post-comments-form input:not([type=submit],[type=checkbox]),
 .wp-block-post-comments-form textarea,
 .wp-block-post-comments-form select {
@@ -28,7 +42,7 @@ Tags: two-columns, custom-colors, custom-menu, custom-logo, editor-style, featur
 }
 
 /**
- * Styles for the search page input
+ * Search input on dark background
  */
 .has-black-background-color .wp-block-search__input {
 	background-color: var(--wp--preset--color--black);
@@ -36,16 +50,7 @@ Tags: two-columns, custom-colors, custom-menu, custom-logo, editor-style, featur
 }
 
 /*
- * Font smoothing
- */
-
- body {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-}
-
-/*
-* Button styles for buttons on dark backgrounds.
+* Button styles on dark background
 */
 .has-black-background-color .wp-block-file .wp-block-file__button,
 .has-black-background-color .wp-block-button__link {
