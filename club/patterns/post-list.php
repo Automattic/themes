@@ -18,7 +18,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:post-title {"level":3,"isLink":true} /--></div>
+<div class="wp-block-column"><!-- wp:post-title {"level":3,"isLink":true,"fontSize":"large"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column -->
@@ -54,9 +54,5 @@
 
 <!-- wp:query-pagination-next /-->
 <!-- /wp:query-pagination --></main>
-
-<!-- wp:spacer -->
-<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
 
 <!-- /wp:query -->

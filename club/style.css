@@ -5,9 +5,9 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Club is a funky, vibrant, opinionated theme with a monospaced font. Both its styles and spacing form an edgy aesthetic perfect for those looking to build a quirky website.
 Requires at least: 5.8
-Tested up to: 6.0
+Tested up to: 6.0.1
 Requires PHP: 5.7
-Version: 0.0.20
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: club
@@ -39,6 +39,13 @@ GNU General Public License for more details.
 
 a {
 	text-underline-offset: .15em;
+	/* We add text-decoration- here instead in theme.json because webkit browsers as Safari are not compatible with text-decoration shorthand syntax */
+	text-decoration-thickness: 1px!important;
+}
+
+.wp-block-site-title a {
+	/* We add text-decoration- here instead in theme.json because webkit browsers as Safari are not compatible with text-decoration shorthand syntax */
+	text-decoration-thickness: 1.5px!important;
 }
 
 /*
@@ -216,12 +223,36 @@ a {
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	font-size: 2.5rem;
+}
+
+.wp-block-navigation-item__content {
 	font-size: var(--wp--preset--font-size--large);
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
 	padding: 0.5rem 1rem 0 1rem;
 	gap: 0.5rem;
+}
+
+.wp-block-navigation__submenu-icon::after {
+	content: "";
+	width: 1em;
+	height: 1em;
+	background-color: currentColor;
+    -webkit-mask-image: url(assets/icons/arrow.svg);
+    mask-image: url(assets/icons/arrow.svg);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	display: block;
+	-webkit-mask-size: 0.5em;
+	mask-size: 0.5em;
+	mask-position: left 30%;
+    -webkit-mask-position: left 30%;
+}
+
+.wp-block-navigation__submenu-icon svg {
+	display: none !important;
 }
 
 /*
@@ -276,6 +307,33 @@ a {
 	bottom: 0;
 	right: 0;
 	margin: auto; 
+}
+
+/*
+ * Pullquote
+ */
+
+
+.wp-block-pullquote blockquote {
+	margin: 0;
+}
+
+.wp-block-pullquote p {
+	margin-block-start: var(--wp--custom--gap--vertical);
+	margin-block-end: var(--wp--custom--gap--vertical);
+	font-size: inherit;
+}
+
+.wp-block-pullquote cite {
+	display: block;
+	margin-block-end: var(--wp--custom--gap--vertical);
+	font-style: normal;
+	font-size:  var(--wp--preset--font-size--small);
+	font-weight: 400;
+}
+
+.wp-block-pullquote cite::before {
+	content: "— ";
 }
 
 
@@ -352,7 +410,7 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	border-radius: 999px;
 	padding: .5rem 2rem;
 	background-color: transparent;
-	border-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--foreground);
 	border-width: 1.5px;
 }
 @media screen and (max-width: 768px) {
@@ -364,4 +422,15 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 		margin-left: 0;
 		margin-top: .625rem;
 	}
+}
+
+/*
+ * Editor
+ */
+
+ /* This will be necessary until this is fixed https://github.com/WordPress/gutenberg/issues/42441 */
+.edit-post-visual-editor__post-title-wrapper .wp-block-post-title {
+	font-size: clamp(2.5rem, calc(2.5rem + ((1vw - 0.48rem) * 8.4135)), 6.875rem);
+	line-height: 1em;
+	letter-spacing: -0.04em;
 }
