@@ -23,7 +23,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#00000080"}}}}} -->
-<p class="has-link-color"><a href="#"><?php echo  esc_html__( 'Blog', 'lynx' ); ?>Blog</a></p>
+<p class="has-link-color"><a href="#"><?php echo  esc_html__( 'Blog', 'lynx' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#00000080"}}}}} -->
