@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.8 =
+* Removed font families from the child so that Blockbases are used instead (#6405)
+
 = 0.0.7 =
 * lock post-content block by default (#6314)
 
