@@ -1,11 +1,11 @@
 <?php
 /**
- * Club functions and definitions
+ * Disco functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Club
- * @since Club 1.0
+ * @package Disco
+ * @since Disco 1.0
  */
 
 
@@ -14,7 +14,7 @@ if ( ! function_exists( 'block_canvas_support' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Club 1.0
+	 * @since Disco 1.0
 	 *
 	 * @return void
 	 */
@@ -34,7 +34,7 @@ if ( ! function_exists( 'block_canvas_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Club 1.0
+	 * @since Disco 1.0
 	 *
 	 * @return void
 	 */
