@@ -1,7 +1,7 @@
 === Disco ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 6.0.1
+Tested up to: 6.0
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,3 +29,14 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+
+=== Images used in the screenshot of the theme ===
+
+- https://www.rawpixel.com/image/5950118/free-public-domain-cc0-photo
+- https://stocksnap.io/photo/people-girl-9WUDTO989F
+- https://nappy.co/photo/280/bridge
+
+All the images used in the screenshot are licensed under the:
+CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+https://creativecommons.org/publicdomain/zero/1.0/

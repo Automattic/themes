@@ -9,7 +9,7 @@
  */
 
 
-if ( ! function_exists( 'block_canvas_support' ) ) :
+if ( ! function_exists( 'disco_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -18,7 +18,7 @@ if ( ! function_exists( 'block_canvas_support' ) ) :
 	 *
 	 * @return void
 	 */
-	function block_canvas_support() {
+	function disco_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -27,9 +27,9 @@ if ( ! function_exists( 'block_canvas_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'block_canvas_support' );
+add_action( 'after_setup_theme', 'disco_support' );
 
-if ( ! function_exists( 'block_canvas_styles' ) ) :
+if ( ! function_exists( 'disco_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
@@ -38,21 +38,21 @@ if ( ! function_exists( 'block_canvas_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function block_canvas_styles() {
+	function disco_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'block_canvas-style',
+			'disco-style',
 			get_template_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'block_canvas-style' );
+		wp_enqueue_style( 'disco-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'block_canvas_styles' );
+add_action( 'wp_enqueue_scripts', 'disco_styles' );
