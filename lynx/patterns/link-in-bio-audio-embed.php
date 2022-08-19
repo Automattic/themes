@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Link in Bio with audio embed
- * Slug: lynx/link-in-bio-audio embed
+ * Slug: lynx/link-in-bio-audio-embed
  * Inserter: yes
  * Categories: featured, link-in-bio
  */
