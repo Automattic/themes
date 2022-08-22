@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.36 =
+* #6085: Zoologist: Add underline to links (#6382)
+
 = 1.0.35 =
 * lock post-content block by default (#6314)
 
