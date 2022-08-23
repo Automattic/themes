@@ -18,6 +18,7 @@ rm -rf ./deploy
 declare -a THEMES_TO_DEPLOY=(
 	"archeo"
 	"blockbase"
+	"disco"
 	"geologist"
 	"livro"
 	"mayland-blocks"
