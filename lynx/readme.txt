@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A theme for writers that want to publish a newsletter using Jetpack.
+A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
