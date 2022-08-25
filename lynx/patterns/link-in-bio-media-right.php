@@ -28,7 +28,7 @@
 <!-- /wp:button -->
 
 <!-- wp:button {"width":100,"style":{"typography":{"textTransform":"uppercase"},"border":{"radius":"100px"},"color":{"gradient":"linear-gradient(135deg,rgb(12,235,235) 0%,rgb(32,227,178) 49%,rgb(41,255,198) 100%)","text":"#0b5340"}}} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100" style="text-transform:uppercase"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:100px;background:linear-gradient(135deg,rgb(12,235,235) 0%,rgb(32,227,178) 49%,rgb(41,255,198) 100%);color:#0b5340"><strong><?php echo  esc_html__( 'Hey! Thanks for stopping by.', 'lynx' ); ?>Spotify</strong></a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100" style="text-transform:uppercase"><a class="wp-block-button__link has-text-color has-background wp-element-button" style="border-radius:100px;background:linear-gradient(135deg,rgb(12,235,235) 0%,rgb(32,227,178) 49%,rgb(41,255,198) 100%);color:#0b5340"><strong><?php echo  esc_html__( 'Spotify', 'lynx' ); ?></strong></a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"width":100,"style":{"typography":{"textTransform":"uppercase"},"border":{"radius":"100px"},"color":{"gradient":"linear-gradient(135deg,rgb(100,207,241) 0%,rgb(122,103,241) 100%)","text":"#142547"}}} -->
