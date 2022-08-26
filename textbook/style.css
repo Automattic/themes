@@ -2945,11 +2945,6 @@ body {
   padding: 16.2px 16.2px 20.25px;
 }
 
-.single .hentry .entry-title a:hover {
-  color: #ce4639;
-  background: #222;
-}
-
 .single .hentry .entry-title span {
   color: #FFF;
   display: block;
@@ -2967,6 +2962,12 @@ body {
   justify-content: space-around;
   margin-right: -1px;
   order: 2;
+}
+
+.single .hentry .entry-title a:hover,
+.single .hentry .wpnbha .entry-title a:hover {
+  color: #ce4639;
+  background: #222;
 }
 
 .single .hentry .entry-meta:before {
@@ -5457,6 +5458,63 @@ body .jetpack-social-navigation li {
  * Contributing author: Tyler Smith (@mbmufffin)
  *
  */
+
+/* Newspack Blocks Compatibility */
+.single .hentry .wpnbha .entry-meta:before,
+.single .hentry .wpnbha .post-thumbnail:before, 
+.single .hentry .wpnbpc .entry-meta:before {
+  border: none;
+}
+
+.single .hentry .wpnbha .entry-meta,
+.single .hentry .wpnbha .post-thumbnail {
+  background: #fff;
+}
+
+.single .hentry .wpnbha .entry-title a {
+  color: #222;
+  padding-left: 0;
+}
+
+.single .hentry .wpnbha .entry-title a:hover,
+.single .hentry .wpnbpc .entry-title a:hover {
+  background: unset;
+}
+
+.single .hentry .wpnbha .entry-meta,
+.single .hentry .wpnbpc .entry-meta {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.single .hentry .wpnbha .entry-meta .byline,
+.single .hentry .wpnbpc .entry-meta .byline {
+  margin: 0 10px ;
+  padding: 0;
+}
+
+.single .hentry .wpnbha .byline a,
+.single .hentry .wpnbpc .byline a {
+  vertical-align: unset;
+}
+
+.single .hentry .wpnbpc .entry-title a {
+  padding: 0;
+}
+
+
+.single .hentry .wpnbpc .entry-meta,
+.single .hentry .wpnbpc .entry-meta a {
+  background: transparent;
+  color: #fff;
+}
+
+.single .wpnbha .entry-meta a {
+  width: unset;
+}
+
 /* ====================================================================================================================
  * RESETS
  * ====================================================================================================================*/
