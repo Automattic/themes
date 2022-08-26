@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.12 =
+* Lynx: Fix wrong button label in one of the patterns. (#6441)
+
 = 1.0 =
 * Released: March 8, 2022
 
