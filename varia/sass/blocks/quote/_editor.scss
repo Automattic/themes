@@ -3,8 +3,6 @@
 	padding-left: #{map-deep-get($config-global, "spacing", "horizontal")};
 
 	p {
-		@include font-family( map-deep-get($config-quote, "font", "family") );
-		font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h4")) + 0em);
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: #{map-deep-get($config-global, "font", "line-height", "h4")};
 	}
@@ -15,8 +13,6 @@
 		padding: 0;
 
 		p {
-			@include font-family( map-deep-get($config-quote, "font", "family") );
-			font-size: (strip-unit(map-deep-get($config-heading, "font", "size", "h3")) + 0em);
 			letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h3")};
 			line-height: #{map-deep-get($config-heading, "font", "line-height", "h3")};
 		}
@@ -26,19 +22,19 @@
 	[class*="background-color"]:not(.has-background-background-color) &,
 	[style*="background-color"]:not(.has-background-background-color) &,
 	.wp-block-cover[style*="background-image"] & {
-			border-color: currentColor;
+		border-color: currentcolor;
 	}
 
 	.wp-block-quote__citation {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0);
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 
 		.has-background:not(.has-background-background-color) &,
 		[class*="background-color"]:not(.has-background-background-color) &,
 		[style*="background-color"]:not(.has-background-background-color) &,
 		.wp-block-cover[style*="background-image"] & {
-			color: currentColor;
+			color: currentcolor;
 		}
 	}
 }

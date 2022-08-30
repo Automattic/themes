@@ -18,8 +18,8 @@
 	}
 
 	p {
+
 		@include font-family( map-deep-get($config-quote, "font", "family") );
-		font-size: #{map-deep-get($config-heading, "font", "size", "h4")};
 		letter-spacing: #{map-deep-get($config-heading, "font", "letter-spacing", "h4")};
 		line-height: #{map-deep-get($config-heading, "font", "line-height", "h4")};
 	}
@@ -28,14 +28,13 @@
 	cite,
 	footer {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: #{map-deep-get($config-global, "font", "size", "sm")};
 		letter-spacing: #{map-deep-get($config-global, "font", "letter-spacing", "sm")};
 
 		.has-background:not(.has-background-background-color) &,
 		[class*="background-color"]:not(.has-background-background-color) &,
 		[style*="background-color"] &,
 		.wp-block-cover[style*="background-image"] & {
-			color: currentColor;
+			color: currentcolor;
 		}
 	}
 
@@ -49,6 +48,7 @@
 
 	&.is-style-large,
 	&.is-large {
+
 		/* Resetting margins to match _block-container.scss */
 		margin-top: #{map-deep-get($config-global, "spacing", "vertical")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "vertical")};
@@ -73,6 +73,6 @@
 	[class*="background-color"]:not(.has-background-background-color) &,
 	[style*="background-color"] &,
 	.wp-block-cover[style*="background-image"] & {
-		border-color: currentColor;
+		border-color: currentcolor;
 	}
 }
