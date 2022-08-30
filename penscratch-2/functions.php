@@ -94,6 +94,9 @@ if ( ! function_exists( 'penscratch_2_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for custom padding.
+		add_theme_support( 'custom-spacing' );
+
 		// Add custom colors to Gutenberg
 		add_theme_support(
 			'editor-color-palette',
@@ -267,7 +270,7 @@ function penscratch_2_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
