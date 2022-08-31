@@ -4,6 +4,8 @@
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function stewart_support() {
+	// Make theme available for translation.
+	load_theme_textdomain( 'stewart', get_template_directory() . '/languages' );
 
 	// Add support for block styles.
 	add_theme_support( 'wp-block-styles' );

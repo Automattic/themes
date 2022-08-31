@@ -19,6 +19,8 @@ if ( ! function_exists( 'vivre_support' ) ) :
 	 * @return void
 	 */
 	function vivre_support() {
+		// Make theme available for translation.
+		load_theme_textdomain( 'stewart', get_template_directory() . '/languages' );
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );

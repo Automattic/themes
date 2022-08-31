@@ -19,6 +19,8 @@ if ( ! function_exists( 'livro_support' ) ) :
 	 * @return void
 	 */
 	function livro_support() {
+		// Make theme available for translation.
+		load_theme_textdomain( 'livro', get_template_directory() . '/languages' );
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
