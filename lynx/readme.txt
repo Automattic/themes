@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.13 =
+* Lynx: Swap out the code for one of the patterns, to match what's on dotcompatterns site. (#6483)
+
 = 0.0.12 =
 * Lynx: Fix wrong button label in one of the patterns. (#6441)
 
