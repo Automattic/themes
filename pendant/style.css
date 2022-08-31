@@ -35,17 +35,17 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  */
 a {
 	cursor: pointer;
-	text-underline-offset: 0.3em;
-	text-decoration-thickness: 0.05em;
 	text-decoration-line: none;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+:is(h1, h2, h3, h4, h5, h6) a:is(:hover, :focus) {
 	text-underline-offset: 0.15em;
 	text-decoration-thickness: 0.02em;
 }
 a:hover,
 a:focus {
 	text-decoration-line: underline;
+	text-underline-offset: 0.3em;
+	text-decoration-thickness: 0.05em;
 }
 .block-editor-block-list__layout a,
 .wp-block-post-content a {
