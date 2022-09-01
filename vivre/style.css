@@ -152,8 +152,9 @@ a:not(
 	text-decoration: underline;
 }
 
-.wp-block-post-title a:hover {
+.wp-block-post-title a:where(:not(.wp-element-button)):is(:hover, :focus) {
 	text-underline-offset: 0.25rem;
+	text-decoration-thickness: 0.25rem;
 }
 
 /*
