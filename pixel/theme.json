@@ -78,6 +78,7 @@
             ]
         },
         "typography": {
+            "fluid": true,
             "fontFamilies": [
                 {
                     "fontFamily": "'DM Mono', sans-serif",
@@ -151,20 +152,27 @@
                 {
                     "name": "Small",
                     "size": ".813rem",
+                    "fluid": false,
                     "slug": "small"
                 },
                 {
                     "name": "Medium",
-                    "size": "clamp(1rem, 0.8611111111111112rem + 0.6944444444444444vw, 1.125rem)",
+                    "size": "1.125rem",
+                    "fluid": {
+                        "min": "1rem",
+                        "max": "1.125rem"
+                    },
                     "slug": "medium"
                 },
                 {
                     "name": "Large",
+                    "fluid": false,
                     "size": "1.5rem",
                     "slug": "large"
                 },
                 {
                     "name": "Extra Large",
+                    "fluid": false,
                     "size": "2rem",
                     "slug": "x-large"
                 }
