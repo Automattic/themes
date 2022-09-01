@@ -6,7 +6,7 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","backgroundColor":"orange","layout":{"inherit":true}} -->
+<!-- wp:group {"align":"full","backgroundColor":"orange","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-orange-background-color has-background"><!-- wp:group {"align":"wide"} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"fontSize":"xx-large"} -->
 <h2 class="has-xx-large-font-size"><?php echo esc_html__( 'The People\'s Voices', 'rainfall' ); ?></h2>
