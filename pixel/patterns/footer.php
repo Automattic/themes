@@ -11,11 +11,15 @@
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:paragraph {"align":"center","fontSize":"small"} -->
 <p class="has-text-align-center has-small-font-size">
     <?php
-			printf(
-				/* Translators: WordPress link. */
-				esc_html__( 'Pixel Theme, proudly powered by %s', 'archeo' ),
-				'<a href="' . esc_url( __( 'https://wordpress.org', 'archeo' ) ) . '" rel="nofollow">WordPress</a>'
-			);
+        /* Translators: Theme name. */
+        $theme_name = '<strong>' . esc_html__( 'Pixel Theme', 'pixel' ) . '</strong>';
+        /* Translators: WordPress link. */
+        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pixel' ) ) . '" rel="nofollow">WordPress</a>';
+        echo sprintf(
+            esc_html__( '%s, Proudly Powered by %s', 'pixel' ),
+            $theme_name,
+            $wordpress_link
+        );
     ?>
 </p>
 <!-- /wp:paragraph --></div>
