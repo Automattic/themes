@@ -1,18 +1,15 @@
 <?php
 /**
- * Title: A Link in Bio pattern with link cloud
+ * Title: Link in Bio with link cloud
  * Slug: lynx/link-in-bio-cloud
  * Inserter: yes
  * Categories: featured, link-in-bio
  */
-
 ?>
 
 <!-- wp:cover {"overlayColor":"white","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full"} -->
 <div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-white-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"inherit":false,"contentSize":"640px"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"align":"left","placeholder":"Write title…","style":{"color":{"text":"#00000099"}},"fontSize":"small"} -->
-<p class="has-text-align-left has-text-color has-small-font-size" style="color:#00000099"><?php echo  esc_html__( 'I’m Matt, an artist living in New York City.', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-group"><!-- wp:site-tagline {"style":{"color":{"text":"#00000099"}},"fontSize":"1rem"} /-->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#f85a9c"}}},"typography":{"fontSize":"4rem","letterSpacing":"-1px","lineHeight":"1.2"}}} -->

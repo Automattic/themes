@@ -10,17 +10,11 @@
 <!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/mesh_gradient.jpg'; ?>","hasParallax":true,"dimRatio":0,"minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
 <div class="wp-block-cover alignfull is-light has-parallax" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div role="img" class="wp-block-cover__image-background has-parallax" style="background-position:50% 50%;background-image:url(<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/mesh_gradient.jpg'; ?>)"></div><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"20px"}}} -->
-<div class="wp-block-group"><!-- wp:image {"align":"center","width":120,"height":120,"sizeSlug":"large","linkDestination":"none","style":{"border":{"width":"2px"}},"className":"has-custom-border is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-resized has-custom-border is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/colorful-flower.jpg'; ?>" alt="" style="border-width:2px" width="120" height="120"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group"><!-- wp:site-logo {"align":"center","className":"is-style-rounded"} /-->
 
-<!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"700","fontSize":"1.125rem"}}} -->
-<h2 class="has-text-align-center" style="font-size:1.125rem;font-style:normal;font-weight:700"><?php echo  esc_html__( 'Color Burst', 'lynx' ); ?></h2>
-<!-- /wp:heading -->
+<!-- wp:site-title {"textAlign":"center","style":{"typography":{"fontSize":"1.125rem","fontStyle":"normal","fontWeight":"700"}}} /-->
 
-<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-<p class="has-text-align-center has-small-font-size"><?php echo  esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:site-tagline {"textAlign":"center","fontSize":"small"} /-->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"10px"}}} -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"background","textColor":"black","width":100,"style":{"border":{"radius":"100px"},"typography":{"textTransform":"uppercase"},"spacing":{"padding":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}}},"className":"is-style-outline","fontSize":"small"} -->

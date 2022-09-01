@@ -9,13 +9,9 @@
 
 <!-- wp:group {"align":"full","layout":{"inherit":true}} -->
 <div class="wp-block-group alignfull"><!-- wp:group {"style":{"spacing":{"margin":{"top":"128px","bottom":"128px"},"blockGap":"32px"}}} -->
-<div class="wp-block-group" style="margin-top:128px;margin-bottom:128px"><!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","fontSize":"3rem"}}} -->
-<h2 style="font-size:3rem;font-style:normal;font-weight:700"><?php echo  esc_html__( 'Hi, I’m Matt', 'lynx' ); ?></h2>
-<!-- /wp:heading -->
+<div class="wp-block-group" style="margin-top:128px;margin-bottom:128px"><!-- wp:site-title {"isLink":false,"style":{"typography":{"fontSize":"3rem","fontStyle":"normal","fontWeight":"700"}}} /-->
 
-<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.4"}},"fontSize":"large"} -->
-<p class="has-large-font-size" style="line-height:1.4"><?php echo  esc_html__( 'Matt Jones is an artist living in New York City who has a passion for generative art in the 3D space. Currently accepting new clients.', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:site-tagline {"style":{"typography":{"lineHeight":"1.4"}},"fontSize":"large"} /-->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"#00000080"}}}}} -->
