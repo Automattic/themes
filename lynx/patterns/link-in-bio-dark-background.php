@@ -10,23 +10,17 @@
 <!-- wp:cover {"customOverlayColor":"#011a0b","minHeight":100,"minHeightUnit":"vh","align":"full"} -->
 <div class="wp-block-cover alignfull" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-100 has-background-dim" style="background-color:#011a0b"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"50px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:image {"align":"left","width":100,"height":100,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image alignleft size-large is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/avatar_placeholder.png'; ?>" alt="" width="100" height="100"/></figure>
-<!-- /wp:image -->
+<div class="wp-block-group"><!-- wp:site-logo {"className":"is-style-rounded"} /-->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px","fontStyle":"normal","fontWeight":"500"},"color":{"text":"#ffffffb3"}}} -->
-<p class="has-text-color" style="color:#ffffffb3;font-style:normal;font-weight:500;letter-spacing:2px;text-transform:uppercase"><?php echo  esc_html__( 'Paul Nyberg', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-group"><!-- wp:site-title {"isLink":false,"style":{"color":{"text":"#ffffffb3"},"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"500","letterSpacing":"2px"}}} /-->
 
 <!-- wp:heading {"style":{"typography":{"textTransform":"uppercase","fontSize":"40px"},"color":{"text":"#dbff00"}},"className":"has-custom-font","fontFamily":"space-mono"} -->
 <h2 class="has-text-color has-space-mono-font-family has-custom-font" style="color:#dbff00;font-size:40px;text-transform:uppercase;"><?php echo  esc_html__( 'Musician &amp; Songwriter', 'lynx' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"style":{"color":{"text":"#ffffffb3"}},"fontSize":"small"} -->
-<p class="has-text-color has-small-font-size" style="color:#ffffffb3"><?php echo  esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'lynx' ); ?></p>
-<!-- /wp:paragraph --></div>
+<!-- wp:site-tagline {"style":{"color":{"text":"#ffffffb3"}},"fontSize":"small"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:columns {"style":{"spacing":{"margin":{"top":"50px","bottom":"50px"}}}} -->

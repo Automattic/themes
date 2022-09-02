@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.8 =
+* Removing thickness from text-decoration shorthand because it is not supported on WebKit (#6490)
+
 = 1.0.7 =
 * lock post-content block by default (#6314)
 

@@ -8,9 +8,7 @@
 ?>
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/abstract-3d-shape.jpg'; ?>","dimRatio":0,"minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/abstract-3d-shape.jpg'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"84px","fontStyle":"normal","fontWeight":"700","lineHeight":0.9}}} -->
-<h2 class="has-text-align-center" style="font-size:84px;font-style:normal;font-weight:700;line-height:0.9"><?php echo  esc_html__( 'Ose Maiko', 'lynx' ); ?></h2>
-<!-- /wp:heading -->
+<div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/abstract-3d-shape.jpg'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:site-title {"textAlign":"center","isLink":false,"style":{"typography":{"fontStyle":"normal","fontWeight":"700","lineHeight":"0.9","fontSize":"84px"}}} /-->
 
 <!-- wp:group {"layout":{"inherit":true}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"border":{"radius":"10px"}},"backgroundColor":"black"} -->

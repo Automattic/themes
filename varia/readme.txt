@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.21 =
+Add appearance tools to all Varia themes #6428
+
 = 1.6.20 =
 * #6025: Varia: Fix Jetpack map block close icon (#6339)
 

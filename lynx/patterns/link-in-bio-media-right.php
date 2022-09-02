@@ -10,13 +10,9 @@
 <!-- wp:columns {"align":"full","style":{"spacing":{"blockGap":"0px","padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"backgroundColor":"black","textColor":"white"} -->
 <div class="wp-block-columns alignfull has-white-color has-black-background-color has-text-color has-background" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"style":{"spacing":{"blockGap":"30px","padding":{"top":"5vw","right":"5vw","bottom":"5vw","left":"5vw"}}}} -->
-<div class="wp-block-group" style="padding-top:5vw;padding-right:5vw;padding-bottom:5vw;padding-left:5vw"><!-- wp:heading {"style":{"typography":{"fontSize":"200px","lineHeight":"1","textTransform":"uppercase"}},"textColor":"background"} -->
-<h2 class="has-background-color has-text-color" style="font-size:200px;line-height:1;text-transform:uppercase"><strong><?php echo  esc_html__( 'Biba', 'lynx' ); ?></strong></h2>
-<!-- /wp:heading -->
+<div class="wp-block-group" style="padding-top:5vw;padding-right:5vw;padding-bottom:5vw;padding-left:5vw"><!-- wp:site-title {"isLink":false,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}},"typography":{"textTransform":"uppercase","fontSize":"200px","lineHeight":"1","fontStyle":"normal","fontWeight":"700"}},"textColor":"background"} /-->
 
-<!-- wp:paragraph {"textColor":"background"} -->
-<p class="has-background-color has-text-color"><?php echo  esc_html__( 'Hey! Thanks for stopping by. Check out my links if you like. You know, the future is now!', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.125rem"}},"textColor":"background"} /-->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"black","width":100,"style":{"typography":{"textTransform":"uppercase"},"border":{"radius":"100px"},"color":{"gradient":"linear-gradient(135deg,rgb(34,193,195) 0%,rgb(224,253,45) 100%)"}}} -->

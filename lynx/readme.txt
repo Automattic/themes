@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.14 =
+* Lynx: Replacing profile image, heading and paragraph blocks with site logo, title, and tagline. (#6491)
+
 = 0.0.13 =
 * Lynx: Swap out the code for one of the patterns, to match what's on dotcompatterns site. (#6483)
 
