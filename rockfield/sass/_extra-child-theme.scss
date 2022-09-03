@@ -627,7 +627,7 @@ table,
 		}
 
 		.widget {
-			flex: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
+			width: calc(50% - #{map-deep-get($config-global, "spacing", "horizontal")});
 		}
 	}
 }
@@ -781,6 +781,16 @@ table,
 /**
  * Buttons
  */
+
+/* Remove button borders - issue GH 6440 */
+
+.contact-form button {
+	border-radius: 5px;
+	outline: unset;
+}
+
+/* End Remove button borders - issue GH 6440 */
+
 .button,
 .wp-block-button__link,
 .wp-block-file__button,
@@ -788,7 +798,7 @@ table,
 	position: relative;
 
 	&::before {
-		border: 2px solid;
+		border: none; /* Remove button borders - issue GH 6440 */
 		border-radius: inherit;
 		content: "";
 		display: block;

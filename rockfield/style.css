@@ -4666,7 +4666,7 @@ table th,
 		margin-top: 0;
 	}
 	.widget-area .widget {
-		flex: calc(50% - 16px);
+		width: calc(50% - 16px);
 	}
 }
 
@@ -4819,6 +4819,13 @@ table th,
 /**
  * Buttons
  */
+/* Remove button borders - issue GH 6440 */
+.contact-form button {
+	border-radius: 5px;
+	outline: unset;
+}
+
+/* End Remove button borders - issue GH 6440 */
 .button,
 .wp-block-button__link,
 .wp-block-file__button,
@@ -4830,7 +4837,8 @@ table th,
 .wp-block-button__link::before,
 .wp-block-file__button::before,
 .a8c-posts-list__view-all::before {
-	border: 2px solid;
+	border: none;
+	/* Remove button borders - issue GH 6440 */
 	border-radius: inherit;
 	content: "";
 	display: block;
