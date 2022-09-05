@@ -113,6 +113,9 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.19 =
+* #5017: Fix header w/scroll w/no custom header (#6444)
+
 = 1.0.18 =
 * #6323: Lodestar: Fix list alignment on homepage (#6327)
 

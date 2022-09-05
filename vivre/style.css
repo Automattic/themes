@@ -7,7 +7,7 @@ Description: Vivre is a bold, opinionated blogging theme, heavily inspired by fa
 Requires at least: 5.8
 Tested up to: 6.0
 Requires PHP: 5.7
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template:
@@ -152,8 +152,9 @@ a:not(
 	text-decoration: underline;
 }
 
-.wp-block-post-title a:hover {
+.wp-block-post-title a:where(:not(.wp-element-button)):is(:hover, :focus) {
 	text-underline-offset: 0.25rem;
+	text-decoration-thickness: 0.25rem;
 }
 
 /*

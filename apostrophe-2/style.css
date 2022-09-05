@@ -5,7 +5,7 @@ Theme URI: https://wordpress.com/themes/apostrophe-2
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 Description: A clean, no-nonsense magazine theme
-Version: 2.0.9-wpcom
+Version: 2.0.10-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: apostrophe-2
@@ -1473,6 +1473,11 @@ figure.entry-thumbnail {
 	margin: 0 0 1.5em;
 }
 
+/* Hide duplicate image thumbnail with Jetpack Lazy Loading */
+.entry-thumbnail > img.jetpack-lazy-image ~ img.attachment-post-thumbnail {
+	display: none;
+}
+
 /* Entry/post headers */
 .entry-format::before {
 	background: #e6e6e6;
@@ -2178,6 +2183,7 @@ object {
 .sd-sharing-enabled iframe {
 	margin: 0;
 }
+
 
 /*--------------------------------------------------------------
 12.1 Captions

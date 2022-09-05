@@ -53,6 +53,9 @@ Quick Specs (all measurements in pixels)
 
 == Changelog ==
 
+= 2.2.7 =
+* Update to libre-2/css/blocks.css (#6279)
+
 = 1.0 - January 12, 2017 =
 * Initial release
 
