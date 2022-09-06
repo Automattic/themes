@@ -17,6 +17,9 @@ This theme was developed using the Gutenberg plugin v13.6.0. Some elements may n
 
 == Changelog ==
 
+= 1.0.5 =
+* Removing thickness from text-decoration shorthand because it is not supported on WebKit (#6490)
+
 = 1.0.4 =
 * lock post-content block by default (#6314)
 

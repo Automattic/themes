@@ -9,14 +9,10 @@
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/hiker.jpg'; ?>","hasParallax":true,"dimRatio":50,"minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
 <div class="wp-block-cover alignfull is-light has-parallax" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><div role="img" class="wp-block-cover__image-background has-parallax" style="background-position:50% 50%;background-image:url(<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/hiker.jpg'; ?>)"></div><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white","layout":{"inherit":false,"contentSize":"400px"}} -->
-<div class="wp-block-group has-white-color has-text-color has-link-color"><!-- wp:heading {"className":"has-custom-font","fontFamily":"fira-sans"} -->
-<h2 class="has-fira-sans-font-family has-custom-font"><?php echo  esc_html__( 'Xue Tengfei', 'lynx' ); ?></h2>
-<!-- /wp:heading -->
+<div class="wp-block-group has-white-color has-text-color has-link-color"><!-- wp:site-title {"isLink":false,"style":{"typography":{"fontStyle":"normal","fontWeight":"400","fontSize":"32px"}},"textColor":"white","fontFamily":"fira-sans"} /-->
 
-<!-- wp:paragraph {"fontSize":"x-small"} -->
-<p class="has-x-small-font-size">
-	<?php echo  esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a neque vestibulum, tincidunt mi ut, fringilla purus. Etiam elementum felis rhoncus orci pellentesque tempus.', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.125rem"}}} /-->
+
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"background","width":100,"style":{"typography":{"textTransform":"uppercase"}},"className":"is-style-outline"} -->

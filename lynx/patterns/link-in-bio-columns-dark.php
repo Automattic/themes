@@ -10,9 +10,7 @@
 <!-- wp:cover {"overlayColor":"black","minHeight":100,"minHeightUnit":"vh","align":"full","style":{"spacing":{"padding":{"top":"10vh","right":"5vw","bottom":"10vh","left":"5vw"}}}} -->
 <div class="wp-block-cover alignfull" style="padding-top:10vh;padding-right:5vw;padding-bottom:10vh;padding-left:5vw;min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:columns {"style":{"spacing":{"blockGap":"40%"}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"360px","layout":{"inherit":true}} -->
-<div class="wp-block-column" style="flex-basis:360px"><!-- wp:paragraph {"style":{"color":{"text":"#ffffff99"}},"fontSize":"small"} -->
-<p class="has-text-color has-small-font-size" style="color:#ffffff99"><?php echo  esc_html__( 'Adam Jones is an artist living in New York City who has a passion for generative art in the 3D space. Currently accepting new clients.', 'lynx' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="wp-block-column" style="flex-basis:360px"><!-- wp:site-tagline {"style":{"color":{"text":"#ffffff99"}},"fontSize":"small"} /--> 
 
 <!-- wp:spacer {"height":"5vh"} -->
 <div style="height:5vh" aria-hidden="true" class="wp-block-spacer"></div>
