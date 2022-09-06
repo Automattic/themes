@@ -24,8 +24,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom"} -->
-<figure class="wp-block-image"><a href="/about"><img src="" alt=""/></a></figure>
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"align":"right","sizeSlug":"large","linkDestination":"custom"} -->
+<figure class="wp-block-image alignright size-large"><a href="/about"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/home.jpg" alt="<?php esc_html_e( 'Person with umbrella', 'rainfall' ); ?>"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -60,7 +60,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"30%","style":{"spacing":{"padding":{"top":"20px","right":"0","bottom":"20px","left":"0"}}}} -->
-<div class="wp-block-column" style="padding-top:20px;padding-right:0;padding-bottom:20px;padding-left:0;flex-basis:30%"><!-- wp:template-part {"slug":"sidebar"} /--></div>
+<div class="wp-block-column" style="padding-top:20px;padding-right:0;padding-bottom:20px;padding-left:0;flex-basis:30%"><!-- wp:template-part {"slug":"sidebar","theme":"rainfall"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
