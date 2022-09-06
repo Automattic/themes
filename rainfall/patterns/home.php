@@ -24,7 +24,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"id":118,"sizeSlug":"large","linkDestination":"custom"} -->
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom"} -->
 <figure class="wp-block-image"><a href="/about"><img src="" alt=""/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
