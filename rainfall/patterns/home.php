@@ -6,10 +6,10 @@
  */
 ?>
 <!-- wp:group {"backgroundColor":"orange"} -->
-<div class="wp-block-group has-orange-background-color has-background"><!-- wp:template-part {"slug":"header","theme":"themes/rainfall","tagName":"header"} /-->
+<div class="wp-block-group has-orange-background-color has-background"><!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:heading {"fontSize":"xx-large"} -->
-<h2 class="has-xx-large-font-size"><?php esc_html_e( 'The City That Never Sleeps', 'rainfall' ); ?></h2>
+<!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"},"padding":{"top":"var:preset|spacing|60"}}},"fontSize":"xx-large"} -->
+<h2 class="has-xx-large-font-size" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:var(--wp--preset--spacing--60)"><?php esc_html_e( 'The City That Never Sleeps', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns {"verticalAlignment":null} -->
@@ -60,7 +60,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"30%","style":{"spacing":{"padding":{"top":"20px","right":"0","bottom":"20px","left":"0"}}}} -->
-<div class="wp-block-column" style="padding-top:20px;padding-right:0;padding-bottom:20px;padding-left:0;flex-basis:30%"><!-- wp:template-part {"slug":"sidebar","theme":"themes/rainfall"} /--></div>
+<div class="wp-block-column" style="padding-top:20px;padding-right:0;padding-bottom:20px;padding-left:0;flex-basis:30%"><!-- wp:template-part {"slug":"sidebar"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
@@ -92,5 +92,5 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","theme":"themes/rainfall"} /--></div>
+<!-- wp:template-part {"slug":"footer"} /--></div>
 <!-- /wp:group -->
