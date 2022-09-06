@@ -17,7 +17,7 @@
 
 <!-- wp:column {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--30)"}},"border":{"top":{"color":"var:preset|color|black","width":"1px"}}}} -->
 <div class="wp-block-column" style="border-top-color:var(--wp--preset--color--black);border-top-width:1px;padding-top:var(--wp--preset--spacing--30)"><!-- wp:heading -->
-<h2><?php echo esc_html__( 'EDITORIAL &amp; SUBMISSIONS', 'rainfall' ); ?></h2>
+<h2><?php echo esc_html__( 'Editorial &amp; Submissions', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
