@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts list
- * Slug: pixel/posts-list
+ * Slug: pixel/post-list
  * Inserter: no
  */
 
@@ -16,12 +16,18 @@
 
 <!-- wp:post-excerpt /-->
 
-<!-- wp:template-part {"slug":"post-meta","theme":"themes/pixel"} /-->
-
-<!-- wp:spacer {"height":"40px"} -->
-<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div>
+<!-- wp:group {"layout":{"type":"flex"}} -->
+<div class="wp-block-group"><!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"14px"}}} /--></div>
 <!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:post-terms {"term":"post_tag","style":{"typography":{"fontSize":"14px","textTransform":"lowercase"}}} /--></div>
+<!-- /wp:group -->
+
+</div><!-- /wp:group -->
+<!-- wp:spacer {"height":"2rem"} -->
+<div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 <!-- /wp:post-template -->
 
 <!-- wp:group {"layout":{"inherit":true,"type":"constrained"}} -->
