@@ -37,3 +37,22 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .wp-block-post-title a:active {
 	text-decoration-style: solid;
 }
+
+/*
+ * Form elements
+ */
+:is(textarea, input:not([type="submit"],[type="checkbox"])) {
+	color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--primary) !important;
+	outline: none;
+    font-size: 0.875rem;
+}
+:is(textarea, input:not([type="submit"],[type="checkbox"]))::placeholder {
+    color: var(--wp--preset--color--foreground);
+    font-weight: 300;
+}
+.wp-block-search :is(textarea, input:not([type="submit"],[type="checkbox"])) {
+    box-shadow: var(--wp--custom--shadow);
+    margin-right: var(--wp--preset--spacing--20);
+}
