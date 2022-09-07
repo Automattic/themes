@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 0.0.26 =
+* Set single post featured image to wide align and add height to the featured image (#6502)
+
 = 0.0.25 =
 * lock post-content block by default (#6314)
 

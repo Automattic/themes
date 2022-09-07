@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.15 =
+* Lynx: Update the pattern with left-aligned content. (#6500)
+
 = 0.0.14 =
 * Lynx: Replacing profile image, heading and paragraph blocks with site logo, title, and tagline. (#6491)
 
