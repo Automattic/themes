@@ -15,8 +15,8 @@
 		<!-- /wp:heading -->
 	</div>
 	<!-- /wp:group -->
-	<!-- wp:spacer {"height":"12px"} -->
-	<div style="height:12px" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- wp:spacer {"height":"var(--wp--preset--spacing--20)"} -->
+	<div style="height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 </div>
 <!-- /wp:group -->
