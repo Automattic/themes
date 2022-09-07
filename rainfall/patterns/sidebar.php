@@ -1,9 +1,8 @@
 <?php
 /**
  * Title: Sidebar content
- * Slug: rainfall/hidden-sidebar
- * Categories: hidden
- * Inserter: no
+ * Slug: rainfall/sidebar
+ * Categories: columns
  */
 ?>
 <!-- wp:search {"label":"<?php esc_html_e( 'Search for a topic', 'rainfall' ); ?>","buttonText":"<?php esc_html_e( 'Search', 'rainfall' ); ?>"} /-->
