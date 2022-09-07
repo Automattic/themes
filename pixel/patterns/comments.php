@@ -8,7 +8,7 @@
 ?>
 <!-- wp:comments-query-loop -->
 <div class="wp-block-comments-query-loop">
-	<!-- wp:comments-title /-->
+	<!-- wp:comments-title {"level":3} /-->
 
 	<!-- wp:comment-template -->
 	<!-- wp:columns -->
@@ -21,7 +21,7 @@
 		<div class="wp-block-column">
 			<!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 			<div class="wp-block-group">
-				<!-- wp:avatar {"size":40,"style":{"border":{"radius":"20px"},"spacing":{"margin":{"top":"10px"}}}} /-->
+				<!-- wp:avatar {"size":40,"style":{"spacing":{"margin":{"top":"10px"}}}} /-->
 
 				<!-- wp:group -->
 				<div class="wp-block-group">
@@ -39,7 +39,7 @@
 			</div>
 			<!-- /wp:group -->
 
-			<!-- wp:comment-content /-->
+			<!-- wp:comment-content {"fontSize":"small"} /-->
 
 			<!-- wp:comment-reply-link /-->
 		</div>
