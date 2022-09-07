@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.16 =
+* Lynx: Update design of the media on the right pattern. (#6515)
+
 = 0.0.15 =
 * Lynx: Update the pattern with left-aligned content. (#6500)
 

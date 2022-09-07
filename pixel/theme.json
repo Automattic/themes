@@ -145,6 +145,23 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "fontFamily": "'uni 05_53', sans-serif",
+                    "name": "uni 05_53",
+                    "slug": "uni-05_53",
+                    "fontFace": [
+                        {
+                            "fontDisplay": "block",
+                            "fontFamily": "uni 05_53",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": [
+                                "file:./assets/fonts/uni05_53.ttf"
+                            ]
+                        }
+                    ]
                 }
             ],
             "fontSizes": [
@@ -251,7 +268,14 @@
             },
             "core/navigation": {
                 "typography": {
-                    "fontSize": "1.125rem"
+                    "fontSize": "0.875rem"
+                },
+                "spacing": {
+                    "blockGap": "1rem",
+                    "padding": {
+                        "left": "0.25rem !important",
+                        "right": "0.25rem !important"
+                    }
                 }
             },
             "core/post-date": {
@@ -271,6 +295,18 @@
                 "typography": {
                     "fontSize": "clamp(1.375rem, 1.2916666666666667rem + 0.4166666666666667vw, 1.625rem)",
                     "fontWeight": "500"
+                },
+                "elements": {
+                    "link": {
+                        "typography": {
+                            "textDecoration": "none"
+                        },
+                        ":hover": {
+                            "typography": {
+                                "textDecoration": "underline"
+                            }
+                        }
+                    }
                 }
             },
             "core/pullquote": {
@@ -330,6 +366,7 @@
             },
             "core/site-title": {
                 "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--uni-05-53)",
                     "fontSize": "0.875rem",
                     "fontWeight": "400",
                     "textTransform": "uppercase",
@@ -350,8 +387,8 @@
                     "width": "2px"
                 },
                 "color": {
-                    "background": "var(--wp--preset--color--background)",
-                    "text": "var(--wp--preset--color--primary)"
+                    "background": "var(--wp--preset--color--primary)",
+                    "text": "var(--wp--preset--color--background)"
                 },
                 "typography": {
                     "fontSize": "var(--wp--preset--font-size--small)",
@@ -368,8 +405,8 @@
                 },
                 ":hover": {
                     "color": {
-                        "background": "var(--wp--preset--color--primary)",
-                        "text": "var(--wp--preset--color--background)"
+                        "background": "var(--wp--preset--color--background)",
+                        "text": "var(--wp--preset--color--primary)"
                     },
                     "border": {
                         "color": "var(--wp--preset--color--primary)"
@@ -377,13 +414,13 @@
                 },
                 ":active": {
                     "color": {
-                        "background": "var(--wp--preset--color--background)",
-                        "text": "var(--wp--preset--color--primary)"
+                        "background": "var(--wp--preset--color--primary)",
+                        "text": "var(--wp--preset--color--background)"
                     },
                     "border": {
                         "color": "var(--wp--preset--color--primary)"
                     },
-                    "shadow": "2px 2px !important"
+                    "shadow": "2px 2px var(--wp--preset--color--primary) !important"
                 }
             },
             "heading": {

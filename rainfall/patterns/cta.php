@@ -6,7 +6,7 @@
  */
 ?>
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"8rem","right":"11rem","left":"11rem","top":"8rem"}}},"backgroundColor":"black","layout":{"inherit":false}} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"8rem","right":"11rem","left":"11rem","top":"8rem"}}},"backgroundColor":"black","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide has-black-background-color has-background" style="padding-top:8rem;padding-right:11rem;padding-bottom:8rem;padding-left:11rem"><!-- wp:heading {"level":1,"textColor":"white"} -->
 <h1 class="has-white-color has-text-color"><?php echo esc_html__( 'Work With Us', 'rainfall' ); ?></h1>
 <!-- /wp:heading -->

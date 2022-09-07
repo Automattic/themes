@@ -7,18 +7,65 @@ Description: Pixel is a Tumblr Inspired Theme
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
-Version: 0.0.3
+Version: 0.0.4
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
-Template: 
+Template:
 Text Domain: pixel
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
 */
 
-/* 
+/*
  * Custom class to add shadow to blocks
- * Need this until box shadow support added to Gutenberg here: https://github.com/WordPress/gutenberg/pull/43184 
+ * Need this until box shadow support added to Gutenberg here: https://github.com/WordPress/gutenberg/pull/43184
  */
 .pixel-shadow {
     box-shadow: var(--wp--custom--shadow);
+}
+
+/* Post title styles */
+.wp-block-post-title a {
+	text-underline-offset: .3em;
+	text-decoration-thickness: 2px;
+}
+
+.wp-block-post-title a:hover,
+.wp-block-post-title a:focus {
+	text-decoration-style: dotted;
+}
+
+.wp-block-post-title a:active {
+	text-decoration-style: solid;
+}
+
+/*
+ * Form elements
+ */
+:is(textarea, input:not([type="submit"],[type="checkbox"])) {
+	color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--background);
+	border: 2px solid var(--wp--preset--color--primary) !important;
+	outline: none;
+    font-size: 0.875rem;
+}
+:is(textarea, input:not([type="submit"],[type="checkbox"]))::placeholder {
+    color: var(--wp--preset--color--foreground);
+    font-weight: 300;
+}
+.wp-block-search :is(textarea, input:not([type="submit"],[type="checkbox"])) {
+    box-shadow: var(--wp--custom--shadow);
+    margin-right: var(--wp--preset--spacing--20);
+}
+
+/*
+ * Navigation styles
+ */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+    background-color: var(--wp--preset--color--background);
+    color: var(--wp--preset--color--foreground);
+    border-color: var(--wp--preset--color--primary);
 }
