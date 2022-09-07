@@ -30,10 +30,12 @@
 <!-- /wp:spacer -->
 <!-- /wp:post-template -->
 
-<!-- wp:group {"layout":{"inherit":true,"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:query-pagination -->
+<!-- wp:group -->
+<div class="wp-block-group"><!-- wp:query-pagination {"align":"full","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <!-- wp:query-pagination-previous /-->
+
 <!-- wp:query-pagination-numbers /-->
+
 <!-- wp:query-pagination-next /-->
 <!-- /wp:query-pagination --></div>
 <!-- /wp:group --></main>
