@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: pixel/footer
+ * Slug: pixl/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -16,11 +16,11 @@
 <p class="has-text-align-center has-small-font-size">
     <?php
         /* Translators: Theme name. */
-        $theme_name = '<strong>' . esc_html__( 'Pixel Theme', 'pixel' ) . '</strong>';
+        $theme_name = '<strong>' . esc_html__( 'Pixl Theme', 'pixl' ) . '</strong>';
         /* Translators: WordPress link. */
-        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pixel' ) ) . '" rel="nofollow">WordPress</a>';
+        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pixl' ) ) . '" rel="nofollow">WordPress</a>';
         echo sprintf(
-            esc_html__( '%s, Proudly Powered by %s', 'pixel' ),
+            esc_html__( '%s, Proudly Powered by %s', 'pixl' ),
             $theme_name,
             $wordpress_link
         );

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: pixel/comments
+ * slug: pixl/comments
  * inserter: no
  */
 
