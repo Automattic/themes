@@ -15,7 +15,7 @@
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"20%"} -->
-<div class="wp-block-column" style="flex-basis:20%"><!-- wp:image {"align":"center","id":443,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+<div class="wp-block-column" style="flex-basis:20%"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 <figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-1.png" alt="" class="wp-image-443"/></figure>
 <!-- /wp:image -->
 
@@ -29,7 +29,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"align":"center","id":442,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+<div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 <figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-2.png" alt="" class="wp-image-442"/></figure>
 <!-- /wp:image -->
 
@@ -43,7 +43,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"align":"center","id":441,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+<div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 <figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-3.png" alt="" class="wp-image-441"/></figure>
 <!-- /wp:image -->
 
@@ -57,7 +57,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"align":"center","id":439,"sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
+<div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
 <figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-4.png" alt="" class="wp-image-439"/></figure>
 <!-- /wp:image -->
 
