@@ -276,6 +276,44 @@
                         "left": "0.25rem !important",
                         "right": "0.25rem !important"
                     }
+                },
+                "elements": {
+                    "link": {
+                        ":active": {
+                            "typography": {
+                                "textDecoration": "underline dotted"
+                            }
+                        },
+                        ":focus": {
+                            "typography": {
+                                "textDecoration": "underline solid"
+                            }
+                        }
+                    }
+                }
+            },
+            "core/post-content": {
+                "spacing": {
+                    "blockGap": "var(--wp--custom--gap--vertical)"
+                },
+                "elements": {
+                    "link": {
+                        ":active": {
+                            "typography": {
+                                "fontStyle": "italic"
+                            }
+                        },
+                        ":focus": {
+                            "typography": {
+                                "fontStyle": "italic"
+                            }
+                        },
+                        ":hover": {
+                            "typography": {
+                                "fontStyle": "italic"
+                            }
+                        }
+                    }
                 }
             },
             "core/post-date": {
@@ -300,11 +338,6 @@
                     "link": {
                         "typography": {
                             "textDecoration": "none"
-                        },
-                        ":hover": {
-                            "typography": {
-                                "textDecoration": "underline"
-                            }
                         }
                     }
                 }
@@ -327,6 +360,38 @@
                     "fontStyle": "italic"
                 }
             },
+            "core/query-pagination": {
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}
+			},
+			"core/query-pagination-next": {
+				"typography": {
+					"fontWeight": "500"
+				}
+			},
+            "core/query-pagination-numbers": {
+				"typography": {
+					"fontWeight": "500"
+				},
+                "elements": {
+                    "link": {
+                        "typography": {
+                            "fontWeight": "300",
+                            "textDecoration": "none"
+                        }
+                    }
+                }
+			},
+			"core/query-pagination-previous": {
+				"typography": {
+					"fontWeight": "500"
+				}
+			},
             "core/quote": {
                 "border": {
                     "color": "var(--wp--preset--color--primary)",
@@ -369,8 +434,14 @@
                     "fontFamily": "var(--wp--preset--font-family--uni-05-53)",
                     "fontSize": "0.875rem",
                     "fontWeight": "400",
-                    "textTransform": "uppercase",
-                    "textDecoration": "none"
+                    "textTransform": "uppercase"
+                },
+                "elements": {
+                    "link": {
+                        "typography": {
+                            "textDecoration": "none"
+                        }
+                    }
                 }
             }
         },
@@ -467,11 +538,26 @@
             "link": {
                 "color": {
                     "text": "var(--wp--preset--color--primary)"
+                },
+                ":hover": {
+                    "typography": {
+                        "textDecoration": "underline dotted"
+                    }
+                },
+                ":focus": {
+                    "typography": {
+                        "textDecoration": "underline dotted"
+                    }
+                },
+                ":active": {
+                    "typography": {
+                        "textDecoration": "underline solid"
+                    }
                 }
             }
         },
         "spacing": {
-            "blockGap": "30px",
+            "blockGap": "var(--wp--custom--gap--vertical)",
             "padding": {
                 "bottom": "var(--wp--custom--spacing--outer)",
                 "left": "var(--wp--custom--spacing--outer)",
