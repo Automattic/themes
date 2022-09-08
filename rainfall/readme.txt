@@ -13,6 +13,10 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.9 =
+* Rainfall: Update navigation styles and tidy up templates (#6417)
+* Rainfall: add Home template (#6450)
+
 = 0.0.8 =
 * Rainfall: adjust featured image in single template (#6489)
 * Rainfall: Update quote styles (#6495)
