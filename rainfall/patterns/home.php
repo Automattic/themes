@@ -6,7 +6,7 @@
  */
 ?>
 <!-- wp:group {"backgroundColor":"orange"} -->
-<div class="wp-block-group has-orange-background-color has-background"><!-- wp:template-part {"slug":"header","tag":"header","theme":"rainfall"} /-->
+<div class="wp-block-group has-orange-background-color has-background"><!-- wp:template-part {"slug":"header","tagName":"header","theme":"rainfall"} /-->
 
 <!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"}}},"fontSize":"xx-large"} -->
 <h2 class="has-xx-large-font-size" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0"><?php esc_html_e( 'The City That Never Sleeps', 'rainfall' ); ?></h2>
@@ -92,5 +92,5 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tag":"footer","theme":"rainfall"} /--></div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","theme":"rainfall"} /--></div>
 <!-- /wp:group -->
