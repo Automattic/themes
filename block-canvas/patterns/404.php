@@ -7,8 +7,8 @@
 
 ?>
 
-<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"medium"} -->
-<h1 class="has-text-align-center has-medium-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'block-canvas' ); ?></h1>
+<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"x-large"} -->
+<h1 class="has-text-align-center has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'block-canvas' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
