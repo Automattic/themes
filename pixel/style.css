@@ -32,20 +32,39 @@ a:where(:not(.wp-element-button)) {
 /*
  * Form elements
  */
-:is(textarea, input:not([type="submit"],[type="checkbox"])) {
+:is(textarea, input:not([type="submit"])) {
 	color: var(--wp--preset--color--foreground);
 	background-color: var(--wp--preset--color--background);
 	border: 2px solid var(--wp--preset--color--primary) !important;
 	outline: none;
     font-size: 0.875rem;
 }
-:is(textarea, input:not([type="submit"],[type="checkbox"]))::placeholder {
+:is(textarea, input:not([type="submit"]))::placeholder {
     color: var(--wp--preset--color--foreground);
     font-weight: 300;
 }
-.wp-block-search :is(textarea, input:not([type="submit"],[type="checkbox"])) {
+.wp-block-search :is(textarea, input:not([type="submit"])) {
     box-shadow: var(--wp--custom--shadow);
     margin-right: var(--wp--preset--spacing--20);
+}
+input[type="checkbox"] {
+    appearance: none;
+    min-width: 0.75rem;
+    height: 0.75rem;
+    position: relative;
+    margin-left: 0;
+}
+input[type="checkbox"]:checked::after	{
+	background-color: var(--wp--preset--color--foreground);
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 0;
+    left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto; 
 }
 
 /*
