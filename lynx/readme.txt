@@ -9,6 +9,10 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.17 =
+* Lynx: Update theme screenshot. (#6522)
+* Lynx: Update the mesh gradient pattern. (#6540)
+
 = 0.0.16 =
 * Lynx: Update design of the media on the right pattern. (#6515)
 
