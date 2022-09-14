@@ -1,6 +1,9 @@
 <?php
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
+		// Make theme available for translation.
+		load_theme_textdomain( 'blockbase', get_template_directory() . '/languages' );
+
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
 
