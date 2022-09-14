@@ -12,7 +12,7 @@
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"},"style":{"elements":{"link":{"color":{"text":"#00000099"}}}}} -->
 <div class="wp-block-group has-link-color"><!-- wp:site-logo /-->
 
-<!-- wp:site-title {"isLink":false,"style":{"typography":{"fontSize":"4rem","fontStyle":"normal","fontWeight":"500"},"spacing":{"margin":{"top":"48px"}}},"fontFamily":"bodoni-moda"} /-->
+<!-- wp:site-title {"isLink":false,"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"spacing":{"margin":{"top":"48px"}}},"fontSize":"xx-large","fontFamily":"bodoni-moda"} /-->
 
 <!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.125rem"},"spacing":{"margin":{"top":"48px"}}},"fontFamily":"merriweather"} /-->
 
