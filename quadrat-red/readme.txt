@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.46 =
+* #6832: Zoologist: Fix link underline on buttons (#6445)
+
 = 1.1.45 =
 * #6085: Zoologist: Add underline to links (#6382)
 

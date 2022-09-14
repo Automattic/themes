@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.34 =
+* #6832: Zoologist: Fix link underline on buttons (#6445)
+
 = 1.0.33 =
 * #6085: Zoologist: Add underline to links (#6382)
 

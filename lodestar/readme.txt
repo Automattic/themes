@@ -113,6 +113,9 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.20 =
+* #66356: Lodestar: Home page: Full width blocks are not full width (#6344)
+
 = 1.0.19 =
 * #5017: Fix header w/scroll w/no custom header (#6444)
 
