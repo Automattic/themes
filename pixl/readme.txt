@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Description: Pixl is a Tumblr Inspired Theme
+Description: Pixl is a simple yet opinionated blogging theme inspired by websites of the nineties.
 
 == Changelog ==
 
