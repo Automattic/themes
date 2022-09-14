@@ -64,8 +64,20 @@
 							"fontFamily": "Rubik",
 							"fontStretch": "normal",
 							"fontStyle": "normal",
+							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/Rubik-VariableFont_wght.ttf"
+								"file:./assets/fonts/Rubik-Regular.woff2"
+							]
+	
+						},
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Rubik",
+							"fontStretch": "normal",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/Rubik-Medium.woff2"
 							]
 	
 						}
@@ -77,14 +89,11 @@
 				{
 					"fluid": false,
 					"name": "Small",
-					"size": "0.825rem",
+					"size": "1rem",
 					"slug": "small"
 				},
 				{
-					"fluid": {
-						"max": "1.25rem",
-						"min": "1rem"
-					},
+					"fluid": false,
 					"name": "Medium",
 					"size": "1.125rem",
 					"slug": "medium"
@@ -92,16 +101,26 @@
 				{
 					"fluid": false,
 					"name": "Large",
-					"size": "1.75rem",
+					"size": "1.37rem",
 					"slug": "large"
 				},
 				{
 					"fluid": {
-						"max": "4rem"
+						"min": "1.75rem",
+						"max": "2.25rem"
 					},
 					"name": "Extra Large",
-					"size": "3rem",
+					"size": "2rem",
 					"slug": "x-large"
+				},
+				{
+					"fluid": {
+						"min": "2.25rem",
+						"max": "3rem"
+					},
+					"name": "Huge",
+					"size": "2.25rem",
+					"slug": "xx-large"
 				}
 			]
 		},
@@ -145,7 +164,44 @@
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--rubik)",
-					"textTransform": "uppercase"
+					"fontWeight": "500",
+					"textTransform": "uppercase",
+					"lineHeight": "1.6"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "clamp(3rem, 1.6153846153846154rem + 2.8846153846153846vw, 4.5rem)",
+					"lineHeight": "1.1"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "clamp(2rem, 0.15384615384615374rem + 3.8461538461538463vw, 4rem)",
+					"lineHeight": "1.1"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-large)",
+					"lineHeight": "1.2"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "normal"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "normal"
 				}
 			},
 			"link": {
