@@ -1,0 +1,28 @@
+/**
+ * It looks like the responsive navigation is forced to be the wide width. https://github.com/WordPress/gutenberg/pull/43576
+ */
+
+.wp-block-navigation__responsive-close {
+	max-width: none;
+}
+
+/**
+ * Override the default padding value from Gutenberg to avoid the icon jumping
+ */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--gap--vertical);
+}
+
+/**
+ * Override Blockbase ponyfill style that makes navigation items left aligned.
+ */
+.wp-block-navigation.is-responsive .is-menu-open .wp-block-navigation__responsive-container-content {
+	align-items: var(--navigation-layout-justification-setting,inherit);
+}
+
+/**
+ * Override Blockbase ponyfill style that makes navigation items left aligned.
+ */
+.wp-block-navigation.is-responsive .is-menu-open .wp-block-navigation__container {
+	align-items: var(--navigation-layout-justification-setting,initial);
+}
