@@ -43,7 +43,7 @@ if ( ! function_exists( 'decibel_styles' ) ) :
 		// Register theme stylesheet.
 		wp_register_style(
 			'decibel-style',
-			get_template_directory_uri() . '/style.css',
+			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
