@@ -23,15 +23,24 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  */
 
 .wp-block-navigation__responsive-container.is-menu-open {
-	padding-top: var(--wp--custom--gap--horizontal);
-	padding-bottom: var(--wp--custom--gap--vertical);
-	padding-right: var(--wp--custom--gap--horizontal);
-	padding-left: var(--wp--custom--gap--horizontal);
+    padding-top: var(--wp--custom--gap--horizontal);
+    padding-bottom: var(--wp--custom--gap--vertical);
+    padding-right: var(--wp--custom--gap--horizontal);
+    padding-left: var(--wp--custom--gap--horizontal);
 }
 
 /*
 * Control the hover stylings of outline block style.
 */
 .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
-	background-color: var(--wp--preset--color--primary);
+    background-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Provide styles for a Block Style for navigation links
+ */
+.wp-block-navigation-link.is-style-navigation-link-button {
+    background-color: var(--wp--preset--color--foreground);
+    color: var(--wp--preset--color--background);
+    padding: 20px 30px;
 }

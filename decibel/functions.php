@@ -56,3 +56,20 @@ if ( ! function_exists( 'decibel_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'decibel_styles' );
+
+function decibel_init_pattern_categories() {
+	if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( 'illustrations' ) ) {
+		register_block_pattern_category( 'illustrations', array( 'label' => __( 'Illustrations', 'decibel' ) ) );
+	}
+
+	register_block_style(
+		'core/navigation-link',
+		array(
+			'name'  => 'navigation-link-button',
+			'label' => __( 'Button Style Link', 'decibel' ),
+		)
+	);
+
+}
+
+add_action( 'init', 'decibel_init_pattern_categories' );
