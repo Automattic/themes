@@ -25,10 +25,15 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 /*
  * Provide styles for a Block Style for navigation links
  */
-.wp-block-navigation-link.is-style-navigation-link-button {
+.wp-block-navigation-link.is-style-navigation-link-button a {
 	background-color: var(--wp--preset--color--foreground);
 	color: var(--wp--preset--color--background);
 	padding: 20px 30px;
+}
+
+.wp-block-navigation-link.is-style-navigation-link-button a:hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--foreground);
 }
 
 /*
@@ -47,4 +52,10 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	background-color: var(--wp--preset--color--foreground);
 	color: var(--wp--preset--color--background);
 	padding: var(--wp--preset--spacing--20);
+}
+
+.wp-block-navigation.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container>*:not(:first-child) {
+	border-top: solid;
+	padding-top: 24px;
+	width: 100%;
 }

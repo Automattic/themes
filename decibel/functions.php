@@ -66,7 +66,7 @@ function decibel_init_pattern_categories() {
 		'core/navigation-link',
 		array(
 			'name'  => 'navigation-link-button',
-			'label' => __( 'Button Style Link', 'decibel' ),
+			'label' => __( 'Button', 'decibel' ),
 		)
 	);
 
