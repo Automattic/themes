@@ -3,9 +3,9 @@ Theme Name: Pixl
 Theme URI: https://github.com/Automattic/themes/tree/trunk/pixl
 Author: Automattic
 Author URI: https://automattic.com/
-Description: Pixl is a Tumblr Inspired Theme
-Requires at least: 5.8
-Tested up to: 5.9
+Description: Pixl is a simple yet opinionated blogging theme inspired by websites of the nineties.
+Requires at least: 6.0
+Tested up to: 6.0
 Requires PHP: 5.7
 Version: 0.0.5
 License: GNU General Public License v2 or later
@@ -25,28 +25,31 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 
 /* Links */
 a:where(:not(.wp-element-button)) {
-	text-underline-offset: .3em;
-	/* text-decoration-thickness: 2px; */
+    text-underline-offset: .3em;
+    /* text-decoration-thickness: 2px; */
 }
 
 /*
  * Form elements
  */
 :is(textarea, input:not([type="submit"])) {
-	color: var(--wp--preset--color--foreground);
-	background-color: var(--wp--preset--color--background);
-	border: 2px solid var(--wp--preset--color--primary) !important;
-	outline: none;
+    color: var(--wp--preset--color--foreground);
+    background-color: var(--wp--preset--color--background);
+    border: 2px solid var(--wp--preset--color--primary) !important;
+    outline: none;
     font-size: 0.875rem;
 }
+
 :is(textarea, input:not([type="submit"]))::placeholder {
     color: var(--wp--preset--color--foreground);
     font-weight: 300;
 }
+
 .wp-block-search :is(textarea, input:not([type="submit"])) {
     box-shadow: var(--wp--custom--shadow);
     margin-right: var(--wp--preset--spacing--20);
 }
+
 input[type="checkbox"] {
     appearance: none;
     min-width: 0.75rem;
@@ -54,17 +57,18 @@ input[type="checkbox"] {
     position: relative;
     margin-left: 0;
 }
-input[type="checkbox"]:checked::after	{
-	background-color: var(--wp--preset--color--foreground);
+
+input[type="checkbox"]:checked::after {
+    background-color: var(--wp--preset--color--foreground);
     content: "";
     position: absolute;
     width: 75%;
     height: 75%;
     top: 0;
     left: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto; 
+    bottom: 0;
+    right: 0;
+    margin: auto;
 }
 
 /*
@@ -74,6 +78,7 @@ input[type="checkbox"]:checked::after	{
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
+
 .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
     background-color: var(--wp--preset--color--background);
     color: var(--wp--preset--color--foreground);
@@ -81,10 +86,10 @@ input[type="checkbox"]:checked::after	{
 }
 
 .wp-block-pullquote cite {
-	font-size: 0.75rem;
-	font-style: normal;
-	font-weight: 300;
-	line-height: 1.6;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 /* Necessary so the header containing the navigation fills the entire remaining horizontal space, since it is positioned in a flex group with the site logo. */
