@@ -6,10 +6,10 @@
  */
 ?>
 
-<!-- wp:group {"layout":{"type":"default"},"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"backgroundColor":"black","textColor":"white"} -->
-<div class="wp-block-group has-white-color has-black-background-color has-text-color has-background has-link-color"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"layout":{"type":"default"},"align":"wide","style":{"spacing":{"padding":{"bottom":"8rem","right":"0rem","left":"0rem","top":"8rem"}}},"backgroundColor":"black"} -->
-<div class="wp-block-group alignwide has-black-background-color has-background" style="padding-top:8rem;padding-right:0rem;padding-bottom:8rem;padding-left:0rem"><!-- wp:heading {"level":1,"textColor":"white"} -->
+<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"padding":{"top":"var:preset|spacing|100","right":"var:preset|spacing|100","bottom":"var:preset|spacing|100","left":"var:preset|spacing|100"},"blockGap":"0"}},"backgroundColor":"black","textColor":"white","layout":{"type":"default"}} -->
+<div class="wp-block-group has-white-color has-black-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--100);padding-right:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--100)"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"0rem","right":"0rem","left":"0rem","top":"0rem"}}},"backgroundColor":"black","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide has-black-background-color has-background" style="padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:heading {"level":1,"textColor":"white"} -->
 <h1 class="has-white-color has-text-color"><?php echo esc_html__( 'Work With Us', 'rainfall' ); ?></h1>
 <!-- /wp:heading -->
 
