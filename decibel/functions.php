@@ -57,7 +57,7 @@ endif;
 
 add_action( 'wp_enqueue_scripts', 'decibel_styles' );
 
-function decibel_init_pattern_categories() {
+function decibel_init() {
 	if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( 'illustrations' ) ) {
 		register_block_pattern_category( 'illustrations', array( 'label' => __( 'Illustrations', 'decibel' ) ) );
 	}
@@ -69,7 +69,6 @@ function decibel_init_pattern_categories() {
 			'label' => __( 'Button', 'decibel' ),
 		)
 	);
-
 }
 
-add_action( 'init', 'decibel_init_pattern_categories' );
+add_action( 'init', 'decibel_init' );
