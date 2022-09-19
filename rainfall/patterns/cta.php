@@ -16,7 +16,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph {"textColor":"white"} -->
-<p class="has-white-color has-text-color"><?php echo esc_html__( 'Rainfall is an online magazine featuring curated stories about real people. We are passionate about interviewing people from self-employed enterpreneurs to established CEO’s and represent the times.', 'rainfall' ); ?></p>
+<p class="has-white-color has-text-color"><?php echo esc_html__( 'Rainfall is an online magazine featuring curated stories about real people. We are passionate about interviewing people from self-employed entrepreneurs to established CEO’s and represent the times.', 'rainfall' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
