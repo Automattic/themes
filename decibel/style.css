@@ -16,22 +16,50 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 */
 
 /*
- * Responsive menu container padding.
- * This ensures the responsive container inherits the same
- * spacing defined above. This behavior may be built into
- * the Block Editor in the future.
- */
-
-.wp-block-navigation__responsive-container.is-menu-open {
-	padding-top: var(--wp--custom--gap--horizontal);
-	padding-bottom: var(--wp--custom--gap--vertical);
-	padding-right: var(--wp--custom--gap--horizontal);
-	padding-left: var(--wp--custom--gap--horizontal);
-}
-
-/*
 * Control the hover stylings of outline block style.
 */
 .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
 	background-color: var(--wp--preset--color--primary);
 }
+
+/*
+ * Provide styles for a Block Style for navigation links
+ */
+.wp-block-navigation-link.is-style-navigation-link-button a {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	padding: 20px 30px !important;
+}
+
+.wp-block-navigation-link.is-style-navigation-link-button a:hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * Navigation
+ */
+.wp-block-navigation.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--wp--preset--color--primary);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container>.wp-block-navigation-item>.wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--xx-large);
+	font-family: var(--wp--preset--font-family--rubik);
+}
+
+.wp-block-navigation .wp-block-navigation__responsive-container-close {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	padding: var(--wp--preset--spacing--20);
+}
+
+.wp-block-navigation.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container>*:not(:first-child) {
+	border-top: solid;
+	padding-top: 24px;
+	width: 100%;
+}
+
+ .wp-block-navigation.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	width: 100%;
+ }
