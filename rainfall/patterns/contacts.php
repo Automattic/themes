@@ -57,7 +57,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><a href="http://facebook.com"><?php echo esc_html__( 'Facebook', 'rainfall' ); ?></a><br><a href="https://instagram.com"><?php echo esc_html__( 'Instagram', 'rainfall' ); ?></a><br><a href="https://twitter.com"><?php echo esc_html__( 'Twitter', 'rainfall' ); ?></a><br><a href="https://tiktok.com"><?php echo esc_html__( 'TikTok', 'rainfall' ); ?></a></p>
+<p><a href=""><?php echo esc_html__( 'Facebook', 'rainfall' ); ?></a><br><a href=""><?php echo esc_html__( 'Instagram', 'rainfall' ); ?></a><br><a href=""><?php echo esc_html__( 'Twitter', 'rainfall' ); ?></a><br><a href=""><?php echo esc_html__( 'TikTok', 'rainfall' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
