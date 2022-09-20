@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.19 =
+* Lynx: Misc pattern updates (#6597)
+
 = 0.0.18 =
 * Lynx: Add fluid typography support. (#6572)
 
