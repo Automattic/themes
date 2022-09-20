@@ -1,7 +1,6 @@
 /**
- * It looks like the responsive navigation is forced to be the wide width. https://github.com/WordPress/gutenberg/pull/43576
+ * We need this until https://github.com/WordPress/gutenberg/issues/44182 gets resolved
  */
-
 .wp-block-navigation__responsive-close {
 	max-width: none;
 }
@@ -11,18 +10,4 @@
  */
 .wp-block-navigation__responsive-container.is-menu-open {
 	padding-top: var(--wp--custom--gap--vertical);
-}
-
-/**
- * Override Blockbase ponyfill style that makes navigation items left aligned.
- */
-.wp-block-navigation.is-responsive .is-menu-open .wp-block-navigation__responsive-container-content {
-	align-items: var(--navigation-layout-justification-setting,inherit);
-}
-
-/**
- * Override Blockbase ponyfill style that makes navigation items left aligned.
- */
-.wp-block-navigation.is-responsive .is-menu-open .wp-block-navigation__container {
-	align-items: var(--navigation-layout-justification-setting,initial);
 }
