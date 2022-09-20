@@ -15,8 +15,9 @@
 <div class="wp-block-group has-black-background-color has-background" style="border-radius:10px"><!-- wp:embed /--></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center"><strong><?php echo  esc_html__( 'Listen to my new album', 'lynx' ); ?></strong></p>
+
+<!-- wp:paragraph {"align":"center","fontSize":"x-small"} -->
+<p class="has-text-align-center has-x-small-font-size"><strong><?php echo  esc_html__( 'Listen to my new album', 'lynx' ); ?></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->

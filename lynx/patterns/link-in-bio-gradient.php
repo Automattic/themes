@@ -8,13 +8,13 @@
 ?>
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/mesh_gradient.jpg'; ?>","hasParallax":true,"dimRatio":0,"minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light has-parallax" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div role="img" class="wp-block-cover__image-background has-parallax" style="background-position:50% 50%;background-image:url(<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/mesh_gradient.jpg'; ?>)"></div><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
+<div class="wp-block-cover alignfull is-light has-parallax" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div role="img" class="wp-block-cover__image-background has-parallax" style="background-position:50% 50%;background-image:url(<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/mesh_gradient.jpg'; ?>)"></div><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"20px"}}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"align":"center","className":"is-style-rounded"} /-->
 
-<!-- wp:site-title {"textAlign":"center","style":{"typography":{"fontSize":"1.125rem","fontStyle":"normal","fontWeight":"700"}}} /-->
+<!-- wp:site-title {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"medium"} /-->
 
-<!-- wp:site-tagline {"textAlign":"center","fontSize":"small"} /-->
+<!-- wp:site-tagline {"textAlign":"center","fontSize":"x-small"} /-->
 
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"10px"}}} -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"white","textColor":"black","width":100,"style":{"border":{"radius":"100px"},"typography":{"textTransform":"uppercase"},"spacing":{"padding":{"top":"16px","right":"16px","bottom":"16px","left":"16px"}}},"className":"is-style-outline","fontSize":"x-small"} -->
