@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.6 =
+* Blockbase: Update navigation justification (#6580)
+
 = 3.0.5 =
 * Update sass build scripts to import from node_modules (#6371)
 * Removed group block wrapping query pagination which was causing problems. (#6354)
