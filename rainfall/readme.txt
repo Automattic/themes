@@ -69,3 +69,12 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+=== Image used in the screenshot of the theme ===
+
+- https://www.rawpixel.com/image/3370294/free-photo-image-rain-white-silhouette
+
+The image used in the screenshot is licensed under the:
+CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+https://creativecommons.org/publicdomain/zero/1.0/
+
