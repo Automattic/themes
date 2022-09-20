@@ -12,6 +12,17 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.2 =
+* Decibel: add typography styles (#6571)
+* Decibel: add layout and global spacing (#6574)
+* Decibel: add link styles (#6570)
+* Decibel: add button styles (#6567)
+* Style/decibel header (#6582)
+* Style/decibel navigation (#6586)
+* Added large illustration patterns (#6585)
+* Add decibel single template and adjust according parent settings. (#6584)
+* Add table CSS to Blockbase and Decibel (#6593)
+
 = 0.0.1 =
 * Initial release
 

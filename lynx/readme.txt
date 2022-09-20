@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.18 =
+* Lynx: Add fluid typography support. (#6572)
+
 = 0.0.17 =
 * Lynx: Update theme screenshot. (#6522)
 * Lynx: Update the mesh gradient pattern. (#6540)
