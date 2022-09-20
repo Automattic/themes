@@ -16,7 +16,7 @@
 <div class="wp-block-group"><!-- wp:site-title {"isLink":false,"style":{"color":{"text":"#ffffffb3"},"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"500","letterSpacing":"2px"}}} /-->
 
 <!-- wp:heading {"style":{"typography":{"textTransform":"uppercase"},"color":{"text":"#dbff00"}},"className":"has-custom-font","fontSize":"x-large","fontFamily":"space-mono"} -->
-<h2 class="has-custom-font has-text-color has-space-mono-font-family has-x-large-font-size" style="color:#dbff00;text-transform:uppercase"><?php echo  esc_html__( 'Musician & Songwriter', 'lynx' ); ?></h2>
+<h2 class="has-text-color has-space-mono-font-family has-x-large-font-size" style="color:#dbff00;text-transform:uppercase"><?php echo  esc_html__( 'Musician & Songwriter', 'lynx' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
