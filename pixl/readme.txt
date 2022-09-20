@@ -12,6 +12,10 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 0.0.7 =
+* add overlay to featured image (#6591)
+* Pixl: add style variations (#6530)
+
 = 0.0.6 =
 * Block Canvas: update comments pattern. (#6575)
 * Pixl: add readme and screenshot (#6529)

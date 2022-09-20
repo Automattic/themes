@@ -12,6 +12,9 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.3 =
+* Decibel is no longer a Block Canvas child (#6598)
+
 = 0.0.2 =
 * Decibel: add typography styles (#6571)
 * Decibel: add layout and global spacing (#6574)

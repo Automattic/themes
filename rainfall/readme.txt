@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.11 =
+* Rainfall: fixing page template (#6594)
+
 = 0.0.10 =
 * Rainfall: fix CTA pattern (#6576)
 * Rainfall: fix navigation link colors (#6577)
