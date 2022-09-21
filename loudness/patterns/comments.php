@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: decibel/comments
+ * slug: loudness/comments
  * inserter: no
  */
 

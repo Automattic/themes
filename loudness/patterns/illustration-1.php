@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Illustration 1
- * Slug: decibel/illustration_1
+ * Slug: loudness/illustration_1
  * Categories: illustrations
  */
 ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts list
- * Slug: decibel/posts-list
+ * Slug: loudness/posts-list
  * Inserter: no
  */
 ?>

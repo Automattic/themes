@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Pricing Table
- * Slug: decibel/pricing-table
- * Categories: featured, text 
+ * Slug: loudness/pricing-table
+ * Categories: featured, text
  */
 ?>
 
@@ -21,15 +21,15 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"level":3} -->
-<h3><?php echo esc_html__( 'Student', 'decibel' ); ?></h3>
+<h3><?php echo esc_html__( 'Student', 'loudness' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'For anyone currently enrolled in primary education or college.', 'decibel' ); ?></p>
+<p><?php echo esc_html__( 'For anyone currently enrolled in primary education or college.', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"x-large"} -->
-<p class="has-x-large-font-size"><?php echo esc_html__( '$25', 'decibel' ); ?></p>
+<p class="has-x-large-font-size"><?php echo esc_html__( '$25', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"2rem"} -->
@@ -38,7 +38,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'decibel' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -55,15 +55,15 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"level":3} -->
-<h3><?php echo esc_html__( 'Professional', 'decibel' ); ?></h3>
+<h3><?php echo esc_html__( 'Professional', 'loudness' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'For hobbyists and people working in the music industry.', 'decibel' ); ?></p>
+<p><?php echo esc_html__( 'For hobbyists and people working in the music industry.', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"x-large"} -->
-<p class="has-x-large-font-size"><?php echo esc_html__( '$100', 'decibel' ); ?></p>
+<p class="has-x-large-font-size"><?php echo esc_html__( '$100', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"2rem"} -->
@@ -72,7 +72,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'decibel' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -85,15 +85,15 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"level":3} -->
-<h3><?php echo esc_html__( 'Solo Sponsor', 'decibel' ); ?></h3>
+<h3><?php echo esc_html__( 'Solo Sponsor', 'loudness' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Support the entire workshop with a solo sponsor ticket.', 'decibel' ); ?></p>
+<p><?php echo esc_html__( 'Support the entire workshop with a solo sponsor ticket.', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"x-large"} -->
-<p class="has-x-large-font-size"><?php echo esc_html__( '$25', 'decibel' ); ?></p>
+<p class="has-x-large-font-size"><?php echo esc_html__( '$25', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"2rem"} -->
@@ -102,7 +102,7 @@
 
 <!-- wp:buttons {"align":"full","layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons alignfull"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'decibel' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

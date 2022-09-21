@@ -1,4 +1,4 @@
-=== Decibel ===
+=== Loudness ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -17,26 +17,26 @@ A theme for music-y stuff
 * Add pricing table. (#6603)
 
 = 0.0.3 =
-* Decibel is no longer a Block Canvas child (#6598)
+* Loudness is no longer a Block Canvas child (#6598)
 
 = 0.0.2 =
-* Decibel: add typography styles (#6571)
-* Decibel: add layout and global spacing (#6574)
-* Decibel: add link styles (#6570)
-* Decibel: add button styles (#6567)
-* Style/decibel header (#6582)
-* Style/decibel navigation (#6586)
+* Loudness: add typography styles (#6571)
+* Loudness: add layout and global spacing (#6574)
+* Loudness: add link styles (#6570)
+* Loudness: add button styles (#6567)
+* Style/loudness header (#6582)
+* Style/loudness navigation (#6586)
 * Added large illustration patterns (#6585)
-* Add decibel single template and adjust according parent settings. (#6584)
-* Add table CSS to Blockbase and Decibel (#6593)
+* Add loudness single template and adjust according parent settings. (#6584)
+* Add table CSS to Blockbase and Loudness (#6593)
 
 = 0.0.1 =
 * Initial release
 
 == Copyright ==
 
-Decibel WordPress Theme, (C) 2022 Automattic
-Decibel is distributed under the terms of the GNU GPL.
+Loudness WordPress Theme, (C) 2022 Automattic
+Loudness is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
