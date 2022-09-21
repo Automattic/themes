@@ -86,3 +86,49 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .wp-block-navigation.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
 	width: 100%;
 }
+
+/* Quote styles */
+.wp-block-quote {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+.wp-block-quote cite {
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+.wp-block-quote cite::before {
+	content: "— ";
+}
+
+
+/* Pullquote Styles */
+.wp-block-pullquote {
+	background-image: url(./assets/illustrations/texture.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: none;
+}
+
+.wp-block-pullquote:not(.alignleft):not(.alignright):not(.alignwide) {
+	max-width: none !important;
+}
+
+.wp-block-pullquote blockquote {
+	background-color: var(--wp--preset--color--background);
+	padding: var(--wp--preset--spacing--70);
+	font-size: var(--wp--preset--font-size--large);
+	color: var(--wp--preset--color--foreground);
+	border: 3px solid var(--wp--preset--color--secondary);
+	max-width: var(--wp--style--global--content-size);
+	margin: 0 auto;
+}
+
+.wp-block-pullquote blockquote cite {
+	font-family: var(--wp--preset--font-family--rubik);
+	font-weight: 600;
+	text-transform: uppercase;
+	font-style: normal;
+}
+
