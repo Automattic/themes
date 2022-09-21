@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: decibel/footer
+ * Slug: loudness/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -17,12 +17,12 @@
 <p class="has-text-align-center has-rubik-font-family has-small-font-size" style="text-transform:uppercase">
 	<?php
 		/* Translators: Theme name. */
-		$theme_name = '<strong>' . esc_html__( 'Decibel Theme', 'decibel' ) . '</strong>';
+		$theme_name = '<strong>' . esc_html__( 'Loudness Theme', 'loudness' ) . '</strong>';
 		/* Translators: WordPress link. */
-		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'decibel' ) ) . '" rel="nofollow">WordPress</a>';
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'loudness' ) ) . '" rel="nofollow">WordPress</a>';
 		echo sprintf(
 		// Translators: Footer credits.
-			esc_html__( '%1$s, Proudly Powered by %2$s', 'decibel' ),
+			esc_html__( '%1$s, Proudly Powered by %2$s', 'loudness' ),
 			$theme_name,
 			$wordpress_link
 		);
