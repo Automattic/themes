@@ -12,6 +12,10 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.4 =
+* Adding styling and layout for query lists pages index, archive, search (#6599)
+* Add pricing table. (#6603)
+
 = 0.0.3 =
 * Decibel is no longer a Block Canvas child (#6598)
 

@@ -13,6 +13,12 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.12 =
+* Rainfall: adding image licence (#6600)
+* Rainfall: fixes for patterns on wporg (#6601)
+* Rainfall: theme check plugin fixes for links
+* Rainfall: theme check plugin fix. Requiered index.php file
+
 = 0.0.11 =
 * Rainfall: fixing page template (#6594)
 
