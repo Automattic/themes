@@ -43,3 +43,5 @@ This theme bundles the following third-party resources:
 
 DM Mono from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 https://fonts.google.com/specimen/DM+Sans
+
+Uni font by Craig Kroeger (www.craigkroeger.com)

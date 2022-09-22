@@ -20,7 +20,7 @@
         /* Translators: WordPress link. */
         $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pixl' ) ) . '" rel="nofollow">WordPress</a>';
         echo sprintf(
-            esc_html__( '%s, Proudly Powered by %s', 'pixl' ),
+            esc_html__( '%1$s, Proudly Powered by %2$s', 'pixl' ),
             $theme_name,
             $wordpress_link
         );
