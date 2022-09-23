@@ -12,6 +12,13 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.6 =
+* Adding missing svg assets (#6617)
+* Added a front-page template (#6615)
+* refactored singular template's padding configuration (#6614)
+* Corrected the location of loudness' svg illustration assets (#6618)
+* Adding guest performers pattern (#6619)
+
 = 0.0.5 =
 * Refactored to a singular template and updated layout widths to match changes in design (#6608)
 
