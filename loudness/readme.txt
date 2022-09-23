@@ -12,6 +12,9 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.5 =
+* Refactored to a singular template and updated layout widths to match changes in design (#6608)
+
 = 0.0.4 =
 * Adding styling and layout for query lists pages index, archive, search (#6599)
 * Add pricing table. (#6603)
