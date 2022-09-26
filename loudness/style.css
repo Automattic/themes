@@ -48,15 +48,22 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 /*
  * Provide styles for a Block Style for navigation links
  */
-.wp-block-navigation-link.is-style-navigation-link-button a {
+
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a {
 	background-color: var(--wp--preset--color--foreground);
 	color: var(--wp--preset--color--background);
 	padding: 20px 30px !important;
 }
-
-.wp-block-navigation-link.is-style-navigation-link-button a:hover {
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a:hover {
 	background-color: var(--wp--preset--color--primary);
 	color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * Links in containers with the primary background color get special treatment
+ */
+.has-primary-background-color a:hover {
+	--wp--preset--color--primary: var(--wp--preset--color--background);
 }
 
 /*
