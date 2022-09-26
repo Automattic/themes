@@ -22,7 +22,7 @@
 		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'loudness' ) ) . '" rel="nofollow">WordPress</a>';
 		echo sprintf(
 		// Translators: Footer credits.
-			esc_html__( '%1$s, Proudly Powered by %2$s', 'loudness' ),
+			esc_html__( '%1$s, Designed with %2$s', 'loudness' ),
 			$theme_name,
 			$wordpress_link
 		);
