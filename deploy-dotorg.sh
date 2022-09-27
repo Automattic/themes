@@ -23,6 +23,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"livro"
 	"mayland-blocks"
 	"pendant"
+	"pixl"
 	"quadrat"
 	"remote"
 	"seedlet-blocks"
