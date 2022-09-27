@@ -12,6 +12,13 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.7 =
+* update footer credits (#6627)
+* Remove 'button' style from navigation links in the responsive menu (#6630)
+* Layout changes to search page (#6631)
+* Remove the tagline from the header (#6629)
+* Refactored Loudness index templates. (#6628)
+
 = 0.0.6 =
 * Adding missing svg assets (#6617)
 * Added a front-page template (#6615)
