@@ -12,6 +12,10 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.8 =
+* Loudness: Add quote styles  (#6606)
+* Adding the instructors pattern (#6637)
+
 = 0.0.7 =
 * update footer credits (#6627)
 * Remove 'button' style from navigation links in the responsive menu (#6630)

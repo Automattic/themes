@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 0.0.13 =
+* Rainfall: Updates for dotorg submission (#6626)
+
 = 0.0.12 =
 * Rainfall: adding image licence (#6600)
 * Rainfall: fixes for patterns on wporg (#6601)
