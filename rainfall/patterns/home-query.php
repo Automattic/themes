@@ -14,7 +14,7 @@
 <hr class="wp-block-separator has-alpha-channel-opacity"/>
 <!-- /wp:separator -->
 
-<!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","inherit":true,"perPage":4},"displayLayout":{"type":"flex","columns":2}} -->
+<!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","inherit":false,"perPage":4},"displayLayout":{"type":"flex","columns":2}} -->
 <div class="wp-block-query">
 <!-- wp:post-template -->
 
