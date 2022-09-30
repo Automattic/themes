@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.22 =
+* Lynx: Remove button styles from the green style variation. (#6647)
+
 = 0.0.21 =
 * Lynx: Update default color palette. (#6645)
 
