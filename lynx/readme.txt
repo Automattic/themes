@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.21 =
+* Lynx: Update default color palette. (#6645)
+
 = 0.0.20 =
 * Lynx: Add style variations. (#6607)
 
