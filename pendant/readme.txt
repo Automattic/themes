@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.9 =
+* Filter out any fonts provided by Pendant from being loaded by Jetpack (#6643)
+
 = 1.0.8 =
 * Removing thickness from text-decoration shorthand because it is not supported on WebKit (#6490)
 
