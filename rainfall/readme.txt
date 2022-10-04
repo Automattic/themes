@@ -1,7 +1,7 @@
 === Rainfall ===
 Contributors: Automattic
-Requires at least: 5.8
-Tested up to: 5.9
+Requires at least: 6.0
+Tested up to: 6.0
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,11 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.0 =
+* Rainfall: add to deploy list, update screenshot, bump version (#6654)
+
 = 0.0.13 =
+* Initial release
 * Rainfall: Updates for dotorg submission (#6626)
 
 = 0.0.12 =
