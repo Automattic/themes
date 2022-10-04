@@ -1,6 +1,6 @@
 === Block Canvas ===
 Contributors: Automattic
-Requires at least: 5.8
+Requires at least: 6.0
 Tested up to: 6.0
 Requires PHP: 5.7
 License: GPLv2 or later
