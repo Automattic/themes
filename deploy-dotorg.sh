@@ -25,6 +25,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"pendant"
 	"pixl"
 	"quadrat"
+	"rainfall"
 	"remote"
 	"seedlet-blocks"
 	"skatepark"
