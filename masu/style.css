@@ -1,0 +1,307 @@
+/*
+Theme Name: Masu
+Theme URI: https://wordpress.com/theme/masu/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Masu is a blog theme inspired by a traditional square wooden box used to measure rice in Japan.
+Requires at least: 5.8
+Tested up to: 6.0
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: masu
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage, blog-homepage
+*/
+
+/*
+ * Font smoothing
+ */
+
+ body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Link Details
+ */
+
+a {
+	cursor: pointer;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.3em;
+}
+
+a:hover:not(.wp-block-button__link),
+.wp-block-site-title a:hover,
+.wp-block-post-title a:hover,
+.wp-block-post-date a:hover {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.3em;
+}
+
+a:active,
+.wp-block-site-title a:active,
+.wp-block-post-title a:active,
+.wp-block-post-date a:active {
+	text-decoration: underline;
+	text-decoration-style: solid;
+}
+
+/* Overrides the Gutenberg styles for the outline button */
+.wp-block-button.is-style-outline>.wp-block-button__link {
+	padding: 0.9375rem 1.9375rem;
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	background-color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
+
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	border-radius: 0;
+	border-width: 1px;
+	color: var(--wp--preset--color--background);
+	font-size: var(--wp--preset--typography--font-size--normal);
+	padding: 0.9375rem 1rem;
+}
+
+/*
+ * Comment Form Fields
+ */
+
+.wp-block-post-comments input:not([type='submit']),
+.wp-block-post-comments textarea {
+	border-color: var(--wp--custom--form--border--color);
+	color: var(--wp--preset--color--foregound);
+}
+
+.wp-block-post-comments .comment-form-author label,
+.wp-block-post-comments .comment-form-comment label,
+.wp-block-post-comments .comment-form-email label,
+.wp-block-post-comments .comment-form-url label {
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+/*
+ * Alignment styles, borrowed from Twenty Twenty-Two.
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-columns.alignfull.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align='full'] > .wp-block-group,
+.is-root-container .wp-block[data-align='full'] > .wp-block-columns.has-background,
+.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+	padding-left: var(--wp--custom--gap--horizontal);
+	padding-right: var(--wp--custom--gap--horizontal);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align='full'] {
+	margin-left: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
+	margin-right: calc(-1 * var(--wp--custom--gap--horizontal)) !important;
+	max-width: unset;
+	width: unset;
+}
+
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: 0;
+	padding-right: var(--wp--custom--gap--horizontal);
+	padding-bottom: 0;
+	padding-left: var(--wp--custom--gap--horizontal);
+}
+
+/*
+ * Place the close button in the same location as the open button.
+ */
+.has-modal-open .is-menu-open .wp-block-navigation__responsive-dialog {
+	padding-top: max(4vw, 32px);
+}
+
+.wp-block-navigation__responsive-container-close {
+	top:  max(4vw, 32px);
+}
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/37035 is fixed.
+ */
+.wp-block-navigation__responsive-container.is-menu-open ul {
+	font-size: var(--wp--preset--font-size--large) !important;
+	gap: calc(var(--wp--style--block-gap) / 2) !important;
+}
+
+/*
+ * Remove the default border from submenu.
+ */
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+	border: 0;
+}
+
+/*
+ * Add a border around the responsive navigation buttons.
+ */
+.wp-block-navigation__responsive-container-open,
+.wp-block-navigation__responsive-container-close {
+	border-color: var(--wp--preset--color--foreground);
+	border-radius: 2px;
+	border-style:  solid;
+	border-width:  1px;
+	padding: 8px !important;
+}
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/34196 or something like it.
+ */
+.wp-block-tag-cloud.is-style-outline a {
+	border-radius: 200px;
+	padding: 0 1rem;
+}
+
+.wp-block-tag-cloud.is-style-outline a:hover {
+	color: var(--wp--preset--color--background);
+	background-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Remove the default margin bottom from term description and post excerpt.
+ */
+.wp-block-term-description p:first-child,
+.wp-block-post-excerpt__excerpt {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child,
+.wp-block-post-excerpt__excerpt {
+	margin-bottom: 0;
+}
+
+/*
+ * Override the line-height to honour the settings specified in theme.json for the blocks.
+ */
+.wp-block-post-author__name,
+.wp-block-post-author__byline,
+.wp-block-post-author__bio,
+.wp-block-post-excerpt__excerpt {
+	line-height: inherit;
+}
+
+.wp-block-post-author__byline,
+.wp-block-post-author__bio {
+	font-size: inherit;
+}
+
+/*
+ * Needed to style Jetpack Contact Form
+ */
+.wp-block-jetpack-contact-form {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-jetpack-contact-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-jetpack-contact-form select,
+.wp-block-jetpack-contact-form textarea {
+	background-color: #fff;
+	border: 1px solid var(--wp--custom--form--border--color);
+	font-family: inherit;
+	font-size: 1em;
+	padding: calc(0.667em + 2px);
+}
+
+.wp-block-jetpack-contact-form .wp-block-jetpack-button button {
+	border-width:  1px;
+	font-size: var(--wp--preset--font-size--x-small);
+	padding: 0.9375rem 1.9375rem;
+}
+
+.wp-block-jetpack-contact-form.contact-form label {
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.wp-block-jetpack-contact-form.contact-form label span {
+	opacity: 0.7;
+}
+
+.wp-block-jetpack-contact-form.contact-form select {
+	padding: calc(0.667em + 1px);
+}
+
+.jetpack-option__input.jetpack-option__input.jetpack-option__input {
+	margin-bottom: 0.25rem;
+}
+
+div[id^="contact-form-"] h3 {
+	font-size: var(--wp--preset--font-size--normal);
+}
+
+.contact-form-submission {
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * Remove the default top margin from footer.
+ */
+.site-footer-container {
+	margin-top: auto;
+}
