@@ -26,7 +26,7 @@
 		<!-- /wp:group -->
 	<!-- /wp:post-template -->
 
-	<!-- wp:query-pagination {"paginationArrow":"chevron","layout":{"type":"flex","justifyContent":"space-between"}} -->
+	<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
 		<!-- wp:query-pagination-previous /-->
 
 		<!-- wp:query-pagination-numbers /-->
