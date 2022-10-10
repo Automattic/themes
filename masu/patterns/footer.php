@@ -24,7 +24,7 @@
 					<p class="has-x-small-font-size"><?php echo esc_html__( 'Masu is a blog that documents an individual\'s journey with regular quadrilateral images. Don\'t forget to follow me on:', 'masu' ); ?></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"#000000","style":{"spacing":{"margin":{"top":"1.32rem"}}},"className":"is-style-logos-only"} -->
+					<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"#000000","style":{"spacing":{"margin":{"top":"1.32rem"},"blockGap":{"left":"1rem"}}},"className":"is-style-logos-only"} -->
 					<ul class="wp-block-social-links has-icon-color is-style-logos-only" style="margin-top:1.32rem">
 						<!-- wp:social-link {"url":"https://facebook.com/","service":"facebook"} /-->
 
