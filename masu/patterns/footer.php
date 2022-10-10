@@ -24,7 +24,7 @@
 					<p class="has-x-small-font-size"><?php echo esc_html__( 'Masu is a blog that documents an individual\'s journey with regular quadrilateral images. Don\'t forget to follow me on:', 'masu' ); ?></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:social-links {"iconColor":"black","iconColorValue":"#000000","style":{"spacing":{"margin":{"top":"1.32rem"}}},"className":"is-style-logos-only"} -->
+					<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"#000000","style":{"spacing":{"margin":{"top":"1.32rem"}}},"className":"is-style-logos-only"} -->
 					<ul class="wp-block-social-links has-icon-color is-style-logos-only" style="margin-top:1.32rem">
 						<!-- wp:social-link {"url":"https://facebook.com/","service":"facebook"} /-->
 
@@ -54,8 +54,8 @@
 					<p class="has-x-small-font-size"><?php _e( 'Subscribe to my email newsletter full of inspiring stories about my journey that continues.', 'masu' ); ?></p>
 					<!-- /wp:paragraph -->
 
-					<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"burgundy","textColor":"beige","fontSize":"14px","customFontSize":"14px","customBorderColor":"#949494","padding":10,"spacing":10,"className":"is-style-split"} -->
-					<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="14px" custom_border_radius="0" custom_border_weight="1" custom_border_color="#949494" custom_padding="10" custom_spacing="10" submit_button_classes="has-14-px-font-size has-text-color has-beige-color has-background has-burgundy-background-color" email_field_classes="has-14-px-font-size" show_only_email_and_button="true" success_message="<?php echo esc_html__( 'Success! An email was just sent to confirm your subscription. Please find the email now and click \'Confirm Follow\' to start subscribing.', 'masu' ); ?>"]</div>
+					<!-- wp:jetpack/subscriptions {"buttonBackgroundColor":"primary","textColor":"background","fontSize":"14px","customFontSize":"14px","customBorderColor":"#949494","padding":10,"spacing":10,"className":"is-style-split"} -->
+					<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_font_size="14px" custom_border_radius="0" custom_border_weight="1" custom_border_color="#949494" custom_padding="10" custom_spacing="10" submit_button_classes="has-14-px-font-size has-text-color has-background-color has-background has-primary-background-color" email_field_classes="has-14-px-font-size" show_only_email_and_button="true" success_message="<?php echo esc_html__( 'Success! An email was just sent to confirm your subscription. Please find the email now and click \'Confirm Follow\' to start subscribing.', 'masu' ); ?>"]</div>
 					<!-- /wp:jetpack/subscriptions --></div>
 				<!-- /wp:group -->
 			</div>
