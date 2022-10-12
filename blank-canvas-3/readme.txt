@@ -1,4 +1,4 @@
-=== Clean Slate ===
+=== Blank Canvas ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Clean Slate is a barebones starter theme, stripped off of content templates but only a footer and a header. With its minimal styling, Clean Slate is a great theme starting fresh with your website.
+Blank Canvas is a barebones starter theme, stripped off of content templates but only a footer and a header. With its minimal styling, Blank Canvas is a great theme starting fresh with your website.
 
 == Changelog ==
 
@@ -17,8 +17,8 @@ Clean Slate is a barebones starter theme, stripped off of content templates but 
 
 == Copyright ==
 
-Clean Slate WordPress Theme, (C) 2022 Automattic
-Clean Slate is distributed under the terms of the GNU GPL.
+Blank Canvas WordPress Theme, (C) 2022 Automattic
+Blank Canvas is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
