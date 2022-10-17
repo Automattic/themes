@@ -2,7 +2,10 @@
 if ( ! function_exists( 'blockbase_support' ) ) :
 	function blockbase_support() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'blockbase', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'blockbase' );
+		if ( ! 'blockbase' === wp_get_theme()->get( 'TextDomain' ) ) {
+			load_theme_textdomain( wp_get_theme()->get( 'TextDomain' ) );
+		}
 
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
@@ -26,7 +29,7 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style(
 			array(
-				'/assets/ponyfill.css'
+				'/assets/ponyfill.css',
 			)
 		);
 
