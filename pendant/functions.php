@@ -20,7 +20,7 @@ if ( ! function_exists( 'pendant_support' ) ) :
 	 */
 	function pendant_support() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'pendant', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'pendant' );
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );

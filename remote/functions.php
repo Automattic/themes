@@ -20,7 +20,7 @@ if ( ! function_exists( 'remote_support' ) ) :
 	 */
 	function remote_support() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'remote', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'remote' );
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );

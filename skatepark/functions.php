@@ -31,7 +31,7 @@ if ( ! function_exists( 'skatepark_support' ) ) :
 	 */
 	function skatepark_support() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'skatepark', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'skatepark' );
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
