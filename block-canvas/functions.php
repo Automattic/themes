@@ -23,6 +23,8 @@ if ( ! function_exists( 'block_canvas_support' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
+		// Make theme available for translation.
+		load_theme_textdomain( 'block-canvas' );
 	}
 
 endif;
