@@ -1,24 +1,29 @@
 .wp-block-a8c-blog-posts {
+
 	&.image-aligntop {
+
 		.post-thumbnail {
 			margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 
 	&.image-alignleft {
+
 		.post-thumbnail {
 			margin-right: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 
 	&.image-alignright {
+
 		.post-thumbnail {
 			margin-left: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 	}
 
 	&.image-alignbehind .post-has-image {
-		 .entry-wrapper {
+
+		.entry-wrapper {
 			padding: #{map-deep-get($config-global, "spacing", "vertical")};
 		}
 
@@ -27,12 +32,12 @@
 		}
 
 		a:hover {
-			color: currentColor;
+			color: currentcolor;
 		}
 	}
 
 	.article-section-title {
-		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0em);
+		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "base")) + 0);
 		margin-top: 0;
 		margin-bottom: #{0.5 * map-deep-get($config-global, "spacing", "vertical")};
 	}
@@ -46,6 +51,7 @@
 	}
 
 	.post-thumbnail {
+
 		img {
 			vertical-align: middle;
 			width: auto;
@@ -53,6 +59,7 @@
 	}
 
 	.entry-wrapper > * {
+
 		/* Vertical margins logic between post details */
 		margin-top: #{map-deep-get($config-global, "spacing", "unit")};
 		margin-bottom: #{map-deep-get($config-global, "spacing", "unit")};
@@ -67,13 +74,14 @@
 	}
 
 	.entry-title {
+
 		a {
 			color: #{map-deep-get($config-global, "color", "primary", "default")};
 
 			.has-background:not(.has-background-background-color) &,
 			[class*="background-color"]:not(.has-background-background-color) &,
 			[style*="background-color"] & {
-				color: currentColor;
+				color: currentcolor;
 			}
 
 
@@ -85,7 +93,7 @@
 			.has-background:not(.has-background-background-color) &,
 			[class*="background-color"]:not(.has-background-background-color) &,
 			[style*="background-color"] & {
-				color: currentColor;
+				color: currentcolor;
 			}
 		}
 	}
@@ -95,7 +103,7 @@
 		color: inherit;
 		margin-top: #{map-deep-get($config-global, "spacing", "unit")};
 
-		&:after {
+		&::after {
 			content: "\02192" #{"/*rtl:\"\02190\"*/"};
 			display: inline-block;
 			margin-left: 0.5em;
@@ -109,7 +117,7 @@
 			.has-background:not(.has-background-background-color) &,
 			[class*="background-color"]:not(.has-background-background-color) &,
 			[style*="background-color"] & {
-				color: currentColor;
+				color: currentcolor;
 			}
 		}
 	}
@@ -117,12 +125,12 @@
 	.entry-meta,
 	.cat-links {
 		color: #{map-deep-get($config-global, "color", "foreground", "light")};
-		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0em);
+		font-size: (strip-unit(map-deep-get($config-global, "font", "size", "sm")) + 0);
 
 		.has-background:not(.has-background-background-color) &,
 		[class*="background-color"]:not(.has-background-background-color) &,
 		[style*="background-color"] & {
-			color: currentColor;
+			color: currentcolor;
 		}
 
 		.byline:not(:last-child) {
@@ -134,7 +142,7 @@
 		}
 
 		a {
-			color: currentColor;
+			color: currentcolor;
 			text-decoration: underline;
 
 			&:hover,
@@ -145,7 +153,7 @@
 				.has-background:not(.has-background-background-color) &,
 				[class*="background-color"]:not(.has-background-background-color) &,
 				[style*="background-color"] & {
-					color: currentColor;
+					color: currentcolor;
 				}
 			}
 		}
@@ -153,11 +161,12 @@
 }
 
 @import "../../base/extends";
+
 .wp-block-a8c-blog-posts + .button {
 	// Extend button style
 	@extend %button-style;
 	display: inline-block;
-	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0em);
+	font-size: (strip-unit(map-deep-get($config-global, "font", "size", "md")) + 0);
 
 	&:hover {
 		cursor: default;
@@ -167,7 +176,11 @@
 	[class*="background-color"]:not(.has-background-background-color) &,
 	[style*="background-color"] & {
 		background-color: transparent;
-		border: 2px solid currentColor;
-		color: currentColor;
+		border: 2px solid currentcolor;
+		color: currentcolor;
 	}
+}
+
+.wpnbha article p > .more-link:not([rel]) {
+	display: none;
 }
