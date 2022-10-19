@@ -12,8 +12,9 @@
 	<!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"},"style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--medium)","top":"var(--wp--custom--spacing--medium)"}}}} -->
 	<div class="wp-block-group alignwide" style="padding-top: var(--wp--custom--spacing--medium); padding-bottom: var(--wp--custom--spacing--medium);">
 		<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left"},"overlayMenu":"never","className":"site-footer","style":{"typography":{"fontStyle":"normal"},"spacing":{"blockGap":{"top":"0.5em","left":"2.5em","bottom":"0.5rem","right":"2.5em"}}},"fontSize":"small"} /-->
-		<!-- wp:paragraph {"align":"left","fontSize":"small","style":{"spacing":{"margin":{"top":0}}}} -->
-		<p class="has-small-font-size" style="margin-top: 0;">
+		
+		<!-- wp:paragraph {"align":"left","style":{"spacing":{"margin":{"top":0}}},"fontSize":"small"} -->
+		<p class="has-text-align-left has-small-font-size" style="margin-top: 0;">
 			<?php
 			printf(
 				/* Translators: WordPress link. */
@@ -21,6 +22,9 @@
 				'<a href="' . esc_url( __( 'https://wordpress.org', 'archeo' ) ) . '" rel="nofollow">WordPress</a>'
 			);
 			?>
-		</p><!-- /wp:paragraph -->
-	</div><!-- /wp:group -->
-</div><!-- /wp:group -->
+		</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
