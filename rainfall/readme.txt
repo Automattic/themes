@@ -13,6 +13,10 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.1 =
+* Move landing-page back to home (#6675)
+* Rainfall: general improvements (#6676)
+
 = 1.0.0 =
 * Rainfall: add to deploy list, update screenshot, bump version (#6654)
 
