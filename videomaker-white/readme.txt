@@ -18,6 +18,9 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.22 =
+* Videomaker: Fix primary color usage (#6663)
+
 = 1.0.21 =
 * lock post-content block by default (#6314)
 

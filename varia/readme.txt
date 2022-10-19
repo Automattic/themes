@@ -15,6 +15,9 @@ A design system for WordPress sites built with Gutenberg.
 == Changelog ==
 
 = 1.6.21 =
+* #5249: Varia+Children: Fix continue reading link (#6426)
+
+= 1.6.21 =
 Add appearance tools to all Varia themes #6428
 
 = 1.6.20 =
