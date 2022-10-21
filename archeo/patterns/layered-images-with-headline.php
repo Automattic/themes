@@ -18,9 +18,10 @@
 				<div style="height:14vw" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
 
-				<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"100","lineHeight":"1"}}} -->
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"clamp(64px, 6vw, 100px)","textTransform":"uppercase","fontStyle":"normal","fontWeight":"100","lineHeight":"1"}}} -->
 				<p style="font-size:clamp(64px, 6vw, 100px);font-style:normal;font-weight:100;line-height:1;text-transform:uppercase"><?php echo wp_kses_post( __( 'Palace of <br>the Circus at <br>Chichen-Itza, <br><em>bas-relief</em> of <br>tigers', 'archeo' ) ); ?></p>
-				<!-- /wp:paragraph --></div>
+				<!-- /wp:paragraph -->
+			</div>
 			<!-- /wp:column -->
 
 			<!-- wp:column {"verticalAlignment":"top"} -->
