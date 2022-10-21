@@ -18,7 +18,7 @@
 		<?php
 		printf(
 			/* Translators: WordPress link. */
-			esc_html__( 'Proudly powered by %s', 'twentytwentythree' ),
+			esc_html__( 'Proudly powered by %s', 'archeo' ),
 			'<a href="' . esc_url( __( 'https://wordpress.org', 'archeo' ) ) . '" rel="nofollow">WordPress</a>'
 		)
 		?>
