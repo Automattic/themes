@@ -16,7 +16,7 @@
 		<div class="wp-block-group simple-list-of-posts">
 			<!-- wp:post-title {"isLink":true,"style":{"typography":{"lineHeight":"1.2","fontStyle":"normal","fontWeight":"100"},"spacing":{"margin":{"top":"1.25rem"}}},"fontSize":"huge"} /-->
 
-			<!-- wp:post-author-name {"style":{"typography":{"fontStyle":"normal","fontWeight":"100","lineHeight":"1.2"},"spacing":{"margin":{"top":"0px"}}},"fontSize":"medium"} /-->
+			<!-- wp:post-author {"showAvatar":false,"style":{"typography":{"lineHeight":"1.2","fontStyle":"normal","fontWeight":"100"}},"fontSize":"medium"} /-->
 		</div>
 		<!-- /wp:group -->
 		<!-- /wp:post-template -->
