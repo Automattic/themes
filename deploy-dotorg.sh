@@ -87,6 +87,10 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 		svn status $SVN_DIR
 	else
 		echo "➤ Committing files..."
-		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD}
+		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD} 2>&1 | grep 'svn: E'
+		if [[ $? -eq 0 ]]; then
+			echo 'Commit failed.'
+			exit 1
+		fi
 	fi
 done
