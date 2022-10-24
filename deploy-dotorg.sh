@@ -77,13 +77,6 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 	echo "➤ Copying theme '${THEME_SLUG}' version '${THEME_VERSION}' to svn repository... "
 	rsync -rc --delete --include=theme.json --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
-	# Remove -wpcom from versoning
-	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/-wpcom//g' {} \; 
-
-	# Remove the wpcom-specific tags used in some themes
-	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
-	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, jetpack-global-styles//g' {} \; 
-
 	# Remove files from the previous version	
 	svn status $SVN_DIR/$THEME_VERSION | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
 
