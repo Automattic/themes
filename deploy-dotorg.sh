@@ -77,12 +77,8 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 	echo "➤ Copying theme '${THEME_SLUG}' version '${THEME_VERSION}' to svn repository... "
 	rsync -rc --delete --include=theme.json --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
-	# Remove -wpcom from versoning
-	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/-wpcom//g' {} \; 
-
 	# Remove the wpcom-specific tags used in some themes
 	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
-	find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, jetpack-global-styles//g' {} \; 
 
 	# Remove files from the previous version	
 	svn status $SVN_DIR/$THEME_VERSION | grep "^\!" | sed 's/^\! *//g' | xargs svn rm;
@@ -94,6 +90,10 @@ for THEME_SLUG in ${THEMES_TO_DEPLOY[@]} ; do
 		svn status $SVN_DIR
 	else
 		echo "➤ Committing files..."
-		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD}
+		svn commit $SVN_DIR -m "Update to version ${THEME_VERSION} from GitHub" --no-auth-cache --non-interactive  --username ${SVN_USERNAME} --password ${SVN_PASSWORD} 2>&1 | grep 'svn: E'
+		if [[ $? -eq 0 ]]; then
+			echo 'Commit failed.'
+			exit 1
+		fi
 	fi
 done
