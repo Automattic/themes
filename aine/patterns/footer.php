@@ -7,27 +7,23 @@
  */
 ?>
 
-<!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
-<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"30px"}}}} -->
+<div class="wp-block-group alignfull" style="padding-top:80px;padding-bottom:30px">
+    <!-- wp:spacer {"height":"80px"} -->
+    <div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
+    <!-- /wp:spacer -->
 
-<!-- wp:group {"layout":{"inherit":true}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">
-            <?php
-                /* Translators: WordPress link. */
-                $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'aine' ) ) . '" rel="nofollow">WordPress</a>';
-                echo sprintf(
-                    esc_html__( 'Proudly Powered by %1$s', 'aine' ),
-                    $wordpress_link
-                );
-            ?>
-        </p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
+    <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.8rem","letterSpacing":"-0.2px"}}} -->
+    <p class="has-text-align-center" style="font-size:0.8rem;letter-spacing:-0.2px">
+        <?php
+            /* Translators: WordPress link. */
+            $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'aine' ) ) . '" rel="nofollow">WordPress</a>';
+            echo sprintf(
+                esc_html__( 'Designed with %1$s', 'aine' ),
+                $wordpress_link
+            );
+        ?>
+    </p>
+    <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
