@@ -31,7 +31,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"letterSpacing":"-1px","lineHeight":"1.2"},"elements":{"link":{"color":{"text":"#e80fc5"}}}},"fontSize":"xx-large"} -->
-<p class="has-link-color has-xx-large-font-size" style="letter-spacing:-1px;line-height:1.2"><a href="#"><?php echo  esc_html__( 'Dribble.', 'lynx' ); ?></a></p>
+<p class="has-link-color has-xx-large-font-size" style="letter-spacing:-1px;line-height:1.2"><a href="#"><?php echo  esc_html__( 'Dribbble.', 'lynx' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
