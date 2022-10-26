@@ -12,6 +12,10 @@ A theme for music-y stuff
 
 == Changelog ==
 
+= 0.0.10 =
+* Loudness: Add home template to the theme. (#6698)
+* Separate 'page' and 'single' templates.  Removed comments and title from page template.  Refined page template layout. (#6697)
+
 = 0.0.9 =
 * Adding the FAQ pattern to Loudness (#6638)
 
