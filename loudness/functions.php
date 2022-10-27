@@ -9,7 +9,7 @@
  */
 
 
-if ( ! function_exists( 'decibel_support' ) ) :
+if ( ! function_exists( 'loudness_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -18,7 +18,7 @@ if ( ! function_exists( 'decibel_support' ) ) :
 	 *
 	 * @return void
 	 */
-	function decibel_support() {
+	function loudness_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -27,9 +27,9 @@ if ( ! function_exists( 'decibel_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'decibel_support' );
+add_action( 'after_setup_theme', 'loudness_support' );
 
-if ( ! function_exists( 'decibel_styles' ) ) :
+if ( ! function_exists( 'loudness_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
@@ -38,7 +38,7 @@ if ( ! function_exists( 'decibel_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function decibel_styles() {
+	function loudness_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
@@ -55,9 +55,9 @@ if ( ! function_exists( 'decibel_styles' ) ) :
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'decibel_styles' );
+add_action( 'wp_enqueue_scripts', 'loudness_styles' );
 
-function decibel_init() {
+function loudness_init() {
 	if ( ! WP_Block_Pattern_Categories_Registry::get_instance()->is_registered( 'illustrations' ) ) {
 		register_block_pattern_category( 'illustrations', array( 'label' => __( 'Illustrations', 'loudness' ) ) );
 	}
@@ -71,4 +71,4 @@ function decibel_init() {
 	);
 }
 
-add_action( 'init', 'decibel_init' );
+add_action( 'init', 'loudness_init' );
