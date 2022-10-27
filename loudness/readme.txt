@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.0 =
+* Finalized things for release (#6702)
+
 = 0.0.10 =
 * Loudness: Add home template to the theme. (#6698)
 * Separate 'page' and 'single' templates.  Removed comments and title from page template.  Refined page template layout. (#6697)

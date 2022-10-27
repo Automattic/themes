@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.23 =
+* Lynx: Fixing a typo in social media service name. (#6700)
+
 = 0.0.22 =
 * Lynx: Remove button styles from the green style variation. (#6647)
 
