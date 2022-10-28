@@ -21,7 +21,7 @@
                 /* Translators: WordPress link. */
                 $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'block-canvas' ) ) . '" rel="nofollow">WordPress</a>';
                 echo sprintf(
-                    esc_html__( 'Designed with by %1$s', 'block-canvas' ),
+                    esc_html__( 'Designed with %1$s', 'block-canvas' ),
                     $wordpress_link
                 );
             ?>
