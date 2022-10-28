@@ -25,14 +25,12 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
 */
 
 /*
  * Font smoothing
  */
-
- body {
+body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
@@ -43,7 +41,6 @@ GNU General Public License for more details.
  * spacing defined above. This behavior may be built into
  * the Block Editor in the future.
  */
-
 .wp-block-navigation__responsive-container.is-menu-open {
 	padding-top: var(--wp--preset--spacing--50);
 	padding-bottom: var(--wp--preset--spacing--50);
@@ -52,9 +49,10 @@ GNU General Public License for more details.
 }
 
 /*
-* Control the hover stylings of outline block style.
-* Unnecessary once block styles are configurable via theme.json
-*/
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
 .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
 	background-color: var(--wp--preset--color--secondary);
 	color: var(--wp--preset--color--background);
@@ -62,7 +60,8 @@ GNU General Public License for more details.
 }
 
 /**
- * Currently table styles are only available with 'wp-block-styles' theme support (block css) thus the following needs to be included
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
  * since 'wp-block-styles' aren't used for this theme.
  */
 .wp-block-table thead {
@@ -84,6 +83,7 @@ GNU General Public License for more details.
 
 /*
  * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
  */
 a {
 	text-decoration-thickness: .0625em !important;
