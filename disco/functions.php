@@ -19,6 +19,8 @@ if ( ! function_exists( 'disco_support' ) ) :
 	 * @return void
 	 */
 	function disco_support() {
+		// Make theme available for translation.
+		load_theme_textdomain( 'disco' );
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );

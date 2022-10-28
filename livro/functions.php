@@ -19,6 +19,8 @@ if ( ! function_exists( 'livro_support' ) ) :
 	 * @return void
 	 */
 	function livro_support() {
+		// Make theme available for translation.
+		load_theme_textdomain( 'livro' );
 
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
@@ -75,9 +77,9 @@ function livro_register_block_pattern_categories() {
 
 	//Needed until https://github.com/WordPress/gutenberg/issues/39500 is fixed.
 	$block_pattern_categories = array(
-		'pages'    => array( 'label' => __( 'Pages', 'livro' ) ),
-		'footer'   => array( 'label' => __( 'Footers', 'livro' ) ),
-		'header'   => array( 'label' => __( 'Headers', 'livro' ) )
+		'pages'  => array( 'label' => __( 'Pages', 'livro' ) ),
+		'footer' => array( 'label' => __( 'Footers', 'livro' ) ),
+		'header' => array( 'label' => __( 'Headers', 'livro' ) ),
 	);
 
 	/**
