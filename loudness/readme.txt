@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.1 =
+* Make theme available for translation as much as possible (#6484)
+
 = 1.0.0 =
 * Finalized things for release (#6702)
 

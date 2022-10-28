@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.19 =
+* Make theme available for translation as much as possible (#6484)
+
 = 1.0.18 =
 * Archeo: Improve block markup and fix block errors (#6686)
 

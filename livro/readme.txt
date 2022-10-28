@@ -13,6 +13,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.19 =
+* Make theme available for translation as much as possible (#6484)
+
 = 1.0.18 =
 * Livro: fix closing main tags in index and home templates (#6420)
 

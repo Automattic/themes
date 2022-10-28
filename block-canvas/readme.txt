@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.19 =
+* Make theme available for translation as much as possible (#6484)
+
 = 0.0.18 =
 * Update block canvas styles (#6640)
 

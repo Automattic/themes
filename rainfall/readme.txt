@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.2 =
+* Make theme available for translation as much as possible (#6484)
+
 = 1.0.1 =
 * Move landing-page back to home (#6675)
 * Rainfall: general improvements (#6676)

@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.10 =
+* Make theme available for translation as much as possible (#6484)
+
 = 1.0.9 =
 * Filter out any fonts provided by Pendant from being loaded by Jetpack (#6643)
 

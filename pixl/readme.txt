@@ -12,6 +12,9 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 1.0.1 =
+* Make theme available for translation as much as possible (#6484)
+
 = 0.0.9 =
 * remove footer and header-footer only templates (#6623)
 

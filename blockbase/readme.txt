@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.7 =
+* Make theme available for translation as much as possible (#6484)
+
 = 3.0.6 =
 * Blockbase: Update navigation justification (#6580)
 
