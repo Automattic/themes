@@ -16,23 +16,24 @@
 
 <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","inherit":false,"perPage":4},"displayLayout":{"type":"flex","columns":2}} -->
 <div class="wp-block-query">
-<!-- wp:post-template -->
+    <!-- wp:post-template -->
 
-<!-- wp:group {"layout":{"type":"flex","orientation":"vertical"},"align":"wide","style":{"spacing":{"blockGap":"1rem"}}} -->
-<div class="wp-block-group alignwide">
-<!-- wp:post-featured-image {"width":"100%","height":"max(32vw, 50vh)"} /-->
+        <!-- wp:group {"layout":{"type":"flex","orientation":"vertical"},"align":"wide","style":{"spacing":{"blockGap":"1rem"}}} -->
+        <div class="wp-block-group alignwide">
+            <!-- wp:post-featured-image {"width":"100%","height":"max(32vw, 50vh)"} /-->
 
-<!-- wp:post-date {"format":"M j","style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} /-->
+            <!-- wp:post-date {"format":"M j","style":{"typography":{"textTransform":"uppercase"}},"fontSize":"small"} /-->
 
-<!-- wp:post-title {"isLink":true,"style":{"typography":{"lineHeight":"1.1","textTransform":"uppercase","fontStyle":"normal","fontWeight":"400"},"color":{"text":"#ffffff","link":"#ffffff"}},"fontSize":"large"} /-->
+            <!-- wp:post-title {"isLink":true,"style":{"typography":{"lineHeight":"1.1","textTransform":"uppercase","fontStyle":"normal","fontWeight":"400"},"color":{"text":"#ffffff","link":"#ffffff"}},"fontSize":"large"} /-->
 
-<!-- wp:post-excerpt /--></div>
-<!-- /wp:group -->
-<!-- /wp:post-template -->
+            <!-- wp:post-excerpt /-->
+        </div>
+        <!-- /wp:group -->
+    <!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-<!-- wp:query-pagination-previous /-->
-
-<!-- wp:query-pagination-next /-->
-<!-- /wp:query-pagination --></div>
+    <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+        <!-- wp:query-pagination-previous /-->
+        <!-- wp:query-pagination-next /-->
+    <!-- /wp:query-pagination -->
+</div>
 <!-- /wp:query -->
