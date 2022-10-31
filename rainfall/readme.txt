@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.3 =
+* Rainfall: try using index as home template (#6701)
+
 = 1.0.2 =
 * Make theme available for translation as much as possible (#6484)
 
