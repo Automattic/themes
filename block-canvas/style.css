@@ -25,36 +25,22 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
 */
 
 /*
  * Font smoothing
+ * https://github.com/WordPress/gutenberg/issues/35934
  */
-
- body {
+body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
 
 /*
- * Responsive menu container padding.
- * This ensures the responsive container inherits the same
- * spacing defined above. This behavior may be built into
- * the Block Editor in the future.
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
  */
-
-.wp-block-navigation__responsive-container.is-menu-open {
-	padding-top: var(--wp--preset--spacing--50);
-	padding-bottom: var(--wp--preset--spacing--50);
-	padding-right: var(--wp--preset--spacing--50);
-	padding-left: var(--wp--preset--spacing--50);
-}
-
-/*
-* Control the hover stylings of outline block style.
-* Unnecessary once block styles are configurable via theme.json
-*/
 .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
 	background-color: var(--wp--preset--color--secondary);
 	color: var(--wp--preset--color--background);
@@ -62,8 +48,10 @@ GNU General Public License for more details.
 }
 
 /**
- * Currently table styles are only available with 'wp-block-styles' theme support (block css) thus the following needs to be included
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
  * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
  */
 .wp-block-table thead {
 	border-bottom: 3px solid;
@@ -84,8 +72,9 @@ GNU General Public License for more details.
 
 /*
  * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
  */
 a {
 	text-decoration-thickness: .0625em !important;
-	text-underline-offset: .15em
+	text-underline-offset: .15em;
 }
