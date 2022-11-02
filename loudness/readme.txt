@@ -84,3 +84,23 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+StockSnap
+License : Creative Commons CC0
+	https://stocksnap.io/photo/stylish-boy-03P9JTLVF7
+	https://stocksnap.io/photo/male-model-Q7PO9ADJHS
+	https://stocksnap.io/photo/fitness-male-CWWCRACUJ6
+	https://stocksnap.io/photo/smiling-woman-WD9GZ6WUOA
+	https://stocksnap.io/photo/girl-sunglasses-K5J3ZCGCYZ
+	https://stocksnap.io/photo/people-man-ZPC6ULHO0Y
+	https://stocksnap.io/photo/wall-art-GSS62FLFJO
+	https://stocksnap.io/photo/people-girl-VZ6M02LHDN
+	https://stocksnap.io/photo/people-man-8O83EE9RGN
+
+Included
+License : Creative Commons CC0
+	/assets/illustrations/illustration-1.svg
+	/assets/illustrations/illustration-2.svg
+	/assets/illustrations/texture.png
