@@ -12,6 +12,18 @@ Heiwa is a theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.4 =
+* Heiwa: Update screenshot (#6679)
+
+= 1.0.3 =
+* Heiwa: Update navigation width (#6573)
+
+= 1.0.2 =
+* lock post-content block by default (#6314)
+
+= 1.0.1 =
+* Blockbase 3 (#6167)
+
 = 0.0.2 =
 * Heiwa: Minor adjustments to header and footer patterns. (#5979)
 

@@ -1,7 +1,9 @@
 // Links styles
 a {
-	color: var( --wp--style--color--link, var(--global--color-primary) );
-	text-decoration: underline 1px var(--global--color-secondary);
+	color: var(--wp--style--color--link, var(--global--color-primary));
+	text-decoration-color: var(--global--color-secondary);
+	text-decoration-line: underline;
+	text-decoration-thickness: 1px;
 	text-underline-offset: 0.3em;
 	transition: text-decoration 0.1s ease-out;
 
@@ -19,13 +21,13 @@ a {
 	}
 
 	&:active {
-		color: var( --wp--style--color--link, var(--global--color-primary) );
+		color: var(--wp--style--color--link, var(--global--color-primary));
 	}
 
 	// If a custom link color has been assigned,
 	// switch the color of the bottom border too.
 	.has-link-color & {
-		text-decoration-color: var( --wp--style--color--link, var(--global--color-primary) );
+		text-decoration-color: var(--wp--style--color--link, var(--global--color-primary));
 
 		&:hover,
 		&:focus {

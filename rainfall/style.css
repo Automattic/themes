@@ -1,16 +1,110 @@
 /*
 Theme Name: Rainfall
-Theme URI: TBD
+Theme URI: https://github.com/Automattic/themes/tree/trunk/rainfall
 Author: Automattic
 Author URI: https://automattic.com
-Description: TBD
-Requires at least: 5.8
-Tested up to: 5.9
+Description: Rainfall is a clean, objective blogging theme strongly inspired by Swiss Design. Its minimalist functionality is balanced by a strong accent color, beautiful photography and post templates with sidebars.
+Requires at least: 6.0
+Tested up to: 6.0
 Requires PHP: 5.7
-Version: 0.0.1
+Version: 1.0.3
 License: GNU General Public License v2 or later
-License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
-Template: 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rainfall
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+Tags: two-columns, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, theme-options, threaded-comments, translation-ready, auto-loading-homepage, blog-homepage
 */
+
+/**
+ * Post title indent
+ */
+.indented-post-title {
+	margin-left: 1ch;
+	text-indent: -1ch;
+ }
+
+/**
+ * Comment form elements
+ */
+.wp-block-post-comments-form input:not([type=submit],[type=checkbox]),
+.wp-block-post-comments-form textarea,
+.wp-block-post-comments-form select {
+	background-color: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--black);
+	border: 1px solid var(--wp--preset--color--white);
+}
+
+/**
+ * Navigation on dark background
+ */
+
+.has-orange-background-color .has-black-background-color .wp-block-navigation-item  a:where(:not(.wp-element-button)):active {
+	color: var(--wp--preset--color--brown);
+}
+
+.has-black-background-color .wp-block-navigation-item  a:where(:not(.wp-element-button)):active {
+	color: var(--wp--preset--color--orange);
+}
+
+
+/**
+ * Search input on dark background
+ */
+.has-black-background-color .wp-block-search__input {
+	background-color: var(--wp--preset--color--black);
+	border: 1px solid var(--wp--preset--color--white);
+	color: var(--wp-preset--color--white);
+}
+
+/*
+* Button styles on dark background
+*/
+.has-black-background-color .wp-block-file .wp-block-file__button,
+.has-black-background-color .wp-block-button__link {
+	background-color: var(--wp--preset--color--white);
+	border-color: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--black);
+}
+
+.has-black-background-color .wp-block-file .wp-block-file__button:hover,
+.has-black-background-color .wp-block-button__link:hover,
+.has-black-background-color .wp-block-file .wp-block-file__button:focus,
+.has-black-background-color .wp-block-button__link:focus {
+	background-color: var(--wp--preset--color--dark-grey);
+	border-color: var(--wp--preset--color--dark-grey);
+	color: var(--wp--preset--color--white);
+}
+
+.has-black-background-color .wp-block-file .wp-block-file__button:active,
+.has-black-background-color .wp-block-button__link:active {
+	background-color: var(--wp--preset--color--light-grey);
+	border-color: var(--wp--preset--color--light-grey);
+	color: var(--wp--preset--color--black);
+}
+
+/* Footer Navigation */
+footer .wp-block-navigation__container {
+	row-gap: 1rem;
+}
+
+/** Navigation Current Menu Item
+ * Needed until this is addressed: https://github.com/WordPress/gutenberg/issues/42299
+ */
+.wp-block-navigation-item.current-menu-item > a {
+	font-weight: 700;
+}
+
+/** Navigation Overlay
+ * Needed until this is addressed: https://github.com/WordPress/gutenberg/issues/39142
+ */
+.wp-block-navigation__responsive-container.is-menu-open ul {
+	font-size: var(--wp--preset--font-size--x-large) !important;
+	gap: 0 !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .has-child .wp-block-navigation__submenu-container {
+	padding-top: 0;
+}
+
+.wp-block-navigation__responsive-container.has-white-color.has-black-background-color.is-menu-open a:active {
+	color: var(--wp--preset--color--orange);
+}

@@ -6,7 +6,7 @@ Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: A colorful, typography driven, Gutenberg-ready theme meant to grab the attention of potential customers and market or sell products to them.
 Requires at least: WordPress 4.9.6
-Version: 1.4.16
+Version: 1.4.21
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1151,6 +1151,11 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* Center-align getty image embeds */
+.getty.embed.image {
+	display: block !important;
 }
 
 /**
@@ -2463,7 +2468,7 @@ table.is-style-stripes tbody tr:nth-child(odd),
 .has-background h4:not(.has-text-color),
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .has-primary-background-color,
@@ -2493,8 +2498,8 @@ table.is-style-stripes tbody tr:nth-child(odd),
 }
 
 .has-background-dim,
-.has-foreground-background-color,
-.has-foreground-background-color.has-background-dim {
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
 	color: #f7f7f6;
 }
 
@@ -2541,7 +2546,6 @@ table.is-style-stripes tbody tr:nth-child(odd),
 .has-background-background-color,
 .has-background-background-color.has-background-dim {
 	background-color: #f7f7f6;
-	color: #444444;
 }
 
 .has-background-background-color:not(.has-text-color),
@@ -4008,7 +4012,7 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 	margin-bottom: 0;
 }
 
-.wp-block-jetpack-mailchimp input[type=email] {
+.wp-block-jetpack-mailchimp input[type="email"] {
 	width: 100%;
 }
 
@@ -4044,6 +4048,17 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 
 .wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:last-child {
 	margin-bottom: 0;
+}
+
+/**
+ * Map Block
+ */
+.mapboxgl-popup-close-button {
+	padding: 6px;
+}
+
+.wp-block-jetpack-map .mapboxgl-popup h3 {
+	padding-top: 15px;
 }
 
 /**

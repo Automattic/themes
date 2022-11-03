@@ -20,6 +20,12 @@ Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and
 
 == Changelog ==
 
+= 1.3.9 =
+* Fix/missing tags (#6303)
+
+= 1.3.8 =
+* migrate to npm workspaces (#6200)
+
 = 1.2.2 - 1.2.4 =
 * Navigation style fixes
 * Improve support for Woocommerce

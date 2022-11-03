@@ -4,7 +4,7 @@ Theme URI: https://wordpress.com/themes/publication/
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 Description: Publication is an elegant blog and magazine theme that features full-screen Featured Images. It’s perfect for sites about fashion, food, travel, or design. With balanced typography, colors, and attention to detail, Publication helps you create visually stunning posts.
-Version: 1.0.7-wpcom
+Version: 1.0.9-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: publication
@@ -439,7 +439,7 @@ acronym {
 	border-bottom: 1px dotted #222;
 	cursor: help;
 }
-mark,
+mark:not(.has-inline-color),
 ins {
 	background: #ef7d0b;
 	color: #fff;
@@ -1651,12 +1651,21 @@ body {
 
 /* Post Thumbnail */
 .post-thumbnail {
-	background: #000;
 	display: block;
 	float: right;
 	margin: 0 0 12px 12px;
 	width: 60px;
 }
+
+.wpnbha .post-thumbnail {
+	background: none;
+}
+
+.wpnbha.image-aligntop .post-thumbnail {
+	float: unset;
+	width: 100%;
+}
+
 .post-thumbnail img {
 	display: block;
 }

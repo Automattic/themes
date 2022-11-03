@@ -11,6 +11,21 @@ Skatepark is a bold and exciting WordPress theme designed for modern events and 
 
 == Changelog ==
 
+= 1.0.48 =
+* Make theme available for translation as much as possible (#6484)
+
+= 1.0.47 =
+* Remove page-list blocks (#6313)
+
+= 1.0.46 =
+* lock post-content block by default (#6314)
+
+= 1.0.45 =
+* Fix/missing tags (#6303)
+
+= 1.0.44 =
+* migrate to npm workspaces (#6200)
+
 = 1.0.43 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 

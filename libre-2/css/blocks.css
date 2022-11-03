@@ -43,8 +43,10 @@ Description: Used to style Gutenberg Blocks.
 	}
 }
 
+/* added .wp-block-cover.alignfull to fix issue GH# 6247 */
 .singular.no-sidebar .alignfull,
-.singular.no-sidebar .wp-block-group .alignfull {
+.singular.no-sidebar .wp-block-group .alignfull,
+.wp-block-cover.alignfull {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	max-width: 1000%;
@@ -94,7 +96,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-quote p,
 .wp-block-quote.is-large p,
 .wp-block-quote.is-style-large p {
-	margin-bottom: 1.0em;
+	margin-bottom: 1em;
 }
 
 .wp-block-quote.is-large p,
@@ -120,7 +122,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	text-align: inherit;
 }
 
-.wp-block-quote[style*="text-align:right"]{
+.wp-block-quote[style*="text-align:right"] {
 	margin-left: 0;
 	margin-right: 3.5em;
 }
@@ -130,13 +132,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	right: 0.6em;
 }
 
-@media (min-width: 720px){
+@media (min-width: 720px) {
 	.wp-block-quote[style*="text-align:right"]::before {
 		right: -0.6em;
 	}
 }
 
-.rtl .wp-block-quote[style*="text-align:left"]{
+.rtl .wp-block-quote[style*="text-align:left"] {
 	margin-left: 3.5em;
 	margin-right: 0;
 }
@@ -146,7 +148,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	right: auto;
 }
 
-@media (min-width: 720px){
+@media (min-width: 720px) {
 	.rtl .wp-block-quote[style*="text-align:left"]::before {
 		left: -0.6em;
 	}
@@ -219,7 +221,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .rtl .wp-block-file * + .wp-block-file__button {
-	margin-left: .75em;
+	margin-left: 0.75em;
 	margin-right: 0;
 }
 
@@ -231,7 +233,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Image */
 .wp-block-image .aligncenter {
-        text-align: center;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -377,7 +379,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 /* Latest Comments */
 .wp-block-latest-comments__comment a {
-	box-shadow: 0 1px 0 0 rgba(0,0,0,0);
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0);
 }
 
 .wp-block-latest-comments__comment-date {
@@ -403,8 +405,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .has-pale-pink-background-color,
-.has-pale-pink-background-color:hover.
-.has-pale-pink-background-color:focus,
+.has-pale-pink-background-color:hover. .has-pale-pink-background-color:focus,
 .has-pale-pink-background-color:active,
 .has-pale-pink-background-color:visited {
 	background-color: #f78da7;

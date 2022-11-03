@@ -6,7 +6,7 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: A bold and clean theme - Stow is the ideal choice for creating an online presence for your business.
 Requires at least: WordPress 4.9.6
-Version: 1.5.15
+Version: 1.5.21
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Template: varia
@@ -1179,6 +1179,11 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* Center-align getty image embeds */
+.getty.embed.image {
+	display: block !important;
 }
 
 /**
@@ -2488,7 +2493,7 @@ table.is-style-stripes tbody tr:nth-child(odd),
 .has-background h4:not(.has-text-color),
 .has-background h5:not(.has-text-color),
 .has-background h6:not(.has-text-color) {
-	color: currentColor;
+	color: currentcolor;
 }
 
 .has-primary-background-color,
@@ -2518,8 +2523,8 @@ table.is-style-stripes tbody tr:nth-child(odd),
 }
 
 .has-background-dim,
-.has-foreground-background-color,
-.has-foreground-background-color.has-background-dim {
+.has-foreground-background-color:not(.has-text-color),
+.has-foreground-background-color.has-background-dim:not(.has-text-color) {
 	color: var(--wp--preset--color--background);
 }
 
@@ -2566,7 +2571,6 @@ table.is-style-stripes tbody tr:nth-child(odd),
 .has-background-background-color,
 .has-background-background-color.has-background-dim {
 	background-color: var(--wp--preset--color--background);
-	color: var(--wp--preset--color--foreground);
 }
 
 .has-background-background-color:not(.has-text-color),
@@ -4021,7 +4025,7 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 	margin-bottom: 0;
 }
 
-.wp-block-jetpack-mailchimp input[type=email] {
+.wp-block-jetpack-mailchimp input[type="email"] {
 	width: 100%;
 }
 
@@ -4057,6 +4061,17 @@ body.admin-bar .widget_eu_cookie_law_widget.widget.top {
 
 .wp-block-jetpack-layout-grid .wp-block-jetpack-layout-grid-column > *:last-child {
 	margin-bottom: 0;
+}
+
+/**
+ * Map Block
+ */
+.mapboxgl-popup-close-button {
+	padding: 6px;
+}
+
+.wp-block-jetpack-map .mapboxgl-popup h3 {
+	padding-top: 15px;
 }
 
 /**
@@ -4102,6 +4117,16 @@ strong {
 }
 
 a {
+	text-decoration: none;
+}
+
+.entry-content a:link,
+.entry-content a:active {
+	text-decoration: underline;
+}
+
+.entry-content a:hover,
+.entry-content a:active {
 	text-decoration: none;
 }
 
@@ -4185,7 +4210,8 @@ body:not(.fse-enabled) .site-description {
 /**
  * 4.1 Main Navigation
  */
-body:not(.fse-enabled) #site-navigation, body:not(.fse-enabled) .main-navigation {
+body:not(.fse-enabled) #site-navigation,
+body:not(.fse-enabled) .main-navigation {
 	background-color: var(--wp--preset--color--secondary);
 	border-bottom: 2px solid rgba(0, 0, 0, 0.15);
 	margin-right: 0;
@@ -4193,45 +4219,55 @@ body:not(.fse-enabled) #site-navigation, body:not(.fse-enabled) .main-navigation
 	text-align: center;
 }
 
-body:not(.fse-enabled) #site-navigation > div, body:not(.fse-enabled) .main-navigation > div {
+body:not(.fse-enabled) #site-navigation > div,
+body:not(.fse-enabled) .main-navigation > div {
 	text-align: right;
 }
 
-body:not(.fse-enabled) #site-navigation.main-navigation > div, body:not(.fse-enabled) .main-navigation.main-navigation > div {
+body:not(.fse-enabled) #site-navigation.main-navigation > div,
+body:not(.fse-enabled) .main-navigation.main-navigation > div {
 	padding-right: 16px;
 	padding-left: 16px;
 }
 
-body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a, body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a {
+body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
+body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a {
 	color: var(--wp--preset--color--primary);
 }
 
-body:not(.fse-enabled) #site-navigation.main-navigation ul li a, body:not(.fse-enabled) .main-navigation.main-navigation ul li a {
+body:not(.fse-enabled) #site-navigation.main-navigation ul li a,
+body:not(.fse-enabled) .main-navigation.main-navigation ul li a {
 	color: var(--wp--preset--color--background);
 	text-decoration: none;
 }
 
-body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover, body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover {
+body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
+body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover {
 	color: var(--wp--preset--color--primary);
 }
 
 @media only screen and (min-width: 560px) {
-	body:not(.fse-enabled) #site-navigation.main-navigation ul li, body:not(.fse-enabled) .main-navigation.main-navigation ul li {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul li,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul li {
 		padding-right: 0;
 		padding-left: 0;
 		list-style-type: disc;
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a, body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul li.current-menu-item a,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul li.current-menu-item a {
 		color: var(--wp--preset--color--primary);
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul li a, body:not(.fse-enabled) .main-navigation.main-navigation ul li a {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul li a,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul li a {
 		color: var(--wp--preset--color--background);
 		font-size: 0.83333rem;
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover, body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul li a:hover {
 		color: var(--wp--preset--color--primary);
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul li a::after, body:not(.fse-enabled) .main-navigation.main-navigation ul li a::after {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul li a::after,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul li a::after {
 		color: var(--wp--preset--color--background);
 		content: " \2022";
 		margin-right: 16px;
@@ -4239,38 +4275,47 @@ body:not(.fse-enabled) #site-navigation.main-navigation ul li a:hover, body:not(
 		font-size: 1rem;
 		opacity: 0.58;
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul li:last-child a::after, body:not(.fse-enabled) .main-navigation.main-navigation ul li:last-child a::after {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul li:last-child a::after,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul li:last-child a::after {
 		content: "";
 		margin-right: 0;
 	}
 }
 
 @media only screen and (min-width: 560px) {
-	body:not(.fse-enabled) #site-navigation.main-navigation ul ul, body:not(.fse-enabled) .main-navigation.main-navigation ul ul {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul ul,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul ul {
 		background-color: var(--wp--preset--color--background);
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a, body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li.current-menu-item a,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul ul li.current-menu-item a {
 		color: var(--wp--preset--color--secondary);
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a, body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a {
 		color: var(--wp--preset--color--primary);
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a::after, body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a::after {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a::after,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a::after {
 		content: "";
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover, body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li a:hover,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul ul li a:hover {
 		color: var(--wp--preset--color--primary-hover);
 	}
-	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li:hover, body:not(.fse-enabled) .main-navigation.main-navigation ul ul li:hover {
+	body:not(.fse-enabled) #site-navigation.main-navigation ul ul li:hover,
+	body:not(.fse-enabled) .main-navigation.main-navigation ul ul li:hover {
 		background: var(--wp--preset--color--background-high-contrast);
 	}
 }
 
-body:not(.fse-enabled) #site-navigation.main-navigation .main-menu > li > a, body:not(.fse-enabled) .main-navigation.main-navigation .main-menu > li > a {
+body:not(.fse-enabled) #site-navigation.main-navigation .main-menu > li > a,
+body:not(.fse-enabled) .main-navigation.main-navigation .main-menu > li > a {
 	padding-right: 0;
 }
 
-body:not(.fse-enabled) #site-navigation.main-navigation #toggle-menu, body:not(.fse-enabled) .main-navigation.main-navigation #toggle-menu {
+body:not(.fse-enabled) #site-navigation.main-navigation #toggle-menu,
+body:not(.fse-enabled) .main-navigation.main-navigation #toggle-menu {
 	border-radius: 0;
 	width: 100% !important;
 	text-align: center;
@@ -4305,7 +4350,7 @@ body:not(.fse-enabled) #site-navigation.main-navigation #toggle-menu, body:not(.
 .wp-block-coblocks-column h4,
 .wp-block-coblocks-column h5,
 .wp-block-coblocks-column h6 {
-	margin-bottom: .857em;
+	margin-bottom: 0.857em;
 }
 
 .wp-block-coblocks-column a {
@@ -4419,7 +4464,7 @@ body:not(.fse-enabled) #site-navigation.main-navigation #toggle-menu, body:not(.
  * 7. Widgets
  */
 .site-footer .widget-area .widget-title {
-	margin-bottom: .857em;
+	margin-bottom: 0.857em;
 }
 
 /**
@@ -4490,7 +4535,7 @@ body:not(.fse-enabled) #site-navigation.main-navigation #toggle-menu, body:not(.
 }
 
 .wp-block-search .wp-block-search__input {
-	margin-left: calc( .1 * 16px);
+	margin-left: calc(0.1 * 16px);
 	border-radius: 9px;
 }
 

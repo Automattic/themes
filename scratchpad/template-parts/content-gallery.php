@@ -14,16 +14,22 @@
 	<?php scratchpad_sticky(); ?>
 
 	<?php
-		if ( get_post_gallery() && ! post_password_required() ) { ?>
+	if ( ! post_password_required() ) { ?>
 			<div class="entry-gallery">
-				<?php echo get_post_gallery(); ?>
+				<?php 
+				if ( get_post_gallery() ) {
+					echo get_post_gallery();
+				} else {
+					echo the_content();
+				}
+				?>
 				<div class="photo-corners">
-					<?php
-						get_template_part( 'images/inline', 'photo-corners.svg' );
-						get_template_part( 'images/inline', 'photo-corners.svg' );
-						get_template_part( 'images/inline', 'photo-corners.svg' );
-						get_template_part( 'images/inline', 'photo-corners.svg' );
-					?>
+				<?php
+					get_template_part( 'images/inline', 'photo-corners.svg' );
+					get_template_part( 'images/inline', 'photo-corners.svg' );
+					get_template_part( 'images/inline', 'photo-corners.svg' );
+					get_template_part( 'images/inline', 'photo-corners.svg' );
+				?>
 				</div><!-- .photo-corners -->
 			</div><!-- .entry-gallery -->
 		<?php

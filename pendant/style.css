@@ -8,12 +8,12 @@ Requires at least: 6.1
 Tested up to: 6.1
 Requires PHP: 5.7
 Requires Gutenberg: 13.1
-Version: 1.0.3
+Version: 1.0.10
 License: GNU General Public License v2 or later
 License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
 Template: 
 Text Domain: pendant
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage, blog-homepage
 */
 
 /*
@@ -35,11 +35,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
  */
 a {
 	cursor: pointer;
-	text-underline-offset: 0.3em;
-	text-decoration-thickness: 0.05em;
 	text-decoration-line: none;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+:is(h1, h2, h3, h4, h5, h6) a:is(:hover, :focus) {
 	text-underline-offset: 0.15em;
 	text-decoration-thickness: 0.02em;
 }

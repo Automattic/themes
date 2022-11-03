@@ -16,6 +16,21 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 0.0.26 =
+* Set single post featured image to wide align and add height to the featured image (#6502)
+
+= 0.0.25 =
+* lock post-content block by default (#6314)
+
+= 0.0.24 =
+* Blockbase: Locked post content blocks  (#6299)
+
+= 0.0.23 =
+* Blockbase 3 (#6167)
+
+= 0.0.22 =
+* migrate to npm workspaces (#6200)
+
 = 0.0.21 =
 * Update all /pub themes so the theme-uri points to `https://wordpress.com/theme/<slug>` (#6033)
 

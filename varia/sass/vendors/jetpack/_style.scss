@@ -2,6 +2,7 @@
 
 	&.wp-block-jetpack-gif,
 	&.wp-block-jetpack-tiled-gallery {
+
 		@extend %responsive-alignwide;
 	}
 }
@@ -10,6 +11,7 @@
 
 	&.wp-block-jetpack-gif,
 	&.wp-block-jetpack-tiled-gallery {
+
 		@extend %responsive-alignfull;
 	}
 }
@@ -39,6 +41,7 @@
  * Cookies & Consents Banner
  */
 body {
+
 	.widget_eu_cookie_law_widget {
 		background: transparent;
 		bottom: 0;
@@ -97,6 +100,7 @@ body {
 
 	// Position of the widget when Admin Bar is present
 	&.admin-bar .widget_eu_cookie_law_widget {
+
 		&.widget.top {
 			top: 32px;
 
@@ -111,6 +115,7 @@ body {
  * Mailchimp Subscription Form
  */
 .wp-block-jetpack-mailchimp {
+
 	p {
 		margin-top: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
 		margin-bottom: #{ 0.666 * map-deep-get($config-global, "spacing", "vertical") };
@@ -129,7 +134,7 @@ body {
 		}
 	}
 
-	input[type=email] {
+	input[type="email"] {
 		width: 100%;
 	}
 }
@@ -142,6 +147,7 @@ body {
  * Business Hours
  */
 .jetpack-business-hours {
+
 	dd {
 		padding-left: 0;
 	}
@@ -172,4 +178,16 @@ body {
 			}
 		}
 	}
+}
+
+/**
+ * Map Block
+ */
+
+.mapboxgl-popup-close-button {
+	padding: 6px;
+}
+
+.wp-block-jetpack-map .mapboxgl-popup h3 {
+	padding-top: 15px;
 }

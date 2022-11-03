@@ -30,6 +30,9 @@ TextBook includes support for Jetpack's Infinite Scroll and Site Logos, as well 
 
 == Changelog ==
 
+= 1.1.9 =
+* #5242: Textbook: Fix Newspack blog blocks on posts (#6381)
+
 = 7 September 2017 =
 * Update $themecolors array to use hard-coded values rather than variables from the colors array; the addition of the # symbol caused them not to work.
 

@@ -12,6 +12,27 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.10 =
+* Make theme available for translation as much as possible (#6484)
+
+= 1.0.9 =
+* Filter out any fonts provided by Pendant from being loaded by Jetpack (#6643)
+
+= 1.0.8 =
+* Removing thickness from text-decoration shorthand because it is not supported on WebKit (#6490)
+
+= 1.0.7 =
+* lock post-content block by default (#6314)
+
+= 1.0.6 =
+* add missing tags to Pendant (#6283)
+
+= 1.0.5 =
+Including Style Variations
+
+= 1.0.4 =
+* Pendant: Removing default text decoration for link elements (#6178)
+
 = 1.0.3 =
 * fix site-title alignment with multiple social icons (#6040)
 

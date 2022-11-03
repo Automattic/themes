@@ -4,6 +4,7 @@ import open from 'open';
 import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
+import progressbar from 'string-progressbar';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -74,23 +75,28 @@ const commands = {
 	"deploy-theme": {
 		helpText: 'This runs "deploy pub <theme>" on the provided list of themes.',
 		additionalArgs: '<array of theme slugs>',
-		run: (args) => deployThemes([args?.[1]])
+		run: (args) => deployThemes(args?.[1].split(/[ ,]+/))
 	},
 	"build-com-zip": {
 		helpText: 'Build the production zip file for the specified theme.',
 		additionalArgs: '<theme-slug>',
-		run: (args) => buildComZip([args?.[1]])
+		run: (args) => buildComZips(args?.[1].split(/[ ,]+/))
+	},
+	"checkout-core-theme": {
+		helpText: 'Use SVN to checkout the given core themes from the wpcom SVN repository.',
+		additionalArgs: '<theme-slug>',
+		run: (args) => checkoutCoreTheme(args?.[1])
 	},
 	"pull-core-themes": {
-		helpText: 'Use rsync to copy any changed public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
+		helpText: 'Use rsync to copy all public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
 		run: pullCoreThemes
 	},
 	"push-core-themes": {
-		helpText: 'Use rsync to copy any changed public CORE theme files from your local machine to your sandbox. CORE themes are any of the Twenty<whatever> themes.',
+		helpText: 'Use rsync to copy all public CORE theme files from your local machine to your sandbox. CORE themes are any of the Twenty<whatever> themes.',
 		run: pushCoreThemes
 	},
 	"sync-core-theme": {
-		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command is generally run by deploy-sync-core-theme and not by itself.',
+		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This requires the core theme to be currently checked out from the wpcom svn repository.',
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => syncCoreTheme(args?.[1], args?.[2])
 	},
@@ -98,6 +104,11 @@ const commands = {
 		helpText: 'Given a theme slug and SVN revision, sync the theme from the specified revision to the latest. This command contains additional prompts and error checking not provided by sync-core-theme.',
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => deploySyncCoreTheme(args?.[1], args?.[2])
+	},
+	"create-core-phabricator-diff": {
+		helpText: 'Given a theme slug and specific revision create a Phabricator diff from the resources currently on the sandbox.',
+		additionalArgs: '<theme-slug> <since-revision>',
+		run: (args) => createCorePhabriactorDiff(args?.[1], args?.[2])
 	},
 	"update-theme-changelog": {
 		helpText: 'Use the commit log to build a list of recent changes and add them as a new changelog entry. If add-changes is true, the updated readme.txt will be staged.',
@@ -237,30 +248,6 @@ async function pushButtonDeploy() {
 	try {
 		await cleanSandbox();
 
-		//build variations
-		console.log('Building Variations');
-		await executeCommand(`node ./variations/build-variations.mjs git-add-changes`)
-		prompt = await inquirer.prompt([{
-			type: 'confirm',
-			message: 'Are you good with any staged theme variations changes? Make any manual adjustments now if necessary.',
-			name: "continue",
-			default: false
-		}]);
-
-		if (!prompt.continue) {
-			console.log(`Aborted Automated Deploy Process at variations building.`);
-			return;
-		}
-
-		try {
-			await executeCommand(`
-				git commit -m "Building Variations"
-			`);
-		} catch (err) {
-			// Most likely the error is that there are no variation changes to commit.
-			// Just swallowing that error for now
-		}
-
 		let hash = await getLastDeployedHash();
 		let thingsWentBump = await versionBumpThemes();
 
@@ -361,14 +348,18 @@ async function pushButtonDeploy() {
 }
 
 async function deploySyncCoreTheme(theme, sinceRevision) {
-
+if (!theme) {
+console.log('Must supply theme to sync and revision to start from');
+return;
+}
 	await cleanSandbox();
 
-	let latestRevision = await syncCoreTheme(theme, sinceRevision);
+	await checkoutCoreTheme(theme);
+	await syncCoreTheme(theme, sinceRevision);
 
 	let prompt = await inquirer.prompt([{
 		type: 'confirm',
-		message: `Changes have been synced to your sandbox.  Please resolve any conflicts (noted in .rej files).  Are you ready to continue?`,
+		message: `Changes have been synced locally.  Please resolve any conflicts now.  Are you ready to continue?`,
 		name: "continue",
 		default: false
 	}]);
@@ -378,22 +369,8 @@ async function deploySyncCoreTheme(theme, sinceRevision) {
 		return;
 	}
 
-	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
-	let commitMessage = `${theme}: Merge latest core changes up to [wp${latestRevision}]
-
-Summary:
-${logs}
-
-Test Plan: Activate ${theme} and ensure nothing is broken
-
-Reviewers:
-#themes_team
-
-Subscribers:
-`;
-
-	let diffUrl = await createPhabricatorDiff(commitMessage);
-	let diffId = diffUrl.split('a8c.com/')[1];
+	await pushThemeToSandbox(theme);
+	let diffId = await createCorePhabriactorDiff(theme, sinceRevision);
 
 	prompt = await inquirer.prompt([{
 		type: 'confirm',
@@ -411,7 +388,43 @@ Subscribers:
 	// await landChanges(diffId);
 	// await deployThemes([theme]);
 	// await buildComZips([theme]);
+}
 
+
+async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
+
+	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
+	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
+
+	// Remove any double or back quotes from commit messages
+	logs = logs.replace(/"/g, '');
+	logs = logs.replace(/`/g, "'");
+	logs = logs.replace(/\$/g, "%24");
+
+	return `${theme}: Merge latest core changes up to [wp${latestRevision}]
+
+Summary:
+${logs}
+
+Test Plan: Activate ${theme} and ensure nothing is broken
+
+Reviewers:
+#themes_team
+
+Subscribers:
+`;
+}
+
+/**
+ * Deploys the localy copy of a core theme to wpcom.
+ */
+async function createCorePhabriactorDiff(theme, sinceRevision) {
+
+	let commitMessage = await buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
+
+	let diffUrl = await createPhabricatorDiff(commitMessage);
+	let diffId = diffUrl.split('a8c.com/')[1];
+	return diffId;
 }
 
 /*
@@ -444,12 +457,30 @@ async function buildComZip(themeSlug) {
 }
 
 async function buildComZips(themes) {
+	console.log(`Building dotcom .zip files`);
+	const progress = startProgress(themes.length);
+	const failedThemes = []
 	for (let theme of themes) {
 		try {
 			await buildComZip(theme);
 		} catch (err) {
 			console.log(`There was an error building dotcom zip for ${theme}. ${err}`);
+			failedThemes.push(theme);
 		}
+		progress.increment();
+	}
+
+	if (failedThemes.length) {
+		const tableConfig = {
+			columnDefault: {
+				width: 40,
+			},
+			header: {
+				alignment: 'center',
+				content: `There was an error building dotcom zip for following themes.`,
+			}
+		};
+		console.log(table(failedThemes.map(t => [t]), tableConfig));
 	}
 }
 
@@ -502,6 +533,8 @@ async function getChangedThemes(hash) {
 async function deployThemes(themes) {
 
 	let response;
+	const failedThemes = [];
+	const progress = startProgress(themes.length);
 
 	for (let theme of themes) {
 
@@ -515,9 +548,12 @@ async function deployThemes(themes) {
 			attempt++;
 			console.log(`\nattempt #${attempt}\n\n`);
 
-			response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
-
-			deploySuccess = response.includes('successfully deployed to');
+			try {
+				response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
+				deploySuccess = response.includes('successfully deployed to');
+			} catch (error) {
+				deploySuccess = false
+			}
 
 			if (!deploySuccess) {
 				console.log('Deploy was not successful.  Trying again in 10 seconds...');
@@ -530,15 +566,24 @@ async function deployThemes(themes) {
 		}
 
 		if (!deploySuccess) {
-
-			await inquirer.prompt([{
-				type: 'confirm',
-				message: `${theme} was not sucessfully deployed and should be deployed manually.`,
-				name: "continue",
-				default: false
-			}]);
+			console.log(`${theme} was not sucessfully deployed and should be deployed manually.`);
+			failedThemes.push(theme);
 		}
 
+		progress.increment();
+	}
+
+	if (failedThemes.length) {
+		const tableConfig = {
+			columnDefault: {
+				width: 40,
+			},
+			header: {
+				alignment: 'center',
+				content: `Following themes are not deployed.`,
+			}
+		};
+		console.log(table(failedThemes.map(t => [t]), tableConfig));
 	}
 }
 
@@ -606,16 +651,16 @@ async function versionBumpThemes() {
 	return changesWereMade;
 }
 
-export function getThemeMetadata(styleCss, attribute) {
+export function getThemeMetadata(styleCss, attribute, trimWPCom = true) {
 	if (!styleCss || !attribute) {
 		return null;
 	}
 	switch (attribute) {
 		case 'Version':
-			return styleCss
+			const version = styleCss
 				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
-				.trim()
-				.replace('-wpcom', '');
+				.trim();
+			return trimWPCom ? version.replace('-wpcom', '') : version;
 		case 'Requires at least':
 			return styleCss
 				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
@@ -726,16 +771,24 @@ async function versionBumpTheme(theme, addChanges) {
 	await executeCommand(`git add ${theme}/style.css`);
 
 	let styleCss = fs.readFileSync(`${theme}/style.css`, 'utf8');
-	let currentVersion = getThemeMetadata(styleCss, 'Version');
+	let currentVersion = getThemeMetadata(styleCss, 'Version', false);
 
-	let filesToUpdate = await executeCommand(`find ${theme} -name package.json -o -name style.scss -o -name style-child-theme.scss -maxdepth 2`);
+	let filesToUpdate = await executeCommand(`find ${theme} -not \\( -path "*/node_modules/*" -prune \\) -and \\( -name package.json -or -name style.scss -or -name style-rtl.css -or -name style-child-theme.scss \\) -maxdepth 3`);
 	filesToUpdate = filesToUpdate.split('\n').filter(item => item != '');
 
 	for (let file of filesToUpdate) {
-		await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
-		await executeCommand(`perl -pi -e 's/\\"version\\": (.*)$/"\\"version\\": \\"'${currentVersion}'\\","/ge' ${file}`);
+		const isPackageJson = file === `${theme}/package.json`;
+		if (isPackageJson) {
+			// update theme/package.json and package-lock.json
+			await executeCommand(`npm version ${currentVersion.replace('-wpcom', '')} --workspace=${theme} --silent`);
+		} else {
+			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
+		}
 		if (addChanges) {
 			await executeCommand(`git add ${file}`);
+			if (isPackageJson) {
+				await executeCommand(`git add package-lock.json`);
+			}
 		}
 	}
 }
@@ -937,6 +990,17 @@ async function pushChangesToSandbox() {
 	}
 }
 
+async function checkoutCoreTheme(theme) {
+	if (!theme) {
+		console.log('Must supply theme to sync and revision to start from');
+		return;
+	}
+	return executeCommand(`
+		rm -rf ./${theme}
+		svn checkout https://wpcom-themes.svn.automattic.com/${theme} ./${theme}
+	`);
+}
+
 async function pullCoreThemes() {
 	console.log("Pulling CORE themes from sandbox.");
 	for (let theme of coreThemes) {
@@ -961,22 +1025,19 @@ async function syncCoreTheme(theme, sinceRevision) {
 		return;
 	}
 	if (!sinceRevision) {
-		sinceRevision = await executeOnSandbox(`cat ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision`);
+		sinceRevision = await executeCommand(`cat ./${theme}/.pub-svn-revision`);
 	}
-	let latestRevision = await executeCommand(`svn info -r HEAD https://core.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
-	console.log(`syncing core theme ${theme} from ${sinceRevision} to ${latestRevision} on your sandbox`);
+	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
+	console.log(`syncing core theme ${theme} from ${sinceRevision} to ${latestRevision}`);
 	try {
-		await executeOnSandbox(`
-			cd ${sandboxPublicThemesFolder};
-			/usr/bin/svn diff --git -r ${sinceRevision}:HEAD https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} | git apply --reject --ignore-space-change --ignore-whitespace -p4 --directory=${theme} -
+		await executeCommand(`
+			svn merge --accept postpone http://develop.svn.wordpress.org/trunk/src/wp-content/themes/${theme} ./${theme} -r${sinceRevision}:HEAD
+			echo '${latestRevision}' > ./${theme}/.pub-svn-revision
 		`, true);
 	}
 	catch (err) {
 		console.log('Error merging:', err);
 	}
-	await executeOnSandbox(`
-		echo '${latestRevision}' > ${sandboxPublicThemesFolder}/${theme}/.pub-svn-revision
-	`);
 	return latestRevision;
 }
 
@@ -1097,8 +1158,9 @@ EOF`, logResponse);
  Execute a command locally.
 */
 export async function executeCommand(command, logResponse) {
-	return new Promise((resolove, reject) => {
+	const timeout = 2*60*1000; // 2 min
 
+	return new Promise((resolove, reject) => {
 		let child;
 		let response = '';
 		let errResponse = '';
@@ -1107,12 +1169,22 @@ export async function executeCommand(command, logResponse) {
 			child = spawn('cmd.exe', ['/s', '/c', '"' + command + '"'], {
 				windowsVerbatimArguments: true,
 				stdio: [process.stdin, 'pipe', 'pipe'],
+				detached: true,
 			})
 		} else {
 			child = spawn(process.env.SHELL, ['-c', command], {
 				stdio: [process.stdin, 'pipe', 'pipe'],
+				detached: true,
 			});
 		}
+
+		var timer = setTimeout(() => {
+			try {
+				process.kill(-child.pid, 'SIGKILL');
+			} catch (e) {
+				console.log('Cannot kill process');
+			}
+		}, timeout);
 
 		child.stdout.on('data', (data) => {
 			response += data;
@@ -1129,6 +1201,7 @@ export async function executeCommand(command, logResponse) {
 		});
 
 		child.on('exit', (code) => {
+			clearTimeout(timer)
 			if (code !== 0) {
 				reject(errResponse.trim());
 			}
@@ -1203,14 +1276,51 @@ async function escapePatterns() {
 				});
 			}
 
-			if (startTag.tagName === 'p') {
-				console.log({tag: startTag, rawHtml})
-			}
 
 			rewriter.emitStartTag(startTag);
 		});
 
+		rewriter.on('comment', (comment, rawHtml) => {
+			if (comment.text.startsWith('?php')) {
+				rewriter.emitRaw(rawHtml);
+				return;
+			}
+			// escape the strings in block config (blocks that are represented as comments)
+			// ex: <!-- wp:search {label: "Search"} /-->
+			const block = escapeBlockAttrs(comment.text, themeSlug)
+			rewriter.emitComment({...comment, text: block})
+		});
+
 		return rewriter;
+	}
+
+	function escapeBlockAttrs(block, themeSlug) {
+		// Set isAttr to true if it is an attribute in the result HTML
+		// If set to true, it generates esc_attr_, otherwise it generates esc_html_
+		const allowedAttrs=[
+			{ name: 'label' },
+			{ name: 'placeholder', isAttr: true },
+			{ name: 'buttonText' },
+			{ name: 'content' }
+		];
+		const start = block.indexOf('{');
+		const end = block.lastIndexOf('}');
+		
+		const configPrefix = block.slice(0, start);
+		const config = block.slice(start, end+1);
+		const configSuffix = block.slice(end+1);
+
+		try {
+			const configJson = JSON.parse(config);
+			allowedAttrs.forEach((attr) => {
+				if (!configJson[attr.name]) return;
+				configJson[attr.name] = escapeText(configJson[attr.name], themeSlug, attr.isAttr)
+			})
+			return configPrefix + JSON.stringify(configJson) + configSuffix;
+		} catch (error) {
+			// do nothing
+			return block
+		}
 	}
 
 	function escapeText(text, themeSlug, isAttr = false) {
@@ -1244,4 +1354,20 @@ async function escapePatterns() {
 
 		return table([patterns], tableConfig);
 	}
+}
+
+function startProgress(length) {
+	let current = 0;
+	function render() {
+		const [progress, percentage] = progressbar.filledBar(length, current);
+		console.log('\nProgress:', [progress, Math.round(percentage*100)/100], `${current}/${length}\n`);
+	}
+
+	render();
+	return {
+		increment() {
+			current++;
+			render();
+		}
+	};
 }

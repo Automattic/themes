@@ -12,6 +12,28 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.19 =
+* Make theme available for translation as much as possible (#6484)
+
+= 1.0.18 =
+* Archeo: Improve block markup and fix block errors (#6686)
+
+= 1.0.17 =
+* Archeo: move CSS styles to theme.json (#6159)
+
+= 1.0.16 =
+* Archeo: Update theme.json to conform to standards (#5708)
+* Archeo: Try new root padding alignments (#6312)
+
+= 1.0.15 =
+* Remove page-list blocks (#6313)
+
+= 1.0.14 =
+* lock post-content block by default (#6314)
+
+= 1.0.13 =
+* Fix/missing tags (#6303)
+
 = 1.0.12 =
 * [Test] Archeo link interactivity states (#6101)
 

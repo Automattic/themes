@@ -1,0 +1,285 @@
+/*
+Theme Name: Vivre
+Theme URI: https://wordpress.com/theme/vivre
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Vivre is a bold, opinionated blogging theme, heavily inspired by fashion and lifestyle magazines and websites.
+Requires at least: 5.8
+Tested up to: 6.0
+Requires PHP: 5.7
+Version: 1.0.6
+License: GNU General Public License v2 or later
+License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
+Template:
+Text Domain: vivre
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage
+*/
+
+/*
+ * Font smoothing
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Button pseudo-class styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+.wp-block-button__link:visited {
+	color: currentColor;
+}
+.wp-block-button:not(.is-style-outline, .form-submit) .wp-block-button__link:hover {
+	text-decoration: underline;
+	color: var(--wp--preset--color--primary);
+}
+.wp-block-button:is(.is-style-outline) .wp-block-button__link:hover {
+	background: var(--wp--preset--color--foreground);
+	border-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	text-decoration: none;
+}
+.wp-block-button__link.wp-block-button__link:active {
+	color: var(--wp--preset--color--primary);
+}
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus {
+	color: var(--wp--preset--color--primary);
+	text-decoration-line: underline;
+	text-decoration-thickness: .08rem;
+	text-decoration-style: dotted;
+	text-underline-offset: .1rem;
+}
+.wp-block-button:is(.is-style-outline) .wp-block-button__link:focus {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--background);
+	outline: 1px dotted var(--wp--preset--color--primary);
+}
+
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button
+):is(
+	:hover,
+	:focus
+) {
+	background-color: var(--wp--preset--color--foreground);
+	text-decoration: none;
+}
+:is(
+	.wp-block-search__button,
+	.wp-block-file .wp-block-file__button
+):is(
+	:focus
+) {
+	border: 1px solid var(--wp--preset--color--background);
+	outline: 1px dotted var(--wp--preset--color--foreground);
+}
+
+.wp-block-post-comments-form .wp-block-button__link:hover {
+	color: var(--wp--preset--color--primary);
+	text-decoration: underline;
+}
+
+/*
+ * Search input styles
+ * Needed until this is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/34198
+ */
+
+.wp-block-search__input {
+	border-color: var(--wp--preset--color--foreground);
+}
+
+/*
+ * Link Styles
+ */
+
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+) {
+	text-underline-offset: .1rem;
+}
+
+.wp-block-site-title a {
+	padding: .4rem 0;
+	text-decoration: inherit; /* Needed so the link styles will be inherited correctly from theme.json */
+	text-underline-offset: .1rem;
+}
+
+a:not(
+	.wp-block-search__button,
+	.wp-block-button__link
+):focus {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+}
+
+/*
+ * Navigation and Other Link Styles
+ */
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+	border-color: var(--wp--preset--color--foreground);
+}
+
+:is(
+	.wp-block-pages-list__item .wp-block-pages-list__item__link,
+):hover {
+	text-decoration: underline;
+}
+
+:is(
+	.wp-block-pages-list__item .wp-block-pages-list__item__link,
+	.wp-block-navigation-link__content,
+	.wp-block-navigation-item__content,
+	.wp-block-site-title a,
+	.wp-block-post-navigation-link a,
+	.wp-block-post-terms a
+):focus {
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+:is(
+	.wp-block-pages-list__item .wp-block-pages-list__item__link
+):active {
+	text-decoration: underline;
+}
+
+.wp-block-post-title a:where(:not(.wp-element-button)):is(:hover, :focus) {
+	text-underline-offset: 0.25rem;
+	text-decoration-thickness: 0.25rem;
+}
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/39142 is fixed.
+ */
+ .wp-block-navigation__responsive-container.is-menu-open ul {
+	font-size: 2.75rem;
+	font-weight: 300;
+}
+
+/*
+ * Hero post
+ * The following style are required because variable fontSize doen't work in templates
+ * Feature request: https://github.com/WordPress/gutenberg/issues/41859
+ */
+.wp-block-post-title.hero-post-title {
+	font-size: clamp(3.75rem, 10vw, 8rem);
+}
+
+.wp-block-post-excerpt.hero-post-excerpt {
+	font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+
+/*
+ * Alignment styles, borrowed from Twenty Twenty-Two.
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-columns.alignfull.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align='full'] > .wp-block-group,
+.is-root-container .wp-block[data-align='full'] > .wp-block-columns.has-background,
+.is-root-container .wp-block[data-align='full'] > .wp-block-cover {
+	padding-left: var(--wp--custom--spacing--outer);
+	padding-right: var(--wp--custom--spacing--outer);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align='full'] {
+	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	max-width: unset;
+	width: unset;
+}
+
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--gap--horizontal);
+	padding-bottom: var(--wp--custom--gap--vertical);
+	padding-right: var(--wp--custom--gap--horizontal);
+	padding-left: var(--wp--custom--gap--horizontal);
+}
+
+/*
+ * Allows comment count to be displayed in line.
+ * i.e. "Comments (0)"
+ */
+
+.wp-block-post-comments-count {
+	display: inline;
+}
+
+/*
+ * Pagination
+ */
+
+:is(
+	.wp-block-query-pagination .wp-block-query-pagination-previous,
+	.wp-block-query-pagination .wp-block-query-pagination-next
+):hover {
+	text-decoration: underline;
+}
+.is-arrow-arrow.wp-block-query-pagination-next-arrow {
+	margin-left: 0.375rem;
+	font-weight: 400;
+}
+.is-arrow-arrow.wp-block-query-pagination-previous-arrow {
+	margin-right: 0.375rem;
+	font-weight: 400;
+}
+.wp-block-query-pagination-numbers .page-numbers:not(.current):not(.dots):hover {
+	text-decoration: underline;
+}
+.wp-block-query-pagination-numbers .page-numbers.current {
+	text-decoration: underline;
+}
+@media (max-width: 599px) {
+	.wp-block-query-pagination-numbers {
+		display: none;
+	}
+}

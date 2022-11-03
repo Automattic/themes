@@ -29,23 +29,6 @@
                 }
             ]
         },
-        "typography": {
-            "fontFamilies": [
-                {
-                    "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
-                    "slug": "body-font",
-                    "name": "Body (System Font)",
-                    "fontSlug": "system-font"
-                },
-                {
-                    "fontFamily": "\"Libre Baskerville\", serif",
-                    "slug": "heading-font",
-                    "name": "Heading (Libre Baskerville)",
-                    "google": "family=Libre+Baskerville:ital,wght@0,400;0,700;1,400",
-                    "fontSlug": "libre-baskerville"
-                }
-            ]
-        },
         "custom": {
             "color": {
                 "foreground": "var(--wp--preset--color--foreground)",
@@ -62,9 +45,19 @@
     },
     "styles": {
         "blocks": {
+            "core/heading": {
+                "typography": {
+			        "fontFamily": "var:preset|font-family|libre-baskerville"
+                }
+            },
             "core/paragraph": {
                 "color": {
                     "text": "var(--wp--preset--color--primary)"
+                }
+            },
+            "core/post-title": {
+                "typography": {
+			        "fontFamily": "var:preset|font-family|libre-baskerville"
                 }
             },
             "core/navigation": {

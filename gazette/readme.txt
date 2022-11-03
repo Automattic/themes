@@ -90,6 +90,12 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Changelog ==
 
+= 1.1.6 =
+* #5724: Gazette: Fix blog posts read more links (#6390)
+
+= 1.1.5 =
+* #5397: Gazette: Fix WooCommerce sale price (#6184)
+
 = 1.0.6 - Sep 29 2015 =
 * Update screenshot.
 

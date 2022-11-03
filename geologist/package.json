@@ -1,6 +1,6 @@
 {
   "name": "geologist",
-  "version": "1.0.28",
+  "version": "1.0.35",
   "description": "",
   "main": "style.css",
   "devDependencies": {
@@ -18,7 +18,7 @@
   "scripts": {
     "start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
     "build": "npm run build:scss",
-    "build:scss": "sass sass/theme.scss assets/theme.css --style=expanded && postcss assets/theme.css --use autoprefixer --output assets/theme.css --map"
+    "build:scss": "sass sass/theme.scss assets/theme.css --style=expanded --load-path ../node_modules && postcss assets/theme.css --use autoprefixer --output assets/theme.css --map"
   },
   "author": "",
   "license": "GPLv2"

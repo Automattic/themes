@@ -4,7 +4,7 @@ Theme URI: https://wordpress.com/themes/pique/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: A one-page scrolling theme for small businesses.
-Version: 1.4.10-wpcom
+Version: 1.4.17-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pique
@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+	## Image Comparison
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -844,7 +845,7 @@ a:active {
 	height: 240px;
 	position: relative;
 	text-align: center;
-	z-index: 5;
+	z-index: 99;
 }
 #masthead .pique-header {
 	bottom: 0;
@@ -1798,13 +1799,13 @@ blockquote
 	margin: 0;
 	padding: 0;
 }
-.widget ul a {
+.widget ul:not(.wp-block-social-links) a {
 	border-top: 1px solid rgba(233, 213, 192, 0.5);
 	color: #2d2a26;
 	display: block;
 	padding: 7px 0;
 }
-.widget ul a:hover {
+.widget ul:not(.wp-block-social-links) a:hover {
 	background-color: rgba(233, 213, 192, 0.15);
 	border-bottom: none;
 }
@@ -2132,7 +2133,7 @@ body:not(.no-background-fixed) .site-footer {
 #tertiary .widget:not(.widget_wpcom_social_media_icons_widget):not(.jetpack_widget_social_icons) ul a {
 	color: #fcfbf9;
 }
-#tertiary .widget:not(.widget_wpcom_social_media_icons_widget):not(.jetpack_widget_social_icons) ul a:hover {
+#tertiary .widget:not(.widget_wpcom_social_media_icons_widget):not(.jetpack_widget_social_icons) ul:not(.wp-block-social-links) a:hover {
 	background-color: rgba(45, 42, 38, 0.95);
 }
 #tertiary .widget_archive ul li::before,
@@ -2341,7 +2342,7 @@ body:not(.no-background-fixed) .site-footer {
 		padding: 40px;
 	}
 }
-.pique-panel-content h2 {
+.pique-panel-content header h2 {
 	border: 2px solid #fcfbf9;
 	border-bottom: 0;
 	color: #fcfbf9;
@@ -2353,8 +2354,8 @@ body:not(.no-background-fixed) .site-footer {
 	word-break: break-word;
 	word-wrap: break-word;
 }
-.pique-panel-content h2::before,
-.pique-panel-content h2::after {
+.pique-panel-content header h2::before,
+.pique-panel-content header h2::after {
 	border-bottom: 2px solid #fcfbf9;
 	bottom: 0;
 	content: '';
@@ -2363,16 +2364,16 @@ body:not(.no-background-fixed) .site-footer {
 	position: absolute;
 	width: 50px;
 }
-.pique-panel-content h2::before {
+.pique-panel-content header h2::before {
 	left: 0;
 }
-.pique-panel-content h2::after {
+.pique-panel-content header h2::after {
 	right: 0;
 }
-.pique-panel-content h2 a {
+.pique-panel-content header h2 a {
 	color: #fcfbf9;
 }
-.pique-panel-content h2 a:hover {
+.pique-panel-content header h2 a:hover {
 	border: none;
 }
 .pique-panel-content .entry-content {
@@ -2407,7 +2408,7 @@ body:not(.no-background-fixed) .site-footer {
 }
 
 @media (min-width: 768px) {
-	.pique-panel-content h2 {
+	.pique-panel-content header h2 {
 		max-width: 700px;
 	}
 }
@@ -2574,7 +2575,7 @@ body:not(.no-background-fixed) .site-footer {
 #pique-hero .pique-panel-content .entry-content {
 	text-align: center;
 }
-#pique-hero .pique-panel-content .entry-content p {
+:where(#pique-hero .pique-panel-content .entry-content) p {
 	text-align: left;
 }
 #pique-hero .pique-panel-content .entry-content p:first-of-type {

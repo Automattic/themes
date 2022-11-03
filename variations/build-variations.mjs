@@ -47,7 +47,7 @@ async function buildVariation(source, variation) {
 		// then empty the old directory.
 		await fs.emptyDir( destDir );
 
-		const exclude = [ 'node_modules', 'sass', 'package.json', 'package-lock.json' ];
+		const exclude = [ 'node_modules', 'styles', 'sass', 'package.json', 'package-lock.json' ];
 
 		// Then copy the source directory.
 		await fs.copy( srcDir, destDir, {

@@ -14,6 +14,9 @@ Ibis is a long-legged theme that inhabits wetlands, forests and plains.
 
 == Changelog ==
 
+= 1.1 =
+* lock post-content block by default (#6314)
+
 = 1.0 =
 * Initial release 
 

@@ -1,0 +1,51 @@
+/*
+ * This is a refactored style sheet
+ * Currently it is being loaded within ponyfill
+ * As ponyfill gets refactored, add the necessary styles here.
+ */
+ 
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+ :is(
+	.wp-block-search__button,
+	.wp-block-button__link
+):is(
+	:hover,
+	:active,
+	:focus
+) {
+  text-decoration: none;
+	cursor: pointer;
+  color: var(--wp--custom--button--hover--color--text);
+  background-color: var(--wp--custom--button--hover--color--background);
+  border-color: var(--wp--custom--button--hover--border--color);
+}
+
+:is(
+	.wp-block-search__button,
+	.wp-block-button__link
+):focus {
+	outline: 1.5px dotted var(--wp--preset--color--foreground);
+	outline-offset: 3px;
+}
+
+:is(
+  .is-style-outline.wp-block-button,
+  .is-style-outline.wp-block-button__link
+) {
+  color: var(--wp--custom--button--outline--color--text, var(--wp--custom--button--border--color) );
+}
+
+:is(
+  .is-style-outline>.wp-block-button__link,
+  .is-style-outline.wp-block-button__link
+):not(.has-background):hover {
+  color: var(--wp--custom--button--outline--hover--color--text, var(--wp--custom--button--color--text));
+  background-color: var(--wp--custom--button--outline--hover--color--background, var(--wp--custom--button--color--background));
+}
+
+

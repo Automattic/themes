@@ -6,8 +6,8 @@
  */
 ?>
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg","dimRatio":80,"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"0px","right":"min(4vw, 90px)","bottom":"0vw","left":"min(4vw, 90px)"},"margin":{"top":"0px"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:0px;padding-right:min(4vw, 90px);padding-bottom:0vw;padding-left:min(4vw, 90px);margin-top:0px;min-height:100vh"><span aria-hidden="true" class="has-background-background-color has-background-dim-80 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Photo of Palace of the Circus', 'archeo' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg","dimRatio":80,"overlayColor":"background","minHeight":100,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"0px","bottom":"3vw","right":"0px","left":"0px"},"margin":{"top":"0px"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="margin-top:0px;padding-top:0px;padding-right:0px;padding-bottom:3vw;padding-left:0px;min-height:100vh"><span aria-hidden="true" class="has-background-background-color has-background-dim-80 wp-block-cover__gradient-background has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Photo of Palace of the Circus', 'archeo' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/palais-du-cirque.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
 	<!-- wp:group {"layout":{"inherit":"true"}} -->
 	<div class="wp-block-group">
 		<!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0"}}}} -->
@@ -18,9 +18,10 @@
 				<div style="height:14vw" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
 
-				<!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"100","lineHeight":"1"}}} -->
+				<!-- wp:paragraph {"style":{"typography":{"fontSize":"clamp(64px, 6vw, 100px)","textTransform":"uppercase","fontStyle":"normal","fontWeight":"100","lineHeight":"1"}}} -->
 				<p style="font-size:clamp(64px, 6vw, 100px);font-style:normal;font-weight:100;line-height:1;text-transform:uppercase"><?php echo wp_kses_post( __( 'Palace of <br>the Circus at <br>Chichen-Itza, <br><em>bas-relief</em> of <br>tigers', 'archeo' ) ); ?></p>
-				<!-- /wp:paragraph --></div>
+				<!-- /wp:paragraph -->
+			</div>
 			<!-- /wp:column -->
 
 			<!-- wp:column {"verticalAlignment":"top"} -->
