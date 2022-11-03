@@ -3,6 +3,10 @@
 add_action( 'init', 'migrate_blockbase_custom_fonts', 99 );
 
 function migrate_blockbase_custom_fonts() {
+	// The data has already been transformed
+	if ( get_theme_mod( 'blockbase_legacy_font_settings' ) ) {
+		return;
+	}
 
 	$heading_font_slug = null;
 	$body_font_slug    = null;
@@ -18,7 +22,9 @@ function migrate_blockbase_custom_fonts() {
 	if ( isset( $font_families['custom'] ) && is_array( $font_families['custom'] ) ) {
 		$font_families = $font_families['custom'];
 	} else {
-		$font_families = $font_families['theme'];
+		// No Customizer font settings found. Mark as transformed and hide the Customizer UI for fonts.
+		set_theme_mod( 'blockbase_legacy_font_settings', '[]' );
+		return;
 	}
 
 	// Look first for fonts customized via Customizer, then for fonts configured in the child theme.json "the old way"
@@ -85,6 +91,7 @@ function migrate_blockbase_custom_fonts() {
 	}
 
 	update_global_styles( $new_settings, $new_styles );
+	set_theme_mod( 'blockbase_legacy_font_settings', json_encode( $theme_user_data ) );
 }
 
 /**
