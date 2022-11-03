@@ -1,7 +1,7 @@
 === Stewart ===
 Contributors: automattic
-Requires at least: 5.8
-Tested up to: 5.8
+Requires at least: 6.1
+Tested up to: 6.1
 Requires PHP: 5.6
 Stable tag: 1.0
 License: GPLv2 or later
