@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.3 =
+* Adding license information for resources used in Loudness (#6710)
+
 = 1.0.2 =
 * Fixed the 'Theme URI' of loudness to point to the correct location (#6708)
 
