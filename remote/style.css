@@ -4,8 +4,8 @@ Theme URI: https://wordpress.com/theme/remote
 Author: Automattic
 Author URI: https://automattic.com
 Description: Remote is a dark, minimal block theme ideal for bloggers. Its default styles - a sans-serif font and dark background - contribute for a comfortable, immersive reading experience. It features a set of bold block patterns such as a large posts list and bordered categories and tags.
-Requires at least: 6.0
-Tested up to: 6.0
+Requires at least: 6.1
+Tested up to: 6.1
 Requires PHP: 5.7
 Version: 1.0.11
 License: GNU General Public License v2 or later
@@ -173,28 +173,8 @@ body > .is-root-container,
  * Link Details
  */
 
- a {
-	text-decoration-thickness: 0.075ex;
+a {
 	text-underline-offset: 0.125em;
-	text-decoration: underline;
-}
-
-a:not(
-	.wp-block-search__button,
-	.wp-block-button__link
-):hover {
-	color: var(--wp--preset--color--primary);
-	text-decoration: none;
-}
-
-a:not(
-	.wp-block-search__button,
-	.wp-block-button__link,
-	.wp-block-site-title a,
-	.wp-block-post-title a
-):active {
-	color: var(--wp--preset--color--primary);
-	text-decoration: underline;
 }
 
 a:not(
@@ -203,9 +183,7 @@ a:not(
 	.wp-block-site-title a,
 	.wp-block-post-title a
 ):focus {
-	color: var(--wp--preset--color--primary);
 	outline: 1px dotted var(--wp--preset--color--primary);
-	text-decoration: none;
 	outline-offset: 3px;
 }
 
