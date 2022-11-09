@@ -12,6 +12,9 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Changelog ==
 
+= 0.0.2 =
+* Added Page template and typo updates (#6715)
+
 = 0.0.1 =
 * Initial release
 
