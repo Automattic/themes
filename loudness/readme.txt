@@ -90,8 +90,20 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
+Image for theme screenshot, Credit Jason Crist
+License : Creative Commons CC0
+License URL: http://creativecommons.org/publicdomain/zero/1.0
+
+Loudness Illustrations, Credit Kjell Reigstad
+License : Creative Commons CC0
+License URL: http://creativecommons.org/publicdomain/zero/1.0
+	/assets/illustrations/illustration-1.svg
+	/assets/illustrations/illustration-2.svg
+	/assets/illustrations/texture.png
+
 StockSnap
 License : Creative Commons CC0
+License URL: https://stocksnap.io/license
 	https://stocksnap.io/photo/stylish-boy-03P9JTLVF7
 	https://stocksnap.io/photo/male-model-Q7PO9ADJHS
 	https://stocksnap.io/photo/fitness-male-CWWCRACUJ6
@@ -102,8 +114,4 @@ License : Creative Commons CC0
 	https://stocksnap.io/photo/people-girl-VZ6M02LHDN
 	https://stocksnap.io/photo/people-man-8O83EE9RGN
 
-Included
-License : Creative Commons CC0
-	/assets/illustrations/illustration-1.svg
-	/assets/illustrations/illustration-2.svg
-	/assets/illustrations/texture.png
+
