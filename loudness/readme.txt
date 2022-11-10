@@ -114,4 +114,9 @@ License URL: https://stocksnap.io/license
 	https://stocksnap.io/photo/people-girl-VZ6M02LHDN
 	https://stocksnap.io/photo/people-man-8O83EE9RGN
 
+Google Fonts
+License: Open Font License 
+License URL: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 
+	DM Mono from Google Fonts, https://fonts.google.com/specimen/DM+Sans
+	Rubik from Google Fonts, https://fonts.google.com/specimen/Rubik
