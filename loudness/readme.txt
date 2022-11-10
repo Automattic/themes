@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.4 =
+* Added font license to readme file (#6718)
+
 = 1.0.3 =
 * Adding license information for resources used in Loudness (#6710)
 
