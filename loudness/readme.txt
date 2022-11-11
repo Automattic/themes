@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.5 =
+* Changed loudness theme URI to point to github (#6723)
+
 = 1.0.4 =
 * Added font license to readme file (#6718)
 
