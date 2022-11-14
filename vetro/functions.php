@@ -62,6 +62,3 @@ if ( ! function_exists( 'vetro_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'vetro_styles' );
-
-// Add block patterns
-require get_template_directory() . '/inc/block-patterns.php';
