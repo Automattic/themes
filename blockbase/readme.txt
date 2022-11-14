@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.0.8 =
+* Blockbase: move link pseudo states to theme.json (#6156)
+
 = 3.0.7 =
 * Make theme available for translation as much as possible (#6484)
 
