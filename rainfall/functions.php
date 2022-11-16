@@ -36,7 +36,7 @@ if ( ! function_exists( 'rainfall_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Archeo 1.0
+	 * @since Rainfall 1.0
 	 *
 	 * @return void
 	 */
