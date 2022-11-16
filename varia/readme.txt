@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.22 =
+* #3991: Varia: Fix related post alignment (#6349)
+
 = 1.6.21 =
 * #5249: Varia+Children: Fix continue reading link (#6426)
 

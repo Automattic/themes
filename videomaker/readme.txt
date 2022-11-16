@@ -18,6 +18,9 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.23 =
+* Remove Theme Variants (#6706)
+
 = 1.0.22 =
 * Videomaker: Fix primary color usage (#6663)
 
