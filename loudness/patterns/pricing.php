@@ -27,7 +27,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'For anyone currently enrolled in primary education or college.', 'loudness' ); ?></p>
+<p><?php echo esc_html__( 'For anyone enrolled in primary school or college.', 'loudness' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"x-large"} -->
@@ -39,8 +39,8 @@
 <!-- /wp:spacer -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -57,7 +57,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"level":3} -->
-<h3><?php echo esc_html__( 'Professional', 'loudness' ); ?></h3>
+<h3><?php echo esc_html__( 'Pro', 'loudness' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -73,8 +73,8 @@
 <!-- /wp:spacer -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center","verticalAlignment":"center"}} -->
-<div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
+<div class="wp-block-buttons"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -87,7 +87,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"level":3} -->
-<h3><?php echo esc_html__( 'Solo Sponsor', 'loudness' ); ?></h3>
+<h3><?php echo esc_html__( 'Sponsor', 'loudness' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -103,8 +103,8 @@
 <!-- /wp:spacer -->
 
 <!-- wp:buttons {"align":"full","layout":{"type":"flex","justifyContent":"center"}} -->
-<div class="wp-block-buttons alignfull"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
+<div class="wp-block-buttons alignfull"><!-- wp:button {"style":{"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="padding-right:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><?php echo esc_html__( 'Buy Ticket', 'loudness' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
