@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.0 =
+* cleanup buttons css (#6714)
+
 = 3.0.8 =
 * Blockbase: move link pseudo states to theme.json (#6156)
 
