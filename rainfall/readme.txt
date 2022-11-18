@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.5 =
+* Rainfall: Update copy in patterns (#6737)
+
 = 1.0.4 =
 * Rainfall: small tweaks (#6729)
 
