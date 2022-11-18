@@ -16,11 +16,11 @@
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"20%"} -->
 <div class="wp-block-column" style="flex-basis:20%"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-1.png" alt="" class="wp-image-443"/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-1.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( '“He had come into the keeping of the Paiutes as a hostage for the long peace which the authority of the whites made interminable, and, though there was now no order in the tribe.”', 'rainfall' ); ?></p>
+<p><?php echo esc_html__( '“I\'ve lived in New York for twelve years and the city has grown on me. I wouldn\'t want to live anywhere else.”', 'rainfall' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
@@ -30,11 +30,11 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-2.png" alt="" class="wp-image-442"/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-2.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( '“For he was born a Shoshone, was Winnenap\'; and though his name, his wife, his children, and his tribal relations were of the Paiutes.”', 'rainfall' ); ?></p>
+<p><?php echo esc_html__( '“To me, surfing is ultimately a spiritual thing, the feeling of freedom I get from it is transcendental.”', 'rainfall' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
@@ -44,11 +44,11 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-3.png" alt="" class="wp-image-441"/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-3.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( '“To reach that country from the campoodie, one goes south and south, within hearing of the lip-lip-lapping of the great tideless lake.”', 'rainfall' ); ?></p>
+<p><?php echo esc_html__( '“I like driving from point A to point B. A car can truly simplify our lives. It\'s traffic that really sucks!”', 'rainfall' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
@@ -58,11 +58,11 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-4.png" alt="" class="wp-image-439"/></figure>
+<figure class="wp-block-image aligncenter size-large is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/testimonial-4.png" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( '“It is true I have been in Shoshone Land, but before that, long before, I had seen it through the eyes of Winnenap\' in a rosy mist of reminiscence.”', 'rainfall' ); ?></p>
+<p><?php echo esc_html__( '“Fashion is not just about clothes, it\'s about expression and the confidence to wear what represents you.”', 'rainfall' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
@@ -76,7 +76,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( '“Sitting on the golden slope at the campoodie, looking across the Bitter Lake to the purple tops of Mutarango.”', 'rainfall' ); ?></p>
+<p><?php echo esc_html__( '“An old lady was passing by our shop the other day and I just felt like offering her a rose.”', 'rainfall' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
