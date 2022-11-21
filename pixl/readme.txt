@@ -12,6 +12,9 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 1.0.2 =
+* Remove  block attribute from any theme not defining nav menu locations (#6730)
+
 = 1.0.1 =
 * Make theme available for translation as much as possible (#6484)
 

@@ -12,6 +12,9 @@ Spearhead Blocks is the block based version of the original Spearhead theme.
 
 == Changelog ==
 
+= 0.0.2 =
+* Remove  block attribute from any theme not defining nav menu locations (#6730)
+
 = 0.0.1 =
 * Initial release
 

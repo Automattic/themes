@@ -12,6 +12,9 @@ Disco is a funky, vibrant, opinionated theme with a monospaced font. Both its st
 
 == Changelog ==
 
+= 1.0.3 =
+* Remove  block attribute from any theme not defining nav menu locations (#6730)
+
 = 1.0.2 =
 * Make theme available for translation as much as possible (#6484)
 

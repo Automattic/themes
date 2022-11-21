@@ -13,6 +13,9 @@ Stewart is a modern blogging theme with a left sidebar. Its default color scheme
 
 == Changelog ==
 
+= 1.15 =
+* Remove  block attribute from any theme not defining nav menu locations (#6730)
+
 = 1.14 =
 * Stewart: Move link and hover settings to theme.json (#6121)
 
