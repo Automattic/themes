@@ -15,7 +15,7 @@
 <!-- wp:site-title /--></div>
 <!-- /wp:group -->
 
-<!-- wp:navigation {"__unstableLocation":"primary","layout":{"type":"flex","orientation":"horizontal"}} /--></div>
+<!-- wp:navigation {"layout":{"type":"flex","orientation":"horizontal"}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":100} -->
