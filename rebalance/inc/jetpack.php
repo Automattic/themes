@@ -278,3 +278,18 @@ function rebalance_remove_lazy_load_hooks() {
     add_action( 'wp_head', array( $instance, 'remove_filters' ), 10000 );
     remove_action( 'wp_enqueue_scripts', array( $instance, 'enqueue_assets' ) );
 }
+
+/**
+ * Disable Lazy Loading on paged archives and homepage. Fixes overlapping content areas.
+ *
+ * @filter lazyload_is_enabled
+ * @return bool
+ */
+add_filter( 'lazyload_is_enabled', 'rebalance_lazyload_exclude', 15 );
+function rebalance_lazyload_exclude() {
+	if ( is_paged() || is_home() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
