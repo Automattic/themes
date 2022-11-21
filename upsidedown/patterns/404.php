@@ -29,7 +29,7 @@
             <p class="has-text-align-center"><?php echo esc_html__( 'This page or post could not be found. Maybe a search would help?', 'upsidedown' ); ?></p>
             <!-- /wp:paragraph -->
 
-            <!-- wp:search {"label":"Search","showLabel":false,"width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"align":"center","style":{"border":{"width":"0px","style":"none"}}} /-->
+            <!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'upsidedown' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'upsidedown' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"align":"center","style":{"border":{"width":"0px","style":"none"}}} /-->
         </div>
         <!-- /wp:group -->
 
