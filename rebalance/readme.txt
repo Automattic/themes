@@ -26,6 +26,9 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Changelog ==
 
+= 1.1.15 =
+* Rebalance: Fix PHPCS issues (#6632)
+
 = 1.1.14 =
 * Rebalance: Add page password protection for portfolio page (#6008)
 
