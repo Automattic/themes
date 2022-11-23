@@ -12,6 +12,9 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Changelog ==
 
+= 0.0.4 =
+* Update font sizes for better fluid typography scale (#6740)
+
 = 0.0.3 =
 * Fix theme URI (#6707)
 * Blank Canvas 3 - Incorrect color value fix & increased widths (#6726)
