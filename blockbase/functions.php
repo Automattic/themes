@@ -120,14 +120,6 @@ add_action(
 );
 
 /**
- * Disable the fallback for the core/navigation block.
- */
-function blockbase_core_navigation_render_fallback() {
-	return null;
-}
-add_filter( 'block_core_navigation_render_fallback', 'blockbase_core_navigation_render_fallback' );
-
-/**
  * Block Patterns.
  */
 require get_template_directory() . '/inc/block-patterns.php';
