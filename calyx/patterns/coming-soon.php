@@ -6,9 +6,8 @@
  */
 ?>
 
-
-<!-- wp:cover {"url":"https://dotcompatterns.files.wordpress.com/2021/04/pattern-food.jpeg","id":3761,"dimRatio":0,"overlayColor":"primary","focalPoint":{"x":"1.00","y":"0.51"},"minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-3761" alt="" src="https://dotcompatterns.files.wordpress.com/2021/04/pattern-food.jpeg" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pattern-food.jpeg","dimRatio":0,"overlayColor":"primary","focalPoint":{"x":"1.00","y":"0.51"},"minHeight":100,"minHeightUnit":"vh","align":"full"} -->
+<div class="wp-block-cover alignfull" style="min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pattern-food.jpeg" style="object-position:100% 51%" data-object-fit="cover" data-object-position="100% 51%"/><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"full"} -->
 <div class="wp-block-columns alignfull"><!-- wp:column {"width":"65%"} -->
 <div class="wp-block-column" style="flex-basis:65%"></div>
 <!-- /wp:column -->
