@@ -12,6 +12,9 @@ Calyx is a simple single-page theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.12 =
+* Update/calyx pattern fixes (#6749)
+
 = 1.0.0 =
 * Initial release
 
