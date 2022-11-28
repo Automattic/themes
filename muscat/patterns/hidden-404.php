@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: A 404 page
- * Slug: aine/hidden-404
+ * Slug: muscat/hidden-404
  * Inserter: no
  */
 

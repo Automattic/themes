@@ -1,4 +1,4 @@
-=== Aine ===
+=== Muscat ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Aine is a simple blogging WordPress theme with grid post templates and a centered post layout. Its geometric sans-serif typography contributes to a delightful, comfortable and modern reading experience. With a light style variation, Aine lets your content shine, whether it is text or media.
+Muscat is a simple blogging WordPress theme with grid post templates and a centered post layout. Its geometric sans-serif typography contributes to a delightful, comfortable and modern reading experience. With a light style variation, Muscat lets your content shine, whether it is text or media.
 
 == Changelog ==
 
@@ -17,8 +17,8 @@ Aine is a simple blogging WordPress theme with grid post templates and a centere
 
 == Copyright ==
 
-Aine WordPress Theme, (C) 2022 Automattic
-Aine is distributed under the terms of the GNU GPL.
+Muscat WordPress Theme, (C) 2022 Automattic
+Muscat is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -1,24 +1,24 @@
 <?php
 /**
- * Aine functions and definitions
+ * Muscat functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Aine
- * @since Aine 1.0
+ * @package Muscat
+ * @since Muscat 1.0
  */
 
 
-if ( ! function_exists( 'aine_support' ) ) :
+if ( ! function_exists( 'muscat_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Aine 1.0
+	 * @since Muscat 1.0
 	 *
 	 * @return void
 	 */
-	function aine_support() {
+	function muscat_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -27,18 +27,18 @@ if ( ! function_exists( 'aine_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'aine_support' );
+add_action( 'after_setup_theme', 'muscat_support' );
 
-if ( ! function_exists( 'aine_styles' ) ) :
+if ( ! function_exists( 'muscat_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Aine 1.0
+	 * @since Muscat 1.0
 	 *
 	 * @return void
 	 */
-	function aine_styles() {
+	function muscat_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
@@ -55,4 +55,4 @@ if ( ! function_exists( 'aine_styles' ) ) :
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'aine_styles' );
+add_action( 'wp_enqueue_scripts', 'muscat_styles' );

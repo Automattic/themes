@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: aine/footer
+ * Slug: muscat/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */

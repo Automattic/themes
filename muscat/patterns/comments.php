@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: aine/comments
+ * slug: muscat/comments
  * inserter: no
  */
 
