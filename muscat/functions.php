@@ -42,14 +42,14 @@ if ( ! function_exists( 'muscat_styles' ) ) :
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'aine-style',
+			'muscatstyle',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'aine-style' );
+		wp_enqueue_style( 'muscatstyle' );
 
 	}
 
