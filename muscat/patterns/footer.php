@@ -17,9 +17,9 @@
     <p class="has-text-align-center" style="font-size:0.8rem;letter-spacing:-0.2px">
         <?php
             /* Translators: WordPress link. */
-            $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'aine' ) ) . '" rel="nofollow">WordPress</a>';
+            $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'muscat' ) ) . '" rel="nofollow">WordPress</a>';
             echo sprintf(
-                esc_html__( 'Designed with %1$s', 'aine' ),
+                esc_html__( 'Designed with %1$s', 'muscat' ),
                 $wordpress_link
             );
         ?>
