@@ -12,7 +12,7 @@ const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/pr
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const isWin = process.platform === 'win32';
 const premiumThemes = ['videomaker', 'videomaker-white'];
-const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo'];
+const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
 
 const commands = {
 	"push-button-deploy": {
