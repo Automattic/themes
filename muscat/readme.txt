@@ -12,6 +12,9 @@ Muscat is a simple blogging WordPress theme with grid post templates and a cente
 
 == Changelog ==
 
+= 0.0.2 =
+* Remove Rubik font from headings (#6754)
+
 = 0.0.1 =
 * Initial release
 
