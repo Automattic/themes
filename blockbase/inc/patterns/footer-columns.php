@@ -33,7 +33,7 @@ return array(
 		<h3 style="font-size:14px;"><strong>' . esc_html__( 'More info', 'blockbase' ) . '</strong></h3>
 		<!-- /wp:heading -->
 
-		<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"primary","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"textDecoration":"underline"}},"fontSize":"small"} /--></div>
+		<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"textDecoration":"underline"}},"fontSize":"small"} /--></div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->

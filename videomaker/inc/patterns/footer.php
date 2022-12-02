@@ -14,7 +14,7 @@ return array(
 		<!-- wp:group {"align":"wide","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"space-between"},"style":{"spacing":{"padding":{"top":"30px","bottom":"min(30px, 5vw)"}}}} -->
 		<div class="wp-block-group alignwide" style="padding-top: 30px;padding-bottom: min(30px, 5vw)">	<!-- wp:group -->
 			<div class="wp-block-group">
-				<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"footer","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"textTransform":"uppercase"},"spacing":{"blockGap":"0px"}}} /-->
+				<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"vertical"},"style":{"typography":{"textTransform":"uppercase"},"spacing":{"blockGap":"0px"}}} /-->
 			</div>
 			<!-- /wp:group -->
 			<!-- wp:group {"className":"footer-credit"} -->
