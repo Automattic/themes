@@ -12,6 +12,10 @@ Muscat is a simple blogging WordPress theme with grid post templates and a cente
 
 == Changelog ==
 
+= 0.0.3 =
+* Add min height to post content. (#6756)
+* Muscat variation: fix rubik reference (#6757)
+
 = 0.0.2 =
 * Remove Rubik font from headings (#6754)
 
