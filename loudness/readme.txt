@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.7 =
+* Loudness: Fix instructors pattern (#6762)
+
 = 1.0.6 =
 * Adjust the 'pricing' pattern to better fit in all screen dimensions (#6731)
 
