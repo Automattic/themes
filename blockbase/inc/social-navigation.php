@@ -13,11 +13,6 @@ function blockbase_condition_to_render_social_menu( $block_content, $block ) {
 		return false;
 	}
 
-	// The block should have an unstable location attribute.
-	if ( empty( $block['attrs']['__unstableLocation'] ) ) {
-		return false;
-	}
-
 	// The block should be empty (no custom menu assigned)
 	if ( ! empty($block['attrs']['navigationMenuId']) || ! empty($block['attrs']['ref']) ) {
 		return false;
