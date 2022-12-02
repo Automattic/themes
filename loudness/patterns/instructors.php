@@ -6,9 +6,7 @@
  */
 ?>
 <!-- wp:heading {"style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"var:preset|spacing|60","left":"0"}}}} -->
-<h2 style="margin-top:0;margin-right:0;margin-bottom:var(--wp--preset--spacing--60);margin-left:0">
-	<?php echo esc_html__( 'Instructors', 'loudness' ); ?>
-</h2>
+<h2 style="margin-top:0;margin-right:0;margin-bottom:var(--wp--preset--spacing--60);margin-left:0"><?php echo esc_html__( 'Instructors', 'loudness' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:columns -->
@@ -22,8 +20,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Craig Finley</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Craig Finley</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -40,8 +38,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Damien Sloan</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Damien Sloan</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -66,8 +64,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Nico Gardner</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Nico Gardner</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -94,8 +92,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Axexis Irvine</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Axexis Irvine</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -116,8 +114,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Elliot Boyd</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Elliot Boyd</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -134,8 +132,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Maddy Grey</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Maddy Grey</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -158,8 +156,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Ahmad Arce</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Ahmad Arce</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -184,8 +182,8 @@
 </figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Mac Pace</p>
+<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textTransform":"uppercase","letterSpacing":"2px"}}} -->
+<p style="font-style:normal;font-weight:700;letter-spacing:2px;text-transform:uppercase">Mac Pace</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -200,3 +198,4 @@
 <!-- /wp:columns --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
+
