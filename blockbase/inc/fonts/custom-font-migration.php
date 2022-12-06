@@ -23,7 +23,7 @@ function migrate_blockbase_custom_fonts() {
 		$font_families = $font_families['custom'];
 	} else {
 		// No Customizer font settings found. Mark as transformed and hide the Customizer UI for fonts.
-		set_theme_mod( 'blockbase_legacy_font_settings', '[]' );
+		set_theme_mod( 'blockbase_legacy_font_settings', true );
 		return;
 	}
 
@@ -91,7 +91,7 @@ function migrate_blockbase_custom_fonts() {
 	}
 
 	update_global_styles( $new_settings, $new_styles );
-	set_theme_mod( 'blockbase_legacy_font_settings', json_encode( $theme_user_data ) );
+	set_theme_mod( 'blockbase_legacy_font_settings', true );
 }
 
 /**
