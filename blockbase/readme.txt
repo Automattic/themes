@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.2 =
+* Blockbase: Ensure Blockbase migration script is only run once (#6711)
+
 = 3.1.1 =
 * Removed the bits that disabled the navigation fallback so that navigation would work as expected. (#6743)
 

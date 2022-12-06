@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.21 =
+* Block Canvas: Add self-closing tag to comments pattern in page template (#6764)
+
 = 0.0.20 =
 * Block Canvas: small updates (#6705)
 
