@@ -25,7 +25,7 @@
                     <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
                         <!-- wp:site-title {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"typography":{"lineHeight":1.4,"letterSpacing":"0px","fontStyle":"normal","fontWeight":"700","textTransform":"uppercase"}},"fontSize":"small"} /-->
 
-                        <!-- wp:navigation {"ref":94,"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"0px"}}} /-->
+                        <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"0px"}}} /-->
                     </div>
                     <!-- /wp:group -->
                 </div>
@@ -35,7 +35,7 @@
                 <div class="wp-block-column" style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">
                     <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"1rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
                     <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
-                        <!-- wp:social-links {"iconColor":"primary","iconColorValue":"#111111","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"}}},"className":"is-style-logos-only"} -->
+                        <!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--preset--color--primary)","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"}}},"className":"is-style-logos-only"} -->
                         <ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
                             <!-- wp:social-link {"url":"github.com","service":"github"} /-->
 
