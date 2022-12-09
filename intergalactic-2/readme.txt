@@ -59,6 +59,9 @@ You can add links to a multitude of social services in the slide-out menu using 
 
 == Changelog ==
 
+= 2.0.9 =
+* intergalactic 2: Update text domain (#6768)
+
 = 2.0.8 =
 * #1815: Intergalactic 2: Fix Goodreads widget link colors (#6650)
 
