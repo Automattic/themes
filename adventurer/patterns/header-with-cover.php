@@ -21,7 +21,7 @@
 
                 <!-- wp:buttons -->
                 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","textColor":"background"} -->
-                    <div class="wp-block-button"><a class="wp-block-button__link has-background-color has-primary-background-color has-text-color has-background wp-element-button">Donate</a></div><!-- /wp:button -->
+                    <div class="wp-block-button"><a class="wp-block-button__link has-background-color has-primary-background-color has-text-color has-background wp-element-button"><?php echo esc_html__( 'Donate', 'adventurer' ); ?></a></div><!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->
             </div>
