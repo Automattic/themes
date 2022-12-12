@@ -28,7 +28,7 @@
             <!-- wp:buttons -->
             <div class="wp-block-buttons">
                 <!-- wp:button {"backgroundColor":"background","textColor":"primary"} -->
-                <div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button" href="https://adventurertheme.mystagingwebsite.com/about/"><?php echo esc_html__( 'Read Full Bio', 'adventurer' ); ?></a></div>
+                <div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button" href=""><?php echo esc_html__( 'Read Full Bio', 'adventurer' ); ?></a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->

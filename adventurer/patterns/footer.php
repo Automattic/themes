@@ -26,10 +26,10 @@
         <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:28.57%">
             <!-- wp:social-links {"iconColor":"background","iconColorValue":"#ffffff","iconBackgroundColor":"primary","iconBackgroundColorValue":"#000000","size":"has-normal-icon-size","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"right"}} -->
             <ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color">
-                <!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"twitter"} /-->
-                <!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"youtube"} /-->
-                <!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"pinterest"} /-->
-                <!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"tiktok"} /-->
+                <!-- wp:social-link {"url":"","service":"twitter"} /-->
+                <!-- wp:social-link {"url":"","service":"youtube"} /-->
+                <!-- wp:social-link {"url":"","service":"pinterest"} /-->
+                <!-- wp:social-link {"url":"","service":"tiktok"} /-->
             </ul>
             <!-- /wp:social-links -->
         </div>
@@ -40,7 +40,7 @@
     <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0","top":"var:preset|spacing|80","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
     <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--80);padding-right:0;padding-bottom:var(--wp--preset--spacing--70);padding-left:0">
         <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
-        <p style="font-size:0.8rem"><?php echo esc_html__( 'Adventurer Theme © 2022', 'adventurer' ); ?></p>
+        <p style="font-size:0.8rem"><?php echo esc_html__( 'About Me', 'adventurer' ); ?></p>
         <!-- /wp:paragraph -->
 
         <!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"0.8rem"}}} -->
