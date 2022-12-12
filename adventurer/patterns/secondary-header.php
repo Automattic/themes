@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Default header
- * Slug: adventurer/header
+ * Title: Secondary header
+ * Slug: adventurer/secondary-header
  * Categories: header
  * Block Types: core/template-part/header
  */
