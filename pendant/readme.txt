@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.12 =
+* Turn Pendant query loop inherit on by default (#6775)
+
 = 1.0.11 =
 * Pendant: replacing CSS with theme.json settings for link elements (#6179)
 

@@ -12,6 +12,9 @@ Masu is a blog theme inspired by a traditional square wooden box used to measure
 
 == Changelog ==
 
+= 1.0.1 =
+* Masu: Set query loop to inherit by default (#6776)
+
 = 1.0.0 =
 * Initial release
 
