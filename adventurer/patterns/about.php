@@ -7,8 +7,8 @@
 
 ?>
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_about.png'; ?>","id":145,"dimRatio":50,"overlayColor":"primary","minHeight":630,"minHeightUnit":"px","isDark":false,"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|70","top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
-<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70);min-height:630px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim"></span><img class="wp-block-cover__image-background wp-image-145" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_about.png'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_about.png'; ?>","dimRatio":50,"overlayColor":"primary","minHeight":630,"minHeightUnit":"px","isDark":false,"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|70","top":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70);min-height:630px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_about.png'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
     <!-- wp:columns -->
     <div class="wp-block-columns">
         <!-- wp:column {"width":"60%"} -->

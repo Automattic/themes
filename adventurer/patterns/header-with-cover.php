@@ -7,8 +7,8 @@
  */
 ?>
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_coconuts.png'; ?>","id":160,"dimRatio":50,"minHeight":90,"minHeightUnit":"vh","style":{"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"}}}} -->
-<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:90vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background wp-image-160" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_coconuts.png'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_coconuts.png'; ?>","dimRatio":50,"minHeight":90,"minHeightUnit":"vh","style":{"spacing":{"padding":{"right":"0","left":"0","top":"0","bottom":"0"}}}} -->
+<div class="wp-block-cover" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;min-height:90vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/adventurer_coconuts.png'; ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
     <!-- wp:group {"layout":{"type":"constrained"}} -->
     <div class="wp-block-group">
         <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60","top":"var:preset|spacing|60","right":"0","left":"0"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
