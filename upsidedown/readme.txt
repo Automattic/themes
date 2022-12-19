@@ -12,6 +12,9 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Changelog ==
 
+= 0.0.2 =
+* Remove zero spacing from header and footer (#6787)
+
 = 0.0.1 =
 * Initial release
 
