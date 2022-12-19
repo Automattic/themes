@@ -7,8 +7,8 @@
  */
 ?>
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"}},"layout":{"inherit":true,"type":"constrained","contentSize":"1200px"},"fontSize":"small"} -->
-<div class="wp-block-group has-small-font-size" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
+<!-- wp:group {"layout":{"inherit":true,"type":"constrained","contentSize":"1200px"},"fontSize":"small"} -->
+<div class="wp-block-group has-small-font-size">
     <!-- wp:spacer {"height":"3.2rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
     <div style="margin-top:0px;margin-bottom:0px;height:3.2rem" aria-hidden="true" class="wp-block-spacer"></div>
     <!-- /wp:spacer -->
