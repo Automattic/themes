@@ -1242,16 +1242,16 @@ async function escapePatterns() {
 			return;
 		}
 
-		const rewriter = getReWriter(prompt.themeSlug);
 		patterns.forEach(file => {
+			const rewriter = getReWriter(prompt.themeSlug);
 			const tmpFile = `${file}-tmp`;
-			const rstream = fs.createReadStream( file, { encoding: 'UTF-8' } );
-			const wstream = fs.createWriteStream( tmpFile, { encoding: 'UTF-8' } );
-			wstream.on('finish', () => {
+			const readStream = fs.createReadStream( file, { encoding: 'UTF-8' } );
+			const writeStream = fs.createWriteStream( tmpFile, { encoding: 'UTF-8' } );
+			writeStream.on('finish', () => {
 				fs.renameSync(tmpFile, file);
 			});
 
-			rstream.pipe(rewriter).pipe(wstream);
+			readStream.pipe(rewriter).pipe(writeStream);
 		});
 	});
 
@@ -1344,7 +1344,7 @@ async function escapePatterns() {
 	function getPatternTable(themeSlug, patterns) {
 		const tableConfig = {
 			columnDefault: {
-				width: 80,
+				width: 40,
 			},
 			header: {
 				alignment: 'center',
@@ -1352,7 +1352,7 @@ async function escapePatterns() {
 			}
 		};
 
-		return table([patterns], tableConfig);
+		return table(patterns.map(p => [p]), tableConfig);
 	}
 }
 
