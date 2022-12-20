@@ -1,0 +1,66 @@
+/*
+Theme Name: Bibimbap
+Theme URI: 
+Author: Automattic
+Author URI: 
+Description: 
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.7
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: bibimbap
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+*//*
+ * Font smoothing
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
