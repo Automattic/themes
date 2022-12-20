@@ -4,7 +4,6 @@
  * slug: bibimbap/comments
  * inserter: no
  */
-
 ?>
 
 <!-- wp:comments {"className":"wp-block-comments-query-loop"} -->

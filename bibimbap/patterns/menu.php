@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Menu
- * Slug: bibimbap/text
+ * Slug: bibimbap/menu
  * Categories: featured
  * Keywords: Menu
  */
@@ -12,48 +12,48 @@
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>FERMENTED KIMCHI </p>
+<p><?php echo esc_html__( 'FERMENTED KIMCHI', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>$9</p>
+<p><?php echo esc_html__( '$9', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.</p>
+<p><?php echo esc_html__( 'Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>GIMBAP</p>
+<p><?php echo esc_html__( 'GIMBAP', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>$8</p>
+<p><?php echo esc_html__( '$8', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.</p>
+<p><?php echo esc_html__( 'Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>MANDU</p>
+<p><?php echo esc_html__( 'MANDU', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>$8</p>
+<p><?php echo esc_html__( '$8', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.</p>
+<p><?php echo esc_html__( 'Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -62,48 +62,48 @@
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>HOUSE BIBIMBAP</p>
+<p><?php echo esc_html__( 'HOUSE BIBIMBAP', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>$12</p>
+<p><?php echo esc_html__( '$12', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.</p>
+<p><?php echo esc_html__( 'Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>DELUXE BIBIMBAP</p>
+<p><?php echo esc_html__( 'DELUXE BIBIMBAP', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>$15</p>
+<p><?php echo esc_html__( '$15', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.</p>
+<p><?php echo esc_html__( 'Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>GOCHUJANG SALMON</p>
+<p><?php echo esc_html__( 'GOCHUJANG SALMON', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>$15</p>
+<p><?php echo esc_html__( '$15', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.</p>
+<p><?php echo esc_html__( 'Our signature dish. Thinly sliced shoyu chicken, ajitama egg, white kimchi, black mushshrooms, fresh cabbage and scallions in a subtly flavored pork broth.', 'bibimbap' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
