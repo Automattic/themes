@@ -6,11 +6,6 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 // Font Migration
 require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
-add_action( 'init', 'enqueue_global_styles_fonts', 100 );
-add_action( 'admin_init', 'enqueue_fse_font_styles' );
-add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
-add_filter( 'jetpack_google_fonts_list', 'blockbase_filter_jetpack_google_fonts_list' );
-
 $blockbase_enqueued_font_slugs = array();
 
 /**
@@ -119,8 +114,7 @@ function extract_font_slug_from_setting( $setting ) {
  */
 function collect_fonts_from_blockbase() {
 	$fonts                  = array();
-	$parent_theme_json_data = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
-	$font_families          = $parent_theme_json_data['settings']['typography']['fontFamilies'];
+	$font_families = json_decode( file_get_contents( get_template_directory() . '/inc/fonts/fontFamilies.json' ), true )['fontFamilies'];
 
 	foreach ( $font_families as $font ) {
 		// Only pick it up if we're claiming it as ours to manage
@@ -205,12 +199,37 @@ function enqueue_block_fonts( $content, $parsed_block ) {
 	return $content;
 }
 
-/**
- * Jetpack may attempt to register fonts for the Google Font Provider.
- * If that happens on a child theme then ONLY Jetpack fonts are registered.
- * This 'filter' filters out all of the fonts Jetpack should register
- * so that we depend exclusively on those provided by Blockbase.
- */
-function blockbase_filter_jetpack_google_fonts_list( $list_to_filter ) {
-	return array();
+function blockbase_register_fonts() {
+	if ( ! function_exists( 'wp_register_webfonts' ) ) {
+		return;
+	}
+
+	$font_families = collect_fonts_from_blockbase();
+	foreach ( $font_families as $font_family ) {
+		wp_register_webfonts(
+			array(
+				array(
+					// 'name' key will eventually be supported: https://github.com/WordPress/gutenberg/issues/46398,
+					// in cases where we want the font's display name to differ from the 'font-family' key.
+					'font-family'  => $font_family['name'],
+					'font-weight'  => '100 900',
+					'font-style'   => 'normal',
+					'font-display' => 'fallback',
+					'provider'     => $font_family['provider'],
+				),
+				array(
+					'font-family'  => $font_family['name'],
+					'font-weight'  => '100 900',
+					'font-style'   => 'italic',
+					'font-display' => 'fallback',
+					'provider'     => $font_family['provider'],
+				),
+			)
+		);
+	}
 }
+
+add_action( 'init', 'enqueue_global_styles_fonts', 100 );
+add_action( 'admin_init', 'enqueue_fse_font_styles' );
+add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
+add_action( 'after_setup_theme', 'blockbase_register_fonts' );
