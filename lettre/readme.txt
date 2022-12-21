@@ -13,6 +13,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.0 =
+* Prep Lettre for dotorg (#6792)
+
 = 1.0 =
 * Released: March 8, 2022
 
