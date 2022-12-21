@@ -18,7 +18,7 @@
 	<?php
 		echo sprintf(
 			esc_html__( 'A %s newsletter', 'lettre' ),
-			'<a href="' . esc_url( __( 'https://wordpress.com', 'lettre' ) ) . '" rel="nofollow">WordPress.com</a>'
+			'<a href="' . esc_url( __( 'https://wordpress.org', 'lettre' ) ) . '" rel="nofollow">WordPress</a>'
 		); 
 	?>
 	</p>
