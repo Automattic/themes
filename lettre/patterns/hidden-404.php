@@ -13,4 +13,4 @@
 <p class="has-text-align-center has-small-font-size"><?php echo esc_html__( ' Maybe try a search?', 'lettre' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'lettre' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'lettre' ); ?>","align":"center","style":{"border":{"radius":"100px"}},"borderColor":"primary","backgroundColor":"primary"} /--></div>
-<!-- /wp:group -->'
+<!-- /wp:group -->
