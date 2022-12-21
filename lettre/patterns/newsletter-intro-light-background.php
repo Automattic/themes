@@ -6,8 +6,8 @@
  */
 ?>
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/envelope.jpg","id":129,"dimRatio":50,"overlayColor":"secondary","minHeight":90,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
-<div class="wp-block-cover alignfull is-light" style="min-height:90vh"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim"></span><img class="wp-block-cover__image-background wp-image-129" alt="<?php echo esc_attr__( 'A photograph of an envelope.', 'lettre' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/envelope.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"contentSize":"360px"}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/envelope.jpg","dimRatio":50,"overlayColor":"secondary","minHeight":90,"minHeightUnit":"vh","isDark":false,"align":"full"} -->
+<div class="wp-block-cover alignfull is-light" style="min-height:90vh"><span aria-hidden="true" class="wp-block-cover__background has-secondary-background-color has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo esc_attr__( 'A photograph of an envelope.', 'lettre' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/envelope.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"contentSize":"360px"}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":120,"shouldSyncIcon":true,"align":"center","className":"is-style-rounded"} /-->
 
 <!-- wp:site-title {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"700","lineHeight":"1.3"}},"fontSize":"x-large"} /-->
