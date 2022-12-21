@@ -136,3 +136,17 @@ input:not([type="submit"]):not([type="button"]):focus {
 .comment-form .post-subscription-form{
 	margin: 0;
 }
+
+/*
+ * Fixes an issue with Jetpack Subscribe block.
+ * Necessary until the following issue is resolved:
+ * https://github.com/Automattic/jetpack/issues/28037
+ */
+
+.wp-block-jetpack-subscriptions__container .wp-element-button, 
+.wp-block-jetpack-subscriptions__container .wp-block-button__link {
+	font-size: inherit;
+	margin-top: 10px;
+	padding: 24px 36px 24px 36px;
+	width: 100%;
+}
