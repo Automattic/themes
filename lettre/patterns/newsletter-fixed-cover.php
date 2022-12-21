@@ -22,8 +22,6 @@
 <!-- /wp:spacer -->
 
 <!-- wp:group {"layout":{"inherit":false,"wideSize":"480px"}} -->
-<div class="wp-block-group"><!-- wp:jetpack/subscriptions {"customButtonBackgroundColor":"#df0522","textColor":"secondary","fontSize":"1.3rem","customFontSize":"1.3rem","borderRadius":50,"borderWeight":5,"customBorderColor":"#df0522","padding":18,"spacing":15,"className":"is-style-compact"} -->
-<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline is-style-compact">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" custom_background_button_color="#df0522" custom_font_size="1.3rem" custom_border_radius="50" custom_border_weight="5" custom_border_color="#df0522" custom_padding="18" custom_spacing="15" submit_button_classes="has-1-3-rem-font-size has-text-color has-secondary-color" email_field_classes="has-1-3-rem-font-size" show_only_email_and_button="true"]</div>
-<!-- /wp:jetpack/subscriptions --></div>
+<div class="wp-block-group"><!-- wp:jetpack/subscriptions {"customButtonBackgroundColor":"#df0522","textColor":"secondary","fontSize":"1.3rem","customFontSize":"1.3rem","borderRadius":50,"borderWeight":5,"customBorderColor":"#df0522","padding":18,"spacing":15,"className":"is-style-compact"} /--></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->

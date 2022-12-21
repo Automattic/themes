@@ -21,7 +21,5 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","submitButtonText":"\u003cstrong\u003eSubscribe\u003c/strong\u003e","buttonBackgroundColor":"black","customTextColor":"#ffe030","fontSize":"1.75rem","customFontSize":"1.75rem","borderRadius":50,"borderWeight":1,"borderColor":"black","padding":24,"spacing":15,"className":"is-style-split"} -->
-<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline wp-block-jetpack-subscriptions__use-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="true" submit_button_text="<strong>Subscribe</strong>" custom_text_button_color="#ffe030" custom_font_size="1.75rem" custom_border_radius="50" custom_border_weight="1" custom_button_width="100%" custom_padding="24" custom_spacing="15" submit_button_classes="has-1-75-rem-font-size has-black-border-color has-background has-black-background-color" email_field_classes="has-1-75-rem-font-size has-black-border-color" show_only_email_and_button="true"]</div>
-<!-- /wp:jetpack/subscriptions --></div></div>
+<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","submitButtonText":"<?php echo esc_html__( 'Subscribe', 'lettre' ); ?>","buttonBackgroundColor":"black","customTextColor":"#ffe030","fontSize":"1.75rem","customFontSize":"1.75rem","borderRadius":50,"borderWeight":1,"borderColor":"black","padding":24,"spacing":15,"className":"is-style-split"} /--></div>
 <!-- /wp:media-text -->

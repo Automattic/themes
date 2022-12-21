@@ -19,9 +19,7 @@
 <p class="has-x-large-font-size" style="line-height:1.2"><?php echo esc_html__( 'Enter your email and hit the subscribe button to receive our latest stories in your inbox.', 'lettre' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","buttonBackgroundColor":"black","customTextColor":"#ff513d","fontSize":"1.75rem","customFontSize":"1.75rem","borderRadius":50,"borderWeight":2,"borderColor":"black","padding":16,"align":"wide","className":"is-style-split"} -->
-<div class="wp-block-jetpack-subscriptions alignwide wp-block-jetpack-subscriptions__supports-newline wp-block-jetpack-subscriptions__use-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="true" custom_text_button_color="#ff513d" custom_font_size="1.75rem" custom_border_radius="50" custom_border_weight="2" custom_button_width="100%" custom_padding="16" custom_spacing="10" submit_button_classes="has-1-75-rem-font-size has-black-border-color has-background has-black-background-color" email_field_classes="has-1-75-rem-font-size has-black-border-color" show_only_email_and_button="true"]</div>
-<!-- /wp:jetpack/subscriptions --></div>
+<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","buttonBackgroundColor":"black","customTextColor":"#ff513d","fontSize":"1.75rem","customFontSize":"1.75rem","borderRadius":50,"borderWeight":2,"borderColor":"black","padding":16,"align":"wide","className":"is-style-split"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div></div>
 <!-- /wp:cover -->
