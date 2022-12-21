@@ -41,6 +41,11 @@ Copyright 2016-2020 The Inter Project Authors.
 License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
 Source: https://github.com/rsms/inter
 
+Newsreader Font
+Copyright 2020 The Newsreader Project Authors.
+License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
+Source: http://github.com/productiontype/Newsreader
+
 Photograph by Craig Whitehead.
 License: CC0
 Source: https://stocksnap.io/photo/blur-people-CB8216SFLR
