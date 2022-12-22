@@ -21,5 +21,5 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","submitButtonText":"<?php echo esc_html__( 'Subscribe', 'lettre' ); ?>","buttonBackgroundColor":"black","customTextColor":"#ffe030","fontSize":"1.75rem","customFontSize":"1.75rem","borderRadius":50,"borderWeight":1,"borderColor":"black","padding":24,"spacing":15,"className":"is-style-split"} /--></div>
+<!-- wp:jetpack/subscriptions {"buttonOnNewLine":true,"buttonWidth":"100%","submitButtonText":"<?php echo esc_html__( 'Subscribe', 'lettre' ); ?>","buttonBackgroundColor":"black","customTextColor":"#ffe030","fontSize":"1.75rem","customFontSize":"1.75rem","borderRadius":50,"borderWeight":1,"borderColor":"black","padding":24,"spacing":15,"className":"is-style-split"} /--></div></div>
 <!-- /wp:media-text -->
