@@ -8,6 +8,40 @@ require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
 $blockbase_enqueued_font_slugs = array();
 
+$blockbase_font_families = array(
+	'Arvo',
+	'Bodoni Moda',
+	'Cabin',
+	'Chivo',
+	'Courier Prime',
+	'DM Sans',
+	'Domine',
+	'EB Garamond',
+	'Fira Sans',
+	'IBM Plex Mono',
+	'Inter',
+	'Josefin Sans',
+	'Libre Baskerville',
+	'Libre Franklin',
+	'Lora',
+	'Merriweather',
+	'Montserrat',
+	'Nunito',
+	'Open Sans',
+	'Overpass',
+	'Playfair Display',
+	'Poppins',
+	'Raleway',
+	'Red Hat Display',
+	'Roboto',
+	'Roboto Slab',
+	'Rubik',
+	'Source Sans Pro',
+	'Source Serif Pro',
+	'Space Mono',
+	'Work Sans',
+);
+
 /**
  * Get the CSS containing font_face values for a given slug
  *
@@ -108,25 +142,6 @@ function extract_font_slug_from_setting( $setting ) {
 }
 
 /**
- * Build a list of all font slugs provided by Blockbase from theme.json
- *
- * @return array Collection of all font slugs defined in the theme.json file
- */
-function collect_fonts_from_blockbase() {
-	$fonts                  = array();
-	$font_families = json_decode( file_get_contents( get_template_directory() . '/inc/fonts/fontFamilies.json' ), true )['fontFamilies'];
-
-	foreach ( $font_families as $font ) {
-		// Only pick it up if we're claiming it as ours to manage
-		if ( array_key_exists( 'provider', $font ) && 'blockbase-fonts' === $font['provider'] ) {
-			$fonts[] = $font;
-		}
-	}
-
-	return $fonts;
-}
-
-/**
  * Enqeue all of the fonts used in global styles settings.
  *
  * @return void
@@ -134,14 +149,14 @@ function collect_fonts_from_blockbase() {
 function enqueue_global_styles_fonts() {
 
 	global $blockbase_enqueued_font_slugs;
+	global $blockbase_font_families;
 
 	$font_slugs = array();
 	$font_css   = '';
 
 	if ( is_admin() ) {
-		$font_families = collect_fonts_from_blockbase();
-		foreach ( $font_families as $font_family ) {
-			$font_slugs[] = $font_family['slug'];
+		foreach ( $blockbase_font_families as $font_family ) {
+			$font_slugs[] = strtolower( str_replace(' ', '-', $font_family ) );
 		}
 	} else {
 		$font_slugs = collect_fonts_from_global_styles();
@@ -170,11 +185,11 @@ function enqueue_global_styles_fonts() {
  * Enqueue all of the fonts provided by Blockbase for FSE use
  */
 function enqueue_fse_font_styles( $fonts ) {
-	$fonts    = collect_fonts_from_blockbase();
+	global $blockbase_font_families;
 	$font_css = '';
 
-	foreach ( $fonts as $font ) {
-		$font_css .= get_style_css( $font['slug'] );
+	foreach ( $blockbase_font_families as $font_family ) {
+		$font_css .= get_style_css( strtolower( str_replace(' ', '-', $font_family ) ));
 	}
 
 	wp_enqueue_style( 'wp-block-library' );
@@ -204,25 +219,26 @@ function blockbase_register_fonts() {
 		return;
 	}
 
-	$font_families = collect_fonts_from_blockbase();
-	foreach ( $font_families as $font_family ) {
+	global $blockbase_font_families;
+
+	foreach ( $blockbase_font_families as $font_family ) {
 		wp_register_webfonts(
 			array(
 				array(
 					// 'name' key will eventually be supported: https://github.com/WordPress/gutenberg/issues/46398,
 					// in cases where we want the font's display name to differ from the 'font-family' key.
-					'font-family'  => $font_family['name'],
+					'font-family'  => $font_family,
 					'font-weight'  => '100 900',
 					'font-style'   => 'normal',
 					'font-display' => 'fallback',
-					'provider'     => $font_family['provider'],
+					'provider'     => 'blockbase-fonts',
 				),
 				array(
-					'font-family'  => $font_family['name'],
+					'font-family'  => $font_family,
 					'font-weight'  => '100 900',
 					'font-style'   => 'italic',
 					'font-display' => 'fallback',
-					'provider'     => $font_family['provider'],
+					'provider'     => 'blockbase-fonts',
 				),
 			)
 		);
