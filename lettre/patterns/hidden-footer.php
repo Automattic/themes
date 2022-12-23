@@ -12,8 +12,11 @@
 <!-- wp:spacer {"height":"170px"} -->
 <div style="height:170px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
-<!-- wp:group {"layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
+
+<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull">
+<!-- wp:group {"align":"full","layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
+<div class="wp-block-group alignfull"><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">
 	<?php
 		echo sprintf(
@@ -21,8 +24,10 @@
 			'<a href="' . esc_url( __( 'https://wordpress.org', 'lettre' ) ) . '" rel="nofollow">WordPress</a>'
 		); 
 	?>
-	</p>
+</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:site-title {"style":{"spacing":{"padding":{"top":"20px","bottom":"20px"}}},"fontSize":"small"} /--></div>
+<!-- /wp:group -->
+</div>
 <!-- /wp:group -->
