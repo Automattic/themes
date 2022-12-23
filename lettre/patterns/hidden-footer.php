@@ -13,9 +13,8 @@
 <div style="height:170px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull">
-<!-- wp:group {"align":"full","layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--outer)"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-bottom:var(--wp--custom--spacing--outer)"><!-- wp:group {"align":"full","layout":{"type":"flex","allowOrientation":false,"justifyContent":"space-between"}} -->
 <div class="wp-block-group alignfull"><!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">
 	<?php
