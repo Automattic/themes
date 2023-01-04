@@ -1,0 +1,147 @@
+/*
+Theme Name: Lettre
+Theme URI: http://wordpress.com/theme/lettre/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A theme for writers that want to publish a newsletter using Jetpack.
+Requires at least: 6.1
+Tested up to: 6.1
+Requires PHP: 5.6
+Version: 1.1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lettre
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, news
+
+Lettre WordPress Theme, (C) 2022 Automattic, Inc.
+Lettre is distributed under the terms of the GNU GPL.
+*/
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Text and navigation link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25ch;
+	text-decoration-style: underline;
+}
+
+/*
+ * Button opacity styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/46755
+ */
+
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	opacity: 0.90;
+}
+
+/*
+ * Custom theme styles.
+ */
+
+.wp-block-site-title[style*="text-transform:uppercase"] {
+	letter-spacing: 0.15em;
+}
+
+.wp-block-post-title,
+.wp-block-site-title {
+	hyphens: auto;
+	word-break: break-word;
+	word-wrap: break-word;
+}
+
+/*
+ * Comment form cleanup.
+ */
+
+input {
+	font-family: inherit;
+}
+
+textarea,
+input:not([type="submit"]):not([type="button"]) {
+	color: var(--wp--preset--color--foreground);
+}
+
+textarea:focus,
+input:not([type="submit"]):not([type="button"]):focus {
+	border-color: var(--wp--preset--color--secondary);
+}
+
+.comment-form label {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wp-block-post-comments .comment-form-cookies-consent #wp-comment-cookies-consent {
+	margin-top: 0.2em;
+}
+
+.wp-block-post-comments h3#comments {
+	margin-top: var(--wp--style--block-gap);
+}
+
+.wp-block-post-comments .navigation + .comment-respond {
+	margin-top: calc(3 * var(--wp--style--block-gap));
+}
+
+/*
+ * Drop cap refinements.
+ */
+
+.has-drop-cap:not(:focus)::first-letter {
+	font-size: 3.15em;
+	font-weight: 300;
+	margin: 0.2em 0.125em 0 0;
+}
+
+/*
+ * Tag cloud refinements.
+ */
+
+.wp-block-tag-cloud.is-style-outline a {
+	border-radius: 50px;
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary);
+
+	/* Core styles use !important here, so the theme needs to use it too. */
+	font-size: var(--wp--preset--font-size--small) !important;
+}
+
+/*
+ * Comment form refinements.
+ */
+.comment-form .comment-subscription-form,
+.comment-form .post-subscription-form{
+	margin: 0;
+}
+
+/*
+ * Fixes an issue with Jetpack Subscribe block.
+ * Necessary until Jetpack 11.7 is released:
+ * https://github.com/Automattic/jetpack/milestone/295
+ */
+
+.wp-block-jetpack-subscriptions__container .wp-element-button:not(.block-editor-rich-text__editable), 
+.wp-block-jetpack-subscriptions__container .wp-block-button__link:not(.block-editor-rich-text__editable) {
+	font-size: inherit;
+	margin-top: 10px;
+	padding: 24px 36px 24px 36px;
+	width: 100%;
+}
