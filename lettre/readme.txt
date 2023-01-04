@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.2 =
+* Fix typos
+
 = 1.1.1 =
 * Remove stable tag
 
