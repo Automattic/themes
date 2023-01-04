@@ -20,6 +20,9 @@ if ( ! function_exists( 'lettre_support' ) ) :
 	 */
 	function lettre_support() {
 
+		// Make theme available for translation.
+		load_theme_textdomain( 'lettre' );
+
 		// Add support for block styles.
 		add_theme_support( 'wp-block-styles' );
 
