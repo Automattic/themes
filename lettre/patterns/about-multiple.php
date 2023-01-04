@@ -11,7 +11,7 @@
 <div class="wp-block-column"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":"30px"}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"100px"} -->
 <div class="wp-block-column" style="flex-basis:100px"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/gray-square.png" alt="<?php esc_attr__( 'A generic profile picture.', 'lettre' ); ?>"/></figure>
+<figure class="wp-block-image size-full is-style-rounded"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/gray-square.png" alt="<?php echo esc_attr__( 'A generic profile picture.', 'lettre' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
