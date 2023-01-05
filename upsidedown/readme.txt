@@ -26,7 +26,7 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Copyright ==
 
-Upsidedown WordPress Theme, (C) 2022 Automattic
+Upsidedown WordPress Theme, (C) 2023 Automattic
 Upsidedown is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
