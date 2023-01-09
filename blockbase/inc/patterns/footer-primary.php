@@ -19,7 +19,7 @@ return array(
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:group -->
 	
-	<!-- wp:navigation {"overlayMenu":"never","__unstableLocation":"primary","layout":{"type":"flex","setCascadingProperties":"true","orientation":"horizontal"}} /--></div>
+	<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":"true","orientation":"horizontal"}} /--></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->',
 );

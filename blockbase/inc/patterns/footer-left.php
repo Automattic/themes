@@ -11,7 +11,7 @@ return array(
 	'blockTypes' => array( 'core/template-part/footer' ),
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"30px","bottom":"30px"}}},"layout":{"inherit":true}} -->
 	<div class="wp-block-group alignfull" style="padding-top:30px;padding-bottom:30px">
-	<!-- wp:navigation {"__unstableLocation":"primary","fontSize":"small"} /-->
+	<!-- wp:navigation {"fontSize":"small"} /-->
 	
 	<!-- wp:group {"layout":{"type":"flex","allowOrientation":false}} -->
 	<div class="wp-block-group"><!-- wp:site-title {"fontSize":"small"} /-->
