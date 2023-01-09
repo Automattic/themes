@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.5 =
+* Blockbase + children: remove __unstableLocation (#6759)
+
 = 3.1.4 =
 * Revert Allow Jetpack to register fonts that Blockbase has not. (#6777) (#6788)
 

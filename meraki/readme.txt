@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 0.0.9 =
+* Blockbase + children: remove __unstableLocation (#6759)
+
 = 0.0.8 =
 * Removed font families from the child so that Blockbases are used instead (#6405)
 

@@ -12,6 +12,9 @@ Appleton is a theme for creative professionals, such as photographers, designers
 
 == Changelog ==
 
+= 0.0.7 =
+* Blockbase + children: remove __unstableLocation (#6759)
+
 = 0.0.6 =
 * Screenshot.png update (#6681)
 

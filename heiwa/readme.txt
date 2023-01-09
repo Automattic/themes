@@ -12,6 +12,9 @@ Heiwa is a theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.6 =
+* Blockbase + children: remove __unstableLocation (#6759)
+
 = 1.0.5 =
 * #6086: Heiwa: Fix list indents (#6651)
 
