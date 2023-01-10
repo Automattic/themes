@@ -29,3 +29,9 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Korean meal from above
+License: CC0, https://creativecommons.org/share-your-work/public-domain/cc0/
+Source: https://www.foodiesfeed.com/free-food-photo/korean-meal-from-above/
