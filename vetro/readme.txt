@@ -12,6 +12,9 @@ Vetro was designed to be a portfolio theme, and is composed by wide width layout
 
 == Changelog ==
 
+= 1.0.2 =
+* Vetro: update alignment and use columns to collapse better on mobile (#6800)
+
 = 1.0.1 =
 * Vetro: fix page template alignment (#6774)
 
