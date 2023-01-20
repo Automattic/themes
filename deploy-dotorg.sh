@@ -20,6 +20,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"blockbase"
 	"disco"
 	"geologist"
+	"lettre"
 	"livro"
 	"mayland-blocks"
 	"pendant"
