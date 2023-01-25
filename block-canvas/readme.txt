@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.23 =
+* Remove font-smoothing CSS (#6816)
+
 = 0.0.22 =
 * Add home.html template to Block Canvas (#6784)
 
