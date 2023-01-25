@@ -12,6 +12,9 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Changelog ==
 
+= 1.0.0 =
+* Version bump for release
+
 = 0.0.3 =
 * Fix spacing on templates (#6799)
 
@@ -23,7 +26,7 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Copyright ==
 
-Upsidedown WordPress Theme, (C) 2022 Dotorg Themes Design
+Upsidedown WordPress Theme, (C) 2023 Automattic
 Upsidedown is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
