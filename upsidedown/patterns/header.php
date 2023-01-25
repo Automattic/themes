@@ -46,7 +46,7 @@
                         <!-- /wp:social-links -->
 
                         <!-- wp:paragraph -->
-                        <p><?php echo esc_html__( 'Explore my side projects and work using', 'upsidedown' ); ?>&nbsp;<a rel="noreferrer noopener" href="http://www.wordpress.org" target="_blank"><span style="text-decoration: underline;"><?php echo esc_html__( 'this link', 'upsidedown' ); ?></span></a></p>
+                        <p><?php echo esc_html__( 'Explore my side projects and work using', 'upsidedown' ); ?>&nbsp;<a rel="noreferrer noopener" href="https://www.wordpress.org" target="_blank"><span style="text-decoration: underline;"><?php echo esc_html__( 'this link', 'upsidedown' ); ?></span></a></p>
                         <!-- /wp:paragraph -->
                     </div>
                     <!-- /wp:group -->
