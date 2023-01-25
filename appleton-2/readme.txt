@@ -1,36 +1,18 @@
 === Appleton ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Appleton is a theme for creative professionals, such as photographers, designers and artists.
+Appleton 2 is a theme for creative professionals, such as photographers, designers and artists.
 
 == Changelog ==
 
-= 0.0.7 =
-* Blockbase + children: remove __unstableLocation (#6759)
-
-= 0.0.6 =
-* Screenshot.png update (#6681)
-
-= 0.0.5 =
-* Blockbase 3 (#6167)
-
-= 0.0.4 =
-* Appleton: Fix case on screenshot.png file. (#6051)
-
-= 0.0.3 =
-* Appleton: Update the theme tags (#6050)
-
-= 0.0.2 =
-* Typography & Width updates
-
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
