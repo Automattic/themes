@@ -1,30 +1,18 @@
 === Antonia ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Antonia is a theme for selling products with the help of payments block.
+Antonia 2 is a theme for selling products with the help of payments block.
 
 == Changelog ==
 
-= 0.0.5 =
-* Blockbase + children: remove __unstableLocation (#6759)
-
-= 0.0.4 =
-* Typography fixes (#6260)
-
-= 0.0.3 =
-* Migrate antonia fonts to new Blockbase format (#6268)
-
-= 0.0.2 =
-* Update theme url (#6076)
-
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
