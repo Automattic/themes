@@ -1,19 +1,16 @@
 === Dorna ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Dorna is a minimal, product-oriented theme.
+Dorna 2 is a minimal, product-oriented theme.
 
 == Changelog ==
-
-= 0.0.3 =
-* Blockbase 3 (#6167)
 
 = 1.0.0 =
 * Initial release
