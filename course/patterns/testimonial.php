@@ -23,7 +23,7 @@
         <!-- wp:column {"verticalAlignment":"bottom","width":"41%"} -->
         <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:41%">
             <!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"8px","width":"1px"}}} -->
-            <figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial.png" alt="" class="wp-image-2150" style="border-width:1px;border-radius:8px" /></figure>
+            <figure class="wp-block-image size-full has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/testimonial.png" alt="" style="border-width:1px;border-radius:8px" /></figure>
             <!-- /wp:image -->
         </div>
         <!-- /wp:column -->
