@@ -31,6 +31,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"seedlet-blocks"
 	"skatepark"
 	"stewart"
+	"upsidedown"
 	"videomaker"
 	"vivre"
 	"zoologist"
