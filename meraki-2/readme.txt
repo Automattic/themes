@@ -1,42 +1,15 @@
-=== Meraki ===
+=== Meraki 2 ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Meraki is a blogging theme that supports full-site editing.
+Meraki 2 is a blogging theme that supports full-site editing.
 
-== Changelog ==
-
-= 0.0.9 =
-* Blockbase + children: remove __unstableLocation (#6759)
-
-= 0.0.8 =
-* Removed font families from the child so that Blockbases are used instead (#6405)
-
-= 0.0.7 =
-* lock post-content block by default (#6314)
-
-= 0.0.6 =
-* Blockbase 3 (#6167)
-
-= 0.0.5 =
-* Meraki: Re-add the 'auto-loading-homepage' tag to style.css (#6039)
-
-= 0.0.4 =
-* Meraki: Update footer pattern background color; update footer pattern structure to avoid horizontal scrollbars. (#6030)
-
-= 0.0.3 =
-* Meraki: Style updates. (#5999)
-* Meraki: Update the footer pattern. (#5998)
-
-= 0.0.2 =
-* Meraki: Work in progress (#5862)
-
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
