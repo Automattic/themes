@@ -38,3 +38,7 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Roboto Font, Copyright Christian Robertson
+Licensed under the terms of the Apache License, Version 2.0
+Source: https://github.com/googlefonts/roboto
