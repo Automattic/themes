@@ -12,6 +12,9 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Changelog ==
 
+= 1.0.1 =
+* Add license for Roboto (#6841)
+
 = 1.0.0 =
 * Version bump for release
 
