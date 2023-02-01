@@ -12,6 +12,9 @@ Bitácora is a simple old-school blog theme
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix warnings from theme-check (#6849)
+
 = 1.0.0 =
 * Initial release
 
