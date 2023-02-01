@@ -44,7 +44,7 @@
 		<!-- /wp:heading -->
 
 		<!-- wp:jetpack/subscriptions {"submitButtonText":"subscribe","fontSize":"0.781rem","customFontSize":"0.781rem","borderRadius":2,"padding":9,"spacing":7,"className":"is-style-split"} -->
-		<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" submit_button_text="subscribe" custom_font_size="0.781rem" custom_border_radius="2" custom_border_weight="1" custom_padding="9" custom_spacing="7" submit_button_classes="has-0-781-rem-font-size" email_field_classes="has-0-781-rem-font-size" show_only_email_and_button="true" success_message="<?php echo esc_html__( 'Success! An email was just sent to confirm your subscription. Please find the email now and click \'Confirm Follow\' to start subscribing.', 'bitacora' ); ?>"]</div>
+		<div class="wp-block-jetpack-subscriptions wp-block-jetpack-subscriptions__supports-newline is-style-split">[jetpack_subscription_form show_subscribers_total="false" button_on_newline="false" submit_button_text="subscribe" custom_font_size="0.781rem" custom_border_radius="2" custom_border_weight="1" custom_padding="9" custom_spacing="7" submit_button_classes="has-0-781-rem-font-size" email_field_classes="has-0-781-rem-font-size" show_only_email_and_button="true" success_message="<?php echo esc_attr__( 'Success! An email was just sent to confirm your subscription. Please find the email now and click \'Confirm Follow\' to start subscribing.', 'bitacora' ); ?>"]</div>
 		<!-- /wp:jetpack/subscriptions -->
 	</div>
 	<!-- /wp:group -->
