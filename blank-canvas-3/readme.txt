@@ -12,6 +12,9 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Changelog ==
 
+= 0.0.7 =
+* Remove top and bottom global paddings (#6845)
+
 = 0.0.6 =
 * Fix background color variable (#6806)
 
