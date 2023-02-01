@@ -4,14 +4,36 @@
 		"color": {
 			"custom": true,
 			"customGradient": true,
+			"duotone": [
+                {
+                    "colors": [ "#063559", "#DADADA" ],
+                    "slug": "default",
+                    "name": "Default"
+                },
+                {
+                    "colors": [ "#063559", "#62FF88" ],
+                    "slug": "ooze",
+                    "name": "Ooze"
+                },
+                {
+                    "colors": [ "#063559", "#EDE550" ],
+                    "slug": "lemon",
+                    "name": "Lemon"
+                },
+                {
+                    "colors": [ "#063559", "#DA90BD" ],
+                    "slug": "pink",
+                    "name": "Pink"
+                }
+			],
 			"palette": [
 				{
-					"color": "#111111",
+					"color": "#62ff88",
 					"name": "Foreground",
 					"slug": "foreground"
 				},
 				{
-					"color": "#dadada",
+					"color": "#063559",
 					"name": "Background",
 					"slug": "background"
 				}
@@ -132,9 +154,7 @@
 		"blocks": {
 			"core/button": {
 				"border": {
-					"color": "var(--wp--preset--color--background)",
-					"radius": "0",
-					"width": "2px"
+					"radius": "0"
 				},
 				"color": {
 					"background": "var(--wp--preset--color--foreground)",
@@ -195,7 +215,7 @@
 			"button": {
 				"color": {
 					"background": "var(--wp--preset--color--background)",
-					"text": "var(--wp--preset--color--background)"
+					"text": "var(--wp--preset--color--foreground)"
 				},
 				"typography": {
 					"fontFamily": "Inter",
@@ -269,7 +289,7 @@
 			},
 			"heading": {
 				"color": {
-					"text": "#111111"
+					"text": "var(--wp--preset--color--foreground)"
 				},
 				"typography": {
 					"fontFamily": "Inter",
@@ -279,7 +299,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var:preset|color|foreground"
+					"text": "var(--wp--preset--color--foreground)"
 				},
 				"typography": {
 					"fontFamily": "Inter"
