@@ -12,6 +12,9 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Changelog ==
 
+= 0.0.8 =
+* Add missing comma that breaks the json (#6854)
+
 = 0.0.7 =
 * Remove top and bottom global paddings (#6845)
 
