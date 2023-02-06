@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: List of posts with sidebar
- * Slug: lettre/query-related-post
+ * Slug: lettre/query-sidebar
  * Categories: featured, query, columns
  */
 ?>
