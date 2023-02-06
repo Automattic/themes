@@ -7,7 +7,7 @@ Description: Vetro was designed to be a portfolio theme, and is composed by wide
 Requires at least: 5.8
 Tested up to: 6.1
 Requires PHP: 5.7
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: 
@@ -47,5 +47,17 @@ a:active {
 .wp-block-navigation .wp-block-navigation-item a:hover,
 .wp-block-navigation .wp-block-navigation-item a:focus {
 	text-decoration: underline;
-	text-decoration-style: solid;
+	text-decoration-style: dashed;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline
+	> .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
 }
