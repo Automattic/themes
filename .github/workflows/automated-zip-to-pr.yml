@@ -1,0 +1,124 @@
+name: Automated Zip to PR
+
+on:
+  issues:
+    types: [ "opened", "edited" ]
+
+  issue_comment:
+    type: [ "created", "edited" ]
+
+jobs:
+
+ extrakt:
+
+    # We don't do anything on pull requests, which are also considered issues
+    if: ${{ !github.event.issue.pull_request }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Only do these if the target is the ISSUE not a COMMENT on the issue
+      - name: Extract Zip URL (body)
+        uses: actions-ecosystem/action-regex-match@v2
+        if: ${{ !github.event.comment.body }}
+        id: match-url
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: '\((.*?\.zip)\)'
+      
+      - name: Extract Zip Filename (body)
+        uses: actions-ecosystem/action-regex-match@v2
+        if: ${{ !github.event.comment.body }}
+        id: match-filename
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: '\(.*\/(.*?\.zip)\)'
+
+      # We do this one ALWAYS so we can compare the issue zip name to the comment zip name
+      - name: Extract Theme Name (body)
+        uses: actions-ecosystem/action-regex-match@v2
+        id: match-theme-name
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: '\(.*\/(.*?)\.zip\)'
+
+      - name: Define Variables (body)
+        if: ${{ !github.event.comment.body }}
+        run: |
+          echo "ZIP_URL=${{ steps.match-url.outputs.group1 }}" >> $GITHUB_ENV
+          echo "ZIP_FILENAME=${{ steps.match-filename.outputs.group1 }}" >> $GITHUB_ENV
+          echo "THEME_NAME=${{ steps.match-theme-name.outputs.group1 }}" >> $GITHUB_ENV
+          echo "BRANCH_NAME=auto/${{ steps.match-theme-name.outputs.group1 }}" >> $GITHUB_ENV
+
+      # Only do these if the target is a COMMENT on the issue
+      - name: Extract Zip URL (comment)
+        uses: actions-ecosystem/action-regex-match@v2
+        if: ${{ github.event.comment.body }}
+        id: match-url-comment
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: '\((.*?\.zip)\)'
+      
+      - name: Extract Zip Filename (comment)
+        uses: actions-ecosystem/action-regex-match@v2
+        if: ${{ github.event.comment.body }}
+        id: match-filename-comment
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: '\(.*\/(.*?\.zip)\)'
+
+      - name: Extract Theme Name (comment)
+        uses: actions-ecosystem/action-regex-match@v2
+        if: ${{ github.event.comment.body }}
+        id: match-theme-name-comment
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: '\(.*\/(.*?)\.zip\)'
+
+      # We only do this one if the BODY name matches the COMMENT name
+      - name: Define Variables (comment)
+        if: ${{ github.event.comment.body && steps.match-theme-name.outputs.group1 == steps.match-theme-name-comment.outputs.group1 }}
+        run: |
+          echo "ZIP_URL=${{ steps.match-url-comment.outputs.group1 }}" >> $GITHUB_ENV
+          echo "ZIP_FILENAME=${{ steps.match-filename-comment.outputs.group1 }}" >> $GITHUB_ENV
+          echo "THEME_NAME=${{ steps.match-theme-name-comment.outputs.group1 }}" >> $GITHUB_ENV
+          echo "BRANCH_NAME=auto/${{ steps.match-theme-name-comment.outputs.group1 }}" >> $GITHUB_ENV
+
+      # All the rest of these actions will only run if there's a $ZIP_URL defined (otherwise the content doesn't fit our criteria)
+
+      - uses: actions/checkout@v3
+        if: ${{ env.ZIP_URL }}
+        with:
+          fetch-depth: 0
+
+      - name: Download Zip & Push to Branch
+        if: ${{ env.ZIP_URL }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git checkout $BRANCH_NAME || git checkout -b $BRANCH_NAME
+          wget $ZIP_URL
+          unzip -o -qq ./$ZIP_FILENAME -d ./$THEME_NAME
+          sudo chown -R $USER:$USER .
+          sudo rm ./$ZIP_FILENAME
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git config --global --add --bool push.autoSetupRemote true
+          git add --all
+          git commit -m "Automated Theme Change: [$THEME_NAME]"
+          git push origin $BRANCH_NAME
+
+      - name: Create Pull Request
+        if: ${{ env.ZIP_URL }}
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "trunk"
+          source_branch: "${{ env.BRANCH_NAME }}" 
+          pr_title: "Automated Theme Change: [${{ env.THEME_NAME }}]" 
+          pr_body: |
+            **Automated Theme Change for: [${{ env.THEME_NAME }}]**
+
+            Closes: #${{ github.event.issue.number }}
+
+            _
