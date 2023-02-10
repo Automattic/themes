@@ -6,12 +6,41 @@ require get_template_directory() . '/inc/customizer/wp-customize-fonts.php';
 // Font Migration
 require get_template_directory() . '/inc/fonts/custom-font-migration.php';
 
-add_action( 'init', 'enqueue_global_styles_fonts', 100 );
-add_action( 'admin_init', 'enqueue_fse_font_styles' );
-add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
-add_filter( 'jetpack_google_fonts_list', 'blockbase_filter_jetpack_google_fonts_list' );
-
 $blockbase_enqueued_font_slugs = array();
+
+$blockbase_font_families = array(
+	'Arvo',
+	'Bodoni Moda',
+	'Cabin',
+	'Chivo',
+	'Courier Prime',
+	'DM Sans',
+	'Domine',
+	'EB Garamond',
+	'Fira Sans',
+	'IBM Plex Mono',
+	'Inter',
+	'Josefin Sans',
+	'Libre Baskerville',
+	'Libre Franklin',
+	'Lora',
+	'Merriweather',
+	'Montserrat',
+	'Nunito',
+	'Open Sans',
+	'Overpass',
+	'Playfair Display',
+	'Poppins',
+	'Raleway',
+	'Red Hat Display',
+	'Roboto',
+	'Roboto Slab',
+	'Rubik',
+	'Source Sans Pro',
+	'Source Serif Pro',
+	'Space Mono',
+	'Work Sans',
+);
 
 /**
  * Get the CSS containing font_face values for a given slug
@@ -113,26 +142,6 @@ function extract_font_slug_from_setting( $setting ) {
 }
 
 /**
- * Build a list of all font slugs provided by Blockbase from theme.json
- *
- * @return array Collection of all font slugs defined in the theme.json file
- */
-function collect_fonts_from_blockbase() {
-	$fonts                  = array();
-	$parent_theme_json_data = json_decode( file_get_contents( get_template_directory() . '/theme.json' ), true );
-	$font_families          = $parent_theme_json_data['settings']['typography']['fontFamilies'];
-
-	foreach ( $font_families as $font ) {
-		// Only pick it up if we're claiming it as ours to manage
-		if ( array_key_exists( 'provider', $font ) && 'blockbase-fonts' === $font['provider'] ) {
-			$fonts[] = $font;
-		}
-	}
-
-	return $fonts;
-}
-
-/**
  * Enqeue all of the fonts used in global styles settings.
  *
  * @return void
@@ -140,14 +149,14 @@ function collect_fonts_from_blockbase() {
 function enqueue_global_styles_fonts() {
 
 	global $blockbase_enqueued_font_slugs;
+	global $blockbase_font_families;
 
 	$font_slugs = array();
 	$font_css   = '';
 
 	if ( is_admin() ) {
-		$font_families = collect_fonts_from_blockbase();
-		foreach ( $font_families as $font_family ) {
-			$font_slugs[] = $font_family['slug'];
+		foreach ( $blockbase_font_families as $font_family ) {
+			$font_slugs[] = strtolower( str_replace(' ', '-', $font_family ) );
 		}
 	} else {
 		$font_slugs = collect_fonts_from_global_styles();
@@ -176,11 +185,11 @@ function enqueue_global_styles_fonts() {
  * Enqueue all of the fonts provided by Blockbase for FSE use
  */
 function enqueue_fse_font_styles( $fonts ) {
-	$fonts    = collect_fonts_from_blockbase();
+	global $blockbase_font_families;
 	$font_css = '';
 
-	foreach ( $fonts as $font ) {
-		$font_css .= get_style_css( $font['slug'] );
+	foreach ( $blockbase_font_families as $font_family ) {
+		$font_css .= get_style_css( strtolower( str_replace(' ', '-', $font_family ) ));
 	}
 
 	wp_enqueue_style( 'wp-block-library' );
@@ -205,12 +214,38 @@ function enqueue_block_fonts( $content, $parsed_block ) {
 	return $content;
 }
 
-/**
- * Jetpack may attempt to register fonts for the Google Font Provider.
- * If that happens on a child theme then ONLY Jetpack fonts are registered.
- * This 'filter' filters out all of the fonts Jetpack should register
- * so that we depend exclusively on those provided by Blockbase.
- */
-function blockbase_filter_jetpack_google_fonts_list( $list_to_filter ) {
-	return array();
+function blockbase_register_fonts() {
+	if ( ! function_exists( 'wp_register_webfonts' ) ) {
+		return;
+	}
+
+	global $blockbase_font_families;
+
+	foreach ( $blockbase_font_families as $font_family ) {
+		wp_register_webfonts(
+			array(
+				array(
+					// 'name' key will eventually be supported: https://github.com/WordPress/gutenberg/issues/46398,
+					// in cases where we want the font's display name to differ from the 'font-family' key.
+					'font-family'  => $font_family,
+					'font-weight'  => '100 900',
+					'font-style'   => 'normal',
+					'font-display' => 'fallback',
+					'provider'     => 'blockbase-fonts',
+				),
+				array(
+					'font-family'  => $font_family,
+					'font-weight'  => '100 900',
+					'font-style'   => 'italic',
+					'font-display' => 'fallback',
+					'provider'     => 'blockbase-fonts',
+				),
+			)
+		);
+	}
 }
+
+add_action( 'init', 'enqueue_global_styles_fonts', 100 );
+add_action( 'admin_init', 'enqueue_fse_font_styles' );
+add_filter( 'pre_render_block', 'enqueue_block_fonts', 10, 2 );
+add_action( 'after_setup_theme', 'blockbase_register_fonts' );

@@ -102,8 +102,13 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 	require get_template_directory() . '/inc/social-navigation.php';
 }
 
-require get_template_directory() . '/inc/fonts/custom-fonts.php';
 
+/**
+ * Do not use the custom fonts provided by Blockbase if Jetpack fonts module is active
+ */
+if ( ! class_exists( 'Jetpack' ) || ! Jetpack::is_module_active( 'google-fonts' ) ) {
+	require get_template_directory() . '/inc/fonts/custom-fonts.php';
+}
 
 // Force menus to reload
 add_action(
