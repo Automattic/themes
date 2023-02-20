@@ -32,3 +32,12 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Roboto Font, Copyright Christian Robertson
+Licensed under the terms of the Apache License, Version 2.0
+Source: https://github.com/googlefonts/roboto
+
+Rubik Font, Copyright Philipp Hubert and Sebastian Fischer at Hubert & Fischer 
+as part of the Chrome Cube Lab project
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://github.com/googlefonts/Rubik
