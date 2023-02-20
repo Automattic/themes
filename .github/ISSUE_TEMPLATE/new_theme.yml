@@ -1,0 +1,26 @@
+name: New theme
+description: Submit a new theme for review!
+labels: ["New Theme"]
+title: "[New Theme]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for contributing!
+
+        Please fill in the details of the new theme including screenshots and upload the ZIP file to automatically create the Pull request for review.
+
+  - type: textarea
+    id: summary
+    attributes:
+        label: Quick summary
+    validations:
+      required: true
+  - type: textarea
+    id: themezip
+    attributes:
+      label: Theme ZIP
+      placeholder: |
+        Attach the zip file of the theme by drag and dropping or selecting upload.
+    validations:
+      required: true
