@@ -17,6 +17,7 @@ rm -rf ./deploy
 
 declare -a THEMES_TO_DEPLOY=(
 	"archeo"
+	"bibimbap"
 	"blockbase"
 	"disco"
 	"geologist"
