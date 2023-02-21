@@ -33,6 +33,8 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
 Roboto Font, Copyright Christian Robertson
 Licensed under the terms of the Apache License, Version 2.0
 Source: https://github.com/googlefonts/roboto
@@ -41,3 +43,13 @@ Rubik Font, Copyright Philipp Hubert and Sebastian Fischer at Hubert & Fischer
 as part of the Chrome Cube Lab project
 Licensed under the terms of the SIL Open Font License (v1.1)
 Source: https://github.com/googlefonts/Rubik
+
+Photo of Coconuts
+License: CC0 Public domain
+Source: https://stocksnap.io/photo/green-plants-AZEZSAGD4G
+Used in "Header with cover" pattern.
+
+Photo of Green Plants
+License: CC0 Public domain
+Source: https://stocksnap.io/photo/green-plants-NVAVP4HUBS
+Used in "About" pattern.
