@@ -12,6 +12,9 @@ A theme for travelers, writers and photographers.
 
 == Changelog ==
 
+= 0.0.2 =
+* Adventurer: Apply latest changes (#6837)
+
 = 0.0.1 =
 * Initial release
 
