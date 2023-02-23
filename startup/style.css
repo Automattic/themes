@@ -1,0 +1,37 @@
+/*
+Theme Name: Startup
+Theme URI: 
+Author: Automattic
+Author URI: 
+Description: A simple startup theme.
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.7
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: startup
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+*//*
+ * Font smoothing
+ */
+
+ body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--gap--horizontal);
+	padding-bottom: var(--wp--custom--gap--vertical);
+	padding-right: var(--wp--custom--gap--horizontal);
+	padding-left: var(--wp--custom--gap--horizontal);
+}
