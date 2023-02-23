@@ -207,10 +207,18 @@ function enqueue_block_fonts( $content, $parsed_block ) {
 
 /**
  * Jetpack may attempt to register fonts for the Google Font Provider.
- * If that happens on a child theme then ONLY Jetpack fonts are registered.
- * This 'filter' filters out all of the fonts Jetpack should register
- * so that we depend exclusively on those provided by Blockbase.
+ * This filters out all of the fonts Blockbase has already registered.
  */
-function blockbase_filter_jetpack_google_fonts_list( $list_to_filter ) {
-	return array();
+function blockbase_filter_jetpack_google_fonts_list( $jetpack_fonts ) {
+	$theme_fonts         = collect_fonts_from_blockbase();
+	$theme_font_families = array_column( $theme_fonts, 'name' );
+	$filtered_list       = array();
+
+	// If the Jetpack font isn't in theme already, let Jetpack register it
+	foreach ( $jetpack_fonts as $jetpack_font_family ) {
+		if ( ! in_array( $jetpack_font_family, $theme_font_families, true ) ) {
+			$filtered_list[] = $jetpack_font_family;
+		}
+	}
+	return $filtered_list;
 }
