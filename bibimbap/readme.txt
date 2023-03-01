@@ -12,6 +12,9 @@ A simple and fun restaurant theme.
 
 == Changelog ==
 
+= 1.0.1 =
+* add home template (#6882)
+
 = 0.0.1 =
 * Initial release
 
