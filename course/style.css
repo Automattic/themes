@@ -1,0 +1,429 @@
+/*
+Theme Name: Course
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Course is a flexible and modern theme for anyone wanting to share their knowledge. The theme is built with integration with Sensei LMS and is ideal for Sensei users that are creating or selling courses. Style variations with multiple font and color combinations help you craft the perfect look and feel to show off courses and content. The theme can be used without Sensei too.
+Version: 1.2.1
+Requires at least: 6.1
+Tested up to: 6.1
+Requires PHP: 7.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: course
+Tags: block-patterns, eLearning, education, full-site-editing, lms, online courses, sensei, teach, translation-ready
+*/
+
+/*
+ * Font smoothing
+ */
+ body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--preset--spacing--50);
+	padding-bottom: var(--wp--preset--spacing--50);
+	padding-right: var(--wp--preset--spacing--50);
+	padding-left: var(--wp--preset--spacing--50);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+ /* Background and text color, padding around for navbar, only for mobile view. Desktop view has separate color */
+ .wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open.has-modal-open {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	padding: 1.5rem;
+ }
+
+ /* Distance between navigation menu items in mobile view, theme.json blockgap not working for navigation block */
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	gap: var(--wp--custom--nav-mobile-gap);
+ }
+
+ /* Color of the cross button in navbar mobile view */
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+	color: var(--wp--preset--color--background);
+ }
+
+/* line height of the menu items in mobile view, to match design */
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container a.wp-block-navigation-item__content {
+	line-height: 90%;
+ }
+
+ /* The navigation item that looks like a button in the design has a different front size and the button is rounded */
+ .wp-block-navigation .wp-block-navigation__responsive-container .wp-block-navigation-link.is-style-navigation-link-button a {
+	font-size: var(--wp--custom--typography--font-sizes--button);
+	border-radius: 8px;
+}
+
+/* Background & text color, padding and border of the navbar button */
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	padding: 15.5px 32px;
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+/* Navbar button color change on hover */
+.wp-block-navigation .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation-link.is-style-navigation-link-button a:hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
+/* Set the font size of the menu items in mobile view, except for the button menu item */
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link:not(.is-style-navigation-link-button) a {
+	font-size: var(--wp--preset--font-size--xx-large);
+}
+
+/* Design for the navbar button item, in case of mobile view. Has extra margin on top as per design */
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a {
+	color: var(--wp--preset--color--foreground);
+	background-color: var(--wp--preset--color--background);
+	width: calc(100vw - 3rem);
+	text-align: center;
+	padding: 17.5px 0px;
+	margin-top: calc(7.5rem - var(--wp--custom--nav-mobile-gap));
+}
+
+/* Separate hover behavior for navbar button, applicable when in mobile view, as the colors are separate for mobile view */
+.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-link.is-style-navigation-link-button a:hover {
+	background-color: var(--wp--preset--color--background);
+	color: var(--wp--preset--color--foreground);
+}
+
+header.wp-block-template-part {
+	background-color: transparent;
+	padding: 2.75rem 0px;
+}
+
+/*
+ * Comments
+ */
+.wp-block-post-comments-form form.comment-form p input:not([type=submit]),
+.wp-block-post-comments-form form.comment-form textarea {
+	border: 1px solid var(--wp--preset--color--foreground);
+	border-radius: 8px;
+	background-color: var(--wp--preset--color--background);
+}
+
+.wp-block-post-comments-form .comment-form-cookies-consent label {
+	margin: auto 0;
+}
+
+.wp-block-post-comments-form .comment-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: var(--wp--custom--reply-column-gap);
+	grid-row-gap: var(--wp--custom--comment-gap-medium);
+}
+
+@media screen and (max-width: 480px) {
+	.wp-block-post-comments-form .comment-form {
+		display: flex;
+		flex-direction: column;
+		gap: calc(var(--wp--preset--spacing--60) - var(--wp--preset--spacing--40));
+	}
+}
+
+.wp-block-post-comments-form .comment-form p,
+.wp-block-post-comments-form h3 {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.wp-block-post-comments-form .comment-form .comment-notes {
+	display: none;
+}
+
+.wp-block-post-comments-form .comment-form .comment-form-author {
+	order: 1;
+	grid-column: 1 / 3;
+}
+
+.wp-block-post-comments-form .comment-form .comment-form-email {
+	order: 2;
+	grid-column: 1 / 2;
+}
+
+.wp-block-post-comments-form .comment-form .comment-form-url {
+	order: 3;
+	grid-column: 2 / 3;
+}
+
+.wp-block-post-comments-form .comment-form .comment-form-comment {
+	order: 4;
+	grid-column: 1 / 3;
+}
+
+.wp-block-post-comments-form .comment-form .comment-form-cookies-consent {
+	order: 5;
+	grid-column: 1 / 3;
+}
+
+.wp-block-post-comments-form .comment-form .wp-block-button {
+	order: 6;
+	grid-column: 1 / 2;
+}
+
+.wp-block-comments-query-loop .wp-block-comment-template .wp-block-comment-author-name {
+	margin-bottom: var(--wp--custom--comment-gap-small);
+}
+
+.wp-block-comments-query-loop .wp-block-comment-template .wp-block-comment-content p {
+	margin-block-start: var(--wp--custom--comment-gap-medium);
+	margin-block-end: var(--wp--custom--comment-gap-small);
+}
+
+.wp-block-comments-query-loop .comment > .is-vertical > .wp-block-group {
+	align-items: flex-start;
+	gap: var(--wp--custom--comment-gap-small);
+}
+
+.wp-block-comments-query-loop .comment > div > div > .is-vertical {
+	gap: 0;
+}
+
+/*
+ * Link styles
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em
+}
+
+/*
+ * Search styles
+ */
+.wp-block-search__button {
+	color: var(--wp--preset--color--background);
+}
+
+.wp-block-search__input {
+	background-color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+	padding: 1.063rem;
+}
+
+/*
+ * Search Results Styles
+ */
+.search .wp-block-post-template .wp-block-post {
+	margin: 0;
+}
+
+.search .wp-block-post.course {
+	border-bottom: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* Buttons */
+.wp-block-button__link:focus {
+	outline: var(--wp--preset--color--foreground) dashed;
+	outline-offset: 1px;
+}
+
+/*
+* Control the hover stylings of outline block style.
+* Unnecessary once block styles are configurable via theme.json
+*/
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):active {
+	background-color: var(--wp--preset--color--secondary);
+	border-color: var(--wp--preset--color--button-border-active);
+	color: var(--wp--preset--color--primary);
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--button-border-hover);
+	color: var(--wp--preset--color--secondary);
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):focus {
+	border-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--foreground);
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link,
+.wp-block-button .wp-block-button__link.is-style-outline {
+	background-color: transparent;
+	border-color: currentcolor;
+	border-width: 1px;
+	color: currentcolor;
+	padding: 0.5856em 1.5238em;
+	text-decoration: none;
+}
+
+/*
+ * Pagination styles
+ */
+.wp-block-query-pagination .wp-block-query-pagination-numbers > *:not(:last-child) {
+	margin-right: clamp(1.44rem, 1.91vw + 0.97rem, 2.5rem);
+}
+
+.wp-block-query-pagination .page-numbers.current {
+	text-decoration: underline;
+}
+
+/* Add border around author image in Post Author block */
+.wp-block-post-author__avatar img {
+	border: 1px solid var(--wp--preset--color--tertiary);
+	border-radius: 4px;
+}
+
+/* Design for search box in 404 page template sidebar */
+.course-search-sidebar button {
+	padding: clamp(12px, calc(0.75rem + ((1vw - 4.8px) * 0.5556)), 16px);
+	color: var(--wp--preset--color--tertiary);
+	vertical-align: center;
+}
+
+.course-search-sidebar button svg {
+	height: 32px;
+	width: 32px;
+	vertical-align: bottom;
+}
+
+.course-search-sidebar input.wp-block-search__input {
+	line-height: 100%;
+}
+
+/* Newsletter */
+.course-newsletter-gap {
+	height: clamp(0rem, -3.975rem + 8.134vw, calc(114px - var(--wp--style--block-gap) * 2));
+}
+
+.course-newsletter-sign-up {
+	font-family: var(--wp--preset--font-family--system);
+	font-size: var(--wp--preset--font-size--x-small);
+	letter-spacing: 0.02em;
+	line-height: 100%;
+	text-decoration: underline;
+}
+
+@media screen and (min-width: 782px) {
+	.course-newsletter-sidebar {
+		position: sticky;
+		top: 120px;
+	}
+}
+
+/* Footer */
+footer .wp-block-column .wp-block-spacer {
+	height: 20px;
+}
+
+footer .wp-block-column a,
+footer .wp-block-column p,
+footer .wp-block-column h3 {
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+	footer .wp-block-columns.course-footer-links-vertical-space {
+		margin-bottom: 44px;
+	}
+
+	footer .wp-block-column, footer .wp-block-group.is-layout-flex {
+		flex-direction: column;
+		align-items: baseline;
+		gap: 10px;
+	}
+}
+
+footer.wp-block-template-part  {
+	margin-block-start: 0;
+}
+
+
+/*
+ * "Wide Width, No Title" page template
+ */
+
+/* Remove extra space from group blocks */
+body.page-template-page-wide-width .wp-block-post-content .wp-block-group,
+body.page-template-page-wide-width footer .wp-block-group {
+	margin-block-end: 0;
+}
+
+/*
+* Sensei-specific styles
+*/
+.wp-block-sensei-lms-course-overview a {
+	text-decoration: underline;
+}
+
+.wp-block-sensei-lms-course-list .sensei-cta a:hover,
+.wp-block-sensei-lms-course-list .sensei-cta a:focus {
+	text-decoration: none;
+}
+
+/* The first 3 CSS selectors can be removed after allowing enough time (let's say 1 month)for sites
+ * to update to the Sensei LMS plugin version containing the changes to the CSS class names.
+ */
+.course-list-featured-label__featured-image,
+.course-list-featured-label__course-categories,
+.sensei-lms-featured-badge,
+.sensei-lms-course-list-featured-label__text {
+	font-family: var(--wp--preset--font-family--system);
+	text-transform: uppercase;
+}
+
+/*
+ * Style Variations
+ */
+
+/* Workaround for https://github.com/WordPress/gutenberg/issues/35480. */
+.wp-block-social-links .wp-block-social-link .wp-block-social-link-anchor svg {
+	color: var(--wp--preset--color--primary);
+}
+
+
+.footer-title{
+	white-space: normal;
+}
+
+.footer-title a:hover {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+	.footer-title{
+		font-size: 86px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.separator {
+		 top: -25px;
+	}
+}
