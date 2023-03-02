@@ -12,6 +12,9 @@ A simple and fun restaurant theme.
 
 == Changelog ==
 
+= 1.0.2 =
+* fix navigation submenu background (#6890)
+
 = 1.0.1 =
 * add home template (#6882)
 
