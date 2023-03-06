@@ -4,7 +4,7 @@ on:
   pull_request_target: # When a PR is opened or closed
     types: [opened, closed]
   issues: # For auto-triage of issues.
-    types: [opened, reopened, edited, closed]
+    types: [opened, labeled, reopened, edited, closed]
   issue_comment: # To gather support references in issue comments.
     types: [created]
 concurrency:
@@ -42,4 +42,5 @@ jobs:
          slack_team_channel: ${{ secrets.SLACK_TEAM_CHANNEL }}
          slack_he_triage_channel: ${{ secrets.SLACK_HE_TRIAGE_CHANNEL }}
          slack_quality_channel: ${{ secrets.SLACK_QUALITY_CHANNEL }}
-         tasks: 'cleanLabels,flagOss,triageNewIssues,gatherSupportReferences,replyToCustomersReminder'
+         slack_kitkat_channel: ${{ secrets.SLACK_KITKAT_CHANNEL }}
+         tasks: 'cleanLabels,flagOss,triageNewIssues,gatherSupportReferences,replyToCustomersReminder,notifyKitKat'
