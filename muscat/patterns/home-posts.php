@@ -38,8 +38,8 @@
 <div style="height:80px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:separator {"align":"full","backgroundColor":"secondary","className":"is-style-wide"} -->
-<hr class="wp-block-separator alignfull has-text-color has-secondary-color has-alpha-channel-opacity has-secondary-background-color has-background is-style-wide"/>
+<!-- wp:separator {"backgroundColor":"tertiary","className":"is-style-default"} -->
+<hr class="wp-block-separator has-text-color has-tertiary-color has-alpha-channel-opacity has-tertiary-background-color has-background is-style-default"/>
 <!-- /wp:separator -->
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
