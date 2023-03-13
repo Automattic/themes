@@ -1,0 +1,222 @@
+/*
+Theme Name: Hey
+Theme URI: https://wordpress.com/theme/hey/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hey is a simple personal blog theme.
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: hey
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	margin-top: var(--wp--preset--spacing--30);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-color: var(--wp--preset--color--primary);
+	text-decoration-thickness: .5px !important;
+	text-underline-offset: .1em;
+}
+
+/* Adjust the Gutenberg styles for the outline button */
+.wp-block-button.is-style-outline>.wp-block-button__link {
+	border: 1px solid var(--wp--preset--color--foreground);
+	padding: calc(8px - 1px) calc(32px - 1px);
+}
+
+/* Reset browser default margins for blockquote element */
+.wp-block-pullquote blockquote {
+	margin: 0;
+}
+
+/* Search button inside style */
+.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	border-radius: 999px;
+	padding: 9px;
+}
+
+/* Adjust font size for comment reply title */
+.wp-block-post-comments-form .comment-reply-title {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding: var(--wp--preset--spacing--50);
+}
+
+/* Adjust the top padding for the submenu items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	padding-top: var(--wp--preset--spacing--30);
+}
+
+/* Override the Gutenberg style to theme style */
+.wp-block-post-author__byline,
+.wp-block-post-author__bio {
+	font-size: inherit;
+}
+
+/* Reset the vertical alignment */
+.wp-block-post-author__avatar img {
+	border-radius: 999px;
+	line-height: 0;
+}
+
+/* Style tag cloud outline style  */
+.wp-block-tag-cloud.is-style-outline a {
+	border-radius: 999px;
+	padding: 0 0.5rem;
+}
+
+.wp-block-tag-cloud.is-style-outline a:hover {
+	color: var(--wp--preset--color--background);
+	background-color: var(--wp--preset--color--primary);
+}
+
+/* Remove the default margin from author bio */
+.wp-block-post-author__bio {
+	margin: 0;
+}
+
+/* Remove the default margin from term description. */
+.wp-block-term-description p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
+
+/* Match the style of download button with the button block. */
+.wp-block-file:not(.wp-element-button) {
+	font-size: inherit;
+}
+
+/* Normalise font sizes for the latest comments and latest posts widgets */
+.wp-block-latest-comments__comment-excerpt p,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-posts__post-author,
+.wp-block-latest-posts__post-date {
+	font-size: inherit;
+}
+
+/* Adjust font colour in the Calendar widget */
+.wp-block-calendar table:where(:not(.has-text-color)) {
+	color: var(--wp--preset--color--foreground);
+}
+
+/* Fix border radius setting for the avatar block */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+}
+
+/* Style  border colour for search and Jetpack subscription blocks */
+.wp-block-search__input,
+.wp-block-search__button-inside .wp-block-search__inside-wrapper,
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form input[type="email"] {
+	border-color: var(--wp--preset--color--tertiary);
+}
+
+/* Needed to style input field for various Jetpack blocks */
+.wp-block-jetpack-contact-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-jetpack-contact-form select,
+.wp-block-jetpack-contact-form textarea,
+.wp-block-jetpack-mailchimp input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-jetpack-revue input:not([type="submit"]):not([type="checkbox"]) {
+	background-color: #fff;
+	border: 1px solid var(--wp--preset--color--tertiary);
+	font-size: 1em;
+	padding: 0.5rem;
+}
+
+.wp-block-jetpack-contact-form.contact-form label {
+	font-weight: 400;
+}
+
+.wp-block-jetpack-contact-form.contact-form label span {
+	opacity: 0.7;
+}
+
+.wp-block-jetpack-contact-form.contact-form select {
+	padding: 0.5rem;
+}
+
+.wp-block-jetpack-contact-form.contact-form textarea {
+	margin-bottom: var(--wp--preset--spacing--40);
+}
+
+/* Style the feedback you get after submitting the contact form */
+div[id^="contact-form-"] h3 {
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.75;
+}
+
+div[id^="contact-form-"] .contact-form-submission {
+	margin: 0;
+	padding: 0;
+}
+
+/* Adjust vertical margins in the mailchimp block */
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button,
+.wp-block-jetpack-mailchimp p {
+	margin: var(--wp--preset--spacing--40) 0;
+}
+
+/* Adjust the size of the consent text in mailchimp block */
+#wp-block-jetpack-mailchimp_consent-text {
+	font-size: var(--wp--preset--font-size--small);
+	margin-bottom: 0;
+}
+
+/* Keep the post date single line on the front page */
+.nowrap time {
+	white-space: nowrap;
+}
