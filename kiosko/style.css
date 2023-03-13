@@ -1,0 +1,232 @@
+/*
+Theme Name: Kiosko
+Theme URI: https://wordpress.com/theme/kiosko/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Kiosko is a store theme for WooCommerce
+Requires at least: 5.8
+Tested up to: 6.1
+Requires PHP: 5.7
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: kiosko
+Tags: blog, e-commerce, one-column, wide-blocks, block-patterns, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, sticky-post, style-variations, template-editing, threaded-comments, translation-ready
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--contrast);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles'
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	border-color: var(--wp--preset--color--tertiary);
+	word-break: normal;
+}
+
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-color: var(--wp--preset--color--primary);
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 0.05em;
+}
+
+/* Reset browser default margins for blockquote element */
+.wp-block-pullquote blockquote {
+	margin: 0;
+}
+
+/* Search button inside style */
+.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	padding: 4px;
+}
+
+/* Adjust font size for comment reply title */
+.wp-block-post-comments-form .comment-reply-title {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+/* Remove the bottom margin from the button */
+.wp-block-post-comments-form .form-submit {
+	margin-bottom: 0;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding: var(--wp--preset--spacing--50);
+}
+
+/* Adjust the top padding for the submenu items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	padding-top: var(--wp--preset--spacing--30);
+}
+
+/* Override the Gutenberg style to theme style */
+.wp-block-post-author__byline,
+.wp-block-post-author__bio {
+	font-size: inherit;
+}
+
+/* Round the avatar and reset the vertical alignment */
+.wp-block-post-author__avatar img {
+	border-radius: 999px;
+	line-height: 0;
+}
+
+/* Style tag cloud outline style  */
+.wp-block-tag-cloud.is-style-outline a {
+	border-color: var(--wp--preset--color--tertiary);
+	border-radius: 999px;
+	padding: 0 0.5rem;
+}
+
+.wp-block-tag-cloud.is-style-outline a:hover {
+	color: var(--wp--preset--color--base);
+	background-color: var(--wp--preset--color--primary);
+}
+
+/* Remove the default margin from author bio */
+.wp-block-post-author__bio {
+	margin: 0;
+}
+
+/* Remove the default margin from term description. */
+.wp-block-term-description p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
+
+/* Normalise font sizes for the latest comments and latest posts widgets */
+.wp-block-latest-comments__comment-excerpt p,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-posts__post-author,
+.wp-block-latest-posts__post-date {
+	font-size: inherit;
+}
+
+/* Adjust font colour in the Calendar widget */
+.wp-block-calendar table:where(:not(.has-text-color)) {
+	color: var(--wp--preset--color--foreground);
+}
+
+/* Fix border radius setting for the avatar block */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+	vertical-align: middle;
+}
+
+/* Fix line height for various fields */
+.wp-block-search__input,
+.wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments-form .comment-form textarea {
+	line-height: inherit;
+}
+
+/* Style  border colour for search and Jetpack subscription blocks */
+.wp-block-search__input,
+.wp-block-search__button-inside .wp-block-search__inside-wrapper,
+.wp-block-jetpack-subscriptions.wp-block-jetpack-subscriptions__supports-newline form input[type="email"] {
+	border-color: var(--wp--preset--color--tertiary);
+}
+
+/* Needed to style input field for various Jetpack blocks */
+.wp-block-jetpack-contact-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-jetpack-contact-form select,
+.wp-block-jetpack-contact-form textarea,
+.wp-block-jetpack-mailchimp input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-jetpack-revue input:not([type="submit"]):not([type="checkbox"]) {
+	background-color: #fff;
+	border: 1px solid var(--wp--preset--color--tertiary);
+	font-size: inherit;
+	line-height: inherit;
+	padding: 0.5rem;
+}
+
+.wp-block-jetpack-contact-form.contact-form label {
+	font-weight: 400;
+}
+
+.wp-block-jetpack-contact-form.contact-form label span {
+	opacity: 0.7;
+}
+
+.wp-block-jetpack-contact-form.contact-form select {
+	padding: 0.5rem;
+}
+
+.wp-block-jetpack-contact-form.contact-form textarea {
+	margin-bottom: var(--wp--preset--spacing--40);
+}
+
+/* Style the feedback you get after submitting the contact form */
+div[id^="contact-form-"] h4 {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: inherit;
+	line-height: 1.555555556;
+}
+
+div[id^="contact-form-"] .contact-form-submission {
+	margin: 0;
+	padding: 0;
+}
+
+/* Adjust vertical margins in the mailchimp block */
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button,
+.wp-block-jetpack-mailchimp p {
+	margin: var(--wp--preset--spacing--40) 0;
+}
+
+/* Adjust the size of the consent text in mailchimp block */
+#wp-block-jetpack-mailchimp_consent-text {
+	font-size: var(--wp--preset--font-size--small);
+	margin-bottom: 0;
+}
+
+/* Remove underline from the price after discounted */
+ins {
+	text-decoration: none;
+}
+
+/* Fix the hardcoded wide width value in the stylesheet for TT3 */
+.woocommerce.woocommerce-page main {
+	max-width: calc(var(--wp--style--global--wide-size) + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left));
+}
