@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Hidden No Results Content
- * Slug: startup/hidden-no-results-content
+ * Slug: iotix/hidden-no-results-content
  * Inserter: no
  */
 ?>

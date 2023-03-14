@@ -1,4 +1,4 @@
-=== Startup ===
+=== Iotix ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A simple startup theme.
+A simple iotix theme.
 
 == Changelog ==
 
@@ -17,8 +17,8 @@ A simple startup theme.
 
 == Copyright ==
 
-Startup WordPress Theme, (C) 2022 Automattic
-Startup is distributed under the terms of the GNU GPL.
+Iotix WordPress Theme, (C) 2022 Automattic
+Iotix is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
