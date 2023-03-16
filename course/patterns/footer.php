@@ -133,35 +133,11 @@
       <!-- wp:paragraph {"align":"center","style":{"typography":{"letterSpacing":"0.02em"},"spacing":{"padding":{"bottom":"5rem","top":"var:preset|spacing|50"},"margin":{"top":"var:preset|spacing|70"}}},"fontSize":"x-small","fontFamily":"system"} -->
       <p class="has-text-align-center has-system-font-family has-x-small-font-size" style="margin-top:var(--wp--preset--spacing--70);padding-top:var(--wp--preset--spacing--50);padding-bottom:5rem;letter-spacing:0.02em">
         <?php
-        // Supports Footer Credit cusotmization on WPCOM and WoA sites.
-        $is_atomic = ( defined( 'ATOMIC_SITE_ID' ) && ATOMIC_SITE_ID );
-        $is_wpcom = ( defined( 'IS_WPCOM' ) && IS_WPCOM );
-
-        if ( $is_atomic || $is_wpcom ) {
           $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'course' ) ) . '" rel="nofollow">WordPress</a>';
             echo sprintf(
                 esc_html__( '© Designed with %1$s', 'course' ),
                 $wordpress_link
             );
-        } else {
-          echo sprintf(
-            wp_kses(
-              // translators: %1$s is https://senseilms.com, %2$s is https://wordpress.org.
-              __('Course Theme by <a href="%1$s" rel="nofollow"><span style="text-decoration: underline;">Sensei</span></a>, Powered by <a href="%2$s" rel="nofollow"><span style="text-decoration: underline;">WordPress</span></a>.', 'course'),
-              [
-                'a' => [
-                  'href' => [],
-                  'rel' => []
-                ],
-                'span' => [
-                  'style' => []
-                ]
-              ]
-            ),
-            'https://senseilms.com',
-            'https://wordpress.org'
-          );
-        }
         ?>
       </p>
       <!-- /wp:paragraph -->
