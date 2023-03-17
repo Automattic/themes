@@ -1,7 +1,7 @@
 === Aalto ===
 Contributors: Automattic
-Requires at least: 5.8
-Tested up to: 5.9
+Requires at least: 6.1
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,3 +29,11 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Jost font from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Jost
+
+Newsreader font from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Newsreader
