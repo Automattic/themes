@@ -37,7 +37,7 @@
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:image {"align":"wide","id":26,"sizeSlug":"large","linkDestination":"none","style":{"color":{"duotone":["#000","#B9FB9C"]}}} -->
+<!-- wp:image {"align":"wide","id":26,"sizeSlug":"large","linkDestination":"none"} -->
 <figure class="wp-block-image alignwide size-large"><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/riding-skateboard.jpeg'; ?>" alt="<?php echo esc_html__( 'Close-up of a person riding a skateboard, focusing on their feet and the board. One foot is on the board, while the other foot is up, in motion. A skatepark is blurred in the background.', 'skatepark' ); ?>" class="wp-image-26"/></figure>
 <!-- /wp:image -->
 

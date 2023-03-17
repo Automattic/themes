@@ -27,7 +27,7 @@
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:image {"sizeSlug":"large","style":{"color":{"duotone":["#000","#BFF5A5"]}}} -->
+<!-- wp:image {"sizeSlug":"large"} -->
 <figure class="wp-block-image size-large"><img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/skateboard-sideways.jpg'; ?>" alt="<?php echo esc_attr__( 'A skateboard laying on its side on top of concrete.', 'skatepark' ); ?>"/></figure>
 <!-- /wp:image -->
 

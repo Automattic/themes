@@ -1,8 +1,8 @@
 === Vetro ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 6.1
-Requires PHP: 5.7
+Tested up to: 6.2
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,6 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Vetro was designed to be a portfolio theme, and is composed by wide width layouts with the impact of generous imagery and typography. Its simple pages are aligned left with fair right paddings and large content blocks to grant viewers focus on visuals and short paragraphs.
 
 == Changelog ==
+
+= 1.0.5 =
+* Vetro: use latest duotone features (#6910)
+
+= 1.0.4 =
+* Vetro: more design adjustments and fixes (#6848)
 
 = 1.0.3 =
 * Vetro: minor design and final adjustments (#6822)

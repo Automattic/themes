@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.23 =
+* Bump scss-tokenizer and node-sass (#6920)
+
 = 1.6.22 =
 * #3991: Varia: Fix related post alignment (#6349)
 

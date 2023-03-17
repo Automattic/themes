@@ -17,7 +17,7 @@
 <!-- /wp:separator --></div>
 <!-- /wp:group -->
 
-<!-- wp:post-featured-image {"isLink":true,"style":{"color":{"duotone":["#000","#B9FB9C"]}}} /-->
+<!-- wp:post-featured-image {"isLink":true} /-->
 
 <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"var(--wp--custom--font-sizes--normal)"},"spacing":{"margin":{"bottom":"calc( 0.5 * var(--wp--custom--gap--vertical) )"}}}} /-->
 
