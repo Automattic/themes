@@ -2,6 +2,7 @@
 /**
  * Title: Small About Text 
  * Slug: vetro/small-about
+ * Inserter: no
  */
 ?>
 
