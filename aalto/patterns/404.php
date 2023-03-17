@@ -7,10 +7,16 @@
 
 ?>
 
-<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"x-large"} -->
-<h1 class="has-text-align-center has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'aalto' ); ?></h1>
+<!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"var:preset|spacing|50","margin":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|60"},"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--80);margin-bottom:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"textAlign":"left","level":1,"fontSize":"x-large"} -->
+<h1 class="wp-block-heading has-text-align-left has-x-large-font-size"><?php echo esc_html__( 'There\'s nothing here.', 'aalto' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'aalto' ); ?></p>
+<p><?php echo esc_html__( 'The page you\'re looking for doesn\'t seem to exist.', 'aalto' ); ?></p>
 <!-- /wp:paragraph -->
+
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></main>
+<!-- /wp:group -->
