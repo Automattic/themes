@@ -12,6 +12,10 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Changelog ==
 
+= 0.0.9 =
+* Version Bump
+* Blank Cnvas 3: Update date in readem.txt. (#6924)
+
 = 0.0.8 =
 * Add missing comma that breaks the json (#6854)
 
