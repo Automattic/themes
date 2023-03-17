@@ -36,7 +36,15 @@
 					"name": "Tertiary",
 					"slug": "tertiary"
 				}
-			]
+			],
+			"duotone": [
+				{
+					"slug": "foreground-to-background",
+					"colors": ["#bdbdbd", "#1b1818"],
+					"name": "Foreground to Background"
+				}
+			],
+			"defaultDuotone": true
 		},
 		"layout": {
 			"contentSize": "620px",
@@ -239,6 +247,11 @@
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
+			"core/cover": {
+				"filter": {
+					"duotone": "var:preset|duotone|foreground-to-background"
+				}
+			},
 			"core/gallery": {
 				"spacing": {
 					"margin": {
@@ -249,6 +262,11 @@
 			"core/heading": {
 				"typography": {
 					"textTransform": "none"
+				}
+			},
+			"core/image": {
+				"filter": {
+					"duotone": "var:preset|duotone|foreground-to-background"
 				}
 			},
 			"core/list": {
@@ -287,6 +305,11 @@
 				"typography": {
 					"letterSpacing": "0.02em",
 					"textTransform": "none"
+				}
+			},
+			"core/post-author": {
+				"filter": {
+					"duotone": "var:preset|duotone|foreground-to-background"
 				}
 			},
 			"core/post-author-name": {
@@ -328,6 +351,11 @@
 				"typography": {
 					"fontSize": "14px",
 					"textTransform": "uppercase"
+				}
+			},
+			"core/post-featured-image": {
+				"filter": {
+					"duotone": "var:preset|duotone|foreground-to-background"
 				}
 			},
 			"core/post-title": {
