@@ -39,7 +39,7 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Copyright ==
 
-Blank Canvas WordPress Theme, (C) 2022 Automattic
+Blank Canvas WordPress Theme, (C) 2023 Automattic
 Blank Canvas is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
