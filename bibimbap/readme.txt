@@ -38,6 +38,13 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
+Fonts:
+
+COOPER HEWITT
+License: SIL Open Font License, https://github.com/cooperhewitt/cooperhewitt-typeface/blob/master/files/-OFL-FAQ.txt
+
+Images:
+
 Korean meal from above
 License: CC0, https://creativecommons.org/share-your-work/public-domain/cc0/
 Source: https://www.foodiesfeed.com/free-food-photo/korean-meal-from-above/
