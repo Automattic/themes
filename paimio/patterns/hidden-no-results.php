@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Search pattern
- * Slug: paimio/search-results
+ * Slug: paimio/hidden-no-results
  * Inserter: no
  */
 
