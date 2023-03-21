@@ -2,6 +2,7 @@
 /**
  * Title: Designed with WordPress 
  * Slug: vetro/designed-with-wordpress
+ * Inserter: no
  */
 ?>
 
