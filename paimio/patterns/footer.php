@@ -11,8 +11,8 @@
 <div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var(--wp--preset--spacing--60)","right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var(--wp--preset--spacing--60)","right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--60);padding-left:0"><!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'paimio' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( '&quot;PAIMIO CHAIR&quot;', 'paimio' ); ?>","width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'paimio' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"borderColor":"primary","backgroundColor":"background","textColor":"primary"} /-->
 
 <!-- wp:spacer {"height":"10px"} -->
