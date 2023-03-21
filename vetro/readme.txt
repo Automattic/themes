@@ -12,6 +12,9 @@ Vetro was designed to be a portfolio theme, and is composed by wide width layout
 
 == Changelog ==
 
+= 1.0.6 =
+* Vetro: various adjustments (#6926)
+
 = 1.0.5 =
 * Vetro: use latest duotone features (#6910)
 
