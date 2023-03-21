@@ -12,6 +12,9 @@ A simple and fun restaurant theme.
 
 == Changelog ==
 
+= 1.0.3 =
+* Bibimbap: address dotOrg review feedback (#6876)
+
 = 1.0.2 =
 * fix navigation submenu background (#6890)
 
