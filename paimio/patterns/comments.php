@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: aalto/comments
+ * slug: paimio/comments
  * inserter: no
  */
 

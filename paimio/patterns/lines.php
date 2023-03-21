@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Lines
- * Slug: aalto/lines
+ * Slug: paimio/lines
  * Categories: footer
  * Inserter: yes
  */

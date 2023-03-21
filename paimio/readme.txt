@@ -1,4 +1,4 @@
-=== Aalto ===
+=== Paimio ===
 Contributors: Automattic
 Requires at least: 6.1
 Tested up to: 6.1
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Aalto is a minimal blogging theme inspired by architects and designers Alvar, Aino and Elissa Aalto.
+Paimio is a minimal blogging theme inspired by architects and designers Alvar, Aino and Elissa Aalto.
 
 == Changelog ==
 
@@ -17,8 +17,8 @@ Aalto is a minimal blogging theme inspired by architects and designers Alvar, Ai
 
 == Copyright ==
 
-Aalto WordPress Theme, (C) 2023 Automattic
-Aalto is distributed under the terms of the GNU GPL.
+Paimio WordPress Theme, (C) 2023 Automattic
+Paimio is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

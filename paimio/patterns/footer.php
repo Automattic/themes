@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: aalto/footer
+ * Slug: paimio/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -13,7 +13,7 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0","bottom":"var(--wp--preset--spacing--60)","right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--60);padding-left:0"><!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'aalto' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( '&quot;PAIMIO CHAIR&quot;', 'aalto' ); ?>","width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'aalto' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"borderColor":"primary","backgroundColor":"background","textColor":"primary"} /-->
+<div class="wp-block-group" style="padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--60);padding-left:0"><!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'paimio' ); ?>","showLabel":false,"placeholder":"<?php echo esc_attr__( '&quot;PAIMIO CHAIR&quot;', 'paimio' ); ?>","width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'paimio' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"borderColor":"primary","backgroundColor":"background","textColor":"primary"} /-->
 
 <!-- wp:spacer {"height":"10px"} -->
 <div style="height:10px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -87,9 +87,9 @@
 <p class="has-text-align-center has-jost-font-family" style="font-size:0.7rem;font-style:normal;font-weight:300">
 <?php
     /* Translators: WordPress link. */
-    $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'aalto' ) ) . '" rel="nofollow">WordPress</a>';
+    $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'paimio' ) ) . '" rel="nofollow">WordPress</a>';
     echo sprintf(
-        esc_html__( 'Designed with %1$s', 'aalto' ),
+        esc_html__( 'Designed with %1$s', 'paimio' ),
         $wordpress_link
     );
 ?>
