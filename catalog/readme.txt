@@ -12,6 +12,9 @@ Catalog is a free, responsive WordPress block theme specifically designed for cr
 
 == Changelog ==
 
+= 0.0.2 =
+* Catalog: patternize footer template part
+
 = 0.0.1 =
 * Initial release
 
