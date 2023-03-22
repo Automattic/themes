@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: barnsbury2323/comments
+ * slug: barnsbury23/comments
  * inserter: no
  */
 

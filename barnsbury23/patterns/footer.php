@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: barnsbury2323/footer
+ * Slug: barnsbury23/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
@@ -19,9 +19,9 @@
 		<p class="has-text-align-center">
 			<?php
 				/* Translators: WordPress link. */
-				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'barnsbury2323' ) ) . '" rel="nofollow">WordPress</a>';
+				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'barnsbury23' ) ) . '" rel="nofollow">WordPress</a>';
 				echo sprintf(
-					esc_html__( 'Designed with %1$s', 'barnsbury2323' ),
+					esc_html__( 'Designed with %1$s', 'barnsbury23' ),
 					$wordpress_link
 				);
 				?>
