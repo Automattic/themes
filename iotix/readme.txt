@@ -12,6 +12,9 @@ A simple iotix theme.
 
 == Changelog ==
 
+= 0.0.2 =
+* Iotix: fix link and text styles (#6943)
+
 = 0.0.1 =
 * Initial release
 
