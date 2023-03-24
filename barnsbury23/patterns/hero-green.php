@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:spacer {"height":"1rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 <div style="margin-top:0px;margin-bottom:0px;height:1rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -15,11 +16,11 @@
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="margin-top:0px;margin-bottom:0px"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:group {"style":{"spacing":{"blockGap":"1rem","padding":{"right":"30px"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-right:30px"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Locally Farmed Organic Vegetable Delivery</h1>
+<h1 class="wp-block-heading"><?php echo esc_html__( 'Locally Farmed Organic Vegetable Delivery', 'barnsbury23' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>20 years of growing organic vegetables and delivering vegetable boxes from our 12-acre farm in Sussex.</p>
+<p><?php echo esc_html__( '20 years of growing organic vegetables and delivering vegetable boxes from our 12-acre farm in Sussex.', 'barnsbury23' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -29,7 +30,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"border":{"width":"2px"},"typography":{"textTransform":"uppercase","fontSize":"0.9rem","letterSpacing":"5%"},"spacing":{"padding":{"left":"24px","right":"24px","top":"16px","bottom":"16px"}}},"borderColor":"tertiary","fontFamily":"rubik"} -->
-<div class="wp-block-button has-custom-font-size has-rubik-font-family" style="font-size:0.9rem;letter-spacing:5%;text-transform:uppercase"><a class="wp-block-button__link has-border-color has-tertiary-border-color wp-element-button" style="border-width:2px;padding-top:16px;padding-right:24px;padding-bottom:16px;padding-left:24px">Get in touch</a></div>
+<div class="wp-block-button has-custom-font-size has-rubik-font-family" style="font-size:0.9rem;letter-spacing:5%;text-transform:uppercase"><a class="wp-block-button__link has-border-color has-tertiary-border-color wp-element-button" style="border-width:2px;padding-top:16px;padding-right:24px;padding-bottom:16px;padding-left:24px"><?php echo esc_html__( 'Get in touch', 'barnsbury23' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
@@ -40,7 +41,7 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barnsbury23_display.jpg","id":459,"dimRatio":0,"minHeight":520} -->
-<div class="wp-block-cover" style="min-height:520px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-459" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barnsbury23_display.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-cover" style="min-height:520px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-459" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barnsbury23_display.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"<?php echo esc_attr__( 'Write title…', 'barnsbury23' ); ?>","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>

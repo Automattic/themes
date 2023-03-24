@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:spacer {"height":"2rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 <div style="margin-top:0px;margin-bottom:0px;height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -37,7 +38,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"2.2rem","fontStyle":"normal","fontWeight":"400"}},"fontFamily":"piazzolla"} -->
-<p class="has-piazzolla-font-family" style="font-size:2.2rem;font-style:normal;font-weight:400">“We are very happy with the box and we value that we can have the standard box or choose our own.”</p>
+<p class="has-piazzolla-font-family" style="font-size:2.2rem;font-style:normal;font-weight:400"><?php echo esc_html__( '“We are very happy with the box and we value that we can have the standard box or choose our own.”', 'barnsbury23' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -51,7 +52,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"italic","fontWeight":"300","fontSize":"1.4rem","letterSpacing":"5%","lineHeight":"1"}},"fontFamily":"rubik"} -->
-<p class="has-rubik-font-family" style="font-size:1.4rem;font-style:italic;font-weight:300;letter-spacing:5%;line-height:1">Joseph</p>
+<p class="has-rubik-font-family" style="font-size:1.4rem;font-style:italic;font-weight:300;letter-spacing:5%;line-height:1"><?php echo esc_html__( 'Joseph', 'barnsbury23' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -60,14 +61,14 @@
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"style":{"spacing":{"blockGap":"2rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:quote -->
 <blockquote class="wp-block-quote"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="font-style:normal;font-weight:300">I'm really appreciating the quality and presentation. The flavor of the veg is outstanding.</p>
-<!-- /wp:paragraph --><cite>Michele</cite></blockquote>
+<p class="has-small-font-size" style="font-style:normal;font-weight:300"><?php echo esc_html__( "I'm really appreciating the quality and presentation. The flavor of the veg is outstanding.", 'barnsbury23' ); ?></p>
+<!-- /wp:paragraph --><cite><?php echo esc_html__( 'Michele', 'barnsbury23' ); ?></cite></blockquote>
 <!-- /wp:quote -->
 
 <!-- wp:quote -->
 <blockquote class="wp-block-quote"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"small"} -->
-<p class="has-small-font-size" style="font-style:normal;font-weight:300">Their service is brilliant! I really hope some of them now use your service.</p>
-<!-- /wp:paragraph --><cite>Fiona</cite></blockquote>
+<p class="has-small-font-size" style="font-style:normal;font-weight:300"><?php echo esc_html__( 'Their service is brilliant! I really hope some of them now use your service.', 'barnsbury23' ); ?></p>
+<!-- /wp:paragraph --><cite><?php echo esc_html__( 'Fiona', 'barnsbury23' ); ?></cite></blockquote>
 <!-- /wp:quote --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
