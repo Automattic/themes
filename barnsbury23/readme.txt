@@ -1,7 +1,7 @@
 === Barnsbury23 ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ The recently updated Barnsbury is an earthy, friendly theme made with farming an
 
 Barnsbury23 WordPress Theme, (C) 2023 the WordPress team
 Barnsbury23 is distributed under the terms of the GNU GPL.
-Barnsbury23 is based on Barnsbury (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Barnsbury23 is based on Barnsbury (https://wordpress.com/theme/barnsbury), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
