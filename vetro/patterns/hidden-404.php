@@ -22,7 +22,7 @@
 <p class="has-text-align-left has-small-font-size" style="font-style:normal;font-weight:500;line-height:1.4"><?php echo esc_html__( 'This page could not be found.', 'vetro' ); ?><br><?php echo esc_html__( 'Maybe try a search?', 'vetro' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'vetro' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'vetro' ); ?>","buttonUseIcon":true,"align":"center","style":{"border":{"radius":"4px","width":"1px"}},"borderColor":"foreground","backgroundColor":"foreground"} /--></div>
+<!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'vetro' ); ?>","showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'vetro' ); ?>","buttonUseIcon":true,"align":"center","style":{"border":{"radius":"4px","width":"1px"}},"backgroundColor":"foreground","textColor":"background"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:spacer {"height":"90px"} -->
