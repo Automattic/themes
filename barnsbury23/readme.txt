@@ -30,3 +30,18 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Bangers Font, Copyright Vernon Adams
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://fonts.google.com/specimen/Bangers/about
+
+Pizzolla Font, Copyright Juan Pablo del Peral & Huerta Tipográfica
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://github.com/huertatipografica/piazzolla
+
+Rubik Font, Copyright Philipp Hubert and Sebastian Fischer at Hubert & Fischer 
+as part of the Chrome Cube Lab project
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://github.com/googlefonts/Rubik 
