@@ -12,6 +12,9 @@ Paimio is a minimal blogging theme inspired by architects and designers Alvar, A
 
 == Changelog ==
 
+= 1.0.1 =
+* Paimio: fix dotCom issues (#6930)
+
 = 1.0.0 =
 * Initial release
 
