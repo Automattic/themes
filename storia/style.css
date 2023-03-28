@@ -1,0 +1,133 @@
+/*
+Theme Name: Storia
+Theme URI: https://wordpress.com/theme/storia/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A visual story theme.
+Requires at least: 6.0
+Tested up to: 6.1.1
+Requires PHP: 5.7
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: storia
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks
+*/
+
+/*
+ * Font smoothing
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .3em;
+}
+
+/* Overrides the Gutenberg styles for the outline button */
+.wp-block-button.is-style-outline>.wp-block-button__link {
+	padding: calc(1.050420168em - 1px) calc(2.100840336em - 1px);
+	border: 1px solid var(--wp--preset--color--foreground);
+}
+
+/* Reset the Gutenberg style for the author byline */
+.wp-block-post-author__byline {
+	font-size: 1em;
+}
+
+/* There is no option for border-radius yet */
+.wp-block-post-author__avatar img {
+	border-radius: 999px;
+}
+
+/*
+ * Needed until https://github.com/WordPress/gutenberg/issues/34196 or something like it.
+ */
+.wp-block-tag-cloud.is-style-outline a {
+	border-radius: 999px;
+	padding: 0 1rem;
+}
+
+.wp-block-tag-cloud.is-style-outline a:hover {
+	color: var(--wp--preset--color--background);
+	background-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Remove the default margin bottom from term description and post excerpt.
+ */
+.wp-block-term-description p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
+
+/*
+ * Needed to style Jetpack Form
+ */
+.wp-block-jetpack-contact-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-jetpack-mailchimp input:not([type=submit]):not([type=checkbox]),
+.wp-block-jetpack-revue input:not([type=submit]):not([type=checkbox]),
+.wp-block-jetpack-contact-form select,
+.wp-block-jetpack-contact-form textarea {
+	background-color: var(--wp--preset--color--background);
+	border: 1px solid var(--wp--preset--color--tertiary);
+	font-family: inherit;
+	font-size: 1em;
+	padding: 0.75rem;
+}
+
+.wp-block-jetpack-contact-form .wp-block-jetpack-button button,
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button button,
+.wp-block-jetpack-revue .wp-block-jetpack-button button {
+	border-width:  0;
+	font-size: var(--wp--preset--font-size--x-small);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	line-height: inherit;
+	padding: 1.050420168em 2.100840336em;
+}
