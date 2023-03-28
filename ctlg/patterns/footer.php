@@ -27,6 +27,6 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"align":"left","fontSize":"small"} -->
-<p class="has-text-align-left has-small-font-size"><?php echo esc_html__( 'Designed with', 'ctlg' ); ?><a rel="nofollow" href="https://wordpress.org"><?php echo esc_html__( 'WordPress', 'ctlg' ); ?></a></p>
+<p class="has-text-align-left has-small-font-size"><?php echo esc_html__( 'Designed with', 'ctlg' ); ?> <a rel="nofollow" href="https://wordpress.org"><?php echo esc_html__( 'WordPress', 'ctlg' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
