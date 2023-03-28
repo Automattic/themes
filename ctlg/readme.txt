@@ -12,6 +12,9 @@ CTLG is a free, responsive WordPress block theme specifically designed for creat
 
 == Changelog ==
 
+= 0.0.3 =
+* CTLG fixes (#6951)
+
 = 0.0.2 =
 * CTLG: patternize footer template part
 
