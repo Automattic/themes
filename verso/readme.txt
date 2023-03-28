@@ -1,7 +1,7 @@
 === Verso ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,3 +30,9 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Crimson Text Font, Copyright Sebastian Kosch
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://github.com/googlefonts/Crimson
