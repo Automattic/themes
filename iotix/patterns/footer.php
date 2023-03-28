@@ -64,6 +64,5 @@
         <!-- /wp:paragraph -->
         <!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"horizontal"},"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->
     </div><!-- /wp:group -->
-
 </div><!-- /wp:group -->
 </div><!-- /wp:group -->
