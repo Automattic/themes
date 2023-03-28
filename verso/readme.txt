@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Verso pays tribute to the revered Portuguese writer and poet Fernando Pessoa, and his various pseudonyms. Its minimalist design features a black and white color scheme, complemented by an elegant serif font. Verso\'s carefully crafted templates boast a comfortable content width and meticulously considered white space that create a calming and immersive reading experience, ideal for the appreciation of poetry.
+Verso pays tribute to the revered Portuguese writer and poet Fernando Pessoa, and his various pseudonyms. Its minimalist design features a black and white color scheme, complemented by an elegant serif font. Verso's carefully crafted templates boast a comfortable content width and meticulously considered white space that create a calming and immersive reading experience, ideal for the appreciation of poetry.
 
 == Changelog ==
 
