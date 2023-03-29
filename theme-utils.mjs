@@ -10,6 +10,7 @@ const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxRootFolder = '/home/wpdev/public_html/';
+const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
 const isWin = process.platform === 'win32';
 const premiumThemes = ['videomaker', 'videomaker-white'];
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
@@ -267,8 +268,13 @@ async function pushButtonDeploy() {
 
 		let changedThemes = await getChangedThemes(hash);
 
-		await pushChangesToSandbox();
+		if (!changedThemes.length) {
+			console.log(`\n\nEverything is upto date. Nothing new to deploy.\n\n`);
+			return;
+		}
 
+		await pushChangesToSandbox();
+		await createGlotPressProject(changedThemes);
 
 		//push changes (from version bump)
 		if (thingsWentBump) {
@@ -1130,6 +1136,15 @@ async function tagDeployment(options = {}) {
 		git tag -a ${tag} -m "${message}"
 		git push origin ${tag}
 	`, true);
+}
+
+async function createGlotPressProject(changedThemes) {
+	for (const themeSlug of changedThemes) {
+		await executeOnSandbox(`
+			cd ${sandboxPublicThemesFolder};
+			php ${glotPressScript} ${sandboxPublicThemesFolder}/${themeSlug};
+		`, true);
+	}
 }
 
 /*
