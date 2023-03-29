@@ -26,6 +26,8 @@
 		"deploy:zip": "node ./theme-utils.mjs build-com-zip",
 		"deploy:land": "node ./theme-utils.mjs land-diff",
 		"prelaunch:glotpress": "node ./theme-utils.mjs create-glotpress",
+		"prelaunch:demosite": "node ./theme-utils.mjs demosite",
+		"launch": "node ./theme-utils.mjs launch-on-dot-com",
 		"core:pull": "node ./theme-utils.mjs pull-core-themes",
 		"core:push": "node ./theme-utils.mjs push-core-themes",
 		"core:sync": "node ./theme-utils.mjs sync-core-theme",
@@ -59,6 +61,9 @@
 		]
 	},
 	"dependencies": {
+		"colors": "^1.4.0",
+		"compress-images": "^2.0.5",
+		"inquirer-autocomplete-prompt": "^2.0.0",
 		"wp-prettier": "^2.0.5"
 	},
 	"engines": {

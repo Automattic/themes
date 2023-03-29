@@ -5,6 +5,7 @@ import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
 import progressbar from 'string-progressbar';
+import colors from 'colors';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -130,6 +131,10 @@ const commands = {
 	"escape-patterns": {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
+	},
+	"launch-on-dot-com": {
+		helpText: 'Launch block theme on wordpress.com',
+		run: () => launchTheme()
 	},
 	"help": {
 		helpText: 'Displays the main help message.',
@@ -1378,4 +1383,199 @@ function startProgress(length) {
 			render();
 		}
 	};
+}
+
+async function launchTheme() {
+	function launchBanner() {
+		console.log(
+			colors.bgBlack.white(`
+       |       ___                            .
+      / \\      | |                            .
+     / _ \\     |t|     THEME LAUNCH CENTER    .
+    | a8c |====|h|                            .
+    |'._.'|    |e|     complete the launch    .
+    |     |    |m|       status checks to     .
+  ,'|  |  |\`.  |e|     begin the countdown    .
+ /  |  |  |  \\ |s|                            .
+ |,-'--|--'-.| | |                            .
+_______________|_|____________________________.
+	`,
+		));
+	}
+
+	function abort() {
+		console.log('\n',colors.red('Launch Aborted!'),'\n');
+	}
+
+
+	// Launch prompts
+	launchBanner();
+
+	const {isReady} = await inquirer.prompt({
+		type: 'confirm',
+		name: 'isReady',
+		message: 'Ready to launch a theme?',
+		default: false,
+	});
+
+	if (!isReady) {
+		return abort();
+	}
+
+	console.log(`\n ${colors.bgGreen.bold('Step 1:')}`);
+	console.log(colors.bold('\n Let\'s get started by filling few details.'), '\n');
+
+	const questions = [{
+		type: 'text',
+		name: 'themeSlug',
+		message: 'Enter the theme name',
+		validate: value => value && (/^[a-z0-9]+$/gm).test(value) ? true : 'Give a valid theme name.',
+		default: 'ex: pixl'
+	}, {
+		type: 'text',
+		name: 'demosite',
+		message: 'Enter the theme demo site',
+		validate: value => value && (/^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?$/gm).test(value) ? true : 'Give a valid site: demosite.wordpress.com',
+		default: `ex: demo.wordpress.com`,
+	}, {
+		type: 'text',
+		name: 'username',
+		message: 'Enter your wpcom username',
+		validate: value => value && (/^[a-z0-9]+$/gm).test(value) ? true : 'Give a valid username.',
+	}];
+
+	const { themeSlug, demosite, username } = await inquirer.prompt(questions);
+
+	console.log(`\n ${colors.bgGreen.bold('Step 2:')} \n`);
+
+	const {configDemoSite} = await inquirer.prompt({
+		type: 'confirm',
+		name: 'configDemoSite',
+		message: 'Ready to configure demo site?',
+		default: false,
+	});
+
+	if (!configDemoSite) {
+		return abort();
+	}
+
+	// activate theme
+	console.log(`\nActivating the theme [${themeSlug}] on demo site.\n`);
+	await executeOnSandbox(`
+		cd ${sandboxPublicThemesFolder};
+		wp theme activate pub/${themeSlug} --url=${demosite};
+		exit;
+	`, false, true).then(() => {
+		console.log('Theme activated.\n');
+	}).catch(ex => {
+		console.log(colors.red.bold('ERROR: failed to activate the theme. Try manually.'), ex, '\n\n');
+	})
+
+	const { stickers } = await inquirer.prompt({
+		type: 'confirm',
+		name: 'stickers',
+		message: 'Let\'s add blog stickers the demo site?',
+		default: false,
+	});
+
+	if (stickers) {
+		console.log('\nAdding blog stickers to the demo site.')
+		await executeOnSandbox(`
+			wp blog-stickers add --sticker=theme-demo-site --who=${username} --url=${demosite} --note=[pub/${themeSlug}]
+		`, false, true);
+		console.log('\nAll done adding stickers.');
+	}
+
+	console.log(`\n open the url: ${colors.blue.underline(`https://${demosite}`)} and complete the following.\n`);
+
+	await inquirer.prompt({
+		type: 'confirm',
+		name: 'blueFlag',
+		message: 'Add blue flag to the demo site and confirm.',
+		default: false,
+		validate: value => value & value === 'y' ? true : 'Add blue flag and confirm.'
+	});
+
+	console.log(`\n open the url: ${colors.blue.underline(`https://wordpress.com/settings/general/${demosite}`)}\n and complete the following.\n`);
+
+	await inquirer.prompt({
+		type: 'confirm',
+		name: 'noIndex',
+		message: 'Discourage search engines from indexing demo site',
+		default: false,
+		validate: value => value & value === 'y' ? true : 'Update the flag and confirm.'
+	}, {
+		type: 'confirm',
+		name: 'disableComments',
+		message: 'Disable comments for the demo site and confirm.',
+		default: false,
+		validate: value => value & value === 'y' ? true : 'Disable comments and confirm.'
+	}, {
+		type: 'confirm',
+		name: 'demoContent',
+		message: 'Make sure demo site is setup with right content and confirm.',
+		default: false,
+		validate: value => value & value === 'y' ? true : 'confirm to proceed.'
+	});
+
+	console.log(`\n ${colors.bgGreen.bold('Step 3:')} \n`);
+
+	const {glotpress} = await inquirer.prompt({
+		type: 'confirm',
+		name: 'glotpress',
+		message: 'Do you want to create GlotPress project for the theme?',
+		default: false,
+	});
+
+	if (glotpress) {
+		await createGlotPress(themeSlug);
+	}
+
+	console.log(`\n ${colors.bgGreen.bold('Step 4:')} \n`);
+
+	console.log(`\n ${colors.yellow('Theme Showcase.')} \n`);
+
+	const {showcase} = await inquirer.prompt({
+		type: 'confirm',
+		name: 'showcase',
+		message: 'Have you created and published a showcase for the theme?',
+		default: false,
+	});
+
+	if (!showcase) {
+		console.log(`open the url: ${colors.underline('https://theme.wordpress.com/wp-admin/edit.php?post_type=showcase_theme')} to create/publish showcase post.`)
+
+		await inquirer.prompt({
+			type: 'confirm',
+			name: 'showcase',
+			message: 'Published the showcase for the theme and confirm.',
+			default: false,
+			validate: value => value === 'y' ? true : 'Publish the showcase and confirm.'
+		});
+	}
+
+	console.log(`\n ${colors.bgGreen.bold('Step 5:')} \n`);
+
+	console.log(`\n ${colors.yellow('Communicate to Happiness about theme launch.')} \n`);
+
+	console.log(`open the url: ${colors.underline('https://theme.wordpress.com/wp-admin/edit.php?post_type=showcase_theme')} to create P2 post.`);
+	console.log(`Example post: ${colors.underline('https://wpcomhappy.wordpress.com/2023/03/22/heads-up-launching-new-theme-paimio/')}`);
+
+	await inquirer.prompt({
+		type: 'confirm',
+		name: 'showcase',
+		message: 'Create a P2 post on WP.com Happy and confirm.',
+		default: false,
+		validate: value => value === 'y' ? true : 'Create a post and confirm.'
+	});
+
+	console.log(`\n ${colors.bgGreen.bold('Step 5:')} \n`);
+
+	console.log(`\n ${colors.yellow('Deploy theme on WP.com')} \n`);
+
+
+
+	console.log('Great! You are all done.');
+
+	console.log('When it\'s time network enable the theme.');
 }
