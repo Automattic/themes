@@ -36,3 +36,7 @@ This theme bundles the following third-party resources:
 Crimson Text Font, Copyright Sebastian Kosch
 Licensed under the terms of the SIL Open Font License (v1.1)
 Source: https://github.com/googlefonts/Crimson
+
+Image of Fernando Pessoa
+Public domain
+Source: https://picryl.com/media/pessoabaixa-a6a60d
