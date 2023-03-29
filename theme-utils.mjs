@@ -10,6 +10,8 @@ const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxRootFolder = '/home/wpdev/public_html/';
+const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
+const arcCmd = `/usr/local/bin/arc`;
 const isWin = process.platform === 'win32';
 const premiumThemes = ['videomaker', 'videomaker-white'];
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
@@ -36,11 +38,11 @@ const commands = {
 	},
 	"clean-premium-sandbox": {
 		helpText: 'Perform a hard reset, checkout trunk, and pull on the premium themes working copy on your sandbox.',
-		run: cleanPremiumSandbox
+		run: () => cleanSandbox('premium')
 	},
 	"clean-all-sandbox": {
 		helpText: 'Perform a hard reset, checkout trunk, and pull on both the public and premium themes working copies on your sandbox.',
-		run: cleanAllSandbox
+		run: () => cleanSandbox('all')
 	},
 	"push-to-sandbox": {
 		helpText: 'Uses rsync to copy all modified files for all themes from the local machine to your sandbox.',
@@ -67,6 +69,11 @@ const commands = {
 		helpText: 'Run arc land to merge in the specified diff id.',
 		additionalArgs: '<arc diff id>',
 		run: (args) => landChanges(args?.[1])
+	},
+	"create-glotpress": {
+		helpText: 'Create GlotPress project for the theme.',
+		additionalArgs: '<theme-name>',
+		run: (args) => createGlotPress(args?.[1])
 	},
 	"deploy-preview": {
 		helpText: 'Display a list of the changes to be deployed.',
@@ -508,7 +515,7 @@ async function checkForDeployability() {
  Land the changes from the given diff ID.  This is the "production merge".
 */
 async function landChanges(diffId) {
-	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; /usr/local/bin/arc patch ${diffId}; /usr/local/bin/arc land; exit;"`, true);
+	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; ${arcCmd} patch ${diffId}; ${arcCmd} land; exit;"`, true);
 }
 
 async function getChangedThemes(hash) {
@@ -859,47 +866,14 @@ async function getActionableThemes() {
  checkout origin/trunk and ensure it's up-to-date.
  Remove any other changes.
 */
-async function cleanSandbox() {
-	console.log('Cleaning the Themes Sandbox');
-	await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		git reset --hard HEAD;
-		git clean -fd;
-		git checkout trunk;
-		git pull;
-		echo;
-		git status
-	`, true);
-	console.log('All done cleaning.');
-}
+async function cleanSandbox(type = 'public') {
+	const sandboxFolder = type === 'premium' ? sandboxPremiumThemesFolder : 
+							type === 'all' ? sandboxRootFolder : 
+								sandboxPublicThemesFolder;
 
-/*
- Clean the premium theme sandbox.
- checkout origin/trunk and ensure it's up-to-date.
- Remove any other changes.
-*/
-async function cleanPremiumSandbox() {
-	console.log('Cleaning the Themes Sandbox');
+	console.log(`Cleaning the Themes (${type}) Sandbox`);
 	await executeOnSandbox(`
-		cd ${sandboxPremiumThemesFolder};
-		git reset --hard HEAD;
-		git clean -fd;
-		git checkout trunk;
-		git pull;
-		echo;
-		git status
-	`, true);
-	console.log('All done cleaning.');
-}
-/*
- Clean the entire sandbox.
- checkout origin/trunk and ensure it's up-to-date.
- Remove any other changes.
-*/
-async function cleanAllSandbox() {
-	console.log('Cleaning the Entire Sandbox');
-	let response = await executeOnSandbox(`
-		cd ${sandboxRootFolder};
+		cd ${sandboxFolder};
 		git reset --hard HEAD;
 		git clean -fd;
 		git checkout trunk;
@@ -1069,14 +1043,14 @@ Subscribers:
  Open the phabricator diff in your browser.
  Provide the URL of the phabricator diff.
 */
-async function createPhabricatorDiff(commitMessage) {
+async function createPhabricatorDiff(commitMessage, branch = 'deploy') {
 
 	console.log('creating Phabricator Diff');
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
-		git branch -D deploy
-		git checkout -b deploy
+		git branch -D ${branch}
+		git checkout -b ${branch}
 		git add --all
 		git commit -m "${commitMessage}"
 		arc diff --create --verbatim
@@ -1130,6 +1104,40 @@ async function tagDeployment(options = {}) {
 		git tag -a ${tag} -m "${message}"
 		git push origin ${tag}
 	`, true);
+}
+
+async function createGlotPress(themeSlug) {
+	if (!themeSlug) {
+		console.log("ERROR: Enter a valid theme name to create GlotPress project");
+		return;
+	}
+
+	themeSlug = themeSlug.replace('pub/', '');
+
+	await cleanSandbox();
+
+	await executeOnSandbox(`
+		cd ${sandboxPublicThemesFolder};
+		php ${glotPressScript} ${sandboxPublicThemesFolder}/${themeSlug};
+	`, true);
+
+	const diffUrl = await createPhabricatorDiff(`create GlotPress project for the Theme: ${themeSlug}`, 'glotpress');
+	
+	console.clear();
+	let prompt = await inquirer.prompt([{
+		type: 'confirm',
+		message: 'You are about to land deploy GlotPres project on wpcom. Are you ready to continue?',
+		name: "continue",
+		default: false
+	}]);
+
+	if (!prompt.continue) {
+		return;
+	}
+
+	const diffId = diffUrl.split('a8c.com/')[1];
+	await landChanges(diffId);
+	await deployThemes([themeSlug]);
 }
 
 /*
