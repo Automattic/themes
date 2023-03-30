@@ -1,19 +1,19 @@
-import { spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
-import progressbar from 'string-progressbar';
-import colors from 'colors';
+import { 
+	executeOnSandbox,
+	cleanSandbox,
+	sandboxPublicThemesFolder,
+	sandboxPremiumThemesFolder,
+	landChanges,
+	createPhabricatorDiff,
+	deployThemes,
+	buildComZips
+} from './theme-helper-functions.mjs';
 
-const remoteSSH = 'wpcom-sandbox';
-const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
-const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
-const sandboxRootFolder = '/home/wpdev/public_html/';
-const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
-const arcCmd = `/usr/local/bin/arc`;
-const isWin = process.platform === 'win32';
 const premiumThemes = ['videomaker', 'videomaker-white'];
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
 
@@ -70,11 +70,6 @@ const commands = {
 		helpText: 'Run arc land to merge in the specified diff id.',
 		additionalArgs: '<arc diff id>',
 		run: (args) => landChanges(args?.[1])
-	},
-	"create-glotpress": {
-		helpText: 'Create GlotPress project for the theme.',
-		additionalArgs: '<theme-name>',
-		run: (args) => createGlotPress(args?.[1])
 	},
 	"deploy-preview": {
 		helpText: 'Display a list of the changes to be deployed.',
@@ -440,63 +435,6 @@ async function createCorePhabriactorDiff(theme, sinceRevision) {
 }
 
 /*
- Build .zip file for .com
-*/
-async function buildComZip(themeSlug) {
-
-	console.log(`Building ${themeSlug} .zip`);
-
-	let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
-
-	// Gets the theme version (Version:) and minimum WP version (Tested up to:) from the theme's style.css
-	let themeVersion = getThemeMetadata(styleCss, 'Version');
-	let wpVersionCompat = getThemeMetadata(styleCss, 'Requires at least');
-
-	if (themeVersion && wpVersionCompat) {
-		await executeOnSandbox(`php ${sandboxRootFolder}bin/themes/theme-downloads/build-theme-zip.php --stylesheet=pub/${themeSlug} --themeversion=${themeVersion} --wpversioncompat=${wpVersionCompat};`, true);
-	}
-	else {
-		console.log('Unable to build theme .zip.');
-		if (!themeVersion) {
-			console.log('Could not find theme version (Version:) in the theme style.css.');
-		}
-		if (!wpVersionCompat) {
-			console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
-		}
-		console.log('Please build the .zip file for the theme manually.', themeSlug);
-		open('https://mc.a8c.com/themes/downloads/');
-	}
-}
-
-async function buildComZips(themes) {
-	console.log(`Building dotcom .zip files`);
-	const progress = startProgress(themes.length);
-	const failedThemes = []
-	for (let theme of themes) {
-		try {
-			await buildComZip(theme);
-		} catch (err) {
-			console.log(`There was an error building dotcom zip for ${theme}. ${err}`);
-			failedThemes.push(theme);
-		}
-		progress.increment();
-	}
-
-	if (failedThemes.length) {
-		const tableConfig = {
-			columnDefault: {
-				width: 40,
-			},
-			header: {
-				alignment: 'center',
-				content: `There was an error building dotcom zip for following themes.`,
-			}
-		};
-		console.log(table(failedThemes.map(t => [t]), tableConfig));
-	}
-}
-
-/*
  Check to ensure that:
   * The current branch is /trunk
   * That trunk is up-to-date with origin/trunk
@@ -516,13 +454,6 @@ async function checkForDeployability() {
 	return null;
 }
 
-/*
- Land the changes from the given diff ID.  This is the "production merge".
-*/
-async function landChanges(diffId) {
-	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; ${arcCmd} patch ${diffId}; ${arcCmd} land; exit;"`, true);
-}
-
 async function getChangedThemes(hash) {
 	console.log('Determining all changed themes');
 	let themes = await getActionableThemes();
@@ -534,69 +465,6 @@ async function getChangedThemes(hash) {
 		}
 	}
 	return changedThemes;
-}
-
-/*
- Deploy a collection of themes.
- Part of the push-button-deploy process.
- Can also be triggered to deploy a single theme with the command:
- node ./theme-utils.mjs deploy-theme THEMENAME
-*/
-async function deployThemes(themes) {
-
-	let response;
-	const failedThemes = [];
-	const progress = startProgress(themes.length);
-
-	for (let theme of themes) {
-
-		console.log(`Deploying ${theme}`);
-
-		let deploySuccess = false;
-		let attempt = 0;
-
-		while (!deploySuccess && attempt <= 2) {
-
-			attempt++;
-			console.log(`\nattempt #${attempt}\n\n`);
-
-			try {
-				response = await executeOnSandbox(`deploy pub ${theme};exit;`, true, true);
-				deploySuccess = response.includes('successfully deployed to');
-			} catch (error) {
-				deploySuccess = false
-			}
-
-			if (!deploySuccess) {
-				console.log('Deploy was not successful.  Trying again in 10 seconds...');
-				await new Promise(resolve => setTimeout(resolve, 10000));
-			}
-			else {
-				console.log("Deploy successful.");
-			}
-
-		}
-
-		if (!deploySuccess) {
-			console.log(`${theme} was not sucessfully deployed and should be deployed manually.`);
-			failedThemes.push(theme);
-		}
-
-		progress.increment();
-	}
-
-	if (failedThemes.length) {
-		const tableConfig = {
-			columnDefault: {
-				width: 40,
-			},
-			header: {
-				alignment: 'center',
-				content: `Following themes are not deployed.`,
-			}
-		};
-		console.log(table(failedThemes.map(t => [t]), tableConfig));
-	}
 }
 
 /*
@@ -867,29 +735,6 @@ async function getActionableThemes() {
 }
 
 /*
- Clean the theme sandbox.
- checkout origin/trunk and ensure it's up-to-date.
- Remove any other changes.
-*/
-async function cleanSandbox(type = 'public') {
-	const sandboxFolder = type === 'premium' ? sandboxPremiumThemesFolder : 
-							type === 'all' ? sandboxRootFolder : 
-								sandboxPublicThemesFolder;
-
-	console.log(`Cleaning the Themes (${type}) Sandbox`);
-	await executeOnSandbox(`
-		cd ${sandboxFolder};
-		git reset --hard HEAD;
-		git clean -fd;
-		git checkout trunk;
-		git pull;
-		echo;
-		git status
-	`, true);
-	console.log('All done cleaning.');
-}
-
-/*
   Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
 */
 async function pushToSandbox() {
@@ -1044,48 +889,6 @@ Subscribers:
 }
 
 /*
- Create a Phabricator diff with the given message based on the contents currently in the sandbox.
- Open the phabricator diff in your browser.
- Provide the URL of the phabricator diff.
-*/
-async function createPhabricatorDiff(commitMessage, branch = 'deploy') {
-
-	console.log('creating Phabricator Diff');
-
-	let result = await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		git branch -D ${branch}
-		git checkout -b ${branch}
-		git add --all
-		git commit -m "${commitMessage}"
-		arc diff --create --verbatim
-	`, true);
-
-	let phabricatorUrl = getPhabricatorUrlFromResponse(result);
-
-	console.log('Diff Created at: ', phabricatorUrl);
-
-	if (phabricatorUrl) {
-		open(phabricatorUrl);
-	}
-
-	return phabricatorUrl;
-}
-
-/*
- Utility to pull the Phabricator URL from the diff creation command.
- Used by createPhabricatorDiff
-*/
-function getPhabricatorUrlFromResponse(response) {
-	return response
-		?.split('\n')
-		?.find(item => {
-			return item.includes('Revision URI: ');
-		})
-		?.split("Revision URI: ")[1];
-}
-
-/*
  Create a git tag at the current hash.
  In the description include the commit logs since the given hash.
  Include the (cleansed) Phabricator link.
@@ -1109,118 +912,6 @@ async function tagDeployment(options = {}) {
 		git tag -a ${tag} -m "${message}"
 		git push origin ${tag}
 	`, true);
-}
-
-async function createGlotPress(themeSlug) {
-	if (!themeSlug) {
-		console.log("ERROR: Enter a valid theme name to create GlotPress project");
-		return;
-	}
-
-	themeSlug = themeSlug.replace('pub/', '');
-
-	await cleanSandbox();
-
-	await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		php ${glotPressScript} ${sandboxPublicThemesFolder}/${themeSlug};
-	`, true);
-
-	const diffUrl = await createPhabricatorDiff(`create GlotPress project for the Theme: ${themeSlug}`, 'glotpress');
-	
-	console.clear();
-	let prompt = await inquirer.prompt([{
-		type: 'confirm',
-		message: 'You are about to land deploy GlotPres project on wpcom. Are you ready to continue?',
-		name: "continue",
-		default: false
-	}]);
-
-	if (!prompt.continue) {
-		return;
-	}
-
-	const diffId = diffUrl.split('a8c.com/')[1];
-	await landChanges(diffId);
-	await deployThemes([themeSlug]);
-}
-
-/*
- Execute a command on the sandbox.
- Expects the following to be configured in your ~/.ssh/config file:
-
-Host wpcom-sandbox
-	User wpdev
-	HostName SANDBOXURL.wordpress.com
-	ForwardAgent yes
-*/
-function executeOnSandbox(command, logResponse, enablePsudoterminal) {
-
-	if (enablePsudoterminal) {
-		return executeCommand(`ssh -tt -A ${remoteSSH} << EOF
-${command}
-EOF`, logResponse);
-	}
-
-	return executeCommand(`ssh -TA ${remoteSSH} << EOF
-${command}
-EOF`, logResponse);
-}
-
-/*
- Execute a command locally.
-*/
-export async function executeCommand(command, logResponse) {
-	const timeout = 2*60*1000; // 2 min
-
-	return new Promise((resolove, reject) => {
-		let child;
-		let response = '';
-		let errResponse = '';
-
-		if (isWin) {
-			child = spawn('cmd.exe', ['/s', '/c', '"' + command + '"'], {
-				windowsVerbatimArguments: true,
-				stdio: [process.stdin, 'pipe', 'pipe'],
-				detached: true,
-			})
-		} else {
-			child = spawn(process.env.SHELL, ['-c', command], {
-				stdio: [process.stdin, 'pipe', 'pipe'],
-				detached: true,
-			});
-		}
-
-		var timer = setTimeout(() => {
-			try {
-				process.kill(-child.pid, 'SIGKILL');
-			} catch (e) {
-				console.log('Cannot kill process');
-			}
-		}, timeout);
-
-		child.stdout.on('data', (data) => {
-			response += data;
-			if (logResponse) {
-				console.log(data.toString());
-			}
-		});
-
-		child.stderr.on('data', (data) => {
-			errResponse += data;
-			if (logResponse) {
-				console.log(data.toString());
-			}
-		});
-
-		child.on('exit', (code) => {
-			clearTimeout(timer)
-			if (code !== 0) {
-				reject(errResponse.trim());
-			}
-			resolove(response.trim());
-		});
-	});
 }
 
 async function escapePatterns() {
@@ -1369,213 +1060,3 @@ async function escapePatterns() {
 	}
 }
 
-function startProgress(length) {
-	let current = 0;
-	function render() {
-		const [progress, percentage] = progressbar.filledBar(length, current);
-		console.log('\nProgress:', [progress, Math.round(percentage*100)/100], `${current}/${length}\n`);
-	}
-
-	render();
-	return {
-		increment() {
-			current++;
-			render();
-		}
-	};
-}
-
-async function launchTheme() {
-	function launchBanner() {
-		console.log(
-			colors.bgBlack.white(`
-       |       ___                            .
-      / \\      | |                            .
-     / _ \\     |t|     THEME LAUNCH CENTER    .
-    | a8c |====|h|                            .
-    |'._.'|    |e|     complete the launch    .
-    |     |    |m|       status checks to     .
-  ,'|  |  |\`.  |e|     begin the countdown    .
- /  |  |  |  \\ |s|                            .
- |,-'--|--'-.| | |                            .
-_______________|_|____________________________.
-	`,
-		));
-	}
-
-	function abort() {
-		console.log('\n',colors.red('Launch Aborted!'),'\n');
-	}
-
-
-	// Launch prompts
-	launchBanner();
-
-	const {isReady} = await inquirer.prompt({
-		type: 'confirm',
-		name: 'isReady',
-		message: 'Ready to launch a theme?',
-		default: false,
-	});
-
-	if (!isReady) {
-		return abort();
-	}
-
-	console.log(`\n ${colors.bgGreen.bold('Step 1:')}`);
-	console.log(colors.bold('\n Let\'s get started by filling few details.'), '\n');
-
-	const questions = [{
-		type: 'text',
-		name: 'themeSlug',
-		message: 'Enter the theme name',
-		validate: value => value && (/^[a-z0-9]+$/gm).test(value) ? true : 'Give a valid theme name.',
-		default: 'ex: pixl'
-	}, {
-		type: 'text',
-		name: 'demosite',
-		message: 'Enter the theme demo site',
-		validate: value => value && (/^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?$/gm).test(value) ? true : 'Give a valid site: demosite.wordpress.com',
-		default: `ex: demo.wordpress.com`,
-	}, {
-		type: 'text',
-		name: 'username',
-		message: 'Enter your wpcom username',
-		validate: value => value && (/^[a-z0-9]+$/gm).test(value) ? true : 'Give a valid username.',
-	}];
-
-	const { themeSlug, demosite, username } = await inquirer.prompt(questions);
-
-	console.log(`\n ${colors.bgGreen.bold('Step 2:')} \n`);
-
-	const {configDemoSite} = await inquirer.prompt({
-		type: 'confirm',
-		name: 'configDemoSite',
-		message: 'Ready to configure demo site?',
-		default: false,
-	});
-
-	if (!configDemoSite) {
-		return abort();
-	}
-
-	// activate theme
-	console.log(`\nActivating the theme [${themeSlug}] on demo site.\n`);
-	await executeOnSandbox(`
-		cd ${sandboxPublicThemesFolder};
-		wp theme activate pub/${themeSlug} --url=${demosite};
-		exit;
-	`, false, true).then(() => {
-		console.log('Theme activated.\n');
-	}).catch(ex => {
-		console.log(colors.red.bold('ERROR: failed to activate the theme. Try manually.'), ex, '\n\n');
-	})
-
-	const { stickers } = await inquirer.prompt({
-		type: 'confirm',
-		name: 'stickers',
-		message: 'Let\'s add blog stickers the demo site?',
-		default: false,
-	});
-
-	if (stickers) {
-		console.log('\nAdding blog stickers to the demo site.')
-		await executeOnSandbox(`
-			wp blog-stickers add --sticker=theme-demo-site --who=${username} --url=${demosite} --note=[pub/${themeSlug}]
-		`, false, true);
-		console.log('\nAll done adding stickers.');
-	}
-
-	console.log(`\n open the url: ${colors.blue.underline(`https://${demosite}`)} and complete the following.\n`);
-
-	await inquirer.prompt({
-		type: 'confirm',
-		name: 'blueFlag',
-		message: 'Add blue flag to the demo site and confirm.',
-		default: false,
-		validate: value => value & value === 'y' ? true : 'Add blue flag and confirm.'
-	});
-
-	console.log(`\n open the url: ${colors.blue.underline(`https://wordpress.com/settings/general/${demosite}`)}\n and complete the following.\n`);
-
-	await inquirer.prompt({
-		type: 'confirm',
-		name: 'noIndex',
-		message: 'Discourage search engines from indexing demo site',
-		default: false,
-		validate: value => value & value === 'y' ? true : 'Update the flag and confirm.'
-	}, {
-		type: 'confirm',
-		name: 'disableComments',
-		message: 'Disable comments for the demo site and confirm.',
-		default: false,
-		validate: value => value & value === 'y' ? true : 'Disable comments and confirm.'
-	}, {
-		type: 'confirm',
-		name: 'demoContent',
-		message: 'Make sure demo site is setup with right content and confirm.',
-		default: false,
-		validate: value => value & value === 'y' ? true : 'confirm to proceed.'
-	});
-
-	console.log(`\n ${colors.bgGreen.bold('Step 3:')} \n`);
-
-	const {glotpress} = await inquirer.prompt({
-		type: 'confirm',
-		name: 'glotpress',
-		message: 'Do you want to create GlotPress project for the theme?',
-		default: false,
-	});
-
-	if (glotpress) {
-		await createGlotPress(themeSlug);
-	}
-
-	console.log(`\n ${colors.bgGreen.bold('Step 4:')} \n`);
-
-	console.log(`\n ${colors.yellow('Theme Showcase.')} \n`);
-
-	const {showcase} = await inquirer.prompt({
-		type: 'confirm',
-		name: 'showcase',
-		message: 'Have you created and published a showcase for the theme?',
-		default: false,
-	});
-
-	if (!showcase) {
-		console.log(`open the url: ${colors.underline('https://theme.wordpress.com/wp-admin/edit.php?post_type=showcase_theme')} to create/publish showcase post.`)
-
-		await inquirer.prompt({
-			type: 'confirm',
-			name: 'showcase',
-			message: 'Published the showcase for the theme and confirm.',
-			default: false,
-			validate: value => value === 'y' ? true : 'Publish the showcase and confirm.'
-		});
-	}
-
-	console.log(`\n ${colors.bgGreen.bold('Step 5:')} \n`);
-
-	console.log(`\n ${colors.yellow('Communicate to Happiness about theme launch.')} \n`);
-
-	console.log(`open the url: ${colors.underline('https://theme.wordpress.com/wp-admin/edit.php?post_type=showcase_theme')} to create P2 post.`);
-	console.log(`Example post: ${colors.underline('https://wpcomhappy.wordpress.com/2023/03/22/heads-up-launching-new-theme-paimio/')}`);
-
-	await inquirer.prompt({
-		type: 'confirm',
-		name: 'showcase',
-		message: 'Create a P2 post on WP.com Happy and confirm.',
-		default: false,
-		validate: value => value === 'y' ? true : 'Create a post and confirm.'
-	});
-
-	console.log(`\n ${colors.bgGreen.bold('Step 5:')} \n`);
-
-	console.log(`\n ${colors.yellow('Deploy theme on WP.com')} \n`);
-
-
-
-	console.log('Great! You are all done.');
-
-	console.log('When it\'s time network enable the theme.');
-}
