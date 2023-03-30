@@ -12,8 +12,8 @@
 <div class="wp-block-columns"><!-- wp:column {"width":"75%"} -->
 <div class="wp-block-column" style="flex-basis:75%"><!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"id":1015,"sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/autri-taheri-wjdu5pkwyeo-unsplash-1.jpg" alt="" class="wp-image-1015"/></figure>
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pexels-susn-dybvik-3328247.jpg" alt="" /></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -30,22 +30,22 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"35%"} -->
-<div class="wp-block-column" style="flex-basis:35%"><!-- wp:image {"id":1002,"sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/autri-taheri-ceyi_5a-hcg-unsplash.jpg" alt="" class="wp-image-1002"/></figure>
+<div class="wp-block-column" style="flex-basis:35%"><!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pexels-jeremy-bishop-2923590.jpg" alt="" /></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"50%"} -->
-<div class="wp-block-column" style="flex-basis:50%"><!-- wp:image {"id":1005,"sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/oliver-sjostrom-2ojhvhpxrza-unsplash.jpg" alt="" class="wp-image-1005"/></figure>
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/StockSnap_MGCKAHKLE4.jpg" alt="" /></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"33.33%"} -->
-<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"id":1001,"sizeSlug":"full"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/autri-taheri-w72una-s9ry-unsplash.jpg" alt="" class="wp-image-1001"/></figure>
+<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"sizeSlug":"full"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/StockSnap_KN1R3C4LHY.jpg" alt="" /></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

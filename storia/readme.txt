@@ -32,13 +32,17 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-Photography by Autri Taheri via Unsplash
-https://unsplash.com/photos/WjDU5pKWYeo
-https://unsplash.com/photos/cEyI_5a-Hcg
-https://unsplash.com/photos/W72uNA-s9RY
+Photography by Anthony Ginsbrook via StockSnap
+https://stocksnap.io/photo/people-woman-KN1R3C4LHY
 
-Photography by Oliver Sjöström via Unsplash
-https://unsplash.com/photos/2OJhvhpXrZA
+Photography by Oliver Sjöström via StockSnap
+https://stocksnap.io/photo/coconut-tree-MGCKAHKLE4
+
+Photography by Susn Dybvik via Pexels
+https://www.pexels.com/photo/woman-holding-a-black-dslr-camera-and-taking-pictures-3328247/
+
+Photography by Jeremy Bishop via Pexels
+https://www.pexels.com/photo/two-people-carrying-surfboards-on-seashore-2923590/
 
 Included in theme screenshot and in block patterns.
 
