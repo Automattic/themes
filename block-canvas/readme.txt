@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.26 =
+* Remove table CSS from block canvas theme as it has been addressed in Gutenberg (#6954)
+
 = 0.0.24 =
 * Block Canvas: Add no results content to search template (#6860)
 
