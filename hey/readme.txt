@@ -12,6 +12,9 @@ Hey is a simple personal blog theme.
 
 == Changelog ==
 
+= 1.0.1 =
+* fix avatar radius (#6971)
+
 = 1.0.0 =
 * Initial release
 
