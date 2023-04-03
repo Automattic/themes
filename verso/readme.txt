@@ -12,6 +12,9 @@ Verso pays tribute to the revered Portuguese writer and poet Fernando Pessoa, an
 
 == Changelog ==
 
+= 0.0.2 =
+* Remove theme name from template parts (#6972)
+
 = 0.0.1 =
 * Initial release
 
