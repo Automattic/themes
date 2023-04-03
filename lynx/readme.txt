@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 0.0.24 =
+* Fix display of date format (#6967)
+
 = 0.0.23 =
 * Lynx: Fixing a typo in social media service name. (#6700)
 

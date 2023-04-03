@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.4 =
+* Fix display of date format (#6967)
+
 = 1.1.3 =
 * Fix/6829 lettre archive query inherit (#6847)
 
