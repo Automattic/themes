@@ -16,7 +16,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"66.66%","style":{"spacing":{"padding":{"right":"3rem"}}}} -->
 <div class="wp-block-column" style="padding-right:3rem;flex-basis:66.66%"><!-- wp:heading {"level":1} -->
-<h1>Sorry, this page is not here.</h1>
+<h1><?php echo esc_html__( 'Sorry, this page is not here.', 'lois' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"4rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
@@ -25,10 +25,10 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"2rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p>This is a 404 error.<br>It looks like nothing was found at this location.</p>
+<p><?php echo esc_html__( 'This is a 404 error.', 'lois' ); ?><br><?php echo esc_html__( 'It looks like nothing was found at this location.', 'lois' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"Try a search...","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"width":"0px","style":"none","radius":"4px"}},"backgroundColor":"secondary","textColor":"primary","fontSize":"medium","fontFamily":"libre-franklin"} /--></div>
+<!-- wp:search {"showLabel":false,"placeholder":"<?php echo esc_attr__( 'Try a search...', 'lois' ); ?>","buttonText":"<?php echo esc_html__( 'Search', 'lois' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"width":"0px","style":"none","radius":"4px"}},"backgroundColor":"secondary","textColor":"primary","fontSize":"medium","fontFamily":"libre-franklin"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
