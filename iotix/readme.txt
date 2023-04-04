@@ -12,6 +12,9 @@ A simple iotix theme.
 
 == Changelog ==
 
+= 0.0.3 =
+* Iotix: add global padding and fix footer (#6953)
+
 = 0.0.2 =
 * Iotix: fix link and text styles (#6943)
 
