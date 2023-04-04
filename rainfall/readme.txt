@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.6 =
+* Update new theme links to point to WPCOM instead of GitHub (#6969)
+
 = 1.0.5 =
 * Rainfall: Update copy in patterns (#6737)
 

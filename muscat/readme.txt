@@ -12,6 +12,9 @@ Muscat is a simple blogging WordPress theme with grid post templates and a cente
 
 == Changelog ==
 
+= 0.0.4 =
+* Update new theme links to point to WPCOM instead of GitHub (#6969)
+
 = 0.0.3 =
 * Add min height to post content. (#6756)
 * Muscat variation: fix rubik reference (#6757)

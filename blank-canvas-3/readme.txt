@@ -12,6 +12,9 @@ Blank Canvas is a barebones starter theme, stripped off of content templates but
 
 == Changelog ==
 
+= 0.0.10 =
+* Update new theme links to point to WPCOM instead of GitHub (#6969)
+
 = 0.0.9 =
 * Version Bump
 * Blank Cnvas 3: Update date in readem.txt. (#6924)

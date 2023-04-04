@@ -12,6 +12,9 @@ A simple and fun restaurant theme.
 
 == Changelog ==
 
+= 1.0.4 =
+* Update new theme links to point to WPCOM instead of GitHub (#6969)
+
 = 1.0.3 =
 * Bibimbap: address dotOrg review feedback (#6876)
 

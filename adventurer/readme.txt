@@ -12,6 +12,9 @@ A theme for travelers, writers and photographers.
 
 == Changelog ==
 
+= 1.0.2 =
+* Update new theme links to point to WPCOM instead of GitHub (#6969)
+
 = 1.0.1 =
 * Adventurer: design fixes (#6917)
 

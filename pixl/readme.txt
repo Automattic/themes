@@ -12,6 +12,9 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 1.0.3 =
+* Update new theme links to point to WPCOM instead of GitHub (#6969)
+
 = 1.0.2 =
 * Remove  block attribute from any theme not defining nav menu locations (#6730)
 
