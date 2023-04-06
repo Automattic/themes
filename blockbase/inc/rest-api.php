@@ -47,6 +47,7 @@ function blockbase_remove_style_variations_from_child_themes( $response, $handle
 		if ( empty( $decoded_file['title'] ) ) {
 			$variation_title_parent = basename( $path, '.json' );
 		} else {
+			// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText,WordPress.WP.I18n.NonSingularStringLiteralDomain
 			$variation_title_parent = translate_with_gettext_context( $decoded_file['title'], 'Style variation name', wp_get_theme()->get( 'TextDomain' ) );
 		}
 		$variation_titles_parent[] = $variation_title_parent;
