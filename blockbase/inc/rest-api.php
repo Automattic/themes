@@ -24,17 +24,14 @@ function blockbase_remove_style_variations_from_child_themes( $response, $handle
 		return $response;
 	}
 
-	if ( ! is_child_theme() ) {
+	$base_directory     = get_stylesheet_directory() . '/styles';
+	$template_directory = get_template_directory() . '/styles';
+	if ( ! is_dir( $template_directory ) || $template_directory === $base_directory ) {
 		return $response;
 	}
 
 	$variations = $response->get_data();
 	if ( ! is_array( $variations ) ) {
-		return $response;
-	}
-
-	$template_directory = get_template_directory() . '/styles';
-	if ( ! is_dir( $template_directory ) ) {
 		return $response;
 	}
 
@@ -55,9 +52,13 @@ function blockbase_remove_style_variations_from_child_themes( $response, $handle
 		$variation_titles_parent[] = $variation_title_parent;
 	}
 
-	$response->set_data( array_filter( $variations, function( $variation ) use ( $variation_titles_parent ) {
-		return ! in_array( $variation['title'], $variation_titles_parent, true );
-	} ) );
+	$variations = array_filter(
+		$variations,
+		function( $variation ) use ( $variation_titles_parent ) {
+			return ! in_array( $variation['title'], $variation_titles_parent, true );
+		}
+	);
+	$response->set_data( $variations );
 	return $response;
 }
 add_filter( 'rest_request_after_callbacks', 'blockbase_remove_style_variations_from_child_themes', 10, 2 );
