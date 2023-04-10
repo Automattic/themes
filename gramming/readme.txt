@@ -29,3 +29,19 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+FoodiesFeed
+License : Creative Commons CC0
+Source  : https://www.foodiesfeed.com/free-food-photo/pizza-with-italian-sausage/ 
+          https://www.foodiesfeed.com/free-food-photo/variety-of-seafood-mussels/
+	  https://www.foodiesfeed.com/free-food-photo/vegan-chickpea-and-potato-curry/
+	  https://www.foodiesfeed.com/free-food-photo/chocolate-cake-2/
+	  https://www.foodiesfeed.com/free-food-photo/pistachio-croissant/
+	  https://www.foodiesfeed.com/free-food-photo/chocolate-truffles-with-walnuts-close-up/
+	  https://www.foodiesfeed.com/free-food-photo/fresh-ripe-figs-on-a-wooden-background/
+
+Pexels
+License : Creative Commons CC0
+Source  : https://www.pexels.com/photo/peanut-smoothie-on-stylish-glasses-4112870/
