@@ -39,3 +39,24 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+
+IBM Plex Mono
+Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL)
+Copyright 2017 IBM Corp. All rights reserved.
+Source: https://fonts.google.com/specimen/IBM+Plex+Sans
+
+Newsreader
+Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL)
+Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)
+Source: https://fonts.google.com/specimen/Newsreader
+
+Outward
+Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL)
+Copyright 2017 Raoul Audouin
+Source: https://www.freefaces.gallery/typefaces/outward
+
+Plus Jakarta Sans
+Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL)
+Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)
+Source: https://fonts.google.com/specimen/Plus+Jakarta
