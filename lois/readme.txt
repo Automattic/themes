@@ -12,6 +12,9 @@ A theme in homage to George Lois, visionary American Art Director, and author. W
 
 == Changelog ==
 
+= 1.0.1 =
+* fix theme name in style.css (#7006)
+
 = 1.0.0 =
 * Initial release
 
