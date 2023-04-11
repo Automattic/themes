@@ -12,6 +12,10 @@ CTLG is a free, responsive WordPress block theme specifically designed for creat
 
 == Changelog ==
 
+= 0.0.5 =
+* CTLG add font license (#7002)
+* adding main tag to fix Skip links dotOrg theme directory requierement
+
 = 0.0.4 =
 * CTLG: font-display block for site title font
 

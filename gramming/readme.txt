@@ -12,6 +12,9 @@ Bring the Social Media experience to your site and transform it into a repositor
 
 == Changelog ==
 
+= 0.0.2 =
+* Added image attribution (#7004)
+
 = 0.0.1 =
 * Initial release
 

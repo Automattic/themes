@@ -12,6 +12,9 @@ Course is a flexible and modern theme for anyone wanting to share their knowledg
 
 == Changelog ==
 
+= 1.2.2 =
+* Fix global button colors in Learning Mode (#6990)
+
 = 2023-01-12 - 1.2.1 =
 * Tweak: Make spacing and borders consistent on search results page [#146](https://github.com/Automattic/course/pull/146)
 * Tweak: Adjust font sizes to be responsive [#162](https://github.com/Automattic/course/pull/162)
