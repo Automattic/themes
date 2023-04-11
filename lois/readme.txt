@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A theme in homage to George Lois, visionary American Art Director, and author. We will all miss your big ideas. Rest in Peace, George. From the Creative People of Automattic
+A theme in homage to George Lois, visionary American Art Director, and author. We will all miss your big ideas. Rest in Peace, George. From the Creative People of Automattic.
 
 == Changelog ==
 
