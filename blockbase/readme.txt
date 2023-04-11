@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.8 =
+* Removed forced content wrapper styles (#6961)
+
 = 3.1.6 =
 * Fix missing --wp prefix for var --custom--form--color--border (#6796)
 
