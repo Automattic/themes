@@ -27,7 +27,7 @@
 
 				<!-- wp:post-excerpt /-->
 
-				<!-- wp:template-part {"slug":"post-meta","theme":"kiosko"} /-->
+				<!-- wp:template-part {"slug":"post-meta"} /-->
 			</div>
 			<!-- /wp:group -->
 		<!-- /wp:post-template -->
