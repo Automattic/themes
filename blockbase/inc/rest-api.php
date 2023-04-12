@@ -27,4 +27,12 @@ function blockbase_remove_style_variations_from_child_themes( $response, $handle
 
 	return $response;
 }
-add_filter( 'rest_request_before_callbacks', 'blockbase_remove_style_variations_from_child_themes', 10, 2 );
+
+function blockbase_check_for_opt_out_parent_variations() {
+	$opt_out = wp_get_global_settings( array( 'custom', 'optOutOfParentStyleVariations' ) );
+	if ( $opt_out ) {
+		add_filter( 'rest_request_before_callbacks', 'blockbase_remove_style_variations_from_child_themes', 10, 2 );
+	}
+}
+
+add_action( 'init', 'blockbase_check_for_opt_out_parent_variations', 99 );
