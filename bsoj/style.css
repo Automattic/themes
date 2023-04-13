@@ -1,0 +1,262 @@
+/*
+Theme Name: BSoJ
+Theme URI: https://wordpress.com/theme/bsoj
+Author: Automattic
+Author URI: https://automattic.com
+Description: BSoJ (Blue Screen of Joy) is a blog theme inspired by the infamous Blue Screen of Death.
+Requires at least: 6.1
+Tested up to: 6.1
+Requires PHP: 5.7
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: bsoj
+Tags: blog, one-column, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--primary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 0.15em;
+}
+
+/*
+ * Form field styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+::placeholder {
+	color: var(--wp--preset--color--base);
+	opacity: 1; /* Firefox */
+}
+
+/*
+ * Avatar Block
+ * Fix border radius setting for the avatar block
+ */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+	vertical-align: middle;
+}
+
+/*
+ * Calendar Block
+ * Adjust colours in the Calendar
+ */
+.wp-block-calendar table:where(:not(.has-text-color)) {
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-calendar table:where(:not(.has-text-color)) td, .wp-block-calendar table:where(:not(.has-text-color)) th {
+	border-color: var(--wp--preset--color--contrast);
+}
+
+:where(.wp-block-calendar table:not(.has-background) th) {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Latest Comments & Latest Posts Blocks
+ * Make them inherit the block setting
+ */
+.wp-block-latest-comments__comment-excerpt p,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-posts__post-author,
+.wp-block-latest-posts__post-date {
+	font-size: inherit;
+}
+
+/*
+ * Navigation Block
+ * Remove the top padding for submenu items
+ */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	padding-top: 0;
+}
+
+/*
+ * Post Author Block
+ * Make them inherit the block setting
+ */
+.wp-block-post-author__byline,
+.wp-block-post-author__bio {
+	font-size: inherit;
+}
+
+/* Round the avatar and reset the vertical alignment */
+.wp-block-post-author__avatar img {
+	border-radius: 999px;
+	vertical-align: middle;
+}
+
+/* Remove the default margin from author bio */
+.wp-block-post-author__bio {
+	margin: var(--wp--preset--spacing--50) 0 0;
+}
+
+/*
+ * Post Comments Form
+ * Reset browser default margins for blockquote element
+ */
+.wp-block-post-comments-form .comment-reply-title {
+	font-size: var(--wp--preset--font-size--large);
+}
+
+/* Remove the bottom margin from the submit button in the post comments form */
+.wp-block-post-comments-form .form-submit {
+	margin-bottom: 0;
+}
+
+/* Make the fields inherit the line height */
+.wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments-form .comment-form textarea {
+	line-height: inherit;
+}
+
+/*
+ * Pull quote Block
+ * Reset browser default margins for blockquote element
+ */
+.wp-block-pullquote blockquote {
+	margin: 0;
+}
+
+/*
+ * Search Block
+ * Button inside style adjustment
+ */
+.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	padding: 2px;
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
+	background-color:var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input {
+	padding: 0 0 0 var(--wp--preset--spacing--40);
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-element-button {
+	padding-right: 12px;
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-element-button:hover,
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-element-button:focus {
+	background-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Tag Cloud Block
+ * Style tag cloud outline style
+ */
+.wp-block-tag-cloud.is-style-outline a {
+	border-radius: 999px;
+	padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+}
+
+/*
+ * Term Description Block
+ * Remove the default margins
+ */
+.wp-block-term-description p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
+
+/*
+ * Jetpack Contact Form Block
+ * Match the padding to the Gutenberg default
+ */
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form input[type=tel],
+.contact-form input[type=url],
+.contact-form textarea {
+	padding: calc(0.667em + 2px);
+}
+
+/* Label is 400 in this theme */
+div[id^="contact-form-"] .contact-form label {
+	font-weight: 400;
+}
+
+/* Match the submission result to the theme style */
+div[id^="contact-form-"] .contact-form-submission {
+	border-color: var(--wp--preset--color--primary);
+	margin: 0;
+	padding: 0;
+}
+
+/* Match the color of the link to the theme style */
+div[id^="contact-form-"] .contact-form-submission .go-back-message .link {
+	color: var(--wp--preset--color--primary);
+	font-weight: inherit;
+}
+
+/* Match the submission result title to the theme style */
+div[id^="contact-form-"] h4 {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: inherit;
+}
+
+/*
+ * Jetpack Mailchimp Block
+ * Match the font size and line height
+ * Match the padding to the Gutenberg default
+ */
+.wp-block-jetpack-mailchimp input:not([type="submit"]):not([type="checkbox"]) {
+	border-width: 1px;
+	font-size: inherit;
+	line-height: inherit;
+	padding: calc(0.667em + 2px);
+}
+
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button,
+.wp-block-jetpack-mailchimp p {
+	margin-top: var(--wp--preset--spacing--50);
+	margin-bottom: 0;
+}
