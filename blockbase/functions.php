@@ -103,6 +103,7 @@ if ( class_exists( 'WP_Theme_JSON_Resolver_Gutenberg' ) ) {
 }
 
 require get_template_directory() . '/inc/fonts/custom-fonts.php';
+require get_template_directory() . '/inc/rest-api.php';
 
 
 // Force menus to reload
