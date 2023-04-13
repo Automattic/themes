@@ -12,6 +12,9 @@ Kingsley is a minimalist theme, designed for single-page websites. Its single po
 
 == Changelog ==
 
+= 1.0.5 =
+* Blockbase: Optionally remove inherited style variations from child themes (#6996)
+
 = 1.0.4 =
 * Blockbase 3 (#6167)
 
