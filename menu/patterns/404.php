@@ -14,11 +14,11 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"left","level":1,"align":"wide","anchor":"oops-that-page-can-t-be-found"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'We\'re sorry!', 'menu' ); ?></h1>
+<h1 class="wp-block-heading alignwide has-text-align-left"><?php echo esc_html__( 'We\'re sorry!', 'menu' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"textAlign":"left","level":1,"align":"wide","anchor":"oops-that-page-can-t-be-found"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Nothing has last...', 'menu' ); ?></h1>
+<h1 class="wp-block-heading alignwide has-text-align-left"><?php echo esc_html__( 'Nothing has last...', 'menu' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"40px"} -->
