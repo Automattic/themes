@@ -1,14 +1,11 @@
 <?php
 /**
  * Title: index
- * Slug: block-canvas/index
+ * Slug: menu/index
  * Categories: hidden
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"},"position":{"type":"sticky","top":"0px"}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-background-background-color has-background" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:template-part {"slug":"header","theme":"menu","tagName":"header","align":"full"} /--></div>
-<!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"40px","top":"64px"}}},"layout":{"type":"constrained"}} -->
@@ -20,7 +17,7 @@
 <div style="margin-top:0px;margin-bottom:0px;height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[7]},"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
+<!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
 <main class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide"} -->
 <!-- wp:group {"style":{"border":{"bottom":{"width":"1px"}}}} -->
 <div class="wp-block-group" style="border-bottom-width:1px"><!-- wp:columns -->
@@ -58,7 +55,7 @@
 <div class="wp-block-columns" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"width":"29%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:29%"><!-- wp:gallery {"linkTo":"media","sizeSlug":"full"} -->
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":205,"sizeSlug":"full","linkDestination":"media","style":{"color":{"duotone":["#1d1d1d","#f8f8f7"]}}} -->
-<figure class="wp-block-image size-full"><a href="https://menu.mystagingwebsite.com/wp-content/uploads/2023/03/foodiesfeed.com_young-lady-holding-huge-burger-edited.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/foodiesfeed.com_young-lady-holding-huge-burger-edited-1.jpg" alt="" class="wp-image-205"/></a></figure>
+<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/young-lady-holding-huge-burger.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/young-lady-holding-huge-burger.jpg" alt="Young lady holding huge burger" /></a></figure>
 <!-- /wp:image --></figure>
 <!-- /wp:gallery --></div>
 <!-- /wp:column -->
@@ -66,12 +63,10 @@
 <!-- wp:column {"width":"","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:gallery {"linkTo":"media","sizeSlug":"full"} -->
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped"><!-- wp:image {"id":204,"sizeSlug":"full","linkDestination":"media","style":{"color":{"duotone":["#1d1d1d","#f8f8f7"]}}} -->
-<figure class="wp-block-image size-full"><a href="https://menu.mystagingwebsite.com/wp-content/uploads/2023/03/foodiesfeed.com_girl-holding-a-juicy-beef-burger-scaled.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/foodiesfeed.com_girl-holding-a-juicy-beef-burger-edited-1-scaled.jpg" alt="" class="wp-image-204"/></a></figure>
+<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/girl-holding-a-juicy-beef-burger.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/girl-holding-a-juicy-beef-burger.jpg" alt="Girl holding a juicy beef burger" /></a></figure>
 <!-- /wp:image --></figure>
 <!-- /wp:gallery --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"menu","tagName":"footer"} /-->

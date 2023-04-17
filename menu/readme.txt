@@ -30,3 +30,25 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Font: DM Mono from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/DM+Mono
+
+Font: Fraunces from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Fraunces
+
+Font: TeX Gyre Adventor font
+License: GUST e-foundry License v1.00 (http://www.gust.org.pl/fonts/licenses/GUST-FONT-LICENSE.txt)
+Source: https://www.fontsquirrel.com/fonts/tex-gyre-adventor
+
+Image: girl-holding-a-juicy-beef-burger 
+License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://www.foodiesfeed.com/free-food-photo/girl-holding-a-juicy-beef-burger/
+
+Image: young-lady-holding-huge-burger
+License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://www.foodiesfeed.com/free-food-photo/young-lady-holding-huge-burger/
