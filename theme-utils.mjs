@@ -5,6 +5,7 @@ import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
 import progressbar from 'string-progressbar';
+import semver from 'semver';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
@@ -1140,10 +1141,19 @@ async function tagDeployment(options = {}) {
 
 async function createGlotPressProject(changedThemes) {
 	for (const themeSlug of changedThemes) {
-		await executeOnSandbox(`
-			cd ${sandboxPublicThemesFolder};
-			php ${glotPressScript} ${sandboxPublicThemesFolder}/${themeSlug};
-		`, true);
+		let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
+		let themeVersion = getThemeMetadata(styleCss, 'Version');
+
+		if (semver.gte(themeVersion, '1.0.0')) {
+			console.log(`\nCreating GlotPress project for ${themeSlug}\n`);
+
+			await executeOnSandbox(`
+				cd ${sandboxPublicThemesFolder};
+				php ${glotPressScript} ${sandboxPublicThemesFolder}/${themeSlug};
+			`, true);
+		} else {
+			console.log(`\nSkipped GlotPress project creation for ${themeSlug}.\nVersion bump to a major release to create GlotPress project.\n`);
+		}
 	}
 }
 
