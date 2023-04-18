@@ -410,3 +410,9 @@ body.page-template-page-wide-width footer .wp-block-group {
 		 top: -25px;
 	}
 }
+
+/* Important to keep this in custom CSS and not theme.json so that both global styles and custom
+	 colors work for the .sensei-lms-course-navigation-lesson__extra element in Learning Mode. */
+a:where(:not(.wp-element-button):not(.sensei-lms-course-navigation-lesson__extra)) {
+	color: var(--wp--preset--color--primary);
+}
