@@ -12,6 +12,9 @@ Verso pays tribute to the revered Portuguese writer and poet Fernando Pessoa, an
 
 == Changelog ==
 
+= 1.0.0 =
+* Version bump Verso and Bitacora for dotorg (#7028)
+
 = 0.0.4 =
 * Verso: Add 404 template (#7027)
 

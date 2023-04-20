@@ -12,6 +12,9 @@ Bitácora is a simple old-school blog theme
 
 == Changelog ==
 
+= 1.0.4 =
+* Version bump Verso and Bitacora for dotorg (#7028)
+
 = 1.0.2 =
 * Update theme tags in style.css (#6852)
 
