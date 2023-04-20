@@ -10,6 +10,7 @@
  */
 
 
+// require 'wp-admin/includes/plugin.php';
 if ( ! function_exists( 'course_support' ) ) :
 
 	/**
@@ -20,7 +21,6 @@ if ( ! function_exists( 'course_support' ) ) :
 	 * @return void
 	 */
 	function course_support() {
-
 		add_theme_support( 'sensei-learning-mode' );
 
 		// Enqueue editor styles.
@@ -32,7 +32,7 @@ endif;
 
 add_action( 'after_setup_theme', 'course_support' );
 
-if (!function_exists( 'course_scripts' )) :
+if ( ! function_exists( 'course_scripts' ) ) :
 
 	/**
 	 * Enqueue scripts and styles.
@@ -42,33 +42,23 @@ if (!function_exists( 'course_scripts' )) :
 	 * @return void
 	 */
 	function course_scripts() {
-
-		// Register theme stylesheet.
-		wp_register_style(
-			'course-style',
-			get_stylesheet_directory_uri() . '/style.css',
-			array(),
-			wp_get_theme()->get( 'Version' )
-		);
-
-		wp_register_style(
-			'course-sensei-learning-mode',
-			get_stylesheet_directory_uri() . '/learning-mode.css',
-			array(),
-			wp_get_theme()->get(
-				'Version'
-			)
-		);
-
-		// Enqueue theme stylesheet.
+		wp_register_style( 'course-style', get_stylesheet_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_script( 'course-header', get_template_directory_uri() . '/assets/js/header.js', [], wp_get_theme()->get( 'Version' ), true );
 		wp_enqueue_style( 'course-style' );
 
-		// TODO: Only Load it if the the page is using learning mode
-		wp_enqueue_style( 'course-sensei-learning-mode' );
+		$has_sensei = function_exists( 'Sensei' );
 
-		// Enqueque theme scripts.
-        wp_enqueue_script( 'course-header', get_template_directory_uri() . '/assets/js/header.js', [], wp_get_theme()->get( 'Version' ), true );
-    }
+		/**
+		 * Temporary Hook to skip the learning mode style when the Sensei LMS is able to provide it.
+		 */
+		$should_load_style = apply_filters( 'internal_sensei_skip_learning_module_style', $has_sensei );
+
+		if ( $should_load_style ) {
+			wp_register_style( 'course-sensei-learning-mode', get_stylesheet_directory_uri() . '/learning-mode.css', array(), wp_get_theme()->get( 'Version' ) );
+			wp_enqueue_style( 'course-sensei-learning-mode' );
+		}
+
+	}
 
 endif;
 
