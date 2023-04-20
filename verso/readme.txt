@@ -12,6 +12,9 @@ Verso pays tribute to the revered Portuguese writer and poet Fernando Pessoa, an
 
 == Changelog ==
 
+= 0.0.4 =
+* Verso: Add 404 template (#7027)
+
 = 0.0.3 =
 * Use Crimson Text as heading font family (#6985)
 
