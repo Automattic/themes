@@ -52,9 +52,9 @@ if ( ! function_exists( 'course_scripts' ) ) :
 		 * Temporary Hook to skip the learning mode style when the Sensei LMS is able to provide it.
      * It only use the deprecated style if an old sensei version is installed. 
 		 */
-		$load_deprecated_style = apply_filters( 'internal_course_theme_load_deprecated_style', $has_sensei );
+		$use_style_from_sensei = apply_filters( 'internal_course_theme_use_learning_mode_style_from_sensei', false );
 
-		if ( ! empty($load_deprecated_style) ) {
+		if ( $has_sensei && empty($use_style_from_sensei)  ) {
 			wp_register_style( 'course-sensei-learning-mode', get_stylesheet_directory_uri() . '/learning-mode.css', array(), wp_get_theme()->get( 'Version' ) );
 			wp_enqueue_style( 'course-sensei-learning-mode' );
 		}
