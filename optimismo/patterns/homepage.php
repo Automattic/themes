@@ -6,8 +6,8 @@
  */
 ?>
 
-<!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"center"}} -->
-<div class="wp-block-group alignfull" style="min-height:100vh;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"}}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"space-between","justifyContent":"stretch"}} -->
+<div class="wp-block-group alignfull" style="min-height:100vh;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 	<!-- wp:spacer {"height":"1px"} -->
 	<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
@@ -16,9 +16,13 @@
 	<div class="wp-block-group alignfull">
 		<!-- wp:template-part {"slug":"header","theme":"optimismo","tagName":"header","align":"full"} /-->
 
-		<!-- wp:heading {"textAlign":"center","level":1,"align":"full","style":{"typography":{"textTransform":"uppercase","lineHeight":"0.8","letterSpacing":"0.25em","fontStyle":"normal","fontWeight":"800"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontSize":"huge"} -->
-		<h1 class="wp-block-heading alignfull has-text-align-center has-huge-font-size" style="margin-top:0px;margin-bottom:0px;font-style:normal;font-weight:800;letter-spacing:0.25em;line-height:0.8;text-transform:uppercase">HappierWorld</h1>
-		<!-- /wp:heading -->
+		<!-- wp:group {"align":"full","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignfull">
+			<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"textTransform":"uppercase","lineHeight":"0.8","letterSpacing":"0.25em","fontStyle":"normal","fontWeight":"800"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}},"fontSize":"huge"} -->
+			<h1 class="wp-block-heading has-text-align-center has-huge-font-size" style="margin-top:0px;margin-bottom:0px;font-style:normal;font-weight:800;letter-spacing:0.25em;line-height:0.8;text-transform:uppercase">HappierWorld</h1>
+			<!-- /wp:heading -->
+		</div>
+		<!-- /wp:group -->
 
 		<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 		<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:0">
