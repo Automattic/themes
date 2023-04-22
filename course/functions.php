@@ -75,6 +75,8 @@ endif;
 add_action( 'wp_enqueue_scripts', 'course_scripts' );
 
 function course_theme_init() {
+	add_option( 'course_theme_variation', 'default' );
+
 	register_block_style(
 		'core/navigation-link',
 		array(
@@ -97,3 +99,55 @@ function course_register_block_patterns_category() {
 }
 
 add_action( 'init', 'course_register_block_patterns_category' );
+
+/**
+ * Determine the theme variation and save in option.
+ */
+function course_save_global_styles( $post_id, $post, $update ) {
+	if ( 'wp_global_styles' !== $post->post_type ) {
+		return;
+	}
+
+	$global_styles      = json_decode( $post->post_content, true );
+	$global['settings'] = isset( $global_styles['settings'] ) ? $global_styles['settings'] : array();
+	$global['styles']   = isset( $global_styles['styles'] ) ? $global_styles['styles'] : array();
+	$variations         = WP_Theme_JSON_Resolver::get_style_variations();
+	$current_variation  = 'default';
+	foreach ( $variations as $variation ) {
+		if ( $variation['settings'] === $global['settings'] && $variation['styles'] === $global['styles'] ) {
+			$current_variation = strtolower( $variation['title'] );
+		}
+	}
+	update_option( 'course_theme_variation', $current_variation );
+}
+
+add_action( 'save_post', 'course_save_global_styles', 10, 3 );
+
+/**
+ * Delete the theme variation option when the global styles post is deleted.
+ */
+function course_delete_global_styles( $post_id, $post ) {
+	if ( 'wp_global_styles' !== $post->post_type ) {
+		return;
+	}
+
+	delete_option( 'course_theme_variation' );
+}
+
+add_action( 'delete_post', 'course_delete_global_styles', 10, 2 );
+
+/**
+ * Add the theme variation to the body class.
+ */
+function course_add_variation_body_class( $classes ) {
+	$current_variation = get_option( 'course_theme_variation' );
+	if ( ! $current_variation ) {
+		return $classes;
+	}
+
+	$classes[] = 'course-variation-' . $current_variation;
+
+	return $classes;
+}
+
+add_action( 'body_class', 'course_add_variation_body_class' );
