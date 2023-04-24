@@ -8,9 +8,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A simple iotix theme.
+Iotix provides a great starting point for creating a business or startup website. It offers tailored templates and patterns, including a business landing page, blog, and pricing sections, to help you present yourself and your business more quickly and easily. With Iotix, you can create a professional and polished website that accurately reflects your brand and effectively communicates your message to your target audience.
 
 == Changelog ==
+
+= 1.0.0 =
+* Iotix: add global padding and fix footer (#6953)
 
 = 0.0.3 =
 * Iotix: add global padding and fix footer (#6953)
@@ -35,3 +38,20 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Photo of Developers
+License: CC0 Public domain
+Source: https://stocksnap.io/photo/woman-developers-FVWLQXWZ1P 
+Used in "Startup" pattern.
+
+Photo of People Working and Drinking Coffee
+License: CC0 Public domain
+Source: https://stocksnap.io/photo/businessmeeting-people-QVIEE1UZSX 
+Used in "Startup" pattern.
+
+3D Rendering of Devices
+License: CC0 Public domain
+Source: Felipe Varela (@keoshi) 
+Used in "Startup" pattern.
