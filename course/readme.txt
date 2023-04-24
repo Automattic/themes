@@ -12,6 +12,9 @@ Course is a flexible and modern theme for anyone wanting to share their knowledg
 
 == Changelog ==
 
+= 1.2.3 =
+* Update colors and typography of default Learning Mode template (#7008)
+
 = 1.2.2 =
 * Fix global button colors in Learning Mode (#6990)
 

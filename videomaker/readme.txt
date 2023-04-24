@@ -18,6 +18,9 @@ Videomaker is designed to work with the VideoPress plugin, although it will work
 
 == Changelog ==
 
+= 1.0.25 =
+* Blockbase Children: remove conflicting `core/navigation-link` styles (#7029)
+
 = 1.0.24 =
 * Blockbase + children: remove __unstableLocation (#6759)
 

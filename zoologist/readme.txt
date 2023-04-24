@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.38 =
+* Blockbase Children: remove conflicting `core/navigation-link` styles (#7029)
+
 = 1.0.37 =
 * #6832: Zoologist: Fix link underline on buttons (#6445)
 
