@@ -43,3 +43,8 @@ https://fonts.google.com/specimen/Jost
 
 Newsreader font from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 https://fonts.google.com/specimen/Newsreader
+
+"Chair, model 41, 1931-32, designed by Alvar Aalt"
+Used in theme screenshot
+Source: https://commons.wikimedia.org/wiki/File:Wolfsonian-FIU_Museum_-_IMG_8234.JPG
+Daderot, Public domain, via Wikimedia Commons
