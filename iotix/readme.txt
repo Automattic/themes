@@ -12,6 +12,9 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.2 =
+* Iotix: fix post content alignment (#7035)
+
 = 1.0.1 =
 * Fix sync w dotcom.
 
