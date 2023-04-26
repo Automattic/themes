@@ -12,6 +12,9 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix sync w dotcom.
+
 = 1.0.0 =
 * Iotix: add global padding and fix footer (#6953)
 

@@ -12,6 +12,9 @@ Paimio is a minimal blogging theme inspired by architects and designers Alvar, A
 
 == Changelog ==
 
+= 1.0.3 =
+* Add credits for image used in screenshot (#7036)
+
 = 1.0.2 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 
