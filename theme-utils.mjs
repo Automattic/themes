@@ -5,11 +5,13 @@ import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
 import progressbar from 'string-progressbar';
+import semver from 'semver';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
 const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxRootFolder = '/home/wpdev/public_html/';
+const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
 const isWin = process.platform === 'win32';
 const premiumThemes = ['videomaker', 'videomaker-white'];
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
@@ -267,8 +269,13 @@ async function pushButtonDeploy() {
 
 		let changedThemes = await getChangedThemes(hash);
 
-		await pushChangesToSandbox();
+		if (!changedThemes.length) {
+			console.log(`\n\nEverything is upto date. Nothing new to deploy.\n\n`);
+			return;
+		}
 
+		await pushChangesToSandbox();
+		await createGlotPressProject(changedThemes);
 
 		//push changes (from version bump)
 		if (thingsWentBump) {
@@ -1130,6 +1137,24 @@ async function tagDeployment(options = {}) {
 		git tag -a ${tag} -m "${message}"
 		git push origin ${tag}
 	`, true);
+}
+
+async function createGlotPressProject(changedThemes) {
+	for (const themeSlug of changedThemes) {
+		let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
+		let themeVersion = getThemeMetadata(styleCss, 'Version');
+
+		if (semver.gte(themeVersion, '1.0.0')) {
+			console.log(`\nCreating GlotPress project for ${themeSlug}\n`);
+
+			await executeOnSandbox(`
+				cd ${sandboxPublicThemesFolder};
+				php ${glotPressScript} ${sandboxPublicThemesFolder}/${themeSlug};
+			`, true);
+		} else {
+			console.log(`\nSkipped GlotPress project creation for ${themeSlug}.\nVersion bump to a major release to create GlotPress project.\n`);
+		}
+	}
 }
 
 /*
