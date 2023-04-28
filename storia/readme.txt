@@ -12,6 +12,9 @@ A visual story theme.
 
 == Changelog ==
 
+= 1.0.2 =
+* Remove holiday tag (#7042)
+
 = 1.0 =
 * Initial release
 
