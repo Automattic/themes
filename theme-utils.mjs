@@ -9,11 +9,9 @@ import semver from 'semver';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
-const sandboxPremiumThemesFolder = '/home/wpdev/public_html/wp-content/themes/premium';
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
 const isWin = process.platform === 'win32';
-const premiumThemes = ['videomaker', 'videomaker-white'];
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
 
 const commands = {
@@ -36,14 +34,6 @@ const commands = {
 		helpText: 'Perform a hard reset, checkout trunk, and pull on the public themes working copy on your sandbox.',
 		run: cleanSandbox
 	},
-	"clean-premium-sandbox": {
-		helpText: 'Perform a hard reset, checkout trunk, and pull on the premium themes working copy on your sandbox.',
-		run: cleanPremiumSandbox
-	},
-	"clean-all-sandbox": {
-		helpText: 'Perform a hard reset, checkout trunk, and pull on both the public and premium themes working copies on your sandbox.',
-		run: cleanAllSandbox
-	},
 	"push-to-sandbox": {
 		helpText: 'Uses rsync to copy all modified files for all themes from the local machine to your sandbox.',
 		run: pushToSandbox
@@ -56,10 +46,6 @@ const commands = {
 		helpText: 'Uses rsync to copy all modified files for the specified theme from the local machine to your sandbox.',
 		additionalArgs: '<theme-slug>',
 		run: (args) => pushThemeToSandbox(args?.[1])
-	},
-	"push-premium-to-sandbox": {
-		helpText: 'Uses rsync to copy all modified files for all premium themes from the local machine to your sandbox. For the blockbase theme, all instances of the string "blockbase" are replaced with "blockbase-premium".',
-		run: pushPremiumToSandbox
 	},
 	"version-bump-themes": {
 		helpText: 'Bump the version of any theme that has had changes since the last deployment. This includes bumping the version of any parent themes and updating the changelog for the theme.',
@@ -325,10 +311,8 @@ async function pushButtonDeploy() {
 
 		await landChanges(diffId);
 
-		let changedPublicThemes = changedThemes.filter(item => !premiumThemes.includes(item));
-
 		try {
-			await deployThemes(changedPublicThemes);
+			await deployThemes(changedThemes);
 		}
 		catch (err) {
 			prompt = await inquirer.prompt([{
@@ -881,49 +865,11 @@ async function cleanSandbox() {
 }
 
 /*
- Clean the premium theme sandbox.
- checkout origin/trunk and ensure it's up-to-date.
- Remove any other changes.
-*/
-async function cleanPremiumSandbox() {
-	console.log('Cleaning the Themes Sandbox');
-	await executeOnSandbox(`
-		cd ${sandboxPremiumThemesFolder};
-		git reset --hard HEAD;
-		git clean -fd;
-		git checkout trunk;
-		git pull;
-		echo;
-		git status
-	`, true);
-	console.log('All done cleaning.');
-}
-/*
- Clean the entire sandbox.
- checkout origin/trunk and ensure it's up-to-date.
- Remove any other changes.
-*/
-async function cleanAllSandbox() {
-	console.log('Cleaning the Entire Sandbox');
-	let response = await executeOnSandbox(`
-		cd ${sandboxRootFolder};
-		git reset --hard HEAD;
-		git clean -fd;
-		git checkout trunk;
-		git pull;
-		echo;
-		git status
-	`, true);
-	console.log('All done cleaning.');
-}
-
-/*
   Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
 */
 async function pushToSandbox() {
 	console.log("Pushing All Themes to Sandbox.");
 	let allThemes = await getActionableThemes();
-	allThemes = allThemes.filter(item => !premiumThemes.includes(item));
 	console.log(`Syncing ${allThemes.length} themes`);
 	for (let theme of allThemes) {
 		await pushThemeToSandbox(theme);
@@ -938,49 +884,6 @@ async function pushThemeToSandbox(theme) {
 }
 
 /*
-  Push exactly what is here (all files) up to the sandbox (with the exclusion of files noted in .sandbox-ignore)
-  This pushes only the folders noted as "premiumThemes" into the premium themes directory.
-
-  This is the only part of the deploy process that is automated; the rest must be done manually including:
-   * Creating a Phabricator Diff
-   * Landing (comitting) the change
-   * Deploying the theme
-   * Triggering the .zip builds
-*/
-async function pushPremiumToSandbox() {
-
-	//TODO: It would be nice to determine this list programatically
-	const filesToModify = [
-		'style.css',
-		'block-templates/404.html',
-		'block-template-parts/header.html',
-		'block-template-parts/footer.html'
-	];
-
-	// Change 'blockbase' to 'blockbase-premium' in the files noted
-	for (let theme of premiumThemes) {
-		for (let file of filesToModify) {
-			await executeCommand(`perl -pi -e 's/blockbase/blockbase-premium/' ${theme}/${file}`, true);
-		}
-	}
-
-	// Push the changes in the premium themes to the sandbox
-	await executeCommand(`
-		rsync -avR --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' --exclude='sass' ./${premiumThemes.join(' ./')} wpcom-sandbox:${sandboxPremiumThemesFolder}/
-	`, true);
-
-	// revert the local blockbase-premium changes
-	for (let theme of premiumThemes) {
-		for (let file of filesToModify) {
-			await executeCommand(`
-				git restore --source=HEAD --staged --worktree ./${theme}/${file}
-			`);
-		}
-	}
-
-}
-
-/*
   Push only (and every) change since the point-of-diversion from /trunk
   Remove files from the sandbox that have been removed since the last deployed hash
 */
@@ -989,7 +892,6 @@ async function pushChangesToSandbox() {
 	console.log("Pushing Changed Themes to Sandbox.");
 	let hash = await getLastDeployedHash();
 	let changedThemes = await getChangedThemes(hash);
-	changedThemes = changedThemes.filter(item => !premiumThemes.includes(item));
 	console.log(`Syncing ${changedThemes.length} themes`);
 
 	for (let theme of changedThemes) {

@@ -7,8 +7,6 @@
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
 		"sandbox:clean": "node ./theme-utils.mjs clean-sandbox",
-		"sandbox:clean-premium": "node ./theme-utils.mjs clean-premium-sandbox",
-		"sandbox:clean-all": "node ./theme-utils.mjs clean-all-sandbox",
 		"local:clean": "git reset --hard HEAD; git clean -fd",
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
 		"batch:build": "./theme-batch-utils.sh build-all",
@@ -18,7 +16,6 @@
 		"deploy:push:all": "node ./theme-utils.mjs push-to-sandbox",
 		"deploy:push:changes": "node ./theme-utils.mjs push-changes-to-sandbox",
 		"deploy:push:theme": "node ./theme-utils.mjs push-theme-to-sandbox",
-		"deploy:push:premium": "node ./theme-utils.mjs push-premium-to-sandbox",
 		"deploy": "node ./theme-utils.mjs push-button-deploy",
 		"deploy:core:sync": "node ./theme-utils.mjs deploy-sync-core-theme",
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
