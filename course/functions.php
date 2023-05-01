@@ -102,6 +102,10 @@ add_action( 'init', 'course_register_block_patterns_category' );
 
 /**
  * Determine the theme variation and save in option.
+ *
+ * @param int     $post_id Post ID.
+ * @param WP_Post $post    Post object.
+ * @param bool    $update  Whether this is an existing post being updated or not.
  */
 function course_save_global_styles( $post_id, $post, $update ) {
 	if ( 'wp_global_styles' !== $post->post_type ) {
@@ -125,6 +129,9 @@ add_action( 'save_post', 'course_save_global_styles', 10, 3 );
 
 /**
  * Delete the theme variation option when the global styles post is deleted.
+ *
+ * @param int     $post_id Post ID.
+ * @param WP_Post $post    Post object.
  */
 function course_delete_global_styles( $post_id, $post ) {
 	if ( 'wp_global_styles' !== $post->post_type ) {
@@ -138,6 +145,8 @@ add_action( 'delete_post', 'course_delete_global_styles', 10, 2 );
 
 /**
  * Add the theme variation to the body class.
+ *
+ * @param array $classes Array of body classes.
  */
 function course_add_variation_body_class( $classes ) {
 	$current_variation = get_option( 'course_theme_variation' );
