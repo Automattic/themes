@@ -154,7 +154,7 @@ function course_add_variation_body_class( $classes ) {
 		return $classes;
 	}
 
-	$classes[] = 'course-variation-' . $current_variation;
+	$classes[] = 'is-' . $current_variation;
 
 	return $classes;
 }
