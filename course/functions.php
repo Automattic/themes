@@ -128,22 +128,6 @@ function course_save_global_styles( $post_id, $post, $update ) {
 add_action( 'save_post', 'course_save_global_styles', 10, 3 );
 
 /**
- * Delete the theme variation option when the global styles post is deleted.
- *
- * @param int     $post_id Post ID.
- * @param WP_Post $post    Post object.
- */
-function course_delete_global_styles( $post_id, $post ) {
-	if ( 'wp_global_styles' !== $post->post_type ) {
-		return;
-	}
-
-	delete_option( 'course_theme_variation' );
-}
-
-add_action( 'delete_post', 'course_delete_global_styles', 10, 2 );
-
-/**
  * Add the theme variation to the body class.
  *
  * @param array $classes Array of body classes.
