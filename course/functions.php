@@ -46,19 +46,16 @@ if ( ! function_exists( 'course_scripts' ) ) :
 		wp_enqueue_script( 'course-header', get_template_directory_uri() . '/assets/js/header.js', [], wp_get_theme()->get( 'Version' ), true );
 		wp_enqueue_style( 'course-style' );
 
-		$has_sensei = function_exists( 'Sensei' );
-
 		/**
 		 * Temporary Hook to skip the learning mode style when the Sensei LMS is able to provide it.
-     * It only use the deprecated style if an old sensei version is installed. 
+		 * It is only used to continue loading the deprecated styles if a old sensei version is installed
 		 */
-		$use_style_from_sensei = apply_filters( 'internal_course_theme_use_learning_mode_style_from_sensei', false );
+		$use_style_from_sensei = apply_filters( 'course_learning_mode_load_styles', false );
 
-		if ( $has_sensei && empty($use_style_from_sensei)  ) {
+		if ( class_exists( 'Sensei_Main' ) && empty( $use_style_from_sensei )  ) {
 			wp_register_style( 'course-sensei-learning-mode', get_stylesheet_directory_uri() . '/learning-mode.css', array(), wp_get_theme()->get( 'Version' ) );
 			wp_enqueue_style( 'course-sensei-learning-mode' );
 		}
-
 	}
 
 endif;
