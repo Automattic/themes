@@ -10,7 +10,6 @@
  */
 
 
-// require 'wp-admin/includes/plugin.php';
 if ( ! function_exists( 'course_support' ) ) :
 
 	/**
@@ -48,7 +47,7 @@ if ( ! function_exists( 'course_scripts' ) ) :
 
 		/**
 		 * Temporary Hook to skip the learning mode style when the Sensei LMS is able to provide it.
-		 * It is only used to continue loading the deprecated styles if a old sensei version is installed
+		 * It is only used to continue loading the deprecated styles if a old sensei version is installed.
 		 */
 		$use_style_from_sensei = apply_filters( 'course_learning_mode_load_styles', false );
 
