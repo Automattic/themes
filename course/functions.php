@@ -119,7 +119,7 @@ function course_save_global_styles( $post_id, $post, $update ) {
 	$current_variation  = 'default';
 	foreach ( $variations as $variation ) {
 		if ( $variation['settings'] === $global['settings'] && $variation['styles'] === $global['styles'] ) {
-			$current_variation = strtolower( $variation['title'] );
+			$current_variation = sanitize_title( $variation['title'] );
 		}
 	}
 	update_option( 'course_theme_variation', $current_variation );
