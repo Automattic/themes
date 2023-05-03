@@ -62,6 +62,8 @@ endif;
 add_action( 'wp_enqueue_scripts', 'course_scripts' );
 
 function course_theme_init() {
+	add_option( 'course_theme_variation', 'default' );
+
 	register_block_style(
 		'core/navigation-link',
 		array(
@@ -84,3 +86,47 @@ function course_register_block_patterns_category() {
 }
 
 add_action( 'init', 'course_register_block_patterns_category' );
+/**
+ * Determine the theme variation and save in option.
+ *
+ * @param int     $post_id Post ID.
+ * @param WP_Post $post    Post object.
+ * @param bool    $update  Whether this is an existing post being updated or not.
+ */
+function course_save_global_styles( $post_id, $post, $update ) {
+	if ( 'wp_global_styles' !== $post->post_type ) {
+		return;
+	}
+
+	$global_styles      = json_decode( $post->post_content, true );
+	$global['settings'] = isset( $global_styles['settings'] ) ? $global_styles['settings'] : array();
+	$global['styles']   = isset( $global_styles['styles'] ) ? $global_styles['styles'] : array();
+	$variations         = WP_Theme_JSON_Resolver::get_style_variations();
+	$current_variation  = 'default';
+	foreach ( $variations as $variation ) {
+		if ( $variation['settings'] === $global['settings'] && $variation['styles'] === $global['styles'] ) {
+			$current_variation = sanitize_title( $variation['title'] );
+		}
+	}
+	update_option( 'course_theme_variation', $current_variation );
+}
+
+add_action( 'save_post', 'course_save_global_styles', 10, 3 );
+
+/**
+ * Add the theme variation to the body class.
+ *
+ * @param array $classes Array of body classes.
+ */
+function course_add_variation_body_class( $classes ) {
+	$current_variation = get_option( 'course_theme_variation' );
+	if ( ! $current_variation ) {
+		return $classes;
+	}
+
+	$classes[] = 'is-' . $current_variation;
+
+	return $classes;
+}
+
+add_action( 'body_class', 'course_add_variation_body_class' );

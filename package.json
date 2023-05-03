@@ -1,14 +1,12 @@
 {
 	"name": "themes",
-	"version": "1.0.311",
+	"version": "1.0.317",
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
 		"sandbox:clean": "node ./theme-utils.mjs clean-sandbox",
-		"sandbox:clean-premium": "node ./theme-utils.mjs clean-premium-sandbox",
-		"sandbox:clean-all": "node ./theme-utils.mjs clean-all-sandbox",
 		"local:clean": "git reset --hard HEAD; git clean -fd",
 		"batch:install": "./theme-batch-utils.sh install-dependencies",
 		"batch:build": "./theme-batch-utils.sh build-all",
@@ -18,7 +16,6 @@
 		"deploy:push:all": "node ./theme-utils.mjs push-to-sandbox",
 		"deploy:push:changes": "node ./theme-utils.mjs push-changes-to-sandbox",
 		"deploy:push:theme": "node ./theme-utils.mjs push-theme-to-sandbox",
-		"deploy:push:premium": "node ./theme-utils.mjs push-premium-to-sandbox",
 		"deploy": "node ./theme-utils.mjs push-button-deploy",
 		"deploy:core:sync": "node ./theme-utils.mjs deploy-sync-core-theme",
 		"deploy:preview": "node ./theme-utils.mjs deploy-preview",
@@ -34,7 +31,7 @@
 	"devDependencies": {
 		"@octokit/rest": "^18.12.0",
 		"@wordpress/prettier-config": "^1.1.2",
-		"@wordpress/scripts": "^21.0.2",
+		"@wordpress/scripts": "^26.3.0",
 		"@wordpress/stylelint-config": "^20.0.1",
 		"chokidar-cli": "^3.0.0",
 		"fs-extra": "^10.0.0",
@@ -45,6 +42,7 @@
 		"octokit": "^2.0.3",
 		"open": "^8.4.0",
 		"parse5-html-rewriting-stream": "^7.0.0",
+		"semver": "^7.5.0",
 		"string-progressbar": "^1.0.4",
 		"table": "^6.8.0"
 	},

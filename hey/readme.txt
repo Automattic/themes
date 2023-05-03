@@ -36,6 +36,12 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
 Piazzolla Font
 Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
 Source: https://fonts.google.com/specimen/Piazzolla
+
+Confident Asian woman against green background (screenshot.png)
+License: https://www.pexels.com/license/
+Source: https://www.pexels.com/photo/confident-asian-woman-against-green-background-4906334/

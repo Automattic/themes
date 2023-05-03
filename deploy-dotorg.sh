@@ -16,14 +16,19 @@ rm -rf ./deploy
 # Look into all the themes we expect to deploy
 
 declare -a THEMES_TO_DEPLOY=(
+	"adventurer"
 	"archeo"
 	"bibimbap"
+	"bitacora"
 	"blockbase"
+	"ctlg"
 	"disco"
 	"geologist"
+	"hey"
 	"lettre"
 	"livro"
 	"mayland-blocks"
+	"paimio"
 	"pendant"
 	"pixl"
 	"quadrat"
@@ -32,8 +37,8 @@ declare -a THEMES_TO_DEPLOY=(
 	"seedlet-blocks"
 	"skatepark"
 	"stewart"
+	"storia"
 	"upsidedown"
-	"videomaker"
 	"vivre"
 	"zoologist"
 )

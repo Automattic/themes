@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.38 =
+* Blockbase Children: remove conflicting `core/navigation-link` styles (#7029)
+
 = 1.0.37 =
 * Blockbase + children: remove __unstableLocation (#6759)
 
