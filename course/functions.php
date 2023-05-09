@@ -24,7 +24,6 @@ if ( ! function_exists( 'course_support' ) ) :
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
-		add_editor_style( 'learning-mode.css' );
 	}
 
 endif;
