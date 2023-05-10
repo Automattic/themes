@@ -12,6 +12,11 @@ Course is a flexible and modern theme for anyone wanting to share their knowledg
 
 == Changelog ==
 
+= 1.2.4 =
+* Tweak some block styles (#7033)
+* Add body class for the theme variation (#7034)
+* Course: Skip the learning mode style when sensei is not available (#7031)
+
 = 1.2.3 =
 * Update colors and typography of default Learning Mode template (#7008)
 

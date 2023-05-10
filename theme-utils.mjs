@@ -328,7 +328,7 @@ async function pushButtonDeploy() {
 			}
 		}
 
-		await buildComZips(changedPublicThemes);
+		await buildComZips(changedThemes);
 
 		console.log(`The following themes have changed:\n${changedThemes.join('\n')}`)
 		console.log('\n\nAll Done!!\n\n');
