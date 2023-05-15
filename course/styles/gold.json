@@ -38,6 +38,16 @@
 					"color": "#A47A46",
 					"name": "Button Border - Hover",
 					"slug": "button-border-hover"
+				},
+				{
+					"color": "#787C82",
+					"name": "Course Navigation - Summary",
+					"slug": "course-navigation-summary"
+				},
+				{
+					"color": "#646970",
+					"name": "Course Navigation - Locked",
+					"slug": "course-navigation-locked"
 				}
 			]
 		},
@@ -85,6 +95,14 @@
 						{
 							"fontFamily": "Montserrat",
 							"fontDisplay": "block",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontDisplay": "block",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
@@ -102,6 +120,14 @@
 							"fontFamily": "Montserrat",
 							"fontDisplay": "block",
 							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontDisplay": "block",
+							"fontWeight": "800",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.ttf" ]
@@ -167,8 +193,8 @@
 					"name": "Extra large",
 					"size": "2.25rem",
 					"fluid": {
-						"min": "2.25rem",
-						"max": "3rem"
+						"min": "2rem",
+						"max": "3.25rem"
 					},
 					"slug": "x-large"
 				},
@@ -203,6 +229,60 @@
 						}
 					}
 				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"lineHeight": "1.6",
+					"letterSpacing": "-0.004em"
+				}
+			},
+			"sensei-lms/course-theme-lesson-module": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontWeight": "700",
+					"lineHeight": "1.21"
+				}
+			},
+			"sensei-lms/course-navigation": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontWeight": "400",
+					"letterSpacing": "-0.01em"
+				},
+				"css": "& .sensei-lms-course-navigation-module__title { font-size: 1.125rem; font-weight: 600; text-transform: none; } span.sensei-lms-course-navigation-lesson__title { font-family: var(--wp--preset--font-family--heading); font-weight: 400; line-height: 1.21; opacity:unset; } .sensei-lms-course-navigation-module__summary, a.sensei-lms-course-navigation-lesson__extra { font-family: var(--wp--preset--font-family--heading); color: var(--wp--preset--color--course-navigation-summary) } .sensei-lms-course-navigation-lesson.status-locked a { color: var(--wp--preset--color--course-navigation-locked) }"
+			},
+			"sensei-lms/course-theme-course-progress-counter": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"letterSpacing": "-0.0001em",
+					"fontWeight": "500",
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"lineHeight": "1.6"
+				}
+			},
+			"sensei-lms/exit-course": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
+					"letterSpacing": "-0.02em",
+					"fontWeight": "500",
+					"lineHeight": "1.6"
+				}
+			},
+			"sensei-lms/course-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--preset--font-size--x-small)",
+					"fontWeight": "800",
+					"letterSpacing": "-0.01em",
+					"lineHeight": "1",
+					"textTransform": "uppercase"
+				}
+			},
+			"sensei-lms/page-actions": {
+				"typography": {
+					"fontWeight": "700"
+				}
 			}
 		},
 		"elements": {
@@ -214,12 +294,21 @@
 			},
 			"h1": {
 				"typography": {
-					"textTransform": "none"
+					"textTransform": "none",
+					"fontSize": "var(--wp--preset--font-size--x-large)"
+				}
+			},
+			"button": {
+				"typography": {
+					"fontWeight": "700",
+					"letterSpacing": "0.001em",
+					"fontSize": "var(--wp--preset--font-size--x-small)"
 				}
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--body)"
+			"fontFamily": "var(--wp--preset--font-family--body)",
+			"fontSize": "clamp(var(--wp--preset--font-size--small), 0.821rem + 0.476vw, var(--wp--custom--typography--font-sizes--normal))"
 		}
 	}
 }
