@@ -375,10 +375,10 @@ return;
 		return;
 	}
 
+	await landChanges(diffId);
+	await deployThemes([theme]);
+	await buildComZips([theme]);
 	return;
-	// await landChanges(diffId);
-	// await deployThemes([theme]);
-	// await buildComZips([theme]);
 }
 
 
