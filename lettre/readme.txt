@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.5 =
+* Lettre: add style variations (#7074)
+
 = 1.1.4 =
 * Fix display of date format (#6967)
 
