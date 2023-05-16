@@ -101,14 +101,56 @@ function course_save_global_styles( $post_id, $post, $update ) {
 	$global_styles      = json_decode( $post->post_content, true );
 	$global['settings'] = isset( $global_styles['settings'] ) ? $global_styles['settings'] : array();
 	$global['styles']   = isset( $global_styles['styles'] ) ? $global_styles['styles'] : array();
-	$variations         = WP_Theme_JSON_Resolver::get_style_variations();
-	$current_variation  = 'default';
-	foreach ( $variations as $variation ) {
-		if ( $variation['settings'] === $global['settings'] && $variation['styles'] === $global['styles'] ) {
-			$current_variation = sanitize_title( $variation['title'] );
-		}
+
+	if ( empty( $global['settings'] ) && empty( $global['styles'] ) ) {
+		update_option( 'course_theme_variation', 'default' );
+		return;
 	}
-	update_option( 'course_theme_variation', $current_variation );
+
+	$td                 = WP_Theme_JSON_Resolver::get_theme_data();
+	$variations         = WP_Theme_JSON_Resolver::get_style_variations();
+	$variations[]       = array(
+		'title' => 'default',
+		'settings' => $td->get_data()['settings'],
+		'styles' => $td->get_data()['styles'],
+	);
+
+	foreach ( $variations as $variation ) {
+		if ( $variation['settings'] !== getArrayIntersectAssocRecursive( $global['settings'], $variation['settings'] ) || 
+			$variation['styles'] !== getArrayIntersectAssocRecursive( $global['styles'], $variation['styles'] ) ) {
+			continue;
+		}
+
+		update_option( 'course_theme_variation', sanitize_title( $variation['title'] ) );
+		break;
+	}
+}
+
+if ( ! function_exists( 'getArrayIntersectAssocRecursive' ) ) {
+	/**
+	 * Find the intersection of two arrays recursively.
+	 *
+	 * @param array $array1
+	 * @param array $array2
+	 * @return array 
+	 */
+	function getArrayIntersectAssocRecursive(&$value1, &$value2)
+	{
+		if (!is_array($value1) || !is_array($value1)) {
+			return $value1 === $value2;
+		}
+
+		$intersectKeys = array_intersect(array_keys($value1), array_keys($value2));
+
+		$intersectValues = [];
+		foreach ($intersectKeys as $key) {
+			if (getArrayIntersectAssocRecursive($value1[$key], $value2[$key])) {
+				$intersectValues[$key] = $value1[$key];
+			}
+		}
+
+		return $intersectValues;
+	}
 }
 
 add_action( 'save_post', 'course_save_global_styles', 10, 3 );
