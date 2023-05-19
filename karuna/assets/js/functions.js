@@ -2,40 +2,52 @@
  * Handles sticky header
  */
 
-( function( $ ) {
+( function () {
+	'use strict';
 
-	var stickyHeader       = $( '.sticky-wrapper' );
-	var topBar             = $( '.top-bar' );
-	var stickyHeaderOffset = topBar.outerHeight();
-	var body               = $( 'body' );
-	var windowWidth;
+	var stickyHeader = document.querySelector( '.sticky-wrapper' );
+	var topBar = document.querySelector( '.top-bar' );
+	var stickyHeaderOffset = parseFloat(
+		( getComputedStyle( topBar ).height || '0' ).replace( 'px', '' )
+	);
 
-	var stickyTime = function( width ) {
-		if( window.pageYOffset >= ( stickyHeaderOffset ) && width >= 1100 ) {
-			stickyHeader.addClass( 'sticking' );
+	var nextFrame = null;
 
-			var stuckHeader        = $( '.sticky-wrapper.sticking' );
-			var stickyHeaderHeight = stuckHeader.outerHeight();
-
-			body.css( 'padding-top', stickyHeaderHeight );
-			topBar.css( 'visibility', 'hidden' );
-		} else {
-			stickyHeader.removeClass( 'sticking' );
-			body.removeAttr( 'style' );
-			topBar.removeAttr( 'style' );
-		}
+	if ( ! stickyHeader || ! topBar ) {
+		return;
 	}
 
-	// Functions to fire on window load
-	$( window ).load( function() {
-		windowWidth = $( this ).width();
-		stickyTime( windowWidth );
-	} );
+	function stickyTime() {
+		var windowWidth = document.documentElement.clientWidth;
 
-	// After scrolling
-	$( window ).scroll( function() {
-		windowWidth = $( this ).width();
-		stickyTime( windowWidth );
-	} );
+		if ( window.pageYOffset >= stickyHeaderOffset && windowWidth >= 1100 ) {
+			stickyHeader.classList.add( 'sticking' );
 
-} )( jQuery );
+			var stuckHeader = document.querySelector( '.sticky-wrapper.sticking' );
+			var stickyHeaderHeight = getComputedStyle( stuckHeader ).height;
+
+			document.body.style.paddingTop = stickyHeaderHeight;
+			topBar.style.visibility = 'hidden';
+		} else {
+			stickyHeader.classList.remove( 'sticking' );
+			document.body.removeAttribute( 'style' );
+			topBar.removeAttribute( 'style' );
+		}
+
+		nextFrame = null;
+	}
+
+	if ( document.readyState === 'complete' ) {
+		stickyTime();
+	} else {
+		window.addEventListener( 'load', stickyTime );
+	}
+
+	document.addEventListener( 'scroll', function () {
+		if ( window.requestAnimationFrame ) {
+			nextFrame = nextFrame || requestAnimationFrame( stickyTime );
+		} else {
+			stickyTime();
+		}
+	} );
+} )();

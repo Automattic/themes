@@ -301,7 +301,7 @@ function karuna_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );
@@ -335,7 +335,7 @@ function karuna_scripts() {
 
 	wp_enqueue_script( 'karuna-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'karuna-functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20160531', true );
+	wp_enqueue_script( 'karuna-functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '20230519', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
