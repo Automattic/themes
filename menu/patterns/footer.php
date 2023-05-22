@@ -27,7 +27,7 @@
 </p>
 <!-- /wp:paragraph -->
 
-<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#1d1d1d","iconBackgroundColor":"background","iconBackgroundColorValue":"#dfdedb"} -->
+<!-- wp:social-links {"iconColor":"primary","iconColorValue":"var(--wp--preset--color--foreground)","iconBackgroundColor":"background","iconBackgroundColorValue":"var(--wp--preset--color--tertiary)"} -->
 <ul class="wp-block-social-links has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"https://tumblr.com","service":"tumblr","label":"Tumblr"} /-->
 
 <!-- wp:social-link {"url":"https://instagram.com","service":"instagram","label":"Instagram"} /-->
