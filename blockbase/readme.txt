@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.10 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 3.1.9 =
 * Blockbase: Optionally remove inherited style variations from child themes (#6996)
 

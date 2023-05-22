@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.24 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 1.6.23 =
 * Bump scss-tokenizer and node-sass (#6920)
 

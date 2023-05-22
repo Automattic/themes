@@ -18,6 +18,9 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.26 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 1.1.25 =
 * Bump scss-tokenizer and node-sass (#6920)
 

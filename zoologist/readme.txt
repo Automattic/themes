@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.39 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 1.0.38 =
 * Blockbase Children: remove conflicting `core/navigation-link` styles (#7029)
 

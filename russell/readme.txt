@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.0.27 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 0.0.26 =
 * Set single post featured image to wide align and add height to the featured image (#6502)
 

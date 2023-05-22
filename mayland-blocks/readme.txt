@@ -12,6 +12,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 
 == Changelog ==
 
+= 2.1.32 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 2.1.31 =
 * lock post-content block by default (#6314)
 

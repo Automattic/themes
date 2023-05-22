@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.50 =
+* Update Node version in .nvmrc & update deps (#7059)
+
 = 1.1.49 =
 * Blockbase Children: remove conflicting `core/navigation-link` styles (#7029)
 
