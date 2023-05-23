@@ -12,6 +12,10 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.4 =
+* Replace 32721-column_2_image-1, 92de6-startup-hero-03, a39e1-woman-developers-fvwlqxwz1p with q=90 webp images (#7097)
+* Iotix: make hero image much smaller (#7096)
+
 = 1.0.3 =
 * Add missing meta and remove extraneous. (#7043)
 
