@@ -68,7 +68,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":478,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/32721-column_2_image-1.jpg" alt="" class="wp-image-478"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/32721-column_2_image-1.webp" alt="" class="wp-image-478"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
@@ -83,8 +83,8 @@
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/92de6-startup-hero-03.jpg","dimRatio":80,"overlayColor":"primary","align":"wide"} -->
-<div class="wp-block-cover alignwide"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-80 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/92de6-startup-hero-03.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"10rem","right":"0","bottom":"10rem","left":"0"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/92de6-startup-hero-03.webp","dimRatio":80,"overlayColor":"primary","align":"wide"} -->
+<div class="wp-block-cover alignwide"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-80 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/92de6-startup-hero-03.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"10rem","right":"0","bottom":"10rem","left":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:10rem;padding-right:0;padding-bottom:10rem;padding-left:0"><!-- wp:heading {"textAlign":"center","align":"wide","textColor":"tertiary"} -->
 <h2 class="wp-block-heading alignwide has-text-align-center has-tertiary-color has-text-color"><?php echo esc_html__( 'Keep learning as you go.', 'iotix' ); ?></h2>
 <!-- /wp:heading -->
