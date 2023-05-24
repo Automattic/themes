@@ -9,7 +9,7 @@
  */
 
 
-if ( ! function_exists( 'georgegeorgeGeorge Lois_support' ) ) :
+if ( ! function_exists( 'georgelois_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -18,20 +18,20 @@ if ( ! function_exists( 'georgegeorgeGeorge Lois_support' ) ) :
 	 *
 	 * @return void
 	 */
-	function georgegeorgeGeorge Lois_support() {
+	function georgelois_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'georgegeorgeGeorge Lois' );
+		load_theme_textdomain( 'georgelois' );
 	}
 
 endif;
 
-add_action( 'after_setup_theme', 'georgegeorgeGeorge Lois_support' );
+add_action( 'after_setup_theme', 'georgelois_support' );
 
-if ( ! function_exists( 'georgegeorgeGeorge Lois_styles' ) ) :
+if ( ! function_exists( 'georgelois_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
@@ -40,21 +40,21 @@ if ( ! function_exists( 'georgegeorgeGeorge Lois_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function georgegeorgeGeorge Lois_styles() {
+	function georgelois_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'georgegeorgeGeorge Lois-style',
+			'georgelois-style',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'georgegeorgeGeorge Lois-style' );
+		wp_enqueue_style( 'georgelois-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'georgegeorgeGeorge Lois_styles' );
+add_action( 'wp_enqueue_scripts', 'georgelois_styles' );

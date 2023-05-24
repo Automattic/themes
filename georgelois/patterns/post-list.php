@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Post list
- * Slug: georgegeorgeGeorge Lois/post-list
+ * Slug: georgelois/post-list
  * Inserter: no
  */
 

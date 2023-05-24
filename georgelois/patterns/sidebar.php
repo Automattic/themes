@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Site updates
- * Slug: georgegeorgeGeorge Lois/sidebar
+ * Slug: georgelois/sidebar
  * Inserter: no
  */
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: A 404 page
- * Slug: georgegeorgeGeorge Lois/404
+ * Slug: georgelois/404
  * Inserter: no
  */
 

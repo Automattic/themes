@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Default footer
- * Slug: georgegeorgeGeorge Lois/footer
+ * Slug: georgelois/footer
  * Categories: footer
  * Block Types: core/template-part/footer
  */
