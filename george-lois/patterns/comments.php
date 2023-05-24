@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: georgelois/comments
+ * slug: george-lois/comments
  * inserter: no
  */
 
