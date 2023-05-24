@@ -24,9 +24,9 @@
 <p class="has-text-align-left has-libre-franklin-font-family has-small-font-size" style="font-style:normal;font-weight:700">
     <?php
         /* Translators: WordPress link. */
-        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'georgegeorgeGeorge Lois' ) ) . '" rel="nofollow">WordPress</a>';
+        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'georgelois' ) ) . '" rel="nofollow">WordPress</a>';
         echo sprintf(
-            esc_html__( 'Designed with %1$s', 'georgegeorgeGeorge Lois' ),
+            esc_html__( 'Designed with %1$s', 'georgelois' ),
             $wordpress_link
         );
     ?>

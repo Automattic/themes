@@ -1,11 +1,11 @@
 <?php
 /**
- * Lois functions and definitions
+ * George Lois functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Lois
- * @since Lois 1.0
+ * @package George Lois
+ * @since George Lois 1.0
  */
 
 
@@ -14,7 +14,7 @@ if ( ! function_exists( 'georgelois_support' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Lois 1.0
+	 * @since George Lois 1.0
 	 *
 	 * @return void
 	 */
@@ -36,7 +36,7 @@ if ( ! function_exists( 'georgelois_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Lois 1.0
+	 * @since George Lois 1.0
 	 *
 	 * @return void
 	 */

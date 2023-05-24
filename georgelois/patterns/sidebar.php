@@ -9,7 +9,7 @@
 
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"letterSpacing":"0px","fontSize":"2.3rem"}}} -->
-<h3 style="font-size:2.3rem;letter-spacing:0px"><?php echo esc_html__( 'Get updates', 'georgegeorgeGeorge Lois' ); ?></h3>
+<h3 style="font-size:2.3rem;letter-spacing:0px"><?php echo esc_html__( 'Get updates', 'georgelois' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"1.5rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
@@ -17,11 +17,11 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><?php echo esc_html__( 'From art exploration to the latest archeological findings, all here in our weekly newsletter.', 'georgegeorgeGeorge Lois' ); ?></p>
+<p class="has-medium-font-size"><?php echo esc_html__( 'From art exploration to the latest archeological findings, all here in our weekly newsletter.', 'georgelois' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","textDecoration":"underline"}},"fontSize":"small","fontFamily":"libre-franklin"} -->
-<p class="has-libre-franklin-font-family has-small-font-size" style="font-style:normal;font-weight:700;text-decoration:underline"><?php echo esc_html__( 'Subscribe', 'georgegeorgeGeorge Lois' ); ?></p>
+<p class="has-libre-franklin-font-family has-small-font-size" style="font-style:normal;font-weight:700;text-decoration:underline"><?php echo esc_html__( 'Subscribe', 'georgelois' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 

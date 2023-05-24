@@ -54,7 +54,7 @@
 
 <!-- wp:query-no-results {"style":{"typography":{"fontStyle":"normal","fontWeight":"700","fontSize":"4.6rem","letterSpacing":"-2px"}},"fontFamily":"libre-franklin"} -->
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'georgegeorgeGeorge Lois' ); ?></p>
+<p><?php echo esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'georgelois' ); ?></p>
 <!-- /wp:paragraph -->
 <!-- /wp:query-no-results --></div>
 <!-- /wp:query -->

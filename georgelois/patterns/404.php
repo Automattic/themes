@@ -16,7 +16,7 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"66.66%","style":{"spacing":{"padding":{"right":"3rem"}}}} -->
 <div class="wp-block-column" style="padding-right:3rem;flex-basis:66.66%"><!-- wp:heading {"level":1} -->
-<h1><?php echo esc_html__( 'Sorry, this page is not here.', 'georgegeorgeGeorge Lois' ); ?></h1>
+<h1><?php echo esc_html__( 'Sorry, this page is not here.', 'georgelois' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"4rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
@@ -25,10 +25,10 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"2rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'This is a 404 error.', 'georgegeorgeGeorge Lois' ); ?><br><?php echo esc_html__( 'It looks like nothing was found at this location.', 'georgegeorgeGeorge Lois' ); ?></p>
+<p><?php echo esc_html__( 'This is a 404 error.', 'georgelois' ); ?><br><?php echo esc_html__( 'It looks like nothing was found at this location.', 'georgelois' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"<?php echo esc_attr__( 'Try a search...', 'georgegeorgeGeorge Lois' ); ?>","buttonText":"<?php echo esc_html__( 'Search', 'georgegeorgeGeorge Lois' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"width":"0px","style":"none","radius":"4px"}},"backgroundColor":"secondary","textColor":"primary","fontSize":"medium","fontFamily":"libre-franklin"} /--></div>
+<!-- wp:search {"showLabel":false,"placeholder":"<?php echo esc_attr__( 'Try a search...', 'georgelois' ); ?>","buttonText":"<?php echo esc_html__( 'Search', 'georgelois' ); ?>","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"border":{"width":"0px","style":"none","radius":"4px"}},"backgroundColor":"secondary","textColor":"primary","fontSize":"medium","fontFamily":"libre-franklin"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
