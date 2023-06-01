@@ -4,8 +4,8 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Course is a flexible and modern theme for anyone wanting to share their knowledge. The theme is built with integration with Sensei LMS and is ideal for Sensei users that are creating or selling courses. Style variations with multiple font and color combinations help you craft the perfect look and feel to show off courses and content. The theme can be used without Sensei too.
 Version: 1.2.4
-Requires at least: 6.1
-Tested up to: 6.1
+Requires at least: 6.2
+Tested up to: 6.2
 Requires PHP: 7.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -108,11 +108,22 @@ Tags: block-patterns, eLearning, education, full-site-editing, lms, online cours
 	color: var(--wp--preset--color--foreground);
 }
 
-header.wp-block-template-part {
+header {
 	background-color: transparent;
-	padding: 2.75rem 0px;
 }
 
+
+.wp-site-blocks header ~ main {
+	margin-block-start: 0;
+}
+
+header .navigation-wrapper {
+	min-height: 116px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-transform: revert;
+} 
 /*
  * Comments
  */
@@ -263,7 +274,6 @@ a {
 	border-color: currentcolor;
 	border-width: 1px;
 	color: currentcolor;
-	padding: 0.5856em 1.5238em;
 	text-decoration: none;
 }
 

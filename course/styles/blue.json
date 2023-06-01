@@ -45,7 +45,7 @@
 			"typography": {
 				"fontSizes": {
 					"normal": "clamp(1rem, 0.911rem + 0.238vw, 1.125rem)",
-					"button": "1.125rem"
+					"button": "clamp(1rem, 0.911rem + 0.238vw, 1.125rem)"
 				}
 			}
 		},
@@ -207,8 +207,8 @@
 					"name": "Huge",
 					"size": "3rem",
 					"fluid": {
-						"min": "3rem",
-						"max": "4rem"
+						"min": "2rem",
+						"max": "3.25rem"
 					},
 					"slug": "xx-large"
 				},
@@ -239,11 +239,58 @@
 			},
 			"core/post-content": {
 				"typography": {
-					"lineHeight": "132%"
+					"lineHeight": "138%"
 				}
+			},
+			"sensei-lms/course-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"fontSize": "var(--wp--custom--typography--font-sizes--normal)",
+					"fontWeight": "700",
+					"letterSpacing": "-0.04em",
+					"lineHeight": "100%",
+					"textTransform": "uppercase"
+				}
+			},
+			"sensei-lms/course-theme-course-progress-counter": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"fontSize": "clamp(0.875rem, 0.696rem + 0.476vw, 1.125rem)",
+					"letterSpacing": "-0.03em"
+				}
+			},
+			"sensei-lms/course-theme-lesson-module": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"letterSpacing": "-0.02em"
+				}
+			},
+			"sensei-lms/exit-course": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"fontSize": "clamp(0.875rem, 0.696rem + 0.476vw, 1.125rem)",
+					"letterSpacing": "-0.03em"
+				}
+			},
+			"sensei-lms/page-actions": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)"
+				}
+			},
+			"sensei-lms/course-navigation": {
+				"css": "& .sensei-lms-course-navigation-lesson__title { font-family: var(--wp--preset--font-family--body); font-size: .875rem; font-weight: 400; } & .sensei-lms-course-navigation-module__title { font-family: var(--wp--preset--font-family--body); font-size: 1.125rem; font-weight: 600; letter-spacing: -0.02em; text-transform: none; }"
 			}
 		},
 		"elements": {
+			"button": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--body)",
+					"letterSpacing": "-0.04em"
+				},
+				"spacing": {
+					"padding": "0.9em 1.75em"
+				}
+			},
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--heading)"

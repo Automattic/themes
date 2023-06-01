@@ -45,7 +45,8 @@
 			"typography": {
 				"fontSizes": {
 					"normal": "clamp(1.125rem, 1.036rem + 0.238vw, 1.25rem)",
-					"button": "1.125rem"
+					"button": "clamp(0.875rem, 0.875rem + ((1vw - 0.48rem) * 0.481), 1.125rem)",
+					"fixed": "clamp(1.125rem, 1.125rem, 1.125rem)"
 				}
 			}
 		},
@@ -84,6 +85,14 @@
 							"fontFamily": "Syne",
 							"fontDisplay": "block",
 							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fonts/Syne-VariableFont_wght.ttf" ]
+						},
+						{
+							"fontFamily": "Syne",
+							"fontDisplay": "block",
+							"fontWeight": "500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./assets/fonts/Syne-VariableFont_wght.ttf" ]
@@ -158,10 +167,10 @@
 				},
 				{
 					"name": "Extra large",
-					"size": "2.25rem",
+					"size": "2rem",
 					"fluid": {
-						"min": "2.25rem",
-						"max": "3rem"
+						"min": "2rem",
+						"max": "3.25rem"
 					},
 					"slug": "x-large"
 				},
@@ -199,11 +208,58 @@
 			},
 			"core/post-content": {
 				"typography": {
-					"lineHeight": "132%"
+					"lineHeight": "145%"
 				}
+			},
+			"sensei-lms/course-title" : {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "500",
+					"letterSpacing": "-0.01em"
+				}
+			},
+			"sensei-lms/course-theme-course-progress-counter" : {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--custom--typography--font-sizes--fixed)",
+					"letterSpacing": "0"
+				}
+			},
+			"sensei-lms/course-theme-lesson-module": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"letterSpacing": "0"
+				}
+			},
+			"sensei-lms/exit-course": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--custom--typography--font-sizes--fixed)",
+					"letterSpacing": "0"
+				}
+			},
+			"sensei-lms/page-actions": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--heading)",
+					"fontSize": "var(--wp--custom--typography--font-sizes--fixed)",
+					"fontWeight": "500",
+					"letterSpacing": "-0.01em"
+				}
+			},
+			"sensei-lms/course-navigation": {
+				"css": "& .sensei-lms-course-navigation-lesson__title { font-family: var(--wp--preset--font-family--heading); font-size: .875rem; } & .sensei-lms-course-navigation-lesson__extra { font-family: var(--wp--preset--font-family--heading); } & .sensei-lms-course-navigation-module__summary { font-family: var(--wp--preset--font-family--heading); } & .sensei-lms-course-navigation-module__title { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.04em; text-transform: none; }"
 			}
 		},
 		"elements": {
+			"button": {
+				"typography": {
+					"fontWeight": "500",
+					"letterSpacing": "-0.01em"
+				},
+				"spacing": {
+					"padding": "0.9em 1.6em"
+				}
+			},
 			"heading": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--heading)",
@@ -212,6 +268,8 @@
 			},
 			"h1": {
 				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-large)",
+					"letterSpacing": "-0.01em",
 					"textTransform": "none"
 				}
 			}
