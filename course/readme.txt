@@ -12,6 +12,18 @@ Course is a flexible and modern theme for anyone wanting to share their knowledg
 
 == Changelog ==
 
+= 1.3.0 =
+* Update the minimum required WordPress version (#7056)
+* Changes to theme.json to support global typography (#7068)
+* Update the gold variation typography (#7047)
+* Update the blue variation typography (#7046)
+* Update the dark variation typography (#7065)
+* Fix heading font size for default variation (#7083)
+* Update course theme variation button spacing (#7082)
+* Revert body class for the theme variation (#7116)
+* Fix layout issues in course patterns (#7119)
+* Update size of lesson progress meta and Exit Course link in Learning Mode default template (#7113)
+
 = 1.2.4 =
 * Tweak some block styles (#7033)
 * Add body class for the theme variation (#7034)
