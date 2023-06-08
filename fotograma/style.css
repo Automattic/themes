@@ -1,0 +1,74 @@
+/*
+Theme Name: Fotograma
+Theme URI: https://wordpress.com/theme/fotograma/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Fotograma is a portfolio theme for photographers seeking to showcase powerful photography in large sizes.
+Requires at least: 5.8
+Tested up to: 6.2
+Requires PHP: 5.7
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fotograma
+Tags: photography, one-column, wide-blocks, block-patterns, block-styles, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready, blog, news
+*//*
+ * OpenType feature for Noto Sans Japanese.
+ * It re-spaces glyphs designed to be set on full-em widths, fitting them onto half-em widths.
+ */
+body {
+	font-feature-settings: "halt";
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 2px;
+}
+
+/*
+ * Avatar Block
+ * Fix border radius setting for the avatar block
+ * https://github.com/WordPress/gutenberg/issues/48253
+ */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote {
+	margin: 0;
+}
+
+/*
+ * Term Description Block
+ * Reset the browser default margins for paragraph element
+ * https://github.com/WordPress/gutenberg/issues/50515
+ */
+
+.wp-block-term-description p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
