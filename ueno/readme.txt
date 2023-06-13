@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Ueno is suitable for any kind of blog or website. It has an opinionated default style and two alternative style variations.
+Ueno is suitable for any kind of blog or website. It has an opinionated default style and two alternative style variations. Ueno was inspired by Japanese kimono patterns and designs attributed to Ueno Seikō.
 
 == Changelog ==
 
