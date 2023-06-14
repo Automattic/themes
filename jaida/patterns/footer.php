@@ -21,13 +21,13 @@
 
 <!-- wp:column {"verticalAlignment":"top","width":"28.57%"} -->
 <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:28.57%"><!-- wp:social-links {"iconColor":"background","iconColorValue":"#e9e1e5","iconBackgroundColor":"primary","iconBackgroundColorValue":"#3b2b27","size":"has-normal-icon-size","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"flex","justifyContent":"right"}} -->
-<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"twitter"} /-->
+<ul class="wp-block-social-links has-normal-icon-size has-icon-color has-icon-background-color"><!-- wp:social-link {"url":"https://twitter.com","service":"twitter"} /-->
 
-<!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"youtube"} /-->
+<!-- wp:social-link {"url":"https://youtube.com","service":"youtube"} /-->
 
-<!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"pinterest"} /-->
+<!-- wp:social-link {"url":"https://pinterest.com","service":"pinterest"} /-->
 
-<!-- wp:social-link {"url":"https://adventurertheme.mystagingwebsite.com","service":"tiktok"} /--></ul>
+<!-- wp:social-link {"url":"https://tiktok.com","service":"tiktok"} /--></ul>
 <!-- /wp:social-links --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
