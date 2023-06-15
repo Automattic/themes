@@ -60,25 +60,108 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	padding: 0 0.25rem;
 }
 
-/* Custom Rothko alternating post style */
-.wp-block-post-template-is-layout-flow > .wp-block-post {
-	background: var(--wp--preset--color--background);
-}
-
-.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(2n) {
-	background: var(--wp--preset--color--primary);
-}
-
-.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(3n) {
-	background: var(--wp--preset--color--tertiary);
-}
-
-.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(4n) {
-	background: var(--wp--preset--color--background);
-}
 
 /* Comment styles */
 .wp-block-comment-template > .comment .wp-block-group-is-layout-flex,
 .wp-block-comment-template > .comment .wp-block-group-is-layout-flow {
 	flex-grow: 1;
 }
+
+/*
+ * Fixed bottom nav
+ */
+.fixed-bottom-nav {
+	bottom: 0;
+	left: 0;
+	height: 64px;
+	position: fixed;
+	width: 100%;
+}
+
+.fixed-bottom-nav::before {
+	content: '';
+	background-color: var(--wp--preset--color--primary);
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	top: -40px;
+	mix-blend-mode: darken;
+	-webkit-mask: url(assets/images/1e-greyscale.png) no-repeat center / cover;
+	mask: url(assets/images/1e-greyscale.png) no-repeat center / cover;
+	z-index: -1;
+}
+
+.background-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background-image: url(assets/images/background-greyscale.png);
+	background-size: contain;
+	background-repeat: repeat;
+	position: fixed;
+    z-index: -1; /* Keeps the background behind other content */
+}
+
+.background-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--wp--preset--color--background);
+    mix-blend-mode: color; /* Change to desired blend mode */
+    pointer-events: none;
+}
+
+.post-content-rothko-container {
+	background-image: url(assets/images/post-greyscale.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+}
+
+@media screen and (min-width: 750px){
+	.post-content-rothko-container {
+		background-size: 75% 100% !important;
+	}
+}
+
+/* Custom Rothko alternating post style */
+.wp-block-post-template-is-layout-flow > .wp-block-post .post-content-rothko-container::before {
+	content: '';
+	background: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	mix-blend-mode: darken;
+	-webkit-mask: url(assets/images/post-greyscale.png) no-repeat center / 100% 100%;
+	mask: url(assets/images/post-greyscale.png) no-repeat center / 100% 100%;
+	z-index: -1;
+}
+
+.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(2n) .post-content-rothko-container {
+	background-image: url(assets/images/post-white.png);
+	/* -webkit-mask: url(assets/images/post-white.png) no-repeat center / 100% 100%;
+	mask: url(assets/images/post-white.png) no-repeat center / 100% 100%; */
+}
+
+/* .wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(3n) .post-content-rothko-container { */
+	/* background-image: url(assets/images/post-teal.png); */
+	/* -webkit-mask: url(assets/images/post-white.png) no-repeat center / 100% 100%;
+	mask: url(assets/images/post-white.png) no-repeat center / 100% 100%; */
+/* } */
+
+.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(4n) .post-content-rothko-container {
+	background-image: url(assets/images/post-beige.png);
+	/* -webkit-mask: url(assets/images/post-white.png) no-repeat center / 100% 100%;
+	mask: url(assets/images/post-white.png) no-repeat center / 100% 100%; */
+}
+
+/* .wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(4n) .post-content-rothko-container::before {
+	background: var(--wp--preset--color--background);
+} */

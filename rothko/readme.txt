@@ -42,13 +42,6 @@ Used in theme screenshot
 Source: https://commons.wikimedia.org/wiki/File:Wolfsonian-FIU_Museum_-_IMG_8234.JPG
 Daderot, Public domain, via Wikimedia Commons
 
-Bitter Font
-Copyright 2011 The Bitter Project Authors (https://github.com/solmatas/BitterPro) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
-Source: https://www.solmatas.com/
--- End of Bitter Font credits --
-
 Source Sans Pro Font
 © 2010 - 2018 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’. 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL. This Font Software is distributed on an ‘AS IS’... 
