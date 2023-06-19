@@ -12,6 +12,9 @@ A theme in homage to George Lois, visionary American Art Director, and author. W
 
 == Changelog ==
 
+= 1.0.3 =
+* update george-lois default styles to light (#7139)
+
 = 1.0.2 =
 * Remove invalid taxQuery from the posts-list (#7127)
 
