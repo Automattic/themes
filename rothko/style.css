@@ -115,19 +115,6 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     pointer-events: none;
 }
 
-.post-content-rothko-container {
-	background-image: url(assets/images/post-greyscale.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center top;
-	position: relative;
-}
-
-@media screen and (min-width: 750px){
-	.post-content-rothko-container {
-		background-size: 75% 100% !important;
-	}
-}
 
 /* Custom Rothko alternating post style */
 .wp-block-post-template-is-layout-flow > .wp-block-post .post-content-rothko-container::before {
@@ -160,6 +147,14 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	background-image: url(assets/images/post-beige.png);
 }
 
+.post-content-rothko-container {
+	background-image: url(assets/images/post-greyscale.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+}
+
 .rothko-archive-title {
 	background-image: url(assets/images/post-beige.png);
 	background-size: 100% 100%;
@@ -167,8 +162,16 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	background-position: center top;
 }
 
+.rothko-single-container, .rothko-comments-section {
+	background-image: url(assets/images/post-greyscale.png);
+	background-size: 150% 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+}
+
 @media screen and (min-width: 750px){
-	.rothko-archive-title {
-		background-size: 75% 100%;
+	.post-content-rothko-container, .rothko-archive-title, .rothko-single-container {
+		background-size: 75% 100% !important;
 	}
 }
