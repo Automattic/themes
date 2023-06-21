@@ -42,143 +42,6 @@
 		},
 		"layout": {
 			"contentSize": "620px",
-			"definitions": {
-				"constrained": {
-					"baseStyles": [
-						{
-							"rules": {
-								"float": "left",
-								"margin-inline-end": "2em",
-								"margin-inline-start": "0"
-							},
-							"selector": " > .alignleft"
-						},
-						{
-							"rules": {
-								"float": "right",
-								"margin-inline-end": "0",
-								"margin-inline-start": "2em"
-							},
-							"selector": " > .alignright"
-						},
-						{
-							"rules": {
-								"margin-left": "auto !important",
-								"margin-right": "auto !important"
-							},
-							"selector": " > .aligncenter"
-						},
-						{
-							"rules": {
-								"margin-left": "auto !important",
-								"margin-right": "auto !important",
-								"max-width": "var(--wp--style--global--content-size)"
-							},
-							"selector": " > :where(:not(.alignleft):not(.alignright):not(.alignfull))"
-						},
-						{
-							"rules": {
-								"max-width": "var(--wp--style--global--wide-size)"
-							},
-							"selector": " > .alignwide"
-						}
-					],
-					"className": "is-layout-constrained",
-					"name": "constrained",
-					"slug": "constrained",
-					"spacingStyles": [
-						{
-							"rules": {
-								"margin-block-end": "0",
-								"margin-block-start": "0"
-							},
-							"selector": " > *"
-						},
-						{
-							"rules": {
-								"margin-block-end": "0",
-								"margin-block-start": null
-							},
-							"selector": " > * + *"
-						}
-					]
-				},
-				"default": {
-					"baseStyles": [
-						{
-							"rules": {
-								"float": "left",
-								"margin-inline-end": "2em",
-								"margin-inline-start": "0"
-							},
-							"selector": " > .alignleft"
-						},
-						{
-							"rules": {
-								"float": "right",
-								"margin-inline-end": "0",
-								"margin-inline-start": "2em"
-							},
-							"selector": " > .alignright"
-						},
-						{
-							"rules": {
-								"margin-left": "auto !important",
-								"margin-right": "auto !important"
-							},
-							"selector": " > .aligncenter"
-						}
-					],
-					"className": "is-layout-flow",
-					"name": "default",
-					"slug": "flow",
-					"spacingStyles": [
-						{
-							"rules": {
-								"margin-block-end": "0",
-								"margin-block-start": "0"
-							},
-							"selector": " > *"
-						},
-						{
-							"rules": {
-								"margin-block-end": "0",
-								"margin-block-start": null
-							},
-							"selector": " > * + *"
-						}
-					]
-				},
-				"flex": {
-					"baseStyles": [
-						{
-							"rules": {
-								"align-items": "center",
-								"flex-wrap": "wrap"
-							},
-							"selector": ""
-						},
-						{
-							"rules": {
-								"margin": "0"
-							},
-							"selector": " > *"
-						}
-					],
-					"className": "is-layout-flex",
-					"displayMode": "flex",
-					"name": "flex",
-					"slug": "flex",
-					"spacingStyles": [
-						{
-							"rules": {
-								"gap": null
-							},
-							"selector": ""
-						}
-					]
-				}
-			},
 			"wideSize": "1200px"
 		},
 		"shadow": {
@@ -359,7 +222,7 @@
 					"radius": "5px"
 				},
 				"color": {
-					"background": "var:preset|color|secondary"
+					"background": "var(--wp--preset--color--secondary)"
 				}
 			},
 			"core/code": {
@@ -410,12 +273,12 @@
 			},
 			"core/heading": {
 				"color": {
-					"text": "var:preset|color|primary"
+					"text": "var(--wp--preset--color--primary)"
 				},
 				"elements": {
 					"link": {
 						"color": {
-							"text": "var:preset|color|primary"
+							"text": "var(--wp--preset--color--primary)"
 						}
 					}
 				}
@@ -446,7 +309,7 @@
 					}
 				},
 				"typography": {
-					"fontSize": "var:preset|font-size|small"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/post-author-name": {
@@ -487,7 +350,7 @@
 			},
 			"core/post-navigation-link": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|literata"
+					"fontFamily": "var(--wp--preset--font-family--literata)"
 				}
 			},
 			"core/post-terms": {
@@ -497,20 +360,20 @@
 			},
 			"core/post-title": {
 				"color": {
-					"text": "var:preset|color|primary"
+					"text": "var(--wp--preset--color--primary)"
 				},
 				"elements": {
 					"link": {
 						":hover": {
 							"color": {
-								"text": "var:preset|color|secondary"
+								"text": "var(--wp--preset--color--secondary)"
 							},
 							"typography": {
 								"textDecoration": "underline"
 							}
 						},
 						"color": {
-							"text": "var:preset|color|primary"
+							"text": "var(--wp--preset--color--primary)"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -583,14 +446,14 @@
 					"link": {
 						":hover": {
 							"color": {
-								"text": "var:preset|color|foreground"
+								"text": "var(--wp--preset--color--foreground)"
 							},
 							"typography": {
 								"textDecoration": "underline"
 							}
 						},
 						"color": {
-							"text": "var:preset|color|primary"
+							"text": "var(--wp--preset--color--primary)"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -598,7 +461,7 @@
 					}
 				},
 				"typography": {
-					"fontFamily": "var:preset|font-family|literata",
+					"fontFamily": "var(--wp--preset--font-family--literata)",
 					"fontSize": "1.8rem",
 					"fontStyle": "normal",
 					"fontWeight": "500",
@@ -676,7 +539,7 @@
 			},
 			"heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|inter",
+					"fontFamily": "var(--wp--preset--font-family--inter)",
 					"fontStyle": "normal",
 					"fontWeight": "700",
 					"lineHeight": "1.125"
@@ -685,19 +548,19 @@
 			"link": {
 				":hover": {
 					"color": {
-						"text": "var:preset|color|primary"
+						"text": "var(--wp--preset--color--primary)"
 					},
 					"typography": {
 						"textDecoration": "none"
 					}
 				},
 				"color": {
-					"text": "var:preset|color|secondary"
+					"text": "var(--wp--preset--color--secondary)"
 				}
 			}
 		},
 		"spacing": {
-			"blockGap": "var:preset|spacing|50",
+			"blockGap": "var(--wp--preset--spacing--50)",
 			"padding": {
 				"bottom": "0px",
 				"left": "40px",
@@ -706,8 +569,8 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var:preset|font-family|inter",
-			"fontSize": "var:preset|font-size|small",
+			"fontFamily": "var(--wp--preset--font-family--inter)",
+			"fontSize": "var(--wp--preset--font-size--small)",
 			"fontStyle": "normal",
 			"fontWeight": "400",
 			"lineHeight": "1.6"
