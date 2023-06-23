@@ -1,0 +1,259 @@
+/*
+Theme Name: Lineup
+Theme URI: https://wordpress.com/theme/lineup/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Lineup is a fanzine inspired theme lists entries with a bold typography and colour.
+Requires at least: 5.8
+Tested up to: 6.1.1
+Requires PHP: 5.7
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: lineup
+Tags: blog, one-column, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, sticky-post, threaded-comments, translation-ready
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	border: 1px solid;
+	padding: var(--wp--preset--spacing--30);
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
+
+/*
+ * Form field styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+::placeholder {
+	color: var(--wp--preset--color--contrast);
+	opacity: 1; /* Firefox */
+}
+
+input:not([type="submit"]):not([type="checkbox"]),
+textarea,
+.wp-block-post-comments-form input:not([type=submit]),
+.wp-block-post-comments-form textarea {
+	background-color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--contrast);
+}
+
+input:not([type="submit"]):not([type="checkbox"]):focus,
+textarea:focus {
+	outline-style: solid;
+	outline-color: var(--wp--preset--color--contrast);
+}
+
+/* Search button inside style */
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
+	border-color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+	padding: 0px;
+}
+
+/* Reset browser default margins for blockquote element */
+.wp-block-pullquote blockquote {
+	margin: 0;
+}
+
+/* Adjust the font size of the comment reply title in the post comments form */
+.wp-block-post-comments-form .comment-reply-title {
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+/* Remove the bottom margin from the submit button in the post comments form */
+.wp-block-post-comments-form .form-submit {
+	margin-bottom: 0;
+}
+
+/* The navigation is the full-width in this theme */
+.wp-block-navigation__responsive-close {
+	max-width: none;
+}
+
+/* Remove the top padding for submenu items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	padding-top: 0;
+}
+
+.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content:hover {
+	color: var(--wp--preset--color--secondary);
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+	border-color: var(--wp--preset--color--contrast);
+}
+
+/* Override the Gutenberg style to theme style */
+.wp-block-post-author__byline,
+.wp-block-post-author__bio {
+	font-size: inherit;
+}
+
+/* Round the avatar and reset the vertical alignment */
+.wp-block-post-author__avatar img {
+	vertical-align: middle;
+}
+
+/* There is no way to remove the bottom margin */
+.wp-block-query-pagination>.wp-block-query-pagination-next:last-child,
+.wp-block-query-pagination>.wp-block-query-pagination-numbers:last-child,
+.wp-block-query-pagination>.wp-block-query-pagination-previous:last-child {
+	margin-bottom: 0;
+}
+
+/* Style tag cloud outline style  */
+.wp-block-tag-cloud.is-style-outline a {
+	border-color: var(--wp--preset--color--tertiary);
+	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);
+}
+
+/* Remove the default margin from author bio */
+.wp-block-post-author__bio {
+	margin: 0;
+}
+
+/* Remove the default margin from term description. */
+.wp-block-term-description p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-term-description p:last-child {
+	margin-bottom: 0;
+}
+
+/* Normalise font sizes for the latest comments and latest posts widgets */
+.wp-block-latest-comments__comment-excerpt p,
+.wp-block-latest-comments__comment-date,
+.wp-block-latest-posts__post-author,
+.wp-block-latest-posts__post-date {
+	font-size: inherit;
+}
+
+/* Adjust colours in the Calendar widget */
+.wp-block-calendar table:where(:not(.has-text-color)) {
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-calendar table:where(:not(.has-text-color)) td, .wp-block-calendar table:where(:not(.has-text-color)) th {
+	border-color: var(--wp--preset--color--contrast);
+}
+
+:where(.wp-block-calendar table:not(.has-background) th) {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+/* Fix border radius setting for the avatar block */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+	vertical-align: middle;
+}
+
+/* Fix line height for various fields */
+.wp-block-search__input,
+.wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments-form .comment-form textarea {
+	line-height: inherit;
+}
+
+/* Needed to style input field for various Jetpack blocks */
+.wp-block-jetpack-contact-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-jetpack-contact-form select,
+.wp-block-jetpack-contact-form textarea,
+.wp-block-jetpack-mailchimp input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-jetpack-revue input:not([type="submit"]):not([type="checkbox"]) {
+	font-size: inherit;
+	line-height: inherit;
+	padding: 1rem;
+}
+
+div[id^="contact-form-"] .contact-form label {
+	font-weight: 400;
+}
+
+.wp-block-jetpack-contact-form.contact-form label span {
+	color: var(--wp--preset--color--tertiary);
+}
+
+.wp-block-jetpack-contact-form.contact-form select {
+	padding: 0.5rem;
+}
+
+div[id^="contact-form-"] h4 {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: inherit;
+	line-height: 1.172136638;
+}
+
+div[id^="contact-form-"] .contact-form-submission {
+	margin: 0;
+	padding: 0;
+}
+
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button,
+.wp-block-jetpack-mailchimp p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wp-block-jetpack-mailchimp_consent-text,
+.wp-block-jetpack-mailchimp p {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+
+/*
+ * Special CSS for this theme.
+ */
+
+/* This stops the element go over multiple lines. We can't do this with the editor yet. */
+.nowrap {
+	overflow: hidden;
+	white-space: nowrap;
+}
+/* This removes the gap between each posts in the query loop block */
+.wp-block-post-template li {
+	margin: 0;
+}
