@@ -6,7 +6,6 @@
  * Inserter: no
  */
 ?>
-<!-- wp:template-part {"slug":"header","area":"header"} /-->
 
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group"><!-- wp:image {"align":"wide","id":45,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"30px"}}} -->
@@ -33,5 +32,3 @@
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer --></main>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

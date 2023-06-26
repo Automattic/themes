@@ -6,7 +6,6 @@
  * Inserter: no
  */
 ?>
-<!-- wp:template-part {"slug":"header-home","area":"uncategorized"} /-->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|50","bottom":"var:preset|spacing|70","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"textAlign":"center"} -->
@@ -231,5 +230,3 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
