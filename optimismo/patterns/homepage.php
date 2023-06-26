@@ -14,7 +14,7 @@
 
 	<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull">
-		<!-- wp:template-part {"slug":"header","theme":"optimismo","tagName":"header","align":"full"} /-->
+		<!-- wp:template-part {"slug":"header","tagName":"header","align":"full"} /-->
 
 		<!-- wp:group {"align":"full","layout":{"type":"default"}} -->
 		<div class="wp-block-group alignfull">
@@ -38,6 +38,6 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:template-part {"slug":"footer","theme":"optimismo","tagName":"footer","align":"full"} /-->
+	<!-- wp:template-part {"slug":"footer","tagName":"footer","align":"full"} /-->
 </div>
 <!-- /wp:group -->
