@@ -68,3 +68,31 @@ Used in "Startup" pattern.
 License: CC0 Public domain
 Source: Felipe Varela (@keoshi) 
 Used in "Startup" pattern.
+
+Manrope Font
+Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: http://gent.media
+-- End of Manrope Font credits --
+
+Playfair Display Font
+Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name "Playfair Display". 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: http://www.forthehearts.net
+-- End of Playfair Display Font credits --
+
+Figtree Font
+Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: https://erikdkennedy.com/
+-- End of Figtree Font credits --
+
+IBM Plex Serif Font
+Copyright 2020 IBM Corp. All rights reserved. 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: http://www.boldmonday.com
+-- End of IBM Plex Serif Font credits --

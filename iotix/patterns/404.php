@@ -1,32 +1,37 @@
 <?php
 /**
- * Title: A 404 page
+ * Title: 404
  * Slug: iotix/404
+ * Categories: hidden
  * Inserter: no
  */
-
 ?>
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
 
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group"><!-- wp:image {"align":"wide","id":425,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image alignwide size-full"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/404-Image.png" alt="" class="wp-image-425"/></figure>
+<main class="wp-block-group"><!-- wp:image {"align":"wide","id":45,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"30px"}}} -->
+<figure class="wp-block-image alignwide size-full has-custom-border"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/404_Image.png" alt="" class="wp-image-45" style="border-radius:30px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:spacer -->
-<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:spacer {"height":"40px"} -->
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:heading {"textAlign":"left","level":1,"fontSize":"x-large"} -->
-<h1 class="has-text-align-left has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can’t be found.', 'iotix' ); ?></h1>
+<!-- wp:group {"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:heading {"textAlign":"left","fontSize":"x-large","anchor":"oops-that-page-can-t-be-found"} -->
+<h2 class="wp-block-heading has-text-align-left has-x-large-font-size" id="oops-that-page-can-t-be-found">Page not found.</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'iotix' ); ?></p>
+<p>It looks like nothing was found at this location. Maybe try a search?</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"","showLabel":false,"style":{"border":{"radius":"100px"}},"borderColor":"foreground"} /-->
+<!-- wp:search {"label":"","showLabel":false,"widthUnit":"%","style":{"border":{"radius":"100px"}},"backgroundColor":"foreground"} /--></div>
+<!-- /wp:group -->
 
 <!-- wp:spacer -->
 <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer --></main>
 <!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->
