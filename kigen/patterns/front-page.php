@@ -64,7 +64,8 @@
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:template-part {"slug":"footer-2"} /-->
+				<!-- wp:pattern {"slug":"kigen/footer-2"} /-->
+
 			</div>
 			<!-- /wp:group -->
 		</div>
