@@ -5,7 +5,6 @@
  * Categories: featured
  */
 ?>
-<!-- wp:template-part {"slug":"header","theme":"kigen","tagName":"header"} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--70)">
@@ -59,13 +58,13 @@
 
 					<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 					<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--30)">
-						<!-- wp:navigation {"ref":449,"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0px"}}} /-->
+						<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0px"}}} /-->
 					</div>
 					<!-- /wp:group -->
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:template-part {"slug":"footer-2","theme":"kigen"} /-->
+				<!-- wp:template-part {"slug":"footer-2"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>
