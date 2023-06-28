@@ -49,7 +49,7 @@ a {
 .wp-block-search__button:hover,
 .wp-block-file .wp-block-file__button:hover,
 .wp-block-button__link:hover {
-	opacity: 0.90;
+	opacity: 0.9;
 }
 
 /*
@@ -128,7 +128,7 @@ input:not([type="submit"]):not([type="button"]):focus {
  * Comment form refinements.
  */
 .comment-form .comment-subscription-form,
-.comment-form .post-subscription-form{
+.comment-form .post-subscription-form {
 	margin: 0;
 }
 
@@ -138,10 +138,29 @@ input:not([type="submit"]):not([type="button"]):focus {
  * https://github.com/Automattic/jetpack/milestone/295
  */
 
-.wp-block-jetpack-subscriptions__container .wp-element-button:not(.block-editor-rich-text__editable), 
+.wp-block-jetpack-subscriptions__container .wp-element-button:not(.block-editor-rich-text__editable),
 .wp-block-jetpack-subscriptions__container .wp-block-button__link:not(.block-editor-rich-text__editable) {
 	font-size: inherit;
 	margin-top: 10px;
 	padding: 24px 36px 24px 36px;
 	width: 100%;
+}
+
+/*
+ * Refine mobile navigation styling.
+ */
+.wp-block-navigation a:where(:not(.wp-element-button)):focus,
+.wp-block-pages-list__item:focus.wp-block-navigation a:where(:not(.wp-element-button)):focus {
+	text-decoration: none;
+}
+
+.wp-block-pages-list__item.current-menu-item a:where(:not(.wp-element-button)) {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 37.5em) {
+
+	.wp-block-pages-list__item {
+		text-align: right;
+	}
 }
