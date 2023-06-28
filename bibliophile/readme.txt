@@ -1,6 +1,6 @@
 === Bibliophile ===
 Contributors: Automattic
-Requires at least: 5.8
+Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Bibliophile was designed to provide an impeccable reading experience. Its header
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
@@ -30,3 +30,13 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Font: Albura from BeFonts
+License: Free for Commercial Use (https://befonts.com/free-for-commercial-use)
+Source: https://befonts.com/albura-font-family.html
+
+Image: Vintage typewriter image in screenshot
+License: Free License
+Source: https://www.freepik.com/free-vector/vintage-typewriter-illustration_4062873.htm
