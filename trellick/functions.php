@@ -29,7 +29,7 @@ if ( ! function_exists( 'trellick_support' ) ) :
 
 endif;
 
-add_action( 'after_setrellickp_theme', 'trellick_support' );
+add_action( 'after_setup_theme', 'trellick_support' );
 
 if ( ! function_exists( 'trellick_styles' ) ) :
 
