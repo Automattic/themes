@@ -35,3 +35,10 @@ This theme bundles the following third-party resources:
 
 Noto Sans from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 https://fonts.google.com/noto/specimen/Noto+Sans
+
+Noto Sans JP Font
+(c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: http://www.adobe.com/type/
+-- End of Noto Sans JP Font credits --
