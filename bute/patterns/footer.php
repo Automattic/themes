@@ -33,9 +33,9 @@
 			<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|base"}}}}},"fontSize":"x-small","fontFamily":"raleway"} -->
 			<p class="has-link-color has-raleway-font-family has-x-small-font-size"><?php
 				/* Translators: WordPress link. */
-				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'exmoor' ) ) . '" rel="nofollow">WordPress</a>';
+				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'bute' ) ) . '" rel="nofollow">WordPress</a>';
 				echo sprintf(
-					esc_html__( 'Designed with %1$s', 'exmoor' ),
+					esc_html__( 'Designed with %1$s', 'bute' ),
 					$wordpress_link
 				);?></p>
 			<!-- /wp:paragraph -->

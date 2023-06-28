@@ -1,7 +1,7 @@
 === Bute ===
 Contributors: Automattic
-Requires at least: 6.2.2
-Tested up to: 6.2.2
+Requires at least: 6.2
+Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,14 +38,12 @@ Source: https://fonts.google.com/specimen/Mulish
 CC0 Public Domain Catalina Island Free Stock Image by Jay Mantri
 https://stocksnap.io/photo/catalina-island-D49XR0MX5L
 
-
 Poppins Font
 Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins) 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
 License URL: https://scripts.sil.org/OFL 
 Source: https://indiantypefoundry.com
 -- End of Poppins Font credits --
-
 
 Roboto Font
 Copyright 2011 Google Inc. All Rights Reserved. 
