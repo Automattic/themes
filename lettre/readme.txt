@@ -12,6 +12,10 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.7 =
+* Fix some nav menu styling issues (#7167)
+* Add avatars to lettre comments (#7166)
+
 = 1.1.6 =
 * Update spacer in Lettre post template (#7098)
 * Add title to page template (#7094)

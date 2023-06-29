@@ -12,6 +12,9 @@ Tomoni is a theme that displays a use case of multilingual content with Japanese
 
 == Changelog ==
 
+= 1.0.1 =
+* Tomoni: replace with noto JP with variable font (#7168)
+
 = 1.0.0 =
 * Initial release
 
