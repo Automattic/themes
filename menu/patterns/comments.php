@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: menu/comments
+ * slug: the-menu/comments
  * inserter: no
  */
 

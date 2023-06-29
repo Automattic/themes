@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: A 404 page
- * Slug: menu/404
+ * Slug: the-menu/404
  * Inserter: no
  */
 
@@ -14,11 +14,11 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"left","level":1,"align":"wide","anchor":"oops-that-page-can-t-be-found"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left"><?php echo esc_html__( 'We\'re sorry!', 'menu' ); ?></h1>
+<h1 class="wp-block-heading alignwide has-text-align-left"><?php echo esc_html__( 'We\'re sorry!', 'the-menu' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"textAlign":"left","level":1,"align":"wide","anchor":"oops-that-page-can-t-be-found"} -->
-<h1 class="wp-block-heading alignwide has-text-align-left"><?php echo esc_html__( 'Nothing has last...', 'menu' ); ?></h1>
+<h1 class="wp-block-heading alignwide has-text-align-left"><?php echo esc_html__( 'Nothing has last...', 'the-menu' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"40px"} -->
@@ -27,7 +27,7 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"40px"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group alignwide"><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'We are apparently out of that item. What about a new selection?', 'menu' ); ?></p>
+<p><?php echo esc_html__( 'We are apparently out of that item. What about a new selection?', 'the-menu' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -36,7 +36,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:group {"align":"full","layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group alignfull"><!-- wp:search {"showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'menu' ); ?>"} /-->
+<div class="wp-block-group alignfull"><!-- wp:search {"showLabel":false,"width":100,"widthUnit":"%","buttonText":"<?php echo esc_html__( 'Search', 'the-menu' ); ?>"} /-->
 
 <!-- wp:spacer {"height":"40px"} -->
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>

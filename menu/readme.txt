@@ -1,4 +1,4 @@
-=== MENU ===
+=== The MENU ===
 Contributors: the WordPress team
 Requires at least: 6.1
 Tested up to: 6.2
@@ -12,14 +12,14 @@ A simple theme designed to facilitate restaurant owners' experience when buildin
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
 
-MENU WordPress Theme, (C) 2023 the WordPress team
-MENU is distributed under the terms of the GNU GPL.
-MENU is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+The MENU WordPress Theme, (C) 2023 the WordPress team
+The MENU is distributed under the terms of the GNU GPL.
+The MENU is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

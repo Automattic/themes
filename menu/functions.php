@@ -4,8 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package MENU
- * @since MENU 1.0
+ * @package The MENU
+ * @since The MENU 1.0
  */
 
 
@@ -24,7 +24,7 @@ if ( ! function_exists( 'menu_support' ) ) :
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'menu' );
+		load_theme_textdomain( 'the-menu' );
 	}
 
 endif;
