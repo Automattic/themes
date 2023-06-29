@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Posts List
- * Slug: menu/posts-list
+ * Slug: the-menu/posts-list
  * Categories: hidden
  * Inserter: no
  */
@@ -9,7 +9,7 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"40px","top":"64px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="padding-top:64px;padding-bottom:40px"><!-- wp:heading {"level":1,"align":"wide"} -->
-<h1 class="wp-block-heading alignwide"><?php echo esc_html__( 'Burgers', 'menu' ); ?></h1>
+<h1 class="wp-block-heading alignwide"><?php echo esc_html__( 'Burgers', 'the-menu' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"40px","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
