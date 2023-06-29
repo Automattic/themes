@@ -6,7 +6,6 @@
  * Inserter: no
  */
 ?>
-<!-- wp:template-part {"slug":"header","theme":"exmoor"} /-->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group">
@@ -25,5 +24,3 @@
 	<!-- wp:pattern {"slug":"exmoor/call-to-action"} /-->
 </main>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","theme":"exmoor","className":"footer-container"} /-->

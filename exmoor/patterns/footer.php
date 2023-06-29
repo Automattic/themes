@@ -19,7 +19,7 @@
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.5"},"spacing":{"margin":{"top":"0"}}},"fontSize":"x-small","fontFamily":"raleway"} -->
-			<p class="has-raleway-font-family has-x-small-font-size" style="margin-top:0;line-height:1.5"><?php echo esc_html_x( '01234567890', 'tel number', 'fotograma' ); ?></p>
+			<p class="has-raleway-font-family has-x-small-font-size" style="margin-top:0;line-height:1.5"><?php echo esc_html_x( '01234567890', 'tel number', 'exmoor' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","size":"has-small-icon-size","className":"is-style-logos-only"} -->
