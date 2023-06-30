@@ -12,15 +12,15 @@
 <div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:pattern {"slug":"effigy/header"} /-->
 
 <!-- wp:heading {"level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
-<h1 class="wp-block-heading has-background-color has-text-color has-link-color">A renowned English novelist, best known for my novel Frankenstein; or, The Modern Prometheus, which is considered an early example of science fiction.</h1>
+<h1 class="wp-block-heading has-background-color has-text-color has-link-color"><?php echo esc_html__( 'A renowned English novelist, best known for my novel Frankenstein; or, The Modern Prometheus, which is considered an early example of science fiction.', 'effigy' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
-<h1 class="wp-block-heading has-background-color has-text-color has-link-color">I also edited and promoted the works of my husband, Romantic poet and philosopher Percy Bysshe Shelley.</h1>
+<h1 class="wp-block-heading has-background-color has-text-color has-link-color"><?php echo esc_html__( 'I also edited and promoted the works of my husband, Romantic poet and philosopher Percy Bysshe Shelley.', 'effigy' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
-<h1 class="wp-block-heading has-background-color has-text-color has-link-color">My father was the political philosopher William Godwin, and my mother was the women's rights advocate Mary Wollstonecraft.</h1>
+<h1 class="wp-block-heading has-background-color has-text-color has-link-color"><?php echo esc_html__( 'My father was the political philosopher William Godwin, and my mother was the women\'s rights advocate Mary Wollstonecraft.', 'effigy' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background","layout":{"type":"constrained"}} -->
@@ -29,7 +29,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Experience</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Experience', 'effigy' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[3]}},"displayLayout":{"type":"list"}} -->
@@ -53,7 +53,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Education</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Education', 'effigy' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[4]}},"displayLayout":{"type":"list"}} -->
@@ -77,7 +77,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Skills</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Skills', 'effigy' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:query {"queryId":12,"query":{"perPage":"4","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[5]}},"displayLayout":{"type":"list"}} -->
@@ -101,7 +101,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Interests</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Interests', 'effigy' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:query {"queryId":12,"query":{"perPage":"4","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[6]}},"displayLayout":{"type":"list"}} -->
