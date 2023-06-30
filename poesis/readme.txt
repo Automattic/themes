@@ -30,3 +30,13 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Font: EB Garamond, from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/EB+Garamond
+
+Image: Group portrait of six Italian writers and poets: Dante Alighieri, Francesco Petrarch, Guido Cavalcanti, Giovanni Boccaccio, Cino da Pistoia, and Guittone d'Arezzo.. Original from the Minneapolis Institute of Art.
+License: CC0 Public domain
+Source: https://www.rawpixel.com/image/7651926/image-vintage-art-public-domain
