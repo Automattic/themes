@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: thetheissue/comments
+ * slug: theissue/comments
  * inserter: no
  */
 
