@@ -1,0 +1,65 @@
+/*
+Theme Name: Bute
+Theme URI: https://wordpress.com/theme/bute/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Bute is a blog theme that has a full-screen front page
+Requires at least: 6.0
+Tested up to: 6.2
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bute
+Tags: blog, holiday, one-column, four-columns, wide-blocks, block-patterns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, template-editing, threaded-comments, translation-ready, two-columns
+*/
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 2px;
+}
+
+/*
+ * Avatar Block
+ * Fix border radius setting for the avatar block
+ * https://github.com/WordPress/gutenberg/issues/48253
+ */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+}
+
+/*
+ * Button Block
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
+
+/*
+ * Footer template part
+ * There is no option to remove the top margin.
+ * https://github.com/WordPress/gutenberg/issues/47637
+ */
+.footer-container {
+	margin-top: auto;
+}
