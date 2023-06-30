@@ -1,7 +1,7 @@
 === Effigy ===
 Contributors: the WordPress team
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Effigy is a blog theme that echoes the structure of a professional profile with 
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
@@ -30,3 +30,16 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+LVC Sans
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://fontlibrary.org/en/font/lvc-sans 
+
+Russisch Sans
+Licensed under the terms of the SIL Open Font License (v1.1)
+Source: https://fontlibrary.org/en/font/russisch-sans 
+
+Unknown woman, formerly known as Mary Shelly by Samuel John Stump, Public Domain
+https://commons.wikimedia.org/wiki/File:Unknown_woman,_formerly_known_as_Mary_Wollstonecraft_Shelley_by_Samuel_John_Stump.jpg
