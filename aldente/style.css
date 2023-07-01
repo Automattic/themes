@@ -1,0 +1,55 @@
+/*
+Theme Name: Al Dente
+Theme URI: https://wordpress.com/theme/aldente
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Al Dente is a blog theme perfect for blogs whose posts are categorised, for example food recipe blogs.
+Requires at least: 6.0
+Tested up to: 6.2.2
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: aldente
+Tags: blog, grid-layout, two-columns, four-columns, right-sidebar, block-patterns, block-styles, editor-style, featured-images, full-site-editing, rtl-language-support, template-editing, threaded-comments, translation-ready, news, one-column, wide-blocks, custom-background, custom-colors, custom-logo, custom-menu, theme-options
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 1.5px;
+}
+
+/*
+ * Avatar Block
+ * Fix border radius setting for the avatar block
+ * https://github.com/WordPress/gutenberg/issues/48253
+ */
+.wp-block-avatar a,
+.wp-block-avatar img {
+	border-radius: inherit;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote and paragraph element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
