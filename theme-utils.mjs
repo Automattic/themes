@@ -279,7 +279,7 @@ async function pushButtonDeploy() {
 
 			await executeCommand(`
 				git commit -m "Version Bump";
-				git push
+				git push --set-upstream origin trunk
 			`, true);
 		}
 
