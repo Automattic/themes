@@ -7,27 +7,29 @@
  */
 ?>
 
-<!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
-<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:spacer {"height":"5vh"} -->
+<div style="height:5vh" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">
-			<?php
-				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'mpho' ) ) . '" rel="nofollow">WordPress</a>';
-				echo sprintf(
-					/* Translators: WordPress link. */
-					esc_html__( 'Designed with %1$s', 'mpho' ),
-					$wordpress_link
-				);
-				?>
-		</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
-</div>
+<!-- wp:group {"style":{"spacing":{"blockGap":"0.2rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:site-title {"fontSize":"medium"} /-->
+
+<!-- wp:paragraph {"align":"left","style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}},"typography":{"fontSize":"0.9rem"}},"textColor":"contrast"} -->
+<p class="has-text-align-left has-contrast-color has-text-color has-link-color" style="font-size:0.9rem">
+	<?php
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'mpho' ) ) . '" rel="nofollow">WordPress</a>';
+		echo sprintf(
+			/* Translators: WordPress link. */
+			esc_html__( 'Designed with %1$s', 'mpho' ),
+			$wordpress_link
+		);
+		?>
+</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"6vh"} -->
+<div style="height:6vh" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:group -->
