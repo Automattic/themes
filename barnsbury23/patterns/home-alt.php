@@ -8,9 +8,9 @@
 ?>
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:template-part {"slug":"header","theme":"barnsbury23","tagName":"header","align":"full"} /-->
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:template-part {"slug":"header","tagName":"header","align":"full"} /-->
 
-<!-- wp:template-part {"slug":"home-clean","theme":"barnsbury23","align":"wide"} /--></div>
+<!-- wp:template-part {"slug":"home-clean","align":"wide"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"40px","bottom":"0px","left":"40px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
@@ -119,14 +119,14 @@
 <div style="margin-top:0px;margin-bottom:0px;height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:template-part {"slug":"testimonials-alt","theme":"barnsbury23","align":"wide"} /-->
+<!-- wp:template-part {"slug":"testimonials-alt","align":"wide"} /-->
 
 <!-- wp:spacer {"height":"8rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 <div style="margin-top:0px;margin-bottom:0px;height:8rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"numbers-green","theme":"barnsbury23","align":"full"} /--></div>
+<!-- wp:template-part {"slug":"numbers-green","align":"full"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"backgroundColor":"primary","textColor":"tertiary","layout":{"type":"constrained"}} -->
@@ -184,5 +184,5 @@
 <div style="margin-top:0px;margin-bottom:0px;height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:template-part {"slug":"footer-social","theme":"barnsbury23","align":"wide"} /--></div>
+<!-- wp:template-part {"slug":"footer-social","align":"wide"} /--></div>
 <!-- /wp:group -->

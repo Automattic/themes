@@ -8,9 +8,9 @@
 ?>
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"backgroundColor":"primary","textColor":"tertiary","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-tertiary-color has-primary-background-color has-text-color has-background has-link-color" style="margin-top:0px;margin-bottom:0px"><!-- wp:template-part {"slug":"header","theme":"barnsbury23","tagName":"header","align":"wide"} /-->
+<div class="wp-block-group has-tertiary-color has-primary-background-color has-text-color has-background has-link-color" style="margin-top:0px;margin-bottom:0px"><!-- wp:template-part {"slug":"header","tagName":"header","align":"wide"} /-->
 
-<!-- wp:template-part {"slug":"hero-green","theme":"barnsbury23","align":"wide"} /--></div>
+<!-- wp:template-part {"slug":"hero-green","align":"wide"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"40px","bottom":"0px","left":"40px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"constrained"}} -->
@@ -67,7 +67,7 @@
 <div style="margin-top:0px;margin-bottom:0px;height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:template-part {"slug":"testimonials","theme":"barnsbury23","align":"wide"} /-->
+<!-- wp:template-part {"slug":"testimonials","align":"wide"} /-->
 
 <!-- wp:spacer {"height":"8rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 <div style="margin-top:0px;margin-bottom:0px;height:8rem" aria-hidden="true" class="wp-block-spacer"></div>
@@ -226,5 +226,5 @@
 <div style="margin-top:0px;margin-bottom:0px;height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:template-part {"slug":"footer","theme":"barnsbury23","tagName":"footer","align":"full"} /--></div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","align":"full"} /--></div>
 <!-- /wp:group -->
