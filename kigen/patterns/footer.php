@@ -14,16 +14,13 @@
 		<!-- wp:navigation {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"x-small"} /-->
 
 		<!-- wp:paragraph {"align":"right","className":"has-x-small-font-size","fontSize":"x-small"} -->
-		<p class="has-text-align-right has-x-small-font-size">
-		<?php
-			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'lineup' ) ) . '" rel="nofollow">WordPress</a>';
+		<p class="has-text-align-right has-x-small-font-size"><?php
+			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'kigen' ) ) . '" rel="nofollow">WordPress</a>';
 			echo sprintf(
 				/* Translators: WordPress link. */
-				esc_html__( 'Designed with %1$s', 'lineup' ),
+				esc_html__( 'Designed with %1$s', 'kigen' ),
 				$wordpress_link
-			);
-			?>
-			</p>
+			);?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
