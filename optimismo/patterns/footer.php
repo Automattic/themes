@@ -14,9 +14,9 @@
 	<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}},"typography":{"fontSize":"0.69rem"}}} -->
 	<p class="has-text-align-center" style="margin-top:var(--wp--preset--spacing--40);font-size:0.69rem"><?php
 		/* Translators: WordPress link. */
-		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'lineup' ) ) . '" rel="nofollow">WordPress</a>';
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'optimismo' ) ) . '" rel="nofollow">WordPress</a>';
 		echo sprintf(
-			esc_html__( 'Designed with %1$s', 'lineup' ),
+			esc_html__( 'Designed with %1$s', 'optimismo' ),
 			$wordpress_link
 		);?></p>
 	<!-- /wp:paragraph -->
