@@ -21,10 +21,10 @@
 			<p>
 			<?php
 
-				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'lineup' ) ) . '" rel="nofollow">WordPress</a>';
+				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'bsoj' ) ) . '" rel="nofollow">WordPress</a>';
 				echo sprintf(
 					/* Translators: WordPress link. */
-					esc_html__( 'Designed with %1$s', 'lineup' ),
+					esc_html__( 'Designed with %1$s', 'bsoj' ),
 					$wordpress_link
 				);
 				?>
