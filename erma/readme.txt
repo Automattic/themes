@@ -12,7 +12,7 @@ Erma is a WordPress portfolio block theme that features gorgeous imagery and mod
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
