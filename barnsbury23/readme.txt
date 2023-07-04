@@ -78,3 +78,11 @@ CC0 Public Domain
 Blog Post 4 - Photo by Foodie Girl on StockSnap
 https://stocksnap.io/photo/vegetables-food-XCYDMSCHW5
 CC0 Public Domain
+-
+Avatar image
+https://this-person-does-not-exist.com/
+GNU General Public License v3
+-
+Category, Date, and Star icons
+https://remixicon.com/
+Apache License
