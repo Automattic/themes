@@ -12,7 +12,7 @@ Entry is a uniquely styled WordPress block theme designed for journaling. It fea
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
