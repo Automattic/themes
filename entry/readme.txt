@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Entry is a uniquely styled WordPress block theme designed for journalling. It features a grid layout and blocky layout for posts, with every element contained in squared or rectangular shapes. Its impactful design is sure to make a statement, while its customizable templates offer a range of options for creating a truly unique journaling experience.
+Entry is a uniquely styled WordPress block theme designed for journaling. It features a grid layout and blocky layout for posts, with every element contained in squared or rectangular shapes. Its impactful design is sure to make a statement, while its customizable templates offer a range of options for creating a truly unique journaling experience.
 
 == Changelog ==
 
