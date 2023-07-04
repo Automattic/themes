@@ -12,6 +12,9 @@ Kigen is a simple portfolio theme
 
 == Changelog ==
 
+= 1.0.1 =
+* Kigen: Fix text domain in the footers
+
 = 1.0 =
 * Initial release
 
