@@ -12,6 +12,9 @@ Optimismo is a bold blog theme that allows you to have a big bold message at the
 
 == Changelog ==
 
+= 1.0.1 =
+* Optimismo: Fix text domain in the footer
+
 = 0.0.1 =
 * Initial release
 
