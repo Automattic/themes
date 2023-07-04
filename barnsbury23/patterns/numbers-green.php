@@ -88,7 +88,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.6%","layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/b-original_farm.jpg","id":620,"dimRatio":0,"minHeight":520,"minHeightUnit":"px"} -->
+<div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/b-original_farm.jpg","dimRatio":0,"minHeight":520,"minHeightUnit":"px"} -->
 <div class="wp-block-cover" style="min-height:520px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-620" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/b-original_farm.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"<?php echo esc_attr__( 'Write title…', 'barnsbury23' ); ?>","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
