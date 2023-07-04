@@ -12,6 +12,9 @@ Al Dente is a blog theme perfect for blogs whose posts are categorised, for exam
 
 == Changelog ==
 
+= 1.0.1 =
+* Al Dente: Remove post navigation from page template (#7185)
+
 = 1.0.0 =
 * Initial release
 

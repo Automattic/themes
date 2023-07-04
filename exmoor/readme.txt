@@ -12,6 +12,9 @@ Exmoor is a business themethat has a landing page style front page.
 
 == Changelog ==
 
+= 1.0.1 =
+* Exmor: Remove stray text in the table pattern (#7184)
+
 = 1.0.0 =
 * Initial release
 
