@@ -12,6 +12,9 @@ Exmoor is a business themethat has a landing page style front page.
 
 == Changelog ==
 
+= 1.0.2 =
+* Exmoor: Fix footer credit so it will be replaced correctly for WP.com (#7188)
+
 = 1.0.1 =
 * Exmor: Remove stray text in the table pattern (#7184)
 
