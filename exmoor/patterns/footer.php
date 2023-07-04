@@ -47,7 +47,7 @@
 					/* Translators: WordPress link. */
 					$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'exmoor' ) ) . '" rel="nofollow">WordPress</a>';
 					echo sprintf(
-						wp_kses_post( __( 'Designed with<br>%1$s', 'exmoor' ) ),
+						esc_html__( 'Designed with %1$s', 'exmoor' ),
 						$wordpress_link
 					);?></p>
 			<!-- /wp:paragraph -->
