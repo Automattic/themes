@@ -12,6 +12,9 @@ Trellick is a raw, brutalist blog theme that strips away the polished veneer of 
 
 == Changelog ==
 
+= 1.0.1 =
+* Trellick: Fix post content width
+
 = 1.0.0 =
 * Initial release
 
