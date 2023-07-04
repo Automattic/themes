@@ -31,29 +31,50 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+Bangers Font
+Copyright Vernon Adams
+Open Font License
+
+Piazzolla Font
+Copyright Juan Pablo del Peral & Huerta Tipográfica
+Open Font License
+
+Rubik Font
+Copyright Hubert and Fischer & Meir Sadan
+Open Font License
+
 Homepage Hero - Photo by form PxHere
 https://pxhere.com/en/photo/1200249
+CC0 Public Domain
 -
 Homepage Service 1 - Photo by form PxHere
 https://pxhere.com/en/photo/695922
+CC0 Public Domain
 -
 Homepage Service 2 - Photo by Ylanite Koppens on StockSnap
 https://stocksnap.io/photo/rustic-vegetables-BPOAWWLJUR
+CC0 Public Domain
 -
 Homepage Service 3 - Photo by FOCA Stock on StockSnap
 https://stocksnap.io/photo/salad-bowl-PLOA1CWIRK
+CC0 Public Domain
 -
 Homepage Farm - Photo by form PxHere
 https://pxhere.com/en/photo/922941
+CC0 Public Domain
 -
 Blog Post 1 - Photo by Foodie Girl on StockSnap
 https://stocksnap.io/photo/vegetables-food-EWTPWWQBRB
+CC0 Public Domain
 -
 Blog Post 2 - Photo by form PxHere
 https://pxhere.com/en/photo/1367049
+CC0 Public Domain
 -
 Blog Post 3 - Photo by Christian Joudrey on StockSnap
 https://stocksnap.io/photo/seed-tree-01MVFCVHOD
+CC0 Public Domain
 -
 Blog Post 4 - Photo by Foodie Girl on StockSnap
 https://stocksnap.io/photo/vegetables-food-XCYDMSCHW5
+CC0 Public Domain
