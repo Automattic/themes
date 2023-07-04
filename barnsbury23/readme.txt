@@ -17,10 +17,9 @@ The recently updated Barnsbury is an earthy, friendly theme made with farming an
 
 == Copyright ==
 
-Barnsbury23 is based on Barnsbury23 (https://github.com/wordpress/barnsbury23/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-Barnsbury23 WordPress Theme, (C) 2023 the WordPress team
+Barnsbury23 WordPress Theme, (C) 2023 Automattic
 Barnsbury23 is distributed under the terms of the GNU GPL.
+Barnsbury23 is based on Barnsbury (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
