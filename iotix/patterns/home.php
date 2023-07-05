@@ -9,7 +9,7 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|50","bottom":"var:preset|spacing|70","left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">Over 700 teams worldwide rely on Desaign</h2>
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Over 700 teams worldwide rely on Desaign', 'iotix' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
@@ -40,11 +40,11 @@
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%","style":{"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column" style="border-style:none;border-width:0px;flex-basis:50%"><!-- wp:group {"style":{"border":{"radius":"30px"},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:30px;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><strong>No Code Necessary</strong></h3>
+<h3 class="wp-block-heading"><strong><?php echo esc_html__( 'No Code Necessary', 'iotix' ); ?></strong></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Not a programmer? Use our intuitive, designer-first UI.</p>
+<p><?php echo esc_html__( 'Not a programmer? Use our intuitive, designer-first UI.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":366,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
@@ -52,7 +52,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><a href="https://iotixdemo.wordpress.com/">Try a demo →</a></p>
+<p class="has-medium-font-size"><a href="https://iotixdemo.wordpress.com/"><?php echo esc_html__( 'Try a demo →', 'iotix' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -60,11 +60,11 @@
 <!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"style":{"border":{"radius":"30px"},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-tertiary-background-color has-background" style="border-radius:30px;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading"><strong>Software Support</strong></h3>
+<h3 class="wp-block-heading"><strong><?php echo esc_html__( 'Software Support', 'iotix' ); ?></strong></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Compatible with all of your favourite design programs.</p>
+<p><?php echo esc_html__( 'Compatible with all of your favourite design programs.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":478,"sizeSlug":"full","linkDestination":"none"} -->
@@ -72,7 +72,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><a href="https://iotixdemo.wordpress.com/">See support programs →</a></p>
+<p class="has-medium-font-size"><a href="https://iotixdemo.wordpress.com/"><?php echo esc_html__( 'See support programs →', 'iotix' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -86,16 +86,16 @@
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/92de6-startup-hero-03.webp","dimRatio":80,"overlayColor":"custom-cover-overlay","align":"wide"} -->
 <div class="wp-block-cover alignwide"><span aria-hidden="true" class="wp-block-cover__background has-custom-cover-overlay-background-color has-background-dim-80 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/92de6-startup-hero-03.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"top":"10rem","right":"0","bottom":"10rem","left":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:10rem;padding-right:0;padding-bottom:10rem;padding-left:0"><!-- wp:heading {"textAlign":"center","align":"wide"} -->
-<h2 class="wp-block-heading alignwide has-text-align-center">Keep learning as you go.</h2>
+<h2 class="wp-block-heading alignwide has-text-align-center"><?php echo esc_html__( 'Keep learning as you go.', 'iotix' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-<p class="has-text-align-center has-medium-font-size">Want to be first in line to learn tips and tricks for supercharging your mockups with Desaign? There are many helpful resources in our blog.</p>
+<p class="has-text-align-center has-medium-font-size"><?php echo esc_html__( 'Want to be first in line to learn tips and tricks for supercharging your mockups with Desaign? There are many helpful resources in our blog.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Read Our Blog</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Read Our Blog', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>
@@ -104,11 +104,11 @@
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"5.06rem","right":"5vw","bottom":"5.06rem","left":"5vw"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="padding-top:5.06rem;padding-right:5vw;padding-bottom:5.06rem;padding-left:5vw"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">Our Pricing</h2>
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Our Pricing', 'iotix' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Our pricing structure is built to be affordable for everyone from individual designers to teams.</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'Our pricing structure is built to be affordable for everyone from individual designers to teams.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"20px"} -->
@@ -120,25 +120,25 @@
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"style":{"border":{"radius":"35px"},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"backgroundColor":"tertiary","layout":{"type":"constrained"},"fontSize":"medium"} -->
 <div class="wp-block-group has-tertiary-background-color has-background has-medium-font-size" style="border-radius:35px;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":5,"fontSize":"small"} -->
-<h5 class="wp-block-heading has-small-font-size">Intro</h5>
+<h5 class="wp-block-heading has-small-font-size"><?php echo esc_html__( 'Intro', 'iotix' ); ?></h5>
 <!-- /wp:heading -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">Free</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( 'Free', 'iotix' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Good for trying out, or the occassional design project.</p>
+<p><?php echo esc_html__( 'Good for trying out, or the occassional design project.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>— Works with major design software<br>— One project per month<br>— Volunteer forum support</p>
+<p><?php echo esc_html__( '— Works with major design software', 'iotix' ); ?><br><?php echo esc_html__( '— One project per month', 'iotix' ); ?><br><?php echo esc_html__( '— Volunteer forum support', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button">Sign Up</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Sign Up', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -148,25 +148,25 @@
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"style":{"border":{"radius":"35px"},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"backgroundColor":"foreground","layout":{"type":"constrained"},"fontSize":"medium"} -->
 <div class="wp-block-group has-foreground-background-color has-background has-medium-font-size" style="border-radius:35px;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":5,"textColor":"tertiary","fontSize":"small"} -->
-<h5 class="wp-block-heading has-tertiary-color has-text-color has-small-font-size">Solo (Recommended)</h5>
+<h5 class="wp-block-heading has-tertiary-color has-text-color has-small-font-size"><?php echo esc_html__( 'Solo (Recommended)', 'iotix' ); ?></h5>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
-<h2 class="wp-block-heading has-tertiary-color has-text-color has-link-color">$25</h2>
+<h2 class="wp-block-heading has-tertiary-color has-text-color has-link-color"><?php echo esc_html__( '$25', 'iotix' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color has-link-color">Great for the professional web or product designer.</p>
+<p class="has-tertiary-color has-text-color has-link-color"><?php echo esc_html__( 'Great for the professional web or product designer.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary"} -->
-<p class="has-tertiary-color has-text-color has-link-color">— Works with major design software<br>— One project per month<br>— Volunteer forum support</p>
+<p class="has-tertiary-color has-text-color has-link-color"><?php echo esc_html__( '— Works with major design software', 'iotix' ); ?><br><?php echo esc_html__( '— One project per month', 'iotix' ); ?><br><?php echo esc_html__( '— Volunteer forum support', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"background","textColor":"foreground","width":100,"className":"is-style-fill"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background wp-element-button">Free 15 Day Trial</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link has-foreground-color has-background-background-color has-text-color has-background wp-element-button"><?php echo esc_html__( 'Free 15 Day Trial', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -176,25 +176,25 @@
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:group {"style":{"border":{"radius":"35px"},"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var:preset|spacing|70","bottom":"var:preset|spacing|70","left":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|50"}},"backgroundColor":"tertiary","layout":{"type":"constrained"},"fontSize":"medium"} -->
 <div class="wp-block-group has-tertiary-background-color has-background has-medium-font-size" style="border-radius:35px;padding-top:var(--wp--preset--spacing--70);padding-right:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":5,"fontSize":"small"} -->
-<h5 class="wp-block-heading has-small-font-size">Teams</h5>
+<h5 class="wp-block-heading has-small-font-size"><?php echo esc_html__( 'Teams', 'iotix' ); ?></h5>
 <!-- /wp:heading -->
 
 <!-- wp:heading -->
-<h2 class="wp-block-heading">$50</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( '$50', 'iotix' ); ?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p>Perfect for agencies and product teams.</p>
+<p><?php echo esc_html__( 'Perfect for agencies and product teams.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>— Works with major design software<br>— One project per month<br>— Volunteer forum support</p>
+<p><?php echo esc_html__( '— Works with major design software', 'iotix' ); ?><br><?php echo esc_html__( '— One project per month', 'iotix' ); ?><br><?php echo esc_html__( '— Volunteer forum support', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"aligncenter is-style-fill"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 aligncenter is-style-fill"><a class="wp-block-button__link wp-element-button">Free 15 Day Trial</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 aligncenter is-style-fill"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Free 15 Day Trial', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -214,16 +214,16 @@
 
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"level":3,"textColor":"background"} -->
-<h3 class="wp-block-heading has-background-color has-text-color"><strong>Join the community</strong></h3>
+<h3 class="wp-block-heading has-background-color has-text-color"><strong><?php echo esc_html__( 'Join the community', 'iotix' ); ?></strong></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"textColor":"background"} -->
-<p class="has-background-color has-text-color">A caring designer community to share knowledge with.</p>
+<p class="has-background-color has-text-color"><?php echo esc_html__( 'A caring designer community to share knowledge with.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"background","textColor":"primary"} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button">Visit forums</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button"><?php echo esc_html__( 'Visit forums', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
