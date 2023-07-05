@@ -7,8 +7,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Tenaz is a classic "magaine" theme with a rich and dense homepage could work well for pro-bloggers.
-
+Tenaz is a classic "magazine" theme with a rich, dense homepage perfect for pro-bloggers.
 
 == Changelog ==
 
@@ -36,3 +35,5 @@ This theme bundles the following third-party resources:
 Newsreader Font
 Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
 Source: https://fonts.google.com/specimen/Newsreader
+
+All the images seen on the screenshot.png is by Takashi Irie.
