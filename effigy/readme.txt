@@ -12,6 +12,9 @@ Effigy is a blog theme that echoes the structure of a professional profile with 
 
 == Changelog ==
 
+= 1.0.1 =
+* Removed unnecessary and unexpected styles from heading element (#7197)
+
 = 1.0.0 =
 * Initial release
 

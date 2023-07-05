@@ -11,6 +11,9 @@ Tenaz is a classic "magazine" theme with a rich, dense homepage perfect for pro-
 
 == Changelog ==
 
+= 1.0.1 =
+* Tenaz: Fix a typo in the description (#7196)
+
 = 1.0.0 =
 * Initial release
 
