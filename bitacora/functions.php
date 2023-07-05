@@ -12,11 +12,11 @@
 if ( ! function_exists( 'bitacora_support' ) ) :
 
 	/**
-	 * Sets up theme defaults and registers support for various WordPress feabitacorares.
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
 	 * @since Bitácora 1.0
 	 *
-	 * @rebitacorarn void
+	 * @return void
 	 */
 	function bitacora_support() {
 
@@ -29,7 +29,7 @@ if ( ! function_exists( 'bitacora_support' ) ) :
 
 endif;
 
-add_action( 'after_sebitacorap_theme', 'bitacora_support' );
+add_action( 'after_setup_theme', 'bitacora_support' );
 
 if ( ! function_exists( 'bitacora_styles' ) ) :
 
@@ -38,7 +38,7 @@ if ( ! function_exists( 'bitacora_styles' ) ) :
 	 *
 	 * @since Bitácora 1.0
 	 *
-	 * @rebitacorarn void
+	 * @return void
 	 */
 	function bitacora_styles() {
 
