@@ -13,24 +13,24 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
-<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)"><!-- wp:image {"id":325,"width":200,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/5c210-logo_1-1.png" alt="" class="wp-image-325" width="200"/></figure>
+<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)"><!-- wp:image {"width":200,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/5c210-logo_1-1.png" alt="" width="200"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"id":319,"width":200,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/6d5df-logo_2.png" alt="" class="wp-image-319" width="200"/></figure>
+<!-- wp:image {"width":200,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/6d5df-logo_2.png" alt="" width="200"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"id":320,"width":200,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/85363-logo_3.png" alt="" class="wp-image-320" width="200"/></figure>
+<!-- wp:image {"width":200,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/85363-logo_3.png" alt="" width="200"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"id":322,"width":200,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/28ce4-logo_4-1.png" alt="" class="wp-image-322" width="200"/></figure>
+<!-- wp:image {"width":200,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/28ce4-logo_4-1.png" alt="" width="200"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:image {"id":323,"width":200,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/d1cab-logo_5.png" alt="" class="wp-image-323" width="200"/></figure>
+<!-- wp:image {"width":200,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/d1cab-logo_5.png" alt="" width="200"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -47,8 +47,8 @@
 <p><?php echo esc_html__( 'Not a programmer? Use our intuitive, designer-first UI.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:image {"id":366,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
-<figure class="wp-block-image size-large is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/f24d9-column_1_image.webp" alt="" class="wp-image-366"/></figure>
+<!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+<figure class="wp-block-image size-large is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/f24d9-column_1_image.webp" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
@@ -67,8 +67,8 @@
 <p><?php echo esc_html__( 'Compatible with all of your favourite design programs.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:image {"id":478,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/32721-column_2_image-1.webp" alt="" class="wp-image-478"/></figure>
+<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/32721-column_2_image-1.webp" alt="" /></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
@@ -207,8 +207,8 @@
 <div class="wp-block-group alignfull" style="border-radius:57px"><!-- wp:group {"align":"wide","style":{"border":{"radius":"30px"},"spacing":{"padding":{"top":"3.38rem","right":"5vw","bottom":"3.38rem","left":"5vw"}}},"backgroundColor":"primary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide has-primary-background-color has-background" style="border-radius:30px;padding-top:3.38rem;padding-right:5vw;padding-bottom:3.38rem;padding-left:5vw"><!-- wp:columns {"align":"wide","style":{"spacing":{"padding":{"top":"0","right":"0","bottom":"0","left":"0"},"blockGap":{"top":"var:preset|spacing|70","left":"var:preset|spacing|70"}}}} -->
 <div class="wp-block-columns alignwide" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"align":"wide","id":372,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"0px"}}} -->
-<figure class="wp-block-image alignwide size-large has-custom-border"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/a39e1-woman-developers-fvwlqxwz1p.webp" alt="" class="wp-image-372" style="border-radius:0px"/></figure>
+<div class="wp-block-column"><!-- wp:image {"align":"wide","sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"0px"}}} -->
+<figure class="wp-block-image alignwide size-large has-custom-border"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/a39e1-woman-developers-fvwlqxwz1p.webp" alt="" style="border-radius:0px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
