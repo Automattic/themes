@@ -17,7 +17,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"background","textColor":"primary","className":"is-style-fill","fontSize":"small"} -->
-<div class="wp-block-button has-custom-font-size is-style-fill has-small-font-size"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button">Sign In</a></div>
+<div class="wp-block-button has-custom-font-size is-style-fill has-small-font-size"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button"><?php echo esc_html__( 'Sign In', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>
@@ -30,16 +30,16 @@
 
 <!-- wp:column {"width":"80%"} -->
 <div class="wp-block-column" style="flex-basis:80%"><!-- wp:heading {"textAlign":"center","align":"wide","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"},"padding":{"bottom":"0","right":"0"}},"typography":{"fontSize":"3rem","lineHeight":"1"}}} -->
-<h2 class="wp-block-heading alignwide has-text-align-center" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-right:0;padding-bottom:0;font-size:3rem;line-height:1">Machine learning for designers, made easy.</h2>
+<h2 class="wp-block-heading alignwide has-text-align-center" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-right:0;padding-bottom:0;font-size:3rem;line-height:1"><?php echo esc_html__( 'Machine learning for designers, made easy.', 'iotix' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"},"padding":{"right":"0vw","top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"fontSize":"medium"} -->
-<p class="has-text-align-center has-medium-font-size" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:var(--wp--preset--spacing--50);padding-right:0vw;padding-bottom:var(--wp--preset--spacing--50)">Speed up your design process by creating realistic mockups with AI-driven content, all through the power of machine learning.</p>
+<p class="has-text-align-center has-medium-font-size" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-top:var(--wp--preset--spacing--50);padding-right:0vw;padding-bottom:var(--wp--preset--spacing--50)"><?php echo esc_html__( 'Speed up your design process by creating realistic mockups with AI-driven content, all through the power of machine learning.', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-fill"} -->
-<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
+<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Get Started', 'iotix' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->

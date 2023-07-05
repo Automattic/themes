@@ -18,11 +18,11 @@
 
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"left","fontSize":"x-large","anchor":"oops-that-page-can-t-be-found"} -->
-<h2 class="wp-block-heading has-text-align-left has-x-large-font-size" id="oops-that-page-can-t-be-found">Page not found.</h2>
+<h2 class="wp-block-heading has-text-align-left has-x-large-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Page not found.', 'iotix' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>It looks like nothing was found at this location. Maybe try a search?</p>
+<p><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'iotix' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:search {"label":"","showLabel":false,"widthUnit":"%","style":{"border":{"radius":"100px"}},"backgroundColor":"foreground"} /--></div>
