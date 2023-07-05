@@ -9,7 +9,7 @@
 
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group"><!-- wp:image {"align":"wide","id":45,"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"30px"}}} -->
-<figure class="wp-block-image alignwide size-full has-custom-border"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/404_Image.png" alt="" class="wp-image-45" style="border-radius:30px"/></figure>
+<figure class="wp-block-image alignwide size-full has-custom-border"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/404_Image.webp" alt="" class="wp-image-45" style="border-radius:30px"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:spacer {"height":"40px"} -->
