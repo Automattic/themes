@@ -29,3 +29,15 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+IBM Plex Mono
+Licensed under the SIL Open Font License, Version 1.1. (https://scripts.sil.org/OFL)
+Source: https://fonts.google.com/specimen/IBM+Plex+Mono
+
+All included image assets and in theme screenshot:
+
+Designs from Kimono Pattern Books (ca. 1902)
+https://publicdomainreview.org/collection/unkindo-kimono-designs (Public Domain)
+
