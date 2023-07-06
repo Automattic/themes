@@ -1,8 +1,8 @@
 <?php
 /**
- * Title: Stack Photo
+ * Title: Header
  * Slug: fotograma/header
- * Categories: featured
+ * Categories: featured, header
  */
 ?>
 
