@@ -24,7 +24,7 @@
 			</ul>
 			<!-- /wp:social-links -->
 
-			<!-- wp:navigation {"overlayMenu":"always","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"xx-large"} /-->
+			<!-- wp:navigation {"overlayMenu":"always","layout":{"type":"flex","justifyContent":"center","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"xx-large"} /-->
 		</div>
 		<!-- /wp:group -->
 	</div>
