@@ -12,6 +12,9 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 1.0.4 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.3 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 

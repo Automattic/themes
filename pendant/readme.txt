@@ -12,6 +12,9 @@ An elegant product-focused theme
 
 == Changelog ==
 
+= 1.0.13 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.12 =
 * Turn Pendant query loop inherit on by default (#6775)
 

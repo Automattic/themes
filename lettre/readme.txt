@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.8 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.1.7 =
 * Fix some nav menu styling issues (#7167)
 * Add avatars to lettre comments (#7166)

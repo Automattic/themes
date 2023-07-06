@@ -12,6 +12,9 @@ A theme in homage to George Lois, visionary American Art Director, and author. W
 
 == Changelog ==
 
+= 1.0.4 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.3 =
 * update george-lois default styles to light (#7139)
 

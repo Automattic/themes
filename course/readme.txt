@@ -12,6 +12,9 @@ Course is a flexible and modern theme for anyone wanting to share their knowledg
 
 == Changelog ==
 
+= 1.3.1 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.3.0 =
 * Update the minimum required WordPress version (#7056)
 * Changes to theme.json to support global typography (#7068)

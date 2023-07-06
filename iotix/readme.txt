@@ -12,6 +12,9 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.6 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.5 =
 * Comitting the supplied resources for Iotix (#7162)
 

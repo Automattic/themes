@@ -12,6 +12,9 @@ Hey is a simple personal blog theme.
 
 == Changelog ==
 
+= 1.0.4 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.2 =
 * add tags to hey theme (#7000)
 

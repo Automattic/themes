@@ -12,6 +12,9 @@ Vetro was designed to be a portfolio theme, and is composed by wide width layout
 
 == Changelog ==
 
+= 1.0.8 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.7 =
 * Vetro: fix search and 404 results (#6942)
 

@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.11 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 3.1.10 =
 * Update Node version in .nvmrc & update deps (#7059)
 

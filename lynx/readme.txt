@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 1.0.25 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 0.0.24 =
 * Fix display of date format (#6967)
 

@@ -12,6 +12,9 @@ Archivo is a blog and portfolio theme that shows your featured image large.
 
 == Changelog ==
 
+= 1.0.2 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 0.0.1 =
 * Initial release
 

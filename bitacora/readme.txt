@@ -12,6 +12,9 @@ Bitácora is a simple old-school blog theme
 
 == Changelog ==
 
+= 1.0.6 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.0.5 =
 * Bugfix: replaced bitacora with tu where needed. (#7165)
 

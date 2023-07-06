@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.51 =
+* Add the style-variations tag to themes with style variations (#7199)
+
 = 1.1.50 =
 * Update Node version in .nvmrc & update deps (#7059)
 
