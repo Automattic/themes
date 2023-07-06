@@ -13,7 +13,7 @@
 	<div class="wp-block-columns" style="border-top-color:var(--wp--preset--color--contrast);border-top-width:1px;border-bottom-color:var(--wp--preset--color--contrast);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 		<!-- wp:column {"width":"25%","style":{"spacing":{"blockGap":"0"}}} -->
 		<div class="wp-block-column" style="flex-basis:25%">
-			<!-- wp:template-part {"slug":"header","theme":"fotograma","area":"header"} /-->
+			<!-- wp:pattern {"slug":"fotograma/header"} /-->
 		</div>
 		<!-- /wp:column -->
 
@@ -62,7 +62,7 @@
 	<div class="wp-block-columns" style="border-top-color:var(--wp--preset--color--contrast);border-top-width:1px;border-bottom-color:var(--wp--preset--color--contrast);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 		<!-- wp:column {"width":"25%","style":{"spacing":{"blockGap":"0"}}} -->
 		<div class="wp-block-column" style="flex-basis:25%">
-			<!-- wp:template-part {"slug":"header","theme":"fotograma","area":"header"} /-->
+			<!-- wp:pattern {"slug":"fotograma/header"} /-->
 		</div>
 		<!-- /wp:column -->
 
@@ -111,7 +111,7 @@
 	<div class="wp-block-columns" style="border-top-color:var(--wp--preset--color--contrast);border-top-width:1px;border-bottom-color:var(--wp--preset--color--contrast);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 		<!-- wp:column {"width":"25%","style":{"spacing":{"blockGap":"0"}}} -->
 		<div class="wp-block-column" style="flex-basis:25%">
-			<!-- wp:template-part {"slug":"header","theme":"fotograma","area":"header"} /-->
+			<!-- wp:pattern {"slug":"fotograma/header"} /-->
 		</div>
 		<!-- /wp:column -->
 
@@ -159,7 +159,7 @@
 	<div class="wp-block-columns" style="border-top-color:var(--wp--preset--color--contrast);border-top-width:1px;border-bottom-color:var(--wp--preset--color--contrast);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
 		<!-- wp:column {"width":"25%","style":{"spacing":{"blockGap":"0"}}} -->
 		<div class="wp-block-column" style="flex-basis:25%">
-			<!-- wp:template-part {"slug":"header","theme":"fotograma","area":"header"} /-->
+			<!-- wp:pattern {"slug":"fotograma/header"} /-->
 		</div>
 		<!-- /wp:column -->
 
