@@ -19,8 +19,8 @@
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/man-behind-the-camera-scaled.jpg","id":1128,"dimRatio":0,"minHeight":50,"minHeightUnit":"vh","align":"full","style":{"color":{"duotone":["#000000","#7f7f7f"]}}} -->
-<div class="wp-block-cover alignfull" style="min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-1128" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/man-behind-the-camera-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/man-behind-the-camera-scaled.webp","id":1128,"dimRatio":0,"minHeight":50,"minHeightUnit":"vh","align":"full","style":{"color":{"duotone":["#000000","#7f7f7f"]}}} -->
+<div class="wp-block-cover alignfull" style="min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-1128" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/man-behind-the-camera-scaled.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
