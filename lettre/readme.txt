@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.9 =
+* Small tweaks to force update following `style-variations` tag fix (#7209)
+
 = 1.1.8 =
 * Add the style-variations tag to themes with style variations (#7199)
 

@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.12 =
+* Small tweaks to force update following `style-variations` tag fix (#7209)
+
 = 3.1.11 =
 * Add the style-variations tag to themes with style variations (#7199)
 

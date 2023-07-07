@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.41 =
+* Small tweaks to force update following `style-variations` tag fix (#7209)
+
 = 1.0.40 =
 * Add the style-variations tag to themes with style variations (#7199)
 

@@ -13,6 +13,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.21 =
+* Small tweaks to force update following `style-variations` tag fix (#7209)
+
 = 1.0.20 =
 * Add the style-variations tag to themes with style variations (#7199)
 

@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.41 =
+* Small tweaks to force update following `style-variations` tag fix (#7209)
+
 = 1.0.40 =
 * Add the style-variations tag to themes with style variations (#7199)
 

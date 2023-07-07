@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 1.0.26 =
+* Small tweaks to force update following `style-variations` tag fix (#7209)
+
 = 1.0.25 =
 * Add the style-variations tag to themes with style variations (#7199)
 
