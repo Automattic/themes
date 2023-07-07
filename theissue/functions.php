@@ -1,11 +1,11 @@
 <?php
 /**
- * theissue functions and definitions
+ * issue functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package theissue
- * @since theissue 1.0
+ * @package issue
+ * @since issue 1.0
  */
 
 
@@ -14,7 +14,7 @@ if ( ! function_exists( 'issue_support' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since theissue 1.0
+	 * @since issue 1.0
 	 *
 	 * @return void
 	 */
@@ -24,7 +24,7 @@ if ( ! function_exists( 'issue_support' ) ) :
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'theissue' );
+		load_theme_textdomain( 'issue' );
 	}
 
 endif;
@@ -36,7 +36,7 @@ if ( ! function_exists( 'issue_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since theissue 1.0
+	 * @since issue 1.0
 	 *
 	 * @return void
 	 */

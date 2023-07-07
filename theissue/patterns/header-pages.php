@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: header-pages
- * Slug: theissue/header-pages
+ * Slug: issue/header-pages
  * Categories: hidden
  * Inserter: no
  */
