@@ -18,18 +18,19 @@
 <!-- /wp:group -->
 
 <!-- wp:image {"id":145,"sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":["#111111","#ffbbbb"]}}} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/sappho-statue_bw.png" alt="" class="wp-image-145"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/sappho-statue_bw.webp" alt="" class="wp-image-145"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center">
-  <?php
-      /* Translators: WordPress link. */
-      $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pieria' ) ) . '" rel="nofollow">WordPress</a>';
-      echo sprintf(
-          esc_html__( 'Designed with %1$s', 'pieria' ),
-          $wordpress_link
-      );
-  ?>
+<?php
+	/* Translators: WordPress link. */
+	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pieria' ) ) . '" rel="nofollow">WordPress</a>';
+	echo sprintf(
+		esc_html__( 'Designed with %1$s', 'pieria' ),
+		$wordpress_link
+	);
+	?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
