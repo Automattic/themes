@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/karuna/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: Karuna is a clean business theme designed with health and wellness-focused sites in mind. With bright, bold colors, prominent featured images, and support for customer testimonials, your business' brand will shine with Karuna.
-Version: 1.0.0-wpcom
+Version: 1.2.14-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: karuna
@@ -146,56 +146,71 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	/* Increase font sizes on larger screens */
 
 	.site-title {
+
 		@include font-size(2.625);
 	}
 
 	.site-info {
+
 		@include font-size(1);
 	}
 
 	.page-template-front-page {
+
 		.site-main > .hentry:first-of-type {
+
 			.entry-content {
+
 				@include font-size(1.75);
 			}
 		}
 	}
 
 	.front-testimonials {
+
 		.hentry {
+
 			@include font-size(1.75);
 
 			.entry-title {
+
 				@include font-size(1.125);
 			}
 		}
 	}
 
 	.recent-posts {
+
 		.recent-posts-title {
+
 			@include font-size(1.75);
 		}
 
 		.entry-title {
+
 			@include font-size(1.25);
 		}
 	}
 
 	.entry-title {
+
 		@include font-size(2.625);
 		word-wrap: normal;
 	}
 
 	.entry-content,
 	.entry-summary {
+
 		@include font-size(1.125);
 	}
 
 	.widget-title {
+
 		@include font-size(1.25);
 	}
 
 	.header-widget-area {
+
 		@include font-size(1.125);
 	}
 
@@ -203,42 +218,52 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		padding-top: 3.2em;
 
 		.widget-title {
+
 			@include font-size(1.75);
 		}
 	}
 
 	.footer-widgets-wrapper {
+
 		.widget {
+
 			@include font-size(1.125);
 		}
 	}
 
 	.comments-title,
 	.comment-reply-title {
+
 		@include font-size(1.875);
 	}
 
 	h1 {
+
 		@include font-size(2.625);
 	}
 
 	h2 {
+
 		@include font-size(2);
 	}
 
 	h3 {
+
 		@include font-size(1.875);
 	}
 
 	h4 {
+
 		@include font-size(1.625);
 	}
 
 	h5 {
+
 		@include font-size(1.25);
 	}
 
 	h6 {
+
 		@include font-size(1);
 	}
 
@@ -251,7 +276,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.top-bar {
-		padding: .8em 0;
+		padding: 0.8em 0;
 
 		@include clearfix;
 
@@ -272,7 +297,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			}
 
 			li {
-				padding-left: .8em;
+				padding-left: 0.8em;
 				padding-right: 0;
 			}
 		}
@@ -311,7 +336,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.custom-logo {
 		clear: none;
 		display: inline-block;
-		margin-right: .8em;
+		margin-right: 0.8em;
 		vertical-align: middle;
 	}
 
@@ -324,7 +349,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		vertical-align: middle;
 		text-align: center;
 		display: inline-block;
-		font-family: "Genericons";
+		font-family: Genericons;
 		font-style: normal;
 		font-weight: normal;
 		font-variant: normal;
@@ -377,7 +402,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				top: 1.6em;
 				left: -999em;
 				z-index: 99999;
-				margin-left: .8em;
+				margin-left: 0.8em;
 				text-align: left;
 
 				ul {
@@ -388,6 +413,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 				li {
 					border-bottom: 1px solid rgba($color__text-input, 0.3);
+
 					&:hover > ul,
 					&.focus > ul {
 						left: 100%;
@@ -396,7 +422,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 				.page_item_has_children > a,
 				.menu-item-has-children > a {
-					&:after {
+
+					&::after {
 						transform: rotate(-90deg);
 						top: -2px;
 						margin-left: 0;
@@ -406,7 +433,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				a,
 				a:visited {
 					color: white;
-					padding: .6em 1.6em;
+					padding: 0.6em 1.6em;
 					width: 200px;
 					transition: opacity 0.3s;
 
@@ -418,7 +445,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 
 				li:nth-of-type(1) a {
-					padding-top: .6em;
+					padding-top: 0.6em;
 				}
 
 				li:last-of-type {
@@ -426,7 +453,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				}
 
 				li:last-of-type a {
-					padding-bottom: .6em;
+					padding-bottom: 0.6em;
 				}
 
 				:hover > a,
@@ -445,13 +472,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		}
 
 		a {
-			padding: .2em 0 .2em 2.4em;
+			padding: 0.2em 0 0.2em 2.4em;
 			transition: opacity 0.3s;
 		}
 
 		.page_item_has_children > a,
 		.menu-item-has-children > a {
-			&:after {
+
+			&::after {
+
 				@extend .genericon;
 				@extend .genericon-expand;
 				margin-left: 3px;
@@ -528,6 +557,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.page-template-full-width-page {
+
 		.site-content {
 			padding: 3.2em 10%;
 		}
@@ -628,6 +658,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.sticking .site-title {
+
 		@include font-size(1.8);
 	}
 
@@ -668,6 +699,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			margin-right: 0;
 		}
 	}
+
 	.footer-widgets .widget-area:nth-child(1):nth-last-child(4),
 	.footer-widgets .widget-area:nth-child(2):nth-last-child(3),
 	.footer-widgets .widget-area:nth-child(3):nth-last-child(2),
