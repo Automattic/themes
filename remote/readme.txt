@@ -1,5 +1,5 @@
 === Remote ===
-Contributors: 
+Contributors: Automattic
 Requires at least: 6.1
 Tested up to: 6.1
 Requires PHP: 5.7

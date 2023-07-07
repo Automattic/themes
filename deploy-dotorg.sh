@@ -21,6 +21,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"bibimbap"
 	"bitacora"
 	"blockbase"
+	"course"
 	"ctlg"
 	"disco"
 	"geologist"
