@@ -1,4 +1,4 @@
-=== The Issue ===
+=== Issue ===
 Contributors: the WordPress team
 Requires at least: 6.1
 Tested up to: 6.2
@@ -17,9 +17,9 @@ Issue is a magazine theme focused on sizable typography and imagery to grow your
 
 == Copyright ==
 
-The Issue WordPress Theme, (C) 2023 the WordPress team
-The Issue is distributed under the terms of the GNU GPL.
-The Issue is based on Issue (https://github.com/wordpress/issue/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Issue WordPress Theme, (C) 2023 the WordPress team
+Issue is distributed under the terms of the GNU GPL.
+Issue is based on Issue (https://github.com/wordpress/issue/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
