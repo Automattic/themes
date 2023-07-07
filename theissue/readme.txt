@@ -30,3 +30,13 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Screenshot Image: The Kiss (1859) - Francesco Hayez
+License: CCO (Public domain)
+Source: https://artvee.com/dl/the-kiss-9/
+
+Font: Plus Jakarta Sans by Google fonts (Designed by Tokotype)
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Plus+Jakarta+Sans

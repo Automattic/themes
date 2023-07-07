@@ -32,7 +32,12 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php echo esc_html__( 'Designed with', 'theissue' ); ?><a rel="nofollow" href="https://wordpress.org"><?php echo esc_html__( 'WordPress', 'theissue' ); ?></a></p>
+<p class="has-text-align-left">
+    <?php echo esc_html__( 'Designed with ', 'theissue' ); ?> 
+    <a rel="nofollow" href="https://wordpress.org">
+        <?php echo esc_html__( 'WordPress', 'theissue' ); ?>
+    </a>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
