@@ -1,5 +1,5 @@
 === Pieria ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
 Requires PHP: 5.7
