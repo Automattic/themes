@@ -32,6 +32,8 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third party resources:
+
 Manrope Font
 Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope) 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
@@ -39,3 +41,5 @@ License URL: http://scripts.sil.org/OFL
 Source: http://gent.media
 -- End of Manrope Font credits --
 
+Hand holding camera lens, https://pxhere.com/en/photo/595221, CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Standing holding camera looking down road, https://www.rawpixel.com/image/3336810/free-photo-image-camera-lens-photographer-blur-background, CC0 https://creativecommons.org/publicdomain/zero/1.0/
