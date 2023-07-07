@@ -24,9 +24,9 @@
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center">
 <?php
-	/* Translators: WordPress link. */
 	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pieria' ) ) . '" rel="nofollow">WordPress</a>';
 	echo sprintf(
+	/* Translators: WordPress link. */
 		esc_html__( 'Designed with %1$s', 'pieria' ),
 		$wordpress_link
 	);
