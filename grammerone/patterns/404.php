@@ -2,6 +2,7 @@
 /**
  * Title: A 404 page
  * Slug: grammerone/404
+ * Categories: hidden
  * Inserter: no
  */
 

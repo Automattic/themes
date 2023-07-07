@@ -2,6 +2,7 @@
 /**
  * Title: Designed with 
  * Slug: grammerone/designed-with
+ * Categories: hidden
  * Inserter: no
  */
 ?>
