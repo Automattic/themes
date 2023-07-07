@@ -31,6 +31,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"paimio"
 	"pendant"
 	"pixl"
+	"poema"
 	"quadrat"
 	"rainfall"
 	"remote"
