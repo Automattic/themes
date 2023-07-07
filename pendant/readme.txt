@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-An elegant product-focused theme
+An elegant product-focused theme.
 
 == Changelog ==
 
