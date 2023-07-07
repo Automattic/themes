@@ -15,16 +15,16 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"center","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1"},"spacing":{"padding":{"top":"0px","bottom":"0px"},"margin":{"top":"0px","bottom":"0px"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background","fontSize":"small"} -->
-<h1 class="wp-block-heading has-background-color has-text-color has-link-color has-small-font-size" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-bottom:0px;line-height:1"><a href="https://grammerone.mystagingwebsite.com/" data-type="URL" data-id="https://grammerone.mystagingwebsite.com/">Jacob Gola</a></h1>
+<h1 class="wp-block-heading has-background-color has-text-color has-link-color has-small-font-size" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-bottom:0px;line-height:1"><a href="https://grammerone.mystagingwebsite.com/" data-type="URL" data-id="https://grammerone.mystagingwebsite.com/"><?php echo esc_html__( 'Jacob Gola', 'grammerone' ); ?></a></h1>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0rem"},"elements":{"link":{"color":{"text":"var:preset|color|foreground"}}}},"textColor":"foreground","layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group has-foreground-color has-text-color has-link-color"><!-- wp:paragraph -->
-<p>Hello! I'm Jacob, and I am deeply passionate about two things: food and photography.</p>
+<p><?php echo esc_html__( 'Hello! I\'m Jacob, and I am deeply passionate about two things: food and photography.', 'grammerone' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><strong>jacobgola.com</strong></p>
+<p><strong><?php echo esc_html__( 'jacobgola.com', 'grammerone' ); ?></strong></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
