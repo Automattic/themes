@@ -22,6 +22,14 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Designed with <a rel="nofollow" href="https://wordpress.org">WordPress</a></p>
+<p class="has-text-align-center">
+  <?php
+      /* Translators: WordPress link. */
+      $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'pieria' ) ) . '" rel="nofollow">WordPress</a>';
+      echo sprintf(
+          esc_html__( 'Designed with %1$s', 'pieria' ),
+          $wordpress_link
+      );
+  ?>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
