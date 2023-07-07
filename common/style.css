@@ -1,0 +1,34 @@
+/*
+Theme Name: Common
+Theme URI: 
+Author: Automattic
+Author URI: https://automattic.com
+Description: Common\'s style is anything but ordinary and it speaks for itself. The unique combination of an uppercase monospaced font and aesthetically pleasing demo content creates an excellent foundation for any website. Common is perfect for showcasing photos, articles, or collections of content. With its ever-present sidebar menu, browsing through content is both effortless and enjoyable.
+Requires at least: 5.8
+Tested up to: 6.2
+Requires PHP: 5.7
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: common
+Tags: blog, photography, portfolio, grid-layout, one-column, three-columns, four-columns, wide-blocks, block-patterns, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, template-editing, theme-options, threaded-comments, translation-ready, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage
+*//*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
