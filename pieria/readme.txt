@@ -30,3 +30,12 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Fonts
+Times Newer Roman font
+License: GNU GENERAL PUBLIC LICENSE -- https://timesnewerroman.com/assets/TimesNewerLicense.pdf
+
+Images
+“Sappho” (modeled 1862, carved 1867), by William Wetmore Story (1819–1895). Image via Flickr, under a CC BY 2.0 license.
