@@ -24,6 +24,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"ctlg"
 	"disco"
 	"geologist"
+	"george-lois"
 	"hey"
 	"lettre"
 	"livro"
