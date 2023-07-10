@@ -1,60 +1,60 @@
 <?php
 /**
- * Effigy functions and definitions
+ * Curriculum functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Effigy
- * @since Effigy 1.0
+ * @package Curriculum
+ * @since Curriculum 1.0
  */
 
 
-if ( ! function_exists( 'effigy_support' ) ) :
+if ( ! function_exists( 'curriculum_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since Effigy 1.0
+	 * @since Curriculum 1.0
 	 *
 	 * @return void
 	 */
-	function effigy_support() {
+	function curriculum_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'effigy' );
+		load_theme_textdomain( 'curriculum' );
 	}
 
 endif;
 
-add_action( 'after_setup_theme', 'effigy_support' );
+add_action( 'after_setup_theme', 'curriculum_support' );
 
-if ( ! function_exists( 'effigy_styles' ) ) :
+if ( ! function_exists( 'curriculum_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Effigy 1.0
+	 * @since Curriculum 1.0
 	 *
 	 * @return void
 	 */
-	function effigy_styles() {
+	function curriculum_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'effigy-style',
+			'curriculum-style',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'effigy-style' );
+		wp_enqueue_style( 'curriculum-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'effigy_styles' );
+add_action( 'wp_enqueue_scripts', 'curriculum_styles' );
