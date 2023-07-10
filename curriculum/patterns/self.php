@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: 404
- * Slug: effigy/self
+ * Slug: curriculum/self
  * Categories: hidden
  * Inserter: no
  */

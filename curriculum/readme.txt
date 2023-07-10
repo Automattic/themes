@@ -1,4 +1,4 @@
-=== Effigy ===
+=== Curriculum ===
 Contributors: the WordPress team
 Requires at least: 5.8
 Tested up to: 6.2
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Effigy is a blog theme that echoes the structure of a professional profile with original visuals and interesting navigation. It's suitable for the general public displaying information, experiences, and education. And it's super easy to be customized.
+Curriculum is a blog theme that echoes the structure of a professional profile with original visuals and interesting navigation. It's suitable for the general public displaying information, experiences, and education. And it's super easy to be customized.
 
 == Changelog ==
 
@@ -20,9 +20,9 @@ Effigy is a blog theme that echoes the structure of a professional profile with 
 
 == Copyright ==
 
-Effigy WordPress Theme, (C) 2023 the WordPress team
-Effigy is distributed under the terms of the GNU GPL.
-Effigy is based on Effigy (https://github.com/wordpress/effigy/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Curriculum WordPress Theme, (C) 2023 the WordPress team
+Curriculum is distributed under the terms of the GNU GPL.
+Curriculum is based on Curriculum (https://github.com/wordpress/curriculum/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: effigy/comments
+ * slug: curriculum/comments
  * inserter: no
  */
 
