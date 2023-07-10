@@ -70,8 +70,8 @@ if ( ! function_exists( 'hever_setup' ) ) :
 			varia_mobile_nav_on_side_setup();
 		}
 
-		// Add support for experimental link color via Gutenberg: https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md
-		add_theme_support( 'experimental-link-color' );
+		// Add support for link color control.
+		add_theme_support( 'link-color' );
 	}
 endif;
 add_action( 'after_setup_theme', 'hever_setup', 12 );
@@ -113,7 +113,7 @@ function hever_fonts_url() {
 
 		/**
 		 * A filter to enable child themes to add/change/omit font families.
-		 * 
+		 *
 		 * @param array $font_families An array of font families to be imploded for the Google Font API
 		 */
 		$font_families = apply_filters( 'included_google_font_families', $font_families );

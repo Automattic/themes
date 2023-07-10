@@ -10,8 +10,8 @@ if ( ! function_exists( 'blockbase_support' ) ) :
 		// Alignwide and alignfull classes in the block editor.
 		add_theme_support( 'align-wide' );
 
-		// Add support for experimental link color control.
-		add_theme_support( 'experimental-link-color' );
+		// Add support for link color control.
+		add_theme_support( 'link-color' );
 
 		// Add support for responsive embedded content.
 		// https://github.com/WordPress/gutenberg/issues/26901
