@@ -12,6 +12,9 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 
 == Changelog ==
 
+= 1.0.5 =
+* fix font slug
+
 = 1.0.4 =
 * Fewer: altering font names
 
