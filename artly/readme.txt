@@ -12,6 +12,9 @@ Artly is a WordPress theme designed for blogs and magazines. Its modern, offset 
 
 == Changelog ==
 
+= 1.0.1 =
+* Artly: remove theme key from template parts links in templates
+
 = 1.0.0 =
 * Initial release
 
