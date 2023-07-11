@@ -12,6 +12,9 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 
 == Changelog ==
 
+= 1.0.2 =
+* missing changelog
+
 = 1.0.1 =
 * fix font slug
 

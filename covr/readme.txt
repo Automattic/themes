@@ -12,6 +12,9 @@ Covr is a beautifully crafted theme that boasts a clean and modern design, speci
 
 == Changelog ==
 
+= 1.0.1 =
+* Covr: remove theme key from template part links in templates
+
 = 0.0.1 =
 * Initial release
 

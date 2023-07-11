@@ -12,6 +12,9 @@ Erma is a WordPress portfolio block theme that features gorgeous imagery and mod
 
 == Changelog ==
 
+= 1.0.4 =
+* missing changelog
+
 = 1.0.3 =
 * Erma: adding defult font weight
 
