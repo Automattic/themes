@@ -12,21 +12,6 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 
 == Changelog ==
 
-= 1.0.5 =
-* fix font slug
-
-= 1.0.4 =
-* Fewer: altering font names
-
-= 1.0.3 =
-* Fewer: testing change for fonts already added by jetpack on simple sites
-
-= 1.0.2 =
-* Fewer theme: removing theme key from template part links in templates
-
-= 1.0.1 =
-* fix comment syntax
-
 = 1.0.0 =
 * Initial release
 
