@@ -30,3 +30,21 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+The theme bundles the following third-party resources:
+
+Piazzolla Font
+License: SIL Open Font License, version 1.1 (http://scripts.sil.org/OFL)
+Source: https://fonts.google.com/specimen/Piazzolla
+
+Images from rawpixel.com are are CC0 licensed (https://creativecommons.org/publicdomain/zero/1.0/):
+https://www.rawpixel.com/image/3283792/free-photo-image-window-library-book
+https://www.rawpixel.com/image/8922840/female-acrobat-unknown
+https://www.rawpixel.com/image/3797051/photo-image-blue-vintage-red
+https://www.rawpixel.com/image/8802538/photo-image-vintage-coffee-cup-can
+https://www.rawpixel.com/image/5916234/image-public-domain-person-beach
+
+Participants in a kiddies’ parade, New Ulm, Minnesota. Flip Schulke, Public domain, via Wikimedia Commons
+https://commons.wikimedia.org/wiki/File:PARTICIPANT_IN_A_KIDDIES_PARADE,_AN_ANNUAL_EVENT_HELD_EARLY_IN_THE_EVENING_DURING_THE_SUMMER_IN_NEW_ULM,_MINNESOTA...._-_NARA_-_558183.jpg
+
+
