@@ -12,6 +12,10 @@ Bute is a blog theme that has a full-screen front page
 
 == Changelog ==
 
+= 1.0.1 =
+* Bute: Update navigation so they are vertically centre to avoid wpcom banners overlapping (#7203)
+* Remove comments and post-meta template part refs from theme.json (#7228)
+
 = 1.0.0 =
 * Initial release
 
