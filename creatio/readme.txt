@@ -31,6 +31,8 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
 Inter Font
 Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter)
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
@@ -44,3 +46,14 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: http://scripts.sil.org/OFL 
 Source: https://github.com/googlefonts/literata
 -- End of Literata Font credits --
+
+Image by Thought Catalog
+https://www.pexels.com/photo/three-assorted-colored-books-2228546/
+
+Image by Victor Freitas
+https://www.pexels.com/photo/person-in-black-shorts-and-pink-sneakers-lying-on-floor-2261486/
+
+Image by Brando.ltd
+https://www.pexels.com/photo/a-person-holding-black-smartphone-9878730/
+
+Included in theme screenshot and in a front page template.
