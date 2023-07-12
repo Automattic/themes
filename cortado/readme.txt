@@ -29,3 +29,17 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Assets bundled with this theme
+
+Albert Sans Font
+Licensed under SIL Open Font License, 1.1 (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Albert+Sans
+
+Plus Jakarta Sans Font
+Licensed under SIL Open Font License, 1.1 (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Plus+Jakarta+Sans
+
+Work Sans Font
+Licensed under SIL Open Font License, 1.1 (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Work+Sans
