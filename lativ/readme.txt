@@ -19,7 +19,7 @@ Lativ is a WordPress block theme specifically designed for businesses and startu
 
 Lativ WordPress Theme, (C) 2023 Automattic
 Lativ is distributed under the terms of the GNU GPL.
-Lativ is based on Ease (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Lativ is based on Ease (https://wordpress.org/themes/ease/), (C) CNHK SYSTEMS, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
