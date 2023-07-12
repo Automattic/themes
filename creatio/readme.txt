@@ -12,6 +12,9 @@ Creatio is a simple, minimal theme that supports full-site editing and global st
 
 == Changelog ==
 
+= 0.0.2 =
+* Update Creatio (#7229)
+
 = 0.0.1 =
 * Initial release
 
