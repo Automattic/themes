@@ -12,7 +12,7 @@ Lativ is a WordPress block theme specifically designed for businesses and startu
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
