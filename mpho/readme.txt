@@ -31,3 +31,12 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+Images used in theme screenshot:
+
+"woman"
+License: Public Domain
+Source: https://nappy.co/photo/3653/woman
+
+"Newspaper Rock Is a Large Cliff Mural of Ancient Indian Petroglyphs and Pictographs"
+License: CC0 1.0 Universal
+Source: https://www.rawpixel.com/image/8802659/photo-image-art-ornament-vintage
