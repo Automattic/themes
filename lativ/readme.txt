@@ -30,3 +30,30 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Crimson Pro Font
+Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: http://www.baronvonfonthausen.com/
+-- End of Crimson Pro Font credits --
+
+Fraunces Font
+Copyright 2020 The Fraunces Project Authors (github.com/undercasetype/Fraunces) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+-- End of Fraunces Font credits --
+
+PT Serif Font
+Copyright © 2010 ParaType Ltd. All rights reserved. 
+Copyright (c) 2010, ParaType Ltd. (http://www.paratype.com/public), with Reserved Font Names "PT Sans", "PT Serif" and "ParaType". 
+License URL: http://scripts.sil.org/OFL_web 
+Source: http://www.paratype.com
+-- End of PT Serif Font credits --
+
+Sora Font
+Copyright 2019 The Sora Project Authors (https://github.com/sora-xor/sora-font) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: https://fonts.barnbrook.net
+-- End of Sora Font credits --
