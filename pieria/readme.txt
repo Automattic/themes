@@ -12,6 +12,9 @@ Pieria is a theme focused on typography — essentially following a low-level st
 
 == Changelog ==
 
+= 1.0.1 =
+* Pieria: update heading font family (#7238)
+
 = 0.0.1 =
 * Initial release
 

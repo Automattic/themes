@@ -12,6 +12,9 @@ Entry is a uniquely styled WordPress block theme designed for journaling. It fea
 
 == Changelog ==
 
+= 1.0.1 =
+* Entry: Add asset licenses (#7227)
+
 = 1.0.0 =
 * Initial release
 
