@@ -7,17 +7,17 @@
  */
 ?>
 
-<!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
-<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- wp:spacer -->
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">
-            <?php
+<div class="wp-block-group"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"},"blockGap":"8px"}}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:site-title {"textAlign":"center"} /-->
+
+<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.9rem"}}} -->
+<p class="has-text-align-center" style="font-size:0.9rem">
+<?php
                 /* Translators: WordPress link. */
                 $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'didone' ) ) . '" rel="nofollow">WordPress</a>';
                 echo sprintf(
@@ -25,9 +25,7 @@
                     $wordpress_link
                 );
             ?>
-        </p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
-</div>
+</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
