@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.13 =
+* Replace experimental-link-color with link-color (#7221)
+
 = 3.1.12 =
 * Small tweaks to force update following `style-variations` tag fix (#7209)
 

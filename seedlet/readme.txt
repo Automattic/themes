@@ -18,6 +18,9 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.27 =
+* Replace experimental-link-color with link-color (#7221)
+
 = 1.1.26 =
 * Update Node version in .nvmrc & update deps (#7059)
 
