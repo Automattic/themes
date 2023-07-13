@@ -12,6 +12,9 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.8 =
+* Fix heading color. (#7240)
+
 = 1.0.7 =
 * Small tweaks to force update following `style-variations` tag fix (#7209)
 
