@@ -7,11 +7,11 @@ Description: Creatio is a simple, minimal theme that supports full-site editing 
 Requires at least: 6.0
 Tested up to: 6.2.3
 Requires PHP: 5.7
-Version: 0.0.2
+Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: creatio
-Tags: blog, news, portfolio, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready, shawburn
+Tags: blog, news, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready
 */
 
 /*
@@ -55,4 +55,21 @@ Tags: blog, news, portfolio, one-column, three-columns, wide-blocks, block-patte
 a {
 	text-decoration-thickness: .0625em !important;
 	text-underline-offset: .15em;
+}
+
+/**
+ * Remove blockGap between header/sections/footer for Pattern Assembler.
+ * See https://github.com/Automattic/wp-calypso/issues/78097 for reference. 
+ */
+
+/* Remove the gap from the editor. */
+.editor-styles-wrapper :where(.wp-site-blocks) > * {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* Remove the gap from the front-end. */
+:where(.wp-site-blocks) > * {
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
