@@ -12,7 +12,7 @@ RAW is a theme design inspired by the Brutalist concepts from the homonymous Arc
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
