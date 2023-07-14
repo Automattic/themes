@@ -1,4 +1,4 @@
-=== Rothko ===
+=== Reverie ===
 Contributors: Automattic
 Requires at least: 6.1
 Tested up to: 6.2
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Rothko is a minimal blogging theme inspired by architects and designers Alvar, Aino and Elissa Aalto.
+Reverie is a minimal blogging theme inspired by architects and designers Alvar, Aino and Elissa Aalto.
 
 == Changelog ==
 
@@ -16,8 +16,8 @@ Rothko is a minimal blogging theme inspired by architects and designers Alvar, A
 
 == Copyright ==
 
-Rothko WordPress Theme, (C) 2023 Automattic
-Rothko is distributed under the terms of the GNU GPL.
+Reverie WordPress Theme, (C) 2023 Automattic
+Reverie is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
