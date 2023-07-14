@@ -8,11 +8,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Reverie is a minimal blogging theme inspired by architects and designers Alvar, Aino and Elissa Aalto.
+Reverie is a theme inspired by the work of Mark Rothko. It features four style variations for each season — Spring (default), Summer, Fall, and Winter. Use it to illuminate your prose, poetry, stories, photos, and more.
+
+Reverie is a block theme interpretation of ma.tt's theme, designed by Joen Asmussen and forked from Twenty Thirteen.
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 
 == Copyright ==
 
@@ -31,20 +33,5 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-Jost font from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-https://fonts.google.com/specimen/Jost
-
 Newsreader font from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 https://fonts.google.com/specimen/Newsreader
-
-"Chair, model 41, 1931-32, designed by Alvar Aalt"
-Used in theme screenshot
-Source: https://commons.wikimedia.org/wiki/File:Wolfsonian-FIU_Museum_-_IMG_8234.JPG
-Daderot, Public domain, via Wikimedia Commons
-
-Source Sans Pro Font
-© 2010 - 2018 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name ‘Source’. 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL. This Font Software is distributed on an ‘AS IS’... 
-License URL: http://scripts.sil.org/OFL 
-Source: http://www.adobe.com/type
--- End of Source Sans Pro Font credits --
