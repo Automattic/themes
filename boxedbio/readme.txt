@@ -33,3 +33,15 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+Bundled Fonts:
+D-Din
+License: SIL Open Font License v1.10 (https://scripts.sil.org/OFL)
+Source: https://www.fontsquirrel.com/fonts/d-din
+
+Figtree
+License: SIL Open Font License v1.10 (https://scripts.sil.org/OFL)
+Source: https://fonts.google.com/specimen/Figtree
+
+Rubik
+License: SIL Open Font License v1.10 (https://scripts.sil.org/OFL)
+Source: https://fonts.google.com/specimen/Rubik
