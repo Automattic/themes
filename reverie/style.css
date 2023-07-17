@@ -1,0 +1,175 @@
+/*
+Theme Name: Reverie
+Theme URI: https://wordpress.com/theme/reverie/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Reverie is a blogging theme inspired by the work of Mark Rothko.
+Requires at least: 6.1
+Tested up to: 6.2
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: reverie
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage, blog
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/* 
+ * Search block (inside button) styles 
+ * https://github.com/WordPress/gutenberg/issues/39946
+ */
+.wp-block-search__button-inside > .wp-block-search__inside-wrapper {
+	box-sizing: border-box;
+}
+.wp-block-search__button-inside .wp-block-search__input {
+	padding: 0 0.25rem;
+}
+
+/* Comment styles */
+.wp-block-comment-template > .comment .wp-block-group-is-layout-flex,
+.wp-block-comment-template > .comment .wp-block-group-is-layout-flow {
+	flex-grow: 1;
+}
+
+/*
+ * Fixed bottom nav
+ */
+.fixed-bottom-nav {
+	bottom: 0;
+	left: 0;
+	height: 64px;
+	position: fixed;
+	width: 100%;
+}
+
+.fixed-bottom-nav::before {
+	content: '';
+	background-color: var(--wp--preset--color--primary);
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	top: -40px;
+	mix-blend-mode: darken;
+	-webkit-mask: url(assets/images/nav-edge.png) no-repeat center / cover;
+	mask: url(assets/images/nav-edge.png) no-repeat center / cover;
+	z-index: -1;
+}
+
+.background-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background-image: url(assets/images/background-texture.png);
+	background-size: contain;
+	background-repeat: repeat;
+	position: fixed;
+    z-index: -1; /* Keeps the background behind other content */
+}
+
+.background-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--wp--preset--color--background);
+    mix-blend-mode: color; /* Change to desired blend mode */
+    pointer-events: none;
+}
+
+/* Custom Reverie alternating post styles */
+.post-content-reverie-container {
+	background-image: url(assets/images/25.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+}
+
+.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(2n) .post-content-reverie-container {
+	background-image: url(assets/images/50.png);
+}
+
+.wp-block-post-template-is-layout-flow > .wp-block-post:nth-child(3n) .post-content-reverie-container {
+	background-image: url(assets/images/90.png);
+}
+
+.reverie-archive-title {
+	background-image: url(assets/images/90.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.reverie-single-container, .reverie-comments-section {
+	background-image: url(assets/images/25.png);
+	background-size: 120% 100%;
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+}
+
+@media screen and (min-width: 750px){
+	.post-content-reverie-container, .reverie-archive-title, .reverie-single-container {
+		background-size: 75% 100% !important;
+	}
+}
+
+/* Nav modal styles */
+.wp-block-navigation__responsive-container.is-menu-open::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    mix-blend-mode: color; /* Change to desired blend mode */
+    pointer-events: none;
+}
+
+.wp-block-navigation__responsive-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background-image: url(assets/images/background-texture.png);
+	background-size: contain;
+	background-repeat: repeat;
+	position: fixed;
+    z-index: -1; /* Keeps the background behind other content */
+}
+
+.wp-block-navigation__responsive-container-close {
+	top: 2rem;
+	right: 3rem;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open li.wp-block-navigation-item.wp-block-navigation-submenu,
+.wp-block-navigation__responsive-container.is-menu-open li.wp-block-navigation-item.wp-block-navigation-link {
+	padding: 2rem;
+    background-image: url(assets/images/90.png) !important;
+    background-size: 105% 100% !important;
+    background-position: center !important
+}
+
+.wp-block-post-terms.taxonomy-category::before {
+	content: "·  ";
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	gap: 0;
+}
