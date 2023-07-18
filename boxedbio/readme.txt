@@ -1,4 +1,4 @@
-=== BoxedBio ===
+=== Boxed Bio ===
 Contributors: the WordPress team
 Requires at least: 6.0
 Tested up to: 6.2.2
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Your new Link-in-Bio site, BoxedBio, offers a simple organization of blocks to display contact information and links on an interesting landing page.
+Your new Link-in-Bio site, BoxedBio, offers a simple organization of blocks to display contact information and links on an exciting landing page.
 
 == Changelog ==
 
@@ -17,7 +17,7 @@ Your new Link-in-Bio site, BoxedBio, offers a simple organization of blocks to d
 
 == Copyright ==
 
-BoxedBio is based on BiB (https://github.com/wordpress/bib/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Boxed Bio is based on BiB (https://github.com/wordpress/bib/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 BiB WordPress Theme, (C) 2023 the WordPress team
 BiB is distributed under the terms of the GNU GPL.
@@ -32,6 +32,11 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Bundled images
+https://pxhere.com/en/photo/100185 (CC0 Public Domain)
+https://pxhere.com/en/photo/1101378 (CC0 Public Domain)
+https://pxhere.com/en/photo/99039 (CC0 Public Domain)
 
 Bundled Fonts:
 D-Din
