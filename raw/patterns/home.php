@@ -110,7 +110,7 @@
 
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:block {"ref":307} /--></div>
+<div class="wp-block-column"><!-- wp:pattern {"slug":"raw/query-thumb"} --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
