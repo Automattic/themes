@@ -12,6 +12,9 @@ Otis is a WordPress block theme that is well-suited for personal blogging. It is
 
 == Changelog ==
 
+= 1.0.1 =
+* Otis: remove theme attribute from template parts (#7246)
+
 = 0.0.1 =
 * Initial release
 
