@@ -12,7 +12,7 @@ Ron is a minimalist blogging theme designed with a focus on delivering an except
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
