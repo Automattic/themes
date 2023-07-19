@@ -14,6 +14,9 @@ Reverie is a block theme interpretation of ma.tt's theme, designed by Joen Asmus
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix blob widths. (#7250)
+
 = 1.0.0 =
 
 == Copyright ==
