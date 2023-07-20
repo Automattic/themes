@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"padding":{"top":"20px","right":"20px","bottom":"20px","left":"20px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="padding-top:20px;padding-right:20px;padding-bottom:20px;padding-left:20px"><!-- wp:template-part {"slug":"header","tagName":"header"} /--></div>
 <!-- /wp:group -->
@@ -16,7 +17,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"5.6rem"}}} -->
-<h2 class="wp-block-heading has-text-align-center" style="font-size:5.6rem">Manage your health easily.</h2>
+<h2 class="wp-block-heading has-text-align-center" style="font-size:5.6rem"><?php echo esc_html__( 'Manage your health easily.', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:site-tagline {"textAlign":"center"} /-->
@@ -27,7 +28,7 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"10px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}}} -->
-<p class="has-text-align-center" style="font-style:normal;font-weight:500">Trusted by the best</p>
+<p class="has-text-align-center" style="font-style:normal;font-weight:500"><?php echo esc_html__( 'Trusted by the best', 'lativ' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:columns {"align":"wide"} -->
@@ -54,7 +55,7 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"20px","left":"20px","top":"60px","bottom":"60px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:60px;padding-right:20px;padding-bottom:60px;padding-left:20px"><!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">Why Lativ</h2>
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Why Lativ', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"2vh"} -->
@@ -69,11 +70,11 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
-<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300">Medical Records Management</h2>
+<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300"><?php echo esc_html__( 'Medical Records Management', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Easily access and share medical records with your healthcare professional, ensuring more efficient care.</p>
+<p><?php echo esc_html__( 'Easily access and share medical records with your healthcare professional, ensuring more efficient care.', 'lativ' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -85,11 +86,11 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
-<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300">Diagnosis Assistance</h2>
+<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300"><?php echo esc_html__( 'Diagnosis Assistance', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Our AI algorithms analyze your data to provide accurate diagnosis assistance to healthcare professionals.</p>
+<p><?php echo esc_html__( 'Our AI algorithms analyze your data to provide accurate diagnosis assistance to healthcare professionals.', 'lativ' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -101,11 +102,11 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
-<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300">Personalized Treatment Plans</h2>
+<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300"><?php echo esc_html__( 'Personalized Treatment Plans', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>By tailoring treatment plans to your specific needs, Vital helps improve outcomes and incrlativ your health.</p>
+<p><?php echo esc_html__( 'By tailoring treatment plans to your specific needs, Vital helps improve outcomes and incrlativ your health.', 'lativ' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -130,16 +131,16 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading -->
-<h2 class="wp-block-heading">"Lativ has never been a concern since day one. It takes care of everything for you, so you can focus on the important things”</h2>
+<h2 class="wp-block-heading"><?php echo esc_html__( '"Lativ has never been a concern since day one. It takes care of everything for you, so you can focus on the important things”', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><strong>Valerie Thompson</strong><br>CEO, Marathon</p>
+<p><strong><?php echo esc_html__( 'Valerie Thompson', 'lativ' ); ?></strong><br><?php echo esc_html__( 'CEO, Marathon', 'lativ' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"background","textColor":"primary","className":"is-style-fill"} -->
-<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button">View Case Study</a></div>
+<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-color has-background-background-color has-text-color has-background wp-element-button"><?php echo esc_html__( 'View Case Study', 'lativ' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column --></div>
@@ -163,16 +164,16 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left"} -->
-<h2 class="wp-block-heading has-text-align-left">Get the full experience With Lativ Tracker™</h2>
+<h2 class="wp-block-heading has-text-align-left"><?php echo esc_html__( 'Get the full experience With Lativ Tracker™', 'lativ' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>With Lativ Tracker, you're able to measure physical data such as blood pressure, cholesterol levels, blood glucose levels, your menstrual cycle and so much more.</p>
+<p><?php echo esc_html__( 'With Lativ Tracker, you\'re able to measure physical data such as blood pressure, cholesterol levels, blood glucose levels, your menstrual cycle and so much more.', 'lativ' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Explore the Product</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'Explore the Product', 'lativ' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
