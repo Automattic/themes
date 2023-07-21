@@ -1,7 +1,7 @@
 === Cortado ===
 Contributors: Automattic
-Requires at least: 5.8
-Tested up to: 5.9
+Requires at least: 6.0
+Tested up to: 6.2.2
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,8 +17,10 @@ Cortado is a simple and elegant theme. Its colors and typography work together p
 
 == Copyright ==
 
-Cortado WordPress Theme, (C) 2022 Dotorg Themes Design
-Cortado is distributed under the terms of the GNU GPL.
+Cortado is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+
+Block Canvas WordPress Theme, (C) 2022 Automattic
+Block Canvas is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,6 +32,22 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+Foodies Feed
+https://www.foodiesfeed.com/free-food-photo/brioche-french-toast-with-butter/
+https://www.foodiesfeed.com/free-food-photo/espresso-machine-brewing/
+https://www.foodiesfeed.com/free-food-photo/relaxing-with-croissants-and-coffee-espresso-at-home/
+https://www.foodiesfeed.com/free-food-photo/woman-in-a-warm-blanket-holding-a-cup-of-coffee/
+https://www.foodiesfeed.com/free-food-photo/girl-holding-a-black-cup-with-espresso-coffee/
+https://www.foodiesfeed.com/free-food-photo/laptop-work-with-coffee/
+https://www.foodiesfeed.com/free-food-photo/holding-espresso-cup/
+https://www.foodiesfeed.com/free-food-photo/cozy-atmosphere-with-hot-chocolate-and-biscuits/
+https://www.foodiesfeed.com/free-food-photo/coffee-kettle/
+https://www.foodiesfeed.com/free-food-photo/coffee-beans-falling/
+https://www.foodiesfeed.com/free-food-photo/coffee-with-amazing-latte-art/
+https://www.foodiesfeed.com/free-food-photo/girl-sipping-from-a-cup-of-coffee/
+
+Pexels
+https://www.pexels.com/nb-no/bilde/emoji-lonnesirup-mat-pannekaker-4626/
 Assets bundled with this theme
 
 Albert Sans Font

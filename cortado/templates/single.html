@@ -2,7 +2,7 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"40px","padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"layout":{"inherit":true,"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:post-featured-image /-->
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:post-featured-image {"aspectRatio":"4/3"} /-->
 
 <!-- wp:post-title /-->
 
@@ -14,7 +14,17 @@
 <!-- wp:group {"tagName":"main","lock":{"move":false,"remove":false}} -->
 <main class="wp-block-group"><!-- wp:columns {"style":{"spacing":{"margin":{"top":"40px","bottom":"40px"}}}} -->
 <div class="wp-block-columns" style="margin-top:40px;margin-bottom:40px"><!-- wp:column {"width":"33.3%"} -->
-<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:post-excerpt {"style":{"typography":{"lineHeight":1.2,"fontSize":"1.5rem"}}} /--></div>
+<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:spacer {"height":"0.5rem"} -->
+<div style="height:0.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:post-excerpt {"style":{"typography":{"fontSize":"1.5rem","lineHeight":"1.5"}}} /-->
+
+<!-- wp:spacer {"height":"0.5rem"} -->
+<div style="height:0.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:post-date {"format":"F j, Y","isLink":true} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.6%"} -->
@@ -26,21 +36,13 @@
 
 <!-- wp:spacer {"height":"4rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 <div style="margin-top:0px;margin-bottom:0px;height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- /wp:spacer -->
 
 <!-- wp:template-part {"slug":"post-meta"} /-->
 
-<!-- wp:columns -->
-<div class="wp-block-columns"><!-- wp:column {"width":"33.3%"} -->
-<div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:paragraph -->
-<p><strong>Tags</strong></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"width":"66.6%"} -->
-<div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:post-terms {"term":"post_tag"} /--></div>
+<!-- wp:spacer {"height":"4rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
+<div style="margin-top:0px;margin-bottom:0px;height:4rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></main>
 <!-- /wp:group -->
@@ -56,22 +58,22 @@
 <!-- wp:comment-template {"fontSize":"small"} -->
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-group" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"style":{"spacing":{"blockGap":"0.5em"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:avatar {"size":40,"style":{"spacing":{"margin":{"top":"0.1em"}},"border":{"radius":"20px"}}} /-->
+<div class="wp-block-group"><!-- wp:avatar {"size":40,"style":{"spacing":{"margin":{"top":"0.1em"}},"border":{"radius":"20px"},"color":{"duotone":["#0a2bd7","#fafafa"]}}} /-->
 
 <!-- wp:group -->
-<div class="wp-block-group"><!-- wp:comment-author-name /-->
+<div class="wp-block-group"><!-- wp:comment-author-name {"fontSize":"small"} /-->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"0.5em"}},"layout":{"type":"flex"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:comment-date {"format":"F j, Y \\a\\t g:i a"} /-->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"2em"}},"layout":{"type":"flex"}} -->
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:comment-date {"format":"M j","fontSize":"small"} /-->
 
-<!-- wp:comment-edit-link /--></div>
+<!-- wp:comment-edit-link {"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}},"fontSize":"small"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:comment-content /-->
+<!-- wp:comment-content {"fontSize":"small"} /-->
 
-<!-- wp:comment-reply-link {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0px"},"spacing":{"margin":{"top":"0px","right":"0px","bottom":"2rem","left":"0px"}}}} /--></div>
+<!-- wp:comment-reply-link {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0px","fontStyle":"normal","fontWeight":"700","fontSize":"0.75rem"},"spacing":{"margin":{"top":"0px","right":"0px","bottom":"4rem","left":"0px"}}}} /--></div>
 <!-- /wp:group -->
 <!-- /wp:comment-template -->
 
@@ -101,12 +103,12 @@
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"40px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px"><!-- wp:heading -->
-<h2>Blog</h2>
+<h2 class="wp-block-heading">Blog</h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":1,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[7]}}} -->
-<div class="wp-block-query"><!-- wp:post-template -->
-<!-- wp:post-featured-image {"isLink":true} /-->
+<!-- wp:query {"queryId":1,"query":{"perPage":"2","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[7]}}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"spacing":{"margin":{"bottom":"3rem"}}}} /-->
 
 <!-- wp:post-title {"level":3,"isLink":true,"style":{"typography":{"textTransform":"uppercase"}}} /-->
 
