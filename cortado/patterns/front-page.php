@@ -14,7 +14,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">We serve the finest freshly ground beans from all over the world.</h2>
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'We serve the finest freshly ground beans from all over the world.', 'cortado' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"4rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
@@ -52,7 +52,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"center"} -->
-<h2 class="wp-block-heading has-text-align-center">Our menu</h2>
+<h2 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Our menu', 'cortado' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"4rem","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
@@ -61,99 +61,99 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"4rem"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group"><!-- wp:details {"showContent":true,"summary":"Drinks","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<details class="wp-block-details" open><summary>Drinks</summary><!-- wp:group {"layout":{"type":"constrained"}} -->
+<details class="wp-block-details" open=""><summary><?php echo esc_html__( 'Drinks', 'cortado' ); ?></summary><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"uppercase"}}} -->
-<h3 class="wp-block-heading" style="text-transform:uppercase">Hot Drinks</h3>
+<h3 class="wp-block-heading" style="text-transform:uppercase"><?php echo esc_html__( 'Hot Drinks', 'cortado' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Pour Over Coffee</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Pour Over Coffee', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Café Au Lait</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Café Au Lait', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$3.25</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$3.25', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Espresso</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Espresso', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$1.50</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$1.50', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Americano</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Americano', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$1.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$1.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Cappucino</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Cappucino', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$3.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$3.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Flat White</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Flat White', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$3.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$3.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Latte</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Latte', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$4.25</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$4.25', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Mocha</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Mocha', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$4.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$4.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Hot Chocolate</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Hot Chocolate', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$4.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$4.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -165,67 +165,67 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"level":3,"style":{"typography":{"textTransform":"uppercase"}}} -->
-<h3 class="wp-block-heading" style="text-transform:uppercase">Cold Drinks</h3>
+<h3 class="wp-block-heading" style="text-transform:uppercase"><?php echo esc_html__( 'Cold Drinks', 'cortado' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Cold Brew</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Cold Brew', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$3.00</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$3.00', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Iced Tea</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Iced Tea', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Espresso Over Ice</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Espresso Over Ice', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Iced Americano</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Iced Americano', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Iced Latte</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Iced Latte', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$4.25</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$4.25', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"0rem","bottom":"0.5rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:0.5rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0px","right":"0px"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600">Iced Mocha</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0px;padding-bottom:0rem;padding-left:0px;font-style:normal;font-weight:600"><?php echo esc_html__( 'Iced Mocha', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$4.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$4.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -233,103 +233,103 @@
 <!-- /wp:details -->
 
 <!-- wp:details {"summary":"Breakfast","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<details class="wp-block-details"><summary>Breakfast</summary><!-- wp:paragraph -->
-<p>Breakfast served 7:00am - 3:00pm</p>
+<details class="wp-block-details"><summary><?php echo esc_html__( 'Breakfast', 'cortado' ); ?></summary><!-- wp:paragraph -->
+<p><?php echo esc_html__( 'Breakfast served 7:00am - 3:00pm', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600">Egg Sandwich</p>
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Egg Sandwich', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Organic scrambled eggs and melted cheddar on a toasted brioche bun</p>
+<p><?php echo esc_html__( 'Organic scrambled eggs and melted cheddar on a toasted brioche bun', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600">Egg over Arugula</p>
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Egg over Arugula', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Poached local organic eggs over a pile of dressed arugula</p>
+<p><?php echo esc_html__( 'Poached local organic eggs over a pile of dressed arugula', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p style="font-style:normal;font-weight:600">Texas Cinnamon Toast</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p style="font-style:normal;font-weight:600">Texas Toast with Butter & Seasonal Preserves</p>
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Texas Cinnamon Toast', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"layout":{"selfStretch":"fill","flexSize":null}}} -->
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Texas Toast with Butter & Seasonal Preserves', 'cortado' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p style="font-style:normal;font-weight:600">Organic Yogurt & Local Granola</p>
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Organic Yogurt & Local Granola', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Made with gluten free oats</p>
+<p><?php echo esc_html__( 'Made with gluten free oats', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p style="font-style:normal;font-weight:600">Texas Toast with Butter & Seasonal Preserves</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"layout":{"selfStretch":"fill","flexSize":null}}} -->
-<p style="font-style:normal;font-weight:600">Seasonal Fruit Bowl</p>
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Texas Toast with Butter & Seasonal Preserves', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
-<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem">$2.75</p>
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"layout":{"selfStretch":"fill","flexSize":null}}} -->
+<p style="font-style:normal;font-weight:600"><?php echo esc_html__( 'Seasonal Fruit Bowl', 'cortado' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"layout":{"selfStretch":"fixed","flexSize":"4rem"},"spacing":{"margin":{"top":"0rem","bottom":"0rem"},"padding":{"top":"0rem","bottom":"0rem","left":"0rem","right":"0rem"}}}} -->
+<p style="margin-top:0rem;margin-bottom:0rem;padding-top:0rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><?php echo esc_html__( '$2.75', 'cortado' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></details>
 <!-- /wp:details -->
 
 <!-- wp:details {"summary":"Brunch"} -->
-<details class="wp-block-details"><summary>Brunch</summary><!-- wp:paragraph {"placeholder":"Type / to add a hidden block"} -->
+<details class="wp-block-details"><summary><?php echo esc_html__( 'Brunch', 'cortado' ); ?></summary><!-- wp:paragraph {"placeholder":"<?php echo esc_attr__( 'Type / to add a hidden block', 'cortado' ); ?>"} -->
 <p></p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>

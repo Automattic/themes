@@ -17,11 +17,11 @@
 <!-- /wp:spacer -->
 
 <!-- wp:heading {"textAlign":"center","level":1} -->
-<h1 class="wp-block-heading has-text-align-center">Oops! That page can’t be found.</h1>
+<h1 class="wp-block-heading has-text-align-center"><?php echo esc_html__( 'Oops! That page can’t be found.', 'cortado' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">It looks like nothing was found at this location. Maybe try a search?</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'cortado' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:search {"label":"","showLabel":false,"width":75,"widthUnit":"%","buttonUseIcon":true,"align":"center","style":{"border":{"radius":"3px","width":"1px"}},"borderColor":"primary"} /-->
