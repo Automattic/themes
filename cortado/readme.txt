@@ -33,6 +33,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Foodies Feed
+License: CC0 1.0 Universal (CC0 1.0) Free for personal and commercial use and no attribution required
 https://www.foodiesfeed.com/free-food-photo/brioche-french-toast-with-butter/
 https://www.foodiesfeed.com/free-food-photo/espresso-machine-brewing/
 https://www.foodiesfeed.com/free-food-photo/relaxing-with-croissants-and-coffee-espresso-at-home/
@@ -47,8 +48,10 @@ https://www.foodiesfeed.com/free-food-photo/coffee-with-amazing-latte-art/
 https://www.foodiesfeed.com/free-food-photo/girl-sipping-from-a-cup-of-coffee/
 
 Pexels
+License: CC0 1.0 Universal (CC0 1.0) Free for personal and commercial use and no attribution required
 https://www.pexels.com/nb-no/bilde/emoji-lonnesirup-mat-pannekaker-4626/
-Assets bundled with this theme
+
+Fonts
 
 Albert Sans Font
 Licensed under SIL Open Font License, 1.1 (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
