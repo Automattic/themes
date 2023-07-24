@@ -1,6 +1,6 @@
 === Lativ ===
 Contributors: Automattic
-Requires at least: 5.8
+Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
@@ -46,7 +46,8 @@ License URL: https://scripts.sil.org/OFL
 
 PT Serif Font
 Copyright © 2010 ParaType Ltd. All rights reserved. 
-Copyright (c) 2010, ParaType Ltd. (http://www.paratype.com/public), with Reserved Font Names "PT Sans", "PT Serif" and "ParaType". 
+Copyright (c) 2010, ParaType Ltd. (http://www.paratype.com/public), with Reserved Font Names "PT Sans", "PT Serif" and "ParaType".
+ 
 License URL: http://scripts.sil.org/OFL_web 
 Source: http://www.paratype.com
 -- End of PT Serif Font credits --
