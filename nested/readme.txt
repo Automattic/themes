@@ -12,6 +12,9 @@ Nested is a blog design that displays posts overlapping featured images as a Mat
 
 == Changelog ==
 
+= 1.0.2 =
+* Nested: Fix cover blocks on homepage (#7256)
+
 = 1.0.1 =
 * Nested: Cleanup query property (#7253)
 
