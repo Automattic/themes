@@ -1,6 +1,6 @@
 === Overlaid ===
-Contributors: the WordPress team
-Requires at least: 5.8
+Contributors: Automattic
+Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Overlaid displays large titles and excerpts that scroll over an image on the Hom
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
