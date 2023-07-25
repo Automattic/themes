@@ -12,6 +12,9 @@ Lativ is a WordPress block theme specifically designed for businesses and startu
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove Rubik from heading definition (#7266)
+
 = 1.0.0 =
 * Initial release
 
