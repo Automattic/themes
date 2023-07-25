@@ -38,7 +38,7 @@
 
 <!-- wp:column {"width":"80%"} -->
 <div class="wp-block-column" style="flex-basis:80%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Logos-2.png" alt=""/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/logos.webp" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -66,7 +66,7 @@
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"},"blockGap":"20px"},"border":{"radius":"20px"}},"backgroundColor":"custom-green","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide has-custom-green-background-color has-background" style="border-radius:20px;padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px"><!-- wp:image {"width":180,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-1-3.png" alt="" style="width:180px" width="180"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-1.webp" alt="" style="width:180px" width="180"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
@@ -82,7 +82,7 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"},"blockGap":"20px"},"border":{"radius":"20px"}},"backgroundColor":"primary","textColor":"background","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide has-background-color has-primary-background-color has-text-color has-background" style="border-radius:20px;padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px"><!-- wp:image {"width":180,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-2-2.png" alt="" style="width:180px" width="180"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-2.webp" alt="" style="width:180px" width="180"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
@@ -98,7 +98,7 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"40px","right":"40px","bottom":"40px","left":"40px"},"blockGap":"20px"},"border":{"radius":"20px"}},"backgroundColor":"custom-purple","textColor":"background","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide has-background-color has-custom-purple-background-color has-text-color has-background" style="border-radius:20px;padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px"><!-- wp:image {"width":180,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-3-2.png" alt="" style="width:180px" width="180"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/image-3.webp" alt="" style="width:180px" width="180"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
@@ -125,7 +125,7 @@
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"100px","left":"100px"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"20px"}},"className":"is-style-default"} -->
-<figure class="wp-block-image size-full has-custom-border is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/testimonial_image-edited.png" alt="" style="border-radius:20px"/></figure>
+<figure class="wp-block-image size-full has-custom-border is-style-default"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/testimonial_image.webp" alt="" style="border-radius:20px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
@@ -160,7 +160,7 @@
 <div class="wp-block-group alignwide has-background-background-color has-background" style="border-radius:20px;padding-top:60px;padding-right:60px;padding-bottom:60px;padding-left:60px"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"width":40,"height":40,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/business_logo-2.png" alt="" style="width:40px;height:40px" width="40" height="40"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/business_logo.webp" alt="" style="width:40px;height:40px" width="40" height="40"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:heading {"textAlign":"left"} -->
@@ -180,7 +180,7 @@
 
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/business_image-2.png" alt=""/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/business_image.webp" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
