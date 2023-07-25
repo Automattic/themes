@@ -30,7 +30,7 @@
 <div class="wp-block-columns are-vertically-aligned-center" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"verticalAlignment":"center","width":"50%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-column is-vertically-aligned-center" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:50%"><!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1rem"},"border":{"radius":"2px"}}} -->
-<div class="wp-block-button" style="letter-spacing:0.1rem;text-transform:uppercase"><a class="wp-block-button__link wp-element-button" href="https://cortado.mystagingwebsite.com/menu/" style="border-radius:2px"><?php echo esc_html__( 'Order online', 'cortado' ); ?></a></div>
+<div class="wp-block-button" style="letter-spacing:0.1rem;text-transform:uppercase"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/' ) ); ?>" style="border-radius:2px"><?php echo esc_html__( 'Order online', 'cortado' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
