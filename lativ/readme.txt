@@ -58,3 +58,15 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: https://scripts.sil.org/OFL 
 Source: https://fonts.barnbrook.net
 -- End of Sora Font credits --
+
+"business_image.webp"
+"business_logo.webp"
+"image-1.webp"
+"image-2.webp"
+"image-3.webp"
+"logos.webp"
+Original images created by Beatriz Fialho
+
+"testimonial_image.webp"
+Source: https://nappy.co/photo/484/
+License: Public Domain CC0
