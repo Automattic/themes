@@ -1,6 +1,6 @@
 === DOS ===
-Contributors: the WordPress team
-Requires at least: 5.8
+Contributors: Automattic
+Requires at least: 6.1
 Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
@@ -12,7 +12,7 @@ DOS is a blog theme designed for the nostalgic ones, a tribute to the folks that
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
@@ -30,3 +30,15 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+
+This theme bundles the following third-party resources:
+
+Font: JetBrains Mono
+License: SIL Open Font License (https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt)
+Source: https://www.jetbrains.com/lp/mono/
+
+Font: Jozsika
+License: SIL Open Font License (http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fontlibrary.org/en/font/joszika
+
