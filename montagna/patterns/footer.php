@@ -29,7 +29,7 @@
 				esc_html__( 'Designed with %1$s', 'montagna' ),
 				$wordpress_link
 			);
-		?></a></p>
+		?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
