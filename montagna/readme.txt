@@ -12,6 +12,9 @@ A WordPress theme for travel-related websites and blogs, designed to showcase st
 
 == Changelog ==
 
+= 1.0.1 =
+* Montagna batch updates (#7262)
+
 = 1.0.0 =
 * Initial release
 
