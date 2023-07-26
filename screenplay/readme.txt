@@ -30,3 +30,21 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Font: Albert Sans from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Albert+Sans
+
+Font: Courier Prime from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Courier+Prime
+
+Font: Golos Text from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Golos+Text
+
+Font: D-DIN
+License: SIL Open Font License (https://www.fontsquirrel.com/license/d-din)
+Source: https://www.fontsquirrel.com/fonts/d-din
