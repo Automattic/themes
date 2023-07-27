@@ -1,8 +1,9 @@
 <?php
 /**
- * Title: hero
- * Slug: startfit/hero
- * Categories: featured
+ * Title: Header Home
+ * Slug: startfit/header-home
+ * Categories: featured, header
+ * Block Types: core/template-part/header
  */
 ?>
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barbell-human-leg-physical-fitness-exercise-equipment-strength-training-bodybuilding-1564101-pxhere.com.jpg","dimRatio":40,"customOverlayColor":"#101323","focalPoint":{"x":0.5,"y":0.28000000000000003},"minHeight":70,"minHeightUnit":"vh","style":{"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
@@ -10,7 +11,19 @@
 	<div class="wp-block-cover__inner-container">
 		<!-- wp:group {"style":{"dimensions":{"minHeight":"70vh"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 		<div class="wp-block-group" style="min-height:70vh">
-			<!-- wp:pattern {"slug":"startfit/header-in-cover-block"} /-->
+			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"0px","bottom":"var:preset|spacing|40","left":"0px"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:var(--wp--preset--spacing--40);padding-right:0px;padding-bottom:var(--wp--preset--spacing--40);padding-left:0px">
+				<!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+				<div class="wp-block-group">
+					<!-- wp:site-logo {"shouldSyncIcon":false} /-->
+
+					<!-- wp:site-title /-->
+				</div>
+				<!-- /wp:group -->
+
+				<!-- wp:navigation {"textColor":"base","overlayBackgroundColor":"contrast","overlayTextColor":"base","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"},"blockGap":"2rem"}}} /-->
+			</div>
+			<!-- /wp:group -->
 
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|60","padding":{"right":"0px","left":"0px"}},"dimensions":{"minHeight":""}},"layout":{"type":"constrained"}} -->
 			<div class="wp-block-group" style="padding-right:0px;padding-left:0px">
