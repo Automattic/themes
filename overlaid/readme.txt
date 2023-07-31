@@ -30,3 +30,30 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+D-Din Font
+Copyright (C) 2017 Datto Inc. https://www.datto.com/fonts/d-din, with Reserved Font Names "D-DIN".
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License: http://scripts.sil.org/OFL
+Source: https://www.datto.com/fonts/d-din
+-- End of D-Din Font credits --
+
+Grenze Font
+Copyright 2018 The Grenze Project Authors (https://github.com/Omnibus-Type/Grenze), with Reserved Font Name "Grenze". 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: https://www.omnibus-type.com
+-- End of Grenze Font credits --
+
+Inter Font
+Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: https://rsms.me/
+-- End of Inter Font credits --
+
+Russisch Sans Font
+Michael Sharanda (font) & Cristiano Sobral (main changes).
+License: http://scripts.sil.org/OFL
+Source: https://fontlibrary.org/en/font/russisch-sans
+-- End of Russisch Sans Font credits --
