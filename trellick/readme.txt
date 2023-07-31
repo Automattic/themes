@@ -12,6 +12,9 @@ Trellick is a raw, brutalist blog theme that strips away the polished veneer of 
 
 == Changelog ==
 
+= 1.0.2 =
+* Trellick: Change the markup of the sidebar to aside (#7282)
+
 = 1.0.1 =
 * Trellick: Fix post content width
 
