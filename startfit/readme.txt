@@ -12,6 +12,9 @@ StartFit is a business theme perfect for a personal fitness training service.
 
 == Changelog ==
 
+= 1.0.1 =
+* StartFit: Edit the URLs in the social links in the footer (#7285)
+
 = 1.0.0 =
 * Initial release
 
