@@ -60,11 +60,11 @@
 
 				<!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#0F0F0F","iconBackgroundColor":"base","iconBackgroundColorValue":"#ffffff","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"}}},"className":"is-style-default"} -->
 				<ul class="wp-block-social-links has-small-icon-size has-icon-color has-icon-background-color is-style-default">
-					<!-- wp:social-link {"url":"https://wordpress.org","service":"facebook"} /-->
+					<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
 
-					<!-- wp:social-link {"url":"https://wordpress.org","service":"twitter"} /-->
+					<!-- wp:social-link {"url":"https://twitter.com","service":"twitter"} /-->
 
-					<!-- wp:social-link {"url":"https://wordpress.org","service":"instagram"} /-->
+					<!-- wp:social-link {"url":"https://www.instagram.com","service":"instagram"} /-->
 
 					<!-- wp:social-link {"url":"https://tiktok.com","service":"tiktok"} /-->
 				</ul>
