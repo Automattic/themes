@@ -49,8 +49,8 @@ if ( ! function_exists( 'course_scripts' ) ) :
 		 * It is only used to continue loading the deprecated styles if a old sensei version is installed.
 		 */
 		$use_deprecated_style = apply_filters( 'course_learning_mode_load_styles', true );
-		
-		if ( class_exists( 'Sensei_Main' ) && $use_deprecated_style  ) {
+
+		if ( class_exists( 'Sensei_Main' ) && $use_deprecated_style ) {
 			wp_register_style( 'course-sensei-learning-mode', get_stylesheet_directory_uri() . '/learning-mode.css', array(), wp_get_theme()->get( 'Version' ) );
 			wp_enqueue_style( 'course-sensei-learning-mode' );
 		}
@@ -84,4 +84,26 @@ function course_register_block_patterns_category() {
 }
 
 add_action( 'init', 'course_register_block_patterns_category' );
+
+add_filter(
+	'theme_lesson_templates',
+	function( $page_templates, $theme, $post ) {
+
+		// In case some other plugin has a post type called lesson.
+		if ( ! $post || ! class_exists( 'Sensei_Main' ) ) {
+			return $page_templates;
+		}
+
+		$course_id                = Sensei()->lesson->get_course_id( $post->ID );
+		$is_learning_mode_enabled = Sensei_Course_Theme_Option::has_learning_mode_enabled( $course_id );
+
+		if ( $is_learning_mode_enabled ) {
+			unset( $page_templates['single-lesson'] );
+		}
+
+		return $page_templates;
+	},
+	11,
+	3
+);
 
