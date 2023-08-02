@@ -13,7 +13,7 @@
 <h3 class="wp-block-heading has-primary-color has-text-color has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:1px;text-transform:uppercase"><?php echo  esc_html__( '— Navigation', 'strand' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:navigation {"ref":2128,"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0"},"typography":{"fontSize":"1rem","lineHeight":1.6}}} /--></div>
+<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"0"},"typography":{"fontSize":"1rem","lineHeight":1.6}}} /--></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
