@@ -87,23 +87,24 @@ add_action( 'init', 'course_register_block_patterns_category' );
 
 add_filter(
 	'theme_lesson_templates',
-	function( $page_templates, $theme, $post ) {
-
-		// In case some other plugin has a post type called lesson.
-		if ( ! $post || ! class_exists( 'Sensei_Main' ) ) {
-			return $page_templates;
-		}
-
-		$course_id                = Sensei()->lesson->get_course_id( $post->ID );
-		$is_learning_mode_enabled = Sensei_Course_Theme_Option::has_learning_mode_enabled( $course_id );
-
-		if ( $is_learning_mode_enabled ) {
-			unset( $page_templates['single-lesson'] );
-		}
-
-		return $page_templates;
-	},
+	'course_theme_filter_single_lesson_template_for_sensei_learning_mode',
 	11,
 	3
 );
+
+function course_theme_filter_single_lesson_template_for_sensei_learning_mode( $page_templates, $theme, $post ) {
+	// In case some other plugin has a post type called lesson.
+	if ( ! $post || ! class_exists( 'Sensei_Main' ) ) {
+		return $page_templates;
+	}
+
+	$course_id                = Sensei()->lesson->get_course_id( $post->ID );
+	$is_learning_mode_enabled = Sensei_Course_Theme_Option::has_learning_mode_enabled( $course_id );
+
+	if ( $is_learning_mode_enabled ) {
+		unset( $page_templates['single-lesson'] );
+	}
+
+	return $page_templates;
+}
 
