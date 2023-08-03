@@ -35,7 +35,7 @@
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/blink-menu_default.gif" alt="" class="wp-image-254" width="19" height="25"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:navigation {"ref":13,"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"vertical"},"style":{"typography":{"fontSize":"1.2rem","textTransform":"uppercase"},"spacing":{"blockGap":"0px"}}} /--></div>
+<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"vertical"},"style":{"typography":{"fontSize":"1.2rem","textTransform":"uppercase"},"spacing":{"blockGap":"0px"}}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
