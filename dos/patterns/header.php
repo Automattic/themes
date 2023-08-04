@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"4rem","left":"4rem"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-background-background-color has-background" style="padding-right:4rem;padding-left:4rem"><!-- wp:group {"align":"full","style":{"border":{"color":null,"style":null,"width":null,"top":[],"right":[],"bottom":{"color":"var:preset|color|primary","style":"dashed","width":"1px"},"left":[]},"spacing":{"padding":{"bottom":"1.4rem","top":"1.4rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--primary);border-bottom-style:dashed;border-bottom-width:1px;padding-top:1.4rem;padding-bottom:1.4rem"><!-- wp:group {"style":{"spacing":{"blockGap":"2rem","margin":{"top":"0px","bottom":"0px"}},"layout":{"selfStretch":"fixed","flexSize":"75%"}},"layout":{"type":"flex","orientation":"vertical"}} -->
@@ -18,17 +19,7 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.2rem"}}} /-->
-
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:site-title {"style":{"typography":{"fontSize":"1.2rem","fontStyle":"normal","fontWeight":"400"}}} /-->
-
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.2rem"}}} -->
-<p style="font-size:1.2rem">is a theme designed by Automattic.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<div class="wp-block-group"><!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.2rem"}}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 

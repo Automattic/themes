@@ -6,6 +6,7 @@
  * Inserter: no
  */
 ?>
+
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","right":"4rem","left":"4rem","bottom":"1.4rem"},"blockGap":"2rem","margin":{"top":"0px","bottom":"0px"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-background-background-color has-background" style="margin-top:0px;margin-bottom:0px;padding-top:2rem;padding-right:4rem;padding-bottom:1.4rem;padding-left:4rem"><!-- wp:group {"align":"full","layout":{"type":"constrained","justifyContent":"center"}} -->
 <div class="wp-block-group alignfull"><!-- wp:columns {"isStackedOnMobile":false,"align":"full","style":{"spacing":{"padding":{"top":"0px","right":"0rem","bottom":"0px","left":"0rem"},"margin":{"top":"0px","bottom":"0px"},"blockGap":{"top":"0px","left":"0px"}}}} -->
@@ -29,21 +30,11 @@
 
 <!-- wp:group {"align":"full","layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group alignfull"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group"><!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.2rem"}}} /-->
-
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:site-title {"style":{"typography":{"fontSize":"1.2rem","fontStyle":"normal","fontWeight":"400"}}} /-->
-
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"1.2rem"}}} -->
-<p style="font-size:1.2rem">is a theme designed by Automattic.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<div class="wp-block-group"><!-- wp:site-tagline {"style":{"typography":{"fontSize":"1.2rem"}}} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:image {"id":252,"width":12,"height":25,"sizeSlug":"full","linkDestination":"custom"} -->
-<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/blink-block_default.gif" alt="" class="wp-image-252" width="12" height="25"/></figure>
+<figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/blink-block_default.gif" alt="" class="wp-image-252" style="width:12px;height:25px" width="12" height="25"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
