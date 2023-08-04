@@ -1,52 +1,12 @@
 <?php
 /**
- * Title: Comments
- * slug: organizer/comments
+ * Title: About
+ * slug: organizer/about
  * inserter: no
  */
 
 ?>
 
-<!-- wp:comments {"className":"wp-block-comments-query-loop"} -->
-<div class="wp-block-comments wp-block-comments-query-loop">
-	<!-- wp:comments-title {"level":3} /-->
-
-	<!-- wp:comment-template -->
-		<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|50"}}}} -->
-		<div class="wp-block-group" style="margin-top:0;margin-bottom:var(--wp--preset--spacing--50)">
-			<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"0.5em"}}} -->
-			<div class="wp-block-group">
-				<!-- wp:avatar {"size":40,"style":{"spacing":{"margin":{"top":"0.5em"}}}} /-->
-
-				<!-- wp:group -->
-				<div class="wp-block-group">
-					<!-- wp:comment-author-name /-->
-
-					<!-- wp:group {"layout":{"type":"flex"},"style":{"spacing":{"margin":{"top":"0px","bottom":"0px"},"blockGap":"0.5em"}}} -->
-					<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px">
-						<!-- wp:comment-date {"format":"F j, Y \\a\\t g:i a"} /-->
-
-						<!-- wp:comment-edit-link /-->
-					</div>
-					<!-- /wp:group -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:comment-content /-->
-
-			<!-- wp:comment-reply-link /-->
-		</div>
-		<!-- /wp:group -->
-	<!-- /wp:comment-template -->
-
-	<!-- wp:comments-pagination -->
-		<!-- wp:comments-pagination-previous /-->
-		<!-- wp:comments-pagination-numbers /-->
-		<!-- wp:comments-pagination-next /-->
-	<!-- /wp:comments-pagination -->
-
-	<!-- wp:post-comments-form /-->
-</div>
-<!-- /wp:comments -->
+<!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"1.8rem","letterSpacing":"-0.02rem","textTransform":"none","lineHeight":"1.4"}},"fontFamily":"libre-baskerville"} -->
+<h1 class="wp-block-heading has-libre-baskerville-font-family" style="font-size:1.8rem;letter-spacing:-0.02rem;line-height:1.4;text-transform:none">Stella Sánchez is an illustrator and graphic designer based in Portugal. With over a decade of experience, she aims to blend creativity and strategic thinking in every project, with attention to detail to create visually captivating works.</h1>
+<!-- /wp:heading -->
