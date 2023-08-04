@@ -9,7 +9,7 @@
 <div class="wp-block-cover has-parallax has-background-color has-text-color" style="margin-top:0rem;margin-bottom:0rem;min-height:100%"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><div role="img" class="wp-block-cover__image-background has-parallax" style="background-position:50% 50%;background-image:url(<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/overlayer-bg_musk.webp)"></div><div class="wp-block-cover__inner-container"><!-- wp:template-part {"slug":"header","align":"wide"} /-->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="padding-top:4rem;padding-bottom:4rem"><!-- wp:query {"queryId":0,"query":{"perPage":"100","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"post_tag":[],"category":[19]},"parents":[]},"tagName":"main","displayLayout":{"type":"list"},"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide" style="padding-top:4rem;padding-bottom:4rem"><!-- wp:query {"queryId":0,"query":{"perPage":"100","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"post_tag":[],"category":[]},"parents":[]},"tagName":"main","displayLayout":{"type":"list"},"align":"wide","layout":{"type":"constrained"}} -->
 <main class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide"} -->
 <!-- wp:group -->
 <div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained"}} -->
