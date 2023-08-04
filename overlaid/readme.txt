@@ -57,3 +57,13 @@ Michael Sharanda (font) & Cristiano Sobral (main changes).
 License: http://scripts.sil.org/OFL
 Source: https://fontlibrary.org/en/font/russisch-sans
 -- End of Russisch Sans Font credits --
+
+Images included:
+
+"William II, Prince of Orange, and his Bride, Mary Stuart (1641)"
+Source: https://artvee.com/dl/william-ii-prince-of-orange-and-his-bride-mary-stuart/
+License: Public Domain
+
+Navigation icon created by Henrique Iamarino / Automattic
+/assets/logo_overlayed_one.webp
+License: CC0
