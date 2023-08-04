@@ -14,8 +14,9 @@
 <div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"left","level":1,"align":"wide","style":{"typography":{"fontSize":"3rem","letterSpacing":"-0.02rem","lineHeight":"1.2"}},"fontFamily":"libre-baskerville","anchor":"oops-that-page-can-t-be-found"} -->
 <h1 class="wp-block-heading alignwide has-text-align-left has-libre-baskerville-font-family" id="oops-that-page-can-t-be-found" style="font-size:3rem;letter-spacing:-0.02rem;line-height:1.2">Oops!<br>That page can’t be found.</h1>
 <!-- /wp:heading -->
-
-<!-- wp:pattern {"slug":"organizer/hidden-no-results-content"} /-->
+<!-- wp:paragraph -->
+<p>It looks like nothing was found at this location. Maybe try a search?</p>
+<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
