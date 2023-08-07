@@ -6,5 +6,5 @@
  */
 ?>
 <!-- wp:paragraph -->
-<p><?php echo esc_html_x( 'Nothing found.', 'lineup' ); ?></p>
+<p><?php echo esc_html__( 'Nothing found.', 'lineup' ); ?></p>
 <!-- /wp:paragraph -->
