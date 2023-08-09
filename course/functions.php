@@ -92,6 +92,17 @@ add_filter(
 	3
 );
 
+/**
+ * Filter the list of templates for the single lesson page.
+ *
+ * @param array   $page_templates Array of page templates.
+ * @param string  $theme          The current theme.
+ * @param WP_Post $post           The post being edited, provided for context, or null.
+ *
+ * @since Course 1.3.1
+ *
+ * @return array Array of page templates.
+ */
 function course_theme_filter_single_lesson_template_for_sensei_learning_mode( $page_templates, $theme, $post ) {
 	// In case some other plugin has a post type called lesson.
 	if ( ! $post || ! class_exists( 'Sensei_Main' ) ) {
