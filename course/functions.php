@@ -99,7 +99,7 @@ add_filter(
  * @param string  $theme          The current theme.
  * @param WP_Post $post           The post being edited, provided for context, or null.
  *
- * @since Course 1.3.1
+ * @since Course 1.3.2
  *
  * @return array Array of page templates.
  */
