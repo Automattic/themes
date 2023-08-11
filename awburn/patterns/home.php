@@ -9,7 +9,7 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"40px","right":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:0px;padding-left:40px"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png","id":12,"dimRatio":0,"isDark":false,"align":"wide","style":{"spacing":{"padding":{"left":"0px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide is-light" style="padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-12" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-cover alignwide is-light" style="padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-12" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"<?php echo esc_attr__( 'Write title…', 'awburn' ); ?>","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
@@ -18,16 +18,16 @@
 <!-- wp:group {"style":{"spacing":{"blockGap":"4rem","padding":{"top":"80px","bottom":"80px","left":"40px","right":"40px"}}},"layout":{"type":"constrained","wideSize":"1200px"}} -->
 <div class="wp-block-group" style="padding-top:80px;padding-right:40px;padding-bottom:80px;padding-left:40px"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"1.4rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"align":"wide"} -->
-<h2 class="wp-block-heading alignwide">More than your average agency</h2>
+<h2 class="wp-block-heading alignwide"><?php echo esc_html__( 'More than your average agency', 'awburn' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>At Awburn we deliver outstanding results across 3 key business areas: branding, web design, and digital marketing.</p>
+<p><?php echo esc_html__( 'At Awburn we deliver outstanding results across 3 key business areas: branding, web design, and digital marketing.', 'awburn' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">See Our Work</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php echo esc_html__( 'See Our Work', 'awburn' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
@@ -74,11 +74,11 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":1.3,"fontSize":"1.6rem"}}} -->
-<p style="font-size:1.6rem;line-height:1.3">“Awburn took care of our online marketing with some amazing results. We are now the first result in every search engine.”</p>
+<p style="font-size:1.6rem;line-height:1.3"><?php echo esc_html__( '“Awburn took care of our online marketing with some amazing results. We are now the first result in every search engine.”', 'awburn' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
-<p style="font-size:0.8rem">Mike Wallace, Wayne Enterprises</p>
+<p style="font-size:0.8rem"><?php echo esc_html__( 'Mike Wallace, Wayne Enterprises', 'awburn' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

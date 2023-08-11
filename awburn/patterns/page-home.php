@@ -12,7 +12,7 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"40px","right":"40px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:40px;padding-left:40px"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png","id":12,"dimRatio":0,"isDark":false,"align":"wide","style":{"spacing":{"padding":{"left":"0px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide is-light" style="padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-12" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-cover alignwide is-light" style="padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-12" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"<?php echo esc_attr__( 'Write title…', 'awburn' ); ?>","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
@@ -21,11 +21,11 @@
 <!-- wp:group {"style":{"spacing":{"blockGap":"4rem","padding":{"top":"80px","bottom":"80px","left":"40px","right":"40px"}}},"layout":{"type":"constrained","wideSize":"1200px"}} -->
 <div class="wp-block-group" style="padding-top:80px;padding-right:40px;padding-bottom:80px;padding-left:40px"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"1.4rem"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"align":"wide","fontSize":"x-large"} -->
-<h2 class="wp-block-heading alignwide has-x-large-font-size">We deliver outstanding results across branding, web design, and digital marketing.</h2>
+<h2 class="wp-block-heading alignwide has-x-large-font-size"><?php echo esc_html__( 'We deliver outstanding results across branding, web design, and digital marketing.', 'awburn' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"fontSize":"medium"} -->
-<p class="has-link-color has-medium-font-size"><a href="https://awburnblocks.mystagingwebsite.com/work/">See Our Work</a></p>
+<p class="has-link-color has-medium-font-size"><a href="https://awburnblocks.mystagingwebsite.com/work/"><?php echo esc_html__( 'See Our Work', 'awburn' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"40px"} -->
@@ -40,11 +40,11 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
-<h2 class="wp-block-heading has-medium-font-size">Branding</h2>
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Branding', 'awburn' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>We help companies define a clear brand identity that will carry them through their financing rounds.</p>
+<p><?php echo esc_html__( 'We help companies define a clear brand identity that will carry them through their financing rounds.', 'awburn' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -54,11 +54,11 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
-<h2 class="wp-block-heading has-medium-font-size">Web Design</h2>
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Web Design', 'awburn' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>We help companies define a clear brand identity that will carry them through their financing rounds.</p>
+<p><?php echo esc_html__( 'We help companies define a clear brand identity that will carry them through their financing rounds.', 'awburn' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
@@ -68,11 +68,11 @@
 <!-- /wp:image -->
 
 <!-- wp:heading {"fontSize":"medium"} -->
-<h2 class="wp-block-heading has-medium-font-size">Digital Marketing</h2>
+<h2 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Digital Marketing', 'awburn' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>From developing a marketing strategy to managing campaigns, we can handle all your marketing and advertising needs.</p>
+<p><?php echo esc_html__( 'From developing a marketing strategy to managing campaigns, we can handle all your marketing and advertising needs.', 'awburn' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -119,15 +119,13 @@
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":1.3,"fontSize":"1.6rem"}}} -->
-<p style="font-size:1.6rem;line-height:1.3">“We asked Awburn for a full rebranding, including the website of our company. We couldn’t happier and our customers too.”</p>
+<p style="font-size:1.6rem;line-height:1.3"><?php echo esc_html__( '“We asked Awburn for a full rebranding, including the website of our company. We couldn’t happier and our customers too.”', 'awburn' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
-<p style="font-size:0.8rem">Amy Blake, LexCorp</p>
+<p style="font-size:0.8rem"><?php echo esc_html__( 'Amy Blake, LexCorp', 'awburn' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer"} /-->
