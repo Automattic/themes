@@ -1,4 +1,3 @@
-=== Awburn ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -30,3 +29,10 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Inter from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Inter
+
+Literata
+License: SIL Open Font License, 1.1
+Source: https://fonts.google.com/specimen/Literata
