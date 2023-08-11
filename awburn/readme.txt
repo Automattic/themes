@@ -1,4 +1,4 @@
-=== Shawburn23 ===
+=== Awburn ===
 Contributors: Automattic
 Requires at least: 5.8
 Tested up to: 5.9
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Shawburn23 is the ideal choice for creating an online presence for your business. As a block theme, Shawburn23 allows you to choose any of the available blocks to create a wide range of content for your site. It comes with a set of color variations and templates to choose from.
+Awburn is the ideal choice for creating an online presence for your business. As a block theme, Awburn allows you to choose any of the available blocks to create a wide range of content for your site. It comes with a set of color variations and templates to choose from.
 
 == Changelog ==
 
@@ -17,9 +17,9 @@ Shawburn23 is the ideal choice for creating an online presence for your business
 
 == Copyright ==
 
-Shawburn23 WordPress Theme, (C) 2023 Automattic
-Shawburn23 is distributed under the terms of the GNU GPL.
-Shawburn23 is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Awburn WordPress Theme, (C) 2023 Automattic
+Awburn is distributed under the terms of the GNU GPL.
+Awburn is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

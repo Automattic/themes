@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: page-home
- * Slug: shawburn23/page-home
+ * Slug: awburn/page-home
  * Categories: hidden
  * Inserter: no
  */
@@ -11,8 +11,8 @@
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"40px","right":"40px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-right:40px;padding-left:40px"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/shawburn23_cover.png","id":12,"dimRatio":0,"isDark":false,"align":"wide","style":{"spacing":{"padding":{"left":"0px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide is-light" style="padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-12" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/shawburn23_cover.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group" style="padding-right:40px;padding-left:40px"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png","id":12,"dimRatio":0,"isDark":false,"align":"wide","style":{"spacing":{"padding":{"left":"0px"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignwide is-light" style="padding-left:0px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-12" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
@@ -25,7 +25,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"fontSize":"medium"} -->
-<p class="has-link-color has-medium-font-size"><a href="https://shawburn23blocks.mystagingwebsite.com/work/">See Our Work</a></p>
+<p class="has-link-color has-medium-font-size"><a href="https://awburnblocks.mystagingwebsite.com/work/">See Our Work</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"40px"} -->
@@ -113,13 +113,13 @@
 <div class="wp-block-group has-background-color has-secondary-background-color has-text-color has-background has-link-color" style="border-radius:2px;border-top-style:none;border-top-width:0px;border-right-style:none;border-right-width:0px;border-bottom-style:none;border-bottom-width:0px;border-left-style:none;border-left-width:0px;padding-top:40px;padding-right:40px;padding-bottom:40px;padding-left:40px"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"70px","left":"70px"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"20%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:20%"><!-- wp:image {"id":244,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/shawburn23_testimonial.png" alt="" class="wp-image-244"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_testimonial.png" alt="" class="wp-image-244"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"66.66%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":1.3,"fontSize":"1.6rem"}}} -->
-<p style="font-size:1.6rem;line-height:1.3">“We asked Shawburn23 for a full rebranding, including the website of our company. We couldn’t happier and our customers too.”</p>
+<p style="font-size:1.6rem;line-height:1.3">“We asked Awburn for a full rebranding, including the website of our company. We couldn’t happier and our customers too.”</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
