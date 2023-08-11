@@ -6,9 +6,6 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"border":{"top":{"color":"var:preset|color|secondary","style":"solid","width":"10px"},"right":[],"bottom":[],"left":[]},"position":{"type":"sticky","top":"0px"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="border-top-color:var(--wp--preset--color--secondary);border-top-style:solid;border-top-width:10px"><!-- wp:template-part {"slug":"header"} /--></div>
-<!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"40px","right":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:0px;padding-left:40px"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/awburn_cover.png","id":12,"dimRatio":0,"isDark":false,"align":"wide","style":{"spacing":{"padding":{"left":"0px"}}},"layout":{"type":"constrained"}} -->
@@ -87,5 +84,3 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer"} /-->
