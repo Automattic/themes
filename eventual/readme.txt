@@ -1,7 +1,7 @@
 === Eventual ===
-Contributors: the WordPress team
-Requires at least: 6.0
-Tested up to: 6.2.2
+Contributors: Automattic
+Requires at least: 6.1
+Tested up to: 6.3
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,14 +12,13 @@ As its name states Eventual is a theme designed for events and ceremonies. It is
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
 
 Eventual WordPress Theme, (C) 2023 the WordPress team
 Eventual is distributed under the terms of the GNU GPL.
-Eventual is based on EV03 (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
