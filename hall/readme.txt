@@ -12,7 +12,7 @@ Hall is a blog theme that presents posts in different Query Loops through the us
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
