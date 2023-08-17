@@ -29,3 +29,17 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Barlow Condensed Font
+Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
+License URL: http://scripts.sil.org/OFL 
+Source: https://tribby.com/
+-- End of Barlow Condensed Font credits --
+
+Figtree Font
+Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree) 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL 
+License URL: https://scripts.sil.org/OFL 
+Source: https://erikdkennedy.com/
+-- End of Figtree Font credits --
