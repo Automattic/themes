@@ -12,6 +12,11 @@ StartFit is a business theme perfect for a personal fitness training service.
 
 == Changelog ==
 
+= 1.0.2 =
+* StartFit: Remove css font size from Latest Posts block (#7315)
+* StartFit: Remove css font sizes from Latest Comments block (#7314)
+* Startfit: Remove CSS solution that is no longer necessary for the avatar block (#7316)
+
 = 1.0.1 =
 * StartFit: Edit the URLs in the social links in the footer (#7285)
 

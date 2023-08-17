@@ -12,6 +12,9 @@ BSoJ (Blue Screen of Joy) is a blog theme inspired by the infamous Blue Screen o
 
 == Changelog ==
 
+= 1.0.2 =
+* BSoJ: Prepare for dotorg submission (#7321)
+
 = 1.0.1 =
 * BSoJ: Fix text domain in the footer
 
