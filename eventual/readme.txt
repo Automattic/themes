@@ -43,3 +43,11 @@ This Font Software is licensed under the SIL Open Font License, Version 1.1. Thi
 License URL: https://scripts.sil.org/OFL 
 Source: https://erikdkennedy.com/
 -- End of Figtree Font credits --
+
+"A man walks early morning in Davidson River Campground, Pisgah National Forest, NC"
+Source: https://www.rawpixel.com/image/3306149/free-photo-image-forest-sport-working-outdoors-exercise
+License: Public Domain CC0
+
+"Free woman running on road image"
+Source: https://www.rawpixel.com/image/5922463/photo-image-public-domain-black-person
+License: Public Domain CC0
