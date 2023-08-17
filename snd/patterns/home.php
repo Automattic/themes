@@ -10,7 +10,7 @@
 
 <!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--80)"><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Join millions of readers and subscribe to the Modern Wisdom. Enter your email below to receive new ideas that could change your life.', 'snd' ); ?></p>
+<p><?php echo esc_html__( 'Join millions of readers and subscribe to my newsletter. Enter your email below to receive new ideas that could change your life.', 'snd' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:jetpack/subscriptions {"submitButtonText":"SUBSCRIBE","borderRadius":50} /-->

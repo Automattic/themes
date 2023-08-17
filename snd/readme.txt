@@ -12,6 +12,9 @@ A minimal newsletter theme.
 
 == Changelog ==
 
+= 1.0.1 =
+* SND: Minor pre-launch fixes (#7291)
+
 = 1.0.0 =
 * Initial release
 

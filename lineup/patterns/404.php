@@ -5,7 +5,6 @@
  * Inserter: no
  */
 ?>
-
 <!-- wp:heading {"level":1,"anchor":"nothing-found"} -->
-<h1 class="wp-block-heading" id="nothing-found"><?php echo esc_html_x( 'Nothing found. Search?', 'lineup' ); ?></h1>
+<h1 class="wp-block-heading" id="nothing-found"><?php echo esc_html__( 'Nothing found. Search?', 'lineup' ); ?></h1>
 <!-- /wp:heading -->

@@ -14,7 +14,7 @@
 <!-- /wp:separator -->
 
 <!-- wp:heading {"level":3,"fontSize":"medium"} -->
-<h3 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Subscribe to Modern Wisdom', 'montagna' ); ?></h3>
+<h3 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Subscribe to my newsletter', 'snd' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:jetpack/subscriptions {"submitButtonText":"SUBSCRIBE","borderRadius":50} /--></div>

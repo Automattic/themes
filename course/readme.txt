@@ -1,16 +1,20 @@
 === Course ===
 Contributors: Automattic
 Requires at least: 6.2
-Tested up to: 6.2
-Requires PHP: 7.2
+Tested up to: 6.3
+Requires PHP: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Course is a flexible and modern theme for anyone wanting to share their knowledge. The theme is built with integration with Sensei LMS and is ideal for Sensei users that are creating or selling courses. Style variations with multiple font and color combinations help you craft the perfect look and feel to show off courses and content. The theme can be used without Sensei too.
+Course is a flexible and modern education theme for anyone wanting to share their knowledge. The theme is built with integration with Sensei LMS and is ideal for Sensei users that are creating or selling courses. Style variations with multiple font and color combinations help you craft the perfect look and feel to show off courses and content. The theme can be used without Sensei too.
 
 == Changelog ==
+
+= 1.3.2 =
+* Update comment styles (#7252)
+* Add single lesson template for improved Sensei support (#7265)
 
 = 1.3.1 =
 * Add the style-variations tag to themes with style variations (#7199)
@@ -30,7 +34,7 @@ Course is a flexible and modern theme for anyone wanting to share their knowledg
 = 1.2.4 =
 * Tweak some block styles (#7033)
 * Add body class for the theme variation (#7034)
-* Course: Skip the learning mode style when sensei is not available (#7031)
+* Skip the learning mode style when sensei is not available (#7031)
 
 = 1.2.3 =
 * Update colors and typography of default Learning Mode template (#7008)

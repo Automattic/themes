@@ -12,6 +12,9 @@ Lineup is a '90s D.I.Y. fanzine inspired theme lists entries with a bold typogra
 
 == Changelog ==
 
+= 1.0.2 =
+* Lineup: Fix header alignment and translate functions (#7292)
+
 = 1.0.1 =
 * Lineup: Make sure gap between posts are 0 (#7181)
 
