@@ -1,7 +1,7 @@
 === Texty ===
-Contributors: the WordPress team
-Requires at least: 6.0
-Tested up to: 6.2.2
+Contributors: Automattic
+Requires at least: 6.1
+Tested up to: 6.3
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Texty is a text-only blog theme that trusts Post excerpts rather than Post title
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
@@ -31,3 +31,16 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
+Font: Figtree
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Figtree
+
+Font: Plus Jakarta Sans
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Plus+Jakarta+Sans
+
+Image: Original from The National Gallery of Art (image-from-rawpixel-id-3049828)
+License: CC0 (https://creativecommons.org/share-your-work/public-domain/cc0/)
+Source: https://www.rawpixel.com/search/3049828?page=1&sort=curated&topic_group=_topics
