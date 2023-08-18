@@ -1,0 +1,58 @@
+/*
+Theme Name: Texty
+Theme URI: https://github.com/wordpress/texty/
+Author: the WordPress team
+Author URI: https://wordpress.org/themes/
+Description: Texty is a text-only blog theme that trusts Post excerpts rather than Post titles and Post Feature Images. It is a remix of another theme called 'Issue' and has got a lot of variations.
+Requires at least: 6.0
+Tested up to: 6.2.2
+Requires PHP: 5.7
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: texty
+Tags: blog, news, one-column, two-columns, right-sidebar, wide-blocks, block-patterns, block-styles, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, flexible-header, front-page-post-form, full-site-editing, post-formats, style-variations, template-editing, theme-options, text-only, no-images, no-titles, post-excerpts, blogs-posts, big-type, bold-typography, blogging
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
