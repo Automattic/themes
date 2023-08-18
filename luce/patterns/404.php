@@ -19,6 +19,6 @@
 <p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'luce' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search"} /--></div>
+<!-- wp:search {"label":"<?php echo esc_html__( 'Search', 'luce' ); ?>","showLabel":false,"buttonText":"<?php echo esc_html__( 'Search', 'luce' ); ?>"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
