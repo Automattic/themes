@@ -28,6 +28,7 @@ declare -a THEMES_TO_DEPLOY=(
 	"george-lois"
 	"hey"
 	"lettre"
+	"lineup"
 	"livro"
 	"mayland-blocks"
 	"paimio"
