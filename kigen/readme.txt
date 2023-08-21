@@ -1,14 +1,14 @@
 === Kigen ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.3
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Kigen is a simple portfolio theme
+Kigen is a simple one page portfolio theme.
 
 == Changelog ==
 
@@ -44,28 +44,35 @@ Included in theme screenshot:
 
 Queen City Ink, Ad. 23 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-23/
+License: Public domain
 
 Queen City Ink, Ad. 24 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-24/
+License: Public domain
 
 Queen City Ink, Ad. 25 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-25/
+License: Public domain
 
 Queen City Ink, Ad. 26 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-26/
+License: Public domain
 
 Queen City Ink, Ad. 27 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-27/
+License: Public domain
 
 Queen City Ink, Ad. 30 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-30/
+License: Public domain
 
 Queen City Ink, Ad. 32 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-32/
+License: Public domain
 
 Queen City Ink, Ad. 36 (1890-1913) by Augustus Jansson (Swedish, 1863 - 1931)
 https://artvee.com/dl/queen-city-ink-ad-36/
-
+License: Public domain
 
 
 
