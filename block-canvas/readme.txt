@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.29 =
+* Remove auto-loading-homepage tag. (#7300)
+
 = 0.0.28 =
 * Remove Rubik font from heading definition (#7267)
 

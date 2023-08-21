@@ -1,7 +1,7 @@
 === Lineup ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 6.1.1
+Tested up to: 6.3
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Lineup is a '90s D.I.Y. fanzine inspired theme lists entries with a bold typography and colour that are highly opinionated.
 
 == Changelog ==
+
+= 1.0.3 =
+* Lineup: Removed WP.com specific function.
 
 = 1.0.2 =
 * Lineup: Fix header alignment and translate functions (#7292)
