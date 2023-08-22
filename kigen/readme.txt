@@ -12,6 +12,9 @@ Kigen is a simple one page portfolio theme.
 
 == Changelog ==
 
+= 1.0.2 =
+* Kigen: Make it ready for submitting (#7329)
+
 = 1.0.1 =
 * Kigen: Fix text domain in the footers
 
