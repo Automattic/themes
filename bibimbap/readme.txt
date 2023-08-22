@@ -12,6 +12,9 @@ A simple and fun restaurant theme.
 
 == Changelog ==
 
+= 1.0.5 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.4 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 
