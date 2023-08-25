@@ -12,6 +12,9 @@ Texty is a text-only blog theme that trusts Post excerpts rather than Post title
 
 == Changelog ==
 
+= 1.0.1 =
+* remove rubik font for headings (#7332)
+
 = 1.0.0 =
 * Initial release
 
