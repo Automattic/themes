@@ -17,6 +17,9 @@ This theme was developed using the Gutenberg plugin v13.6.0. Some elements may n
 
 == Changelog ==
 
+= 1.0.7 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.6 =
 * Make theme available for translation as much as possible (#6484)
 

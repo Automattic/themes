@@ -13,6 +13,9 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.8 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.7 =
 * Rainfall & Adventurer: Update sidebar tag to `aside` (#7284)
 

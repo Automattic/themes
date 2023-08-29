@@ -9,6 +9,9 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 1.0.27 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.26 =
 * Small tweaks to force update following `style-variations` tag fix (#7209)
 
