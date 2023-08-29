@@ -12,6 +12,9 @@ Common\'s style is anything but ordinary and it speaks for itself. The unique co
 
 == Changelog ==
 
+= 1.0.2 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.1 =
 * Common: removing unused pattern
 * Common: removing theme key from template part links on templates

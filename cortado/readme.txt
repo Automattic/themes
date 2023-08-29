@@ -12,6 +12,9 @@ Cortado is a simple and elegant theme. Its colors and typography work together p
 
 == Changelog ==
 
+= 1.0.1 =
+* Cortado: update theme templates (#7269)
+
 = 1.0.0 =
 * Initial release
 

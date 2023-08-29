@@ -21,7 +21,7 @@
 				/* Translators: WordPress link. */
 				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'cortado' ) ) . '" rel="nofollow">WordPress</a>';
 				echo sprintf(
-					// Translators: WordPress link.
+					/* Translators: Designed with WordPress text. */
 					esc_html__( 'Designed with %1$s', 'cortado' ),
 					$wordpress_link
 				);

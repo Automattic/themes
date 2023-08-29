@@ -57,7 +57,38 @@
 				"steps": 7,
 				"unit": "rem"
 			},
-			"spacingSizes": [],
+			"spacingSizes": [
+				{
+					"name": "1",
+					"size": "0.5rem",
+					"slug": "30"
+				},
+				{
+					"name": "2",
+					"size": "1rem",
+					"slug": "40"
+				},
+				{
+					"name": "3",
+					"size": "clamp(1.5rem, 2.4096386vw, 2.0rem)",
+					"slug": "50"
+				},
+				{
+					"name": "4",
+					"size": "clamp(1.5rem, 3.6144578vw, 3.0rem)",
+					"slug": "60"
+				},
+				{
+					"name": "5",
+					"size": "clamp(2.0rem, 4.8192771vw, 4.0rem)",
+					"slug": "70"
+				},
+				{
+					"name": "6",
+					"size": "clamp(3.0rem, 7.2289157vw, 6.0rem)",
+					"slug": "80"
+				}
+			],
 			"units": [
 				"%",
 				"px",
@@ -216,6 +247,7 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"css": "\/* Remove block gap between first-level blocks *\/ :where(.wp-site-blocks) > * { margin-block-start: 0; margin-block-end: 0; }",
 		"blocks": {
 			"core/button": {
 				"border": {

@@ -5,12 +5,12 @@
  * Categories: featured, columns
  */
 ?>
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
+<!-- wp:group {"tagName":"aside","layout":{"type":"constrained"}} -->
+<aside class="wp-block-group">
 	<!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--70)">
 		<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"500","textTransform":"uppercase","letterSpacing":"0.2em"}},"fontSize":"small"} -->
-<h3 class="wp-block-heading has-small-font-size" style="font-style:normal;font-weight:500;letter-spacing:0.2em;text-transform:uppercase"><?php _e( 'About Me', 'bitacora' ); ?></h3>
+		<h3 class="wp-block-heading has-small-font-size" style="font-style:normal;font-weight:500;letter-spacing:0.2em;text-transform:uppercase"><?php _e( 'About Me', 'bitacora' ); ?></h3>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"fontSize":"small"} -->
@@ -48,5 +48,5 @@
 		<!-- /wp:jetpack/subscriptions -->
 	</div>
 	<!-- /wp:group -->
-</div>
+</aside>
 <!-- /wp:group -->

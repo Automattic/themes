@@ -20,6 +20,12 @@ Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and
 
 == Changelog ==
 
+= 1.3.13 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
+= 1.3.12 =
+* Bump tough-cookie and node-sass (#7293)
+
 = 1.3.11 =
 * Update Node version in .nvmrc & update deps (#7059)
 

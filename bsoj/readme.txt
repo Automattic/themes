@@ -1,7 +1,7 @@
 === BSoJ ===
 Contributors: Automattic
 Requires at least: 6.1
-Tested up to: 6.1
+Tested up to: 6.3
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 BSoJ (Blue Screen of Joy) is a blog theme inspired by the infamous Blue Screen of Death.
 
 == Changelog ==
+
+= 1.0.2 =
+* BSoJ: Prepare for dotorg submission (#7321)
 
 = 1.0.1 =
 * BSoJ: Fix text domain in the footer

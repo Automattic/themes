@@ -13,6 +13,12 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.8 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
+= 1.0.7 =
+* Rainfall & Adventurer: Update sidebar tag to `aside` (#7284)
+
 = 1.0.6 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 

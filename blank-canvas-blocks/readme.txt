@@ -12,6 +12,9 @@ Blank Canvas is a minimalist theme, designed for single-page websites. Its singl
 
 == Changelog ==
 
+= 0.0.8 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 0.0.7 =
 * lock post-content block by default (#6314)
 

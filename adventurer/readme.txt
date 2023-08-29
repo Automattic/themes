@@ -12,6 +12,9 @@ A theme for travelers, writers and photographers.
 
 == Changelog ==
 
+= 1.0.3 =
+* Rainfall & Adventurer: Update sidebar tag to `aside` (#7284)
+
 = 1.0.2 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 
