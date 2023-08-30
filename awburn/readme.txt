@@ -36,3 +36,27 @@ https://fonts.google.com/specimen/Inter
 Literata
 License: SIL Open Font License, 1.1
 Source: https://fonts.google.com/specimen/Literata
+
+awburn_image_2.webp
+https://stocksnap.io/photo/google-analytics-89AZTB8E5H
+CC0 Public Domain
+-
+webdesign-1024x683.webp
+https://stocksnap.io/photo/mobile-wireframe-QYCEJ7W1PG
+CC0 Public Domain
+-
+marketing-1024x683.webp
+https://pxhere.com/pt/photo/706575
+CC0 Public Domain
+-
+branding-1024x683.webp
+https://www.rawpixel.com/image/3337336/free-photo-image-wooden-desk-table
+CC0 Public Domain
+-
+awburn_cover.webp
+https://pxhere.com/pt/photo/1590
+CC0 Public Domain
+-
+awburn_testimonial.webp
+https://stocksnap.io/photo/woman-business-8AF1UG3C6N
+CC0 Public Domain
