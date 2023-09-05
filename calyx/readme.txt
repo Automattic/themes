@@ -12,6 +12,9 @@ Calyx is a simple single-page theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.13 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 0.0.12 =
 * Update/calyx pattern fixes (#6749)
 

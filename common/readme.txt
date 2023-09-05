@@ -12,6 +12,9 @@ Common\'s style is anything but ordinary and it speaks for itself. The unique co
 
 == Changelog ==
 
+= 1.0.3 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 1.0.2 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

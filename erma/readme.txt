@@ -12,6 +12,9 @@ Erma is a WordPress portfolio block theme that features gorgeous imagery and mod
 
 == Changelog ==
 
+= 1.0.6 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 1.0.5 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 
