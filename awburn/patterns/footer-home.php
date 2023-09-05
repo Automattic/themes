@@ -56,7 +56,7 @@
 
 <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex"}} -->
-<div class="wp-block-group"><!-- wp:navigation {"ref":6,"overlayMenu":"never"} /--></div>
+<div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"never"} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
