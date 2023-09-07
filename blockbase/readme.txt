@@ -19,6 +19,10 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.15 =
+* Fix error: Template part has been deleted or is unavailable in Erma, Poesis, and Meraki   (#7348)
+* Add tag name main in query in search template (#7350)
+
 = 3.1.14 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 
