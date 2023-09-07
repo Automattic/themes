@@ -11,6 +11,9 @@ Awburn is the ideal choice for creating an online presence for your business. As
 
 == Changelog ==
 
+= 1.0.2 =
+* Swap home page content. (#7352)
+
 = 1.0.1 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 
