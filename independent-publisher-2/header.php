@@ -30,7 +30,15 @@
 
 					<?php if ( '' !== get_theme_mod( 'independent_publisher_2_gravatar_email', get_option( 'admin_email' ) ) && validate_gravatar( get_theme_mod( 'independent_publisher_2_gravatar_email', get_option( 'admin_email' ) ) ) ) : ?>
 						<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img alt="" class="site-logo-image no-grav" width="80" height="80" src="<?php echo esc_url( get_avatar_url( get_theme_mod( 'independent_publisher_2_gravatar_email', get_option( 'admin_email' ) ), array( 'size' => 160 ) ) ); ?>" />
+							<?php
+								echo get_avatar(
+									get_theme_mod( 'independent_publisher_2_gravatar_email', get_option( 'admin_email' ) ),
+									80,
+									'',
+									'',
+									array( 'class' => array( 'site-logo-image' ), 'loading' => 'eager' )
+								);
+							?>
 						</a><!-- .site-logo-link -->
 						<?php endif;
 

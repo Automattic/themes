@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.14 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 3.1.13 =
 * Replace experimental-link-color with link-color (#7221)
 

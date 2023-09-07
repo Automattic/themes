@@ -12,6 +12,9 @@ Hey is a simple personal blog theme.
 
 == Changelog ==
 
+= 1.0.6 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.5 =
 * Small tweaks to force update following `style-variations` tag fix (#7209)
 

@@ -12,6 +12,9 @@ Didone is a simple theme that supports full-site editing. It comes with a set of
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.0 =
 Release
 
