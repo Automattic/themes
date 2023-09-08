@@ -32,7 +32,7 @@
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Experience', 'curriculum' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[3]}},"displayLayout":{"type":"list"}} -->
+<!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null},"displayLayout":{"type":"list"}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"1rem"},"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:1rem"><!-- wp:post-title {"level":1,"isLink":true,"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} /-->
@@ -56,7 +56,7 @@
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Education', 'curriculum' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[4]}},"displayLayout":{"type":"list"}} -->
+<!-- wp:query {"queryId":12,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null},"displayLayout":{"type":"list"}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"1rem"},"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:1rem"><!-- wp:post-title {"level":1,"isLink":true,"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} /-->
@@ -80,7 +80,7 @@
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Skills', 'curriculum' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":12,"query":{"perPage":"4","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[5]}},"displayLayout":{"type":"list"}} -->
+<!-- wp:query {"queryId":12,"query":{"perPage":"4","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null},"displayLayout":{"type":"list"}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"1rem"},"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:1rem"><!-- wp:post-title {"level":1,"isLink":true,"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} /-->
@@ -104,7 +104,7 @@
 <h2 class="wp-block-heading"><?php echo esc_html__( 'Interests', 'curriculum' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":12,"query":{"perPage":"4","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[6]}},"displayLayout":{"type":"list"}} -->
+<!-- wp:query {"queryId":12,"query":{"perPage":"4","pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null},"displayLayout":{"type":"list"}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"1rem"},"blockGap":"0.5rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:1rem"><!-- wp:post-title {"level":1,"isLink":true,"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} /-->
