@@ -12,6 +12,9 @@ The recently updated Barnsbury is an earthy, friendly theme made with farming an
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove category from taxQuery to avoid a not found error (#7354)
+
 = 0.0.1 =
 * Initial release
 

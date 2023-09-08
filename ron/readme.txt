@@ -12,6 +12,9 @@ Ron is a minimalist blogging theme designed with a focus on delivering an except
 
 == Changelog ==
 
+= 1.0.2 =
+* Update page.html
+
 = 1.0.1 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 
