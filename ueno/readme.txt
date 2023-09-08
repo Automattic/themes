@@ -12,6 +12,9 @@ Ueno is suitable for any kind of blog or website. It has an opinionated default 
 
 == Changelog ==
 
+= 1.0.4 =
+* Remove Rubik from Ueno and Dawson (#7351)
+
 = 1.0.3 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 
