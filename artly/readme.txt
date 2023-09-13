@@ -12,6 +12,9 @@ Artly is a WordPress theme designed for blogs and magazines. Its modern, offset 
 
 == Changelog ==
 
+= 1.0.3 =
+* Artly: Make sure the elements in the header and the footer don't bump to the screen edges (#7362)
+
 = 1.0.2 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 
