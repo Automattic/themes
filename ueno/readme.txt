@@ -12,6 +12,9 @@ Ueno is suitable for any kind of blog or website. It has an opinionated default 
 
 == Changelog ==
 
+= 1.0.5 =
+* Ueno: Make sure the elements don't bump to the screen edges (#7367)
+
 = 1.0.4 =
 * Remove Rubik from Ueno and Dawson (#7351)
 
