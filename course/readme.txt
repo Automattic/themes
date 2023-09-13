@@ -12,6 +12,9 @@ Course is a flexible and modern education theme for anyone wanting to share thei
 
 == Changelog ==
 
+= 1.3.3 =
+* Course Theme: Frontend improvements feature branch PR (#7324)
+
 = 1.3.2 =
 * Update comment styles (#7252)
 * Add single lesson template for improved Sensei support (#7265)
