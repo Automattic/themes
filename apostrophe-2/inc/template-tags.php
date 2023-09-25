@@ -48,6 +48,7 @@ if ( ! function_exists( 'apostrophe_2_entry_footer' ) ) :
  */
 	function apostrophe_2_entry_footer() {
 
+		$apostrophe_2_tags = null;
 		// Show categories, tags, and author if we're on a post page
 		if ( 'post' === get_post_type() ) {
 			$categories_list = get_the_category_list();
