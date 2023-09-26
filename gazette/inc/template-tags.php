@@ -149,6 +149,7 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
 function the_archive_title( $before = '', $after = '' ) {
+	$title = '';
 	if ( is_category() ) {
 		$title = sprintf( __( 'Category: %s', 'gazette' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
@@ -248,7 +249,7 @@ function gazette_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = is_countable( $all_the_cool_cats ) ? count( $all_the_cool_cats ) : 0;
 
 		set_transient( 'gazette_categories', $all_the_cool_cats );
 	}
