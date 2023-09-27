@@ -30,6 +30,7 @@ add_action( 'wp_footer', 'photos_include_svg_icons', 9999 );
  * @return string SVG markup.
  */
 function photos_get_svg( $args = array() ) {
+	$unique_id = null;
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return __( 'Please define default parameters in the form of an array.', 'photos' );

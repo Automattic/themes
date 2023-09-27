@@ -75,6 +75,7 @@ endif;
  * layout with multiple posts/pages shown gets confusing.
  */
 function pique_edit_link( $id ) {
+	$type = null;
 	if ( is_page() ) :
 		$type = esc_html__( 'Page', 'pique' );
 	elseif ( get_post( $id ) ) :
@@ -110,7 +111,7 @@ function pique_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = is_countable( $all_the_cool_cats ) ? count( $all_the_cool_cats ) : 0;
 
 		set_transient( 'pique_categories', $all_the_cool_cats );
 	}
