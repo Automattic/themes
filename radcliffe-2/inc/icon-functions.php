@@ -32,6 +32,7 @@ add_action( 'wp_footer', 'radcliffe_2_include_svg_icons', 9999 );
  * @return string SVG markup.
  */
 function radcliffe_2_get_svg( $args = array() ) {
+	$unique_id = null;
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return esc_html__( 'Please define default parameters in the form of an array.', 'radcliffe-2' );

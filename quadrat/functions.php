@@ -3,6 +3,7 @@
 
 if ( ! function_exists( 'quadrat_support' ) ) :
 	function quadrat_support() {
+		$quadrat_starter_content = null;
 		// Add support for starter content
 		include get_stylesheet_directory() . '/inc/starter-content.php';
 		add_theme_support(
