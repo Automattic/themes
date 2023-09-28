@@ -53,6 +53,9 @@ Quick Specs (all measurements in pixels)
 
 == Changelog ==
 
+= 2.2.8 =
+* Public Themes J, K, L: PHP Rector fixes (#7388)
+
 = 2.2.7 =
 * Update to libre-2/css/blocks.css (#6279)
 

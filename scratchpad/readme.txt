@@ -28,6 +28,9 @@ Scratchpad includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.11 =
+* Public Themes S1: PHP Rector fixes (#7393)
+
 = 1.0.10 =
 * Fix PHP formatting errors (#6196)
 

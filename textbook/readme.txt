@@ -30,6 +30,9 @@ TextBook includes support for Jetpack's Infinite Scroll and Site Logos, as well 
 
 == Changelog ==
 
+= 1.1.10 =
+* Public Themes T1: PHP Rector fixes (#7396)
+
 = 1.1.9 =
 * #5242: Textbook: Fix Newspack blog blocks on posts (#6381)
 
