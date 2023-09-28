@@ -160,7 +160,7 @@ function scratchpad_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = is_countable( $all_the_cool_cats ) ? count( $all_the_cool_cats ) : 0;
 
 		set_transient( 'scratchpad_categories', $all_the_cool_cats );
 	}

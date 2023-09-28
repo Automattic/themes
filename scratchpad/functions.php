@@ -238,6 +238,7 @@ add_action( 'enqueue_block_editor_assets', 'scratchpad_editor_styles' );
  * Used on image format posts as fallback.
 */
 function scratchpad_get_image( $post_id = null, $thumbnail_size = '' ) {
+	$image = null;
 	if ( ! $post_id ) {
 		$post_id = get_the_ID();
 	}
