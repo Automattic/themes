@@ -205,7 +205,7 @@ add_filter(
 	function( $classes ) {
 		$stickies = get_option( 'sticky_posts' );
 
-		if ( count( $stickies ) && is_home() ) {
+		if ( is_countable( $stickies ) && count( $stickies ) && is_home() ) {
 			return array_merge( $classes, array( 'has-sticky-post' ) );
 		}
 
