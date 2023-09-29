@@ -1099,7 +1099,17 @@ export async function executeCommand(command, logResponse) {
 				detached: true,
 			})
 		} else {
-			child = spawn(process.env.SHELL, ['-c', command], {
+			/*
+			* Determines the shell to execute the command.
+			* - Prioritizes using the user's default shell unless it's fish, a known problematic shell.
+			* - In this case, falls back to `/bin/bash` for better syntax compatibility.
+			*/
+			let shellPath = process.env.SHELL || '/bin/bash';
+			if (shellPath.includes('fish') && fs.existsSync('/bin/bash')) {
+				shellPath = '/bin/bash';
+			}
+
+			child = spawn(shellPath, ['-c', command], {
 				stdio: [process.stdin, 'pipe', 'pipe'],
 				detached: true,
 			});
