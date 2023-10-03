@@ -11,6 +11,9 @@ Tenaz is a classic "magazine" theme with a rich, dense homepage perfect for pro-
 
 == Changelog ==
 
+= 1.0.4 =
+* Tenaz: set as inactive (#7406)
+
 = 1.0.3 =
 * Tenaz: Fix header top to add side paddings (#7323)
 
