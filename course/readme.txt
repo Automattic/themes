@@ -12,6 +12,9 @@ Course is a flexible and modern education theme for anyone wanting to share thei
 
 == Changelog ==
 
+= 1.3.4 =
+* Update styles of question feedback (#7373) 
+
 = 1.3.3 =
 * Course Theme: Frontend improvements feature branch PR (#7324)
 
