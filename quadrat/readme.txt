@@ -12,6 +12,9 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.55 =
+* Bump postcss from 8.4.25 to 8.4.31 (#7407)
+
 = 1.1.54 =
 * Aligned the package files version of Spearhead and Quadrat to the correct versions (#7397)
 
