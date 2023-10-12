@@ -230,7 +230,7 @@ function penscratch_2_scripts() {
 
 	wp_enqueue_script( 'penscratch-2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'penscratch-2-scripts', get_template_directory_uri() . '/js/penscratch-2.js', array( 'jquery' ), '20170608', true );
+	wp_enqueue_script( 'penscratch-2-scripts', get_template_directory_uri() . '/js/penscratch-2.js', array(), '20230518', true );
 
 	wp_enqueue_script( 'penscratch-2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
