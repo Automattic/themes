@@ -27,6 +27,9 @@ Radcliffe 2 includes support for Jetpack's Infinite Scroll as well as other feat
 
 == Changelog ==
 
+= 2.0.13 =
+* Public Themes Q, R: PHP Rector fixes (#7392)
+
 = 2.0.12 =
 * #4567: Radcliffe 2: Fix editor post title alignment (#6203)
 

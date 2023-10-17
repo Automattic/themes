@@ -13,6 +13,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 
 == Changelog ==
 
+= 1.0.23 =
+* Public Themes J, K, L: PHP Rector fixes (#7388)
+
 = 1.0.22 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

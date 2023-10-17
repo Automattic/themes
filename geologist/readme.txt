@@ -12,6 +12,9 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.43 =
+* Bump postcss from 8.4.25 to 8.4.31 (#7407)
+
 = 1.0.42 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

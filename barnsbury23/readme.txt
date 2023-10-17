@@ -12,6 +12,9 @@ The recently updated Barnsbury is an earthy, friendly theme made with farming an
 
 == Changelog ==
 
+= 1.0.2 =
+* Barnsbury23: Remove all wp-image class names (#7418)
+
 = 1.0.1 =
 * Remove category from taxQuery to avoid a not found error (#7354)
 
