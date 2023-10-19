@@ -12,6 +12,9 @@ A WordPress theme for travel-related websites and blogs, designed to showcase st
 
 == Changelog ==
 
+= 1.0.3 =
+* Retire Montagna (#7438)
+
 = 1.0.2 =
 * Montagna: Make sure the elements don't bump to the screen edges (#7370)
 
