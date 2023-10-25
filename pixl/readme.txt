@@ -12,6 +12,9 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 
 == Changelog ==
 
+= 1.0.6 =
+* Use standard credit line in Pixl footer (#7442)
+
 = 1.0.5 =
 * Small tweaks to force update following `style-variations` tag fix (#7209)
 
