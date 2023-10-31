@@ -148,7 +148,7 @@ function add_body_class_for_variation( $classes ) {
 	 * Action to perform variation specific tasks.
 	 *
 	 * @hook course_theme_variation_loaded Fires after determining which theme variation is loaded.
-	 * @since $$next-version$$
+	 * @since 1.3.5
 	 *
 	 * @param string $variation_name Name of the variation.
 	 */
@@ -162,9 +162,7 @@ function add_body_class_for_variation( $classes ) {
  *
  * @param string $variation_name The current theme variation.
  *
- * @since Course $$next-version$$
- *
- * @return array Array of page templates.
+ * @since Course 1.3.5
  */
 function enqueue_style_for_variation( $variation_name ) {
 	if ( empty( $variation_name ) ) {
