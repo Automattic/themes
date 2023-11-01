@@ -16,7 +16,7 @@
 <div class="wp-block-columns" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:column {"width":"70%"} -->
 <div class="wp-block-column" style="flex-basis:70%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"15%","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:15%;padding-bottom:0px;padding-left:0px"><!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size">MagBlog is a malogzine-style theme design that displays blog posts, reviews, artwork and news.</h2>
+<h2 class="wp-block-heading has-x-large-font-size">MagBlog is a magalogzine-style theme design that displays blog posts, reviews, artwork and news.</h2>
 <!-- /wp:heading -->
 
 <!-- wp:image -->
@@ -57,7 +57,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left">MagBlog is a malogzine theme focused on sizable type and imagery to expand your content. Make it yours ⏬</p>
+<p class="has-text-align-left">MagBlog is a magalogzine theme focused on sizable type and imagery to expand your content. Make it yours ⏬</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

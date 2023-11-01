@@ -1,60 +1,60 @@
 <?php
 /**
- * malog functions and definitions
+ * magalog functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package malog
- * @since malog 1.0
+ * @package magalog
+ * @since magalog 1.0
  */
 
 
-if ( ! function_exists( 'malog_support' ) ) :
+if ( ! function_exists( 'magalog_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since malog 1.0
+	 * @since magalog 1.0
 	 *
 	 * @return void
 	 */
-	function malog_support() {
+	function magalog_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'malog' );
+		load_theme_textdomain( 'magalog' );
 	}
 
 endif;
 
-add_action( 'after_setup_theme', 'malog_support' );
+add_action( 'after_setup_theme', 'magalog_support' );
 
-if ( ! function_exists( 'malog_styles' ) ) :
+if ( ! function_exists( 'magalog_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since malog 1.0
+	 * @since magalog 1.0
 	 *
 	 * @return void
 	 */
-	function malog_styles() {
+	function magalog_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'malog-style',
+			'magalog-style',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'malog-style' );
+		wp_enqueue_style( 'magalog-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'malog_styles' );
+add_action( 'wp_enqueue_scripts', 'magalog_styles' );

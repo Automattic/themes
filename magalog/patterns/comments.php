@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: malog/comments
+ * slug: magalog/comments
  * inserter: no
  */
 
