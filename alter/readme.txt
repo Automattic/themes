@@ -12,7 +12,7 @@ Alter is a lean theme for bloggers that goes directly to the point, showing text
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
