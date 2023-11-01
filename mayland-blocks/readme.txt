@@ -12,6 +12,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 
 == Changelog ==
 
+= 2.1.33 =
+* Bump postcss from 8.4.25 to 8.4.31 (#7407)
+
 = 2.1.32 =
 * Update Node version in .nvmrc & update deps (#7059)
 

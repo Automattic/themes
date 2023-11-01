@@ -8,7 +8,7 @@
 $active_sidebars = libretto_get_active_sidebars();
 
 // No sidebars? No content!
-if ( 0 === count( $active_sidebars )  ) {
+if ( ! is_countable( $active_sidebars ) || 0 === count( $active_sidebars )  ) {
 	return;
 }
 ?>

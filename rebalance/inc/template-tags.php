@@ -189,6 +189,7 @@ if ( ! function_exists('rebalance_the_attached_image')) :
  * @since Twenty Fourteen 1.0
  */
 function rebalance_the_attached_image() {
+	$next_id = null;
 	$post = get_post();
 	/**
 	 * Filter the default Twenty Fourteen attachment size.
@@ -222,7 +223,7 @@ function rebalance_the_attached_image() {
 		));
 
 		// If there is more than 1 attachment in a gallery...
-		if (count($attachment_ids) > 1) {
+		if (is_countable($attachment_ids) && count($attachment_ids) > 1) {
 			foreach ($attachment_ids as $idx => $attachment_id) {
 				if ($attachment_id == $post->ID) {
 					$next_id = $attachment_ids[ ( $idx + 1 ) % count( $attachment_ids ) ];
@@ -266,7 +267,7 @@ function rebalance_categorized_blog() {
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$all_the_cool_cats = is_countable( $all_the_cool_cats ) ? count( $all_the_cool_cats ) : 0;
 
 		set_transient( 'rebalance_categories', $all_the_cool_cats );
 	}

@@ -133,6 +133,7 @@ endif;
  * layout with multiple posts/pages shown gets confusing.
  */
 function lodestar_edit_link( $id ) {
+	$type = null;
 	if ( is_page() ) :
 		$type = esc_html__( 'Page', 'lodestar' );
 	elseif ( get_post( $id ) ) :
@@ -217,7 +218,7 @@ function lodestar_categorized_blog() {
 			'number'     => 2,
 		) );
 		// Count the number of categories that are attached to the posts.
-		$category_count = count( $categories );
+		$category_count = is_countable( $categories ) ? count( $categories ) : 0;
 		set_transient( 'lodestar_categories', $category_count );
 	}
 	return $category_count > 1;

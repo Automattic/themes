@@ -1,6 +1,6 @@
 {
   "name": "blockbase",
-  "version": "3.1.15",
+  "version": "3.1.16",
   "description": "Blank Parent Theme",
   "bugs": {
     "url": "https://github.com/Automattic/themes/issues/new?label=[Theme]%20Blockbase"
@@ -11,7 +11,7 @@
     "@wordpress/browserslist-config": "^5.16.0",
     "autoprefixer": "^10.4.2",
     "chokidar-cli": "^3.0.0",
-    "postcss": "^8.2.12",
+    "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "sass": "^1.62.1"
   },
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "chokidar \"sass/**/*.scss\" -c \"npm run build\" --initial",
     "build": "npm run build:scss",
-    "build:scss": "sass sass/ponyfill.scss assets/ponyfill.css --style=expanded --load-path ../node_modules && postcss assets/ponyfill.css --use autoprefixer --output assets/ponyfill.css --map"
+    "build:scss": "sass sass/ponyfill.scss assets/ponyfill.css --style=expanded --load-path ../node_modules && postcss assets/ponyfill.css --use autoprefixer --output assets/ponyfill.css --no-map"
   },
   "author": "Automattic",
   "license": "GPLv2"

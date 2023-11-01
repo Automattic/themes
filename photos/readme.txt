@@ -39,6 +39,9 @@ Photos is a single-column blogging theme that showcases your photos in a grid fo
 
 == Changelog ==
 
+= 1.0.2 =
+* Public Themes P: PHP Rector fixes (#7391)
+
 = 1.0 - Sep 13 2018 =
 * Initial release
 

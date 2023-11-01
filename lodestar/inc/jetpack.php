@@ -248,6 +248,7 @@ function lodestar_project_terms() {
 
 function lodestar_portfolio_data() {
 
+	$typeid = [];
 	$terms = get_the_terms( get_the_ID(), 'jetpack-portfolio-type' );
 	if ( empty( $terms) ) {
 		return;

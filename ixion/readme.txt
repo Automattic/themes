@@ -152,6 +152,9 @@ Ixion also supports the following features:
 
 == Changelog ==
 
+= 1.1.9 =
+* Public Themes G, H, I: PHP Rector fixes (#7387)
+
 = 1.1.8 =
 * #3957: Ixion: Add padding to group block (#6644)
 
