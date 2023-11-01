@@ -12,7 +12,7 @@
 <div class="wp-block-group" style="margin-top:0rem;margin-bottom:2rem;padding-top:0px;padding-bottom:0px"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"1rem"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide" style="padding-bottom:1rem"><!-- wp:paragraph {"style":{"typography":{"textTransform":"lowercase","fontStyle":"italic","fontWeight":"400"}},"fontFamily":"bodoni-moda"} -->
-<p class="has-bodoni-moda-font-family" style="font-style:italic;font-weight:400;text-transform:lowercase">recent posts</p>
+<p class="has-bodoni-moda-font-family" style="font-style:italic;font-weight:400;text-transform:lowercase"><?php echo esc_html__( 'recent posts', 'alter' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -70,7 +70,7 @@
 
 <!-- wp:group {"style":{"spacing":{"margin":{"top":"4rem"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:4rem"><!-- wp:heading {"textAlign":"left"} -->
-<h2 class="wp-block-heading has-text-align-left"><a href="https://mamablog.mystagingwebsite.com/archive/" data-type="page" data-id="15">View all posts</a></h2>
+<h2 class="wp-block-heading has-text-align-left"><a href="/"><?php echo esc_html__( 'View all posts', 'alter' ); ?></a></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div></div>
