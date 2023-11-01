@@ -70,6 +70,6 @@
 <!-- /wp:group --></main>
 <!-- /wp:query -->
 
-<!-- wp:template-part {"slug":"footer","theme":"ma","tagName":"footer","align":"full"} /--></div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","align":"full"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
