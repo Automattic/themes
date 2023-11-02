@@ -12,7 +12,7 @@ Stage is the perfect theme for our users engaged in artistic activities. Its con
 
 == Changelog ==
 
-= 0.0.1 =
+= 1.0.0 =
 * Initial release
 
 == Copyright ==
