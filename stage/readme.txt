@@ -31,3 +31,15 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
+
+IBM Plex Mono
+Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL)
+Copyright 2017 IBM Corp. All rights reserved.
+Source: https://fonts.google.com/specimen/IBM+Plex+Sans
+
+Inter from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Inter
+
+Libre Franklin font from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Libre+Franklin
