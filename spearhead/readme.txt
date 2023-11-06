@@ -1,4 +1,4 @@
-=== Spearhead ===
+=== Spearhead (Classic) ===
 Contributors: Automattic, Babak Nivi, Cece Yu
 Requires at least: 5.0
 Tested up to: 5.5.1
