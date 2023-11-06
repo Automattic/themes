@@ -12,6 +12,9 @@ Spearhead Blocks is the block based version of the original Spearhead theme.
 
 == Changelog ==
 
+= 1.0.4 =
+* Renamed 'Spearhead' to 'Spearhead (Classic)' and 'Spearhead Blocks' to 'Spearhead' (#7459)
+
 = 0.0.3 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 
