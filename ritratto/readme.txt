@@ -33,10 +33,16 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+This theme bundles the following third-party resources:
 
-Ernst Hemingway
+Urbanist from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Urbanist
+
+Libre Caslon from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Libre+Caslon
+
+Instrument serif from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+https://fonts.google.com/specimen/Instrument+Serif
+
+author_hemingway-788x1024.webp — Ernest Hemingway
 https://it.wikipedia.org/wiki/File:EH2723PMilan1918.jpg
-https://it.wikipedia.org/wiki/File:ErnestHemingway.jpg
-
-Orson Welles
-https://commons.wikimedia.org/wiki/File:Photo_dOrson_Welles.jpg

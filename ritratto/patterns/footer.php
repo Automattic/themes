@@ -29,6 +29,7 @@
             $wordpress_link
         );
     ?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

@@ -49,8 +49,8 @@
 
 <!-- wp:column {"width":"33.3%"} -->
 <div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","right":"0rem","bottom":"0rem","left":"0rem"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:4rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:image {"id":453,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/author_hemingway-788x1024.png" alt=""/></figure>
+<div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:4rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/author_hemingway-788x1024.webp" alt=""/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
