@@ -45,7 +45,16 @@
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"0rem","top":"0.3rem"},"margin":{"top":"0rem","bottom":"0rem"}},"border":{"top":{"width":"0.2rem"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"flex","justifyContent":"left"}} -->
 <div class="wp-block-group alignfull" style="border-top-width:0.2rem;margin-top:0rem;margin-bottom:0rem;padding-top:0.3rem;padding-bottom:0rem"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"3rem","lineHeight":"1","textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"-0.1rem"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<p class="has-text-align-left has-base-color has-text-color has-link-color" style="font-size:3rem;font-style:normal;font-weight:700;letter-spacing:-0.1rem;line-height:1;text-transform:uppercase">Designed with <a rel="nofollow" href="https://wordpress.org">WordPress</a></p>
+<p class="has-text-align-left has-base-color has-text-color has-link-color" style="font-size:3rem;font-style:normal;font-weight:700;letter-spacing:-0.1rem;line-height:1;text-transform:uppercase">
+	<?php
+		/* Translators: WordPress link. */
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'eventual' ) ) . '" rel="nofollow">WordPress</a>';
+		echo sprintf(
+			esc_html__( 'Designed with %1$s', 'eventual' ),
+			$wordpress_link
+		);
+		?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->

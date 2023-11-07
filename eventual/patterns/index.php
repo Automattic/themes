@@ -54,7 +54,16 @@
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"1rem","top":"1rem"},"margin":{"top":"0rem","bottom":"0rem"}},"border":{"top":{"width":"0.3rem"},"bottom":{"width":"0.3rem"}}},"layout":{"type":"flex","justifyContent":"left"}} -->
 <div class="wp-block-group alignfull" style="border-top-width:0.3rem;border-bottom-width:0.3rem;margin-top:0rem;margin-bottom:0rem;padding-top:1rem;padding-bottom:1rem"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"4rem","lineHeight":"1","textTransform":"uppercase","fontStyle":"normal","fontWeight":"600","letterSpacing":"-0.1rem"}}} -->
-<p class="has-text-align-left" style="font-size:4rem;font-style:normal;font-weight:600;letter-spacing:-0.1rem;line-height:1;text-transform:uppercase">Designed with <a rel="nofollow" href="https://wordpress.org">WordPress</a></p>
+<p class="has-text-align-left" style="font-size:4rem;font-style:normal;font-weight:600;letter-spacing:-0.1rem;line-height:1;text-transform:uppercase">
+	<?php
+		/* Translators: WordPress link. */
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'eventual' ) ) . '" rel="nofollow">WordPress</a>';
+		echo sprintf(
+			esc_html__( 'Designed with %1$s', 'eventual' ),
+			$wordpress_link
+		);
+		?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover --></div>
