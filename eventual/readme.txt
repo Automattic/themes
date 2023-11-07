@@ -17,7 +17,7 @@ As its name states Eventual is a theme designed for events and ceremonies. It is
 
 == Copyright ==
 
-Eventual WordPress Theme, (C) 2023 the WordPress team
+Eventual WordPress Theme, (C) 2023 Automattic
 Eventual is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
