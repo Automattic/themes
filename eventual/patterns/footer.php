@@ -7,27 +7,18 @@
  */
 ?>
 
-<!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
-<div style="height:var(--wp--preset--spacing--80)" aria-hidden="true" class="wp-block-spacer"></div>
-<!-- /wp:spacer -->
-
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"var(--wp--preset--spacing--60)","bottom":"var(--wp--preset--spacing--60)"}}}} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center">
-			<?php
-				/* Translators: WordPress link. */
-				$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'eventual' ) ) . '" rel="nofollow">WordPress</a>';
-				echo sprintf(
-					esc_html__( 'Designed with %1$s', 'eventual' ),
-					$wordpress_link
-				);
-				?>
-		</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"2rem","top":"2rem"},"margin":{"top":"0rem","bottom":"0rem"}},"border":{"top":{"width":"0.5rem"},"bottom":{"width":"0.5rem"}}},"layout":{"type":"flex","justifyContent":"right"}} -->
+<div class="wp-block-group alignfull" style="border-top-width:0.5rem;border-bottom-width:0.5rem;margin-top:0rem;margin-bottom:0rem;padding-top:2rem;padding-bottom:2rem"><!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"4rem","lineHeight":"1"}}} -->
+	<p class="has-text-align-right" style="font-size:4rem;line-height:1">
+		<?php
+			/* Translators: WordPress link. */
+			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'eventual' ) ) . '" rel="nofollow">WordPress</a>';
+			echo sprintf(
+				esc_html__( 'Designed with %1$s', 'eventual' ),
+				$wordpress_link
+			);
+			?>
+	</p>
+	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
