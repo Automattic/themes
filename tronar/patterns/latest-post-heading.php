@@ -4,6 +4,8 @@
  * Slug: tronar/latest-post-heading
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0.5rem","margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->

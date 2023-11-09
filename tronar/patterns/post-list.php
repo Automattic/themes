@@ -4,6 +4,8 @@
  * Slug: tronar/post-list
  * Categories: featured, posts
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
