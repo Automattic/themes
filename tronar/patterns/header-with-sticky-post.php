@@ -5,6 +5,8 @@
  * Categories: header
  * Block Types: core/template-part/header
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:query {"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"only","inherit":false}} -->

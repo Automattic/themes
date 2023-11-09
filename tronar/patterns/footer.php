@@ -5,6 +5,8 @@
  * Categories: footer
  * Block Types: core/template-part/footer
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
@@ -20,7 +22,7 @@
 				esc_html__( 'Designed with %1$s', 'tronar' ),
 				$wordpress_link
 			);
-		?>
+			?>
 	</p>
 	<!-- /wp:paragraph -->
 </div>

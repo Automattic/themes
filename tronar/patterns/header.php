@@ -5,6 +5,8 @@
  * Categories: header
  * Block Types: core/template-part/header
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50","top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"border":{"bottom":{"color":"var:preset|color|secondary","width":"1px"}}},"layout":{"type":"default"}} -->
