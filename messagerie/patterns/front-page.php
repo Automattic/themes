@@ -21,7 +21,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.7rem","right":"0.7rem","bottom":"0.7rem","left":"0.7rem"}},"border":{"radius":"10px","width":"1px"}},"borderColor":"tertiary","backgroundColor":"secondary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group alignwide has-border-color has-tertiary-border-color has-secondary-background-color has-background" style="border-width:1px;border-radius:10px;padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem"><!-- wp:paragraph -->
-<p>That's my blog theme. I call it Messagerie.</p>
+<p><?php echo esc_html__( 'That\'s my blog theme. I call it Messagerie.', 'messagerie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -37,7 +37,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.7rem","right":"0.7rem","bottom":"0.7rem","left":"0.7rem"}},"border":{"radius":"10px","width":"1px"}},"borderColor":"tertiary","backgroundColor":"secondary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group alignwide has-border-color has-tertiary-border-color has-secondary-background-color has-background" style="border-width:1px;border-radius:10px;padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem"><!-- wp:paragraph -->
-<p>This is how entries look like when you use it. We don't need the conventional structure of blog posts to share our ideas and that's fine.</p>
+<p><?php echo esc_html__( 'This is how entries look like when you use it. We don\'t need the conventional structure of blog posts to share our ideas and that\'s fine.', 'messagerie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -53,7 +53,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.7rem","right":"0.7rem","bottom":"0.7rem","left":"0.7rem"}},"border":{"radius":"10px","width":"1px"}},"borderColor":"tertiary","backgroundColor":"secondary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group alignwide has-border-color has-tertiary-border-color has-secondary-background-color has-background" style="border-width:1px;border-radius:10px;padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem"><!-- wp:paragraph -->
-<p>But what happens if you need those winning full-packed blog posts? No problem, It's okay to have post titles and avatars back if you need them. You will just need to set your posts under the correct Categories and it's done.</p>
+<p><?php echo esc_html__( 'But what happens if you need those winning full-packed blog posts? No problem, It\'s okay to have post titles and avatars back if you need them. You will just need to set your posts under the correct Categories and it\'s done.', 'messagerie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -71,7 +71,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.7rem","right":"0.7rem","bottom":"0.7rem","left":"0.7rem"}},"border":{"radius":"10px","width":"1px"}},"borderColor":"tertiary","backgroundColor":"secondary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group alignwide has-border-color has-tertiary-border-color has-secondary-background-color has-background" style="border-width:1px;border-radius:10px;padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem"><!-- wp:paragraph -->
-<p>Enough with instructions, right? Delete this Group section and spread your word to the World.</p>
+<p><?php echo esc_html__( 'Enough with instructions, right? Delete this Group section and spread your word to the World.', 'messagerie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

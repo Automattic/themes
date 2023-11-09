@@ -17,7 +17,7 @@
 <div class="wp-block-column is-vertically-aligned-top" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:site-title /-->
 
-<!-- wp:navigation {"ref":6} /--></div>
+<!-- wp:navigation /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -32,7 +32,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.7rem","right":"0.7rem","bottom":"0.7rem","left":"0.7rem"}},"border":{"radius":"10px","width":"1px"}},"borderColor":"tertiary","backgroundColor":"secondary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group alignwide has-border-color has-tertiary-border-color has-secondary-background-color has-background" style="border-width:1px;border-radius:10px;padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem"><!-- wp:paragraph -->
-<p>Howdy, I'm Leo, a polymath driven by curiosity and a fervent desire to unravel the wonders of the world.</p>
+<p><?php echo esc_html__( 'Howdy, I\'m Leo, a polymath driven by curiosity and a fervent desire to unravel the wonders of the world.', 'messagerie' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -50,7 +50,7 @@
 <!-- wp:column {"verticalAlignment":"bottom","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"blockGap":"0px"},"border":{"width":"0px","style":"none"}}} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="border-style:none;border-width:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0.7rem","right":"0.7rem","bottom":"0.7rem","left":"0.7rem"}},"border":{"radius":"10px","width":"1px"}},"borderColor":"tertiary","backgroundColor":"secondary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group alignwide has-border-color has-tertiary-border-color has-secondary-background-color has-background" style="border-width:1px;border-radius:10px;padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem"><!-- wp:paragraph -->
-<p>I'm currently absorbed by an equestrian statue for the Duke of Milan, dissecting human anatomy, architecturally innovating, and painting... diverse pursuits and boundless curiosity. <mark style="background-color:rgba(0, 0, 0, 0);color:#d1d1d1" class="has-inline-color">#Projects</mark> <mark style="background-color:rgba(0, 0, 0, 0);color:#d1d1d1" class="has-inline-color">#RenaissanceMind</mark></p>
+<p><?php echo esc_html__( 'I\'m currently absorbed by an equestrian statue for the Duke of Milan, dissecting human anatomy, architecturally innovating, and painting... diverse pursuits and boundless curiosity.', 'messagerie' ); ?><mark style="background-color:rgba(0, 0, 0, 0);color:#d1d1d1" class="has-inline-color"><?php echo esc_html__( '#Projects', 'messagerie' ); ?></mark> <mark style="background-color:rgba(0, 0, 0, 0);color:#d1d1d1" class="has-inline-color"><?php echo esc_html__( '#RenaissanceMind', 'messagerie' ); ?></mark></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
