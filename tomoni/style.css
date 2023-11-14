@@ -5,13 +5,13 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Tomoni is a theme that displays a use case of multilingual content with Japanese.
 Requires at least: 5.8
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 5.7
 Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: tomoni
-Tags: blog, one-column, wide-blocks, block-patterns, block-styles, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready, news
+Tags: blog, one-column, wide-blocks, block-patterns, block-styles, editor-style, featured-images, full-site-editing, rtl-language-support, template-editing, threaded-comments, translation-ready
 */
 
 /*
@@ -43,13 +43,12 @@ a {
 }
 
 /*
- * Avatar Block
- * Fix border radius setting for the avatar block
- * https://github.com/WordPress/gutenberg/issues/48253
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
  */
-.wp-block-avatar a,
-.wp-block-avatar img {
-	border-radius: inherit;
+.wp-block-navigation ul {
+	padding: unset;
 }
 
 /*
@@ -57,6 +56,7 @@ a {
  * Reset the browser default margins for blockquote element
  * https://github.com/WordPress/gutenberg/issues/44129
  */
-.wp-block-pullquote blockquote {
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
 	margin: 0;
 }
