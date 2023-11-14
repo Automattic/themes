@@ -12,6 +12,9 @@ Strand is a simple blogging and newsletter theme. The main feature is its split 
 
 == Changelog ==
 
+= 1.0.1 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
 = 1.0.0 =
 * Initial release
 
