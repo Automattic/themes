@@ -5,24 +5,15 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Archivo is a blog and portfolio theme that shows your featured image large.
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.4
 Requires PHP: 5.7
 Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: 
 Text Domain: archivo
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, style-variations
+Tags: one-column, editor-style, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready, wide-blocks, style-variations
 */
-
-/*
- * Font smoothing
- * https://github.com/WordPress/gutenberg/issues/35934
- */
-body {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-}
 
 /*
  * Control the hover stylings of outline block style.
@@ -49,26 +40,13 @@ a:hover {
 	text-decoration-color: var(--wp--preset--color--tertiary) !important;
 }
 
-/* Overrides the Gutenberg styles for the outline button */
-.wp-block-button.is-style-outline>.wp-block-button__link {
-	padding: calc(0.5em - 1px) calc(2em - 1px);
-	border: 1px solid var(--wp--preset--color--foreground);
-}
-
-/* Reset browser default margins for blockquote element */
-.wp-block-pullquote blockquote {
-	margin: 0;
-}
-
-/* Search button inside style */
-.wp-block-search__button-inside .wp-block-search__inside-wrapper {
-	background-color: var(--wp--preset--color--foreground);
-	padding: 2px;
-}
-
-/* Adjust margin top for comment reply title */
-.wp-block-post-comments-form .comment-reply-title {
-	margin-top: var(--wp--preset--spacing--50);
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
 }
 
 /*
@@ -103,68 +81,17 @@ a:hover {
 
 /* Adjust the top padding for the submenu items */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
-	padding-top: 0;
+	padding: 0 var(--wp--preset--spacing--50);
 }
 
-/* Adjust the border width for the submenu */
-.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
-	border-width: 0.5px;
-}
-
-/* No option to change the size of avatar */
-.wp-block-post-author__avatar img {
-	height: 40px;
-	width: 40px;
-}
-
-/* Remove browser default margins */
-.wp-block-post-author__bio {
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
 	margin: 0;
-}
-
-/*
- * Remove the default margin bottom from term description and post excerpt.
- */
-.wp-block-term-description p:first-child,
-.wp-block-post-excerpt__excerpt {
-	margin-top: 0;
-}
-
-.wp-block-term-description p:last-child,
-.wp-block-post-excerpt__excerpt {
-	margin-bottom: 0;
-}
-
-.wp-block-post-excerpt__more-text {
-	margin: var(--wp--preset--spacing--50) 0;
-}
-
-/*
- * Match the style of download button with the button block.
- */
-.wp-block-file:not(.wp-element-button) {
-	display: inline-block;
-	font-size: inherit;
-}
-
-/*
- * Normalise font sizes for the latest comments, latest posts, and post author block
- */
-.wp-block-latest-comments__comment-excerpt p,
-.wp-block-latest-comments__comment-date,
-.wp-block-latest-posts__post-author,
-.wp-block-latest-posts__post-date,
-.wp-block-post-author__byline,
-.wp-block-post-author__name,
-.wp-block-post-author__bio {
-	font-size: inherit;
-}
-
-/*
- * Adjust font colour in the Calendar widget
- */
-.wp-block-calendar table:where(:not(.has-text-color)) {
-	color: var(--wp--preset--color--tertiary);
 }
 
 /*

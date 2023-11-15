@@ -16,4 +16,4 @@
 <p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'archivo' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"showLabel":false,"placeholder":"<?php echo esc_attr_x( 'Search...', 'placeholder for search field', 'archivo' ); ?>","buttonText":"<?php esc_attr_e( 'Search', 'archivo' ); ?>"} /-->
+<!-- wp:pattern {"slug":"archivo/hidden-search-field"} /-->
