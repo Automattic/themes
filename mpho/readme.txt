@@ -12,6 +12,9 @@ Mpho is a minimalist single column theme that draws inspiration from short-sized
 
 == Changelog ==
 
+= 1.0.2 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
 = 1.0.1 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

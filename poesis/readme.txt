@@ -12,6 +12,9 @@ Poesis pays homage to the literary figures represented in the painting “Six Tu
 
 == Changelog ==
 
+= 1.0.3 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
 = 1.0.2 =
 * Fix error: Template part has been deleted or is unavailable in Erma, Poesis, and Meraki   (#7348)
 

@@ -12,6 +12,9 @@ Sunderland is a simple WordPress event theme designed for announcing upcoming ev
 
 == Changelog ==
 
+= 1.0.2 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
 = 1.0.1 =
 * Update theme.json
 

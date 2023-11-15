@@ -12,6 +12,9 @@ Foam is a WordPress event theme with a vibrant, straightforward style. Entirely 
 
 == Changelog ==
 
+= 1.0.1 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
 = 1.0.0 =
 * Initial release
 
