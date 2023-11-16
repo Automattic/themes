@@ -93,7 +93,7 @@
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"align":"center"} -->
-		<p class="has-text-align-center"><a href="http://localhost.local/shop/"><?php echo esc_html__( 'Browse store', 'archivo' ); ?></a></p>
+		<p class="has-text-align-center"><a href="#"><?php echo esc_html__( 'Browse store', 'archivo' ); ?></a></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:separator {"className":"is-style-dots"} -->
