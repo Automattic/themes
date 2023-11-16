@@ -3,6 +3,7 @@
  * Title: Search
  * Slug: tomoni/search
  * Categories: featured
+ * Inserter: no
  */
 ?>
 
