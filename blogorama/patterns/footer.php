@@ -36,7 +36,16 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left">Designed with <a rel="nofollow" href="https://wordpress.org">WordPress</a></p>
+<p class="has-text-align-left">
+            <?php
+            /* Translators: WordPress link. */
+            $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'blogorama' ) ) . '" rel="nofollow">WordPress</a>';
+            echo sprintf(
+                esc_html__( 'Designed with %1$s', 'blogorama' ),
+                $wordpress_link
+            );
+        ?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -48,7 +57,7 @@
 <!-- wp:column {"width":"60%","layout":{"type":"default"}} -->
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size">Magualogue is a blogoramazine-style theme design that displays blog posts, reviews, artwork and news. It comes with different styles to spark your creativity in making it just as you’d like to.</p>
+<p class="has-large-font-size"><?php esc_html( 'Blogorama is a blogoramazine-style theme design that displays blog posts, reviews, artwork and news. It comes with different styles to spark your creativity in making it just as you’d like to.', 'blogorama' ) ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
