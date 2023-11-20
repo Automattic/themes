@@ -12,6 +12,9 @@ Programme is a blog theme that reverences the legendary designer Massimo Vignell
 
 == Changelog ==
 
+= 1.0.0 =
+* Programme: add design updates (#7474)
+
 = 0.0.2 =
 * Programme: Fix Century & Futury Style Colours (#7480)
 

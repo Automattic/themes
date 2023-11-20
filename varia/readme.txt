@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.28 =
+* Programme: add design updates (#7474)
+
 = 1.6.26 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 
