@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: arrow
- * Slug: magalog/arrow
+ * Slug: blogorama/arrow
  * Categories: hidden
  * Inserter: no
  */

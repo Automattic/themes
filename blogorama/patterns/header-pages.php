@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: header-pages
- * Slug: magalog/header-pages
+ * Slug: blogorama/header-pages
  * Categories: hidden
  * Inserter: no
  */

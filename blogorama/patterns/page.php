@@ -25,7 +25,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:paragraph {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">MagBlog is a magalogzine-style theme design that displays blog posts, reviews, artwork, photography, and, why not, news. It comes in different colors and styles to spark your creativity. Make it your theme now.</p>
+<p style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">MagBlog is a blogoramazine-style theme design that displays blog posts, reviews, artwork, photography, and, why not, news. It comes in different colors and styles to spark your creativity. Make it your theme now.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
@@ -82,6 +82,6 @@
 <!-- /wp:group --></main>
 <!-- /wp:query -->
 
-<!-- wp:template-part {"slug":"footer","theme":"magalog","tagName":"footer","align":"full"} /--></div>
+<!-- wp:template-part {"slug":"footer","theme":"blogorama","tagName":"footer","align":"full"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->

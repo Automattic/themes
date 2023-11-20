@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: footer
- * Slug: magalog/footer
+ * Slug: blogorama/footer
  * Categories: hidden
  * Inserter: no
  */
@@ -48,7 +48,7 @@
 <!-- wp:column {"width":"60%","layout":{"type":"default"}} -->
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size">Magualogue is a magalogzine-style theme design that displays blog posts, reviews, artwork and news. It comes with different styles to spark your creativity in making it just as you’d like to.</p>
+<p class="has-large-font-size">Magualogue is a blogoramazine-style theme design that displays blog posts, reviews, artwork and news. It comes with different styles to spark your creativity in making it just as you’d like to.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
