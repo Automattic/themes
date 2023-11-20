@@ -12,6 +12,9 @@ Besides an appreciable headshot, the theme offers large titles, descriptions, an
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix Ritratto and Magalog (Blogorama) (#7506)
+
 = 1.0.0 =
 * Initial release
 
