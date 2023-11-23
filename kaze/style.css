@@ -1,0 +1,161 @@
+/*
+Theme Name: Kaze
+Theme URI: https://wordpress.com/theme/kaze/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Kaze is a simple 3-column dark-colored theme with small font sizes.
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kaze
+Tags: three-columns, wide-blocks, block-styles, editor-style, featured-images, full-site-editing, full-width-template, rtl-language-support, style-variations, threaded-comments, translation-ready, one-column
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-color: var(--wp--preset--color--tertiary);
+	text-decoration-thickness: .5px !important;
+	text-underline-offset: .1em;
+}
+
+a:hover {
+	text-decoration-color: var(--wp--preset--color--tertiary) !important;
+}
+
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
+}
+
+/*
+ * Adjust the position of the close button
+ */
+.wp-block-navigation__responsive-container-close {
+	left: 0;
+}
+
+.has-modal-open .is-menu-open .wp-block-navigation__responsive-dialog {
+	margin-top: 48px;
+}
+
+.has-modal-open .admin-bar .is-menu-open .wp-block-navigation__responsive-dialog {
+	margin-top: 94px;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding: var(--wp--preset--spacing--50);
+}
+
+/* Adjust the top padding for the menu items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	padding-top: calc(1.5rem + var(--wp--preset--spacing--50));
+}
+
+/* Adjust the top padding for the submenu items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	padding: 0 var(--wp--preset--spacing--50);
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
+
+/*
+ * Needed to style Jetpack Contact Form
+ */
+.wp-block-jetpack-contact-form input:not([type=submit]):not([type=checkbox]):not([type=radio]),
+.wp-block-jetpack-contact-form select,
+.wp-block-jetpack-contact-form textarea {
+	border: 1px solid #949494;
+	font-family: inherit;
+	font-size: 1em;
+	margin-bottom: var(--wp--preset--spacing--50);
+	padding: 8px;
+}
+
+.wp-block-jetpack-contact-form .wp-block-jetpack-button button {
+	padding: 0.5em 2em;
+}
+
+.wp-block-jetpack-contact-form.contact-form label {
+	font-weight: 400;
+	margin-bottom: 0;
+	text-transform: none;
+}
+
+.wp-block-jetpack-contact-form.contact-form label span {
+	opacity: 0.7;
+}
+
+.wp-block-jetpack-contact-form.contact-form select {
+	padding: 8px;
+}
+
+.wp-block-jetpack-contact-form.contact-form textarea {
+	margin-bottom: var(--wp--preset--spacing--50);
+}
+
+div[id^="contact-form-"] h4 {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 700;
+	line-height: 1.388888889;
+}
+
+.contact-form-submission {
+	margin: 0;
+	padding: 0;
+}
+
+.wp-block-jetpack-mailchimp input:not([type=submit]) {
+	border: 1px solid #949494;
+	font-family: inherit;
+	font-size: 1em;
+	padding: 8px;
+}
+
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button button {
+	padding: 0.5em 2em;
+}
+
+.wp-block-jetpack-mailchimp .wp-block-jetpack-button,
+.wp-block-jetpack-mailchimp p {
+	margin-bottom: var(--wp--preset--spacing--50);
+}
+
+.wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments-form .comment-form textarea {
+	line-height: inherit;
+}
