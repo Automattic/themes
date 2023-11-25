@@ -13,8 +13,8 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","right":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|80"}},"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","layout":{"type":"default"}} -->
 <div class="wp-block-group has-tertiary-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--80)">
-	<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|tertiary"}}}},"textColor":"tertiary","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-	<div class="wp-block-group has-tertiary-color has-text-color has-link-color">
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+	<div class="wp-block-group">
 		<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|inactive"}}}},"textColor":"inactive"} -->
 		<p class="has-inactive-color has-text-color has-link-color"><?php echo esc_html__( 'code_is_poetry', 'beep' ); ?>( '</p>
 		<!-- /wp:paragraph -->
