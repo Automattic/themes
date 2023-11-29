@@ -28,3 +28,11 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Inter Font
+Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+https://fonts.google.com/specimen/Inter
+
+IBM Plex Mono Font
+Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+https://fonts.google.com/specimen/IBM+Plex+Mono
