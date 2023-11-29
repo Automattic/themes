@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Header
- * Slug: index/header
+ * Slug: indice/header
  * Categories: header
  * Block Types: core/template-part/header
  */
@@ -28,7 +28,7 @@
 	<!-- wp:site-tagline /-->
 
 	<!-- wp:paragraph -->
-	<p><a href="#" target="_blank" rel="noreferrer noopener"><?php echo esc_html__( 'Tumblr &nearr;', 'index' ); ?></a></p>
+	<p><a href="#" target="_blank" rel="noreferrer noopener"><?php echo esc_html__( 'Tumblr', 'indice' ); ?> &nearr;</a></p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

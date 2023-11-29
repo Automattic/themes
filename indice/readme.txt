@@ -1,4 +1,4 @@
-=== Index ===
+=== Indice ===
 Contributors: 
 Requires at least: 6.0
 Tested up to: 6.4
@@ -7,7 +7,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Index is a tribute to the iconic Indexhibit, an archetypal open source CMS that was heavily used by a generation of designers in the early web due to its simplicity and charm.
+Indice is a tribute to the iconic indicehibit, an archetypal open source CMS that was heavily used by a generation of designers in the early web due to its simplicity and charm.
 
 == Changelog ==
 
@@ -16,8 +16,8 @@ Index is a tribute to the iconic Indexhibit, an archetypal open source CMS that 
 
 == Copyright ==
 
-Index WordPress Theme, (C) 2023 
-Index is distributed under the terms of the GNU GPL.
+Indice WordPress Theme, (C) 2023
+Indice is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
