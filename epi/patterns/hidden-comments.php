@@ -4,6 +4,8 @@
  * Slug: epi/hidden-comments
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 <!-- wp:spacer {"height":"3rem"} -->
 <div style="height:3rem" aria-hidden="true" class="wp-block-spacer"></div>

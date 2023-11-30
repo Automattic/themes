@@ -6,7 +6,7 @@ Author URI: https://automattic.com/
 Description: Epi is a simple blog theme with a sticky left sidebar.
 Requires at least: 6.0
 Tested up to: 6.4
-Requires PHP: 5.7
+Requires PHP: 7.0
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ Tags: blog, three-columns, wide-blocks, block-styles, featured-images, full-site
  * Unnecessary once block styles are configurable via theme.json
  * https://github.com/WordPress/gutenberg/issues/42794
  */
-.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):hover {
 	background-color: var(--wp--preset--color--secondary);
 	color: var(--wp--preset--color--background);
 	border-color: var(--wp--preset--color--secondary);
@@ -31,8 +31,8 @@ Tags: blog, three-columns, wide-blocks, block-styles, featured-images, full-site
  */
 a {
 	text-decoration-color: var(--wp--preset--color--tertiary);
-	text-decoration-thickness: .5px !important;
-	text-underline-offset: .1em;
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 0.1em;
 }
 
 a:hover {
@@ -96,7 +96,7 @@ a:hover {
 /*
  * Needed to style Jetpack Contact Form
  */
-.wp-block-jetpack-contact-form input:not([type=submit]):not([type=checkbox]):not([type=radio]),
+.wp-block-jetpack-contact-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
 .wp-block-jetpack-contact-form select,
 .wp-block-jetpack-contact-form textarea {
 	border: 1px solid #949494;
@@ -139,7 +139,7 @@ div[id^="contact-form-"] h4 {
 	padding: 0;
 }
 
-.wp-block-jetpack-mailchimp input:not([type=submit]) {
+.wp-block-jetpack-mailchimp input:not([type="submit"]) {
 	border: 1px solid #949494;
 	font-family: inherit;
 	font-size: 1em;
@@ -155,7 +155,7 @@ div[id^="contact-form-"] h4 {
 	margin-bottom: var(--wp--preset--spacing--50);
 }
 
-.wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]),
+.wp-block-post-comments-form .comment-form input:not([type="submit"]):not([type="checkbox"]),
 .wp-block-post-comments-form .comment-form textarea {
 	line-height: inherit;
 }

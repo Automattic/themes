@@ -2,7 +2,7 @@
 Contributors: Automattic
 Requires at least: 6.3
 Tested up to: 6.4
-Requires PHP: 5.7
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,9 +33,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 Inter Font
-Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter) 
-This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
-License URL: http://scripts.sil.org/OFL 
+Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL
 Source: https://rsms.me/
 -- End of Inter Font credits --
 

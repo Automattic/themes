@@ -4,6 +4,8 @@
  * Slug: epi/checkout
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:template-part {"slug":"checkout-header","theme":"woocommerce/woocommerce"} /-->
