@@ -4,6 +4,8 @@
  * Slug: kaze/cart
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:heading {"level":1,"align":"wide"} -->

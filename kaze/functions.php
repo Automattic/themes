@@ -8,6 +8,7 @@
  * @since Kaze 1.0
  */
 
+declare( strict_types = 1 );
 
 if ( ! function_exists( 'kaze_support' ) ) :
 

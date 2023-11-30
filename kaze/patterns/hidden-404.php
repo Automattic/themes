@@ -4,6 +4,8 @@
  * Slug: kaze/hidden-404
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:heading {"textAlign":"left","level":1,"style":{"typography":{"fontStyle":"normal","fontWeight":"700","lineHeight":1.388888889}},"fontSize":"medium"} -->
