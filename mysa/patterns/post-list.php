@@ -4,6 +4,8 @@
  * Slug: mysa/post-list
  * Categories: posts
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[]},"layout":{"type":"default"}} -->
