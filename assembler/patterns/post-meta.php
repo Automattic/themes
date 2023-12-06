@@ -5,6 +5,8 @@
  * Categories: post meta
  * Block Types: core/post-date, core/post-terms
  */
+
+declare( strict_types = 1 );
 ?>
 
 
