@@ -1,6 +1,4 @@
 {
-	"version": 2,
-	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"settings": {
 		"appearanceTools": true,
 		"color": {
@@ -29,7 +27,7 @@
 					"slug": "theme-4"
 				},
 				{
-					"color": "#000000",
+					"color": "#1E1E1E",
 					"name": "Color 5",
 					"slug": "theme-5"
 				}
@@ -95,14 +93,18 @@
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "100 800",
-							"src": ["file:./assets/fonts/inter/InterVariable.ttf"]
+							"src": [
+								"file:./assets/fonts/inter/InterVariable.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStretch": "normal",
 							"fontStyle": "italic",
 							"fontWeight": "100 800",
-							"src": ["file:./assets/fonts/inter/InterVariable-Italic.ttf"]
+							"src": [
+								"file:./assets/fonts/inter/InterVariable-Italic.ttf"
+							]
 						}
 					],
 					"fontFamily": "\"Inter\", sans-serif",
@@ -148,7 +150,9 @@
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "100 800",
-							"src": ["file:./assets/fonts/vina-sans/VinaSans-Regular.ttf"]
+							"src": [
+								"file:./assets/fonts/vina-sans/VinaSans-Regular.ttf"
+							]
 						}
 					],
 					"fontFamily": "\"Vina Sans\", sans-serif",
@@ -194,7 +198,9 @@
 							"fontStretch": "normal",
 							"fontStyle": "normal",
 							"fontWeight": "100 800",
-							"src": ["file:./assets/fonts/rubik/Rubik-VariableFont_wght.ttf"]
+							"src": [
+								"file:./assets/fonts/rubik/Rubik-VariableFont_wght.ttf"
+							]
 						}
 					],
 					"fontFamily": "\"Rubik\", sans-serif",
@@ -205,27 +211,27 @@
 			"fontSizes": [
 				{
 					"name": "Small",
-					"size": "12px",
+					"size": "15px",
 					"slug": "small"
 				},
 				{
 					"name": "Medium",
-					"size": "16px",
+					"size": "26px",
 					"slug": "medium"
 				},
 				{
 					"name": "Large",
-					"size": "30px",
+					"size": "40.5px",
 					"slug": "large"
 				},
 				{
 					"name": "Extra Large",
-					"size": "60px",
+					"size": "60.75px",
 					"slug": "x-large"
 				},
 				{
 					"name": "2X Large",
-					"size": "96px",
+					"size": "95.95px",
 					"slug": "xx-large"
 				}
 			],
@@ -235,10 +241,27 @@
 	},
 	"styles": {
 		"blocks": {
-			"core/site-title": {
+			"core/navigation": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": "600"
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
+			"core/post-title": {
+				"css": ":not([class*=\"text-align-\"]) {\n    text-align:center;\n}",
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--x-large)"
+				}
+			},
+			"core/site-title": {
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
 			}
 		},
@@ -250,7 +273,7 @@
 		"elements": {
 			"button": {
 				"border": {
-					"radius": "0"
+					"radius": "4px"
 				},
 				"color": {
 					"background": {
@@ -262,22 +285,17 @@
 				},
 				"spacing": {
 					"padding": {
-						"bottom": "16px",
-						"top": "16px",
-						"left": "24px",
-						"right": "24px"
+						"bottom": "10px",
+						"left": "20px",
+						"right": "20px",
+						"top": "10px"
 					}
 				},
 				"typography": {
 					"fontFamily": {
 						"ref": "styles.elements.heading.typography.fontFamily"
 					},
-					"fontWeight": {
-						"ref": "styles.elements.heading.typography.fontWeight"
-					},
-					"textTransform": {
-						"ref": "styles.elements.heading.typography.textTransform"
-					}
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"h1": {
@@ -317,14 +335,16 @@
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
-			"link": {
-				"color": {
-					"text": { "ref": "styles.color.text" }
-				}
-			},
 			"heading": {
 				"typography": {
 					"fontWeight": "500"
+				}
+			},
+			"link": {
+				"color": {
+					"text": {
+						"ref": "styles.color.text"
+					}
 				}
 			}
 		},
@@ -340,5 +360,19 @@
 			"fontSize": "16px",
 			"lineHeight": "1.65"
 		}
-	}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+	],
+	"version": 2,
+	"$schema": "https://schemas.wp.org/trunk/theme.json"
 }
