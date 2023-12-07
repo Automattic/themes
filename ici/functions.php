@@ -7,7 +7,7 @@
  * @package Ici
  * @since Ici 1.0
  */
-
+declare( strict_types = 1 );
 
 if ( ! function_exists( 'ici_support' ) ) :
 
