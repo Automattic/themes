@@ -18,42 +18,44 @@ jobs:
         with:
           php-version: '8.1'
 
-      - name: Checking for new PHP files
+      - name: Check for new PHP files
         id: check
         run: |
-          if [[ $(git rev-parse --verify HEAD^) ]]; then
-            if [[ $(git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs grep -L "declare\(strict_types=1\)" | wc -l) -gt 0 ]]; then
-              echo "::set-output name=strict_types::false"
-            else
-              echo "::set-output name=strict_types::true"
-            fi
+          git fetch origin trunk
+          NEW_PHP_FILES=$(git diff --name-only origin/trunk...HEAD -- '*.php' | xargs grep -LE 'declare\( strict_types=1\ )')
+          if [ -n "$NEW_PHP_FILES" ]; then
+            echo "::set-output name=strict_types_needed::true"
+            echo "New PHP files without strict types: $NEW_PHP_FILES"
           else
-            echo "::set-output name=strict_types::true"
+            echo "::set-output name=strict_types_needed::false"
           fi
-      
-      - name: Add strict types
-        if: steps.check.outputs.strict_types == 'false'
-        run: |
-          git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs sed -i '1s/^/<?php declare(strict_types=1);\n\n/'
-          git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs git add
 
-      - name: Create a branch, add a comment to PR
-        if: steps.check.outputs.strict_types == 'false'
+      - name: Add strict types to new PHP files
+        if: steps.check.outputs.strict_types_needed == 'true'
         run: |
-          git checkout -b add-strict-types-${{ github.sha }}
-          git commit -m "Automation: Add strict types to PHP files"
-          git push origin add-strict-types-${{ github.sha }}
-          gh pr comment ${{ github.event.pull_request.number }} -b "We've found some PHP files that don't have strict types. This PR adds them."
-        
+          git fetch origin trunk
+          for file in $(git diff --name-only origin/trunk...HEAD -- '*.php' | xargs grep -LE 'declare\( strict_types=1\ )'); do
+            sed -i '1s/^/<?php declare( strict_types=1 );\n/' "$file"
+            git add "$file"
+          done
+          git commit -m "Add strict types to new PHP files"
+          git push -u origin HEAD:refs/heads/add-strict-types-${{ github.sha }}
+
+      - name: Comment on PR
+        if: steps.check.outputs.strict_types_needed == 'true'
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: "We've found some PHP files that don't have strict types. This commit adds them. Branch: add-strict-types-${{ github.sha }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # - name: Create PR
-      #   if: steps.check.outputs.strict_types == 'false'
+      #   if: steps.check.outputs.strict_types_needed == 'true'
       #   uses: peter-evans/create-pull-request@v3
       #   with:
       #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     commit-message: "Automation: Add strict types to PHP files"
+      #     commit-message: "Add strict types to new PHP files"
       #     title: "[Automation]: Add strict types"
-      #     body: |
-      #       We've found some PHP files that don't have strict types. This PR adds them.
+      #     body: "We've found some PHP files that don't have strict types. This PR adds them."
       #     branch: add-strict-types-${{ github.sha }}
       #     branch-suffix: timestamp
       #     labels: Automation
