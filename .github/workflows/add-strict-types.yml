@@ -21,6 +21,8 @@ jobs:
       - name: Add strict types to new PHP files
         id: add_strict_types
         run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           git fetch origin +refs/heads/trunk:refs/remotes/origin/trunk --quiet
           NEW_PHP_FILES=$(git diff --name-only refs/remotes/origin/trunk HEAD -- '*.php' | xargs -r grep -LE 'declare\( strict_types=1 \)' || true)
           if [ -n "$NEW_PHP_FILES" ]; then
