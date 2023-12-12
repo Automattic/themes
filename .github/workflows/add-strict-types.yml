@@ -21,7 +21,7 @@ jobs:
       - name: Checking for new PHP files
         id: check
         run: |
-          if [[ $(git diff --name-only HEAD^ HEAD | grep -E "\.php$") ]]; then
+          if [[ $(git rev-parse --verify HEAD^) ]]; then
             if [[ $(git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs grep -L "declare\(strict_types=1\)" | wc -l) -gt 0 ]]; then
               echo "::set-output name=strict_types::false"
             else
