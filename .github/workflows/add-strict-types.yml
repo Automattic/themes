@@ -26,7 +26,13 @@ jobs:
           git fetch origin +refs/heads/trunk:refs/remotes/origin/trunk --quiet
           NEW_PHP_FILES=$(git diff --name-only refs/remotes/origin/trunk HEAD -- '*.php' | xargs -r grep -LE 'declare\( strict_types=1 \)' || true)
           if [ -n "$NEW_PHP_FILES" ]; then
-            echo "$NEW_PHP_FILES" | xargs -I {} sed -i '1s|^|<?php declare( strict_types=1 );\n|' {}
+            for file in $NEW_PHP_FILES; do
+              if grep -q '^<?php' "$file"; then
+                sed -i '/^<?php/a declare( strict_types=1 );' "$file"
+              else
+                sed -i '1s|^|<?php declare( strict_types=1 );\n|' "$file"
+              fi
+            done
             git add $NEW_PHP_FILES
             git commit -m "Add strict types to new PHP files"
             git push -u origin HEAD:refs/heads/add-strict-types-${{ github.sha }}
