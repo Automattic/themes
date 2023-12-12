@@ -21,20 +21,21 @@ jobs:
       - name: Check for new PHP files
         id: check
         run: |
-          git fetch origin trunk
-          NEW_PHP_FILES=$(git diff --name-only origin/trunk...HEAD -- '*.php' | xargs grep -LE 'declare\( strict_types=1\ )')
+          git fetch origin +refs/heads/trunk:refs/remotes/origin/trunk
+          NEW_PHP_FILES=$(git diff --name-only refs/remotes/origin/trunk HEAD -- '*.php' | xargs -r grep -LE 'declare\( strict_types=1 \)')
           if [ -n "$NEW_PHP_FILES" ]; then
             echo "::set-output name=strict_types_needed::true"
             echo "New PHP files without strict types: $NEW_PHP_FILES"
           else
             echo "::set-output name=strict_types_needed::false"
           fi
+        
 
       - name: Add strict types to new PHP files
         if: steps.check.outputs.strict_types_needed == 'true'
         run: |
-          git fetch origin trunk
-          for file in $(git diff --name-only origin/trunk...HEAD -- '*.php' | xargs grep -LE 'declare\( strict_types=1\ )'); do
+          git fetch origin trunk:trunk
+          for file in $(git diff --name-only origin/trunk...HEAD -- '*.php' | xargs grep -LE 'declare\( strict_types=1 \)'); do
             sed -i '1s/^/<?php declare( strict_types=1 );\n/' "$file"
             git add "$file"
           done
