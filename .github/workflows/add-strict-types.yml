@@ -37,15 +37,23 @@ jobs:
           git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs sed -i '1s/^/<?php declare(strict_types=1);\n\n/'
           git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs git add
 
-      - name: Create PR
+      - name: Create a branch, add a comment to PR
         if: steps.check.outputs.strict_types == 'false'
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Automation: Add strict types to PHP files"
-          title: "[Automation]: Add strict types"
-          body: |
-            We've found some PHP files that don't have strict types. This PR adds them.
-          branch: add-strict-types-${{ github.sha }}
-          branch-suffix: timestamp
-          labels: Automation
+        run: |
+          git checkout -b add-strict-types-${{ github.sha }}
+          git commit -m "Automation: Add strict types to PHP files"
+          git push origin add-strict-types-${{ github.sha }}
+          gh pr comment ${{ github.event.pull_request.number }} -b "We've found some PHP files that don't have strict types. This PR adds them."
+        
+      # - name: Create PR
+      #   if: steps.check.outputs.strict_types == 'false'
+      #   uses: peter-evans/create-pull-request@v3
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     commit-message: "Automation: Add strict types to PHP files"
+      #     title: "[Automation]: Add strict types"
+      #     body: |
+      #       We've found some PHP files that don't have strict types. This PR adds them.
+      #     branch: add-strict-types-${{ github.sha }}
+      #     branch-suffix: timestamp
+      #     labels: Automation
