@@ -18,39 +18,31 @@ jobs:
         with:
           php-version: '8.1'
 
-      - name: Check for new PHP files
-        id: check
+      - name: Add strict types to new PHP files
+        id: add_strict_types
         run: |
-          git fetch origin +refs/heads/trunk:refs/remotes/origin/trunk
-          NEW_PHP_FILES=$(git diff --name-only refs/remotes/origin/trunk HEAD -- '*.php' | xargs -r grep -LE 'declare\( strict_types=1 \)')
+          git fetch origin +refs/heads/trunk:refs/remotes/origin/trunk --quiet
+          NEW_PHP_FILES=$(git diff --name-only refs/remotes/origin/trunk HEAD -- '*.php' | xargs -r grep -LE 'declare\( strict_types=1 \)' || true)
           if [ -n "$NEW_PHP_FILES" ]; then
+            echo "$NEW_PHP_FILES" | xargs -I {} sed -i '1s|^|<?php declare( strict_types=1 );\n|' {}
+            git add $NEW_PHP_FILES
+            git commit -m "Add strict types to new PHP files"
+            git push -u origin HEAD:refs/heads/add-strict-types-${{ github.sha }}
             echo "::set-output name=strict_types_needed::true"
-            echo "New PHP files without strict types: $NEW_PHP_FILES"
           else
-            echo "::set-output name=strict_types_needed::false"
+            echo "No PHP files need strict types."
+            echo "::set-output name=strict_types_needed::false"    
           fi
         
-
-      - name: Add strict types to new PHP files
-        if: steps.check.outputs.strict_types_needed == 'true'
-        run: |
-          git fetch origin trunk:trunk
-          for file in $(git diff --name-only origin/trunk...HEAD -- '*.php' | xargs grep -LE 'declare\( strict_types=1 \)'); do
-            sed -i '1s/^/<?php declare( strict_types=1 );\n/' "$file"
-            git add "$file"
-          done
-          git commit -m "Add strict types to new PHP files"
-          git push -u origin HEAD:refs/heads/add-strict-types-${{ github.sha }}
-
       - name: Comment on PR
-        if: steps.check.outputs.strict_types_needed == 'true'
+        if: steps.add_strict_types.outputs.strict_types_needed == 'true'
         uses: thollander/actions-comment-pull-request@v1
         with:
           message: "We've found some PHP files that don't have strict types. This commit adds them. Branch: add-strict-types-${{ github.sha }}"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Create PR
-      #   if: steps.check.outputs.strict_types_needed == 'true'
+      #   if: steps.add_strict_types.outputs.strict_types_needed == 'true'
       #   uses: peter-evans/create-pull-request@v3
       #   with:
       #     token: ${{ secrets.GITHUB_TOKEN }}
