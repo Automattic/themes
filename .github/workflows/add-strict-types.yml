@@ -1,0 +1,51 @@
+name: Add Strict Types
+
+on:
+  pull_request:
+    branches:
+      - trunk
+
+jobs:
+  add-strict-types:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Checking for new PHP files
+        id: check
+        run: |
+          if [[ $(git diff --name-only HEAD^ HEAD | grep -E "\.php$") ]]; then
+            if [[ $(git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs grep -L "declare\(strict_types=1\)" | wc -l) -gt 0 ]]; then
+              echo "::set-output name=strict_types::false"
+            else
+              echo "::set-output name=strict_types::true"
+            fi
+          else
+            echo "::set-output name=strict_types::true"
+          fi
+      
+      - name: Add strict types
+        if: steps.check.outputs.strict_types == 'false'
+        run: |
+          git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs sed -i '1s/^/<?php declare(strict_types=1);\n\n/'
+          git diff --name-only HEAD^ HEAD | grep -E "\.php$" | xargs git add
+
+      - name: Create PR
+        if: steps.check.outputs.strict_types == 'false'
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Automation: Add strict types to PHP files"
+          title: "[Automation]: Add strict types"
+          body: |
+            We've found some PHP files that don't have strict types. This PR adds them.
+          branch: add-strict-types-${{ github.sha }}
+          branch-suffix: timestamp
+          labels: Automation
