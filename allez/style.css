@@ -1,0 +1,65 @@
+/*
+Theme Name: Allez
+Theme URI: https://github.com/wordpress/allez/
+Author: the WordPress team
+Author URI: https://wordpress.org/themes/
+Description: Allez is the perfect theme site for sports practitioners or fans who want to blog about their sport.
+Requires at least: 6.0
+Tested up to: 6.4.1
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: allez
+Tags: entertainment, holiday, two-columns, three-columns, accessibility-ready, block-patterns, block-styles, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-site-editing, post-formats, rtl-language-support, sticky-post, style-variations, template-editing, threaded-comments, translation-ready, allez, dai, avanti, vamos, sports, sport-site, fans, practitioners, blog, blogging, match, games, reviews
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: 2px;
+}
+
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote and paragraph element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
+
+/*
+ * Form field styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+input:not([type="submit"]):not([type="checkbox"]),
+textarea,
+.wp-block-post-comments-form input:not([type=submit]),
+.wp-block-post-comments-form textarea {
+	border-color: var(--wp--preset--color--secondary);
+}
