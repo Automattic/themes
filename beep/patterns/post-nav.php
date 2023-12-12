@@ -4,6 +4,8 @@
  * Slug: beep/post-nav
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
