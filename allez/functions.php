@@ -59,8 +59,3 @@ if ( ! function_exists( 'allez_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'allez_styles' );
-
-
-// updater for WordPress.com themes
-if ( is_admin() )
-	include dirname( __FILE__ ) . '/inc/updater.php';
