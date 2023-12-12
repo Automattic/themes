@@ -5,6 +5,8 @@
  * Categories: hidden
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 <!-- wp:query {"queryId":1,"query":{"perPage":"1","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"only","inherit":false}} -->
 <div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"default"}} -->
