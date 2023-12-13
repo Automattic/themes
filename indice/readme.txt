@@ -11,6 +11,9 @@ Indice is a tribute to the iconic indicehibit, an archetypal open source CMS tha
 
 == Changelog ==
 
+= 1.0.1 =
+* Indice: Add strict types to remaining php files (#7547)
+
 = 1.0.0 =
 * Initial release
 

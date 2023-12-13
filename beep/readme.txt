@@ -12,6 +12,9 @@ Inspired by the phrase “code is poetry”, this is a geeky theme designed for 
 
 == Changelog ==
 
+= 1.0.1 =
+* Beep: Add strict types to remaining php files (#7546)
+
 = 1.0.0 =
 * Initial release
 
