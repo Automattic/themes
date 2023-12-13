@@ -12,10 +12,13 @@ Spiel is a game magazine theme.
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.0.1 =
 * Remove undeployed version of Spiel
 * Spiel: re-add and fix translator comment
 
+=======
+>>>>>>> parent of 2f6edbda3 (Remove undeployed version of Spiel)
 = 1.0.0 =
 * Initial release
 
