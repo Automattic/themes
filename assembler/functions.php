@@ -10,8 +10,7 @@
 
 declare( strict_types = 1 );
 
-if ( ! function_exists( 'assembler_support' ) ) :
-
+if ( ! function_exists( 'assembler_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -19,21 +18,18 @@ if ( ! function_exists( 'assembler_support' ) ) :
 	 *
 	 * @return void
 	 */
-	function assembler_support() {
+	function assembler_setup() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
-		// Make theme available for translation.
-		load_theme_textdomain( 'assembler' );
 	}
 
 endif;
 
-add_action( 'after_setup_theme', 'assembler_support' );
+add_action( 'after_setup_theme', 'assembler_setup' );
 
 if ( ! function_exists( 'assembler_styles' ) ) :
-
 	/**
 	 * Enqueue styles.
 	 *
