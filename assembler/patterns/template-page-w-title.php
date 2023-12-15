@@ -6,6 +6,7 @@
  * Viewport width: 1400
  * Inserter: no
  */
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:template-part {"slug":"header"} /-->
