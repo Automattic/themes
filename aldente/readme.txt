@@ -12,6 +12,9 @@ Al Dente is a blog theme perfect for blogs whose posts are categorised, for exam
 
 == Changelog ==
 
+= 1.0.3 =
+* Al Dente: Set as inactive (#7414)
+
 = 1.0.2 =
 * Al Dente: Change the markup of the sidebar to aside (#7281)
 

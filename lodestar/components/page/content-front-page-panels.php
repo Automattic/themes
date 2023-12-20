@@ -24,8 +24,12 @@ $panel_layout = get_theme_mod( $current_panel_layout, 'one-column' );
 		$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
 
 		$thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'lodestar-featured-image' );
-		//Calculate aspect ratio: h / w * 100%
-		$ratio = $thumbnail_attributes[2] / $thumbnail_attributes[1] * 100;
+
+		$ratio = 0;
+		if ( false !== $thumbnail_attributes ) {
+			//Calculate aspect ratio: h / w * 100%
+			$ratio = $thumbnail_attributes[2] / $thumbnail_attributes[1] * 100;
+		}
 		?>
 
 		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
