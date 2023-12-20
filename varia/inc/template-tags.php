@@ -207,6 +207,18 @@ if ( ! function_exists( 'varia_post_thumbnail' ) ) :
 		if ( ! varia_can_show_post_thumbnail() ) {
 			return;
 		}
+		
+		if ( ( is_home() || is_archive() ) && ( false === get_theme_mod( 'show_featured_image_on_archive', false ) ) ) {
+			return;
+		}
+
+		if ( is_single() && ( false === get_theme_mod( 'show_featured_image_on_posts', false ) ) ) {
+			return;
+		}
+
+		if ( is_page() && ( false === get_theme_mod( 'show_featured_image_on_pages', false ) ) ) {
+			return;
+		}
 
 		if ( is_singular() ) :
 			?>
