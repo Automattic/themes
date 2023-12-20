@@ -227,17 +227,9 @@ if ( ! function_exists( 'varia_setup' ) ) :
 		);
 
 		// Add support for Content Options.
+		// We handled Featured Images within Varia directly.
 		add_theme_support( 'jetpack-content-options', array(
 			'blog-display' => 'content',
-			'featured-images' => array(
-				'archive'         => true,
-				'archive-default' => true,
-				'post'            => true,
-				'post-default'    => true,
-				'page'            => true,
-				//featured images on pages boolean was previously managed by Varia rather than jetpack.  If that value has been set default to that.
-				'page-default'    => get_theme_mod( 'show_featured_image_on_pages', false ),
-			),
 		) );
 	}
 endif;
@@ -491,6 +483,92 @@ function varia_customize_header_footer( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'varia_customize_header_footer' );
+
+/**
+ * Add ability to show or hide Featured Images.
+ */
+function varia_customize_featured_images( $wp_customize ) {
+	// Add Content section.
+	$wp_customize->add_section(
+		'varia_featured_images',
+		array(
+			'title'    => esc_html__( 'Featured Images', 'varia' ),
+			'priority' => 100,
+			'description' => esc_html__( 'Customize the visibility of Featured Images.', 'varia' ),
+		)
+	);
+
+	// Add visibility setting for Featured Images on the homepage.
+	$wp_customize->add_setting(
+		'show_featured_image_on_archive',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control for the visibility of Featured Images on the homepage.
+	$wp_customize->add_control(
+		'show_featured_image_on_archive',
+		array(
+			'label'       => esc_html__( 'Display on blog and archives', 'varia' ),
+			'section'     => 'varia_featured_images',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'show_featured_image_on_archive',
+		)
+	);
+
+	// Add visibility setting for Featured Images on posts
+	$wp_customize->add_setting(
+		'show_featured_image_on_posts',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control for the visibility of Featured Images on posts
+	$wp_customize->add_control(
+		'show_featured_image_on_posts',
+		array(
+			'label'       => esc_html__( 'Display on posts', 'varia' ),
+			'section'     => 'varia_featured_images',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'show_featured_image_on_posts',
+		)
+	);
+
+	// Add visibility setting for Featured Images on pages
+	$wp_customize->add_setting(
+		'show_featured_image_on_pages',
+		array(
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'varia_sanitize_checkbox',
+		)
+	);
+
+	// Add control for the visibility of Featured Images on pages
+	$wp_customize->add_control(
+		'show_featured_image_on_pages',
+		array(
+			'label'       => esc_html__( 'Display on pages', 'varia' ),
+			'section'     => 'varia_featured_images',
+			'priority'    => 10,
+			'type'        => 'checkbox',
+			'settings'    => 'show_featured_image_on_pages',
+		)
+	);
+}
+add_action( 'customize_register', 'varia_customize_featured_images' );
+
 
 /**
  * SVG Icons class.
