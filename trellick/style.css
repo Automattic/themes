@@ -4,15 +4,17 @@ Theme URI: https://wordpress.com/theme/trellick/
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Trellick is a raw, brutalist blog theme that strips away the polished veneer of the samey web design to show the untamed essence of the digital realm.
-Requires at least: 5.8
-Tested up to: 6.2
+Requires at least: 6.0
+Tested up to: 6.4
 Requires PHP: 5.7
 Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: trellick
-Tags: blog, three-columns, wide-blocks, block-patterns, block-styles, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready, one-column, news
-*//*
+Tags: blog, three-columns, block-patterns, block-styles, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, translation-ready, one-column, news
+*/
+
+/*
  * Control the hover stylings of outline block style.
  * Unnecessary once block styles are configurable via theme.json
  * https://github.com/WordPress/gutenberg/issues/42794
@@ -33,13 +35,12 @@ a {
 }
 
 /*
- * Avatar Block
- * Fix border radius setting for the avatar block
- * https://github.com/WordPress/gutenberg/issues/48253
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
  */
-.wp-block-avatar a,
-.wp-block-avatar img {
-	border-radius: inherit;
+.wp-block-navigation ul {
+	padding: unset;
 }
 
 /*
