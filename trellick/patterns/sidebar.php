@@ -4,6 +4,7 @@
  * Slug: trellick/sidebar
  * Categories: featured
  */
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"layout":{"type":"default"}} -->
