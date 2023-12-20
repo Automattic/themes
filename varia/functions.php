@@ -225,7 +225,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				'enable_theme_default' => true,
 			)
 		);
-		
+
 		// Add support for Content Options.
 		add_theme_support( 'jetpack-content-options', array(
 			'blog-display' => 'content',
@@ -233,7 +233,10 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				'archive'         => true,
 				'archive-default' => true,
 				'post'            => true,
+				'post-default'    => true,
 				'page'            => true,
+				//featured images on pages boolean was previously managed by Varia rather than jetpack.  If that value has been set default to that.
+				'page-default'    => get_theme_mod( 'show_featured_image_on_pages', false ),
 			),
 		) );
 	}
