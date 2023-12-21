@@ -42,7 +42,11 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-All the images seen on the screenshot.png were generated with AI using Midjourney and DALL-E.
+Newsreader Font
+Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+Source: https://fonts.google.com/specimen/Newsreader
+
+All the images seen on the screenshot.png is by Takashi Irie.
 
 Orbitron Font
 Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: "Orbitron". 

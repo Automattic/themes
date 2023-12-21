@@ -75,6 +75,10 @@ const commands = {
 		additionalArgs: '<theme-slug>',
 		run: (args) => checkoutCoreTheme(args?.[1])
 	},
+	"pull-all-themes": {
+		helpText: 'Use rsync to copy all public theme files from your sandbox to your local machine.',
+		run: pullAllThemes
+	},
 	"pull-core-themes": {
 		helpText: 'Use rsync to copy all public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
 		run: pullCoreThemes
@@ -908,6 +912,21 @@ async function checkoutCoreTheme(theme) {
 		rm -rf ./${theme}
 		svn checkout https://wpcom-themes.svn.automattic.com/${theme} ./${theme}
 	`);
+}
+
+async function pullAllThemes() {
+	console.log("Pulling ALL themes from sandbox.");
+	let allThemes = await getActionableThemes();
+	for (let theme of allThemes) {
+		try {
+		await executeCommand(`
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ ./${theme}/ 
+		`, true);
+		}
+		catch (err) {
+			console.log('Error pulling:', err);
+		}
+	}
 }
 
 async function pullCoreThemes() {

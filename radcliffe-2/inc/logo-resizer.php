@@ -97,14 +97,25 @@ add_filter( 'get_custom_logo', 'logo_awesomeness_customize_logo_resize' );
 function logo_awesomeness_min_max( $short, $long, $short_max, $long_max, $percent, $min ){
 	$max = [];
 	$size = [];
-	$ratio = ( $long / $short );
-	$max['long'] = ( $long_max >= $long ) ? $long : $long_max;
-	$max['short'] = ( $short_max >= ( $max['long'] / $ratio ) ) ? floor( $max['long'] / $ratio ) : $short_max;
 
-	$ppp = ( $max['short'] - $min ) / 100;
+	$ratio = 0;
+	$max['long'] = 0;
+	$max['short'] = 0;
+	$size['short'] = 0;
+	$size['long'] = 0;
+	if (
+		is_int( $long )
+		&& is_int( $short )
+	) {
+		$ratio = ( $long / $short );
+		$max['long'] = ( $long_max >= $long ) ? $long : $long_max;
+		$max['short'] = ( $short_max >= ( $max['long'] / $ratio ) ) ? floor( $max['long'] / $ratio ) : $short_max;
 
-	$size['short'] = round( $min + ( $percent * $ppp ) );
-	$size['long'] = round( $size['short'] / ( $short / $long ) );
+		$ppp = ( $max['short'] - $min ) / 100;
+
+		$size['short'] = round( $min + ( $percent * $ppp ) );
+		$size['long'] = round( $size['short'] / ( $short / $long ) );
+	}
 
 	return $size;
 }
