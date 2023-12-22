@@ -1,37 +1,16 @@
 === Heiwa ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.1
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Heiwa is a theme that supports full-site editing.
+Heiwa 2 is a theme that supports full-site editing.
 
 == Changelog ==
-
-= 1.0.6 =
-* Blockbase + children: remove __unstableLocation (#6759)
-
-= 1.0.5 =
-* #6086: Heiwa: Fix list indents (#6651)
-
-= 1.0.4 =
-* Heiwa: Update screenshot (#6679)
-
-= 1.0.3 =
-* Heiwa: Update navigation width (#6573)
-
-= 1.0.2 =
-* lock post-content block by default (#6314)
-
-= 1.0.1 =
-* Blockbase 3 (#6167)
-
-= 0.0.2 =
-* Heiwa: Minor adjustments to header and footer patterns. (#5979)
 
 = 1.0.0 =
 * Initial release
