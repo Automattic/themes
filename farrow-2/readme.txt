@@ -1,18 +1,21 @@
-/*
-Theme Name: Farrow
-Theme URI: https://wordpress.com/theme/farrow
-Author: Automattic
-Author URI: https://automattic.com/
-Description: Farrow is a minimalist theme, designed for single-page websites.
+=== Farrow ===
+Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.8
+Tested up to: 6.1
 Requires PHP: 5.7
-Version: 1.0.1
-License: GNU General Public License v2 or later
-License URI: https://raw.githubusercontent.com/Automattic/themes/trunk/LICENSE
-Template: blockbase
-Text Domain: farrow
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, auto-loading-homepage
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Description ==
+
+Farrow 2 is a minimalist theme, designed for single-page websites.
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release
+
+== Copyright ==
 
 Farrow WordPress Theme, (C) 2021 Automattic
 Farrow is distributed under the terms of the GNU GPL.
@@ -36,4 +39,3 @@ Used in theme screenshot and demo site.
 Portrait of a woman sitting with legs crossed by Daria Shevtsova.
 Source: https://stocksnap.io/photo/woman-crossed-GAXFQX8BXD
 Used in theme screenshot and demo site.
-*/
