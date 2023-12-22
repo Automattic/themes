@@ -120,3 +120,7 @@ Used in block patterns.
 Photograph by Pawel Czerwinski via Unsplash.
 https://unsplash.com/photos/aSgX9DgqEng
 Used in block patterns.
+
+Photograph by Diego Sulivan via Unsplash.
+https://unsplash.com/photos/HbJgi4GPo30
+Used in block patterns.
