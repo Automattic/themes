@@ -57,7 +57,7 @@ function shoreditch_background_image() {
 	}
 	else {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'post-thumbnail' );
-		$image = $image[0];
+		$image = ( ! empty( $image[0] ) ) ? $image[0] : null;
 	}
 
 	if ( ! $image ) {
