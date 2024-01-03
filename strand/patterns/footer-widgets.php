@@ -20,11 +20,11 @@ declare( strict_types = 1 );
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"normal","fontWeight":"600","textTransform":"uppercase","letterSpacing":"1px"}},"textColor":"primary","fontSize":"small"} -->
-<h3 class="wp-block-heading has-primary-color has-text-color has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:1px;text-transform:uppercase"><?php echo  esc_html__( 'About the author', 'strand' ); ?></h3>
+<h3 class="wp-block-heading has-primary-color has-text-color has-small-font-size" style="font-style:normal;font-weight:600;letter-spacing:1px;text-transform:uppercase"><?php echo  esc_html__( 'About', 'strand' ); ?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"1rem"}}} -->
-<p style="font-size:1rem"><?php echo  esc_html__( 'Meet Ava Montgomery, a passionate storyteller who started as a journalist and now writes freelance,  exploring the intersection of storytelling and productivity.', 'strand' ); ?></p>
+<p style="font-size:1rem"><?php echo  esc_html__( 'Writing on the Wall is a newsletter for freelance writers seeking inspiration, advice, and support on their creative journey.', 'strand' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
