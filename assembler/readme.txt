@@ -12,6 +12,10 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.3 =
+* Assembler: Remove unneeded ref (#7576)
+* Minor tweaks for Assembler (#7583)
+
 = 0.0.2 =
 * Add templates to Assembler (alternate) (#7538)
 
