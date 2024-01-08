@@ -12,6 +12,9 @@ Erma is a WordPress portfolio block theme that features gorgeous imagery and mod
 
 == Changelog ==
 
+= 1.0.8 =
+* Update theme erma (#7565)
+
 = 1.0.7 =
 * Fix error: Template part has been deleted or is unavailable in Erma, Poesis, and Meraki   (#7348)
 
