@@ -5,6 +5,8 @@
  * Categories: footer
  * Block Types: core/template-part/footer
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"border":{"top":{"color":"#1e1e1e26","width":"1px"}},"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60"}}},"backgroundColor":"tertiary","layout":{"type":"constrained"}} -->

@@ -4,6 +4,8 @@
  * Slug: strand/404
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|80","right":"var:preset|spacing|60","bottom":"var:preset|spacing|80","left":"var:preset|spacing|60"}},"color":{"background":"#f5f5f5"},"border":{"bottom":{"color":"#1e1e1e26","width":"1px"},"top":[],"right":[],"left":[]}},"layout":{"type":"constrained"}} -->
