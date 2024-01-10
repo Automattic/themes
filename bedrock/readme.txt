@@ -71,18 +71,18 @@ https://commons.wikimedia.org/w/index.php?curid=128528012
 
 Included in theme templates:
 
-"Diamond_Pickaxe.png" by MrIbby
+"Diamond_Pickaxe.webp" by MrIbby
 CC BY-SA 3.0 DEED Attribution-ShareAlike 3.0 Unported
-https://wiki.minetest.net/File:Diamond_Pickaxe.png
+https://wiki.minetest.net/File:Diamond_Pickaxe.webp
 
-"Gold_Ingot.png" by MrIbby
+"Gold_Ingot.webp" by MrIbby
 CC BY-SA 3.0 DEED Attribution-ShareAlike 3.0 Unported
-https://wiki.minetest.net/File:Gold_Ingot.png
+https://wiki.minetest.net/File:Gold_Ingot.webp
 
-"Book.png" by Wuzzy
+"Book.webp" by Wuzzy
 CC BY-SA 3.0 DEED Attribution-ShareAlike 3.0 Unported
-https://wiki.minetest.net/File:Book.png
+https://wiki.minetest.net/File:Book.webp
 
-"Unknown_Object.png" by Wuzzy
+"Unknown_Object.webp" by Wuzzy
 CC BY-SA 3.0 DEED Attribution-ShareAlike 3.0 Unported
-https://wiki.minetest.net/File:Unknown_Object.png
+https://wiki.minetest.net/File:Unknown_Object.webp
