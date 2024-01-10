@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.4 =
+* Assembler: Another round of tweaks (#7586)
+
 = 0.0.3 =
 * Assembler: Remove unneeded ref (#7576)
 * Minor tweaks for Assembler (#7583)
