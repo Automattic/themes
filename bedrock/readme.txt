@@ -12,6 +12,9 @@ Inspired by the iconic worlds of Minecraft and Minetest, Bedrock is a blog theme
 
 == Changelog ==
 
+= 1.0.1 =
+* Bedrock: use webp images (#7601)
+
 = 1.0.0 =
 * Initial release
 
