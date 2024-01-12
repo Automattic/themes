@@ -5,11 +5,68 @@
 			"background": true,
 			"custom": true,
 			"customDuotone": true,
-			"customGradient": true,
-			"defaultDuotone": true,
-			"defaultGradients": true,
-			"defaultPalette": true,
-			"duotone": [],
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [
+				{
+					"colors": [
+						"#080808",
+						"#2976C6"
+					],
+					"name": "In Blue",
+					"slug": "duo-in-blue"
+				},
+				{
+					"colors": [
+						"#080808",
+						"#FE660E"
+					],
+					"name": "In Orange",
+					"slug": "duo-in-orange"
+				},
+				{
+					"colors": [
+						"#080808",
+						"#C7C229"
+					],
+					"name": "In Gold",
+					"slug": "duo-in-gold"
+				},
+				{
+					"colors": [
+						"#080808",
+						"#209CAE"
+					],
+					"name": "In Acqua",
+					"slug": "duo-in-acqua"
+				},
+				{
+					"colors": [
+						"#080808",
+						"#FD5370"
+					],
+					"name": "In Pink",
+					"slug": "duo-in-pink"
+				},
+				{
+					"colors": [
+						"#080808",
+						"#6C4A8F"
+					],
+					"name": "In Purple",
+					"slug": "duo-in-purple"
+				},
+				{
+					"colors": [
+						"#080808",
+						"#FCE9A5"
+					],
+					"name": "In Creamy",
+					"slug": "duo-in-creamy"
+				}
+			],
 			"gradients": [],
 			"palette": [
 				{
@@ -18,7 +75,7 @@
 					"slug": "primary"
 				},
 				{
-					"color": "#2976c6",
+					"color": "#e9e7e2",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
@@ -33,44 +90,44 @@
 					"slug": "background"
 				},
 				{
-					"color": "#e9e7e2",
-					"name": "Tertiary",
-					"slug": "tertiary"
+					"color": "#2976C6",
+					"name": "Blue",
+					"slug": "blue"
 				},
 				{
-					"color": "#fe660e",
-					"name": "FE660E",
-					"slug": "custom-fe660-e"
+					"color": "#FE660E",
+					"name": "Orange",
+					"slug": "orange"
 				},
 				{
 					"color": "#c7c229",
-					"name": "C7C229",
-					"slug": "custom-c7-c229"
+					"name": "Gold",
+					"slug": "gold"
 				},
 				{
 					"color": "#fd5370",
-					"name": "FD5370",
-					"slug": "custom-fd5370"
+					"name": "Pink",
+					"slug": "pink"
 				},
 				{
 					"color": "#209cae",
-					"name": "209CAE",
-					"slug": "custom-209-cae"
+					"name": "Acqua",
+					"slug": "acqua"
 				},
 				{
 					"color": "#6c4a8f",
-					"name": "6C4A8F",
-					"slug": "custom-6-c4-a8-f"
+					"name": "Violet",
+					"slug": "violet"
 				},
 				{
 					"color": "#fce9a5",
-					"name": "FCE9A5",
-					"slug": "custom-fce9-a5"
+					"name": "Creamy",
+					"slug": "creamy"
 				},
 				{
 					"color": "#118640",
-					"name": "118640",
-					"slug": "custom-118640"
+					"name": "Green",
+					"slug": "green"
 				}
 			],
 			"text": true
@@ -252,6 +309,16 @@
 					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
+			"core/comments": {
+				"spacing": {
+					"margin": {
+						"bottom": "5vh",
+						"left": "5vh",
+						"right": "5vh",
+						"top": "5vh"
+					}
+				}
+			},
 			"core/gallery": {
 				"spacing": {
 					"margin": {
@@ -371,6 +438,27 @@
 					"fontStyle": "italic"
 				}
 			},
+			"core/query-no-results": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--evolventa)"
+				}
+			},
+			"core/query-pagination": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--evolventa)"
+				}
+			},
+			"core/query-title": {
+				"spacing": {
+					"margin": {
+						"bottom": "2.5vh"
+					}
+				},
+				"typography": {
+					"fontSize": "6rem",
+					"lineHeight": "1"
+				}
+			},
 			"core/quote": {
 				"border": {
 					"color": "var(--wp--preset--color--primary)",
@@ -406,9 +494,21 @@
 						"width": "0px"
 					}
 				},
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--secondary)"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var(--wp--preset--color--secondary)"
+						}
+					}
+				},
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--evolventa)",
 					"fontSize": "var(--wp--preset--font-size--medium)",
-					"lineHeight": "1.6"
+					"lineHeight": "1"
 				}
 			},
 			"core/separator": {
@@ -441,7 +541,8 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": "700"
+					"fontWeight": "700",
+					"letterSpacing": "-0.05rem"
 				}
 			}
 		},
@@ -485,32 +586,44 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "4.4rem"
+					"fontSize": "8.8rem",
+					"letterSpacing": "-0.25rem",
+					"lineHeight": "0.8",
+					"textTransform": "uppercase"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--large)"
+					"fontSize": "6rem",
+					"fontStyle": "normal",
+					"fontWeight": "300",
+					"letterSpacing": "-0.2rem",
+					"lineHeight": "1.1",
+					"textTransform": "uppercase"
 				}
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "clamp(1.5rem, calc(1.5rem + ((1vw - 0.48rem) * 0.4808)), 1.75rem)"
+					"fontSize": "2rem",
+					"letterSpacing": "-0.01rem"
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "clamp(1.25rem, calc(1.25rem + ((1vw - 0.48rem) * 0.4808)), 1.5rem)"
+					"fontSize": "1.6rem",
+					"letterSpacing": "-0.01rem"
 				}
 			},
 			"h5": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)"
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"letterSpacing": "0rem"
 				}
 			},
 			"h6": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"letterSpacing": "0rem"
 				}
 			},
 			"heading": {
@@ -532,7 +645,7 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "0",
+			"blockGap": "1rem",
 			"padding": {
 				"bottom": "0px",
 				"left": "0px",
