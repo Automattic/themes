@@ -30,17 +30,5 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-https://en.m.wikipedia.org/wiki/File:Au_Mont_de_pit.jpg
-https://commons.wikimedia.org/wiki/File:Vaches_dans_Paysage.jpg
-https://en.m.wikipedia.org/wiki/File:La_lechera_-_Casto_Plasencia.jpg
-https://commons.wikimedia.org/wiki/File:El_Almirante_Brown_llegando_a_puerto.jpg
-https://commons.wikimedia.org/wiki/File:Le_bain_de_Vnus_-_Odilon_Redon.jpg
-https://www.bellasartes.gob.ar/coleccion/obra/1742/
-https://commons.wikimedia.org/wiki/File:Retrato_de_mujer_joven_-_Rembrandt_van_Rijn.jpg
-https://www.bellasartes.gob.ar/coleccion/obra/9170/
-https://commons.wikimedia.org/wiki/File:La_vuelta_de_la_pesca_-_Joaqun_Sorolla_y_Bastida.jpg
-https://en.wikipedia.org/wiki/File:Autorretrato_-_Raymond_Monvoisin.jpg
-https://www.bellasartes.gob.ar/coleccion/obra/7988/
-https://www.bellasartes.gob.ar/coleccion/obra/6104/
-https://en.m.wikipedia.org/wiki/File:Caballos_en_libertad_-_Alfred_de_Dreux.jpg
-https://www.bellasartes.gob.ar/exhibiciones/tesoros-del-museo-arqueologico-nacional-de-taranto/
+"Le bain de Vénus (The Bath of Venus)"
+https://www.bellasartes.gob.ar/coleccion/obra/2687/
