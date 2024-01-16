@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.5 =
+* Assembler: Another round of tweaks (#7602)
+
 = 0.0.4 =
 * Assembler: Another round of tweaks (#7586)
 
