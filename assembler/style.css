@@ -14,9 +14,42 @@ Text Domain: assembler
 Tags: blog, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready
 */
 
+/* Progresive enhancement to reduce widows and orphans. */
+h1, h2, h3, h4, h5, h6, blockquote {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
 /* Tiny tweak to make sure footers are properly spaced. */
 footer {
     margin-top: 0 !important;
+}
+
+/* Provide better default color for social links */
+.wp-block-social-links.is-style-logos-only li.wp-social-link {
+    color: currentColor;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+    height: 1em;
+    width: 1em;
+}
+
+.wp-block-social-links.has-small-icon-size {
+    font-size: 20px;
+}
+
+/* Set default line height for font size presets. */
+.has-xx-large-font-size {
+   line-height: 1;
+}
+
+/* Add space between the header and first element, if its a paragraph. */
+.entry-content > p:first-child {
+    margin-top: var(--wp--style--root--padding-left); 
 }
 
 /* Move header core/navigation to the right on mobile. */
@@ -53,25 +86,4 @@ footer {
         flex-grow: 1;
     }
 
-}
-
-.wp-block-social-links.is-style-logos-only li.wp-social-link {
-    color: currentColor;
-}
-
-.wp-block-social-links.is-style-logos-only .wp-social-link svg {
-    height: 1em;
-    width: 1em;
-}
-
-.wp-block-social-links.has-small-icon-size {
-    font-size: 20px;
-}
-
-.has-xx-large-font-size {
-   line-height: 1;
-}
-
-.entry-content > p:first-child {
-    margin-top: var(--wp--style--root--padding-left); 
 }
