@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.6 =
+* Assembler: Fonts, text balance, field styling (#7617)
+
 = 0.0.5 =
 * Assembler: Another round of tweaks (#7602)
 
