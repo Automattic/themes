@@ -12,6 +12,9 @@ A cheerful WordPress blogging theme dedicated to all things homemade and delight
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove styles folder (#7621)
+
 = 1.0.0 =
 * Initial release
 
