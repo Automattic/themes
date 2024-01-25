@@ -11,7 +11,7 @@
 declare( strict_types = 1 );
 
 
-if ( ! function_exists( 'creatio2_support' ) ) :
+if ( ! function_exists( 'nook_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -20,20 +20,20 @@ if ( ! function_exists( 'creatio2_support' ) ) :
 	 *
 	 * @return void
 	 */
-	function creatio2_support() {
+	function nook_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 
 		// Make theme available for translation.
-		load_theme_textdomain( 'creatio2' );
+		load_theme_textdomain( 'nook' );
 	}
 
 endif;
 
-add_action( 'after_setup_theme', 'creatio2_support' );
+add_action( 'after_setup_theme', 'nook_support' );
 
-if ( ! function_exists( 'creatio2_styles' ) ) :
+if ( ! function_exists( 'nook_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
@@ -42,21 +42,21 @@ if ( ! function_exists( 'creatio2_styles' ) ) :
 	 *
 	 * @return void
 	 */
-	function creatio2_styles() {
+	function nook_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'creatio2-style',
+			'nook-style',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'creatio2-style' );
+		wp_enqueue_style( 'nook-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'creatio2_styles' );
+add_action( 'wp_enqueue_scripts', 'nook_styles' );
