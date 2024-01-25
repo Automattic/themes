@@ -4,7 +4,10 @@
  * Slug: freddie/comments
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
+
 <!-- wp:comments {"className":"wp-block-comments-query-loop"} -->
 <div class="wp-block-comments wp-block-comments-query-loop">
 	<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|80"}}},"layout":{"type":"constrained","justifyContent":"left"}} -->
