@@ -26,7 +26,7 @@
 <h3 class="wp-block-heading" style="padding-left:1rem;font-size:1.4rem;line-height:1"><?php echo esc_html__( 'Related posts', 'ritratto' ); ?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":0,"query":{"perPage":"3","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[5]},"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained"}} -->
+<!-- wp:query {"queryId":0,"query":{"perPage":"3","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained"}} -->
 <main class="wp-block-query alignwide"><!-- wp:post-template {"align":"wide","style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"default","columnCount":3}} -->
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"1rem","right":"1rem","top":"1.5rem","bottom":"3rem"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1rem"},"dimensions":{"minHeight":"100%"},"border":{"right":{"width":"2px"},"bottom":{"width":"2px"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group" style="border-right-width:2px;border-bottom-width:2px;min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:1.5rem;padding-right:1rem;padding-bottom:3rem;padding-left:1rem"><!-- wp:post-title {"level":4,"isLink":true,"style":{"spacing":{"padding":{"right":"1rem"}},"typography":{"fontSize":"2.4rem"}}} /-->
