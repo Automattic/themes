@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.7 =
+* Remove theme.json instrument serif (#7629)
+
 = 0.0.6 =
 * Assembler: Fonts, text balance, field styling (#7617)
 
