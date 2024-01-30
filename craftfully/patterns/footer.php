@@ -12,7 +12,7 @@ declare( strict_types = 1 );
 <div class="wp-block-group alignfull has-accent-3-background-color has-background" style="border-top-color:var(--wp--preset--color--foreground);border-top-style:dashed;border-top-width:1px;border-bottom-color:var(--wp--preset--color--foreground);border-bottom-style:dashed;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--60)"><!-- wp:group {"align":"wide","layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 <div class="wp-block-group alignwide"><!-- wp:site-title /-->
 
-<!-- wp:navigation {"ref":1489,"overlayMenu":"never","style":{"typography":{"textTransform":"none","fontStyle":"normal","fontWeight":"300","letterSpacing":"0px"}},"fontFamily":"system-font"} /-->
+<!-- wp:navigation {"overlayMenu":"never","style":{"typography":{"textTransform":"none","fontStyle":"normal","fontWeight":"300","letterSpacing":"0px"}},"fontFamily":"system-font"} /-->
 
 <!-- wp:social-links {"iconColor":"background","iconColorValue":"#ffffff","iconBackgroundColor":"primary","iconBackgroundColorValue":"#11181F","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|20"}}},"className":"is-style-default"} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"pinterest"} /-->
