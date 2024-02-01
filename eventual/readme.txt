@@ -12,6 +12,9 @@ As its name states Eventual is a theme designed for events and ceremonies. It is
 
 == Changelog ==
 
+= 1.0.1 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
+
 = 1.0.0 =
 * Initial release
 

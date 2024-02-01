@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.8 =
+* Hide jetpack and core patterns (#7633)
+
 = 0.0.7 =
 * Remove theme.json instrument serif (#7629)
 

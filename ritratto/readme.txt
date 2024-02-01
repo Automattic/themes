@@ -12,6 +12,9 @@ Besides an appreciable headshot, the theme offers large titles, descriptions, an
 
 == Changelog ==
 
+= 1.0.2 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
+
 = 1.0.1 =
 * Fix Ritratto and Magalog (Blogorama) (#7506)
 

@@ -12,6 +12,9 @@ Stage is the perfect theme for our users engaged in artistic activities. Its con
 
 == Changelog ==
 
+= 1.0.2 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
+
 = 1.0.1 =
 * Template updates. (#7475)
 

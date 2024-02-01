@@ -12,6 +12,9 @@ A beautifully designed blog theme displaying large typography and customizable c
 
 == Changelog ==
 
+= 1.0.1 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
+
 = 1.0.0 =
 * Initial release
 
