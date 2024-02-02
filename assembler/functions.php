@@ -57,7 +57,12 @@ if ( ! function_exists( 'assembler_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 		// Unregister Jetpack form patterns and core patterns bundled in WordPress.
+		// Simple sites
 		assembler_unregister_patterns();
+		add_filter( 'wp_loaded', function () {
+			// Atomic sites
+			assembler_unregister_patterns();
+		} );
 		// Remove theme support for the core and featured patterns coming from the Dotorg pattern directory.
 		remove_theme_support( 'core-block-patterns' );
 	}
