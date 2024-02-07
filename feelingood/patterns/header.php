@@ -20,12 +20,12 @@ declare( strict_types = 1 );
 	<div class="wp-block-column is-vertically-aligned-center" style="padding-right:0px;padding-left:0px">
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.7"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},":hover":{"color":{"text":"var:preset|color|contrast"}}}},"layout":{"selfStretch":"fit","flexSize":null}},"textColor":"contrast","className":"rotate-10","fontSize":"xxx-large","fontFamily":"smooch"} -->
-			<p class="has-text-align-center rotate-10 has-contrast-color has-text-color has-link-color has-smooch-font-family has-xxx-large-font-size" style="line-height:0.7"><?php echo esc_html__( 'Feelin&rsquo; Good!', 'feelingood' ); ?></p>
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"0.7","letterSpacing":"0px"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},":hover":{"color":{"text":"var:preset|color|contrast"}}}},"layout":{"selfStretch":"fit","flexSize":null}},"textColor":"contrast","className":"rotate-10","fontSize":"xxx-large","fontFamily":"smooch"} -->
+			<p class="has-text-align-center rotate-10 has-contrast-color has-text-color has-link-color has-smooch-font-family has-xxx-large-font-size" style="letter-spacing:0px;line-height:0.7"><?php echo esc_html__( 'Feelin&rsquo; Good!', 'feelingood' ); ?></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600"}},"fontFamily":"noto-sans-jp"} -->
-			<p class="has-text-align-center has-noto-sans-jp-font-family" style="font-style:normal;font-weight:600;line-height:1">いい気分だわ！</p>
+			<!-- wp:paragraph {"align":"center","style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600","letterSpacing":"0px"}},"fontFamily":"noto-sans-jp"} -->
+			<p class="has-text-align-center has-noto-sans-jp-font-family" style="font-style:normal;font-weight:600;letter-spacing:0px;line-height:1">いい気分だわ！</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
