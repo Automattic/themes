@@ -12,6 +12,9 @@ Freddie is a theme using a full-screen background image to captivate the viewer 
 
 == Changelog ==
 
+= 1.0.1 =
+* Freddie: Submission preps (#7627)
+
 = 1.0.0 =
 * Initial release
 
