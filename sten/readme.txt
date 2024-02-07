@@ -12,6 +12,9 @@ Sten is a simple blogging theme with a functional design. It is ideal for taking
 
 == Changelog ==
 
+= 1.0.2 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 0.0.1 =
 * Initial release
 

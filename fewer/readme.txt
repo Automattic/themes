@@ -12,6 +12,9 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 
 == Changelog ==
 
+= 1.0.3 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 1.0.2 =
 * missing changelog
 

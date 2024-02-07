@@ -12,7 +12,7 @@ const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub
 const sandboxRootFolder = '/home/wpdev/public_html/';
 const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
 const isWin = process.platform === 'win32';
-const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree'];
+const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree', 'twentytwentyfour'];
 
 const commands = {
 	"push-button-deploy": {
@@ -74,6 +74,10 @@ const commands = {
 		helpText: 'Use SVN to checkout the given core themes from the wpcom SVN repository.',
 		additionalArgs: '<theme-slug>',
 		run: (args) => checkoutCoreTheme(args?.[1])
+	},
+	"pull-all-themes": {
+		helpText: 'Use rsync to copy all public theme files from your sandbox to your local machine.',
+		run: pullAllThemes
 	},
 	"pull-core-themes": {
 		helpText: 'Use rsync to copy all public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
@@ -910,6 +914,21 @@ async function checkoutCoreTheme(theme) {
 	`);
 }
 
+async function pullAllThemes() {
+	console.log("Pulling ALL themes from sandbox.");
+	let allThemes = await getActionableThemes();
+	for (let theme of allThemes) {
+		try {
+		await executeCommand(`
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ ./${theme}/ 
+		`, true);
+		}
+		catch (err) {
+			console.log('Error pulling:', err);
+		}
+	}
+}
+
 async function pullCoreThemes() {
 	console.log("Pulling CORE themes from sandbox.");
 	for (let theme of coreThemes) {
@@ -1099,7 +1118,17 @@ export async function executeCommand(command, logResponse) {
 				detached: true,
 			})
 		} else {
-			child = spawn(process.env.SHELL, ['-c', command], {
+			/*
+			* Determines the shell to execute the command.
+			* - Prioritizes using the user's default shell unless it's fish, a known problematic shell.
+			* - In this case, falls back to `/bin/bash` for better syntax compatibility.
+			*/
+			let shellPath = process.env.SHELL || '/bin/bash';
+			if (shellPath.includes('fish') && fs.existsSync('/bin/bash')) {
+				shellPath = '/bin/bash';
+			}
+
+			child = spawn(shellPath, ['-c', command], {
 				stdio: [process.stdin, 'pipe', 'pipe'],
 				detached: true,
 			});

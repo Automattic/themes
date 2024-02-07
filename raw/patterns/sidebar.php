@@ -71,7 +71,7 @@
 
 <!-- wp:jetpack/field-consent {"requiredText":"(required)","inputColor":"#f7f8f2","labelColor":"#f7f8f2","fieldBackgroundColor":"#111111","borderColor":"#f7f8f2","consentType":"explicit"} /-->
 
-<!-- wp:jetpack/button {"element":"button","text":"Subscribe","textColor":"primary","backgroundColor":"background","width":"100%","lock":{"remove":true},"fontSize":"small","style":{"typography":{"textTransform":"uppercase"}}} /--></div>
+<!-- wp:jetpack/button {"element":"button","text":"Subscribe","textColor":"foreground","backgroundColor":"background","width":"100%","lock":{"remove":true},"fontSize":"small","style":{"typography":{"textTransform":"uppercase"}}} /--></div>
 <!-- /wp:jetpack/contact-form --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

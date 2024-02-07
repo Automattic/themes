@@ -12,6 +12,12 @@ RAW is a theme design inspired by the Brutalist concepts from the homonymous Arc
 
 == Changelog ==
 
+= 1.0.2 =
+* Fix color and templates changes (#7423)
+
+= 1.0.1 =
+* Remove category from taxQuery to avoid a not found error (#7354)
+
 = 1.0.0 =
 * Initial release
 

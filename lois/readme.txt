@@ -12,6 +12,12 @@ A theme in homage to George Lois, visionary American Art Director, and author. W
 
 == Changelog ==
 
+= 1.0.3 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
+
+= 1.0.2 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.1 =
 * fix theme name in style.css (#7006)
 

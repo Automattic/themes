@@ -16,5 +16,5 @@
 <div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:navigation {"ref":67,"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
+<!-- wp:navigation {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
 <!-- /wp:group -->

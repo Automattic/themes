@@ -59,7 +59,8 @@ if ( empty( $featured_page_description ) && ! empty( $featured_options[ 'tag-des
 
 				if ( $i <= 3 ) {
 
-					if ( 1 !== count( $featured_content ) ) {
+					$f_count = is_countable( $featured_content ) ? count( $featured_content ) : 0;
+					if ( 1 !== $f_count ) {
 						// Include the standard featured content template.
 						get_template_part( 'components/features/featured-content/content', 'featured' );
 					} else {

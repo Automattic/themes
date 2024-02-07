@@ -9,7 +9,7 @@
 
 <!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group">
-	<!-- wp:site-title /-->
+	<!-- wp:site-title {"level":0} /-->
 
 	<!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 	<div class="wp-block-group">

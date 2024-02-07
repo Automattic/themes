@@ -19,6 +19,17 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.16 =
+* Bump postcss from 8.4.25 to 8.4.31 (#7407)
+* Do not generate a source map via postcss as it isn't included in the theme (#7335)
+
+= 3.1.15 =
+* Fix error: Template part has been deleted or is unavailable in Erma, Poesis, and Meraki   (#7348)
+* Add tag name main in query in search template (#7350)
+
+= 3.1.14 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 3.1.13 =
 * Replace experimental-link-color with link-color (#7221)
 

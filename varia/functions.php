@@ -166,7 +166,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 
 		$primary    = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : $default_colors['primary']; // $config-global--color-primary-default;
 		$secondary  = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : $default_colors['secondary'];  // $config-global--color-secondary-default;
-		$tertiary   = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg2'] : $default_colors['tertiary'];   // $config-global--color-tertiary-default;
+		$tertiary   = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['fg2'] ?? '' ) : $default_colors['tertiary'];   // $config-global--color-tertiary-default;
 		$foreground = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : $default_colors['foreground'];  // $config-global--color-foreground-default;
 		$background = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : $default_colors['background'];   // $config-global--color-background-default;
 
@@ -226,6 +226,19 @@ if ( ! function_exists( 'varia_setup' ) ) :
 			)
 		);
 
+		// Add support for Content Options.
+		add_theme_support( 'jetpack-content-options', array(
+			'blog-display' => 'content',
+			'featured-images' => array(
+				'archive'         => true,
+				'archive-default' => true,
+				'post'            => true,
+				'post-default'    => true,
+				'page'            => true,
+				//featured images on pages boolean was previously managed by Varia rather than jetpack.  If that value has been set default to that.
+				'page-default'    => get_theme_mod( 'show_featured_image_on_pages', false ),
+			),
+		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'varia_setup' );
@@ -478,47 +491,6 @@ function varia_customize_header_footer( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'varia_customize_header_footer' );
-
-
-/**
- * Add ability to show or hide featured images on pages
- */
-function varia_customize_content_options( $wp_customize ) {
-
-	// Add Content section.
-	$wp_customize->add_section(
-		'jetpack_content_options',
-		array(
-			'title'    => esc_html__( 'Content Options', 'varia' ),
-			'priority' => 100,
-		)
-	);
-
-	// Add visibility setting for featured images on pages
-	$wp_customize->add_setting(
-		'show_featured_image_on_pages',
-		array(
-			'default'           => false,
-			'type'              => 'theme_mod',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'varia_sanitize_checkbox',
-		)
-	);
-
-	// Add control for the visibility of featured images on pages
-	$wp_customize->add_control(
-		'show_featured_image_on_pages',
-		array(
-			'label'       => esc_html__( 'Show the featured image on pages', 'varia' ),
-			'description' => esc_html__( 'Check to display a featured image at the top of your pages when they have one.', 'varia' ),
-			'section'     => 'jetpack_content_options',
-			'priority'    => 10,
-			'type'        => 'checkbox',
-			'settings'    => 'show_featured_image_on_pages',
-		)
-	);
-}
-add_action( 'customize_register', 'varia_customize_content_options' );
 
 /**
  * SVG Icons class.

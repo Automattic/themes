@@ -12,6 +12,9 @@ Dawson is a WordPress portfolio theme specifically tailored for photography. Wit
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove Rubik from Ueno and Dawson (#7351)
+
 = 1.0.0 =
 * Initial release
 

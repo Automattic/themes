@@ -43,7 +43,9 @@ add_action( 'after_setup_theme', 'libretto_jetpack_setup' );
 * If the social menu or the sidebar widgets are active, switch to click-to-scroll
 */
 function libretto_has_footer_widgets() {
-	if ( 0 !== count( libretto_get_active_sidebars() )  ) :
+	$l = libretto_get_active_sidebars();
+	$l_count = is_countable( $l ) ? count( $l ) : 0;
+	if ( 0 !== $l_count  ) :
 		return true;
 	else :
 		return false;

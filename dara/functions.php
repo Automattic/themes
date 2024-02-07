@@ -199,6 +199,7 @@ function dara_the_custom_logo() {
  * Returns the Google font stylesheet URL, if available.
  */
 function dara_fonts_url() {
+	$merriweather = null; // This is most likely missing functionality; adding null init to pass rector.
 	$fonts_url = '';
 
 	/* translators: If there are characters in your language that are not supported
@@ -211,7 +212,7 @@ function dara_fonts_url() {
 	 */
 	$yrsa = esc_html_x( 'on', 'Yrsa font: on or off', 'dara' );
 
-	if ( 'off' !== $source_sans_pro || 'off' !== $merriweather || 'off' !== $Yrsa ) {
+	if ( 'off' !== $source_sans_pro || 'off' !== $merriweather || 'off' !== $yrsa ) {
 		$font_families = array();
 
 		if ( 'off' !== $source_sans_pro ) {

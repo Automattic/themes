@@ -145,6 +145,7 @@
 			"commentGapSmall" : "10px",
 			"commentGapMedium" : "1.25rem",
 			"courseNewsletterGap": "clamp(2.5rem, -0.292rem + 9.306vw, 6.688rem)",
+			"courseThemeVariation": "default",
 			"button": {
 				"radius": "0.5rem",
 				"typography": {
@@ -670,6 +671,18 @@
 				},
 				"css": "& .sensei-lms-course-navigation-module__summary { font-family: var(--wp--preset--font-family--system); }"
 			},
+			"sensei-lms/course-theme-notices": {
+				"css": "& .sensei-course-theme-quiz-graded-notice__text { font-size: clamp(1.25rem, 1.083rem + 0.556vw, 1.5rem); } & .sensei-course-theme-quiz-graded-notice__reset-quiz-form .sensei-course-theme__button { font-size: clamp(1.313rem, 1.188rem + 0.417vw, 1.5rem); }",
+				"elements": {
+					"h2": {
+						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--system)",
+							"fontSize": "clamp(1.5rem, 1.167rem + 1.111vw, 2rem)",
+							"fontWeight": "590"
+						}
+					}
+				}
+			},
 			"sensei-lms/course-title": {
 				"typography": {
 					"fontSize": "clamp(1.5rem, 1.5rem + 0vw, 1.5rem)"
@@ -788,8 +801,44 @@
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"letterSpacing": "0.01em"
 				}
+			},
+			"sensei-lms/quiz-back-to-lesson": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--system)"
+				}
+			},
+			"sensei-lms/quiz-actions": {
+				"css": "& .sensei-quiz-actions-secondary .sensei-quiz-action .quiz-submit { font-size: var(--wp--custom--typography--font-sizes--normal); }"
+			},
+			"sensei-lms/quiz-question": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)"
+				},
+				"elements": {
+					"h2": {
+						"typography": {
+							"fontSize": "clamp(1.5rem, 0.808rem + 2.308vw, 2.25rem)",
+							"fontFamily": "var(--wp--preset--font-family--system)",
+							"fontWeight": "590",
+							"lineHeight": "1",
+							"letterSpacing": "-0.36px"
+						},
+						"spacing": {
+							"margin": {
+								"bottom": "40px",
+								"top": "80px"
+							},
+							"padding": {
+								"bottom": "0",
+								"top": "0",
+								"left": "0",
+								"right": "0"
+							}
+						}
+					}
+				},
+				"css": "& .grade { font-family: var(--wp--preset--font-family--system) } & .sensei-lms-question__answer-feedback--incorrect { --color: #f2ddbe; }"
 			}
-
 		},
 		"color": {
 			"background": "var(--wp--preset--color--background)",

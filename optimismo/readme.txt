@@ -1,16 +1,19 @@
 === Optimismo ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 6.2
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Optimismo is a bold blog theme that allows you to have a big bold message at the front.
+Optimismo is a blog theme with a big bold message at the front.
 
 == Changelog ==
+
+= 1.0.2 =
+* Optimismo: Update for dotorg submission (#7339)
 
 = 1.0.1 =
 * Optimismo: Fix text domain in the footer
@@ -33,3 +36,8 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+Commissioner Font
+Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+Source: https://fonts.google.com/specimen/Commissioner
+-- End of Commissioner Font credits --

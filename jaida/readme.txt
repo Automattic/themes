@@ -12,6 +12,9 @@ A WordPress block theme made for blogging.
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 1.0.0 =
 * Initial release
 

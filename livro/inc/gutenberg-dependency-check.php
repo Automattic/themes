@@ -11,7 +11,7 @@ function print_admin_message( $version ) {
 function show_admin_messages() {
 	$metadata = file_get_contents( get_stylesheet_directory() . '/style.css' );
 	preg_match( '/(?<=Requires Gutenberg:).+/', $metadata, $match );
-	if ( 0 === sizeof( $match ) ) {
+	if ( ! is_countable( $match ) || 0 === count( $match ) ) {
 		return; // Gutenberg is not required
 	}
 	$version = trim( $match[0] );

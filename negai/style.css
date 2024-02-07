@@ -1,17 +1,17 @@
 /*
 Theme Name: Negai
-Theme URI: https://wordpress.com/theme/negai
+Theme URI: https://wordpress.com/theme/negai/
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Negai is a bold blogging theme with large post titles and interesting colour schemes
 Requires at least: 6.0
-Tested up to: 6.2.2
+Tested up to: 6.4
 Requires PHP: 5.7
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: negai
-Tags: blog, one-column, two-columns, block-patterns, block-styles, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, threaded-comments, translation-ready, three-columns, wide-blocks, custom-background, custom-colors, custom-logo, custom-menu, theme-options, news
+Tags: blog, one-column, block-patterns, block-styles, featured-images, full-site-editing, rtl-language-support, style-variations, threaded-comments, translation-ready, wide-blocks
 */
 
 /*
@@ -59,13 +59,12 @@ textarea:focus {
 }
 
 /*
- * Avatar Block
- * Fix border radius setting for the avatar block
- * https://github.com/WordPress/gutenberg/issues/48253
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
  */
-.wp-block-avatar a,
-.wp-block-avatar img {
-	border-radius: inherit;
+.wp-block-navigation ul {
+	padding: unset;
 }
 
 /*
@@ -73,6 +72,7 @@ textarea:focus {
  * Reset the browser default margins for blockquote element
  * https://github.com/WordPress/gutenberg/issues/44129
  */
-.wp-block-pullquote blockquote {
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
 	margin: 0;
 }

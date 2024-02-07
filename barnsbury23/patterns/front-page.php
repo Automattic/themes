@@ -24,7 +24,7 @@
 <h2 class="wp-block-heading alignwide"><?php echo esc_html__( 'What We Do', 'barnsbury23' ); ?></h2>
 <!-- /wp:heading -->
 
-<!-- wp:query {"queryId":15,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[3]}},"displayLayout":{"type":"flex","columns":3},"align":"wide"} -->
+<!-- wp:query {"queryId":15,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null},"displayLayout":{"type":"flex","columns":3},"align":"wide"} -->
 <div class="wp-block-query alignwide"><!-- wp:post-template -->
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"auto","height":"260px","align":"wide","style":{"border":{"radius":"2px"}}} /-->
@@ -157,7 +157,7 @@
 
 <!-- wp:column {"width":"66.6%","layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barnsbury_the-farm.png","dimRatio":0,"minHeight":520,"minHeightUnit":"px"} -->
-<div class="wp-block-cover" style="min-height:520px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-463" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barnsbury_the-farm.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"<?php echo esc_attr__( 'Write title…', 'barnsbury23' ); ?>","fontSize":"large"} -->
+<div class="wp-block-cover" style="min-height:520px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/barnsbury_the-farm.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"<?php echo esc_attr__( 'Write title…', 'barnsbury23' ); ?>","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover -->
@@ -199,7 +199,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.6%"} -->
-<div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:query {"queryId":37,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[4]}},"displayLayout":{"type":"flex","columns":2}} -->
+<div class="wp-block-column" style="flex-basis:66.6%"><!-- wp:query {"queryId":37,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null},"displayLayout":{"type":"flex","columns":2}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:post-title {"level":3,"isLink":true,"style":{"spacing":{"margin":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} /-->

@@ -344,6 +344,7 @@ function libretto_get_active_sidebars() {
  * You can pass a variable to request a particular type of information. Default is URL.
  */
 function libretto_get_header_image( $request = '' ) {
+	$libretto_header_image_height = null;
 	// If there's a featured image set for the post/page, use that
 	if ( libretto_has_post_thumbnail() && is_single() && libretto_jetpack_featured_image_display() ) :
 		$libretto_featured_image      = libretto_get_attachment_image_src( get_the_ID(), get_post_thumbnail_id( get_the_ID() ), 'libretto-fullpage' );
@@ -353,6 +354,7 @@ function libretto_get_header_image( $request = '' ) {
 	  $libretto_featured_image      = wp_get_attachment_image_src( get_post_thumbnail_id(), 'libretto-fullpage' );
 	  $libretto_header_image        = $libretto_featured_image[0];
 	  $libretto_header_image_height = $libretto_featured_image[2];
+	  // Otherwise, use the header image
 	  // Otherwise, use the header image
   elseif ( get_header_image() ) :
 	  $libretto_header_image        = get_header_image();

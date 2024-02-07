@@ -1,4 +1,4 @@
-=== Spearhead ===
+=== Spearhead (Classic) ===
 Contributors: Automattic, Babak Nivi, Cece Yu
 Requires at least: 5.0
 Tested up to: 5.5.1
@@ -19,6 +19,15 @@ Spearhead has support for dark mode; the default color scheme has a light backgr
 Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and was originally donated by Babak Nivi and designed by Cece Yu.
 
 == Changelog ==
+
+= 1.3.16 =
+* Renamed 'Spearhead' to 'Spearhead (Classic)' and 'Spearhead Blocks' to 'Spearhead' (#7459)
+
+= 1.3.15 =
+* Aligned the package files version of Spearhead and Quadrat to the correct versions (#7397)
+
+= 1.3.13 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
 
 = 1.3.12 =
 * Bump tough-cookie and node-sass (#7293)

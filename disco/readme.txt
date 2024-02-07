@@ -12,6 +12,9 @@ Disco is a funky, vibrant, opinionated theme with a monospaced font. Both its st
 
 == Changelog ==
 
+= 1.0.5 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.4 =
 * Update new theme links to point to WPCOM instead of GitHub (#6969)
 

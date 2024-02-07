@@ -14,6 +14,15 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.30 =
+* Default featured images to false and leverage theme mod values that have already been set (#7567)
+
+= 1.6.28 =
+* Programme: add design updates (#7474)
+
+= 1.6.26 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.6.25 =
 * Bump tough-cookie and node-sass (#7293)
 

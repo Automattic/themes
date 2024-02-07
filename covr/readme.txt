@@ -12,6 +12,15 @@ Covr is a beautifully crafted theme that boasts a clean and modern design, speci
 
 == Changelog ==
 
+= 1.0.4 =
+* Updates from theme export (#7560)
+
+= 1.0.3 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
+= 1.0.2 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 1.0.1 =
 * Covr: remove theme key from template part links in templates
 

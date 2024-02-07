@@ -59,6 +59,9 @@ You can add links to a multitude of social services in the slide-out menu using 
 
 == Changelog ==
 
+= 2.0.10 =
+* Public Themes G, H, I: PHP Rector fixes (#7387)
+
 = 2.0.9 =
 * intergalactic 2: Update text domain (#6768)
 

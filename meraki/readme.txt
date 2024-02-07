@@ -11,6 +11,12 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.11 =
+* Update theme.json (#7413)
+
+= 1.0.10 =
+* Fix query block error in search template (#7349)
+
 = 0.0.9 =
 * Blockbase + children: remove __unstableLocation (#6759)
 

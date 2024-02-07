@@ -12,6 +12,9 @@ Bring the Social Media experience to your site and transform it into a repositor
 
 == Changelog ==
 
+= 1.0.1 =
+* Remove category from taxQuery to avoid a not found error (#7354)
+
 = 1.0.0 =
 * Initial release
 

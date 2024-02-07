@@ -8,18 +8,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Simple resume and blog theme with bright personality.
+Luce is a simple resume and blog theme with bright personality.
 
 == Changelog ==
+
+= 1.0.1 =
+* Luce: Minor header fix.  (#7340)
 
 = 1.0.0 =
 * Initial release
 
 == Copyright ==
 
-Luce is based on Luce (https://wordpress.com/theme/luce), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-Luce WordPress Theme, (C) 2022 Automattic
+Luce WordPress Theme, (C) 2023 Automattic
 Luce is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
@@ -44,5 +45,3 @@ Author: Fauxsels
 Source: https://www.pexels.com/photo/man-in-brown-jacket-standing-near-table-3184408/
 Used in the theme screenshot, theme demo, and theme template files.
 -- End of photo credits --
-
-

@@ -48,18 +48,6 @@ if ( ! function_exists( 'course_scripts' ) ) :
 		wp_enqueue_style( 'gravatar-hovercard-style', 'https://unpkg.com/@gravatar-com/hovercards@0.5.7/dist/style.css', array(), 'unversioned' );
 		wp_register_script( 'gravatar-hovercard-js', 'https://unpkg.com/@gravatar-com/hovercards@0.5.7', array(), 'unversioned', false );
 		wp_enqueue_script( 'gravatar-hovercard-setup-js', get_template_directory_uri() . '/assets/js/hovercard-setup.js', array( 'gravatar-hovercard-js' ), wp_get_theme()->get( 'Version' ), true );
-
-		/**
-		 * Temporary Hook to skip the learning mode style when the Sensei LMS is able to provide it.
-		 * It is only used to continue loading the deprecated styles if a old sensei version is installed.
-		 */
-		$use_deprecated_style = apply_filters( 'course_learning_mode_load_styles', true );
-
-		if ( class_exists( 'Sensei_Main' ) && $use_deprecated_style ) {
-			wp_register_style( 'course-sensei-learning-mode', get_stylesheet_directory_uri() . '/learning-mode.css', array(), wp_get_theme()->get( 'Version' ) );
-			wp_enqueue_style( 'course-sensei-learning-mode' );
-		}
-
 	}
 
 endif;
@@ -96,6 +84,10 @@ add_filter(
 	11,
 	3
 );
+
+add_filter( 'body_class', 'add_body_class_for_variation' );
+
+add_action( 'course_theme_variation_loaded', 'enqueue_style_for_variation' );
 
 /**
  * Filter the list of templates for the single lesson page.
@@ -149,3 +141,63 @@ function defer_parsing_of_js( $tag, $handle ) {
 
 add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10, 2 );
 
+/**
+ * Add a body class with the variation.
+ *
+ * @param array $classes Body classes.
+ *
+ * @internal
+ *
+ * @return array Body classes.
+ */
+function add_body_class_for_variation( $classes ) {
+	$css_string    = wp_get_global_stylesheet( array( 'variables' ) );
+	$property_name = '--wp--custom--course-theme-variation';
+
+	// 1. "/": Delimiters that mark the start and end of the regex pattern.
+	// 2. "$property_name": This part of the pattern matches the specific property name, in our case, '--wp--custom--course-theme-variation', defined in Course theme's JSON files.
+	// 3. "\s*": Matches zero or more whitespace characters.
+	// 4. ":": Matches the colon you write to separate the CSS property name and property value.
+	// 5. "\s*": Matches zero or more whitespace characters after the colon.
+	// 6. "([^;]+)": This is a capturing group that matches one or more characters that are not a semicolon. It captures the value of the property.
+	// 7. "/": The closing delimiter of the regex pattern.
+	// Overall, this regex is designed to extract the value associated with a specific CSS property (defined in $property_name).
+	$pattern = "/$property_name\s*:\s*([^;]+)/";
+
+	$variation_name = 'default';
+
+	if ( preg_match( $pattern, $css_string, $matches ) ) {
+		// $matches[0] contains the full match.
+		// $matches[1] contains the CSS value for the specified property.
+		$css_value      = trim( $matches[1] );
+		$classes[]      = 'is-' . $css_value;
+		$variation_name = $css_value;
+	}
+
+	/**
+	 * Action to perform variation specific tasks.
+	 *
+	 * @hook course_theme_variation_loaded Fires after determining which theme variation is loaded.
+	 * @since 1.3.5
+	 *
+	 * @param string $variation_name Name of the variation.
+	 */
+	do_action( 'course_theme_variation_loaded', $variation_name );
+
+	return $classes;
+}
+
+/**
+ * Enqueue the specific stylesheet for the variation.
+ *
+ * @param string $variation_name The current theme variation.
+ *
+ * @since Course 1.3.5
+ */
+function enqueue_style_for_variation( $variation_name ) {
+	if ( empty( $variation_name ) ) {
+		return;
+	}
+
+	wp_enqueue_style( 'course-theme-variation-style', get_template_directory_uri() . '/assets/css/' . $variation_name . '.css', array(), wp_get_theme()->get( 'Version' ) );
+}

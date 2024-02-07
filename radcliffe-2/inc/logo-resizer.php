@@ -38,6 +38,8 @@ add_action( 'customize_register', 'logo_awesomeness_customize_register' );
  * Add support for logo resizing by filtering `get_custom_logo`
  */
 function logo_awesomeness_customize_logo_resize( $html ) {
+	$max = [];
+	$img = [];
 	$size = get_theme_mod( 'logo_size' );
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	// set the short side minimum
@@ -93,6 +95,8 @@ add_filter( 'get_custom_logo', 'logo_awesomeness_customize_logo_resize' );
 
 /* Helper function to determine the max size of the logo */
 function logo_awesomeness_min_max( $short, $long, $short_max, $long_max, $percent, $min ){
+	$max = [];
+	$size = [];
 	$ratio = ( $long / $short );
 	$max['long'] = ( $long_max >= $long ) ? $long : $long_max;
 	$max['short'] = ( $short_max >= ( $max['long'] / $ratio ) ) ? floor( $max['long'] / $ratio ) : $short_max;

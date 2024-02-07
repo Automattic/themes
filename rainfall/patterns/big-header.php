@@ -6,11 +6,11 @@
  */
 ?>
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
+<!-- wp:group {"layout":{"type":"default"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|90","left":"var:preset|spacing|90"}}}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--90);padding-left:var(--wp--preset--spacing--90)">
 
-<!-- wp:columns {"align":"full"} -->
-<div class="wp-block-columns alignfull">
+<!-- wp:columns -->
+<div class="wp-block-columns">
 <!-- wp:column {"width":"75%"} -->
 <div class="wp-block-column" style="flex-basis:75%">
 <!-- wp:heading {"className":"indented-post-title","fontSize":"xx-large"} -->
@@ -21,8 +21,8 @@
 </div>
 <!-- /wp:columns -->
 
-<!-- wp:columns {"align":"full"} -->
-<div class="wp-block-columns alignfull"><!-- wp:column {"verticalAlignment":"bottom","width":"33.33%"} -->
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"bottom","width":"33.33%"} -->
 <div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:33.33%"><!-- wp:heading {"fontSize":"xx-large"} -->
 <h2 class="has-xx-large-font-size"><?php echo esc_html__( '002', 'rainfall' ); ?></h2>
 <!-- /wp:heading -->

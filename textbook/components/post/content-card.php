@@ -15,7 +15,7 @@
 			if ( 'post' === get_post_type() ) { ?>
 		<div class="entry-meta">
 			<?php $category = get_the_category();
-				$category_count = ( count( $category ) );
+				$category_count = is_countable( $category ) ? count( $category ) : 0;
 
 				if ( $category && $category_count >= 2 ) {
 					$cat_links =  '<a href="' . esc_url( get_permalink() ) . '">' . $category[0]->name.'&hellip;</a>';

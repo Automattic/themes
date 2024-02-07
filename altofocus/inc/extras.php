@@ -138,6 +138,9 @@ add_action( 'wp_head', 'altofocus_pingback_header' );
  */
 function altofocus_slideshow_gallery_filter( $output, $attr ) {
 
+	$id = null;
+	$order = null;
+	$size = null;
 	global $post;
 	
 	static $count = 0;
@@ -157,7 +160,7 @@ function altofocus_slideshow_gallery_filter( $output, $attr ) {
 		}
 	}
 
-	extract(shortcode_atts(array(
+	$short_atts = shortcode_atts(array(
 		'order'      => 'ASC',
 		'orderby'    => 'menu_order ID',
 		'id'         => $post->ID,
@@ -168,7 +171,8 @@ function altofocus_slideshow_gallery_filter( $output, $attr ) {
 		'size'       => 'large',
 		'include'    => '',
 		'exclude'    => ''
-	), $attr));
+	), $attr);
+	extract( $short_atts );
 
 	$id = intval($id);
 

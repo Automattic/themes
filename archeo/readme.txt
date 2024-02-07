@@ -12,6 +12,9 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.20 =
+* Remove tags blog-homepage and auto-loading-homepage (#7322)
+
 = 1.0.19 =
 * Make theme available for translation as much as possible (#6484)
 

@@ -12,6 +12,9 @@ A simple blogging theme ideal for writers.
 
 == Changelog ==
 
+= 1.0.1 =
+* Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
+
 = 1.0.0 =
 * Initial release
 

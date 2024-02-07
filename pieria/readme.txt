@@ -12,6 +12,9 @@ Pieria is a theme focused on typography — essentially following a low-level st
 
 == Changelog ==
 
+= 1.0.2 =
+* Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
+
 = 1.0.1 =
 * Pieria: update heading font family (#7238)
 

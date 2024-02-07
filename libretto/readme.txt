@@ -79,6 +79,9 @@ If you'd like to apply the styling to a different paragraph, you can do so by wr
 
 == Changelog ==
 
+= 1.0.14 =
+* Public Themes J, K, L: PHP Rector fixes (#7388)
+
 = 1.0.13 =
 * #2906: Libretto: Search bar overlaps menu items (#6055)
 
