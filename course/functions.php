@@ -46,8 +46,26 @@ if ( ! function_exists( 'course_scripts' ) ) :
 
 		// Load gravatar-hovercard related styles and scripts.
 		wp_enqueue_style( 'gravatar-hovercard-style', 'https://unpkg.com/@gravatar-com/hovercards@0.5.8/dist/style.css', array(), 'unversioned' );
-		wp_register_script( 'gravatar-hovercard-js', 'https://unpkg.com/@gravatar-com/hovercards@0.5.8', array(), 'unversioned', false );
-		wp_enqueue_script( 'gravatar-hovercard-setup-js', get_template_directory_uri() . '/assets/js/hovercard-setup.js', array( 'gravatar-hovercard-js' ), wp_get_theme()->get( 'Version' ), true );
+		wp_register_script(
+			'gravatar-hovercard-js',
+			'https://unpkg.com/@gravatar-com/hovercards@0.5.8',
+			array(),
+			'unversioned',
+			array(
+				'in_footer' => false,
+				'strategy'  => 'defer',
+			)
+		);
+		wp_enqueue_script(
+			'gravatar-hovercard-setup-js',
+			get_template_directory_uri() . '/assets/js/hovercard-setup.js',
+			array( 'gravatar-hovercard-js' ),
+			wp_get_theme()->get( 'Version' ),
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
+		);
 	}
 
 endif;
@@ -115,31 +133,6 @@ function course_theme_filter_single_lesson_template_for_sensei_learning_mode( $p
 
 	return $page_templates;
 }
-
-/**
- * Defer the parsing of specific JS scripts.
- *
- * @param string $tag The <script> tag for the enqueued script.
- * @param string $theme The script's registered handle.
- *
- * @since Course 1.3.3
- *
- * @return string The <script> tag for the enqueued script with defer attribute.
- */
-function defer_parsing_of_js( $tag, $handle ) {
-	$deferred_handles = array(
-		'gravatar-hovercard-js',
-		'gravatar-hovercard-setup-js',
-	);
-
-	if ( in_array( $handle, $deferred_handles, true ) ) {
-		return str_replace( ' src=', ' defer src=', $tag );
-	}
-
-	return $tag;
-}
-
-add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10, 2 );
 
 /**
  * Add a body class with the variation.
