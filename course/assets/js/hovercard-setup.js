@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const hovercards = new Gravatar.Hovercards({});
-
 	const elements = document.getElementsByClassName('wp-block-comments');
 
 	if (elements.length > 0) {
