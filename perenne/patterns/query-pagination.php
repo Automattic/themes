@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: A query pagination
+ * Title: Query Pagination
  * Slug: perenne/query-pagination
  * Inserter: no
  */
