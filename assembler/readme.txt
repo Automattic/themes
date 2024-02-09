@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.10 =
+* Assembler: Try better spacing (#7642)
+
 = 0.0.9 =
 * Unregister Jetpack form patterns on atomic sites (#7634)
 
