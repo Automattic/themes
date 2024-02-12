@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.11 =
+* Assembler: Minor spacing and button margin styling (#7643)
+
 = 0.0.10 =
 * Assembler: Try better spacing (#7642)
 
