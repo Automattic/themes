@@ -534,12 +534,12 @@
 				}
 			},
 			"core/post-navigation-link": {
-				"css": ".wp-block-post-navigation-link a{display:block;text-shadow:2px 2px #000A;}",
+				"css": ".wp-block-post-navigation-link{text-shadow:2px 2px #000A;} &:active{box-shadow:var( --wp--preset--shadow--buttons-active );} &:focus{background-color:var(--wp--preset--color--accent-two);color:var(--wp--preset--color--accent-three);} &:hover{background-color:var(--wp--preset--color--accent-two);color:var(--wp--preset--color--accent-three);} &:focus a{color:var(--wp--preset--color--accent-three); &:hover a{color:var(--wp--preset--color--accent-three);}",
+				"color": {
+					"background": "var(--wp--preset--color--accent-one)"
+				},
 				"elements": {
 					"link": {
-						":active": {
-							"shadow": "var( --wp--preset--shadow--buttons-active )"
-						},
 						":focus": {
 							"color": {
 								"background": "var(--wp--preset--color--accent-two)",
@@ -558,29 +558,25 @@
 								"textDecoration": "none"
 							}
 						},
-						"border": {
-							"radius": "0"
-						},
 						"color": {
-							"background": "var(--wp--preset--color--accent-one)",
 							"text": "var(--wp--preset--color--contrast)"
-						},
-						"shadow": "var( --wp--preset--shadow--buttons )",
-						"spacing": {
-							"padding": {
-								"bottom": "0.5625rem",
-								"left": "1.375rem",
-								"right": "1.375rem",
-								"top": "0.5625rem"
-							}
-						},
-						"typography": {
-							"fontFamily": "var(--wp--preset--font-family--pixeloid-sans)",
-							"fontSize": "var(--wp--preset--font-size--medium)",
-							"lineHeight": "1",
-							"textDecoration": "none"
 						}
 					}
+				},
+				"shadow": "var( --wp--preset--shadow--buttons )",
+				"spacing": {
+					"padding": {
+						"bottom": "0.6875rem",
+						"left": "1.375rem",
+						"right": "1.375rem",
+						"top": "0.6875rem"
+					}
+				},
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--pixeloid-sans)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"lineHeight": "1",
+					"textDecoration": "none"
 				}
 			},
 			"core/post-template": [],
