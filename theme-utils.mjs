@@ -1064,6 +1064,12 @@ async function createGlotPressProject(changedThemes) {
 	for (const themeSlug of changedThemes) {
 		let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
 		let themeVersion = getThemeMetadata(styleCss, 'Version');
+		
+		// Check if theme version is correctly formatted. Temporarily coerce the value to a parseable semver version if it's not.
+		if (!semver.valid(themeVersion)) {
+			console.log(`\n[WARN] Invalid version in style.css for ${themeSlug}: ${themeVersion}\n`);
+			themeVersion = semver.coerce(themeVersion);
+		}
 
 		if (semver.gte(themeVersion, '1.0.0')) {
 			console.log(`\nCreating GlotPress project for ${themeSlug}\n`);
