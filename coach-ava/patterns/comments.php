@@ -5,6 +5,7 @@
  * inserter: no
  */
 
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:comments {"className":"wp-block-comments-query-loop"} -->

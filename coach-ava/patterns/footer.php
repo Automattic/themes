@@ -5,6 +5,8 @@
  * Categories: hidden
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 <!-- wp:group {"style":{"spacing":{"blockGap":"","padding":{"top":"7.5rem","bottom":"10rem"},"margin":{"top":"0rem","bottom":"0rem"}},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"backgroundColor":"contrast","textColor":"primary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-primary-color has-contrast-background-color has-text-color has-background has-link-color" style="margin-top:0rem;margin-bottom:0rem;padding-top:7.5rem;padding-bottom:10rem"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"5rem"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->

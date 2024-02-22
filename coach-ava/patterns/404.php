@@ -5,6 +5,7 @@
  * Inserter: no
  */
 
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:heading {"textAlign":"center","level":1,"fontSize":"x-large"} -->

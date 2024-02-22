@@ -5,6 +5,8 @@
  * Categories: hidden
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
