@@ -5,6 +5,8 @@
  * Categories: featured, footer
  * Block Types: core/template-part/footer
  */
+
+	declare( strict_types = 1 );
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}},"layout":{"type":"constrained","contentSize":""}} -->
 <div class="wp-block-group alignfull" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
@@ -43,13 +45,16 @@
 	<!-- wp:group {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide has-link-color" style="margin-top:var(--wp--preset--spacing--60)">
 		<!-- wp:paragraph {"align":"center","lock":{"move":false,"remove":true},"className":"has-small-font-size","fontSize":"x-small"} -->
-		<p class="has-text-align-center has-small-font-size has-x-small-font-size"><?php
+		<p class="has-text-align-center has-small-font-size has-x-small-font-size">
+		<?php
 			/* Translators: WordPress link. */
 			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'feelingood' ) ) . '" rel="nofollow">WordPress</a>';
 			echo sprintf(
 				esc_html__( 'Designed with %1$s', 'feelingood' ),
 				$wordpress_link
-		);?></p>
+			);
+			?>
+		</p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
