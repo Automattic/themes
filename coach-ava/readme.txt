@@ -1,5 +1,5 @@
 === Coach Ava ===
-Contributors: the WordPress team
+Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.3.1
 Requires PHP: 5.7
@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-\'Coach Ava\' is a theme designed for coaching professionals. It is tailored for showcasing services, blog posts, and podcasts — the ideal platform to establish a solid online presence and connect coaches with their audience.
+'Coach Ava' is a theme designed for coaching professionals. It is tailored for showcasing services, blog posts, and podcasts — the ideal platform to establish a solid online presence and connect coaches with their audience.
 
 == Changelog ==
 
