@@ -20,7 +20,7 @@ declare( strict_types = 1 );
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"33%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33%"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 <div class="wp-block-group"><!-- wp:social-links {"iconBackgroundColor":"foreground","iconBackgroundColorValue":"#404040","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|20"}}}} -->
 <ul class="wp-block-social-links has-small-icon-size has-icon-background-color"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
 
