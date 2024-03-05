@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.11 =
+* Lettre: round of fixes (#7664)
+
 = 1.1.10 =
 * Lettre: Make sure the elements in the header and the footer don't bump to the screen edges (#7363)
 
