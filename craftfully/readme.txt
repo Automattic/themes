@@ -12,6 +12,9 @@ A cheerful WordPress blogging theme dedicated to all things homemade and delight
 
 == Changelog ==
 
+= 1.0.3 =
+* Craftfully: Fix issues with sidebar (#7669)
+
 = 1.0.2 =
 * Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
 
