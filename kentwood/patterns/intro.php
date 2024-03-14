@@ -4,6 +4,8 @@
  * Slug: kentwood/intro
  * Categories: featured, text
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50","top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"tertiary","textColor":"primary","layout":{"type":"constrained"}} -->

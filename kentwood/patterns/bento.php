@@ -4,6 +4,8 @@
  * Slug: kentwood/bento
  * Categories: featured, call-to-action
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"constrained"}} -->

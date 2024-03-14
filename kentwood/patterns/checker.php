@@ -4,6 +4,8 @@
  * Slug: kentwood/checker
  * Categories: featured, text
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:columns {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":{"left":"0"}},"color":{"background":"#020048"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->

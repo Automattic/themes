@@ -5,6 +5,8 @@
  * Categories: featured, header
  * Block Types: core/template-part/header
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/tree-architecture-sky-mansion-house-building-1007350-pxhere.com-edit.jpg","dimRatio":50,"isUserOverlayColor":true,"focalPoint":{"x":0.5,"y":1},"minHeight":100,"minHeightUnit":"vh","customGradient":"linear-gradient(180deg,rgb(0,0,0) 12%,rgba(0,0,0,0.32) 51%,rgba(0,0,0,0.1) 70%,rgb(0,0,0) 87%)","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"default"}} -->

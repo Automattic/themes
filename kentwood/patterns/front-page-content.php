@@ -4,6 +4,8 @@
  * Slug: kentwood/front-page-content
  * Categories: featured
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:pattern {"slug":"kentwood/intro"} /-->

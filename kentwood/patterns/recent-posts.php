@@ -4,6 +4,8 @@
  * Slug: kentwood/recent-posts
  * Categories: featured, posts
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->

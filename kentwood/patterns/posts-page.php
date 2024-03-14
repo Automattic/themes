@@ -4,6 +4,8 @@
  * Slug: kentwood/posts-page
  * Categories: featured, posts
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:query {"query":{"perPage":8,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide"} -->

@@ -4,6 +4,8 @@
  * Slug: kentwood/page-with-toc
  * Categories: featured, text
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"1056px"}} -->
