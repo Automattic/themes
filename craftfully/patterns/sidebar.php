@@ -65,7 +65,7 @@ declare( strict_types = 1 );
 <p class="has-small-font-size"><?php echo esc_html__( 'Stay updated with our latest tutorials and ideas by joining my newsletter.', 'craftfully' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:jetpack/subscriptions {"borderRadius":50,"borderColor":"contrast","padding":12} /--></div>
+<!-- wp:jetpack/subscriptions {"borderRadius":50,"borderColor":"foreground","padding":12} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
