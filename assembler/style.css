@@ -135,21 +135,18 @@ footer {
 }
 
 .contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
-    font-size: inherit;
+	font-size: inherit;
+	width: auto;
+	padding: 0 4px;
+	transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), top 0.15s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
-    width: auto;
-    padding: 0 4px;
-    transition: transform 0.15s cubic-bezier(.4,0,.2,1), top 0.15s cubic-bezier(.4,0,.2,1), font-size 0.15s cubic-bezier(.4,0,.2,1);
-}
-
-.contact-form .is-style-animated .grunion-field-wrap .grunion-field.has-placeholder~.animated-label__label, 
-.contact-form .is-style-animated .grunion-field-wrap .grunion-field:focus~.animated-label__label, 
-.contact-form .is-style-animated .grunion-field-wrap .grunion-field:not(:placeholder-shown)~.animated-label__label, 
-.contact-form .is-style-animated .grunion-field-wrap.grunion-field-select-wrap .animated-label__label {
-    background-color: var(--wp--custom--input--color--background) !important;
-    transform: translateY(-11px) translateX(-4px); /* Moves the label out of the field. */
+.contact-form .is-style-animated .grunion-field-wrap.grunion-field-select-wrap .animated-label__label,
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field.has-placeholder ~ .animated-label__label,
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:focus ~ .animated-label__label,
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:not(:placeholder-shown) ~ .animated-label__label {
+	background-color: var(--wp--custom--input--color--background) !important;
+	transform: translateY(-11px) translateX(-4px); /* Moves the label out of the field. */
 }
 
 .contact-form label,
