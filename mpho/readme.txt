@@ -12,6 +12,9 @@ Mpho is a minimalist single column theme that draws inspiration from short-sized
 
 == Changelog ==
 
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Update index.html
 * Update theme.json

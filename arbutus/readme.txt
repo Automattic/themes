@@ -12,6 +12,9 @@ Arbutus is a simple blogging theme that supports full-site editing. It comes wit
 
 == Changelog ==
 
+= 1.0.18 =
+* Optimize images (#7671)
+
 = 1.0.17 =
 * Arbutus: Remove bottom margin inherited from heading element (#7328)
 

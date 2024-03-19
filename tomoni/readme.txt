@@ -12,6 +12,9 @@ Tomoni is a theme that displays a use case of multilingual content with Japanese
 
 == Changelog ==
 
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Tomoni: Various improvements and submission prep (#7483)
 

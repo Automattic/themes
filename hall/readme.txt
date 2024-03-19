@@ -12,6 +12,9 @@ Hall is a blog theme that presents posts in different Query Loops through the us
 
 == Changelog ==
 
+= 1.0.1 =
+* Optimize images (#7671)
+
 = 1.0.0 =
 * Initial release
 

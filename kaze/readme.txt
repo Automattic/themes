@@ -12,6 +12,9 @@ Kaze is a simple 3-column dark-colored theme with small font sizes.
 
 == Changelog ==
 
+= 1.0.1 =
+* Optimize images (#7671)
+
 = 1.0.0 =
 * Initial release
 

@@ -12,6 +12,9 @@ DOS is a blog theme designed for the nostalgic ones, a tribute to the folks that
 
 == Changelog ==
 
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Fix issues with dos templates and patterns (#7301)
 

@@ -12,6 +12,9 @@ A bold, opinionated theme for music and learning.
 
 == Changelog ==
 
+= 1.0.10 =
+* Optimize images (#7671)
+
 = 1.0.9 =
 * Loudness: Make sure the elements in the header and the footer don't bump to the screen edges (#7364)
 

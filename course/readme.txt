@@ -12,6 +12,9 @@ Course is a flexible and modern education theme for anyone wanting to share thei
 
 == Changelog ==
 
+= 1.3.6 =
+* Optimize images (#7671)
+
 = 1.3.5 =
 * Style the "Awaiting Grade" notice (#7401)
 * Remove legacy Learning Mode CSS as it's part of Sensei now (#7431)

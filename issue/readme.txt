@@ -12,6 +12,9 @@ Issue is a magazine theme focused on sizable typography and imagery to grow your
 
 == Changelog ==
 
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Issue: Compress screenshot image size (#7213)
 

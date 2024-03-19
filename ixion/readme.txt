@@ -152,6 +152,9 @@ Ixion also supports the following features:
 
 == Changelog ==
 
+= 1.1.10 =
+* Optimize images (#7671)
+
 = 1.1.9 =
 * Public Themes G, H, I: PHP Rector fixes (#7387)
 

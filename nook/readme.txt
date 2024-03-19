@@ -12,6 +12,9 @@ Nook is a classic blogging theme offering a delightful canvas for your DIY proje
 
 == Changelog ==
 
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Delete wp-custom-template-qi-blocks-full-width.html template (#7622)
 

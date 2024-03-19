@@ -12,6 +12,9 @@ Creatio 2 is a simple, minimal theme that supports full-site editing and global 
 
 == Changelog ==
 
+= 1.0.6 =
+* Optimize images (#7671)
+
 = 1.0.5 =
 * Update page.html (#7444)
 

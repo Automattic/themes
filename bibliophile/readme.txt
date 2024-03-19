@@ -12,6 +12,9 @@ Bibliophile was designed to provide an impeccable reading experience. Its header
 
 == Changelog ==
 
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 

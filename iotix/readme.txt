@@ -12,6 +12,9 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.10 =
+* Optimize images (#7671)
+
 = 1.0.9 =
 * Add navigation block markup provided by CBT (#7277)
 

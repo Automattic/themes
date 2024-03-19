@@ -11,6 +11,9 @@ Awburn is the ideal choice for creating an online presence for your business. As
 
 == Changelog ==
 
+= 1.0.5 =
+* Optimize images (#7671)
+
 = 1.0.4 =
 * Awburn: Make sure full width elements stretch edge to edge. This also fix 404 template. (#7380)
 

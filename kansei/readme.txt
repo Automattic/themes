@@ -11,6 +11,9 @@ Kansei is a theme reminiscing of the Japanese book design tradition and graphic 
 
 == Changelog ==
 
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Kansei: Fix query pagination (#7656)
 
