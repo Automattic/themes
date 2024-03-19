@@ -2,38 +2,29 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"background": true,
-			"custom": true,
-			"customDuotone": true,
-			"customGradient": true,
-			"defaultDuotone": true,
-			"defaultGradients": true,
-			"defaultPalette": true,
-			"duotone": [],
-			"gradients": [],
 			"palette": [
 				{
-					"color": "#f6f5f4",
+					"color": "#f6f3e9",
 					"name": "Base",
 					"slug": "base"
 				},
 				{
-					"color": "#ff4b0a",
+					"color": "#933c1f",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
 				{
-					"color": "#ff4b0a",
+					"color": "#933c1f",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#c42b08",
+					"color": "#7e341b",
 					"name": "Secondary",
 					"slug": "secondary"
 				},
 				{
-					"color": "#f6f5f4",
+					"color": "#f6f3e9",
 					"name": "Tertiary",
 					"slug": "tertiary"
 				}
@@ -44,17 +35,10 @@
 			"contentSize": "960px",
 			"wideSize": "1200px"
 		},
-		"shadow": {
-			"defaultPresets": true,
-			"presets": []
-		},
 		"spacing": {
 			"customSpacingSize": true,
 			"spacingScale": {
-				"increment": 1.5,
-				"mediumStep": 1.5,
-				"operator": "*",
-				"steps": 7,
+				"increment": 1,
 				"unit": "rem"
 			},
 			"spacingSizes": [],
@@ -73,6 +57,7 @@
 			"fluid": true,
 			"fontFamilies": [
 				{
+					"fontFace": [],
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
 					"name": "System Font",
 					"slug": "system-font"
@@ -80,64 +65,62 @@
 				{
 					"fontFace": [
 						{
-							"fontFamily": "Albert Sans",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/albert-sans_normal_400.ttf"
-							]
-						},
-						{
-							"fontFamily": "Albert Sans",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [
-								"file:./assets/fonts/albert-sans_normal_700.ttf"
-							]
-						},
-						{
-							"fontFamily": "Albert Sans",
+							"fontFamily": "Overused Grotesk",
 							"fontStyle": "italic",
 							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/albert-sans_italic_400.ttf"
+								"file:./assets/fonts/overused-grotesk_italic_400.woff2"
 							]
 						},
 						{
-							"fontFamily": "Albert Sans",
-							"fontStyle": "italic",
-							"fontWeight": "700",
+							"fontFamily": "Overused Grotesk",
+							"fontStyle": "normal",
+							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/albert-sans_italic_700.ttf"
+								"file:./assets/fonts/overused-grotesk_normal_400.woff2"
+							]
+						},
+						{
+							"fontFamily": "Overused Grotesk",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/overused-grotesk_normal_600.woff2"
+							]
+						},
+						{
+							"fontFamily": "Overused Grotesk",
+							"fontStyle": "italic",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/overused-grotesk_italic_600.woff2"
 							]
 						}
 					],
-					"fontFamily": "Albert Sans",
-					"name": "Albert Sans",
-					"slug": "albert-sans"
+					"fontFamily": "Overused Grotesk",
+					"slug": "overused-grotesk"
 				},
 				{
 					"fontFace": [
 						{
-							"fontFamily": "Roboto Condensed",
+							"fontFamily": "Inter Display",
 							"fontStyle": "normal",
-							"fontWeight": "700",
+							"fontWeight": "600",
 							"src": [
-								"file:./assets/fonts/roboto-condensed_normal_700.ttf"
+								"file:./assets/fonts/inter-display_normal_600.ttf"
 							]
 						},
 						{
-							"fontFamily": "Roboto Condensed",
+							"fontFamily": "Inter Display",
 							"fontStyle": "italic",
-							"fontWeight": "700",
+							"fontWeight": "600",
 							"src": [
-								"file:./assets/fonts/roboto-condensed_italic_700.ttf"
+								"file:./assets/fonts/inter-display_italic_600.ttf"
 							]
 						}
 					],
-					"fontFamily": "Roboto Condensed",
-					"name": "Roboto Condensed",
-					"slug": "roboto-condensed"
+					"fontFamily": "Inter Display",
+					"slug": "inter-display"
 				}
 			],
 			"fontSizes": [
@@ -322,7 +305,7 @@
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
 					"fontWeight": "700",
-					"lineHeight": 1.4,
+					"lineHeight": 1.3999999999999999,
 					"textTransform": "uppercase"
 				}
 			},
@@ -354,11 +337,12 @@
 					"blockGap": "0rem"
 				},
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--rubik)",
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
-					"fontWeight": "600",
-					"lineHeight": "1.2",
-					"textTransform": "uppercase"
+					"fontWeight": "700",
+					"lineHeight": "1.3",
+					"textTransform": "none"
 				}
 			},
 			"core/paragraph": {
@@ -507,11 +491,25 @@
 				}
 			},
 			"core/site-tagline": {
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var(--wp--preset--color--contrast)"
+						}
+					}
+				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"lineHeight": "1.3"
 				}
 			},
 			"core/site-title": {
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				},
 				"elements": {
 					"link": {
 						":hover": {
@@ -519,14 +517,19 @@
 								"textDecoration": "underline"
 							}
 						},
+						"color": {
+							"text": "var(--wp--preset--color--contrast)"
+						},
 						"typography": {
 							"textDecoration": "none"
 						}
 					}
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
-					"fontWeight": "700"
+					"fontSize": "4.8rem",
+					"fontWeight": "700",
+					"letterSpacing": "-0.1rem",
+					"lineHeight": "0.75"
 				}
 			}
 		},
@@ -575,24 +578,27 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
+					"fontSize": "var(--wp--preset--font-size--large)",
 					"fontStyle": "normal",
 					"fontWeight": "600",
 					"lineHeight": "1",
-					"textTransform": "uppercase"
+					"textTransform": "none"
 				}
 			},
 			"h2": {
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
 					"fontSize": "var(--wp--preset--font-size--small)",
 					"fontStyle": "normal",
-					"fontWeight": "600",
+					"fontWeight": "700",
 					"lineHeight": "1.2",
 					"textTransform": "uppercase"
 				}
 			},
 			"h3": {
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
 					"fontSize": "0.75rem",
 					"fontStyle": "normal",
 					"fontWeight": "600",
@@ -602,6 +608,7 @@
 			},
 			"h4": {
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
 					"fontSize": "0.75rem",
 					"fontStyle": "normal",
 					"fontWeight": "700"
@@ -609,6 +616,7 @@
 			},
 			"h5": {
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
 					"fontSize": "0.75rem",
 					"fontStyle": "normal",
 					"fontWeight": "700"
@@ -616,6 +624,7 @@
 			},
 			"h6": {
 				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
 					"fontSize": "0.75rem"
 				}
 			},
@@ -624,19 +633,25 @@
 					"text": "var(--wp--preset--color--contrast)"
 				},
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--rubik)",
+					"fontFamily": "var(--wp--preset--font-family--inter-display)",
 					"fontWeight": "400",
 					"lineHeight": "1.125"
 				}
 			},
 			"link": {
 				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--secondary)"
+					},
 					"typography": {
 						"textDecoration": "none"
 					}
 				},
 				"color": {
-					"text": "var(--wp--preset--color--primary)"
+					"text": "var(--wp--preset--color--contrast)"
+				},
+				"typography": {
+					"textDecoration": "none"
 				}
 			}
 		},
@@ -650,9 +665,10 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--albert-sans)",
+			"fontFamily": "var(--wp--preset--font-family--overused-grotesk)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
-			"lineHeight": "1.2"
+			"letterSpacing": "0.02rem",
+			"lineHeight": "1.5"
 		}
 	},
 	"templateParts": [
