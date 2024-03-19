@@ -7,7 +7,7 @@ Description: A theme for writers that want to publish a newsletter using Jetpack
 Requires at least: 6.1
 Tested up to: 6.1
 Requires PHP: 5.6
-Version: 1.1.11
+Version: 1.1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: lettre
@@ -153,8 +153,8 @@ input:not([type="submit"]):not([type="button"]):focus {
 /*
  * Refine mobile navigation styling.
  */
-.wp-block-navigation a:where(:not(.wp-element-button)):focus,
-.wp-block-pages-list__item:focus.wp-block-navigation a:where(:not(.wp-element-button)):focus {
+.wp-block-navigation li:not(.current-menu-item) a:where(:not(.wp-element-button)):focus:not(:hover),
+.wp-block-pages-list__item:focus.wp-block-navigation:not(.current-menu-item) a:where(:not(.wp-element-button)):focus:not(:hover) {
 	text-decoration: none !important;
 }
 
@@ -163,7 +163,6 @@ input:not([type="submit"]):not([type="button"]):focus {
 }
 
 @media screen and (max-width: 37.5em) {
-
 	.wp-block-pages-list__item {
 		text-align: right;
 	}
