@@ -8,7 +8,6 @@
  * @since Hall 1.0
  */
 
-declare( strict_types = 1 );
 
 if ( ! function_exists( 'hall_support' ) ) :
 

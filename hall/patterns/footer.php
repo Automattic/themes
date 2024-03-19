@@ -5,7 +5,6 @@
  * Categories: footer
  * Block Types: core/template-part/footer
  */
-declare( strict_types = 1 );
 ?>
 
 <!-- wp:spacer {"height":"var(--wp--preset--spacing--80)"} -->
