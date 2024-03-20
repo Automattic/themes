@@ -12,6 +12,9 @@ CTLG is a free, responsive WordPress block theme specifically designed for creat
 
 == Changelog ==
 
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 

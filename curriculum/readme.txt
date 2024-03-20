@@ -12,6 +12,9 @@ Curriculum is a blog theme that echoes the structure of a professional profile w
 
 == Changelog ==
 
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Remove category from taxQuery to avoid a not found error (#7354)
 
