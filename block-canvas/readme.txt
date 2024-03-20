@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.30 =
+* Block Canvas: Update header alignment (#7575)
+
 = 0.0.29 =
 * Remove auto-loading-homepage tag. (#7300)
 

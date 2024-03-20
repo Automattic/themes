@@ -1,0 +1,163 @@
+/*
+Theme Name: Assembler
+Theme URI: https://wordpress.com/theme/assembler
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Assemble something beautiful.
+Requires at least: 6.4
+Tested up to: 6.4
+Requires PHP: 7.0
+Version: 0.0.11
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: assembler
+Tags: blog, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready
+*/
+
+/* Progresive enhancement to reduce widows and orphans. */
+h1, h2, h3, h4, h5, h6, blockquote {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* Tiny tweak to make sure footers are properly spaced. */
+footer {
+    margin-top: 0 !important;
+}
+
+/* Provide better default color for social links */
+.wp-block-social-links.is-style-logos-only li.wp-social-link {
+    color: currentColor;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+    height: 1em;
+    width: 1em;
+}
+
+.wp-block-social-links.has-small-icon-size {
+    font-size: 20px;
+}
+
+/* Set default line height for font size presets. */
+.has-xx-large-font-size {
+   line-height: 1;
+}
+
+/* Add space between the header and first element, if its a paragraph. */
+.entry-content > p:first-child {
+    margin-top: var(--wp--style--root--padding-left); 
+}
+
+/* Move header core/navigation to the right on mobile. */
+.order-0 {
+    order: 0;
+}
+
+.order-1 {
+    order: 1;
+}
+
+.grow-0 {
+    flex-grow: 0;
+}
+
+.grow {
+    flex-grow: 1;
+}
+  
+@media (min-width: 600px) {
+    .md\:order-0 {
+        order: 0;
+    }
+
+    .md\:order-1 {
+      order: 1;
+    }
+
+    .md\:grow-0 {
+        flex-grow: 0;
+    }
+    
+    .md\:grow {
+        flex-grow: 1;
+    }
+
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Style Jetpack forms */
+.wp-block-jetpack-contact-form-container {
+    --jetpack--contact-form--input-padding-left: 16px !important;
+}
+
+.wp-block-jetpack-contact-form input,
+.wp-block-jetpack-contact-form textarea {
+    backdrop-filter: saturate(1.1);
+    background-color: transparent;
+    border-color: var(--wp--custom--input--border--color);
+    border-radius: var(--wp--custom--input--border--radius) !important; /* Requires !important to override local variables with theme variables. */
+    border-width: var(--wp--custom--input--border--width) !important;  /* Requires !important to override local variables with theme variables. */
+    filter: brightness(0.975);
+    font-size: inherit;
+    color: inherit;
+    transition: border-color 0.15s cubic-bezier(.4,0,.2,1);
+}
+
+.jetpack-contact-form .jetpack-field .jetpack-field__input, 
+.jetpack-contact-form .jetpack-field .jetpack-field__textarea {
+    border-color: var(--wp--custom--input--border--color);
+}
+
+.wp-block-jetpack-contact-form input:not(:placeholder-shown),
+.wp-block-jetpack-contact-form textarea:not(:placeholder-shown),
+.wp-block-jetpack-contact-form input:focus,
+.wp-block-jetpack-contact-form textarea:focus {
+    filter: brightness(1);
+    backdrop-filter: saturate(1);
+}
+
+.wp-block-jetpack-contact-form input:focus,
+.wp-block-jetpack-contact-form textarea:focus {
+    border-color: var(--wp--custom--input--focus--border--color);
+}
+
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label) select, 
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label)>input, 
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label)>textarea {
+    padding-top: var(--field-padding); /* Remove unnecessary padding adjustment from Jetpack. */
+}
+
+.contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
+    font-size: inherit;
+}
+
+.contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
+    width: auto;
+    padding: 0 4px;
+    transition: transform 0.15s cubic-bezier(.4,0,.2,1), top 0.15s cubic-bezier(.4,0,.2,1), font-size 0.15s cubic-bezier(.4,0,.2,1);
+}
+
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field.has-placeholder~.animated-label__label, 
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:focus~.animated-label__label, 
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:not(:placeholder-shown)~.animated-label__label, 
+.contact-form .is-style-animated .grunion-field-wrap.grunion-field-select-wrap .animated-label__label {
+    background-color: var(--wp--custom--input--color--background) !important;
+    transform: translateY(-11px) translateX(-4px); /* Moves the label out of the field. */
+}
+
+.contact-form label,
+.wp-block-jetpack-contact-form label,
+.jetpack-field-label .rich-text.jetpack-field-label__input {
+    font-weight: 500;
+}
+
+.contact-form__input-error {
+    font-size: var(--wp--preset--font-size--small);
+}

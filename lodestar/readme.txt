@@ -113,6 +113,9 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.22 =
+* lodestar: Sync D134558:  Handle the case where there is no featured image (PHP 8.1 Warning) (#7609)
+
 = 1.0.21 =
 * Public Themes J, K, L: PHP Rector fixes (#7388)
 

@@ -17,10 +17,10 @@
 <div class="wp-block-group" style="padding-top:0;padding-bottom:var(--wp--preset--spacing--50)">
 	<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 	<div class="wp-block-group">
-		<!-- wp:site-title {"style":{"typography":{"lineHeight":1.388888889}}} /-->
+		<!-- wp:site-title {"level":0,"style":{"typography":{"lineHeight":1.388888889}}} /-->
 
 		<!-- wp:paragraph -->
-		<p><a href="#"><?php _e( 'Tumblr', 'archivo' ); ?></a> / <a href="#"><?php _e( 'Instagram', 'archivo' ); ?></a> / <a href="#"><?php _e( 'Email', 'archivo' ); ?></a></p>
+		<p><a href="#"><?php echo esc_html__( 'Tumblr', 'archivo' ); ?></a> / <a href="#"><?php echo esc_html__( 'Instagram', 'archivo' ); ?></a> / <a href="#"><?php echo esc_html__( 'Email', 'archivo' ); ?></a></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

@@ -1,7 +1,7 @@
 === Trellick ===
 Contributors: Automattic
-Requires at least: 5.8
-Tested up to: 6.2
+Requires at least: 6.0
+Tested up to: 6.4
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Trellick is a raw, brutalist blog theme that strips away the polished veneer of the samey web design to show the untamed essence of the digital realm.
 
 == Changelog ==
+
+= 1.0.3 =
+* Trellick: Submission Preps (#7570)
 
 = 1.0.2 =
 * Trellick: Change the markup of the sidebar to aside (#7282)
@@ -41,4 +44,36 @@ This theme bundles the following third-party resources:
 
 Public Sans Font
 Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
-Source: https://fonts.google.com/specimen/Public+Sans 
+Source: https://fonts.google.com/specimen/Public+Sans
+
+"Bumblebee drawing, vintage insect illustration."
+Public Domain
+https://www.rawpixel.com/image/6327280/image-public-domain-vintage-illustrations-bee
+
+"Plate (ca.1936) by Margaret Stottlemeyer. Original from The National Gallery of Art. Digitally enhanced by rawpixel."
+Public Domain
+https://www.rawpixel.com/image/3340417/free-illustration-image-vintage-antique-art
+
+"Irises (1890–1900) by Kogyo Tsukioka. Original from The Rijksmuseum. Digitally enhanced by rawpixel."
+Public Domain
+https://www.rawpixel.com/image/3320287/free-illustration-image-artwork-public-domain-print-cc0
+
+"Roman head with helmet (1876–1924) drawing in high resolution by Gerrit Willem Dijsselhof. Original from the Rijksmuseum. Digitally enhanced by rawpixel."
+Public Domain
+https://www.rawpixel.com/image/3077149/free-illustration-image-antique-drawing-sculpture
+
+"Space story. Original public domain image from Wikimedia Commons"
+Public Domain
+https://www.rawpixel.com/image/3283859/free-photo-image-pattern-fractal-space
+
+"Hand drawn rufous milkcap mushroom. Original from Biodiversity Heritage Library. Digitally enhanced by rawpixel."
+Public Domain
+https://www.rawpixel.com/image/2880233/free-illustration-image-mushroom-watercolor-vintage
+
+"Menselijk oog met een afwijking (1836–1912) print in high resolution by Isaac Weissenbruch. Original from The Rijksmuseum. Digitally enhanced by rawpixel."
+Public Domain
+https://www.rawpixel.com/image/2742839/free-illustration-image-vintage-eye
+
+"Edgar Degas's Orchestra Musicians (1872) famous painting. Original from Wikimedia Commons."
+Public Domain
+https://www.rawpixel.com/image/7726921/image-art-public-domain-edgar-degas

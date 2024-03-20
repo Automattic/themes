@@ -1,7 +1,7 @@
 === Exmoor ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Exmoor is a business themethat has a landing page style front page.
 
 == Changelog ==
+
+= 1.0.5 =
+* Exmoor: updates for the theme review (#7628)
 
 = 1.0.4 =
 * Small tweaks to force update following `style-variations` tag fix (#7209)

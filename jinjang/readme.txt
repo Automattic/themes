@@ -1,7 +1,7 @@
-=== jinjang ===
+=== JinJang ===
 Contributors: Automattic
 Requires at least: 5.8
-Tested up to: 6.1.1
+Tested up to: 6.3
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,9 +17,9 @@ JinJang is a blog theme with a split, 50:50 layout like Yan Yang.
 
 == Copyright ==
 
-jinjang WordPress Theme, (C) 2023 Automattic
-jinjang is distributed under the terms of the GNU GPL.
-jinjang is based on Lineup (https://wordpress.com/theme/lineup/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+JinJang WordPress Theme, (C) 2023 Automattic
+JinJang is distributed under the terms of the GNU GPL.
+JinJang is based on Lineup (https://wordpress.com/theme/lineup/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

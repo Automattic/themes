@@ -5,6 +5,8 @@
  * Categories: hidden
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"constrained"}} -->

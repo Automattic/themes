@@ -27,6 +27,9 @@ AltoFocus includes support for Jetpack's Infinite Scroll as well as other featur
 
 == Changelog ==
 
+= 1.0.12 =
+* altofocus: Sync changes from D133939 (#7595)
+
 = 1.0 - Apr 20 2017 =
 * Initial release
 

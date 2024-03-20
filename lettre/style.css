@@ -7,7 +7,7 @@ Description: A theme for writers that want to publish a newsletter using Jetpack
 Requires at least: 6.1
 Tested up to: 6.1
 Requires PHP: 5.6
-Version: 1.1.10
+Version: 1.1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: lettre
@@ -97,6 +97,10 @@ input:not([type="submit"]):not([type="button"]):focus {
 	margin-top: var(--wp--style--block-gap);
 }
 
+.wp-block-post-comments-form h3#reply-title {
+	margin-bottom: var(--wp--style--block-gap);
+}
+
 .wp-block-post-comments .navigation + .comment-respond {
 	margin-top: calc(3 * var(--wp--style--block-gap));
 }
@@ -149,9 +153,9 @@ input:not([type="submit"]):not([type="button"]):focus {
 /*
  * Refine mobile navigation styling.
  */
-.wp-block-navigation a:where(:not(.wp-element-button)):focus,
-.wp-block-pages-list__item:focus.wp-block-navigation a:where(:not(.wp-element-button)):focus {
-	text-decoration: none;
+.wp-block-navigation li:not(.current-menu-item) a:where(:not(.wp-element-button)):focus:not(:hover),
+.wp-block-pages-list__item:focus.wp-block-navigation:not(.current-menu-item) a:where(:not(.wp-element-button)):focus:not(:hover) {
+	text-decoration: none !important;
 }
 
 .wp-block-pages-list__item.current-menu-item a:where(:not(.wp-element-button)) {
@@ -159,8 +163,14 @@ input:not([type="submit"]):not([type="button"]):focus {
 }
 
 @media screen and (max-width: 37.5em) {
-
 	.wp-block-pages-list__item {
 		text-align: right;
 	}
+}
+
+/*
+ * Add spacing to the search input field, to bring the styling in line with subscription block.
+ */
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input {
+	padding-left: 23px;
 }

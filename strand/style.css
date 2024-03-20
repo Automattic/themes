@@ -1,0 +1,64 @@
+/*
+Theme Name: Strand
+Theme URI: 
+Author: Automattic
+Author URI: https://automattic.com
+Description: Strand is a simple blogging and newsletter theme. The main feature is its split layout, with a full height column containing a sticky header and subscription form and scrollable content on the other column.
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.7
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: 
+Text Domain: strand
+Tags: blog, editor-style, full-site-editing, translation-ready
+
+*//*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
+
+.wp-block-separator.is-style-default {
+	width: 50px;
+	margin-left: 0;
+	color: rgba(0,0,0,0.15);
+}
