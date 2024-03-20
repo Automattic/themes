@@ -12,6 +12,9 @@ A simple blogging theme ideal for writers.
 
 == Changelog ==
 
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
 

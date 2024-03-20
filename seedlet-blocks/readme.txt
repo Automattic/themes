@@ -12,6 +12,9 @@ A block theme based on the Seedlet theme.
 
 == Changelog ==
 
+= 2.1.33 =
+* Optimize images (#7671)
+
 = 2.1.32 =
 * Bump postcss from 8.4.25 to 8.4.31 (#7407)
 

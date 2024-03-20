@@ -12,6 +12,9 @@ A visual story theme.
 
 == Changelog ==
 
+= 1.0.6 =
+* Optimize images (#7671)
+
 = 1.0.5 =
 * Storia: Make sure the elements don't bump to the screen edges (#7369)
 

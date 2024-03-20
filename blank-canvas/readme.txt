@@ -16,6 +16,9 @@ The theme’s default styles are conservative, relying on simple sans-serif font
 
 == Changelog ==
 
+= 1.0.12 =
+* Optimize images (#7671)
+
 = 1.2.11 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

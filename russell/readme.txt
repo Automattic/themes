@@ -16,6 +16,9 @@ For more information see our README.md file.
 
 == Changelog ==
 
+= 1.0.29 =
+* Optimize images (#7671)
+
 = 1.0.28 =
 * Bump postcss from 8.4.25 to 8.4.31 (#7407)
 

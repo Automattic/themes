@@ -12,6 +12,9 @@ Ron is a minimalist blogging theme designed with a focus on delivering an except
 
 == Changelog ==
 
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Update theme ron (#7563)
 

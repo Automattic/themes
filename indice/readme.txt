@@ -11,6 +11,9 @@ Indice is a tribute to the iconic indicehibit, an archetypal open source CMS tha
 
 == Changelog ==
 
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Indice: Make the footer is always at the bottom of the viewport (#7594)
 

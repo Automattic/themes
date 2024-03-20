@@ -12,6 +12,9 @@ Bute is a blog theme that has a full-screen front page
 
 == Changelog ==
 
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Bute: Fix the side padding for the header (#7347)
 

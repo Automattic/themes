@@ -12,6 +12,9 @@ Optimismo is a blog theme with a big bold message at the front.
 
 == Changelog ==
 
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Optimismo: Update for dotorg submission (#7339)
 

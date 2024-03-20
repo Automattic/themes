@@ -12,6 +12,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.44 =
+* Optimize images (#7671)
+
 = 1.0.43 =
 * Bump postcss from 8.4.25 to 8.4.31 (#7407)
 

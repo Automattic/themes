@@ -12,6 +12,9 @@ Masu is a blog theme inspired by a traditional square wooden box used to measure
 
 == Changelog ==
 
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

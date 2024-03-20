@@ -12,6 +12,9 @@ Exegi monumentum aere perennius.
 
 == Changelog ==
 
+= 0.0.2 =
+* Optimize images (#7671)
+
 = 0.0.1 =
 * Initial release
 

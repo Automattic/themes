@@ -12,6 +12,9 @@ Vetro was designed to be a portfolio theme, and is composed by wide width layout
 
 == Changelog ==
 
+= 1.0.11 =
+* Optimize images (#7671)
+
 = 1.0.10 =
 * Vetro: Make sure the elements don't bump to the screen edges (#7368)
 

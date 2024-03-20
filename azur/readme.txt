@@ -12,6 +12,9 @@ Azur draws its inspiration from the mesmerizing hues of the Azure coast, where t
 
 == Changelog ==
 
+= 1.0.1 =
+* Optimize images (#7671)
+
 = 1.0.0 =
 * Initial release
 

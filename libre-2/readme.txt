@@ -53,6 +53,9 @@ Quick Specs (all measurements in pixels)
 
 == Changelog ==
 
+= 2.2.9 =
+* Optimize images (#7671)
+
 = 2.2.8 =
 * Public Themes J, K, L: PHP Rector fixes (#7388)
 

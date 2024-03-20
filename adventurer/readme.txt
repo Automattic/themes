@@ -12,6 +12,9 @@ A theme for travelers, writers and photographers.
 
 == Changelog ==
 
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Rainfall & Adventurer: Update sidebar tag to `aside` (#7284)
 
