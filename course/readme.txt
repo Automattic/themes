@@ -12,6 +12,10 @@ Course is a flexible and modern education theme for anyone wanting to share thei
 
 == Changelog ==
 
+= 1.3.7 =
+* Fix unnecessary padding in outline buttons (#7462)
+* Add theme variation body class in editor (#7465)
+
 = 1.3.6 =
 * Optimize images (#7671)
 
