@@ -781,9 +781,6 @@ async function versionBumpTheme(theme, addChanges) {
 		}
 		if (addChanges) {
 			await executeCommand(`git add ${file}`);
-			if (isPackageJson) {
-				await executeCommand(`git add package-lock.json`);
-			}
 		}
 	}
 }
