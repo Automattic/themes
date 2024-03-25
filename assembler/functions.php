@@ -97,3 +97,101 @@ if ( ! function_exists( 'assembler_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'assembler_styles' );
+
+
+gutenberg_register_block_style(
+	array( 'core/group', 'core/columns' ),
+	array(
+		'name'       => '2',
+		'label'      => __( 'Light', 'assembler' ),
+		'style_data' => array(
+			'color'    => array(
+				'background' => 'var(--wp--preset--color--theme-2)',
+			)
+		),
+	)
+);
+
+gutenberg_register_block_style(
+	array( 'core/group', 'core/columns' ),
+	array(
+		'name'       => '3',
+		'label'      => __( 'Dark', 'assembler' ),
+		'style_data' => array(
+			'color'    => array(
+				'background' => 'var(--wp--preset--color--theme-4)',
+				'text'       => 'var(--wp--preset--color--theme-2)',
+			),
+			'elements' => array(
+                'button'   => array(
+					'color'  => array(
+                        'background' => 'var(--wp--preset--color--theme-1)',
+						'text' => 'var(--wp--preset--color--theme-4)',
+					),
+					':hover' => array(
+						'color' => array(
+							'background' => 'var(--wp--preset--color--theme-2)',
+						),
+					),
+				),
+                'heading'   => array(
+					'color'  => array(
+						'text' => 'var(--wp--preset--color--theme-1)',
+					)
+				),
+				'link'   => array(
+					'color'  => array(
+						'text' => 'currentColor',
+					),
+					':hover' => array(
+						'color' => array(
+							'text' => 'currentColor',
+						),
+					),
+				),
+			),
+		),
+	)
+);
+
+gutenberg_register_block_style(
+	array( 'core/group', 'core/columns' ),
+	array(
+		'name'       => '4',
+		'label'      => __( 'Darkest', 'assembler' ),
+		'style_data' => array(
+			'color'    => array(
+				'background' => 'var(--wp--preset--color--theme-5)',
+				'text'       => 'var(--wp--preset--color--theme-2)',
+			),
+			'elements' => array(
+                'button'   => array(
+					'color'  => array(
+                        'background' => 'var(--wp--preset--color--theme-1)',
+						'text' => 'var(--wp--preset--color--theme-4)',
+					),
+					':hover' => array(
+						'color' => array(
+							'background' => 'var(--wp--preset--color--theme-2)',
+						),
+					),
+				),
+                'heading'   => array(
+					'color'  => array(
+						'text' => 'var(--wp--preset--color--theme-1)',
+					)
+				),
+				'link'   => array(
+					'color'  => array(
+						'text' => 'currentColor',
+					),
+					':hover' => array(
+						'color' => array(
+							'text' => 'currentColor',
+						),
+					),
+				),
+			),
+		),
+	)
+);
