@@ -13,7 +13,7 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 == Changelog ==
 
 = 1.0.4 =
-* Optimize images (#7671)
+* Added images and font licenses
 
 = 1.0.3 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
@@ -28,6 +28,24 @@ Fewer is perfect for showcasing portfolios and blogs. With a clean and opinionat
 * Initial release
 
 == Copyright ==
+
+Theme Screenshot Images Licences
+CC0: https://stocksnap.io/photo/industrial-building-TUKK1NF6OP
+CC0: https://stocksnap.io/photo/city-building-V3GOWLODUO
+CC0: https://stocksnap.io/photo/city-building-PYPNQ6RPZY
+CC0: https://stocksnap.io/photo/architecture-building-NRSU0MZCMT
+
+Epilogue Font
+https://github.com/Etcetera-Type-Co/Epilogue
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at http://scripts.sil.org/OFL
+
+Albert Sans Font
+https://github.com/usted/Albert-Sans
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is copied below, and is also available with a FAQ at https://scripts.sil.org/OFL
+
+Sora Font
+https://github.com/sora-xor/sora-font
+The SORA typeface is an open-source project and available for download and use following the Open Font License (OFL).
 
 Fewer WordPress Theme, (C) 2023 Automattic
 Fewer is distributed under the terms of the GNU GPL.
