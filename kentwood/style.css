@@ -1,0 +1,55 @@
+/*
+Theme Name: Kentwood
+Theme URI: https://wordpress.com/theme/kentwood/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Kentwood is perfect for learning institutions.
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kentwood
+Tags: blog, education, one-column, wide-blocks, block-patterns, block-styles, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready, food-and-drink
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover,
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):focus {
+	background-color: var(--wp--preset--color--secondary);
+	border-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.5px !important;
+	text-underline-offset: .1em;
+}
+
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
