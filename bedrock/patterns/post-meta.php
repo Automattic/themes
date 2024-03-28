@@ -6,6 +6,7 @@
  */
 declare( strict_types = 1 );
 ?>
+
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"},"typography":{"lineHeight":"1"}},"textColor":"secondary","layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group has-secondary-color has-text-color" style="line-height:1">
 	<!-- wp:image {"width":"20px","height":"20px","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
