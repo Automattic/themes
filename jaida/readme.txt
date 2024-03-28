@@ -12,6 +12,9 @@ A WordPress block theme made for blogging.
 
 == Changelog ==
 
+= 1.0.3 =
+* Add image license to readme.txt
+
 = 1.0.2 =
 * Optimize images (#7671)
 
