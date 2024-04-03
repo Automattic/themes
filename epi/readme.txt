@@ -13,6 +13,9 @@ Epi is a simple blog theme with a sticky left sidebar.
 == Changelog ==
 
 = 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
 * Optimize images (#7671)
 
 = 1.0.0 =

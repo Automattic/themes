@@ -13,6 +13,9 @@ The design goal of Ici was to craft a mobile-first layout with high visual densi
 == Changelog ==
 
 = 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
 * Optimize images (#7671)
 
 = 1.0.1 =

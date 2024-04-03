@@ -13,6 +13,9 @@ A block theme based on the Seedlet theme.
 == Changelog ==
 
 = 2.1.33 =
+* Lossless image optimization (#7671)
+
+= 2.1.33 =
 * Optimize images (#7671)
 
 = 2.1.32 =

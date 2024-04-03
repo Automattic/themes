@@ -13,6 +13,9 @@ Alter is a lean theme for bloggers that goes directly to the point, showing text
 == Changelog ==
 
 = 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
 * Optimize images (#7671)
 
 = 1.0.0 =

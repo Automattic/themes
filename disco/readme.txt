@@ -13,6 +13,9 @@ Disco is a funky, vibrant, opinionated theme with a monospaced font. Both its st
 == Changelog ==
 
 = 1.0.6 =
+* Lossless image optimization (#7671)
+
+= 1.0.6 =
 * Optimize images (#7671)
 
 = 1.0.5 =

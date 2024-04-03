@@ -13,6 +13,9 @@ Calyx is a simple single-page theme that supports full-site editing.
 == Changelog ==
 
 = 1.0.14 =
+* Lossless image optimization (#7671)
+
+= 1.0.14 =
 * Optimize images (#7671)
 
 = 1.0.13 =

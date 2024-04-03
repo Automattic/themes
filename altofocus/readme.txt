@@ -27,6 +27,9 @@ AltoFocus includes support for Jetpack's Infinite Scroll as well as other featur
 
 == Changelog ==
 
+= 1.0.13 =
+* Lossless image optimization (#7671)
+
 = 1.0.12 =
 * altofocus: Sync changes from D133939 (#7595)
 

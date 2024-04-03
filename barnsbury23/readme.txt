@@ -13,6 +13,9 @@ The recently updated Barnsbury is an earthy, friendly theme made with farming an
 == Changelog ==
 
 = 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
 * Optimize images (#7671)
 
 = 1.0.2 =

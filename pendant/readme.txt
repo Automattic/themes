@@ -13,6 +13,9 @@ An elegant product-focused theme.
 == Changelog ==
 
 = 1.0.16 =
+* Lossless image optimization (#7671)
+
+= 1.0.16 =
 * Optimize images (#7671)
 
 = 1.0.15 =

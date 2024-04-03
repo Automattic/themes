@@ -13,6 +13,9 @@ Sunderland is a simple WordPress event theme designed for announcing upcoming ev
 == Changelog ==
 
 = 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
 * Optimize images (#7671)
 
 = 1.0.3 =

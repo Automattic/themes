@@ -13,6 +13,9 @@ Iotix provides a great starting point for creating a business or startup website
 == Changelog ==
 
 = 1.0.10 =
+* Lossless image optimization (#7671)
+
+= 1.0.10 =
 * Optimize images (#7671)
 
 = 1.0.9 =

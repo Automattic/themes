@@ -13,6 +13,9 @@ Entry is a uniquely styled WordPress block theme designed for journaling. It fea
 == Changelog ==
 
 = 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
 * Optimize images (#7671)
 
 = 1.0.1 =

@@ -14,6 +14,9 @@ Feelin' Good is blog theme with a bold vaporwave aesthetic. Its nostalgic atmosp
 == Changelog ==
 
 = 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
 * Optimize images (#7671)
 
 = 1.0.0 =

@@ -17,6 +17,9 @@ For more information see our README.md file.
 == Changelog ==
 
 = 1.0.29 =
+* Lossless image optimization (#7671)
+
+= 1.0.29 =
 * Optimize images (#7671)
 
 = 1.0.28 =

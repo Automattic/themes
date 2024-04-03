@@ -13,6 +13,9 @@ Arbutus is a simple blogging theme that supports full-site editing. It comes wit
 == Changelog ==
 
 = 1.0.18 =
+* Lossless image optimization (#7671)
+
+= 1.0.18 =
 * Optimize images (#7671)
 
 = 1.0.17 =

@@ -15,6 +15,9 @@ A design system for WordPress sites built with Gutenberg.
 == Changelog ==
 
 = 1.6.31 =
+* Lossless image optimization (#7671)
+
+= 1.6.31 =
 * Optimize images (#7671)
 
 = 1.6.30 =

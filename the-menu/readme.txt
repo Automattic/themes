@@ -13,6 +13,9 @@ A simple theme designed to facilitate restaurant owners' experience when buildin
 == Changelog ==
 
 = 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
 * Optimize images (#7671)
 
 = 1.0.1 =

@@ -12,6 +12,9 @@ Luce is a simple resume and blog theme with bright personality.
 
 == Changelog ==
 
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
 = 1.0.1 =
 * Luce: Minor header fix.  (#7340)
 

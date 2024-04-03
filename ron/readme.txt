@@ -13,6 +13,9 @@ Ron is a minimalist blogging theme designed with a focus on delivering an except
 == Changelog ==
 
 = 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
 * Optimize images (#7671)
 
 = 1.0.3 =

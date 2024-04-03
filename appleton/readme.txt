@@ -12,6 +12,9 @@ Appleton is a theme for creative professionals, such as photographers, designers
 
 == Changelog ==
 
+= 1.0.8 =
+* Lossless image optimization (#7671)
+
 = 0.0.8 =
 * Optimize images (#7671)
 

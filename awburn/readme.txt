@@ -12,6 +12,9 @@ Awburn is the ideal choice for creating an online presence for your business. As
 == Changelog ==
 
 = 1.0.5 =
+* Lossless image optimization (#7671)
+
+= 1.0.5 =
 * Optimize images (#7671)
 
 = 1.0.4 =

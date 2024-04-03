@@ -13,6 +13,9 @@ Mayland Blocks is a block theme based on the Mayland theme.
 == Changelog ==
 
 = 2.1.34 =
+* Lossless image optimization (#7671)
+
+= 2.1.34 =
 * Optimize images (#7671)
 
 = 2.1.33 =

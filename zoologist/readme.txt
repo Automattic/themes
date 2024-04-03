@@ -13,6 +13,9 @@ Zoologist is a simple blogging theme that supports full-site editing.
 == Changelog ==
 
 = 1.0.44 =
+* Lossless image optimization (#7671)
+
+= 1.0.44 =
 * Optimize images (#7671)
 
 = 1.0.43 =

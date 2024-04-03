@@ -13,6 +13,9 @@ Curriculum is a blog theme that echoes the structure of a professional profile w
 == Changelog ==
 
 = 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
 * Optimize images (#7671)
 
 = 1.0.2 =

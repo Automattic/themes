@@ -13,6 +13,10 @@ Common\'s style is anything but ordinary and it speaks for itself. The unique co
 == Changelog ==
 
 = 1.0.4 =
+* Lossless image optimization (#7671)
+* Changes from WordPress Playground (#7703)
+
+= 1.0.4 =
 * Optimize images (#7671)
 
 = 1.0.3 =

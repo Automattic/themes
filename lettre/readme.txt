@@ -13,6 +13,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 == Changelog ==
 
 = 1.1.13 =
+* Lossless image optimization (#7671)
+
+= 1.1.13 =
 * Optimize images (#7671)
 
 = 1.1.12 =

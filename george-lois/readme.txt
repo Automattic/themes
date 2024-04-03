@@ -13,6 +13,9 @@ A theme in homage to George Lois, visionary American Art Director, and author. W
 == Changelog ==
 
 = 1.0.5 =
+* Lossless image optimization (#7671)
+
+= 1.0.5 =
 * Optimize images (#7671)
 
 = 1.0.4 =

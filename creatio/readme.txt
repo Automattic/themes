@@ -13,6 +13,9 @@ Creatio is a simple, minimal theme that supports full-site editing and global st
 == Changelog ==
 
 = 1.0.5 =
+* Lossless image optimization (#7671)
+
+= 1.0.5 =
 * Optimize images (#7671)
 
 = 1.0.4 =

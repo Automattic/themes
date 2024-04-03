@@ -20,6 +20,9 @@ Shoreditch is a functional and responsive theme perfect for your business’s on
 == Changelog ==
 
 = 1.2.11 =
+* Lossless image optimization (#7671)
+
+= 1.2.11 =
 * Optimize images (#7671)
 
 = 1.2.10 =

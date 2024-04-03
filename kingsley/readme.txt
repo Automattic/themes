@@ -13,6 +13,9 @@ Kingsley is a minimalist theme, designed for single-page websites. Its single po
 == Changelog ==
 
 = 1.0.6 =
+* Lossless image optimization (#7671)
+
+= 1.0.6 =
 * Optimize images (#7671)
 
 = 1.0.5 =

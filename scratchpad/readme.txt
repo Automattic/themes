@@ -29,6 +29,9 @@ Scratchpad includes support for Infinite Scroll in Jetpack.
 == Changelog ==
 
 = 1.0.12 =
+* Lossless image optimization (#7671)
+
+= 1.0.12 =
 * Optimize images (#7671)
 
 = 1.0.11 =

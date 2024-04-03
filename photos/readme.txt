@@ -40,6 +40,9 @@ Photos is a single-column blogging theme that showcases your photos in a grid fo
 == Changelog ==
 
 = 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
 * Optimize images (#7671)
 
 = 1.0.2 =

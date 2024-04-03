@@ -13,6 +13,9 @@ StartFit is a business theme perfect for a personal fitness training service.
 == Changelog ==
 
 = 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
 * Optimize images (#7671)
 
 = 1.0.2 =

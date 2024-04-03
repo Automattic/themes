@@ -21,6 +21,9 @@ Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and
 == Changelog ==
 
 = 1.3.17 =
+* Lossless image optimization (#7671)
+
+= 1.3.17 =
 * Optimize images (#7671)
 
 = 1.3.16 =

@@ -18,6 +18,9 @@ This theme was developed using the Gutenberg plugin v13.6.0. Some elements may n
 == Changelog ==
 
 = 1.0.8 =
+* Lossless image optimization (#7671)
+
+= 1.0.8 =
 * Optimize images (#7671)
 
 = 1.0.7 =

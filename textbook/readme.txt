@@ -30,6 +30,9 @@ TextBook includes support for Jetpack's Infinite Scroll and Site Logos, as well 
 
 == Changelog ==
 
+= 1.1.11 =
+* Lossless image optimization (#7671)
+
 = 1.0.11 =
 * Optimize images (#7671)
 

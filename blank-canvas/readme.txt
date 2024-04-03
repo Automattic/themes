@@ -16,6 +16,9 @@ The theme’s default styles are conservative, relying on simple sans-serif font
 
 == Changelog ==
 
+= 1.2.12 =
+* Lossless image optimization (#7671)
+
 = 1.0.12 =
 * Optimize images (#7671)
 

@@ -13,6 +13,9 @@ Farrow is a minimalist theme, designed for single-page websites.
 == Changelog ==
 
 = 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
 * Optimize images (#7671)
 
 = 1.0.1 =

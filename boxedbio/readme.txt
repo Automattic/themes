@@ -13,6 +13,9 @@ Your new Link-in-Bio site, BoxedBio, offers a simple organization of blocks to d
 == Changelog ==
 
 = 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
 * Optimize images (#7671)
 
 = 1.0.0 =

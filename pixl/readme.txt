@@ -13,6 +13,9 @@ Description: Pixl is a simple yet opinionated blogging theme inspired by website
 == Changelog ==
 
 = 1.0.7 =
+* Lossless image optimization (#7671)
+
+= 1.0.7 =
 * Optimize images (#7671)
 
 = 1.0.6 =

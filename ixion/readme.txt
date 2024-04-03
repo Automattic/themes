@@ -153,6 +153,9 @@ Ixion also supports the following features:
 == Changelog ==
 
 = 1.1.10 =
+* Lossless image optimization (#7671)
+
+= 1.1.10 =
 * Optimize images (#7671)
 
 = 1.1.9 =

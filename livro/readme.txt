@@ -14,6 +14,9 @@ Livro is a simple theme designed to evoke the calm feeling you get when you sett
 == Changelog ==
 
 = 1.0.25 =
+* Lossless image optimization (#7671)
+
+= 1.0.25 =
 * Optimize images (#7671)
 
 = 1.0.24 =
