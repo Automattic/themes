@@ -12,6 +12,9 @@ Fotograma is a portfolio theme for photographers seeking to showcase powerful ph
 
 == Changelog ==
 
+= 1.0.4 =
+* Fotograma: Update some default images and contents for submission (#7713)
+
 = 1.0.3 =
 * Fotograma: Preps for submission (#7690)
 

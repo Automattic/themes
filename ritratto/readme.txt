@@ -12,6 +12,9 @@ Besides an appreciable headshot, the theme offers large titles, descriptions, an
 
 == Changelog ==
 
+= 1.0.4 =
+* Updates from @henriqueiamarino (#7712)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 
