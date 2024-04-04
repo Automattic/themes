@@ -4,6 +4,8 @@
  * Slug: bute/front-page
  * Categories: featured
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"position":{"type":""}},"layout":{"type":"default"}} -->
@@ -19,8 +21,8 @@
 
 				<!-- wp:group {"style":{"layout":{"flexSize":"88px","selfStretch":"fixed"}},"layout":{"type":"constrained","contentSize":"900px"}} -->
 				<div class="wp-block-group">
-					<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"lineHeight":"0.8","textTransform":"uppercase","fontStyle":"normal","fontWeight":"800"},"color":{"text":"#dcbc06"}},"fontSize":"huge"} -->
-					<h1 class="wp-block-heading has-text-align-center has-text-color has-huge-font-size" style="color:#dcbc06;font-style:normal;font-weight:800;line-height:0.8;text-transform:uppercase"><?php echo wp_kses_post( __( 'Embark<br>on an<br>Adventure', 'bute' ) ); ?></h1>
+					<!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"lineHeight":"0.8","textTransform":"uppercase","fontStyle":"normal","fontWeight":"800"},"color":{"text":"#dcbc06"}},"fontSize":"xxxx-large"} -->
+					<h1 class="wp-block-heading has-text-align-center has-text-color has-xxxx-large-font-size" style="color:#dcbc06;font-style:normal;font-weight:800;line-height:0.8;text-transform:uppercase"><?php echo wp_kses_post( __( 'Embark<br>on an<br>Adventure', 'bute' ) ); ?></h1>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|base"}}}},"typography":{"fontStyle":"normal","fontWeight":"500"}}} -->

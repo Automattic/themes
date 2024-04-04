@@ -1,7 +1,7 @@
 === Bute ===
 Contributors: Automattic
-Requires at least: 6.2
-Tested up to: 6.2
+Requires at least: 6.0
+Tested up to: 6.4
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -43,10 +43,6 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
-
-Mulish Font
-Licensed under SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
-Source: https://fonts.google.com/specimen/Mulish
 
 CC0 Public Domain Catalina Island Free Stock Image by Jay Mantri
 https://stocksnap.io/photo/catalina-island-D49XR0MX5L
