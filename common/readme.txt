@@ -13,6 +13,9 @@ Common\'s style is anything but ordinary and it speaks for itself. The unique co
 == Changelog ==
 
 = 1.0.5 =
+* Update readme.txt
+
+= 1.0.5 =
 * Add license and sources from images in theme screenshot
 
 = 1.0.4 =

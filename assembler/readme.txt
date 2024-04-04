@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.13 =
+* Assembler: Add color and typography variations (#7710)
+
 = 0.0.12 =
 * Lossless image optimization (#7671)
 * Assembler: Lint styles (#7686)
