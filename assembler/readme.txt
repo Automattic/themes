@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.14 =
+* Adding a change just for redeploy (#7714)
+
 = 0.0.13 =
 * Assembler: Add color and typography variations (#7710)
 
