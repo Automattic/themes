@@ -12,6 +12,12 @@ A WordPress block theme made for blogging.
 
 == Changelog ==
 
+= 1.0.3 =
+* Add image license to readme.txt
+
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 
@@ -38,3 +44,5 @@ This theme bundles the following third-party resources:
 
 Albert Sans from Google Fonts, Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 https://fonts.google.com/specimen/Albert+Sans/about
+
+All the images used in the theme were created by Beatriz Fialho and they are released under the CCO license.

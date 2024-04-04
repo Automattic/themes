@@ -12,6 +12,12 @@ Quadrat is a simple, versatile WordPress theme, designed for blogs and podcasts.
 
 == Changelog ==
 
+= 1.1.56 =
+* Lossless image optimization (#7671)
+
+= 1.1.56 =
+* Optimize images (#7671)
+
 = 1.1.55 =
 * Bump postcss from 8.4.25 to 8.4.31 (#7407)
 

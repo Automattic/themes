@@ -12,6 +12,12 @@ Chanson is an homage to Édith Piaf. It is direct and undisguised, echoing a som
 
 == Changelog ==
 
+= 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
+* Optimize images (#7671)
+
 = 1.0.0 =
 * Initial release
 

@@ -775,15 +775,12 @@ async function versionBumpTheme(theme, addChanges) {
 		const isPackageJson = file === `${theme}/package.json`;
 		if (isPackageJson) {
 			// update theme/package.json and package-lock.json
-			await executeCommand(`npm version ${currentVersion.replace('-wpcom', '')} --workspace=${theme} --silent`);
+			await executeCommand(`npm version ${currentVersion.replace('-wpcom', '')} --workspace=${theme}`);
 		} else {
 			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
 		}
 		if (addChanges) {
 			await executeCommand(`git add ${file}`);
-			if (isPackageJson) {
-				await executeCommand(`git add package-lock.json`);
-			}
 		}
 	}
 }

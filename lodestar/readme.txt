@@ -113,6 +113,12 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.23 =
+* Lossless image optimization (#7671)
+
+= 1.0.23 =
+* Optimize images (#7671)
+
 = 1.0.22 =
 * lodestar: Sync D134558:  Handle the case where there is no featured image (PHP 8.1 Warning) (#7609)
 

@@ -12,6 +12,12 @@ Inspired by the phrase “code is poetry”, this is a geeky theme designed for 
 
 == Changelog ==
 
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Beep: Add strict types to remaining php files (#7546)
 

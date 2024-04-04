@@ -27,6 +27,12 @@ Radcliffe 2 includes support for Jetpack's Infinite Scroll as well as other feat
 
 == Changelog ==
 
+= 2.0.16 =
+* Lossless image optimization (#7671)
+
+= 2.0.16 =
+* Optimize images (#7671)
+
 = 2.0.15 =
 * radcliffe-2: PHP 8.1 updates from wpcom (#7584)
 

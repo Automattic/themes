@@ -12,6 +12,9 @@ A theme in homage to George Lois, visionary American Art Director, and author. W
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
 = 1.0.3 =
 * Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
 

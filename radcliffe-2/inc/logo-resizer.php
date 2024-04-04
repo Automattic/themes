@@ -95,6 +95,9 @@ add_filter( 'get_custom_logo', 'logo_awesomeness_customize_logo_resize' );
 
 /* Helper function to determine the max size of the logo */
 function logo_awesomeness_min_max( $short, $long, $short_max, $long_max, $percent, $min ){
+	$short ??= 1;
+	$long ??= 1;
+
 	$max = [];
 	$size = [];
 	$ratio = ( $long / $short );

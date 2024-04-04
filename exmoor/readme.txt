@@ -12,6 +12,12 @@ Exmoor is a business themethat has a landing page style front page.
 
 == Changelog ==
 
+= 1.0.6 =
+* Lossless image optimization (#7671)
+
+= 1.0.6 =
+* Optimize images (#7671)
+
 = 1.0.5 =
 * Exmoor: updates for the theme review (#7628)
 

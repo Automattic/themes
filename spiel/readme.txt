@@ -12,6 +12,12 @@ Spiel is a game magazine theme.
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Spiel: Edit readme (#7554)
 
