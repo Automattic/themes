@@ -1,7 +1,7 @@
 === Fotograma ===
 Contributors: Automattic
-Requires at least: 6.2
-Tested up to: 6.2
+Requires at least: 6.0
+Tested up to: 6.4
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Fotograma is a portfolio theme for photographers seeking to showcase powerful photography in large sizes.
 
 == Changelog ==
+
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
 
 = 1.0.1 =
 * Fix pattern name, and use pattern in template part (#7206)

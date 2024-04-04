@@ -12,6 +12,12 @@ Hari is a minimalist, product-oriented theme.
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 0.0.4 =
+* Optimize images (#7671)
+
 = 0.0.3 =
 * Blockbase 3 (#6167)
 

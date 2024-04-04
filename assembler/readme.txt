@@ -12,6 +12,13 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.12 =
+* Lossless image optimization (#7671)
+* Assembler: Lint styles (#7686)
+
+= 0.0.12 =
+* Optimize images (#7671)
+
 = 0.0.11 =
 * Assembler: Minor spacing and button margin styling (#7643)
 

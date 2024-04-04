@@ -90,6 +90,9 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Changelog ==
 
+= 1.0.18 =
+* Lossless image optimization (#7671)
+
 = 1.0.17 =
 * #6005: Canard: Fix regression in featured content (#6006)
 

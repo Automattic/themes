@@ -12,6 +12,12 @@ Pomme is a simple portfolio theme for painters.
 
 == Changelog ==
 
+= 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
+* Optimize images (#7671)
+
 = 1.0.0 =
 * Initial release
 

@@ -1,7 +1,7 @@
 === Low Fi ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4.3
+Tested up to: 6.4
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Low Fi is a simple blog theme inspired by Lo-fi aesthetics and beats.
 
 == Changelog ==
+
+= 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
+* Optimize images (#7671)
 
 = 1.0.0 =
 * Initial release

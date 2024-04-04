@@ -12,6 +12,12 @@ Organizer has a simple structure and displays only the necessary information a r
 
 == Changelog ==
 
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 

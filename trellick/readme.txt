@@ -12,6 +12,12 @@ Trellick is a raw, brutalist blog theme that strips away the polished veneer of 
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Trellick: Submission Preps (#7570)
 
