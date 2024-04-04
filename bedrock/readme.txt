@@ -12,6 +12,9 @@ Inspired by the iconic worlds of Minecraft and Minetest, Bedrock is a blog theme
 
 == Changelog ==
 
+= 1.0.4 =
+* Bedrock: Move template parts from patterns and add them to templates (#7680)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 

@@ -27,6 +27,9 @@ AltoFocus includes support for Jetpack's Infinite Scroll as well as other featur
 
 == Changelog ==
 
+= 1.0.14 =
+* pub themes: Restore changes overwritten from latest themes deploy (D144213 D144218 D144223 D144228 D144234 D144240 D144244) (#7708)
+
 = 1.0.13 =
 * Lossless image optimization (#7671)
 

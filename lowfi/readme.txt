@@ -12,6 +12,9 @@ Low Fi is a simple blog theme inspired by Lo-fi aesthetics and beats.
 
 == Changelog ==
 
+= 1.0.2 =
+* Low Fi: Remove the patch version for submission (#7691)
+
 = 1.0.1 =
 * Lossless image optimization (#7671)
 

@@ -113,6 +113,9 @@ Custom color, pattern, or a beautiful image – the choice is yours. To change t
 
 == Changelog ==
 
+= 1.0.24 =
+* pub themes: Restore changes overwritten from latest themes deploy (D144213 D144218 D144223 D144228 D144234 D144240 D144244) (#7708)
+
 = 1.0.23 =
 * Lossless image optimization (#7671)
 
