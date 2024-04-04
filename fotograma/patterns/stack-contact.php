@@ -39,15 +39,15 @@
 		<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.9","letterSpacing":"-0.02em"}},"fontSize":"huge"} -->
-			<p class="has-huge-font-size" style="letter-spacing:-0.02em;line-height:0.9"><a href="#"><?php echo esc_html__( 'Email', 'fotograma' ); ?></a></p>
+			<p class="has-huge-font-size no-underline" style="letter-spacing:-0.02em;line-height:0.9"><a href="#"><?php echo esc_html__( 'Email', 'fotograma' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.9","letterSpacing":"-0.02em"}},"fontSize":"huge"} -->
-			<p class="has-huge-font-size" style="letter-spacing:-0.02em;line-height:0.9"><a href="#"><?php echo esc_html__( 'Tumblr', 'fotograma' ); ?></a></p>
+			<p class="has-huge-font-size no-underline" style="letter-spacing:-0.02em;line-height:0.9"><a href="#"><?php echo esc_html__( 'Tumblr', 'fotograma' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"style":{"typography":{"lineHeight":"0.9","letterSpacing":"-0.02em"}},"fontSize":"huge"} -->
-			<p class="has-huge-font-size" style="letter-spacing:-0.02em;line-height:0.9"><a href="#"><?php echo esc_html__( 'Instagram', 'fotograma' ); ?></a></p>
+			<p class="has-huge-font-size no-underline" style="letter-spacing:-0.02em;line-height:0.9"><a href="#"><?php echo esc_html__( 'Instagram', 'fotograma' ); ?></a></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
