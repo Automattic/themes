@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Footer
- * Slug: fontaine/footer
+ * Title: Footer Dark
+ * Slug: fontaine/footer-dark
  * Categories: footer
  * Block Types: core/template-part/footer
  * Viewport width: 1600
@@ -10,8 +10,8 @@
 declare( strict_types = 1 );
 ?>
 
-<!-- wp:group {"metadata":{"categories":["footer"]},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|40"},"elements":{"link":{"color":{"text":"var:preset|color|theme-5"},":hover":{"color":{"text":"var:preset|color|theme-4"}}}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"},"fontSize":"small"} -->
-<div class="wp-block-group has-link-color has-small-font-size" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:group {"metadata":{"categories":["footer"]},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|40"},"elements":{"link":{"color":{"text":"var:preset|color|theme-1"},":hover":{"color":{"text":"var:preset|color|theme-4"}}}}},"backgroundColor":"theme-5","textColor":"theme-1","layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"},"fontSize":"small"} -->
+<div class="wp-block-group has-theme-1-color has-theme-5-background-color has-text-color has-background has-link-color has-small-font-size" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 	<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 	<div class="wp-block-group">
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->

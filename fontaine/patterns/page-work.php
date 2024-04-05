@@ -154,8 +154,8 @@ declare( strict_types = 1 );
 </main>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|theme-5"},":hover":{"color":{"text":"var:preset|color|theme-3"}}}}},"textColor":"theme-5","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull has-theme-5-color has-text-color has-link-color" style="margin-top:0;margin-bottom:0">
+<!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"}},"position":{"type":""}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0">
 	<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
 </div>
 <!-- /wp:group -->
