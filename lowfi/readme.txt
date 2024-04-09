@@ -1,4 +1,4 @@
-=== Low Fi ===
+=== LowFi ===
 Contributors: Automattic
 Requires at least: 6.0
 Tested up to: 6.4
@@ -8,12 +8,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Low Fi is a simple blog theme inspired by Lo-fi aesthetics and beats.
+LowFi is a simple blog theme inspired by Lo-fi aesthetics and beats.
 
 == Changelog ==
 
 = 1.0.2 =
-* Low Fi: Remove the patch version for submission (#7691)
+* LowFi: Remove the patch version for submission (#7691)
 
 = 1.0.1 =
 * Lossless image optimization (#7671)
@@ -26,8 +26,8 @@ Low Fi is a simple blog theme inspired by Lo-fi aesthetics and beats.
 
 == Copyright ==
 
-Low Fi WordPress Theme (C) 2023 Automattic
-Low Fi is distributed under the terms of the GNU GPL.
+LowFi WordPress Theme (C) 2023 Automattic
+LowFi is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
