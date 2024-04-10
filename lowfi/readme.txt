@@ -12,6 +12,9 @@ LowFi is a simple blog theme inspired by Lo-fi aesthetics and beats.
 
 == Changelog ==
 
+= 1.0.3 =
+* Low Fi: Remove the space in the theme display name. No change in the slug and the textdomain. (#7730)
+
 = 1.0.2 =
 * LowFi: Remove the patch version for submission (#7691)
 

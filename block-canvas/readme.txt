@@ -12,6 +12,9 @@ Block Canvas is a simple theme that supports full-site editing. It comes with a 
 
 == Changelog ==
 
+= 0.0.32 =
+* Block Canvas: Remove patterns (#7214)
+
 = 0.0.31 =
 * Add standard spacing presets to Block Canvas (#7717)
 
