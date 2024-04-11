@@ -210,7 +210,7 @@ async function addStrictTypesToChangedThemes() {
 
 	for (let theme of changedThemes) {
 		await executeCommand(`
-			bash -c add-strict-types-to-theme ${theme}
+			bash -c "add-strict-types-to-theme ${theme}"
 		`, true);
 	}
 }
