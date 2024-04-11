@@ -12,6 +12,10 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.15 =
+* Assembler: Add fonts (#7729)
+* Assembler: Update bundled color and typography theme styles (#7731)
+
 = 0.0.14 =
 * Adding a change just for redeploy (#7714)
 
