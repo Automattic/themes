@@ -205,6 +205,16 @@ async function deployPreview() {
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
+async function addStrictTypesToChangedThemes() {
+	const changedThemes = await getChangedThemes();
+
+	for (let theme of changedThemes) {
+		await executeCommand(`
+			bash -c add-strict-types-to-theme ${theme}
+		`, true);
+	}
+}
+
 /*
  Execute the first phase of a deployment.
 	* Gets the last deployed hash from the sandbox
@@ -240,8 +250,9 @@ async function pushButtonDeploy() {
 	try {
 		await cleanSandbox();
 
-		let hash = await getLastDeployedHash();
-		let thingsWentBump = await versionBumpThemes();
+		const hash = await getLastDeployedHash();
+		await addStrictTypesToChangedThemes();
+		const thingsWentBump = await versionBumpThemes();
 
 		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
@@ -257,7 +268,7 @@ async function pushButtonDeploy() {
 			}
 		}
 
-		let changedThemes = await getChangedThemes(hash);
+		const changedThemes = await getChangedThemes(hash);
 
 		if (!changedThemes.length) {
 			console.log(`\n\nEverything is upto date. Nothing new to deploy.\n\n`);
