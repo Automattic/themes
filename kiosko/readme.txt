@@ -1,14 +1,14 @@
 === Kiosko ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.1.1
-Requires PHP: 5.7
+Tested up to: 6.5.2
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Kiosko is a simple store theme with product filters
+Kiosko is a simple store theme with product filters.
 
 == Changelog ==
 
@@ -17,7 +17,7 @@ Kiosko is a simple store theme with product filters
 
 == Copyright ==
 
-Kiosko WordPress Theme, (C) 2023 Automattic
+Kiosko WordPress Theme, (C) 2024 Automattic
 Kiosko is distributed under the terms of the GNU GPL.
 Kiosko is based on Twenty Twenty-Three (https://wordpress.org/themes/twentytwentythree), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
