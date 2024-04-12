@@ -4,6 +4,8 @@
  * Slug: kiosko/product-filters
  * Categories: woocommerce
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"constrained"}} -->

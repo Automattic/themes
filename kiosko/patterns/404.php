@@ -4,6 +4,8 @@
  * Slug: kiosko/404
  * Categories: text
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":1.1}},"textColor":"contrast","className":"wp-block-heading","fontSize":"large","anchor":"oops-that-page-can-t-be-found"} -->

@@ -5,6 +5,8 @@
  * Categories: footer
  * Block Types: core/template-part/footer
  */
+
+declare( strict_types = 1 );
 ?>
 <!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">

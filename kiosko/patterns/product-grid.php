@@ -4,6 +4,8 @@
  * Slug: kiosko/product-grid
  * Categories: woocommerce
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:query {"query":{"perPage":"9","pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"__woocommerceStockStatus":["instock","outofstock"]},"displayLayout":{"type":"flex","columns":3},"namespace":"woocommerce/product-query"} -->
