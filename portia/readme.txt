@@ -12,6 +12,9 @@ Portia is a simple business theme for a legal service.
 
 == Changelog ==
 
+= 1.0.1 =
+* Portia: Prepare for WP.org submission (#7739)
+
 = 1.0.0 =
 * Initial release
 
