@@ -63,7 +63,7 @@ declare( strict_types = 1 );
 		<!-- wp:paragraph {"align":"right","lock":{"move":false,"remove":true}} -->
 		<p class="has-text-align-right"><?php
 			/* Translators: WordPress link. */
-			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'feelingood' ) ) . '" rel="nofollow">WordPress</a>';
+			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'fontaine' ) ) . '" rel="nofollow">WordPress</a>';
 			echo sprintf(
 				esc_html__( 'Designed with %1$s', 'fontaine' ),
 				$wordpress_link
