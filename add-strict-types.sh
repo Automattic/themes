@@ -12,16 +12,16 @@ DIRECTORY="$1"
 
 # Loop over each PHP file in the specified directory
 find "$DIRECTORY" -type f -name "*.php" | while read -r file; do
-    echo "Processing file: $file"
+    [ -n "$DEBUG" ] && echo "Processing file: $file"
     # Check if the file contains the strict_types declaration
     if ! grep -qE 'declare\s*\(\s*strict_types\s*=\s*1\s*\)\s*;' "$file"; then
-        echo "Declaration not found in: $file"
+        [ -n "$DEBUG" ] && echo "Declaration not found in: $file"
         # If not, prepend the strict_types declaration
         {
             echo '<?php declare( strict_types = 1 ); ?>'
             cat "$file"
         } > "$file.tmp" && mv "$file.tmp" "$file"
     else
-        echo "Declaration found in: $file"
+       [ -n "$DEBUG" ] && echo "Declaration found in: $file"
     fi
 done
