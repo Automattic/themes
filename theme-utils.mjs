@@ -65,6 +65,10 @@ const commands = {
 		additionalArgs: '<array of theme slugs>',
 		run: (args) => deployThemes(args?.[1].split(/[ ,]+/))
 	},
+	"add-strict-typing": {
+		helpText: 'Adds strict typing to any changed themes.',
+		run: () => addStrictTypesToChangedThemes()
+	},
 	"build-com-zip": {
 		helpText: 'Build the production zip file for the specified theme.',
 		additionalArgs: '<theme-slug>',
@@ -205,6 +209,20 @@ async function deployPreview() {
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
+async function addStrictTypesToChangedThemes() {
+	let hash = await getLastDeployedHash();
+	const changedThemes = await getChangedThemes(hash);
+
+	for (let theme of changedThemes) {
+		await executeCommand(`
+			bash -c "./add-strict-types.sh ${theme}"
+		`, true)
+		.catch((err) => {
+			console.log(`Error adding strict types to ${theme}: ${err}`);
+		});
+	}
+}
+
 /*
  Execute the first phase of a deployment.
 	* Gets the last deployed hash from the sandbox
@@ -240,8 +258,9 @@ async function pushButtonDeploy() {
 	try {
 		await cleanSandbox();
 
-		let hash = await getLastDeployedHash();
-		let thingsWentBump = await versionBumpThemes();
+		const hash = await getLastDeployedHash();
+		await addStrictTypesToChangedThemes();
+		const thingsWentBump = await versionBumpThemes();
 
 		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
@@ -257,7 +276,7 @@ async function pushButtonDeploy() {
 			}
 		}
 
-		let changedThemes = await getChangedThemes(hash);
+		const changedThemes = await getChangedThemes(hash);
 
 		if (!changedThemes.length) {
 			console.log(`\n\nEverything is upto date. Nothing new to deploy.\n\n`);
