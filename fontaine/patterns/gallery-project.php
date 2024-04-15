@@ -24,7 +24,7 @@ declare( strict_types = 1 );
 		<!-- wp:column {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}}} -->
 		<div class="wp-block-column">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
-			<figure class="wp-block-image size-full"><a href="http://localhost.local/wp-content/uploads/2024/03/Modern-Minimalist-Cafe-Storefront-with-Yellow-Accents.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Modern-Minimalist-Cafe-Storefront-with-Yellow-Accents.jpg" alt="" /></a></figure>
+			<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Modern-Minimalist-Cafe-Storefront-with-Yellow-Accents.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Modern-Minimalist-Cafe-Storefront-with-Yellow-Accents.jpg" alt="" /></a></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
@@ -36,7 +36,7 @@ declare( strict_types = 1 );
 		<!-- wp:column {"width":"33.34%"} -->
 		<div class="wp-block-column" style="flex-basis:33.34%">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-			<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Modern-Cafe-Storefront-in-Red-and-Pink.jpg" alt="" /></figure>
+			<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Modern-Cafe-Storefront-in-Red-and-Pink.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Modern-Cafe-Storefront-in-Red-and-Pink.jpg" alt="" /></a></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
@@ -44,7 +44,7 @@ declare( strict_types = 1 );
 		<!-- wp:column {"width":"33.34%"} -->
 		<div class="wp-block-column" style="flex-basis:33.34%">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
-			<figure class="wp-block-image size-full"><a href="http://localhost.local/wp-content/uploads/2024/03/Calm-Moment-at-a-Pastel-Blue-Cafe.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Calm-Moment-at-a-Pastel-Blue-Cafe.jpg" alt="" /></a></figure>
+			<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Calm-Moment-at-a-Pastel-Blue-Cafe.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Calm-Moment-at-a-Pastel-Blue-Cafe.jpg" alt="" /></a></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
@@ -52,7 +52,7 @@ declare( strict_types = 1 );
 		<!-- wp:column {"width":"33.33%"} -->
 		<div class="wp-block-column" style="flex-basis:33.33%">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"media"} -->
-			<figure class="wp-block-image size-full"><a href="http://localhost.local/wp-content/uploads/2024/03/Cafe-Leisure-in-Vibrant-Setting.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Cafe-Leisure-in-Vibrant-Setting.jpg" alt="" /></a></figure>
+			<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Cafe-Leisure-in-Vibrant-Setting.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Cafe-Leisure-in-Vibrant-Setting.jpg" alt="" /></a></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
