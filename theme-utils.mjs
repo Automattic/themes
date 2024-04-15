@@ -65,6 +65,10 @@ const commands = {
 		additionalArgs: '<array of theme slugs>',
 		run: (args) => deployThemes(args?.[1].split(/[ ,]+/))
 	},
+	"add-strict-typing": {
+		helpText: 'Adds strict typing to any changed themes.',
+		run: () => addStrictTypesToChangedThemes()
+	},
 	"build-com-zip": {
 		helpText: 'Build the production zip file for the specified theme.',
 		additionalArgs: '<theme-slug>',
@@ -206,7 +210,8 @@ async function deployPreview() {
 }
 
 async function addStrictTypesToChangedThemes() {
-	const changedThemes = await getChangedThemes();
+	let hash = await getLastDeployedHash();
+	const changedThemes = await getChangedThemes(hash);
 
 	for (let theme of changedThemes) {
 		await executeCommand(`
