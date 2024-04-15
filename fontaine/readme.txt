@@ -12,6 +12,9 @@ Fontaine is a portfolio/profile theme designed for visual designers who apprecia
 
 == Changelog ==
 
+= 1.0.1 =
+* Fontaine: Fix hardcoded links, changed theme URI, and fix textdomain errors (#7741)
+
 = 1.0.0 =
 * Initial release
 
