@@ -12,6 +12,9 @@ A cheerful WordPress blogging theme dedicated to all things homemade and delight
 
 == Changelog ==
 
+= 1.0.5 =
+* Fix custom heading background style. (#7751)
+
 = 1.0.4 =
 * Lossless image optimization (#7671)
 
