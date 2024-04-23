@@ -12,6 +12,9 @@ RAW is a theme design inspired by the Brutalist concepts from the homonymous Arc
 
 == Changelog ==
 
+= 1.0.4 =
+* Raw: Update screenshot (#7761)
+
 = 1.0.3 =
 * Lossless image optimization (#7671)
 

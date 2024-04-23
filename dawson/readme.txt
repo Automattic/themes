@@ -12,6 +12,9 @@ Dawson is a WordPress portfolio theme specifically tailored for photography. Wit
 
 == Changelog ==
 
+= 1.0.3 =
+* Update style.css
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 
