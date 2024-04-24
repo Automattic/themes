@@ -26,7 +26,7 @@
 		esc_html__( 'Designed with %1$s', 'cookbook' ),
 		$wordpress_link
 	);
-?>></p>
+?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
