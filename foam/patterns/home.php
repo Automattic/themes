@@ -2,7 +2,7 @@
 /**
  * Title: home
  * Slug: foam/home
- * Categories: Call to Action
+ * Categories: page
  * Inserter: yes
  */
 ?>
@@ -28,7 +28,7 @@
 
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontSize":"0.8rem"}}} -->
-<p style="font-size:0.8rem;text-transform:uppercase"><strong>in stores June 26th<br></strong><br>Release Party and exclusive pre-show cocktail reception<br>Eden Garden Amphitheater on June 25th<br><a href="https://momentum.mystagingwebsite.com/sample-page/">more info here</a><br></p>
+<p style="font-size:0.8rem;text-transform:uppercase"><strong>in stores June 26th<br></strong><br>Release Party and exclusive pre-show cocktail reception<br>Eden Garden Amphitheater on June 25th<br><a href="#">more info here</a><br></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
