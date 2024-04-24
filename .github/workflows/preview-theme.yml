@@ -1,0 +1,75 @@
+name: Preview Theme Changes
+
+on:
+  pull_request:
+
+jobs:
+  check-for-changes-to-themes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Retrieved Theme Changes
+        id: check-for-changes
+        run: |
+          # Retrieve list of all changed files
+          git fetch origin trunk:trunk
+          changed_files=$(git diff --name-only HEAD origin/trunk)
+          
+          # Loop through changed files and identify parent directories
+          declare -A unique_dirs
+          for file in $changed_files; do
+            dir_name=$(dirname "$file")
+            while [[ "$dir_name" != "." ]]; do
+              if [[ -f "$dir_name/style.css" ]]; then  # Check if the parent directory contains a theme
+                # Save only the basename
+                unique_dirs[$dir_name]=$(basename $dir_name)
+                break
+              fi
+              dir_name=$(dirname "$dir_name")
+            done
+          done
+          # Check if themes have changed
+          if [[ ${#unique_dirs[@]} -eq 0 ]]; then
+              echo "No theme changes detected"
+              echo "HAS_THEME_CHANGES=false" >> $GITHUB_OUTPUT
+              exit 0
+          fi
+          # Output list of theme slugs with changes
+          echo "HAS_THEME_CHANGES=true" >> $GITHUB_OUTPUT
+          echo "CHANGED_THEMES=$(echo ${unique_dirs[@]})" >> $GITHUB_ENV
+          echo "Theme directories with changes: $CHANGED_THEMES"
+
+      - name: Add Preview Links comment
+        id: comment-on-pr
+        if: ${{ steps.check-for-changes.outputs.HAS_THEME_CHANGES == 'true' }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const createPreviewLinks = require('.github/scripts/create-preview-links');
+            createPreviewLinks(github, context, process.env.CHANGED_THEMES);
+
+      - name: Remove comment if no changes are detected
+        if: ${{ steps.check-for-changes.outputs.HAS_THEME_CHANGES == 'false' }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: comments } = await github.rest.issues.listComments({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            const existingComment = comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.startsWith('### Preview changes'));
+            
+            if (existingComment) {
+              await github.rest.issues.deleteComment({
+                comment_id: existingComment.id,
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+            }
+ 
