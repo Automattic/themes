@@ -43,6 +43,29 @@ if ( ! function_exists( 'course_scripts' ) ) :
 		wp_register_style( 'course-style', get_stylesheet_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
 		wp_enqueue_script( 'course-header', get_template_directory_uri() . '/assets/js/header.js', array(), wp_get_theme()->get( 'Version' ), true );
 		wp_enqueue_style( 'course-style' );
+
+		// Load gravatar-hovercard related styles and scripts.
+		wp_enqueue_style( 'gravatar-hovercard-style', 'https://unpkg.com/@gravatar-com/hovercards@0.5.8/dist/style.css', array(), 'unversioned' );
+		wp_register_script(
+			'gravatar-hovercard-js',
+			'https://unpkg.com/@gravatar-com/hovercards@0.5.8',
+			array(),
+			'unversioned',
+			array(
+				'in_footer' => false,
+				'strategy'  => 'defer',
+			)
+		);
+		wp_enqueue_script(
+			'gravatar-hovercard-setup-js',
+			get_template_directory_uri() . '/assets/js/hovercard-setup.js',
+			array( 'gravatar-hovercard-js' ),
+			wp_get_theme()->get( 'Version' ),
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
+		);
 	}
 
 endif;
