@@ -2,7 +2,7 @@
 /**
  * Title: speakers
  * Slug: foam/speakers
- * Categories: Text
+ * Categories: text
  * Inserter: yes
  */
 ?>

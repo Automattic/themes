@@ -2,7 +2,7 @@
 /**
  * Title: FAQs
  * Slug: foam/faqs
- * Categories: Text
+ * Categories: text
  * Inserter: yes
  */
 ?>
