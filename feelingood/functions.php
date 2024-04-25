@@ -1,11 +1,11 @@
 <?php
 /**
- * Feelin' Good functions and definitions
+ * Feelin'Good functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Feelin' Good
- * @since Feelin' Good 1.0
+ * @package Feelin'Good
+ * @since Feelin'Good 1.0
  */
 declare( strict_types = 1 );
 
@@ -14,7 +14,7 @@ if ( ! function_exists( 'feelingood_support' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress functionalities.
 	 *
-	 * @since Feelin' Good 1.0
+	 * @since Feelin'Good 1.0
 	 *
 	 * @return void
 	 */
@@ -36,7 +36,7 @@ if ( ! function_exists( 'feelingood_styles' ) ) :
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since Feelin' Good 1.0
+	 * @since Feelin'Good 1.0
 	 *
 	 * @return void
 	 */
@@ -63,7 +63,7 @@ add_action( 'wp_enqueue_scripts', 'feelingood_styles' );
  * Temporaly fix for disabling the default font sizes.
  * https://github.com/WordPress/gutenberg/issues/52200
  *
- * @since Feelin' Good 1.0
+ * @since Feelin'Good 1.0
  *
  * @return void
  */
