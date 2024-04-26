@@ -50,15 +50,15 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"style":{"dimensions":{"minHeight":"100%"},"spacing":{"padding":{"right":"var:preset|spacing|70","left":"var:preset|spacing|70"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="min-height:100%;padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70)"><!-- wp:heading {"textAlign":"center","level":1} -->
-<h1 class="wp-block-heading has-text-align-center">The Chef</h1>
+<h1 class="wp-block-heading has-text-align-center"><?php echo  esc_html__( 'The Chef', 'cookbook' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Emma is a dedicated home chef who finds joy in cooking and sharing her favorite recipes with others. With a background in recipe development and food blogging, she enjoys exploring diverse cuisines and techniques to create mouthwatering dishes. Emma is eager to connect with fellow food lovers and create a community centered around delicious homemade meals.</p>
+<p class="has-text-align-center"><?php echo  esc_html__( 'Emma is a dedicated home chef who finds joy in cooking and sharing her favorite recipes with others. With a background in recipe development and food blogging, she enjoys exploring diverse cuisines and techniques to create mouthwatering dishes. Emma is eager to connect with fellow food lovers and create a community centered around delicious homemade meals.', 'cookbook' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"typography":{"fontStyle":"normal","fontWeight":"600"}},"textColor":"secondary"} -->
-<p class="has-text-align-center has-secondary-color has-text-color has-link-color" style="font-style:normal;font-weight:600">About Emma Johnson</p>
+<p class="has-text-align-center has-secondary-color has-text-color has-link-color" style="font-style:normal;font-weight:600"><?php echo  esc_html__( 'About Emma Johnson', 'cookbook' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
