@@ -42,3 +42,17 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+All images used in theme screenshot are licensed under CC0.
+
+Licences
+https://stocksnap.io/license
+https://pxhere.com/en/license
+
+Source links:
+https://stocksnap.io/photo/sanddune-desert-XWPLUW3ZGD
+https://stocksnap.io/photo/skateboard-pavement-ZAKZZG8Y4G
+https://stocksnap.io/photo/dark-people-B6OM567FS6
+https://pxhere.com/en/photo/1385916
+https://pxhere.com/en/photo/239764
+https://pxhere.com/en/photo/1150970
