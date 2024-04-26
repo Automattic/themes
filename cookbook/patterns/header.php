@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: header
+ * Title: Header
  * Slug: cookbook/header
  * Categories: hidden
  * Inserter: no
@@ -30,7 +30,7 @@
 <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"0"},"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center" style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--40)"><!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:heading {"level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h1 class="wp-block-heading has-base-color has-text-color has-link-color">In Pursuit of the Flavor</h1>
+<h1 class="wp-block-heading has-base-color has-text-color has-link-color"><?php echo  esc_html__( 'In Pursuit of the Flavor', 'cookbook' ); ?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
@@ -39,8 +39,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"25%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:25%"><!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontSize":"small"} -->
-<p class="has-contrast-color has-text-color has-link-color has-small-font-size">With this theme, you will always have ideas for mealtime. Be ready to learn, share, and delight the dear people around you. Shall we start?</p>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:25%"><!-- wp:paragraph {"fontSize":"small"} -->
+<p class="has-small-font-size"><?php echo  esc_html__( 'With this theme, you will always have ideas for mealtime. Be ready to learn, share, and delight the dear people around you. Shall we start?', 'cookbook' ); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
