@@ -10,12 +10,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Retrieved Theme Changes
         id: check-for-changes
         run: |
           # Retrieve list of all changed files
-          git fetch origin trunk:trunk
+          git fetch origin
           changed_files=$(git diff --name-only HEAD origin/trunk)
           
           # Loop through changed files and identify parent directories
