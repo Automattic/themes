@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 /*
  * This function creates a WordPress Playground blueprint JSON string for a theme.
  *
@@ -33,39 +31,6 @@ function createBlueprint(themeSlug, branch) {
 }
 
 /*
- * This function reads the `style.css` file of a theme and returns the theme name.
- *
- * @param {string} themeSlug - The slug of the theme to get the name of.
- * @returns {string} - The name of the theme as defined in the `style.css` file.
- */
-function getThemeName(themeSlug) {
-	const styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
-	const themeName = styleCss.match(/Theme Name:(.*)/i)[1].trim();
-	return themeName;
-}
-
-/*
- * This function reads the `style.css` file of a theme and returns the name of the parent theme.
- * If the theme is not a child theme, it returns an empty string.
- *
- * @param {string} themeSlug - The slug of the theme to get the parent theme name of.
- * @returns {string} - The name of the parent theme as defined in the `style.css` file.
- */
-function getParentThemeName(themeSlug) {
-	const styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
-	const parentTheme = styleCss.match(/Template:(.*)/i);
-	const isChildTheme = parentTheme && '' !== parentTheme[1].trim();
-
-	if (!isChildTheme) {
-		return '';
-	}
-
-	return parentTheme && '' !== parentTheme[1].trim()
-		? parentTheme[1].trim()
-		: '';
-}
-
-/*
  * This function creates a comment on a PR with preview links for the changed themes.
  * It is used by `preview-theme` workflow.
  *
@@ -76,28 +41,21 @@ function getParentThemeName(themeSlug) {
 async function createPreviewLinksComment(github, context, changedThemeSlugs) {
 	const changedThemes = changedThemeSlugs.split(' ');
 	const previewLinks = changedThemes
-		.map((themeSlug) => {
-			const parentThemeName = getParentThemeName(themeSlug);
-			const note = parentThemeName
-				? ` (child theme of **${parentThemeName}**)`
-				: '';
-
-			return `- [Preview changes for **${getThemeName(
-				themeSlug
-			)}**](https://playground.wordpress.net/#${createBlueprint(
+		.map((theme) => {
+			const [themeName, themeDir] = theme.split(':');
+			const themeSlug = themeDir.split('/')[0];
+			return `- [Preview changes for **${themeName}**](https://playground.wordpress.net/#${createBlueprint(
 				themeSlug,
 				context.payload.pull_request.head.ref
-			)})${note}`;
+			)})`;
 		})
 		.join('\n');
 
-	const includesChildThemes = changedThemes.some(
-		(themeSlug) => '' !== getParentThemeName(themeSlug)
-	);
+	const includesChildThemes = previewLinks.includes('Child of');
 
 	const comment = `
 I've detected changes to the following themes in this PR: ${changedThemes
-		.map((themeSlug) => getThemeName(themeSlug))
+		.map((changedThemes) => changedThemes.split(':')[0])
 		.join(', ')}.
 
 You can preview these changes by following the links below:

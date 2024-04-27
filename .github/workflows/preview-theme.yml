@@ -1,12 +1,17 @@
 name: Preview Theme Changes
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize]
+permissions:
+  pull-requests: write
 
 jobs:
   check-for-changes-to-themes:
     runs-on: ubuntu-latest
+    outputs:
+      HAS_THEME_CHANGES: ${{ steps.check-for-changes.outputs.HAS_THEME_CHANGES }}
+      CHANGED_THEMES: ${{ steps.check-for-changes.outputs.CHANGED_THEMES }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -25,9 +30,14 @@ jobs:
           for file in $changed_files; do
             dir_name=$(dirname "$file")
             while [[ "$dir_name" != "." ]]; do
-              if [[ -f "$dir_name/style.css" ]]; then  # Check if the parent directory contains a theme
-                # Save only the basename
-                unique_dirs[$dir_name]=$(basename $dir_name)
+              if [[ -f "$dir_name/style.css" ]]; then 
+                # Get theme name from style.css
+                theme_name=$(grep -m 1 "Theme Name:" "$dir_name/style.css" | sed 's/Theme Name: //')
+                parent_theme=$(grep -m 1 "Template:" "${unique_dirs[$theme]}/style.css" | sed 's/Template: //')
+                # Append parent theme to the theme name if it exists
+                [ -n "$parent_theme" ] && theme_name="$theme (Child of $parent_theme)"
+                # Store theme name and directory in associative array
+                unique_dirs["$theme_name"]=$dir_name
                 break
               fi
               dir_name=$(dirname "$dir_name")
@@ -41,13 +51,36 @@ jobs:
           fi
           # Output list of theme slugs with changes
           echo "HAS_THEME_CHANGES=true" >> $GITHUB_OUTPUT
-          echo "CHANGED_THEMES=$(echo ${unique_dirs[@]})" >> $GITHUB_ENV
+
+          # Serialize associative array of theme dirs to a string
+          declare -A CHANGED_THEMES
+          for theme in "${!unique_dirs[@]}"; do
+              # Append each entry as key:value,
+              CHANGED_THEMES+="$theme:${unique_dirs[$theme]},"
+          done
+          # Remove the last comma for correct JSON formatting
+          CHANGED_THEMES=${CHANGED_THEMES%,}
+          echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
+
           echo "Theme directories with changes: $CHANGED_THEMES"
+  
+  handle-pr-comment:
+    runs-on: ubuntu-latest
+    needs: check-for-changes-to-themes
+    steps:
+      - name: Checkout create-preview-links script from trunk
+        uses: actions/checkout@v3
+        with:
+          repository: Automattic/themes
+          sparse-checkout: .github/scripts/create-preview-links
+          ref: workflow-security-issue
 
       - name: Add Preview Links comment
         id: comment-on-pr
-        if: ${{ steps.check-for-changes.outputs.HAS_THEME_CHANGES == 'true' }}
+        if: ${{ needs.check-for-changes-to-themes.outputs.HAS_THEME_CHANGES == 'true' }}
         uses: actions/github-script@v7
+        env:
+          CHANGED_THEMES: ${{ needs.check-for-changes-to-themes.outputs.CHANGED_THEMES }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -55,7 +88,7 @@ jobs:
             createPreviewLinks(github, context, process.env.CHANGED_THEMES);
 
       - name: Remove comment if no changes are detected
-        if: ${{ steps.check-for-changes.outputs.HAS_THEME_CHANGES == 'false' }}
+        if: ${{ needs.check-for-changes-to-themes.outputs.HAS_THEME_CHANGES == 'false' }}
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -75,4 +108,4 @@ jobs:
                 repo: context.repo.repo
               });
             }
- 
+  
