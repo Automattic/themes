@@ -1,7 +1,7 @@
 name: Preview Theme Changes
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
 permissions:
   pull-requests: write
@@ -73,7 +73,7 @@ jobs:
         with:
           repository: Automattic/themes
           sparse-checkout: .github/scripts/create-preview-links
-          ref: workflow-security-issue
+          ref: trunk
 
       - name: Add Preview Links comment
         id: comment-on-pr
