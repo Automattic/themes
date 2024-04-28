@@ -33,9 +33,9 @@ jobs:
               if [[ -f "$dir_name/style.css" ]]; then 
                 # Get theme name from style.css
                 theme_name=$(grep -m 1 "Theme Name:" "$dir_name/style.css" | sed 's/Theme Name: //')
-                parent_theme=$(grep -m 1 "Template:" "${unique_dirs[$theme]}/style.css" | sed 's/Template: //')
+                parent_theme=$(grep -m 1 "Template:" "$dir_name/style.css" | sed 's/Template: //')
                 # Append parent theme to the theme name if it exists
-                [ -n "$parent_theme" ] && theme_name="$theme (Child of $parent_theme)"
+                [ -n "$parent_theme" ] && theme_name="${theme_name}_childof_${parent_theme}"
                 # Store theme name and directory in associative array
                 unique_dirs["$theme_name"]=$dir_name
                 break

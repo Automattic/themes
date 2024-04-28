@@ -39,23 +39,28 @@ function createBlueprint(themeSlug, branch) {
  * @param {string} changedThemeSlugs - A space-separated string of theme slugs that have changed.
  */
 async function createPreviewLinksComment(github, context, changedThemeSlugs) {
-	const changedThemes = changedThemeSlugs.split(' ');
+	const changedThemes = changedThemeSlugs.split(',');
 	const previewLinks = changedThemes
 		.map((theme) => {
 			const [themeName, themeDir] = theme.split(':');
 			const themeSlug = themeDir.split('/')[0];
-			return `- [Preview changes for **${themeName}**](https://playground.wordpress.net/#${createBlueprint(
+			const parentThemeSlug = themeName.split('_childof_')[1];
+			return `- [Preview changes for **${
+				themeName.split('_childof_')[0]
+			}**](https://playground.wordpress.net/#${createBlueprint(
 				themeSlug,
 				context.payload.pull_request.head.ref
-			)})`;
+			)})${parentThemeSlug ? ` (child of **${parentThemeSlug}**)` : ''}`;
 		})
 		.join('\n');
 
-	const includesChildThemes = previewLinks.includes('Child of');
+	const includesChildThemes = previewLinks.includes('child of');
 
 	const comment = `
 I've detected changes to the following themes in this PR: ${changedThemes
-		.map((changedThemes) => changedThemes.split(':')[0])
+		.map(
+			(changedThemes) => changedThemes.split(':')[0].split('_childof_')[0]
+		)
 		.join(', ')}.
 
 You can preview these changes by following the links below:
