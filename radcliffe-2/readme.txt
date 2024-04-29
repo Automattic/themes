@@ -27,6 +27,9 @@ Radcliffe 2 includes support for Jetpack's Infinite Scroll as well as other feat
 
 == Changelog ==
 
+= 2.0.19 =
+* Radcliffe 2 & Photos: Revert SVG icon files (#7773)
+
 = 2.0.18 =
 * Removes logo resize reset testing code (#7760)
 

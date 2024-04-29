@@ -12,6 +12,9 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Changelog ==
 
+= 1.0.6 =
+* Update theme upsidedown-update (#7721)
+
 = 1.0.5 =
 * Lossless image optimization (#7671)
 
