@@ -20,8 +20,8 @@ declare( strict_types = 1 );
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:image {"id":67,"width":"80px","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"width":"1px"}},"borderColor":"foreground","className":"is-style-rounded"} -->
-<figure class="wp-block-image size-full is-resized has-custom-border is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/pexels-julia-avamotive-1097781.jpg" alt="" class="has-border-color has-foreground-border-color wp-image-67" style="border-width:1px;aspect-ratio:1;object-fit:cover;width:80px"/></figure>
+<!-- wp:image {"id":67,"width":"80px","aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"width":"1px"}},"borderColor":"contrast","className":"is-style-rounded"} -->
+<figure class="wp-block-image size-full is-resized has-custom-border is-style-rounded"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/pexels-julia-avamotive-1097781.jpg" alt="" class="has-border-color has-contrast-border-color wp-image-67" style="border-width:1px;aspect-ratio:1;object-fit:cover;width:80px"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 
@@ -56,8 +56,8 @@ declare( strict_types = 1 );
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|foreground"}},"heading":{"color":{"text":"var:preset|color|foreground"}}},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|40"}},"backgroundColor":"accent-3","textColor":"foreground","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-foreground-color has-accent-3-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"level":3} -->
+<!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}},"heading":{"color":{"text":"var:preset|color|contrast"}}},"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"blockGap":"var:preset|spacing|40"}},"backgroundColor":"accent-3","textColor":"contrast","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-contrast-color has-accent-3-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading"><?php echo esc_html__( 'Join the fun!', 'craftfully' ); ?></h3>
 <!-- /wp:heading -->
 

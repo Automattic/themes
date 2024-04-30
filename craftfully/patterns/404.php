@@ -18,6 +18,6 @@ declare( strict_types = 1 );
 <p><?php echo esc_html_x( 'It looks like nothing was found at this location. Maybe try a search?', 'craftfully' ); ?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:search {"showLabel":false,"buttonText":"Search","style":{"border":{"radius":"50px","width":"1px"}},"borderColor":"foreground"} /--></div>
+<!-- wp:search {"showLabel":false,"buttonText":"Search","style":{"border":{"radius":"50px","width":"1px"}},"borderColor":"contrast"} /--></div>
 <!-- /wp:group --></main>
 <!-- /wp:group -->
