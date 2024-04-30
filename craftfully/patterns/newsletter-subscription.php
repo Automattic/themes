@@ -22,7 +22,7 @@ declare( strict_types = 1 );
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:jetpack/subscriptions {"borderRadius":50,"borderWeight":1,"borderColor":"foreground"} /--></div>
+<div class="wp-block-column"><!-- wp:jetpack/subscriptions {"borderRadius":50,"borderWeight":1,"borderColor":"contrast"} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
 
