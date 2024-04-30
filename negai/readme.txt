@@ -1,7 +1,7 @@
 === Negai ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,9 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Negai is a bold blogging theme with large post titles and interesting colour schemes
 
 == Changelog ==
-
-= 1.0.3 =
-* Lossless image optimization (#7671)
 
 = 1.0.3 =
 * Optimize images (#7671)

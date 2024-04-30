@@ -17,6 +17,78 @@
 					],
 					"name": "Default filter",
 					"slug": "default-filter"
+				},
+				{
+					"colors": [
+						"#191a5e",
+						"#6AE066"
+					],
+					"name": "Apple",
+					"slug": "apple"
+				},
+				{
+					"colors": [
+						"#000000",
+						"#ffffff"
+					],
+					"name": "Charcole",
+					"slug": "charcole"
+				},
+				{
+					"colors": [
+						"#9e2f70",
+						"#ddd864"
+					],
+					"name": "Corn",
+					"slug": "corn"
+				},
+				{
+					"colors": [
+						"#e5281c",
+						"#ffffff"
+					],
+					"name": "Crimson",
+					"slug": "crimson"
+				},
+				{
+					"colors": [
+						"#001344",
+						"#f74879"
+					],
+					"name": "Fuchsia",
+					"slug": "fuchsia"
+				},
+				{
+					"colors": [
+						"#05040b",
+						"#e6c80e"
+					],
+					"name": "Gold",
+					"slug": "gold"
+				},
+				{
+					"colors": [
+						"#038A18",
+						"#ffffff"
+					],
+					"name": "Grass",
+					"slug": "grass"
+				},
+				{
+					"colors": [
+						"#000000",
+						"#ffffff"
+					],
+					"name": "Obsidian",
+					"slug": "obsidian"
+				},
+				{
+					"colors": [
+						"#380956",
+						"#f68a2d"
+					],
+					"name": "Orange",
+					"slug": "orange"
 				}
 			],
 			"gradients": [],
@@ -64,22 +136,22 @@
 				},
 				{
 					"name": "3",
-					"size": "clamp(1.75rem, 2.2896394vw, 2.5rem)",
+					"size": "clamp(1.25rem, 2.5vw, 2.5rem)",
 					"slug": "50"
 				},
 				{
 					"name": "4",
-					"size": "clamp(2.5rem, 4.5792788vw, 5rem)",
+					"size": "clamp(2.5rem, 5vw, 5rem)",
 					"slug": "60"
 				},
 				{
 					"name": "5",
-					"size": "clamp(3.75rem, 6.8689181vw, 7.5rem)",
+					"size": "clamp(3.75rem, 7.5vw, 7.5rem)",
 					"slug": "70"
 				},
 				{
 					"name": "6",
-					"size": "clamp(5rem, 9.1585575vw, 10.0rem)",
+					"size": "clamp(5rem, 10vw, 10.0rem)",
 					"slug": "80"
 				}
 			],
@@ -429,7 +501,7 @@
 				}
 			},
 			"core/calendar": {
-				"css": ".wp-block-calendar table:where(:not(.has-text-color)) {color: var(--wp--preset--color--contrast);} .wp-block-calendar table:where(:not(.has-text-color)) td,.wp-block-calendar table:where(:not(.has-text-color)) th {border-color: var(--wp--preset--color--contrast);}:where(.wp-block-calendar table:not(.has-background) th) {background-color: var(--wp--preset--color--contrast);color: var(--wp--preset--color--base);}"
+				"css": ".wp-block-calendar table:where(:not(.has-text-color)) {color: var(--wp--preset--color--contrast);} &.wp-block-calendar table:where(:not(.has-text-color)) td {border-color: var(--wp--preset--color--contrast);} &.wp-block-calendar table:where(:not(.has-text-color)) th {border-color: var(--wp--preset--color--contrast);} & :where(.wp-block-calendar table:not(.has-background) th) {background-color: var(--wp--preset--color--contrast);color: var(--wp--preset--color--base);}"
 			},
 			"core/categories": {
 				"spacing": {
@@ -458,7 +530,7 @@
 				}
 			},
 			"core/comment-content": {
-				"css": "& p{margin-bottom:0;} & p+p{margin-top:var(--wp--preset--spacing--50)}"
+				"css": " p{margin-bottom:0;} & p+p{margin-top:var(--wp--preset--spacing--50)}"
 			},
 			"core/columns": {
 				"spacing": {
@@ -515,6 +587,9 @@
 				}
 			},
 			"core/cover": {
+				"filter": {
+					"duotone": "var(--wp--preset--duotone--default-filter)"
+				},
 				"spacing": {
 					"padding": {
 						"bottom": "var(--wp--preset--spacing--50)",
@@ -531,7 +606,7 @@
 				}
 			},
 			"core/latest-comments": {
-				"css": "& .wp-block-latest-comments__comment-meta{font-size: inherit;} & .wp-block-latest-comments__comment-date{font-size: inherit;} & .wp-block-latest-comments__comment-excerpt p{font-size: inherit;} & .wp-block-latest-comments__comment-excerpt p{margin:0 0 var(--wp--style--block-gap)} &:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment-excerpt p)){line-height:inherit;} & .avatar, .wp-block-latest-comments__comment-avatar{border-radius:0;}",
+				"css": " .wp-block-latest-comments__comment-meta{font-size: inherit;} & .wp-block-latest-comments__comment-date, .wp-block-latest-comments__comment-excerpt p{font-size: inherit;margin:0} &:where(.wp-block-latest-comments:not([style*=line-height] .wp-block-latest-comments__comment-excerpt p)){line-height:inherit;} & .avatar, .wp-block-latest-comments__comment-avatar{border-radius:999px;}",
 				"spacing": {
 					"padding": {
 						"left": "0px"
@@ -539,7 +614,7 @@
 				}
 			},
 			"core/latest-posts": {
-				"css": " .wp-block-latest-posts__post-author{font-size: inherit;} & .wp-block-latest-posts__post-date{font-size: inherit;} & .wp-block-latest-posts__post-excerpt{margin:0 0 var(--wp--style--block-gap)}"
+				"css": " .wp-block-latest-posts__post-author, .wp-block-latest-posts__post-date {font-size: inherit;} & .wp-block-latest-posts__post-excerpt{margin:0 0 var(--wp--style--block-gap)}"
 			},
 			"core/list": {
 				"spacing": {
@@ -560,10 +635,10 @@
 				}
 			},
 			"core/post-author": {
-				"css": ".wp-block-post-author .wp-block-post-author__byline{font-size: inherit;} &.wp-block-post-author .wp-block-post-author__bio{font-size:inherit;margin:0;} & .wp-block-post-author__avatar img{border-radius: 999px;vertical-align:middle;}"
+				"css": " .wp-block-post-author__byline, .wp-block-post-author__name, .wp-block-post-author__bio{font-size:inherit;} & .wp-block-post-author__name a{text-decoration:none;} & .wp-block-post-author__avatar img{border-radius:999px;} & .wp-block-post-author__bio{margin:0;}"
 			},
 			"core/post-comments-form": {
-				"css": ".wp-block-post-comments-form .comment-form input:not([type=submit]):not([type=checkbox]){line-height: inherit;} & .comment-form textarea{line-height: inherit;} & .comment-form > *{margin-top:var(--wp--style--block-gap);margin-bottom:0} & .form-submit {margin-bottom: 0;}"
+				"css": " .comment-form input:not([type=submit]):not([type=checkbox]){line-height:inherit;} & .comment-form textarea{line-height:inherit;} & .comment-form > *{margin-top:var(--wp--style--block-gap);margin-bottom:0} & .comment-reply-title{margin-top:var(--wp--style--block-gap);} & .form-submit {margin-bottom: 0; & input[type=submit]{box-shadow:var( --wp--preset--shadow--buttons );}"
 			},
 			"core/post-content": {
 				"elements": {
@@ -613,7 +688,7 @@
 					"style": "solid",
 					"width": "1px 0"
 				},
-				"css": ".wp-block-pullquote cite {display:block;margin-top: var(--wp--preset--spacing--50)}",
+				"css": " cite {display:block;margin-top: var(--wp--preset--spacing--50)}",
 				"spacing": {
 					"padding": {
 						"bottom": "var(--wp--preset--spacing--50)",
@@ -653,7 +728,7 @@
 					"style": "solid",
 					"width": "0 0 0 5px"
 				},
-				"css": ".wp-block-quote cite {font-style: normal;}",
+				"css": ".is-style-plain cite{font-style:normal;}",
 				"spacing": {
 					"margin": {
 						"right": "0",
@@ -683,7 +758,7 @@
 				}
 			},
 			"core/search": {
-				"css": "& :where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){border-color:var(--wp--preset--color--contrast);} ",
+				"css": " :where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){border-color:var(--wp--preset--color--contrast);}",
 				"color": {
 					"text": "var(--wp--preset--color--contrast)"
 				},
@@ -730,10 +805,10 @@
 				}
 			},
 			"core/table": {
-				"css": "& thead{border-bottom-width: 1px;} & tfoot{border-top-width: 1px;} & + .wp-element-caption{text-align:center;}"
+				"css": " thead{border-bottom-width: 1px;} & tfoot{border-top-width: 1px;} & + .wp-element-caption{text-align:center;}"
 			},
 			"core/tag-cloud": {
-				"css": ".wp-block-tag-cloud.is-style-outline{font-size:var(--wp--preset--font-size--small);} &.wp-block-tag-cloud.is-style-outline a {border-radius:999px;padding: 1px 16px 1px;} &.wp-block-tag-cloud.is-style-outline a:hover {color: var(--wp--preset--color--base);background-color: var(--wp--preset--color--primary);}"
+				"css": ".is-style-outline{font-size:var(--wp--preset--font-size--small);line-height:1;} &.is-style-outline a {border-radius:999px;padding: 0.21875rem 1rem;} &.is-style-outline a:hover {color: var(--wp--preset--color--base);background-color: var(--wp--preset--color--primary);}"
 			},
 			"core/term-description": {
 				"css": "& p+p {margin-top:calc(1em + 0.375rem);}"
