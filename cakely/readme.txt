@@ -12,6 +12,9 @@ Cakely is a business theme perfect for bakers or cake makers with a vibrant colo
 
 == Changelog ==
 
+= 1.0.2 =
+* Cakely: Cleanup for submission (#7784)
+
 = 1.0.1 =
 * Lossless image optimization (#7671)
 
