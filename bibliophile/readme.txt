@@ -49,6 +49,6 @@ Font: Albura from BeFonts
 License: Free for Commercial Use (https://befonts.com/free-for-commercial-use)
 Source: https://befonts.com/albura-font-family.html
 
-Image: Vintage typewriter image in screenshot
-License: Free License
-Source: https://www.freepik.com/free-vector/vintage-typewriter-illustration_4062873.htm
+Image: Vintage Victorian style retro typewriter engraving. Original from the British Library. Digitally enhanced by rawpixel.
+License: CC0 Licence (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://www.rawpixel.com/image/556745/vintage-typewriter-illustration
