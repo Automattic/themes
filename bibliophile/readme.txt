@@ -45,10 +45,15 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-Font: Albura from BeFonts
-License: Free for Commercial Use (https://befonts.com/free-for-commercial-use)
-Source: https://befonts.com/albura-font-family.html
+Albura Font
+Copyright 2022 The Albura Project Authors (https://github.com/Omnibus-Type/Albura)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+Licensed under the Apache License, Version 2.0
+License URL: http://www.apache.org/licenses/LICENSE-2.0 
+Source: Google.com
+-- End of Albura Font credits --
 
-Image: Vintage Victorian style retro typewriter engraving. Original from the British Library. Digitally enhanced by rawpixel.
+Images
+Vintage Victorian style retro typewriter engraving. Original from the British Library. Digitally enhanced by rawpixel.
 License: CC0 Licence (https://creativecommons.org/publicdomain/zero/1.0/)
 Source: https://www.rawpixel.com/image/556745/vintage-typewriter-illustration
