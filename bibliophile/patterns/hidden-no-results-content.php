@@ -8,5 +8,5 @@
 ?>
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html_x( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bibliophile' ); ?></p>
+<p><?php echo  __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bibliophile' ); ?></p>
 <!-- /wp:paragraph -->
