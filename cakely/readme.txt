@@ -16,9 +16,6 @@ Cakely is a business theme perfect for bakers or cake makers with a vibrant colo
 * Cakely: Cleanup for submission (#7784)
 
 = 1.0.1 =
-* Lossless image optimization (#7671)
-
-= 1.0.1 =
 * Optimize images (#7671)
 
 = 1.0.0 =
@@ -58,3 +55,4 @@ Source: http://www.typoland.com/
 -- End of Lato Font credits --
 
 All the images used the templates were generated with AI using Midjourney.
+https://docs.midjourney.com/docs/terms-of-service
