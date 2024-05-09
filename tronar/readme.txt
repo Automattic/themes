@@ -1,7 +1,7 @@
 === Tronar ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.3
+Tested up to: 6.5
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,9 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tronar is a simple blog theme. It works best with featured images. The latest sticky post appears at the top with a large featured image.
 
 == Changelog ==
-
-= 1.0.2 =
-* Lossless image optimization (#7671)
 
 = 1.0.2 =
 * Optimize images (#7671)
