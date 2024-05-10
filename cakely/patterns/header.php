@@ -18,7 +18,7 @@ declare( strict_types = 1 );
 	<div class="wp-block-group alignwide">
 		<!-- wp:site-title {"level":0,"style":{"layout":{"selfStretch":"fit","flexSize":null}}} /-->
 
-		<!-- wp:navigation {"textColor":"primary","overlayBackgroundColor":"primary","overlayTextColor":"base","align":"wide","layout":{"type":"flex"}} /-->
+		<!-- wp:navigation {"textColor":"primary","align":"wide","layout":{"type":"flex"}} /-->
 	</div>
 	<!-- /wp:group -->
 </div>
