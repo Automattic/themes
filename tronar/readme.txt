@@ -12,6 +12,9 @@ Tronar is a simple blog theme. It works best with featured images. The latest st
 
 == Changelog ==
 
+= 1.0.3 =
+* Troner: Update for submission (#7795)
+
 = 1.0.2 =
 * Optimize images (#7671)
 
