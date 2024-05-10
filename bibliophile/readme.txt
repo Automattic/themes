@@ -12,6 +12,13 @@ Bibliophile was designed to provide an impeccable reading experience. Its header
 
 == Changelog ==
 
+= 1.0.4 =
+* Update readme.txt
+* Replace screenshot.png
+* Update readme.txt
+* Update style.css
+* replace not needed esc_html_x by __
+
 = 1.0.3 =
 * Update theme.json (#7768)
 

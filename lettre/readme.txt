@@ -12,6 +12,9 @@ A theme for writers that want to publish a newsletter using Jetpack.
 
 == Changelog ==
 
+= 1.1.14 =
+* remove not necessary fix (#7792)
+
 = 1.1.13 =
 * Lossless image optimization (#7671)
 
