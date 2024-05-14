@@ -1,19 +1,16 @@
 === Spiel ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Spiel is a game magazine theme.
+Spiel is a game magazine theme. The rich and dense old-school homepage layout could still work well for pro-bloggers.
 
 == Changelog ==
-
-= 1.0.4 =
-* Lossless image optimization (#7671)
 
 = 1.0.4 =
 * Optimize images (#7671)
@@ -33,11 +30,8 @@ Spiel is a game magazine theme.
 
 == Copyright ==
 
-Spiel is based on Tenku (https://wordpress.com/theme/tenku/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-Tenku WordPress Theme, (C) 2023
-Tenku is distributed under the terms of the GNU GPL.
-Tenku is based on Tenku (), (C) , [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Spiel WordPress Theme (C) 2023 Automattic
+Spiel is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -51,7 +45,8 @@ GNU General Public License for more details.
 
 This theme bundles the following third-party resources:
 
-All the images seen on the screenshot.png were generated with AI using Midjourney and DALL-E.
+All the images seen on the screenshot.png were created with the assistance of AI.
+https://docs.midjourney.com/docs/terms-of-service
 
 Orbitron Font
 Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: "Orbitron". 
