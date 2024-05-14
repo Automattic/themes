@@ -12,6 +12,9 @@ A cheerful WordPress blogging theme dedicated to all things homemade and delight
 
 == Changelog ==
 
+= 1.0.6 =
+* Replace foreground with contrast (#7787)
+
 = 1.0.5 =
 * Fix custom heading background style. (#7751)
 

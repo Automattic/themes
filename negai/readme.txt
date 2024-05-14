@@ -12,6 +12,9 @@ Negai is a bold blogging theme with large post titles and interesting colour sch
 
 == Changelog ==
 
+= 1.0.4 =
+* Negai: update to 1.0.4 (#7779)
+
 = 1.0.3 =
 * Optimize images (#7671)
 
