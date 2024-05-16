@@ -31,7 +31,7 @@
 			]
 		},
 		"layout": {
-			"contentSize": "620px",
+			"contentSize": "820px",
 			"wideSize": "1000px"
 		},
 		"spacing": {
@@ -110,11 +110,11 @@
 			"fontSizes": [
 				{
 					"fluid": {
-						"max": "1.0625rem",
-						"min": "0.825rem"
+						"max": "1rem",
+						"min": "0.8rem"
 					},
 					"name": "Small",
-					"size": "1rem",
+					"size": "0.8rem",
 					"slug": "small"
 				},
 				{
@@ -129,10 +129,10 @@
 				{
 					"fluid": {
 						"max": "2rem",
-						"min": "1.75rem"
+						"min": "1.6rem"
 					},
 					"name": "Large",
-					"size": "1.75rem",
+					"size": "1.7rem",
 					"slug": "large"
 				},
 				{
@@ -143,6 +143,15 @@
 					"name": "Extra Large",
 					"size": "3rem",
 					"slug": "x-large"
+				},
+				{
+					"fluid": {
+						"max": "6.5rem",
+						"min": "5.5rem"
+					},
+					"name": "Huge",
+					"size": "6rem",
+					"slug": "huge"
 				}
 			]
 		},
@@ -152,10 +161,37 @@
 		"blocks": {
 			"core/code": {
 				"border": {
+					"bottom": {
+						"style": "none",
+						"width": "0px"
+					},
 					"color": "var(--wp--preset--color--foreground)",
+					"left": {
+						"style": "none",
+						"width": "0px"
+					},
 					"radius": "0.25rem",
+					"right": {
+						"style": "none",
+						"width": "0px"
+					},
 					"style": "solid",
+					"top": {
+						"style": "none",
+						"width": "0px"
+					},
 					"width": "2px"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--background)"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var(--wp--preset--color--background)"
+						}
+					}
 				},
 				"spacing": {
 					"padding": {
@@ -166,7 +202,9 @@
 					}
 				},
 				"typography": {
-					"fontFamily": "monospace"
+					"fontFamily": "monospace",
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"lineHeight": "1.8"
 				}
 			},
 			"core/comment-author-name": {
@@ -218,6 +256,11 @@
 					}
 				}
 			},
+			"core/paragraph": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--large)"
+				}
+			},
 			"core/post-author-name": {
 				"elements": {
 					"link": {
@@ -254,7 +297,7 @@
 			},
 			"core/post-navigation-link": {
 				"typography": {
-					"fontSize": "0.8rem"
+					"fontSize": "var(--wp--preset--font-size--large)"
 				}
 			},
 			"core/post-title": {
@@ -273,7 +316,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"bottom": "0"
+						"bottom": "0",
+						"top": "0"
 					}
 				}
 			},
@@ -299,19 +343,20 @@
 					},
 					"width": "1px 0"
 				},
+				"css": "text-align: left",
 				"spacing": {
 					"padding": {
 						"bottom": "var(--wp--preset--spacing--50)",
-						"left": "var(--wp--preset--spacing--50)",
-						"right": "var(--wp--preset--spacing--50)",
+						"left": "0",
+						"right": "0",
 						"top": "var(--wp--preset--spacing--50)"
 					}
 				},
 				"typography": {
-					"fontSize": "var:preset|font-size|large",
+					"fontSize": "var(--wp--preset--font-size--x-large)",
 					"fontStyle": "normal",
-					"fontWeight": "300",
-					"lineHeight": 1.3
+					"fontWeight": "600",
+					"lineHeight": "1.2"
 				}
 			},
 			"core/quote": {
@@ -326,9 +371,9 @@
 					}
 				},
 				"typography": {
-					"fontSize": "var:preset|font-size|medium",
+					"fontSize": "var(--wp--preset--font-size--large)",
 					"fontStyle": "normal",
-					"lineHeight": 1.3,
+					"lineHeight": "1.5",
 					"textDecoration": "none",
 					"textTransform": "none"
 				}
@@ -465,16 +510,16 @@
 			}
 		},
 		"spacing": {
-			"blockGap": "var:preset|spacing|50",
+			"blockGap": "var(--wp--preset--spacing--50)",
 			"padding": {
-				"bottom": "var:preset|spacing|60",
-				"left": "var:preset|spacing|50",
-				"right": "var:preset|spacing|50",
-				"top": "var:preset|spacing|60"
+				"bottom": "var(--wp--preset--spacing--60)",
+				"left": "var(--wp--preset--spacing--50)",
+				"right": "var(--wp--preset--spacing--50)",
+				"top": "var(--wp--preset--spacing--60)"
 			}
 		},
 		"typography": {
-			"fontFamily": "var:preset|font-family|open-sauce-sans",
+			"fontFamily": "var(--wp--preset--font-family--open-sauce-sans)",
 			"fontSize": "1.7rem",
 			"fontStyle": "normal",
 			"fontWeight": "300",
@@ -492,5 +537,5 @@
 		}
 	],
 	"version": 2,
-	"$schema": "https://schemas.wp.org/trunk/theme.json"
+	"$schema": "https://schemas.wp.org/wp/6.5/theme.json"
 }
