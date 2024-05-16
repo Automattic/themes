@@ -48,3 +48,29 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+== Fonts ==
+
+Fira Sans Font
+Digitized data copyright (c) 2012-2015, The Mozilla Foundation and Telefonica S.A.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Fira Sans Font credits --
+
+Fira Mono Font
+Copyright (c) 2014, Mozilla Foundation https://mozilla.org/ with Reserved Font Name Fira Mono.
+Copyright (c) 2014, Telefonica S.A.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Fira Sans Font credits --
+
+Image for theme screenshot, Credit The Thundershower (study for painting) (ca. 1916) Henry Lyman Saÿen
+License: Public Domain
+License URL: https://creativecommons.org/public-domain/
+Source: https://artvee.com/dl/the-thundershower-study-for-painting#00
