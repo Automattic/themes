@@ -12,6 +12,12 @@ Artly is a WordPress theme designed for blogs and magazines. Its modern, offset 
 
 == Changelog ==
 
+= 1.0.5 =
+* Lossless image optimization (#7671)
+
+= 1.0.5 =
+* Optimize images (#7671)
+
 = 1.0.4 =
 * Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
 
@@ -42,3 +48,44 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+== Fonts ==
+
+Fira Sans Font
+Digitized data copyright (c) 2012-2015, The Mozilla Foundation and Telefonica S.A.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Fira Sans Font credits --
+
+Fira Code Font
+Copyright (c) 2014, The Fira Code Project Authors (https://github.com/tonsky/FiraCode)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Fira Code Font credits --
+
+Commissioner Font
+Copyright 2019 The Commissioner Project Authors (https://github.com/kosbarts/Commissioner)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Commissioner Font credits --
+
+Crimson Pro Font
+Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Crimson Pro Font credits --
+
+Image for theme screenshot, Credit The Thundershower (study for painting) (ca. 1916) Henry Lyman Saÿen
+License: Public Domain
+License URL: https://creativecommons.org/public-domain/
+Source: https://artvee.com/dl/the-thundershower-study-for-painting#00
