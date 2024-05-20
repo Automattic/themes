@@ -48,3 +48,16 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Manrope Font
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is available with an FAQ at http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Manrope Font credits --
+
+Image for theme screenshot, Credit Jan Brueghel The Elder, Flowers in a Wan-Li Vase (c. 1610 - 1615)
+License: Public Domain
+License URL: https://creativecommons.org/public-domain/pdm/
+Source: https://artvee.com/dl/flowers-in-a-wan-li-vase-2#00
