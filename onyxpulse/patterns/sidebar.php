@@ -5,7 +5,10 @@
  * Categories: hidden
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
+
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group">
 	<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|30","left":"var:preset|spacing|30","top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"dimensions":{"minHeight":""},"border":{"width":"1px"},"layout":{"rowSpan":"","columnSpan":""}},"borderColor":"theme-4","layout":{"type":"default"}} -->
