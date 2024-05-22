@@ -12,6 +12,9 @@ OnyxPulse is a simple business theme for a legal service.
 
 == Changelog ==
 
+= 1.0.1 =
+* OnyxPulse: Reduce the file size of the screenshot and adjusted the theme tags. (#7822)
+
 = 1.0.0 =
 * Initial release
 
