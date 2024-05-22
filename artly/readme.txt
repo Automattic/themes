@@ -12,6 +12,9 @@ Artly is a WordPress theme designed for blogs and magazines. Its modern, offset 
 
 == Changelog ==
 
+= 1.0.6 =
+* Update readme.txt
+
 = 1.0.5 =
 * Lossless image optimization (#7671)
 
