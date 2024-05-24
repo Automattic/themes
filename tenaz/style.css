@@ -10,7 +10,7 @@ Requires PHP: 5.7
 Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Template: 
+Template:
 Text Domain: tenaz
 Tags: blog, two-columns, wide-blocks, block-patterns, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, template-editing, rtl-language-support, threaded-comments, translation-ready
 Status: inactive
@@ -46,4 +46,17 @@ Status: inactive
 .wp-block-pullquote blockquote,
 .wp-block-pullquote p {
 	margin: 0;
+}
+
+.wp-block-query.query-latest-posts .wp-block-post:first-child {
+	grid-row: span 2;
+	grid-column: span 2;
+}
+
+.wp-block-query.query-latest-posts .wp-block-post:not(:first-child) .wp-block-post-title {
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+.wp-block-query.query-latest-posts .wp-block-post:not(:first-child) .wp-block-post-excerpt {
+	display: none;
 }
