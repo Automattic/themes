@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
@@ -632,20 +632,23 @@ async function updateLastDeployedHash() {
 async function versionBumpThemes() {
 	console.log("Version Bumping");
 
-	let themes = await getActionableThemes();
-	let hash = await getLastDeployedHash();
-	let changesWereMade = false;
+	const themes = await getActionableThemes();
+	const latestTag = execSync('git describe --tags --abbrev=0').toString().trim();
+	// Get the hash for the latest tag.
+	const hash = execSync(`git rev-parse ${latestTag}`).toString().trim();
 	let versionBumpCount = 0;
+	let changesWereMade = false;
 
 	for (let theme of themes) {
-		let hasChanges = await checkThemeForChanges(theme, hash);
+		const hasChanges = await checkThemeForChanges(theme, hash);
+
 		if (!hasChanges) {
-			// console.log(`${theme} has no changes`);
 			continue;
 		}
 
 		versionBumpCount++;
-		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
+		const hasVersionBump = await checkThemeForVersionBump(theme, hash);
+
 		if (hasVersionBump) {
 			continue;
 		}
@@ -656,7 +659,8 @@ async function versionBumpThemes() {
 	}
 
 	//version bump the root project if there were changes to any of the themes
-	let rootHasVersionBump = await checkProjectForVersionBump(hash);
+	const rootHasVersionBump = await checkProjectForVersionBump(hash);
+
 	if (versionBumpCount > 0 && !rootHasVersionBump) {
 		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
 		changesWereMade = true;
