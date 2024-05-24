@@ -742,7 +742,8 @@ async function updateThemeChangelog(theme, addChanges) {
 	let version = getThemeMetadata(styleCss, 'Version');
 
 	// Get list of updates with bullet points
-	let logs = await getCommitLogs('', true, theme);
+	const lastestTagHash = execSync('git describe --tags --abbrev=0').toString().trim(); 
+	let logs = await getCommitLogs(lastestTagHash, true, theme);
 
 	// Get theme readme.txt
 	let readmeFilePath = `${theme}/readme.txt`;
