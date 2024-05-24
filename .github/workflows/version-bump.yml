@@ -1,0 +1,51 @@
+name: Version bump themes
+on:
+  workflow_dispatch:
+    inputs:
+      theme-slug:
+        description: 'Theme slug'
+        required: false
+        default: 'all'
+  
+jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 19
+      - name: Install node dependencies
+        run: npm install
+
+      - name: Version bump
+        run: |
+          if [ ${{ github.event.inputs.theme-slug }} == 'all' ]; then
+            npm run version-bump
+          else
+            # Check if theme exists
+            theme_exists=false
+            target_theme_slug=${{ github.event.inputs.theme-slug }}
+
+            # Loop through each subdirectory in the themes directory
+            for dir in ./*/; do
+                # Get the name of the directory (theme name)
+                theme_dir_name=$(basename "$dir")
+                
+                # Check if the directory name matches the target theme name and if it contains a style.css file
+                if [[ "$theme_dir_name" == "$target_theme_slug" && -f "$dir/style.css" ]]; then
+                    theme_exists=true
+                fi
+            done
+
+            # Error out if theme does not exist
+            if [ $theme_exists == false ]; then
+              echo "Theme `${{ github.event.inputs.theme-slug }}` does not exist"
+              exit 1
+            fi
+
+            npm run version-bump -- ${{ github.event.inputs.theme-slug }}
+          fi
