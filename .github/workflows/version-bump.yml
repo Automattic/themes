@@ -28,6 +28,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 19
+          
       - name: Install node dependencies
         run: npm install
 
@@ -80,6 +81,7 @@ jobs:
             git push --set-upstream origin ${{ steps.create-branch.outputs.BRANCH_NAME }}
 
       - name: Create Pull Request
+        if: steps.check-changes.outputs.HAS_CHANGES == 'true'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
