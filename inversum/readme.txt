@@ -1,6 +1,6 @@
 == Inversum ==
 
-Contributors: 
+Contributors: the WordPress team
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 5.7
@@ -31,4 +31,9 @@ GNU General Public License for more details.
 
 
 Inversum is based on Upsidedown (), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+
+
+== Description ==
+
+Inversion is a blog theme designed in the WordPress Site Editor. Its neat visuals introduce a direct experience on post reading: noticeable post titles listed on a text-only page, with an original swap of header and footer blocks.
 
