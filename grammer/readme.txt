@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Bring the Social Media experience to your site and transform it into a repository for your photos and videos. Get Grammer One now.
+Get Grammer now to bring the Social Media experience to your site and transform it into a repository for your photos and videos.
 
 == Changelog ==
 
