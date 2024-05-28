@@ -12,6 +12,9 @@ Spiel is a game magazine theme. The rich and dense old-school homepage layout co
 
 == Changelog ==
 
+= 1.0.6 =
+* Optimised screenshot (#7834)
+
 = 1.0.5 =
 * Spiel: Clean up for Dotorg submission, Added a spacingSize20, and removed some unnecessary local styling from templates.  (#7804)
 
