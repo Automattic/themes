@@ -1,0 +1,23 @@
+<?php
+/**
+ * Title: footer
+ * Slug: vitrum/footer
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
+<!-- wp:group {"style":{"border":{"top":{"width":"1px"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="border-top-width:1px"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"3vh","bottom":"60px"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide" style="padding-top:3vh;padding-bottom:60px"><!-- wp:group {"style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><?php echo __('©', 'vitrum');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:site-title {"fontSize":"small"} /--></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p><?php echo __('Designed with <a rel="noreferrer noopener" href="http://wordpress.org" data-type="URL" data-id="wordpress.org" target="_blank">WordPress.</a>', 'vitrum');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
