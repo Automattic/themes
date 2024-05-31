@@ -1,32 +1,32 @@
 {
     "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
-    "title": "Cinnabar",
+    "title": "Cornflower",
     "settings": {
         "color": {
             "palette": [
                 {
-                    "color": "#ffffff",
+                    "color": "#FFFFFF",
                     "name": "Color 1",
                     "slug": "theme-1"
                 },
                 {
-                    "color": "#EFEFEB",
+                    "color": "#f2f4f8",
                     "name": "Color 2",
                     "slug": "theme-2"
                 },
                 {
-                    "color": "#FFDFD3",
+                    "color": "#989898",
                     "name": "Color 3",
                     "slug": "theme-3"
                 },
                 {
-                    "color": "#D63D00",
+                    "color": "#87A3BF",
                     "name": "Color 4",
                     "slug": "theme-4"
                 },
                 {
-                    "color": "#1A1A1A",
+                    "color": "#0F0F0F",
                     "name": "Color 5",
                     "slug": "theme-5"
                 }
@@ -34,80 +34,80 @@
             "duotone": [
                 {
                     "colors": [
-                        "#ffffff",
-                        "#EFEFEB"
+                        "#FFFFFF",
+                        "#f2f4f8"
                     ],
                     "slug": "duotone-0-1",
                     "name": "Duotone 1"
                 },
                 {
                     "colors": [
-                        "#ffffff",
-                        "#FFDFD3"
+                        "#FFFFFF",
+                        "#989898"
                     ],
                     "slug": "duotone-0-2",
                     "name": "Duotone 2"
                 },
                 {
                     "colors": [
-                        "#ffffff",
-                        "#D63D00"
+                        "#FFFFFF",
+                        "#87A3BF"
                     ],
                     "slug": "duotone-0-3",
                     "name": "Duotone 3"
                 },
                 {
                     "colors": [
-                        "#ffffff",
-                        "#1A1A1A"
+                        "#FFFFFF",
+                        "#0F0F0F"
                     ],
                     "slug": "duotone-0-4",
                     "name": "Duotone 4"
                 },
                 {
                     "colors": [
-                        "#EFEFEB",
-                        "#FFDFD3"
+                        "#f2f4f8",
+                        "#989898"
                     ],
                     "slug": "duotone-1-2",
                     "name": "Duotone 5"
                 },
                 {
                     "colors": [
-                        "#EFEFEB",
-                        "#D63D00"
+                        "#f2f4f8",
+                        "#87A3BF"
                     ],
                     "slug": "duotone-1-3",
                     "name": "Duotone 6"
                 },
                 {
                     "colors": [
-                        "#EFEFEB",
-                        "#1A1A1A"
+                        "#f2f4f8",
+                        "#0F0F0F"
                     ],
                     "slug": "duotone-1-4",
                     "name": "Duotone 7"
                 },
                 {
                     "colors": [
-                        "#FFDFD3",
-                        "#D63D00"
+                        "#989898",
+                        "#87A3BF"
                     ],
                     "slug": "duotone-2-3",
                     "name": "Duotone 8"
                 },
                 {
                     "colors": [
-                        "#FFDFD3",
-                        "#1A1A1A"
+                        "#989898",
+                        "#0F0F0F"
                     ],
                     "slug": "duotone-2-4",
                     "name": "Duotone 9"
                 },
                 {
                     "colors": [
-                        "#D63D00",
-                        "#1A1A1A"
+                        "#87A3BF",
+                        "#0F0F0F"
                     ],
                     "slug": "duotone-3-4",
                     "name": "Duotone 10"
@@ -116,7 +116,7 @@
             "gradients": [
                 {
                     "slug": "gradient-text-transparent",
-                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-4) -50%, transparent 50%)",
+                    "gradient": "linear-gradient(to bottom, var(--wp--preset--color--theme-5) -50%, transparent 50%)",
                     "name": "Text to Transparent"
                 },
                 {
@@ -177,7 +177,12 @@
                     "background": "var(--wp--preset--color--theme-2)"
                 },
                 "border": {
-                    "color": "var(--wp--preset--color--theme-4)"
+                    "color": "var(--wp--preset--color--theme-5)"
+                },
+                ":focus": {
+                    "border": {
+                        "color": "var(--wp--preset--color--theme-5)"
+                    }
                 }
             }
         }
@@ -185,26 +190,50 @@
     "styles": {
         "color": {
             "background": "var(--wp--preset--color--theme-2)",
-            "text": "var(--wp--preset--color--theme-4)"
+            "text": "var(--wp--preset--color--theme-5)"
         },
         "blocks": {
+            "core/button": {
+                "variations": {
+                    "outline": {
+                        "border": {
+                            "color": "var(--wp--preset--color--theme-4)"
+                        },
+                        "color": {
+                            "text": "var(--wp--preset--color--theme-5)"
+                        }
+                    }
+                }
+            },
             "core/separator": {
                 "color": {
-                    "text": "var(--wp--preset--color--theme-4)"
+                    "text": "var(--wp--preset--color--theme-3)"
                 }
             }
         },
         "elements": {
-            "button": {
+            "heading": {
                 "color": {
-                    "background": "var(--wp--preset--color--theme-4)",
-                    "text": "var(--wp--preset--color--theme-2)"
-                },
+                    "text": "var(--wp--preset--color--theme-5)"
+                }
+            },
+            "link": {
+                "color": {
+                    "text": {
+                        "ref": "styles.color.text"
+                    }
+                }
+            },
+            "button": {
                 ":hover": {
                     "color": {
                         "background": "var(--wp--preset--color--theme-5)",
-                        "text": "var(--wp--preset--color--theme-2)"
+                        "text": "var(--wp--preset--color--theme-1)"
                     }
+                },
+                "color": {
+                    "background": "var(--wp--preset--color--theme-4)",
+                    "text": "var(--wp--preset--color--theme-5)"
                 }
             }
         }
