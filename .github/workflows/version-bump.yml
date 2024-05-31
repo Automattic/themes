@@ -67,6 +67,14 @@ jobs:
         run: |
           if [[ $(git status --porcelain) ]]; then
             echo "HAS_CHANGES=true" >> $GITHUB_OUTPUT
+            # Get list of changed directory names
+            changed_dirs=$(git diff --name-only HEAD origin/trunk | xargs -I {} dirname {} | sort | uniq)
+            # Serialize list of changed directories to a string
+            CHANGED_THEMES=""
+            for dir in $changed_dirs; do
+              CHANGED_THEMES+="$dir,"
+            done
+            echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
           else
             echo "HAS_CHANGES=false" >> $GITHUB_OUTPUT
           fi
@@ -86,7 +94,11 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
             gh pr create \
-            --title "[Automation] Version bump" \
+            --title "[Automation] Themes version bump" \
             --base trunk \
             --head ${{ steps.create-branch.outputs.BRANCH_NAME }} \
-            --body "vesion bump pr"
+            --body "
+            This PR was automatically created by the version bump workflow.
+            The following themes are being update:
+              ${{ steps.check-changes.outputs.CHANGED_THEMES }}
+              
