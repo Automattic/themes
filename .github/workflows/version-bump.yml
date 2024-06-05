@@ -65,15 +65,26 @@ jobs:
       - name: Check if there are changes
         id: check-changes
         run: |
-          if [[ $(git status --porcelain) ]]; then
+          if [ "$(git diff --cached --name-only)" ]; then
             echo "HAS_CHANGES=true" >> $GITHUB_OUTPUT
-            # Get list of changed directory names
-            changed_dirs=$(git diff --name-only HEAD origin/trunk | xargs -I {} dirname {} | sort | uniq)
-            # Serialize list of changed directories to a string
+        
+            # Get list of changed directory names for staged changes
+            changed_dirs=$(git diff --cached --name-only | xargs -I {} dirname {} | sort | uniq)
+        
+            # Initialize an empty string for CHANGED_THEMES
             CHANGED_THEMES=""
-            for dir in $changed_dirs; do
-              CHANGED_THEMES+="$dir,"
+        
+            # Iterate over the changed directories
+            echo "$changed_dirs" | while IFS= read -r dir; do
+              if [ -f "$dir/style.css" ]; then
+                # Append the directory to CHANGED_THEMES
+                CHANGED_THEMES="${CHANGED_THEMES}${dir},"
+              fi
             done
+        
+            # Remove the trailing comma
+            CHANGED_THEMES=${CHANGED_THEMES%,}
+        
             echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
           else
             echo "HAS_CHANGES=false" >> $GITHUB_OUTPUT
