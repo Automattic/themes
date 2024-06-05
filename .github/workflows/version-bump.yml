@@ -44,13 +44,13 @@ jobs:
 
             # Loop through each subdirectory in the themes directory
             for dir in ./*/; do
-              # Get the name of the directory (theme name)
-              theme_dir_name=$(basename "$dir")
-              
-              # Check if the directory name matches the target theme name and if it contains a style.css file
-              if [[ "$theme_dir_name" == "$target_theme_slug" && -f "$dir/style.css" ]]; then
-                  theme_exists=true
-              fi
+                # Get the name of the directory (theme name)
+                theme_dir_name=$(basename "$dir")
+                
+                # Check if the directory name matches the target theme name and if it contains a style.css file
+                if [[ "$theme_dir_name" == "$target_theme_slug" && -f "$dir/style.css" ]]; then
+                    theme_exists=true
+                fi
             done
 
             # Error out if theme does not exist
@@ -107,11 +107,9 @@ jobs:
             CHANGED_THEMES: ${{ steps.check-changes.outputs.CHANGED_THEMES }}
         run: |
           echo "Creating PR for themes: ${{ env.CHANGED_THEMES }}"
+          PR_BODY=$(echo -e "## [Automation] 🤖 Themes Version Bump\n\nThis PR was automatically created by the version bump workflow.\n\n### Updated Themes\nThe following themes are being updated due to changes since the last git tag:\n\n${{ env.CHANGED_THEMES//,/\\n}}\n\n### Why These Updates?\nThis script bumps the version of themes that have changes since the last git tag. This ensures that any updates or fixes are properly versioned and deployed.\n\n### Disclaimer\nThis is an automated process. Please review the changes carefully.")
           gh pr create \
           --title "[Automation] Themes version bump" \
           --base trunk \
           --head ${{ steps.create-branch.outputs.BRANCH_NAME }} \
-          --body "
-          This PR was automatically created by the version bump workflow.
-          The following themes are being updated:
-            ${{ env.CHANGED_THEMES }}"
+          --body "$PR_BODY"
