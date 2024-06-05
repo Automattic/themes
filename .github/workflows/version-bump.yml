@@ -86,6 +86,7 @@ jobs:
             CHANGED_THEMES=${CHANGED_THEMES%,}
         
             echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
+            echo "Themes with changes: $CHANGED_THEMES"
           else
             echo "HAS_CHANGES=false" >> $GITHUB_OUTPUT
           fi
@@ -105,6 +106,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             CHANGED_THEMES: ${{ steps.check-changes.outputs.CHANGED_THEMES }}
         run: |
+          echo "Creating PR for themes: ${{ env.CHANGED_THEMES }}"
           gh pr create \
           --title "[Automation] Themes version bump" \
           --base trunk \
