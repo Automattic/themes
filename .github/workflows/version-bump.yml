@@ -22,7 +22,7 @@ jobs:
         run: |
           BRANCH_NAME="automated-version-bump/${{ github.run_number }}"
           git checkout -b $BRANCH_NAME
-          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -66,7 +66,7 @@ jobs:
         id: check-changes
         run: |
           if [ "$(git diff --cached --name-only)" ]; then
-            echo "HAS_CHANGES=true" >> $GITHUB_OUTPUT
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
         
             # Get list of changed directory names for staged changes
             changed_dirs=$(git diff --cached --name-only | xargs -I {} dirname {} | sort | uniq)
@@ -85,31 +85,48 @@ jobs:
             # Join array elements into a string
             CHANGED_THEMES=$(IFS=,; echo "${changed_themes[*]}")
         
-            echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
+            echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_ENV
             echo "Themes with changes: $CHANGED_THEMES"
           else
-            echo "HAS_CHANGES=false" >> $GITHUB_OUTPUT
+            echo "HAS_CHANGES=false" >> $GITHUB_ENV
           fi
 
       - name: Commit changes
-        if: steps.check-changes.outputs.HAS_CHANGES == 'true'
+        if: env.HAS_CHANGES == 'true'
         run: |
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             git add .
             git commit -m "Version bump & changelog update" --no-verify
-            git push --set-upstream origin ${{ steps.create-branch.outputs.BRANCH_NAME }}
+            git push --set-upstream origin ${{ env.BRANCH_NAME }}
 
       - name: Create Pull Request
-        if: steps.check-changes.outputs.HAS_CHANGES == 'true'
+        if: env.HAS_CHANGES == 'true'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            CHANGED_THEMES: ${{ steps.check-changes.outputs.CHANGED_THEMES }}
+            CHANGED_THEMES: ${{ env.CHANGED_THEMES }}
         run: |
-          echo "Creating PR for themes: ${{ env.CHANGED_THEMES }}"
-          PR_BODY=$(echo -e "## [Automation] 🤖 Themes Version Bump\n\nThis PR was automatically created by the version bump workflow.\n\n### Updated Themes\nThe following themes are being updated due to changes since the last git tag:\n\n${{ env.CHANGED_THEMES//,/\\n}}\n\n### Why These Updates?\nThis script bumps the version of themes that have changes since the last git tag. This ensures that any updates or fixes are properly versioned and deployed.\n\n### Disclaimer\nThis is an automated process. Please review the changes carefully.")
+          echo "Creating PR for themes: $CHANGED_THEMES"
+          THEMES_LIST=$(echo "$CHANGED_THEMES" | tr ',' '\n')
+          PR_BODY=$(cat <<-EOF
+          ## [Automation] Themes Version Bump
+
+          This PR was automatically created by the version bump workflow.
+
+          ### Updated Themes
+          The following themes are being updated due to changes since the last git tag:
+
+          $THEMES_LIST
+
+          ### Why These Updates?
+          This script bumps the version of themes that have changes since the last git tag. This ensures that any updates or fixes are properly versioned and deployed.
+
+          ### Disclaimer
+          This is an automated process. Please review the changes carefully.
+          EOF
+          )
           gh pr create \
           --title "[Automation] Themes version bump" \
           --base trunk \
-          --head ${{ steps.create-branch.outputs.BRANCH_NAME }} \
+          --head ${{ env.BRANCH_NAME }} \
           --body "$PR_BODY"
