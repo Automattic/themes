@@ -103,12 +103,13 @@ jobs:
         if: steps.check-changes.outputs.HAS_CHANGES == 'true'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            CHANGED_THEMES: ${{ steps.check-changes.outputs.CHANGED_THEMES }}
         run: |
-            gh pr create \
-            --title "[Automation] Themes version bump" \
-            --base trunk \
-            --head ${{ steps.create-branch.outputs.BRANCH_NAME }} \
-            --body "
-            This PR was automatically created by the version bump workflow.
-            The following themes are being update:
-              ${{ steps.check-changes.outputs.CHANGED_THEMES }}"
+          gh pr create \
+          --title "[Automation] Themes version bump" \
+          --base trunk \
+          --head ${{ steps.create-branch.outputs.BRANCH_NAME }} \
+          --body "
+          This PR was automatically created by the version bump workflow.
+          The following themes are being updated:
+            ${{ env.CHANGED_THEMES }}"
