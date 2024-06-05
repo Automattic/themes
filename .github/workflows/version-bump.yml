@@ -35,7 +35,7 @@ jobs:
       - name: Version bump
         id: version-bump
         run: |
-          if [ ${{ github.event.inputs.theme-slug }} == 'all' ]; then
+          if [ "${{ github.event.inputs.theme-slug }}" == 'all' ]; then
             npm run deploy:version-bump
           else
             # Check if theme exists
@@ -44,17 +44,17 @@ jobs:
 
             # Loop through each subdirectory in the themes directory
             for dir in ./*/; do
-                # Get the name of the directory (theme name)
-                theme_dir_name=$(basename "$dir")
-                
-                # Check if the directory name matches the target theme name and if it contains a style.css file
-                if [[ "$theme_dir_name" == "$target_theme_slug" && -f "$dir/style.css" ]]; then
-                    theme_exists=true
-                fi
+              # Get the name of the directory (theme name)
+              theme_dir_name=$(basename "$dir")
+              
+              # Check if the directory name matches the target theme name and if it contains a style.css file
+              if [[ "$theme_dir_name" == "$target_theme_slug" && -f "$dir/style.css" ]]; then
+                  theme_exists=true
+              fi
             done
 
             # Error out if theme does not exist
-            if [ $theme_exists == false ]; then
+            if [ "$theme_exists" == false ]; then
               echo "Theme `${{ github.event.inputs.theme-slug }}` does not exist"
               exit 1
             fi
@@ -71,19 +71,19 @@ jobs:
             # Get list of changed directory names for staged changes
             changed_dirs=$(git diff --cached --name-only | xargs -I {} dirname {} | sort | uniq)
         
-            # Initialize an empty string for CHANGED_THEMES
-            CHANGED_THEMES=""
+            # Initialize an array for CHANGED_THEMES
+            changed_themes=()
         
             # Iterate over the changed directories
-            echo "$changed_dirs" | while IFS= read -r dir; do
+            for dir in $changed_dirs; do
               if [ -f "$dir/style.css" ]; then
-                # Append the directory to CHANGED_THEMES
-                CHANGED_THEMES="${CHANGED_THEMES}${dir},"
+                # Append the directory to changed_themes array
+                changed_themes+=("$dir")
               fi
             done
         
-            # Remove the trailing comma
-            CHANGED_THEMES=${CHANGED_THEMES%,}
+            # Join array elements into a string
+            CHANGED_THEMES=$(IFS=,; echo "${changed_themes[*]}")
         
             echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
             echo "Themes with changes: $CHANGED_THEMES"
