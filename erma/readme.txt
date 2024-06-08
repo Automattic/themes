@@ -15,9 +15,6 @@ Erma is a WordPress portfolio block theme that features gorgeous imagery and mod
 = 1.0.9 =
 * Lossless image optimization (#7671)
 
-= 1.0.9 =
-* Optimize images (#7671)
-
 = 1.0.8 =
 * Update theme erma (#7565)
 
