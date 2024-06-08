@@ -12,6 +12,21 @@ Foam is a WordPress event theme with a vibrant, straightforward style. Entirely 
 
 == Changelog ==
 
+= 1.0.5 =
+* Prepare theme for WP.org submission (#7759)
+
+= 1.0.4 =
+* Update theme foam (#7769)
+
+= 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
+* Optimize images (#7671)
+
+= 1.0.2 =
+* Bumping to rebuild theme zip for wpcom ms updater PHP8 support.
+
 = 1.0.1 =
 * Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
 

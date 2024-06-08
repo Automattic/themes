@@ -12,6 +12,12 @@ Heiwa is a theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.7 =
+* Lossless image optimization (#7671)
+
+= 1.0.7 =
+* Optimize images (#7671)
+
 = 1.0.6 =
 * Blockbase + children: remove __unstableLocation (#6759)
 

@@ -1,4 +1,4 @@
-import { spawn } from 'child_process';
+import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
@@ -65,6 +65,10 @@ const commands = {
 		additionalArgs: '<array of theme slugs>',
 		run: (args) => deployThemes(args?.[1].split(/[ ,]+/))
 	},
+	"add-strict-typing": {
+		helpText: 'Adds strict typing to any changed themes.',
+		run: () => addStrictTypesToChangedThemes()
+	},
 	"build-com-zip": {
 		helpText: 'Build the production zip file for the specified theme.',
 		additionalArgs: '<theme-slug>',
@@ -74,6 +78,10 @@ const commands = {
 		helpText: 'Use SVN to checkout the given core themes from the wpcom SVN repository.',
 		additionalArgs: '<theme-slug>',
 		run: (args) => checkoutCoreTheme(args?.[1])
+	},
+	"pull-all-themes": {
+		helpText: 'Use rsync to copy all public theme files from your sandbox to your local machine.',
+		run: pullAllThemes
 	},
 	"pull-core-themes": {
 		helpText: 'Use rsync to copy all public CORE theme files from your sandbox to your local machine. CORE themes are any of the Twenty<whatever> themes.',
@@ -201,6 +209,20 @@ async function deployPreview() {
 	console.log(`\n\nCommit log of changes to be deployed:\n\n${logs}\n\n`);
 }
 
+async function addStrictTypesToChangedThemes() {
+	let hash = await getLastDeployedHash();
+	const changedThemes = await getChangedThemes(hash);
+
+	for (let theme of changedThemes) {
+		await executeCommand(`
+			bash -c "./add-strict-types.sh ${theme}"
+		`, true)
+		.catch((err) => {
+			console.log(`Error adding strict types to ${theme}: ${err}`);
+		});
+	}
+}
+
 /*
  Execute the first phase of a deployment.
 	* Gets the last deployed hash from the sandbox
@@ -236,8 +258,9 @@ async function pushButtonDeploy() {
 	try {
 		await cleanSandbox();
 
-		let hash = await getLastDeployedHash();
-		let thingsWentBump = await versionBumpThemes();
+		const hash = await getLastDeployedHash();
+		await addStrictTypesToChangedThemes();
+		const thingsWentBump = await versionBumpThemes();
 
 		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
@@ -253,7 +276,7 @@ async function pushButtonDeploy() {
 			}
 		}
 
-		let changedThemes = await getChangedThemes(hash);
+		const changedThemes = await getChangedThemes(hash);
 
 		if (!changedThemes.length) {
 			console.log(`\n\nEverything is upto date. Nothing new to deploy.\n\n`);
@@ -609,20 +632,23 @@ async function updateLastDeployedHash() {
 async function versionBumpThemes() {
 	console.log("Version Bumping");
 
-	let themes = await getActionableThemes();
-	let hash = await getLastDeployedHash();
-	let changesWereMade = false;
+	const themes = await getActionableThemes();
+	const latestTag = execSync('git describe --tags --abbrev=0').toString().trim();
+	// Get the hash for the latest tag.
+	const hash = execSync(`git rev-parse ${latestTag}`).toString().trim();
 	let versionBumpCount = 0;
+	let changesWereMade = false;
 
 	for (let theme of themes) {
-		let hasChanges = await checkThemeForChanges(theme, hash);
+		const hasChanges = await checkThemeForChanges(theme, hash);
+
 		if (!hasChanges) {
-			// console.log(`${theme} has no changes`);
 			continue;
 		}
 
 		versionBumpCount++;
-		let hasVersionBump = await checkThemeForVersionBump(theme, hash);
+		const hasVersionBump = await checkThemeForVersionBump(theme, hash);
+
 		if (hasVersionBump) {
 			continue;
 		}
@@ -633,7 +659,8 @@ async function versionBumpThemes() {
 	}
 
 	//version bump the root project if there were changes to any of the themes
-	let rootHasVersionBump = await checkProjectForVersionBump(hash);
+	const rootHasVersionBump = await checkProjectForVersionBump(hash);
+
 	if (versionBumpCount > 0 && !rootHasVersionBump) {
 		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
 		changesWereMade = true;
@@ -715,7 +742,8 @@ async function updateThemeChangelog(theme, addChanges) {
 	let version = getThemeMetadata(styleCss, 'Version');
 
 	// Get list of updates with bullet points
-	let logs = await getCommitLogs('', true, theme);
+	const lastestTagHash = execSync('git describe --tags --abbrev=0').toString().trim(); 
+	let logs = await getCommitLogs(lastestTagHash, true, theme);
 
 	// Get theme readme.txt
 	let readmeFilePath = `${theme}/readme.txt`;
@@ -771,15 +799,12 @@ async function versionBumpTheme(theme, addChanges) {
 		const isPackageJson = file === `${theme}/package.json`;
 		if (isPackageJson) {
 			// update theme/package.json and package-lock.json
-			await executeCommand(`npm version ${currentVersion.replace('-wpcom', '')} --workspace=${theme} --silent`);
+			await executeCommand(`npm version ${currentVersion.replace('-wpcom', '')} --workspace=${theme}`);
 		} else {
 			await executeCommand(`perl -pi -e 's/Version: (.*)$/"Version: '${currentVersion}'"/ge' ${file}`);
 		}
 		if (addChanges) {
 			await executeCommand(`git add ${file}`);
-			if (isPackageJson) {
-				await executeCommand(`git add package-lock.json`);
-			}
 		}
 	}
 }
@@ -908,6 +933,21 @@ async function checkoutCoreTheme(theme) {
 		rm -rf ./${theme}
 		svn checkout https://wpcom-themes.svn.automattic.com/${theme} ./${theme}
 	`);
+}
+
+async function pullAllThemes() {
+	console.log("Pulling ALL themes from sandbox.");
+	let allThemes = await getActionableThemes();
+	for (let theme of allThemes) {
+		try {
+		await executeCommand(`
+			rsync -avr --no-p --no-times --delete -m --exclude-from='.sandbox-ignore' wpcom-sandbox:${sandboxPublicThemesFolder}/${theme}/ ./${theme}/ 
+		`, true);
+		}
+		catch (err) {
+			console.log('Error pulling:', err);
+		}
+	}
 }
 
 async function pullCoreThemes() {
@@ -1045,6 +1085,12 @@ async function createGlotPressProject(changedThemes) {
 	for (const themeSlug of changedThemes) {
 		let styleCss = fs.readFileSync(`${themeSlug}/style.css`, 'utf8');
 		let themeVersion = getThemeMetadata(styleCss, 'Version');
+		
+		// Check if theme version is correctly formatted. Temporarily coerce the value to a parseable semver version if it's not.
+		if (!semver.valid(themeVersion)) {
+			console.log(`\n[WARN] Invalid version in style.css for ${themeSlug}: ${themeVersion}\n`);
+			themeVersion = semver.coerce(themeVersion);
+		}
 
 		if (semver.gte(themeVersion, '1.0.0')) {
 			console.log(`\nCreating GlotPress project for ${themeSlug}\n`);

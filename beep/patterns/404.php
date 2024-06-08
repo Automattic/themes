@@ -4,6 +4,8 @@
  * Slug: beep/404
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:heading {"textAlign":"left","level":1,"anchor":"oops-that-page-can-t-be-found"} -->

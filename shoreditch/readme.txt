@@ -19,6 +19,15 @@ Shoreditch is a functional and responsive theme perfect for your business’s on
 
 == Changelog ==
 
+= 1.2.12 =
+* pub themes: Restore changes overwritten from latest themes deploy (D144213 D144218 D144223 D144228 D144234 D144240 D144244) (#7708)
+
+= 1.2.11 =
+* Lossless image optimization (#7671)
+
+= 1.2.11 =
+* Optimize images (#7671)
+
 = 1.2.10 =
 * Public Themes S1: PHP Rector fixes (#7393)
 

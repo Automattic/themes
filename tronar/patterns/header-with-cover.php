@@ -26,7 +26,7 @@ declare( strict_types = 1 );
 
 				<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)">
-					<!-- wp:group {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"blockGap":"var:preset|spacing|40"}},"textColor":"base","layout":{"type":"flex","orientation":"vertical"}} -->
+					<!-- wp:group {"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"blockGap":"var:preset|spacing|30"}},"textColor":"base","layout":{"type":"flex","orientation":"vertical"}} -->
 					<div class="wp-block-group alignwide has-base-color has-text-color has-link-color">
 						<!-- wp:post-date /-->
 

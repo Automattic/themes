@@ -12,6 +12,12 @@ Paimio is a minimal blogging theme inspired by architects and designers Alvar, A
 
 == Changelog ==
 
+= 1.0.5 =
+* Lossless image optimization (#7671)
+
+= 1.0.5 =
+* Optimize images (#7671)
+
 = 1.0.4 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

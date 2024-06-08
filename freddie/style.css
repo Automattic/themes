@@ -1,17 +1,17 @@
 /*
 Theme Name: Freddie
-Theme URI: https://wordpress.com/theme/freddie
+Theme URI: https://wordpress.com/theme/freddie/
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Freddie is a theme using a full-screen background image to captivate the viewer with a brief, immersive moment.
 Requires at least: 6.0
-Tested up to: 6.2.2
+Tested up to: 6.4
 Requires PHP: 5.7
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: freddie
-Tags: blog, portfolio, one-column, two-columns, wide-blocks, block-patterns, block-styles, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, threaded-comments, translation-ready, custom-background, custom-colors, custom-logo, custom-menu, theme-options, news
+Tags: one-column, wide-blocks, block-patterns, block-styles, featured-images, full-site-editing, rtl-language-support, style-variations, threaded-comments, translation-ready
 */
 
 /*
@@ -20,8 +20,8 @@ Tags: blog, portfolio, one-column, two-columns, wide-blocks, block-patterns, blo
  * https://github.com/WordPress/gutenberg/issues/42794
  */
 .wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover {
-	background-color: var(--wp--preset--color--primary);
-	border-color: var(--wp--preset--color--primary);
+	background-color: var(--wp--preset--color--contrast);
+	border-color: var(--wp--preset--color--contrast);
 	color: var(--wp--preset--color--base);
 }
 
@@ -35,13 +35,12 @@ a {
 }
 
 /*
- * Avatar Block
- * Fix border radius setting for the avatar block
- * https://github.com/WordPress/gutenberg/issues/48253
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
  */
-.wp-block-avatar a,
-.wp-block-avatar img {
-	border-radius: inherit;
+.wp-block-navigation ul {
+	padding: unset;
 }
 
 /*

@@ -20,9 +20,11 @@
 		elseif (
 			( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag') || 'jetpack-portfolio' === get_post_type() ) && isset( $jetpack_portfolio_featured_image ) && '' != $jetpack_portfolio_featured_image ) :
 
-			$featured_image_attributes = wp_get_attachment_image_src( $jetpack_portfolio_featured_image, 'lodestar-featured-image' ); ?>
+			$featured_image_attributes = wp_get_attachment_image_src( $jetpack_portfolio_featured_image, 'lodestar-featured-image' );
+			$ft_image_url = is_array( $featured_image_attributes ) ? $featured_image_attributes[0] : false;
+			?>
 
-			<div class="custom-header-image" style="background-image: url(<?php echo esc_url( $featured_image_attributes[0] ); ?>)">
+			<div class="custom-header-image" <?php if ( $ft_image_url ) echo 'style="background-image: url(' . esc_url( $ft_image_url ) . ')"'; ?>>
 				<?php get_template_part( 'components/header/site', 'branding' ); ?>
 			</div>
 

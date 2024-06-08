@@ -5,7 +5,10 @@
  * Categories: featured, footer
  * Block Types: core/template-part/footer
  */
+
+declare( strict_types = 1 );
 ?>
+
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
