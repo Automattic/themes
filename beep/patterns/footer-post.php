@@ -5,6 +5,8 @@
  * Categories: footer
  * Block Types: core/template-part/footer
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:spacer {"height":"50px"} -->

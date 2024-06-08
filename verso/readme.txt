@@ -12,6 +12,12 @@ Verso pays tribute to the revered Portuguese writer and poet Fernando Pessoa, an
 
 == Changelog ==
 
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * Add Status: inactive to Verso stylesheet (#7090)
 

@@ -12,6 +12,12 @@ Al Dente is a blog theme perfect for blogs whose posts are categorised, for exam
 
 == Changelog ==
 
+= 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Al Dente: Change the markup of the sidebar to aside (#7281)
 

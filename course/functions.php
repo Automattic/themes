@@ -82,6 +82,8 @@ add_filter(
 
 add_filter( 'body_class', 'add_body_class_for_variation' );
 
+add_filter( 'admin_body_class', 'add_body_class_for_variation' );
+
 add_action( 'course_theme_variation_loaded', 'enqueue_style_for_variation' );
 
 /**
@@ -113,16 +115,19 @@ function course_theme_filter_single_lesson_template_for_sensei_learning_mode( $p
 
 /**
  * Add a body class with the variation.
+ * body_class hook passes classes as array whereas
+ * admin_body_class passes them as string. So we handle both.
  *
- * @param array $classes Body classes.
+ * @param array|string $classes Body classes.
  *
  * @internal
  *
- * @return array Body classes.
+ * @return array|string Body classes.
  */
 function add_body_class_for_variation( $classes ) {
 	$css_string    = wp_get_global_stylesheet( array( 'variables' ) );
 	$property_name = '--wp--custom--course-theme-variation';
+	$is_array      = is_array( $classes );
 
 	// 1. "/": Delimiters that mark the start and end of the regex pattern.
 	// 2. "$property_name": This part of the pattern matches the specific property name, in our case, '--wp--custom--course-theme-variation', defined in Course theme's JSON files.
@@ -140,8 +145,14 @@ function add_body_class_for_variation( $classes ) {
 		// $matches[0] contains the full match.
 		// $matches[1] contains the CSS value for the specified property.
 		$css_value      = trim( $matches[1] );
-		$classes[]      = 'is-' . $css_value;
 		$variation_name = $css_value;
+		$class_value    = 'is-' . $css_value;
+
+		if ( $is_array ) {
+			$classes[] = $class_value;
+		} else {
+			$classes .= ' ' . $class_value;
+		}
 	}
 
 	/**

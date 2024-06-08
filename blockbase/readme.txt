@@ -19,6 +19,9 @@ Read the release notes at https://blockbasetheme.com/category/release-notes/
 
 == Changelog ==
 
+= 3.1.17 =
+* Lossless image optimization (#7671)
+
 = 3.1.16 =
 * Bump postcss from 8.4.25 to 8.4.31 (#7407)
 * Do not generate a source map via postcss as it isn't included in the theme (#7335)

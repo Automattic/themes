@@ -13,6 +13,12 @@ Its minimalist functionality is balanced by a strong accent color, beautiful pho
 
 == Changelog ==
 
+= 1.0.10 =
+* Lossless image optimization (#7671)
+
+= 1.0.10 =
+* Optimize images (#7671)
+
 = 1.0.9 =
 * Raifall: Make sure the elements don't bump to the screen edges (#7365)
 

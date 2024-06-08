@@ -12,6 +12,15 @@ This theme is named after the city in Samuel Taylor Coleridge’s poem Kubla Kha
 
 == Changelog ==
 
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
+
+= 1.0.1 =
+* Xanadu: Add strict types to remaining php files (#7549)
+
 = 1.0.0 =
 * Initial release
 

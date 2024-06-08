@@ -4,7 +4,7 @@ Theme URI: http://wordpress.com/themes/affinity/
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 Description: Affinity is a classic one-page theme designed with weddings and family announcements in mind.
-Version: 1.0.0-wpcom
+Version: 1.1.4-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: affinity
@@ -148,87 +148,108 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .affinity-customizer.affinity-front-page .affinity-panel {
+
 	/* Colour-code all panels (add 1 to account for #affinity-hero, so 2 is actually panel 1)*/
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel::after {
 	border: 2px dashed;
 	bottom: 1.6em;
-	content: '';
+	content: "";
 	display: block;
 	left: 1.6em;
 	position: absolute;
 	right: 1.6em;
 	top: 1.6em;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel .affinity-panel-title {
 	color: #fff;
 	display: inline-block;
 	font-family: $font__headings;
-	@include font-size(.875);
+
+	@include font-size(0.875);
 	letter-spacing: 1px;
 	padding: 5px 10px;
 	position: absolute;
 	top: 3.2em;
 	right: 3.2em;
 	text-transform: uppercase;
-	transform: translate(3px,-3px);
+	transform: translate(3px, -3px);
 	font-weight: bold;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(1)::after {
 	display: none;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(2) .affinity-panel-title {
 	background: #a64b55;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(2)::after {
 	border-color: #a64b55;
 	color: #a64b55;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(3) .affinity-panel-title {
 	background: #b569a2;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(3)::after {
 	border-color: #b569a2;
 	color: #b569a2;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(4) .affinity-panel-title {
 	background: #8f68bd;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(4)::after {
 	border-color: #8f68bd;
 	color: #8f68bd;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(5) .affinity-panel-title {
 	background: #575ebd;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(5)::after {
 	border-color: #575ebd;
 	color: #575ebd;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(6) .affinity-panel-title {
 	background: #55a1bd;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(6)::after {
 	border-color: #55a1bd;
 	color: #55a1bd;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(7) .affinity-panel-title {
 	background: #7dbd8f;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(7)::after {
 	border-color: #7dbd8f;
 	color: #7dbd8f;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(8) .affinity-panel-title {
 	background: #c8b247;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(8)::after {
 	border-color: #c8b247;
 	color: #c8b247;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(9) .affinity-panel-title {
 	background: #bd7555;
 }
+
 .affinity-customizer.affinity-front-page .affinity-panel:nth-of-type(9)::after {
 	border-color: #bd7555;
 	color: #bd7555;
@@ -236,6 +257,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /* Add a highlight class to improve Customizer behaviour */
 @-webkit-keyframes flash {
+
 	0%,
 	20%,
 	40%,
@@ -244,6 +266,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	100% {
 		opacity: 1;
 	}
+
 	10%,
 	30%,
 	50%,
@@ -252,7 +275,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		opacity: 0;
 	}
 }
+
 @keyframes flash {
+
 	0%,
 	20%,
 	40%,
@@ -261,6 +286,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	100% {
 		opacity: 1;
 	}
+
 	10%,
 	30%,
 	50%,
@@ -272,14 +298,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .affinity-highlight::after {
 	-webkit-animation-duration: 2s;
-	        animation-duration: 2s;
+	animation-duration: 2s;
 	-webkit-animation-name: flash;
-	        animation-name: flash;
+	animation-name: flash;
 	-webkit-animation-timing-function: ease-in-out;
-	        animation-timing-function: ease-in-out;
+	animation-timing-function: ease-in-out;
 
 	-webkit-animation-fill-mode: both;
-	        animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 
 /*--------------------------------------------------------------
@@ -298,7 +324,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		width: auto;
 		height: auto;
 		visibility: visible;
-		margin: 0 .4em;
+		margin: 0 0.4em;
 	}
 
 	.panel-navigation {
@@ -325,7 +351,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%,-50%);
+			transform: translate(-50%, -50%);
 			z-index: 1;
 		}
 
@@ -336,10 +362,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 		.edit-link a,
 		.edit-link a:visited {
-			border: 3px solid rgba($color__border-button,0.5);
-			color: rgba($color__border-button,0.5);
+			border: 3px solid rgba($color__border-button, 0.5);
+			color: rgba($color__border-button, 0.5);
 			display: inline-block;
-			@include font-size(.8);
+
+			@include font-size(0.8);
 			font-family: $font__headings;
 			text-transform: uppercase;
 			letter-spacing: 1px;
@@ -347,11 +374,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			text-decoration: none;
 			padding: 3px 6px;
 			position: absolute;
-				top: 1.6em;
-				left: 1.6em;
+			top: 1.6em;
+			left: 1.6em;
 			z-index: 2;
 			transition: 0.3s;
-			
+
 			&:hover {
 				border-color: $color__border-button;
 				color: $color__border-button;
@@ -369,6 +396,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			display: inline-block;
 			text-transform: none;
 			letter-spacing: 0;
+
 			@include font-size(1);
 			font-family: $font__main;
 			font-weight: normal;
@@ -412,6 +440,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				display: inline-block;
 				text-transform: none;
 				letter-spacing: 0;
+
 				@include font-size(1);
 				font-family: $font__main;
 				font-weight: normal;
@@ -423,38 +452,46 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			}
 		}
 	}
-	
+
 	h1 {
+
 		@include font-size(2.945);
 	}
 
 	h2 {
+
 		@include font-size(2.625);
 	}
 
 	h3 {
+
 		@include font-size(1.825);
 	}
 
 	h4 {
+
 		@include font-size(1.625);
 	}
 
 	h5 {
+
 		@include font-size(1.125);
 	}
 
 	h6 {
+
 		@include font-size(1);
 	}
 
 	.entry-title {
 		line-height: 1.2;
+
 		@include font-size(2.945);
 		text-align: left;
 	}
 
 	.site-description {
+
 		@include font-size(2);
 		line-height: 1.4;
 		color: $color__border-button;
@@ -472,10 +509,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.page-title {
+
 		@include font-size(1.825);
 	}
 
 	.entry-summary {
+
 		@include font-size(1.625);
 	}
 
@@ -498,7 +537,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.no-custom-header .header-wrapper {
-		padding-bottom: .8em;
+		padding-bottom: 0.8em;
 	}
 
 	.no-custom-header .site-title,
@@ -514,7 +553,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%,-50%);
+		transform: translate(-50%, -50%);
 		z-index: 2;
 		width: $size_site-main;
 	}
@@ -542,7 +581,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		.current-menu-item > a,
 		.current_page_ancestor > a,
 		.current-menu-ancestor > a {
-			color: rgba($color__border-button,0.5);
+			color: rgba($color__border-button, 0.5);
 		}
 
 		&.toggled > div {
@@ -568,7 +607,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 			ul {
 				background-color: white;
-				box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
+				box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
 				border: 6px solid white;
 				float: left;
 				font-family: $font__main;
@@ -582,11 +621,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				z-index: 99999;
 
 				a {
-					padding: .8em !important;
+					padding: 0.8em !important;
 					padding-left: inherit;
 				}
 
-				&:before {
+				&::before {
 					content: "";
 					width: 0;
 					height: 0;
@@ -600,7 +639,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 					top: -20px;
 				}
 
-				&:after {
+				&::after {
 					border: 3px solid $color__border-button;
 					content: "";
 					display: block;
@@ -620,7 +659,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 						padding-left: inherit;
 					}
 
-					&:before {
+					&::before {
 						display: none;
 					}
 				}
@@ -628,12 +667,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				li {
 					margin-left: 0;
 					text-align: center;
+
 					&:hover > ul,
 					&.focus > ul {
 						left: 100%;
 					}
 
-					a:after {
+					a::after {
 						display: none;
 					}
 
@@ -663,7 +703,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 				a:visited {
 					border-bottom: 1px solid $color__border-button;
 					color: $color__text-screen;
-					padding: .8em;
+					padding: 0.8em;
 					margin: 0;
 					width: 180px;
 				}
@@ -682,10 +722,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			li:hover > ul,
 			li.focus > ul {
 				left: 50%;
-				transform: translateX(-.75em) translateX(-50%);
+				transform: translateX(-0.75em) translateX(-50%);
 			}
 		}
-		
+
 		li {
 			display: inline-block;
 			margin-left: 0.8em;
@@ -693,22 +733,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 			&:hover > a,
 			&.focus > a {
-				color: rgba($color__border-button,0.5);
+				color: rgba($color__border-button, 0.5);
 
 				&:visited {
-					color: rgba($color__border-button,0.5);
+					color: rgba($color__border-button, 0.5);
 				}
 			}
 
-			a:after {
+			a::after {
 				content: "\2666";
-				color: rgba($color__border-button,0.25);
+				color: rgba($color__border-button, 0.25);
 				display: inline-block;
 				font-family: Arial, Helvetica, sans-serif;
 				margin-left: 1em;
 			}
 
-			&:last-of-type a:after {
+			&:last-of-type a::after {
 				display: none;
 			}
 		}
@@ -719,38 +759,38 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			position: relative;
 			padding-right: 1.6em;
 
-			&:before {
+			&::before {
 				content: "\f431";
 				font-family: Genericons;
 				font-size: 14px;
 				line-height: 1;
 				display: inline-block;
 				position: absolute;
-					right: 1.4em;
-					top: 3px;
+				right: 1.4em;
+				top: 3px;
 				vertical-align: text-top;
 				-webkit-font-smoothing: antialiased;
 			}
 
-			&:after {
+			&::after {
 				position: relative;
 				left: 1.6em;
 			}
 		}
 
-		li.menu-item-has-children:last-of-type > a:before,
-		li.page_item_has_children:last-of-type > a:before {
-			right: -.1em;
+		li.menu-item-has-children:last-of-type > a::before,
+		li.page_item_has_children:last-of-type > a::before {
+			right: -0.1em;
 		}
 
 		ul ul li.menu-item-has-children > a,
 		ul ul li.page_item_has_children > a {
 
-			&:before {
+			&::before {
 				display: none;
 			}
 
-			&:after {
+			&::after {
 				content: "\f431";
 				color: $color__link;
 				font-family: Genericons;
@@ -782,7 +822,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 	.header-wrapper.without-transparency {
 		background-color: $color__text-main;
-		box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.affinity-customizer .header-wrapper {
@@ -791,6 +831,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media screen and (max-width: 782px) {
+
 	.admin-bar .header-wrapper {
 		top: 46px;
 	}
@@ -799,6 +840,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media screen and ( min-width: 58em ) {
 
 	.site-description {
+
 		@include font-size(2.945);
 	}
 
@@ -871,7 +913,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		clear: both;
 		display: block;
 		float: none;
-		margin-bottom: .8em;
+		margin-bottom: 0.8em;
 		margin-right: 0;
 	}
 
@@ -879,7 +921,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		clear: none;
 	}
 
-	.comment-meta .edit-link:before {
+	.comment-meta .edit-link::before {
 		display: none;
 	}
 
@@ -892,7 +934,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.entry-meta,
 	.comment-meta {
 		border-right: 1px solid $color__border-button;
-		padding-right: .8em;
+		padding-right: 0.8em;
 		float: left;
 		width: 21%;
 	}
@@ -907,6 +949,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.page-template-guestbook {
+
 		.comment-content,
 		.comment-meta {
 			width: 100%;
@@ -922,6 +965,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 	.page,
 	.jetpack-portfolio {
+
 		.entry-content,
 		.entry-summary,
 		.entry-footer {
@@ -963,6 +1007,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 			margin-right: 0;
 		}
 	}
+
 	.footer-widgets .widget-areas .widget-area:nth-child(1):nth-last-child(3),
 	.footer-widgets .widget-areas .widget-area:nth-child(2):nth-last-child(2),
 	.footer-widgets .widget-areas .widget-area:nth-child(3):nth-last-child(1) {
@@ -992,6 +1037,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	blockquote {
+
 		@include font-size(1.625);
 
 		&.alignright,
@@ -1009,6 +1055,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	img {
+
 		&.alignleft.below-entry-meta {
 			margin-left: -7.2em;
 		}
@@ -1025,7 +1072,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		.wp-caption-text {
 			border-top: 3px solid $color__border-button;
 			margin: 0;
-			padding-top: .8em;
+			padding-top: 0.8em;
 			position: absolute;
 			top: 0;
 			width: 158px;
@@ -1033,6 +1080,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.wp-caption.alignleft.below-entry-meta {
+
 		.wp-caption-text {
 			transform: translateX(-100%) translateX(-1.6em);
 			text-align: right;
@@ -1040,6 +1088,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	}
 
 	.wp-caption.alignright.below-sidebar {
+
 		.wp-caption-text {
 			right: 0;
 			transform: translateX(100%) translateX(1.6em);

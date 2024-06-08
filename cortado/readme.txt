@@ -12,6 +12,15 @@ Cortado is a simple and elegant theme. Its colors and typography work together p
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
+* Optimize images (#7671)
+
+= 1.0.3 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
+
 = 1.0.2 =
 * Remove ref attribute from navigation block to avoid error message in Gutenberg (#7342)
 

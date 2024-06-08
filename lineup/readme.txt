@@ -12,6 +12,12 @@ Lineup is a '90s D.I.Y. fanzine inspired theme lists entries with a bold typogra
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Lineup: Removed WP.com specific function.
 
