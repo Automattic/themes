@@ -9,7 +9,7 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"5vh","bottom":"5vh"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="padding-top:5vh;padding-bottom:5vh"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:5vh;padding-bottom:5vh"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"90%"} -->
 <div class="wp-block-column" style="flex-basis:90%"><!-- wp:heading {"textAlign":"left","level":1,"className":"alignwide"} -->
@@ -29,7 +29,7 @@
 <!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph -->
-<p><?php echo __('As a full-service firm, GBG delivers contemporary projects, from our client-oriented creative process to the latest building methodologies and construction techniques applied to building sites. And we are proud to achieve that through close collaboration with team members, consultants, contractors, and trades.', 'vitrum');?></p>
+<p><?php echo __('As a full-service firm, the Guild delivers contemporary projects, from the client-oriented creative process to the latest building methodologies and construction techniques applied to building sites. We are proud to achieve that through close collaboration with team members, consultants, contractors, and trades.', 'vitrum');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|20","style":{"layout":[]}} -->

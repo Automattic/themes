@@ -16,7 +16,7 @@
 <!-- wp:site-title {"fontSize":"small"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph -->
+<!-- wp:paragraph {"lock":{"move":false,"remove":true}} -->
 <p><?php echo __('Designed with <a rel="noreferrer noopener" href="http://wordpress.org" data-type="URL" data-id="wordpress.org" target="_blank">WordPress.</a>', 'vitrum');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
