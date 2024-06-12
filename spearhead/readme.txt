@@ -20,6 +20,9 @@ Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and
 
 == Changelog ==
 
+= 1.3.18 =
+* Spearhead: remove excess JS from the frontend (#7849)
+
 = 1.3.17 =
 * Lossless image optimization (#7671)
 
