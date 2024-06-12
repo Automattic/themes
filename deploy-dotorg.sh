@@ -102,7 +102,7 @@ for THEME_SLUG in */ ; do
 		svn cp ${last_directory} $SVN_DIR/$THEME_VERSION
 
 		echo "➤ Copying theme '${THEME_SLUG}' version '${THEME_VERSION}' to svn repository... "
-		rsync -rc --delete --include=theme.json --exclude-from './dotorg-exclude.txt' ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
+		rsync -rc --delete --include=theme.json --exclude-from $IGNORE_FILE ./$THEME_SLUG/ $SVN_DIR/$THEME_VERSION
 
 		# Remove the wpcom-specific tags used in some themes
 		find $SVN_DIR/$THEME_VERSION/style.css -type f -exec sed -i '' 's/, auto-loading-homepage//g' {} \; 
