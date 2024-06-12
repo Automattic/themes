@@ -20,6 +20,9 @@ Spearhead is a child-theme of Seedlet: https://wordpress.org/themes/seedlet, and
 
 == Changelog ==
 
+= 1.3.19 =
+* Spearhead: don't use a relative requires (#7851)
+
 = 1.3.18 =
 * Spearhead: remove excess JS from the frontend (#7849)
 
