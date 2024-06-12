@@ -162,7 +162,7 @@ function spearhead_block_extends() {
 		array( 'wp-blocks', 'wp-edit-post' ) // wp-edit-post is added to avoid a race condition when trying to unregister a style variation
 	);
 }
-add_action( 'enqueue_block_assets', 'spearhead_block_extends' );
+add_action( 'enqueue_block_editor_assets', 'spearhead_block_extends' );
 
 /**
  * Add Google webfonts
