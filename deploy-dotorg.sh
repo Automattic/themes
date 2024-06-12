@@ -15,112 +15,22 @@ fi
 # 	are not (and not expected to be) deployed to wporg
 # 	have been deployed to wporg, however they are not expected to be updated
 # Note that all classic themes (those without a theme.json file) are ALSO ignored
-declare -a THEMES_TO_IGNORE=(
-        'aldente'
-        'allez'
-        'alter'
-        'ames'
-        'antonia'
-        'appleton'
-        'arbutus'
-        'artly'
-        'assembler'
-        'attar'
-        'awburn'
-        'azur'
-        'barnett'
-        'barnsbury23'
-        'beep'
-        'bennett'
-        'blank-canvas-3'
-        'block-canvas'
-        'blogorama'
-        'boxedbio'
-        'calvin'
-        'calyx'
-        'chanson'
-        'cortado'
-        'covr'
-        'craftfully'
-        'creatio-2'
-        'creatio'
-        'curriculum'
-        'dorna'
-        'dos'
-        'entry'
-        'epi'
-        'erma'
-        'eventual'
-        'exmoor'
-        'farrow'
-        'foam'
-        'grammerone'
-        'hall'
-        'hari'
-        'heiwa'
-        'ici'
-        'indice'
-        'infield'
-        'iotix'
-        'issue'
-        'jackson'
-        'kansei'
-        'kaze'
-        'kingsley'
-        'kiosko'
-        'lativ'
-        'loic'
-        'lois'
-        'luce'
-        'lynx'
-        'marl'
-        'masu'
-        'meraki'
-        'messagerie'
-        'montagna'
-        'mpho'
-        'muscat'
-        'mysa'
-        'nested'
-        'nook'
-        'organizer'
-        'otis'
-        'overlaid'
-        'perenne'
-        'pieria'
-        'poesis'
-        'pomme'
-        'programme'
-        'raw'
-        'reverie'
-        'ritratto'
-        'russell'
-        'screenplay'
-        'shhh'
-        'snd'
-        'spearhead-blocks'
-        'spiel'
-        'stage'
-        'startfit'
-        'sten'
-        'strand'
-        'sunderland'
-        'tenaz'
-        'texty'
-        'the-jazzers'
-        'the-menu'
-        'tu'
-        'twentytwentytwo-blue'
-        'twentytwentytwo-mint'
-        'twentytwentytwo-pink'
-        'twentytwentytwo-red'
-        'twentytwentytwo-swiss'
-        'verso'
-        'vetro'
-        'winkel'
-        'xanadu'
-)
+# Get the directory of the script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+IGNORE_FILE="$SCRIPT_DIR/.dotorg-ignore"
 
+# Initialize an empty array for themes to ignore
+THEMES_TO_IGNORE=()
+
+# Read themes to ignore from .dotorg-ignore file, ignoring comments
+if [[ -f "$IGNORE_FILE" ]]; then
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        [[ "$line" =~ ^#.*$ ]] && continue
+        THEMES_TO_IGNORE+=("$line")
+    done < "$IGNORE_FILE"
+else
+    echo ".dotorg-ignore file not found, proceeding without ignoring any themes."
+fi
 rm -rf ./deploy
 
 # Do things for all of the themes
