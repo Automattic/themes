@@ -1,0 +1,41 @@
+/*
+Theme Name: Inversum
+Theme URI: 
+Author: the WordPress team
+Author URI: https://wordpress.org
+Description: Inversion is a blog theme designed in the WordPress Site Editor. Its neat visuals introduce a direct experience on post reading: noticeable post titles listed on a text-only page, with an original swap of header and footer blocks.
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 5.7
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: inversum
+Tags: blog, one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, rtl-language-support, theme-options, threaded-comments, translation-ready, wide-blocks, style-variations
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline
+	> .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--secondary);
+	border-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 0.0625em !important;
+	text-underline-offset: 0.2em;
+}
