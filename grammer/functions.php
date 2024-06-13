@@ -58,8 +58,3 @@ if ( ! function_exists( 'grammer_styles' ) ) :
 endif;
 
 add_action( 'wp_enqueue_scripts', 'grammer_styles' );
-
-
-// updater for WordPress.com themes
-if ( is_admin() )
-	include dirname( __FILE__ ) . '/inc/updater.php';
