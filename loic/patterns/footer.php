@@ -58,7 +58,7 @@
     /* Translators: WordPress link. */
     $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'sunderland' ) ) . '" rel="nofollow">WordPress</a>';
     echo sprintf(
-        esc_html__( 'Designed with %1$s', 'sunderland' ),
+        esc_html__( 'Designed with %1$s', 'loic' ),
         $wordpress_link
     );
 ?>
