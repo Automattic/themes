@@ -7,7 +7,7 @@
  * @package negai
  * @since negai 1.0
  */
-
+declare( strict_types = 1 );
 
 if ( ! function_exists( 'negai_support' ) ) :
 

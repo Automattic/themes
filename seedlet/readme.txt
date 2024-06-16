@@ -18,6 +18,12 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.31 =
+* Lossless image optimization (#7671)
+
+= 1.1.31 =
+* Optimize images (#7671)
+
 = 1.1.30 =
 * Programme: add design updates (#7474)
 

@@ -12,6 +12,15 @@ Erma is a WordPress portfolio block theme that features gorgeous imagery and mod
 
 == Changelog ==
 
+= 1.0.10 =
+* Update style.css
+
+= 1.0.9 =
+* Lossless image optimization (#7671)
+
+= 1.0.8 =
+* Update theme erma (#7565)
+
 = 1.0.7 =
 * Fix error: Template part has been deleted or is unavailable in Erma, Poesis, and Meraki   (#7348)
 
@@ -51,3 +60,82 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+
+This theme bundles the following third-party resources:
+
+Figtree Font
+Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Figtree Font credits --
+
+IBM Plex Mono Font
+Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of IBM Plex Mono Font credits --
+
+IBM Plex Sans Font
+Copyright © 2017 IBM Corp. with Reserved Font Name "Plex"
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of IBM Plex Sans Font credits --
+
+Images used in theme screenshot:
+
+Bicycle with black frame on a textured, concrete sidewalk in Piraeus. Original public domain image from Wikimedia Commons
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3293621/free-photo-image-bicycle-pedal-bmx-automobile
+
+yellow. Original public domain image from Wikimedia Commons
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3296823/free-photo-image-car-shape-road-alloy-wheel
+
+Free public domain CC0 photo.
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5941293/free-public-domain-cc0-photo
+
+Original public domain image from Wikimedia Commons
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3288009/free-photo-image-parking-lot-empty-city
+
+A silhouette of a person walking on concrete tiles. Original public domain image from Wikimedia Commons
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3296412/free-photo-image-shadow-black-and-white-photography-walking
+
+Free public domain CC0 photo.
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5954631/free-public-domain-cc0-photo
+
+Concrete building with horizontal windows half in shadow. Original public domain image from Wikimedia Commons
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3288982/free-photo-image-architecture-banister-building
+
+Original public domain image from Wikimedia Commons
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/3292268/free-photo-image-architecture-banister-bannister
+
+Free public domain CC0 photo.
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/6049570/free-public-domain-cc0-photo
+
+Free public domain CC0 photo.
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/5957514/free-public-domain-cc0-photo

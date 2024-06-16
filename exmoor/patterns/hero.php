@@ -4,6 +4,8 @@
  * Slug: exmoor/hero
  * Categories: featured
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/StockSnap_K6K80SHQJO-cropped.jpg","dimRatio":0,"focalPoint":{"x":0.7,"y":1},"minHeight":480,"minHeightUnit":"px","contentPosition":"center center","align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|60","left":"var:preset|spacing|60","bottom":"8vw","top":"8vw"}}}} -->

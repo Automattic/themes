@@ -42,14 +42,16 @@ declare( strict_types = 1 );
 	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","right":"var:preset|spacing|50","left":"var:preset|spacing|50"},"margin":{"top":"0px"}},"border":{"top":{"color":"var:preset|color|secondary","style":"solid","width":"1px"}}}} -->
 	<div class="wp-block-group alignfull" style="border-top-color:var(--wp--preset--color--secondary);border-top-style:solid;border-top-width:1px;margin-top:0px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--50)">
 		<!-- wp:paragraph {"align":"center","fontSize":"x-small"} -->
-		<p class="has-text-align-center has-x-small-font-size"><?php
-			/* Translators: WordPress link. */
+		<p class="has-text-align-center has-x-small-font-size">
+		<?php
 			$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'spiel' ) ) . '" rel="nofollow">WordPress</a>';
 			echo sprintf(
+				/* Translators: WordPress link. */
 				esc_html__( 'Designed with %1$s', 'spiel' ),
 				$wordpress_link
 			);
-		?></p>
+			?>
+		</p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

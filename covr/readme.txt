@@ -12,6 +12,15 @@ Covr is a beautifully crafted theme that boasts a clean and modern design, speci
 
 == Changelog ==
 
+= 1.0.5 =
+* Lossless image optimization (#7671)
+
+= 1.0.5 =
+* Optimize images (#7671)
+
+= 1.0.4 =
+* Updates from theme export (#7560)
+
 = 1.0.3 =
 * Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
 

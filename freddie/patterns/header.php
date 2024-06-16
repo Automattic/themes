@@ -5,7 +5,10 @@
  * Categories: featured, header
  * Block Types: core/template-part/header
  */
+
+declare( strict_types = 1 );
 ?>
+
 <!-- wp:group {"layout":{"type":"constrained","justifyContent":"left"}} -->
 <div class="wp-block-group">
 	<!-- wp:site-title {"style":{"spacing":{"margin":{"top":"0px","bottom":"0px","right":"0px","left":"0px"}}}} /-->

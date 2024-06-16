@@ -12,6 +12,12 @@ Hey is a simple personal blog theme.
 
 == Changelog ==
 
+= 1.0.7 =
+* Lossless image optimization (#7671)
+
+= 1.0.7 =
+* Optimize images (#7671)
+
 = 1.0.6 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

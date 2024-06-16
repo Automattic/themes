@@ -12,6 +12,9 @@ Artly is a WordPress theme designed for blogs and magazines. Its modern, offset 
 
 == Changelog ==
 
+= 1.0.6 =
+* Update readme.txt
+
 = 1.0.5 =
 * Lossless image optimization (#7671)
 
@@ -63,11 +66,21 @@ License URL: http://scripts.sil.org/OFL
 
 Fira Code Font
 Copyright (c) 2014, The Fira Code Project Authors (https://github.com/tonsky/FiraCode)
+Copyright (c) 2014, Telefonica S.A.
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL
 License URL: http://scripts.sil.org/OFL 
 -- End of Fira Code Font credits --
+
+Fira Mono Font
+Copyright (c) 2014, Mozilla Foundation https://mozilla.org/ with Reserved Font Name Fira Mono.
+Copyright (c) 2014, Telefonica S.A.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Fira Sans Font credits --
 
 Commissioner Font
 Copyright 2019 The Commissioner Project Authors (https://github.com/kosbarts/Commissioner)
@@ -77,13 +90,11 @@ http://scripts.sil.org/OFL
 License URL: http://scripts.sil.org/OFL 
 -- End of Commissioner Font credits --
 
-Crimson Pro Font
-Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license is copied below, and is also available with a FAQ at:
-http://scripts.sil.org/OFL
-License URL: http://scripts.sil.org/OFL 
--- End of Crimson Pro Font credits --
+Newsreader
+Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL)
+Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)
+Source: https://fonts.google.com/specimen/Newsreader
+-- End of Newsreader Font credits --
 
 Image for theme screenshot, Credit The Thundershower (study for painting) (ca. 1916) Henry Lyman Saÿen
 License: Public Domain

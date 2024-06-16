@@ -39,6 +39,15 @@ Photos is a single-column blogging theme that showcases your photos in a grid fo
 
 == Changelog ==
 
+= 1.0.4 =
+* Radcliffe 2 & Photos: Revert SVG icon files (#7773)
+
+= 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Public Themes P: PHP Rector fixes (#7391)
 

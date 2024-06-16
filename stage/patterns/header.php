@@ -24,7 +24,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:navigation {"ref":8,"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}},"typography":{"lineHeight":"1"}}} /-->
+<div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}},"typography":{"lineHeight":"1"}}} /-->
 
 <!-- wp:paragraph {"style":{"typography":{"lineHeight":"1","fontStyle":"normal","fontWeight":"600"}}} -->
 <p style="font-style:normal;font-weight:600;line-height:1">/</p>

@@ -12,6 +12,12 @@ Otis is a WordPress block theme that is well-suited for personal blogging. It is
 
 == Changelog ==
 
+= 1.0.3 =
+* Update style.css
+
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
 = 1.0.1 =
 * Otis: remove theme attribute from template parts (#7246)
 
@@ -33,3 +39,13 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+This theme bundles the following third-party resources:
+
+Open Sauce Sans Font
+Copyright (c) 2020 The Open Sauce Sans Authors (https://github.com/marcologous/Open-Sauce-Fonts)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Open Sauce Sans Font credits --

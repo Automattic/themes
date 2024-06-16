@@ -33,7 +33,11 @@ function dyad_2_body_classes( $classes ) {
 	}
 
 	//Has featured image?
-	if ( ! is_page() && dyad_2_has_post_thumbnail( $post->ID ) && dyad_2_jetpack_featured_image_display() ) {
+	if (
+		! is_page()
+		&& dyad_2_has_post_thumbnail( $post->ID ?? null )
+		&& dyad_2_jetpack_featured_image_display()
+	) {
 		$classes[] = 'has-post-thumbnail';
 	}
 
