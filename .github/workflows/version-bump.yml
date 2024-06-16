@@ -1,0 +1,132 @@
+name: Version bump themes
+on:
+  workflow_dispatch:
+    inputs:
+      theme-slug:
+        description: 'Theme slug'
+        required: false
+        default: 'all'
+  
+jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: trunk
+      
+      - name: Create branch
+        id: create-branch
+        run: |
+          BRANCH_NAME="automated-version-bump/${{ github.run_number }}"
+          git checkout -b $BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 19
+          
+      - name: Install node dependencies
+        run: npm install
+
+      - name: Version bump
+        id: version-bump
+        run: |
+          if [ "${{ github.event.inputs.theme-slug }}" == 'all' ]; then
+            npm run deploy:version-bump
+          else
+            # Check if theme exists
+            theme_exists=false
+            target_theme_slug=${{ github.event.inputs.theme-slug }}
+
+            # Loop through each subdirectory in the themes directory
+            for dir in ./*/; do
+                # Get the name of the directory (theme name)
+                theme_dir_name=$(basename "$dir")
+                
+                # Check if the directory name matches the target theme name and if it contains a style.css file
+                if [[ "$theme_dir_name" == "$target_theme_slug" && -f "$dir/style.css" ]]; then
+                    theme_exists=true
+                fi
+            done
+
+            # Error out if theme does not exist
+            if [ "$theme_exists" == false ]; then
+              echo "Theme `${{ github.event.inputs.theme-slug }}` does not exist"
+              exit 1
+            fi
+
+            npm run deploy:version-bump -- ${{ github.event.inputs.theme-slug }}
+          fi
+
+      - name: Check if there are changes
+        id: check-changes
+        run: |
+          if [ "$(git diff --cached --name-only)" ]; then
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
+        
+            # Get list of changed directory names for staged changes
+            changed_dirs=$(git diff --cached --name-only | xargs -I {} dirname {} | sort | uniq)
+        
+            # Initialize an array for CHANGED_THEMES
+            changed_themes=()
+        
+            # Iterate over the changed directories
+            for dir in $changed_dirs; do
+              if [ -f "$dir/style.css" ]; then
+                # Append the directory to changed_themes array
+                changed_themes+=("$dir")
+              fi
+            done
+        
+            # Join array elements into a string
+            CHANGED_THEMES=$(IFS=,; echo "${changed_themes[*]}")
+        
+            echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_ENV
+            echo "Themes with changes: $CHANGED_THEMES"
+          else
+            echo "HAS_CHANGES=false" >> $GITHUB_ENV
+          fi
+
+      - name: Commit changes
+        if: env.HAS_CHANGES == 'true'
+        run: |
+            git config user.name 'github-actions[bot]'
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git add .
+            git commit -m "Version bump & changelog update" --no-verify
+            git push --set-upstream origin ${{ env.BRANCH_NAME }}
+
+      - name: Create Pull Request
+        if: env.HAS_CHANGES == 'true'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            CHANGED_THEMES: ${{ env.CHANGED_THEMES }}
+        run: |
+          echo "Creating PR for themes: $CHANGED_THEMES"
+          THEMES_LIST=$(echo "$CHANGED_THEMES" | tr ',' '\n')
+          PR_BODY=$(cat <<-EOF
+          ## [Automation] Themes Version Bump
+
+          This PR was automatically created by the version bump workflow.
+
+          ### Updated Themes
+          The following themes are being updated due to changes since the last git tag:
+
+          $THEMES_LIST
+
+          ### Why These Updates?
+          This script bumps the version of themes that have changes since the last git tag. This ensures that any updates or fixes are properly versioned and deployed.
+
+          ### Disclaimer
+          This is an automated process. Please review the changes carefully.
+          EOF
+          )
+          gh pr create \
+          --title "[Automation] Themes version bump" \
+          --base trunk \
+          --head ${{ env.BRANCH_NAME }} \
+          --body "$PR_BODY"

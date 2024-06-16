@@ -12,6 +12,12 @@ A WordPress theme for travel-related websites and blogs, designed to showcase st
 
 == Changelog ==
 
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
+* Optimize images (#7671)
+
 = 1.0.3 =
 * Retire Montagna (#7438)
 

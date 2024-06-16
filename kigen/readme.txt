@@ -12,6 +12,12 @@ Kigen is a simple one page portfolio theme.
 
 == Changelog ==
 
+= 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Kigen: Make it ready for submitting (#7329)
 

@@ -95,6 +95,9 @@ add_filter( 'get_custom_logo', 'logo_awesomeness_customize_logo_resize' );
 
 /* Helper function to determine the max size of the logo */
 function logo_awesomeness_min_max( $short, $long, $short_max, $long_max, $percent, $min ){
+	$short ??= 1;
+	$long ??= 1;
+
 	$max = [];
 	$size = [];
 	$ratio = ( $long / $short );
@@ -133,13 +136,3 @@ function logo_awesomeness_customize_css() {
 	wp_add_inline_style( 'customize-controls', '#customize-control-logo_size input[type=range] { width: 100%; }' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'logo_awesomeness_customize_css' );
-
-/**
- * Testing function to remove logo_size theme mod
- */
-function logo_awesomeness_remove_theme_mod() {
-	if ( isset( $_GET['remove_logo_size'] ) && 'true' == $_GET['remove_logo_size'] ){
-		set_theme_mod( 'logo_size', '' );
-	}
-}
-add_action( 'wp_loaded', 'logo_awesomeness_remove_theme_mod' );

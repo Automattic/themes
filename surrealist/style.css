@@ -1,0 +1,78 @@
+/*
+Theme Name: Surrealist
+Theme URI: https://themeshaper.com/surrealist/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Surrealist is a block theme about the Surrealism art movement.
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: surrealist
+Tags: blog, one-column, two-columns, wide-blocks, block-patterns, block-styles, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--primary);
+}
+
+/*
+ * Form field styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+::placeholder {
+	color: var(--wp--preset--color--contrast);
+	opacity: 1; /* Firefox */
+}
+
+input:not([type="submit"]):not([type="checkbox"]),
+textarea,
+.wp-block-post-comments-form input:not([type=submit]),
+.wp-block-post-comments-form textarea {
+	background-color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--contrast);
+}
+
+input:not([type="submit"]):not([type="checkbox"]):focus,
+textarea:focus {
+	outline-style: solid;
+	outline-color: var(--wp--preset--color--contrast);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 2px;
+}
+
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}

@@ -12,6 +12,12 @@ Texty is a text-only blog theme that trusts Post excerpts rather than Post title
 
 == Changelog ==
 
+= 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Remove category from taxQuery to avoid a not found error (#7354)
 

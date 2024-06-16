@@ -26,6 +26,12 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Changelog ==
 
+= 1.1.17 =
+* Lossless image optimization (#7671)
+
+= 1.0.17 =
+* Optimize images (#7671)
+
 = 1.1.16 =
 * Public Themes Q, R: PHP Rector fixes (#7392)
 

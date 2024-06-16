@@ -166,7 +166,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 
 		$primary    = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['link'] : $default_colors['primary']; // $config-global--color-primary-default;
 		$secondary  = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg1'] : $default_colors['secondary'];  // $config-global--color-secondary-default;
-		$tertiary   = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['fg2'] : $default_colors['tertiary'];   // $config-global--color-tertiary-default;
+		$tertiary   = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? ( $colors_array['colors']['fg2'] ?? '' ) : $default_colors['tertiary'];   // $config-global--color-tertiary-default;
 		$foreground = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['txt'] : $default_colors['foreground'];  // $config-global--color-foreground-default;
 		$background = is_array( $colors_array ) && array_key_exists( 'colors', $colors_array ) ? $colors_array['colors']['bg'] : $default_colors['background'];   // $config-global--color-background-default;
 
@@ -225,7 +225,7 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				'enable_theme_default' => true,
 			)
 		);
-		
+
 		// Add support for Content Options.
 		add_theme_support( 'jetpack-content-options', array(
 			'blog-display' => 'content',
@@ -233,7 +233,10 @@ if ( ! function_exists( 'varia_setup' ) ) :
 				'archive'         => true,
 				'archive-default' => true,
 				'post'            => true,
+				'post-default'    => true,
 				'page'            => true,
+				//featured images on pages boolean was previously managed by Varia rather than jetpack.  If that value has been set default to that.
+				'page-default'    => get_theme_mod( 'show_featured_image_on_pages', false ),
 			),
 		) );
 	}
