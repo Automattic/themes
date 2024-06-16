@@ -116,7 +116,7 @@ function altofocus_get_featured_post_ids() {
 	if ( false === $featured_ids ) {
 
 		$featured_options = get_option( 'featured-content', FALSE );
-		$featured_tag_name = $featured_options[ 'tag-name' ];
+		$featured_tag_name = $featured_options[ 'tag-name' ] ?? null;
 		$term = get_term_by( 'name', $featured_tag_name, 'post_tag' );
 
 		if ( $term ) {

@@ -1,7 +1,7 @@
 === Fotograma ===
 Contributors: Automattic
-Requires at least: 6.2
-Tested up to: 6.2
+Requires at least: 6.0
+Tested up to: 6.5
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Fotograma is a portfolio theme for photographers seeking to showcase powerful photography in large sizes.
 
 == Changelog ==
+
+= 1.0.4 =
+* Fotograma: Update some default images and contents for submission (#7713)
+
+= 1.0.3 =
+* Fotograma: Preps for submission (#7690)
+
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
 
 = 1.0.1 =
 * Fix pattern name, and use pattern in template part (#7206)
@@ -43,8 +55,8 @@ Source: https://rsms.me/inter/
 Aug. 1973: Taxis on 5th Ave. near 48th Street, Manhattan by a photographer, Dan McCoy
 https://www.documerica.org/documerica-photographs/aug-1973-taxis-on-5th-ave-near-48th-street
 
-Jul. 1974: Four young girls and an open fire hydrant, Brooklyn by a photographer: Danny Lyon
-https://www.documerica.org/documerica-photographs/jul-1974-four-young-girls-and-an-open-fire-hydrant-brooklyn
+Aug. 1973: Tourists in a dune buggy, Silver Lake State Park by a photographer: Paul Sequeira
+https://www.documerica.org/documerica-photographs/aug-1973-tourists-in-a-dune-buggy-silver-lake-state-park
 
 Jun. 1974: Manhattan Bridge Tower, Brooklyn by a photographer: Danny Lyon
 https://www.documerica.org/documerica-photographs/jun-1974-manhattan-bridge-tower-brooklyn
@@ -52,7 +64,7 @@ https://www.documerica.org/documerica-photographs/jun-1974-manhattan-bridge-towe
 Jun. 1972: Teenager, Second Ward, El Paso by a photographer: Danny Lyon
 https://www.documerica.org/documerica-photographs/jun-1972-teenager-second-ward-el-paso
 
-August 1973: North Philadelphia Children by a photographer: Dick Swanson
-https://www.documerica.org/documerica-photographs/august-1973-north-philadelphia-children
+May 1972: Railroad and transmission lines near Salton Sea, California by a photographer: Charles O'Rear
+https://www.documerica.org/documerica-photographs/may-1972-railroad-and-transmission-lines-near-salton-sea-california
 
 Included in a theme template

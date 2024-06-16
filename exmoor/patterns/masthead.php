@@ -4,6 +4,8 @@
  * Slug: exmoor/masthead
  * Categories: featured
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
@@ -16,8 +18,8 @@
 	<div class="wp-block-columns alignwide are-vertically-aligned-bottom">
 		<!-- wp:column {"verticalAlignment":"bottom","width":"72%"} -->
 		<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:72%">
-			<!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"lineHeight":"0.8","textTransform":"uppercase","fontStyle":"normal","fontWeight":"900"}},"fontSize":"huge","fontFamily":"raleway"} -->
-			<h1 class="wp-block-heading alignwide has-raleway-font-family has-huge-font-size" style="font-style:normal;font-weight:900;line-height:0.8;text-transform:uppercase"><?php echo wp_kses_post( __( 'Your<br>journey<br>begins', 'exmoor' ) ); ?></h1>
+			<!-- wp:heading {"level":1,"align":"wide","style":{"typography":{"lineHeight":"0.8","textTransform":"uppercase","fontStyle":"normal","fontWeight":"900"}},"fontSize":"xxxx-large","fontFamily":"raleway"} -->
+			<h1 class="wp-block-heading alignwide has-raleway-font-family has-xxxx-large-font-size" style="font-style:normal;font-weight:900;line-height:0.8;text-transform:uppercase"><?php echo wp_kses_post( __( 'Your<br>journey<br>begins', 'exmoor' ) ); ?></h1>
 			<!-- /wp:heading -->
 		</div>
 		<!-- /wp:column -->

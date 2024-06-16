@@ -27,6 +27,24 @@ Radcliffe 2 includes support for Jetpack's Infinite Scroll as well as other feat
 
 == Changelog ==
 
+= 2.0.19 =
+* Radcliffe 2 & Photos: Revert SVG icon files (#7773)
+
+= 2.0.18 =
+* Removes logo resize reset testing code (#7760)
+
+= 2.0.17 =
+* pub themes: Restore changes overwritten from latest themes deploy (D144213 D144218 D144223 D144228 D144234 D144240 D144244) (#7708)
+
+= 2.0.16 =
+* Lossless image optimization (#7671)
+
+= 2.0.16 =
+* Optimize images (#7671)
+
+= 2.0.15 =
+* radcliffe-2: PHP 8.1 updates from wpcom (#7584)
+
 = 2.0.14 =
 * Radcliffe 2: Fix Scroll on Table Block (#7477)
 

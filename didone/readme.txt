@@ -12,6 +12,15 @@ Didone is a simple theme that supports full-site editing. It comes with a set of
 
 == Changelog ==
 
+= 1.0.4 =
+* Replace screenshot.png
+
+= 1.0.3 =
+* Lossless image optimization (#7671)
+
+= 1.0.3 =
+* Optimize images (#7671)
+
 = 1.0.2 =
 * Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
 

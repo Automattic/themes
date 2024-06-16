@@ -67,7 +67,7 @@ declare( strict_types = 1 );
 
 						<!-- wp:post-title {"isLink":true,"fontSize":"small"} /-->
 
-						<!-- wp:post-author-name {"isLink":true,"fontSize":"x-small"} /-->
+						<!-- wp:post-author-name {"isLink":true} /-->
 					</div>
 					<!-- /wp:group -->
 				<!-- /wp:post-template -->
