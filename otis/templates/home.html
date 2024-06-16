@@ -1,14 +1,32 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:query {"queryId":7,"query":{"perPage":3,"pages":3,"offset":0,"postType":"page","order":"asc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"displayLayout":{"type":"list"},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:query {"queryId":6,"query":{"perPage":"20","pages":0,"offset":0,"postType":"page","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]}} -->
 <div class="wp-block-query"><!-- wp:post-template -->
-<!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"7rem","fontStyle":"normal","fontWeight":"300"}}} /-->
+<!-- wp:post-title {"isLink":true,"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"huge"} /-->
 
-<!-- wp:separator {"opacity":"css"} -->
-<hr class="wp-block-separator has-css-opacity"/>
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
 <!-- /wp:separator -->
-<!-- /wp:post-template --></div>
+<!-- /wp:post-template -->
+
+<!-- wp:spacer {"height":"140px"} -->
+<div style="height:140px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"},"fontSize":"x-large"} -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
+<p>There are no published pages yet.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
 <!-- /wp:query --></div>
 <!-- /wp:group -->
 
