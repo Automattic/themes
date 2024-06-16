@@ -54,7 +54,15 @@
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0px","bottom":"0px","right":"0px","left":"0px"}},"typography":{"fontSize":"0.8rem"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group alignfull" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;font-size:0.8rem"><!-- wp:paragraph {"align":"right"} -->
 <p class="has-text-align-right">
-    Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a></p>
+<?php
+    /* Translators: WordPress link. */
+    $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'sunderland' ) ) . '" rel="nofollow">WordPress</a>';
+    echo sprintf(
+        esc_html__( 'Designed with %1$s', 'sunderland' ),
+        $wordpress_link
+    );
+?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
