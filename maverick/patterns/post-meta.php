@@ -1,0 +1,17 @@
+<?php
+/**
+ * Title: post-meta
+ * Slug: maverick/post-meta
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<div class="wp-block-group"><!-- wp:post-date /-->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
+<p style="font-size:0.8rem"><?php echo __('·', 'maverick');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-terms {"term":"category","style":{"typography":{"textTransform":"uppercase"}}} /--></div>
+<!-- /wp:group -->
