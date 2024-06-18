@@ -6,8 +6,8 @@
  * Inserter: no
  */
 ?>
-<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/summertime_image.webp","dimRatio":10,"overlayColor":"base","minHeight":100,"minHeightUnit":"vh","style":{"spacing":{"padding":{"right":"5vw","left":"5vw"}}},"textColor":"contrast","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover has-contrast-color has-text-color" style="padding-right:5vw;padding-left:5vw;min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim-10 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/summertime_image.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"right":"0vw","left":"0vw"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/summertime_image.webp","dimRatio":10,"overlayColor":"base","isUserOverlayColor":true,"minHeight":100,"minHeightUnit":"vh","lock":{"move":false,"remove":true},"style":{"spacing":{"padding":{"right":"5vw","left":"5vw"}}},"textColor":"contrast","layout":{"type":"default"}} -->
+<div class="wp-block-cover has-contrast-color has-text-color" style="padding-right:5vw;padding-left:5vw;min-height:100vh"><span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim-10 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'sunderland');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/summertime_image.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"align":"full","style":{"dimensions":{"minHeight":"100vh"},"spacing":{"padding":{"right":"0vw","left":"0vw"}}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group alignfull" style="min-height:100vh;padding-right:0vw;padding-left:0vw"><!-- wp:spacer {"height":"0px","style":{"layout":{"flexSize":"0px","selfStretch":"fixed"}}} -->
 <div style="height:0px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
@@ -28,7 +28,7 @@
 
 <!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","fontSize":"0.8rem"}}} -->
-<p style="font-size:0.8rem;text-transform:uppercase"><strong><?php echo esc_html__( 'in stores June 26th', 'sunderland' ); ?><br></strong><br><?php echo esc_html__( 'Release Party and exclusive pre-show cocktail reception', 'sunderland' ); ?><br><?php echo esc_html__( 'Eden Garden Amphitheater on June 25th', 'sunderland' ); ?><br><a href="/"><?php echo esc_html__( 'more info here', 'sunderland' ); ?></a><br></p>
+<p style="font-size:0.8rem;text-transform:uppercase"><?php echo __('<strong>in stores June 26th<br></strong><br>Release Party and exclusive pre-show cocktail reception<br>Eden Garden Amphitheater on June 25th<br><a href="/">more info here</a><br>', 'sunderland');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:social-links {"iconColor":"contrast","iconColorValue":"#ffd17b","size":"has-small-icon-size","style":{"spacing":{"blockGap":{"top":"1rem","left":"1rem"}}},"className":"is-style-logos-only"} -->
