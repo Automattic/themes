@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: header
- * Slug: boxedbio/header
+ * Slug: jazzygrid/header
  * Categories: hidden
  * Inserter: no
  */

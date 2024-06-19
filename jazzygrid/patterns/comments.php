@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Comments
- * slug: boxedbio/comments
+ * slug: jazzygrid/comments
  * inserter: no
  */
 
