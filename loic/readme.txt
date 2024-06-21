@@ -12,6 +12,9 @@ A simple blogging theme ideal for writers.
 
 == Changelog ==
 
+= 1.0.3 =
+* Loic: Update theme and prepare for Dotorg submission (#7814)
+
 = 1.0.2 =
 * Lossless image optimization (#7671)
 

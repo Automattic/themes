@@ -12,6 +12,9 @@ Marl is a minimal, product-oriented theme.
 
 == Changelog ==
 
+= 1.0.6 =
+* Fixed Blockbase children style variations (#7859)
+
 = 1.0.5 =
 * Lossless image optimization (#7671)
 
