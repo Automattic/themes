@@ -40,7 +40,7 @@
 <!-- wp:column {"width":"","style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}},"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|50"}},"border":{"top":{"width":"1px"}}},"backgroundColor":"base","textColor":"contrast"} -->
 <div class="wp-block-column has-contrast-color has-base-background-color has-text-color has-background has-link-color" style="border-top-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"level":1,"align":"wide","className":"no-underline"} -->
-<h1 class="wp-block-heading alignwide no-underline"><?php echo __('<a href="https://theoutnow.mystagingwebsite.com/blog/" data-type="page" data-id="2">Read the msgrs</a>', 'outnow');?></h1>
+<h1 class="wp-block-heading alignwide no-underline"><?php echo __('<a href="/blog/" data-type="page" data-id="2">Read the msgrs</a>', 'outnow');?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>

@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-OutNow is the perfect theme for our users who are engaged in artistic activities. Its concise and straightforward introduction enables users to promptly select topics for their blog posts or content pages.
+OutNow is the perfect theme for people who are engaged in artistic activities. Its concise and straightforward introduction enables users to promptly select topics for their blog posts or content pages.
 
 == Changelog ==
 
@@ -38,7 +38,7 @@ OutNow is based on Stage (), (C) Automattic, [GPLv2 or later](http://www.gnu.org
 
 
 == Images ==
-All images used in the templates were generated with AI using Midjourney.
+Generated with AI on Midjourney, released under the CC0 license.
 
 
 == Fonts ==
@@ -52,4 +52,10 @@ Libre Franklin
 Copyright 2020 The LibreFranklin Project Authors (https://github.com/impallari/Libre-Franklin)
 Source: http://www.impallari.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+Besley
+Copyright 2020 The Besley Project Authors (https://github.com/indestructible-type/Besley)
+Source: https://indestructibletype.com/Home.html
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
 
