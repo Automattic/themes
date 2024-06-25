@@ -38,7 +38,7 @@ LeanCV is based on MyCV (), (C) Automattic, [GPLv2 or later](http://www.gnu.org/
 
 
 = Images ==
-All images used in the templates were generated with AI using Midjourney.
+Generated with AI on Midjourney, released under the CC0 license.
 
 
 == Fonts ==
