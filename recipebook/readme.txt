@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-RecipeBook is a versatile theme designed to cater to various content creators. It explores the Query Loop element in a very particular way, with zero spacings and block strokes.
+RecipeBook is a versatile theme designed for various content creators. It explores the Query Loop element in a particular way, with zero spacing and block strokes.
 
 
 == Changelog ==
