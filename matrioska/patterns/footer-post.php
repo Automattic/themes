@@ -1,0 +1,20 @@
+<?php
+/**
+ * Title: footer-post
+ * Slug: matrioska/footer-post
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0vh","bottom":"0vh"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":50,"overlayColor":"contrast","isUserOverlayColor":true,"minHeight":50,"minHeightUnit":"vh","contentPosition":"top center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"5vh"}},"border":{"width":"0px","style":"none"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-cover alignfull is-light has-custom-content-position is-position-top-center" style="border-style:none;border-width:0px;padding-top:5vh;min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+<div class="wp-block-group has-base-color has-text-color has-link-color"><!-- wp:site-title /-->
+
+<!-- wp:paragraph {"align":"right","fontSize":"small"} -->
+<p class="has-text-align-right has-small-font-size"><?php echo __('
+Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'matrioska');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div></div>
+<!-- /wp:cover --></div>
+<!-- /wp:group -->

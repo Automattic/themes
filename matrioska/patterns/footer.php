@@ -1,0 +1,18 @@
+<?php
+/**
+ * Title: footer
+ * Slug: matrioska/footer
+ * Categories: hidden
+ * Inserter: no
+ */
+?>
+<!-- wp:group {"style":{"dimensions":{"minHeight":""},"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"margin":{"top":"0vh","bottom":"0vh"}}}, "padding":{"top":"5vh","bottom":"10vh"}}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background has-link-color" style="padding-top:5vh;padding-bottom:10vh"><!-- wp:group {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"dimensions":{"minHeight":"100%"}},"textColor":"base","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group has-base-color has-text-color has-link-color" style="min-height:100%"><!-- wp:site-title /-->
+
+<!-- wp:paragraph {"align":"right","fontSize":"small"} -->
+<p class="has-text-align-right has-small-font-size"><?php echo __('
+Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'matrioska');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
