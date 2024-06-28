@@ -40,6 +40,10 @@ Title: "Free woman running on road image"
 License: Public Domain CC0
 Source: https://www.rawpixel.com/image/5922463/photo-image-public-domain-black-person
 
+Title: "Jogging in the forest"
+License: Public Domain CC0
+Source: https://www.rawpixel.com/image/6032727/photo-image-public-domain-trees-green
+
 
 == Fonts ==
 
