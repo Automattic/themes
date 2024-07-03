@@ -239,19 +239,19 @@
 <div class="wp-block-group alignwide"><!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"1px","left":"1px"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"31%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:31%"><!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"media","style":{"color":[]}} -->
-<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/young-lady-holding-huge-burger.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/young-lady-holding-huge-burger.jpg" alt="<?php esc_html_e('', 'mymenu');?>" style="aspect-ratio:1;object-fit:cover"/></a></figure>
+<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/young-lady-holding-huge-burger.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/young-lady-holding-huge-burger.jpg" alt="<?php esc_attr_e('Young lady holding huge burger', 'mymenu');?>" style="aspect-ratio:1;object-fit:cover"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"59%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
 <div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:59%"><!-- wp:image {"aspectRatio":"4/3","scale":"cover","sizeSlug":"full","linkDestination":"media","style":{"color":[]}} -->
-<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/girl-holding-a-juicy-beef-burger.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/girl-holding-a-juicy-beef-burger.jpg" alt="<?php esc_html_e('', 'mymenu');?>" style="aspect-ratio:4/3;object-fit:cover"/></a></figure>
+<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/girl-holding-a-juicy-beef-burger.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/girl-holding-a-juicy-beef-burger.jpg" alt="<?php esc_attr_e('Girl holding a juicy beef burger', 'mymenu');?>" style="aspect-ratio:4/3;object-fit:cover"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"12%","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}}} -->
-<div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:12%"><!-- wp:image {"aspectRatio":"3/4","scale":"cover","sizeSlug":"large","linkDestination":"media","style":{"color":[]}} -->
-<figure class="wp-block-image size-large"><a href="http://localhost.local/wp-content/themes/mymenu/assets/images/haloumi-burger-with-french-fries-768x1024-1.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/haloumi-burger-with-french-fries-768x1024.jpg" alt="<?php esc_html_e('', 'mymenu');?>" style="aspect-ratio:3/4;object-fit:cover"/></a></figure>
+<div class="wp-block-column" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;flex-basis:12%"><!-- wp:image {"aspectRatio":"3/4","scale":"cover","sizeSlug":"full","linkDestination":"media","style":{"color":[]}} -->
+<figure class="wp-block-image size-full"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/haloumi-burger-with-french-fries.jpg"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/haloumi-burger-with-french-fries.jpg" alt="<?php esc_attr_e('Haloumi burger with french fries', 'mymenu');?>" class="" style="aspect-ratio:3/4;object-fit:cover"/></a></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
