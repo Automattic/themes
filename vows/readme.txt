@@ -50,11 +50,11 @@ License URL: http://scripts.sil.org/OFL
 Source: http://www.forthehearts.net
 -- End of Playfair Display Font credits --
 
-Gabarito Font
-Copyright 2023 The Gabarito Project Authors (https://github.com/naipefoundry/gabarito)
+Figtree Font
+Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree)
 This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL 
 License URL: http://scripts.sil.org/OFL 
-Source: https://fonts.google.com/specimen/Gabarito/
+Source: https://fonts.google.com/specimen/Figtree/about
 -- End of Gabarito Font credits --
 
 
