@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Hola is a text-only blog design, a new interpretation of the theme "Hey" with diverse style variations.
+Hola is a text-only blog design, a new interpretation of the theme 'Hey' with diverse style variations.
 
 == Changelog ==
 
