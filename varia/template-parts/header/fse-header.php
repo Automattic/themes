@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <header id="masthead" class="fse-template-part fse-header entry-content">
 	<?php
 		$template = new A8C\FSE\WP_Template();
