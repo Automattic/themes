@@ -14,6 +14,9 @@ A design system for WordPress sites built with Gutenberg.
 
 == Changelog ==
 
+= 1.6.32 =
+* Clean up reset styles on images for IE (#7918)
+
 = 1.6.31 =
 * Lossless image optimization (#7671)
 
