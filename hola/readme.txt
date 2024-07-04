@@ -43,11 +43,6 @@ Generated with AI on Midjourney, released under the CC0 license.
 
 == Fonts ==
 
-Inter
-Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
-Source: https://rsms.me/
-License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
-
 Plus Jakarta Sans
 Copyright 2020 The Plus Jakarta Sans Project Authors (https://github.com/tokotype/PlusJakartaSans)
 Source: https://www.tokotype.com
@@ -58,13 +53,12 @@ Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/Cr
 Source: http://www.baronvonfonthausen.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
-Texturina 12pt
+Texturina
 Copyright 2020 The Texturina Project Authors (https://github.com/Omnibus-Type/Texturina)
 Source: http://www.omnibus-type.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
-Inter Display
-Copyright 2016 The Inter Project Authors
-Source: https://rsms.me/
+Manrope
+Copyright 2019 The Manrope Project Authors (https://github.com/sharanda/manrope)
+Source: http://gent.media
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
-
