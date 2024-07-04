@@ -6,12 +6,12 @@
  * Inserter: no
  */
 ?>
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
 
-<!-- wp:group {"layout":{"inherit":true,"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group alignwide"><!-- wp:group {"align":"wide","layout":{"inherit":true,"type":"constrained","justifyContent":"left"}} -->
-<div class="wp-block-group alignwide"><!-- wp:post-title {"level":1,"isLink":true} /-->
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--30)"><!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"align":"wide","style":{"border":{"top":{"color":"var:preset|color|secondary","width":"2px"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide" style="border-top-color:var(--wp--preset--color--secondary);border-top-width:2px"><!-- wp:post-title {"level":1,"isLink":true} /-->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"5px"}},"layout":{"type":"flex"}} -->
@@ -30,7 +30,7 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"0"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"90%"} -->
 <div class="wp-block-column" style="flex-basis:90%"><!-- wp:post-content {"layout":{"type":"constrained","justifyContent":"left"}} /-->
@@ -122,6 +122,6 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
 <!-- wp:post-featured-image {"align":"full","style":{"color":[]}} /-->

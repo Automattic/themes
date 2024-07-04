@@ -10,8 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Inversion is a blog theme designed in the WordPress Site Editor. Its neat visuals introduce a direct experience on post reading: noticeable post titles listed on a text-only page, with an original swap of header and footer blocks.
-
+A blog theme entirely designed in the Editor, Inversum offers a direct experience of post-reading with its noticeable post titles listed on a text-only page and an original swap of header and footer blocks.
 
 == Changelog ==
 
@@ -36,3 +35,12 @@ GNU General Public License for more details.
 
 
 Inversum is based on Upsidedown (), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+
+
+== Fonts ==
+
+Rubik
+Copyright 2015 The Rubik Project Authors (https://github.com/googlefonts/rubik)
+Source: http://www.google.com/fonts
+License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
+
