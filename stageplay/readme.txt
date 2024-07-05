@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Stageplay is a blog theme that ideally suits writers and the general public who want their sites formatted as scripts — following the concept present in another theme called Screenplay.
+Stageplay is a blog theme that ideally suits writers and the general public who want their sites formatted as scripts.
 
 == Changelog ==
 
