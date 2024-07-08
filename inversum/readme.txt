@@ -14,6 +14,9 @@ A blog theme entirely designed in the Editor, Inversum offers a direct experienc
 
 == Changelog ==
 
+= 1.1 =
+* Add strict types
+
 = 1.0.0 =
 * Initial release
 

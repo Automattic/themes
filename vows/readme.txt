@@ -14,6 +14,9 @@ Vows works as a comprehensive hub for all your wedding-related links. Inspired b
 
 == Changelog ==
 
+= 1.1 =
+* Add strict types
+
 = 1.0.0 =
 * Initial release
 

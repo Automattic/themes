@@ -14,6 +14,9 @@ Atrium is a blog theme that presents posts in different Query Loops using tags. 
 
 == Changelog ==
 
+= 1.1 =
+* Add strict types
+
 = 1.0.0 =
 * Initial release
 

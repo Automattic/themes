@@ -12,6 +12,9 @@ Muscat is a simple blogging WordPress theme with grid post templates and a cente
 
 == Changelog ==
 
+= 1.0.6 =
+* Changes from WordPress Playground, made some adjustments to the theme: (#7938)
+
 = 1.0.5 =
 * Lossless image optimization (#7671)
 
