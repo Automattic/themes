@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <div class="site-info">
 	<?php $blog_info = get_bloginfo( 'name' ); ?>
 	<?php if ( ! empty( $blog_info ) ) : ?>

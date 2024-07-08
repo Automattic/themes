@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <header id="masthead" class="site-header alignfull">
 	<div class="site-header-wrapper">
 		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>

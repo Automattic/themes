@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Sophisticated Business (Twenty Nineteen) functions and definitions.

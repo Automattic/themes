@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <footer id="colophon" class="site-footer responsive-max-width">
 	<?php
 	if ( class_exists( 'A8C\FSE\WP_Template' ) ) : // If the FSE plugin is active, use the Header template for content.

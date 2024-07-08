@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?
 /**
  * Adds support for wp.com-specific theme functions.

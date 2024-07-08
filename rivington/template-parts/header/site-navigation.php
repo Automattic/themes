@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php 
 $has_primary_nav = has_nav_menu( 'menu-1' );
 if ( $has_primary_nav ) : ?>
