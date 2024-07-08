@@ -45,3 +45,13 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
+
+== Fonts ==
+
+Albert Sans Font
+Copyright 2023 The Albert Sans Project Authors (https://github.com/usted/Albert-Sans)
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+License URL: http://scripts.sil.org/OFL 
+-- End of Albert Sans Font credits --
