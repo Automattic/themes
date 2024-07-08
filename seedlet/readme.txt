@@ -18,6 +18,9 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.33 =
+* Remove unused code for IE10 because conflicts with the image border added via editor (#7925)
+
 = 1.1.31 =
 * Lossless image optimization (#7671)
 

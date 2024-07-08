@@ -39,6 +39,9 @@ Photos is a single-column blogging theme that showcases your photos in a grid fo
 
 == Changelog ==
 
+= 1.0.5 =
+* Remove unused code for IE10 because conflicts with the image border added via editor (#7925)
+
 = 1.0.4 =
 * Radcliffe 2 & Photos: Revert SVG icon files (#7773)
 

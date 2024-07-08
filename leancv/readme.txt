@@ -14,6 +14,9 @@ LeanCV is a blog theme that echoes the structure of a professional profile with 
 
 == Changelog ==
 
+= 1.1 =
+* LeanCV: Use shared color variations (#7923)
+
 = 1.0.0 =
 * Initial release
 

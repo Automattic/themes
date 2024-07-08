@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.17 =
+* Assembler: Use variation partials and move styles.blocks.variations to styles.variations (#7891)
+
 = 0.0.15 =
 * Assembler: Add fonts (#7729)
 * Assembler: Update bundled color and typography theme styles (#7731)
