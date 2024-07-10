@@ -40,3 +40,35 @@ GNU General Public License for more details.
 
 MyMenu is based on My Menu (), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
+
+This theme bundles the following third-party resources:
+
+== Fonts ==
+
+Font: DM Mono from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/DM+Mono
+
+Font: Fraunces from Google Fonts
+License: Open Font License (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+Source: https://fonts.google.com/specimen/Fraunces
+
+Font: TeX Gyre Adventor font
+License: GUST e-foundry License v1.00 (http://www.gust.org.pl/fonts/licenses/GUST-FONT-LICENSE.txt)
+Source: https://www.fontsquirrel.com/fonts/tex-gyre-adventor
+
+
+== Images ==
+
+Image: Girl holding a juicy beef burger 
+License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://www.foodiesfeed.com/free-food-photo/girl-holding-a-juicy-beef-burger/
+
+Image: Young lady holding huge burger
+License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://www.foodiesfeed.com/free-food-photo/young-lady-holding-huge-burger/
+
+
+Image: Halloumi cheeseburger
+License: CCO (https://creativecommons.org/publicdomain/zero/1.0/)
+Source: https://www.foodiesfeed.com/free-food-photo/haloumi-burger-with-french-fries/
