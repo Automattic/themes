@@ -52,7 +52,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><a href="https://iotixdemo.wordpress.com/"><?php esc_html_e( 'Try a demo →', 'iotix' ); ?></a></p>
+<p class="has-medium-font-size"><a href="<?php echo esc_url('https://iotixdemo.wordpress.com/', 'iotix');?>"><?php esc_html_e( 'Try a demo →', 'iotix' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
@@ -72,7 +72,7 @@
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><a href="https://iotixdemo.wordpress.com/"><?php esc_html_e( 'See support programs →', 'iotix' ); ?></a></p>
+<p class="has-medium-font-size"><a href="<?php echo esc_url('https://iotixdemo.wordpress.com/', 'iotix');?>"><?php esc_html_e( 'See support programs →', 'iotix' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
