@@ -26,11 +26,7 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"60%","layout":{"type":"constrained"}} -->
-<div class="wp-block-column" style="flex-basis:60%"><!-- wp:paragraph {"fontSize":"medium"} -->
-<p class="has-medium-font-size"><?php echo __('█████████████████████████<br>█▄─▄▄─█─▄▄─█▄─██─▄█▄─▄▄▀█<br>██─▄███─██─██─██─███─▄─▄█<br>▀▄▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▀▄▄▀<br>██████████<br>█─▄▄─█─█─█<br>█─██─█─▄─█<br>▀▄▄▄▄▀▄▀▄▀<br>█████████████████████████<br>█▄─▄▄─█─▄▄─█▄─██─▄█▄─▄▄▀█<br>██─▄███─██─██─██─███─▄─▄█<br>▀▄▄▄▀▀▀▄▄▄▄▀▀▄▄▄▄▀▀▄▄▀▄▄▀', 'stageplay');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","justifyContent":"right"}} -->
+<div class="wp-block-column" style="flex-basis:60%"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained","justifyContent":"right"}} -->
 <div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading"><?php echo __('Oops! That page CAN\'T be found.', 'stageplay');?></h1>
 <!-- /wp:heading -->
