@@ -26,7 +26,7 @@
 <!-- wp:query-no-results -->
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'iotix'); ?></p>
+<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'iotix'); ?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 <!-- /wp:query-no-results -->
@@ -42,7 +42,7 @@
 
 <!-- wp:post-title {"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}}} /-->
 
-<!-- wp:post-excerpt {"moreText":"<?php echo esc_html__( 'Read article →', 'iotix'); ?>"} /-->
+<!-- wp:post-excerpt {"moreText":"<?php esc_html_e( 'Read article →', 'iotix'); ?>"} /-->
 
 <!-- wp:spacer {"height":"40px"} -->
 <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>

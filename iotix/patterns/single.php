@@ -26,7 +26,7 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.22rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><?php echo esc_html__('Posted by', 'iotix'); ?></p>
+<p class="has-small-font-size"><?php esc_html_e('Posted by', 'iotix'); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-author-name {"isLink":true,"fontSize":"small"} /--></div>
@@ -71,9 +71,9 @@
 <!-- /wp:comment-template -->
 
 <!-- wp:comments-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-<!-- wp:comments-pagination-previous {"label":"<?php echo esc_html__( 'Show Newer', 'iotix'); ?>"} /-->
+<!-- wp:comments-pagination-previous {"label":"<?php esc_html_e( 'Show Newer', 'iotix'); ?>"} /-->
 
-<!-- wp:comments-pagination-next {"label":"<?php echo esc_html__( 'Show Older', 'iotix'); ?>"} /-->
+<!-- wp:comments-pagination-next {"label":"<?php esc_html_e( 'Show Older', 'iotix'); ?>"} /-->
 <!-- /wp:comments-pagination -->
 
 <!-- wp:post-comments-form /--></div>

@@ -22,7 +22,7 @@
 <!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"align":"wide","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-top is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__( 'Product', 'iotix' ); ?></h4>
+<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Product', 'iotix' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","align":"wide","layout":{"type":"flex","flexWrap":"wrap","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
@@ -30,7 +30,7 @@
 
 <!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__('Company', 'iotix'); ?></h4>
+<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e('Company', 'iotix'); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","align":"wide","layout":{"type":"flex","flexWrap":"wrap","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
@@ -38,7 +38,7 @@
 
 <!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><?php echo esc_html__('Resources', 'iotix'); ?></h4>
+<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e('Resources', 'iotix'); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","align":"wide","layout":{"type":"flex","flexWrap":"wrap","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
@@ -54,9 +54,9 @@
 <div class="wp-block-group alignfull" style="font-size:0.8rem"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"0.8rem"}}} -->
 <p class="has-text-align-left" style="font-size:0.8rem"><?php
 	/* Translators: WordPress link. */
-	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'adventurer' ) ) . '" rel="nofollow">WordPress</a>';
+	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'iotix' ) ) . '" rel="nofollow">WordPress</a>';
 	echo sprintf(
-		esc_html__( 'Designed with %1$s', 'adventurer' ),
+		esc_html__( 'Designed with %1$s', 'iotix' ),
 		$wordpress_link
 	);
 ?></p>
