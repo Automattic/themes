@@ -18,7 +18,7 @@
 
 <!-- wp:group {"style":{"layout":{"selfStretch":"fixed","flexSize":"50%"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"fontSize":"small"} -->
-<p class="has-small-font-size"><?php esc_html_e('"Enjoy yourself. It\'s later than you think." Chinese proverb', 'specials');?></p>
+<p class="has-small-font-size"><?php echo __('"Enjoy yourself. It\'s later than you think." Chinese proverb', 'specials');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
