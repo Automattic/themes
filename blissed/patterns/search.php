@@ -89,8 +89,8 @@
 
 <!-- wp:column {"width":"30%"} -->
 <div class="wp-block-column" style="flex-basis:30%"><!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"padding":{"top":"5vh"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group" style="padding-top:5vh"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/couple-photo.jpg","dimRatio":10,"overlayColor":"base","isUserOverlayColor":true,"minHeight":87.5,"minHeightUnit":"vh","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover" style="min-height:87.5vh"><span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim-10 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'blissed');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/couple-photo.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-group" style="padding-top:5vh"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Romantic-Middle-Aged-Women.jpg","dimRatio":10,"overlayColor":"base","isUserOverlayColor":true,"minHeight":87.5,"minHeightUnit":"vh","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover" style="min-height:87.5vh"><span aria-hidden="true" class="wp-block-cover__background has-base-background-color has-background-dim-10 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'blissed');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/Romantic-Middle-Aged-Women.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"><?php echo __('', 'blissed');?></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
