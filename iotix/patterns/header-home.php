@@ -29,8 +29,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"80%"} -->
-<div class="wp-block-column" style="flex-basis:80%"><!-- wp:heading {"textAlign":"center","align":"wide","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"},"padding":{"bottom":"0","right":"0"}},"typography":{"fontSize":"3rem","lineHeight":"1"}}} -->
-<h2 class="wp-block-heading alignwide has-text-align-center" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-right:0;padding-bottom:0;font-size:3rem;line-height:1"><?php esc_html_e('Machine learning for designers, made easy.', 'iotix');?></h2>
+<div class="wp-block-column" style="flex-basis:80%"><!-- wp:heading {"textAlign":"center","align":"wide","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"},"padding":{"bottom":"0","right":"0"}},"typography":{"fontSize":"3rem","lineHeight":"1"},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background"} -->
+<h2 class="wp-block-heading alignwide has-text-align-center has-background-color has-text-color has-link-color" style="margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;padding-right:0;padding-bottom:0;font-size:3rem;line-height:1"><?php esc_html_e('Machine learning for designers, made easy.', 'iotix');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"top":"0","right":"0","bottom":"0","left":"0"},"padding":{"right":"0vw","top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"fontSize":"medium"} -->
