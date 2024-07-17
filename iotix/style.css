@@ -3,7 +3,7 @@ Theme Name: Iotix
 Theme URI: https://wordpress.com/themes/iotix
 Author: Automattic
 Author URI: https://automattic.com/
-Description: Iotix provides a great starting point for creating a business or startup website. 
+Description: Iotix provides a great starting point for creating a business or startup website.
 Requires at least: 5.8
 Tested up to: 6.2
 Requires PHP: 5.7
@@ -29,4 +29,11 @@ body {
 a {
 	text-decoration-thickness: 0.5px !important;
 	text-underline-offset: .1em;
+}
+
+/*
+ * Default headings within dark cover blocks to white text.
+ */
+.wp-block-cover:not(.has-text-color, .is-light) .wp-block-heading:not(.has-text-color) {
+	color: var(--wp--preset--color--white);
 }
