@@ -87,7 +87,7 @@ Used in "Startup" pattern.
 
 3D Rendering of Devices
 License: CC0 Public domain
-Source: Felipe Varela (@keoshi) 
+Source: Created by Filipe Varela (@keoshi) and are released under the CC0 license
 Used in "Startup" pattern.
 
 Manrope Font

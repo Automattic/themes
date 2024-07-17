@@ -1,28 +1,28 @@
 <?php
 /**
- * Title: Default footer
+ * Title: footer
  * Slug: iotix/footer
- * Categories: footer
- * Block Types: core/template-part/footer
+ * Categories: hidden
+ * Inserter: no
  */
 ?>
-
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"5vh","right":"5vw","bottom":"10vh","left":"5vw"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:5vh;padding-right:5vw;padding-bottom:10vh;padding-left:5vw"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"80px","bottom":"0px"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide" style="padding-top:80px;padding-bottom:0px"><!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
-<div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"width":"30%"} -->
-<div class="wp-block-column" style="flex-basis:30%"><!-- wp:site-title {"textColor":"primary"} /-->
+<div class="wp-block-group alignwide" style="padding-top:80px;padding-bottom:0px"><!-- wp:group {"style":{"spacing":{"blockGap":"3em"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+<div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"0.6em"},"layout":{"selfStretch":"fixed","flexSize":"320px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:site-title {"textColor":"primary"} /-->
 
 <!-- wp:site-tagline /--></div>
-<!-- /wp:column -->
+<!-- /wp:group -->
 
-<!-- wp:column {"width":"10%"} -->
-<div class="wp-block-column" style="flex-basis:10%"></div>
-<!-- /wp:column -->
+<!-- wp:spacer {"width":"16px","style":{"layout":{"flexSize":"16px","selfStretch":"fixed"}}} -->
+<div style="height:100px;width:16px" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
-<!-- wp:column {"verticalAlignment":"top"} -->
+<!-- wp:columns {"verticalAlignment":"top","isStackedOnMobile":false,"align":"wide","style":{"layout":{"selfStretch":"fill","flexSize":null}}} -->
+<div class="wp-block-columns alignwide are-vertically-aligned-top is-not-stacked-on-mobile"><!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><strong><?php echo esc_html__( 'Product', 'iotix' ); ?></strong></h4>
+<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Product', 'iotix' ); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","align":"wide","layout":{"type":"flex","flexWrap":"wrap","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
@@ -30,7 +30,7 @@
 
 <!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><strong><?php echo esc_html__( 'Company', 'iotix' ); ?></strong></h4>
+<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e('Company', 'iotix'); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","align":"wide","layout":{"type":"flex","flexWrap":"wrap","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
@@ -38,26 +38,27 @@
 
 <!-- wp:column {"verticalAlignment":"top"} -->
 <div class="wp-block-column is-vertically-aligned-top"><!-- wp:heading {"level":4,"fontSize":"medium"} -->
-<h4 class="wp-block-heading has-medium-font-size"><strong><?php echo esc_html__( 'Resources', 'iotix' ); ?></strong></h4>
+<h4 class="wp-block-heading has-medium-font-size"><?php esc_html_e('Resources', 'iotix'); ?></h4>
 <!-- /wp:heading -->
 
 <!-- wp:navigation {"overlayMenu":"never","align":"wide","layout":{"type":"flex","flexWrap":"wrap","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"}}} /--></div>
 <!-- /wp:column --></div>
-<!-- /wp:columns -->
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
 
 <!-- wp:spacer {"height":"14vh"} -->
 <div style="height:14vh" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:group {"align":"full","style":{"typography":{"fontSize":"0.8rem"},"spacing":{"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
+<!-- wp:group {"align":"full","style":{"typography":{"fontSize":"0.8rem"},"spacing":{"blockGap":"20px"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group alignfull" style="font-size:0.8rem"><!-- wp:paragraph {"align":"left","style":{"typography":{"fontSize":"0.8rem"}}} -->
 <p class="has-text-align-left" style="font-size:0.8rem"><?php
-    /* Translators: WordPress link. */
-    $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'adventurer' ) ) . '" rel="nofollow">WordPress</a>';
-    echo sprintf(
-        esc_html__( 'Designed with %1$s', 'adventurer' ),
-        $wordpress_link
-    );
+	/* Translators: WordPress link. */
+	$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'iotix' ) ) . '" rel="nofollow">WordPress</a>';
+	echo sprintf(
+		esc_html__( 'Designed with %1$s', 'iotix' ),
+		$wordpress_link
+	);
 ?></p>
 <!-- /wp:paragraph -->
 
