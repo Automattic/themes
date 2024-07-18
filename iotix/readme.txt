@@ -12,6 +12,9 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.11 =
+* Iotix theme updates (Beafialho playground changes) (#7945)
+
 = 1.0.10 =
 * Lossless image optimization (#7671)
 
