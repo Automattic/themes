@@ -12,6 +12,9 @@ A playful and energetic theme designed specifically for local dog walking and pe
 
 == Changelog ==
 
+= 0.0.16 =
+* Update theme.json (#7963)
+
 = 0.0.1 =
 * Initial release
 
