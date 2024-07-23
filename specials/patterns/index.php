@@ -1,4 +1,3 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: index
@@ -9,12 +8,12 @@
 ?>
 <!-- wp:template-part {"slug":"header","tagName":"header","align":"full"} /-->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0vh","bottom":"0vh"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide"><!-- wp:query {"queryId":0,"query":{"perPage":20,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0vh","bottom":"0vh"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"tagName":"main","align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
 <main class="wp-block-query alignwide"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"2vh","top":"8vh","right":"var:preset|spacing|50","left":"var:preset|spacing|50"}},"border":{"left":{"width":"1px"},"right":{"width":"1px"},"bottom":[]}},"layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide" style="border-right-width:1px;border-left-width:1px;padding-top:8vh;padding-right:var(--wp--preset--spacing--50);padding-bottom:2vh;padding-left:var(--wp--preset--spacing--50)"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading"><?php esc_html_e('All choices', 'specials');?></h1>
+<h1 class="wp-block-heading"><?php echo __('All choices', 'specials');?></h1>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
@@ -54,7 +53,7 @@
 <!-- /wp:query-pagination --></div>
 <!-- /wp:group --></main>
 <!-- /wp:query --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group --></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
