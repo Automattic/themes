@@ -91,7 +91,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html__( 'Starting at $35 - 1/2h', 'bark' ); ?><?php echo esc_html__( 'While you\'re off enjoying your vacation, we\'ll pamper your pet with playful activities and cozy cuddles, making their stay feel like a holiday too!', 'bark' ); ?></p>
+<p><?php echo esc_html__( 'While you\'re off enjoying your vacation, we\'ll pamper your pet with playful activities and cozy cuddles, making their stay feel like a holiday too!', 'bark' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
