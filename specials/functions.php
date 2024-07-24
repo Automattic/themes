@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 ); ?>
 <?php
 /**
- * MENU functions and definitions
+ * Specials functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -10,16 +10,16 @@
  */
 
 
-if ( ! function_exists( 'menu_support' ) ) :
+if ( ! function_exists( 'specials_support' ) ) :
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @since MENU 1.0
+	 * @since Specials 1.0
 	 *
 	 * @return void
 	 */
-	function menu_support() {
+	function specials_support() {
 
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
@@ -30,32 +30,32 @@ if ( ! function_exists( 'menu_support' ) ) :
 
 endif;
 
-add_action( 'after_setup_theme', 'menu_support' );
+add_action( 'after_setup_theme', 'specials_support' );
 
-if ( ! function_exists( 'menu_styles' ) ) :
+if ( ! function_exists( 'specials_styles' ) ) :
 
 	/**
 	 * Enqueue styles.
 	 *
-	 * @since MENU 1.0
+	 * @since Specials 1.0
 	 *
 	 * @return void
 	 */
-	function menu_styles() {
+	function specials_styles() {
 
 		// Register theme stylesheet.
 		wp_register_style(
-			'menu-style',
+			'specials-style',
 			get_stylesheet_directory_uri() . '/style.css',
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 
 		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'menu-style' );
+		wp_enqueue_style( 'specials-style' );
 
 	}
 
 endif;
 
-add_action( 'wp_enqueue_scripts', 'menu_styles' );
+add_action( 'wp_enqueue_scripts', 'specials_styles' );

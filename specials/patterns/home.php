@@ -1,4 +1,3 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: home
@@ -9,10 +8,10 @@
 ?>
 <!-- wp:template-part {"slug":"header","tagName":"header","align":"full"} /-->
 
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"0vh","bottom":"0vh"},"blockGap":"0vh","margin":{"top":"0vh","bottom":"0vh"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh;padding-top:0vh;padding-bottom:0vh"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"backgroundColor":"primary","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"0vh","bottom":"0vh"},"blockGap":"0vh","margin":{"top":"0vh","bottom":"0vh"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:0vh;margin-bottom:0vh;padding-top:0vh;padding-bottom:0vh"><!-- wp:group {"align":"full","style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"backgroundColor":"primary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-primary-background-color has-background" style="padding-right:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)"><!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/korean-bibimbap-in-yamyam-berlin_foodiesfeed.png","dimRatio":0,"isUserOverlayColor":true,"minHeight":480,"contentPosition":"bottom left","align":"wide","style":{"color":[],"border":{"left":{"color":"var:preset|color|background","width":"1px"},"right":{"color":"var:preset|color|background","width":"1px"}},"spacing":{"padding":{"right":"var:preset|spacing|50","left":"var:preset|spacing|50","top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"textColor":"background","layout":{"type":"constrained"}} -->
-<div class="wp-block-cover alignwide has-custom-content-position is-position-bottom-left has-background-color has-text-color has-link-color" style="border-right-color:var(--wp--preset--color--background);border-right-width:1px;border-left-color:var(--wp--preset--color--background);border-left-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--50);min-height:480px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background " alt="<?php echo __('', 'specials');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/korean-bibimbap-in-yamyam-berlin_foodiesfeed.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
+<div class="wp-block-cover alignwide has-custom-content-position is-position-bottom-left has-background-color has-text-color has-link-color" style="border-right-color:var(--wp--preset--color--background);border-right-width:1px;border-left-color:var(--wp--preset--color--background);border-left-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--50);min-height:480px"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('', 'specials');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/korean-bibimbap-in-yamyam-berlin_foodiesfeed.png" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","fontSize":"large"} -->
 <p class="has-text-align-center has-large-font-size"><?php echo __('', 'specials');?></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:cover --></div>
@@ -726,7 +725,7 @@
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group --></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
