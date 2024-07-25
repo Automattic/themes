@@ -522,7 +522,7 @@ async function checkForDeployability() {
  Land the changes from the given PR ID.  This is the "production merge".
 */
 async function landChanges(prId) {
-	return executeCommand(`gh pr merge ${prId} --rebase`, true);
+	return executeCommand(`gh pr merge ${prId} --squash`, true);
 }
 
 async function getChangedThemes(hash) {
