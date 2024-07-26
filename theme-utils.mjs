@@ -309,6 +309,20 @@ async function pushButtonDeploy() {
 		await updateLastDeployedHash();
 
 		let commitMessage = await buildGithubCommitMessageSince(hash);
+
+		// Make sure the themes/pub repo in sandbox is ready to create a PR to the A8C GitHub Host  
+		prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'Before you can create the GitHub PR, login in A8C GitHub Enterprise Server from the themes/pub repo in your sandbox with the command "gh auth login" and using your SSH key.\nAre you logged in?',
+			name: "continue",
+			default: false
+		}]);
+
+		if (!prompt.continue) {
+			console.log(`Aborted Automated Deploy Process at require to login in into A8C GitHub Enterprise Server in sandbox.`);
+			return;
+		}
+
 		let prUrl = await createGithubPR(commitMessage);
 		let prId = prUrl.split('pull/')[1];
 
