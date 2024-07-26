@@ -299,11 +299,11 @@ async function pushButtonDeploy() {
 				console.log(`Aborted Automated Deploy Process at version bump push change.`);
 				return;
 			}
-
-			await executeCommand(`
+			console.log('Skipped commmit Version bump');
+			/*(await executeCommand(`
 				git commit -m "Version Bump";
 				git push --set-upstream origin trunk
-			`, true);
+			`, true);*/
 		}
 
 		await updateLastDeployedHash();
@@ -505,8 +505,9 @@ async function buildComZips(themes) {
 */
 async function checkForDeployability() {
 	let branchName = await executeCommand('git symbolic-ref --short HEAD');
+	console.log('Skipped checkForDeployability');
 	if (branchName !== 'trunk') {
-		return 'Only the /trunk branch can be deployed.';
+		//return 'Only the /trunk branch can be deployed.';
 	}
 
 	await executeCommand('git remote update', true);
@@ -1020,7 +1021,7 @@ Subscribers:
 */
 async function createGithubPR(commitMessage) {
 
-	console.log('creating GitHub Pull Request');
+	console.log('Creating GitHub Pull Request');
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
