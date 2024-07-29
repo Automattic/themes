@@ -290,7 +290,7 @@ async function pushButtonDeploy() {
 		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
-				message: 'Are you ready to push this version bump change to the source repository (Github)?',
+				message: 'Are you ready to push this version bump change to the source repository (GitHub.com)?',
 				name: "continue",
 				default: false
 			}]);
@@ -299,18 +299,17 @@ async function pushButtonDeploy() {
 				console.log(`Aborted Automated Deploy Process at version bump push change.`);
 				return;
 			}
-			console.log('Skipped commmit Version bump');
-			/*(await executeCommand(`
+			await executeCommand(`
 				git commit -m "Version Bump";
 				git push --set-upstream origin trunk
-			`, true);*/
+			`, true);
 		}
 
 		await updateLastDeployedHash();
 
 		let commitMessage = await buildGithubCommitMessageSince(hash);
 
-		// Make sure the themes/pub repo in sandbox is ready to create a PR to the A8C GitHub Host  
+		// Make sure the themes/pub repo in sandbox is ready to create a PR to the A8C GitHub Host
 		prompt = await inquirer.prompt([{
 			type: 'confirm',
 			message: 'Before you can create the GitHub PR, login in A8C GitHub Enterprise Server from the themes/pub repo in your sandbox with the command "gh auth login" and using your SSH key.\nAre you logged in?',
@@ -519,9 +518,8 @@ async function buildComZips(themes) {
 */
 async function checkForDeployability() {
 	let branchName = await executeCommand('git symbolic-ref --short HEAD');
-	console.log('Skipped checkForDeployability');
 	if (branchName !== 'trunk') {
-		//return 'Only the /trunk branch can be deployed.';
+		return 'Only the /trunk branch can be deployed.';
 	}
 
 	await executeCommand('git remote update', true);
@@ -1043,7 +1041,7 @@ async function createGithubPR(commitMessage) {
 		git checkout -b deploy
 		git add --all
 		git commit -m "${commitMessage}"
-		gh pr create --fill
+		gh pr create --fill --head deploy
 	`, true);
 
 	let githubUrl = getGithubUrlFromResponse(result);
