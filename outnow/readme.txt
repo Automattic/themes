@@ -14,6 +14,9 @@ OutNow is the perfect theme for people who are engaged in artistic activities. I
 
 == Changelog ==
 
+= 1.3 =
+* OutNow: Remove Sticky Post settings (#7956)
+
 = 1.0.0 =
 * Initial release
 
