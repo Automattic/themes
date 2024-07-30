@@ -23,10 +23,10 @@ const commands = {
 * Clean the sandbox and ensure it is up - to - date
 * Push all changed files(including removal of deleted files) since the last deployment
 * Update the 'last deployed' hash on the sandbox
-* Create a phabricator diff based on the changes since the last deployment.The description including the commit messages since the last deployment.
-* Open the Phabricator Diff in your browser
-* Create a tag in the github repository at this point of change which includes the phabricator link in the description
-* After pausing to allow testing, land and deploy the changes
+* Create a GitHub pull request based on the changes since the last deployment. The description including the commit messages since the last deployment.
+* Open the GitHub pull request in your browser
+* Create a tag in the github repository at this point of change which includes the GitHub pull request link in the description
+* After pausing to allow testing, merge and deploy the changes
 		`,
 		run: pushButtonDeploy
 	},
@@ -52,8 +52,8 @@ const commands = {
 		run: versionBumpThemes
 	},
 	"land-diff": {
-		helpText: 'Run arc land to merge in the specified diff id.',
-		additionalArgs: '<arc diff id>',
+		helpText: 'Run gh pr merge to merge in the specified pull request id.',
+		additionalArgs: '<gh pr id>',
 		run: (args) => landChanges(args?.[1])
 	},
 	"deploy-preview": {
@@ -101,10 +101,10 @@ const commands = {
 		additionalArgs: '<theme-slug> <since-revision>',
 		run: (args) => deploySyncCoreTheme(args?.[1], args?.[2])
 	},
-	"create-core-phabricator-diff": {
-		helpText: 'Given a theme slug and specific revision create a Phabricator diff from the resources currently on the sandbox.',
+	"create-core-github-pr": {
+		helpText: 'Given a theme slug and specific revision create a GitHub pull request from the resources currently on the sandbox.',
 		additionalArgs: '<theme-slug> <since-revision>',
-		run: (args) => createCorePhabriactorDiff(args?.[1], args?.[2])
+		run: (args) => createCoreGithubPR(args?.[1], args?.[2])
 	},
 	"update-theme-changelog": {
 		helpText: 'Use the commit log to build a list of recent changes and add them as a new changelog entry. If add-changes is true, the updated readme.txt will be staged.',
@@ -231,9 +231,9 @@ async function addStrictTypesToChangedThemes() {
 	* Clean the sandbox and ensure it is up-to-date
 	* Push all changed files (including removal of deleted files) since the last deployment
 	* Update the 'last deployed' hash on the sandbox
-	* Create a phabricator diff based on the changes since the last deployment.  The description including the commit messages since the last deployment.
-	* Open the Phabricator Diff in your browser
-	* Create a tag in the github repository at this point of change which includes the phabricator link in the description
+	* Create a GitHub pull request based on the changes since the last deployment.  The description including the commit messages since the last deployment.
+	* Open the GitHub pull request in your browser
+	* Create a tag in the github repository at this point of change which includes the GitHub pull request link in the description
 */
 async function pushButtonDeploy() {
 
@@ -290,7 +290,7 @@ async function pushButtonDeploy() {
 		if (thingsWentBump) {
 			prompt = await inquirer.prompt([{
 				type: 'confirm',
-				message: 'Are you ready to push this version bump change to the source repository (Github)?',
+				message: 'Are you ready to push this version bump change to the source repository (GitHub.com)?',
 				name: "continue",
 				default: false
 			}]);
@@ -299,7 +299,6 @@ async function pushButtonDeploy() {
 				console.log(`Aborted Automated Deploy Process at version bump push change.`);
 				return;
 			}
-
 			await executeCommand(`
 				git commit -m "Version Bump";
 				git push --set-upstream origin trunk
@@ -308,17 +307,31 @@ async function pushButtonDeploy() {
 
 		await updateLastDeployedHash();
 
-		let commitMessage = await buildPhabricatorCommitMessageSince(hash);
-		let diffUrl = await createPhabricatorDiff(commitMessage);
-		let diffId = diffUrl.split('a8c.com/')[1];
+		let commitMessage = await buildGithubCommitMessageSince(hash);
+
+		// Make sure the themes/pub repo in sandbox is ready to create a PR to the A8C GitHub Host
+		prompt = await inquirer.prompt([{
+			type: 'confirm',
+			message: 'Before you can create the GitHub PR, login in A8C GitHub Enterprise Server from the themes/pub repo in your sandbox with the command "gh auth login" and using your SSH key.\nAre you logged in?',
+			name: "continue",
+			default: false
+		}]);
+
+		if (!prompt.continue) {
+			console.log(`Aborted Automated Deploy Process at require to login in into A8C GitHub Enterprise Server in sandbox.`);
+			return;
+		}
+
+		let prUrl = await createGithubPR(commitMessage);
+		let prId = prUrl.split('pull/')[1];
 
 
 		await tagDeployment({
 			hash: hash,
-			diffId: diffId
+			prId: prId
 		});
 
-		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the diff is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes.join(' ')}\n\n\n`);
+		console.log(`\n\nPhase One Complete\n\nYour sandbox has been updated and the PR is available for review.\nPlease give your sandbox a smoke test to determine that the changes work as expected.\nThe following themes have had changes: \n\n${changedThemes.join(' ')}\n\n\n`);
 
 		prompt = await inquirer.prompt([{
 			type: 'confirm',
@@ -328,11 +341,11 @@ async function pushButtonDeploy() {
 		}]);
 
 		if (!prompt.continue) {
-			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}`);
+			console.log(`Aborted Automated Deploy Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the PR to land: ${prId}`);
 			return;
 		}
 
-		await landChanges(diffId);
+		await landChanges(prId);
 
 		try {
 			await deployThemes(changedThemes);
@@ -384,7 +397,7 @@ return;
 	}
 
 	await pushThemeToSandbox(theme);
-	let diffId = await createCorePhabriactorDiff(theme, sinceRevision);
+	let prId = await createCoreGithubPR(theme, sinceRevision);
 
 	prompt = await inquirer.prompt([{
 		type: 'confirm',
@@ -394,18 +407,18 @@ return;
 	}]);
 
 	if (!prompt.continue) {
-		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the diff to land: ${diffId}`);
+		console.log(`Aborted Automated Deploy Sync Process Landing Phase\n\nYou will have to land these changes manually.  The ID of the PR to land: ${prId}`);
 		return;
 	}
 
-	await landChanges(diffId);
+	await landChanges(prId);
 	await deployThemes([theme]);
 	await buildComZips([theme]);
 	return;
 }
 
 
-async function buildCorePhabricatorCommitMessageSince(theme, sinceRevision){
+async function buildCoreGithubCommitMessageSince(theme, sinceRevision){
 
 	let latestRevision = await executeCommand(`svn info -r HEAD https://develop.svn.wordpress.org/trunk | grep Revision | egrep -o "[0-9]+"`);
 	let logs = await executeCommand(`svn log https://core.svn.wordpress.org/trunk/wp-content/themes/${theme} -r${sinceRevision}:HEAD`)
@@ -432,13 +445,13 @@ Subscribers:
 /**
  * Deploys the localy copy of a core theme to wpcom.
  */
-async function createCorePhabriactorDiff(theme, sinceRevision) {
+async function createCoreGithubPR(theme, sinceRevision) {
 
-	let commitMessage = await buildCorePhabricatorCommitMessageSince(theme, sinceRevision);
+	let commitMessage = await buildCoreGithubCommitMessageSince(theme, sinceRevision);
 
-	let diffUrl = await createPhabricatorDiff(commitMessage);
-	let diffId = diffUrl.split('a8c.com/')[1];
-	return diffId;
+	let prUrl = await createGithubPR(commitMessage);
+	let prId = prUrl.split('pull/')[1];
+	return prId;
 }
 
 /*
@@ -519,10 +532,10 @@ async function checkForDeployability() {
 }
 
 /*
- Land the changes from the given diff ID.  This is the "production merge".
+ Land the changes from the given PR ID.  This is the "production merge".
 */
-async function landChanges(diffId) {
-	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder}; /usr/local/bin/arc patch ${diffId}; /usr/local/bin/arc land; exit;"`, true);
+async function landChanges(prId) {
+	return executeCommand(`ssh -tt -A ${remoteSSH} "cd ${sandboxPublicThemesFolder} && gh pr merge ${prId} --squash; exit;"`, true);
 }
 
 async function getChangedThemes(hash) {
@@ -992,11 +1005,11 @@ async function syncCoreTheme(theme, sinceRevision) {
 
 
 /*
- Build the Phabricator commit message.
+ Build the GitHub commit message.
  This message contains the logs from all of the commits since the given hash.
- Used by create*PhabricatorDiff
+ Used by create*GithubPR
 */
-async function buildPhabricatorCommitMessageSince(hash) {
+async function buildGithubCommitMessageSince(hash) {
 
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await getCommitLogs(hash);
@@ -1014,13 +1027,13 @@ Subscribers:
 }
 
 /*
- Create a Phabricator diff with the given message based on the contents currently in the sandbox.
- Open the phabricator diff in your browser.
- Provide the URL of the phabricator diff.
+ Create a GitHub pull request with the given message based on the contents currently in the sandbox.
+ Open the GitHub pull request in your browser.
+ Provide the URL of the GitHub pull request.
 */
-async function createPhabricatorDiff(commitMessage) {
+async function createGithubPR(commitMessage) {
 
-	console.log('creating Phabricator Diff');
+	console.log('Creating GitHub Pull Request');
 
 	let result = await executeOnSandbox(`
 		cd ${sandboxPublicThemesFolder};
@@ -1028,37 +1041,35 @@ async function createPhabricatorDiff(commitMessage) {
 		git checkout -b deploy
 		git add --all
 		git commit -m "${commitMessage}"
-		arc diff --create --verbatim
+		gh pr create --fill --head deploy
 	`, true);
 
-	let phabricatorUrl = getPhabricatorUrlFromResponse(result);
+	let githubUrl = getGithubUrlFromResponse(result);
 
-	console.log('Diff Created at: ', phabricatorUrl);
+	console.log('PR Created at: ', githubUrl);
 
-	if (phabricatorUrl) {
-		open(phabricatorUrl);
+	if (githubUrl) {
+		open(githubUrl);
 	}
 
-	return phabricatorUrl;
+	return githubUrl;
 }
 
 /*
- Utility to pull the Phabricator URL from the diff creation command.
- Used by createPhabricatorDiff
+ Utility to pull the GitHub URL from the PR creation command.
+ Used by createGithubPR
 */
-function getPhabricatorUrlFromResponse(response) {
+function getGithubUrlFromResponse(response) {
 	return response
 		?.split('\n')
-		?.find(item => {
-			return item.includes('Revision URI: ');
-		})
-		?.split("Revision URI: ")[1];
+		?.filter(item => item.includes('http')) // filter out lines that include 'http'
+		?.pop(); // get the last URL
 }
 
 /*
  Create a git tag at the current hash.
  In the description include the commit logs since the given hash.
- Include the (cleansed) Phabricator link.
+ Include the (cleansed) GitHub PR link.
 */
 async function tagDeployment(options = {}) {
 
@@ -1066,14 +1077,14 @@ async function tagDeployment(options = {}) {
 
 	let hash = options.hash || await getLastDeployedHash();
 
-	let workInTheOpenPhabricatorUrl = '';
-	if (options.diffId) {
-		workInTheOpenPhabricatorUrl = `Phabricator: ${options.diffId}-code`;
+	let workInTheOpenGithubUrl = '';
+	if (options.prId) {
+		workInTheOpenGithubUrl = `GitHub: ${options.prId}`;
 	}
 	let projectVersion = await executeCommand(`node -p "require('./package.json').version"`);
 	let logs = await getCommitLogs(hash);
 	let tag = `v${projectVersion}`;
-	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenPhabricatorUrl}`;
+	let message = `Deploy Themes ${tag} to wpcom. \n\n${logs} \n\n${workInTheOpenGithubUrl}`;
 
 	await executeCommand(`
 		git tag -a ${tag} -m "${message}"
