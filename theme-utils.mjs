@@ -1041,6 +1041,7 @@ async function createGithubPR(commitMessage) {
 		git checkout -b deploy
 		git add --all
 		git commit -m "${commitMessage}"
+		git push origin deploy
 		gh pr create --fill --head deploy
 	`, true);
 
