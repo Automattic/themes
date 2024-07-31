@@ -52,11 +52,6 @@ declare( strict_types = 1 );
 	<div class="wp-block-group">
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group">
-			<!-- wp:paragraph -->
-			<p><?php echo esc_html__( '© 2023', 'fontaine' ); ?></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:site-title {"level":0} /-->
 		</div>
 		<!-- /wp:group -->
 
