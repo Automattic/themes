@@ -17,12 +17,21 @@
 <!-- /wp:query -->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":1,"className":"no-underline"} -->
-<h1 class="wp-block-heading no-underline"><?php echo __('<a href="/rsvp" data-type="page" data-id="391" rel="nofollow">RSVP</a>', 'vows');?></h1>
+<div class="wp-block-group">
+<!-- wp:heading {"level":1,"className":"no-underline"} -->
+<h1 class="wp-block-heading no-underline"><a href="#"><?php esc_html_e('RSVP', 'vows'); ?></a></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"lock":{"move":false,"remove":false},"className":"no-underline","fontSize":"small"} -->
-<p class="no-underline has-small-font-size"><?php echo __('Designed with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'vows');?></p>
+<p class="no-underline has-small-font-size">
+	<?php
+		$wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'vows' ) ) . '" rel="nofollow">WordPress</a>';
+		echo sprintf(
+		/* Translators: WordPress link. */
+			esc_html__( 'Designed with %1$s', 'vows' ),
+			$wordpress_link
+		);?>
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
