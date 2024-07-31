@@ -135,7 +135,7 @@
         <?php
           $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'course' ) ) . '" rel="nofollow">WordPress</a>';
             echo sprintf(
-                esc_html__( '© Designed with %1$s', 'course' ),
+                esc_html__( 'Designed with %1$s', 'course' ),
                 $wordpress_link
             );
         ?>
