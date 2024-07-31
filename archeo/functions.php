@@ -10,6 +10,7 @@
 
 
 if ( ! function_exists( 'archeo_support' ) ) :
+	
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
