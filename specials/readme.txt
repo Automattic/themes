@@ -17,11 +17,7 @@ A clean, beautiful, and customizable theme for restaurant menu websites.
 
 == Copyright ==
 
-Specials is based on The MENU (https://github.com/wordpress/the-menu/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-The MENU WordPress Theme, (C) 2023 the WordPress team
-The MENU is distributed under the terms of the GNU GPL.
-The MENU is based on Block Canvas (https://github.com/Automattic/themes/tree/trunk/block-canvas), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Specials is based on MyMenu (https://github.com/wordpress/mymenu/), (C) the WordPress team, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
