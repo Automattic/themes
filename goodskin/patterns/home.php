@@ -147,16 +147,16 @@
 <div class="wp-block-group has-custom-background-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--50)"><!-- wp:columns {"align":"full"} -->
 <div class="wp-block-columns alignfull"><!-- wp:column {"width":"33.33%"} -->
 <div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:heading {"style":{"typography":{"fontSize":"4.2rem"}}} -->
-<h2 class="wp-block-heading" style="font-size:4.2rem"><?php esc_html_e('&lt;em&gt;better&lt;/em&gt;skin', 'goodskin');?></h2>
+<h2 class="wp-block-heading" style="font-size:4.2rem"><em><?php esc_html_e('better', 'goodskin');?></em><?php esc_html_e('skin', 'goodskin');?></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%"} -->
 <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1"}},"fontSize":"x-large","fontFamily":"instrument-serif"} -->
-<p class="has-instrument-serif-font-family has-x-large-font-size" style="line-height:1"><?php esc_html_e('&lt;em&gt;better&lt;/em&gt;skin is a monthly newsletter where I share some favorite products from the goodskin community, blog posts and news.', 'goodskin');?></p>
+<p class="has-instrument-serif-font-family has-x-large-font-size" style="line-height:1"><em><?php esc_html_e('better', 'goodskin');?></em><?php esc_html_e('skin is a monthly newsletter where I share some favorite products from the goodskin community, blog posts and news.', 'goodskin');?></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:jetpack/contact-form {"subject":"[goodskin] Newsletter","to":"beatriz.fialho@automattic.com"} -->
+<!-- wp:jetpack/contact-form {"subject":"[goodskin] Newsletter","to":""} -->
 <div class="wp-block-jetpack-contact-form">
 <!-- wp:jetpack/field-email {"label":"","requiredText":"(required)","placeholder":"Your Email","borderWidth":1,"fieldBackgroundColor":"#efefea"} /-->
 <!-- wp:jetpack/button {"element":"button","text":"Subscribe","lock":{"remove":true}} /-->
