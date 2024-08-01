@@ -14,6 +14,9 @@ Vows works as a comprehensive hub for all your wedding-related links. Inspired b
 
 == Changelog ==
 
+= 1.2 =
+* Vows: Fix the footer (#7984)
+
 = 1.1 =
 * Add strict types
 

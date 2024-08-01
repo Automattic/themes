@@ -12,6 +12,9 @@ A playful and energetic theme designed specifically for local dog walking and pe
 
 == Changelog ==
 
+= 0.0.18 =
+* Bark: Update hero image on the homepage (#7990)
+
 = 0.0.17 =
 * Update services pattern (#7964)
 
