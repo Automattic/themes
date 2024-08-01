@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Cottage is blogging theme with a cottagecore aesthetic.
+Cottage is blogging theme with a cottagecore aesthetic.
 
 == Changelog ==
 

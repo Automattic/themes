@@ -15,7 +15,7 @@ declare( strict_types = 1 );
 	<!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 	<div class="wp-block-group">
 		<!-- wp:paragraph {"fontSize":"small","fontFamily":"source-sans-3"} -->
-		<p class="has-source-sans-3-font-family has-small-font-size">Published by</p>
+		<p class="has-source-sans-3-font-family has-small-font-size"><?php esc_html_e('Published by', 'cottage');?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:post-author-name {"isLink":true} /-->

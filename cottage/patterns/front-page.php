@@ -11,7 +11,7 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:heading {"textAlign":"left","align":"wide","style":{"typography":{"lineHeight":"1.2","fontSize":"2.6rem"}}} -->
-<h2 class="wp-block-heading alignwide has-text-align-left" style="font-size:2.6rem;line-height:1.2"><?php esc_html_e('&lt;em&gt;“Go back to your books, to your armchair. Plant your trees, watch them grow. If more people valued home above gold, this world would be a merrier place.”&lt;/em&gt;', 'cottage');?></h2>
+<h2 class="wp-block-heading alignwide has-text-align-left" style="font-size:2.6rem;line-height:1.2"><em><?php esc_html_e('“Go back to your books, to your armchair. Plant your trees, watch them grow. If more people valued home above gold, this world would be a merrier place.”', 'cottage');?></em></h2>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"textAlign":"left","align":"wide","style":{"typography":{"lineHeight":"1.2","fontSize":"1.1rem"}}} -->
@@ -33,35 +33,35 @@
 
 <!-- wp:gallery {"columns":4,"linkTo":"none","sizeSlug":"full","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
 <figure class="wp-block-gallery has-nested-images columns-4 is-cropped"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_1-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_1-min.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_2-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_2-min.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_3-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_3-min.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_4-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_4-min.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_5-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_5-min.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_6-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_6-min.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_7-scaled.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_7-scaled.jpg" alt=""/></figure>
 <!-- /wp:image -->
 
 <!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_8-min.jpg" alt="<?php esc_html_e('', 'cottage');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/mood_8-min.jpg" alt=""/></figure>
 <!-- /wp:image --></figure>
 <!-- /wp:gallery --></div>
 <!-- /wp:group --></div>
