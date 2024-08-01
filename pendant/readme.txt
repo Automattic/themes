@@ -12,6 +12,9 @@ An elegant product-focused theme.
 
 == Changelog ==
 
+= 1.0.17 =
+* Remove copyright statement (#7988)
+
 = 1.0.16 =
 * Lossless image optimization (#7671)
 
