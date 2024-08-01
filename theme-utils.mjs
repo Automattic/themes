@@ -1019,10 +1019,6 @@ Summary:
 ${logs}
 
 Test Plan: Execute Smoke Test
-
-Reviewers:
-
-Subscribers:
 `;
 }
 
