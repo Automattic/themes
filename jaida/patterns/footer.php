@@ -34,7 +34,7 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"right":"0","left":"0","top":"var:preset|spacing|80","bottom":"var:preset|spacing|70"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--80);padding-right:0;padding-bottom:var(--wp--preset--spacing--70);padding-left:0"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.8rem"}}} -->
-<p style="font-size:0.8rem"><?php echo esc_html__( 'Jaida Theme', 'jaida' ); ?> © 2023</p>
+<p style="font-size:0.8rem"></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"right","style":{"typography":{"fontSize":"0.8rem"}}} -->
