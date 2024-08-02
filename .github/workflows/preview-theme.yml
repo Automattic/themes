@@ -7,105 +7,17 @@ permissions:
   pull-requests: write
 
 jobs:
-  check-for-changes-to-themes:
+  preview-theme-changes:
     runs-on: ubuntu-latest
-    outputs:
-      HAS_THEME_CHANGES: ${{ steps.check-for-changes.outputs.HAS_THEME_CHANGES }}
-      CHANGED_THEMES: ${{ steps.check-for-changes.outputs.CHANGED_THEMES }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Retrieved Theme Changes
-        id: check-for-changes
-        run: |
-          # Retrieve list of all changed files
-          git fetch origin
-          changed_files=$(git diff --name-only HEAD origin/trunk)
-          
-          # Loop through changed files and identify parent directories
-          declare -A unique_dirs
-          for file in $changed_files; do
-            dir_name=$(dirname "$file")
-            while [[ "$dir_name" != "." ]]; do
-              if [[ -f "$dir_name/style.css" ]]; then 
-                # Get theme name from style.css
-                theme_name=$(grep -m 1 "Theme Name:" "$dir_name/style.css" | sed 's/Theme Name: //')
-                parent_theme=$(grep -m 1 "Template:" "$dir_name/style.css" | sed 's/Template: //')
-                # Append parent theme to the theme name if it exists
-                [ -n "$parent_theme" ] && theme_name="${theme_name}_childof_${parent_theme}"
-                # Store theme name and directory in associative array
-                unique_dirs["$theme_name"]=$dir_name
-                break
-              fi
-              dir_name=$(dirname "$dir_name")
-            done
-          done
-          # Check if themes have changed
-          if [[ ${#unique_dirs[@]} -eq 0 ]]; then
-              echo "No theme changes detected"
-              echo "HAS_THEME_CHANGES=false" >> $GITHUB_OUTPUT
-              exit 0
-          fi
-          # Output list of theme slugs with changes
-          echo "HAS_THEME_CHANGES=true" >> $GITHUB_OUTPUT
-
-          # Serialize associative array of theme dirs to a string
-          declare -A CHANGED_THEMES
-          for theme in "${!unique_dirs[@]}"; do
-              # Append each entry as key:value,
-              CHANGED_THEMES+="$theme:${unique_dirs[$theme]},"
-          done
-          # Remove the last comma for correct JSON formatting
-          CHANGED_THEMES=${CHANGED_THEMES%,}
-          echo "CHANGED_THEMES=$CHANGED_THEMES" >> $GITHUB_OUTPUT
-
-          echo "Theme directories with changes: $CHANGED_THEMES"
-  
-  handle-pr-comment:
-    runs-on: ubuntu-latest
-    needs: check-for-changes-to-themes
-    steps:
-      - name: Checkout create-preview-links script from trunk
-        uses: actions/checkout@v3
-        with:
-          repository: Automattic/themes
-          sparse-checkout: .github/scripts/create-preview-links
-          ref: trunk
-
-      - name: Add Preview Links comment
-        id: comment-on-pr
-        if: ${{ needs.check-for-changes-to-themes.outputs.HAS_THEME_CHANGES == 'true' }}
-        uses: actions/github-script@v7
-        env:
-          CHANGED_THEMES: ${{ needs.check-for-changes-to-themes.outputs.CHANGED_THEMES }}
-        with:
+      - name: Preview Theme Changes
+        uses: vcanales/action-wp-playground-pr-preview@trunk
+        with: 
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const createPreviewLinks = require('.github/scripts/create-preview-links');
-            createPreviewLinks(github, context, process.env.CHANGED_THEMES);
-
-      - name: Remove comment if no changes are detected
-        if: ${{ needs.check-for-changes-to-themes.outputs.HAS_THEME_CHANGES == 'false' }}
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { data: comments } = await github.rest.issues.listComments({
-              issue_number: context.payload.pull_request.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo
-            });
-            
-            const existingComment = comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.startsWith('### Preview changes'));
-            
-            if (existingComment) {
-              await github.rest.issues.deleteComment({
-                comment_id: existingComment.id,
-                owner: context.repo.owner,
-                repo: context.repo.repo
-              });
-            }
-  
+          ref: ${{ github.event.pull_request.head.sha }}
+          base-branch: trunk
