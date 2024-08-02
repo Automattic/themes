@@ -14,6 +14,9 @@ Blissed is a theme created to serve as a comprehensive hub for all your wedding-
 
 == Changelog ==
 
+= 1.1 =
+* Blissed: Fix the footer (#7985)
+
 = 1.0.0 =
 * Initial release
 
