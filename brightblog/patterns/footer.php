@@ -13,20 +13,20 @@
 <div class="wp-block-column" style="flex-basis:40%"><!-- wp:group {"layout":{"type":"flex","orientation":"vertical"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('<a href="#">Tumblr</a>', 'brightblog');?></h2>
+<h2 class="wp-block-heading has-x-large-font-size"><a href="#"><?php esc_html_e('Tumblr', 'brightblog');?></a></h2>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('<a href="#">Instagram</a>', 'brightblog');?></h2>
+<h2 class="wp-block-heading has-x-large-font-size"><a href="#"><?php esc_html_e('Instgrm', 'brightblog');?></a></h2>
 <!-- /wp:heading -->
 
 <!-- wp:heading {"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size"><?php esc_html_e('<a href="#">Facebook</a>', 'brightblog');?></h2>
+<h2 class="wp-block-heading has-x-large-font-size"><a href="#"><?php esc_html_e('Fcbook', 'brightblog');?></a></h2>
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"align":"left"} -->
-<p class="has-text-align-left"><?php esc_html_e('Designed with <a rel="nofollow" href="https://wordpress.org">WordPress</a>', 'brightblog');?></p>
+<p class="has-text-align-left"><?php esc_html_e('Designed with WordPress', 'brightblog');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
