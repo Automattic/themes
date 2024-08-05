@@ -19,11 +19,11 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} -->
-<h2 class="wp-block-heading has-contrast-color has-text-color has-link-color"><?php echo __('In Exhibition', 'expo');?></h2>
+<h2 class="wp-block-heading has-contrast-color has-text-color has-link-color"><?php esc_html_e('In Exhibition', 'expo');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
-<p style="text-transform:uppercase"><?php echo __('View All', 'expo');?></p>
+<p style="text-transform:uppercase"><?php esc_html_e('View All', 'expo');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -54,27 +54,27 @@
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h2 class="wp-block-heading has-base-color has-text-color has-link-color"><?php echo __('History', 'expo');?></h2>
+<h2 class="wp-block-heading has-base-color has-text-color has-link-color"><?php esc_html_e('History', 'expo');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('Founded in the heart of Buenos Aires in 1896, the International Art Museum has, from its inception, housed a rich diversity of works spanning different periods and artistic movements globally. It emerged with the mission not only to safeguard the richness of international art but also to foster the flourishing of Argentine art within a context of cultural renewal.', 'expo');?></p>
+<p><?php esc_html_e('Founded in the heart of Buenos Aires in 1896, the International Art Museum has, from its inception, housed a rich diversity of works spanning different periods and artistic movements globally. It emerged with the mission not only to safeguard the richness of international art but also to foster the flourishing of Argentine art within a context of cultural renewal.', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('In its first decade, during the commemoration of the Centennial of the May Revolution, the museum already exhibited masterpieces by renowned artists such as Francisco de Goya, Joaquín Sorolla y Bastida, Edgar Degas, and Pierre-Auguste Renoir.', 'expo');?></p>
+<p><?php esc_html_e('In its first decade, during the commemoration of the Centennial of the May Revolution, the museum already exhibited masterpieces by renowned artists such as Francisco de Goya, Joaquín Sorolla y Bastida, Edgar Degas, and Pierre-Auguste Renoir.', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('A new era dawned in 1911 with the opening of the Argentine Pavilion, a monumental structure from the 1889 Paris Universal Exhibition, situated in Plaza San Martín. This marked the incorporation of notable new acquisitions, such as Édouard Manet\'s \'The surprised nymph\' and Claude Monet\'s \'Banks of the Seine.\'', 'expo');?></p>
+<p><?php esc_html_e('A new era dawned in 1911 with the opening of the Argentine Pavilion, a monumental structure from the 1889 Paris Universal Exhibition, situated in Plaza San Martín. This marked the incorporation of notable new acquisitions, such as Édouard Manet\'s \'The surprised nymph\' and Claude Monet\'s \'Banks of the Seine.\'', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('In 1933, the museum found its current home in the remodeled Recoleta Pump House, a work of art in itself designed by architect Alejandro Bustillo. This relocation saw the addition of valuable pieces, including \'Woman by the sea\' by Paul Gauguin, \'Le Moulin de la Galette\' by Vincent van Gogh, and \'Christ in the Garden of Olives\' by El Greco.', 'expo');?></p>
+<p><?php esc_html_e('In 1933, the museum found its current home in the remodeled Recoleta Pump House, a work of art in itself designed by architect Alejandro Bustillo. This relocation saw the addition of valuable pieces, including \'Woman by the sea\' by Paul Gauguin, \'Le Moulin de la Galette\' by Vincent van Gogh, and \'Christ in the Garden of Olives\' by El Greco.', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('Over the last decades of the 20th century, the museum opened its doors to the great exponents of modern art on an international level. Thus, works by geniuses such as Pablo Picasso, Amedeo Modigliani, Marc Chagall, Vassily Kandinsky, Paul Klee, Lucio Fontana, Jackson Pollock, Mark Rothko, and Henry Moore were added to its collection.', 'expo');?></p>
+<p><?php esc_html_e('Over the last decades of the 20th century, the museum opened its doors to the great exponents of modern art on an international level. Thus, works by geniuses such as Pablo Picasso, Amedeo Modigliani, Marc Chagall, Vassily Kandinsky, Paul Klee, Lucio Fontana, Jackson Pollock, Mark Rothko, and Henry Moore were added to its collection.', 'expo');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -86,49 +86,75 @@
 <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"1.5rem"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h3 class="wp-block-heading has-base-color has-text-color has-link-color"><?php echo __('Visiting the Museum', 'expo');?></h3>
+<h3 class="wp-block-heading has-base-color has-text-color has-link-color"><?php esc_html_e('Visiting the Museum', 'expo');?></h3>
 <!-- /wp:heading -->
 
+<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><?php esc_html_e('Calle de los Artistas 123', 'expo');?></p>
+<!-- /wp:paragraph -->
+
 <!-- wp:paragraph -->
-<p><?php echo __('Calle de los Artistas 123&lt;br&gt;Buenos Aires, Argentina&lt;br&gt;+00 (000) 0000-0000&lt;br&gt;info@xxx.ar', 'expo');?></p>
+<p><?php esc_html_e('Buenos Aires, Argentina', 'expo');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><?php esc_html_e('+00 (000) 0000-0000', 'expo');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><?php esc_html_e('info@xxx.ar', 'expo');?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h3 class="wp-block-heading has-base-color has-text-color has-link-color"><?php echo __('Opening times', 'expo');?></h3>
+<h3 class="wp-block-heading has-base-color has-text-color has-link-color"><?php esc_html_e('Opening times', 'expo');?></h3>
 <!-- /wp:heading -->
 
-<!-- wp:paragraph -->
-<p><?php echo __('Wed/Fri: 11.00 a 20.00.&lt;br&gt;Sat/Sun: 10.00 a 20.00&lt;br&gt;Monday: Closed.', 'expo');?></p>
+<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><?php esc_html_e('Wed/Fri: 11.00 a 20.00.', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('The Museum is closed to the public on May 1, June 27, December 24, 25 and 31, 2023, and January 1, 2024.', 'expo');?></p>
+<p><?php esc_html_e('Sat/Sun: 10.00 a 20.00', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('Admission is free of charge.', 'expo');?></p>
+<p><?php esc_html_e('Monday: Closed.', 'expo');?></p>
 <!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p><?php esc_html_e('The Museum is closed to the public on May 1, June 27, December 24, 25 and 31, 2023, and January 1, 2024.', 'expo');?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><?php esc_html_e('Admission is free of charge.', 'expo');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h3 class="wp-block-heading has-base-color has-text-color has-link-color"><?php echo __('Group Visits', 'expo');?></h3>
+<h3 class="wp-block-heading has-base-color has-text-color has-link-color"><?php esc_html_e('Group Visits', 'expo');?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('Check &lt;span style="text-decoration: underline;"&gt;&lt;a href="#"&gt;here&lt;/a&gt;&lt;/span&gt; the registration dates and the proposed routes for each educational level.', 'expo');?></p>
+<p><?php esc_html_e('Check here the registration dates and the proposed routes for each educational level.', 'expo');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:heading {"level":3,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"small"} -->
-<h3 class="wp-block-heading has-base-color has-text-color has-link-color has-small-font-size"><?php echo __('Audioguide', 'expo');?></h3>
+<h3 class="wp-block-heading has-base-color has-text-color has-link-color has-small-font-size"><?php esc_html_e('Audioguide', 'expo');?></h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('An approach to the Museum\'s collection through thirteen audio tracks referring to great sculptural works made by pre-Hispanic, European and Argentine cultures.', 'expo');?></p>
+<p><?php esc_html_e('An approach to the Museum\'s collection through thirteen audio tracks referring to great sculptural works made by pre-Hispanic, European and Argentine cultures.', 'expo');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -144,11 +170,11 @@
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 <div class="wp-block-group"><!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast"} -->
-<h2 class="wp-block-heading has-contrast-color has-text-color has-link-color"><?php echo __('Collection', 'expo');?></h2>
+<h2 class="wp-block-heading has-contrast-color has-text-color has-link-color"><?php esc_html_e('Collection', 'expo');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase"}}} -->
-<p style="text-transform:uppercase"><?php echo __('<a href="#">View All</a>', 'expo');?></p>
+<p style="text-transform:uppercase"><?php esc_html_e('<a href="#">View All</a>', 'expo');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
