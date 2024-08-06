@@ -18,15 +18,15 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"no-underline","style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p class="no-underline" style="font-style:normal;font-weight:600"><a href="#"><?php esc_html_e('Tumblr', 'expo');?></a></p>
+<p class="no-underline" style="font-style:normal;font-weight:600"><?php esc_html_e('Tumblr', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"no-underline","style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p class="no-underline" style="font-style:normal;font-weight:600"><?php esc_html_e('TikTok', 'expo');?></a></p>
+<p class="no-underline" style="font-style:normal;font-weight:600"><?php esc_html_e('TikTok', 'expo');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"no-underline","style":{"typography":{"fontStyle":"normal","fontWeight":"600"}}} -->
-<p class="no-underline" style="font-style:normal;font-weight:600"><?php esc_html_e('Instgrm', 'expo');?></a></p>
+<p class="no-underline" style="font-style:normal;font-weight:600"><?php esc_html_e('Instgrm', 'expo');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

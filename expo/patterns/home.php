@@ -39,7 +39,7 @@
 <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":20} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"400px","style":{"color":{"duotone":"unset"}}} /--></div>
+<!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"400px","style":{"color":[]}} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></main>
 <!-- /wp:query --></div>
@@ -127,7 +127,7 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:paragraph -->
 <p><?php esc_html_e('The Museum is closed to the public on May 1, June 27, December 24, 25 and 31, 2023, and January 1, 2024.', 'expo');?></p>
 <!-- /wp:paragraph -->
