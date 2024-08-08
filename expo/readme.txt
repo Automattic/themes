@@ -14,6 +14,9 @@ Expo is a blog theme that presents posts in different Query Loops using tags. It
 
 == Changelog ==
 
+= 1.2 =
+* Update font file permissions (#8005)
+
 = 1.1 =
 * Expo: Fixing details and adding variations (#7995)
 
