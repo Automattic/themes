@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.19 =
+* Minor style tweaks for Assembler (#7989)
+
 = 0.0.18 =
 * Assembler: Update typography theme styles with categories data. (#7998)
 
