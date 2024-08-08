@@ -7,6 +7,7 @@ Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+A theme to celebrate the history of the international games and the milestones that have shaped their legacy. 
 
 == Changelog ==
 
