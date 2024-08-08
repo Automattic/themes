@@ -12,6 +12,9 @@ Cottage is blogging theme with a cottagecore aesthetic.
 
 == Changelog ==
 
+= 1.0.1 =
+* Cottage: Update CSS classes (#8003)
+
 = 1.0.0 =
 * Initial release
 
