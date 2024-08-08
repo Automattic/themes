@@ -29,7 +29,7 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":398,"aspectRatio":"16/9","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="https://saison.mystagingwebsite.com/wp-content/themes/saison/assets/images/home-image-1-scaled.jpg" alt="" class="wp-image-398" style="aspect-ratio:16/9;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-1-scaled.jpg" alt="" class="wp-image-398" style="aspect-ratio:16/9;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:columns {"style":{"spacing":{"padding":{"top":"6vh","bottom":"6vh"}}}} -->
@@ -47,13 +47,13 @@
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column {"width":"60.2%"} -->
 <div class="wp-block-column" style="flex-basis:60.2%"><!-- wp:image {"id":399,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="https://saison.mystagingwebsite.com/wp-content/themes/saison/assets/images/home-image-2-1024x556.jpg" alt="" class="wp-image-399"/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-2-1024x556.jpg" alt="" class="wp-image-399"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
 <div class="wp-block-column"><!-- wp:image {"id":400,"sizeSlug":"large","linkDestination":"none"} -->
-<figure class="wp-block-image size-large"><img src="https://saison.mystagingwebsite.com/wp-content/themes/saison/assets/images/home-image-3-1024x891.jpg" alt="" class="wp-image-400"/></figure>
+<figure class="wp-block-image size-large"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-3-1024x891.jpg" alt="" class="wp-image-400"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns -->
@@ -64,7 +64,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://saison.mystagingwebsite.com/reservations/">Book a Table</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Book a Table</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-outline"} -->

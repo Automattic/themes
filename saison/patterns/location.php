@@ -28,5 +28,5 @@
 <!-- /wp:spacer -->
 
 <!-- wp:image {"id":462,"sizeSlug":"full","linkDestination":"none","align":"wide","style":{"color":{}}} -->
-<figure class="wp-block-image alignwide size-full"><img src="https://saison.mystagingwebsite.com/wp-content/uploads/2024/02/home-image-1-scaled.jpg" alt="" class="wp-image-462"/></figure>
+<figure class="wp-block-image alignwide size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/home-image-1-scaled.jpg" alt="" class="wp-image-462"/></figure>
 <!-- /wp:image -->

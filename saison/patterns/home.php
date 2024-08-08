@@ -65,7 +65,7 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://saison.mystagingwebsite.com/reservations/">Book a Table</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">Book a Table</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-outline"} -->
