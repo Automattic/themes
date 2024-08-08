@@ -12,6 +12,9 @@ Assemble something beautiful.
 
 == Changelog ==
 
+= 0.0.18 =
+* Assembler: Update typography theme styles with categories data. (#7998)
+
 = 0.0.17 =
 * Assembler: Use variation partials and move styles.blocks.variations to styles.variations (#7891)
 
