@@ -13,6 +13,17 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: layover
 Tags: blog, one-column, wide-blocks, block-patterns, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-site-editing, full-width-template, post-formats, rtl-language-support, template-editing, theme-options, threaded-comments, translation-ready
 
+/* Progresive enhancement to reduce widows and orphans.
+/* https://github.com/WordPress/gutenberg/issues/55190
+*/
+
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
+    text-wrap: balance;
+}
+p {
+    text-wrap: pretty;
+}
+
 /**
  * Currently table styles are only available with 'wp-block-styles' 
  * theme support (block css) thus the following needs to be included
