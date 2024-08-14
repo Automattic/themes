@@ -58,8 +58,15 @@ for THEME_SLUG in */ ; do
 		  | sed 's/-wpcom//g' \
 		  | tr -d '[[:space:]]')
 
+		DIRECTORY_URL="https://wordpress.org/themes/${THEME_SLUG}/"
 		SVN_URL="https://themes.svn.wordpress.org/${THEME_SLUG}/"
 		SVN_DIR="$PWD/deploy/${THEME_SLUG}"
+
+		response=$(curl -s -o /dev/null -w "%{http_code}" "$DIRECTORY_URL")
+		if [ "$response" != "200" ]; then
+			# echo "Theme with slug ${THEME_SLUG} has not been approved to the themes directory. Moving on."
+			continue;
+		fi
 
 		response=$(curl -s -o /dev/null -w "%{http_code}" "$SVN_URL")
 		if [ "$response" != "200" ]; then
