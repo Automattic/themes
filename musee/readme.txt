@@ -14,6 +14,9 @@ Musee is a blog theme that presents posts in different Query Loops using tags. I
 
 == Changelog ==
 
+= 1.0.3 =
+* Fix permissions on font files. (#8014)
+
 = 1.0.0 =
 * Initial release
 
