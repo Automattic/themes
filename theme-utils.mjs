@@ -674,7 +674,11 @@ async function versionBumpThemes() {
 	//version bump the root project if there were changes to any of the themes
 	const rootHasVersionBump = await checkProjectForVersionBump(hash);
 
-	if (versionBumpCount > 0 && !rootHasVersionBump) {
+	if (!rootHasVersionBump) {
+		console.log('No changes detected; version bump not required');
+	}
+
+	if (versionBumpCount > 0 && rootHasVersionBump) {
 		await executeCommand(`npm version patch --no-git-tag-version && git add package.json package-lock.json`);
 		changesWereMade = true;
 	}
