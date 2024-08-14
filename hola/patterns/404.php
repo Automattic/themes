@@ -17,11 +17,11 @@
 
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:heading {"textAlign":"left","level":1} -->
-<h1 class="wp-block-heading has-text-align-left" id="oops-that-page-can-t-be-found"><?php echo __('Oops! That page can’t be found.', 'hola');?></h1>
+<h1 class="wp-block-heading has-text-align-left" id="oops-that-page-can-t-be-found"><?php esc_html_e('Oops! That page can’t be found.', 'hola');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo __('It looks like nothing was found at this location.<br>Maybe try a search?', 'hola');?></p>
+<p><?php esc_html_e('It looks like nothing was found at this location.', 'hola');?><br /><?php esc_html_e('Maybe try a search?', 'hola');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|30"} -->
