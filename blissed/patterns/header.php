@@ -12,23 +12,21 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"className":"no-underline"} -->
-<p class="no-underline"><?php echo __('<a href="#ceremony" data-type="internal" data-id="#ceremony">Ceremony</a>', 'blissed');?></p>
+<p class="no-underline"><a href="#ceremony" data-type="internal" data-id="#ceremony"><?php esc_html_e('Ceremony', 'blissed');?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"no-underline"} -->
-<p class="no-underline"><?php echo __('<a href="#ceremony" data-type="internal" data-id="#ceremony">Reception</a>', 'blissed');?></p>
+<p class="no-underline"><a href="#ceremony" data-type="internal" data-id="#ceremony"><?php esc_html_e('Reception', 'blissed');?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"no-underline"} -->
-<p class="no-underline"><?php echo __('<a href="#ceremony" data-type="internal" data-id="#ceremony">Accommodations</a>', 'blissed');?></p>
+<p class="no-underline"><a href="#ceremony" data-type="internal" data-id="#ceremony"><?php esc_html_e('Accommodations', 'blissed');?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"no-underline"} -->
-<p class="no-underline"><?php echo __('<a href="#ceremony" data-type="internal" data-id="#ceremony">Wedding Registry</a>', 'blissed');?></p>
+<p class="no-underline"><a href="#ceremony" data-type="internal" data-id="#ceremony"><?php esc_html_e('Wedding Registry', 'blissed');?></a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"no-underline"} -->
-<p class="no-underline"><?php echo __('<a href="/blog" data-type="internal" data-id="#ceremony">Blog</a>', 'blissed');?></p>
-<!-- /wp:paragraph --></div>
+</div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
