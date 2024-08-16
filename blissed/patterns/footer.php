@@ -20,7 +20,7 @@
 <!-- wp:group {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"blockGap":"var:preset|spacing|20","margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)">
 
-<!-- wp:navigation {"ref":4,"layout":{"type":"flex","orientation":"vertical"}} /-->
+<!-- wp:navigation {"layout":{"type":"flex","orientation":"vertical"}} /-->
 
 </div>
 <!-- /wp:group --></div>
