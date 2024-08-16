@@ -14,6 +14,9 @@ Hola is a text-only blog design, a new interpretation of the theme 'Hey' with di
 
 == Changelog ==
 
+= 1.2 =
+* Hola: Round of fixes (#8015)
+
 = 1.1 =
 * Add strict types
 
