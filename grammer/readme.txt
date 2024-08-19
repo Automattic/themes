@@ -2,7 +2,7 @@
 
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,24 +34,70 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-== Images ==
-https://wwww.foodiesfeed.com_pizza-with-italian-sausage
-https://wwww.foodiesfeed.com_seafood-lunch-of-mussels-and-berries
-https://wwww.foodiesfeed.com_vegan-chickpea-and-potato-curry
-https://wwww.foodiesfeed.com_chocolate-cake
-https://wwww.foodiesfeed.com_pistachio-croissant
-https://wwww.foodiesfeed.com_peanut-butter-and-banana-smoothie
-
-
 == Fonts ==
-
-PT Root UI Web
-Copyright (c) 2018 Paratype, Inc., ParaType Ltd. All rights reserved.
-Source: http://www.paratype.com
-License: http://scripts.sil.org/OFL
 
 Haskoy
 Copyright 2021 The Haskoy Project Authors (https://github.com/ertekinno/haskoy)
 Source: https://ertekinn.com/
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+== Images ==
+
+Title: Site logo image
+License: Generated with AI on Midjourney, released under the CC0 license.
+
+Title: Pizza with Italian sausage
+Author: Jakub Kapusnak - Prague, Czech Republic
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/pizza-with-italian-sausage/
+
+Title: Seafood lunch of mussels and berries
+Author: Mary - Amsterdam
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/variety-of-seafood-mussels/
+
+Title: Vegan chickpea and potato curry
+Author: Justyna Le - Cracow, Poland
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/vegan-chickpea-and-potato-curry/
+
+Title: Fresh ripe figs on a wooden background
+Author: Jakub Kapusnak - Prague, Czech Republic
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/fresh-ripe-figs-on-a-wooden-background/
+
+Title: Chocolate truffles with walnuts close up
+Author: Alex Souto Maior - Rio de Janeiro, Brasil
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/chocolate-truffles-with-walnuts-close-up/
+
+Title: Chocolate cake
+Author: Yana Kozlova
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/chocolate-cake-2/
+
+Title: Peanut Butter and Banana Smoothie
+Author: Leah Rolando
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/peanut-butter-and-banana-smoothie/
+
+Title: Pistachio croissant
+Author: Jakub Kapusnak - Prague, Czech Republic
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/pistachio-croissant/
+
+Title: Eating cheesecake with berries
+Author: Karolina Grabowska - Łódź, Poland
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://en.wikipedia.org/wiki/public_domain
+Source: https://www.foodiesfeed.com/free-food-photo/eating-cheesecake-with-berries/
+
 
