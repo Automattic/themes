@@ -44,3 +44,10 @@ Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/
 Source: https://www.jetbrains.com
 License: This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL
 
+
+== Images ==
+
+Title: The BG glitch
+Author: Henrique Iamarino, 2024 Public Domain CC0
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
