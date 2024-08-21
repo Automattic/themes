@@ -14,25 +14,21 @@ Text Domain: assembler
 Tags: blog, one-column, three-columns, wide-blocks, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready
 */
 
-/* Progresive enhancement to reduce widows and orphans. */
+/* Force link colors to match heading colors. */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote {
-	text-wrap: balance;
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit !important;
 }
 
 /* Remove auto-applied padding on headings when color is applied.  */
+
 h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background {
     padding: 0;
-}
-
-p {
-	text-wrap: pretty;
 }
 
 /* Set default line height for font size presets. */
@@ -45,6 +41,14 @@ p {
 
 .entry-content > p:first-child {
 	margin-top: var(--wp--style--root--padding-left);
+}
+
+/* Add a transition state for buttons. */
+
+.wp-element-button {
+    transition: .15s cubic-bezier(0.25,0.46,0.45,0.94);
+    transition-property: border, background-color, color, box-shadow, opacity, filter;
+    backdrop-filter: blur(30px) brightness(120%);
 }
 
 /* Fields */
