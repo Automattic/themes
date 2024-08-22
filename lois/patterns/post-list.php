@@ -7,7 +7,7 @@
 
 ?>
 
-<!-- wp:query {"query":{"perPage":"5","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":{"category":[6]}}} -->
+<!-- wp:query {"query":{"perPage":"5","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true}} -->
 <div class="wp-block-query"><!-- wp:post-template {"align":"wide"} -->
 <!-- wp:columns {"verticalAlignment":"top","align":"wide","style":{"spacing":[]}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"66.7%","style":{"spacing":{"padding":{"right":"0"}}}} -->

@@ -61,22 +61,8 @@
 	</div>
 	<!-- /wp:columns -->
 
-	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
 	<div class="wp-block-group alignwide">
-		<!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-		<div class="wp-block-group">
-			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size"><?php _e( '©', 'bitacora' ); ?></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:site-title {"style":{"typography":{"letterSpacing":"0px","textTransform":"none"}},"fontSize":"small"} /-->
-
-			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size"><?php _e( '2022, All Rights Reserved.', 'bitacora' ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
 		<!-- wp:paragraph {"align":"left","className":"has-small-font-size","fontSize":"small"} -->
 		<p class="has-text-align-left has-small-font-size">
 			<?php

@@ -70,10 +70,10 @@ add_action( 'after_setup_theme', 'dara_jetpack_setup' );
 /**
  * Footer widgets Callback for Infinite Scroll
  */
-if ( function_exists( 'jetpack_is_mobile' ) && class_exists( 'Jetpack_User_Agent_Info' ) ) {
+if ( function_exists( 'jetpack_is_mobile' ) && class_exists( 'User_Agent_Info' ) ) {
 	function dara_has_footer_widgets() {
 
-		if ( ( Jetpack_User_Agent_Info::is_ipad() && is_active_sidebar( 'sidebar-1' ) ) || ( jetpack_is_mobile( '', true ) && is_active_sidebar( 'sidebar-1' ) ) ) {
+		if ( ( User_Agent_Info::is_ipad() && is_active_sidebar( 'sidebar-1' ) ) || ( jetpack_is_mobile( '', true ) && is_active_sidebar( 'sidebar-1' ) ) ) {
 			return true;
 		}
 		elseif ( is_active_sidebar( 'sidebar-2' ) || is_active_sidebar( 'sidebar-3' ) || is_active_sidebar( 'sidebar-4' ) ) {

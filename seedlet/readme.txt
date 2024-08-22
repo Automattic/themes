@@ -18,6 +18,19 @@ Seedlet is a great option for professionals and creatives looking for a sophisti
 
 == Changelog ==
 
+= 1.1.34 =
+* Add strict types
+* Seedlet: Fix a fatal error in Gutenberg (#7940)
+
+= 1.1.33 =
+* Remove unused code for IE10 because conflicts with the image border added via editor (#7925)
+
+= 1.1.31 =
+* Lossless image optimization (#7671)
+
+= 1.1.31 =
+* Optimize images (#7671)
+
 = 1.1.30 =
 * Programme: add design updates (#7474)
 

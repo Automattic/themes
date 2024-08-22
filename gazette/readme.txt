@@ -90,6 +90,9 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Changelog ==
 
+= 1.1.8 =
+* Lossless image optimization (#7671)
+
 = 1.1.7 =
 * Public Themes G, H, I: PHP Rector fixes (#7387)
 

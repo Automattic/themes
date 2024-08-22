@@ -12,6 +12,12 @@ A theme inspired by Mayan history and culture.
 
 == Changelog ==
 
+= 1.0.21 =
+* Lossless image optimization (#7671)
+
+= 1.0.21 =
+* Optimize images (#7671)
+
 = 1.0.20 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

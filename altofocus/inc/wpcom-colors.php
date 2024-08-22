@@ -356,9 +356,9 @@ add_color_rule( 'extra', '#cccccc', array(
 function altofocus_extra_css() {
 
 	$colors_array = get_theme_mod( 'colors_manager' );
-	$bg           = $colors_array['colors']['bg'];     // White
-	$link         = $colors_array['colors']['txt'];   // Orange
-	$extra        = $colors_array['colors']['extra'];  // Light Gray
+	$bg           = $colors_array['colors']['bg'] ?? '';     // White
+	$link         = $colors_array['colors']['txt'] ?? '';   // Orange
+	$extra        = $colors_array['colors']['extra'] ?? '';  // Light Gray
 
 	/**
 	 * WHITE --------------------

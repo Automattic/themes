@@ -1,0 +1,23 @@
+name: Preview Theme Changes
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+permissions:
+  pull-requests: write
+
+jobs:
+  preview-theme-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Preview Theme Changes
+        uses: vcanales/action-wp-playground-pr-preview@trunk
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          base-branch: trunk

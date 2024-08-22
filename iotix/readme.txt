@@ -12,6 +12,15 @@ Iotix provides a great starting point for creating a business or startup website
 
 == Changelog ==
 
+= 1.0.11 =
+* Iotix theme updates (Beafialho playground changes) (#7945)
+
+= 1.0.10 =
+* Lossless image optimization (#7671)
+
+= 1.0.10 =
+* Optimize images (#7671)
+
 = 1.0.9 =
 * Add navigation block markup provided by CBT (#7277)
 
@@ -81,7 +90,7 @@ Used in "Startup" pattern.
 
 3D Rendering of Devices
 License: CC0 Public domain
-Source: Felipe Varela (@keoshi) 
+Source: Created by Filipe Varela (@keoshi) and are released under the CC0 license
 Used in "Startup" pattern.
 
 Manrope Font

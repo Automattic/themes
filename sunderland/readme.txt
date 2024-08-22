@@ -8,9 +8,21 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Sunderland is a simple WordPress event theme designed for announcing upcoming events in a visually captivating way. Sunderland's character lies in its immersive landing page, with an easily switchable full width background image. Sunderland is the ideal choice for bands, musicians, artists or event organizers who want a sleek and eye-catching website to inform and engage their audience.
+Sunderland is a simple WordPress event theme designed for announcing upcoming events in a visually captivating way. Sunderland’s character lies in its immersive landing page, with an easily switchable full width background image. Sunderland is the ideal choice for bands, musicians, artists or event organizers who want a sleek and eye-catching website to inform and engage their audience.
 
 == Changelog ==
+
+= 1.0.5 =
+* Sunderland: Update theme and prepare for Dotorg submission (#7812)
+
+= 1.0.4 =
+* Lossless image optimization (#7671)
+
+= 1.0.4 =
+* Optimize images (#7671)
+
+= 1.0.3 =
+* Multiple Themes: Fix broken template previews due to site specific attributes in template/pattern markup (#7631)
 
 = 1.0.2 =
 * Multiple Block Themes: Fix Cursor When Hovering Links  (#7479)
@@ -36,7 +48,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Helvetica Font
-© 1990-2006 Apple Computer Inc. © 1981 Linotype AG © 1990-91 Type Solutions Inc. 
-  
--- End of Helvetica Font credits --
+== Image used in theme screenshot ==
+
+Credit Tom Hubbard in The U.S. National Archives
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.rawpixel.com/image/8799420/photo-image-plant-fire-public-domain

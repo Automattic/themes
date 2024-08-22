@@ -1,0 +1,33 @@
+/*
+Theme Name: Kansei
+Theme URI: https://wordpress.com/theme/kansei/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Kansei is a theme reminiscing of the Japanese book design tradition and graphic aesthetics. It aims to evoke a sense of harmony and balance.
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 5.7
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: kansei
+Tags: portfolio, one-column, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+* Control the hover stylings of outline block style.
+*/
+.wp-block-button.is-style-outline > .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: 2px;
+}

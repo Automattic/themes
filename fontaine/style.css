@@ -1,0 +1,79 @@
+/*
+Theme Name: Fontaine
+Theme URI: https://themeshaper.com/fontaine/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Fontaine is a portfolio/profile theme designed for visual designers who appreciate the bold simplicity of Brutalist aesthetics. The goal was to create a theme that gracefully steps back, allowing your content to shine and capture the spotlight.
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 5.7
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fontaine
+Tags: portfolio, one-column, block-patterns, block-styles, full-site-editing, rtl-language-support, threaded-comments, translation-ready,
+*/
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline >.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--theme-4);
+	border-color: var(--wp--preset--color--theme-4);
+	color: var(--wp--preset--color--theme-1);
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-decoration-style: solid !important;
+	text-underline-offset: 3px;
+}
+
+/*
+ * Navigation Block
+ * Reset the padding from List block
+ * https://github.com/WordPress/gutenberg/issues/50486
+ */
+.wp-block-navigation ul {
+	padding: unset;
+}
+
+/*
+ * Pull quote Block
+ * Reset the browser default margins for blockquote and paragraph element
+ * https://github.com/WordPress/gutenberg/issues/44129
+ */
+.wp-block-pullquote blockquote,
+.wp-block-pullquote p {
+	margin: 0;
+}
+
+/*
+ * Jetpack Contact Form Block
+ */
+.contact-form label,
+.wp-block-jetpack-contact-form label,
+.jetpack-field-label .rich-text.jetpack-field-label__input {
+	font-weight: 500;
+}
+
+.contact-form__input-error {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+:where(.contact-form input[type=text],.contact-form input[type=email],.contact-form input[type=tel],.contact-form input[type=url],.contact-form textarea) {
+	padding: 8px;
+}
+
+/*
+ * Custom CSS applied to the sticky header
+ */
+.blending-mode {
+	mix-blend-mode: exclusion;
+}

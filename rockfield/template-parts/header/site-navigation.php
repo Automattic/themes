@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 	<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'rockfield' ); ?>">
 		<input type="checkbox" role="button" aria-haspopup="true" id="toggle" class="hide-visually">

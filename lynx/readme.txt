@@ -9,6 +9,12 @@ A theme for creators equipped with multiple patterns for single page site.
 
 == Changelog ==
 
+= 1.0.28 =
+* Lossless image optimization (#7671)
+
+= 1.0.28 =
+* Optimize images (#7671)
+
 = 1.0.27 =
 * Remove tags blog-homepage and auto-loading-homepage (#7322)
 

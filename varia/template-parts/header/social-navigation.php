@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php if ( has_nav_menu( 'social' ) ) : ?>
 	<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'varia' ); ?>">
 		<?php

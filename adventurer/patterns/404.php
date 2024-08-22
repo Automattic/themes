@@ -13,6 +13,7 @@
     <h1 class="wp-block-heading alignwide has-text-align-left" id="oops-that-page-can-t-be-found" style="font-size:4.4rem"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'adventurer' ); ?></h1>
     <!-- /wp:heading -->
 
+    
     <!-- wp:paragraph -->
     <p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'adventurer' ); ?></p>
     <!-- /wp:paragraph -->

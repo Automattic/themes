@@ -5,13 +5,13 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Bute is a blog theme that has a full-screen front page
 Requires at least: 6.0
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 5.7
-Version: 1.0.2
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bute
-Tags: blog, holiday, one-column, four-columns, wide-blocks, block-patterns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, template-editing, threaded-comments, translation-ready, two-columns
+Tags: blog, holiday, one-column, wide-blocks, block-styles, featured-images, full-site-editing, rtl-language-support, threaded-comments, translation-ready
 */
 
 /*
@@ -24,16 +24,6 @@ a {
 }
 
 /*
- * Avatar Block
- * Fix border radius setting for the avatar block
- * https://github.com/WordPress/gutenberg/issues/48253
- */
-.wp-block-avatar a,
-.wp-block-avatar img {
-	border-radius: inherit;
-}
-
-/*
  * Button Block
  * Control the hover stylings of outline block style.
  * Unnecessary once block styles are configurable via theme.json
@@ -41,8 +31,8 @@ a {
  */
 .wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
 	background-color: var(--wp--preset--color--primary);
-	color: var(--wp--preset--color--base);
 	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
 }
 
 /*

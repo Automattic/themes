@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * WordPress.com-specific functions and definitions.
@@ -33,11 +34,11 @@ function seedlet_wpcom_setup() {
 
 	$wpcom_colors_array = get_theme_mod( 'colors_manager' );
 	if ( ! empty( $wpcom_colors_array ) ) {
-		$primary    = $wpcom_colors_array['colors']['link'];
-		$secondary  = $wpcom_colors_array['colors']['fg1'];
-		$foreground = $wpcom_colors_array['colors']['txt'];
-		$tertiary   = $wpcom_colors_array['colors']['fg2'];
-		$background = $wpcom_colors_array['colors']['bg'];
+		$primary    = $wpcom_colors_array['colors']['link'] ?? '';
+		$secondary  = $wpcom_colors_array['colors']['fg1'] ?? '';
+		$foreground = $wpcom_colors_array['colors']['txt'] ?? '';
+		$tertiary   = $wpcom_colors_array['colors']['fg2'] ?? '';
+		$background = $wpcom_colors_array['colors']['bg'] ?? '';
 
 		/**
 		 * De-register original editor color palette in favor of the wpcom implementation

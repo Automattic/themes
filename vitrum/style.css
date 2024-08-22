@@ -1,0 +1,69 @@
+/*
+Theme Name: Vitrum
+Theme URI: https://themeshaper.com/vitrum/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Vitrum was designed to be a portfolio theme and is composed of wide-width layouts with the impact of generous imagery and typography. Its simple pages are aligned left with fair right paddings and large content blocks to grant viewers focus on visuals and short paragraphs.
+Requires at least: 
+Tested up to: 6.5
+Requires PHP: 
+Version: 1.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: vitrum
+Tags: blog, entertainment, portfolio, four-columns, two-columns, block-patterns, block-styles, custom-colors, custom-header, custom-menu, editor-style, full-site-editing, full-width-template, rtl-language-support, sticky-post, style-variations, template-editing, theme-options, threaded-comments, translation-ready
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Text and navigation link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25ch;
+}
+
+a:hover,
+a:focus {
+	text-decoration-style: dashed;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+	text-decoration: underline;
+	text-decoration-style: dashed;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline
+	> .wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--foreground);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--foreground);
+}

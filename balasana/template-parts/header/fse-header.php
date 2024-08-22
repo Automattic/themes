@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <header id="masthead" class="site-header responsive-max-width">
 	<?php
 		$template = new A8C\FSE\WP_Template();

@@ -12,6 +12,12 @@ A minimal newsletter theme.
 
 == Changelog ==
 
+= 1.0.2 =
+* Lossless image optimization (#7671)
+
+= 1.0.2 =
+* Optimize images (#7671)
+
 = 1.0.1 =
 * SND: Minor pre-launch fixes (#7291)
 

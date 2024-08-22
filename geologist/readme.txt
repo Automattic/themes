@@ -12,6 +12,12 @@ Geologist is a streamlined theme for modern bloggers. It consists of a simple si
 
 == Changelog ==
 
+= 1.0.44 =
+* Lossless image optimization (#7671)
+
+= 1.0.44 =
+* Optimize images (#7671)
+
 = 1.0.43 =
 * Bump postcss from 8.4.25 to 8.4.31 (#7407)
 

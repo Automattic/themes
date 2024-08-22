@@ -4,7 +4,10 @@
  * Slug: exmoor/small-heading-quote
  * Categories: featured
  */
+
+declare( strict_types = 1 );
 ?>
+
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"8vw","right":"var:preset|spacing|60","bottom":"8vw","left":"var:preset|spacing|60"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"contrast","textColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-color has-contrast-background-color has-text-color has-background" style="margin-top:0;margin-bottom:0;padding-top:8vw;padding-right:var(--wp--preset--spacing--60);padding-bottom:8vw;padding-left:var(--wp--preset--spacing--60)">
 	<!-- wp:columns {"align":"wide"} -->

@@ -12,6 +12,9 @@ Archivo is a blog and portfolio theme that shows your featured image large.
 
 == Changelog ==
 
+= 1.0.6 =
+* Lossless image optimization (#7671)
+
 = 1.0.5 =
 * Archivo: Remove hard-coded link (#7495)
 

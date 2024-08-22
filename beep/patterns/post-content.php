@@ -4,6 +4,8 @@
  * Slug: beep/post-content
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:paragraph {"style":{"spacing":{"margin":{"left":"0","right":"var:preset|spacing|40"}}},"textColor":"inactive"} -->

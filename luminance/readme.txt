@@ -1,7 +1,7 @@
 === Luminance ===
 Contributors: Automattic
 Requires at least: 6.0
-Tested up to: 6.2.2
+Tested up to: 6.5
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,6 +12,18 @@ Luminance is a bold blogging theme with opinionated typography and unique aesthe
 
 == Changelog ==
 
+= 1.0.3 =
+* Luminance: Fix display of featured images (#8023)
+
+= 1.0.2 =
+* Luminance: Update it for submission (#7735)
+
+= 1.0.1 =
+* Lossless image optimization (#7671)
+
+= 1.0.1 =
+* Optimize images (#7671)
+
 = 1.0.0 =
 * Initial release
 
@@ -19,7 +31,6 @@ Luminance is a bold blogging theme with opinionated typography and unique aesthe
 
 Luminance WordPress Theme, (C) 2023 Automattic
 Luminance is distributed under the terms of the GNU GPL.
-Luminance is based on Cinemateca (https://wordpress.com/theme/cinemateca/), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,9 +46,15 @@ This theme bundles the following third-party resources:
 
 Instrument Serif
 https://fonts.google.com/specimen/Instrument+Serif
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URL: https://openfontlicense.org/
+-- End of Instrument Serif Font credits --
 
 Instrument Sans
 https://fonts.google.com/specimen/Instrument+Sans
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URL: https://openfontlicense.org/
+-- End of Instrument Serif Font credits --
 
 Included in theme screenshot.
 
@@ -68,8 +85,3 @@ https://www.rawpixel.com/image/431432/vintage-whale-poster
 
 An astronomy lithograph the Eclipse of the Moon printed in 1908, an antique celestial chart of phases of the moon in the solar system. Digitally enhanced from our own original plate. CC0 Image
 https://www.rawpixel.com/image/428228/free-illustration-image-moon-astronomy-solar-system
-
-
-
-
-

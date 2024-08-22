@@ -4,6 +4,8 @@
  * Slug: beep/navigation
  * Inserter: no
  */
+
+declare( strict_types = 1 );
 ?>
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"0","right":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|80"},"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
