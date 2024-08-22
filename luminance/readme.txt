@@ -12,6 +12,9 @@ Luminance is a bold blogging theme with opinionated typography and unique aesthe
 
 == Changelog ==
 
+= 1.0.3 =
+* Luminance: Fix display of featured images (#8023)
+
 = 1.0.2 =
 * Luminance: Update it for submission (#7735)
 
