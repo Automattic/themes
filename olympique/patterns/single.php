@@ -1,4 +1,3 @@
-<?php declare( strict_types = 1 ); ?>
 <?php
 /**
  * Title: single
@@ -34,7 +33,7 @@
 <!-- wp:group {"tagName":"main","align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|30","padding":{"right":"var:preset|spacing|40","left":"var:preset|spacing|40","bottom":"var:preset|spacing|80","top":"var:preset|spacing|40"}},"border":{"top":{"width":"2px"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group alignwide" style="border-top-width:2px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--40)"><!-- wp:comments {"className":"wp-block-comments-query-loop"} -->
 <div class="wp-block-comments wp-block-comments-query-loop"><!-- wp:heading {"className":"is-style-default"} -->
-<h2 class="wp-block-heading is-style-default"><?php esc_html_e('Comments', 'olympique');?></h2>
+<h2 class="wp-block-heading is-style-default"><?php echo __('Comments', 'olympique');?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:comments-title {"level":4} /-->
