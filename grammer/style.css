@@ -1,0 +1,71 @@
+/*
+Theme Name: Grammer
+Theme URI: https://themeshaper.com/grammer/
+Author: Automattic
+Author URI: https://automattic.com
+Description: Get Grammer now to bring the Social Media experience to your site and transform it into a repository for your photos and videos.
+Requires at least: 
+Tested up to: 6.6
+Requires PHP: 
+Version: 1.1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: grammer
+Tags: photography, blog, grid-layout, block-patterns, translation-ready, full-site-editing, full-width-template, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments
+
+/*
+ * Font smoothing
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+/*
+ * Font smoothing
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Control the hover stylings of outline block style.
+ * Unnecessary once block styles are configurable via theme.json
+ * https://github.com/WordPress/gutenberg/issues/42794
+ */
+.wp-block-button.is-style-outline>.wp-block-button__link:not(.has-background):hover {
+	background-color: var(--wp--preset--color--secondary);
+	color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--secondary);
+}
+
+/**
+ * Currently table styles are only available with 'wp-block-styles' 
+ * theme support (block css) thus the following needs to be included
+ * since 'wp-block-styles' aren't used for this theme.
+ * https://github.com/WordPress/gutenberg/issues/45065
+ */
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+.wp-block-table td,
+.wp-block-table th {
+	padding: var(--wp--preset--spacing--30);
+	border: 1px solid;
+	word-break: normal;
+}
+.wp-block-table figcaption {
+	font-size: var(--wp--preset--font-size--small);
+	text-align: center;
+}
+
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: .0625em !important;
+	text-underline-offset: .15em;
+}
