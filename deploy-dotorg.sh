@@ -37,7 +37,7 @@ rm -rf ./deploy
 for THEME_SLUG in */ ; do
 
 	# Remove slashes from the theme slug
-	THEME_SLUG=${THEME_SLUG%/}
+	THEME_SLUG=$(echo $THEME_SLUG | tr -d '/')
 
 	# Skip any classic themes (assuming that none of our classic themes use a theme.json file)
 	if ! test -f "./${THEME_SLUG}/theme.json"; then
