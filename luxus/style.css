@@ -1,0 +1,197 @@
+/*
+Theme Name: Luxus
+Theme URI: https://wordpress.com/theme/luxus
+Author: Automattic
+Author URI: https://automattic.com/
+Description: A WordPress theme for nail and beauty salons.
+Requires at least: 6.0
+Tested up to: 6.4.3
+Requires PHP: 5.7
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: luxus
+Tags: one-column, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, full-site-editing, rtl-language-support, style-variations, template-editing, theme-options, threaded-comments, translation-ready, blog, three-columns, wide-blocks
+*/
+
+/* Progresive enhancement to reduce widows and orphans. */
+h1, h2, h3, h4, h5, h6, blockquote {
+	text-wrap: balance;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+/* Tiny tweak to make sure footers are properly spaced. */
+footer {
+	margin-top: 0 !important;
+}
+
+/* Provide better default color for social links */
+.wp-block-social-links.is-style-logos-only li.wp-social-link {
+	color: currentColor;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+	height: 1em;
+	width: 1em;
+}
+
+.wp-block-social-links.has-small-icon-size {
+	font-size: 20px;
+}
+
+/* Set default line height for font size presets. */
+.has-xx-large-font-size {
+   line-height: 1;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+/* Style Jetpack forms */
+.wp-block-jetpack-contact-form-container {
+	--jetpack--contact-form--input-padding-left: 16px !important;
+}
+
+.wp-block-jetpack-contact-form input,
+.wp-block-jetpack-contact-form textarea {
+	backdrop-filter: saturate(1.1);
+	background-color: transparent;
+	border-color: var(--wp--custom--input--border--color);
+	border-radius: var(--wp--custom--input--border--radius) !important; /* Requires !important to override local variables with theme variables. */
+	border-width: var(--wp--custom--input--border--width) !important;  /* Requires !important to override local variables with theme variables. */
+	filter: brightness(0.975);
+	font-size: inherit;
+	color: inherit;
+	transition: border-color 0.15s cubic-bezier(.4,0,.2,1);
+}
+
+.jetpack-contact-form .jetpack-field .jetpack-field__input, 
+.jetpack-contact-form .jetpack-field .jetpack-field__textarea {
+	border-color: var(--wp--custom--input--border--color);
+}
+
+.wp-block-jetpack-contact-form input:not(:placeholder-shown),
+.wp-block-jetpack-contact-form textarea:not(:placeholder-shown),
+.wp-block-jetpack-contact-form input:focus,
+.wp-block-jetpack-contact-form textarea:focus {
+	filter: brightness(1);
+	backdrop-filter: saturate(1);
+}
+
+.wp-block-jetpack-contact-form input:focus,
+.wp-block-jetpack-contact-form textarea:focus {
+	border-color: var(--wp--custom--input--focus--border--color);
+}
+
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label) select, 
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label)>input, 
+.contact-form .is-style-animated .grunion-field-wrap:not(.no-label)>textarea {
+	padding-top: var(--field-padding); /* Remove unnecessary padding adjustment from Jetpack. */
+}
+
+.contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
+	font-size: inherit;
+}
+
+.contact-form .is-style-animated .grunion-field-wrap .animated-label__label {
+	width: auto;
+	padding: 0 4px;
+	transition: transform 0.15s cubic-bezier(.4,0,.2,1), top 0.15s cubic-bezier(.4,0,.2,1), font-size 0.15s cubic-bezier(.4,0,.2,1);
+}
+
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field.has-placeholder~.animated-label__label, 
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:focus~.animated-label__label, 
+.contact-form .is-style-animated .grunion-field-wrap .grunion-field:not(:placeholder-shown)~.animated-label__label, 
+.contact-form .is-style-animated .grunion-field-wrap.grunion-field-select-wrap .animated-label__label {
+	background-color: var(--wp--custom--input--color--background) !important;
+	transform: translateY(-11px) translateX(-4px); /* Moves the label out of the field. */
+}
+
+.contact-form label,
+.wp-block-jetpack-contact-form label,
+.jetpack-field-label .rich-text.jetpack-field-label__input {
+	font-weight: 500;
+}
+
+.contact-form__input-error {
+	font-size: var(--wp--preset--font-size--small);
+}
+
+/*
+ * Decorative border for headings with .wave-underline class.
+ */
+:is(h1, h2, h3, h4, h5, h6).wave-underline::after {
+	mask: url(assets/images/wave.svg) no-repeat center / cover;
+	height: 7px;
+	content: " ";
+	width: 200px;
+	background: var(--wp--preset--color--theme-4);
+	display: block;
+	mask-position: center;
+	position: relative;
+	bottom: -9px;
+	left: calc( 100% - ( 50% + 100px ) );
+}
+
+/*
+ * Adds the decorative lines behind the header area on the homepage.
+ */
+.rays-background-overlay {
+	position: relative;
+	z-index: 0;
+}
+
+.rays-background-overlay::before {
+	mask: url(assets/images/rays.svg) no-repeat center / cover;
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background-color: var(--wp--preset--color--theme-4);
+}
+
+/*
+ * Opinionated Style for Anchors.
+ */
+.entry-content a {
+	cursor: pointer;
+	text-decoration-style: wavy;
+	text-underline-offset: 0.2em;
+	text-decoration-thickness: 1px;
+}
+
+/*
+ * A custom style for double borders.
+ */
+.border-bottom-double {
+	border-bottom-style: double !important;
+	border-bottom-width: 3px !important;
+}
+
+.border-top-double {
+	border-top-style: double !important;
+	border-top-width: 3px !important;
+}
+
+/*
+ * Media queries:
+ * - make sure the dome stays rounded on mobile, but doesn't take up too much space.
+ * - adjust the heading underline on mobile.
+ */
+@media screen and (max-width: 640px){
+	.dome {
+		min-height: 12rem !important;
+	}
+
+	:is(h1, h2, h3, h4, h5, h6).wave-underline::after {
+		width: 154px;
+		left: calc( 100% - ( 50% + 77px ) );
+	}
+}
