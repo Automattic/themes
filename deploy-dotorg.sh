@@ -102,7 +102,9 @@ for THEME_SLUG in */ ; do
 		last_version="${last_directory##*/}"
 
 		# Check if last_version is a later version than THEME_VERSION
-		if (( last_version > THEME_VERSION )); then
+		theme_version_without_decimal=$(echo $THEME_VERSION | tr -d '.')
+		last_version_without_decimal=$(echo $last_version | tr -d '.')
+		if (( last_version_without_decimal > theme_version_without_decimal )); then
 			echo "${THEME_SLUG} version '${last_version}' is newer than '${THEME_VERSION}', so it must not need updating.  Moving on."
 			continue;
 		fi
