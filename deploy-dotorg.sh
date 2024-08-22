@@ -101,6 +101,12 @@ for THEME_SLUG in */ ; do
 		last_directory=${directories[${#directories[@]}-1]}
 		last_version="${last_directory##*/}"
 
+		# Check if last_version is a later version than THEME_VERSION
+		if (( last_version > THEME_VERSION )); then
+			echo "${THEME_SLUG} version '${last_version}' is newer than '${THEME_VERSION}', so it must not need updating.  Moving on."
+			continue;
+		fi
+
 		echo "➤ Upgrading ${THEME_SLUG} from ${last_version} to $THEME_VERSION"
 
 	 	if [[ $1 == "preview" ]]; then
