@@ -36,6 +36,9 @@ rm -rf ./deploy
 # Do things for all of the themes
 for THEME_SLUG in */ ; do
 
+	# Remove slashes from the theme slug
+	THEME_SLUG=$(echo $THEME_SLUG | tr -d '/')
+
 	# Skip any classic themes (assuming that none of our classic themes use a theme.json file)
 	if ! test -f "./${THEME_SLUG}/theme.json"; then
 		# echo "Ignoring classic theme ${THEME_SLUG}. Moving on."
@@ -58,8 +61,15 @@ for THEME_SLUG in */ ; do
 		  | sed 's/-wpcom//g' \
 		  | tr -d '[[:space:]]')
 
+		DIRECTORY_URL="https://wordpress.org/themes/${THEME_SLUG}/"
 		SVN_URL="https://themes.svn.wordpress.org/${THEME_SLUG}/"
 		SVN_DIR="$PWD/deploy/${THEME_SLUG}"
+
+		response=$(curl -s -o /dev/null -w "%{http_code}" "$DIRECTORY_URL")
+		if [ "$response" != "200" ]; then
+			# echo "Theme with slug ${THEME_SLUG} has not been approved to the themes directory. Moving on."
+			continue;
+		fi
 
 		response=$(curl -s -o /dev/null -w "%{http_code}" "$SVN_URL")
 		if [ "$response" != "200" ]; then
@@ -90,6 +100,14 @@ for THEME_SLUG in */ ; do
 		directories=($SVN_DIR/*)
 		last_directory=${directories[${#directories[@]}-1]}
 		last_version="${last_directory##*/}"
+
+		# Check if last_version is a later version than THEME_VERSION
+		theme_version_without_decimal=$(echo $THEME_VERSION | tr -d '.')
+		last_version_without_decimal=$(echo $last_version | tr -d '.')
+		if (( last_version_without_decimal > theme_version_without_decimal )); then
+			echo "${THEME_SLUG} version '${last_version}' is newer than '${THEME_VERSION}', so it must not need updating.  Moving on."
+			continue;
+		fi
 
 		echo "➤ Upgrading ${THEME_SLUG} from ${last_version} to $THEME_VERSION"
 
