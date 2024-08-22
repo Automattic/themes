@@ -1,9 +1,9 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 /**
- * Title: footer
+ * Title: Footer
  * Slug: brat/footer
- * Categories: hidden
- * Inserter: no
+ * Categories: footer
  */
 ?>
 <!-- wp:spacer -->
@@ -15,7 +15,16 @@
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:site-title {"textAlign":"center","fontSize":"large"} /-->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"0.9rem"}}} -->
-<p class="has-text-align-center" style="font-size:0.9rem"><?php esc_html_e('fyi, this theme was made with <a href="https://wordpress.org" rel="nofollow">WordPress</a>', 'brat');?></p>
+<p class="has-text-align-center" style="font-size:0.9rem">
+   <?php
+        /* Translators: WordPress link. */
+        $wordpress_link = '<a href="' . esc_url( __( 'https://wordpress.org', 'adonay' ) ) . '" rel="nofollow">WordPress</a>';
+        echo sprintf(
+            esc_html__( 'fyi, this theme was made with %1$s', 'adonay' ),
+            $wordpress_link
+        );
+    ?> ❤️‍🔥
+</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
