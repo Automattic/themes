@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: post-meta
- * Slug: brat/post-meta
+ * Slug: partygurl/post-meta
  * Categories: hidden
  * Inserter: no
  */
@@ -12,7 +12,7 @@
 <!-- /wp:group -->
 
 <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.97rem"}}} -->
-<p style="font-size:0.97rem"><?php esc_html_e('/', 'brat');?></p>
+<p style="font-size:0.97rem"><?php esc_html_e('/', 'partygurl');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"0.94rem"}}} /--></div>

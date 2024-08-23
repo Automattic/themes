@@ -2,7 +2,7 @@
 <?php
 /**
  * Title: Footer
- * Slug: brat/footer
+ * Slug: partygurl/footer
  * Categories: footer
  */
 ?>

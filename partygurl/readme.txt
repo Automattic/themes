@@ -1,4 +1,4 @@
-== Brat ==
+== Partygurl ==
 
 Contributors: Automattic
 Requires at least: 6.0
@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Brat embodies a bold and rebellious aesthetic, inspired by edgy, chaotic fun and the unapologetic “brat” energy popularized by cultural trends.
+Partygurl embodies a bold and rebellious aesthetic, inspired by edgy, chaotic fun and the unapologetic “brat” energy popularized by cultural trends.
 
 
 == Changelog ==
@@ -21,8 +21,8 @@ Brat embodies a bold and rebellious aesthetic, inspired by edgy, chaotic fun and
 
 == Copyright ==
 
-Brat WordPress Theme, (C) 2024 Automattic
-Brat is distributed under the terms of the GNU GPL.
+Partygurl WordPress Theme, (C) 2024 Automattic
+Partygurl is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 
-Brat is based on Didone (https://github.com/Automattic/themes/tree/trunk/didone), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
+Partygurl is based on Didone (https://github.com/Automattic/themes/tree/trunk/didone), (C) Automattic, [GPLv2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Fonts ==
 Tex Gyre Heros Font
