@@ -8,8 +8,8 @@ import progressbar from 'string-progressbar';
 import semver from 'semver';
 
 const remoteSSH = 'wpcom-sandbox';
-const sandboxPublicThemesFolder = '/home/wpdev/public_html/wp-content/themes/pub';
-const sandboxRootFolder = '/home/wpdev/public_html/';
+const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
+const sandboxRootFolder = '/home/wpcom/public_html/';
 const glotPressScript = '~/public_html/bin/i18n/create-glotpress-project-for-theme.php';
 const isWin = process.platform === 'win32';
 const coreThemes = ['twentyten', 'twentyeleven', 'twentytwelve', 'twentythirteen', 'twentyfourteen', 'twentyfifteen', 'twentysixteen', 'twentyseventeen', 'twentynineteen', 'twentytwenty', 'twentytwentyone', 'twentytwentytwo', 'twentytwentythree', 'twentytwentyfour'];
