@@ -2,10 +2,14 @@ import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
+import path from 'path';
+import process from 'process';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table } from 'table';
 import progressbar from 'string-progressbar';
 import semver from 'semver';
+import Ajv from 'ajv';
+import AjvDraft04 from 'ajv-draft-04';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
@@ -21,7 +25,7 @@ const commands = {
 * Version bump all themes that have changes since the last deployment
 * Commit the version bump change to github
 * Clean the sandbox and ensure it is up - to - date
-* Push all changed files(including removal of deleted files) since the last deployment
+* Push all changed files (including removal of deleted files) since the last deployment
 * Update the 'last deployed' hash on the sandbox
 * Create a GitHub pull request based on the changes since the last deployment. The description including the commit messages since the last deployment.
 * Open the GitHub pull request in your browser
@@ -120,6 +124,10 @@ const commands = {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
 	},
+	"validate-schema": {
+		helpText: 'Validates the theme.json file(s) against the JSON Schema.',
+		run: (args) => validateSchema(args?.slice(1)),
+	},
 	"help": {
 		helpText: 'Displays the main help message.',
 		run: (args) => showHelp(args?.[1])
@@ -131,7 +139,8 @@ const commands = {
 	let command = args?.[0];
 
 	if (!commands[command]) {
-		return showHelp();
+		showHelp();
+		process.exit(1);
 	}
 
 	commands[command].run(args);
@@ -1346,6 +1355,68 @@ async function escapePatterns() {
 		};
 
 		return table(patterns.map(p => [p]), tableConfig);
+	}
+}
+
+async function validateSchema( files ) {
+	function readJson( file ) {
+		return fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+	}
+	async function loadSchema( uri, dirname = '' ) {
+		if ( ! uri ) {
+			return {
+				$schema: 'http://json-schema.org/draft-07/schema#',
+				type: 'object',
+				required: [ '$schema' ],
+			};
+		}
+		if ( ! URL.canParse( uri ) ) {
+			return readJson( path.resolve( dirname, uri ) );
+		}
+		const url = new URL( uri );
+		if ( url.protocol === 'http:' || url.protocol === 'https:' ) {
+			return fetch( url ).then( ( res ) => res.json() );
+		}
+		if ( url.protocol === 'file:' ) {
+			return readJson( path.resolve( dirname, url.href.slice( 7 ) ) );
+		}
+		throw new Error( `Unsupported schema protocol: ${ url.protocol }` );
+	}
+	const ajvOptions = {
+		allowMatchingProperties: true,
+		allErrors: true,
+		loadSchema,
+	};
+	const ajv = {
+		'http://json-schema.org/draft-07/schema#': new Ajv( ajvOptions ),
+		'http://json-schema.org/draft-04/schema#': new AjvDraft04( ajvOptions ),
+	};
+	const errors = [];
+	let progress = progressbar.filledBar( files.length, 0 )[ 0 ];
+	process.stdout.write( `${ progress } 0/${ files.length }`, 'utf-8' );
+	for ( const [ i, file ] of files.entries() ) {
+		let schemaUri;
+		try {
+			const data = await readJson( file );
+			schemaUri = data.$schema;
+			const schema = await loadSchema( schemaUri, path.dirname( file ) );
+			const validate = await ajv[ schema.$schema ].compileAsync( schema );
+			if ( ! validate( data ) ) {
+				throw validate.errors;
+			}
+		} catch ( error ) {
+			errors.push( { file, schema: schemaUri, error } );
+		}
+		progress = progressbar.filledBar( files.length, i + 1 )[ 0 ];
+		process.stdout.write(
+			`\r${ progress } ${ i + 1 }/${ files.length }`,
+			'utf-8'
+		);
+	}
+	console.log();
+	if ( errors.length ) {
+		console.dir( errors, { depth: null } );
+		process.exit( 1 );
 	}
 }
 
