@@ -14,6 +14,9 @@ Layover displays large titles and excerpts that scroll over an image on the Home
 
 == Changelog ==
 
+= 1.0.3 =
+* Changes during deploy
+
 = 1.0.0 =
 * Initial release
 

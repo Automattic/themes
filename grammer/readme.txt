@@ -14,6 +14,9 @@ Get Grammer now to bring the Social Media experience to your site and transform 
 
 == Changelog ==
 
+= 1.1.2 =
+* Changes during deploy
+
 = 1.1.0 =
 * Initial release
 

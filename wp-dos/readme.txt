@@ -14,6 +14,9 @@ WP-DOS is a blog theme designed for nostalgic ones. It is a tribute to the folks
 
 == Changelog ==
 
+= 1.1 =
+* Changes during deploy
+
 = 1.0.0 =
 * Initial release
 

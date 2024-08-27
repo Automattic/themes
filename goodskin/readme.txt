@@ -12,6 +12,9 @@ Goodskin is a blogging theme designed for skincare blogs.
 
 == Changelog ==
 
+= 1.0.3 =
+* Brat: add theme (Rename to Partygurl) (#8026)
+
 = 1.0.2 =
 * Goodskin: Prepare the theme for the submission (#7611)
 
