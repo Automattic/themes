@@ -1,4 +1,4 @@
-name: Validate JSON Schemas
+name: Validate Themes
 
 on:
     pull_request:
@@ -15,7 +15,7 @@ env:
     HUSKY: 0
 
 jobs:
-    validate-schema:
+    validate-theme:
         runs-on: ubuntu-latest
 
         steps:
@@ -33,5 +33,5 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Validate JSON files
-              run: node theme-utils.mjs validate-schema $(git diff --name-only HEAD^ -- ${{ env.PR_PATHS }} | tr '\n' ' ')
+            - name: Validate Themes
+              run: node theme-utils.mjs validate-theme $(git diff --name-only HEAD^ -- ${{ env.PR_PATHS }} | awk -F/ '{print $1}' | uniq | paste -s -d, -)

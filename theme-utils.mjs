@@ -10,6 +10,7 @@ import progressbar from 'string-progressbar';
 import semver from 'semver';
 import Ajv from 'ajv';
 import AjvDraft04 from 'ajv-draft-04';
+import glob from 'fast-glob';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
@@ -124,9 +125,10 @@ const commands = {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
 	},
-	"validate-schema": {
-		helpText: 'Validates the theme.json file(s) against the JSON Schema.',
-		run: (args) => validateSchema(args?.slice(1)),
+	"validate-theme": {
+		helpText: 'Validates a theme against the WordPress theme requirements.',
+		additionalArgs: '<array of theme slugs>',
+		run: (args) => validateThemes(args?.[1].split(/[ ,]+/))
 	},
 	"help": {
 		helpText: 'Displays the main help message.',
@@ -700,12 +702,13 @@ export function getThemeMetadata(styleCss, attribute, trimWPCom = true) {
 	switch (attribute) {
 		case 'Version':
 			const version = styleCss
-				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
-				.trim();
+				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				?.trim();
 			return trimWPCom ? version.replace('-wpcom', '') : version;
 		case 'Requires at least':
 			return styleCss
-				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
+				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				?.trim();
 	}
 }
 
@@ -1358,31 +1361,26 @@ async function escapePatterns() {
 	}
 }
 
-async function validateSchema( files ) {
+async function validateThemes( themes ) {
 	function readJson( file ) {
 		return fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
 	}
-	async function loadSchema( uri, dirname = '' ) {
-		if ( ! uri ) {
+	async function loadSchema( uri ) {
+		if ( ! uri || ! URL.canParse( uri ) ) {
 			return {
 				$schema: 'http://json-schema.org/draft-07/schema#',
 				type: 'object',
 				required: [ '$schema' ],
 			};
 		}
-		if ( ! URL.canParse( uri ) ) {
-			return readJson( path.resolve( dirname, uri ) );
-		}
 		const url = new URL( uri );
 		if ( url.protocol === 'http:' || url.protocol === 'https:' ) {
 			return fetch( url ).then( ( res ) => res.json() );
 		}
-		if ( url.protocol === 'file:' ) {
-			return readJson( path.resolve( dirname, url.href.slice( 7 ) ) );
-		}
 		throw new Error( `Unsupported schema protocol: ${ url.protocol }` );
 	}
 	const ajvOptions = {
+		strict: false, // TODO: Evaluate cases where this can be true.
 		allowMatchingProperties: true,
 		allErrors: true,
 		loadSchema,
@@ -1392,28 +1390,67 @@ async function validateSchema( files ) {
 		'http://json-schema.org/draft-04/schema#': new AjvDraft04( ajvOptions ),
 	};
 	const errors = [];
-	let progress = progressbar.filledBar( files.length, 0 )[ 0 ];
-	process.stdout.write( `${ progress } 0/${ files.length }`, 'utf-8' );
-	for ( const [ i, file ] of files.entries() ) {
-		let schemaUri;
-		try {
-			const data = await readJson( file );
-			schemaUri = data.$schema;
-			const schema = await loadSchema( schemaUri, path.dirname( file ) );
-			const validate = await ajv[ schema.$schema ].compileAsync( schema );
-			if ( ! validate( data ) ) {
-				throw validate.errors;
-			}
-		} catch ( error ) {
-			errors.push( { file, schema: schemaUri, error } );
-		}
-		progress = progressbar.filledBar( files.length, i + 1 )[ 0 ];
-		process.stdout.write(
-			`\r${ progress } ${ i + 1 }/${ files.length }`,
+	const warnings = [];
+	const progress = startProgress( themes.length );
+	for ( const themeSlug of themes ) {
+		const styleCss = await fs.promises.readFile(
+			`${ themeSlug }/style.css`,
 			'utf-8'
 		);
+		const requiresAtLeast = getThemeMetadata(
+			styleCss,
+			'Requires at least'
+		);
+		for ( const file of [
+			`${ themeSlug }/theme.json`,
+			...glob.sync( `${ themeSlug }/styles/*.json` ),
+		] ) {
+			let schemaUri;
+			try {
+				const data = await readJson( file );
+				if ( requiresAtLeast ) {
+					schemaUri = `https://schemas.wp.org/wp/${ requiresAtLeast }/theme.json`;
+					if ( data.$schema !== schemaUri ) {
+						warnings.push( {
+							file,
+							warning: [
+								{
+									actual: data.$schema,
+									expected: schemaUri,
+									validatingWith: schemaUri,
+									message: 'mismatched $schema with "Requires at least" metadata in style.css',
+								},
+							],
+						} );
+					}
+				} else {
+					schemaUri = data.$schema;
+					warnings.push( {
+						file,
+						warning: [
+							{
+								validatingWith: schemaUri,
+								message:
+									'missing "Requires at least" metadata in style.css',
+							},
+						],
+					} );
+				}
+				const schema = await loadSchema( schemaUri );
+				const validate =
+					await ajv[ schema.$schema ].compileAsync( schema );
+				if ( ! validate( data ) ) {
+					throw validate.errors;
+				}
+			} catch ( error ) {
+				errors.push( { file, schema: schemaUri, error } );
+			}
+		}
+		progress.increment();
 	}
-	console.log();
+	if ( warnings.length ) {
+		console.dir( warnings, { depth: null } );
+	}
 	if ( errors.length ) {
 		console.dir( errors, { depth: null } );
 		process.exit( 1 );
@@ -1431,6 +1468,7 @@ function startProgress(length) {
 	return {
 		increment() {
 			current++;
+			process.stdout.moveCursor?.(0, -3);
 			render();
 		}
 	};
