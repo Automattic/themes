@@ -347,6 +347,7 @@ add_action( 'wp_enqueue_scripts', 'karuna_scripts' );
  * Gutenberg Editor Styles
  */
 function karuna_editor_styles() {
+	wp_enqueue_style( 'karuna-block-style', get_template_directory_uri() . '/blocks.css' );
 	wp_enqueue_style( 'karuna-editor-block-style', get_template_directory_uri() . '/editor-blocks.css' );
 	wp_enqueue_style( 'karuna-fonts', karuna_fonts_url(), array(), null );
 }
