@@ -485,7 +485,7 @@ async function buildComZip(themeSlug) {
 			console.log('Could not find theme version (Version:) in the theme style.css.');
 		}
 		if (!wpVersionCompat) {
-			console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
+			console.log('Could not find WP compat version (Requires at least:) in the theme style.css.');
 		}
 		console.log('Please build the .zip file for the theme manually.', themeSlug);
 		open('https://mc.a8c.com/themes/downloads/');
