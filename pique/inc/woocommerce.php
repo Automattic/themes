@@ -68,6 +68,21 @@ function pique_woocommerce_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'pique_woocommerce_scripts' );
 
+function pique_woocommerce_editor_styles() {
+	$font_path   = WC()->plugin_url() . '/assets/fonts/';
+	$inline_font = '@font-face {
+			font-family: "WooCommerce";
+			src: url("' . $font_path . 'WooCommerce.woff2") format("woff2"),
+			     url("' . $font_path . 'WooCommerce.woff") format("woff"),
+			     url("' . $font_path . 'WooCommerce.ttf") format("truetype");
+			font-weight: normal;
+			font-style: normal;
+		}';
+
+	wp_add_inline_style( 'pique-block-editor-style', $inline_font );
+}
+add_action('enqueue_block_editor_assets', 'pique_woocommerce_editor_styles');
+
 /**
  * WooCommerce specific scripts & stylesheets.
  *
