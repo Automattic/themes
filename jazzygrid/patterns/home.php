@@ -26,7 +26,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><?php echo __('<a href="#" target="_blank" rel="noreferrer noopener">Albuns</a>', 'jazzygrid');?></p>
+<p class="has-small-font-size"><?php echo __('<a href="#" target="_blank" rel="noreferrer noopener">Albums</a>', 'jazzygrid');?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
