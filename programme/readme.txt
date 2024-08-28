@@ -12,6 +12,9 @@ Programme is a blog theme that reverences the legendary designer Massimo Vignell
 
 == Changelog ==
 
+= 1.0.2 =
+* Programme: Add comments to single post template (#8041)
+
 = 1.0.1 =
 * Lossless image optimization (#7671)
 
