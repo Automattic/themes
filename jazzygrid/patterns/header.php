@@ -13,7 +13,7 @@
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"},"margin":{"top":"0px","bottom":"0px"},"blockGap":"1.5rem"},"dimensions":{"minHeight":"100%"},"elements":{"link":{"color":{"text":"var:preset|color|background"}}}},"backgroundColor":"tertiary","textColor":"background","layout":{"type":"flex","orientation":"vertical","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group alignfull has-background-color has-tertiary-background-color has-text-color has-background has-link-color" style="min-height:100%;margin-top:0px;margin-bottom:0px;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:paragraph -->
-<p>The Jazz Messengers is a six-piece jazz ensemble known for their hard-bop style and virtuosic improvisation.</p>
+<p><?php echo esc_html__( 'The Jazz Messengers is a six-piece jazz ensemble known for their hard-bop style and virtuosic improvisation.', 'jazzygrid' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
