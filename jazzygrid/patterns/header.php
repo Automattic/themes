@@ -18,15 +18,15 @@
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="#" target="_blank" rel="noreferrer noopener">Website</a></p>
+<p class="has-small-font-size"><a href="#" target="_blank" rel="noreferrer noopener"><?php echo __( 'Website', 'jazzygrid' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="#" target="_blank" rel="noreferrer noopener">Albuns</a></p>
+<p class="has-small-font-size"><a href="#" target="_blank" rel="noreferrer noopener"><?php echo __( 'Albums', 'jazzygrid' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
-<p class="has-small-font-size"><a href="#" target="_blank" rel="noreferrer noopener">Tickets</a></p>
+<p class="has-small-font-size"><a href="#" target="_blank" rel="noreferrer noopener"><?php echo __( 'Tickets', 'jazzygrid' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
