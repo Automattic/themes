@@ -53,6 +53,14 @@ function pique_woocommerce_scripts() {
 				 url("' . $font_path . 'star.svg#star") format("svg");
 			font-weight: normal;
 			font-style: normal;
+		}
+		@font-face {
+			font-family: "WooCommerce";
+			src: url("' . $font_path . 'WooCommerce.woff2") format("woff2"),
+			     url("' . $font_path . 'WooCommerce.woff") format("woff"),
+			     url("' . $font_path . 'WooCommerce.ttf") format("truetype");
+			font-weight: normal;
+			font-style: normal;
 		}';
 
 	wp_add_inline_style( 'pique-woocommerce-style', $inline_font );
