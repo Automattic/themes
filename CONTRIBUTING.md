@@ -9,6 +9,12 @@ Our repo is a [monorepo](https://en.wikipedia.org/wiki/Monorepo) which stores al
 
 We recommend using the [Node Version Manager](https://github.com/nvm-sh/nvm) (nvm) since it is the easiest way to install and manage Node for macOS, Linux, and Windows 10. See the Node.js site for additional installation instructions.
 
+Some themes depend on [`node-sass`](https://npmjs/com/package/node-sass). `node-sass` uses an old version of `node-gyp` (and won't update because `node-sass` is deprecated). The old version of `node-gyp` depends on `distutils`. However, Python doesn't ship with `distutils` anymore, so you need to install it separately.
+
+On MacOS this is done with Homebrew: `brew install python-setuptools`.
+
+On other systems it's done with PIP: `pip install setuptools`.
+
 Also make sure you have an updated version of git installed on your computer, as well as a GitHub account.
 
 ## Local Environment Setup
