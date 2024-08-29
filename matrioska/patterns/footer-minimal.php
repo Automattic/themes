@@ -3,6 +3,7 @@
  * Title: footer-minimal
  * Slug: matrioska/footer-minimal
  * Categories: hidden
+ * Block Types: core/template-part/footer
  * Inserter: no
  */
 ?>

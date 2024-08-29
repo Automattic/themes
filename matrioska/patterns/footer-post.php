@@ -3,6 +3,7 @@
  * Title: footer-post
  * Slug: matrioska/footer-post
  * Categories: hidden
+ * Block Types: core/template-part/footer
  * Inserter: no
  */
 ?>
