@@ -2,15 +2,15 @@ import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import open from 'open';
 import inquirer from 'inquirer';
-import path from 'path';
 import process from 'process';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
-import { table } from 'table';
+import { table, getBorderCharacters } from 'table';
 import progressbar from 'string-progressbar';
 import semver from 'semver';
 import Ajv from 'ajv';
 import AjvDraft04 from 'ajv-draft-04';
 import glob from 'fast-glob';
+import chalk from 'chalk';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
@@ -125,10 +125,36 @@ const commands = {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
 	},
-	"validate-theme": {
-		helpText: 'Validates a theme against the WordPress theme requirements.',
-		additionalArgs: '<array of theme slugs>',
-		run: (args) => validateThemes(args?.[1].split(/[ ,]+/))
+	'validate-theme': {
+		helpText: [
+			'Validates a theme against the WordPress theme requirements.',
+			'--format=FORMAT',
+			wrapIndent( 'Output format. Possible values: *table*, json, dir.' ),
+			'--color=WHEN',
+			wrapIndent(
+				'Colorize the output for table or dir formats. The automatic mode only enables colors if an interactive terminal is detected. Possible values: *auto*, always, never.'
+			),
+			'--table-width=COLUMNS',
+			wrapIndent(
+				'Explicitly set the width of the table format instead of determining it automatically. Will default to 120 if omitted and width cannot be determined automatically.'
+			),
+		].join( '\n\n' ),
+		additionalArgs:
+			'[--format=FORMAT] [--color=WHEN] [--table-width=COLUMNS] <array of theme slugs>',
+		run: ( args ) => {
+			args.shift();
+			const options = {};
+			while ( args[ 0 ].startsWith( '--' ) ) {
+				const flag = args.shift().slice( 2 );
+				const [ key, value ] = flag.split( '=' );
+				const camelCaseKey = key.replace( /-([a-z])/g, ( [ , c ] ) =>
+					c.toUpperCase()
+				);
+				options[ camelCaseKey ] = value ?? true;
+			}
+			const themes = args[ 0 ].split( /[ ,]+/ );
+			validateThemes( themes, options );
+		},
 	},
 	"help": {
 		helpText: 'Displays the main help message.',
@@ -147,6 +173,23 @@ const commands = {
 
 	commands[command].run(args);
 })();
+
+function wrapIndent(
+	text,
+	indent = '        ',
+	newline = '\n',
+	width = process.stdout.columns || 80
+) {
+	return text
+		.match(
+			new RegExp(
+				`.{1,${ width - indent.length - 1 }}(\\s+|$)|[^\\s]+?(\\s+|$)`,
+				'g'
+			)
+		)
+		.map( ( line ) => indent + line )
+		.join( newline );
+}
 
 function showHelp(command = '') {
 	if (!command || !commands.hasOwnProperty(command)) {
@@ -1361,10 +1404,28 @@ async function escapePatterns() {
 	}
 }
 
-async function validateThemes( themes ) {
-	function readJson( file ) {
-		return fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+/**
+ * Validates theme files against their respective JSON schemas.
+ *
+ * @param {string} themes List of theme directories to validate
+ * @param {Object} options Options for the validation
+ * @param {string} options.format Output format (table, json, dir)
+ * @param {string} options.color Colorize output (auto, always, never)
+ * @param {number} options.tableWidth Width of the table output
+ */
+async function validateThemes( themes, { format, color, tableWidth } ) {
+	let colorizeDirOutput;
+	switch (color) {
+		case 'always':
+			colorizeDirOutput = true;
+			chalk.level = 1;
+			break;
+		case 'never':
+			colorizeDirOutput = false;
+			chalk.level = 0;
+			break;
 	}
+
 	async function loadSchema( uri ) {
 		if ( ! uri || ! URL.canParse( uri ) ) {
 			return {
@@ -1379,9 +1440,9 @@ async function validateThemes( themes ) {
 		}
 		throw new Error( `Unsupported schema protocol: ${ url.protocol }` );
 	}
+
 	const ajvOptions = {
-		strict: false, // TODO: Evaluate cases where this can be true.
-		allowMatchingProperties: true,
+		strict: false,
 		allErrors: true,
 		loadSchema,
 	};
@@ -1389,9 +1450,11 @@ async function validateThemes( themes ) {
 		'http://json-schema.org/draft-07/schema#': new Ajv( ajvOptions ),
 		'http://json-schema.org/draft-04/schema#': new AjvDraft04( ajvOptions ),
 	};
-	const errors = [];
-	const warnings = [];
+
 	const progress = startProgress( themes.length );
+
+	let problems = [];
+	let errored = false;
 	for ( const themeSlug of themes ) {
 		const styleCss = await fs.promises.readFile(
 			`${ themeSlug }/style.css`,
@@ -1401,63 +1464,243 @@ async function validateThemes( themes ) {
 			styleCss,
 			'Requires at least'
 		);
-		for ( const file of [
-			`${ themeSlug }/theme.json`,
-			...glob.sync( `${ themeSlug }/styles/*.json` ),
-		] ) {
-			let schemaUri;
-			try {
-				const data = await readJson( file );
-				if ( requiresAtLeast ) {
-					schemaUri = `https://schemas.wp.org/wp/${ requiresAtLeast }/theme.json`;
-					if ( data.$schema !== schemaUri ) {
-						warnings.push( {
+
+		const validations = await Promise.all( [
+			glob( `${ themeSlug }/styles/*.json` ).then( ( paths ) => [
+				'theme',
+				Array.prototype.concat( `${ themeSlug }/theme.json`, paths ),
+			] ),
+			glob( `${ themeSlug }/assets/fonts/*.json` ).then( ( paths ) => [
+				'font-collection',
+				paths,
+			] ),
+		] );
+
+		for ( const [ schemaType, paths ] of validations ) {
+			for ( const file of paths ) {
+				let schemaUri = `https://schemas.wp.org/wp/${ requiresAtLeast }/${ schemaType }.json`;
+				try {
+					const data = await fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+					if ( ! requiresAtLeast ) {
+						schemaUri = data.$schema;
+						problems.push( {
+							type: 'warning',
 							file,
-							warning: [
+							schema: schemaUri,
+							data: [
+								{
+									message:
+										'missing "Requires at least" metadata in style.css',
+								},
+							],
+						} );
+					} else if ( data.$schema !== schemaUri ) {
+						problems.push( {
+							type: 'warning',
+							file,
+							schema: schemaUri,
+							data: [
 								{
 									actual: data.$schema,
 									expected: schemaUri,
-									validatingWith: schemaUri,
-									message: 'mismatched $schema with "Requires at least" metadata in style.css',
+									message:
+										'mismatched $schema with "Requires at least" metadata in style.css',
 								},
 							],
 						} );
 					}
-				} else {
-					schemaUri = data.$schema;
-					warnings.push( {
+					const schema = await loadSchema( schemaUri );
+					const validate =
+						await ajv[ schema.$schema ].compileAsync( schema );
+					if ( ! validate( data ) ) {
+						throw validate.errors;
+					}
+				} catch ( error ) {
+					errored = true;
+					problems.push( {
+						type: 'error',
 						file,
-						warning: [
-							{
-								validatingWith: schemaUri,
-								message:
-									'missing "Requires at least" metadata in style.css',
-							},
-						],
+						schema: schemaUri,
+						data: Array.isArray( error ) ? error : [ error ],
 					} );
 				}
-				const schema = await loadSchema( schemaUri );
-				const validate =
-					await ajv[ schema.$schema ].compileAsync( schema );
-				if ( ! validate( data ) ) {
-					throw validate.errors;
-				}
-			} catch ( error ) {
-				errors.push( { file, schema: schemaUri, error } );
 			}
 		}
 		progress.increment();
 	}
-	if ( warnings.length ) {
-		console.dir( warnings, { depth: null } );
+
+	if ( problems.length ) {
+		switch ( format ) {
+			case 'json':
+				console.log( JSON.stringify( problems, null, 2 ) );
+				break;
+			case 'dir':
+				console.dir( problems, { depth: null, colors: colorizeDirOutput } );
+				break;
+			default:
+				console.log(
+					problemsToTable( problems, { tableWidth } )
+				);
+		}
 	}
-	if ( errors.length ) {
-		console.dir( errors, { depth: null } );
+
+	if ( errored ) {
+		if ( process.stdout.isTTY && process.stderr.isTTY ) {
+			console.error( chalk.red( 'Validation failed.' ) );
+		}
 		process.exit( 1 );
+	}
+
+	if ( process.stdout.isTTY ) {
+		console.log( chalk.green( 'Validation passed.' ) );
 	}
 }
 
+/**
+ * Similar to Object.entries, but includes non-enumerable properties and
+ * traverses the prototype chain.
+ *
+ * @param {Object} obj Any object
+ * @return {Array<[string, any]>} An array of key-value pairs
+ */
+function objectOwnPropertiesEntries( obj ) {
+	const visited = new Set();
+	const propertyNames = new Set();
+
+	let currentObj = obj;
+	while ( currentObj !== null ) {
+		if ( visited.has( currentObj ) ) {
+			break;
+		}
+		visited.add( currentObj );
+
+		for ( const name of Object.getOwnPropertyNames( currentObj ) ) {
+			propertyNames.add( name );
+		}
+
+		currentObj = Object.getPrototypeOf( currentObj );
+	}
+
+	return [ ...propertyNames ].map( ( key ) => [ key, obj[ key ] ] );
+}
+
+/**
+ * @typedef {Object} Problem
+ * @param {'warning'|'error'} type Type of problem
+ * @param {string} file File path that is being validated
+ * @param {string} schema Schema URI that is being used for validation
+ * @param {Object[]} data Array of validation problems
+ */
+
+/**
+ * Converts an object into a table format. Non-primitives are filtered out.
+ *
+ * Example:
+ *   objectToTable( {
+ *     keyOne: 'value1',
+ *     keyTwo: 'value2',
+ *     keyThree: 3,
+ *     fn: () => {},
+ *     obj: {},
+ *   } )
+ *   // Returns:
+ *   // 'key one   : value1\n' +
+ *   // 'key two   : value2\n' +
+ *   // 'key three : 3'
+ *
+ * @param {Object} obj Object to convert into a table
+ *
+ * @return {string} Table string
+ */
+function objectToTable( obj ) {
+	const data = objectOwnPropertiesEntries( obj )
+		.filter( ( [ , value ] ) => Object( value ) !== value )
+		.map( ( [ key, value ] ) => [
+			key.replace( /([A-Z0-9])/g, ' $1' ).toLowerCase(),
+			value,
+		] );
+	const options = {
+		columns: [ { paddingLeft: 0 }, { paddingRight: 0 } ],
+		border: getBorderCharacters( 'void' ), // No border, modified below.
+		drawHorizontalLine: () => false,
+	};
+	options.border.bodyJoin = ':';
+	return table( data, options ).slice( 0, -1 ); // Remove trailing newline.
+}
+
+/**
+ * Generates a table in the following format.
+ *
+ * ╔═══════════════════════════════════════════════════╤═══════════════════════╗
+ * ║ warning                                           │ warning key 0 : value ║
+ * ║ file   : Example/theme.json                       │ warning key 1 : value ║
+ * ║ schema : https://schemas.wp.org/wp/X.Y/theme.json │ warning key 2 : value ║
+ * ╟───────────────────────────────────────────────────┼───────────────────────╢
+ * ║ error                                             │ error 0 key 0 : value ║
+ * ║ file   : Example/styles/theme.json                │ error 0 key 1 : value ║
+ * ║ schema : https://schemas.wp.org/wp/X.Y/theme.json │ error 0 key 2 : value ║
+ * ║                                                   ├───────────────────────╢
+ * ║                                                   │ error 1 key 0 : value ║
+ * ║                                                   │ error 1 key 1 : value ║
+ * ║                                                   │ error 1 key 2 : value ║
+ * ║                                                   ├───────────────────────╢
+ * ║                                                   │ error 2 key 0 : value ║
+ * ║                                                   │ error 2 key 1 : value ║
+ * ║                                                   │ error 2 key 2 : value ║
+ * ╚═══════════════════════════════════════════════════╧═══════════════════════╝
+ *
+ * It has a very basic dynamic column width calculation where the first column
+ * expands to the content and the second column uses the remaining width of the
+ * terminal. Each column has a minimum width of 20 characters.
+ *
+ * @param {Problem[]} problems List of problems to format
+ *
+ * @return {string} Table string
+ */
+function problemsToTable( problems, options ) {
+	const tableWidth = options.tableWidth || process.stdout.columns || 120;
+	const paddingAndBorderWidth = '║  │  ║'.length;
+	const columnMinWidth = 20;
+	const userConfig = {
+		columns: [
+			{ width: columnMinWidth },
+			{ width: tableWidth - columnMinWidth - paddingAndBorderWidth },
+		],
+		spanningCells: [],
+	};
+	const tableData = [];
+	for ( const { type, file, schema, data } of problems ) {
+		const rows = data.map( ( m ) => [ '', objectToTable( m ) ] );
+		const color = type === 'warning' ? 'yellow' : 'red';
+		const col1data = [
+			chalk[ color ]( type ),
+			`file   : ${ file }`,
+			`schema : ${ schema }`,
+		];
+		rows[ 0 ][ 0 ] = col1data.join( '\n' );
+		tableData.push( ...rows );
+		userConfig.spanningCells.push( {
+			row: tableData.length - rows.length,
+			col: 0,
+			rowSpan: rows.length,
+		} );
+		userConfig.columns[ 0 ].width = Math.max(
+			userConfig.columns[ 0 ].width,
+			...col1data.map( ( s ) => s.length )
+		);
+		userConfig.columns[ 1 ].width = Math.max(
+			columnMinWidth,
+			tableWidth - userConfig.columns[ 0 ].width - paddingAndBorderWidth
+		);
+	}
+	return table( tableData, userConfig );
+}
+
 function startProgress(length) {
+	if (!process.stdout.isTTY) {
+		return { increment() {} };
+	}
+
 	let current = 0;
 	function render() {
 		const [progress, percentage] = progressbar.filledBar(length, current);
