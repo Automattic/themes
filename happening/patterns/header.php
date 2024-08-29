@@ -19,13 +19,13 @@
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0rem","padding":{"top":"0.5rem","right":"0rem","bottom":"0.5rem","left":"0rem"}},"border":{"top":{"width":"2px"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide" style="border-top-width:2px;padding-top:0.5rem;padding-right:0rem;padding-bottom:0.5rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","lineHeight":"1"}}} -->
-<p style="line-height:1;text-transform:uppercase"><?php echo __('5K relay', 'happening');?></p>
+<p style="line-height:1;text-transform:uppercase"><?php esc_html_e('5K relay', 'happening');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"0rem","padding":{"top":"0.5rem","right":"0rem","bottom":"0.5rem","left":"0rem"}},"border":{"top":{"width":"2px"},"right":[],"bottom":[],"left":[]}},"layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 <div class="wp-block-group alignwide" style="border-top-width:2px;padding-top:0.5rem;padding-right:0rem;padding-bottom:0.5rem;padding-left:0rem"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","lineHeight":"1"}}} -->
-<p style="line-height:1;text-transform:uppercase"><?php echo __('20 Sep 2024, Worldwide.', 'happening');?></p>
+<p style="line-height:1;text-transform:uppercase"><?php esc_html_e('20 Sep 2024, Worldwide.', 'happening');?></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
