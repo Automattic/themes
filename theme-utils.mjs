@@ -2,9 +2,8 @@ import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
 import util from 'util';
 import open from 'open';
-import { Readable } from 'stream';
-import inquirer from 'inquirer';
 import process from 'process';
+import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
 import { table, getBorderCharacters } from 'table';
 import progressbar from 'string-progressbar';
@@ -12,7 +11,7 @@ import semver from 'semver';
 import Ajv from 'ajv';
 import AjvDraft04 from 'ajv-draft-04';
 import glob from 'fast-glob';
-import chalk from 'chalk';
+import chalk, { Chalk } from 'chalk';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
@@ -1416,6 +1415,7 @@ async function escapePatterns() {
  * @param {number} options.tableWidth Width of the table output
  */
 async function validateThemes( themes, { format, color, tableWidth } ) {
+	util.inspect.styles.name = 'whiteBright';
 	switch ( color ) {
 		case 'always':
 			chalk.level = 1;
@@ -1424,21 +1424,62 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 			chalk.level = 0;
 			break;
 	}
-	const colorizeOutput = chalk.level > 0;
+	const isColorized = chalk.level > 0;
+
+	const chalkStr = new Chalk( {
+		level: ! format || format === 'table' ? 1 : 0,
+	} );
+
+	function readJson( file ) {
+		return fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+	}
 
 	async function loadSchema( uri ) {
-		if ( ! uri || ! URL.canParse( uri ) ) {
-			return {
-				$schema: 'http://json-schema.org/draft-07/schema#',
-				type: 'object',
-				required: [ '$schema' ],
+		if ( ! uri ) {
+			// prettier-ignore
+			throw {
+				url: uri,
+				message: `Missing $schema URI: ${ chalkStr.whiteBright( uri ) }`,
 			};
 		}
-		const url = new URL( uri );
-		if ( url.protocol === 'http:' || url.protocol === 'https:' ) {
-			return fetch( url ).then( ( res ) => res.json() );
+
+		let schema;
+		if ( URL.canParse( uri ) ) {
+			const url = new URL( uri );
+			switch ( url.protocol ) {
+				case 'http:':
+				case 'https:':
+					{
+						const res = await fetch( url );
+						if ( ! res.ok ) {
+							throw res;
+						}
+						schema = await res.json();
+					}
+					break;
+				case 'file:': {
+					schema = readJson(
+						path.resolve( dirname, url.href.slice( 7 ) )
+					);
+					break;
+				}
+				default:
+					// prettier-ignore
+					throw {
+						url: uri,
+						message: `Unsupported ${ chalkStr.whiteBright( '$schema' ) } protocol: ${ chalkStr.whiteBright( url.protocol + '//' ) }`,
+					};
+			}
+		} else {
+			schema = await readJson( path.resolve( dirname, uri ) );
 		}
-		throw new Error( `Unsupported schema protocol: ${ url.protocol }` );
+
+		// Handle schemastore $ref for older schemas
+		if ( ! schema.$schema && typeof schema.$ref === 'string' ) {
+			return loadSchema( schema.$ref );
+		}
+
+		return schema;
 	}
 
 	const ajvOptions = {
@@ -1457,17 +1498,46 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	let hasError = false;
 	for ( const themeSlug of themes ) {
 		const styleCssPath = `${ themeSlug }/style.css`;
+
+		if ( ! fs.existsSync( themeSlug ) ) {
+			problems.push(
+				createProblem( {
+					type: 'error',
+					theme: themeSlug,
+					file: chalkStr.gray( 'undefined' ),
+					data: { message: `the theme does not exist` },
+				} )
+			);
+			progress.increment();
+			continue;
+		}
+
+		if ( ! fs.existsSync( styleCssPath ) ) {
+			problems.push(
+				createProblem( {
+					type: 'error',
+					file: styleCssPath,
+					data: { message: `the theme is missing a style.css file` },
+				} )
+			);
+			progress.increment();
+			continue;
+		}
+
 		const styleCss = await fs.promises.readFile( styleCssPath, 'utf-8' );
-		const wpVersion = getThemeMetadata( styleCss, 'Requires at least' );
+		const themeRequires = getThemeMetadata( styleCss, 'Requires at least' );
+		const wpVersion = themeRequires
+			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
+			: undefined;
 
 		if ( ! wpVersion ) {
 			problems.push(
 				createProblem( {
-					type: 'warning',
+					type: 'error',
 					file: styleCssPath,
 					data: {
 						// prettier-ignore
-						message: `missing ${ chalk.green( "'Requires at least'" ) } header metadata`,
+						message: `missing ${ chalkStr.green( "'Requires at least'" ) } header metadata`,
 					},
 				} )
 			);
@@ -1487,34 +1557,49 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		for ( const { schemaType, paths } of validations ) {
 			for ( const file of paths ) {
 				try {
-					const data = await fs.promises
-						.readFile( file, 'utf-8' )
-						.then( JSON.parse );
-					const schemaUri = wpVersion
+					const data = await readJson( file );
+					let schemaUri = wpVersion
 						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
 						: data.$schema;
+
+					if ( wpVersion && semver.lt( `${ wpVersion }.0`, '5.9.0' ) ) {
+						schemaUri = data.$schema;
+						problems.push(
+							createProblem( {
+								type: 'warning',
+								file,
+								// prettier-ignore
+								data: {
+									actual: chalkStr.yellow( wpVersion ),
+									expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
+									message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
+								},
+							} )
+						);
+					}
+
 					if ( data.$schema !== schemaUri ) {
 						problems.push(
 							createProblem( {
 								type: 'warning',
 								file,
+								// prettier-ignore
 								data: {
 									actual: data.$schema,
 									expected: schemaUri,
-									// prettier-ignore
-									message: `the ${ chalk.whiteBright( '$schema' ) } version does not match style.js ${ chalk.green( "'Requires at least'" ) } version`,
+									message: `the ${ chalkStr.whiteBright( '$schema' ) } version does not match style.css ${ chalkStr.green( "'Requires at least'" ) } version`,
 								},
 							} )
 						);
 					}
+
 					const schema = await loadSchema( schemaUri );
 					const validate =
 						await ajv[ schema.$schema ].compileAsync( schema );
 					if ( ! validate( data ) ) {
-						hasError = true;
 						problems.push(
 							createProblem( {
-								type: 'error',
+								type: 'warning',
 								file,
 								data: validate.errors,
 								metadata: { schema: schemaUri },
@@ -1529,6 +1614,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				}
 			}
 		}
+
 		progress.increment();
 	}
 
@@ -1542,7 +1628,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 				output = util.inspect( problems, {
 					depth: null,
 					maxArrayLength: null,
-					colors: colorizeOutput,
+					colors: isColorized,
 				} );
 				break;
 			case 'table':
@@ -1559,13 +1645,13 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 
 	if ( hasError ) {
 		if ( process.stdout.isTTY && process.stderr.isTTY ) {
-			console.error( chalk.red( 'Validation failed.' ) );
+			console.error( chalk.red( '\n\nValidation failed.' ) );
 		}
 		process.exit( 1 );
 	}
 
 	if ( process.stdout.isTTY ) {
-		console.log( chalk.green( 'Validation passed.' ) );
+		console.log( chalk.green( '\n\nValidation passed.' ) );
 	}
 }
 
@@ -1582,15 +1668,24 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
  * Creates a problem object.
  * @param {Object} options Options for creating a problem
  * @param {'warning'|'error'} options.type Type of problem
+ * @param {string?} options.theme Name of the theme
  * @param {string} options.file File path where the problem exists
  * @prop {Object} metadata Additional metadata to include in logging
  * @prop {Object[]} data Array of validation problems
  * @return {Problem} Problem object
  */
 function createProblem( options ) {
-	const { type, metadata, data: problemData, file: themeFile } = options;
+	const {
+		type,
+		metadata,
+		data: problemData,
+		theme: themeOverride,
+		file: themeFile,
+	} = options;
 	const separatorIndex = themeFile.indexOf( '/' );
-	const theme = themeFile.slice( 0, separatorIndex );
+	const theme = themeOverride
+		? themeOverride.charAt( 0 ).toUpperCase() + themeOverride.slice( 1 )
+		: themeFile.charAt( 0 ).toUpperCase() + themeFile.slice( 1, separatorIndex );
 	const file = themeFile.slice( separatorIndex + 1 );
 	const data = Array.isArray( problemData ) ? problemData : [ problemData ];
 	return { type, theme, file, metadata, data };
@@ -1625,7 +1720,7 @@ function objectOwnPropertiesEntries( obj ) {
 }
 
 /**
- * Converts an object into a table format. Non-primitives are filtered out.
+ * Converts an object into a borderless table format.
  *
  * Example:
  *   objectToTable( {
@@ -1641,11 +1736,11 @@ function objectOwnPropertiesEntries( obj ) {
  *   // 'key three : 3'
  *
  * @param {Object} obj Object to convert into a table
+ * @param {Object} [extraOptions] Extra options for the table
  *
  * @return {string} Table string
  */
-function objectToTable( obj = {} ) {
-	util.inspect.styles.name = 'whiteBright';
+function objectToTable( obj = {}, extraOptions ) {
 	const data = objectOwnPropertiesEntries( obj )
 		.filter(
 			( [ key, value ] ) =>
@@ -1664,12 +1759,22 @@ function objectToTable( obj = {} ) {
 				? util.inspect( value, { colors: chalk.level > 0 } )
 				: value,
 		] );
+
 	const options = {
 		columns: [ { paddingLeft: 0 }, { paddingRight: 0 } ],
 		border: getBorderCharacters( 'void' ), // No border, modified below.
 		drawHorizontalLine: () => false,
 	};
 	options.border.bodyJoin = ':';
+
+	// Hack for alignment with other tables.
+	if ( extraOptions?.columns?.[ 0 ]?.minWidth ) {
+		options.columns[ 0 ].width = Math.max(
+			extraOptions.columns[ 0 ].minWidth,
+			...data.map( ( [ key ] ) => key.length )
+		);
+	}
+
 	return table( data, options ).slice( 0, -1 ); // Remove trailing newline.
 }
 
@@ -1677,21 +1782,17 @@ function objectToTable( obj = {} ) {
  * Generates a table in the following format.
  *
  * ╔═══════════════════════════════════════════════════╤═══════════════════════╗
- * ║ warning                                           │ warning key 0 : value ║
- * ║ file   : Example/theme.json                       │ warning key 1 : value ║
- * ║ schema : https://schemas.wp.org/wp/X.Y/theme.json │ warning key 2 : value ║
+ * ║ WARNING                                           │ Warning key 0 : value ║
+ * ║ Theme : Example                                   │ Warning key 1 : value ║
+ * ║ File  : style.css                                 │                       ║
  * ╟───────────────────────────────────────────────────┼───────────────────────╢
- * ║ error                                             │ error 0 key 0 : value ║
- * ║ file   : Example/styles/theme.json                │ error 0 key 1 : value ║
- * ║ schema : https://schemas.wp.org/wp/X.Y/theme.json │ error 0 key 2 : value ║
- * ║                                                   ├───────────────────────╢
- * ║                                                   │ error 1 key 0 : value ║
- * ║                                                   │ error 1 key 1 : value ║
- * ║                                                   │ error 1 key 2 : value ║
- * ║                                                   ├───────────────────────╢
- * ║                                                   │ error 2 key 0 : value ║
- * ║                                                   │ error 2 key 1 : value ║
- * ║                                                   │ error 2 key 2 : value ║
+ * ║ ERROR                                             │ Error 0 key 0 : value ║
+ * ║ Theme  : Example                                  │ Error 0 key 1 : value ║
+ * ║ File   : theme.json                               │ Error 0 key 2 : value ║
+ * ║ Schema : https://schemas.wp.org/wp/X.Y/theme.json ├───────────────────────╢
+ * ║                                                   │ Error 1 key 0 : value ║
+ * ║                                                   │ Error 1 key 1 : value ║
+ * ║                                                   │ Error 1 key 2 : value ║
  * ╚═══════════════════════════════════════════════════╧═══════════════════════╝
  *
  * It has a very basic dynamic column width calculation where the first column
@@ -1706,6 +1807,7 @@ function problemsToTable( problems, options ) {
 	const tableWidth = options.tableWidth || process.stdout.columns || 120;
 	const paddingAndBorderWidth = '║  │  ║'.length;
 	const columnMinWidth = 20;
+
 	const userConfig = {
 		columns: [
 			{ width: columnMinWidth },
@@ -1714,28 +1816,33 @@ function problemsToTable( problems, options ) {
 		spanningCells: [],
 	};
 	const tableData = [];
+
 	for ( const { type, theme, file, data, metadata } of problems ) {
 		const metadataTable = metadata ? objectToTable( metadata ) : '';
-		const firstPart = metadataTable.indexOf( ':' ) - 1;
-		const pad = Math.max( 'theme'.length, firstPart );
-		let col1data = chalk[ type === 'warning' ? 'yellow' : 'red' ].bold(
-			type.toUpperCase()
+		const titleTable = objectToTable(
+			{ theme, file },
+			{ columns: [ { minWidth: metadataTable.indexOf( ':' ) - 1 } ] }
 		);
-		col1data += chalk.whiteBright(
-			`\n${ 'Theme'.padEnd( pad ) } : ${ theme }`
-		);
-		col1data += chalk.whiteBright(
-			`\n${ 'File'.padEnd( pad ) } : ${ file }`
-		);
-		col1data += metadata ? '\n' + metadataTable : '';
+
 		const rows = data.map( ( m ) => [ '', objectToTable( m ) ] );
-		rows[ 0 ][ 0 ] = col1data;
+		rows[ 0 ][ 0 ] = [
+			chalk[ type === 'warning' ? 'yellow' : 'red' ].bold(
+				type.toUpperCase()
+			),
+			chalk.whiteBright( titleTable ),
+			metadataTable,
+		]
+			.filter( Boolean )
+			.join( '\n' );
+
 		tableData.push( ...rows );
+
 		userConfig.spanningCells.push( {
 			row: tableData.length - rows.length,
 			col: 0,
 			rowSpan: rows.length,
 		} );
+
 		userConfig.columns[ 0 ].width = Math.max(
 			userConfig.columns[ 0 ].width,
 			...rows[ 0 ][ 0 ].split( '\n' ).map( ( s ) => s.length )
@@ -1745,7 +1852,8 @@ function problemsToTable( problems, options ) {
 			tableWidth - userConfig.columns[ 0 ].width - paddingAndBorderWidth
 		);
 	}
-	return table( tableData, userConfig );
+
+	return table( tableData, userConfig ).slice( 0, -1 ); // Remove trailing newline.
 }
 
 function startProgress(length) {
