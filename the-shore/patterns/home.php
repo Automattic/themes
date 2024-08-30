@@ -17,9 +17,11 @@
 <figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/line-1.png" alt="<?php echo __('', 'the-shore');?>" style="width:380px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}}} -->
-<h2 class="wp-block-heading alignwide has-text-align-center" style="font-style:normal;font-weight:300"><?php echo __('A private compound on the coast, The Shore invites you into an elegant contemporary space that is bright and airy by day, and intriguing by night, lit up with romantic, shimmering lights.', 'the-shore');?></h2>
-<!-- /wp:heading -->
+<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"typography":{"lineHeight":"1.13"}},"textColor":"primary","fontSize":"large"} -->
+<p class="has-text-align-center has-primary-color has-text-color has-link-color has-large-font-size" style="line-height:1.13"><?php echo __('A private compound on the coast, The Shore invites you into an elegant contemporary space that is bright and airy by day, and intriguing by night, lit up with romantic, shimmering lights.', 'the-shore');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:image {"width":"400px","sizeSlug":"full","linkDestination":"none","align":"center"} -->
 <figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_2.jpg" alt="<?php echo __('A beach umbrella in front of the sea', 'the-shore');?>" style="width:400px"/></figure>
@@ -31,9 +33,12 @@
 <!-- /wp:group -->
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_3.jpg","dimRatio":40,"overlayColor":"black","isUserOverlayColor":true,"minHeight":600,"minHeightUnit":"px","style":{"spacing":{"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-40 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('Aerial shot of a small tropical island with a hotel between the trees', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_3.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
-<h2 class="wp-block-heading has-text-align-center has-large-font-size" style="font-style:normal;font-weight:300"><?php echo __('Immerse yourself in a luxurious and sophisticated lifestyle amidst the serene beauty of Turks and Caicos, one of the world’s most sought-after destinations.', 'the-shore');?></h2>
-<!-- /wp:heading --></div></div>
+<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-40 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('Aerial shot of a small tropical island with a hotel between the trees', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_3.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+<!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"lineHeight":"1.13"}},"textColor":"base","fontSize":"large"} -->
+<p class="has-text-align-center has-base-color has-text-color has-link-color has-large-font-size" style="line-height:1.13"><?php echo __('Immerse yourself in a luxurious and sophisticated lifestyle amidst the serene beauty of Turks and Caicos, one of the world’s most sought-after destinations.', 'the-shore');?></p>
+<!-- /wp:paragraph -->
+</div>
+</div>
 <!-- /wp:cover -->
 
 <!-- wp:group {"metadata":{"name":"Rooms"},"style":{"spacing":{"blockGap":"2.8rem","padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->
@@ -81,13 +86,14 @@
 <!-- /wp:group -->
 
 <!-- wp:cover {"url":"<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_6.jpg","dimRatio":20,"overlayColor":"black","isUserOverlayColor":true,"minHeight":600,"minHeightUnit":"px","style":{"spacing":{"padding":{"right":"6vw","left":"6vw"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('A waiter filling up some wine glasses', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_6.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em"}},"fontSize":"x-small","fontFamily":"commissioner"} -->
-<p class="has-commissioner-font-family has-x-small-font-size" style="letter-spacing:0.1em;text-transform:uppercase"><?php echo __('Bars &amp; Restaurant', 'the-shore');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"textAlign":"left","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"large"} -->
-<h2 class="wp-block-heading has-text-align-left has-large-font-size" style="font-style:normal;font-weight:300"><?php echo __('Enjoy a cocktail at our stylish bar, or savor a fine dining experience with a backdrop of stunning ocean views.', 'the-shore');?></h2>
+<div class="wp-block-cover" style="padding-right:6vw;padding-left:6vw;min-height:600px"><span aria-hidden="true" class="wp-block-cover__background has-black-background-color has-background-dim-20 has-background-dim"></span><img class="wp-block-cover__image-background" alt="<?php echo __('A waiter filling up some wine glasses', 'the-shore');?>" src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/hotel_image_6.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
+<!-- wp:heading {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontStyle":"normal","fontWeight":"300"}},"fontSize":"x-small","fontFamily":"commissioner"} -->
+<h2 class="wp-block-heading has-commissioner-font-family has-x-small-font-size" style="font-style:normal;font-weight:300;letter-spacing:0.1em;text-transform:uppercase"><?php echo __('Bars &amp; Restaurant', 'the-shore');?></h2>
 <!-- /wp:heading -->
+
+ <!-- wp:paragraph {"align":"left","fontSize":"large"} -->
+<p class="has-text-align-left has-large-font-size"><?php echo __('Enjoy a cocktail at our stylish bar, or savor a fine dining experience with a backdrop of stunning ocean views.', 'the-shore');?></p>
+<!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"textColor":"base","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"className":"is-style-outline"} -->
@@ -105,9 +111,11 @@
 <figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/line-1.png" alt="<?php echo __('', 'the-shore');?>" style="width:380px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}}} -->
-<h2 class="wp-block-heading alignwide has-text-align-center" style="font-style:normal;font-weight:300"><?php echo __('Lounge by our crystal-clear pool, take a leisurely stroll along the powdery white sands, or dive into the warm Caribbean waters. Whether you seek tranquility or excitement, our pool and beach amenities cater to all your desires.', 'the-shore');?></h2>
-<!-- /wp:heading -->
+<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"typography":{"lineHeight":"1.13"}},"textColor":"primary","fontSize":"large"} -->
+<p class="has-text-align-center has-primary-color has-text-color has-link-color has-large-font-size" style="line-height:1.13"><?php echo __('Lounge by our crystal-clear pool, take a leisurely stroll along the powdery white sands, or dive into the warm Caribbean waters. Whether you seek tranquility or excitement, our pool and beach amenities cater to all your desires.', 'the-shore');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:spacer {"height":"20px"} -->
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -149,13 +157,15 @@
 <figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/line_light.png" alt="<?php echo __('', 'the-shore');?>" style="width:380px"/></figure>
 <!-- /wp:image -->
 
-<!-- wp:paragraph {"align":"center","style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontStyle":"normal","fontWeight":"500"}},"fontSize":"x-small","fontFamily":"commissioner"} -->
-<p class="has-text-align-center has-commissioner-font-family has-x-small-font-size" style="font-style:normal;font-weight:500;letter-spacing:0.1em;text-transform:uppercase"><?php echo __('The Shore Spa®', 'the-shore');?></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"textAlign":"center","align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"300"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base"} -->
-<h2 class="wp-block-heading alignwide has-text-align-center has-base-color has-text-color has-link-color" style="font-style:normal;font-weight:300"><?php echo __('Experience a holistic approach to wellness in our tranquil spa setting, where every detail is crafted for your ultimate comfort.', 'the-shore');?></h2>
+<!-- wp:heading {"textAlign":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"textTransform":"uppercase","letterSpacing":"0.1em"}},"textColor":"base","fontSize":"x-small","fontFamily":"commissioner"} -->
+<h2 class="wp-block-heading has-text-align-center has-base-color has-text-color has-link-color has-commissioner-font-family has-x-small-font-size" style="letter-spacing:0.1em;text-transform:uppercase"><?php echo __('The Shore Spa®', 'the-shore');?></h2>
 <!-- /wp:heading -->
+
+<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"lineHeight":"1.13"}},"textColor":"primary","fontSize":"large"} -->
+<p class="has-text-align-center has-base-color has-text-color has-link-color has-large-font-size" style="line-height:1.13"><?php echo __('Experience a holistic approach to wellness in our tranquil spa setting, where every detail is crafted for your ultimate comfort.', 'the-shore');?></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
 <!-- wp:spacer {"height":"20px"} -->
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>

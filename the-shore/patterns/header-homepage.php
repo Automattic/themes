@@ -34,8 +34,8 @@
 <!-- /wp:column -->
 
 <!-- wp:column {"width":"66.66%"} -->
-<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","letterSpacing":"-0.02em"}},"fontSize":"x-large"} -->
-<h2 class="wp-block-heading has-x-large-font-size" style="font-style:normal;font-weight:400;letter-spacing:-0.02em"><?php echo __('Welcome to The Shore', 'the-shore');?></h2>
+<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":1,"style":{"typography":{"fontStyle":"normal","fontWeight":"400","letterSpacing":"-0.02em"}},"fontSize":"x-large"} -->
+<h1 class="wp-block-heading has-x-large-font-size" style="font-style:normal;font-weight:400;letter-spacing:-0.02em"><?php echo __('Welcome to The Shore', 'the-shore');?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
