@@ -1452,7 +1452,16 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 					{
 						const res = await fetch( url );
 						if ( ! res.ok ) {
-							throw res;
+							throw {
+								type: res.type,
+								url: res.url,
+								redirected: res.redirected,
+								status: res.status,
+								ok: res.ok,
+								statusText: res.statusText,
+								headers: res.headers,
+								message: await res.text(),
+							};
 						}
 						schema = await res.json();
 					}
@@ -1500,6 +1509,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		const styleCssPath = `${ themeSlug }/style.css`;
 
 		if ( ! fs.existsSync( themeSlug ) ) {
+			hasError = true;
 			problems.push(
 				createProblem( {
 					type: 'error',
@@ -1513,6 +1523,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		}
 
 		if ( ! fs.existsSync( styleCssPath ) ) {
+			hasError = true;
 			problems.push(
 				createProblem( {
 					type: 'error',
@@ -1529,6 +1540,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		const wpVersion = themeRequires
 			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
 			: undefined;
+		const isSupportedWpVersion = wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' )
 
 		if ( ! wpVersion ) {
 			problems.push(
@@ -1538,6 +1550,21 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 					data: {
 						// prettier-ignore
 						message: `missing ${ chalkStr.green( "'Requires at least'" ) } header metadata`,
+					},
+				} )
+			);
+		}
+
+		if ( ! isSupportedWpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'warning',
+					file: styleCssPath,
+					// prettier-ignore
+					data: {
+						actual: chalkStr.yellow( wpVersion ),
+						expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
+						message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
 					},
 				} )
 			);
@@ -1558,25 +1585,9 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 			for ( const file of paths ) {
 				try {
 					const data = await readJson( file );
-					let schemaUri = wpVersion
+					const schemaUri = isSupportedWpVersion
 						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
 						: data.$schema;
-
-					if ( wpVersion && semver.lt( `${ wpVersion }.0`, '5.9.0' ) ) {
-						schemaUri = data.$schema;
-						problems.push(
-							createProblem( {
-								type: 'warning',
-								file,
-								// prettier-ignore
-								data: {
-									actual: chalkStr.yellow( wpVersion ),
-									expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
-									message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
-								},
-							} )
-						);
-					}
 
 					if ( data.$schema !== schemaUri ) {
 						problems.push(
@@ -1651,7 +1662,11 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	}
 
 	if ( process.stdout.isTTY ) {
-		console.log( chalk.green( '\n\nValidation passed.' ) );
+		if ( problems.length ) {
+			console.log( chalk.yellow( '\n\nValidation passed with warnings.' ) );
+		} else {
+			console.log( chalk.green( '\n\nValidation passed.' ) );
+		}
 	}
 }
 
