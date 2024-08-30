@@ -11,7 +11,7 @@
 <div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group"><!-- wp:site-logo {"width":40,"shouldSyncIcon":false} /-->
 
-<!-- wp:site-title /--></div>
+<!-- wp:site-title {"level":0} /--></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"1rem"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"right"}} -->
