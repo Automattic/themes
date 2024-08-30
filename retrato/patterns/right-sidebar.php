@@ -17,7 +17,7 @@
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/EHemingway_Portrait_1918.jpg" alt="<?php echo __('', 'retrato');?>" style="aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/EHemingway_Portrait_1918.jpg" alt="<?php esc_attr_e('Ernest Hemingway portrait', 'retrato');?>" style="aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group -->
 

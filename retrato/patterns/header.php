@@ -54,7 +54,7 @@
 <!-- wp:column {"width":"33.3%"} -->
 <div class="wp-block-column" style="flex-basis:33.3%"><!-- wp:group {"style":{"spacing":{"padding":{"top":"4rem","right":"0rem","bottom":"0rem","left":"0rem"},"margin":{"top":"0px","bottom":"0px"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="margin-top:0px;margin-bottom:0px;padding-top:4rem;padding-right:0rem;padding-bottom:0rem;padding-left:0rem"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/EHemingway_Portrait_1918.jpg" alt="<?php echo __('', 'retrato');?>"/></figure>
+<figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/images/EHemingway_Portrait_1918.jpg" alt="<?php esc_attr_e('Ernest Hemingway portrait', 'retrato');?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
