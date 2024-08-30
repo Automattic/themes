@@ -1454,75 +1454,75 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	const progress = startProgress( themes.length );
 
 	let problems = [];
-	let errored = false;
+	let hasError = false;
 	for ( const themeSlug of themes ) {
-		const styleCss = await fs.promises.readFile(
-			`${ themeSlug }/style.css`,
-			'utf-8'
-		);
-		const requiresAtLeast = getThemeMetadata(
-			styleCss,
-			'Requires at least'
-		);
+		const styleCssPath = `${ themeSlug }/style.css`;
+		const styleCss = await fs.promises.readFile( styleCssPath, 'utf-8' );
+		const wpVersion = getThemeMetadata( styleCss, 'Requires at least' );
+
+		if ( ! wpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'warning',
+					file: styleCssPath,
+					data: {
+						message: 'missing "Requires at least" header metadata',
+					},
+				} )
+			);
+		}
 
 		const validations = await Promise.all( [
-			glob( `${ themeSlug }/styles/*.json` ).then( ( paths ) => [
-				'theme',
-				Array.prototype.concat( `${ themeSlug }/theme.json`, paths ),
-			] ),
-			glob( `${ themeSlug }/assets/fonts/*.json` ).then( ( paths ) => [
-				'font-collection',
+			glob( `${ themeSlug }/styles/*.json` ).then( ( paths ) => ( {
+				schemaType: 'theme',
+				paths: [ `${ themeSlug }/theme.json`, ...paths ],
+			} ) ),
+			glob( `${ themeSlug }/assets/fonts/*.json` ).then( ( paths ) => ( {
+				schemaType: 'font-collection',
 				paths,
-			] ),
+			} ) ),
 		] );
 
-		for ( const [ schemaType, paths ] of validations ) {
+		for ( const { schemaType, paths } of validations ) {
 			for ( const file of paths ) {
-				let schemaUri = `https://schemas.wp.org/wp/${ requiresAtLeast }/${ schemaType }.json`;
 				try {
 					const data = await fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
-					if ( ! requiresAtLeast ) {
-						schemaUri = data.$schema;
-						problems.push( {
-							type: 'warning',
-							file,
-							schema: schemaUri,
-							data: [
-								{
-									message:
-										'missing "Requires at least" metadata in style.css',
-								},
-							],
-						} );
-					} else if ( data.$schema !== schemaUri ) {
-						problems.push( {
-							type: 'warning',
-							file,
-							schema: schemaUri,
-							data: [
-								{
+					const schemaUri = wpVersion
+						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
+						: data.$schema;
+					if ( data.$schema !== schemaUri ) {
+						problems.push(
+							createProblem( {
+								type: 'warning',
+								file,
+								data: {
 									actual: data.$schema,
 									expected: schemaUri,
 									message:
-										'mismatched $schema with "Requires at least" metadata in style.css',
+										'the $schema version does not match style.js "Requires at least" version',
 								},
-							],
-						} );
+							} )
+						);
 					}
 					const schema = await loadSchema( schemaUri );
 					const validate =
 						await ajv[ schema.$schema ].compileAsync( schema );
 					if ( ! validate( data ) ) {
-						throw validate.errors;
+						hasError = true;
+						problems.push(
+							createProblem( {
+								type: 'error',
+								file,
+								data: validate.errors,
+								metadata: { schema: schemaUri },
+							} )
+						);
 					}
 				} catch ( error ) {
-					errored = true;
-					problems.push( {
-						type: 'error',
-						file,
-						schema: schemaUri,
-						data: Array.isArray( error ) ? error : [ error ],
-					} );
+					hasError = true;
+					problems.push(
+						createProblem( { type: 'error', file, data: error } )
+					);
 				}
 			}
 		}
@@ -1544,7 +1544,7 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		}
 	}
 
-	if ( errored ) {
+	if ( hasError ) {
 		if ( process.stdout.isTTY && process.stderr.isTTY ) {
 			console.error( chalk.red( 'Validation failed.' ) );
 		}
@@ -1554,6 +1554,33 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	if ( process.stdout.isTTY ) {
 		console.log( chalk.green( 'Validation passed.' ) );
 	}
+}
+
+/**
+ * @typedef {Object} Problem
+ * @prop {'warning'|'error'} type Type of problem
+ * @prop {string} theme Name of the theme
+ * @prop {string} file File path, relative to the theme, where the problem exists
+ * @prop {Object} metadata Additional metadata to include in logging
+ * @prop {Object[]} data Array of validation problems
+ */
+
+/**
+ * Creates a problem object.
+ * @param {Object} options Options for creating a problem
+ * @param {'warning'|'error'} options.type Type of problem
+ * @param {string} options.file File path where the problem exists
+ * @prop {Object} metadata Additional metadata to include in logging
+ * @prop {Object[]} data Array of validation problems
+ * @return {Problem} Problem object
+ */
+function createProblem( options ) {
+	const { type, metadata, data: problemData, file: themeFile } = options;
+	const separatorIndex = themeFile.indexOf( '/' );
+	const theme = themeFile.slice( 0, separatorIndex );
+	const file = themeFile.slice( separatorIndex + 1 );
+	const data = Array.isArray( problemData ) ? problemData : [ problemData ];
+	return { type, theme, file, metadata, data };
 }
 
 /**
@@ -1585,14 +1612,6 @@ function objectOwnPropertiesEntries( obj ) {
 }
 
 /**
- * @typedef {Object} Problem
- * @param {'warning'|'error'} type Type of problem
- * @param {string} file File path that is being validated
- * @param {string} schema Schema URI that is being used for validation
- * @param {Object[]} data Array of validation problems
- */
-
-/**
  * Converts an object into a table format. Non-primitives are filtered out.
  *
  * Example:
@@ -1612,11 +1631,18 @@ function objectOwnPropertiesEntries( obj ) {
  *
  * @return {string} Table string
  */
-function objectToTable( obj ) {
+function objectToTable( obj = {} ) {
 	const data = objectOwnPropertiesEntries( obj )
 		.filter( ( [ , value ] ) => Object( value ) !== value )
 		.map( ( [ key, value ] ) => [
-			key.replace( /([A-Z0-9])/g, ' $1' ).toLowerCase(),
+			key
+				.split( /(?=[A-Z0-9])/g )
+				.map( ( part, i ) =>
+					i === 0
+						? part.charAt( 0 ).toUpperCase() + part.slice( 1 )
+						: part.charAt( 0 ).toLowerCase() + part.slice( 1 )
+				)
+				.join( ' ' ),
 			value,
 		] );
 	const options = {
@@ -1669,15 +1695,16 @@ function problemsToTable( problems, options ) {
 		spanningCells: [],
 	};
 	const tableData = [];
-	for ( const { type, file, schema, data } of problems ) {
+	for ( const { type, theme, file, data, metadata } of problems ) {
+		const metadataTable = metadata ? objectToTable( metadata ) : '';
+		const firstPart = metadataTable.indexOf( ':' ) - 1;
+		const pad = Math.max( 'theme'.length, firstPart );
+		let col1data = chalk[ type === 'warning' ? 'yellow' : 'red' ]( type.toUpperCase() );
+		col1data += '\n' + chalk( `${ 'Theme'.padEnd( pad ) } : ${ theme }` );
+		col1data += '\n' + chalk( `${ 'File'.padEnd( pad ) } : ${ file }` );
+		col1data += metadata ? '\n' + chalk.gray( metadataTable ) : '';
 		const rows = data.map( ( m ) => [ '', objectToTable( m ) ] );
-		const color = type === 'warning' ? 'yellow' : 'red';
-		const col1data = [
-			chalk[ color ]( type ),
-			`file   : ${ file }`,
-			`schema : ${ schema }`,
-		];
-		rows[ 0 ][ 0 ] = col1data.join( '\n' );
+		rows[ 0 ][ 0 ] = col1data;
 		tableData.push( ...rows );
 		userConfig.spanningCells.push( {
 			row: tableData.length - rows.length,
@@ -1686,7 +1713,7 @@ function problemsToTable( problems, options ) {
 		} );
 		userConfig.columns[ 0 ].width = Math.max(
 			userConfig.columns[ 0 ].width,
-			...col1data.map( ( s ) => s.length )
+			...rows[ 0 ][ 0 ].split( '\n' ).map( ( s ) => s.length )
 		);
 		userConfig.columns[ 1 ].width = Math.max(
 			columnMinWidth,
