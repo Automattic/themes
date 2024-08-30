@@ -1,11 +1,17 @@
 import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
+import util from 'util';
 import open from 'open';
+import process from 'process';
 import inquirer from 'inquirer';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
-import { table } from 'table';
+import { table, getBorderCharacters } from 'table';
 import progressbar from 'string-progressbar';
 import semver from 'semver';
+import Ajv from 'ajv';
+import AjvDraft04 from 'ajv-draft-04';
+import glob from 'fast-glob';
+import chalk, { Chalk } from 'chalk';
 
 const remoteSSH = 'wpcom-sandbox';
 const sandboxPublicThemesFolder = '/home/wpcom/public_html/wp-content/themes/pub';
@@ -21,7 +27,7 @@ const commands = {
 * Version bump all themes that have changes since the last deployment
 * Commit the version bump change to github
 * Clean the sandbox and ensure it is up - to - date
-* Push all changed files(including removal of deleted files) since the last deployment
+* Push all changed files (including removal of deleted files) since the last deployment
 * Update the 'last deployed' hash on the sandbox
 * Create a GitHub pull request based on the changes since the last deployment. The description including the commit messages since the last deployment.
 * Open the GitHub pull request in your browser
@@ -120,6 +126,37 @@ const commands = {
 		helpText: 'Escapes block patterns for pattern files that have changes (staged or unstaged).',
 		run: () => escapePatterns()
 	},
+	'validate-theme': {
+		helpText: [
+			'Validates a theme against the WordPress theme requirements.',
+			'--format=FORMAT',
+			wrapIndent( 'Output format. Possible values: *table*, json, dir.' ),
+			'--color=WHEN',
+			wrapIndent(
+				'Colorize the output for table or dir formats. The automatic mode only enables colors if an interactive terminal is detected. Possible values: *auto*, always, never.'
+			),
+			'--table-width=COLUMNS',
+			wrapIndent(
+				'Explicitly set the width of the table format instead of determining it automatically. Will default to 120 if omitted and width cannot be determined automatically.'
+			),
+		].join( '\n\n' ),
+		additionalArgs:
+			'[--format=FORMAT] [--color=WHEN] [--table-width=COLUMNS] <array of theme slugs>',
+		run: async ( args ) => {
+			args.shift();
+			const options = {};
+			while ( args[ 0 ].startsWith( '--' ) ) {
+				const flag = args.shift().slice( 2 );
+				const [ key, value ] = flag.split( '=' );
+				const camelCaseKey = key.replace( /-([a-z])/g, ( [ , c ] ) =>
+					c.toUpperCase()
+				);
+				options[ camelCaseKey ] = value ?? true;
+			}
+			const themes = args[ 0 ].split( /[ ,]+/ );
+			await validateThemes( themes, options );
+		},
+	},
 	"help": {
 		helpText: 'Displays the main help message.',
 		run: (args) => showHelp(args?.[1])
@@ -131,11 +168,29 @@ const commands = {
 	let command = args?.[0];
 
 	if (!commands[command]) {
-		return showHelp();
+		showHelp();
+		process.exit(1);
 	}
 
-	commands[command].run(args);
+	await commands[command].run(args);
 })();
+
+function wrapIndent(
+	text,
+	indent = '        ',
+	newline = '\n',
+	width = process.stdout.columns || 80
+) {
+	return text
+		.match(
+			new RegExp(
+				`.{1,${ width - indent.length - 1 }}(\\s+|$)|[^\\s]+?(\\s+|$)`,
+				'g'
+			)
+		)
+		.map( ( line ) => indent + line )
+		.join( newline );
+}
 
 function showHelp(command = '') {
 	if (!command || !commands.hasOwnProperty(command)) {
@@ -476,7 +531,7 @@ async function buildComZip(themeSlug) {
 			console.log('Could not find theme version (Version:) in the theme style.css.');
 		}
 		if (!wpVersionCompat) {
-			console.log('Could not find WP compat version (Tested up to:) in the theme style.css.');
+			console.log('Could not find WP compat version (Requires at least:) in the theme style.css.');
 		}
 		console.log('Please build the .zip file for the theme manually.', themeSlug);
 		open('https://mc.a8c.com/themes/downloads/');
@@ -691,12 +746,13 @@ export function getThemeMetadata(styleCss, attribute, trimWPCom = true) {
 	switch (attribute) {
 		case 'Version':
 			const version = styleCss
-				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)[0]
-				.trim();
+				.match(/(?<=Version:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				?.trim();
 			return trimWPCom ? version.replace('-wpcom', '') : version;
 		case 'Requires at least':
 			return styleCss
-				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs);
+				.match(/(?<=Requires at least:\s*).*?(?=\s*\r?\n|\rg)/gs)?.[0]
+				?.trim();
 	}
 }
 
@@ -1349,7 +1405,477 @@ async function escapePatterns() {
 	}
 }
 
+/**
+ * Validates theme files against their respective JSON schemas.
+ *
+ * @param {string} themes List of theme directories to validate
+ * @param {Object} options Options for the validation
+ * @param {string} options.format Output format (table, json, dir)
+ * @param {string} options.color Colorize output (auto, always, never)
+ * @param {number} options.tableWidth Width of the table output
+ */
+async function validateThemes( themes, { format, color, tableWidth } ) {
+	util.inspect.styles.name = 'whiteBright';
+	switch ( color ) {
+		case 'always':
+			chalk.level = 1;
+			break;
+		case 'never':
+			chalk.level = 0;
+			break;
+	}
+	const isColorized = chalk.level > 0;
+
+	const chalkStr = new Chalk( {
+		level: ! format || format === 'table' ? 1 : 0,
+	} );
+
+	function readJson( file ) {
+		return fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+	}
+
+	async function loadSchema( uri ) {
+		if ( ! uri ) {
+			// prettier-ignore
+			throw {
+				url: uri,
+				message: `Missing $schema URI: ${ chalkStr.whiteBright( uri ) }`,
+			};
+		}
+
+		let schema;
+		if ( URL.canParse( uri ) ) {
+			const url = new URL( uri );
+			switch ( url.protocol ) {
+				case 'http:':
+				case 'https:':
+					{
+						const res = await fetch( url );
+						if ( ! res.ok ) {
+							throw {
+								type: res.type,
+								url: res.url,
+								redirected: res.redirected,
+								status: res.status,
+								ok: res.ok,
+								statusText: res.statusText,
+								headers: res.headers,
+								message: await res.text(),
+							};
+						}
+						schema = await res.json();
+					}
+					break;
+				case 'file:': {
+					schema = readJson(
+						path.resolve( dirname, url.href.slice( 7 ) )
+					);
+					break;
+				}
+				default:
+					// prettier-ignore
+					throw {
+						url: uri,
+						message: `Unsupported ${ chalkStr.whiteBright( '$schema' ) } protocol: ${ chalkStr.whiteBright( url.protocol + '//' ) }`,
+					};
+			}
+		} else {
+			schema = await readJson( path.resolve( dirname, uri ) );
+		}
+
+		// Handle schemastore $ref for older schemas
+		if ( ! schema.$schema && typeof schema.$ref === 'string' ) {
+			return loadSchema( schema.$ref );
+		}
+
+		return schema;
+	}
+
+	const ajvOptions = {
+		strict: false,
+		allErrors: true,
+		loadSchema,
+	};
+	const ajv = {
+		'http://json-schema.org/draft-07/schema#': new Ajv( ajvOptions ),
+		'http://json-schema.org/draft-04/schema#': new AjvDraft04( ajvOptions ),
+	};
+
+	const progress = startProgress( themes.length );
+
+	let problems = [];
+	let hasError = false;
+	for ( const themeSlug of themes ) {
+		const styleCssPath = `${ themeSlug }/style.css`;
+
+		if ( ! fs.existsSync( themeSlug ) ) {
+			hasError = true;
+			problems.push(
+				createProblem( {
+					type: 'error',
+					theme: themeSlug,
+					file: chalkStr.gray( 'undefined' ),
+					data: { message: `the theme does not exist` },
+				} )
+			);
+			progress.increment();
+			continue;
+		}
+
+		if ( ! fs.existsSync( styleCssPath ) ) {
+			hasError = true;
+			problems.push(
+				createProblem( {
+					type: 'error',
+					file: styleCssPath,
+					data: { message: `the theme is missing a style.css file` },
+				} )
+			);
+			progress.increment();
+			continue;
+		}
+
+		const styleCss = await fs.promises.readFile( styleCssPath, 'utf-8' );
+		const themeRequires = getThemeMetadata( styleCss, 'Requires at least' );
+		const wpVersion = themeRequires
+			? `${ themeRequires }.0`.split( '.', 2 ).join( '.' )
+			: undefined;
+		const isSupportedWpVersion = wpVersion && semver.gte( `${ wpVersion }.0`, '5.9.0' )
+
+		if ( ! wpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'error',
+					file: styleCssPath,
+					data: {
+						// prettier-ignore
+						message: `missing ${ chalkStr.green( "'Requires at least'" ) } header metadata`,
+					},
+				} )
+			);
+		}
+
+		if ( ! isSupportedWpVersion ) {
+			problems.push(
+				createProblem( {
+					type: 'warning',
+					file: styleCssPath,
+					// prettier-ignore
+					data: {
+						actual: chalkStr.yellow( wpVersion ),
+						expected: `${ chalkStr.yellow( '5.9' ) } or greater`,
+						message: `the ${ chalkStr.green( "'Requires at least'" ) } version does not support theme.json`,
+					},
+				} )
+			);
+		}
+
+		const validations = await Promise.all( [
+			glob( `${ themeSlug }/styles/*.json` ).then( ( paths ) => ( {
+				schemaType: 'theme',
+				paths: [ `${ themeSlug }/theme.json`, ...paths ],
+			} ) ),
+			glob( `${ themeSlug }/assets/fonts/*.json` ).then( ( paths ) => ( {
+				schemaType: 'font-collection',
+				paths,
+			} ) ),
+		] );
+
+		for ( const { schemaType, paths } of validations ) {
+			for ( const file of paths ) {
+				try {
+					const data = await readJson( file );
+					const schemaUri = isSupportedWpVersion
+						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
+						: data.$schema;
+
+					if ( data.$schema !== schemaUri ) {
+						problems.push(
+							createProblem( {
+								type: 'warning',
+								file,
+								// prettier-ignore
+								data: {
+									actual: data.$schema,
+									expected: schemaUri,
+									message: `the ${ chalkStr.whiteBright( '$schema' ) } version does not match style.css ${ chalkStr.green( "'Requires at least'" ) } version`,
+								},
+							} )
+						);
+					}
+
+					const schema = await loadSchema( schemaUri );
+					const validate =
+						await ajv[ schema.$schema ].compileAsync( schema );
+					if ( ! validate( data ) ) {
+						problems.push(
+							createProblem( {
+								type: 'warning',
+								file,
+								data: validate.errors,
+								metadata: { schema: schemaUri },
+							} )
+						);
+					}
+				} catch ( error ) {
+					hasError = true;
+					problems.push(
+						createProblem( { type: 'error', file, data: error } )
+					);
+				}
+			}
+		}
+
+		progress.increment();
+	}
+
+	if ( problems.length ) {
+		let output = '';
+		switch ( format ) {
+			case 'json':
+				output = JSON.stringify( problems );
+				break;
+			case 'dir':
+				output = util.inspect( problems, {
+					depth: null,
+					maxArrayLength: null,
+					colors: isColorized,
+				} );
+				break;
+			case 'table':
+			default: {
+				output = problemsToTable( problems, { tableWidth } );
+			}
+		}
+		await new Promise( ( resolve, reject ) =>
+			process.stdout.write( output, ( error ) =>
+				error ? reject( error ) : resolve()
+			)
+		);
+	}
+
+	if ( hasError ) {
+		if ( process.stdout.isTTY && process.stderr.isTTY ) {
+			console.error( chalk.red( '\n\nValidation failed.' ) );
+		}
+		process.exit( 1 );
+	}
+
+	if ( process.stdout.isTTY ) {
+		if ( problems.length ) {
+			console.log( chalk.yellow( '\n\nValidation passed with warnings.' ) );
+		} else {
+			console.log( chalk.green( '\n\nValidation passed.' ) );
+		}
+	}
+}
+
+/**
+ * @typedef {Object} Problem
+ * @prop {'warning'|'error'} type Type of problem
+ * @prop {string} theme Name of the theme
+ * @prop {string} file File path, relative to the theme, where the problem exists
+ * @prop {Object} metadata Additional metadata to include in logging
+ * @prop {Object[]} data Array of validation problems
+ */
+
+/**
+ * Creates a problem object.
+ * @param {Object} options Options for creating a problem
+ * @param {'warning'|'error'} options.type Type of problem
+ * @param {string?} options.theme Name of the theme
+ * @param {string} options.file File path where the problem exists
+ * @prop {Object} metadata Additional metadata to include in logging
+ * @prop {Object[]} data Array of validation problems
+ * @return {Problem} Problem object
+ */
+function createProblem( options ) {
+	const {
+		type,
+		metadata,
+		data: problemData,
+		theme: themeOverride,
+		file: themeFile,
+	} = options;
+	const separatorIndex = themeFile.indexOf( '/' );
+	const theme = themeOverride
+		? themeOverride.charAt( 0 ).toUpperCase() + themeOverride.slice( 1 )
+		: themeFile.charAt( 0 ).toUpperCase() + themeFile.slice( 1, separatorIndex );
+	const file = themeFile.slice( separatorIndex + 1 );
+	const data = Array.isArray( problemData ) ? problemData : [ problemData ];
+	return { type, theme, file, metadata, data };
+}
+
+/**
+ * Similar to Object.entries, but includes non-enumerable properties and
+ * traverses the prototype chain.
+ *
+ * @param {Object} obj Any object
+ * @return {Array<[string, any]>} An array of key-value pairs
+ */
+function objectOwnPropertiesEntries( obj ) {
+	const visited = new Set();
+	const propertyNames = new Set();
+
+	let currentObj = obj;
+	while ( currentObj !== null ) {
+		if ( visited.has( currentObj ) ) {
+			break;
+		}
+		visited.add( currentObj );
+
+		for ( const name of Object.getOwnPropertyNames( currentObj ) ) {
+			propertyNames.add( name );
+		}
+
+		currentObj = Object.getPrototypeOf( currentObj );
+	}
+
+	return [ ...propertyNames ].map( ( key ) => [ key, obj[ key ] ] );
+}
+
+/**
+ * Converts an object into a borderless table format.
+ *
+ * Example:
+ *   objectToTable( {
+ *     keyOne: 'value1',
+ *     keyTwo: 'value2',
+ *     keyThree: 3,
+ *     fn: () => {},
+ *     obj: {},
+ *   } )
+ *   // Returns:
+ *   // 'key one   : value1\n' +
+ *   // 'key two   : value2\n' +
+ *   // 'key three : 3'
+ *
+ * @param {Object} obj Object to convert into a table
+ * @param {Object} [extraOptions] Extra options for the table
+ *
+ * @return {string} Table string
+ */
+function objectToTable( obj = {}, extraOptions ) {
+	const data = objectOwnPropertiesEntries( obj )
+		.filter(
+			( [ key, value ] ) =>
+				typeof value !== 'function' && ! key.startsWith( '_' )
+		)
+		.map( ( [ key, value ] ) => [
+			key
+				.split( /(?=[A-Z0-9])/g )
+				.map( ( part, i ) =>
+					i === 0
+						? part.charAt( 0 ).toUpperCase() + part.slice( 1 )
+						: part.charAt( 0 ).toLowerCase() + part.slice( 1 )
+				)
+				.join( ' ' ),
+			typeof value === 'object'
+				? util.inspect( value, { colors: chalk.level > 0 } )
+				: value,
+		] );
+
+	const options = {
+		columns: [ { paddingLeft: 0 }, { paddingRight: 0 } ],
+		border: getBorderCharacters( 'void' ), // No border, modified below.
+		drawHorizontalLine: () => false,
+	};
+	options.border.bodyJoin = ':';
+
+	// Hack for alignment with other tables.
+	if ( extraOptions?.columns?.[ 0 ]?.minWidth ) {
+		options.columns[ 0 ].width = Math.max(
+			extraOptions.columns[ 0 ].minWidth,
+			...data.map( ( [ key ] ) => key.length )
+		);
+	}
+
+	return table( data, options ).slice( 0, -1 ); // Remove trailing newline.
+}
+
+/**
+ * Generates a table in the following format.
+ *
+ * ╔═══════════════════════════════════════════════════╤═══════════════════════╗
+ * ║ WARNING                                           │ Warning key 0 : value ║
+ * ║ Theme : Example                                   │ Warning key 1 : value ║
+ * ║ File  : style.css                                 │                       ║
+ * ╟───────────────────────────────────────────────────┼───────────────────────╢
+ * ║ ERROR                                             │ Error 0 key 0 : value ║
+ * ║ Theme  : Example                                  │ Error 0 key 1 : value ║
+ * ║ File   : theme.json                               │ Error 0 key 2 : value ║
+ * ║ Schema : https://schemas.wp.org/wp/X.Y/theme.json ├───────────────────────╢
+ * ║                                                   │ Error 1 key 0 : value ║
+ * ║                                                   │ Error 1 key 1 : value ║
+ * ║                                                   │ Error 1 key 2 : value ║
+ * ╚═══════════════════════════════════════════════════╧═══════════════════════╝
+ *
+ * It has a very basic dynamic column width calculation where the first column
+ * expands to the content and the second column uses the remaining width of the
+ * terminal. Each column has a minimum width of 20 characters.
+ *
+ * @param {Problem[]} problems List of problems to format
+ *
+ * @return {string} Table string
+ */
+function problemsToTable( problems, options ) {
+	const tableWidth = options.tableWidth || process.stdout.columns || 120;
+	const paddingAndBorderWidth = '║  │  ║'.length;
+	const columnMinWidth = 20;
+
+	const userConfig = {
+		columns: [
+			{ width: columnMinWidth },
+			{ width: tableWidth - columnMinWidth - paddingAndBorderWidth },
+		],
+		spanningCells: [],
+	};
+	const tableData = [];
+
+	for ( const { type, theme, file, data, metadata } of problems ) {
+		const metadataTable = metadata ? objectToTable( metadata ) : '';
+		const titleTable = objectToTable(
+			{ theme, file },
+			{ columns: [ { minWidth: metadataTable.indexOf( ':' ) - 1 } ] }
+		);
+
+		const rows = data.map( ( m ) => [ '', objectToTable( m ) ] );
+		rows[ 0 ][ 0 ] = [
+			chalk[ type === 'warning' ? 'yellow' : 'red' ].bold(
+				type.toUpperCase()
+			),
+			chalk.whiteBright( titleTable ),
+			metadataTable,
+		]
+			.filter( Boolean )
+			.join( '\n' );
+
+		tableData.push( ...rows );
+
+		userConfig.spanningCells.push( {
+			row: tableData.length - rows.length,
+			col: 0,
+			rowSpan: rows.length,
+		} );
+
+		userConfig.columns[ 0 ].width = Math.max(
+			userConfig.columns[ 0 ].width,
+			...rows[ 0 ][ 0 ].split( '\n' ).map( ( s ) => s.length )
+		);
+		userConfig.columns[ 1 ].width = Math.max(
+			columnMinWidth,
+			tableWidth - userConfig.columns[ 0 ].width - paddingAndBorderWidth
+		);
+	}
+
+	return table( tableData, userConfig ).slice( 0, -1 ); // Remove trailing newline.
+}
+
 function startProgress(length) {
+	if (!process.stdout.isTTY) {
+		return { increment() {} };
+	}
+
 	let current = 0;
 	function render() {
 		const [progress, percentage] = progressbar.filledBar(length, current);
@@ -1360,6 +1886,7 @@ function startProgress(length) {
 	return {
 		increment() {
 			current++;
+			process.stdout.moveCursor?.(0, -3);
 			render();
 		}
 	};
