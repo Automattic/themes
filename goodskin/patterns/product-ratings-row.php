@@ -10,7 +10,7 @@ declare( strict_types = 1 );
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading {"textAlign":"center","fontSize":"xx-large"} -->
-<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size">Product Reviews</h2>
+<h2 class="wp-block-heading has-text-align-center has-xx-large-font-size"><?php echo esc_html__( 'Product Reviews', 'goodskin' ); ?></h2>
 <!-- /wp:heading -->
 
 <!-- wp:spacer {"height":"var:preset|spacing|30"} -->
@@ -25,7 +25,7 @@ declare( strict_types = 1 );
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Sunsai SPF50+  Lightweight Sunscreen</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'Sunsai SPF50+ Lightweight Sunscreen', 'goodskin' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:jetpack/rating-star {"rating":3,"className":"is-style-filled","align":"center"} -->
@@ -41,7 +41,7 @@ declare( strict_types = 1 );
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">ULing Wonderberry Instant Facial</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'ULing Wonderberry Instant Facial', 'goodskin' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:jetpack/rating-star {"rating":5,"className":"is-style-filled","align":"center"} -->
@@ -57,7 +57,7 @@ declare( strict_types = 1 );
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Yiae Kize-Rouk Enlighten Illuminating Serum</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'Yiae Kize-Rouk Enlighten Illuminating Serum', 'goodskin' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:jetpack/rating-star {"rating":4,"className":"is-style-filled","align":"center"} -->
@@ -73,7 +73,7 @@ declare( strict_types = 1 );
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center"} -->
-<p class="has-text-align-center">Anai Skin Perfecting Charcoal Mask</p>
+<p class="has-text-align-center"><?php echo esc_html__( 'Anai Skin Perfecting Charcoal Mask', 'goodskin' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:jetpack/rating-star {"rating":4,"className":"is-style-filled","align":"center"} -->
