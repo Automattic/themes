@@ -12,6 +12,9 @@ As its name states Eventual is a theme designed for events and ceremonies. It is
 
 == Changelog ==
 
+= 1.0.4 =
+* Eventual: Fix post/page title color. (#8042)
+
 = 1.0.3 =
 * Fix Cover block backround  (#7996)
 
