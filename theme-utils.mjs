@@ -1,6 +1,8 @@
 import { execSync, spawn } from 'child_process';
 import fs, { existsSync } from 'fs';
+import util from 'util';
 import open from 'open';
+import { Readable } from 'stream';
 import inquirer from 'inquirer';
 import process from 'process';
 import { RewritingStream } from 'parse5-html-rewriting-stream';
@@ -141,7 +143,7 @@ const commands = {
 		].join( '\n\n' ),
 		additionalArgs:
 			'[--format=FORMAT] [--color=WHEN] [--table-width=COLUMNS] <array of theme slugs>',
-		run: ( args ) => {
+		run: async ( args ) => {
 			args.shift();
 			const options = {};
 			while ( args[ 0 ].startsWith( '--' ) ) {
@@ -153,7 +155,7 @@ const commands = {
 				options[ camelCaseKey ] = value ?? true;
 			}
 			const themes = args[ 0 ].split( /[ ,]+/ );
-			validateThemes( themes, options );
+			await validateThemes( themes, options );
 		},
 	},
 	"help": {
@@ -171,7 +173,7 @@ const commands = {
 		process.exit(1);
 	}
 
-	commands[command].run(args);
+	await commands[command].run(args);
 })();
 
 function wrapIndent(
@@ -1414,17 +1416,15 @@ async function escapePatterns() {
  * @param {number} options.tableWidth Width of the table output
  */
 async function validateThemes( themes, { format, color, tableWidth } ) {
-	let colorizeDirOutput;
-	switch (color) {
+	switch ( color ) {
 		case 'always':
-			colorizeDirOutput = true;
 			chalk.level = 1;
 			break;
 		case 'never':
-			colorizeDirOutput = false;
 			chalk.level = 0;
 			break;
 	}
+	const colorizeOutput = chalk.level > 0;
 
 	async function loadSchema( uri ) {
 		if ( ! uri || ! URL.canParse( uri ) ) {
@@ -1466,7 +1466,8 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 					type: 'warning',
 					file: styleCssPath,
 					data: {
-						message: 'missing "Requires at least" header metadata',
+						// prettier-ignore
+						message: `missing ${ chalk.green( "'Requires at least'" ) } header metadata`,
 					},
 				} )
 			);
@@ -1486,7 +1487,9 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 		for ( const { schemaType, paths } of validations ) {
 			for ( const file of paths ) {
 				try {
-					const data = await fs.promises.readFile( file, 'utf-8' ).then( JSON.parse );
+					const data = await fs.promises
+						.readFile( file, 'utf-8' )
+						.then( JSON.parse );
 					const schemaUri = wpVersion
 						? `https://schemas.wp.org/wp/${ wpVersion }/${ schemaType }.json`
 						: data.$schema;
@@ -1498,8 +1501,8 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 								data: {
 									actual: data.$schema,
 									expected: schemaUri,
-									message:
-										'the $schema version does not match style.js "Requires at least" version',
+									// prettier-ignore
+									message: `the ${ chalk.whiteBright( '$schema' ) } version does not match style.js ${ chalk.green( "'Requires at least'" ) } version`,
 								},
 							} )
 						);
@@ -1530,18 +1533,28 @@ async function validateThemes( themes, { format, color, tableWidth } ) {
 	}
 
 	if ( problems.length ) {
+		let output = '';
 		switch ( format ) {
 			case 'json':
-				console.log( JSON.stringify( problems, null, 2 ) );
+				output = JSON.stringify( problems );
 				break;
 			case 'dir':
-				console.dir( problems, { depth: null, colors: colorizeDirOutput } );
+				output = util.inspect( problems, {
+					depth: null,
+					maxArrayLength: null,
+					colors: colorizeOutput,
+				} );
 				break;
-			default:
-				console.log(
-					problemsToTable( problems, { tableWidth } )
-				);
+			case 'table':
+			default: {
+				output = problemsToTable( problems, { tableWidth } );
+			}
 		}
+		await new Promise( ( resolve, reject ) =>
+			process.stdout.write( output, ( error ) =>
+				error ? reject( error ) : resolve()
+			)
+		);
 	}
 
 	if ( hasError ) {
@@ -1632,8 +1645,12 @@ function objectOwnPropertiesEntries( obj ) {
  * @return {string} Table string
  */
 function objectToTable( obj = {} ) {
+	util.inspect.styles.name = 'whiteBright';
 	const data = objectOwnPropertiesEntries( obj )
-		.filter( ( [ , value ] ) => Object( value ) !== value )
+		.filter(
+			( [ key, value ] ) =>
+				typeof value !== 'function' && ! key.startsWith( '_' )
+		)
 		.map( ( [ key, value ] ) => [
 			key
 				.split( /(?=[A-Z0-9])/g )
@@ -1643,7 +1660,9 @@ function objectToTable( obj = {} ) {
 						: part.charAt( 0 ).toLowerCase() + part.slice( 1 )
 				)
 				.join( ' ' ),
-			value,
+			typeof value === 'object'
+				? util.inspect( value, { colors: chalk.level > 0 } )
+				: value,
 		] );
 	const options = {
 		columns: [ { paddingLeft: 0 }, { paddingRight: 0 } ],
@@ -1699,10 +1718,16 @@ function problemsToTable( problems, options ) {
 		const metadataTable = metadata ? objectToTable( metadata ) : '';
 		const firstPart = metadataTable.indexOf( ':' ) - 1;
 		const pad = Math.max( 'theme'.length, firstPart );
-		let col1data = chalk[ type === 'warning' ? 'yellow' : 'red' ]( type.toUpperCase() );
-		col1data += '\n' + chalk( `${ 'Theme'.padEnd( pad ) } : ${ theme }` );
-		col1data += '\n' + chalk( `${ 'File'.padEnd( pad ) } : ${ file }` );
-		col1data += metadata ? '\n' + chalk.gray( metadataTable ) : '';
+		let col1data = chalk[ type === 'warning' ? 'yellow' : 'red' ].bold(
+			type.toUpperCase()
+		);
+		col1data += chalk.whiteBright(
+			`\n${ 'Theme'.padEnd( pad ) } : ${ theme }`
+		);
+		col1data += chalk.whiteBright(
+			`\n${ 'File'.padEnd( pad ) } : ${ file }`
+		);
+		col1data += metadata ? '\n' + metadataTable : '';
 		const rows = data.map( ( m ) => [ '', objectToTable( m ) ] );
 		rows[ 0 ][ 0 ] = col1data;
 		tableData.push( ...rows );
