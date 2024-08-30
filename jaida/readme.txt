@@ -13,6 +13,9 @@ A WordPress block theme made for blogging.
 == Changelog ==
 
 = 1.0.3 =
+* Remove copyright statement (#7988)
+
+= 1.0.3 =
 * Add image license to readme.txt
 
 = 1.0.2 =

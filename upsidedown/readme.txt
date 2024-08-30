@@ -12,6 +12,9 @@ Upsidedown is a blog theme designed in the WordPress Site Editor. With its neat 
 
 == Changelog ==
 
+= 1.0.8 =
+* Remove copyright symbol (#7981)
+
 = 1.0.7 =
 * Revert Update theme upsidedown-update (#7721) (#7821)
 

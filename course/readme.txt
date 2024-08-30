@@ -12,6 +12,9 @@ Course is a flexible and modern education theme for anyone wanting to share thei
 
 == Changelog ==
 
+= 1.3.8 =
+* Remove copyright symbol (#7981)
+
 = 1.3.7 =
 * Update comments template to match latest Gutenberg block markup (#7736)
 

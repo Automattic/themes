@@ -1,3 +1,4 @@
+<?php declare( strict_types = 1 ); ?>
 <?php
 	$has_primary_nav       = has_nav_menu( 'primary' );
 	$has_primary_nav_items = wp_nav_menu(

@@ -12,6 +12,9 @@ Bitácora is a simple old-school blog theme.
 
 == Changelog ==
 
+= 1.0.9 =
+* Remove copyright statement (#7988)
+
 = 1.0.8 =
 * Bitacora: Edit sidebar markup to use aside (#7278)
 

@@ -1,6 +1,6 @@
 {
 	"name": "themes",
-	"version": "1.0.536",
+	"version": "1.0.568",
 	"description": "Automattic public themes",
 	"author": "automattic",
 	"license": "GPL-2.0",
@@ -28,25 +28,26 @@
 		"core:push": "node ./theme-utils.mjs push-core-themes",
 		"core:sync": "node ./theme-utils.mjs sync-core-theme",
 		"patterns:escape": "node ./theme-utils.mjs escape-patterns",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"devDependencies": {
-		"@octokit/rest": "^19.0.8",
-		"@wordpress/prettier-config": "^2.16.0",
-		"@wordpress/scripts": "^26.4.0",
-		"@wordpress/stylelint-config": "^21.16.0",
+		"@octokit/rest": "^21.0.2",
+		"@wordpress/prettier-config": "^4.6.0",
+		"@wordpress/scripts": "^27.9.0",
+		"@wordpress/stylelint-config": "^22.6.0",
 		"chokidar-cli": "^3.0.0",
-		"fs-extra": "^11.1.1",
-		"husky": "^8.0.3",
-		"inquirer": "^9.2.3",
-		"lint-staged": "^13.2.2",
+		"fs-extra": "^11.2.0",
+		"husky": "^9.1.5",
+		"inquirer": "^10.1.8",
+		"lint-staged": "^15.2.9",
 		"lodash": "^4.17.21",
-		"octokit": "^2.0.14",
-		"open": "^9.1.0",
+		"octokit": "^4.0.2",
+		"open": "^10.1.0",
 		"parse5-html-rewriting-stream": "^7.0.0",
-		"semver": "^7.5.1",
+		"prettier": "npm:wp-prettier@^3.0.3",
+		"semver": "^7.6.3",
 		"string-progressbar": "^1.0.4",
-		"table": "^6.8.1"
+		"table": "^6.8.2"
 	},
 	"stylelint": {
 		"extends": "@wordpress/stylelint-config",
@@ -57,12 +58,9 @@
 			"wp-scripts lint-style --fix --custom-syntax postcss-scss"
 		]
 	},
-	"dependencies": {
-		"wp-prettier": "^2.8.5"
-	},
 	"engines": {
-		"node": ">=18.0.0",
-		"npm": ">=9.0.0"
+		"node": ">=20.10.0",
+		"npm": ">=10.2.3"
 	},
 	"workspaces": [
 		"*"

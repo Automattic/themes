@@ -11,6 +11,9 @@ Meraki is a blogging theme that supports full-site editing.
 
 == Changelog ==
 
+= 1.0.13 =
+* Fixed Blockbase children style variations (#7859)
+
 = 1.0.12 =
 * Lossless image optimization (#7671)
 
