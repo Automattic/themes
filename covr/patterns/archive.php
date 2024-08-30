@@ -30,9 +30,7 @@
 <!-- /wp:spacer -->
 <!-- /wp:post-template -->
 
-<!-- wp:paragraph -->
-<p><?php echo __('', 'covr');?></p>
-<!-- /wp:paragraph --></div>
+</div>
 <!-- /wp:query -->
 
 <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"40px","bottom":"40px"}}},"layout":{"type":"constrained"}} -->
