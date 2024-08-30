@@ -1,7 +1,7 @@
 === Goodskin ===
 Contributors: Automattic
-Requires at least: 6.0
-Tested up to: 6.6-RC4
+Requires at least: 6.6
+Tested up to: 6.6
 Requires PHP: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,9 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Goodskin is a blogging theme designed for skincare blogs.
 
 == Changelog ==
-
-= 1.0.3 =
-* Brat: add theme (Rename to Partygurl) (#8026)
 
 = 1.0.2 =
 * Goodskin: Prepare the theme for the submission (#7611)
@@ -42,7 +39,11 @@ GNU General Public License for more details.
 
 IMAGES
 
-This theme uses AI images generated on Midjourney.
+Image for theme screenshot
+License: CC0 1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/public-domain/cc0/
+Source: Generated with AI on Midjourney, released under the CC0 license.
+
 
 FONTS
 
